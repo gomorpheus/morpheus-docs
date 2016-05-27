@@ -5,7 +5,7 @@
 <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 1.5.0">
-<title>Installation</title>
+<title>CentOS / Redhat Enterprise</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic|Noto+Serif:400,400italic,700,700italic|Droid+Sans+Mono:400">
 <style>
 /* Asciidoctor default stylesheet | MIT License | http://asciidoctor.org */
@@ -504,124 +504,12 @@ table.CodeRay td.code>pre{padding:0}
 <div id="header">
 <div id="toc" class="toc2">
 <div id="toctitle">Table of Contents</div>
-<ul class="sectlevel1">
-<li><a href="#installation">Installation</a>
 <ul class="sectlevel2">
-<li><a href="#debian-install">Debian / Ubuntu</a></li>
 <li><a href="#centos-install">CentOS / Redhat Enterprise</a></li>
-<li><a href="#additional-options">Additional Options</a></li>
-</ul>
-</li>
 </ul>
 </div>
 </div>
 <div id="content">
-<div class="sect1">
-<h2 id="installation">Installation</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Morpheus comes packaged as a <code>debian</code> or <code>yum</code> based package. It can be installed on a single on/off premise linux based host or configured for high availability and horizontal scaling. Morpheus is currently only supported on Ubuntu 14.04 , CentOS 7.0 or newer, and RHEL 7.0 or newer based hosts (Ubuntu is recommended).</p>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<div class="title">Note</div>
-</td>
-<td class="content">
-Ubuntu 16.04 support is coming soon!
-</td>
-</tr>
-</table>
-</div>
-<div class="sect2">
-<h3 id="debian-install">Debian / Ubuntu</h3>
-<div class="paragraph">
-<p>To get started installing Morpheus on Ubuntu (14.04 currently) a few prepratory items should be addressed first.</p>
-</div>
-<div class="paragraph">
-<p>First make sure the apt repository is up to date by running <code>sudo apt-get update</code>. It might also be advisable to verify that the assigned hostname of the machine is self resolvable.</p>
-</div>
-<div class="admonitionblock important">
-<table>
-<tr>
-<td class="icon">
-<div class="title">Important</div>
-</td>
-<td class="content">
-If the machine is unable to resolve its own hostname (<code>nslookup hostname</code>) some installation commands will be unable to verify service health during installation and fail.
-</td>
-</tr>
-</table>
-</div>
-<div class="paragraph">
-<p>Next simply download the relevant <code>.deb</code> package for installation. This package can be acquired from your account rep or via a free trial request from <a href="https://www.morpheusdata.com">morheusdata.com</a>.</p>
-</div>
-<div class="admonitionblock tip">
-<table>
-<tr>
-<td class="icon">
-<div class="title">Tip</div>
-</td>
-<td class="content">
-Use the <code>wget</code> command to directly download the package to your appliance server. i.e. <code>wget <a href="https://downloads.gomorpheus.com/path/to/package.deb" class="bare">https://downloads.gomorpheus.com/path/to/package.deb</a></code>
-</td>
-</tr>
-</table>
-</div>
-<div class="paragraph">
-<p>Next we must install the package onto the machine and configure the morpheus services:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="bash">sudo dpkg -i morpheus-appliance_x.x.x-1.amd64.deb
-sudo morpheus-ctl reconfigure</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>Once the installation is complete the web interface will automatically start up. By default it will be resolvable at <code><a href="https://your_machine_name" class="bare">https://your_machine_name</a></code> and in many cases this may not be resolvable from your browser. The url can be changed by editing <code>/etc/morpheus/morpheus.rb</code> and changing the value of <code>appliance_url</code>. After this has been changed simply run:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="bash">sudo morpheus-ctl reconfigure
-sudo morpheus-ctl stop morpheus-ui
-sudo morpheus-ctl start morpheus-ui</code></pre>
-</div>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<div class="title">Note</div>
-</td>
-<td class="content">
-The <code>morpheus-ui</code> can take 2-3 minutes to startup before it becomes available.
-</td>
-</tr>
-</table>
-</div>
-<div class="paragraph">
-<p>There are additional post install settings that can be viewed in the Advanced section of the guide.</p>
-</div>
-<div class="paragraph">
-<p>Once the browser is pointed to the appliance a first time setup wizard will be presented. Please follow the on screen instructions by creating the master account. From there you will be presented with the license settings page where a license can be applied for use (if a license is required you may request one or purchase one by contacting your sales representative).</p>
-</div>
-<div class="paragraph">
-<p>More details on setting up infrastructure can be found throughout this guide.</p>
-</div>
-<div class="admonitionblock tip">
-<table>
-<tr>
-<td class="icon">
-<div class="title">Tip</div>
-</td>
-<td class="content">
-If any issues occur it may be prudent to check the morpheus log for details at <code>/var/log/morpheus/morpheus-ui/current</code>.
-</td>
-</tr>
-</table>
-</div>
-</div>
 <div class="sect2">
 <h3 id="centos-install">CentOS / Redhat Enterprise</h3>
 <div class="paragraph">
@@ -720,137 +608,10 @@ If any issues occur it may be prudent to check the morpheus log for details at <
 </table>
 </div>
 </div>
-<div class="sect2">
-<h3 id="additional-options">Additional Options</h3>
-<div class="paragraph">
-<p>There are several additional configuration options during installation that may be performed. For example, Morpheus provides convenient options for uploading your own SSL certificates as well as externalizing several dependent services.</p>
-</div>
-<div class="sect3">
-<h4 id="system-defaults">System Defaults</h4>
-<div class="paragraph">
-<p>Morpheus follows several install location conventions. Below is a list of system defaults for convenient management:</p>
-</div>
-<div class="paragraph">
-<p>Installation Location: <code>/opt/morpheus</code></p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Log Location:</strong> <code>/var/log/morpheus</code></p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Morpheus-UI:</strong> <code>/var/log/morpheus/morpheus-ui</code></p>
-</li>
-<li>
-<p><strong>MySQL:</strong> <code>/var/log/morpheus/mysql</code></p>
-</li>
-<li>
-<p><strong>NginX:</strong> <code>/var/log/morpheus/nginx</code></p>
-</li>
-<li>
-<p><strong>Check Server:</strong> <code>/var/log/morpheus/check-server</code></p>
-</li>
-<li>
-<p><strong>Elastic Search:</strong> <code>/var/log/morpheus/elsticsearch</code></p>
-</li>
-<li>
-<p><strong>RabbitMQ:</strong> <code>/var/log/morpheus/rabbitmq</code></p>
-</li>
-<li>
-<p><strong>Redis:</strong> <code>/var/log/morpheus/redis</code></p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p><strong>User-defined install/config:</strong> <code>/etc/morpheus/morpheus.rb</code></p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect3">
-<h4 id="ssl-certificates">SSL Certificates</h4>
-<div class="paragraph">
-<p>The default installation generates a self-signed SSL certificate. To implement a third-party certificate:</p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>Copy the private key and certificate to <code>/etc/morpheus/ssl/your_fqdn_name.key</code> and <code>/etc/morpheus/ssl/your_fqdn_name.crt</code> respectively.</p>
-</li>
-<li>
-<p>Edit the configuration file <code>/etc/morpheus/morpheus.rb</code> and add the following entries:</p>
-</li>
-</ol>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="bash">nginx[‘ssl_certificate’] = ‘path to the certificate file'
-nginx[‘ssl_server_key’] = ‘path to the server key file'</code></pre>
-</div>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<div class="title">Note</div>
-</td>
-<td class="content">
-Both files should be owned by root and only readable by root, also if the server certificate is signed by an intermediate then you should include the signing chain inside the certificate file.
-</td>
-</tr>
-</table>
-</div>
-<div class="paragraph">
-<p>Next simply reconfigure the appliance and restart nginx:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="bash">sudo morpheus-ctl reconfigure
-sudo morpheus-ctl restart nginx</code></pre>
-</div>
-</div>
-</div>
-<div class="sect3">
-<h4 id="additional-configuration-options">Additional Configuration Options</h4>
-<div class="paragraph">
-<p>There are several other options available to the <code>/etc/morpheus/morpheus.rb</code> file that can be useful when setting up external service integrations or high availability:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="ruby">mysql[<span class="string"><span class="delimiter">'</span><span class="content">enable</span><span class="delimiter">'</span></span>] = <span class="predefined-constant">false</span>
-mysql[<span class="string"><span class="delimiter">'</span><span class="content">host</span><span class="delimiter">'</span></span>] = <span class="string"><span class="delimiter">'</span><span class="content">52.53.240.28</span><span class="delimiter">'</span></span>
-mysql[<span class="string"><span class="delimiter">'</span><span class="content">port</span><span class="delimiter">'</span></span>] = <span class="integer">10004</span>
-mysql[<span class="string"><span class="delimiter">'</span><span class="content">morpheus_db</span><span class="delimiter">'</span></span>] = <span class="string"><span class="delimiter">'</span><span class="content">morpheusdb01</span><span class="delimiter">'</span></span>
-mysql[<span class="string"><span class="delimiter">'</span><span class="content">morpheus_db_user</span><span class="delimiter">'</span></span>] = <span class="string"><span class="delimiter">'</span><span class="content">merovingian</span><span class="delimiter">'</span></span>
-mysql[<span class="string"><span class="delimiter">'</span><span class="content">morpheus_password</span><span class="delimiter">'</span></span>] = <span class="string"><span class="delimiter">'</span><span class="content">Wm5n5gXqXCe9v52</span><span class="delimiter">'</span></span>
-rabbitmq[<span class="string"><span class="delimiter">'</span><span class="content">enable</span><span class="delimiter">'</span></span>] = <span class="predefined-constant">false</span>
-rabbitmq[<span class="string"><span class="delimiter">'</span><span class="content">vhost</span><span class="delimiter">'</span></span>] = <span class="string"><span class="delimiter">'</span><span class="content">zion</span><span class="delimiter">'</span></span>
-rabbitmq[<span class="string"><span class="delimiter">'</span><span class="content">queue_user</span><span class="delimiter">'</span></span>] = <span class="string"><span class="delimiter">'</span><span class="content">dujour</span><span class="delimiter">'</span></span>
-rabbitmq[<span class="string"><span class="delimiter">'</span><span class="content">queue_user_password</span><span class="delimiter">'</span></span>] = <span class="string"><span class="delimiter">'</span><span class="content">5tfg9n2iBifzW5c</span><span class="delimiter">'</span></span>
-rabbitmq[<span class="string"><span class="delimiter">'</span><span class="content">host</span><span class="delimiter">'</span></span>] = <span class="string"><span class="delimiter">'</span><span class="content">54.183.196.152</span><span class="delimiter">'</span></span>
-rabbitmq[<span class="string"><span class="delimiter">'</span><span class="content">port</span><span class="delimiter">'</span></span>] = <span class="string"><span class="delimiter">'</span><span class="content">10008</span><span class="delimiter">'</span></span>
-rabbitmq[<span class="string"><span class="delimiter">'</span><span class="content">stomp_port</span><span class="delimiter">'</span></span>] = <span class="string"><span class="delimiter">'</span><span class="content">10010</span><span class="delimiter">'</span></span>
-redis[<span class="string"><span class="delimiter">'</span><span class="content">enable</span><span class="delimiter">'</span></span>] = <span class="predefined-constant">false</span>
-redis[<span class="string"><span class="delimiter">'</span><span class="content">host</span><span class="delimiter">'</span></span>] = <span class="string"><span class="delimiter">'</span><span class="content">52.53.240.28</span><span class="delimiter">'</span></span>
-redis[<span class="string"><span class="delimiter">'</span><span class="content">port</span><span class="delimiter">'</span></span>] = <span class="integer">10009</span>
-elasticsearch[<span class="string"><span class="delimiter">'</span><span class="content">enable</span><span class="delimiter">'</span></span>] = <span class="predefined-constant">false</span>
-elasticsearch[<span class="string"><span class="delimiter">'</span><span class="content">cluster</span><span class="delimiter">'</span></span>] = <span class="string"><span class="delimiter">'</span><span class="content">nebuchadnezzar</span><span class="delimiter">'</span></span>
-elasticsearch[<span class="string"><span class="delimiter">'</span><span class="content">es_hosts</span><span class="delimiter">'</span></span>] = {<span class="string"><span class="delimiter">'</span><span class="content">52.53.214.68</span><span class="delimiter">'</span></span> =&gt; <span class="integer">10003</span>}</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>These settings allow one to externally configure and scale mysql, elasticsearch, redis, and rabbitmq which is critical for a high availability setup.</p>
-</div>
-</div>
-</div>
-</div>
-</div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2016-05-27 15:16:48 -04:00
+Last updated 2016-05-27 14:40:36 -04:00
 </div>
 </div>
 </body>
