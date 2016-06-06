@@ -5,7 +5,7 @@
 <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 1.5.0">
-<title>Untitled</title>
+<title>Monitoring</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic|Noto+Serif:400,400italic,700,700italic|Droid+Sans+Mono:400">
 <style>
 /* Asciidoctor default stylesheet | MIT License | http://asciidoctor.org */
@@ -504,15 +504,223 @@ table.CodeRay td.code>pre{padding:0}
 <div id="header">
 <div id="toc" class="toc2">
 <div id="toctitle">Table of Contents</div>
-
+<ul class="sectlevel1">
+<li><a href="#monitoring">Monitoring</a>
+<ul class="sectlevel2">
+<li><a href="#checks">Checks</a></li>
+<li><a href="#apps-groups">Apps &amp; Groups</a></li>
+<li><a href="#incidents">Incidents</a></li>
+<li><a href="#alerts">Alerts</a></li>
+</ul>
+</li>
+</ul>
 </div>
 </div>
 <div id="content">
-
+<div class="sect1">
+<h2 id="monitoring">Monitoring</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Morpheus provides great monitoring features out of the box. Anything provisioned within Morpheus automatically gets a check created in the monitoring service. These checks are organized heirarchically in "Groups" and "Apps". This makes it easy to gain a perspective as to what a customer or full stack facing impact is in the event of a particularly instance failure. This also takes into account redundancy layers when it comes to calculating the applications overall uptime percentage.</p>
+</div>
+<div class="paragraph">
+<p>There are also several integrations built into the monitoring subsystem of Morpheus including App Dynamics , New Relic, and even Service Now integration.</p>
+</div>
+<div class="sect2">
+<h3 id="checks">Checks</h3>
+<div class="paragraph">
+<p>The Monitoring system is composed of individual checks. A check is created for every container or vm that is provisioned through Morpheus. One interesting thing about these checks is they are type aware. There are several different built in check types that are selected based on the service or instance type that is being provisioned. These range from database type checks to web checks and message checks. They are highly configurable and also feature fallback check types for those more generic use cases.</p>
+</div>
+<div class="paragraph">
+<p>Checks can be customized to run custom queries, check queue sizes, or even adjust severity levels and check intervals. All of these things can be controlled from the Checks sub tab within Monitoring.</p>
+</div>
+<div class="sect3">
+<h4 id="health">Health</h4>
+<div class="paragraph">
+<p>A check can have 3 health states. They are Failed, Warning (Recovering), and Healthy. When a check test fails the system automatically reattempts the check after 30 seconds to eliminate false positives. This will convert the check into a <code>Failed</code> state and raise the appropriate severity incident depending on the grouping of the check. When a check recovers it automatically goes into a Warning state. This will remain in the warning state until 10 successful check runs have completed.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="options">Options</h4>
+<div class="paragraph">
+<p>All check types have several core options and some of these default options can be configured in <code>Admin &#8594; Monitoring</code>. This includes the default check interval time. By default a check is run every 5 minutes. This can however be changed to run as frequently as once every minute.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Max Severity</strong>: The maximum severity level impact for a created incident that can occur if the check fails (defaults to Critical).</p>
+</li>
+<li>
+<p><strong>Check Interval</strong>: The frequency with which a check is run (default 5 minutes).</p>
+</li>
+<li>
+<p><strong>Affects Availability</strong>: Whether or not this check impacts overall system availability calculations.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="ssh-tunneling">SSH Tunneling</h4>
+<div class="paragraph">
+<p>In many cases when it comes to monitoring databases, and services they may not be fronted on the public ips for external monitoring. To reach these safely, and securely Morpheus provides an SSH Tunneling mechanism for its check servers. This allows the check to be confirmed via an ssh port tunnel securely using a keypair.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="check-servers">Check Servers</h4>
+<div class="paragraph">
+<p>On a base installation of Morpheus a single <code>check server</code> is installed on the appliance. This is used for running any custom user checks. This services connects to the provided rabbitmq services and can be moved off or even scaled horizontally onto sets of check servers. All other checks that are related to provisioned containers or vms are executed by the installed agent on the guest OS or Docker host.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="apps-groups">Apps &amp; Groups</h3>
+<div class="paragraph">
+<p>One great feature of the monitoring system is the ability to organize checks by groups and apps. This provides a nice convenient way to determine what a customer facing impact might be for a single failure as well as representing redundancy via groupings.</p>
+</div>
+<div class="paragraph">
+<p>It is important to note the relationship of apps, groups, and even checks with regards to instances provisioned within Morpheus. For every <code>Instance</code> that is provisioned: A monitoring <code>Group</code> is created and a <code>Check</code> is added to that group for every <code>Container</code> or <code>Virtual Machine</code> within that Instance. This makes sense such that as an Instance is scaled out horizontally (containers/vms added to it) The monitoring system accurately represents the layers of redundancy. An <code>App</code> simply maps to a Provisioning <code>App</code> and should be pretty straightforward to understand.</p>
+</div>
+<div class="sect3">
+<h4 id="groups">Groups</h4>
+<div class="paragraph">
+<p>It is also possible to organize custom checks in this hierarchical structure by manually adding or editing a Group or App. Groups can only contain checks and can be edited or created in <code>Monitoring &#8594; Groups</code>. Besides simply adding and removing checks to a group there are a few other useful options that can be customized in a group.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Min Checks</strong>: This specifies the minimum number of checks within the group that must be happy to keep the group from becoming unhealthy.</p>
+</li>
+<li>
+<p><strong>Max Severity</strong>: The maximum severity incident a failed check may create. This setting overrides a checks Max Severity setting.</p>
+</li>
+<li>
+<p><strong>Affects Availability</strong>: Whether or not a failed group impacts system wide availability calculations.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Some useful information can also be seen on the detail page of a check. For example, the average response time of all checks within the group, or an aggregated check history can be viewed.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="apps">Apps</h4>
+<div class="paragraph">
+<p>Apps are very useful for seeing an aggregation of failures, or impact based on a set of checks and groups. Apps typically correlate to apps created in provisioning but can also be manually created and organized. They can be great for visualizing the customer impact a failure might have or even keeping up on a screen in a NOC. There are a few useful options as well with regards to Apps:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Max Severity</strong>: The maximum severity incident a failed app may create. This setting overrides check and group Max Severity settings.</p>
+</li>
+<li>
+<p><strong>Affects Availability</strong>: Whether or not a failed app impacts system wide availability calculations.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="incidents">Incidents</h3>
+<div class="paragraph">
+<p>Incident management is very important in any IT Operations environment. The ability to notify the appropriate people of an outage that requires immediate attention is critical to reducing recovery time and even preventing potential customer facing impacts. Because of this, Morpheus provides incident management features as well as external integrations out of the box.</p>
+</div>
+<div class="paragraph">
+<p>Incidents can be found in the <code>Monitoring&#8594;Incidents</code> section. When a check fails, an incident is automatically raised. These can vary in severity based on the user configured check severities as well as the group hierarchy (representative of redundancy).</p>
+</div>
+<div class="paragraph">
+<p>Incidents are also grouped. If an application is impacted and multiple checks fail for that application they automatically get grouped together in one Incident that can fluctuate or escalate in severity as time progresses. These incidents can be muted so as not to affect availability and they can also be resolved manually with an option to detail resolution information.</p>
+</div>
+<div class="paragraph">
+<p>There are also integrations and API&#8217;s for integrating with existing corporate workflows when it comes to incident management.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="alerts">Alerts</h3>
+<div class="paragraph">
+<p>There are several ways to configure alerts and notifications within Morpheus. Users can be notified via Email or SMS as well as several other direct integrations. These integrations include PagerDuty, Alert Ops, Victor Ops, and even Slack chat Channel notifications (or optionally via the ServiceNow integration).</p>
+</div>
+<div class="sect3">
+<h4 id="contacts">Contacts</h4>
+<div class="paragraph">
+<p>To configure user notifications a contact must first be created in <code>Monitoring &#8594; Contacts</code>. These contacts can be one of a few types:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Contact</strong>: Used for either Email or SMS</p>
+</li>
+<li>
+<p><strong>Web Hook</strong>: Used for posting a notification to a web endpoint or Alert Ops.</p>
+</li>
+<li>
+<p><strong>Slack Hook</strong>: Used for posting notifications to a <a href="https://slack.com/">Slack</a> channel.</p>
+</li>
+<li>
+<p><strong>VictorOps</strong>: Provides a web post format consistent with the required notification format for Victor Ops.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Most of these options provide convenient examples and information when configuring the contact. Once they are configured contacts can freely be used to build <code>Alert Rules</code>.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="alert-rules">Alert Rules</h4>
+<div class="paragraph">
+<p>Alert Rules provide a powerful means to configure who gets notified in various scenarios. These scenarios include targetting specific checks, groups, or apps , and adding the appropriate recipients to be notified during a situation in which those filters are impacted.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Min Duration</strong>: This setting delays notification to the recipients by the entered number of minutes required for the incident to be opened.</p>
+</li>
+<li>
+<p><strong>Min Severity</strong>: Some executives might want to be notified of an outage but only if the severity impact goes above a certain level. This is very useful for scoping escalations.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>To add recipients to a rule just start typing their name in the Recipients section towards the button of the edit form. An auto-complete list will start populating with contact names. Once one is selected a delivery method can be selected as well as whether or not they should be notified of any escalation changes and/or closed incidents.
+=== Integrations</p>
+</div>
+<div class="paragraph">
+<p>While Morpheus provides a fantastic means for determining uptime and availability of both services and vms sometimes more is needed. A good example of this is performance application monitoring. To solve this several external integrations are provided out of the box. Even some external integrations with regards to incedent management are provided.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="appdynamics">AppDynamics</h4>
+<div class="paragraph">
+<p>AppDynamics is a very powerful performance and application monitoring tool. It featues advanced correlation features and profiling capabilities for a very wide range of application platforms including native Docker support. Due to the level of capabilities of AppDyanmics there are more required settings to integrate it with Morpheus. To get started expand the section in <code>Admin &#8594; Monitoring</code> related to AppDynamics and toggle it to Enabled. There are several fields here that need filled out. Once completed hit save and all hosts will automatically be configured to install the AppDynamics agent.</p>
+</div>
+<div class="paragraph">
+<p>AppDynamics is capable of bein run as a paid SaaS based service as well as an on premise installation and Morpheus supports both configurations. Most input fields related to connecting to AppDynamics provide helpful tips as to what information exactly needs provided and where to acquire it.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="newrelic">NewRelic</h4>
+<div class="paragraph">
+<p>New Relic is a very popular service based performance monitoring tool. It supports a wide variety of application platforms and is a breeze to configure with Morpheus. Another great feature of new relic is its ability to monitor the server applications run on and provide additional stats. To do this an agent needs to be installed and configured on each server. Fortunately, this is performed automatically for every vm and docker host provisioned within Morpheus. To turn on the integration simply go to <code>Admin &#8594; Monitoring</code> and expand the section titled "New Relic". There it is simply a matter of toggling the Enabled setting to on and entering the New Relic account API Key.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="service-now">Service Now</h4>
+<div class="paragraph">
+<p>Service now integration is provided out of the box with Morpheus. To add a service now integration simply visit the 'Monitoring Settings' section in <code>Admin &#8594; Monitoring</code>. This allows one to map incident severity levels to equivalent severities in ServiceNow.</p>
+</div>
+<div class="paragraph">
+<p>To enable service now simply expand the section labelled "ServiceNow" in <code>Admin &#8594; Monitoring</code>. Toggle the enabled flag and enter the <code>Host</code>, <code>User</code>, and <code>Password</code> information required to connect to ServiceNow. The other options below include behaviors upon new incidents being opened and old incidents closing. It also includes a table for mapping Morpheus incident serverity levels to their ServiceNow counterparts.</p>
+</div>
+<div class="paragraph">
+<p>There are several other useful service now integrations planned for future releases and will be discussed as those features come out.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2016-05-27 13:36:46 -04:00
+Last updated 2016-06-06 13:06:56 -04:00
 </div>
 </div>
 </body>

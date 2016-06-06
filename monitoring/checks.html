@@ -5,7 +5,7 @@
 <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 1.5.0">
-<title>Introduction</title>
+<title>Checks</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic|Noto+Serif:400,400italic,700,700italic|Droid+Sans+Mono:400">
 <style>
 /* Asciidoctor default stylesheet | MIT License | http://asciidoctor.org */
@@ -504,24 +504,62 @@ table.CodeRay td.code>pre{padding:0}
 <div id="header">
 <div id="toc" class="toc2">
 <div id="toctitle">Table of Contents</div>
-<ul class="sectlevel1">
-<li><a href="#introduction">Introduction</a></li>
+<ul class="sectlevel2">
+<li><a href="#checks">Checks</a></li>
 </ul>
 </div>
 </div>
 <div id="content">
-<div class="sect1">
-<h2 id="introduction">Introduction</h2>
-<div class="sectionbody">
+<div class="sect2">
+<h3 id="checks">Checks</h3>
 <div class="paragraph">
-<p>Morpheus is a full featured cloud application management platform. Armed with a powerful set of tools for provisioning, logging, monitoring, and backups it is well suited for managing and orchestrating any infrastucture while at the same time providing convenient self-service to both developers and DevOps teams.</p>
+<p>The Monitoring system is composed of individual checks. A check is created for every container or vm that is provisioned through Morpheus. One interesting thing about these checks is they are type aware. There are several different built in check types that are selected based on the service or instance type that is being provisioned. These range from database type checks to web checks and message checks. They are highly configurable and also feature fallback check types for those more generic use cases.</p>
+</div>
+<div class="paragraph">
+<p>Checks can be customized to run custom queries, check queue sizes, or even adjust severity levels and check intervals. All of these things can be controlled from the Checks sub tab within Monitoring.</p>
+</div>
+<div class="sect3">
+<h4 id="health">Health</h4>
+<div class="paragraph">
+<p>A check can have 3 health states. They are Failed, Warning (Recovering), and Healthy. When a check test fails the system automatically reattempts the check after 30 seconds to eliminate false positives. This will convert the check into a <code>Failed</code> state and raise the appropriate severity incident depending on the grouping of the check. When a check recovers it automatically goes into a Warning state. This will remain in the warning state until 10 successful check runs have completed.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="options">Options</h4>
+<div class="paragraph">
+<p>All check types have several core options and some of these default options can be configured in <code>Admin &#8594; Monitoring</code>. This includes the default check interval time. By default a check is run every 5 minutes. This can however be changed to run as frequently as once every minute.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Max Severity</strong>: The maximum severity level impact for a created incident that can occur if the check fails (defaults to Critical).</p>
+</li>
+<li>
+<p><strong>Check Interval</strong>: The frequency with which a check is run (default 5 minutes).</p>
+</li>
+<li>
+<p><strong>Affects Availability</strong>: Whether or not this check impacts overall system availability calculations.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="ssh-tunneling">SSH Tunneling</h4>
+<div class="paragraph">
+<p>In many cases when it comes to monitoring databases, and services they may not be fronted on the public ips for external monitoring. To reach these safely, and securely Morpheus provides an SSH Tunneling mechanism for its check servers. This allows the check to be confirmed via an ssh port tunnel securely using a keypair.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="check-servers">Check Servers</h4>
+<div class="paragraph">
+<p>On a base installation of Morpheus a single <code>check server</code> is installed on the appliance. This is used for running any custom user checks. This services connects to the provided rabbitmq services and can be moved off or even scaled horizontally onto sets of check servers. All other checks that are related to provisioned containers or vms are executed by the installed agent on the guest OS or Docker host.</p>
 </div>
 </div>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2016-05-31 09:51:49 -04:00
+Last updated 2016-06-06 13:07:09 -04:00
 </div>
 </div>
 </body>

@@ -505,7 +505,12 @@ table.CodeRay td.code>pre{padding:0}
 <div id="toc" class="toc2">
 <div id="toctitle">Table of Contents</div>
 <ul class="sectlevel1">
-<li><a href="#upgrading">Upgrading</a></li>
+<li><a href="#upgrading">Upgrading</a>
+<ul class="sectlevel2">
+<li><a href="#debian-ubuntu">Debian / Ubuntu</a></li>
+<li><a href="#centos-rhel">CentOS / RHEL</a></li>
+</ul>
+</li>
 </ul>
 </div>
 </div>
@@ -514,14 +519,58 @@ table.CodeRay td.code>pre{padding:0}
 <h2 id="upgrading">Upgrading</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Morpheus provides a very simple and convenient upgrade process.</p>
+<p>Morpheus provides a very simple and convenient upgrade process. In most cases it is simply a matter of installing the new package on top of itself and reconfiguring the services.</p>
+</div>
+<div class="sect2">
+<h3 id="debian-ubuntu">Debian / Ubuntu</h3>
+<div class="paragraph">
+<p>Simply download the latest package or request the latest package from your account service representative.
+Then run the install process as follows:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="bash">sudo dpkg -i morpheus-appliance_x.x.x-1.amd64.deb
+sudo morpheus-ctl stop morpheus-ui
+sudo morpheus-ctl reconfigure
+sudo morpheus-ctl start morpheus-ui</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This typically is enough to complete a full upgrade. Databases will automatically be migrated upon restart of the application and service version upgrades will automatically be applied.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="centos-rhel">CentOS / RHEL</h3>
+<div class="paragraph">
+<p>Yum based package upgrades are a little different. In this case we want to run a <code>rpm -U</code> command as the package manager is slightly different.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="bash">sudo morpheus-ctl stop morpheus-ui
+sudo sudo rpm -U morpheus-appliance-x.x.x-1.x86_64.rpm
+sudo morpheus-ctl reconfigure
+sudo morpheus-ctl start morpheus-ui</code></pre>
+</div>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Tip</div>
+</td>
+<td class="content">
+Sometimes it may be necessary to restart all appliance services on the host. In order to do this simply type <code>sudo morpheus-ctl restart</code>. This will restart ALL services.
+</td>
+</tr>
+</table>
+</div>
 </div>
 </div>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2016-05-27 15:17:06 -04:00
+Last updated 2016-05-31 09:52:24 -04:00
 </div>
 </div>
 </body>

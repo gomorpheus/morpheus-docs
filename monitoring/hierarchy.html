@@ -5,7 +5,7 @@
 <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 1.5.0">
-<title>Introduction</title>
+<title>Apps &amp; Groups</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic|Noto+Serif:400,400italic,700,700italic|Droid+Sans+Mono:400">
 <style>
 /* Asciidoctor default stylesheet | MIT License | http://asciidoctor.org */
@@ -504,24 +504,63 @@ table.CodeRay td.code>pre{padding:0}
 <div id="header">
 <div id="toc" class="toc2">
 <div id="toctitle">Table of Contents</div>
-<ul class="sectlevel1">
-<li><a href="#introduction">Introduction</a></li>
+<ul class="sectlevel2">
+<li><a href="#apps-groups">Apps &amp; Groups</a></li>
 </ul>
 </div>
 </div>
 <div id="content">
-<div class="sect1">
-<h2 id="introduction">Introduction</h2>
-<div class="sectionbody">
+<div class="sect2">
+<h3 id="apps-groups">Apps &amp; Groups</h3>
 <div class="paragraph">
-<p>Morpheus is a full featured cloud application management platform. Armed with a powerful set of tools for provisioning, logging, monitoring, and backups it is well suited for managing and orchestrating any infrastucture while at the same time providing convenient self-service to both developers and DevOps teams.</p>
+<p>One great feature of the monitoring system is the ability to organize checks by groups and apps. This provides a nice convenient way to determine what a customer facing impact might be for a single failure as well as representing redundancy via groupings.</p>
+</div>
+<div class="paragraph">
+<p>It is important to note the relationship of apps, groups, and even checks with regards to instances provisioned within Morpheus. For every <code>Instance</code> that is provisioned: A monitoring <code>Group</code> is created and a <code>Check</code> is added to that group for every <code>Container</code> or <code>Virtual Machine</code> within that Instance. This makes sense such that as an Instance is scaled out horizontally (containers/vms added to it) The monitoring system accurately represents the layers of redundancy. An <code>App</code> simply maps to a Provisioning <code>App</code> and should be pretty straightforward to understand.</p>
+</div>
+<div class="sect3">
+<h4 id="groups">Groups</h4>
+<div class="paragraph">
+<p>It is also possible to organize custom checks in this hierarchical structure by manually adding or editing a Group or App. Groups can only contain checks and can be edited or created in <code>Monitoring &#8594; Groups</code>. Besides simply adding and removing checks to a group there are a few other useful options that can be customized in a group.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Min Checks</strong>: This specifies the minimum number of checks within the group that must be happy to keep the group from becoming unhealthy.</p>
+</li>
+<li>
+<p><strong>Max Severity</strong>: The maximum severity incident a failed check may create. This setting overrides a checks Max Severity setting.</p>
+</li>
+<li>
+<p><strong>Affects Availability</strong>: Whether or not a failed group impacts system wide availability calculations.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Some useful information can also be seen on the detail page of a check. For example, the average response time of all checks within the group, or an aggregated check history can be viewed.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="apps">Apps</h4>
+<div class="paragraph">
+<p>Apps are very useful for seeing an aggregation of failures, or impact based on a set of checks and groups. Apps typically correlate to apps created in provisioning but can also be manually created and organized. They can be great for visualizing the customer impact a failure might have or even keeping up on a screen in a NOC. There are a few useful options as well with regards to Apps:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Max Severity</strong>: The maximum severity incident a failed app may create. This setting overrides check and group Max Severity settings.</p>
+</li>
+<li>
+<p><strong>Affects Availability</strong>: Whether or not a failed app impacts system wide availability calculations.</p>
+</li>
+</ul>
 </div>
 </div>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2016-05-31 09:51:49 -04:00
+Last updated 2016-06-06 13:04:23 -04:00
 </div>
 </div>
 </body>
