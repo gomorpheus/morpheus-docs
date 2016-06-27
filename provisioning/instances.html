@@ -5,7 +5,7 @@
 <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 1.5.0">
-<title>Alerts</title>
+<title>Instances</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic|Noto+Serif:400,400italic,700,700italic|Droid+Sans+Mono:400">
 <style>
 /* Asciidoctor default stylesheet | MIT License | http://asciidoctor.org */
@@ -505,58 +505,36 @@ table.CodeRay td.code>pre{padding:0}
 <div id="toc" class="toc2">
 <div id="toctitle">Table of Contents</div>
 <ul class="sectlevel2">
-<li><a href="#alerts">Alerts</a></li>
+<li><a href="#instances">Instances</a></li>
 </ul>
 </div>
 </div>
 <div id="content">
 <div class="sect2">
-<h3 id="alerts">Alerts</h3>
+<h3 id="instances">Instances</h3>
 <div class="paragraph">
-<p>There are several ways to configure alerts and notifications within Morpheus. Users can be notified via Email or SMS as well as several other direct integrations. These integrations include PagerDuty, Alert Ops, Victor Ops, and even Slack chat Channel notifications (or optionally via the ServiceNow integration).</p>
-</div>
-<div class="sect3">
-<h4 id="contacts">Contacts</h4>
-<div class="paragraph">
-<p>To configure user notifications a contact must first be created in <code>Monitoring &#8594; Contacts</code>. These contacts can be one of a few types:</p>
+<p>Instances is a great starting point for taking advantage of self service features and spinning up both vms and containers. In Morpheus it may be advisable to cover the definition of a few terms used within the application so as to reduce confusion.</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Contact</strong>: Used for either Email or SMS</p>
+<p><strong>Instance</strong> - A set of containers or virtual machines that can correlate to a single horizontally scalable entity or a service suite like a database. (It is important to note that an instance can contain one or more containers/vms depending on the instance type and configuration).</p>
 </li>
 <li>
-<p><strong>Web Hook</strong>: Used for posting a notification to a web endpoint or Alert Ops.</p>
+<p><strong>Container</strong> - Typically a docker container provisioned via a Morpheus Docker host.</p>
 </li>
 <li>
-<p><strong>Slack Hook</strong>: Used for posting notifications to a <a href="https://slack.com/">Slack</a> channel.</p>
-</li>
-<li>
-<p><strong>VictorOps</strong>: Provides a web post format consistent with the required notification format for Victor Ops.</p>
+<p><strong>Virtual Machine</strong> - A virtualized compute server provisioned onto various hypervisor hosts.</p>
 </li>
 </ul>
-</div>
-<div class="paragraph">
-<p>Most of these options provide convenient examples and information when configuring the contact. Once they are configured contacts can freely be used to build <code>Alert Rules</code>.</p>
-</div>
 </div>
 <div class="sect3">
-<h4 id="alert-rules">Alert Rules</h4>
+<h4 id="getting-started">Getting Started</h4>
 <div class="paragraph">
-<p>Alert Rules provide a powerful means to configure who gets notified in various scenarios. These scenarios include targetting specific checks, groups, or apps , and adding the appropriate recipients to be notified during a situation in which those filters are impacted.</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Min Duration</strong>: This setting delays notification to the recipients by the entered number of minutes required for the incident to be opened.</p>
-</li>
-<li>
-<p><strong>Min Severity</strong>: Some executives might want to be notified of an outage but only if the severity impact goes above a certain level. This is very useful for scoping escalations.</p>
-</li>
-</ul>
+<p>The instance catalog is the one stop shop for selecting items to be provisioned and pieced together. It contains not only basic container and vm options but also tailored services for SQL databases, NoSQL databases, cache stores, message busses, web servers, and even full fledged apps. The list contains a lot of items to choose from and they are represented to the user based on what provisioning engines are enabled and integrated in the Morpheus environment.</p>
 </div>
 <div class="paragraph">
-<p>To add recipients to a rule just start typing their name in the Recipients section towards the button of the edit form. An auto-complete list will start populating with contact names. Once one is selected a delivery method can be selected as well as whether or not they should be notified of any escalation changes and/or closed incidents.</p>
+<p>To get started, simply click the <code>+ Add Instance</code> button in the upper right of the <code>Provisioning &#8594; Instances</code> section. A modal will display allowing the catalog to be searched. Once an item is selected it is just a matter of following the steps through the wizard.</p>
 </div>
 <div class="admonitionblock tip">
 <table>
@@ -565,23 +543,84 @@ table.CodeRay td.code>pre{padding:0}
 <div class="title">Tip</div>
 </td>
 <td class="content">
-A recipient can be in multiple alert rules and can even be configured to be notified via different methods depending on the rule. A useful example might be to alert someone via email for lower severity incidents but SMS for critical severity levels.
+The instance catalog can be customized via role based access control thereby restricting access to non sanctioned catalog items, as well as added to via the <code>Provisioning &#8594; Library</code> section. It is completely customizable.
 </td>
 </tr>
 </table>
 </div>
+<div class="paragraph">
+<p>The next step will ask for a Group and Cloud to be selected. The Group is an abstract representation that can contain multiple cloud integrations. These cloud integrations can also be in multiple groups and is also useful for using role based access control to restrict provisioning access and set retainment policies. If the environment is new and these do not yet exist, It may be advisable to refer to the main section on Getting started by setting up some cloud integrations and infrastructure first. The wizard continues by allowing us to choose a name for the instance as well as an environment.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+Currently the Environment option is mostly useful for presenting the user with informative metadata around the instance when coming back to it later.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Moving on, it is now time to configure the Instance. Depending on the option that was chosen and the Instance Configuration that is chosen fields will change. This can include cloud specific fields (i.e. Datastore for Vmware or Network). There will also be options like initial username. Some of these fields are optional and will be represented as such.</p>
+</div>
+<div class="paragraph">
+<p>Configuration options provided in this screen are very powerful. An example is Mysql where a Master/Slave or Master/Master layout can be selected. These configurations will automatically deploy two MySQL vms or containers and link them together to provide replication. These types of configurations exist for a wide range of instance types and are optimized for high performance and scale. It is even possible to provision entire sharded Mongo clusters.</p>
+</div>
+<div class="paragraph">
+<p>One last step before the instance can be provisioned is the <code>Automation</code> step. This wizard step may or may not appear depending on the capabilities of the instance type or previous configurations in the account. It is here one can easily select a post provisioning workflow to run ( see more on Tasks and Workflows), assign a load balancer, or even configure the backup job that gets created.</p>
+</div>
+<div class="paragraph">
+<p>Now that the steps are completed for provisioning the selected instance type , simply review your selections and complete. The instance will automatically show up in the instances list and its provisioning state will be represented. Depending on what was provisioned this step can range from seconds to minutes (typically a container configuration will be rather quick if the instance type has previously been provisioned before.)</p>
+</div>
 </div>
 <div class="sect3">
-<h4 id="configuring-notification-services">Configuring Notification Services</h4>
+<h4 id="instance-details">Instance Details</h4>
 <div class="paragraph">
-<p>By default Morpheus provides email notification services using the <code>morpheusdata.com</code> email address. It may be advisable to customize these services to use another mail delivery service.</p>
+<p>Once the instance is completed, the status will change to "Running". Clicking on an instance will present the viewer with loads of useful information, including stats like CPU, Memory, Storage, IOPS, and even Network throughput. There are several sections within an Instance page that provide useful capabilities to the user.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Summary - Stats and status information</p>
+</li>
+<li>
+<p>Deploy - Track deployment history for instance types that support deployments or manually kick off a deployment (only visible for instance types that support deployments)</p>
+</li>
+<li>
+<p>Settings - Some instance types support custom configuration settings (i.e. mysql presents the my.ini)</p>
+</li>
+<li>
+<p>Network - Useful for configuring security groups and access to the instance.</p>
+</li>
+<li>
+<p>Monitoring - Quick summary of the monitoring system and all checks that were configured to test teh state of the instance</p>
+</li>
+<li>
+<p>Backups - Quick backup dashboard. Useful for viewing historical backups as well as kicking off new ones.</p>
+</li>
+<li>
+<p>Logs - View all aggregated logs from the containers or vms representing the instance.</p>
+</li>
+<li>
+<p>Environment - View the environment variables presented to the instances or exported by the instances via Apps (more on this in the Apps section). Even see Imported environment variables that may be referenced by the running instance.</p>
+</li>
+<li>
+<p>Scale - For instances that support load balancing and auto scaling. Easily configure auto scaling thresholds and load balancer settings that pertain to a particular instance.</p>
+</li>
+<li>
+<p>Console - Access the instance or container via a clientless Console supporting SSH, RDP, VNC, and even hypervisor level remote consoles.</p>
+</li>
+</ul>
 </div>
 </div>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2016-06-17 16:10:02 -04:00
+Last updated 2016-06-17 16:37:49 -04:00
 </div>
 </div>
 </body>

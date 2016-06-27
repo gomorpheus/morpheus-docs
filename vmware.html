@@ -5,7 +5,7 @@
 <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 1.5.0">
-<title>Vmware</title>
+<title>VMware Cloud</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic|Noto+Serif:400,400italic,700,700italic|Droid+Sans+Mono:400">
 <style>
 /* Asciidoctor default stylesheet | MIT License | http://asciidoctor.org */
@@ -505,21 +505,219 @@ table.CodeRay td.code>pre{padding:0}
 <div id="toc" class="toc2">
 <div id="toctitle">Table of Contents</div>
 <ul class="sectlevel1">
-<li><a href="#vmware">Vmware</a></li>
+<li><a href="#vmware">VMware Cloud</a>
+<ul class="sectlevel2">
+<li><a href="#getting-started">Getting Started</a></li>
+<li><a href="#docker">Docker</a></li>
+<li><a href="#multitenancy">Multitenancy</a></li>
+</ul>
+</li>
 </ul>
 </div>
 </div>
 <div id="content">
 <div class="sect1">
-<h2 id="vmware">Vmware</h2>
+<h2 id="vmware">VMware Cloud</h2>
 <div class="sectionbody">
-
+<div class="paragraph">
+<p>VMware is a very common cloud integration choice supported by Morpheus. They have provided a top notch virtualization solution and one might argue pioneered the virtualization space altogether. As such, many companies utilize this technology and all the features that come with it, so Morpheus covers a broad feature set in Vcenter.</p>
+</div>
+<div class="paragraph">
+<p><strong>Features:</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Virtual Machine Provisioning</p>
+</li>
+<li>
+<p>Backups / Snapshots</p>
+</li>
+<li>
+<p>Resource Groups</p>
+</li>
+<li>
+<p>Datastores and DRS Clusters</p>
+</li>
+<li>
+<p>Distributed Switches</p>
+</li>
+<li>
+<p>Datacenter / Cluster scoping</p>
+</li>
+<li>
+<p>Brownfield VM management and migration</p>
+</li>
+<li>
+<p>VMware to VMware migrations</p>
+</li>
+<li>
+<p>VMDK/OVF image conversion support</p>
+</li>
+<li>
+<p>Hypervisor Remote Console</p>
+</li>
+<li>
+<p>Periodic Synchronization</p>
+</li>
+<li>
+<p>Veeam Backup Integration</p>
+</li>
+<li>
+<p>Lifecycle Management and Resize</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>On top of all these features, Morpheus also adds additional features to VMware that do not exist out of the box to make it easier to manage in multitenant environments as well as hybrid cloud environments:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Cloud-Init Support</p>
+</li>
+<li>
+<p>VHD to VMDK Image Conversion</p>
+</li>
+<li>
+<p>QCOW2 to VMDK Image Conversion</p>
+</li>
+<li>
+<p>Multitenancy resource allocation</p>
+</li>
+<li>
+<p>Virtual Image management (Templates)</p>
+</li>
+<li>
+<p>Auto-scaling and recovery</p>
+</li>
+</ul>
+</div>
+<div class="sect2">
+<h3 id="getting-started">Getting Started</h3>
+<div class="paragraph">
+<p>To get started with vmware, simply start by adding a Cloud in the <code>Infrastructure &#8594; Clouds</code> section.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="./images/vmware/add_cloud.png" alt="Add VMware Cloud form">
+</div>
+<div class="title">Figure 1: Add VMware Cloud form</div>
+</div>
+<div class="paragraph">
+<p>To start adding a VMware cloud there will be some things you will need:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Vcenter API Url:</strong> Typically this is the url to the vcenter web client with a <code>/sdk</code> in the path</p>
+</li>
+<li>
+<p><strong>Username/Password</strong>: A set of credentials with high level access to VMware (ensure the account has Datacenter level access)</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Once these fields are entered, some selections will start prepopulating. A cloud integration must be scoped to a specific data center and cluster. If the dropdowns do not populate, please  verify the api url and provided credentials have access to Vcenter.</p>
+</div>
+<div class="paragraph">
+<p>Another cool feature provided with the cloud integration is optional <code>Resource Pool</code> scoping. One can choose to allow the cloud to provision into All Resource Pools or a singular Resource Pool. When choosing <code>All</code>, these Resource Pools can be managed from a subaccount and visibility perspective via the Cloud Detail page (multitenancy).</p>
+</div>
+<div class="paragraph">
+<p>The VMware cloud integration provides a few additional options including allowing users to make host selections or keeping that aspect hidden such that the best host is automatically chosen for the requested provision.</p>
+</div>
+<div class="paragraph">
+<p>The <strong>RPC Mode</strong> feature can be configured to allow Morpheus to install its agent on the Guest operating system via either SSH/WinRM or Vmware Tools Guest Process feature. The VMware tools Guest Exection API can be tricky so it is recommended to use SSH/WinRM if possible. However, if it is not possible for the Appliance to have outbound access to all networks in which VMs are being provisioned to the SSH/WinRM ports (22, 5985 respectively) then Guest Execution is the only option.</p>
+</div>
+<div class="paragraph">
+<p>When following this add cloud wizard an option will be presented to create a group or add to an existing group. These groups can be given provisioning permission via  role based access control. It is normally recommended that groups are organized such that one cloud exists in one group unless the networks are setup such that internal routing is possible between the clouds. This is very useful for bursting, or hybrid cloud configurations.</p>
+</div>
+<div class="sect3">
+<h4 id="existing-instances">Existing Instances</h4>
+<div class="paragraph">
+<p>Morpheus provides several features regarding pulling in existing virtual machines and servers in an environment. Most cloud options contain a checkbox titled '<strong>Inventory Existing Instances</strong>'. When this option is selected, all VMs found within the specified scope of the cloud integration will be scanned periodically and Virtual Machines will be synced into Morpheus. By default these virtual machines are considered 'unmanaged' and do not appear in the <code>Provisioning &#8594; Instances</code> area but rather <code>Infrastructure &#8594; Hosts &#8594; Virtual Machines</code>. However, a few features are provided with regards to unmanaged instances. They can be assigned to various accounts if using a multitenant master account, however it may be best suited to instead assign the 'Resource Pool' to an account and optionally move all servers with regards to that pool (more on this later).
+A server can also be made into a managed server. During this process remote access is requested and an agent install is performed on the guest operating system. This allows for guest operations regarding log acquisition and stats. If the agent install fails, a server will still be marked as managed and an Instance will be created in <code>Provisioning</code>, however certain features will not function. This includes stats collection and logs.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+All Cloud data is resynchronized on a 5 minute interval. This includes Datastores, Resource Pools, Networks, Templates, and Virtual Machines.
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect3">
+<h4 id="service-plans">Service Plans</h4>
+<div class="paragraph">
+<p>A default set of Service Plans are created in Morpheus for the VMware provisioning engine. These Service Plans can be considered akin to AWS Flavors or Openstack Flavors. They provide a means to set predefined tiers on memory, storage, cores, and cpu. Price tables can also be applied to these so estimated cost per virtual machine can be tracked as well as pricing for customers. By default, these options are fixed sizes but can be configured for dynamic sizing. A service plan can be configured to allow a custom user entry for memory, storage, or cpu. To configure this, simply edit an existing Service Plan tied to VMware or create a new one. These all can be easily managed from the <code>Admin &#8594; Plans &amp; Pricing</code> section.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="./images/vmware/service_plans.png" alt="Plans &amp; Pricing management screen for VMware provider type">
+</div>
+<div class="title">Figure 3: Plans &amp; Pricing management screen for VMware provider type</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="virtual-images-templates">Virtual Images / Templates</h4>
+<div class="paragraph">
+<p>Morpheus will automatically take an inventory of all templates configured in Vcenter and present them as options during provisioning. However, in order for Morpheus to properly provision these virtual machines and provide accurate stats and health of these virtual machines, an agent must be installed during virtual machine startup. This means remote access needs to be granted at the guest operating system level to Morpheus. To properly configure these virtual images, find the relevant images in <code>Provisioning &#8594; Virtual Images</code> and edit the entry. On this form, a few options are presented. The first is a check box asking whether or not cloud-init is enabled. If cloud-init is enabled, simply provide the default OS username configured (for Ubuntu the username is <code>ubuntu</code> and for CentOS the username is <code>centos</code>). For those looking to add cloud-init to existing templates Morpheus requires no special configuration and can use the default <code>cloud.cfg</code> settings.</p>
+</div>
+<div class="paragraph">
+<p>A global cloud-init username/password can also be configured per account as well as a keypair via the <code>Admin&#8594;Provisioning</code> settings section. The great benefit of utilizing cloud-init is default templates do not need common credential sets thereby increasing provisioning security.</p>
+</div>
+<div class="paragraph">
+<p>Windows systems do not typically support cloud-init. So simply turn this checkbox off and provide the <code>Administrator</code> credentials. It should be noted that these credentials are encrypted in the database. If using WinRM for the RPC Mode instead of Vmware tools, a Local or Domain Administrator account credential set can be provided instead.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+Currently the Morpheus Agent supported Operatings Systems are (Ubuntu 14.04, CentOS 7, RHEL 7, and Windows 2008 +).
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="docker">Docker</h3>
+<div class="paragraph">
+<p>So far this document has covered how to add the VMware cloud integration and has enabled users the ability to provision virtual machine based instances via the <code>Add Instance</code> catalog in <code>Provisioning</code>. Another great feature provided by Morpheus out of the box is the ability to use Docker containers and even support multiple containers per Docker host. To do this a Docker Host must first be provisioned into VMware (multiple are needed when dealing with horizontal scaling scenarios).</p>
+</div>
+<div class="paragraph">
+<p>To provision a Docker Host simply navigate to the Cloud detail page or <code>Infrastructure&#8594;Hosts</code> section. From there click the <code>+ Container Host</code> button to add a VMware Docker Host. This host will show up in the Hosts tab next to othe ESXi servers that were inventoried by the VMware cloud integration. Morpheus views a Docker host just like any other Hypervisor with the caveat being that it is used for running containerized images instead of virtualized ones. Once a Docker Host is successfully provisioned a green checkmark will appear to the right of the host marking it as available for use. In the event of a failure click into the relevant host that failed and an error explaining the failure will be displayed in red at the top.</p>
+</div>
+<div class="paragraph">
+<p>Some common error scenarios include network connectivity. For a Docker Host to function properly, it must be able to resolve the Morpheus appliance url which can be configured in <code>Admin &#8594; Settings</code>. If it is unable to resolve and negotiate with the appliance than the agent installation will fail and provisioning instructions will not be able to be issued to the host.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="multitenancy">Multitenancy</h3>
+<div class="paragraph">
+<p>A very common scenario for Managed Service Providers is the need to provide access to VMware resources on a customer by customer basis. With VMware several administrative features have been added to ensure customer resources are properly scoped and isolated. For VMware it is possible to assign specific <code>Networks</code>, <code>Datastores</code>, and <code>Resource Pools</code> to customer accounts or even set the public visibility of certain resources, therefore allowing all sub accounts access to the resource.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="./images/vmware/cloud_detail.png" alt="Cloud detail view for VMware">
+</div>
+<div class="title">Figure 3: Cloud detail view for VMware</div>
+</div>
+</div>
 </div>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2016-06-06 15:17:47 -04:00
+Last updated 2016-06-27 09:38:01 -04:00
 </div>
 </div>
 </body>

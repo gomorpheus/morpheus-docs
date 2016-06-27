@@ -527,7 +527,13 @@ table.CodeRay td.code>pre{padding:0}
 <li><a href="#centos-rhel">CentOS / RHEL</a></li>
 </ul>
 </li>
-<li><a href="#provisioning">Provisioning</a></li>
+<li><a href="#provisioning">Provisioning</a>
+<ul class="sectlevel2">
+<li><a href="#instances">Instances</a></li>
+<li><a href="#apps">Apps</a></li>
+<li><a href="#deployments">Deployments</a></li>
+</ul>
+</li>
 <li><a href="#infrastructure">Infrastructure</a></li>
 <li><a href="#monitoring">Monitoring</a>
 <ul class="sectlevel2">
@@ -545,7 +551,13 @@ table.CodeRay td.code>pre{padding:0}
 <li><a href="#integrations-2">Integrations</a></li>
 </ul>
 </li>
-<li><a href="#vmware">Vmware</a></li>
+<li><a href="#vmware">VMware Cloud</a>
+<ul class="sectlevel2">
+<li><a href="#getting-started-3">Getting Started</a></li>
+<li><a href="#docker">Docker</a></li>
+<li><a href="#multitenancy">Multitenancy</a></li>
+</ul>
+</li>
 <li><a href="#amazon">Amazon</a></li>
 <li><a href="#azure">Azure</a></li>
 <li><a href="#google">Google</a></li>
@@ -568,7 +580,7 @@ table.CodeRay td.code>pre{padding:0}
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>2.7.2</p>
+<p>2.7.9</p>
 </div>
 </div>
 </div>
@@ -1078,7 +1090,183 @@ Sometimes it may be necessary to restart all appliance services on the host. In 
 <div class="sect1">
 <h2 id="provisioning">Provisioning</h2>
 <div class="sectionbody">
+<div class="paragraph">
+<p>There are several capabilities in the Morpheus provisioning engine. Things ranging from application / service deployments via containers, virtual machines, and even bare metal. Deployment management and app template construction are also core aspects of the provisioning engine. Take advantage of custom tasks and workflows within any environment by building tasks and workflows from those tasks. There is a lot of information to cover with regards to provisioning but Morpheus makes it intuitive and smooth.</p>
+</div>
+<div class="sect2">
+<h3 id="instances">Instances</h3>
+<div class="paragraph">
+<p>Instances is a great starting point for taking advantage of self service features and spinning up both vms and containers. In Morpheus it may be advisable to cover the definition of a few terms used within the application so as to reduce confusion.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Instance</strong> - A set of containers or virtual machines that can correlate to a single horizontally scalable entity or a service suite like a database. (It is important to note that an instance can contain one or more containers/vms depending on the instance type and configuration).</p>
+</li>
+<li>
+<p><strong>Container</strong> - Typically a docker container provisioned via a Morpheus Docker host.</p>
+</li>
+<li>
+<p><strong>Virtual Machine</strong> - A virtualized compute server provisioned onto various hypervisor hosts.</p>
+</li>
+</ul>
+</div>
+<div class="sect3">
+<h4 id="getting-started">Getting Started</h4>
+<div class="paragraph">
+<p>The instance catalog is the one stop shop for selecting items to be provisioned and pieced together. It contains not only basic container and vm options but also tailored services for SQL databases, NoSQL databases, cache stores, message busses, web servers, and even full fledged apps. The list contains a lot of items to choose from and they are represented to the user based on what provisioning engines are enabled and integrated in the Morpheus environment.</p>
+</div>
+<div class="paragraph">
+<p>To get started, simply click the <code>+ Add Instance</code> button in the upper right of the <code>Provisioning &#8594; Instances</code> section. A modal will display allowing the catalog to be searched. Once an item is selected it is just a matter of following the steps through the wizard.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Tip</div>
+</td>
+<td class="content">
+The instance catalog can be customized via role based access control thereby restricting access to non sanctioned catalog items, as well as added to via the <code>Provisioning &#8594; Library</code> section. It is completely customizable.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>The next step will ask for a Group and Cloud to be selected. The Group is an abstract representation that can contain multiple cloud integrations. These cloud integrations can also be in multiple groups and is also useful for using role based access control to restrict provisioning access and set retainment policies. If the environment is new and these do not yet exist, It may be advisable to refer to the main section on Getting started by setting up some cloud integrations and infrastructure first. The wizard continues by allowing us to choose a name for the instance as well as an environment.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+Currently the Environment option is mostly useful for presenting the user with informative metadata around the instance when coming back to it later.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Moving on, it is now time to configure the Instance. Depending on the option that was chosen and the Instance Configuration that is chosen fields will change. This can include cloud specific fields (i.e. Datastore for Vmware or Network). There will also be options like initial username. Some of these fields are optional and will be represented as such.</p>
+</div>
+<div class="paragraph">
+<p>Configuration options provided in this screen are very powerful. An example is Mysql where a Master/Slave or Master/Master layout can be selected. These configurations will automatically deploy two MySQL vms or containers and link them together to provide replication. These types of configurations exist for a wide range of instance types and are optimized for high performance and scale. It is even possible to provision entire sharded Mongo clusters.</p>
+</div>
+<div class="paragraph">
+<p>One last step before the instance can be provisioned is the <code>Automation</code> step. This wizard step may or may not appear depending on the capabilities of the instance type or previous configurations in the account. It is here one can easily select a post provisioning workflow to run ( see more on Tasks and Workflows), assign a load balancer, or even configure the backup job that gets created.</p>
+</div>
+<div class="paragraph">
+<p>Now that the steps are completed for provisioning the selected instance type , simply review your selections and complete. The instance will automatically show up in the instances list and its provisioning state will be represented. Depending on what was provisioned this step can range from seconds to minutes (typically a container configuration will be rather quick if the instance type has previously been provisioned before.)</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="instance-details">Instance Details</h4>
+<div class="paragraph">
+<p>Once the instance is completed, the status will change to "Running". Clicking on an instance will present the viewer with loads of useful information, including stats like CPU, Memory, Storage, IOPS, and even Network throughput. There are several sections within an Instance page that provide useful capabilities to the user.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Summary - Stats and status information</p>
+</li>
+<li>
+<p>Deploy - Track deployment history for instance types that support deployments or manually kick off a deployment (only visible for instance types that support deployments)</p>
+</li>
+<li>
+<p>Settings - Some instance types support custom configuration settings (i.e. mysql presents the my.ini)</p>
+</li>
+<li>
+<p>Network - Useful for configuring security groups and access to the instance.</p>
+</li>
+<li>
+<p>Monitoring - Quick summary of the monitoring system and all checks that were configured to test teh state of the instance</p>
+</li>
+<li>
+<p>Backups - Quick backup dashboard. Useful for viewing historical backups as well as kicking off new ones.</p>
+</li>
+<li>
+<p>Logs - View all aggregated logs from the containers or vms representing the instance.</p>
+</li>
+<li>
+<p>Environment - View the environment variables presented to the instances or exported by the instances via Apps (more on this in the Apps section). Even see Imported environment variables that may be referenced by the running instance.</p>
+</li>
+<li>
+<p>Scale - For instances that support load balancing and auto scaling. Easily configure auto scaling thresholds and load balancer settings that pertain to a particular instance.</p>
+</li>
+<li>
+<p>Console - Access the instance or container via a clientless Console supporting SSH, RDP, VNC, and even hypervisor level remote consoles.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="apps">Apps</h3>
 
+</div>
+<div class="sect2">
+<h3 id="deployments">Deployments</h3>
+<div class="paragraph">
+<p>The deployments section provides very useful PaaS like capabilities when it comes to deploying applications into the newly provisioned environment. These can be uploaded directly from the UI, pulled from a build server, pulled from a public or private Git repository or even via the API and the various plugins created, such as Jenkins, and Gradle to support continuous build / integration workflows.</p>
+</div>
+<div class="paragraph">
+<p>A deployment can be considered a set of versions that relate to a particular project or application being deployed. This allows one to keep track of a history of versions and easily reuse these deployment versions across instances that may exist in different environments. An example might be to deploy a version from a deployment to a staging instance and (once approved) also deployed into production.</p>
+</div>
+<div class="sect3">
+<h4 id="getting-started-2">Getting Started</h4>
+<div class="paragraph">
+<p>Getting started with deployments is easy. They can vary slightly for the application stack being deployed but the simplest phase of a deployment is adding a version and adding the appropriate files to the deployment archive that are needed for the application to run. This could be a single file like a <code>WAR</code> file for Tomcat, or it could be hundreds of files for stacks like <code>Ruby on Rails</code>.</p>
+</div>
+<div class="paragraph">
+<p>There are a few ways to create a deployment. The first is to use the <code>Provisioning &#8594; Deployments</code> section of the application to create them. Simply add a new deployment and give it a name representing the application that is being deployed. Once a deployment is created select the deployment to view its versions (which will be empty to start). Next, its time to add a version.</p>
+</div>
+<div class="paragraph">
+<p>When adding a version there are several options. There are 3 types represented by the UI. These include File, Fetch, and Git respectively. A File deployment allows the user to simply drag their files into the file explorer presented by the dialog. This file explorer can take single files or entire file trees (If files exist in subfolders then only the Chrome browser is supported due to browser limitations at the time of this writing). This is also the common type that is represented when files are uploaded via the CLI, or available build tool integration plugins. Once the files have completed their upload simply save the version for use.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="git">Git</h4>
+<div class="paragraph">
+<p>For performing git based deploys Morpheus supports both public and private repositories. To utilize a private git repository the add version dialog will display a public keypair that can be added to the git service for authentication purposes. Currently this keypair is shared across the account and not specifically scoped to the user so it may be advisable to connect this integration to a deployment account in git. From here either a <code>ssh</code> or <code>https</code> git url can be entered along with a git branch or tag name. Once the version is saved, this repository will be copied down into the deployment archive for use.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="fetch">Fetch</h4>
+<div class="paragraph">
+<p>Fetch based deployments are pretty straightforward. Simply enter a url to a file representing the deployment. This can be a single file (in which case it will just be added to the deployment archive singularly) or it can be a zip file (which will automatically be expanded into the archive). HTTP Authentication options can also be entered if the url requires some form of basic authentication scheme for access by the appliance.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="deploying-to-an-instance">Deploying to an Instance</h4>
+<div class="paragraph">
+<p>Now that a version has been added to a deployment it is easy to push that deploy out to any instance provisioned within Morpheus. Simply navigate to the specific Instance that needs deployed to. On the Instance detail page there is a tab called <code>Deploy</code>. From here simply add a deploy. The dialog will ask firstly from which deployment the deploy is from (or allow you to create a new one on the spot) , and secondly which version to deploy (also with the option to add one on the fly). The next step of the wizard will display any configuration options that might be specific to the instance type being deployed to (i.e. <code>CATALINA_OPTS</code> for Tomcat or <code>Java Command</code> for java) as well as the file explorer and deployment type selections for review (or use when creating a new version on the fly). Fill in the required items then simply hit complete. The deploy will now be asynchronously sent off to all of the virtual machines or containers within the instance in a rolling restart and the deployment status will be represented.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Tip</div>
+</td>
+<td class="content">
+When deploying to an instance, the custom configuration options that were entered during the previous deployment are automatically carried forward allowing one to edit them or leave them as is.
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect3">
+<h4 id="rolling-backwards-and-forwards">Rolling Backwards and Forwards</h4>
+<div class="paragraph">
+<p>Because of the tracked history of deployments kept within Morpheus, the deploy tab of instance detail makes it easy to choose a previously run deployment and jump back to it in the event of a failed deployment. The history will automatically be updated and the configuration, as well as data from the previous deployment state of the instance will be restored.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="offloading-storage">Offloading Storage</h4>
+<div class="paragraph">
+<p>Since a full history of the backup buils are kept in Morpheus, as the appliance grows it becomes necessary to change where these are stored. On a fresh install these are stored on the local appliance in <code>/var/opt/morpheus</code> or wherever the master account may have changed the configuration to point to. It is also possible to adjust the deployment archive store by creating a <code>Storage Provider</code> tied to an S3 compatible object store, Openstack Swift object store, or any other type of mountpoint provided. This option can be adjusted in <code>Admin&#8594;Provisioning</code> once a storage provider is created within the account.</p>
+</div>
+</div>
+</div>
 </div>
 </div>
 <div class="sect1">
@@ -1173,7 +1361,7 @@ Sometimes it may be necessary to restart all appliance services on the host. In 
 </div>
 </div>
 <div class="sect3">
-<h4 id="apps">Apps</h4>
+<h4 id="apps-2">Apps</h4>
 <div class="paragraph">
 <p>Apps are very useful for seeing an aggregation of failures, or impact based on a set of checks and groups. Apps typically correlate to apps created in provisioning but can also be manually created and organized. They can be great for visualizing the customer impact a failure might have or even keeping up on a screen in a NOC. There are a few useful options as well with regards to Apps:</p>
 </div>
@@ -1251,6 +1439,24 @@ Sometimes it may be necessary to restart all appliance services on the host. In 
 </div>
 <div class="paragraph">
 <p>To add recipients to a rule just start typing their name in the Recipients section towards the button of the edit form. An auto-complete list will start populating with contact names. Once one is selected a delivery method can be selected as well as whether or not they should be notified of any escalation changes and/or closed incidents.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Tip</div>
+</td>
+<td class="content">
+A recipient can be in multiple alert rules and can even be configured to be notified via different methods depending on the rule. A useful example might be to alert someone via email for lower severity incidents but SMS for critical severity levels.
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect3">
+<h4 id="configuring-notification-services">Configuring Notification Services</h4>
+<div class="paragraph">
+<p>By default Morpheus provides email notification services using the <code>morpheusdata.com</code> email address. It may be advisable to customize these services to use another mail delivery service.</p>
 </div>
 </div>
 </div>
@@ -1374,9 +1580,201 @@ New features are on the roadmap for the main logs section including saved search
 </div>
 </div>
 <div class="sect1">
-<h2 id="vmware">Vmware</h2>
+<h2 id="vmware">VMware Cloud</h2>
 <div class="sectionbody">
-
+<div class="paragraph">
+<p>VMware is a very common cloud integration choice supported by Morpheus. They have provided a top notch virtualization solution and one might argue pioneered the virtualization space altogether. As such, many companies utilize this technology and all the features that come with it, so Morpheus covers a broad feature set in Vcenter.</p>
+</div>
+<div class="paragraph">
+<p><strong>Features:</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Virtual Machine Provisioning</p>
+</li>
+<li>
+<p>Backups / Snapshots</p>
+</li>
+<li>
+<p>Resource Groups</p>
+</li>
+<li>
+<p>Datastores and DRS Clusters</p>
+</li>
+<li>
+<p>Distributed Switches</p>
+</li>
+<li>
+<p>Datacenter / Cluster scoping</p>
+</li>
+<li>
+<p>Brownfield VM management and migration</p>
+</li>
+<li>
+<p>VMware to VMware migrations</p>
+</li>
+<li>
+<p>VMDK/OVF image conversion support</p>
+</li>
+<li>
+<p>Hypervisor Remote Console</p>
+</li>
+<li>
+<p>Periodic Synchronization</p>
+</li>
+<li>
+<p>Veeam Backup Integration</p>
+</li>
+<li>
+<p>Lifecycle Management and Resize</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>On top of all these features, Morpheus also adds additional features to VMware that do not exist out of the box to make it easier to manage in multitenant environments as well as hybrid cloud environments:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Cloud-Init Support</p>
+</li>
+<li>
+<p>VHD to VMDK Image Conversion</p>
+</li>
+<li>
+<p>QCOW2 to VMDK Image Conversion</p>
+</li>
+<li>
+<p>Multitenancy resource allocation</p>
+</li>
+<li>
+<p>Virtual Image management (Templates)</p>
+</li>
+<li>
+<p>Auto-scaling and recovery</p>
+</li>
+</ul>
+</div>
+<div class="sect2">
+<h3 id="getting-started-3">Getting Started</h3>
+<div class="paragraph">
+<p>To get started with vmware, simply start by adding a Cloud in the <code>Infrastructure &#8594; Clouds</code> section.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="./images/vmware/add_cloud.png" alt="Add VMware Cloud form">
+</div>
+<div class="title">Figure 1: Add VMware Cloud form</div>
+</div>
+<div class="paragraph">
+<p>To start adding a VMware cloud there will be some things you will need:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Vcenter API Url:</strong> Typically this is the url to the vcenter web client with a <code>/sdk</code> in the path</p>
+</li>
+<li>
+<p><strong>Username/Password</strong>: A set of credentials with high level access to VMware (ensure the account has Datacenter level access)</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Once these fields are entered, some selections will start prepopulating. A cloud integration must be scoped to a specific data center and cluster. If the dropdowns do not populate, please  verify the api url and provided credentials have access to Vcenter.</p>
+</div>
+<div class="paragraph">
+<p>Another cool feature provided with the cloud integration is optional <code>Resource Pool</code> scoping. One can choose to allow the cloud to provision into All Resource Pools or a singular Resource Pool. When choosing <code>All</code>, these Resource Pools can be managed from a subaccount and visibility perspective via the Cloud Detail page (multitenancy).</p>
+</div>
+<div class="paragraph">
+<p>The VMware cloud integration provides a few additional options including allowing users to make host selections or keeping that aspect hidden such that the best host is automatically chosen for the requested provision.</p>
+</div>
+<div class="paragraph">
+<p>The <strong>RPC Mode</strong> feature can be configured to allow Morpheus to install its agent on the Guest operating system via either SSH/WinRM or Vmware Tools Guest Process feature. The VMware tools Guest Exection API can be tricky so it is recommended to use SSH/WinRM if possible. However, if it is not possible for the Appliance to have outbound access to all networks in which VMs are being provisioned to the SSH/WinRM ports (22, 5985 respectively) then Guest Execution is the only option.</p>
+</div>
+<div class="paragraph">
+<p>When following this add cloud wizard an option will be presented to create a group or add to an existing group. These groups can be given provisioning permission via  role based access control. It is normally recommended that groups are organized such that one cloud exists in one group unless the networks are setup such that internal routing is possible between the clouds. This is very useful for bursting, or hybrid cloud configurations.</p>
+</div>
+<div class="sect3">
+<h4 id="existing-instances">Existing Instances</h4>
+<div class="paragraph">
+<p>Morpheus provides several features regarding pulling in existing virtual machines and servers in an environment. Most cloud options contain a checkbox titled '<strong>Inventory Existing Instances</strong>'. When this option is selected, all VMs found within the specified scope of the cloud integration will be scanned periodically and Virtual Machines will be synced into Morpheus. By default these virtual machines are considered 'unmanaged' and do not appear in the <code>Provisioning &#8594; Instances</code> area but rather <code>Infrastructure &#8594; Hosts &#8594; Virtual Machines</code>. However, a few features are provided with regards to unmanaged instances. They can be assigned to various accounts if using a multitenant master account, however it may be best suited to instead assign the 'Resource Pool' to an account and optionally move all servers with regards to that pool (more on this later).
+A server can also be made into a managed server. During this process remote access is requested and an agent install is performed on the guest operating system. This allows for guest operations regarding log acquisition and stats. If the agent install fails, a server will still be marked as managed and an Instance will be created in <code>Provisioning</code>, however certain features will not function. This includes stats collection and logs.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+All Cloud data is resynchronized on a 5 minute interval. This includes Datastores, Resource Pools, Networks, Templates, and Virtual Machines.
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect3">
+<h4 id="service-plans">Service Plans</h4>
+<div class="paragraph">
+<p>A default set of Service Plans are created in Morpheus for the VMware provisioning engine. These Service Plans can be considered akin to AWS Flavors or Openstack Flavors. They provide a means to set predefined tiers on memory, storage, cores, and cpu. Price tables can also be applied to these so estimated cost per virtual machine can be tracked as well as pricing for customers. By default, these options are fixed sizes but can be configured for dynamic sizing. A service plan can be configured to allow a custom user entry for memory, storage, or cpu. To configure this, simply edit an existing Service Plan tied to VMware or create a new one. These all can be easily managed from the <code>Admin &#8594; Plans &amp; Pricing</code> section.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="./images/vmware/service_plans.png" alt="Plans &amp; Pricing management screen for VMware provider type">
+</div>
+<div class="title">Figure 3: Plans &amp; Pricing management screen for VMware provider type</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="virtual-images-templates">Virtual Images / Templates</h4>
+<div class="paragraph">
+<p>Morpheus will automatically take an inventory of all templates configured in Vcenter and present them as options during provisioning. However, in order for Morpheus to properly provision these virtual machines and provide accurate stats and health of these virtual machines, an agent must be installed during virtual machine startup. This means remote access needs to be granted at the guest operating system level to Morpheus. To properly configure these virtual images, find the relevant images in <code>Provisioning &#8594; Virtual Images</code> and edit the entry. On this form, a few options are presented. The first is a check box asking whether or not cloud-init is enabled. If cloud-init is enabled, simply provide the default OS username configured (for Ubuntu the username is <code>ubuntu</code> and for CentOS the username is <code>centos</code>). For those looking to add cloud-init to existing templates Morpheus requires no special configuration and can use the default <code>cloud.cfg</code> settings.</p>
+</div>
+<div class="paragraph">
+<p>A global cloud-init username/password can also be configured per account as well as a keypair via the <code>Admin&#8594;Provisioning</code> settings section. The great benefit of utilizing cloud-init is default templates do not need common credential sets thereby increasing provisioning security.</p>
+</div>
+<div class="paragraph">
+<p>Windows systems do not typically support cloud-init. So simply turn this checkbox off and provide the <code>Administrator</code> credentials. It should be noted that these credentials are encrypted in the database. If using WinRM for the RPC Mode instead of Vmware tools, a Local or Domain Administrator account credential set can be provided instead.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+Currently the Morpheus Agent supported Operatings Systems are (Ubuntu 14.04, CentOS 7, RHEL 7, and Windows 2008 +).
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="docker">Docker</h3>
+<div class="paragraph">
+<p>So far this document has covered how to add the VMware cloud integration and has enabled users the ability to provision virtual machine based instances via the <code>Add Instance</code> catalog in <code>Provisioning</code>. Another great feature provided by Morpheus out of the box is the ability to use Docker containers and even support multiple containers per Docker host. To do this a Docker Host must first be provisioned into VMware (multiple are needed when dealing with horizontal scaling scenarios).</p>
+</div>
+<div class="paragraph">
+<p>To provision a Docker Host simply navigate to the Cloud detail page or <code>Infrastructure&#8594;Hosts</code> section. From there click the <code>+ Container Host</code> button to add a VMware Docker Host. This host will show up in the Hosts tab next to othe ESXi servers that were inventoried by the VMware cloud integration. Morpheus views a Docker host just like any other Hypervisor with the caveat being that it is used for running containerized images instead of virtualized ones. Once a Docker Host is successfully provisioned a green checkmark will appear to the right of the host marking it as available for use. In the event of a failure click into the relevant host that failed and an error explaining the failure will be displayed in red at the top.</p>
+</div>
+<div class="paragraph">
+<p>Some common error scenarios include network connectivity. For a Docker Host to function properly, it must be able to resolve the Morpheus appliance url which can be configured in <code>Admin &#8594; Settings</code>. If it is unable to resolve and negotiate with the appliance than the agent installation will fail and provisioning instructions will not be able to be issued to the host.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="multitenancy">Multitenancy</h3>
+<div class="paragraph">
+<p>A very common scenario for Managed Service Providers is the need to provide access to VMware resources on a customer by customer basis. With VMware several administrative features have been added to ensure customer resources are properly scoped and isolated. For VMware it is possible to assign specific <code>Networks</code>, <code>Datastores</code>, and <code>Resource Pools</code> to customer accounts or even set the public visibility of certain resources, therefore allowing all sub accounts access to the resource.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="./images/vmware/cloud_detail.png" alt="Cloud detail view for VMware">
+</div>
+<div class="title">Figure 3: Cloud detail view for VMware</div>
+</div>
+</div>
 </div>
 </div>
 <div class="sect1">
