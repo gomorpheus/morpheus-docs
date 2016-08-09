@@ -4,7 +4,9 @@
 
 image::administration/roles.png[caption="Figure 1: ", title="Role management Administration page", alt="Role management Administration page"]
 
-There are 2 base roles provided by {morpheus} upon first installation. They are "System Admin", and "Account Admin" (Can be noted on the management page by having a scope of 'System'). The "Super Admin" role is a special role that only the master account should have access to. It provides access to settings that can apply globally across all accounts in the system. The "Account Admin" role is just a base role that is seeded in for use as the default role when creating new subaccounts. This default role can be copied or modified. If it desired that an account  take on a different default base role, this can be done from the `Admin -> Settings` section under "Account Management Settings".
+There are 2 base roles provided by {morpheus} upon first installation. They are "System Admin", and "Account Admin" (Can be noted on the management page by having a scope of 'System'). The "Super Admin" role is a special role that only the master account should have access to. It provides access to settings that can apply globally across all accounts in the system. The "Account Admin" role is just a base role that is seeded in for use as the default role when creating new subaccounts. This default role can be copied or modified. If it desired that an account  take on a different default base role, this can be done from the `Admin -> Settings` section under "Account Management Settings". You can also assign a base role to an account in the `Admin -> Accounts` section or directly to a user in `Admin -> Users`.
+
+In the `Account -> Roles` section there are 2 types of ways to edit a role. One is to click a role's name to view its permission set and manipulate its different access levels. The other is to click the edit icon on the right. In this mode you can rename a role or set usage limits (i.e. max memory usage or max storage usage for users assigned to this role).
 
 When it comes to managing a role there are 4 subsections. They are "Feature Access", "Group Access", "Cloud Access", and "Instance Type Access". A couple of these sections do not apply in certain scenarios (depending on if the role is being used as an Account base role or a user role).
 
@@ -41,3 +43,4 @@ Instance Type access controls what different instance types a user or account ar
 image::administration/role_clouds.png[caption="Figure 5: ", title="Example of instance types list when clicking into a role detail page", alt="Instance Type cloud access section"]
 
 Similar to the last three sections, the default Global Access dropdown grant everyone access to everything in the appliance that can be provisioned onto (including newly added instance types). Simply set this to "Custom" when it is desired to use more fine grained control.
+

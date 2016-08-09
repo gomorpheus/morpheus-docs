@@ -17,6 +17,8 @@ The VMware cloud integration provides a few additional options including allowin
 
 The *RPC Mode* feature can be configured to allow Morpheus to install its agent on the Guest operating system via either SSH/WinRM or Vmware Tools Guest Process feature. The VMware tools Guest Exection API can be tricky so it is recommended to use SSH/WinRM if possible. However, if it is not possible for the Appliance to have outbound access to all networks in which VMs are being provisioned to the SSH/WinRM ports (22, 5985 respectively) then Guest Execution is the only option.
 
+The `Use VNC` console option on the vmware cloud requires special configuration on each ESXI host but allowed hypervisor level remote console support. (See the Advanced Section for details)
+
 When following this add cloud wizard an option will be presented to create a group or add to an existing group. These groups can be given provisioning permission via  role based access control. It is normally recommended that groups are organized such that one cloud exists in one group unless the networks are setup such that internal routing is possible between the clouds. This is very useful for bursting, or hybrid cloud configurations.
 
 ==== Existing Instances
