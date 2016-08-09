@@ -5,7 +5,7 @@
 <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 1.5.0">
-<title>Azure</title>
+<title>Docker</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic|Noto+Serif:400,400italic,700,700italic|Droid+Sans+Mono:400">
 <style>
 /* Asciidoctor default stylesheet | MIT License | http://asciidoctor.org */
@@ -504,199 +504,12 @@ table.CodeRay td.code>pre{padding:0}
 <div id="header">
 <div id="toc" class="toc2">
 <div id="toctitle">Table of Contents</div>
-<ul class="sectlevel1">
-<li><a href="#azure">Azure</a>
-<ul class="sectlevel3">
-<li><a href="#getting-started">Getting Started</a></li>
+<ul class="sectlevel2">
 <li><a href="#docker">Docker</a></li>
-<li><a href="#multitenancy">Multitenancy</a></li>
-</ul>
-</li>
 </ul>
 </div>
 </div>
 <div id="content">
-<div class="sect1">
-<h2 id="azure">Azure</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Azure is Microsoft&#8217;s public cloud offering. Offering a full range of services and features across the globe in various datacenters. It is the equivalent of AWS for Microsoft running primarily on the Hyper-V based hypervisor. While it is a great public cloud offering, it can be somewhat difficult to get integrated with which is what this guide aims to cover.</p>
-</div>
-<div class="paragraph">
-<p><strong>Features:</strong></p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Virtual Machine Provisioning</p>
-</li>
-<li>
-<p>Backups / Snapshots</p>
-</li>
-<li>
-<p>Resource Groups</p>
-</li>
-<li>
-<p>Networks</p>
-</li>
-<li>
-<p>Marketplace Search and Provisioning</p>
-</li>
-<li>
-<p>Migrations</p>
-</li>
-<li>
-<p>Remote Console</p>
-</li>
-<li>
-<p>Periodic Synchronization</p>
-</li>
-<li>
-<p>Lifecycle Management and Resize</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>Combine this with on premise solutions like Azure-Stack and Morpheus can provide a single pane of glass and self service portal for managing instances scattered across both public Azure and private Azure Stack offerings.</p>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<div class="title">Note</div>
-</td>
-<td class="content">
-Morpheus even supports integrating with CSP based accounts in Azure (typically used by managed service providers).
-</td>
-</tr>
-</table>
-</div>
-<div class="sect3">
-<h4 id="getting-started">Getting Started</h4>
-<div class="paragraph">
-<p>To get started a few prerequisites must first be met. Firstly, an Azure subscription is required and can be created by going to <a href="https://account.windowsazure.com/organization">https://account.windowsazure.com/organization</a>.</p>
-</div>
-<div class="paragraph">
-<p>Once a subscription has been created we can now login to the management portal: <a href="https://manage.windowsazure.com">https://manage.windowsazure.com</a>. From here we need to add an app account to the active directory services of Azure.</p>
-</div>
-<div class="admonitionblock tip">
-<table>
-<tr>
-<td class="icon">
-<div class="title">Tip</div>
-</td>
-<td class="content">
-Azure is still migrating services gradually from the old portal UI to the new portal UI, as a result some aspects of this process will require moving between the 2 types of portals.
-</td>
-</tr>
-</table>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="./images/azure/active_directory.png" alt="Azure Active Directory UI">
-</div>
-<div class="title">Figure 1: Azure Active Directory UI</div>
-</div>
-<div class="paragraph">
-<p>Once an active directory service is setup, an application credential must be added in order for Morpheus to have access to Azure. To do this simply click into the Active Directory and create a new Application. Select ‘Add an application my organization is developing’.  The name can be whatever and the type should be ‘Web Application and/or web API’.  Come up with any ‘sign-on url’ and ‘app id url’ (they will not be used and can even be the same value). Finally, Navigate into the ‘Configure’ section for the application. A screen similar to Figure 2 should be visible:</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="./images/azure/application.png" alt="Azure Application Detail Page">
-</div>
-<div class="title">Figure 2: Azure Application Detail Page</div>
-</div>
-<div class="paragraph">
-<p>There are two pieces of information needed from this page. The Client ID will be needed when adding a Cloud to Morpheus as well as a secret key which can be created in the keys section of the application detail page.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="./images/azure/keys.png" alt="Azure Application Detail Key Management">
-</div>
-<div class="title">Figure 3: Azure Application Detail Key Management</div>
-</div>
-<div class="paragraph">
-<p>The next piece of information needed is the Tenant ID to be used by Morpheus. This can be one of the more difficult pieces to acquire via the Azure UI. To do so navigate back to the 'Applications' list section under 'Active Directory' and simply click 'View Endpoints' on the bottom of the screen:</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="./images/azure/endpoints.png" alt=""Azure Active Directory View Endpoints">
-</div>
-<div class="title">Figure 4: Azure Active Directory View Endpoints</div>
-</div>
-<div class="paragraph">
-<p>A dialog should appear containing several endpoint links. In these links your Tenant ID is listed as a GUID. Copy this as the Tenant ID for use when adding a cloud to Morpheus:</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="./images/azure/endpoints_dialog.png" alt="Azure Active Directory View Endpoints Tenant ID">
-</div>
-<div class="title">Figure 5: Azure Active Directory Tenant ID</div>
-</div>
-<div class="paragraph">
-<p>Almost everything necessary to setup Azure has been acquired, but the next step involves granting permission to the Morpheus application to access resources and subscriptions within Azure. Now it is time to login to the new Azure portal via <a href="https://portal.azure.com">https://portal.azure.com</a>. Once logged in simply navigate to the subscriptions area of the portal.</p>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<div class="title">Note</div>
-</td>
-<td class="content">
-The Subscription ID will be necessary when adding a cloud into Morpheus, so it is important to write this id down.
-</td>
-</tr>
-</table>
-</div>
-<div class="paragraph">
-<p>Once the subscription is selected, go into its 'Settings' and navigate to the 'Users' section in the right hand navigation. This is where things get a bit confusing in the azure portal. We need to add a new Owner to the account but instead of adding a User we are actually going to be adding the application we created in active directory earlier.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="./images/azure/add_owner.png" alt="Azure Add Owner to Subscription">
-</div>
-<div class="title">Figure 6: Azure Add Owner to Subscription</div>
-</div>
-<div class="paragraph">
-<p>Once add owner has been selected, a list of users in active directory can be seen along with a search field at the top. What is a bit confusing is the app that was created is also a user but does not show in the default list. It will only show up once it is searched for by name.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="./images/azure/add_app.png" alt="Azure Add Application User">
-</div>
-<div class="title">Figure 7: Azure Add Application User</div>
-</div>
-<div class="paragraph">
-<p>Now Morpheus will have permission to access resources and APIs to utilize Azure properly. All that is needed is to simply fill out the add cloud form in Morpheus. However, there are a few remaining prerequisites when it comes to setting up Azure. It is necessary for there to be both a Resource Group in the Azure Portal, A Network Security Group, A Virtual Network, and a Storage Account. The Storage Account should be configured as follows:</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="./images/azure/storage_account.png" alt="Azure Add Storage Account Configuration">
-</div>
-<div class="title">Figure 8: Azure Add Storage Account Configuration</div>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<div class="title">Note</div>
-</td>
-<td class="content">
-Remember, Morpheus needs to be able to remotely access provisioned vms via both SSH (Linux) and WinRM(Windows) in order to install the agent for stats collection and container orchestration (optionally). Make sure the network security group is configured correctly or an Azure Express Connect is properly configured. Remote Console can also utilize port 3389 for RDP based vms.
-</td>
-</tr>
-</table>
-</div>
-<div class="paragraph">
-<p>To finally add the Azure integration into Morpheus navigate to <code>Infrastructure &#8594; Clouds</code> and add an <code>Azure</code> cloud. Fill in the form with all the information that was previously acquired throughout the getting started section of the user guide.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="./images/azure/add_cloud.png" alt="Azure Add Cloud">
-</div>
-<div class="title">Figure 9: Azure Add Cloud</div>
-</div>
-</div>
 <div class="sect2">
 <h3 id="docker">Docker</h3>
 <div class="paragraph">
@@ -709,18 +522,10 @@ Remember, Morpheus needs to be able to remotely access provisioned vms via both 
 <p>Some common error scenarios include network connectivity. For a Docker Host to function properly, it must be able to resolve the Morpheus appliance url which can be configured in <code>Admin &#8594; Settings</code>. If it is unable to resolve and negotiate with the appliance than the agent installation will fail and provisioning instructions will not be able to be issued to the host.</p>
 </div>
 </div>
-<div class="sect2">
-<h3 id="multitenancy">Multitenancy</h3>
-<div class="paragraph">
-<p>A very common scenario for Managed Service Providers is the need to provide access to Azure resources on a customer by customer basis. With Azure several administrative features have been added to ensure customer resources are properly scoped and isolated. For Azure it is possible to assign specific <code>Networks</code>, and <code>Resource Groups</code> to customer accounts or even set the public visibility of certain resources, therefore allowing all sub accounts access to the resource.</p>
-</div>
-</div>
-</div>
-</div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2016-08-09 13:29:53 -04:00
+Last updated 2016-08-09 13:26:37 -04:00
 </div>
 </div>
 </body>

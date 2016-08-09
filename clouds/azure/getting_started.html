@@ -5,7 +5,7 @@
 <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 1.5.0">
-<title>Azure</title>
+<title>Getting Started</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic|Noto+Serif:400,400italic,700,700italic|Droid+Sans+Mono:400">
 <style>
 /* Asciidoctor default stylesheet | MIT License | http://asciidoctor.org */
@@ -504,73 +504,12 @@ table.CodeRay td.code>pre{padding:0}
 <div id="header">
 <div id="toc" class="toc2">
 <div id="toctitle">Table of Contents</div>
-<ul class="sectlevel1">
-<li><a href="#azure">Azure</a>
 <ul class="sectlevel3">
 <li><a href="#getting-started">Getting Started</a></li>
-<li><a href="#docker">Docker</a></li>
-<li><a href="#multitenancy">Multitenancy</a></li>
-</ul>
-</li>
 </ul>
 </div>
 </div>
 <div id="content">
-<div class="sect1">
-<h2 id="azure">Azure</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Azure is Microsoft&#8217;s public cloud offering. Offering a full range of services and features across the globe in various datacenters. It is the equivalent of AWS for Microsoft running primarily on the Hyper-V based hypervisor. While it is a great public cloud offering, it can be somewhat difficult to get integrated with which is what this guide aims to cover.</p>
-</div>
-<div class="paragraph">
-<p><strong>Features:</strong></p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Virtual Machine Provisioning</p>
-</li>
-<li>
-<p>Backups / Snapshots</p>
-</li>
-<li>
-<p>Resource Groups</p>
-</li>
-<li>
-<p>Networks</p>
-</li>
-<li>
-<p>Marketplace Search and Provisioning</p>
-</li>
-<li>
-<p>Migrations</p>
-</li>
-<li>
-<p>Remote Console</p>
-</li>
-<li>
-<p>Periodic Synchronization</p>
-</li>
-<li>
-<p>Lifecycle Management and Resize</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>Combine this with on premise solutions like Azure-Stack and Morpheus can provide a single pane of glass and self service portal for managing instances scattered across both public Azure and private Azure Stack offerings.</p>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<div class="title">Note</div>
-</td>
-<td class="content">
-Morpheus even supports integrating with CSP based accounts in Azure (typically used by managed service providers).
-</td>
-</tr>
-</table>
-</div>
 <div class="sect3">
 <h4 id="getting-started">Getting Started</h4>
 <div class="paragraph">
@@ -697,30 +636,10 @@ Remember, Morpheus needs to be able to remotely access provisioned vms via both 
 <div class="title">Figure 9: Azure Add Cloud</div>
 </div>
 </div>
-<div class="sect2">
-<h3 id="docker">Docker</h3>
-<div class="paragraph">
-<p>So far this document has covered how to add the Azure cloud integration and has enabled users the ability to provision virtual machine based instances via the <code>Add Instance</code> catalog in <code>Provisioning</code>. Another great feature provided by Morpheus out of the box is the ability to use Docker containers and even support multiple containers per Docker host. To do this a Docker Host must first be provisioned into Azure (multiple are needed when dealing with horizontal scaling scenarios).</p>
-</div>
-<div class="paragraph">
-<p>To provision a Docker Host simply navigate to the Cloud detail page or <code>Infrastructure&#8594;Hosts</code> section. From there click the <code>+ Container Host</code> button to add a Azure Docker Host. This host will show up in the Hosts tab. Morpheus views a Docker host just like any other Hypervisor with the caveat being that it is used for running containerized images instead of virtualized ones. Once a Docker Host is successfully provisioned a green checkmark will appear to the right of the host marking it as available for use. In the event of a failure click into the relevant host that failed and an error explaining the failure will be displayed in red at the top.</p>
-</div>
-<div class="paragraph">
-<p>Some common error scenarios include network connectivity. For a Docker Host to function properly, it must be able to resolve the Morpheus appliance url which can be configured in <code>Admin &#8594; Settings</code>. If it is unable to resolve and negotiate with the appliance than the agent installation will fail and provisioning instructions will not be able to be issued to the host.</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="multitenancy">Multitenancy</h3>
-<div class="paragraph">
-<p>A very common scenario for Managed Service Providers is the need to provide access to Azure resources on a customer by customer basis. With Azure several administrative features have been added to ensure customer resources are properly scoped and isolated. For Azure it is possible to assign specific <code>Networks</code>, and <code>Resource Groups</code> to customer accounts or even set the public visibility of certain resources, therefore allowing all sub accounts access to the resource.</p>
-</div>
-</div>
-</div>
-</div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2016-08-09 13:29:53 -04:00
+Last updated 2016-08-09 13:29:35 -04:00
 </div>
 </div>
 </body>
