@@ -5,7 +5,7 @@
 <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 1.5.0">
-<title>Logging</title>
+<title>Advanced</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic|Noto+Serif:400,400italic,700,700italic|Droid+Sans+Mono:400">
 <style>
 /* Asciidoctor default stylesheet | MIT License | http://asciidoctor.org */
@@ -504,106 +504,28 @@ table.CodeRay td.code>pre{padding:0}
 <div id="header">
 <div id="toc" class="toc2">
 <div id="toctitle">Table of Contents</div>
-<ul class="sectlevel1">
-<li><a href="#logging">Logging</a>
 <ul class="sectlevel2">
-<li><a href="#configuration">Configuration</a></li>
-<li><a href="#usage">Usage</a></li>
-<li><a href="#integrations">Integrations</a></li>
-</ul>
-</li>
+<li><a href="#advanced">Advanced</a></li>
 </ul>
 </div>
 </div>
 <div id="content">
-<div class="sect1">
-<h2 id="logging">Logging</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>The logging architecture backing Morpheus uses the latest and greatest technologies and standards to be able to service large amounts of log traffic as well as facilitate easy viewing. Utilizing elasticsearch behind the scenes and buffered log transmission protocols Morpheus provides a highly efficient and highly scalable solution for capturing log data from anything provisioned via the system. By utilizing common formats (syslog) it is also very easy to forward logs to external third party log services.</p>
-</div>
 <div class="sect2">
-<h3 id="configuration">Configuration</h3>
+<h3 id="advanced">Advanced</h3>
 <div class="paragraph">
-<p>Logging configuration can be setup in the <code>Admin &#8594; Logs</code> section. There are a couple useful settings here including customizing the retainment policy (by default 7 days). This could be expanded to years for PCI Compliance purposes or other potential requirements an organization might have.</p>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<div class="title">Note</div>
-</td>
-<td class="content">
-When increasing the retainment policy of the logging system it may be necessary to scale out the elasticsearch cluster. Please refer to the relevant information with regards to scaling elasticsearch and advanced installation options for externalizing the elasticsearch cluster.
-</td>
-</tr>
-</table>
+<p>There are several advanced features provided within Morpheus that can leverage some cool aspects of vmware. One of these features is Remote Console support directly to the hypervisor. To enable this feature a few prerequisites must be met. First, the Morpheus appliance must have network access to the ESXi hosts within vcenter. Secondly, firewall settings need to be adjusted on each ESXi host. This can be done in vsphere under firewall configuration on the host. Simply check the <code>gdbserver</code> option, which will open up the necessary ports (starting at 5900 range).</p>
 </div>
 <div class="paragraph">
-<p>This area of administration also provides options for setting custom syslog forward rules.
-These rules are applied on each individual host therefore keeping the Morpheus appliance itself out of the data plane. For information on different syslog formatting rules please refer to the <a href="http://www.rsyslog.com/sending-messages-to-a-remote-syslog-server/">rsyslog</a> documentation.</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="usage">Usage</h3>
-<div class="paragraph">
-<p>Morpheus automatically sets up and configures logging for all of the standard catalog items provisioned through morpheus. This includes both Docker containers as well as virtual machines. Simple view instance specific logs in instance detail via the "Logs" tab.</p>
+<p>Now that the ESXi hosts are ready to utilize remote console, simply edit the cloud in Morpheus via <code>Infrastructure &#8594; Clouds</code>. Check the option that says <code>Use VNC</code>. It is important to note that currently this functionality only works for newly provisioned vms provisioned directly via Morpheus. This should change soon however.</p>
 </div>
 <div class="paragraph">
-<p>There are several filtering capabilities built into the logging ui with more being added continually. Easily toggle log level filters from the dropdown or change the date range filter using the handy date filter component. A chart is also displayed above logs representing the log counts by level over the selected time range (default last 24 hours). A handy pattern search is also available with some rather capable features based on Lucene search syntax.</p>
-</div>
-<div class="admonitionblock tip">
-<table>
-<tr>
-<td class="icon">
-<div class="title">Tip</div>
-</td>
-<td class="content">
-It may be useful to review the Lucene search query syntax for powerful use cases: <a href="https://lucene.apache.org/core/2_9_4/queryparsersyntax.html">Syntax Guide</a>
-</td>
-</tr>
-</table>
-</div>
-<div class="paragraph">
-<p>There are several other places logs can be viewed. Not only can they be viewed across an application in app detail but also across all instances in the account. The main level <code>Logs</code> section provides an ability to query all logs produced by the system. It is also possible to view host specific logs on a docker host by viewing the host detail page via <code>Infrastructure</code>.</p>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<div class="title">Note</div>
-</td>
-<td class="content">
-New features are on the roadmap for the main logs section including saved searches, and handy charting dashboards for garnering insights out of log data.
-</td>
-</tr>
-</table>
-</div>
-</div>
-<div class="sect2">
-<h3 id="integrations">Integrations</h3>
-<div class="paragraph">
-<p>While the built in logging solution provided by Morpheus is sufficient for most, there are some scenarios in which a more advanced logging system may be desired or already in place. To facilitate this Morpheus makes it easy to add custom syslog rules as well as built in direct integrations with Splunk and Logrythm. All integrations pertaining to logging can be configured in the <code>Admin &#8594; Logs</code> section.</p>
-</div>
-<div class="sect3">
-<h4 id="splunk">Splunk</h4>
-<div class="paragraph">
-<p>To configure Splunk simply create a syslog listener configuration in Splunk. Then it is simply a matter of expanding the section in Logging settings pertaining to Splunk and filling out the host and port of the appender. Once saved, all hosts managed by Morpheus will be configured to forward logs to the target Splunk listener.</p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="logrythm">Logrythm</h4>
-<div class="paragraph">
-<p>Configuring logrythm is much like configuring Splunk. Simply toggle the enabled flag in the Logrythm section to enabled and fill in the Host, and Port information for the Logrythm listener.</p>
-</div>
-</div>
-</div>
+<p>It is also possible to import vm snapshots for backup or conversion purposes from Vcenter and also an ESXi host. However, this does require that the ESXi host license has an enterprise level license as it will not allow the appliance to download a virtual image if it is not a paid vmware license.</p>
 </div>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2016-06-27 12:40:10 -04:00
+Last updated 2016-08-08 15:16:36 -04:00
 </div>
 </div>
 </body>

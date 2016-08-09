@@ -547,6 +547,9 @@ table.CodeRay td.code>pre{padding:0}
 <p>The <strong>RPC Mode</strong> feature can be configured to allow Morpheus to install its agent on the Guest operating system via either SSH/WinRM or Vmware Tools Guest Process feature. The VMware tools Guest Exection API can be tricky so it is recommended to use SSH/WinRM if possible. However, if it is not possible for the Appliance to have outbound access to all networks in which VMs are being provisioned to the SSH/WinRM ports (22, 5985 respectively) then Guest Execution is the only option.</p>
 </div>
 <div class="paragraph">
+<p>The <code>Use VNC</code> console option on the vmware cloud requires special configuration on each ESXI host but allowed hypervisor level remote console support. (See the Advanced Section for details)</p>
+</div>
+<div class="paragraph">
 <p>When following this add cloud wizard an option will be presented to create a group or add to an existing group. These groups can be given provisioning permission via  role based access control. It is normally recommended that groups are organized such that one cloud exists in one group unless the networks are setup such that internal routing is possible between the clouds. This is very useful for bursting, or hybrid cloud configurations.</p>
 </div>
 <div class="sect3">
@@ -608,7 +611,7 @@ Currently the Morpheus Agent supported Operatings Systems are (Ubuntu 14.04, Cen
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2016-06-27 09:30:53 -04:00
+Last updated 2016-08-09 11:51:19 -04:00
 </div>
 </div>
 </body>

@@ -5,7 +5,7 @@
 <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 1.5.0">
-<title>Logging</title>
+<title>Identity Sources</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic|Noto+Serif:400,400italic,700,700italic|Droid+Sans+Mono:400">
 <style>
 /* Asciidoctor default stylesheet | MIT License | http://asciidoctor.org */
@@ -504,53 +504,64 @@ table.CodeRay td.code>pre{padding:0}
 <div id="header">
 <div id="toc" class="toc2">
 <div id="toctitle">Table of Contents</div>
-<ul class="sectlevel1">
-<li><a href="#logging">Logging</a>
 <ul class="sectlevel2">
-<li><a href="#configuration">Configuration</a></li>
-<li><a href="#usage">Usage</a></li>
-<li><a href="#integrations">Integrations</a></li>
-</ul>
-</li>
+<li><a href="#identity-sources">Identity Sources</a></li>
 </ul>
 </div>
 </div>
 <div id="content">
-<div class="sect1">
-<h2 id="logging">Logging</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>The logging architecture backing Morpheus uses the latest and greatest technologies and standards to be able to service large amounts of log traffic as well as facilitate easy viewing. Utilizing elasticsearch behind the scenes and buffered log transmission protocols Morpheus provides a highly efficient and highly scalable solution for capturing log data from anything provisioned via the system. By utilizing common formats (syslog) it is also very easy to forward logs to external third party log services.</p>
-</div>
 <div class="sect2">
-<h3 id="configuration">Configuration</h3>
+<h3 id="identity-sources">Identity Sources</h3>
 <div class="paragraph">
-<p>Logging configuration can be setup in the <code>Admin &#8594; Logs</code> section. There are a couple useful settings here including customizing the retainment policy (by default 7 days). This could be expanded to years for PCI Compliance purposes or other potential requirements an organization might have.</p>
+<p>There are several built in single sign-on integrations included with Morpheus. These can be configured via the <code>Identity Sources</code> button in <code>Admin &#8594; Accounts</code>. These integrations include linking capabilities with LDAP, Active Directory, Okta, and Jump Cloud. One can even map these sign on tools to equivalent roles in Morpheus so at first log in users are assigned the appropriate role.</p>
 </div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<div class="title">Note</div>
-</td>
-<td class="content">
-When increasing the retainment policy of the logging system it may be necessary to scale out the elasticsearch cluster. Please refer to the relevant information with regards to scaling elasticsearch and advanced installation options for externalizing the elasticsearch cluster.
-</td>
-</tr>
-</table>
+<div class="imageblock">
+<div class="content">
+<img src="./images/administration/identity_sources.png" alt="Identity Source Management Integrations">
 </div>
+<div class="title">Figure 1: Identity Source Management Integrations</div>
+</div>
+<div class="sect3">
+<h4 id="active-directory">Active Directory</h4>
 <div class="paragraph">
-<p>This area of administration also provides options for setting custom syslog forward rules.
-These rules are applied on each individual host therefore keeping the Morpheus appliance itself out of the data plane. For information on different syslog formatting rules please refer to the <a href="http://www.rsyslog.com/sending-messages-to-a-remote-syslog-server/">rsyslog</a> documentation.</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="usage">Usage</h3>
-<div class="paragraph">
-<p>Morpheus automatically sets up and configures logging for all of the standard catalog items provisioned through morpheus. This includes both Docker containers as well as virtual machines. Simple view instance specific logs in instance detail via the "Logs" tab.</p>
+<p>Active Directory is Microsoft&#8217;s primary authentication service widely used in Enterprise organizations and even via Microsoft&#8217;s cloud services. While Active Directory also supports LDAP protocol support (which Morpheus can integrate with as well), the main active directory integration can also be utilized. It is even possible to map Active Directory groups to equivalent Roles within Morpheus.</p>
 </div>
 <div class="paragraph">
-<p>There are several filtering capabilities built into the logging ui with more being added continually. Easily toggle log level filters from the dropdown or change the date range filter using the handy date filter component. A chart is also displayed above logs representing the log counts by level over the selected time range (default last 24 hours). A handy pattern search is also available with some rather capable features based on Lucene search syntax.</p>
+<p>Adding an Active Directory integration is fairly straightforward. Simply click the 'Add Integration' button in Identity Sources and from the type dropdown choose "Active Directory".</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="./images/administration/add_active_directory.png" alt="Modal form entry for Active Directory">
+</div>
+<div class="title">Figure 2: Modal form entry for Active Directory</div>
+</div>
+<div class="paragraph">
+<p>The following fields are important for integrating active directory:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Name:</strong> Unique name for authentication type.</p>
+</li>
+<li>
+<p><strong>AD Server:</strong>  Hostname or IP address of AD Server.</p>
+</li>
+<li>
+<p><strong>Domain:</strong>  Domain name of AD Domain.</p>
+</li>
+<li>
+<p><strong>Binding Username:</strong>  Service account username for bind user.</p>
+</li>
+<li>
+<p><strong>Binding Password:</strong>  Password for bind service account.</p>
+</li>
+<li>
+<p><strong>Default Role:</strong>  The default role a user is assigned if no group is listed under AD user that maps under Role Mappings section.</p>
+</li>
+<li>
+<p><strong>Service Account Holder:</strong> This is the admin account type in Morpheus and an AD group can be created and populated to a user that this role should be assigned.  Roles are assigned dynamically based on group membership.</p>
+</li>
+</ul>
 </div>
 <div class="admonitionblock tip">
 <table>
@@ -559,13 +570,13 @@ These rules are applied on each individual host therefore keeping the Morpheus a
 <div class="title">Tip</div>
 </td>
 <td class="content">
-It may be useful to review the Lucene search query syntax for powerful use cases: <a href="https://lucene.apache.org/core/2_9_4/queryparsersyntax.html">Syntax Guide</a>
+Make sure to check the sync login box which will allow Morpheus to sync the AD account on the Morpheus Appliance.
 </td>
 </tr>
 </table>
 </div>
 <div class="paragraph">
-<p>There are several other places logs can be viewed. Not only can they be viewed across an application in app detail but also across all instances in the account. The main level <code>Logs</code> section provides an ability to query all logs produced by the system. It is also possible to view host specific logs on a docker host by viewing the host detail page via <code>Infrastructure</code>.</p>
+<p>Now users can login to the UI via their active directory username.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -574,36 +585,17 @@ It may be useful to review the Lucene search query syntax for powerful use cases
 <div class="title">Note</div>
 </td>
 <td class="content">
-New features are on the roadmap for the main logs section including saved searches, and handy charting dashboards for garnering insights out of log data.
+Only the username is required with password not the username@domain.
 </td>
 </tr>
 </table>
-</div>
-</div>
-<div class="sect2">
-<h3 id="integrations">Integrations</h3>
-<div class="paragraph">
-<p>While the built in logging solution provided by Morpheus is sufficient for most, there are some scenarios in which a more advanced logging system may be desired or already in place. To facilitate this Morpheus makes it easy to add custom syslog rules as well as built in direct integrations with Splunk and Logrythm. All integrations pertaining to logging can be configured in the <code>Admin &#8594; Logs</code> section.</p>
-</div>
-<div class="sect3">
-<h4 id="splunk">Splunk</h4>
-<div class="paragraph">
-<p>To configure Splunk simply create a syslog listener configuration in Splunk. Then it is simply a matter of expanding the section in Logging settings pertaining to Splunk and filling out the host and port of the appender. Once saved, all hosts managed by Morpheus will be configured to forward logs to the target Splunk listener.</p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="logrythm">Logrythm</h4>
-<div class="paragraph">
-<p>Configuring logrythm is much like configuring Splunk. Simply toggle the enabled flag in the Logrythm section to enabled and fill in the Host, and Port information for the Logrythm listener.</p>
-</div>
-</div>
 </div>
 </div>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2016-06-27 12:40:10 -04:00
+Last updated 2016-08-09 12:23:28 -04:00
 </div>
 </div>
 </body>

@@ -510,6 +510,7 @@ table.CodeRay td.code>pre{padding:0}
 <li><a href="#getting-started">Getting Started</a></li>
 <li><a href="#docker">Docker</a></li>
 <li><a href="#multitenancy">Multitenancy</a></li>
+<li><a href="#advanced">Advanced</a></li>
 </ul>
 </li>
 </ul>
@@ -630,6 +631,9 @@ table.CodeRay td.code>pre{padding:0}
 <p>The <strong>RPC Mode</strong> feature can be configured to allow Morpheus to install its agent on the Guest operating system via either SSH/WinRM or Vmware Tools Guest Process feature. The VMware tools Guest Exection API can be tricky so it is recommended to use SSH/WinRM if possible. However, if it is not possible for the Appliance to have outbound access to all networks in which VMs are being provisioned to the SSH/WinRM ports (22, 5985 respectively) then Guest Execution is the only option.</p>
 </div>
 <div class="paragraph">
+<p>The <code>Use VNC</code> console option on the vmware cloud requires special configuration on each ESXI host but allowed hypervisor level remote console support. (See the Advanced Section for details)</p>
+</div>
+<div class="paragraph">
 <p>When following this add cloud wizard an option will be presented to create a group or add to an existing group. These groups can be given provisioning permission via  role based access control. It is normally recommended that groups are organized such that one cloud exists in one group unless the networks are setup such that internal routing is possible between the clouds. This is very useful for bursting, or hybrid cloud configurations.</p>
 </div>
 <div class="sect3">
@@ -712,12 +716,24 @@ Currently the Morpheus Agent supported Operatings Systems are (Ubuntu 14.04, Cen
 <div class="title">Figure 3: Cloud detail view for VMware</div>
 </div>
 </div>
+<div class="sect2">
+<h3 id="advanced">Advanced</h3>
+<div class="paragraph">
+<p>There are several advanced features provided within Morpheus that can leverage some cool aspects of vmware. One of these features is Remote Console support directly to the hypervisor. To enable this feature a few prerequisites must be met. First, the Morpheus appliance must have network access to the ESXi hosts within vcenter. Secondly, firewall settings need to be adjusted on each ESXi host. This can be done in vsphere under firewall configuration on the host. Simply check the <code>gdbserver</code> option, which will open up the necessary ports (starting at 5900 range).</p>
+</div>
+<div class="paragraph">
+<p>Now that the ESXi hosts are ready to utilize remote console, simply edit the cloud in Morpheus via <code>Infrastructure &#8594; Clouds</code>. Check the option that says <code>Use VNC</code>. It is important to note that currently this functionality only works for newly provisioned vms provisioned directly via Morpheus. This should change soon however.</p>
+</div>
+<div class="paragraph">
+<p>It is also possible to import vm snapshots for backup or conversion purposes from Vcenter and also an ESXi host. However, this does require that the ESXi host license has an enterprise level license as it will not allow the appliance to download a virtual image if it is not a paid vmware license.</p>
+</div>
+</div>
 </div>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2016-06-27 09:38:01 -04:00
+Last updated 2016-08-08 15:05:12 -04:00
 </div>
 </div>
 </body>

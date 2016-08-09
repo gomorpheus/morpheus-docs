@@ -5,7 +5,7 @@
 <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 1.5.0">
-<title>Logging</title>
+<title>Roles</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic|Noto+Serif:400,400italic,700,700italic|Droid+Sans+Mono:400">
 <style>
 /* Asciidoctor default stylesheet | MIT License | http://asciidoctor.org */
@@ -504,106 +504,97 @@ table.CodeRay td.code>pre{padding:0}
 <div id="header">
 <div id="toc" class="toc2">
 <div id="toctitle">Table of Contents</div>
-<ul class="sectlevel1">
-<li><a href="#logging">Logging</a>
 <ul class="sectlevel2">
-<li><a href="#configuration">Configuration</a></li>
-<li><a href="#usage">Usage</a></li>
-<li><a href="#integrations">Integrations</a></li>
-</ul>
-</li>
+<li><a href="#roles">Roles</a></li>
 </ul>
 </div>
 </div>
 <div id="content">
-<div class="sect1">
-<h2 id="logging">Logging</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>The logging architecture backing Morpheus uses the latest and greatest technologies and standards to be able to service large amounts of log traffic as well as facilitate easy viewing. Utilizing elasticsearch behind the scenes and buffered log transmission protocols Morpheus provides a highly efficient and highly scalable solution for capturing log data from anything provisioned via the system. By utilizing common formats (syslog) it is also very easy to forward logs to external third party log services.</p>
-</div>
 <div class="sect2">
-<h3 id="configuration">Configuration</h3>
+<h3 id="roles">Roles</h3>
 <div class="paragraph">
-<p>Logging configuration can be setup in the <code>Admin &#8594; Logs</code> section. There are a couple useful settings here including customizing the retainment policy (by default 7 days). This could be expanded to years for PCI Compliance purposes or other potential requirements an organization might have.</p>
+<p>Morpheus provides amazingly robust Role-based access control. Almost every aspect of the UI and API can be controlled via role management. Roles can be assigned as base roles for subaccounts where in sub accounts can manage their own roles relative to the main role. Other aspects can be controlled via Roles as well, such as which infrastructure groups users have visibility into or capabilities of provisioning into. Usage limits can even be assigned and sanctioned instance catalog items!</p>
 </div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<div class="title">Note</div>
-</td>
-<td class="content">
-When increasing the retainment policy of the logging system it may be necessary to scale out the elasticsearch cluster. Please refer to the relevant information with regards to scaling elasticsearch and advanced installation options for externalizing the elasticsearch cluster.
-</td>
-</tr>
-</table>
+<div class="imageblock">
+<div class="content">
+<img src="./images/administration/roles.png" alt="Role management Administration page">
+</div>
+<div class="title">Figure 1: Role management Administration page</div>
 </div>
 <div class="paragraph">
-<p>This area of administration also provides options for setting custom syslog forward rules.
-These rules are applied on each individual host therefore keeping the Morpheus appliance itself out of the data plane. For information on different syslog formatting rules please refer to the <a href="http://www.rsyslog.com/sending-messages-to-a-remote-syslog-server/">rsyslog</a> documentation.</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="usage">Usage</h3>
-<div class="paragraph">
-<p>Morpheus automatically sets up and configures logging for all of the standard catalog items provisioned through morpheus. This includes both Docker containers as well as virtual machines. Simple view instance specific logs in instance detail via the "Logs" tab.</p>
+<p>There are 2 base roles provided by Morpheus upon first installation. They are "System Admin", and "Account Admin" (Can be noted on the management page by having a scope of 'System'). The "Super Admin" role is a special role that only the master account should have access to. It provides access to settings that can apply globally across all accounts in the system. The "Account Admin" role is just a base role that is seeded in for use as the default role when creating new subaccounts. This default role can be copied or modified. If it desired that an account  take on a different default base role, this can be done from the <code>Admin &#8594; Settings</code> section under "Account Management Settings". You can also assign a base role to an account in the <code>Admin &#8594; Accounts</code> section or directly to a user in <code>Admin &#8594; Users</code>.</p>
 </div>
 <div class="paragraph">
-<p>There are several filtering capabilities built into the logging ui with more being added continually. Easily toggle log level filters from the dropdown or change the date range filter using the handy date filter component. A chart is also displayed above logs representing the log counts by level over the selected time range (default last 24 hours). A handy pattern search is also available with some rather capable features based on Lucene search syntax.</p>
-</div>
-<div class="admonitionblock tip">
-<table>
-<tr>
-<td class="icon">
-<div class="title">Tip</div>
-</td>
-<td class="content">
-It may be useful to review the Lucene search query syntax for powerful use cases: <a href="https://lucene.apache.org/core/2_9_4/queryparsersyntax.html">Syntax Guide</a>
-</td>
-</tr>
-</table>
+<p>In the <code>Account &#8594; Roles</code> section there are 2 types of ways to edit a role. One is to click a role&#8217;s name to view its permission set and manipulate its different access levels. The other is to click the edit icon on the right. In this mode you can rename a role or set usage limits (i.e. max memory usage or max storage usage for users assigned to this role).</p>
 </div>
 <div class="paragraph">
-<p>There are several other places logs can be viewed. Not only can they be viewed across an application in app detail but also across all instances in the account. The main level <code>Logs</code> section provides an ability to query all logs produced by the system. It is also possible to view host specific logs on a docker host by viewing the host detail page via <code>Infrastructure</code>.</p>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<div class="title">Note</div>
-</td>
-<td class="content">
-New features are on the roadmap for the main logs section including saved searches, and handy charting dashboards for garnering insights out of log data.
-</td>
-</tr>
-</table>
-</div>
-</div>
-<div class="sect2">
-<h3 id="integrations">Integrations</h3>
-<div class="paragraph">
-<p>While the built in logging solution provided by Morpheus is sufficient for most, there are some scenarios in which a more advanced logging system may be desired or already in place. To facilitate this Morpheus makes it easy to add custom syslog rules as well as built in direct integrations with Splunk and Logrythm. All integrations pertaining to logging can be configured in the <code>Admin &#8594; Logs</code> section.</p>
+<p>When it comes to managing a role there are 4 subsections. They are "Feature Access", "Group Access", "Cloud Access", and "Instance Type Access". A couple of these sections do not apply in certain scenarios (depending on if the role is being used as an Account base role or a user role).</p>
 </div>
 <div class="sect3">
-<h4 id="splunk">Splunk</h4>
+<h4 id="feature-access">Feature Access</h4>
 <div class="paragraph">
-<p>To configure Splunk simply create a syslog listener configuration in Splunk. Then it is simply a matter of expanding the section in Logging settings pertaining to Splunk and filling out the host and port of the appender. Once saved, all hosts managed by Morpheus will be configured to forward logs to the target Splunk listener.</p>
+<p>Features, are aspects of both the UI and API that a user may have access to at any given point. Morpheus also has the ability to control access level of specific features rather than simply turning a feature on or off. These difference scopes appear in the dropdowns to the right of each feature (a dropdown will not appear if the role is readonly visible).</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="./images/administration/role_features.png" alt="Role detail features section">
+</div>
+<div class="title">Figure 2: Example of features list when clicking into a role detail page</div>
+</div>
+<div class="paragraph">
+<p>To change the scope of a feature simply change the selected option in the dropdown and the change will automatically be applied and propagated to anyone using the Role. There are different scope capabilities depending on the feature and more can be added as well as necessary. These include scopes like <code>None</code>, <code>View</code>, <code>Read</code>, and <code>Full</code>.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="logrythm">Logrythm</h4>
+<h4 id="group-access">Group Access</h4>
 <div class="paragraph">
-<p>Configuring logrythm is much like configuring Splunk. Simply toggle the enabled flag in the Logrythm section to enabled and fill in the Host, and Port information for the Logrythm listener.</p>
+<p>Group access allows for the restriction in provisioning and management of specific host groups within Morpheus. It is useful to scope instances that may be provisioned into certain groups with respective cloud integrations. This makes it more organized and allows for scoped policy controls and team management. It is also important to note that Groups are account specific therefore any adjustments made to group access levels for the use on an Account scoped role will have no affect. For that one must use the "Cloud Access" section.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="./images/administration/role_groups.png" alt="Role detail group access section">
+</div>
+<div class="title">Figure 3: Example of groups list when clicking into a role detail page</div>
+</div>
+<div class="paragraph">
+<p>In Group Access, each group is listed with an access level dropdown similar to how Feature Access worked. But at the top there is also a "Global Access" setting. When this is set to anything other than Custom, all dropdowns for individual groups are disabled. Global allows for a setting to be assigned globally across all groups in the account (i.e. Full, Read, or even None).</p>
 </div>
 </div>
+<div class="sect3">
+<h4 id="cloud-access">Cloud Access</h4>
+<div class="paragraph">
+<p>Cloud access works identically to Group Access except it is referring to cloud integrations the account has access to. While these various cloud integrations can be scoped to specific groups to allow provisioning, it is also possible to restrict access to them and even assign them to account scoped roles so that sub accounts can or cannot create their own groups and instances for that cloud.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="./images/administration/role_clouds.png" alt="Role detail cloud access section">
+</div>
+<div class="title">Figure 4: Example of clouds list when clicking into a role detail page</div>
+</div>
+<div class="paragraph">
+<p>Just like Group Access, different scoping dropdowns exist on the bottom. It is also important to note that it is possible to grant access to a cloud for a subaccount via cloud access however the visibility and ownership of the cloud also play a part as to wether or not a user can view or use said cloud integration. A cloud&#8217;s visibility can be set only by the master account and determines wether or not a specific cloud integration is public for all accounts to use or private / for the account in question&#8217;s use only. In cloud edit it is also possible (as the master account) to assign a specific cloud integration to an account. This makes it so that only the subaccount can utilize the cloud integration also requiring cloud access be properly configured.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="instance-type-access">Instance Type Access</h4>
+<div class="paragraph">
+<p>Instance Type access controls what different instance types a user or account are allowed to provision. This can be useful in an organization where one might want to control / sanction certain application types only within the environment. It also may be used to scope provisioning rights for say a DBA to only be able to provision database instances vs. full fledged application stacks. Even custom catalog items will appear in this list so if a custom application template is being utilized within Morpheus, access to provisioning it&#8217;s individual pieces can also be controlled.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="./images/administration/role_clouds.png" alt="Instance Type cloud access section">
+</div>
+<div class="title">Figure 5: Example of instance types list when clicking into a role detail page</div>
+</div>
+<div class="paragraph">
+<p>Similar to the last three sections, the default Global Access dropdown grant everyone access to everything in the appliance that can be provisioned onto (including newly added instance types). Simply set this to "Custom" when it is desired to use more fine grained control.</p>
 </div>
 </div>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2016-06-27 12:40:10 -04:00
+Last updated 2016-08-09 10:44:27 -04:00
 </div>
 </div>
 </body>
