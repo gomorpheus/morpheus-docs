@@ -1,0 +1,86 @@
+== Managing Instances
+
+=== Edit
+
+To Edit an Instance Name, Description or Tag:
+
+* Select the Provisioning link in the navigation bar.
+* Click the instance from the list of instances you wish to edit.
+* Click the Edit button.
+* From the Edit Instance Wizard optionally modify the following:
+* Name of the Instance
+* Description describes the instance
+* Environment
+
+
+Click the Save Changes.
+
+
+
+=== Delete an Instance
+
+To Delete an Instance:
+
+* Select the Provisioning link in the navigation bar.
+* Click the instance from the list of instances you wish to delete.
+* Click the Delete button.
+
+NOTE: Instances that are in the process of provisioning typically cannot be deleted until provisioning is completed.
+
+== Instance Actions
+
+Instance actions allow you to perform numerous management tasks on instances. The actions available depend on the instance type, hypervisor, and instance state. Scrolling down in the Actions dropdown may be necessary to see all options. Available actions include:
+
+* Suspend
+* Stop Service
+* Start Service
+* Restart Service
+* Stop Server
+* Start Server
+* Restart Server
+* Lock/Unlock Instance
+* Import As Image
+* Reconfigure
+* Clone
+* Backup
+* Run Workflow
+* Run Script
+* Apply Template
+* Add Node
+* Eject Disk
+* Add Slave
+* Change Master
+
+
+
+Select the Provisioning link in the navigation bar.
+Click the instance from the list of instances you wish to perform an action on.
+Click the Actions drop down button and select an Action.
+
+
+=== Reconfigure
+The Reconfigure action allows service plan, disk, cpu, ram, networks and storage controller changes. Available options depend on the instance type and service plan configuration. Some resize actions require an instance restart.
+
+Instances___Morpheus_Reconfigure.png
+
+=== Clone
+
+Clone option opens the Clone Instance wizard where a group for the new instance must be chosen and a name supplied. Please note cloning virtual machines with static IP's via the clone action is not supported at this time, but can be accomplished with the Migration Wizard.
+
+
+
+=== Backup
+
+The Backup action immediately executes a backup of the instance.
+
+
+
+=== Run Workflow
+
+The Run Workflow action prompts you to select a defined work flow to execute.
+
+
+
+=== Add Node
+
+The Add Node option adds an additional node to the configuration. Additional options and configurations are required in the add node wizard depending on instance configuration and type.
