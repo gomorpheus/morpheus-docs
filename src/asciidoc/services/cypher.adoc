@@ -33,17 +33,17 @@ Navigate to Services - Cypher and select "+ ADD KEY"
 
 A Cypher password generates a secure password of specified character length in the key pattern (or 15) with symbols, numbers, upper case, and lower case letters (i.e. password/15/mypass generates a 15 character password).
 
-KEY:: Pattern `password/character_length/key`
+Key:: Pattern `password/character_length/key`
 
   Example: password/10/mypassword
 
-VALUE:: Leave the Value filed blank for a password, as it will be generated.
+Value:: Leave the Value filed blank for a password, as it will be generated.
 
-LEASE:: Enter lease time in milliseconds (ex. 604800000 for one week)
+Lease: Enter lease time in milliseconds (ex. 604800000 for one week)
 
 Save changes and the password will be generated and available for use.
 
-If your Morpheus user role has Cypher: Decrypt permissions, a "DECRYPT" button will be available in the Cypher section to view the generated password.
+If your user role has Cypher: Decrypt permissions, a "DECRYPT" button will be available in the Cypher section to view the generated password.
 
 To delete the password key, select `Actions -> Remove` and confirm.
 
@@ -53,11 +53,13 @@ To delete the password key, select `Actions -> Remove` and confirm.
 
 A Cypher secret is the standard secret module that stores a key/value in encrypted form.
 
-KEY:: Pattern "secret/key"
+Key:: Pattern "secret/key"
 
-  Example: secret/mysecret
-VALUE:: Add the secret value to be encrypted
-LEASE:: Enter lease time in milliseconds (ex. 604800000 for one week)
+  EXAMPLE: secret/mysecret
+
+Value:: Add the secret value to be encrypted
+
+Lease:: Enter lease time in milliseconds (ex. 604800000 for one week)
 
 Save changes and the secret will be encrypted and available for use.
 
@@ -71,15 +73,16 @@ To delete the secret, select `Actions -> Remove` and confirm.
 
 A Cypher UUID Returns a new UUID by key name when requested and stores the generated UUID by key name for a given lease timeout period.
 
-KEY:: Pattern "uuid/key"
+Key:: Pattern "uuid/key"
 
   Example: uuid/myuuid
-VALUE:: Leave the Value filed blank for UUID, as it will be generated.
-LEASE:: Enter lease time in milliseconds (ex. 604800000 for one week)
+Value: Leave the Value filed blank for UUID, as it will be generated.
+
+Lease:: Enter lease time in milliseconds (ex. 604800000 for one week)
 
 Save changes and the UUID will be generate and available for use.
 
-If your Morpheus user role has Cypher: Decrypt permissions, a "DECRYPT" button will be available in the Cypher section to view the generate UUID.
+If your user role has Cypher: Decrypt permissions, a "DECRYPT" button will be available in the Cypher section to view the generate UUID.
 
 To delete the UUID, select `Actions -> Remove` and confirm.
 
@@ -89,17 +92,17 @@ To delete the UUID, select `Actions -> Remove` and confirm.
 
 A Cypher Key generates a Base 64 encoded AES Key of specified bit length in the key pattern (i.e. key/128/mykey generates a 128-bit key).
 
-KEY:: Pattern "key/bit_length/key"
+Key:: Pattern "key/bit_length/key"
 
   Example: key/256/mykey
 
-VALUE:: Leave the Value filed blank for key, as it will be generated.
+Value:: Leave the Value filed blank for key, as it will be generated.
 
-LEASE:: Enter lease time in milliseconds (ex. 604800000 for one week)
+Lease:: Enter lease time in milliseconds (ex. 604800000 for one week)
 
 Save changes and the AES Key will be generate and available for use.
 
-If your Morpheus user role has Cypher: Decrypt permissions, a "DECRYPT" button will be available in the Cypher section to view the generate AES Key.
+If your user role has Cypher: Decrypt permissions, a "DECRYPT" button will be available in the Cypher section to view the generate AES Key.
 
 To delete the UUID, select `Actions -> Remove` and confirm.
 

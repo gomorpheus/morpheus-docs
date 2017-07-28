@@ -1,0 +1,165 @@
+== Passing variable to scripts
+
+The following are the map structures passed to scripts and templates during provisioning. They can currently be used inside of a `<%= %>` block.
+
+PowerShell Example: `$app_id = "<%= instance.metadata.app_id %>"`
+
+customvar.png
+
+Bash Example: `HOSTNAME="<%= container.server.hostname %>"`
+
+customvar2.png
+
+----
+instance {
+	instanceTypeName,
+	instanceTypeCode,
+	provisionType,
+	instanceVersion,
+	plan,
+	name,
+	displayName,
+	description,
+	environmentPrefix,
+	hostname,
+	domainName,
+	firewallEnabled,
+	status,
+	userStatus,
+	networkLevel,
+	instanceLevel,
+	deployGroup,
+	instanceContext,
+	autoScale,
+	statusMessage,
+	expireDate,
+	tags,
+	storage,
+	memory,
+	cores,
+	configId,
+	configGroup,
+	configRole
+	containers:[],
+	metadata:[],
+	evars:[]
+}
+
+container {
+	containerTypeName,
+	containerTypeCode,
+	containerTypeShortName,
+	provisionType,
+	dataPath,
+	logsPath,
+	configPath,
+	planCode,
+	dateCreated,
+	status,
+	environmentPrefix,
+	version,
+	image,
+	internalHostname,
+	hostname,
+	domainName,
+	storage,
+	memory,
+	cores,
+	internalIp,
+	externalIp,
+	sshHost,
+	hostMountPoint,
+	configId,
+	configGroup,
+	configRole,
+	serverId,
+	server:{}
+}
+server {
+	serverTypeName,
+	serverTypeCode,
+	parentServerId,
+	plan,
+	visibility,
+	osTypeCode,
+	sourceImageId,
+	name,
+	displayName,
+	internalName,
+	category,
+	description
+	internalId,
+	externalId,
+	platform,
+	platformVersion,
+	agentVersion,
+	nodePackageVersion,
+	sshHost,
+	sshPort,
+	sshUsername,
+	consoleType,
+	consoleHost,
+	consolePort,
+	consoleUsername,
+	internalSshUsername,
+	internalIp,
+	externalIp,
+	osDevice,
+	dataDevice,
+	lvmEnabled,
+	apiKey,
+	softwareRaid,
+	status,
+	powerState,
+	dateCreated,
+	lastAgentUpdate,
+	serverType,
+	osType,
+	commType,
+	managed,
+	agentInstalled,
+	toolsInstalled,
+	hostname,
+	domainName,
+	statusMessage,
+	maxStorage,
+	maxMemory,
+	maxCores,
+	macAddress,
+	serverVendor,
+	serverModel,
+	serialNumber,
+	tags,
+	configId,
+	configGroup,
+	configRole
+
+}
+
+//zone was renamed to cloud in v2.10.1
+cloud {
+	name,
+	code,
+	location,
+	cloudTypeName,
+	cloudTypeCode,
+	domainName,
+	scalePriority,
+	firewallEnabled,
+	regionCode,
+	agentMode,
+	datacenterId
+}
+
+group {
+	code,
+	name,
+	location,
+	datacenterId,
+}
+
+customOptions {
+}
+----
+
+* NOTE customOptions are user defined as Option Types or Option Lists in custom library items
