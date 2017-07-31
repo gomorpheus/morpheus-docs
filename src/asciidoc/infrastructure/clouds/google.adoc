@@ -5,23 +5,26 @@ To integrate Morpheus with Google Cloud, go to Infrastructure -> Clouds, click o
 
 Add Google Cloud
 
-Enter the following into the Create Cloud widget:
+Enter the following into the Create Cloud modal:
 
-Name
-Location (optional)
-DNS Domain (optional)
-Visibility (public or private)
-Scale Priority (Specifies the priority with which an instance will scale into this cloud)
-Add Google Cloud 2
+. Name
+. Location (optional)
+. DNS Domain (optional)
+. Visibility (public or private)
+. Scale Priority (Specifies the priority with which an instance will scale into this cloud)
+// Add Google Cloud 2
 
 Then, enter the following Google Cloud credentials:
 
-Project ID
-Private key
-Client Email
-Region (auto-populates, select region)
+. Project ID
+. Private key
+. Client Email
+. Region (auto-populates, select region)
 
 TIP: All of these credentials can be found in the .json file created when generating a key for a Google Cloud service account.
 google key gen
 
 Finally, add Google Cloud to an existing Group or create a new Group, and you have now integrated Morpheus with Google Cloud!
+
+
+INFO: {morpheus} scopes clouds to single regions. Multiple clouds can be added for multi-region support, and then optionally added to the same group. 
