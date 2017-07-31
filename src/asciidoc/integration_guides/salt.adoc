@@ -1,4 +1,5 @@
 [[salt]]
+== Salt Integration
 
 Morpheus Appliance now integrates with an existing Salt Master for seamless deployment of Salt States to Minions provisioned from Morpheus.
 
@@ -6,51 +7,37 @@ To get started browse to Admin -> Integrations from within Morpheus.
 
 Once there simply add a New Integration
 
-
+image::images/salt-af3ca.png[]
 
 And then scope the integration to your existing Salt Master by ip address.  Make sure that the username entered is one with proper escalation privileges for running Salt, and point the Working Directory at the directory on your Master where your States live.
 
-(NOTE: Morpheus will allow you to run States from a git backend, but in v2.10 you will not see states from a git backend within Morpheus)
+NOTE: Morpheus will allow you to run States from a git backend, but in v2.10 you will not see states from a git backend within Morpheus
 
-
-
-
+image::images/salt-a41c9.png[]
 
 Configuration Management integrations like Saltstack apply to the Infrastructure Group abstraction in Morpheus.  To ties yours in, browse to Infrastructure -> Groups in Morpheus and select the group that you would like to tie to your Salt Master.
 
 From here select Edit
 
-
-
-
+image::images/salt-991dd.png[]
 
 And from the options toggle Advanced Options and select your Saltstack integration in the Config Management dropdown.
 
-
-
-
-
-
+image::images/salt-be548.png[]
 
 After a page refresh you should see your Saltstack tab in your group page
 
-
-
-
-
-
+image::images/salt-b5b6f.png[]
 
 Clicking on it will reveal a page that includes:
 
-- An interface to run Salt Master commands
+. An interface to run Salt Master commands
 
-- Parsed Top File
+. Parsed Top File
 
-- Available States
+. Available States
 
-
-
-
+image::images/salt-ccaca.png[]
 
 The classic example of running
 
@@ -60,9 +47,7 @@ will return empty unless there are existing Minions with accepted keys on the Ma
 
 To do so, provision as usual and Instances within the Group tied to the Saltstack Integration will now show additional options on the Configure pane
 
-
-
-
+image::images/salt-413c5.png[]
 
 Minion ID defaults to the hostname, and a State can be applied directly at provision time.
 
@@ -70,14 +55,12 @@ Minion ID defaults to the hostname, and a State can be applied directly at provi
 
 Once your instance is provisioned and key negotiation has completed you will be able to access it and run commands via the integrated Salt command center in your Group.
 
-
-
-
+image::images/salt-f8e4e.png[]
 
 If you did not apply a state at provision time now you will be able to run State commands through Morpheus.
 
-
-
-
+image::images/salt-71b7c.png[]
 
 In our example the Apache State from a git backend was applied successfully to our newly created vm.
+
+image::images/salt-bf299.png[]
