@@ -1,16 +1,16 @@
-== Morpheus Appliance High Availability Mode
+[[ha]]
 
-=== Introduction
+=== High Availability Mode
 
 Morpheus ships as a stand-alone appliance running as a virtual machine in your own environment. This stand-alone appliance contains all the software needed to run Morpheus and uses a package to distribute the binary files. A configuration utility is also provided to configure the software based on your environment needs. As Morpheus scales and becomes a more critical component of your infrastructure the stand-alone method does not meet the needs in terms of uptime availability and scalability. We have designed the components that makeup Morpheus distributable to enable you to deploy it in a multi-tier configuration. This document discusses the possible deployment scenarios and use cases for distributing Morpheus and increasing its uptime availability.
 
 Each tier described in the following architecture section can be scaled out to increase its availability. To remove the single points of failure from inside the stand-alone appliance you will need to stand up each of the architecture components described in the architecture section. System administration of these components are critical to the success of a highly scaled system including logging and monitoring. The  infrastructure setup section goes over the details of setting up the proper infrastructure to allow the application servers to talk to these services directly rather than the internal services created by the installer in a stand-alone configuration.
 
-=== Architecture
+==== Architecture
 
 Morpheus contains the following tiers in the stand-alone deployment configuration: web, application, cache, message queue, search index, and database. Each tier can be distributed and deployed on separate servers except for the cache. Currently the cache is localized to each application server and is scheduled for removal in a later release. In addition, there is a shared storage tier which holds artifacts and backup objects.
 
-image::/images/morpheusHA.png[]
+image::src/asciidoc/images/getting_started/morpheusHA.png[]
 
 Web Tier::
 
@@ -44,7 +44,7 @@ Infrastructure Setup::
 
 Infrastructure required for the external services should be deployed in a regional manner and should not cross WAN boundaries with high latency links.  You can setup the external services in any cloud provider, on-premises internal cloud or data center, or virtual environment.  Scaling and performance metrics of the external services are based on recommendations from each service’s owner or community.
 
-=== Configuration
+==== Configuration
 
 Morpheus configuration is controlled by a configuration file located at /etc/morpheus/morpheus.rb. This file is read when you run morpheus-ctl reconfigure after installing the appliance package. Each section is tied to a deployment tier: database is mysql, message queue is rabbitmq, serach index is elasticsearch. There are no entries for the web and application tiers since those are part of the core application server where the configuration file resides.
 
@@ -69,25 +69,25 @@ elasticsearch['cluster'] = 'nebuchadnezzar'
 elasticsearch['es_hosts'] = {'52.53.214.68' => 10003, '52.53.242.129' => 10003, '52.53.68.67' => 10003}
 ----
 
-=== Database Tier
+==== Database Tier
 
 Morpheus will install a local MySQL server in its stand-alone configuration mode. To disable creating the local MySQL server set the entry mysql['enable'] = false and add one or more database servers using the mysql['host'] entry. This entry is a Ruby hash using hash rocket style syntax since the key contains dots. The key is an IP address or DNS name with the paired value the port the database is listening on. The configuration script for the installer will take the values and turn them into a URL JDBC string that the application will use. Enter the database name and credentials using the entries mysql['morpheus_db'], mysql['morpheus_db_user'], and mysql['morpheus_password'] respectively. The database user requires write access to all tables in the Morpheus database with the all privileges statement.
 
-=== Message Queue Tier
+==== Message Queue Tier
 
 RabbitMQ is the internal message broker and is created as a single node. RabbitMQ can be scaled out in a cluster configuration and fronted by a load balancer to make it more highly available. The external load balancer is used so that each application server can connect to a single IP address or DNS name. To prevent the local RabbitMQ server creation during setup set the configuration entry rabbitmq['enable'] = false and use the three entries rabbitmq['host'], rabbitmq['port'], and rabbitmq['stomp_port'] to the appropriate strings for the external load balancer. The entry for the virtual host is rabbitmq['vhost'] and should be set to / or root if no virtual host was created for the RabbitMQ cluster. When using a load balancer fronting a RabbitMQ cluster the heartbeat should be adjusted form the default of 580 seconds to something just shorter than the connection timeout of the load balancer using the entry rabbitmq['heartbeat']. This prevents the connection through the load balancer from closing and causing the associated channels from closing as well in the message broker.
 
-=== Search Index Tier
+==== Search Index Tier
 
 Morpheus uses ElasticSearch to store data for searching, a default instance is installed by the stand-alone installer.  To provide redundancy and scalability an external ElasticSearch cluster is needed.  To disable the creation of the internal ElasticSearch instance set the configuration entry elasticsearch['enable'] = false.  Provide the cluster name of the external ElasitcSearch cluster using the configuration entry elasticsearch['cluster'] and elasticsearch['es_hosts'] which is a Ruby hash using hash rocket style syntax since the key contains dots. The key is an IP address or DNS name with the paired value the port the database is listening on.
 
 NOTE: ElasticSearch v1.5 is currently supported.
 
-=== Application Secrets
+==== Application Secrets
 
 Morpheus creates a secrets file at /opt/morppheus/morphesu-secrets.json on the first run of the installer configuration script.  If the file exists, it will use the file and the secrets contained.  These entries are generated randomly and are unique to each initial install.  To synchronize access between application servers each server needs to have the same secrets file.  Depending on the number of external components used, Morpheus will use some or none of the settings in this file.  Secrets are still generated in case a re-configuration after the initial setup requires a shared password for a component.
 
-=== SSL Certificates
+==== SSL Certificates
 
 The default mode for Morpheus is to setup the web tier using encryption to provide secure access to Morpheus over Transport Layer Security (TLS).  Morpheus will generate self-signed certificates if no certificate is provided in the configuration file.  To provide your own certificate:
 
