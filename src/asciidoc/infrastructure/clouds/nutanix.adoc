@@ -1,49 +1,44 @@
 [[nutanix]]
-=== Nutanix
+=== Nutanix Integraiton
 
-Nutanix
-
+==== Overview
 Nutanix simplifies datacenter infrastructure by integrating server and storage resources allowing applications to run at scale. Morpheus provides and avenue to enhance the Nutanix resources to allow efficient and seamless deployment of applications as a virtual machine (VM) or as a container on a Docker host.
 
-Features:
+==== Features
 
-Virtual Machine Provisioning
-Containers
-Backups / Snapshots
-Resources Groups
-Migrations
-Auto Scaling
-Load Balancing
-Remote Console
-Periodic Synchronization
-Lifecycle Management and Resize
+* Virtual Machine Provisioning
+* Containers
+* Backups / Snapshots
+* Resources Groups
+* Migrations
+* Auto Scaling
+* Load Balancing
+* Remote Console
+* Periodic Synchronization
+* Lifecycle Management and Resize
+
 Morpheus can provide a single pane of glass and self-service portal for managing multiple Nutanix Clusters and allowing the seamless deployment of applications.
 
-Getting Started
+==== Getting Started
 
 To get started this a few prerequisites must first be met.  The Nutanix cluster should be provisioned and available on the network.  Morpheus will look login to the Nutanix cluster with the Nutanix admin credentials and is typically located at the https://fqdn:9440 url.
 
-Adding Nutanix as a Private Cloud
+==== Adding a Nutanix Cloud
 
-The Nutanix cluster should be available and responding to the https://fqdn:9440 url for authentication by Morpheus. Create a group and then create a Morpheus cloud for Nutanix.   Populate the information as show in Figure 2: specific for the environment being configured.
+The Nutanix cluster should be available and responding to the https://fqdn:9440 url for authentication by Morpheus.
 
-Figure 1:  Create Nutanix Cloud
+API URL:: example: https://10.30.21.220:9440
+USERNAME:: Nutanix admin username
+PASSWORD:: Nutanix admin password
+Inventory Existing Instances:: If enabled, existing Virtual Machines will be inventoried and appear as unmanaged Virtual Machines in {morpheus}.
 
+include::advanced_options.adoc[]
 
-
-Figure 2: Configure Nutanix Cloud
-
-
-
-Service Plans
+==== Service Plans
 
 A default set of Service Plans are created in Morpheus for the VMware provisioning engine. These Service Plans can be considered akin to AWS Flavors or Openstack Flavors. They provide a means to set predefined tiers on memory, storage, cores, and cpu. Price tables can also be applied to these so estimated cost per virtual machine can be tracked as well as pricing for customers. By default, these options are fixed sizes but can be configured for dynamic sizing. A service plan can be configured to allow a custom user entry for memory, storage, or cpu. To configure this, simply edit an existing Service Plan tied to Nutanix or create a new one. These all can be easily managed from the Admin | Service Plans & Pricing section.
 
-
-
-
-
-Docker
+==== Docker
 
 So far this document has covered how to add the Nutanix cloud integration and has enabled users the ability to provision virtual machine based instances via the Add Instance catalog in Provisioning. Another great feature provided by Morpheus out of the box is the ability to use Docker containers and even support multiple containers per Docker host. To do this a Docker Host must first be provisioned into Nutanix (multiple are needed when dealing with horizontal scaling scenarios).
 
