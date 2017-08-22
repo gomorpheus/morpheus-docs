@@ -1,13 +1,11 @@
 [[backup_settings]]
 == Backup Settings
 
-//add includes for veeam and commvault
-
 === Overview
 
-The Backups Settings page allows you enable or disableScheduled Backups, and select a Default Backup Storage Provider Backups within Morpheus can always be run manually. However the scheduled backups toggle must be enabled to run jobs automatically. Configure the default storage provider to select the target location for all new backups. (This does not affect existing backups.)
+The Backups Settings page allows you enable or disableScheduled Backups, and select a Default Backup Storage Provider Backups within {morpheus} can always be run manually. However the scheduled backups toggle must be enabled to run jobs automatically. Configure the default storage provider to select the target location for all new backups. (This does not affect existing backups.)
 
-=== Edit Settings
+=== {morpheus} Backup Settings
 
 Select the Admin link in the navigation bar.
 Select the Backups link in the sub navigation bar.
@@ -16,14 +14,17 @@ Configure:
 
 Scheduled Backups:: Enable automatic scheduled backups for provisioned instances.
 
-Create Backups:: When enabled, Morpheus will automatically configure instances for manual or scheduled backups.
+Create Backups:: When enabled, {morpheus} will automatically configure instances for manual or scheduled backups.
 
 Copy Snapshots to Store::
 
-Backup Appliance::
+Backup Appliance:: When enabled, a Backup will be created to backup the {morpheus} appliance database.
 
-Default Backup Provider:: Enable/Disable Morpheus as the default backup provider.
+Default Backup Provider:: Enable/Disable {morpheus} as the default backup provider.
 
 Default Backup Storage Provider select a Storage provider:: Storage Providers can be configured and managed in the Infrastructure Storage section.
 
 Backup Retention Count:: Maximum number of successful backups to retain.
+
+include::veeam_config.adoc[]
+include::commvault_config.adoc[]
