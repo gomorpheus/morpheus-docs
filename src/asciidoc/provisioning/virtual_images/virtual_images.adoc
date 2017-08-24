@@ -2,31 +2,55 @@
 UPDATE
 
 == Virtual Images
-
+`Provisioning -> Virtual Images`
 === Overview
 
-The virtual image page displays a list of all images configured and available to deploy. The list of images displayed on this page displays the type, name, platform, region, and status. Drill into any image to perform actions and review detailed information.
+The Virtual Image section displays a list of all images, local and synced, that are available to deploy. {morpheus} includes a rich catalog of pre-configured System Images available for every cloud type. User Images are automatically synced from Cloud Integrations and added to the Virtual Images section. Images can also be uploaded directly into {morpheus} via local file or url. Amazon and Azure Marketplace images can also be added to the Virtual Images Section.
 
-To View Virtual Images:
+=== Image Types
 
-Select the Provisioning link in the main navigation bar.
-Select the Virtual Images link in the sub-navigation bar.
+{morpheus} provides a vast System Image repo with pre-configured images for every Cloud. All other images are User Images. User images can be added, or automatically synced from integrated clouds. It is important to configure synced User Images for metadata, including specifying the Platform and User Credentials, prior to provisioning. Provisioning a User Image that has not been configured may result in failed provisioning.
+
+IMPORTANT: Synced User Images need to be configured prior to provisioning.
+
+=== Configuring Virtual Images
+
+==== System Images
+
+System Images are pre-configured with metadata and have Cloud-Init or Cloudbase-Init installed. These images are ready to be provisioned with no configuration necessary. It is highly recommended to populated the `Administration -> Provisioning -> Cloud-Init` section with user data prior to provisioning, as the user and password/key will be added to all Instances provisioned from System Images. Users can also be added during provisioning in the `Add User` provisioning wizard section.
+
+NOTE: Editing System Images is disabled.
+
+==== User Images
+
+Typically {morpheus} does not have sufficient metatdata to successfully provision synced User Images. After integrating clouds and User Images have synced, it is highly recommended to configure the images prior to provisioning.
+
+To edit and configure an existing Virtual Image:
+
+. Select `Actions - Edit` in the Virtual Images list, or `Edit` on a Virtual Image detail page.
+. Configure the following on the Image;
+* Platform
+* Cloud Init
+*
+
+NOTE: Cloud-Init is enabled by default on all Images. Images without Cloud-Init or Cloudbase-Init installed must have the `cloud-init` flag disabled on the Virtual Image settings.
+
+When provisioning a System Image for the first time, {morpheus} will download and stream the image from S3 to the source Cloud if the image is not local to the Cloud. The Image will also be cached on the {morpheus} Appliance under /var/opt/morpheus/vm/vmcache. Subsequent provisions of the image will use the created template in the Cloud or the cached local Image if the images does not exist in the selected Cloud, in which case the cached Image will be copied to the Cloud.
+
+NOTE:: The {morpheus} Appliance must be able to download from Amazon S3 when provisioning System Images for the first time.
+
+NOTE:: The {morpheus} Appliance must be able reach and resolve the destination Host when provisioning System Images or upload Images for the first time. This included being able to resolve ESXi host names in VMware VCenter clouds, and reach the destination ESXi host over port 443.
 
 === Add Virtual Image
 
 To Add Virtual Image:
 
-Select the Provisioning link in the main navigation bar.
-
-Select the Virtual Images link in the sub-navigation bar.
-
-Click the Add Virtual Image button.
-
-Select the Cloud Type from the dropdown.
-
-From the Upload Virtual Image Wizard input the following basic information:
-
-Name of the Virtual Image.
+. Select the Provisioning link in the main navigation bar.
+. Select the Virtual Images link in the sub-navigation bar.
+. Click the Add Virtual Image button.
+. Select the Cloud Type from the dropdown.
+. From the Upload Virtual Image Wizard input the following basic information:
+. Name of the Virtual Image.
 
 Operating System type of the Virtual Image.
 
@@ -35,12 +59,14 @@ Redhat
 Ubuntu
 Windows
 etc.
+
 Username
 
 Password
 
 Storage Provider location where the Virtual Image will be stored.
-Note: You must preconfigure a Storage Provider location.
+
+NOTE: Default Storage location is /var/opt/morpheus/morpheus-ui/vms. Additional Storage Providers can be configured in `Infrastructure -> Storage`
 
 Image File(s) the location of the Virtual Image file you will be uploading.
 
