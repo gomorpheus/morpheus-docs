@@ -1,9 +1,9 @@
 [[salt]]
 == Salt Integration *format
 
-Morpheus Appliance now integrates with an existing Salt Master for seamless deployment of Salt States to Minions provisioned from Morpheus.
+{morpheus} Appliance now integrates with an existing Salt Master for seamless deployment of Salt States to Minions provisioned from {morpheus}.
 
-To get started browse to Admin -> Integrations from within Morpheus.
+To get started browse to Admin -> Integrations from within {morpheus}.
 
 Once there simply add a New Integration
 
@@ -11,11 +11,11 @@ image::images/salt-af3ca.png[]
 
 And then scope the integration to your existing Salt Master by ip address.  Make sure that the username entered is one with proper escalation privileges for running Salt, and point the Working Directory at the directory on your Master where your States live.
 
-NOTE: Morpheus will allow you to run States from a git backend, but in v2.10 you will not see states from a git backend within Morpheus
+NOTE: {morpheus} will allow you to run States from a git backend, but in v2.10 you will not see states from a git backend within {morpheus}
 
 image::images/salt-a41c9.png[]
 
-Configuration Management integrations like Saltstack apply to the Infrastructure Group abstraction in Morpheus.  To ties yours in, browse to Infrastructure -> Groups in Morpheus and select the group that you would like to tie to your Salt Master.
+Configuration Management integrations like Saltstack apply to the Infrastructure Group abstraction in {morpheus}.  To ties yours in, browse to Infrastructure -> Groups in {morpheus} and select the group that you would like to tie to your Salt Master.
 
 From here select Edit
 
@@ -43,7 +43,7 @@ The classic example of running
 
 salt '*' test.ping
 
-will return empty unless there are existing Minions with accepted keys on the Master.  However, provisioning Minions via Morpheus is extremely easy.
+will return empty unless there are existing Minions with accepted keys on the Master.  However, provisioning Minions via {morpheus} is extremely easy.
 
 To do so, provision as usual and Instances within the Group tied to the Saltstack Integration will now show additional options on the Configure pane
 
@@ -57,7 +57,7 @@ Once your instance is provisioned and key negotiation has completed you will be 
 
 image::images/salt-f8e4e.png[]
 
-If you did not apply a state at provision time now you will be able to run State commands through Morpheus.
+If you did not apply a state at provision time now you will be able to run State commands through {morpheus}.
 
 image::images/salt-71b7c.png[]
 
