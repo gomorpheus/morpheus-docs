@@ -1,12 +1,12 @@
 == Ansible Integration *format
 
-Morpheus appliance supports Ansible integration for configuration management.  Morpheus accomplishes this by integrating with an existing repository of playbooks as the master in a master-slave Ansible architecture.
+{morpheus} appliance supports Ansible integration for configuration management.  {morpheus} accomplishes this by integrating with an existing repository of playbooks as the master in a master-slave Ansible architecture.
 
 To get started the only requirement is an existing repository for playbooks in a very simple structure:
 
-Setting Up Integrations in Morpheus
+Setting Up Integrations in {morpheus}
 
-The first step is to establish an integration with your Morpheus Appliance and your Ansible repository.  Browse to the Admin > Integrations tab within your Morpheus Appliance:
+The first step is to establish an integration with your {morpheus} Appliance and your Ansible repository.  Browse to the Admin > Integrations tab within your {morpheus} Appliance:
 
 
 
@@ -22,7 +22,7 @@ Once you have completed this section and saved your changes you can set up a gro
 
 Groups
 
-If you are unfamiliar with Morpheus Groups in infrastructure please look here (#article referencing groups link).
+If you are unfamiliar with {morpheus} Groups in infrastructure please look here (#article referencing groups link).
 
 Automation integrations apply to an infrastructure group, and can be added when the group is set up or after the fact.  When establishing a new group or when editing an existing one, simply expand the Integrations dropdown and select the Integration created in the preceding steps:
 
@@ -42,7 +42,7 @@ Once an Ansible integration is added to a Group, a new "ANSIBLE" tab will appear
 
 Provisioning and Inventory
 
-*IMPORTANT: In Morpheus v2.9.3 and prior, an additional user "morpheus" with password or key pair must be added while provisioning any instances you wish to run playbook on. This requirement is removed in v2.9.4 and later.
+*IMPORTANT: In {morpheus} v2.9.3 and prior, an additional user "morpheus" with password or key pair must be added while provisioning any instances you wish to run playbook on. This requirement is removed in v2.9.4 and later.
 
 After an Ansible integration is added to a group, all Instances provisioned into that group will have a new field "ANSIBLE GROUP" under the advanced option section of the configurations pane during provisioning.
 
@@ -60,7 +60,7 @@ Running Playbooks
 
 Playbooks can be ran on all inventory groups, individual groups, or added as a task and ran with workflows.
 
-To run ansible on all or a single inventory group, in the Ansible tab of the Morpheus Group page, select the ACTIONS dropdown and click RUN:
+To run ansible on all or a single inventory group, in the Ansible tab of the {morpheus} Group page, select the ACTIONS dropdown and click RUN:
 
 
 

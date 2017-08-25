@@ -1,37 +1,28 @@
 [[consul]]
 == Consul Integration *format
 
+Integrating an existing Consul Registration into {morpheus} is extremely easy.
 
-Integrating an existing Consul Registration into Morpheus is extremely easy.
-
-For starters, as with all integrations, browse to Admin -> Integrations and click to add a New Integration.
+For starters, as with all integrations, browse to `Administration -> Integrations` and click to add a New Integration.
 
 Configure your integration by adding your existing Consul Host's ip address or hostname, http port, username and password and datacenter id:
 
-
-
 image::images/consul-2c5da.png[]
 
+Consul Registry Integration within {morpheus} applies to the {morpheus} conventions of an Infrastructure Group or a Cloud.
 
-
-Consul Registry Integration within Morpheus applies to the Morpheus conventions of an Infrastructure Group or a Cloud.
-
-Infrastructure Group Integration
+=== Infrastructure Group Integration
 
 Browse to Infrastructure -> Groups and select the Group you would like to integrate with Consul.  Edit the group (if not creating a new one), and under Advanced Options select the Consul Integration you set up earlier from the Service Registry drop down:
-
 
 image::images/consul-44f87.png[]
 
 
-Cloud Integration
+=== Cloud Integration
 
 Browse to Infrastructure -> Clouds and select the Cloud you would like integrated with Consul.  Edit the cloud (if not creating a new one) and under Advanced Options select the Consul Integration you set up earlier form the Service Registry drop down:
 
-
 image::images/consul-bd927.png[]
-
-
 
 
 And that's it.  After your integration is set up, all containers deployed within the Group or Cloud integrated will provision with the Consul Agent in Client Mode, gossiping to your Consul Server!

@@ -9,9 +9,9 @@ UPDATE
 
 . *Hypervisor to Hypervisor*
 
-Store:: Morpheus will create a snapshot of existing VM and upload the snapshot to virtual image directory. Images that have been uploaded to the Virtual Images library can be converted to VHD, QCOW2, RAW and VMDK formats and then re-provisioned.
+Store:: {morpheus} will create a snapshot of existing VM and upload the snapshot to virtual image directory. Images that have been uploaded to the Virtual Images library can be converted to VHD, QCOW2, RAW and VMDK formats and then re-provisioned.
 
-New:: Morpheus will create a snapshot of an existing VM, convert from source format to required destination format, and then provision the VM into the target environment.
+New:: {morpheus} will create a snapshot of an existing VM, convert from source format to required destination format, and then provision the VM into the target environment.
 
 Source:: VMWare, Openstack, Xen, ESXi, Nutanix* Azure* Hyper-V*
 Destination:: Softlayer, Openstack, Metapod, Xen, Amazon, VMWare, ESXi, Nutanix, Hyper-V Supported OS Type: Windows or Linux
@@ -28,10 +28,10 @@ Service Impact:: Non Disruptive
 Requirements:: Requires a separate disk or network share to store the image during conversion process. Capacity of the disk or network share should be sized appropriately to support the data that will be exported.
 
 . *Live Stream*
- Live Stream is a linux only streaming process that will take a snapshot of a volume and allow it to be streamed to a destination linux system that is either existing or new. The destination linux must already exist and it can either be a managed or unmanaged VM in Morpheus. The destination will be overwritten from a root level perspective.
+ Live Stream is a linux only streaming process that will take a snapshot of a volume and allow it to be streamed to a destination linux system that is either existing or new. The destination linux must already exist and it can either be a managed or unmanaged VM in {morpheus}. The destination will be overwritten from a root level perspective.
 
 Source:: Any Cloud
-Destination:: Morpheus
+Destination:: {morpheus}
 Supported OS Type:: Linux (Only)
 Service Impact:: Non Disruptive
 Requirements:: Requires the Linux host/guest to be configured for LVM and that free space of the capacity to be streamed is available. A destination linux host/guest must be available to receive the stream.

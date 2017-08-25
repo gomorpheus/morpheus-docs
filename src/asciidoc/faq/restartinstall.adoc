@@ -1,12 +1,12 @@
-== Restart a Morpheus Installation
+== Restart a {morpheus} Installation
 
 If the initial reconfigure is stopped or your installation is damaged beyond reconfiguring again, it may be necessary to start over.
 
-On the Morpheus appliance:
+On the {morpheus} appliance:
 
 . Run `morpheus-ctl cleanse`
 
-. Remove the Morpheus package
+. Remove the {morpheus} package
 
 .. deb: `dpkg --purge morpheus-appliance...` using the appropriate package name.
 
@@ -17,7 +17,7 @@ On the Morpheus appliance:
 . `rm -rf /var/run/morpheus`
 . `rm -rf /var/log/morpheus`
 . `rm -rf /opt/morpheus`
-. Re-install Morpheus
+. Re-install {morpheus}
 
 If the elasticsearch cluster is unhealthy and needs purged, run:
 
