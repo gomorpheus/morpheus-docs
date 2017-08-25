@@ -1,234 +1,44 @@
 [[clouds_overview]]
 
-=== Clouds Overview *update/format
-1. Overview
+=== Clouds Overview
 
 Clouds are integrations or connections to public, private, hybrid clouds, or bare metal servers. Clouds can belong to many groups and contain many hosts. The clouds view a includes search feature and provides the option to edit, delete, and add new clouds. Morpheus supports most Public Clouds and Private Clouds.
 
-1. Add a Cloud
+=== Adding Clouds
 
-Morpheus-Infrastruture-Add-AWS-Cloud
+Clouds can be added from `Infrastructure -> Clouds` or in `Infrastructure -> Groups -> (select Group) -> Clouds`.
+Details on required credentials and settings can be found in the Cloud integrations guides.
 
-To Add a cloud:
 
-Click the Infrastructure link in the navigation bar.
+=== Cloud Detail View
 
-Select the Clouds link in the sub navigation bar.
+In the Cloud List View, select the name of a Cloud to display the clouds Detail View.
 
-Click the + Create Cloud button and select the type of cloud to add.
+EDIT:: Edit the setup configuration of the Cloud.
+REFRESH:: Force a sync with the Cloud. Last sync date, time and duration is shown under the Cloud name.
+DELETE:: Delete the Cloud from {morpheus} IMPORTANT: All Instances and managed Hosts and VM's must be removed prior to deleting a cloud.
 
-From the New Cloud Wizard input the following information
+NOTE: Not all tabs are available for all Cloud Types.
 
-Name
-Location
-Domain
-Visibility (Public or Private)
-Scale Priority (Specifies the priority with which an instance will scale into the cloud. A lower priority number means this cloud integration will take scale precedence over other cloud integrations in the group.)
-Enter Cloud Details:
+Hosts:: The hosts tab panel displays available hosts in the cloud and displays power, os, name, type, cloud, ip address, nodes, disc space, memory, and status. You can add a container host from this by clicking the Container Hosts button, add a hypervisor host by clicking the HyperVisor button, or perform actions actions by click the Actions button.
+Virtual Machines:: Displays an Inventory of Existing Instances in your cloud configuration and provides details such as power, os, name, type, cloud, ip address, nodes, disc space, memory, and status.
+Bare Metal:: Setup PXE Boot in the Boot section to add bare metal servers. Once setup you can view information such as power, os, name, type, cloud, ip address, nodes, disc space, memory, and status.
+Security Groups:: The Security Groups tab panel displays a list of existing Security groups in the cloud. You can add a security group to this cloud by clicking the Edit Security Groups button.
+Load Balancers:: The load balancers tab panel displays available load balancers in the cloud and displays the name, description, type, cloud and host. You can add a load balancer from this tab by clicking the Add Load Balancer button.
+Networks:: Displays Networks synced or added to the Cloud.
+DataStores:: Displays Datastores synced or added to the Cloud.
+Resource Pools:: Displays Resource Pools synced from the Cloud.
+Policies:: Manages Policies enforced on the Cloud.
 
-Azure
++ Container Host:: Provisions a Docker host into the Cloud, or adds an existing Docker Host (manual) to the Cloud. KVM hosts are also available for {morpheus} and Bare Metal cloud types.
++ Hypervisor:: Add an existing Hypervisor to the Cloud. Not available for all Cloud types.
 
-Name
-Tenant ID
-Client ID
-Client Secret
-Resource Group
-Storage Account
-DigitalOcean
-
-Username
-API Key
-Data Center
-Google
-
-Project ID
-Private Key
-Client Email
-Softlayer
-
-Username
-API Key
-Data Center
-Object Store
-vCloud Air
-
-Username
-Password
-Region
-VDC
-Amazon Web Services
-
-Region
-Access Key
-Secret Key
-Import Existing Instances (optional)
-Use VPC
-EC2 Classic
-Virtual Private Cloud
-Azure Stack
-
-Identity URL
-Managment URL
-Subsrcription ID
-Tenant ID
-Client ID
-Client Secret
-Resource Group
-Storage Account
-Hyper-V
-
-Hyper-V Host
-Working Path
-VM Path
-Disk Path
-Username
-Password
-Morpheus
-
-No Credentials Required
-Nutanix
-
-API URL
-Username
-Password
-Container
-Inventory Existing Instances (optional)
-Cisco UCS
-
-UCS Manager
-Username
-Password
-ORG Name
-Server Prefix
-Data disk mode
-Data Volume
-Software Raid (Optional)
-Net Interface
-VirtualBox
-
-Virtual Box Host
-Working Path
-Username
-Password
-Bridge Name  Example: EN0: Ethernet
-ESXi
-
-ESXi Host path
-Username
-Password
-Image Store
-VMware Fusion
-
-VMWare Fusion Host
-Working Path
-Username
-Password
-Bridge Name  Example: EN0: Ethernet
-VMWare
-
-API URL
-Username
-Password
-VDC
-Cluster
-Resource Pool
-Hide Host Selection from Users (Optional)
-Inventory Existing Instance (Optional)
-XenServer
-
-API URL
-Username
-Password
-Openstack
-
-Identity API URL
-Domain
-Project
-Username
-Password
-OS Version
-Image Format
-Inventory Existing Instances (Optional)
-Cisco Metacloud
-
-Identity API URL
-Domain
-Project
-Username
-Password
-Inventory Existing Instances (Optional)*
-
-Click the Next button.
-
-Select Group
-
-Existing
-Click the group down and select a group.
-Create New
-Input Name and Location (Optional)
-Click the Next button.
-
-Review and click the Complete button to save.
-
-3. Cloud View
-
-Drill into and display a clouds details. The cloud view displays hosts, virtual machines, bare metal, security groups, and load balancers associated with the cloud. From the cloud view you will be able to add, edit and remove hosts, virtual machines, bare metal, security groups, and load balancers.
-
-To view a cloud
-
-Select the Infrastructure link in the navigation bar.
-Select the Clouds link in the sub navigation bar.
-Click the cloud name to view.
-Click the available tabs to view either hosts, virtual machines, bare metal, security groups, and load balancers associated with the cloud.
-
-The (5) tab panels are described below: Some tab panels may be unavailable depending on license type.
-
-Hosts: The hosts tab panel displays available hosts in the cloud and displays power, os, name, type, cloud, ip address, nodes, disc space, memory, and status. You can add a container host from this by clicking the Container Hosts button, add a hypervisor host by clicking the HyperVisor button, or perform actions actions by click the Actions button.
-Virtual Machines: Displays an Inventory of Existing Instances in your cloud configuration and provides details such as power, os, name, type, cloud, ip address, nodes, disc space, memory, and status.
-Bare Metal: Setup PXE Boot in the Boot section to add bare metal servers. Once setup you can view information such as power, os, name, type, cloud, ip address, nodes, disc space, memory, and status.
-Security Groups: The Security Groups tab panel displays a list of existing Security groups in the cloud. You can add a security group to this cloud by clicking the Edit Security Groups button.
-Load Balancers: The load balancers tab panel displays available load balancers in the cloud and displays the name, description, type, cloud and host. You can add a load balancer from this tab by clicking the Add Load Balancer button.
-4. Edit Cloud
-
-Morpheus Infrastructure Edit Cloud
-To edit a cloud:
-
-Select the Infrastructure link in the navigation bar.
-Select the Clouds link in the sub navigation bar.
-Click the Edit icon of the cloud to edit.
-From the Edit Cloud Wizard modify the name, location, domain and visibility, scale and details as needed.
-Click the Save Changes button to save.
-5. Delete Cloud
+=== Delete Cloud
 
 To delete a cloud:
 
-Select the Infrastructure link in the navigation bar.
-Select the Clouds link in the sub navigation bar.
-Click the Delete icon of the cloud to delete.
-Note: You will be prompted for confirmation on this action.
-6. Add Cloud Security Groups
+. Select the Infrastructure link in the navigation bar.
+. Select the Clouds link in the sub navigation bar.
+. Click the Delete icon of the cloud to delete.
 
-Morpheus Infrastructure Cloud Add Security Group
-The global firewall must be enabled for Security Groups to be applied. Global firewall can be enabled in Clouds.
-
-To add security group
-
-Select the Infrastructure link in the navigation bar.
-Select the Clouds link in the sub navigation bar.
-Click the name of the cloud to add an ACL.
-Click the Security Groups tab.
-Click the Edit Security Groups button.
-Click the Add button of the Security Group from Available Security Groups to add to Added Security groups.
-Click the Save button.
-7. Remove Cloud Security Groups
-
-Morpheus Infrastructure Cloud Remove Secuirty Group
-To remove cloud security group
-
-Select the Infrastructure link in the navigation bar.
-Select the Clouds link in the sub navigation bar.
-Click the name of the cloud to add an ACL.
-Click the Security Groups tab.
-Click the Edit Security Groups button.
-Click the Minus button of the Security Group from Added Security groups to remove.
-Click the Save button.
+IMPORTANT: All Instances and managed Hosts and VM's must be removed prior to deleting a cloud. To remove Instances, Hosts and VM's from Morpheus without deleting them in the actual Cloud, select Delete on the Host or VM, unselect "Remove Infrastructure" and select "Remove Associated Instances" if Instance are associated with the Hosts or VMs.

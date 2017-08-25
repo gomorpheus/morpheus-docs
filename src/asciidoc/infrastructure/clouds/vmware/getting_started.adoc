@@ -1,4 +1,4 @@
-[[getting_started]]
+sub-accountdrop downs[[getting_started]]
 ==== Getting Started
 
 To get started with vmware, simply start by adding a Cloud in the `Infrastructure -> Clouds` section.
@@ -7,18 +7,18 @@ image::vmware/add_cloud.png[caption="Figure 1: ", title="Add VMware Cloud form",
 
 To start adding a VMware cloud there will be some things you will need:
 
-* *Vcenter API Url:* Typically this is the url to the vcenter web client with a `/sdk` in the path
+* *Vcenter API Url:* Typically this is the url to the Vcenter web client with a `/sdk` in the path
 * *Username/Password*: A set of credentials with high level access to VMware (ensure the account has Datacenter level access)
 
-Once these fields are entered, some selections will start prepopulating. A cloud integration must be scoped to a specific data center and cluster. If the dropdowns do not populate, please  verify the api url and provided credentials have access to Vcenter.
+Once these fields are entered, some selections will start pre-populating. A cloud integration must be scoped to a specific data center and cluster. If the drop downs do not populate, please  verify the api url and provided credentials have access to Vcenter.
 
-Another cool feature provided with the cloud integration is optional `Resource Pool` scoping. One can choose to allow the cloud to provision into All Resource Pools or a singular Resource Pool. When choosing `All`, these Resource Pools can be managed from a subaccount and visibility perspective via the Cloud Detail page (multitenancy).
+Another cool feature provided with the cloud integration is optional `Resource Pool` scoping. One can choose to allow the cloud to provision into All Resource Pools or a singular Resource Pool. When choosing `All`, these Resource Pools can be managed from a sub-account and visibility perspective via the Cloud Detail page (multi-tenancy).
 
 The VMware cloud integration provides a few additional options including allowing users to make host selections or keeping that aspect hidden such that the best host is automatically chosen for the requested provision.
 
-The *RPC Mode* feature can be configured to allow Morpheus to install its agent on the Guest operating system via either SSH/WinRM or Vmware Tools Guest Process feature. The VMware tools Guest Exection API can be tricky so it is recommended to use SSH/WinRM if possible. However, if it is not possible for the Appliance to have outbound access to all networks in which VMs are being provisioned to the SSH/WinRM ports (22, 5985 respectively) then Guest Execution is the only option.
+The *RPC Mode* feature can be configured to allow {morpheus} to install its agent on the Guest operating system via either SSH/WinRM or Vmware Tools Guest Process feature. The VMware tools Guest Execution API can be tricky so it is recommended to use SSH/WinRM if possible. However, if it is not possible for the Appliance to have outbound access to all networks in which VMs are being provisioned to the SSH/WinRM ports (22, 5985 respectively) then Guest Execution is the only option.
 
-The `Use VNC` console option on the vmware cloud requires special configuration on each ESXI host but allowed hypervisor level remote console support. (See the Advanced Section for details)
+The `Use VNC` console option on the VMware cloud requires special configuration on each ESXI host but allowed hypervisor level remote console support. (See the Advanced Section for details)
 
 When following this add cloud wizard an option will be presented to create a group or add to an existing group. These groups can be given provisioning permission via  role based access control. It is normally recommended that groups are organized such that one cloud exists in one group unless the networks are setup such that internal routing is possible between the clouds. This is very useful for bursting, or hybrid cloud configurations.
 
@@ -41,7 +41,4 @@ image::vmware/service_plans.png[caption="Figure 3: ", title="Plans & Pricing man
 
 A global cloud-init username/password can also be configured per account as well as a keypair via the `Admin->Provisioning` settings section. The great benefit of utilizing cloud-init is default templates do not need common credential sets thereby increasing provisioning security.
 
-Windows systems do not typically support cloud-init. So simply turn this checkbox off and provide the `Administrator` credentials. It should be noted that these credentials are encrypted in the database. If using WinRM for the RPC Mode instead of Vmware tools, a Local or Domain Administrator account credential set can be provided instead.
-
-NOTE: Currently the Morpheus Agent supported Operatings Systems are (Ubuntu 14.04, CentOS 7, RHEL 7, and Windows 2008 +).
-
+Windows systems do not typically support cloud-init. So simply turn this checkbox off and provide the `Administrator` credentials. It should be noted that these credentials are encrypted in the database. If using WinRM for the RPC Mode instead of VMware tools, a Local or Domain Administrator account credential set can be provided instead.
