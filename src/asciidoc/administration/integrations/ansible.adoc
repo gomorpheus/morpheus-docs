@@ -1,79 +1,66 @@
-== Ansible Integration *format
+[[ansible]]
+
+== Ansible Integration
+
+=== Overview
 
 {morpheus} appliance supports Ansible integration for configuration management.  {morpheus} accomplishes this by integrating with an existing repository of playbooks as the master in a master-slave Ansible architecture.
 
-To get started the only requirement is an existing repository for playbooks in a very simple structure:
+To get started the only requirement is an existing repository for playbooks in a very simple structure.
 
-Setting Up Integrations in {morpheus}
+=== Add Ansible Integration
 
-The first step is to establish an integration with your {morpheus} Appliance and your Ansible repository.  Browse to the Admin > Integrations tab within your {morpheus} Appliance:
+. Navigate to `Administration -> Integrations` and select `+ New Integration`
+. Select Integration Type "Ansible"
+. Populate the following fields:
+Name:: Name of the Ansible Integration in {morpheus}
+Enabled:: Enabled by default
+Ansible Git URL:: https or git url format of the Ansible Git repo to use
+Keypair:: For private Git repos, a keypair must be added to {morpheus} and the public key added to the git account.
+Playbooks Path:: Path of the Playbooks relative to the Git url.
+Roles Path:: Path of the Roles relative to the Git url.
+Group Variable Path:: Path of the Group Variables relative to the Git url.
+Host Variables Path:: Path of the Host Variables relative to the Git url.
+. Save Changes
 
+Once you have completed this section and saved your changes you can set up a Cloud or Group to utilize this integration.
 
+=== Scope Ansible Integration to a Cloud
 
-From there add a New Integration and complete the requisite details in the pop-up modal:
+. Navigate to `Infrastructure -> Clouds`
+. Edit the target Cloud
+. Expand the `Advanced Options` section
+. In the `Config Managment` dropdown, select the Ansible Integration.
+. Save Changes
 
+Once an Ansible integration is added to a Cloud, a new "ANSIBLE" tab will appear on the Cloud details page, populated with the Ansible integrations Playbook and Roles, as well as an editable Inventory list.
 
+=== Scope Ansible Integration to a Group
 
+. Navigate to `Infrastructure -> Groups`
+. Edit the target Group
+. Expand the `Advanced Options` section
+. In the `Config Managment` dropdown, select the Ansible Integration.
+. Save Changes
 
+Once an Ansible integration is added to a Group, a new "ANSIBLE" tab will appear on the Group details page, populated with the Ansible integrations Playbook and Roles, as well as an editable Inventory list.
 
-NOTE: If you intend to use SSH for accessing your git then you must upload the morpheus PUBLIC KEY provided into your git repo.  An example is given in the image above, though you can also use https to clone the repo as long as it is public.
+=== Provisioning Options
 
-Once you have completed this section and saved your changes you can set up a group to utilize this integration.
+When provisioning Instances into a Cloud or Group with a Ansible Integration added, an `Ansible` section will appear in the Config section of the provisioning wizard. By default, Ansible is enabled, but can be disabled by expanding the `Ansible` section and unchecking `Enable Ansible`.
 
-Groups
+Ansible Integration Provisioning options:
 
-If you are unfamiliar with {morpheus} Groups in infrastructure please look here (#article referencing groups link).
+Enable Ansible:: Select to bootstrap
+Ansible Group:: Ansible Inventory Group. Use existing group or enter a new group name to create a new group. Leaving this field blank will place instance in the "unassigned" inventory group.
+Playbook:: Playbook(s) to run. The .yml extension is optional.
 
-Automation integrations apply to an infrastructure group, and can be added when the group is set up or after the fact.  When establishing a new group or when editing an existing one, simply expand the Integrations dropdown and select the Integration created in the preceding steps:
+=== Running Playbooks
 
+Playbooks can also be ran on all inventory groups, individual groups, or added as a task and ran with workflows.
 
+To run ansible on all or a single inventory group, in the Ansible tab of the {morpheus} Group page, select the `Actions` dropdown and click `Run`.
 
+In the `Run Ansible` modal, you can then select all or an individual group, and then all or a single Playbook, as well as add custom tags.
 
-
-Once an Ansible integration is added to a Group, a new "ANSIBLE" tab will appear on the Groups page, populated with the Ansible integrations Playbook and Roles, as well as an editable Inventory list:
-
-
-
-
-
-
-
-
-
-Provisioning and Inventory
-
-*IMPORTANT: In {morpheus} v2.9.3 and prior, an additional user "morpheus" with password or key pair must be added while provisioning any instances you wish to run playbook on. This requirement is removed in v2.9.4 and later.
-
-After an Ansible integration is added to a group, all Instances provisioned into that group will have a new field "ANSIBLE GROUP" under the advanced option section of the configurations pane during provisioning.
-
-
-
-
-
-Entering an existing or new ansible inventory group will add the instance to the ansible inventory:
-
-
-
-
-
-Running Playbooks
-
-Playbooks can be ran on all inventory groups, individual groups, or added as a task and ran with workflows.
-
-To run ansible on all or a single inventory group, in the Ansible tab of the {morpheus} Group page, select the ACTIONS dropdown and click RUN:
-
-
-
-In the RUN ANSIBLE modal, you can then select all or an individual group, and then all or a single Playbook, as well as add custom tags:
-
-
-
-
-
-For this example we ran an Apache playbook, and after running the playbook, we can see Apache was successfully installed and is running on our webserver group instances by entering the ip of one of the instances in a browser t bring up the Apache default welcome page:
-
-
-
-
-
-Playbook's can also be added as tasks and workflows in the Provisioning- Automations section, and then added in the Automation pane during provisioning of new instances, when creating app templates, or ran on existing instances using the ACTIONS: RUN WORKFLOW on the instance details page.
+Playbook's can also be added as tasks to workflows in the `Provisioning -> Automation` section, and then selected in the Automation pane during provisioning of new instances, when creating app templates, or ran on existing instances using the `Actions -> Run Workflow` on the Instance or Host pages.
