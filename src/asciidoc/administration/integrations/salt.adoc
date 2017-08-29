@@ -1,7 +1,11 @@
 [[salt]]
-== Salt Integration *format
+== Salt Integration
+//needs updated
+=== Overview
 
-{morpheus} Appliance now integrates with an existing Salt Master for seamless deployment of Salt States to Minions provisioned from {morpheus}.
+{morpheus} integrates with an existing Salt Master for seamless deployment of Salt States to Minions provisioned from {morpheus}.
+
+=== Add Salt Integration
 
 To get started browse to Admin -> Integrations from within {morpheus}.
 
@@ -14,6 +18,8 @@ And then scope the integration to your existing Salt Master by ip address.  Make
 NOTE: {morpheus} will allow you to run States from a git backend, but in v2.10 you will not see states from a git backend within {morpheus}
 
 image::images/salt-a41c9.png[]
+
+=== Add Salt Integration to Group Or Cloud
 
 Configuration Management integrations like Saltstack apply to the Infrastructure Group abstraction in {morpheus}.  To ties yours in, browse to Infrastructure -> Groups in {morpheus} and select the group that you would like to tie to your Salt Master.
 
@@ -41,9 +47,11 @@ image::images/salt-ccaca.png[]
 
 The classic example of running
 
-salt '*' test.ping
+`salt '*' test.ping`
 
 will return empty unless there are existing Minions with accepted keys on the Master.  However, provisioning Minions via {morpheus} is extremely easy.
+
+=== Provisioning with Saltstack
 
 To do so, provision as usual and Instances within the Group tied to the Saltstack Integration will now show additional options on the Configure pane
 
@@ -51,7 +59,7 @@ image::images/salt-413c5.png[]
 
 Minion ID defaults to the hostname, and a State can be applied directly at provision time.
 
-(NOTE: Only States served from the Master's Working Directory can be applied at provision, not States from a git backend)
+NOTE: Only States served from the Master's Working Directory can be applied at provision, not States from a git backend
 
 Once your instance is provisioned and key negotiation has completed you will be able to access it and run commands via the integrated Salt command center in your Group.
 
