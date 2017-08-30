@@ -31,7 +31,7 @@ To edit and configure an existing Virtual Image:
 . Configure the following on the Image:
 
 Name:: Name of the Virtual Image in {morpheus}. This can be changed from the name of the Image, but editing will not change the name of the actual Image.
-Operating System:: Specifies the Platform and OS of the image. All Windows images will need to have Operating System specified on the Virtual Image, as {norpheus} will assign Linux as the Platform for all Images without Operating System specified.
+Operating System:: Specifies the Platform and OS of the image. All Windows images will need to have Operating System specified on the Virtual Image, as {morpheus} will assign Linux as the Platform for all Images without Operating System specified.
 Cloud Init Enabled?:: On by default, uncheck for any Image that does not have Cloud-Init or Cloudbase-Init installed.
 Install Agent:: On by default, uncheck to skip Agent install. Note this will result in the loss of utilization statistics, logs, script execution, and monitoring. (Some utilization stats are collected for agent-less hosts and vm's from VMware and AWS clouds).
 Username:: Existing Username on the Image. This is required for authentication, unless {morpheus} is able to add user data via Cloud-Init, Cloudbase-Init, or guest processes (VMware).
