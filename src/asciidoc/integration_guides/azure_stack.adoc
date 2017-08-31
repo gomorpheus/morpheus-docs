@@ -1,11 +1,14 @@
 [[azure_stack]]
 == Azure Stack Integration
+<<Overview>>
 
-Overview
-Requirements
-Adding Azure Stack Cloud from UI
-Adding Azure Stack Cloud from CLI
-Adding Azure Stack Cloud from API
+<<Requirements>>
+
+<<Adding an Azure Stack Cloud>>
+//Adding Azure Stack Cloud from CLI
+//Adding Azure Stack Cloud from API
+
+=== Overview
 
 Azure Stack is Microsoft's Azure Cloud for on-premises environments. Azure Stack contains the core Azure services, allowing organizations to take advantage of Azure's offerings with the security, compliance, and financial benefits of hosting it in their own data-centers.
 
@@ -99,7 +102,7 @@ Credentials to integrate {morpheus} with Azure Stack are located in both the pub
 ** Active Directory App from Azure portal added as owner of the Azure Stack Subscription in Azure Stack.
 
 
-=== Adding Azure Stack Cloud from {morpheus} UI
+=== Adding an Azure Stack Cloud
 
 ==== Configure
 
@@ -133,7 +136,7 @@ Credentials to integrate {morpheus} with Azure Stack are located in both the pub
 
 NOTE: All fields and options can be edited after the Cloud is created.
 
-===== Advanced Options
+==== Advanced Options
 
 * *DOMAIN*: Specify a default domain for instances provisioned to this Cloud.
 * *SCALE PRIORITY*: Specifies the priority with which an instance will scale into the cloud. A lower priority number means this cloud integration will take scale precedence over other cloud integrations in the group.
@@ -149,7 +152,7 @@ NOTE: All fields and options can be edited after the Cloud is created.
 ** Cloud-Init (when available): {morpheus} will utilize Cloud-Init or Cloudbase-Init for agent install when provisioning images with Cloud-Init/Cloudbase-Init installed. {morpheus} will fall back on SSH or WINRM if cloud-init is not installed on the provisioned image.
 * *API PROXY*: Required when a Proxy Server blocks communication between the {morpheus} Appliance and the Cloud. Proxies can be added in the `Infrastructure -> Networks -> Proxies` tab.
 
-===== Provisioning Options
+==== Provisioning Options
 * *API PROXY*: Required when a Proxy Server blocks communication between an Instance and the {morpheus} Appliance. Proxies can be added in the `Infrastructure -> Networks -> Proxies` tab.
 ** *Bypass Proxy for Appliance URL* Enable to bypass proxy settings (if added) for Instance Agent communication to the Appliance URL.
 * *USER DATA (LINUX)*: Add cloud-init user data using bash syntax.
