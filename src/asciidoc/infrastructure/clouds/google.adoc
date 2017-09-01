@@ -1,32 +1,28 @@
+
 [[google]]
-=== Google
 
-To integrate {morpheus} with Google Cloud, go to Infrastructure -> Clouds, click on + CREATE CLOUD, select Google Cloud, and then click Next.
+== Google
 
-Add Google Cloud
+=== Add a Google Cloud
 
-Enter the following into the Create Cloud modal:
+TIP: All of the required Goole Cloud credentials can be found in the .json file created when generating a key for a Google Cloud service account.
 
-. Name
-. Location (optional)
-. DNS Domain (optional)
-. Visibility (public or private)
-. Scale Priority (Specifies the priority with which an instance will scale into this cloud)
-// Add Google Cloud 2
+. Navigate to Infrastructure -> Clouds
+. Select `+ CREATE CLOUD`, select Google Cloud, and then click Next.
+. Enter the following into the Create Cloud modal:
+Name:: Name of the Cloud in {morpheus}
+Location:: Description field for adding notes on the cloud, such as location.
+Visibility:: For setting cloud permissions in a multi-tenant environment. Not applicable in single tenant environments.
+Project ID:: Google Cloud Project ID
+Private Key:: Service Account Private key, begging with `-----BEGIN PRIVATE KEY-----\` and ending with `-----END PRIVATE KEY-----`
+Client Email:: Service Account Client Email. ex: `morpheus@morpheus.iam.gserviceaccount.com`
+Region:: Regions will auto-populate upon successful authentication with the above credentials. Select appropriate region for this Cloud.
+Inventory Existing Instances:: If enabled, existing Google Instances will be inventoried and appear as unmanaged Virtual Machines in {morpheus}.
 
-Then, enter the following Google Cloud credentials:
+NOTE: {morpheus} scopes clouds to single regions. Multiple clouds can be added for multi-region support, and then optionally added to the same group.
 
-. Project ID
-. Private key
-. Client Email
-. Region (auto-populates, select region)
-
-TIP: All of these credentials can be found in the .json file created when generating a key for a Google Cloud service account.
-google key gen
+The Cloud can now be added to a Group or configured with additional Advanced options.
 
 include::advanced_options.adoc[]
 
 Finally, add Google Cloud to an existing Group or create a new Group, and you have now integrated {morpheus} with Google Cloud!
-
-
-INFO: {morpheus} scopes clouds to single regions. Multiple clouds can be added for multi-region support, and then optionally added to the same group.
