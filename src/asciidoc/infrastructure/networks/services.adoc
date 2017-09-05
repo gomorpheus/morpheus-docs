@@ -4,7 +4,9 @@
 == Services
 
 === Overview
-The Services section allows you to add and manage IPAM, DNS, and Service Registry integrations. These services can also be adde in the `Administration -> Integrations` section. The following integrations are currently supported:
+The Services section allows you to add and manage IPAM, DNS, and Service Registry integrations. These services can also be added in the `Administration -> Integrations` section.
+
+The following integrations are currently supported:
 
 ==== IPAM
 
@@ -24,13 +26,13 @@ The Services section allows you to add and manage IPAM, DNS, and Service Registr
 
 === Add a Service
 
-To configure any of the services, select ADD SERVICE, and fill out the required fields.
+To configure any of the services, select `ADD SERVICE`, and fill out the required fields.
 
 ==== Infoblox
 
 * Name
 * URL (wapi url + version)
-** example https://x.x.x.x/wapi/v2.2.1
+** example `https://x.x.x.x/wapi/v2.2.1`
 * Username
 * Password
 
@@ -44,7 +46,7 @@ To configure any of the services, select ADD SERVICE, and fill out the required 
 ==== Microsoft DNS
 
 * Name
-*  DNS Server
+* DNS Server
 * Username
 * Password
 * Zone
@@ -67,8 +69,8 @@ To configure any of the services, select ADD SERVICE, and fill out the required 
 * Access Key
 * Secret Key
 
-After Saving, your network Service integrations will be available for use. These integrations must be added to the appropriate section in {morpheus}:
+After Saving, your Network Service integrations will be available for use. These integrations must be added to the appropriate section in {morpheus}:
 
-IPAM:: IPAM integrations will populate pools in the IP Pool section, which are available for assignment to networks in the NETWORK POOL dropdown when configuring a network.
-DNS:: DNS integrations will populate domains in the Networks Domains section, and are available in the DOMAIN dropdown located under the Advanced Options section in Cloud, Group, and Network configurations, as well as in the Configure section of the Create Instance wizard.  DNS integrations are also available in the DNS SERVICE dropdown located under the Advanced Options section in Cloud and Group configurations.
-Service Registry:: Service Registry integrations are available in the SERVICE REGISTRY dropdown located under the Advanced Options section in Cloud and Group configurations.
+IPAM:: IPAM integrations will populate pools in the IP Pool section, which are available for assignment to networks in the `NETWORK POOL` dropdown when configuring a network.
+DNS:: DNS integrations will populate domains in the `Infrastructure -> Network -> Domains` section, and are available in the `DOMAIN dropdown located under the `Advanced Options` section in Cloud, Group, and Network configurations, as well as in the `Configure` section of the Create Instance wizard.  DNS integrations are also available in the `DNS SERVICE` dropdown located under the `Advanced Options` section in Cloud and Group configurations.
+Service Registry:: Service Registry integrations are available in the `SERVICE REGISTRY` dropdown located under the `Advanced Options` section in Cloud and Group configurations.
