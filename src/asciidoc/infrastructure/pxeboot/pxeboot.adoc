@@ -9,13 +9,15 @@
 
 === Prerequisites
 
-Your network must be configured for PXE boot, and the TFTP server port need to mapped to the {morpheus} port, UDP 6969.
+Your network must be configured for PXE boot, and the TFTP server port need to mapped to the {morpheus} TFT server port, UDP 6969.
 
 * Network configured for network boot
 * Router UDP 69 mapped to {morpheus} server UDP port 6969
 * Router TFT Server set to {morpheus} server IP or resolvable Hostname.
 * Mac or IP addresses of PXE target mapped in {morpheus} `Infrastructure -> Boot - Mapping`
 * Target host configured for Network boot in BIOS
+
+NOTE: The {morpheus} PXE port is set in `opt/morpheus/conf/application.yml`
 
 === To PXE Boot
 
