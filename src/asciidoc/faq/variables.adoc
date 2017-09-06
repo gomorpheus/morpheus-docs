@@ -1,15 +1,20 @@
-== Passing variable to scripts
+[[variables]]
+
+=== Variables
 
 The following are the map structures passed to scripts and templates during provisioning. They can currently be used inside of a `<%= %>` block.
 
-PowerShell Example: `$app_id = "<%= instance.metadata.app_id %>"`
+PowerShell Example:
+[source,shell]
+`$app_id = "<%= instance.metadata.app_id %>"`
 
-customvar.png
+Bash Example:
+[source,bash]
+`HOSTNAME="<%= container.server.hostname %>"`
 
-Bash Example: `HOSTNAME="<%= container.server.hostname %>"`
+NOTE: customOptions are user defined as Option Types or Option Lists in custom Library items.
 
-customvar2.png
-
+[source,bash]
 ----
 instance {
 	instanceTypeName,
@@ -44,7 +49,9 @@ instance {
 	metadata:[],
 	evars:[]
 }
-
+----
+[source,bash]
+----
 container {
 	containerTypeName,
 	containerTypeCode,
@@ -75,6 +82,9 @@ container {
 	serverId,
 	server:{}
 }
+----
+[source,bash]
+----
 server {
 	serverTypeName,
 	serverTypeCode,
@@ -133,10 +143,10 @@ server {
 	configId,
 	configGroup,
 	configRole
-
 }
-
-//zone was renamed to cloud in v2.10.1
+----
+[source,bash]
+----
 cloud {
 	name,
 	code,
@@ -150,16 +160,19 @@ cloud {
 	agentMode,
 	datacenterId
 }
-
+----
+[source,bash]
+----
 group {
 	code,
 	name,
 	location,
-	datacenterId,
-}
-
-customOptions {
+	datacenterId
 }
 ----
-
-* NOTE customOptions are user defined as Option Types or Option Lists in custom library items
+[source,bash]
+----
+customOptions {
+	customOptions.fieldName
+}
+----
