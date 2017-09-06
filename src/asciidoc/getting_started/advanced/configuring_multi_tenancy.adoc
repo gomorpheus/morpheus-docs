@@ -13,7 +13,7 @@ During the initial setup of a {morpheus} Appliance, the Master Tenant is created
 
 === Creating Tenants
 
-The Master Tenant is created during the initial appliance setup. Additional sub-Tenants can be created in the Administraton -> Tenants section.
+The Master Tenant is created during the initial appliance setup. Additional sub-Tenants can be created in the `Administration -> Tenants` section.
 
 The Tenants page displays a list of all Tenants. This page enables users to: Create, Edit, and Delete Tenants. The list of Tenants displays the Tenant Name, Role, Total Instances, Total Users, and the Created Date. Click the Tenant Name to drill into the Tenant View where you can again Edit, Delete, as well as Create Users, Edit Users, and Delete Users users belonging to the Tenant.
 
@@ -21,7 +21,7 @@ NOTE: At least one Tenant in addition to the Master Tenant is required to scope 
 
 To create a new sub-Tenant
 
-. Select the Administraton link in the navigation bar.
+. Select the Administration link in the navigation bar.
 . Select the Tenants link in the sub navigation bar.
 . lick the Create Tenant button.
 . From the New Tenant wizard input
@@ -145,7 +145,7 @@ Similar to clouds, individual resources from the Master Tenant can be set to pub
 
 By default, any host, virtual machine, bare metal server, network, resource pool, datastore or template added, created or inventoried by an Tenant is assigned to that Tenant. If these resources are in the Master Tenant, they can be assigned to sub Tenants. Assigning one of these resources will make it unavailable to the Master Tenant, but it will still be visible and editable by the Master Tenant. This allows Master Tenant resources to be isolated for use by sub-Tenants while still under the control of the Master Tenant.
 
-Resources assigned to sub-Tenants from the Master Tenant will be visible and available for use by that sub-Tenant, however they cannot be edited or re-assigned by the sub-accout.
+Resources assigned to sub-Tenants from the Master Tenant will be visible and available for use by that sub-Tenant, however they cannot be edited or re-assigned by the sub-tenant.
 
 === Set the Visibility of a Host, Virtual Machine or Bare metal Server to Public or Private
 
@@ -170,10 +170,6 @@ image::images/configuring_multi_tenancy-d738d.png[]
 image::images/configuring_multi_tenancy-3c39f.png[]
 
 The resource will now be assigned and available for use by the assigned Tenant. If assigned to a sub-Tenant, the Master Tenant will maintain visibility and control.
-
-
-
-
 
 === Set the Visibility of a Network to Public or Private
 
@@ -209,7 +205,7 @@ NOTE: If assigned to a sub-tenant, the visibility will be automatically set to p
 
 image::images/configuring_multi_tenancy-1e978.png[]
 
-== Set the Visibility or assign a Virtual Image to an Tenant
+=== Set the Visibility or assign a Virtual Image to an Tenant
 
 . From the Master Tenant, navigate to Provisioning, Virtual Images
 . Select Edit from the "Actions" dropdown on the far right of the Virtual Images row
