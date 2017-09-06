@@ -8,7 +8,7 @@ NOTE: A blank or 500 error on just the dashboard is different than the entire mo
 Cause:: Elasticsearch restarting prior to being fully bootstrapped during the initial install.
 
 Solution:: To fix, purge elasticsearch by running the following on the {morpheus} Appliance:
-
+[source,bash]
 ----
 curl -XDELETE http://localhost:9200/*" rel="nofollow noreferrer">http://localhost:9200/*
 morpheus-ctl restart elasticsearch
@@ -16,7 +16,7 @@ morpheus-ctl restart morpheus-ui
 ----
 
 Another option is:
-
+[source,bash]
 ----
 sudo rm –rf /var/opt/{morpheus}/elasticsearch/data/morpheus
 morpheus-ctl restart elasticsearch
@@ -24,7 +24,7 @@ morpheus-ctl restart morpheus-ui
 ----
 
 If you get a term/timeout on ui restart, run
-
+[source,bash]
 ----
 morpheus-ctl kill morpheus-ui
 morpheus-ctl start morpheus-ui
