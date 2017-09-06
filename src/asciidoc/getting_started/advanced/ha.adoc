@@ -50,6 +50,7 @@ Infrastructure required for the external services should be deployed in a region
 
 An example configuration file for a distributed {morpheus} deployment:
 
+[source,bash]
 ----
 mysql['enable'] = false
 mysql['host'] = {'52.53.240.28' => 10004, '52.53.241.94' => 10004}
@@ -81,7 +82,7 @@ RabbitMQ is the internal message broker and is created as a single node. RabbitM
 
 {morpheus} uses ElasticSearch to store data for searching, a default instance is installed by the stand-alone installer.  To provide redundancy and scalability an external ElasticSearch cluster is needed.  To disable the creation of the internal ElasticSearch instance set the configuration entry elasticsearch['enable'] = false.  Provide the cluster name of the external ElasitcSearch cluster using the configuration entry elasticsearch['cluster'] and elasticsearch['es_hosts'] which is a Ruby hash using hash rocket style syntax since the key contains dots. The key is an IP address or DNS name with the paired value the port the database is listening on.
 
-NOTE: ElasticSearch v1.5 is currently supported.
+NOTE: ElasticSearch v1.6 is currently supported.
 
 ==== Application Secrets
 
@@ -95,6 +96,7 @@ The default mode for {morpheus} is to setup the web tier using encryption to pro
 
 . Edit the configuration file /etc/morpheus/morpheus.rb and add the following entries:
 
+[source,bash]
 ----
 nginx[‘ssl_certificate’] = ‘path to the certificate file'
 nginx[‘ssl_server_key’] = ‘path to the server key file'
