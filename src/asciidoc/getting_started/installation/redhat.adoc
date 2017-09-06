@@ -31,10 +31,11 @@ python-rhsm: 1.10.12-2.el7
 
 If the subscription manager re-turns the message "This system is currently not registered" please follow the below steps to register the server.
 
-TIP: To register the server you will need to have sudo permissions [Member of the Wheel group] or root access to the server. 
+TIP: To register the server you will need to have sudo permissions [Member of the Wheel group] or root access to the server.
 	 You will also need your redhat registered email address and password.
 
-1. subscription-manager register
+. subscription-manager register
++
 [source,bash]
 ----
 [root@appliance ~]# subscription-manager register
@@ -42,8 +43,8 @@ Username: redhat@example.com
 Password:
 ----
 
-2. subscription-manager auto --attach [Note this can take a minute to complete.]
-
+. subscription-manager auto --attach [Note this can take a minute to complete.]
++
 [source,bash]
 ----
 sudo subscription-manager attach --auto
@@ -55,7 +56,7 @@ Status:       Subscribed
 
 To check to see if the RHEL server has the Red Hat Enterprise Linux 7 Server - Optional (RPMs) repo enabled please run the following command to return the repo status.
 
-TIP: To check the server repos you will need to have sudo permissions [Member of the Wheel group] or root access to the server. 
+TIP: To check the server repos you will need to have sudo permissions [Member of the Wheel group] or root access to the server.
 
 [source,bash]
 ----
@@ -63,7 +64,7 @@ sudo yum repolist all | grep "rhel-7-server-optional-rpms"
 rhel-7-server-optional-rpms/7Server/x86_64                           disabled
 ----
 
-If the repo status was returned as disabled then you will need to enable the repo using the subsciption manager like below. 
+If the repo status was returned as disabled then you will need to enable the repo using the subsciption manager like below.
 
 [source,bash]
 ----
