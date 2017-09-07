@@ -1,14 +1,14 @@
 [[ansible]]
 
-== Ansible Integration
+=== Ansible Integration
 
-=== Overview
+==== Overview
 
 {morpheus} appliance supports Ansible integration for configuration management.  {morpheus} accomplishes this by integrating with an existing repository of playbooks as the master in a master-slave Ansible architecture.
 
 To get started the only requirement is an existing repository for playbooks in a very simple structure.
 
-=== Add Ansible Integration
+==== Add Ansible Integration
 
 . Navigate to `Administration -> Integrations` and select `+ New Integration`
 . Select Integration Type "Ansible"
@@ -25,7 +25,7 @@ Host Variables Path:: Path of the Host Variables relative to the Git url.
 
 Once you have completed this section and saved your changes you can set up a Cloud or Group to utilize this integration.
 
-=== Scope Ansible Integration to a Cloud
+==== Scope Ansible Integration to a Cloud
 
 . Navigate to `Infrastructure -> Clouds`
 . Edit the target Cloud
@@ -35,7 +35,7 @@ Once you have completed this section and saved your changes you can set up a Clo
 
 Once an Ansible integration is added to a Cloud, a new "ANSIBLE" tab will appear on the Cloud details page, populated with the Ansible integrations Playbook and Roles, as well as an editable Inventory list.
 
-=== Scope Ansible Integration to a Group
+==== Scope Ansible Integration to a Group
 
 . Navigate to `Infrastructure -> Groups`
 . Edit the target Group
@@ -45,7 +45,7 @@ Once an Ansible integration is added to a Cloud, a new "ANSIBLE" tab will appear
 
 Once an Ansible integration is added to a Group, a new "ANSIBLE" tab will appear on the Group details page, populated with the Ansible integrations Playbook and Roles, as well as an editable Inventory list.
 
-=== Provisioning Options
+==== Provisioning Options
 
 When provisioning Instances into a Cloud or Group with a Ansible Integration added, an `Ansible` section will appear in the Config section of the provisioning wizard. By default, Ansible is enabled, but can be disabled by expanding the `Ansible` section and unchecking `Enable Ansible`.
 
@@ -55,7 +55,7 @@ Enable Ansible:: Select to bootstrap
 Ansible Group:: Ansible Inventory Group. Use existing group or enter a new group name to create a new group. Leaving this field blank will place instance in the "unassigned" inventory group.
 Playbook:: Playbook(s) to run. The .yml extension is optional.
 
-=== Running Playbooks
+==== Running Playbooks
 
 Playbooks can also be ran on all inventory groups, individual groups, or added as a task and ran with workflows.
 

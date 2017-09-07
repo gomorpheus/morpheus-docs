@@ -1,6 +1,6 @@
 [[vmware_to_aws]]
 
-== VMware to AWS Migration Requirements
+=== VMware to AWS Migration Requirements
 
 When performing a Hypervisor to Hypervisor migration from VMware to AWS, there are some requirements that must be met:
 
@@ -9,24 +9,24 @@ When performing a Hypervisor to Hypervisor migration from VMware to AWS, there a
 . Create VM Import Service roles in your AWS account (not in {morpheus})
 . Storage Provider selected for migration destination must be set as a Local Storage Provider (not AWS)
 
-=== Add S3 Storage Provider to {morpheus}
+==== Add S3 Storage Provider to {morpheus}
 
 In the `Infrastructure-> Storage` section, select ``+ADD STORAGE PROVIDER` and enter the same AWS Access key and Secret Key used to create your AWS cloud in {morpheus}. Then add the S3 bucket name that the migration image(s) will be added to.
 
-=== Set Image Transfer Store in you AWS cloud(s) settings in {morpheus}
+==== Set Image Transfer Store in you AWS cloud(s) settings in {morpheus}
 
 Under `Infrastructure -> Clouds`, select your AWS cloud and click `EDIT`. Expand the Advanced Options section and for `IMAGE TRANSFER STORE` select the AWS S3 Storage Provider you created previously and then Save.
 
-=== Add VM Import Service role in AWS
+==== Add VM Import Service role in AWS
 Refer to the AWS document below to add vm import service role:
 
 http://docs.aws.amazon.com/vm-import/latest/userguide/import-vm-image.html
 
-==== VM Import Service Role
+===== VM Import Service Role
 
 VM Import requires a role to perform certain operations in your account, such as downloading disk images from an Amazon S3 bucket. You must create a role named vmimport with a trust relationship policy document that allows VM Import to assume the role, and you must attach an IAM policy to the role.
 
-===== To create the service role
+====== To create the service role
 
 Create a file named `trust-policy.json` with the following policy:
 [source,bash]
@@ -101,7 +101,7 @@ aws iam put-role-policy --role-name vmimport --policy-name vmimport --policy-doc
 
 For more information about IAM roles, see IAM Roles in the IAM User Guide.
 
-=== Storage Providers
+==== Storage Providers
 
 Set the "Storage Provider" in the migration wizard destination as a Local Storage type, or leave as Select to use the {morpheus} Appliance.
 
