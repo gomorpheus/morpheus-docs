@@ -1,9 +1,9 @@
 [[chef]]
-== Chef Integration
+=== Chef Integration
 
 {morpheus} can integrate with one or multiple chef servers to be used for bootstrapping wile provisioning or as tasks in workflows in the Automation section. These workflows can then be ran during provisioning in the provisioning wizard Automation pane, or on an exiting instance by selecting Actions- Run Workflow.  Workflows can also be added to instances in the template and app sections.
 
-=== Add Chef Integration
+==== Add Chef Integration
 
 . Navigate to `Administration -> Integrations` and select `+ New Integration`
 . Select Integration Type "Chef"
@@ -21,7 +21,7 @@ Organization Validator:: Validator key for the organization
 
 The added Chef Integration is now available for use in {morpheus}. The Chef Integration can be added to Clouds or Groups to auto-bootstrap nodes and specify Environment, Node ID, Runlist, Attributes and Tags when creating instances. The Chef integration can also be selected in the Chef Server dropdown when creating a Chef Bootstrap type task.
 
-=== Scope Chef Integration to a Cloud
+==== Scope Chef Integration to a Cloud
 
 . Navigate to `Infrastructure -> Clouds`
 . Edit the target Cloud
@@ -29,7 +29,7 @@ The added Chef Integration is now available for use in {morpheus}. The Chef Inte
 . In the `Config Managment` dropdown, select the Chef Integration.
 . Save Changes
 
-=== Scope Chef Integration to a Group
+==== Scope Chef Integration to a Group
 
 . Navigate to `Infrastructure -> Groups`
 . Edit the target Group
@@ -37,7 +37,7 @@ The added Chef Integration is now available for use in {morpheus}. The Chef Inte
 . In the `Config Managment` dropdown, select the Chef Integration.
 . Save Changes
 
-=== Provisioning Options
+==== Provisioning Options
 
 When provisioning Instances into a Cloud or Group with a Chef Integration added, a `Chef` section will appear in the Config section of the provisioning wizard. By default, Chef is enabled, but can be disabled by expanding the `Chef` section and unchecking `Enable Chef`.
 

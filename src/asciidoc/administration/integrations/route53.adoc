@@ -1,11 +1,11 @@
 [[route53]]
-== Amazon Route 53 DNS Integration
+=== Amazon Route53 Integration
 
-=== Overview
+==== Overview
 
 {morpheus} integrates directly with Amazon Route 53 to automatically create DNS entries for Instances provisioned to a configured Cloud or Group. {morpheus} also syncs in Route 53 Domains for easy selection while provisioning, or setting as the default Domain on a Cloud or Network.
 
-=== Add Route 53 Integration
+==== Add Route 53 Integration
 
 . Route 53 can be added in the `Administration` or `Infrastructure` sections:
 
@@ -22,15 +22,15 @@ SECRET KEY:: AWS User IAM Secret Key
 
 NOTE: All fields can be edited after saving.
 
-=== Domains
+==== Domains
 
 Once the integration is added, Route 53 Domains will sync and listed under `Infrastructure -> Networks -> Domains`.
 
 NOTE: Default Domains can be set on Networks and Clouds, and can be selected when provisioning. Additional configuration options are available by editing a domain in `Networks -> Domains`
 
-=== Configuring Route 53 with Clouds and Groups
+==== Configuring Route 53 with Clouds and Groups
 
-DNS Integrations are available in the `DNS Integration` dropdown in Cloud and Group settings.  
+DNS Integrations are available in the `DNS Integration` dropdown in Cloud and Group settings.
 
 {morpheus} will register Instances with the DNS provider when provisioned into a Cloud or Group with a DNS Integration added.
 
