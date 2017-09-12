@@ -1,62 +1,37 @@
 [[hosts]]
-//omg update
+
 == Hosts
 
-=== Add a Docker Host to Any Cloud
+=== Overview
 
-image::infrastructure/add_docker.gif[caption="Figure 1: ", title="Add a Docker Host to Any Cloud", alt="Add Docker"]
+The `Infrastructure -> Hosts` section provides a universal stage for viewing and managing Hosts and Virtual Machines from all of your Clouds.
 
+In this section you can:
 
-=== To add a Docker Host to any cloud:
+* View & Manage all Hosts, Virtual Machines & Bare Metal
+* Provision Docker & KVM Hosts
+* Convert existing hosts to Docker & KVM Hosts
+* Add Hypervisors
+* Convert Hosts, Virtual Machines and Bare Metal to Managed
 
-* Navigate to Infrastructure -> Hosts
-* Click the +CONTAINER HOST button
-* Select a container host type
+==== Hosts
 
-image::infrastructure/add_docker.png[caption="Figure 2: ", title="Add Container Host", alt="Add Container Host"]
+Hosts in {morpheus} are Hypervisors and Docker Hosts that your VM's and Container are hosted on, such as ESXi, Hyper-V and Docker Hosts. These Hosts are populated from integrated clouds, hosts provisioned form Morpheus, or manually added Hosts.
 
-* Select a group
+==== Adding Hosts
+==== Managing Hosts
+==== Removing Hosts
 
-image::infrastructure/select_group.png[caption="Figure 3: ", title="Select Group", alt="Select Group"]
+=== Virtual Machines
 
-* Enter the following:
-** Name
-** Description
-** Visibility
-** Select a Cloud
-** Enter tags (optional)
+The Virtual Machines tab lists all Managed and Unmanaged VM's across {morpheus}. Managed VM's are either provisioned by Morpheus, or inventoried VM's that were converted to managed. Unmanaged VM's are from Cloud integrations with "Inventory Existing Instances" enabled in the Cloud settings.
 
-Then click NEXT.
+==== Managing Virtual Machines
+==== Removing Virtual Machines
 
-image::infrastructure/create_host.png[caption="Figure 4: ", title="Create Host", alt="Create Host"]
+==== Bare Metal
 
-* Configure the host options
+Bare Metal hosts are from PXE Boot or manually added in this section. Bare Metal hosts that are also Hypervisors will be listed in both the Bare Metal and Hypervisor sections.
 
-Select a Service Plan (Volume, Memory and CPU count fields may not be shown if selected service plan does not have custom options enabled).
-
-** Add and size the volumes
-** Set memory size
-** Set the CPU count
-** Select a network
-
-Optionally configure the following:
-
-** OS username
-** OS password
-** Domain name
-** Hostname (default is the name previously provided for the container host)
-
-Then click the NEXT button
-
-
-image::infrastructure/create_host_2.png[caption="Figure 5: ", title="Create Host", alt="Create Host"]
-
-* Optionally add any Automation Workflows
-
-image::infrastructure/docker_host_automation.png[caption="Figure 6: ", title="Docker Host Automation", alt="Automation"]
-
-* Review and click Complete to save
-
-image::infrastructure/save_docker_host.png[caption="Figure 7: ", title="Save Docker Host", alt="Save"]
-
-Your new container host will begin provisioning, and soon be running and ready for containers.
+==== Managing Bare Metal
+==== Removing Bare Metal
