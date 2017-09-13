@@ -11,7 +11,7 @@
 
 . Navigate to Infrastructure -> Networks and select the Services tab
 +
-image::images/infoblox-adb0f.png[]
+image::administration/infoblox-adb0f.png[]
 
 . In the Services tab, select +ADD SERVICE, select Infoblox, and provide the following:
 
@@ -25,13 +25,13 @@ image::images/infoblox-adb0f.png[]
 
 TIP: you can find your Infoblox wapi version in the wapi doc on your Infoblox server at https://x.x.x.x/wapidoc
 
-image::images/infoblox-b991b.png[]
+image::administration/infoblox-b991b.png[]
 
 Save Changes and your Infoblox networks will be populated and available in the Network -> IP Pools section of {morpheus}.
 
 Next we will need to add an Infoblox Network pool to a network in order to use the pool(s) during provisioning.
 
-image::images/infoblox-2867a.png[]
+image::administration/infoblox-2867a.png[]
 
 ==== Add Infoblox IP Pool(s) to your network(s)
 
@@ -41,7 +41,7 @@ image::images/infoblox-2867a.png[]
 . In the NETWORK POOL drop down, select the Infoblox network to assign IPs from.
 . Save Changes
 
-image::images/infoblox-93281.png[]
+image::administration/infoblox-93281.png[]
 
 ==== Configure your cloud(s) domain
 
@@ -52,27 +52,27 @@ The domain entered in you cloud(s) settings needs to match an Infoblox zone. To 
 
 * In v2.9.x and prior, the domain field is at the top of the Cloud Config modal.
 
-image::images/infoblox-ebde8.png[]
+image::administration/infoblox-ebde8.png[]
 
 * In v2.10, the domain field is under Advanced Settings in the Cloud Config modal.
 
-image::images/infoblox-976bd.png[]
+image::administration/infoblox-976bd.png[]
 
 * In v2.10.1 and later, a Domains section has been added in the infrastructure - Networks Section, and there is now a Domain dropdown to select a domain from the Networks section in the Cloud Config modal.
 Infrastructure- Networks: Domains
 
-image::images/infoblox-af626.png[]
+image::administration/infoblox-af626.png[]
 
 Cloud Configuration
 
-image::images/infoblox-a9e41.png[]
+image::administration/infoblox-a9e41.png[]
 
 When provisioning, select Network with Infoblox pool added
 
 Once the Infoblox integration has been configured, while provisioning you can now select networks that have the Network Pools added, and the name of the Infoblox IP Pool will populate to the right of the selected network:
 
-image::images/infoblox-40fdb.png[]
+image::administration/infoblox-40fdb.png[]
 
 The during provisioning, your instance IP will be assigned by Infoblox:
 
-image::images/infoblox-fcc33.png[]
+image::administration/infoblox-fcc33.png[]
