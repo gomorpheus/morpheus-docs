@@ -1,25 +1,26 @@
-[[hosts]]
-//omg update
-== Hosts
+[[dockerhost]]
 
-=== Add a Docker Host to Any Cloud
+=== Docker Hosts
+
+==== Overview
+
+Morpheus can provision Docker Hosts into any cloud, convert existing Hosts to Docker Hosts, or even make itself a Docker Host.
 
 image::infrastructure/add_docker.gif[caption="Figure 1: ", title="Add a Docker Host to Any Cloud", alt="Add Docker"]
 
+==== To add a Docker Host to any cloud:
 
-=== To add a Docker Host to any cloud:
-
-* Navigate to Infrastructure -> Hosts
-* Click the +CONTAINER HOST button
-* Select a container host type
+. Navigate to Infrastructure -> Hosts
+. Click the +CONTAINER HOST button
+. Select a container host type
 
 image::infrastructure/add_docker.png[caption="Figure 2: ", title="Add Container Host", alt="Add Container Host"]
 
-* Select a group
+. Select a group
 
 image::infrastructure/select_group.png[caption="Figure 3: ", title="Select Group", alt="Select Group"]
 
-* Enter the following:
+. Enter the following:
 ** Name
 ** Description
 ** Visibility
@@ -30,11 +31,11 @@ Then click NEXT.
 
 image::infrastructure/create_host.png[caption="Figure 4: ", title="Create Host", alt="Create Host"]
 
-* Configure the host options
+. Configure the host options
 
 Select a Service Plan (Volume, Memory and CPU count fields may not be shown if selected service plan does not have custom options enabled).
 
-** Add and size the volumes
+** Add and set size the volumes
 ** Set memory size
 ** Set the CPU count
 ** Select a network
@@ -46,16 +47,16 @@ Optionally configure the following:
 ** Domain name
 ** Hostname (default is the name previously provided for the container host)
 
-Then click the NEXT button
+. Then click the NEXT button
 
 
 image::infrastructure/create_host_2.png[caption="Figure 5: ", title="Create Host", alt="Create Host"]
 
-* Optionally add any Automation Workflows
+. Optionally add any Automation Workflows and configure for Backups.
 
 image::infrastructure/docker_host_automation.png[caption="Figure 6: ", title="Docker Host Automation", alt="Automation"]
 
-* Review and click Complete to save
+. Review and click Complete to save
 
 image::infrastructure/save_docker_host.png[caption="Figure 7: ", title="Save Docker Host", alt="Save"]
 
