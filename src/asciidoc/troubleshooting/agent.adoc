@@ -1,3 +1,4 @@
+[[agent_troubleshooting]]
 === {morpheus} Agent Install Troubleshooting
 
 When provisioning and instance, there are some network and configuration requirements to successfully install the morpheus agent.  Typically when a vm instance is still in the provisioning phase long after the vm is up, the instance is unable to reach {morpheus}, or depending on agent install mode, {morpheus} is unable to reach the instance.
@@ -94,6 +95,72 @@ While it should not be necessary to manually install an agent if the requirement
 
 . Logs can be viewed in the Event Viewer under Applications and Services Logs  -> {morpheus} Windows Agent
 
+==== Windows Agent PS script
+
+[source,bash]
+----
+cd ${env:commonprogramfiles(x86)}
+ $serviceName = "Morpheus Windows Agent"
+ if(Get-Service $serviceName -ErrorAction SilentlyContinue) {
+  Stop-Service -displayname $serviceName -ErrorAction SilentlyContinue
+  Stop-Process -Force -processname Morpheus* -ErrorAction SilentlyContinue
+  Stop-Process -Force -processname Morpheus* -ErrorAction SilentlyContinue
+  Start-Sleep -s 5
+  $serviceId = (get-wmiobject Win32_Product -Filter "Name = 'Morpheus Windows Agent'" | Format-Wide -Property IdentifyingNumber | Out-String).Trim()
+  cmd.exe /c "msiexec /x $serviceId /q"
+ }
+ [Console]::Out.Flush()
+ [gc]::collect()
+ try {
+ Write-VolumeCache C
+ }
+ Catch {
+ }
+ $MSIArguments= @(
+ "/i"
+ "MorpheusAgentSetup.msi"
+ "/qn"
+ "/norestart"
+ "/l*v"
+ "morpheus_install.log"
+ "apiKey=`"yourHostApiKey`""
+ "host=`"https://yourapplianceurl.com/`""
+ "username=`".\LocalSystem`""
+ "vmMode=`"true`""
+ "logLevel=`"1`""
+ )
+ $installResults = Start-Process msiexec.exe -Verb runAs -Wait -ArgumentList $MSIArguments
+ [Console]::Out.Flush()
+ [gc]::collect()
+ try {
+ Write-VolumeCache C
+ }
+ Catch {
+ }
+ start-sleep -s 10
+ $attempts = 0
+ Do {
+       try {
+               Get-Service $serviceName -ea silentlycontinue -ErrorVariable err
+               if([string]::isNullOrEmpty($err)) {
+                       Break
+               } else {
+                       start-sleep -s 10
+                       $attempts++
+               }
+       }
+       Catch {
+               start-sleep -s 10
+               $attempts++
+       }
+ }
+ While ($attempts -ne 6)
+ Set-Service $serviceName -startuptype "automatic"
+ $service = Get-WmiObject -Class Win32_Service -Filter "Name='$serviceName'"
+ if ($service -And $service.State -ne "Running") {Restart-Service -displayname $serviceName}
+ exit $installResults.ExitCode
+----
+
 ==== Restarting the {morpheus} Agent
 
 In some situations is may necessary to restart the morpheus agent on the host to re-sync communication from the agent to the {morpheus} appliance.
@@ -110,3 +177,11 @@ TIP: The {morpheus} Remote Console is not dependent on agent communication and c
 ==== centOS 7 Images
 
 For custom centOS 7 images we highly recommend setting up cloud-init and fixing the network device names. More information for custom centOS images can be found in the centOS 7 image article.
+
+////
+Morpheus primarily operates via communication with its agent that is installed on all managed vms or docker hosts. This is a lightweight agent responsible for aggregating logs and stats and sending them back to the client with minimal network traffic overhead. It also is capable of processing instructions related to provisioning and deployments instigated by the appliance server.
+
+The Morpheus Agent exists for both linux and windows based platforms and opens NO ports on the guest operating system. Instead it makes an outbound SSL (https / wss) connection to the appliance server. This is what is known as the appliance url during configuration (in Admin→Settings). When the agent is started it automatically makes this connection and securely authenticates. Therefore, it is necessary for all vms and docker based hosts that are managed by morpheus to be able to reach the appliance server ip on port 443.
+
+Morpheus also utilizes SSH (Port 22) and Windows Remote Management (Port 5389) to initialize a server. This includes sending remote command instructions to install the agent. It is actually possible for Morpheus to operate without agent connectivity (though stats and logs will not function) and utilize SSH/WinRM to perform operations. Once the agent is installed and connections are established SSH/WinRM communication will stop. This is why an outbound requirement exists for the appliance server to be able to utilize port 22 and 5389.
+////
