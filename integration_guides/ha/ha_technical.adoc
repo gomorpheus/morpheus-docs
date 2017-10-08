@@ -1,0 +1,226 @@
+
+[[ha_setup]]
+=== High Availability Setup Guide
+
+//adding notes for HA Technical write up
+
+==== Elasticsearch
+We have to link the tomcats for session cache link issue
+
+==== RabbitMQ
+
+Enable stomp module in rabbit queue cluster
+
+===== Rabbit LB
+
+TCP load balanced on port 5672 as well as port 61613 for STOMP
+
+Confirm in `/opt/morpheus/conf/application.yml`
+
+----
+morpheus:
+  stomp:
+    host: IP_ADDRESS_HERE
+    port: 61613
+----
+
+==== Database
+Persona setup and DB creation
+
+Percona requires the following ports for the cluster nodes. Please create the appropriate firewall rules on your
+Persona nodes.
+
+3306
+4444
+4567
+4568
+
+Persona also recommend setting the selinux policy to permissive.
+You can temporarily set the permission to the permissive by running
+
+Sudo setenforce 0
+
+You will need to edit the selinux configuration file if you want the permission to take affect permanently which can be found in /etc/selinux/conf
+
+#Add the percona repo to your Linux Distro.
+
+sudo yum install http://www.percona.com/downloads/percona-release/redhat/0.1-4/percona-release-0.1-4.noarch.rpm
+
+Check the repo by running the below command.
+
+sudo yum list | grep percona
+
+# Cleaning and Updating repos
+The below commands will clean the repos and update the server.
+
+Yum clean all
+Yum update -y
+
+#Installing Percona XtraDB Cluster
+
+The below command will install the Percona XtraDB Cluster software and it’s dependences.
+
+sudo yum install Percona-XtraDB-Cluster-57
+
+During the installation you will receive the below message. Accept the Percona PGP key to install the software.
+
+retrieving key from file:///etc/pki/rpm-gpg/RPM-GPG-KEY-Percona
+Importing GPG key 0xCD2EFD2A:
+ Userid     : "Percona MySQL Development Team <mysql-dev@percona.com>"
+ Fingerprint: 430b df5c 56e7 c94e 848e e60c 1c4c bdcd cd2e fd2a
+ Package    : percona-release-0.1-4.noarch (installed)
+ From       : /etc/pki/rpm-gpg/RPM-GPG-KEY-Percona
+Is this ok [y/N]: y
+
+# Next we need enable the mysql service so that the service started at boot.
+
+sudo systemctl enable mysql
+
+Next we need to start mysql
+
+sudo systemctl start mysql
+
+# Log into the mysql server and set a new password.
+
+To get the temporary root mysql password you will need to run the below command.
+The command will print the password to the screen. Copy the password
+sudo grep 'temporary password' /var/log/mysqld.log
+
+Login to the mysql
+
+mysql -u root -p
+
+change the root user password to the mysql db
+
+ALTER USER 'root'@'localhost' IDENTIFIED BY ‘MySuperSecurePasswordhere’;
+
+# Now install the persona software on to the other two nodes
+
+# Stop the mysql service by running the below command.
+Sudo systemctl stop mysql.service
+
+Once the service is stopped move onto the next step.
+
+#Add [mysqld] to my.cnf in /etc/
+
+#Copy the below contents  to my.cnf  the node_name and node_address needs to be unique on each of the nodes.
+#Also the first node does not require the gcomm value to be set.
+
+#The other nodes require this field. Enter the IP address of the primary node first then remaining nodes. Separating the ip addresses with commas like this 192.168.10.100,192.168.10.101,192.168.10.102
+
+[mysqld]
+wsrep_provider=/usr/lib64/galera3/libgalera_smm.so
+
+wsrep_cluster_name=morpheus
+wsrep_cluster_address=gcomm://  #set me on other nodes not the master node #comment.
+
+wsrep_node_name=morpheus-nod01
+wsrep_node_address=10.30.20.57
+
+wsrep_sst_method=xtrabackup-v2
+wsrep_sst_auth=sstuser:M0rpheus17
+pxc_strict_mode=PERMISSIVE
+
+binlog_format=ROW
+default_storage_engine=InnoDB
+innodb_autoinc_lock_mode=2
+
+#Boot Strapping the first Node in the cluster
+
+To bootstrap the first node in the cluster run the below command.
+Note the mysql service will start during the boot strap.
+
+systemctl start mysql@bootstrap.service
+
+
+# How to check the status of the wsrep
+
+show status like 'wsrep%';
+
+A table will appear with the status and rows.
+
+40 rows in set (0.01 sec)
+
+# Next create the backup user and grant the permissions.
+
+CREATE USER 'sstuser'@'localhost' IDENTIFIED BY 'M0rpheus17'; <— The sstuser needs to be in the configuration file as well.
+
+GRANT RELOAD, LOCK TABLES, PROCESS, REPLICATION CLIENT ON *.* TO 'sstuser'@'localhost';
+
+# Finally flush the mysql permissions.
+
+FLUSH PRIVILEGES;
+
+# Next Create the Database you will be using with morpheus.
+
+CREATE DATABASE morpheusdb;
+
+show databases;
+
+# Next create your morpheus database user. The user needs to be either at the IP address of the morpheus application server or use @%  within the user name to allow the user to login form anywhere.
+
+CREATE USER ‘morpheusadmin’@‘%' IDENTIFIED BY ‘Cloudy2017’;
+
+# Next Grant your new morpheus user permissions to the database.
+
+GRANT ALL PRIVILEGES ON * . * TO ‘morpheusadmin’@‘%’ IDENTIFIED BY ‘Cloudy2017’ with grant option;
+
+FLUSH PRIVILEGES;
+
+# Checking Permissions for your user.
+
+SHOW GRANTS FOR 'morpheusadmin’@‘%’;
+
+# Check you can login to the MSQL server by running the below command on the Morpheus Application server.
+Note the below command requires mysql installed. If you are on a windows machine you can connect to the server using mysql work bench which can be found here https://www.mysql.com/products/workbench/
+
+mysql -u morpheusadmin -p  -h 192.168.10.100
+
+# Strapping the Remaining Nodes
+
+To boot strap the remaining nodes into the cluster run the following command.
+
+systemctl start mysql.service
+
+The services will automatically connect to the cluster using the sstuser we created earlier, if there are any errors you can check the normal mysql log file which can be found in.
+
+
+
+
+/////
+
+
+Percona XtraDB Cluster
+
+Set Percona PXC Strict Mode to `PERMISSIVE`
+
+  mysql> SET pxc_strict_mode=PERMISSIVE;
+
+
+NOTE: To further ensure data consistency, it is important to have all nodes in the cluster running with the same configuration, including the value of pxc_strict_mode variable.
+
+
+---
+environments:
+  production:
+    grails:
+      cache:
+        config:
+          defaults:
+            maxElementsInMemory: 10000
+            eternal: false
+            overflowToDisk: false
+            maxElementsOnDisk: 0
+            cacheEventListenerFactoryName: cacheEventListenerFactory
+          cacheManagerPeerListenerFactory:
+            env: production
+          cacheEventListenerFactory:
+            env: production
+            name: cacheEventListenerFactory
+            factoryType: rmi
+            replicateAsynchronously: false
+          cacheManagerPeerProviderFactory:
+            env: production
+            factoryType: rmi
+            rmiUrl: //server2:40001
+            rmiUrl: //server3:40001
