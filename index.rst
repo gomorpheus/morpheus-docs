@@ -1,6 +1,6 @@
 
 Morpheus Documentation
-
+======================
 
 .. toctree::
    :maxdepth: 3
