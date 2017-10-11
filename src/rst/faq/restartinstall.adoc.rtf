@@ -1,0 +1,15 @@
+{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 === Restart a \{morpheus\} Installation\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 If the initial reconfigure is stopped or your installation is damaged beyond reconfiguring again, it may be necessary to start over.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 On the \{morpheus\} appliance:\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 . Run {\f1 morpheus-ctl cleanse}\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 . Remove the \{morpheus\} package\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 .. deb: {\f1 dpkg --purge morpheus-appliance...} using the appropriate package name.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 .. rpm: {\f1 rpm -e (morpheus-appliance...)} using the appropriate package name.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 . {\f1 rm -rf /etc/morpheus} . {\f1 rm -rf /var/opt/morpheus} . {\f1 rm -rf /var/run/morpheus} . {\f1 rm -rf /var/log/morpheus} . {\f1 rm -rf /opt/morpheus} . Re-install \{morpheus\}\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 If the elasticsearch cluster is unhealthy and needs purged, run:\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 . {\f1 sudo morpheus-ctl stop elasticsearch} . {\f1 sudo rm -rf /var/opt/morpheus/elasticsearch/data/morpheus} . {\f1 sudo morpheus-ctl reconfigure} . If eleasticsearch does not restart during reconfigure, {\f1 sudo morpheus-ctl start elasticsearch}\par}
+}

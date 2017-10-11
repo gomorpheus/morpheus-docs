@@ -1,0 +1,38 @@
+global
+ log /dev/log local0 debug
+ log /dev/log local1 debug
+ chroot /var/lib/haproxy
+ user haproxy
+ group haproxy
+
+defaults
+ log global
+ retries 2
+ timeout connect 5000
+ timeout server 50000
+ timeout client 50000
+
+listen rabbitmq-cluster
+ bind http://10.30.20.58:5672
+ mode tcp
+ option tcpka
+ option redispatch
+ balance roundrobin
+ server rabbit-1 10.30.20.58:5672 check inter 5000 downinter 500
+ server rabbit-2 10.30.20.129:5672 check inter 5000 downinter 500
+
+
+listen stats 192.168.84.104:8080
+ mode http
+ log global
+ maxconn 10
+ timeout client 100s
+ timeout server 100s
+ timeout connect 100s
+ timeout queue 100s
+ stats enable
+ stats hide-version
+ stats refresh 30s
+ stats show-node
+ stats auth lbuser:morpheus4admin!
+ stats uri /haproxy?stats
