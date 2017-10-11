@@ -12,7 +12,7 @@ Adding OneLogin Identity Source Integraiton
 
    TYPE
       OneLogin
-    NAME
+   NAME
       Name of the Identity Source Integraiton in Morpheus
     DESCRIPTION
       Optional Description of the Identiry Source
