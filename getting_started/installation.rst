@@ -15,4 +15,6 @@ newer, and RHEL 7.0 or newer based hosts (Ubuntu is recommended).
 
 .. include:: installation/redhat.rst
 
+.. include:: installation/offline.rst
+
 .. include:: installation/additional.rst
