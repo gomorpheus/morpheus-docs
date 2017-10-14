@@ -1,16 +1,19 @@
-==== Minimum AWS IAM Policies required for {morpheus}
+Minimum AWS IAM Policies
+------------------------
 
 Below are the AWS IAM Policies for EC2, RDS, and S3 covering the minimum access for {morpheus} applying to all resources.
 
 See http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies.html for more information.
 
-==== AWS IAM minimum policies required for for EC2:
 
-[source,bash]
-----
-{
-  "Version": "2012-10-17",
-  "Statement": [
+EC2
+^^^
+
+.. code-block:: bash
+
+ {
+   "Version": "2012-10-17",
+   "Statement": [
     {
       "Effect": "Allow",
       "Action": [
@@ -108,15 +111,14 @@ See http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies.html for 
       "Resource": "*"
     }
   ]
-}
-----
+ }
 
+RDS:
+^^^^
 
-==== AWS IAM minimum policies required for RDS:
+.. code-block:: bash
 
-[source,bash]
-----
-{
+ {
   "Version": "2012-10-17",
   "Statement": [
     {
@@ -185,15 +187,16 @@ See http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies.html for 
       ],
       "Resource": "*"
     }
-  ]
-}
-----
+   ]
+ }
 
-==== AWS IAM minimum policies required for S3
 
-[source,bash]
-----
-{
+S3
+^^^
+
+.. code-block:: bash
+
+ {
   "Version": "2012-10-17",
   "Statement": [
     {
@@ -218,34 +221,35 @@ See http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies.html for 
       ]
     }
   ]
-}
-----
+ }
 
-=== Resource Filter
+
+Resource Filter
+^^^^^^^^^^^^^^^
 
 If you need to limit actions based on filters you have to pull out the action and put it in a resource based policy since not all the actions support resource filters.
 
 See http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-iam-actions-resources.html for more info on limiting resources by filter.
 
 Resource filter example:
-[source,bash]
-----
-{
- "Effect": "Allow",
- "Action": [
-  "ec2:StopInstances",
-  "ec2:StartInstances"
- ],
- "Resource": *
-},
-{
- "Effect": "Allow",
- "Action": "ec2:TerminateInstances",
- "Resource": "arn:aws:ec2:us-east-1:123456789012:instance/*",
- "Condition": {
-   "StringEquals": {
-      "ec2:ResourceTag/purpose": "test"
+
+.. code-block:: bash
+
+ {
+   "Effect": "Allow",
+   "Action": [
+    "ec2:StopInstances",
+    "ec2:StartInstances"
+   ],
+   "Resource": *
+  },
+  {
+   "Effect": "Allow",
+   "Action": "ec2:TerminateInstances",
+   "Resource": "arn:aws:ec2:us-east-1:123456789012:instance/*",
+   "Condition": {
+     "StringEquals": {
+        "ec2:ResourceTag/purpose": "test"
+      }
     }
   }
-}
-----
