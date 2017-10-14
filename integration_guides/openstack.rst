@@ -1,11 +1,13 @@
+Openstack
+=========
 
-[[openstack]]
-
-== Openstack
+Overview
+--------
 
 Openstack is becoming a widely used on-premise infrastructure orchestration platform. It has a wide array of contributors and enterprise sponsorships. There are several variations on openstack as well ranging from HP's Helion Cloud to Cisco's Metapod / Metacloud offering. {morpheus} supports integration with all the various platform offerings and ranges in support all the way back to Openstack Icehouse. It leverages the APIs and provides full functionality as a self service portal in front of Openstack.
 
-*Features:*
+Features
+--------
 
 * Virtual Machine Provisioning
 * Backups / Snapshots
@@ -24,6 +26,6 @@ On top of all these features, {morpheus} also adds additional features to Openst
 * Virtual Image management (Templates)
 * Auto-scaling and recovery
 
-include::openstack/getting_started.rst
-include::openstack/advanced.rst
-include::openstack/docker.rst
+.. include:: openstack/getting_started.rst
+.. include:: openstack/advanced.rst
+.. include:: openstack/docker.rst

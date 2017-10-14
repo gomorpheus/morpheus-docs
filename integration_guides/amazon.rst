@@ -6,7 +6,8 @@ Overview
 
 AWS is the Amazon public cloud, offering a full range of services and features across the globe in various datacenters.   AWS provides businesses with a flexible, highly scalable, and low-cost way to deliver a variety of services using open standard technologies as well as proprietary solutions. This section of documentation will help you get {morpheus} and AWS connected to utilize the features below:
 
-=== Features
+Features
+--------
 
 * Virtual Machine Provisioning
 * Containers
@@ -35,7 +36,8 @@ AWS is the Amazon public cloud, offering a full range of services and features a
 
 {morpheus} can provide a single pane of glass and self-service portal for managing instances scattered across both AWS and private cloud offerings like VMWare and Hyper-V.
 
-=== Requirements
+Requirements
+------------
 
 * AWS IAM Security Credentials
 ** Access Key
@@ -50,29 +52,39 @@ AWS is the Amazon public cloud, offering a full range of services and features a
 
 NOTE: Each AWS Cloud in {morpheus} is scoped to an AWS Region, and multiple AWS Clouds can be added and even Grouped. Verify Security groups are properly configured in all Regions {morpheus} will scope to.
 
-=== Creating an AWS Cloud
+Creating an AWS Cloud
+---------------------
 
-. Navigate to `Infrastructure -> Clouds`
-. Select `+ Create Cloud`
-. Select AWS
-. Enter the following:
 
-Name:: Name of the Cloud in {morpheus}
-Location:: Description field for adding notes on the cloud, such as location.
-Visibility:: For setting cloud permissions in a multi-tenant environment. Not applicable in single tenant environments.
+#. Navigate to `Infrastructure -> Clouds`
+#. Select `+ Create Cloud`
+#. Select AWS
+#. Enter the following:
 
-Region:: Select AWS Region for the Cloud
-Access Key:: Access Key ID from AWS IAM User Security Credentials.
-Secret Key:: Secret Access Key associate with the Access Key ID.
-Inventory Existing Instances:: If enabled, existing EC2 Instances will be inventoried and appear as unmanaged Virtual Machines in {morpheus}.
-+
-. The AWS cloud is ready to be added to a group and saved. Additional configuration options available:
+   Name
+     Name of the Cloud in {morpheus}
+   Location
+     Description field for adding notes on the cloud, such as location.
+   Visibility
+     For setting cloud permissions in a multi-tenant environment. Not applicable in single tenant environments.
+   Region
+     Select AWS Region for the Cloud
+   Access Key
+     Access Key ID from AWS IAM User Security Credentials.
+   Secret Key
+     Secret Access Key associate with the Access Key ID.
+   Inventory Existing Instances
+     If enabled, existing EC2 Instances will be inventoried and appear as unmanaged Virtual Machines in {morpheus}.
 
-=== Advanced Options
+#. The AWS cloud is ready to be added to a group and saved. Additional configuration options available:
 
-* *IMAGE TRANSFER STORE*: S3 bucket for Image transfers, required for migrations into AWS.
-include::advanced_options.rst
+Advanced Options
 
-NOTE: All fields and options can be edited after the Cloud is created.
+IMAGE TRANSFER STORE
+  S3 bucket for Image transfers, required for migrations into AWS.
 
-include::aws/iampolicies.rst
+.. include:: advanced_options.rst
+
+.. NOTE:: All fields and options can be edited after the Cloud is created.
+
+.. include:: aws/iampolicies.rst

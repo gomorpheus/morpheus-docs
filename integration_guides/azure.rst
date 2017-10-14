@@ -1,10 +1,13 @@
-[[azure]]
+Azure
+=====
 
-== Azure
+Overview
+--------
 
 Azure is Microsoft's public cloud offering. Offering a full range of services and features across the globe in various datacenters. It is the equivalent of AWS for Microsoft running primarily on the Hyper-V based hypervisor. While it is a great public cloud offering, it can be somewhat difficult to get integrated with which is what this guide aims to cover.
 
-{morpheus} Azure Integration Features:
+Features
+--------
 
 * Virtual Machine Provisioning
 * Azure SQL Database
@@ -30,31 +33,41 @@ Combine these features with on premise solutions like Azure-Stack and {morpheus}
 
 NOTE: {morpheus} even supports integrating with CSP based accounts in Azure (typically used by managed service providers).
 
-=== Azure Integration Requirements
+Requirements
+------------
 
 * Azure Active Directory Application & Credentials
-** Client ID (old portal) / Application ID (new portal)
-** Client Secret (old portal) / Key Value (new portal)
-** Tenant ID (old Portal) / Directory ID (new portal)
-** Azure Subscription ID
+
+  * Client ID (old portal) / Application ID (new portal)
+  * Client Secret (old portal) / Key Value (new portal)
+  * Tenant ID (old Portal) / Directory ID (new portal)
+  * Azure Subscription ID
+
 * Above Active Directory App added as owner of this Azure Subscription
 * Existing Azure Resources
-** Network Security Group(s)
-*** Typical Inbound ports open from {morpheus} Appliance: 22, 5985, 3389
-*** Typical Outbound to {morpheus} Appliance: 80, 443
-**** These are required for {morpheus} agent install, communication, and remote console access for windows and linux. Other configurations, such as docker instances, will need the appropriate ports opened as well.
-** Virtual Network(s)
-*** Public IP assignment required for instances if {morpheus} Appliance is not able to communicate with Azure instances private ip's.
-** Resource Group(s)
-** Storage Account(s)
 
-NOTE: {morpheus} v2.10.3 added support for multiple Resource Groups and Storage Accounts per cloud, making our Azure integration more capable and easier to configure. Prior versions of {morpheus} supported one resource group and one storage account per cloud, with the security group and network selection limited to the scoped Resource Group. If you are on an earlier version of {morpheus}, please note you will need to add an Azure cloud integration for each Resource Group and Storage Account you would like to use.
+  * Network Security Group(s)
+    * Typical Inbound ports open from {morpheus} Appliance: 22, 5985, 3389
 
-=== Azure Active Directory Credentials
+    * Typical Outbound to {morpheus} Appliance: 80, 443
+
+      * These are required for {morpheus} agent install, communication, and remote console access for windows and linux. Other configurations, such as docker instances, will need the appropriate ports opened as well.
+
+  * Virtual Network(s)
+
+    * Public IP assignment required for instances if {morpheus} Appliance is not able to communicate with Azure instances private ip's.
+
+  * Resource Group(s)
+  * Storage Account(s)
+
+.. NOTE:: {morpheus} v2.10.3 added support for multiple Resource Groups and Storage Accounts per cloud, making our Azure integration more capable and easier to configure. Prior versions of {morpheus} supported one resource group and one storage account per cloud, with the security group and network selection limited to the scoped Resource Group. If you are on an earlier version of {morpheus}, please note you will need to add an Azure cloud integration for each Resource Group and Storage Account you would like to use.
+
+Azure Active Directory Credentials
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 If you do not already have the Azure Active Directory credentials required to add an Azure cloud to {morpheus}, use the steps below to obtain them.
 
-IMPORTANT: Microsoft recently added support for Active Directory application configuration in the new Azure portal. Previously, users had to use the old portal to get the required credentials to integrate Azure with {morpheus}. The instructions below are updated for the new portal. Microsoft also changed the naming conventions of the credentials:
+.. IMPORTANT:: Microsoft recently added support for Active Directory application configuration in the new Azure portal. Previously, users had to use the old portal to get the required credentials to integrate Azure with {morpheus}. The instructions below are updated for the new portal. Microsoft also changed the naming conventions of the credentials:
 
 .Old and New Portal Naming Conventions
 [width="90%",frame="topbot",options="header,footer"]
@@ -65,7 +78,7 @@ IMPORTANT: Microsoft recently added support for Active Directory application con
 |Client Secret|Key (Value)
 |======================
 
-=== Creating an Azure Active Directory Application
+Creating an Azure Active Directory Application
 
 If you do not have an existing Azure Active Directory application for {morpheus}, you will need to create a new on by:
 
