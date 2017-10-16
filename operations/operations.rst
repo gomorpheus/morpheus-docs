@@ -5,7 +5,6 @@ Operations
 .. include:: dashboard.rst
 .. include:: reports.rst
 .. include:: analytics.rst
-.. include:: guidance.rst
 .. include:: approvals.rst
 .. include:: usage.rst
 .. include:: activity.rst
