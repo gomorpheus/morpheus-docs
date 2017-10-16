@@ -2,10 +2,10 @@ OneLogin
 --------
 Administration -> Tenants -> Select Tenant -> Identity Sources
 
-Adding OneLogin Identity Source Integraiton
+Adding OneLogin Identity Source Integration
 
 #. Navigate to Administration -> Tenants
-#. Select the Tenant to add the Identity Source Integraiton
+#. Select the Tenant to add the Identity Source Integration
 #. Select the IDENTITY SOURCES button
 #. Seelct + ADD IDENTITY SOURCE
 #. Enter the following:
@@ -13,7 +13,7 @@ Adding OneLogin Identity Source Integraiton
    TYPE
       OneLogin
    NAME
-      Name of the Identity Source Integraiton in Morpheus
+      Name of the Identity Source Integration in Morpheus
     DESCRIPTION
       Optional Description of the Identiry Source
     ONELOGIN SUBDOMAIN
@@ -28,7 +28,7 @@ Adding OneLogin Identity Source Integraiton
     REQUIRED ROLE
       Enter a role if OneLogin users logging into morpheus must have at least this OneLogin role to gain access to Morpheus.
     DEFAULT ROLE
-      The default Morpheus Role applied to users created from OneLogin Integraiton if no other role mapping is specified below
+      The default Morpheus Role applied to users created from OneLogin Integration if no other role mapping is specified below
     ROLE MAPPINGS
       Existing Morpheus Roles will be listed with fileds to enter OneLogin Roles to map to. Users with OneLogin roles matching the role mappings will be assigned the approprie Role(s) in Morpheus when sigining in.
 

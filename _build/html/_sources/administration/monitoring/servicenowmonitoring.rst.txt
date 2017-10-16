@@ -4,12 +4,12 @@ Service Now
 ServiceNow Monitoring Integration Settings
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. NOTE:: A ServiceNow Integration must be already configured in `Administration -> Integraitons` to enable the ServiceNow Monitoring Integraiton.
+.. NOTE:: A ServiceNow Integration must be already configured in `Administration -> Integrations` to enable the ServiceNow Monitoring Integration.
 
 Enabled
   Enables the ServiceNow Monitoring Integration
 Integration
-  Select from a ServiceNow Integration added in `Administration -> Integraitons`
+  Select from a ServiceNow Integration added in `Administration -> Integrations`
 New Incident Action
   The Service Now action to take when a Morpheus incident is created.
 Close Incident Action
