@@ -3,11 +3,11 @@ Analytics
 
 .. update
 
-=== Overview
+Overview
 
 The {morpheus} Analytics engine analyzes resource utilization and costs across clouds. This functionality helps users make decisions on where instances and workloads should be provisioned.
 
-=== Analytics Reports
+Analytics Reports
 
 * Instance Types
 ** By Cloud
