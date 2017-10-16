@@ -1,7 +1,5 @@
-[[backups]]
-
 *******
 Backups
 *******
 
-include::managing\_backups.rst
+include::managing_backups.rst
