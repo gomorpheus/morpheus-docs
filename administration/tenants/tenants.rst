@@ -14,11 +14,8 @@ Create Tenants
 To create Tenants
 
 #. Select the Administration link in the navigation bar.
-
 #. Select the Tenants link in the sub navigation bar.
-
 #. Click the Create Tenant button.
-
 #. From the New Tenant wizard input:
 
    - Name
@@ -36,11 +33,8 @@ Edit Tenant
 To edit a Tenant:
 
 #. Select the Administration link in the navigation bar.
-
 #. Select the Tenants link in the sub navigation bar.
-
 #. Click the Edit pencil icon on the row of the Tenant to edit.
-
 #. Edit the Edit Tenant settings.
 
 Delete Tenant
@@ -74,8 +68,7 @@ To create a Tenant User:
 
 #. Select the Administration link in the navigation bar.
 #. Select the Tenants link in the sub navigation bar.
-#. Click the Tenant Name on the row of the Tenant where the user will be
-added.
+#. Click the Tenant Name on the row of the Tenant where the user will be added.
 #. Click the Create User button.
 #. From the New User wizard input the fields below
 
@@ -98,12 +91,11 @@ To edit a User:
 
 #. Select the Administration link in the navigation bar.
 #. Select the Tenants link in the sub navigation bar.
-#. Click the Tenant Name on the row of the Tenant containing the user to
-be edited.
-. Click the Edit pencil icon of the row of the to edit.
+#. Click the Tenant Name on the row of the Tenant containing the user to be edited.
+#. Click the Edit pencil icon of the row of the to edit.
 #. Edit User informaiton
 
-   .. NOTE:: Name, Username, Passwords and e-mail addresses cannot be edited on Users created from Identity Source Integraitons.
+   .. NOTE:: Name, Username, Passwords and e-mail addresses cannot be edited on Users created from Identity Source Integrations.
 
 #. Save Changes.
 
