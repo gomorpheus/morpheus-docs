@@ -7,7 +7,7 @@ Name:: Name of the Cloud in {morpheus}
 Location:: Description field for adding notes on the cloud, such as location.
 Visibility:: For setting cloud permissions in a multi-tenant environment. Not applicable in single tenant environments.
 VMWARE FUSION HOST:: IP or URL of VMware Fusion Host
-WORKING PATH:: Existing folder {morpheus} will write to on Host
+WORKING PATH:: Existing folder |morpheus| will write to on Host
 USERNAME:: Host Username
 PASSWORD:: Host Password
 BRIDGE NAME:: Will auto-populate upon successful authentication with the Fusion Host (E.X. 'EN0: ETHERNET')

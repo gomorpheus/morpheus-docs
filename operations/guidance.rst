@@ -4,7 +4,7 @@ Guidance
 Overview
 --------
 
-The `Operations -> Guidance` section show recommendations for Resource and Costs Utilization optimization. By analyzing the CPU, RAM, and Storage activity of Instances and Hosts, {morpheus} can recommend actions for Sizing and Power State.
+The `Operations -> Guidance` section show recommendations for Resource and Costs Utilization optimization. By analyzing the CPU, RAM, and Storage activity of Instances and Hosts, |morpheus| can recommend actions for Sizing and Power State.
 
 Configuration
 -------------

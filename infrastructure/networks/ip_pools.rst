@@ -6,9 +6,9 @@ IP Pools
 Overview
 ^^^^^^^^
 
-The Networks IP Pools sections allows you to create {morpheus} IP Pools, which is an IP Range {morpheus} can use to assign available static IP addresses to instances. The IP Pool section also displays pools from IPAM integrations like Infoblox and Bluecat.
+The Networks IP Pools sections allows you to create |morpheus| IP Pools, which is an IP Range |morpheus| can use to assign available static IP addresses to instances. The IP Pool section also displays pools from IPAM integrations like Infoblox and Bluecat.
 
-To add a {morpheus} Network Pool
+To add a |morpheus| Network Pool
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 1. Select *+ ADD* in the `Infrastructure -> Network -> IP Pools` section

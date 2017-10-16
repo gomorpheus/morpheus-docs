@@ -19,3 +19,5 @@ Morpheus Documentation
    faq/faqs
    release_notes/release_notes
    ha/ha_setup
+
+.. |morpheus| replace:: Morpheus

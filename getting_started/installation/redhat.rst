@@ -1,7 +1,7 @@
 RHEL
 ----
 
-To get started installing {morpheus} on RHEL 7 a few prerequisite items
+To get started installing |morpheus| on RHEL 7 a few prerequisite items
 are required.
 
 The RedHat Enterprise Linux 7 server needs to be registered and

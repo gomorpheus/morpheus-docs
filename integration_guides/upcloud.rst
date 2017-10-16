@@ -87,14 +87,14 @@ Group
 A Group must be specified or created for the new Cloud to be added to. Clouds can be added to additional Groups or removed from Groups after being created.
 
 * *USE EXISTING*: Add the new Cloud to an exiting Group in {morpheus}.
-* *CREATE NEW*: Creates a new Group in {morpheus} and adds the Cloud to the Group.
+* *CREATE NEW*: Creates a new Group in |morpheus| and adds the Cloud to the Group.
 
 Review
 ^^^^^^
 
 Confirm all settings are correct and select `COMPLETE`.
 
-The UpCloud Cloud will be added, and {morpheus} will perform the initial cloud sync of:
+The UpCloud Cloud will be added, and |morpheus| will perform the initial cloud sync of:
 
 * UpCloud Servers will added as Virtual Machines (if Inventory is enabled)
 * UpCloud Templates (My Templates) will sync and be added to `Provisioning -> Virtual Images`.
@@ -104,7 +104,7 @@ The UpCloud Cloud will be added, and {morpheus} will perform the initial cloud s
 Provisioning to UpCloud
 -----------------------
 
-Instances and Apps can be created using the private Images synced from UpCloud or from the {morpheus} provided Image Catalog.
+Instances and Apps can be created using the private Images synced from UpCloud or from the |morpheus| provided Image Catalog.
 
 Provision a synced Image
 ^^^^^^^^^^^^^^^^^^^^^^^^
@@ -116,10 +116,10 @@ Images synced from UpCloud can be provisioned by using:
 
 .. IMPORTANT:: Synced images should be configured prior to provisioning by editing the Image in the `Provisioning -> Virtual Images` section.
 
-Provision a {morpheus} provided UpCloud Image
+Provision a |morpheus| provided UpCloud Image
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-{morpheus] provides a number of pre-configured Images that are available in the default {morpheus} Catalog when provisioning and Instance, App, or creating an App Template. UpCloud Images are included in the following Instance Types in the default {morpheus} catalog.
+{morpheus] provides a number of pre-configured Images that are available in the default |morpheus| Catalog when provisioning and Instance, App, or creating an App Template. UpCloud Images are included in the following Instance Types in the default |morpheus| catalog.
 
 * ACTIVEMQ
 * APACHE

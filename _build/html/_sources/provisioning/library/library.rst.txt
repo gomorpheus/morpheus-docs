@@ -117,7 +117,7 @@ Layouts are added to Instance types, and will be presented under the Configurati
 Instance Type::
 Select the Instance Type to add the new Layout to. Custom Instance Types must already be created and one layout cannot be added to multiple instance types, or change Instance Types after creation.
 
-.. NOTE:: Layouts cannot be added to {morpheus} provided library items at this time.
+.. NOTE:: Layouts cannot be added to |morpheus| provided library items at this time.
 
 Name::
 The name the layout will present as in the Configuration Options dropdown in the provisioning wizard
@@ -167,4 +167,4 @@ OptionListREST.png
 
 
 
-Your new Library Item is now ready for provisioning. Multiple Layouts with multiple technologies can be added to a single Instance Type. For example, the Layouts for the {morpheus} Apache Instance Type, with multiple layouts for many different cloud technologies and nodes is pictured below:
+Your new Library Item is now ready for provisioning. Multiple Layouts with multiple technologies can be added to a single Instance Type. For example, the Layouts for the |morpheus| Apache Instance Type, with multiple layouts for many different cloud technologies and nodes is pictured below:

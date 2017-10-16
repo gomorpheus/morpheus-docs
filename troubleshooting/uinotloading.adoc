@@ -1,20 +1,20 @@
 
-=== {morpheus} UI not loading after upgrade or reconfigure
+=== |morpheus| UI not loading after upgrade or reconfigure
 
 
-Problem:: The {morpheus} ui does not load after performing an upgrade.
+Problem:: The |morpheus| ui does not load after performing an upgrade.
 
 Causes::
 
 * The morpheus-ui has not finished loading
 * The morpheus-ui was not fully stopped before reconfigure, or not started after reconfigure
-* {morpheus} was forced to restart or shut down while the database schema was being migrated during an upgrade
+* |morpheus| was forced to restart or shut down while the database schema was being migrated during an upgrade
 
 Solutions:
 
 Cause:: The morpheus-ui has not finished loading.
 
-NOTE: After running `morpheus-ctl start morpheus-ui`, the {morpheus} ui takes around 3 minutes to run depending on hardware.
+NOTE: After running `morpheus-ctl start morpheus-ui`, the |morpheus| ui takes around 3 minutes to run depending on hardware.
 
 Solution::
 
@@ -35,7 +35,7 @@ If you ran a reconfigure before stopping the ui, run:
 . sudo morpheus-ctl start morpheus-ui
 . Wait for the ui to come up.
 
-Cause:: {morpheus} was forced to restart or shut down while the database schema was being migrated during an upgrade
+Cause:: |morpheus| was forced to restart or shut down while the database schema was being migrated during an upgrade
 
 If the ui fails to start and you see the error `Invocation of init method failed; nested exception is liquibase.exception.LockException: Could not acquire change log lock.  Currently locked by morpheus` it likely means morpheus was forced to restart or shut down while the database schema was being migrated during an upgrade, and the lock was not released.
 

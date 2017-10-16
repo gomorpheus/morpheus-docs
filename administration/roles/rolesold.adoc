@@ -1,10 +1,10 @@
 === Roles
 
-{morpheus} provides amazingly robust Role-based access control. Almost every aspect of the UI and API can be controlled via role management. Roles can be assigned as base roles for subaccounts where in sub accounts can manage their own roles relative to the main role. Other aspects can be controlled via Roles as well, such as which infrastructure groups users have visibility into or capabilities of provisioning into. Usage limits can even be assigned and sanctioned instance catalog items!
+|morpheus| provides amazingly robust Role-based access control. Almost every aspect of the UI and API can be controlled via role management. Roles can be assigned as base roles for subaccounts where in sub accounts can manage their own roles relative to the main role. Other aspects can be controlled via Roles as well, such as which infrastructure groups users have visibility into or capabilities of provisioning into. Usage limits can even be assigned and sanctioned instance catalog items!
 
 image::administration/roles.png[caption="Figure 1: ", title="Role management Administration page", alt="Role management Administration page"]
 
-There are 2 base roles provided by {morpheus} upon first installation. They are "System Admin", and "Account Admin" (Can be noted on the management page by having a scope of 'System'). The "Super Admin" role is a special role that only the master account should have access to. It provides access to settings that can apply globally across all accounts in the system. The "Account Admin" role is just a base role that is seeded in for use as the default role when creating new subaccounts. This default role can be copied or modified. If it desired that an account  take on a different default base role, this can be done from the `Admin -> Settings` section under "Account Management Settings". You can also assign a base role to an account in the `Admin -> Accounts` section or directly to a user in `Admin -> Users`.
+There are 2 base roles provided by |morpheus| upon first installation. They are "System Admin", and "Account Admin" (Can be noted on the management page by having a scope of 'System'). The "Super Admin" role is a special role that only the master account should have access to. It provides access to settings that can apply globally across all accounts in the system. The "Account Admin" role is just a base role that is seeded in for use as the default role when creating new subaccounts. This default role can be copied or modified. If it desired that an account  take on a different default base role, this can be done from the `Admin -> Settings` section under "Account Management Settings". You can also assign a base role to an account in the `Admin -> Accounts` section or directly to a user in `Admin -> Users`.
 
 In the `Account -> Roles` section there are 2 types of ways to edit a role. One is to click a role's name to view its permission set and manipulate its different access levels. The other is to click the edit icon on the right. In this mode you can rename a role or set usage limits (i.e. max memory usage or max storage usage for users assigned to this role).
 
@@ -12,7 +12,7 @@ When it comes to managing a role there are 4 subsections. They are "Feature Acce
 
 ==== Feature Access
 
-Features, are aspects of both the UI and API that a user may have access to at any given point. {morpheus} also has the ability to control access level of specific features rather than simply turning a feature on or off. These difference scopes appear in the dropdowns to the right of each feature (a dropdown will not appear if the role is readonly visible).
+Features, are aspects of both the UI and API that a user may have access to at any given point. |morpheus| also has the ability to control access level of specific features rather than simply turning a feature on or off. These difference scopes appear in the dropdowns to the right of each feature (a dropdown will not appear if the role is readonly visible).
 
 image::administration/role_features.png[caption="Figure 2: ", title="Example of features list when clicking into a role detail page", alt="Role detail features section"]
 

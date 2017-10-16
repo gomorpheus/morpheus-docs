@@ -4,7 +4,7 @@ Salt
 Overview
 ^^^^^^^^
 
-{morpheus} integrates with an existing Salt Master for seamless deployment of Salt States to Minions provisioned from {morpheus}.
+|morpheus| integrates with an existing Salt Master for seamless deployment of Salt States to Minions provisioned from {morpheus}.
 
 Add Salt Integration
 ^^^^^^^^^^^^^^^^^^^^
@@ -17,14 +17,14 @@ Once there simply add a New Integration
 
 And then scope the integration to your existing Salt Master by ip address.  Make sure that the username entered is one with proper escalation privileges for running Salt, and point the Working Directory at the directory on your Master where your States live.
 
-.. NOTE:: {morpheus} will allow you to run States from a git backend, but in v2.10 you will not see states from a git backend within {morpheus}
+.. NOTE:: |morpheus| will allow you to run States from a git backend, but in v2.10 you will not see states from a git backend within {morpheus}
 
 .. image:: /images/administration/salt-a41c9.png
 
 Scope Salt Integration to Group Or Cloud
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Configuration Management integrations like Saltstack apply to the Infrastructure Group abstraction in {morpheus}.  To ties yours in, browse to ``Infrastructure -> Groups`` in {morpheus} and select the group that you would like to tie to your Salt Master.
+Configuration Management integrations like Saltstack apply to the Infrastructure Group abstraction in {morpheus}.  To ties yours in, browse to ``Infrastructure -> Groups`` in |morpheus| and select the group that you would like to tie to your Salt Master.
 
 From here select `Edit`
 
@@ -52,7 +52,7 @@ The classic example of running
 
 `salt '*' test.ping`
 
-will return empty unless there are existing Minions with accepted keys on the Master.  However, provisioning Minions via {morpheus} is extremely easy.
+will return empty unless there are existing Minions with accepted keys on the Master.  However, provisioning Minions via |morpheus| is extremely easy.
 
 Provisioning with Saltstack
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^

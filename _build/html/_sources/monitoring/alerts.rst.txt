@@ -32,6 +32,6 @@ Notifications
 
 Configuring Notification Services
 
-By default {morpheus} provides email notification services using the `morpheusdata.com` email address. It may be advisable to customize these services to use another mail delivery service.
+By default |morpheus| provides email notification services using the `morpheusdata.com` email address. It may be advisable to customize these services to use another mail delivery service.
 
 .. T ODO We need to make this stick

@@ -6,7 +6,7 @@ Enabled
 Default Backup Provider
   Sets Veeam as the Default Backup Provider in {morpheus}. Backup Providers can also be configured per Backup.
 Visibility
-  Sets visibility in multi-tenant {morpheus} environments:
+  Sets visibility in multi-tenant |morpheus| environments:
 
   * Public: Accessible by all Tenants
   * Private: Accessible only to the Tenant the Veeam integration is added.

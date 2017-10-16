@@ -4,7 +4,7 @@
 
 === Overview
 
-The {morpheus} SAML identity source integration allows customers to add user SSO to {morpheus}, authenticated by external login SAML providers.
+The |morpheus| SAML identity source integration allows customers to add user SSO to {morpheus}, authenticated by external login SAML providers.
 
 image::images/saml-2f9c4.png[]
 
@@ -29,8 +29,8 @@ There are 3 sections with fields that need to be populated depending on the desi
 
 === SAML Configuration
 
-LOGIN REDIRECT URL:: This is the SAML endpoint {morpheus} will redirect to when a user signs into {morpheus} via SAML.
-LOGOUT POST URL:: The url morpheus will post to when a SAML user log out of {morpheus} to log out of the SAML provider as well.
+LOGIN REDIRECT URL:: This is the SAML endpoint |morpheus| will redirect to when a user signs into |morpheus| via SAML.
+LOGOUT POST URL:: The url morpheus will post to when a SAML user log out of |morpheus| to log out of the SAML provider as well.
 SIGNING PUBLIC KEY:: Add the X.509 Certificate public key from the SAML provider.
 
 === Role Mappings
@@ -43,9 +43,9 @@ The rest of the Role Mapping Fields will be the existing Roles in morpheus with 
 
 === User Attribute Names
 
-GIVEN NAME ATTRIBUTE NAME:: SAML SP field value to map to {morpheus} user First Name
-SURNAME ATTRIBUTE NAME:: SAML SP field value to map to {morpheus} user Last Name
-EMAIL ATTRIBUTE NAME:: SAML SP field value to map to {morpheus} user email address
+GIVEN NAME ATTRIBUTE NAME:: SAML SP field value to map to |morpheus| user First Name
+SURNAME ATTRIBUTE NAME:: SAML SP field value to map to |morpheus| user Last Name
+EMAIL ATTRIBUTE NAME:: SAML SP field value to map to |morpheus| user email address
 
 image::images/saml-c4576.png[]
 

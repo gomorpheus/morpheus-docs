@@ -68,7 +68,7 @@ Configuration options for expiration policies:
 * NOTIFICATION MESSAGE
 ** Customizable message for notification email. Default message is "Instance ${instance?.name} is set to expire on ${instance?.expireDate}"
 * AUTO APPROVE EXTENSIONS
-** Enable this to auto-approve extension requests. Please note approval workflows will be available in upcoming {morpheus} release.
+** Enable this to auto-approve extension requests. Please note approval workflows will be available in upcoming |morpheus| release.
 
 image::infrastructure/new_policy2.png[caption="Figure 4: ", title="Expiration Policy", alt="Expiration Policy"]
 

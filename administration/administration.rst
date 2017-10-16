@@ -2,7 +2,7 @@
 Administration
 **************
 
-There are several administrative integrations built into {morpheus} that
+There are several administrative integrations built into |morpheus| that
 make it great to work with within any organization ranging from small to
 large. Especially, with its built in white label support and
 multitenancy capabilities, managed service providers have a wide range

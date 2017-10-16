@@ -1,7 +1,7 @@
 Application Tier
 ----------------
 
-{morpheus} configuration is controlled by a configuration file located
+|morpheus| configuration is controlled by a configuration file located
 at /etc/morpheus/morpheus.rb. This file is read when you run
 morpheus-ctl reconfigure after installing the appliance package. Each
 section is tied to a deployment tier: database is mysql, message queue

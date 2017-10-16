@@ -7,7 +7,7 @@ and vm options but also tailored services for SQL databases, NoSQL
 databases, cache stores, message busses, web servers, and even full
 fledged apps. The list contains a lot of items to choose from and they
 are represented to the user based on what provisioning engines are
-enabled and integrated in the {morpheus} environment.
+enabled and integrated in the |morpheus| environment.
 
 To get started, simply click the ``+ Add Instance`` button in the upper
 right of the ``Provisioning -> Instances`` section. A modal will display

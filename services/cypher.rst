@@ -74,7 +74,7 @@ Lease
 
 Save changes and the secret will be encrypted and available for use.
 
-If your {morpheus} user role has Cypher: Decrypt permissions, a "DECRYPT" button will be available in the Cypher section to view the secret.
+If your |morpheus| user role has Cypher: Decrypt permissions, a "DECRYPT" button will be available in the Cypher section to view the secret.
 
 To delete the secret, select `Actions -> Remove` and confirm.
 

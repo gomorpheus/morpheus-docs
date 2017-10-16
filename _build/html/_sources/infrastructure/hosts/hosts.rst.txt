@@ -17,7 +17,7 @@ In this section you can:
 Hosts
 -----
 
-Hosts in {morpheus} are Hypervisors and Docker Hosts that your VM's and Container are hosted on, such as ESXi, Hyper-V and Docker Hosts. These Hosts are populated from integrated clouds, hosts provisioned form Morpheus, or manually added Hosts.
+Hosts in |morpheus| are Hypervisors and Docker Hosts that your VM's and Container are hosted on, such as ESXi, Hyper-V and Docker Hosts. These Hosts are populated from integrated clouds, hosts provisioned form Morpheus, or manually added Hosts.
 
 .. //==== Adding Hosts
 .. //==== Managing Hosts

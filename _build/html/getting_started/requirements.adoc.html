@@ -40,10 +40,10 @@
             
   <p>[[requirements]]</p>
 <p>== Requirements</p>
-<p>{morpheus} is a software based appliance installation capable of
+<p>|morpheus| is a software based appliance installation capable of
 orchestrating many clouds and hypervisors. Before an installation is
 started it is important to understand some of the base requirements.</p>
-<p>In the simplest configuration {morpheus} simply needs one Appliance
+<p>In the simplest configuration |morpheus| simply needs one Appliance
 Server. The Appliance Server, by default, contains all the components
 necessary to orchestrate both vm’s and containers. To get started some
 base requirements are recommended:</p>
@@ -62,19 +62,19 @@ on ports 443 and 80 (needed for agent communication)</li>
 <li>Internet Connectivity from Appliance (To download from {morpheus}’
 public docker repositories and virtual image catalog)</li>
 <li>Superuser privileges via the sudo command for the user installing the
-{morpheus} Appliance package.</li>
+|morpheus| Appliance package.</li>
 <li>An Appliance URL that is accessible to all managed hosts. It is
-necessary for all hosts that are managed by {morpheus} to be able to
+necessary for all hosts that are managed by |morpheus| to be able to
 communicate with the appliance server ip on port 443. This URL is
-configured under Admin-&gt;Settings. {morpheus} also utilizes SSH (Port
+configured under Admin-&gt;Settings. |morpheus| also utilizes SSH (Port
 22) and Windows Remote Management (Port 5985) to initialize a server.</li>
 <li>An Appliance License is required for any operations involving
 provisioning.</li>
 </ul>
 <p>=== Storage</p>
-<p>{morpheus} needs storage space for a few items. One is for the built-in
+<p>|morpheus| needs storage space for a few items. One is for the built-in
 <a class="reference external" href="https://www.elastic.co/products/elasticsearch[Elasticsearch">https://www.elastic.co/products/elasticsearch[Elasticsearch</a>] store (used
-for log aggregation and stats collection metrics). {morpheus} also keeps
+for log aggregation and stats collection metrics). |morpheus| also keeps
 a workspace and local virtual image cache for doing virtual image
 conversion and template upload. While the permanent store of these can
 be offloaded via a Storage Provider some space is still recommended for
@@ -85,13 +85,13 @@ datastore on a storage cluster and mounted to <code class="docutils literal"><sp
 There are several folders located within here that can be independently
 located as desired.</p>
 <p>=== Network Connectivity</p>
-<p>{morpheus} primarily operates via communication with its agent that is
+<p>|morpheus| primarily operates via communication with its agent that is
 installed on all managed vm’s or docker hosts. This is a lightweight
 agent responsible for aggregating logs and stats and sending them back
 to the client with minimal network traffic overhead. It also is capable
 of processing instructions related to provisioning and deployments
 instigated by the appliance server.</p>
-<p>The {morpheus} Agent exists for both linux and windows based platforms
+<p>The |morpheus| Agent exists for both linux and windows based platforms
 and opens NO ports on the guest operating system. Instead it makes an
 outbound SSL (https / wss) connection to the appliance server. This is
 what is known as the <code class="docutils literal"><span class="pre">appliance</span> <span class="pre">url</span></code> during configuration (in
@@ -99,10 +99,10 @@ Admin-&gt;Settings). When the agent is started it automatically makes this
 connection and securely authenticates. Therefore, it is necessary for
 all vm’s and docker based hosts that are managed by morpheus to be able
 to reach the appliance server ip on port 443.</p>
-<p>{morpheus} also utilizes SSH (Port 22) and Windows Remote Management
+<p>|morpheus| also utilizes SSH (Port 22) and Windows Remote Management
 (Port 5985) to initialize a server. This includes sending remote command
 instructions to install the agent. It is actually possible for
-{morpheus} to operate without agent connectivity (though stats and logs
+|morpheus| to operate without agent connectivity (though stats and logs
 will not function) and utilize SSH/WinRM to perform operations. Once the
 agent is installed and connections are established SSH/WinRM
 communication will stop. This is why an outbound requirement exists for
@@ -118,7 +118,7 @@ operation of {morpheus}. This includes:</p>
 <li>MySQL (Logistical Data store)</li>
 <li>Elasticsearch (Logs / Metrics store)</li>
 <li>Redis (Cache store)</li>
-<li>Tomcat ({morpheus} Application)</li>
+<li>Tomcat (|morpheus| Application)</li>
 <li>Nginx (Web frontend)</li>
 <li>Guacamole (Remote console service for clientless remote console)</li>
 <li>Check Server (Monitoring Agent for custom checks added via UI)</li>

@@ -141,7 +141,7 @@
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#ip-pools">IP Pools</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#id7">Overview</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#to-add-a-morpheus-network-pool">To add a {morpheus} Network Pool</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#to-add-a-morpheus-network-pool">To add a |morpheus| Network Pool</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#domains">Domains</a><ul>
@@ -278,7 +278,7 @@
             
   <div class="section" id="infrastructure">
 <h1>Infrastructure<a class="headerlink" href="#infrastructure" title="Permalink to this headline">¶</a></h1>
-<p>The heart of {morpheus} is the ability to manage provisioning across any
+<p>The heart of |morpheus| is the ability to manage provisioning across any
 infrastructure, from bare metal to virtualized clouds and all the way to
 public infrastructure.</p>
 <div class="section" id="groups">
@@ -361,7 +361,7 @@ public infrastructure.</p>
 <h2>Clouds<a class="headerlink" href="#clouds" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="id1">
 <h3>Overview<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
-<p>Clouds are integrations or connections to public, private, hybrid clouds, or bare metal servers. Clouds can belong to many groups and contain many hosts. The clouds view a includes search feature and provides the option to edit, delete, and add new clouds. {morpheus} supports most Public Clouds and Private Clouds.</p>
+<p>Clouds are integrations or connections to public, private, hybrid clouds, or bare metal servers. Clouds can belong to many groups and contain many hosts. The clouds view a includes search feature and provides the option to edit, delete, and add new clouds. |morpheus| supports most Public Clouds and Private Clouds.</p>
 </div>
 <div class="section" id="creating-clouds">
 <h3>Creating Clouds<a class="headerlink" href="#creating-clouds" title="Permalink to this headline">¶</a></h3>
@@ -377,7 +377,7 @@ Details on required credentials and settings can be found in the Cloud integrati
 <dt>REFRESH</dt>
 <dd>Force a sync with the Cloud. Last sync date, time and duration is shown under the Cloud name.</dd>
 <dt>DELETE</dt>
-<dd>Delete the Cloud from {morpheus} IMPORTANT: All Instances and managed Hosts and VM’s must be removed prior to deleting a cloud.</dd>
+<dd>Delete the Cloud from |morpheus| IMPORTANT: All Instances and managed Hosts and VM’s must be removed prior to deleting a cloud.</dd>
 </dl>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
@@ -405,7 +405,7 @@ Details on required credentials and settings can be found in the Cloud integrati
 </dl>
 <ul class="simple">
 <li>Container Host
-Provisions a Docker host into the Cloud, or adds an existing Docker Host (manual) to the Cloud. KVM hosts are also available for {morpheus} and Bare Metal cloud types.</li>
+Provisions a Docker host into the Cloud, or adds an existing Docker Host (manual) to the Cloud. KVM hosts are also available for |morpheus| and Bare Metal cloud types.</li>
 <li>Hypervisor
 Add an existing Hypervisor to the Cloud. Not available for all Cloud types.</li>
 </ul>
@@ -420,7 +420,7 @@ Add an existing Hypervisor to the Cloud. Not available for all Cloud types.</li>
 </ol>
 <div class="admonition important">
 <p class="first admonition-title">Important</p>
-<p class="last">All Instances and managed Hosts and VM’s must be removed prior to deleting a cloud. To remove Instances, Hosts and VM’s from {morpheus} without deleting them in the actual Cloud, select Delete on the Host or VM, unselect “Remove Infrastructure” and select “Remove Associated Instances” if Instance are associated with the Hosts or VMs.</p>
+<p class="last">All Instances and managed Hosts and VM’s must be removed prior to deleting a cloud. To remove Instances, Hosts and VM’s from |morpheus| without deleting them in the actual Cloud, select Delete on the Host or VM, unselect “Remove Infrastructure” and select “Remove Associated Instances” if Instance are associated with the Hosts or VMs.</p>
 </div>
 </div>
 </div>
@@ -440,7 +440,7 @@ Add an existing Hypervisor to the Cloud. Not available for all Cloud types.</li>
 </div>
 <div class="section" id="id3">
 <h3>Hosts<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
-<p>Hosts in {morpheus} are Hypervisors and Docker Hosts that your VM’s and Container are hosted on, such as ESXi, Hyper-V and Docker Hosts. These Hosts are populated from integrated clouds, hosts provisioned form Morpheus, or manually added Hosts.</p>
+<p>Hosts in |morpheus| are Hypervisors and Docker Hosts that your VM’s and Container are hosted on, such as ESXi, Hyper-V and Docker Hosts. These Hosts are populated from integrated clouds, hosts provisioned form Morpheus, or manually added Hosts.</p>
 </div>
 <div class="section" id="virtual-machines">
 <h3>Virtual Machines<a class="headerlink" href="#virtual-machines" title="Permalink to this headline">¶</a></h3>
@@ -459,7 +459,7 @@ Add an existing Hypervisor to the Cloud. Not available for all Cloud types.</li>
 <p><code class="docutils literal"><span class="pre">Infrastructure</span> <span class="pre">-&gt;</span> <span class="pre">Network</span> <span class="pre">-&gt;</span> <span class="pre">Networks</span></code></p>
 <div class="section" id="id4">
 <h4>Overview<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h4>
-<p>The Networks section is for configuring networks across all clouds in {morpheus}. Existing networks from the Clouds added in {morpheus} will auto-populate in the Networks section.</p>
+<p>The Networks section is for configuring networks across all clouds in {morpheus}. Existing networks from the Clouds added in |morpheus| will auto-populate in the Networks section.</p>
 <p>Networks can be configured for DHCP or Static IP assignment, assigned IP pools, and configured for visibility and account assignment for multi-tenancy usage. Networks can also be set as inactive and unavailable for provisioning use.</p>
 </div>
 <div class="section" id="configuring-networks">
@@ -480,7 +480,7 @@ Add an existing Hypervisor to the Cloud. Not available for all Cloud types.</li>
 </ol>
 <div class="admonition important">
 <p class="first admonition-title">Important</p>
-<p class="last">The DHCP flag tells {morpheus} this network has a DHCP server assigning IP Addresses to hosts. {morpheus} does not act as the DHCP server, and provisioning to a network that has the DHCP server flag active in {morpheus}, but no DHCP server actually on the network will in most cases cause the instance to not receive an IP address.</p>
+<p class="last">The DHCP flag tells |morpheus| this network has a DHCP server assigning IP Addresses to hosts. |morpheus| does not act as the DHCP server, and provisioning to a network that has the DHCP server flag active in {morpheus}, but no DHCP server actually on the network will in most cases cause the instance to not receive an IP address.</p>
 </div>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
@@ -511,12 +511,12 @@ Add an existing Hypervisor to the Cloud. Not available for all Cloud types.</li>
 <blockquote>
 <div><ul class="simple">
 <li>Leave as “choose a pool” for entering a static IP while provisioning</li>
-<li>Select a Pool to use a pre-configured {morpheus} or IPAM Integration IP Pool</li>
+<li>Select a Pool to use a pre-configured |morpheus| or IPAM Integration IP Pool</li>
 </ul>
 </div></blockquote>
 <ul class="simple">
 <li>The Permissions settings are used for Multi-Tenant resource configuration<ul>
-<li>Leave settings as default if used in a single-tenant environment (only one Tenant in your {morpheus} appliance)</li>
+<li>Leave settings as default if used in a single-tenant environment (only one Tenant in your |morpheus| appliance)</li>
 <li>To share this network across all accounts in a multi-tenant environment, select the Master Tenant and set the Visibility to Public</li>
 <li>To assign this network to be used by only one account in a multi-tenant environment, select the account and set visibility to Private</li>
 </ul>
@@ -669,10 +669,10 @@ Add an existing Hypervisor to the Cloud. Not available for all Cloud types.</li>
 <p><code class="docutils literal"><span class="pre">Infrastructure</span> <span class="pre">-&gt;</span> <span class="pre">Network</span> <span class="pre">-&gt;</span> <span class="pre">IP</span> <span class="pre">Pools</span></code></p>
 <div class="section" id="id7">
 <h4>Overview<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h4>
-<p>The Networks IP Pools sections allows you to create {morpheus} IP Pools, which is an IP Range {morpheus} can use to assign available static IP addresses to instances. The IP Pool section also displays pools from IPAM integrations like Infoblox and Bluecat.</p>
+<p>The Networks IP Pools sections allows you to create |morpheus| IP Pools, which is an IP Range |morpheus| can use to assign available static IP addresses to instances. The IP Pool section also displays pools from IPAM integrations like Infoblox and Bluecat.</p>
 </div>
 <div class="section" id="to-add-a-morpheus-network-pool">
-<h4>To add a {morpheus} Network Pool<a class="headerlink" href="#to-add-a-morpheus-network-pool" title="Permalink to this headline">¶</a></h4>
+<h4>To add a |morpheus| Network Pool<a class="headerlink" href="#to-add-a-morpheus-network-pool" title="Permalink to this headline">¶</a></h4>
 <ol class="arabic simple">
 <li>Select <em>+ ADD</em> in the <cite>Infrastructure -&gt; Network -&gt; IP Pools</cite> section</li>
 <li>Enter the following:
@@ -720,7 +720,7 @@ Add an existing Hypervisor to the Cloud. Not available for all Cloud types.</li>
 * Password:: Password for DC Username
 * DC Server:: (optional) Specify the URL or Path of the DC Server
 * OU Path:: (optional) Enter the OU Path for the connection string.
-* Permissions:: Configure Tenant permissions in {morpheus} for the Domain (only applicable in Multi-tenant {morpheus} setups)
+* Permissions:: Configure Tenant permissions in |morpheus| for the Domain (only applicable in Multi-tenant |morpheus| setups)
 * Tenant:: Select the Tenant to set permissions to for the Domain.
 * Visibility:</p>
 <blockquote>
@@ -743,7 +743,7 @@ Add an existing Hypervisor to the Cloud. Not available for all Cloud types.</li>
 <h4>Editing and Removing Domains<a class="headerlink" href="#editing-and-removing-domains" title="Permalink to this headline">¶</a></h4>
 <ul class="simple">
 <li>Domains can be edited by selecting the <cite>Actions</cite> dropdown for the Domain and selecting <cite>Edit</cite>.</li>
-<li>Added Domains can be removed from {morpheus} by selecting the <cite>Actions</cite> dropdown for the Domain and selecting <cite>Remove</cite>.</li>
+<li>Added Domains can be removed from |morpheus| by selecting the <cite>Actions</cite> dropdown for the Domain and selecting <cite>Remove</cite>.</li>
 </ul>
 </div>
 <div class="section" id="setting-the-default-domain-on-a-cloud">
@@ -778,12 +778,12 @@ Add an existing Hypervisor to the Cloud. Not available for all Cloud types.</li>
 <h3>Proxies<a class="headerlink" href="#proxies" title="Permalink to this headline">¶</a></h3>
 <div class="section" id="id9">
 <h4>Overview<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h4>
-<p>In many situations , companies deploy virtual machines in proxy restricted environments for things such as PCI Compliance, or just general security. As a result of this {morpheus} provides out of the box support for proxy connectivity. Proxy authentication support is also provided with both Basic Authentication capabilities as well as NTLM for Windows Proxy environments. {morpheus} is even able to configure virtual machines it provisions to utilize these proxies by setting up the operating systems proxy settings directly (restricted to cloud-init based Linux platforms for now, but can also be done on windows based platforms in a different manner).</p>
-<p>To get started with Proxies, it may first be important to configure the {morpheus} appliance itself to have access to proxy communication for downloading service catalog images. To configure this, visit the Admin -&gt; Settings page where a section labeled “Proxy Settings” is located. Fill in the relevant connection info needed to utilize the proxy. It may also be advised to ensure that the Linux environment’s <cite>http_proxy</cite>, <cite>https_proxy</cite>, and <cite>no_proxy</cite> are set appropriately.</p>
+<p>In many situations , companies deploy virtual machines in proxy restricted environments for things such as PCI Compliance, or just general security. As a result of this |morpheus| provides out of the box support for proxy connectivity. Proxy authentication support is also provided with both Basic Authentication capabilities as well as NTLM for Windows Proxy environments. |morpheus| is even able to configure virtual machines it provisions to utilize these proxies by setting up the operating systems proxy settings directly (restricted to cloud-init based Linux platforms for now, but can also be done on windows based platforms in a different manner).</p>
+<p>To get started with Proxies, it may first be important to configure the |morpheus| appliance itself to have access to proxy communication for downloading service catalog images. To configure this, visit the Admin -&gt; Settings page where a section labeled “Proxy Settings” is located. Fill in the relevant connection info needed to utilize the proxy. It may also be advised to ensure that the Linux environment’s <cite>http_proxy</cite>, <cite>https_proxy</cite>, and <cite>no_proxy</cite> are set appropriately.</p>
 </div>
 <div class="section" id="defining-proxies">
 <h4>Defining Proxies<a class="headerlink" href="#defining-proxies" title="Permalink to this headline">¶</a></h4>
-<p>Proxies can be used in a few different contexts and optionally scoped to specific networks with which one may be provisioning into or on a cloud integration as a whole. To configure a Proxy for use by the provisioning engines within {morpheus} we must go to <cite>Infrastructure -&gt; Networks -&gt; Proxies</cite>. Here we can create records representing connection information for various proxies. This includes the host ip address, proxy port, and any credentials (if necessary) needed to utilize the proxy. Now that these proxies are defined we can use them in various contexts.</p>
+<p>Proxies can be used in a few different contexts and optionally scoped to specific networks with which one may be provisioning into or on a cloud integration as a whole. To configure a Proxy for use by the provisioning engines within |morpheus| we must go to <cite>Infrastructure -&gt; Networks -&gt; Proxies</cite>. Here we can create records representing connection information for various proxies. This includes the host ip address, proxy port, and any credentials (if necessary) needed to utilize the proxy. Now that these proxies are defined we can use them in various contexts.</p>
 </div>
 <div class="section" id="cloud-communication">
 <h4>Cloud Communication<a class="headerlink" href="#cloud-communication" title="Permalink to this headline">¶</a></h4>
@@ -791,7 +791,7 @@ Add an existing Hypervisor to the Cloud. Not available for all Cloud types.</li>
 </div>
 <div class="section" id="provisioning-with-proxies">
 <h4>Provisioning with Proxies<a class="headerlink" href="#provisioning-with-proxies" title="Permalink to this headline">¶</a></h4>
-<p>Proxy configurations can vary from operating system to operating system and in some cases it is necessary for these to be configured in the templates as a prerequisite. In other cases it can also be configured automatically. Mostly with the use of cloud-init (which all of our out of the box service catalog utilizes on all clouds). When editing/creating a cloud there is a setting for “Provisioning Proxy” in “Provisioning Options”. If this proxy is set, {morpheus} will automatically apply these proxy settings to the guest operating system.</p>
+<p>Proxy configurations can vary from operating system to operating system and in some cases it is necessary for these to be configured in the templates as a prerequisite. In other cases it can also be configured automatically. Mostly with the use of cloud-init (which all of our out of the box service catalog utilizes on all clouds). When editing/creating a cloud there is a setting for “Provisioning Proxy” in “Provisioning Options”. If this proxy is set, |morpheus| will automatically apply these proxy settings to the guest operating system.</p>
 <p>Overriding proxy settings can also be done on the Network record. Networks (or subnets) can be configured in <cite>Infrastructure -&gt; Networks</cite> or on the Networks tab of the relevant Cloud detail page. Here, a proxy can also be assigned as well as additional options like the <cite>No Proxy</cite> rules for proxy exceptions.</p>
 </div>
 <div class="section" id="docker">
@@ -878,12 +878,12 @@ Add an existing Hypervisor to the Cloud. Not available for all Cloud types.</li>
 <p><code class="docutils literal"><span class="pre">Infrastructure</span> <span class="pre">-&gt;</span> <span class="pre">Load</span> <span class="pre">Balancers</span></code></p>
 <div class="section" id="id11">
 <h3>Overview<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h3>
-<p>{morpheus} can provision VM or Container HaProxy Load Balancers, Amazon Elastic and Application Load Balancers, Azure Load Balancers, and integrates with several external Load Balancers, including F5, A10, Citrix, and AVI.</p>
+<p>|morpheus| can provision VM or Container HaProxy Load Balancers, Amazon Elastic and Application Load Balancers, Azure Load Balancers, and integrates with several external Load Balancers, including F5, A10, Citrix, and AVI.</p>
 <p>Once created or integrated, Load Balancers are available as an option to be added during provision time or post-provisioning.</p>
 <p>Once a Load Balancer is added to an instance, you can manually scale or configure auto-scaling based on thresholds or schedules, and burst across clouds with cloud priority.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">HaProxy VM Load Balancer option, Load Balancer detail pages, Balance Mode, Sticky Mode and Shared VIP address option are available in {morpheus} 2.11.3+.</p>
+<p class="last">HaProxy VM Load Balancer option, Load Balancer detail pages, Balance Mode, Sticky Mode and Shared VIP address option are available in |morpheus| 2.11.3+.</p>
 </div>
 <p>In the Load Balancers page there are two sections:</p>
 <dl class="docutils">
@@ -1073,7 +1073,7 @@ Targets::
 <h2>Key Pairs &amp; Certificates<a class="headerlink" href="#key-pairs-certificates" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="key-pairs">
 <h3>Key Pairs<a class="headerlink" href="#key-pairs" title="Permalink to this headline">¶</a></h3>
-<p>The Key Pairs section enables the following actions: Add and Delete key pairs. Key Pairs are commonly used by {morpheus} for accessing instances via SSH. {morpheus} stores key pairs to simplify administration and access across both private and public clouds.</p>
+<p>The Key Pairs section enables the following actions: Add and Delete key pairs. Key Pairs are commonly used by |morpheus| for accessing instances via SSH. |morpheus| stores key pairs to simplify administration and access across both private and public clouds.</p>
 <p>To navigate to the Key Pairs section:</p>
 <ol class="arabic simple">
 <li>Select the Infrastructure link in the navigation bar.</li>
@@ -1114,17 +1114,17 @@ Targets::
 <h3>PXE Boot<a class="headerlink" href="#pxe-boot" title="Permalink to this headline">¶</a></h3>
 <div class="section" id="id14">
 <h4>Overview<a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h4>
-<p>{morpheus} includes a built in PXE Server to enable easy and rapid bare metal provisioning. Simply map your TFTP server port to the {morpheus} sevrer port 6969 and you are ready to PXE boot from the provided images and answer files, or add your own to bring up Bare metal Hosts with ease.</p>
+<p>|morpheus| includes a built in PXE Server to enable easy and rapid bare metal provisioning. Simply map your TFTP server port to the |morpheus| sevrer port 6969 and you are ready to PXE boot from the provided images and answer files, or add your own to bring up Bare metal Hosts with ease.</p>
 <p>=== Prerequisites</p>
-<p>Your network must be configured for PXE boot, and the TFTP server port need to mapped to the {morpheus} TFT server port, UDP 6969.</p>
+<p>Your network must be configured for PXE boot, and the TFTP server port need to mapped to the |morpheus| TFT server port, UDP 6969.</p>
 <ul class="simple">
 <li>Network configured for network boot</li>
-<li>Router UDP 69 mapped to {morpheus} server UDP port 6969</li>
-<li>Router TFT Server set to {morpheus} server IP or resolvable Hostname.</li>
-<li>Mac or IP addresses of PXE target mapped in {morpheus} <cite>Infrastructure -&gt; Boot - Mapping</cite></li>
+<li>Router UDP 69 mapped to |morpheus| server UDP port 6969</li>
+<li>Router TFT Server set to |morpheus| server IP or resolvable Hostname.</li>
+<li>Mac or IP addresses of PXE target mapped in |morpheus| <cite>Infrastructure -&gt; Boot - Mapping</cite></li>
 <li>Target host configured for Network boot in BIOS</li>
 </ul>
-<p>NOTE: The {morpheus} PXE port is set in <cite>opt/morpheus/conf/application.yml</cite></p>
+<p>NOTE: The |morpheus| PXE port is set in <cite>opt/morpheus/conf/application.yml</cite></p>
 <p>=== To PXE Boot</p>
 <p>. Click the Infrastructure link in the navigation bar.
 . Select the Boot link in the sub navigation bar.</p>
@@ -1140,7 +1140,7 @@ Answer File:: Lists available answer files.
 Cloud:: Lists the available clouds.
 Server Mode: List of server modes:: unmanaged, Managed, Bare metal host, Container host, VM host, and Container &amp; VM host.
 Click the Save Changes button to save.</p>
-<p>Once the mapping is added, and the target host is powered on, the {morpheus} PXE menu will load and PXE boot will start.</p>
+<p>Once the mapping is added, and the target host is powered on, the |morpheus| PXE menu will load and PXE boot will start.</p>
 <p>==== Edit Mapping</p>
 <p>. Click the Infrastructure link in the navigation bar.
 . Click the Boot link in the sub navigation bar.
@@ -1272,7 +1272,7 @@ Account:: List of accounts to allow permission to this image.
 * NOTIFICATION MESSAGE
 ** Customizable message for notification email. Default message is “Instance ${instance?.name} is set to expire on ${instance?.expireDate}”
 * AUTO APPROVE EXTENSIONS
-** Enable this to auto-approve extension requests. Please note approval workflows will be available in upcoming {morpheus} release.</p>
+** Enable this to auto-approve extension requests. Please note approval workflows will be available in upcoming |morpheus| release.</p>
 <p>image::infrastructure/new_policy2.png[caption=”Figure 4: “, title=”Expiration Policy”, alt=”Expiration Policy”]</p>
 <p>Instances with expirations show the time until expiration in the instance detail pane. Instances with active expiration policies can be extended by selecting the EXTEND NOW button in the instance detail pane. The extension length is set in the policy by the RENEWAL DAYS field.</p>
 <p>image::infrastructure/renewal_policy.png[caption=”Figure 5: “, title=”Renewal Policy”, alt=”Renewal Policy”]</p>

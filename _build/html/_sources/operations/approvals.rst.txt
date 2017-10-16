@@ -1,19 +1,19 @@
 Approvals
 =========
 
-{morpheus} and Service Now Approvals
+|morpheus| and Service Now Approvals
 
 Overview
 --------
 
-Policies can be created for Groups and Clouds to require approvals for actions with the built-in {morpheus} approvals engine, or via a ServiceNow integration. Approvals can be configured for Provisioning and Lifecycle extensions.
+Policies can be created for Groups and Clouds to require approvals for actions with the built-in |morpheus| approvals engine, or via a ServiceNow integration. Approvals can be configured for Provisioning and Lifecycle extensions.
 
 Configuring Approvals
 ---------------------
 
-Configuring {morpheus} for Approvals
+Configuring |morpheus| for Approvals
 
-To configure {morpheus} for approvals:
+To configure |morpheus| for approvals:
 
 #. Configure Roles for Approval access
 #. Optionally configure a ServiceNow Integration for ServiceNow approvals.
@@ -57,7 +57,7 @@ Configure ServiceNow integration for SNOW Approvals
 
 #. Save Changes
 
-{morpheus} then configures the integration with ServiceNow, syncs ServiceNow workflows which are available when creating approvals policies. (This process can take up to 5 minutes depending on the size of the workflow table in ServiceNow.)
+|morpheus| then configures the integration with ServiceNow, syncs ServiceNow workflows which are available when creating approvals policies. (This process can take up to 5 minutes depending on the size of the workflow table in ServiceNow.)
 
 Create Approval Policies
 ^^^^^^^^^^^^^^^^^^^^^^^^
@@ -75,13 +75,13 @@ Create Approval Policies
 #. In the config section, select either Internal Approvals or ServiceNow Approvals:
 
    * Internal Approvals
-      Approval requests will be managed within {morpheus} via the Operations: Approvals section.
+      Approval requests will be managed within |morpheus| via the Operations: Approvals section.
    * ServiceNow Approvals
       Approval requests will be managed with ServiceNow (SNOW). Please note a ServiceNow integration (Admin: Integrations) must be configured prior to SNOW Approval policy generation.
 
       * For ServiceNow Approvals, select the appropriate ServiceNow workflow for this policy. Please note the workflows presented are created in ServiceNow and synced with {morpheus}.
 
-#. Add the {morpheus} Accounts to which this policy will apply, or leave the Accounts field blank to apply to all accounts.
+#. Add the |morpheus| Accounts to which this policy will apply, or leave the Accounts field blank to apply to all accounts.
 #. Save
 
 Upon saving, a new policy is created in the Group or Cloud Policies tab.
@@ -136,4 +136,4 @@ ServiceNow Approval requests
 
 ServiceNow approval request are managed in ServiceNow. The process of approving or rejecting requests is determined by the ServiceNow Workflow selected when configuring the SNOW Approval policy. These Workflows are configured in ServiceNow.
 
-.. IMPORTANT:: {morpheus} syncs with ServiceNow every 5 minutes. Once an Approval Request is Approved or Rejected in Service Now, it will take up to 5 minutes for the instance to respond accordingly, and the status for the approval request in the Approvals section in {morpheus} to update.
+.. IMPORTANT:: |morpheus| syncs with ServiceNow every 5 minutes. Once an Approval Request is Approved or Rejected in Service Now, it will take up to 5 minutes for the instance to respond accordingly, and the status for the approval request in the Approvals section in |morpheus| to update.

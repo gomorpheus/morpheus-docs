@@ -6,12 +6,12 @@ Virtual Images
 Overview
 --------
 
-The Virtual Image section displays a list of all images, local and synced, that are available to deploy. {morpheus} includes a rich catalog of pre-configured System Images available for every cloud type. User Images are automatically synced from Cloud Integrations and added to the Virtual Images section. Images can also be uploaded directly into {morpheus} via local file or url. Amazon and Azure Marketplace images can also be added to the Virtual Images Section.
+The Virtual Image section displays a list of all images, local and synced, that are available to deploy. |morpheus| includes a rich catalog of pre-configured System Images available for every cloud type. User Images are automatically synced from Cloud Integrations and added to the Virtual Images section. Images can also be uploaded directly into |morpheus| via local file or url. Amazon and Azure Marketplace images can also be added to the Virtual Images Section.
 
 Image Types
 -----------
 
-{morpheus} provides a vast *System Image* repo with pre-configured images for every Cloud. All other images are *User Images*. User images can be added directly to {morpheus}, or automatically synced from integrated clouds. It is important to configure synced User Images for metadata, including specifying the Platform and User Credentials, prior to provisioning. Provisioning a User Image that has not been configured may result in failed provisioning.
+|morpheus| provides a vast *System Image* repo with pre-configured images for every Cloud. All other images are *User Images*. User images can be added directly to {morpheus}, or automatically synced from integrated clouds. It is important to configure synced User Images for metadata, including specifying the Platform and User Credentials, prior to provisioning. Provisioning a User Image that has not been configured may result in failed provisioning.
 
 .. IMPORTANT:: Synced User Images need to be configured prior to provisioning.
 
@@ -28,7 +28,7 @@ System Images are pre-configured with metadata and have Cloud-Init or Cloudbase-
 User Images
 ^^^^^^^^^^^
 
-Typically {morpheus} does not have sufficient metatdata to successfully provision synced User Images. After integrating clouds and User Images have synced, it is highly recommended to configure the images prior to provisioning.
+Typically |morpheus| does not have sufficient metatdata to successfully provision synced User Images. After integrating clouds and User Images have synced, it is highly recommended to configure the images prior to provisioning.
 
 **To edit and configure an existing Virtual Image:**
 
@@ -38,19 +38,19 @@ Typically {morpheus} does not have sufficient metatdata to successfully provisio
 Name
   Name of the Virtual Image in {morpheus}. This can be changed from the name of the Image, but editing will not change the name of the actual Image.
 Operating System
-  Specifies the Platform and OS of the image. All Windows images will need to have Operating System specified on the Virtual Image, as {morpheus} will assign Linux as the Platform for all Images without Operating System specified.
+  Specifies the Platform and OS of the image. All Windows images will need to have Operating System specified on the Virtual Image, as |morpheus| will assign Linux as the Platform for all Images without Operating System specified.
 Cloud Init Enabled?
   On by default, uncheck for any Image that does not have Cloud-Init or Cloudbase-Init installed.
 Install Agent
   On by default, uncheck to skip Agent install. Note this will result in the loss of utilization statistics, logs, script execution, and monitoring. (Some utilization stats are collected for agent-less hosts and vm's from VMware and AWS clouds).
 Username
-  Existing Username on the Image. This is required for authentication, unless {morpheus} is able to add user data via Cloud-Init, Cloudbase-Init, or guest processes (VMware).
+  Existing Username on the Image. This is required for authentication, unless |morpheus| is able to add user data via Cloud-Init, Cloudbase-Init, or guest processes (VMware).
 Password
   Password for the Existing User on the image.
 Cloud-Init User Data
   Accepts what would go in runcmd and can assume bash syntax.
 Permissions
-  Set Tenant permissions in a multi-tenant {morpheus} environment. No impact on single-tenant environments.
+  Set Tenant permissions in a multi-tenant |morpheus| environment. No impact on single-tenant environments.
 Auto Join Domain?
   Enable to have instances provisioned with this image auto-join configured domains (Windows only).
 VirtIO Drivers Loaded?
@@ -67,18 +67,18 @@ Trial Version
 Provisioning Images
 -------------------
 
-When provisioning a System Image for the first time, {morpheus} will download and stream the image from S3 to the source Cloud if the image is not local to the Cloud. The Image will also be cached on the {morpheus} Appliance under /var/opt/morpheus/vm/vmcache. Subsequent provisions of the image will use the created template in the Cloud or the cached local Image if the images does not exist in the selected Cloud, in which case the cached Image will be copied to the Cloud.
+When provisioning a System Image for the first time, |morpheus| will download and stream the image from S3 to the source Cloud if the image is not local to the Cloud. The Image will also be cached on the |morpheus| Appliance under /var/opt/morpheus/vm/vmcache. Subsequent provisions of the image will use the created template in the Cloud or the cached local Image if the images does not exist in the selected Cloud, in which case the cached Image will be copied to the Cloud.
 
-When using Images that already exist in the destination cloud, such as synced, marketplace, or previously copied images, no image transfer between the {morpheus} Appliance and destination cloud will take place.
+When using Images that already exist in the destination cloud, such as synced, marketplace, or previously copied images, no image transfer between the |morpheus| Appliance and destination cloud will take place.
 
-.. NOTE:: The {morpheus} Appliance must be able to download from Amazon S3 when provisioning System Images for the first time.
+.. NOTE:: The |morpheus| Appliance must be able to download from Amazon S3 when provisioning System Images for the first time.
 
-.. NOTE:: The {morpheus} Appliance must be able reach and resolve the destination Host when provisioning System Images or uploaded Images for the first time. This included being able to resolve ESXi host names in VMware VCenter clouds, and reach the destination ESXi host over port 443.
+.. NOTE:: The |morpheus| Appliance must be able reach and resolve the destination Host when provisioning System Images or uploaded Images for the first time. This included being able to resolve ESXi host names in VMware VCenter clouds, and reach the destination ESXi host over port 443.
 
 Add Virtual Images
 ------------------
 
-Virtual Images can be upload to {morpheus} from local files or URL's. Amazon and Azure Marketplace metadata can also be added to the Virtual Images library, enabling the creation of custom catalog Instance Type from Marketplace images (no image is transferred to {morpheus} when adding Marketplace images).
+Virtual Images can be upload to |morpheus| from local files or URL's. Amazon and Azure Marketplace metadata can also be added to the Virtual Images library, enabling the creation of custom catalog Instance Type from Marketplace images (no image is transferred to |morpheus| when adding Marketplace images).
 
 To Add Virtual Image:
 
@@ -107,7 +107,7 @@ Cloud Init Enabled?
 Install Agent
   On by default, uncheck to skip Agent install. Note this will result in the loss of utilization statistics, logs, script execution, and monitoring. (Some utilization stats are collected for agent-less hosts and vm's from VMware and AWS clouds).
 Username
-  Existing Username on the Image. This is required for authentication, unless {morpheus} is able to add user data via Cloud-Init, Cloudbase-Init, or guest processes (VMware).
+  Existing Username on the Image. This is required for authentication, unless |morpheus| is able to add user data via Cloud-Init, Cloudbase-Init, or guest processes (VMware).
 Password
   Password for the Existing User on the image.
 Storage Provider
@@ -115,7 +115,7 @@ Storage Provider
 Cloud-Init User Data
   Accepts what would go in runcmd and can assume bash syntax.
 Permissions
-  Set Tenant permissions in a multi-tenant {morpheus} environment. No impact on single-tenant environments.
+  Set Tenant permissions in a multi-tenant |morpheus| environment. No impact on single-tenant environments.
 Auto Join Domain?
   Enable to have instances provisioned with this image auto-join configured domains (Windows only).
 VirtIO Drivers Loaded?
@@ -137,4 +137,4 @@ Trial Version
   *Url*
     Select the URL radio button, and enter URL of the Image.
 
-.. NOTE:: {morpheus} provides a file upload progress. The Virtual Image configuration can be saved while the upload is in progress, and the upload will finish in the background.
+.. NOTE:: |morpheus| provides a file upload progress. The Virtual Image configuration can be saved while the upload is in progress, and the upload will finish in the background.

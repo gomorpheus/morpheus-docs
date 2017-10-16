@@ -1,7 +1,7 @@
 Minimum AWS IAM Policies
 ------------------------
 
-Below are the AWS IAM Policies for EC2, RDS, and S3 covering the minimum access for {morpheus} applying to all resources.
+Below are the AWS IAM Policies for EC2, RDS, and S3 covering the minimum access for |morpheus| applying to all resources.
 
 See http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies.html for more information.
 

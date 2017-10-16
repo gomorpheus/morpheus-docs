@@ -2,7 +2,7 @@
 
 A very common scenario for Managed Service Providers is the need to
 provide access to resources on a customer by customer basis. Several
-administrative features are available in {morpheus} to ensure customer
+administrative features are available in |morpheus| to ensure customer
 resources are properly scoped and isolated. With its built multi-tenancy
 capabilities and white label support, managed service providers have a
 wide range of capabilities when it comes to managing customer Tenants
@@ -15,7 +15,7 @@ There are essentially two types of Tenants in {morpheus}
 -  Master Tenant
 -  Sub Tenants
 
-During the initial setup of a {morpheus} Appliance, the Master Tenant is
+During the initial setup of a |morpheus| Appliance, the Master Tenant is
 created. All Tenants created in addition to this Master Tenant are
 sub-Tenants. There can only be one Master Tenant, and sub-Tenants cannot
 become the Master Tenant. The delineation between the Master Tenant and

@@ -1,7 +1,7 @@
 CentOS
 ------
 
-To get started installing {morpheus} on CentOS/RHEL a few preparatory items should be addressed first.
+To get started installing |morpheus| on CentOS/RHEL a few preparatory items should be addressed first.
 
 #. Configure firewalld to allow access from users on port 80 or 443 (Or remove firewall if not required).
 #. Make sure the machine is self resolvable to its own hostname.

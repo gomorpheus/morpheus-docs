@@ -6,7 +6,7 @@ Logs
 
 == Overview
 
-The logging architecture backing {morpheus} uses the latest and greatest
+The logging architecture backing |morpheus| uses the latest and greatest
 technologies and standards to be able to service large amounts of log
 traffic as well as facilitate easy viewing. Utilizing elasticsearch
 behind the scenes and buffered log transmission protocols {morpheus}
@@ -30,14 +30,14 @@ installation options for externalizing the elasticsearch cluster.
 
 This area of administration also provides options for setting custom
 syslog forward rules. These rules are applied on each individual host
-therefore keeping the {morpheus} appliance itself out of the data plane.
+therefore keeping the |morpheus| appliance itself out of the data plane.
 For information on different syslog formatting rules please refer to the
 http://www.rsyslog.com/sending-messages-to-a-remote-syslog-server/[rsyslog]
 documentation.
 
 === Usage
 
-{morpheus} automatically sets up and configures logging for all of the
+|morpheus| automatically sets up and configures logging for all of the
 standard catalog items provisioned through morpheus. This includes both
 Docker containers as well as virtual machines. Simple view instance
 specific logs in instance detail via the "Logs" tab.
@@ -68,7 +68,7 @@ insights out of log data.
 
 == Integrations
 
-While the built in logging solution provided by {morpheus} is sufficient
+While the built in logging solution provided by |morpheus| is sufficient
 for most, there are some scenarios in which a more advanced logging
 system may be desired or already in place. To facilitate this {morpheus}
 makes it easy to add custom syslog rules as well as built in direct
@@ -80,7 +80,7 @@ logging can be configured in the ``Administration -> Logging`` section.
 To configure Splunk simply create a syslog listener configuration in
 Splunk. Then it is simply a matter of expanding the section in Logging
 settings pertaining to Splunk and filling out the host and port of the
-appender. Once saved, all hosts managed by {morpheus} will be configured
+appender. Once saved, all hosts managed by |morpheus| will be configured
 to forward logs to the target Splunk listener.
 
 === LogRhythm

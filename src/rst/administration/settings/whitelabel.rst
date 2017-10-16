@@ -4,12 +4,12 @@ Whitelabel Settings
 Overview
 ^^^^^^^^
 
-{morpheus} Tenants can be WhiteLabeled with custom Logos, Colors, Copy, and custom CSS. Sub-Tenants can be individually white-labeled, or the Master Tenant Whitelabel can apply to all Sub-Tenants.
+|morpheus| Tenants can be WhiteLabeled with custom Logos, Colors, Copy, and custom CSS. Sub-Tenants can be individually white-labeled, or the Master Tenant Whitelabel can apply to all Sub-Tenants.
 
 Enable Whitelabel
 	Turns on the configured Whitelabel settings. Disabling will return the Appliance to the default colors and logos, but the configured options will remain saved and will apply if Whitelabel is re-enabled.
 Appliance Name
-	Replaces {morpheus} in page titles.
+	Replaces |morpheus| in page titles.
 Header Logo
 	Top left header logo. Preferred Image Size (500x76)
 Footer Logo
@@ -71,7 +71,7 @@ Available Copy fields
 UI Loading Page
 ^^^^^^^^^^^^^^^
 
-When the {morpheus} UI is restarted or loading, a default "Morpheus is Loading" page is displayed. This page can be changed by adding the following to `/etc/morpheus/morpheus.rb` and adjusting the values.
+When the |morpheus| UI is restarted or loading, a default "Morpheus is Loading" page is displayed. This page can be changed by adding the following to `/etc/morpheus/morpheus.rb` and adjusting the values.
 
 .. NOTE:: `morpheus-ctl reconfigure` must be ran for any chnages to `/etc/morpheus/morpheus.rb` to take effect.
 

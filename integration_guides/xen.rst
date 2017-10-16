@@ -11,7 +11,7 @@ USERNAME:: Xen Host Username
 PASSWORD:: Xen Host Password
 Inventory Existing Instances:: If enabled, existing Google Instances will be inventoried and appear as unmanaged Virtual Machines in {morpheus}.
 
-NOTE: {morpheus} scopes clouds to single regions. Multiple clouds can be added for multi-region support, and then optionally added to the same group.
+NOTE: |morpheus| scopes clouds to single regions. Multiple clouds can be added for multi-region support, and then optionally added to the same group.
 
 The Cloud can now be added to a Group or configured with additional Advanced options.
 

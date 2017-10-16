@@ -4,7 +4,7 @@ AWS
 Overview
 --------
 
-AWS is the Amazon public cloud, offering a full range of services and features across the globe in various datacenters.   AWS provides businesses with a flexible, highly scalable, and low-cost way to deliver a variety of services using open standard technologies as well as proprietary solutions. This section of documentation will help you get {morpheus} and AWS connected to utilize the features below:
+AWS is the Amazon public cloud, offering a full range of services and features across the globe in various datacenters.   AWS provides businesses with a flexible, highly scalable, and low-cost way to deliver a variety of services using open standard technologies as well as proprietary solutions. This section of documentation will help you get |morpheus| and AWS connected to utilize the features below:
 
 Features
 --------
@@ -34,7 +34,7 @@ Features
 * Assign Elastic IP's
 * Network Pools
 
-{morpheus} can provide a single pane of glass and self-service portal for managing instances scattered across both AWS and private cloud offerings like VMWare and Hyper-V.
+|morpheus| can provide a single pane of glass and self-service portal for managing instances scattered across both AWS and private cloud offerings like VMWare and Hyper-V.
 
 Requirements
 ------------
@@ -44,13 +44,13 @@ Requirements
 ** Secret Key
 ** Sufficient User Privileges (see Required IAM Policies section for more info)
 * Security Groups
-** Typical Inbound ports open from {morpheus} Appliance: 22, 5985, 3389
-** Typical Outbound to {morpheus} Appliance: 80, 443
-*** These are required for {morpheus} agent install, communication, and remote console access for windows and linux. Other configurations, such as docker instances, will need the appropriate ports opened as well. *Cloud-init Agent Install mode does not require access to port 22.
+** Typical Inbound ports open from |morpheus| Appliance: 22, 5985, 3389
+** Typical Outbound to |morpheus| Appliance: 80, 443
+*** These are required for |morpheus| agent install, communication, and remote console access for windows and linux. Other configurations, such as docker instances, will need the appropriate ports opened as well. *Cloud-init Agent Install mode does not require access to port 22.
 * Network(s)
-** Public IP assignment required for Agent install, Script Execution, and Console if the {morpheus} Appliance is not able to communicate with AWS instances private ip's.
+** Public IP assignment required for Agent install, Script Execution, and Console if the |morpheus| Appliance is not able to communicate with AWS instances private ip's.
 
-NOTE: Each AWS Cloud in {morpheus} is scoped to an AWS Region, and multiple AWS Clouds can be added and even Grouped. Verify Security groups are properly configured in all Regions {morpheus} will scope to.
+NOTE: Each AWS Cloud in |morpheus| is scoped to an AWS Region, and multiple AWS Clouds can be added and even Grouped. Verify Security groups are properly configured in all Regions |morpheus| will scope to.
 
 Creating an AWS Cloud
 ---------------------

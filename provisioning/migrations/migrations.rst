@@ -8,10 +8,10 @@ Hypervisor to Hypervisor
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
 Store
-  {morpheus} will create a snapshot of existing VM and upload the snapshot to virtual image directory. Images that have been uploaded to the Virtual Images library can be converted to VHD, QCOW2, RAW and VMDK formats and then re-provisioned.
+  |morpheus| will create a snapshot of existing VM and upload the snapshot to virtual image directory. Images that have been uploaded to the Virtual Images library can be converted to VHD, QCOW2, RAW and VMDK formats and then re-provisioned.
 
 New
-  {morpheus} will create a snapshot of an existing VM, convert from source format to required destination format, and then provision the VM into the target environment.
+  |morpheus| will create a snapshot of an existing VM, convert from source format to required destination format, and then provision the VM into the target environment.
 
 Source
   VMWare, Openstack, Xen, ESXi, Nutanix* Azure* Hyper-V* (

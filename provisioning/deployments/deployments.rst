@@ -17,7 +17,7 @@ When adding a version there are several options. There are 3 types represented b
 Git
 ^^^
 
-For performing git based deploys {morpheus} supports both public and private repositories. To utilize a private git repository the add version dialog will display a public keypair that can be added to the git service for authentication purposes. Currently this keypair is shared across the account and not specifically scoped to the user so it may be advisable to connect this integration to a deployment account in git. From here either a `ssh` or `https` git url can be entered along with a git branch or tag name. Once the version is saved, this repository will be copied down into the deployment archive for use.
+For performing git based deploys |morpheus| supports both public and private repositories. To utilize a private git repository the add version dialog will display a public keypair that can be added to the git service for authentication purposes. Currently this keypair is shared across the account and not specifically scoped to the user so it may be advisable to connect this integration to a deployment account in git. From here either a `ssh` or `https` git url can be entered along with a git branch or tag name. Once the version is saved, this repository will be copied down into the deployment archive for use.
 
 Fetch
 ^^^^^

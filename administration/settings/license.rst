@@ -4,7 +4,7 @@ License
 Overview
 ^^^^^^^^
 
-{morpheus} requires a valid license for provisioning new Instances, Apps and Hosts, and converting existing Instances and Hosts to managed. Licenses can be applied and updated in this section, and the current license status can be checked.
+|morpheus| requires a valid license for provisioning new Instances, Apps and Hosts, and converting existing Instances and Hosts to managed. Licenses can be applied and updated in this section, and the current license status can be checked.
 
 Current License
 ^^^^^^^^^^^^^^^

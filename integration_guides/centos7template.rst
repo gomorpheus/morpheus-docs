@@ -1,16 +1,16 @@
-Creating a CentOS 7 {morpheus} Image
+Creating a CentOS 7 |morpheus| Image
 ====================================
 
 Overview
 --------
 
-{morpheus} comes out of the box with a default set of templates for use in many modern deployment scenarios. These consist mostly of base operating system images with a few additional adjustments. These adjustments typically include the addition of cloud-init (which is highly recommended to be used in most environments, but not mandatory). However, in many on-premise deployments there are custom image requirements as well as networking requirements. This guide will go over how to create a base CentOS 7 Image for use within {morpheus}.
+|morpheus| comes out of the box with a default set of templates for use in many modern deployment scenarios. These consist mostly of base operating system images with a few additional adjustments. These adjustments typically include the addition of cloud-init (which is highly recommended to be used in most environments, but not mandatory). However, in many on-premise deployments there are custom image requirements as well as networking requirements. This guide will go over how to create a base CentOS 7 Image for use within {morpheus}.
 
-=== Creating a CentOS 7 {morpheus} VMware Image
+=== Creating a CentOS 7 |morpheus| VMware Image
 
 ==== VMWare
 
-When running in VMWare it is highly recommended that VMware Tools be installed. Without it, {morpheus} will have difficulty assessing the host ip address and performing some additional automation tasks for the operating system.
+When running in VMWare it is highly recommended that VMware Tools be installed. Without it, |morpheus| will have difficulty assessing the host ip address and performing some additional automation tasks for the operating system.
 
 ==== Cloud-Init
 

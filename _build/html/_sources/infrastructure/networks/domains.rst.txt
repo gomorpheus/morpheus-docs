@@ -28,7 +28,7 @@ Adding Domains
    * Password:: Password for DC Username
    * DC Server:: (optional) Specify the URL or Path of the DC Server
    * OU Path:: (optional) Enter the OU Path for the connection string.
-   * Permissions:: Configure Tenant permissions in {morpheus} for the Domain (only applicable in Multi-tenant {morpheus} setups)
+   * Permissions:: Configure Tenant permissions in |morpheus| for the Domain (only applicable in Multi-tenant |morpheus| setups)
    * Tenant:: Select the Tenant to set permissions to for the Domain.
    * Visibility:
 
@@ -44,7 +44,7 @@ The Domain has been added and will be selectable in Domain dropdown during provi
 Editing and Removing Domains
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 * Domains can be edited by selecting the `Actions` dropdown for the Domain and selecting `Edit`.
-* Added Domains can be removed from {morpheus} by selecting the `Actions` dropdown for the Domain and selecting `Remove`.
+* Added Domains can be removed from |morpheus| by selecting the `Actions` dropdown for the Domain and selecting `Remove`.
 
 Setting the default domain on a Cloud
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

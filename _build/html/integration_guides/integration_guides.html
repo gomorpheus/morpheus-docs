@@ -160,7 +160,7 @@
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#provisioning-to-upcloud">Provisioning to UpCloud</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#provision-a-synced-image">Provision a synced Image</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#provision-a-morpheus-provided-upcloud-image">Provision a {morpheus} provided UpCloud Image</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#provision-a-morpheus-provided-upcloud-image">Provision a |morpheus| provided UpCloud Image</a></li>
 </ul>
 </li>
 </ul>
@@ -171,7 +171,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#creating-a-cloud-foundry-cloud">Creating a Cloud Foundry Cloud</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#creating-a-centos-7-morpheus-image">Creating a CentOS 7 {morpheus} Image</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#creating-a-centos-7-morpheus-image">Creating a CentOS 7 |morpheus| Image</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#id37">Overview</a></li>
 </ul>
 </li>
@@ -247,7 +247,7 @@
 <h1>Integration Guides<a class="headerlink" href="#integration-guides" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="vmware-vcenter">
 <h2>VMware vCenter<a class="headerlink" href="#vmware-vcenter" title="Permalink to this headline">¶</a></h2>
-<p>VMware is a very common cloud integration choice supported by {morpheus}. They have provided a top notch virtualization solution and one might argue pioneered the virtualization space altogether. As such, many companies utilize this technology and all the features that come with it, so {morpheus} covers a broad feature set in Vcenter.</p>
+<p>VMware is a very common cloud integration choice supported by {morpheus}. They have provided a top notch virtualization solution and one might argue pioneered the virtualization space altogether. As such, many companies utilize this technology and all the features that come with it, so |morpheus| covers a broad feature set in Vcenter.</p>
 <p>=== Features</p>
 <ul class="simple">
 <li>Virtual Machine Provisioning</li>
@@ -264,7 +264,7 @@
 <li>Veeam Backup Integration</li>
 <li>Lifecycle Management and Resize</li>
 </ul>
-<p>On top of all these features, {morpheus} also adds additional features to VMware that do not exist out of the box to make it easier to manage in multitenant environments as well as hybrid cloud environments:</p>
+<p>On top of all these features, |morpheus| also adds additional features to VMware that do not exist out of the box to make it easier to manage in multitenant environments as well as hybrid cloud environments:</p>
 <ul class="simple">
 <li>Cloud-Init Support</li>
 <li>VHD to VMDK Image Conversion</li>
@@ -282,7 +282,7 @@ include::vmware/advanced.rst</p>
 <h2>AWS<a class="headerlink" href="#aws" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="overview">
 <h3>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h3>
-<p>AWS is the Amazon public cloud, offering a full range of services and features across the globe in various datacenters.   AWS provides businesses with a flexible, highly scalable, and low-cost way to deliver a variety of services using open standard technologies as well as proprietary solutions. This section of documentation will help you get {morpheus} and AWS connected to utilize the features below:</p>
+<p>AWS is the Amazon public cloud, offering a full range of services and features across the globe in various datacenters.   AWS provides businesses with a flexible, highly scalable, and low-cost way to deliver a variety of services using open standard technologies as well as proprietary solutions. This section of documentation will help you get |morpheus| and AWS connected to utilize the features below:</p>
 <p>=== Features</p>
 <ul class="simple">
 <li>Virtual Machine Provisioning</li>
@@ -310,7 +310,7 @@ include::vmware/advanced.rst</p>
 <li>Assign Elastic IP’s</li>
 <li>Network Pools</li>
 </ul>
-<p>{morpheus} can provide a single pane of glass and self-service portal for managing instances scattered across both AWS and private cloud offerings like VMWare and Hyper-V.</p>
+<p>|morpheus| can provide a single pane of glass and self-service portal for managing instances scattered across both AWS and private cloud offerings like VMWare and Hyper-V.</p>
 <p>=== Requirements</p>
 <ul class="simple">
 <li>AWS IAM Security Credentials</li>
@@ -319,12 +319,12 @@ include::vmware/advanced.rst</p>
 ** Secret Key
 ** Sufficient User Privileges (see Required IAM Policies section for more info)
 * Security Groups
-** Typical Inbound ports open from {morpheus} Appliance: 22, 5985, 3389
-** Typical Outbound to {morpheus} Appliance: 80, 443
-<a href="#id1"><span class="problematic" id="id2">**</span></a>* These are required for {morpheus} agent install, communication, and remote console access for windows and linux. Other configurations, such as docker instances, will need the appropriate ports opened as well. <em>Cloud-init Agent Install mode does not require access to port 22.
+** Typical Inbound ports open from |morpheus| Appliance: 22, 5985, 3389
+** Typical Outbound to |morpheus| Appliance: 80, 443
+<a href="#id1"><span class="problematic" id="id2">**</span></a>* These are required for |morpheus| agent install, communication, and remote console access for windows and linux. Other configurations, such as docker instances, will need the appropriate ports opened as well. <em>Cloud-init Agent Install mode does not require access to port 22.
 * Network(s)
-*</em> Public IP assignment required for Agent install, Script Execution, and Console if the {morpheus} Appliance is not able to communicate with AWS instances private ip’s.</p>
-<p>NOTE: Each AWS Cloud in {morpheus} is scoped to an AWS Region, and multiple AWS Clouds can be added and even Grouped. Verify Security groups are properly configured in all Regions {morpheus} will scope to.</p>
+*</em> Public IP assignment required for Agent install, Script Execution, and Console if the |morpheus| Appliance is not able to communicate with AWS instances private ip’s.</p>
+<p>NOTE: Each AWS Cloud in |morpheus| is scoped to an AWS Region, and multiple AWS Clouds can be added and even Grouped. Verify Security groups are properly configured in all Regions |morpheus| will scope to.</p>
 <p>=== Creating an AWS Cloud</p>
 <p>. Navigate to <cite>Infrastructure -&gt; Clouds</cite>
 . Select <cite>+ Create Cloud</cite>
@@ -349,7 +349,7 @@ Inventory Existing Instances:: If enabled, existing EC2 Instances will be invent
 <p>[[azure]]</p>
 <p>== Azure</p>
 <p>Azure is Microsoft’s public cloud offering. Offering a full range of services and features across the globe in various datacenters. It is the equivalent of AWS for Microsoft running primarily on the Hyper-V based hypervisor. While it is a great public cloud offering, it can be somewhat difficult to get integrated with which is what this guide aims to cover.</p>
-<p>{morpheus} Azure Integration Features:</p>
+<p>|morpheus| Azure Integration Features:</p>
 <ul class="simple">
 <li>Virtual Machine Provisioning</li>
 <li>Azure SQL Database</li>
@@ -371,8 +371,8 @@ Inventory Existing Instances:: If enabled, existing EC2 Instances will be invent
 <li>Pricing Sync with markup options</li>
 <li>Cost Estimator</li>
 </ul>
-<p>Combine these features with on premise solutions like Azure-Stack and {morpheus} can provide a single pane of glass and self service portal for managing instances scattered across both public Azure and private Azure Stack offerings.</p>
-<p>NOTE: {morpheus} even supports integrating with CSP based accounts in Azure (typically used by managed service providers).</p>
+<p>Combine these features with on premise solutions like Azure-Stack and |morpheus| can provide a single pane of glass and self service portal for managing instances scattered across both public Azure and private Azure Stack offerings.</p>
+<p>NOTE: |morpheus| even supports integrating with CSP based accounts in Azure (typically used by managed service providers).</p>
 <p>=== Azure Integration Requirements</p>
 <ul class="simple">
 <li>Azure Active Directory Application &amp; Credentials</li>
@@ -384,14 +384,14 @@ Inventory Existing Instances:: If enabled, existing EC2 Instances will be invent
 * Above Active Directory App added as owner of this Azure Subscription
 * Existing Azure Resources
 ** Network Security Group(s)
-<strong>* Typical Inbound ports open from {morpheus} Appliance: 22, 5985, 3389
-*</strong> Typical Outbound to {morpheus} Appliance: 80, 443
-<a href="#id3"><span class="problematic" id="id4">**</span></a>** These are required for {morpheus} agent install, communication, and remote console access for windows and linux. Other configurations, such as docker instances, will need the appropriate ports opened as well.
+<strong>* Typical Inbound ports open from |morpheus| Appliance: 22, 5985, 3389
+*</strong> Typical Outbound to |morpheus| Appliance: 80, 443
+<a href="#id3"><span class="problematic" id="id4">**</span></a>** These are required for |morpheus| agent install, communication, and remote console access for windows and linux. Other configurations, such as docker instances, will need the appropriate ports opened as well.
 ** Virtual Network(s)
-<a href="#id5"><span class="problematic" id="id6">**</span></a>* Public IP assignment required for instances if {morpheus} Appliance is not able to communicate with Azure instances private ip’s.
+<a href="#id5"><span class="problematic" id="id6">**</span></a>* Public IP assignment required for instances if |morpheus| Appliance is not able to communicate with Azure instances private ip’s.
 ** Resource Group(s)
 ** Storage Account(s)</p>
-<p>NOTE: {morpheus} v2.10.3 added support for multiple Resource Groups and Storage Accounts per cloud, making our Azure integration more capable and easier to configure. Prior versions of {morpheus} supported one resource group and one storage account per cloud, with the security group and network selection limited to the scoped Resource Group. If you are on an earlier version of {morpheus}, please note you will need to add an Azure cloud integration for each Resource Group and Storage Account you would like to use.</p>
+<p>NOTE: |morpheus| v2.10.3 added support for multiple Resource Groups and Storage Accounts per cloud, making our Azure integration more capable and easier to configure. Prior versions of |morpheus| supported one resource group and one storage account per cloud, with the security group and network selection limited to the scoped Resource Group. If you are on an earlier version of {morpheus}, please note you will need to add an Azure cloud integration for each Resource Group and Storage Account you would like to use.</p>
 <p>=== Azure Active Directory Credentials</p>
 <p>If you do not already have the Azure Active Directory credentials required to add an Azure cloud to {morpheus}, use the steps below to obtain them.</p>
 <p>IMPORTANT: Microsoft recently added support for Active Directory application configuration in the new Azure portal. Previously, users had to use the old portal to get the required credentials to integrate Azure with {morpheus}. The instructions below are updated for the new portal. Microsoft also changed the naming conventions of the credentials:</p>
@@ -418,7 +418,7 @@ image::images/newazure-8c7ca.png[]
 +
 . Click Create and your new Azure Active Directory Application will be created.</p>
 <p>image::images/newazure-f4e2d.png[]</p>
-<p>Now that we have (or already had) our AD app, we will gather the credentials required for the {morpheus} Azure integration.</p>
+<p>Now that we have (or already had) our AD app, we will gather the credentials required for the |morpheus| Azure integration.</p>
 <p>=== Tenant ID/Directory ID</p>
 <p>While still in the Active Directory Section:</p>
 <p>. Select Properties
@@ -441,9 +441,9 @@ image::images/newazure-8c7ca.png[]
 . Store/Paste for use as the Client ID when Adding your Azure cloud in {morpheus}</p>
 <p>IMPORTANT: Copy the key value. You won’t be able to retrieve after you leave this blade.</p>
 <p>image::images/newazure-7b82b.png[]</p>
-<p>You now have the 3 Active directory credentials required for {morpheus} Azure cloud integration.</p>
+<p>You now have the 3 Active directory credentials required for |morpheus| Azure cloud integration.</p>
 <p>=== Subscription ID</p>
-<p>The last credential required for the {morpheus} Azure cloud integration is the Azure Subscription ID</p>
+<p>The last credential required for the |morpheus| Azure cloud integration is the Azure Subscription ID</p>
 <p>. Select Resource Groups
 . Select a Resource Group (instruction below if you do not have an existing resource group)
 . Copy the Subscription ID
@@ -451,7 +451,7 @@ image::images/newazure-8c7ca.png[]
 +
 image::images/newazure-e446f.png[]</p>
 <p>=== Make Azure Active Directory Application owner of Subscription</p>
-<p>The Active Directory Application used needs to be an owner of the subscription used for the Azure {morpheus} cloud integration.</p>
+<p>The Active Directory Application used needs to be an owner of the subscription used for the Azure |morpheus| cloud integration.</p>
 <p>. In the Subscription pane, select “Access Control (IAM)”
 +
 image::images/newazure-bd9f1.png[]</p>
@@ -485,7 +485,7 @@ image::images/newazure-7f61c.png[]</p>
 <p>. Select the Location/Region to scope the cloud to (additional Clouds can be added for multiple regions)
 . Select All or specify a Resource Group to scope this cloud to
 . Optionally select “Inventory Existing Instances”
-(This will inventory your existing vm’s in Azure and list them in {morpheus} as unmanaged instances.)
+(This will inventory your existing vm’s in Azure and list them in |morpheus| as unmanaged instances.)
 . Click “Save Changes”</p>
 <p>image::images/newazure-5f512.png[]</p>
 <p>Your Azure Cloud will be created.</p>
@@ -502,7 +502,7 @@ image::images/newazure-3357f.png[]</p>
 <p>. Enter a unique name for the security group, select the correct subscription, and either select the resource group being used, or create a new one as shown below. Also verify the Location is the same, and then click “Create” at the bottom of the pane.
 +
 image::images/newazure-7c098.png[]</p>
-<p>. Configure inbound and outbound rules for the security group. Ports 80 (http), 443 (https) 22 (ssh) and 5985 (winrm) need to be open to and from the {morpheus} appliance.</p>
+<p>. Configure inbound and outbound rules for the security group. Ports 80 (http), 443 (https) 22 (ssh) and 5985 (winrm) need to be open to and from the |morpheus| appliance.</p>
 <p>=== Create a Virtual Network</p>
 <p>. In the main Azure toolbar, select the right arrow at the bottom of the toolbar (if collapsed) and search for and select Virtual Networks.
 +
@@ -524,10 +524,10 @@ image::images/newazure-7947e.png[]</p>
 +
 image::images/newazure-b89ea.png[]</p>
 <p>=== Docker</p>
-<p>So far this document has covered how to add the Azure cloud integration and has enabled users the ability to provision virtual machine based instances via the Add Instance catalog in Provisioning. Another great feature provided by {morpheus} out of the box is the ability to use Docker containers and even support multiple containers per Docker host. To do this a Docker Host must first be provisioned into Azure (multiple are needed when dealing with horizontal scaling scenarios).</p>
+<p>So far this document has covered how to add the Azure cloud integration and has enabled users the ability to provision virtual machine based instances via the Add Instance catalog in Provisioning. Another great feature provided by |morpheus| out of the box is the ability to use Docker containers and even support multiple containers per Docker host. To do this a Docker Host must first be provisioned into Azure (multiple are needed when dealing with horizontal scaling scenarios).</p>
 <p>image::images/newazure-7971d.png[]</p>
-<p>To provision a Docker Host simply navigate to the Cloud detail page or Infrastructure?Hosts section. From there click the + Container Host button to add a Azure Docker Host. This host will show up in the Hosts tab. {morpheus} views a Docker host just like any other Hypervisor with the caveat being that it is used for running containerized images instead of virtualized ones. Once a Docker Host is successfully provisioned a green checkmark will appear to the right of the host marking it as available for use. In the event of a failure click into the relevant host that failed and an error explaining the failure will be displayed in red at the top.</p>
-<p>Some common error scenarios include network connectivity. For a Docker Host to function properly, it must be able to resolve the {morpheus} appliance url which can be configured in Admin|Settings. If it is unable to resolve and negotiate with the appliance than the agent installation will fail and provisioning instructions will not be able to be issued to the host.</p>
+<p>To provision a Docker Host simply navigate to the Cloud detail page or Infrastructure?Hosts section. From there click the + Container Host button to add a Azure Docker Host. This host will show up in the Hosts tab. |morpheus| views a Docker host just like any other Hypervisor with the caveat being that it is used for running containerized images instead of virtualized ones. Once a Docker Host is successfully provisioned a green checkmark will appear to the right of the host marking it as available for use. In the event of a failure click into the relevant host that failed and an error explaining the failure will be displayed in red at the top.</p>
+<p>Some common error scenarios include network connectivity. For a Docker Host to function properly, it must be able to resolve the |morpheus| appliance url which can be configured in Admin|Settings. If it is unable to resolve and negotiate with the appliance than the agent installation will fail and provisioning instructions will not be able to be issued to the host.</p>
 <p>=== Multi-tenancy</p>
 <p>A very common scenario for Managed Service Providers is the need to provide access to Azure resources on a customer by customer basis. With Azure several administrative features have been added to ensure customer resources are properly scoped and isolated. For Azure it is possible to assign specific Networks, and Resource Groups to customer accounts or even set the public visibility of certain resources, therefore allowing all sub accounts access to the resource.</p>
 </div>
@@ -561,12 +561,12 @@ image::images/newazure-b89ea.png[]</p>
 <li>Pricing Sync with markup options</li>
 <li>Cost Estimator</li>
 </ul>
-<p>Combine these features with public Azure and {morpheus} can provide a single pane of glass and self service portal for managing instances scattered across both Azure offerings.</p>
+<p>Combine these features with public Azure and |morpheus| can provide a single pane of glass and self service portal for managing instances scattered across both Azure offerings.</p>
 <p>=== Requirements</p>
 <p>==== Azure Stack Accessibility</p>
-<p>By default, the Azure Stack management url’s are not accessible from an external network. Port mappings and DNS must be configured for communication between the {morpheus} Appliance and Azure Stack.</p>
-<p>IMPORTANT: In order to communicate with Azure Stack, {morpheus} must be able to reach the internal Azure Stack network. The Azure Stack Portal needs to be exposed to the {morpheus} Appliances’ network with corresponding entries added to DNS.</p>
-<p>One option to expose the Internal Azure Stack network to the {morpheus} Appliances’ network is to use the ‘Expose-AzureStackPortal.ps1’ powershell script from <a class="reference external" href="https://gallery.technet.microsoft.com/scriptcenter/Expose-the-Azure-Stack-7ef68b19">https://gallery.technet.microsoft.com/scriptcenter/Expose-the-Azure-Stack-7ef68b19</a>. An Azure Stack Port Mapping Tool is also available.</p>
+<p>By default, the Azure Stack management url’s are not accessible from an external network. Port mappings and DNS must be configured for communication between the |morpheus| Appliance and Azure Stack.</p>
+<p>IMPORTANT: In order to communicate with Azure Stack, |morpheus| must be able to reach the internal Azure Stack network. The Azure Stack Portal needs to be exposed to the |morpheus| Appliances’ network with corresponding entries added to DNS.</p>
+<p>One option to expose the Internal Azure Stack network to the |morpheus| Appliances’ network is to use the ‘Expose-AzureStackPortal.ps1’ powershell script from <a class="reference external" href="https://gallery.technet.microsoft.com/scriptcenter/Expose-the-Azure-Stack-7ef68b19">https://gallery.technet.microsoft.com/scriptcenter/Expose-the-Azure-Stack-7ef68b19</a>. An Azure Stack Port Mapping Tool is also available.</p>
 <p>Below is a sample output from the script for reference:</p>
 <p>[source,bash]</p>
 <p>[Admin Portal] DNS: 10.30.23.120 - adminportal.local.azurestack.external adminmanagement.local.azurestack.external</p>
@@ -598,11 +598,11 @@ image::images/newazure-b89ea.png[]</p>
 <li>Storage Account(s)</li>
 <li>Network Security Group(s)</li>
 </ul>
-<p>** Inbound ports open from {morpheus} Appliance: 22, 5985, 3389
-** Outbound ports open to {morpheus} Appliance: 80, 443</p>
-<p>NOTE: Proper Network and Network Security Group configuration is required for {morpheus} agent install, communication, and remote console access. Other configurations, such as docker instances, will need the appropriate ports opened as well.</p>
+<p>** Inbound ports open from |morpheus| Appliance: 22, 5985, 3389
+** Outbound ports open to |morpheus| Appliance: 80, 443</p>
+<p>NOTE: Proper Network and Network Security Group configuration is required for |morpheus| agent install, communication, and remote console access. Other configurations, such as docker instances, will need the appropriate ports opened as well.</p>
 <p>==== Required Credentials &amp; Permissions</p>
-<p>Credentials to integrate {morpheus} with Azure Stack are located in both the public Azure Portal and the Private Azure Stack Portal. The Azure Active Directory Application used must be an owner of the Azure Stack subscription.</p>
+<p>Credentials to integrate |morpheus| with Azure Stack are located in both the public Azure Portal and the Private Azure Stack Portal. The Azure Active Directory Application used must be an owner of the Azure Stack subscription.</p>
 <ul class="simple">
 <li>Azure Portal:</li>
 </ul>
@@ -617,7 +617,7 @@ image::images/newazure-b89ea.png[]</p>
 ** Active Directory App from Azure portal added as owner of the Azure Stack Subscription in Azure Stack.</p>
 <p>=== Adding an Azure Stack Cloud</p>
 <p>==== Configure</p>
-<p>. In the {morpheus} UI, navigate to <cite>Infrastructure -&gt; Clouds</cite> and Select <cite>+ CREATE CLOUD</cite>
+<p>. In the |morpheus| UI, navigate to <cite>Infrastructure -&gt; Clouds</cite> and Select <cite>+ CREATE CLOUD</cite>
 . Select <em>AZURE STACK (PRIVATE)</em> from the Clouds list and select NEXT
 . In the Configure section, enter:
 * <em>NAME</em>: Internal name for the Cloud in {morpheus}
@@ -661,11 +661,11 @@ image::images/newazure-b89ea.png[]</p>
 <li><em>CONFIG MANAGEMENT</em>: Select a Chef, Salt, Ansible or Puppet integration to be used with this Cloud.</li>
 <li><em>AGENT INSTALL MODE</em>:</li>
 </ul>
-<p>** SSH / WINRM: {morpheus} will use SSH or WINRM for Agent install.
-** Cloud-Init (when available): {morpheus} will utilize Cloud-Init or Cloudbase-Init for agent install when provisioning images with Cloud-Init/Cloudbase-Init installed. {morpheus} will fall back on SSH or WINRM if cloud-init is not installed on the provisioned image.
-* <em>API PROXY</em>: Required when a Proxy Server blocks communication between the {morpheus} Appliance and the Cloud. Proxies can be added in the <cite>Infrastructure -&gt; Networks -&gt; Proxies</cite> tab.</p>
+<p>** SSH / WINRM: |morpheus| will use SSH or WINRM for Agent install.
+** Cloud-Init (when available): |morpheus| will utilize Cloud-Init or Cloudbase-Init for agent install when provisioning images with Cloud-Init/Cloudbase-Init installed. |morpheus| will fall back on SSH or WINRM if cloud-init is not installed on the provisioned image.
+* <em>API PROXY</em>: Required when a Proxy Server blocks communication between the |morpheus| Appliance and the Cloud. Proxies can be added in the <cite>Infrastructure -&gt; Networks -&gt; Proxies</cite> tab.</p>
 <p>==== Provisioning Options
-* <em>API PROXY</em>: Required when a Proxy Server blocks communication between an Instance and the {morpheus} Appliance. Proxies can be added in the <cite>Infrastructure -&gt; Networks -&gt; Proxies</cite> tab.
+* <em>API PROXY</em>: Required when a Proxy Server blocks communication between an Instance and the |morpheus| Appliance. Proxies can be added in the <cite>Infrastructure -&gt; Networks -&gt; Proxies</cite> tab.
 ** <em>Bypass Proxy for Appliance URL</em> Enable to bypass proxy settings (if added) for Instance Agent communication to the Appliance URL.
 * <em>USER DATA (LINUX)</em>: Add cloud-init user data using bash syntax.</p>
 <p>Once all options are configured, select NEXT to add the cloud to a Group.</p>
@@ -673,10 +673,10 @@ image::images/newazure-b89ea.png[]</p>
 <p>A Group must be specified or created for the new Cloud to be added to. Clouds can be added to additional Groups or removed from Groups after being created.</p>
 <ul class="simple">
 <li><em>USE EXISTING</em>: Add the new Cloud to an exiting Group in {morpheus}.</li>
-<li><em>CREATE NEW</em>: Creates a new Group in {morpheus} and adds the Cloud to the Group.</li>
+<li><em>CREATE NEW</em>: Creates a new Group in |morpheus| and adds the Cloud to the Group.</li>
 </ul>
 <p>==== Review</p>
-<p>Confirm all settings are correct and select COMPLETE. The Azure Stack Cloud will be added, and {morpheus} will perform the initial cloud sync of:</p>
+<p>Confirm all settings are correct and select COMPLETE. The Azure Stack Cloud will be added, and |morpheus| will perform the initial cloud sync of:</p>
 <ul class="simple">
 <li>Virtual Machines (if Inventory Existing Instances is enabled)</li>
 <li>Networks</li>
@@ -689,7 +689,7 @@ image::images/newazure-b89ea.png[]</p>
 <p>TIP: Synced Networks can be configured or deactivated from the Networks section in this Clouds detail page, or in the <cite>Infrastructure -&gt; Networks</cite> section.</p>
 <p>[[openstack]]</p>
 <p>== Openstack</p>
-<p>Openstack is becoming a widely used on-premise infrastructure orchestration platform. It has a wide array of contributors and enterprise sponsorships. There are several variations on openstack as well ranging from HP’s Helion Cloud to Cisco’s Metapod / Metacloud offering. {morpheus} supports integration with all the various platform offerings and ranges in support all the way back to Openstack Icehouse. It leverages the APIs and provides full functionality as a self service portal in front of Openstack.</p>
+<p>Openstack is becoming a widely used on-premise infrastructure orchestration platform. It has a wide array of contributors and enterprise sponsorships. There are several variations on openstack as well ranging from HP’s Helion Cloud to Cisco’s Metapod / Metacloud offering. |morpheus| supports integration with all the various platform offerings and ranges in support all the way back to Openstack Icehouse. It leverages the APIs and provides full functionality as a self service portal in front of Openstack.</p>
 <p><em>Features:</em></p>
 <ul class="simple">
 <li>Virtual Machine Provisioning</li>
@@ -701,7 +701,7 @@ image::images/newazure-b89ea.png[]</p>
 <li>Lifecycle Management and Resize</li>
 <li>Docker Host management / configuration</li>
 </ul>
-<p>On top of all these features, {morpheus} also adds additional features to Openstack that do not exist out of the box to make it easier to manage in multitenant environments as well as hybrid cloud environments:</p>
+<p>On top of all these features, |morpheus| also adds additional features to Openstack that do not exist out of the box to make it easier to manage in multitenant environments as well as hybrid cloud environments:</p>
 <ul class="simple">
 <li>Image to QCOW2 Image Conversion</li>
 <li>QCOW2 to RAW Image Conversion</li>
@@ -748,15 +748,15 @@ Private Key:: Service Account Private key, begging with <cite>—–BEGIN PRIVAT
 Client Email:: Service Account Client Email. ex: <cite>morpheus&#64;morpheus.iam.gserviceaccount.com</cite>
 Region:: Regions will auto-populate upon successful authentication with the above credentials. Select appropriate region for this Cloud.
 Inventory Existing Instances:: If enabled, existing Google Instances will be inventoried and appear as unmanaged Virtual Machines in {morpheus}.</p>
-<p>NOTE: {morpheus} scopes clouds to single regions. Multiple clouds can be added for multi-region support, and then optionally added to the same group.</p>
+<p>NOTE: |morpheus| scopes clouds to single regions. Multiple clouds can be added for multi-region support, and then optionally added to the same group.</p>
 <p>The Cloud can now be added to a Group or configured with additional Advanced options.</p>
 <p>include::advanced_options.rst</p>
-<p>Finally, add Google Cloud to an existing Group or create a new Group, and you have now integrated {morpheus} with Google Cloud!</p>
+<p>Finally, add Google Cloud to an existing Group or create a new Group, and you have now integrated |morpheus| with Google Cloud!</p>
 </div>
 </div>
 <div class="section" id="hyper-v">
 <h2>Hyper-V<a class="headerlink" href="#hyper-v" title="Permalink to this headline">¶</a></h2>
-<p>Hyper-V is the virtualized server computing environment introduced by Microsoft. Hyper-V is consumed by {morpheus} as a private cloud offering and is a common hypervisor technology in data centers. {morpheus} provides and avenue to aggregate Hyper-V resources together to allow efficient and seamless deployment of applications as a virtual machine (VM) or Docker host in the world of Hyper-V.</p>
+<p>Hyper-V is the virtualized server computing environment introduced by Microsoft. Hyper-V is consumed by |morpheus| as a private cloud offering and is a common hypervisor technology in data centers. |morpheus| provides and avenue to aggregate Hyper-V resources together to allow efficient and seamless deployment of applications as a virtual machine (VM) or Docker host in the world of Hyper-V.</p>
 <div class="section" id="features">
 <h3>Features<a class="headerlink" href="#features" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
@@ -773,15 +773,15 @@ Inventory Existing Instances:: If enabled, existing Google Instances will be inv
 <li>Lifecycle Management and Resize</li>
 <li>Unique Kerberos Authentication</li>
 </ul>
-<p>{morpheus} can provide a single pane of glass and self-service portal for managing instances scattered across both Hyper-V and public cloud offerings like Azure.</p>
+<p>|morpheus| can provide a single pane of glass and self-service portal for managing instances scattered across both Hyper-V and public cloud offerings like Azure.</p>
 </div>
 <div class="section" id="getting-started">
 <h3>Getting Started<a class="headerlink" href="#getting-started" title="Permalink to this headline">¶</a></h3>
 <p>To get started this a few prerequisites must first be met. The Hyper-V host most be installed with its firewall enabled and it can either be joined to a domain or standalone. The Hyper-V host must also have the external network of Hyper-V configured and it can share this network with the management operating system. This document covers Hyper-V 2008 and Hyper-V 2012.</p>
 <p>A user account that is part of the local administrators group on the Hyper-V host is also required.</p>
 <p>=== Understand WinRM</p>
-<p>{morpheus} uses WinRM to communicate to the Hyper-V host for deployment of the {morpheus} agent. The {morpheus} agent allows for the host dashboard to be populated with information in the form of graphs that cover CPU, Network, Storage, and memory consumption. Furthermore, this agent provides logging and monitoring capabilities.</p>
-<p>If Windows Remote Management (WinRM) is not installed and configured, WinRM scripts do not run and the Winrm command-line tool cannot perform data operations or allow for the {morpheus} agent to be installed. WinRM uses Http port 5985 or Https port 5986 for communications.</p>
+<p>|morpheus| uses WinRM to communicate to the Hyper-V host for deployment of the |morpheus| agent. The |morpheus| agent allows for the host dashboard to be populated with information in the form of graphs that cover CPU, Network, Storage, and memory consumption. Furthermore, this agent provides logging and monitoring capabilities.</p>
+<p>If Windows Remote Management (WinRM) is not installed and configured, WinRM scripts do not run and the Winrm command-line tool cannot perform data operations or allow for the |morpheus| agent to be installed. WinRM uses Http port 5985 or Https port 5986 for communications.</p>
 <p>To better understand all of the default settings of WinRM please refer to the below Microsoft link:</p>
 <p><a class="reference external" href="https://msdn.microsoft.com/en-us/library/aa384372(v=vs.85).aspx">https://msdn.microsoft.com/en-us/library/aa384372(v=vs.85).aspx</a></p>
 <p>==== Native Authentication</p>
@@ -831,7 +831,7 @@ machine.
 <div>$ winrm set winrm/config/service/Auth &#64;{Basic=”true”}
 $ winrm set winrm/config/service &#64;{AllowUnencrypted=”false”}
 $ winrm set winrm/config/service/Auth &#64;{Kerberos=”true”}</div></blockquote>
-<p>On the {morpheus} appliance the krb5-user package must be installed. For Ubuntu the command is as follows:
+<p>On the |morpheus| appliance the krb5-user package must be installed. For Ubuntu the command is as follows:
 [source,bash]</p>
 <blockquote>
 <div>$ sudo apt-get install krb5-user</div></blockquote>
@@ -878,21 +878,21 @@ krb4_get_tickets = false</dd>
 <p>After creation of the krb5.conf a keytab file is also required. See below on instructions on how to create a keytab file.
 <a class="reference external" href="http://www.itadmintools.com/2011/07/creating-kerberos-keytab-files.html">http://www.itadmintools.com/2011/07/creating-kerberos-keytab-files.html</a></p>
 <p>=== Adding Hyper-V as a Private Cloud</p>
-<p>The Hyper-V host is prepared for {morpheus} to communicated with it via WinRM so the Hyper-V private cloud is ready to be configured. Create a group and then create a {morpheus} cloud for Hyper-V. Populated the information as show in Figure 1: specific for the environment being configured.</p>
+<p>The Hyper-V host is prepared for |morpheus| to communicated with it via WinRM so the Hyper-V private cloud is ready to be configured. Create a group and then create a |morpheus| cloud for Hyper-V. Populated the information as show in Figure 1: specific for the environment being configured.</p>
 <p>//HV1</p>
 <p>NOTE: The working path, vm path, and disk path should be created on the Hyper-V host by the Hyper-V administrator. If these paths are not created they will need to be setup and the Hyper-V settings will need to adjusted to reference them.</p>
 <p>//HV2</p>
 <p>=== Service Plans</p>
-<p>A default set of Service Plans are created in {morpheus} for the VMware provisioning engine. These Service Plans can be considered akin to AWS Flavors or Openstack Flavors. They provide a means to set predefined tiers on memory, storage, cores, and cpu. Price tables can also be applied to these so estimated cost per virtual machine can be tracked as well as pricing for customers. By default, these options are fixed sizes but can be configured for dynamic sizing. A service plan can be configured to allow a custom user entry for memory, storage, or cpu. To configure this, simply edit an existing Service Plan tied to Hyper-V or create a new one. These all can be easily managed from the Admin | Service Plans &amp; Pricing section.</p>
+<p>A default set of Service Plans are created in |morpheus| for the VMware provisioning engine. These Service Plans can be considered akin to AWS Flavors or Openstack Flavors. They provide a means to set predefined tiers on memory, storage, cores, and cpu. Price tables can also be applied to these so estimated cost per virtual machine can be tracked as well as pricing for customers. By default, these options are fixed sizes but can be configured for dynamic sizing. A service plan can be configured to allow a custom user entry for memory, storage, or cpu. To configure this, simply edit an existing Service Plan tied to Hyper-V or create a new one. These all can be easily managed from the Admin | Service Plans &amp; Pricing section.</p>
 <p>//HV3</p>
 <p>=== Docker</p>
-<p>So far this document has covered how to add the Hyper-V cloud integration and has enabled users the ability to provision virtual machine based instances via the Add Instance catalog in Provisioning. Another great feature provided by {morpheus} out of the box is the ability to use Docker containers and even support multiple containers per Docker host. To do this a Docker Host must first be provisioned into Hyper-V (multiple are needed when dealing with horizontal scaling scenarios).</p>
-<p>To provision a Docker Host simply navigate to the Cloud detail page or Infrastructure | Hosts section. From there click the + Container Host button to add a Hyper-V Docker Host. {morpheus} views a Docker host just like any other Hypervisor with the caveat being that it is used for running containerized images instead of virtualized ones. Once a Docker Host is successfully provisioned a green checkmark will appear to the right of the host marking it as available for use. In the event of a failure click into the relevant host that failed and an error explaining the failure will be displayed in red at the top.</p>
-<p>Some common error scenarios include network connectivity. For a Docker Host to function properly, it must be able to resolve the {morpheus} appliance url which can be configured in Admin | Settings. If it is unable to resolve and negotiate with the appliance than the agent installation will fail and provisioning instructions will not be able to be issued to the host.</p>
+<p>So far this document has covered how to add the Hyper-V cloud integration and has enabled users the ability to provision virtual machine based instances via the Add Instance catalog in Provisioning. Another great feature provided by |morpheus| out of the box is the ability to use Docker containers and even support multiple containers per Docker host. To do this a Docker Host must first be provisioned into Hyper-V (multiple are needed when dealing with horizontal scaling scenarios).</p>
+<p>To provision a Docker Host simply navigate to the Cloud detail page or Infrastructure | Hosts section. From there click the + Container Host button to add a Hyper-V Docker Host. |morpheus| views a Docker host just like any other Hypervisor with the caveat being that it is used for running containerized images instead of virtualized ones. Once a Docker Host is successfully provisioned a green checkmark will appear to the right of the host marking it as available for use. In the event of a failure click into the relevant host that failed and an error explaining the failure will be displayed in red at the top.</p>
+<p>Some common error scenarios include network connectivity. For a Docker Host to function properly, it must be able to resolve the |morpheus| appliance url which can be configured in Admin | Settings. If it is unable to resolve and negotiate with the appliance than the agent installation will fail and provisioning instructions will not be able to be issued to the host.</p>
 <p>[[nutanix]]</p>
 <p>== Nutanix</p>
 <p>=== Overview
-Nutanix simplifies datacenter infrastructure by integrating server and storage resources allowing applications to run at scale. {morpheus} provides and avenue to enhance the Nutanix resources to allow efficient and seamless deployment of applications as a virtual machine (VM) or as a container on a Docker host.</p>
+Nutanix simplifies datacenter infrastructure by integrating server and storage resources allowing applications to run at scale. |morpheus| provides and avenue to enhance the Nutanix resources to allow efficient and seamless deployment of applications as a virtual machine (VM) or as a container on a Docker host.</p>
 <p>=== Features</p>
 <ul class="simple">
 <li>Virtual Machine Provisioning</li>
@@ -906,9 +906,9 @@ Nutanix simplifies datacenter infrastructure by integrating server and storage r
 <li>Periodic Synchronization</li>
 <li>Lifecycle Management and Resize</li>
 </ul>
-<p>{morpheus} can provide a single pane of glass and self-service portal for managing multiple Nutanix Clusters and allowing the seamless deployment of applications.</p>
+<p>|morpheus| can provide a single pane of glass and self-service portal for managing multiple Nutanix Clusters and allowing the seamless deployment of applications.</p>
 <p>=== Getting Started</p>
-<p>To get started this a few prerequisites must first be met.  The Nutanix cluster should be provisioned and available on the network.  {morpheus} will look login to the Nutanix cluster with the Nutanix admin credentials and is typically located at the <a class="reference external" href="https://fqdn:9440">https://fqdn:9440</a> url.</p>
+<p>To get started this a few prerequisites must first be met.  The Nutanix cluster should be provisioned and available on the network.  |morpheus| will look login to the Nutanix cluster with the Nutanix admin credentials and is typically located at the <a class="reference external" href="https://fqdn:9440">https://fqdn:9440</a> url.</p>
 <p>=== Adding a Nutanix Cloud</p>
 <p>The Nutanix cluster should be available and responding to the <a class="reference external" href="https://fqdn:9440">https://fqdn:9440</a> url for authentication by {morpheus}.</p>
 <p>API URL:: example: <a class="reference external" href="https://10.30.21.220:9440">https://10.30.21.220:9440</a>
@@ -917,11 +917,11 @@ PASSWORD:: Nutanix admin password
 Inventory Existing Instances:: If enabled, existing Virtual Machines will be inventoried and appear as unmanaged Virtual Machines in {morpheus}.</p>
 <p>include::advanced_options.rst</p>
 <p>=== Service Plans</p>
-<p>A default set of Service Plans are created in {morpheus} for the VMware provisioning engine. These Service Plans can be considered akin to AWS Flavors or Openstack Flavors. They provide a means to set predefined tiers on memory, storage, cores, and cpu. Price tables can also be applied to these so estimated cost per virtual machine can be tracked as well as pricing for customers. By default, these options are fixed sizes but can be configured for dynamic sizing. A service plan can be configured to allow a custom user entry for memory, storage, or cpu. To configure this, simply edit an existing Service Plan tied to Nutanix or create a new one. These all can be easily managed from the Admin | Service Plans &amp; Pricing section.</p>
+<p>A default set of Service Plans are created in |morpheus| for the VMware provisioning engine. These Service Plans can be considered akin to AWS Flavors or Openstack Flavors. They provide a means to set predefined tiers on memory, storage, cores, and cpu. Price tables can also be applied to these so estimated cost per virtual machine can be tracked as well as pricing for customers. By default, these options are fixed sizes but can be configured for dynamic sizing. A service plan can be configured to allow a custom user entry for memory, storage, or cpu. To configure this, simply edit an existing Service Plan tied to Nutanix or create a new one. These all can be easily managed from the Admin | Service Plans &amp; Pricing section.</p>
 <p>=== Docker</p>
-<p>So far this document has covered how to add the Nutanix cloud integration and has enabled users the ability to provision virtual machine based instances via the Add Instance catalog in Provisioning. Another great feature provided by {morpheus} out of the box is the ability to use Docker containers and even support multiple containers per Docker host. To do this a Docker Host must first be provisioned into Nutanix (multiple are needed when dealing with horizontal scaling scenarios).</p>
-<p>To provision a Docker Host simply navigate to the Cloud detail page or Infrastructure Hosts section. From there click the + Container Host button to add a Nutanix Docker Host. {morpheus} views a Docker host just like any other Hypervisor with the caveat being that it is used for running containerized images instead of virtualized ones. Once a Docker Host is successfully provisioned a green checkmark will appear to the right of the host marking it as available for use. In the event of a failure click into the relevant host that failed and an error explaining the failure will be displayed in red at the top.</p>
-<p>Some common error scenarios include network connectivity. For a Docker Host to function properly, it must be able to resolve the {morpheus} appliance url which can be configured in Admin Settings. If it is unable to resolve and negotiate with the appliance than the agent installation will fail and provisioning instructions will not be able to be issued to the host.</p>
+<p>So far this document has covered how to add the Nutanix cloud integration and has enabled users the ability to provision virtual machine based instances via the Add Instance catalog in Provisioning. Another great feature provided by |morpheus| out of the box is the ability to use Docker containers and even support multiple containers per Docker host. To do this a Docker Host must first be provisioned into Nutanix (multiple are needed when dealing with horizontal scaling scenarios).</p>
+<p>To provision a Docker Host simply navigate to the Cloud detail page or Infrastructure Hosts section. From there click the + Container Host button to add a Nutanix Docker Host. |morpheus| views a Docker host just like any other Hypervisor with the caveat being that it is used for running containerized images instead of virtualized ones. Once a Docker Host is successfully provisioned a green checkmark will appear to the right of the host marking it as available for use. In the event of a failure click into the relevant host that failed and an error explaining the failure will be displayed in red at the top.</p>
+<p>Some common error scenarios include network connectivity. For a Docker Host to function properly, it must be able to resolve the |morpheus| appliance url which can be configured in Admin Settings. If it is unable to resolve and negotiate with the appliance than the agent installation will fail and provisioning instructions will not be able to be issued to the host.</p>
 <p>[[oraclevm]]</p>
 <p>== Oracle VM</p>
 <p>=== Add a Oracle VM Cloud</p>
@@ -983,19 +983,19 @@ Inventory Existing Instances:: If enabled, existing Virtual Machines will be inv
 <dd>Select a Chef, Salt, Ansible or Puppet integration to be used with this Cloud.</dd>
 <dt>AGENT INSTALL MODE</dt>
 <dd><ul class="first last simple">
-<li>SSH / WINRM: {morpheus} will use SSH or WINRM for Agent install.</li>
-<li>Cloud-Init (when available): {morpheus} will utilize Cloud-Init or Cloudbase-Init for agent install when provisioning images with Cloud-Init/Cloudbase-Init installed. {morpheus} will fall back on SSH or WINRM if cloud-init is not installed on the provisioned image.</li>
+<li>SSH / WINRM: |morpheus| will use SSH or WINRM for Agent install.</li>
+<li>Cloud-Init (when available): |morpheus| will utilize Cloud-Init or Cloudbase-Init for agent install when provisioning images with Cloud-Init/Cloudbase-Init installed. |morpheus| will fall back on SSH or WINRM if cloud-init is not installed on the provisioned image.</li>
 </ul>
 </dd>
 <dt>API PROXY</dt>
-<dd>Required when a Proxy Server blocks communication between the {morpheus} Appliance and the Cloud. Proxies can be added in the <cite>Infrastructure -&gt; Networks -&gt; Proxies</cite> tab.</dd>
+<dd>Required when a Proxy Server blocks communication between the |morpheus| Appliance and the Cloud. Proxies can be added in the <cite>Infrastructure -&gt; Networks -&gt; Proxies</cite> tab.</dd>
 </dl>
 </div>
 <div class="section" id="provisioning-options">
 <h3>Provisioning Options<a class="headerlink" href="#provisioning-options" title="Permalink to this headline">¶</a></h3>
 <dl class="docutils">
 <dt>API PROXY</dt>
-<dd>Required when a Proxy Server blocks communication between an Instance and the {morpheus} Appliance. Proxies can be added in the <cite>Infrastructure -&gt; Networks -&gt; Proxies</cite> tab.</dd>
+<dd>Required when a Proxy Server blocks communication between an Instance and the |morpheus| Appliance. Proxies can be added in the <cite>Infrastructure -&gt; Networks -&gt; Proxies</cite> tab.</dd>
 <dt>Bypass Proxy for Appliance URL</dt>
 <dd>Enable to bypass proxy settings (if added) for Instance Agent communication to the Appliance URL.</dd>
 <dt>USER DATA (LINUX)</dt>
@@ -1042,19 +1042,19 @@ Inventory Existing Instances:: If enabled, existing Virtual Machines will be inv
 <dd>Select a Chef, Salt, Ansible or Puppet integration to be used with this Cloud.</dd>
 <dt>AGENT INSTALL MODE</dt>
 <dd><ul class="first last simple">
-<li>SSH / WINRM: {morpheus} will use SSH or WINRM for Agent install.</li>
-<li>Cloud-Init (when available): {morpheus} will utilize Cloud-Init or Cloudbase-Init for agent install when provisioning images with Cloud-Init/Cloudbase-Init installed. {morpheus} will fall back on SSH or WINRM if cloud-init is not installed on the provisioned image.</li>
+<li>SSH / WINRM: |morpheus| will use SSH or WINRM for Agent install.</li>
+<li>Cloud-Init (when available): |morpheus| will utilize Cloud-Init or Cloudbase-Init for agent install when provisioning images with Cloud-Init/Cloudbase-Init installed. |morpheus| will fall back on SSH or WINRM if cloud-init is not installed on the provisioned image.</li>
 </ul>
 </dd>
 <dt>API PROXY</dt>
-<dd>Required when a Proxy Server blocks communication between the {morpheus} Appliance and the Cloud. Proxies can be added in the <cite>Infrastructure -&gt; Networks -&gt; Proxies</cite> tab.</dd>
+<dd>Required when a Proxy Server blocks communication between the |morpheus| Appliance and the Cloud. Proxies can be added in the <cite>Infrastructure -&gt; Networks -&gt; Proxies</cite> tab.</dd>
 </dl>
 </div>
 <div class="section" id="id29">
 <h3>Provisioning Options<a class="headerlink" href="#id29" title="Permalink to this headline">¶</a></h3>
 <dl class="docutils">
 <dt>API PROXY</dt>
-<dd>Required when a Proxy Server blocks communication between an Instance and the {morpheus} Appliance. Proxies can be added in the <cite>Infrastructure -&gt; Networks -&gt; Proxies</cite> tab.</dd>
+<dd>Required when a Proxy Server blocks communication between an Instance and the |morpheus| Appliance. Proxies can be added in the <cite>Infrastructure -&gt; Networks -&gt; Proxies</cite> tab.</dd>
 <dt>Bypass Proxy for Appliance URL</dt>
 <dd>Enable to bypass proxy settings (if added) for Instance Agent communication to the Appliance URL.</dd>
 <dt>USER DATA (LINUX)</dt>
@@ -1068,7 +1068,7 @@ Inventory Existing Instances:: If enabled, existing Virtual Machines will be inv
 Location:: Description field for adding notes on the cloud, such as location.
 Visibility:: For setting cloud permissions in a multi-tenant environment. Not applicable in single tenant environments.
 VMWARE FUSION HOST:: IP or URL of VMware Fusion Host
-WORKING PATH:: Existing folder {morpheus} will write to on Host
+WORKING PATH:: Existing folder |morpheus| will write to on Host
 USERNAME:: Host Username
 PASSWORD:: Host Password
 BRIDGE NAME:: Will auto-populate upon successful authentication with the Fusion Host (E.X. ‘EN0: ETHERNET’)</p>
@@ -1083,7 +1083,7 @@ BRIDGE NAME:: Will auto-populate upon successful authentication with the Fusion 
 Location:: Description field for adding notes on the cloud, such as location.
 Visibility:: For setting cloud permissions in a multi-tenant environment. Not applicable in single tenant environments.
 VIRTUALBOX HOST:: IP or URL of the VirtualBox Host
-WORKING PATH:: Path {morpheus} will write to. ex: <a href="#id30"><span class="problematic" id="id31">``</span></a>~/virtualbox`
+WORKING PATH:: Path |morpheus| will write to. ex: <a href="#id30"><span class="problematic" id="id31">``</span></a>~/virtualbox`
 USERNAME:: Host Username
 PASSWORD:: Host Password
 BRIDGE NAME:: Will auto-populate upon successful authentication with the VirtualBox Host (E.X. ‘EN0: ETHERNET’)
@@ -1100,7 +1100,7 @@ API URL:: IP or URL of Xen Host. ex: <cite>xenserver.domain.com</cite>
 USERNAME:: Xen Host Username
 PASSWORD:: Xen Host Password
 Inventory Existing Instances:: If enabled, existing Google Instances will be inventoried and appear as unmanaged Virtual Machines in {morpheus}.</p>
-<p>NOTE: {morpheus} scopes clouds to single regions. Multiple clouds can be added for multi-region support, and then optionally added to the same group.</p>
+<p>NOTE: |morpheus| scopes clouds to single regions. Multiple clouds can be added for multi-region support, and then optionally added to the same group.</p>
 <p>The Cloud can now be added to a Group or configured with additional Advanced options.</p>
 <p>include::advanced_options.rst</p>
 </div>
@@ -1221,19 +1221,19 @@ They have datacenters based in the UK, USA, Germany, Netherlands, Singapore and 
 <dd>Select a Chef, Salt, Ansible or Puppet integration to be used with this Cloud.</dd>
 <dt>AGENT INSTALL MODE</dt>
 <dd><ul class="first last simple">
-<li>SSH / WINRM: {morpheus} will use SSH or WINRM for Agent install.</li>
-<li>Cloud-Init (when available): {morpheus} will utilize Cloud-Init or Cloudbase-Init for agent install when provisioning images with Cloud-Init/Cloudbase-Init installed. {morpheus} will fall back on SSH or WINRM if cloud-init is not installed on the provisioned image.</li>
+<li>SSH / WINRM: |morpheus| will use SSH or WINRM for Agent install.</li>
+<li>Cloud-Init (when available): |morpheus| will utilize Cloud-Init or Cloudbase-Init for agent install when provisioning images with Cloud-Init/Cloudbase-Init installed. |morpheus| will fall back on SSH or WINRM if cloud-init is not installed on the provisioned image.</li>
 </ul>
 </dd>
 <dt>API PROXY</dt>
-<dd>Required when a Proxy Server blocks communication between the {morpheus} Appliance and the Cloud. Proxies can be added in the <cite>Infrastructure -&gt; Networks -&gt; Proxies</cite> tab.</dd>
+<dd>Required when a Proxy Server blocks communication between the |morpheus| Appliance and the Cloud. Proxies can be added in the <cite>Infrastructure -&gt; Networks -&gt; Proxies</cite> tab.</dd>
 </dl>
 </div>
 <div class="section" id="id35">
 <h3>Provisioning Options<a class="headerlink" href="#id35" title="Permalink to this headline">¶</a></h3>
 <dl class="docutils">
 <dt>API PROXY</dt>
-<dd>Required when a Proxy Server blocks communication between an Instance and the {morpheus} Appliance. Proxies can be added in the <cite>Infrastructure -&gt; Networks -&gt; Proxies</cite> tab.</dd>
+<dd>Required when a Proxy Server blocks communication between an Instance and the |morpheus| Appliance. Proxies can be added in the <cite>Infrastructure -&gt; Networks -&gt; Proxies</cite> tab.</dd>
 <dt>Bypass Proxy for Appliance URL</dt>
 <dd>Enable to bypass proxy settings (if added) for Instance Agent communication to the Appliance URL.</dd>
 <dt>USER DATA (LINUX)</dt>
@@ -1244,13 +1244,13 @@ They have datacenters based in the UK, USA, Germany, Netherlands, Singapore and 
 <p>A Group must be specified or created for the new Cloud to be added to. Clouds can be added to additional Groups or removed from Groups after being created.</p>
 <ul class="simple">
 <li><em>USE EXISTING</em>: Add the new Cloud to an exiting Group in {morpheus}.</li>
-<li><em>CREATE NEW</em>: Creates a new Group in {morpheus} and adds the Cloud to the Group.</li>
+<li><em>CREATE NEW</em>: Creates a new Group in |morpheus| and adds the Cloud to the Group.</li>
 </ul>
 </div>
 <div class="section" id="review">
 <h4>Review<a class="headerlink" href="#review" title="Permalink to this headline">¶</a></h4>
 <p>Confirm all settings are correct and select <cite>COMPLETE</cite>.</p>
-<p>The UpCloud Cloud will be added, and {morpheus} will perform the initial cloud sync of:</p>
+<p>The UpCloud Cloud will be added, and |morpheus| will perform the initial cloud sync of:</p>
 <ul class="simple">
 <li>UpCloud Servers will added as Virtual Machines (if Inventory is enabled)</li>
 <li>UpCloud Templates (My Templates) will sync and be added to <cite>Provisioning -&gt; Virtual Images</cite>.</li>
@@ -1263,7 +1263,7 @@ They have datacenters based in the UK, USA, Germany, Netherlands, Singapore and 
 </div>
 <div class="section" id="provisioning-to-upcloud">
 <h3>Provisioning to UpCloud<a class="headerlink" href="#provisioning-to-upcloud" title="Permalink to this headline">¶</a></h3>
-<p>Instances and Apps can be created using the private Images synced from UpCloud or from the {morpheus} provided Image Catalog.</p>
+<p>Instances and Apps can be created using the private Images synced from UpCloud or from the |morpheus| provided Image Catalog.</p>
 <div class="section" id="provision-a-synced-image">
 <h4>Provision a synced Image<a class="headerlink" href="#provision-a-synced-image" title="Permalink to this headline">¶</a></h4>
 <p>Images synced from UpCloud can be provisioned by using:</p>
@@ -1277,8 +1277,8 @@ They have datacenters based in the UK, USA, Germany, Netherlands, Singapore and 
 </div>
 </div>
 <div class="section" id="provision-a-morpheus-provided-upcloud-image">
-<h4>Provision a {morpheus} provided UpCloud Image<a class="headerlink" href="#provision-a-morpheus-provided-upcloud-image" title="Permalink to this headline">¶</a></h4>
-<p>{morpheus] provides a number of pre-configured Images that are available in the default {morpheus} Catalog when provisioning and Instance, App, or creating an App Template. UpCloud Images are included in the following Instance Types in the default {morpheus} catalog.</p>
+<h4>Provision a |morpheus| provided UpCloud Image<a class="headerlink" href="#provision-a-morpheus-provided-upcloud-image" title="Permalink to this headline">¶</a></h4>
+<p>{morpheus] provides a number of pre-configured Images that are available in the default |morpheus| Catalog when provisioning and Instance, App, or creating an App Template. UpCloud Images are included in the following Instance Types in the default |morpheus| catalog.</p>
 <ul class="simple">
 <li>ACTIVEMQ</li>
 <li>APACHE</li>
@@ -1350,13 +1350,13 @@ ORGANIZATION:</p>
 </div>
 </div>
 <div class="section" id="creating-a-centos-7-morpheus-image">
-<h2>Creating a CentOS 7 {morpheus} Image<a class="headerlink" href="#creating-a-centos-7-morpheus-image" title="Permalink to this headline">¶</a></h2>
+<h2>Creating a CentOS 7 |morpheus| Image<a class="headerlink" href="#creating-a-centos-7-morpheus-image" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="id37">
 <h3>Overview<a class="headerlink" href="#id37" title="Permalink to this headline">¶</a></h3>
-<p>{morpheus} comes out of the box with a default set of templates for use in many modern deployment scenarios. These consist mostly of base operating system images with a few additional adjustments. These adjustments typically include the addition of cloud-init (which is highly recommended to be used in most environments, but not mandatory). However, in many on-premise deployments there are custom image requirements as well as networking requirements. This guide will go over how to create a base CentOS 7 Image for use within {morpheus}.</p>
-<p>=== Creating a CentOS 7 {morpheus} VMware Image</p>
+<p>|morpheus| comes out of the box with a default set of templates for use in many modern deployment scenarios. These consist mostly of base operating system images with a few additional adjustments. These adjustments typically include the addition of cloud-init (which is highly recommended to be used in most environments, but not mandatory). However, in many on-premise deployments there are custom image requirements as well as networking requirements. This guide will go over how to create a base CentOS 7 Image for use within {morpheus}.</p>
+<p>=== Creating a CentOS 7 |morpheus| VMware Image</p>
 <p>==== VMWare</p>
-<p>When running in VMWare it is highly recommended that VMware Tools be installed. Without it, {morpheus} will have difficulty assessing the host ip address and performing some additional automation tasks for the operating system.</p>
+<p>When running in VMWare it is highly recommended that VMware Tools be installed. Without it, |morpheus| will have difficulty assessing the host ip address and performing some additional automation tasks for the operating system.</p>
 <p>==== Cloud-Init</p>
 <p>To get started with a base CentOS image we first install cloud-init. This is a relatively simple process using yum:
 [source,bash]
@@ -1420,7 +1420,7 @@ https_no_proxy=127.0.0.1,localhost,applianceUrl
 <div class="section" id="active-directory">
 <h2>Active Directory<a class="headerlink" href="#active-directory" title="Permalink to this headline">¶</a></h2>
 <p>=== Overview</p>
-<p>Active Directory is Microsoft’s primary authentication service widely used in Enterprise organizations and even via Microsoft’s cloud services. While Active Directory also supports LDAP protocol support (which {morpheus} can integrate with as well), the main Active Directory integration can also be utilized. It is even possible to map Active Directory groups to equivalent Roles within {morpheus}.</p>
+<p>Active Directory is Microsoft’s primary authentication service widely used in Enterprise organizations and even via Microsoft’s cloud services. While Active Directory also supports LDAP protocol support (which |morpheus| can integrate with as well), the main Active Directory integration can also be utilized. It is even possible to map Active Directory groups to equivalent Roles within {morpheus}.</p>
 <p>NOTE: To use Active Directory, a valid / trusted SSL certificate must be in place on the Active Directory services (self signed will not work).</p>
 <p>=== Adding an Active Directory integration</p>
 <p>. Navigate to <cite>Administration -&gt; Tenants</cite>
@@ -1436,14 +1436,14 @@ Binding Username:: Service account username for bind user.
 Binding Password:: Password for bind service account.
 Required Group:: The AD group users must be in to have access (optional)
 Default Role:: The default role a user is assigned if no group is listed under AD user that maps under Role Mappings section.
-Service Account Holder:: This is the admin account type in {morpheus} and an AD group can be created and populated to a user that this role should be assigned. Roles are assigned dynamically based on group membership.</p>
-<p>Now allowed AD users can login to {morpheus} via their Active Directory credentials and a User will be automatically generated to {morpheus} with matching metadata and mapped Role permissions.</p>
+Service Account Holder:: This is the admin account type in |morpheus| and an AD group can be created and populated to a user that this role should be assigned. Roles are assigned dynamically based on group membership.</p>
+<p>Now allowed AD users can login to |morpheus| via their Active Directory credentials and a User will be automatically generated to |morpheus| with matching metadata and mapped Role permissions.</p>
 <p>NOTE: Only the username is required with password, not the <a class="reference external" href="mailto:username&#37;&#52;&#48;domain">username<span>&#64;</span>domain</a>.</p>
-<p>NOTE: Sub-tenant {morpheus} API authentication for Active Directory generated users is not currently supported.</p>
+<p>NOTE: Sub-tenant |morpheus| API authentication for Active Directory generated users is not currently supported.</p>
 <p>[[saml]]</p>
 <p>== SAML integration</p>
 <p>=== Overview</p>
-<p>The {morpheus} SAML identity source integration allows customers to add user SSO to {morpheus}, authenticated by external login SAML providers.</p>
+<p>The |morpheus| SAML identity source integration allows customers to add user SSO to {morpheus}, authenticated by external login SAML providers.</p>
 <p>image::images/saml-2f9c4.png[]</p>
 <p>=== Adding a SMAL Integration</p>
 <p>To add a SAML integration:</p>
@@ -1459,8 +1459,8 @@ Service Account Holder:: This is the admin account type in {morpheus} and an AD 
 . Role Mappings
 . User Attribute Names</p>
 <p>=== SAML Configuration</p>
-<p>LOGIN REDIRECT URL:: This is the SAML endpoint {morpheus} will redirect to when a user signs into {morpheus} via SAML.
-LOGOUT POST URL:: The url morpheus will post to when a SAML user log out of {morpheus} to log out of the SAML provider as well.
+<p>LOGIN REDIRECT URL:: This is the SAML endpoint |morpheus| will redirect to when a user signs into |morpheus| via SAML.
+LOGOUT POST URL:: The url morpheus will post to when a SAML user log out of |morpheus| to log out of the SAML provider as well.
 SIGNING PUBLIC KEY:: Add the X.509 Certificate public key from the SAML provider.</p>
 <p>=== Role Mappings</p>
 <p>DEFAULT ROLE:: Role a saml user will be assigned by default when no role is mapped
@@ -1468,9 +1468,9 @@ ROLE ATTRIBUTE NAME:: The name of the attribute filed that will map to morpheus 
 REQUIRED ROLE ATTRIBUTE VALUE:: Role attribute value that a user must be assigned/a member of to be authorized, such as group or role in the SAML SP.</p>
 <p>The rest of the Role Mapping Fields will be the existing Roles in morpheus with a Role Attribute Value field.</p>
 <p>=== User Attribute Names</p>
-<p>GIVEN NAME ATTRIBUTE NAME:: SAML SP field value to map to {morpheus} user First Name
-SURNAME ATTRIBUTE NAME:: SAML SP field value to map to {morpheus} user Last Name
-EMAIL ATTRIBUTE NAME:: SAML SP field value to map to {morpheus} user email address</p>
+<p>GIVEN NAME ATTRIBUTE NAME:: SAML SP field value to map to |morpheus| user First Name
+SURNAME ATTRIBUTE NAME:: SAML SP field value to map to |morpheus| user Last Name
+EMAIL ATTRIBUTE NAME:: SAML SP field value to map to |morpheus| user email address</p>
 <p>image::images/saml-c4576.png[]</p>
 <p>Once populated, select SAVE CHANGES and the SAML identity source integration will be added.</p>
 <p>In the Identity Sources section, important information for configuration of the SAML integration is provided. Use the SP ENTITY ID and SP ACS URL for configuration on the external login SAML provider side.</p>
