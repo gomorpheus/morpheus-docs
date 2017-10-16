@@ -22,12 +22,12 @@ Add ServiceNow Integration
 
 #. Save Changes
 
+Add ServiceNow Provision Approval Policy to a Cloud
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Add ServiceNow Provision Approval Policy
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.. NOTE:: Any Instance provisioned into a Cloud with an Approval Policy enabled will require approval.
 
-Add Cloud Policy
-''''''''''''''''
+To add a ServiceNow Approval policy to a Cloud:
 
 #. Navigate to ``Infrastructure -> Clouds``
 #. Select a Cloud by clicking on the Cloud Name link
@@ -48,8 +48,11 @@ Add Cloud Policy
 
 #. Save Changes
 
-Add Group Policy
-''''''''''''''''
+Add ServiceNow Provision Approval Policy to a Group
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.. NOTE:: Any Instance provisioned into a Group with an Approval Policy enabled will require approval.
+
+To add a ServiceNow Approval policy to a Group:
 
 #. Navigate to ``Infrastructure -> Groups``
 #. Select a Group by clicking on the Group Name link
