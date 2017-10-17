@@ -1,9 +1,13 @@
 VMware vCenter
 ==============
 
+Overview
+--------
+
 VMware is a very common cloud integration choice supported by {morpheus}. They have provided a top notch virtualization solution and one might argue pioneered the virtualization space altogether. As such, many companies utilize this technology and all the features that come with it, so |morpheus| covers a broad feature set in Vcenter.
 
-=== Features
+Features
+--------
 
 * Virtual Machine Provisioning
 * Backups / Snapshots

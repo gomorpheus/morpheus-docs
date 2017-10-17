@@ -2,18 +2,32 @@ Virtualbox
 ==========
 
 
-=== Add a VirtualBox Cloud
+Add a VirtualBox Cloud
+^^^^^^^^^^^^^^^^^^^^^^
 
-Name:: Name of the Cloud in {morpheus}
-Location:: Description field for adding notes on the cloud, such as location.
-Visibility:: For setting cloud permissions in a multi-tenant environment. Not applicable in single tenant environments.
-VIRTUALBOX HOST:: IP or URL of the VirtualBox Host
-WORKING PATH:: Path |morpheus| will write to. ex: ``~/virtualbox`
-USERNAME:: Host Username
-PASSWORD:: Host Password
-BRIDGE NAME:: Will auto-populate upon successful authentication with the VirtualBox Host (E.X. 'EN0: ETHERNET')
-VBOXMANAGE EXECUTABLE:: Defaults to /urs/local/bin/vboxmanage if left blank
+#. Navigate to Infrastructure -> Clouds
+#. Select `+ CREATE CLOUD`, select Virtual Box, and then click Next.
+#. Enter the following into the Create Cloud modal:
 
-The Cloud can now be added to a Group or configured with additional Advanced options.
+Name
+  Name of the Cloud in {morpheus}
+Location
+  Description field for adding notes on the cloud, such as location.
+Visibility
+  For setting cloud permissions in a multi-tenant environment. Not applicable in single tenant environments.
+VIRTUALBOX HOST
+  IP or URL of the VirtualBox Host
+WORKING PATH
+  Path |morpheus| will write to. ex: ``~/virtualbox``
+USERNAME
+  Host Username
+PASSWORD
+  Host Password
+BRIDGE NAME
+  Will auto-populate upon successful authentication with the VirtualBox Host (E.X. 'EN0: ETHERNET')
+VBOXMANAGE EXECUTABLE
+  Defaults to /urs/local/bin/vboxmanage if left blank
 
-include::advanced_options.rst
+#. The Cloud can now be added to a Group or configured with additional Advanced options.
+
+.. include:: advanced_options.rst
