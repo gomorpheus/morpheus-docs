@@ -4,9 +4,9 @@ Active Directory
 Active Directory is Microsoft's primary authentication service widely
 used in Enterprise organizations and even via Microsoft's cloud
 services. While Active Directory also supports LDAP protocol support
-(which {morpheus} can integrate with as well), the main active directory
+(which |morpheus| can integrate with as well), the main active directory
 integration can also be utilized. It is even possible to map Active
-Directory groups to equivalent Roles within {morpheus}.
+Directory groups to equivalent Roles within |morpheus| .
 
 NOTE: To use Active Directory, a valid / trusted SSL certificate must be
 in place on the Active Directory services (self signed will not work).
@@ -29,12 +29,12 @@ The following fields are important for integrating active directory:
 -  *Default Role:* The default role a user is assigned if no group is
    listed under AD user that maps under Role Mappings section.
 -  *Service Account Holder:* This is the admin account type in
-   {morpheus} and an AD group can be created and populated to a user
+   |morpheus| and an AD group can be created and populated to a user
    that this role should be assigned. Roles are assigned dynamically
    based on group membership.
 
-TIP: Make sure to check the sync login box which will allow {morpheus}
-to sync the AD account on the {morpheus} Appliance.
+TIP: Make sure to check the sync login box which will allow |morpheus| 
+to sync the AD account on the |morpheus| Appliance.
 
 Now users can login to the UI via their active directory username.
 

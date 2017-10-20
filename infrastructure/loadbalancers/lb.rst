@@ -6,15 +6,15 @@ Load Balancers
 Overview
 --------
 
-{morpheus} can provision VM or Container HaProxy Load Balancers, Amazon Elastic and Application Load Balancers, Azure Load Balancers, and integrates with several external Load Balancers, including F5, A10, Citrix, and AVI.
+|morpheus| can provision VM or Container HaProxy Load Balancers, Amazon Elastic and Application Load Balancers, Azure Load Balancers, and integrates with several external Load Balancers, including F5, A10, Citrix, and AVI.
 
 Once created or integrated, Load Balancers are available as an option to be added during provision time or post-provisioning.
 
 Once a Load Balancer is added to an instance, you can manually scale or configure auto-scaling based on thresholds or schedules, and burst across clouds with cloud priority.
 
-.. NOTE:: HaProxy VM Load Balancer option, Load Balancer detail pages, Balance Mode, Sticky Mode and Shared VIP address option are available in {morpheus} 2.11.3+.
+.. NOTE:: HaProxy VM Load Balancer option, Load Balancer detail pages, Balance Mode, Sticky Mode and Shared VIP address option are available in |morpheus| 2.11.3+.
 
-.. image Load_Balancers___{morpheus}.png
+.. image Load_Balancers___|morpheus| .png
 
 In the Load Balancers page there are two sections:
 

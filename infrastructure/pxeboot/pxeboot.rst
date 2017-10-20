@@ -5,19 +5,19 @@ PXE Boot
 Overview
 ^^^^^^^^
 
-{morpheus} includes a built in PXE Server to enable easy and rapid bare metal provisioning. Simply map your TFTP server port to the {morpheus} sevrer port 6969 and you are ready to PXE boot from the provided images and answer files, or add your own to bring up Bare metal Hosts with ease.
+|morpheus| includes a built in PXE Server to enable easy and rapid bare metal provisioning. Simply map your TFTP server port to the |morpheus| sevrer port 6969 and you are ready to PXE boot from the provided images and answer files, or add your own to bring up Bare metal Hosts with ease.
 
 === Prerequisites
 
-Your network must be configured for PXE boot, and the TFTP server port need to mapped to the {morpheus} TFT server port, UDP 6969.
+Your network must be configured for PXE boot, and the TFTP server port need to mapped to the |morpheus| TFT server port, UDP 6969.
 
 * Network configured for network boot
-* Router UDP 69 mapped to {morpheus} server UDP port 6969
-* Router TFT Server set to {morpheus} server IP or resolvable Hostname.
-* Mac or IP addresses of PXE target mapped in {morpheus} `Infrastructure -> Boot - Mapping`
+* Router UDP 69 mapped to |morpheus| server UDP port 6969
+* Router TFT Server set to |morpheus| server IP or resolvable Hostname.
+* Mac or IP addresses of PXE target mapped in |morpheus| `Infrastructure -> Boot - Mapping`
 * Target host configured for Network boot in BIOS
 
-NOTE: The {morpheus} PXE port is set in `opt/morpheus/conf/application.yml`
+NOTE: The |morpheus| PXE port is set in `opt/morpheus/conf/application.yml`
 
 === To PXE Boot
 
@@ -38,7 +38,7 @@ Cloud:: Lists the available clouds.
 Server Mode: List of server modes:: unmanaged, Managed, Bare metal host, Container host, VM host, and Container & VM host.
 Click the Save Changes button to save.
 
-Once the mapping is added, and the target host is powered on, the {morpheus} PXE menu will load and PXE boot will start.
+Once the mapping is added, and the target host is powered on, the |morpheus| PXE menu will load and PXE boot will start.
 
 ==== Edit Mapping
 

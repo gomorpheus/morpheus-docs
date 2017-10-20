@@ -2,6 +2,9 @@
 Integration Guides
 ******************
 
+Clouds
+======
+
 .. include:: vmware.rst
 .. include:: amazon.rst
 .. include:: azure.rst
@@ -21,14 +24,15 @@ Integration Guides
 .. include:: upcloud.rst
 .. include:: kubernetes.rst
 .. /include:: macstadium.rst
-.. /include:: scvmm.rst
+.. include:: scvmm.rst
 .. include:: cloudfoundry.rst
 .. /include:: vclouddirector.rst
 .. /include:: bluemix.rst
 
 .. include:: centos7template.rst
 
-== Identity Management
+Identity Management
+===================
 
 .. include:: active_directory.rst
 .. include:: saml.rst

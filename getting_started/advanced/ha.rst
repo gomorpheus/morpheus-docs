@@ -4,17 +4,17 @@ High Availability Mode
 Overview
 ^^^^^^^^
 
-{morpheus} ships as a stand-alone appliance running as a virtual machine
+|morpheus| ships as a stand-alone appliance running as a virtual machine
 in your own environment. This stand-alone appliance contains all the
-software needed to run {morpheus} and uses a package to distribute the
+software needed to run |morpheus| and uses a package to distribute the
 binary files. A configuration utility is also provided to configure the
-software based on your environment needs. As {morpheus} scales and
+software based on your environment needs. As |morpheus| scales and
 becomes a more critical component of your infrastructure the stand-alone
 method does not meet the needs in terms of uptime availability and
-scalability. We have designed the components that makeup {morpheus}
+scalability. We have designed the components that makeup |morpheus| 
 distributable to enable you to deploy it in a multi-tier configuration.
 This document discusses the possible deployment scenarios and use cases
-for distributing {morpheus} and increasing its uptime availability.
+for distributing |morpheus| and increasing its uptime availability.
 
 Each tier described in the following architecture section can be scaled
 out to increase its availability. To remove the single points of failure
@@ -30,7 +30,7 @@ installer in a stand-alone configuration.
 Architecture
 ^^^^^^^^^^^^
 
-{morpheus} contains the following tiers in the stand-alone deployment
+|morpheus| contains the following tiers in the stand-alone deployment
 configuration: web, application, cache, message queue, search index, and
 database. Each tier can be distributed and deployed on separate servers
 except for the cache. Currently the cache is localized to each
@@ -41,26 +41,26 @@ backup objects.
 .. image:: /images/getting_started/morpheusHA.png
 
 Web Tier
-  {morpheus} uses Nginx as a reverse proxy for its application tier. It
+  |morpheus| uses Nginx as a reverse proxy for its application tier. It
   also serves access to the localized package repository used when
-  deploying data nodes and virtual machines providing the {morpheus} agent
+  deploying data nodes and virtual machines providing the |morpheus| agent
   and utility software.
 
 Application Tier
-  {morpheus} application is written in Groovy and Grails. It can be run on
+  |morpheus| application is written in Groovy and Grails. It can be run on
   multiple servers behind a web connection load balancer that supports
   websockets. The application itself runs in a Java virtual machine as an
   Apache Tomcat container.
 
 Cache Tier
-  Currently {morpheus} uses a caching layer for database requests, this
+  Currently |morpheus| uses a caching layer for database requests, this
   component is scheduled for removal in a future release. A local instance
   of Redis is used as the cache and is not distributed. The packaged
   installer will install a local Redis instance to use until the component
   is removed from the application.
 
 Message Queue Tier
-  {morpheus} uses message queueing to send messages to different
+  |morpheus| uses message queueing to send messages to different
   components of the application that enable various actions. RabbitMQ is
   used as the message broker, only the application communicates with the
   message queue broker. This component is scaled horizontally behind a
@@ -68,25 +68,25 @@ Message Queue Tier
   using a single DNS name.
 
 Search Index Tier
-  {morpheus} stores activity, backup results, logs, and statistics in an
+  |morpheus| stores activity, backup results, logs, and statistics in an
   index to enable searching using ElasticSearch. Scaling out ElasticSearch
   is handled by ElasticSearch itself and does not require a load balancer.
   Each application server’s configuration contains addresses for each
   ElasticSearch.
 
 Database Tier
-  {morpheus} use a SQL persistent database; in the stand-alone appliance,
+  |morpheus| use a SQL persistent database; in the stand-alone appliance,
   it is MySQL. To scale out the database tier setup a SQL compliant
   database. Each application instance will need write access to the
   database. Configuring MySQL or Percona database engine in an
-  active/active cluster will allow write access to the {morpheus} database
+  active/active cluster will allow write access to the |morpheus| database
   from any application server.
 
 Shared Storage
-  {morpheus} creates artifacts and objects when deploying applications or
+  |morpheus| creates artifacts and objects when deploying applications or
   running backups. These artifacts need to be written to a file system.
   These objects need to be accessible by any application server they need
-  to exist on a shared storage device. {morpheus} allows you to create
+  to exist on a shared storage device. |morpheus| allows you to create
   storage providers such as a local directory, AWS S3, Swift, or cloud
   CDNs.
 
@@ -101,7 +101,7 @@ Infrastructure Setup
 Configuration
 ^^^^^^^^^^^^^
 
-{morpheus} configuration is controlled by a configuration file located
+|morpheus| configuration is controlled by a configuration file located
 at /etc/morpheus/morpheus.rb. This file is read when you run
 morpheus-ctl reconfigure after installing the appliance package. Each
 section is tied to a deployment tier: database is mysql, message queue
@@ -109,7 +109,7 @@ is rabbitmq, serach index is elasticsearch. There are no entries for the
 web and application tiers since those are part of the core application
 server where the configuration file resides.
 
-An example configuration file for a distributed {morpheus} deployment:
+An example configuration file for a distributed |morpheus| deployment:
 
 .. code-block:: bash
 
@@ -131,7 +131,7 @@ An example configuration file for a distributed {morpheus} deployment:
 Database Tier
 ^^^^^^^^^^^^^
 
-{morpheus} will install a local MySQL server in its stand-alone
+|morpheus| will install a local MySQL server in its stand-alone
 configuration mode. To disable creating the local MySQL server set the
 entry mysql['enable'] = false and add one or more database servers using
 the mysql['host'] entry. This entry is a Ruby hash using hash rocket
@@ -142,7 +142,7 @@ them into a URL JDBC string that the application will use. Enter the
 database name and credentials using the entries mysql['morpheus\_db'],
 mysql['morpheus\_db\_user'], and mysql['morpheus\_password']
 respectively. The database user requires write access to all tables in
-the {morpheus} database with the all privileges statement.
+the |morpheus| database with the all privileges statement.
 
 Message Queue Tier
 ^^^^^^^^^^^^^^^^^^
@@ -167,7 +167,7 @@ channels from closing as well in the message broker.
 Search Index Tier
 ^^^^^^^^^^^^^^^^^
 
-{morpheus} uses ElasticSearch to store data for searching, a default
+|morpheus| uses ElasticSearch to store data for searching, a default
 instance is installed by the stand-alone installer. To provide
 redundancy and scalability an external ElasticSearch cluster is needed.
 To disable the creation of the internal ElasticSearch instance set the
@@ -183,13 +183,13 @@ is listening on.
 Application Secrets
 ^^^^^^^^^^^^^^^^^^^
 
-{morpheus} creates a secrets file at
+|morpheus| creates a secrets file at
 /opt/morppheus/morphesu-secrets.json on the first run of the installer
 configuration script. If the file exists, it will use the file and the
 secrets contained. These entries are generated randomly and are unique
 to each initial install. To synchronize access between application
 servers each server needs to have the same secrets file. Depending on
-the number of external components used, {morpheus} will use some or none
+the number of external components used, |morpheus| will use some or none
 of the settings in this file. Secrets are still generated in case a
 re-configuration after the initial setup requires a shared password for
 a component.
@@ -197,9 +197,9 @@ a component.
 SSL Certificates
 ^^^^^^^^^^^^^^^^
 
-The default mode for {morpheus} is to setup the web tier using
-encryption to provide secure access to {morpheus} over Transport Layer
-Security (TLS). {morpheus} will generate self-signed certificates if no
+The default mode for |morpheus| is to setup the web tier using
+encryption to provide secure access to |morpheus| over Transport Layer
+Security (TLS). |morpheus| will generate self-signed certificates if no
 certificate is provided in the configuration file. To provide your own
 certificate:
 
@@ -226,7 +226,7 @@ validation with a known certificate authority, then you can import these
 custom certificates as described in the previous paragraph. The other
 option is to enable SSL offloading where the load balancer connects to
 the application server pool over a non-TLS connection. To setup TLS
-offloading in the {morpheus} configuration file set the appliance\_url
+offloading in the |morpheus| configuration file set the appliance\_url
 to a URL that starts with http instead of https, this instructs the
 configuration script to not generate the self-singed certificates.
 

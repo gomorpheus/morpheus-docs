@@ -1,17 +1,30 @@
 VMware Fusion
 -------------
 
-=== Add a VMware Fusion Cloud
+Add a VMware Fusion Cloud
+-------------------------
 
-Name:: Name of the Cloud in {morpheus}
-Location:: Description field for adding notes on the cloud, such as location.
-Visibility:: For setting cloud permissions in a multi-tenant environment. Not applicable in single tenant environments.
-VMWARE FUSION HOST:: IP or URL of VMware Fusion Host
-WORKING PATH:: Existing folder {morpheus} will write to on Host
-USERNAME:: Host Username
-PASSWORD:: Host Password
-BRIDGE NAME:: Will auto-populate upon successful authentication with the Fusion Host (E.X. 'EN0: ETHERNET')
+#. Navigate to Infrastructure -> Clouds
+#. Select `+ CREATE CLOUD`, select VMware Fusion, and then click Next.
+#. Enter the following into the Create Cloud modal:
 
-The Cloud can now be added to a Group or configured with additional Advanced options.
+Name
+  Name of the Cloud in |morpheus| 
+Location
+  Description field for adding notes on the cloud, such as location.
+Visibility
+  For setting cloud permissions in a multi-tenant environment. Not applicable in single tenant environments.
+VMWARE FUSION HOST
+  IP or URL of VMware Fusion Host
+WORKING PATH
+  Existing folder |morpheus| will write to on Host
+USERNAME
+  Host Username
+PASSWORD
+  Host Password
+BRIDGE NAME
+  Will auto-populate upon successful authentication with the Fusion Host (E.X. 'EN0: ETHERNET')
 
-include::advanced_options.rst
+#. The Cloud can now be added to a Group or configured with additional Advanced options.
+
+.. include:: advanced_options.rst

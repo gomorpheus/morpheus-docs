@@ -2,17 +2,29 @@ Xen Server
 -----------
 
 Add a Xen Server Cloud
+----------------------
 
-Name:: Name of the Cloud in {morpheus}
-Location:: Description field for adding notes on the cloud, such as location.
-Visibility:: For setting cloud permissions in a multi-tenant environment. Not applicable in single tenant environments.
-API URL:: IP or URL of Xen Host. ex: `xenserver.domain.com`
-USERNAME:: Xen Host Username
-PASSWORD:: Xen Host Password
-Inventory Existing Instances:: If enabled, existing Google Instances will be inventoried and appear as unmanaged Virtual Machines in {morpheus}.
+#. Navigate to Infrastructure -> Clouds
+#. Select `+ CREATE CLOUD`, select Xen, and then click Next.
+#. Enter the following into the Create Cloud modal:
 
-NOTE: {morpheus} scopes clouds to single regions. Multiple clouds can be added for multi-region support, and then optionally added to the same group.
+Name
+  Name of the Cloud in |morpheus| 
+Location
+  Description field for adding notes on the cloud, such as location.
+Visibility
+  For setting cloud permissions in a multi-tenant environment. Not applicable in single tenant environments.
+API URL
+  IP or URL of Xen Host. ex: `xenserver.domain.com`
+USERNAME
+  Xen Host Username
+PASSWORD
+  Xen Host Password
+Inventory Existing Instances
+  If enabled, existing Google Instances will be inventoried and appear as unmanaged Virtual Machines in |morpheus| .
 
-The Cloud can now be added to a Group or configured with additional Advanced options.
+  .. NOTE:: |morpheus| scopes clouds to single regions. Multiple clouds can be added for multi-region support, and then optionally added to the same group.
 
-include::advanced_options.rst
+#. The Cloud can now be added to a Group or configured with additional Advanced options.
+
+.. include:: advanced_options.rst

@@ -8,10 +8,10 @@ Hypervisor to Hypervisor
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
 Store
-  {morpheus} will create a snapshot of existing VM and upload the snapshot to virtual image directory. Images that have been uploaded to the Virtual Images library can be converted to VHD, QCOW2, RAW and VMDK formats and then re-provisioned.
+  |morpheus| will create a snapshot of existing VM and upload the snapshot to virtual image directory. Images that have been uploaded to the Virtual Images library can be converted to VHD, QCOW2, RAW and VMDK formats and then re-provisioned.
 
 New
-  {morpheus} will create a snapshot of an existing VM, convert from source format to required destination format, and then provision the VM into the target environment.
+  |morpheus| will create a snapshot of an existing VM, convert from source format to required destination format, and then provision the VM into the target environment.
 
 Source
   VMWare, Openstack, Xen, ESXi, Nutanix* Azure* Hyper-V* (
@@ -40,12 +40,12 @@ Requirements
 Live Stream
 ^^^^^^^^^^^
 
-Live Stream is a linux only streaming process that will take a snapshot of a volume and allow it to be streamed to a destination linux system that is either existing or new. The destination linux must already exist and it can either be a managed or unmanaged VM in {morpheus}. The destination will be overwritten from a root level perspective.
+Live Stream is a linux only streaming process that will take a snapshot of a volume and allow it to be streamed to a destination linux system that is either existing or new. The destination linux must already exist and it can either be a managed or unmanaged VM in |morpheus| . The destination will be overwritten from a root level perspective.
 
 Source
   Any Cloud
 Destination
-  {morpheus}
+  |morpheus|
 Supported OS Type
   Linux (Only)
 Service Impact
@@ -92,3 +92,5 @@ Remove Migration
 #. Select the Provisioning link in the navigation bar.
 #. Select the Migrations link in the sub-navigations bar.
 #. Click the actions dropdown of the row of the migration you wish remove, and select Remove.
+
+.. include:: vmware2aws.rst

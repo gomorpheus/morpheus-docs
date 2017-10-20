@@ -2,7 +2,7 @@
 
 A very common scenario for Managed Service Providers is the need to
 provide access to resources on a customer by customer basis. Several
-administrative features are available in {morpheus} to ensure customer
+administrative features are available in |morpheus| to ensure customer
 resources are properly scoped and isolated. With its built multi-tenancy
 capabilities and white label support, managed service providers have a
 wide range of capabilities when it comes to managing customer accounts
@@ -10,11 +10,11 @@ and users.
 
 ==== Accounts
 
-There are essentially two types of accounts in {morpheus}
+There are essentially two types of accounts in |morpheus| 
 
 Master Account Sub Accounts
 
-During the initial setup of a {morpheus} Appliance, the Master Account
+During the initial setup of a |morpheus| Appliance, the Master Account
 is created. All accounts created in addition to this Master Account are
 sub-accounts. There can only be one Master Account, and sub-accounts
 cannot become the Master Account. The delineation between the Master
@@ -251,3 +251,5 @@ Select "Save Changes" in the lower right of the modal
 
 The Virtual Image will now be available for use by the assigned
 accounts.
+
+.. |morpheus| replace:: Morpheus
