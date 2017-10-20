@@ -21,13 +21,8 @@ Clouds
 .. //include:: vcloudair.rst
 .. include:: virtualbox.rst
 .. include:: xen.rst
-.. include:: upcloud.rst
 .. include:: kubernetes.rst
 .. /include:: macstadium.rst
-.. include:: scvmm.rst
-.. include:: cloudfoundry.rst
-.. /include:: vclouddirector.rst
-.. /include:: bluemix.rst
 
 .. include:: centos7template.rst
 
