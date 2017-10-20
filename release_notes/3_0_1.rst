@@ -1,0 +1,48 @@
+Morpheus v3.0.1
+===============
+
+New Features
+------------
+
+New App & Template wizard
+  Completely rebuilt Provisioning -> Apps and Templates sections with multi-config, raw json and yaml input/output, locking fields and boot order added.
+New Analytics
+  Completely rebuilt Analytics section with Cost, Utilization, Instance and Instance Type analytic reports and data visualizations. Quickly analyze storage, cpu or ram usage across clouds or teams, or compare utilization vs cost per resource.
+Guidance
+  The new Guidance feature can analyze your infrastructure and recommend actions to optimize resource utilization with projected cost savings. Morpheus can then act on those recommendations by resizing, shutting down or moving the resources to ensure money isn't being wasted on underutilized assets.
+Image Builder Service
+  Automate your image builds directly in Morpheus. Configure your builds, add scripts and run to generate vmdk ovf, qcow2, vhd templates from iso's. *Requires VMware cloud with Hypervisor Console enabled.
+Expanded User Settings
+  Users can now set default Group and Cloud Preferences, Linux and Windows User settings, add User Photos.
+User Groups
+  User Groups can be created and them selected during provisioning to add each group members credentials to the Instance.
+Kubernetes
+  Inventory and provision to existing Kubernetes clusters, or provision new Kubernetes clusters.
+Expanded Reports
+  Provisioning, Infrastructure, and Tenant Inventory Reports Added to Operations -> Reports. JSON and CSV Exports added.
+Container Mode
+  Container Mode option added to Cloud settings, can be set to Default Docker, Swarm or Kubernetes. Determines the type of Docker Host that will be provisioned into the Cloud. *Mode must be set before the first Docker Host is provisioned into a Cloud.
+
+New Integrations
+----------------
+
+- UpCloud
+- Cloud Foundry
+- IBM Bluemix
+- HP OneView
+- SCVMM
+- Kubernetes
+- Jenkins
+- Github
+
+Other Additions
+---------------
+
+- Support added for guest execution on VMware Windows Templates with renamed Administrator user.
+- *USER CONFIG* and *DNS OPTIONS* sections section added to Provisioning Wizard.
+- *Disable Agent Based Firewall Management* option added to Cloud Settings.
+- COST THIS MONTH and AVG MONTHLY COST data added to Cloud Detail pages.
+- Service Plans scoping added to Resource Pools and Folders.
+- EBS ENCRYPTION option added to Cloud settings
+- API & CLI Updates
+- Multiple other additions and Improvements.

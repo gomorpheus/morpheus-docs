@@ -1,0 +1,39 @@
+v2.12.2
+=======
+
+*v2.12.2 release date 10/9/2017*
+
+**Morpheus v2.12.2 adds the ServiceNow CMDB Integration, improvements to existing Features and Integrations, and bug fixes and enhancements.**
+
+- ServiceNow CMDB Integration: The Morpheus ServiceNow CMDB integration creates a CMDB record upon Instance provision, updates the CMDB state when an instance is removed, and syncs changed Instance states nightly.
+- Additional ServiceNow Plugin Improvements
+- "Disable Management of Firewall by Agent" option added to Cloud settings.
+- Editing existing Environment Variables support added for Windows
+- VMware Folder support added to apps and templates
+- Nutanix Unmanaged Network Static IP support added
+- Script Variables added for Volumes: id: ``vol.id, name: vol.name, deviceName: vol.deviceName, maxStorage: vol.maxStorage, unitNumber: vol.unitNumber,displayOrder: vol.displayOrder, rootVolume: vol.rootVolume``
+- vmxnet3 set as default VMware Network Adapter type.
+- Chef bootstrap process output added to Instance History
+- Improved Tenant Deletion
+- Improved VMware Folder and Resource Pool sync
+- Mobile layout improvements
+- Local Chef install url for windows msi added.
+- Email layout improvements for broader email client support.
+- Chef Integration now determines when FQDN should not be added.
+- Improved Provisioning error outputs
+- Improvements to User scoped permissions for monitoring, logs and backups.
+
+Fixes:
+
+- Fix for Bulk Network Edit
+- Fix for DHCP flag being reset on Nutanix networks upon cloud sync.
+- Fix for Agent timestamp handling
+- Fix for Dashboard 500 error when user Role Permissions = Monitoring : User
+- Fix for Netscaler SSL cert upload
+- Fix for server stop/start when inventoried server is converted to managed and Instance Type is applied.
+- Additional character handling in Automation Scripts
+- Fix for Remove Shutdown Instance Action hanging
+- Fix for Instance History purge
+- Various other bug fixes and improvements
+
+Morpheus v2.12.2 is available in the Downloads section of `morpheushub.com<https://morpheushub.com/>`_.

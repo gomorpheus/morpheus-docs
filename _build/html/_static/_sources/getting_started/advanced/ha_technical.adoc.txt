@@ -1,0 +1,62 @@
+
+[[ha_setup]]
+=== High Availability Setup Guide
+
+//adding notes for HA Technical write up
+
+==== Tomcat
+We have to link the tomcats for session cache link issue
+
+==== RabbitMQ
+
+Enable stomp module in rabbit queue cluster
+
+===== Rabbit LB
+
+TCP load balanced on port 5672 as well as port 61613 for STOMP
+
+Confirm in `/opt/morpheus/conf/application.yml`
+
+----
+morpheus:
+  stomp:
+    host: IP_ADDRESS_HERE
+    port: 61613
+----
+
+==== Percona
+
+Percona XtraDB Cluster
+
+Set Percona PXC Strict Mode to `PERMISSIVE`
+
+  mysql> SET pxc_strict_mode=PERMISSIVE;
+
+
+NOTE: To further ensure data consistency, it is important to have all nodes in the cluster running with the same configuration, including the value of pxc_strict_mode variable.
+
+
+---
+environments:
+  production:
+    grails:
+      cache:
+        config:
+          defaults:
+            maxElementsInMemory: 10000
+            eternal: false
+            overflowToDisk: false
+            maxElementsOnDisk: 0
+            cacheEventListenerFactoryName: cacheEventListenerFactory
+          cacheManagerPeerListenerFactory:
+            env: production
+          cacheEventListenerFactory:
+            env: production
+            name: cacheEventListenerFactory
+            factoryType: rmi
+            replicateAsynchronously: false
+          cacheManagerPeerProviderFactory:
+            env: production
+            factoryType: rmi
+            rmiUrl: //server2:40001
+            rmiUrl: //server3:40001

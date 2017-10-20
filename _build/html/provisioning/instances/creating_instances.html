@@ -1,0 +1,293 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Creating Instances &mdash; jwtest 1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../../_static/my_theme.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="../../genindex.html"/>
+        <link rel="search" title="Search" href="../../search.html"/>
+    <link rel="top" title="jwtest 1 documentation" href="../../index.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html">
+          
+
+          
+            
+            <img src="../../_static/logo.svg" class="logo" />
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../getting_started/getting_started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../provisioning.html">Provisioning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../infrastructure/infrastructure.html">Infrastructure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../administration/administration.html">Administration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../monitoring/monitoring.html">Monitoring</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../logs/logging.html">Logs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../backups/backups.html">Backups</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../operations/operations.html">Operations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../services/services.html">Services</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../integration_guides/integration_guides.html">Integration Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../faq/faqs.html">FAQ’s</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../release_notes/release_notes.html">Release Notes</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">jwtest</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+      <li>Creating Instances</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/provisioning/instances/creating_instances.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="creating-instances">
+<h1>Creating Instances<a class="headerlink" href="#creating-instances" title="Permalink to this headline">¶</a></h1>
+<p>The instance catalog is the one stop shop for selecting items to be
+provisioned and pieced together. It contains not only basic container
+and vm options but also tailored services for SQL databases, NoSQL
+databases, cache stores, message busses, web servers, and even full
+fledged apps. The list contains a lot of items to choose from and they
+are represented to the user based on what provisioning engines are
+enabled and integrated in the |morpheus| environment.</p>
+<p>To get started, simply click the <code class="docutils literal"><span class="pre">+</span> <span class="pre">Add</span> <span class="pre">Instance</span></code> button in the upper
+right of the <code class="docutils literal"><span class="pre">Provisioning</span> <span class="pre">-&gt;</span> <span class="pre">Instances</span></code> section. A modal will display
+allowing the catalog to be searched. Once an item is selected it is just
+a matter of following the steps through the wizard.</p>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last">The instance catalog can be customized via role based access control thereby restricting access to non sanctioned catalog items, as well as added to via the <code class="docutils literal"><span class="pre">Provisioning</span> <span class="pre">-&gt;</span> <span class="pre">Library</span></code> section. It is completely customizable.</p>
+</div>
+<p>The next step will ask for a Group and Cloud to be selected. The Group
+is an abstract representation that can contain multiple cloud
+integrations. These cloud integrations can also be in multiple groups
+and is also useful for using role based access control to restrict
+provisioning access and set retainment policies. If the environment is
+new and these do not yet exist, It may be advisable to refer to the main
+section on Getting started by setting up some cloud integrations and
+infrastructure first. The wizard continues by allowing us to choose a
+name for the instance as well as an environment.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Currently the Environment option is mostly useful for presenting the user with informative metadata around the instance when coming back to it later.</p>
+</div>
+<p>Moving on, it is now time to configure the Instance. Depending on the
+option that was chosen and the Instance Configuration that is chosen
+fields will change. This can include cloud specific fields (i.e.
+Datastore for Vmware or Network). There will also be options like
+initial username. Some of these fields are optional and will be
+represented as such.</p>
+<p>Configuration options provided in this screen are very powerful. An
+example is Mysql where a Master/Slave or Master/Master layout can be
+selected. These configurations will automatically deploy two MySQL vms
+or containers and link them together to provide replication. These types
+of configurations exist for a wide range of instance types and are
+optimized for high performance and scale. It is even possible to
+provision entire sharded Mongo clusters.</p>
+<p>One last step before the instance can be provisioned is the
+<code class="docutils literal"><span class="pre">Automation</span></code> step. This wizard step may or may not appear depending on
+the capabilities of the instance type or previous configurations in the
+account. It is here one can easily select a post provisioning workflow
+to run ( see more on Tasks and Workflows), assign a load balancer, or
+even configure the backup job that gets created.</p>
+<p>Now that the steps are completed for provisioning the selected instance
+type , simply review your selections and complete. The instance will
+automatically show up in the instances list and its provisioning state
+will be represented. Depending on what was provisioned this step can
+range from seconds to minutes (typically a container configuration will
+be rather quick if the instance type has previously been provisioned
+before.)</p>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, jw.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

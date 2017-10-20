@@ -1,0 +1,289 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>CentOS &mdash; jwtest 1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../../_static/my_theme.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="../../genindex.html"/>
+        <link rel="search" title="Search" href="../../search.html"/>
+    <link rel="top" title="jwtest 1 documentation" href="../../index.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html">
+          
+
+          
+            
+            <img src="../../_static/logo.svg" class="logo" />
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../provisioning/provisioning.html">Provisioning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../infrastructure/infrastructure.html">Infrastructure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../administration/administration.html">Administration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../monitoring/monitoring.html">Monitoring</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../logs/logging.html">Logs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../backups/backups.html">Backups</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../operations/operations.html">Operations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../services/services.html">Services</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../integration_guides/integration_guides.html">Integration Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../faq/faqs.html">FAQ’s</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../release_notes/release_notes.html">Release Notes</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">jwtest</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+      <li>CentOS</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/getting_started/installation/centos.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="centos">
+<h1>CentOS<a class="headerlink" href="#centos" title="Permalink to this headline">¶</a></h1>
+<p>To get started installing |morpheus| on CentOS/RHEL a few preparatory items should be addressed first.</p>
+<ol class="arabic simple">
+<li>Configure firewalld to allow access from users on port 80 or 443 (Or remove it if not required).</li>
+<li>Make sure the machine is self resolvable to its own hostname.</li>
+</ol>
+<p>For RHEL: In order for the guacamole service (remote console) to properly install some additional optional repositories first need added.</p>
+<ul class="simple">
+<li><strong>RHEL 7.x Amazon:</strong>
+<code class="docutils literal"><span class="pre">yum-config-manager</span> <span class="pre">--enable</span> <span class="pre">rhui-REGION-rhel-server-optional</span></code></li>
+<li><strong>RHEL 7.x:</strong>
+<code class="docutils literal"><span class="pre">yum-config-manager</span> <span class="pre">--enable</span> <span class="pre">rhel-7-server-optional-rpms</span></code></li>
+</ul>
+<p>For Amazon users a redhat subscription is not required if the appropriate yum REGION repository is added instead as demonstrated above.</p>
+<div class="admonition important">
+<p class="first admonition-title">Important</p>
+<p class="last">If the machine is unable to resolve its own hostname (<code class="docutils literal"><span class="pre">nslookup</span> <span class="pre">hostname</span></code>) some installation commands will be unable to verify service health during installation and fail.</p>
+</div>
+<p>#. Next simply download the relevant <code class="docutils literal"><span class="pre">.rpm</span></code> package for installation. This package can be acquired from your account rep or via a free trial
+request from <a class="reference external" href="https://www.morpheushub.com">https://www.morpheushub.com</a>.</p>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last">Use the <code class="docutils literal"><span class="pre">wget</span></code> command to directly download the package to your</p>
+</div>
+<p>appliance server. i.e. <code class="docutils literal"><span class="pre">wget</span> <span class="pre">https://downloads.gomorpheus.com/path/to/package.rpm</span></code></p>
+<ol class="arabic simple">
+<li>Next we must install the package onto the machine and configure the morpheus services:</li>
+</ol>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>sudo sudo rpm -i morpheus-appliance-x.x.x-1.x86<span class="se">\_</span><span class="m">64</span>.rpm
+sudo morpheus-ctl reconfigure
+</pre></div>
+</div>
+<ol class="arabic simple">
+<li>Once the installation is complete the web interface will automatically start up. By default it will be resolvable at <code class="docutils literal"><span class="pre">https://your_machine_name</span></code> and in many cases this may not be resolvable from your browser. The url can be changed by editing <code class="docutils literal"><span class="pre">/etc/morpheus/morpheus.rb</span></code> and changing the value of <code class="docutils literal"><span class="pre">appliance_url</span></code>. After this has been changed simply run :</li>
+</ol>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>sudo morpheus-ctl reconfigure
+sudo morpheus-ctl stop morpheus-ui
+sudo morpheus-ctl start morpheus-ui
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The <code class="docutils literal"><span class="pre">morpheus-ui</span></code> can take 2-3 minutes to startup before it becomes available.</p>
+</div>
+<p>There are additional post install settings that can be viewed in the Advanced section of the guide.</p>
+<p>Once the browser is pointed to the appliance a first time setup wizard will be presented. Please follow the on screen instructions by creating the master account. From there you will be presented with the license settings page where a license can be applied for use (if a license is required you may request one or purchase one by contacting your sales representative).</p>
+<p>More details on setting up infrastructure can be found throughout this guide.</p>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last">If any issues occur it may be prudent to check the morpheus log for details at <code class="docutils literal"><span class="pre">/var/log/morpheus/morpheus-ui/current</span></code>.</p>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, jw.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

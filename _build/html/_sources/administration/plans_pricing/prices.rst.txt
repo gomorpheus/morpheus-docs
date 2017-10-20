@@ -1,0 +1,71 @@
+Prices
+------
+
+.. Overview
+
+Price Types
+-----------
+
+- Everything
+
+  - One price for all resources Memory, CPU, RAM, and Disks 
+
+- Memory + CPU
+- Memory Only
+- Cores Only
+- Disk Only
+- Platform
+- Software
+
+Price Units
+-----------
+
+-  Minute
+-  Hour
+-  Day
+-  Month
+-  Year
+-  Two Year
+-  Three Year
+-  Four Year
+-  Five Year
+
+Currency
+--------
+
+-  AUD
+-  CHF
+-  DKK
+-  EUR
+-  GBP
+-  IDR
+-  ILS
+-  MAD
+-  NOK
+-  NZD
+-  ROL
+-  SEK
+-  TRL
+-  USD
+-  XAF
+-  XCD
+-  XOF
+-  XPF
+
+Cost
+----
+
+The base cost of the resource(s). The Price will match the Cost unless a
+Price Adjustment is added.
+
+Price Adjustment
+----------------
+
+None
+  Default, no markup added and Price will match Cost
+Fixed Markup
+  A fixed amount added to the Cost. Price will equal Cost + Markup.
+Percentage Markup
+  Adds a percentage markup to Cost. Price equals `Cost + (Cost x Markup %)`
+Custom Price
+  Sets a Price independent from the Cost. If the Cost changes, a Custom Price will not.

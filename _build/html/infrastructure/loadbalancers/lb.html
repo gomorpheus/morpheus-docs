@@ -1,0 +1,361 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Load Balancers &mdash; jwtest 1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../../_static/my_theme.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="../../genindex.html"/>
+        <link rel="search" title="Search" href="../../search.html"/>
+    <link rel="top" title="jwtest 1 documentation" href="../../index.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html">
+          
+
+          
+            
+            <img src="../../_static/logo.svg" class="logo" />
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../getting_started/getting_started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../provisioning/provisioning.html">Provisioning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../infrastructure.html">Infrastructure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../administration/administration.html">Administration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../monitoring/monitoring.html">Monitoring</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../logs/logging.html">Logs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../backups/backups.html">Backups</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../operations/operations.html">Operations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../services/services.html">Services</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../integration_guides/integration_guides.html">Integration Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../faq/faqs.html">FAQ’s</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../release_notes/release_notes.html">Release Notes</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">jwtest</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+      <li>Load Balancers</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/infrastructure/loadbalancers/lb.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="load-balancers">
+<h1>Load Balancers<a class="headerlink" href="#load-balancers" title="Permalink to this headline">¶</a></h1>
+<p><code class="docutils literal"><span class="pre">Infrastructure</span> <span class="pre">-&gt;</span> <span class="pre">Load</span> <span class="pre">Balancers</span></code></p>
+<div class="section" id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
+<p>|morpheus| can provision VM or Container HaProxy Load Balancers, Amazon Elastic and Application Load Balancers, Azure Load Balancers, and integrates with several external Load Balancers, including F5, A10, Citrix, and AVI.</p>
+<p>Once created or integrated, Load Balancers are available as an option to be added during provision time or post-provisioning.</p>
+<p>Once a Load Balancer is added to an instance, you can manually scale or configure auto-scaling based on thresholds or schedules, and burst across clouds with cloud priority.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">HaProxy VM Load Balancer option, Load Balancer detail pages, Balance Mode, Sticky Mode and Shared VIP address option are available in |morpheus| 2.11.3+.</p>
+</div>
+<p>In the Load Balancers page there are two sections:</p>
+<dl class="docutils">
+<dt>Load Balancers</dt>
+<dd>View or edit existing Load Balancers, add new Load Balancers.</dd>
+<dt>Virtual Servers</dt>
+<dd>View and link to Instances that are attached to load balancers.</dd>
+</dl>
+</div>
+<div class="section" id="id1">
+<h2>Load Balancers<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<p>The Load Balancers tab list currently available Load Balancers, which you can select, edit or delete, and is where you can create new or integrate with external Load Balancers.</p>
+<div class="section" id="add-a-new-load-balancer">
+<h3>Add a new Load Balancer<a class="headerlink" href="#add-a-new-load-balancer" title="Permalink to this headline">¶</a></h3>
+<p>Select + LOAD BALANCER, chose an option, and fill in the required information:</p>
+<dl class="docutils">
+<dt>A10 (aXAPI v3)</dt>
+<dd><ul class="first last simple">
+<li>API Host</li>
+<li>API Port</li>
+<li>Username</li>
+<li>Password</li>
+<li>Internal IP</li>
+<li>Public IP</li>
+<li>VIP Address</li>
+<li>VIP Port</li>
+</ul>
+</dd>
+<dt>Amazon ALB</dt>
+<dd><ul class="first last simple">
+<li>Scheme</li>
+<li>Internal</li>
+<li>Internet-Facing</li>
+<li>Amazon Subnets (Select + to add additional)
+* Specify the subnets to enable for your load balancer. You can specify only one subnet per Availability Zone. You must specify subnets from at least two Availability Zones to increase the availability of your load balancer.</li>
+<li>Amazon Security Groups (Select + to add additional)</li>
+</ul>
+</dd>
+<dt>AVI</dt>
+<dd><ul class="first last simple">
+<li>API Host</li>
+<li>API Port</li>
+<li>Username</li>
+<li>Password</li>
+<li>Internal IP</li>
+<li>Public IP</li>
+<li>VIP Address</li>
+<li>VIP Port</li>
+</ul>
+</dd>
+<dt>Azure Load Balancer</dt>
+<dd><ul class="first last simple">
+<li>Cloud</li>
+<li>Resource Group
+* Populated from cloud selection</li>
+</ul>
+</dd>
+<dt>Citrix NetScaler</dt>
+<dd><ul class="first last simple">
+<li>API Host</li>
+<li>API Port</li>
+<li>Username</li>
+<li>Password</li>
+</ul>
+</dd>
+<dt>F5 BigIP (v11.4+)</dt>
+<dd><ul class="first last simple">
+<li>API Host</li>
+<li>API Port</li>
+<li>Username</li>
+<li>Password</li>
+<li>Managment URL</li>
+</ul>
+</dd>
+<dt>F5 LineRate</dt>
+<dd><ul class="first last simple">
+<li>API Host</li>
+<li>API Port</li>
+<li>Username</li>
+<li>Password</li>
+<li>Internal IP</li>
+<li>Public IP</li>
+<li>VIP Address</li>
+<li>VIP Port</li>
+</ul>
+</dd>
+<dt>HaProxy Container (Internal, will create a HaProxy container, must have available docker host to provision to)</dt>
+<dd><ul class="first last simple">
+<li>Group</li>
+<li>Cloud</li>
+<li>Name</li>
+<li>Description</li>
+<li>Plan
+* Select the size of HaProxy container to be provisioned</li>
+</ul>
+</dd>
+</dl>
+<p>//HAProxy VM (Internal, will provision a HaProxy VM into selected cloud)
+//Group
+//Cloud
+//Name
+//Description
+//Plan- Select size of HaProxy VM to be provisioned</p>
+<p>Upon saving your new Load Balancer will be added to the Load Balancers list and available in the Load Balancer dropdown in the Provisioning Wizard Automation Section for Instance Types that have scaling enabled.</p>
+</div>
+<div class="section" id="load-balancer-detail-pages">
+<h3>Load Balancer Detail Pages<a class="headerlink" href="#load-balancer-detail-pages" title="Permalink to this headline">¶</a></h3>
+<p>In the main Load Balancer page, select an existing Load Balancer to go to that Load Balancers Details Page, which lists Stats, Settings, Actions and Virtual Servers for that load balancer.</p>
+</div>
+</div>
+<div class="section" id="virtual-servers">
+<h2>Virtual Servers<a class="headerlink" href="#virtual-servers" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, jw.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

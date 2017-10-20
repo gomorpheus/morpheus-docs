@@ -1,0 +1,292 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>v2.11.4 &mdash; jwtest 1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../_static/my_theme.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
+    <link rel="top" title="jwtest 1 documentation" href="../index.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html">
+          
+
+          
+            
+            <img src="../_static/logo.svg" class="logo" />
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/getting_started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../provisioning/provisioning.html">Provisioning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../infrastructure/infrastructure.html">Infrastructure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../administration/administration.html">Administration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../monitoring/monitoring.html">Monitoring</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../logs/logging.html">Logs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../backups/backups.html">Backups</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../operations/operations.html">Operations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../services/services.html">Services</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../integration_guides/integration_guides.html">Integration Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faq/faqs.html">FAQ’s</a></li>
+<li class="toctree-l1"><a class="reference internal" href="release_notes.html">Release Notes</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">jwtest</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>v2.11.4</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/release_notes/2_11_4.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="v2-11-4">
+<h1>v2.11.4<a class="headerlink" href="#v2-11-4" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="new-features">
+<h2>New Features<a class="headerlink" href="#new-features" title="Permalink to this headline">¶</a></h2>
+<dl class="docutils">
+<dt>Network IP Override</dt>
+<dd>Networks can now be configured to allow overriding IP configuration and selecting between DHCP, Static IP entry, or IP Pools at provision time.</dd>
+<dt>Windows License Management</dt>
+<dd>Windows license can now be assigned to virtual images a applied during provisioning. License can be managed in the new Licenses section under Admin - Provisioning.</dd>
+<dt>Salt Windows Support</dt>
+<dd>Salt Minions can now be installed on Windows Operating Systems via the Automation Engine. The source repo can also be customized and the minions can be successfully registered to both syndic master layouts as well as standard master layouts</dd>
+<dt>Xen Reconfigure</dt>
+<dd>Memory, Cores, Disk Size, Disks, and Networks can now be reconfigure on Xen instances and Hosts.</dd>
+<dt>Debian 8 OS Support</dt>
+<dd>Support for Debian 8 and 9 added to Agent. Debian 8.8 vmdk added to |morpheus| Catalog.</dd>
+<dt>Cloud Sync Update</dt>
+<dd>90%+ reduction in VMware cloud sync time. Last Sync date and Sync Duration added to cloud detail pages.</dd>
+<dt>Agent time normalization</dt>
+<dd>Logging and stats data is now converted to appliance time in the cases VM time is offset.</dd>
+<dt>Added support for querying ESXi hosts for Virtual Switch UUID::</dt>
+<dd>vCenter user used for VMware cloud integration no longer requires propagating datacenter permissions for provisioning.</dd>
+<dt>Hostname routing added for Amazon ALB’s</dt>
+<dd>Allows multiple hosts to share the same port</dd>
+<dt>Shutdown renewals</dt>
+<dd>Shutdown policy extension lease timeframe now begins at the time of extension approval for instances already shut down by the policy, rather than from the end of the previous lease.</dd>
+</dl>
+</div>
+<div class="section" id="additional-updates">
+<h2>Additional updates:<a class="headerlink" href="#additional-updates" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Source column added to Virtual Images list page</li>
+<li>Tenants columns added to Networks list view</li>
+<li>Cloud Status column added to Cloud list view</li>
+<li>Improvements to host cpu, power and memory statistics.</li>
+<li>SEK currency support added</li>
+<li>Asynchronous cloud delete added</li>
+</ul>
+</div>
+<div class="section" id="fixes">
+<h2>Fixes<a class="headerlink" href="#fixes" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Fix for agent install and stop/start in inventoried AWS instances that are converted to Managed.</li>
+<li>Fix for Openstack disabled forced SSL validation</li>
+<li>Fix for Nutanix image sync issue with region codes</li>
+<li>Scaling improvements</li>
+<li>Windows agent install improvements</li>
+<li>Fix for editing Appliance Backup settings</li>
+<li>Fix for Role Permissions: Apps = User</li>
+<li>Fix for Max Storage policy enforcement</li>
+<li>Fix for uploaded OVA’s Virtual Image type</li>
+<li>Linux ssh console aspect ratio change in 2.11.3 reverted</li>
+<li>Network Groups improvements</li>
+<li>Security Improvements</li>
+</ul>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, jw.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

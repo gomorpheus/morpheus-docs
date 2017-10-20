@@ -1,0 +1,8 @@
+
+Advanced Configuration
+======================
+
+|morpheus| provides several more advanced configuration capabilities when operating in tougher network environments.
+
+.. include:: advanced/proxies.rst
+.. include:: advanced/ha.rst

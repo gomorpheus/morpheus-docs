@@ -1,0 +1,20 @@
+ESXi
+====
+
+.. IMPORTANT:: The VMware ESXi integration is for adding a single ESXi / vSphere Hypervisor host. If you have vCenter please use the VMWare VCenter cloud type.
+
+To get started with VMware ESXi, simply add a VMware ESXi Cloud in either the Infrastructure -> Clouds or Infrastructure -> Groups section.
+
+#. Select ``+ Create Cloud`` Button
+#. Select ESXi from the Add Cloud modal
+#. Select NEXT
+#. Provide the following information.
+
+   * Cloud Name
+   * ESXi Host name or IP address
+   * Username ( This is normally root )
+   * Password
+
+.. NOTE:: If you receive the message "Error! Invalid cloud config" Please ensure you have ssh enabled on the vSphere Hypervisor / ESXi. To do this please follow the these instructions on how to set-up ssh on vSphere Hypervisor / ESXi
+
+.. include:: advanced_options.rst

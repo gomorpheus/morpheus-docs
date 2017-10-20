@@ -1,0 +1,13 @@
+{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 [[variables]]\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 === Variables\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 The following are the map structures passed to scripts and templates during provisioning. They can currently be used inside of a {\f1 <%= %>} block.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 PowerShell Example: [source,shell] {\f1 $app_id = "<%= instance.metadata.app_id %>"}\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Bash Example: [source,bash] {\f1 HOSTNAME="<%= container.server.hostname %>"}\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 NOTE: customOptions are user defined as Option Types or Option Lists in custom Library items.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs32 [source,bash]\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 instance \{ instanceTypeName, instanceTypeCode, provisionType, instanceVersion, plan, name, displayName, description, environmentPrefix, hostname, domainName, firewallEnabled, status, userStatus, networkLevel, instanceLevel, deployGroup, instanceContext, autoScale, statusMessage, expireDate, tags, storage, memory, cores, configId, configGroup, configRole containers:[], metadata:[], evars:[] \} ---- [source,bash] ---- container \{ containerTypeName, containerTypeCode, containerTypeShortName, provisionType, dataPath, logsPath, configPath, planCode, dateCreated, status, environmentPrefix, version, image, internalHostname, hostname, domainName, storage, memory, cores, internalIp, externalIp, sshHost, hostMountPoint, configId, configGroup, configRole, serverId, server:\{\} \} ---- [source,bash] ---- server \{ serverTypeName, serverTypeCode, parentServerId, plan, visibility, osTypeCode, sourceImageId, name, displayName, internalName, category, description internalId, externalId, platform, platformVersion, agentVersion, nodePackageVersion, sshHost, sshPort, sshUsername, consoleType, consoleHost, consolePort, consoleUsername, internalSshUsername, internalIp, externalIp, osDevice, dataDevice, lvmEnabled, apiKey, softwareRaid, status, powerState, dateCreated, lastAgentUpdate, serverType, osType, commType, managed, agentInstalled, toolsInstalled, hostname, domainName, statusMessage, maxStorage, maxMemory, maxCores, macAddress, serverVendor, serverModel, serialNumber, tags, configId, configGroup, configRole \} ---- [source,bash] ---- cloud \{ name, code, location, cloudTypeName, cloudTypeCode, domainName, scalePriority, firewallEnabled, regionCode, agentMode, datacenterId \} ---- [source,bash] ---- group \{ code, name, location, datacenterId \} ---- [source,bash] ---- customOptions \{ customOptions.fieldName \} ----\par}
+}
