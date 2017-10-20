@@ -6,7 +6,11 @@ Overview
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 Backups are automatically configured and performed on each new {morpheus}-provisioned Instance. Users can edit the frequency of backups. Administrators can define destination targets where backups are stored an perform all user-based tasks.
+=======
+Backups are automatically configured and performed on each new |morpheus| -provisioned Instance. Users can edit the frequency of backups. Administrators can define destination targets where backups are stored an perform all user-based tasks.
+>>>>>>> 3.0.1
 =======
 Backups are automatically configured and performed on each new |morpheus| -provisioned Instance. Users can edit the frequency of backups. Administrators can define destination targets where backups are stored an perform all user-based tasks.
 >>>>>>> 3.0.1
