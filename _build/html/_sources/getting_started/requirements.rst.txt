@@ -22,7 +22,7 @@ Base Requirements
    (HTTPS)
 -  Inbound connectivity access from provisioned vm's and container hosts
    on ports 443 and 80 (needed for agent communication)
--  Internet Connectivity from Appliance (To download from {morpheus}'
+-  Internet Connectivity from Appliance (To download from |morpheus| '
    public docker repositories and virtual image catalog)
 -  Superuser privileges via the sudo command for the user installing the
    |morpheus| Appliance package.
@@ -87,7 +87,7 @@ Components
 ----------
 
 The Appliance Server automatically installs several components for the
-operation of {morpheus}. This includes:
+operation of |morpheus| . This includes:
 
 -  RabbitMQ (Messaging)
 -  MySQL (Logistical Data store)

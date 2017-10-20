@@ -48,13 +48,13 @@ NOTE: |morpheus| even supports integrating with CSP based accounts in Azure (typ
 ** Resource Group(s)
 ** Storage Account(s)
 
-NOTE: |morpheus| v2.10.3 added support for multiple Resource Groups and Storage Accounts per cloud, making our Azure integration more capable and easier to configure. Prior versions of |morpheus| supported one resource group and one storage account per cloud, with the security group and network selection limited to the scoped Resource Group. If you are on an earlier version of {morpheus}, please note you will need to add an Azure cloud integration for each Resource Group and Storage Account you would like to use.
+NOTE: |morpheus| v2.10.3 added support for multiple Resource Groups and Storage Accounts per cloud, making our Azure integration more capable and easier to configure. Prior versions of |morpheus| supported one resource group and one storage account per cloud, with the security group and network selection limited to the scoped Resource Group. If you are on an earlier version of |morpheus| , please note you will need to add an Azure cloud integration for each Resource Group and Storage Account you would like to use.
 
 === Azure Active Directory Credentials
 
-If you do not already have the Azure Active Directory credentials required to add an Azure cloud to {morpheus}, use the steps below to obtain them.
+If you do not already have the Azure Active Directory credentials required to add an Azure cloud to |morpheus| , use the steps below to obtain them.
 
-IMPORTANT: Microsoft recently added support for Active Directory application configuration in the new Azure portal. Previously, users had to use the old portal to get the required credentials to integrate Azure with {morpheus}. The instructions below are updated for the new portal. Microsoft also changed the naming conventions of the credentials:
+IMPORTANT: Microsoft recently added support for Active Directory application configuration in the new Azure portal. Previously, users had to use the old portal to get the required credentials to integrate Azure with |morpheus| . The instructions below are updated for the new portal. Microsoft also changed the naming conventions of the credentials:
 
 .Old and New Portal Naming Conventions
 [width="90%",frame="topbot",options="header,footer"]
@@ -67,7 +67,7 @@ IMPORTANT: Microsoft recently added support for Active Directory application con
 
 === Creating an Azure Active Directory Application
 
-If you do not have an existing Azure Active Directory application for {morpheus}, you will need to create a new on by:
+If you do not have an existing Azure Active Directory application for |morpheus| , you will need to create a new on by:
 
 . Log into the Azure portal
 . Select "Azure Active Directory"
@@ -93,7 +93,7 @@ While still in the Active Directory Section:
 
 . Select Properties
 . Copy the Directory ID
-. Store/Paste for use as the Tenant ID when Adding your Azure cloud in {morpheus}
+. Store/Paste for use as the Tenant ID when Adding your Azure cloud in |morpheus| 
 
 
 image::images/newazure-044cf.png[]
@@ -103,7 +103,7 @@ image::images/newazure-044cf.png[]
 . Select App Registrations
 . Select your Active Directory Application
 . Copy the Application ID
-. Store/Paste for use as the Client ID when Adding your Azure cloud in {morpheus}
+. Store/Paste for use as the Client ID when Adding your Azure cloud in |morpheus| 
 
 image::images/newazure-3c6fa.png[]
 
@@ -116,7 +116,7 @@ While still in your Active Directory Application:
 . Select a duration
 . Select save
 . Copy the Key Value
-. Store/Paste for use as the Client ID when Adding your Azure cloud in {morpheus}
+. Store/Paste for use as the Client ID when Adding your Azure cloud in |morpheus| 
 
 IMPORTANT: Copy the key value. You won't be able to retrieve after you leave this blade.
 
@@ -131,7 +131,7 @@ The last credential required for the |morpheus| Azure cloud integration is the A
 . Select Resource Groups
 . Select a Resource Group (instruction below if you do not have an existing resource group)
 . Copy the Subscription ID
-. Store/Paste for use as the Subscription ID when Adding your Azure cloud in {morpheus}
+. Store/Paste for use as the Subscription ID when Adding your Azure cloud in |morpheus| 
 +
 image::images/newazure-e446f.png[]
 
@@ -157,13 +157,13 @@ IMPORTANT: Be sure to select "OK" at the bottom of the Add Access pane or the us
 
 image::images/newazure-560be.png[]
 
-You now have the required Credentials to add an Azure cloud integration into {morpheus}.
+You now have the required Credentials to add an Azure cloud integration into |morpheus| .
 
 IMPORTANT: You will also need to have existing Network Security Group(s), Virtual Networks(s) and Storage Accounts(s). Instructions for creating these can be found later in this article.
 
-=== Add Azure cloud in {morpheus}
+=== Add Azure cloud in |morpheus| 
 
-Azure is now ready to be added into {morpheus}. Ensure you have the noted Subscription ID, Tenant ID, Client ID, and Client Secret accessible.
+Azure is now ready to be added into |morpheus| . Ensure you have the noted Subscription ID, Tenant ID, Client ID, and Client Secret accessible.
 
 In Infrastructure - Clouds, select "+ Create Cloud" and select Azure from the cloud widget.
 

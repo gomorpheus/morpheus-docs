@@ -30,7 +30,7 @@ To get started this a few prerequisites must first be met.  The Nutanix cluster 
 Adding a Nutanix Cloud
 ----------------------
 
-The Nutanix cluster should be available and responding to the https://fqdn:9440 url for authentication by {morpheus}.
+The Nutanix cluster should be available and responding to the https://fqdn:9440 url for authentication by |morpheus| .
 
 API URL
   example: https://10.30.21.220:9440
@@ -39,7 +39,7 @@ USERNAME
 PASSWORD
   Nutanix admin password
 Inventory Existing Instances
-  If enabled, existing Virtual Machines will be inventoried and appear as unmanaged Virtual Machines in {morpheus}.
+  If enabled, existing Virtual Machines will be inventoried and appear as unmanaged Virtual Machines in |morpheus| .
 
 .. include:: advanced_options.rst
 

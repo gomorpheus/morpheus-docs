@@ -4,7 +4,7 @@ Policies
 Overview
 --------
 
-Policies add governance, ease of use, cost-savings, and auditing features to {morpheus}. Policies can be created in the Policies tabs in Groups and Clouds. Policy generation is a role permission.
+Policies add governance, ease of use, cost-savings, and auditing features to |morpheus| . Policies can be created in the Policies tabs in Groups and Clouds. Policy generation is a role permission.
 
 Policies apply towards any instance provisioned into a group or cloud with active policies. Cloud policies will override matching or conflicting group policies during provisioning.
 

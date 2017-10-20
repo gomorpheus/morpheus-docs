@@ -16,7 +16,7 @@ Creating Licenses
    * License Type
       Windows
    * Name
-      Name of the License in {morpheus}
+      Name of the License in |morpheus| 
    * License Key
       Enter the License Key
    * Org Name
@@ -28,7 +28,7 @@ Creating Licenses
    * Copies
       The Number of copies available on the License
    * Description
-      License description displayed in the Licenses list in {morpheus}. Helpful for identifying License after creation
+      License description displayed in the Licenses list in |morpheus| . Helpful for identifying License after creation
    * Virtual Images
       Search for existing Virtual Images by name and select to attach the image to the license.
           .. NOTE:: Virtual Images are synced from Clouds or added in the `Provisioning -> Virtual Images` section.

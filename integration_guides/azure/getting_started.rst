@@ -17,17 +17,17 @@ There are two pieces of information needed from this page. The Client ID will be
 
 .. image:: azure/keys.png[caption="Figure 3: ", title="Azure Application Detail Key Management", alt="Azure Application Detail Key Management"]
 
-The next piece of information needed is the Tenant ID to be used by {morpheus}. This can be one of the more difficult pieces to acquire via the Azure UI. To do so navigate back to the 'Applications' list section under 'Active Directory' and simply click 'View Endpoints' on the bottom of the screen:
+The next piece of information needed is the Tenant ID to be used by |morpheus| . This can be one of the more difficult pieces to acquire via the Azure UI. To do so navigate back to the 'Applications' list section under 'Active Directory' and simply click 'View Endpoints' on the bottom of the screen:
 
 .. image:: azure/endpoints.png[caption="Figure 4: ", title="Azure Active Directory View Endpoints", alt="Azure Active Directory View Endpoints]
 
-A dialog should appear containing several endpoint links. In these links your Tenant ID is listed as a GUID. Copy this as the Tenant ID for use when adding a cloud to {morpheus}:
+A dialog should appear containing several endpoint links. In these links your Tenant ID is listed as a GUID. Copy this as the Tenant ID for use when adding a cloud to |morpheus| :
 
 image::azure/endpoints_dialog.png[caption="Figure 5: ", title="Azure Active Directory Tenant ID", alt="Azure Active Directory View Endpoints Tenant ID"]
 
 Almost everything necessary to setup Azure has been acquired, but the next step involves granting permission to the |morpheus| application to access resources and subscriptions within Azure. Now it is time to login to the new Azure portal via https://portal.azure.com[https://portal.azure.com]. Once logged in simply navigate to the subscriptions area of the portal.
 
-.. NOTE:: The Subscription ID will be necessary when adding a cloud into {morpheus}, so it is important to write this id down.
+.. NOTE:: The Subscription ID will be necessary when adding a cloud into |morpheus| , so it is important to write this id down.
 
 Once the subscription is selected, go into its 'Settings' and navigate to the 'Users' section in the right hand navigation. This is where things get a bit confusing in the azure portal. We need to add a new Owner to the account but instead of adding a User we are actually going to be adding the application we created in active directory earlier.
 
@@ -37,7 +37,7 @@ Once add owner has been selected, a list of users in active directory can be see
 
 .. image:: azure/add_app.png[caption="Figure 7: ", title="Azure Add Application User", alt="Azure Add Application User"]
 
-Now |morpheus| will have permission to access resources and APIs to utilize Azure properly. All that is needed is to simply fill out the add cloud form in {morpheus}. However, there are a few remaining prerequisites when it comes to setting up Azure. It is necessary for there to be both a Resource Group in the Azure Portal, A Network Security Group, A Virtual Network, and a Storage Account. The Storage Account should be configured as follows:
+Now |morpheus| will have permission to access resources and APIs to utilize Azure properly. All that is needed is to simply fill out the add cloud form in |morpheus| . However, there are a few remaining prerequisites when it comes to setting up Azure. It is necessary for there to be both a Resource Group in the Azure Portal, A Network Security Group, A Virtual Network, and a Storage Account. The Storage Account should be configured as follows:
 
 .. image:: azure/storage_account.png[caption="Figure 8: ", title="Azure Add Storage Account Configuration", alt="Azure Add Storage Account Configuration"]
 

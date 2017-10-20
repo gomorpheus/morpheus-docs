@@ -45,7 +45,7 @@ Configure ServiceNow integration for SNOW Approvals
 #. Select **ServiceNow** from the Type dropdown in the Integration modal and enter:
 
    - Name
-      Name of the integration in {morpheus}
+      Name of the integration in |morpheus| 
    - Enabled
       Leave checked to enable the integration.
    - Host
@@ -79,7 +79,7 @@ Create Approval Policies
    * ServiceNow Approvals
       Approval requests will be managed with ServiceNow (SNOW). Please note a ServiceNow integration (Admin: Integrations) must be configured prior to SNOW Approval policy generation.
 
-      * For ServiceNow Approvals, select the appropriate ServiceNow workflow for this policy. Please note the workflows presented are created in ServiceNow and synced with {morpheus}.
+      * For ServiceNow Approvals, select the appropriate ServiceNow workflow for this policy. Please note the workflows presented are created in ServiceNow and synced with |morpheus| .
 
 #. Add the |morpheus| Accounts to which this policy will apply, or leave the Accounts field blank to apply to all accounts.
 #. Save

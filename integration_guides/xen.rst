@@ -9,7 +9,7 @@ Add a Xen Server Cloud
 #. Enter the following into the Create Cloud modal:
 
 Name
-  Name of the Cloud in {morpheus}
+  Name of the Cloud in |morpheus| 
 Location
   Description field for adding notes on the cloud, such as location.
 Visibility
@@ -21,7 +21,7 @@ USERNAME
 PASSWORD
   Xen Host Password
 Inventory Existing Instances
-  If enabled, existing Google Instances will be inventoried and appear as unmanaged Virtual Machines in {morpheus}.
+  If enabled, existing Google Instances will be inventoried and appear as unmanaged Virtual Machines in |morpheus| .
 
   .. NOTE:: |morpheus| scopes clouds to single regions. Multiple clouds can be added for multi-region support, and then optionally added to the same group.
 

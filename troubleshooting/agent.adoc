@@ -1,8 +1,8 @@
 === |morpheus| Agent Install Troubleshooting
 
-When provisioning and instance, there are some network and configuration requirements to successfully install the morpheus agent.  Typically when a vm instance is still in the provisioning phase long after the vm is up, the instance is unable to reach {morpheus}, or depending on agent install mode, |morpheus| is unable to reach the instance.
+When provisioning and instance, there are some network and configuration requirements to successfully install the morpheus agent.  Typically when a vm instance is still in the provisioning phase long after the vm is up, the instance is unable to reach |morpheus| , or depending on agent install mode, |morpheus| is unable to reach the instance.
 
-The most common reason an agent install fails is the provisioned instance cannot reach the |morpheus| Appliance via the appliance_url set in Admin -> Settings over both 443 and 80. When an instance is provisioned from {morpheus}, it must be able to reach the |morpheus| appliance via the appliance_url or the agent will not be installed.
+The most common reason an agent install fails is the provisioned instance cannot reach the |morpheus| Appliance via the appliance_url set in Admin -> Settings over both 443 and 80. When an instance is provisioned from |morpheus| , it must be able to reach the |morpheus| appliance via the appliance_url or the agent will not be installed.
 
 image::agent-7c9a2.png[]
 
@@ -70,7 +70,7 @@ While it should not be necessary to manually install an agent if the requirement
 
 ===== Linux
 
-. In {morpheus}, go to the vms host detail page in Infrastructure->Hosts->Virtual Machines you will see an API Key that is unique to that host.
+. In |morpheus| , go to the vms host detail page in Infrastructure->Hosts->Virtual Machines you will see an API Key that is unique to that host.
 
 . As root user, run: (replacing ${} with the relevant information)
 
@@ -88,9 +88,9 @@ While it should not be necessary to manually install an agent if the requirement
 
 . WinRM is used to install the agent from the |morpheus| appliance
 
-. The initial windows installer is {morpheus}AgentSetup.msi
+. The initial windows installer is |morpheus| AgentSetup.msi
 
-. Once the Windows agent is downloaded and installed with {morpheus}AgentSetup.msi the agent is located and runs from `/Program Files x86/Morphues/|morpheus| Windows Agent`
+. Once the Windows agent is downloaded and installed with |morpheus| AgentSetup.msi the agent is located and runs from `/Program Files x86/Morphues/|morpheus| Windows Agent`
 
 . Logs can be viewed in the Event Viewer under Applications and Services Logs  -> |morpheus| Windows Agent
 

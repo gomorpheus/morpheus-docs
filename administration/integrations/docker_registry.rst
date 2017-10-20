@@ -17,7 +17,7 @@ Adding a Docker Registry Integration
 #. Add the following:
 
    Name
-    Name for the Registry in {morpheus}
+    Name for the Registry in |morpheus| 
    Repository url
     Docker Registry url or IP address
    Username

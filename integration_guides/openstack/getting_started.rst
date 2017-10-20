@@ -2,7 +2,7 @@
 Getting Started
 ---------------
 
-Adding an Openstack cloud to |morpheus| is one of the simpler cloud integrations to get started with. First go to the `Infrastructure -> Clouds` section and click add cloud. From here there are several options including Metapod, Helion, and general Openstack. Any of these options will actually work and for the most part the branded Openstack options are represented to make it clearer to the user as to the capabilities of {morpheus}.
+Adding an Openstack cloud to |morpheus| is one of the simpler cloud integrations to get started with. First go to the `Infrastructure -> Clouds` section and click add cloud. From here there are several options including Metapod, Helion, and general Openstack. Any of these options will actually work and for the most part the branded Openstack options are represented to make it clearer to the user as to the capabilities of |morpheus| .
 
 .. image:: openstack/add_cloud.png[caption="Figure 1: ", title="Add Openstack Cloud form", alt="Add Openstack Cloud form"]
 
@@ -15,7 +15,7 @@ Saving this cloud integration should perform a verification step and close upon 
 Existing Instances
 ------------------
 
-|morpheus| provides several features regarding pulling in existing virtual machines and servers in an environment. Most cloud options contain a checkbox titled '*Inventory Existing Instances*'. When this option is selected, all VMs found within the specified scope of the cloud integration will be scanned periodically and Virtual Machines will be synced into {morpheus}. By default these virtual machines are considered 'unmanaged' and do not appear in the `Provisioning -> Instances` area but rather `Infrastructure -> Hosts -> Virtual Machines`. However, a few features are provided with regards to unmanaged instances. They can be assigned to various accounts if using a multitenant master account, however it may be best suited to instead assign the 'Resource Pool' to an account and optionally move all servers with regards to that pool (more on this later).
+|morpheus| provides several features regarding pulling in existing virtual machines and servers in an environment. Most cloud options contain a checkbox titled '*Inventory Existing Instances*'. When this option is selected, all VMs found within the specified scope of the cloud integration will be scanned periodically and Virtual Machines will be synced into |morpheus| . By default these virtual machines are considered 'unmanaged' and do not appear in the `Provisioning -> Instances` area but rather `Infrastructure -> Hosts -> Virtual Machines`. However, a few features are provided with regards to unmanaged instances. They can be assigned to various accounts if using a multitenant master account, however it may be best suited to instead assign the 'Resource Pool' to an account and optionally move all servers with regards to that pool (more on this later).
 A server can also be made into a managed server. During this process remote access is requested and an agent install is performed on the guest operating system. This allows for guest operations regarding log acquisition and stats. If the agent install fails, a server will still be marked as managed and an Instance will be created in `Provisioning`, however certain features will not function. This includes stats collection and logs.
 
 .. NOTE:: All Cloud data is resynchronized on a 5 minute interval. This includes Datastores, Resource Pools, Networks, Templates, and Virtual Machines.

@@ -4,7 +4,7 @@ Veeam Settings
 Enabled
   Enable the Veeam integration
 Default Backup Provider
-  Sets Veeam as the Default Backup Provider in {morpheus}. Backup Providers can also be configured per Backup.
+  Sets Veeam as the Default Backup Provider in |morpheus| . Backup Providers can also be configured per Backup.
 Visibility
   Sets visibility in multi-tenant |morpheus| environments:
 

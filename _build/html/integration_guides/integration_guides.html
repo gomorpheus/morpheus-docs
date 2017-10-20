@@ -247,7 +247,7 @@
 <h1>Integration Guides<a class="headerlink" href="#integration-guides" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="vmware-vcenter">
 <h2>VMware vCenter<a class="headerlink" href="#vmware-vcenter" title="Permalink to this headline">¶</a></h2>
-<p>VMware is a very common cloud integration choice supported by {morpheus}. They have provided a top notch virtualization solution and one might argue pioneered the virtualization space altogether. As such, many companies utilize this technology and all the features that come with it, so |morpheus| covers a broad feature set in Vcenter.</p>
+<p>VMware is a very common cloud integration choice supported by |morpheus| . They have provided a top notch virtualization solution and one might argue pioneered the virtualization space altogether. As such, many companies utilize this technology and all the features that come with it, so |morpheus| covers a broad feature set in Vcenter.</p>
 <p>=== Features</p>
 <ul class="simple">
 <li>Virtual Machine Provisioning</li>
@@ -330,13 +330,13 @@ include::vmware/advanced.rst</p>
 . Select <cite>+ Create Cloud</cite>
 . Select AWS
 . Enter the following:</p>
-<p>Name:: Name of the Cloud in {morpheus}
+<p>Name:: Name of the Cloud in |morpheus| 
 Location:: Description field for adding notes on the cloud, such as location.
 Visibility:: For setting cloud permissions in a multi-tenant environment. Not applicable in single tenant environments.</p>
 <p>Region:: Select AWS Region for the Cloud
 Access Key:: Access Key ID from AWS IAM User Security Credentials.
 Secret Key:: Secret Access Key associate with the Access Key ID.
-Inventory Existing Instances:: If enabled, existing EC2 Instances will be inventoried and appear as unmanaged Virtual Machines in {morpheus}.
+Inventory Existing Instances:: If enabled, existing EC2 Instances will be inventoried and appear as unmanaged Virtual Machines in |morpheus| .
 +
 . The AWS cloud is ready to be added to a group and saved. Additional configuration options available:</p>
 <p>=== Advanced Options</p>
@@ -391,10 +391,10 @@ Inventory Existing Instances:: If enabled, existing EC2 Instances will be invent
 <a href="#id5"><span class="problematic" id="id6">**</span></a>* Public IP assignment required for instances if |morpheus| Appliance is not able to communicate with Azure instances private ip’s.
 ** Resource Group(s)
 ** Storage Account(s)</p>
-<p>NOTE: |morpheus| v2.10.3 added support for multiple Resource Groups and Storage Accounts per cloud, making our Azure integration more capable and easier to configure. Prior versions of |morpheus| supported one resource group and one storage account per cloud, with the security group and network selection limited to the scoped Resource Group. If you are on an earlier version of {morpheus}, please note you will need to add an Azure cloud integration for each Resource Group and Storage Account you would like to use.</p>
+<p>NOTE: |morpheus| v2.10.3 added support for multiple Resource Groups and Storage Accounts per cloud, making our Azure integration more capable and easier to configure. Prior versions of |morpheus| supported one resource group and one storage account per cloud, with the security group and network selection limited to the scoped Resource Group. If you are on an earlier version of |morpheus| , please note you will need to add an Azure cloud integration for each Resource Group and Storage Account you would like to use.</p>
 <p>=== Azure Active Directory Credentials</p>
-<p>If you do not already have the Azure Active Directory credentials required to add an Azure cloud to {morpheus}, use the steps below to obtain them.</p>
-<p>IMPORTANT: Microsoft recently added support for Active Directory application configuration in the new Azure portal. Previously, users had to use the old portal to get the required credentials to integrate Azure with {morpheus}. The instructions below are updated for the new portal. Microsoft also changed the naming conventions of the credentials:</p>
+<p>If you do not already have the Azure Active Directory credentials required to add an Azure cloud to |morpheus| , use the steps below to obtain them.</p>
+<p>IMPORTANT: Microsoft recently added support for Active Directory application configuration in the new Azure portal. Previously, users had to use the old portal to get the required credentials to integrate Azure with |morpheus| . The instructions below are updated for the new portal. Microsoft also changed the naming conventions of the credentials:</p>
 <p>.Old and New Portal Naming Conventions
 [width=”90%”,frame=”topbot”,options=”header,footer”]
 <a href="#id7"><span class="problematic" id="id8">|</span></a>======================
@@ -404,7 +404,7 @@ Inventory Existing Instances:: If enabled, existing EC2 Instances will be invent
 <a href="#id17"><span class="problematic" id="id18">|</span></a>Client Secret|Key (Value)
 <a href="#id19"><span class="problematic" id="id20">|</span></a>======================</p>
 <p>=== Creating an Azure Active Directory Application</p>
-<p>If you do not have an existing Azure Active Directory application for {morpheus}, you will need to create a new on by:</p>
+<p>If you do not have an existing Azure Active Directory application for |morpheus| , you will need to create a new on by:</p>
 <p>. Log into the Azure portal
 . Select “Azure Active Directory”
 . Select “App Registrations”
@@ -423,13 +423,13 @@ image::images/newazure-8c7ca.png[]
 <p>While still in the Active Directory Section:</p>
 <p>. Select Properties
 . Copy the Directory ID
-. Store/Paste for use as the Tenant ID when Adding your Azure cloud in {morpheus}</p>
+. Store/Paste for use as the Tenant ID when Adding your Azure cloud in |morpheus| </p>
 <p>image::images/newazure-044cf.png[]</p>
 <p>=== Client ID/Application ID</p>
 <p>. Select App Registrations
 . Select your Active Directory Application
 . Copy the Application ID
-. Store/Paste for use as the Client ID when Adding your Azure cloud in {morpheus}</p>
+. Store/Paste for use as the Client ID when Adding your Azure cloud in |morpheus| </p>
 <p>image::images/newazure-3c6fa.png[]</p>
 <p>=== Client Secret/Key Value</p>
 <p>While still in your Active Directory Application:</p>
@@ -438,7 +438,7 @@ image::images/newazure-8c7ca.png[]
 . Select a duration
 . Select save
 . Copy the Key Value
-. Store/Paste for use as the Client ID when Adding your Azure cloud in {morpheus}</p>
+. Store/Paste for use as the Client ID when Adding your Azure cloud in |morpheus| </p>
 <p>IMPORTANT: Copy the key value. You won’t be able to retrieve after you leave this blade.</p>
 <p>image::images/newazure-7b82b.png[]</p>
 <p>You now have the 3 Active directory credentials required for |morpheus| Azure cloud integration.</p>
@@ -447,7 +447,7 @@ image::images/newazure-8c7ca.png[]
 <p>. Select Resource Groups
 . Select a Resource Group (instruction below if you do not have an existing resource group)
 . Copy the Subscription ID
-. Store/Paste for use as the Subscription ID when Adding your Azure cloud in {morpheus}
+. Store/Paste for use as the Subscription ID when Adding your Azure cloud in |morpheus| 
 +
 image::images/newazure-e446f.png[]</p>
 <p>=== Make Azure Active Directory Application owner of Subscription</p>
@@ -464,10 +464,10 @@ image::images/newazure-7f61c.png[]</p>
 <p>. Select the Application, then click “Select” at the bottom of the Add Users pane, and the select “OK” at the bottom of the Add Access pane.</p>
 <p>IMPORTANT: Be sure to select “OK” at the bottom of the Add Access pane or the user addition will not save.</p>
 <p>image::images/newazure-560be.png[]</p>
-<p>You now have the required Credentials to add an Azure cloud integration into {morpheus}.</p>
+<p>You now have the required Credentials to add an Azure cloud integration into |morpheus| .</p>
 <p>IMPORTANT: You will also need to have existing Network Security Group(s), Virtual Networks(s) and Storage Accounts(s). Instructions for creating these can be found later in this article.</p>
-<p>=== Add Azure cloud in {morpheus}</p>
-<p>Azure is now ready to be added into {morpheus}. Ensure you have the noted Subscription ID, Tenant ID, Client ID, and Client Secret accessible.</p>
+<p>=== Add Azure cloud in |morpheus| </p>
+<p>Azure is now ready to be added into |morpheus| . Ensure you have the noted Subscription ID, Tenant ID, Client ID, and Client Secret accessible.</p>
 <p>In Infrastructure - Clouds, select “+ Create Cloud” and select Azure from the cloud widget.</p>
 <p>OR</p>
 <p>In Infrastructure, Groups- you can select the Clouds tab of a Group and click “+ ADD” next to Azure in the Public Cloud section, and enter the following:</p>
@@ -620,7 +620,7 @@ image::images/newazure-b89ea.png[]</p>
 <p>. In the |morpheus| UI, navigate to <cite>Infrastructure -&gt; Clouds</cite> and Select <cite>+ CREATE CLOUD</cite>
 . Select <em>AZURE STACK (PRIVATE)</em> from the Clouds list and select NEXT
 . In the Configure section, enter:
-* <em>NAME</em>: Internal name for the Cloud in {morpheus}
+* <em>NAME</em>: Internal name for the Cloud in |morpheus| 
 * <em>LOCATION</em>: (Optional) Can be used to specify the location of the Cloud or add a description.
 * <em>VISIBILITY</em>: Determines Tenant visibility for the Cloud.
 ** Private: Access to the Cloud is limited to the assigned Tenant (Master Tenant by default)
@@ -641,7 +641,7 @@ image::images/newazure-b89ea.png[]</p>
 <ul class="simple">
 <li><em>Location</em>: Select an Azure Stack region for the cloud to scope to. This typically will be “local”.</li>
 <li><em>Resource Group</em>: Select All or a single Resource Group to scope the cloud to. Selecting a single Resource Group will only sync resources in that Resource Group and disable Resource Group selection during provisioning. All will sync all resources and allow specifying the Resource Group during provisioning.</li>
-<li><em>Inventory Existing Instances</em>: If enabled, existing Virtual Machines will be inventoried and appear as unmanaged Virtual Machines in {morpheus}.</li>
+<li><em>Inventory Existing Instances</em>: If enabled, existing Virtual Machines will be inventoried and appear as unmanaged Virtual Machines in |morpheus| .</li>
 </ul>
 <ul class="simple">
 <li></li>
@@ -672,7 +672,7 @@ image::images/newazure-b89ea.png[]</p>
 <p>==== Group</p>
 <p>A Group must be specified or created for the new Cloud to be added to. Clouds can be added to additional Groups or removed from Groups after being created.</p>
 <ul class="simple">
-<li><em>USE EXISTING</em>: Add the new Cloud to an exiting Group in {morpheus}.</li>
+<li><em>USE EXISTING</em>: Add the new Cloud to an exiting Group in |morpheus| .</li>
 <li><em>CREATE NEW</em>: Creates a new Group in |morpheus| and adds the Cloud to the Group.</li>
 </ul>
 <p>==== Review</p>
@@ -719,7 +719,7 @@ include::openstack/docker.rst</p>
 <div class="section" id="add-a-digital-ocean-cloud">
 <h3>Add a Digital Ocean Cloud<a class="headerlink" href="#add-a-digital-ocean-cloud" title="Permalink to this headline">¶</a></h3>
 <p>DigitalOcean Cloud Integration Detail fields:</p>
-<p>Name:: Name of the Cloud in {morpheus}
+<p>Name:: Name of the Cloud in |morpheus| 
 Location:: Description field for adding notes on the cloud, such as location.
 Visibility:: For setting cloud permissions in a multi-tenant environment. Not applicable in single tenant environments.
 Username:: DigitalOcean Username
@@ -740,14 +740,14 @@ Data Center:: Select DigitalOcean DataCenter Region</p>
 <p>. Navigate to Infrastructure -&gt; Clouds
 . Select <cite>+ CREATE CLOUD</cite>, select Google Cloud, and then click Next.
 . Enter the following into the Create Cloud modal:
-Name:: Name of the Cloud in {morpheus}
+Name:: Name of the Cloud in |morpheus| 
 Location:: Description field for adding notes on the cloud, such as location.
 Visibility:: For setting cloud permissions in a multi-tenant environment. Not applicable in single tenant environments.
 Project ID:: Google Cloud Project ID
 Private Key:: Service Account Private key, begging with <cite>—–BEGIN PRIVATE KEY—–` and ending with `—–END PRIVATE KEY—–</cite>
 Client Email:: Service Account Client Email. ex: <cite>morpheus&#64;morpheus.iam.gserviceaccount.com</cite>
 Region:: Regions will auto-populate upon successful authentication with the above credentials. Select appropriate region for this Cloud.
-Inventory Existing Instances:: If enabled, existing Google Instances will be inventoried and appear as unmanaged Virtual Machines in {morpheus}.</p>
+Inventory Existing Instances:: If enabled, existing Google Instances will be inventoried and appear as unmanaged Virtual Machines in |morpheus| .</p>
 <p>NOTE: |morpheus| scopes clouds to single regions. Multiple clouds can be added for multi-region support, and then optionally added to the same group.</p>
 <p>The Cloud can now be added to a Group or configured with additional Advanced options.</p>
 <p>include::advanced_options.rst</p>
@@ -835,13 +835,13 @@ $ winrm set winrm/config/service/Auth &#64;{Kerberos=”true”}</div></blockquo
 [source,bash]</p>
 <blockquote>
 <div>$ sudo apt-get install krb5-user</div></blockquote>
-<p>Create a file in /etc called krb5.conf and replace the domain name with the name of the domain to be used. In this case we used {morpheus}.com as the domain.
+<p>Create a file in /etc called krb5.conf and replace the domain name with the name of the domain to be used. In this case we used |morpheus| .com as the domain.
 [source,bash]</p>
 <blockquote>
 <div><dl class="docutils">
 <dt>[libdefaults]</dt>
 <dd><dl class="first docutils">
-<dt>default_realm = {morpheus}.COM</dt>
+<dt>default_realm = |morpheus| .COM</dt>
 <dd>dns_lookup_kdc = true
 verify_ap_req_nofail = false</dd>
 </dl>
@@ -851,17 +851,17 @@ default_tkt_enctypes = rc4-hmac</p>
 <dt>[realms]</dt>
 <dd><blockquote class="first">
 <div><dl class="docutils">
-<dt>{morpheus}.COM = {</dt>
-<dd>kdc = win-ad.{morpheus}.COM:88
-admin_server = win-ad.{morpheus}.COM:749</dd>
+<dt>|morpheus| .COM = {</dt>
+<dd>kdc = win-ad.|morpheus| .COM:88
+admin_server = win-ad.|morpheus| .COM:749</dd>
 </dl>
 </div></blockquote>
 <p class="last">}</p>
 </dd>
 <dt>[domain_realm]</dt>
 <dd><dl class="first last docutils">
-<dt>.{morpheus}.COM = {morpheus}.COM</dt>
-<dd>{morpheus}.COM = {morpheus}.COM</dd>
+<dt>.|morpheus| .COM = |morpheus| .COM</dt>
+<dd>|morpheus| .COM = |morpheus| .COM</dd>
 </dl>
 </dd>
 </dl>
@@ -910,11 +910,11 @@ Nutanix simplifies datacenter infrastructure by integrating server and storage r
 <p>=== Getting Started</p>
 <p>To get started this a few prerequisites must first be met.  The Nutanix cluster should be provisioned and available on the network.  |morpheus| will look login to the Nutanix cluster with the Nutanix admin credentials and is typically located at the <a class="reference external" href="https://fqdn:9440">https://fqdn:9440</a> url.</p>
 <p>=== Adding a Nutanix Cloud</p>
-<p>The Nutanix cluster should be available and responding to the <a class="reference external" href="https://fqdn:9440">https://fqdn:9440</a> url for authentication by {morpheus}.</p>
+<p>The Nutanix cluster should be available and responding to the <a class="reference external" href="https://fqdn:9440">https://fqdn:9440</a> url for authentication by |morpheus| .</p>
 <p>API URL:: example: <a class="reference external" href="https://10.30.21.220:9440">https://10.30.21.220:9440</a>
 USERNAME:: Nutanix admin username
 PASSWORD:: Nutanix admin password
-Inventory Existing Instances:: If enabled, existing Virtual Machines will be inventoried and appear as unmanaged Virtual Machines in {morpheus}.</p>
+Inventory Existing Instances:: If enabled, existing Virtual Machines will be inventoried and appear as unmanaged Virtual Machines in |morpheus| .</p>
 <p>include::advanced_options.rst</p>
 <p>=== Service Plans</p>
 <p>A default set of Service Plans are created in |morpheus| for the VMware provisioning engine. These Service Plans can be considered akin to AWS Flavors or Openstack Flavors. They provide a means to set predefined tiers on memory, storage, cores, and cpu. Price tables can also be applied to these so estimated cost per virtual machine can be tracked as well as pricing for customers. By default, these options are fixed sizes but can be configured for dynamic sizing. A service plan can be configured to allow a custom user entry for memory, storage, or cpu. To configure this, simply edit an existing Service Plan tied to Nutanix or create a new one. These all can be easily managed from the Admin | Service Plans &amp; Pricing section.</p>
@@ -925,7 +925,7 @@ Inventory Existing Instances:: If enabled, existing Virtual Machines will be inv
 <p>[[oraclevm]]</p>
 <p>== Oracle VM</p>
 <p>=== Add a Oracle VM Cloud</p>
-<p>Name:: Name of the Cloud in {morpheus}
+<p>Name:: Name of the Cloud in |morpheus| 
 Location:: Description field for adding notes on the cloud, such as location.
 Visibility:: For setting cloud permissions in a multi-tenant environment. Not applicable in single tenant environments.
 API URL:: Oracle VM API URL. ex: <a class="reference external" href="https://10.20.30.40:7002/ovm/core/wsapi/rest">https://10.20.30.40:7002/ovm/core/wsapi/rest</a>
@@ -933,7 +933,7 @@ USERNAME:: Oracle VM User
 PASSWORD:: Oracle VM User Password
 REPOSITORY:: Available repositories will auto-populate upon successful authentication with the above credentials. Select appropriate repository for this Cloud.
 SERVER POOL:: Available server pools will auto-populate upon successful authentication with the above credentials. Select appropriate server pool for this Cloud.
-Inventory Existing Instances:: If enabled, existing Virtual Machines will be inventoried and appear as unmanaged Virtual Machines in {morpheus}.</p>
+Inventory Existing Instances:: If enabled, existing Virtual Machines will be inventoried and appear as unmanaged Virtual Machines in |morpheus| .</p>
 <p>The Cloud can now be added to a Group or configured with additional Advanced options.</p>
 <p>include::advanced_options.rst</p>
 </div>
@@ -944,7 +944,7 @@ Inventory Existing Instances:: If enabled, existing Virtual Machines will be inv
 <h3>Add a Softlayer Cloud<a class="headerlink" href="#add-a-softlayer-cloud" title="Permalink to this headline">¶</a></h3>
 <dl class="docutils">
 <dt>Name</dt>
-<dd>Name of the Cloud in {morpheus}</dd>
+<dd>Name of the Cloud in |morpheus| </dd>
 <dt>Location</dt>
 <dd>Description field for adding notes on the cloud, such as location.</dd>
 <dt>Visibility</dt>
@@ -958,7 +958,7 @@ Inventory Existing Instances:: If enabled, existing Virtual Machines will be inv
 <dt>Object Store</dt>
 <dd>Select the destination Object Store</dd>
 <dt>Inventory Existing Instances</dt>
-<dd>If enabled, existing Softlayer Instances will be inventoried and appear as unmanaged Virtual Machines in {morpheus}.</dd>
+<dd>If enabled, existing Softlayer Instances will be inventoried and appear as unmanaged Virtual Machines in |morpheus| .</dd>
 </dl>
 <p>The Cloud can now be added to a Group or configured with additional Advanced options.</p>
 </div>
@@ -1064,7 +1064,7 @@ Inventory Existing Instances:: If enabled, existing Virtual Machines will be inv
 <div class="section" id="vmware-fusion">
 <h3>VMware Fusion<a class="headerlink" href="#vmware-fusion" title="Permalink to this headline">¶</a></h3>
 <p>=== Add a VMware Fusion Cloud</p>
-<p>Name:: Name of the Cloud in {morpheus}
+<p>Name:: Name of the Cloud in |morpheus| 
 Location:: Description field for adding notes on the cloud, such as location.
 Visibility:: For setting cloud permissions in a multi-tenant environment. Not applicable in single tenant environments.
 VMWARE FUSION HOST:: IP or URL of VMware Fusion Host
@@ -1079,7 +1079,7 @@ BRIDGE NAME:: Will auto-populate upon successful authentication with the Fusion 
 <div class="section" id="virtualbox">
 <h2>Virtualbox<a class="headerlink" href="#virtualbox" title="Permalink to this headline">¶</a></h2>
 <p>=== Add a VirtualBox Cloud</p>
-<p>Name:: Name of the Cloud in {morpheus}
+<p>Name:: Name of the Cloud in |morpheus| 
 Location:: Description field for adding notes on the cloud, such as location.
 Visibility:: For setting cloud permissions in a multi-tenant environment. Not applicable in single tenant environments.
 VIRTUALBOX HOST:: IP or URL of the VirtualBox Host
@@ -1093,13 +1093,13 @@ VBOXMANAGE EXECUTABLE:: Defaults to /urs/local/bin/vboxmanage if left blank</p>
 <div class="section" id="xen-server">
 <h3>Xen Server<a class="headerlink" href="#xen-server" title="Permalink to this headline">¶</a></h3>
 <p>Add a Xen Server Cloud</p>
-<p>Name:: Name of the Cloud in {morpheus}
+<p>Name:: Name of the Cloud in |morpheus| 
 Location:: Description field for adding notes on the cloud, such as location.
 Visibility:: For setting cloud permissions in a multi-tenant environment. Not applicable in single tenant environments.
 API URL:: IP or URL of Xen Host. ex: <cite>xenserver.domain.com</cite>
 USERNAME:: Xen Host Username
 PASSWORD:: Xen Host Password
-Inventory Existing Instances:: If enabled, existing Google Instances will be inventoried and appear as unmanaged Virtual Machines in {morpheus}.</p>
+Inventory Existing Instances:: If enabled, existing Google Instances will be inventoried and appear as unmanaged Virtual Machines in |morpheus| .</p>
 <p>NOTE: |morpheus| scopes clouds to single regions. Multiple clouds can be added for multi-region support, and then optionally added to the same group.</p>
 <p>The Cloud can now be added to a Group or configured with additional Advanced options.</p>
 <p>include::advanced_options.rst</p>
@@ -1166,7 +1166,7 @@ They have datacenters based in the UK, USA, Germany, Netherlands, Singapore and 
 <li><p class="first">Enter the following:</p>
 <dl class="docutils">
 <dt>Name</dt>
-<dd><p class="first last">Name of the Cloud in {morpheus}</p>
+<dd><p class="first last">Name of the Cloud in |morpheus| </p>
 </dd>
 <dt>Location</dt>
 <dd><p class="first last">Description field for adding notes on the cloud, such as location.</p>
@@ -1185,7 +1185,7 @@ They have datacenters based in the UK, USA, Germany, Netherlands, Singapore and 
 </dd>
 <dt>INVENTORY</dt>
 <dd><ul class="first last simple">
-<li><em>Off</em>: Existing Upcloud Servers will not be inventoried in {morpheus}</li>
+<li><em>Off</em>: Existing Upcloud Servers will not be inventoried in |morpheus| </li>
 <li><em>Basic</em>: Existing Servers are Inventoried with Power state, Memory and Cores statistics synced.</li>
 <li><em>Full</em>: Existing Servers are Inventoried with Power state, Memory and Cores statistics, plus IP Addresses, Storage Info, and Console VNC Information.</li>
 </ul>
@@ -1243,7 +1243,7 @@ They have datacenters based in the UK, USA, Germany, Netherlands, Singapore and 
 <h4>Group<a class="headerlink" href="#group" title="Permalink to this headline">¶</a></h4>
 <p>A Group must be specified or created for the new Cloud to be added to. Clouds can be added to additional Groups or removed from Groups after being created.</p>
 <ul class="simple">
-<li><em>USE EXISTING</em>: Add the new Cloud to an exiting Group in {morpheus}.</li>
+<li><em>USE EXISTING</em>: Add the new Cloud to an exiting Group in |morpheus| .</li>
 <li><em>CREATE NEW</em>: Creates a new Group in |morpheus| and adds the Cloud to the Group.</li>
 </ul>
 </div>
@@ -1311,7 +1311,7 @@ They have datacenters based in the UK, USA, Germany, Netherlands, Singapore and 
 <li><p class="first">Enter the following into the Create Cloud modal:</p>
 <dl class="docutils">
 <dt>Name</dt>
-<dd><p class="first last">Name of the Cloud in {morpheus}</p>
+<dd><p class="first last">Name of the Cloud in |morpheus| </p>
 </dd>
 <dt>Location</dt>
 <dd><p class="first last">Description field for adding notes on the cloud, such as location.</p>
@@ -1324,7 +1324,7 @@ They have datacenters based in the UK, USA, Germany, Netherlands, Singapore and 
 <p>API TOKEN</p>
 <dl class="docutils">
 <dt>Inventory Existing Instances</dt>
-<dd><p class="first last">If enabled, existing Google Instances will be inventoried and appear as unmanaged Virtual Machines in {morpheus}.</p>
+<dd><p class="first last">If enabled, existing Google Instances will be inventoried and appear as unmanaged Virtual Machines in |morpheus| .</p>
 </dd>
 </dl>
 </li>
@@ -1353,7 +1353,7 @@ ORGANIZATION:</p>
 <h2>Creating a CentOS 7 |morpheus| Image<a class="headerlink" href="#creating-a-centos-7-morpheus-image" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="id37">
 <h3>Overview<a class="headerlink" href="#id37" title="Permalink to this headline">¶</a></h3>
-<p>|morpheus| comes out of the box with a default set of templates for use in many modern deployment scenarios. These consist mostly of base operating system images with a few additional adjustments. These adjustments typically include the addition of cloud-init (which is highly recommended to be used in most environments, but not mandatory). However, in many on-premise deployments there are custom image requirements as well as networking requirements. This guide will go over how to create a base CentOS 7 Image for use within {morpheus}.</p>
+<p>|morpheus| comes out of the box with a default set of templates for use in many modern deployment scenarios. These consist mostly of base operating system images with a few additional adjustments. These adjustments typically include the addition of cloud-init (which is highly recommended to be used in most environments, but not mandatory). However, in many on-premise deployments there are custom image requirements as well as networking requirements. This guide will go over how to create a base CentOS 7 Image for use within |morpheus| .</p>
 <p>=== Creating a CentOS 7 |morpheus| VMware Image</p>
 <p>==== VMWare</p>
 <p>When running in VMWare it is highly recommended that VMware Tools be installed. Without it, |morpheus| will have difficulty assessing the host ip address and performing some additional automation tasks for the operating system.</p>
@@ -1366,7 +1366,7 @@ yum -y install git wget ntp curl cloud-init dracut-modules-growroot
 rpm -qa kernel | sed ‘s/^kernel-//’  | xargs -I {} dracut -f /boot/initramfs-{}.img {}
 —-</p>
 <p>There are two parts to this yum installation. We are first ensuring some core dependencies are installed for automation as well as cloud-init. git for example is installed for use by ansible playbook automation down the line and is therefore optional if not using ansible. The dracut-modules-growroot is responsible for resizing the root partition upon first boot to match the virtual disk size that was potentially adjusted during provisioning.</p>
-<p>A great benefit to using cloud-init is credentials don’t have to be locked into the template. It is advisable, within {morpheus}, to configure the default cloud-init user that gets created when the vm boots automatically by cloud-init. This is located in the <cite>Administration -&gt; Provisioning -&gt; Cloud-Init</cite> Settings section.</p>
+<p>A great benefit to using cloud-init is credentials don’t have to be locked into the template. It is advisable, within |morpheus| , to configure the default cloud-init user that gets created when the vm boots automatically by cloud-init. This is located in the <cite>Administration -&gt; Provisioning -&gt; Cloud-Init</cite> Settings section.</p>
 <p>==== Network Interfaces</p>
 <p>A slightly annoying change with centOS 7 is that the network interfaces have changed naming convention. You may notice when running ifconfig that the primary network interface is set to something like ens2344 or some other random number. This naming is dynamic typically by hardware id and we don’t want this to fluctuate when provisioning the template in various VMware environments. Fortunately, there is a way to turn this functionality off and restore the interface back to eth0.</p>
 <p>Firstly we need to adjust our bootloader to disable interface naming like this.
@@ -1420,7 +1420,7 @@ https_no_proxy=127.0.0.1,localhost,applianceUrl
 <div class="section" id="active-directory">
 <h2>Active Directory<a class="headerlink" href="#active-directory" title="Permalink to this headline">¶</a></h2>
 <p>=== Overview</p>
-<p>Active Directory is Microsoft’s primary authentication service widely used in Enterprise organizations and even via Microsoft’s cloud services. While Active Directory also supports LDAP protocol support (which |morpheus| can integrate with as well), the main Active Directory integration can also be utilized. It is even possible to map Active Directory groups to equivalent Roles within {morpheus}.</p>
+<p>Active Directory is Microsoft’s primary authentication service widely used in Enterprise organizations and even via Microsoft’s cloud services. While Active Directory also supports LDAP protocol support (which |morpheus| can integrate with as well), the main Active Directory integration can also be utilized. It is even possible to map Active Directory groups to equivalent Roles within |morpheus| .</p>
 <p>NOTE: To use Active Directory, a valid / trusted SSL certificate must be in place on the Active Directory services (self signed will not work).</p>
 <p>=== Adding an Active Directory integration</p>
 <p>. Navigate to <cite>Administration -&gt; Tenants</cite>
@@ -1443,7 +1443,7 @@ Service Account Holder:: This is the admin account type in |morpheus| and an AD 
 <p>[[saml]]</p>
 <p>== SAML integration</p>
 <p>=== Overview</p>
-<p>The |morpheus| SAML identity source integration allows customers to add user SSO to {morpheus}, authenticated by external login SAML providers.</p>
+<p>The |morpheus| SAML identity source integration allows customers to add user SSO to |morpheus| , authenticated by external login SAML providers.</p>
 <p>image::images/saml-2f9c4.png[]</p>
 <p>=== Adding a SMAL Integration</p>
 <p>To add a SAML integration:</p>

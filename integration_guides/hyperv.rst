@@ -113,24 +113,24 @@ On the |morpheus| appliance the krb5-user package must be installed. For Ubuntu 
 
     $ sudo apt-get install krb5-user
 
-Create a file in /etc called krb5.conf and replace the domain name with the name of the domain to be used. In this case we used {morpheus}.com as the domain.
+Create a file in /etc called krb5.conf and replace the domain name with the name of the domain to be used. In this case we used |morpheus| .com as the domain.
 
 .. code-block:: bash
 
     [libdefaults]
-            default_realm = {morpheus}.COM
+            default_realm = |morpheus| .COM
                 dns_lookup_kdc = true
                 verify_ap_req_nofail = false
             default_tgs_enctypes = rc4-hmac
             default_tkt_enctypes = rc4-hmac
     [realms]
-            {morpheus}.COM = {
-                    kdc = win-ad.{morpheus}.COM:88
-                    admin_server = win-ad.{morpheus}.COM:749
+            |morpheus| .COM = {
+                    kdc = win-ad.|morpheus| .COM:88
+                    admin_server = win-ad.|morpheus| .COM:749
          }
     [domain_realm]
-        .{morpheus}.COM = {morpheus}.COM
-            {morpheus}.COM = {morpheus}.COM
+        .|morpheus| .COM = |morpheus| .COM
+            |morpheus| .COM = |morpheus| .COM
     [login]
          krb4_convert = true
          krb4_get_tickets = false

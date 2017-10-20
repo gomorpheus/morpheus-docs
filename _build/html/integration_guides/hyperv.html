@@ -250,13 +250,13 @@ $ winrm set winrm/config/service/Auth &#64;{Kerberos=”true”}</div></blockquo
 [source,bash]</p>
 <blockquote>
 <div>$ sudo apt-get install krb5-user</div></blockquote>
-<p>Create a file in /etc called krb5.conf and replace the domain name with the name of the domain to be used. In this case we used {morpheus}.com as the domain.
+<p>Create a file in /etc called krb5.conf and replace the domain name with the name of the domain to be used. In this case we used |morpheus| .com as the domain.
 [source,bash]</p>
 <blockquote>
 <div><dl class="docutils">
 <dt>[libdefaults]</dt>
 <dd><dl class="first docutils">
-<dt>default_realm = {morpheus}.COM</dt>
+<dt>default_realm = |morpheus| .COM</dt>
 <dd>dns_lookup_kdc = true
 verify_ap_req_nofail = false</dd>
 </dl>
@@ -266,17 +266,17 @@ default_tkt_enctypes = rc4-hmac</p>
 <dt>[realms]</dt>
 <dd><blockquote class="first">
 <div><dl class="docutils">
-<dt>{morpheus}.COM = {</dt>
-<dd>kdc = win-ad.{morpheus}.COM:88
-admin_server = win-ad.{morpheus}.COM:749</dd>
+<dt>|morpheus| .COM = {</dt>
+<dd>kdc = win-ad.|morpheus| .COM:88
+admin_server = win-ad.|morpheus| .COM:749</dd>
 </dl>
 </div></blockquote>
 <p class="last">}</p>
 </dd>
 <dt>[domain_realm]</dt>
 <dd><dl class="first last docutils">
-<dt>.{morpheus}.COM = {morpheus}.COM</dt>
-<dd>{morpheus}.COM = {morpheus}.COM</dd>
+<dt>.|morpheus| .COM = |morpheus| .COM</dt>
+<dd>|morpheus| .COM = |morpheus| .COM</dd>
 </dl>
 </dd>
 </dl>

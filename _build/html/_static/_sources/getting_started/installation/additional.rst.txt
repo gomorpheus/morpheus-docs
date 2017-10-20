@@ -10,7 +10,7 @@ System Defaults
 
 Installation Location: ``/opt/morpheus``
 
--  *Log Location:* ``/var/log/morpheus`` \*\* *{morpheus}-UI:*
+-  *Log Location:* ``/var/log/morpheus`` \*\* *|morpheus| -UI:*
    ``/var/log/morpheus/morpheus-ui`` \*\* *MySQL:*
    ``/var/log/morpheus/mysql`` \*\* *NginX:* ``/var/log/morpheus/nginx``
    \*\* *Check Server:* ``/var/log/morpheus/check-server`` \*\* *Elastic

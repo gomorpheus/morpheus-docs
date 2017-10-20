@@ -14,7 +14,7 @@ Once a Load Balancer is added to an instance, you can manually scale or configur
 
 .. NOTE:: HaProxy VM Load Balancer option, Load Balancer detail pages, Balance Mode, Sticky Mode and Shared VIP address option are available in |morpheus| 2.11.3+.
 
-.. image Load_Balancers___{morpheus}.png
+.. image Load_Balancers___|morpheus| .png
 
 In the Load Balancers page there are two sections:
 

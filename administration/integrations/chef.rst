@@ -15,7 +15,7 @@ Add Chef Integration
 #. Select Integration Type "Chef"
 #. Populate the following fields:
 
-   * Name: Name of the Chef Integration in {morpheus}
+   * Name: Name of the Chef Integration in |morpheus| 
    * Chef Endpoint: url of chef server api endpoint in https://api.example.com format. Do not add /organization/xxxx here, which is populated in the Chef Organization field
    * Chef Version: 12.3.0 by default, can be changed to use a different/more recent version of chef
    * Chef Organization: Chef Server Organization
@@ -25,7 +25,7 @@ Add Chef Integration
 
 #. Save Changes
 
-The added Chef Integration is now available for use in {morpheus}. The Chef Integration can be added to Clouds or Groups to auto-bootstrap nodes and specify Environment, Node ID, Runlist, Attributes and Tags when creating instances. The Chef integration can also be selected in the Chef Server dropdown when creating a Chef Bootstrap type task.
+The added Chef Integration is now available for use in |morpheus| . The Chef Integration can be added to Clouds or Groups to auto-bootstrap nodes and specify Environment, Node ID, Runlist, Attributes and Tags when creating instances. The Chef integration can also be selected in the Chef Server dropdown when creating a Chef Bootstrap type task.
 
 Scope Chef Integration to a Cloud
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

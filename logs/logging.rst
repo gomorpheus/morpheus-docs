@@ -32,7 +32,7 @@ There are several other places logs can be viewed. Not only can they be viewed a
 Integrations
 ============
 
-While the built in logging solution provided by |morpheus| is sufficient for most, there are some scenarios in which a more advanced logging system may be desired or already in place. To facilitate this {morpheus} makes it easy to add custom syslog rules as well as built in direct integrations with Splunk and LogRhythm. All integrations pertaining to logging can be configured in the ``Administration -> Logging`` section.
+While the built in logging solution provided by |morpheus| is sufficient for most, there are some scenarios in which a more advanced logging system may be desired or already in place. To facilitate this |morpheus| makes it easy to add custom syslog rules as well as built in direct integrations with Splunk and LogRhythm. All integrations pertaining to logging can be configured in the ``Administration -> Logging`` section.
 
 Splunk
 ------
