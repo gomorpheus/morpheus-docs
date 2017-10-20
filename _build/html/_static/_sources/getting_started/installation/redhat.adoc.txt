@@ -1,7 +1,7 @@
 [[redhat-install]]
 === RHEL
 
-To get started installing {morpheus} on RHEL 7 a few prerequisite items are required.
+To get started installing |morpheus| on RHEL 7 a few prerequisite items are required.
 
 The RedHat Enterprise Linux 7 server needs to be registered and activated with Redhat subscription. The server optional rpms repo needs to be enabled as well.
 
@@ -9,7 +9,7 @@ To check if the server has been actived please run the subscription-manager vers
 
 If the server has not been registered and activated then the subscription manager version will return the below message.
 
-[source,bash]
+.. code-block:: bash
 ----
 [root@appliance ~]# subscription-manager version
 server type: This system is currently not registered
@@ -20,7 +20,7 @@ python-rhsm: 1.10.12-2.el7
 
 When a server has been registered and activated with Redhat the subscription manager will return the below message.
 
-[source,bash]
+.. code-block:: bash
 ----
 [root@appliance ~]# subscription-manager version
 server type: Red Hat Subscription Management
@@ -35,7 +35,7 @@ TIP: To register the server you will need to have sudo permissions [Member of th
 
 . subscription-manager register
 +
-[source,bash]
+.. code-block:: bash
 ----
 [root@appliance ~]# subscription-manager register
 Username: redhat@example.com
@@ -44,7 +44,7 @@ Password:
 
 . subscription-manager auto --attach [Note this can take a minute to complete.]
 +
-[source,bash]
+.. code-block:: bash
 ----
 sudo subscription-manager attach --auto
 
@@ -57,7 +57,7 @@ To check to see if the RHEL server has the Red Hat Enterprise Linux 7 Server - O
 
 TIP: To check the server repos you will need to have sudo permissions [Member of the Wheel group] or root access to the server.
 
-[source,bash]
+.. code-block:: bash
 ----
 sudo yum repolist all | grep "rhel-7-server-optional-rpms"
 rhel-7-server-optional-rpms/7Server/x86_64                           disabled
@@ -65,7 +65,7 @@ rhel-7-server-optional-rpms/7Server/x86_64                           disabled
 
 If the repo status was returned as disabled then you will need to enable the repo using the subsciption manager like below.
 
-[source,bash]
+.. code-block:: bash
 ----
 sudo subscription-manager repos --enable rhel-7-server-optional-rpms
 Repo 'rhel-7-server-optional-rpms' is enabled for this system.
@@ -79,7 +79,7 @@ TIP: Use the `wget` command to directly download the package to your appliance s
 
 Next we must install the package onto the machine and configure the morpheus services:
 
-[source,bash]
+.. code-block:: bash
 ----
 sudo rpm -i morpheus-appliance_x.x.x-1.amd64.rpm
 sudo morpheus-ctl reconfigure
@@ -87,7 +87,7 @@ sudo morpheus-ctl reconfigure
 
 Once the installation is complete the web interface will automatically start up. By default it will be resolvable at `https://your_machine_name` and in many cases this may not be resolvable from your browser. The url can be changed by editing `/etc/morpheus/morpheus.rb` and changing the value of `appliance_url`. After this has been changed simply run:
 
-[source,bash]
+.. code-block:: bash
 ----
 sudo morpheus-ctl reconfigure
 sudo morpheus-ctl stop morpheus-ui

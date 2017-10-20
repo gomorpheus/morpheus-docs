@@ -17,7 +17,7 @@ In this section you can:
 Hosts
 -----
 
-Hosts in {morpheus} are Hypervisors and Docker Hosts that your VM's and Container are hosted on, such as ESXi, Hyper-V and Docker Hosts. These Hosts are populated from integrated clouds, hosts provisioned form Morpheus, or manually added Hosts.
+Hosts in |morpheus| are Hypervisors and Docker Hosts that your VM's and Container are hosted on, such as ESXi, Hyper-V and Docker Hosts. These Hosts are populated from integrated clouds, hosts provisioned form Morpheus, or manually added Hosts.
 
 .. //==== Adding Hosts
 .. //==== Managing Hosts
@@ -26,7 +26,7 @@ Hosts in {morpheus} are Hypervisors and Docker Hosts that your VM's and Containe
 Virtual Machines
 ----------------
 
-The Virtual Machines tab lists all Managed and Unmanaged VM's across {morpheus}. Managed VM's are either provisioned by Morpheus, or inventoried VM's that were converted to managed. Unmanaged VM's are from Cloud integrations with "Inventory Existing Instances" enabled in the Cloud settings.
+The Virtual Machines tab lists all Managed and Unmanaged VM's across |morpheus| . Managed VM's are either provisioned by Morpheus, or inventoried VM's that were converted to managed. Unmanaged VM's are from Cloud integrations with "Inventory Existing Instances" enabled in the Cloud settings.
 
 .. //==== Managing Virtual Machines
 .. //==== Removing Virtual Machines

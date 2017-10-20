@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>[source,bash] &#8212; jwtest 1 documentation</title>
+    <title>.. code-block:: bash &#8212; jwtest 1 documentation</title>
     <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <script type="text/javascript">
@@ -40,15 +40,15 @@
             
   <p>[[additional_options]] === Additional Options</p>
 <p>There are several additional configuration options during installation
-that may be performed. For example, {morpheus} provides convenient
+that may be performed. For example, |morpheus| provides convenient
 options for uploading your own SSL certificates as well as externalizing
 several dependent services.</p>
 <p>==== System Defaults</p>
-<p>{morpheus} follows several install location conventions. Below is a list
+<p>|morpheus| follows several install location conventions. Below is a list
 of system defaults for convenient management:</p>
 <p>Installation Location: <code class="docutils literal"><span class="pre">/opt/morpheus</span></code></p>
 <ul class="simple">
-<li><em>Log Location:</em> <code class="docutils literal"><span class="pre">/var/log/morpheus</span></code> ** <em>{morpheus}-UI:</em>
+<li><em>Log Location:</em> <code class="docutils literal"><span class="pre">/var/log/morpheus</span></code> ** <em>|morpheus| -UI:</em>
 <code class="docutils literal"><span class="pre">/var/log/morpheus/morpheus-ui</span></code> ** <em>MySQL:</em>
 <code class="docutils literal"><span class="pre">/var/log/morpheus/mysql</span></code> ** <em>NginX:</em> <code class="docutils literal"><span class="pre">/var/log/morpheus/nginx</span></code>
 ** <em>Check Server:</em> <code class="docutils literal"><span class="pre">/var/log/morpheus/check-server</span></code> ** <em>Elastic
@@ -68,7 +68,7 @@ implement a third-party certificate:</p>
 following entries:</li>
 </ol>
 <div class="section" id="source-bash">
-<h1>[source,bash]<a class="headerlink" href="#source-bash" title="Permalink to this headline">¶</a></h1>
+<h1>.. code-block:: bash<a class="headerlink" href="#source-bash" title="Permalink to this headline">¶</a></h1>
 <p>nginx[‘ssl_certificate’] = ‘path to the certificate file’
 nginx[‘ssl_server_key’] = ‘path to the server key file’ —-</p>
 <p>NOTE: Both files should be owned by root and only readable by root, also
@@ -77,7 +77,7 @@ include the signing chain inside the certificate file.</p>
 <p>Next simply reconfigure the appliance and restart nginx:</p>
 </div>
 <div class="section" id="id1">
-<h1>[source,bash]<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<h1>.. code-block:: bash<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
 <p>sudo morpheus-ctl reconfigure sudo morpheus-ctl restart nginx —-</p>
 <p>==== Additional Configuration Options</p>
 <p>There are several other options available to the

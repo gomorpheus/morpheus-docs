@@ -198,14 +198,14 @@
 <li>Pricing Sync with markup options</li>
 <li>Cost Estimator</li>
 </ul>
-<p>Combine these features with public Azure and {morpheus} can provide a single pane of glass and self service portal for managing instances scattered across both Azure offerings.</p>
+<p>Combine these features with public Azure and |morpheus| can provide a single pane of glass and self service portal for managing instances scattered across both Azure offerings.</p>
 <p>=== Requirements</p>
 <p>==== Azure Stack Accessibility</p>
-<p>By default, the Azure Stack management url’s are not accessible from an external network. Port mappings and DNS must be configured for communication between the {morpheus} Appliance and Azure Stack.</p>
-<p>IMPORTANT: In order to communicate with Azure Stack, {morpheus} must be able to reach the internal Azure Stack network. The Azure Stack Portal needs to be exposed to the {morpheus} Appliances’ network with corresponding entries added to DNS.</p>
-<p>One option to expose the Internal Azure Stack network to the {morpheus} Appliances’ network is to use the ‘Expose-AzureStackPortal.ps1’ powershell script from <a class="reference external" href="https://gallery.technet.microsoft.com/scriptcenter/Expose-the-Azure-Stack-7ef68b19">https://gallery.technet.microsoft.com/scriptcenter/Expose-the-Azure-Stack-7ef68b19</a>. An Azure Stack Port Mapping Tool is also available.</p>
+<p>By default, the Azure Stack management url’s are not accessible from an external network. Port mappings and DNS must be configured for communication between the |morpheus| Appliance and Azure Stack.</p>
+<p>IMPORTANT: In order to communicate with Azure Stack, |morpheus| must be able to reach the internal Azure Stack network. The Azure Stack Portal needs to be exposed to the |morpheus| Appliances’ network with corresponding entries added to DNS.</p>
+<p>One option to expose the Internal Azure Stack network to the |morpheus| Appliances’ network is to use the ‘Expose-AzureStackPortal.ps1’ powershell script from <a class="reference external" href="https://gallery.technet.microsoft.com/scriptcenter/Expose-the-Azure-Stack-7ef68b19">https://gallery.technet.microsoft.com/scriptcenter/Expose-the-Azure-Stack-7ef68b19</a>. An Azure Stack Port Mapping Tool is also available.</p>
 <p>Below is a sample output from the script for reference:</p>
-<p>[source,bash]</p>
+<p>.. code-block:: bash</p>
 <p>[Admin Portal] DNS: 10.30.23.120 - adminportal.local.azurestack.external adminmanagement.local.azurestack.external</p>
 <p>[Tenant Portal] Created port mappings on 10.30.23.121 to 192.168.102.10
 [Tenant Portal] Ports: 13011 30015 13001 13010 13021 13020 443 13003 12646 12647 12648 12649 12650 12495 13026 12499
@@ -235,11 +235,11 @@
 <li>Storage Account(s)</li>
 <li>Network Security Group(s)</li>
 </ul>
-<p>** Inbound ports open from {morpheus} Appliance: 22, 5985, 3389
-** Outbound ports open to {morpheus} Appliance: 80, 443</p>
-<p>NOTE: Proper Network and Network Security Group configuration is required for {morpheus} agent install, communication, and remote console access. Other configurations, such as docker instances, will need the appropriate ports opened as well.</p>
+<p>** Inbound ports open from |morpheus| Appliance: 22, 5985, 3389
+** Outbound ports open to |morpheus| Appliance: 80, 443</p>
+<p>NOTE: Proper Network and Network Security Group configuration is required for |morpheus| agent install, communication, and remote console access. Other configurations, such as docker instances, will need the appropriate ports opened as well.</p>
 <p>==== Required Credentials &amp; Permissions</p>
-<p>Credentials to integrate {morpheus} with Azure Stack are located in both the public Azure Portal and the Private Azure Stack Portal. The Azure Active Directory Application used must be an owner of the Azure Stack subscription.</p>
+<p>Credentials to integrate |morpheus| with Azure Stack are located in both the public Azure Portal and the Private Azure Stack Portal. The Azure Active Directory Application used must be an owner of the Azure Stack subscription.</p>
 <ul class="simple">
 <li>Azure Portal:</li>
 </ul>
@@ -254,10 +254,10 @@
 ** Active Directory App from Azure portal added as owner of the Azure Stack Subscription in Azure Stack.</p>
 <p>=== Adding an Azure Stack Cloud</p>
 <p>==== Configure</p>
-<p>. In the {morpheus} UI, navigate to <cite>Infrastructure -&gt; Clouds</cite> and Select <cite>+ CREATE CLOUD</cite>
+<p>. In the |morpheus| UI, navigate to <cite>Infrastructure -&gt; Clouds</cite> and Select <cite>+ CREATE CLOUD</cite>
 . Select <em>AZURE STACK (PRIVATE)</em> from the Clouds list and select NEXT
 . In the Configure section, enter:
-* <em>NAME</em>: Internal name for the Cloud in {morpheus}
+* <em>NAME</em>: Internal name for the Cloud in |morpheus| 
 * <em>LOCATION</em>: (Optional) Can be used to specify the location of the Cloud or add a description.
 * <em>VISIBILITY</em>: Determines Tenant visibility for the Cloud.
 ** Private: Access to the Cloud is limited to the assigned Tenant (Master Tenant by default)
@@ -278,7 +278,7 @@
 <ul class="simple">
 <li><em>Location</em>: Select an Azure Stack region for the cloud to scope to. This typically will be “local”.</li>
 <li><em>Resource Group</em>: Select All or a single Resource Group to scope the cloud to. Selecting a single Resource Group will only sync resources in that Resource Group and disable Resource Group selection during provisioning. All will sync all resources and allow specifying the Resource Group during provisioning.</li>
-<li><em>Inventory Existing Instances</em>: If enabled, existing Virtual Machines will be inventoried and appear as unmanaged Virtual Machines in {morpheus}.</li>
+<li><em>Inventory Existing Instances</em>: If enabled, existing Virtual Machines will be inventoried and appear as unmanaged Virtual Machines in |morpheus| .</li>
 </ul>
 <ul class="simple">
 <li></li>
@@ -298,22 +298,22 @@
 <li><em>CONFIG MANAGEMENT</em>: Select a Chef, Salt, Ansible or Puppet integration to be used with this Cloud.</li>
 <li><em>AGENT INSTALL MODE</em>:</li>
 </ul>
-<p>** SSH / WINRM: {morpheus} will use SSH or WINRM for Agent install.
-** Cloud-Init (when available): {morpheus} will utilize Cloud-Init or Cloudbase-Init for agent install when provisioning images with Cloud-Init/Cloudbase-Init installed. {morpheus} will fall back on SSH or WINRM if cloud-init is not installed on the provisioned image.
-* <em>API PROXY</em>: Required when a Proxy Server blocks communication between the {morpheus} Appliance and the Cloud. Proxies can be added in the <cite>Infrastructure -&gt; Networks -&gt; Proxies</cite> tab.</p>
+<p>** SSH / WINRM: |morpheus| will use SSH or WINRM for Agent install.
+** Cloud-Init (when available): |morpheus| will utilize Cloud-Init or Cloudbase-Init for agent install when provisioning images with Cloud-Init/Cloudbase-Init installed. |morpheus| will fall back on SSH or WINRM if cloud-init is not installed on the provisioned image.
+* <em>API PROXY</em>: Required when a Proxy Server blocks communication between the |morpheus| Appliance and the Cloud. Proxies can be added in the <cite>Infrastructure -&gt; Networks -&gt; Proxies</cite> tab.</p>
 <p>==== Provisioning Options
-* <em>API PROXY</em>: Required when a Proxy Server blocks communication between an Instance and the {morpheus} Appliance. Proxies can be added in the <cite>Infrastructure -&gt; Networks -&gt; Proxies</cite> tab.
+* <em>API PROXY</em>: Required when a Proxy Server blocks communication between an Instance and the |morpheus| Appliance. Proxies can be added in the <cite>Infrastructure -&gt; Networks -&gt; Proxies</cite> tab.
 ** <em>Bypass Proxy for Appliance URL</em> Enable to bypass proxy settings (if added) for Instance Agent communication to the Appliance URL.
 * <em>USER DATA (LINUX)</em>: Add cloud-init user data using bash syntax.</p>
 <p>Once all options are configured, select NEXT to add the cloud to a Group.</p>
 <p>==== Group</p>
 <p>A Group must be specified or created for the new Cloud to be added to. Clouds can be added to additional Groups or removed from Groups after being created.</p>
 <ul class="simple">
-<li><em>USE EXISTING</em>: Add the new Cloud to an exiting Group in {morpheus}.</li>
-<li><em>CREATE NEW</em>: Creates a new Group in {morpheus} and adds the Cloud to the Group.</li>
+<li><em>USE EXISTING</em>: Add the new Cloud to an exiting Group in |morpheus| .</li>
+<li><em>CREATE NEW</em>: Creates a new Group in |morpheus| and adds the Cloud to the Group.</li>
 </ul>
 <p>==== Review</p>
-<p>Confirm all settings are correct and select COMPLETE. The Azure Stack Cloud will be added, and {morpheus} will perform the initial cloud sync of:</p>
+<p>Confirm all settings are correct and select COMPLETE. The Azure Stack Cloud will be added, and |morpheus| will perform the initial cloud sync of:</p>
 <ul class="simple">
 <li>Virtual Machines (if Inventory Existing Instances is enabled)</li>
 <li>Networks</li>

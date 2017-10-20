@@ -1,7 +1,7 @@
 Activity
 ========
 
-The Activity section displays a recent activity report for Auditing. {morpheus} defines an activity as any major action performed on an instance or server, such as, but not limited to adding a server, deleting a server, provisioning an instance, deleting an instance, creating a backup, etc… This view can be searched and filtered by type, user, and date range.
+The Activity section displays a recent activity report for Auditing. |morpheus| defines an activity as any major action performed on an instance or server, such as, but not limited to adding a server, deleting a server, provisioning an instance, deleting an instance, creating a backup, etc… This view can be searched and filtered by type, user, and date range.
 
 Activity Reports
 ----------------

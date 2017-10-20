@@ -1,18 +1,18 @@
 [[additional\_options]] === Additional Options
 
 There are several additional configuration options during installation
-that may be performed. For example, {morpheus} provides convenient
+that may be performed. For example, |morpheus| provides convenient
 options for uploading your own SSL certificates as well as externalizing
 several dependent services.
 
 ==== System Defaults
 
-{morpheus} follows several install location conventions. Below is a list
+|morpheus| follows several install location conventions. Below is a list
 of system defaults for convenient management:
 
 Installation Location: ``/opt/morpheus``
 
--  *Log Location:* ``/var/log/morpheus`` \*\* *{morpheus}-UI:*
+-  *Log Location:* ``/var/log/morpheus`` \*\* *|morpheus| -UI:*
    ``/var/log/morpheus/morpheus-ui`` \*\* *MySQL:*
    ``/var/log/morpheus/mysql`` \*\* *NginX:* ``/var/log/morpheus/nginx``
    \*\* *Check Server:* ``/var/log/morpheus/check-server`` \*\* *Elastic
@@ -32,7 +32,7 @@ implement a third-party certificate:
 2. Edit the configuration file ``/etc/morpheus/morpheus.rb`` and add the
    following entries:
 
-[source,bash]
+.. code-block:: bash
 -------------
 
 nginx[‘ssl\_certificate’] = ‘path to the certificate file'
@@ -44,7 +44,7 @@ include the signing chain inside the certificate file.
 
 Next simply reconfigure the appliance and restart nginx:
 
-[source,bash]
+.. code-block:: bash
 -------------
 
 sudo morpheus-ctl reconfigure sudo morpheus-ctl restart nginx ----

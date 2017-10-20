@@ -172,7 +172,7 @@
   <p>[[saml]]</p>
 <p>== SAML integration</p>
 <p>=== Overview</p>
-<p>The {morpheus} SAML identity source integration allows customers to add user SSO to {morpheus}, authenticated by external login SAML providers.</p>
+<p>The |morpheus| SAML identity source integration allows customers to add user SSO to |morpheus| , authenticated by external login SAML providers.</p>
 <p>image::images/saml-2f9c4.png[]</p>
 <p>=== Adding a SMAL Integration</p>
 <p>To add a SAML integration:</p>
@@ -188,8 +188,8 @@
 . Role Mappings
 . User Attribute Names</p>
 <p>=== SAML Configuration</p>
-<p>LOGIN REDIRECT URL:: This is the SAML endpoint {morpheus} will redirect to when a user signs into {morpheus} via SAML.
-LOGOUT POST URL:: The url morpheus will post to when a SAML user log out of {morpheus} to log out of the SAML provider as well.
+<p>LOGIN REDIRECT URL:: This is the SAML endpoint |morpheus| will redirect to when a user signs into |morpheus| via SAML.
+LOGOUT POST URL:: The url morpheus will post to when a SAML user log out of |morpheus| to log out of the SAML provider as well.
 SIGNING PUBLIC KEY:: Add the X.509 Certificate public key from the SAML provider.</p>
 <p>=== Role Mappings</p>
 <p>DEFAULT ROLE:: Role a saml user will be assigned by default when no role is mapped
@@ -197,9 +197,9 @@ ROLE ATTRIBUTE NAME:: The name of the attribute filed that will map to morpheus 
 REQUIRED ROLE ATTRIBUTE VALUE:: Role attribute value that a user must be assigned/a member of to be authorized, such as group or role in the SAML SP.</p>
 <p>The rest of the Role Mapping Fields will be the existing Roles in morpheus with a Role Attribute Value field.</p>
 <p>=== User Attribute Names</p>
-<p>GIVEN NAME ATTRIBUTE NAME:: SAML SP field value to map to {morpheus} user First Name
-SURNAME ATTRIBUTE NAME:: SAML SP field value to map to {morpheus} user Last Name
-EMAIL ATTRIBUTE NAME:: SAML SP field value to map to {morpheus} user email address</p>
+<p>GIVEN NAME ATTRIBUTE NAME:: SAML SP field value to map to |morpheus| user First Name
+SURNAME ATTRIBUTE NAME:: SAML SP field value to map to |morpheus| user Last Name
+EMAIL ATTRIBUTE NAME:: SAML SP field value to map to |morpheus| user email address</p>
 <p>image::images/saml-c4576.png[]</p>
 <p>Once populated, select SAVE CHANGES and the SAML identity source integration will be added.</p>
 <p>In the Identity Sources section, important information for configuration of the SAML integration is provided. Use the SP ENTITY ID and SP ACS URL for configuration on the external login SAML provider side.</p>
@@ -212,7 +212,7 @@ EMAIL ATTRIBUTE NAME:: SAML SP field value to map to {morpheus} user email addre
 </ul>
 <p>image::images/saml-1ef5f.png[]</p>
 <p>Sample Metadata code output:
-[source,bash]
+.. code-block:: bash
 —-
 &lt;?xml version=”1.0” encoding=”UTF-8” standalone=”yes”?&gt;&lt;EntityDescriptor entityID=”<a class="reference external" href="https://someip.com/saml/CDWPjmZt">https://someip.com/saml/CDWPjmZt</a>” xmlns=”<a class="reference external" href="urn:oasis:names:tc:SAML:2.0:metadata">urn:oasis:names:tc:SAML:2.0:metadata</a>”&gt;&lt;SPSSODescriptor AuthnRequestsSigned=”false” WantAssertionsSigned=”true” protocolSupportEnumeration=”<a class="reference external" href="urn:oasis:names:tc:SAML:2.0:protocol">urn:oasis:names:tc:SAML:2.0:protocol</a>”&gt;&lt;NameIDFormat&gt;urn:oasis:names:tc:SAML:1.1:nameid-format:unspecified&lt;/NameIDFormat&gt;&lt;AssertionConsumerService index=”0” isDefault=”true” Binding=”urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST” Location=”https://someip.com/externalLogin/callback/CDWPjmZt”/&gt;&lt;/SPSSODescriptor&gt;&lt;/EntityDescriptor&gt;
 —-

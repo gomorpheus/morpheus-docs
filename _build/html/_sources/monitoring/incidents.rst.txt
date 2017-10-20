@@ -1,7 +1,7 @@
 Incidents
 =========
 
-Incident management is very important in any IT Operations environment. The ability to notify the appropriate people of an outage that requires immediate attention is critical to reducing recovery time and even preventing potential customer facing impacts. Because of this, {morpheus} provides incident management features as well as external integrations out of the box.
+Incident management is very important in any IT Operations environment. The ability to notify the appropriate people of an outage that requires immediate attention is critical to reducing recovery time and even preventing potential customer facing impacts. Because of this, |morpheus| provides incident management features as well as external integrations out of the box.
 
 Incidents can be found in the `Monitoring->Incidents` section. When a check fails, an incident is automatically raised. These can vary in severity based on the user configured check severities as well as the group hierarchy (representative of redundancy).
 

@@ -1,7 +1,7 @@
 RHEL
 ----
 
-To get started installing {morpheus} on RHEL 7 a few prerequisite items
+To get started installing |morpheus| on RHEL 7 a few prerequisite items
 are required.
 
 The RedHat Enterprise Linux 7 server needs to be registered and
@@ -43,7 +43,7 @@ subscription-manager register
   [root@appliance ~]# subscription-manager register Username: redhat@example.com Password:
 
 . subscription-manager auto --attach [Note this can take a minute to
-complete.] + [source,bash] ---- sudo subscription-manager attach --auto
+complete.] + .. code-block:: bash ---- sudo subscription-manager attach --auto
 
 Installed Product Current Status: Product Name: Red Hat Enterprise Linux
 Server Status: Subscribed ----

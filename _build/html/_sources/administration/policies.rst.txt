@@ -4,7 +4,7 @@ Policies
 Overview
 --------
 
-Policies add governance, ease of use, cost-savings, and auditing features to {morpheus}. Policies can be created in the Policies tabs in Groups and Clouds. Policy generation is a role permission.
+Policies add governance, ease of use, cost-savings, and auditing features to |morpheus| . Policies can be created in the Policies tabs in Groups and Clouds. Policy generation is a role permission.
 
 Policies apply towards any instance provisioned into a group or cloud with active policies. Cloud policies will override matching or conflicting group policies during provisioning.
 
@@ -115,6 +115,6 @@ Auto Approve Extensions
 Provision Approval
 ^^^^^^^^^^^^^^^^^^
 
-{morpheus} Provision Approvals enable an approval workflow via internal {morpheus} approval or via ServiceNow workflow. If a ServiceNow integration is present, the ServiceNow option is enabled. The Approval workflow to be selected is dynamically created by querying the ServiceNow Workflow table in the integrated ServiceNow instance.
+|morpheus| Provision Approvals enable an approval workflow via internal |morpheus| approval or via ServiceNow workflow. If a ServiceNow integration is present, the ServiceNow option is enabled. The Approval workflow to be selected is dynamically created by querying the ServiceNow Workflow table in the integrated ServiceNow instance.
 
-This ServiceNow approval integration enables users to use the {morpheus} Self-Service provisioning portal to provision new instances and still respect the required ServiceNow business approval workflow.
+This ServiceNow approval integration enables users to use the |morpheus| Self-Service provisioning portal to provision new instances and still respect the required ServiceNow business approval workflow.

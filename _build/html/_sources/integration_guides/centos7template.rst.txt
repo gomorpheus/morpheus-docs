@@ -1,21 +1,21 @@
-Creating a CentOS 7 {morpheus} Image
+Creating a CentOS 7 |morpheus| Image
 ====================================
 
 Overview
 --------
 
-{morpheus} comes out of the box with a default set of templates for use in many modern deployment scenarios. These consist mostly of base operating system images with a few additional adjustments. These adjustments typically include the addition of cloud-init (which is highly recommended to be used in most environments, but not mandatory). However, in many on-premise deployments there are custom image requirements as well as networking requirements. This guide will go over how to create a base CentOS 7 Image for use within {morpheus}.
+|morpheus| comes out of the box with a default set of templates for use in many modern deployment scenarios. These consist mostly of base operating system images with a few additional adjustments. These adjustments typically include the addition of cloud-init (which is highly recommended to be used in most environments, but not mandatory). However, in many on-premise deployments there are custom image requirements as well as networking requirements. This guide will go over how to create a base CentOS 7 Image for use within |morpheus| .
 
-=== Creating a CentOS 7 {morpheus} VMware Image
+=== Creating a CentOS 7 |morpheus| VMware Image
 
 ==== VMWare
 
-When running in VMWare it is highly recommended that VMware Tools be installed. Without it, {morpheus} will have difficulty assessing the host ip address and performing some additional automation tasks for the operating system.
+When running in VMWare it is highly recommended that VMware Tools be installed. Without it, |morpheus| will have difficulty assessing the host ip address and performing some additional automation tasks for the operating system.
 
 ==== Cloud-Init
 
 To get started with a base CentOS image we first install cloud-init. This is a relatively simple process using yum:
-[source,bash]
+.. code-block:: bash
 ----
 yum -y install epel-release
 yum -y install git wget ntp curl cloud-init dracut-modules-growroot
@@ -24,14 +24,14 @@ rpm -qa kernel | sed 's/^kernel-//'  | xargs -I {} dracut -f /boot/initramfs-{}.
 
 There are two parts to this yum installation. We are first ensuring some core dependencies are installed for automation as well as cloud-init. git for example is installed for use by ansible playbook automation down the line and is therefore optional if not using ansible. The dracut-modules-growroot is responsible for resizing the root partition upon first boot to match the virtual disk size that was potentially adjusted during provisioning.
 
-A great benefit to using cloud-init is credentials don't have to be locked into the template. It is advisable, within {morpheus}, to configure the default cloud-init user that gets created when the vm boots automatically by cloud-init. This is located in the `Administration -> Provisioning -> Cloud-Init` Settings section.
+A great benefit to using cloud-init is credentials don't have to be locked into the template. It is advisable, within |morpheus| , to configure the default cloud-init user that gets created when the vm boots automatically by cloud-init. This is located in the `Administration -> Provisioning -> Cloud-Init` Settings section.
 
 ==== Network Interfaces
 
 A slightly annoying change with centOS 7 is that the network interfaces have changed naming convention. You may notice when running ifconfig that the primary network interface is set to something like ens2344 or some other random number. This naming is dynamic typically by hardware id and we don't want this to fluctuate when provisioning the template in various VMware environments. Fortunately, there is a way to turn this functionality off and restore the interface back to eth0.
 
 Firstly we need to adjust our bootloader to disable interface naming like this.
-[source,bash]
+.. code-block:: bash
 ----
 sed -i -e 's/quiet/quiet net.ifnames=0 biosdevname=0/' /etc/default/grub
 grub2-mkconfig -o /boot/grub2/grub.cfg
@@ -42,7 +42,7 @@ The above command adds a few arguments to the kernel args list (namely `net.ifna
 The next step is to adjust the network-scripts in centOS. we need to ensure we have a file called ``/etc/sysconfig/network-scripts/ifcfg-eth0`
 
 Below is a script that we run on our packer builds to prepare the machines network configuration files.
-[source,bash]
+.. code-block:: bash
 ----
 export iface_file=$(basename "$(find /etc/sysconfig/network-scripts/ -name 'ifcfg*' -not -name 'ifcfg-lo' | head -n 1)")
 export iface_name=${iface_file:6}
@@ -54,7 +54,7 @@ sudo bash -c 'echo NM_CONTROLLED=\"no\" >> /etc/sysconfig/network-scripts/ifcfg-
 ----
 
 This script tries to ensure there is a new ifcfg-eth0 config created to replace the old ens config file. Please do verify this config exists after running. If it does not you will have to be sure to build one on your own.
-[source,bash]
+.. code-block:: bash
 ----
 TYPE=Ethernet
 DEVICE=eth0
@@ -72,7 +72,7 @@ SELinux can cause issues with cloud-init when in enforced mode. It may be advisa
 ==== A Note on Proxies
 
 Proxy configurations are known to vary in some organizations and makes building a base template a little more difficult. In order to fully configure proxies a few environment variables must be set in the `/etc/environment` file (This can be done automatically in a default user-data script for cloud-init as well in edit cloud).
-[source,bash]
+.. code-block:: bash
 ----
 http_proxy="http://myproxyaddress:8080"
 https_proxy="http://myproxyaddress:8080"

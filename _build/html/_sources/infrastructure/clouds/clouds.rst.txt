@@ -4,7 +4,7 @@ Clouds
 Overview
 --------
 
-Clouds are integrations or connections to public, private, hybrid clouds, or bare metal servers. Clouds can belong to many groups and contain many hosts. The clouds view a includes search feature and provides the option to edit, delete, and add new clouds. {morpheus} supports most Public Clouds and Private Clouds.
+Clouds are integrations or connections to public, private, hybrid clouds, or bare metal servers. Clouds can belong to many groups and contain many hosts. The clouds view a includes search feature and provides the option to edit, delete, and add new clouds. |morpheus| supports most Public Clouds and Private Clouds.
 
 Creating Clouds
 ---------------
@@ -22,7 +22,7 @@ EDIT
 REFRESH
   Force a sync with the Cloud. Last sync date, time and duration is shown under the Cloud name.
 DELETE
-  Delete the Cloud from {morpheus} IMPORTANT: All Instances and managed Hosts and VM's must be removed prior to deleting a cloud.
+  Delete the Cloud from |morpheus| IMPORTANT: All Instances and managed Hosts and VM's must be removed prior to deleting a cloud.
 
 .. NOTE:: Not all tabs are available for all Cloud Types.
 
@@ -46,7 +46,7 @@ Policies
   Manages Policies enforced on the Cloud.
 
 + Container Host
-  Provisions a Docker host into the Cloud, or adds an existing Docker Host (manual) to the Cloud. KVM hosts are also available for {morpheus} and Bare Metal cloud types.
+  Provisions a Docker host into the Cloud, or adds an existing Docker Host (manual) to the Cloud. KVM hosts are also available for |morpheus| and Bare Metal cloud types.
 + Hypervisor
   Add an existing Hypervisor to the Cloud. Not available for all Cloud types.
 
@@ -59,6 +59,6 @@ To delete a cloud:
 #. Select the Clouds link in the sub navigation bar.
 #. Click the Delete icon of the cloud to delete.
 
-.. IMPORTANT:: All Instances and managed Hosts and VM's must be removed prior to deleting a cloud. To remove Instances, Hosts and VM's from {morpheus} without deleting them in the actual Cloud, select Delete on the Host or VM, unselect "Remove Infrastructure" and select "Remove Associated Instances" if Instance are associated with the Hosts or VMs.
+.. IMPORTANT:: All Instances and managed Hosts and VM's must be removed prior to deleting a cloud. To remove Instances, Hosts and VM's from |morpheus| without deleting them in the actual Cloud, select Delete on the Host or VM, unselect "Remove Infrastructure" and select "Remove Associated Instances" if Instance are associated with the Hosts or VMs.
 
 .. add integration guide links

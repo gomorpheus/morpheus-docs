@@ -187,10 +187,10 @@
 <h1>Logs<a class="headerlink" href="#logs" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="overview">
 <h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
-<p>The logging architecture backing {morpheus} uses the latest and greatest
+<p>The logging architecture backing |morpheus| uses the latest and greatest
 technologies and standards to be able to service large amounts of log
 traffic as well as facilitate easy viewing. Utilizing elasticsearch
-behind the scenes and buffered log transmission protocols {morpheus}
+behind the scenes and buffered log transmission protocols |morpheus| 
 provides a highly efficient and highly scalable solution for capturing
 log data from anything provisioned via the system. By utilizing common
 formats (syslog) it is also very easy to forward logs to external third
@@ -211,14 +211,14 @@ relevant information with regards to scaling elasticsearch and advanced
 installation options for externalizing the elasticsearch cluster.</p>
 <p>This area of administration also provides options for setting custom
 syslog forward rules. These rules are applied on each individual host
-therefore keeping the {morpheus} appliance itself out of the data plane.
+therefore keeping the |morpheus| appliance itself out of the data plane.
 For information on different syslog formatting rules please refer to the
 <a class="reference external" href="http://www.rsyslog.com/sending-messages-to-a-remote-syslog-server/[rsyslog">http://www.rsyslog.com/sending-messages-to-a-remote-syslog-server/[rsyslog</a>]
 documentation.</p>
 </div>
 <div class="section" id="usage">
 <h3>Usage<a class="headerlink" href="#usage" title="Permalink to this headline">¶</a></h3>
-<p>{morpheus} automatically sets up and configures logging for all of the
+<p>|morpheus| automatically sets up and configures logging for all of the
 standard catalog items provisioned through morpheus. This includes both
 Docker containers as well as virtual machines. Simple view instance
 specific logs in instance detail via the “Logs” tab.</p>
@@ -252,9 +252,9 @@ insights out of log data.</p>
 </div>
 <div class="section" id="integrations">
 <h2>Integrations<a class="headerlink" href="#integrations" title="Permalink to this headline">¶</a></h2>
-<p>While the built in logging solution provided by {morpheus} is sufficient
+<p>While the built in logging solution provided by |morpheus| is sufficient
 for most, there are some scenarios in which a more advanced logging
-system may be desired or already in place. To facilitate this {morpheus}
+system may be desired or already in place. To facilitate this |morpheus| 
 makes it easy to add custom syslog rules as well as built in direct
 integrations with Splunk and LogRhythm. All integrations pertaining to
 logging can be configured in the <code class="docutils literal"><span class="pre">Administration</span> <span class="pre">-&gt;</span> <span class="pre">Logging</span></code> section.</p>
@@ -263,7 +263,7 @@ logging can be configured in the <code class="docutils literal"><span class="pre
 <p>To configure Splunk simply create a syslog listener configuration in
 Splunk. Then it is simply a matter of expanding the section in Logging
 settings pertaining to Splunk and filling out the host and port of the
-appender. Once saved, all hosts managed by {morpheus} will be configured
+appender. Once saved, all hosts managed by |morpheus| will be configured
 to forward logs to the target Splunk listener.</p>
 </div>
 <div class="section" id="logrhythm">

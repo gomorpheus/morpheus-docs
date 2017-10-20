@@ -200,19 +200,19 @@
             
   <div class="section" id="monitoring">
 <h1>Monitoring<a class="headerlink" href="#monitoring" title="Permalink to this headline">¶</a></h1>
-<p>{morpheus} provides great monitoring features out of the box. Anything
-provisioned within {morpheus} automatically gets a check created in the
+<p>|morpheus| provides great monitoring features out of the box. Anything
+provisioned within |morpheus| automatically gets a check created in the
 monitoring service. These checks are organized heirarchically in
 “Groups” and “Apps”. This makes it easy to gain a perspective as to what
 a customer or full stack facing impact is in the event of a particularly
 instance failure. This also takes into account redundancy layers when it
 comes to calculating the applications overall uptime percentage.</p>
 <p>There are also several integrations built into the monitoring subsystem
-of {morpheus} including App Dynamics , New Relic, and even Service Now
+of |morpheus| including App Dynamics , New Relic, and even Service Now
 integration.</p>
 <div class="section" id="checks">
 <h2>Checks<a class="headerlink" href="#checks" title="Permalink to this headline">¶</a></h2>
-<p>The Monitoring system is composed of individual checks. A check is created for every container or vm that is provisioned through {morpheus}. One interesting thing about these checks is they are type aware. There are several different built in check types that are selected based on the service or instance type that is being provisioned. These range from database type checks to web checks and message checks. They are highly configurable and also feature fallback check types for those more generic use cases.</p>
+<p>The Monitoring system is composed of individual checks. A check is created for every container or vm that is provisioned through |morpheus| . One interesting thing about these checks is they are type aware. There are several different built in check types that are selected based on the service or instance type that is being provisioned. These range from database type checks to web checks and message checks. They are highly configurable and also feature fallback check types for those more generic use cases.</p>
 <p>Checks can be customized to run custom queries, check queue sizes, or even adjust severity levels and check intervals. All of these things can be controlled from the Checks sub tab within Monitoring.</p>
 <div class="section" id="health">
 <h3>Health<a class="headerlink" href="#health" title="Permalink to this headline">¶</a></h3>
@@ -229,17 +229,17 @@ integration.</p>
 </div>
 <div class="section" id="ssh-tunneling">
 <h3>SSH Tunneling<a class="headerlink" href="#ssh-tunneling" title="Permalink to this headline">¶</a></h3>
-<p>In many cases when it comes to monitoring databases, and services they may not be fronted on the public ips for external monitoring. To reach these safely, and securely {morpheus} provides an SSH Tunneling mechanism for its check servers. This allows the check to be confirmed via an ssh port tunnel securely using a keypair.</p>
+<p>In many cases when it comes to monitoring databases, and services they may not be fronted on the public ips for external monitoring. To reach these safely, and securely |morpheus| provides an SSH Tunneling mechanism for its check servers. This allows the check to be confirmed via an ssh port tunnel securely using a keypair.</p>
 </div>
 <div class="section" id="check-servers">
 <h3>Check Servers<a class="headerlink" href="#check-servers" title="Permalink to this headline">¶</a></h3>
-<p>On a base installation of {morpheus} a single <cite>check server</cite> is installed on the appliance. This is used for running any custom user checks. This services connects to the provided rabbitmq services and can be moved off or even scaled horizontally onto sets of check servers. All other checks that are related to provisioned containers or vms are executed by the installed agent on the guest OS or Docker host.</p>
+<p>On a base installation of |morpheus| a single <cite>check server</cite> is installed on the appliance. This is used for running any custom user checks. This services connects to the provided rabbitmq services and can be moved off or even scaled horizontally onto sets of check servers. All other checks that are related to provisioned containers or vms are executed by the installed agent on the guest OS or Docker host.</p>
 </div>
 </div>
 <div class="section" id="groups-apps">
 <h2>Groups &amp; Apps<a class="headerlink" href="#groups-apps" title="Permalink to this headline">¶</a></h2>
 <p>One great feature of the monitoring system is the ability to organize checks by groups and apps. This provides a nice convenient way to determine what a customer facing impact might be for a single failure as well as representing redundancy via groupings.</p>
-<p>It is important to note the relationship of apps, groups, and even checks with regards to instances provisioned within {morpheus}. For every <cite>Instance</cite> that is provisioned: A monitoring <cite>Group</cite> is created and a <cite>Check</cite> is added to that group for every <cite>Container</cite> or <cite>Virtual Machine</cite> within that Instance. This makes sense such that as an Instance is scaled out horizontally (containers/vms added to it) The monitoring system accurately represents the layers of redundancy. An <cite>App</cite> simply maps to a Provisioning <cite>App</cite> and should be pretty straightforward to understand.</p>
+<p>It is important to note the relationship of apps, groups, and even checks with regards to instances provisioned within |morpheus| . For every <cite>Instance</cite> that is provisioned: A monitoring <cite>Group</cite> is created and a <cite>Check</cite> is added to that group for every <cite>Container</cite> or <cite>Virtual Machine</cite> within that Instance. This makes sense such that as an Instance is scaled out horizontally (containers/vms added to it) The monitoring system accurately represents the layers of redundancy. An <cite>App</cite> simply maps to a Provisioning <cite>App</cite> and should be pretty straightforward to understand.</p>
 <div class="section" id="groups">
 <h3>Groups<a class="headerlink" href="#groups" title="Permalink to this headline">¶</a></h3>
 <p>It is also possible to organize custom checks in this hierarchical structure by manually adding or editing a Group or App. Groups can only contain checks and can be edited or created in <cite>Monitoring -&gt; Groups</cite>. Besides simply adding and removing checks to a group there are a few other useful options that can be customized in a group.</p>
@@ -266,14 +266,14 @@ integration.</p>
 </div>
 <div class="section" id="incidents">
 <h2>Incidents<a class="headerlink" href="#incidents" title="Permalink to this headline">¶</a></h2>
-<p>Incident management is very important in any IT Operations environment. The ability to notify the appropriate people of an outage that requires immediate attention is critical to reducing recovery time and even preventing potential customer facing impacts. Because of this, {morpheus} provides incident management features as well as external integrations out of the box.</p>
+<p>Incident management is very important in any IT Operations environment. The ability to notify the appropriate people of an outage that requires immediate attention is critical to reducing recovery time and even preventing potential customer facing impacts. Because of this, |morpheus| provides incident management features as well as external integrations out of the box.</p>
 <p>Incidents can be found in the <cite>Monitoring-&gt;Incidents</cite> section. When a check fails, an incident is automatically raised. These can vary in severity based on the user configured check severities as well as the group hierarchy (representative of redundancy).</p>
 <p>Incidents are also grouped. If an application is impacted and multiple checks fail for that application they automatically get grouped together in one Incident that can fluctuate or escalate in severity as time progresses. These incidents can be muted so as not to affect availability and they can also be resolved manually with an option to detail resolution information.</p>
 <p>There are also integrations and API’s for integrating with existing corporate workflows when it comes to incident management.</p>
 </div>
 <div class="section" id="alerts">
 <h2>Alerts<a class="headerlink" href="#alerts" title="Permalink to this headline">¶</a></h2>
-<p>There are several ways to configure alerts and notifications within {morpheus}. Users can be notified via Email or SMS as well as several other direct integrations. These integrations include PagerDuty, Alert Ops, Victor Ops, and even Slack chat Channel notifications (or optionally via the ServiceNow integration).</p>
+<p>There are several ways to configure alerts and notifications within |morpheus| . Users can be notified via Email or SMS as well as several other direct integrations. These integrations include PagerDuty, Alert Ops, Victor Ops, and even Slack chat Channel notifications (or optionally via the ServiceNow integration).</p>
 <div class="section" id="contacts">
 <h3>Contacts<a class="headerlink" href="#contacts" title="Permalink to this headline">¶</a></h3>
 <p>To configure user notifications a contact must first be created in <cite>Monitoring -&gt; Contacts</cite>. These contacts can be one of a few types:</p>
@@ -301,25 +301,25 @@ integration.</p>
 <div class="section" id="notifications">
 <h3>Notifications<a class="headerlink" href="#notifications" title="Permalink to this headline">¶</a></h3>
 <p>Configuring Notification Services</p>
-<p>By default {morpheus} provides email notification services using the <cite>morpheusdata.com</cite> email address. It may be advisable to customize these services to use another mail delivery service.</p>
+<p>By default |morpheus| provides email notification services using the <cite>morpheusdata.com</cite> email address. It may be advisable to customize these services to use another mail delivery service.</p>
 </div>
 </div>
 <div class="section" id="monitoring-integrations">
 <h2>Monitoring Integrations<a class="headerlink" href="#monitoring-integrations" title="Permalink to this headline">¶</a></h2>
-<p>While {morpheus} provides a fantastic means for determining uptime and availability of both services and vms sometimes more is needed. A good example of this is performance application monitoring. To solve this several external integrations are provided out of the box. Even some external integrations with regards to incident management are provided.</p>
+<p>While |morpheus| provides a fantastic means for determining uptime and availability of both services and vms sometimes more is needed. A good example of this is performance application monitoring. To solve this several external integrations are provided out of the box. Even some external integrations with regards to incident management are provided.</p>
 <div class="section" id="appdynamics">
 <h3>AppDynamics<a class="headerlink" href="#appdynamics" title="Permalink to this headline">¶</a></h3>
-<p>AppDynamics is a very powerful performance and application monitoring tool. It features advanced correlation features and profiling capabilities for a very wide range of application platforms including native Docker support. Due to the level of capabilities of AppDyanmics there are more required settings to integrate it with {morpheus}. To get started expand the section in <cite>Admin -&gt; Monitoring</cite> related to AppDynamics and toggle it to Enabled. There are several fields here that need filled out. Once completed hit save and all hosts will automatically be configured to install the AppDynamics agent.</p>
-<p>AppDynamics is capable of bein run as a paid SaaS based service as well as an on premise installation and {morpheus} supports both configurations. Most input fields related to connecting to AppDynamics provide helpful tips as to what information exactly needs provided and where to acquire it.</p>
+<p>AppDynamics is a very powerful performance and application monitoring tool. It features advanced correlation features and profiling capabilities for a very wide range of application platforms including native Docker support. Due to the level of capabilities of AppDyanmics there are more required settings to integrate it with |morpheus| . To get started expand the section in <cite>Admin -&gt; Monitoring</cite> related to AppDynamics and toggle it to Enabled. There are several fields here that need filled out. Once completed hit save and all hosts will automatically be configured to install the AppDynamics agent.</p>
+<p>AppDynamics is capable of bein run as a paid SaaS based service as well as an on premise installation and |morpheus| supports both configurations. Most input fields related to connecting to AppDynamics provide helpful tips as to what information exactly needs provided and where to acquire it.</p>
 </div>
 <div class="section" id="newrelic">
 <h3>NewRelic<a class="headerlink" href="#newrelic" title="Permalink to this headline">¶</a></h3>
-<p>New Relic is a very popular service based performance monitoring tool. It supports a wide variety of application platforms and is a breeze to configure with {morpheus}. Another great feature of new relic is its ability to monitor the server applications run on and provide additional stats. To do this an agent needs to be installed and configured on each server. Fortunately, this is performed automatically for every vm and docker host provisioned within {morpheus}. To turn on the integration simply go to <cite>Admin -&gt; Monitoring</cite> and expand the section titled “New Relic”. There it is simply a matter of toggling the Enabled setting to on and entering the New Relic account API Key.</p>
+<p>New Relic is a very popular service based performance monitoring tool. It supports a wide variety of application platforms and is a breeze to configure with |morpheus| . Another great feature of new relic is its ability to monitor the server applications run on and provide additional stats. To do this an agent needs to be installed and configured on each server. Fortunately, this is performed automatically for every vm and docker host provisioned within |morpheus| . To turn on the integration simply go to <cite>Admin -&gt; Monitoring</cite> and expand the section titled “New Relic”. There it is simply a matter of toggling the Enabled setting to on and entering the New Relic account API Key.</p>
 </div>
 <div class="section" id="service-now">
 <h3>Service Now<a class="headerlink" href="#service-now" title="Permalink to this headline">¶</a></h3>
-<p>Service now integration is provided out of the box with {morpheus}. To add a service now integration simply visit the ‘Monitoring Settings’ section in <cite>Admin -&gt; Monitoring</cite>. This allows one to map incident severity levels to equivalent severities in ServiceNow.</p>
-<p>To enable service now simply expand the section labelled “ServiceNow” in <cite>Admin -&gt; Monitoring</cite>. Toggle the enabled flag and enter the <cite>Host</cite>, <cite>User</cite>, and <cite>Password</cite> information required to connect to ServiceNow. The other options below include behaviors upon new incidents being opened and old incidents closing. It also includes a table for mapping {morpheus} incident serverity levels to their ServiceNow counterparts.</p>
+<p>Service now integration is provided out of the box with |morpheus| . To add a service now integration simply visit the ‘Monitoring Settings’ section in <cite>Admin -&gt; Monitoring</cite>. This allows one to map incident severity levels to equivalent severities in ServiceNow.</p>
+<p>To enable service now simply expand the section labelled “ServiceNow” in <cite>Admin -&gt; Monitoring</cite>. Toggle the enabled flag and enter the <cite>Host</cite>, <cite>User</cite>, and <cite>Password</cite> information required to connect to ServiceNow. The other options below include behaviors upon new incidents being opened and old incidents closing. It also includes a table for mapping |morpheus| incident serverity levels to their ServiceNow counterparts.</p>
 <p>There are several other useful service now integrations planned for future releases and will be discussed as those features come out.</p>
 </div>
 </div>

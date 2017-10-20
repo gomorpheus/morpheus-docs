@@ -1,6 +1,6 @@
 [[debian-install]] === Debian / Ubuntu
 
-To get started installing {morpheus} on Ubuntu (14.04 currently) a few
+To get started installing |morpheus| on Ubuntu (14.04 currently) a few
 prepratory items should be addressed first.
 
 First make sure the apt repository is up to date by running
@@ -22,7 +22,7 @@ appliance server. i.e.
 Next we must install the package onto the machine and configure the
 morpheus services:
 
-[source,bash]
+.. code-block:: bash
 -------------
 
 sudo dpkg -i morpheus-appliance\_x.x.x-1.amd64.deb sudo morpheus-ctl
@@ -35,7 +35,7 @@ resolvable from your browser. The url can be changed by editing
 ``/etc/morpheus/morpheus.rb`` and changing the value of
 ``appliance_url``. After this has been changed simply run:
 
-[source,bash]
+.. code-block:: bash
 -------------
 
 sudo morpheus-ctl reconfigure sudo morpheus-ctl stop morpheus-ui sudo

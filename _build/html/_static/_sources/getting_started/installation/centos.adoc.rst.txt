@@ -1,6 +1,6 @@
 [[centos-install]] === CentOS / Redhat Enterprise
 
-To get started installing {morpheus} on CentOS/RHEL a few prepratory
+To get started installing |morpheus| on CentOS/RHEL a few prepratory
 items should be addressed first.
 
 First configure firewalld to allow access from users on port 80 or 443
@@ -33,7 +33,7 @@ appliance server. i.e.
 Next we must install the package onto the machine and configure the
 morpheus services:
 
-[source,bash]
+.. code-block:: bash
 -------------
 
 sudo sudo rpm -i morpheus-appliance-x.x.x-1.x86\_64.rpm sudo
@@ -46,7 +46,7 @@ resolvable from your browser. The url can be changed by editing
 ``/etc/morpheus/morpheus.rb`` and changing the value of
 ``appliance_url``. After this has been changed simply run:
 
-[source,bash]
+.. code-block:: bash
 -------------
 
 sudo morpheus-ctl reconfigure sudo morpheus-ctl stop morpheus-ui sudo

@@ -4,7 +4,7 @@ Ansible
 Overview
 ^^^^^^^^
 
-{morpheus} appliance supports Ansible integration for configuration management.  {morpheus} accomplishes this by integrating with an existing repository of playbooks as the master in a master-slave Ansible architecture.
+|morpheus| appliance supports Ansible integration for configuration management.  |morpheus| accomplishes this by integrating with an existing repository of playbooks as the master in a master-slave Ansible architecture.
 
 To get started the only requirement is an existing repository for playbooks in a very simple structure.
 
@@ -15,9 +15,9 @@ Add Ansible Integration
 #. Select Integration Type "Ansible"
 #. Populate the following fields:
 
-   * Name: Name of the Ansible Integration in {morpheus}
+   * Name: Name of the Ansible Integration in |morpheus| 
    * Enabled: Enabled by default Ansible Git URL:: https or git url format of the Ansible Git repo to use
-   * Keypair: For private Git repos, a keypair must be added to {morpheus} and the public key added to the git account.
+   * Keypair: For private Git repos, a keypair must be added to |morpheus| and the public key added to the git account.
    * Playbooks Path: Path of the Playbooks relative to the Git url.
    * Roles Path: Path of the Roles relative to the Git url.
    * Group Variable Path: Path of the Group Variables relative to the Git url.
@@ -68,7 +68,7 @@ Running Playbooks
 
 Playbooks can also be ran on all inventory groups, individual groups, or added as a task and ran with workflows.
 
-To run ansible on all or a single inventory group, in the Ansible tab of the {morpheus} Group page, select the `Actions` dropdown and click `Run`.
+To run ansible on all or a single inventory group, in the Ansible tab of the |morpheus| Group page, select the `Actions` dropdown and click `Run`.
 
 In the `Run Ansible` modal, you can then select all or an individual group, and then all or a single Playbook, as well as add custom tags.
 

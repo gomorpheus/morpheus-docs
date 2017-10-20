@@ -230,7 +230,7 @@ They have datacenters based in the UK, USA, Germany, Netherlands, Singapore and 
 <li><p class="first">Enter the following:</p>
 <dl class="docutils">
 <dt>Name</dt>
-<dd><p class="first last">Name of the Cloud in {morpheus}</p>
+<dd><p class="first last">Name of the Cloud in |morpheus| </p>
 </dd>
 <dt>Location</dt>
 <dd><p class="first last">Description field for adding notes on the cloud, such as location.</p>
@@ -249,7 +249,7 @@ They have datacenters based in the UK, USA, Germany, Netherlands, Singapore and 
 </dd>
 <dt>INVENTORY</dt>
 <dd><ul class="first last simple">
-<li><em>Off</em>: Existing Upcloud Servers will not be inventoried in {morpheus}</li>
+<li><em>Off</em>: Existing Upcloud Servers will not be inventoried in |morpheus| </li>
 <li><em>Basic</em>: Existing Servers are Inventoried with Power state, Memory and Cores statistics synced.</li>
 <li><em>Full</em>: Existing Servers are Inventoried with Power state, Memory and Cores statistics, plus IP Addresses, Storage Info, and Console VNC Information.</li>
 </ul>
@@ -285,19 +285,19 @@ They have datacenters based in the UK, USA, Germany, Netherlands, Singapore and 
 <dd>Select a Chef, Salt, Ansible or Puppet integration to be used with this Cloud.</dd>
 <dt>AGENT INSTALL MODE</dt>
 <dd><ul class="first last simple">
-<li>SSH / WINRM: {morpheus} will use SSH or WINRM for Agent install.</li>
-<li>Cloud-Init (when available): {morpheus} will utilize Cloud-Init or Cloudbase-Init for agent install when provisioning images with Cloud-Init/Cloudbase-Init installed. {morpheus} will fall back on SSH or WINRM if cloud-init is not installed on the provisioned image.</li>
+<li>SSH / WINRM: |morpheus| will use SSH or WINRM for Agent install.</li>
+<li>Cloud-Init (when available): |morpheus| will utilize Cloud-Init or Cloudbase-Init for agent install when provisioning images with Cloud-Init/Cloudbase-Init installed. |morpheus| will fall back on SSH or WINRM if cloud-init is not installed on the provisioned image.</li>
 </ul>
 </dd>
 <dt>API PROXY</dt>
-<dd>Required when a Proxy Server blocks communication between the {morpheus} Appliance and the Cloud. Proxies can be added in the <cite>Infrastructure -&gt; Networks -&gt; Proxies</cite> tab.</dd>
+<dd>Required when a Proxy Server blocks communication between the |morpheus| Appliance and the Cloud. Proxies can be added in the <cite>Infrastructure -&gt; Networks -&gt; Proxies</cite> tab.</dd>
 </dl>
 </div>
 <div class="section" id="provisioning-options">
 <h2>Provisioning Options<a class="headerlink" href="#provisioning-options" title="Permalink to this headline">¶</a></h2>
 <dl class="docutils">
 <dt>API PROXY</dt>
-<dd>Required when a Proxy Server blocks communication between an Instance and the {morpheus} Appliance. Proxies can be added in the <cite>Infrastructure -&gt; Networks -&gt; Proxies</cite> tab.</dd>
+<dd>Required when a Proxy Server blocks communication between an Instance and the |morpheus| Appliance. Proxies can be added in the <cite>Infrastructure -&gt; Networks -&gt; Proxies</cite> tab.</dd>
 <dt>Bypass Proxy for Appliance URL</dt>
 <dd>Enable to bypass proxy settings (if added) for Instance Agent communication to the Appliance URL.</dd>
 <dt>USER DATA (LINUX)</dt>
@@ -307,14 +307,14 @@ They have datacenters based in the UK, USA, Germany, Netherlands, Singapore and 
 <h3>Group<a class="headerlink" href="#group" title="Permalink to this headline">¶</a></h3>
 <p>A Group must be specified or created for the new Cloud to be added to. Clouds can be added to additional Groups or removed from Groups after being created.</p>
 <ul class="simple">
-<li><em>USE EXISTING</em>: Add the new Cloud to an exiting Group in {morpheus}.</li>
-<li><em>CREATE NEW</em>: Creates a new Group in {morpheus} and adds the Cloud to the Group.</li>
+<li><em>USE EXISTING</em>: Add the new Cloud to an exiting Group in |morpheus| .</li>
+<li><em>CREATE NEW</em>: Creates a new Group in |morpheus| and adds the Cloud to the Group.</li>
 </ul>
 </div>
 <div class="section" id="review">
 <h3>Review<a class="headerlink" href="#review" title="Permalink to this headline">¶</a></h3>
 <p>Confirm all settings are correct and select <cite>COMPLETE</cite>.</p>
-<p>The UpCloud Cloud will be added, and {morpheus} will perform the initial cloud sync of:</p>
+<p>The UpCloud Cloud will be added, and |morpheus| will perform the initial cloud sync of:</p>
 <ul class="simple">
 <li>UpCloud Servers will added as Virtual Machines (if Inventory is enabled)</li>
 <li>UpCloud Templates (My Templates) will sync and be added to <cite>Provisioning -&gt; Virtual Images</cite>.</li>
@@ -327,7 +327,7 @@ They have datacenters based in the UK, USA, Germany, Netherlands, Singapore and 
 </div>
 <div class="section" id="provisioning-to-upcloud">
 <h2>Provisioning to UpCloud<a class="headerlink" href="#provisioning-to-upcloud" title="Permalink to this headline">¶</a></h2>
-<p>Instances and Apps can be created using the private Images synced from UpCloud or from the {morpheus} provided Image Catalog.</p>
+<p>Instances and Apps can be created using the private Images synced from UpCloud or from the |morpheus| provided Image Catalog.</p>
 <div class="section" id="provision-a-synced-image">
 <h3>Provision a synced Image<a class="headerlink" href="#provision-a-synced-image" title="Permalink to this headline">¶</a></h3>
 <p>Images synced from UpCloud can be provisioned by using:</p>
@@ -341,8 +341,8 @@ They have datacenters based in the UK, USA, Germany, Netherlands, Singapore and 
 </div>
 </div>
 <div class="section" id="provision-a-morpheus-provided-upcloud-image">
-<h3>Provision a {morpheus} provided UpCloud Image<a class="headerlink" href="#provision-a-morpheus-provided-upcloud-image" title="Permalink to this headline">¶</a></h3>
-<p>{morpheus] provides a number of pre-configured Images that are available in the default {morpheus} Catalog when provisioning and Instance, App, or creating an App Template. UpCloud Images are included in the following Instance Types in the default {morpheus} catalog.</p>
+<h3>Provision a |morpheus| provided UpCloud Image<a class="headerlink" href="#provision-a-morpheus-provided-upcloud-image" title="Permalink to this headline">¶</a></h3>
+<p>{morpheus] provides a number of pre-configured Images that are available in the default |morpheus| Catalog when provisioning and Instance, App, or creating an App Template. UpCloud Images are included in the following Instance Types in the default |morpheus| catalog.</p>
 <ul class="simple">
 <li>ACTIVEMQ</li>
 <li>APACHE</li>
