@@ -43,7 +43,7 @@ subscription-manager register
   [root@appliance ~]# subscription-manager register Username: redhat@example.com Password:
 
 . subscription-manager auto --attach [Note this can take a minute to
-complete.] + [source,bash] ---- sudo subscription-manager attach --auto
+complete.] + .. code-block:: bash ---- sudo subscription-manager attach --auto
 
 Installed Product Current Status: Product Name: Red Hat Enterprise Linux
 Server Status: Subscribed ----

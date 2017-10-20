@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>[source,bash] &#8212; jwtest 1 documentation</title>
+    <title>.. code-block:: bash &#8212; jwtest 1 documentation</title>
     <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <script type="text/javascript">
@@ -50,7 +50,7 @@ version plus the python depency version.</p>
 <p>If the server has not been registered and activated then the
 subscription manager version will return the below message.</p>
 <div class="section" id="source-bash">
-<h1>[source,bash]<a class="headerlink" href="#source-bash" title="Permalink to this headline">¶</a></h1>
+<h1>.. code-block:: bash<a class="headerlink" href="#source-bash" title="Permalink to this headline">¶</a></h1>
 <p>[<a class="reference external" href="mailto:root&#37;&#52;&#48;appliance">root<span>&#64;</span>appliance</a> ~]# subscription-manager version server type: This
 system is currently not registered subscription management server:
 0.9.51.24.-1 subscription-manager: 1.10.14-7.el7 python-rhsm:
@@ -59,7 +59,7 @@ system is currently not registered subscription management server:
 subscription manager will return the below message.</p>
 </div>
 <div class="section" id="id1">
-<h1>[source,bash]<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<h1>.. code-block:: bash<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
 <p>[<a class="reference external" href="mailto:root&#37;&#52;&#48;appliance">root<span>&#64;</span>appliance</a> ~]# subscription-manager version server type: Red Hat
 Subscription Management subscription management server: 0.9.51.24-1
 subscription-manager: 1.10.14-7.el7 python-rhsm: 1.10.12-2.el7 —-</p>
@@ -69,11 +69,11 @@ server.</p>
 <p>TIP: To register the server you will need to have sudo permissions
 [Member of the Wheel group] or root access to the server. You will also
 need your redhat registered email address and password.</p>
-<p>. subscription-manager register + [source,bash] —- [<a class="reference external" href="mailto:root&#37;&#52;&#48;appliance">root<span>&#64;</span>appliance</a> ~]#
+<p>. subscription-manager register + .. code-block:: bash —- [<a class="reference external" href="mailto:root&#37;&#52;&#48;appliance">root<span>&#64;</span>appliance</a> ~]#
 subscription-manager register Username: <a class="reference external" href="mailto:redhat&#37;&#52;&#48;example&#46;com">redhat<span>&#64;</span>example<span>&#46;</span>com</a> Password:
 —-</p>
 <p>. subscription-manager auto –attach [Note this can take a minute to
-complete.] + [source,bash] —- sudo subscription-manager attach –auto</p>
+complete.] + .. code-block:: bash —- sudo subscription-manager attach –auto</p>
 <p>Installed Product Current Status: Product Name: Red Hat Enterprise Linux
 Server Status: Subscribed —-</p>
 <p>To check to see if the RHEL server has the Red Hat Enterprise Linux 7
@@ -83,14 +83,14 @@ to return the repo status.</p>
 [Member of the Wheel group] or root access to the server.</p>
 </div>
 <div class="section" id="id2">
-<h1>[source,bash]<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h1>
+<h1>.. code-block:: bash<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h1>
 <p>sudo yum repolist all | grep “rhel-7-server-optional-rpms”
 rhel-7-server-optional-rpms/7Server/x86_64 disabled —-</p>
 <p>If the repo status was returned as disabled then you will need to enable
 the repo using the subsciption manager like below.</p>
 </div>
 <div class="section" id="id3">
-<h1>[source,bash]<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h1>
+<h1>.. code-block:: bash<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h1>
 <p>sudo subscription-manager repos –enable rhel-7-server-optional-rpms
 Repo ‘rhel-7-server-optional-rpms’ is enabled for this system. —-</p>
 <p>The message “Repo ‘rhel-7-server-optional-rpms’ is enabled for this
@@ -106,7 +106,7 @@ appliance server. i.e.
 morpheus services:</p>
 </div>
 <div class="section" id="id4">
-<h1>[source,bash]<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h1>
+<h1>.. code-block:: bash<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h1>
 <p>sudo rpm -i morpheus-appliance_x.x.x-1.amd64.rpm sudo morpheus-ctl
 reconfigure —-</p>
 <p>Once the installation is complete the web interface will automatically
@@ -117,7 +117,7 @@ resolvable from your browser. The url can be changed by editing
 <code class="docutils literal"><span class="pre">appliance_url</span></code>. After this has been changed simply run:</p>
 </div>
 <div class="section" id="id5">
-<h1>[source,bash]<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h1>
+<h1>.. code-block:: bash<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h1>
 <p>sudo morpheus-ctl reconfigure sudo morpheus-ctl stop morpheus-ui sudo
 morpheus-ctl start morpheus-ui —-</p>
 <p>NOTE: The <code class="docutils literal"><span class="pre">morpheus-ui</span></code> can take 2-3 minutes to startup before it

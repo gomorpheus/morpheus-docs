@@ -568,7 +568,7 @@ image::images/newazure-b89ea.png[]</p>
 <p>IMPORTANT: In order to communicate with Azure Stack, |morpheus| must be able to reach the internal Azure Stack network. The Azure Stack Portal needs to be exposed to the |morpheus| Appliances’ network with corresponding entries added to DNS.</p>
 <p>One option to expose the Internal Azure Stack network to the |morpheus| Appliances’ network is to use the ‘Expose-AzureStackPortal.ps1’ powershell script from <a class="reference external" href="https://gallery.technet.microsoft.com/scriptcenter/Expose-the-Azure-Stack-7ef68b19">https://gallery.technet.microsoft.com/scriptcenter/Expose-the-Azure-Stack-7ef68b19</a>. An Azure Stack Port Mapping Tool is also available.</p>
 <p>Below is a sample output from the script for reference:</p>
-<p>[source,bash]</p>
+<p>.. code-block:: bash</p>
 <p>[Admin Portal] DNS: 10.30.23.120 - adminportal.local.azurestack.external adminmanagement.local.azurestack.external</p>
 <p>[Tenant Portal] Created port mappings on 10.30.23.121 to 192.168.102.10
 [Tenant Portal] Ports: 13011 30015 13001 13010 13021 13020 443 13003 12646 12647 12648 12649 12650 12495 13026 12499
@@ -832,11 +832,11 @@ machine.
 $ winrm set winrm/config/service &#64;{AllowUnencrypted=”false”}
 $ winrm set winrm/config/service/Auth &#64;{Kerberos=”true”}</div></blockquote>
 <p>On the |morpheus| appliance the krb5-user package must be installed. For Ubuntu the command is as follows:
-[source,bash]</p>
+.. code-block:: bash</p>
 <blockquote>
 <div>$ sudo apt-get install krb5-user</div></blockquote>
 <p>Create a file in /etc called krb5.conf and replace the domain name with the name of the domain to be used. In this case we used |morpheus| .com as the domain.
-[source,bash]</p>
+.. code-block:: bash</p>
 <blockquote>
 <div><dl class="docutils">
 <dt>[libdefaults]</dt>
@@ -867,7 +867,7 @@ admin_server = win-ad.|morpheus| .COM:749</dd>
 </dl>
 </div></blockquote>
 <dl class="docutils">
-<dt>[source,bash]</dt>
+<dt>.. code-block:: bash</dt>
 <dd><dl class="first last docutils">
 <dt>[login]</dt>
 <dd>krb4_convert = true
@@ -1359,7 +1359,7 @@ ORGANIZATION:</p>
 <p>When running in VMWare it is highly recommended that VMware Tools be installed. Without it, |morpheus| will have difficulty assessing the host ip address and performing some additional automation tasks for the operating system.</p>
 <p>==== Cloud-Init</p>
 <p>To get started with a base CentOS image we first install cloud-init. This is a relatively simple process using yum:
-[source,bash]
+.. code-block:: bash
 —-
 yum -y install epel-release
 yum -y install git wget ntp curl cloud-init dracut-modules-growroot
@@ -1370,7 +1370,7 @@ rpm -qa kernel | sed ‘s/^kernel-//’  | xargs -I {} dracut -f /boot/initramfs
 <p>==== Network Interfaces</p>
 <p>A slightly annoying change with centOS 7 is that the network interfaces have changed naming convention. You may notice when running ifconfig that the primary network interface is set to something like ens2344 or some other random number. This naming is dynamic typically by hardware id and we don’t want this to fluctuate when provisioning the template in various VMware environments. Fortunately, there is a way to turn this functionality off and restore the interface back to eth0.</p>
 <p>Firstly we need to adjust our bootloader to disable interface naming like this.
-[source,bash]
+.. code-block:: bash
 —-
 sed -i -e ‘s/quiet/quiet net.ifnames=0 biosdevname=0/’ /etc/default/grub
 grub2-mkconfig -o /boot/grub2/grub.cfg
@@ -1378,7 +1378,7 @@ grub2-mkconfig -o /boot/grub2/grub.cfg
 <p>The above command adds a few arguments to the kernel args list (namely <cite>net.ifnames=0</cite> and <cite>biosdevname=0</cite>. It may be useful to view the <cite>/etc/default/grub</cite> file and ensure these settings were indeed applied.</p>
 <p>The next step is to adjust the network-scripts in centOS. we need to ensure we have a file called <a href="#id38"><span class="problematic" id="id39">``</span></a>/etc/sysconfig/network-scripts/ifcfg-eth0`</p>
 <p>Below is a script that we run on our packer builds to prepare the machines network configuration files.
-[source,bash]
+.. code-block:: bash
 —-
 export iface_file=$(basename “$(find /etc/sysconfig/network-scripts/ -name ‘ifcfg*’ -not -name ‘ifcfg-lo’ | head -n 1)”)
 export iface_name=${iface_file:6}
@@ -1389,7 +1389,7 @@ sudo sed -i -e “s/$iface_name/eth0/” /etc/sysconfig/network-scripts/ifcfg-et
 sudo bash -c ‘echo NM_CONTROLLED=”no” &gt;&gt; /etc/sysconfig/network-scripts/ifcfg-eth0’
 —-</p>
 <p>This script tries to ensure there is a new ifcfg-eth0 config created to replace the old ens config file. Please do verify this config exists after running. If it does not you will have to be sure to build one on your own.
-[source,bash]
+.. code-block:: bash
 —-
 TYPE=Ethernet
 DEVICE=eth0
@@ -1403,7 +1403,7 @@ DEFROUTE=yes
 <p>SELinux can cause issues with cloud-init when in enforced mode. It may be advisable to set this to permissive unless it is mandatory within your organization to use an enforced SELinux configuration. If that is the case please see the documentation for the cloud_init_t security policies.</p>
 <p>==== A Note on Proxies</p>
 <p>Proxy configurations are known to vary in some organizations and makes building a base template a little more difficult. In order to fully configure proxies a few environment variables must be set in the <cite>/etc/environment</cite> file (This can be done automatically in a default user-data script for cloud-init as well in edit cloud).
-[source,bash]
+.. code-block:: bash
 —-
 http_proxy=”<a class="reference external" href="http://myproxyaddress:8080">http://myproxyaddress:8080</a>”
 https_proxy=”<a class="reference external" href="http://myproxyaddress:8080">http://myproxyaddress:8080</a>”
@@ -1483,7 +1483,7 @@ EMAIL ATTRIBUTE NAME:: SAML SP field value to map to |morpheus| user email addre
 </ul>
 <p>image::images/saml-1ef5f.png[]</p>
 <p>Sample Metadata code output:
-[source,bash]
+.. code-block:: bash
 —-
 &lt;?xml version=”1.0” encoding=”UTF-8” standalone=”yes”?&gt;&lt;EntityDescriptor entityID=”<a class="reference external" href="https://someip.com/saml/CDWPjmZt">https://someip.com/saml/CDWPjmZt</a>” xmlns=”<a class="reference external" href="urn:oasis:names:tc:SAML:2.0:metadata">urn:oasis:names:tc:SAML:2.0:metadata</a>”&gt;&lt;SPSSODescriptor AuthnRequestsSigned=”false” WantAssertionsSigned=”true” protocolSupportEnumeration=”<a class="reference external" href="urn:oasis:names:tc:SAML:2.0:protocol">urn:oasis:names:tc:SAML:2.0:protocol</a>”&gt;&lt;NameIDFormat&gt;urn:oasis:names:tc:SAML:1.1:nameid-format:unspecified&lt;/NameIDFormat&gt;&lt;AssertionConsumerService index=”0” isDefault=”true” Binding=”urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST” Location=”https://someip.com/externalLogin/callback/CDWPjmZt”/&gt;&lt;/SPSSODescriptor&gt;&lt;/EntityDescriptor&gt;
 —-

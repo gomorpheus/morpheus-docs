@@ -32,7 +32,7 @@ implement a third-party certificate:
 2. Edit the configuration file ``/etc/morpheus/morpheus.rb`` and add the
    following entries:
 
-[source,bash]
+.. code-block:: bash
 -------------
 
 nginx[‘ssl\_certificate’] = ‘path to the certificate file'
@@ -44,7 +44,7 @@ include the signing chain inside the certificate file.
 
 Next simply reconfigure the appliance and restart nginx:
 
-[source,bash]
+.. code-block:: bash
 -------------
 
 sudo morpheus-ctl reconfigure sudo morpheus-ctl restart nginx ----

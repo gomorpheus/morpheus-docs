@@ -247,11 +247,11 @@ machine.
 $ winrm set winrm/config/service &#64;{AllowUnencrypted=”false”}
 $ winrm set winrm/config/service/Auth &#64;{Kerberos=”true”}</div></blockquote>
 <p>On the |morpheus| appliance the krb5-user package must be installed. For Ubuntu the command is as follows:
-[source,bash]</p>
+.. code-block:: bash</p>
 <blockquote>
 <div>$ sudo apt-get install krb5-user</div></blockquote>
 <p>Create a file in /etc called krb5.conf and replace the domain name with the name of the domain to be used. In this case we used |morpheus| .com as the domain.
-[source,bash]</p>
+.. code-block:: bash</p>
 <blockquote>
 <div><dl class="docutils">
 <dt>[libdefaults]</dt>
@@ -282,7 +282,7 @@ admin_server = win-ad.|morpheus| .COM:749</dd>
 </dl>
 </div></blockquote>
 <dl class="docutils">
-<dt>[source,bash]</dt>
+<dt>.. code-block:: bash</dt>
 <dd><dl class="first last docutils">
 <dt>[login]</dt>
 <dd>krb4_convert = true

@@ -121,6 +121,21 @@ The |morpheus| Windows Agent service can be restarted in Administrative Tools ->
 
 .. TIP:: The |morpheus| Remote Console is not dependent on agent communication and can be used to install or restart the |morpheus| agent on an instance.
 
+Uninstall |morpheus| Agent
+
+You can use the following to uninstall the linux agent:
+
+.. code-block:: bash
+
+  sudo rm /etc/apt/sources.list.d/morpheus.list
+  sudo morpheus-node-ctl stop rsyslogd
+  sudo apt-get -y purge morpheus-vm-node
+  sudo rm -rf /opt/morpheus-node
+  sudo usermod -l morpheus-old morpheus-node
+  sudo killall runsv
+  sudo killall runsvdir
+  sudo killall morphd
+
 centOS/RHEL 7 Images
 --------------------
 
