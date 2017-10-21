@@ -1,5 +1,3 @@
-[[upgrading]]
-
 Upgrading
 =========
 
