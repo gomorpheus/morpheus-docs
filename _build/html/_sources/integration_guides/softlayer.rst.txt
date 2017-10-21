@@ -5,7 +5,7 @@ Add a Softlayer Cloud
 ---------------------
 
 Name
-  Name of the Cloud in {morpheus}
+  Name of the Cloud in |morpheus| 
 Location
   Description field for adding notes on the cloud, such as location.
 Visibility
@@ -19,8 +19,8 @@ Datacenter
 Object Store
   Select the destination Object Store
 Inventory Existing Instances
-  If enabled, existing Softlayer Instances will be inventoried and appear as unmanaged Virtual Machines in {morpheus}.
+  If enabled, existing Softlayer Instances will be inventoried and appear as unmanaged Virtual Machines in |morpheus| .
 
 The Cloud can now be added to a Group or configured with additional Advanced options.
 
-.. include:: advanced_options.rst
+.. .. include:: /integration_guides/advanced_options.rst

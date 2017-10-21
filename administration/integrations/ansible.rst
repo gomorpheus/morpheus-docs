@@ -15,7 +15,7 @@ Add Ansible Integration
 #. Select Integration Type "Ansible"
 #. Populate the following fields:
 
-   * Name: Name of the Ansible Integration in {morpheus}
+   * Name: Name of the Ansible Integration in |morpheus| 
    * Enabled: Enabled by default Ansible Git URL:: https or git url format of the Ansible Git repo to use
    * Keypair: For private Git repos, a keypair must be added to |morpheus| and the public key added to the git account.
    * Playbooks Path: Path of the Playbooks relative to the Git url.

@@ -10,7 +10,7 @@ and users.
 
 ==== Accounts
 
-There are essentially two types of accounts in {morpheus}
+There are essentially two types of accounts in |morpheus| 
 
 Master Account Sub Accounts
 

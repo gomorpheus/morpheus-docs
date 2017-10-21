@@ -62,7 +62,7 @@ Creating an AWS Cloud
 #. Enter the following:
 
    Name
-     Name of the Cloud in {morpheus}
+     Name of the Cloud in |morpheus| 
    Location
      Description field for adding notes on the cloud, such as location.
    Visibility
@@ -74,7 +74,7 @@ Creating an AWS Cloud
    Secret Key
      Secret Access Key associate with the Access Key ID.
    Inventory Existing Instances
-     If enabled, existing EC2 Instances will be inventoried and appear as unmanaged Virtual Machines in {morpheus}.
+     If enabled, existing EC2 Instances will be inventoried and appear as unmanaged Virtual Machines in |morpheus| .
 
 #. The AWS cloud is ready to be added to a group and saved. Additional configuration options available:
 
@@ -83,7 +83,7 @@ Advanced Options
 IMAGE TRANSFER STORE
   S3 bucket for Image transfers, required for migrations into AWS.
 
-.. include:: advanced_options.rst
+.. .. include:: /integration_guides/advanced_options.rst
 
 .. NOTE:: All fields and options can be edited after the Cloud is created.
 

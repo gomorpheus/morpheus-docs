@@ -280,7 +280,7 @@ are covered.</p>
 <h3>Instances<a class="headerlink" href="#instances" title="Permalink to this headline">¶</a></h3>
 <p>|morpheus| starts with provisioning Instances. In some platforms an
 Instance is representative of a singular object like a “Virtual Machine”
-in Amazon. In {morpheus}, this concept was rethought. An Instance is
+in Amazon. In |morpheus| , this concept was rethought. An Instance is
 more of a representation of a Resource or Service. This service may
 involve several virtual machines or even several docker containers.</p>
 <p>For example, in the morpheus Instance wizard Mongo is an option and
@@ -330,7 +330,7 @@ underlying provisioning engine. This may seem a bit odd but provides an
 aspect of |morpheus| that is quite powerful. This singular concept is
 what allows |morpheus| to injest “Brownfield” environments. We do not
 need to start clean. |morpheus| can be integrated into existing
-environments and manage existing virtual machines. The way {morpheus}
+environments and manage existing virtual machines. The way |morpheus| 
 does this is by periodically syncing existing vms from the added cloud
 integrations. A server record will be created and periodically updated
 (5 minutes typically) with realtime information and changes. This, in
@@ -568,7 +568,7 @@ used, the instances will be provisioned:</p>
 </div>
 <div class="section" id="image-types">
 <h3>Image Types<a class="headerlink" href="#image-types" title="Permalink to this headline">¶</a></h3>
-<p>|morpheus| provides a vast <em>System Image</em> repo with pre-configured images for every Cloud. All other images are <em>User Images</em>. User images can be added directly to {morpheus}, or automatically synced from integrated clouds. It is important to configure synced User Images for metadata, including specifying the Platform and User Credentials, prior to provisioning. Provisioning a User Image that has not been configured may result in failed provisioning.</p>
+<p>|morpheus| provides a vast <em>System Image</em> repo with pre-configured images for every Cloud. All other images are <em>User Images</em>. User images can be added directly to |morpheus| , or automatically synced from integrated clouds. It is important to configure synced User Images for metadata, including specifying the Platform and User Credentials, prior to provisioning. Provisioning a User Image that has not been configured may result in failed provisioning.</p>
 <div class="admonition important">
 <p class="first admonition-title">Important</p>
 <p class="last">Synced User Images need to be configured prior to provisioning.</p>
@@ -594,7 +594,7 @@ used, the instances will be provisioned:</p>
 </ol>
 <dl class="docutils">
 <dt>Name</dt>
-<dd>Name of the Virtual Image in {morpheus}. This can be changed from the name of the Image, but editing will not change the name of the actual Image.</dd>
+<dd>Name of the Virtual Image in |morpheus| . This can be changed from the name of the Image, but editing will not change the name of the actual Image.</dd>
 <dt>Operating System</dt>
 <dd>Specifies the Platform and OS of the image. All Windows images will need to have Operating System specified on the Virtual Image, as |morpheus| will assign Linux as the Platform for all Images without Operating System specified.</dd>
 <dt>Cloud Init Enabled?</dt>
@@ -668,7 +668,7 @@ used, the instances will be provisioned:</p>
 </ol>
 <dl class="docutils">
 <dt>Name</dt>
-<dd>Name of the Virtual Image in {morpheus}. This can be changed from the name of the Image, but editing will not change the name of the actual Image.</dd>
+<dd>Name of the Virtual Image in |morpheus| . This can be changed from the name of the Image, but editing will not change the name of the actual Image.</dd>
 <dt>Operating System</dt>
 <dd>Specifies the Platform and OS of the image. All Windows images will need to have Operating System specified on the Virtual Image, as {norpheus} will assign Linux as the Platform for all Images without Operating System specified.</dd>
 <dt>Cloud Init Enabled?</dt>
@@ -734,7 +734,7 @@ used, the instances will be provisioned:</p>
 </div>
 <div class="section" id="instance-types">
 <h3>Instance Types<a class="headerlink" href="#instance-types" title="Permalink to this headline">¶</a></h3>
-<p>Types___Library___{morpheus}_salt_library_item.png</p>
+<p>Types___Library___|morpheus| _salt_library_item.png</p>
 <p>Adding an Instance Type creates a new Library Item category. Multiple layouts can be added to an instance type, and these layout can have different nodes attached. The instance wizard will present the layout options compatible with the selected cloud. If cloud selection is turned off, all layouts will be presented for all cloud types accessible by the user.</p>
 <p>Name::
 Name of the Instance Type in the Provisioning Library
@@ -791,7 +791,7 @@ Enables deployment features
 ** Xen
 * Environment Variables</p>
 <p>The Options fields will change depending on the Technology option selected.</p>
-<p>For VM provisioning technology options, select an image from the VM Image dropdown, which is populated from the Virtual Images Section and will include images uploaded into {morpheus}, and synced images from added clouds.</p>
+<p>For VM provisioning technology options, select an image from the VM Image dropdown, which is populated from the Virtual Images Section and will include images uploaded into |morpheus| , and synced images from added clouds.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last">Azure Marketplace images and Amazon AMI’s can now be added in the Virtual Images section for use as node types in custom library items.</p>
@@ -891,12 +891,12 @@ Multi-node Layout example:</p>
 </div>
 <div class="section" id="live-stream">
 <h4>Live Stream<a class="headerlink" href="#live-stream" title="Permalink to this headline">¶</a></h4>
-<p>Live Stream is a linux only streaming process that will take a snapshot of a volume and allow it to be streamed to a destination linux system that is either existing or new. The destination linux must already exist and it can either be a managed or unmanaged VM in {morpheus}. The destination will be overwritten from a root level perspective.</p>
+<p>Live Stream is a linux only streaming process that will take a snapshot of a volume and allow it to be streamed to a destination linux system that is either existing or new. The destination linux must already exist and it can either be a managed or unmanaged VM in |morpheus| . The destination will be overwritten from a root level perspective.</p>
 <dl class="docutils">
 <dt>Source</dt>
 <dd>Any Cloud</dd>
 <dt>Destination</dt>
-<dd>{morpheus}</dd>
+<dd>|morpheus| </dd>
 <dt>Supported OS Type</dt>
 <dd>Linux (Only)</dd>
 <dt>Service Impact</dt>
@@ -969,19 +969,19 @@ Multi-node Layout example:</p>
 </div>
 <div class="section" id="deploying-to-an-instance">
 <h3>Deploying to an Instance<a class="headerlink" href="#deploying-to-an-instance" title="Permalink to this headline">¶</a></h3>
-<p>Now that a version has been added to a deployment it is easy to push that deploy out to any instance provisioned within {morpheus}. Simply navigate to the specific Instance that needs deployed to. On the Instance detail page there is a tab called <cite>Deploy</cite>. From here simply add a deploy. The dialog will ask firstly from which deployment the deploy is from (or allow you to create a new one on the spot) , and secondly which version to deploy (also with the option to add one on the fly). The next step of the wizard will display any configuration options that might be specific to the instance type being deployed to (i.e. <cite>CATALINA_OPTS</cite> for Tomcat or <cite>Java Command</cite> for java) as well as the file explorer and deployment type selections for review (or use when creating a new version on the fly). Fill in the required items then simply hit complete. The deploy will now be asynchronously sent off to all of the virtual machines or containers within the instance in a rolling restart and the deployment status will be represented.</p>
+<p>Now that a version has been added to a deployment it is easy to push that deploy out to any instance provisioned within |morpheus| . Simply navigate to the specific Instance that needs deployed to. On the Instance detail page there is a tab called <cite>Deploy</cite>. From here simply add a deploy. The dialog will ask firstly from which deployment the deploy is from (or allow you to create a new one on the spot) , and secondly which version to deploy (also with the option to add one on the fly). The next step of the wizard will display any configuration options that might be specific to the instance type being deployed to (i.e. <cite>CATALINA_OPTS</cite> for Tomcat or <cite>Java Command</cite> for java) as well as the file explorer and deployment type selections for review (or use when creating a new version on the fly). Fill in the required items then simply hit complete. The deploy will now be asynchronously sent off to all of the virtual machines or containers within the instance in a rolling restart and the deployment status will be represented.</p>
 <div class="admonition tip">
 <p class="first admonition-title">Tip</p>
 <p class="last">When deploying to an instance, the custom configuration options that were entered during the previous deployment are automatically carried forward allowing one to edit them or leave them as is.</p>
 </div>
 <div class="section" id="rolling-backwards-and-forwards">
 <h4>Rolling Backwards and Forwards<a class="headerlink" href="#rolling-backwards-and-forwards" title="Permalink to this headline">¶</a></h4>
-<p>Because of the tracked history of deployments kept within {morpheus}, the deploy tab of instance detail makes it easy to choose a previously run deployment and jump back to it in the event of a failed deployment. The history will automatically be updated and the configuration, as well as data from the previous deployment state of the instance will be restored.</p>
+<p>Because of the tracked history of deployments kept within |morpheus| , the deploy tab of instance detail makes it easy to choose a previously run deployment and jump back to it in the event of a failed deployment. The history will automatically be updated and the configuration, as well as data from the previous deployment state of the instance will be restored.</p>
 </div>
 </div>
 <div class="section" id="offloading-storage">
 <h3>Offloading Storage<a class="headerlink" href="#offloading-storage" title="Permalink to this headline">¶</a></h3>
-<p>Since a full history of the backup buils are kept in {morpheus}, as the appliance grows it becomes necessary to change where these are stored. On a fresh install these are stored on the local appliance in <cite>/var/opt/morpheus</cite> or wherever the master account may have changed the configuration to point to. It is also possible to adjust the deployment archive store by creating a <cite>Storage Provider</cite> tied to an S3 compatible object store, Openstack Swift object store, or any other type of mountpoint provided. This option can be adjusted in <cite>Admin-&gt;Provisioning</cite> once a storage provider is created within the account.</p>
+<p>Since a full history of the backup buils are kept in |morpheus| , as the appliance grows it becomes necessary to change where these are stored. On a fresh install these are stored on the local appliance in <cite>/var/opt/morpheus</cite> or wherever the master account may have changed the configuration to point to. It is also possible to adjust the deployment archive store by creating a <cite>Storage Provider</cite> tied to an S3 compatible object store, Openstack Swift object store, or any other type of mountpoint provided. This option can be adjusted in <cite>Admin-&gt;Provisioning</cite> once a storage provider is created within the account.</p>
 </div>
 <div class="section" id="add-deployment">
 <h3>Add Deployment<a class="headerlink" href="#add-deployment" title="Permalink to this headline">¶</a></h3>

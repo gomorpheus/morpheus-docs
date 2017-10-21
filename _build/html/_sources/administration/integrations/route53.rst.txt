@@ -18,7 +18,7 @@ Route 53 can be added in the `Administration` or `Infrastructure` sections:
    TYPE
     Route 53
    NAME
-    Name for the Integration in {morpheus}
+    Name for the Integration in |morpheus| 
    REGION
     AWS Region for the Integration
    ACCESS KEY

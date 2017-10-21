@@ -6,7 +6,7 @@ Networks
 Overview
 ^^^^^^^^
 
-The Networks section is for configuring networks across all clouds in {morpheus}. Existing networks from the Clouds added in |morpheus| will auto-populate in the Networks section.
+The Networks section is for configuring networks across all clouds in |morpheus| . Existing networks from the Clouds added in |morpheus| will auto-populate in the Networks section.
 
 Networks can be configured for DHCP or Static IP assignment, assigned IP pools, and configured for visibility and account assignment for multi-tenancy usage. Networks can also be set as inactive and unavailable for provisioning use.
 
@@ -28,7 +28,7 @@ To configure a network for DHCP:
 4. In the Network Config modal, set the DHCP flag as Active (default)
 5. Save Changes
 
-.. IMPORTANT:: The DHCP flag tells |morpheus| this network has a DHCP server assigning IP Addresses to hosts. |morpheus| does not act as the DHCP server, and provisioning to a network that has the DHCP server flag active in {morpheus}, but no DHCP server actually on the network will in most cases cause the instance to not receive an IP address.
+.. IMPORTANT:: The DHCP flag tells |morpheus| this network has a DHCP server assigning IP Addresses to hosts. |morpheus| does not act as the DHCP server, and provisioning to a network that has the DHCP server flag active in |morpheus| , but no DHCP server actually on the network will in most cases cause the instance to not receive an IP address.
 
 .. NOTE:: When selecting a network with DHCP enabled during provisioning, "DHCP" will populate to the right of the selected network:
 

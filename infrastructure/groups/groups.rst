@@ -87,13 +87,9 @@ To delete a group:
 #. Click the Groups link.
 #. Click the name of the group you wish to delete.
 #. Click the Delete button.
-#. Note: You will be prompted for confirmation on this action.
-
-.. image:: infrastructure/delete_group.png
-
-.. [caption="Figure 3: ", title="Delete Group", alt="Delete Group"]
+#. Confirm
 
 User Access
 -----------
 
-User access to Groups is determing by their user Role(s). Group access for Roles can be configured in the Group Access section of a Roles Settings.
+.. IMPORTANT:: User access to Groups is determing by their user Role(s). Group access for Roles can be configured in the Group Access section of a Roles Settings.

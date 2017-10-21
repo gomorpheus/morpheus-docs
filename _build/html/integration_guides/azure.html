@@ -214,10 +214,10 @@
 <a href="#id3"><span class="problematic" id="id4">**</span></a>* Public IP assignment required for instances if |morpheus| Appliance is not able to communicate with Azure instances private ip’s.
 ** Resource Group(s)
 ** Storage Account(s)</p>
-<p>NOTE: |morpheus| v2.10.3 added support for multiple Resource Groups and Storage Accounts per cloud, making our Azure integration more capable and easier to configure. Prior versions of |morpheus| supported one resource group and one storage account per cloud, with the security group and network selection limited to the scoped Resource Group. If you are on an earlier version of {morpheus}, please note you will need to add an Azure cloud integration for each Resource Group and Storage Account you would like to use.</p>
+<p>NOTE: |morpheus| v2.10.3 added support for multiple Resource Groups and Storage Accounts per cloud, making our Azure integration more capable and easier to configure. Prior versions of |morpheus| supported one resource group and one storage account per cloud, with the security group and network selection limited to the scoped Resource Group. If you are on an earlier version of |morpheus| , please note you will need to add an Azure cloud integration for each Resource Group and Storage Account you would like to use.</p>
 <p>=== Azure Active Directory Credentials</p>
-<p>If you do not already have the Azure Active Directory credentials required to add an Azure cloud to {morpheus}, use the steps below to obtain them.</p>
-<p>IMPORTANT: Microsoft recently added support for Active Directory application configuration in the new Azure portal. Previously, users had to use the old portal to get the required credentials to integrate Azure with {morpheus}. The instructions below are updated for the new portal. Microsoft also changed the naming conventions of the credentials:</p>
+<p>If you do not already have the Azure Active Directory credentials required to add an Azure cloud to |morpheus| , use the steps below to obtain them.</p>
+<p>IMPORTANT: Microsoft recently added support for Active Directory application configuration in the new Azure portal. Previously, users had to use the old portal to get the required credentials to integrate Azure with |morpheus| . The instructions below are updated for the new portal. Microsoft also changed the naming conventions of the credentials:</p>
 <p>.Old and New Portal Naming Conventions
 [width=”90%”,frame=”topbot”,options=”header,footer”]
 <a href="#id5"><span class="problematic" id="id6">|</span></a>======================
@@ -227,7 +227,7 @@
 <a href="#id15"><span class="problematic" id="id16">|</span></a>Client Secret|Key (Value)
 <a href="#id17"><span class="problematic" id="id18">|</span></a>======================</p>
 <p>=== Creating an Azure Active Directory Application</p>
-<p>If you do not have an existing Azure Active Directory application for {morpheus}, you will need to create a new on by:</p>
+<p>If you do not have an existing Azure Active Directory application for |morpheus| , you will need to create a new on by:</p>
 <p>. Log into the Azure portal
 . Select “Azure Active Directory”
 . Select “App Registrations”
@@ -246,13 +246,13 @@ image::images/newazure-8c7ca.png[]
 <p>While still in the Active Directory Section:</p>
 <p>. Select Properties
 . Copy the Directory ID
-. Store/Paste for use as the Tenant ID when Adding your Azure cloud in {morpheus}</p>
+. Store/Paste for use as the Tenant ID when Adding your Azure cloud in |morpheus| </p>
 <p>image::images/newazure-044cf.png[]</p>
 <p>=== Client ID/Application ID</p>
 <p>. Select App Registrations
 . Select your Active Directory Application
 . Copy the Application ID
-. Store/Paste for use as the Client ID when Adding your Azure cloud in {morpheus}</p>
+. Store/Paste for use as the Client ID when Adding your Azure cloud in |morpheus| </p>
 <p>image::images/newazure-3c6fa.png[]</p>
 <p>=== Client Secret/Key Value</p>
 <p>While still in your Active Directory Application:</p>
@@ -261,7 +261,7 @@ image::images/newazure-8c7ca.png[]
 . Select a duration
 . Select save
 . Copy the Key Value
-. Store/Paste for use as the Client ID when Adding your Azure cloud in {morpheus}</p>
+. Store/Paste for use as the Client ID when Adding your Azure cloud in |morpheus| </p>
 <p>IMPORTANT: Copy the key value. You won’t be able to retrieve after you leave this blade.</p>
 <p>image::images/newazure-7b82b.png[]</p>
 <p>You now have the 3 Active directory credentials required for |morpheus| Azure cloud integration.</p>
@@ -270,7 +270,7 @@ image::images/newazure-8c7ca.png[]
 <p>. Select Resource Groups
 . Select a Resource Group (instruction below if you do not have an existing resource group)
 . Copy the Subscription ID
-. Store/Paste for use as the Subscription ID when Adding your Azure cloud in {morpheus}
+. Store/Paste for use as the Subscription ID when Adding your Azure cloud in |morpheus| 
 +
 image::images/newazure-e446f.png[]</p>
 <p>=== Make Azure Active Directory Application owner of Subscription</p>
@@ -287,10 +287,10 @@ image::images/newazure-7f61c.png[]</p>
 <p>. Select the Application, then click “Select” at the bottom of the Add Users pane, and the select “OK” at the bottom of the Add Access pane.</p>
 <p>IMPORTANT: Be sure to select “OK” at the bottom of the Add Access pane or the user addition will not save.</p>
 <p>image::images/newazure-560be.png[]</p>
-<p>You now have the required Credentials to add an Azure cloud integration into {morpheus}.</p>
+<p>You now have the required Credentials to add an Azure cloud integration into |morpheus| .</p>
 <p>IMPORTANT: You will also need to have existing Network Security Group(s), Virtual Networks(s) and Storage Accounts(s). Instructions for creating these can be found later in this article.</p>
-<p>=== Add Azure cloud in {morpheus}</p>
-<p>Azure is now ready to be added into {morpheus}. Ensure you have the noted Subscription ID, Tenant ID, Client ID, and Client Secret accessible.</p>
+<p>=== Add Azure cloud in |morpheus| </p>
+<p>Azure is now ready to be added into |morpheus| . Ensure you have the noted Subscription ID, Tenant ID, Client ID, and Client Secret accessible.</p>
 <p>In Infrastructure - Clouds, select “+ Create Cloud” and select Azure from the cloud widget.</p>
 <p>OR</p>
 <p>In Infrastructure, Groups- you can select the Clouds tab of a Group and click “+ ADD” next to Azure in the Public Cloud section, and enter the following:</p>

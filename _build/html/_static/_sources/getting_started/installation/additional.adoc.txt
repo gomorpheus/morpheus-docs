@@ -10,7 +10,7 @@ There are several additional configuration options during installation that may 
 Installation Location: `/opt/morpheus`
 
 * *Log Location:* `/var/log/morpheus`
-** *{morpheus}-UI:* `/var/log/morpheus/morpheus-ui`
+** *|morpheus| -UI:* `/var/log/morpheus/morpheus-ui`
 ** *MySQL:* `/var/log/morpheus/mysql`
 ** *NginX:* `/var/log/morpheus/nginx`
 ** *Check Server:* `/var/log/morpheus/check-server`
@@ -26,7 +26,7 @@ The default installation generates a self-signed SSL certificate. To implement a
 1. Copy the private key and certificate to `/etc/morpheus/ssl/your_fqdn_name.key` and `/etc/morpheus/ssl/your_fqdn_name.crt` respectively.
 2. Edit the configuration file `/etc/morpheus/morpheus.rb` and add the following entries:
 
-[source,bash]
+.. code-block:: bash
 ----
 nginx[‘ssl_certificate’] = ‘path to the certificate file'
 nginx[‘ssl_server_key’] = ‘path to the server key file'
@@ -36,7 +36,7 @@ NOTE: Both files should be owned by root and only readable by root, also if the 
 
 Next simply reconfigure the appliance and restart nginx:
 
-[source,bash]
+.. code-block:: bash
 ----
 sudo morpheus-ctl reconfigure
 sudo morpheus-ctl restart nginx

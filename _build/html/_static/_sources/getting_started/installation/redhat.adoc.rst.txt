@@ -14,7 +14,7 @@ version plus the python depency version.
 If the server has not been registered and activated then the
 subscription manager version will return the below message.
 
-[source,bash]
+.. code-block:: bash
 -------------
 
 [root@appliance ~]# subscription-manager version server type: This
@@ -25,7 +25,7 @@ system is currently not registered subscription management server:
 When a server has been registered and activated with Redhat the
 subscription manager will return the below message.
 
-[source,bash]
+.. code-block:: bash
 -------------
 
 [root@appliance ~]# subscription-manager version server type: Red Hat
@@ -40,12 +40,12 @@ TIP: To register the server you will need to have sudo permissions
 [Member of the Wheel group] or root access to the server. You will also
 need your redhat registered email address and password.
 
-. subscription-manager register + [source,bash] ---- [root@appliance ~]#
+. subscription-manager register + .. code-block:: bash ---- [root@appliance ~]#
 subscription-manager register Username: redhat@example.com Password:
 ----
 
 . subscription-manager auto --attach [Note this can take a minute to
-complete.] + [source,bash] ---- sudo subscription-manager attach --auto
+complete.] + .. code-block:: bash ---- sudo subscription-manager attach --auto
 
 Installed Product Current Status: Product Name: Red Hat Enterprise Linux
 Server Status: Subscribed ----
@@ -57,7 +57,7 @@ to return the repo status.
 TIP: To check the server repos you will need to have sudo permissions
 [Member of the Wheel group] or root access to the server.
 
-[source,bash]
+.. code-block:: bash
 -------------
 
 sudo yum repolist all \| grep "rhel-7-server-optional-rpms"
@@ -66,7 +66,7 @@ rhel-7-server-optional-rpms/7Server/x86\_64 disabled ----
 If the repo status was returned as disabled then you will need to enable
 the repo using the subsciption manager like below.
 
-[source,bash]
+.. code-block:: bash
 -------------
 
 sudo subscription-manager repos --enable rhel-7-server-optional-rpms
@@ -87,7 +87,7 @@ appliance server. i.e.
 Next we must install the package onto the machine and configure the
 morpheus services:
 
-[source,bash]
+.. code-block:: bash
 -------------
 
 sudo rpm -i morpheus-appliance\_x.x.x-1.amd64.rpm sudo morpheus-ctl
@@ -100,7 +100,7 @@ resolvable from your browser. The url can be changed by editing
 ``/etc/morpheus/morpheus.rb`` and changing the value of
 ``appliance_url``. After this has been changed simply run:
 
-[source,bash]
+.. code-block:: bash
 -------------
 
 sudo morpheus-ctl reconfigure sudo morpheus-ctl stop morpheus-ui sudo

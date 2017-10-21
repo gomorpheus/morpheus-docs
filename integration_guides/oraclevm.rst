@@ -5,7 +5,7 @@ Add a Oracle VM Cloud
 ---------------------
 
 Name
-  Name of the Cloud in {morpheus}
+  Name of the Cloud in |morpheus|
 Location
   Description field for adding notes on the cloud, such as location.
 Visibility
@@ -21,8 +21,8 @@ REPOSITORY
 SERVER POOL
   Available server pools will auto-populate upon successful authentication with the above credentials. Select appropriate server pool for this Cloud.
 Inventory Existing Instances
-  If enabled, existing Virtual Machines will be inventoried and appear as unmanaged Virtual Machines in {morpheus}.
+  If enabled, existing Virtual Machines will be inventoried and appear as unmanaged Virtual Machines in |morpheus| .
 
 The Cloud can now be added to a Group or configured with additional Advanced options.
 
-.. include:: advanced_options.rst
+.. .. include:: /integration_guides/advanced_options.rst

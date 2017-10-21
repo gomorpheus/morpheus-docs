@@ -246,7 +246,7 @@ CentOS/RHEL greater than 7.0.</li>
 (HTTPS)</li>
 <li>Inbound connectivity access from provisioned vm’s and container hosts
 on ports 443 and 80 (needed for agent communication)</li>
-<li>Internet Connectivity from Appliance (To download from {morpheus}’
+<li>Internet Connectivity from Appliance (To download from |morpheus| ’
 public docker repositories and virtual image catalog)</li>
 <li>Superuser privileges via the sudo command for the user installing the
 |morpheus| Appliance package.</li>
@@ -310,7 +310,7 @@ the appliance server to be able to utilize port 22 and 5985.</p>
 <div class="section" id="components">
 <h3>Components<a class="headerlink" href="#components" title="Permalink to this headline">¶</a></h3>
 <p>The Appliance Server automatically installs several components for the
-operation of {morpheus}. This includes:</p>
+operation of |morpheus| . This includes:</p>
 <ul class="simple">
 <li>RabbitMQ (Messaging)</li>
 <li>MySQL (Logistical Data store)</li>
@@ -459,7 +459,7 @@ need your redhat registered email address and password.</p>
 </pre></div>
 </div>
 <p>. subscription-manager auto –attach [Note this can take a minute to
-complete.] + [source,bash] —- sudo subscription-manager attach –auto</p>
+complete.] + .. code-block:: bash —- sudo subscription-manager attach –auto</p>
 <p>Installed Product Current Status: Product Name: Red Hat Enterprise Linux
 Server Status: Subscribed —-</p>
 <p>To check to see if the RHEL server has the Red Hat Enterprise Linux 7
@@ -526,7 +526,7 @@ details at <code class="docutils literal"><span class="pre">/var/log/morpheus/mo
 <p>|morpheus| follows several install location conventions. Below is a list of system defaults for convenient management:</p>
 <p>Installation Location: <code class="docutils literal"><span class="pre">/opt/morpheus</span></code></p>
 <ul class="simple">
-<li><em>Log Location:</em> <code class="docutils literal"><span class="pre">/var/log/morpheus</span></code> ** <em>{morpheus}-UI:</em>
+<li><em>Log Location:</em> <code class="docutils literal"><span class="pre">/var/log/morpheus</span></code> ** <em>|morpheus| -UI:</em>
 <code class="docutils literal"><span class="pre">/var/log/morpheus/morpheus-ui</span></code> ** <em>MySQL:</em>
 <code class="docutils literal"><span class="pre">/var/log/morpheus/mysql</span></code> ** <em>NginX:</em> <code class="docutils literal"><span class="pre">/var/log/morpheus/nginx</span></code>
 ** <em>Check Server:</em> <code class="docutils literal"><span class="pre">/var/log/morpheus/check-server</span></code> ** <em>Elastic
@@ -648,7 +648,7 @@ binary files. A configuration utility is also provided to configure the
 software based on your environment needs. As |morpheus| scales and
 becomes a more critical component of your infrastructure the stand-alone
 method does not meet the needs in terms of uptime availability and
-scalability. We have designed the components that makeup {morpheus}
+scalability. We have designed the components that makeup |morpheus| 
 distributable to enable you to deploy it in a multi-tier configuration.
 This document discusses the possible deployment scenarios and use cases
 for distributing |morpheus| and increasing its uptime availability.</p>
@@ -942,7 +942,7 @@ sudo morpheus-ctl start morpheus-ui
 </div>
 <div class="section" id="add-a-license-key">
 <h3>Add a License Key<a class="headerlink" href="#add-a-license-key" title="Permalink to this headline">¶</a></h3>
-<p>In order to provision anything in {morpheus}, a |morpheus| License Key must be applied.</p>
+<p>In order to provision anything in |morpheus| , a |morpheus| License Key must be applied.</p>
 <p>If you do not already have a license key, one may be requested from <a class="reference external" href="https://www.morpheushub.com">https://www.morpheushub.com</a> or from your |morpheus| representative.</p>
 <p>In the Administration -&gt; Settings section, select the LICENSE tab, paste your License Key and click “UPDATE”</p>
 <p>image::/getting_started/license_key.png[]</p>

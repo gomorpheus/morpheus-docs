@@ -3,7 +3,7 @@ Groups & Apps
 
 One great feature of the monitoring system is the ability to organize checks by groups and apps. This provides a nice convenient way to determine what a customer facing impact might be for a single failure as well as representing redundancy via groupings.
 
-It is important to note the relationship of apps, groups, and even checks with regards to instances provisioned within {morpheus}. For every `Instance` that is provisioned: A monitoring `Group` is created and a `Check` is added to that group for every `Container` or `Virtual Machine` within that Instance. This makes sense such that as an Instance is scaled out horizontally (containers/vms added to it) The monitoring system accurately represents the layers of redundancy. An `App` simply maps to a Provisioning `App` and should be pretty straightforward to understand.
+It is important to note the relationship of apps, groups, and even checks with regards to instances provisioned within |morpheus| . For every `Instance` that is provisioned: A monitoring `Group` is created and a `Check` is added to that group for every `Container` or `Virtual Machine` within that Instance. This makes sense such that as an Instance is scaled out horizontally (containers/vms added to it) The monitoring system accurately represents the layers of redundancy. An `App` simply maps to a Provisioning `App` and should be pretty straightforward to understand.
 
 Groups
 ------

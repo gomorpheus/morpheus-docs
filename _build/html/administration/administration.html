@@ -409,7 +409,7 @@ be edited.
 <div class="section" id="identity-sources">
 <h2>Identity Sources<a class="headerlink" href="#identity-sources" title="Permalink to this headline">¶</a></h2>
 <p>There are several built in single sign-on integrations included with
-{morpheus}. These can be configured via the <code class="docutils literal"><span class="pre">Identity</span> <span class="pre">Sources</span></code> button
+|morpheus| . These can be configured via the <code class="docutils literal"><span class="pre">Identity</span> <span class="pre">Sources</span></code> button
 in <code class="docutils literal"><span class="pre">Admin</span> <span class="pre">-&gt;</span> <span class="pre">Accounts</span></code>. These integrations include linking
 capabilities with LDAP, Active Directory, Okta, and Jump Cloud. One can
 even map these sign on tools to equivalent roles in |morpheus| so at
@@ -423,7 +423,7 @@ used in Enterprise organizations and even via Microsoft’s cloud
 services. While Active Directory also supports LDAP protocol support
 (which |morpheus| can integrate with as well), the main active directory
 integration can also be utilized. It is even possible to map Active
-Directory groups to equivalent Roles within {morpheus}.</p>
+Directory groups to equivalent Roles within |morpheus| .</p>
 <p>NOTE: To use Active Directory, a valid / trusted SSL certificate must be
 in place on the Active Directory services (self signed will not work).</p>
 <p>Adding an Active Directory integration is fairly straightforward. Simply
@@ -446,7 +446,7 @@ listed under AD user that maps under Role Mappings section.</li>
 that this role should be assigned. Roles are assigned dynamically
 based on group membership.</li>
 </ul>
-<p>TIP: Make sure to check the sync login box which will allow {morpheus}
+<p>TIP: Make sure to check the sync login box which will allow |morpheus| 
 to sync the AD account on the |morpheus| Appliance.</p>
 <p>Now users can login to the UI via their active directory username.</p>
 <p>NOTE: Only the username is required with password not the
@@ -462,7 +462,7 @@ Edit, and Delete service plans, as well as review basic plan details.
 The list of plans displayed on this page displays planName, Description,
 Instances Layout, Memory, Storage, and Cost, as well as an action column
 to edit and delete. A default set of Service Plans are created in
-{morpheus}. They provide a means to set predefined tiers on memory,
+|morpheus| . They provide a means to set predefined tiers on memory,
 storage, cores, and cpu. Price tables can also be applied to these so
 estimated cost per virtual machine can be tracked as well as pricing for
 customers.</p>
@@ -518,7 +518,7 @@ existing Service Plan. These all can be easily managed from the
 <h2>Roles<a class="headerlink" href="#roles" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="role-management-overview">
 <h3>Role Management Overview<a class="headerlink" href="#role-management-overview" title="Permalink to this headline">¶</a></h3>
-<p>Within |morpheus| is a wide array of role based access control capabilities. These roles can be managed within the Admin -&gt; Roles section of the morpheus UI as well as through the API or CLI. They are designed to be robust enough to fit within a wide array of enterprise and managed service provider scenarios so they can be a bit hard to grasp at first, but should make sense once a few simple concepts are explained. There are two types of roles within |morpheus| called Tenant and User based roles. Both sets of roles allow restrictions to be imposed on a user at the feature access level. Entire sections within the appliance UI can be hidden based on the specified access levels for features within morpheus. Features have different access scopes that can be selected from and can range depending on the specific feature. The most common scope set involves none, read, and full. Instance Type access is also common among both role types which allow the administrator to restrict which service catalog items they are allowed to provision within {morpheus}.</p>
+<p>Within |morpheus| is a wide array of role based access control capabilities. These roles can be managed within the Admin -&gt; Roles section of the morpheus UI as well as through the API or CLI. They are designed to be robust enough to fit within a wide array of enterprise and managed service provider scenarios so they can be a bit hard to grasp at first, but should make sense once a few simple concepts are explained. There are two types of roles within |morpheus| called Tenant and User based roles. Both sets of roles allow restrictions to be imposed on a user at the feature access level. Entire sections within the appliance UI can be hidden based on the specified access levels for features within morpheus. Features have different access scopes that can be selected from and can range depending on the specific feature. The most common scope set involves none, read, and full. Instance Type access is also common among both role types which allow the administrator to restrict which service catalog items they are allowed to provision within |morpheus| .</p>
 <p>There are several handy tricks for creating new roles within morpheus and users can be assigned more than one role. When a user is assigned more than one role, permissions are granted by the role with the highest level of scope access. This allows roles to be built with small subsets of features and combined to grant different individuals relevant permission control.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
@@ -534,7 +534,7 @@ existing Service Plan. These all can be easily managed from the
 </div>
 <div class="section" id="user-roles">
 <h4>User Roles<a class="headerlink" href="#user-roles" title="Permalink to this headline">¶</a></h4>
-<p>User roles can be created by any tenant given permission at the tenant role level. These allow tenants to manage their own sets of users and their levels of access. They also allow tenants to control which users have access to specific “Groups” for provisioning into within morpheus. Groups are not cross tenant and therefore need to be controlled within the individual tenant in {morpheus}.</p>
+<p>User roles can be created by any tenant given permission at the tenant role level. These allow tenants to manage their own sets of users and their levels of access. They also allow tenants to control which users have access to specific “Groups” for provisioning into within morpheus. Groups are not cross tenant and therefore need to be controlled within the individual tenant in |morpheus| .</p>
 <p>Master tenants are able to create a special type of user role called a multi-tenant user role. A multi-tenant user role is copied / duplicated
 down to all subtenants within morpheus. These can be viewed as pre-canned role templates available to new tenants when their account is first created. Any changes made to the main role are propagated down to the subtenants version of the shared role so long as the subtenant has not previously adjusted/changed that role. The moment a subtenant makes adjustments to the shared role within their account, it is unlinked from the parent role and treated entirely independently.</p>
 <p>Another note about user roles is that when a user role is copied down to a subtenant, the permission scopes cannot supersede the tenants assigned
@@ -619,7 +619,7 @@ confirmation on this action.</p>
 <li>Navigate to <cite>Administration -&gt; Integrations</cite> and select <cite>+ New Integration</cite></li>
 <li>Select Integration Type “Ansible”</li>
 <li>Populate the following fields:<ul>
-<li>Name: Name of the Ansible Integration in {morpheus}</li>
+<li>Name: Name of the Ansible Integration in |morpheus| </li>
 <li>Enabled: Enabled by default Ansible Git URL:: https or git url format of the Ansible Git repo to use</li>
 <li>Keypair: For private Git repos, a keypair must be added to |morpheus| and the public key added to the git account.</li>
 <li>Playbooks Path: Path of the Playbooks relative to the Git url.</li>
@@ -687,7 +687,7 @@ confirmation on this action.</p>
 <li>Navigate to <cite>Administration -&gt; Integrations</cite> and select <cite>+ New Integration</cite></li>
 <li>Select Integration Type “Chef”</li>
 <li>Populate the following fields:<ul>
-<li>Name: Name of the Chef Integration in {morpheus}</li>
+<li>Name: Name of the Chef Integration in |morpheus| </li>
 <li>Chef Endpoint: url of chef server api endpoint in <a class="reference external" href="https://api.example.com">https://api.example.com</a> format. Do not add /organization/xxxx here, which is populated in the Chef Organization field</li>
 <li>Chef Version: 12.3.0 by default, can be changed to use a different/more recent version of chef</li>
 <li>Chef Organization: Chef Server Organization</li>
@@ -698,7 +698,7 @@ confirmation on this action.</p>
 </li>
 <li>Save Changes</li>
 </ol>
-<p>The added Chef Integration is now available for use in {morpheus}. The Chef Integration can be added to Clouds or Groups to auto-bootstrap nodes and specify Environment, Node ID, Runlist, Attributes and Tags when creating instances. The Chef integration can also be selected in the Chef Server dropdown when creating a Chef Bootstrap type task.</p>
+<p>The added Chef Integration is now available for use in |morpheus| . The Chef Integration can be added to Clouds or Groups to auto-bootstrap nodes and specify Environment, Node ID, Runlist, Attributes and Tags when creating instances. The Chef integration can also be selected in the Chef Server dropdown when creating a Chef Bootstrap type task.</p>
 </div>
 <div class="section" id="scope-chef-integration-to-a-cloud">
 <h4>Scope Chef Integration to a Cloud<a class="headerlink" href="#scope-chef-integration-to-a-cloud" title="Permalink to this headline">¶</a></h4>
@@ -753,7 +753,7 @@ confirmation on this action.</p>
 <li><p class="first">Populate the following fields:</p>
 <dl class="docutils">
 <dt>Name</dt>
-<dd><p class="first last">Name of the Consul Integration in {morpheus}</p>
+<dd><p class="first last">Name of the Consul Integration in |morpheus| </p>
 </dd>
 <dt>Enabled</dt>
 <dd><p class="first last">Enabled by default</p>
@@ -778,7 +778,7 @@ confirmation on this action.</p>
 <li><p class="first">Save Changes</p>
 </li>
 </ol>
-<p>The added Consul Integration is now available for use in {morpheus}, but must be scoped to a Cloud or Group to automatically install the Consul Agent while provisioning.</p>
+<p>The added Consul Integration is now available for use in |morpheus| , but must be scoped to a Cloud or Group to automatically install the Consul Agent while provisioning.</p>
 </div>
 <div class="section" id="scope-consul-integration-to-a-cloud">
 <h4>Scope Consul Integration to a Cloud<a class="headerlink" href="#scope-consul-integration-to-a-cloud" title="Permalink to this headline">¶</a></h4>
@@ -821,7 +821,7 @@ confirmation on this action.</p>
 <li><p class="first">Add the following:</p>
 <dl class="docutils">
 <dt>Name</dt>
-<dd><p class="first last">Name for the Registry in {morpheus}</p>
+<dd><p class="first last">Name for the Registry in |morpheus| </p>
 </dd>
 <dt>Repository url</dt>
 <dd><p class="first last">Docker Registry url or IP address</p>
@@ -850,7 +850,7 @@ confirmation on this action.</p>
 </div>
 <div class="section" id="infoblox">
 <h3>Infoblox<a class="headerlink" href="#infoblox" title="Permalink to this headline">¶</a></h3>
-<p>|morpheus| can integrate with Infoblox for IP address assignment. To add a Infoblox integration into {morpheus}:</p>
+<p>|morpheus| can integrate with Infoblox for IP address assignment. To add a Infoblox integration into |morpheus| :</p>
 <ol class="arabic simple">
 <li>Add Infoblox as a Network Service integration</li>
 <li>Add Infoblox IP Pool(s) to your network(s)</li>
@@ -880,7 +880,7 @@ confirmation on this action.</p>
 </ul>
 <img alt="../_images/infoblox-b991b.png" src="../_images/infoblox-b991b.png" />
 </li>
-<li><p class="first">Save Changes and your Infoblox networks will be populated and available in the Network -&gt; IP Pools section of {morpheus}.</p>
+<li><p class="first">Save Changes and your Infoblox networks will be populated and available in the Network -&gt; IP Pools section of |morpheus| .</p>
 </li>
 </ol>
 <p>Next we will need to add an Infoblox Network pool to a network in order to use the pool(s) during provisioning.</p>
@@ -950,7 +950,7 @@ confirmation on this action.</p>
 <dd><p class="first last">Route 53</p>
 </dd>
 <dt>NAME</dt>
-<dd><p class="first last">Name for the Integration in {morpheus}</p>
+<dd><p class="first last">Name for the Integration in |morpheus| </p>
 </dd>
 <dt>REGION</dt>
 <dd><p class="first last">AWS Region for the Integration</p>
@@ -1012,23 +1012,23 @@ confirmation on this action.</p>
 <h3>Salt<a class="headerlink" href="#salt" title="Permalink to this headline">¶</a></h3>
 <div class="section" id="id7">
 <h4>Overview<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h4>
-<p>|morpheus| integrates with an existing Salt Master for seamless deployment of Salt States to Minions provisioned from {morpheus}.</p>
+<p>|morpheus| integrates with an existing Salt Master for seamless deployment of Salt States to Minions provisioned from |morpheus| .</p>
 </div>
 <div class="section" id="add-salt-integration">
 <h4>Add Salt Integration<a class="headerlink" href="#add-salt-integration" title="Permalink to this headline">¶</a></h4>
-<p>To get started browse to Admin -&gt; Integrations from within {morpheus}.</p>
+<p>To get started browse to Admin -&gt; Integrations from within |morpheus| .</p>
 <p>Once there simply add a New Integration</p>
 <img alt="../_images/salt-af3ca.png" src="../_images/salt-af3ca.png" />
 <p>And then scope the integration to your existing Salt Master by ip address.  Make sure that the username entered is one with proper escalation privileges for running Salt, and point the Working Directory at the directory on your Master where your States live.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">|morpheus| will allow you to run States from a git backend, but in v2.10 you will not see states from a git backend within {morpheus}</p>
+<p class="last">|morpheus| will allow you to run States from a git backend, but in v2.10 you will not see states from a git backend within |morpheus| </p>
 </div>
 <img alt="../_images/salt-a41c9.png" src="../_images/salt-a41c9.png" />
 </div>
 <div class="section" id="scope-salt-integration-to-group-or-cloud">
 <h4>Scope Salt Integration to Group Or Cloud<a class="headerlink" href="#scope-salt-integration-to-group-or-cloud" title="Permalink to this headline">¶</a></h4>
-<p>Configuration Management integrations like Saltstack apply to the Infrastructure Group abstraction in {morpheus}.  To ties yours in, browse to <code class="docutils literal"><span class="pre">Infrastructure</span> <span class="pre">-&gt;</span> <span class="pre">Groups</span></code> in |morpheus| and select the group that you would like to tie to your Salt Master.</p>
+<p>Configuration Management integrations like Saltstack apply to the Infrastructure Group abstraction in |morpheus| .  To ties yours in, browse to <code class="docutils literal"><span class="pre">Infrastructure</span> <span class="pre">-&gt;</span> <span class="pre">Groups</span></code> in |morpheus| and select the group that you would like to tie to your Salt Master.</p>
 <p>From here select <cite>Edit</cite></p>
 <img alt="../_images/salt-991dd.png" src="../_images/salt-991dd.png" />
 <p>And from the options toggle Advanced Options and select your Saltstack integration in the Config Management dropdown.</p>
@@ -1057,7 +1057,7 @@ confirmation on this action.</p>
 </div>
 <p>Once your instance is provisioned and key negotiation has completed you will be able to access it and run commands via the integrated Salt command center in your Group.</p>
 <img alt="../_images/salt-f8e4e.png" src="../_images/salt-f8e4e.png" />
-<p>If you did not apply a state at provision time now you will be able to run State commands through {morpheus}.</p>
+<p>If you did not apply a state at provision time now you will be able to run State commands through |morpheus| .</p>
 <img alt="../_images/salt-71b7c.png" src="../_images/salt-71b7c.png" />
 <p>In our example the Apache State from a git backend was applied successfully to our newly created vm.</p>
 <img alt="../_images/salt-bf299.png" src="../_images/salt-bf299.png" />
@@ -1155,7 +1155,7 @@ confirmation on this action.</p>
 <div class="section" id="id9">
 <h3>Overview<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h3>
 <p>The Backups Settings page allows you enable or disableScheduled Backups,
-and select a Default Backup Storage Provider Backups within {morpheus}
+and select a Default Backup Storage Provider Backups within |morpheus| 
 can always be run manually. However the scheduled backups toggle must be
 enabled to run jobs automatically. Configure the default storage
 provider to select the target location for all new backups. (This does

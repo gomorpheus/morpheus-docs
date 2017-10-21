@@ -50,7 +50,7 @@ Infrastructure required for the external services should be deployed in a region
 
 An example configuration file for a distributed |morpheus| deployment:
 
-[source,bash]
+.. code-block:: bash
 ----
 mysql['enable'] = false
 mysql['host'] = {'52.53.240.28' => 10004, '52.53.241.94' => 10004}
@@ -96,7 +96,7 @@ The default mode for |morpheus| is to setup the web tier using encryption to pro
 
 . Edit the configuration file /etc/morpheus/morpheus.rb and add the following entries:
 
-[source,bash]
+.. code-block:: bash
 ----
 nginx[‘ssl_certificate’] = ‘path to the certificate file'
 nginx[‘ssl_server_key’] = ‘path to the server key file'

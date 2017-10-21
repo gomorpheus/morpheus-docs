@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>[source,bash] &mdash; jwtest 1 documentation</title>
+  <title>.. code-block:: bash &mdash; jwtest 1 documentation</title>
   
 
   
@@ -145,7 +145,7 @@
     
       <li><a href="../../index.html">Docs</a> &raquo;</li>
         
-      <li>[source,bash]</li>
+      <li>.. code-block:: bash</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -173,7 +173,7 @@ binary files. A configuration utility is also provided to configure the
 software based on your environment needs. As |morpheus| scales and
 becomes a more critical component of your infrastructure the stand-alone
 method does not meet the needs in terms of uptime availability and
-scalability. We have designed the components that makeup {morpheus}
+scalability. We have designed the components that makeup |morpheus| 
 distributable to enable you to deploy it in a multi-tier configuration.
 This document discusses the possible deployment scenarios and use cases
 for distributing |morpheus| and increasing its uptime availability.</p>
@@ -268,7 +268,7 @@ web and application tiers since those are part of the core application
 server where the configuration file resides.</p>
 <p>An example configuration file for a distributed |morpheus| deployment:</p>
 <div class="section" id="source-bash">
-<h1>[source,bash]<a class="headerlink" href="#source-bash" title="Permalink to this headline">¶</a></h1>
+<h1>.. code-block:: bash<a class="headerlink" href="#source-bash" title="Permalink to this headline">¶</a></h1>
 <p>mysql[‘enable’] = false mysql[‘host’] = {‘52.53.240.28’ =&gt; 10004,
 ‘52.53.241.94’ =&gt; 10004} mysql[‘morpheus_db’] = ‘morpheusdb01’
 mysql[‘morpheus_db_user’] = ‘merovingian’ mysql[‘morpheus_password’]
@@ -346,7 +346,7 @@ certificate:</p>
 following entries:</p>
 </div>
 <div class="section" id="id1">
-<h1>[source,bash]<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<h1>.. code-block:: bash<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
 <p>nginx[‘ssl_certificate’] = ‘path to the certificate file’
 nginx[‘ssl_server_key’] = ‘path to the server key file’ —-</p>
 <p>IMPORTANT: Both files should be owned by root and only readable by root.

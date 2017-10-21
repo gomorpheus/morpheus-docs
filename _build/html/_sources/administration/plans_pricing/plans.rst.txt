@@ -10,7 +10,7 @@ Edit, and Delete service plans, as well as review basic plan details.
 The list of plans displayed on this page displays planName, Description,
 Instances Layout, Memory, Storage, and Cost, as well as an action column
 to edit and delete. A default set of Service Plans are created in
-{morpheus}. They provide a means to set predefined tiers on memory,
+|morpheus| . They provide a means to set predefined tiers on memory,
 storage, cores, and cpu. Price tables can also be applied to these so
 estimated cost per virtual machine can be tracked as well as pricing for
 customers.

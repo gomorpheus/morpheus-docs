@@ -11,7 +11,7 @@ Add Consul Integration
 #. Populate the following fields:
 
    Name
-    Name of the Consul Integration in {morpheus}
+    Name of the Consul Integration in |morpheus| 
    Enabled
     Enabled by default
    Consul Host
@@ -27,7 +27,7 @@ Add Consul Integration
 
 #. Save Changes
 
-The added Consul Integration is now available for use in {morpheus}, but must be scoped to a Cloud or Group to automatically install the Consul Agent while provisioning.
+The added Consul Integration is now available for use in |morpheus| , but must be scoped to a Cloud or Group to automatically install the Consul Agent while provisioning.
 
 Scope Consul Integration to a Cloud
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

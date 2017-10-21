@@ -64,7 +64,7 @@ Route 53
   * Access Key
   * Secret Key
 
-After Saving, your Network Service integrations will be available for use. These integrations must be scoped to the appropriate sections in {morpheus}:
+After Saving, your Network Service integrations will be available for use. These integrations must be scoped to the appropriate sections in |morpheus| :
 
 Scoping Services
 ^^^^^^^^^^^^^^^^

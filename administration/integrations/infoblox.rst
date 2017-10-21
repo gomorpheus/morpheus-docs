@@ -1,7 +1,7 @@
 Infoblox
 --------
 
-|morpheus| can integrate with Infoblox for IP address assignment. To add a Infoblox integration into {morpheus}:
+|morpheus| can integrate with Infoblox for IP address assignment. To add a Infoblox integration into |morpheus| :
 
 #. Add Infoblox as a Network Service integration
 #. Add Infoblox IP Pool(s) to your network(s)
@@ -28,7 +28,7 @@ Add Infoblox as a Network Service Integration
 
    .. image:: /images/administration/infoblox-b991b.png
 
-#. Save Changes and your Infoblox networks will be populated and available in the Network -> IP Pools section of {morpheus}.
+#. Save Changes and your Infoblox networks will be populated and available in the Network -> IP Pools section of |morpheus| .
 
 Next we will need to add an Infoblox Network pool to a network in order to use the pool(s) during provisioning.
 

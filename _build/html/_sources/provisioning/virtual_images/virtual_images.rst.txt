@@ -11,7 +11,7 @@ The Virtual Image section displays a list of all images, local and synced, that 
 Image Types
 -----------
 
-|morpheus| provides a vast *System Image* repo with pre-configured images for every Cloud. All other images are *User Images*. User images can be added directly to {morpheus}, or automatically synced from integrated clouds. It is important to configure synced User Images for metadata, including specifying the Platform and User Credentials, prior to provisioning. Provisioning a User Image that has not been configured may result in failed provisioning.
+|morpheus| provides a vast *System Image* repo with pre-configured images for every Cloud. All other images are *User Images*. User images can be added directly to |morpheus| , or automatically synced from integrated clouds. It is important to configure synced User Images for metadata, including specifying the Platform and User Credentials, prior to provisioning. Provisioning a User Image that has not been configured may result in failed provisioning.
 
 .. IMPORTANT:: Synced User Images need to be configured prior to provisioning.
 
@@ -36,7 +36,7 @@ Typically |morpheus| does not have sufficient metatdata to successfully provisio
 2. Configure the following on the Image:
 
 Name
-  Name of the Virtual Image in {morpheus}. This can be changed from the name of the Image, but editing will not change the name of the actual Image.
+  Name of the Virtual Image in |morpheus| . This can be changed from the name of the Image, but editing will not change the name of the actual Image.
 Operating System
   Specifies the Platform and OS of the image. All Windows images will need to have Operating System specified on the Virtual Image, as |morpheus| will assign Linux as the Platform for all Images without Operating System specified.
 Cloud Init Enabled?
@@ -99,7 +99,7 @@ To Add Virtual Image:
 3. Configure the following on the Virtual Image:
 
 Name
-  Name of the Virtual Image in {morpheus}. This can be changed from the name of the Image, but editing will not change the name of the actual Image.
+  Name of the Virtual Image in |morpheus| . This can be changed from the name of the Image, but editing will not change the name of the actual Image.
 Operating System
   Specifies the Platform and OS of the image. All Windows images will need to have Operating System specified on the Virtual Image, as {norpheus} will assign Linux as the Platform for all Images without Operating System specified.
 Cloud Init Enabled?

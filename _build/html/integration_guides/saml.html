@@ -172,7 +172,7 @@
   <p>[[saml]]</p>
 <p>== SAML integration</p>
 <p>=== Overview</p>
-<p>The |morpheus| SAML identity source integration allows customers to add user SSO to {morpheus}, authenticated by external login SAML providers.</p>
+<p>The |morpheus| SAML identity source integration allows customers to add user SSO to |morpheus| , authenticated by external login SAML providers.</p>
 <p>image::images/saml-2f9c4.png[]</p>
 <p>=== Adding a SMAL Integration</p>
 <p>To add a SAML integration:</p>
@@ -212,7 +212,7 @@ EMAIL ATTRIBUTE NAME:: SAML SP field value to map to |morpheus| user email addre
 </ul>
 <p>image::images/saml-1ef5f.png[]</p>
 <p>Sample Metadata code output:
-[source,bash]
+.. code-block:: bash
 —-
 &lt;?xml version=”1.0” encoding=”UTF-8” standalone=”yes”?&gt;&lt;EntityDescriptor entityID=”<a class="reference external" href="https://someip.com/saml/CDWPjmZt">https://someip.com/saml/CDWPjmZt</a>” xmlns=”<a class="reference external" href="urn:oasis:names:tc:SAML:2.0:metadata">urn:oasis:names:tc:SAML:2.0:metadata</a>”&gt;&lt;SPSSODescriptor AuthnRequestsSigned=”false” WantAssertionsSigned=”true” protocolSupportEnumeration=”<a class="reference external" href="urn:oasis:names:tc:SAML:2.0:protocol">urn:oasis:names:tc:SAML:2.0:protocol</a>”&gt;&lt;NameIDFormat&gt;urn:oasis:names:tc:SAML:1.1:nameid-format:unspecified&lt;/NameIDFormat&gt;&lt;AssertionConsumerService index=”0” isDefault=”true” Binding=”urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST” Location=”https://someip.com/externalLogin/callback/CDWPjmZt”/&gt;&lt;/SPSSODescriptor&gt;&lt;/EntityDescriptor&gt;
 —-

@@ -22,7 +22,7 @@ Instances
 
 |morpheus| starts with provisioning Instances. In some platforms an
 Instance is representative of a singular object like a "Virtual Machine"
-in Amazon. In {morpheus}, this concept was rethought. An Instance is
+in Amazon. In |morpheus| , this concept was rethought. An Instance is
 more of a representation of a Resource or Service. This service may
 involve several virtual machines or even several docker containers.
 
@@ -77,7 +77,7 @@ underlying provisioning engine. This may seem a bit odd but provides an
 aspect of |morpheus| that is quite powerful. This singular concept is
 what allows |morpheus| to injest "Brownfield" environments. We do not
 need to start clean. |morpheus| can be integrated into existing
-environments and manage existing virtual machines. The way {morpheus}
+environments and manage existing virtual machines. The way |morpheus| 
 does this is by periodically syncing existing vms from the added cloud
 integrations. A server record will be created and periodically updated
 (5 minutes typically) with realtime information and changes. This, in

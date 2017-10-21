@@ -6,7 +6,7 @@ Domains
 Overview
 ^^^^^^^^
 
-The Domains section is for creating and managing domains for use in {morpheus}. Domains are used for setting FQDNs, joining Windows Instances to Domains, and creating A Records with DNS Integrations. The Domains section is also a multi-tenant endpoint for managing domain settings across multiple accounts
+The Domains section is for creating and managing domains for use in |morpheus| . Domains are used for setting FQDNs, joining Windows Instances to Domains, and creating A Records with DNS Integrations. The Domains section is also a multi-tenant endpoint for managing domain settings across multiple accounts
 
 * Added and synced Domains are available for selection in the Domain dropdown when provisioning an Instance.
 * Default domains can be set for Clouds and Networks in their Advanced Options sections.
@@ -21,7 +21,7 @@ Adding Domains
 2. Select *+ Add*
 3. Enter the following:
    * Domain Name:: Example demo.example.com
-   * Description:: Descriptive meta-data for use in {morpheus}
+   * Description:: Descriptive meta-data for use in |morpheus| 
    * Public Zone:: Check for Public Zones, leave uncheck for Private Zones.
    * Join Domain Controller:: Enable to have Windows instances join a Domain Controller
    * Username:: Admin user for Domain Controller
