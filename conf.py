@@ -71,7 +71,7 @@ language = None
 exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
 
 # The name of the Pygments (syntax highlighting) style to use.
-pygments_style = 'sphinx'
+pygments_style = 'monokai'
 
 # If true, `todo` and `todoList` produce output, else they produce nothing.
 todo_include_todos = False
@@ -90,6 +90,7 @@ html_theme = 'sphinx_rtd_theme'
 #
 html_theme_options = {
 'logo_only': True
+html_show_sourcelink = False
 }
 
 html_logo = "_static/logo.svg"
