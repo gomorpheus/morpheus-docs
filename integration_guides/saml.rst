@@ -6,7 +6,7 @@ Overview
 
 The |morpheus| SAML identity source integration allows customers to add user SSO to |morpheus| , authenticated by external login SAML providers.
 
-.. image:: images/saml-2f9c4.png
+.. image:: /images/saml-2f9c4.png
 
 Adding a SMAL Integration
 -------------------------
@@ -20,7 +20,7 @@ To add a SAML integration:
 #. Select SAML (external login) from the TYPE field
 #. Add a Name and optional Description for the SAML integration
 
-.. image:: images/saml-cf2bf.png
+.. image:: /images/saml-cf2bf.png
 
 There are 3 sections with fields that need to be populated depending on the desired configuration:
 
@@ -60,7 +60,7 @@ SURNAME ATTRIBUTE NAME
 EMAIL ATTRIBUTE NAME
   SAML SP field value to map to |morpheus| user email address
 
-.. image:: images/saml-c4576.png
+.. image:: /images/saml-c4576.png
 
 Once populated, select SAVE CHANGES and the SAML identity source integration will be added.
 
@@ -72,7 +72,7 @@ In the Identity Sources section, important information for configuration of the 
 * IDP LOGOUT POST URL
 * SP METADATA
 
-.. image:: images/saml-1ef5f.png
+.. image:: /images/saml-1ef5f.png
 
 Sample Metadata code output:
 
