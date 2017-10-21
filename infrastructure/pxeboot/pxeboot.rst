@@ -170,6 +170,7 @@ Download Image
 #. Click the `Actions` drop and select `Download`.
 
 Remove Image
+^^^^^^^^^^^^
 
 #. Click the Infrastructure link in the navigation bar.
 #. Click the Boot link in the sub navigation bar.
