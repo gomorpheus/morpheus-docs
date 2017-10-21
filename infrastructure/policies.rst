@@ -113,6 +113,6 @@ And example for an instance name policy using a naming pattern with users initia
 
 Naming policies can be configure to be user configurable or static, and to auto-resolve naming conflicts.
 
-.. HINT:: ``${sequence}`` can be modified to start at a high number by adding the starting value, such as ``${sequence+1000}`` to being at 1000, and specify the amount of digit´s in the sequence with ``${sequence.toString().padLeft(5,'0')}`` for a sequence starting at 0001.
+.. HINT:: ``${sequence}`` can be modified to start at a higher number by adding the starting value, such as ``${sequence+1000}`` to being at 1000, and the amount of digit´s in the sequence can specified with ``${sequence.toString().padLeft(5,'0')}`` for a sequence starting at 0001, for example.
 
 .. image:: /images/infrastructure/edit_policy.png
