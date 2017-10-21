@@ -31,7 +31,7 @@ Features
 
 Combine these features with on premise solutions like Azure-Stack and |morpheus| can provide a single pane of glass and self service portal for managing instances scattered across both public Azure and private Azure Stack offerings.
 
-NOTE: |morpheus| even supports integrating with CSP based accounts in Azure (typically used by managed service providers).
+.. NOTE:: |morpheus| even supports integrating with CSP based accounts in Azure (typically used by managed service providers).
 
 Requirements
 ------------
