@@ -3,7 +3,8 @@ Getting Started
 
 To get started with vmware, simply start by adding a Cloud in the `Infrastructure -> Clouds` section.
 
-.. image:: vmware/add_cloud.png[caption="Figure 1: ", title="Add VMware Cloud form", alt="Add VMware Cloud form"]
+.. image:: /images/vmware/add_cloud.png
+
 
 To start adding a VMware cloud there will be some things you will need:
 
@@ -37,7 +38,7 @@ Service Plans
 
 A default set of Service Plans are created in |morpheus| for the VMware provisioning engine. These Service Plans can be considered akin to AWS Flavors or Openstack Flavors. They provide a means to set predefined tiers on memory, storage, cores, and cpu. Price tables can also be applied to these so estimated cost per virtual machine can be tracked as well as pricing for customers. By default, these options are fixed sizes but can be configured for dynamic sizing. A service plan can be configured to allow a custom user entry for memory, storage, or cpu. To configure this, simply edit an existing Service Plan tied to VMware or create a new one. These all can be easily managed from the `Admin -> Plans & Pricing` section.
 
-.. image:: vmware/service_plans.png[caption="Figure 3: ", title="Plans & Pricing management screen for VMware provider type", alt="Plans & Pricing management screen for VMware provider type"]
+.. image:: /images/vmware/service_plans.png 
 
 Virtual Images / Templates
 --------------------------
