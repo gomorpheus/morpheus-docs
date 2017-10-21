@@ -1,4 +1,4 @@
-PPXE Boot
+PXE Boot
 ========
 
 .. add images menu info
