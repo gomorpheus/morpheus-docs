@@ -180,3 +180,5 @@ def setup(app):
 rst_epilog = """
 .. |morpheus| replace:: Morpheus
 """
+
+html_show_sourcelink = False
