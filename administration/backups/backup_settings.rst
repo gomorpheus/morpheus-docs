@@ -6,12 +6,7 @@ Backup Settings
 Overview
 --------
 
-The Backups Settings page allows you enable or disableScheduled Backups,
-and select a Default Backup Storage Provider Backups within |morpheus|
-can always be run manually. However the scheduled backups toggle must be
-enabled to run jobs automatically. Configure the default storage
-provider to select the target location for all new backups. (This does
-not affect existing backups.)
+The Backups Settings page allows you enable or disableScheduled Backups, and select a Default Backup Storage Provider Backups within |morpheus| can always be run manually. However the scheduled backups toggle must be enabled to run jobs automatically. Configure the default storage provider to select the target location for all new backups. (This does not affect existing backups.)
 
 |morpheus| Backup Settings
 --------------------------
