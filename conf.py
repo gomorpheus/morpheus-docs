@@ -90,7 +90,6 @@ html_theme = 'sphinx_rtd_theme'
 #
 html_theme_options = {
 'logo_only': True
-html_show_sourcelink = False
 }
 
 html_logo = "_static/logo.svg"
