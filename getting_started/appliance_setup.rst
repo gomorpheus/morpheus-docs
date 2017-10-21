@@ -44,7 +44,7 @@ If you do not already have a license key, one may be requested from https://www.
 
 In the Administration -> Settings section, select the LICENSE tab, paste your License Key and click "UPDATE"
 
-image::/getting_started/license_key.png[]
+.. image:: /images/getting_started/license_key.png
 
 When the license is accepted, your license details will populate in the Current License section.
 
