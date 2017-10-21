@@ -26,8 +26,8 @@ Create Backups
 
 Copy Snapshots to Store
   Copy VMware snapshots to selected Backup
-Storage Provider.
-
+Storage Provider
+  Default Backups Storage Provider
 Backup Appliance
   When enabled, a Backup will be created to backup the |morpheus| appliance database. Select the ``Backup`` text link to edit Appliance Backup Settings and view existing Appliance Backups.
 
