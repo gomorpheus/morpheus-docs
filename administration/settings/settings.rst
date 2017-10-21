@@ -89,10 +89,7 @@ Available Cloud types:
 * HP
 * Supermicro
 * Dell
-* SCVMM
-* UpCloud
-* Kubernetes
-* Cloud Foundry
+
 
 .. include:: whitelabel.rst
 .. include:: license.rst
