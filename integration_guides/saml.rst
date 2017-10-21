@@ -1,4 +1,5 @@
-SAML integration
+SAML Integration
+================
 
 Overview
 --------
