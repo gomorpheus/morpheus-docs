@@ -45,13 +45,13 @@ To configure a network for Static IP Assignment:
    * Select the Network, then select `Edit`
 
 4. In the Network Config modal, add the following:
+
    * Gateway
    * DNS Primary
    * DNS Secondary
    * CIDR ex 10.10.10.0/22
    * VLAN ID (if necessary)
    * Network Pool
-
      * Leave as "choose a pool" for entering a static IP while provisioning
      * Select a Pool to use a pre-configured |morpheus| or IPAM Integration IP Pool
 
