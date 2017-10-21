@@ -39,4 +39,4 @@ Bare Metal hosts are from PXE Boot or manually added in this section. Bare Metal
 .. //==== Managing Bare Metal
 .. //==== Removing Bare Metal
 
-include::adddockerhost.rst
+.. include:: adddockerhost.rst
