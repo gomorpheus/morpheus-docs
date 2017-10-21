@@ -97,12 +97,12 @@ HaProxy Container (Internal, will create a HaProxy container, must have availabl
   * Plan
     * Select the size of HaProxy container to be provisioned
 
-//HAProxy VM (Internal, will provision a HaProxy VM into selected cloud)
-//Group
-//Cloud
-//Name
-//Description
-//Plan- Select size of HaProxy VM to be provisioned
+.. HAProxy VM (Internal, will provision a HaProxy VM into selected cloud)
+.. Group
+.. Cloud
+.. Name
+.. Description
+.. Plan- Select size of HaProxy VM to be provisioned
 
 Upon saving your new Load Balancer will be added to the Load Balancers list and available in the Load Balancer dropdown in the Provisioning Wizard Automation Section for Instance Types that have scaling enabled.
 
@@ -111,5 +111,5 @@ Load Balancer Detail Pages
 
 In the main Load Balancer page, select an existing Load Balancer to go to that Load Balancers Details Page, which lists Stats, Settings, Actions and Virtual Servers for that load balancer.
 
-Virtual Servers
----------------
+.. Virtual Servers
+.. ---------------
