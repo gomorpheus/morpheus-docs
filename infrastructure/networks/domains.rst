@@ -20,17 +20,28 @@ Adding Domains
 1. Navigate to `Infrastructure -> Network -> Domains`
 2. Select *+ Add*
 3. Enter the following:
-   * Domain Name:: Example demo.example.com
-   * Description:: Descriptive meta-data for use in |morpheus|
-   * Public Zone:: Check for Public Zones, leave uncheck for Private Zones.
-   * Join Domain Controller:: Enable to have Windows instances join a Domain Controller
-   * Username:: Admin user for Domain Controller
-   * Password:: Password for DC Username
-   * DC Server:: (optional) Specify the URL or Path of the DC Server
-   * OU Path:: (optional) Enter the OU Path for the connection string.
-   * Permissions:: Configure Tenant permissions in |morpheus| for the Domain (only applicable in Multi-tenant |morpheus| setups)
-   * Tenant:: Select the Tenant to set permissions to for the Domain.
-   * Visibility:
+
+   Domain Name
+    Example demo.example.com
+   Description
+    Descriptive meta-data for use in |morpheus|
+   Public Zone
+    Check for Public Zones, leave uncheck for Private Zones.
+   Join Domain Controller
+    Enable to have Windows instances join a Domain Controller
+   Username
+    Admin user for Domain Controller
+   Password
+    Password for DC Username
+   DC Server
+    (optional) Specify the URL or Path of the DC Server
+   OU Path
+    (optional) Enter the OU Path for the connection string.
+   Permissions
+    Configure Tenant permissions in |morpheus| for the Domain (only applicable in Multi-tenant |morpheus| setups)
+   Tenant
+    Select the Tenant to set permissions to for the Domain.
+   Visibility
      * Private: Only Accessible by the select Tenant
      * Public: Available for use by all Tenants.
 
