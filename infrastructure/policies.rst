@@ -56,44 +56,63 @@ Expiration policies set an expiration timeframe for any instance provisioned int
 
 Configuration options for expiration policies:
 
-* EXPIRATION TYPE
+EXPIRATION TYPE
   * User Configurable - expiration timeframe is editable during provisioning
-** Fixed Expiration - user cannot change expiration timeframe
-* EXPIRATION DAYS
-** Configures the number of days the instance is allowed to exist before being removed.
-* RENEWAL DAYS
-** If the instance is renewed, this is the number of day increments the expiration date is increased by.
-* NOTIFICATION DAYS
-** This allows an email notice to be sent out x days before the instance is going to expire.
-* NOTIFICATION MESSAGE
-** Customizable message for notification email. Default message is "Instance ${instance?.name} is set to expire on ${instance?.expireDate}"
-* AUTO APPROVE EXTENSIONS
-** Enable this to auto-approve extension requests. Please note approval workflows will be available in upcoming |morpheus| release.
+  * Fixed Expiration - user cannot change expiration timeframe
 
-image::infrastructure/new_policy2.png[caption="Figure 4: ", title="Expiration Policy", alt="Expiration Policy"]
+EXPIRATION DAYS
+  Configures the number of days the instance is allowed to exist before being removed.
+RENEWAL DAYS
+  If the instance is renewed, this is the number of day increments the expiration date is increased by.
+NOTIFICATION DAYS
+  This allows an email notice to be sent out x days before the instance is going to expire.
+NOTIFICATION MESSAGE
+  Customizable message for notification email. Default message is "Instance ${instance?.name} is set to expire on ${instance?.expireDate}"
+AUTO APPROVE EXTENSIONS
+  Enable this to auto-approve extension requests. Please note approval workflows will be available in upcoming |morpheus| release.
+
+.. image:: /images/infrastructure/new_policy2.png
 
 Instances with expirations show the time until expiration in the instance detail pane. Instances with active expiration policies can be extended by selecting the EXTEND NOW button in the instance detail pane. The extension length is set in the policy by the RENEWAL DAYS field.
 
-image::infrastructure/renewal_policy.png[caption="Figure 5: ", title="Renewal Policy", alt="Renewal Policy"]
+.. image:: /images/infrastructure/renewal_policy.png
 
 Expirations can also be added to any instance during provisioning by entering the number of days in the EXPIRATION DAYS field in the Lifecycle section of the automation section of the provisioning wizard. Expiration can be added to any instance even if no policies have been created.
 
-image::infrastructure/expirations.png[caption="Figure 6: ", title="Expirations", alt="Expirations"]
+.. image:: /images/infrastructure/expirations.png
 
-==== Naming Policies
+Naming Policies
+^^^^^^^^^^^^^^^
 
-Naming Policies will populate a fixed or editable name for instances, hosts and hostnames. The Name Pattern field uses ${variable} string interpolation.
+Naming Policies will populate a fixed or editable name for instances, hosts and hostnames. The Name Pattern field uses ``${variable}`` string interpolation.
 
 Available Variables for naming patterns are:
 
-groupName, groupCode, cloudName, cloudCode, type, accountID, account, accountType, platform, userID, userName, userInitials, provisionType
+.. code-block:: bash
 
-And example for an instance name policy using a naming pattern with users initials, cloud code, instance type, and adds a sequential number is:
+    ${groupName}
+    ${groupCode}
+    ${cloudName}
+    ${cloudCode}
+    ${type}
+    ${accountID}
+    ${account}
+    ${accountType}
+    ${platform}
+    ${userID}
+    ${userName}
+    ${userInitials}
+    ${provisionType}
+    ${sequence}
 
-pattern: ${userInitials}-${cloudCode}-${type}-${sequence}
+And example for an instance name policy using a naming pattern with users initials, cloud code, instance type, and adds a sequential number starting at 100 is:
+
+.. code-block:: bash
+
+  ${userInitials}-${cloudCode}-${type}-${sequence+100}
 
 Naming policies can be configure to be user configurable or static, and to auto-resolve naming conflicts.
 
-Hint: Cloud codes are a new field found in cloud configuration panes.
+.. HINT:: ``${sequence}`` can be modified to start at a high number by adding the starting value, such as ``${sequence+1000}`` to being at 1000, and specify the amount of digit´s in the sequence with ``${sequence.toString().padLeft(5,'0')}`` for a sequence starting at 0001.
 
-image::infrastructure/edit_policy.png[caption="Figure 7: ", title="Edit Policy", alt="Edit Policy"]
+.. image:: /images/infrastructure/edit_policy.png
