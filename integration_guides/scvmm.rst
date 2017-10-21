@@ -29,4 +29,4 @@ Add a SCVMM Cloud
 
 #. The Cloud can now be added to a Group or configured with additional Advanced options.
 
-.. include:: advanced_options.rst
+.. .. include:: /integration_guides/advanced_options.rst
