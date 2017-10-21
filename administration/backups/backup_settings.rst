@@ -7,7 +7,7 @@ Overview
 --------
 
 The Backups Settings page allows you enable or disableScheduled Backups,
-and select a Default Backup Storage Provider Backups within |morpheus| 
+and select a Default Backup Storage Provider Backups within |morpheus|
 can always be run manually. However the scheduled backups toggle must be
 enabled to run jobs automatically. Configure the default storage
 provider to select the target location for all new backups. (This does
@@ -40,5 +40,5 @@ Default Backup Storage Provider
 Backup Retention Count
   Default maximum number of successful backups to retain.
 
-.. include:: veeam_config.rst
-.. include:: commvault_config.rst
+.. include:: /administration/backups/veeam_config.rst
+.. include:: /administration/backups/commvault_config.rst
