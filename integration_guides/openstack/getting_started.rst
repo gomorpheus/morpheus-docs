@@ -4,7 +4,9 @@ Getting Started
 
 Adding an Openstack cloud to |morpheus| is one of the simpler cloud integrations to get started with. First go to the `Infrastructure -> Clouds` section and click add cloud. From here there are several options including Metapod, Helion, and general Openstack. Any of these options will actually work and for the most part the branded Openstack options are represented to make it clearer to the user as to the capabilities of |morpheus| .
 
-.. image:: openstack/add_cloud.png[caption="Figure 1: ", title="Add Openstack Cloud form", alt="Add Openstack Cloud form"]
+.. update image:: /images/openstack/add_cloud.png
+
+.. caption="Figure 1: ", title="Add Openstack Cloud form", alt="Add Openstack Cloud form"]
 
 Most of the information in the dialog can be acquired from the openstack dashboard. under `Project -> Access & Security -> API Access`. The API Url that is needed is the one tied to `Identity`. The Domain and Project inputs typically correlate to the multitenant domain setup within openstack (sometimes just left at default) as well as the project name given to instances. |morpheus| allows multiple integrations to the same openstack cluster scopable to domains and projects as needed. The remaining options help |morpheus| determine what api capabilities exist in the selected openstack environment. Hence the need for the Openstack version and image format. If a newer openstack cluster is being used then exists in the dropdown, simply select the most recent version in the dropdown and this should function sufficiently until the new version is added.
 
