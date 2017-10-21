@@ -21,7 +21,7 @@ Adding Domains
 2. Select *+ Add*
 3. Enter the following:
    * Domain Name:: Example demo.example.com
-   * Description:: Descriptive meta-data for use in |morpheus| 
+   * Description:: Descriptive meta-data for use in |morpheus|
    * Public Zone:: Check for Public Zones, leave uncheck for Private Zones.
    * Join Domain Controller:: Enable to have Windows instances join a Domain Controller
    * Username:: Admin user for Domain Controller
@@ -31,10 +31,9 @@ Adding Domains
    * Permissions:: Configure Tenant permissions in |morpheus| for the Domain (only applicable in Multi-tenant |morpheus| setups)
    * Tenant:: Select the Tenant to set permissions to for the Domain.
    * Visibility:
-
      * Private: Only Accessible by the select Tenant
      * Public: Available for use by all Tenants.
-     
+
 4. Save Changes
 
 The Domain has been added and will be selectable in Domain dropdown during provisioning, and in Cloud and Network settings.
