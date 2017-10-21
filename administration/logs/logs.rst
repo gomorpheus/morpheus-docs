@@ -24,7 +24,3 @@ LogRhythm
 ^^^^^^^^^
 
 Configuring LogRhythm is much like configuring Splunk. Simply toggle the enabled flag in the LogRhythm section to enabled and fill in the Host, and Port information for the LogRhythm listener.
-
-
-.. include::splunk.rst
-.. include::logrhythm.rst
