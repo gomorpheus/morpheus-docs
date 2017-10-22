@@ -27,7 +27,7 @@ appliance server. i.e. ``wget https://downloads.gomorpheus.com/path/to/package.r
 
 .. code-block:: bash
 
-  sudo sudo rpm -i morpheus-appliance-x.x.x-1.x86\_64.rpm
+  sudo sudo rpm -i morpheus-appliance-x.x.x-1.x86_64.rpm
   sudo morpheus-ctl reconfigure
 
 #. Once the installation is complete the web interface will automatically start up. By default it will be resolvable at ``https://your_machine_name`` and in many cases this may not be resolvable from your browser. The url can be changed by editing ``/etc/morpheus/morpheus.rb`` and changing the value of ``appliance_url``. After this has been changed simply run :

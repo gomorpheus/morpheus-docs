@@ -139,8 +139,8 @@ style syntax since the key contains dots. The key is an IP address or
 DNS name with the paired value the port the database is listening on.
 The configuration script for the installer will take the values and turn
 them into a URL JDBC string that the application will use. Enter the
-database name and credentials using the entries mysql['morpheus\_db'],
-mysql['morpheus\_db\_user'], and mysql['morpheus\_password']
+database name and credentials using the entries mysql['morpheus_db'],
+mysql['morpheus_db_user'], and mysql['morpheus_password']
 respectively. The database user requires write access to all tables in
 the |morpheus| database with the all privileges statement.
 
@@ -154,7 +154,7 @@ balancer is used so that each application server can connect to a single
 IP address or DNS name. To prevent the local RabbitMQ server creation
 during setup set the configuration entry rabbitmq['enable'] = false and
 use the three entries rabbitmq['host'], rabbitmq['port'], and
-rabbitmq['stomp\_port'] to the appropriate strings for the external load
+rabbitmq['stomp_port'] to the appropriate strings for the external load
 balancer. The entry for the virtual host is rabbitmq['vhost'] and should
 be set to / or root if no virtual host was created for the RabbitMQ
 cluster. When using a load balancer fronting a RabbitMQ cluster the
@@ -173,7 +173,7 @@ redundancy and scalability an external ElasticSearch cluster is needed.
 To disable the creation of the internal ElasticSearch instance set the
 configuration entry elasticsearch['enable'] = false. Provide the cluster
 name of the external ElasitcSearch cluster using the configuration entry
-elasticsearch['cluster'] and elasticsearch['es\_hosts'] which is a Ruby
+elasticsearch['cluster'] and elasticsearch['es_hosts'] which is a Ruby
 hash using hash rocket style syntax since the key contains dots. The key
 is an IP address or DNS name with the paired value the port the database
 is listening on.
@@ -211,8 +211,8 @@ following entries:
 
 .. code-block:: bash
 
-  nginx[‘ssl\_certificate’] = ‘path to the certificate file'
-  nginx[‘ssl\_server\_key’] = ‘path to the server key file'
+  nginx[‘ssl_certificate’] = ‘path to the certificate file'
+  nginx[‘ssl_server_key’] = ‘path to the server key file'
 
 .. IMPORTANT:: Both files should be owned by root and only readable by root. If the server certificate is signed by an intermediate then you should include the signing chain inside the certificate file.
 
@@ -226,7 +226,7 @@ validation with a known certificate authority, then you can import these
 custom certificates as described in the previous paragraph. The other
 option is to enable SSL offloading where the load balancer connects to
 the application server pool over a non-TLS connection. To setup TLS
-offloading in the |morpheus| configuration file set the appliance\_url
+offloading in the |morpheus| configuration file set the appliance_url
 to a URL that starts with http instead of https, this instructs the
 configuration script to not generate the self-singed certificates.
 

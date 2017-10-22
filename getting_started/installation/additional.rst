@@ -32,8 +32,8 @@ implement a third-party certificate:
    following entries:
 
 .. code-block:: bash
-  nginx[‘ssl\_certificate’] = ‘path to the certificate file'
-  nginx[‘ssl\_server\_key’] = ‘path to the server key file' ----
+  nginx[‘ssl_certificate’] = ‘path to the certificate file'
+  nginx[‘ssl_server_key’] = ‘path to the server key file' ----
 
 NOTE: Both files should be owned by root and only readable by root, also if the server certificate is signed by an intermediate then you should include the signing chain inside the certificate file.
 
@@ -52,14 +52,14 @@ external service integrations or high availability:
 
 .. code-block:: bash
   mysql['enable'] = false mysql['host'] = '52.53.240.28' mysql['port'] =
-  10004 mysql['morpheus\_db'] = 'morpheusdb01' mysql['morpheus\_db\_user']
-  = 'merovingian' mysql['morpheus\_password'] = 'Wm5n5gXqXCe9v52'
+  10004 mysql['morpheus_db'] = 'morpheusdb01' mysql['morpheus_db_user']
+  = 'merovingian' mysql['morpheus_password'] = 'Wm5n5gXqXCe9v52'
   rabbitmq['enable'] = false rabbitmq['vhost'] = 'zion'
-  rabbitmq['queue\_user'] = 'dujour' rabbitmq['queue\_user\_password'] =
+  rabbitmq['queue_user'] = 'dujour' rabbitmq['queue_user_password'] =
   '5tfg9n2iBifzW5c' rabbitmq['host'] = '54.183.196.152' rabbitmq['port'] =
-  '10008' rabbitmq['stomp\_port'] = '10010' redis['enable'] = false
+  '10008' rabbitmq['stomp_port'] = '10010' redis['enable'] = false
   redis['host'] = '52.53.240.28' redis['port'] = 10009
   elasticsearch['enable'] = false elasticsearch['cluster'] =
-  'nebuchadnezzar' elasticsearch['es\_hosts'] = {'52.53.214.68' => 10003}
+  'nebuchadnezzar' elasticsearch['es_hosts'] = {'52.53.214.68' => 10003}
 
 These settings allow one to externally configure and scale mysql, elasticsearch, redis, and rabbitmq which is critical for a high availability setup.
