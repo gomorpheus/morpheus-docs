@@ -47,20 +47,13 @@ To delete a Tenant:
 #. Click the Delete trashcan icon on the row of the Tenant to delete.
 #. Confirm
 
-Tenant View
+Tenant Users
 -----------
 
 The Tenant View displays a list of users belonging to the Tenant and their
 Name, Username, Email, and Role.
 
 From this page: Create, Edit, and Delete users within the Tenant.
-
-View Tenant
-^^^^^^^^^^^^^^
-
-#. Select the Administration link in the navigation bar.
-#. Select the Tenants link in the sub navigation bar.
-#. Click the Tenant Name on the row of the Tenant to view.
 
 Create Tenant User
 ^^^^^^^^^^^^^^^^^^
