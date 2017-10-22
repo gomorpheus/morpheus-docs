@@ -27,7 +27,7 @@ subscription-manager register
 
 .. code-block:: bash
 
-  sudo subscription-manager register Username: redhat@example.com Password: . subscription-manager auto --attach
+  sudo subscription-manager register Username: redhat@example.com Password: subscription-manager auto --attach
 
 .. NOTE:: This can take a minute to complete
 
@@ -35,13 +35,11 @@ subscription-manager register
 
   sudo subscription-manager attach --auto
 
-      Installed Product Current Status: Product Name: Red Hat Enterprise Linux
-      Server Status: Subscribed
+      Installed Product Current Status: Product Name: Red Hat Enterprise Linux Server Status: Subscribed
 
 To check to see if the RHEL server has the Red Hat Enterprise Linux 7 Server - Optional (RPMs) repo enabled please run the following command to return the repo status.
 
-.. TIP:: To check the server repos you will need to have sudo permissions
-[Member of the Wheel group] or root access to the server.
+.. TIP:: To check the server repos you will need to have sudo permissions [Member of the Wheel group] or root access to the server.
 
 .. code-block:: bash
 
