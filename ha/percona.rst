@@ -1,7 +1,7 @@
-configurationDatabase Tier Configuraiton
+configurationDatabase Tier Configuration
 ----------------------------------
 
-Installation and configuraiton of Percona XtraDB Cluster on CentOS/RHEL 7
+Installation and configuration of Percona XtraDB Cluster on CentOS/RHEL 7
 
 .. IMPORTANT:: This is a sample configuration only. Customer configurations and requirements will vary.
 

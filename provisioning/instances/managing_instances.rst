@@ -1,9 +1,7 @@
 Instance Actions
 ----------------
 
-Instance actions allow you to perform numerous management tasks on
-instances. The actions available depend on the instance type,
-hypervisor, roles permissions, and instance state.
+Instance actions allow you to perform numerous management tasks on instances. The actions available depend on the instance type, hypervisor, roles permissions, and instance state.
 
 Edit
   Edit the Name, Description, Environment, or Group for the Instance.
@@ -62,9 +60,6 @@ Performing Instance Actions
 Notes
 ^^^^^
 
-Every Instance has a Notes section for adding useful information about
-the Instance. Notes can be added by selecting the ``ADD NOTES`` button
-on the bottom of Instance Detail pages. Existing notes can be edited by
-selecting the ``EDIT NOTES``
+Every Instance has a Notes section for adding useful information about the Instance. Notes can be added by selecting the ``ADD NOTES`` button on the bottom of Instance Detail pages. Existing notes can be edited by selecting the ``EDIT NOTES``
 
 .. TIP:: Markdown Syntax is supported in Instance Notes.

@@ -30,7 +30,7 @@ When an instance is provisioned and the agent does not install, verify the follo
 
   .. NOTE:: Be sure to use https:// even when using an ip address for the appliance.
 
-* Inbound connectivity access to the |morpheus| Appliance from provisioned vms and container hosts on port 443 (needed for agent communication)
+* Inbound connectivity access to the |morpheus| Appliance from provisioned VM's and container hosts on port 443 (needed for agent communication)
 
 * Private (non-morpheus provided) vm images/templates must have their credentials entered. These can be entered/edited in the Provisioning - Virtual Images section but clicking the Actions dropdown of an image and selecting Edit.
 
@@ -52,7 +52,7 @@ Linux Agent
 Windows Agent
 `````````````
 
-* Port 5985 must be open and winrm enabled for Windows images.
+* Port 5985 must be open and winRM enabled for Windows images.
 * Credentials have been entered on the image if using custom or synced image. Credentials can be entered on images in the Provisioning -> Virtual Images section.
 
 .. NOTE:: Administrator user is required for Windows agent install.
@@ -77,7 +77,7 @@ While it should not be necessary to manually install an agent if the requirement
 Linux
 ^^^^^
 
-#. In |morpheus| , go to the vms host detail page in Infrastructure->Hosts->Virtual Machines you will see an API Key that is unique to that host.
+#. In |morpheus| , go to the VM's host detail page in Infrastructure->Hosts->Virtual Machines you will see an API Key that is unique to that host.
 
 #. As root user, run: (replacing ${} with the relevant information)
 

@@ -3,9 +3,9 @@ VMware Hypervisor Console is not displaying
 
 |morpheus| features Remote Console support directly to VMware ESXi hypervisors. To enable this feature a few prerequisites must be met:
 
-* The |morpheus| appliance must have network access to the ESXi hosts within Vcenter.
+* The |morpheus| appliance must have network access to the ESXi hosts within vCenter.
 
-* Firewall settings need to be adjusted on each ESXi host. This can be done in vsphere under firewall configuration on the ESXi hosts. Simply check the gdbserver option for each required host, which will open up the necessary ports (starting at the 5900 range).
+* Firewall settings need to be adjusted on each ESXi host. This can be done in vSphere under firewall configuration on the ESXi hosts. Simply check the gdbserver option for each required host, which will open up the necessary ports (starting at the 5900 range).
 
 * The |morpheus| must be able to resolve the ESXi hostnames.
 

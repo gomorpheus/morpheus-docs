@@ -3,12 +3,12 @@ Elasticsearch
 
 Install 3 node Elasticsearch Cluster on Centos 7
 
-.. IMPORTANT:: This is a sample configuraiton only. Customer configuraitons and requirements will vary. 
+.. IMPORTANT:: This is a sample configuration only. Customer configurations and requirements will vary.
 
 Requirements
 ^^^^^^^^^^^^
 
-#. Three Existing Cenots 7+ nodes accessible to the Morpheus Appliance
+#. Three Existing CentOS 7+ nodes accessible to the Morpheus Appliance
 
 #. Install Java on each node
 

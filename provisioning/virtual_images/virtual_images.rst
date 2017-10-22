@@ -73,7 +73,7 @@ When using Images that already exist in the destination cloud, such as synced, m
 
 .. NOTE:: The |morpheus| Appliance must be able to download from Amazon S3 when provisioning System Images for the first time.
 
-.. NOTE:: The |morpheus| Appliance must be able reach and resolve the destination Host when provisioning System Images or uploaded Images for the first time. This included being able to resolve ESXi host names in VMware VCenter clouds, and reach the destination ESXi host over port 443.
+.. NOTE:: The |morpheus| Appliance must be able reach and resolve the destination Host when provisioning System Images or uploaded Images for the first time. This included being able to resolve ESXi host names in VMware vCenter clouds, and reach the destination ESXi host over port 443.
 
 Add Virtual Images
 ------------------
@@ -101,7 +101,7 @@ To Add Virtual Image:
 Name
   Name of the Virtual Image in |morpheus| . This can be changed from the name of the Image, but editing will not change the name of the actual Image.
 Operating System
-  Specifies the Platform and OS of the image. All Windows images will need to have Operating System specified on the Virtual Image, as {norpheus} will assign Linux as the Platform for all Images without Operating System specified.
+  Specifies the Platform and OS of the image. All Windows images will need to have Operating System specified on the Virtual Image, as |morpheus| will assign Linux as the Platform for all Images without Operating System specified.
 Cloud Init Enabled?
   On by default, uncheck for any Image that does not have Cloud-Init or Cloudbase-Init installed.
 Install Agent

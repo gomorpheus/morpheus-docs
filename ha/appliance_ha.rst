@@ -5,11 +5,11 @@ Application Tier
 at /etc/morpheus/morpheus.rb. This file is read when you run
 morpheus-ctl reconfigure after installing the appliance package. Each
 section is tied to a deployment tier: database is mysql, message queue
-is rabbitmq, serach index is elasticsearch. There are no entries for the
+is rabbitmq, search index is elasticsearch. There are no entries for the
 web and application tiers since those are part of the core application
 server where the configuration file resides.
 
-#. Download and install the Morpheus Applaince Package 
+#. Download and install the Morpheus Appliance Package
 
 #. Next we must install the package onto the machine and configure the morpheus services:
 
@@ -25,7 +25,7 @@ server where the configuration file resides.
 
    Change the values to match your configured services:
 
-   .. NOTE:: The values below are examples. Update hsots, ports, usernames and password with your specificaitons. Only include entries for services you wish to externalize.
+   .. NOTE:: The values below are examples. Update hosts, ports, usernames and password with your specifications. Only include entries for services you wish to externalize.
 
    .. code-block:: bash
 
@@ -46,7 +46,7 @@ server where the configuration file resides.
     elasticsearch['cluster'] = 'morpheusha1'
     elasticsearch['es_hosts'] = {'10.30.20.91' => 9300, '10.30.20.149' => 9300, '10.30.20.165' => 9300}
 
-#. Recofigure Morpheus
+#. Reconfigure Morpheus
 
    .. code-block:: bash
 
