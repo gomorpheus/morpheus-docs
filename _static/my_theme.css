@@ -32,8 +32,10 @@ max-width: 1200px !important;
     background: rgba(236, 5, 15, 0.06)
 }
 
-
-
+.wy-side-nav-search > a, .wy-side-nav-search .wy-dropdown > a {
+    padding: 1px 1px;
+    margin-bottom: .001em;
+}
 
 ##remove redthedocs footer text
 .fa-book {
@@ -47,8 +49,16 @@ max-width: 1200px !important;
     visibility: visible;
 }
 
-
 // Pygments styling
-.codeblock, .highlight,  {
+.codeblock, .highlight {
     background: #4404040;
+}
+
+.codeblock, pre.literal-block, .rst-content .literal-block, .rst-content pre.literal-block,
+div[class^='highlight'] {
+    border: 1px solid #e1e4e5;
+    padding: 0px;
+    overflow-x: auto;
+    background: #ffaac2;
+    margin: 1px 0 24px 0;
 }
