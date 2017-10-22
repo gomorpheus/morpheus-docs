@@ -14,7 +14,7 @@ it intuitive and smooth.
 .. include:: concepts.rst
 .. include:: instances/instances.rst
 .. include:: apps/apps.rst
-.. .. include:: templates/templates.rst
+.. include:: templates/templates.rst
 .. include:: automation/automation.rst
 .. include:: virtual_images/virtual_images.rst
 .. include:: library/library.rst
