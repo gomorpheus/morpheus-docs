@@ -114,6 +114,13 @@ html_sidebars = {
     ]
 }
 
+html_show_sourcelink = False
+
+html_context = {
+    "display_github": False, # Integrate GitHub
+}
+
+html_display_github = False
 
 # -- Options for HTMLHelp output ------------------------------------------
 
@@ -180,11 +187,3 @@ def setup(app):
 rst_epilog = """
 .. |morpheus| replace:: Morpheus
 """
-
-html_show_sourcelink = False
-
-html_context = {
-"display_github": False, # Add 'Edit on Github' link instead of 'View page source'
-"last_updated": False,
-"commit": False,
-}
