@@ -15,7 +15,7 @@ Adding an Active Directory integration is fairly straightforward. Simply
 click the 'Add Integration' button in Identity Sources and from the type
 dropdown choose "Active Directory".
 
-image::administration/add\_active\_directory.png[caption="Figure 2: ",
+image::administration/add_active_directory.png[caption="Figure 2: ",
 title="Modal form entry for Active Directory", alt="Modal form entry for
 Active Directory"]
 

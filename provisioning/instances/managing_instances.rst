@@ -57,7 +57,7 @@ Performing Instance Actions
 #. Click the Instance from the list of instances you wish to perform an action on.
 #. Click the Actions drop down button and select an Action.
 
-.. Instances\_\_\_|morpheus| \_Reconfigure.png
+.. Instances___|morpheus| _Reconfigure.png
 
 Notes
 ^^^^^
