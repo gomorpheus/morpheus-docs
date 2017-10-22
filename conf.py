@@ -122,6 +122,8 @@ html_context = {
 
 html_display_github = False
 
+display_github = False
+
 # -- Options for HTMLHelp output ------------------------------------------
 
 # Output file base name for HTML help builder.
