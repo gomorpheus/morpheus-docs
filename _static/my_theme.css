@@ -50,15 +50,27 @@ max-width: 1200px !important;
 }
 
 // Pygments styling
-.codeblock, .highlight {
-    background: #4404040;
-}
+//.codeblock, .highlight {
+//    background: #404040;
+// }
 
 .codeblock, pre.literal-block, .rst-content .literal-block, .rst-content pre.literal-block,
 div[class^='highlight'] {
     border: 1px solid #e1e4e5;
     padding: 0px;
     overflow-x: auto;
-    background: #ffaac2;
+    background: #404040;
     margin: 1px 0 24px 0;
+}
+
+div[class^='highlight'] pre {
+    white-space: pre;
+    margin: 0;
+    padding: 12px 12px;
+    font-family: Consolas, "Andale Mono WT", "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L", Monaco, "Courier New", Courier, monospace;
+    font-size: 12px;
+    line-height: 1.5;
+    display: block;
+    overflow: auto;
+    color: #ffffff
 }
