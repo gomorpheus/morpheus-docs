@@ -35,11 +35,11 @@ max-width: 1200px !important;
 
 
 
-
+//remove redthedocs footer text
 .fa-book {
   visibility: hidden;
 }
-
+//replace book icon with morpheus
 .fa-book:before, .icon-book:before {
     font-family: inherit;
     font-weight: bold;
@@ -49,5 +49,7 @@ max-width: 1200px !important;
 
 
 // Pygments styling
-@import wyrm_addons/pygments/pygments
-@import wyrm_addons/pygments/pygments_dark
+.codeblock, pre.literal-block, .rst-content .literal-block, .rst-content pre.literal-block,
+div[class^='highlight'] {
+    background: #4404040;
+}
