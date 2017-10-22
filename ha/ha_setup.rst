@@ -12,7 +12,7 @@ There are four primary tiers of services represented within the Morpheus applian
 .. image:: /images/morpheus-ha-multi-configuration.png
    :scale: 90 %
 
-.. IMPORTANT:: This is a sample configuraiton only. Customer configuraitons and requirements will vary.
+.. IMPORTANT:: This is a sample configuration only. Customer configurations and requirements will vary.
 
 Transactional Database Tier
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -22,7 +22,7 @@ The Transactional database tier usually consists of a MySQL compatible database.
 Non-Transactional Database Tier
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The Non-Transactional tier consists of an ElasticSearch (version 1.6) cluster. Elastic Search is used for log aggregation data and temporal aggregation data (essentially stats, metrics, and logs). This enables for a high write throughput at scale. ElasticSearch is a Clustered database meaning all nodes no matter the region need to be connected to each other over what they call a “Transport” protocol. It is fairly simple to get setup as all nodes are identical. It is also a java based system and does require a sizeable chunk of memory for larger data sets. (8gb) is recommended and more nodes can be added to scale either horizontally or vertically.
+The Non-Transactional tier consists of an ElasticSearch (version 1.6) cluster. Elastic Search is used for log aggregation data and temporal aggregation data (essentially stats, metrics, and logs). This enables for a high write throughput at scale. ElasticSearch is a Clustered database meaning all nodes no matter the region need to be connected to each other over what they call a “Transport” protocol. It is fairly simple to get setup as all nodes are identical. It is also a java based system and does require a sizable chunk of memory for larger data sets. (8gb) is recommended and more nodes can be added to scale either horizontally or vertically.
 
 Messaging Tier
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^

@@ -31,13 +31,13 @@ name for the instance as well as an environment.
 Moving on, it is now time to configure the Instance. Depending on the
 option that was chosen and the Instance Configuration that is chosen
 fields will change. This can include cloud specific fields (i.e.
-Datastore for Vmware or Network). There will also be options like
+Datastore for VMware or Network). There will also be options like
 initial username. Some of these fields are optional and will be
 represented as such.
 
 Configuration options provided in this screen are very powerful. An
 example is Mysql where a Master/Slave or Master/Master layout can be
-selected. These configurations will automatically deploy two MySQL vms
+selected. These configurations will automatically deploy two MySQL VMs
 or containers and link them together to provide replication. These types
 of configurations exist for a wide range of instance types and are
 optimized for high performance and scale. It is even possible to

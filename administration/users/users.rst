@@ -1,5 +1,3 @@
-[[users]]
-
 Users
 -----
 
@@ -15,7 +13,7 @@ displays Account, Name, Username, Email, and Role.
 Create User
 ^^^^^^^^^^^
 
-To create user
+To create a User:
 
 #. Select the Administration link in the navigation bar.
 
@@ -39,7 +37,7 @@ To create user
 Edit User
 ^^^^^^^^^
 
-To edit user
+To edit a User:
 
 #. Select the Administration link in the navigation bar.
 
@@ -63,7 +61,7 @@ To edit user
 Delete User
 ^^^^^^^^^^^
 
-To delete a user:
+To delete a User:
 
 #. Select the Administration link in the navigation bar.
 #. Select the Users link in the sub navigation bar.

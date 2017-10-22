@@ -4,9 +4,9 @@ RabbitMQ Cluster
 RabbitMQ Installation and Configuration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. IMPORTANT:: This is a sample configuraiton only. Customer configuraitons and requirements will vary.
+.. IMPORTANT:: This is a sample configuration only. Customer configurations and requirements will vary.
 
-Prerequisits
+Prerequisites
 .................
 
 .. code-block:: bash
@@ -68,7 +68,7 @@ On Nodes 2 & 3:
     rabbitmqctl start_app
 
 On Node 1:
-...........
+..........
 
 .. code-block:: bash
 

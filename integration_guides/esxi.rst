@@ -1,7 +1,7 @@
 ESXi
 ====
 
-.. IMPORTANT:: The VMware ESXi integration is for adding a single ESXi / vSphere Hypervisor host. If you have vCenter please use the VMWare VCenter cloud type.
+.. IMPORTANT:: The VMware ESXi integration is for adding a single ESXi / vSphere Hypervisor host. If you have vCenter please use the VMWare vCenter cloud type.
 
 To get started with VMware ESXi, simply add a VMware ESXi Cloud in either the Infrastructure -> Clouds or Infrastructure -> Groups section.
 

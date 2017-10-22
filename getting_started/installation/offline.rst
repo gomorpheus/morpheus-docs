@@ -44,7 +44,7 @@ Ubuntu
     sudo vi /etc/morpheus/morpheus.rb
     edit appliance_url to resolvable url (if not configured correctly by default)
 
-#. Reconfigure the applaince to install required packages
+#. Reconfigure the appliance to install required packages
 
    .. code-block:: bash
 
@@ -83,7 +83,7 @@ CentOS
     sudo vi /etc/morpheus/morpheus.rb
     edit appliance_url to resolvable url (if not configured correctly by default)
 
-#. Reconfigure the applaince to install required packages
+#. Reconfigure the appliance to install required packages
 
    .. code-block:: bash
 

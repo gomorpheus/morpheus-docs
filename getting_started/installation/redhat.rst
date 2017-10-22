@@ -21,7 +21,7 @@ When a server has been registered and activated with Redhat the subscription man
 
 If the subscription manager re-turns the message "This system is currently not registered" please follow the below steps to register the server.
 
-.. TIP:: To register the server you will need to have sudo permissions [Member of the Wheel group] or root access to the server. You will also need your redhat registered email address and password.
+.. TIP:: To register the server you will need to have sudo permissions [Member of the Wheel group] or root access to the server. You will also need your Redhat registered email address and password.
 
 subscription-manager register
 
@@ -47,7 +47,7 @@ To check to see if the RHEL server has the Red Hat Enterprise Linux 7 Server - O
 
   sudo yum repolist all \| grep "rhel-7-server-optional-rpms" rhel-7-server-optional-rpms/7Server/x86_64 disabled
 
-If the repo status was returned as disabled then you will need to enable the repo using the subsciption manager like below.
+If the repo status was returned as disabled then you will need to enable the repo using the subscription manager like below.
 
 .. code-block:: bash
 
