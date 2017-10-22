@@ -103,4 +103,4 @@ To delete a Tenant User
 #. Click the Delete trashcan icon of the row of the user to delete.
 #. Confirm
 
-.. include:: configuring_multi_tenancy.rst
+.. include:: tenants/configuring_multi_tenancy.rst
