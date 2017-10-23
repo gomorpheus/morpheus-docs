@@ -24,6 +24,8 @@ Full
   User has full access
 User
   User only has access to data from the Instances they have created/own.
+Remote Console: Provisioned
+  Remote Console tab will only appear after instance is successfully provisioned. 
 Remote Console: Auto Login
   RDP and SSH only, controls if user is auto-logged in to Remote Console or presented with login prompt.
 
