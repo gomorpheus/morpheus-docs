@@ -8,17 +8,18 @@ System Defaults
 
 |morpheus| follows several install location conventions. Below is a list of system defaults for convenient management:
 
-- Installation Location: ``/opt/morpheus``
-- Log Location: ``/var/log/morpheus``
-  - Morpheus-UI: ``/var/log/morpheus/morpheus-ui``
-  - MySQL: ``/var/log/morpheus/mysql``
-  - NginX: ``/var/log/morpheus/nginx``
-  - Check Server: ``/var/log/morpheus/check-server``
-  - Elastic Search: ``/var/log/morpheus/elsticsearch``
-  - RabbitMQ: ``/var/log/morpheus/rabbitmq``
-  - Redis: ``/var/log/morpheus/redis``
+* Installation Location: ``/opt/morpheus``
+* Log Location: ``/var/log/morpheus``
 
--  User-defined install/config: ``/etc/morpheus/morpheus.rb``
+  * Morpheus-UI: ``/var/log/morpheus/morpheus-ui``
+  * MySQL: ``/var/log/morpheus/mysql``
+  * NginX: ``/var/log/morpheus/nginx``
+  * Check Server: ``/var/log/morpheus/check-server``
+  * Elastic Search: ``/var/log/morpheus/elsticsearch``
+  * RabbitMQ: ``/var/log/morpheus/rabbitmq``
+  * Redis: ``/var/log/morpheus/redis``
+
+*  User-defined install/config: ``/etc/morpheus/morpheus.rb``
 
 SSL Certificates
 ^^^^^^^^^^^^^^^^
