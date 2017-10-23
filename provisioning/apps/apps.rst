@@ -59,3 +59,5 @@ Exporting App JSON or YAML
 #. The Template Export file will be downloaded to your computer as {app_name}-config.json or {app_name}-config.yaml.
 
 .. TIP:: JSON or YAML can also be Viewed, Edited, Copied, or Exported by selecting ``ACTIONS -> EDIT``on an App and clicking the RAW section in the Edit App modal.
+
+.. image:: /images/provisioning/apps_301_3.png
