@@ -5,19 +5,19 @@ The following are the map structures passed to scripts and templates during prov
 
 PowerShell Example:
 
-.. code-block:: shell
+.. code-block::  shell
 
 	$app_id = "<%= instance.metadata.app_id %>"
 
 Bash Example:
 
-.. code-block::
+.. code-block:: 
 
 	HOSTNAME="<%= container.server.hostname %>"
 
 .. NOTE:: customOptions are user defined as Option Types or Option Lists in custom Library items.
 
-.. code-block::
+.. code-block:: 
 
 	instance {
 		instanceTypeName,
@@ -53,7 +53,7 @@ Bash Example:
 		evars:[]
 	}
 
-.. code-block::
+.. code-block:: 
 
 	container {
 		containerTypeName,
@@ -86,7 +86,7 @@ Bash Example:
 		server:{}
 	}
 
-.. code-block::
+.. code-block:: 
 
 	server {
 		serverTypeName,
@@ -148,7 +148,7 @@ Bash Example:
 		configRole
 	}
 
-.. code-block::
+.. code-block:: 
 
 	cloud {
 		name,
@@ -164,7 +164,7 @@ Bash Example:
 		datacenterId
 	}
 
-.. code-block::
+.. code-block:: 
 
 	group {
 		code,
@@ -173,7 +173,7 @@ Bash Example:
 		datacenterId
 	}
 
-.. code-block::
+.. code-block:: 
 
 	customOptions {
 		customOptions.fieldName

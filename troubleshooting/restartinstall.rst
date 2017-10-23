@@ -13,7 +13,7 @@ On the |morpheus| appliance:
 
    Then Run
 
-   .. code-block::
+   .. code-block:: 
 
     rm -rf /etc/morpheus
     rm -rf /var/opt/morpheus
@@ -25,7 +25,7 @@ On the |morpheus| appliance:
 
 If the elasticsearch cluster is unhealthy and needs purged, run:
 
-.. code-block::
+.. code-block:: 
 
   sudo morpheus-ctl stop elasticsearch`
   sudo rm -rf /var/opt/morpheus/elasticsearch/data/morpheus`
@@ -33,6 +33,6 @@ If the elasticsearch cluster is unhealthy and needs purged, run:
 
 If eleasticsearch does not restart during reconfigure:
 
-.. code-block::
+.. code-block:: 
 
   sudo morpheus-ctl start elasticsearch

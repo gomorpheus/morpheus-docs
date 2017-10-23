@@ -31,7 +31,7 @@ implement a third-party certificate:
 2. Edit the configuration file ``/etc/morpheus/morpheus.rb`` and add the
    following entries:
 
-.. code-block::
+.. code-block:: 
   nginx[‘ssl_certificate’] = ‘path to the certificate file'
   nginx[‘ssl_server_key’] = ‘path to the server key file' ----
 
@@ -39,7 +39,7 @@ NOTE: Both files should be owned by root and only readable by root, also if the 
 
 Next simply reconfigure the appliance and restart nginx:
 
-.. code-block::
+.. code-block:: 
   sudo morpheus-ctl reconfigure
   sudo morpheus-ctl restart nginx
 
@@ -50,7 +50,7 @@ There are several other options available to the
 ``/etc/morpheus/morpheus.rb`` file that can be useful when setting up
 external service integrations or high availability:
 
-.. code-block::
+.. code-block:: 
   mysql['enable'] = false mysql['host'] = '52.53.240.28' mysql['port'] =
   10004 mysql['morpheus_db'] = 'morpheusdb01' mysql['morpheus_db_user']
   = 'merovingian' mysql['morpheus_password'] = 'Wm5n5gXqXCe9v52'

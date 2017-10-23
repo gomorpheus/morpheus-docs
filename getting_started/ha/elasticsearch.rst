@@ -14,19 +14,19 @@ Requirements
 
    You can install the latest OpenJDK with the command:
 
-   .. code-block::
+   .. code-block:: 
 
     sudo yum install java-1.8.0-openjdk.x86_64
 
    To verify your JRE is installed and can be used, run the command:
 
-   .. code-block::
+   .. code-block:: 
 
     java -version
 
    The result should look like this:
 
-   .. code-block::
+   .. code-block:: 
 
       Output of java -version
       openjdk version "1.8.0_65"
@@ -40,13 +40,13 @@ Installation
 
    Elasticsearch can be downloaded directly from elastic.co in zip, tar.gz, deb, or rpm packages. For CentOS, it's best to use the native rpm package which will install everything you need to run Elasticsearch. Download it in a directory of your choosing with the command:
 
-   .. code-block::
+   .. code-block:: 
 
     wget https://download.elastic.co/elasticsearch/elasticsearch/elasticsearch-1.7.3.noarch.rpm
 
    Then install it in the usual CentOS way with the rpm command like this:
 
-   .. code-block::
+   .. code-block:: 
 
     sudo rpm -ivh elasticsearch-1.7.3.noarch.rpm
 
@@ -54,7 +54,7 @@ Installation
 
    To make sure Elasticsearch starts and stops automatically, add its init script to the default runlevels with the command:
 
-   .. code-block::
+   .. code-block:: 
 
     sudo systemctl enable elasticsearch.service
 
@@ -64,7 +64,7 @@ Installation
 
    The Elasticsearch configuration files are in the /etc/elasticsearch directory. There are two files:
 
-   .. code-block::
+   .. code-block:: 
 
     sudo vi /etc/elasticsearch/elasticsearch.yml
 
@@ -78,7 +78,7 @@ Installation
 
    Node 1
 
-   .. code-block::
+   .. code-block:: 
 
     cluster.name: morpheusha1
     node.name: "morpheuses1"
@@ -86,7 +86,7 @@ Installation
 
    Node 2
 
-   .. code-block::
+   .. code-block:: 
 
      cluster.name: morpheusha1
      node.name: "morpheuses2"
@@ -94,7 +94,7 @@ Installation
 
    Node 3
 
-   .. code-block::
+   .. code-block:: 
 
      cluster.name: morpheusha1
      node.name: "morpheuses3"
@@ -102,7 +102,7 @@ Installation
 
    For the above changes to take effect, you will have to restart Elasticsearch with the command:
 
-   .. code-block::
+   .. code-block:: 
 
     sudo service elasticsearch restart
 
@@ -110,7 +110,7 @@ Installation
 
    By now, Elasticsearch should be running on port 9200. You can test it with curl, the command line client-side URL transfers tool and a simple GET request like this:
 
-   .. code-block::
+   .. code-block:: 
 
     [~]$ sudo curl -X GET 'http://10.30.20.149:9200'
           {

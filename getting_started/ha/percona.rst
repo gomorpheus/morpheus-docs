@@ -18,7 +18,7 @@ Percona nodes.
 
 Percona also recommends setting the selinux policy to permissive. You can temporarily set the permission to permissive by running
 
-.. code-block::
+.. code-block:: 
 
   sudo setenforce 0
 
@@ -29,19 +29,19 @@ Add Percona Repo
 
 #. Add the percona repo to your Linux Distro.
 
-   .. code-block::
+   .. code-block:: 
 
     sudo yum install http://www.percona.com/downloads/percona-release/redhat/0.1-4/percona-release-0.1-4.noarch.rpm
 
 #. Check the repo by running the below command.
 
-   .. code-block::
+   .. code-block:: 
 
     sudo yum list | grep percona
 
 #. The below commands will clean the repos and update the server.
 
-   .. code-block::
+   .. code-block:: 
 
     sudo yum clean all
     sudo yum update -y
@@ -51,7 +51,7 @@ Installing Percona XtraDB Cluster
 
 #. The below command will install the Percona XtraDB Cluster software and it’s dependences.
 
-   .. code-block::
+   .. code-block:: 
 
     sudo yum install Percona-XtraDB-Cluster-57
 
@@ -68,44 +68,44 @@ Installing Percona XtraDB Cluster
 
 #. Next we need enable the mysql service so that the service started at boot.
 
-   .. code-block::
+   .. code-block:: 
 
     sudo systemctl enable mysql
 
 #. Next we need to start mysql
 
-   .. code-block::
+   .. code-block:: 
 
     sudo systemctl start mysql
 
 #. Next we will log into the mysql server and set a new password. To get the temporary root mysql password you will need to run the below command.The command will print the password to the screen. Copy the password.
 
-   .. code-block::
+   .. code-block:: 
 
       sudo grep 'temporary password' /var/log/mysqld.log
 
 #. Login to mysql
 
-   .. code-block::
+   .. code-block:: 
 
     mysql -u root -p
     password: `enter password copied above`
 
 #. Change the root user password to the mysql db
 
-   .. code-block::
+   .. code-block:: 
 
     ALTER USER 'root'@'localhost' IDENTIFIED BY 'MySuperSecurePasswordhere';
 
 #. Create the sstuser user and grant the permissions.
 
-   .. code-block::
+   .. code-block:: 
 
     mysql> CREATE USER 'sstuser'@'localhost' IDENTIFIED BY 'M0rpheus17';
 
    .. NOTE:: The sstuser and password will be used in the /etc/my.cnf configuration.
 
-   .. code-block::
+   .. code-block:: 
 
     mysql> GRANT RELOAD, LOCK TABLES, PROCESS, REPLICATION CLIENT ON *.* TO 'sstuser'@'localhost';
 
@@ -113,7 +113,7 @@ Installing Percona XtraDB Cluster
 
 #. Exit mysql then stop the mysql services:
 
-   .. code-block::
+   .. code-block:: 
 
     mysql> exit
     Bye
@@ -128,11 +128,11 @@ Add [mysqld] to my.cnf in /etc/
 
 #. Copy the below contents to ``/etc/my.cnf``.  The node_name and node_address needs to be unique on each of the nodes. The first node does not require the gcomm value to be set.
 
-   .. code-block::
+   .. code-block:: 
 
       $ sudo vi /etc/my.cnf
 
-   .. code-block::
+   .. code-block:: 
 
       [mysqld]
       wsrep_provider=/usr/lib64/galera3/libgalera_smm.so
@@ -160,7 +160,7 @@ Bootstrapping the first Node in the cluster
 
 #. To bootstrap the first node in the cluster run the below command.
 
-   .. code-block::
+   .. code-block:: 
 
     systemctl start mysql@bootstrap.service
 
@@ -168,7 +168,7 @@ Bootstrapping the first Node in the cluster
 
 #. To verify the bootstrap, on the master node login to mysql and run ``show status like 'wsrep%';``
 
-   .. code-block::
+   .. code-block:: 
 
       # mysql -u root -p
 
@@ -251,7 +251,7 @@ Bootstrapping the first Node in the cluster
 
 #. Next Create the Database you will be using with morpheus.
 
-   .. code-block::
+   .. code-block:: 
 
     mysql> CREATE DATABASE morpheusdb;
 
@@ -260,13 +260,13 @@ Bootstrapping the first Node in the cluster
 
 #. Next create your morpheus database user. The user needs to be either at the IP address of the morpheus application server or use @'%' within the user name to allow the user to login from anywhere.
 
-   .. code-block::
+   .. code-block:: 
 
     mysql> CREATE USER 'morpheusadmin'@'%' IDENTIFIED BY 'Cloudy2017';
 
 #. Next Grant your new morpheus user permissions to the database.
 
-   .. code-block::
+   .. code-block:: 
 
     mysql> GRANT ALL PRIVILEGES ON * . * TO 'morpheusadmin'@''%' IDENTIFIED BY 'Cloudy2017' with grant option;
 
@@ -275,7 +275,7 @@ Bootstrapping the first Node in the cluster
 
 #. Checking Permissions for your user.
 
-   .. code-block::
+   .. code-block:: 
 
     SHOW GRANTS FOR 'morpheusadmin'@''%'';
 
@@ -285,7 +285,7 @@ Bootstrap the Remaining Nodes
 
 #. To bootstrap the remaining nodes into the cluster run the following command on each node:
 
-   .. code-block::
+   .. code-block:: 
 
     sudo systemctl start mysql.service
 
@@ -298,7 +298,7 @@ Verification
 
 #. To verify the cluster, on the master login to mysql and run ``show status like 'wsrep%';``
 
-   .. code-block::
+   .. code-block:: 
 
      $ mysql -u root -p
 
@@ -379,7 +379,7 @@ Verification
 
 #. Verify that you can login to the MSQL server by running the below command on the Morpheus Application server(s).
 
-   .. code-block::
+   .. code-block:: 
 
     mysql -u morpheusadmin -p  -h 192.168.10.100
 
