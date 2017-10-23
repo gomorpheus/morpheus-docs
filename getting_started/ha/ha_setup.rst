@@ -35,7 +35,7 @@ The application tier is easily installed with the same debian or yum repository 
 
 .. image:: /images/morpheus-ha-multi-configuration.png
 
-.. include:: percona.rst
-.. include:: rabbitmq.rst
-.. include:: elasticsearch.rst
-.. include:: appliance_ha.rst
+.. include:: ha/percona.rst
+.. include:: ha/rabbitmq.rst
+.. include:: ha/elasticsearch.rst
+.. include:: ha/appliance_ha.rst
