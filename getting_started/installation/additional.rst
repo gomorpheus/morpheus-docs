@@ -31,10 +31,10 @@ The default installation generates a self-signed SSL certificate. To implement a
 
    .. code-block:: bash
 
-    nginx[‘ssl_certificate’] = ‘path to the certificate file'
-    nginx[‘ssl_server_key’] = ‘path to the server key file'
+      nginx[‘ssl_certificate’] = ‘path to the certificate file'
+      nginx[‘ssl_server_key’] = ‘path to the server key file'
 
-    .. NOTE:: Both files should be owned by root and only readable by root, also if the server certificate is signed by an intermediate then you should include the signing chain inside the certificate file.
+   .. NOTE:: Both files should be owned by root and only readable by root, also if the server certificate is signed by an intermediate then you should include the signing chain inside the certificate file.
 
 #. Next simply reconfigure the appliance and restart nginx:
 
