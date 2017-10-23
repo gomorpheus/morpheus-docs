@@ -76,4 +76,4 @@ Remote Console: Auto Login
 - Remote Console (None, Provisioned, Full)
 - Remote Console: Auto Login (No, Yes)
 - Services: Archives (None, Read, Full)
-- Services: Cypher (None, Read, Full, Full Decrypted)
+- Services: Cypher (None, Read, User, Full, Full Decrypted)
