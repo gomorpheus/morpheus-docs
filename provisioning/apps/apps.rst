@@ -47,3 +47,15 @@ Creating Apps from Existing Instances
 #. A new App will be created out of the Existing Instances.
 
 .. image:: /images/provisioning/apps_301_2.png
+
+Exporting App JSON or YAML
+--------------------------
+
+#. Navigate to  ``Provisioning -> Apps``
+#. On an existing App, select ``ACTIONS -> EXPORT``
+#. Select YAML or JSON in the top right.
+#. Select the Configurations to include in the Export by clicking on a Configuration. Selected Configurations will be highlighted.
+#. Select the DOWNLOAD CONFIGURATION button.
+#. The Template Export file will be downloaded to your computer as {app_name}-config.json or {app_name}-config.yaml.
+
+.. TIP:: JSON or YAML can also be Viewed, Edited, Copied, or Exported by selecting ``ACTIONS -> EDIT``on an App and clicking the RAW section in the Edit App modal.
