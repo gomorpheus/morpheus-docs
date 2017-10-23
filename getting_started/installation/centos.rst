@@ -11,7 +11,7 @@ To get started installing |morpheus| on CentOS/RHEL a few preparatory items shou
    *  **RHEL 7.x:** ``yum-config-manager --enable rhel-7-server-optional-rpms``
    * For Amazon users a redhat subscription is not required if the appropriate yum REGION repository is added instead as demonstrated above.
 
-   .. IMPORTANT:: If the machine is unable to resolve its own hostname (``nslookup hostname``) some installation commands will be unable to verify service health during installation and fail.
+   .. IMPORTANT:: If the machine is unable to resolve its own hostname ``nslookup hostname`` some installation commands will be unable to verify service health during installation and fail.
 
 #. Next simply download the relevant ``.rpm`` package for installation. This package can be acquired from your account rep or via a free trial request from https://www.morpheushub.com.
 
