@@ -1,6 +1,5 @@
-*****************************************
-Morpheus High Availability Configuration
-*****************************************
+High Availability Configuration
+===============================
 
 Overview
 --------
