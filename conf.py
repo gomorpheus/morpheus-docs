@@ -127,7 +127,7 @@ html_show_sourcelink = False,
 context = {
     'display_github': False,
 }
-
+html_favicon = "_static/morpheus_fav_64.ico"
 
 # -- Options for HTMLHelp output ------------------------------------------
 
