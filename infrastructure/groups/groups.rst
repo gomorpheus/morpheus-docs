@@ -64,7 +64,7 @@ Bare Metal
 Clouds
   Lists Clouds added to the Group. Existing Clouds or new Clouds can be added from the Group by clicking Add Cloud.
 Policies
-  Lists and allows creation ro managment of Policies applied to the Group.
+  Lists and allows creation or management of Policies applied to the Group.
 
 Edit Group
 ----------
@@ -92,4 +92,4 @@ To delete a group:
 User Access
 -----------
 
-.. IMPORTANT:: User access to Groups is determing by their user Role(s). Group access for Roles can be configured in the Group Access section of a Roles Settings.
+.. IMPORTANT:: User access to Groups is determined by their user Role(s). Group access for Roles can be configured in the Group Access section of a Roles Settings.

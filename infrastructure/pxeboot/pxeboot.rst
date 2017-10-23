@@ -6,7 +6,7 @@ PXE Boot
 Overview
 --------
 
-|morpheus| includes a built in PXE Server to enable easy and rapid bare metal provisioning. Simply map your TFTP server port to the |morpheus| sevrer port 6969 and you are ready to PXE boot from the provided images and answer files, or add your own to bring up Bare metal Hosts with ease.
+|morpheus| includes a built in PXE Server to enable easy and rapid bare metal provisioning. Simply map your TFTP server port to the |morpheus| server port 6969 and you are ready to PXE boot from the provided images and answer files, or add your own to bring up Bare metal Hosts with ease.
 
 Prerequisites
 -------------

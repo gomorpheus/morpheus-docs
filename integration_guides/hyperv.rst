@@ -33,7 +33,7 @@ Understand WinRM
 
 |morpheus| uses WinRM to communicate to the Hyper-V host for deployment of the |morpheus| agent. The |morpheus| agent allows for the host dashboard to be populated with information in the form of graphs that cover CPU, Network, Storage, and memory consumption. Furthermore, this agent provides logging and monitoring capabilities.
 
-If Windows Remote Management (WinRM) is not installed and configured, WinRM scripts do not run and the Winrm command-line tool cannot perform data operations or allow for the |morpheus| agent to be installed. WinRM uses Http port 5985 or Https port 5986 for communications.
+If Windows Remote Management (WinRM) is not installed and configured, WinRM scripts do not run and the WinRM command-line tool cannot perform data operations or allow for the |morpheus| agent to be installed. WinRM uses Http port 5985 or Https port 5986 for communications.
 
 To better understand all of the default settings of WinRM please refer to the below Microsoft link:
 
@@ -83,7 +83,7 @@ Type the following command at a command prompt
 
    $ winrm quickconfig
 
-If you are not running under the local computer Administrator account, you must either select Run as Administrator from the Start menu or use the Runas command at a command prompt.
+If you are not running under the local computer Administrator account, you must either select Run as Administrator from the Start menu or use the runas command at a command prompt.
 
 When the tool displays Make these changes [y/n]?, type y.
 

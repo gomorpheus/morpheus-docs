@@ -11,7 +11,7 @@ capabilities with LDAP, Active Directory, Okta, and Jump Cloud. One can
 even map these sign on tools to equivalent roles in |morpheus| so at
 first log in users are assigned the appropriate role.
 
-image::administration/identity\_sources.png[caption="Figure 1: ",
+image::administration/identity_sources.png[caption="Figure 1: ",
 title="Identity Source Management Integrations", alt="Identity Source
 Management Integrations"]
 

@@ -1,4 +1,4 @@
-Upcloud
+UpCloud
 =======
 
 Overview
@@ -59,7 +59,7 @@ Configure
 #. Enter the following:
 
    Name
-    Name of the Cloud in |morpheus| 
+    Name of the Cloud in |morpheus|
    Location
     Description field for adding notes on the cloud, such as location.
    Visibility
@@ -71,7 +71,7 @@ Configure
    ZONE
     Select UpCloud Datacenter to scope cloud to
    INVENTORY
-    * *Off*: Existing Upcloud Servers will not be inventoried in |morpheus| 
+    * *Off*: Existing UpCloud Servers will not be inventoried in |morpheus|
     * *Basic*: Existing Servers are Inventoried with Power state, Memory and Cores statistics synced.
     * *Full*: Existing Servers are Inventoried with Power state, Memory and Cores statistics, plus IP Addresses, Storage Info, and Console VNC Information.
 

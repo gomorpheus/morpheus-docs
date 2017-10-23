@@ -1,11 +1,11 @@
-[[ucs]]
+UCS Manager
+===========
 
-== UCS Manager Integration
+Overview
+^^^^^^^^
 
-=== Overview
-
-=== Adding UCS Manager Cloud
-
+Adding UCS Manager Cloud
+^^^^^^^^^^^^^^^^^^^^^^^^
 UCS MANAGER::
 USERNAME::
 PASSWORD::

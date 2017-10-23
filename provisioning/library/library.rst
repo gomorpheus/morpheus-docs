@@ -127,7 +127,7 @@ Description
 Technology
   Technology determines which cloud this layout will be available for.
 Environment Variables
-  Custom evars to be added to the instance when provisoned.
+  Custom evars to be added to the instance when provisioned.
 Nodes
   Single or multiple nodes can be added to a Layout by searching for and selecting the node(s). An example of a layout with multiple nodes is the Hyper-V MySQL Master/Slave layout pictured below (note this is the Layout detail screen after the layout has been created.)
 
@@ -159,4 +159,4 @@ Much like Option Types, Option Lists allow you to give the user more choices dur
 
 .. OptionListREST.png
 
-Your new Library Item is now ready for provisioning. Multiple Layouts, Versions and Technology types can be added to a single Instance Type. 
+Your new Library Item is now ready for provisioning. Multiple Layouts, Versions and Technology types can be added to a single Instance Type.

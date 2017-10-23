@@ -4,12 +4,12 @@ RabbitMQ Cluster
 RabbitMQ Installation and Configuration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. IMPORTANT:: This is a sample configuraiton only. Customer configuraitons and requirements will vary.
+.. IMPORTANT:: This is a sample configuration only. Customer configurations and requirements will vary.
 
-Prerequisits
+Prerequisites
 .................
 
-.. code-block:: bash
+.. code-block:: bash 
 
   yum install epel-release
   yum install erlang
@@ -17,7 +17,7 @@ Prerequisits
 Install RabbitMQ on the 3 nodes
 ...............................
 
-.. code-block:: bash
+.. code-block:: bash 
 
   wget https://dl.bintray.com/rabbitmq/rabbitmq-server-rpm/rabbitmq-server-3.6.12-1.el7.noarch.rpm
 
@@ -32,7 +32,7 @@ Install RabbitMQ on the 3 nodes
 On Node 1:
 ..........
 
-.. code-block:: bash
+.. code-block:: bash 
 
   cat /var/lib/rabbitmq/.erlang.cookie
 
@@ -43,7 +43,7 @@ On Nodes 2 & 3:
 
 #. Overwrite /var/lib/rabbitmq/.erlang.cookie with value from previous step and change its permissions using the follow commands.
 
-   .. code-block:: bash
+   .. code-block:: bash 
 
     chown rabbitmq:rabbitmq /var/lib/rabbitmq/*
      chmod 400 /var/lib/rabbitmq/.erlang.cookie
@@ -53,13 +53,13 @@ On Nodes 2 & 3:
 
    example:
 
-   .. code-block:: bash
+   .. code-block:: bash 
 
     10.30.20.100 rabbit-1
 
 #. Run the commands to join each node to the cluster
 
-   .. code-block:: bash
+   .. code-block:: bash 
 
     rabbitmqctl stop
     rabbitmq-server -detached
@@ -68,9 +68,9 @@ On Nodes 2 & 3:
     rabbitmqctl start_app
 
 On Node 1:
-...........
+..........
 
-.. code-block:: bash
+.. code-block:: bash 
 
    rabbitmqctl add_user <<admin username>> <<password>>
    rabbitmqctl set_permissions -p / <<admin username>> ".*" ".*" ".*"
@@ -79,6 +79,6 @@ On Node 1:
 On All Nodes:
 .............
 
-.. code-block:: bash
+.. code-block:: bash 
 
   rabbitmq-plugins enable rabbitmq_stomp

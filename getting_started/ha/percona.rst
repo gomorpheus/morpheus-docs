@@ -1,9 +1,9 @@
-Database Tier Configuraiton
+configurationDatabase Tier Configuration
 ----------------------------------
 
-Installation and configuraiton of Percona XtraDB Cluster on CentOS/RHEL 7
+Installation and configuration of Percona XtraDB Cluster on CentOS/RHEL 7
 
-.. IMPORTANT:: This is a sample configuraiton only. Customer configuraitons and requirements will vary.
+.. IMPORTANT:: This is a sample configuration only. Customer configurations and requirements will vary.
 
 Requirements
 ^^^^^^^^^^^^
@@ -18,7 +18,7 @@ Percona nodes.
 
 Percona also recommends setting the selinux policy to permissive. You can temporarily set the permission to permissive by running
 
-.. code-block:: bash
+.. code-block:: bash 
 
   sudo setenforce 0
 
@@ -29,19 +29,19 @@ Add Percona Repo
 
 #. Add the percona repo to your Linux Distro.
 
-   .. code-block:: bash
+   .. code-block:: bash 
 
     sudo yum install http://www.percona.com/downloads/percona-release/redhat/0.1-4/percona-release-0.1-4.noarch.rpm
 
 #. Check the repo by running the below command.
 
-   .. code-block:: bash
+   .. code-block:: bash 
 
     sudo yum list | grep percona
 
 #. The below commands will clean the repos and update the server.
 
-   .. code-block:: bash
+   .. code-block:: bash 
 
     sudo yum clean all
     sudo yum update -y
@@ -51,7 +51,7 @@ Installing Percona XtraDB Cluster
 
 #. The below command will install the Percona XtraDB Cluster software and it’s dependences.
 
-   .. code-block:: bash
+   .. code-block:: bash 
 
     sudo yum install Percona-XtraDB-Cluster-57
 
@@ -68,44 +68,44 @@ Installing Percona XtraDB Cluster
 
 #. Next we need enable the mysql service so that the service started at boot.
 
-   .. code-block:: bash
+   .. code-block:: bash 
 
     sudo systemctl enable mysql
 
 #. Next we need to start mysql
 
-   .. code-block:: bash
+   .. code-block:: bash 
 
     sudo systemctl start mysql
 
 #. Next we will log into the mysql server and set a new password. To get the temporary root mysql password you will need to run the below command.The command will print the password to the screen. Copy the password.
 
-   .. code-block:: bash
+   .. code-block:: bash 
 
       sudo grep 'temporary password' /var/log/mysqld.log
 
 #. Login to mysql
 
-   .. code-block:: bash
+   .. code-block:: bash 
 
     mysql -u root -p
     password: `enter password copied above`
 
 #. Change the root user password to the mysql db
 
-   .. code-block:: bash
+   .. code-block:: bash 
 
     ALTER USER 'root'@'localhost' IDENTIFIED BY 'MySuperSecurePasswordhere';
 
 #. Create the sstuser user and grant the permissions.
 
-   .. code-block:: bash
+   .. code-block:: bash 
 
     mysql> CREATE USER 'sstuser'@'localhost' IDENTIFIED BY 'M0rpheus17';
 
    .. NOTE:: The sstuser and password will be used in the /etc/my.cnf configuration.
 
-   .. code-block:: bash
+   .. code-block:: bash 
 
     mysql> GRANT RELOAD, LOCK TABLES, PROCESS, REPLICATION CLIENT ON *.* TO 'sstuser'@'localhost';
 
@@ -113,7 +113,7 @@ Installing Percona XtraDB Cluster
 
 #. Exit mysql then stop the mysql services:
 
-   .. code-block:: bash
+   .. code-block:: bash 
 
     mysql> exit
     Bye
@@ -128,11 +128,11 @@ Add [mysqld] to my.cnf in /etc/
 
 #. Copy the below contents to ``/etc/my.cnf``.  The node_name and node_address needs to be unique on each of the nodes. The first node does not require the gcomm value to be set.
 
-   .. code-block:: bash
+   .. code-block:: bash 
 
       $ sudo vi /etc/my.cnf
 
-   .. code-block:: bash
+   .. code-block:: bash 
 
       [mysqld]
       wsrep_provider=/usr/lib64/galera3/libgalera_smm.so
@@ -160,7 +160,7 @@ Bootstrapping the first Node in the cluster
 
 #. To bootstrap the first node in the cluster run the below command.
 
-   .. code-block:: bash
+   .. code-block:: bash 
 
     systemctl start mysql@bootstrap.service
 
@@ -168,7 +168,7 @@ Bootstrapping the first Node in the cluster
 
 #. To verify the bootstrap, on the master node login to mysql and run ``show status like 'wsrep%';``
 
-   .. code-block:: bash
+   .. code-block:: bash 
 
       # mysql -u root -p
 
@@ -251,7 +251,7 @@ Bootstrapping the first Node in the cluster
 
 #. Next Create the Database you will be using with morpheus.
 
-   .. code-block:: bash
+   .. code-block:: bash 
 
     mysql> CREATE DATABASE morpheusdb;
 
@@ -260,13 +260,13 @@ Bootstrapping the first Node in the cluster
 
 #. Next create your morpheus database user. The user needs to be either at the IP address of the morpheus application server or use @'%' within the user name to allow the user to login from anywhere.
 
-   .. code-block:: bash
+   .. code-block:: bash 
 
     mysql> CREATE USER 'morpheusadmin'@'%' IDENTIFIED BY 'Cloudy2017';
 
 #. Next Grant your new morpheus user permissions to the database.
 
-   .. code-block:: bash
+   .. code-block:: bash 
 
     mysql> GRANT ALL PRIVILEGES ON * . * TO 'morpheusadmin'@''%' IDENTIFIED BY 'Cloudy2017' with grant option;
 
@@ -275,7 +275,7 @@ Bootstrapping the first Node in the cluster
 
 #. Checking Permissions for your user.
 
-   .. code-block:: bash
+   .. code-block:: bash 
 
     SHOW GRANTS FOR 'morpheusadmin'@''%'';
 
@@ -285,7 +285,7 @@ Bootstrap the Remaining Nodes
 
 #. To bootstrap the remaining nodes into the cluster run the following command on each node:
 
-   .. code-block:: bash
+   .. code-block:: bash 
 
     sudo systemctl start mysql.service
 
@@ -298,7 +298,7 @@ Verification
 
 #. To verify the cluster, on the master login to mysql and run ``show status like 'wsrep%';``
 
-   .. code-block:: bash
+   .. code-block:: bash 
 
      $ mysql -u root -p
 
@@ -379,7 +379,7 @@ Verification
 
 #. Verify that you can login to the MSQL server by running the below command on the Morpheus Application server(s).
 
-   .. code-block:: bash
+   .. code-block:: bash 
 
     mysql -u morpheusadmin -p  -h 192.168.10.100
 

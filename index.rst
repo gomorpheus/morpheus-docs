@@ -1,5 +1,5 @@
 
-Morpheus Documentation
+Documentation
 ======================
 
 .. toctree::
@@ -17,6 +17,6 @@ Morpheus Documentation
    integration_guides/integration_guides
    troubleshooting/troubleshooting
    release_notes/release_notes
-   ha/ha_setup
+..   ha/ha_setup
 
 .. |morpheus| replace:: Morpheus

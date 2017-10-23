@@ -1,4 +1,2 @@
-[[jenkins]]
-
 Jenkins
 -------

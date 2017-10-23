@@ -23,9 +23,9 @@ All check types have several core options and some of these default options can 
 SSH Tunneling
 -------------
 
-In many cases when it comes to monitoring databases, and services they may not be fronted on the public ips for external monitoring. To reach these safely, and securely |morpheus| provides an SSH Tunneling mechanism for its check servers. This allows the check to be confirmed via an ssh port tunnel securely using a keypair.
+In many cases when it comes to monitoring databases, and services they may not be fronted on the public ip's for external monitoring. To reach these safely, and securely |morpheus| provides an SSH Tunneling mechanism for its check servers. This allows the check to be confirmed via an ssh port tunnel securely using a keypair.
 
 Check Servers
 -------------
 
-On a base installation of |morpheus| a single `check server` is installed on the appliance. This is used for running any custom user checks. This services connects to the provided rabbitmq services and can be moved off or even scaled horizontally onto sets of check servers. All other checks that are related to provisioned containers or vms are executed by the installed agent on the guest OS or Docker host.
+On a base installation of |morpheus| a single `check server` is installed on the appliance. This is used for running any custom user checks. This services connects to the provided rabbitmq services and can be moved off or even scaled horizontally onto sets of check servers. All other checks that are related to provisioned containers or VMs are executed by the installed agent on the guest OS or Docker host.

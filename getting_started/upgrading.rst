@@ -17,7 +17,7 @@ Then run the install process as follows:
 
 .. code-block:: bash
 
-  sudo dpkg -i morpheus-appliance\_x.x.x-1.amd64.deb
+  sudo dpkg -i morpheus-appliance_x.x.x-1.amd64.deb
   sudo morpheus-ctl stop morpheus-ui
   sudo morpheus-ctl reconfigure
   sudo morpheus-ctl start morpheus-ui
@@ -35,7 +35,7 @@ different.
 
 .. code-block:: bash
 
-  sudo rpm -U morpheus-appliance-x.x.x-1.x86\_64.rpm
+  sudo rpm -U morpheus-appliance-x.x.x-1.x86_64.rpm
   sudo morpheus-ctl stop morpheus-ui
   sudo morpheus-ctl reconfigure
   sudo morpheus-ctl start morpheus-ui

@@ -9,7 +9,7 @@ See http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies.html for 
 EC2
 ^^^
 
-.. code-block:: bash
+.. code-block:: json
 
  {
    "Version": "2012-10-17",
@@ -116,7 +116,7 @@ EC2
 RDS:
 ^^^^
 
-.. code-block:: bash
+.. code-block:: json
 
  {
   "Version": "2012-10-17",
@@ -194,7 +194,7 @@ RDS:
 S3
 ^^^
 
-.. code-block:: bash
+.. code-block:: json
 
  {
   "Version": "2012-10-17",
@@ -233,7 +233,7 @@ See http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-iam-actions
 
 Resource filter example:
 
-.. code-block:: bash
+.. code-block:: json
 
  {
    "Effect": "Allow",

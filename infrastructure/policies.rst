@@ -88,7 +88,7 @@ Naming Policies will populate a fixed or editable name for instances, hosts and 
 
 Available Variables for naming patterns are:
 
-.. code-block:: bash
+.. code-block::
 
     ${groupName}
     ${groupCode}
@@ -107,7 +107,7 @@ Available Variables for naming patterns are:
 
 And example for an instance name policy using a naming pattern with users initials, cloud code, instance type, and adds a sequential number starting at 100 is:
 
-.. code-block:: bash
+.. code-block:: 
 
   ${userInitials}-${cloudCode}-${type}-${sequence+100}
 

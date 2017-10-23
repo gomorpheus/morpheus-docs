@@ -21,7 +21,7 @@ When a server has been registered and activated with Redhat the subscription man
 
 If the subscription manager re-turns the message "This system is currently not registered" please follow the below steps to register the server.
 
-.. TIP:: To register the server you will need to have sudo permissions [Member of the Wheel group] or root access to the server. You will also need your redhat registered email address and password.
+.. TIP:: To register the server you will need to have sudo permissions [Member of the Wheel group] or root access to the server. You will also need your Redhat registered email address and password.
 
 subscription-manager register
 
@@ -45,9 +45,9 @@ To check to see if the RHEL server has the Red Hat Enterprise Linux 7 Server - O
 
 .. code-block:: bash
 
-  sudo yum repolist all \| grep "rhel-7-server-optional-rpms" rhel-7-server-optional-rpms/7Server/x86\_64 disabled
+  sudo yum repolist all | grep "rhel-7-server-optional-rpms" rhel-7-server-optional-rpms/7Server/x86_64 disabled
 
-If the repo status was returned as disabled then you will need to enable the repo using the subsciption manager like below.
+If the repo status was returned as disabled then you will need to enable the repo using the subscription manager like below.
 
 .. code-block:: bash
 
@@ -64,7 +64,7 @@ Next we must install the package onto the machine and configure the morpheus ser
 
 .. code-block:: bash
 
-  sudo rpm -i morpheus-appliance\_x.x.x-1.amd64.rpm
+  sudo rpm -i morpheus-appliance_x.x.x-1.amd64.rpm
   sudo morpheus-ctl reconfigure
 
 Once the installation is complete the web interface will automatically start up. By default it will be resolvable at ``https://your_machine_name`` and in many cases this may not be resolvable from your browser. The url can be changed by editing ``/etc/morpheus/morpheus.rb`` and changing the value of ``appliance_url``. After this has been changed simply run:
