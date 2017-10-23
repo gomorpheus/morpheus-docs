@@ -15,7 +15,7 @@ Add Chef Integration
 #. Select Integration Type "Chef"
 #. Populate the following fields:
 
-   * Name: Name of the Chef Integration in |morpheus| 
+   * Name: Name of the Chef Integration in |morpheus|
    * Chef Endpoint: url of chef server api endpoint in https://api.example.com format. Do not add /organization/xxxx here, which is populated in the Chef Organization field
    * Chef Version: 12.3.0 by default, can be changed to use a different/more recent version of chef
    * Chef Organization: Chef Server Organization
@@ -59,7 +59,7 @@ Chef Environment
 Chef Node ID
   Defaults to instance name, configurable.
 Chef Runlist
-  Add runlist
+  Add Runlist
 CHEF ATTRIBUTES
   Add Chef Attributes
 CHEF TAGS

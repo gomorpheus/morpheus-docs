@@ -83,7 +83,7 @@ Advanced Options
 IMAGE TRANSFER STORE
   S3 bucket for Image transfers, required for migrations into AWS.
 
-.. include:: advanced_options.rst
+.. .. include:: /integration_guides/advanced_options.rst
 
 .. NOTE:: All fields and options can be edited after the Cloud is created.
 

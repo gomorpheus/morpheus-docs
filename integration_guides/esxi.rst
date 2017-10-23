@@ -1,7 +1,7 @@
 ESXi
 ====
 
-.. IMPORTANT:: The VMware ESXi integration is for adding a single ESXi / vSphere Hypervisor host. If you have vCenter please use the VMWare VCenter cloud type.
+.. IMPORTANT:: The VMware ESXi integration is for adding a single ESXi / vSphere Hypervisor host. If you have vCenter please use the VMWare vCenter cloud type.
 
 To get started with VMware ESXi, simply add a VMware ESXi Cloud in either the Infrastructure -> Clouds or Infrastructure -> Groups section.
 
@@ -17,4 +17,4 @@ To get started with VMware ESXi, simply add a VMware ESXi Cloud in either the In
 
 .. NOTE:: If you receive the message "Error! Invalid cloud config" Please ensure you have ssh enabled on the vSphere Hypervisor / ESXi. To do this please follow the these instructions on how to set-up ssh on vSphere Hypervisor / ESXi
 
-.. include:: advanced_options.rst
+.. .. include:: /integration_guides/advanced_options.rst

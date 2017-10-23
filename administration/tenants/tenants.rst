@@ -21,7 +21,7 @@ To create Tenants
    - Name
    - Description (optional)
    - Base Role
-     Primary role of the Tenant. All User roles within the Tenant cannot exeed the permission of this Role.
+     Primary role of the Tenant. All User roles within the Tenant cannot exceed the permission of this Role.
    - Limits
      Restricts the amount of Storage and Memory allocated to the Tenant
 
@@ -47,20 +47,13 @@ To delete a Tenant:
 #. Click the Delete trashcan icon on the row of the Tenant to delete.
 #. Confirm
 
-Tenant View
+Tenant Users
 -----------
 
 The Tenant View displays a list of users belonging to the Tenant and their
 Name, Username, Email, and Role.
 
 From this page: Create, Edit, and Delete users within the Tenant.
-
-View Tenant
-^^^^^^^^^^^^^^
-
-#. Select the Administration link in the navigation bar.
-#. Select the Tenants link in the sub navigation bar.
-#. Click the Tenant Name on the row of the Tenant to view.
 
 Create Tenant User
 ^^^^^^^^^^^^^^^^^^
@@ -93,7 +86,7 @@ To edit a User:
 #. Select the Tenants link in the sub navigation bar.
 #. Click the Tenant Name on the row of the Tenant containing the user to be edited.
 #. Click the Edit pencil icon of the row of the to edit.
-#. Edit User informaiton
+#. Edit User information
 
    .. NOTE:: Name, Username, Passwords and e-mail addresses cannot be edited on Users created from Identity Source Integrations.
 
@@ -109,3 +102,5 @@ To delete a Tenant User
 #. Click the Tenant Name on the row of the Tenant containing the user.
 #. Click the Delete trashcan icon of the row of the user to delete.
 #. Confirm
+
+.. include:: tenants/configuring_multi_tenancy.rst

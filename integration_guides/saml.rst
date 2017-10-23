@@ -8,7 +8,7 @@ The |morpheus| SAML identity source integration allows customers to add user SSO
 
 .. image:: /images/saml-2f9c4.png
 
-Adding a SMAL Integration
+Adding a SAML Integration
 -------------------------
 
 To add a SAML integration:
@@ -80,7 +80,7 @@ Sample Metadata code output:
 
     <?xml version="1.0" encoding="UTF-8" standalone="yes"?><EntityDescriptor entityID="https://someip.com/saml/CDWPjmZt" xmlns="urn:oasis:names:tc:SAML:2.0:metadata"><SPSSODescriptor AuthnRequestsSigned="false" WantAssertionsSigned="true" protocolSupportEnumeration="urn:oasis:names:tc:SAML:2.0:protocol"><NameIDFormat>urn:oasis:names:tc:SAML:1.1:nameid-format:unspecified</NameIDFormat><AssertionConsumerService index="0" isDefault="true" Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST" Location="https://someip.com/externalLogin/callback/CDWPjmZt"/></SPSSODescriptor></EntityDescriptor>
 
-.. NOTE:: Different SAML providers will have different field names and requirments. A onelogin SAML Test Connector (IdP w/attr) was used for the example integration this article.
+.. NOTE:: Different SAML providers will have different field names and requirements. A onelogin SAML Test Connector (IdP w/attr) was used for the example integration this article.
 
 Onelogin SAML SSO
 ^^^^^^^^^^^^^^^^^

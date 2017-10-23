@@ -27,7 +27,7 @@ To create service plan
 #. From the New Service Plan wizard, input:
 
    * Name
-   * Code used as a unique identifier in the API and CLI. \*\*
+   * Code used as a unique identifier in the API and CLI. 
    * Storage size in megabytes.
    * Memory size in megabytes.
    * Cost is internal cost of plan.

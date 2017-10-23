@@ -4,9 +4,9 @@ RabbitMQ Cluster
 RabbitMQ Installation and Configuration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. IMPORTANT:: This is a sample configuraiton only. Customer configuraitons and requirements will vary.
+.. IMPORTANT:: This is a sample configuration only. Customer configurations and requirements will vary.
 
-Prerequisits
+Prerequisites
 .................
 
 .. code-block:: bash
@@ -46,7 +46,7 @@ On Nodes 2 & 3:
    .. code-block:: bash
 
     chown rabbitmq:rabbitmq /var/lib/rabbitmq/*
-     chmod 400 /var/lib/rabbitmq/.erlang.cookie
+    chmod 400 /var/lib/rabbitmq/.erlang.cookie
 
 
 #. edit /etc/hosts file to refer to shortname of node 1
@@ -68,7 +68,7 @@ On Nodes 2 & 3:
     rabbitmqctl start_app
 
 On Node 1:
-...........
+..........
 
 .. code-block:: bash
 
