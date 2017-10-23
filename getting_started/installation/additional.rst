@@ -30,7 +30,7 @@ The default installation generates a self-signed SSL certificate. To implement a
 
 #. Edit the configuration file ``/etc/morpheus/morpheus.rb`` and add the following entries:
 
-   .. code-block:: 
+   .. code-block::
 
       nginx['ssl_certificate'] = 'path to the certificate file'
       nginx['ssl_server_key'] = 'path to the server key file'

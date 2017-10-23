@@ -35,6 +35,7 @@ Add Configurations to Instances
 #. Select at least one option from Group, Cloud or Environment.
 #. Select ``ADD CONFIG`` to create the configuration
 #. Populate the Configuration
+
    * Configurations can be fully partially or populated
    * Fields can be locked by selecting the Lock icon next to the Field. Locking prevent the field from being editable when provisioning an App using the Template.
    * ALLOW EXISTING INSTANCE will allow users to add existing Instances to the App when using the template
