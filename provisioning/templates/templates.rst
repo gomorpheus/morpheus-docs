@@ -56,7 +56,7 @@ Templates can be create, edited or Exported in the RAW section when creating or 
 
 .. image:: /images/provisioning/templates_301_2.png
 
-To Export a Template a Template as JSON or YAML:
+To Export a Template as JSON or YAML:
 
 #. Create or Edit a Template
 #. Select the RAW section on the top of the APP TEMPLATE modal.

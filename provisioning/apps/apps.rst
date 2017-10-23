@@ -48,8 +48,8 @@ Creating Apps from Existing Instances
 
 .. image:: /images/provisioning/apps_301_2.png
 
-Exporting App JSON or YAML
---------------------------
+Exporting JSON or YAML
+----------------------
 
 #. Navigate to  ``Provisioning -> Apps``
 #. On an existing App, select ``ACTIONS -> EXPORT``
