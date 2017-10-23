@@ -1,5 +1,5 @@
 
-Morpheus Documentation
+Documentation
 ======================
 
 .. toctree::
