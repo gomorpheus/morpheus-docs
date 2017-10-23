@@ -33,7 +33,7 @@ To create the service role
 
 Create a file named `trust-policy.json` with the following policy:
 
-.. code-block:: bash
+.. code-block::
 
   {
      "Version": "2012-10-17",
@@ -55,14 +55,14 @@ You can save the file anywhere on your computer. Take note of the location of th
 
 Use the create-role command to create a role named vmimport and give VM Import/Export access to it. Ensure that you specify the full path to the location of the `trust-policy.json` file.
 
-.. code-block:: bash
+.. code-block::
 
   aws iam create-role --role-name vmimport --assume-role-policy-document file://trust-policy.json
 
 
 Create a file named `role-policy.json` with the following policy, where disk-image-file-bucket is the bucket where the disk images are stored:
 
-.. code-block:: bash
+.. code-block::
 
   {
      "Version": "2012-10-17",
@@ -101,7 +101,7 @@ Create a file named `role-policy.json` with the following policy, where disk-ima
 
 Use the following put-role-policy command to attach the policy to the role created above. Ensure that you specify the full path to the location of the ``role-policy.json`` file.
 
-.. code-block:: bash
+.. code-block::
 
   aws iam put-role-policy --role-name vmimport --policy-name vmimport --policy-document file://role-policy.json
 

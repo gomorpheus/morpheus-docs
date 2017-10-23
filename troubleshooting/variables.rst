@@ -11,13 +11,13 @@ PowerShell Example:
 
 Bash Example:
 
-.. code-block:: bash
+.. code-block::
 
 	HOSTNAME="<%= container.server.hostname %>"
 
 .. NOTE:: customOptions are user defined as Option Types or Option Lists in custom Library items.
 
-.. code-block:: bash
+.. code-block::
 
 	instance {
 		instanceTypeName,
@@ -53,7 +53,7 @@ Bash Example:
 		evars:[]
 	}
 
-.. code-block:: bash
+.. code-block::
 
 	container {
 		containerTypeName,
@@ -86,7 +86,7 @@ Bash Example:
 		server:{}
 	}
 
-.. code-block:: bash
+.. code-block::
 
 	server {
 		serverTypeName,
@@ -148,7 +148,7 @@ Bash Example:
 		configRole
 	}
 
-.. code-block:: bash
+.. code-block::
 
 	cloud {
 		name,
@@ -164,7 +164,7 @@ Bash Example:
 		datacenterId
 	}
 
-.. code-block:: bash
+.. code-block::
 
 	group {
 		code,
@@ -173,7 +173,7 @@ Bash Example:
 		datacenterId
 	}
 
-.. code-block:: bash
+.. code-block::
 
 	customOptions {
 		customOptions.fieldName

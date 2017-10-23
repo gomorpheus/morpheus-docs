@@ -12,7 +12,7 @@ Cause
 Solution
   To fix, purge elasticsearch by running the following on the |morpheus| Appliance:
 
-.. code-block:: bash
+.. code-block::
 
     curl -XDELETE http://localhost:9200/*" rel="nofollow noreferrer">http://localhost:9200/*
     morpheus-ctl restart elasticsearch
@@ -20,7 +20,7 @@ Solution
 
 Another option is:
 
-.. code-block:: bash
+.. code-block::
 
   sudo rm –rf /var/opt/|morpheus| /elasticsearch/data/morpheus
   morpheus-ctl restart elasticsearch

@@ -15,7 +15,7 @@ your account service representative.
 
 Then run the install process as follows:
 
-.. code-block:: bash
+.. code-block::
 
   sudo dpkg -i morpheus-appliance_x.x.x-1.amd64.deb
   sudo morpheus-ctl stop morpheus-ui
@@ -33,7 +33,7 @@ Yum based package upgrades are a little different. In this case we want
 to run a ``rpm -U`` command as the package manager is slightly
 different.
 
-.. code-block:: bash
+.. code-block::
 
   sudo rpm -U morpheus-appliance-x.x.x-1.x86_64.rpm
   sudo morpheus-ctl stop morpheus-ui

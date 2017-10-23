@@ -9,13 +9,13 @@ To check if the server has been actived please run the subscription-manager vers
 
 If the server has not been registered and activated then the subscription manager version will return the below message.
 
-.. code-block:: bash
+.. code-block::
 
    sudo subscription-manager version server type: This system is currently not registered subscription management server: 0.9.51.24.-1 subscription-manager: 1.10.14-7.el7 python-rhsm: 1.10.12-2.el7
 
 When a server has been registered and activated with Redhat the subscription manager will return the below message.
 
-.. code-block:: bash
+.. code-block::
 
   sudo subscription-manager version server type: Red Hat Subscription Management subscription management server: 0.9.51.24-1 subscription-manager: 1.10.14-7.el7 python-rhsm: 1.10.12-2.el7
 
@@ -25,13 +25,13 @@ If the subscription manager re-turns the message "This system is currently not r
 
 subscription-manager register
 
-.. code-block:: bash
+.. code-block::
 
   sudo subscription-manager register Username: redhat@example.com Password: . subscription-manager auto --attach
 
 .. NOTE:: This can take a minute to complete
 
-.. code-block:: bash
+.. code-block::
 
   sudo subscription-manager attach --auto
 
@@ -43,13 +43,13 @@ To check to see if the RHEL server has the Red Hat Enterprise Linux 7 Server - O
 .. TIP:: To check the server repos you will need to have sudo permissions
 [Member of the Wheel group] or root access to the server.
 
-.. code-block:: bash
+.. code-block::
 
   sudo yum repolist all \| grep "rhel-7-server-optional-rpms" rhel-7-server-optional-rpms/7Server/x86_64 disabled
 
 If the repo status was returned as disabled then you will need to enable the repo using the subscription manager like below.
 
-.. code-block:: bash
+.. code-block::
 
   sudo subscription-manager repos --enable rhel-7-server-optional-rpms
   Repo 'rhel-7-server-optional-rpms' is enabled for this system.
@@ -62,14 +62,14 @@ Next simply download the relevant ``.rpm`` package for installation. This packag
 
 Next we must install the package onto the machine and configure the morpheus services:
 
-.. code-block:: bash
+.. code-block::
 
   sudo rpm -i morpheus-appliance_x.x.x-1.amd64.rpm
   sudo morpheus-ctl reconfigure
 
 Once the installation is complete the web interface will automatically start up. By default it will be resolvable at ``https://your_machine_name`` and in many cases this may not be resolvable from your browser. The url can be changed by editing ``/etc/morpheus/morpheus.rb`` and changing the value of ``appliance_url``. After this has been changed simply run:
 
-.. code-block:: bash
+.. code-block::
 
   sudo morpheus-ctl reconfigure
   sudo morpheus-ctl stop morpheus-ui

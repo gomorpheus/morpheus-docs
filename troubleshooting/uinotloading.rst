@@ -18,7 +18,7 @@ Solutions
   Solution
     An easy way to see when the ui is finished loading and running is to tail the ui current file and look for the morpheus logo with version and start time
 
-    .. code-block:: bash
+    .. code-block::
 
       morpheus-ctl tail morpheus-ui
 
@@ -30,7 +30,7 @@ Solutions
   Solution
     If you ran a reconfigure before stopping the ui, run:
 
-    .. code-block:: bash
+    .. code-block::
 
      sudo morpheus-ctl kill morpheus-ui
      sudo morpheus-ctl reconfigure
@@ -48,7 +48,7 @@ Solutions
 
       Then run the following:
 
-      .. code-block:: bash
+      .. code-block::
 
        mysql -u morpheus -p -h 127.0.0.1 morpheus
 
@@ -56,19 +56,19 @@ Solutions
 
       Then run:
 
-      .. code-block:: bash
+      .. code-block::
 
        DELETE FROM DATABASECHANGELOGLOCK;
 
       Then restart morpheus-ui:
 
-      .. code-block:: bash
+      .. code-block::
 
        sudo morpheus-ctl restart morpheus-ui
 
       If the restart timesout, run:
 
-      .. code-block:: bash
+      .. code-block::
 
         sudo morpheus-ctl kill morpheus-ui
         sudo morpheus-ctl start morpheus-ui

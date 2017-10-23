@@ -46,7 +46,7 @@ To configure WinRM with default settings (WINRM_NATIVE)
 
 Type the following command at a command prompt:
 
-.. code-block:: bash
+.. code-block::
 
    $ winrm quickconfig
 
@@ -56,7 +56,7 @@ When the tool displays Make these changes ``[y/n]?``, type ``y``.
 
 If configuration is successful, the following output is displayed:
 
-.. code-block:: bash
+.. code-block::
 
     $ WinRM has been updated for remote management.
     $ WinRM service type changed to delayed auto start.
@@ -66,7 +66,7 @@ If configuration is successful, the following output is displayed:
 
 Keep the default settings for client and server components of WinRM, or customize them. By default Kerberos is enabled and if domain authentication is not being used we want to disable that. Issue the below commands to setup basic authentication:
 
-.. code-block:: bash
+.. code-block::
 
     $ winrm set winrm/config/service/Auth @{Basic="true"}
     $ winrm set winrm/config/service @{AllowUnencrypted="true"}
@@ -79,7 +79,7 @@ To configure WinRM with Domain Authentication (WINRM_INTERNAL)
 
 Type the following command at a command prompt
 
-.. code-block:: bash
+.. code-block::
 
    $ winrm quickconfig
 
@@ -89,7 +89,7 @@ When the tool displays Make these changes [y/n]?, type y.
 
 If configuration is successful, the following output is displayed:
 
-.. code-block:: bash
+.. code-block::
 
     $ WinRM has been updated for remote management.
     $ WinRM service type changed to delayed auto start.
@@ -99,7 +99,7 @@ If configuration is successful, the following output is displayed:
 
 Keep the default settings for client and server components of WinRM, or customize them. Issue the below commands to setup domain authentication:
 
-.. code-block:: bash
+.. code-block::
 
     $ winrm set winrm/config/service/Auth @{Basic="true"}
     $ winrm set winrm/config/service @{AllowUnencrypted="false"}
@@ -109,13 +109,13 @@ Kerberos authentication will also need to be configured on the |morpheus| applia
 
 On the |morpheus| appliance the krb5-user package must be installed. For Ubuntu the command is as follows:
 
-.. code-block:: bash
+.. code-block::
 
     $ sudo apt-get install krb5-user
 
 Create a file in /etc called krb5.conf and replace the domain name with the name of the domain to be used. In this case we used |morpheus| .com as the domain.
 
-.. code-block:: bash
+.. code-block::
 
     [libdefaults]
             default_realm = |morpheus| .COM

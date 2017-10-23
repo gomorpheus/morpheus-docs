@@ -50,7 +50,7 @@ Clicking on it will reveal a page that includes:
 
 The classic example of running
 
-.. code-block:: bash
+.. code-block::
 
    salt '*' test.ping
 

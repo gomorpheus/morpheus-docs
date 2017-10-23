@@ -81,7 +81,7 @@ Linux
 
 #. As root user, run: (replacing ${} with the relevant information)
 
-   .. code-block:: bash
+   .. code-block::
 
     curl -k -s "${opts.applianceUrl}api/server-script/agentInstall?apiKey=${opts.apiKey}" | bash
 
@@ -125,7 +125,7 @@ Uninstall |morpheus| Agent
 
 You can use the following to uninstall the linux agent:
 
-.. code-block:: bash
+.. code-block::
 
   sudo rm /etc/apt/sources.list.d/morpheus.list
   sudo morpheus-node-ctl stop rsyslogd
