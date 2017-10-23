@@ -46,7 +46,7 @@ Override CSS settings by entering CSS in `Override CSS` field.
 
 Example: (this will add one continues background image to the Header)
 
-.. code-block:: 
+.. code-block:: bash 
 
 	header #topHeader {
 		background-image: url(http://image_url.png);
@@ -75,7 +75,7 @@ When the |morpheus| UI is restarted or loading, a default "Morpheus is Loading" 
 
 .. NOTE:: `morpheus-ctl reconfigure` must be ran for any chnages to `/etc/morpheus/morpheus.rb` to take effect.
 
-.. code-block:: 
+.. code-block:: bash 
 
 		nginx['web_root_internal'] = “/opt/morpheus/embedded/nginx/html"
 		nginx['loading_pages']['max_loops'] = 6 * 10 # 10 secs per loop x 6 times to get 60 seconds * 10 to get to 10 minutes

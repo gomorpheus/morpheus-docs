@@ -19,7 +19,7 @@ Cloud-Init
 
 To get started with a base CentOS image we first install cloud-init. This is a relatively simple process using yum:
 
-.. code-block::
+.. code-block:: bash
 
   yum -y install epel-release
   yum -y install git wget ntp curl cloud-init dracut-modules-growroot
@@ -36,7 +36,7 @@ A slightly annoying change with centOS 7 is that the network interfaces have cha
 
 Firstly we need to adjust our bootloader to disable interface naming like this.
 
-.. code-block::
+.. code-block:: bash
 
   sed -i -e 's/quiet/quiet net.ifnames=0 biosdevname=0/' /etc/default/grub
   grub2-mkconfig -o /boot/grub2/grub.cfg
@@ -48,7 +48,7 @@ The next step is to adjust the network-scripts in centOS. we need to ensure we h
 
 Below is a script that we run on our packer builds to prepare the machines network configuration files.
 
-.. code-block::
+.. code-block:: bash
 
   export iface_file=$(basename "$(find /etc/sysconfig/network-scripts/ -name 'ifcfg*' -not -name 'ifcfg-lo' | head -n 1)")
   export iface_name=${iface_file:6}
@@ -61,7 +61,7 @@ Below is a script that we run on our packer builds to prepare the machines netwo
 
 This script tries to ensure there is a new ifcfg-eth0 config created to replace the old ens config file. Please do verify this config exists after running. If it does not you will have to be sure to build one on your own.
 
-.. code-block::
+.. code-block:: bash
 
   TYPE=Ethernet
   DEVICE=eth0
@@ -82,7 +82,7 @@ A Note on Proxies
 
 Proxy configurations are known to vary in some organizations and makes building a base template a little more difficult. In order to fully configure proxies a few environment variables must be set in the `/etc/environment` file (This can be done automatically in a default user-data script for cloud-init as well in edit cloud).
 
-.. code-block::
+.. code-block:: bash
 
   http_proxy="http://myproxyaddress:8080"
   https_proxy="http://myproxyaddress:8080"

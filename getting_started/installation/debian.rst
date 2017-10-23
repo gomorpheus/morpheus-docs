@@ -13,7 +13,7 @@ Next simply download the relevant `.deb` package for installation. This package 
 
 Next we must install the package onto the machine and configure the morpheus services:
 
-.. code-block::
+.. code-block:: bash
 
   sudo dpkg -i morpheus-appliance_x.x.x-1.amd64.deb
   sudo morpheus-ctl reconfigure
@@ -21,7 +21,7 @@ Next we must install the package onto the machine and configure the morpheus ser
 
 Once the installation is complete the web interface will automatically start up. By default it will be resolvable at `https://your_machine_name` and in many cases this may not be resolvable from your browser. The url can be changed by editing `/etc/morpheus/morpheus.rb` and changing the value of `appliance_url`. After this has been changed simply run:
 
-.. code-block::
+.. code-block:: bash  
 
   sudo morpheus-ctl reconfigure
   sudo morpheus-ctl stop morpheus-ui
