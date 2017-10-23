@@ -71,7 +71,7 @@ language = None
 exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
 
 # The name of the Pygments (syntax highlighting) style to use.
-pygments_style = 'sphinx'
+## pygments_style = 'sphinx'
 
 # If true, `todo` and `todoList` produce output, else they produce nothing.
 todo_include_todos = False
@@ -114,6 +114,20 @@ html_sidebars = {
     ]
 }
 
+html_show_sourcelink = False,
+
+# html_context = {
+#    "display_github": False, # Integrate GitHub
+#}
+
+# html_display_github = False
+
+# display_github = False
+
+context = {
+    'display_github': False,
+}
+html_favicon = "_static/morpheus_fav_64.ico"
 
 # -- Options for HTMLHelp output ------------------------------------------
 
