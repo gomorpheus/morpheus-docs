@@ -40,7 +40,7 @@ One option to expose the Internal Azure Stack network to the |morpheus| Applianc
 
 Below is a sample output from the script for reference:
 
-.. code-block:: bash
+.. code-block:: shell
 
   [Admin Portal] Created port mappings on 10.30.23.120 to 192.168.102.8
   [Admin Portal] Ports: 13011 30015 13001 13010 13021 13020 443 13003 12646 12647 12648 12649 12650 12495 13026 12499

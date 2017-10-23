@@ -45,7 +45,7 @@ To check to see if the RHEL server has the Red Hat Enterprise Linux 7 Server - O
 
 .. code-block:: bash
 
-  sudo yum repolist all \| grep "rhel-7-server-optional-rpms" rhel-7-server-optional-rpms/7Server/x86_64 disabled
+  sudo yum repolist all | grep "rhel-7-server-optional-rpms" rhel-7-server-optional-rpms/7Server/x86_64 disabled
 
 If the repo status was returned as disabled then you will need to enable the repo using the subscription manager like below.
 
