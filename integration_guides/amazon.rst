@@ -40,17 +40,19 @@ Requirements
 ------------
 
 * AWS IAM Security Credentials
-** Access Key
-** Secret Key
-** Sufficient User Privileges (see Required IAM Policies section for more info)
-* Security Groups
-** Typical Inbound ports open from |morpheus| Appliance: 22, 5985, 3389
-** Typical Outbound to |morpheus| Appliance: 80, 443
-*** These are required for |morpheus| agent install, communication, and remote console access for windows and linux. Other configurations, such as docker instances, will need the appropriate ports opened as well. *Cloud-init Agent Install mode does not require access to port 22.
-* Network(s)
-** Public IP assignment required for Agent install, Script Execution, and Console if the |morpheus| Appliance is not able to communicate with AWS instances private ip's.
+  * Access Key
+  * Secret Key
+  * Sufficient User Privileges (see Required IAM Policies section for more info)
 
-NOTE: Each AWS Cloud in |morpheus| is scoped to an AWS Region, and multiple AWS Clouds can be added and even Grouped. Verify Security groups are properly configured in all Regions |morpheus| will scope to.
+* Security Groups
+  * Typical Inbound ports open from |morpheus| Appliance: 22, 5985, 3389
+  * Typical Outbound to |morpheus| Appliance: 80, 443
+    * These are required for |morpheus| agent install, communication, and remote console access for windows and linux. Other configurations, such as docker instances, will need the appropriate ports opened as well. *Cloud-init Agent Install mode does not require access to port 22.
+
+* Network(s)
+  * Public IP assignment required for Agent install, Script Execution, and Console if the |morpheus| Appliance is not able to communicate with AWS instances private ip's.
+
+.. NOTE:: Each AWS Cloud in |morpheus| is scoped to an AWS Region, and multiple AWS Clouds can be added and even Grouped. Verify Security groups are properly configured in all Regions |morpheus| will scope to.
 
 Creating an AWS Cloud
 ---------------------
@@ -62,7 +64,7 @@ Creating an AWS Cloud
 #. Enter the following:
 
    Name
-     Name of the Cloud in |morpheus| 
+     Name of the Cloud in |morpheus|
    Location
      Description field for adding notes on the cloud, such as location.
    Visibility
@@ -83,7 +85,7 @@ Advanced Options
 IMAGE TRANSFER STORE
   S3 bucket for Image transfers, required for migrations into AWS.
 
-.. .. include:: /integration_guides/advanced_options.rst
+.. include:: integration_guides/advanced_options.rst
 
 .. NOTE:: All fields and options can be edited after the Cloud is created.
 
