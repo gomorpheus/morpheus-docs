@@ -119,7 +119,7 @@ html_show_sourcelink = False
 
 def setup(app):
 # Disable the GitHub link display
-app.config.html_context['display_github'] = False
+    app.config.html_context['display_github'] = False
 
 # html_context = {
 #    "display_github": False, # Integrate GitHub
