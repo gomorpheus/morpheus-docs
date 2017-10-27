@@ -116,6 +116,8 @@ html_sidebars = {
 
 # If you don't want the show source link as well
 html_show_sourcelink = False
+html_show_sphinx = False
+keep_warnings = False
 
 def setup(app):
 # Disable the GitHub link display
