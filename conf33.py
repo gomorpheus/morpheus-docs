@@ -76,7 +76,6 @@ pygments_style = 'sphinx'
 # If true, `todo` and `todoList` produce output, else they produce nothing.
 todo_include_todos = False
 
-
 # -- Options for HTML output ----------------------------------------------
 
 # The theme to use for HTML and HTML Help pages.  See the documentation for
@@ -114,7 +113,7 @@ html_sidebars = {
 # -- Options for HTMLHelp output ------------------------------------------
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = 'testtocadoc'
+htmlhelp_basename = 'morpheus_2.12.3'
 
 
 # -- Options for LaTeX output ---------------------------------------------
@@ -141,8 +140,8 @@ latex_elements = {
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-    (master_doc, 'testtoca.tex', u'testtoca Documentation',
-     u'JW', 'manual'),
+    (master_doc, 'mddocs.tex', u'Morpheus Documentation',
+     u'Morpheus', 'manual'),
 ]
 
 
@@ -151,8 +150,8 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    (master_doc, 'testtoca', u'testtoca Documentation',
-     [author], 1)
+    (master_doc, 'morpheus 2.12.3', u'Morpheus Documentation',
+     [author], Morpheus)
 ]
 
 
@@ -162,10 +161,13 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-    (master_doc, 'testtoca', u'testtoca Documentation',
-     author, 'testtoca', 'One line description of project.',
-     'Miscellaneous'),
+    (master_doc, 'morpheus 2.12.3', u'Morpheus Documentation',
+     author, 'Morpheus', 'morpheus 2.12.3',
+     'Documentation'),
 ]
+# If you don't want the show source link as well
+html_show_sourcelink = False
 
-
-
+def setup(app):
+# Disable the GitHub link display
+app.config.html_context['display_github'] = False

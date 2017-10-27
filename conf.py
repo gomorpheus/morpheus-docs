@@ -114,7 +114,12 @@ html_sidebars = {
     ]
 }
 
-html_show_sourcelink = False,
+# If you don't want the show source link as well
+html_show_sourcelink = False
+
+def setup(app):
+# Disable the GitHub link display
+app.config.html_context['display_github'] = False
 
 # html_context = {
 #    "display_github": False, # Integrate GitHub
