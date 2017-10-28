@@ -91,5 +91,5 @@ Available Cloud types:
 * Dell
 
 
-.. include:: whitelabel.rst
-.. include:: license.rst
+.. include:: settings/whitelabel.rst
+.. include:: settings/license.rst
