@@ -114,7 +114,15 @@ html_sidebars = {
     ]
 }
 
-html_show_sourcelink = False,
+# If you don't want the show source link as well
+html_show_sourcelink = False
+html_show_sphinx = False
+keep_warnings = False
+github_edit_url = False
+
+def setup(app):
+# Disable the GitHub link display
+    app.config.html_context['display_github'] = False
 
 # html_context = {
 #    "display_github": False, # Integrate GitHub
@@ -159,7 +167,7 @@ latex_elements = {
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-    (master_doc, 'morpheusdata.tex', u'Morpheus Documentation',
+    (master_doc, 'morpheus2122.tex', u'Morpheus Documentation',
      u'Morpheus Data', 'manual'),
 ]
 
