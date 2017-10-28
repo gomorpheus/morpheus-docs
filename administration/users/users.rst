@@ -1,4 +1,7 @@
 Users
+=====
+
+Users
 -----
 
 Overview
@@ -67,3 +70,5 @@ To delete a User:
 #. Select the Users link in the sub navigation bar.
 #. Click the Delete trashcan icon on the row of the user to delete.
 #. Confirm
+
+.. include:: users/usergroups.rst
