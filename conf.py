@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 #
-# Morpheus Data documentation build configuration file, created by
+# Morpheus Documentation build configuration file, created by
 # sphinx-quickstart on Thu Sep 21 23:13:23 2017.
 #
 # This file is execfile()d with the current directory set to its
@@ -114,15 +114,23 @@ html_sidebars = {
     ]
 }
 
-html_show_sourcelink = False,
+# If you don't want the show source link as well
+html_show_sourcelink = False
+html_show_sphinx = False
+keep_warnings = False
+github_edit_url = False
+
+def setup(app):
+# Disable the GitHub link display
+    app.config.html_context['display_github'] = False
 
 # html_context = {
 #    "display_github": False, # Integrate GitHub
 #}
 
-# html_display_github = False
+#html_display_github = False
 
-# display_github = False
+#display_github = False
 
 context = {
     'display_github': False,
@@ -159,8 +167,8 @@ latex_elements = {
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-    (master_doc, 'morpheusdata.tex', u'Morpheus Documentation',
-     u'Morpheus Data', 'manual'),
+    (master_doc, 'morpheus301.tex', u'Morpheus Documentation',
+     u'Morpheus', 'manual'),
 ]
 
 
