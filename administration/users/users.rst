@@ -22,7 +22,7 @@ To create a User:
 
 #. Select the Users link in the sub navigation bar.
 
-#. Click the Create User button.
+#. Click the :guilabel:`+ CREATE USER` button.
 
 #. From the New User Wizard input
 
@@ -66,13 +66,10 @@ Edit User
 To edit a User:
 
 #. Select the Administration link in the navigation bar.
-
 #. Select the Users link in the sub navigation bar.
-
-#. Click the Edit pencil icon on the row of the user to edit.
-
-#. Make Changes.
-
+#. Click **ACTIONS** on the row of the user to edit.
+#. Select **EDIT** in the ACTIONS dropdown.
+#. Make changes.
 #. Click :guilabel:`SAVE CHANGES`.
 
 Delete User
@@ -82,7 +79,8 @@ To delete a User:
 
 #. Select the Administration link in the navigation bar.
 #. Select the Users link in the sub navigation bar.
-#. Click the Delete trashcan icon on the row of the user to delete.
+#. Click **ACTIONS** on the row of the user to edit.
+#. Select **REMOVE** in the ACTIONS dropdown.
 #. Confirm
 
 .. include:: users/usergroups.rst
