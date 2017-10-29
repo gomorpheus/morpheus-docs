@@ -11,7 +11,7 @@ Creating User Groups
 
 #. Navigate to `Administration -> Users`
 #. Select the USER GROUPS tab.
-#. Select + CREATE USER GROUP
+#. Select :guilabel:`+ CREATE USER GROUP`.
 #. Enter the following:
 
    NAME
@@ -25,17 +25,17 @@ Creating User Groups
    USERS
     Search for and select existing Users to add to the User Group.
 
-#. Save Changes
+#. Select :guilabel:`SAVE CHANGES`.
 
 Editing User Groups
 ^^^^^^^^^^^^^^^^^^^^
 
 #. Navigate to `Administration -> Users`
 #. Select the USER GROUPS tab.
-#. Select ACTIONS dropdown next to the target User Group.
-#. Select EDIT
+#. Select the **ACTIONS** dropdown next to the target User Group.
+#. Select **EDIT**
 #. Make changes, add or remove users from the group.
-#. Save Changes
+#. Select :guilabel:`SAVE CHANGES`.
 
 Adding a User Group when Provisioning
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

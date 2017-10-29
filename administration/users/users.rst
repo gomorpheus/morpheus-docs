@@ -22,7 +22,7 @@ To create a User:
 
 #. Select the Users link in the sub navigation bar.
 
-#. Click the :guilabel:`+ CREATE USER` button.
+#. Select :guilabel:`+ CREATE USER`.
 
 #. From the New User Wizard input
 
@@ -51,6 +51,7 @@ To create a User:
 
    Limits
     Combined Instance Resource Limits for the User. When a limit is reached, the User will not be able to provision more Instances
+
     -  STORAGE
         - Total amount of Storage the user can Provision, set in GiB. 0.0 is unlimited.
     -  MEMORY
@@ -58,7 +59,7 @@ To create a User:
     - CPU COUNT
        - Total combined Cores the user can Provision. 0 is unlimited.
 
-#. Click :guilabel:`SAVE CHANGES`.
+#. Select :guilabel:`SAVE CHANGES`.
 
 Edit User
 ^^^^^^^^^
@@ -70,7 +71,7 @@ To edit a User:
 #. Click **ACTIONS** on the row of the user to edit.
 #. Select **EDIT** in the ACTIONS dropdown.
 #. Make changes.
-#. Click :guilabel:`SAVE CHANGES`.
+#. Select :guilabel:`SAVE CHANGES`.
 
 Delete User
 ^^^^^^^^^^^
@@ -79,7 +80,7 @@ To delete a User:
 
 #. Select the Administration link in the navigation bar.
 #. Select the Users link in the sub navigation bar.
-#. Click **ACTIONS** on the row of the user to edit.
+#. Select **ACTIONS** on the row of the user to edit.
 #. Select **REMOVE** in the ACTIONS dropdown.
 #. Confirm
 
