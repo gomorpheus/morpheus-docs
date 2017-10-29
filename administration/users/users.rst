@@ -58,7 +58,7 @@ To create a User:
     - CPU COUNT
        - Total combined Cores the user can Provision. 0 is unlimited.
 
-#. Click SAVE CHANGES.
+#. Click :guilabel:`SAVE CHANGES`.
 
 Edit User
 ^^^^^^^^^
@@ -73,7 +73,7 @@ To edit a User:
 
 #. Make Changes.
 
-#. Click SAVE CHANGES.
+#. Click :guilabel:`SAVE CHANGES`.
 
 Delete User
 ^^^^^^^^^^^
