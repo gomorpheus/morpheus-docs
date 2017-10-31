@@ -13,7 +13,7 @@ Adding an Active Directory Integration
 
 #. Navigate to `Administration -> Tenants`
 #. Select a Tenant
-#. Select :guilabel:`IDENTITY SOURCE`
+#. Select :guilabel:`IDENTITY SOURCES`
 #. Select :guilabel:`+ IDENTITY SOURCE`
 #. Choose "Active Directory"
 #. Populate the following:
