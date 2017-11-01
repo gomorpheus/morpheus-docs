@@ -5,17 +5,9 @@ The following are the map structures passed to scripts and templates during prov
 
 .. IMPORTANT:: Variables are case sensitive
 
-	PowerShell Example:
+PowerShell Example: ``$app_id = "<%= instance.metadata.app_id %>"``
 
-	.. code-block:: bash  shell
-
-		$app_id = "<%= instance.metadata.app_id %>"
-
-	Bash Example:
-
-	.. code-block:: bash
-
-		HOSTNAME="<%= container.server.hostname %>"
+Bash Example:	``HOSTNAME="<%= container.server.hostname %>"``
 
 .. NOTE:: customOptions are user defined as Option Types or Option Lists in custom Library items.
 
