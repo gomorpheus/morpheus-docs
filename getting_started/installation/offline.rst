@@ -20,33 +20,33 @@ Ubuntu
 
 #. Download both the regular Morpheus Appliance package and the Offline Installer packages on to the appliance server:
 
-   .. code-block:: bash 
+   .. code-block:: bash
 
     wget http://example_url/morpheus-appliance_package_url.deb
     wget http://example_url/morpheus-appliance_package_offline_url.deb
 
 #. Install the appliance package. DO NOT run morpheus-ctl reconfigure yet.
 
-   .. code-block:: bash 
+   .. code-block:: bash
 
     sudo dpkg -i morpheus-appliance_version_amd64.deb
 
 #. Install the offline package using dpkg -i morpheus-appliance-offline_2.12.2~rc1-1_all.deb.
 
-   .. code-block:: bash 
+   .. code-block:: bash
 
     sudo dpkg -i morpheus-appliance-offline_version_all.deb.
 
 #. Set the Morpheus UI applaicne url (if needed, hostname will be automatically set).
 
-   .. code-block:: bash 
+   .. code-block:: bash
 
     sudo vi /etc/morpheus/morpheus.rb
     edit appliance_url to resolvable url (if not configured correctly by default)
 
 #. Reconfigure the appliance to install required packages
 
-   .. code-block:: bash 
+   .. code-block:: bash
 
     sudo morpheus-ctl reconfigure
 
@@ -59,33 +59,32 @@ CentOS
 
 #. Download both the regular Morpheus Appliance package and the Offline Installer packages on to the appliance server:
 
-   .. code-block:: bash 
+   .. code-block:: bash
 
     wget http://example_url/morpheus-appliance_package_url.noarch.rpm
     wget http://example_url/morpheus-appliance_package_offline_url.noarch.rpm
 
 #. Install the appliance package. DO NOT run morpheus-ctl reconfigure yet.
 
-   .. code-block:: bash 
+   .. code-block:: bash
 
-    sudo rpm -i morpheus-appliance_version_amd64.deb
+    sudo rpm -i morpheus-appliance_version_amd64.rpm
 
-#. Install the offline package using dpkg -i morpheus-appliance-offline_2.12.2~rc1-1_all.deb.
+#. Install the offline package using rpm -i morpheus-appliance-offline_2.12.2~rc1-1_all.rpm
 
-   .. code-block:: bash 
+   .. code-block:: bash
 
-    sudo dpkg -i morpheus-appliance-offline_version_all.deb.
+    sudo rpm -i morpheus-appliance-offline_version_all.rpm
 
-#. Set the Morpheus UI applaicne url (if needed, hostname will be automatically set).
+#. Set the Morpheus UI applaicne url (if needed, hostname will be automatically set). Edit appliance_url to resolvable url (if not configured correctly by default)
 
-   .. code-block:: bash 
+   .. code-block:: bash
 
     sudo vi /etc/morpheus/morpheus.rb
-    edit appliance_url to resolvable url (if not configured correctly by default)
 
 #. Reconfigure the appliance to install required packages
 
-   .. code-block:: bash 
+   .. code-block:: bash
 
     sudo morpheus-ctl reconfigure
 
