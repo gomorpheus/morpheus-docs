@@ -21,6 +21,7 @@ Available Policy Types
 -  Max Memory
 -  Max Storage
 -  Max VMs
+-  Power Scheduling
 -  Provision Approval
 -  Shutdown
 
@@ -30,8 +31,29 @@ Creating Policies
 Policies can be created, edited, and set to active or inactive in the a
 group or cloud detail pane under the Policies tab.
 
-To create a new policy, select ADD POLICY and choose from the available
-policy types:
+To create a Policy for a Cloud:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Cloud Policies apply to all Instances in the Cloud the Policy is added to.
+
+#. Navigate to ``Infrastructure -> Clouds``
+#. Select a Cloud by clicking on the name of the Cloud to go to the Cloud Detail page.
+#. Select the ``POLICIES`` tab in the Cloud Detail page.
+#. Select :guilabel:`+ ADD` and choose from the available policy types.
+#. Refer to Policy Type sections below for Configuraiton options.
+#. Select :guilabel:`SAVE CHANGES`
+
+To create a Policy for a Group:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Group Policies apply to all Instances in the Group the Policy is added to.
+
+#. Navigate to ``Infrastructure -> Clouds``
+#. Select a Cloud by clicking on the name of the Cloud to go to the Cloud Detail page.
+#. Select the ``POLICIES`` tab in the Cloud Detail page.
+#. Select :guilabel:`+ ADD` and choose from the available policy types.
+#. Refer to Policy Type sections below for Configuraiton options.
+#. Select :guilabel:`SAVE CHANGES`
 
 Expiration Policies
 ^^^^^^^^^^^^^^^^^^^
@@ -61,35 +83,47 @@ Instances with expirations show the time until expiration in the instance detail
 
 Expirations can also be added to any instance during provisioning by entering the number of days in the EXPIRATION DAYS field in the Lifecycle section of the automation section of the provisioning wizard. Expiration can be added to any instance even if no policies have been created.
 
-Naming Policies
-^^^^^^^^^^^^^^^
+Instance and Host Names
+^^^^^^^^^^^^^^^^^^^^^^^
 
 Naming Policies will populate a fixed or editable name for instances, hosts and hostnames. The Name Pattern field uses ${variable} string interpolation.
 
-Available Variables for naming patterns are:
+NAMING TYPE
+  User Configurable
+    Naming pattern will pre-populate during provisioning but can be edited by the user.
+  Fixed Name
+    Naming pattern will pre-populate during provisioning and cannot be changed.
 
-- {groupName}
-- {groupCode}
-- {cloudName}
-- {cloudCode}
-- {type}
-- {accountID}
-- {account}
-- {accountType}
-- {platform}
-- {userID}
-- {userName}
-- {userInitials}
-- {provisionType}
+NAME PATTERN
+  The Name Pattern field uses ``${variable}`` string interpolation.
 
-An example for an instance name policy using a naming pattern with users
-initials, cloud code, instance type, and adds a sequential number is:
+  Commonly used variables for naming patterns include:
 
-``{userInitials}-{cloudCode}-{type}-{sequence}``
+  .. code-block:: bash
 
-Naming policies can be configure to be user configurable or static, and to auto-resolve naming conflicts.
+    ${groupName}
+    ${groupCode}
+    ${cloudName}
+    ${cloudCode}
+    ${type}
+    ${accountID}
+    ${account}
+    ${accountType}
+    ${platform}
+    ${userID}
+    ${userName}
+    ${userInitials}
+    ${provisionType}
+    ${sequence} #results in 1
+    ${sequence+100} #results in 101
+    ${sequence.toString().padLeft(5,‘0’)} #results in 00001
 
-Cloud codes and Group codes are fields found in their respective configuration panes.
+  .. NOTE:: An Instance Name Policy using a naming pattern with User Initials, Cloud Code, Instance Type, and a sequential number starting at 3000 is ``${userInitials}-${cloudCode}-${type}-${sequence+3000}``, resulting in an Instance Name of **md-vmwd3-centos-3001** for the first instance, followed by **md-vmwd3-centos-3002** and so on.
+
+  Cloud codes and Group codes are fields found in their respective configuration panes.
+
+AUTO RESOLVE CONFLICTS
+  |morpheus| will automatically resolve naming conflicts by appending a sequential -number to the name when enabled.
 
 Shutdown Policies
 ^^^^^^^^^^^^^^^^^
