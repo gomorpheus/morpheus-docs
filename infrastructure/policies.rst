@@ -9,20 +9,34 @@ Policies add governance, ease of use, cost-savings, and auditing features to |mo
 Policies apply towards any instance provisioned into a group or cloud with active policies. Cloud policies will override matching or conflicting group policies during provisioning.
 
 Available Policy Types
+^^^^^^^^^^^^^^^^^^^^^^
 
--  Expiration
--  Host Name
--  Hostname
--  Instance Name
--  Max Containers
--  Max Cores
--  Max Hosts
--  Max Memory
--  Max Storage
--  Max VMs
--  Power Scheduling
--  Provision Approval
--  Shutdown
+Expiration
+  Sets an expiration timeframe in days after which the Instance will be deleted. Extensions can be auto-approved or require approval immediately or after x amount of auto-extensions using Morpheus Approvals or an Approval Integration.
+Host Name
+  Pre-populates a fixed or editable name for Hosts and Virtual Machines using ${variable} naming patterns and/or text.
+Hostname
+  Pre-populates a fixed or editable name for hostnames/machine names using ${variable} naming patterns and/or text.
+Instance Name
+  Pre-populates a fixed or editable name for Instance Names using ${variable} naming patterns and/or text.
+Max Containers
+  Sets the max number of Containers for the Group or Cloud the Policy is added to.
+Max Cores
+  Sets the max number of total of Cores combined for Instances in the Group or Cloud the Policy is added to.
+Max Hosts
+  Sets the max number of total Hosts in the Group or Cloud the Policy is added to.
+Max Memory
+  Sets the max number of total of RAM combined for Instances in the Group or Cloud the Policy is added to.
+Max Storage
+  Sets the max number of total of Storage combined for Instances in the Group or Cloud the Policy is added to.
+Max VMs
+  Sets the max number of Virtual Machines for the Group or Cloud the Policy is added to.
+Power Scheduling
+  Adds a Power Schedule for the Instances in a Group or Cloud. Power Schedules can be created in ``Operations -> Scheduling``
+Provision Approval
+  Sets an Approval requirement for Provisioning into a Group or Cloud using Morpheus Approvals or an Approval Integration such a Service Now.
+Shutdown
+  Sets a shutdown timeframe in days upon provision after which the Instance will be stopped. Extensions can be auto-approved or require approval immediately or after x amount of auto-extensions using Morpheus Approvals or an Approval Integration.
 
 Creating Policies
 -----------------
@@ -85,6 +99,8 @@ Instances with expirations show the time until expiration in the instance detail
 
 Expirations can also be added to any instance during provisioning by entering the number of days in the EXPIRATION DAYS field in the Lifecycle section of the automation section of the provisioning wizard. Expiration can be added to any instance even if no policies have been created.
 
+NOTE:: Expiration and Shutdown Policies will be enforced on Instances moved into a Group with an Active Policy or Instances created when converting an unmanaged host to managed.
+
 Instance and Host Names
 ^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -120,9 +136,11 @@ NAME PATTERN
     ${sequence+100} #results in 101
     ${sequence.toString().padLeft(5,‘0’)} #results in 00001
 
-  .. NOTE:: An Instance Name Policy using a naming pattern with User Initials, Cloud Code, Instance Type, and a sequential number starting at 3000 is ``${userInitials}-${cloudCode}-${type}-${sequence+3000}``, resulting in an Instance Name of **md-vmwd3-centos-3001** for the first instance, followed by **md-vmwd3-centos-3002** and so on.
+  An example Instance Name Policy using a naming pattern with User Initials, Cloud Code, Instance Type, and a sequential number starting at 3000 is ``${userInitials}-${cloudCode}-${type}-${sequence+3000}``, resulting in an Instance Name of **md-vmwd3-centos-3001** for the first instance, followed by **md-vmwd3-centos-3002** and so on.
 
   Cloud codes and Group codes are fields found in their respective configuration panes.
+
+  .. NOTE:: Static text can also be used in conjunction with ${variable}'s, such as ``morpheus${cloudCode}${type}${sequence+3000}``
 
 AUTO RESOLVE CONFLICTS
   |morpheus| will automatically resolve naming conflicts by appending a sequential -number to the name when enabled.
@@ -149,6 +167,8 @@ Notification Message
   Customizable message for notification email.
 Auto Approve Extensions
   Enable this to auto-approve extension requests, bypassing approval workflows.
+
+NOTE:: Expiration and Shutdown Policies will be enforced on Instances moved into a Group with an Active Policy or Instances created when converting an unmanaged host to managed.
 
 Provision Approval
 ^^^^^^^^^^^^^^^^^^
