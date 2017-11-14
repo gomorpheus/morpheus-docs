@@ -133,8 +133,10 @@ Shutdown policies dictate the number of days an instance is allowed to run befor
 Configuration options for shutdown policies:
 
 Shutdown Type
-  - User Configurable- shutdown timeframe is editable during provisioning
-  - Fixed Expiration- user cannot change shutdown timeframe
+  User Configurable
+    Shutdown timeframe is editable during provisioning.
+  Fixed Expiration
+    User cannot change shutdown timeframe during provisioning.
 Expiration Days
   Configures the number of days the instance is allowed to exist before being shut down.
 Renewal Days
