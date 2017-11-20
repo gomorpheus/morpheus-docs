@@ -1,6 +1,6 @@
 How to white label the morpheus is loading screen
 
-nginx['web_root_internal'] = “/opt/morpheus/embedded/nginx/html"
+nginx['web_root_internal'] = "/opt/morpheus/embedded/nginx/html"
 nginx['loading_pages']['max_loops'] = 6 * 10 # 10 secs per loop x 6 times to get 60 seconds * 10 to get to 10 minutes
 nginx['loading_pages']['timeout_page'] = '/timeout.html'
 nginx['loading_pages']['iteration_time'] = 10_000
