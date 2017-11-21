@@ -47,19 +47,19 @@ group or cloud detail pane under the Policies tab.
 To create a Policy for a Cloud:
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Cloud Policies apply to all Instances in the Cloud the Policy is added to.
+.. NOTE:: Resource Limitation Policies apply to all Instances in the Cloud the Policy is added to. Approval, Naming, Power, Shutdown and Expiration Policies apply to Instances created or moved into the Group after the Policy is enabled.
 
 #. Navigate to ``Infrastructure -> Clouds``
 #. Select a Cloud by clicking on the name of the Cloud to go to the Cloud Detail page.
 #. Select the ``POLICIES`` tab in the Cloud Detail page.
 #. Select :guilabel:`+ ADD` and choose from the available policy types.
-#. Refer to Policy Type sections below for Configuraiton options.
+#. Refer to Policy Type sections below for Configuration options.
 #. Select :guilabel:`SAVE CHANGES`
 
 To create a Policy for a Group:
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Group Policies apply to all Instances in the Group the Policy is added to.
+.. NOTE:: Resource Limitation Policies apply to all Instances in the Group the Policy is added to. Approval, Naming, Power, Shutdown and Expiration Policies apply to Instances created after the Policy is enabled.
 
 #. Navigate to ``Infrastructure -> Clouds``
 #. Select a Cloud by clicking on the name of the Cloud to go to the Cloud Detail page.
@@ -74,9 +74,7 @@ Policy Types
 Expiration Policies
 ^^^^^^^^^^^^^^^^^^^
 
-Expiration policies set an expiration timeframe for any instance
-provisioned into the cloud or group the policy is added to. When an
-instance expires, it is terminated and deleted.
+Expiration policies set an expiration timeframe for any instance provisioned into the cloud or group the policy is added to. When an instance expires, it is terminated and deleted.
 
 Configuration options for expiration policies:
 
@@ -176,3 +174,24 @@ Provision Approval
 |morpheus| Provision Approvals enable an approval workflow via internal |morpheus| approval or via ServiceNow workflow. If a ServiceNow integration is present, the ServiceNow option is enabled. The Approval workflow to be selected is dynamically created by querying the ServiceNow Workflow table in the integrated ServiceNow instance.
 
 This ServiceNow approval integration enables users to use the |morpheus| Self-Service provisioning portal to provision new instances and still respect the required ServiceNow business approval workflow.
+
+Power Schedules
+^^^^^^^^^^^^^^^
+
+Power Schedules set daily times to shutdown and startup instances. Power schedule can be created and managed in ``Operations -> Scheduling``.
+
+.. NOTE:: Power Schedule Policies will apply to Instances created in a Group or Cloud after the Policy is enabled, and will not apply to pre-existing Instances.
+
+Configuration options for Power Schedule Policies:
+
+DESCRIPTION
+  Add details about your Policy for reference in the Policies tab.
+Enabled
+  Policies can be edited and disabled or enabled at any time. Disabling a Power Schedule Policy will prevent the Power Schedule from running on the Groups Instances until re-enabled.
+ENFORCEMENT TYPE
+  * User Configurable: Power Schedule choice is editable by User during provisioning.
+  * Fixed Schedule: User cannot change Power Schedule setting during provisioning.
+POWER SCHEDULE
+  Select Power Schedule to use in the Policy. Power schedule can be added in ``Operations -> Scheduling``
+Permissions- TENANTS
+  Leave blank to apply to all Tenants, or search for and select Tenants to enforce the Policy on specific Tenants.

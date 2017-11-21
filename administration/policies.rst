@@ -154,3 +154,24 @@ Provision Approval
 |morpheus| Provision Approvals enable an approval workflow via internal |morpheus| approval or via ServiceNow workflow. If a ServiceNow integration is present, the ServiceNow option is enabled. The Approval workflow to be selected is dynamically created by querying the ServiceNow Workflow table in the integrated ServiceNow instance.
 
 This ServiceNow approval integration enables users to use the |morpheus| Self-Service provisioning portal to provision new instances and still respect the required ServiceNow business approval workflow.
+
+Power Schedules
+^^^^^^^^^^^^^^^
+
+Power Schedules set daily times to shutdown and startup instances. Power schedule can be created and managed in ``Operations -> Scheduling``.
+
+.. NOTE:: Power Schedule Policies will apply to Instances created in a Group or Cloud after the Policy is enabled, and will not apply to pre-existing Instances. 
+
+Configuration options for Power Schedule Policies:
+
+DESCRIPTION
+  Add details about your Policy for reference in the Policies tab.
+Enabled
+  Policies can be edited and disabled or enabled at any time. Disabling a Power Schedule Policy will prevent the Power Schedule from running on the Groups Instances until re-enabled.
+ENFORCEMENT TYPE
+  * User Configurable: Power Schedule choice is editable by User during provisioning.
+  * Fixed Schedule: User cannot change Power Schedule setting during provisioning.
+POWER SCHEDULE
+  Select Power Schedule to use in the Policy. Power schedule can be added in ``Operations -> Scheduling``
+Permissions- TENANTS
+  Leave blank to apply to all Tenants, or search for and select Tenants to enforce the Policy on specific Tenants.
