@@ -33,8 +33,6 @@ Create Power Schedule
 
 #. Select :guilabel:`SAVE CHANGES`
 
-.. TIP:: To view the Instances a power schedule is currently set on, select the name of a Power Schedule to go to the Power Schedule Detail Page.
-
 Add Power Schedule to Instance
 ------------------------------
 
