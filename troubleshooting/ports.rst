@@ -56,7 +56,9 @@ The following chart is useful for troubleshooting Agent install, Static IP assig
 .. csv-table:: Common Ports & Requirements
    :header: "Feature", "Method",  "OS", "Source", "Destination", "Port", "Requirement"
 
-   "Agent Install", "All", "Linux", "Node", "Appliance", "80", "Used for appliance yum and apt repos"         
+   "Agent Communication", "All", "All", "Node", "Appliance", 443, "DNS Resolution from node to appliance url"
+   "Agent Install", "All", "Linux", "Node", "Appliance", 80, "Used for appliance yum and apt repos"
+   " ", "SSH", "Linux", "Appliance", "Node", 22, "DNS Resolution from node to appliance url"
 
 
 
