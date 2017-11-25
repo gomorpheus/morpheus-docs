@@ -34,7 +34,7 @@ The following chart is useful for troubleshooting Agent install, Static IP assig
    " ",RDP,WIdnows,Appliance,Node,3389,"| RDP Enabled on node
    | user/password set on VM or Host in Morpheus"
    " ",Hypervisor Console,All,Appliance,ESXi Host,5900-6000+,"| GBB server opened on all ESXii host firewalls
-   | *Port range varies per GDB port settings
+   | *Port range req's vary per env
    | ESXi host names resolvable by morpheus appliance"
    "Morpheus Catalog Image Download", ,All,Amazon S3,Appliance,443,"Available space at ``/var/opt/morpheus/``"
    "Image Transfer",Stream,All,Appliance,Datastore,443,"Hypervisor Host Names resolvable by Morpheus Appliance"
