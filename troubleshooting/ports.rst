@@ -64,12 +64,16 @@ The following chart is useful for troubleshooting Agent install, Static IP assig
    "","WinRM",Windows,Appliance,Node,5985,"| DNS Resolution from node to appliance url
    | Virtual Images configured
    | WinRM Enabled on Virtual Image(`winrm quickconfig`)"
-   " ",Cloud-init,Linux, , , ,  |"Cloud-init installed on template/image
+   " ",Cloud-init,Linux, , , ,  | Cloud-init installed on template/image
    | Cloud-init settings populated in User Settings or in `Admin –> Provisioning`
-   | Agent install mode set to Cloud-Init in Cloud Settings"
-   " ",Cloudbase-init,Windows, , , ,  |"Cloudbase-init installed on template/image
+   | Agent install mode set to Cloud-Init in Cloud Settings
+   " ",Cloudbase-init,Windows, , , ,  | Cloudbase-init installed on template/image
    | Cloud-init settings populated in User Settings or in `Admin –> Provisioning`
-   | Agent install mode set to Cloud-Init in Cloud Settings"
+   | Agent install mode set to Cloud-Init in Cloud Settings
+   " ",VMtools,All, , , ,| VMtools installed on template
+   | Cloud-init settings populated in Morpheus user settings or in `Administration –> Provisioning` when using Static IP’s
+   | Existing User credentials entered on Virtual Image when using DHCP
+   | RPC mode set to VMtools in VMware cloud settings.
 
 
 
