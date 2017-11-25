@@ -30,6 +30,10 @@ The following chart is useful for troubleshooting Agent install, Static IP assig
    | Cloud-init settings populated in Morpheus user settings or in `Administration –> Provisioning`"
    " ", "VMware Tools",All, , , ,"| Network configured in Morpheus (Gateway, Primary and Secondary DNS, CIDR populated, DHCP disabled)
    | VMtools installed on Template/Virtual Image"
+
+.. csv-table:: Common Ports & Requirements
+   :header: "Feature", "Method",  "OS", "Source", "Destination", "Port", "Requirement"
+
    Remote Console,SSH,Linux,Applaince,Node,22,"| ssh enabled on node
    | user/password set on VM or Host in Morpheus "
    " ",RDP,WIdnows,Appliance,Node,3389,"| RDP Enabled on node
