@@ -2,6 +2,7 @@
 Troubleshooting
 ***************
 
+.. include:: ports.rst
 .. include:: agent.rst
 .. include:: uinotloading.rst
 .. include:: blankdashboard.rst
