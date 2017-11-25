@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 #
-# Morpheus Data documentation build configuration file, created by
+# jwtest documentation build configuration file, created by
 # sphinx-quickstart on Thu Sep 21 23:13:23 2017.
 #
 # This file is execfile()d with the current directory set to its
@@ -45,7 +45,7 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = u'morpheus-docs'
+project = u'Morpheus Docs'
 copyright = u'2017, Morpheus Data'
 author = u'Morpheus'
 
@@ -167,8 +167,8 @@ latex_elements = {
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-    (master_doc, 'morpheus2122.tex', u'Morpheus Documentation',
-     u'Morpheus Data', 'manual'),
+    (master_doc, 'jwtest.tex', u'Morpheus Documentation',
+     u'jw', 'manual'),
 ]
 
 
