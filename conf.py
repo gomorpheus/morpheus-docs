@@ -45,7 +45,7 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = u'morpheus-docs'
+project = u'Morpheus Docs'
 copyright = u'2017, Morpheus Data'
 author = u'Morpheus'
 
