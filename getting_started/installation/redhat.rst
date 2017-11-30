@@ -5,7 +5,7 @@ To get started installing |morpheus| on RHEL 7 a few prerequisite items are requ
 
 The RedHat Enterprise Linux 7 server needs to be registered and activated with Redhat subscription. The server optional rpms repo needs to be enabled as well.
 
-To check if the server has been actived please run the subscription-manager version. Subscription manager will return the version plus the python depency version.
+To check if the server has been activated, run ``subscription-manager version``. Subscription manager will return the version plus the python dependency version.
 
 If the server has not been registered and activated then the subscription manager version will return the below message.
 
@@ -74,7 +74,9 @@ Next we must install the package onto the machine and configure the morpheus ser
   sudo rpm -i morpheus-appliance_x.x.x-1.amd64.rpm
   sudo morpheus-ctl reconfigure
 
-Once the installation is complete the web interface will automatically start up. By default it will be resolvable at ``https://your_machine_name`` and in many cases this may not be resolvable from your browser. The url can be changed by editing ``/etc/morpheus/morpheus.rb`` and changing the value of ``appliance_url``. After this has been changed simply run:
+Once the installation is complete the web interface will automatically start up. By default it will be resolvable at ``https://your_machine_name`` and in many cases this may not be resolvable from your browser. The url can be changed by editing ``/etc/morpheus/morpheus.rb`` and changing the value of ``appliance_url``. 
+
+After this has been changed simply run:
 
 .. code-block:: bash
 
