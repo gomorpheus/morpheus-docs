@@ -140,6 +140,15 @@ Bash Example:	``HOSTNAME="<%= container.server.hostname %>"``
 		configId,
 		configGroup,
 		configRole
+		volumes {
+			name
+			id
+			deviceName
+			maxStorage
+			unitNumber
+			displayOrder
+			rootVolume
+		}
 	}
 
 .. code-block:: bash
