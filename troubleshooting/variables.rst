@@ -140,6 +140,15 @@ Bash Example:	``HOSTNAME="<%= container.server.hostname %>"``
 		configId,
 		configGroup,
 		configRole
+		volumes {
+			name
+			id
+			deviceName
+			maxStorage
+			unitNumber
+			displayOrder
+			rootVolume
+		}
 	}
 
 .. code-block:: bash
@@ -172,5 +181,7 @@ Bash Example:	``HOSTNAME="<%= container.server.hostname %>"``
 	customOptions {
 		customOptions.fieldName
 	}
+
+vol.id, name: vol.name, deviceName: vol.deviceName, maxStorage: vol.maxStorage, unitNumber: vol.unitNumber,displayOrder: vol.displayOrder, rootVolume: vol.rootVolume
 
 .. IMPORTANT:: Variables are case sensitive
