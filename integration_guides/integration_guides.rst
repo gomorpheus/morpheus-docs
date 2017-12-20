@@ -2,9 +2,6 @@
 Integration Guides
 ******************
 
-Clouds
-======
-
 .. include:: vmware.rst
 .. include:: amazon.rst
 .. include:: azure.rst
@@ -28,12 +25,8 @@ Clouds
 .. include:: cloudfoundry.rst
 .. /include:: vclouddirector.rst
 .. /include:: bluemix.rst
-
 .. include:: centos7template.rst
-
-Identity Management
-===================
-
 .. include:: active_directory.rst
 .. include:: saml.rst
 .. include:: onelogin.rst
+.. include:: snow.rst
