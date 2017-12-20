@@ -23,12 +23,8 @@ Clouds
 .. include:: xen.rst
 .. include:: kubernetes.rst
 .. /include:: macstadium.rst
-
 .. include:: centos7template.rst
-
-Identity Management
-===================
-
 .. include:: active_directory.rst
 .. include:: saml.rst
 .. include:: onelogin.rst
+.. include:: snow.rst
