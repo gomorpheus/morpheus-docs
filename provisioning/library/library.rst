@@ -68,15 +68,24 @@ The following fields are for all node technology types:
 * Version
 * Category
 * Technology
-** Azure
-** Docker
-** Google
-** Hyper-V
-** KVM
-** Nutanix
-** OpenStack
-** VMware
-** Xen
+  * Amazon
+  * Azure
+  * Docker
+  * ESXi
+  * Fusion
+  * Google
+  * Hyper-V
+  * KVM
+  * Nutanix
+  * OpenStack
+  * OracleVM
+  * SCVMM
+  * UpCloud
+  * vCloud Director
+  * VirtualBox
+  * VMware
+  * Xen
+
 * Environment Variables
 
 The Options fields will change depending on the Technology option selected.
