@@ -68,6 +68,7 @@ The following fields are for all node technology types:
 * Version
 * Category
 * Technology
+
   * Amazon
   * Azure
   * Docker
