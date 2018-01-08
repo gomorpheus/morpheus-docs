@@ -2,6 +2,7 @@
 Release Notes
 *************
 
+.. include:: 3_1_3.rst
 .. include:: 3_1_2.rst
 .. include:: 3_1_1.rst
 .. include:: 3_1_0.rst
