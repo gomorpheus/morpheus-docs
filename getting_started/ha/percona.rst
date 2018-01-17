@@ -268,7 +268,7 @@ Bootstrapping the first Node in the cluster
 
    .. code-block:: bash
 
-    mysql> GRANT ALL PRIVILEGES ON * . * TO 'morpheusadmin'@''%' IDENTIFIED BY 'Cloudy2017' with grant option;
+    mysql> GRANT ALL PRIVILEGES ON *.* TO 'morpheusadmin'@'%' IDENTIFIED BY 'Cloudy2017' with grant option;
 
 
     mysql> FLUSH PRIVILEGES;
@@ -277,7 +277,7 @@ Bootstrapping the first Node in the cluster
 
    .. code-block:: bash
 
-    SHOW GRANTS FOR 'morpheusadmin'@''%'';
+    SHOW GRANTS FOR 'morpheusadmin'@'%';
 
 
 Bootstrap the Remaining Nodes
