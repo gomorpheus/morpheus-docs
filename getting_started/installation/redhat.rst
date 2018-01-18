@@ -73,7 +73,7 @@ Once the installation is complete the web interface will automatically start up.
   sudo morpheus-ctl stop morpheus-ui
   sudo morpheus-ctl start morpheus-ui
 
-.. NOTE:: The ``morpheus-ui`` can take 2-3 minutes to startup before it becomes available.
+.. NOTE:: The ``morpheus-ui`` can take 2-3 minutes to startup before it becomes available. If stopping the ``morphues-ui`` results in ``timeout``, kill the ui with ``morpheus-ctl kill morpheus-ui`` and then start.
 
 There are additional post install settings that can be viewed in the Advanced section of the guide.
 
