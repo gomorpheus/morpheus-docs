@@ -80,6 +80,7 @@ The following resources need to be created and configured inside Azure Stack for
 * Virtual Network(s)
 * Storage Account(s)
 * Network Security Group(s)
+
   * Inbound ports open from |morpheus| Appliance: 22, 5985, 3389
   * Outbound ports open to |morpheus| Appliance: 80, 443
 
@@ -91,7 +92,9 @@ Required Credentials & Permissions
 Credentials to integrate |morpheus| with Azure Stack are located in both the public Azure Portal and the Private Azure Stack Portal. The Azure Active Directory Application used must be an owner of the Azure Stack subscription.
 
 * Azure Portal:
+
   * Azure Active Directory Application Credentials
+
     * Directory ID
     * Management URL
     * Identity Resource URL
@@ -99,6 +102,7 @@ Credentials to integrate |morpheus| with Azure Stack are located in both the pub
     * Key Value
 
 * Azure Stack Portal:
+
   * Azure Stack Subscription ID
   * Active Directory App from Azure portal added as owner of the Azure Stack Subscription in Azure Stack.
 
