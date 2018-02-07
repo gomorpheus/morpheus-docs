@@ -1,7 +1,5 @@
-3 Nodes with Externalized DB
-----------------------------
-
-Morpheus 3 Baremetal Node Install Instructions
+3 Node with Externalized DB Configuration
+-----------------------------------------
 
 Requirements
 ^^^^^^^^^^^^
