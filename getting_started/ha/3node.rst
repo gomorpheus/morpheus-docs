@@ -21,15 +21,15 @@ Steps
 
    .. code-block:: bash
 
-     [root@app-server-1 ~]# wget https://example/morpheus-appliance-package.rpm
-     [root@app-server-1 ~]# wget https://example/morpheus-appliance-offline-package.rpm
+     [root@app-server-1 ~] wget https://example/morpheus-appliance-package.rpm
+     [root@app-server-1 ~] wget https://example/morpheus-appliance-offline-package.rpm
 
 #. Once the packages are available on the nodes they can be installed. Make sure that no steps beyond the rpm install are run.
 
    .. code-block:: bash
 
-     [root@app-server-1 ~]# rpm -i morpheus-appliance-package.rpm
-     [root@app-server-1 ~]# rpm -i morpheus-appliance-offline-package.rpm
+     [root@app-server-1 ~] rpm -i morpheus-appliance-package.rpm
+     [root@app-server-1 ~] rpm -i morpheus-appliance-offline-package.rpm
 
 #. Next you will need to edit the Morpheus configuration file on each node.
 
@@ -86,7 +86,7 @@ Steps
 
    .. code-block:: bash
 
-      [root@app-server-1 ~]# morpheus-ctl reconfigure
+      [root@app-server-1 ~] morpheus-ctl reconfigure
 
    Morpheus will come up on all nodes and Elasticsearch will auto-cluster.
 
@@ -96,7 +96,7 @@ Steps
 
    .. code-block:: bash
 
-      [root@app-server-1 ~]# cat /etc/morpheus/morpheus-secrets.json
+      [root@app-server-1 ~] cat /etc/morpheus/morpheus-secrets.json
       {
         "mysql": {
           "root_password": "wam457682b67858ae2cf4bc",
@@ -120,14 +120,14 @@ Steps
 
    .. code-block:: bash
 
-     [root@app-server-1 ~]# cat /opt/morpheus/embedded/rabbitmq/.erlang.cookie
-     754363AD864649RD63D28
+     [root@app-server-1 ~] cat /opt/morpheus/embedded/rabbitmq/.erlang.cookie
+     # 754363AD864649RD63D28
 
 #. Once this is done run a reconfigure on the two nodes that are NOT the SOT nodes.
 
    .. code-block:: bash
 
-    [root@app-server-2 ~]# morpheus-ctl reconfigure
+    [root@app-server-2 ~] morpheus-ctl reconfigure
 
    .. NOTE:: This step will fail. This is ok, and expected. If the reconfigure hangs then use Ctrl+C to quit the reconfigure run and force a failure.
 
@@ -135,48 +135,49 @@ Steps
 
    .. code-block:: bash
 
-     [root@app-server-2 ~]# morpheus-ctl stop rabbitmq
-     [root@app-server-2 ~]# morpheus-ctl start rabbitmq
+     [root@app-server-2 ~] morpheus-ctl stop rabbitmq
+     [root@app-server-2 ~] morpheus-ctl start rabbitmq
 
 #. After this has been completed we can ensure our scripts and binaries are in our path for manual joining. This is done on both of the NOT SOT nodes.
 
    .. code-block:: bash
 
-     [root@app-server-2 ~]# PATH=/opt/morpheus/sbin:/opt/morpheus/sbin:/opt/morpheus/embedded/sbin:/opt/morpheus/embedded/bin:$PATH
+     [root@app-server-2 ~] PATH=/opt/morpheus/sbin:/opt/morpheus/sbin:/opt/morpheus/embedded/sbin:/opt/morpheus/embedded/bin:$PATH
 
 #. Then we will stop the Rabbit service within the Erlang VM and cluster the Rabbit nodes on the two nodes that are NOT the SOT node.
 
    .. code-block:: bash
 
-     [root@app-server-2 ~]# rabbitmqctl stop_app
-     Stopping node 'rabbit@app-server-2' ...
-     [root@app-server-2 ~]# rabbitmqctl join_cluster rabbit@app-server-1 Clustering node 'rabbit@app-server-2' with 'rabbit@app-server-1' ...
-     [root@app-server-2 ~]# rabbitmqctl start_app
-     Starting node 'rabbit@app-server-2' ...
+     [root@app-server-2 ~] rabbitmqctl stop_app
+     # Stopping node 'rabbit@app-server-2' ...
+     [root@app-server-2 ~] rabbitmqctl join_cluster rabbit@app-server-1
+     # Clustering node 'rabbit@app-server-2' with 'rabbit@app-server-1' ...
+     [root@app-server-2 ~] rabbitmqctl start_app
+     # Starting node 'rabbit@app-server-2' ...
 
 #. The last thing to do is restart the Morpheus UI on the two nodes that are NOT the SOT node.
 
    .. code-block:: bash
 
-     [root@app-server-2 ~]# morpheus-ctl restart morpheus-ui
+     [root@app-server-2 ~] morpheus-ctl restart morpheus-ui
 
 #. If this command times out then run:
 
    .. code-block:: bash
 
-    [root@app-server-2 ~]# morpheus-ctl kill morpheus-ui
-    [root@app-server-2 ~]# morpheus-ctl start morpheus-ui
+    [root@app-server-2 ~] morpheus-ctl kill morpheus-ui
+    [root@app-server-2 ~] morpheus-ctl start morpheus-ui
 
 #. You will be able to verify that the UI services have restarted properly by inspecting the logfiles. A standard practice after running a restart is to tail the UI log file.
 
    .. code-block:: bash
 
-    [root@app-server-2 ~]# morpheus-ctl tail morpheus-ui
+    [root@app-server-2 ~] morpheus-ctl tail morpheus-ui
 
 #. For moving /var/opt/morpheus/morpheus-ui files into a shared volume make sure ALL Morpheus services on ALL three nodes are down before you begin.
 
    .. code-block:: bash
 
-    [root@app-server-1 ~]# morpheus-ctl stop
+    [root@app-server-1 ~] morpheus-ctl stop
 
 .. IMPORTANT:: Permissions are as important as is content, so make sure to preserve directory contents to the shared volume. Subsequently you can start all Morpheus services on all three nodes and tail the Morpheus UI log file to inspect errors.
