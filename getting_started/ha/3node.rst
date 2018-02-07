@@ -112,9 +112,9 @@ Steps
           "s3": {
             "aws_access_id": "AKIAI6OFPBN4NWSFBXRQ",
             "aws_secret_key": "a9vxxjH5xkgh6dHgRjLl37i33rs8pwRe3"
-          }
          }
         }
+       }
 
 #. Then copy the erlang.cookie from the SOT node to the other nodes
 
