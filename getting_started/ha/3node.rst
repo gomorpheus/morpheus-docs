@@ -131,7 +131,7 @@ Steps
 
     [root@app-server-2 ~]# morpheus-ctl reconfigure
 
-   NOTE: This step will fail. This is ok, and expected. If the reconfigure hangs then use Ctrl+C to quit the reconfigure run and force a failure.
+   .. NOTE:: This step will fail. This is ok, and expected. If the reconfigure hangs then use Ctrl+C to quit the reconfigure run and force a failure.
 
 #. Subsequently we need to stop and start Rabbit on the NOT SOT nodes.
 
@@ -181,4 +181,4 @@ Steps
 
     [root@app-server-1 ~]# morpheus-ctl stop
 
-IMPORTANT: Permissions are as important as is content, so make sure to preserve directory contents to the shared volume. Subsequently you can start all Morpheus services on all three nodes and tail the Morpheus UI log file to inspect errors.
+.. IMPORTANT:: Permissions are as important as is content, so make sure to preserve directory contents to the shared volume. Subsequently you can start all Morpheus services on all three nodes and tail the Morpheus UI log file to inspect errors.
