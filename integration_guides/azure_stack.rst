@@ -202,6 +202,7 @@ CREATE NEW
   Creates a new Group in |morpheus| and adds the Cloud to the Group.
 
 Review
+^^^^^^
 
 Confirm all settings are correct and select COMPLETE. The Azure Stack Cloud will be added, and |morpheus| will perform the initial cloud sync of:
 
