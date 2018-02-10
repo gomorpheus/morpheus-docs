@@ -1,5 +1,5 @@
 Morpheus DB Migration
-^^^^^^^^^^^^^^^^^^^^^
+---------------------
 
 If your new installation is part of a migration or you need to move the data from your original Morpheus database, this is easily accomplished by using a stateful dump.
 
