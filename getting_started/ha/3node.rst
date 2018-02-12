@@ -1,20 +1,18 @@
-3 Nodes with Externalized DB
-----------------------------
-
-Morpheus 3 Baremetal Node Install Instructions
+3 Node with Externalized DB Configuration
+-----------------------------------------
 
 Requirements
 ^^^^^^^^^^^^
 
- This guide assumes the following:
+This guide assumes the following:
 
-• There is an externalized database running for Morpheus to access.
-• The database service is a MySQL dialect (MySQL, MariaDB, Galera, etc...)
-• A database has been created for Morpheus as well as a user and proper grants have been run for the user. Morpheus will create the schema.
-• The baremetal nodes cannot access the public internet
-• The base OS is RHEL 7.x
-• Shortname versions of hostnames will be resolvable
-• All nodes have access to a shared volume for /var/opt/morpheus/morpheus-ui. This can be done as a post startup step.
+- There is an externalized database running for Morpheus to access.
+- The database service is a MySQL dialect (MySQL, MariaDB, Galera, etc...)
+- A database has been created for Morpheus as well as a user and proper grants have been run for the user. Morpheus will create the schema.
+- The baremetal nodes cannot access the public internet
+- The base OS is RHEL 7.x
+- Shortname versions of hostnames will be resolvable
+- All nodes have access to a shared volume for /var/opt/morpheus/morpheus-ui. This can be done as a post startup step.
 
 Steps
 ^^^^^
@@ -23,21 +21,21 @@ Steps
 
    .. code-block:: bash
 
-     [root@app-server-1 ~]# wget https://example/morpheus-appliance-package.rpm
-     [root@app-server-1 ~]# wget https://example/morpheus-appliance-offline-package.rpm
+     [root@app-server-1 ~] wget https://example/morpheus-appliance-package.rpm
+     [root@app-server-1 ~] wget https://example/morpheus-appliance-offline-package.rpm
 
-3. Once the packages are available on the nodes they can be installed. Make sure that no steps beyond the rpm install are run.
+#. Once the packages are available on the nodes they can be installed. Make sure that no steps beyond the rpm install are run.
 
    .. code-block:: bash
 
-     [root@app-server-1 ~]# rpm -i morpheus-appliance-package.rpm
-     [root@app-server-1 ~]# rpm -i morpheus-appliance-offline-package.rpm
+     [root@app-server-1 ~] rpm -i morpheus-appliance-package.rpm
+     [root@app-server-1 ~] rpm -i morpheus-appliance-offline-package.rpm
 
-Next you will need to edit the Morpheus configuration file on each node.
+#. Next you will need to edit the Morpheus configuration file on each node.
 
-Node 1
+   Node 1
 
-    .. code-block:: bash
+   .. code-block:: bash
 
         appliance_url 'https://appnode1.example.com'
         elasticsearch['es_hosts'] = {'10.0.2.1' => 9300, '10.0.2.2' => 9300, '10.0.2.3' => 9300}
@@ -51,9 +49,9 @@ Node 1
         mysql['morpheus_db_user'] = 'morpheus'
         mysql['morpheus_password'] = 'password'
 
-    Node 2
+   Node 2
 
-    .. code-block:: bash
+   .. code-block:: bash
 
         appliance_url 'https://appnode2.example.com'
         elasticsearch['es_hosts'] = {'10.0.2.2' => 9300, '10.0.2.1' => 9300, '10.0.2.3' => 9300}
@@ -67,9 +65,9 @@ Node 1
         mysql['morpheus_db_user'] = 'morpheus'
         mysql['morpheus_password'] = 'password'
 
-    Node 1
+   Node 3
 
-    .. code-block:: bash
+   .. code-block:: bash
 
         appliance_url 'https://appnode3.example.com'
         elasticsearch['es_hosts'] = {'10.0.2.3' => 9300, '10.0.2.1' => 9300, '10.0.2.2' => 9300}
@@ -83,60 +81,103 @@ Node 1
         mysql['morpheus_db_user'] = 'morpheus'
         mysql['morpheus_password'] = 'password'
 
-.. code-block:: bash
 
-Run the reconfigure on all nodes
+#. Run the reconfigure on all nodes
 
-[root@app-server-1 ~]# morpheus-ctl reconfigure
+   .. code-block:: bash
 
-Morpheus will come up on all nodes and Elasticsearch will auto-cluster. The only item left is the
-manual clustering of RabbitMQ.
-Select one of the nodes to be your Source Of Truth (SOT) for RabbitMQ clustering. We need to share secrets for RabbitMQ, the erlang cookie and join the other nodes to the SOT node.
-Begin by copying secrets from the SOT node to the other nodes.
+      [root@app-server-1 ~] morpheus-ctl reconfigure
 
- [root@app-server-1 ~]# cat /etc/morpheus/morpheus-secrets.json
-{
-  "mysql": {
-    "root_password": "cad737682b398919be2cf4ae",
-    "morpheus_password": "password",
-    "ops_password": "65d98093850d319a99ae2d15"
-  },
-  "rabbitmq": {
-    "morpheus_password": "edd00cf7714b25bc",
-    "queue_user_password": "f099fd6158c1eff0",
-    "cookie": "283263BC86642FD88E79"
-  },
-  "vm-images": {
-    "s3": {
-      "aws_access_id": "AKIAI6SF4BN7NWSFAWVQ",
-      "aws_secret_key": "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"
-    }
-} }
-Then copy the erlang.cookie from the SOT node to the other nodes
-Once this is done run a reconfigure on the two nodes that are NOT the SOT nodes.
-[root@app-server-2 ~]# morpheus-ctl reconfigure
-NOTE: This step will fail. This is ok, and expected. If the reconfigure hangs then use Ctrl+C to
-quit the reconfigure run and force a failure.
-Subsequently we need to stop and start Rabbit on the NOT SOT nodes.
-After this has been completed we can ensure our scripts and binaries are in our path for manual joining. This is done on both of the NOT SOT nodes.
- [root@app-server-1 ~]# cat /opt/morpheus/embedded/rabbitmq/.erlang.cookie
-283263BC86642FD88E79
-  [root@app-server-2 ~]# morpheus-ctl stop rabbitmq
-[root@app-server-2 ~]# morpheus-ctl start rabbitmq
- [root@app-server-2 ~]#
-PATH=/opt/morpheus/sbin:/opt/morpheus/sbin:/opt/morpheus/embedded/sbin:/op
-t/morpheus/embedded/bin:$PATH
+   Morpheus will come up on all nodes and Elasticsearch will auto-cluster.
 
-Then we will stop the Rabbit service within the Erlang VM and cluster the Rabbit nodes on the two nodes that are NOT the SOT node.
-[root@app-server-2 ~]# rabbitmqctl stop_app
-Stopping node 'rabbit@app-server-2' ...
-[root@app-server-2 ~]# rabbitmqctl join_cluster rabbit@app-server-1 Clustering node 'rabbit@app-server-2' with 'rabbit@app-server-1' ... [root@app-server-2 ~]# rabbitmqctl start_app
-Starting node 'rabbit@app-server-2' ...
-The last thing to do is restart the Morpheus UI on the two nodes that are NOT the SOT node.
- [root@app-server-2 ~]# morpheus-ctl restart morpheus-ui
-If this command times out then run:
-You will be able to verify that the UI services have restarted properly by inspecting the logfiles. A standard practice after running a restart is to tail the UI log file.
- [root@app-server-2 ~]# morpheus-ctl tail morpheus-ui
-For moving /var/opt/morpheus files into a shared volume make sure ALL Morpheus services on ALL three nodes are down before you begin.
- [root@app-server-1 ~]# morpheus-ctl stop
-Permissions are as important as is content, so make sure to preserve directory contents to the shared volume. Subsequently you can start all Morpheus services on all three nodes and tail the Morpheus UI log file to inspect errors.
+#. The only item left is the manual clustering of RabbitMQ. Select one of the nodes to be your Source Of Truth (SOT) for RabbitMQ clustering. We need to share secrets for RabbitMQ, the erlang cookie and join the other nodes to the SOT node.
+
+   Begin by copying secrets from the SOT node to the other nodes.
+
+   .. code-block:: bash
+
+      [root@app-server-1 ~] cat /etc/morpheus/morpheus-secrets.json
+      {
+        "mysql": {
+          "root_password": "wam457682b67858ae2cf4bc",
+          "morpheus_password": "password",
+          "ops_password": "98d9677686698d319r6356ae3a77"
+        },
+        "rabbitmq": {
+          "morpheus_password": "adff00cf8714b25mc",
+          "queue_user_password": "r075f26158c1fes2",
+          "cookie": "6458933CD86782AD39E25"
+        },
+        "vm-images": {
+          "s3": {
+            "aws_access_id": "AKIAI6OFPBN4NWSFBXRQ",
+            "aws_secret_key": "a9vxxjH5xkgh6dHgRjLl37i33rs8pwRe3"
+         }
+        }
+       }
+
+#. Then copy the erlang.cookie from the SOT node to the other nodes
+
+   .. code-block:: bash
+
+     [root@app-server-1 ~] cat /opt/morpheus/embedded/rabbitmq/.erlang.cookie
+     # 754363AD864649RD63D28
+
+#. Once this is done run a reconfigure on the two nodes that are NOT the SOT nodes.
+
+   .. code-block:: bash
+
+    [root@app-server-2 ~] morpheus-ctl reconfigure
+
+   .. NOTE:: This step will fail. This is ok, and expected. If the reconfigure hangs then use Ctrl+C to quit the reconfigure run and force a failure.
+
+#. Subsequently we need to stop and start Rabbit on the NOT SOT nodes.
+
+   .. code-block:: bash
+
+     [root@app-server-2 ~] morpheus-ctl stop rabbitmq
+     [root@app-server-2 ~] morpheus-ctl start rabbitmq
+
+#. After this has been completed we can ensure our scripts and binaries are in our path for manual joining. This is done on both of the NOT SOT nodes.
+
+   .. code-block:: bash
+
+     [root@app-server-2 ~] PATH=/opt/morpheus/sbin:/opt/morpheus/sbin:/opt/morpheus/embedded/sbin:/opt/morpheus/embedded/bin:$PATH
+
+#. Then we will stop the Rabbit service within the Erlang VM and cluster the Rabbit nodes on the two nodes that are NOT the SOT node.
+
+   .. code-block:: bash
+
+     [root@app-server-2 ~] rabbitmqctl stop_app
+     # Stopping node 'rabbit@app-server-2' ...
+     [root@app-server-2 ~] rabbitmqctl join_cluster rabbit@app-server-1
+     # Clustering node 'rabbit@app-server-2' with 'rabbit@app-server-1' ...
+     [root@app-server-2 ~] rabbitmqctl start_app
+     # Starting node 'rabbit@app-server-2' ...
+
+#. The last thing to do is restart the Morpheus UI on the two nodes that are NOT the SOT node.
+
+   .. code-block:: bash
+
+     [root@app-server-2 ~] morpheus-ctl restart morpheus-ui
+
+#. If this command times out then run:
+
+   .. code-block:: bash
+
+    [root@app-server-2 ~] morpheus-ctl kill morpheus-ui
+    [root@app-server-2 ~] morpheus-ctl start morpheus-ui
+
+#. You will be able to verify that the UI services have restarted properly by inspecting the logfiles. A standard practice after running a restart is to tail the UI log file.
+
+   .. code-block:: bash
+
+    [root@app-server-2 ~] morpheus-ctl tail morpheus-ui
+
+#. For moving /var/opt/morpheus/morpheus-ui files into a shared volume make sure ALL Morpheus services on ALL three nodes are down before you begin.
+
+   .. code-block:: bash
+
+    [root@app-server-1 ~] morpheus-ctl stop
+
+.. IMPORTANT:: Permissions are as important as is content, so make sure to preserve directory contents to the shared volume. Subsequently you can start all Morpheus services on all three nodes and tail the Morpheus UI log file to inspect errors.

@@ -38,3 +38,4 @@ The application tier is easily installed with the same debian or yum repository 
 .. include:: ha/rabbitmq.rst
 .. include:: ha/elasticsearch.rst
 .. include:: ha/appliance_ha.rst
+.. include:: ha/3node.rst
