@@ -1,0 +1,43 @@
+v2.12.5
+=======
+
+New Features
+------------
+
+- API: Archives section added
+- API: Networks section added
+- OracleVM: Virtual Image disk count and sizes now auto-populate in provisioning wizard
+- Plans & Pricing: Additional decimal places allowed for in Prices and Costs
+- Policies: Lifecycle extension links in emails are now one-time use
+- Roles: System "User Admin" role is no longer multitenant
+
+Fixes
+-----
+
+- API: Billing query optimizations
+- API: Costs removed from API billing when accessing from sub-tenant user
+- App Template: Fix for App Template wizard not loading local Amazon Images
+- AWS: Fix for "Assign EIP" flag when subnet not set to auto-assign Public IP by default.
+- AWS: Fix for Converted to managed Instances attaching service plans and pricing
+- Azure: Fix for US Gov pricing shown on EU Azure plans
+- Clouds: Fix for starting VM from Virtual Machine list tab within Cloud
+- Instances: Fix for error on Actions -> Backup from main instances list on converted to managed Instances
+- Instances: Fix for inability to select a service plan when deploying HAProxy Instance Type in some environments
+- Instances: Fix for Virtual Machine link on Instance with Pending or Denied Approval status
+- Instances: Multiple regional Morpheus Virtual Image seed fixes
+- Library: Fix for Option Type variables not parsing when exported as Environment Variables
+- Monitoring: Fix for Incident re-open button
+- OracleVM: Fix for issue with multi-disk Virtual Images
+- OracleVM: Fix for Virtual Image dropdown showing unsupported Virtual Images
+- OracleVM: Fix for IP Assignment with Infoblox Integration
+- Plans and Pricing: Descriptions added for Volume Types
+- Reports: Fix for Analytics Report typos
+- Reports: Fixes for Sub-Tenants Cloud Reports
+- Reports: Tenant report removed from Sub-Tenants
+- Roles: Fix for Multitenant User Roles not propagating permission changes
+- UI: Fix for lower menu bar moving
+- Usage: Fix for multiple and duplicate records
+- vCenter: Fix for Hypervisor Console issue when multiple VMware clouds are sharing ESXi Hosts
+- vCenter: Fix for additional users not being created for Windows VMware instances when using static ip's & Virtual Image credentials not populated
+- Virtual Images: Download option for Synced Virtual Images removed
+- Virtual Images: Fixes for error when adding Virtual Image with url with CIFS storage provider
