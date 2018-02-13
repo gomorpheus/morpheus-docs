@@ -1,30 +1,42 @@
-v3.1.3
+v3.1.4
 ======
 
 New Features
 ------------
 
-- Administration: Local user accounts can now be disabled
-- API: Storage Providers added
-- Cloud Foundry: Allow free form username input for space user management in Cloud Foundry
-- Cloud Foundry: Ability to create a space and add/remove users from a space
-- Google Cloud: Network Tagging support added
-- Instances: “Open Console” Action added
-- Instance Types: Morpheus Ubuntu 16.04 added for AWS, Hyper-V, Xen, ESXi and SCVMM
-- Library: Workflows added to Layouts
+- Cisco ACI: Morpheus now integrates with Cisco ACI. Add ACI as a network and security integration. Inventory your existing ACI configurations, create networks, bridge domains, application profiles, tenants, endpoint groups, contexts, filters and contracts. Provision instances into new endpoint groups and define security groups that apply contracts on provision.
+- Load Balancers: F5 Improvements: Virtual Servers, Nodes and Pools can now be created, edited and deleted.
+- Openstack: Network Improvements including Multi-network, Static IP and IP Pool support
+- Hyper-V: Network Improvements including Multi-network, Static IP and IP Pool support
+- VMware Performance Improvements- 4x increase in VMware sync and performance
+- Clouds: New Alibaba Cloud Integration
+- UI- Localization support expanded
+- Morpheus Windows Agent 1.4.1 with script execution via agent command bus
+- Infrastructure: Instance Node Type added to VM detail pages
+- Library: New Search Filters
+- Library: Option Types can now be re-ordered
+- Plans & Pricing: Prices: INCUR CHARGES setting added with running, stopped, and always options.
+- vCloud Direct: IP Pools sync added
+- SCVMM- Generation option added to provisioning
+- Openstack: API token now cached to improve performance
+- Instance Details: App associations added
+- Amazon: Improved provisioning error details
+- XEN: XVA Import added
+- Containerized CLI: https://hub.docker.com/r/morpheusdata/morpheus-cli/
 
 Fixes
 -----
 
-- Apps: Fix for broken image placeholder when creating a new app template in latest Chrome build.
-- AWS: Instances: Add Node: not propagating settings from original instance
-- Google: Provisioning: Fix for External IP list missing static IPs
-- High Availability: Implementation of the quartz lock handler
-- Image Builder: Fix for start time displayed in UTC
-- Instances: Provisioning: Fix for 500 error if disk size has decimal
-- Instances: Removed inaccessible links in sub-tenants for master tenant hosts and cloud
-- Library: Scripts: Fix for "Run as User"
-- Library: Scripts: Fix for sudo flag
-- OracleVM: Fix for Library: add OVM Node Type
-- Performance: WinRM Optimizations
-- PXE Boot: Fix for validation of Supermicro container and VM server mode boot mapping.
+- Infrastructure: Fix for Hosts stop/start power indicator
+- Load Balancers: Fix for Default cloud selected when adding Load Balancer from cloud detail pages
+- AWS: Fix for AWS Docker Host service plan assignment
+- Networks: Fix for Assign Pool dropdown timeouts
+- Network Services: Consul - fix for name requirement not enforced
+- Virtual Images: Fix for Morpheus VMware Ubuntu 16.04 image
+- Tenancy: Assign to Tenant bulk action listing removed
+- Openstack: Keypairs are now removed on zone delete
+- vCloud Director: Fix for Provisioning - Datastore selection
+- vCloud Director: Fix for error on cloud sync
+- Provisioning: Fix for No host selection available for some System Instance types
+- Instances - fix for exported variables
+- Provisioning: Fix for 32-bit and macOS agent install
