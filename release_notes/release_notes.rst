@@ -2,6 +2,10 @@
 Release Notes
 *************
 
+.. include:: 2_12_8.rst
+.. include:: 2_12_7.rst
+.. include:: 2_12_6.rst
+.. include:: 2_12_5.rst
 .. include:: 2_12_4.rst
 .. include:: 2_12_3.rst
 .. include:: 2_12_2.rst
