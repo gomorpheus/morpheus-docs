@@ -48,7 +48,7 @@ be offloaded via a Storage Provider some space is still recommended for
 dealing with non streamable virtual image formats.
 
 In many common scenarios it might be prudent to configure a shared
-datastore on a storage cluster and mounted to ``/var/opt/morpheus``
+datastore on a storage cluster and mounted to ``/var/opt/morpheus/morpheus-ui``
 (this is where all user based data and database data is persisted).
 There are several folders located within here that can be independently
 located as desired.
