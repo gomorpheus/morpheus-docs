@@ -19,7 +19,7 @@ Your network must be configured for PXE boot, and the TFTP server port need to m
 * Mac or IP addresses of PXE target mapped in {morpheus} `Infrastructure -> Boot - Mapping`
 * Target host configured for Network boot in BIOS
 
-.. NOTE:: The {morpheus} PXE port is set in ``opt/morpheus/conf/application.yml``
+.. NOTE:: The |morpheus| PXE port is set in ``opt/morpheus/conf/application.yml``
 
 .. To PXE Boot
 .. -----------
