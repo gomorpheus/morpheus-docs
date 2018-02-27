@@ -11,25 +11,34 @@ TIME ZONE
   Configures the time zone on provisioned VM's if necessary.
 DATACENTER ID
   Used for differentiating pricing among multiple datacenters. Leave blank unless prices are properly configured.
+NETWORK MODE
+  Unmanaged or Managed
+SECURITY MODE
+  Defines if Morpheus will control local firewall of provisioned servers and hosts.
+STORAGE MODE
+  Single Disk, LVM or Clustered
+GUIDANCE
+  Enable Guidance recommendations on cloud resources.
 DNS INTEGRATION
   Records for instances provisioned in this cloud will be added to selected DNS integration.
 SERVICE REGISTRY
   Services for instances provisioned in this cloud will be added to selected Service Registry integration.
 CONFIG MANAGEMENT
   Select a Chef, Salt, Ansible or Puppet integration to be used with this Cloud.
+CMDB
+  Select CMDB Integraiton to automatically update selected CMDB.
 AGENT INSTALL MODE
   * SSH / WINRM: |morpheus| will use SSH or WINRM for Agent install.
   * Cloud-Init (when available): |morpheus| will utilize Cloud-Init or Cloudbase-Init for agent install when provisioning images with Cloud-Init/Cloudbase-Init installed. |morpheus| will fall back on SSH or WINRM if cloud-init is not installed on the provisioned image.
-
 API PROXY
   Required when a Proxy Server blocks communication between the |morpheus| Appliance and the Cloud. Proxies can be added in the `Infrastructure -> Networks -> Proxies` tab.
 
 Provisioning Options
 --------------------
 
-API PROXY
+PROXY
   Required when a Proxy Server blocks communication between an Instance and the |morpheus| Appliance. Proxies can be added in the `Infrastructure -> Networks -> Proxies` tab.
 Bypass Proxy for Appliance URL
   Enable to bypass proxy settings (if added) for Instance Agent communication to the Appliance URL.
 USER DATA (LINUX)
-  Add cloud-init user data using bash syntax.
+  Add cloud-init user data or scripts. Assumes bash syntax.

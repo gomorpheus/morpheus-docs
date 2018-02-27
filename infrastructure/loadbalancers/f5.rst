@@ -1,0 +1,83 @@
+F5 Load Balancers
+
+Overview
+
+
+Add F5 Load Balancer
+--------------------
+
+#. Navigate to `Infrastructure -> Load Balancers`
+#. Select :guilabel:`+ ADD`
+#. Select `F5 BigIP`
+#. Fill in the following:
+
+   GROUP
+    Select the Group the Load Balancer will be available for
+   CLOUD
+    Select the Cloud the Load Balancer will be available for
+   NAME
+    Name of the Load Balancer in |morpheus|
+   DESCRIPTION
+    Idenetifying information displayed on the Load Balancer list page.
+   VISIBILITY
+    Define Multi-Tenant permissions
+   API HOST
+    IP or resolvable hostname url.
+   API PORT
+    Typically ``8443``
+   USERNAME
+    API user
+   PASSWORD
+    API user password
+   MANAGEMENT URL
+    Example: ``https://10.30.20.31:8443/xui/``
+
+#. Save Changes
+
+CREATE VIRTUAL SERVER
+---------------------
+
+NAME
+VIP TYPE
+DESCRIPTION
+ Enabled
+SOURCE ADDRESS
+HOSTNAME
+VIP ADDRESS
+VIP PORT
+PROTOCOL
+CLIENT PROFILE
+SERVER PROFILE
+HTTP PROFILE
+POLICY
+DEFAULT POOL
+
+CREATE POOL
+-----------
+
+NAME
+DESCRIPTION
+MODE
+SERVICE PORT
+NODES
+MONITORS
+
+
+CREATE NODE
+-----------
+
+NAME
+DESCRIPTION
+ADDRESS
+MONITOR
+SERVICE PORT
+
+
+
+
+
+
+
+Create new node- server, back end
+
+Pool
