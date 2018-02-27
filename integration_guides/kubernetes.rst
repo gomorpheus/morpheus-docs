@@ -35,6 +35,6 @@ Kubernetes Clusters can be provisioned into any Cloud Type by setting the CONTAI
 
 .. IMPORTANT:: The CONTAINER MODE must be set prior to provisioning any Docker Hosts. Once Docker Hosts exist in a Cloud, the CONTAINER MODE setting cannot be changed.
 
-Once the CONTAINER MODE is set on a Cloud, a Kubernetes Cluster can be created by adding 3 Docker Hosts to the cloud. The first 3 hosts will be the cluster, and additional host will be  configured as workers.
+Once the CONTAINER MODE is set on a Cloud, a Kubernetes Cluster can be created by adding at least 4 Container Hosts to the cloud. The first 3 hosts will be master nodes, and additional hosts will be configured as workers.
 
-IMPORTANT:: For the Kubernetes Cluster to be successfully created, each host must finish provisioning before the next host is created. Do not start provisioning the second host in the cluster until the first is completed, and the third until the second is finished being created.
+IMPORTANT:: For the Kubernetes Cluster to be successfully created, each host must finish provisioning before the next host is created. Do not start provisioning the second host in the cluster until the first is completed, and the third until the second is finished being created, etc.
