@@ -1,4 +1,4 @@
-applicationsCloud Foundry
+Cloud Foundry
 =============
 
 Overview
@@ -77,39 +77,3 @@ From `Infrastructure -> Groups`
 
 #. Select :guilabel:`NEXT`
 #. Review and then Select :guilabel:`COMPLETE`
-
-
-Marketplace
-
-Syncing in 4 types of services
-mysql
-redis
-rabbit
-
-bm: postgres
-
-Provisioning-
-
-Cloud Foundry App
-
-select plan
-
-select space
-
-pick deployment- if you don't will just be a shell, use deployment with test app, git repo
-
-pull down git repo, deploy like cf cli, parse the manifest, ignore fields like plan, path will pull down file and push to cloud
-
-creates application, then deploys and configures routes
-
-We are pulling in stats for an application- computer memory and storage, agent stats
-
-One route is defined location will be updated
-
-Rails sample
-
-services- assume services are already created
-
-On cloud refresh we sync routes tied to applaictions in the cloud
-
-Cloud foundry health check type

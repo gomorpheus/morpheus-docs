@@ -22,7 +22,7 @@ Integration Guides
 .. include:: kubernetes.rst
 .. /include:: macstadium.rst
 .. include:: scvmm.rst
-.. /include:: cloudfoundry.rst
+.. include:: cloudfoundry.rst
 .. /include:: vclouddirector.rst
 .. /include:: bluemix.rst
 .. include:: centos7template.rst
