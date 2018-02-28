@@ -61,7 +61,7 @@ Below is a sample output from the script for reference:
   [DNS Delegation] Change records on MAS-DC01 manually if you plan to use DNS forwarding.
   [DNS Delegation] Change records back to the original internal IPs before running this script again.
 
-  VERBOSE: App Service detected and external IP's specified, creating mappings....
+  VERBOSE: App Service detected and external IPs specified, creating mappings.
   [App Service API] Created port mappings on 10.30.23.123 to 192.168.102.17
   [App Service API] Ports: 443
   [App Service API] DNS: 10.30.23.123  api.appservice.local.azurestack.external
@@ -209,4 +209,4 @@ Confirm all settings are correct and select COMPLETE. The Azure Stack Cloud will
 * Marketplace Catalog
 * Availability Sets
 
-.. TIP:: Synced Networks can be configured or deactivated from the Networks section in this Clouds detail page, or in the `Infrastructure -> Networks` section.
+.. TIP:: Synced Networks can be configured or deactivated from the Networks section in this Clouds detail page, or in the ``Infrastructure -> Networks`` section.
