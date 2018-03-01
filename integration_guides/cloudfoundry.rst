@@ -76,10 +76,31 @@ Adding PCF Cloud From `Infrastructure -> Groups`
 #. Select :guilabel:`NEXT`
 #. Review and then Select :guilabel:`COMPLETE`
 
+Adding Spaces
+^^^^^^^^^^^^^^
+Cloud Foundry Spaces are referred to as Resource Pools in Morpheus.  You can add a new Space by:
+
+#. Navigating to the Cloud and selecting the Resources tab.
+#. Then, click ‘+ Add Resource’.
+#. Give the Resource a Name
+#. Expand the Managers, Developers, and Auditors section to add specific Cloud Foundry users to the roles.  When adding a user to these sections, use their Cloud Foundry email addresses.
+
+
 Provisioning
 ------------
 
-|morpheus| automatically seeds MySQL, Redis and RabbitMQ PCF Instance Types, as well as a generic Cloud Foundry Instance Type that will create a shell app used in conjunction with deployments. PCF Marketplace items can also be easily added to the Provisioning Library in the Cloud detail view Marketplace tab. The Marketplace item will be added to the selected Instance Type and available when selecting the Cloud Foundry Cloud during Instance or App Template creation.
+|morpheus| automatically seeds MySQL, Redis and RabbitMQ PCF Instance Types, as well as a generic Cloud Foundry Instance Type that will create a shell app used in conjunction with deployments. PCF Marketplace items can also be added to the Provisioning Library in the Cloud detail view Marketplace tab. The Marketplace item will be added to the selected Instance Type and available when selecting the Cloud Foundry Cloud during Instance or App Template creation.
+
+Deployments
+^^^^^^^^^^^
+
+The Cloud Foundry App Instance Type is used in conjunction with deployments. Users do not have to pick deployment when creating a Cloud Foundry App Instance Type, but then Instance will only be a shell of a Cloud Foundry Application.
+
+A deployment in Morpheus can either point to a git hub repository or contain the actual manifest.yml and associated artifacts required for a Cloud Foundry deployment.  During the deployment, Morpheus will gather up the files required.  Therefore, if the deployment points to a git hub repository, Morpheus will fetch the files from git hub.  Once the files are obtained, Morpheus will deploy the artifacts in a similar fashion to the Cloud Foundry cli.  This includes parsing the manifest to obtain the parameters to create or update the Cloud Foundry application.  Morpheus will ignore certain fields such as memory and disk size because they are dictated by the selected plan.  Other fields are utilized such as routes.  After parsing the manifest.yml file (including overwriting certain fields), Morpheus is ready to update or create the App in Cloud Foundry.
+
+After the App is configured, the artifacts references in the Morpheus deployment are uploaded to Cloud Foundry for the App.  Note that when paths are referenced in the manifest.yml file, the paths continue to be relative to the manifest.  So, a jar file under build/libs would need to be found under the build/libs directory.
+
+If Cloud Foundry services are specified in the manifest, they must already exist within Cloud Foundry.  Morpheus App templates can be utilized to wire up Cloud Foundry services created by Morpheus.  In this case, Morpheus will add all of the included service names defined in the App template to the manifest.yml services section.  Therefore, multiple services can be used and wired up by Morpheus.”
 
 Adding Marketplace Items
 ^^^^^^^^^^^^^^^^^^^^^^^^
@@ -122,13 +143,7 @@ Seeded and Marketplace Items
 Cloud Foundry App Instance Type
 ...............................
 
-The Cloud Foundry App Instance Type is used in conjunction with deployments. Users do not have to pick deployment when creating a Cloud Foundry App Instance Type, but then Instance will only be a shell of a Cloud Foundry Application.
-
-When using a deployment, |morpheus| will pull down the repo and deploy just like the Cloud Foundry cli, parse the manifest, ignore fields such as memory and disk size which is dictated by the selected plan, and pull down files from path and push to the Instance. Other fields are utilized such as routes, however if services are specified in the manifest, |morpheus| assumes they are already created with matching names. |morpheus| app templates can be created to deploy services used in a manifest, and the service names in the manifest will be overwritten by the Morpheus provisioned service names. Multiple services can be used and wired up by Morpheus.
-
 .. IMPORTANT:: Add Deployments in ``Provisioning -> Deployments`` to be used when provisioning a Cloud Foundry App Instance Type.
-
-Provision a Cloud Foundry App Instance Type
 
 .. NOTE:: Minimal options are outlined below.
 
