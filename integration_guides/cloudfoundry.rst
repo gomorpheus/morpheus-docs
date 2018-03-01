@@ -1,10 +1,7 @@
 Cloud Foundry
 =============
 
-Overview
---------
-
-Configuraiton
+Configuration
 -------------
 
 Adding PCF Cloud From `Infrastructure -> Clouds`
@@ -91,7 +88,7 @@ Adding Marketplace Items
 #. Select the MARKETPLACE tab
 #. Select :guilabel:`+ ADD MARKETPLACE ITEM`
 #. Select the |morpheus| Instance Type to add the Marketplace Item to.
-#. Enter verison
+#. Enter version
 #. Search for and select Marketplace Item
 #. Select :guilabel:`SAVE CHANGES`
 
@@ -109,7 +106,7 @@ Seeded and Marketplace Items
 #. Select :guilabel:`NEXT`
 #. Select a Group and PCF Cloud
 #. Add an Instance Name
-#. Optionally select and Environmnent Tag and/or add a custom Tag
+#. Optionally select and Environment Tag and/or add a custom Tag
 #. Select :guilabel:`NEXT`
 #. Select Version and Instance Configuration for a Cloud Foundry layout, ex: `Cloud Foundry MySQL`
 #. Select a Plan and available options for the Plan, or use the custom Plan
@@ -125,11 +122,11 @@ Seeded and Marketplace Items
 Cloud Foundry App Instance Type
 ...............................
 
-The Cloud Foundry App Instance Type is used in conjuction with deployments. Users do not have to pick deployment when creating a Cloud Foundry App Instance Type, but then Instance will only be a shell of a Cloud Foundry Application.
+The Cloud Foundry App Instance Type is used in conjunction with deployments. Users do not have to pick deployment when creating a Cloud Foundry App Instance Type, but then Instance will only be a shell of a Cloud Foundry Application.
 
 When using a deployment, |morpheus| will pull down the repo and deploy just like the Cloud Foundry cli, parse the manifest, ignore fields such as memory and disk size which is dictated by the selected plan, and pull down files from path and push to the Instance. Other fields are utilized such as routes, however if services are specified in the manifest, |morpheus| assumes they are already created with matching names. |morpheus| app templates can be created to deploy services used in a manifest, and the service names in the manifest will be overwritten by the Morpheus provisioned service names. Multiple services can be used and wired up by Morpheus.
 
-.. IMPORTANT:: Add Deployments in ``Provisioning -> Deployemnts`` to be used when provisioning a Cloud Foundry App Instance Type.
+.. IMPORTANT:: Add Deployments in ``Provisioning -> Deployments`` to be used when provisioning a Cloud Foundry App Instance Type.
 
 Provision a Cloud Foundry App Instance Type
 
@@ -139,18 +136,18 @@ Provision a Cloud Foundry App Instance Type
 #. Select :guilabel:`NEXT`
 #. Select a Group and PCF Cloud
 #. Add an Instance Name
-#. Optionally select and Environmnent Tag and/or add a custom Tag
+#. Optionally select and Environment Tag and/or add a custom Tag
 #. Select :guilabel:`NEXT`
 #. Select a Plan and available options for the Plan, or use the custom Plan
 #. Select a Space to add the Instance to
 #. Select :guilabel:`NEXT`
-#. In the Deployemnts seciton, select a Deployment and Version to be deployed. These can be git repos or files added in ``Provisioning -> Deployments``
+#. In the Deployments section, select a Deployment and Version to be deployed. These can be git repos or files added in ``Provisioning -> Deployments``
 
    .. IMPORTANT:: If services are specified in a git repo manifest, |morpheus| assumes they are already exist in the PCF cloud with matching names.
 
 #. Select :guilabel:`NEXT`
 #. Select :guilabel:`COMPLETE`
 
-This will quickly create the Cloud Foundry Applicaiton, and then the deployment will follow which may take longer depending on the app configuration. The locaiton will be updated with the route once it is configured.
+This will quickly create the Cloud Foundry Application, and then the deployment will follow which may take longer depending on the app configuration. The location will be updated with the route once it is configured.
 
 .. NOTE:: Compute, Memory, and CPU stats will be pulled, and a Cloud Foundry monitoring health check will be automatically configured for the instance.
