@@ -21,7 +21,7 @@ server where the configuration file resides.
 
    .. code-block:: bash
 
-    sudo vi /etc/morpheus/morpheus.rb
+     sudo vi /etc/morpheus/morpheus.rb
 
    Change the values to match your configured services:
 
