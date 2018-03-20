@@ -102,6 +102,43 @@ After the App is configured, the artifacts references in the Morpheus deployment
 
 If Cloud Foundry services are specified in the manifest, they must already exist within Cloud Foundry.  Morpheus App templates can be utilized to wire up Cloud Foundry services created by Morpheus.  In this case, Morpheus will add all of the included service names defined in the App template to the manifest.yml services section.  Therefore, multiple services can be used and wired up by Morpheus.”
 
+Example
+^^^^^^^
+
+To better understand how Morpheus parses the manifest.yml file, lets take a closer look at the Cloud Foundry 'spring-music' project.  The project can be found here (https://github.com/cloudfoundry-samples/spring-music).
+
+The project contains the required manifest.yml file as well as the source code and build.gradle file to define how the project is to be built.  After downloading the project to your local machine, build the project to generate the jar.
+
+Now, let's take a look at the manifest.yml file:
+
+.. code-block:: bash
+
+    applications:
+
+    - name:
+    spring-music
+
+    memory:
+    1G
+
+    random-route:
+    true
+
+    path:
+    build/libs/spring-music.jar
+
+
+Using the Cloud Foundry docs (https://docs.cloudfoundry.org/devguide/deploy-apps/manifest.html), we can gain a better understanding of how this file is utilized by Cloud Foundry.
+
+- The -name parameter defines the name that will be given to the application in Cloud Foundry.  Morpheus will overwrite this value with the name given to the Instance being created in Morpheus.
+
+- The -memory parameter (as well as the disk_quota parameter if specified) will be overwritten by Morpheus based on the plan specified for the Instance.
+
+- The -path parameter defines, where relative to the manifest.yml file, your Cloud Foundry application can be found.
+
+- The -random-route parameter, as well as all other parameters described in the Cloud Foundry documentation will simply be passed through to Cloud Foundry.
+
+
 Adding Marketplace Items
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
