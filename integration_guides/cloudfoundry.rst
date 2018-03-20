@@ -113,19 +113,12 @@ Now, let's take a look at the manifest.yml file:
 
 .. code-block:: bash
 
+    ---
     applications:
-
-    - name:
-    spring-music
-
-    memory:
-    1G
-
-    random-route:
-    true
-
-    path:
-    build/libs/spring-music.jar
+    - name: spring-music
+      memory: 1G
+      random-route: true
+      path: build/libs/spring-music.jar
 
 
 Using the Cloud Foundry docs (https://docs.cloudfoundry.org/devguide/deploy-apps/manifest.html), we can gain a better understanding of how this file is utilized by Cloud Foundry.
