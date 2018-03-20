@@ -14,7 +14,7 @@ Setup
 
     cloudbase-init.conf
     ^^^^^^^^^^^^^^^^^^^
-    .. code-block:: bash
+    .. code-block:: 
 
         [DEFAULT]
         # username=Admin
@@ -68,7 +68,7 @@ Setup
     cloudbase-init-unattend.conf
     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-    .. code-block:: bash
+    .. code-block::
 
         [DEFAULT]
         username=Admin
@@ -97,7 +97,7 @@ Setup
     unattend.xml
     ^^^^^^^^^^^^
 
-    .. code-block:: bash
+    .. code-block:: xml
 
         <?xml version="1.0" encoding="utf-8"?>
         <unattend xmlns="urn:schemas-microsoft-com:unattend">
@@ -155,11 +155,11 @@ Setup
 
 #. To run a sysprep using the cloudbase-init configuraiton, run the following in a command prompt:
 
-   .. code-block:: bash
+   .. code-block:: powershell
 
     cd C:\Program Files\Cloudbase Solutions\Cloudbase-Init\conf
     C:\Windows\System32\sysprep\sysprep.exe /generalize /oobe /unattend:Unattend.xml
 
 #. Sysprep will run and Windows will be powered down. The VM can now be converted to an Image/Template and synced or uploaded to Morpheus and used for Provisioning.
 
-.. IMPORTANT:: Upon upload or sync of the Virtual Image, ensure ``cloudbase enable`` is checked in the Virtual Image config, and the existing or unattend.xml credentials when using sysprep are populated. 
+.. IMPORTANT:: Upon upload or sync of the Virtual Image, ensure ``cloudbase enable`` is checked in the Virtual Image config, and the existing or unattend.xml credentials when using sysprep are populated.
