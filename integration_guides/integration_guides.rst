@@ -26,6 +26,7 @@ Integration Guides
 .. /include:: vclouddirector.rst
 .. /include:: bluemix.rst
 .. include:: centos7template.rst
+.. include:: cloudbase-init.rst
 .. include:: active_directory.rst
 .. include:: snow.rst
 .. include:: saml.rst
