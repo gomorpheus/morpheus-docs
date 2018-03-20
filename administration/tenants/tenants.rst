@@ -55,6 +55,8 @@ Name, Username, Email, and Role.
 
 From this page: Create, Edit, and Delete users within the Tenant.
 
+.. IMPORTANT:: In versions 3.1.1 and 2.12.5 and later, a multi-tenant user role must be create prior to adding sub-tenant users or the user will not save. In previous versions a default multi-tenant role was seeded, but due to customer requests the seeded role was removed and a multi-tenant role must be created by the master tenant for sub-tenant users.
+
 Create Tenant User
 ^^^^^^^^^^^^^^^^^^
 To create a Tenant User:
@@ -76,6 +78,8 @@ To create a Tenant User:
      - Restricts the amount of Storage and Memory the user can provision.
 
    - Save Changes.
+
+.. IMPORTANT:: In versions 3.1.1 and 2.12.5 and later, a multi-tenant user role must be create prior to adding sub-tenant users or the user will not save. In previous versions a default multi-tenant role was seeded, but due to customer requests the seeded role was removed and a multi-tenant role must be created by the master tenant for sub-tenant users.
 
 Edit a Tenant User
 ^^^^^^^^^^^^^^^^^^

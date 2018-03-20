@@ -3,51 +3,61 @@ Apps
 
 Apps allow instances having general relationships to be grouped in a clean and organized manner. App functionality enables full control of which instances belong in an app as well setting Firewall and Access Control List (ACL) rules. Use Apps to structure all necessary components into a single place. Add checks and groups for web servers, database nodes, etc.
 
-Creating Apps
--------------
+Apps can be created from Templates, which are made in ``Provisioning -> Templates`` or from Existing Apps.
 
-To create and App, click "+ADD APP" on the right side of the main Apps section in Provisioning.
+Creating Apps from Templates
+----------------------------
 
-.. image:: /images/apps/howtocreateapp-ee817.png
+#. Click "+ADD APP" on the right side of the main Apps section in Provisioning.
+#. Select an existing App Template and click NEXT.
 
-Next fill in the Setup tab with your App name, optional description, and select a resource group:
+   .. Note:: Templates must be created in in ``Provisioning -> Templates``. to appear as options when creating an App.
 
-.. image:: /images/apps/howtocreateapp-7f57d.png
+#. Enter a Name for the App and select a Group. Default Cloud and Env can also be selected.
+#. Click NEXT. Template configurations matching the Group, Cloud and Environment selections will auto-populate the configurations of the Instances in the App.  If no Template Configuration matched the Group, Cloud or Env selections, the Instances will have default configurations.
+#. Configure your Instances. Depending on the Template Configurations settings, instances may already be fully configured. Fields that are locked in a Template cannot be edited when creating an App.
 
-In the LAYOUT tab, you have the option of selecting a Template (created in the Templates section) or Add Tiers. To use a Template, select a Template from the dropdown and your app will populate in the layout section. You can add to, modify, edit your template, or simply click next of the Template is fully configured:
+   Note:: Once an Instance is fully configured, a green checkmark will appear next to the Instance. Instances that have required fields that need populated will have a red X and must be completed. If your Template is already fully configured you can simply select complete!
 
-.. image:: /images/apps/howtocreateapp-680f5.png
+#. Select COMPLETE and the App will be created and the Instances will begin provisioning.
 
-To create an app without a Template, start by adding a Tier by clicking "+ ADD TIER". Name the Tier by selecting pre-populated, recently used, or add a new/custom Tier name:
+.. image:: /images/provisioning/apps_301_1.png
 
-.. image:: /images/apps/howtocreateapp-07e66.png
+Creating Apps from Existing Instances
+-------------------------------------
 
-For each Tier added, a new Tier container is created, and the Tier is added to the Tier list:
+#. Click "+ADD APP" on the right side of the main Apps section in Provisioning.
+#. Select APP FROM EXISTING INSTANCES from the Templates list and click NEXT.
+#. Enter a Name for the App and select a Group. Default Cloud and Env can also be selected.
 
-.. image:: /images/apps/howtocreateapp-8b54f.png
+   .. Note:: Only instances within the selected Group and Cloud will be available to be added to the App.
 
-Next click +Add Instance to add a new instance, or select from existing instances using the Existing tab. Multiple instances can be added to a single container as well:
+#. In the STRUCTURE section, select + to add a Tier
+#. Select or enter a Tier Name.
+#. Select the Tier to set Boot Order, rename, or once multiple Tiers are added, connect the Tier to other Tiers.
+#. In the STRUCTURE section, select + in a Tier to add an Instance
+#. Select the Instance Type of the Existing Instance to be added to the App.
+#. In the STRUCTURE section, select the Instance.
+#. In the CONFIGURATION section, select the Cloud the Existing Instance is in. Existing INSTANCES that match the Group, Cloud and Instance Types set will populate.
+#. Select the desired Instance from the INSTANCES list. Selected instance will show in the SELECTED INSTANCE section.
 
-.. image:: /images/apps/howtocreateapp-ab55e.png
+   .. Note:: Only one existing Instance can be added per Instance. To add multiple Existing Instances, repeat the step above including adding an Instance for each Existing Instance to be added to the App.
 
-After adding all instances, click out of the Add Instance pop up to return to the layout page. Continue to add all Tiers and instances for your App:
+#. Once all Existing Instances have been selected, click COMPLETE.
+#. A new App will be created out of the Existing Instances.
 
-.. image:: /images/apps/howtocreateapp-119c3.png
+.. image:: /images/provisioning/apps_301_2.png
 
-To configure new or existing instances, hover over the instance name in the Tier List and click the Settings gear icon. (Instances can also be fully configured/edited in the Configure tab by clicking next in the bottom right):
+Exporting JSON or YAML
+----------------------
 
-.. image:: /images/apps/howtocreateapp-f3949.png
+#. Navigate to  ``Provisioning -> Apps``
+#. On an existing App, select ``ACTIONS -> EXPORT``
+#. Select YAML or JSON in the top right.
+#. Select the Configurations to include in the Export by clicking on a Configuration. Selected Configurations will be highlighted.
+#. Select the DOWNLOAD CONFIGURATION button.
+#. The Template Export file will be downloaded to your computer as {app_name}-config.json or {app_name}-config.yaml.
 
-To link Tiers, hover over a Tier, click the blue circle at the top of a Tier and drag the arrow over the top of the Tier you would like to link:
+.. TIP:: JSON or YAML can also be Viewed, Edited, Copied, or Exported by selecting ``ACTIONS -> EDIT``on an App and clicking the RAW section in the Edit App modal.
 
-.. image:: /images/apps/howtocreateapp-b92f5.png
-
-To remove a Tier or Instance, click the trash icon. Once your App is built, click Next in the bottom right.
-
-In the Configure tab, you can fully configure your instances if they are not configured yet, or edit the configurations. If the app was built with Existing instances, no configuration options are presented:
-
-.. image:: /images/apps/howtocreateapp-5fd9f.png
-
-Once your App is ready, click Complete in the bottom right and your App will be created, appear in the App section, and if new instances were used, the instances will be provisioned:
-
-.. image:: /images/apps/howtocreateapp-20fbf.png
+.. image:: /images/provisioning/apps_301_3.png

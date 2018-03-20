@@ -1,0 +1,48 @@
+v3.2.0
+======
+
+.. IMPORTANT:: Morpheus v3.2.0 introduces Global Search, which requires an Elasticsearch upgrade. Upgrade from previous versions of Morpheus to a 3.2.0 or later requires you to upgrade ElasticSerach to 5.4.1 or 5.x. We don't support ElasticSearch 6.x at this time.  This upgrade requires you to export and import your Morpheus ElasticSearch data if you want to retain logs, backup history, statistics, and check history of your instances. If you do not need or want to retain that data you can skip the ElasticSearch migration.  Upgrading to 3.2.0 will create a blank ElasticSearch node with no data. Your Morpheus layout configuration will determine how to migrate your ElasticSearch data: all-in-one, distributed high availability, or Morpheus clustered appliances. Please refer to upgrade instructions below the release notes.
+
+New Features
+------------
+
+- New Global Search: All of Morpheus can now be searched from the header or at ``/search``.
+- UI: Updated header including Global Search, User Avatar, Morpheus Support/Documentation links
+- Active Directory: Nested Group Support added
+- AWS: GovCloud (West) Region added
+- Bluecat: Sync and DNS Improvements
+- Domains: Workflows added
+- Domains: Guest User setting added
+- Library: Morpheus CentOS 7.3 for Azure, Softlayer, Bluemix, DigitalOcean, Xen added
+- Library: Templates renamed File Templates
+- Policies: Sequence numbers no longer reused once freed
+- Power Schedule: Total number of hours saved per month added
+- Provisioning: Additional error messages surfaced
+- SCVMM: Support for static ip pools added
+- SCVMM : Inventory existing VMs added
+- VMware: Support for VMware 6.5 Hypervisor Console
+- Windows Agent: TLS 1.2 Support added
+- CLI: Monitoring - Apps added
+- CLI: Monitoring - Groups added
+- CLI: User Groups added
+
+Fixes
+-----
+
+- Alibaba: Fix for Release Elastic IP
+- Alibaba: Fix for Edit Cloud not populating region/vpc
+- Alibaba: Fix for Networks recreated on sync
+- Alibaba: Fix for issue deleting VM that has backups
+- Alibaba: Fix for Elastic IP not surfaced in morpheus
+- Hosts: Fix for Add host modal in sub-tenant is not respecting user role group permissions
+- Hosts: Fix for bare metal convert to managed not displayed correctly.
+- Hosts: Fix for deleting orphaned vm's
+- Infoblox: Fix for add integration not working with fqdn
+- Load Balancers: Fix for blank Settings tab for non-system admin roles
+- macOS: Fix for macOS User creation
+- User Groups: Fix for User Groups only available for master account
+- vCD : Fix for invalid instance/computer names
+
+.. IMPORTANT:: For upgrades to 3.2.0 please follow the 3.2.0 upgrade instructions below!
+
+.. include:: /getting_started/320upgrade.rst

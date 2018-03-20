@@ -1,5 +1,6 @@
 Identity Sources
 ================
+``Administration -> Tenants -> Select Tenant -> Identity Sources``
 
 Overview
 --------
@@ -13,5 +14,5 @@ first log in users are assigned the appropriate role.
 
 .. .image:: /images/administration/identity_sources.png
 
-.. include:: ad.rst
-.. include:: onelogin.rst
+.. include:: tenants/ad.rst
+.. include:: tenants/onelogin.rst
