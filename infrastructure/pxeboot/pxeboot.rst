@@ -11,16 +11,6 @@ Overview
 Prerequisites
 -------------
 
-Your network must be configured for PXE boot, and the TFTP server port need to mapped to the |morpheus| TFT server port, UDP 6969.
-
-* Network configured for network boot
-* Router UDP 69 mapped to {morpheus} server UDP port 6969
-* Router TFT Server set to {morpheus} server IP or resolvable Hostname.
-* Mac or IP addresses of PXE target mapped in {morpheus} `Infrastructure -> Boot - Mapping`
-* Target host configured for Network boot in BIOS
-
-   .. NOTE:: The {morpheus} PXE port is set in ``opt/morpheus/conf/application.yml``
-
 * DHCP server with following config added to dhcpd.conf
 
 .. code-block:: bash
@@ -31,8 +21,15 @@ Your network must be configured for PXE boot, and the TFTP server port need to m
     option option-129 code 129 = text;
     next-server morpheus-appliance-ip;
 
-.. NOTE:: Replace ``morpheus-appliance-ip`` in the dhcpd.conf file with your |morpheus| appliance IP.
+.. NOTE:: Replace ``morpheus-appliance-ip`` in the dhcpd.conf file with your |morpheus| appliance IP address.
 
+* ``Internal Appliance URL (PXE)`` set in `Administration - Settings`. For PXE-Boot your appliance needs to be routable directly with minimal NAT masquerading. This allows one to override the default appliance url endpoint for use by the PXE Server. If this is unset, the default appliance url will be used instead.
+* Mac or IP addresses of PXE target mapped in {morpheus} `Infrastructure -> Boot - Mapping`
+* Target host configured for Network boot in BIOS
+
+.. NOTE:: On the |Morpheus| Appliance, PXE is enabled by default and port 69 is forwarded to the Internal PXE port 6969. These settings are configurable in in the ``pxe:`` section of ``/opt/morpheus/conf/application.yml``.
+
+  
 Mapping
 -------
 
