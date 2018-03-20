@@ -8,7 +8,7 @@ Setup
 
 #. On your Windows VM download and install Cloudbase-init from https://cloudbase.it/cloudbase-init/
 #. Use the default settings, and **do not** run sysprep at the end of the install.
-#. Under C:\Program Files\Cloudbase Solutions\Cloudbase-Init\conf, edit the cloudbase-init.conf file, referring to the sample configuration below. If the image will be sysprepped, edit cloudbase-init-unattend.conf and unattend.xml as well.
+#. Under C:\Program Files\Cloudbase Solutions\Cloudbase-Init\conf, edit the ``cloudbase-init.conf`` file, referring to the sample configuration below. If the image will be sysprepped, edit ``cloudbase-init-unattend.conf`` and ``unattend.xml`` as well.
 
    .. NOTE:: Sample configurations only, user configurations may vary.
 
@@ -150,7 +150,7 @@ Setup
 
 #. Save and changes to cloudbase-init.conf, cloudbase-init-unattend.conf, and unattend.xml files.
 
-   .. NOTE:: The Administrator password is being set in the unattend.xml file to be set upon boot after sysprep. Thsiis not required if sysprep is not being used, and may not be preferred. oOher mechanisms such as requiring the Administrator password to be reset or randomly generated can be used. |morpheus| can also securely via the user_data file at provision time.
+   .. NOTE:: The Administrator password is being set in the unattend.xml file to be set upon boot after sysprep. This is not required if sysprep is not being used, and may not be preferred. Other mechanisms such as requiring the Administrator password to be reset or randomly generated can be used. |morpheus| can also securely via the user_data file at provision time.
 
 
 #. To run a sysprep using the cloudbase-init configuraiton, run the following in a command prompt:
