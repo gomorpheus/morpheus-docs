@@ -8,8 +8,9 @@ Integrations
 .. include:: integrations/consul.rst
 .. include:: integrations/docker_registry.rst
 .. include:: integrations/infoblox.rst
-.. include:: integrations/git.rst //include::github.rst
-.. include:: integrations/jenkins.rst
+.. . include:: integrations/git.rst
+.. include::github.rst
+.. . include:: integrations/jenkins.rst
 .. include:: integrations/microsoft_dns.rst
 .. include:: integrations/powerdns.rst
 .. include:: integrations/puppet.rst

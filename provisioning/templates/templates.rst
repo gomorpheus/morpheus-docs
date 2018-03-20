@@ -6,6 +6,8 @@ Overview
 
 App Templates allow to pre-configure full multi-tier application deployments for multiple environments. Templates can be provisioned from the ``Provisioning -> Apps`` section and can be fully configured for one click provisioning. Templates can be built within the Builder section or by code in the Raw section. Templates can also be exported as YAML or JSON and created with the |morpheus| API and CLI.
 
+.. image:: /images/provisioning/templates_301_1.png
+
 Creating App Templates
 ----------------------
 
@@ -52,7 +54,9 @@ RAW
 
 Templates can be create, edited or Exported in the RAW section when creating or editing a template.
 
-To Export a Template a Template as JSON or YAML:
+.. image:: /images/provisioning/templates_301_2.png
+
+To Export a Template as JSON or YAML:
 
 #. Create or Edit a Template
 #. Select the RAW section on the top of the APP TEMPLATE modal.
@@ -66,6 +70,8 @@ Preview
 ^^^^^^^
 
 In the APP TEMPLATE modal, select the Preview section to display a graphical representation of your Templates Tiers, Instances and Tier Connections.
+
+.. image:: /images/provisioning/templates_301_3.png
 
 .. IMPORTANT:: When Tiers are connected, the Instances in a Tier will import the evars from Instances in connected Tiers, and if |morpheus] is managing the Instance Firewalls, communication between the Instances will be facilitated based on the Instances port configurations.
 

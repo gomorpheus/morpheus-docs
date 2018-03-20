@@ -13,8 +13,8 @@ Adding an Active Directory Integration
 
 #. Navigate to `Administration -> Tenants`
 #. Select a Tenant
-#. Select Identity Sources
-#. Select + Identity Source
+#. Select :guilabel:`IDENTITY SOURCES`
+#. Select :guilabel:`+ IDENTITY SOURCE`
 #. Choose "Active Directory"
 #. Populate the following:
 
@@ -34,6 +34,8 @@ Adding an Active Directory Integration
     The default role a user is assigned if no group is listed under AD user that maps under Role Mappings section.
    Service Account Holder
     This is the admin account type in |morpheus| and an AD group can be created and populated to a user that this role should be assigned. Roles are assigned dynamically based on group membership.
+
+#. Select :guilabel:`SAVE CHANGES`.
 
 Now allowed AD users can login to |morpheus| via their Active Directory credentials and a User will be automatically generated to |morpheus| with matching metadata and mapped Role permissions.
 

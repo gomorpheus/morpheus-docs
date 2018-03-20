@@ -1,23 +1,17 @@
 Variables
 =========
 
-The following are the map structures passed to scripts and templates during provisioning. They can currently be used inside of a ``<%= %>``` block.
+The following are the map structures passed to scripts and templates during provisioning. They can currently be used inside of a ``<%= %>`` block.
 
-PowerShell Example:
+.. IMPORTANT:: Variables are case sensitive
 
-.. code-block:: bash  shell
+PowerShell Example: ``$app_id = "<%= instance.metadata.app_id %>"``
 
-	$app_id = "<%= instance.metadata.app_id %>"
-
-Bash Example:
-
-.. code-block:: bash 
-
-	HOSTNAME="<%= container.server.hostname %>"
+Bash Example:	``HOSTNAME="<%= container.server.hostname %>"``
 
 .. NOTE:: customOptions are user defined as Option Types or Option Lists in custom Library items.
 
-.. code-block:: bash 
+.. code-block:: bash
 
 	instance {
 		instanceTypeName,
@@ -53,7 +47,7 @@ Bash Example:
 		evars:[]
 	}
 
-.. code-block:: bash 
+.. code-block:: bash
 
 	container {
 		containerTypeName,
@@ -86,7 +80,7 @@ Bash Example:
 		server:{}
 	}
 
-.. code-block:: bash 
+.. code-block:: bash
 
 	server {
 		serverTypeName,
@@ -146,9 +140,18 @@ Bash Example:
 		configId,
 		configGroup,
 		configRole
+		volumes {
+			name
+			id
+			deviceName
+			maxStorage
+			unitNumber
+			displayOrder
+			rootVolume
+		}
 	}
 
-.. code-block:: bash 
+.. code-block:: bash
 
 	cloud {
 		name,
@@ -164,7 +167,7 @@ Bash Example:
 		datacenterId
 	}
 
-.. code-block:: bash 
+.. code-block:: bash
 
 	group {
 		code,
@@ -173,8 +176,10 @@ Bash Example:
 		datacenterId
 	}
 
-.. code-block:: bash 
+.. code-block:: bash
 
 	customOptions {
 		customOptions.fieldName
 	}
+
+.. IMPORTANT:: Variables are case sensitive

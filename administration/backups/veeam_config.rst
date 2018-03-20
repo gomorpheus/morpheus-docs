@@ -26,4 +26,4 @@ Backup Job Templates
 Refresh Available Jobs
   Use to sync newly created Jobs in Veeam.
 
-.. IMPORTANT:: Once a Veeam Integration has been enabled, a ``VEEAM SERVER``setting will be available in VMware and Hyper-V cloud settings (``Infrastructure -> Clouds -> Edit a Cloud``). To enabled backups on a Cloud, a Veeam Server must be selected in the ``VEEAM SERVER`` dropdown in the Cloud settings and saved. Failure to do so will result in blank ``Backup Repositories`` and ``Backup Job Templates`` options when configuring Veeam Backups during provisioning´´.
+.. IMPORTANT:: Once a Veeam Integration has been enabled, a ``VEEAM SERVER`` setting will be available in VMware and Hyper-V cloud settings (``Infrastructure -> Clouds -> Edit a Cloud``). To enabled backups on a Cloud, a Veeam Server must be selected in the ``VEEAM SERVER`` dropdown in the Cloud settings and saved. Failure to do so will result in blank ``Backup Repositories`` and ``Backup Job Templates`` options when configuring Veeam Backups during provisioning´´.

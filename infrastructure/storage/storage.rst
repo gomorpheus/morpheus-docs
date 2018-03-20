@@ -34,33 +34,47 @@ To Add Storage Provider:
 #. From the New Storage Provider Wizard input the following:
 
    Name
-      Name of the storage provider.
+     Name of the storage provider.
+
    Provider Type
       * Local Storage
+
         * Storage Path
+
       * NFSv3
+
         * Host
         * Export Folder
+
       * CIFS (Samba Windows File Sharing)
+
         * Host
         * Username
         * Password
         * Share Path
+
       * Amazon S3
+
         * Access Key
         * Secret Key
         * Bucket Name
         * Endpoint URL (Optional endpoint URL if pointing to an object store other than amazon that mimics the Amazon S3 APIs.)
+
       * Azure
+
         * Storage Account
         * Storage Key
         * Share Name
+
       * Rackspace CDN
+
         * Username
         * API Key
         * Region
         * Bucket Name
+
       * OpenStack Swift
+
         * Username
         * API Key
         * Region

@@ -21,13 +21,13 @@ server where the configuration file resides.
 
    .. code-block:: bash
 
-    sudo vi /etc/morpheus/morpheus.rb
+     sudo vi /etc/morpheus/morpheus.rb
 
    Change the values to match your configured services:
 
    .. NOTE:: The values below are examples. Update hosts, ports, usernames and password with your specifications. Only include entries for services you wish to externalize.
 
-   .. code-block:: 
+   .. code-block:: bash
 
     mysql['enable'] = false
     mysql['host'] = {'10.30.20.139' => 3306,  '10.30.20.153' => 3306,  '10.30.20.196' => 3306}

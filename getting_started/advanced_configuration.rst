@@ -6,3 +6,4 @@ Advanced Configuration
 
 .. include:: installation/offline.rst
 .. include:: advanced/proxies.rst
+.. include:: advanced/db_migration.rst

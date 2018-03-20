@@ -11,13 +11,19 @@ If the server has not been registered and activated then the subscription manage
 
 .. code-block:: bash
 
-   sudo subscription-manager version server type: This system is currently not registered subscription management server: 0.9.51.24.-1 subscription-manager: 1.10.14-7.el7 python-rhsm: 1.10.12-2.el7
+   sudo subscription-manager version
+   server type: This system is currently not registered
+   subscription management server: 0.9.51.24.-1
+   subscription-manager: 1.10.14-7.el7 python-rhsm: 1.10.12-2.el7
 
 When a server has been registered and activated with Redhat the subscription manager will return the below message.
 
 .. code-block:: bash
 
-  sudo subscription-manager version server type: Red Hat Subscription Management subscription management server: 0.9.51.24-1 subscription-manager: 1.10.14-7.el7 python-rhsm: 1.10.12-2.el7
+  sudo subscription-manager version
+  server type: Red Hat Subscription Management
+  subscription management server: 0.9.51.24-1
+  subscription-manager: 1.10.14-7.el7 python-rhsm: 1.10.12-2.el7
 
 If the subscription manager re-turns the message "This system is currently not registered" please follow the below steps to register the server.
 
@@ -27,7 +33,9 @@ subscription-manager register
 
 .. code-block:: bash
 
-  sudo subscription-manager register Username: redhat@example.com Password: . subscription-manager auto --attach
+  sudo subscription-manager register
+  Username: redhat@example.com
+  Password: . subscription-manager auto --attach
 
 .. NOTE:: This can take a minute to complete
 
@@ -35,13 +43,12 @@ subscription-manager register
 
   sudo subscription-manager attach --auto
 
-      Installed Product Current Status: Product Name: Red Hat Enterprise Linux
-      Server Status: Subscribed
+  Installed Product Current Status: Product Name: Red Hat Enterprise Linux
+  Server Status: Subscribed
 
 To check to see if the RHEL server has the Red Hat Enterprise Linux 7 Server - Optional (RPMs) repo enabled please run the following command to return the repo status.
 
-.. TIP:: To check the server repos you will need to have sudo permissions
-[Member of the Wheel group] or root access to the server.
+.. TIP:: To check the server repos you will need to have sudo permissions [Member of the Wheel group] or root access to the server.
 
 .. code-block:: bash
 
@@ -52,7 +59,7 @@ If the repo status was returned as disabled then you will need to enable the rep
 .. code-block:: bash
 
   sudo subscription-manager repos --enable rhel-7-server-optional-rpms
-  Repo 'rhel-7-server-optional-rpms' is enabled for this system.
+  Repository 'rhel-7-server-optional-rpms' is enabled for this system.
 
 The message "Repo 'rhel-7-server-optional-rpms' is enabled for this system." will appear after enabling the repo. This will confirm that the repo has been enabled.
 

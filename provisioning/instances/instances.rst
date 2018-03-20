@@ -10,14 +10,12 @@ Container
 Virtual Machine
   A virtualized compute server provisioned onto various hypervisor hosts.
 
-The top of the main Instances page shows overall statistic for the listed Instances, including count, status, and resource utilization.
+The top of the main Instances page shows overall statistic for the listed Instances, including count, status, and resource utilization. You can search for instances by name, or filter by group, instance type, or category.
 
-Please note the instances listed are determined by group access and role permissions. Also, certain features shown may be hidden or disabled depending on user permissions.
+.. NOTE:: Instances listed are determined by group access and role permissions.
 
-You can search for instances by name, or filter by group, instance type, or category.
+The Instance list contains important information about each instance, including the instance name, environment tag, instance type icon, ip and port info, instance version, the number of virtual machines or containers in the instance, the group the instance is in, and the cloud or clouds the instance is in.
 
-The instance list contains important information about each instance, including the instance name, environment tag, instance type icon, ip and port info, instance version, the number of virtual machines or containers in the instance, the group the instance is in, and the cloud or clouds the instance is in.
-
-.. include:: instance/creating_instances.rst
+.. include:: instances/creating_instances.rst
 .. include:: instances/instance_details.rst
 .. include:: instances/managing_instances.rst

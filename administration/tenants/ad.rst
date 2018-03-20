@@ -1,40 +1,48 @@
 Active Directory
 ----------------
 
-Active Directory is Microsoft's primary authentication service widely
-used in Enterprise organizations and even via Microsoft's cloud
-services. While Active Directory also supports LDAP protocol support
-(which |morpheus| can integrate with as well), the main active directory
-integration can also be utilized. It is even possible to map Active
-Directory groups to equivalent Roles within |morpheus| .
+Overview
+^^^^^^^^
 
-.. NOTE:: To use Active Directory, a valid / trusted SSL certificate must be
-in place on the Active Directory services (self signed will not work).
+Active Directory is Microsoft’s primary authentication service widely used in Enterprise organizations and even via Microsoft’s cloud services. While Active Directory also supports LDAP protocol support (which |morpheus| can integrate with as well), the main Active Directory integration can also be utilized. It is even possible to map Active Directory groups to equivalent Roles within |morpheus| .
 
-Adding an Active Directory integration is fairly straightforward. Simply
-click the 'Add Integration' button in Identity Sources and from the type
-dropdown choose "Active Directory".
+.. NOTE:: To use Active Directory, a valid / trusted SSL certificate must be in place on the Active Directory services (self signed will not work).
 
-.. image:: /images/administration/add_active_directory.png
+Adding an Active Directory Integration
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The following fields are important for integrating active directory:
+#. Navigate to `Administration -> Tenants`
+#. Select a Tenant
+#. Select :guilabel:`IDENTITY SOURCES`
+#. Select :guilabel:`+ IDENTITY SOURCE`
+#. Choose "Active Directory"
+#. Populate the following:
 
--  *Name:* Unique name for authentication type.
--  *AD Server:* Hostname or IP address of AD Server.
--  *Domain:* Domain name of AD Domain.
--  *Binding Username:* Service account username for bind user.
--  *Binding Password:* Password for bind service account.
--  *Default Role:* The default role a user is assigned if no group is
-   listed under AD user that maps under Role Mappings section.
--  *Service Account Holder:* This is the admin account type in
-   |morpheus| and an AD group can be created and populated to a user
-   that this role should be assigned. Roles are assigned dynamically
-   based on group membership.
+   Name
+      Unique name for authentication type.
+   AD Server
+    Hostname or IP address of AD Server.
+   Domain
+    Domain name of AD Domain.
+   Binding Username
+    Service account username for bind user.
+   Binding Password
+    Password for bind service account.
+   Required Group
+    The AD group users must be in to have access (optional)
+   Default Role
+    The default role a user is assigned if no group is listed under AD user that maps under Role Mappings section.
+   Service Account Holder
+    This is the admin account type in |morpheus| and an AD group can be created and populated to a user that this role should be assigned. Roles are assigned dynamically based on group membership.
 
-.. TIP:: Make sure to check the sync login box which will allow |morpheus| 
-to sync the AD account on the |morpheus| Appliance.
+#. Select :guilabel:`SAVE CHANGES`.
 
-Now users can login to the UI via their active directory username.
+Now allowed AD users can login to |morpheus| via their Active Directory credentials and a User will be automatically generated to |morpheus| with matching metadata and mapped Role permissions.
 
-.. NOTE:: Only the username is required with password not the
-username@domain.
+.. NOTE:: Only the username is required with password, not the username@domain.
+
+.. NOTE:: Sub-tenant |morpheus| API authentication for Active Directory generated users is not currently supported.
+
+
+
+T

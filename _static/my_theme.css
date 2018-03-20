@@ -49,13 +49,13 @@ max-width: 1200px !important;
 .fa-book {
   visibility: hidden;
 }
-
 .fa-book:before, .icon-book:before {
     font-family: inherit;
     font-weight: bold;
     content: "Morpheus Version:";
     visibility: visible;
 }
+
 
 .codeblock, pre.literal-block, .rst-content .literal-block, .rst-content pre.literal-block,
 div[class^='highlight'] {
@@ -78,9 +78,28 @@ div[class^='highlight'] pre {
     color: #ffffff
 }
 
+/*guilabel button styling */
+
+.rst-content .guilabel {
+    border-color: #63bcdc;
+    background: #78c5e1;
+    font-weight: normal;
+    color: #fff;
+    font-size: 80%;
+    /* font-weight: 700; */
+    border-radius: 4px;
+    padding: 1px 10px;
+    /* line-height: 1.428571429; */
+    margin: auto 1px;
+}
+
 .c {
     color: #998;
     font-style: italic
+}
+
+div.rst-other-versions div.injected dl + dl + dl {
+display: none;
 }
 
 .err {
@@ -346,4 +365,16 @@ div[class^='highlight'] pre {
 
 .il {
     color: #099
+}
+
+.wy-table-responsive table td,.wy-table-responsive table th {
+    white-space: normal !important
+}
+
+.wy-nav-top {
+    background: #404040 !important
+}
+
+h2 {
+    border-bottom: 1px solid #777777;
 }
