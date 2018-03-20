@@ -12,9 +12,10 @@ Setup
 
    .. NOTE:: Sample configurations only, user configurations may vary.
 
-    cloudbase-init.conf
-    ^^^^^^^^^^^^^^^^^^^
-    .. code-block:: xml
+   cloudbase-init.conf
+   ^^^^^^^^^^^^^^^^^^^
+
+   .. code-block:: bash
 
         [DEFAULT]
         # username=Admin
@@ -65,10 +66,10 @@ Setup
         # stop_service_on_exit=false
 
 
-    cloudbase-init-unattend.conf
-    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   cloudbase-init-unattend.conf
+   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-    .. code-block:: xml
+   .. code-block:: bash
 
         [DEFAULT]
         username=Admin
@@ -94,10 +95,10 @@ Setup
         stop_service_on_exit=false
         check_latest_version=false
 
-    unattend.xml
-    ^^^^^^^^^^^^
+   unattend.xml
+   ^^^^^^^^^^^^
 
-    .. code-block:: xml
+   .. code-block:: xml
 
         <?xml version="1.0" encoding="utf-8"?>
         <unattend xmlns="urn:schemas-microsoft-com:unattend">
