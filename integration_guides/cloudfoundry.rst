@@ -123,13 +123,13 @@ Now, let's take a look at the manifest.yml file:
 
 Using the Cloud Foundry docs (https://docs.cloudfoundry.org/devguide/deploy-apps/manifest.html), we can gain a better understanding of how this file is utilized by Cloud Foundry.
 
-- The -name parameter defines the name that will be given to the application in Cloud Foundry.  Morpheus will overwrite this value with the name given to the Instance being created in Morpheus.
+- The ``-name`` parameter defines the name that will be given to the application in Cloud Foundry.  Morpheus will overwrite this value with the name given to the Instance being created in Morpheus.
 
-- The -memory parameter (as well as the disk_quota parameter if specified) will be overwritten by Morpheus based on the plan specified for the Instance.
+- The ``-memory`` parameter (as well as the disk_quota parameter if specified) will be overwritten by Morpheus based on the plan specified for the Instance.
 
-- The -path parameter defines, where relative to the manifest.yml file, your Cloud Foundry application can be found.
+- The ``-path`` parameter defines, where relative to the manifest.yml file, your Cloud Foundry application can be found.
 
-- The -random-route parameter, as well as all other parameters described in the Cloud Foundry documentation will simply be passed through to Cloud Foundry.
+- The ``-random-route parameter``, as well as all other parameters described in the Cloud Foundry documentation will simply be passed through to Cloud Foundry.
 
 
 Adding Marketplace Items
