@@ -12,8 +12,7 @@ Setup
 
    .. NOTE:: Sample configurations only, user configurations may vary.
 
-   cloudbase-init.conf
-   ^^^^^^^^^^^^^^^^^^^
+   **cloudbase-init.conf**
 
    .. code-block:: bash
 
@@ -66,8 +65,7 @@ Setup
         # stop_service_on_exit=false
 
 
-   cloudbase-init-unattend.conf
-   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   **cloudbase-init-unattend.conf**
 
    .. code-block:: bash
 
@@ -95,9 +93,8 @@ Setup
         stop_service_on_exit=false
         check_latest_version=false
 
-   unattend.xml
-   ^^^^^^^^^^^^
-
+   **unattend.xml**
+   
    .. code-block:: xml
 
         <?xml version="1.0" encoding="utf-8"?>
