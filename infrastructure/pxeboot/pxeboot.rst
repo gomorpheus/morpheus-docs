@@ -19,13 +19,19 @@ Your network must be configured for PXE boot, and the TFTP server port need to m
 * Mac or IP addresses of PXE target mapped in {morpheus} `Infrastructure -> Boot - Mapping`
 * Target host configured for Network boot in BIOS
 
-.. NOTE:: The {morpheus} PXE port is set in ``opt/morpheus/conf/application.yml``
+   .. NOTE:: The {morpheus} PXE port is set in ``opt/morpheus/conf/application.yml``
 
-.. To PXE Boot
-.. -----------
+* DHCP server with following config added to dhcpd.conf
 
-.. #. Click the Infrastructure link in the navigation bar.
-.. #. Select the Boot link in the sub navigation bar.
+.. code-block:: bash
+
+    allow booting;
+    allow bootp;
+    option option-128 code 128 = string;
+    option option-129 code 129 = text;
+    next-server morpheus-appliance-ip;
+
+.. NOTE:: Replace ``morpheus-appliance-ip`` in the dhcpd.conf file with your |morpheus| appliance IP.
 
 Mapping
 -------
