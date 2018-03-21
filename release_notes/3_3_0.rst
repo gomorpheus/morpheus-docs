@@ -1,0 +1,41 @@
+v3.3.0
+======
+
+Release Date 3/20/2017
+
+.. IMPORTANT:: Morpheus v3.2.0+ introduces Global Search, which requires an Elasticsearch upgrade. Upgrading from previous versions of Morpheus to a 3.2.0 or later requires you to upgrade ElasticSerach to 5.4.1 or 5.x. We do not support ElasticSearch 6.x at this time.  This upgrade requires you to export and import your Morpheus ElasticSearch data if you want to retain logs, backup history, statistics, and check history of your instances. If you do not need to retain that data you can skip the ElasticSearch migration.  Upgrading to 3.2.0+ will create a blank ElasticSearch node with no data. Your Morpheus layout configuration will determine how to migrate your ElasticSearch data: all-in-one, distributed high availability, or Morpheus clustered appliances.
+
+Please refer to upgrade instructions below the release notes.
+
+.. NOTE:: Upgrading from 3.2.0 to 3.3.0 does not require an Elasticsearch upgrade.
+
+New Features
+------------
+
+- Clouds: Oracle Cloud added
+- Apps & Templates: ARM Templates added
+- Apps & Templates: Teraform Templates
+- Localization:  Spanish, French, German translations added
+- Azure: All provisioning now utilizes ARM templates
+- Apps & Templates: Template type and icons added
+- Hosts: RPC Port now configurable on `Edit -> Host`
+- API: Scheduling added
+- KeyPairs: Additional Keypair Validation added
+- Administration -> Provisioning -> Settings: `Require Environment Selection` Flag added
+- Administration -> Provisioning -> Environments: `Actions - Hide` added for Environments
+- Identity Sources: SAML error handling enhancements
+- VMware: Task customization domain join enhancements
+
+Fixes
+-----
+
+- Fix for Static IP address filed losing focus in App Templates
+- Updates to UI Header for Localizations
+- Fix for error on searching for Cloud Foundry marketplace service
+- Fix for VMware 2 Disk Templates where 2nd disk is named *_2.vmdk
+- Fix for Instance Configuration dropdown sorted randomly
+- Fix for VMware Image sync duplications
+
+.. IMPORTANT:: For upgrades to 3.2.0+ please follow the 3.2.0+ upgrade instructions below!
+
+.. include:: /getting_started/320upgrade.rst
