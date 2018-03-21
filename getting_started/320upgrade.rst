@@ -1,10 +1,10 @@
-3.2.0 Upgrade
--------------
+3.2.0+ Upgrades
+---------------
 
 Overview
 ^^^^^^^^
 
-Upgrade from previous versions of Morpheus to a 3.2.0 or later requires you to upgrade ElasticSerach to 5.4.1 or 5.x. We don't support ElasticSearch 6.x at this time.  This upgrade requirement causes you to export and import your Morpheus ElasticSearch data, if you want to retain logs, backup history, statistics, and check history of your instances. If you don't need or want to retain that data you can skip the ElasticSearch migration.  Upgrading to 3.2.0 will create a blank ElasticSearch node with no data. Your Morpheus layout configuration will determine how to migrate your ElasticSearch data: all-in-one, distributed high availability, or Morpheus clustered appliances.
+Upgrading from previous versions of Morpheus to 3.2.0 or later requires upgrading ElasticSerach to 5.4.1 or 5.x. We do not support ElasticSearch 6.x at this time.  This upgrade requires an export and import of Morpheus ElasticSearch data if you want to retain logs, backup history, statistics, and check history of your instances. If you do not need to retain that data you can skip the ElasticSearch migration.  Upgrading to 3.2.0 will create a blank ElasticSearch node with no data. Your Morpheus layout configuration will determine how to migrate your ElasticSearch data: all-in-one or distributed high availability.
 
 Morpheus All-In-One
 ^^^^^^^^^^^^^^^^^^^
