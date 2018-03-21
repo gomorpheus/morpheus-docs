@@ -6,6 +6,8 @@ Windows Image with Cloudbase-Init
 Setup
 -----
 
+..NOTE:: The Morpheus agent requires .net 4.0+. For TSL 1.2 .net 4.5.2 is required. Ensure a compatible version is installed on your Windows image.
+
 #. On your Windows VM download and install Cloudbase-init from https://cloudbase.it/cloudbase-init/
 #. Use the default settings, and **do not** run sysprep at the end of the install.
 #. Under C:\Program Files\Cloudbase Solutions\Cloudbase-Init\conf, edit the ``cloudbase-init.conf`` file, referring to the sample configuration below. If the image will be sysprepped, edit ``cloudbase-init-unattend.conf`` and ``unattend.xml`` as well.
@@ -94,7 +96,7 @@ Setup
         check_latest_version=false
 
    **unattend.xml**
-   
+
    .. code-block:: xml
 
         <?xml version="1.0" encoding="utf-8"?>
