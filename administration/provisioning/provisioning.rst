@@ -27,7 +27,7 @@ Deployment Archive Store
 Cloud-Init Settings
 -------------------
 
-|morpheus| can add Global users for Linux and Windows at provision time. Cloud-init/Cloudbase-Init or Vmware Tools installed on the provisioned Virtual Images is required.
+|morpheus| can add Global users for Linux and Windows at provision time. Cloud-init/Cloudbase-Init or VMware Tools installed on the provisioned Virtual Images is required.
 
 Linux
   * *Username*: Enter User to be added to Linux Instances during provisioning.
