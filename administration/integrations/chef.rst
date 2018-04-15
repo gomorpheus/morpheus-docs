@@ -33,7 +33,7 @@ Scope Chef Integration to a Cloud
 #. Navigate to `Infrastructure -> Clouds`
 #. Edit the target Cloud
 #. Expand the `Advanced Options` section
-#. In the `Config Managment` dropdown, select the Chef Integration.
+#. In the `Config Management` dropdown, select the Chef Integration.
 #. Save Changes
 
 Scope Chef Integration to a Group
@@ -42,7 +42,7 @@ Scope Chef Integration to a Group
 #. Navigate to `Infrastructure -> Groups`
 #. Edit the target Group
 #. Expand the `Advanced Options` section
-#. In the `Config Managment` dropdown, select the Chef Integration.
+#. In the `Config Management` dropdown, select the Chef Integration.
 #. Save Changes
 
 Provisioning Options
