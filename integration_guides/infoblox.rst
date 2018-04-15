@@ -1,4 +1,4 @@
-NavigateInfoblox
+Infoblox
 ========
 
 Features
@@ -78,13 +78,13 @@ Creating Host Records
 ---------------------
 
 #. Select a Network Pool from `Infrastructure - Network - IP Pools` or `Infrastructure - Network - Services - Infoblox`
-#. Select :guilabel:`+ Add`
+#. Select :guilabel:`+ ADD`
 #. Enter the following
 
    .. image:: /images/infrastructure/network/infoblox/infoblox_addhostrecord.png
 
    HOSTNAME
-    Hostname for the records
+    Hostname for the record
    IP ADDRESS
     IP address for the Host Record
    DOMAIN
@@ -96,3 +96,20 @@ Creating Host Records
 
 Creating Zone Records
 ---------------------
+
+#. Select a Domain from `Infrastructure - Network - Domains` or `Infrastructure - Network - Services - Infoblox - Zones`
+#. Select :guilabel:`+ ADD`
+#. Enter the following
+
+   .. image:: /images/infrastructure/network/infoblox/infoblox_addzonerecord.png
+
+   NAME
+    Name for the record, such as Hostname
+   Type
+    A, AAAA, CNAME, MX, NS, PTR, SOA, or TXT
+   CONTENT
+    Content of the record, such as IP or A Record
+   TTL
+    Time To Live value
+
+#. Select :guilabel:`SAVE CHANGES`
