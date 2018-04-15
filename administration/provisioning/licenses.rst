@@ -16,7 +16,7 @@ Creating Licenses
    * License Type
       Windows
    * Name
-      Name of the License in |morpheus| 
+      Name of the License in |morpheus|
    * License Key
       Enter the License Key
    * Org Name

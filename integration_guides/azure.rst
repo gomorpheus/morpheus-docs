@@ -262,7 +262,7 @@ Create a Storage Account
 
 #. Click "+ Add" at the top of the Storage accounts pane
 
-   .. image::images/newazure-7947e.png
+   .. image:: /images/newazure-7947e.png
 
 #. Enter a unique name for the storage account, select "Locally-redundant storage (LRS) for Replication, select the correct subscription, select "Use existing" and select the same resource group as the Network Security Group and Virtual Network. Also verify the Location is the same, and finally click "Create" at the bottom of the pane.
 
@@ -283,3 +283,5 @@ Multi-tenancy
 -------------
 
 A very common scenario for Managed Service Providers is the need to provide access to Azure resources on a customer by customer basis. With Azure several administrative features have been added to ensure customer resources are properly scoped and isolated. For Azure it is possible to assign specific Networks, and Resource Groups to customer accounts or even set the public visibility of certain resources, therefore allowing all sub accounts access to the resource.
+
+.. include:: azure/scalesets.rst

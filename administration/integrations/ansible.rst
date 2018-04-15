@@ -15,7 +15,7 @@ Add Ansible Integration
 #. Select Integration Type "Ansible"
 #. Populate the following fields:
 
-   * Name: Name of the Ansible Integration in |morpheus| 
+   * Name: Name of the Ansible Integration in |morpheus|
    * Enabled: Enabled by default Ansible Git URL:: https or git url format of the Ansible Git repo to use
    * Keypair: For private Git repos, a keypair must be added to |morpheus| and the public key added to the git account.
    * Playbooks Path: Path of the Playbooks relative to the Git url.
@@ -33,7 +33,7 @@ Scope Ansible Integration to a Cloud
 #. Navigate to `Infrastructure -> Clouds`
 #. Edit the target Cloud
 #. Expand the `Advanced Options` section
-#. In the `Config Managment` dropdown, select the Ansible Integration.
+#. In the `Config Management` dropdown, select the Ansible Integration.
 #. Save Changes
 
 Once an Ansible integration is added to a Cloud, a new "ANSIBLE" tab will appear on the Cloud details page, populated with the Ansible integrations Playbook and Roles, as well as an editable Inventory list.
@@ -44,7 +44,7 @@ Scope Ansible Integration to a Group
 #. Navigate to `Infrastructure -> Groups`
 #. Edit the target Group
 #. Expand the `Advanced Options` section
-#. In the `Config Managment` dropdown, select the Ansible Integration.
+#. In the `Config Management` dropdown, select the Ansible Integration.
 #. Save Changes
 
 Once an Ansible integration is added to a Group, a new "ANSIBLE" tab will appear on the Group details page, populated with the Ansible integrations Playbook and Roles, as well as an editable Inventory list.
@@ -68,7 +68,7 @@ Running Playbooks
 
 Playbooks can also be ran on all inventory groups, individual groups, or added as a task and ran with workflows.
 
-To run ansible on all or a single inventory group, in the Ansible tab of the |morpheus| Group page, select the `Actions` dropdown and click `Run`.
+To run Ansible on all or a single inventory group, in the Ansible tab of the |morpheus| Group page, select the `Actions` dropdown and click `Run`.
 
 In the `Run Ansible` modal, you can then select all or an individual group, and then all or a single Playbook, as well as add custom tags.
 
