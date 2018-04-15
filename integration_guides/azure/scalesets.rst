@@ -13,6 +13,9 @@ Adding an Instance to a Scale Set
 #. Configure the Instance as desired
 #. In the `AUTOMATION` section under `Scale - Scale Type` select `Azure Scale Set`
 #. Select a default Threshold. Threshold pre-sets can be added in `Provisioning - Automation- Scale Threshholds` (requires Instances - Thresholds permission)
+
+   .. image:: /images/azure/azure_scale_sets1.png
+
 #. Complete the instance configuraiton and provision the instance.
 
 A Virtual Machine scale set will be created in Azure with the selected threshold and min/max node settings.
@@ -20,10 +23,17 @@ A Virtual Machine scale set will be created in Azure with the selected threshold
 Create Threshold Presets
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
+
 #. In `Provisioning - Automation` select the `SCALE THRESHOLDS` tab
    .. NOTE:: Access to the SCALE THRESHOLDS section requires `Instances - Thresholds` Role permissions.
+
+   .. image:: /images/provisioning/scalthresholds.png
+
 #. Select :guilabel:`+ ADD`
 #. Configure Threshold settings.
+
+   .. image:: /images/provisioning/scalthresholds1.png
+
 #. Select :guilabel:`SAVE CHANGES`
 
 The new Threshold will be available for selection in the SCALE section during provisioning or when configuring an App Template.
