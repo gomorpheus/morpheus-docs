@@ -19,6 +19,7 @@ Integration Guides
 .. include:: virtualbox.rst
 .. include:: xen.rst
 .. include:: upcloud.rst
+.. include:: infoblox.rst
 .. include:: kubernetes.rst
 .. /include:: macstadium.rst
 .. include:: scvmm.rst
