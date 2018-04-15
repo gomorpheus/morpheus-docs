@@ -5,11 +5,7 @@ Features
 --------
 
 * Network Pools synchronization
-* DNS Zone & Zone record synchronization
-* Host Record synchronization
-* Total & Free IP status bar for networks
-* Network Grid and List view with IP Status and records, date and user tracking
-* Automatic and manual IP Reservations, DNS A/PTR record creation and deletion
+* Automatic IP Reservations, DNS A/PTR record creation and deletion
 
 Adding Infoblox Integration
 ---------------------------
@@ -21,7 +17,7 @@ Adding Infoblox Integration
    .. image:: /images/infrastructure/network/infoblox/infoblox_settings.png
 
    NAME
-    Name of the
+    Name of the Integration in |morpheus|
    Enabled
     Deselect to disable the Integration
    URL
@@ -44,18 +40,7 @@ Adding Infoblox Integration
 
 #. Select :guilabel:`SAVE IPAM INTEGRATION`
 
-Upon save the Infoblox IPAM integration will be created and the following will sync:
-
-* Infoblox networks will be synced in and populate in the `Infrastructure - Network - IP Pools` tab and in the Infoblox detail page under the `NETWORK POOLS` tab.
-* Host Records will sync and populate in the Network Pool detail view (select an IP Pool name to view)
-
-  .. image:: /images/infrastructure/network/infoblox/infoblox_grid.png
-
-* DNS Zones will sync and populate under `Infrastructure - Network - Domains` and in the Infoblox detail page under the `HOSTS` tab.
-
-* DNS Zone Records will sync and populate
-
-  .. image:: /images/infrastructure/network/infoblox/infoblox_zonerecords.png
+Upon save the Infoblox IPAM integration will be created.
 
 Adding IP Pools to Networks
 ---------------------------
@@ -69,47 +54,5 @@ Adding IP Pools to Networks
    * Gateway, DNS and CIDR must be populated for static/pool IP assignment
    * Select `Allow IP Override` to allow selecting between DHCP, Static entry and Pool Selection at provision time
    * Deselect DHCP server if a DHCP server will not be used on the network (only static and/or IP Pool IP assignment)
-
-#. Select :guilabel:`SAVE CHANGES`
-
-
-
-Creating Host Records
----------------------
-
-#. Select a Network Pool from `Infrastructure - Network - IP Pools` or `Infrastructure - Network - Services - Infoblox`
-#. Select :guilabel:`+ ADD`
-#. Enter the following
-
-   .. image:: /images/infrastructure/network/infoblox/infoblox_addhostrecord.png
-
-   HOSTNAME
-    Hostname for the record
-   IP ADDRESS
-    IP address for the Host Record
-   DOMAIN
-    Select an Infoblox Zone
-   Create DNS Records
-    Select to create DNS A and PTR Records in Infoblox
-
-#. Select :guilabel:`SAVE CHANGES`
-
-Creating Zone Records
----------------------
-
-#. Select a Domain from `Infrastructure - Network - Domains` or `Infrastructure - Network - Services - Infoblox - Zones`
-#. Select :guilabel:`+ ADD`
-#. Enter the following
-
-   .. image:: /images/infrastructure/network/infoblox/infoblox_addzonerecord.png
-
-   NAME
-    Name for the record, such as Hostname
-   Type
-    A, AAAA, CNAME, MX, NS, PTR, SOA, or TXT
-   CONTENT
-    Content of the record, such as IP or A Record
-   TTL
-    Time To Live value
 
 #. Select :guilabel:`SAVE CHANGES`
