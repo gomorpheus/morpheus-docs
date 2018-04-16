@@ -5,13 +5,13 @@ Release Date 4/15/2018
 
 .. IMPORTANT:: If upgrading from versions earlier than 3.2.0 please follow the 3.2.0+ upgrade instructions below the release notes.
 
-Whats New
----------
+3.3.1 New Features
+------------------
 
 * Azure Scale Sets support added
 * Azure: Network Security Group selection no longer required
 * Bluecat: Network filter option added to Integration settings
-* Cypher: TFvars added for Teraform. Allows variable files stored in cypher to be used with Teraform Templates.
+* Cypher: TFvars added for Terraform. Allows variable files stored in cypher to be used with Terraform Templates.
 * Global Search: Apps & Library Items categories added
 * Infoblox: Host and Zone Record Sync added
 * Infoblox: Manual Host and Zone record creation, deletion and reservations added
@@ -40,6 +40,27 @@ Whats New
 * VCD: Custom Library Nodes added
 * VCD: Virtual Image upload added
 * Virtual Images: Minimum Ram Requirement field added. Limits which plans will be available for selection at provision time.
+
+3.3.1 Fixes
+-----------
+
+•	Fix for Windows domain join guest user and password not being set
+•	Fix for Error when setting custom group access on subtenant role
+•	Fix for Favicon resetting to default on whitelabeling
+•	Analytics Group and Cloud filter fix
+•	Fix for API: groups list timing out in high usage environments
+•	Fix for Nutanix Cloudbase-Init metadata
+•	Fix for editing and saving Bluecat Integration creating duplicate networks
+•	Fix for Baremetal: Convert to Managed - creating docker check
+•	Fix for synced service plans remaining after some cloud deletions
+•	Fix for KeyPairs 403 error when invalid KeyPair exists
+•	Fix for Azure Managed Disk error when no Azure Storage Accounts exists
+•	Fix for NetScaler: unable to add load balancer when using SSL
+•	Fix for VMware and Nutanix duplicate VM records
+•	Fix for VMware parent host record sync
+•	Fix for error creating an App with Existing Instance
+•	Fix for edit option shown in sub-tenant groups cloud tab on clouds owned by master tenant
+•	Auto cleanup of Azure Deployment records added
 
 .. IMPORTANT:: If upgrading from versions earlier than 3.2.0 please follow the 3.2.0+ upgrade instructions below
 
