@@ -27,12 +27,11 @@ Create Threshold Presets
 #. In `Provisioning - Automation` select the `SCALE THRESHOLDS` tab
    .. NOTE:: Access to the SCALE THRESHOLDS section requires `Instances - Thresholds` Role permissions.
 
-   .. image:: /images/provisioning/scalthresholds.png
-
+   .. image:: /images/provisioning/scalethresholds.png
 #. Select :guilabel:`+ ADD`
 #. Configure Threshold settings.
 
-   .. image:: /images/provisioning/scalthresholds1.png
+   .. image:: /images/provisioning/scalethresholds1.png
 
 #. Select :guilabel:`SAVE CHANGES`
 
@@ -48,4 +47,4 @@ Edit Thresholds on an Instance
 #. Update the threshold settings.
 #. Select :guilabel:`APPLY`
 
-.. NOTE:: Morpheus will sync in changes to a scale sets threshold settings if edited in Azure.
+   .. NOTE:: Morpheus will sync in changes to a scale sets threshold settings if the settings are edited in Azure.
