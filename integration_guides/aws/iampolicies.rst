@@ -18,6 +18,7 @@ EC2
       "Effect": "Allow",
       "Action": [
         "ec2:AllocateAddress",
+        "ec2:AssociateAddress",
         "ec2:AssignPrivateIpAddresses",
         "ec2:AttachVolume",
         "ec2:AuthorizeSecurityGroupEgress",
