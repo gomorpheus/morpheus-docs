@@ -18,7 +18,7 @@ EC2
       "Effect": "Allow",
       "Action": [
         "ec2:AllocateAddress",
-        "ec2:AssignPrivateIpAddress",
+        "ec2:AssignPrivateIpAddresses",
         "ec2:AttachVolume",
         "ec2:AuthorizeSecurityGroupEgress",
         "ec2:AuthorizeSecurityGroupIngress",
@@ -76,7 +76,7 @@ EC2
         "ec2:DescribeVpcClassicLink",
         "ec2:DescribeVpcClassicLinkDnsSupport",
         "ec2:DescribeVpcEndpoints",
-        "ec2:DescribeVpcEndpointsServices",
+        "ec2:DescribeVpcEndpointServices",
         "ec2:DescribeVpcs",
         "ec2:DetachNetworkInterface",
         "ec2:DetachVolume",
