@@ -44,7 +44,7 @@ EC2
         "ec2:DeleteSecurityGroup",
         "ec2:DeleteSnapshot",
         "ec2:DeleteTags",
-        "ec2:DeleteVolumes",
+        "ec2:DeleteVolume",
         "ec2:DeregisterImage",
         "ec2:DescribeAccountAttributes",
         "ec2:DescribeAddresses",
