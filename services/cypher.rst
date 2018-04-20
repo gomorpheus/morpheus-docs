@@ -15,6 +15,8 @@ Mountpoints
 
 password
   Generates a secure password of specified character length in the key pattern (or 15) with symbols, numbers, upper case, and lower case letters (i.e. password/15/mypass generates a 15 character password).
+tfvars
+  This is a module to store a tfvars file for terraform app templates.
 secret
   This is the standard secret module that stores a key/value in encrypted form.
 uuid
