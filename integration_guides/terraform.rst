@@ -1,8 +1,6 @@
 Terraform
 =========
 
-.. IMPORTANT:: In |morpheus| versions 3.3.0 and 3.3.1 VMware cloud types are supported for Terraform App provisioning targets. Additional clouds will be available in later releases.
-
 Requirements
 ------------
 
@@ -17,6 +15,7 @@ Role Access
 
 * To use .tf files from a Git repo a Git or Github integration needs to be configured in `Administration - Integrations`. If one is not configured .tf or .tf.json files can be manually added to Terraform App Templates.
 
+.. IMPORTANT:: In |morpheus| versions 3.3.0 and 3.3.1 VMware cloud types are supported for Terraform App provisioning targets. Additional clouds will be available in later releases.
 
 Terraform Installation
 ^^^^^^^^^^^^^^^^^^^^^^
@@ -69,8 +68,8 @@ To manually install and configure terraform on the Morpheus Appliance:
 Terraform is now installed and configured, and Terraform apps can be provisioned from Morpheus.
 
 
-Creating Terraform Templates
-----------------------------
+Creating Terraform App Templates
+--------------------------------
 
 In order to provision Terraform apps, Terraform App Templates must be created first.
 
@@ -93,12 +92,53 @@ In order to provision Terraform apps, Terraform App Templates must be created fi
        App Category (optional)
    IMAGE
     Add reference image/picture for your App Template (optional)
-    CONFIG TYPE
- CONFIG
+   CONFIG TYPE (select Terraform, Terraform.json, or Git Repository)
+    Terraform (.tf)
+     CONFIG
+      Paste in the .tf contents in the config section. Variables will be presented as input fields during App provisioning, or auto-populated with matching values if contained in a selected TFVAR Secret file added to the Cypher service.
+    Terraform JSON (.tf.json)
+      Paste in .tf.json contents in the config section. Variables will be presented as input fields during App provisioning, or auto-populated with matching values if contained in a selected TFVAR Secret file added to the Cypher service.
+    Git Repository
+      SCM Integration
+        Select a Github SCM integration that has been added in `Administration - Integrations`. If using a Git Repository integration from `Administration - Integrations` this filed can be skipped.
+      Repository
+        Select repository from selected SCM integration, or Git Repository integration from `Administration - Integrations` if no SCM/Github Integration is selected.
+      BRANCH OR TAG
+        i.e. master (default)
+      WORKING PATH
+        Enter the repo path for the .tf files (s). ``./`` is default.
+      CONFIG
+        .tf files found in the working path will populate in the CONFIG section.
 
- 1
- ​
+        .. NOTE:: If no files are found please ensure your Github or Git integration is configured properly (Private repos need to have a key pair added to |morpheus|, the keypair selected on the integration in |morpheus|, and the keypair's public key added to the GitHub users SSH keys in github or to the git repo).
+   TFVAR SECRET
+    Select a tfvars secret for .tf variables. Tfvars secrets can be added in `Services -> Cypher` using the tfvars/name mountpoint. This allows sensitive data and passwords to be encrypted and securely used with Terraform templates.
+   OPTIONS
+    example ``-var 'instanceName=sampleTfApp'``
 
- TFVAR SECRET
+#. Select :guilabel:`SAVE`
 
- OPTIONS
+Your Terraform App is ready to be provisioned from `Provisioning -> Apps`.
+
+Creating Terraform Templates
+----------------------------
+
+.. NOTE:: An existing Terraform App Templates must be added to `Provisioning -> Templates` before it can be provisioned.
+
+.. NOTE:: In order to provision Terraform Apps in `Provisioning -> Apps`, the Morpheus user must have Role permissions for `Provisioning: Templates - Terraform` set to `Provision` or `Full`.
+
+#. Navigate to `Provisioning -> Apps`
+#. Select :guilabel:`+ ADD`
+#. Choose and existing Terraform App Template
+#. Select :guilabel:`NEXT`
+#. Enter a NAME for the App and select the Group, Default Cloud and Environment (optional)
+#. Select :guilabel:`NEXT`
+#. Populate any required variables in the `Terraform Variables` section.
+   ..TIP:: If the tf CONFIG data needs to be edited, select the `RAW` section, edit, and then select the `BUILDER` section again. The CONFIG changes from the RAW edit will be updated in the CONFIG section.
+#. Select :guilabel:`COMPLETE`
+
+The Terraform App will begin to provision.
+
+Once provisioning is completed, note the TERRAFORM tab in the App details page (`Provisioning -> Apps` -> select the App). This section contains State and Plan output:
+
+.. image:: /images/apps/terraform/terraform_sample.png

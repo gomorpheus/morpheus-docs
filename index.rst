@@ -5,6 +5,7 @@ Morpheus Documentation
 .. toctree::
    :maxdepth: 3
 
+   release_notes/3.3.1
    getting_started/getting_started
    provisioning/provisioning
    infrastructure/infrastructure
