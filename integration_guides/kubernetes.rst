@@ -37,4 +37,4 @@ Kubernetes Clusters can be provisioned into any Cloud Type by setting the CONTAI
 
 Once the CONTAINER MODE is set on a Cloud, a Kubernetes Cluster can be created by selecting :guilabel:`+ CONTAINER HOST` ->  `Kubernetes Master` and then `Kubernetes Worker` from `Infrastructure -> Hosts` or `Infrastructure -> Clouds` -> select Cloud -> `Hosts`.
 
-IMPORTANT:: For the Kubernetes Cluster to be successfully created, the Kubernetes Master must finish provisioning before the worker(s) are created. Do not start provisioning a worker in the cluster until the Master is completed.
+.. IMPORTANT:: For the Kubernetes Cluster to be successfully created, the Kubernetes Master must finish provisioning before the worker(s) are created. Do not start provisioning a worker in the cluster until the Master is completed.
