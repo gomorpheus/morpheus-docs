@@ -21,6 +21,7 @@ Integration Guides
 .. include:: upcloud.rst
 .. include:: infoblox.rst
 .. include:: kubernetes.rst
+.. include:: terraform.rst
 .. /include:: macstadium.rst
 .. include:: scvmm.rst
 .. include:: cloudfoundry.rst
