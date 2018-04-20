@@ -13,6 +13,9 @@ Role Access
 
 * Existing Terraform Templates must be added before they can be provisioned from `Provisioning -> Apps`.
 
+Github/Git Repo
+^^^^^^^^^^^^^^^
+
 * To use .tf files from a Git repo a Git or Github integration needs to be configured in `Administration - Integrations`. If one is not configured .tf or .tf.json files can be manually added to Terraform App Templates.
 
 .. IMPORTANT:: In |morpheus| versions 3.3.0 and 3.3.1 VMware cloud types are supported for Terraform App provisioning targets. Additional clouds will be available in later releases.
@@ -56,7 +59,7 @@ To manually install and configure terraform on the Morpheus Appliance:
     terraform:
         location: '/var/opt/morpheus/morpheus-ui/terraform'
 
-   .. IMPORTANT:: Uses spaces not tabs to indent or ui startup will fail. If you used a different path than the default location, use that path instead.
+   .. IMPORTANT:: Uses spaces not tabs to indent or ui startup will fail. If you used a different path than the default location, enter that path instead.
 
 #. Restart the morpheus-ui to apply the ``application.yml`` config.
 
