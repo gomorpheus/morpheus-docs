@@ -23,7 +23,7 @@ Github/Git Repo
 Terraform Installation
 ^^^^^^^^^^^^^^^^^^^^^^
 
-|morpheus| will automatically install Terraform locally upon the first Terraform App provision. It is possible on some operating system configurations for the automated terraform to fail, in which case it can be manually installed (run ``terraform --version`` to verify).
+|morpheus| will automatically install Terraform locally upon the first Terraform App provision. It is possible on some operating system configurations for the automated terraform installation to fail, in which case it can be manually installed (run ``terraform --version`` to verify).
 
 To manually install and configure terraform on the Morpheus Appliance:
 
