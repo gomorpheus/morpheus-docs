@@ -44,7 +44,7 @@ To manually install and configure terraform on the Morpheus Appliance:
 
     sudo chown morpheus-app.morpheus-app /var/opt/morpheus/morpheus-ui/terraform
 
-   The default location is '``/var/opt/morpheus/morpheus-ui/terraform'`` but can be changed.
+   The default location is ``/var/opt/morpheus/morpheus-ui/terraform`` but can be changed.
 
 #. Add the Terraform working path to ``/opt/morpheus/conf/application.yml``
 
