@@ -12,6 +12,8 @@ Appliance Name
 	Replaces |morpheus| in page titles.
 Header Logo
 	Top left header logo. Preferred Image Size (500x76)
+Disable Support Menu
+	Enable this flag to hide the support dropdown menu in the header.
 Footer Logo
 	Footer Logo in bottom left. Preferred Image Size (264x54)
 Login Logo
