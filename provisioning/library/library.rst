@@ -4,6 +4,8 @@ Library
 Overview
 --------
 
+.. image:: /images/provisioning/library/instancetype2.png
+
 The Library section is used to add virtual images as custom instances to the provisioning catalog. The Library Section is composed of:
 
 * Instance Types
@@ -19,7 +21,7 @@ Uploaded or synced images from the virtual images section are added to nodes, a 
 Instance Types
 --------------
 
-.. Types___Library___|morpheus| _salt_library_item.png
+.. image:: /images/provisioning/library/Types   Library   Morpheus salt library item.png
 
 Adding an Instance Type creates a new Library Item category. Multiple layouts can be added to an instance type, and these layout can have different nodes attached. The instance wizard will present the layout options compatible with the selected cloud. If cloud selection is turned off, all layouts will be presented for all cloud types accessible by the user.
 
@@ -31,16 +33,17 @@ Description
   The description of the Instance Type shown in the Provisioning Library. (255 characters max)
 Category
   For filtering in Instance sections and Provisioning Wizard
-    * Web
-    * SQL
-    * NoSLQ
-    * Apps
-    * Network
-    * Messaging
-    * Cache
-    * OS
-    * Cloud
-    * Utility
+
+  * Web
+  * SQL
+  * NoSLQ
+  * Apps
+  * Network
+  * Messaging
+  * Cache
+  * OS
+  * Cloud
+  * Utility
 
 Icon
   Suggested Dimensions: 150 x 51
@@ -59,7 +62,7 @@ Upon saving, this Instance Type will be available in the Provisioning Catalog, p
 Node Types
 ----------
 
-.. salt_node_type.png
+.. image:: /images/provisioning/library/salt node type.png
 
 The following fields are for all node technology types:
 
@@ -68,15 +71,24 @@ The following fields are for all node technology types:
 * Version
 * Category
 * Technology
-** Azure
-** Docker
-** Google
-** Hyper-V
-** KVM
-** Nutanix
-** OpenStack
-** VMware
-** Xen
+  * Alibaba
+  * Amazon
+  * Azure
+  * Docker
+  * ESXi
+  * Fusion
+  * Google
+  * Hyper-V
+  * KVM
+  * Nutanix
+  * OpenStack
+  * Oracle VM
+  * SCVMM
+  * UpCloud
+  * vCloud Director
+  * VMware
+  * Xen
+
 * Environment Variables
 
 The Options fields will change depending on the Technology option selected.
@@ -90,9 +102,9 @@ For Docker, type in the name and version of the Docker Image and select the inte
 Expose Ports
   To open port on the node, select "Add Port" and enter the name and port to expose. The Load Balancer http, https or tcp setting is only required when attaching to load balancers.
 
-.. Example port configuration:
+Example port configuration:
 
-.. node_ports.png
+.. image:: /images/provisioning/library/node ports.png
 
 Scripts & Templates
 -------------------
@@ -104,12 +116,14 @@ To attach scripts and templates that have been added to the Library to a node ty
 * The Execution Phase can be set for scripts in the Scripts section.
 * Search will populate Scripts or Templates containing the characters entered anywhere in their name, not just the first letter(s) of the name.
 
+.. image:: /images/provisioning/library/library_add_script.png
+
 Upon save the Node Type will be created, and available for adding to layouts.
 
 Layouts
 -------
 
-.. salt_new_layout.png
+.. image:: /images/provisioning/library/salt new layout.png
 
 Layouts are added to Instance types, and will be presented under the Configuration Options dropdown in the Provisioning Wizard for that Instance type.
 
@@ -131,32 +145,32 @@ Environment Variables
 Nodes
   Single or multiple nodes can be added to a Layout by searching for and selecting the node(s). An example of a layout with multiple nodes is the Hyper-V MySQL Master/Slave layout pictured below (note this is the Layout detail screen after the layout has been created.)
 
-..Multi-node Layout example:
+Multi-node Layout example:
 
-.. hyper-v_master_slave.png
+.. image:: /images/provisioning/library/hyper-v master slave.png
 
 Upon save, the layout will be attached to the selected Instance Type, and available when provisioning that Instance Type for the appropriate cloud technology.
 
-.. salt_instance_type_layout_detail.png
+.. image:: /images/provisioning/library/salt instance type layout detail.png
 
 Option Types
 ------------
 
 Option Types allow you to create additional fields within the provisioning wizard.
 
-.. OptionType.png
+.. image:: /images/provisioning/library/OptionType.png
 
 These field entries can then be used in scripts and templates using our variable naming convention (more here).
 
-.. variable.png
+.. image:: /images/provisioning/library/variable.png
 
 Option List
 -----------
 
 Much like Option Types, Option Lists allow you to give the user more choices during provisioning to then be passed to scripts and/or automation.  Option Lists, however, are pre-defined insofar as they are not free-form. They can either be manually entered CSV or JSON or they can be dynamically compiled from REST calls via GET or POST requests.
 
-.. optionlist.png
+.. image:: /images/provisioning/library/optionlist.png
 
-.. OptionListREST.png
+.. image:: /images/provisioning/library/OptionListREST.png
 
 Your new Library Item is now ready for provisioning. Multiple Layouts, Versions and Technology types can be added to a single Instance Type.
