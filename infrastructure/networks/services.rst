@@ -9,17 +9,20 @@ The Network Services section allows you to add and manage IPAM, DNS, and Service
 The following integrations are currently supported:
 
 IPAM
-  * Infoblox
-  * Bluecat (2.11)
+
+* Infoblox
+* Bluecat (2.11)
 
 DNS
-  * Microsoft DNS
-  * Power DNS
-  * Route 53
-  * Bind DNS
+
+* Microsoft DNS
+* Power DNS
+* Route 53
+* Bind DNS
 
 Service Registry
-  * Consul
+
+* Consul
 
 Add a Service
 ^^^^^^^^^^^^^
@@ -27,42 +30,48 @@ Add a Service
 To configure any of the services, select `ADD SERVICE`, and fill out the required fields.
 
 Infoblox
-  * Name
-  * URL (wapi url + version)
 
-    - example `https://x.x.x.x/wapi/v2.2.1`
+* Name
+* URL (wapi url + version)
 
-  * Username
-  * Password
+  - example `https://x.x.x.x/wapi/v2.2.1`
+
+* Username
+* Password
 
 Bluecat
-  * Name
-  * URL
-  * Username
-  * Password
+
+* Name
+* URL
+* Username
+* Password
 
 Microsoft DNS
-  * Name
-  * DNS Server
-  * Username
-  * Password
-  * Zone
+
+* Name
+* DNS Server
+* Username
+* Password
+* Zone
 
 PowerDNS
-  * Name
-  * API Host
-  * Token
+
+* Name
+* API Host
+* Token
 
 BindDNS
-  * Host
-  * Username
-  * Password
-  * BindKey
+
+* Host
+* Username
+* Password
+* BindKey
 
 Route 53
-  * Region
-  * Access Key
-  * Secret Key
+
+* Region
+* Access Key
+* Secret Key
 
 After Saving, your Network Service integrations will be available for use. These integrations must be scoped to the appropriate sections in |morpheus| :
 
