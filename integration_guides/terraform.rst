@@ -52,12 +52,29 @@ To manually install and configure terraform on the Morpheus Appliance:
 
     sudo vi /opt/morpheus/conf/application.yml
 
-   Add the following to the applicaiton.yml config below the repo seciton:
+   Add the following to the application.yml config below and in-line with the repo section:
 
    .. code-block:: bash
 
     terraform:
         location: '/var/opt/morpheus/morpheus-ui/terraform'
+
+   Example application.yml config with Terraform location added: 
+
+   .. code-block:: bash
+
+    repo:
+        git:
+            location: '/var/opt/morpheus/morpheus-ui/repo/git'
+        local:
+            location: '/var/opt/morpheus/morpheus-ui/repo/local'
+    terraform:
+        location: '/var/opt/morpheus/morpheus-ui/terraform'
+    bitcan:
+        backup:
+            destination:
+                root: '/var/opt/morpheus/bitcan/backup'
+                working: '/var/opt/morpheus/bitcan/working'
 
    .. IMPORTANT:: Uses spaces not tabs to indent or ui startup will fail. If you used a different path than the default location, enter that path instead.
 
