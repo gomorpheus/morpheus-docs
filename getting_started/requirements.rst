@@ -76,3 +76,5 @@ The Appliance Server automatically installs several components for the operation
 
 All of these are installed in an isolated way using chef zero to ``/opt/morpheus``. It is also important to note these services can be
 offloaded to separate servers or clusters as desired. For details check the installation section and high availability.
+
+.. include:: /troubleshooting/ports.rst
