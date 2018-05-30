@@ -12,15 +12,15 @@ Cause
 Solution
   To fix, purge elasticsearch by running the following on the |morpheus| Appliance:
 
-.. code-block:: bash 
+.. code-block:: bash
 
-    curl -XDELETE http://localhost:9200/*" rel="nofollow noreferrer">http://localhost:9200/*
+    curl -XDELETE http://localhost:9200/* 
     morpheus-ctl restart elasticsearch
     morpheus-ctl restart morpheus-ui
 
 Another option is:
 
-.. code-block:: bash 
+.. code-block:: bash
 
   sudo rm –rf /var/opt/|morpheus| /elasticsearch/data/morpheus
   morpheus-ctl restart elasticsearch
