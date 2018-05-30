@@ -1,0 +1,104 @@
+v3.3.2
+======
+
+Release Date 5/24/2018
+
+.. IMPORTANT:: If upgrading from versions earlier than 3.2.0 please follow the 3.2.0+ upgrade instructions below the release notes.
+
+.. IMPORTANT:: Appliance Elasticsearch communication in 3.3.1+ switches from transport protocol 9300 port to http 9200
+
+3.3.2 New Features
+------------------
+
+* Agent: Support for Ubuntu 18.04 LTS added
+* Alibaba: Docker Host support added
+* Alibaba: Virtual Image upload added
+* API: Virtual Image Upload via url added
+* API: Identity Source added
+* API: Instance config and volume details added
+* Apps: New default Template logos
+* Auditing: Now support the ability to export the audit log from user interactions to a SIEM tool
+* Auditing: AuditLogService added to morpheus-ui logs
+* Azure: Scale Set threshold validation added
+* Bluecat: New method added for instant dns record deployments
+* Blueprints: Templates have been renamed to Blueprints
+* Blueprints: Default Blueprint type option added to Administration - Provisioning
+* Blueprints: ARM: Support for "concat" and "copies" added
+* Blueprints: Terraform: AWS support added
+* Blueprints: Terraform: Support for variable instance names added
+* Blueprints: Terraform: Oracle Cloud support added
+* Blueprints: Terraform failures surface on the app details page
+* Blueprints: Terraform: Variables now surface in App wizard
+* Global Search: Quick results added to header search
+* Infoblox: Support for custom extended attributes added
+* Instance Wizard: Code reworked for optimizations
+* Infrastructure: Updated delete dialog text
+* Keys & Certs: Services section added
+* Keys & Certs: Venafi service added
+* Keys & Certs: EC type public key support added
+* Keys & Certs: Upload keypair option added
+* Kubernetes: Ports no longer need to be defined on custom library items
+* Kubernetes: Added icon for Kubernetes instance type
+* KVM: Caching virtual machines now include metadata on network and storage volumes attached to a KVM VM
+* KVM: Re-factored LVM implementation of KVM to allocate a volume per disk instead of nested QCOW2 files
+* KVM: VM Inventory added
+* Network Services: phpIPAM integration added
+* Plans & Pricing: Max disk limit added to plans
+* Reports: Tenant filtering added to Usage Reports
+* Reports: Cost Reports added with Application, Cloud, Group, Instance and Tenant Cost Reports
+* Reports: Usage Reports: Tenant Usage Report Added
+* Roles: Trust Services permission added. Controls Infra > Keys & Certs > Services access and Admin > Integrations > Add (trust options)
+* ServiceNow: Kingston certification added for Morpheus SNOW Plugin
+* Users: Password confirmation fields added for Linux and Windows users
+* vCloud Director: Custom Plans support added
+* vCloud Director: Docker Host support added
+* vCloud Director: Reconfigure added
+* VMware: Instance Notes sync added
+
+3.3.2 Fixes
+-----------
+
+* Fix for tenant delete that fails if an app with custom tiers is used to create an app
+* Fix for Alibaba Cloud sync delay
+* Fix for Alibaba release EIP not respected when deleting VM
+* Fix for Alibaba network being recreated on sync
+* Fix for Alibaba instance validation not completing
+* Fix for Alibaba instance name validation
+* Fix for Xen snapshots not being cleaned up
+* Fix to show existing VM's in Alibaba inventory
+* Fix for deleting SCVMM cloud
+* Fix for style issue with load balancer advanced options
+* Fix for Veeam Templates/Jobs not populating
+* Fix for Oracle Cloud VM. VM will restart after it is resized
+* Fix for VMware storage containers where adding a controller would clear the volume type
+* Fix for extra backup that's created on an Azure Scale Set instance
+* Fix for Azure Scale Set instance data issues
+* Fix for MacStadium creating a duplicate VM after cloud sync
+* Fix for Alibaba cloud not cleaning security groups when deleted
+* Fix for Oracle Cloud users not being created for non-cloudinit images
+* Fix for Service Now incident level update
+* Fix for KVM multidisk provision
+* Fix for Bluemix Platform not cleaning up service library items
+* Fix for Alibaba not using available EIP
+* Fix for missing price component
+* Fix for Kubernetes host cert issue
+* Fix for Windows Cloudbase-init userdata and DNS client settings missing
+* Fix for wrong Ethernet adapter type being set on uploaded Windows images
+* Fix for Alibaba backups not getting deleted when instance is deleted
+* Fix for KVM provision not respecting host selection
+* Fix for Cloud Foundry user permissions
+* Fix for manual KVM host deletion error
+* Fix for permissions on default storage path
+* Fix for Openstack cloud service plans assigned to subtenants
+* Fix for default instance deployment
+* Fix for Alibaba 'preserve volume' not working on delete
+* Fix for system instance type: macOS
+* Fix for expired backup archived not deleting on S3
+* Fix for unintended firewall evaluation when using shared resource in an app
+* Fix for KVM App/Template issues
+* Fix for Last Deployment: Never Deployment phrasing
+* Fix for CentOS 7.2 Answer File in boot configurator for PXE
+
+.. IMPORTANT:: If upgrading from versions earlier than 3.2.0 please follow the 3.2.0+ upgrade instructions below
+
+.. include:: /getting_started/320upgrade.rst
