@@ -1,0 +1,21 @@
+Adding phpIPAM Integration
+==========================
+
+
+Configure phpIPAM API
+  #. Within phpIPAM dashboard enable api in Administration > phpIPAM settings > feature settings.  Toggle API switch to ``on`` and save.
+  #. Go to Admin > API > create API key.
+  #. Create unique App ID.
+  #. Enable ``read/write/admin`` access under **App Permissions**.
+  #.  Under **App Security** select ``none``.
+
+Add integration in Morpheus
+   #. Under Infrastructure > Network > Services > click add phpIPAM
+   #. Fill out
+      * Name
+      * URL ( Add ``/api/`` to end of URL ex. ``http://10.30.20.196/api/``)
+      * App ID ( from phpIPAM API Key)
+      * Username
+      * Password
+      * Enable or Disable SSL SNI Verification
+      * Enter Network Filter
