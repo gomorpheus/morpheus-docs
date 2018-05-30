@@ -1,4 +1,4 @@
 KVM
 ===
 
-.. include:: vlans.rst
+.. include:: kvm/vlans.rst
