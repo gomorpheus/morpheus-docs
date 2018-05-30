@@ -1,4 +1,5 @@
 Restart a |morpheus| Installation
+=================================
 
 If the initial reconfigure is stopped or your installation is damaged beyond reconfiguring again, it may be necessary to start over.
 
@@ -13,7 +14,7 @@ On the |morpheus| appliance:
 
    Then Run
 
-   .. code-block:: bash 
+   .. code-block:: bash
 
     rm -rf /etc/morpheus
     rm -rf /var/opt/morpheus
@@ -25,7 +26,7 @@ On the |morpheus| appliance:
 
 If the elasticsearch cluster is unhealthy and needs purged, run:
 
-.. code-block:: bash 
+.. code-block:: bash
 
   sudo morpheus-ctl stop elasticsearch`
   sudo rm -rf /var/opt/morpheus/elasticsearch/data/morpheus`
