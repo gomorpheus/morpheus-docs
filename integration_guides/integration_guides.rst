@@ -21,7 +21,7 @@ Integration Guides
 .. include:: upcloud.rst
 .. include:: kvm/kvm.rst
 .. include:: infoblox.rst
-.. //include:: phpipam.rst
+.. include:: phpipam.rst
 .. include:: kubernetes.rst
 .. include:: terraform.rst
 .. //include:: macstadium.rst
