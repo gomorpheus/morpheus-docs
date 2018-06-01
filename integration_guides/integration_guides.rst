@@ -2,7 +2,7 @@
 Integration Guides
 ******************
 
-.. include:: Clouds&Infrastructures/PrivateClouds/vmware.rst
+.. include:: Clouds&Infrastructure
 .. include:: amazon.rst
 .. include:: azure.rst
 .. include:: azure_stack.rst
