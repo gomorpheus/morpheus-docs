@@ -1,2 +1,2 @@
-ringo Veeam
+Veeam
 ------------
