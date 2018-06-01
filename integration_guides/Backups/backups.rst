@@ -1,6 +1,4 @@
-Backups
-===========
+Backups Bingo
+==============
 
-
-.. include:: Backups/commvault.rst
-.. include:: Backups/veeam.rst
+.. include:: Backups/bingo.rst
