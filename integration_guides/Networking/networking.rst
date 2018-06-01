@@ -6,4 +6,4 @@ Networking
 .. include:: Networking/bluecat.rst
 .. include:: Networking/morpheus_internal.rst
 .. include:: Networking/phpipam.rst
-.. include:: Networking/venafi.rst
+.. include:: Networking/bananas.rst
