@@ -2,4 +2,4 @@
 Integration Guides
 ******************
 
-.. include:: Clouds&Infrastructure/privateclouds.rst
+.. include:: Clouds&Infrastructure/PrivateClouds/privateclouds.rst
