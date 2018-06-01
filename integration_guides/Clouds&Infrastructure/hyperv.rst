@@ -4,7 +4,7 @@ Hyper-V
 Hyper-V is the virtualized server computing environment introduced by Microsoft. Hyper-V is consumed by |morpheus| as a private cloud offering and is a common hypervisor technology in data centers. |morpheus| provides and avenue to aggregate Hyper-V resources together to allow efficient and seamless deployment of applications as a virtual machine (VM) or Docker host in the world of Hyper-V.
 
 Features
---------
+~~~~~~~~~~
 
 • Virtual Machine Provisioning
 • Containers
@@ -22,7 +22,7 @@ Features
 |morpheus| can provide a single pane of glass and self-service portal for managing instances scattered across both Hyper-V and public cloud offerings like Azure.
 
 Getting Started
----------------
+~~~~~~~~~~~~~~~~
 
 To get started this a few prerequisites must first be met. The Hyper-V host most be installed with its firewall enabled and it can either be joined to a domain or standalone. The Hyper-V host must also have the external network of Hyper-V configured and it can share this network with the management operating system. This document covers Hyper-V 2008 and Hyper-V 2012.
 
@@ -139,7 +139,7 @@ After creation of the krb5.conf a keytab file is also required. See below on ins
 http://www.itadmintools.com/2011/07/creating-kerberos-keytab-files.html
 
 Adding Hyper-V as a Private Cloud
----------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The Hyper-V host is prepared for |morpheus| to communicated with it via WinRM so the Hyper-V private cloud is ready to be configured. Create a group and then create a |morpheus| cloud for Hyper-V. Populated the information as show in Figure 1: specific for the environment being configured.
 
@@ -150,14 +150,14 @@ The Hyper-V host is prepared for |morpheus| to communicated with it via WinRM so
 .. image:: /images/hyperv2_original.png
 
 Service Plans
--------------
+~~~~~~~~~~~~~
 
 A default set of Service Plans are created in |morpheus| for the VMware provisioning engine. These Service Plans can be considered akin to AWS Flavors or Openstack Flavors. They provide a means to set predefined tiers on memory, storage, cores, and cpu. Price tables can also be applied to these so estimated cost per virtual machine can be tracked as well as pricing for customers. By default, these options are fixed sizes but can be configured for dynamic sizing. A service plan can be configured to allow a custom user entry for memory, storage, or cpu. To configure this, simply edit an existing Service Plan tied to Hyper-V or create a new one. These all can be easily managed from the Admin | Service Plans & Pricing section.
 
 .. image:: /images/hyperv3_original.png
 
 Docker
-------
+~~~~~~~
 
 So far this document has covered how to add the Hyper-V cloud integration and has enabled users the ability to provision virtual machine based instances via the Add Instance catalog in Provisioning. Another great feature provided by |morpheus| out of the box is the ability to use Docker containers and even support multiple containers per Docker host. To do this a Docker Host must first be provisioned into Hyper-V (multiple are needed when dealing with horizontal scaling scenarios).
 
