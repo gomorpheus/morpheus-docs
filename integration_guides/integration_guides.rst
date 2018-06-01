@@ -2,7 +2,7 @@
 Integration Guides
 ******************
 
-.. include:: vmware.rst
+.. include:: /clouds&infrastructures
 .. include:: amazon.rst
 .. include:: azure.rst
 .. include:: azure_stack.rst
