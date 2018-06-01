@@ -18,4 +18,4 @@ including docker files
 .. include:: Logs/Logs.rst
 .. include:: Monitoring/Monitoring.rst
 .. include:: service_discovery/service_discovery.rst
-.. include:: Storage/Storage.rst
+.. include:: Storage/storage.rst
