@@ -2,5 +2,5 @@ Clouds Header
 ==============
 
 
-.. include:: Clouds&Infrastructure/PublicClouds
+.. include:: PublicClouds/azure.rst
 .. include:: Clouds&Infrastructure/PrivateClouds
