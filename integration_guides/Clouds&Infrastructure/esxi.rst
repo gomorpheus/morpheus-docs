@@ -1,5 +1,5 @@
 ESXi
-====
+-----
 
 The ESXi Cloud type enables managing and provisioing to ESXi hosts, even without the ESXi API enabled.
 

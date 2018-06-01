@@ -1,5 +1,5 @@
 Digital Ocean
-=============
+-------------
 
 Add a Digital Ocean Cloud
 -------------------------
