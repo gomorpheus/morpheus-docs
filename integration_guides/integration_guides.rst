@@ -8,3 +8,4 @@ including docker files
 .. include:: Automation/automation.rst
 .. include:: Backups/backups.rst
 .. include:: Containers/containers.rst
+.. include:: Deployment/deployment.rst
