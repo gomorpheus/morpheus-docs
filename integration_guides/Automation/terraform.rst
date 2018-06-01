@@ -1,5 +1,5 @@
 Terraform
-=========
+---------
 
 Requirements
 ------------
@@ -59,7 +59,7 @@ To manually install and configure terraform on the Morpheus Appliance:
     terraform:
         location: '/var/opt/morpheus/morpheus-ui/terraform'
 
-   Example application.yml config with Terraform location added: 
+   Example application.yml config with Terraform location added:
 
    .. code-block:: bash
 
