@@ -15,3 +15,5 @@ including docker files
 .. include:: IdentityManagement/IdentityManagement.rst
 .. include:: LoadBalancers/LoadBalancers.rst
 .. include:: Networking/networking.rst
+.. include:: Logs/Logs.rst
+.. include:: Monitoring/Monitoring.rst
