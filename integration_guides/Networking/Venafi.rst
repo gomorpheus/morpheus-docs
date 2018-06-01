@@ -1,4 +1,2 @@
 Venafi
 ---------
-
-basdasudbuabsduasbdub
