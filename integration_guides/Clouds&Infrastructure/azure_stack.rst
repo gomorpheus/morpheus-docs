@@ -2,7 +2,7 @@ Azure Stack
 ------------
 
 Overview
---------
+~~~~~~~~
 
 Azure Stack is Microsoft's Azure Cloud for on-premises environments. Azure Stack contains the core Azure services, allowing organizations to take advantage of Azure's offerings with the security, compliance, and financial benefits of hosting it in their own data-centers.
 
@@ -27,7 +27,7 @@ Azure Stack is Microsoft's Azure Cloud for on-premises environments. Azure Stack
 Combine these features with public Azure and |morpheus| can provide a single pane of glass and self service portal for managing instances scattered across both Azure offerings.
 
 Requirements
-------------
+~~~~~~~~~~~~~
 
 Azure Stack Accessibility
 ^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -104,7 +104,7 @@ Credentials to integrate |morpheus| with Azure Stack are located in both the pub
 
 
 Adding an Azure Stack Cloud
----------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Configure
 ^^^^^^^^^
