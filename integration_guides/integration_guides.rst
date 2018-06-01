@@ -16,3 +16,5 @@ including docker files
 .. include:: LoadBalancers/LoadBalancers.rst
 .. include:: Logs/Logs.rst
 .. include:: Monitoring/Monitoring.rst
+.. include:: service_discovery/service_discovery.rst
+.. include:: storage/storage.rst
