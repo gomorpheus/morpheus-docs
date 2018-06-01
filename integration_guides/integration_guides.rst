@@ -10,4 +10,7 @@ including docker files
 .. include:: Containers/containers.rst
 .. include:: Deployments/deployment.rst
 .. include:: DNS/DNS.rst
+.. include:: ha/ha.rst
+.. include:: ITSM/ITSM.rst
 .. include:: IdentityManagement/IdentityManagement.rst
+.. include:: LoadBalancers/LoadBalancers.rst
