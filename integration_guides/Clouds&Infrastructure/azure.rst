@@ -2,12 +2,12 @@ Azure
 -----
 
 Overview
---------
+~~~~~~~~~~~~~~~
 
 Azure is Microsoft's public cloud offering. Offering a full range of services and features across the globe in various datacenters. It is the equivalent of AWS for Microsoft running primarily on the Hyper-V based hypervisor. While it is a great public cloud offering, it can be somewhat difficult to get integrated with which is what this guide aims to cover.
 
 Features
---------
+~~~~~~~~~~~~~~~
 
 * Virtual Machine Provisioning
 * Azure SQL Database
@@ -34,7 +34,7 @@ Combine these features with on premise solutions like Azure-Stack and |morpheus|
 .. NOTE:: |morpheus| even supports integrating with CSP based accounts in Azure (typically used by managed service providers).
 
 Requirements
-------------
+~~~~~~~~~~~~~~~
 
 * Azure Active Directory Application & Credentials
 
@@ -71,13 +71,13 @@ If you do not already have the Azure Active Directory credentials required to ad
 
 Old and New Portal Naming Conventions:
 
-+----------------------+-----------------------+
++~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~------+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-------+
 |Old Azure Portal Name | New Azure Portal Name |
 +======================+=======================+
 |Tenant ID             |Directory ID           |
-+----------------------+-----------------------+
++~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~------+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-------+
 |Client ID             |Application ID         |
-+----------------------+-----------------------+
++~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~------+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-------+
 
 Creating an Azure Active Directory Application
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -182,7 +182,7 @@ You now have the required Credentials to add an Azure cloud integration into |mo
 .. IMPORTANT:: You will also need to have existing Network Security Group(s), Virtual Networks(s) and Storage Accounts(s). Instructions for creating these can be found later in this article.
 
 Add Azure cloud in |morpheus|
------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-----
 
 Azure is now ready to be added into |morpheus| . Ensure you have the noted Subscription ID, Tenant ID, Client ID, and Client Secret accessible.
 
@@ -217,7 +217,7 @@ Your Azure Cloud will be created.
    .. image:: /images/azure/newazure-2a7fe.png
 
 Creating Resources in Azure
----------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~---
 
 If you do not have existing Network Security Groups, Virtual Networks, or Storage Accounts, you can create them by following the steps below:
 
@@ -269,7 +269,7 @@ Create a Storage Account
    .. image:: /images/azure/newazure-b89ea.png
 
 Docker
-------
+~~~~~~
 
 So far this document has covered how to add the Azure cloud integration and has enabled users the ability to provision virtual machine based instances via the Add Instance catalog in Provisioning. Another great feature provided by |morpheus| out of the box is the ability to use Docker containers and even support multiple containers per Docker host. To do this a Docker Host must first be provisioned into Azure (multiple are needed when dealing with horizontal scaling scenarios).
 
@@ -280,7 +280,7 @@ To provision a Docker Host simply navigate to the Cloud detail page or Infrastru
 Some common error scenarios include network connectivity. For a Docker Host to function properly, it must be able to resolve the |morpheus| appliance url which can be configured in Admin|Settings. If it is unable to resolve and negotiate with the appliance than the agent installation will fail and provisioning instructions will not be able to be issued to the host.
 
 Multi-tenancy
--------------
+~~~~~~~~~~~~~~~-----
 
 A very common scenario for Managed Service Providers is the need to provide access to Azure resources on a customer by customer basis. With Azure several administrative features have been added to ensure customer resources are properly scoped and isolated. For Azure it is possible to assign specific Networks, and Resource Groups to customer accounts or even set the public visibility of certain resources, therefore allowing all sub accounts access to the resource.
 
