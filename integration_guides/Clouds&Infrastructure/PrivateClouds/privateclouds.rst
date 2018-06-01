@@ -1,5 +1,5 @@
 Header
 =======
 
-.. include:: PrivateClouds/esxi.rst
-.. include:: PrivateClouds/nutanix.rst
+.. include:: esxi.rst
+.. include:: nutanix.rst
