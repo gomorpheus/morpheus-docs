@@ -2,4 +2,4 @@ ITSM
 =====
 
 
-.. include:: ServiceNowITSM.est
+.. include:: ServiceNowITSM.rst
