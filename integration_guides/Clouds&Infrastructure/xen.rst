@@ -2,7 +2,7 @@ Xen Server
 -----------
 
 Add a Xen Server Cloud
-----------------------
+~~~~~~~~~~~~~~~~~~~~~~~
 
 #. Navigate to Infrastructure -> Clouds
 #. Select `+ CREATE CLOUD`, select Xen, and then click Next.
