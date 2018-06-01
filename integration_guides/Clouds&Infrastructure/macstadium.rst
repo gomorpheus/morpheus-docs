@@ -1,4 +1,5 @@
-[[macstadium]]
+macstadium
+--------------
 
 == Mac Stadium Integration
 

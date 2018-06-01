@@ -1,11 +1,11 @@
 Softlayer
-=========
+----------
 
 Add a Softlayer Cloud
 ---------------------
 
 Name
-  Name of the Cloud in |morpheus| 
+  Name of the Cloud in |morpheus|
 Location
   Description field for adding notes on the cloud, such as location.
 Visibility
