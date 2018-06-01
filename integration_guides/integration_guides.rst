@@ -9,3 +9,4 @@ including docker files
 .. include:: Backups/backups.rst
 .. include:: Containers/containers.rst
 .. include:: Deployments/deployment.rst
+.. include:: DNS/DNS.rst
