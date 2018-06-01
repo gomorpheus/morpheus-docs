@@ -10,3 +10,4 @@ including docker files
 .. include:: Containers/containers.rst
 .. include:: Deployments/deployment.rst
 .. include:: DNS/DNS.rst
+.. include:: IdentityManagement/IdentityManagement.rst
