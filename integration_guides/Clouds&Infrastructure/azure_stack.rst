@@ -2,7 +2,7 @@ Azure Stack
 ------------
 
 Overview
-~~~~~~~~
+^^^^^^^^
 
 Azure Stack is Microsoft's Azure Cloud for on-premises environments. Azure Stack contains the core Azure services, allowing organizations to take advantage of Azure's offerings with the security, compliance, and financial benefits of hosting it in their own data-centers.
 
@@ -27,10 +27,10 @@ Azure Stack is Microsoft's Azure Cloud for on-premises environments. Azure Stack
 Combine these features with public Azure and |morpheus| can provide a single pane of glass and self service portal for managing instances scattered across both Azure offerings.
 
 Requirements
-~~~~~~~~~~~~~
+^^^^^^^^^^^^
 
 Azure Stack Accessibility
-^^^^^^^^^^^^^^^^^^^^^^^^^
+``````````````````````````
 
 By default, the Azure Stack management url's are not accessible from an external network. Port mappings and DNS must be configured for communication between the |morpheus| Appliance and Azure Stack.
 
@@ -153,6 +153,7 @@ Configure
 .. NOTE:: All fields and options can be edited after the Cloud is created.
 
 Advanced Options
+
    DOMAIN
     Specify a default domain for instances provisioned to this Cloud.
    SCALE PRIORITY
@@ -179,6 +180,7 @@ Advanced Options
     Required when a Proxy Server blocks communication between the |morpheus| Appliance and the Cloud. Proxies can be added in the `Infrastructure -> Networks -> Proxies` tab.
 
 Provisioning Options
+
   API PROXY
     Required when a Proxy Server blocks communication between an Instance and the |morpheus| Appliance. Proxies can be added in the `Infrastructure -> Networks -> Proxies` tab.
   Bypass Proxy for Appliance URL
