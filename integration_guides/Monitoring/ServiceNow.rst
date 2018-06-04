@@ -26,7 +26,7 @@ ServiceNow Approval Policies
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Add ServiceNow Provision Approval Policy to a Cloud
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. NOTE:: Any Instance provisioned into a Cloud with an Approval Policy enabled will require approval.
 
@@ -52,7 +52,7 @@ To add a ServiceNow Approval policy to a Cloud:
 #. Save Changes
 
 Add ServiceNow Provision Approval Policy to a Group
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. NOTE:: Any Instance provisioned into a Group with an Approval Policy enabled will require approval.
 
@@ -78,7 +78,7 @@ To add a ServiceNow Approval policy to a Group:
 #. Save Changes
 
 Using ServiceNow Approval Policies
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Any Instance provisioned into a Cloud or Group with an Approval Policy enabled will be in a PENDING state until the request in Approved.
 
@@ -97,7 +97,7 @@ ServiceNow Service Catalog Integration
 The following is a guide to installing the Morpheus ServiceNow application.
 
 ServiceNow Configuration
-^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~
 
 #. Install the Morpheus Application from the ServiceNow store
 #. Navigate to Morpheus Catalog -> Properties
@@ -119,15 +119,15 @@ ServiceNow Configuration
    - rest_service
 
 Morpheus Configuration
-^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~
 
 #. Navigate to ``Administration -> Integrations``
 #. Click :guilabel:`+ NEW INTEGRATION`
 #. Select ‘ServiceNow’ in the Type field
 #. Fill in the Host, User and Password fields (using the User and Password created in the previous section)
 
-ServiceNow Monitoring Notifications
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.. ServiceNow Monitoring Notifications
+
 
 ServiceNow Monitoring Integration Settings
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
