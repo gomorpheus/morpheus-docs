@@ -89,7 +89,7 @@ Terraform is now installed and configured, and Terraform apps can be provisioned
 
 
 Creating Terraform App Templates
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 In order to provision Terraform apps, Terraform App Templates must be created first.
 
@@ -141,7 +141,7 @@ In order to provision Terraform apps, Terraform App Templates must be created fi
 Your Terraform App is ready to be provisioned from `Provisioning -> Apps`.
 
 Provisioning Terraform Apps
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. NOTE:: An existing Terraform App Templates must be added to `Provisioning -> Templates` before it can be provisioned.
 
