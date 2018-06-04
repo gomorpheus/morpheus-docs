@@ -1,6 +1,7 @@
 Backups
 ========
 
-.. include:: Backups/morpheus_backup.rst
-.. include:: Backups/veeam.rst
-.. include:: Backups/commvault.rst
+.. toctree::
+  .. Backups/morpheus_backup.rst
+  .. Backups/veeam.rst
+  .. Backups/commvault.rst
