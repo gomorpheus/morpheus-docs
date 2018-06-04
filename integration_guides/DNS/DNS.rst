@@ -2,6 +2,6 @@ DNS
 ====
 
 .. toctree::
-  DNS/AmazonRoute53.rst
-  DNS/MicrosoftDNS.rst
-  DNS/PowerDNS.rst
+  .. DNS/AmazonRoute53.rst
+  .. DNS/MicrosoftDNS.rst
+  .. DNS/PowerDNS.rst
