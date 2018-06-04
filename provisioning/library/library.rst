@@ -62,7 +62,7 @@ Upon saving, this Instance Type will be available in the Provisioning Catalog, p
 Node Types
 ----------
 
-.. image:: /images/provisioning/library/salt node type.png
+.. image:: /images/provisioning/library/salt_node_type.png
 
 The following fields are for all node technology types:
 
@@ -104,7 +104,7 @@ Expose Ports
 
 Example port configuration:
 
-.. image:: /images/provisioning/library/node ports.png
+.. image:: /images/provisioning/library/node_ports.png
 
 Scripts & Templates
 -------------------
@@ -123,7 +123,7 @@ Upon save the Node Type will be created, and available for adding to layouts.
 Layouts
 -------
 
-.. image:: /images/provisioning/library/salt new layout.png
+.. image:: /images/provisioning/library/salt_new_layout.png
 
 Layouts are added to Instance types, and will be presented under the Configuration Options dropdown in the Provisioning Wizard for that Instance type.
 
@@ -147,11 +147,11 @@ Nodes
 
 Multi-node Layout example:
 
-.. image:: /images/provisioning/library/hyper-v master slave.png
+.. image:: /images/provisioning/library/hyper-v_master_slave.png
 
 Upon save, the layout will be attached to the selected Instance Type, and available when provisioning that Instance Type for the appropriate cloud technology.
 
-.. image:: /images/provisioning/library/salt instance type layout detail.png
+.. image:: /images/provisioning/library/salt_instance_type_layout_detail.png
 
 Option Types
 ------------
