@@ -3,7 +3,6 @@ Storage
 =======
 
 .. toctree::
-
    storage/3par.rst
    storage/AmazonS3.rst
    storage/AzureStorage.rst
