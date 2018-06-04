@@ -1,7 +1,7 @@
 DNS
 ====
 
-
-.. include:: DNS/AmazonRoute53.rst
-.. include:: DNS/MicrosoftDNS.rst
-.. include:: DNS/PowerDNS.rst
+.. toctree::
+  DNS/AmazonRoute53.rst
+  DNS/MicrosoftDNS.rst
+  DNS/PowerDNS.rst
