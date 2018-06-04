@@ -2,10 +2,10 @@ UCS Manager
 -----------
 
 Overview
-^^^^^^^^
+~~~~~~~~~~~
 
 Adding UCS Manager Cloud
-^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~
 UCS MANAGER::
 USERNAME::
 PASSWORD::
