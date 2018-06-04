@@ -1,0 +1,31 @@
+Clouds
+==============
+
+.. toctree::
+   Clouds&Infrastructure/alibabaCloud.rst
+   Clouds&Infrastructure/azure_stack.rst
+   Clouds&Infrastructure/azure.rst
+   Clouds&Infrastructure/digitalocean.rst
+   Clouds&Infrastructure/esxi.rst
+   Clouds&Infrastructure/google.rst
+   Clouds&Infrastructure/hyperv.rst
+   Clouds&Infrastructure/macstadium.rst
+   Clouds&Infrastructure/metaCloud.rst
+   Clouds&Infrastructure/nutanix.rst
+   Clouds&Infrastructure/openstack.rst
+   Clouds&Infrastructure/oraclecloud.rst
+   Clouds&Infrastructure/oraclevm.rst
+   Clouds&Infrastructure/softlayer.rst
+   Clouds&Infrastructure/ucs_manager.rst
+   Clouds&Infrastructure/vcloudair.rst
+   Clouds&Infrastructure/virtualbox.rst
+   Clouds&Infrastructure/vmware.rst
+   Clouds&Infrastructure/vmwfusion.rst
+   Clouds&Infrastructure/xen.rst
+   Clouds&Infrastructure/cloudbase-init.rst
+   Clouds&Infrastructure/cloudfoundry.rst
+   Clouds&Infrastructure/upcloud.rst
+   Clouds&Infrastructure/scvmm.rst
+   Clouds&Infrastructure/advanced_options.rst
+   Clouds&Infrastructure/vclouddirector.rst
+   Clouds&Infrastructure/centos7template.rst
