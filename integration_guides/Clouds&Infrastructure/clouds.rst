@@ -1,7 +1,7 @@
 Clouds
 ==============
 
-.. include::
+.. toctree::
    Clouds&Infrastructure/alibabaCloud.rst
    Clouds&Infrastructure/azure_stack.rst
    Clouds&Infrastructure/azure.rst
