@@ -2,7 +2,7 @@
 Integration Guides
 ******************
 
-.. include:: Clouds&Infrastructure/clouds.rst
+.. include:: Clouds/clouds.rst
 .. include:: Automation/automation.rst
 .. include:: Backups/backups.rst
 .. include:: Containers/containers.rst
