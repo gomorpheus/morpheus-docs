@@ -2,7 +2,7 @@ Azure Stack
 ------------
 
 Overview
-~~~~~~~~
+^^^^^^^^^
 
 Azure Stack is Microsoft's Azure Cloud for on-premises environments. Azure Stack contains the core Azure services, allowing organizations to take advantage of Azure's offerings with the security, compliance, and financial benefits of hosting it in their own data-centers.
 
@@ -27,7 +27,7 @@ Azure Stack is Microsoft's Azure Cloud for on-premises environments. Azure Stack
 Combine these features with public Azure and |morpheus| can provide a single pane of glass and self service portal for managing instances scattered across both Azure offerings.
 
 Requirements
-~~~~~~~~~~~~~
+^^^^^^^^^^^^^
 
 Azure Stack Accessibility
 ^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -189,6 +189,7 @@ Provisioning Options
 Once all options are configured, select NEXT to add the cloud to a Group.
 
 Group
+^^^^^^
 
 A Group must be specified or created for the new Cloud to be added to. Clouds can be added to additional Groups or removed from Groups after being created.
 
@@ -198,6 +199,7 @@ CREATE NEW
   Creates a new Group in |morpheus| and adds the Cloud to the Group.
 
 Review
+^^^^^^^
 
 Confirm all settings are correct and select COMPLETE. The Azure Stack Cloud will be added, and |morpheus| will perform the initial cloud sync of:
 
