@@ -72,7 +72,7 @@ Below is a sample output from the script for reference:
 
 
 Azure Stack Resources
-^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^
 
 The following resources need to be created and configured inside Azure Stack for successful provisioning:
 
