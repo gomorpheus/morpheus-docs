@@ -2,7 +2,7 @@ VMware Fusion
 -------------
 
 Add a VMware Fusion Cloud
-~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 #. Navigate to Infrastructure -> Clouds
 #. Select `+ CREATE CLOUD`, select VMware Fusion, and then click Next.

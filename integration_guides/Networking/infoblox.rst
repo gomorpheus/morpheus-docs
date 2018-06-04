@@ -2,7 +2,7 @@ Infoblox
 ---------
 
 Features
-~~~~~~~~~~~
+^^^^^^^^
 
 * Network Pools synchronization
 * DNS Zone & Zone record synchronization
@@ -12,7 +12,7 @@ Features
 * Automatic and manual IP Reservations, DNS A/PTR record creation and deletion
 
 Adding Infoblox Integration
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 #. Navigate to `Infrastructure - Network - Services`
 #. Select :guilabel:`+ ADD` -> IPAM -> Infoblox
@@ -58,7 +58,7 @@ Upon save the Infoblox IPAM integration will be created and the following will s
   .. image:: /images/infrastructure/network/infoblox/infoblox_zonerecords.png
 
 Adding IP Pools to Networks
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 |morpheus| can automatically assign the next available Infoblox IP in an IP/Network Pool and create the corresponding DNS records, as well as remove the records upon teardown. To enable this, add an Infoblox IP/Network Pool to the `Network Pool` section on a Network(s).
 
@@ -75,8 +75,7 @@ Adding IP Pools to Networks
 
 
 Creating Host Records
-~~~~~~~~~~~~~~~~~~~~~~~
-
+^^^^^^^^^^^^^^^^^^^^^
 #. Select a Network Pool from `Infrastructure - Network - IP Pools` or `Infrastructure - Network - Services - Infoblox`
 #. Select :guilabel:`+ ADD`
 #. Enter the following
@@ -95,7 +94,7 @@ Creating Host Records
 #. Select :guilabel:`SAVE CHANGES`
 
 Creating Zone Records
-~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^
 
 #. Select a Domain from `Infrastructure - Network - Domains` or `Infrastructure - Network - Services - Infoblox - Zones`
 #. Select :guilabel:`+ ADD`

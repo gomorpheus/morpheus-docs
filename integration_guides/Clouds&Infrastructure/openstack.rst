@@ -2,12 +2,12 @@ Openstack
 ---------
 
 Overview
-~~~~~~~~~
+^^^^^^^^^^
 
 Openstack is becoming a widely used on-premise infrastructure orchestration platform. It has a wide array of contributors and enterprise sponsorships. There are several variations on Openstack as well ranging from HP's Helion Cloud to Cisco's Metapod / Metacloud offering. |morpheus| supports integration with all the various platform offerings and ranges in support all the way back to Openstack Icehouse. It leverages the APIs and provides full functionality as a self service portal in front of Openstack.
 
 Features
-~~~~~~~~~
+^^^^^^^^^^
 
 * Virtual Machine Provisioning
 * Backups / Snapshots

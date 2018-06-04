@@ -4,16 +4,16 @@ High Availability Setup Guide
 //adding notes for HA Technical write up
 
 Elasticsearch
-~~~~~~~~~~~~~~
+^^^^^^^^^^^^^
 We have to link the tomcats for session cache link issue
 
 RabbitMQ
-~~~~~~~~
+^^^^^^^^^
 
 Enable stomp module in rabbit queue cluster
 
 Rabbit LB
-~~~~~~~~~
+^^^^^^^^^
 
 TCP load balanced on port 5672 as well as port 61613 for STOMP
 

@@ -2,7 +2,7 @@ SCVMM
 ------
 
 Add a SCVMM Cloud
-~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^
 
 #. Navigate to Infrastructure -> Clouds
 #. Select `+ CREATE CLOUD`, select SCVMM, and then click Next.

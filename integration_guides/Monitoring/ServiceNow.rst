@@ -2,7 +2,7 @@ Service Now
 ------------
 
 Add Service Now Integration
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 #. Navigate to ``Administration -> Integrations``
 #. Select ``+ NEW INTEGRATION``
@@ -23,7 +23,7 @@ Add Service Now Integration
 #. Save Changes
 
 ServiceNow Approval Policies
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Add ServiceNow Provision Approval Policy to a Cloud
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -92,7 +92,7 @@ ServiceNow Approval requests are displayed in Morpheus under ``Operations -> App
 Once a pending ServiceNow Approval request is Approved in ServiceNow, the Instance(s) will begin to provision in Morpheus within 5 minutes of being approved in ServiceNow.
 
 ServiceNow Service Catalog Integration
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 The following is a guide to installing the Morpheus ServiceNow application.
 
@@ -127,7 +127,7 @@ Morpheus Configuration
 #. Fill in the Host, User and Password fields (using the User and Password created in the previous section)
 
 ServiceNow Monitoring Notifications
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 ServiceNow Monitoring Integration Settings
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

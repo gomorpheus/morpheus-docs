@@ -2,10 +2,10 @@ Cloud Foundry
 --------------
 
 Configuration
-~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^
 
 Adding PCF Cloud From `Infrastructure -> Clouds`
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 #. Navigate to `Infrastructure -> Clouds`
 #. Select :guilabel:`+ ADD`
@@ -42,7 +42,7 @@ Adding PCF Cloud From `Infrastructure -> Clouds`
 
 
 Adding PCF Cloud From `Infrastructure -> Groups`
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 #. Navigate to `Infrastructure -> Groups`
 #. Select a Group
@@ -77,7 +77,7 @@ Adding PCF Cloud From `Infrastructure -> Groups`
 #. Review and then Select :guilabel:`COMPLETE`
 
 Adding Spaces
-~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^
 Cloud Foundry Spaces are referred to as Resource Pools in Morpheus.  You can add a new Space by:
 
 #. Navigating to the Cloud and selecting the Resources tab.
@@ -87,12 +87,12 @@ Cloud Foundry Spaces are referred to as Resource Pools in Morpheus.  You can add
 
 
 Provisioning
-~~~~~~~~~~~~~~
+^^^^^^^^^^^^^
 
 |morpheus| automatically seeds MySQL, Redis and RabbitMQ PCF Instance Types, as well as a generic Cloud Foundry Instance Type that will create a shell app used in conjunction with deployments. PCF Marketplace items can also be added to the Provisioning Library in the Cloud detail view Marketplace tab. The Marketplace item will be added to the selected Instance Type and available when selecting the Cloud Foundry Cloud during Instance or App Template creation.
 
 Deployments
-~~~~~~~~~~~~~
+^^^^^^^^^^^^^
 
 The Cloud Foundry App Instance Type is used in conjunction with deployments. Users do not have to pick deployment when creating a Cloud Foundry App Instance Type, but then Instance will only be a shell of a Cloud Foundry Application.
 
@@ -103,7 +103,7 @@ After the App is configured, the artifacts references in the Morpheus deployment
 If Cloud Foundry services are specified in the manifest, they must already exist within Cloud Foundry.  Morpheus App templates can be utilized to wire up Cloud Foundry services created by Morpheus.  In this case, Morpheus will add all of the included service names defined in the App template to the manifest.yml services section.  Therefore, multiple services can be used and wired up by Morpheus.”
 
 Example
-~~~~~~~~
+^^^^^^^
 
 To better understand how Morpheus parses the manifest.yml file, lets take a closer look at the Cloud Foundry 'spring-music' project.  The project can be found here (https://github.com/cloudfoundry-samples/spring-music).
 
@@ -133,7 +133,7 @@ Using the Cloud Foundry docs (https://docs.cloudfoundry.org/devguide/deploy-apps
 
 
 Adding Marketplace Items
-~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^
 
 #. Navigate to `Infrastructure -> Clouds` and select your Cloud Foundry Cloud
 #. Select the MARKETPLACE tab

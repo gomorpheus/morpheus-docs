@@ -2,7 +2,7 @@ phpIPAM
 ---------
 
 Configuration
-~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^
 
 Configure phpIPAM API
 ^^^^^^^^^^^^^^^^^^^^^
