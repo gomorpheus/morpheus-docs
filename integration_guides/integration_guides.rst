@@ -18,5 +18,4 @@ Integration Guides
 .. include:: Logs/Logs.rst
 .. include:: Monitoring/Monitoring.rst
 .. include:: service_discovery/service_discovery.rst
-.. include:: Storage/storage.rst
-.. include:: Storage/storage.rst
+.. include:: /integration_guides/Storage/storage.rst
