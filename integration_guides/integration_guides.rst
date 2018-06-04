@@ -5,10 +5,10 @@ Integration Guides
 .. include:: Automation/automation.rst
 .. include:: Clouds/clouds.rst
 .. include:: Containers/containers.rst
-.. include:: ha/ha.rst
 .. include:: IdentityManagement/IdentityManagement.rst
 .. include:: Monitoring/Monitoring.rst
 .. include:: Networking/networking.rst
+.. .. include:: ha/ha.rst
 .. .. include:: Backups/backups.rst
 .. .. include:: Deployments/deployment.rst
 .. .. include:: DNS/DNS.rst
