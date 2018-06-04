@@ -1,12 +1,12 @@
 Identity Management
 ===================
 
-
-.. include:: IdentityManagement/active_directory.rst
-.. include:: IdentityManagement/CustomAPI.rst
-.. include:: IdentityManagement/CustomExternal.rst
-.. include:: IdentityManagement/JumpCloud.rst
-.. include:: IdentityManagement/LDAP.rst
-.. include:: IdentityManagement/OKTA.rst
-.. include:: IdentityManagement/OneLogin.rst
-.. include:: IdentityManagement/saml.rst
+.. toctree::
+  IdentityManagement/active_directory.rst
+  IdentityManagement/CustomAPI.rst
+  IdentityManagement/CustomExternal.rst
+  IdentityManagement/JumpCloud.rst
+  IdentityManagement/LDAP.rst
+  IdentityManagement/OKTA.rst
+  IdentityManagement/OneLogin.rst
+  IdentityManagement/saml.rst
