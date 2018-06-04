@@ -3,7 +3,7 @@ Virtualbox
 
 
 Add a VirtualBox Cloud
-^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 #. Navigate to Infrastructure -> Clouds
 #. Select `+ CREATE CLOUD`, select Virtual Box, and then click Next.
