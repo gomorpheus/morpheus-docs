@@ -1,9 +1,9 @@
 Automation
 ===========
 
-
-.. include:: Automation/arm.rst
-.. include:: Automation/chef.rst
-.. include:: Automation/puppet.rst
-.. include:: Automation/salt_stack
-.. include:: Automation/terraform.rst
+.. toctree::
+  Automation/arm.rst
+  Automation/chef.rst
+  Automation/puppet.rst
+  Automation/salt_stack
+  Automation/terraform.rst
