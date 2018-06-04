@@ -2,7 +2,7 @@
 Integration Guides
 ******************
 
-including docker files
+.. /include docker files
 
 .. include:: Clouds&Infrastructure/clouds.rst
 .. include:: Automation/automation.rst
@@ -18,4 +18,5 @@ including docker files
 .. include:: Logs/Logs.rst
 .. include:: Monitoring/Monitoring.rst
 .. include:: service_discovery/service_discovery.rst
+.. include:: Storage/storage.rst
 .. include:: Storage/storage.rst
