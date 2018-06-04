@@ -22,7 +22,7 @@ Clouds
 .. include:: Clouds&Infrastructure/vmware.rst
 .. include:: Clouds&Infrastructure/vmwfusion.rst
 .. include:: Clouds&Infrastructure/xen.rst
-.. include:: Clouds&Infrastructure/cloudbase-init.rst
+.. include:: Clouds&Infrastructure/bananas.rst
 .. include:: Clouds&Infrastructure/cloudfoundry.rst
 .. include:: Clouds&Infrastructure/upcloud.rst
 .. include:: Clouds&Infrastructure/scvmm.rst
