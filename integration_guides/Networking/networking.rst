@@ -1,9 +1,10 @@
 Networking
 ===========
 
-.. include:: Networking/aci.rst
-.. include:: Networking/infoblox.rst
-.. include:: Networking/bluecat.rst
-.. include:: Networking/morpheus_internal.rst
-.. include:: Networking/phpipam.rst
-.. include:: Networking/venafi.rst
+.. toctree::
+  Networking/aci.rst
+  Networking/infoblox.rst
+  Networking/bluecat.rst
+  Networking/morpheus_internal.rst
+  Networking/phpipam.rst
+  Networking/venafi.rst
