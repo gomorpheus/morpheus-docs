@@ -1,8 +1,8 @@
 Logs
 =====
 
-
-.. include:: Logs/LogRhythm.rst
-.. include:: Logs/MorpheusInternalLogs.rst
-.. include:: Logs/Splunk.rst
-.. include:: Logs/Syslog.rst
+.. toctree::
+  Logs/LogRhythm.rst
+  Logs/MorpheusInternalLogs.rst
+  Logs/Splunk.rst
+  Logs/SysLog.rst

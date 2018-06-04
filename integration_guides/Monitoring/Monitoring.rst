@@ -1,7 +1,8 @@
 Monitoring
 ===========
 
-.. include:: Monitoring/AppDynamics.rst
-.. include:: Monitoring/MorpheusInternalMonitoring.rst
-.. include:: Monitoring/NewRelic.rst
-.. include:: Monitoring/ServiceNow.rst
+.. toctree::
+  Monitoring/AppDynamics.rst
+  Monitoring/MorpheusInternalMonitoring.rst
+  Monitoring/NewRelic.rst
+  Monitoring/ServiceNow.rst
