@@ -3,11 +3,11 @@ Storage
 =======
 
 .. toctree::
-   storage/3par.rst
-   storage/AmazonS3.rst
-   storage/AzureStorage.rst
-   storage/CIFS.rst
-   storage/MorpheusLocalStorage.rst
-   storage/NFS.rst
-   storage/RackSpace.rst
-   storage/Swift.rst
+   Storage/3par.rst
+   Storage/AmazonS3.rst
+   Storage/AzureStorage.rst
+   Storage/CIFS.rst
+   Storage/MorpheusLocalStorage.rst
+   Storage/NFS.rst
+   Storage/RackSpace.rst
+   Storage/Swift.rst
