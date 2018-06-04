@@ -2,11 +2,13 @@
 Storage
 =======
 
-.. include:: storage/3par.rst
-.. include:: storage/AmazonS3.rst
-.. include:: storage/AzureStorage.rst
-.. include:: storage/CIFS.rst
-.. include:: storage/MorpheusLocalStorage.rst
-.. include:: storage/NFS.rst
-.. include:: storage/RackSpace.rst
-.. include:: storage/Swift.rst
+.. toctree::
+
+   storage/3par.rst
+   storage/AmazonS3.rst
+   storage/AzureStorage.rst
+   storage/CIFS.rst
+   storage/MorpheusLocalStorage.rst
+   storage/NFS.rst
+   storage/RackSpace.rst
+   storage/Swift.rst
