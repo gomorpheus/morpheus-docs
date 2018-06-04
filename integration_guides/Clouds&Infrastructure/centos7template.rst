@@ -1,21 +1,21 @@
 Creating a CentOS 7 |morpheus| Image
-====================================
+-------------------------------------
 
 Overview
---------
+~~~~~~~~~~
 
 |morpheus| comes out of the box with a default set of templates for use in many modern deployment scenarios. These consist mostly of base operating system images with a few additional adjustments. These adjustments typically include the addition of cloud-init (which is highly recommended to be used in most environments, but not mandatory). However, in many on-premise deployments there are custom image requirements as well as networking requirements. This guide will go over how to create a base CentOS 7 Image for use within |morpheus| .
 
 Creating a CentOS 7 |morpheus| VMware Image
--------------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 VMWare
-^^^^^^
+~~~~~~~~~
 
 When running in VMWare it is highly recommended that VMware Tools be installed. Without it, |morpheus| will have difficulty assessing the host ip address and performing some additional automation tasks for the operating system.
 
 Cloud-Init
-^^^^^^^^^^
+~~~~~~~~~~~~
 
 To get started with a base CentOS image we first install cloud-init. This is a relatively simple process using yum:
 
@@ -30,7 +30,7 @@ There are two parts to this yum installation. We are first ensuring some core de
 A great benefit to using cloud-init is credentials don't have to be locked into the template. It is advisable, within |morpheus| , to configure the default cloud-init user that gets created when the vm boots automatically by cloud-init. This is located in the `Administration -> Provisioning -> Cloud-Init` Settings section.
 
 Network Interfaces
-^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~
 
 A slightly annoying change with centOS 7 is that the network interfaces have changed naming convention. You may notice when running ifconfig that the primary network interface is set to something like ens2344 or some other random number. This naming is dynamic typically by hardware id and we don't want this to fluctuate when provisioning the template in various VMware environments. Fortunately, there is a way to turn this functionality off and restore the interface back to eth0.
 
@@ -73,14 +73,14 @@ This script tries to ensure there is a new ifcfg-eth0 config created to replace 
 
 
 Gotyas
-^^^^^^
+~~~~~~~~
 
 SELinux can cause issues with cloud-init when in enforced mode. It may be advisable to set this to permissive unless it is mandatory within your organization to use an enforced SELinux configuration. If that is the case please see the documentation for the cloud_init_t security policies.
 
-Network Manager will also prevent the required restart of the Network Service when assigning static IP's. Disable Network Manager when possible or Static IP assignment may not work until the Network Service is restarted manually. 
+Network Manager will also prevent the required restart of the Network Service when assigning static IP's. Disable Network Manager when possible or Static IP assignment may not work until the Network Service is restarted manually.
 
 A Note on Proxies
-^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~
 
 Proxy configurations are known to vary in some organizations and makes building a base template a little more difficult. In order to fully configure proxies a few environment variables must be set in the `/etc/environment` file (This can be done automatically in a default user-data script for cloud-init as well in edit cloud).
 
