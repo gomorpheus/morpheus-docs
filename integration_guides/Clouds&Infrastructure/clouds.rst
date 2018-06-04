@@ -1,7 +1,6 @@
 Clouds
 ==============
 
-
 .. include:: Clouds&Infrastructure/alibabaCloud.rst
 .. include:: Clouds&Infrastructure/azure_stack.rst
 .. include:: Clouds&Infrastructure/azure.rst
