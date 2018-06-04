@@ -2,22 +2,22 @@ Clouds
 ==============
 
 .. toctree::
-   Clouds/alibabaCloud.rst
+   .. Clouds/alibabaCloud.rst
    Clouds/azure_stack.rst
    Clouds/azure.rst
    Clouds/digitalocean.rst
    Clouds/esxi.rst
    Clouds/google.rst
    Clouds/hyperv.rst
-   Clouds/macstadium.rst
-   Clouds/metaCloud.rst
+   .. Clouds/macstadium.rst
+   .. Clouds/metaCloud.rst
    Clouds/nutanix.rst
    Clouds/openstack.rst
-   Clouds/oraclecloud.rst
+   .. Clouds/oraclecloud.rst
    Clouds/oraclevm.rst
    Clouds/softlayer.rst
-   Clouds/ucs_manager.rst
-   Clouds/vcloudair.rst
+   .. Clouds/ucs_manager.rst
+   .. Clouds/vcloudair.rst
    Clouds/virtualbox.rst
    Clouds/vmware.rst
    Clouds/vmwfusion.rst
@@ -27,5 +27,5 @@ Clouds
    Clouds/upcloud.rst
    Clouds/scvmm.rst
    Clouds/advanced_options.rst
-   Clouds/vclouddirector.rst
+   .. Clouds/vclouddirector.rst
    Clouds/centos7template.rst
