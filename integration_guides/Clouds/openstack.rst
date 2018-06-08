@@ -23,7 +23,7 @@ On top of all these features, |morpheus| also adds additional features to Openst
 * Image to QCOW2 Image Conversion
 * QCOW2 to RAW Image Conversion
 * Multitenancy resource allocation
-* Virtual Image management (Templates)
+* Virtual Image management (Blueprints)
 * Auto-scaling and recovery
 
 .. TIP:: To allow Morpheus to list Hypervisor Hosts, ensure the Openstack user used for the Cloud Integration has sufficient privileges for ``"os_compute_api:os-hypervisors"`` in ``/etc/nova/policy.json`` in Openstack.

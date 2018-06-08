@@ -106,7 +106,7 @@ From the master Tenant, the following resources can be configured for public vis
 * Workflows
 * Roles
 
-.. NOTE:: Virtual Image Templates can also be made available to multiple select Tenants when set to private.
+.. NOTE:: Virtual Image Blueprints can also be made available to multiple select Tenants when set to private.
 
 Cloud Visibility & Assignment
 ``````````````````````````````
@@ -150,7 +150,7 @@ Individual Resource Visibility & Assignment
 ````````````````````````````````````````````
 Similar to clouds, individual resources from the Master Tenant can be set to public and available to sub-Tenants, or assigned to sub-Tenants.
 
-By default, any host, virtual machine, bare metal server, network, resource pool, datastore or template added, created or inventoried by an Tenant is assigned to that Tenant. If these resources are in the Master Tenant, they can be assigned to sub Tenants. Assigning one of these resources will make it unavailable to the Master Tenant, but it will still be visible and editable by the Master Tenant. This allows Master Tenant resources to be isolated for use by sub-Tenants while still under the control of the Master Tenant.
+By default, any host, virtual machine, bare metal server, network, resource pool, datastore or blueprint added, created or inventoried by an Tenant is assigned to that Tenant. If these resources are in the Master Tenant, they can be assigned to sub Tenants. Assigning one of these resources will make it unavailable to the Master Tenant, but it will still be visible and editable by the Master Tenant. This allows Master Tenant resources to be isolated for use by sub-Tenants while still under the control of the Master Tenant.
 
 Resources assigned to sub-Tenants from the Master Tenant will be visible and available for use by that sub-Tenant, however they cannot be edited or re-assigned by the sub-tenant.
 

@@ -35,7 +35,7 @@ Create Threshold Presets
 
 #. Select :guilabel:`SAVE CHANGES`
 
-The new Threshold will be available for selection in the SCALE section during provisioning or when configuring an App Template.
+The new Threshold will be available for selection in the SCALE section during provisioning or when configuring an App Blueprint.
 
 
 Edit Thresholds on an Instance

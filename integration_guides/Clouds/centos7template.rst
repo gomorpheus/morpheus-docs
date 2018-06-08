@@ -4,7 +4,7 @@ Creating a CentOS 7 |morpheus| Image
 Overview
 ^^^^^^^^^
 
-|morpheus| comes out of the box with a default set of templates for use in many modern deployment scenarios. These consist mostly of base operating system images with a few additional adjustments. These adjustments typically include the addition of cloud-init (which is highly recommended to be used in most environments, but not mandatory). However, in many on-premise deployments there are custom image requirements as well as networking requirements. This guide will go over how to create a base CentOS 7 Image for use within |morpheus| .
+|morpheus| comes out of the box with a default set of blueprints for use in many modern deployment scenarios. These consist mostly of base operating system images with a few additional adjustments. These adjustments typically include the addition of cloud-init (which is highly recommended to be used in most environments, but not mandatory). However, in many on-premise deployments there are custom image requirements as well as networking requirements. This guide will go over how to create a base CentOS 7 Image for use within |morpheus| .
 
 Creating a CentOS 7 |morpheus| VMware Image
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -27,12 +27,12 @@ To get started with a base CentOS image we first install cloud-init. This is a r
 
 There are two parts to this yum installation. We are first ensuring some core dependencies are installed for automation as well as cloud-init. git for example is installed for use by ansible playbook automation down the line and is therefore optional if not using ansible. The dracut-modules-growroot is responsible for resizing the root partition upon first boot to match the virtual disk size that was potentially adjusted during provisioning.
 
-A great benefit to using cloud-init is credentials don't have to be locked into the template. It is advisable, within |morpheus| , to configure the default cloud-init user that gets created when the vm boots automatically by cloud-init. This is located in the `Administration -> Provisioning -> Cloud-Init` Settings section.
+A great benefit to using cloud-init is credentials don't have to be locked into the blueprint. It is advisable, within |morpheus| , to configure the default cloud-init user that gets created when the vm boots automatically by cloud-init. This is located in the `Administration -> Provisioning -> Cloud-Init` Settings section.
 
 Network Interfaces
 ^^^^^^^^^^^^^^^^^^
 
-A slightly annoying change with centOS 7 is that the network interfaces have changed naming convention. You may notice when running ifconfig that the primary network interface is set to something like ens2344 or some other random number. This naming is dynamic typically by hardware id and we don't want this to fluctuate when provisioning the template in various VMware environments. Fortunately, there is a way to turn this functionality off and restore the interface back to eth0.
+A slightly annoying change with centOS 7 is that the network interfaces have changed naming convention. You may notice when running ifconfig that the primary network interface is set to something like ens2344 or some other random number. This naming is dynamic typically by hardware id and we don't want this to fluctuate when provisioning the blueprint in various VMware environments. Fortunately, there is a way to turn this functionality off and restore the interface back to eth0.
 
 Firstly we need to adjust our bootloader to disable interface naming like this.
 
@@ -82,7 +82,7 @@ Network Manager will also prevent the required restart of the Network Service wh
 A Note on Proxies
 ^^^^^^^^^^^^^^^^^^
 
-Proxy configurations are known to vary in some organizations and makes building a base template a little more difficult. In order to fully configure proxies a few environment variables must be set in the `/etc/environment` file (This can be done automatically in a default user-data script for cloud-init as well in edit cloud).
+Proxy configurations are known to vary in some organizations and makes building a base blueprint a little more difficult. In order to fully configure proxies a few environment variables must be set in the `/etc/environment` file (This can be done automatically in a default user-data script for cloud-init as well in edit cloud).
 
 .. code-block:: bash
 

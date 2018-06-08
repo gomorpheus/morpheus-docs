@@ -72,4 +72,4 @@ To run Ansible on all or a single inventory group, in the Ansible tab of the |mo
 
 In the `Run Ansible` modal, you can then select all or an individual group, and then all or a single Playbook, as well as add custom tags.
 
-Playbook's can also be added as tasks to workflows in the `Provisioning -> Automation` section, and then selected in the Automation pane during provisioning of new instances, when creating app templates, or ran on existing instances using the `Actions -> Run Workflow` on the Instance or Host pages.
+Playbook's can also be added as tasks to workflows in the `Provisioning -> Automation` section, and then selected in the Automation pane during provisioning of new instances, when creating app blueprints, or ran on existing instances using the `Actions -> Run Workflow` on the Instance or Host pages.

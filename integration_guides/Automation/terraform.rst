@@ -7,16 +7,16 @@ Requirements
 Role Access
 ^^^^^^^^^^^
 
-* In order to see the Terraform Template type option and create Terraform App Templates in `Provisioning -> Templates`, the Morpheus user must have Role permissions for `Provisioning: Templates - Terraform` set to `Full`.
+* In order to see the Terraform Blueprint type option and create Terraform App Blueprints in `Provisioning -> Blueprints`, the Morpheus user must have Role permissions for `Provisioning: Blueprints - Terraform` set to `Full`.
 
-* In order to provision Terraform Apps in `Provisioning -> Apps`, the Morpheus user must have Role permissions for `Provisioning: Templates - Terraform` set to `Provision` or `Full`.
+* In order to provision Terraform Apps in `Provisioning -> Apps`, the Morpheus user must have Role permissions for `Provisioning: Blueprints - Terraform` set to `Provision` or `Full`.
 
-* Existing Terraform Templates must be added before they can be provisioned from `Provisioning -> Apps`.
+* Existing Terraform Blueprints must be added before they can be provisioned from `Provisioning -> Apps`.
 
 Github/Git Repo
 ^^^^^^^^^^^^^^^
 
-* To use .tf files from a Git repo a Git or Github integration needs to be configured in `Administration - Integrations`. If one is not configured .tf or .tf.json files can be manually added to Terraform App Templates.
+* To use .tf files from a Git repo a Git or Github integration needs to be configured in `Administration - Integrations`. If one is not configured .tf or .tf.json files can be manually added to Terraform App Blueprints.
 
 .. IMPORTANT:: In |morpheus| versions 3.3.0 and 3.3.1 VMware cloud types are supported for Terraform App provisioning targets. Additional clouds will be available in later releases.
 
@@ -88,18 +88,18 @@ To manually install and configure terraform on the Morpheus Appliance:
 Terraform is now installed and configured, and Terraform apps can be provisioned from Morpheus.
 
 
-Creating Terraform App Templates
+Creating Terraform App Blueprints
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-In order to provision Terraform apps, Terraform App Templates must be created first.
+In order to provision Terraform apps, Terraform App Blueprints must be created first.
 
 .. IMPORTANT:: In |morpheus| versions 3.3.0 and 3.3.1 VMware cloud types are supported for Terraform App provisioning targets. Additional clouds will be available in later releases.
 
-#. Navigate to `Provisioning -> Templates`
+#. Navigate to `Provisioning -> Blueprints`
 #. Select :guilabel:`+ ADD`
-#. Name the Template and select `Terraform` type.
+#. Name the Blueprint and select `Terraform` type.
 
-   .. NOTE:: In order to see the Terraform Template type option, the |morpheus| user must have Role permissions for `Provisioning: Templates - Terraform` set to `Full`.
+   .. NOTE:: In order to see the Terraform Blueprint type option, the |morpheus| user must have Role permissions for `Provisioning: Blueprints - Terraform` set to `Full`.
 
 #. Select :guilabel:`NEXT`
 #. Configure the following:
@@ -107,11 +107,11 @@ In order to provision Terraform apps, Terraform App Templates must be created fi
    NAME
        Name of the
    DESCRIPTION
-       Description for you App Templates shown in the Apps list (optional)
+       Description for you App Blueprints shown in the Apps list (optional)
    CATEGORY
        App Category (optional)
    IMAGE
-    Add reference image/picture for your App Template (optional)
+    Add reference image/picture for your App Blueprint (optional)
    CONFIG TYPE (select Terraform, Terraform.json, or Git Repository)
     Terraform (.tf)
      CONFIG
@@ -132,7 +132,7 @@ In order to provision Terraform apps, Terraform App Templates must be created fi
 
         .. NOTE:: If no files are found please ensure your Github or Git integration is configured properly (Private repos need to have a key pair added to |morpheus|, the keypair selected on the integration in |morpheus|, and the keypair's public key added to the GitHub users SSH keys in github or to the git repo).
    TFVAR SECRET
-    Select a tfvars secret for .tf variables. Tfvars secrets can be added in `Services -> Cypher` using the tfvars/name mountpoint. This allows sensitive data and passwords to be encrypted and securely used with Terraform templates.
+    Select a tfvars secret for .tf variables. Tfvars secrets can be added in `Services -> Cypher` using the tfvars/name mountpoint. This allows sensitive data and passwords to be encrypted and securely used with Terraform Blueprints.
    OPTIONS
     example ``-var 'instanceName=sampleTfApp'``
 
@@ -143,13 +143,13 @@ Your Terraform App is ready to be provisioned from `Provisioning -> Apps`.
 Provisioning Terraform Apps
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. NOTE:: An existing Terraform App Templates must be added to `Provisioning -> Templates` before it can be provisioned.
+.. NOTE:: An existing Terraform App Blueprints must be added to `Provisioning -> Blueprints` before it can be provisioned.
 
-.. NOTE:: In order to provision Terraform Apps in `Provisioning -> Apps`, the Morpheus user must have Role permissions for `Provisioning: Templates - Terraform` set to `Provision` or `Full`.
+.. NOTE:: In order to provision Terraform Apps in `Provisioning -> Apps`, the Morpheus user must have Role permissions for `Provisioning: Blueprints - Terraform` set to `Provision` or `Full`.
 
 #. Navigate to `Provisioning -> Apps`
 #. Select :guilabel:`+ ADD`
-#. Choose and existing Terraform App Template
+#. Choose and existing Terraform App Blueprint
 #. Select :guilabel:`NEXT`
 #. Enter a NAME for the App and select the Group, Default Cloud and Environment (optional)
 #. Select :guilabel:`NEXT`

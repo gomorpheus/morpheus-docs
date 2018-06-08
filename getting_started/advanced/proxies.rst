@@ -21,7 +21,7 @@ When morpheus needs to connect to various cloud APIs to issue provisioning comma
 Provisioning with Proxies
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Proxy configurations can vary from operating system to operating system and in some cases it is necessary for these to be configured in the templates as a prerequisite. In other cases it can also be configured automatically. Mostly with the use of cloud-init (which all of our out of the box service catalog utilizes on all clouds). When editing/creating a cloud there is a setting for "Provisioning Proxy" in "Provisioning Options". If this proxy is set, |morpheus| will automatically apply these proxy settings to the guest operating system.
+Proxy configurations can vary from operating system to operating system and in some cases it is necessary for these to be configured in the blueprints as a prerequisite. In other cases it can also be configured automatically. Mostly with the use of cloud-init (which all of our out of the box service catalog utilizes on all clouds). When editing/creating a cloud there is a setting for "Provisioning Proxy" in "Provisioning Options". If this proxy is set, |morpheus| will automatically apply these proxy settings to the guest operating system.
 
 Overriding proxy settings can also be done on the Network record. Networks (or subnets) can be configured in ``Infrastructure -> Networks`` or on the Networks tab of the relevant Cloud detail page. Here, a proxy can also be assigned as well as additional options like the ``No Proxy`` rules for proxy exceptions.
 
