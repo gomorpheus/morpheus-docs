@@ -6,9 +6,11 @@ Log Settings
 
 There are three main log areas in Morpheus
 
-Agent Logs |br|
-Morpheus Server Logs |br|
-Activity / Audit Logs |br|
+Agent Logs
+
+Morpheus Server Logs
+
+Activity / Audit Logs 
 
 Agent Logs
 -----------
