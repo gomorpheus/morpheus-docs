@@ -6,9 +6,9 @@ Log Settings
 
 There are three main log areas in Morpheus
 
-Agent Logs
-Morpheus Server Logs
-Activity / Audit Logs
+Agent Logs |br|
+Morpheus Server Logs |br|
+Activity / Audit Logs |br|
 
 Agent Logs
 -----------
@@ -77,7 +77,7 @@ appender("AUDIT", RollingFileAppender) {
 
 logger("com.morpheus.AuditLogService", INFO, ['AUDIT'], false)
 
-Once you have done this, you need to restart the Morpheus Application server. To do this, do the following:  *please be aware this will restart the web interface for Morpheus.
+Once you have done this, you need to restart the Morpheus Application server. To do this, do the following:  **please be aware this will restart the web interface for Morpheus.**
 
 .. code-block:: bash
 
