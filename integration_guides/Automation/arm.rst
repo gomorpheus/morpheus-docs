@@ -1,9 +1,9 @@
-ARM Templates
+ARM Blueprints
 -------------
 
-Azure Resource Manager Templates
+Azure Resource Manager Blueprints
 
-Adding ARM templates
+Adding ARM Blueprints
 ^^^^^^^^^^^^^^^^^^^^^
 
 

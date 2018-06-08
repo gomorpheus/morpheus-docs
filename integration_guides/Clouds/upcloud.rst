@@ -111,7 +111,7 @@ Provision a synced Image
 
 Images synced from UpCloud can be provisioned by using:
 
-* The `UPCLOUD` Instance Type and selecting the Image from the Image dropdown in the configure section when provisioning and Instance, App, or creating an App Template.
+* The `UPCLOUD` Instance Type and selecting the Image from the Image dropdown in the configure section when provisioning and Instance, App, or creating an App Blueprint.
 * Creating custom Library Instance Types and selecting a synced Image when creating a Node Type for the custom Instance Type.
 
 .. IMPORTANT:: Synced images should be configured prior to provisioning by editing the Image in the `Provisioning -> Virtual Images` section.
@@ -119,7 +119,7 @@ Images synced from UpCloud can be provisioned by using:
 Provision a |morpheus| provided UpCloud Image
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-{morpheus] provides a number of pre-configured Images that are available in the default |morpheus| Catalog when provisioning and Instance, App, or creating an App Template. UpCloud Images are included in the following Instance Types in the default |morpheus| catalog.
+{morpheus] provides a number of pre-configured Images that are available in the default |morpheus| Catalog when provisioning and Instance, App, or creating an App Blueprint. UpCloud Images are included in the following Instance Types in the default |morpheus| catalog.
 
 * ACTIVEMQ
 * APACHE

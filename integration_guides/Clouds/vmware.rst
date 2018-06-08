@@ -29,7 +29,7 @@ On top of all these features, |morpheus| also adds additional features to VMware
 * VHD to VMDK Image Conversion
 * QCOW2 to VMDK Image Conversion
 * Multitenancy resource allocation
-* Virtual Image management (Templates)
+* Virtual Image management (Blueprints)
 * Auto-scaling and recovery
 
 .. include:: vmware/getting_started.rst

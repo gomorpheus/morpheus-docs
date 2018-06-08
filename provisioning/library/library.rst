@@ -13,10 +13,10 @@ The Library section is used to add virtual images as custom instances to the pro
 * Node Types
 * Option Types
 * Option Lists
-* Templates
+* File Templates
 * Scripts
 
-Uploaded or synced images from the virtual images section are added to nodes, a node or multiple nodes are added to layouts, and layouts are added to Instance Types. Scripts and Templates can be attached to nodes, with phased execution options for scripts.
+Uploaded or synced images from the virtual images section are added to nodes, a node or multiple nodes are added to layouts, and layouts are added to Instance Types. Scripts and File Templates can be attached to nodes, with phased execution options for scripts.
 
 Instance Types
 --------------
@@ -106,7 +106,7 @@ Example port configuration:
 
 .. image:: /images/provisioning/library/node_ports.png
 
-Scripts & Templates
+Scripts & File Templates
 -------------------
 
 To attach scripts and templates that have been added to the Library to a node type, start typing the name and then select the script(s) and/or template(s).

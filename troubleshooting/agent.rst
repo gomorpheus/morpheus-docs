@@ -67,7 +67,7 @@ Cloud-Init agent install mode
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 * Cloud-Init is configured in Admin -> Provisioning section
-* Provisioned image/template has Cloud-Init (linux) or Cloudbase-Init (windows) installed
+* Provisioned image/blueprint has Cloud-Init (linux) or Cloudbase-Init (windows) installed
 
 Manually Installing a |morpheus| Agent
 --------------------------------------
@@ -81,7 +81,7 @@ Linux
 
 #. As root user, run: (replacing ${} with the relevant information)
 
-   .. code-block:: bash 
+   .. code-block:: bash
 
     curl -k -s "${opts.applianceUrl}api/server-script/agentInstall?apiKey=${opts.apiKey}" | bash
 
@@ -125,7 +125,7 @@ Uninstall |morpheus| Agent
 
 You can use the following to uninstall the linux agent:
 
-.. code-block:: bash 
+.. code-block:: bash
 
   sudo rm /etc/apt/sources.list.d/morpheus.list
   sudo morpheus-node-ctl stop rsyslogd

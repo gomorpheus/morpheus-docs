@@ -205,7 +205,7 @@ Confirm all settings are correct and select COMPLETE. The Azure Stack Cloud will
 
 * Virtual Machines (if Inventory Existing Instances is enabled)
 * Networks
-* Virtual Images/Templates
+* Virtual Images/Blueprints
 * Network Security Groups
 * Storage Accounts
 * Marketplace Catalog
