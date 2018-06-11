@@ -1,7 +1,7 @@
 3 Node with Externalized DB Configuration
 -----------------------------------------
 
-Requirements
+Assumptions
 ^^^^^^^^^^^^
 
 This guide assumes the following:
@@ -13,6 +13,7 @@ This guide assumes the following:
 - The base OS is RHEL 7.x
 - Shortname versions of hostnames will be resolvable
 - All nodes have access to a shared volume for /var/opt/morpheus/morpheus-ui. This can be done as a post startup step.
+- This configuration will support the complete loss of a single node, but no more.  Specifically the Elasticsearch tier requires at least two nodes to always be clustered..
 
 Steps
 ^^^^^
@@ -21,15 +22,15 @@ Steps
 
    .. code-block:: bash
 
-     [root@app-server-1 ~] wget https://example/morpheus-appliance-package.rpm
-     [root@app-server-1 ~] wget https://example/morpheus-appliance-offline-package.rpm
+  [root@app-server-1 ~]# wget https://downloads.gomorpheus.com/yum/el/7/noarch/morpheus-appliance-offline-3.1.5- 1.noarch.rpm
+  [root@app-server-1 ~]# wget https://downloads.gomorpheus.com/yum/el/7/x86_64/morpheus-appliance-3.1.5- 1.el7.x86_64.rpm
 
 #. Once the packages are available on the nodes they can be installed. Make sure that no steps beyond the rpm install are run.
 
    .. code-block:: bash
 
-     [root@app-server-1 ~] rpm -i morpheus-appliance-package.rpm
-     [root@app-server-1 ~] rpm -i morpheus-appliance-offline-package.rpm
+  [root@app-server-1 ~]# rpm -i morpheus-appliance-3.1.5-1.el7.x86_64.rpm
+  [root@app-server-1 ~]# rpm -i morpheus-appliance-offline-3.1.5-1.noarch.rpm
 
 #. Next you will need to edit the Morpheus configuration file on each node.
 
@@ -37,49 +38,50 @@ Steps
 
    .. code-block:: bash
 
-        appliance_url 'https://appnode1.example.com'
-        elasticsearch['es_hosts'] = {'10.0.2.1' => 9300, '10.0.2.2' => 9300, '10.0.2.3' => 9300}
-        elasticsearch['node_name'] = 'morpheus1'
-        elasticsearch['host'] = '0.0.0.0'
-        rabbitmq['host'] = '0.0.0.0'
-        rabbitmq['nodename'] = 'rabbit@appnode1'
-        mysql['enable'] = false
-        mysql['host'] = '10.0.3.1'
-        mysql['morpheus_db'] = 'morpheusdb'
-        mysql['morpheus_db_user'] = 'morpheus'
-        mysql['morpheus_password'] = 'password'
+   appliance_url 'https://esmort01.qcorpaa.aa.com'
+   elasticsearch['es_hosts'] = {'10.130.2.1' => 9300, '10.130.2.2' => 9300, '10.130.2.3' => 9300} elasticsearch['node_name'] = 'morpheus1'
+   elasticsearch['host'] = '0.0.0.0'
+   rabbitmq['host'] = '0.0.0.0'
+   rabbitmq['nodename'] = 'rabbit@esmort01'
+   mysql['enable'] = false
+   mysql['host'] = '10.130.12.228'
+   mysql['morpheus_db'] = 'morpheusdb'
+   mysql['morpheus_db_user'] = 'morpheus'
+   mysql['morpheus_password'] = 'password'
 
    Node 2
 
    .. code-block:: bash
 
-        appliance_url 'https://appnode2.example.com'
-        elasticsearch['es_hosts'] = {'10.0.2.2' => 9300, '10.0.2.1' => 9300, '10.0.2.3' => 9300}
-        elasticsearch['node_name'] = 'morpheus2'
-        elasticsearch['host'] = '0.0.0.0'
-        rabbitmq['host'] = '0.0.0.0'
-        rabbitmq['nodename'] = 'rabbit@appnode2'
-        mysql['enable'] = false
-        mysql['host'] = '10.0.3.1'
-        mysql['morpheus_db'] = 'morpheusdb'
-        mysql['morpheus_db_user'] = 'morpheus'
-        mysql['morpheus_password'] = 'password'
+   appliance_url 'https://esmort02.qcorpaa.aa.com'
+    elasticsearch['es_hosts'] = {'10.130.2.2' => 9300, '10.130.2.1' => 9300, '10.130.2.3' => 9300} elasticsearch['node_name'] = 'morpheus2'
+    elasticsearch['host'] = '0.0.0.0'
+    rabbitmq['host'] = '0.0.0.0'
+    rabbitmq['nodename'] = 'rabbit@esmort02'
+    mysql['enable'] = false
+    mysql['host'] = '10.130.12.228'
+    mysql['morpheus_db'] = 'morpheusdb'
+    mysql['morpheus_db_user'] = 'morpheus'
+    mysql['morpheus_password'] = 'password’
 
    Node 3
 
    .. code-block:: bash
 
-        appliance_url 'https://appnode3.example.com'
-        elasticsearch['es_hosts'] = {'10.0.2.3' => 9300, '10.0.2.1' => 9300, '10.0.2.2' => 9300}
-        elasticsearch['node_name'] = 'morpheus3'
-        elasticsearch['host'] = '0.0.0.0'
-        rabbitmq['host'] = '0.0.0.0'
-        rabbitmq['nodename'] = 'rabbit@appnode3'
-        mysql['enable'] = false
-        mysql['host'] = '10.0.3.1'
-        mysql['morpheus_db'] = 'morpheusdb'
-        mysql['morpheus_db_user'] = 'morpheus'
-        mysql['morpheus_password'] = 'password'
+    appliance_url 'https://esmort03.qcorpaa.aa.com'
+     elasticsearch['es_hosts'] = {'10.130.2.3' => 9300, '10.130.2.2' => 9300, '10.130.2.1' => 9300} elasticsearch['node_name'] = 'morpheus3'
+     elasticsearch['host'] = '0.0.0.0'
+     rabbitmq['host'] = '0.0.0.0'
+     rabbitmq['nodename'] = 'rabbit@esmort03'
+     mysql['enable'] = false
+     mysql['host'] = '10.130.12.228'
+     mysql['morpheus_db'] = 'morpheusdb'
+     mysql['morpheus_db_user'] = 'morpheus'
+     mysql['morpheus_password'] = 'password’
+
+
+  .. Note :: If you are running MySQL in a Master/Master configuration we will need to slightly alter the mysql['host'] line in the morpheus.rb to account for both masters in a failover configuration. As an example:
+
 
 
 #. Run the reconfigure on all nodes
