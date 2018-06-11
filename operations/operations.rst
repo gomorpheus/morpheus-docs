@@ -9,4 +9,5 @@ Operations
 .. include:: scheduling.rst
 .. include:: approvals.rst
 .. include:: usage.rst
+.. include:: activity.rst
 .. include:: exportmorpheuslogs.rst
