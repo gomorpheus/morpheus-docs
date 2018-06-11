@@ -1,21 +1,33 @@
 How to create vCloud Director templates for Morpheus
 -----------------------------------------------------
 
-To create a Windows template
+To create a Windows Template
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Create a new machine in VMware vCenter and install a base version of your preferred Windows build.
 
-  1.  Apply any service packs / updates to the operating system.
-  2.	Set the Network location to Private the below PowerShell will set the location.
-    	- Get-NetConnectionProfile | Set-NetconnectionProfile -NetworkCategory private
-  3.  Configure WinRM to allow remote management and open the firewall.
-      - To do this, under local computer Administrator, open a command prompt and run ``winrm quickconfig``
-  4.	Install VMware tools
-  5.	Install .Net at least 4.5
-  6.  Enable remote PowerShell this can be done in PowerShell.
+#.  Apply any service packs / updates to the operating system.
+#.	Set the Network location to Private the below PowerShell will set the location.
+
+    .. code-block:: PowerShell
+
+        - Get-NetConnectionProfile | Set-NetconnectionProfile -NetworkCategory private
+
+#.  Configure WinRM to allow remote management and open the firewall.
+
+    - To do this, under local computer Administrator, open a command prompt and run ``winrm quickconfig``
+
+#.	Install VMware tools
+#.	Install .Net at least 4.5
+#.  Enable remote PowerShell this can be done in PowerShell.
+
+    .. code-block:: PowerShell
+
       - Enable-PSremoting
-  7.	Shutdown the virtual machine and convert to a template. (Do not run sysprep)
+
+#.	Shutdown the virtual machine and convert to a template.
+
+.. NOTE:: Do not run sysprep
 
 
 To create a Linux template

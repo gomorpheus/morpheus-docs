@@ -156,7 +156,10 @@ Subsequently we need to stop and start Rabbit on the NOT SOT nodes.
    Starting node 'rabbit@app-server-2' ...
 
 Once the Rabbit services are up and clustered on all nodes they need to be set to HA/Mirrored Queues:
-rabbitmqctl set_policy -p morpheus --priority 1 --apply-to all ha ".*" '{"ha-mode":"all"}'
+
+.. code-block:: bash
+
+   rabbitmqctl set_policy -p morpheus --priority 1 --apply-to all ha ".*" '{"ha-mode":"all"}'
 
 .. code-block:: bash
 
