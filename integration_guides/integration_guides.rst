@@ -8,6 +8,7 @@ Integration Guides
 .. include:: IdentityManagement/IdentityManagement.rst
 .. include:: Monitoring/Monitoring.rst
 .. include:: Networking/networking.rst
+.. include:: vCloudDirector/creatingvcloud.rst
 .. .. include:: ha/ha.rst
 .. .. include:: Backups/backups.rst
 .. .. include:: Deployments/deployment.rst
