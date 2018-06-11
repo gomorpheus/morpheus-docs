@@ -210,16 +210,25 @@ Once this is done you can safely export. To access the MySQL shell we will need 
 
 .. code-block:: bash
 
-    [root@app-server-old ~]# cat /etc/morpheus/morpheus-secrets.json {
-    "mysql": {
-    "root_password": "2dee0d72a0e20729ef35ad86", "morpheus_password": "149c15471484228385f9ccd4", "ops_password": "7e6040b3b3a14d8a083fb57e"
-    }, "rabbitmq": {
-    "morpheus_password": "35e259a167b2a296", "queue_user_password": "c90717995720ab7f", "cookie": "3F1B7B5C8B24A6FF1C9A"
-    }, "vm-images": {
-    "s3": {
-    "aws_access_id": "AKIAI6SF4BN7NWSFAWVQ",
-    "aws_secret_key": "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"
-    } }
+    [root@app-server-old ~]# cat /etc/morpheus/morpheus-secrets.json
+.. code-block:: javascript
+  {
+    "mysql":{
+        "root_password":"2dee0d72a0e20729ef35ad86",
+        "morpheus_password":"149c15471484228385f9ccd4",
+        "ops_password":"7e6040b3b3a14d8a083fb57e"
+      },
+      "rabbitmq":{
+        "morpheus_password":"35e259a167b2a296",
+        "queue_user_password":"c90717995720ab7f",
+        "cookie":"3F1B7B5C8B24A6FF1C9A"
+      },
+      "vm-images":{
+        "s3":{
+          "aws_access_id":"AKIAI6SF4BN7NWSFAWVQ",
+          "aws_secret_key":"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"
+        }
+      }
     }
 
 Take note of this password as it will be used to invoke a dump. Morpheus provides embedded binaries for this task. Invoke it via the embedded path and specify the host. In this example we are using the morpheus database on the MySQL listening on localhost. Enter the password copied from the previous step when prompted:
@@ -252,21 +261,21 @@ If a node happens to crash most of the time Morpheus will start upon boot of the
 
 .. code-block:: bash
 
-[root@app-server-1 ~]# morpheus-ctl status
-run: check-server: (pid 17808) 7714s;
-run: log: (pid 549) 8401s
-run: elasticsearch: (pid 19207) 5326s;
-run: log: (pid 565) 8401s
-run: guacd: (pid 601) 8401s;
-run: log: (pid 573) 8401s
-run: morpheus-ui: (pid 17976) 7633s;
-run: log: (pid 555) 8401s
-run: nginx: (pid 581) 8401s;
-run: log: (pid 544) 8401s
-run: rabbitmq: (pid 17850) 7708s;
-run: log: (pid 542) 8401s
-run: redis: (pid 572) 8401s;
-run: log: (pid 548) 8401s
+    [root@app-server-1 ~]# morpheus-ctl status
+    run: check-server: (pid 17808) 7714s;
+    run: log: (pid 549) 8401s
+    run: elasticsearch: (pid 19207) 5326s;
+    run: log: (pid 565) 8401s
+    run: guacd: (pid 601) 8401s;
+    run: log: (pid 573) 8401s
+    run: morpheus-ui: (pid 17976) 7633s;
+    run: log: (pid 555) 8401s
+    run: nginx: (pid 581) 8401s;
+    run: log: (pid 544) 8401s
+    run: rabbitmq: (pid 17850) 7708s;
+    run: log: (pid 542) 8401s
+    run: redis: (pid 572) 8401s;
+    run: log: (pid 548) 8401s
 
 
 But, a status can report false positives if, say, RabbitMQ is in a boot loop or Elasticsearch is up, but not able to join the cluster. It is always advisable to tail the logs of the services to investigate their health.
@@ -358,7 +367,7 @@ Because Morpheus can start even though the Elasticsearch node on the same host f
   "timed_out" : false, "number_of_nodes" : 3, "number_of_data_nodes" : 3, "active_primary_shards" : 110, "active_shards" : 220, "relocating_shards" : 0, "initializing_shards" : 0, "unassigned_shards" : 0, "number_of_pending_tasks" : 0, "number_of_in_flight_fetch" : 0
   }
 
-  If this is not the case it is worth investigating the Elasticsearch logs to understand why the singleton node is having trouble joining the cluster. These can be found at:
+If this is not the case it is worth investigating the Elasticsearch logs to understand why the singleton node is having trouble joining the cluster. These can be found at:
 
   ``/var/log/morpheus/elasticsearch/current``
 
