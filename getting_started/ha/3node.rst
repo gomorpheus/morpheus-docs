@@ -22,15 +22,15 @@ Steps
 
    .. code-block:: bash
 
-  [root@app-server-1 ~]# wget https://downloads.gomorpheus.com/yum/el/7/noarch/morpheus-appliance-offline-3.1.5- 1.noarch.rpm
-  [root@app-server-1 ~]# wget https://downloads.gomorpheus.com/yum/el/7/x86_64/morpheus-appliance-3.1.5- 1.el7.x86_64.rpm
+    [root@app-server-1 ~]# wget https://downloads.gomorpheus.com/yum/el/7/noarch/morpheus-appliance-offline-3.1.5- 1.noarch.rpm
+    [root@app-server-1 ~]# wget https://downloads.gomorpheus.com/yum/el/7/x86_64/morpheus-appliance-3.1.5- 1.el7.x86_64.rpm
 
 #. Once the packages are available on the nodes they can be installed. Make sure that no steps beyond the rpm install are run.
 
    .. code-block:: bash
 
-  [root@app-server-1 ~]# rpm -i morpheus-appliance-3.1.5-1.el7.x86_64.rpm
-  [root@app-server-1 ~]# rpm -i morpheus-appliance-offline-3.1.5-1.noarch.rpm
+    [root@app-server-1 ~]# rpm -i morpheus-appliance-3.1.5-1.el7.x86_64.rpm
+    [root@app-server-1 ~]# rpm -i morpheus-appliance-offline-3.1.5-1.noarch.rpm
 
 #. Next you will need to edit the Morpheus configuration file on each node.
 
@@ -62,7 +62,7 @@ Steps
     mysql['host'] = '10.130.12.228'
     mysql['morpheus_db'] = 'morpheusdb'
     mysql['morpheus_db_user'] = 'morpheus'
-    mysql['morpheus_password'] = 'password’
+    mysql['morpheus_password'] = 'password'
 
    Node 3
 
@@ -77,17 +77,19 @@ Steps
        mysql['host'] = '10.130.12.228'
        mysql['morpheus_db'] = 'morpheusdb'
        mysql['morpheus_db_user'] = 'morpheus'
-       mysql['morpheus_password'] = 'password’
+       mysql['morpheus_password'] = 'password'
 
 
 
-        .. Note :: If you are running MySQL in a Master/Master configuration we will need to slightly alter the mysql['host'] line in the morpheus.rb to account for both masters in a failover configuration. As an example:
+
+.. note::
+
+  If you are running MySQL in a Master/Master configuration we will need to slightly alter the mysql['host'] line in the morpheus.rb to account for both masters in a failover configuration. As an example:
 
   .. code-block:: bash
 
     mysql['host'] = '10.130.12.228:3306,10.130.12.109'
-
-
+    
 
 Morpheus will append the ‘3306’ port to the end of the final IP in the string, which is why we leave it off but explicitly type it for the first IP in the string. The order of IPs matters in that it should be the same across all three Morpheus Application Servers. As mentioned, this will be a failover configuration for MySQL in that the application will only read/write from the second master if the first master becomes unavailable. This way we can avoid commit lock issues that might arise from a load balanced Master/Master.
 
