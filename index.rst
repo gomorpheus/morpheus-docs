@@ -11,7 +11,7 @@ Morpheus Documentation
    infrastructure/infrastructure
    administration/administration
    monitoring/monitoring
-   logs/logging
+   logs/logs
    backups/backups
    operations/operations
    services/services
