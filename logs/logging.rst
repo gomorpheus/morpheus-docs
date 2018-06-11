@@ -1,4 +1,4 @@
-Logs3
+Logs
 ======
 
 Overview
