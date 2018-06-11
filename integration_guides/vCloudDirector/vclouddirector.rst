@@ -1,5 +1,4 @@
 vCloud Director
 ===============
 
-.. toctree::
-  vCloudDirector/creatingvcloud.rst
+.. include:: vCloudDirector/creatingvcloud.rst
