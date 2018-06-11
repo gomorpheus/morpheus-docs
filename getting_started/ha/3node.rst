@@ -89,7 +89,7 @@ Steps
   .. code-block:: bash
 
     mysql['host'] = '10.130.12.228:3306,10.130.12.109'
-    
+
 
 Morpheus will append the ‘3306’ port to the end of the final IP in the string, which is why we leave it off but explicitly type it for the first IP in the string. The order of IPs matters in that it should be the same across all three Morpheus Application Servers. As mentioned, this will be a failover configuration for MySQL in that the application will only read/write from the second master if the first master becomes unavailable. This way we can avoid commit lock issues that might arise from a load balanced Master/Master.
 
@@ -213,6 +213,7 @@ Once this is done you can safely export. To access the MySQL shell we will need 
 .. code-block:: bash
 
     [root@app-server-old ~]# cat /etc/morpheus/morpheus-secrets.json
+    
 .. code-block:: javascript
   {
     "mysql":{
