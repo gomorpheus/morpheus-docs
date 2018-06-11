@@ -370,8 +370,18 @@ Because Morpheus can start even though the Elasticsearch node on the same host f
 
   [root@app-server-1 ~]# curl localhost:9200/_cluster/health?pretty=true
   {
-  "cluster_name" : "morpheus", "status" : "green",
-  "timed_out" : false, "number_of_nodes" : 3, "number_of_data_nodes" : 3, "active_primary_shards" : 110, "active_shards" : 220, "relocating_shards" : 0, "initializing_shards" : 0, "unassigned_shards" : 0, "number_of_pending_tasks" : 0, "number_of_in_flight_fetch" : 0
+  "cluster_name" : "morpheus",
+  "status" : "green",
+  "timed_out" : false,
+  "number_of_nodes" : 3,
+  "number_of_data_nodes" : 3,
+  "active_primary_shards" : 110,
+  "active_shards" : 220,
+  "relocating_shards" : 0,
+  "initializing_shards" : 0,
+  "unassigned_shards" : 0,
+  "number_of_pending_tasks" : 0,
+  "number_of_in_flight_fetch" : 0
   }
 
 If this is not the case it is worth investigating the Elasticsearch logs to understand why the singleton node is having trouble joining the cluster. These can be found at:
