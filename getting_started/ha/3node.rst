@@ -86,9 +86,9 @@ Steps
 
   If you are running MySQL in a Master/Master configuration we will need to slightly alter the mysql['host'] line in the morpheus.rb to account for both masters in a failover configuration. As an example:
 
-.. code-block:: bash
+  .. code-block:: bash
 
-  mysql['host'] = '10.130.12.228:3306,10.130.12.109'
+    mysql['host'] = '10.130.12.228:3306,10.130.12.109'
 
 
 Morpheus will append the ‘3306’ port to the end of the final IP in the string, which is why we leave it off but explicitly type it for the first IP in the string. The order of IPs matters in that it should be the same across all three Morpheus Application Servers. As mentioned, this will be a failover configuration for MySQL in that the application will only read/write from the second master if the first master becomes unavailable. This way we can avoid commit lock issues that might arise from a load balanced Master/Master.
@@ -101,10 +101,10 @@ Morpheus will append the ‘3306’ port to the end of the final IP in the strin
 
       [root@app-server-1 ~] morpheus-ctl reconfigure
 
-      Morpheus will come up on all nodes and Elasticsearch will auto-cluster. The only item left is the manual clustering of RabbitMQ.
+  Morpheus will come up on all nodes and Elasticsearch will auto-cluster. The only item left is the manual clustering of RabbitMQ.
 
-      Select one of the nodes to be your Source Of Truth (SOT) for RabbitMQ clustering. We need to share secrets for RabbitMQ, the erlang cookie and join the other nodes to the SOT node.
-      Begin by copying secrets from the SOT node to the other nodes.
+  Select one of the nodes to be your Source Of Truth (SOT) for RabbitMQ clustering. We need to share secrets for RabbitMQ, the erlang cookie and join the other nodes to the SOT node.
+  Begin by copying secrets from the SOT node to the other nodes.
 
    .. code-block:: bash
 
@@ -206,32 +206,23 @@ If your new installation is part of a migration then you need to move the data f
 To begin this, stop the Morpheus UI on your original Morpheus server:
 
 .. code-block:: bash
+
   [root@app-server-old ~]# morpheus-ctl stop morpheus-ui
 
 Once this is done you can safely export. To access the MySQL shell we will need the password for the Morpheus DB user. We can find this in the morpheus-secrets file:
 
 .. code-block:: bash
 
-    [root@app-server-old ~]# cat /etc/morpheus/morpheus-secrets.json
-
-.. code-block:: javascript
-  {
-    "mysql":{
-        "root_password":"2dee0d72a0e20729ef35ad86",
-        "morpheus_password":"149c15471484228385f9ccd4",
-        "ops_password":"7e6040b3b3a14d8a083fb57e"
-      },
-      "rabbitmq":{
-        "morpheus_password":"35e259a167b2a296",
-        "queue_user_password":"c90717995720ab7f",
-        "cookie":"3F1B7B5C8B24A6FF1C9A"
-      },
-      "vm-images":{
-        "s3":{
-          "aws_access_id":"AKIAI6SF4BN7NWSFAWVQ",
-          "aws_secret_key":"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"
-        }
-      }
+    [root@app-server-old ~]# cat /etc/morpheus/morpheus-secrets.json {
+    "mysql": {
+    "root_password": "2dee0d72a0e20729ef35ad86", "morpheus_password": "149c15471484228385f9ccd4", "ops_password": "7e6040b3b3a14d8a083fb57e"
+    }, "rabbitmq": {
+    "morpheus_password": "35e259a167b2a296", "queue_user_password": "c90717995720ab7f", "cookie": "3F1B7B5C8B24A6FF1C9A"
+    }, "vm-images": {
+    "s3": {
+    "aws_access_id": "AKIAI6SF4BN7NWSFAWVQ",
+    "aws_secret_key": "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"
+    } }
     }
 
 Take note of this password as it will be used to invoke a dump. Morpheus provides embedded binaries for this task. Invoke it via the embedded path and specify the host. In this example we are using the morpheus database on the MySQL listening on localhost. Enter the password copied from the previous step when prompted:
@@ -264,21 +255,21 @@ If a node happens to crash most of the time Morpheus will start upon boot of the
 
 .. code-block:: bash
 
-    [root@app-server-1 ~]# morpheus-ctl status
-    run: check-server: (pid 17808) 7714s;
-    run: log: (pid 549) 8401s
-    run: elasticsearch: (pid 19207) 5326s;
-    run: log: (pid 565) 8401s
-    run: guacd: (pid 601) 8401s;
-    run: log: (pid 573) 8401s
-    run: morpheus-ui: (pid 17976) 7633s;
-    run: log: (pid 555) 8401s
-    run: nginx: (pid 581) 8401s;
-    run: log: (pid 544) 8401s
-    run: rabbitmq: (pid 17850) 7708s;
-    run: log: (pid 542) 8401s
-    run: redis: (pid 572) 8401s;
-    run: log: (pid 548) 8401s
+  [root@app-server-1 ~]# morpheus-ctl status
+  run: check-server: (pid 17808) 7714s;
+  run: log: (pid 549) 8401s
+  run: elasticsearch: (pid 19207) 5326s;
+  run: log: (pid 565) 8401s
+  run: guacd: (pid 601) 8401s;
+  run: log: (pid 573) 8401s
+  run: morpheus-ui: (pid 17976) 7633s;
+  run: log: (pid 555) 8401s
+  run: nginx: (pid 581) 8401s;
+  run: log: (pid 544) 8401s
+  run: rabbitmq: (pid 17850) 7708s;
+  run: log: (pid 542) 8401s
+  run: redis: (pid 572) 8401s;
+  run: log: (pid 548) 8401s
 
 
 But, a status can report false positives if, say, RabbitMQ is in a boot loop or Elasticsearch is up, but not able to join the cluster. It is always advisable to tail the logs of the services to investigate their health.
@@ -288,17 +279,18 @@ But, a status can report false positives if, say, RabbitMQ is in a boot loop or 
   [root@app-server-1 ~]# morpheus-ctl tail rabbitmq
   [root@app-server-1 ~]# morpheus-ctl tail elasticsearch
 
-  Output that would indicate a problem with RabbitMQ would be visible in a StackTrace and resembles this example:
+Output that would indicate a problem with RabbitMQ would be visible in a StackTrace and resembles this example:
 
-  **Insert Picture**
+**Insert Picture**
 
-  And for Elasticsearch:
+And for Elasticsearch:
 
-  **Insert Picture**
+**Insert Picture**
 
-  To minimize disruption to the user interface, it is advisable to remedy Elasticsearch clustering first. Due to write locking in Elasticsearch it can be required to restart other nodes in the cluster to allow the recovering node to join. Begin by determining which Elasticsearch node became the master during the outage. On one of the two other nodes (not the recovered node):
+To minimize disruption to the user interface, it is advisable to remedy Elasticsearch clustering first. Due to write locking in Elasticsearch it can be required to restart other nodes in the cluster to allow the recovering node to join. Begin by determining which Elasticsearch node became the master during the outage. On one of the two other nodes (not the recovered node):
 
 .. code-block:: bash
+
   [root@app-server-2 ~]# curl localhost:9200/_cat/nodes
   app-server-1 10.130.2.13 7 47 0.21 d * morpheus1
   localhost 127.0.0.1 4 30 0.32 d m morpheus2
@@ -313,12 +305,14 @@ SSH to this node (if different) and restart Elasticsearch.
 Go to the other of the two ‘up’ nodes and run the curl command again. If the output contains three nodes then Elasticsearch has been recovered and you can move on to re-clustering RabbitMQ. Otherwise you will see output that contains only the node itself:
 
 .. code-block:: bash
+
   [root@app-server-2 ~]# curl localhost:9200/_cat/nodes
   localhost 127.0.0.1 4 30 0.32 d * morpheus2
 
-  If this is the case then restart Elasticsearch on this node as well:
+If this is the case then restart Elasticsearch on this node as well:
 
   .. code-block:: bash
+
     [root@app-server-2 ~]# morpheus-ctl restart elasticsearch
 
 After this you should be able to run the curl command and see all three nodes have rejoined the cluster:
@@ -339,6 +333,7 @@ The most frequent case of restart errors for RabbitMQ is with epmd failing to re
 And then restarting RabbitMQ:
 
 .. code-block:: bash
+
   [root@app-server-1 ~]# morpheus-ctl restart rabbitmq
 
 And then restarting the Morpheus UI service:
@@ -350,9 +345,10 @@ And then restarting the Morpheus UI service:
 Again, it is always advisable to monitor the startup to ensure the Morpheus Application is starting without error:
 
 .. code-block:: bash
+
   [root@app-server-1 ~]# morpheus-ctl tail morpheus-ui
 
-  **Recovery Thoughts/Further Discussion:** If Morpheus UI cannot connect to RabbitMQ, Elasticsearch or the database tier it will fail to start. The Morpheus UI logs can indicate if this is the case.
+**Recovery Thoughts/Further Discussion:** If Morpheus UI cannot connect to RabbitMQ, Elasticsearch or the database tier it will fail to start. The Morpheus UI logs can indicate if this is the case.
 
 Aside from RabbitMQ, there can be issues with false positives concerning Elasticsearch’s running status. The biggest challenge with Elasticsearch, for instance, is that a restarted node has trouble joining the ES cluster. This is fine in the case of ES, though, because the minimum_master_nodes setting will not allow the un-joined singleton to be consumed until it joins. Morpheus will still start if it can reach the other two ES hosts, which are still clustered.
 
