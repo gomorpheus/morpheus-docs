@@ -83,7 +83,7 @@ Steps
 
   If you are running MySQL in a Master/Master configuration we will need to slightly alter the mysql['host'] line in the morpheus.rb to account for both masters in a failover configuration. As an example:
 
-  .. code-block:: bash
+.. code-block:: bash
 
     mysql['host'] = '10.130.12.228:3306,10.130.12.109'
 
