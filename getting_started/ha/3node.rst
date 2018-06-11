@@ -146,12 +146,13 @@ Subsequently we need to stop and start Rabbit on the NOT SOT nodes.
 
    [root@app-server-2 ~] morpheus-ctl stop rabbitmq
    [root@app-server-2 ~] morpheus-ctl start rabbitmq
-
-   [root@app-server-2 ~]#
-   PATH=/opt/morpheus/sbin:/opt/morpheus/sbin:/opt/morpheus/embedded/sbin:/opt/morpheus/embedded/bin:$PATH
+   [root@app-server-2 ~]#PATH=/opt/morpheus/sbin:/opt/morpheus/sbin:/opt/morpheus/embedded/sbin:/opt/morpheus/embedded/bin:$PATH
    [root@app-server-2 ~]# rabbitmqctl stop_app
+
    Stopping node 'rabbit@app-server-2' ...
+
    [root@app-server-2 ~]# rabbitmqctl join_cluster rabbit@app-server-1 Clustering node 'rabbit@app-server-2' with 'rabbit@app-server-1' ... [root@app-server-2 ~]# rabbitmqctl start_app
+
    Starting node 'rabbit@app-server-2' ...
 
 Once the Rabbit services are up and clustered on all nodes they need to be set to HA/Mirrored Queues:
@@ -210,17 +211,27 @@ Once this is done you can safely export. To access the MySQL shell we will need 
 
 .. code-block:: bash
 
-    [root@app-server-old ~]# cat /etc/morpheus/morpheus-secrets.json {
+    [root@app-server-old ~]# cat /etc/morpheus/morpheus-secrets.json
+
+.. code-block:: javascript
+  {
     "mysql": {
-    "root_password": "2dee0d72a0e20729ef35ad86", "morpheus_password": "149c15471484228385f9ccd4", "ops_password": "7e6040b3b3a14d8a083fb57e"
-    }, "rabbitmq": {
-    "morpheus_password": "35e259a167b2a296", "queue_user_password": "c90717995720ab7f", "cookie": "3F1B7B5C8B24A6FF1C9A"
-    }, "vm-images": {
-    "s3": {
-    "aws_access_id": "AKIAI6SF4BN7NWSFAWVQ",
-    "aws_secret_key": "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"
-    } }
-    }
+        "root_password": "2dee0d72a0e20729ef35ad86",
+        "morpheus_password": "149c15471484228385f9ccd4",
+        "ops_password": "7e6040b3b3a14d8a083fb57e"
+          },
+    "rabbitmq": {
+              "morpheus_password": "35e259a167b2a296",
+              "queue_user_password": "c90717995720ab7f",
+              "cookie": "3F1B7B5C8B24A6FF1C9A"
+    },
+    "vm-images": {
+      "s3": {
+          "aws_access_id": "AKIAI6SF4BN7NWSFAWVQ",
+          "aws_secret_key": "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"
+        }
+      }
+  }
 
 Take note of this password as it will be used to invoke a dump. Morpheus provides embedded binaries for this task. Invoke it via the embedded path and specify the host. In this example we are using the morpheus database on the MySQL listening on localhost. Enter the password copied from the previous step when prompted:
 
