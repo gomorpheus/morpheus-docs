@@ -289,11 +289,11 @@ But, a status can report false positives if, say, RabbitMQ is in a boot loop or 
 
 Output that would indicate a problem with RabbitMQ would be visible in a StackTrace and resembles this example:
 
-.. image:: images/ha3node/HA3nodeRabbitMQ.png
+.. image:: /images/ha3node/HA3nodeRabbitMQ.png
 
 And for Elasticsearch:
 
-.. image:: images/ha3node/HA3nodeElasticSearch.png
+.. image:: /images/ha3node/HA3nodeElasticSearch.png
 
 To minimize disruption to the user interface, it is advisable to remedy Elasticsearch clustering first. Due to write locking in Elasticsearch it can be required to restart other nodes in the cluster to allow the recovering node to join. Begin by determining which Elasticsearch node became the master during the outage. On one of the two other nodes (not the recovered node):
 
