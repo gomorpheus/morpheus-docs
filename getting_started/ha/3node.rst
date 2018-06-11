@@ -79,9 +79,6 @@ Steps
        mysql['morpheus_db_user'] = 'morpheus'
        mysql['morpheus_password'] = 'password'
 
-
-
-
 .. note::
 
   If you are running MySQL in a Master/Master configuration we will need to slightly alter the mysql['host'] line in the morpheus.rb to account for both masters in a failover configuration. As an example:
