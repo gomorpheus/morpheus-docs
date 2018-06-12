@@ -54,11 +54,11 @@ Once logged into vCloud director you will then need select ``Manage Organization
 From within the organisation click on ``Catalogues`` > select an existing catalogue or create a new catalogue.
 
 .. note::
-  Please note once you connect Morpheus to your vCD environment, it will create a catalogue called Auto Morpheus. This is a working catalogue and is ignored by Morpheus when searching for images, so any images in the catalogue will not be synced into Morpheus
+  Please note once you connect |morpheus| to your vCD environment, it will create a catalogue called Auto |morpheus|. This is a working catalogue and is ignored by |morpheus| when searching for images, so any images in the catalogue will not be synced into |morpheus|
 
 Open the catalogue and select the import template from vCenter and then browse the data stores for your templates. Select your template and the type in a new name and description then check the copy template into vCloud director.
 
-Once you click ok the import process will begin. When the import has completed the template will appear in Morpheus within ``Provisioning`` > ``Virtual Images``
+Once you click ok the import process will begin. When the import has completed the template will appear in |morpheus| within ``Provisioning`` > ``Virtual Images``
 
 If the image does not appear within the virtual images you may need to use the filters to filter the virtual images by the vmware ( vmdk / ovf / ova) type.
 
