@@ -94,66 +94,66 @@ Morpheus will append the ‘3306’ port to the end of the final IP in the strin
 
 Run the reconfigure on all nodes
 
- .. code-block:: bash
+.. code-block:: bash
 
-    [root@app-server-1 ~] morpheus-ctl reconfigure
+  [root@app-server-1 ~] morpheus-ctl reconfigure
 
 Morpheus will come up on all nodes and Elasticsearch will auto-cluster. The only item left is the manual clustering of RabbitMQ.
 
 Select one of the nodes to be your Source Of Truth (SOT) for RabbitMQ clustering. We need to share secrets for RabbitMQ, the erlang cookie and join the other nodes to the SOT node.
 Begin by copying secrets from the SOT node to the other nodes.
 
- .. code-block:: bash
+.. code-block:: bash
 
-    [root@app-server-1 ~] cat /etc/morpheus/morpheus-secrets.json
-    {
-      "mysql": {
-        "root_password": "wam457682b67858ae2cf4bc",
-        "morpheus_password": "password",
-        "ops_password": "98d9677686698d319r6356ae3a77"
-      },
-      "rabbitmq": {
-        "morpheus_password": "adff00cf8714b25mc",
-        "queue_user_password": "r075f26158c1fes2",
-        "cookie": "6458933CD86782AD39E25"
-      },
-      "vm-images": {
-        "s3": {
-          "aws_access_id": "AKIAI6OFPBN4NWSFBXRQ",
-          "aws_secret_key": "a9vxxjH5xkgh6dHgRjLl37i33rs8pwRe3"
-       }
-      }
+  [root@app-server-1 ~] cat /etc/morpheus/morpheus-secrets.json
+  {
+    "mysql": {
+      "root_password": "wam457682b67858ae2cf4bc",
+      "morpheus_password": "password",
+      "ops_password": "98d9677686698d319r6356ae3a77"
+    },
+    "rabbitmq": {
+      "morpheus_password": "adff00cf8714b25mc",
+      "queue_user_password": "r075f26158c1fes2",
+      "cookie": "6458933CD86782AD39E25"
+    },
+    "vm-images": {
+      "s3": {
+        "aws_access_id": "AKIAI6OFPBN4NWSFBXRQ",
+        "aws_secret_key": "a9vxxjH5xkgh6dHgRjLl37i33rs8pwRe3"
      }
+    }
+   }
 
 Then copy the erlang.cookie from the SOT node to the other nodes
 
- .. code-block:: bash
+.. code-block:: bash
 
-   [root@app-server-1 ~] cat /opt/morpheus/embedded/rabbitmq/.erlang.cookie
-   # 754363AD864649RD63D28
+ [root@app-server-1 ~] cat /opt/morpheus/embedded/rabbitmq/.erlang.cookie
+ # 754363AD864649RD63D28
 
 Once this is done run a reconfigure on the two nodes that are NOT the SOT nodes.
 
- .. code-block:: bash
+.. code-block:: bash
 
-  [root@app-server-2 ~] morpheus-ctl reconfigure
+[root@app-server-2 ~] morpheus-ctl reconfigure
 
- .. NOTE:: This step will fail. This is ok, and expected. If the reconfigure hangs then use Ctrl+C to quit the reconfigure run and force a failure.
+.. NOTE:: This step will fail. This is ok, and expected. If the reconfigure hangs then use Ctrl+C to quit the reconfigure run and force a failure.
 
 Subsequently we need to stop and start Rabbit on the NOT SOT nodes.
 
- .. code-block:: bash
+.. code-block:: bash
 
-   [root@app-server-2 ~] morpheus-ctl stop rabbitmq
-   [root@app-server-2 ~] morpheus-ctl start rabbitmq
-   [root@app-server-2 ~]#PATH=/opt/morpheus/sbin:/opt/morpheus/sbin:/opt/morpheus/embedded/sbin:/opt/morpheus/embedded/bin:$PATH
-   [root@app-server-2 ~]# rabbitmqctl stop_app
+ [root@app-server-2 ~] morpheus-ctl stop rabbitmq
+ [root@app-server-2 ~] morpheus-ctl start rabbitmq
+ [root@app-server-2 ~]#PATH=/opt/morpheus/sbin:/opt/morpheus/sbin:/opt/morpheus/embedded/sbin:/opt/morpheus/embedded/bin:$PATH
+ [root@app-server-2 ~]# rabbitmqctl stop_app
 
-   Stopping node 'rabbit@app-server-2' ...
+ Stopping node 'rabbit@app-server-2' ...
 
-   [root@app-server-2 ~]# rabbitmqctl join_cluster rabbit@app-server-1 Clustering node 'rabbit@app-server-2' with 'rabbit@app-server-1' ... [root@app-server-2 ~]# rabbitmqctl start_app
+ [root@app-server-2 ~]# rabbitmqctl join_cluster rabbit@app-server-1 Clustering node 'rabbit@app-server-2' with 'rabbit@app-server-1' ... [root@app-server-2 ~]# rabbitmqctl start_app
 
-   Starting node 'rabbit@app-server-2' ...
+ Starting node 'rabbit@app-server-2' ...
 
 Once the Rabbit services are up and clustered on all nodes they need to be set to HA/Mirrored Queues:
 
