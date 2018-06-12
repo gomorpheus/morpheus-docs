@@ -129,14 +129,14 @@ Then copy the erlang.cookie from the SOT node to the other nodes
 
 .. code-block:: bash
 
- [root@app-server-1 ~] cat /opt/morpheus/embedded/rabbitmq/.erlang.cookie
- # 754363AD864649RD63D28
+  [root@app-server-1 ~] cat /opt/morpheus/embedded/rabbitmq/.erlang.cookie
+  # 754363AD864649RD63D28
 
 Once this is done run a reconfigure on the two nodes that are NOT the SOT nodes.
 
 .. code-block:: bash
 
-[root@app-server-2 ~] morpheus-ctl reconfigure
+   [root@app-server-2 ~] morpheus-ctl reconfigure
 
 .. NOTE:: This step will fail. This is ok, and expected. If the reconfigure hangs then use Ctrl+C to quit the reconfigure run and force a failure.
 
@@ -191,7 +191,9 @@ Lastly, we need to ensure that Elasticsearch is configured in such a way as to s
   [root@app-server-2 ~]# echo "discovery.zen.minimum_master_nodes: 2" >> /opt/morpheus/embedded/elasticsearch/config/elasticsearch.yml
   [root@app-server-2 ~]# morpheus-ctl restart elasticsearch
 
-For moving /var/opt/morpheus/morpheus-ui files into a shared volume make sure ALL Morpheus services on ALL three nodes are down before you begin.
+
+.. note::
+  For moving ``/var/opt/morpheus/morpheus-ui`` files into a shared volume make sure ALL Morpheus services on ALL three nodes are down before you begin.
 
 .. code-block:: bash
 
