@@ -38,17 +38,17 @@ If you wish to export these to an external syslog platform, do the following:
 
 #. Once you have configured your syslog destination (edit rsyslog.conf), create a morpheus-syslog.conf file in the ``/etc/rsyslog.d`` directory and add the following entries
 
-   .. code-block:: bash
+.. code-block:: bash
 
-     module(load="imfile" PollingInterval="50")
-     input(type="imfile" File="/var/log/morpheus/morpheus-ui/current" Tag="morpheus-ui" ReadMode="2" Severity="info" StateFile="morpheus-ui")
-     input(type="imfile" File="/var/log/morpheus/check-server/current" Tag="check-server" ReadMode="2" Severity="info")
-     input(type="imfile" File="/var/log/morpheus/guacd/current" Tag="guacd" ReadMode="2" Severity="info")
-     input(type="imfile" File="/var/log/morpheus/elasticsearch/current" Tag="elasticsearch" ReadMode="2")
-     input(type="imfile" File="/var/log/morpheus/mysql/current" Tag="mysql" ReadMode="2" Severity="info")
-     input(type="imfile" File="/var/log/morpheus/nginx/current" Tag="nginx" ReadMode="2" Severity="info")
-     input(type="imfile" File="/var/log/morpheus/rabbitmq/current" Tag="rabbitmq" ReadMode="2" Severity="info")
-     input(type="imfile" File="/var/log/morpheus/redis/current" Tag="redis" ReadMode="2" Severity="info")
+   module(load="imfile" PollingInterval="50")
+   input(type="imfile" File="/var/log/morpheus/morpheus-ui/current" Tag="morpheus-ui" ReadMode="2" Severity="info" StateFile="morpheus-ui")
+   input(type="imfile" File="/var/log/morpheus/check-server/current" Tag="check-server" ReadMode="2" Severity="info")
+   input(type="imfile" File="/var/log/morpheus/guacd/current" Tag="guacd" ReadMode="2" Severity="info")
+   input(type="imfile" File="/var/log/morpheus/elasticsearch/current" Tag="elasticsearch" ReadMode="2")
+   input(type="imfile" File="/var/log/morpheus/mysql/current" Tag="mysql" ReadMode="2" Severity="info")
+   input(type="imfile" File="/var/log/morpheus/nginx/current" Tag="nginx" ReadMode="2" Severity="info")
+   input(type="imfile" File="/var/log/morpheus/rabbitmq/current" Tag="rabbitmq" ReadMode="2" Severity="info")
+   input(type="imfile" File="/var/log/morpheus/redis/current" Tag="redis" ReadMode="2" Severity="info")
 
 #. Restart rsyslog
 
@@ -63,25 +63,26 @@ The final log type that may require export is the |morpheus| Activity log. This 
 
 #. To set up CEF/SIEM auditing export, you should edit the following file: ``logback.groovy`` located at ``/opt/morpheus/conf/logback.groovy``.
 
+
 #. Copy the below configuration to the bottom of the logback.groovy configuration file, save and then exit.
 
-   .. code-block:: javascript
+.. code-block:: javascript
 
-     appender("AUDIT", RollingFileAppender) {
-       file = "/var/log/morpheus/morpheus-ui/audit.log"
-        rollingPolicy(TimeBasedRollingPolicy) {
-          fileNamePattern = "/var/log/morpheus/morpheus-ui/audit_%d{yyyy-MM-dd}.%i.log"
-          timeBasedFileNamingAndTriggeringPolicy(SizeAndTimeBasedFNATP) {
-            maxFileSize = "50MB"
-          }
-          maxHistory = 30
+   appender("AUDIT", RollingFileAppender) {
+     file = "/var/log/morpheus/morpheus-ui/audit.log"
+      rollingPolicy(TimeBasedRollingPolicy) {
+        fileNamePattern = "/var/log/morpheus/morpheus-ui/audit_%d{yyyy-MM-dd}.%i.log"
+        timeBasedFileNamingAndTriggeringPolicy(SizeAndTimeBasedFNATP) {
+          maxFileSize = "50MB"
         }
-        encoder(PatternLayoutEncoder) {
-          pattern = "[%d] [%thread] %-5level %logger{15} - %maskedMsg %n"
-        }
+        maxHistory = 30
       }
+      encoder(PatternLayoutEncoder) {
+        pattern = "[%d] [%thread] %-5level %logger{15} - %maskedMsg %n"
+      }
+    }
 
-      logger("com.morpheus.AuditLogService", INFO, ['AUDIT'], false)
+    logger("com.morpheus.AuditLogService", INFO, ['AUDIT'], false)
 
 #. Once you have done this, you need to restart the |morpheus| Application server. To do this, do the following:
 
