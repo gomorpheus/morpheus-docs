@@ -39,7 +39,8 @@ Steps
    .. code-block:: bash
 
      appliance_url 'https://esmort01.qcorpaa.aa.com'
-     elasticsearch['es_hosts'] = {'10.130.2.1' => 9300, '10.130.2.2' => 9300, '10.130.2.3' => 9300} elasticsearch['node_name'] = 'morpheus1'
+     elasticsearch['es_hosts'] = {'10.130.2.1' => 9300, '10.130.2.2' => 9300, '10.130.2.3' => 9300}
+     elasticsearch['node_name'] = 'morpheus1'
      elasticsearch['host'] = '0.0.0.0'
      rabbitmq['host'] = '0.0.0.0'
      rabbitmq['nodename'] = 'rabbit@esmort01'
@@ -54,7 +55,8 @@ Steps
    .. code-block:: bash
 
     appliance_url 'https://esmort02.qcorpaa.aa.com'
-    elasticsearch['es_hosts'] = {'10.130.2.2' => 9300, '10.130.2.1' => 9300, '10.130.2.3' => 9300} elasticsearch['node_name'] = 'morpheus2'
+    elasticsearch['es_hosts'] = {'10.130.2.2' => 9300, '10.130.2.1' => 9300, '10.130.2.3' => 9300}
+    elasticsearch['node_name'] = 'morpheus2'
     elasticsearch['host'] = '0.0.0.0'
     rabbitmq['host'] = '0.0.0.0'
     rabbitmq['nodename'] = 'rabbit@esmort02'
