@@ -35,14 +35,14 @@ To create a Linux template
 
 Create a new machine in VMware vCenter and install a base version of your preferred Linux distro build. If you are using cloud init as part of your image you will need to ensure your virtual machine has a cdrom.
 
-  1.	Before installing the operating system setup a single ``ext`` or ``xfs`` partition without a swap disk (This is so that growpart can extend the disk. growpart currently does not support lvm)
-  2.	Install the distro and apply any updates to the operating system and security updates
-  3.	Install cloud-init
-  4.	Install cloud-utils-growpart
-  5.	Install vmware tools
-  6.	Install git
-  7.	epel-release (This is for centos only)
-  8.	selinux set to permissive (enforced can cause problems with cloud-init)
+#.	Before installing the operating system setup a single ``ext`` or ``xfs`` partition without a swap disk (This is so that growpart can extend the disk. growpart currently does not support lvm)
+#.	Install the distro and apply any updates to the operating system and security updates
+#.	Install cloud-init
+#.	Install cloud-utils-growpart
+#.	Install vmware tools
+#.	Install git
+#.	epel-release (This is for centos only)
+#.	selinux set to permissive (enforced can cause problems with cloud-init)
 
 
 We also recommend disabling network manager and setting the network adapter to eth0 rather than the automatically assigned name. https://support.morpheusdata.com/hc/en-us/articles/115002881228-Creating-a-CentOS-7-Morpheus-VMware-Image
