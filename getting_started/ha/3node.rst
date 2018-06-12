@@ -1,4 +1,4 @@
-3 Node with Externalized DB Configuration3
+3 Node with Externalized DB Configuration
 -----------------------------------------
 
 Assumptions
