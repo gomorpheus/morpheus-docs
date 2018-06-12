@@ -34,7 +34,7 @@ Steps
 
 #. Next you will need to edit the Morpheus configuration file on each node.
 
-   Node 1
+   **Node 1**
 
    .. code-block:: bash
 
@@ -49,7 +49,7 @@ Steps
      mysql['morpheus_db_user'] = 'morpheus'
      mysql['morpheus_password'] = 'password'
 
-   Node 2
+   **Node 2**
 
    .. code-block:: bash
 
@@ -64,7 +64,7 @@ Steps
     mysql['morpheus_db_user'] = 'morpheus'
     mysql['morpheus_password'] = 'password'
 
-   Node 3
+   **Node 3**
 
    .. code-block:: bash
 
