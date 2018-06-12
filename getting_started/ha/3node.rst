@@ -20,7 +20,7 @@ Steps
 
 #. First begin by downloading the requisite Morpheus packages either to the nodes or to your workstation for transfer. These packages need to be made available on the nodes you wish to install Morpheus on.
 
-   .. code-block:: 
+   .. code-block:: text
 
     [root@app-server-1 ~]# wget https://downloads.gomorpheus.com/yum/el/7/noarch/morpheus-appliance-offline-3.1.5- 1.noarch.rpm
     [root@app-server-1 ~]# wget https://downloads.gomorpheus.com/yum/el/7/x86_64/morpheus-appliance-3.1.5- 1.el7.x86_64.rpm
