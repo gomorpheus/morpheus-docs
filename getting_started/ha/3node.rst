@@ -129,8 +129,8 @@ Then copy the erlang.cookie from the SOT node to the other nodes
 
 .. code-block:: bash
 
-  [root@app-server-1 ~] cat /opt/morpheus/embedded/rabbitmq/.erlang.cookie
-  # 754363AD864649RD63D28
+   [root@app-server-1 ~] cat /opt/morpheus/embedded/rabbitmq/.erlang.cookie
+   # 754363AD864649RD63D28
 
 Once this is done run a reconfigure on the two nodes that are NOT the SOT nodes.
 
@@ -138,7 +138,9 @@ Once this is done run a reconfigure on the two nodes that are NOT the SOT nodes.
 
    [root@app-server-2 ~] morpheus-ctl reconfigure
 
-.. NOTE:: This step will fail. This is ok, and expected. If the reconfigure hangs then use Ctrl+C to quit the reconfigure run and force a failure.
+.. NOTE::
+
+  This step will fail. This is ok, and expected. If the reconfigure hangs then use Ctrl+C to quit the reconfigure run and force a failure.
 
 Subsequently we need to stop and start Rabbit on the NOT SOT nodes.
 
