@@ -6,9 +6,9 @@ Assumptions
 
 This guide assumes the following:
 
-- There is an externalized database running for Morpheus to access.
+- There is an externalized database running for |morpheus| to access.
 - The database service is a MySQL dialect (MySQL, MariaDB, Galera, etc...)
-- A database has been created for Morpheus as well as a user and proper grants have been run for the user. Morpheus will create the schema.
+- A database has been created for |morpheus| as well as a user and proper grants have been run for the user. |morpheus| will create the schema.
 - The baremetal nodes cannot access the public internet
 - The base OS is RHEL 7.x
 - Shortname versions of hostnames will be resolvable
@@ -18,7 +18,7 @@ This guide assumes the following:
 Steps
 ^^^^^
 
-#. First begin by downloading the requisite Morpheus packages either to the nodes or to your workstation for transfer. These packages need to be made available on the nodes you wish to install Morpheus on.
+#. First begin by downloading the requisite |morpheus| packages either to the nodes or to your workstation for transfer. These packages need to be made available on the nodes you wish to install |morpheus| on.
 
    .. code-block:: text
 
@@ -32,7 +32,7 @@ Steps
     [root@app-server-1 ~]# rpm -i morpheus-appliance-3.1.5-1.el7.x86_64.rpm
     [root@app-server-1 ~]# rpm -i morpheus-appliance-offline-3.1.5-1.noarch.rpm
 
-#. Next you will need to edit the Morpheus configuration file on each node.
+#. Next you will need to edit the |morpheus| configuration file on each node.
 
    **Node 1**
 
@@ -88,7 +88,7 @@ Steps
     mysql['host'] = '10.130.12.228:3306,10.130.12.109'
 
 
-Morpheus will append the ‘3306’ port to the end of the final IP in the string, which is why we leave it off but explicitly type it for the first IP in the string. The order of IPs matters in that it should be the same across all three Morpheus Application Servers. As mentioned, this will be a failover configuration for MySQL in that the application will only read/write from the second master if the first master becomes unavailable. This way we can avoid commit lock issues that might arise from a load balanced Master/Master.
+|morpheus| will append the ‘3306’ port to the end of the final IP in the string, which is why we leave it off but explicitly type it for the first IP in the string. The order of IPs matters in that it should be the same across all three |morpheus| Application Servers. As mentioned, this will be a failover configuration for MySQL in that the application will only read/write from the second master if the first master becomes unavailable. This way we can avoid commit lock issues that might arise from a load balanced Master/Master.
 
 
 
@@ -98,7 +98,7 @@ Run the reconfigure on all nodes
 
   [root@app-server-1 ~] morpheus-ctl reconfigure
 
-Morpheus will come up on all nodes and Elasticsearch will auto-cluster. The only item left is the manual clustering of RabbitMQ.
+|morpheus| will come up on all nodes and Elasticsearch will auto-cluster. The only item left is the manual clustering of RabbitMQ.
 
 Select one of the nodes to be your Source Of Truth (SOT) for RabbitMQ clustering. We need to share secrets for RabbitMQ, the erlang cookie and join the other nodes to the SOT node.
 Begin by copying secrets from the SOT node to the other nodes.
@@ -167,7 +167,7 @@ Once the Rabbit services are up and clustered on all nodes they need to be set t
 
   [root@app-server-2 ~]# rabbitmqctl set_policy -p morpheus --priority 1 --apply-to all ha ".*" '{"ha-mode": "all"}'
 
-The last thing to do is restart the Morpheus UI on the two nodes that are NOT the SOT node.
+The last thing to do is restart the |morpheus| UI on the two nodes that are NOT the SOT node.
 
 .. code-block:: bash
 
@@ -195,26 +195,26 @@ Lastly, we need to ensure that Elasticsearch is configured in such a way as to s
 
 
 .. note::
-  For moving ``/var/opt/morpheus/morpheus-ui`` files into a shared volume make sure ALL Morpheus services on ALL three nodes are down before you begin.
+  For moving ``/var/opt/morpheus/morpheus-ui`` files into a shared volume make sure ALL |morpheus| services on ALL three nodes are down before you begin.
 
 .. code-block:: bash
 
   [root@app-server-1 ~]# morpheus-ctl stop
 
-Permissions are as important as is content, so make sure to preserve directory contents to the shared volume. Subsequently you can start all Morpheus services on all three nodes and tail the Morpheus UI log file to inspect errors.
+Permissions are as important as is content, so make sure to preserve directory contents to the shared volume. Subsequently you can start all |morpheus| services on all three nodes and tail the |morpheus| UI log file to inspect errors.
 
 Database Migration
 ^^^^^^^^^^^^^^^^^^^^
 
-If your new installation is part of a migration then you need to move the data from your original Morpheus database to your new one. This is easily accomplished by using a stateful dump.
+If your new installation is part of a migration then you need to move the data from your original |morpheus| database to your new one. This is easily accomplished by using a stateful dump.
 
-To begin this, stop the Morpheus UI on your original Morpheus server:
+To begin this, stop the |morpheus| UI on your original |morpheus| server:
 
 .. code-block:: bash
 
   [root@app-server-old ~]# morpheus-ctl stop morpheus-ui
 
-Once this is done you can safely export. To access the MySQL shell we will need the password for the Morpheus DB user. We can find this in the morpheus-secrets file:
+Once this is done you can safely export. To access the MySQL shell we will need the password for the |morpheus| DB user. We can find this in the morpheus-secrets file:
 
 .. code-block:: bash
 
@@ -240,15 +240,15 @@ Once this is done you can safely export. To access the MySQL shell we will need 
       }
   }
 
-Take note of this password as it will be used to invoke a dump. Morpheus provides embedded binaries for this task. Invoke it via the embedded path and specify the host. In this example we are using the morpheus database on the MySQL listening on localhost. Enter the password copied from the previous step when prompted:
+Take note of this password as it will be used to invoke a dump. |morpheus| provides embedded binaries for this task. Invoke it via the embedded path and specify the host. In this example we are using the |morpheus| database on the MySQL listening on localhost. Enter the password copied from the previous step when prompted:
 
 .. code-block:: bash
 
     [root@app-server-old ~]# /opt/morpheus/embedded/mysql/bin/mysqldump -u morpheus -h 127.0.0.1 morpheus -p > /tmp/morpheus_backup.sql
     Enter password:
 
-This file needs to be pushed to the new Morpheus Installation’s backend. Depending on the GRANTS in the new MySQL backend, this will likely require moving this file to one of the new Morpheus frontend servers.
-Once the file is in place it can be imported into the backend. Begin by ensuring the Morpheus UI service is stopped on all of the application servers:
+This file needs to be pushed to the new |morpheus| Installation’s backend. Depending on the GRANTS in the new MySQL backend, this will likely require moving this file to one of the new |morpheus| frontend servers.
+Once the file is in place it can be imported into the backend. Begin by ensuring the |morpheus| UI service is stopped on all of the application servers:
 
 .. code-block:: bash
 
@@ -256,7 +256,7 @@ Once the file is in place it can be imported into the backend. Begin by ensuring
   [root@app-server-2 ~]# morpheus-ctl stop morpheus-ui
   [root@app-server-3 ~]# morpheus-ctl stop morpheus-ui
 
-Then you can import the MySQL dump into the target database using the embedded MySQL binaries, specifying the database host, and entering the password for the morpheus user when prompted:
+Then you can import the MySQL dump into the target database using the embedded MySQL binaries, specifying the database host, and entering the password for the |morpheus| user when prompted:
 
 .. code-block:: bash
 
@@ -266,7 +266,7 @@ Then you can import the MySQL dump into the target database using the embedded M
 
 Recovery
 ^^^^^^^^^
-If a node happens to crash most of the time Morpheus will start upon boot of the server and the services will self-recover. However, there can be cases where RabbitMQ and Elasticsearch are unable to recover in a clean fashion and it require minor manual intervention. Regardless, it is considered best practice when recovering a restart to perform some manual health
+If a node happens to crash most of the time |morpheus| will start upon boot of the server and the services will self-recover. However, there can be cases where RabbitMQ and Elasticsearch are unable to recover in a clean fashion and it require minor manual intervention. Regardless, it is considered best practice when recovering a restart to perform some manual health
 
 .. code-block:: bash
 
@@ -339,7 +339,7 @@ After this you should be able to run the curl command and see all three nodes ha
   localhost 127.0.0.1 7 32 0.22 d m morpheus2
   app-server-3 10.130.2.11 3 28 0.02 d m morpheus3
 
-The most frequent case of restart errors for RabbitMQ is with epmd failing to restart. Morpheus’s recommendation is to ensure the epmd process is running and daemonized by starting it:
+The most frequent case of restart errors for RabbitMQ is with epmd failing to restart. |morpheus|’s recommendation is to ensure the epmd process is running and daemonized by starting it:
 
 .. code-block:: bash
 
@@ -351,27 +351,27 @@ And then restarting RabbitMQ:
 
   [root@app-server-1 ~]# morpheus-ctl restart rabbitmq
 
-And then restarting the Morpheus UI service:
+And then restarting the |morpheus| UI service:
 
 .. code-block:: bash
 
   [root@app-server-1 ~]# morpheus-ctl restart morpheus-ui
 
-Again, it is always advisable to monitor the startup to ensure the Morpheus Application is starting without error:
+Again, it is always advisable to monitor the startup to ensure the |morpheus| Application is starting without error:
 
 .. code-block:: bash
 
   [root@app-server-1 ~]# morpheus-ctl tail morpheus-ui
 
-**Recovery Thoughts/Further Discussion:** If Morpheus UI cannot connect to RabbitMQ, Elasticsearch or the database tier it will fail to start. The Morpheus UI logs can indicate if this is the case.
+**Recovery Thoughts/Further Discussion:** If |morpheus| UI cannot connect to RabbitMQ, Elasticsearch or the database tier it will fail to start. The |morpheus| UI logs can indicate if this is the case.
 
-Aside from RabbitMQ, there can be issues with false positives concerning Elasticsearch’s running status. The biggest challenge with Elasticsearch, for instance, is that a restarted node has trouble joining the ES cluster. This is fine in the case of ES, though, because the minimum_master_nodes setting will not allow the un-joined singleton to be consumed until it joins. Morpheus will still start if it can reach the other two ES hosts, which are still clustered.
+Aside from RabbitMQ, there can be issues with false positives concerning Elasticsearch’s running status. The biggest challenge with Elasticsearch, for instance, is that a restarted node has trouble joining the ES cluster. This is fine in the case of ES, though, because the minimum_master_nodes setting will not allow the un-joined singleton to be consumed until it joins. |morpheus| will still start if it can reach the other two ES hosts, which are still clustered.
 
-The challenge with RabbitMQ is that it is load balanced behind Morpheus for requests, but each Morpheus application server needs to boostrap the RabbitMQ tied into it. Thus, if it cannot reach its own RabbitMQ startup for it will fail.
+The challenge with RabbitMQ is that it is load balanced behind |morpheus| for requests, but each |morpheus| application server needs to boostrap the RabbitMQ tied into it. Thus, if it cannot reach its own RabbitMQ startup for it will fail.
 
-Similarly, if a Morpheus UI service cannot reach the database, startup will fail. However, if the database is externalized and failover is configured for Master/Master, then there should be ample opportunity for Morpheus to connect to the database tier.
+Similarly, if a |morpheus| UI service cannot reach the database, startup will fail. However, if the database is externalized and failover is configured for Master/Master, then there should be ample opportunity for |morpheus| to connect to the database tier.
 
-Because Morpheus can start even though the Elasticsearch node on the same host fails to join the cluster, it is advisable to investigate the health of ES on the restarted node after the services are up. This can be done by accessing the endpoint with curl and inspecting the output. The status should be “green” and number of nodes should be “3”:
+Because |morpheus| can start even though the Elasticsearch node on the same host fails to join the cluster, it is advisable to investigate the health of ES on the restarted node after the services are up. This can be done by accessing the endpoint with curl and inspecting the output. The status should be “green” and number of nodes should be “3”:
 
 .. code-block:: bash
 
@@ -395,7 +395,6 @@ If this is not the case it is worth investigating the Elasticsearch logs to unde
 
 ``/var/log/morpheus/elasticsearch/current``
 
-Outside of these stateful tiers, the “morpheus-ctl status” command will not output a “run” status unless the service is successfully running. If a stateless service reports a failure to run, the logs should be investigated and/or sent to Morpheus for
-additional support. Logs for all Morpheus embedded services are found below:
+Outside of these stateful tiers, the “morpheus-ctl status” command will not output a “run” status unless the service is successfully running. If a stateless service reports a failure to run, the logs should be investigated and/or sent to |morpheus| for additional support. Logs for all |morpheus| embedded services are found below:
 
 ``/var/log/morpheus``
