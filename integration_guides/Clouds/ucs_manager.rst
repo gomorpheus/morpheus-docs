@@ -1,0 +1,20 @@
+UCS Manager
+-----------
+
+Overview
+^^^^^^^^
+
+Adding UCS Manager Cloud
+^^^^^^^^^^^^^^^^^^^^^^^^^
+UCS MANAGER::
+USERNAME::
+PASSWORD::
+ORGANIZATION::
+* EXISTING
+* NEW
+ORG NAME::
+SERVER PREFIX::
+DATA DISK MODE::
+DATA VOLUME::
+* SOFTWARE RAID
+NET INTERFACE::

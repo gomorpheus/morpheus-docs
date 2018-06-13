@@ -24,7 +24,7 @@ Stop/Start/Restart Server
 Lock/Unlock Instance
   A locked instance cannot be deleted until it is unlocked.
 Import As Image
-  Creates a Virtual Image template from the Instance at its current state and adds it to the Virtual Image library with corresponding metadata.
+  Creates a Virtual Image Blueprint from the Instance at its current state and adds it to the Virtual Image library with corresponding metadata.
 Reconfigure
   The Reconfigure action allows service plan, disk, cpu, ram, networks and storage controller changes. Available options depend on the instance type and service plan configuration. Some resize actions require an instance restart.
 Clone

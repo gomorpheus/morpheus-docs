@@ -10,3 +10,4 @@ Troubleshooting
 .. include:: hypervisorconsole.rst
 .. include:: restartinstall.rst
 .. include:: variables.rst
+.. include:: exportmorpheuslogs.rst

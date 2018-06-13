@@ -13,15 +13,15 @@ The Library section is used to add virtual images as custom instances to the pro
 * Node Types
 * Option Types
 * Option Lists
-* Templates
+* File Templates
 * Scripts
 
-Uploaded or synced images from the virtual images section are added to nodes, a node or multiple nodes are added to layouts, and layouts are added to Instance Types. Scripts and Templates can be attached to nodes, with phased execution options for scripts.
+Uploaded or synced images from the virtual images section are added to nodes, a node or multiple nodes are added to layouts, and layouts are added to Instance Types. Scripts and File Templates can be attached to nodes, with phased execution options for scripts.
 
 Instance Types
 --------------
 
-.. image:: /images/provisioning/library/Types   Library   Morpheus salt library item.png
+.. image:: /images/provisioning/library/Types_Library_Morpheus_salt_library_item.png
 
 Adding an Instance Type creates a new Library Item category. Multiple layouts can be added to an instance type, and these layout can have different nodes attached. The instance wizard will present the layout options compatible with the selected cloud. If cloud selection is turned off, all layouts will be presented for all cloud types accessible by the user.
 
@@ -62,7 +62,7 @@ Upon saving, this Instance Type will be available in the Provisioning Catalog, p
 Node Types
 ----------
 
-.. image:: /images/provisioning/library/salt node type.png
+.. image:: /images/provisioning/library/salt_node_type.png
 
 The following fields are for all node technology types:
 
@@ -104,9 +104,9 @@ Expose Ports
 
 Example port configuration:
 
-.. image:: /images/provisioning/library/node ports.png
+.. image:: /images/provisioning/library/node_ports.png
 
-Scripts & Templates
+Scripts & File Templates
 -------------------
 
 To attach scripts and templates that have been added to the Library to a node type, start typing the name and then select the script(s) and/or template(s).
@@ -123,7 +123,7 @@ Upon save the Node Type will be created, and available for adding to layouts.
 Layouts
 -------
 
-.. image:: /images/provisioning/library/salt new layout.png
+.. image:: /images/provisioning/library/salt_new_layout.png
 
 Layouts are added to Instance types, and will be presented under the Configuration Options dropdown in the Provisioning Wizard for that Instance type.
 
@@ -147,11 +147,11 @@ Nodes
 
 Multi-node Layout example:
 
-.. image:: /images/provisioning/library/hyper-v master slave.png
+.. image:: /images/provisioning/library/hyper-v_master_slave.png
 
 Upon save, the layout will be attached to the selected Instance Type, and available when provisioning that Instance Type for the appropriate cloud technology.
 
-.. image:: /images/provisioning/library/salt instance type layout detail.png
+.. image:: /images/provisioning/library/salt_instance_type_layout_detail.png
 
 Option Types
 ------------
