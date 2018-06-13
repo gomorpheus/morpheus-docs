@@ -35,7 +35,7 @@ Base Requirements
 Storage
 -------
 
-|morpheus| needs storage space for a few items. One is for the built-in Elasticsearch store (used for log aggregation and stats collection metrics). |morpheus| also keeps a workspace and local virtual image cache for doing virtual image conversion and template upload. While the permanent store of these can
+|morpheus| needs storage space for a few items. One is for the built-in Elasticsearch store (used for log aggregation and stats collection metrics). |morpheus| also keeps a workspace and local virtual image cache for doing virtual image conversion and blueprint upload. While the permanent store of these can
 be offloaded via a Storage Provider some space is still recommended for dealing with non streamable virtual image formats.
 
 In many common scenarios it might be prudent to configure a shared datastore on a storage cluster and mounted to ``/var/opt/morpheus/morpheus-ui``

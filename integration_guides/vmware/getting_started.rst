@@ -31,7 +31,7 @@ Existing Instances
 |morpheus| provides several features regarding pulling in existing virtual machines and servers in an environment. Most cloud options contain a checkbox titled '*Inventory Existing Instances*'. When this option is selected, all VMs found within the specified scope of the cloud integration will be scanned periodically and Virtual Machines will be synced into |morpheus| . By default these virtual machines are considered 'unmanaged' and do not appear in the `Provisioning -> Instances` area but rather `Infrastructure -> Hosts -> Virtual Machines`. However, a few features are provided with regards to unmanaged instances. They can be assigned to various accounts if using a multitenant master account, however it may be best suited to instead assign the 'Resource Pool' to an account and optionally move all servers with regards to that pool (more on this later).
 A server can also be made into a managed server. During this process remote access is requested and an agent install is performed on the guest operating system. This allows for guest operations regarding log acquisition and stats. If the agent install fails, a server will still be marked as managed and an Instance will be created in `Provisioning`, however certain features will not function. This includes stats collection and logs.
 
-.. NOTE:: All Cloud data is resynchronized on a 5 minute interval. This includes Datastores, Resource Pools, Networks, Templates, and Virtual Machines.
+.. NOTE:: All Cloud data is resynchronized on a 5 minute interval. This includes Datastores, Resource Pools, Networks, Blueprints, and Virtual Machines.
 
 Service Plans
 -------------
@@ -40,11 +40,11 @@ A default set of Service Plans are created in |morpheus| for the VMware provisio
 
 .. image:: /images/vmware/service_plans.png
 
-Virtual Images / Templates
+Virtual Images / Blueprints
 --------------------------
 
-|morpheus| will automatically take an inventory of all templates configured in Vcenter and present them as options during provisioning. However, in order for |morpheus| to properly provision these virtual machines and provide accurate stats and health of these virtual machines, an agent must be installed during virtual machine startup. This means remote access needs to be granted at the guest operating system level to |morpheus| . To properly configure these virtual images, find the relevant images in `Provisioning -> Virtual Images` and edit the entry. On this form, a few options are presented. The first is a check box asking whether or not cloud-init is enabled. If cloud-init is enabled, simply provide the default OS username configured (for Ubuntu the username is `ubuntu` and for CentOS the username is `centos`). For those looking to add cloud-init to existing templates |morpheus| requires no special configuration and can use the default `cloud.cfg` settings.
+|morpheus| will automatically take an inventory of all blueprints configured in Vcenter and present them as options during provisioning. However, in order for |morpheus| to properly provision these virtual machines and provide accurate stats and health of these virtual machines, an agent must be installed during virtual machine startup. This means remote access needs to be granted at the guest operating system level to |morpheus| . To properly configure these virtual images, find the relevant images in `Provisioning -> Virtual Images` and edit the entry. On this form, a few options are presented. The first is a check box asking whether or not cloud-init is enabled. If cloud-init is enabled, simply provide the default OS username configured (for Ubuntu the username is `ubuntu` and for CentOS the username is `centos`). For those looking to add cloud-init to existing blueprints |morpheus| requires no special configuration and can use the default `cloud.cfg` settings.
 
-A global cloud-init username/password can also be configured per account as well as a keypair via the `Admin->Provisioning` settings section. The great benefit of utilizing cloud-init is default templates do not need common credential sets thereby increasing provisioning security.
+A global cloud-init username/password can also be configured per account as well as a keypair via the `Admin->Provisioning` settings section. The great benefit of utilizing cloud-init is default blueprints do not need common credential sets thereby increasing provisioning security.
 
 Windows systems do not typically support cloud-init. So simply turn this checkbox off and provide the `Administrator` credentials. It should be noted that these credentials are encrypted in the database. If using WinRM for the RPC Mode instead of VMware tools, a Local or Domain Administrator account credential set can be provided instead.

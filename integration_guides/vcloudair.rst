@@ -1,1 +1,0 @@
-.. Vcloud Air *blank,remove

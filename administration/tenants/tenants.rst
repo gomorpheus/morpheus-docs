@@ -48,7 +48,7 @@ To delete a Tenant:
 #. Confirm
 
 Tenant Users
------------
+------------
 
 The Tenant View displays a list of users belonging to the Tenant and their
 Name, Username, Email, and Role.
