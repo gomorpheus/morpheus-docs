@@ -5,10 +5,10 @@ Problem
   When trying to delete a tenant, a message stating manage resources must be removed or other error occurs and the tenant is not deleted. The tenant may be stuck in a deleting status or return to OK status after delete attempt.
 
 Cause
-  All managed resources must be removed from a tenant in order for that tenant to be deleted. This includes instances and their underlying managed vm's
+  All managed resources must be removed from a tenant in order for that tenant to be deleted. This includes instances and their underlying managed VM's
 
 Solution
-  #. Login or impersonate that an Admin user inside the tenant
+  #. Login or impersonate an Admin user inside the tenant
   #. Navigate to Infrastructure > Hosts
   #. Under Hosts and VM's, delete any managed resources
 
