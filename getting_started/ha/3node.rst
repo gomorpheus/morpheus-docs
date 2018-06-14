@@ -159,6 +159,12 @@ Subsequently we need to stop and start Rabbit on the NOT SOT nodes.
 
  Starting node 'rabbit@app-server-2' ...
 
+Now make sure to reconfigure
+
+.. code-block:: bash
+
+   [root@app-server-2 ~] morpheus-ctl reconfigure 
+
 Once the Rabbit services are up and clustered on all nodes they need to be set to HA/Mirrored Queues:
 
 .. code-block:: bash
