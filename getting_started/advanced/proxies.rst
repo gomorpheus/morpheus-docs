@@ -16,7 +16,7 @@ Proxies can be used in a few different contexts and optionally scoped to specifi
 Cloud Communication
 ^^^^^^^^^^^^^^^^^^^
 
-When morpheus needs to connect to various cloud APIs to issue provisioning commands or to sync in existing environments, we need to ensure that those api endpoints are accessible by the appliance. In some cases the appliance may be behind a proxy when it comes to public cloud access like Azure and AWS. To configure the cloud integration to utilize aa proxy, when adding or editing a cloud there is a setting called "API Proxy" under "Advanced Options". This is where the proxy of choice can be selected to instruct the Provisioning engine how to communicate with the public cloud. Simply adjust this setting and the cloud should start being able to receive/issue instructions.
+When morpheus needs to connect to various cloud APIs to issue provisioning commands or to sync in existing environments, we need to ensure that those api endpoints are accessible by the appliance. In some cases the appliance may be behind a proxy when it comes to public cloud access like Azure and AWS. To configure the cloud integration to utilize a proxy, when adding or editing a cloud there is a setting called "API Proxy" under "Advanced Options". This is where the proxy of choice can be selected to instruct the Provisioning engine how to communicate with the public cloud. Simply adjust this setting and the cloud should start being able to receive/issue instructions.
 
 Provisioning with Proxies
 ^^^^^^^^^^^^^^^^^^^^^^^^^
