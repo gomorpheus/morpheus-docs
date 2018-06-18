@@ -2,6 +2,7 @@
 Integration Guides
 ******************
 
+.. include:: tableofcontents.rst
 .. include:: Automation/automation.rst
 .. include:: Clouds/clouds.rst
 .. include:: Containers/containers.rst

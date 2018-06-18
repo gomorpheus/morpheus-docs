@@ -38,8 +38,8 @@ Steps
 
    .. code-block:: bash
 
-     appliance_url 'https://esmort01.qcorpaa.aa.com'
-     elasticsearch['es_hosts'] = {'10.130.2.1' => 9300, '10.130.2.2' => 9300, '10.130.2.3' => 9300}
+     appliance_url 'https://morpheus1.localdomain'
+     elasticsearch['es_hosts'] = {'10.30.20.135' => 9300, '10.30.20.136' => 9300, '10.30.20.137' => 9300}
      elasticsearch['node_name'] = 'morpheus1'
      elasticsearch['host'] = '0.0.0.0'
      rabbitmq['host'] = '0.0.0.0'
@@ -54,8 +54,8 @@ Steps
 
    .. code-block:: bash
 
-    appliance_url 'https://esmort02.qcorpaa.aa.com'
-    elasticsearch['es_hosts'] = {'10.130.2.2' => 9300, '10.130.2.1' => 9300, '10.130.2.3' => 9300}
+    appliance_url 'https://morpheus2.localdomain'
+    elasticsearch['es_hosts'] = {'10.30.20.135' => 9300, '10.30.20.136' => 9300, '10.30.20.137' => 9300}
     elasticsearch['node_name'] = 'morpheus2'
     elasticsearch['host'] = '0.0.0.0'
     rabbitmq['host'] = '0.0.0.0'
@@ -70,8 +70,9 @@ Steps
 
    .. code-block:: bash
 
-       appliance_url 'https://esmort03.qcorpaa.aa.com'
-       elasticsearch['es_hosts'] = {'10.130.2.3' => 9300, '10.130.2.2' => 9300, '10.130.2.1' => 9300} elasticsearch['node_name'] = 'morpheus3'
+       appliance_url 'https://morpheus3.localdomain'
+       elasticsearch['es_hosts'] = {'10.30.20.135' => 9300, '10.30.20.136' => 9300, '10.30.20.137' => 9300} 
+       elasticsearch['node_name'] = 'morpheus3'
        elasticsearch['host'] = '0.0.0.0'
        rabbitmq['host'] = '0.0.0.0'
        rabbitmq['nodename'] = 'rabbit@esmort03'
@@ -158,6 +159,12 @@ Subsequently we need to stop and start Rabbit on the NOT SOT nodes.
  [root@app-server-2 ~]# rabbitmqctl join_cluster rabbit@app-server-1 Clustering node 'rabbit@app-server-2' with 'rabbit@app-server-1' ... [root@app-server-2 ~]# rabbitmqctl start_app
 
  Starting node 'rabbit@app-server-2' ...
+
+Now make sure to reconfigure
+
+.. code-block:: bash
+
+   [root@app-server-2 ~] morpheus-ctl reconfigure
 
 Once the Rabbit services are up and clustered on all nodes they need to be set to HA/Mirrored Queues:
 
