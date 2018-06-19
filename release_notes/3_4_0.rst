@@ -4,34 +4,34 @@ v3.4.0
 New Features
 ------------
 
-* Now supports API workflow with custom option types
-* Added default datastore on disk addition
-* Added ARM template Git integration
-* Added Ubuntu 16.04 (qcow2)
-* Added Ubuntu 18.04 (qcow2)
-* Added Ubuntu 18.04 (qcow2)
-* Added Centos 7.5 (qcow2)
-* Subtenant users will no longer be able to login from the main login page without specifying their subdomain.
-* Added Hide Datastore stats - Storage > data stores capacity column
-* Added verify on save
-* Added API endpoints and CLI commands for all the Data Store functionality
-* Added subtenent groups API
-* Added OnApp migration support
+* API: API workflow now supports custom option types
+* Provisioning: Added default datastore for additional disks to match first disk
+* Blueprints: ARM template Git integration added
+* Library: Ubuntu 16.04 images added
+* Library: Ubuntu 18.04 images added
+* Library: Centos 7.5 images added
+* Identity Sources: Subtenant users can now login from the main login url using subtenant name or id prefix ex: subtenant/username or 11/username.
+.. * Added Hide Datastore stats - Storage > data stores capacity column
+.. * Added verify on save
+* API/CLI: DataStores added
+* API/CLI: Subtenant Groups added
+* KVM: Added OnApp migration support
+* API: Salt command options added
+* SAML: Validation configuration options added
 
 Fixes
 ------
 
 * Fix for Chef detail section hidden in UI
 * Fix for Cost by Cloud error
-* Fix for ARM copies deployment failure
+* Fix for incorrect Instance provisioning status when using copies with ARM Templates
 * Fix for broken image issue for library items with no custom icon
 * Fix for Instance Type Count - By Clouds Value in Analytics
 * Fix for Instance Count by Cloud Group Count Value in Analytics
 * Fix for CLI Bad Request issue when creating a cloud
-* Fix for ServiceNow Plugin
 * Fix for Web Instance Types to be scalable
 * Fix for Cost Month to Date report
-* Fix for ServiceNow listed datastores
+* Fix for ServiceNow listed Datastores
 * Fix for Cloud Init enabled in Images
 * Fix for KVM provisioning issue
 * Fix for i18n missing message
@@ -40,33 +40,34 @@ Fixes
 * Fix for postgreSQL issue with BluemixCF
 * Fix for Clouds stuck in deleting when removing
 * Fix for issue with adding/editing local storage objects
-* Fix for issue with OpenStack floating IP's
+* Fix for OpenStack Floating IP's being required
 * Fix for F5 destination port issue
 * Fix for Storage Object issue with NFS
 * Fix for instance Wizard Issues
-* Fix for ServiceNow Plugin unable to provision vmware instance
+* Fix for ServiceNow Plugin unable to provision VMware instance
 * Fix for ServiceNow Plugin Datastores duplicate options
-* Fix for error deleting Pools and Nodes Manual F5
-* Fix for missing scale tab VCD Image
+* Fix for F5 error deleting Pools and Nodes
+* Fix for missing scale tab for VCD Instances
 * Fix for KVM SSH fail after stop/start
-* Fix for App WIzard form update when changing cloud
-* Fix for ESXI debian 8.8 fail to provision
+* Fix for App Wizard form update when changing cloud
+* Fix for ESXI Debian 8.8 failing to provision
 * Fix for KVM provision failing on self managed host
-* Fix for terraform not installed
-* Fix for terraform fail on first attempt
+* Fix for Terraform auto-install
+* Fix for Terraform fail on first attempt
 * Fix for OEL build fail if more than 3 disks are requested during provisioning
-* Fix for unable to deploy workloads onto open Telekom Cloud
-* Fix for cost by Cloud projected values
-* Fix for Nutanix taking up multiple IP slots
+* Fix for Open Telekom Cloud provisioning issue
+* Fix for Cost by Cloud projected values
+* Fix for Nutanix duplicate IP's when using IP Pools
 * Fix for PXE answer file not getting generated
-* Fix for ENI records for not being cleaned up (Amazon)
+* Fix for ENI records not being cleaned up (Amazon)
 * Fix for Tenant delete issues
-* Fix for Nutanix images endpoint not working
-* Fix for "Install Agent" Flag for Nutanix
+* Fix for Nutanix sysprep unattend.xml passwords
+* Fix for "Install Agent" Flag for Nutanix Images
 * Fix for missing image icons
 * Fix Terraform HCL parsing
-* Fix for VM having docker check type
+* Fix for some converted-to-managed VM's having docker check type
 * Fix for unnecessary resource pool request
+
 
 
 Morpheus v3.4.0 is available in the Downloads section of `morpheushub.com<https://morpheushub.com/>`_.
