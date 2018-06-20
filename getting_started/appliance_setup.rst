@@ -58,7 +58,7 @@ Subtenant
 
 .. important::
 
-  Subtenant users will no longer be able to login from the main login page without specifying their subdomain.
+  In 3.4.0+ Subtenant users will no longer be able to login from the main login page without specifying their subdomain.
 
 
 
