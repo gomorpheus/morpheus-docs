@@ -4,6 +4,7 @@ Advanced Configuration
 
 |morpheus| provides more advanced configuration capabilities, including High Availability configurations, and support for tougher network environments with offline installation and Proxy configurations.
 
+.. include:: how_to_login.rst
 .. include:: installation/offline.rst
 .. include:: advanced/proxies.rst
 .. include:: advanced/db_migration.rst
