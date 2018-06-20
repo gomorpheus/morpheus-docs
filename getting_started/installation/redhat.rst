@@ -63,7 +63,7 @@ If the repo status was returned as disabled then you will need to enable the rep
 
 The message "Repo 'rhel-7-server-optional-rpms' is enabled for this system." will appear after enabling the repo. This will confirm that the repo has been enabled.
 
-Next simply download the relevant ``.rpm`` package for installation. This package can be acquired from your account rep or via a free trial request from https://www.morpheusdata.com[morheusdata.com].
+Next simply download the relevant ``.rpm`` package for installation. This package can be acquired from your account rep or via a free trial request from |morpheushub|.
 
 .. TIP:: Use the ``wget`` command to directly download the package to your appliance server. i.e. ``wget https://downloads.gomorpheus.com/path/to/package.rpm``
 
