@@ -5,19 +5,13 @@ New Features
 ------------
 
 * API/CLI: DataStores added
-* API: Salt command options added
+* API/CLI: Salt command options added
 * API/CLI: Subtenant Groups added
 * API/CLI: Workflows now support custom option types
 * Blueprints: ARM template Git integration added
 * Currency: Conversion settings added to Administration -> Settings.
-
-  .. NOTE:: Users will need to provide an open exchange or fixer.io api key for conversion data.
-
 * Datastores: Storage > Datastores capacity column now hidden when "Hide Datastore Stats On Selection" is enabled
-* Identity Sources: Subtenant users can now login from the main login url using subtenant name or id prefix ex: subtenant/username or 11/username.
-
-  .. NOTE::  Subtenant local users will no longer be able to login from main login url without using subtenant prefix.
-
+* Identity Sources: Subtenant users can now login from the main login url using subtenant name or id prefix ex: subtenant\username or 11\username.
 * KVM: Added OnApp migration support
 * Library: CentOS 7.5 qcow2 image added
 * Library: Ubuntu 16.04, 18.04 qcow2 images added
@@ -27,9 +21,13 @@ New Features
 * SAML: Validation configuration options added
 * Storage Providers: Verify permissions to path on save added
 
+  .. NOTE::  In 3.4.0+ subtenant local users will no longer be able to login from main login url without using subtenant name or id prefix.
+
+  .. NOTE:: In 3.4.0+ for currency conversion data users will need to provide an open exchange or fixer.io api key.
+
 
 Fixes
-------
+-----
 
 * Fix for Chef detail section hidden in UI
 * Fix for Cost by Cloud error
