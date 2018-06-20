@@ -1,6 +1,20 @@
 Initial Appliance Setup
 =======================
 
+How To Login
+-------------
+
+Enter in your username and password. If you are a subtenant user, make sure to specify the subdomain prefix.
+
+.. important::
+
+  Subtenant users will no longer be able to login from the main login page without specifying their subdomain.
+
+
+Example:
+  I have a username ``subuser`` that belongs to a tenant with the subdomain ``subaccount``.
+  When logging in from the main login url, I would now need to enter in: ``subaccount\subuser``
+
 Appliance Setup
 ---------------
 
@@ -23,7 +37,7 @@ After installation, log into the appliance at the URL presented upon completion.
 
    * The Appliance Name is used for white labeling and as a reference for multi-appliance installations.
 
-   * The Appliance URL is the URL all provisioned instances will report back to. Example: https://example.morpheusdata.com.  The Appliance URL can be changed later, and also set to different url per cloud integration.
+   * The Appliance URL is the URL all provisioned instances will report back to. Example: https://example.morpheusdata.com. The Appliance URL can be changed later, and also set to different url per cloud integration.
 
 #. Optionally Enable or Disable Backups, Monitoring, or Logs from this screen.
 
