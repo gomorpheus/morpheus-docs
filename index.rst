@@ -21,7 +21,3 @@ Morpheus Documentation
 ..   ha/ha_setup
 
 .. |morpheus| replace:: Morpheus
-
-.. |morpheushub| raw:: html
-
-   <a href="https://morpheushub.com/" target="_blank">morpheushub.com</a>
