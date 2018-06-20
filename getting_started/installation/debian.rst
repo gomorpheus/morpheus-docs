@@ -7,7 +7,7 @@ To get started installing |morpheus| on Ubuntu (14.04 currently) a few preprator
 
    .. IMPORTANT:: If the machine is unable to resolve its own hostname ``nslookup hostname`` some installation commands will be unable to verify service health during installation and fail.
 
-#. Next simply download the relevant `.deb` package for installation. This package can be acquired from your account rep or via a free trial request from https://www.morpheusdata.com[morheusdata.com].
+#. Next simply download the relevant `.deb` package for installation. This package can be acquired from your account rep or via a free trial request from |morpheushub|.
 
    .. TIP:: Use the `wget` command to directly download the package to your appliance server. i.e. `wget https://downloads.gomorpheus.com/path/to/package.deb`
 
