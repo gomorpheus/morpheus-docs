@@ -1,8 +1,7 @@
-How To Login
-----------------
+Cannot Login
+============
 
-If you are 
-Subusers can have the same username as the user on the master tenant or any other tenant. Subusers will now have to login using the subdomain prefix.
+Having trouble logging in? if you're a subtenant user, make sure you're using the subdomain prefix.
 
 .. important::
 

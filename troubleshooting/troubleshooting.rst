@@ -11,3 +11,4 @@ Troubleshooting
 .. include:: restartinstall.rst
 .. include:: variables.rst
 .. include:: exportmorpheuslogs.rst
+.. include:: cant_login.rst
