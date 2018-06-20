@@ -1,19 +1,6 @@
 Initial Appliance Setup
 =======================
 
-How To Login
--------------
-
-Enter in your username and password. If you are a subtenant user, make sure to specify the subdomain prefix.
-
-.. important::
-
-  Subtenant users will no longer be able to login from the main login page without specifying their subdomain.
-
-
-Example:
-  I have a username ``subuser`` that belongs to a tenant with the subdomain ``subaccount``.
-  When logging in from the main login url, I would now need to enter in: ``subaccount\subuser``
 
 Appliance Setup
 ---------------
@@ -48,6 +35,33 @@ After installation, log into the appliance at the URL presented upon completion.
 .. NOTE:: The Master User is the system super user and will have full access privileges.
 
 Upon completing of the initial appliance setup, you will be taken to the Admin -> Settings page, where you will add your License Key.
+
+Login Methods
+-------------
+
+Master Tenant
+^^^^^^^^^^^^^
+  Enter your username and password
+
+Subtenant
+^^^^^^^^^
+
+To login, subtenants can either use the master tenant URL with ``subtenant\username`` formatting:
+
+Example:
+  I have a username ``subuser`` that belongs to a tenant with the subdomain ``subaccount``.
+  When logging in from the main login url, I would now need to enter in: ``subaccount\subuser``
+
+Or use the tenant specific URL which can be found and configured under Administration > Tenants > Select Tenant > Identity Sources.
+
+.. image:: /images/getting_started/tenant_url.png
+
+.. important::
+
+  Subtenant users will no longer be able to login from the main login page without specifying their subdomain.
+
+
+
 
 Add a License Key
 -----------------
