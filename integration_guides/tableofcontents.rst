@@ -1,4 +1,4 @@
-Morpheus Integrations
+Integrations List
 ======================
 
 Public Clouds
