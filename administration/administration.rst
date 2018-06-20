@@ -9,6 +9,7 @@ multitenancy capabilities, managed service providers have a wide range
 of capabilities when it comes to managing customer accounts and users.
 
 .. include:: tenants/tenants.rst
+.. include:: tenants/Subtenant_login.rst
 .. include:: tenants/identity_sources.rst
 .. include:: plans_pricing/plans.rst
 .. include:: roles/roles.rst
