@@ -13,7 +13,7 @@ To get started installing |morpheus| on CentOS/RHEL a few preparatory items shou
 
    .. IMPORTANT:: If the machine is unable to resolve its own hostname ``nslookup hostname`` some installation commands will be unable to verify service health during installation and fail.
 
-#. Next simply download the relevant ``.rpm`` package for installation. This package can be acquired from your account rep or via a free trial request from morpheushub.com_.
+#. Next simply download the relevant ``.rpm`` package for installation. This package can be acquired from your account rep or via a free trial request from morpheushub.com_. You can |location_link|.
 
    .. TIP:: Use the ``wget`` command to directly download the package to your appliance server. i.e. ``wget https://downloads.gomorpheus.com/path/to/package.rpm``
 
@@ -43,3 +43,7 @@ More details on setting up infrastructure can be found throughout this guide.
 .. TIP:: If any issues occur it may be prudent to check the morpheus log for details at ``/var/log/morpheus/morpheus-ui/current``.
 
 .. _morpheushub.com: https://morpheushub.com/
+
+.. |location_link| raw:: html
+
+   <a href="https://morpheushub.com/" target="_blank">morpheushub.com</a>
