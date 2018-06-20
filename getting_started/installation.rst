@@ -16,3 +16,7 @@ newer, and RHEL 7.0 or newer based hosts (Ubuntu is recommended).
 .. include:: installation/redhat.rst
 
 .. include:: installation/additional.rst
+
+.. |morpheushub| raw:: html
+
+   <a href="https://morpheushub.com/" target="_blank">morpheushub.com</a>
