@@ -1,4 +1,5 @@
 Deployment
 ==========
 
-.. include:: Deployments/git.rst
+.. toctree::
+  Deployments/git.rst
