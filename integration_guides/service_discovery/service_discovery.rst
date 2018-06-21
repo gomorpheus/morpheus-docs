@@ -1,4 +1,4 @@
 Service Discovery
 =================
 
-.. include:: service_discovery/consul.rst
+.. include:: service_discovery/consuldoc.rst
