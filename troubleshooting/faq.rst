@@ -22,6 +22,3 @@ Amin
 
 Configuration Managment
 ------------------------
-
-
-sandisandiasnisaindinasindnasid
