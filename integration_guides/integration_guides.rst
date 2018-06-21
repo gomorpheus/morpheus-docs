@@ -2,25 +2,21 @@
 Integration Guides
 ******************
 
-
-.. toctree::
-
-  Automation/automation.rst
-  Clouds/clouds.rst
-  Containers/containers.rst
-  IdentityManagement/IdentityManagement.rst
-  Monitoring/Monitoring.rst
-  Networking/networking.rst
-  vCloudDirector/vclouddirector.rst
-  Deployments/deployment.rst
-  DNS/DNS.rst
-  service_discovery/service_discovery.rst
-  tableofcontents.rst
-
-  .. ha/ha.rst
-  .. Backups/backups.rst
-  .. ITSM/ITSM.rst
-  .. LoadBalancers/LoadBalancers.rst
-  .. Logs/Logs.rst
-  .. storage/storage.rst
-  .. Security/security.rst
+.. include:: Automation/automation.rst
+.. include:: Clouds/clouds.rst
+.. include:: Containers/containers.rst
+.. include:: IdentityManagement/IdentityManagement.rst
+.. include:: Monitoring/Monitoring.rst
+.. include:: Networking/networking.rst
+.. include:: vCloudDirector/vclouddirector.rst
+.. include:: Deployments/deployment.rst
+.. include:: DNS/DNS.rst
+.. include:: service_discovery/service_discovery.rst
+.. include:: tableofcontents.rst
+.. .. include:: ha/ha.rst
+.. .. include:: Backups/backups.rst
+.. .. include:: ITSM/ITSM.rst
+.. .. include:: LoadBalancers/LoadBalancers.rst
+.. .. include:: Logs/Logs.rst
+.. .. include:: storage/storage.rst
+.. .. include:: Security/security.rst
