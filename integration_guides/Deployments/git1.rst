@@ -12,3 +12,4 @@ To add a Key Pair to Morpheus:
 #. Navigate to `Infrastructure -> Key Pairs`
 #. Select :guilabel:`+ ADD`
 # Enter both the Public and Private Pirvate
+   
