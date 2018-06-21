@@ -1,6 +1,4 @@
 Deployment
 ==========
 
-.. toctree::
-  Deployments/git.rst
-..   Deployments/Jenkins.rst
+.. include:: Deployments/git.rst
