@@ -15,10 +15,13 @@ To Add Azure Storage
       Azure
 
     Storage Account
+      Add Storage Account
 
     Storage Key
+      Add Storage Key
 
     Share Name
+      Add Share Name
 
     Targets
       * Default Backup Target
