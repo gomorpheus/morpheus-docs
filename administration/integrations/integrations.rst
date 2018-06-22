@@ -3,6 +3,9 @@ Integrations
 
 ``Administration -> Integrations``
 
+To add an integration select :guilabel:`+ ADD` and choose your integration. For more information on each integration, please see the `Integration Guide <http://docs.morpheusdata.com/en/3.4.0/integration_guides/integration_guides.html/>`_
+
+
 .. include:: integrations/ansible.rst
 .. include:: integrations/chef.rst
 .. include:: integrations/consul.rst
