@@ -1,3 +1,5 @@
+.. _integration-guide:
+
 ******************
 Integration Guides
 ******************
