@@ -14,11 +14,11 @@ Integration Guides
 .. include:: Deployments/deployment.rst
 .. include:: DNS/DNS.rst
 .. include:: service_discovery/service_discovery.rst
+.. include:: LoadBalancers/LoadBalancers.rst
 .. include:: tableofcontents.rst
 .. .. include:: ha/ha.rst
 .. .. include:: Backups/backups.rst
 .. .. include:: ITSM/ITSM.rst
-.. .. include:: LoadBalancers/LoadBalancers.rst
 .. .. include:: Logs/Logs.rst
 .. .. include:: storage/storage.rst
 .. .. include:: Security/security.rst
