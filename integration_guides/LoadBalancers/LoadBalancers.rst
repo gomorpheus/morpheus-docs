@@ -8,5 +8,5 @@ Load Balancers
   .. LoadBalancers/AVI.rst
   .. LoadBalancers/AzureLB.rst
   .. LoadBalancers/Citrix.rst
-  .. LoadBalancers/F5.rst
+  LoadBalancers/F5.rst
   .. LoadBalancers/HAPROXY.rst
