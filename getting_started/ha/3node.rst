@@ -22,15 +22,15 @@ Steps
 
    .. code-block:: text
 
-    [root@app-server-1 ~]# wget https://downloads.gomorpheus.com/yum/el/7/noarch/morpheus-appliance-offline-3.1.5- 1.noarch.rpm
-    [root@app-server-1 ~]# wget https://downloads.gomorpheus.com/yum/el/7/x86_64/morpheus-appliance-3.1.5- 1.el7.x86_64.rpm
+    [root@app-server-1 ~]# wget https://downloads.gomorpheus.com/example/path/morpheus-appliance-offline-3.1.5- 1.noarch.rpm
+    [root@app-server-1 ~]# wget https://downloads.gomorpheus.com/example/path/morpheus-appliance-3.1.5- 1.el7.x86_64.rpm
 
 #. Once the packages are available on the nodes they can be installed. Make sure that no steps beyond the rpm install are run.
 
    .. code-block:: bash
 
-    [root@app-server-1 ~]# rpm -i morpheus-appliance-3.1.5-1.el7.x86_64.rpm
-    [root@app-server-1 ~]# rpm -i morpheus-appliance-offline-3.1.5-1.noarch.rpm
+    [root@app-server-1 ~] rpm -i morpheus-appliance-3.1.5-1.el7.x86_64.rpm
+    [root@app-server-1 ~] rpm -i morpheus-appliance-offline-3.1.5-1.noarch.rpm
 
 #. Next you will need to edit the |morpheus| configuration file on each node.
 
@@ -39,13 +39,13 @@ Steps
    .. code-block:: bash
 
      appliance_url 'https://morpheus1.localdomain'
-     elasticsearch['es_hosts'] = {'10.30.20.135' => 9300, '10.30.20.136' => 9300, '10.30.20.137' => 9300}
+     elasticsearch['es_hosts'] = {'10.100.10.121' => 9300, '10.100.10.122' => 9300, '10.100.10.123' => 9300}
      elasticsearch['node_name'] = 'morpheus1'
      elasticsearch['host'] = '0.0.0.0'
      rabbitmq['host'] = '0.0.0.0'
-     rabbitmq['nodename'] = 'rabbit@esmort01'
+     rabbitmq['nodename'] = 'rabbit@node01'
      mysql['enable'] = false
-     mysql['host'] = '10.130.12.228'
+     mysql['host'] = '10.100.10.111'
      mysql['morpheus_db'] = 'morpheusdb'
      mysql['morpheus_db_user'] = 'morpheus'
      mysql['morpheus_password'] = 'password'
@@ -55,13 +55,13 @@ Steps
    .. code-block:: bash
 
     appliance_url 'https://morpheus2.localdomain'
-    elasticsearch['es_hosts'] = {'10.30.20.135' => 9300, '10.30.20.136' => 9300, '10.30.20.137' => 9300}
+    elasticsearch['es_hosts'] = {'10.100.10.121' => 9300, '10.100.10.122' => 9300, '10.100.10.123' => 9300}
     elasticsearch['node_name'] = 'morpheus2'
     elasticsearch['host'] = '0.0.0.0'
     rabbitmq['host'] = '0.0.0.0'
-    rabbitmq['nodename'] = 'rabbit@esmort02'
+    rabbitmq['nodename'] = 'rabbit@node02'
     mysql['enable'] = false
-    mysql['host'] = '10.130.12.228'
+    mysql['host'] = '10.100.10.112'
     mysql['morpheus_db'] = 'morpheusdb'
     mysql['morpheus_db_user'] = 'morpheus'
     mysql['morpheus_password'] = 'password'
@@ -71,13 +71,13 @@ Steps
    .. code-block:: bash
 
        appliance_url 'https://morpheus3.localdomain'
-       elasticsearch['es_hosts'] = {'10.30.20.135' => 9300, '10.30.20.136' => 9300, '10.30.20.137' => 9300} 
+       elasticsearch['es_hosts'] = {'10.100.10.121' => 9300, '10.100.10.122' => 9300, '10.100.10.123' => 9300}
        elasticsearch['node_name'] = 'morpheus3'
        elasticsearch['host'] = '0.0.0.0'
        rabbitmq['host'] = '0.0.0.0'
-       rabbitmq['nodename'] = 'rabbit@esmort03'
+       rabbitmq['nodename'] = 'rabbit@node03'
        mysql['enable'] = false
-       mysql['host'] = '10.130.12.228'
+       mysql['host'] = '10.100.10.113'
        mysql['morpheus_db'] = 'morpheusdb'
        mysql['morpheus_db_user'] = 'morpheus'
        mysql['morpheus_password'] = 'password'
@@ -88,7 +88,7 @@ Steps
 
 .. code-block:: bash
 
-    mysql['host'] = '10.130.12.228:3306,10.130.12.109'
+    mysql['host'] = '10.100.10.111:3306,10.100.10.112'
 
 
 |morpheus| will append the ‘3306’ port to the end of the final IP in the string, which is why we leave it off but explicitly type it for the first IP in the string. The order of IPs matters in that it should be the same across all three |morpheus| Application Servers. As mentioned, this will be a failover configuration for MySQL in that the application will only read/write from the second master if the first master becomes unavailable. This way we can avoid commit lock issues that might arise from a load balanced Master/Master.
@@ -111,19 +111,19 @@ Begin by copying secrets from the SOT node to the other nodes.
   [root@app-server-1 ~] cat /etc/morpheus/morpheus-secrets.json
   {
     "mysql": {
-      "root_password": "wam457682b67858ae2cf4bc",
+      "root_password": "***REDACTED***",
       "morpheus_password": "password",
-      "ops_password": "98d9677686698d319r6356ae3a77"
+      "ops_password": "***REDACTED***"
     },
     "rabbitmq": {
-      "morpheus_password": "adff00cf8714b25mc",
-      "queue_user_password": "r075f26158c1fes2",
-      "cookie": "6458933CD86782AD39E25"
+      "morpheus_password": "***REDACTED***",
+      "queue_user_password": "***REDACTED***",
+      "cookie": "***REDACTED***"
     },
     "vm-images": {
       "s3": {
-        "aws_access_id": "AKIAI6OFPBN4NWSFBXRQ",
-        "aws_secret_key": "a9vxxjH5xkgh6dHgRjLl37i33rs8pwRe3"
+        "aws_access_id": "***REDACTED***",
+        "aws_secret_key": "***REDACTED***"
      }
     }
    }
@@ -232,19 +232,19 @@ Once this is done you can safely export. To access the MySQL shell we will need 
 .. code-block:: javascript
   {
     "mysql": {
-        "root_password": "2dee0d72a0e20729ef35ad86",
-        "morpheus_password": "149c15471484228385f9ccd4",
-        "ops_password": "7e6040b3b3a14d8a083fb57e"
+        "root_password": "***REDACTED***",
+        "morpheus_password": "***REDACTED***",
+        "ops_password": "***REDACTED***"
           },
     "rabbitmq": {
-              "morpheus_password": "35e259a167b2a296",
-              "queue_user_password": "c90717995720ab7f",
-              "cookie": "3F1B7B5C8B24A6FF1C9A"
+              "morpheus_password": "***REDACTED***",
+              "queue_user_password": "***REDACTED***",
+              "cookie": "***REDACTED***"
     },
     "vm-images": {
       "s3": {
-          "aws_access_id": "AKIAI6SF4BN7NWSFAWVQ",
-          "aws_secret_key": "p7NetjcH5jyZ1d8pAPGgRjLl3BY1j2S62yiR2u99"
+          "aws_access_id": "***REDACTED***",
+          "aws_secret_key": "***REDACTED***"
         }
       }
   }
@@ -316,7 +316,7 @@ To minimize disruption to the user interface, it is advisable to remedy Elastics
 .. code-block:: bash
 
   [root@app-server-2 ~]# curl localhost:9200/_cat/nodes
-  app-server-1 10.130.2.13 7 47 0.21 d * morpheus1
+  app-server-1 10.100.10.121 7 47 0.21 d * morpheus1
   localhost 127.0.0.1 4 30 0.32 d m morpheus2
 
 The master is determined by identifying the row with the ‘*’ in it.
@@ -344,9 +344,9 @@ After this you should be able to run the curl command and see all three nodes ha
 .. code-block:: bash
 
   [root@app-server-2 ~]# curl localhost:9200/_cat/nodes
-  app-server-1 10.130.2.13 9 53 0.31 d * morpheus1
+  app-server-1 10.100.10.121 9 53 0.31 d * morpheus1
   localhost 127.0.0.1 7 32 0.22 d m morpheus2
-  app-server-3 10.130.2.11 3 28 0.02 d m morpheus3
+  app-server-3 10.100.10.123 3 28 0.02 d m morpheus3
 
 The most frequent case of restart errors for RabbitMQ is with epmd failing to restart. |morpheus|’s recommendation is to ensure the epmd process is running and daemonized by starting it:
 
