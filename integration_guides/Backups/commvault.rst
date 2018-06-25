@@ -9,15 +9,17 @@ Adding Commvault Integration
 #. Enable the integration
 #. Fill in the following:
 
-Enabled
-  Enable the Commvault integration
-Default Backup Provider
-  Sets Commvault as the Default Backup Provider in |morpheus| . Backup Providers can be configured per Instance backup settings.
-Host
-  IP or Hostname of the Commvault server.
-Port
-  Port configured to access the
-Commvault server Username
-  Admin Username for Commvault
-Password
-  Password for Username provided (encrypted in |morpheus| )
+    Enabled
+      Enable the Commvault integration
+    Default Backup Provider
+      Sets Commvault as the Default Backup Provider in |morpheus| . Backup Providers can be configured per Instance backup settings.
+    Host
+      IP or Hostname of the Commvault server.
+    Port
+      Port configured to access the
+    Commvault server Username
+      Admin Username for Commvault
+    Password
+      Password for Username provided (encrypted in |morpheus| ).
+
+#. :guilabel:`SAVE`
