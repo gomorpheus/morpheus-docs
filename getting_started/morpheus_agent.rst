@@ -6,12 +6,12 @@ The |morpheus| agent is an important and powerful facet of the |morpheus| platfo
 
 Key Agent Features
 -------------------
-* Provides key statics (disc usage, CPU usage, )
+* Provides key statics (disc usage, CPU usage)
 * Handles log aggregation
 * Very secure and does not require credentials to get into box.
 * SSH agent can be disabled and still get access to the box.
 * Agent can be installed over Cloud Init for internetless situations
-*  **|morpheus| agent is optional**
+*  **The |morpheus| agent is optional**
 * Makes a single connect over HTTPs and runs as a service
 * Health checks for Linux (not available on windows)
 * **No inbound Ports**
