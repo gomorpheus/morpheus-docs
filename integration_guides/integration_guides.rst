@@ -17,8 +17,8 @@ Integration Guides
 .. include:: LoadBalancers/LoadBalancers.rst
 .. include:: storage/storage.rst
 .. include:: Backups/backups.rst
+.. include:: Logs/Logs.rst
 .. include:: tableofcontents.rst
 .. .. include:: ha/ha.rst
 .. .. include:: ITSM/ITSM.rst
-.. .. include:: Logs/Logs.rst
 .. .. include:: Security/security.rst
