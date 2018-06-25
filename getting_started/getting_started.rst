@@ -9,4 +9,4 @@ Getting Started
 .. include:: appliance_setup.rst
 .. include:: advanced_configuration.rst
 .. include:: ha/ha_setup.rst
-.. include:: ha/morpheus_agent.rst
+.. include:: morpheus_agent.rst
