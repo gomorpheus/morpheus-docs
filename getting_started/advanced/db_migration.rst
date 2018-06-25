@@ -14,8 +14,8 @@ Once this is done you can safely export. To access the MySQL shell we will need 
 .. code-block:: bash
 
   [root@app-server-old ~] cat /etc/Morpheus/morpheus-secrets.json | grep morpheus_password
-  "morpheus_password": "372ec45ce5d196adb3de5d6a", <---------------this one
-  "morpheus_password": "8e8bcf9dc5fdf95d",
+  "morpheus_password": "451e122cr5d122asw3de5e1b", <---------------this one
+  "morpheus_password": "9b5vdj4de5awf87d",
 
 Take note of the first ``morpheus_password`` as it will be used to invoke a dump. Morpheus provides embedded binaries for this task. Invoke it via the embedded path and specify the host. In this example we are using the morpheus database on the MySQL listening on localhost. Enter the password copied from the previous step when prompted:
 
