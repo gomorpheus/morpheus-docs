@@ -170,10 +170,6 @@ Once the Rabbit services are up and clustered on all nodes they need to be set t
 
 .. code-block:: bash
 
-   rabbitmqctl set_policy -p morpheus --priority 1 --apply-to all ha ".*" '{"ha-mode":"all"}'
-
-.. code-block:: bash
-
   [root@app-server-2 ~]# rabbitmqctl set_policy -p morpheus --priority 1 --apply-to all ha ".*" '{"ha-mode": "all"}'
 
 The last thing to do is restart the |morpheus| UI on the two nodes that are NOT the SOT node.
