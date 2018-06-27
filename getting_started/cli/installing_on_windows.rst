@@ -9,11 +9,13 @@ The morpheus cli is capable of running on many platforms due to its ruby runtime
 Now that ruby is installed, simply open a PowerShell window and run
 
     .. code-block:: text
+
       gem install morpheus-cli --no-ri --no-rdoc
 
 A list of installed dependencies should start sliding by the screen. Once this has completed the CLI setup is complete. Now all that must be done is configuring the cli to point to an appliance for use.
 
     .. code-block:: text
+    
       morpheus remote add myapp https://applianceUrl
       morpheus remote use myapp
       morpheus login
