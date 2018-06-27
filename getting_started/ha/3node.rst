@@ -61,7 +61,7 @@ Steps
     rabbitmq['host'] = '0.0.0.0'
     rabbitmq['nodename'] = 'rabbit@node02'
     mysql['enable'] = false
-    mysql['host'] = '10.100.10.112'
+    mysql['host'] = '10.100.10.111'
     mysql['morpheus_db'] = 'morpheusdb'
     mysql['morpheus_db_user'] = 'morpheus'
     mysql['morpheus_password'] = 'password'
@@ -77,7 +77,7 @@ Steps
        rabbitmq['host'] = '0.0.0.0'
        rabbitmq['nodename'] = 'rabbit@node03'
        mysql['enable'] = false
-       mysql['host'] = '10.100.10.113'
+       mysql['host'] = '10.100.10.111'
        mysql['morpheus_db'] = 'morpheusdb'
        mysql['morpheus_db_user'] = 'morpheus'
        mysql['morpheus_password'] = 'password'
