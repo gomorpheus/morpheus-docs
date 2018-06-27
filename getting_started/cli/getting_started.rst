@@ -1,5 +1,6 @@
 Getting Started With The Morpheus CLI
 ---------------------------------------
+
 The |morpheus| CLI is a ruby based CLI that provides a lot of functionality out of the box and is rapidly growing in coverage to be able to perform every task that can be performed in the |morpheus| UI. It is also a great way to get started in exploring the |morpheus| API and understanding some of the data model aspects.
 
 Installation
