@@ -1,5 +1,5 @@
-Hiya
-==============================
+Getting Started With The Morpheus CLI
+======================================
 
 .. include:: cli/getting_started.rst
 .. include:: cli/installing_on_windows.rst
