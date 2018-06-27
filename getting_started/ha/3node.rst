@@ -61,7 +61,7 @@ Steps
     rabbitmq['host'] = '0.0.0.0'
     rabbitmq['nodename'] = 'rabbit@node02'
     mysql['enable'] = false
-    mysql['host'] = '10.100.10.112'
+    mysql['host'] = '10.100.10.111'
     mysql['morpheus_db'] = 'morpheusdb'
     mysql['morpheus_db_user'] = 'morpheus'
     mysql['morpheus_password'] = 'password'
@@ -77,7 +77,7 @@ Steps
        rabbitmq['host'] = '0.0.0.0'
        rabbitmq['nodename'] = 'rabbit@node03'
        mysql['enable'] = false
-       mysql['host'] = '10.100.10.113'
+       mysql['host'] = '10.100.10.111'
        mysql['morpheus_db'] = 'morpheusdb'
        mysql['morpheus_db_user'] = 'morpheus'
        mysql['morpheus_password'] = 'password'
@@ -167,10 +167,6 @@ Now make sure to reconfigure
    [root@app-server-2 ~] morpheus-ctl reconfigure
 
 Once the Rabbit services are up and clustered on all nodes they need to be set to HA/Mirrored Queues:
-
-.. code-block:: bash
-
-   rabbitmqctl set_policy -p morpheus --priority 1 --apply-to all ha ".*" '{"ha-mode":"all"}'
 
 .. code-block:: bash
 
