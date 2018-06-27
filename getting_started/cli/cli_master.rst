@@ -1,5 +1,6 @@
-Getting Started With The Morpheus CLI
+Morpheus CLI
 ======================================
 
-.. include:: cli/getting_started.rst
 .. include:: cli/installing_on_windows.rst
+.. include:: cli/installing_on_linux.rst
+.. include:: cli/getting_started.rst
