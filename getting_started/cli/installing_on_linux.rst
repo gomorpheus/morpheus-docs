@@ -7,7 +7,7 @@ Installation
 ^^^^^^^^^^^^^^^
 A Prerequisite to running the CLI is to have ruby 2.0.0+ installed (2.3.0 recommended). Once the ruby runtime is installed simply use rubygems to install the CLI
 
-  .. code-block::
+  .. code-block:: text
 
       gem install morpheus-cli
 
