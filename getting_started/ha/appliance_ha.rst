@@ -13,9 +13,9 @@ server where the configuration file resides.
 
 #. Next we must install the package onto the machine and configure the morpheus services:
 
-.. code-block:: bash
+  .. code-block:: bash
 
-       sudo sudo rpm -i morpheus-appliance-x.x.x-1.x86_64.rpm
+      sudo sudo rpm -i morpheus-appliance-x.x.x-1.x86_64.rpm
 
 #. After installing and prior to reconfiguring, edit the morpheus.rb file
 
