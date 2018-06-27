@@ -1,22 +1,5 @@
-Setup
-^^^^^^^^^^^^^^^
-The first thing that needs to be done after installing the cli is pointing the cli to the appliance. The CLI can be pointed at many appliances and uses the RESTful OAUTH public developer apis to perform tasks. To set this up simply add a remote appliance with the morpheus remote add command.
-
-  .. code-block::
-
-      morpheus remote add myappliance https://applianceUrl
-      morpheus remote use myappliance
-      morpheus login
-
-There are several commands available when dealing with configuration of remote appliances. To see what commands are available just type
-
-  .. code-block::
-
-      morpheus remote
-
-
 Getting Started
-^^^^^^^^^^^^^^^^^
+------------------
 To get started with the morpheus CLI its helpful to use morpheus shell. The shell provides a handy shell with history and some autocomplete features for learning to use it. All commands mentioned prefixed with morpheus can be omitted since we are in shell mode.
 
 To confirm that we are hooked into the appliance properly lets check our authentication information:
@@ -233,7 +216,7 @@ Morpheus makes it very easy to get started provisioning via the CLI. It provides
 As can be seen in the example above, the CLI nicely prompts the user for input on required options for provisioning this particular instance type within this particular cloud. It provides capabilities of adding multiple disks and multiple networks in this scenario. It is also posslbe to skip these prompts and provision everything via one command line syntax by using the ``-O optionName=value syntax:``
 
   .. code-block::
-    
+
       morpheus> instances add ubuntu MyInstanceName -c "San Mateo Vmware"  -O layout=105 -O servicePlan=10 -O rootVolume.datastoreId=autoCluster
 
 This will cause morpheus cli to skip prompting for input on these prompts. All inputs have an equivalent -O option that can be passed. To see what that option argument is simply enter ? on the input prompt to get specifics.
