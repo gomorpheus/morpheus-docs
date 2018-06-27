@@ -19,7 +19,7 @@ server where the configuration file resides.
 
 #. After installing and prior to reconfiguring, edit the morpheus.rb file
 
-.. code-block:: bash
+  .. code-block:: bash
 
       sudo vi /etc/morpheus/morpheus.rb
 
@@ -49,6 +49,6 @@ Change the values to match your configured services:
 
 #. Reconfigure Morpheus
 
-.. code-block:: bash
+  .. code-block:: bash
 
-      sudo morpheus-ctl reconfigure
+        sudo morpheus-ctl reconfigure
