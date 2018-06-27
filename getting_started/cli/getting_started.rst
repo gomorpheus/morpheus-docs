@@ -2,7 +2,7 @@ Setup
 ----------------
 The first thing that needs to be done after installing the cli is pointing the cli to the appliance. The CLI can be pointed at many appliances and uses the RESTful OAUTH public developer apis to perform tasks. To set this up simply add a remote appliance with the morpheus remote add command.
 
-  .. code-block::
+  .. code-block:: text
 
       morpheus remote add myappliance https://applianceUrl
       morpheus remote use myappliance
@@ -10,7 +10,7 @@ The first thing that needs to be done after installing the cli is pointing the c
 
 There are several commands available when dealing with configuration of remote appliances. To see what commands are available just type
 
-  .. code-block::
+  .. code-block:: text
 
       morpheus remote
 
@@ -21,7 +21,7 @@ To get started with the morpheus CLI its helpful to use morpheus shell. The shel
 
 To confirm that we are hooked into the appliance properly lets check our authentication information:
 
-.. code-block::
+.. code-block:: text
 
     morpheus> whoami
     Current User
@@ -47,7 +47,7 @@ Fantastic! We are now ready to start our adventure in the Morpheus CLI. If this 
 While the CLI is relatively young there are a ton of features provided with it that can make it very convenient for working with morpheus. There are several base commands with subcommands within for example. Lets look at what happens when we simply type ``morpheus`` on the command line:
 
 
-.. code-block::
+.. code-block:: text
 
     Usage: morpheus [command] [options]
 
@@ -93,7 +93,7 @@ Provisioning
 
 To get started provisioning instances from the CLI a few prerequisite commands must be setup in the CLI. First we must decide what Group we want to provision into. We can first get a list of available groups to use by running morpheus groups list
 
-    .. code-block::
+    .. code-block:: text
 
       morpheus> groups list
 
@@ -120,13 +120,13 @@ To get started provisioning instances from the CLI a few prerequisite commands m
 
 In the above example the currently active group is Demo as can be seen by the => symbol to the left of the group name. To switch groups simply run:
 
-    .. code-block::
+    .. code-block:: text
 
       morpheus groups use "San Mateo Xen"
 
 This now becomes the active group we would like to provision into. Another thing to know before provisioning is we do have to also specify the cloud we want to provision into . This does require the cloud be in the group that is currently active. To see a list of clouds in the relevant group simply run:
 
-    .. code-block::
+    .. code-block:: text
 
       morpheus clouds list -g [groupName]
 
@@ -134,7 +134,7 @@ This will scope the clouds command to list only clouds in the group specified.
 
 Morpheus makes it very easy to get started provisioning via the CLI. It provides a list of instance-types that can be provisioned via the ``instance-types`` list command. Lets get started by provisioning an ubuntu virtual machine.
 
-  .. code-block::
+  .. code-block:: text
 
       morpheus> instances add
 
@@ -154,7 +154,7 @@ Morpheus makes it very easy to get started provisioning via the CLI. It provides
         -V, --debug                      Print extra output for debugging.
         -h, --help                       Prints this help
 
-  .. code-block::
+  .. code-block:: text
 
       morpheus> instances add ubuntu MyInstanceName -c "San Mateo Vmware"
 
@@ -232,7 +232,7 @@ Morpheus makes it very easy to get started provisioning via the CLI. It provides
 
 As can be seen in the example above, the CLI nicely prompts the user for input on required options for provisioning this particular instance type within this particular cloud. It provides capabilities of adding multiple disks and multiple networks in this scenario. It is also posslbe to skip these prompts and provision everything via one command line syntax by using the ``-O optionName=value syntax:``
 
-  .. code-block::
+  .. code-block:: text
 
       morpheus> instances add ubuntu MyInstanceName -c "San Mateo Vmware"  -O layout=105 -O servicePlan=10 -O rootVolume.datastoreId=autoCluster
 
@@ -248,7 +248,7 @@ List Arguments
 
 Most of the list command types can be queried or paged via the cli. To do this simply look at the help information for the relevant list command
 
-.. code-block::
+.. code-block:: text
 
     morpheus> instances list -h
     Usage: morpheus [options]
