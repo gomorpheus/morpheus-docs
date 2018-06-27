@@ -2,7 +2,6 @@ Logs
 =====
 
 .. toctree::
-  .. Logs/LogRhythm.rst
-  .. Logs/MorpheusInternalLogs.rst
-  .. Logs/Splunk.rst
-  .. Logs/SysLog.rst
+  Logs/LogRhythm.rst
+  Logs/Splunk.rst
+  Logs/SysLog.rst
