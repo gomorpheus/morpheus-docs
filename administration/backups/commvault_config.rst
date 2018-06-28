@@ -8,7 +8,7 @@ Default Backup Provider
 Host
   IP or Hostname of the Commvault server.
 Port
-  Port configured to access the
+  Port configured to access the Commvault server
 Commvault server Username
   Admin Username for Commvault
 Password
