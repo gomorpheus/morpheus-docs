@@ -13,21 +13,22 @@ server where the configuration file resides.
 
 #. Next we must install the package onto the machine and configure the morpheus services:
 
-    .. code-block:: bash
+  .. code-block:: bash
 
       sudo sudo rpm -i morpheus-appliance-x.x.x-1.x86_64.rpm
 
 #. After installing and prior to reconfiguring, edit the morpheus.rb file
 
-    .. code-block:: bash
+  .. code-block:: bash
 
       sudo vi /etc/morpheus/morpheus.rb
 
-      Change the values to match your configured services:
+Change the values to match your configured services:
 
-      .. NOTE:: The values below are examples. Update hosts, ports, usernames and password with your specifications. Only include entries for services you wish to externalize.
+.. NOTE::
+   The values below are examples. Update hosts, ports, usernames and password with your specifications. Only include entries for services you wish to externalize.
 
-      .. code-block:: bash
+.. code-block:: bash
 
       mysql['enable'] = false
       mysql['host'] = {'10.30.20.139' => 3306,  '10.30.20.153' => 3306,  '10.30.20.196' => 3306}
@@ -48,6 +49,6 @@ server where the configuration file resides.
 
 #. Reconfigure Morpheus
 
-   .. code-block:: bash
+  .. code-block:: bash
 
-    sudo morpheus-ctl reconfigure
+        sudo morpheus-ctl reconfigure
