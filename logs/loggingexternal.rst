@@ -8,7 +8,8 @@ There are three main log areas in Morpheus
 - Activity / Audit Logs
 
 Agent Logs
-^^^^^^^^^^^^
+-----------
+
 When instances are deployed through Morpheus, the agent that is installed, captures Application logs and sends them back to the Morpheus Server.
 
 While the built-in logging solution provided by Morpheus is sufficient for most, there are some scenarios in which a more advanced logging system may be desired or already in place. To facilitate this Morpheus makes it easy to add custom syslog rules as well as built in direct integrations with Splunk and LogRhythm. All integrations pertaining to logging can be configured in the Administration -> Logging section.
@@ -22,25 +23,22 @@ To configure Splunk simply create a syslog listener configuration in Splunk. The
 Configuring LogRhythm is much like configuring Splunk. Simply toggle the enabled flag in the LogRhythm section to enabled and fill in the Host, and Port information for the LogRhythm listener.
 
 Morpheus Server Logs
-^^^^^^^^^^^^^^^^^^^^^^^
+---------------------
 
 The main Morpheus server log is in /var/log/morpheus/Morpheus-ui and the latest log file is named current. This log is archived every 24hrs. There are a number of other log files for the individual infrastructure components as well.
 
 An example of how to export to an external syslog platform such as Splunk is shown below:
 
-.. code-block:: text
 
-Edit /etc/rsyslog.conf
+`` Edit /etc/rsyslog.conf`` 
 
 Look for the following line which needs to be updated
 
-.. code-block:: text
-
-remote host is: name/ip:port, e.g. 192.168.0.1:514, port optional
+`` remote host is: name/ip:port, e.g. 192.168.0.1:514, port optional ``
 
 Example:
 
-remote host is: 172.16.128.158:514
+`` remote host is: 172.16.128.158:514 ``
 
 Once you have configured your syslog destination (edit rsyslog.conf), create a Morpheus-syslog.conf file in the /etc/rsyslog.d directory and add the following entries
 
@@ -56,7 +54,7 @@ Once you have configured your syslog destination (edit rsyslog.conf), create a M
     input(type="imfile" File="/var/log/morpheus/rabbitmq/current" Tag="rabbitmq" ReadMode="2" 		Severity="info")
     input(type="imfile" File="/var/log/morpheus/redis/current" Tag="redis" ReadMode="2" Severity="info") ``
 
-Restart rsyslog
+`` Restart rsyslog ``
 
 The logfiles will now be to the destination you have defined.
 
@@ -69,12 +67,11 @@ The final log type that may require export is the Morpheus Activity log. This tr
 To set up CEF/SIEM auditing export, you should edit the following file: logback.groovy
 It can be located in the following directory:
 
-.. code-block:: text
-
-  /opt/morpheus/conf/logback.groovy
+  `` /opt/morpheus/conf/logback.groovy ``
 
 Copy the below configuration to the bottom of the logback.groovy configuration file, save and then exit.
 
+.. code-block:: text
 
     ``appender("AUDIT", RollingFileAppender) file =
     "/var/log/morpheus/morpheus-ui/audit.log"
@@ -91,24 +88,15 @@ Copy the below configuration to the bottom of the logback.groovy configuration f
 
 Once you have done this, you need to restart the Morpheus Application server. To do this, do the following:  *please be aware this will restart the web interface for Morpheus.
 
-.. code-block:: text
-
-    Morpheus-ctl stop morpheus-ui
-
+    `` Morpheus-ctl stop morpheus-ui ``
 
 Once the service has stopped enter the following at the shell prompt to restart (if the service does not stop, replace stop with graceful-kill and retry)
 
-.. code-block:: text
-
-    Morpheus-ctl start moprheus-ui
-
+    `` Morpheus-ctl start moprheus-ui ``
 
 To know when the UI is up and running you can run the following command
 
-.. code-block:: text
-
-    Morpheus-ctl tail moprheus-ui
-
+    `` Morpheus-ctl tail moprheus-ui ``
 
 Once you see the ASCI art show up you will be able to log back into the User Interface. A new audit file will have been created called audit.log and will found in the default Morpheus log path which is /var/log/morpheus/morpheus-ui/
 
