@@ -28,9 +28,13 @@ The main Morpheus server log is in /var/log/morpheus/Morpheus-ui and the latest 
 
 An example of how to export to an external syslog platform such as Splunk is shown below:
 
+.. code-block:: text
+
 Edit /etc/rsyslog.conf
 
 Look for the following line which needs to be updated
+
+.. code-block:: text
 
 remote host is: name/ip:port, e.g. 192.168.0.1:514, port optional
 
@@ -40,15 +44,16 @@ remote host is: 172.16.128.158:514
 
 Once you have configured your syslog destination (edit rsyslog.conf), create a Morpheus-syslog.conf file in the /etc/rsyslog.d directory and add the following entries
 
+.. code-block:: text
 
     module(load="imfile" PollingInterval="50")
-    input(type="imfile" File="/var/log/morpheus/morpheus-ui/current" Tag="morpheus-ui" ReadMode="2" Severity="info" StateFile="morpheus-ui")
-    input(type="imfile" File="/var/log/morpheus/check-server/current" Tag="check-server" ReadMode="2" Severity="info")
-    input(type="imfile" File="/var/log/morpheus/guacd/current" Tag="guacd" ReadMode="2" Severity="info")
+    input(type="imfile" File="/var/log/morpheus/morpheus-ui/current" Tag="morpheus-ui" ReadMode="2" 	Severity="info" StateFile="morpheus-ui")
+    input(type="imfile" File="/var/log/morpheus/check-server/current" Tag="check-server" ReadMode="2" 	Severity="info")
+    input(type="imfile" File="/var/log/morpheus/guacd/current" Tag="guacd" ReadMode="2" 		Severity="info")
     input(type="imfile" File="/var/log/morpheus/elasticsearch/current" Tag="elasticsearch" ReadMode="2")
     input(type="imfile" File="/var/log/morpheus/mysql/current" Tag="mysql" ReadMode="2" Severity="info")
     input(type="imfile" File="/var/log/morpheus/nginx/current" Tag="nginx" ReadMode="2" Severity="info")
-    input(type="imfile" File="/var/log/morpheus/rabbitmq/current" Tag="rabbitmq" ReadMode="2" Severity="info")
+    input(type="imfile" File="/var/log/morpheus/rabbitmq/current" Tag="rabbitmq" ReadMode="2" 		Severity="info")
     input(type="imfile" File="/var/log/morpheus/redis/current" Tag="redis" ReadMode="2" Severity="info")
 
 Restart rsyslog
@@ -64,37 +69,47 @@ The final log type that may require export is the Morpheus Activity log. This tr
 To set up CEF/SIEM auditing export, you should edit the following file: logback.groovy
 It can be located in the following directory:
 
+.. code-block:: text
+
   /opt/morpheus/conf/logback.groovy
 
 Copy the below configuration to the bottom of the logback.groovy configuration file, save and then exit.
 
-  appender("AUDIT", RollingFileAppender) {
-  file = "/var/log/morpheus/morpheus-ui/audit.log"
-  rollingPolicy(TimeBasedRollingPolicy) {
-    fileNamePattern = "/var/log/morpheus/morpheus-ui/audit_%d{yyyy-MM-dd}.%i.log"
-    timeBasedFileNamingAndTriggeringPolicy(SizeAndTimeBasedFNATP) {
-      maxFileSize = "50MB"
-    }
-    maxHistory = 30
-  }
-  encoder(PatternLayoutEncoder) {
-    pattern = "[%d] [%thread] %-5level %logger{15} - %maskedMsg %n"
-  }
-  }
+.. code-block:: text
 
-logger("com.morpheus.AuditLogService", INFO, ['AUDIT'], false)
+    appender("AUDIT", RollingFileAppender) file =
+    "/var/log/morpheus/morpheus-ui/audit.log"
+    rollingPolicy(TimeBasedRollingPolicy) {
+    fileNamePattern = "/var/log/morpheus/morpheus-ui/audit_%d{yyyy-MM dd}.%i.log"
+    timeBasedFileNamingAndTriggeringPolicy (SizeAndTimeBasedFNATP)
+    {maxFileSize = "50MB"  } maxHistory = 30 }
+    encoder(PatternLayoutEncoder) {pattern = "[%d]
+    [%thread] %-5level %logger{15}
+    - %maskedMsg %n" } } logger("com.morpheus.AuditLogService",
+    INFO, ['AUDIT'], false)
+
+
 
 Once you have done this, you need to restart the Morpheus Application server. To do this, do the following:  *please be aware this will restart the web interface for Morpheus.
 
-Morpheus-ctl stop morpheus-ui
+.. code-block:: text
+
+    Morpheus-ctl stop morpheus-ui
+
 
 Once the service has stopped enter the following at the shell prompt to restart (if the service does not stop, replace stop with graceful-kill and retry)
 
-Morpheus-ctl start moprheus-ui
+.. code-block:: text
+
+    Morpheus-ctl start moprheus-ui
+
 
 To know when the UI is up and running you can run the following command
 
-Morpheus-ctl tail moprheus-ui
+.. code-block:: text
+
+    Morpheus-ctl tail moprheus-ui
+
 
 Once you see the ASCI art show up you will be able to log back into the User Interface. A new audit file will have been created called audit.log and will found in the default Morpheus log path which is /var/log/morpheus/morpheus-ui/
 
