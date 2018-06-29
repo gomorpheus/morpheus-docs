@@ -46,7 +46,7 @@ Once you have configured your syslog destination (edit rsyslog.conf), create a M
 
 .. code-block:: text
 
-    module(load="imfile" PollingInterval="50")
+    ``module(load="imfile" PollingInterval="50")
     input(type="imfile" File="/var/log/morpheus/morpheus-ui/current" Tag="morpheus-ui" ReadMode="2" 	Severity="info" StateFile="morpheus-ui")
     input(type="imfile" File="/var/log/morpheus/check-server/current" Tag="check-server" ReadMode="2" 	Severity="info")
     input(type="imfile" File="/var/log/morpheus/guacd/current" Tag="guacd" ReadMode="2" 		Severity="info")
@@ -54,7 +54,7 @@ Once you have configured your syslog destination (edit rsyslog.conf), create a M
     input(type="imfile" File="/var/log/morpheus/mysql/current" Tag="mysql" ReadMode="2" Severity="info")
     input(type="imfile" File="/var/log/morpheus/nginx/current" Tag="nginx" ReadMode="2" Severity="info")
     input(type="imfile" File="/var/log/morpheus/rabbitmq/current" Tag="rabbitmq" ReadMode="2" 		Severity="info")
-    input(type="imfile" File="/var/log/morpheus/redis/current" Tag="redis" ReadMode="2" Severity="info")
+    input(type="imfile" File="/var/log/morpheus/redis/current" Tag="redis" ReadMode="2" Severity="info") ``
 
 Restart rsyslog
 
@@ -75,9 +75,8 @@ It can be located in the following directory:
 
 Copy the below configuration to the bottom of the logback.groovy configuration file, save and then exit.
 
-.. code-block:: text
 
-    appender("AUDIT", RollingFileAppender) file =
+    ``appender("AUDIT", RollingFileAppender) file =
     "/var/log/morpheus/morpheus-ui/audit.log"
     rollingPolicy(TimeBasedRollingPolicy) {
     fileNamePattern = "/var/log/morpheus/morpheus-ui/audit_%d{yyyy-MM dd}.%i.log"
@@ -86,7 +85,7 @@ Copy the below configuration to the bottom of the logback.groovy configuration f
     encoder(PatternLayoutEncoder) {pattern = "[%d]
     [%thread] %-5level %logger{15}
     - %maskedMsg %n" } } logger("com.morpheus.AuditLogService",
-    INFO, ['AUDIT'], false)
+    INFO, ['AUDIT'], false)``
 
 
 
