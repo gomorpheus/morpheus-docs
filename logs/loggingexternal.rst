@@ -29,8 +29,7 @@ The main Morpheus server log is in /var/log/morpheus/Morpheus-ui and the latest 
 
 An example of how to export to an external syslog platform such as Splunk is shown below:
 
-
-`` Edit /etc/rsyslog.conf`` 
+`` Edit /etc/rsyslog.conf``
 
 Look for the following line which needs to be updated
 
@@ -66,6 +65,8 @@ The final log type that may require export is the Morpheus Activity log. This tr
 
 To set up CEF/SIEM auditing export, you should edit the following file: logback.groovy
 It can be located in the following directory:
+
+.. code-block:: text
 
   `` /opt/morpheus/conf/logback.groovy ``
 
