@@ -29,15 +29,15 @@ The main Morpheus server log is in /var/log/morpheus/Morpheus-ui and the latest 
 
 An example of how to export to an external syslog platform such as Splunk is shown below:
 
-  .. code-block:: bash
+    .. code-block:: bash
 
   Edit /etc/rsyslog.conf
 
 Look for the following line which needs to be updated
 
-.. code-block:: bash
+  .. code-block:: bash
 
- remote host is: name/ip:port, e.g. 192.168.0.1:514, port optional 
+ remote host is: name/ip:port, e.g. 192.168.0.1:514, port optional
 
 Example:
 
@@ -47,7 +47,7 @@ Example:
 
 Once you have configured your syslog destination (edit rsyslog.conf), create a Morpheus-syslog.conf file in the /etc/rsyslog.d directory and add the following entries
 
-.. code-block:: text
+.. code-block:: bash
 
     ``module(load="imfile" PollingInterval="50")
     input(type="imfile" File="/var/log/morpheus/morpheus-ui/current" Tag="morpheus-ui" ReadMode="2" 	Severity="info" StateFile="morpheus-ui")
@@ -59,7 +59,7 @@ Once you have configured your syslog destination (edit rsyslog.conf), create a M
     input(type="imfile" File="/var/log/morpheus/rabbitmq/current" Tag="rabbitmq" ReadMode="2" 		Severity="info")
     input(type="imfile" File="/var/log/morpheus/redis/current" Tag="redis" ReadMode="2" Severity="info") ``
 
-`` Restart rsyslog ``
+    `` Restart rsyslog ``
 
 The logfiles will now be to the destination you have defined.
 
