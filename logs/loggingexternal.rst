@@ -29,7 +29,7 @@ The main Morpheus server log is in /var/log/morpheus/Morpheus-ui and the latest 
 
 An example of how to export to an external syslog platform such as Splunk is shown below:
 
-    .. code-block:: bash
+  .. code-block:: bash
 
   Edit /etc/rsyslog.conf
 
@@ -39,7 +39,7 @@ Look for the following line which needs to be updated
 
  remote host is: name/ip:port, e.g. 192.168.0.1:514, port optional
 
-Example:
+Example
 
 .. code-block:: bash
 
