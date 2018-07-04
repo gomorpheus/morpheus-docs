@@ -31,19 +31,19 @@ An example of how to export to an external syslog platform such as Splunk is sho
 
   .. code-block:: bash
 
-  Edit /etc/rsyslog.conf
+    Edit /etc/rsyslog.conf
 
 Look for the following line which needs to be updated
 
   .. code-block:: bash
 
- remote host is: name/ip:port, e.g. 192.168.0.1:514, port optional
+    remote host is: name/ip:port, e.g. 192.168.0.1:514, port optional
 
 Example
 
 .. code-block:: bash
 
- remote host is: 172.16.128.158:514
+    remote host is: 172.16.128.158:514
 
 Once you have configured your syslog destination (edit rsyslog.conf), create a Morpheus-syslog.conf file in the /etc/rsyslog.d directory and add the following entries
 
@@ -74,7 +74,7 @@ It can be located in the following directory:
 
 .. code-block:: bash
 
-   /opt/morpheus/conf/logback.groovy
+    /opt/morpheus/conf/logback.groovy
 
 Copy the below configuration to the bottom of the logback.groovy configuration file, save and then exit.
 
