@@ -29,13 +29,13 @@ The main Morpheus server log is in /var/log/morpheus/Morpheus-ui and the latest 
 
 An example of how to export to an external syslog platform such as Splunk is shown below:
 
-  .. code-block:: bash
+.. code-block:: bash
 
     Edit /etc/rsyslog.conf
 
 Look for the following line which needs to be updated
 
-  .. code-block:: bash
+.. code-block:: bash
 
     remote host is: name/ip:port, e.g. 192.168.0.1:514, port optional
 
@@ -95,13 +95,13 @@ Copy the below configuration to the bottom of the logback.groovy configuration f
 
 Once you have done this, you need to restart the Morpheus Application server. To do this, do the following:  *please be aware this will restart the web interface for Morpheus.
 
-  .. code-block:: bash
+.. code-block:: bash
 
      Morpheus-ctl stop morpheus-ui
 
 Once the service has stopped enter the following at the shell prompt to restart (if the service does not stop, replace stop with graceful-kill and retry)
 
-  .. code-block:: bash
+.. code-block:: bash
 
      Morpheus-ctl start moprheus-ui
 
