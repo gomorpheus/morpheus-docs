@@ -44,7 +44,8 @@ Configuring LogRhythm is much like configuring Splunk. Simply toggle the enabled
 
 
 Logging to External Sources
-============================
+-----------------------------
+
 There are three main log areas in Morpheus
 
 - Agent Logs
@@ -52,7 +53,7 @@ There are three main log areas in Morpheus
 - Activity / Audit Logs
 
 Agent Logs
------------
+^^^^^^^^^^^
 
 When instances are deployed through Morpheus, the agent that is installed, captures Application logs and sends them back to the Morpheus Server.
 
@@ -67,7 +68,7 @@ To configure Splunk simply create a syslog listener configuration in Splunk. The
 Configuring LogRhythm is much like configuring Splunk. Simply toggle the enabled flag in the LogRhythm section to enabled and fill in the Host, and Port information for the LogRhythm listener.
 
 Morpheus Server Logs
----------------------
+^^^^^^^^^^^^^^^^^^^^^^
 
 The main Morpheus server log is in /var/log/morpheus/Morpheus-ui and the latest log file is named current. This log is archived every 24hrs. There are a number of other log files for the individual infrastructure components as well.
 
