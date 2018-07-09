@@ -38,58 +38,49 @@ Steps
 
    .. code-block:: bash
 
-     appliance_url 'https://morpheus1.localdomain'
+      appliance_url 'https://morpheus1.localdomain'
+      elasticsearch['es_hosts'] = {'10.100.10.121' => 9300, '10.100.10.122' => 9300, '10.100.10.123' => 9300}
+      elasticsearch['node_name'] = 'morpheus1'
+      elasticsearch['host'] = '0.0.0.0'
+      rabbitmq['host'] = '0.0.0.0'
+      rabbitmq['nodename'] = 'rabbit@node01'
+      mysql['enable'] = false
+      mysql['host'] = '10.100.10.111'
+      mysql['morpheus_db'] = 'morpheusdb'
+      mysql['morpheus_db_user'] = 'morpheus'
+      mysql['morpheus_password'] = 'password'
+
+   **Node 2**
+
+   .. code-block:: bash
+
+     appliance_url 'https://morpheus2.localdomain'
      elasticsearch['es_hosts'] = {'10.100.10.121' => 9300, '10.100.10.122' => 9300, '10.100.10.123' => 9300}
-     elasticsearch['node_name'] = 'morpheus1'
+     elasticsearch['node_name'] = 'morpheus2'
      elasticsearch['host'] = '0.0.0.0'
      rabbitmq['host'] = '0.0.0.0'
-     rabbitmq['nodename'] = 'rabbit@node01'
+     rabbitmq['nodename'] = 'rabbit@node02'
      mysql['enable'] = false
      mysql['host'] = '10.100.10.111'
      mysql['morpheus_db'] = 'morpheusdb'
      mysql['morpheus_db_user'] = 'morpheus'
      mysql['morpheus_password'] = 'password'
 
-   **Node 2**
-
-   .. code-block:: bash
-
-    appliance_url 'https://morpheus2.localdomain'
-    elasticsearch['es_hosts'] = {'10.100.10.121' => 9300, '10.100.10.122' => 9300, '10.100.10.123' => 9300}
-    elasticsearch['node_name'] = 'morpheus2'
-    elasticsearch['host'] = '0.0.0.0'
-    rabbitmq['host'] = '0.0.0.0'
-    rabbitmq['nodename'] = 'rabbit@node02'
-    mysql['enable'] = false
-    
-<<<<<<< HEAD
-    mysql['host'] = '10.100.10.112'
-=======
-    mysql['host'] = '10.100.10.111'
->>>>>>> 3.4.0-stage
-    mysql['morpheus_db'] = 'morpheusdb'
-    mysql['morpheus_db_user'] = 'morpheus'
-    mysql['morpheus_password'] = 'password'
-
    **Node 3**
 
    .. code-block:: bash
 
-       appliance_url 'https://morpheus3.localdomain'
-       elasticsearch['es_hosts'] = {'10.100.10.121' => 9300, '10.100.10.122' => 9300, '10.100.10.123' => 9300}
-       elasticsearch['node_name'] = 'morpheus3'
-       elasticsearch['host'] = '0.0.0.0'
-       rabbitmq['host'] = '0.0.0.0'
-       rabbitmq['nodename'] = 'rabbit@node03'
-       mysql['enable'] = false
-<<<<<<< HEAD
-       mysql['host'] = '10.100.10.113'
-=======
-       mysql['host'] = '10.100.10.111'
->>>>>>> 3.4.0-stage
-       mysql['morpheus_db'] = 'morpheusdb'
-       mysql['morpheus_db_user'] = 'morpheus'
-       mysql['morpheus_password'] = 'password'
+      appliance_url 'https://morpheus3.localdomain'
+      elasticsearch['es_hosts'] = {'10.100.10.121' => 9300, '10.100.10.122' => 9300, '10.100.10.123' => 9300}
+      elasticsearch['node_name'] = 'morpheus3'
+      elasticsearch['host'] = '0.0.0.0'
+      rabbitmq['host'] = '0.0.0.0'
+      rabbitmq['nodename'] = 'rabbit@node03'
+      mysql['enable'] = false
+      mysql['host'] = '10.100.10.111'
+      mysql['morpheus_db'] = 'morpheusdb'
+      mysql['morpheus_db_user'] = 'morpheus'
+      mysql['morpheus_password'] = 'password'
 
 .. note::
 
