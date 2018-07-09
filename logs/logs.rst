@@ -1,5 +1,5 @@
 *****
-Logs5 
+Logs5
 ******
 
 .. include:: logging.rst
