@@ -32,7 +32,7 @@ Steps
     [root@app-server-1 ~] rpm -i morpheus-appliance-3.1.5-1.el7.x86_64.rpm
     [root@app-server-1 ~] rpm -i morpheus-appliance-offline-3.1.5-1.noarch.rpm
 
-#. Next you will need to edit the |morpheus| configuration file ``/etc/morpheus/morpheus.rb`` on each node.
+#. Next you will need to edit the |morpheus| configuration file ``/etc/morpheus/morpheus.rb`` TEST on each node.
 
    **Node 1**
 
