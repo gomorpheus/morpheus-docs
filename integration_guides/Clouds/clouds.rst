@@ -15,6 +15,7 @@ Clouds
    Clouds/softlayer.rst
    Clouds/virtualbox.rst
    Clouds/vmware.rst
+   Clouds/macstadium.rst 
    Clouds/vmwfusion.rst
    Clouds/xen.rst
    Clouds/cloudbase-init.rst
