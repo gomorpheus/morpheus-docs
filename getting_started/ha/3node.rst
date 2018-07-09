@@ -61,6 +61,7 @@ Steps
     rabbitmq['host'] = '0.0.0.0'
     rabbitmq['nodename'] = 'rabbit@node02'
     mysql['enable'] = false
+    
 <<<<<<< HEAD
     mysql['host'] = '10.100.10.112'
 =======
