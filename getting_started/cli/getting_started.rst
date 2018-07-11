@@ -15,7 +15,7 @@ There are several commands available when dealing with configuration of remote a
       morpheus remote
 
 
-Getting Started
+Getting Started   
 ^^^^^^^^^^^^^^^^
 To get started with the morpheus CLI its helpful to use morpheus shell. The shell provides a handy shell with history and some autocomplete features for learning to use it. All commands mentioned prefixed with morpheus can be omitted since we are in shell mode.
 
