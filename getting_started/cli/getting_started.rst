@@ -15,7 +15,7 @@ There are several commands available when dealing with configuration of remote a
       morpheus remote
 
 
-Getting Started   
+Getting Started
 ^^^^^^^^^^^^^^^^
 To get started with the morpheus CLI its helpful to use morpheus shell. The shell provides a handy shell with history and some autocomplete features for learning to use it. All commands mentioned prefixed with morpheus can be omitted since we are in shell mode.
 
@@ -234,7 +234,7 @@ As can be seen in the example above, the CLI nicely prompts the user for input o
 
   .. code-block:: text
 
-      morpheus> instances add ubuntu MyInstanceName -c "San Mateo Vmware"  -O layout=105 -O servicePlan=10 -O rootVolume.datastoreId=autoCluster
+       morpheus> instances add ubuntu MyInstanceName -c "San Mateo Vmware"  -O layout=105 -O servicePlan=10 -O rootVolume.datastoreId=autoCluster
 
 This will cause morpheus cli to skip prompting for input on these prompts. All inputs have an equivalent -O option that can be passed. To see what that option argument is simply enter ? on the input prompt to get specifics.
 
