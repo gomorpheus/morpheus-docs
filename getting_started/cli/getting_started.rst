@@ -82,9 +82,10 @@ While the CLI is relatively young there are a ton of features provided with it t
 
 As you can see the cli is split into sections. Each of. these sections has subcommands available for performing certain actions. For example lets look at `morpheus instances`
 
-morpheus> instances
+.. code-block:: text
 
-Usage: morpheus instances [list,add,remove,stop,start,restart,backup,run-workflow,stop-service,start-service,restart-service,resize,upgrade,clone,envs,setenv,delenv] [name]
+    morpheus> instances
+    Usage: morpheus instances [list,add,remove,stop,start,restart,backup,run-workflow,stop-service,start-service,restart-service,resize,upgrade,clone,envs,setenv,delenv] [name]
 
 These commands typically make it easier to figure out what command subsets are available and the CLI documentation can provide helpful information in more depth on each command option.
 
