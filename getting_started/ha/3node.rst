@@ -32,7 +32,7 @@ Steps
     [root@app-server-1 ~] rpm -i morpheus-appliance-3.1.5-1.el7.x86_64.rpm
     [root@app-server-1 ~] rpm -i morpheus-appliance-offline-3.1.5-1.noarch.rpm
 
-#. Next you will need to edit the |morpheus| configuration file on each node.
+#. Next you will need to edit the |morpheus| configuration file ``/etc/morpheus/morpheus.rb`` on each node.
 
    **Node 1**
 
@@ -170,10 +170,6 @@ Once the Rabbit services are up and clustered on all nodes they need to be set t
 
 .. code-block:: bash
 
-   rabbitmqctl set_policy -p morpheus --priority 1 --apply-to all ha ".*" '{"ha-mode":"all"}'
-
-.. code-block:: bash
-
   [root@app-server-2 ~]# rabbitmqctl set_policy -p morpheus --priority 1 --apply-to all ha ".*" '{"ha-mode": "all"}'
 
 The last thing to do is restart the |morpheus| UI on the two nodes that are NOT the SOT node.
@@ -303,13 +299,6 @@ But, a status can report false positives if, say, RabbitMQ is in a boot loop or 
   [root@app-server-1 ~]# morpheus-ctl tail rabbitmq
   [root@app-server-1 ~]# morpheus-ctl tail elasticsearch
 
-Output that would indicate a problem with RabbitMQ would be visible in a StackTrace and resembles this example:
-
-.. image:: /images/ha3node/HA3nodeRabbitMQ.png
-
-And for Elasticsearch:
-
-.. image:: /images/ha3node/HA3nodeElasticSearch.png
 
 To minimize disruption to the user interface, it is advisable to remedy Elasticsearch clustering first. Due to write locking in Elasticsearch it can be required to restart other nodes in the cluster to allow the recovering node to join. Begin by determining which Elasticsearch node became the master during the outage. On one of the two other nodes (not the recovered node):
 
