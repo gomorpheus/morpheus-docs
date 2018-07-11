@@ -6,7 +6,7 @@ Clouds
    Clouds/azure_stack.rst
    Clouds/azure.rst
    Clouds/digitalocean.rst
-   Clouds/esxi.rst
+   .. Clouds/esxi.rst
    Clouds/google.rst
    Clouds/hyperv.rst
    Clouds/nutanix.rst
