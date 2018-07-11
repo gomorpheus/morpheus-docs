@@ -2,6 +2,7 @@ Clouds
 ==============
 
 .. toctree::
+   Clouds/aws/amazon.rst
    Clouds/azure_stack.rst
    Clouds/azure.rst
    Clouds/digitalocean.rst
@@ -14,6 +15,7 @@ Clouds
    Clouds/softlayer.rst
    Clouds/virtualbox.rst
    Clouds/vmware.rst
+   Clouds/macstadium.rst 
    Clouds/vmwfusion.rst
    Clouds/xen.rst
    Clouds/cloudbase-init.rst
