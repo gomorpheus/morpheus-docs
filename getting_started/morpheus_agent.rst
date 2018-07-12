@@ -17,7 +17,7 @@ Key Agent Features
 * Provides a command bus to where |morpheus| doesn't need to get credentials to access a box. Can still run workflows if credentials are changed.
 * SSH agent can be disabled and still get access to the box.
 * Agent can be installed over Cloud Init for internetless situations
-*  **The |morpheus| agent is optional**
+*  **The Morpheus agent is optional**
 * Makes a single connect that's persistence over HTTPs web socket and runs as a service
 * Health checks for Linux (not available on windows)
 * **No inbound Ports**
