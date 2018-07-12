@@ -2,4 +2,4 @@ Deployment
 ==========
 
 .. toctree::
-  Deployments/git.rst
+  Deployments/Git.rst
