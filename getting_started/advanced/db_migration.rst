@@ -13,7 +13,7 @@ Once this is done you can safely export. To access the MySQL shell we will need 
 
 .. code-block:: bash
 
-  [root@app-server-old ~] cat /etc/Morpheus/morpheus-secrets.json | grep morpheus_password
+  [root@app-server-old ~] cat /etc/morpheus/morpheus-secrets.json | grep morpheus_password
   "morpheus_password": "451e122cr5d122asw3de5e1b", <---------------this one
   "morpheus_password": "9b5vdj4de5awf87d",
 
