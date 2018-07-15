@@ -1,5 +1,48 @@
-VMware Hypervisor Console is not displaying
-===========================================
+Console not connecting
+==========================
+
+Protocols
+---------
+
+- SSH
+    The SSH protocol will be used for Linux and OSX platform types
+- RDP
+    The RDP (Remote Desktop) protocol will be used for Windows platform types
+- VNC (VMware Hypervisor Console)
+    The VNC protocol will be used for all platform types in VMware Clouds with the ```Hypervisor Console`` option enabled in cloud settings.
+
+Role Settings
+-------------
+
+- Remote Console (None, Provisioned, Full)
+   None
+    The user will not have access to remote console.
+   Provisioned
+    The user will only have remote console access for Instances they provisioned.
+   Full
+    The user will have remote console access for all instances they have access to.
+- Remote Console: Auto Login (No, Yes)
+   No
+    A login prompt will be present in the console for Linux platforms, and the main login screen will present for Windows platforms.
+   Yes
+    
+
+SSH
+------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+VMware Hypervisor Console
 
 |morpheus| features Remote Console support directly to VMware ESXi hypervisors. To enable this feature a few prerequisites must be met:
 
