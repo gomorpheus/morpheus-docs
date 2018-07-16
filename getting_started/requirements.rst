@@ -18,7 +18,7 @@ Base Requirements
    (HTTPS)
 -  Inbound connectivity access from provisioned vm's and container hosts
    on ports 443 and 80 (needed for agent communication)
--  Internet Connectivity from Appliance (To download from |morpheus| '
+-  Internet Connectivity from Appliance (To download from |morpheus|'
    public docker repositories and virtual image catalog)
 -  Superuser privileges via the sudo command for the user installing the
    |morpheus| Appliance package.
