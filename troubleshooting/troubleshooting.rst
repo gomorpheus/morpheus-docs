@@ -7,7 +7,7 @@ Troubleshooting
 .. include:: uinotloading.rst
 .. include:: blankdashboard.rst
 .. include:: customimage.rst
-.. include:: hypervisorconsole.rst
+.. include:: remoteconsole.rst
 .. include:: restartinstall.rst
 .. include:: variables.rst
 .. include:: exportmorpheuslogs.rst
