@@ -19,3 +19,4 @@ The Instance list contains important information about each instance, including 
 .. include:: instances/creating_instances.rst
 .. include:: instances/instance_details.rst
 .. include:: instances/managing_instances.rst
+.. include:: /troubleshooting/remoteconsole.rst
