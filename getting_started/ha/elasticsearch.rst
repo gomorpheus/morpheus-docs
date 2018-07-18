@@ -60,7 +60,7 @@ Installation
 
 .. note::
 
-	If you manage an ElasticSearch cluster externally from |morpheus|, follow the steps located on the `ElasticSearch <https://www.elastic.co/guide/en/elasticsearch/reference/5.4/setup-upgrade.html/>`_ website to upgrade to the latest version compatible with |morpheus| 
+	If you manage an ElasticSearch cluster externally from |morpheus|, follow the steps located on the `ElasticSearch <https://www.elastic.co/guide/en/elasticsearch/reference/5.4/setup-upgrade.html>`_ website to upgrade to the latest version compatible with |morpheus| 
 
 #. Configuring Elastic
 
