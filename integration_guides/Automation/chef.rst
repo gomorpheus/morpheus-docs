@@ -4,7 +4,7 @@ Chef
 Overview
 ^^^^^^^^
 
-|morpheus| can integrate with one or multiple chef servers to be used for bootstrapping wile provisioning or as tasks in workflows in the Automation section. These workflows can then be ran during provisioning in the provisioning wizard Automation pane, or on an exiting instance by selecting Actions- Run Workflow.  Workflows can also be added to instances in the blueprint and app sections.
+|morpheus| integrates with one or multiple Chef servers to be used for bootstrapping wHile provisioning or as tasks in workflows in the Automation section. These workflows can then be rUn during provisioning in the provisioning wizard Automation pane, or on an existing instance by selecting Actions->Run Workflow. Workflows can also be added to instances in the blueprint and app sections.
 
 .. youtube:: http://www.youtube.com/watch?v=z2BgjH_CtIA
 
