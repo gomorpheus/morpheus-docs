@@ -9,35 +9,33 @@ New Features
 
 * API/CLI: Added "taskPhase" for workflow tasks
 * API/CLI: Added CLI login via token
-* API/CLI: Added optimization for virtual image upload
-* API/CLI: Added ability to update instance createdBy
-* Users: Added API token generation for users via UI
-* Blueprints: Added ACI fields to Blueprint and App wizard
+* API/CLI: Added optimizations for virtual image upload
+* Users: API Access added to User Settings for API & CLI user token generation
+* Blueprints: Added ACI fields to Blueprints and Apps wizards
 * phpIPAM: Added additional information including description, hostname and owner
-* Policies: Added ${tenantSubdomain} variable for naming conventions
-* VMware: Added Vware clone to template support
-* VMware: Switched "Force Guest Customizations" to on by default
+* Policies: Added ``tenantSubdomain`` variable for naming conventions
+* VMware: Added VMware `Clone to Template` Action to create new VMware Template from instance and create Virtual Image record in |morpheus|
+* VMware: Virtual Images: Switched "Force Guest Customizations" to on by default for Windows Virtual Images
 
 
 Fixes
 -----
 
 * Fix for deployment versions not sorting
-* Fix for 'Archive Snapshots' not saving
-* Fix for Alibaba CentOS 6.9 bad layouts
-* Fix for Security Group not working correctly
+* Fix for 'Archive Snapshots' flag on Storage Providers not saving on deactivate
+* Fix for Alibaba CentOS 6.9 layouts
+* Fix for Security Groups with Source Type set to ``All``
 * Fix for Oracle Linux 7.4 failing to provision
-* Fix for host reconfigure modal not loading
-* Fix for i18n missing message
-* Fix for BIND integration
-* Fix for multidisk component not using virtual image locations
-* Fix for 3.4.0 instance name validation
-* Fix for instance type search limited to selected category
-* Fix for adding disks requiring logs
-* Fix for volume addition requiring infrastructure
-* Fix for private hosts visable to tenants
-* Fix for changing plan not updating volume
-* Fix for F5 Load Balancer - timeout on setting up instance
+* Fix for reconfigure modal not loading in Infrastructure -> Hosts Section
+* Fix for BIND DNS integration
+* Fix for multidisk component not using Virtual Image locations
+* Fix for Instance Name uniqueness validation
+* Fix for Instance Type search limited to selected category
+* Fix for adding disks requiring ``Logs: Read or Full`` Role permissions
+* Fix for volume addition requiring ``Infrastructure - Storage: Read or Full`` Role permissions
+* Fix for Master Tenant private KVM Host Subtenant visibility
+* Fix for changing plan not updating volume size for ``Nutanix`` Instance Type
+* Fix for F5 Load Balancer timeout on setting up instance
 * Fix for Oracle Cloud - disk issues
 * Fix for AVI load balancer creation
 * Fix for load balancer not being set up on provision
@@ -54,7 +52,7 @@ Fixes
 * Fix for ELB form not rendering
 * Fix for LB unable to setup some LB types on Instances
 * Fix for Log parse errorany
-* Fix for VMware clone to image - not surfacing failures
+* Fix for VMware Clone to Image - not surfacing failures
 * Fix for Resource Pool issues
 * Fix for Load Balancer sticky mode & SSL Cert not saving
 * Fix for Load Balancer issues
