@@ -122,11 +122,11 @@ NAME PATTERN
     ${cloudName}
     ${cloudCode}
     ${type}
-    ${accountID}
+    ${accountId}
     ${account}
     ${accountType}
     ${platform}
-    ${userID}
+    ${userId}
     ${userName}
     ${userInitials}
     ${provisionType}

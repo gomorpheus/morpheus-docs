@@ -42,13 +42,13 @@ Installation
 
    .. code-block:: bash
 
-    wget https://download.elastic.co/elasticsearch/elasticsearch/elasticsearch-1.7.3.noarch.rpm
+    wget https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-5.6.10.rpm
 
    Then install it in the usual CentOS way with the rpm command like this:
 
    .. code-block:: bash
 
-    sudo rpm -ivh elasticsearch-1.7.3.noarch.rpm
+    sudo rpm -ivh elasticsearch-5.6.10.noarch.rpm
 
    This results in Elasticsearch being installed in /usr/share/elasticsearch/ with its configuration files placed in /etc/elasticsearch and its init script added in /etc/init.d/elasticsearch.
 
@@ -57,6 +57,10 @@ Installation
    .. code-block:: bash
 
     sudo systemctl enable elasticsearch.service
+
+.. note::
+
+	If you manage an ElasticSearch cluster externally from |morpheus|, follow the steps located on the `ElasticSearch <https://www.elastic.co/guide/en/elasticsearch/reference/5.4/setup-upgrade.html>`_ website to upgrade to the latest version compatible with |morpheus| 
 
 #. Configuring Elastic
 
