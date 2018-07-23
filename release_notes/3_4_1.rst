@@ -9,53 +9,38 @@ New Features
 
 * API/CLI: Added "taskPhase" for workflow tasks
 * API/CLI: Added CLI login via token
-* API/CLI: Added optimizations for virtual image upload
+* API/CLI: Added optimizations for Virtual Image uploads
+* Chef: Expanded OS support for Puppet Agent Install and Integration.
 * Users: API Access added to User Settings for API & CLI user token generation
 * Blueprints: Added ACI fields to Blueprints and Apps wizards
 * phpIPAM: Added additional information including description, hostname and owner
-* Policies: Added ``tenantSubdomain`` variable for naming conventions
-* VMware: Added VMware `Clone to Template` Action to create new VMware Template from instance and create Virtual Image record in |morpheus|
+* Policies: Added variable ``<%= tenantSubdomain %>`` for Tenant SubDomain value in scripts and naming policies. The SubDomain is used for creating a direct login url in Identity Sources or as a login prefix to identify the tenant i.e. 'subdomain\username'
+* VMware: Added `Clone to Template` Instance Action to create new VMware Templates from Instances with corresponding |morpheus| Virtual Image record.
 * VMware: Virtual Images: Switched "Force Guest Customizations" to on by default for Windows Virtual Images
 
 
 Fixes
 -----
 
-* Fix for deployment versions not sorting
-* Fix for 'Archive Snapshots' flag on Storage Providers not saving on deactivate
+* Fix for Deployment versions not sorting
+* Fix for disabling 'Archive Snapshots' flag on Storage Providers not saving. When executing backups, the 'Archive Snapshots' flag enables ovf export of VMware snapshots to default or specified backup Storage Provider and removes the snapshot in VMware. If disabled, backup jobs will only trigger and leave snapshots in VMware.
 * Fix for Alibaba CentOS 6.9 layouts
+* Fix for Azure: ARM Templates copyIndex parsing error
 * Fix for Security Groups with Source Type set to ``All``
-* Fix for Oracle Linux 7.4 failing to provision
 * Fix for reconfigure modal not loading in Infrastructure -> Hosts Section
 * Fix for BIND DNS integration
 * Fix for multidisk component not using Virtual Image locations
-* Fix for Instance Name uniqueness validation
+* Fix for Instance Name uniqueness validation in provisioning Wizard
 * Fix for Instance Type search limited to selected category
 * Fix for adding disks requiring ``Logs: Read or Full`` Role permissions
 * Fix for volume addition requiring ``Infrastructure - Storage: Read or Full`` Role permissions
 * Fix for Master Tenant private KVM Host Subtenant visibility
 * Fix for changing plan not updating volume size for ``Nutanix`` Instance Type
-* Fix for F5 Load Balancer timeout on setting up instance
-* Fix for Oracle Cloud - disk issues
 * Fix for AVI load balancer creation
-* Fix for load balancer not being set up on provision
 * Fix for updating group zone doesn't remove
-* Fix for Openstack instance security group
-* Fix for F5 pool add fail
-* Fix for Debian 8.8 seed issue
-* Fix for CentOS 7.3 seed issues
 * Fix for Issue with Blueprints permission
-* Fix for UserSource External missing details
-* Fix for F5 not usable until 10 minutes after adding
-* Fix for Haproxy SSL Enabled not set
-* Fix for Azure Form not rendering
-* Fix for ELB form not rendering
-* Fix for LB unable to setup some LB types on Instances
 * Fix for Log parse errorany
 * Fix for VMware Clone to Image - not surfacing failures
-* Fix for Resource Pool issues
-* Fix for Load Balancer sticky mode & SSL Cert not saving
-* Fix for Load Balancer issues
 * Fix for Network Crud issues
 * Fix for Cloud 'User Data' not saving on add
 * Fix for logs being ordered by descending
