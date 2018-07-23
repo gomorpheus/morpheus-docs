@@ -1,0 +1,46 @@
+v3.4.1
+=======
+
+Release date: 7/19/2018
+
+New Features
+-------------
+
+
+* API/CLI: Added "taskPhase" for workflow tasks
+* API/CLI: Added CLI login via token
+* API/CLI: Added optimizations for Virtual Image uploads
+* Chef: Expanded OS support for Puppet Agent Install and Integration.
+* Users: API Access added to User Settings for API & CLI user token generation
+* Blueprints: Added ACI fields to Blueprints and Apps wizards
+* phpIPAM: Added additional information including description, hostname and owner
+* Policies: Added variable ``<%= tenantSubdomain %>`` for Tenant SubDomain value in scripts and naming policies. The SubDomain is used for creating a direct login url in Identity Sources or as a login prefix to identify the tenant i.e. 'subdomain\username'
+* VMware: Added `Clone to Template` Instance Action to create new VMware Templates from Instances with corresponding |morpheus| Virtual Image record.
+* VMware: Virtual Images: Switched "Force Guest Customizations" to on by default for Windows Virtual Images
+
+
+Fixes
+-----
+
+* Fix for Deployment versions not sorting
+* Fix for disabling 'Archive Snapshots' flag on Storage Providers not saving. When executing backups, the 'Archive Snapshots' flag enables ovf export of VMware snapshots to default or specified backup Storage Provider and removes the snapshot in VMware. If disabled, backup jobs will only trigger and leave snapshots in VMware.
+* Fix for Alibaba CentOS 6.9 layouts
+* Fix for Azure: ARM Templates copyIndex parsing error
+* Fix for Security Groups with Source Type set to ``All``
+* Fix for reconfigure modal not loading in Infrastructure -> Hosts Section
+* Fix for BIND DNS integration
+* Fix for multidisk component not using Virtual Image locations
+* Fix for Instance Name uniqueness validation in provisioning Wizard
+* Fix for Instance Type search limited to selected category
+* Fix for adding disks requiring ``Logs: Read or Full`` Role permissions
+* Fix for volume addition requiring ``Infrastructure - Storage: Read or Full`` Role permissions
+* Fix for Master Tenant private KVM Host Subtenant visibility
+* Fix for changing plan not updating volume size for ``Nutanix`` Instance Type
+* Fix for AVI load balancer creation
+* Fix for updating group zone doesn't remove
+* Fix for Issue with Blueprints permission
+* Fix for Log parse errorany
+* Fix for VMware Clone to Image - not surfacing failures
+* Fix for Network Crud issues
+* Fix for Cloud 'User Data' not saving on add
+* Fix for logs being ordered by descending
