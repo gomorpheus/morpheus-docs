@@ -22,27 +22,44 @@ New Features
 * API/CLI: Added CLI login via token
 * API/CLI: Added additional API documentation
 * API/CLI: Added optimization for virtual image upload
-* Avamar: Added Avamar Backup Integration
+* API/CLI: Updated instance "createdBy"
+* API/CLI: Added metadata for instances
+* API/CLI: Added support for backups
+* Backups: Show the job tied to the backup
+* Backups: Added inputs for the Object Store Backup type
+* Backups: Added "run all backups" button to the jobs detail page
+* Backups: Added validation cron expression on save
+* Backups: Removed backup "Target" if the backup "Type" doesn't support offloading
+* Backups: Added a backup admin setting for Default Schedule
+* Backups: Added missing info for backup details (path, destination, retention count)
+* Backups: Added permission for Backup Services
+* Backups: Wizard updates
+* Backups: Job Details is now a link to the job details page
+* Backups: Added retention count to job details
+* Backups: Moved backup providers settings to backup services section
 * Blueprints: Added ACI fields to Blueprint and App wizard
 * Blueprints: Added VMware Clone to blueprint support
-* Cloud Foundry: Added inventiry of applications during cloud sync
+* Cloud Foundry: Added inventory of applications during cloud sync
 * Cloud Foundry: Added support scaling
 * Cloud Foundry: Added sync for build packs
 * Cloud Foundry: Added custom route
 * Datatstores: Added pricing
+* Execute Schedule: Added input validation
 * KVM: Added KVM migration workflow
 * KVM: Added CEPH storage support
+* KVM: Backup/restore is now possible for local datastores and LVM
 * Library: Debian 9.4 qcow2 image added
+* Instances: Added backup tab details (backup type, backup provider, DB, path if a file backup) to instance detail page
 * Integrations: Added ARM template
+* Integrations: Added icons for Zerto, Commvault, Veeam
 * Option Lists: Added a public or private visibility toggle to option lists from master tenant only so subtenants can use generated lists for their own form inputs
 * Option Lists: Added realtime checkbox
 * Oracle: Added support for different storage types
 * Oracle: Added Oracle Cloud library nodes
 * Oracle: Added ability to upload a local image and provision to Oracle Cloud
-* Oracle: Added backup/restore support
-* Oracle: Added clone instance support
-* Oracle: Added pricing data
-* PCF: Added ability to assign pre-existing roles to users
+* phpIPAM: Added additional details (description, hostname, owner)
+* Policies: Add ${tenantSubdomain} variable for naming conventions
+* Policies: Added backups policy
 * Provisioning: Added policy to have "Create User" in the provisioning wizard unchecked by default
 * Provisioning: Added host OS, Type and Status filters
 * Provisioning: Added Resource Pool Component to Instance, App, and Host wizard
@@ -51,11 +68,18 @@ New Features
 * Roles: Added custom option to roles so they populate as full rather than none by default
 * SAML: Added response validation
 * ServiceNow: Added credential validation
+* Storage: Renamed "Object Stores" to "Providers"
+* Storage Providers: Added details page that allows you to browse, upload and delete files
 * Storage Providers: Verify permissions to path on save added
+* Storage Providers: Tenants cannot create local storage providers
+* Storage Providers: Retention policy
+* Storage Providers: Added option to create a bucket
 * Users: Subtenant users will no longer be able to login from the main login page without specifying their subdomain
 * Users: Added API token generation for users via UI
-* Virtustream: Added ability to provision from a templated sync'd from Virtustream
-* VMware: Added Vware clone to template support
+* Virtual Images: Default "force guest customizations" to "on"
+* VMware: Added VMware clone to template support
+* VMware: Backup lease timeouts
+* XenServer: Backups don't offload backup
 
 
 Fixes
@@ -115,7 +139,7 @@ Fixes
 * Fix for instance type search limited to selected category
 * Fix for adding disks requiring logs
 * Fix for volume addition requiring infrastructure
-* Fix for private hosts visable to tenants
+* Fix for private hosts visible to tenants
 * Fix for AD login when user OU changes
 * Fix for changing plan not updating volume
 * Fix for order of logs display
@@ -129,3 +153,48 @@ Fixes
 * Fix for VMware 'Clone to Image' not working for stopped VM's
 * Fix for VMware 'Clone to Image' not working for Ubuntu14
 * Fix for billing API
+* Fix for legacy backup schedule issue
+* Fix for backup wizard
+* Fix for App wizard naming issue
+* Fix for Oracle Cloud Virtual Image icon missing
+* Fix for Venafi integration details page
+* Fix for invalid cron string issue
+* Fix for cron builder not working
+* Fix for AVI LB monitors field being blank
+* Fix for backup destination issue
+* Fix for backup jobs paging issue
+* Fix for image builder configuration issue
+* Fix for storage providers UI issue
+* Fix for backup services renaming permission to READ in user roles
+* Fix for job menu active when viewing Job Details page
+* Fix for backup jobs paging/search not working
+* Fix for hiding ACTIONS button for backup services for user that has READ access
+* Fix for issue parsing execute schedule cron expressions
+* Fix for backup jobs schedule not being saved
+* Fix for backup job code not set when created by cloning job on provision
+* Fix for Veeam integration not being checked by default
+* Fix for Blueprints missing backup locks
+* Fix for backup job schedule not saved/displayed on provision
+* Fix for Veeam integration showing as internal integration
+* Fix for backup job scheduling issue 
+* Fix for instance details page backups tab
+* Fix for backup wizard typehead popup issue
+* Fix for Veeam integration not working
+* Fix for Veeam validation issue
+* Fix for backup jobs page respecting backup permissions
+* Fix for error deleting Cloud Foundry service
+* Fix for Veeam integration modal not loading
+* Fix for Commvault integration not being check by default
+* Fix for provision clone job issue
+* Fix for existing backup integrations not migrating properly
+* Fix for view Backup Job error
+* Fix for i18n missing label
+* Fix for backup not showing error when trying to delete a schedule in use
+* Fix for scheduled backup disabled error incorrectly displaying
+* Fix for edit backup job issue
+* Fix for clone backup job opening a stuck module
+* Fix for execute backup schedule issue
+* Fix for execute backup schedule page title
+* Fix for backup name not defaulting to instance name when left blank
+* Fix for backup job code not set when created during the provisioning wizard
+* Fix for backup job "Next" column not showing
