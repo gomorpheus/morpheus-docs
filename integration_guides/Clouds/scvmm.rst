@@ -28,5 +28,3 @@ Add a SCVMM Cloud
     Path for Virtual Disks. ex: ``c:\VirtualDisks``
 
 #. The Cloud can now be added to a Group or configured with additional Advanced options.
-
-.. .. include:: /integration_guides/advanced_options.rst
