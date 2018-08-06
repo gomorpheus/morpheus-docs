@@ -1,5 +1,5 @@
 Advanced Options
-----------------
+^^^^^^^^^^^^^^^^
 
 DOMAIN
   Specify a default domain for instances provisioned to this Cloud.
@@ -34,7 +34,7 @@ API PROXY
   Required when a Proxy Server blocks communication between the |morpheus| Appliance and the Cloud. Proxies can be added in the `Infrastructure -> Networks -> Proxies` tab.
 
 Provisioning Options
---------------------
+^^^^^^^^^^^^^^^^^^^^
 
 PROXY
   Required when a Proxy Server blocks communication between an Instance and the |morpheus| Appliance. Proxies can be added in the `Infrastructure -> Networks -> Proxies` tab.
