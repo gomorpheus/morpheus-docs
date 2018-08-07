@@ -22,7 +22,9 @@ EDIT
 REFRESH
   Force a sync with the Cloud. Last sync date, time and duration is shown under the Cloud name.
 DELETE
-  Delete the Cloud from |morpheus| IMPORTANT: All Instances and managed Hosts and VM's must be removed prior to deleting a cloud.
+  Delete the Cloud from |morpheus|
+
+.. IMPORTANT:: All Instances and managed Hosts and VM's must be removed prior to deleting a cloud.
 
 .. NOTE:: Not all tabs are available for all Cloud Types.
 
