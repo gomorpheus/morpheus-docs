@@ -107,11 +107,19 @@ Keep the default settings for client and server components of WinRM, or customiz
 
 Kerberos authentication will also need to be configured on the |morpheus| appliance to support Windows domain accounts to access the remote host with WINRM_INTERNAL connection type.
 
-On the |morpheus| appliance the krb5-user package must be installed. For Ubuntu the command is as follows:
+On the |morpheus| appliance the krb5-user package must be installed.
+
+For Ubuntu the command is as follows:
 
 .. code-block:: bash
 
     $ sudo apt-get install krb5-user
+
+For Centos the command is as follows:
+
+.. code-block:: bash
+
+    $ sudo yum install krb5-workstation pam_krb5 -y
 
 Create a file in /etc called krb5.conf and replace the domain name with the name of the domain to be used. In this case we used |morpheus| .com as the domain.
 
