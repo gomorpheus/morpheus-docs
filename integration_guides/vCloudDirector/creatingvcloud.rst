@@ -54,7 +54,7 @@ Create a new machine in VMware vCenter and install a base version of your prefer
 #.	Ensure you have set a root password
 #.	Install cloud-init by running sudo apt install cloud-init
 #.	Install cloud-utils-growpart sudo apt install cloud-utils
-#.	Install desire hypervisor drivers (Virto, Open-VM Tools)
+#.	Install desired hypervisor drivers (Virto, Open-VM Tools)
 #.	Install git by running sudo apt install git
 #.	As Debian 9 includes network manager ensure this is disabled. Change the
       .. code-block:: bash
