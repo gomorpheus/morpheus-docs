@@ -58,9 +58,12 @@ Create a new machine in VMware vCenter and install a base version of your prefer
 #.	Install git by running sudo apt install git
 #.	As Debian 9 includes network manager ensure this is disabled. Change the
       .. code-block:: bash
+
         /etc/NetworkManager/NetworkManager.conf
     file so it is set to
+
       .. code-block:: bash
+
         managed=false
 
 
