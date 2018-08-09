@@ -8,21 +8,31 @@ The Network Services section allows you to add and manage IPAM, DNS, and Service
 
 The following integrations are currently supported:
 
+Networking
+
+* Cisco ACI
+* VMWare NSX
+
 IPAM
 
 * Infoblox
-* Bluecat (2.11)
+* Bluecat
+* phpIPAM
 
 DNS
 
 * Microsoft DNS
 * Power DNS
 * Route 53
-* Bind DNS
 
 Service Registry
 
 * Consul
+
+Security
+
+* Cisco ACI
+
 
 Add a Service
 ^^^^^^^^^^^^^
@@ -60,12 +70,6 @@ PowerDNS
 * API Host
 * Token
 
-BindDNS
-
-* Host
-* Username
-* Password
-* BindKey
 
 Route 53
 
