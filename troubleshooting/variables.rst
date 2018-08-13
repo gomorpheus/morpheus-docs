@@ -50,6 +50,11 @@ Instance Naming Policy example: ``${userInitials}-${cloudCode}-${platform == 'wi
 	instance.configGroup: <%=instance.configGroup%>
 	instance.configRole: <%=instance.configRole%>
 	instance.containers[0]: <%=instance.containers[0].containerTypeName%>
+	instance.createdBYUsername: <%=instance.createdByUsername%>
+	instance.createdByEmail: <%=instance.createdByEmail %>
+	instance.createdByFirstName: <%=instance.createdByFirstName%>
+	instance.createdByLastName: <%=instance.createdByLastName%>
+	instance.createdById: <%=instance.createdById%>
 	container.containerTypeName: <%=container.containerTypeName%>
 	container.containerTypeCode: <%=container.containerTypeCode%>
 	container.containerTypeShortName: <%=container.containerTypeShortName%>
