@@ -6,16 +6,60 @@ Overview
 
 Clouds are integrations or connections to public, private, hybrid clouds, or bare metal servers. Clouds can belong to many groups and contain many hosts. The clouds view a includes search feature and provides the option to edit, delete, and add new clouds. |morpheus| supports most Public Clouds and Private Clouds.
 
+Supported Cloud Types
+^^^^^^^^^^^^^^^^^^^^^
+
+* Alibaba Cloud
+* Amazon
+* Azure (Public)
+* Azure Stack (Private)
+* Bluemix
+* Bluemix Platform
+* Cloud Foundry
+* Dell
+* DigitalOcean
+* Google Cloud
+* HPE
+* HPE OneView
+* Hyper-V
+* Kubernetes
+* MacStadium
+* Metacloud
+* Morpheus (generic)
+* Nutanix
+* Open Telekom Cloud
+* OpenStack
+* Oracle Public Cloud
+* Oracle VM
+* Platform 9
+* SCVMM
+* SoftLayer
+* Supermicro
+* UCS
+* UpCloud
+* VMWare ESXi
+* VMware Fusion
+* VMware vCenter
+* VMware vCloud Air
+* VMware vCloud Director
+* VirtualBox
+* XenServer
+
+Information on each cloud type can be found in the integration-guide_ section.
+
 Creating Clouds
 ---------------
 
-Clouds can be added from `Infrastructure -> Clouds` or in `Infrastructure -> Groups -> (select Group) -> Clouds`.
-Details on required credentials and settings can be found in the Cloud integrations guides.
+Clouds can be added from `Infrastructure -> Clouds` or in `Infrastructure -> Groups -> (select Group) -> Clouds`. Individual Guides for adding specific Cloud Types can be found in the integration-guide_ section.
 
 Cloud Detail View
 -----------------
 
-In the Cloud List View, select the name of a Cloud to display the clouds Detail View.
+The Cloud Detail view shows metrics on health, sync status, current month costs, average monthly costs, resource utilization statistics, and resource counts for Container Hosts, Hypervisors, Bare Metal, Virtual Machines, and Unmanaged resources.
+
+.. image:: /images/infrastructure/clouds/clouddetailview.png
+
+To view the Cloud List View, select the name of a Cloud to display the clouds Detail View.
 
 EDIT
   Edit the setup configuration of the Cloud.
@@ -24,7 +68,10 @@ REFRESH
 DELETE
   Delete the Cloud from |morpheus|
 
-.. IMPORTANT:: All Instances and managed Hosts and VM's must be removed prior to deleting a cloud.
+.. IMPORTANT:: All Instances and managed Hosts and VM's associated with the Cloud must be removed prior to deleting a cloud.
+
+Cloud Detail Tabs
+^^^^^^^^^^^^^^^^^
 
 .. NOTE:: Not all tabs are available for all Cloud Types.
 
@@ -46,10 +93,9 @@ Resource Pools
   Displays Resource Pools synced from the Cloud.
 Policies
   Manages Policies enforced on the Cloud.
-
-+ Container Host
+:guilabel:`+ Container Host`
   Provisions a Docker host into the Cloud, or adds an existing Docker Host (manual) to the Cloud. KVM hosts are also available for |morpheus| and Bare Metal cloud types.
-+ Hypervisor
+:guilabel:`+ Hypervisor`
   Add an existing Hypervisor to the Cloud. Not available for all Cloud types.
 
 Deleting Clouds
@@ -62,5 +108,3 @@ To delete a cloud:
 #. Click the Delete icon of the cloud to delete.
 
 .. IMPORTANT:: All Instances and managed Hosts and VM's must be removed prior to deleting a cloud. To remove Instances, Hosts and VM's from |morpheus| without deleting them in the actual Cloud, select Delete on the Host or VM, unselect "Remove Infrastructure" and select "Remove Associated Instances" if Instance are associated with the Hosts or VMs.
-
-.. add integration guide links
