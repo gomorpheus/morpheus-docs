@@ -18,7 +18,7 @@ Solutions:
 
         morpheus-ctl tail morpheus-ui
 
-      .. NOTE:: After running `morpheus-ctl start morpheus-ui`, the |morpheus| ui takes around 3 minutes to run depending on hardware.
+  .. NOTE:: After running `morpheus-ctl start morpheus-ui`, the |morpheus| ui takes around 3 minutes to run depending on hardware.
 
   #. The morpheus-ui was not fully stopped before reconfigure, or not started after reconfigure
 
