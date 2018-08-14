@@ -116,5 +116,5 @@ Available Cloud types:
 * Kubernetes
 * Cloud Foundry
 
-.. include:: settings/whitelabel.rst
-.. include:: settings/license.rst
+.. include:: whitelabel.rst
+.. include:: license.rst
