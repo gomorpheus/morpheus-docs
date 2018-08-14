@@ -4,20 +4,19 @@
 Integration Guides
 ******************
 
-.. toctree::
-
-  Automation/automation.rst
-  Backups/backups.rst
-  Clouds/clouds.rst
-  Containers/containers.rst
-  Deployments/deployment.rst
-  DNS/DNS.rst
-  IdentityManagement/IdentityManagement.rst
-  LoadBalancers/LoadBalancers.rst
-  Logs/Logs.rst
-  Monitoring/Monitoring.rst
-  Networking/networking.rst
-  service_discovery/service_discovery.rst
-  storage/storage.rst
-  ITSM/ITSM.rst
+.. include:: Automation/automation.rst
+.. include:: Backups/backups.rst
+.. include:: Clouds/clouds.rst
+.. include:: Containers/containers.rst
+.. include:: Deployments/deployment.rst
+.. include:: DNS/DNS.rst
+.. include:: IdentityManagement/IdentityManagement.rst
+.. include:: LoadBalancers/LoadBalancers.rst
+.. include:: Logs/Logs.rst
+.. include:: Monitoring/Monitoring.rst
+.. include:: Networking/networking.rst
+.. include:: service_discovery/service_discovery.rst
+.. include:: storage/storage.rst
+.. include:: ITSM/ITSM.rst
+.. include:: tableofcontents.rst
 .. .. include:: Security/security.rst
