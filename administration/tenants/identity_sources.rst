@@ -14,5 +14,5 @@ first log in users are assigned the appropriate role.
 
 .. .image:: /images/administration/identity_sources.png
 
-.. include:: tenants/ad.rst
-.. include:: tenants/onelogin.rst
+.. include:: ad.rst
+.. include:: onelogin.rst
