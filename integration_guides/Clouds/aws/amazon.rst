@@ -4,7 +4,7 @@ AWS
 Overview
 --------
 
-AWS is the Amazon public cloud, offering a full range of services and features across the globe in various datacenters.   AWS provides businesses with a flexible, highly scalable, and low-cost way to deliver a variety of services using open standard technologies as well as proprietary solutions. This section of documentation will help you get |morpheus| and AWS connected to utilize the features below:
+AWS is the Amazon public cloud, offering a full range of services and features across the globe in various datacenters. AWS provides businesses with a flexible, highly scalable, and low-cost way to deliver a variety of services using open standard technologies as well as proprietary solutions. This section of documentation will help you get |morpheus| and AWS connected to utilize the features below:
 
 Features
 --------
@@ -27,34 +27,35 @@ Features
 * ELBs
 * ALBs
 * Route53
-* IAM Pofiles
+* IAM Profile sync and assignment
 * Network Sync
-* Security Group Sync
+* Security Group Sync (selectable when provisioning, will not appear in Security Groups section)
 * Pricing Sync
 * Assign Elastic IP's
 * Network Pools
+* MetaData Tag creation
 
 |morpheus| can provide a single pane of glass and self-service portal for managing instances scattered across both AWS and private cloud offerings like VMWare and Hyper-V.
 
 Requirements
 ------------
 
-* AWS IAM Security Credentials
-** Access Key
-** Secret Key
-** Sufficient User Privileges (see Required IAM Policies section for more info)
-* Security Groups
-** Typical Inbound ports open from |morpheus| Appliance: 22, 5985, 3389
-** Typical Outbound to |morpheus| Appliance: 80, 443
-*** These are required for |morpheus| agent install, communication, and remote console access for windows and linux. Other configurations, such as docker instances, will need the appropriate ports opened as well. *Cloud-init Agent Install mode does not require access to port 22.
-* Network(s)
-** Public IP assignment required for Agent install, Script Execution, and Console if the |morpheus| Appliance is not able to communicate with AWS instances private ip's.
+AWS IAM Security Credentials
+  Access Key
+  Secret Key
+  Sufficient User Privileges (see Required IAM Policies section for more info)
+Security Group Configuration for Agent Install, Script Execution, and Remote Console Access
+  Typical Inbound ports open from |morpheus| Appliance: 22, 5985, 3389
+  Typical Outbound to |morpheus| Appliance: 80, 443
 
-NOTE: Each AWS Cloud in |morpheus| is scoped to an AWS Region, and multiple AWS Clouds can be added and even Grouped. Verify Security groups are properly configured in all Regions |morpheus| will scope to.
+  .. NOTE:: These are required for |morpheus| agent install, communication, and remote console access for windows and linux. Other configurations, such as docker instances, will need the appropriate ports opened as well. Cloud-init Agent Install mode does not require incoming access for port 22.
+Network(s)
+  IP assignment required for Agent install, Script Execution, and Console if the |morpheus| Appliance is not able to communicate with AWS instances private ip's.
+
+.. NOTE:: Each AWS Cloud in |morpheus| is scoped to an AWS Region, and multiple AWS Clouds can be added and even Grouped. Verify Security groups are properly configured in all Regions |morpheus| will scope to.
 
 Creating an AWS Cloud
 ---------------------
-
 
 #. Navigate to `Infrastructure -> Clouds`
 #. Select `+ Create Cloud`
@@ -81,17 +82,15 @@ Creating an AWS Cloud
      Off
       Existing EC2 Instances will not be inventoried
 
-     ..NOTE:: Cloud Watch must be configured in AWS for |morpheus| to collect Memory and Storage utilization metrics on inventoried EC2 instances. 
+     ..NOTE:: Cloud Watch must be configured in AWS for |morpheus| to collect Memory and Storage utilization metrics on inventoried EC2 instances.
 
 #. The AWS cloud is ready to be added to a group and saved. Additional configuration options available:
-
-Advanced Options
 
 IMAGE TRANSFER STORE
   S3 bucket for Image transfers, required for migrations into AWS.
 
-.. .. include:: /integration_guides/advanced_options.rst
+.. include:: /integration_guides/advanced_options.rst
 
 .. NOTE:: All fields and options can be edited after the Cloud is created.
 
-.. include:: aws/iampolicies.rst
+.. include:: /integration_guides/Clouds/aws/iampolicies.rst

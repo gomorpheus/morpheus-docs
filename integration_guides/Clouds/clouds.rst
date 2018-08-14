@@ -1,5 +1,7 @@
+.. _CloudGuidesAnchor:
+
 Clouds
-==============
+======
 
 .. toctree::
    Clouds/aws/amazon.rst
