@@ -21,7 +21,7 @@ User Role settings determine if the Console tab or ``Open Console`` Action appea
      Yes
       |morpheus| will automatically login to the remote console using the credentials defined on the VM or Host. For provisioned Instances, the credentials are defined either from the credentials defined on the Virtual Image used, added via cloud-init or VMware Tools using the global cloud-init settings (Administration - Provisioning) or the Linux or Windows settings defined in User Settings. For Instances created when converting a VM or Host to managed, the credentials are entered when converting to managed. These credentials can be changed by editing the underlying VM or Host of the Instance.
 
-      .. NOTE:: If the credentials defined on the VM or Host are not valid, and the ``Remote Console: Auto Login`` Role setting is set to ``Yes``, the console will not be able to connect and no console window or login prompt will be presented. The credentials on the underlying VM or Host must be edited or ``Remote Console: Auto Login`` Role setting can be set to ``No`` for a login prompt to present in the console. Credentials cannot be changed from an Instance view, only in the Infrastructure VM or Host view.
+.. NOTE:: If the credentials defined on the VM or Host are not valid, and the ``Remote Console: Auto Login`` Role setting is set to ``Yes``, the console will not be able to connect and no console window or login prompt will be presented. The credentials on the underlying VM or Host must be edited or ``Remote Console: Auto Login`` Role setting can be set to ``No`` for a login prompt to present in the console. Credentials cannot be changed from an Instance view, only in the Infrastructure VM or Host view.
 
 Protocols
 ---------
