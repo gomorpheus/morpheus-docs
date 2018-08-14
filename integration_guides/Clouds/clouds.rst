@@ -27,7 +27,7 @@ Clouds
    Clouds/advanced_options.rst
    Clouds/centos7template.rst
    .. Clouds/alibabaCloud.rst
-   .. Clouds/macstadium.rst
+   Clouds/macstadium.rst
    .. Clouds/metaCloud.rst
    .. Clouds/oraclecloud.rst
    Clouds/ucs_manager.rst

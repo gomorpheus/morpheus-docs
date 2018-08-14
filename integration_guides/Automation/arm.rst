@@ -1,5 +1,5 @@
 ARM Blueprints
--------------
+--------------
 
 Azure Resource Manager Blueprints
 

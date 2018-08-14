@@ -80,7 +80,7 @@ Old and New Portal Naming Conventions:
 +~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~------+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-------+
 
 Creating an Azure Active Directory Application
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+'''''''''''''''''''''''''''''''''''''''''''''''
 
 If you do not have an existing Azure Active Directory application for |morpheus| , you will need to create a new on by:
 
@@ -102,7 +102,7 @@ If you do not have an existing Azure Active Directory application for |morpheus|
 Now that we have (or already had) our AD app, we will gather the credentials required for the |morpheus| Azure integration.
 
 Tenant ID/Directory ID
-^^^^^^^^^^^^^^^^^^^^^^
+'''''''''''''''''''''''
 
 While still in the Active Directory Section:
 
@@ -113,7 +113,7 @@ While still in the Active Directory Section:
    .. image:: /images/azure/newazure-044cf.png
 
 Client ID/Application ID
-^^^^^^^^^^^^^^^^^^^^^^^^
+'''''''''''''''''''''''''
 
 #. Select App Registrations
 #. Select your Active Directory Application
@@ -123,7 +123,7 @@ Client ID/Application ID
    .. image:: /images/azure/newazure-3c6fa.png
 
 Client Secret/Key Value
-^^^^^^^^^^^^^^^^^^^^^^^
+''''''''''''''''''''''''
 
 While still in your Active Directory Application:
 
@@ -141,7 +141,7 @@ While still in your Active Directory Application:
 You now have the 3 Active directory credentials required for |morpheus| Azure cloud integration.
 
 Subscription ID
-^^^^^^^^^^^^^^^
+''''''''''''''''
 
 The last credential required for the |morpheus| Azure cloud integration is the Azure Subscription ID
 
@@ -153,7 +153,7 @@ The last credential required for the |morpheus| Azure cloud integration is the A
    .. image:: /images/azure/newazure-e446f.png
 
 Make Azure Active Directory Application owner of Subscription
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
 The Active Directory Application used needs to be an owner of the subscription used for the Azure |morpheus| cloud integration.
 
@@ -217,12 +217,12 @@ Your Azure Cloud will be created.
    .. image:: /images/azure/newazure-2a7fe.png
 
 Creating Resources in Azure
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~---
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 If you do not have existing Network Security Groups, Virtual Networks, or Storage Accounts, you can create them by following the steps below:
 
 Create a Network Security Group
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+'''''''''''''''''''''''''''''''
 
 #. In the main Azure toolbar, select the right arrow at the bottom of the toolbar (if collapsed) and search for and select Network Security Groups.
 
@@ -239,7 +239,7 @@ Create a Network Security Group
 #. Configure inbound and outbound rules for the security group. Ports 80 (http), 443 (https) 22 (ssh) and 5985 (winrm) need to be open to and from the |morpheus| appliance.
 
 Create a Virtual Network
-^^^^^^^^^^^^^^^^^^^^^^^^
+'''''''''''''''''''''''''
 
 #. In the main Azure toolbar, select the right arrow at the bottom of the toolbar (if collapsed) and search for and select Virtual Networks.
 
@@ -254,7 +254,7 @@ Create a Virtual Network
    .. image:: /images/azure/newazure-a3066.png
 
 Create a Storage Account
-^^^^^^^^^^^^^^^^^^^^^^^^
+'''''''''''''''''''''''''
 
 #. In the main Azure toolbar, select the right arrow at the bottom of the toolbar (if collapsed) and search for and select Storage Accounts.
 
@@ -280,8 +280,8 @@ To provision a Docker Host simply navigate to the Cloud detail page or Infrastru
 Some common error scenarios include network connectivity. For a Docker Host to function properly, it must be able to resolve the |morpheus| appliance url which can be configured in Admin|Settings. If it is unable to resolve and negotiate with the appliance than the agent installation will fail and provisioning instructions will not be able to be issued to the host.
 
 Multi-tenancy
-^^^^^^^^^^^^^^
+^^^^^^^^^^^^^
 
 A very common scenario for Managed Service Providers is the need to provide access to Azure resources on a customer by customer basis. With Azure several administrative features have been added to ensure customer resources are properly scoped and isolated. For Azure it is possible to assign specific Networks, and Resource Groups to customer accounts or even set the public visibility of certain resources, therefore allowing all sub accounts access to the resource.
 
-.. include:: azure/scalesets.rst
+.. include:: /integration_guides/Clouds/azure/scalesets.rst

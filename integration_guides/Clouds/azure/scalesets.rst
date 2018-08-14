@@ -1,5 +1,5 @@
 Azure Scale Sets
-----------------
+^^^^^^^^^^^^^^^^
 
 Auto-scaling Azure instances can be done with the native Morpheus scaling service or Azure Scale Sets. When using Azure Scale Sets, Morpheus will configure the scale sets and thresholds, but Azure will be responsible for scaling the instances. The Instances nodes that are added and removed by Azure will be synced in by Morpheus as the instance scales up and down.
 

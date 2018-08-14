@@ -17,8 +17,6 @@ Integration Guides
 .. include:: Networking/networking.rst
 .. include:: service_discovery/service_discovery.rst
 .. include:: storage/storage.rst
-.. include:: vCloudDirector/vclouddirector.rst
 .. include:: tableofcontents.rst
-.. .. include:: ha/ha.rst
 .. .. include:: ITSM/ITSM.rst
 .. .. include:: Security/security.rst
