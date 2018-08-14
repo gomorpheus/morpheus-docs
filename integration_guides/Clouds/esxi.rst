@@ -1,7 +1,7 @@
 ESXi
 -----
 
-The ESXi Cloud type enables managing and provisioing to ESXi hosts, even without the ESXi API enabled.
+The ESXi Cloud type enables managing and provisioning to ESXi hosts, even without the ESXi API enabled.
 
 .. IMPORTANT:: The VMware ESXi integration is for adding a single ESXi / vSphere Hypervisor host. If you have vCenter please use the VMWare vCenter cloud type for full vSphere integraiton features.
 

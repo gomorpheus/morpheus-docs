@@ -45,6 +45,9 @@ Add Slave
   Adds a database slave in the Instance.
 Change Master
   Changes the database Master node in an Instance.
+Clone to Template (VMware)
+  Creates a new VMware Template from the Instance with corresponding |morpheus| Virtual Image record.
+
 
 .. TIP:: Scrolling down in the Actions dropdown may be necessary to see all options.
 
