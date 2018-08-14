@@ -121,4 +121,4 @@ Example:
   I have a username ``subuser`` that belongs to a tenant with the subdomain ``subaccount``.
   When logging in from the main login url, I would now need to enter in: ``subaccount\subuser``
 
-.. include:: tenants/configuring_multi_tenancy.rst
+.. include:: configuring_multi_tenancy.rst
