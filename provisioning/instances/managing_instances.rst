@@ -1,5 +1,5 @@
-Instance Actions
-----------------
+Managing Instances
+------------------
 
 Instance actions allow you to perform numerous management tasks on instances. The actions available depend on the instance type, hypervisor, roles permissions, and instance state.
 
