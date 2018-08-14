@@ -133,7 +133,6 @@ To use a cypher Key in a script, use the following syntax:
 
 <%=cypher.read('var_name')%>
 
-Example:
-  ``PASSWORD=<%=cypher.read('secret/myuserpassword')%>``
+Example: ``PASSWORD=<%=cypher.read('secret/myuserpassword')%>``
 
 .. IMPORTANT:: Cypher keys are not multi-tenant and only usable in the Tenant they are created. Please consider this when using cypher keys in library scripts used in multi-tenant/public workflows and library items.
