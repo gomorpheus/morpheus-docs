@@ -32,7 +32,7 @@ To get started installing |morpheus| on CentOS/RHEL a few preparatory items shou
      sudo morpheus-ctl stop morpheus-ui
      sudo morpheus-ctl start morpheus-ui
 
-   .. note:: The ``morpheus-ui`` can take 2-3 minutes to startup before it becomes available.
+   .. note:: The morpheus-ui can take 2-3 minutes to startup before it becomes available.
 
 There are additional post install settings that can be viewed in the Advanced section of the guide.
 
