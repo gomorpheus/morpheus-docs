@@ -10,8 +10,6 @@ Price sets combine Prices and then attach to Plans. Prices must be created prior
 Price Unit
   Select the Price Unit to use for the Price Set.
 
-  .. NOTE:: Only Prices configured with matching Price Units can be used in a Price Set.
-
   -  Minute
   -  Hour
   -  Day
@@ -21,6 +19,8 @@ Price Unit
   -  Three Year
   -  Four Year
   -  Five Year
+  
+  .. NOTE:: Only Prices configured with matching Price Units can be used in a Price Set.
 
 Types
   Price Set Types determine what prices the Set is composed of.
