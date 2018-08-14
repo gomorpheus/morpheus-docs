@@ -1,14 +1,9 @@
-Prices
-------
-
-.. Overview
-
 Price Types
 -----------
 
 - Everything
 
-  - One price for all resources Memory, CPU, RAM, and Disks 
+  - One price for all resources Memory, CPU, RAM, and Disks
 
 - Memory + CPU
 - Memory Only
