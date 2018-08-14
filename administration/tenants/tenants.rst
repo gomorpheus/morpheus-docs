@@ -1,8 +1,8 @@
 Tenants & Tenant Users
 =======================
 
-Tenants
---------
+Tenants Overview
+-----------------
 
 The Tenants page displays a list of all Tenants. This page enables users to Create, Edit, and Delete Tenants. The list of Tenants displays the Tenant Name, Role, Total Instances, Total Users, and the Created Date.
 
