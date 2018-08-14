@@ -1,11 +1,11 @@
-.. .. _integration-guide:
+.. _integration-guide:
 
 ******************
 Integration Guides
 ******************
 
 .. toctree::
-  :maxdepth: 2
+  :maxdepth: 3
 
   Automation/automation.rst
   Backups/backups.rst
