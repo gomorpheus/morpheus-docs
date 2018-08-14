@@ -37,3 +37,4 @@ On the |morpheus| appliance:
   .. code-block:: bash
 
     sudo morpheus-ctl start elasticsearch
+   
