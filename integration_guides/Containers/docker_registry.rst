@@ -17,14 +17,14 @@ Adding a Docker Registry Integration
 #. Add the following:
 
    Name
-    Name for the Registry in |morpheus| 
+    Name for the Registry in |morpheus|
    Repository url
     Docker Registry url or IP address
    Username
     Username if private registry
    Password
     Password if private registry
-    
+
 #. Save Changes
 
 .. NOTE:: You must either have signed certificates for your registry or configure your docker host(s) to accept insecure registries
@@ -34,4 +34,4 @@ Provisioning an Instance from Docker Registry
 
 Docker images from the Integrated Registry can be provisioned using the generic `Docker` Instance Type, or by adding images to Node Types for custom Library Instance Types.
 
-//add provisioning info and creating docker node types
+.. //add provisioning info and creating docker node types

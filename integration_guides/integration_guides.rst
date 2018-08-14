@@ -5,7 +5,6 @@ Integration Guides
 ******************
 
 .. toctree::
-  :maxdepth: 3
 
   Automation/automation.rst
   Backups/backups.rst
