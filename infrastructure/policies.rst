@@ -37,6 +37,9 @@ Provision Approval
   Sets an Approval requirement for Provisioning into a Group or Cloud using Morpheus Approvals or an Approval Integration such a Service Now.
 Shutdown
   Sets a shutdown timeframe in days upon provision after which the Instance will be stopped. Extensions can be auto-approved or require approval immediately or after x amount of auto-extensions using Morpheus Approvals or an Approval Integration.
+User Creation
+  Controls the "CREATE YOUR USER" flag in the User Config options during provisioning do be always disabled, always enabled, enabled by default, or disabled by default.
+
 
 Creating Policies
 -----------------
@@ -166,7 +169,7 @@ Notification Message
 Auto Approve Extensions
   Enable this to auto-approve extension requests, bypassing approval workflows.
 
-NOTE:: Expiration and Shutdown Policies will be enforced on Instances moved into a Group with an Active Policy or Instances created when converting an unmanaged host to managed.
+.. NOTE:: Expiration and Shutdown Policies will be enforced on Instances moved into a Group with an Active Policy or Instances created when converting an unmanaged host to managed.
 
 Provision Approval
 ^^^^^^^^^^^^^^^^^^
@@ -193,5 +196,48 @@ ENFORCEMENT TYPE
   * Fixed Schedule: User cannot change Power Schedule setting during provisioning.
 POWER SCHEDULE
   Select Power Schedule to use in the Policy. Power schedule can be added in ``Operations -> Scheduling``
-Permissions- TENANTS
-  Leave blank to apply to all Tenants, or search for and select Tenants to enforce the Policy on specific Tenants.
+TENANTS
+  Leave blank for the Policy to apply to all Tenants, or search for and select Tenants to enforce the Policy on specific Tenants.
+
+Max Resources
+^^^^^^^^^^^^^
+
+Max Resource policies allow setting quotas for Clouds and Groups for maximum amount of Memory, Storage, Cores, Hosts, VM's, or Containers that can be created in the Cloud or Group the Policy is assigned to.
+
+Configuration options for Max Resources Policies:
+
+Max Containers
+    Sets the max number of Containers for the Group or Cloud the Policy is added to.
+Max Cores
+    Sets the max number of total of Cores combined for Instances in the Group or Cloud the Policy is added to.
+Max Hosts
+    Sets the max number of total Hosts in the Group or Cloud the Policy is added to.
+Max Memory
+    Sets the max number of total of RAM combined for Instances in the Group or Cloud the Policy is added to.
+Max Storage
+    Sets the max number of total of Storage combined for Instances in the Group or Cloud the Policy is added to.
+Max VMs
+    Sets the max number of Virtual Machines for the Group or Cloud the Policy is added to.
+Tenants
+    Leave blank for the Policy to apply to all Tenants, or search for and select Tenants to enforce the Policy on specific Tenants.
+
+User Creation
+^^^^^^^^^^^^^
+
+The User Creation policy controls the "CREATE YOUR USER" flag in the User Config options during provisioning do be always disabled, always enabled, enabled by default, or disabled by default.
+
+Configuration options for User Creation Policies:
+
+TYPE
+  User Creation
+DESCRIPTION
+  Description to identify the policy config
+Enabled
+  Policies enforcement can be disabled or enabled at any time.
+ENFORCEMENT TYPE
+  * User Configurable: User Creation choice is editable by User during provisioning.
+  * Fixed: User cannot change User Creation setting during provisioning.
+CREATE USER
+  Check to allow or force user creation. Uncheck to disable by default or force no user creation.
+TENANTS
+  Leave blank for the Policy to apply to all Tenants, or search for and select Tenants to enforce the Policy on specific Tenants.
