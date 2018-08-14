@@ -34,7 +34,7 @@ To create a new sub-Tenant
    * Currency (for pricing)
    * Limits- These restrict the amount of Storage, Memory, and CPUs that can be collectively provisioned by all users in the Tenant. The default is 0 for these limits, which means no limits will be applied.
 
-#. Click the Save Changes button.
+#. Click the :guilabel:`Save Changes` button.
 
 .. image:: /images/advanced/configuring_multi_tenancy-09a1e.png
 
@@ -52,7 +52,7 @@ Tenant Users
 
 To create a new user for an Tenant (Note: Users are specific to each Tenant. Users created in the Master Tenant or other sub-Tenants will only have access to the Tenant they are created in.)*
 
-. Click the CREATE USER button
+. Click the :guilabel:`CREATE USER` button
 . From the New User wizard input the fields below.
 * First Name of the user being created
 * Last Name of the user being created
@@ -62,7 +62,7 @@ To create a new user for an Tenant (Note: Users are specific to each Tenant. Use
 * Password
 * Storage, Memory and CPU limits for this specific user, if any (0 is no limit)
 
-. Click Save Changes.
+. Click :guilabel:`Save Changes`.
 
 .. image:: /images/advanced/configuring_multi_tenancy-e194d.png
 
@@ -117,7 +117,7 @@ To set the Visibility of cloud to Public (shared across all Tenants) or Private 
 #. Navigate to Infrastructure, Clouds
 #. Select either the pencil/edit icon on the far right of the cloud row, or click the name of the cloud and select "Edit" in the top right of the cloud page.
 #. From the "Visibility" drop down, select either "Public" or "Private"
-#. Select "Save Changes" in the lower right of the Edit Cloud modal.
+#. Select :guilabel:`Save Changes` in the lower right of the Edit Cloud modal.
 
 .. image:: /images/advanced/configuring_multi_tenancy-349e2.png
 
@@ -140,7 +140,7 @@ It may be preferable for service providers to share or assign their cloud resour
 #. Navigate to Infrastructure, Clouds
 #. Select either the pencil/edit icon on the far right of the cloud row, or click the name of the cloud and select "Edit" in the top right of the cloud page.
 #. From the "Tenant" drop down, select the Tenant to assign the cloud to. The visibility will automatically be set to "Private" when a cloud is assigned to a sub-Tenant.
-#. Select "Save Changes" in the lower right of the Edit Cloud modal.
+#. Select :guilabel:`Save Changes` in the lower right of the Edit Cloud modal.
 
 .. image:: /images/advanced/configuring_multi_tenancy-c907d.png
 
@@ -159,9 +159,9 @@ Resources assigned to sub-Tenants from the Master Tenant will be visible and ava
 #. From the Master Tenant, navigate to Infrastructure, Hosts
 #. Select either the Hosts, Virtual Machines or Bare Metal tab
 #. Click the name of the resource
-#. Select "Edit" in the top right of the resource page to bring up the config modal.
+#. Select :guilabel:`Edit` in the top right of the resource page to bring up the config modal.
 #. From the "Visibility" drop down, select either "Public" or "Private"
-#. Select "Save Changes" in the lower right of the modal
+#. Select :guilabel:`Save Changes` in the lower right of the modal
 
 .. image:: /images/advanced/configuring_multi_tenancy-d738d.png
 
@@ -172,7 +172,7 @@ Assigning a Host, Virtual Machine, or Bare Metal server to an Tenant
 #. Click the name of the resource
 #. From the "Actions" dropdown in the top right of the resource page, select Assign Tenant
 #. In the Assign Tenant modal, select the Tenant to assign the resource to.
-#. Select "Execute" in the lower right of the modal
+#. Select :guilabel:`Execute` in the lower right of the modal
 
 .. image:: /images/advanced/configuring_multi_tenancy-3c39f.png
 
@@ -183,7 +183,7 @@ The resource will now be assigned and available for use by the assigned Tenant. 
 #. From the Master Tenant, navigate to Infrastructure, Network
 #. Select either the pencil/edit icon on the far right of the network row, or click the name of the network and select "Edit" in the top right of the network page.
 #. From the "Visibility" drop down, select either "Public" or "Private"
-#. Select "Save Changes" in the lower right of the modal
+#. Select :guilabel:`Save Changes` in the lower right of the modal
 
 .. image:: /images/advanced/configuring_multi_tenancy-bc333.png
 
@@ -192,7 +192,7 @@ The resource will now be assigned and available for use by the assigned Tenant. 
 #. From the Master Tenant, navigate to Infrastructure, Network
 #. Select either the pencil/edit icon on the far right of the network row, or click the name of the network and select "Edit" in the top right of the network page.
 #. From the "Tenant" drop down, select an Tenant to assign the network to.
-#. Select "Save Changes" in the lower right of the modal
+#. Select :guilabel:`Save Changes` in the lower right of the modal
 
 .. image:: /images/advanced/configuring_multi_tenancy-9f15c.png
 
@@ -208,7 +208,7 @@ Set the Visibility or assign a datastore to an Tenant
 
    .. NOTE:: If assigned to a sub-tenant, the visibility will be automatically set to private.
 
-#. Select "Save Changes" in the lower right of the modal
+#. Select :guilabel:`Save Changes` in the lower right of the modal
 
 .. image:: /images/advanced/configuring_multi_tenancy-1e978.png
 
@@ -223,7 +223,7 @@ Set the Visibility or assign a datastore to an Tenant
 
 #. Repeat step 4 for all Tenants requiring access to the virtual image.
 .. To remove access for an Tenant, click the "x" next to the Tenant name
-#. Select "Save Changes" in the lower right of the modal
+#. Select :guilabel:`Save Changes` in the lower right of the modal
 
 .. image:: /images/advanced/configuring_multi_tenancy-d9abe.png
 
