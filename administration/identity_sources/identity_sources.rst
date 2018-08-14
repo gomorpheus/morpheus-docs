@@ -12,7 +12,5 @@ capabilities with LDAP, Active Directory, Okta, and Jump Cloud. One can
 even map these sign on tools to equivalent roles in |morpheus| so at
 first log in users are assigned the appropriate role.
 
-.. .image:: /images/administration/identity_sources.png
-
 .. include:: ad.rst
 .. include:: onelogin.rst
