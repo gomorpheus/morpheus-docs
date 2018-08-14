@@ -1,11 +1,8 @@
 Users
 =====
 
-Users
------
-
 Overview
-^^^^^^^^
+---------
 
 The Users page displays a list of all users. From the users page:
 Create, Edit, and Delete users. The list of users displayed on this page displays Account, Name, Username, Email, and Role.
