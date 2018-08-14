@@ -2,6 +2,7 @@ Automation
 ===========
 
 .. toctree::
+  :maxdepth: 2
   .. Automation/arm.rst
   Automation/terraform.rst
   Automation/chef.rst
