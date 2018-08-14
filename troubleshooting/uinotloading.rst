@@ -4,24 +4,24 @@
 Problem
   The |morpheus| ui does not load after performing an upgrade.
 
-Causes
-  * The morpheus-ui has not finished loading
-  * The morpheus-ui was not fully stopped before reconfigure, or not started after reconfigure
-  * |morpheus| was forced to restart or shut down while the database schema was being migrated during an upgrade
+Common Causes
+   #. The morpheus-ui has not finished loading
+   #. The morpheus-ui was not fully stopped before reconfigure, or not started after reconfigure
+   #. |morpheus| was forced to restart or shut down while the database schema was being migrated during an upgrade
 
 Solutions
-  Cause
-    The morpheus-ui has not finished loading.
 
-    .. NOTE:: After running `morpheus-ctl start morpheus-ui`, the |morpheus| ui takes around 3 minutes to run depending on hardware.
+  Cause #. The morpheus-ui has not finished loading.
+
 
   Solution
     An easy way to see when the ui is finished loading and running is to tail the ui current file and look for the morpheus logo with version and start time
 
-    .. code-block:: bash 
+    .. code-block:: bash
 
       morpheus-ctl tail morpheus-ui
 
+    .. NOTE:: After running `morpheus-ctl start morpheus-ui`, the |morpheus| ui takes around 3 minutes to run depending on hardware.
   Cause
     The morpheus-ui was not fully stopped before reconfigure, or not started after reconfigure
 
@@ -30,7 +30,7 @@ Solutions
   Solution
     If you ran a reconfigure before stopping the ui, run:
 
-    .. code-block:: bash 
+    .. code-block:: bash
 
      sudo morpheus-ctl kill morpheus-ui
      sudo morpheus-ctl reconfigure
@@ -48,7 +48,7 @@ Solutions
 
       Then run the following:
 
-      .. code-block:: bash 
+      .. code-block:: bash
 
        mysql -u morpheus -p -h 127.0.0.1 morpheus
 
@@ -56,19 +56,19 @@ Solutions
 
       Then run:
 
-      .. code-block:: bash 
+      .. code-block:: bash
 
        DELETE FROM DATABASECHANGELOGLOCK;
 
       Then restart morpheus-ui:
 
-      .. code-block:: bash 
+      .. code-block:: bash
 
        sudo morpheus-ctl restart morpheus-ui
 
       If the restart timesout, run:
 
-      .. code-block:: bash 
+      .. code-block:: bash
 
         sudo morpheus-ctl kill morpheus-ui
         sudo morpheus-ctl start morpheus-ui
