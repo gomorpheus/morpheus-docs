@@ -1,0 +1,136 @@
+v3.5.0
+=======
+
+Release date: 7/31/2018
+
+.. IMPORTANT:: Backups are refactored in v3.5.0. Existing backup jobs and backup integrations may be effected. Docker backups require latest agent on Docker Hosts. 
+
+New Features
+------------
+
+* Administration: Added support link white label
+* Analytics: Added Cost by Tenant report
+* Analytics: Added Cost by Group report
+* Analytics: Added Cost by Application report
+* Analytics: Added Cost by Instance report
+* Analytics: Added Cost by Cloud report
+* Analytics: Added Tenant Instance Usage report
+* Analytics: Added metadata filter to reports
+* Ansible: Added Ansible Tower integration
+* API/CLI: Workflows now support custom option types
+* API/CLI: DataStores added
+* API/CLI: Subtenant Groups added
+* API/CLI: Added "taskPhase" for workflow tasks
+* API/CLI: Added CLI login via token
+* API/CLI: Added additional API documentation
+* API/CLI: Added optimization for virtual image upload
+* API/CLI: Updated instance "createdBy"
+* API/CLI: Added metadata for instances
+* API/CLI: Added support for backups
+* Backups: Show the job tied to the backup
+* Backups: Added inputs for the Object Store Backup type
+* Backups: Added "run all backups" button to the jobs detail page
+* Backups: Added validation cron expression on save
+* Backups: Removed backup "Target" if the backup "Type" doesn't support offloading
+* Backups: Added a backup admin setting for Default Schedule
+* Backups: Added missing info for backup details (path, destination, retention count)
+* Backups: Added permission for Backup Services
+* Backups: Wizard updates
+* Backups: Job Details is now a link to the job details page
+* Backups: Added retention count to job details
+* Backups: Moved backup providers settings to backup services section
+* Blueprints: Added ACI fields to Blueprint and App wizards
+* Cloud Foundry: Added inventory of applications during cloud sync
+* Cloud Foundry: Added support scaling
+* Cloud Foundry: Added sync for build packs
+* Cloud Foundry: Added custom route
+* Datatstores: Added pricing
+* KVM: Added CEPH storage support
+* KVM: Backup/restore is now possible for local datastores and LVM
+* Library: Debian 9.4 qcow2 image added
+* Instances: Added backup tab details (backup type, backup provider, DB, path if a file backup) to instance detail page
+* Option Lists: Added a public or private visibility toggle to option lists from master tenant only so subtenants can use generated lists for their own form inputs
+* Option Lists: Added realtime checkbox
+* Oracle: Added support for different storage types
+* Oracle: Added Oracle Cloud library nodes
+* Oracle: Added ability to upload a local image and provision to Oracle Cloud
+* phpIPAM: Added additional details (description, hostname, owner)
+* Policies: Added ${tenantSubdomain} variable for naming conventions
+* Policies: Added backups policy
+* Provisioning: Added policy to have "Create User" in the provisioning wizard unchecked by default
+* Provisioning: Added host OS, Type and Status filters
+* Provisioning: Added Resource Pool Component to Instance, App, and Host wizard
+* Provisioning: Added limits on service plans
+* Provisioning: Added ability to toggle between MB and GB for memory settings in provisioning wizard
+* Roles: Added custom option to roles so they populate as full rather than none by default
+* SAML: Added response validation
+* ServiceNow: Added credential validation
+* Storage: Renamed "Object Stores" to "Providers"
+* Storage Providers: Added details page that allows you to browse, upload and delete files
+* Storage Providers: Verify permissions to path on save added
+* Storage Providers: Tenants cannot create local storage providers
+* Storage Providers: Retention policy
+* Storage Providers: Added option to create a bucket
+* Users: Subtenant users will no longer be able to login from the main login page without specifying their subdomain
+* Users: Added API token generation for users via UI
+* Virtual Images: Default "force guest customizations" to "on"
+* VMware: Added VMware "Clone to Template" Action
+* VMware: Backup lease timeouts
+* XenServer: Backups don't offload backup
+
+
+Fixes
+------
+
+
+* Fix for Chef detail section not displaying in app wizard
+* Fix for deployment failure with ARM template copies
+* Fix for broken image issue with library items
+* Fix for Instance Type Count - By Clouds Value report
+* Fix for Instance Count by Cloud report
+* Fix for ServiceNow Plugin and API issue
+* Fix for web instance types
+* Fix for ServiceNow not listing datastores
+* Fix for issue deleting ServiceNow integration
+* Fix for OpenStack space issue
+* Fix for OpenStack floating IP issue
+* Fix for F5 destination port issue
+* Fix for VMware ServiceNow Plugin
+* Fix for manually deleting F5 pools and nodes
+* Fix for ESXi failing to provision
+* Fix for OEL build fail
+* Fix for Nutanix VM taking multiple IP slots
+* Fix for PXE answer file
+* Fix for ENI records not being cleaned up in Amazon
+* Fix for tenant delete issue
+* Fix for Nutanix image endpoint
+* Fix for Install Agent flag for Nutanix
+* Fix for OTC missing icons
+* Fix for HCL parsing not saving
+* Fix for CentOS VM conversion issue
+* Fix for instance provisioning hanging at configure stage
+* Fix for Blueprints not connecting to Azure LB
+* Fix for Option List ignoring SSL errors
+* Fix for OTC duplicate images
+* Fix for changing roles via AD groups
+* Fix for user data in Windows Cloud
+* Fix for provisioning Windows into vCD
+* Fix for Custom Checks
+* Fix for local firewall not working for VM's
+* Fix for Cloud Foundry and inventoried apps
+* Fix for Cloud Foundry API check type missing logo
+* Fix for Cloud Foundry cloud details
+* Fix for Cllogger("com.morpheus", INFO, ['STDOUT'], false)
+* Fix for Oracle Cloud Virtual Image icon missing
+* Fix for Venafi integration details page
+* Fix for AVI LB monitors field being blank
+* Fix for image builder configuration issue
+* Fix for backup job schedule not saved/displayed on provision
+* Fix for backup job scheduling issue
+* Fix for instance details page backups tab
+* Fix for backup wizard typehead popup issue
+* Fix for Veeam validation issue
+* Fix for error deleting Cloud Foundry service
+* Fix for Veeam integration modal not loading
+* Fix for Commvault integration not being check by default
+* Fix for i18n missing label
