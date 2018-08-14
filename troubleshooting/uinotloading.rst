@@ -1,15 +1,15 @@
 |morpheus| UI not loading after upgrade or reconfigure
 ======================================================
 
-Problem
+Problem:
   The |morpheus| ui does not load after performing an upgrade.
 
-Common Causes
+Common Causes:
    #. The morpheus-ui has not finished loading
    #. The morpheus-ui was not fully stopped before reconfigure, or not started after reconfigure
    #. |morpheus| was forced to restart or shut down while the database schema was being migrated during an upgrade
 
-Solutions
+Solutions:
   #. The morpheus-ui has not finished loading.
 
       An easy way to see when the ui is finished loading and running is to tail the ui current file and look for the morpheus logo with version and start time
