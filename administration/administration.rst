@@ -13,7 +13,7 @@ of capabilities when it comes to managing customer accounts and users.
 
   tenants/tenants.rst
   tenants/subtenant_login.rst
-  tenants/identity_sources.rst
+  identity_source/identity_sources.rst
   plans_pricing/plans.rst
   roles/roles.rst
   users/users.rst
