@@ -327,5 +327,3 @@ Instance Naming Policy example: ``${userInitials}-${cloudCode}-${platform == 'wi
 	customOptions {
 		customOptions.fieldName
 	}
-
-.. IMPORTANT:: Variables are case sensitive
