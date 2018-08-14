@@ -1,8 +1,8 @@
 How to create vCloud Director templates for Morpheus
------------------------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 To create a Windows Template
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+`````````````````````````````
 
 Create a new machine in VMware vCenter and install a base version of your preferred Windows build.
 
@@ -31,7 +31,7 @@ Create a new machine in VMware vCenter and install a base version of your prefer
 
 
 To create a Linux Centos template
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+``````````````````````````````````
 
 Create a new machine in VMware vCenter and install a base version of your preferred Linux distro build. If you are using cloud init as part of your image you will need to ensure your virtual machine has a cdrom.
 
@@ -45,7 +45,7 @@ Create a new machine in VMware vCenter and install a base version of your prefer
 #.	selinux set to permissive (enforced can cause problems with cloud-init)
 
 To create a Linux Ubuntu template
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+``````````````````````````````````
 
 Create a new machine in VMware vCenter and install a base version of your preferred Linux distro build. If you are using cloud init as part of your image you will need to ensure your virtual machine has a cdrom.
 

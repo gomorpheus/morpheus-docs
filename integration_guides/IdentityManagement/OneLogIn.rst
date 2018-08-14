@@ -14,12 +14,12 @@ Adding OneLogin Identity Source Integration
    NAME
       Name of the Identity Source Integration in Morpheus
     DESCRIPTION
-      Optional Description of the Identiry Source
+      Optional Description of the Identity Source
     ONELOGIN SUBDOMAIN
       example: morpheus-dev
         .. WARNING:: Please verify the subdomain carefully. An invalid subdomain will cause authentication attempts by OneLogin users to fail.
     ONELOGIN REGION
-      Speciify US or EU region
+      Specify US or EU region
     API CLIENT SECRET
       OneLogin API Client Secret from the Settings - API section in OneLogin portal
     API CLIENT ID
@@ -29,10 +29,10 @@ Adding OneLogin Identity Source Integration
     DEFAULT ROLE
       The default Morpheus Role applied to users created from OneLogin Integration if no other role mapping is specified below
     ROLE MAPPINGS
-      Existing Morpheus Roles will be listed with fileds to enter OneLogin Roles to map to. Users with OneLogin roles matching the role mappings will be assigned the approprie Role(s) in Morpheus when sigining in.
+      Existing Morpheus Roles will be listed with fields to enter OneLogin Roles to map to. Users with OneLogin roles matching the role mappings will be assigned the appropriate Role(s) in Morpheus when signing in.
 
-#. Select :guilabel:`SAVE CHANGES` and the OneLogin Integraitnn will be added.
+#. Select :guilabel:`SAVE CHANGES` and the OneLogin Integration will be added.
 
-Users can now login to Morpheus with OneLogin credentials. The first Login will create a user in Morpheus matching the Username, email and Password from OneLogin. If a REQUIRED ROLE is specified in the Identiry Source settings, only users with that Role in OneLogin will be able to login to Morpheus.
+Users can now login to Morpheus with OneLogin credentials. The first Login will create a user in Morpheus matching the Username, email and Password from OneLogin. If a REQUIRED ROLE is specified in the Identity Source settings, only users with that Role in OneLogin will be able to login to Morpheus.
 
 .. IMPORTANT:: OneLogin users will not authenticate in Morpheus if there is an existing Morpheus User with matching username or email address.

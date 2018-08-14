@@ -18,5 +18,5 @@ Integration Guides
 .. include:: service_discovery/service_discovery.rst
 .. include:: storage/storage.rst
 .. include:: tableofcontents.rst
-.. .. include:: ITSM/ITSM.rst
+.. include:: ITSM/ITSM.rst
 .. .. include:: Security/security.rst
