@@ -1,3 +1,5 @@
+.. _MinimumIAMPolicies:
+
 Minimum AWS IAM Policies
 ------------------------
 
