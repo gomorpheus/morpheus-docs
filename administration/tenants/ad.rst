@@ -42,7 +42,3 @@ Now allowed AD users can login to |morpheus| via their Active Directory credenti
 .. NOTE:: Only the username is required with password, not the username@domain.
 
 .. NOTE:: Sub-tenant |morpheus| API authentication for Active Directory generated users is not currently supported.
-
-
-
-T

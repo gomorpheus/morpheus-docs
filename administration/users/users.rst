@@ -149,4 +149,4 @@ To delete a User from the `Administration -> Tenants -> Select a Tenant -> Users
 #. Confirm
 
 
-.. include:: users/usergroups.rst
+.. include:: usergroups.rst
