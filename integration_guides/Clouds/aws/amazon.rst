@@ -62,7 +62,7 @@ Creating an AWS Cloud
 #. Enter the following:
 
    Name
-     Name of the Cloud in |morpheus| 
+     Name of the Cloud in |morpheus|
    Location
      Description field for adding notes on the cloud, such as location.
    Visibility
@@ -73,8 +73,15 @@ Creating an AWS Cloud
      Access Key ID from AWS IAM User Security Credentials.
    Secret Key
      Secret Access Key associate with the Access Key ID.
-   Inventory Existing Instances
-     If enabled, existing EC2 Instances will be inventoried and appear as unmanaged Virtual Machines in |morpheus| .
+   Inventory
+     Basic
+      |morpheus| will sync information on all EC2 Instances in the selected VPC the IAM user has access to, including Name, IP Addresses, Platform Type, Power Status, and overall resources sizing for Storage, CPU and RAM, every 5 minutes. Inventoried EC2 Instances will appear as Unmanaged VM's.
+     Full
+      In addition to the information synced from Basic Inventory level, |morpheus| will gather Resource Utilization metrics for Memory, Storage and CPU utilization per VM.
+     Off
+      Existing EC2 Instances will not be inventoried
+
+     ..NOTE:: Cloud Watch must be configured in AWS for |morpheus| to collect Memory and Storage utilization metrics on inventoried EC2 instances. 
 
 #. The AWS cloud is ready to be added to a group and saved. Additional configuration options available:
 
