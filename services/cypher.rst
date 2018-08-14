@@ -44,7 +44,9 @@ Password
 
 A Cypher password generates a secure password of specified character length in the key pattern (or 15) with symbols, numbers, upper case, and lower case letters (i.e. password/15/mypass generates a 15 character password).
 
-Key:: Pattern `password/character_length/key`
+Key
+
+  Pattern "password/character_length/key"
 
   Example: password/10/mypassword
 
