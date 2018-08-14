@@ -12,7 +12,6 @@ of capabilities when it comes to managing customer accounts and users.
   :maxdepth: 2
 
   tenants/tenants.rst
-  tenants/subtenant_login.rst
   identity_sources/identity_sources.rst
   plans_pricing/plans.rst
   roles/roles.rst
