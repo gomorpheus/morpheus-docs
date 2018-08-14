@@ -1,4 +1,4 @@
-.. _integration-guide:
+.. .. _integration-guide:
 
 ******************
 Integration Guides
@@ -21,5 +21,4 @@ Integration Guides
   service_discovery/service_discovery.rst
   storage/storage.rst
   ITSM/ITSM.rst
-  tableofcontents.rst
 .. .. include:: Security/security.rst
