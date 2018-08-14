@@ -6,6 +6,8 @@ Overview
 
 The |morpheus| Analytics engine analyzes resource utilization and costs across clouds. This functionality helps users make decisions on where instances and workloads should be provisioned.
 
+.. image:: /images/operations/analytics_mem_price.png
+
 Analytics Report Types
 ----------------------
 
