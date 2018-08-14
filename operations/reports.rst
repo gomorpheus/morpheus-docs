@@ -6,6 +6,38 @@ Overview
 
 Customizable Cloud, App and Instance usage reports can be generate in the `Operations -> Reports` section.
 
+Report Types
+------------
+
+INVENTORY REPORTS
+  Account
+    * Tenant Inventory Summary
+  Infrastructure
+    * Cloud Inventory Summary
+    * Container Host Inventory Summary
+    * Group Inventory Summary
+    * Hypervisor Inventory Summary
+    * Tenant Resource Allocation
+  Provisioning
+    * Instance Inventory Summary
+    * Virtual Machine Inventory Summary
+
+CLOUD REPORTS
+  Usage
+    * Cloud Usage
+    * Cloud Usage App Summary
+    * Cloud Usage Instance Type Summary
+    * Tenant Usage
+
+COST REPORTS
+  Cost
+    * Application Cost
+    * Cloud Cost
+    * Group Cost
+    * Instance Cost
+    * Tenant Cost
+
+
 Reports History
 ---------------
 
