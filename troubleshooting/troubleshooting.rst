@@ -12,4 +12,5 @@ Troubleshooting
 .. include:: variables.rst
 .. include:: exportmorpheuslogs.rst
 .. include:: blankdashboard.rst
+.. include:: deletingtenant.rst
 .. .. include:: faq.rst
