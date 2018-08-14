@@ -9,10 +9,10 @@ On the |morpheus| appliance:
 
 #. Remove the |morpheus| package
 
-   - deb: ```dpkg --purge morpheus-appliance...`` using the appropriate package name.
+   - deb: ``dpkg --purge morpheus-appliance...`` using the appropriate package name.
    - rpm: ``rpm -e (morpheus-appliance...)`` using the appropriate package name.
 
-   Then Run
+#. Then Run
 
    .. code-block:: bash
 
@@ -22,18 +22,18 @@ On the |morpheus| appliance:
     rm -rf /var/log/morpheus
     rm -rf /opt/morpheus
 
-   Re-install |morpheus|
+#. Re-install |morpheus|
 
 If the elasticsearch cluster is unhealthy and needs purged, run:
 
 .. code-block:: bash
 
-  sudo morpheus-ctl stop elasticsearch`
-  sudo rm -rf /var/opt/morpheus/elasticsearch/data/morpheus`
-  sudo morpheus-ctl reconfigure`
+  sudo morpheus-ctl stop elasticsearch
+  sudo rm -rf /var/opt/morpheus/elasticsearch/data/morpheus
+  sudo morpheus-ctl reconfigure
 
 If eleasticsearch does not restart during reconfigure:
 
-.. code-block:: bash 
+.. code-block:: bash
 
   sudo morpheus-ctl start elasticsearch
