@@ -1,7 +1,7 @@
 Tenants
 =======
 
-Overview
+Tenants
 --------
 
 The Tenants page displays a list of all Tenants. This page enables users to Create, Edit, and Delete Tenants. The list of Tenants displays the Tenant Name, Role, Total Instances, Total Users, and the Created Date.
@@ -9,7 +9,7 @@ The Tenants page displays a list of all Tenants. This page enables users to Crea
 Click the Tenant Name to drill into the Tenant View where you can again Edit, Delete, as well as Create Users, Edit Users, and Delete Users users belonging to the Tenant.
 
 Create Tenants
---------------
+^^^^^^^^^^^^^^^^
 
 To create Tenants
 
@@ -28,7 +28,7 @@ To create Tenants
 #. Click the Save Changes button.
 
 Edit Tenant
------------
+^^^^^^^^^^^^
 
 To edit a Tenant:
 
@@ -38,7 +38,7 @@ To edit a Tenant:
 #. Edit the Edit Tenant settings.
 
 Delete Tenant
--------------
+^^^^^^^^^^^^^^
 
 To delete a Tenant:
 
