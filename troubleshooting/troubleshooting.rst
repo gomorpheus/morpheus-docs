@@ -11,5 +11,5 @@ Troubleshooting
 .. include:: restartinstall.rst
 .. include:: variables.rst
 .. include:: exportmorpheuslogs.rst
+.. include:: blankdashboard.rst
 .. .. include:: faq.rst
-.. .. include:: blankdashboard.rst
