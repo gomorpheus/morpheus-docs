@@ -43,7 +43,7 @@ Requirements
 AWS IAM Security Credentials
   Access Key
   Secret Key
-  Sufficient User Privileges (see Required IAM Policies section for more info)
+  Sufficient User Privileges (see MinimumIAMPolicies_ section for more info)
 Security Group Configuration for Agent Install, Script Execution, and Remote Console Access
   Typical Inbound ports open from |morpheus| Appliance: 22, 5985, 3389
   Typical Outbound to |morpheus| Appliance: 80, 443
