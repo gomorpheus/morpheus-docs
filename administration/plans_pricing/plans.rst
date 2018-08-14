@@ -53,5 +53,4 @@ To delete service plan
 #. Click the Delete trashcan icon on the row of the#  plan to delete.
 #. Confirm
 
-.. include:: price_sets.rst
 .. include:: prices.rst

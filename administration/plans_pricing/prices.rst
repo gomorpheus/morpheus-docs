@@ -1,5 +1,45 @@
+Pricing
+---------
+
+
+Price Sets
+^^^^^^^^^^^
+
+Price sets combine Prices and then attach to Plans. Prices must be created prior to creating Price Sets, but it is recommended to review the Price Set Type options prior to creating Prices.
+
+Price Unit:: Select the Price Unit to use for the Price Set.
+
+.. NOTE:: Only Prices configured with matching Price Units can be used in a Price Set.
+
+-  Minute
+-  Hour
+-  Day
+-  Month
+-  Year
+-  Two Year
+-  Three Year
+-  Four Year
+-  Five Year
+
+Types
+  Price Set Types determine what prices the Set is composed of.
+
+.. NOTE:: Make note of the Price set options below before creating Prices.
+
+Everything
+  'Everything' price sets require 1 or more 'Everything' price types and may include 'Platform' or 'Software' price types.
+
+Compute + Storage
+  'Compute + Storage' price sets require at least one of each 'Memory  CPU' and 'Disk Only' price types and may include 'Platform' or 'Software' price types.
+
+Component
+  'Component' price sets require at least one of each 'Memory', 'Cores', 'CPU', and 'Storage' price types and may include 'Platform' or 'Software' price types.
+
+Prices
+  Search for and select Prices to be added to the Price Set. One of each Price Type required for the Price Set Type selected must be added for the Price Set to save.
+
 Price Types
------------
+^^^^^^^^^^^^
 
 - Everything
 
@@ -13,8 +53,7 @@ Price Types
 - Software
 
 Price Units
------------
-
+^^^^^^^^^^^^
 -  Minute
 -  Hour
 -  Day
@@ -26,7 +65,7 @@ Price Units
 -  Five Year
 
 Currency
---------
+^^^^^^^^^
 
 -  AUD
 -  CHF
@@ -48,13 +87,13 @@ Currency
 -  XPF
 
 Cost
-----
+^^^^^
 
 The base cost of the resource(s). The Price will match the Cost unless a
 Price Adjustment is added.
 
 Price Adjustment
-----------------
+^^^^^^^^^^^^^^^^^
 
 None
   Default, no markup added and Price will match Cost
