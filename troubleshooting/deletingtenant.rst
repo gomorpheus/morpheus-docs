@@ -16,7 +16,7 @@ Solution
      - You must check ``remove associated instances`` if the VM has an associated instance
      - If the VM no longer exists but there is still a record in |morpheus|, uncheck ``remove infrastructure`` and check ``force delete``
 
-.. WARNING:: Managed resources can also be removed by deleting instances, but be aware this will delete VM's associated with the instance from the underlying hypervisor/cloud
+  .. WARNING:: Managed resources can also be removed by deleting instances, but be aware this will delete VM's associated with the instance from the underlying hypervisor/cloud
 
   #. Once all managed resources are removed from the tenant, the tenant can then be deleted
   #. In certain situations other components may prevent a tenant from being deleted. If you have removed all managed resources from a tenant and the tenant still cannot be deleted, please contact |morpheus| support
