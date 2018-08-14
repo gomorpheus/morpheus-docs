@@ -1,6 +1,13 @@
 Google
 -------
 
+Requirements
+^^^^^^^^^^^^
+
+* IAM Service Account with `Owner` or `Compute Admin` Role permissions
+* `project_id`, `private_key` and `client_email` for the Service Account
+* `Compute Engine API` enabled in GCP `API's and Services`
+
 Add a Google Cloud
 ^^^^^^^^^^^^^^^^^^^
 
