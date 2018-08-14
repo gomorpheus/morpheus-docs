@@ -11,14 +11,14 @@ PowerShell Example: ``$app_id = "<%= instance.metadata.app_id %>"``
 
 Bash Example:	``HOSTNAME="<%= container.server.hostname %>"``
 
-Instance Naming Policy example: ``${userInitials}-${cloudCode}-${platform == 'windows' ? 'W' : 'L'}-${sequence}
+Instance Naming Policy example: ``${userInitials}-${cloudCode}-${platform == 'windows' ? 'W' : 'L'}-${sequence}``
 
 .. NOTE:: customOptions are user defined as Option Types or Option Lists in custom Library items.
 
 .. code-block:: bash
 
 	cypher: <%=cypher.read('secret/hello')%>
-	customOptions: <%=customOptions.fieldName%>"
+	customOptions: <%=customOptions.fieldName%>
 	evars: <%=evars%>
 	instance.metadata: <%=instance.metadata%>
 	instance.instanceTypeName: <%=instance.instanceTypeName%>
