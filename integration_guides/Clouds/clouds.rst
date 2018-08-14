@@ -31,5 +31,5 @@ Clouds
    .. Clouds/metaCloud.rst
    .. Clouds/oraclecloud.rst
    Clouds/ucs_manager.rst
-   .. Clouds/vclouddirector.rst
+   Clouds/vclouddirector.rst
    .. Clouds/vcloudair.rst
