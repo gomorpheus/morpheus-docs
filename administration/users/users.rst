@@ -1,5 +1,5 @@
-Users
-=====
+Users & User Groups
+====================
 
 Overview
 ---------
@@ -8,6 +8,10 @@ The Users page displays a list of all users. From the users page:
 Create, Edit, and Delete users. The list of users displayed on this page displays Account, Name, Username, Email, and Role.
 
 .. NOTE:: Some User data from Users created via an Identity Source Integration such as Active Directory is not editable in |morpheus|, as it is synced with the Identity Source.
+
+
+Users
+---------
 
 Create User
 ^^^^^^^^^^^
