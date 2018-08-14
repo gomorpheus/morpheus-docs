@@ -19,13 +19,13 @@ Price Unit
   -  Three Year
   -  Four Year
   -  Five Year
-  
+
   .. NOTE:: Only Prices configured with matching Price Units can be used in a Price Set.
 
 Types
   Price Set Types determine what prices the Set is composed of.
 
-.. NOTE:: Make note of the Price set options below before creating Prices.
+  .. NOTE:: Make note of the Price set options below before creating Prices.
 
 Everything
   'Everything' price sets require 1 or more 'Everything' price types and may include 'Platform' or 'Software' price types.
