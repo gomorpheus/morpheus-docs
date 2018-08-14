@@ -24,7 +24,7 @@ On the |morpheus| appliance:
 
 #. Re-install |morpheus|
 
-  If the elasticsearch cluster is unhealthy and needs purged, run:
+  - If the elasticsearch cluster is unhealthy and needs purged, run:
 
   .. code-block:: bash
 
@@ -32,7 +32,7 @@ On the |morpheus| appliance:
     sudo rm -rf /var/opt/morpheus/elasticsearch/data/morpheus
     sudo morpheus-ctl reconfigure
 
-  If eleasticsearch does not restart during reconfigure:
+  - If eleasticsearch does not restart during reconfigure:
 
   .. code-block:: bash
 
