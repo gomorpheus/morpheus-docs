@@ -12,15 +12,15 @@ Price Unit
 
   .. NOTE:: Only Prices configured with matching Price Units can be used in a Price Set.
 
-    -  Minute
-    -  Hour
-    -  Day
-    -  Month
-    -  Year
-    -  Two Year
-    -  Three Year
-    -  Four Year
-    -  Five Year
+  -  Minute
+  -  Hour
+  -  Day
+  -  Month
+  -  Year
+  -  Two Year
+  -  Three Year
+  -  Four Year
+  -  Five Year
 
 Types
   Price Set Types determine what prices the Set is composed of.
