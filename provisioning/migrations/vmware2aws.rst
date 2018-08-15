@@ -14,12 +14,12 @@ When performing a Hypervisor to Hypervisor migration from VMware to AWS, there a
 Add S3 Storage Provider
 ^^^^^^^^^^^^^^^^^^^^^^^
 
-In the `Infrastructure-> Storage` section, select ``+ADD STORAGE PROVIDER`` and enter the same AWS Access key and Secret Key used to create your AWS cloud in |morpheus| . Then add the S3 bucket name that the migration image(s) will be added to.
+In the ```Infrastructure-> Storage`` section, select :guilabel:`+ADD` and enter the same AWS Access key and Secret Key used to create your AWS cloud in |morpheus| . Then add the S3 bucket name that the migration image(s) will be added to.
 
 Set Image Transfer Store
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-Under `Infrastructure -> Clouds`, select your AWS cloud and click `EDIT`. Expand the Advanced Options section and for `IMAGE TRANSFER STORE` select the AWS S3 Storage Provider you created previously and then Save.
+Under ``Infrastructure -> Clouds``, select your AWS cloud and click :guilabel:`EDIT`. Expand the Advanced Options section and for `IMAGE TRANSFER STORE` select the AWS S3 Storage Provider you created previously and then Save.
 
 Add VM Import Service
 ^^^^^^^^^^^^^^^^^^^^^
@@ -31,9 +31,9 @@ VM Import requires a role to perform certain operations in your account, such as
 To create the service role
 ``````````````````````````
 
-Create a file named `trust-policy.json` with the following policy:
+Create a file named ``trust-policy.json`` with the following policy:
 
-.. code-block:: bash 
+.. code-block:: bash
 
   {
      "Version": "2012-10-17",
@@ -53,16 +53,16 @@ Create a file named `trust-policy.json` with the following policy:
 
 You can save the file anywhere on your computer. Take note of the location of the file, because you'll specify the file in the next step.
 
-Use the create-role command to create a role named vmimport and give VM Import/Export access to it. Ensure that you specify the full path to the location of the `trust-policy.json` file.
+Use the create-role command to create a role named vmimport and give VM Import/Export access to it. Ensure that you specify the full path to the location of the ``trust-policy.json`` file.
 
-.. code-block:: bash 
+.. code-block:: bash
 
   aws iam create-role --role-name vmimport --assume-role-policy-document file://trust-policy.json
 
 
 Create a file named `role-policy.json` with the following policy, where disk-image-file-bucket is the bucket where the disk images are stored:
 
-.. code-block:: bash 
+.. code-block:: bash
 
   {
      "Version": "2012-10-17",
@@ -101,7 +101,7 @@ Create a file named `role-policy.json` with the following policy, where disk-ima
 
 Use the following put-role-policy command to attach the policy to the role created above. Ensure that you specify the full path to the location of the ``role-policy.json`` file.
 
-.. code-block:: bash 
+.. code-block:: bash
 
   aws iam put-role-policy --role-name vmimport --policy-name vmimport --policy-document file://role-policy.json
 
@@ -112,7 +112,7 @@ Storage Providers
 
 Set the "Storage Provider" in the migration wizard destination as a Local Storage type, or leave as Select to use the |morpheus| Appliance.
 
-A local image must be created by |morpheus| prior to S3 upload. A Local Storage provider can be used if one had been added in the `Infrastructure-> Storage` section. Simply leaving the Storage Provider setting as "select" will create an image on the |morpheus| appliance, provided sufficient storage existing on the |morpheus| appliance drive.
+A local image must be created by |morpheus| prior to S3 upload. A Local Storage provider can be used if one had been added in the ``Infrastructure-> Storage`` section. Simply leaving the Storage Provider setting as "select" will create an image on the |morpheus| appliance, provided sufficient storage existing on the |morpheus| appliance drive.
 
 .. IMPORTANT:: Setting AWS as the Destination Storage Provider will result in a migration failure.
 

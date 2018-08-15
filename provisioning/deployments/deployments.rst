@@ -10,7 +10,7 @@ Getting Started
 
 Getting started with deployments is easy. They can vary slightly for the application stack being deployed but the simplest phase of a deployment is adding a version and adding the appropriate files to the deployment archive that are needed for the application to run. This could be a single file like a `WAR` file for Tomcat, or it could be hundreds of files for stacks like `Ruby on Rails`.
 
-There are a few ways to create a deployment. The first is to use the `Provisioning -> Deployments` section of the application to create them. Simply add a new deployment and give it a name representing the application that is being deployed. Once a deployment is created select the deployment to view its versions (which will be empty to start). Next, its time to add a version.
+There are a few ways to create a deployment. The first is to use the ``Provisioning -> Deployments`` section of the application to create them. Simply add a new deployment and give it a name representing the application that is being deployed. Once a deployment is created select the deployment to view its versions (which will be empty to start). Next, its time to add a version.
 
 When adding a version there are several options. There are 3 types represented by the UI. These include File, Fetch, and Git respectively. A File deployment allows the user to simply drag their files into the file explorer presented by the dialog. This file explorer can take single files or entire file trees (If files exist in subfolders then only the Chrome browser is supported due to browser limitations at the time of this writing). This is also the common type that is represented when files are uploaded via the CLI, or available build tool integration plugins. Once the files have completed their upload simply save the version for use.
 
@@ -39,56 +39,58 @@ Because of the tracked history of deployments kept within |morpheus| , the deplo
 Offloading Storage
 ------------------
 
-Since a full history of the backup builds are kept in |morpheus| , as the appliance grows it becomes necessary to change where these are stored. On a fresh install these are stored on the local appliance in `/var/opt/morpheus` or wherever the master account may have changed the configuration to point to. It is also possible to adjust the deployment archive store by creating a `Storage Provider` tied to an S3 compatible object store, Openstack Swift object store, or any other type of mountpoint provided. This option can be adjusted in `Admin->Provisioning` once a storage provider is created within the account.
+Since a full history of the backup builds are kept in |morpheus| , as the appliance grows it becomes necessary to change where these are stored. On a fresh install these are stored on the local appliance in ``/var/opt/morpheus`` or wherever the master account may have changed the configuration to point to. It is also possible to adjust the deployment archive store by creating a `Storage Provider` tied to an S3 compatible object store, Openstack Swift object store, or any other type of mountpoint provided. This option can be adjusted in ``Admin -> Provisioning`` once a storage provider is created within the account.
+
 
 Add Deployment
 --------------
 
-Add Deployment
-^^^^^^^^^^^^^^
+To Add Deployment:
 
-#. Select the Provisioning link in the navigation bar.
-#. Select the Deployments link in the sub-navigation bar.
-#. Click the Add Deployment button.
+#. Select the ``Provisioning`` link in the navigation bar.
+#. Select the ``Deployments`` link in the sub-navigation bar.
+#. Click the :guilabel:`Add` button.
 #. Enter a Name for the deployment and a description (optional)
-#. Click the Save Changes button to save.
+#. Click the :guilabel:`Save Changes` button to save.
 
 Add Version
-^^^^^^^^^^^
+------------
 
-#. Select the Provisioning link in the navigation bar.
-#. Select the Deployments link in the sub-navigation bar.
+To Add Version:
+
+#. Select the ``Provisioning`` link in the navigation bar.
+#. Select the ``Deployments`` link in the sub-navigation bar.
 #. Click the Name of the deployment you would like to add a version to.
-#. Click the Add Version button.
+#. Click the :guilabel:`Add Version` button.
 #. From the Add Version Wizard select the deployment type.
 #. Input the Version of the deployment.
 #. Depending on the type of deployment selected perform one of the following:
 
-Files
-  Drag files into the file explorer presented by the dialog. This file explorer can take single files or entire file trees.
-Fetch
-  Enter a url to a file representing the deployment.
-Git
-  The add version dialog will display a public key pair that can be added to the git service for authentication purposes. Either a ssh or https git url can be entered along with a git branch or tag name.
+    Files
+      Drag files into the file explorer presented by the dialog. This file explorer can take single files or entire file trees.
+    Fetch
+      Enter a url to a file representing the deployment.
+    Git
+      The add version dialog will display a public key pair that can be added to the git service for authentication purposes. Either a ssh or https git url can be entered along with a git branch or tag name.
 
-Click the Save Changes button to save.
+#. Click the :guilabel:`Save Changes` button to save.
 
 Edit Deployment
 ---------------
 
 To Edit Deployment:
 
-#. Select the Provisioning link in the navigation bar.
-#. Select the Deployments link in the sub-navigation bar.
+#. Select the ``Provisioning`` link in the navigation bar.
+#. Select the ``Deployments`` link in the sub-navigation bar.
 #. Click the Edit Deployment icon on the row of the deployment you wish to edit.
 #. Modify information as needed
-#. Click the Save Changes button to save.
+#. Click the :guilabel:`Save Changes` button to save.
 
 Delete Deployment
 -----------------
 
 To Delete Deployment:
 
-#. Select the Provisioning link in the navigation bar.
-#. Select the Deployments link in the sub-navigation bar.
+#. Select the ``Provisioning`` link in the navigation bar.
+#. Select the ``Deployments`` link in the sub-navigation bar.
 #. Click the Delete Deployment icon on the row of the deployment you wish to delete.
