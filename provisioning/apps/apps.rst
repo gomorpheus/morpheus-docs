@@ -8,18 +8,18 @@ Apps can be created from Blueprints, which are made in ``Provisioning -> Bluepri
 Creating Apps from Blueprints
 ----------------------------
 
-#. Click "+ADD APP" on the right side of the main Apps section in Provisioning.
-#. Select an existing App Blueprint and click NEXT.
+#. Click :guilabel:`+ADD` on the right side of the main Apps section in Provisioning.
+#. Select an existing App Blueprint and click :guilabel:`NEXT`.
 
    .. Note:: Blueprints must be created in in ``Provisioning -> Blueprints``. to appear as options when creating an App.
 
 #. Enter a Name for the App and select a Group. Default Cloud and Env can also be selected.
-#. Click NEXT. Blueprint configurations matching the Group, Cloud and Environment selections will auto-populate the configurations of the Instances in the App.  If no Blueprint Configuration matched the Group, Cloud or Env selections, the Instances will have default configurations.
+#. Click :guilabel:`NEXT`. Blueprint configurations matching the Group, Cloud and Environment selections will auto-populate the configurations of the Instances in the App.  If no Blueprint Configuration matched the Group, Cloud or Env selections, the Instances will have default configurations.
 #. Configure your Instances. Depending on the Blueprint Configurations settings, instances may already be fully configured. Fields that are locked in a Blueprint cannot be edited when creating an App.
 
-   Note:: Once an Instance is fully configured, a green checkmark will appear next to the Instance. Instances that have required fields that need populated will have a red X and must be completed. If your Blueprint is already fully configured you can simply select complete!
+   .. Note:: Once an Instance is fully configured, a green checkmark will appear next to the Instance. Instances that have required fields that need populated will have a red X and must be completed. If your Blueprint is already fully configured you can simply select complete!
 
-#. Select COMPLETE and the App will be created and the Instances will begin provisioning.
+#. Select :guilabel:`COMPLETE` and the App will be created and the Instances will begin provisioning.
 
 .. image:: /images/provisioning/apps_301_1.png
 

@@ -3,7 +3,7 @@ Creating Instances
 
 The instance catalog is the one stop shop for selecting items to be provisioned and pieced together. It contains not only basic container and vm options but also tailored services for SQL databases, NoSQL databases, cache stores, message busses, web servers, and even full fledged apps. The list contains a lot of items to choose from and they are represented to the user based on what provisioning engines are enabled and integrated in the |morpheus| environment.
 
-To get started, simply click the ``+ Add Instance`` button in the upper right of the ``Provisioning -> Instances`` section. A modal will display allowing the catalog to be searched. Once an item is selected it is just a matter of following the steps through the wizard.
+To get started, simply click the :guilabel:`+ Add` button in the upper right of the ``Provisioning -> Instances`` section. A modal will display allowing the catalog to be searched. Once an item is selected it is just a matter of following the steps through the wizard.
 
 .. TIP:: The instance catalog can be customized via role based access control thereby restricting access to non sanctioned catalog items, as well as added to via the ``Provisioning -> Library`` section. It is completely customizable.
 
