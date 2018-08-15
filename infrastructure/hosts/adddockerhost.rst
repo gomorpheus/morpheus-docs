@@ -12,7 +12,7 @@ To add a Docker Host to any cloud:
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 1. Navigate to Infrastructure -> Hosts
-2. Click the +CONTAINER HOST button
+2. Click the :guilabel:`+CONTAINER HOST` button
 3. Select a container host type
 
 .. image:: /images/infrastructure/add_docker.png
@@ -50,16 +50,16 @@ Optionally configure the following:
   * Domain name
   * Hostname (default is the name previously provided for the container host)
 
-. Then click the NEXT button
+ Then click the NEXT button
 
 
-image::infrastructure/create_host_2.png[caption="Figure 5: ", title="Create Host", alt="Create Host"]
+.. image:: infrastructure/create_host_2.png[caption="Figure 5: ", title="Create Host", alt="Create Host"]
 
 7. Optionally add any Automation Workflows and configure for Backups.
 
 .. image:: /images/infrastructure/docker_host_automation.png
 
-[caption="Figure 6: ", title="Docker Host Automation", alt="Automation"]
+.. [caption="Figure 6: ", title="Docker Host Automation", alt="Automation"]
 
 8. Review and click Complete to save
 
