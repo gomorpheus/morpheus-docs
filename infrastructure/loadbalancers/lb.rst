@@ -111,5 +111,4 @@ Load Balancer Detail Pages
 
 In the main Load Balancer page, select an existing Load Balancer to go to that Load Balancers Details Page, which lists Stats, Settings, Actions and Virtual Servers for that load balancer.
 
-.. Virtual Servers
-.. ---------------
+.. include:: f5.rst
