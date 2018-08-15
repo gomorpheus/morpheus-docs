@@ -9,13 +9,13 @@ currently only supported on Ubuntu 14.04, Ubuntu 16.04 , CentOS 7.0 or
 newer, and RHEL 7.0 or newer based hosts (Ubuntu is recommended).
 
 
-.. include:: installation/debian.rst
+.. include:: debian.rst
 
-.. include:: installation/centos.rst
+.. include:: centos.rst
 
-.. include:: installation/redhat.rst
+.. include:: redhat.rst
 
-.. include:: installation/additional.rst
+.. include:: additional.rst
 
 .. |morpheushub| raw:: html
 
