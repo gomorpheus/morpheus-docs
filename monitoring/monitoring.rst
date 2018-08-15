@@ -9,8 +9,12 @@ Overview
 
 There are also several integrations built into the monitoring subsystem of |morpheus| including App Dynamics , New Relic, and even Service Now integration.
 
-.. include:: checks.rst
-.. include:: hierarchy.rst
-.. include:: incidents.rst
-.. include:: alerts.rst
-.. include:: integrations.rst
+
+.. toctree::
+  :maxdepth: 2
+  
+  checks.rst
+  hierarchy.rst
+  incidents.rst
+  alerts.rst
+  integrations.rst
