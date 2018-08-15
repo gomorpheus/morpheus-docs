@@ -53,7 +53,7 @@ Optionally configure the following:
  Then click the NEXT button
 
 
-.. image:: infrastructure/create_host_2.png
+.. image:: /images/infrastructure/create_host_2.png
 
 .. [caption="Figure 5: ", title="Create Host", alt="Create Host"]
 
