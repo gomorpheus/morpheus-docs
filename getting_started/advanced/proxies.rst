@@ -7,7 +7,7 @@ Overview
 
 In many situations , companies deploy virtual machines in proxy restricted environments for things such as PCI Compliance, or just general security. As a result of this |morpheus| provides out of the box support for proxy connectivity. Proxy authentication support is also provided with both Basic Authentication capabilities as well as NTLM for Windows Proxy environments. |morpheus| is even able to configure virtual machines it provisions to utilize these proxies by setting up the operating systems proxy settings directly (restricted to cloud-init based Linux platforms for now, but can also be done on windows based platforms in a different manner).
 
-To get started with Proxies, it may first be important to configure the |morpheus| appliance itself to have access to proxy communication for downloading service catalog images. To configure this, visit the Admin -> Settings page where a section labeled "Proxy Settings" is located. Fill in the relevant connection info needed to utilize the proxy. It may also be advised to ensure that the Linux environment's ``http_proxy``, ``https_proxy``, and ``no_proxy`` are set appropriately.
+To get started with Proxies, it may first be important to configure the |morpheus| appliance itself to have access to proxy communication for downloading service catalog images. To configure this, visit the ``Admin -> Settings`` page where a section labeled "Proxy Settings" is located. Fill in the relevant connection info needed to utilize the proxy. It may also be advised to ensure that the Linux environment's ``http_proxy``, ``https_proxy``, and ``no_proxy`` are set appropriately.
 
 Defining Proxies
 ^^^^^^^^^^^^^^^^

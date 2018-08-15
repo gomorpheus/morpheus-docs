@@ -70,7 +70,7 @@ In order to provision anything in |morpheus| , a |morpheus| License Key must be 
 
 If you do not already have a license key, one may be requested from https://www.morpheushub.com or from your |morpheus| representative.
 
-In the Administration -> Settings section, select the LICENSE tab, paste your License Key and click "UPDATE"
+In the Administration -> Settings section, select the LICENSE tab, paste your License Key and click :guilabel:`UPDATE`
 
 .. image:: /images/getting_started/license_key.png
 

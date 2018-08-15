@@ -31,7 +31,7 @@ Ubuntu
 
     sudo dpkg -i morpheus-appliance_version_amd64.deb
 
-#. Install the offline package using dpkg -i morpheus-appliance-offline_2.12.2~rc1-1_all.deb.
+#. Install the offline package using ``dpkg -i morpheus-appliance-offline_2.12.2~rc1-1_all.deb``.
 
    .. code-block:: bash
 
@@ -70,7 +70,7 @@ CentOS
 
     sudo rpm -i morpheus-appliance_version_amd64.rpm
 
-#. Install the offline package using rpm -i morpheus-appliance-offline_2.12.2~rc1-1_all.rpm
+#. Install the offline package using ``rpm -i morpheus-appliance-offline_2.12.2~rc1-1_all.rpm``
 
    .. code-block:: bash
 
