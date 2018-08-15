@@ -45,7 +45,7 @@ Supported Cloud Types
 * VirtualBox
 * XenServer
 
-Information on each cloud type can be found in the integration-guide_ section.
+Information on each cloud type can be found in the :ref:`integration-guide` section.
 
 Creating Clouds
 ---------------
