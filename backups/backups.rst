@@ -100,6 +100,4 @@ Backup Types displayed will be filtered by available options per selected Instan
 .. include:: summary.rst
 .. include:: jobs.rst
 .. include:: backups_sub.rst
-.. .. include:: history.rst
-..  .. include:: services.rst
-.. .. include:: managing_backups.rst
+.. include:: managing_backups.rst
