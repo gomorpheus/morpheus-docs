@@ -258,7 +258,7 @@ Bootstrapping the first Node in the cluster
     mysql> show databases;
 
 
-#. Next create your morpheus database user. The user needs to be either at the IP address of the morpheus application server or use @'%' within the user name to allow the user to login from anywhere.
+#. Next create your morpheus database user. The user needs to be either at the IP address of the morpheus application server or use ``@'%'`` within the user name to allow the user to login from anywhere.
 
    .. code-block:: bash
 

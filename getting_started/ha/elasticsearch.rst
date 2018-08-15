@@ -50,7 +50,7 @@ Installation
 
     sudo rpm -ivh elasticsearch-5.6.10.noarch.rpm
 
-   This results in Elasticsearch being installed in /usr/share/elasticsearch/ with its configuration files placed in /etc/elasticsearch and its init script added in /etc/init.d/elasticsearch.
+   This results in Elasticsearch being installed in ``/usr/share/elasticsearch/`` with its configuration files placed in ``/etc/elasticsearch`` and its init script added in ``/etc/init.d/elasticsearch``.
 
    To make sure Elasticsearch starts and stops automatically, add its init script to the default runlevels with the command:
 
@@ -60,13 +60,13 @@ Installation
 
 .. note::
 
-	If you manage an ElasticSearch cluster externally from |morpheus|, follow the steps located on the `ElasticSearch <https://www.elastic.co/guide/en/elasticsearch/reference/5.4/setup-upgrade.html>`_ website to upgrade to the latest version compatible with |morpheus| 
+	If you manage an ElasticSearch cluster externally from |morpheus|, follow the steps located on the `ElasticSearch <https://www.elastic.co/guide/en/elasticsearch/reference/5.4/setup-upgrade.html>`_ website to upgrade to the latest version compatible with |morpheus|
 
 #. Configuring Elastic
 
    Now that Elasticsearch and its Java dependencies have been installed, it is time to configure Elasticsearch.
 
-   The Elasticsearch configuration files are in the /etc/elasticsearch directory. There are two files:
+   The Elasticsearch configuration files are in the ``/etc/elasticsearch`` directory. There are two files:
 
    .. code-block:: bash
 
@@ -76,9 +76,9 @@ Installation
     Configures the Elasticsearch server settings. This is where all options, except those for logging, are stored, which is why we are mostly interested in this file.
 
    logging.yml
-    Provides configuration for logging. In the beginning, you don't have to edit this file. You can leave all default logging options. You can find the resulting logs in /var/log/elasticsearch by default.
+    Provides configuration for logging. In the beginning, you don't have to edit this file. You can leave all default logging options. You can find the resulting logs in ``/var/log/elasticsearch`` by default.
 
-   The first variables to customize on any Elasticsearch server are node.name and cluster.name in elasticsearch.yml. As their names suggest, node.name specifies the name of the server (node) and the cluster to which the latter is associated.
+   The first variables to customize on any Elasticsearch server are ``node.name`` and ``cluster.name`` in ``elasticsearch.yml``. As their names suggest, node.name specifies the name of the server (node) and the cluster to which the latter is associated.
 
    Node 1
 

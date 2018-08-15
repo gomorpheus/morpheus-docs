@@ -2,8 +2,8 @@ Application Tier
 ----------------
 
 |morpheus| configuration is controlled by a configuration file located
-at /etc/morpheus/morpheus.rb. This file is read when you run
-morpheus-ctl reconfigure after installing the appliance package. Each
+at ``/etc/morpheus/morpheus.rb``. This file is read when you run
+``morpheus-ctl reconfigure`` after installing the appliance package. Each
 section is tied to a deployment tier: database is mysql, message queue
 is rabbitmq, search index is elasticsearch. There are no entries for the
 web and application tiers since those are part of the core application
@@ -17,7 +17,7 @@ server where the configuration file resides.
 
       sudo sudo rpm -i morpheus-appliance-x.x.x-1.x86_64.rpm
 
-#. After installing and prior to reconfiguring, edit the morpheus.rb file
+#. After installing and prior to reconfiguring, edit the ``morpheus.rb`` file
 
   .. code-block:: bash
 

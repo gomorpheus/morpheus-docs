@@ -12,7 +12,7 @@ This guide assumes the following:
 - The baremetal nodes cannot access the public internet
 - The base OS is RHEL 7.x
 - Shortname versions of hostnames will be resolvable
-- All nodes have access to a shared volume for /var/opt/morpheus/morpheus-ui. This can be done as a post startup step.
+- All nodes have access to a shared volume for ``/var/opt/morpheus/morpheus-ui``. This can be done as a post startup step.
 - This configuration will support the complete loss of a single node, but no more.  Specifically the Elasticsearch tier requires at least two nodes to always be clustered..
 
 Steps
@@ -84,7 +84,7 @@ Steps
 
 .. note::
 
-  If you are running MySQL in a Master/Master configuration we will need to slightly alter the mysql['host'] line in the morpheus.rb to account for both masters in a failover configuration. As an example:
+  If you are running MySQL in a Master/Master configuration we will need to slightly alter the mysql['host'] line in the ``morpheus.rb`` to account for both masters in a failover configuration. As an example:
 
 .. code-block:: bash
 
@@ -308,7 +308,7 @@ To minimize disruption to the user interface, it is advisable to remedy Elastics
   app-server-1 10.100.10.121 7 47 0.21 d * morpheus1
   localhost 127.0.0.1 4 30 0.32 d m morpheus2
 
-The master is determined by identifying the row with the ‘*’ in it.
+The master is determined by identifying the row with the ``‘*’`` in it.
 SSH to this node (if different) and restart Elasticsearch.
 
 .. code-block:: bash
