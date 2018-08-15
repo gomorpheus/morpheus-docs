@@ -3,7 +3,7 @@ Infrastructure
 **************
 
 Overview
-=========
+---------
 
 The heart of |morpheus| is the ability to manage provisioning across any
 infrastructure, from bare metal to virtualized clouds and all the way to
