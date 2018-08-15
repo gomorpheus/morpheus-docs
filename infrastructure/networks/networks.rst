@@ -1,7 +1,7 @@
 Networks
 --------
 
-``Infrastructure -> Network -> Networks``
+`Infrastructure -> Network -> Networks`
 
 Overview
 ^^^^^^^^
@@ -18,7 +18,7 @@ DHCP
 
 To configure a network for DHCP:
 
-1. Navigate to ``Infrastructure -> Network -> Networks``
+1. Navigate to `Infrastructure -> Network -> Networks`
 2. Search for the target network
 3. Edit the Network by either:
 
