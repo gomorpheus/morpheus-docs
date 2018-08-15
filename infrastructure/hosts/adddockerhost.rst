@@ -53,7 +53,9 @@ Optionally configure the following:
  Then click the NEXT button
 
 
-.. image:: infrastructure/create_host_2.png[caption="Figure 5: ", title="Create Host", alt="Create Host"]
+.. image:: infrastructure/create_host_2.png
+
+.. [caption="Figure 5: ", title="Create Host", alt="Create Host"]
 
 7. Optionally add any Automation Workflows and configure for Backups.
 
