@@ -11,7 +11,7 @@ Take advantage of custom tasks and workflows within any environment by building 
   concepts/concepts.rst
   instances/instances.rst
   apps/apps.rst
-  templates/templates.rst
+  blueprints/blueprints.rst
   automation/automation.rst
   virtual_images/virtual_images.rst
   library/library.rst
