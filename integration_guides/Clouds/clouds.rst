@@ -1,11 +1,9 @@
 Clouds
 ==============
 
-
-
 .. toctree::
 
-   aws/amazon.rst
+  aws/amazon.rst
    .. Clouds/azure.rst
    .. Clouds/azure_stack.rst
    .. Clouds/digitalocean.rst
