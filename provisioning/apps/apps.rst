@@ -26,8 +26,8 @@ Creating Apps from Blueprints
 Creating Apps from Existing Instances
 -------------------------------------
 
-#. Click "+ADD APP" on the right side of the main Apps section in Provisioning.
-#. Select APP FROM EXISTING INSTANCES from the Blueprints list and click NEXT.
+#. Click :guilabel:`+ADD` on the right side of the main Apps section in Provisioning.
+#. Select ``APP FROM EXISTING INSTANCES`` from the Blueprints list and click :guilabel:`NEXT`.
 #. Enter a Name for the App and select a Group. Default Cloud and Env can also be selected.
 
    .. Note:: Only instances within the selected Group and Cloud will be available to be added to the App.
@@ -43,7 +43,7 @@ Creating Apps from Existing Instances
 
    .. Note:: Only one existing Instance can be added per Instance. To add multiple Existing Instances, repeat the step above including adding an Instance for each Existing Instance to be added to the App.
 
-#. Once all Existing Instances have been selected, click COMPLETE.
+#. Once all Existing Instances have been selected, click :guilabel:`COMPLETE`.
 #. A new App will be created out of the Existing Instances.
 
 .. image:: /images/provisioning/apps_301_2.png
@@ -56,8 +56,8 @@ Exporting JSON or YAML
 #. Select YAML or JSON in the top right.
 #. Select the Configurations to include in the Export by clicking on a Configuration. Selected Configurations will be highlighted.
 #. Select the DOWNLOAD CONFIGURATION button.
-#. The Blueprint Export file will be downloaded to your computer as {app_name}-config.json or {app_name}-config.yaml.
+#. The Blueprint Export file will be downloaded to your computer as ``{app_name}-config.json or {app_name}-config.yaml``.
 
-.. TIP:: JSON or YAML can also be Viewed, Edited, Copied, or Exported by selecting ``ACTIONS -> EDIT``on an App and clicking the RAW section in the Edit App modal.
+.. TIP:: JSON or YAML can also be Viewed, Edited, Copied, or Exported by selecting ``ACTIONS -> EDIT`` on an App and clicking the RAW section in the Edit App modal.
 
 .. image:: /images/provisioning/apps_301_3.png
