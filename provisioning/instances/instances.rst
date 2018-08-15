@@ -16,7 +16,7 @@ The top of the main Instances page shows overall statistic for the listed Instan
 
 The Instance list contains important information about each instance, including the instance name, environment tag, instance type icon, ip and port info, instance version, the number of virtual machines or containers in the instance, the group the instance is in, and the cloud or clouds the instance is in.
 
-.. include:: instances/creating_instances.rst
-.. include:: instances/instance_details.rst
-.. include:: instances/managing_instances.rst
+.. include:: creating_instances.rst
+.. include:: instance_details.rst
+.. include:: managing_instances.rst
 .. include:: /troubleshooting/remoteconsole.rst
