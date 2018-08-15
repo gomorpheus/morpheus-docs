@@ -21,6 +21,7 @@ To configure |morpheus| for approvals:
    * Please note ServiceNow integration is not required for Internal Approvals.
 
 #. Create approvals policies for:
+
    * Internal Approvals
    * SNOW Approvals
 
@@ -45,7 +46,7 @@ Configure ServiceNow integration for SNOW Approvals
 #. Select **ServiceNow** from the Type dropdown in the Integration modal and enter:
 
    - Name
-      Name of the integration in |morpheus| 
+      Name of the integration in |morpheus|
    - Enabled
       Leave checked to enable the integration.
    - Host

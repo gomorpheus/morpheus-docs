@@ -7,7 +7,7 @@ Overview
 The `Operations -> Guidance` section show recommendations for Resource and Costs Utilization optimization. By analyzing the CPU, RAM, and Storage activity of Instances and Hosts, |morpheus| can recommend actions for Sizing and Power State.
 
 Configuration
--------------
+^^^^^^^^^^^^^^
 
 Guidance is configured per Cloud and is set to off by default.
 
@@ -22,7 +22,7 @@ To turn on Guidance for a Cloud:
 Guidance recommendations will begin to appear in the guidance section when generated.
 
 Recommendations
----------------
+^^^^^^^^^^^^^^^^^^
 
 To view and act on Guidance recommendations, navigate to `Operations -> Guidance`.
 
@@ -48,7 +48,7 @@ Information Link
 .. NOTE:: Guidance Actions are not automatically triggered at this time.
 
 Filters
--------
+^^^^^^^^^^
 
 Search
   Search for Guidance recommendations
