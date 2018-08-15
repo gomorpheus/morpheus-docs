@@ -93,4 +93,4 @@ IMAGE TRANSFER STORE
 
 .. NOTE:: All fields and options can be edited after the Cloud is created.
 
-.. include:: /integration_guides/Clouds/aws/iampolicies.rst
+.. include:: iampolicies.rst
