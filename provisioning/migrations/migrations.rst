@@ -93,4 +93,4 @@ Remove Migration
 #. Select the Migrations link in the sub-navigations bar.
 #. Click the actions dropdown of the row of the migration you wish remove, and select Remove.
 
-.. include:: /provisioning/migrations/vmware2aws.rst
+.. include:: vmware2aws.rst
