@@ -7,8 +7,8 @@ Getting Started
 
   requirements.rst
   installation.rst
-  upgrading.rst
   appliance_setup.rst
+  upgrading.rst
   advanced_configuration.rst
   ha/ha_setup.rst
   cli/cli_master.rst
