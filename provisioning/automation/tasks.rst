@@ -25,7 +25,7 @@ To Add Tasks:
 
 #. Select the Provisioning link in the navigation bar.
 #. Select Automation from the sub-navigation menu.
-#. Click the Add Task button.
+#. Click the :guilabel:`Add` button.
 #. From the New Task Wizard input a name for the task.
 #. Select the type of task from from the type dropdown.
 #. Input the appropriate details dependent on the task type you selected from the dropdown.

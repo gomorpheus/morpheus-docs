@@ -59,9 +59,9 @@ Add Migration
 1. Select the Provisioning link in the navigation bar.
 2. Select the Migrations link in the sub-navigations bar.
 3. Click the Add Migration button.
-4. From the Create Migration Wizard select the type of migration, then click the Next button.
+4. From the Create Migration Wizard select the type of migration, then click the :guilabel:`Next` button.
 
-Depending on the Migration Type selected input the following, then click the Next button.
+Depending on the Migration Type selected input the following, then click the :guilabel:`Next` button.
 
 * Hypervisor to Hypervisor
   * Select Cloud, and Server
@@ -72,7 +72,7 @@ Depending on the Migration Type selected input the following, then click the Nex
 * Live Stream
   * Select Platform, Existing or New, Cloud, and Server
   * Input Host, SSH Port, SSH User, SSH Password, Public Key, and Logical Volume Device.
-  * Enter Destination details, then click the Next button.
+  * Enter Destination details, then click the :guilabel:`Next` button.
 
 5. Finalize your configuration if needed, then click the complete button.
 

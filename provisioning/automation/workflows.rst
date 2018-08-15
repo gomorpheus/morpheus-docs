@@ -9,13 +9,13 @@ To Add Workflows:
 #. Select the Provisioning link in the navigation bar.
 #. Select Automation from the sub-navigation menu.
 #. Click the Workflows tab to show the Workflows tab panel.
-#. Click the `Add Workflow` button.
+#. Click the :guilabel:`Add` button.
 #. From the New Workflow Wizard input a name for the workflow.
 #. Optionally input a description.
 #. Expand the execution phases to add tasks to, and type the name of a created task and click the task when it appears to add.
 #. If multiple tasks are added to the same execution phase, their execution order can be changed by selecting the grip icon and dragging the task to the desired execution order.
 #. For multi-tenant environments, select Public or Private visibility for the Workflow.
-#. Click the Save Changes button to save.
+#. Click the :guilabel:`Save Changes` button to save.
 
 Workflow Execution Phases
 ^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -33,7 +33,7 @@ To Edit Workflows:
 #. Click the Workflows tab to show the workflows tab panel.
 #. Click the Edit icon on the row of the workflow you wish to edit.
 #. Modify information as needed.
-#. Click the Save Changes button to save.
+#. Click the :guilabel:`Save Changes` button to save.
 
 Delete Workflow
 ^^^^^^^^^^^^^^^

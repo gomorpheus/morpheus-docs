@@ -32,7 +32,7 @@ In a Morpheus App Blueprint there are a few structural concepts to be aware of. 
       instances:
 
 
-This example has defined 2 tiers as yaml properties under the `tiers` object. They are called `Web` and `Database`. A Tier can optionally define its connected tiers which are bi-directional even though only one tier has to define them. This is the `linkedTiers` array and simply lists the connected tiers by tier name. A Boot Order can also optionally be defined under a nested `{"tier": {"bootOrder": 1}}` object structure.
+This example has defined 2 tiers as yaml properties under the `tiers` object. They are called `Web` and `Database`. A Tier can optionally define its connected tiers which are bi-directional even though only one tier has to define them. This is the `linkedTiers` array and simply lists the connected tiers by tier name. A Boot Order can also optionally be defined under a nested ``{"tier": {"bootOrder": 1}}`` object structure.
 
 Configuration Scopes
 ^^^^^^^^^^^^^^^^^^^^^^^^
@@ -125,8 +125,8 @@ Creating App Blueprints
 ----------------------
 
 #. Navigate to ``Provisioning -> Blueprints``
-#. Select ``+ ADD BLUEPRINT``
-#. Enter a NAME for the Blueprint and select ``NEXT``
+#. Select :guilabel:`+ ADD`
+#. Enter a NAME for the Blueprint and select :guilabel:`NEXT`
 #. Optionally add a Description, Category, and Image for the Blueprint.
 
 Add Tiers
@@ -174,7 +174,7 @@ To Export a Blueprint as JSON or YAML:
 #. Create or Edit a Blueprint
 #. Select the RAW section on the top of the APP BLUEPRINT modal.
 #. Select JSON or YAML in the top right of the RAW section.
-#. Select the EXPORT button.
+#. Select the :guilabel:`EXPORT` button.
 #. Select the Configurations to include in the Export by clicking on a Configuration. Selected Configurations will be highlighted.
 #. Select the DOWNLOAD CONFIGURATION button.
 #. The Blueprint Export file will be downloaded to your computer as {template_name}-config.json or {template_name}-config.yaml.
