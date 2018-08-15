@@ -1,7 +1,7 @@
 Clouds
 ==============
 
-.. include:: /aws/amazon.rst
+.. include:: aws/amazon.rst
    .. Clouds/azure.rst
    .. Clouds/azure_stack.rst
    .. Clouds/digitalocean.rst
