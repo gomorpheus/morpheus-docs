@@ -3,8 +3,8 @@ Automation
 
 .. toctree::
 
-  Automation/terraform.rst
-  Automation/chef.rst
   Automation/ansible.rst
-  Automation/salt.rst
+  Automation/chef.rst
   Automation/puppet.rst
+  Automation/salt.rst
+  Automation/terraform.rst
