@@ -32,7 +32,7 @@ On top of all these features, |morpheus| also adds additional features to VMware
 * Virtual Image management (Blueprints)
 * Auto-scaling and recovery
 
-.. include:: vmware/getting_started.rst
-.. include:: vmware/docker.rst
-.. include:: vmware/multitenancy.rst
-.. include:: vmware/advanced.rst
+.. include:: Clouds/vmware/getting_started.rst
+.. include:: Clouds/vmware/docker.rst
+.. include:: Clouds/vmware/multitenancy.rst
+.. include:: Clouds/vmware/advanced.rst
