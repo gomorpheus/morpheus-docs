@@ -115,10 +115,10 @@ Execution Schedules
 Create Execution Schedule
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
-    NAME
-    DESCRIPTION
-    TIME ZONE
-     Enabled
-    SCHEDULE
-    0 0 * * *
-    Every day at 00:00✖
+  * NAME
+  * DESCRIPTION
+  * TIME ZONE
+  * Enabled
+  * SCHEDULE
+  * 0 0 * * *
+  * Every day at 00:00✖
