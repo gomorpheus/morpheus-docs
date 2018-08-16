@@ -5,9 +5,9 @@ Configuration
 ^^^^^^^^^^^^^^^
 
 Adding PCF Cloud From `Infrastructure -> Clouds`
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-#. Navigate to `Infrastructure -> Clouds`
+#. Navigate to ``Infrastructure -> Clouds``
 #. Select :guilabel:`+ ADD`
 #. Select **CLOUD FOUNDRY** from the Clouds list
 #. Select :guilabel:`NEXT`
@@ -42,9 +42,9 @@ Adding PCF Cloud From `Infrastructure -> Clouds`
 
 
 Adding PCF Cloud From `Infrastructure -> Groups`
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-#. Navigate to `Infrastructure -> Groups`
+#. Navigate to ``Infrastructure -> Groups``
 #. Select a Group
 #. Select the `CLOUDS` tab
 #. Scroll down to CLOUD FOUNDRY and select :guilabel:`+ ADD`
@@ -81,7 +81,7 @@ Adding Spaces
 Cloud Foundry Spaces are referred to as Resource Pools in Morpheus.  You can add a new Space by:
 
 #. Navigating to the Cloud and selecting the Resources tab.
-#. Then, click ‘+ Add Resource’.
+#. Then, click :guilabel:‘+ Add Resource’.
 #. Give the Resource a Name
 #. Expand the Managers, Developers, and Auditors section to add specific Cloud Foundry users to the roles.  When adding a user to these sections, use their Cloud Foundry email addresses.
 
@@ -135,7 +135,7 @@ Using the Cloud Foundry docs (https://docs.cloudfoundry.org/devguide/deploy-apps
 Adding Marketplace Items
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
-#. Navigate to `Infrastructure -> Clouds` and select your Cloud Foundry Cloud
+#. Navigate to ``Infrastructure -> Clouds`` and select your Cloud Foundry Cloud
 #. Select the MARKETPLACE tab
 #. Select :guilabel:`+ ADD MARKETPLACE ITEM`
 #. Select the |morpheus| Instance Type to add the Marketplace Item to.
@@ -153,7 +153,7 @@ Seeded and Marketplace Items
 
 |morpheus| automatically seeds MySQL, Redis and RabbitMQ PCF Instance Types, and PCF Marketplace items can also be easily added to the Provisioning Library in the Cloud detail view Marketplace tab. The Marketplace item will be added to the selected Instance Type and available when selecting the Cloud Foundry Cloud during Instance or App Template creation.
 
-#. Navigate to `Provisioning -> Instances` and select an Instance Type with a Cloud Foundry layout (MySQL, Redis and RabbitMQ plus Marketplace additions)
+#. Navigate to ```Provisioning -> Instances`` and select an Instance Type with a Cloud Foundry layout (MySQL, Redis and RabbitMQ plus Marketplace additions)
 #. Select :guilabel:`NEXT`
 #. Select a Group and PCF Cloud
 #. Add an Instance Name
@@ -177,7 +177,7 @@ Cloud Foundry App Instance Type
 
 .. NOTE:: Minimal options are outlined below.
 
-#. Navigate to `Provisioning -> Instances` and select the `Cloud Foundry App` Instance Type
+#. Navigate to ```Provisioning -> Instances`` and select the `Cloud Foundry App` Instance Type
 #. Select :guilabel:`NEXT`
 #. Select a Group and PCF Cloud
 #. Add an Instance Name
