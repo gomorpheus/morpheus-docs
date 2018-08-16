@@ -9,9 +9,6 @@ Clouds
   Clouds/azure/azure.rst
   Clouds/azure_stack/azure_stack.rst
   
-
-   .. Clouds/azure.rst
-   .. Clouds/azure_stack.rst
    .. Clouds/digitalocean.rst
    .. Clouds/esxi.rst
    .. Clouds/google.rst
