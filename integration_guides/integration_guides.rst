@@ -11,12 +11,12 @@ Integration Guides
 .. include:: Deployments/deployment.rst
 .. include:: DNS/DNS.rst
 .. include:: IdentityManagement/IdentityManagement.rst
+.. include:: ITSM/ITSM.rst
 .. include:: LoadBalancers/LoadBalancers.rst
 .. include:: Logs/Logs.rst
 .. include:: Monitoring/Monitoring.rst
 .. include:: Networking/networking.rst
 .. include:: service_discovery/service_discovery.rst
 .. include:: storage/storage.rst
-.. include:: ITSM/ITSM.rst
 .. include:: tableofcontents.rst
 .. .. include:: Security/security.rst

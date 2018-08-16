@@ -4,7 +4,7 @@ Identity Management
 .. toctree::
   IdentityManagement/active_directory.rst
   IdentityManagement/saml.rst
-  IdentityManagement/onelogin.rst
+  IdentityManagement/OneLogin.rst
   .. IdentityManagement/CustomAPI.rst
   .. IdentityManagement/CustomExternal.rst
   .. IdentityManagement/JumpCloud.rst

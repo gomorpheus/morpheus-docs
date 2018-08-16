@@ -8,7 +8,7 @@ Clouds
 
 .. toctree::
   :maxdepth: 2
-  
+
   Clouds/aws/amazon.rst
   Clouds/azure/azure.rst
 
@@ -36,7 +36,7 @@ Clouds
    .. Clouds/centos7template.rst
    .. Clouds/macstadium.rst
    .. Clouds/metaCloud.rst
-   .. Clouds/oraclecloud.rst
+   Clouds/oracle/oraclevm.rst
    .. Clouds/ucs_manager.rst
    .. Clouds/vclouddirector.rst
    .. Clouds/vcloudair.rst
