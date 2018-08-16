@@ -12,6 +12,7 @@ Clouds
   Clouds/digitalocean/digitalocean.rst
   Clouds/esxi/esxi.rst
   Clouds/google/google.rst
+  Clouds/hyperv/hyperv.rst
 
    .. Clouds/hyperv.rst
    .. Clouds/nutanix.rst
