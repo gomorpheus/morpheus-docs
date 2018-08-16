@@ -10,8 +10,8 @@ Adding Network Groups
 ^^^^^^^^^^^^^^^^^^^^^
 
 1. Navigate to `Infrastructure -> Network -> Networks Groups`
-2. Click btn:[ADD]
+2. Click :guilabel:`ADD`
 3. Enter the following:
-   * Group info:
-     * *Name*: Name of the Network Group in |morpheus| 
-     * *Description*: Details of the
+   Group info:
+     * *Name*: Name of the Network Group in |morpheus|
+     * *Description*: Details of the Network Group in |morpheus|
