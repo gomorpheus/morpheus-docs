@@ -25,7 +25,8 @@ Clouds
    .. Clouds/oraclevm.rst
    .. Clouds/softlayer.rst
    .. Clouds/virtualbox.rst
-   .. Clouds/vmware.rst
+   Clouds/vmware/vmware.rst
+   Clouds/vmwarefusion/vmwarefusion.rst
    .. Clouds/macstadium.rst
    .. Clouds/vmwfusion.rst
    .. Clouds/xen.rst
