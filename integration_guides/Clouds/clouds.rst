@@ -2,16 +2,12 @@ Clouds
 ==============
 
 
-.. .. include:: Clouds/aws/amazon.rst
-.. .. include:: Clouds/azure/azure.rst
-
-
 .. toctree::
   :maxdepth: 2
 
   Clouds/aws/amazon.rst
   Clouds/azure/azure.rst
-
+  Clouds/azure_stack/azure_stack.rst
 
 
    .. Clouds/azure.rst
