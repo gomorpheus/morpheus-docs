@@ -36,3 +36,4 @@ On top of all these features, |morpheus| also adds additional features to VMware
 .. include:: /integration_guides/Clouds/vmware/docker.rst
 .. include:: /integration_guides/Clouds/vmware/multitenancy.rst
 .. include:: /integration_guides/Clouds/vmware/advanced.rst
+.. include:: /integration_guides/Clouds/vmware/permissions.rst
