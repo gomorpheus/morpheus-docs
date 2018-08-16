@@ -4,7 +4,7 @@ Troubleshooting
 
 .. toctree::
   :maxdepth: 2
-  
+
   ports.rst
   agent.rst
   remoteconsole.rst
@@ -13,9 +13,7 @@ Troubleshooting
   customimage.rst
   restartinstall.rst
   variables.rst
-  exportmorpheuslogs.rst
   blankdashboard.rst
   deletingtenant.rst
 
-
-.. .. include:: faq.rst
+  .. exportmorpheuslogs.rst
