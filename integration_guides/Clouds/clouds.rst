@@ -8,13 +8,11 @@ Clouds
   Clouds/aws/amazon.rst
   Clouds/azure/azure.rst
   Clouds/azure_stack/azure_stack.rst
+  Clouds/cloudfoundry/cloudfoundry.rst
+  Clouds/digitalocean/digitalocean.rst
+  Clouds/esxi/esxi.rst
+  Clouds/google/google.rst
 
-
-   .. Clouds/azure.rst
-   .. Clouds/azure_stack.rst
-   .. Clouds/digitalocean.rst
-   .. Clouds/esxi.rst
-   .. Clouds/google.rst
    .. Clouds/hyperv.rst
    .. Clouds/nutanix.rst
    .. Clouds/openstack.rst
