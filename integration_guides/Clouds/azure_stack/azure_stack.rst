@@ -90,7 +90,7 @@ Required Credentials & Permissions
 
 Credentials to integrate |morpheus| with Azure Stack are located in both the public Azure Portal and the Private Azure Stack Portal. The Azure Active Directory Application used must be an owner of the Azure Stack subscription.
 
-* Azure Portal:
+Azure Portal:
   * Azure Active Directory Application Credentials
   * Directory ID
   * Management URL
@@ -98,7 +98,7 @@ Credentials to integrate |morpheus| with Azure Stack are located in both the pub
   * Application ID
   * Key Value
 
-* Azure Stack Portal:
+Azure Stack Portal:
   * Azure Stack Subscription ID
   * Active Directory App from Azure portal added as owner of the Azure Stack Subscription in Azure Stack.
 
