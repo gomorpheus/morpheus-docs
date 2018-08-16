@@ -13,10 +13,10 @@ Adding a SAML Integration
 
 To add a SAML integration:
 
-#. Navigate to Settings - Accounts
+#. Navigate to ``Settings -> Accounts``
 #. Select an account.
 #. Select IDENTITY SOURCES in the Account detail page
-#. Select + ADD IDENTITY SOURCE.
+#. Select :guilabel:`+ ADD IDENTITY SOURCE`.
 #. Select SAML (external login) from the TYPE field
 #. Add a Name and optional Description for the SAML integration
 
