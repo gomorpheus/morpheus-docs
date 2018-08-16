@@ -56,11 +56,13 @@ Create a new machine in VMware vCenter and install a base version of your prefer
 #.	Install cloud-utils-growpart ``sudo apt install cloud-utils``
 #.	Install desired hypervisor drivers (Virto, Open-VM Tools)
 #.	Install git by running ``sudo apt install git``
-#.	As Debian 9 includes network manager ensure this is disabled. Change the
+#.	As Debian 9 includes network manager ensure this is disabled. Change the below file
+
       .. code-block:: bash
 
         /etc/NetworkManager/NetworkManager.conf
-    file so it is set to
+
+ to the following:
 
       .. code-block:: bash
 
@@ -81,9 +83,9 @@ From within the organisation click on ``Catalogues`` > select an existing catalo
 
 Open the catalogue and select the import template from vCenter and then browse the data stores for your templates. Select your template and the type in a new name and description then check the copy template into vCloud director.
 
-Once you click ok the import process will begin. When the import has completed the template will appear in |morpheus| within ``Provisioning`` > ``Virtual Images``
+Once you click ok the import process will begin. When the import has completed the template will appear in |morpheus| within ``Provisioning > Virtual Images``
 
 If the image does not appear within the virtual images you may need to use the filters to filter the virtual images by the vmware ( vmdk / ovf / ova) type.
 
-You may also need to refresh the cloud. To do this go to ``Infrastructure`` > ``Clouds``
+You may also need to refresh the cloud. To do this go to ``Infrastructure > Clouds``
 >	select the vCloud Director cloud > select Refresh.

@@ -5,8 +5,8 @@ Virtualbox
 Add a VirtualBox Cloud
 ^^^^^^^^^^^^^^^^^^^^^^^
 
-#. Navigate to Infrastructure -> Clouds
-#. Select `+ CREATE CLOUD`, select Virtual Box, and then click Next.
+#. Navigate to ``Infrastructure -> Clouds``
+#. Select :guilabel:`+ CREATE CLOUD`, select Virtual Box, and then click Next.
 #. Enter the following into the Create Cloud modal:
 
    Name
@@ -26,7 +26,7 @@ Add a VirtualBox Cloud
    BRIDGE NAME
       Will auto-populate upon successful authentication with the VirtualBox Host (E.X. 'EN0: ETHERNET')
    VBOXMANAGE EXECUTABLE
-      Defaults to /urs/local/bin/vboxmanage if left blank
+      Defaults to ``/urs/local/bin/vboxmanage`` if left blank
 
 #. The Cloud can now be added to a Group or configured with additional Advanced options.
 
