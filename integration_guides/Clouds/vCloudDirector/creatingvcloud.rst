@@ -56,11 +56,13 @@ Create a new machine in VMware vCenter and install a base version of your prefer
 #.	Install cloud-utils-growpart ``sudo apt install cloud-utils``
 #.	Install desired hypervisor drivers (Virto, Open-VM Tools)
 #.	Install git by running ``sudo apt install git``
-#.	As Debian 9 includes network manager ensure this is disabled. Change the
+#.	As Debian 9 includes network manager ensure this is disabled. Change the below file
+
       .. code-block:: bash
 
         /etc/NetworkManager/NetworkManager.conf
-    file so it is set to
+
+ to the following:
 
       .. code-block:: bash
 
