@@ -19,8 +19,8 @@ Clouds
    .. Clouds/nutanix.rst
    .. Clouds/openstack.rst
    .. Clouds/oraclevm.rst
-   .. Clouds/softlayer.rst
-   .. Clouds/virtualbox.rst
+   Clouds/softlayer/softlayer.rst
+   Clouds/virtualbox/virtualbox.rst
    Clouds/vmware/vmware.rst
    Clouds/vmwarefusion/vmwarefusion.rst
    .. Clouds/macstadium.rst
@@ -28,12 +28,12 @@ Clouds
    .. Clouds/xen.rst
    .. Clouds/cloudbase-init.rst
    .. Clouds/cloudfoundry.rst
-   .. Clouds/upcloud.rst
-   .. Clouds/scvmm.rst
+   Clouds/upcloud/upcloud.rst
+   Clouds/scvmm/scvmm.rst
    .. Clouds/centos7template.rst
    .. Clouds/macstadium.rst
    .. Clouds/metaCloud.rst
    Clouds/oracle/oraclevm.rst
-   .. Clouds/ucs_manager.rst
-   .. Clouds/vclouddirector.rst
+   Clouds/ucs_manager/ucs_manager.rst
+   Clouds/vCloudDirector/vclouddirector.rst
    .. Clouds/vcloudair.rst
