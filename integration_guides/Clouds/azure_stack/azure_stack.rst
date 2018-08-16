@@ -80,8 +80,8 @@ The following resources need to be created and configured inside Azure Stack for
 * Virtual Network(s)
 * Storage Account(s)
 * Network Security Group(s)
-  * Inbound ports open from |morpheus| Appliance: 22, 5985, 3389
-  * Outbound ports open to |morpheus| Appliance: 80, 443
+  - Inbound ports open from |morpheus| Appliance: 22, 5985, 3389
+  - Outbound ports open to |morpheus| Appliance: 80, 443
 
 .. NOTE:: Proper Network and Network Security Group configuration is required for |morpheus| agent install, communication, and remote console access. Other configurations, such as docker instances, will need the appropriate ports opened as well.
 
