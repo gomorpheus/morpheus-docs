@@ -11,7 +11,7 @@ Create a new machine in VMware vCenter and install a base version of your prefer
 
     .. code-block:: PowerShell
 
-        - Get-NetConnectionProfile | Set-NetconnectionProfile -NetworkCategory private
+      Get-NetConnectionProfile | Set-NetconnectionProfile -NetworkCategory private
 
 #.  Configure WinRM to allow remote management and open the firewall.
 
@@ -23,7 +23,7 @@ Create a new machine in VMware vCenter and install a base version of your prefer
 
     .. code-block:: PowerShell
 
-      - Enable-PSremoting
+      Enable-PSremoting
 
 #.	Shutdown the virtual machine and convert to a template.
 

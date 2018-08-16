@@ -30,11 +30,11 @@ An UpCloud User with API, Server and Storage permissions is required.
 *To enable API access for a Main Account UpCloud User:*
 
 #. Login to UpCloud
-#. Select `My Account -> User Accounts`
+#. Select ``My Account -> User Accounts``
 #. Select `Change` on the target user
 #. Check the box for `API connections: Allow API connections from`
-#. Under `Access Permissions ->  Allow access to individual servers`, check the box for `User has control access to all servers`.
-#. Under `Access Permissions ->  Allow control access to individual storages`, check the box for `User has control access to all storages`
+#. Under ``Access Permissions ->  Allow access to individual servers``, check the box for `User has control access to all servers`.
+#. Under ``Access Permissions ->  Allow control access to individual storages``, check the box for `User has control access to all storages`
 #. Save
 
 *To Enable API, API, Server and Storage permissions for a SubAccount User:*
@@ -42,20 +42,20 @@ An UpCloud User with API, Server and Storage permissions is required.
 When creating or editing a Sub Account UpCloud user:
 
 #. Check the box for `API connections: Allow API connections from`
-#. Under `Access Permissions ->  Allow access to individual servers`, check the box for `User has control access to all servers`.
-#. Under `Access Permissions ->  Allow control access to individual storages`, check the box for `User has control access to all storages`
+#. Under ``Access Permissions ->  Allow access to individual servers``, check the box for `User has control access to all servers`.
+#. Under ``Access Permissions ->  Allow control access to individual storages``, check the box for `User has control access to all storages`
 #. Save
 
 Adding an UpCloud Cloud
 ^^^^^^^^^^^^^^^^^^^^^^^
 
 Configure
-^^^^^^^^^
+~~~~~~~~~~
 
-#. Navigate to `Infrastructure -> Clouds`
-#. Select `+ Create Cloud` Button
+#. Navigate to ``Infrastructure -> Clouds``
+#. Select :guilabel:`+ Create Cloud` Button
 #. Select UpCloud from the Add Cloud modal
-#. Select `NEXT`
+#. Select :guilabel:`NEXT`
 #. Enter the following:
 
    Name
@@ -82,7 +82,7 @@ The Cloud can now be added to a Group or configured with additional Advanced opt
 .. .. include:: /integration_guides/advanced_options.rst
 
 Group
-^^^^^
+~~~~~~
 
 A Group must be specified or created for the new Cloud to be added to. Clouds can be added to additional Groups or removed from Groups after being created.
 
@@ -90,14 +90,14 @@ A Group must be specified or created for the new Cloud to be added to. Clouds ca
 * *CREATE NEW*: Creates a new Group in |morpheus| and adds the Cloud to the Group.
 
 Review
-^^^^^^
+~~~~~~
 
 Confirm all settings are correct and select `COMPLETE`.
 
 The UpCloud Cloud will be added, and |morpheus| will perform the initial cloud sync of:
 
 * UpCloud Servers will added as Virtual Machines (if Inventory is enabled)
-* UpCloud Templates (My Templates) will sync and be added to `Provisioning -> Virtual Images`.
+* UpCloud Templates (My Templates) will sync and be added to ```Provisioning -> Virtual Images``.
 
 .. NOTE:: The Console tab will only appear for Inventoried Servers if Inventory Level is set to `Full`
 
