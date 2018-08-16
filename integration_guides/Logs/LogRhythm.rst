@@ -4,7 +4,7 @@ LogRhythm
 Adding LogRhythm Integration
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-#. Navigate to `Administration -> Logs`
+#. Navigate to ``Administration -> Logs``
 #. Expand the LogRhythm section
 #. Enable the integration
 #. Fill in the following:
