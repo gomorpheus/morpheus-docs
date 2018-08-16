@@ -30,7 +30,7 @@ Requirements
 ^^^^^^^^^^^^^
 
 Azure Stack Accessibility
-^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~
 
 By default, the Azure Stack management url's are not accessible from an external network. Port mappings and DNS must be configured for communication between the |morpheus| Appliance and Azure Stack.
 
@@ -72,7 +72,7 @@ Below is a sample output from the script for reference:
 
 
 Azure Stack Resources
-^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~
 
 The following resources need to be created and configured inside Azure Stack for successful provisioning:
 
@@ -86,17 +86,17 @@ The following resources need to be created and configured inside Azure Stack for
 .. NOTE:: Proper Network and Network Security Group configuration is required for |morpheus| agent install, communication, and remote console access. Other configurations, such as docker instances, will need the appropriate ports opened as well.
 
 Required Credentials & Permissions
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Credentials to integrate |morpheus| with Azure Stack are located in both the public Azure Portal and the Private Azure Stack Portal. The Azure Active Directory Application used must be an owner of the Azure Stack subscription.
 
 * Azure Portal:
   * Azure Active Directory Application Credentials
-    * Directory ID
-    * Management URL
-    * Identity Resource URL
-    * Application ID
-    * Key Value
+  * Directory ID
+  * Management URL
+  * Identity Resource URL
+  * Application ID
+  * Key Value
 
 * Azure Stack Portal:
   * Azure Stack Subscription ID
@@ -104,13 +104,13 @@ Credentials to integrate |morpheus| with Azure Stack are located in both the pub
 
 
 Adding an Azure Stack Cloud
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Configure
-^^^^^^^^^
+~~~~~~~~~~
 
-#. In the |morpheus| UI, navigate to `Infrastructure -> Clouds` and Select `+ CREATE CLOUD`
-#. Select *AZURE STACK (PRIVATE)* from the Clouds list and select NEXT
+#. In the |morpheus| UI, navigate to ``Infrastructure -> Clouds`` and Select :guilabel:`+ CREATE CLOUD`
+#. Select *AZURE STACK (PRIVATE)* from the Clouds list and select :guilabel:`NEXT`
 #. In the Configure section, enter:
 
    NAME
@@ -189,7 +189,7 @@ Provisioning Options
 Once all options are configured, select NEXT to add the cloud to a Group.
 
 Group
-^^^^^^
+~~~~~~
 
 A Group must be specified or created for the new Cloud to be added to. Clouds can be added to additional Groups or removed from Groups after being created.
 
@@ -199,7 +199,7 @@ CREATE NEW
   Creates a new Group in |morpheus| and adds the Cloud to the Group.
 
 Review
-^^^^^^^
+~~~~~~~
 
 Confirm all settings are correct and select COMPLETE. The Azure Stack Cloud will be added, and |morpheus| will perform the initial cloud sync of:
 
