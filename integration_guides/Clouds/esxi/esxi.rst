@@ -19,6 +19,6 @@ To get started with VMware ESXi, simply add a VMware ESXi Cloud in either the In
 
 .. NOTE:: If you receive the message "Error! Invalid cloud config" Please ensure you have ssh enabled on the ESXi host.
 
-.. include:: /integration_guides/advanced_options.rst
+.. include:: /integration_guides/Clouds/advanced_options.rst
 
 .. IMPORTANT:: ESXi provisioning require a vmx file, which is not included in an OVF/OVA export from vCenter. A proper vmx file must be included when adding a vmdk/ovf/ova image to Virtual Images in Morpheus for successful provisioning.
