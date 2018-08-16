@@ -13,7 +13,7 @@ Visibility
 Username
   Softlayer Username
 API Key
-  Softlayer User API Key, accessible in the Softlayer Portal under `Account -> Users -> View API Key`
+  Softlayer User API Key, accessible in the Softlayer Portal under ```Account -> Users -> View API Key``
 Datacenter
   Datacenters will auto-populate upon successful authentication with the above credentials. Select appropriate Datacenter for this Cloud.
 Object Store

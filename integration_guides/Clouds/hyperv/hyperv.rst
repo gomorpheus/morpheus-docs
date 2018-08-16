@@ -52,7 +52,7 @@ Type the following command at a command prompt:
 
 If you are not running under the local computer Administrator account, you must either select Run as Administrator from the Start menu or use the `Runas` command at a command prompt.
 
-When the tool displays Make these changes ``[y/n]?``, type ``y``.
+When the tool displays ``Make these changes [y/n]?``, type ``y``.
 
 If configuration is successful, the following output is displayed:
 

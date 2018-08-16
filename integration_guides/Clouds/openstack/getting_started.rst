@@ -2,7 +2,7 @@
 Getting Started
 ^^^^^^^^^^^^^^^
 
-Adding an Openstack cloud to |morpheus| is one of the simpler cloud integrations to get started with. First go to the `Infrastructure -> Clouds` section and click add cloud. From here there are several options including Metapod, Helion, and general Openstack. Any of these options will actually work and for the most part the branded Openstack options are represented to make it clearer to the user as to the capabilities of |morpheus| .
+Adding an Openstack cloud to |morpheus| is one of the simpler cloud integrations to get started with. First go to the ``Infrastructure -> Clouds`` section and click add cloud. From here there are several options including Metapod, Helion, and general Openstack. Any of these options will actually work and for the most part the branded Openstack options are represented to make it clearer to the user as to the capabilities of |morpheus| .
 
 .. update image:: /images/openstack/add_cloud.png
 
