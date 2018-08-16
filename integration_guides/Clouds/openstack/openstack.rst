@@ -28,6 +28,6 @@ On top of all these features, |morpheus| also adds additional features to Openst
 
 .. TIP:: To allow Morpheus to list Hypervisor Hosts, ensure the Openstack user used for the Cloud Integration has sufficient privileges for ``"os_compute_api:os-hypervisors"`` in ``/etc/nova/policy.json`` in Openstack.
 
-.. include:: /integration_guides/Clouds/openstack/getting_started.rst
-.. include:: /integration_guides/Clouds/openstack/advanced.rst
-.. include:: /integration_guides/Clouds/openstack/docker.rst
+.. include:: getting_started.rst
+.. include:: advanced.rst
+.. include:: docker.rst

@@ -13,26 +13,19 @@ Clouds
   Clouds/esxi/esxi.rst
   Clouds/google/google.rst
   Clouds/hyperv/hyperv.rst
-
-   .. Clouds/hyperv.rst
-   .. Clouds/nutanix.rst
-   .. Clouds/openstack.rst
-   .. Clouds/oraclevm.rst
-   Clouds/oracle/oraclevm.rst
-   Clouds/scvmm/scvmm.rst
-   Clouds/softlayer/softlayer.rst
-   Clouds/ucs_manager/ucs_manager.rst
-   Clouds/upcloud/upcloud.rst
-   Clouds/vCloudDirector/vclouddirector.rst
-   Clouds/virtualbox/virtualbox.rst
-   Clouds/vmware/vmware.rst
-   Clouds/vmwarefusion/vmwarefusion.rst
-   Clouds/xen/xen.rst
-   .. Clouds/macstadium.rst
-   .. Clouds/vmwfusion.rst
-   .. Clouds/cloudbase-init.rst
-   .. Clouds/cloudfoundry.rst
-   .. Clouds/centos7template.rst
-   .. Clouds/macstadium.rst
-   .. Clouds/metaCloud.rst
-   .. Clouds/vcloudair.rst
+  Clouds/kvm/kvm.rst
+  Clouds/macstadium/macstadium.rst
+  Clouds/nutanix/nutanix.rst
+  Clouds/openstack/openstack
+  Clouds/oracle/oraclevm.rst
+  Clouds/scvmm/scvmm.rst
+  Clouds/softlayer/softlayer.rst
+  Clouds/ucs_manager/ucs_manager.rst
+  Clouds/upcloud/upcloud.rst
+  Clouds/vCloudDirector/vclouddirector.rst
+  Clouds/virtualbox/virtualbox.rst
+  Clouds/vmware/vmware.rst
+  Clouds/vmwarefusion/vmwarefusion.rst
+  Clouds/xen/xen.rst
+  Clouds/cloudbase-init.rst
+  Clouds/centos7template.rst
