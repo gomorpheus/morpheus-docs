@@ -8,7 +8,7 @@ Clouds
   Clouds/aws/amazon.rst
   Clouds/azure/azure.rst
   Clouds/azure_stack/azure_stack.rst
-
+  
 
    .. Clouds/azure.rst
    .. Clouds/azure_stack.rst
