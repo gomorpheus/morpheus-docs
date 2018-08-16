@@ -4,19 +4,19 @@ VMware Permissions
 Usage
 ''''''
 
-* VCenter
+VCenter
   * Non-Propagating
 
-* Datacenter
+Datacenter
   * Non-Propagating
 
-* Cluster
+Cluster
   * Non-Propagating
 
-* Host
+Host
   * Non-Propagating
 
-* Datastore
+Datastore
   * Propagating
 
 
@@ -25,7 +25,7 @@ Usage
 Privileges
 ''''''''''
 
-* Datastore
+Datastore
   * Allocate Space
   * Browse Datastore
   * Low Level file Operations
@@ -33,38 +33,38 @@ Privileges
   * Update virtual machine files
   * Update virtual machine metadata
 
-* Distributed Switch
+Distributed Switch
   * Port configuration operation
   * Port setting operation
 
-* Global
+Global
   * Log Event
   * Manage custom attributes
   * Set custom attribute
 
-* Network
+Network
   * Assign Network
   * Configure
   * Remove
 
-* Resource
+Resource
   * Apply recommendation
   * Assign vApp to resource pool
   * Assign virtual machine to resource pool
   * Migrate powered off virtual machine
   * Migrate powered on virtual machine
 
-* Scheduled task
+Scheduled task
   * Create tasks
   * Modify task
   * Remove task
   * Run task
 
-*Tasks
+Tasks
   * Create task
   * Update task
 
-*Virtual Machine
+Virtual Machine
   * Configuration (all)
   * Guest Operations (all)
   * Interaction (all)
@@ -74,7 +74,7 @@ Privileges
   * Snapshot management (all)
   * vSphere Replication (all)
 
-*vApp
+vApp
   * Clone
   * Export
   * Import
