@@ -1,7 +1,7 @@
 ServiceNow Monitoring Integration
 ---------------------------------
 
-.. NOTE:: A ServiceNow Integration must be already configured in `Administration -> Integrations` to enable the ServiceNow Monitoring Integration. Refer to the snow_ configuration guide for more information.
+.. NOTE:: A ServiceNow Integration must be already configured in ``Administration -> Integrations`` to enable the ServiceNow Monitoring Integration. Refer to the :ref:`snow` configuration guide for more information.
 
 Enabled
   Enables the ServiceNow Monitoring Integration
