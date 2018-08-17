@@ -33,7 +33,7 @@ Adding PCF Cloud From `Infrastructure -> Clouds`
     Select Organization. Dropdown populates upon successful authorization.
 
 #. Select :guilabel:`NEXT`
-   .. include:: advanced_options.rst
+..   .. include:: advanced_options.rst
 
 #. Select :guilabel:`NEXT`
 #. Select an existing or create a new Group to add the Cloud to. The Cloud can be added to additional Groups in a Groups `Clouds` tab.
@@ -71,7 +71,7 @@ Adding PCF Cloud From `Infrastructure -> Groups`
    ORGANIZATION
     Select Organization. Dropdown populates upon successful authorization.
 
-   .. include:: advanced_options.rst
+.. .. include:: advanced_options.rst
 
 #. Select :guilabel:`NEXT`
 #. Review and then Select :guilabel:`COMPLETE`
