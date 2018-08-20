@@ -45,14 +45,15 @@ Password
 A Cypher password generates a secure password of specified character length in the key pattern (or 15) with symbols, numbers, upper case, and lower case letters (i.e. password/15/mypass generates a 15 character password).
 
 Key
-
   Pattern "password/character_length/key"
 
   Example: password/10/mypassword
 
-Value:: Leave the Value filed blank for a password, as it will be generated.
+Value
+  Leave the Value filed blank for a password, as it will be generated.
 
-Lease: Enter lease time in milliseconds (ex. 604800000 for one week)
+Lease
+  Enter lease time in milliseconds (ex. 604800000 for one week)
 
 Save changes and the password will be generated and available for use.
 
@@ -131,7 +132,7 @@ Using Cypher Keys in Scripts
 
 To use a cypher Key in a script, use the following syntax:
 
-<%=cypher.read('var_name')%>
+``<%=cypher.read('var_name')%>``
 
 Example: ``PASSWORD=<%=cypher.read('secret/myuserpassword')%>``
 

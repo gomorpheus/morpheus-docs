@@ -45,8 +45,6 @@ Since a full history of the backup builds are kept in |morpheus| , as the applia
 Add Deployment
 --------------
 
-To Add Deployment:
-
 #. Select the ``Provisioning`` link in the navigation bar.
 #. Select the ``Deployments`` link in the sub-navigation bar.
 #. Click the :guilabel:`Add` button.
@@ -55,8 +53,6 @@ To Add Deployment:
 
 Add Version
 ------------
-
-To Add Version:
 
 #. Select the ``Provisioning`` link in the navigation bar.
 #. Select the ``Deployments`` link in the sub-navigation bar.
@@ -78,8 +74,6 @@ To Add Version:
 Edit Deployment
 ---------------
 
-To Edit Deployment:
-
 #. Select the ``Provisioning`` link in the navigation bar.
 #. Select the ``Deployments`` link in the sub-navigation bar.
 #. Click the Edit Deployment icon on the row of the deployment you wish to edit.
@@ -88,8 +82,6 @@ To Edit Deployment:
 
 Delete Deployment
 -----------------
-
-To Delete Deployment:
 
 #. Select the ``Provisioning`` link in the navigation bar.
 #. Select the ``Deployments`` link in the sub-navigation bar.

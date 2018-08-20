@@ -14,7 +14,7 @@ When performing a Hypervisor to Hypervisor migration from VMware to AWS, there a
 Add S3 Storage Provider
 ^^^^^^^^^^^^^^^^^^^^^^^
 
-In the ```Infrastructure-> Storage`` section, select :guilabel:`+ADD` and enter the same AWS Access key and Secret Key used to create your AWS cloud in |morpheus| . Then add the S3 bucket name that the migration image(s) will be added to.
+In the ```Infrastructure-> Storage`` section, select :guilabel:`+ADD` and enter the same AWS Access key and Secret Key used to create your AWS cloud in |morpheus|. Then add the S3 bucket name that the migration image(s) will be added to.
 
 Set Image Transfer Store
 ^^^^^^^^^^^^^^^^^^^^^^^^

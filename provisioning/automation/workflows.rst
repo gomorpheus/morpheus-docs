@@ -4,8 +4,6 @@ Workflows
 Add Workflow
 ^^^^^^^^^^^^
 
-To Add Workflows:
-
 #. Select the Provisioning link in the navigation bar.
 #. Select Automation from the sub-navigation menu.
 #. Click the Workflows tab to show the Workflows tab panel.
@@ -26,8 +24,6 @@ For VM’s, Pre-Provision and Provision execute after the VM is running. Pre-Pro
 Edit Workflow
 ^^^^^^^^^^^^^
 
-To Edit Workflows:
-
 #. Select the Provisioning link in the navigation bar.
 #. Select Automation from the sub-navigation menu.
 #. Click the Workflows tab to show the workflows tab panel.
@@ -37,8 +33,6 @@ To Edit Workflows:
 
 Delete Workflow
 ^^^^^^^^^^^^^^^
-
-To Delete Workflows:
 
 #. Select the Provisioning link in the navigation bar.
 #. Select Automation from the sub-navigation menu.
