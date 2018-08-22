@@ -82,196 +82,185 @@ Steps
        mysql['morpheus_db_user'] = 'morpheus'
        mysql['morpheus_password'] = 'password'
 
-.. note::
+   .. note:: If you are running MySQL in a Master/Master configuration we will need to slightly alter the mysql['host'] line in the ``morpheus.rb`` to account for both masters in a failover configuration. As an example: ``mysql['host'] = '10.100.10.111:3306,10.100.10.112'``. |morpheus| will append the ‘3306’ port to the end of the final IP in the string, which is why we leave it off but explicitly type it for the first IP in the string. The order of IPs matters in that it should be the same across all three |morpheus| Application Servers. As mentioned, this will be a failover configuration for MySQL in that the application will only read/write from the second master if the first master becomes unavailable. This way we can avoid commit lock issues that might arise from a load balanced Master/Master.
 
-  If you are running MySQL in a Master/Master configuration we will need to slightly alter the mysql['host'] line in the ``morpheus.rb`` to account for both masters in a failover configuration. As an example:
+#. Run the reconfigure on all nodes
 
-.. code-block:: bash
+   .. code-block:: bash
 
-    mysql['host'] = '10.100.10.111:3306,10.100.10.112'
+    [root@app-server-1 ~] morpheus-ctl reconfigure
 
+   |morpheus| will come up on all nodes and Elasticsearch will auto-cluster. The only item left is the manual clustering of RabbitMQ.
 
-|morpheus| will append the ‘3306’ port to the end of the final IP in the string, which is why we leave it off but explicitly type it for the first IP in the string. The order of IPs matters in that it should be the same across all three |morpheus| Application Servers. As mentioned, this will be a failover configuration for MySQL in that the application will only read/write from the second master if the first master becomes unavailable. This way we can avoid commit lock issues that might arise from a load balanced Master/Master.
+#. Select one of the nodes to be your Source Of Truth (SOT) for RabbitMQ clustering. We need to copy the secrets for RabbitMQ, copy the erlang cookie and join the other nodes to the SOT node.
 
+   Begin by copying secrets from the SOT node to the other nodes.
 
+   .. code-block:: bash
 
-Run the reconfigure on all nodes
+    [root@app-server-1 ~] cat /etc/morpheus/morpheus-secrets.json
 
-.. code-block:: bash
+      "rabbitmq": {
+        "morpheus_password": "***REDACTED***",
+        "queue_user_password": "***REDACTED***",
+        "cookie": "***REDACTED***"
+      },
 
-  [root@app-server-1 ~] morpheus-ctl reconfigure
+   Then copy the erlang.cookie from the SOT node to the other nodes
 
-|morpheus| will come up on all nodes and Elasticsearch will auto-cluster. The only item left is the manual clustering of RabbitMQ.
+   .. code-block:: bash
 
-Select one of the nodes to be your Source Of Truth (SOT) for RabbitMQ clustering. We need to share secrets for RabbitMQ, the erlang cookie and join the other nodes to the SOT node.
-Begin by copying secrets from the SOT node to the other nodes.
+     [root@app-server-1 ~]# cat /opt/morpheus/embedded/rabbitmq/.erlang.cookie
 
-.. code-block:: bash
+     # 754363AD864649RD63D28
 
-  [root@app-server-1 ~] cat /etc/morpheus/morpheus-secrets.json
-  {
-    "mysql": {
-      "root_password": "***REDACTED***",
-      "morpheus_password": "password",
-      "ops_password": "***REDACTED***"
-    },
-    "rabbitmq": {
-      "morpheus_password": "***REDACTED***",
-      "queue_user_password": "***REDACTED***",
-      "cookie": "***REDACTED***"
-    },
-    "vm-images": {
-      "s3": {
-        "aws_access_id": "***REDACTED***",
-        "aws_secret_key": "***REDACTED***"
-     }
-    }
-   }
+#. Once this is done run a reconfigure on the two nodes that are NOT the SOT nodes.
 
-Then copy the erlang.cookie from the SOT node to the other nodes
+   .. code-block:: bash
 
-.. code-block:: bash
+       [root@app-server-2 ~] morpheus-ctl reconfigure
 
-   [root@app-server-1 ~] cat /opt/morpheus/embedded/rabbitmq/.erlang.cookie
-   # 754363AD864649RD63D28
+   .. NOTE::
 
-Once this is done run a reconfigure on the two nodes that are NOT the SOT nodes.
+      This step will fail. This is ok, and expected. If the reconfigure hangs then use Ctrl+C to quit the reconfigure run and force a failure.
 
-.. code-block:: bash
+#. Subsequently we need to stop and start Rabbit on the NOT SOT nodes.
 
-   [root@app-server-2 ~] morpheus-ctl reconfigure
+   .. code-block:: bash
 
-.. NOTE::
+     [root@app-server-2 ~]# morpheus-ctl stop rabbitmq
+     [root@app-server-2 ~]# morpheus-ctl start rabbitmq
+     [root@app-server-2 ~]# PATH=/opt/morpheus/sbin:/opt/morpheus/sbin:/opt/morpheus/embedded/sbin:/opt/morpheus/embedded/bin:$PATH
+     [root@app-server-2 ~]# rabbitmqctl stop_app
 
-  This step will fail. This is ok, and expected. If the reconfigure hangs then use Ctrl+C to quit the reconfigure run and force a failure.
+     Stopping node 'rabbit@app-server-2' ...
 
-Subsequently we need to stop and start Rabbit on the NOT SOT nodes.
+     [root@app-server-2 ~]# rabbitmqctl join_cluster rabbit@app-server-1
 
-.. code-block:: bash
+     Clustering node 'rabbit@app-server-2' with 'rabbit@app-server-1' ...
 
- [root@app-server-2 ~] morpheus-ctl stop rabbitmq
- [root@app-server-2 ~] morpheus-ctl start rabbitmq
- [root@app-server-2 ~]#PATH=/opt/morpheus/sbin:/opt/morpheus/sbin:/opt/morpheus/embedded/sbin:/opt/morpheus/embedded/bin:$PATH
- [root@app-server-2 ~]# rabbitmqctl stop_app
+     [root@app-server-2 ~]# rabbitmqctl start_app
 
- Stopping node 'rabbit@app-server-2' ...
+     Starting node 'rabbit@app-server-2' ...
 
- [root@app-server-2 ~]# rabbitmqctl join_cluster rabbit@app-server-1 Clustering node 'rabbit@app-server-2' with 'rabbit@app-server-1' ... [root@app-server-2 ~]# rabbitmqctl start_app
+#. Now make sure to reconfigure
 
- Starting node 'rabbit@app-server-2' ...
+   .. code-block:: bash
 
-Now make sure to reconfigure
+    [root@app-server-2 ~] morpheus-ctl reconfigure
 
-.. code-block:: bash
+#. Once the Rabbit services are up and clustered on all nodes they need to be set to HA/Mirrored Queues:
 
-   [root@app-server-2 ~] morpheus-ctl reconfigure
+   .. code-block:: bash
 
-Once the Rabbit services are up and clustered on all nodes they need to be set to HA/Mirrored Queues:
+    [root@app-server-2 ~]# rabbitmqctl set_policy -p morpheus --priority 1 --apply-to all ha ".*" '{"ha-mode": "all"}'
 
-.. code-block:: bash
+#. The last thing to do is restart the |morpheus| UI on the two nodes that are NOT the SOT node.
 
-  [root@app-server-2 ~]# rabbitmqctl set_policy -p morpheus --priority 1 --apply-to all ha ".*" '{"ha-mode": "all"}'
+   .. code-block:: bash
 
-The last thing to do is restart the |morpheus| UI on the two nodes that are NOT the SOT node.
+    [root@app-server-2 ~]# morpheus-ctl restart morpheus-ui
 
-.. code-block:: bash
+   If this command times out then run:
 
-  [root@app-server-2 ~]# morpheus-ctl restart morpheus-ui
+   .. code-block:: bash
 
-If this command times out then run:
+    [root@app-server-2 ~]# morpheus-ctl kill morpheus-ui
+    [root@app-server-2 ~]# morpheus-ctl start morpheus-ui
 
-.. code-block:: bash
+#. You will be able to verify that the UI services have restarted properly by inspecting the logfiles. A standard practice after running a restart is to tail the UI log file.
 
-   [root@app-server-2 ~]# morpheus-ctl kill morpheus-ui
-   [root@app-server-2 ~]# morpheus-ctl start morpheus-ui
+   .. code-block:: bash
 
-You will be able to verify that the UI services have restarted properly by inspecting the logfiles. A standard practice after running a restart is to tail the UI log file.
+      root@app-server-2 ~]# morpheus-ctl tail morpheus-ui
 
-.. code-block:: bash
+#. Lastly, we need to ensure that Elasticsearch is configured in such a way as to support a quorum of 2. We need to do this step on EVERY NODE.
 
-  [root@app-server-2 ~]# morpheus-ctl tail morpheus-ui
+   .. code-block:: bash
 
-Lastly, we need to ensure that Elasticsearch is configured in such a way as to support a quorum of 2. We need to do this step on EVERY NODE.
-
-.. code-block:: bash
-
-  [root@app-server-2 ~]# echo "discovery.zen.minimum_master_nodes: 2" >> /opt/morpheus/embedded/elasticsearch/config/elasticsearch.yml
-  [root@app-server-2 ~]# morpheus-ctl restart elasticsearch
+      [root@app-server-2 ~]# echo "discovery.zen.minimum_master_nodes: 2" >> /opt/morpheus/embedded/elasticsearch/config/elasticsearch.yml
+      [root@app-server-2 ~]# morpheus-ctl restart elasticsearch
 
 
-.. note::
-  For moving ``/var/opt/morpheus/morpheus-ui`` files into a shared volume make sure ALL |morpheus| services on ALL three nodes are down before you begin.
+   .. NOTE::
+       For moving ``/var/opt/morpheus/morpheus-ui`` files into a shared volume make sure ALL |morpheus| services on ALL three nodes are down before you begin.
 
-.. code-block:: bash
+   .. code-block:: bash
 
-  [root@app-server-1 ~]# morpheus-ctl stop
+    [root@app-server-1 ~]# morpheus-ctl stop
 
-Permissions are as important as is content, so make sure to preserve directory contents to the shared volume. Subsequently you can start all |morpheus| services on all three nodes and tail the |morpheus| UI log file to inspect errors.
+#. Permissions are as important as is content, so make sure to preserve directory contents to the shared volume.
+
+#. Subsequently you can start all |morpheus| services on all three nodes and tail the |morpheus| UI log file to inspect errors.
 
 Database Migration
-^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^
 
 If your new installation is part of a migration then you need to move the data from your original |morpheus| database to your new one. This is easily accomplished by using a stateful dump.
 
-To begin this, stop the |morpheus| UI on your original |morpheus| server:
+#. To begin this, stop the |morpheus| UI on your original |morpheus| server:
 
-.. code-block:: bash
+   .. code-block:: bash
 
-  [root@app-server-old ~]# morpheus-ctl stop morpheus-ui
+    [root@app-server-old ~]# morpheus-ctl stop morpheus-ui
 
-Once this is done you can safely export. To access the MySQL shell we will need the password for the |morpheus| DB user. We can find this in the morpheus-secrets file:
+#. Once this is done you can safely export. To access the MySQL shell we will need the password for the |morpheus| DB user. We can find this in the morpheus-secrets file:
 
-.. code-block:: bash
+   .. code-block:: bash
 
     [root@app-server-old ~]# cat /etc/morpheus/morpheus-secrets.json
 
-.. code-block:: javascript
-  {
-    "mysql": {
-        "root_password": "***REDACTED***",
-        "morpheus_password": "***REDACTED***",
-        "ops_password": "***REDACTED***"
-          },
-    "rabbitmq": {
+   .. code-block:: javascript
+
+        {
+          "mysql": {
+              "root_password": "***REDACTED***",
               "morpheus_password": "***REDACTED***",
-              "queue_user_password": "***REDACTED***",
-              "cookie": "***REDACTED***"
-    },
-    "vm-images": {
-      "s3": {
-          "aws_access_id": "***REDACTED***",
-          "aws_secret_key": "***REDACTED***"
+              "ops_password": "***REDACTED***"
+                },
+          "rabbitmq": {
+                    "morpheus_password": "***REDACTED***",
+                    "queue_user_password": "***REDACTED***",
+                    "cookie": "***REDACTED***"
+          },
+          "vm-images": {
+            "s3": {
+                "aws_access_id": "***REDACTED***",
+                "aws_secret_key": "***REDACTED***"
+              }
+            }
         }
-      }
-  }
 
-Take note of this password as it will be used to invoke a dump. |morpheus| provides embedded binaries for this task. Invoke it via the embedded path and specify the host. In this example we are using the |morpheus| database on the MySQL listening on localhost. Enter the password copied from the previous step when prompted:
+#. Take note of this password as it will be used to invoke a dump. |morpheus| provides embedded binaries for this task. Invoke it via the embedded path and specify the host. In this example we are using the |morpheus| database on the MySQL listening on localhost. Enter the password copied from the previous step when prompted:
 
-.. code-block:: bash
+   .. code-block:: bash
 
-    [root@app-server-old ~]# /opt/morpheus/embedded/mysql/bin/mysqldump -u morpheus -h 127.0.0.1 morpheus -p > /tmp/morpheus_backup.sql
+      [root@app-server-old ~]# /opt/morpheus/embedded/mysql/bin/mysqldump -u morpheus -h 127.0.0.1 morpheus -p > /tmp/morpheus_backup.sql
+
+      Enter password:
+
+   This file needs to be pushed to the new |morpheus| Installation’s backend. Depending on the GRANTS in the new MySQL backend, this will likely require moving this file to one of the new |morpheus| frontend servers.
+
+#. Once the file is in place it can be imported into the backend. Begin by ensuring the |morpheus| UI service is stopped on all of the application servers:
+
+   .. code-block:: bash
+
+    [root@app-server-1 ~]# morpheus-ctl stop morpheus-ui
+    [root@app-server-2 ~]# morpheus-ctl stop morpheus-ui
+    [root@app-server-3 ~]# morpheus-ctl stop morpheus-ui
+
+#. Then you can import the MySQL dump into the target database using the embedded MySQL binaries, specifying the database host, and entering the password for the |morpheus| user when prompted:
+
+   .. code-block:: bash
+
+    [root@app-server-1 ~]# /opt/morpheus/embedded/mysql/bin/mysql -u morpheus -h 10.130.2.38 morpheus -p < /tmp/morpheus_backup.sql
     Enter password:
-
-This file needs to be pushed to the new |morpheus| Installation’s backend. Depending on the GRANTS in the new MySQL backend, this will likely require moving this file to one of the new |morpheus| frontend servers.
-Once the file is in place it can be imported into the backend. Begin by ensuring the |morpheus| UI service is stopped on all of the application servers:
-
-.. code-block:: bash
-
-  [root@app-server-1 ~]# morpheus-ctl stop morpheus-ui
-  [root@app-server-2 ~]# morpheus-ctl stop morpheus-ui
-  [root@app-server-3 ~]# morpheus-ctl stop morpheus-ui
-
-Then you can import the MySQL dump into the target database using the embedded MySQL binaries, specifying the database host, and entering the password for the |morpheus| user when prompted:
-
-.. code-block:: bash
-
-  [root@app-server-1 ~]# /opt/morpheus/embedded/mysql/bin/mysql -u morpheus -h 10.130.2.38 morpheus -p < /tmp/morpheus_backup.sql
-  Enter password:
 
 
 Recovery
 ^^^^^^^^^
-If a node happens to crash most of the time |morpheus| will start upon boot of the server and the services will self-recover. However, there can be cases where RabbitMQ and Elasticsearch are unable to recover in a clean fashion and it require minor manual intervention. Regardless, it is considered best practice when recovering a restart to perform some manual health
+
+If a node happens to crash most of the time |morpheus| will start upon boot of the server and the services will self-recover. However, there can be cases where RabbitMQ and Elasticsearch are unable to recover in a clean fashion and it require minor manual intervention. Regardless, it is considered best practice when recovering a restart to perform some manual health checks.
 
 .. code-block:: bash
 
@@ -393,6 +382,4 @@ If this is not the case it is worth investigating the Elasticsearch logs to unde
 
 ``/var/log/morpheus/elasticsearch/current``
 
-Outside of these stateful tiers, the “morpheus-ctl status” command will not output a “run” status unless the service is successfully running. If a stateless service reports a failure to run, the logs should be investigated and/or sent to |morpheus| for additional support. Logs for all |morpheus| embedded services are found below:
-
-``/var/log/morpheus``
+Outside of these stateful tiers, the “morpheus-ctl status” command will not output a “run” status unless the service is successfully running. If a stateless service reports a failure to run, the logs should be investigated and/or sent to |morpheus| for additional support. Logs for all |morpheus| embedded services are found in ``/var/log/morpheus``.
