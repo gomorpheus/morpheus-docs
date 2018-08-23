@@ -12,7 +12,7 @@ Integration Guides
 .. include:: DNS/DNS.rst
 .. include:: IdentityManagement/IdentityManagement.rst
 .. include:: ITSM/ITSM.rst
-.. .. include:: KeysCertificates/keysandcerts.rst
+.. include:: KeysCertificates/keysandcerts.rst
 .. include:: LoadBalancers/LoadBalancers.rst
 .. include:: Logs/Logs.rst
 .. include:: Monitoring/Monitoring.rst
