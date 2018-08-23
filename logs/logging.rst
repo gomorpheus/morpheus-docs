@@ -1,13 +1,13 @@
 Logs
-======
+====
 
 Overview
-----------
+--------
 
 The logging architecture backing |morpheus| uses the latest and greatest technologies and standards to be able to service large amounts of log traffic as well as facilitate easy viewing. Utilizing elasticsearch behind the scenes and buffered log transmission protocols |morpheus| provides a highly efficient and highly scalable solution for capturing log data from anything provisioned via the system. By utilizing common formats (syslog) it is also very easy to forward logs to external third party log services.
 
 Configuration
-^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^
 
 Logging configuration can be setup in the ``Admin -> Logs`` section. There are a couple useful settings here including customizing the retainment policy (by default 7 days). This could be expanded to years for PCI Compliance purposes or other potential requirements an organization might have.
 
@@ -73,7 +73,7 @@ LogRhythm
 Configuring LogRhythm is much like configuring Splunk. Simply toggle the enabled flag in the LogRhythm section to enabled and fill in the Host, and Port information for the LogRhythm listener.
 
 |morpheus| Server Logs
---------------------
+----------------------
 
 The main |morpheus| server log is in ``/var/log/morpheus/morpheus-ui`` and the latest log file is named current. This log is archived every 24hrs. There are a number of other log files for the individual infrastructure components as well.
 

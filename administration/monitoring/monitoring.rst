@@ -20,6 +20,6 @@ Default Check Interval
 
 .. NOTE:: Monitoring Checks can be manually configured if `Auto Create Checks` is disabled.
 
-.. include:: /administration/monitoring/appdynamics.rst
-.. include:: /administration/monitoring/servicenowmonitoring.rst
-.. include:: /administration/monitoring/newrelic.rst
+.. include:: appdynamics.rst
+.. include:: servicenowmonitoring.rst
+.. include:: newrelic.rst

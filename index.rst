@@ -5,7 +5,6 @@ Morpheus Documentation
 .. toctree::
    :maxdepth: 2
 
-   release_notes/3.3.1
    getting_started/getting_started
    provisioning/provisioning
    infrastructure/infrastructure
@@ -18,6 +17,5 @@ Morpheus Documentation
    integration_guides/integration_guides
    troubleshooting/troubleshooting
    release_notes/release_notes
-..   ha/ha_setup
 
 .. |morpheus| replace:: Morpheus

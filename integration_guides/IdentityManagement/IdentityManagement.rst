@@ -10,4 +10,3 @@ Identity Management
   .. IdentityManagement/JumpCloud.rst
   .. IdentityManagement/LDAP.rst
   .. IdentityManagement/OKTA.rst
-  .. IdentityManagement/venafi.rst

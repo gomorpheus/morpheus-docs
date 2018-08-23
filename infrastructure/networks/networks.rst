@@ -1,7 +1,7 @@
 Networks
 --------
 
-``Infrastructure -> Network -> Networks``
+`Infrastructure -> Network -> Networks`
 
 Overview
 ^^^^^^^^

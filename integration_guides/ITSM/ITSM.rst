@@ -2,4 +2,4 @@ ITSM
 =====
 
 
-.. .. include:: ServiceNowITSM.rst
+.. include:: /integration_guides/ITSM/ServiceNow.rst

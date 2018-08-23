@@ -3,13 +3,13 @@ Ubuntu
 
 To get started installing |morpheus| on Ubuntu (14.04 currently) a few prepratory items should be addressed first.
 
-#. First make sure the apt repository is up to date by running `sudo apt-get update`. It might also be advisable to verify that the assigned hostname of the machine is self resolvable.
+#. First make sure the apt repository is up to date by running ``sudo apt-get update``. It might also be advisable to verify that the assigned hostname of the machine is self resolvable.
 
    .. IMPORTANT:: If the machine is unable to resolve its own hostname ``nslookup hostname`` some installation commands will be unable to verify service health during installation and fail.
 
-#. Next simply download the relevant `.deb` package for installation. This package can be acquired from your account rep or via a free trial request from |morpheushub|.
+#. Next simply download the relevant ``.deb`` package for installation. This package can be acquired from your account rep or via a free trial request from |morpheushub|.
 
-   .. TIP:: Use the `wget` command to directly download the package to your appliance server. i.e. `wget https://downloads.gomorpheus.com/path/to/package.deb`
+   .. TIP:: Use the ``wget`` command to directly download the package to your appliance server. i.e. ``wget https://downloads.gomorpheus.com/path/to/package.deb``
 
 #. Next we must install the package onto the machine and configure the morpheus services:
 
@@ -19,7 +19,7 @@ To get started installing |morpheus| on Ubuntu (14.04 currently) a few preprator
      sudo morpheus-ctl reconfigure
 
 
-#. Once the installation is complete the web interface will automatically start up. By default it will be resolvable at `https://your_machine_name` and in many cases this may not be resolvable from your browser. The url can be changed by editing `/etc/morpheus/morpheus.rb` and changing the value of `appliance_url`. After this has been changed simply run:
+#. Once the installation is complete the web interface will automatically start up. By default it will be resolvable at ``https://your_machine_name`` and in many cases this may not be resolvable from your browser. The url can be changed by editing ``/etc/morpheus/morpheus.rb`` and changing the value of ``appliance_url``. After this has been changed simply run:
 
    .. code-block:: bash
 
@@ -35,4 +35,4 @@ Once the browser is pointed to the appliance a first time setup wizard will be p
 
 More details on setting up infrastructure can be found throughout this guide.
 
-.. TIP:: If any issues occur it may be prudent to check the morpheus log for details at `/var/log/morpheus/morpheus-ui/current`.
+.. TIP:: If any issues occur it may be prudent to check the morpheus log for details at ``/var/log/morpheus/morpheus-ui/current``.

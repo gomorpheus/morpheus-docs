@@ -25,7 +25,7 @@ When a server has been registered and activated with Redhat the subscription man
   subscription management server: 0.9.51.24-1
   subscription-manager: 1.10.14-7.el7 python-rhsm: 1.10.12-2.el7
 
-If the subscription manager re-turns the message "This system is currently not registered" please follow the below steps to register the server.
+If the subscription manager re-turns the message ``This system is currently not registered`` please follow the below steps to register the server.
 
 .. TIP:: To register the server you will need to have sudo permissions [Member of the Wheel group] or root access to the server. You will also need your Redhat registered email address and password.
 
@@ -61,7 +61,7 @@ If the repo status was returned as disabled then you will need to enable the rep
   sudo subscription-manager repos --enable rhel-7-server-optional-rpms
   Repository 'rhel-7-server-optional-rpms' is enabled for this system.
 
-The message "Repo 'rhel-7-server-optional-rpms' is enabled for this system." will appear after enabling the repo. This will confirm that the repo has been enabled.
+The message ``Repo 'rhel-7-server-optional-rpms' is enabled for this system.`` will appear after enabling the repo. This will confirm that the repo has been enabled.
 
 Next simply download the relevant ``.rpm`` package for installation. This package can be acquired from your account rep or via a free trial request from |morpheushub|.
 

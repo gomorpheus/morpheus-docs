@@ -41,7 +41,7 @@ Copy this value
 On Nodes 2 & 3:
 ...............
 
-#. Overwrite /var/lib/rabbitmq/.erlang.cookie with value from previous step and change its permissions using the follow commands.
+#. Overwrite ``/var/lib/rabbitmq/.erlang.cookie`` with value from previous step and change its permissions using the follow commands.
 
    .. code-block:: bash
 
@@ -49,7 +49,7 @@ On Nodes 2 & 3:
     chmod 400 /var/lib/rabbitmq/.erlang.cookie
 
 
-#. edit /etc/hosts file to refer to shortname of node 1
+#. edit ``/etc/hosts`` file to refer to shortname of node 1
 
    example:
 

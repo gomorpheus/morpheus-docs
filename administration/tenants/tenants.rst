@@ -1,5 +1,5 @@
-Tenants
-=======
+Tenants & Tenant Users
+=======================
 
 Overview
 --------
@@ -8,8 +8,11 @@ The Tenants page displays a list of all Tenants. This page enables users to Crea
 
 Click the Tenant Name to drill into the Tenant View where you can again Edit, Delete, as well as Create Users, Edit Users, and Delete Users users belonging to the Tenant.
 
+Tenants
+--------
+
 Create Tenants
---------------
+^^^^^^^^^^^^^^^^
 
 To create Tenants
 
@@ -28,7 +31,7 @@ To create Tenants
 #. Click the Save Changes button.
 
 Edit Tenant
------------
+^^^^^^^^^^^^
 
 To edit a Tenant:
 
@@ -38,7 +41,7 @@ To edit a Tenant:
 #. Edit the Edit Tenant settings.
 
 Delete Tenant
--------------
+^^^^^^^^^^^^^^
 
 To delete a Tenant:
 
@@ -121,4 +124,4 @@ Example:
   I have a username ``subuser`` that belongs to a tenant with the subdomain ``subaccount``.
   When logging in from the main login url, I would now need to enter in: ``subaccount\subuser``
 
-.. include:: tenants/configuring_multi_tenancy.rst
+.. include:: configuring_multi_tenancy.rst

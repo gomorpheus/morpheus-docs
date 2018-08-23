@@ -21,7 +21,7 @@ User Role settings determine if the Console tab or ``Open Console`` Action appea
      Yes
       |morpheus| will automatically login to the remote console using the credentials defined on the VM or Host. For provisioned Instances, the credentials are defined either from the credentials defined on the Virtual Image used, added via cloud-init or VMware Tools using the global cloud-init settings (Administration - Provisioning) or the Linux or Windows settings defined in User Settings. For Instances created when converting a VM or Host to managed, the credentials are entered when converting to managed. These credentials can be changed by editing the underlying VM or Host of the Instance.
 
-      .. NOTE:: If the credentials defined on the VM or Host are not valid, and the ``Remote Console: Auto Login`` Role setting is set to ``Yes``, the console will not be able to connect and no console window or login prompt will be presented. The credentials on the underlying VM or Host must be edited or ``Remote Console: Auto Login`` Role setting can be set to ``No`` for a login prompt to present in the console. Credentials cannot be changed from an Instance view, only in the Infrastructure VM or Host view.
+.. NOTE:: If the credentials defined on the VM or Host are not valid, and the ``Remote Console: Auto Login`` Role setting is set to ``Yes``, the console will not be able to connect and no console window or login prompt will be presented. The credentials on the underlying VM or Host must be edited or ``Remote Console: Auto Login`` Role setting can be set to ``No`` for a login prompt to present in the console. Credentials cannot be changed from an Instance view, only in the Infrastructure VM or Host view.
 
 Protocols
 ---------
@@ -91,13 +91,13 @@ When using VNC Hypervisor Console, the |morpheus| Appliance connects directly to
 
 Unlike SSH and RDP, valid credentials do not need to be set on the VM or Host records in |morpheus| for VNC hypervisor console connections. An IP address is also not required on the VM or Host for VNC hypervisor console connections. |morpheus| will be able to connect to the VVM or Host as soon as the ``Host (Hypervisor)`` record is set, which can be viewed in the Info section on the VM or Host detail page.
 
-.. NOTE:: Auto-login is not supported for Hypervisor Console. Auto-login role settings do not apply to console connecting when using Hypervisor Console. Please note Hypervisor Console sessions persist on the ESXi host and once a user manually logs in to the VM they will continue to be logged in, even if the console tab/window in |morpheus| is closed, until they manually log out.
-
-.. NOTE:: Copy and Paste and Text selection in Linux terminals is not supported when using VNC (VMware Hypervisor Console).
+.. NOTE::
+  - Auto-login is not supported for Hypervisor Console. Auto-login role settings do not apply to console connecting when using Hypervisor Console. Please note Hypervisor Console sessions persist on the ESXi host and once a user manually logs in to the VM they will continue to be logged in, even if the console tab/window in |morpheus| is closed, until they manually log out.
+  - Copy and Paste and Text selection in Linux terminals is not supported when using VNC (VMware Hypervisor Console).
+  - In |morpheus| versions 3.2.0 and higher, a newer Guacamole version is installed that is not compatible with MacOS Platform Types over VNC. The
 
 .. IMPORTANT:: All VMs that are inventoried or provisioned into a VMware cloud with Hypervisor Console enabled will have their Console Type set to VNC. Disabling Hypervisor Console will only apply to newly inventoried or provisioned VM's. VM's inventoried or provisioned when Hypervisor Console was enabled will continue to use the VNC protocol even after Hypervisor Console is disabled. To revert a VM
 
-.. NOTE:: In |morpheus| versions 3.2.0 and higher, a newer Guacamole version is installed that is not compatible with MacOS Platform Types over VNC. The
 
 Copy and Paste
 --------------

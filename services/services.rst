@@ -2,5 +2,8 @@
 Services
 ********
 
-.. include:: cypher.rst
-.. include:: archives.rst
+.. toctree::
+  :maxdepth: 2
+
+  cypher.rst
+  archives.rst

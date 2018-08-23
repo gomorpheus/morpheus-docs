@@ -1,6 +1,10 @@
 *****
-Logs5
+Logs
 ******
 
-.. include:: logging.rst
-   
+
+
+.. toctree::
+  :maxdepth: 2
+
+  logging.rst

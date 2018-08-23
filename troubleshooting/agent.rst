@@ -28,7 +28,7 @@ When an instance is provisioned and the agent does not install, verify the follo
 * The |morpheus| appliance_url (Admin -> Settings) is both reachable and resolvable from the provisioned node.
 * The appliance_url begins with to https://, not http://.
 
-  .. NOTE:: Be sure to use https:// even when using an ip address for the appliance.
+.. NOTE:: Be sure to use https:// even when using an ip address for the appliance.
 
 * Inbound connectivity access to the |morpheus| Appliance from provisioned VM's and container hosts on port 443 (needed for agent communication)
 

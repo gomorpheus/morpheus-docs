@@ -2,14 +2,18 @@
 Troubleshooting
 ***************
 
-.. include:: ports.rst
-.. include:: agent.rst
-.. include:: remoteconsole.rst
-.. include:: cant_login.rst
-.. include:: uinotloading.rst
-.. include:: customimage.rst
-.. .. include:: blankdashboard.rst
-.. include:: restartinstall.rst
-.. include:: variables.rst
-.. include:: exportmorpheuslogs.rst
-.. .. include:: faq.rst
+.. toctree::
+  :maxdepth: 2
+
+  ports.rst
+  agent.rst
+  remoteconsole.rst
+  cant_login.rst
+  uinotloading.rst
+  customimage.rst
+  restartinstall.rst
+  variables.rst
+  blankdashboard.rst
+  deletingtenant.rst
+
+  .. exportmorpheuslogs.rst

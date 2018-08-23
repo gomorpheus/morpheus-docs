@@ -85,7 +85,6 @@ To Add Storage Provider:
      * Default Backup Target
 
        * Update existing backups
-
      * Archive Snapshots
      * Default Deployment Archive Target
      * Default Virtual Image Store

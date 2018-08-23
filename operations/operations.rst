@@ -2,12 +2,15 @@
 Operations
 **********
 
-.. include:: dashboard.rst
-.. include:: reports.rst
-.. include:: analytics.rst
-.. include:: guidance.rst
-.. include:: scheduling.rst
-.. include:: approvals.rst
-.. include:: usage.rst
-.. include:: activity.rst
-.. include:: exportmorpheuslogs.rst
+.. toctree::
+  :maxdepth: 2
+
+  dashboard.rst
+  reports.rst
+  analytics.rst
+  guidance.rst
+  scheduling.rst
+  approvals.rst
+  usage.rst
+  activity.rst
+  exportmorpheuslogs.rst

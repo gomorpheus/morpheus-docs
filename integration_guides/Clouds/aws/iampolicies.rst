@@ -1,5 +1,7 @@
+.. _MinimumIAMPolicies:
+
 Minimum AWS IAM Policies
-------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^
 
 Below are the AWS IAM Policies for EC2, RDS, and S3 covering the minimum access for |morpheus| applying to all resources.
 
@@ -7,7 +9,7 @@ See http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies.html for 
 
 
 EC2
-^^^
+'''
 
 .. code-block:: json
 
@@ -115,7 +117,7 @@ EC2
  }
 
 RDS:
-^^^^
+''''
 
 .. code-block:: json
 
@@ -193,7 +195,7 @@ RDS:
 
 
 S3
-^^^
+''
 
 .. code-block:: json
 
@@ -226,7 +228,7 @@ S3
 
 
 Resource Filter
-^^^^^^^^^^^^^^^
+'''''''''''''''
 
 If you need to limit actions based on filters you have to pull out the action and put it in a resource based policy since not all the actions support resource filters.
 

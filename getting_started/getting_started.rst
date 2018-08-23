@@ -2,12 +2,14 @@
 Getting Started
 ***************
 
+.. toctree::
+  :maxdepth: 2
 
-.. include:: requirements.rst
-.. include:: installation.rst
-.. include:: upgrading.rst
-.. include:: appliance_setup.rst
-.. include:: advanced_configuration.rst
-.. include:: ha/ha_setup.rst
-.. include:: cli/cli_master.rst
-.. include:: morpheus_agent.rst
+  requirements/requirements.rst
+  installation/installation.rst
+  appliance_setup/appliance_setup.rst
+  upgrading/upgrading.rst
+  advanced/advanced_configuration.rst
+  ha/ha_setup.rst
+  cli/cli_master.rst
+  agent/morpheus_agent.rst

@@ -6,12 +6,15 @@ The heart of |morpheus| is the ability to manage provisioning across any
 infrastructure, from bare metal to virtualized clouds and all the way to
 public infrastructure.
 
-.. include:: groups/groups.rst
-.. include:: clouds/clouds.rst
-.. include:: hosts/hosts.rst
-.. include:: networks/network.rst
-.. include:: loadbalancers/lb.rst
-.. include:: storage/storage.rst
-.. include:: keypairs_certificates/keypairs_certs.rst
-.. include:: pxeboot/pxeboot.rst
-.. include:: policies.rst
+.. toctree::
+  :maxdepth: 2
+
+  groups/groups.rst
+  clouds/clouds.rst
+  hosts/hosts.rst
+  networks/network.rst
+  loadbalancers/lb.rst
+  storage/storage.rst
+  keypairs_certificates/keypairs_certs.rst
+  pxeboot/pxeboot.rst
+  policies/policies.rst

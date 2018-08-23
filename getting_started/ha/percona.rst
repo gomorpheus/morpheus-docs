@@ -55,7 +55,9 @@ Installing Percona XtraDB Cluster
 
     sudo yum install Percona-XtraDB-Cluster-57
 
-    NOTE:: During the installation you will receive the below message. Accept the Percona PGP key to install the software.
+   .. NOTE:: During the installation you will receive the below message. Accept the Percona PGP key to install the software.
+
+   .. code-block:: bash
 
     retrieving key from file:///etc/pki/rpm-gpg/RPM-GPG-KEY-Percona
     Importing GPG key 0xCD2EFD2A:
@@ -258,7 +260,7 @@ Bootstrapping the first Node in the cluster
     mysql> show databases;
 
 
-#. Next create your morpheus database user. The user needs to be either at the IP address of the morpheus application server or use @'%' within the user name to allow the user to login from anywhere.
+#. Next create your morpheus database user. The user needs to be either at the IP address of the morpheus application server or use ``@'%'`` within the user name to allow the user to login from anywhere.
 
    .. code-block:: bash
 

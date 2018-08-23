@@ -26,5 +26,3 @@ API & CLI
 Usage information can also be extracted via the |morpheus| API and CLI, including the ability to extract usage per Tenant.
 
 .. NOTE:: Appropriate Role permissions for `Operations: Usage` are required to view the Usage section.
-
-----

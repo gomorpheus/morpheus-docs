@@ -1,5 +1,5 @@
 Azure Scale Sets
-----------------
+^^^^^^^^^^^^^^^^
 
 Auto-scaling Azure instances can be done with the native Morpheus scaling service or Azure Scale Sets. When using Azure Scale Sets, Morpheus will configure the scale sets and thresholds, but Azure will be responsible for scaling the instances. The Instances nodes that are added and removed by Azure will be synced in by Morpheus as the instance scales up and down.
 
@@ -8,7 +8,7 @@ Auto-scaling Azure instances can be done with the native Morpheus scaling servic
 Adding an Instance to a Scale Set
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-#. In `Provisioning - Instances` select :guilabel:`+ ADD`
+#. In ``Provisioning - Instances`` select :guilabel:`+ ADD`
 #. Select an Instance Type that has scaling enabled (Advanced section when editing an Instance Type in `Provisioning - Library`)
 #. Configure the Instance as desired
 #. In the `AUTOMATION` section under `Scale - Scale Type` select `Azure Scale Set`
@@ -24,7 +24,8 @@ Create Threshold Presets
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
 
-#. In `Provisioning - Automation` select the `SCALE THRESHOLDS` tab
+#. In ``Provisioning - Automation`` select the `SCALE THRESHOLDS` tab
+
    .. NOTE:: Access to the SCALE THRESHOLDS section requires `Instances - Thresholds` Role permissions.
 
    .. image:: /images/provisioning/scalethresholds.png
@@ -41,7 +42,7 @@ The new Threshold will be available for selection in the SCALE section during pr
 Edit Thresholds on an Instance
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-#. In `Provisioning - Instances` select the target Instance.
+#. In ``Provisioning - Instances`` select the target Instance.
 #. Select the `SCALE` tab below the VM's section
 #. In the `THRESHOLDS` section of the SCALE tab, click :guilabel:`EDIT`
 #. Update the threshold settings.

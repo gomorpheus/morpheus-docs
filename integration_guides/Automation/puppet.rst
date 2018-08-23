@@ -13,8 +13,6 @@ Add Puppet Integration
 
     * Name: Name of the Puppet Integration in |morpheus|
     * Puppet Master: Hostname
-    * Allow Immeadiate Execution: Yes or No
+    * Allow Immediate Execution: Yes or No
 
   #. Save Changes
-
-  
