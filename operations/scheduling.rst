@@ -6,11 +6,8 @@ Overview
 
 Set weekly schedules for shutdown and startup times for Instances and VM's, apply Power Schedules to Instances pre or post-provisioning, apply Power Schedule policies on Group or Clouds, or use Guidance to automatically recommend and apply optimized Power Schedules.
 
-Power Schedules
----------------
-
 Create Power Schedule
-^^^^^^^^^^^^^^^^^^^^^
+---------------------
 
 #. Navigate to ``Operations -> Scheduling``
 #. Select :guilabel:`+ ADD`
@@ -39,7 +36,7 @@ Create Power Schedule
 .. TIP:: To view the Instances a power schedule is currently set on, select the name of a Power Schedule to go to the Power Schedule Detail Page.
 
 Add Power Schedule to Instance
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+------------------------------
 
 #. Navigate to ``Provisioning -> Instances``
 #. Select an Instance
@@ -48,7 +45,7 @@ Add Power Schedule to Instance
 #. Select :guilabel:`SAVE CHANGES`
 
 Add Power Schedule to Virtual Machine
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+-------------------------------------
 
 #. Navigate to ``Infrastructure -> Hosts -> Virtual Machines``
 #. Select a Virtual Machine
@@ -58,7 +55,7 @@ Add Power Schedule to Virtual Machine
 #. Select :guilabel:`SAVE CHANGES`
 
 Add Power Schedule to a Cloud
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+-----------------------------
 
 .. NOTE:: Power Schedule Policies apply to Instances created in the Cloud after the Policy is enabled.
 
@@ -85,7 +82,7 @@ Add Power Schedule to a Cloud
 #. Select :guilabel:`SAVE CHANGES`
 
 Add Power Schedule to a Group
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+-----------------------------
 
 .. NOTE:: Power Schedule Policies apply to Instances created or moved into the Group after the Policy is enabled.
 
@@ -108,17 +105,3 @@ Add Power Schedule to a Group
     Select Power Schedule to use in the Policy. Power schedule can be added in ``Operations -> Scheduling``
    Permissions- TENANTS
     Leave blank to apply to all Tenants, or search for and select Tenants to enforce the Policy on specific Tenants.
-
-Execution Schedules
--------------------
-
-Create Execution Schedule
-^^^^^^^^^^^^^^^^^^^^^^^^^
-
-  * NAME
-  * DESCRIPTION
-  * TIME ZONE
-  * Enabled
-  * SCHEDULE
-  * 0 0 * * *
-  * Every day at 00:00✖
