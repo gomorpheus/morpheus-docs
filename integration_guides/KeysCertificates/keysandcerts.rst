@@ -1,4 +1,4 @@
 Keys and Certificates
 ======================
 
-.. include:: venafi.rst
+.. include:: /integration_guides/KeysCertificates/venafi.rst
