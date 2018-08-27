@@ -17,6 +17,7 @@ Adding Bluecat to Morhpeus
     * Name
     * URL
     * Username
+    
       * Example: http://10.34.20.23
     * Password
     * Network Filter
