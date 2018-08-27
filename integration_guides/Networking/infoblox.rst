@@ -10,11 +10,12 @@ Features
 * Total & Free IP status bar for networks
 * Network Grid and List view with IP Status and records, date and user tracking
 * Automatic and manual IP Reservations, DNS A/PTR record creation and deletion
+* Use script variables like <%= variableX %> for evaluation of the key data in extended attributes
 
 Adding Infoblox Integration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-#. Navigate to `Infrastructure - Network - Services`
+#. Navigate to ``Infrastructure - Network - Services``
 #. Select :guilabel:`+ ADD` -> IPAM -> Infoblox
 #. Enter the following:
 

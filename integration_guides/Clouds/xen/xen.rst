@@ -16,6 +16,8 @@ Add a Xen Server Cloud
       For setting cloud permissions in a multi-tenant environment. Not applicable in single tenant environments.
    API URL
       IP or URL of Xen Host. ex: `xenserver.domain.com`
+  CUSTOM PORT
+      Port for non standard xen server clouds
    USERNAME
       Xen Host Username
    PASSWORD
