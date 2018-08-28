@@ -5,8 +5,8 @@ Morpheus now integrates with Cisco ACI.  Add ACI as a network and security integ
 
 ADD NETWORK INTEGRATION
 
-NAME
-URL
-USERNAME
-PASSWORD
-TENANT
+* NAME
+* URL
+* USERNAME
+* PASSWORD
+* TENANT
