@@ -13,14 +13,14 @@ Adding a SAML Integration
 
 To add a SAML integration:
 
-#. Navigate to ``Settings -> Accounts``
-#. Select an account.
-#. Select IDENTITY SOURCES in the Account detail page
+#. Navigate to ``Administration -> Tenants``
+#. Select a tenant.
+#. Select IDENTITY SOURCES in the Tenantr detail page
 #. Select :guilabel:`+ ADD IDENTITY SOURCE`.
 #. Select SAML (external login) from the TYPE field
 #. Add a Name and optional Description for the SAML integration
 
-.. image:: /images/saml-cf2bf.png
+.. image:: /images/SAML.png
 
 There are 3 sections with fields that need to be populated depending on the desired configuration:
 
