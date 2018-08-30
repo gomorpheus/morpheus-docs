@@ -18,7 +18,9 @@ Adding Infoblox Integration
 #. Select :guilabel:`+ ADD` -> IPAM -> Infoblox
 #. Enter the following:
 
-   .. image:: /images/infrastructure/network/infoblox/infoblox_settings.png
+   .. image:: /images/infrastructure/network/infoblox/infoblox_settings_342.png
+
+   .. IMPORTANT::  Variables must be first defined as extra attributes in Infoblox and values can be injected for the user creating the record and the date of assignment
 
    NAME
     Name of the Integration in |morpheus|
