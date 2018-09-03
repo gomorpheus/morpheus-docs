@@ -1,7 +1,9 @@
 Integration Versions
+------------------------
 
 Morpheus supports an extensive range of software integrations and versions past and present. Current iterations of Amazon AWS, Microsoft Azure, Google Cloud Platform, Digital Ocean, HPE OneView, MacStadium, OpenTelekom Cloud, IBM Bluemix, Softlayer and UpCloud are all supported.
-In addition below to those we also support versioned software listed below. If you have any specific requirements please contact support@morpheusdata.com
+
+In addition below to those we also support versioned software listed below.
 
 VMware vCenter      5.5, 6.0, 6.5
 VMware ESXi         5.5, 6.0, 6.5
@@ -19,3 +21,5 @@ Splunk              7.10
 Docker              1.12.6
 Kubernetes          1.11
 Jenkins             1.64
+
+If you have any specific requirements please contact support@morpheusdata.com
