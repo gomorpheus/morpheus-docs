@@ -7,8 +7,8 @@ In addition below to those we also support versioned software listed below.
 
 VMware vCenter      5.5, 6.0, 6.5
 VMware ESXi         5.5, 6.0, 6.5
-vCloud Director     8.20
-Openstack           Juno, Kilo, Liberty, Mitaka, Newton, Ocata, Pike, Queens
+vCloud Director     8.20, 9.1
+Openstack           Juno, Kilo, Liberty, Mitaka, Newton, Ocata, Pike
 Microsoft Hyper-V   2012R2, 2016
 Azure Stack         GA
 Nutanix             3.5, 3.6 (excluding Prism Central)

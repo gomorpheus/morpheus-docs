@@ -1,1 +1,4 @@
-  .. include:: /integration_guides/ITSM/Integration_Versions
+Integration Versions
+=====================
+
+  .. include:: /Integration_Versions.rst
