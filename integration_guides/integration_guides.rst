@@ -1,8 +1,8 @@
 .. _integration-guide:
 
-*************************
-Integration Guides -Test
-*************************
+*******************
+Integration Guides
+*******************
 
 .. include:: Automation/automation.rst
 .. include:: Backups/backups.rst
