@@ -1,7 +1,7 @@
 Consul
 ------
 
-|morpheus| can integrate with Consul to automatically install the Consul Agent in Client Mode on Instances and configure communication with the Consul host. Hola
+|morpheus| can integrate with Consul to automatically install the Consul Agent in Client Mode on Instances and configure communication with the Consul host.
 
 Add Consul Integration
 ^^^^^^^^^^^^^^^^^^^^^^
