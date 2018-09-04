@@ -1,4 +1,4 @@
-Service Discovery ello
+Service Discovery e
 ====================
 
 .. include:: service_discovery/consuldoc.rst
