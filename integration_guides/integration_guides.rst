@@ -18,6 +18,6 @@ Integration Guides
 .. include:: Monitoring/Monitoring.rst
 .. include:: Networking/networking.rst
 .. include:: service_discovery/service_discovery.rst
-.. include:: Storage/storage.rst
+.. include:: storage/storage.rst
 .. include:: IntegrationVersions/Integration_Versions.rst
 .. .. include:: Security/security.rst
