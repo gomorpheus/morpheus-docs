@@ -24,4 +24,4 @@ Integration Guides
 
 .. include:: storage/storage.rst
 .. include:: IntegrationVersions/Integration_Versions.rst
-.. include:: supportedVersions/supportedVersions
+.. include:: supportedVersions/supportedVersions.rst
