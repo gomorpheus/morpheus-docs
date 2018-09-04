@@ -19,6 +19,5 @@ Integration Guides
 .. include:: Networking/networking.rst
 .. include:: service_discovery/service_discovery.rst
 .. include:: storage/storage.rst
-.. include:: IntegrationVersions/Integration_Versions.rst
-.. include:: tableofcontents.rst
+.. include:: IntegrationVersions/SupportedVersions.rst
 .. .. include:: Security/security.rst
