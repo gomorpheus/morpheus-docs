@@ -31,3 +31,4 @@ Push
 Push 3.5.0 build
 push regular 3.5.0
 push remove hola
+trigger build
