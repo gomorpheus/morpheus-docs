@@ -1,5 +1,5 @@
 Integration Versions
----------------------
+====================
 
 Morpheus supports an extensive range of software integrations and versions past and present. Current iterations of Amazon AWS, Microsoft Azure, Google Cloud Platform, Digital Ocean, HPE OneView, MacStadium, OpenTelekom Cloud, IBM Bluemix, Softlayer and UpCloud are all supported.
 
