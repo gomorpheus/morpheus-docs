@@ -40,11 +40,11 @@ This guide assumes an Azure AD Application has already been created in Azure, wi
 #. Also in step 3, select "View and edit all other user attributes" the copy the NAMESPACE url for the following:
 
    Name ``givenname`` Value: ``user.givenname``
-      Namespace: http://schemas.xmlsoap.org/ws/2005/05/identity/claims
+      Namespace: http://schemas.xmlsoap.org/ws/2005/05/identity/claims/givenname
    Name: ``surname`` Value: ``user.surname``
-      Namespace: http://schemas.xmlsoap.org/ws/2005/05/identity/claims
+      Namespace: http://schemas.xmlsoap.org/ws/2005/05/identity/claims/surname
    Name: ``emailaddress`` Value: ``user.mail``
-      Namespace: http://schemas.xmlsoap.org/ws/2005/05/identity/claims
+      Namespace: http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress
 
    .. NOTE:: The Namespace URLs will be used in the `Role Attribute Value` section in the |morpheus| Identity Source Integration.
 
