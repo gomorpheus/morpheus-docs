@@ -4,9 +4,7 @@ Ansible
 Overview
 ^^^^^^^^
 
-|morpheus| appliance supports Ansible integration for configuration management.  |morpheus| accomplishes this by integrating with an existing repository of playbooks as the master in a master-slave Ansible architecture.
-
-To get started the only requirement is an existing repository for playbooks in a very simple structure.
+|morpheus| supports Ansible for configuration management.  |morpheus| accomplishes this by integrating with an existing repository of playbooks as the master in a master-slave Ansible architecture.
 
 Add Ansible Integration
 ^^^^^^^^^^^^^^^^^^^^^^^
@@ -32,7 +30,10 @@ Ansible on Windows
 
 When executing Ansible playbooks on Windows platforms, a few requirements must be met:
 
-* ``pywinrm`` needs to be installed on the |morpheus| Appliance via ``pip install pywinrm``
+* ``pywinrm`` may need to be installed on the |morpheus| Appliance via ``pip install pywinrm``
+
+|
+
 * An Ansible Integration must be scoped to a Group or Cloud for Ansible to execute on Windows, as |morpheus| assumes Ansible local when no group or cloud is scoped to Ansible. The playbooks do not need to be executed solely in the Group or Cloud, one just needs to be scoped to an Ansible Integration for Ansible Windows to run properly.
 
 Scope Ansible Integration to a Cloud
@@ -85,45 +86,51 @@ Playbook's can also be added as tasks to workflows in the `Provisioning -> Autom
 Troubleshooting Ansible
 ^^^^^^^^^^^^^^^^^^^^^^^
 
-#. When a workflow is executed manually, the Ansible run output is available in the Instance History tab. Select the ``i`` bubble next to the Ansible task to see the output.  You can also see the run output in the ui logs in /var/log/morpheus/morpheus-ui/current​ which can be tailed by running ``morpheus-ctl tail morpheus-ui``
+* When a workflow is executed manually, the Ansible run output is available in the Instance History tab. Select the ``i`` bubble next to the Ansible task to see the output.  You can also see the run output in the ui logs in /var/log/morpheus/morpheus-ui/current​ which can be tailed by running ``morpheus-ctl tail morpheus-ui``.
 
-#. Verify Ansible is installed on the |morpheus| Appliance.
+|
 
-   Ansible should be automatically but certain os's or network conditions can prevent automated install. You can run ``ansible --version`` in the |morpheus appliance|, or in the Ansible integration details page (Administration -> Integrations -> Select Ansible Integration, or in the Ansible tab of a group or cloud scoped to Ansible) just run ``--version`` as ansible is already included in the command.
+* Verify Ansible is installed on the |morpheus| Appliance.
 
-   If Ansible is not installed, follow these instructions to install, or use your preferred installation method:
+  Ansible should be automatically but certain os's or network conditions can prevent automated install. You can run ``ansible --version`` in the |morpheus appliance|, or in the Ansible integration details page (Administration -> Integrations -> Select Ansible Integration, or in the Ansible tab of a group or cloud scoped to Ansible) just run ``--version`` as ansible is already included in the command.
 
-   Ubuntu:
+  If Ansible is not installed, follow these instructions to install, or use your preferred installation method:
 
-   .. code-block:: bash
+  Ubuntu:
+
+  .. code-block:: bash
 
       sudo apt-get install software-properties-common
       sudo apt-add-repository ppa:ansible/ansible
       sudo apt-get update
       sudo apt-get install ansible
 
-   CentOS:
+  CentOS:
 
-   .. code-block:: bash
+  .. code-block:: bash
 
       sudo yum install epel-release
       sudo yum install ansible
 
-   Then create the working Ansible directory for Morpheus:
+  Then create the working Ansible directory for Morpheus:
 
-   .. code-block:: bash
+  .. code-block:: bash
 
       sudo mkdir /opt/morpheus/.ansible
       sudo chown morpheus-app.morpheus-app /opt/morpheus/.ansible
 
+|
 
-#. Validate the git repo is authorizing and the paths are configured correctly.
+* Validate the git repo is authorizing and the paths are configured correctly.
 
-   The public and private ssh keys need to be added to the Morpheus appliance via "Infrastructure -> Keys & Certs" and the public key needs to be added to the git repo via user settings. If both are set up right, you will see the playbooks and roles populate in the Ansible Integration details page.
+  The public and private ssh keys need to be added to the Morpheus appliance via "Infrastructure -> Keys & Certs" and the public key needs to be added to the git repo via user settings. If both are set up right, you will see the playbooks and roles populate in the Ansible Integration details page.
 
+* The Git Ref field on playbook tasks is to specify a different git branch than default. It can be left to use the default branch. If your playbooks are in a different branch you can add the brach name in the Git Ref field.
 
-#. The Git Ref field on playbook tasks is to specify a different git branch than default. It can be left to use the default branch. If your playbooks are in a different branch you can add the brach name in the Git Ref field.
+|
 
-#. When running a playbook that is in a workflow, the additional playbooks fields do not need to be populated, they are for running a different playbook than the one set in the Ansible task in the Workflow, or using a different Git Ref.
+* When running a playbook that is in a workflow, the additional playbooks fields do not need to be populated, they are for running a different playbook than the one set in the Ansible task in the Workflow, or using a different Git Ref.
 
-#. If you are manually running Workflows with Ansible tasks on existing Instances through `Actions -> Run Workflow​` and not seeing results, set the Provision Phase on the Ansible task to Provision​ as there may be issues with executing tasks on other phases when executing manually.
+|
+
+* If you are manually running Workflows with Ansible tasks on existing Instances through `Actions -> Run Workflow​` and not seeing results, set the Provision Phase on the Ansible task to Provision​ as there may be issues with executing tasks on other phases when executing manually.
