@@ -115,7 +115,7 @@ Troubleshooting Ansible
 
       sudo mkdir /opt/morpheus/.ansible
       sudo chown morpheus-app.morpheus-app /opt/morpheus/.ansible
- 
+
 
 #. Validate the git repo is authorizing and the paths are configured correctly.
 
