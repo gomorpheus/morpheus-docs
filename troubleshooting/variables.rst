@@ -164,6 +164,7 @@ Instance Naming Policy example: ``${userInitials}-${cloudCode}-${platform == 'wi
 		instanceTypeCode,
 		provisionType,
 		instanceVersion,
+		tenantSubdomain,
 		plan,
 		name,
 		displayName,

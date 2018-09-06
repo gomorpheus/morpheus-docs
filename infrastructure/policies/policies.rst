@@ -68,7 +68,7 @@ To create a Policy for a Group:
 #. Select a Cloud by clicking on the name of the Cloud to go to the Cloud Detail page.
 #. Select the ``POLICIES`` tab in the Cloud Detail page.
 #. Select :guilabel:`+ ADD` and choose from the available policy types.
-#. Refer to Policy Types sections below for Configuraiton options.
+#. Refer to Policy Types sections below for Configuration options.
 #. Select :guilabel:`SAVE CHANGES`
 
 Policy Types
@@ -92,7 +92,7 @@ Renewal Days
 Notification Days
   This allows an email notice to be sent out X days before the instance is set to expire.
 Notification Message
-  Customizable message for notification emaila. The default message is ``Instance ${instance?.name} is set to expire on ${instance?.expireDate}``
+  Customizable message for notification emails. The default message is ``Instance ${instance?.name} is set to expire on ${instance?.expireDate}``
 Auto Approve Extensions
   Enable this to auto-approve extension requests, bypassing approval workflows.
 
@@ -135,7 +135,7 @@ NAME PATTERN
     ${provisionType}
     ${sequence} #results in 1
     ${sequence+100} #results in 101
-    ${sequence.toString().padLeft(5,‘0’)} #results in 00001
+    ${sequence.toString().padLeft(5,'0')} #results in 00001
 
   An example Instance Name Policy using a naming pattern with User Initials, Cloud Code, Instance Type, and a sequential number starting at 3000 is ``${userInitials}-${cloudCode}-${type}-${sequence+3000}``, resulting in an Instance Name of **md-vmwd3-centos-3001** for the first instance, followed by **md-vmwd3-centos-3002** and so on.
 

@@ -1,8 +1,8 @@
 .. _integration-guide:
 
-******************
+*******************
 Integration Guides
-******************
+*******************
 
 .. include:: Automation/automation.rst
 .. include:: Backups/backups.rst
@@ -12,11 +12,11 @@ Integration Guides
 .. include:: DNS/DNS.rst
 .. include:: IdentityManagement/IdentityManagement.rst
 .. include:: ITSM/ITSM.rst
+.. include:: KeysCertificates/keysandcerts.rst
 .. include:: LoadBalancers/LoadBalancers.rst
 .. include:: Logs/Logs.rst
 .. include:: Monitoring/Monitoring.rst
 .. include:: Networking/networking.rst
 .. include:: service_discovery/service_discovery.rst
 .. include:: storage/storage.rst
-.. include:: tableofcontents.rst
-.. .. include:: Security/security.rst
+.. include:: supportedVersions/supportedVersions.rst

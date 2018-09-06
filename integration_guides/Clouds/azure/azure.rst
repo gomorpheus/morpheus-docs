@@ -262,7 +262,7 @@ Create a Storage Account
 
 #. Click "+ Add" at the top of the Storage accounts pane
 
-   .. image:: /images/newazure-7947e.png
+   .. image:: /images/azure/newazure-7947e.png
 
 #. Enter a unique name for the storage account, select "Locally-redundant storage (LRS) for Replication, select the correct subscription, select "Use existing" and select the same resource group as the Network Security Group and Virtual Network. Also verify the Location is the same, and finally click "Create" at the bottom of the pane.
 
