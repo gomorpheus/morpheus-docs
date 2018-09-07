@@ -98,6 +98,8 @@ ServiceNow Service Catalog Integration
 
 The following is a guide to installing the Morpheus ServiceNow application.
 
+.. IMPORTANT:: A valid SSL Certificate is required on the |morpheus| Appliance for the ServiceNow plugin to be able to communicate with the appliance.
+
 ServiceNow Configuration
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
