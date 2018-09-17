@@ -8,24 +8,29 @@ In addition below to those we also support versioned software listed below.
 .. [width="40%",frame="topbot",options="header"]
 
 =====================   =================
-|morpheus| Technology   Version
+Technology              Version
 ---------------------   -----------------
-App Dynamics            4.5.1
+**Private Cloud**
 Azure Stack             GA
-Cisco ACI               3.10
-Docker                  1.12.6
-Jenkins                 1.64
 Microsoft Hyper-V       2012R2, 2016
 Nutanix                 3.5, 3.6 (excluding Prism Central)
-Openstack               Juno, Kilo, Liberty, Mitaka, Newton, Ocata, Pike
-Kubernetes              1.11
-ServiceNow              Istanbul, Jakarta, Kingston
-Splunk                  7.10
+Openstack               Juno, Kilo, Liberty, Mitaka, Newton, Ocata, Pike, Queens
 vCloud Director         8.20, 9.1
 VMware vCenter          5.5, 6.0, 6.5
 VMware ESXi             5.5, 6.0, 6.5
 VMware Fusion           8, 9, 10
-XenServer               7.00
+XenServer               7.0
+**Monitoring**          ..
+App Dynamics            4.5.1
+**Networking**          ..
+Cisco ACI               3.10
+**Containers**          ..
+Docker                  1.12.6
+Kubernetes              1.11
+Jenkins                 1.64
+**ITSM**                ..
+ServiceNow              Istanbul, Jakarta, Kingston
+Splunk                  7.10
 =====================   =================
 
-testing
+If you have any specific requirements please contact support@morpheusdata.com
