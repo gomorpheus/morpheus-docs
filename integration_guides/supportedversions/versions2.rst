@@ -30,6 +30,7 @@ Kubernetes              1.11
 Jenkins                 1.64
 **ITSM**                ..
 ServiceNow              Istanbul, Jakarta, Kingston
+**Logging**             ..
 Splunk                  7.10
 =====================   =================
 
