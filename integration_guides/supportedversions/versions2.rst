@@ -8,7 +8,7 @@ In addition below to those we also support versioned software listed below.
 .. [width="40%",frame="topbot",options="header"]
 
 =====================   =================
-Technology              Version
+**Technology**           **Version**
 ---------------------   -----------------
 **Private Cloud**
 Azure Stack             GA
@@ -30,6 +30,7 @@ Kubernetes              1.11
 Jenkins                 1.64
 **ITSM**                ..
 ServiceNow              Istanbul, Jakarta, Kingston
+**Logging**             ..
 Splunk                  7.10
 =====================   =================
 
