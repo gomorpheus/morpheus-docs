@@ -32,6 +32,13 @@ To configure a network for DHCP:
 
 .. NOTE:: When selecting a network with DHCP enabled during provisioning, "DHCP" will populate to the right of the selected network:
 
+Advanced Options (Scan Network)
+................................
+
+When adding or editing a network there is an option to scan network.  If checked scan network will ping the IP's in the network range, and if ping is successful Morpheus will quickly check for listening ports on the IP.
+
+.. IMPORTANT:: Network scanning may cause network monitoring or other alerts
+
 Static and IP Pools
 ...................
 
