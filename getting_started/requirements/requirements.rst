@@ -32,6 +32,8 @@ Base Requirements
 
 .. NOTE:: Ubuntu 16.10 and Amazon Linux are not supported.
 
+.. TIP:: When using AWS for deploying your application we recommend m5.large as a starting point.  For other public clouds please select a comparable instance type.
+
 Storage
 -------
 
