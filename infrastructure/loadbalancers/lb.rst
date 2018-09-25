@@ -25,6 +25,7 @@ Virtual Servers
 
 Load Balancers
 --------------
+
 The Load Balancers tab list currently available Load Balancers, which you can select, edit or delete, and is where you can create new or integrate with external Load Balancers.
 
 Add a new Load Balancer
@@ -139,7 +140,8 @@ Morpheus exposes configuration options during provisioning of an Instance releva
 
 By tying the Load Balancer associations into the provisioning of instances and the definition of the instance catalog item, the lifecycle of the VIP can more easily be maintained throughout the lifecycle of whatever application may be deployed.
 
-## Setting up an Instance for Load Balancer Consumption
+Setting up an Instance for Load Balancer Consumption
+....................................................
 
 Several of the provided Morpheus instance types are ready to go with load balancer orchestration out of the box (Apache, Nginx, Tomcat, Node.js, etc). It is also fairly easy to extend existing generic instance types during provisioning to be tied to load balancers or to set up said catalog items in advanced for such functionality.
 
