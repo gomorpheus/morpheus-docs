@@ -7,7 +7,7 @@ itself and reconfiguring the services.
 
 .. IMPORTANT:: All services except the morpheus-ui must be running during a reconfigure. The morpheus-ui also must be restarted or stopped and started during an upgrade. Failure to do so will result in errors.
 
-Debian / Ubuntu
+Ubuntu
 ---------------
 
 Simply download the latest package or request the latest package from
