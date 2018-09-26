@@ -8,9 +8,14 @@ Policies add governance, ease of use, cost-savings, and auditing features to |mo
 
 Policies apply towards any instance provisioned into a group or cloud with active policies. Cloud policies will override matching or conflicting group policies during provisioning.
 
+.. note::
+
+	Policies have been added to ``Administration -> Policies`` where they can be managed on a global level, per group, user, cloud, or tenant.
+
 Available Policy Types
 ^^^^^^^^^^^^^^^^^^^^^^
-
+Budget
+  Sets a maximum total price for all instances this policy is applied to.
 Expiration
   Sets an expiration timeframe in days after which the Instance will be deleted. Extensions can be auto-approved or require approval immediately or after x amount of auto-extensions using Morpheus Approvals or an Approval Integration.
 Host Name
