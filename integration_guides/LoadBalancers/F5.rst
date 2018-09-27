@@ -1,10 +1,14 @@
-F5
----
+F5 Load Balancers
+-----------------
 
 Add F5 Load Balancer
 ^^^^^^^^^^^^^^^^^^^^
 
-#. Navigate to ``Infrastructure -> Load Balancers``
+.. image:: /images/infrastructure/lbs/F5_addf5lb.gif
+
+To add a F5 Load Balancer Integration:
+
+#. Navigate to `Infrastructure -> Load Balancers`
 #. Select :guilabel:`+ ADD`
 #. Select `F5 BigIP`
 #. Fill in the following:
@@ -16,7 +20,7 @@ Add F5 Load Balancer
    NAME
     Name of the Load Balancer in |morpheus|
    DESCRIPTION
-    Idenetifying information displayed on the Load Balancer list page.
+    Identifying information displayed on the Load Balancer list page.
    VISIBILITY
     Define Multi-Tenant permissions
    API HOST
@@ -30,4 +34,143 @@ Add F5 Load Balancer
    MANAGEMENT URL
     Example: ``https://10.30.20.31:8443/xui/``
 
+   Advanced Options (optional)
+    * VIRTUAL NAME
+    * POOL NAME
+    * SERVER NAME
+
 #. Save Changes
+
+Virtual Servers
+^^^^^^^^^^^^^^^
+
+Instances attached to an F5 will be listed in the Virtual servers tab. Virtual servers can also be manually added in this section.
+
+ADD VIRTUAL SERVER
+..................
+
+#. Navigate to `Infrastructure -> Load Balancers`
+#. Select F5 Integration name to drill into the detail page
+#. Select :guilabel:`+ ADD` in the VIRTUAL SERVERS tab
+#. Fill in the following:
+
+   * NAME
+      Name of the Virtual Server in |morpheus|
+   * DESCRIPTION
+      Description of the Virtual Server in |morpheus|
+   * Enabled
+      Uncheck to keep the configuration but disable F5 availability in |morpheus|
+   * VIP TYPE
+      * Standard
+      * Forwarding (Layer 2)
+      * Forwarding (IP)
+      * Performance (HTTP)
+      * Performance (Layer 4)
+      * Stateless
+      * Reject
+      * DHCP
+      * Internal
+      * Message Routing
+   * VIP HOSTNAME
+      Enter Hostname of the VIP (optional)
+   * VIP ADDRESS
+      Eneter IP address for the VIP
+   * VIP PORT
+      Enter post used for the VIP
+   * SOURCE ADDRESS
+      Enter Virtual Server source address
+   * PROTOCOL
+      tcp, udp, or sctp
+   * PROFILES
+     Search for and select from available PROFILES
+   * POLICIES
+      Search for and select from available POLICIES
+   * IRULES
+      Search for and select from available RUEL SCRIPTS
+   * PERSISTENCE
+      * cookie
+      * dest-addr
+      * global-settings
+      * hash
+      * msrdp
+      * sip
+      * source-addr
+      * ssl
+      * universal
+   * DEFAULT POOL
+      Select from available POOLS
+
+#. Select :guilabel:`SAVE CHANGES`
+
+Policies
+^^^^^^^^
+
+Policies will be synced and listed in the Policies tab. These policies will be available options when creating Virtual Servers.
+
+Pools
+^^^^^
+
+CREATE POOL
+...........
+
+NAME
+  Name of the POOL in |morpheus|
+DESCRIPTION
+  Description of the POOL in |morpheus|
+BALANCE MODE
+    * Round Robin
+    * Least Connections
+SERVICE PORT
+  Specify SERVICE PORT for the POOL
+MEMBERS
+  Search for and select from available NODES
+MONITORS
+  Search for and select from available Monitors
+
+Profiles
+^^^^^^^^
+
+SSL Profiles are synced and and will be created when an SSL Certificate is assigned in the Load balancer section when provisioning or editing a Load balancer on an Instance.
+
+Monitors
+^^^^^^^^
+
+Create Monitorr
+..............
+
+NAME
+ Name of the MONITOR in |morpheus|
+DESCRIPTION
+ Description of the MONITOR in |morpheus|
+PARENT MONITOR
+ Select from available MONITORS
+DESTINATION
+ Specify Destination, such a ``*:443``. Default is ``*:*``
+INTERVAL
+ Specify Monitor Interval. Default is ``5``
+TIMEOUT
+ Specify Monitor Timeout. Default is ``15``
+MONITOR CONFIG
+ Enter monitor config.
+
+Nodes
+^^^^^
+
+Create Node
+...........
+
+NAME
+ Name of the NODE in |morpheus|
+DESCRIPTION
+ Description of the NODE in |morpheus|
+ADDRESS
+ Enter node address
+MONITOR
+ Select from available MONITORS
+SERVICE PORT
+ Specify SERVICE PORT for the NODE
+
+Rule Scripts
+^^^^^^^^^^^^
+
+Rule Scripts will be synced and listed in the RULE SCRIPTS tab. These rules will be available options when creating Virtual Servers.
