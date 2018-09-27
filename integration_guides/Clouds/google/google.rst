@@ -26,7 +26,7 @@ Add a Google Cloud
    Project ID
     Google Cloud Project ID
    Private Key
-    Service Account Private key, begging with `-----BEGIN PRIVATE KEY-----\` and ending with `-----END PRIVATE KEY-----`
+    Service Account Private key, beginning with `-----BEGIN PRIVATE KEY-----\` and ending with `-----END PRIVATE KEY-----`
    Client Email
     Service Account Client Email. ex: `morpheus@morpheus.iam.gserviceaccount.com`
    Region
