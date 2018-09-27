@@ -78,17 +78,14 @@ F5 BigIP (v11.4+)
   * API Port
   * Username
   * Password
-  * Managment URL
+  * Management URL
 
-F5 LineRate
-  * API Host
-  * API Port
-  * Username
-  * Password
-  * Internal IP
-  * Public IP
-  * VIP Address
-  * VIP Port
+FortiADC
+ * API HOST
+ * API PORT
+ * USERNAME
+ * PASSWORD
+ * INTERFACE (synced on auth)
 
 HaProxy Container (Internal, will create a HaProxy container, must have available docker host to provision to)
   * Group
@@ -127,7 +124,7 @@ Not only does Morpheus have an ability to provision HAProxy based load balancer 
 
 * F5 BigIP
 * A10
-* Netscalar
+* Netscaler
 * AVI
 * Amazon ELB
 * Amazon ALB
