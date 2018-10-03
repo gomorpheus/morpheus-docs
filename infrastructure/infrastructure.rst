@@ -17,4 +17,3 @@ public infrastructure.
   storage/storage.rst
   keypairs_certificates/keypairs_certs.rst
   pxeboot/pxeboot.rst
-  policies/policies.rst
