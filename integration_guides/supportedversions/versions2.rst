@@ -16,8 +16,8 @@ Microsoft Hyper-V       2012R2, 2016
 Nutanix                 3.5, 3.6 (excluding Prism Central)
 Openstack               Juno, Kilo, Liberty, Mitaka, Newton, Ocata, Pike, Queens
 vCloud Director         8.20, 9.1
-VMware vCenter          5.5, 6.0, 6.5, 6.7 \ 
-VMware ESXi             5.5, 6.0, 6.5, 6.7 ````
+VMware vCenter          5.5, 6.0, 6.5, 6.7 \
+VMware ESXi             5.5, 6.0, 6.5, 6.7 \
 VMware Fusion           8, 9, 10
 XenServer               7.0
 **Monitoring**          ..
