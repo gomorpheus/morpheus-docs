@@ -15,5 +15,4 @@ Troubleshooting
   variables.rst
   blankdashboard.rst
   deletingtenant.rst
-  cli_trouble-work.rst
-  
+  cli_trouble.rst

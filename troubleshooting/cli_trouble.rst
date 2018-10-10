@@ -7,4 +7,4 @@ run the command
 
   .. code-block:: bash
 
-    `morpheus remote update {appliancename} --insecure`
+    morpheus remote update {appliancename} --insecure
