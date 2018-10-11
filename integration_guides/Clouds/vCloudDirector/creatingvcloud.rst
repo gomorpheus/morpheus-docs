@@ -49,7 +49,7 @@ To create a Linux Ubuntu template
 
 Create a new machine in VMware vCenter and install a base version of your preferred Linux distro build. If you are using cloud init as part of your image you will need to ensure your virtual machine has a cdrom.
 
-#.	Before installing the operating system setup a single ``ext`` or ``xfs`` partition without a swap disk (This is so that growpart can extend the disk. growpart currently does not support lvm)
+#.	Before installing the operating system setup a single ``ext`` partition without a swap disk (This is so that growpart can extend the disk. growpart currently does not support lvm)
 #.	Install the distro and apply any updates to the operating system and security updates
 #.	Ensure you have set a root password
 #.	Install cloud-init by running ``sudo apt install cloud-init``
