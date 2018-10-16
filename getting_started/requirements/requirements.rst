@@ -10,27 +10,17 @@ necessary to orchestrate both vm's and containers. To get started some base requ
 Base Requirements
 -----------------
 
--  **Operating System:** Ubuntu 14.04 / 16.04 or
-   CentOS/RHEL greater than 7.0.
--  **Memory:** 8 GB minimum
+-  **Operating System:** Ubuntu 14.04 / 16.04 or CentOS/RHEL greater than 7.0.
+-  **Memory:** 8 GB with 4GB of swap minimum, 16 GB recommended for base installs. 
 -  **Storage:** 100 GB storage minimum
--  Network connectivity from your users to the appliance over TCP 443
-   (HTTPS)
--  Inbound connectivity access from provisioned vm's and container hosts
-   on ports 443 and 80 (needed for agent communication)
--  Internet Connectivity from Appliance (To download from |morpheus|'
-   public docker repositories and virtual image catalog)
--  Superuser privileges via the sudo command for the user installing the
-   |morpheus| Appliance package.
--  An Appliance URL that is accessible to all managed hosts. It is
-   necessary for all hosts that are managed by |morpheus| to be able to
-   communicate with the appliance server ip on port 443. This URL is
-   configured under Admin->Settings. |morpheus| also utilizes SSH (Port
-   22) and Windows Remote Management (Port 5985) to initialize a server.
--  An Appliance License is required for any operations involving
-   provisioning.
+-  Network connectivity from your users to the appliance over TCP 443 (HTTPS)
+-  Inbound connectivity access from provisioned vm's and container hosts on ports 443 and 80 (needed for agent communication)
+-  Internet Connectivity from Appliance (To download from |morpheus|' public docker repositories and virtual image catalog)
+-  Superuser privileges via the sudo command for the user installing the |morpheus| Appliance package.
+-  An Appliance URL that is accessible to all managed hosts. It is necessary for all hosts that are managed by |morpheus| to be able to communicate with the appliance server ip on port 443. This URL is configured under Admin->Settings. |morpheus| also utilizes SSH (Port 22) and Windows Remote Management (Port 5985) to initialize a server.
+-  An Appliance License is required for any operations involving provisioning.
 
-.. NOTE:: Ubuntu 16.10 and Amazon Linux are not supported.
+.. NOTE:: Ubuntu 16.10, 18.04 and Amazon Linux are not supported.
 
 Storage
 -------
