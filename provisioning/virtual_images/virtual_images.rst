@@ -8,6 +8,10 @@ Overview
 
 The Virtual Image section displays a list of all images, local and synced, that are available to deploy. |morpheus| includes a rich catalog of pre-configured System Images available for every cloud type. User Images are automatically synced from Cloud Integrations and added to the Virtual Images section. Images can also be uploaded directly into |morpheus| via local file or url. Amazon and Azure Marketplace images can also be added to the Virtual Images Section.
 
+.. IMPORTANT:: Invalid Image Settings cause provisioning failures. |morpheus| syncs in as much meta-data as possible for synced images, they still need to be properly configure to ensure successful provisioning.
+
+.. WARNING:: Cloud-init is enabled by default for all Linux Images. If your Linux image does not have Cloud-init installed, `Cloud-init Enabled` must be unchecked before provisioning the image or it will fail immediately.
+
 Image Types
 -----------
 
@@ -23,7 +27,7 @@ System Images
 
 System Images are pre-configured with metadata and have Cloud-Init or Cloudbase-Init installed. These images are ready to be provisioned with no configuration necessary. It is highly recommended to populate the ``Administration -> Provisioning -> Cloud-Init`` section with user data prior to provisioning, as the user and password/key will be added to all Instances provisioned from System Images. Users can also be added during provisioning in the `Add User` provisioning wizard section.
 
-.. NOTE:: Editing System Images is disabled.
+.. NOTE:: System Images settings are not editable.
 
 User Images
 ^^^^^^^^^^^
