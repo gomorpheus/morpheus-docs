@@ -166,4 +166,4 @@ To Add Virtual Image:
 
     .. NOTE:: The Virtual Image configuration can be saved when using a URL and the upload will finish in the background. When selecting/drag and dropping a file, the image files must upload completely before saving the Virtual Image record or the Image will not be valid.
 
-5, Save Changes.
+5. Save Changes.
