@@ -15,5 +15,4 @@ Troubleshooting
   variables.rst
   blankdashboard.rst
   deletingtenant.rst
-
-  .. exportmorpheuslogs.rst
+  cli_trouble.rst
