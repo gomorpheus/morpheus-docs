@@ -8,6 +8,8 @@ Requirements
 * `project_id`, `private_key` and `client_email` for the Service Account
 * `Compute Engine API` enabled in GCP `API's and Services`
 
+.. IMAGE:: /images/integration_guides/clouds/Google-API-Compute
+
 Add a Google Cloud
 ^^^^^^^^^^^^^^^^^^^
 
@@ -26,7 +28,7 @@ Add a Google Cloud
    Project ID
     Google Cloud Project ID
    Private Key
-    Service Account Private key, begging with `-----BEGIN PRIVATE KEY-----\` and ending with `-----END PRIVATE KEY-----`
+    Service Account Private key, beginning with `-----BEGIN PRIVATE KEY-----\` and ending with `-----END PRIVATE KEY-----`
    Client Email
     Service Account Client Email. ex: `morpheus@morpheus.iam.gserviceaccount.com`
    Region

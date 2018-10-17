@@ -6,7 +6,7 @@ Morpheus supports an extensive range of software integrations and versions past 
 In addition below to those we also support versioned software listed below.
 
   * VMware vCenter      5.5, 6.0, 6.5
-  * VMware ESXi         5.5, 6.0, 6.5
+  * VMware ESXi         5.5, 6.0, 6.5, 6.7
   * vCloud Director     8.20, 9.1
   * Openstack           Juno, Kilo, Liberty, Mitaka, Newton, Ocata, Pike
   * Microsoft Hyper-V   2012R2, 2016
