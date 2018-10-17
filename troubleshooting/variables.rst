@@ -17,7 +17,7 @@ Instance Naming Policy example: ``${userInitials}-${cloudCode}-${platform == 'wi
 
 .. image:: /images/troubleshooting/Metadata-Enviornment-Variable-Spot
 
-.. image:: /images/troubleshooting/Tags-Variable-Spot
+.. image:: /images/troubleshooting/Tags-Variable-Spot    
 
 
 
