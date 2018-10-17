@@ -10,23 +10,23 @@ Add a SCVMM Cloud
 
 .. NOTE::  You will need to open is 5985 in order for |morpheus| to communicate to SCVMM. You will also want to make sure SCVMM has WinRM enabled.
 
- Name
+Name
   Name of the Cloud in |morpheus|
- Location
+Location
   Description field for adding notes on the cloud, such as location.
- Visibility
+Visibility
   For setting cloud permissions in a multi-tenant environment. Not applicable in single tenant environments.
- SCVMM HOST
+SCVMM HOST
   IP or url of SCVMM host
- USERNAME
+USERNAME
   SCVMM Username. ex: svc.scvmm
- PASSWORD
+PASSWORD
   SCVMM User Password
- CLOUD
+CLOUD
   Select a Cloud from the available Clouds in SCVMM.
- WORKING PATH
+WORKING PATH
   Path for |morpheus| to write to. ex: ``c:\Cloud``
- DISK PATH
+DISK PATH
   Path for Virtual Disks. ex: ``c:\VirtualDisks``
 
 #. The Cloud can now be added to a Group or configured with additional Advanced options.
