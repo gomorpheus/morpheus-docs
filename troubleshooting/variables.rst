@@ -13,6 +13,14 @@ Bash Example:	``HOSTNAME="<%= container.server.hostname %>"``
 
 Instance Naming Policy example: ``${userInitials}-${cloudCode}-${platform == 'windows' ? 'W' : 'L'}-${sequence}``
 
+.. TIP:: Variables can be extremely useful when utilized in the environment tab, metadata, and environment variables.
+
+.. image:: /images/troubleshooting/Metadata-Enviornment-Variable-Spot
+
+.. image:: /images/troubleshooting/Tags-Variable-Spot
+
+
+
 .. NOTE:: customOptions are user defined as Option Types or Option Lists in custom Library items.
 
 .. code-block:: bash
