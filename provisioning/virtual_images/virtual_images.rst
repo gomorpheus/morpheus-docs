@@ -123,7 +123,7 @@ To Add Virtual Image:
   Storage Provider
     Location where the Virtual Image will be stored. Default Virtual Image Storage location is /var/opt/morpheus/morpheus-ui/vms. Additional Storage Providers can be configured in `Infrastructure -> Storage`.
   Cloud-Init User Data
-    Accepts what would go in runcmd and can assume bash syntax.
+    Accepts what would go in runcmd and can assume bash syntax. Example use: Script to configure satellite registration at provision time. 
   Create Image
     Select FILE to select or drag and drop image file, or URL to download the image from an accessible URL. It is recommend to configure the rest of the settings below prior to uploading the source Image File(s).
   Permissions
@@ -157,4 +157,4 @@ To Add Virtual Image:
   *Url*
     Select the URL radio button, and enter URL of the Image.
 
-    .. NOTE:: The Virtual Image configuration can be saved when using a URL and the upload will finish in the background. When selecting/drag and dropping a file, the image files must upload completely before saving the Virtual Image record or the Image will not be valid. 
+    .. NOTE:: The Virtual Image configuration can be saved when using a URL and the upload will finish in the background. When selecting/drag and dropping a file, the image files must upload completely before saving the Virtual Image record or the Image will not be valid.
