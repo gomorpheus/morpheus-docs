@@ -8,6 +8,9 @@ Add a SCVMM Cloud
 #. Select :guilabel:`+ CREATE CLOUD`, select SCVMM, and then click :guilabel:`Next`.
 #. Enter the following into the Create Cloud modal:
 
+  .. NOTE::  You will need to open is 5985 in order for |morpheus| to communicate to SCVMM. You will also want to make sure SCVMM has WinRM enabled.
+
+
    Name
     Name of the Cloud in |morpheus|
    Location

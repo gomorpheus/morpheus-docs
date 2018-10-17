@@ -40,6 +40,18 @@ To edit a Tenant:
 #. Click the Edit pencil icon on the row of the Tenant to edit.
 #. Edit the Edit Tenant settings.
 
+Disabling Tenant
+^^^^^^^^^^^^^^^^
+
+When disabling a tenant, they are not able to login and cannot be impersonated by another tenant. However all of their information will still remain in |morpheus| and they may still receive notifications and alerts.
+
+To disable a Tenant:
+
+#. Select the Administration link in the navigation bar.
+#. Select the Tenants link in the sub navigation bar.
+#. Click the Edit pencil icon on the row of the Tenant to edit.
+#. Uncheck the ``Enabled`` box.
+
 Delete Tenant
 ^^^^^^^^^^^^^^
 

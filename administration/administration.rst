@@ -17,6 +17,7 @@ of capabilities when it comes to managing customer accounts and users.
   roles/roles.rst
   users/users.rst
   integrations/integrations.rst
+  policies/policies.rst
   provisioning/provisioning.rst
   monitoring/monitoring.rst
   backups/backup_settings.rst
