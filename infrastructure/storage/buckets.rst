@@ -193,33 +193,33 @@ The Bucket will be created and displayed in the Buckets tab.
   .. WARNING:: When deleting a Bucket, all Deployment Versions and Backups associated with the Bucket will be deleted.
 
 
-Dell ECS Buckets
+Dell EMC ECS Buckets
 ^^^^^^^^^^^^^^^^
 
-.. NOTE:: A Dell ECS Storage Server must be configured in `Infrastructure - Storage - Servers` prior to adding a Dell ECS Bucket.
+.. NOTE:: A Dell EMC ECS Storage Server must be configured in `Infrastructure - Storage - Servers` prior to adding a Dell EMC ECS Bucket.
 
-To Add a Dell ECS Storage Bucket:
+To Add a Dell EMC ECS Storage Bucket:
 
 #. Select the Infrastructure link in the navigation bar.
 #. Select the Storage link in the sub navigation bar.
 #. In the BUCKETS tab, Click the :guilabel:`+ ADD` button.
-#. Select `Dell ECS Bucket` from the dropdown list
+#. Select `Dell EMC ECS Bucket` from the dropdown list
 #. From the NEW BUCKET Wizard input the following:
 
    NAME
      Name of the Bucket in |morpheus|.
    STORAGE SERVICE
-     Select existing Dell ECS Storage Server (configured in `Infrastructure - Storage - Servers`)
+     Select existing Dell EMC ECS Storage Server (configured in `Infrastructure - Storage - Servers`)
    BUCKET NAME
-     Enter a name for the new Dell ECS bucket.
+     Enter a name for the new Dell EMC ECS bucket.
    USER
-    Dell ECS User
+    Dell EMC ECS User
    SECRET KEY
-    Dell ECS Secret key
+    Dell EMC ECS Secret key
    NAMESPACE
-    Select Dell ECS Namespace for the Bucket
+    Select Dell EMC ECS Namespace for the Bucket
    STORAGE GROUP
-    Select a Dell ECS Storage Group
+    Select a Dell EMC ECS Storage Group
    Default Backup Target
     Sets this bucket as the default backup target when creating Backups. If selected the option to update existing Backup configuration to use this Bucket will be presented.
    Archive Snapshots
