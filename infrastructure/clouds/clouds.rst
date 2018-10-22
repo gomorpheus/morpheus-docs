@@ -43,6 +43,7 @@ Supported Cloud Types
 * VMware vCloud Air
 * VMware vCloud Director
 * VirtualBox
+* Virtustream
 * XenServer
 
 Information on each cloud type can be found in the :ref:`integration-guide` section.
