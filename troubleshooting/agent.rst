@@ -87,7 +87,7 @@ Linux
 
 #. This will pull the |morpheus| Agent install script from the |morpheus| appliance and run it.
 
-#. Once the agent is installed, run morpheus-node-ctl reconfigure to complete the manual process.
+#. Once the agent is installed, run ``morpheus-node-ctl reconfigure`` to complete the manual process.
 
 Windows
 
@@ -99,11 +99,11 @@ Windows
 
 * The initial windows installer is MorpheusAgentSetup.msi
 
-* Once the Windows agent is downloaded and installed with |morpheus| AgentSetup.msi the agent is located and runs from `/Program Files x86/Morphues/|morpheus| Windows Agent`
+* Once the Windows agent is downloaded and installed with |morpheus| AgentSetup.msi the agent is located and runs from ``/Program Files x86/Morphues/morpheus Windows Agent``
 
 * Logs can be viewed in the Event Viewer under Applications and Services Logs  -> |morpheus| Windows Agent
 
-#. Replace the values for $apiKey and $applianceUrl in the script below.
+#. Replace the values for ``$apiKey`` and ``$applianceUrl`` in the script below.
 
 #. Execute this script on the Windows box in Powershell.
 
@@ -196,6 +196,7 @@ The |morpheus| Windows Agent service can be restarted in Administrative Tools ->
 .. TIP:: The |morpheus| Remote Console is not dependent on agent communication and can be used to install or restart the |morpheus| agent on an instance.
 
 Uninstall |morpheus| Agent
+^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 You can use the following to uninstall the linux agent:
 
