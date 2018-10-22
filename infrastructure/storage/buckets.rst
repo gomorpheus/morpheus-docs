@@ -48,7 +48,7 @@ To Add an Alibaba Storage Bucket:
     None
       Files in the Bucket will not be automatically deleted or backed up.
     Backup Old Files
-      This option will backup files after a set amount if time and remove them from the bucket.
+      This option will backup files after a set amount of time and remove them from the bucket.
         DAYS OLD
           Files older than the set number of days will be automatically backed up to the selected Backup Bucket.
         BACKUP BUCKET
@@ -109,7 +109,7 @@ To Add an Amazon S3 Storage Bucket:
     None
       Files in the Bucket will not be automatically deleted or backed up.
     Backup Old Files
-      This option will backup files after a set amount if time and remove them from the bucket.
+      This option will backup files after a set amount of time and remove them from the bucket.
         DAYS OLD
           Files older than the set number of days will be automatically backed up to the selected Backup Bucket.
         BACKUP BUCKET
@@ -168,7 +168,7 @@ To Add an Azure Storage Bucket:
     None
       Files in the Bucket will not be automatically deleted or backed up.
     Backup Old Files
-      This option will backup files after a set amount if time and remove them from the bucket.
+      This option will backup files after a set amount of time and remove them from the bucket.
         DAYS OLD
           Files older than the set number of days will be automatically backed up to the selected Backup Bucket.
         BACKUP BUCKET
@@ -233,7 +233,7 @@ To Add a Dell ECS Storage Bucket:
     None
       Files in the Bucket will not be automatically deleted or backed up.
     Backup Old Files
-      This option will backup files after a set amount if time and remove them from the bucket.
+      This option will backup files after a set amount of time and remove them from the bucket.
         DAYS OLD
           Files older than the set number of days will be automatically backed up to the selected Backup Bucket.
         BACKUP BUCKET
@@ -293,7 +293,7 @@ To Add an Azure Storage Bucket:
     None
       Files in the Bucket will not be automatically deleted or backed up.
     Backup Old Files
-      This option will backup files after a set amount if time and remove them from the bucket.
+      This option will backup files after a set amount of time and remove them from the bucket.
         DAYS OLD
           Files older than the set number of days will be automatically backed up to the selected Backup Bucket.
         BACKUP BUCKET
@@ -354,7 +354,7 @@ To Add a Rackspace CDN Bucket:
     None
       Files in the Bucket will not be automatically deleted or backed up.
     Backup Old Files
-      This option will backup files after a set amount if time and remove them from the bucket.
+      This option will backup files after a set amount of time and remove them from the bucket.
         DAYS OLD
           Files older than the set number of days will be automatically backed up to the selected Backup Bucket.
         BACKUP BUCKET
