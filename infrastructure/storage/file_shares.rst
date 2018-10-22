@@ -214,7 +214,7 @@ Local Storage File Shares
 
 .. IMPORTANT:: Local Storage refers to local to the |morpheus| Appliance and the path must be owned by `morpheus-app`. Please be conscious of storage space. High Availability configurations require Local Storage File Shares paths to be shared storage paths between the font end |morpheus| Appliances.
 
-.. NOTE:: To change the owner of a file path to be used as a Local Storage File Share, run ```chown morpheus-app.morpheus-app /path`` on the |morpheus| Appliance.
+.. NOTE:: To change the owner of a file path to be used as a Local Storage File Share, run ``chown morpheus-app.morpheus-app /path`` on the |morpheus| Appliance.
 
 .. NOTE:: |morpheus| will validate path and ownership of the File Share Path.
 
