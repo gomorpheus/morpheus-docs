@@ -1,5 +1,5 @@
 
-Installation
+Installation 
 ============
 
 |morpheus| comes packaged as a ``debian`` or ``yum`` based package. It
