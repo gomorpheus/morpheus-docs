@@ -8,6 +8,7 @@ configured for high availability and horizontal scaling. |morpheus| is
 currently only supported on Ubuntu 14.04, Ubuntu 16.04 , CentOS 7.0 or
 newer, and RHEL 7.0 or newer based hosts (Ubuntu is recommended).
 
+.. Note::  You can view our offline installation guide at :ref:`offline-installation`
 
 .. include:: debian.rst
 
