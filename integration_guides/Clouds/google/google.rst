@@ -43,3 +43,5 @@ The Cloud can now be added to a Group or configured with additional Advanced opt
 .. include:: /integration_guides/Clouds/advanced_options.rst
 
 Finally, add Google Cloud to an existing Group or create a new Group, and you have now integrated |morpheus| with Google Cloud!
+
+.. IMPORTANT:: If you experience difficulties adding a GCP Cloud, ensure you have met all the Requirements above, and have logged into Google Cloud and navigated to the Compute Engine sections as it will not be initialized until navigated to upon Google Cloud account creation.

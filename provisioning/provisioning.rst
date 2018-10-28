@@ -8,6 +8,7 @@ Take advantage of custom tasks and workflows within any environment by building 
 .. toctree::
   :maxdepth: 2
 
+  requirements.rst
   concepts/concepts.rst
   instances/instances.rst
   apps/apps.rst
