@@ -126,6 +126,8 @@ Steps
 
 #. Subsequently we need to stop and start Rabbit on the NOT SOT nodes.
 
+   .. IMPORTANT:: The commands below must be run at root
+
    .. code-block:: bash
 
      [root@app-server-2 ~]# morpheus-ctl stop rabbitmq
