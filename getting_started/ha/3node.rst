@@ -39,7 +39,7 @@ Steps
    .. code-block:: bash
 
      appliance_url 'https://morpheus1.localdomain'
-     elasticsearch['es_hosts'] = {'10.100.10.121' => 9300, '10.100.10.122' => 9300, '10.100.10.123' => 9300}
+     elasticsearch['es_hosts'] = {'10.100.10.121' => 9200, '10.100.10.122' => 9200, '10.100.10.123' => 9200}
      elasticsearch['node_name'] = 'morpheus1'
      elasticsearch['host'] = '0.0.0.0'
      rabbitmq['host'] = '0.0.0.0'
@@ -55,7 +55,7 @@ Steps
    .. code-block:: bash
 
     appliance_url 'https://morpheus2.localdomain'
-    elasticsearch['es_hosts'] = {'10.100.10.121' => 9300, '10.100.10.122' => 9300, '10.100.10.123' => 9300}
+    elasticsearch['es_hosts'] = {'10.100.10.121' => 9200, '10.100.10.122' => 9200, '10.100.10.123' => 9200}
     elasticsearch['node_name'] = 'morpheus2'
     elasticsearch['host'] = '0.0.0.0'
     rabbitmq['host'] = '0.0.0.0'
@@ -71,7 +71,7 @@ Steps
    .. code-block:: bash
 
        appliance_url 'https://morpheus3.localdomain'
-       elasticsearch['es_hosts'] = {'10.100.10.121' => 9300, '10.100.10.122' => 9300, '10.100.10.123' => 9300}
+       elasticsearch['es_hosts'] = {'10.100.10.121' => 9200, '10.100.10.122' => 9200, '10.100.10.123' => 9200}
        elasticsearch['node_name'] = 'morpheus3'
        elasticsearch['host'] = '0.0.0.0'
        rabbitmq['host'] = '0.0.0.0'
@@ -125,6 +125,8 @@ Steps
       This step will fail. This is ok, and expected. If the reconfigure hangs then use Ctrl+C to quit the reconfigure run and force a failure.
 
 #. Subsequently we need to stop and start Rabbit on the NOT SOT nodes.
+
+   .. IMPORTANT:: The commands below must be run at root
 
    .. code-block:: bash
 

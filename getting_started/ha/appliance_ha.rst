@@ -45,7 +45,7 @@ Change the values to match your configured services:
       rabbitmq['heartbeat'] = 50
       elasticsearch['enable'] = false
       elasticsearch['cluster'] = 'morpheusha1'
-      elasticsearch['es_hosts'] = {'10.30.20.91' => 9300, '10.30.20.149' => 9300, '10.30.20.165' => 9300}
+      elasticsearch['es_hosts'] = {'10.30.20.91' => 9200, '10.30.20.149' => 9200, '10.30.20.165' => 9200}
 
 #. Reconfigure Morpheus
 
