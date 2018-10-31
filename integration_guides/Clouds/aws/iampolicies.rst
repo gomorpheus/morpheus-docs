@@ -211,7 +211,7 @@ S3
         "s3:DeleteObjectVersion",
         "s3:GetBucketLocation",
         "s3:GetObject",
-        "s3:GetObjectVersion”,
+        "s3:GetObjectVersion",
         "s3:ListBucket",
         "s3:ListBucketMultipartUploads",
         "s3:ListBucketVersions",
