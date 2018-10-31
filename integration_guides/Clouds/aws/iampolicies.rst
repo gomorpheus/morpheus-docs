@@ -203,7 +203,6 @@ S3
   "Version": "2012-10-17",
   "Statement": [
     {
-      "Sid": "access-1",
       "Effect": "Allow",
       "Action": [
         "s3:AbortMultipartUpload",
@@ -215,7 +214,7 @@ S3
         "s3:ListBucket",
         "s3:ListBucketMultipartUploads",
         "s3:ListBucketVersions",
-        "s3:ListMultipartUploads",
+        "s3:ListMultipartUploadParts",
         "s3:PutObject"
       ],
       "Resource": [
