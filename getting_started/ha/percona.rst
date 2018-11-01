@@ -97,13 +97,13 @@ Installing Percona XtraDB Cluster
 
    .. code-block:: bash
 
-    ALTER USER 'root'@'localhost' IDENTIFIED BY 'MySuperSecurePasswordhere';
+    ALTER USER 'root'@'localhost' IDENTIFIED BY '$root_db_user_pw';
 
 #. Create the sstuser user and grant the permissions.
 
    .. code-block:: bash
 
-    mysql> CREATE USER 'sstuser'@'localhost' IDENTIFIED BY 'M0rpheus17';
+    mysql> CREATE USER 'sstuser'@'localhost' IDENTIFIED BY '$sstuser_db_user_pw';
 
    .. NOTE:: The sstuser and password will be used in the /etc/my.cnf configuration.
 
@@ -264,14 +264,13 @@ Bootstrapping the first Node in the cluster
 
    .. code-block:: bash
 
-    mysql> CREATE USER 'morpheusadmin'@'%' IDENTIFIED BY 'Cloudy2017';
+    mysql> CREATE USER '$morpheus_db_user_name'@'$source_ip' IDENTIFIED BY '$morpheus_db_user_pw';
 
 #. Next Grant your new morpheus user permissions to the database.
 
    .. code-block:: bash
 
-    mysql> GRANT ALL PRIVILEGES ON * . * TO 'morpheusadmin'@'%' IDENTIFIED BY 'Cloudy2017' with grant option;
-
+    mysql> GRANT ALL PRIVILEGES ON $morpheus_db_name TO '$morpheus_db_user_name'@'$source_ip' IDENTIFIED BY '$morpheus_db_user_pw' with grant option;
 
     mysql> FLUSH PRIVILEGES;
 
@@ -279,7 +278,7 @@ Bootstrapping the first Node in the cluster
 
    .. code-block:: bash
 
-    SHOW GRANTS FOR 'morpheusadmin'@'%';
+    SHOW GRANTS FOR '$morpheus_db_user_name'@'$source_ip';
 
 
 Bootstrap the Remaining Nodes
@@ -383,6 +382,6 @@ Verification
 
    .. code-block:: bash
 
-    mysql -u morpheusadmin -p  -h 192.168.10.100
+    mysql -u $morpheus_db_user_name -p  -h 192.168.10.100
 
    .. NOTE:: This command requires mysql client installed. If you are on a windows machine you can connect to the server using mysql work bench which can be found here https://www.mysql.com/products/workbench/
