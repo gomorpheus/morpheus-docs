@@ -1,15 +1,62 @@
-Tenants & Tenant Users
-=======================
+Tenants
+=======
 
 Overview
+--------
+
+A Tenant in |morpheus| is an isolated environment with unique users and workloads. The Master Tenant is the default Tenant in |morpheus|, created upon installation. All other Tenants besides the Master Tenants are Sub Tenants.
+
+- The Master Tenant is the default Tenant created during the installation of |morpheus|.
+- All Tenants created after installation are Sub Tenants. Only one Master Tenant can exist.
+- The Master Tenant creates and controls all Sub Tenants.
+- Tenants are isolated environments.
+    - Tenants have unique users
+    - Tenants have unique workloads
+- The Master Tenant can share or assign Master Tenants resources with/to Sub Tenants
+- Sub Tenants cannot share their resources with other tenants
+- Sub Tenants cannot see resources from other Sub Tenants
+- Sub Tenants can only access Master Tenant resources that have been set to Public visibility or assigned to the Sub Tenant.
+
+Roles
+^^^^^
+
+It is important to understand Role types and permission when creating and managing Tenants.
+
+Tenant Roles
+    Tenant Roles are for capping Sub Tenant permissions by setting the maximum permissions for a Tenant. User Roles in a Tenant cannot exceed the permissions of the Tenant Role assigned to the Tenant.
+       - Tenant Roles set the maximum permissions for a Tenant
+       - User Roles in a Tenant cannot exceed the permissions of the Tenant Role assigned to the Tenant.
+       - Tenants Roles can be set on one or multiple tenants
+       - Tenant Roles determine Public Cloud access for the tenant.
+          - All Clouds in the Master Tenants the have Visibility set to `Public` will show as options in the Tenant Role Cloud Access.
+          - Only Master Tenant Clouds given access in a Tenants assigned Tenants role will be accessible in the Sub Tenant.
+           ..IMPORTANT: Tenant Roles cap permissions on all Sub Tenant user roles. Sub Tenant user roles can be created in the sub Tenant will lesser permissions than the Tenant Role allows. Tenant Roles are designed for a Master Tenant Admin to set max permissions for a Tenant, and a Sub Tenant Admin to configure User Roles inside the Sub Tenant.
+
+User Roles
+   User Roles determine Feature, Group and Instance Type access for all Users. For multi-tenancy, there are two types of User Roles, Single Tenant User Roles and Multi Tenant User Roles.
+    Single Tenant User Roles
+      Single Tenant User Roles only exist in the Tenant they exist in. All Roles created in a Sub Tenant are Single Tenant User Roles.
+    Multi Tenant User Roles
+      The Master Tenant and only the Master Tenant can create Multi Tenant User Roles. These Roles are for automatically creating base user Roles in Sub Tenants.
+        - Multi Tenant User Roles will automatically create matching User Roles in all Tenants
+
+        .. NOTE:: Multi Tenant User Roles are intended to make Sub Tenant User Role creation easier, so Master Tenant users do not have to re-created the same base Sub Tenant Users Roles for every Sub Tenant. Multi Tenant User Roles are not a single role across Tenants, but more of a template that creates new Sub Tenant User Roles that can then be managed in the Sub Tenant.
+
+        - Multi Tenant User Role changes will propagate to all Sub Tenants unless edited by a Sub Tenant
+        - Once a Multi Tenant User Role is edited inside a Sub Tenant, it is no longer connected to the Multi Tenant User Role and is it own unique Role.
+        - At least one Multi Tenant User Role is required before any Sub Tenants can be created
+
+        .. IMPORTANT:: Deleting a Multi Tenant User Role from the Master tenant will not remove that Role from Sub Tenants.
+
+        .. IMPORTANT:: Renaming a Multi Tenant User Role from the Master tenant will not rename Roles created from the multi Tenant User Role in Sub Tenants.
+
+
+Tenants
 --------
 
 The Tenants page displays a list of all Tenants. This page enables users to Create, Edit, and Delete Tenants. The list of Tenants displays the Tenant Name, Role, Total Instances, Total Users, and the Created Date.
 
 Click the Tenant Name to drill into the Tenant View where you can again Edit, Delete, as well as Create Users, Edit Users, and Delete Users users belonging to the Tenant.
-
-Tenants
---------
 
 Create Tenants
 ^^^^^^^^^^^^^^^^
