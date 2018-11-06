@@ -332,7 +332,7 @@ The most frequent case of restart errors for RabbitMQ is with epmd failing to re
 
 .. code-block:: bash
 
-  [root@app-server-1 ~]# /opt/morpheus/embedded/lib/erlang/erts-5.10.4/bin/epmd - daemon
+  [root@app-server-1 ~]# /opt/morpheus/embedded/lib/erlang/erts-5.10.4/bin/epmd -daemon
 
 And then restarting RabbitMQ:
 

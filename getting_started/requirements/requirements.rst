@@ -17,7 +17,7 @@ Base Requirements
 - An Appliance License is required for any operations involving provisioning.
 - Internet Connectivity (optional)
    - To download from |morpheus|' public docker repositories and system Virtual Image catalog
-   - Offline installation require installing the offline package in addition to the regualr installaiton package.
+   - Offline installation require installing the offline package in addition to the regular installation package.
 
    .. NOTE:: Access to base yum and apt repos is still required for offline installations.
 
