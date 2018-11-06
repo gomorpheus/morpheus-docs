@@ -1,37 +1,76 @@
 Requirements
 ============
 
-|morpheus| is a software based appliance installation capable of orchestrating many clouds and hypervisors. Before an installation is
-started it is important to understand some of the base requirements.
+|morpheus| is a software based appliance installation capable of orchestrating many clouds and hypervisors. Before an installation is started it is important to understand some of the base requirements.
 
-In the simplest configuration |morpheus| needs one Appliance Server. The Appliance Server, by default, contains all the components
-necessary to orchestrate both vm's and containers. To get started some base requirements are recommended:
+In the simplest configuration |morpheus| needs one Appliance Server. The Appliance Server, by default, contains all the components necessary to orchestrate both vm's and containers. To get started some base requirements are recommended:
 
 Base Requirements
 -----------------
 
--  **Operating System:** Ubuntu 14.04 / 16.04 or CentOS/RHEL greater than 7.0.
--  **Memory:** 8 GB with 4GB of swap minimum, 16 GB recommended for base installs. 
--  **Storage:** 100 GB storage minimum
--  Network connectivity from your users to the appliance over TCP 443 (HTTPS)
--  Inbound connectivity access from provisioned vm's and container hosts on ports 443 and 80 (needed for agent communication)
--  Internet Connectivity from Appliance (To download from |morpheus|' public docker repositories and virtual image catalog)
--  Superuser privileges via the sudo command for the user installing the |morpheus| Appliance package.
--  An Appliance URL that is accessible to all managed hosts. It is necessary for all hosts that are managed by |morpheus| to be able to communicate with the appliance server ip on port 443. This URL is configured under Admin->Settings. |morpheus| also utilizes SSH (Port 22) and Windows Remote Management (Port 5985) to initialize a server.
--  An Appliance License is required for any operations involving provisioning.
+- **Operating System:** Ubuntu 14.04 / 16.04 or CentOS/RHEL greater than 7.0.
+- **Memory:** 16 GB recommended for default installations. 8 GB minimum required with 4 GB+ available swap space
+- **Storage:** 200 GB storage minimum (see Storage Considerations below)
+- Network connectivity from your users to the appliance over TCP 443 (HTTPS)
+- Superuser privileges via the sudo command for the user installing the |morpheus| Appliance package.
+- Access to base yum and apt repos
+- An Appliance License is required for any operations involving provisioning.
+- Internet Connectivity (optional)
+   - To download from |morpheus|' public docker repositories and system Virtual Image catalog
+   - Offline installation require installing the offline package in addition to the regualr installaiton package.
+
+   .. NOTE:: Access to base yum and apt repos is still required for offline installations.
+
+-  VM and Host Agent Install (optional)
+    - Inbound connectivity access from provisioned vm's and container hosts on ports 443 (Agent install and communication) and 80 (Linux Agent installs via yum and apt)
+    - An Appliance URL that is accessible/resolvable to all managed hosts. It is necessary for all hosts that are managed by |morpheus| to be able to communicate with the appliance server ip on port 443. This URL is configured under Admin->Settings.
 
 .. NOTE:: Ubuntu 16.10, 18.04 and Amazon Linux are not supported.
 
-.. TIP:: When using AWS for deploying your application we recommend m5.large as a starting point.  For other public clouds please select a comparable instance type.
+Storage Considerations
+----------------------
 
-Storage
--------
+Upon initial installation |morpheus| takes up less than 10 GB of space, however Morpheus Services, Virtual Images, Backups, Logs and stats and user uploaded and imported data require adequate space on the Morpheus Appliance(s) per Appliance Configuration and activity.
 
-|morpheus| needs storage space for a few items. One is for the built-in Elasticsearch store (used for log aggregation and stats collection metrics). |morpheus| also keeps a workspace and local virtual image cache for doing virtual image conversion and blueprint upload. While the permanent store of these can
-be offloaded via a Storage Provider some space is still recommended for dealing with non streamable virtual image formats.
+.. IMPORTANT:: It is the customers responsibility to ensure adequate storage space per configuration and use case.
 
-In many common scenarios it might be prudent to configure a shared datastore on a storage cluster and mounted to ``/var/opt/morpheus/morpheus-ui``
-(this is where all user based data and database data is persisted). There are several folders located within here that can be independently located as desired.
+Default Paths
+^^^^^^^^^^^^^
+
+``/opt/morpheus``
+  Morpheus Application and Services Files
+``/var/opt/morpheus``
+  User, Application and Services Data, including default config Elasticsearch, RabbitMQ and Database data, and default Virtual Image path.
+``/var/log``
+  Morpheus Service logs
+``/tmp/morpheus``
+  Working directory for Backups
+
+Images
+^^^^^^
+
+Virtual Images can be uploaded to |morpheus| Storage Providers for use across Clouds. By default when no Storage Provider has been added, images will write to ``/var/opt/morpheus/morpheus-ui/vms``. Please ensure adequate space when uploading Images using local file paths.
+
+Backups
+^^^^^^^
+
+|morpheus| can offload snapshots when performing backups to local or other Storage Providers. By default when no Storage Provider has been added, backups will write to ``/tmp/morpheus/backups/``. When using none NFS Storage providers, the backup file(s) must be written to ``/tmp/morpheus/working/`` before they can be zipped, sent to the destination Storage provider such as S3, and removed from ``/tmp/morpheus/working/``. Please ensure adequate space in ``/tmp/morpheus/`` when offloading Backups.
+
+Migrations
+^^^^^^^^^^
+
+When performing a Hypervisor to Hypervisor migration, such as VMware to AWS, Virtual Images are written to local storage before conversion and/or upload to the target hypervisor. Please ensure adequate space in ``/var/opt/morpheus/morpheus-ui/vms`` or other configured local Storage Provider paths when performing Migrations.
+
+VM Logs and Stats
+^^^^^^^^^^^^^^^^^
+
+When using a |morpheus| configuration with locally installed ElasticSearch, VM, Container, Host and Appliance logs and stats are are stored in Elasticsearch. Please ensure adequate space in ``/var``, specifically ``/var/opt/morpheus/elasticsearch`` in relation to the number or Instances reporting logs, log frequency, and log retention count.
+
+|morpheus| Services Logs
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+Logs for services local to the |morpheus| Appliance, such as the Morpheus ui, elasticsearch, rabbitmq, mysql, nginx and guacd are written to ``/var/log/morpheus/``. Current logs are rotated nightly, zipped, and files older than 30 days are automatically removed. Misconfigured services, ports and permissions can cause excessive log file sizes.
+
 
 Network Connectivity
 --------------------
