@@ -22,8 +22,8 @@ Steps
 
    .. code-block:: text
 
-    [root@app-server-1 ~]# wget https://example/path/morpheus-appliance-offline-3.1.5- 1.noarch.rpm
-    [root@app-server-1 ~]# wget https://example/path/morpheus-appliance-3.1.5- 1.el7.x86_64.rpm
+    [root@app-server-1 ~]# wget https://example/path/morpheus-appliance-ver-1.el7.x86_64.rpm
+    [root@app-server-1 ~]# wget https://example/path/morpheus-appliance-offline-ver-1.noarch.rpm
 
 #. Once the packages are available on the nodes they can be installed. Make sure that no steps beyond the rpm install are run.
 
