@@ -29,8 +29,8 @@ Steps
 
    .. code-block:: bash
 
-    [root@app-server-1 ~] rpm -i morpheus-appliance-3.1.5-1.el7.x86_64.rpm
-    [root@app-server-1 ~] rpm -i morpheus-appliance-offline-3.1.5-1.noarch.rpm
+    [root@app-server-1 ~] rpm -i morpheus-appliance-ver-1.el7.x86_64.rpm
+    [root@app-server-1 ~] rpm -i morpheus-appliance-offline-ver-1.noarch.rpm
 
 #. Next you will need to edit the |morpheus| configuration file ``/etc/morpheus/morpheus.rb`` on each node.
 
