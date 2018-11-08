@@ -19,4 +19,4 @@ Integration Guides
 .. include:: Networking/networking.rst
 .. include:: service_discovery/service_discovery.rst
 .. include:: storage/storage.rst
-.. include:: supportedversions/versions2.rst 
+.. include:: supportedversions/supportedversions.rst 
