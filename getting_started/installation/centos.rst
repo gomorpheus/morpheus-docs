@@ -15,7 +15,7 @@ To get started installing |morpheus| on CentOS/RHEL a few preparatory items shou
 
 #. Next simply download the relevant ``.rpm`` package for installation. This package can be acquired from your account rep or via a free trial request from |morpheushub|.
 
-   .. TIP:: Use the ``wget`` command to directly download the package to your appliance server. i.e. ``wget https://downloads.gomorpheus.com/path/to/package.rpm``
+   .. TIP:: Use the ``wget`` command to directly download the package to your appliance server. i.e. ``wget https://downloads.morpheusdata.com/path/to/package.rpm``
 
 #. Next we must install the package onto the machine and configure the morpheus services:
 
