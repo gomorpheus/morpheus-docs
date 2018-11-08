@@ -1,3 +1,5 @@
+.. _offline-installation:
+
 Offline Installer
 -----------------
 
