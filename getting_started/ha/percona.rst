@@ -139,14 +139,14 @@ Add [mysqld] to my.cnf in /etc/
       [mysqld]
       wsrep_provider=/usr/lib64/galera3/libgalera_smm.so
 
-      wsrep_cluster_name=popeye
+      wsrep_cluster_name=$dbclustername
       wsrep_cluster_address=gcomm://  #Leave blank for Master Node. The other nodes require this field. Enter the IP address of the primary node first then remaining nodes. Separating the ip addresses with commas like this 10.30.20.196,10.30.20.197,10.30.20.198##
 
-      wsrep_node_name=morpheus-node01
-      wsrep_node_address=10.30.20.57
+      wsrep_node_name=$nodename
+      wsrep_node_address=$nodeip
 
       wsrep_sst_method=xtrabackup-v2
-      wsrep_sst_auth=sstuser:M0rpheus17
+      wsrep_sst_auth=sstuser:$sstuser_db_user_pw
       pxc_strict_mode=PERMISSIVE
 
       binlog_format=ROW
@@ -270,7 +270,7 @@ Bootstrapping the first Node in the cluster
 
    .. code-block:: bash
 
-    mysql> GRANT ALL PRIVILEGES ON $morpheus_db_name TO '$morpheus_db_user_name'@'$source_ip' IDENTIFIED BY '$morpheus_db_user_pw' with grant option;
+    mysql> GRANT ALL PRIVILEGES ON $morpheus_db_name.* TO '$morpheus_db_user_name'@'$source_ip' IDENTIFIED BY '$morpheus_db_user_pw' with grant option;
 
     mysql> FLUSH PRIVILEGES;
 
