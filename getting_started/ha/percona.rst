@@ -33,7 +33,7 @@ Add Percona Repo
 
     sudo yum install http://www.percona.com/downloads/percona-release/redhat/0.1-4/percona-release-0.1-4.noarch.rpm
 
-  .. NOTE:: For the most up to dte repo please visit this link https://www.percona.com/doc/percona-repo-config/yum-repo.html
+  .. NOTE:: For the most up to date repo please visit this link https://www.percona.com/doc/percona-repo-config/yum-repo.html
 
 #. Check the repo by running the below command.
 
