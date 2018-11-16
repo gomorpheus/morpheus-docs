@@ -29,9 +29,11 @@ Add Percona Repo
 
 #. Add the percona repo to your Linux Distro.
 
-   .. code-block:: bash
+  .. code-block:: bash
 
     sudo yum install http://www.percona.com/downloads/percona-release/redhat/0.1-4/percona-release-0.1-4.noarch.rpm
+
+  .. NOTE:: For the most up to date repo please visit this link https://www.percona.com/doc/percona-repo-config/yum-repo.html
 
 #. Check the repo by running the below command.
 
@@ -128,7 +130,7 @@ Once the service is stopped on all nodes move onto the next step.
 Add [mysqld] to my.cnf in /etc/
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-#. Copy the below contents to ``/etc/my.cnf``.  The node_name and node_address needs to be unique on each of the nodes. The first node does not require the gcomm value to be set.
+#. Copy the below contents to ``/etc/my.cnf``.  The ``node_name`` and ``node_address`` needs to be unique on each of the nodes. The first node does not require the gcomm value to be set.
 
    .. code-block:: bash
 

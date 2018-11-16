@@ -25,6 +25,8 @@ App Dynamics            4.5.1
 **Networking**          ..
 Cisco ACI               3.10
 VMware NSX              -V
+**Backups**
+Veeam                   9.5
 **Containers**          ..
 Docker                  1.12.6
 Kubernetes              1.11
