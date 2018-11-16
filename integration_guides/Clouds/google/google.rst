@@ -13,7 +13,7 @@ Requirements
 Add a Google Cloud
 ^^^^^^^^^^^^^^^^^^^
 
-.. TIP:: All of the required Goole Cloud credentials can be found in the .json file created when generating a key for a Google Cloud service account.
+.. TIP:: All of the required Google Cloud credentials can be found in the .json file created when generating a key for a Google Cloud service account.
 
 #. Navigate to Infrastructure -> Clouds
 #. Select :guilabel:`+ CREATE CLOUD`, select Google Cloud, and then click :guilabel:`Next`.
