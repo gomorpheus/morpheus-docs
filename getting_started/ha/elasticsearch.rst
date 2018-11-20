@@ -120,11 +120,11 @@ Installation
 
     sudo service elasticsearch restart
 
-   Next restart the network with the command: 
+   Next restart the network with the command:
 
    .. code-block:: bash
 
-    sudo service elasticsearch restart
+    sudo service network restart
 
 #. Testing
 
