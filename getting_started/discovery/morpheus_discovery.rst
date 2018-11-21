@@ -15,7 +15,7 @@ Once inventoried, Morpheus can provide valuable data for that instance:
 
 Right away inventorying existing environments will provide you with immediate insight to that environment.  Once an existing workload has been discovered it can be converted to managed.  Once converted to managed, Morpheus can deliver more capabilities and features.
 
-.. NOTE:: Work loads do not need the agent installed to be managed
+.. NOTE:: Workloads do not need the agent installed to be managed
 
 Once a workload is managed:
 
