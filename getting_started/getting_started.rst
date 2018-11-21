@@ -13,4 +13,4 @@ Getting Started
   ha/ha_setup.rst
   cli/cli_master.rst
   agent/morpheus_agent.rst
-  agent/morpheus_discovery.rst
+  discovery/morpheus_discovery.rst
