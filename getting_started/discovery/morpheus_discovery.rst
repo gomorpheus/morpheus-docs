@@ -19,7 +19,7 @@ Right away inventorying existing environments will provide you with immediate in
 
 Once a workload is managed:
 
-* Enforce expiration/shutdown policies. Helps reign in environments (sprawl).
+* Enforce expiration/shutdown policies. This helps reign in environments (sprawl) and reduce cost.
 * Can tell what instance type it is
 * Can install agent (agent is optional)
 * Installing agent provides credentials and allows you to run workflows against it (day 2 operations)
