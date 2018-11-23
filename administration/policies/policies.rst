@@ -15,7 +15,7 @@ Policies apply towards any instance provisioned into a group or cloud with activ
 Available Policy Types
 ^^^^^^^^^^^^^^^^^^^^^^
 Budget
-  Sets a maximum total price for all instances this policy is applied to.
+  Sets a maximum total combined price for all instances in the Group, Cloud, Tenant or owned by the User this policy is applied to.
 Expiration
   Sets an expiration timeframe in days after which the Instance will be deleted. Extensions can be auto-approved or require approval immediately or after x amount of auto-extensions using Morpheus Approvals or an Approval Integration.
 Host Name

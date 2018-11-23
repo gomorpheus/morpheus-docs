@@ -2,7 +2,7 @@
 ----
 
 Adding 3Par Storage Server
-...........................
+^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 #. Select the Infrastructure link in the navigation bar.
 #. Select the Storage link in the sub navigation bar.
