@@ -1,0 +1,72 @@
+v3.4.3
+=======
+
+Release date: 11/2018
+
+New Features
+-------------
+
+- Add support for Rand currency
+- Inactive option for Tenants
+- HAProxy LB: Host selection added when creating HAProxy LB
+- Hosts: External ID added to Host detail view
+- Nutanix sync - pull hypervisors, disks, networks, and memory usage
+- API: add externalId for vm's
+
+Fixes
+-----
+
+- Username showing twice on manual VM add
+- Forgot Password Email: make email subject more indicative of password reset, not account lock
+- Console issue when instance has multiple nodes
+- Global Search: Quick Results - User results are blank
+- VMware: Resize - issue with add/remove volumes when disk type selection disabled
+- Enable 'Manage Internal Firewall' on VM should update iptable rules
+- Issue evaluating variables in instance name while using copies
+- App/Instance Wizard: Configure: not showing error icon for all invalid fields
+- Service plans are not filtered with VMware Instance type and min ram on image
+- LVM volumes don't get created and data is mapped to the root file system
+- Saving a user record should not break linux/windows passwords
+- Instance List: instance type filter buttons not working
+- Suggested Search popup is too sensitive
+- User Impersonation: not properly handling duplicate usernames
+- F5 LB: Pools - issues with edit pool
+- F5 LB: Monitor - parent monitor not working with custom monitors
+- F5 Load Balancer: unknown error when saving with no port number defined when >=2 members
+- F5 Load Balancer: Description not being set for pool
+- Infoblox - issues with pool and domain records
+- F5 LB: Edit: not saving property changes
+- Windows activation not working on Nutanix
+- Windows Setting computer name fails  Nutanix
+- Instance /morpheus with 777 permissions (world writeable)
+- Unable to delete user with ties to archives
+- Instance details - price quickly refreshes to slightly incorrect price
+- Custom plans issue with min ram settings
+- Unable to save whitelabeling for tenant
+- Tenants should not be able to create global plans
+- Blueprints - incorrect price for custom plans
+- OracleVM Plans - Issue with cores
+- Instance Clone - not respecting Cloud selection
+- VCD - Unable to provision custom library item
+- Issues with integrations scoped to Groups & Clouds
+- UCS Cloud - credentials dont work on add, only edit
+- VMware Reconfigure- duplicate storage controllers
+- Morpheus IP pool not working on Nutanix AOS 5.8.2
+- Price Comparison - missing some expected cloud prices
+- Scaling Down - not cleaning up environment variables
+- Nutanix unattend.xml typo in powershell cmdlets for DNS and exception policy.
+- VCD - Update Network DNS Servers on cloud sync
+- External email doesnt work
+- Automation Tasks - search doesnt work beyond first page
+- Git Integration - not usable in Blueprints
+- App export creating extra configs when group is defined
+- Add Cloud to Group buttons hidden if no public clouds enabled
+- Convert to Managed - cost usage records not created on instance
+- Provisioning into VCD from local Morpheus storage and S3 fails
+- VCD - Rename unmanaged server type, dont sync unmanaged hostnames
+- F5 LB: Scale: SSL not working
+- Unable to delete Tenant with IP Pools in use
+- ESXi Docker Host - not using LVM on 2 disk hosts
+- User settings- default cloud selection should show user accessible clouds, not all clouds
+- Subtenant can see tenant reports with right url
+- Omnibus writing wrong info in elasticsearch.yml for 3-node HA
