@@ -86,6 +86,7 @@ Currency
 -  XCD
 -  XOF
 -  XPF
+-  ZAR
 
 Cost
 ^^^^^
