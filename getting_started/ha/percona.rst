@@ -166,7 +166,7 @@ Bootstrapping the first Node in the cluster
 
    .. code-block:: bash
 
-    systemctl start mysql@bootstrap.service
+    sudo systemctl start mysql@bootstrap.service
 
    .. NOTE:: The mysql service will start during the boot strap.
 
@@ -273,7 +273,7 @@ Bootstrapping the first Node in the cluster
    .. code-block:: bash
 
     mysql> GRANT ALL PRIVILEGES ON *.* TO '$morpheus_db_user_name'@'$source_ip' IDENTIFIED BY '$morpheus_db_user_pw' with grant option;
-    
+
     mysql> FLUSH PRIVILEGES;
 
 #. Checking Permissions for your user.
