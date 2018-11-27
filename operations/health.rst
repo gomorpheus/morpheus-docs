@@ -5,21 +5,20 @@ Health
 ------------------
 
 The |Morpheus| health section provides an overview of the health of your |Morpheus| appliance. It includes data on the following:
-
-Health Levels
-CPU
-Memory
-Database
-Elastic
-Queues
+  - Health Levels
+  - CPU
+  - Memory
+  - Database
+  - Elastic
+  - Queues
 
 
 HEALTH LEVELS include
-  - MORPHEUS CPU
-  - SYSTEM CPU
-  - MORPHEUS MEMORY
-  - SYSTEM MEMORY
-  - USED SWAP
+  - |Morpheus| CPU
+  - System CPU
+  - |Morpheus| Memory
+  - System Memory
+  - Used Swap
 
 
 CPU include
@@ -99,30 +98,27 @@ ELASTIC includes
 .. NOTE:: Warning status is typical for Elasticsearch
 
 Elastic Nodes include
-  - NODE
-  - MASTER
-  - LOCATION
-  - HEAP
-  - USAGE
-  - MEMORY
-  - USAGE
-  - CPU
-  - USAGE
-  - 1M LOAD
-  - 5M LOAD
-  - 15M LOAD
+  - Node
+  - Master
+  - Location
+  - Heap Usage
+  - Memory Usage
+  - CPU Usage
+  - 1M Load
+  - 5M Load
+  - 15M Load
 
 Elastic Indices include
-  - HEALTH
-  - INDEX
-  - STATUS
-  - PRIMARY
-  - REPLICAS
-  - DOC
-  - COUNT
-  - PRIMARY
-  - SIZE
-  - TOTAL SIZE
+  - Health
+  - Index
+  - Status
+  - Primary
+  - Replicas
+  - Doc
+  - Count
+  - Primary
+  - Size
+  - Total Size
 
 QUEUES INCLUDE
   - Queue Count
