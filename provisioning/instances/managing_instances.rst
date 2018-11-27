@@ -4,11 +4,13 @@ Managing Instances
 Instance actions allow you to perform numerous management tasks on instances. The actions available depend on the instance type, hypervisor, roles permissions, and instance state.
 
 Edit
-  Edit the Name, Description, Environment, or Group for the Instance.
+  Edit the Name, Description, Environment, Group, Metadata, Tags, and Owner for the Instance.
 Delete
   Deletes the Instance.
 
 .. IMPORTANT:: Deleting an Instance will delete associated VM's or Containers and cannot be undone. To delete instances without deleting associated VM's, delete the VM from the Infrastructure section and uncheck "Remove Infrastructure" while checking "Remove Associated Instances" in the delete modal options.
+
+.. TIP:: You can change the owner of an instance easily by selecting the edit button and entering a new owner in the corresponding field.
 
 Actions
 ^^^^^^^
