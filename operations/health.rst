@@ -1,8 +1,18 @@
 Health
 ======
 
-Morpheus Health
----------------
+|Morpheus| Health
+------------------
+
+The |Morpheus| health section provides an overview of the health of your |Morpheus| appliance. It includes data on the following:
+
+Health Levels
+CPU
+Memory
+Database
+Elastic
+Queues
+
 
 HEALTH SUMMARY
 
@@ -60,6 +70,6 @@ The `ALARMS` section shows Operation notifications from Cloud and other Service 
 Morpheus Logs
 -------------
 
-The Logs displayed in `Operations - Health - Morpheus Logs` are from `/var/log/morpheus/morpheus-ui/current`. These logs show all ui activity and are useful for troubleshooting and auditing.
+The Logs displayed in ```Operations - Health - Morpheus Logs`` are from ``/var/log/morpheus/morpheus-ui/current``. These logs show all ui activity and are useful for troubleshooting and auditing.
 
-.. NOTE:: Stack traces in `Operations - Health - Morpheus Logs` are filtered for |morpheus| services. Complete stack traces can be found in `/var/log/morpheus/morpheus-ui/current`.
+.. NOTE:: Stack traces in ``Operations - Health - Morpheus Logs`` are filtered for |morpheus| services. Complete stack traces can be found in ``/var/log/morpheus/morpheus-ui/current``.
