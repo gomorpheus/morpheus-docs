@@ -5,7 +5,7 @@ Overview
 ^^^^^^^^
 Morpheus allows for additional advanced customizations to the morpheus.rb file.  Below is a list of the supported items availible in the rb file.
 
-.. code-block::
+.. code-block:: bash
 
   ui['vm_images_cdn_url'] = 'https://morpheus-images.morpheusdata.com'
   ui['kerberos_config'] = nil
