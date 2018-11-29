@@ -7,7 +7,7 @@ Morpheus allows for additional advanced customizations to the morpheus.rb file. 
 
   .. code-block::
 
-   ui['vm_images_cdn_url'] = 'https://morpheus-images.morpheusdata.com'
+    ui['vm_images_cdn_url'] = 'https://morpheus-images.morpheusdata.com'
     ui['kerberos_config'] = nil
     ui['kerberos_login_config'] = nil
     ui['max_memory_mb'] = nil
