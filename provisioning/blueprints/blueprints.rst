@@ -1,5 +1,5 @@
 Blueprints
-=========
+==========
 
 Overview
 --------
@@ -8,7 +8,7 @@ With the release of Morpheus version 3, a new app blueprint builder was develope
 
 App Blueprints allow pre-configured full multi-tier application deployments for multiple environments. Blueprints can be provisioned from the ``Provisioning -> Apps`` section and can be fully configured for one click provisioning. Blueprints can be built within the Builder section or by code in the Raw section. Blueprints can also be exported as YAML or JSON and created with the |morpheus| API and CLI.
 
-Some unique capabilities of the YAML/JSON based Morpheus blueprint structure is it's ability to have multiple configurations per instance being provisioned within the app blueprint. This can be a scoped configuration that acts as overrides based on selected cloud or group the app is being provisioned in as a target. The environment can also be used as a scope. Maybe the "development" environment doesnt need as many horizontally scaled nodes (for example) as the "production" environment. Another great aspect of this configuration markup is a blueprint can be defined as a hybrid cloud blueprint. This makes the app blueprint structure very powerful and in some ways better than alternative infrastructure as code orchestrators. For Example, ARM is locked into Azure, while Cloud Formation is locked into AWS. Even Terraform does not allow a tf file to expand its bounds beyond a specific provider type.
+Some unique capabilities of the YAML/JSON based Morpheus blueprint structure is it's ability to have multiple configurations per instance being provisioned within the app blueprint. This can be a scoped configuration that acts as overrides based on selected cloud or group the app is being provisioned in as a target. The environment can also be used as a scope. Maybe the "development" environment doesn't need as many horizontally scaled nodes (for example) as the "production" environment. Another great aspect of this configuration markup is a blueprint can be defined as a hybrid cloud blueprint. This makes the app blueprint structure very powerful and in some ways better than alternative infrastructure as code orchestrators. For Example, ARM is locked into Azure, while Cloud Formation is locked into AWS. Even Terraform does not allow a tf file to expand its bounds beyond a specific provider type.
 
 Basic Blueprint Structure
 ^^^^^^^^^^^^^^^^^^^^^^^^

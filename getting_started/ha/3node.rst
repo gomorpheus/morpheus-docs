@@ -9,7 +9,7 @@ This guide assumes the following:
 - There is an externalized database running for |morpheus| to access.
 - The database service is a MySQL dialect (MySQL, MariaDB, Galera, etc...)
 - A database has been created for |morpheus| as well as a user and proper grants have been run for the user. |morpheus| will create the schema.
-- The baremetal nodes cannot access the public internet
+- The Baremetal nodes cannot access the public internet
 - The base OS is RHEL 7.x
 - Shortname versions of hostnames will be resolvable
 - All nodes have access to a shared volume for ``/var/opt/morpheus/morpheus-ui``. This can be done as a post startup step.
@@ -20,7 +20,7 @@ Steps
 
 #. First begin by downloading the requisite |morpheus| packages either to the nodes or to your workstation for transfer. These packages need to be made available on the nodes you wish to install |morpheus| on.
 
-   .. code-block:: text
+   .. code-block:: bash
 
     [root@app-server-1 ~]# wget https://example/path/morpheus-appliance-ver-1.el7.x86_64.rpm
     [root@app-server-1 ~]# wget https://example/path/morpheus-appliance-offline-ver-1.noarch.rpm

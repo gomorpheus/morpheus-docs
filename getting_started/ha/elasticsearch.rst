@@ -80,12 +80,18 @@ Installation
 
    The first variables to customize on any Elasticsearch server are ``node.name`` and ``cluster.name`` in ``elasticsearch.yml``. As their names suggest, node.name specifies the name of the server (node) and the cluster to which the latter is associated.
 
+   .. important:: Make sure to uncomment each of the following listed below in `/etc/elasticsearch/elasticsearch.yml`
+
+
+
    Node 1
 
    .. code-block:: yaml
 
     cluster.name: morpheusha1
     node.name: "morpheuses1"
+    network.host: enter the IP of the node ex: 10.30.22.130
+    http.port: 9200
     discovery.zen.ping.unicast.hosts: ["10.30.20.91","10.30.20.149","10.30.20.165"]
 
    Node 2
@@ -94,6 +100,8 @@ Installation
 
      cluster.name: morpheusha1
      node.name: "morpheuses2"
+     network.host: enter the IP of the node ex: 10.30.22.130
+     http.port: 9200
      discovery.zen.ping.unicast.hosts: ["10.30.20.91","10.30.20.149","10.30.20.165"]
 
    Node 3
@@ -102,6 +110,8 @@ Installation
 
      cluster.name: morpheusha1
      node.name: "morpheuses3"
+     network.host: enter the IP of the node ex: 10.30.22.130
+     http.port: 9200
      discovery.zen.ping.unicast.hosts: ["10.30.20.91","10.30.20.149","10.30.20.165"]
 
    For the above changes to take effect, you will have to restart Elasticsearch with the command:
@@ -109,6 +119,12 @@ Installation
    .. code-block:: bash
 
     sudo service elasticsearch restart
+
+   Next restart the network with the command:
+
+   .. code-block:: bash
+
+    sudo service network restart
 
 #. Testing
 

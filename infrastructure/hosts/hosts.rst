@@ -14,6 +14,8 @@ In this section you can:
 * Add Hypervisors
 * Convert Hosts, Virtual Machines and Bare Metal to Managed
 
+  .. IMPORTANT:: When local firewall management is enabled, Morpheus will automatically set an IP table rule to allow incoming connections on tcp port 22 from the Morpheus Appliance.
+
 Hosts
 -----
 
@@ -22,6 +24,7 @@ Hosts in |morpheus| are Hypervisors and Docker Hosts that your VM's and Containe
 .. //==== Adding Hosts
 .. //==== Managing Hosts
 .. //==== Removing Hosts
+
 
 Virtual Machines
 ----------------
