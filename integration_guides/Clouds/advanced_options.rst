@@ -15,6 +15,9 @@ NETWORK MODE
   Unmanaged or Managed
 SECURITY MODE
   Defines if Morpheus will control local firewall of provisioned servers and hosts.
+
+  .. IMPORTANT:: When local firewall management is enabled, Morpheus will automatically set an IP table rule to allow incoming connections on tcp port 22 from the Morpheus Appliance.
+
 STORAGE MODE
   Single Disk, LVM or Clustered
 GUIDANCE
