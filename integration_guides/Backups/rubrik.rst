@@ -1,24 +1,22 @@
-Commvault
----------
+Rubrik
+-------
 
-Adding Commvault Integration
+Adding Rubrik Integration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 #. Navigate to `Backups -> Services`
 #. Select :guilabel:`+ ADD`
-#. Select Commvault
+#. Select Rubrik
 #. Fill in the following:
 
    Name
       Name of the Integration in |morpheus|
    Enabled
-      Enable the Commvault integration
+      Enable the Integration
    Host
-      IP or Hostname of the Commvault server.
-   Port
-      Port number configured to access the Commvault server
+      IP or Hostname of the Rubrik api server.
    Username
-      Admin Username for Commvault
+      Admin Username for Rubrik
    Password
       Password for Username provided (encrypted in |morpheus|).
    Visibility

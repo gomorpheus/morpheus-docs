@@ -1,26 +1,32 @@
-Commvault
----------
+Avamar
+-------
 
-Adding Commvault Integration
+IMPORTANT: Avamar API must be installed on Avamar server (not installed by default)
+
+Adding Avamar Integration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 #. Navigate to `Backups -> Services`
 #. Select :guilabel:`+ ADD`
-#. Select Commvault
+#. Select Avamar
 #. Fill in the following:
 
    Name
       Name of the Integration in |morpheus|
    Enabled
-      Enable the Commvault integration
+      Enable the Integration
    Host
-      IP or Hostname of the Commvault server.
+      IP or Hostname of the Avamar api server.
    Port
       Port number configured to access the Commvault server
    Username
-      Admin Username for Commvault
+      Admin Username for Avamar
    Password
       Password for Username provided (encrypted in |morpheus|).
+   Tenant
+     Avamar Tenant/Domain to scope Integration to
+   Hypervisor
+     Avamar Hypervisor to scope Integration to
    Visibility
       Sets Multi-Tenant Visibility
         Private

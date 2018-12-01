@@ -1,24 +1,22 @@
-Commvault
----------
+Zerto
+-----
 
-Adding Commvault Integration
+Adding Zerto Integration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 #. Navigate to `Backups -> Services`
 #. Select :guilabel:`+ ADD`
-#. Select Commvault
+#. Select Zerto
 #. Fill in the following:
 
    Name
       Name of the Integration in |morpheus|
    Enabled
-      Enable the Commvault integration
-   Host
-      IP or Hostname of the Commvault server.
-   Port
-      Port number configured to access the Commvault server
+      Enable the Integration
+   API URL
+      API URL or Zerto Replication Manager
    Username
-      Admin Username for Commvault
+      Admin Username for Zerto
    Password
       Password for Username provided (encrypted in |morpheus|).
    Visibility
