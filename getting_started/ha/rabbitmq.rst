@@ -77,7 +77,7 @@ On Nodes 2 & 3:
         rabbitmq-server -detached
         "if detach was passed then run" ps aux | grep rabbit "to make sure rabbit is up and running"
 
-  Now ``rabbitmqctl stop`` should work
+      Now ``rabbitmqctl stop`` should work
 
 
 On Node 1:
