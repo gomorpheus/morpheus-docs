@@ -53,7 +53,7 @@ Clone to Template (VMware)
 
 .. TIP:: Scrolling down in the Actions dropdown may be necessary to see all options.
 
-.. include:: managing_instances.rst
+.. include:: edit_instance.rst
 
 Performing Instance Actions
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
