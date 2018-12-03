@@ -68,7 +68,7 @@ Edit Instances
 
 The environment, group and owner fields must be set to previously defined options in |morpheus|.
 
-Name, description , metadata and tags are free form fields that allow you to add additional information to your instance.
+Name, description, metadata and tags are free form fields that allow you to add additional information to your instance.
 
 
 Performing Instance Actions
