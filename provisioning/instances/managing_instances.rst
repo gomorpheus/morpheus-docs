@@ -10,7 +10,7 @@ Delete
 
 .. IMPORTANT:: Deleting an Instance will delete associated VM's or Containers and cannot be undone. To delete instances without deleting associated VM's, delete the VM from the Infrastructure section and uncheck "Remove Infrastructure" while checking "Remove Associated Instances" in the delete modal options.
 
-.. TIP:: You can change the owner of an instance easily by selecting the edit button and entering a new owner in the corresponding field.  
+.. TIP:: You can change the owner of an instance easily by selecting the edit button and entering a new owner in the corresponding field.
 
 Actions
 ^^^^^^^
@@ -52,6 +52,8 @@ Clone to Template (VMware)
 
 
 .. TIP:: Scrolling down in the Actions dropdown may be necessary to see all options.
+
+.. include:: managing_instances.rst
 
 Performing Instance Actions
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
