@@ -43,97 +43,77 @@ New Features
 Fixes
 -----
 
+
+- Administration: Fix for deleting users that had ties to archives
+- Administration: Fix for external email not working
+- Administration: Fix for saving white labeling for tenant
+- Administration: Fix for ampersand in Windows passwords
+- Analytics: Fix for utilization time filters not returning data
+- Ansible: Fix for Ansible workflow execution fails as no hosts are found
+- Ansible: Fix for Ansible integration sporadically breaking
+- Ansible Tower: Fix for vm with Ansible Tower having warning that says Ansible failed
+- Ansible Tower: Fix for Ansible Tower groups not set to mandatory
+- Ansible Tower: Fix for Ansible Tower integration details search
+- Ansible Tower: Fix for Ansible Tower automation serviced edit modal
+- Apps: Fix for app wizard not saving settings
+- Apps: Fix for App export creating extra configs when group is defined
+- Apps: Fix for app wizard ignoring some fields
+- Apps: Fix for policy names in App
+- Automation: Fix for Automation Tasks search not working beyond first page
+- Azure: Fix for missed deploy when scaling multiple nodes
+- Blueprints: Fix for incorrect price for custom plans on Blueprints
+- Blueprints: Fix for Git integration not usable in Blueprints
+- Blueprints: Fix for blueprint export including name and templateName
+- CLI: Fix for sub-tenant user account locking while using CLI
+- Clouds: Fix for add clouds to group buttons hidden if no public clouds enabled
+- Clouds: Fix for convert to managed cost usage records not created on instance
+- Clouds: Fix for deleting cloud with managed instance
+- Commvault: Fix for Commvault backup download 500 error
+- Commvault: Fix for Commvault issues running job with multiple backups
+- Commvault: Fix for Commvault: Edit job - hid retention/ schedule fields
+- Commvault: Fix for Commvault retention setting
+- Dell ECS: Fix for ECS Bucket Edit unknown error on Bucket Name Update
+- ESXI: Fix for ESXI Docker Host not using LVM on 2 disk Hosts
+- F5: LB:  Fix for edit not saving changed
+- F5: Fix for F5 LB Scale: SSL not working
+- Instances: Fix for instance clone not respecting cloud selection
+- Instances: Fix for instance details auto refresh is resetting history pagination
+- Instances: Fix for partial search not working
+- Instances: Fix for increased security on morpheus directory file permissions
+- Integrations: Fix for issues with integrations scoped to Groups & Clouds
+- Integrations: Fix for Account Integration: Edit dialog shouldn't hide host, username, & password fields on authentication failure
+- Logs: Fix for log availability timeframe setting not applying
+- Logs: Fix for logs not applying date filters properly
+- Logs: Fix for logs not applying level filter properly with respect of max 450
+- Networking: Fix for ICMP security rule optional port
+- Nutanix: Fix for instance detail brief slightly inaccurate price flash
 - Nutanix: Fix for Windows Sysprep ``unattend.xml`` injection DNS settings
 - Nutanix: Fix for Windows Sysprep ``unattend.xml`` `force` flag
-- F5 LB:  Fix for edit not saving changed
-- Changed /morpheus directory file permission for increased security
-- Fix for unable to delete users that had ties to archives
-- Fix for instance detail brief slightly inaccurate price flash
-- Fix for issues with custom plans with min ram settings
-- Fix for app wizard not saving settings
-- Unable to save white labeling for tenant
-- Restricted tenants from making global plans
-- Fix for incorrect price for custom plans on Blueprints
-- Fix for OracleVM plans issue with incorrect cores
-- Fix for instance clone not respecting cloud selection
-- Fix for wizard ignoring some fields
-- Fix for Commvault backup download 500 error
-- Fix for Veam backup restores not working for existing jobs
-- Fix for Commvault: Edit job - hid retention/ schedule fields
-- Fix for Ansible workflow execution fails as no hosts are found
-- Removed Commvault retention setting
-- Fix for VCD unable to provision custom library item
-- Fix for issues with integrations scoped to Groups & Clouds
-- Fix for UCS cloud credentials not working on add only edit
-- Fix for VMware reconfigure duplicate storage
-- Fix for VMware Docker Host broken if cloud scoped to resource Pool
-- Fix for SCVMM resource pool input styling
-- Fix for Morpheus IP pool not working on Nutanix AOS 5.8.2
-- Fix for price comparison missing some expected cloud prices
-- Fix for scaling down not cleaning up environment variables
-- Fix for SCVMM Network Group Validation error
-- Fix for Commvault issues running job with multiple backups
-- Fix for VCD update network DNS Servers on cloud sync
-- Fix for Ansible integration sporadically breaking
-- Fix for external email not working
-- Fix for Automation Tasks search not working beyond first page
-- Fix for Git integration not usable in Blueprints
-- Fix for blueprint export including name and templateName
-- Fix for App export creating extra configs when group is defined
-- Fix for add clouds to group buttons hidden if no public clouds enabled
-- Fix for Convert to managed cost usage records not created on instance
-- Fix for provisioning into VCD from local Morpheus Storage and S3 fails
-- Fix for ECS Bucket Edit unknown error on Bucket Name Update
-- Fix for OTC provisioning not surfacing failures
-- Fix for VCD rename unmanaged server type didn't sync unmanaged hostnames
-- Fix for F5 LB Scale: SSL not working
-- Fix for vm with Ansible Tower having warning that says Ansible failed
-- Fix for inability to delete tenants with IP pools in use
-- Fix for ESXI Docker Host not using LVM on 2 disk Hosts
-- Fix for Remedy user session error
-- Fix for log availability timeframe setting not Applying
-- Fix for Remedy: Status of Computer System should be set to Deployed not Down in Remedy after provision
-- Fix for Account Integration: Edit dialog shouldn't hide host, username, & password fields on authentication failure
-- Fix for Remedy: disabling integration not working
-- Fix for User Settings default cloud selection showing all clouds
-- Fix for Cherwell disabling integration not working
-- Fix for Remedy not having disk asset entry for docker Containers
-- Fix for Remedy: status change sync clean up
-- Fix for Remedy issue with add disk on reconfigure
-- Fix for Remedy issue with hardware assets on Add Node
-- Fix for Remedy illegal url log .. error::
-- Fix for remedy disk asset getting deleted
-- Fix for subtenants can see tenant reports with right url
-- Fix for running a workflow on server
-- Fix for Omnibus writing wrong info in elasticsearch.yml for 3-node HA
-- Fix for Rubrik wizard hides inputs when No Backup selected
-- Fix for Rubrik form log errors
-- Fix for Rubrik error running backup job
-- Fix for Rubrik null backup status message
-- Fix for Rubrik losing backup status
-- Fix for Analytics: Utilization time filters not returning data
-- Added storage bucket/shares input validation
-- Fix for Zerto: unable to delete integration
-- Fix for logs not applying date filters properly
-- Fix for logs not applying level filter properly with respect of max 450
-- Fix for Remedy: HIbernateOptimisticLockingFailureException in log
-- Fix for Remedy: potential race condition with entry does not exist in database errors in log
-- Fix for Cherwell / ServiceNow CMDB: not adding change requests for each added node
-- Fix for instance details auto refresh is resetting history pagination
-- Fix for partial search not working
-- Fix for missed deploy when scaling multiple nodes
-- Fix for Rubrik SLA
-- Fix for Ansible Tower groups not set to mandatory
-- Fix for Windows agent install issue
-- Fix for Remedy disk & IP address status
-- Fix for policy names in App
-- Fix for ampersand in Windows passwords
-- Fix for SCVMM VHD/VHDX in node type dropdown
-- Fix for Cherwell change requests when deleting VM/host
-- Fix for sub-tenant user account locking while using CLI
-- Fix for deleting cloud with managed instance
-- Fix for ICMP security rule optional port
-- Fix for Ansible Tower integration details search
-- Fix for Ansible Tower automation serviced edit modal
-- Fix for Bearer token not expiring when user is deleted
-- Fix for Load Balancer not retaining settings in instance wizard
+- Nutanix: Fix for Morpheus IP pool not working on Nutanix AOS 5.8.2
+- Omnibus: Fix for Omnibus writing wrong info in elasticsearch.yml for 3-node HA
+- OTC: Fix for OTC provisioning not surfacing failures
+- Pricing: Fix for tenants making global plans
+- Pricing: Fix for OracleVM plans issue with incorrect cores
+- Pricing: Fix for price comparison missing some expected cloud prices
+- Provisioning: Fix for scaling down not cleaning up environment variables
+- Provisioning: Fix for Load Balancer not retaining settings in instance wizard
+- Reporting: Fix for subtenants can see tenant reports with right url
+- SCVMM: Fix for SCVMM resource pool input styling
+- SCVMM: Fix for SCVMM VHD/VHDX in node type dropdown
+- SCVMM: Fix for SCVMM Network Group Validation error
+- Storage: Fix for storage bucket/shares input validation
+- Tenants: Fix for inability to delete tenants with IP pools in use
+- UCS: Fix for UCS cloud credentials not working on add only edit
+- User Settings: Fix for User Settings default cloud selection showing all clouds
+- Users: Fix for Bearer token not expiring when user is deleted
+- VCD: Fix for VCD unable to provision custom library item
+- VCD: Fix for VCD update network DNS Servers on cloud sync
+- VCD: Fix for provisioning into VCD from local Morpheus Storage and S3 fails
+- VCD: Fix for VCD rename unmanaged server type didn't sync unmanaged hostnames
+- Veeam: Fix for Veam backup restores not working for existing jobs
+- VMware: Fix for issues with custom plans with min ram settings
+- VMware: Fix for VMware reconfigure duplicate storage
+- VMware: Fix for VMware Docker Host broken if cloud scoped to resource Pool
+- VMware: Fix for Windows agent install issue
+- Workflows: Fix for running a workflow on server
+- Zerto: Fix for Zerto: unable to delete integration
