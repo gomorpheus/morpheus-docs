@@ -5,6 +5,7 @@ Installation and configuration of Percona XtraDB Cluster on CentOS/RHEL 7
 
 .. IMPORTANT:: This is a sample configuration only. Customer configurations and requirements will vary.
 
+
 Requirements
 ^^^^^^^^^^^^
 
@@ -27,79 +28,20 @@ You will need to edit the selinux configuration file if you want the permission 
 Add Percona Repo
 ^^^^^^^^^^^^^^^^
 
-#. Add the percona repo to your Linux Distro.
+Please use the following link for the most up to date Percona repository installation instructions
 
-  .. code-block:: bash
+https://www.percona.com/doc/percona-repo-config/yum-repo.html
 
-    sudo yum install http://www.percona.com/downloads/percona-release/redhat/0.1-4/percona-release-0.1-4.noarch.rpm
-
-  .. NOTE:: For the most up to date repo please visit this link https://www.percona.com/doc/percona-repo-config/yum-repo.html
-
-#. Check the repo by running the below command.
-
-   .. code-block:: bash
-
-    sudo yum list | grep percona
-
-#. The below commands will clean the repos and update the server.
-
-   .. code-block:: bash
-
-    sudo yum clean all
-    sudo yum update -y
 
 Installing Percona XtraDB Cluster
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-#. The below command will install the Percona XtraDB Cluster software and it’s dependences.
+Please use the following link for the most up to date Percona cluster installation instructions
 
-   .. code-block:: bash
+https://www.percona.com/doc/percona-xtradb-cluster/LATEST/install/yum.html#installing-from-percona-repository
 
-    sudo yum install Percona-XtraDB-Cluster-57
+  .. IMPORTANT:: On Step 6, do not exit MySQL. After the ALTER USER command, please follow the steps listed below.
 
-   .. NOTE:: During the installation you will receive the below message. Accept the Percona PGP key to install the software.
-
-   .. code-block:: bash
-
-    retrieving key from file:///etc/pki/rpm-gpg/RPM-GPG-KEY-Percona
-    Importing GPG key 0xCD2EFD2A:
-    Userid     : "Percona MySQL Development Team <mysql-dev@percona.com>"
-    Fingerprint: 430b df5c 56e7 c94e 848e e60c 1c4c bdcd cd2e fd2a
-    Package    : percona-release-0.1-4.noarch (installed)
-    From       : /etc/pki/rpm-gpg/RPM-GPG-KEY-Percona
-    Is this ok [y/N]: y
-
-
-#. Next we need enable the mysql service so that the service started at boot.
-
-   .. code-block:: bash
-
-    sudo systemctl enable mysql
-
-#. Next we need to start mysql
-
-   .. code-block:: bash
-
-    sudo systemctl start mysql
-
-#. Next we will log into the mysql server and set a new password. To get the temporary root mysql password you will need to run the below command.The command will print the password to the screen. Copy the password.
-
-   .. code-block:: bash
-
-      sudo grep 'temporary password' /var/log/mysqld.log
-
-#. Login to mysql
-
-   .. code-block:: bash
-
-    mysql -u root -p
-    password: `enter password copied above`
-
-#. Change the root user password to the mysql db
-
-   .. code-block:: bash
-
-    ALTER USER 'root'@'localhost' IDENTIFIED BY '$root_db_user_pw';
 
 #. Create the sstuser user and grant the permissions.
 

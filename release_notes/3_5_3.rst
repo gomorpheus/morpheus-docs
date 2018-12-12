@@ -4,6 +4,7 @@ v3.5.3
 Release date:
 
 New Features
+-------------
 
 Ansible: Morpheus Variables support added. containerScriptConfig map now sent to an extraVars.yml for Ansible use
 API: Added externalId for vm's
@@ -11,40 +12,54 @@ API: Added user setting endpoints
 API: Provision Instances/Apps using Workflow names
 API: Track usage for Discovered VM's
 API: Added Instance history
-App: Added review tap to wizard
-App: App execution aborting
-Blueprints: Group Permissions added
-Cherwell CMDB Integration added
+Apps: Added review tab to app wizard
+Apps: Added App execution aborting
+Blueprints: Added permissions section with group and tenant visibility
+Cherwell CMDB: Integration added
 Clouds: Status now shown as disabled and greyed out when when not enabled
 OTC: Added support for availability zones
-Commvault:
-Appliance: ElasticSearch:  Added support for ElasticSearch TLS connections
+Commvault: Refactored Commvault integration
+Appliance: ElasticSearch: Added support for ElasticSearch TLS connections
 F5: SSL profile creation added
-Operations: Health: Added info message for single node elasticsearch health
-Operations: Activity:  New History seciton added with active processes and process history
-Storage: Dell EMC Isilon: Added storage service
+Operations: Health: Added info message for single node Elasticsearch health
+Operations: Activity: New History section added with active processes and process history
 Library: "Supports Convert To Managed" flag added to Layouts
 Nutanix: CVM's now shown as Hosts
-Nutanix: API stat optimizations
-Nutanix: Improved cloud sync displaying hypervisors, disks, networks and memory usage
+Nutanix: V2 & V3 API stats for discovered VMs
 Provisioning: MySQL instances now have "Deploy" tab available
 Appliance: RabbitMQ: STOMP SSL support added
-Rubrik: Added integration
+Backups: Rubrik integration added
 ServiceNow: CMDB update CI on status change
-Storage: Sync NFS volume shares to Morpheus
-Storage: Create new NFS shares
-Storage: Create exports to allow access from ip addresses
+Storage: Isilon: Sync NFS volume shares to Morpheus
+Storage: Isilon: Create new NFS shares
+Storage: Isilon: Create exports to allow access from ip addresses
 Usage: Added Type Filter with Container, Host and Discovered options
 Virtual Image: Prevent form autofill for username/password
 Infrastructure: Custom Instance Types can now be used on Convert To Managed
 Infrastructure: Service Plan can now be specified on Convert to Managed
 Infrastructure: Renamed inventoried VMs from "Unmanaged" to "Discovered"
 VMware: Hypervisor Console: WMKS console added, replacing VNC. GDB Server port requirement on ESXi hosts is not required for WMKS.
+CLouds: Openstack: Choose floating IP
+API: Blueprint Group & Tenant Access
+Storage: Ilsilon: Manage existing NFS shares
+Storage: Ilsilon: Create storage providers from an Isilon volume
+Pricing: Select a pricing plan when converting to managed
+API: Customizing Blueprint Access
+Storage: Rubrik: Sync vm snapshots created via an SLA Domain.
+API: Update host ssh password
+Clouds: OpenStack: LBaaSv2 API endpoints for VIO
+Clouds: OpenStack: Added Network type choices for OpenStack SDN
+Appliance: Increase timeout for linux tasks
+Blueprints: Group & Tenant Access
+Instance: Instance Types: Add Windows and custom Instance Types when converting to managed
 
+Had questions about these two below. Not sure if the first one is worded correctly. Would it be "Remove canceled backup and downloaded actions"? The second one seems like a bug fix.
 
+Storage: Rubrik: Remove cancel backup and download actions.
+Clouds: Openstack: creating multiple instance during provision can result in duplicate floating IPs
 
 Fixes
-----
+-----
 
 
 
