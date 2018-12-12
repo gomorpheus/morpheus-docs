@@ -1,124 +1,119 @@
 v3.5.3
 =======
 
-Release date: tbd
+Release date:
 
 New Features
-------------
 
-- Ansible: Pass variables from Morpheus to Playbooks
-- API: Added externalId for vm's
-- API: Added user setting endpoints
-- API: Provision Instances/Apps using Workflow names
-- API: Track usage for Discovered VM's
-- API: Added instance history
-- App: Added review tap to wizard
-- App: App execution aborting
-- Blueprints: Group Permissions added
-- Cherwell: Added required fields mapping
-- Clouds: Set cloud status to Disabled when not Enabled
-- Clouds: Added support for availability zones in OTC
-- Commvault: Retrieve Backup Size
-- Appliance: ElasticSearch:  Added support for ElasticSearch TLS connections
-- F5: Create new SSL profiles
-- Health: Enhanced deployment history logging
-- Health: message for single node elastic health
-- History: location and permissions
-- Isilon: Added storage service
-- Library: "Supports Convert To Managed" flag added to Layouts
-- Nutanix: CVM's now shown as Hosts
-- Nutanix: API stat optimizations
-- Nutanix: Improved cloud sync displaying hypervisors, disks, networks and memory usage
-- Provisioning: MySQL instances now have "Deploy" tab available
-- Appliance: RabbitMQ: STOMP SSL support added
-- Rubrik: Added integration
-- ServiceNow: CMDB update CI on status change
-- Storage: Sync NFS volume shares to Morpheus
-- Storage: Create new NFS shares
-- Storage: Create exports to allow access from ip addresses
-- Usage: Added Type Filter with Container, Host and Discovered options
-- Virtual Image: Prevent form autofill for username/password
-- Infrastructure: Custom Instance Types can now be used on Convert To Managed
-- Infrastructure: Service Plan can now be specified on Convert to Managed
-- Infrastructure: Renamed inventoried VMs from "Unmanaged" to "Discovered"
-- VMware: Hypervisor Console: WMKS console added, replacing VNC. GDB Server port requirement on ESXi hosts is not required for WMKS.
+Ansible: Morpheus Variables support added. containerScriptConfig map now sent to an extraVars.yml for Ansible use
+API: Added externalId for vm's
+API: Added user setting endpoints
+API: Provision Instances/Apps using Workflow names
+API: Track usage for Discovered VM's
+API: Added Instance history
+App: Added review tap to wizard
+App: App execution aborting
+Blueprints: Group Permissions added
+Cherwell CMDB Integration added
+Clouds: Status now shown as disabled and greyed out when when not enabled
+OTC: Added support for availability zones
+Commvault:
+Appliance: ElasticSearch:  Added support for ElasticSearch TLS connections
+F5: SSL profile creation added
+Operations: Health: Added info message for single node elasticsearch health
+Operations: Activity:  New History seciton added with active processes and process history
+Storage: Dell EMC Isilon: Added storage service
+Library: "Supports Convert To Managed" flag added to Layouts
+Nutanix: CVM's now shown as Hosts
+Nutanix: API stat optimizations
+Nutanix: Improved cloud sync displaying hypervisors, disks, networks and memory usage
+Provisioning: MySQL instances now have "Deploy" tab available
+Appliance: RabbitMQ: STOMP SSL support added
+Rubrik: Added integration
+ServiceNow: CMDB update CI on status change
+Storage: Sync NFS volume shares to Morpheus
+Storage: Create new NFS shares
+Storage: Create exports to allow access from ip addresses
+Usage: Added Type Filter with Container, Host and Discovered options
+Virtual Image: Prevent form autofill for username/password
+Infrastructure: Custom Instance Types can now be used on Convert To Managed
+Infrastructure: Service Plan can now be specified on Convert to Managed
+Infrastructure: Renamed inventoried VMs from "Unmanaged" to "Discovered"
+VMware: Hypervisor Console: WMKS console added, replacing VNC. GDB Server port requirement on ESXi hosts is not required for WMKS.
 
 
 
 Fixes
------
+----
 
 
-- Administration: Fix for deleting users that had ties to archives
-- Administration: Fix for external email not working
-- Administration: Fix for saving white labeling for tenant
-- Administration: Fix for ampersand in Windows passwords
-- Analytics: Fix for utilization time filters not returning data
-- Ansible: Fix for Ansible workflow execution fails as no hosts are found
-- Ansible: Fix for Ansible integration sporadically breaking
-- Ansible Tower: Fix for vm with Ansible Tower having warning that says Ansible failed
-- Ansible Tower: Fix for Ansible Tower groups not set to mandatory
-- Ansible Tower: Fix for Ansible Tower integration details search
-- Ansible Tower: Fix for Ansible Tower automation serviced edit modal
-- Apps: Fix for app wizard not saving settings
-- Apps: Fix for App export creating extra configs when group is defined
-- Apps: Fix for app wizard ignoring some fields
-- Apps: Fix for policy names in App
-- Automation: Fix for Automation Tasks search not working beyond first page
-- Azure: Fix for missed deploy when scaling multiple nodes
-- Blueprints: Fix for incorrect price for custom plans on Blueprints
-- Blueprints: Fix for Git integration not usable in Blueprints
-- Blueprints: Fix for blueprint export including name and templateName
-- CLI: Fix for sub-tenant user account locking while using CLI
-- Clouds: Fix for add clouds to group buttons hidden if no public clouds enabled
-- Clouds: Fix for convert to managed cost usage records not created on instance
-- Clouds: Fix for deleting cloud with managed instance
-- Commvault: Fix for Commvault backup download 500 error
-- Commvault: Fix for Commvault issues running job with multiple backups
-- Commvault: Fix for Commvault: Edit job - hid retention/ schedule fields
-- Commvault: Fix for Commvault retention setting
-- Dell ECS: Fix for ECS Bucket Edit unknown error on Bucket Name Update
-- ESXI: Fix for ESXI Docker Host not using LVM on 2 disk Hosts
-- F5: LB:  Fix for edit not saving changed
-- F5: Fix for F5 LB Scale: SSL not working
-- Instances: Fix for instance clone not respecting cloud selection
-- Instances: Fix for instance details auto refresh is resetting history pagination
-- Instances: Fix for partial search not working
-- Instances: Fix for increased security on morpheus directory file permissions
-- Integrations: Fix for issues with integrations scoped to Groups & Clouds
-- Integrations: Fix for Account Integration: Edit dialog shouldn't hide host, username, & password fields on authentication failure
-- Logs: Fix for log availability timeframe setting not applying
-- Logs: Fix for logs not applying date filters properly
-- Logs: Fix for logs not applying level filter properly with respect of max 450
-- Networking: Fix for ICMP security rule optional port
-- Nutanix: Fix for instance detail brief slightly inaccurate price flash
-- Nutanix: Fix for Windows Sysprep ``unattend.xml`` injection DNS settings
-- Nutanix: Fix for Windows Sysprep ``unattend.xml`` `force` flag
-- Nutanix: Fix for Morpheus IP pool not working on Nutanix AOS 5.8.2
-- Omnibus: Fix for Omnibus writing wrong info in elasticsearch.yml for 3-node HA
-- OTC: Fix for OTC provisioning not surfacing failures
-- Pricing: Fix for tenants making global plans
-- Pricing: Fix for OracleVM plans issue with incorrect cores
-- Pricing: Fix for price comparison missing some expected cloud prices
-- Provisioning: Fix for scaling down not cleaning up environment variables
-- Provisioning: Fix for Load Balancer not retaining settings in instance wizard
-- Reporting: Fix for subtenants can see tenant reports with right url
-- SCVMM: Fix for SCVMM resource pool input styling
-- SCVMM: Fix for SCVMM VHD/VHDX in node type dropdown
-- SCVMM: Fix for SCVMM Network Group Validation error
-- Storage: Fix for storage bucket/shares input validation
-- Tenants: Fix for inability to delete tenants with IP pools in use
-- UCS: Fix for UCS cloud credentials not working on add only edit
-- User Settings: Fix for User Settings default cloud selection showing all clouds
-- Users: Fix for Bearer token not expiring when user is deleted
-- VCD: Fix for VCD unable to provision custom library item
-- VCD: Fix for VCD update network DNS Servers on cloud sync
-- VCD: Fix for provisioning into VCD from local Morpheus Storage and S3 fails
-- VCD: Fix for VCD rename unmanaged server type didn't sync unmanaged hostnames
-- Veeam: Fix for Veam backup restores not working for existing jobs
-- VMware: Fix for issues with custom plans with min ram settings
-- VMware: Fix for VMware reconfigure duplicate storage
-- VMware: Fix for VMware Docker Host broken if cloud scoped to resource Pool
-- VMware: Fix for Windows agent install issue
-- Workflows: Fix for running a workflow on server
-- Zerto: Fix for Zerto: unable to delete integration
+
+Administration: Fix for deleting users that had ties to archives
+Administration: Fix for external email not working
+Administration: Fix for saving white labeling for tenant
+Administration: Fix for ampersand in Windows passwords
+Analytics: Fix for utilization time filters not returning data
+Ansible: Fix for Ansible workflow execution fails as no hosts are found
+Ansible: Fix for Ansible integration sporadically breaking
+Ansible Tower: Fix for vm with Ansible Tower having warning that says Ansible failed
+Ansible Tower: Fix for Ansible Tower groups not set to mandatory
+Ansible Tower: Fix for Ansible Tower integration details search
+Ansible Tower: Fix for Ansible Tower automation serviced edit modal
+Apps: Fix for app wizard not saving settings
+Apps: Fix for App export creating extra configs when group is defined
+Apps: Fix for app wizard ignoring some fields
+Apps: Fix for policy names in App
+Automation: Fix for Automation Tasks search not working beyond first page
+Azure: Fix for missed deploy when scaling multiple nodes
+Blueprints: Fix for incorrect price for custom plans on Blueprints
+Blueprints: Fix for Git integration not usable in Blueprints
+Blueprints: Fix for blueprint export including name and templateName
+CLI: Fix for sub-tenant user account locking while using CLI
+Clouds: Fix for add clouds to group buttons hidden if no public clouds enabled
+Clouds: Fix for convert to managed cost usage records not created on instance
+Clouds: Fix for deleting cloud with managed instance
+Dell ECS: Fix for ECS Bucket Edit unknown error on Bucket Name Update
+ESXI: Fix for ESXI Docker Host not using LVM on 2 disk Hosts
+F5: LB:  Fix for edit not saving changed
+F5: Fix for F5 LB Scale: SSL not working
+Instances: Fix for instance clone not respecting cloud selection
+Instances: Fix for instance details auto refresh is resetting history pagination
+Instances: Fix for partial search not working
+Instances: Fix for increased security on morpheus directory file permissions
+Integrations: Fix for issues with integrations scoped to Groups & Clouds
+Integrations: Fix for Account Integration: Edit dialog shouldn't hide host, username, & password fields on authentication failure
+Logs: Fix for log availability timeframe setting not applying
+Logs: Fix for logs not applying date filters properly
+Logs: Fix for logs not applying level filter properly with respect of max 450
+Networking: Fix for ICMP security rule optional port
+Nutanix: Fix for instance detail brief slightly inaccurate price flash
+Nutanix: Fix for Windows Sysprep unattend.xml injection DNS settings
+Nutanix: Fix for Windows Sysprep unattend.xml force flag
+Nutanix: Fix for Morpheus IP pool not working on Nutanix AOS 5.8.2
+Omnibus: Fix for Omnibus writing wrong info in elasticsearch.yml for 3-node HA
+OTC: Fix for OTC provisioning not surfacing failures
+Pricing: Fix for tenants making global plans
+Pricing: Fix for OracleVM plans issue with incorrect cores
+Pricing: Fix for price comparison missing some expected cloud prices
+Provisioning: Fix for scaling down not cleaning up environment variables
+Provisioning: Fix for Load Balancer not retaining settings in instance wizard
+Reporting: Fix for subtenants can see tenant reports with right url
+SCVMM: Fix for SCVMM resource pool input styling
+SCVMM: Fix for SCVMM VHD/VHDX in node type dropdown
+SCVMM: Fix for SCVMM Network Group Validation error
+Storage: Fix for storage bucket/shares input validation
+Tenants: Fix for inability to delete tenants with IP pools in use
+UCS: Fix for UCS cloud credentials not working on add only edit
+User Settings: Fix for User Settings default cloud selection showing all clouds
+Users: Fix for Bearer token not expiring when user is deleted
+VCD: Fix for VCD unable to provision custom library item
+VCD: Fix for VCD update network DNS Servers on cloud sync
+VCD: Fix for provisioning into VCD from local Morpheus Storage and S3 fails
+VCD: Fix for VCD rename unmanaged server type didn't sync unmanaged hostnames
+Veeam: Fix for Veam backup restores not working for existing jobs
+VMware: Fix for issues with custom plans with min ram settings
+VMware: Fix for VMware reconfigure duplicate storage
+VMware: Fix for VMware Docker Host broken if cloud scoped to resource Pool
+VMware: Fix for Windows agent install issue
+Workflows: Fix for running a workflow on server
+Zerto: Fix for Zerto: unable to delete integration
