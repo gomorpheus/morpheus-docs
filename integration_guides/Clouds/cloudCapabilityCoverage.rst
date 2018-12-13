@@ -1,5 +1,5 @@
 Morpheus Cloud Capability Coverage
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+-----------------------------------
 
 
 .. csv-table:: Morpheus Cloud Capability Coverage
