@@ -6,7 +6,7 @@ Integration Guides
 
 .. include:: Automation/automation.rst
 .. include:: Backups/backups.rst
-.. include:: Clouds/clouds.rst
+.. include:: Clouds/clouds-test.rst
 .. include:: Containers/containers.rst
 .. include:: Deployments/deployment.rst
 .. include:: DNS/DNS.rst

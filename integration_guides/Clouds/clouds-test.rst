@@ -28,3 +28,4 @@ Clouds
   Clouds/xen/xen.rst
   Clouds/cloudbase-init.rst
   Clouds/centos7template.rst
+  Clouds/cloudCoverage/cloudCoverage.rst
