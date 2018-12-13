@@ -6,12 +6,11 @@ Release date:
 New Features
 -------------
 
-
 - API: Added externalId for vm's
-- API: Added Instance history
 - API: Added user setting endpoints
 - API: Blueprint Group & Tenant Access
 - API: Customizing Blueprint Access
+- API: Instance history added
 - API: Provision Instances/Apps using Workflow names
 - API: Track usage for Discovered VM's
 - API: Update host ssh password
@@ -22,55 +21,48 @@ New Features
 - Apps: Added App execution aborting
 - Apps: Added review tab to app wizard
 - Automation: Ansible: Morpheus Variables support added. containerScriptConfig map now sent to an extraVars.yml for Ansible use
-- Backups: Rubrik integration added
-- Blueprints: Added permissions section with group and tenant visibility
-- Blueprints: Group & Tenant Access
+- Backups: Commvault: Refactored Commvault integration
+- Backups: Rubrik integration added with SLA Domain sync, Backup creation and restore.
+- Backups: Rubrik Integration added.
+- Backups: Zerto improvements
+- Blueprints: Permissions section with Group Access and Tenant visibility added
+- Clouds: Nutanix: CVM's now shown as Hosts
+- Clouds: Nutanix: V2 & V3 API stats for discovered VMs, Image Sync
+- Clouds: Nutanix: Windows: Domain Join added to unattend.xml
+- Clouds: Nutanix: Windows: License application added to unattend.xml
 - Clouds: OpenStack: Added Network type choices for OpenStack SDN
-- Clouds: Openstack: Choose floating IP
-- Clouds: OpenStack: LBaaSv2 API endpoints for VIO
-- Clouds: SCVMM: Completely refactored
-- Clouds: Status now shown as disabled and greyed out when when not enabled
+- Clouds: OpenStack: LBaaSv2 API endpoints for VIO added
+- Clouds: Openstack: Specify Floating IP option added
+- Clouds: OTC: Added support for availability zones
+- Clouds: SCVMM: Static IP's now injected in unattend.xml
+- Clouds: SCVMM: Windows: Domain Join added to unattend.xml
+- Clouds: SCVMM: Windows: License application added to unattend.xml
+- Clouds: Status in Clouds list view now shown as disabled and greyed out when when a Cloud is not enabled
 - Clouds: VMware: Hypervisor Console: WMKS console added, replacing VNC. GDB Server port requirement on ESXi hosts is not required for WMKS.
 - F5: SSL profile creation added
 - Infrastructure: Custom Instance Types can now be used on Convert To Managed
-- Infrastructure: Renamed inventoried VMs from "Unmanaged" to "Discovered"
+- Infrastructure: Renamed "Unmanaged" to "Discovered"
 - Infrastructure: Service Plan can now be specified on Convert to Managed
-- Instance: Instance Types: Add Windows and custom Instance Types when converting to managed
-- Instance: Windows: Provisioning is 1 minute + faster
-- ITSM: Cherwell CMDB: Integration added
-- ITSM: Remedy: Added integration
+- ITSM: New Cherwell Integration
+- ITSM: New Remedy Integration
+- ITSM: ServiceNow: CMDB update CI on status change
 - Library: "Supports Convert To Managed" flag added to Layouts
-- Nutanix: CVM's now shown as Hosts
-- Nutanix: V2 & V3 API stats for discovered VMs, Image Sync
-- Nutanix: Windows: Domain Join added to unattend.xml
-- Nutanix: Windows: License application added to unattend.xml
 - Operations: Activity: New History section added with active processes and process history
 - Operations: Health: Added info message for single node Elasticsearch health
-- OTC: Added support for availability zones
-- Pricing: Select a pricing plan when converting to managed
+- Operations: Usage: Added Type Filter with Container, Host and Discovered options
+- Provisioning: Auto-truncation of Windows hostnames if specified hostname is over 15 character limit. If truncated name matches existing hostname sequence added.
+- Provisioning: Morpheus Agent msi and yum packages now transferred over 443. 80 still required for deb agents
 - Provisioning: MySQL instances now have "Deploy" tab available
-- ServiceNow: CMDB update CI on status change
-- Storage: Commvault: Refactored Commvault integration
-- Storage: Dell EMC Isilon: Create storage providers from an Isilon volume
-- Storage: Dell EMC Isilon: Manage existing NFS shares
+- Provisioning: Windows: Agent install optimizations, speed improvements
 - Storage: Dell EMC Isilon: Create exports to allow access from ip addresses
 - Storage: Dell EMC Isilon: Create new NFS shares
+- Storage: Dell EMC Isilon: Create storage providers from an Isilon volume
+- Storage: Dell EMC Isilon: Manage existing NFS shares
 - Storage: Dell EMC Isilon: Sync NFS volume shares to Morpheus
-- Backups: Rubrik Integration added.
-- Backups: Zerto improvements
-- Usage: Added Type Filter with Container, Host and Discovered options
-- Virtual Image: Prevent form autofill for username/password
-
-
-Had questions about these two below. Not sure if the first one is worded correctly. Would it be "Remove canceled backup and downloaded actions"? The second one seems like a bug fix.
-
-Storage: Rubrik: Remove cancel backup and download actions.
-Clouds: Openstack: creating multiple instance during provision can result in duplicate floating IPs
+- Virtual Images: Prevent form autofill for username/password
 
 Fixes
 -----
-
-
 
 - Administration: Fix for deleting users that had ties to archives
 - Administration: Fix for external email not working
@@ -134,7 +126,7 @@ Fixes
 - VCD: Fix for VCD update network DNS Servers on cloud sync
 - VCD: Fix for provisioning into VCD from local Morpheus Storage and S3 fails
 - VCD: Fix for VCD rename unmanaged server type didn't sync unmanaged hostnames
-- Veeam: Fix for Veam backup restores not working for existing jobs
+- Veeam: Fix for Veeam backup restores not working for existing jobs
 - VMware: Fix for issues with custom plans with min ram settings
 - VMware: Fix for VMware reconfigure duplicate storage
 - VMware: Fix for VMware Docker Host broken if cloud scoped to resource Pool
