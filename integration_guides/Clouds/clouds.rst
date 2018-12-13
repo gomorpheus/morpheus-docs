@@ -27,5 +27,5 @@ Clouds
   Clouds/vmwarefusion/vmwarefusion.rst
   Clouds/xen/xen.rst
   Clouds/cloudbase-init.rst
-  Clouds/cloudCapabilityCoverage.rst
   Clouds/centos7template.rst
+  .. Clouds/cloudCapabilityCoverage.rst
