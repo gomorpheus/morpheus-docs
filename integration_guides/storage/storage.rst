@@ -2,7 +2,7 @@ Storage
 =======
 
 .. toctree::
-  storage/3par-test.rst
+  storage/3par.rst
   storage/AzureStorage.rst
-  storage/dell_ecs-test.rst
-  storage/isilon-test.rst
+  storage/dell_ecs.rst
+  storage/isilon.rst
