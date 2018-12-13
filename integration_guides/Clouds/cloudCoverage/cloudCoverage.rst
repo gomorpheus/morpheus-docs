@@ -24,5 +24,5 @@ Morpheus Cloud Capability Coverage
    "SCVMM", "Yes", "Yes", "Yes", "NO", "Yes"
    "Upcloud", "Yes", "Yes", "Yes", "N/A", "Yes"
    "VCD", "Yes", "Yes", "Yes", "No", "Yes"
-   "Vmware", "Yes", "Yes", "Yes", "N/A", "Yes"
+   "Vmware", "Yes", "Yes", "Yes", "Yes", "Yes"
    "Xen", "Yes", "Yes", "Yes", "No", "Yes"
