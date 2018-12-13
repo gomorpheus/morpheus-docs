@@ -29,7 +29,7 @@ SERVICE REGISTRY
 CONFIG MANAGEMENT
   Select a Chef, Salt, Ansible or Puppet integration to be used with this Cloud.
 CMDB
-  Select CMDB Integraiton to automatically update selected CMDB.
+  Select CMDB Integration to automatically update selected CMDB.
 AGENT INSTALL MODE
   * SSH / WINRM: |morpheus| will use SSH or WINRM for Agent install.
   * Cloud-Init (when available): |morpheus| will utilize Cloud-Init or Cloudbase-Init for agent install when provisioning images with Cloud-Init/Cloudbase-Init installed. |morpheus| will fall back on SSH or WINRM if cloud-init is not installed on the provisioned image.
