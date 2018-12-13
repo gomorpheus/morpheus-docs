@@ -4,7 +4,6 @@ Clouds
 
 .. toctree::
   :maxdepth: 2
-  Clouds/cloudCapabilityCoverage.rst
   Clouds/aws/amazon.rst
   Clouds/azure/azure.rst
   Clouds/azure_stack/azure_stack.rst
@@ -28,4 +27,5 @@ Clouds
   Clouds/vmwarefusion/vmwarefusion.rst
   Clouds/xen/xen.rst
   Clouds/cloudbase-init.rst
+  Clouds/cloudCapabilityCoverage.rst
   Clouds/centos7template.rst
