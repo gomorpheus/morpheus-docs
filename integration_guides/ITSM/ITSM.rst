@@ -2,6 +2,6 @@ ITSM
 =====
 
 .. toctree::
-  ServiceNow.rst
-  cherwell.rst
-  remedy.rst
+    ServiceNow.rst
+    cherwell.rst
+    remedy.rst
