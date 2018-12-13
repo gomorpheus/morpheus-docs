@@ -58,13 +58,20 @@ Edit Instances
 
 |morpheus| allows for the ability to edit an instance once it has been provisioned.  There are several fields that can be edited.
 
-* Name
-* Description
-* Environment
-* Group
-* Metadata
-* Tags
-* Owner
+Name
+  Add a name to your instance
+Description
+  Add a description to your instance
+Environment
+  Tag your instance to an environment for easy filtering of your instances
+Group
+  Assign your instance to a group for visibility and management
+Metadata
+  Metadata is a key value pair meant for tracking.  You can export variables as metadata.
+Tags
+  Add tags to easily keep track of instances
+Owner
+  Easily assign an owner to an instance
 
 The environment, group and owner fields must be set to previously defined options in |morpheus|.
 
