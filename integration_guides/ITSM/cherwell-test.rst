@@ -31,7 +31,7 @@ Add Cherwell Integration
     CUSTOM MAPPING
      This is an optional json object that allows the custom setting of the Cherwell fields on the Change Request object.
 
-     .. note:: The keys in the map correspond to the name of the field on the Change Request in Cherwell that you would like to set (see https://bertram.d.pr/1Ziuhy for a reference).  In addition, the value in the map corresponds to the value you wish to use.  Within the value, |moprheus| variables may be used.  Here is an example for setting the Description is:
+     .. note:: The keys in the map correspond to the name of the field on the Change Request in Cherwell that you would like to set (see https://bertram.d.pr/1Ziuhy for a reference).  In addition, the value in the map corresponds to the value you wish to use.  Within the value, Morpheus variables may be used.  Here is an example for setting the Description is:
 
        .. code-block:: language
 
