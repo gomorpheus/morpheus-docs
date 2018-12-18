@@ -33,18 +33,18 @@ Change the values to match your configured services:
       mysql['enable'] = false
       mysql['host'] = {'10.30.20.139' => 3306,  '10.30.20.153' => 3306,  '10.30.20.196' => 3306}
       mysql['morpheus_db'] = 'morpheusdb'
-      mysql['morpheus_db_user'] = 'morpheusadmin'
-      mysql['morpheus_password'] = 'morpheus4admin!'
+      mysql['morpheus_db_user'] = 'dbuser'
+      mysql['morpheus_password'] = 'dbuserpassword'
       rabbitmq['enable'] = false
-      rabbitmq['vhost'] = 'morph'
+      rabbitmq['vhost'] = 'morpheus'
       rabbitmq['queue_user'] = 'lbuser'
-      rabbitmq['queue_user_password'] = 'morpheus4admin'
-      rabbitmq['host'] = 'morpheus-ha-mq-lb-1.den.morpheusdata.com'
+      rabbitmq['queue_user_password'] = 'lbuserpassword'
+      rabbitmq['host'] = 'rabbitvip'
       rabbitmq['port'] = '5672'
       rabbitmq['stomp_port'] = '61613'
       rabbitmq['heartbeat'] = 50
       elasticsearch['enable'] = false
-      elasticsearch['cluster'] = 'morpheusha1'
+      elasticsearch['cluster'] = 'esclustername'
       elasticsearch['es_hosts'] = {'10.30.20.91' => 9200, '10.30.20.149' => 9200, '10.30.20.165' => 9200}
 
 #. Reconfigure Morpheus
