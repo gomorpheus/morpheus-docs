@@ -1,7 +1,7 @@
 |morpheus| Agent Install Troubleshooting
 ========================================
 
-When provisioning and instance, there are some network and configuration requirements to successfully install the morpheus agent.  Typically when a vm instance is still in the provisioning phase long after the vm is up, the instance is unable to reach |morpheus| , or depending on agent install mode, |morpheus| is unable to reach the instance.
+When provisioning an instance, there are some network and configuration requirements to successfully install the morpheus agent.  Typically when a vm instance is still in the provisioning phase long after the vm is up, the instance is unable to reach |morpheus| , or depending on agent install mode, |morpheus| is unable to reach the instance.
 
 The most common reason an agent install fails is the provisioned instance cannot reach the |morpheus| Appliance via the appliance_url set in Admin -> Settings over both 443 and 80. When an instance is provisioned from |morpheus|, it must be able to reach the |morpheus| appliance via the appliance_url or the agent will not be installed.
 
@@ -87,7 +87,7 @@ Linux
 
 #. This will pull the |morpheus| Agent install script from the |morpheus| appliance and run it.
 
-#. Once the agent is installed, run morpheus-node-ctl reconfigure to complete the manual process.
+#. Once the agent is installed, run ``morpheus-node-ctl reconfigure`` to complete the manual process.
 
 Windows
 
@@ -99,11 +99,11 @@ Windows
 
 * The initial windows installer is MorpheusAgentSetup.msi
 
-* Once the Windows agent is downloaded and installed with |morpheus| AgentSetup.msi the agent is located and runs from `/Program Files x86/Morphues/|morpheus| Windows Agent`
+* Once the Windows agent is downloaded and installed with |morpheus| AgentSetup.msi the agent is located and runs from ``/Program Files x86/Morphues/morpheus Windows Agent``
 
 * Logs can be viewed in the Event Viewer under Applications and Services Logs  -> |morpheus| Windows Agent
 
-#. Replace the values for $apiKey and $applianceUrl in the script below.
+#. Replace the values for ``$apiKey`` and ``$applianceUrl`` in the script below.
 
 #. Execute this script on the Windows box in Powershell.
 
@@ -196,6 +196,7 @@ The |morpheus| Windows Agent service can be restarted in Administrative Tools ->
 .. TIP:: The |morpheus| Remote Console is not dependent on agent communication and can be used to install or restart the |morpheus| agent on an instance.
 
 Uninstall |morpheus| Agent
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 You can use the following to uninstall the linux agent:
 

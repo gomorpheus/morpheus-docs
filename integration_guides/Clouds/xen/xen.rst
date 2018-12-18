@@ -16,16 +16,14 @@ Add a Xen Server Cloud
       For setting cloud permissions in a multi-tenant environment. Not applicable in single tenant environments.
    API URL
       IP or URL of Xen Host. ex: `xenserver.domain.com`
-  CUSTOM PORT
+   CUSTOM PORT
       Port for non standard xen server clouds
    USERNAME
       Xen Host Username
    PASSWORD
       Xen Host Password
    Inventory Existing Instances
-      If enabled, existing Google Instances will be inventoried and appear as unmanaged Virtual Machines in |morpheus| .
-
-   .. NOTE:: |morpheus| scopes clouds to single regions. Multiple clouds can be added for multi-region support, and then optionally added to the same group.
+      If enabled, existing Virtual Machines will be inventoried and appear as unmanaged Virtual Machines in |morpheus| .
 
 #. The Cloud can now be added to a Group or configured with additional Advanced options.
 
