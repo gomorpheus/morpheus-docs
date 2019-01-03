@@ -89,7 +89,7 @@ Morpehus variables can be used in playbook.
 Use Case:
 
   Create a user as instance hostname during provisioning. Below is the playbook. Add this playbook to a task and run it as a workflow on the instance.
-  Note: `{{ instance['hostname'] }}` is the format of using Morpheus Variables
+  .. NOTE:: `{{ instance['hostname'] }}` is the format of using Morpheus Variables
 
     .. code-block:: bash
 
@@ -105,7 +105,8 @@ Use Case:
               state: present
 
   Create a user with a name which you enter during provisioning using a custom Instance type. This instance type has a `Text` Option type that provides a textbox to enter a username. The fieldName of the option type in this case would be `username`. Below is the playbook. 
-  Note: `{{ customOptions['username']` will be the format. 
+  
+  .. NOTE:: `{{ customOptions['username'] }}` will be the format. 
 
     .. code-block:: bash
 
