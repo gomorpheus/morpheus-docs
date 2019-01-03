@@ -89,11 +89,10 @@ Morpehus variables can be used in playbook.
 Use Case:
 
   Create a user as instance hostname during provisioning. Below is the playbook. Add this playbook to a task and run it as a workflow on the instance.
-  .. NOTE:: `{{ instance['hostname'] }}` is the format of using Morpheus Variables
+     
+  .. code-block:: bash
 
-    .. code-block:: bash
-
-      ---
+    ---
       - name: Add a user
         hosts: all
         gather_facts: false
@@ -103,14 +102,15 @@ Use Case:
               name: "{{ instance['hostname'] }}"
               password: "xxxxxxx"
               state: present
+  
+    .. NOTE:: `{{ instance['hostname'] }}` is the format of using Morpheus Variables
+
 
   Create a user with a name which you enter during provisioning using a custom Instance type. This instance type has a `Text` Option type that provides a textbox to enter a username. The fieldName of the option type in this case would be `username`. Below is the playbook. 
   
-  .. NOTE:: `{{ customOptions['username'] }}` will be the format. 
+   .. code-block:: bash
 
-    .. code-block:: bash
-
-      ---
+    ---
       - name: Add a user
         hosts: all
         gather_facts: false
@@ -121,6 +121,7 @@ Use Case:
               password: "xxxxxxx"
               state: present
 
+    .. NOTE:: `{{ customOptions['username'] }}` will be the format.
 
 Troubleshooting Ansible
 ^^^^^^^^^^^^^^^^^^^^^^^
