@@ -28,7 +28,7 @@ Once you have completed this section and saved your changes you can set up a Clo
 
 Scope Ansible Tower Integration to a Cloud
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-All instances provisioned in this cloud will have the Ansible Tower config option during provisioning. See below the Provisioning Options -> Instance for more details about the options.
+All instances provisioned in this cloud will have the Ansible Tower config option during provisioning. See below the Provisioning Options for more details about the options.
 
 #. Navigate to `Infrastructure -> Clouds`
 #. Edit the target Cloud
@@ -39,7 +39,7 @@ All instances provisioned in this cloud will have the Ansible Tower config optio
 
 Scope Ansible Tower Integration to a Group
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-All instances provisioned in this Group will have the Ansible Tower config option during provisioning in any cloud part of the Group. See below the Provisioning Options -> Instance for more details about the options.
+All instances provisioned in this Group will have the Ansible Tower config option during provisioning in any cloud part of the Group. See below the Provisioning Options for more details about the options.
 
 #. Navigate to `Infrastructure -> Groups`
 #. Edit the target Group
@@ -49,9 +49,6 @@ All instances provisioned in this Group will have the Ansible Tower config optio
 
 Provisioning Options
 ^^^^^^^^^^^^^^^^^^^^
-
-Instance
-^^^^^^^^
 
 When provisioning Instances into a Cloud or Group with a Ansible Tower Integration added, an `Ansible Tower` section will appear in the Config section of the provisioning wizard. By default, Ansible Tower is enabled, but can be disabled by expanding the `Ansible Tower` section and unchecking `Enable Ansible Tower`.
 
