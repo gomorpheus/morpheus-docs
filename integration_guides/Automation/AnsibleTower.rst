@@ -28,6 +28,7 @@ Once you have completed this section and saved your changes you can set up a Clo
 
 Scope Ansible Tower Integration to a Cloud
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+All instances provisioned in this cloud will have the Ansible Tower config option during provisioning. See below the Provisioning Options -> Instance for more details about the options.
 
 #. Navigate to `Infrastructure -> Clouds`
 #. Edit the target Cloud
@@ -38,6 +39,7 @@ Scope Ansible Tower Integration to a Cloud
 
 Scope Ansible Tower Integration to a Group
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+All instances provisioned in this Group will have the Ansible Tower config option during provisioning in any cloud part of the Group. See below the Provisioning Options -> Instance for more details about the options.
 
 #. Navigate to `Infrastructure -> Groups`
 #. Edit the target Group
@@ -80,7 +82,9 @@ Execute Mode
     Skip execution
       This will skip the execution of the template on the instance provisioned.
 
-App
-^^^
+Use Case
+^^^^^^^^
 
-Ansible Tower
+You have Job template(s) in Ansible Tower to do post build config after the OS is deployed. The playbook with roles and tasks to do post build will add specific users and groups. Install required packages, remove packages, disable services, change config for ntp, resolv, hosts etc. Add it to an existing Group/Inventory in Tower.
+
+You can achieve this by adding the Ansible Tower Integration and then scope it to a Cloud or Group. Now when you provision an instance, you have the option to select the post build job template, select the Inventoryand provide and existing Group Name or if the Group doesn't exist Morpheus will create it and submit for provisioning. Morpheus will provision the instance, once it is in the finalize state where the instance has an ip and has completed domain join if required, added user(s) or User Groups if specified then Morpheus will add the instance to the inventory and Group and run the Template which will do all the post build of the server. The output of the post build can be see under Instance history.
