@@ -1,6 +1,23 @@
 Cloud Foundry
 --------------
 
+Overview
+^^^^^^^^^
+Cloud Foundry is an open source, multi-cloud application platform as a service governed by the Cloud Foundry Foundation, a 501 organization. The software was originally developed by VMware and then transferred to Pivotal Software, a joint venture by EMC, VMware and General Electric.
+
+Features
+^^^^^^^^^^^^
+
+* Ability to create a space and add/remove users from a space
+* Inventory of applications during cloud sync
+* Scaling
+* Sync for build packs
+* Free form username input for space user management in Cloud Foundry
+* Space deletion added
+* Synced Services provisioning added
+
+
+
 Configuration
 ^^^^^^^^^^^^^^^
 

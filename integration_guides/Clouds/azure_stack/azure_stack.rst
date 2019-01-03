@@ -6,6 +6,9 @@ Overview
 
 Azure Stack is Microsoft's Azure Cloud for on-premises environments. Azure Stack contains the core Azure services, allowing organizations to take advantage of Azure's offerings with the security, compliance, and financial benefits of hosting it in their own data-centers.
 
+Features
+^^^^^^^^^^^^
+
 * Virtual Machine Provisioning
 * Backups / Snapshots
 * Resource Group Sync & Selection
