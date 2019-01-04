@@ -1,6 +1,22 @@
 Softlayer
 ----------
 
+
+Description
+^^^^^^^^^^^^^
+SoftLayer Technologies, Inc. is a dedicated server, managed hosting, and cloud computing provider, founded in 2005 and acquired by IBM in 2013.
+
+Features
+^^^^^^^^^^^^^
+* Virtual Machine Provisioning
+* Washington 6 region
+*
+
+
+
+
+
+
 Add a Softlayer Cloud
 ^^^^^^^^^^^^^^^^^^^^^^
 

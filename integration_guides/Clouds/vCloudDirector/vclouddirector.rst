@@ -1,14 +1,27 @@
 vCloud Director
 ---------------
 
+
 Overview
-^^^^^^^^
-VMware® vCloud Director provides role-based access to a Web console that allows the members of an organization to interact with the organization's resources to create and work with vApps and virtual machines.
+^^^^^^^^^
+
+VMware vCloud Director (vCD) is deployment, automation and management software for virtual infrastructure resources in multi-tenant cloud environments.
 
 Features
-^^^^^^^^
-* Virtual image uploading
-* Custom library nodes
+^^^^^^^^^
+* IP Pool allocated IPs sync
+* Virtual Machine sync includes undeployed VMs
+* IP Pools sync
+* “Add User” option during provisioning
+* Custom Plans Support
+* Docker Host support
+* Reconfigure
+* Support for VCD v9
+* Support for v9.x
+
+
+
+
 
 Configuration
 ^^^^^^^^^^^^^

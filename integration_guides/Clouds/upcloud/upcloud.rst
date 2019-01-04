@@ -10,17 +10,17 @@ They have datacenters based in the UK, USA, Germany, Netherlands, Singapore and 
 Features
 ^^^^^^^^^^
 
-- Virtual Machine Provisioning
-- Containers
-- Backups / Snapshots
-- Migrations
-- Auto Scaling
-- Load Balancing
-- Remote Console
-- Periodic Synchronization
-- Lifecycle Management and Resize
-- Inventory
-- Cloudinit
+* Virtual Machine Provisioning
+* Containers
+* Backups / Snapshots
+* Migrations
+* Auto Scaling
+* Load Balancing
+* Remote Console
+* Periodic Synchronization
+* Lifecycle Management and Resize
+* Inventory
+* Cloudinit
 
 Requirements
 ^^^^^^^^^^^^^

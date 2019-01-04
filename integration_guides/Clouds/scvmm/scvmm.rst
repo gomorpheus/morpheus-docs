@@ -1,6 +1,20 @@
 SCVMM
 ------
 
+
+Description
+^^^^^^^^^^^^^
+System Center Virtual Machine Manager (SCVMM) is Microsoft's virtual machine support center for Windows-based systems. SCVMM upholds Microsoft's focus on efficiency with features to help administrators consolidate multiple physical servers within a central virtualized environment.
+
+Features
+^^^^^^^^^^^^^
+* Inventory existing VMs
+* Multi host and datastore support
+* Support for static IP pools
+
+
+
+
 Add a SCVMM Cloud
 ^^^^^^^^^^^^^^^^^^
 
