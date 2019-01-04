@@ -1,6 +1,15 @@
 vCloud Director
 ---------------
 
+Overview
+^^^^^^^^
+VMware® vCloud Director provides role-based access to a Web console that allows the members of an organization to interact with the organization's resources to create and work with vApps and virtual machines.
+
+Features
+^^^^^^^^
+* Virtual image uploading
+* Custom library nodes
+
 Configuration
 ^^^^^^^^^^^^^
 

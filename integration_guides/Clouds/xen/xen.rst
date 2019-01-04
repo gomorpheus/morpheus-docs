@@ -1,6 +1,15 @@
 Xen Server
 -----------
 
+Overview
+^^^^^^^^
+XenServer is an enterprise-class, cloud-proven virtualization platform that delivers all of the critical features needed for any server and datacenter virtualization implementation. A copy of the feature matrix that corresponds to the latest release can be found here. The following list summarizes some of the key capabilities of XenServer.
+
+Features
+^^^^^^^^
+* XVA import
+* Hypervisor console
+
 Add a Xen Server Cloud
 ^^^^^^^^^^^^^^^^^^^^^^^
 
