@@ -19,6 +19,7 @@ Features
 * Remote Console
 * Periodic Synchronization
 * Lifecycle Management and Resize
+* Hypervisor Console 
 
 |morpheus| can provide a single pane of glass and self-service portal for managing multiple Nutanix Clusters and allowing the seamless deployment of applications.
 

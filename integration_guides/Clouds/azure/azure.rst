@@ -28,6 +28,10 @@ Features
 * Service Plan Sync
 * Pricing Sync with markup options
 * Cost Estimator
+* Scale Sets Support
+* All Provisioning Utilizes ARM Blueprints
+* Scale Set Threshold Validation
+* Azure Tags can be created using metadata values, and existing Azure tags are synced.
 
 Combine these features with on premise solutions like Azure-Stack and |morpheus| can provide a single pane of glass and self service portal for managing instances scattered across both public Azure and private Azure Stack offerings.
 

@@ -1,6 +1,18 @@
 ESXi
 -----
 
+Overview
+^^^^^^^^^
+VMware ESXi is an enterprise-class, type-1 hypervisor developed by VMware for deploying and serving virtual computers. As a type-1 hypervisor, ESXi is not a software application that is installed on an operating system; instead, it includes and integrates vital OS components, such as a kernel.
+
+Features
+^^^^^^^^^^^^
+*
+*
+*
+
+
+
 The ESXi Cloud type enables managing and provisioning to ESXi hosts, even without the ESXi API enabled.
 
 .. IMPORTANT:: The VMware ESXi integration is for adding a single ESXi / vSphere Hypervisor host. If you have vCenter please use the VMWare vCenter cloud type for full vSphere integraiton features.

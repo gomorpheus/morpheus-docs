@@ -1,6 +1,8 @@
 Hyper-V
 --------
 
+Overview
+^^^^^^^^^
 Hyper-V is the virtualized server computing environment introduced by Microsoft. Hyper-V is consumed by |morpheus| as a private cloud offering and is a common hypervisor technology in data centers. |morpheus| provides and avenue to aggregate Hyper-V resources together to allow efficient and seamless deployment of applications as a virtual machine (VM) or Docker host in the world of Hyper-V.
 
 Features
@@ -18,6 +20,7 @@ Features
 • Veeam Integration
 • Lifecycle Management and Resize
 • Unique Kerberos Authentication
+* Multi-network, Static IP and IP Pool support
 
 |morpheus| can provide a single pane of glass and self-service portal for managing instances scattered across both Hyper-V and public cloud offerings like Azure.
 

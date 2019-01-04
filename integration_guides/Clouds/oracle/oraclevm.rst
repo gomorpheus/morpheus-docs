@@ -1,6 +1,25 @@
 Oracle VM
 ---------
 
+Description
+^^^^^^^^^^^^^
+Oracle VM Server for x86 is the server virtualization offering from Oracle Corporation. Oracle VM Server for x86 incorporates the free and open-source Xen hypervisor technology, supports Windows, Linux, and Solaris guests and includes an integrated Web based management console.
+
+
+Features
+^^^^^^^^^^^^^
+* Virtual Machine Provisioning
+* Ability to provision by OCID
+* Multiple Compartment support and default Compartment selection
+* Ability to Reconfigure
+* Ability to upload a local image
+* Oracle Cloud library nodes
+* Support for different storage types
+
+
+
+
+
 Add a Oracle VM Cloud
 ^^^^^^^^^^^^^^^^^^^^^^
 

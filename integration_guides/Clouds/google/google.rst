@@ -1,6 +1,19 @@
 Google
 -------
 
+Overview
+^^^^^^^^^
+Build, innovate, and scale with Google Cloud Platform. Collaborate and be more productive with G Suite. See what's possible with Google Cloud.
+
+Features
+^^^^^^^^^^^^
+* Virtual Machine Provisioning
+* Network Tagging Support 
+*
+
+
+
+
 Requirements
 ^^^^^^^^^^^^
 

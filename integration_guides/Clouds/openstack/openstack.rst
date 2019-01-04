@@ -17,6 +17,17 @@ Features
 * Brownfield VM management and Migration
 * Lifecycle Management and Resize
 * Docker Host management / configuration
+* Versioned Endpoints
+* Hypervisor Console
+* Multi-network, Static IP and IP Pool support
+* Octavia Load Balancer Support added
+* Queens support added
+
+
+
+
+
+
 
 On top of all these features, |morpheus| also adds additional features to Openstack that do not exist out of the box to make it easier to manage in multitenant environments as well as hybrid cloud environments:
 

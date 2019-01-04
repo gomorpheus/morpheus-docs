@@ -1,6 +1,16 @@
 Digital Ocean
 -------------
 
+Overview
+^^^^^^^^^
+DigitalOcean, Inc. is an American cloud infrastructure provider headquartered in New York City with data centers worldwide. DigitalOcean provides developers cloud services that help to deploy and scale applications that run simultaneously on multiple computers.
+
+Features
+^^^^^^^^^^^^
+* Virtual Machine Provisioning 
+
+
+
 Add a Digital Ocean Cloud
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 

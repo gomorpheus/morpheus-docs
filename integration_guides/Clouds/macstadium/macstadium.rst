@@ -23,7 +23,7 @@ Features
 * Veeam Backup Integration
 * Lifecycle Management and Resize
 
-On top of all these features, |morpheus| also adds additional features to VMware that do not exist out of the box to make it easier to manage in multitenant environments as well as hybrid cloud environments:
+On top of all these features, |morpheus| also adds additional features to VMware that do not exist out of the box to make it easier to manage in multi tenant environments as well as hybrid cloud environments:
 
 * Cloud-Init Support
 * VHD to VMDK Image Conversion
