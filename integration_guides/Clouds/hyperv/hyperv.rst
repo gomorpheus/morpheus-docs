@@ -8,18 +8,18 @@ Hyper-V is the virtualized server computing environment introduced by Microsoft.
 Features
 ^^^^^^^^
 
-• Virtual Machine Provisioning
-• Containers
-• Backups / Snapshots
-• Resources Groups
-• Migrations
-• Auto Scaling
-• Load Balancing
-• Remote Console
-• Periodic Synchronization
-• Veeam Integration
-• Lifecycle Management and Resize
-• Unique Kerberos Authentication
+* Virtual Machine Provisioning
+* Containers
+* Backups / Snapshots
+* Resources Groups
+* Migrations
+* Auto Scaling
+* Load Balancing
+* Remote Console
+* Periodic Synchronization
+* Veeam Integration
+* Lifecycle Management and Resize
+* Unique Kerberos Authentication
 * Multi-network, Static IP and IP Pool support
 
 |morpheus| can provide a single pane of glass and self-service portal for managing instances scattered across both Hyper-V and public cloud offerings like Azure.

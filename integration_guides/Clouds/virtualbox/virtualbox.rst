@@ -1,6 +1,17 @@
 Virtualbox
 -----------
 
+Overview
+^^^^^^^^^
+Oracle VM VirtualBox is a free and open-source hosted hypervisor for x86 computers currently being developed by Oracle Corporation. Developed initially by Innotek GmbH, it was acquired by Sun Microsystems in 2008 which was in turn acquired by Oracle in 2010.
+
+
+Features
+^^^^^^^^^
+*
+*
+*
+
 
 Add a VirtualBox Cloud
 ^^^^^^^^^^^^^^^^^^^^^^^

@@ -1,6 +1,19 @@
 VMware Fusion
 -------------
 
+
+Overview
+^^^^^^^^^
+VMware Fusion is a software hypervisor developed by VMware for Macintosh computers. VMware Fusion allows Intel-based Macs to run operating systems such as Microsoft Windows, Linux, NetWare, or Solaris.
+
+Features
+^^^^^^^^^
+*
+*
+*
+
+
+
 Add a VMware Fusion Cloud
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
