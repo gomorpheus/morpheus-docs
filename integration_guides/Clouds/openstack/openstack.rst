@@ -17,7 +17,7 @@ Features
 * Brownfield VM management and Migration
 * Lifecycle Management and Resize
 * Docker Host management / configuration
-
+ 
 On top of all these features, |morpheus| also adds additional features to Openstack that do not exist out of the box to make it easier to manage in multitenant environments as well as hybrid cloud environments:
 
 * Image to QCOW2 Image Conversion
