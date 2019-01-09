@@ -83,6 +83,7 @@ Playbook's can also be added as tasks to workflows in the `Provisioning -> Autom
 
 Using variables
 ^^^^^^^^^^^^^^^^^
+.. NOTE:: This will work on Morpheus Feature release 3.5.3-2 and above. This is not added to LTS release.
 
 Morpehus variables can be used in playbook. 
 
