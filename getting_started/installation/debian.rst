@@ -1,6 +1,8 @@
 Ubuntu
 ------
 
+.. IMPORTANT:: Ubuntu 18.04 install requires NTP (``sudo apt-get install ntp) and the ``libpng12-dev`` package which is no longer in default Ubuntu configured repos on 18.04. Run ``sudo apt-add-repository "deb http://us.archive.ubuntu.com/ubuntu/ xenial main universe"`` or install ``libpng12-dev`` manually if reconfigure fails on installing ``libpng12-dev``
+
 To get started installing |morpheus| on Ubuntu (14.04 currently) a few prepratory items should be addressed first.
 
 #. First make sure the apt repository is up to date by running ``sudo apt-get update``. It might also be advisable to verify that the assigned hostname of the machine is self resolvable.
