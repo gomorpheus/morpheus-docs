@@ -5,7 +5,7 @@ Overview
 ^^^^^^^^
 
 |morpheus| supports Ansible Tower for configuration management.  |morpheus| accomplishes this by integrating with an existing instance running Ansible Tower (AT) 3.3.0-1 and earlier. The username and password required for integration can be a user with admin access or a user with project admin access.
-|morpheus| will import the current Inventory, Templates, Hosts, Groups and Projects. In the integration view it will add a Job tab which will have information of all the jobs executed from Morpheus. 
+|morpheus| will import the current Inventory, Templates, Hosts, Groups and Projects. In the integration view it will add a Job tab which will have information of all the jobs executed from Morpheus.
 Note: It will not import data of the jobs which are not executed from Morpheus.
 
 Add Ansible Tower Integration
@@ -17,7 +17,7 @@ Add Ansible Tower Integration
 
    * Name: Name of the Ansible Tower Integration in |morpheus|
    * Enabled: Enabled by default it is enabled. To disable the integration, uncheck this option and save.
-   * Ansible Tower URL: This would be an https or http Ansible tower url. 
+   * Ansible Tower URL: This would be an https or http Ansible tower url.
    * Username: The user morpheus would use to communicate with Ansible Tower.
    * Password: Enter the password. Password is encrypted and saved in DB.
    * API Version: This drop down has one option v2 for now but may have others in future.
@@ -80,7 +80,10 @@ Execute Mode
     Skip execution
       This will skip the execution of the template on the instance provisioned.
 
-App 
+App
 ^^^
 
-Ansible Tower 
+Ansible Tower
+
+
+ 
