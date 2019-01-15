@@ -59,6 +59,8 @@ Supports Deployments
 
 Upon saving, this Instance Type will be available in the Provisioning Catalog, per user role access. However we still need to add layouts to the Instance Type, and prior to creating a layout, we will add a node type.
 
+.. NOTE:: Custom Instance Types do not display logs on the instance page. Logs will only show on the VM page.
+
 Node Types
 ----------
 

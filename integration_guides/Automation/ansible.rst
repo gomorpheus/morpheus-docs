@@ -81,6 +81,49 @@ In the `Run Ansible` modal, you can then select all or an individual group, and 
 
 Playbook's can also be added as tasks to workflows in the `Provisioning -> Automation` section, and then selected in the Automation pane during provisioning of new instances, when creating app blueprints, or ran on existing instances using the `Actions -> Run Workflow` on the Instance or Host pages.
 
+Using variables
+^^^^^^^^^^^^^^^^^
+.. NOTE:: This will work on Morpheus Feature release 3.5.3-2 and above. This is not added to LTS release.
+
+Morpehus variables can be used in playbook. 
+
+Use Case:
+
+  Create a user as instance hostname during provisioning. Below is the playbook. Add this playbook to a task and run it as a workflow on the instance.
+     
+    .. code-block:: bash
+
+      ---
+        - name: Add a user
+          hosts: all
+          gather_facts: false
+          tasks:
+            - name: Add User  
+              win_user:
+                name: "{{ instance['hostname'] }}"
+                password: "xxxxxxx"
+                state: present
+  
+  .. NOTE:: `{{ instance['hostname'] }}` is the format of using Morpheus Variables
+
+
+  Create a user with a name which you enter during provisioning using a custom Instance type. This instance type has a `Text` Option type that provides a textbox to enter a username. The fieldName of the option type in this case would be `username`. Below is the playbook. 
+  
+    .. code-block:: bash
+
+      ---
+        - name: Add a user
+          hosts: all
+          gather_facts: false
+          tasks:
+            - name: Add User  
+              win_user:
+                name: "{{ customOptions['username'] }}"
+                password: "xxxxxxx"
+                state: present
+
+  .. NOTE:: `{{ customOptions['username'] }}` will be the format.
+
 Troubleshooting Ansible
 ^^^^^^^^^^^^^^^^^^^^^^^
 
