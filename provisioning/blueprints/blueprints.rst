@@ -143,7 +143,7 @@ Add Instances to Tiers
 #. Select an Instance Type
 #. Optionally add a name for the Instance. Instances with blank names will automatically be named based off the App name.
 
-.. TIP:: You can use the variable ${app.name} in your istance naming convention to reference the name of the application you're deploying.
+.. TIP:: You can use the variable ${app.name} in your instance naming convention to reference the name of the application you're deploying.
 
 
 Add Configurations to Instances
