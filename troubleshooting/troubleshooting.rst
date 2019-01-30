@@ -17,3 +17,4 @@ Troubleshooting
   deletingtenant.rst
   cli_trouble.rst
   ansible.rst
+  unmanaged.rst
