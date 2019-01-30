@@ -41,6 +41,8 @@ Steps to delete a managed VM from |morpheus| and, when necessary, remove the ass
 
 #. Configure the DELETE HOST modal with the following settings:
 
+   .. image:: /images/delete_host_modal.png
+   
    - ``Remove Infrastructure`` UNCHECKED
    - ``Remove Associated Instances`` Must be checked if the server has an associated Instance, as deleting the VM but not the Instance would result in an abandoned Instance thus not allowed.
    - ``Force Delete`` UNCHECKED
