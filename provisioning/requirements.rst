@@ -11,11 +11,11 @@ VM Provision Steps
 While an infinite number of steps can happen when provisioning an Instance or App using a VM(s) in |morpheus|, the basic order is:
 
 - Look for Virtual Image
-  |morpheus| will check if the Virtual Image set on the Node Type or selected during provisioning is already available in the source Cloud. If not and it is an Uploaded/Local Image, |morphues| will attempt to upload the Image to the target Cloud.
+  |morpheus| will check if the Virtual Image set on the Node Type or selected during provisioning is already available in the source Cloud. If not and it is an Uploaded/Local Image, |morpheus| will attempt to upload the Image to the target Cloud.
 
   Upload Image
-    For Uploaded/Local Images that do not exist in the target cloud, |morphues| will need to upload the Image.
-      Ensure the Virtual Image is valid for the target Cloud, the Image meets the target cloud upload requirements, and |morphues| has network access and permissions to upload the image.
+    For Uploaded/Local Images that do not exist in the target cloud, |morpheus| will need to upload the Image.
+      Ensure the Virtual Image is valid for the target Cloud, the Image meets the target cloud upload requirements, and |morpheus| has network access and permissions to upload the image.
 
       .. NOTE:: When uploading an image to a VMware Cloud, the Virtual Image is copied directly to the target ESXi host, NOT through the vCenter server. Ensure the |morpheus| Appliance(s) can resolve target ESXi hostnames and connect on port 443 for successful vmdk/ova uploads.
 
@@ -28,11 +28,11 @@ While an infinite number of steps can happen when provisioning an Instance or Ap
   Once cloned |morpheus| will resize the Image based off provisioning parameters
 - Cloud-init (if enabled)
       Attached cloud-init iso
-        When using cloud-init, |morphues| will attach a tiny metadata iso to new VM. Network, Machine, User and any other cloud-init metadata will be sourced from this iso.
+        When using cloud-init, |morpheus| will attach a tiny metadata iso to new VM. Network, Machine, User and any other cloud-init metadata will be sourced from this iso.
       VM Tools
         |Morpheus will run Guest Customizations via VMware VM Tools, including network config when assigning static IP's.
 - Wait for Power On status and Network info
-  |morphues| will wait to hear back from the target cloud/hypervisor that the VM has successfully started and has an IP address.
+  |morpheus| will wait to hear back from the target cloud/hypervisor that the VM has successfully started and has an IP address.
 
   .. NOTE:: If `VM TOLLS INSTALLED?` is NOT checked on the source Virtual Image configuration, |morpheus| will skip waiting for network.
 
@@ -115,9 +115,9 @@ Enabled Sysprep?
 
 Local Virtual Images
 ^^^^^^^^^^^^^^^^^^^^^
-A Local Virtual Image means it has been uploaded to |morpheus|.  To provision, |morphues| will need to upload the Image to the target Cloud upon first provision.
+A Local Virtual Image means it has been uploaded to |morpheus|.  To provision, |morpheus| will need to upload the Image to the target Cloud upon first provision.
 
-- Ensure the Virtual Image is valid for the target Cloud, the Image meets the target cloud upload requirements, and |morphues| has network access and permissions to upload the image.
+- Ensure the Virtual Image is valid for the target Cloud, the Image meets the target cloud upload requirements, and |morpheus| has network access and permissions to upload the image.
 
 .. NOTE:: When uploading an image to a VMware Cloud, the Virtual Image is copied directly to the target ESXi host, NOT through the vCenter server. Ensure the |morpheus| Appliance(s) can resolve target ESXi hostnames and connect on port 443 for successful vmdk/ova uploads.
 

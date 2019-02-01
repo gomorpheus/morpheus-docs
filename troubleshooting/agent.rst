@@ -99,7 +99,7 @@ Windows
 
 * The initial windows installer is MorpheusAgentSetup.msi
 
-* Once the Windows agent is downloaded and installed with |morpheus| AgentSetup.msi the agent is located and runs from ``/Program Files x86/Morphues/morpheus Windows Agent``
+* Once the Windows agent is downloaded and installed with |morpheus| AgentSetup.msi the agent is located and runs from ``/Program Files x86/morpheus/morpheus Windows Agent``
 
 * Logs can be viewed in the Event Viewer under Applications and Services Logs  -> |morpheus| Windows Agent
 
