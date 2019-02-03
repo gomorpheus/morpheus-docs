@@ -40,28 +40,29 @@ Login Methods
 -------------
 
 Master Tenant
-^^^^^^^^^^^^^
-  Enter your username and password
+
+- Enter username or email. and password
 
 Subtenant
-^^^^^^^^^
 
-  To login, subtenants can either use the master tenant URL with ``subtenant\username`` formatting:
+To login, subtenants can either use the master tenant URL with ``subtenant\username`` formatting:
 
-  Example:
+Example:
     I have a username ``subuser`` that belongs to a tenant with the subdomain ``subaccount``.
     When logging in from the main login url, I would now need to enter in: ``subaccount\subuser``
 
-  Or use the tenant specific URL which can be found and configured under Administration > Tenants > Select Tenant > Identity Sources.
+Or use the tenant specific URL which can be found and configured under Administration > Tenants > Select Tenant > Identity Sources.
 
 .. image:: /images/getting_started/tenant_url.png
 
 .. important::
 
-  In 3.4.0+ Subtenant users will no longer be able to login from the main login page without specifying their subdomain.
+  In 3.4.0+ Subtenant users will no longer be able to login from the main login url without specifying their subdomain.
 
+Configure Cloud-init Global Settings
+------------------------------------
 
-
+When using cloud-init, cloudbase-init, VMware Tools customizations, or Nutanix Sysprep, Global Linux User and Windows Administrator credentials can be set using the settings in `Administraiton - Provisioning`. Its is recommended to define these settings after installation unless credentials are defined per Virtual Image for Provisioning. 
 
 Add a License Key
 -----------------

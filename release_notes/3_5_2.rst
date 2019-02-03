@@ -1,118 +1,82 @@
 v3.5.2
 =======
 
-Release date: tbd
+Release date: 10/22/2018
 
 New Features
 ------------
 
-Add Openstack Hypervisor Console
-Add Xen Hypervisor Console
-VCD: Debian image and instance type
-VCD: CentOS Image and instance type
-Add support for Rand currency
-Inactive option for Tenants
-Edit Instance - ability to change owner
-Morpheus Health
-Add timezone option to prov wiz
-Provision App - improve performance by only sending diff of template config
-Morpheus Health - permission
-Allow host selection when creating Haproxy LB
-VCD: IP Pool - sync/display allocated IPs
-Run tasks set on "Post provision" phase when executing workflows post-provision
-VCD: Ubuntu 16.04 layout
-Automation Tasks - ability to retry tasks if they fail
-Display cloud instance ID in UI for an instance
-Cloud Formations for AWS
-Ansible run output - display in history
-OpenStack Hypervisor Console for novnc
-Nutanix Hypervisor Console Support
-Sync NFS volume shares to Morpheus
-Create exports to allow access from ip addresses
-Manage existing volumes
-Create new NFS shares (exports)
-Add storage service for Isilon
-Create storage providers from an Isilon volume
-Create storage providers from an ECS bucket
-Sync ECS buckets to Morpheus
-Add storage service for Dell ECS
-Create new buckets for ECS
-Virtustream - sync zone
-Virtustream - sync unmanaged virtual machines
-Virtustream - provision from template sync'd from virtustream
-Virtustream - support guest customizations
-**[Placeholder]** SCVMM Phase 2
-**[Placeholder]** Commvault Expansion
-Provisioning Workflow and Script output in History
-OpenStack Octavia (LBaaS)
-OpenStack Neutron
-i18n - update error messages from services
-CLI: Update instance metadata and power schedule
-Implement VMware WMKS Console Support (Hypervisor)
-Venafi: Load Balancer support
-Backup: API / CLI Support
-API Documentation
-Eval Variables in Metadata and Option fields
-Virtustream - install agent if needed
-Virtustream - support backup and restore
-Virtustream - support reconfigure
-Virtustream - support uploading of an ovf
-Virtustream - provision a morpheus instance type
-Virtustream - create a docker host
-OpenStack LBaaSv2 API endpoints for VIO
-Network type choices for OpenStack SDN
-Morpheus Health - Disk status
-Specify Ansible Group when executing workflow
-Nutanix v3 api - clone to image
-Policy Enforcement for all provisioning actions
-KVM Ceph Storage Support
-
+- Administration: Inactive option added for Tenants
+- Ansible: Run output now always displayed in Instance history
+- API/CLI: Storage Providers renamed to Storage Buckets
+- API/CLI: Update instance metadata and power schedule added
+- Appliance: Tomcat upgraded to v9.0.12, addresses CVE-2018-11784
+- Apps: App Loading performance improvements
+- Automation: Provisioning Workflow and Script output always added to Instance history
+- Automation: Execute Options added to Tasks w/ Retryable Flag, Retry Count and Retry Delay settings
+- Automation: Tasks sets set on "Post Provision" phase now run when executing workflows post-provision
+- Automation: Workflows will now stop running on a task failure
+- Blueprints: AWS CloudFormation support added
+- Clouds: Virtustream integration added
+- Commvault: Integration expanded including sync, instance support, job management and restores.
+- Currencies: Rand currency added
+- Hosts: External ID added to Host, VM and Bare Metal detail views
+- Infoblox: Sync optimizations
+- Instances: Owner assignment added to Instances
+- Load Balancers: Allow host selection when creating HAProxy LB
+- Logs: Enhanced logs display and formatting
+- License: Applying Windows Licenses support added to Amazon, Azure, Alibaba, Nutanix and Openstack Clouds
+- Network: External ID added to Network detail view
+- Nutanix: Hypervisor Console added
+- Openstack: Hypervisor Console added
+- Operations: Morpheus Health section added with Health, Alerts and Appliance Logs
+- Provisioning: Add timezone option to Provisioning wizard
+- Roles: Operations: Health, Provisioning: Blueprints - CloudFormation Feature Access permissions added
+- SCVMM: Multi host and datastore support added
+- Storage: Dell EMC ECS Integration added
+- Storage: Dell EMC Isilon Integration added
+- Storage: NFS volume share sync added
+- Storage: Providers split to to Storage Buckets and File Shares sections
+- Tenants: Message added to Users section when no multi-tenant User Roles exist
+- VCD: CentOS Image and Instance type added
+- VCD: Debian image and Instance type added
+- VCD: IP Pool allocated IPs sync added
+- VCD: Ubuntu 16.04 layout
+- Xen: Hypervisor Console added
 
 Fixes
-------
+-----
 
-OTC - remove Local Disk provision option since not supported
-Remove CPU Only price type
-Tenant limits not working
-instanceLimits isn't inherited from the base role
-Username showing twice on manual VM add
-Forgot Password Email: make email subject more indicative of password reset, not account lock
-Console issue when instance has multiple nodes
-Global Search: Quick Results - User results are blank
-VCD: VM sync is not syncing all VMs
-Cloud Timezone setting - not being respected
-VMware: Resize - issue with add/remove volumes when disk type selection disabled
-Enable 'Manage Internal Firewall' on VM should update iptable rules
-Include unmanaged in workload summary report
-Veeam Service - backups servers not appearing
-App/Instance Wizard: Configure: not showing error icon for all invalid fields
-Morpheus Health - few tweaks
-VCD: Cloud sync is reverting pool updates to network
-Service plans are not filtered with VMware Instance type and min ram on image
-LVM volumes don't get created and data is mapped to the root file system
-Saving a user record should not break linux/windows passwords
-Instance List: instance type filter buttons not working
-Suggested Search popup is too sensitive
-App Wizard - blueprint search doesnt work if no config in blueprint
-User Impersonation: not properly handling duplicate usernames
-Add error message when no role exists for sub-tenant when creating a user
-Price Policy - provisioning instances should be counted towards policy
-API: instances show returns 500 error if there are backups
-ESXi Docker Host - not using LVM on 2 disk hosts
-Unable to create NSX edge gateway
-Infoblox issues
-Scaling Up - missed deploy when scaling multiple nodes
-Scaling Down - not cleaning up environment variables
-Bluecat provision issues
-UCS Cloud - credentials dont work on add, only edit
-LB: AVI - fields are missing for the LB in provision wizards
-Postgres/Mongo Backup - doesnt work
-F5 LB: Pools - issues with edit pool
-F5 LB: Monitor - parent monitor not working with custom monitors
-Venafi - Request Cert timing out
-Ansible Tower - ansible provision failing
-Ansible Tower - Edit modal doesnt open from Automation Services
-Issues with docker containers on Bluemix CF
-KVM: Clone - doesnt work
-Veeam: Backup Restores not working for existing jobs
-Billing API does not return usages for zones that do not exist
+- API: Fix for /api/check-types call fails w/ unable to find API endpoint error
+- API: Fix for /api/key-pairs call triggering 403 error
+- API: Fix for /api/certificates call triggering 403 error
+- API: Fix for /api/instances/:id call resulting in http 500 error if the Instance has any backups
+- App Wizard: Fix for app validation issue with service plan ranges
+- App Wizard: Fix for blueprint search when no config exists in Blueprint
+- Clouds: Fix for Cloud Timezone setting not being respected for IBM Cloud, UpCloud and Softlayer
+- Docker: Fix for intermittent LVM volume creation issue
+- Forgot Password Email: Email subject more indicative of password reset, not account lock
+- Global Search: Fix for User results missing from Quick Results
+- Hosts: Resolved toggle for "Manage Internal Firewall" on Edit Host to reset all acls on save.
+- Hosts: SSH Username corrected to SSH Password when adding Unmanaged Linux Vm
+- Infoblox: Fix for issues with pool and domain records
+- Instance List: Fix for Instance Category icons not filtering the Instances List
+- Load Balancers: F5: Fix for description not being set for pool
+- Load Balancers: F5: Fix for error when saving with no port number defined when >=2 members
+- Load Balancers: F5: Fix for issues with edit pool
+- Load Balancers: F5: Monitor - parent monitor not working with custom monitors
+- Load Balancers: Fix for LB's not getting created when provisioned via app wizard
+- Nutanix: Fix for applying Static IP's via unattend.xml
+- OTC: Local Disk provision option removed (not supported)
+- Price Policy: Provisioning Instances now counted towards policy
+- Pricing: CPU Only price type removed
+- Provisioning: Fix for not showing error icon for all invalid fields
+- Provisioning: Fix for Service Plans not filtered for "VMware" Instance Type
+- Remote Console: Fix for Console issue when instance has multiple nodes
+- Search: Search bar displayed now after 250ms hover
+- Tenants: Tenant Limits removed, replaced by Tenant Policies
+- User Details: Fix for updating User Settings changing password on save when passwords were not updated.
+- User Impersonation: not properly handling duplicate usernames
+- VCD: Fix for Cloud sync not syncing all VMs
+- Veeam: Fix for Veeam Service legacy data (pre 3.5.0) causing backups servers not appearing
+- VMware: Fix for Resize issue with add/remove volumes when disk type selection disabled

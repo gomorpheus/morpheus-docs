@@ -1,6 +1,8 @@
 Ubuntu
 ------
 
+.. IMPORTANT:: Ubuntu 18.04 install requires NTP (``sudo apt-get install ntp) and the ``libpng12-dev`` package which is no longer in default Ubuntu configured repos on 18.04. Run ``sudo apt-add-repository "deb http://us.archive.ubuntu.com/ubuntu/ xenial main universe"`` or install ``libpng12-dev`` manually if reconfigure fails on installing ``libpng12-dev``
+
 To get started installing |morpheus| on Ubuntu (14.04 currently) a few prepratory items should be addressed first.
 
 #. First make sure the apt repository is up to date by running ``sudo apt-get update``. It might also be advisable to verify that the assigned hostname of the machine is self resolvable.
@@ -9,7 +11,7 @@ To get started installing |morpheus| on Ubuntu (14.04 currently) a few preprator
 
 #. Next simply download the relevant ``.deb`` package for installation. This package can be acquired from your account rep or via a free trial request from |morpheushub|.
 
-   .. TIP:: Use the ``wget`` command to directly download the package to your appliance server. i.e. ``wget https://downloads.morpheusdata.com/path/to/package.deb``
+   .. TIP:: Use the ``wget`` command to directly download the package to your appliance server. i.e. ``wget https://downloads.gomorpheus.com/path/to/package.deb`` THIS IS NOT THE PACKAGE URL. The package URL can be acquired from your account rep or via a free trial request from |morpheushub|
 
 #. Next we must install the package onto the machine and configure the morpheus services:
 

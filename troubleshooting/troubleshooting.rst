@@ -16,3 +16,5 @@ Troubleshooting
   blankdashboard.rst
   deletingtenant.rst
   cli_trouble.rst
+  ansible.rst
+  unmanage.rst

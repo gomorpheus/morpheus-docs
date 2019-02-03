@@ -132,7 +132,7 @@ While still in your Active Directory Application:
 #. Select a duration
 #. Select save
 #. Copy the Key Value
-#. Store/Paste for use as the Client ID when Adding your Azure cloud in |morpheus|
+#. Store/Paste for use as the Client Secret when Adding your Azure cloud in |morpheus|
 
    .. IMPORTANT:: Copy the key value. You won't be able to retrieve after you leave this blade.
 

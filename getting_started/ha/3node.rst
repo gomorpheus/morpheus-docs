@@ -9,7 +9,7 @@ This guide assumes the following:
 - There is an externalized database running for |morpheus| to access.
 - The database service is a MySQL dialect (MySQL, MariaDB, Galera, etc...)
 - A database has been created for |morpheus| as well as a user and proper grants have been run for the user. |morpheus| will create the schema.
-- The baremetal nodes cannot access the public internet
+- The Baremetal nodes cannot access the public internet
 - The base OS is RHEL 7.x
 - Shortname versions of hostnames will be resolvable
 - All nodes have access to a shared volume for ``/var/opt/morpheus/morpheus-ui``. This can be done as a post startup step.
@@ -20,17 +20,17 @@ Steps
 
 #. First begin by downloading the requisite |morpheus| packages either to the nodes or to your workstation for transfer. These packages need to be made available on the nodes you wish to install |morpheus| on.
 
-   .. code-block:: text
+   .. code-block:: bash
 
-    [root@app-server-1 ~]# wget https://downloads.morpheusdata.com/example/path/morpheus-appliance-offline-3.1.5- 1.noarch.rpm
-    [root@app-server-1 ~]# wget https://downloads.morpheusdata.com/example/path/morpheus-appliance-3.1.5- 1.el7.x86_64.rpm
+    [root@app-server-1 ~]# wget https://example/path/morpheus-appliance-ver-1.el7.x86_64.rpm
+    [root@app-server-1 ~]# wget https://example/path/morpheus-appliance-offline-ver-1.noarch.rpm
 
 #. Once the packages are available on the nodes they can be installed. Make sure that no steps beyond the rpm install are run.
 
    .. code-block:: bash
 
-    [root@app-server-1 ~] rpm -i morpheus-appliance-3.1.5-1.el7.x86_64.rpm
-    [root@app-server-1 ~] rpm -i morpheus-appliance-offline-3.1.5-1.noarch.rpm
+    [root@app-server-1 ~] rpm -i morpheus-appliance-ver-1.el7.x86_64.rpm
+    [root@app-server-1 ~] rpm -i morpheus-appliance-offline-ver-1.noarch.rpm
 
 #. Next you will need to edit the |morpheus| configuration file ``/etc/morpheus/morpheus.rb`` on each node.
 
@@ -39,7 +39,7 @@ Steps
    .. code-block:: bash
 
      appliance_url 'https://morpheus1.localdomain'
-     elasticsearch['es_hosts'] = {'10.100.10.121' => 9300, '10.100.10.122' => 9300, '10.100.10.123' => 9300}
+     elasticsearch['es_hosts'] = {'10.100.10.121' => 9200, '10.100.10.122' => 9200, '10.100.10.123' => 9200}
      elasticsearch['node_name'] = 'morpheus1'
      elasticsearch['host'] = '0.0.0.0'
      rabbitmq['host'] = '0.0.0.0'
@@ -55,7 +55,7 @@ Steps
    .. code-block:: bash
 
     appliance_url 'https://morpheus2.localdomain'
-    elasticsearch['es_hosts'] = {'10.100.10.121' => 9300, '10.100.10.122' => 9300, '10.100.10.123' => 9300}
+    elasticsearch['es_hosts'] = {'10.100.10.121' => 9200, '10.100.10.122' => 9200, '10.100.10.123' => 9200}
     elasticsearch['node_name'] = 'morpheus2'
     elasticsearch['host'] = '0.0.0.0'
     rabbitmq['host'] = '0.0.0.0'
@@ -71,7 +71,7 @@ Steps
    .. code-block:: bash
 
        appliance_url 'https://morpheus3.localdomain'
-       elasticsearch['es_hosts'] = {'10.100.10.121' => 9300, '10.100.10.122' => 9300, '10.100.10.123' => 9300}
+       elasticsearch['es_hosts'] = {'10.100.10.121' => 9200, '10.100.10.122' => 9200, '10.100.10.123' => 9200}
        elasticsearch['node_name'] = 'morpheus3'
        elasticsearch['host'] = '0.0.0.0'
        rabbitmq['host'] = '0.0.0.0'
@@ -125,6 +125,8 @@ Steps
       This step will fail. This is ok, and expected. If the reconfigure hangs then use Ctrl+C to quit the reconfigure run and force a failure.
 
 #. Subsequently we need to stop and start Rabbit on the NOT SOT nodes.
+
+   .. IMPORTANT:: The commands below must be run at root
 
    .. code-block:: bash
 
@@ -330,7 +332,7 @@ The most frequent case of restart errors for RabbitMQ is with epmd failing to re
 
 .. code-block:: bash
 
-  [root@app-server-1 ~]# /opt/morpheus/embedded/lib/erlang/erts-5.10.4/bin/epmd - daemon
+  [root@app-server-1 ~]# /opt/morpheus/embedded/lib/erlang/erts-5.10.4/bin/epmd -daemon
 
 And then restarting RabbitMQ:
 

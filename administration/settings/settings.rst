@@ -118,3 +118,4 @@ Available Cloud types:
 
 .. include:: whitelabel.rst
 .. include:: license.rst
+.. include:: advanced.rst

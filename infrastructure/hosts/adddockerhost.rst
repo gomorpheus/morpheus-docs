@@ -70,3 +70,76 @@ Optionally configure the following:
 .. [caption="Figure 7: ", title="Save Docker Host", alt="Save"]
 
 Your new container host will begin provisioning, and soon be running and ready for containers.
+
+Add an existing Docker Host
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+|morpheus| can manage and inventory existing/brownfield Docker Hosts by using the `Manual Docker Host` option.
+
+.. NOTE:: Adding a Docker Host that was previously managed by another |morpheus| Appliance will disable management of the host on that Appliance as the |morpheus| Agent settings will be reconfigured.
+
+.. NOTE:: `Container Mode` on the Cloud settings where the Host is being added must be set to |morpheus| for non-Kubernetes/Swarm hosts.
+
+1. Navigate to Infrastructure -> Hosts
+2. Select :guilabel:`+CONTAINER HOST` button
+3. Select `Manual Docker Host`
+4. In the CREATE HOST Wizard, enter the following:
+
+   GROUP
+
+   GROUP
+    Select the Group this Host will be available for
+
+   Select :guilabel:`NEXT`
+
+   NAME
+
+   CLOUD
+    Select the Cloud the Host will be assigned to
+   NAME
+    Enter name for the Docker Host in |morpheus|
+   DESCRIPTION
+    Enter optional description for the Docker Host
+   VISIBILITY
+    Select Tenant Visibility
+   TAGS
+    Add optional Morpheus tags (these are not meta-data tags)
+
+   Select :guilabel:`NEXT`
+
+   CONFIGURE
+
+   SSH HOST
+    Enter IP or resolvable hostname of the target host
+   SSH USER
+    Enter existing username on the target host
+   SSH PASSWORD
+    Enter password for SSH User
+   PUBLIC KEY
+    For key auth (recommended), copy and add the displayed Public Key to the ``authorized_keys`` file on the target host.
+   PLAN
+    Default Manual
+   LVM ENABLED?
+    Deselect if target host is not LVM enabled (required when using |morpheus| provided docker images)
+   DATA VOLUME
+    Enter path of the target data volume on the target host
+   SOFTWARE RAID?
+    Enable for software RAID (disabled by default)
+   NET INTERFACE
+    Enter network interface name of target host's target network
+
+   Select :guilabel:`NEXT`
+
+   AUTOMATION
+
+   POST PROVISION
+     Select a workflow to execute after Host is added (optional).
+
+   Select :guilabel:`NEXT`
+
+   REVIEW
+    Review settings and select :guilabel:`COMPLETE` to add the Manual Docker Host.
+
+Your new container host will begin provisioning, and soon be running and ready for containers.
+
+.. NOTE:: Existing containers will be inventoried after the Hosts is successfully added.

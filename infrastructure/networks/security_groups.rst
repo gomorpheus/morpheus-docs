@@ -10,6 +10,8 @@ A security group acts as a virtual firewall that controls the traffic for one or
 
 .. IMPORTANT:: The Host Level Firewall must be enabled for Security Groups to be applied. The Host Level Firewall can be enabled in `Administration -> Settings -> Host Level Firewall Enable/Disable`
 
+.. IMPORTANT:: When local firewall management is enabled, Morpheus will automatically set an IP table rule to allow incoming connections on tcp port 22 from the Morpheus Appliance.
+
 Add Security Group
 ^^^^^^^^^^^^^^^^^^
 
