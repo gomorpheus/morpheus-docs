@@ -12,12 +12,14 @@ Clouds
   Clouds/digitalocean/digitalocean.rst
   Clouds/esxi/esxi.rst
   Clouds/google/google.rst
+  Clouds/Huawei/huawei.rst
   Clouds/hyperv/hyperv.rst
   Clouds/kvm/kvm.rst
   Clouds/macstadium/macstadium.rst
   Clouds/nutanix/nutanix.rst
   Clouds/openstack/openstack
   Clouds/oracle/oraclevm.rst
+  Clouds/OTC/otc.rst
   Clouds/scvmm/scvmm.rst
   Clouds/softlayer/softlayer.rst
   Clouds/ucs_manager/ucs_manager.rst
