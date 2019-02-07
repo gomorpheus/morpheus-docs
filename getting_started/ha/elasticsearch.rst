@@ -36,33 +36,19 @@ Requirements
 Installation
 ^^^^^^^^^^^^
 
-#. Download and Install Elasticsearch
+To install Elasticsearch please use the following instructions
 
-   Elasticsearch can be downloaded directly from elastic.co in zip, tar.gz, deb, or rpm packages. For CentOS, it's best to use the native rpm package which will install everything you need to run Elasticsearch. Download it in a directory of your choosing with the command:
+https://www.elastic.co/guide/en/elasticsearch/reference/current/rpm.html#install-rpm
 
-   .. code-block:: bash
 
-    wget https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-5.6.10.rpm
+Once installed, to make sure Elasticsearch starts and stops automatically, add its init script to the default runlevels with the command:
 
-   Then install it in the usual CentOS way with the rpm command like this:
+.. code-block:: bash
 
-   .. code-block:: bash
+ sudo systemctl enable elasticsearch.service
 
-    sudo rpm -ivh elasticsearch-5.6.10.noarch.rpm
-
-   This results in Elasticsearch being installed in ``/usr/share/elasticsearch/`` with its configuration files placed in ``/etc/elasticsearch`` and its init script added in ``/etc/init.d/elasticsearch``.
-
-   To make sure Elasticsearch starts and stops automatically, add its init script to the default runlevels with the command:
-
-   .. code-block:: bash
-
-    sudo systemctl enable elasticsearch.service
-
-.. note::
-
-	If you manage an ElasticSearch cluster externally from |morpheus|, follow the steps located on the `ElasticSearch <https://www.elastic.co/guide/en/elasticsearch/reference/5.4/setup-upgrade.html>`_ website to upgrade to the latest version compatible with |morpheus|
-
-#. Configuring Elastic
+Configuring Elastic
+^^^^^^^^^^^^^^^^^^^
 
    Now that Elasticsearch and its Java dependencies have been installed, it is time to configure Elasticsearch.
 
@@ -80,12 +66,18 @@ Installation
 
    The first variables to customize on any Elasticsearch server are ``node.name`` and ``cluster.name`` in ``elasticsearch.yml``. As their names suggest, node.name specifies the name of the server (node) and the cluster to which the latter is associated.
 
+   .. important:: Make sure to uncomment each of the following listed below in `/etc/elasticsearch/elasticsearch.yml`
+
+
+
    Node 1
 
    .. code-block:: yaml
 
     cluster.name: morpheusha1
     node.name: "morpheuses1"
+    network.host: enter the IP of the node ex: 10.30.22.130
+    http.port: 9200
     discovery.zen.ping.unicast.hosts: ["10.30.20.91","10.30.20.149","10.30.20.165"]
 
    Node 2
@@ -94,6 +86,8 @@ Installation
 
      cluster.name: morpheusha1
      node.name: "morpheuses2"
+     network.host: enter the IP of the node ex: 10.30.22.130
+     http.port: 9200
      discovery.zen.ping.unicast.hosts: ["10.30.20.91","10.30.20.149","10.30.20.165"]
 
    Node 3
@@ -102,6 +96,8 @@ Installation
 
      cluster.name: morpheusha1
      node.name: "morpheuses3"
+     network.host: enter the IP of the node ex: 10.30.22.130
+     http.port: 9200
      discovery.zen.ping.unicast.hosts: ["10.30.20.91","10.30.20.149","10.30.20.165"]
 
    For the above changes to take effect, you will have to restart Elasticsearch with the command:
@@ -110,21 +106,15 @@ Installation
 
     sudo service elasticsearch restart
 
-#. Testing
-
-   By now, Elasticsearch should be running on port 9200. You can test it with curl, the command line client-side URL transfers tool and a simple GET request like this:
+   Next restart the network with the command:
 
    .. code-block:: bash
 
-    [~]$ sudo curl -X GET 'http://10.30.20.149:9200'
-          {
-            "status" : 200,
-            "name" : "morpheuses1",
-            "cluster_name" : "morpheusha1",
-            "version" : {
-              "number" : "1.7.3",
-              "build_hash" : "05d4530971ef0ea46d0f4fa6ee64dbc8df659682",
-              "build_timestamp" : "2015-10-15T09:14:17Z",
-              "build_snapshot" : false,
-              "lucene_version" : "4.10.4"
-            },
+    sudo service network restart
+
+Testing
+^^^^^^^
+
+To make sure Elasticsearch is running use the following commands
+
+https://www.elastic.co/guide/en/elasticsearch/reference/current/rpm.html#rpm-check-running

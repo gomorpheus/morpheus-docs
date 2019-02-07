@@ -20,6 +20,7 @@ Prerequisites
     option option-128 code 128 = string;
     option option-129 code 129 = text;
     next-server morpheus-appliance-ip;
+    filename "pxelinux.0";
 
 .. NOTE:: Replace ``morpheus-appliance-ip`` in the dhcpd.conf file with your |morpheus| appliance IP address.
 

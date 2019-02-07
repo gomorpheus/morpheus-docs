@@ -13,4 +13,5 @@ Operations
   approvals.rst
   usage.rst
   activity.rst
+  health.rst
   exportmorpheuslogs.rst

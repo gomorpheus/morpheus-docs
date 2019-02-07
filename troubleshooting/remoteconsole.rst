@@ -94,9 +94,9 @@ Unlike SSH and RDP, valid credentials do not need to be set on the VM or Host re
 .. NOTE::
   - Auto-login is not supported for Hypervisor Console. Auto-login role settings do not apply to console connecting when using Hypervisor Console. Please note Hypervisor Console sessions persist on the ESXi host and once a user manually logs in to the VM they will continue to be logged in, even if the console tab/window in |morpheus| is closed, until they manually log out.
   - Copy and Paste and Text selection in Linux terminals is not supported when using VNC (VMware Hypervisor Console).
-  - In |morpheus| versions 3.2.0 and higher, a newer Guacamole version is installed that is not compatible with MacOS Platform Types over VNC. The
+  - In |morpheus| versions 3.2.0 and higher, a newer Guacamole version is installed that is not compatible with MacOS Platform Types over VNC.
 
-.. IMPORTANT:: All VMs that are inventoried or provisioned into a VMware cloud with Hypervisor Console enabled will have their Console Type set to VNC. Disabling Hypervisor Console will only apply to newly inventoried or provisioned VM's. VM's inventoried or provisioned when Hypervisor Console was enabled will continue to use the VNC protocol even after Hypervisor Console is disabled. To revert a VM
+.. IMPORTANT:: All VMs that are inventoried or provisioned into a VMware cloud with Hypervisor Console enabled will have their Console Type set to VNC. Disabling Hypervisor Console will only apply to newly inventoried or provisioned VM's. VM's inventoried or provisioned when Hypervisor Console was enabled will continue to use the VNC protocol even after Hypervisor Console is disabled. 
 
 
 Copy and Paste

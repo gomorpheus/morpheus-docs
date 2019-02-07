@@ -1,13 +1,10 @@
-
 Storage
 =======
 
 .. toctree::
-  Storage/AzureStorage.rst
-   .. Storage/3par.rst
-   .. Storage/AmazonS3.rst
-   .. Storage/CIFS.rst
-   .. Storage/MorpheusLocalStorage.rst
-   .. Storage/NFS.rst
-   .. Storage/RackSpace.rst
-   .. Storage/Swift.rst
+  storage/3par.rst
+  storage/AzureStorage.rst
+  storage/dell_ecs.rst
+  storage/isilon.rst
+  storage/rubrik-test.rst
+  storage/zerto-test.rst

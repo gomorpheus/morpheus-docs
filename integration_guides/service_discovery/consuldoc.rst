@@ -11,7 +11,7 @@ Add Consul Integration
 #. Populate the following fields:
 
    Name
-    Name of the Consul Integration in |morpheus| 
+    Name of the Consul Integration in |morpheus|
    Enabled
     Enabled by default
    Consul Host

@@ -40,6 +40,8 @@ Requirements
 Live Stream
 ^^^^^^^^^^^
 
+.. NOTE:: Live Stream is deprecated 
+
 Live Stream is a linux only streaming process that will take a snapshot of a volume and allow it to be streamed to a destination linux system that is either existing or new. The destination linux must already exist and it can either be a managed or unmanaged VM in |morpheus| . The destination will be overwritten from a root level perspective.
 
 Source

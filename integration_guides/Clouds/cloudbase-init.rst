@@ -1,7 +1,7 @@
 Windows Image with Cloudbase-Init
 -----------------------------------
 
-|Morphues| supports provisioning Windows images with Cloudbase-init to set user data, network setting and other data at boot time. The following is an example of how to prepare a Windows image with cloudbase-init and optionally sysprep it.
+|morpheus| supports provisioning Windows images with Cloudbase-init to set user data, network setting and other data at boot time. The following is an example of how to prepare a Windows image with cloudbase-init and optionally sysprep it.
 
 Setup
 ^^^^^

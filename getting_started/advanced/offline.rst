@@ -1,3 +1,5 @@
+.. _offline-installation:
+
 Offline Installer
 -----------------
 
@@ -6,7 +8,7 @@ For customers that have an appliance behind a firewall/proxy that does not allow
 Offline Installer Requirements
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-- NTP should be correctly configured an the server is able to connect to the NTP server in the ntp.conf file.
+- NTP should be correctly configured and the server is able to connect to the NTP server in the ntp.conf file.
 - The OS package repositories should be configured to use local LAN repository servers or the server should be able to receive packages from the configured repositories.
 - The standard Morpheus and offline packages must be downloaded from another system and transferred to the Morpheus Appliance server.
 

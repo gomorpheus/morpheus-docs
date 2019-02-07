@@ -1,0 +1,139 @@
+v3.6.0
+=======
+
+Morpheus v3.6 promotes v3.5 to a LTS branch. v3.6.0 contains everything in 3.5.3, please refer to all 3.5 release notes when upgrading from the 3.4 LTS branch to v3.6.
+
+.. note::
+
+	If upgrading from 3.5.2 or earlier, yum and msi agent installs are now over port 443
+
+.. important::
+
+	If upgrading from 3.5.2 or earlier, Ngnix needs to be restarted after 3.5.3 upgrade with ``morpheus-ctl restart nginx`` to accommodate yum and msi agent installs over 443
+
+Release date:
+
+New Features
+------------
+
+- Isilon: `NFS mount path for Isilon volumes`_ displayed in Isilon tab
+- Policies: New `File Share Storage Quotas`_ and `Object Storage Quotas`_ policy types added.
+- Clouds: `Disable Clouds now filtered`_ in Instance, App, Host, Migration and Blueprint wizards
+- Instances: `Long Instance and Host names now wrap`_ in list view
+- Ansible: `Ansible execution over command bus`_ added. Morpheus has removed the need for ssh or winrm for Ansible!
+- Ansible: `Ansible verbose logging mode`_ added
+- Clouds: `Huawei Cloud integration added`_ 
+- Remedy: Tenant and User added to main asset
+- API/CLI - mute monitoring checks
+- Add Post Provision phase output to Instance history
+- DISA Compliance: sudoers.d via cloud-init no longer adds users with NOPASSWD flag in
+- Remedy: Approvals
+- SCVMM : Use agent for communication rather than winrm
+- SCVMM : Do not require cloud selection for SCVMM clouds
+- Keyboard layout in VMware console
+- Policies: Updated Policy Icons
+- User Group Creation Policy Type
+- Appliance: HA: Check server agent TLS support for RabbitMQ connection
+- Azure - add/remove Resource Pools
+- TerraForm: Reapply Wizard
+- Convert to Managed - select Version and Layout
+- Google support multiple networks
+- AWS: Clouds can now be scoped to all VPCs in a region instead of a single VPC per region
+- AWS: Costs & Reservations sync. |morpheus| now syncs in AWS costs and EC2 Reservations from AWS.
+- AWS- Summary Page
+- Google Cloud: Windows support added
+- Rubrik: SLA Domains added to instance detail backup tab and backup details
+- Run Tasks instance action
+Billing: Data now contains server ID & external ID
+new windows agent
+- windows agent install can now install over unattend or Cloudbase-Init
+Storage Quota Policies for ISILON, ECS
+Storage Servers: Tenancy Visibility setting added for Dell EMC Isilon and ECS Storage Servers
+KVM Import Image- Added ability to import a KVM virtual machine image from both a managed and unmanaged KVM cloud. Supports both CEPH and LVM
+HCL4j parser- updated to handle 100% coverage of terraform syntax formats
+brownfield usage tracking changes for changes to resource sizes for VMware and Nutanix
+fixed that issue with VMware disk adds to skip scsi 0:7
+App Tiered provisioning can now handle VERY long provisioning workloads upwards of 14+ hours
+Delete backup archives on failures
+- Check server agent TLS support for RabbitMQ connection
+- Ansible we nested it into a nested python dictionary prefixed with morpheus to reduce chances of stepping on reserved variable names `morpheus["customOptions"]["myFieldName"]`
+Fixes
+-----
+
+Ansible execution over command bus
+..................................
+
+Morpheus has removed the need for ssh or winrm for Ansible! The new Ansible execution over command bus feature allows running ansible over the |morpheus| agent command bus, removing the need for an ssh or winrm connection for Ansible, or any open incoming ports on the target host. The Morpheus Agent (which can be installed with no open incoming ports on the target vm/host as well) will pull and execute Ansible commands locally.
+
+To enable Ansible execution over the |morpheus| agent command bus, edit you Ansible integration and select " Use Morpheus Agent Command Bus"
+
+.. image:: /images/provisioning/automation/ansible/3_6_0_Ansible_Command_Bus
+
+Ansible verbose logging mode
+............................
+
+When using Ansible execution over the Morpheus Agent command bus, verbose debug logging can be enabled but editing an Ansible Integration. Along with the "Use Morpheus Agent Command Bus" flag, "Enable Verbose Logging" is a new setting on Ansible integration settings that will output debug level logs for Ansible execution, visible in the Instance history section by selection the "i" bubble on an executed Ansible task.
+
+
+.. image:: /images/provisioning/automation/ansible/3_6_0_ansible_verbose_logging_flag
+
+File Share Storage Quotas
+.........................
+
+The new File Share Storage Quotas Policy type allows, you guessed it, setting Storage Quotas for File Shares.
+
+To add, in ``Administration -> Policies`` add a new Policy, and select ``File Share Storage Quota``.
+
+.. image:: /images/provisioning/automation/ansible/3_6_0_policies_file_share_quota_config
+
+
+
+Then set the Name, give it a good description, set the size in GB, and scope it Globally or to a User.
+
+.. image:: /images/provisioning/automation/ansible/3_6_0_policies_file_share_quota_select
+
+
+Object Storage Quotas
+......................
+
+The new Object Storage Quotas Policy type allows, you guessed it, setting Storage Quotas for Object Stores.
+
+To add, in ``Administration -> Policies`` add a new Policy, and select ``Object Storage Quota``.
+
+.. image:: /images/provisioning/automation/ansible/3_6_0_policies_object_storage_quota_select
+
+
+
+Then set the Name, give it a good description, set the size in GB, and scope it Globally or to a User.
+
+.. image:: /images/provisioning/automation/ansible/3_6_0_policies_object_storage_quota_config
+
+
+Disable Clouds now filtered
+...........................
+
+Previously, deselecting "Enabled" in a Clouds configuration settings only disabled sync and greyed it out in the Clouds list view. Now disabled clouds are filtered out/hidden in Instance, App, Host, Migration and Blueprint wizards.
+
+.. NOTE:: If you disable a cloud to temporarily pause sync, be sure to re-enable it for provisioning.
+
+
+Long Instance and Host names now wrap
+.....................................
+
+Instance and Host list pages now wrap long Instance and Host names, allowing for viewing the entirety of a long Instance or Host name without having to select or hover.
+
+.. image:: /images/provisioning/automation/ansible/3_6_0_name_wrap
+
+Huawei Cloud integration added
+..............................
+
+Huawei Cloud now available as a Cloud integration in Morpheus v3.6.0.
+
+images/provisioning/automation/ansible/3_6_0_huawei
+
+NFS mount path for Isilon volumes
+..................................
+
+The path to fileshare is now displayed on the Isilon tab to make it easier for users to know how to mount the share in a VM
+
+.. image:: /images/infrastructure/Storage/3_6_0_isilon_share_path.png

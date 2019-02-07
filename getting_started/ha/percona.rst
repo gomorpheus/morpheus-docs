@@ -5,6 +5,7 @@ Installation and configuration of Percona XtraDB Cluster on CentOS/RHEL 7
 
 .. IMPORTANT:: This is a sample configuration only. Customer configurations and requirements will vary.
 
+
 Requirements
 ^^^^^^^^^^^^
 
@@ -27,83 +28,26 @@ You will need to edit the selinux configuration file if you want the permission 
 Add Percona Repo
 ^^^^^^^^^^^^^^^^
 
-#. Add the percona repo to your Linux Distro.
+Please use the following link for the most up to date Percona repository installation instructions
 
-   .. code-block:: bash
+https://www.percona.com/doc/percona-repo-config/yum-repo.html
 
-    sudo yum install http://www.percona.com/downloads/percona-release/redhat/0.1-4/percona-release-0.1-4.noarch.rpm
-
-#. Check the repo by running the below command.
-
-   .. code-block:: bash
-
-    sudo yum list | grep percona
-
-#. The below commands will clean the repos and update the server.
-
-   .. code-block:: bash
-
-    sudo yum clean all
-    sudo yum update -y
 
 Installing Percona XtraDB Cluster
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-#. The below command will install the Percona XtraDB Cluster software and it’s dependences.
+Please use the following link for the most up to date Percona cluster installation instructions
 
-   .. code-block:: bash
+https://www.percona.com/doc/percona-xtradb-cluster/LATEST/install/yum.html#installing-from-percona-repository
 
-    sudo yum install Percona-XtraDB-Cluster-57
+  .. IMPORTANT:: On Step 6, do not exit MySQL. After the ALTER USER command, please follow the steps listed below.
 
-   .. NOTE:: During the installation you will receive the below message. Accept the Percona PGP key to install the software.
-
-   .. code-block:: bash
-
-    retrieving key from file:///etc/pki/rpm-gpg/RPM-GPG-KEY-Percona
-    Importing GPG key 0xCD2EFD2A:
-    Userid     : "Percona MySQL Development Team <mysql-dev@percona.com>"
-    Fingerprint: 430b df5c 56e7 c94e 848e e60c 1c4c bdcd cd2e fd2a
-    Package    : percona-release-0.1-4.noarch (installed)
-    From       : /etc/pki/rpm-gpg/RPM-GPG-KEY-Percona
-    Is this ok [y/N]: y
-
-
-#. Next we need enable the mysql service so that the service started at boot.
-
-   .. code-block:: bash
-
-    sudo systemctl enable mysql
-
-#. Next we need to start mysql
-
-   .. code-block:: bash
-
-    sudo systemctl start mysql
-
-#. Next we will log into the mysql server and set a new password. To get the temporary root mysql password you will need to run the below command.The command will print the password to the screen. Copy the password.
-
-   .. code-block:: bash
-
-      sudo grep 'temporary password' /var/log/mysqld.log
-
-#. Login to mysql
-
-   .. code-block:: bash
-
-    mysql -u root -p
-    password: `enter password copied above`
-
-#. Change the root user password to the mysql db
-
-   .. code-block:: bash
-
-    ALTER USER 'root'@'localhost' IDENTIFIED BY 'MySuperSecurePasswordhere';
 
 #. Create the sstuser user and grant the permissions.
 
    .. code-block:: bash
 
-    mysql> CREATE USER 'sstuser'@'localhost' IDENTIFIED BY 'M0rpheus17';
+    mysql> CREATE USER 'sstuser'@'localhost' IDENTIFIED BY '$sstuser_db_user_pw';
 
    .. NOTE:: The sstuser and password will be used in the /etc/my.cnf configuration.
 
@@ -128,7 +72,7 @@ Once the service is stopped on all nodes move onto the next step.
 Add [mysqld] to my.cnf in /etc/
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-#. Copy the below contents to ``/etc/my.cnf``.  The node_name and node_address needs to be unique on each of the nodes. The first node does not require the gcomm value to be set.
+#. Copy the below contents to ``/etc/my.cnf``.  The ``node_name`` and ``node_address`` needs to be unique on each of the nodes. The first node does not require the gcomm value to be set.
 
    .. code-block:: bash
 
@@ -139,14 +83,14 @@ Add [mysqld] to my.cnf in /etc/
       [mysqld]
       wsrep_provider=/usr/lib64/galera3/libgalera_smm.so
 
-      wsrep_cluster_name=popeye
+      wsrep_cluster_name=$dbclustername
       wsrep_cluster_address=gcomm://  #Leave blank for Master Node. The other nodes require this field. Enter the IP address of the primary node first then remaining nodes. Separating the ip addresses with commas like this 10.30.20.196,10.30.20.197,10.30.20.198##
 
-      wsrep_node_name=morpheus-node01
-      wsrep_node_address=10.30.20.57
+      wsrep_node_name=$nodename
+      wsrep_node_address=$nodeip
 
       wsrep_sst_method=xtrabackup-v2
-      wsrep_sst_auth=sstuser:M0rpheus17
+      wsrep_sst_auth=sstuser:$sstuser_db_user_pw
       pxc_strict_mode=PERMISSIVE
 
       binlog_format=ROW
@@ -164,7 +108,7 @@ Bootstrapping the first Node in the cluster
 
    .. code-block:: bash
 
-    systemctl start mysql@bootstrap.service
+    sudo systemctl start mysql@bootstrap.service
 
    .. NOTE:: The mysql service will start during the boot strap.
 
@@ -264,14 +208,13 @@ Bootstrapping the first Node in the cluster
 
    .. code-block:: bash
 
-    mysql> CREATE USER 'morpheusadmin'@'%' IDENTIFIED BY 'Cloudy2017';
+    mysql> CREATE USER '$morpheus_db_user_name'@'$source_ip' IDENTIFIED BY '$morpheus_db_user_pw';
 
 #. Next Grant your new morpheus user permissions to the database.
 
    .. code-block:: bash
 
-    mysql> GRANT ALL PRIVILEGES ON * . * TO 'morpheusadmin'@'%' IDENTIFIED BY 'Cloudy2017' with grant option;
-
+    mysql> GRANT ALL PRIVILEGES ON *.* TO '$morpheus_db_user_name'@'$source_ip' IDENTIFIED BY '$morpheus_db_user_pw' with grant option;
 
     mysql> FLUSH PRIVILEGES;
 
@@ -279,7 +222,7 @@ Bootstrapping the first Node in the cluster
 
    .. code-block:: bash
 
-    SHOW GRANTS FOR 'morpheusadmin'@'%';
+    SHOW GRANTS FOR '$morpheus_db_user_name'@'$source_ip';
 
 
 Bootstrap the Remaining Nodes
@@ -383,6 +326,6 @@ Verification
 
    .. code-block:: bash
 
-    mysql -u morpheusadmin -p  -h 192.168.10.100
+    mysql -u $morpheus_db_user_name -p  -h 192.168.10.100
 
    .. NOTE:: This command requires mysql client installed. If you are on a windows machine you can connect to the server using mysql work bench which can be found here https://www.mysql.com/products/workbench/
