@@ -1,10 +1,10 @@
-Clouds
+AppliancesClouds
 ======
 
 Overview
 --------
 
-Clouds are integrations or connections to public, private, hybrid clouds, or bare metal servers. Clouds can belong to many groups and contain many hosts. The clouds view a includes search feature and provides the option to edit, delete, and add new clouds. |morpheus| supports most Public Clouds and Private Clouds.
+Clouds are integrations or connections to public, private, hybrid clouds, or bare metal servers. Clouds can belong to many groups and contain many hosts. The clouds view includes clouds status, statistics, tenant assignment, and provides the option to add, edit, delete new clouds. |morpheus| supports most Public Clouds and Private Clouds.
 
 Supported Cloud Types
 ^^^^^^^^^^^^^^^^^^^^^
@@ -16,16 +16,17 @@ Supported Cloud Types
 * Bluemix
 * Bluemix Platform
 * Cloud Foundry
-* Dell
+* Dell (Cloud type for PXE and manually added Dell EMC Hosts)
 * DigitalOcean
 * Google Cloud
-* HPE
+* HPE (Cloud type for PXE and manually added HPE Hosts)
 * HPE OneView
+* Huawei
 * Hyper-V
 * Kubernetes
 * MacStadium
 * Metacloud
-* Morpheus (generic)
+* Morpheus (Generic Cloud type for PXE and manually added Hosts)
 * Nutanix
 * Open Telekom Cloud
 * OpenStack
@@ -34,7 +35,7 @@ Supported Cloud Types
 * Platform 9
 * SCVMM
 * SoftLayer
-* Supermicro
+* Supermicro (Cloud type for PXE and manually added Supermicro Hosts)
 * UCS
 * UpCloud
 * VMWare ESXi
