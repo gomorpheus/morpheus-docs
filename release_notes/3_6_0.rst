@@ -144,55 +144,55 @@ Bug Fixes
 
 - Active Directory: Fix for user accounts locking during login
 - Administration: Fix for error when deleting subtenant
-- API/CLI: Fix for multitenant error
-- API/CLI: Fix for role update to allow cloud access via CLI fails
+- API/CLI: Fix for multitenant error received while setting multitenant role
+- API/CLI: Fix for updating roles to allow cloud access via CLI
 - API/CLI: Fix for Morpheus push API checks
 - API/CLI: Fix for Create App not handling JSON parameters (description & site ID)
 - API/CLI: Fix for history API query filters not working
 - API/CLI: Fix for API processes for appId
-- API/CLI:  Fix for create a security group rule not persisting instanceTypeId
+- API/CLI: Fix for creating a security group rule not persisting instanceTypeId
 - API/CLI: Fix for creating a restart task on CLI giving an error
-- API/CLI: Fix for API/CLI execution failure to create networks
+- API/CLI: Fix for API/CLI failure to create networks
 - Apps: Fix for instance configuration getting reset during app wizard
 - Archive: Fix for morpheus user session timeout during large file upload
 - ARM Templates: Fix for conditional 'if(..)' statements breaking ARM apps
 - Backups: Fix for appliance backup message in Admin
-- Blueprint: Fix for reordered tiers for multi tier blueprint
+- Blueprint: Fix for reordered tiers in multi tier blueprint
 - Blueprint: Fix for exposed ports not being lockable
-- Blueprints:  Fix for volume size issue with responsiveness
-- Clouds: Fix for deleting cloud removes IP-pool range
-- Clouds:  Fix for Open Telekom Cloud router & networks created disappear and do not get populated onto the Open Telekom Cloud
-- Cloud: Fix for assigning AWS Cloud to subtenant showing no security groups
-- Custom Library:  Fix for instance wizard won't allow provisioning a custom library item for oracleVM
-- Custom Library Items: Fix for Sub-Tennant are unable to use custom library items from instance creation wizard.  When the account/tenant instance type is set to custom
+- Blueprint: Fix for volume size issue with responsiveness
+- Clouds: Fix for cloud deletion removes IP-pool range
+- Clouds: Fix for Open Telekom Cloud router & networks not populating onto the Open Telekom Cloud
+- Clouds: Fix for AWS Cloud assigned to subtenant showing no security groups
+- Custom Library: Fix for instance wizard not allowing a custom library item for oracleVM
+- Custom Library: Fix for Sub-Tennants unable to use custom library items from instance creation wizard when the account/tenant instance type is set to custom
 - Groups: Fix for User Group not getting deleted when associated to instances or servers
-- Host: Fix for Dockerhost & Kubernetes host not reployable on VIO
+- Hosts: Fix for Dockerhost & Kubernetes host not reployable on VIO
 - Hosts: Fix for Ubuntu Docker hosts name servers removed after a reboot
-- Instances: Fix for instance powering off instead of shutting down
-- Instances:  Fix for multi-select convert to managed has no group selection
-- Instances: Hid start / stop service on instance list when not applicable
-- Instances:  Fix for reconfigure VM/Host not adding usage record
-- Instances:  Fix for cannot clone Windows instance
+- Instances: Fix for instances powering off instead of shutting down
+- Instances: Fix for multi-select convert to managed not having group selection
+- Instances: Fix for start/stop service on instance list showing when not applicable
+- Instances: Fix for reconfigured VM/Host not adding usage record
+- Instances: Fix for not being able to clone Windows instance
 - Instances: Fix for sub nav bar not appearing when clicking app link in instance detail page
-- Instances:  Fix for Plan/Resource change detected when altered on cloud (not creating new usage records)
+- Instances  Fix for Plan/Resource change detected when altered on cloud (not creating new usage records)
 - Images: Fix for images being larger than selected plan
 - Images: Fix for seeded CentOS 7.2 & 7.3 Docker system images
 - Images: Fix for GPS images incorrect labeling
 - Load Balancer: Fix for AVI fields missing in LB provisioning wizard
-- Networking: Fix for unable to create NSX edge gateway
+- Networking: Fix for not being able to create NSX edge gateway
 - Nutanix: Fix for Windows hostnames being counted/truncated
 - OCI: Fix for regions not working properly
-- Openstack: Fix for wrong plan tied to instance
-- Pricing: Fix for  loud not showing in pricing label
+- Openstack: Fix for wrong plan tied being to instance
+- Pricing: Fix for cloud not showing in pricing label
 - Pricing: Fix for hourly plan inconsistency
 - Pricing: Fix for changes in machine configuration not being recorded in billing
-- Provisioning: Fix for Windows VM turning status green prematurely 
+- Provisioning: Fix for Windows VM turning status green prematurely
 - Provisioning: Fix for Google Windows provisioning issue
 - Reporting: Fix for cost reports incorrect currency conversion
 - Reporting: Fix for mislabeling cost reports
 - SAML: Fix for log out page error when integrated with SAML
 - Scale: Fix for scale priority under threshold not working as expected
-- SCVMM: Fix for SCVMM provisioning fails during failover cluster setup
+- SCVMM: Fix for SCVMM provisioning failing during failover cluster setup
 - SCVMM: Fix for cloud not syncing storage
 - Storage: Fix for storage showing wrong datastore
 - VCD: Fix for issue with large number of templates and API
@@ -203,11 +203,11 @@ Bug Fixes
 - VCD: Fix for custom instance type not shown for VCD clouds
 - VCD: Fix for vmId and vappId needing to be swapped
 - VCD: Fix for VM computer name/hostname truncated with container ID
-- VCD: Fix for Windows instances no syspreped
+- VCD: Fix for Windows instances not syspreped
 - vCloud: Fix for cloud-init iso files being left in media
 - Veeam: Fix for removing existing job removing wrong job
 - Veeam: Fix for Actions -> Backup on an instance executes the entire job rather than backup for itself
-- VIO:  Fix for unable to delete instance, remains in deleting state when load balancer attached
+- VIO:  Fix for not being able to delete instance, remaining in deleting state when load balancer attached
 - Virtual Machines: Fix for external_id not showing for unmanaged instances in UI
 - VMware: Fix for thick template disk not respecting cloud setting
 - VMware: Fix for additional disks using SCSI 0:7
