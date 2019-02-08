@@ -1,64 +1,64 @@
 v3.6.0
-=======
+======
 
 Morpheus v3.6 promotes v3.5 to a LTS branch. v3.6.0 contains everything in 3.5.3, please refer to all 3.5 release notes when upgrading from the 3.4 LTS branch to v3.6.
 
-.. note::
+.. note:: If upgrading from 3.5.2 or earlier, yum and msi agent package requests are now over port 443 instead of 80. 80 is still required for apt packages.
 
-	If upgrading from 3.5.2 or earlier, yum and msi agent installs are now over port 443
-
-.. important::
-
-	If upgrading from 3.5.2 or earlier, Ngnix needs to be restarted after 3.5.3 upgrade with ``morpheus-ctl restart nginx`` to accommodate yum and msi agent installs over 443
+.. important:: If upgrading from 3.5.2 or earlier, ngnix needs to be restarted after 3.5.3 upgrade with ``morpheus-ctl restart nginx`` to accommodate yum and msi agent installs over 443
 
 Release date:
 
 New Features
 ------------
 
-- Isilon: `NFS mount path for Isilon volumes`_ displayed in Isilon tab
-- Policies: New `File Share Storage Quotas`_ and `Object Storage Quotas`_ policy types added.
-- Clouds: `Disable Clouds now filtered`_ in Instance, App, Host, Migration and Blueprint wizards
-- Instances: `Long Instance and Host names now wrap`_ in list view
+- Agent: Morpheus Windows Agent can now install over Guest Customizations (via unattend) or Cloudbase-Init
+- Agent: Morpheus Windows Agent v1.4.4
 - Ansible: `Ansible execution over command bus`_ added. Morpheus has removed the need for ssh or winrm for Ansible!
 - Ansible: `Ansible verbose logging mode`_ added
-- Clouds: `Huawei Cloud integration added`_
-- Remedy: Tenant and User added to main asset
-- API/CLI - mute monitoring checks
-- Add Post Provision phase output to Instance history
-- DISA Compliance: sudoers.d via cloud-init no longer adds users with NOPASSWD flag in
-- Remedy: Approvals
-- SCVMM : Use agent for communication rather than winrm
-- SCVMM : Do not require cloud selection for SCVMM clouds
-- Keyboard layout in VMware console
-- Policies: Updated Policy Icons
-- User Group Creation Policy Type
-- Appliance: HA: Check server agent TLS support for RabbitMQ connection
-- Azure - add/remove Resource Pools
-- TerraForm: Reapply Wizard
-- Convert to Managed - select Version and Layout
-- Google support multiple networks
+- API & CLI: Billing Data now contains server ID & external ID
+- API/CLI - `Mute and Unmute Monitoring Checks now from CLI & API`_
+- Appliance: Check server agent TLS support for RabbitMQ connection
+- Appliance: Check server agent TLS support for RabbitMQ connection added
+- Apps: App Tiered provisioning can now handle much longer provisioning workloads
+- Automation: Added Post Provision phase output to Instance history for Workflows, Tasks and Scripts
 - AWS: Clouds can now be scoped to all VPCs in a region instead of a single VPC per region
-- AWS: Costs & Reservations sync. |morpheus| now syncs in AWS costs and EC2 Reservations from AWS.
-- AWS- Summary Page
+- `AWS: Costing & Reservations sync`_: |morpheus| now syncs in AWS costs and EC2 Reservations from AWS.
+- AWS: New Summary Tab added to AWS Cloud detail pages containing cost and EC2 Reservation statistics.
+- Azure: Resource Pool creation and removal added
+- Backups: Backup archives on failures are now automatically cleaned up
+- Clouds: `Disable Clouds now filtered`_ in Instance, App, Host, Migration and Blueprint wizards
+- Clouds: `Huawei Cloud integration added`_
+- DISA Compliance: sudoers.d via cloud-init no longer adds users with NOPASSWD flag in
 - Google Cloud: Windows support added
+- Google: Multi-network support added for Google Instances
+- Infrastructure: VMs & Hosts: Version and Layout selection added to Convert to Managed
+- Instances: ``Run Task`` Instance Action added. Allows executing individual tasks on Instances
+- Instances: `Long Instance and Host names now wrap`_ in list view
+- Isilon: `NFS mount path for Isilon volumes`_ displayed in Isilon tab
+- KVM: Import Image: Added ability to import a KVM virtual machine image from both a managed and unmanaged KVM cloud. Supports both CEPH and LVM
+- Policies: New `File Share Storage Quotas`_ and `Object Storage Quotas`_ policy types added.
+- Policies: New Policy Icons
+- Policies: User Group Creation Policy Type added
+- Remedy: Remedy Integrations now support Approval Policies for Provisioning and Lifecycle extension Approvals in Remedy.
+- Remedy: Tenant and User added to main asset
 - Rubrik: SLA Domains added to instance detail backup tab and backup details
-- Run Tasks instance action
-Billing: Data now contains server ID & external ID
-new windows agent
-- windows agent install can now install over unattend or Cloudbase-Init
-Storage Quota Policies for ISILON, ECS
-Storage Servers: Tenancy Visibility setting added for Dell EMC Isilon and ECS Storage Servers
-KVM Import Image- Added ability to import a KVM virtual machine image from both a managed and unmanaged KVM cloud. Supports both CEPH and LVM
-HCL4j parser- updated to handle 100% coverage of terraform syntax formats
-brownfield usage tracking changes for changes to resource sizes for VMware and Nutanix
-fixed that issue with VMware disk adds to skip scsi 0:7
-App Tiered provisioning can now handle VERY long provisioning workloads upwards of 14+ hours
-Delete backup archives on failures
-- Check server agent TLS support for RabbitMQ connection
-- Ansible we nested it into a nested python dictionary prefixed with morpheus to reduce chances of stepping on reserved variable names `morpheus["customOptions"]["myFieldName"]`
-Fixes
------
+- SCVMM : Do not require cloud selection for SCVMM clouds
+- SCVMM : Use agent for communication rather than winrm
+- Storage Servers: Tenancy Visibility setting added for Dell EMC Isilon and ECS Storage Servers
+- Terraform: HCL4j parser updated to handle 100% coverage of terraform syntax formats
+- TerraForm: Reapply Wizard added to Terraform Apps
+- Usage: Added usage tracking for changes to Discovered resource sizes for VM's in VMware vCenter and Nutanix Cloud types
+- VMware: Keyboard layout selection added to VMware vCenter cloud types for Console
+- ARM Templates: Fix for conditional 'if(..)' statements breaking ARM apps
+
+AWS: Costing & Reservations sync
+................................
+
+Morpheus now syncs in actual costs from AWS, including Month To Date, estimated spend, last months costs, broken down by service, including On-Demand and Reserved hours per EC2 Instance Type.
+
+.. image:: /images/infrastructure/clouds/aws/3_6_0_aws_cost_res.jpeg
+
 
 Ansible execution over command bus
 ..................................
@@ -138,41 +138,114 @@ The path to fileshare is now displayed on the Isilon tab to make it easier for u
 
 .. image:: /images/infrastructure/Storage/3_6_0_isilon_share_path.png
 
+Mute Monitoring Checks from CLI & API
+......................................
+
+.. code-block:: bash
+
+   Usage: morpheus monitor-checks mute [name]
+   Usage: morpheus monitor-groups mute [name]
+   Usage: morpheus monitor-apps mute [name]
+
+    Mute a check, check group, or monitoring app. This prevents it from creating new incidents.
+    [name] is required. This is the name or id of a check.
+      --disable can be passed to disable mute state instead, the same as unmute
+
+   Usage: morpheus monitor-checks mute-all
+   Usage: morpheus monitor-groups mute-all
+   Usage: morpheus monitor-apps mute-all
+
+    Mute all checks. This prevents the creation new incidents.
+      --disable can be passed to disable mute state instead, the same as unmute
+
+   Usage: morpheus monitor-incidents mute-all
+
+
+   Usage: morpheus monitor-checks unmute [name]
+
+      Unmute a check.
+      [name] is required. This is the name or id of a check.
+
+
+
+
+
+
+
+
+
+
+
 
 Bug Fixes
 ----------
 
-- Active Directory: Fix for user accounts locking during login
-- Administration: Fix for error when deleting subtenant
-- API/CLI: Fix for multitenant error received while setting multitenant role
-- API/CLI: Fix for updating roles to allow cloud access via CLI
-- API/CLI: Fix for Morpheus push API checks
+<<<<<<< HEAD
+- Active Directory: Fix for user accounts locking during login because of perceived failed login attempts
+- Administration: Fix for tenant delete issue when a master tenant service plan is assigned to the sub-tenant
+- API/CLI: Fix for updating user role multitenant flag
+- API/CLI: Fix for updating cloud access settings in roles
+- API/CLI: Fix for |morpheus| push API checks
 - API/CLI: Fix for Create App not handling JSON parameters (description & site ID)
 - API/CLI: Fix for history API query filters not working
-- API/CLI: Fix for API processes for appId
+- API/CLI: Fix for API processes history for appId query
 - API/CLI: Fix for creating a security group rule not persisting instanceTypeId
-- API/CLI: Fix for creating a restart task on CLI giving an error
-- API/CLI: Fix for API/CLI failure to create networks
-- Apps: Fix for instance configuration getting reset during app wizard
-- Archive: Fix for morpheus user session timeout during large file upload
-- ARM Templates: Fix for conditional 'if(..)' statements breaking ARM apps
-- Backups: Fix for appliance backup message in Admin
-- Blueprint: Fix for reordered tiers in multi tier blueprint
+- API/CLI: Fix for creating a restart task on CLI
+- API/CLI: Fix for API/CLI network creation
+- Apps: Fix for instance configuration getting reset when using "previous" in the app wizard
+- Archive: Fix for |morpheus| user session timeout during large file upload
+- Backups: Updated backup message in Admin - Backups when backups are disabled
+- Blueprint: Fix for tier order display in multi tier blueprint
 - Blueprint: Fix for exposed ports not being lockable
-- Blueprint: Fix for volume size issue with responsiveness
-- Clouds: Fix for cloud deletion removes IP-pool range
-- Clouds: Fix for Open Telekom Cloud router & networks not populating onto the Open Telekom Cloud
-- Clouds: Fix for AWS Cloud assigned to subtenant showing no security groups
+- Blueprint: Fix for volume size field responsiveness
+- Clouds: Fix for |morpheus| IP-pool ranges being deleted when a cloud with associated network is deleted
+- Clouds: Fix for Open Telekom Cloud router & network creation
+- Clouds: Fix for AWS security group subtenant visibility
 - Custom Library: Fix for instance wizard not allowing a custom library item for oracleVM
-- Custom Library: Fix for Sub-Tennants unable to use custom library items from instance creation wizard when the account/tenant instance type is set to custom
-- Groups: Fix for User Group not getting deleted when associated to instances or servers
-- Hosts: Fix for Dockerhost & Kubernetes host not reployable on VIO
-- Hosts: Fix for Ubuntu Docker hosts name servers removed after a reboot
-- Instances: Fix for instances powering off instead of shutting down
+- Custom Library: Fix for Sub-Tenants role permissions for custom instance types when tenant role Instance Type Access is set to Global:Custom
+- Groups: Fix for User Group deletion when user group is associated with existing instances
+- Hosts: Fix for Docker & Kubernetes hosts not deployable on VIO
+- Hosts: Fix for Ubuntu Docker hosts DNS name servers being removed on reboot
 - Instances: Fix for multi-select convert to managed not having group selection
 - Instances: Fix for start/stop service on instance list showing when not applicable
-- Instances: Fix for reconfigured VM/Host not adding usage record
+- Instances: Fix for reconfiguring VM/Host not adding new usage record
 - Instances: Fix for not being able to clone Windows instance
+=======
+- ? Active Directory: Fix for user accounts locking during login //? in what circumstances
+- ? Administration: Fix for error when deleting subtenant //? which error
+- ? API/CLI: Fix for multitenant error ? //which error
+- ? API/CLI: Fix for role update to allow cloud access via CLI fails //? makes no sense, reword
+- ? API/CLI: Fix for Morpheus push API checks ?//what was the issue?
+- API/CLI: Fix for Create App not handling description & site ID JSON parameters
+- API/CLI: Fix for history API query filters not working
+- ? API/CLI: Fix for API processes for appId //? need more info
+- ? API/CLI:  Fix for create a security group rule not persisting instanceTypeId //reword
+- ? API/CLI: Fix for creating a restart task on CLI giving an error //reword
+- ? API/CLI: Fix for API/CLI execution failure to create networks //reword
+- ? Apps: Fix for instance configuration getting reset during app wizard //when?
+- Archive: Fix for morpheus user session timeout during large file upload
+- ? ARM Templates: Fix for conditional 'if(..)' statements breaking ARM apps // reword to added support for
+- ? Backups: Fix for appliance backup message in Admin //?what message
+- ? Blueprint: Fix for reordered tiers for multi tier blueprint //?reword to make sense
+- ? Blueprint: Fix for exposed ports not being lockable
+- ? Blueprints:  Fix for volume size issue with responsiveness //?what issue?
+- ? Clouds: Fix for deleting cloud removes IP-pool range //reword to make sense with more detail
+- ? Clouds:  Fix for Open Telekom Cloud router & networks created disappear and do not get populated onto the Open Telekom Cloud //reword to make sense
+
+Can we run through the rest and use proper grammar and explain what the issue was please?
+
+- Cloud: Fix for assigning AWS Cloud to subtenant showing no security groups
+- Custom Library:  Fix for instance wizard won't allow provisioning a custom library item for oracleVM
+- Custom Library Items: Fix for Sub-Tennant are unable to use custom library items from instance creation wizard.  When the account/tenant instance type is set to custom
+- Groups: Fix for User Group not getting deleted when associated to instances or servers
+- Host: Fix for Docker & Kubernetes hosts not deployable on VIO
+- Hosts: Fix for Ubuntu Docker hosts name servers removed after a reboot
+- Instances: Fix for instance powering off instead of shutting down
+- Instances:  Fix for multi-select convert to managed has no group selection
+- Instances: Hid start / stop service on instance list when not applicable
+- Instances:  Fix for reconfigure VM/Host not adding usage record
+- ? Instances:  Fix for cannot clone Windows instance
+>>>>>>> 9e33240c228bbe60395f46571faffdb788716791
 - Instances: Fix for sub nav bar not appearing when clicking app link in instance detail page
 - Instances  Fix for Plan/Resource change detected when altered on cloud (not creating new usage records)
 - Images: Fix for images being larger than selected plan
@@ -196,6 +269,7 @@ Bug Fixes
 - SCVMM: Fix for cloud not syncing storage
 - Storage: Fix for storage showing wrong datastore
 - VCD: Fix for issue with large number of templates and API
+- VCD: Fix for |morpheus| triggering a power off instead of graceful shutdown for vApps
 - vCD: Fix for vCD guest customization running after instance restart
 - VCD: Fix for wrong vCenter showing when editing cloud configuration
 - VCD: Fix for Windows instances appearing as discovered when provisioned onto VC
