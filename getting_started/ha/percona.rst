@@ -15,7 +15,7 @@ Percona nodes.
 - 3306
 - 4444
 - 4567
-- 4568
+- 4568 
 
 Percona also recommends setting the selinux policy to permissive. You can temporarily set the permission to permissive by running
 
