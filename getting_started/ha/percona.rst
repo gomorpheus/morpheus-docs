@@ -2,7 +2,7 @@ Database Tier
 ---------------
 
 
-Installation and configuration of Percona XtraDB Cluster on CentOS/RHEL 7 can be found https://www.percona.com/doc/percona-server/LATEST/installation.html.
+Installation and configuration of Percona XtraDB Cluster on CentOS/RHEL 7 can be found at https://www.percona.com/doc/percona-server/LATEST/installation.html.
 
 Requirements
 ^^^^^^^^^^^^
@@ -18,7 +18,7 @@ Percona nodes.
 
 Once you have your database installed and configured:
 
-#. Next Create the Database you will be using with morpheus.
+#. Create the Database you will be using with morpheus.
 
    .. code-block:: bash
 
