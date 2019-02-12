@@ -72,6 +72,28 @@ A push Check is not polled regularly by the standard monitoring system. Instead 
         * Copy the curl command are schedule to send this via your API. For testing we used postman to send the api call at an interval of 4 mins.
         * Save Changes
 
+MySQL Check
+^^^^^^^^^^^
+
+This check is used to run a query on a host running mysql.
+
+  Use Case: 
+    Query localhost running mysql to query a table to check if there is any status as requested. If the status has a count of 1 then the check would pass else mark it as critical.
+      Values to be added to the check:
+        * Name: "<enter name>"
+        * Type: "MySQL Check"
+        * Interval: 5 mins (Select an interval)
+        * Check the box for affects availability
+        * Host: 127.0.0.1
+        * Port: 3306
+        * DB Name: morpheus
+        * User: <db user name>
+        * Password: <password>
+        * Query: "select count(*) as count from request_reference where status = 'requested';"
+        * Operator: Equal
+        * Check results: 1
+        * Save Changes
+  
 
 
 
