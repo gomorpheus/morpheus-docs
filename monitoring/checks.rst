@@ -62,16 +62,16 @@ A push Check is not polled regularly by the standard monitoring system. Instead 
 
 .. NOTE:: If a check is not heard from within the check intervals, It's status will be updated to error and an incident will be raised as if it failed.
 
-  Use Case:
-    Send an API call from an app to make sure the API is not cluttered and can send checks in a 2 mins interval.
-      Values to be added to the check:
-        * Name: "<enter name>"
-        * Type: "Push API Check"
-        * Interval: 5 mins (Select an interval)
-        * Max severity: Critical
-        * Check the box for affects availability
-        * Copy the curl command are schedule to send this via your API. For testing we used postman to send the api call at an interval of 4 mins.
-        * Save Changes
+Use Case:
+  Send an API call from an app to make sure the API is not cluttered and can send checks in a 2 mins interval.
+    Values to be added to the check:
+      * Name: "<enter name>"
+      * Type: "Push API Check"
+      * Interval: 5 mins (Select an interval)
+      * Max severity: Critical
+      * Check the box for affects availability
+      * Copy the curl command are schedule to send this via your API. For testing we used postman to send the api call at an interval of 4 mins.
+      * Save Changes
 
 MySQL Check
 ^^^^^^^^^^^^
