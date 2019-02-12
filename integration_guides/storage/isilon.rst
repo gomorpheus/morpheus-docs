@@ -4,6 +4,8 @@ Isilon
 Add Dell EMC Isilon Storage Server
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+.. IMPORTANT:: Enable insecure mode on the NFS Settings.  This allows non-root ports to be used.
+
 #. Select the Infrastructure link in the navigation bar.
 #. Select the Storage link in the sub navigation bar.
 #. In the SERVERS tab, Click the :guilabel:`+ ADD` button.
