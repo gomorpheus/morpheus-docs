@@ -46,7 +46,7 @@ A web check is useful to identify it a url is reachable and the text to match ch
         * Interval: 5 mins (Select an interval)
         * Max severity: Critical
         * Check the box for affects availability
-        * Web Url: https://demo.morpheusdata.com/operations/dashboard (Note: this page will load only if my login is successful. We can enter the login details in Username and password fields)
+        * Web Url: https://demo.morpheusdata.com/operations/dashboard (Note: this page will load only if my login is successful. Enter the login details in Username and password fields)
         * Request Method: GET
         * Basic Authentication:
           * User: <username>
