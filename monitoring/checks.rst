@@ -31,10 +31,10 @@ Check Servers
 On a base installation of |morpheus| a single `check server` is installed on the appliance. This is used for running any custom user checks. This services connects to the provided rabbitmq services and can be moved off or even scaled horizontally onto sets of check servers. All other checks that are related to provisioned containers or VMs are executed by the installed agent on the guest OS or Docker host.
 
 Check types
-^^^^^^^^^^^
+===========
 
 Web Check
-^^^^^^^^^
+---------
 
 A web check is useful to identify it a url is reachable and the text to match check criteria confirms if the website is loading with the expected values. The text to match character should be within the first few lines of the page source.
 
@@ -55,7 +55,7 @@ A web check is useful to identify it a url is reachable and the text to match ch
       Save Changes
 
 Push API Check
-^^^^^^^^^^^^^^
+--------------
 
 This check can be used to send api call to morpheus from a platform to check if the push api is working.
 A push Check is not polled regularly by the standard monitoring system. Instead it is expected that an external API push updates as to the status of the check timed closely with the configured check interval setting. This is used to throttle the push from performing too many status updates.
