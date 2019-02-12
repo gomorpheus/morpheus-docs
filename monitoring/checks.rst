@@ -29,3 +29,49 @@ Check Servers
 -------------
 
 On a base installation of |morpheus| a single `check server` is installed on the appliance. This is used for running any custom user checks. This services connects to the provided rabbitmq services and can be moved off or even scaled horizontally onto sets of check servers. All other checks that are related to provisioned containers or VMs are executed by the installed agent on the guest OS or Docker host.
+
+Check types
+^^^^^^^^^^^
+
+Web Check
+^^^^^^^^^
+
+A web check is useful to identify it a url is reachable and the text to match check criteria confirms if the website is loading with the expected values. The text to match character should be within the first few lines of the page source.
+
+  Use case:
+    Adding a check to make sure morpheus demo environment is functioning. The below check will login to the morpheus UI and look for a text Morpheus on the dashboard page.
+    Values to be added in Check:
+      Name: "<enter name>"
+      Type: Web Check
+      Interval: 5 mins (Select an interval)
+      Max severity: Critical
+      Check the box for affects availability
+      Web Url: https://demo.morpheusdata.com/operations/dashboard (Note: this page will load only if my login is successful. We can enter the login details in Username and password fields)
+      Request Method: GET
+      Basic Authentication:
+        User: <username>
+        Password: <password>
+      Text to Match: "Morpheus" (Login to the url and on the page of dashboard, right click and select view page source. In the forst few lines, look for a text that you want this check to verify)
+      Save Changes
+
+Push API Check
+^^^^^^^^^^^^^^
+
+This check can be used to send api call to morpheus from a platform to check if the push api is working.
+A push Check is not polled regularly by the standard monitoring system. Instead it is expected that an external API push updates as to the status of the check timed closely with the configured check interval setting. This is used to throttle the push from performing too many status updates.
+.. NOTE:: If a check is not heard from within the check intervals, It's status will be updated to error and an incident will be raised as if it failed.
+
+  Use Case:
+    Send an API call from an app to make sure the API is not cluttered and can send checks in a 2 mins interval.
+    Values to be added to the check:
+      Name: "<enter name>"
+      Type: "Push API Check"
+      Interval: 5 mins (Select an interval)
+      Max severity: Critical
+      Check the box for affects availability
+      Copy the curl command are schedule to send this via your API. For testing we used postman to send the api call at an interval of 4 mins.
+      Save Changes
+
+
+
+
