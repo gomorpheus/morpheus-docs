@@ -40,19 +40,19 @@ A web check is useful to identify it a url is reachable and the text to match ch
 
   Use case:
     Adding a check to make sure morpheus demo environment is functioning. The below check will login to the morpheus UI and look for a text Morpheus on the dashboard page.
-    Values to be added in Check:
-      Name: "<enter name>"
-      Type: Web Check
-      Interval: 5 mins (Select an interval)
-      Max severity: Critical
-      Check the box for affects availability
-      Web Url: https://demo.morpheusdata.com/operations/dashboard (Note: this page will load only if my login is successful. We can enter the login details in Username and password fields)
-      Request Method: GET
-      Basic Authentication:
-        User: <username>
-        Password: <password>
-      Text to Match: "Morpheus" (Login to the url and on the page of dashboard, right click and select view page source. In the forst few lines, look for a text that you want this check to verify)
-      Save Changes
+      Values to be added in Check:
+        * Name: "<enter name>"
+        * Type: Web Check
+        * Interval: 5 mins (Select an interval)
+        * Max severity: Critical
+        * Check the box for affects availability
+        * Web Url: https://demo.morpheusdata.com/operations/dashboard (Note: this page will load only if my login is successful. We can enter the login details in Username and password fields)
+        * Request Method: GET
+        * Basic Authentication:
+          * User: <username>
+          * Password: <password>
+        * Text to Match: "Morpheus" (Login to the url and on the page of dashboard, right click and select view page source. In the forst few lines, look for a text that you want this check to verify)
+        * Save Changes
 
 Push API Check
 ^^^^^^^^^^^^^^
@@ -63,14 +63,14 @@ A push Check is not polled regularly by the standard monitoring system. Instead 
 
   Use Case:
     Send an API call from an app to make sure the API is not cluttered and can send checks in a 2 mins interval.
-    Values to be added to the check:
-      Name: "<enter name>"
-      Type: "Push API Check"
-      Interval: 5 mins (Select an interval)
-      Max severity: Critical
-      Check the box for affects availability
-      Copy the curl command are schedule to send this via your API. For testing we used postman to send the api call at an interval of 4 mins.
-      Save Changes
+      Values to be added to the check:
+        * Name: "<enter name>"
+        * Type: "Push API Check"
+        * Interval: 5 mins (Select an interval)
+        * Max severity: Critical
+        * Check the box for affects availability
+        * Copy the curl command are schedule to send this via your API. For testing we used postman to send the api call at an interval of 4 mins.
+        * Save Changes
 
 
 
