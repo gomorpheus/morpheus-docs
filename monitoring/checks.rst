@@ -28,7 +28,7 @@ In many cases when it comes to monitoring databases, and services they may not b
 Check Servers
 -------------
 
-On a base installation of |morpheus| a single `check server` is installed on the appliance. This is used for running any custom user checks. This services connects to the provided rabbitmq services and can be moved off or even scaled horizontally onto sets of check servers. All other checks that are related to provisioned containers or VMs are executed by the installed agent on the guest OS or Docker host.
+On a base installation of |morpheus| a single `check server` is installed on the appliance. This is used for running any custom user checks. This service connects to the provided rabbitmq services and can be moved off or even scaled horizontally onto sets of check servers. All other checks that are related to provisioned containers or VMs are executed by the installed agent on the guest OS or Docker host.
 
 Check types
 -----------
@@ -36,7 +36,7 @@ Check types
 Web Check
 ^^^^^^^^^^
 
-A web check is useful to identify it a url is reachable and the text to match check criteria confirms if the website is loading with the expected values. The text to match character should be within the first few lines of the page source.
+A web check is useful to identify if a url is reachable and the text to match check criteria confirms if the website is loading with the expected values. The text to match character should be within the first few lines of the page source.
 
   Use case:
     Adding a check to make sure morpheus demo environment is functioning. The below check will login to the morpheus UI and look for a text Morpheus on the dashboard page.
@@ -57,8 +57,9 @@ A web check is useful to identify it a url is reachable and the text to match ch
 Push API Check
 ^^^^^^^^^^^^^^^
 
-This check can be used to send api call to morpheus from a platform to check if the push api is working.
+This check can be used to send an API call to morpheus from a platform to check if the push api is working.
 A push Check is not polled regularly by the standard monitoring system. Instead it is expected that an external API push updates as to the status of the check timed closely with the configured check interval setting. This is used to throttle the push from performing too many status updates.
+
 .. NOTE:: If a check is not heard from within the check intervals, It's status will be updated to error and an incident will be raised as if it failed.
 
   Use Case:
@@ -77,7 +78,7 @@ MySQL Check
 
 This check is used to run a query on a host running mysql.
 
-  Use Case: 
+  Use Case:
     Query localhost running mysql to query a table to check if there is any status as requested. If the status has a count of 1 then the check would pass else mark it as critical.
       Values to be added to the check:
         * Name: "<enter name>"
@@ -93,7 +94,3 @@ This check is used to run a query on a host running mysql.
         * Operator: Equal
         * Check results: 1
         * Save Changes
-  
-
-
-
