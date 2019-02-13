@@ -100,11 +100,11 @@ Use Case:
           tasks:
             - name: Add User  
               win_user:
-                name: "{{ instance['hostname'] }}"
+                name: "{{ morpheus['instance']['hostname'] }}"
                 password: "xxxxxxx"
                 state: present
   
-  .. NOTE:: `{{ instance['hostname'] }}` is the format of using Morpheus Variables
+  .. NOTE:: `{{ morpheus['instance']['hostname'] }}` is the format of using Morpheus Variables
 
 
   Create a user with a name which you enter during provisioning using a custom Instance type. This instance type has a `Text` Option type that provides a textbox to enter a username. The fieldName of the option type in this case would be `username`. Below is the playbook. 
@@ -118,11 +118,11 @@ Use Case:
           tasks:
             - name: Add User  
               win_user:
-                name: "{{ customOptions['username'] }}"
+                name: "{{ morpheus['customOptions']['username'] }}"
                 password: "xxxxxxx"
                 state: present
 
-  .. NOTE:: `{{ customOptions['username'] }}` will be the format.
+  .. NOTE:: `{{ morpheus['customOptions']['username'] }}` will be the format.
 
 Troubleshooting Ansible
 ^^^^^^^^^^^^^^^^^^^^^^^
