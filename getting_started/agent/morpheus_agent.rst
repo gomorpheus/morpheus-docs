@@ -35,7 +35,7 @@ Microsoft Windows
 
 .. NOTE:: if you require tls 1.2 then .net 4.5 should be installed.
 
-* Windows Server 2008R2 ( Requires .Net 4.3 framework)
+* Windows Server 2008R2 (Requires .Net 4.3 framework)
 * Windows Server 2012
 * Windows Server 2012R2
 * Windows Server 2016
@@ -57,7 +57,7 @@ Debian Based linux Distrubutions:
 
 * Ubuntu 14.04.x
 * Ubuntu 16.04.x
-* Ubuntu 18.04.x (only supported for VM, not docker host)
+* Ubuntu 18.04.x (Only supported for VM, not docker host)
 * Debian 8.x
 * Debian 9.x
 
