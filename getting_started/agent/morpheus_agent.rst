@@ -26,3 +26,42 @@ Key Agent Features
 * Linux agent can be shrunk and should be less then .2% peak (Windows less 97 kb)
 * Run workflows, Have expiration/shutdown policies and can help reign in environments amongst other things
 * Accepts commands, can execute commands, write files, and manipulate firewall
+
+Morpheus Agent Support
+------------------------
+
+Microsoft Windows
+^^^^^^^^^^^^^^^^^^^^^
+
+.. NOTE:: if you require tls 1.2 then .net 4.5 should be installed.
+
+Windows Server 2008R2 ( Requires .Net 4.3 framework)
+Windows Server 2012
+Windows Server 2012R2
+Windows Server 2016
+Windows Server 2019
+Windows 10 PRO
+
+Redhat Based linux Distrubution:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Redhat 6.6
+Redhat 7.x
+CentOS 6.x
+CentOS 7.x
+
+Debian Based linux Distrubutions:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Ubuntu 14.04.x
+Ubuntu 16.04.x
+Ubuntu 18.04.x
+Debian 8.x
+Debian 9.x
+
+Unix Based Operating Systems:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+MacOS Mojave
+MacOS High Sierra
+MacOS Sierra
