@@ -49,13 +49,15 @@ Redhat Based linux Distrubution:
 * Redhat 7.x
 * CentOS 6.x
 * CentOS 7.x
+* Oracle 6.x
+* Oracle 7.x
 
 Debian Based linux Distrubutions:
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 * Ubuntu 14.04.x
 * Ubuntu 16.04.x
-* Ubuntu 18.04.x
+* Ubuntu 18.04.x (only supported for VM, not docker host)
 * Debian 8.x
 * Debian 9.x
 
