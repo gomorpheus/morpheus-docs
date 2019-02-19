@@ -61,3 +61,8 @@ Exporting JSON or YAML
 .. TIP:: JSON or YAML can also be Viewed, Edited, Copied, or Exported by selecting ``ACTIONS -> EDIT`` on an App and clicking the RAW section in the Edit App modal.
 
 .. image:: /images/provisioning/apps_301_3.png
+
+Provisioning Apps via API
+-------------------------
+
+A quick example of how this work: https://d.pr/i/yxsW7t
