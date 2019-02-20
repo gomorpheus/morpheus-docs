@@ -4,7 +4,18 @@ Ansible
 Overview
 ^^^^^^^^
 
-|morpheus| supports Ansible for configuration management.  |morpheus| accomplishes this by integrating with an existing repository of playbooks as the master in a master-slave Ansible architecture.
+Ansible is a configuration management engine that is rapidly growing in popularity in the IT and DevOPS community. While it lacks some of the benefits at scale that solutions such as Salt, Chef, or Puppet offer, it is very easy to get started and allows engineers to develop tasks in a simplistic markup language known as YAML.  |morpheus| integrates with an existing repository of playbooks as the master in a master-slave Ansible architecture.
+
+|morpheus| not only supports Ansible but greatly enhances Ansible to do things that it could not do in its native form. For example, Ansible can now be configured to run over the Morpheus agent communication bus. This allows playbooks to be ran against instances where ssh/winrm access may not be feasible due to networking restrictions or other firewall constraints. Instead it can run over the Morpheus |morpheus| which only requires port 443 access back to the |morpheus appliance URL.
+
+This integration supports both Linux based and Windows platforms for playbook execution and can also be configured to query secrets from the Morpheus Cypher services (similar to Vault).
+
+Requirements
+^^^^^^^^^^^^^^^
+* Minimum Ansible Version Requirement is 2.7.x
+* For agentless non commandbus sshpass is required
+* For windows non agent command bus pywinrm is required
+
 
 Add Ansible Integration
 ^^^^^^^^^^^^^^^^^^^^^^^
@@ -67,6 +78,7 @@ Enable Ansible
   Select to bootstrap
 Ansible Group
   Ansible Inventory Group. Use existing group or enter a new group name to create a new group. Leaving this field blank will place instance in the "unassigned" inventory group.
+  .. NOTE:: An instance can belong to multiple groups by separating group names with a comma
 Playbook
   Playbook(s) to run. The .yml extension is optional.
 
@@ -85,12 +97,12 @@ Using variables
 ^^^^^^^^^^^^^^^^^
 .. NOTE:: This will work on Morpheus Feature release 3.5.3-2 and above. This is not added to LTS release.
 
-Morpehus variables can be used in playbook. 
+Morpehus variables can be used in playbook.
 
 Use Case:
 
   Create a user as instance hostname during provisioning. Below is the playbook. Add this playbook to a task and run it as a workflow on the instance.
-     
+
     .. code-block:: bash
 
       ---
@@ -98,17 +110,17 @@ Use Case:
           hosts: all
           gather_facts: false
           tasks:
-            - name: Add User  
+            - name: Add User
               win_user:
                 name: "{{ morpheus['instance']['hostname'] }}"
                 password: "xxxxxxx"
                 state: present
-  
+
   .. NOTE:: `{{ morpheus['instance']['hostname'] }}` is the format of using Morpheus Variables
 
 
-  Create a user with a name which you enter during provisioning using a custom Instance type. This instance type has a `Text` Option type that provides a textbox to enter a username. The fieldName of the option type in this case would be `username`. Below is the playbook. 
-  
+  Create a user with a name which you enter during provisioning using a custom Instance type. This instance type has a `Text` Option type that provides a textbox to enter a username. The fieldName of the option type in this case would be `username`. Below is the playbook.
+
     .. code-block:: bash
 
       ---
@@ -116,13 +128,51 @@ Use Case:
           hosts: all
           gather_facts: false
           tasks:
-            - name: Add User  
+            - name: Add User
               win_user:
                 name: "{{ morpheus['customOptions']['username'] }}"
                 password: "xxxxxxx"
                 state: present
 
   .. NOTE:: `{{ morpheus['customOptions']['username'] }}` will be the format.
+
+Using Secrets
+^^^^^^^^^^^^^^^
+
+Another great feature with using Ansible and Morpheus together is the built in support for utilizing some of the services that Morpheus exposes for automation. One of these great services is known as Cypher (please see documentation on Cypher for more details). Cypher allows one to store secret data in a highly encrypted way for future retrieval. Referencing keys stored in cypher in your playbooks is a matter of using a built-in lookup plugin for ansible.
+
+  .. code-block:: bash
+    - name: Add a user
+      win_user:
+        name: "myusername"
+        password: "{{ lookup('cypher','secret=password/myusername') }}"
+        state: present
+
+
+By using the ``{{ lookup('cypher','secret=password/myusername') }}`` syntax. One can grab the value directly out of the key for use. This lookup plugin also supports a few other fancy shortcuts. In this above example the `password/` mountpoint is capable of autogenerating passwords if they have not previously been defined and storing them within cypher for reference later.
+
+Another capability is accessing properties from within a key in cypher. The value of a key can also be a JSON object which can be referenced for properties within. For example:
+
+.. code-block:: bash
+  {{ lookup('cypher','secret=secret/myjsonobject:value') }}
+
+This would grab the `value` property off the nested json data stored within the key.
+
+Cypher is very powerful for storing these temporary or permanent secrets that one may need to orchestrate various tasks and workflows within Ansible.
+
+
+Using Ansible over the Morpheus Agent Command Bus
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+In many environments, there may be security restrictions on utilizing SSH or WinRM to run playbooks from an Ansible server on the appliance to a target machine. This could be due to being a customer network (in the environment of an MSP ), or various security restrictions put in place by tighter industries (i.e. Government, Medical, Finance).
+
+Ansible can get one in trouble in a hurry. It is limited in scalability due to its fundamental design decisions that seem to bypass concepts core to all other configuration management frameworks (i.e. SaltStack, Chef, and Puppet). Because of its lack of an agent, the Ansible execution binary itself has to handle all the load and logic of executing playbooks on all the machines in the inventory of an Ansible project. This differs from other tools where the workload is distributed across the agents of each vm. Because of this (reaching out) approach, Ansible is very easy to get started with, but can be quite a bit slower as well as harder to scale up. However, |morpheus| offers some solutions to help mitigate these issues and increase scalability while, at the same time improving security.
+
+How does the Morpheus Agent Command Bus Work? One of the great things about Morpheus is it's Agent Optional approach. This means that this functionality can work without the Agent, however the agent is what adds the security benefits being represented here. When an instance is provisioned (or converted to managed) within |morpheus|, an agent can be installed. This agent opens a secure websocket back to the Morpheus appliance (over port 443). This agent is responsible for sending back logs, guest statistics, and a command bus for automation. Since it is a WebSocket, bidirectional communication is possible over a STOMP communication bus. When this functionality is enabled on an Ansible integration, a `connection_plugin` is registered with Ansible of type `|morpheus|` and `morpheus_win`. These direct bash or powershell commands, in their raw form, from Ansible to run over a |morpheus api|. The Ansible binary sends commands to be executed as an https request over the API utilizing a one time execution lease token that is sent to the Ansible binary. File transfers can also be enacted by this API interface. When morpheus receives these commands, they are sent to the target instances agent to be executed. Once they have completed a response is sent back and updated on the `ExecutionRequest` within Morpheus. Ansible polls for the state and output on these requests and uses those as the response of the execution. This means Ansible needs zero knowledge of a machines target ip address, nor its credentials. These are all stored and safely encrypted within |morpheus|.
+
+It has also been pointed out that this execution bus is dramatically simpler than utilizing `pywinrm` when it comes to orchestrating Windows  as the winrm configurations can be cumbersome to properly setup, especially in tightly secured Enterprise environments.
+
+
 
 Troubleshooting Ansible
 ^^^^^^^^^^^^^^^^^^^^^^^
