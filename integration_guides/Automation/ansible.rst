@@ -4,7 +4,7 @@ Ansible
 Overview
 ^^^^^^^^
 
-Ansible is a configuration management engine that is rapidly growing in popularity in the IT and DevOPS community. While it lacks some of the benefits at scale that solutions such as Salt, Chef, or Puppet offer, it is very easy to get started and allows engineers to develop tasks in a simplistic markup language known as YAML.  |morpheus| integrates with an existing repository of playbooks as the master in a master-slave Ansible architecture.
+Ansible is a configuration management engine that is rapidly growing in popularity in the IT and DevOPS community. While it lacks some of the benefits at scale that solutions such as Salt, Chef, or Puppet offer. It is very easy to get started and allows engineers to develop tasks in a simplistic markup language known as YAML.  |morpheus| integrates with an existing repository of playbooks as the master in a master-slave Ansible architecture.
 
 |morpheus| not only supports Ansible but greatly enhances Ansible to do things that it could not do in its native form. For example, Ansible can now be configured to run over the Morpheus agent communication bus. This allows playbooks to be ran against instances where ssh/winrm access may not be feasible due to networking restrictions or other firewall constraints. Instead it can run over the Morpheus |morpheus| which only requires port 443 access back to the |morpheus appliance URL.
 
@@ -78,7 +78,9 @@ Enable Ansible
   Select to bootstrap
 Ansible Group
   Ansible Inventory Group. Use existing group or enter a new group name to create a new group. Leaving this field blank will place instance in the "unassigned" inventory group.
+
   .. NOTE:: An instance can belong to multiple groups by separating group names with a comma
+
 Playbook
   Playbook(s) to run. The .yml extension is optional.
 
@@ -139,9 +141,10 @@ Use Case:
 Using Secrets
 ^^^^^^^^^^^^^^^
 
-Another great feature with using Ansible and Morpheus together is the built in support for utilizing some of the services that Morpheus exposes for automation. One of these great services is known as Cypher (please see documentation on Cypher for more details). Cypher allows one to store secret data in a highly encrypted way for future retrieval. Referencing keys stored in cypher in your playbooks is a matter of using a built-in lookup plugin for ansible.
+Another great feature with using Ansible and Morpheus together is the built in support for utilizing some of the services that Morpheus exposes for automation. One of these great services is known as Cypher (please see documentation on Cypher_ for more details). Cypher allows one to store secret data in a highly encrypted way for future retrieval. Referencing keys stored in cypher in your playbooks is a matter of using a built-in lookup plugin for ansible.
 
   .. code-block:: bash
+  
     - name: Add a user
       win_user:
         name: "myusername"
@@ -154,6 +157,7 @@ By using the ``{{ lookup('cypher','secret=password/myusername') }}`` syntax. One
 Another capability is accessing properties from within a key in cypher. The value of a key can also be a JSON object which can be referenced for properties within. For example:
 
 .. code-block:: bash
+
   {{ lookup('cypher','secret=secret/myjsonobject:value') }}
 
 This would grab the `value` property off the nested json data stored within the key.
