@@ -15,7 +15,7 @@ Percona nodes.
 - 3306
 - 4444
 - 4567
-- 4568 
+- 4568
 
 Percona also recommends setting the selinux policy to permissive. You can temporarily set the permission to permissive by running
 
@@ -88,6 +88,7 @@ Add [mysqld] to my.cnf in /etc/
 
       wsrep_node_name=$nodename
       wsrep_node_address=$nodeip
+      wsrep_sync_wait=2
 
       wsrep_sst_method=xtrabackup-v2
       wsrep_sst_auth=sstuser:$sstuser_db_user_pw
