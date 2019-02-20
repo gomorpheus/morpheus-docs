@@ -35,7 +35,7 @@ Public
 Users of the Owner account may fully manage the files in a bucket.
 
 Tenants
-^^^^^^^
+^^^^^^^ 
 
 Users of the Owner account may fully manage the files in a bucket. Users of the Tenant account(s) will have read-only access. The may browse and download files in the bucket.
 
