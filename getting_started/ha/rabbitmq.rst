@@ -19,3 +19,4 @@ Recommended Rabbitmq Policies:
 
    rabbitmqctl set_policy -p morpheus --apply-to queues --priority 1 statCommands "statCommands.*" '{expires:1800000}'
    rabbitmqctl set_policy -p morpheus --apply-to queues --priority 1 morpheusAgentActions "morpheusAgentActions.*" '{expires:1800000}'
+  
