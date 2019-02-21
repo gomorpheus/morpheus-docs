@@ -1,20 +1,12 @@
 Database Tier
 ---------------
 
-
-Installation and configuration of Percona XtraDB Cluster on CentOS/RHEL 7 can be found at https://www.percona.com/doc/percona-server/LATEST/installation.html.
+Morpheus needs a database to connect to.  Out of the box Morpheus uses MySQL but Morpheus supports any mySQL compliant database.  There are many ways to set up a highly available, MySQL dialect based database.  One which has found favor with many of our customers is Percona's XtraDB Cluster.  Percona's product is based off of Galera's WSREP Clustering, which is also supported.  If you're not as familiar with WSREP and prefer replication, some of our customers prefer to configure a failover connection to a MariaDB or MySQL based Master/Master Replication cluster.  Less often used, though still a viable option, is MySQL based NDB Clustering.  Wonderful guides for each of these HA and DR based database management strategies can be found here: https://www.percona.com/doc/percona-xtradb-cluster/LATEST/index.html
 
 Requirements
 ^^^^^^^^^^^^
 
-Percona requires the following ports for the cluster nodes. Please create the appropriate firewall rules on your
-Percona nodes.
-
-- 3306
-- 4444
-- 4567
-- 4568
-
+.. NOTE:: Morpheus idiomatically connects to database nodes over 3306
 
 Once you have your database installed and configured:
 
