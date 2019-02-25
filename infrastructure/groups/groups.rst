@@ -83,14 +83,16 @@ HTTP Request
 ``POST https://api.gomorpheus.com/api/groups``
 
 shell
-``curl -XPOST "https://api.gomorpheus.com/api/groups" \
-  -H "Authorization: BEARER access_token" \
-  -H "Content-Type: application/json" \
-  -d '{"group":{
-    "name": "My Group",
-    "description": "My description",
-    "location": "US EAST"
-  }}'``
+
+.. code-block:: bash
+  curl -XPOST "https://api.gomorpheus.com/api/groups" \
+    -H "Authorization: BEARER access_token" \
+    -H "Content-Type: application/json" \
+    -d '{"group":{
+      "name": "My Group",
+      "description": "My description",
+      "location": "US EAST"
+    }}'
 
 Managing Groups
 ---------------
