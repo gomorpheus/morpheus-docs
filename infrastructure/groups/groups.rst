@@ -49,11 +49,14 @@ CLI
 
 API
 ---
-  View all groups: ``curl https://<morphes-url>/api/groups -H "Authorization: BEARER access_token"``
-  View a specific group: ``curl https://<morphes-url>/api/groups/:id -H "Authorization: BEARER access_token"``
+  View all groups: ``curl https://api.gomorpheus.com/api/groups -H "Authorization: BEARER access_token"``
+  View a specific group: ``curl https://api.gomorpheus.com/api/groups/:id -H "Authorization: BEARER access_token"``
 
 Adding Groups
--------------
+^^^^^^^^^^^^^
+
+UI
+---
 
 .. image:: /images/infrastructure/add_group.png
 
@@ -66,6 +69,28 @@ To add a group:
 #. Click the Create Group button
 #. Input out the Name and Location (optional) fields
 #. Click the Save Changes button to save
+
+CLI
+---
+
+All in one command: ``groups add CLITest -O code=cli -O location=`` I have added code and value for location is empty. The value for code and location are optional.
+Minimal values: ``groups add CLITest`` There would be prompt to provide optional values for code and location.
+
+API
+---
+
+HTTP Request
+``POST https://api.gomorpheus.com/api/groups``
+
+shell
+``curl -XPOST "https://api.gomorpheus.com/api/groups" \
+  -H "Authorization: BEARER access_token" \
+  -H "Content-Type: application/json" \
+  -d '{"group":{
+    "name": "My Group",
+    "description": "My description",
+    "location": "US EAST"
+  }}'``
 
 Managing Groups
 ---------------
