@@ -28,7 +28,7 @@ Base Requirements
     - Inbound connectivity access from provisioned vm's and container hosts on ports 443 (Agent install and communication) and 80 (Linux Agent installs via yum and apt)
     - An Appliance URL that is accessible/resolvable to all managed hosts. It is necessary for all hosts that are managed by |morpheus| to be able to communicate with the appliance server ip on port 443. This URL is configured under Admin->Settings.
 
-.. NOTE:: Ubuntu 16.10, 18.04 and Amazon Linux are not supported.
+.. NOTE:: Ubuntu 16.10 and Amazon Linux are not supported.
 
 Storage Considerations
 ----------------------
