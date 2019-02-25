@@ -32,15 +32,25 @@ The Groups view displays all current groups, includes search feature, and also e
 .. #. Select the Infrastructure link in the navigation bar
 .. #. Click the Groups link
 
-Viewing
-^^^^^^^
+Viewing Groups
+^^^^^^^^^^^^^^
 
-Groups in UI
-------------
-Groups in CLI
--------------
-Groups via API
---------------
+UI
+---
+  #. Select the Infrastructure link in the navigation bar
+  #. Click the Groups link
+
+CLI
+---
+  View all groups: ``groups list``
+  To use the group: ``groups use <id>`` or ``groups use "group name"``
+  Json output of a specific group: ``groups get <id> -j`` or ``groups get "group name" -j``
+
+
+API
+---
+  View all groups: ``curl https://<morphes-url>/api/groups -H "Authorization: BEARER access_token"``
+  View a specific group: ``curl https://<morphes-url>/api/groups/:id -H "Authorization: BEARER access_token"``
 
 Adding Groups
 -------------
