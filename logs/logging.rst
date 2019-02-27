@@ -161,7 +161,7 @@ svlogd will only rotate the current file, nginx is setup to write the access log
 Implementation of a log rotate is left up to for files outside of the services is left up to end users in case they have a log management solution.
 
 
-Below is what a suggested configuration looks like:
+Below is what a suggested configuration looks like for the file ``/etc/logrotate.d/morpheus-nginx``:
 
      .. code-block:: bash
 
