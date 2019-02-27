@@ -7,6 +7,8 @@ Install RabbitMQ on the 3 nodes and create a cluster
 
 .. NOTE:: For the most up to date RPM package we recommend using this link: https://www.rabbitmq.com/install-rpm.html#downloads
 
+.. IMPORTANT:: Morpheus connects to AMQP over 5672 or 5671(SSL) and 61613 or 61614(SSL)
+
 On All Nodes:
 .............
 
