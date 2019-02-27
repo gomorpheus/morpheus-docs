@@ -165,15 +165,15 @@ Below is what a suggested configuration looks like:
 
      .. code-block:: bash
 
-     /var/log/morpheus/nginx/morpheus*access.log {
-             daily
-             rotate 14
-             compress
-             delaycompress
-             missingok
-             notifempty
-             create 644 morpheus-app morpheus-app
-             postrotate
-                     [ ! -f /var/run/morpheus/nginx/nginx.pid ] || kill -USR1 `cat /var/run/morpheus/nginx/nginx.pid`
-             endscript
-     }
+       /var/log/morpheus/nginx/morpheus*access.log {
+               daily
+               rotate 14
+               compress
+               delaycompress
+               missingok
+               notifempty
+               create 644 morpheus-app morpheus-app
+               postrotate
+                       [ ! -f /var/run/morpheus/nginx/nginx.pid ] || kill -USR1 `cat /var/run/morpheus/nginx/nginx.pid`
+               endscript
+       }
