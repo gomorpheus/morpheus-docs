@@ -8,6 +8,7 @@ Troubleshooting
   ports.rst
   agent.rst
   remoteconsole.rst
+  deletingInstances.rst
   cant_login.rst
   uinotloading.rst
   customimage.rst

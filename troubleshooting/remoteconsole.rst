@@ -32,8 +32,8 @@ Platform Type and Cloud Settings determines the protocol and port used for Remot
    The SSH protocol will be used for Linux and OSX platform types, and 22 is the default port used.
 - RDP
    The RDP (Remote Desktop) protocol will be used for Windows platform types over port 3389 by default.
-- VNC (VMware Hypervisor Console)
-   The VNC protocol will be used for all platform types in VMware Clouds with the ``Hypervisor Console`` option enabled in cloud settings. A unique port is assigned per per Virtual Machine starting at 5900.
+- VNC
+   The VNC protocol will be used for all platform types in Clouds with the ``Hypervisor Console`` option enabled in cloud settings. VNC connection are made directly to the Hypervisor Host over port 443.
 
 .. NOTE:: Alternative ports can be configured per VM or Host by editing the VM or Host and editing the Port field in the RPC host section.
 
@@ -73,36 +73,30 @@ Default Requirements for RDP Connectivity
 VNC (VMware Hypervisor Console)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-When the ``Hypervisor Console`` option is enabled in VMware cloud settings, the VNC protocol will be used for all platform types that VMware Cloud.
+When the ``Hypervisor Console`` option is enabled in cloud settings, the VNC protocol will be used for all platform types that Cloud.
 
-When using VNC Hypervisor Console, the |morpheus| Appliance connects directly to the ESXi host the VM is on, not directly to the VM. A VNC port is assigned per Virtual Machine starting at 5900 and a complex VNC password is generated. VNC is then enabled and the port and password are set on the VMs settings in vSphere.
+When using VNC Hypervisor Console, the |morpheus| Appliance connects directly to the host the VM is on, not directly to the VM.
 
-|morpheus| features Remote Console support directly to VMware ESXi hypervisors. To enable this feature a few prerequisites must be met:
+|morpheus| features Remote Console support directly to hypervisors. To enable this feature a few prerequisites must be met:
 
-* The gdbserver Firewall setting needs to be enabled on each ESXi host the console will connect to. This can be done in vSphere under firewall configuration on the ESXi hosts by checking the gdbserver option on each required host, This will open up the necessary ports VNC ports on the ESXi host(s), starting at port 5900.
+* The |morpheus| Appliance must have network access to the host the VM is on over 443.
 
-.. NOTE:: The most common cause of Remote Console connection issues when using hypervisor console is gdbserver not being enabled on the ESXi hosts firewall settings.
+* The |morpheus| Appliance must be able to resolve the hypervisor hostnames.
 
-* The |morpheus| Appliance must have network access to the ESXi hosts within vCenter, specifically to the host the VM is on when using Remote Console, over the VNC port range, typically 5900-6000. The connection does not go through the vCenter server(s).
+.. NOTE:: VNC connections for VMs and Hosts in VMware type clouds are made directly to the ESXi hosts, not vCenter.
 
-* The |morpheus| Appliance must be able to resolve the ESXi hostnames.
-
-* VMware tools or equivalent must be installed on the VM.
-
-Unlike SSH and RDP, valid credentials do not need to be set on the VM or Host records in |morpheus| for VNC hypervisor console connections. An IP address is also not required on the VM or Host for VNC hypervisor console connections. |morpheus| will be able to connect to the VVM or Host as soon as the ``Host (Hypervisor)`` record is set, which can be viewed in the Info section on the VM or Host detail page.
+Unlike SSH and RDP, valid credentials do not need to be set on the VM or Host records in |morpheus| for VNC hypervisor console connections. An IP address is also not required on the VM or Host for VNC hypervisor console connections. |morpheus| will be able to connect to the VM or Host as soon as the ``Host (Hypervisor)`` record is set, which can be viewed in the Info section on the VM or Host detail page.
 
 .. NOTE::
-  - Auto-login is not supported for Hypervisor Console. Auto-login role settings do not apply to console connecting when using Hypervisor Console. Please note Hypervisor Console sessions persist on the ESXi host and once a user manually logs in to the VM they will continue to be logged in, even if the console tab/window in |morpheus| is closed, until they manually log out.
-  - Copy and Paste and Text selection in Linux terminals is not supported when using VNC (VMware Hypervisor Console).
-  - In |morpheus| versions 3.2.0 and higher, a newer Guacamole version is installed that is not compatible with MacOS Platform Types over VNC.
-
-.. IMPORTANT:: All VMs that are inventoried or provisioned into a VMware cloud with Hypervisor Console enabled will have their Console Type set to VNC. Disabling Hypervisor Console will only apply to newly inventoried or provisioned VM's. VM's inventoried or provisioned when Hypervisor Console was enabled will continue to use the VNC protocol even after Hypervisor Console is disabled. 
+   - Auto-login is not supported for Hypervisor Console. Auto-login role settings do not apply to console connecting when using Hypervisor Console. Please note Hypervisor Console sessions persist on the ESXi host and once a user manually logs in to the VM they will continue to be logged in, even if the console tab/window in |morpheus| is closed, until they manually log out.
+   - Copy and Paste and Text selection in Linux terminals is not supported when using VNC (VMware Hypervisor Console).
+   - In |morpheus| versions 3.2.0 and higher, a newer Guacamole version is installed that is not compatible with MacOS Platform Types over VNC.
 
 
 Copy and Paste
 --------------
 
-Copy and Paste for Text is supported for SSH and RDP protocols only.
+.. NOTE:: Copy and Paste for Text is supported for SSH and RDP protocols only.
 
 To Copy text from the console:
 

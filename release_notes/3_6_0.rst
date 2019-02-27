@@ -7,9 +7,11 @@ Morpheus v3.6 promotes v3.5 to a LTS branch. v3.6.0 contains everything in 3.5.3
 
 .. IMPORTANT:: If upgrading from 3.5.2 or earlier, ngnix needs to be restarted after 3.5.3 upgrade with ``morpheus-ctl restart nginx`` to accommodate yum and msi agent installs over 443
 
+.. IMPORTANT:: Amazon Cost & Reservations sync uses the AWS Cost Explorer API. Please be aware of any additional costs incurred from Amazon.
+
 .. NOTE:: Update to the latest morpheus-cli with ``gem update morpheus-cli``
 
-Release date:
+Release date: 2/9/19
 
 New Features
 ------------
@@ -25,13 +27,13 @@ New Features
 - ARM Templates: Added support for conditional 'if(..)' statements
 - Automation: Added Post Provision phase output to Instance history for Workflows.
 - AWS: `Amazon Clouds can now be scoped to all VPCs`_ in a region instead of a single VPC per cloud.
-- AWS: `Amazon Costing & Reservations sync`_: |morpheus| now syncs in AWS costs and EC2 Reservations from AWS.
+- AWS: `Amazon Cost & Reservations sync`_: |morpheus| now syncs in AWS costs and EC2 Reservations from AWS.
 - AWS: New Summary Tab added to AWS Cloud detail pages containing cost and EC2 Reservation statistics.
 - Azure: Resource Pool creation and removal added
 - Backups: Backup archives on failures are now automatically cleaned up
 - Clouds: `Disable Clouds now filtered`_ in Instance, App, Host, Migration and Blueprint wizards
 - Clouds: `Huawei Cloud integration added`_
-- DISA Compliance: sudoers.d via cloud-init no longer adds users with NOPASSWD flag in
+- DISA Compliance: sudoers.d via cloud-init no longer adds users with NOPASSWD flag
 - Google Cloud: Windows support added
 - Google: Multi-network support added for Google Instances
 - Infrastructure: VMs & Hosts: Version and Layout selection added to Convert to Managed
@@ -62,6 +64,8 @@ AWS: Amazon Costing & Reservations sync
 
 Morpheus now syncs in actual costs from AWS, including Month To Date, estimated spend, last months costs, broken down by service, including On-Demand and Reserved hours per EC2 Instance Type.
 
+.. IMPORTANT:: Amazon Cost & Reservations sync uses the AWS Cost Explorer API. Please be aware of any additional costs incurred from Amazon.
+
 .. image:: /images/infrastructure/clouds/aws/3_6_0_aws_cost_res.jpeg
 
 
@@ -87,7 +91,8 @@ Ansible verbose logging mode
 
 When using Ansible execution over the Morpheus Agent command bus, verbose debug logging can be enabled but editing an Ansible Integration. Along with the "Use Morpheus Agent Command Bus" flag, "Enable Verbose Logging" is a new setting on Ansible integration settings that will output debug level logs for Ansible execution, visible in the Instance history section by selection the "i" bubble on an executed Ansible task.
 
-.. image:: /images/provisioning/automation/ansible/3_6_0_policies_file_share_quota_config
+.. image:: /images/provisioning/automation/ansible/3_6_0_ansible_verbose_logging_flag
+
 
 File Share Storage Quotas
 .........................
@@ -139,7 +144,7 @@ Huawei Cloud integration added
 
 Huawei Cloud now available as a Cloud integration in Morpheus v3.6.0.
 
-images/provisioning/automation/ansible/3_6_0_huawei
+.. image:: /images/provisioning/automation/ansible/3_6_0_huawei
 
 NFS mount path for Isilon volumes
 ..................................

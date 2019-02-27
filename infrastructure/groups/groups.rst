@@ -27,10 +27,22 @@ Policies applied to a Group will be enforced on all Instances provisioned or mov
 
 The Groups view displays all current groups, includes search feature, and also enables the addition of new groups.
 
-To View Groups:
+.. To View Groups:
 
-#. Select the Infrastructure link in the navigation bar
-#. Click the Groups link
+.. #. Select the Infrastructure link in the navigation bar
+.. #. Click the Groups link
+
+Viewing
+^^^^^^^
+
+Groups in UI
+------------
+
+Groups in Cli
+-------------
+
+Groups via API
+--------------
 
 Adding Groups
 -------------
