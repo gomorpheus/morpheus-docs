@@ -158,7 +158,7 @@ morpheus-ssl nginx logs
 
 svlogd will only rotate the current file, nginx is setup to write the access logs to separate files and not stdout.
 
-Implementation of a log rotate is left up to for files outside of the services is left up to end users in case they have a log management solution.
+Implementation of a log rotate is left up to up to end users for files outside of the services.  This is done in case end users have a log management solution.
 
 
 Below is what a suggested configuration looks like for the file ``/etc/logrotate.d/morpheus-nginx``:
