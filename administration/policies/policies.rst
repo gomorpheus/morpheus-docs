@@ -6,9 +6,9 @@ Overview
 
 Policies add governance, ease of use, cost-savings, and auditing features to |morpheus|.  Policies can be created under ``Administration -> Policies`` , ``Infrastructure -> Groups -> Group -> Policies``, and ``Infrastructure -> Clouds -> Cloud -> Policies``.  |morpheus| enables end users to create user, group, cloud, and global policies to give users full control and governance over their environments!  Policy generation is a role permission.
 
- Policies can apply towards any instance provisioned by a specific user, globally or into a group or cloud with active policies.
+Policies can apply towards any instance provisioned by a specific user, globally or into a group or cloud with active policies.
 
- .. IMPORTANT:: Cloud policies will override matching or conflicting group policies during provisioning.
+.. IMPORTANT:: Cloud policies will override matching or conflicting group policies during provisioning.
 
 Available Policy Types
 ^^^^^^^^^^^^^^^^^^^^^^
