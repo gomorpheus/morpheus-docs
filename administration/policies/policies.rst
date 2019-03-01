@@ -4,11 +4,20 @@ Policies
 Overview
 --------
 
-Policies add governance, ease of use, cost-savings, and auditing features to |morpheus|.  Policies can be created under ``Administration -> Policies`` , ``Infrastructure -> Groups -> Group -> Policies``, and ``Infrastructure -> Clouds -> Cloud -> Policies``.  |morpheus| enables end users to create user, group, cloud, and global policies to give users full control and governance over their environments!  Policy generation is a role permission.
+Policies add governance, ease of use, cost-savings, and auditing features to |morpheus|.  |morpheus| enables end users to create user, group, cloud, and global policies to give users full control and governance over their environments!  Policies can apply towards any instance provisioned by a specific user, globally or into a group or cloud with active policies.  Policy generation is a role permission.
 
-Policies can apply towards any instance provisioned by a specific user, globally or into a group or cloud with active policies.
+Creating Policies
+-----------------
 
-.. IMPORTANT:: Cloud policies will override matching or conflicting group policies during provisioning.
+Policies can be created in three different locations.
+
+* ``Administration -> Policies``
+* ``Infrastructure -> Groups -> Group -> Policies``
+* ``Infrastructure -> Clouds -> Cloud -> Policies``
+
+Policies can be edited and set to active or inactive.
+
+ .. IMPORTANT:: Cloud policies will override matching or conflicting group policies during provisioning.
 
 Available Policy Types
 ^^^^^^^^^^^^^^^^^^^^^^
@@ -43,17 +52,6 @@ Shutdown
 User Creation
   Controls the "CREATE YOUR USER" flag in the User Config options during provisioning do be always disabled, always enabled, enabled by default, or disabled by default.
 
-
-Creating Policies
------------------
-
-Policies can be created in three different locations.
-
-* ``Administration -> Policies``
-* ``Infrastructure -> Groups -> Group -> Policies``
-* ``Infrastructure -> Clouds -> Cloud -> Policies``
-
-Policies can be edited and set to active or inactive.
 
 To create a Global Policy:
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
