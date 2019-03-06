@@ -8,9 +8,8 @@ In the simplest configuration |morpheus| needs one Appliance Server. The Applian
 Base Requirements
 -----------------
 
-- **Operating System:** Ubuntu 14.04 /16.04/18.04 or CentOS/RHEL greater than 7.0.
+- **Operating System:** Ubuntu 14.04 /16.04 or CentOS/RHEL greater than 7.0.
 
-  .. IMPORTANT:: Ubuntu 18.04 install requires NTP (``sudo apt-get install ntp) and the ``libpng12-dev`` package which is no longer in default Ubuntu configured repos on 18.04. Run ``sudo apt-add-repository "deb http://us.archive.ubuntu.com/ubuntu/ xenial main universe"`` or install ``libpng12-dev`` manually if reconfigure fails on installing ``libpng12-dev``
 
 - **Memory:** 16 GB recommended for default installations. 8 GB minimum required with 4 GB+ available storage swap space
 - **Storage:** 200 GB storage minimum (see Storage Considerations below)
