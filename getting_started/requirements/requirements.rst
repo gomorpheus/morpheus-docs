@@ -9,8 +9,6 @@ Base Requirements
 -----------------
 
 - **Operating System:** Ubuntu 14.04 /16.04 or CentOS/RHEL greater than 7.0.
-
-
 - **Memory:** 16 GB recommended for default installations. 8 GB minimum required with 4 GB+ available storage swap space
 - **Storage:** 200 GB storage minimum (see Storage Considerations below)
 - Network connectivity from your users to the appliance over TCP 443 (HTTPS)
