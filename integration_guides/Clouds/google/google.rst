@@ -10,6 +10,17 @@ Requirements
 
 .. IMAGE:: /images/integration_guides/clouds/Google-API-Compute
 
+Features
+^^^^^^^^^
+* Provisioning Virtual Machines
+* Network tagging
+* Private and Local Images
+* Google VM Snapshots
+* Brownfield Inventory
+* Costing
+* Right sizing
+
+
 Add a Google Cloud
 ^^^^^^^^^^^^^^^^^^^
 
