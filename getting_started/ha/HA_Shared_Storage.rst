@@ -3,7 +3,7 @@ Storage
 
 When Morpheus is in a High Availability configuration the required Local Storage File Shares will need to be copied to a shared file system so that all nodes within the Morpheus cluster is able to connect to assets.
 
-Assests
+Assets
 ^^^^^^^^
 * White label images
 * Uploaded virtual images
@@ -14,7 +14,7 @@ Assests
 
 .. TIP::
 
-    Backup , Deployments and virtual images can be overridden within the Morpheus-UI.  You can find more information on storage here: :ref:`storage`
+    Backups, deployments and virtual images can be overridden within the Morpheus-UI.  You can find more information on storage here: :ref:`storage`
 
 To copy the ```morpheus-ui``` directory to the shared storage follow the below steps:
 
