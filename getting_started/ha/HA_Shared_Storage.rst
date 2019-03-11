@@ -14,7 +14,7 @@ Assests
 
 .. TIP::
 
-    Backup , Deployments and virtual images can be overriden within the Morpheus-UI.  You can find more storage information here: :ref:`storage`
+    Backup , Deployments and virtual images can be overriden within the Morpheus-UI.  You can find more information on storage here: :ref:`storage`
 
 To copy the `morpheus-ui` directory to the shared storage follow the below steps:
 
