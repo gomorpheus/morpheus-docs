@@ -20,11 +20,34 @@ To copy the ```morpheus-ui``` directory to the shared storage follow the below s
 
 #. SSH into the Appliance
 #. sudo su (or login as root)
-#. cd into /var/opt/morpheus/
-#. Backup morpheus-ui directory by running cp -r morpheus-ui morpheus-ui-bkp ( This will create a new directory in /var/opt/morpheus/ called morpheus-ui-bkp and copy the contents of morpheus-ui into the new directory)
-#. mv morpheus-ui to your shared storage Example: mv morpheus-ui /nfs/appliance-files/
-#. Create a symlink in the /var/opt/morpheus/ for morpheus-ui pointing to the shared storage. `Example ln -s /nfs-share/appliance-files/morpheus-ui /var/opt/morpheus/morpheus-ui`
-#. SSH into the second Appliance and then Backup morpheus-ui directory by running cp -r morpheus-ui morpheus-ui-bkp
-#. Create a symlink in the /var/opt/morpheus/ for morpheus-ui pointing to the shared storage. `Example ln -s /nfs-share/appliance-files/morpheus-ui /var/opt/morpheus/morpheus-ui` on the second appliance.
+#. cd into ```/var/opt/morpheus/```
+#. Backup morpheus-ui directory by running
+
+  .. code-block::
+     cp -r morpheus-ui morpheus-ui-bkp
+
+This will create a new directory in ```/var/opt/morpheus/``` called morpheus-ui-bkp and copy the contents of morpheus-ui into the new directory
+
+#. mv morpheus-ui to your shared storage Example:
+
+  .. code-block::
+      mv morpheus-ui /nfs/appliance-files/
+
+#. Create a symlink in the ```/var/opt/morpheus/``` for morpheus-ui pointing to the shared storage. Example:
+
+  .. code-block::
+       ln -s /nfs-share/appliance-files/morpheus-ui /var/opt/morpheus/morpheus-ui
+
+#. SSH into the second Appliance and then Backup morpheus-ui directory by running
+
+  .. code-block::
+      cp -r morpheus-ui morpheus-ui-bkp
+
+#. Create a symlink in the ```/var/opt/morpheus/``` for morpheus-ui pointing to the shared storage. Example:
+
+  .. code-block::
+     ln -s /nfs-share/appliance-files/morpheus-ui /var/opt/morpheus/morpheus-ui
+
+on the second appliance.
 
 .. TIP:: when adding additional nodes you will only need to run step 7 and 8
