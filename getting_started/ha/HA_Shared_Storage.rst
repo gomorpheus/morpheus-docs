@@ -16,7 +16,7 @@ Assests
 
     Backup , Deployments and virtual images can be overriden within the Morpheus-UI.  You can find more information on storage here: :ref:`storage`
 
-To copy the `morpheus-ui` directory to the shared storage follow the below steps:
+To copy the ```morpheus-ui``` directory to the shared storage follow the below steps:
 
 #. SSH into the Appliance
 #. sudo su (or login as root)
