@@ -3,7 +3,8 @@ Storage
 
 When Morpheus is in a High Availability configuration the required Local Storage File Shares will need to be copied to a shared file system so that all nodes within the Morpheus cluster is able to connect to assests.
 
-Assests:
+Assests
+^^^^^^^^
 * White lab images
 * Uploaded virtual images
 * Deploy uploads
