@@ -25,7 +25,7 @@ To copy the ```morpheus-ui``` directory to the shared storage follow the below s
 
   .. code-block::
 
-     cp -r morpheus-ui morpheus-ui-bkp
+   cp -r morpheus-ui morpheus-ui-bkp
 
 This will create a new directory in ```/var/opt/morpheus/``` called morpheus-ui-bkp and copy the contents of morpheus-ui into the new directory
 
@@ -33,25 +33,25 @@ This will create a new directory in ```/var/opt/morpheus/``` called morpheus-ui-
 
   .. code-block::
 
-      mv morpheus-ui /nfs/appliance-files/
+    mv morpheus-ui /nfs/appliance-files/
 
 #. Create a symlink in the ```/var/opt/morpheus/``` for morpheus-ui pointing to the shared storage. Example:
 
   .. code-block::
 
-       ln -s /nfs-share/appliance-files/morpheus-ui /var/opt/morpheus/morpheus-ui
+   ln -s /nfs-share/appliance-files/morpheus-ui /var/opt/morpheus/morpheus-ui
 
 #. SSH into the second Appliance and then Backup morpheus-ui directory by running
 
   .. code-block::
 
-      cp -r morpheus-ui morpheus-ui-bkp
+    cp -r morpheus-ui morpheus-ui-bkp
 
 #. Create a symlink in the ```/var/opt/morpheus/``` for morpheus-ui pointing to the shared storage. Example:
 
   .. code-block::
-    
-     ln -s /nfs-share/appliance-files/morpheus-ui /var/opt/morpheus/morpheus-ui
+
+   ln -s /nfs-share/appliance-files/morpheus-ui /var/opt/morpheus/morpheus-ui
 
 on the second appliance.
 
