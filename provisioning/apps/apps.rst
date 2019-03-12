@@ -6,7 +6,7 @@ Apps allow instances having general relationships to be grouped in a clean and o
 Apps can be created from Blueprints, which are made in ``Provisioning -> Blueprints`` or from Existing Apps.
 
 Creating Apps from Blueprints
-----------------------------
+-----------------------------
 
 #. Click :guilabel:`+ADD` on the right side of the main Apps section in Provisioning.
 #. Select an existing App Blueprint and click :guilabel:`NEXT`.
