@@ -1,4 +1,4 @@
-Oracle Telkom Cloud
+Open Telekom Cloud
 ...................
 
 
