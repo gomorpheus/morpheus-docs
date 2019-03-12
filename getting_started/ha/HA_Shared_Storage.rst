@@ -33,11 +33,7 @@ To copy the ```morpheus-ui``` directory to the shared storage follow the below s
 
    mv morpheus-ui /nfs/appliance-files/
 
-6. Create a symlink in the ```/var/opt/morpheus/``` for morpheus-ui pointing to the shared storage. Example below:
-
-  .. code-block:: bash
-
-   ln -s /nfs-share/appliance-files/morpheus-ui /var/opt/morpheus/morpheus-ui
+6. Mount your shared storage volume to ```/var/opt/morpheus/morpheus-ui```. How you mount it is dependent on what kind of storage it is. If you mount the volume after the package install, but before the reconfigure then you don't need to copy anything to a backup.
 
 7. SSH into the second Appliance and then Backup morpheus-ui directory by running
 
@@ -45,12 +41,4 @@ To copy the ```morpheus-ui``` directory to the shared storage follow the below s
 
     cp -r morpheus-ui morpheus-ui-bkp
 
-8. Create a symlink in the ```/var/opt/morpheus/``` for morpheus-ui pointing to the shared storage on the second appliance. Example below:
-
-  .. code-block:: bash
-
-   ln -s /nfs-share/appliance-files/morpheus-ui /var/opt/morpheus/morpheus-ui
-
-
-
-.. TIP:: when adding additional nodes you will only need to run step 7 and 8
+.. TIP:: when adding additional nodes you will only need to run step 6 and 7
