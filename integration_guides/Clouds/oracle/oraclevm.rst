@@ -1,7 +1,7 @@
 Oracle VM
 ---------
 
-Add a Oracle VM Cloud
+Add an Oracle VM Cloud
 ^^^^^^^^^^^^^^^^^^^^^^
 
 Name
