@@ -2,6 +2,6 @@ ITSM
 =====
 
 .. toctree::
-  ITSM/ServiceNow-test.rst
-  ITSM/cherwell-test.rst
+  ITSM/ServiceNow.rst
+  ITSM/cherwell.rst
   ITSM/remedy.rst
