@@ -69,15 +69,13 @@ If you do not already have the Azure Active Directory credentials required to ad
 
 .. IMPORTANT:: Microsoft recently added support for Active Directory application configuration in the new Azure portal. Previously, users had to use the old portal to get the required credentials to integrate Azure with |morpheus| . The instructions below are updated for the new portal. Microsoft also changed the naming conventions of the credentials:
 
-Old and New Portal Naming Conventions:
 
-+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~------+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-------+
-|Old Azure Portal Name | New Azure Portal Name |
-+======================+=======================+
-|Tenant ID             |Directory ID           |
-+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~------+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-------+
-|Client ID             |Application ID         |
-+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~------+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-------+
+.. csv-table:: Old and New Portal Naming Conventions:
+   :header: Old Azure Portal Name, New Azure Portal Name
+   :widths: 100, 100
+
+   "Tenant ID", "Directory ID"
+   "Client ID", "Application ID"
 
 Creating an Azure Active Directory Application
 '''''''''''''''''''''''''''''''''''''''''''''''
@@ -186,11 +184,11 @@ Add Azure cloud in |morpheus|
 
 Azure is now ready to be added into |morpheus| . Ensure you have the noted Subscription ID, Tenant ID, Client ID, and Client Secret accessible.
 
-#. In Infrastructure - Clouds, select "+ Create Cloud" and select Azure from the cloud widget.
+#. In Infrastructure - Clouds, select :guilabel:`+ CREATE CLOUD` and select Azure from the cloud widget.
 
    OR
 
-#. In Infrastructure, Groups- you can select the Clouds tab of a Group and click "+ ADD" next to Azure in the Public Cloud section
+#. In Infrastructure, Groups- you can select the Clouds tab of a Group and click :guilabel:`+ ADD` next to Azure in the Public Cloud section
 
 #. Enter the following:
 
@@ -208,7 +206,7 @@ Azure is now ready to be added into |morpheus| . Ensure you have the noted Subsc
 #. Select the Location/Region to scope the cloud to (additional Clouds can be added for multiple regions)
 #. Select All or specify a Resource Group to scope this cloud to
 #. Optionally select "Inventory Existing Instances" (This will inventory your existing vm's in Azure and list them in |morpheus| as unmanaged instances.)
-#. Click "Save Changes"
+#. Click :guilabel:`+ Save Changes`
 
    .. image:: /images/azure/newazure-5f512.png
 

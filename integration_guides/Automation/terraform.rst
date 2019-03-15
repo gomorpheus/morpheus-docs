@@ -25,7 +25,10 @@ Supported App Provisioning Targets
 * Oracle Cloud
 
 .. NOTE::  Additional clouds will be available in later releases.
+<<<<<<< HEAD
 
+=======
+>>>>>>> 3.6.1
 
 Terraform Installation
 ^^^^^^^^^^^^^^^^^^^^^^

@@ -1,0 +1,66 @@
+v3.6.1
+=======
+
+Release date: 2/21/2019
+
+New Features
+------------
+
+- Ansible: `Built-in Cypher lookup plugin`_ added. ``"{{lookup('cypher','secret=secret/name')}}"`` can now be used for Cypher Secrets in Ansible playbooks natively.
+- Ansible: Refresh info log added morpheus-ui current log
+- Ansible: |morpheus| Agent Command Bus mode speed enhancements
+- API/CLI: ``createdBy`` filter added for Instances, Apps and Hosts
+- API/CLI: Cypher: New Cypher ``/api/cypher/v1`` endpoint matches Vault endpoints, allowing Vault Clients to use Cypher secrets. The existing ``/api/- cypher`` endpoints remain. CLI ``cypher`` command updated for ``/api/cypher/v1`` endpoints.
+- API/CLI: Instances: Improvements to DELETE for Instances and Apps. If an Instance or App delete is called and the instance status is still ``Provisioning``, ``resizing``, ``restarting`` or ``cloning`` the delete is not attempted and an error message is returned, unless ``force=true``
+- AWS: ``Costing`` setting added to advanced cloud config options. AWS Costing sync can now be set to "None", "Costing", or "Costing and Reservations".
+- Azure: Summary tab added to Azure Cloud detail pages
+
+
+Built-in Cypher lookup plugin
+-----------------------------
+
+A great feature with using Ansible and Morpheus together is the built in support for utilizing some of the services that Morpheus exposes for automation. v3.6.1 adds native support for using Cypher secrets in Ansible (please see documentation on :ref:`Cypher` for more details). Cypher allows one to store secret data in a highly encrypted way for future retrieval. Referencing keys stored in cypher in your playbooks is a matter of using a built-in lookup plugin for ansible.
+
+.. code-block:: bash
+
+    - name: Add a user
+      win_user:
+        name: "myusername"
+        password: "{{ lookup('cypher','secret=password/myusername') }}"
+        state: present
+
+
+By using the ``{{ lookup('cypher','secret=password/myusername') }}`` syntax. One can grab the value directly out of the key for use. This lookup plugin also supports a few other fancy shortcuts. In this above example the `password/` mountpoint is capable of autogenerating passwords if they have not previously been defined and storing them within cypher for reference later.
+
+Another capability is accessing properties from within a key in cypher. The value of a key can also be a JSON object which can be referenced for properties within. For example:
+
+.. code-block:: bash
+
+   {{ lookup('cypher','secret=secret/myjsonobject:value') }}
+
+This would grab the `value` property off the nested json data stored within the key.
+
+Cypher is very powerful for storing these temporary or permanent secrets that one may need to orchestrate various tasks and workflows within Ansible.
+
+
+Fixes
+-----
+
+- Ansible: Fix for automated Ansible install when Ansible integration is added to |morpheus|.
+- Ansible: Fix for execution User when |morpheus| agent install is skipped
+- Ansible: security fixes for when |morpheus| agent is not installed
+- Ansible: Updates and fixes for |morpheus| Agent Command Bus mode
+- Apps: Fix Delete App leaving instances stuck in removing status
+- Archives: Fix for downloading large files from Archives service stopping at 1GB. Nginx restart required ``sudo morpheus-ctl restart nginx``
+- AWS: Cost Explorer Reservation API calls changed to Daily
+- AWS: Fix for AWS sync updates for removed vpcs
+- AWS: Fix for sync errors caused by missing permissionService
+- Azure: Fix for "Daily Syncing" status displayed after changing sync to Full
+- Backups: Fix for backup history migration ``durationMillis`` and ``sizeInMb`` issue when upgrading from 3.4 to 3.6
+- F5: Fix for synced pool member association
+- Instances: Fix for flashing Instance Type icon in Instance Detail pages
+- Login: Fix for "Forgot Password" subtenant user email notifications
+- Nutanix: Fix for provisioning Docker hosts using IP Pools
+- Nutanix: Fix for provisioning Docker Hosts using Ubuntu 16 images
+- Operations: Nav Dropdown Icon alignment updates
+- VMware: Fix for maxStorage Service Plan filter issue

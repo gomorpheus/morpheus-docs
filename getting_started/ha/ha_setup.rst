@@ -38,4 +38,5 @@ The application tier is easily installed with the same debian or yum repository 
 .. include:: rabbitmq.rst
 .. include:: elasticsearch.rst
 .. include:: appliance_ha.rst
+.. include:: HA_Shared_Storage.rst
 .. include:: 3node.rst

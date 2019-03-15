@@ -38,7 +38,7 @@ Create a new machine in VMware vCenter and install a base version of your prefer
 #.	Before installing the operating system setup a single ``ext`` or ``xfs`` partition without a swap disk (This is so that growpart can extend the disk. growpart currently does not support lvm)
 #.	Install the distro and apply any updates to the operating system and security updates
 #.	Install cloud-init using command ``yum install cloud-init``
-#.	Install cloud-utils-growpart using command ``yum install cloud-init-utils-growpart``
+#.	Install cloud-utils-growpart using command ``yum install cloud-utils-growpart``
 #.	Install vmware tools
 #.	Install git by running ``yum install git``
 #.	epel-release

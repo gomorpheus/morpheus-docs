@@ -3,7 +3,7 @@
 
 When provisioning an instance, there are some network and configuration requirements to successfully install the morpheus agent.  Typically when a vm instance is still in the provisioning phase long after the vm is up, the instance is unable to reach |morpheus| , or depending on agent install mode, |morpheus| is unable to reach the instance.
 
-The most common reason an agent install fails is the provisioned instance cannot reach the |morpheus| Appliance via the appliance_url set in Admin -> Settings over both 443 and 80. When an instance is provisioned from |morpheus|, it must be able to reach the |morpheus| appliance via the appliance_url or the agent will not be installed.
+The most common reason an agent install fails is the provisioned instance cannot reach the |morpheus| Appliance via the appliance_url set in Admin -> Settings over 443. When an instance is provisioned from |morpheus|, it must be able to reach the |morpheus| appliance via the appliance_url or the agent will not be installed.
 
 .. image:: /images/agent-7c9a2.png
 
@@ -203,13 +203,20 @@ You can use the following to uninstall the linux agent:
 .. code-block:: bash
 
   sudo rm /etc/apt/sources.list.d/morpheus.list
-  sudo morpheus-node-ctl stop rsyslogd
+  sudo morpheus-node-ctl kill
+  sudo apt-get -y purge morpheus-node
   sudo apt-get -y purge morpheus-vm-node
+  sudo systemctl stop morpheus-node-runsvdir
+  sudo rm -f /etc/systemd/system/morpheus-node-runsvdir.service
+  sudo systemctl daemon-reload
+  sudo rm -rf /var/run/morpheus-node
   sudo rm -rf /opt/morpheus-node
+  sudo rm -rf /etc/morpheus/
+  sudo rm -rf /var/log/morpheus-node
+  sudo pkill runsv
+  sudo pkill runsvdir
+  sudo pkill morphd
   sudo usermod -l morpheus-old morpheus-node
-  sudo killall runsv
-  sudo killall runsvdir
-  sudo killall morphd
 
 centOS/RHEL 7 Images
 --------------------

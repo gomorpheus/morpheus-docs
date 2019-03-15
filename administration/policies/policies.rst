@@ -4,13 +4,20 @@ Policies
 Overview
 --------
 
-Policies add governance, ease of use, cost-savings, and auditing features to |morpheus| . Policies can be created in the Policies tabs in Groups and Clouds. Policy generation is a role permission.
+Policies add governance, ease of use, cost-savings, and auditing features to |morpheus|.  |morpheus| enables end users to create user, group, cloud, and global policies to give users full control and governance over their environments!  Policies can apply towards any instance provisioned by a specific user, globally or into a group or cloud with active policies.  Policy generation is a role permission.
 
-Policies apply towards any instance provisioned into a group or cloud with active policies. Cloud policies will override matching or conflicting group policies during provisioning.
+Creating Policies
+-----------------
 
-.. note::
+Policies can be created in three different locations.
 
-	Policies have been added to ``Administration -> Policies`` where they can be managed on a global level, per group, user, cloud, or tenant.
+* ``Administration -> Policies``
+* ``Infrastructure -> Groups -> Group -> Policies``
+* ``Infrastructure -> Clouds -> Cloud -> Policies``
+
+Policies can be edited and set to active or inactive.
+
+ .. IMPORTANT:: Cloud policies will override matching or conflicting group policies during provisioning.
 
 Available Policy Types
 ^^^^^^^^^^^^^^^^^^^^^^
@@ -46,11 +53,24 @@ User Creation
   Controls the "CREATE YOUR USER" flag in the User Config options during provisioning do be always disabled, always enabled, enabled by default, or disabled by default.
 
 
-Creating Policies
------------------
+To create a Global Policy:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Policies can be created, edited, and set to active or inactive in the a
-group or cloud detail pane under the Policies tab.
+#. Navigate to ``Administration -> Policies``
+#. Select :guilabel:`+ ADD Policy` and choose from the available policy types.
+#. Refer to Policy Type sections below for Configuration options.
+#. Under Filter next to scope select :guilabel:`Global`
+#. Select :guilabel:`SAVE CHANGES`
+
+
+To create a Policy for a User:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+#. Navigate to ``Administration -> Policies``
+#. Select :guilabel:`+ ADD Policy` and choose from the available policy types.
+#. Refer to Policy Type sections below for Configuration options.
+#. Under filter next to scope select :guilabel:`User` a drop down menu will appear below allowing you to select a user
+#. Select :guilabel:`SAVE CHANGES`
 
 To create a Policy for a Cloud:
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
