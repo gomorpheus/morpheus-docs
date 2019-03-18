@@ -22,14 +22,75 @@ Overview
 
 Task Types
 ^^^^^^^^^^
-.. csv-table:: **Available Task Types**
-   :widths: 200, 200, 200
 
-   |ansible|,|chef|,|groovy|
-   |http|,|javascript|,|jruby|
-   |jython|,|libraryscript|,|template|
-   |puppet|,|restart|,|shellscript|
-   |ssh|,|winrm|
+.. list-table:: **Available Task Types**
+   :header-rows: 1
+
+   * - Logo
+     - Task Type
+     - Description
+     - Target
+   * - |ansible|
+     - Ansible
+     - Runs an Ansible playbook. Ansible Integration required
+     - Instance or Host
+   * - |chef|
+     - Chef bootstrap
+     - Executes Chef bootstrap and run list. Chef Integration required
+     - Instance or Host
+   * - |groovy|
+     - Groovy script
+     - Executes Groovy Script locally (on |morpheus| app node)
+     - Local
+   * - |http|
+     - HTTP
+     - Executes REST call for targeting external API's.
+     - URL specified in Task
+   * - |javascript|
+     - Javascript
+     - Executes Javascript locally (on |morpheus| app node)
+     - Local
+   * - |jruby|
+     - jRuby Scirpt
+     - Executes Ruby script locally (on |morpheus| app node)
+     - Local
+   * - |libraryscript|
+     - Library Script
+     - Allows using an existing script from ``Provisioning -> Library-> Scripts``
+     - Instance or Host
+   * - |template|
+     - Library Template
+     - Allows using an existing file Template from ``Provisioning -> Library-> Templates``
+     - Instance or Host
+   * - |shellscript|
+     - Local Shell Script
+     - Executes Bash script locally (on |morpheus| app node)
+     - Local
+   * - |puppet|
+     - Puppet Agent Install
+     - Executes Puppet Agent bootstrap, writes ``puppet.conf`` and triggers agent checkin. Puppet Integration required
+     - Instance or Host
+   * - |jython|
+     - Python Script (jython)
+     - Executes Python script locally (on |morpheus| app node)
+     - Local
+   * - |shellscript|
+     - Remote Shell Task
+     - Executes Bash script against the Instance or Host the Task or Workflow is ran on
+     - Instance or Host
+   * - |restart|
+     - Restart
+     - Restarts target VM/Host/Container and confirms status before executing next task
+     - Instance or Host
+   * - |ssh|
+     - SSH Script
+     - Execute Bash script against IP specified in Task.
+     - IP specified in Task
+   * - |winrm|
+     - WinRM Script
+     - Execute Powershell script against IP specified in Task.
+     - Instance or Host
+
 
 
 Ansible Playbook
