@@ -43,4 +43,6 @@ different.
 .. TIP:: Sometimes it may be necessary to restart all appliance services on the host. In order to do this simply type ``sudo morpheus-ctl restart``. This will restart ALL services.
 
 
-.. include:: ssl-import.rst
+.. IMPORTANT If you are upgrading and have modified the java keystore you will have to do the following steps to import trusted certificates to |morpheus|
+
+.. include ssl-import.rst
