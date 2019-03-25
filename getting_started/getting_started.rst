@@ -14,3 +14,4 @@ Getting Started
   cli/cli_master.rst
   agent/morpheus_agent.rst
   discovery/morpheus_discovery.rst
+  morpheus-ctl/morpheus-ctl.rst
