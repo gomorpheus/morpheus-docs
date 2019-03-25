@@ -1,4 +1,4 @@
-``morpheus-ctl`` tips
+morpheus-ctl Tips
 =====================
 
 ``morpheus-ctl`` is useful beyond reconfigures and starting the ui, and many commands can be run across all services, or scoped to a singe service.
