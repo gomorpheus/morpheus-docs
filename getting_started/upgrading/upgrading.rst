@@ -41,3 +41,35 @@ different.
   sudo morpheus-ctl start morpheus-ui
 
 .. TIP:: Sometimes it may be necessary to restart all appliance services on the host. In order to do this simply type ``sudo morpheus-ctl restart``. This will restart ALL services.
+
+
+Deploy WAR file
+---------------
+
+Download the war file
+^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: text
+
+    wget <url>
+
+Move the file
+^^^^^^^^^^^^^
+
+.. code-block:: text
+
+    mv <file> /opt/morpheus/lib/morpheus/morpheus-ui.war 
+
+Change permissions
+^^^^^^^^^^^^^^^^^^
+
+.. code-block:: text
+
+    chown morpheus-app.morpheus-app /opt/morpheus/lib/morpheus/morpheus-ui.war
+
+Restart UI
+^^^^^^^^^^
+
+.. code-block:: text
+
+    morpheus-ctl restart morpheus-ui
