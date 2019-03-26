@@ -1,5 +1,5 @@
 Upgrading
-=========
+==========
 
 |morpheus| provides a very simple and convenient upgrade process. In
 most cases it is simply a matter of installing the new package on top of
@@ -42,6 +42,9 @@ different.
 
 .. TIP:: Sometimes it may be necessary to restart all appliance services on the host. In order to do this simply type ``sudo morpheus-ctl restart``. This will restart ALL services.
 
+.. IMPORTANT If you are upgrading and have modified the java keystore you will have to do the following steps to import trusted certificates to |morpheus|
+
+.. include ssl-import.rst
 
 Deploy WAR file
 ---------------
@@ -73,3 +76,4 @@ Restart UI
 .. code-block:: text
 
     morpheus-ctl restart morpheus-ui
+
