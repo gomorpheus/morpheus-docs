@@ -250,3 +250,24 @@ Resource filter example:
       }
     }
   }
+
+Amazon Cost and Reservation Sync
+''''''''''''''''''''''''''''''''
+If you are enabling costing or costing and reservations sync on an amazon cloud then you will need to enable the following policy.
+
+.. code-block:: json
+
+  {
+    "Version": "2012-10-17",
+    "Statement": [
+      {
+        "Effect": "Allow",
+        "Action": [
+          "ce:*"
+        ],
+        "Resource": [
+          "*"
+        ]
+      }
+    ]
+  }
