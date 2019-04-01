@@ -4,7 +4,6 @@ Service Now
 ------------
 
 
-.. IMPORTANT:: When using Service Now version London the following steps must be done. A administrator needs to modify some permissions on 2 tabes in ServiceNow. The 2 tables are 'catalog_script_client' and 'io_set_item'.  The administrator needs to allow 'can create', 'can update' and 'can delete' access on these tables.
 
 
 
@@ -28,6 +27,8 @@ Add Service Now Integration
     Above ServiceNow user's password
 
 #. Save Changes
+
+.. IMPORTANT:: When using Service Now version London the following steps must be done. A administrator needs to modify some permissions on 2 tabes in ServiceNow. The 2 tables are 'catalog_script_client' and 'io_set_item'.  The administrator needs to allow 'can create', 'can update' and 'can delete' access on these tables.
 
 ServiceNow Approval Policies
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
