@@ -3,7 +3,7 @@ Advanced morpheus.rb Settings
 
 Overview
 ^^^^^^^^
-Morpheus allows for additional advanced customizations to the morpheus.rb file.  Below is a list of the supported items availible in the morpheus.rb file.
+Morpheus allows for additional advanced customizations to the morpheus.rb file located in ``/etc/morpheus/morpheus.rb``.  Below is a list of the supported items availible in the morpheus.rb file.
 
   .. code-block:: bash
 
