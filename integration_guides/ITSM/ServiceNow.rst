@@ -3,6 +3,11 @@
 Service Now
 ------------
 
+
+.. IMPORTANT:: When using Service Now version London the following steps must be done. A administrator needs to modify some permissions on 2 tabes in ServiceNow. The 2 tables are 'catalog_script_client' and 'io_set_item'.  The administrator needs to allow 'can create', 'can update' and 'can delete' access on these tables.
+
+
+
 Add Service Now Integration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -98,7 +103,7 @@ ServiceNow Service Catalog Integration
 
 The following is a guide to installing the Morpheus ServiceNow application.
 
-.. IMPORTANT:: A valid SSL Certificate is required on the |morpheus| Appliance for the ServiceNow plugin to be able to communicate with the appliance. 
+.. IMPORTANT:: A valid SSL Certificate is required on the |morpheus| Appliance for the ServiceNow plugin to be able to communicate with the appliance.
 
 ServiceNow Configuration
 ~~~~~~~~~~~~~~~~~~~~~~~~~
