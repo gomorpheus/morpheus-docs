@@ -21,6 +21,8 @@ Policies can be edited and set to active or inactive.
 
 Available Policy Types
 ^^^^^^^^^^^^^^^^^^^^^^
+Backup Creation
+  Disable or enable the ability to create a backup when provisioning an instance.
 Budget
   Sets a maximum total combined price for all instances in the Group, Cloud, Tenant or owned by the User this policy is applied to.
 Expiration

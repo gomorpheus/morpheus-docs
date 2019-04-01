@@ -41,6 +41,8 @@ Configuring Backups during Provisioning
 
 When Backups are enabled, Backup options are presenting in the Automation tab of the Provisioning wizard.
 
+.. NOTE:: The Backup options presented in the Automation tab can be disabled using a "Create Backup" policy. See :doc:`../administration/policies/policies`
+
 BACKUP TYPE
   Select the type for the Backup. Backup Types displayed will be filtered by available options per selected Instance Layout.
 BACKUP NAME

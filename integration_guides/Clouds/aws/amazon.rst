@@ -82,7 +82,7 @@ Adding an AWS Cloud
      Off
       Existing EC2 Instances will not be inventoried
 
-     ..NOTE:: Cloud Watch must be configured in AWS for |morpheus| to collect Memory and Storage utilization metrics on inventoried EC2 instances.
+     .. NOTE:: Cloud Watch must be configured in AWS for |morpheus| to collect Memory and Storage utilization metrics on inventoried EC2 instances.
 
 #. The AWS cloud is ready to be added to a group and saved. Additional configuration options available:
 
