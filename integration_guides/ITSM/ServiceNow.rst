@@ -28,7 +28,7 @@ Add Service Now Integration
 
 #. Save Changes
 
-.. IMPORTANT:: When using ServiceNow version London the following steps must be done. An administrator needs to modify permissions on two tables in ServiceNow. The tables are 'catalog_script_client' and 'io_set_item'.  The administrator needs to allow 'can create', 'can update' and 'can delete' access on these tables.
+.. IMPORTANT:: When using ServiceNow version London, the following steps must also be performed.  An administrator needs to modify the access permissions on the 'catalog_script_client' and 'io_set_item' tables.  This is performed by ensuring the 'Can create', 'Can update', and 'Can Delete' are checked under Application Access for 'All application scopes' for these tables.
 
 ServiceNow Approval Policies
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -104,7 +104,6 @@ ServiceNow Service Catalog Integration
 
 The following is a guide to installing the Morpheus ServiceNow application.
 
-.. IMPORTANT:: When using Service Now version London the following steps must be done. An administrator needs to modify permissions on two tables in ServiceNow. The tables are 'catalog_script_client' and 'io_set_item'.  The administrator needs to allow 'can create', 'can update' and 'can delete' access on these tables.
 
 .. IMPORTANT:: A valid SSL Certificate is required on the |morpheus| Appliance for the ServiceNow plugin to be able to communicate with the appliance.
 
@@ -129,6 +128,8 @@ ServiceNow Configuration
    - catalog_admin
    - itil
    - rest_service
+
+.. IMPORTANT:: When using ServiceNow version London, the following steps must also be performed.  An administrator needs to modify the access permissions on the 'catalog_script_client' and 'io_set_item' tables.  This is performed by ensuring the 'Can create', 'Can update', and 'Can Delete' are checked under Application Access for 'All application scopes' for these tables.
 
 Morpheus Configuration
 ~~~~~~~~~~~~~~~~~~~~~~~
