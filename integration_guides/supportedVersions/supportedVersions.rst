@@ -36,7 +36,7 @@ Docker                  1.12.6
 Kubernetes              1.11
 Jenkins                 1.64
 **ITSM**                ..
-ServiceNow              Istanbul, Jakarta, Kingston
+ServiceNow              Istanbul, Jakarta, Kingston, London
 **Logging**             ..
 Splunk                  7.10
 =====================   =================

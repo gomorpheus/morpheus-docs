@@ -148,6 +148,9 @@ Instance Naming Policy example: ``${userInitials}-${cloudCode}-${platform == 'wi
 	server.configId: <%=server.configId%>
 	server.configGroup: <%=server.configGroup%>
 	server.configRole: <%=server.configRole%>
+	task.results (using task code): <%=results.taskCode%>
+	task.results (using task name): <%=results["Task Name"]%>
+	task.results.value: <%=results.taskCode.key%>
 	zone.name: <%=zone.name%>
 	zone.code: <%=zone.code%>
 	zone.location: <%=zone.location%>

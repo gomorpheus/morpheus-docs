@@ -1,7 +1,11 @@
 .. _snow:
 
-Service Now
+ServiceNow
 ------------
+
+
+
+
 
 Add Service Now Integration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -25,7 +29,6 @@ Add Service Now Integration
 #. Save Changes
 
 .. IMPORTANT:: When using ServiceNow version London, the following steps must also be performed.  An administrator needs to modify the access permissions on the 'catalog_script_client' and 'io_set_item' tables.  This is performed by ensuring the 'Can create', 'Can update', and 'Can Delete' are checked under Application Access for 'All application scopes' for these tables.
-
 
 ServiceNow Approval Policies
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -125,9 +128,8 @@ ServiceNow Configuration
    - itil
    - rest_service
 
+
   .. IMPORTANT:: When using ServiceNow version London, the following steps must also be performed.  An administrator needs to modify the access permissions on the 'catalog_script_client' and 'io_set_item' tables.  This is performed by ensuring the 'Can create', 'Can update', and 'Can Delete' are checked under Application Access for 'All application scopes' for these tables.
-
-
 
 Morpheus Configuration
 ~~~~~~~~~~~~~~~~~~~~~~~

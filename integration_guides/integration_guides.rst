@@ -17,6 +17,6 @@ Integration Guides
 .. include:: Logs/Logs.rst
 .. include:: Monitoring/Monitoring.rst
 .. include:: Networking/networking.rst
-.. include:: service_discovery/service_discovery.rst
+.. include:: serviceDiscovery/serviceDiscovery.rst
 .. include:: storage/storage.rst
 .. include:: supportedVersions/supportedVersions.rst

@@ -15,22 +15,35 @@ Requirements
 * Minimum Ansible Version Requirement is 2.7.x
 * For agentless non commandbus sshpass is required
 * For windows non agent command bus pywinrm is required
-
+* ``Integrations: Ansible`` User Role Permission required for access to Ansible Details Pages and Ansible tabs in Groups and Clouds
 
 Add Ansible Integration
 ^^^^^^^^^^^^^^^^^^^^^^^
 
-#. Navigate to `Administration -> Integrations` and select `+ New Integration`
+#. Navigate to `Provisioning -> Automation -> Integrations` and select `+ New Integration`
 #. Select Integration Type "Ansible"
 #. Populate the following fields:
 
-   * Name: Name of the Ansible Integration in |morpheus|
-   * Enabled: Enabled by default Ansible Git URL:: https or git url format of the Ansible Git repo to use
-   * Keypair: For private Git repos, a keypair must be added to |morpheus| and the public key added to the git account.
-   * Playbooks Path: Path of the Playbooks relative to the Git url.
-   * Roles Path: Path of the Roles relative to the Git url.
-   * Group Variable Path: Path of the Group Variables relative to the Git url.
-   * Host Variables Path: Path of the Host Variables relative to the Git url.
+   Name
+    Name of the Ansible Integration in |morpheus|
+   Enabled
+    Enabled by default
+   Ansible Git URL
+    https or git url format of the Ansible Git repo to use
+   Keypair
+    For private Git repos, a keypair must be added to |morpheus| and the public key added to the git account.
+   Playbooks Path
+    Path of the Playbooks relative to the Git url.
+   Roles Path
+    Path of the Roles relative to the Git url.
+   Group Variable Path
+    Path of the Group Variables relative to the Git url.
+   Host Variables Path
+    Path of the Host Variables relative to the Git url.
+   Enable Verbose Logging
+    Enable to output verbose logging for Ansible task history
+   Use Morpheus Agent Command Bus
+    Enable for Ansible Playbooks to be executed via Morpheus Agent Command Bus instead of SSH
 
 #. Save Changes
 
@@ -115,7 +128,7 @@ Use Case:
                   name: "{{ morpheus['instance']['hostname'] }}"
                   password: "xxxxxxx"
                   state: present
-    .. NOTE:: `{{ morpheus['instance']['hostname'] }}` is the format of using |morpheus| Variables
+    .. NOTE:: ``{{ morpheus['instance']['hostname'] }}`` is the format of using |morpheus| Variables
    Create a user with a name which you enter during provisioning using a custom Instance type.
     This instance type has a `Text` Option type that provides a text box to enter a username. The fieldName of the option type in this case would be `username`. Below is the playbook.
      .. code-block:: bash
@@ -130,7 +143,7 @@ Use Case:
                 name: "{{ morpheus['customOptions']['username'] }}"
                 password: "xxxxxxx"
                 state: present
-    .. NOTE:: `{{ morpheus['customOptions']['username'] }}` will be the format.
+    .. NOTE:: ``{{ morpheus['customOptions']['username'] }}`` will be the format.
 
 Using Secrets
 ^^^^^^^^^^^^^^^
@@ -174,8 +187,6 @@ When this functionality is enabled on an Ansible integration, a `connection_plug
 
 It has also been pointed out that this execution bus is dramatically simpler than utilizing `pywinrm` when it comes to orchestrating Windows  as the winrm configurations can be cumbersome to properly setup, especially in tightly secured Enterprise environments.
 
-
-
 Troubleshooting Ansible
 ^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -208,7 +219,7 @@ Troubleshooting Ansible
   .. code-block:: bash
 
       sudo mkdir /opt/morpheus/.ansible
-      sudo chown morpheus-app.morpheus-app /opt/morpheus/.ansible
+      sudo chown morpheus-local.morpheus-local /opt/morpheus/.ansible
 
 
 * Validate the git repo is authorizing and the paths are configured correctly.
@@ -218,6 +229,5 @@ Troubleshooting Ansible
 * The Git Ref field on playbook tasks is to specify a different git branch than default. It can be left to use the default branch. If your playbooks are in a different branch you can add the brach name in the Git Ref field.
 
 * When running a playbook that is in a workflow, the additional playbooks fields do not need to be populated, they are for running a different playbook than the one set in the Ansible task in the Workflow, or using a different Git Ref.
-
 
 * If you are manually running Workflows with Ansible tasks on existing Instances through `Actions -> Run Workflow​` and not seeing results, set the Provision Phase on the Ansible task to Provision​ as there may be issues with executing tasks on other phases when executing manually.

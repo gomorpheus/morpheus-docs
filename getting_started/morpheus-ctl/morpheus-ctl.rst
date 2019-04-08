@@ -14,7 +14,7 @@ morpheus-ctl start (service)
   - ``morpheus-ctl start/stop/restart/kill morpheus-ui`` will only start, stop, restart or kill the morpheus-ui service, leaving the other service in their current state.  Same goes for ``morpheus-ctl start/stop/restart/kill mysql``, ``morpheus-ctl start/stop/restart/kill elasticsearch`` etc.
 
 
-All ``morpheus-ctl`` commands:
+``morpheus-ctl`` commands:
 
 .. code-block:: bash
 
