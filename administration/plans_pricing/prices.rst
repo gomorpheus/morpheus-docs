@@ -21,6 +21,7 @@ Price Unit
   -  Five Year
 
   .. NOTE:: Only Prices configured with matching Price Units can be used in a Price Set.
+  .. NOTE:: Month is equivalent to 30 days by default. For AWS, month is 30.5 days. For Azure, month is 30.4 days.
 
 Types
   Price Set Types determine what prices the Set is composed of.
