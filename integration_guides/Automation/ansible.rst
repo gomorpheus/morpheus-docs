@@ -15,6 +15,7 @@ Requirements
 * Minimum Ansible Version Requirement is 2.7.x
 * For agentless non commandbus sshpass is required
 * For windows non agent command bus pywinrm is required
+* ``Integrations: Ansible`` User Role Permission required for access to Ansible Details Pages and Ansible tabs in Groups and Clouds
 
 Add Ansible Integration
 ^^^^^^^^^^^^^^^^^^^^^^^
@@ -218,7 +219,7 @@ Troubleshooting Ansible
   .. code-block:: bash
 
       sudo mkdir /opt/morpheus/.ansible
-      sudo chown morpheus-app.morpheus-app /opt/morpheus/.ansible
+      sudo chown morpheus-local.morpheus-local /opt/morpheus/.ansible
 
 
 * Validate the git repo is authorizing and the paths are configured correctly.

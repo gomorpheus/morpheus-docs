@@ -23,11 +23,38 @@ Overview
 There are many Task Types available, including scripts added directly, scripts and templates from the Library section, recipes, playbooks, salt states, puppet agent installs, and http (api) calls. Tasks are primarily created for use in Workflows, but a single Task can be executed on an existing instance via ``Actions -> Run Task``.
 
 Role Permissions
-^^^^^^^^^^^^^^^^^
+````````````````
 
 The User Role Permission 'Provisioning: Tasks  FULL' is required to create, edit and delete tasks.
 
 Tasks Types that can execute locally against the |morpheus| Appliance have an additional Role Permission: ``Tasks - Script Engines``. Script Engine Task Types will be hidden for users without ``Tasks - Script Engines`` role permissions.
+
+Add a Task
+``````````
+
+#. Select the Provisioning link in the navigation bar.
+#. Select Automation from the sub-navigation menu.
+#. Click the :guilabel:`Add` button.
+#. From the New Task Wizard input a name for the task.
+#. Select the type of task from from the type dropdown.
+#. Input the appropriate details dependent on the task type you selected from the dropdown.
+#. Save
+
+Edit a Task
+```````````
+
+#. Select the Provisioning link in the navigation bar.
+#. Select Automation from the sub-navigation menu.
+#. Click the Edit icon on the row of the task you wish to edit.
+#. Modify information as needed.
+#. Click the Save Changes button to save.
+
+Delete a Task
+`````````````
+
+#. Select the Provisioning link in the navigation bar.
+#. Select Automation from the sub-navigation menu.
+#. Click the Delete icon on the row of the task you wish to delete.
 
 Task Types
 ^^^^^^^^^^
@@ -136,11 +163,11 @@ Task Types
 |ansible| Ansible Playbook
 ``````````````````````````````````
 :Description:
-       Runs an Ansible playbook. Ansible Integration required
+  Runs an Ansible playbook. Ansible Integration required
 :Target:
-       Instance or Host
+  Instance or Host
 :Role Permissions:
-       Provisioning: Tasks
+  Provisioning: Tasks
 :Task Configuration:
    NAME
      Name of the Task
@@ -196,7 +223,8 @@ Task Types
 :Target:
   Local App Node
 :Role Permissions:
-  Provisioning: Tasks, Tasks - Script Engines
+  Provisioning: Tasks
+  Provisioning: Tasks - Script Engines
 :Task Configuration:
   NAME
     Name of the Task
@@ -253,7 +281,8 @@ Task Types
 :Target:
   Local App Node
 :Role Permissions:
-  Provisioning: Tasks, Tasks - Script Engines
+  Provisioning: Tasks
+  Provisioning: Tasks - Script Engines
 :Task Configuration:
   NAME
     Name of the Task
@@ -274,7 +303,8 @@ Task Types
 :Target:
   Local App Node
 :Role Permissions:
-  Provisioning: Tasks, Tasks - Script Engines
+  Provisioning: Tasks
+  Provisioning: Tasks - Script Engines
 :Task Configuration:
   NAME
     Name of the Task
@@ -331,7 +361,8 @@ Task Types
 :Target:
   Local App Node
 :Role Permissions:
-  Provisioning: Tasks, Tasks - Script Engines
+  Provisioning: Tasks
+  Provisioning: Tasks - Script Engines
 :Task Configuration:
   NAME
     Name of the Task
@@ -374,7 +405,8 @@ Task Types
 :Target:
   Local App Node
 :Role Permissions:
-  Provisioning: Tasks, Tasks - Script Engines
+  Provisioning: Tasks
+  Provisioning: Tasks - Script Engines
 :Task Configuration:
   NAME
     Name of the Task
@@ -454,8 +486,10 @@ Task Types
     Enter Bash Script to execute
 
 
-|winrm| WinRM Script
-```````````````````````````
+WinRM Script
+````````````
+|winrm|
+
 :Description:
   Execute Powershell script against IP specified in Task.
 :Target:
@@ -482,29 +516,137 @@ Task Types
   SCRIPT
     Enter Script to execute
 
-To Add Tasks:
-^^^^^^^^^^^^^
 
-#. Select the Provisioning link in the navigation bar.
-#. Select Automation from the sub-navigation menu.
-#. Click the :guilabel:`Add` button.
-#. From the New Task Wizard input a name for the task.
-#. Select the type of task from from the type dropdown.
-#. Input the appropriate details dependent on the task type you selected from the dropdown.
-#. Save
+Task Results
+^^^^^^^^^^^^
 
-Edit Task
-^^^^^^^^^
+Overview
+`````````
+Task Results allow Tasks to use the output from preceding Tasks in the same Workflow via results variables. 
 
-#. Select the Provisioning link in the navigation bar.
-#. Select Automation from the sub-navigation menu.
-#. Click the Edit icon on the row of the task you wish to edit.
-#. Modify information as needed.
-#. Click the Save Changes button to save.
+Configure Tasks
+```````````````
+In script type tasks, if ``RESULT TYPE`` is set, |morpheus| will store the Task's output as a variable.
 
-Delete Task
-^^^^^^^^^^^
+Results Types
+`````````````
 
-#. Select the Provisioning link in the navigation bar.
-#. Select Automation from the sub-navigation menu.
-#. Click the Delete icon on the row of the task you wish to delete.
+- Single Value
+   Entire task output is stored in ``<%=results.taskCode%>`` or ``<%=results["Task Name"]%>`` variable.
+- Key/Value pairs
+   Expects ``key=value,key=value`` output. Entire task output is available with ``<%=results.taskCode%>`` or ``<%=results["Task Name"]%>`` variable (output inside ``[]``). Individual Values are avilable with ``<%=results.taskCode.key%>`` variables.
+- JSON
+   Expects ``key:value,key:value`` json formatted output. Entire task output is available with ``<%=results.taskCode%>`` or ``<%=results["Task Name"]%>`` variable (output inside ``[]``). Individual Values are avilable with ``<%=results.taskCode.key%>`` variables.
+
+.. IMPORTANT:: The entire output of a script is treated as results, not just the last line. Ensure formatting is correct for the appropriate result type. For example, if Results Type is ``json`` and the output is not fully json compatible, the result would not return properly.
+
+Examples
+````````
+
+:Single Value using Task Code:
+  Source Task Config
+    NAME
+      Var Code (single)
+    CODE
+      single
+    RESULT TYPE
+      Single Value
+    SCRIPT
+      ``echo "string value"``
+  Source Task Output
+    ``string value``
+  Results Task using task code in variable
+    Results Task Script
+      ``echo "single: <%=results.single%>"``
+    Results Task Output
+      ``single: string value``
+
+:Single Value using Task Name:
+  Source Task Config
+    NAME
+      Var Code
+    CODE
+      none
+    RESULT TYPE
+      Single Value
+    SCRIPT
+      ``echo "string value"``
+  Source Task Output
+    ``string value``
+  Results Task using task name in variable
+    Results Task Script
+      ``echo "task name: <%=results["Var Code"]%>"``
+    Results Task Output
+      ``task name: test value``
+
+
+:Key/Value Pairs:
+  Source Task Config
+    NAME
+      Var Code (keyval)
+    CODE
+      keyval
+    RESULT TYPE
+      Key/Value pairs
+    SCRIPT
+      ``echo "flash=bang,ping=pong"``
+  Source Task Output
+    ``flash=bang,ping=pong``
+  Results Task for all results
+    Results Task Script
+      ``echo "keyval: <%=results.keyval%>"``
+    Results Task Output
+      ``keyval: [flash:bang, ping:pong]``
+  Results Task for a single value)
+    Results Task Script
+      ``echo "keyval value: <%=results.keyval.flash%>"``
+    Results Task Output
+      ``keyval value: bang``
+
+:JSON:
+  Source Task Config
+    NAME
+      Var Code (json)
+    CODE
+      json
+    RESULT TYPE
+      JSON
+    SCRIPT
+      ``echo "{\"ping\":\"pong\",\"flash\":\"bang\"}"``
+  Source Task Output
+    ``{"ping":"pong","flash":"bang"}``
+  Results Task for all results
+    Results Task Script
+      ``echo "json: <%=results.json%>"``
+    Results Task Output
+      ``json: [ping:pong, flash:bang]``
+  Results Task for a single value
+    Results Task Script
+      ``echo "json value: <%=results.json.ping%>"``
+    Results Task Output
+      ``json value: pong``
+
+
+Results are available for all tasks executed in a workflow. For example, instead of using just one Tasks results in another Task, we can use all of the Task Results from the tasks above in a single task inside a workflow.
+
+:Multiple Task Results:
+  Results Task Script
+     .. code-block:: bash
+
+        echo "single: <%=results.single%>"
+        echo "task name: <%=results["Var Code"]%>"
+        echo "keyval: <%=results.keyval%>"
+        echo "keyval value: <%=results.keyval.flash%>"
+        echo "json: <%=results.json%>"
+        echo "json value: <%=results.json.ping%>"
+
+  Results Task Output
+     .. code-block:: bash
+
+        single: string value
+        task name: string value
+        keyval: [flash:bang, ping:pong
+        ]
+        keyval value: bang
+        json: [ping:pong, flash:bang]
+        json value: pong
