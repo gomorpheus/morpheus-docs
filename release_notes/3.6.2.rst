@@ -1,39 +1,42 @@
 v3.6.2
 =======
 
-Release date: 3/5/2019
+Release date:
 
 New Features
 ------------
 
-- API: Added support for the creation of subtenant users with the master account multitenant role ID
-- Automation: Added task type that allows local execution of scripts for Bash and PowerShell
-- Automation: "Services" tab renamed to "Integrations"
-- AWS: Added support for the creation and deletion of VPC's from Resources tab in the cloud detail
-- AWS: Added support for S3 bucket syncing
-- AWS: Added support for the creation and deletion of subnets
-- AWS: Added support for Security Group syncing
-- AWS: Added support for scale groups
-- AWS: Added support for Application Load Balancer sync during cloud sync
-- AWS: Added support for Elastic Load Balancer sync during cloud sync
-- Budgets: Added new section for Budgets
+- API: A Master Tenant Multitenant User Role can now be used when creating Subtenant Users
+- Tasks: Local Shell Script task type added w/ git repo Integration option
+- UI: "Services" tabs renamed to "Integrations"
+- AWS: VPC creation and deletion
+- AWS: S3 bucket syncing
+- AWS: Subnet creation and deletion
+- AWS: Security Group syncing
+- AWS: Scale groups now supported
+- AWS: Application Load Balancer sync
+- AWS: Elastic Load Balancer sync
+- Operations: New Budgets section
 - CloudFormation: Added "Apply State" action to apply updates to a Cloud Formation stack
-- CloudFormation: Added support for the creation of VPC's when included in CloudFormation template
-- CloudFormation: Added support for the creation of subnets when included in CloudFormation template
-- Docker: Added host support for Ubuntu 18.04
-- Docker: Updated version of Docker installed on Docker hosts
+- CloudFormation: VPC's and Subnets created from CloudFormation Blueprints are now created in |morpheus|
+- Docker: Update the version of docker installed on docker hosts from 1.12.6 to 18.09.3
+- Docker: Added support for Docker Host provisioning on Ubuntu 18.04
+- Docker: Removed support for Docker Host provisioning on Ubuntu 14.04
 - Google Cloud: Added public image syncing
-- Huawei: Added Huawei cloud
-- Infoblox: Added zone filter to prevent unwanted domains from syncing to |morpheus|
-- Infrastructure: Added delete prompt modal when deleting infrastructure buckets
-- Policies: Workflow Policies
-- Pricing: Added CAD currency option
-- Provisioning: Changed instance cloning configuration to be more like the instance creation wizard
-- Reports: Added Budget Analysis report
-- Roles: Added `Operations: Activity role permission`
-- Tenants: Added CAD currency option
-- Tenants: Added billing info for zones that do not exist
-- VMware: Added Ubuntu 18 catalog item
+- Huawei:
+- Infoblox: Zone filter added to filter Zones/Domains synced from Infoblox
+- Infoblox: "Inventory Existing" flag added to enabled/disable sync of host and zone records
+- Storage: Delete confirmation modal w/ validation added when deleting Storage Buckets
+- Policies: Workflow Policy type added
+- Pricing: CAD currency added
+- Provisioning: Cloning wizard updated to match provisioning configuration options.
+- Roles: "Operations: Activity" permission added
+- Roles: "Operations: Budgets" permission added
+- Roles: "Integrations: Ansible" permission added
+- Tenants: CAD currency added
+- API: UUID added to Clouds, Instances, Hosts, Apps, Groups, Containers for /billing reference
+- Virtual Images: Ubuntu 18.04 vmdk system image added
+- Library: Ubuntu 18.04 VMware Layout and Node Type added to system Ubuntu Instance Type
 
 
 Appliance Package Updates
@@ -57,11 +60,8 @@ Appliance Package Updates
 - tomcat-embed-core 8.5.23
 - tomcat-util-scan 8.0.36
 
-
-
 Fixes
 -----
-
 
 - Administration: Fix for unable to see second page or users
 - Ansible: Fix for run playbook from integrations not working
