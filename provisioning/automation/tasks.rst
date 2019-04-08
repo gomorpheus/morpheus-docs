@@ -20,6 +20,14 @@ Tasks
 Overview
 ^^^^^^^^
 
+There are many Task Types available, including scripts added directly, scripts and templates from the Library section, recipes, playbooks, salt states, puppet agent installs, and http (api) calls. Tasks are primarily created for use in Workflows, but a single Task can be executed on an existing instance via ``Actions -> Run Task``.
+
+Role Permissions
+^^^^^^^^^^^^^^^^^
+
+The User Role Permission 'Provisioning: Tasks  FULL' is required to create, edit and delete tasks.
+
+Tasks Types that can execute locally against the |morpheus| Appliance have an additional Role Permission: ``Tasks - Script Engines``. Script Engine Task Types will be hidden for users without ``Tasks - Script Engines`` role permissions.
 
 Task Types
 ^^^^^^^^^^
@@ -127,47 +135,47 @@ Task Types
 
 |ansible| Ansible Playbook
 ``````````````````````````````````
-Description
+:Description:
        Runs an Ansible playbook. Ansible Integration required
-Target
+:Target:
        Instance or Host
-Required Permissions
+:Role Permissions:
        Provisioning: Tasks
-:CONFIGURATION:
+:Task Configuration:
    NAME
      Name of the Task
    CODE
      Unique code name for api, cli, and variable reference
    ANSIBLE REPO
-    - Select existing Ansible Integration
+    Select existing Ansible Integration
    GIT REF
-    - Specify tag or branch (Option, blank assumes default)
+    Specify tag or branch (Option, blank assumes default)
    PLAYBOOK
-    - Name of playbook to execute
+    Name of playbook to execute
        Both ``playbook`` and ``playbook.yml`` format supported
    TAGS
-    - Enter comma separated tags to filter executed tasks by (ie ``--tags``)
+    Enter comma separated tags to filter executed tasks by (ie ``--tags``)
    SKIP TAGS
-    - Enter comma separated tags to run the playbook without matching tagged tasks (ie ``--skip-tags``)
+    Enter comma separated tags to run the playbook without matching tagged tasks (ie ``--skip-tags``)
 
    .. IMPORTANT:: Using different Git Ref's for multiple Ansible Tasks in same Workflow is not supported. Git Refs can vary between Workflows, but Tasks in each workflow must use the same Git Ref.
 
 |chef| Chef Bootstrap
 ````````````````````````````
-Description
+:Description:
   Executes Chef bootstrap and run list. Chef Integration required
-Target
+:Target:
   Instance or Host
-Required Permissions
+:Role Permissions:
   Provisioning: Tasks
-Configuration
+:Task Configuration:
   NAME
    Name of the Task
   CODE
     Unique code name for api, cli, and variable reference
   CHEF SERVER
     Select existing Chef Integration
-  ENVIRONMENT 
+  ENVIRONMENT
     Populate Chef environment, or leave as ``_default``
   RUN LIST
     Enter Run List, eg ``role[web]``
@@ -187,9 +195,9 @@ Configuration
   Executes Groovy Script locally (on app node)
 :Target:
   Local App Node
-:Required Permissions:
+:Role Permissions:
   Provisioning: Tasks, Tasks - Script Engines
-:CONFIGURATION:
+:Task Configuration:
   NAME
     Name of the Task
   CODE
@@ -202,15 +210,15 @@ Configuration
     Contents of Groovy Script to execute
 
 
-|http| HTTP
+|http| HTTP (api)
 ```````````````````
-Description
+:Description:
   Executes REST call for targeting external API's.
-Target
+:Target:
   URL specified in Task
-Required Permissions
+:Role Permissions:
   Provisioning: Tasks
-Configuration
+:Task Configuration:
   NAME
     Name of the Task
   CODE
@@ -240,13 +248,13 @@ Configuration
 
 |javascript| Javascript
 ```````````````````````
-Description
+:Description:
   Executes Javascript locally (on app node)
-Target
+:Target:
   Local App Node
-Required Permissions
+:Role Permissions:
   Provisioning: Tasks, Tasks - Script Engines
-Config
+:Task Configuration:
   NAME
     Name of the Task
   CODE
@@ -261,13 +269,13 @@ Config
 
 |jruby| jRuby Script
 ````````````````````````````
-Description
+:Description:
   Executes Ruby script locally (on app node)
-Target
+:Target:
   Local App Node
-Required Permissions
+:Role Permissions:
   Provisioning: Tasks, Tasks - Script Engines
-Configuration
+:Task Configuration:
   NAME
     Name of the Task
   CODE
@@ -282,13 +290,13 @@ Configuration
 
 |libraryscript| Library Script
 ```````````````````````````````
-Description
+:Description:
   Creates a Task for an existing Library Script (``Provisioning -> Library -> Scripts``)
-Target
+:Target:
   Instance or Host
-Required Permissions
+:Role Permissions:
   Provisioning: Tasks
-Configuration
+:Task Configuration:
   NAME
     Name of the Task
   CODE
@@ -302,13 +310,13 @@ Configuration
 
 |template| Library Template
 ```````````````````````````````
-Description
+:Description:
   Creates a Task for an existing Library Template (``Provisioning -> Library-> Templates``)
-Target
+:Target:
   Instance or Host
-Required Permissions
+:Role Permissions:
   Provisioning: Tasks
-Configuration
+:Task Configuration:
   NAME
     Name of the Task
   CODE
@@ -318,13 +326,13 @@ Configuration
 
 |localscript| Local Shell Script
 `````````````````````````````````
-Description
+:Description:
   Executes Bash script locally (on |morpheus| app node)
-Target
+:Target:
   Local App Node
-Required Permissions
+:Role Permissions:
   Provisioning: Tasks, Tasks - Script Engines
-Configuration
+:Task Configuration:
   NAME
     Name of the Task
   CODE
@@ -342,13 +350,13 @@ Configuration
 
 |puppet| Puppet Agent Install
 ```````````````````````````````````
-Description
+:Description:
   Executes Puppet Agent bootstrap, writes ``puppet.conf`` and triggers agent checkin. Puppet Integration required
-Target
+:Target:
   Instance or Host
-Required Permissions
+:Role Permissions:
   Provisioning: Tasks
-Configuration
+:Task Configuration:
   NAME
     Name of the Task
   PUPPET MASTER
@@ -361,13 +369,13 @@ Configuration
 
 |jython| Python Script (jython)
 `````````````````````````````````````
-Description
+:Description:
   Executes Python script locally (on app node)
-Target
+:Target:
   Local App Node
-Required Permissions
+:Role Permissions:
   Provisioning: Tasks, Tasks - Script Engines
-Config
+:Task Configuration:
   NAME
     Name of the Task
   CODE
@@ -383,13 +391,13 @@ Config
 
 |shellscript| Remote Shell Script
 ``````````````````````````````````
-Description
+:Description:
   Executes Bash script against the Instance or Host the Task or Workflow is ran on
-Target
+:Target:
   Instance or Host
-Required Permissions
+:Role Permissions:
   Provisioning: Tasks
-:CONFIGURATION:
+:Task Configuration:
   NAME
     Name of the Task
   CODE
@@ -403,13 +411,13 @@ Required Permissions
 
 |restart| Restart
 ``````````````````````
-Description
+:Description:
   Specifically for use in Workflows after a task that requires a restart, the Restart task executes a restart on the target Instance or Host. Morpheus will wait until the restart is complete to execute the next task in the workflow phase.
-Target
+:Target:
   Instance or Host
-Required Permissions
+:Role Permissions:
   Provisioning: Tasks
-Config
+:Task Configuration:
   NAME
     Name of the Task
   CODE
@@ -417,13 +425,13 @@ Config
 
 |ssh| SSH Script
 `````````````````````````
-Description
+:Description:
   Execute Bash script against IP specified in Task.
-Target
+:Target:
   IP specified in Task
-Required Permissions
+:Role Permissions:
   Provisioning: Tasks
-Config
+:Task Configuration:
   NAME
     Name of the Task
   CODE
@@ -448,13 +456,13 @@ Config
 
 |winrm| WinRM Script
 ```````````````````````````
-Description
+:Description:
   Execute Powershell script against IP specified in Task.
-Target
+:Target:
   IP specified in Task
-Required Permissions
+:Role Permissions:
   Provisioning: Tasks
-Config
+:Task Configuration:
   NAME
     Name of the Task
   CODE
