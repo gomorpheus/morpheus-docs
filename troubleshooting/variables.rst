@@ -311,7 +311,7 @@ Instance Naming Policy example: ``${userInitials}-${cloudCode}-${platform == 'wi
 
 .. code-block:: bash
 
-	cloud {
+	zone {
 		name,
 		code,
 		location,
