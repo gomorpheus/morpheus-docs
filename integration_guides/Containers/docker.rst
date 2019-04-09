@@ -11,6 +11,9 @@ Morpheus can provision Docker Hosts into any cloud, convert existing Hosts to Do
 Add a Docker Host to any cloud:
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+.. IMPORTANT:: As of |morpheus| v3.6.2 Ubuntu 14.04 is no longer supported for Docker Hosts OS due to Docker version upgrade to address CVE-2019-5736. Existing Morpheus Docker Hosts running on 14.04 will not be able to upgrade to latest Morpheus Agent version. All new Morpheus Docker hosts using Ubuntu require Ubuntu 16.04 or 18.04.
+
+
 1. Navigate to Infrastructure -> Hosts
 2. Click the :guilabel:`+CONTAINER HOST` button
 3. Select a container host type
