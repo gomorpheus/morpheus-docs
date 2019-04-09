@@ -29,33 +29,6 @@ The User Role Permission 'Provisioning: Tasks  FULL' is required to create, edit
 
 Tasks Types that can execute locally against the |morpheus| Appliance have an additional Role Permission: ``Tasks - Script Engines``. Script Engine Task Types will be hidden for users without ``Tasks - Script Engines`` role permissions.
 
-Add a Task
-``````````
-
-#. Select the Provisioning link in the navigation bar.
-#. Select Automation from the sub-navigation menu.
-#. Click the :guilabel:`Add` button.
-#. From the New Task Wizard input a name for the task.
-#. Select the type of task from from the type dropdown.
-#. Input the appropriate details dependent on the task type you selected from the dropdown.
-#. Save
-
-Edit a Task
-```````````
-
-#. Select the Provisioning link in the navigation bar.
-#. Select Automation from the sub-navigation menu.
-#. Click the Edit icon on the row of the task you wish to edit.
-#. Modify information as needed.
-#. Click the Save Changes button to save.
-
-Delete a Task
-`````````````
-
-#. Select the Provisioning link in the navigation bar.
-#. Select Automation from the sub-navigation menu.
-#. Click the Delete icon on the row of the task you wish to delete.
-
 Task Types
 ^^^^^^^^^^
 
@@ -515,5 +488,35 @@ WinRM Script
     Password for WinRM task target
   SCRIPT
     Enter Script to execute
+
+Task Management
+^^^^^^^^^^^^^^^
+
+Adding Tasks
+````````````
+
+#. Select the Provisioning link in the navigation bar.
+#. Select Automation from the sub-navigation menu.
+#. Click the :guilabel:`Add` button.
+#. From the New Task Wizard input a name for the task.
+#. Select the type of task from from the type dropdown.
+#. Input the appropriate details dependent on the task type you selected from the dropdown.
+#. Save
+
+Editing Tasks
+`````````````
+
+#. Select the Provisioning link in the navigation bar.
+#. Select Automation from the sub-navigation menu.
+#. Click the Edit icon on the row of the task you wish to edit.
+#. Modify information as needed.
+#. Click the Save Changes button to save.
+
+Deleting Tasks
+``````````````
+
+#. Select the Provisioning link in the navigation bar.
+#. Select Automation from the sub-navigation menu.
+#. Click the Delete icon on the row of the task you wish to delete.
 
 .. include:: tasks/taskResults.rst
