@@ -15,6 +15,8 @@ This guide assumes the following:
 - All nodes have access to a shared volume for ``/var/opt/morpheus/morpheus-ui``. This can be done as a post startup step.
 - This configuration will support the complete loss of a single node, but no more.  Specifically the Elasticsearch tier requires at least two nodes to always be clustered..
 
+.. image:: /images/ha3node/HA-3-Node.png
+
 Steps
 ^^^^^
 
