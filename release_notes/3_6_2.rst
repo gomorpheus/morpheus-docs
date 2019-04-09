@@ -9,10 +9,11 @@ Release date:
 New Features
 ------------
 
+
 - Analytics: Completely revamped Analytics section that expands available metrics, filtering and flexibility.
 - API: A Master Tenant Multitenant User Role can now be used when creating Subtenant Users
-- API: ownerId added to ``/api/zones/list``
 - API: Additional validation added for Instance and App creation
+- API: ownerId added to ``/api/zones/list``
 - API: UUID added to Clouds, Instances, Hosts, Apps, Groups, Containers for /billing reference
 - Appliance: ``ntp['enable'] = false`` option added for /etc/morpheus/morpheus.rb
 - AWS: Application Load Balancer sync
@@ -30,34 +31,33 @@ New Features
 - Docker: Updated the version of docker installed on docker hosts from 1.12.6 to 18.09.3
     .. IMPORTANT:: The Docker v18.09.3 upgrade addresses CVE-2019-5736. Docker v18.09.3 does not support Ubuntu 14.04. Existing Morpheus Docker Hosts running on 14.04 will not be able to upgrade to the latest Morpheus Agent version, as the host Docker version will be upgraded to v18.09.3 upon Agent upgrade. All new Morpheus Docker hosts using
 - Google Cloud: Added public image syncing
-- Infoblox: Zone filter added to filter Zones/Domains synced from Infoblox
 - Infoblox: "Inventory Existing" flag added to enabled/disable sync of host and zone records
+- Infoblox: Zone filter added to filter Zones/Domains synced from Infoblox
 - Instances: Sync restore status added
-- Library: Ubuntu 18.04 VMware Layout and Node Type added to system Ubuntu Instance Type
 - Library: Instance Types and Layouts now filter by user role permissions
+- Library: Ubuntu 18.04 VMware Layout and Node Type added to system Ubuntu Instance Type
 - Nutanix: Fix for cloning Instances with 1 TB+ storage
 - Operations: New Budgets section
-- Policies: Workflow Policy type added
 - Plans: Group access settings added
+- Policies: Workflow Policy type added
 - Pricing: CAD currency added
-- Provisioning: Cloning wizard updated to match provisioning configuration options.
 - Provisioning: ${app.name}, ${customOptions.} and ${instance.instanceContext} variables now evaluated in review pane
+- Provisioning: Cloning wizard updated to match provisioning configuration options.
 - Roles: "Integrations: Ansible" permission added
 - Roles: "Operations: Activity" permission added
 - Roles: "Operations: Budgets" permission added
-- Storage: Delete confirmation modal w/ validation added when deleting Storage Buckets
-- SCVMM: Hypervisor Console added (beta)
 - SCVMM: Hosts selection no longer required
+- SCVMM: Hypervisor Console added (beta)
+- Storage: Delete confirmation modal w/ validation added when deleting Storage Buckets
 - Tasks: Local Shell Script task type added w/ git repo Integration option
 - Tasks: Task Results added. Allow Tasks to use the output from preceding Tasks in the same Workflow via results variables. Single Value, Key/Value Pairs, and JSOn results types. Output is stored in ``<%=results.taskCode%>`` or ``<%=results["Task Name"]%>`` variables.
 - Tenants: CAD currency added
 - UI: "Services" tabs renamed to "Integrations"
-- Virtual Images: Ubuntu 18.04 vmdk system image added
 - vCloud Director: Additional error messages displayed upon provisioning failure
-- vCloud Director: Plan matching added for Discovered Servers
 - vCloud Director: Discovered server usage tracking added
+- vCloud Director: Plan matching added for Discovered Servers
+- Virtual Images: Ubuntu 18.04 vmdk system image added
 - VMware: Networks now filter by cluster during provisioning when cloud is scoped to all clusters
-
 
 Appliance Package Updates
 -------------------------
@@ -83,45 +83,46 @@ Appliance Package Updates
 Fixes
 -----
 
-- AWS: Fix for detecting ip address changes during provisioning due to EIP assignment
-- Tenants: Fix for Users paging issue
 - Ansible: Fix for running playbooks from Ansible Integrations section
-- CLI: Fix for missing field prompts in ``morpheus apps add $name --blueprints``
-- CLI: Fix for ``morpheus groups use`` command error when not using ``morpheus shell``
-- CLI: Fix for ``morpheus instances add`` using Nutanix Instance Types
 - Apps: Fix for ${App.name} not showing correct value in the Review App section
 - Apps: Fix for Instance configurations get reset when going back from the REVIEW page
-- Backups: Fix for snapshot retention when "Archive Snapshots" is disabled on target Storage Provider
-- Backups: Fix for recent backups failures entries and deletion
+- AWS: Fix for detecting ip address changes during provisioning due to EIP assignment
 - Backups: Fix for backups associated with an Instance not moving to subtenant when the Instance is assigned to a subtenant
+- Backups: Fix for recent backups failures entries and deletion
+- Backups: Fix for snapshot retention when "Archive Snapshots" is disabled on target Storage Provider
 - Blueprints: Fix for sub-tenants not able to set blueprint access when custom access has been set at the master tenant level for blueprints.
-- Commvault: Fix for Sub-Tenants using Commvault Integration shared form Master Tenant
-- Commvault: Fix for cloning a synced job
+- CLI: Fix for ``morpheus groups use`` command error when not using ``morpheus shell``
+- CLI: Fix for ``morpheus instances add`` using Nutanix Instance Types
+- CLI: Fix for missing field prompts in ``morpheus apps add $name --blueprints``
 - Commvault: Fix for Backup deletion handling
-- Health: Updates to Appliance Health: System Memory Usage accuracy
-- Instances: Fix for core count updated after reconfigured Instances that were converted to managed
-- Storage: Fix for Dell Isilon/ECS ``+`` button on IP-related fields when editing file share
+- Commvault: Fix for cloning a synced job
+- Commvault: Fix for Sub-Tenants using Commvault Integration shared form Master Tenant
+- Console: `ctl-alt-delete` restart warning dialog no longer displayed for Windows vm's
 - GCP: Fix for image selection when creating Google Node Types
 - GCP: Fix for provisioning private images
 - HA: Fix for mysql read-only and auto-commit locks when using failover morpheus.rb configurations
-- UI: Fix for Hosts pagination removing filters
+- Health: Updates to Appliance Health: System Memory Usage accuracy
+- Hosts: Fix for converting to managed using key instead of username/password
+- Instances: Fix for core count updated after reconfigured Instances that were converted to managed
 - KVM:  Fix for cloning kvm hosts
 - NSX: Fix for deleting NSX integrations
 - Nutanix: Fix for cloudinit iso upload for docker host provisioning
+- Nutanix: Fix for duplicate Virtual Images
 - OpenStack: Fix for reconfiguring Host and VM's from Infrastructure - Hosts
 - Option Types: source_url length increased to from 255 to 1000
-- OTC: Fix for Cloning instances
 - OTC/Huawei: Fix for Backups: Restore to New
-- SCVMM: Fix for unattend and iso cleanup
-- Tenants: Fix for Tenant delete error due to missing ``storage_group_storage_volume``
-- Plans & Pricing: Price Sets and Price tabs now hidden for sub-tenants
+- OTC: Fix for Cloning instances
 - Plans & Pricing: Fix for price plans assigned to sub-tenant hidden from master tenant in ui
-- Console: `ctl-alt-delete` restart warning dialog no longer displayed for Windows vm's
+- Plans & Pricing: Price Sets and Price tabs now hidden for sub-tenants
+- SCVMM: Fix for unattend and iso cleanup
+- Storage: Fix for Dell Isilon/ECS ``+`` button on IP-related fields when editing file share
+- Tenants: Fix for Tenant delete error due to missing ``storage_group_storage_volume``
+- Tenants: Fix for Users paging issue
+- UI: Fix for Hosts pagination removing filters
 - vCD: ``/api`` removed from new cloud wizard placeholder text
 - vCD: Fix for adding network adapter during reconfigure
-- VCD: Fix for stop/start Instance not updating usage records
-- vCD: Fix for inventory issues (instances not showing storage and aren't getting tied to correct plans)
 - vCD: Fix for Inventory Existing when 50-100 vapps exist in target vCD
+- vCD: Fix for inventory issues (instances not showing storage and aren't getting tied to correct plans)
+- VCD: Fix for stop/start Instance not updating usage records
 - Veeam: Fix for service hidden from UI when disabled
 - VMware: Fix for restoring a VMware backup after deleting associated Instance
-- Hosts: Fix for converting to managed using key instead of username/password
