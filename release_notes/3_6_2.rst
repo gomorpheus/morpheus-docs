@@ -9,6 +9,9 @@ New Features
 ------------
 
 - Analytics: Completely revamped Analytics section that expands available metrics, filtering and flexibility.
+- Ansible: Live std out of Ansible execution added to instance history
+- Ansible: Ansible Group field added to Edit Instance Modal for Instances in Groups scoped to Ansible
+- Ansible: Command Bus Execution times improved up to 40%
 - API: A Master Tenant Multitenant User Role can now be used when creating Subtenant Users
 - API: Additional validation added for Instance and App creation
 - API: ownerId added to ``/api/zones/list``
@@ -30,11 +33,13 @@ New Features
 - Docker: Updated the version of docker installed on docker hosts from 1.12.6 to 18.09.3
   .. IMPORTANT:: The Docker v18.09.3 upgrade addresses CVE-2019-5736. Docker v18.09.3 does not support Ubuntu 14.04. Existing Morpheus Docker Hosts running on 14.04 will not be able to upgrade to the latest Morpheus Agent version, as the host Docker version will be upgraded to v18.09.3 upon Agent upgrade. All new Morpheus Docker hosts using
 - Google Cloud: Added public image syncing
+- Hosts: Windows Server option added to ``+ BARE METAL`` action
 - Infoblox: "Inventory Existing" flag added to enabled/disable sync of host and zone records
 - Infoblox: Zone filter added to filter Zones/Domains synced from Infoblox
 - Instances: Sync restore status added
 - Library: Instance Types and Layouts now filter by user role permissions
 - Library: Ubuntu 18.04 VMware Layout and Node Type added to system Ubuntu Instance Type
+- Load Balancers: AD Authentication added for F5 Integrations
 - Nutanix: Fix for cloning Instances with 1 TB+ storage
 - Operations: New Budgets section
 - Plans: Group access settings added
@@ -86,7 +91,7 @@ Fixes
 - Instances: Fix for core count updated after reconfigured Instances that were converted to managed
 - KVM: Fix for cloning kvm hosts
 - NSX: Fix for creating NSX Integration from ``Administration - Integrations``
-- Nutanix: Fix for cloudinit iso upload for docker host provisioning
+- Nutanix: Fix for cloud-init iso upload for docker host provisioning
 - Nutanix: Fix for duplicate Virtual Images
 - OpenStack: Fix for reconfiguring Host and VM's from Infrastructure - Hosts
 - Option Types: source_url length increased to from 255 to 1000
@@ -109,6 +114,7 @@ Fixes
 - Veeam: Fix for service hidden from UI when disabled
 - VMware: Fix for blank hypervisor console displaying for certain Windows VM resolutions
 - VMware: Fix for restoring a VMware backup after deleting associated Instance
+- VMware: Fix for issue where incorrect thin/thick provision spec was applied
 
 Appliance Package Version Updates
 ---------------------------------
