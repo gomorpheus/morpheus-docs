@@ -137,7 +137,7 @@ Proxy configurations are known to vary in some organizations and makes building 
 
 .. IMPORTANT:: If using this virtual machine as a docker host, proxy settings must also be configured in the docker config. See Docker guides for instructions on how to properly set this. If necessary this can be wrapped in a task automation workflow for your own use.
 
-To create an Ubuntu Image
+Creating an Ubuntu Image
 ``````````````````````````````````
 
 Create a new machine in VMware vCenter and install a base version of your preferred Linux distro build. If you are using cloud init as part of your image you will need to ensure your virtual machine has a cdrom.
