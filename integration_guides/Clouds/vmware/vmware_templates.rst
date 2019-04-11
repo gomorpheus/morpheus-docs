@@ -22,6 +22,7 @@ Create a new machine in VMware vCenter and install a base version of your prefer
 1.  Ensure VMtools is installed on the operating system.
 2.  Apply any service packs / updates to the operating system.
 3.  Configure WinRM to allow remote management and open the firewall. This is optional if using VMtools RPC mode for agent install and Morpheus Agent for guest exec.  To enable this, under local computer Administrator, open a command prompt and run 
+    
     .. code-block:: PowerShell
 
       winrm quickconfig
