@@ -5,7 +5,7 @@ Overview
 --------
 
 
-Groups in |morphes| define what resources a user has access to. Group access is defined by User Roles. Clouds are added to groups, and a User can only access the Clouds that are in the Groups their Role(s) gives them access to. Resources such as Networks, Datastores, Resources Pools, and Folders have additional Group access settings.
+Groups in |morpheus| define what resources a user has access to. Group access is defined by User Roles. Clouds are added to groups, and a User can only access the Clouds that are in the Groups their Role(s) gives them access to. Resources such as Networks, Datastores, Resources Pools, and Folders have additional Group access settings.
 
 Policies applied to a Group will be enforced on all Instances provisioned or moved into that Group.
 
