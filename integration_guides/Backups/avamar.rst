@@ -18,7 +18,7 @@ Adding Avamar Integration
    Host
       IP or Hostname of the Avamar api server.
    Port
-      Port number configured to access the Commvault server
+      Port number configured to access the Avamar server
    Username
       Admin Username for Avamar
    Password
