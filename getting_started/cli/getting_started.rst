@@ -31,8 +31,8 @@ To confirm that we are hooked into the appliance properly lets check our authent
     Account: Labs (Master Account)
     First Name: Demo
     Last Name: Environment
-    Username: david
-    Email: david@morpheusdata.com
+    Username: Example
+    Email: Example@morpheusdata.com
     Role: System Admin
 
     Remote Appliance
