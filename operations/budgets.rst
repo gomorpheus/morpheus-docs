@@ -15,7 +15,7 @@ Creating A Budget
       #. **Year:** Set future budgets
       #. **Interval:** Choose Month, Quarter, Year then fill in the budget for that interval
 
-  #. :guilabel:`SAVE`
+  #. :guilabel:`SAVE CHANGES`
 
 .. image:: /images/operations/create_budget.png
 
