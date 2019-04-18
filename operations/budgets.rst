@@ -19,6 +19,8 @@ Creating A Budget
 
 .. image:: /images/operations/create_budget.png
 
+Cloud Budget
+------------
 
 If you scope a budget to a cloud visit the cloud summary page in ``Infrastructure > Clouds > Select Cloud > Summary`` for a detailed breakdown of the costing
 
