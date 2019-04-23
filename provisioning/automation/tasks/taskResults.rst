@@ -19,7 +19,9 @@ Results Types
 - JSON
    Expects ``key:value,key:value`` json formatted output. Entire task output is available with ``<%=results.taskCode%>`` or ``<%=results["Task Name"]%>`` variable (output inside ``[]``). Individual Values are avilable with ``<%=results.taskCode.key%>`` variables.
 
+
 .. IMPORTANT:: The entire output of a script is treated as results, not just the last line. Ensure formatting is correct for the appropriate result type. For example, if Results Type is ``json`` and the output is not fully json compatible, the result would not return properly.
+
 
 Examples
 ````````
@@ -107,9 +109,10 @@ Examples
     Results Task Output
       ``json value: pong``
 
+:Python:
+Python tasks can access the results dictionary directly:``results[key]``. To pass the results of a Python task to the next task within a workflow add the results as a value within the results dictionary. For example ``results['taskcode'] = 'Hello World'`` where 'taskcode' is the code of the task.
 
 Results are available for all tasks executed in a workflow. For example, instead of using just one Tasks results in another Task, we can use all of the Task Results from the tasks above in a single task inside a workflow.
-
 :Multiple Task Results:
   Results Task Script
      .. code-block:: bash

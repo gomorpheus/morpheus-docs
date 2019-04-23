@@ -11,6 +11,8 @@ PowerShell Example: ``$app_id = "<%= instance.metadata.app_id %>"``
 
 Bash Example:	``HOSTNAME="<%= container.server.hostname %>"``
 
+Python Example: ``hostname = container['server']['hostname']``
+
 Instance Naming Policy example: ``${userInitials}-${cloudCode}-${platform == 'windows' ? 'W' : 'L'}-${sequence}``
 
 .. TIP:: Variables can be extremely useful when utilized in the environment tab, metadata, and environment variables.
