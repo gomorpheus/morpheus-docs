@@ -13,6 +13,8 @@ Bash Example:	``HOSTNAME="<%= container.server.hostname %>"``
 
 Python Example: ``hostname = container['server']['hostname']``
 
+HTTP Body Example: ``{"name": "<%= instance.createdByUsername %>"}``
+
 Instance Naming Policy example: ``${userInitials}-${cloudCode}-${platform == 'windows' ? 'W' : 'L'}-${sequence}``
 
 .. TIP:: Variables can be extremely useful when utilized in the environment tab, metadata, and environment variables.
