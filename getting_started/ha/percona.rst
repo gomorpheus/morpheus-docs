@@ -36,7 +36,7 @@ Once you have your database installed and configured:
 
     mysql> GRANT ALL PRIVILEGES ON *.* TO '$morpheus_db_user_name'@'$source_ip' IDENTIFIED BY '$morpheus_db_user_pw' with grant option;
 
-    mysql>  GRANT SELECT, PROCESS, SHOW DATABASES, SUPER ON *.* TO 'morpheusdbuser'@'$source_ip' IDENTIFIED BY PASSWORD 'secretpasshere';
+    mysql>  GRANT SELECT, PROCESS, SHOW DATABASES, SUPER ON *.* TO 'morpheusdbuser'@'$source_ip' IDENTIFIED BY 'secretpasshere';
 
     mysql> FLUSH PRIVILEGES;
 
