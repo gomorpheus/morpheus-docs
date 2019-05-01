@@ -34,9 +34,9 @@ Once you have your database installed and configured:
 
    .. code-block:: bash
 
-    mysql> GRANT ALL PRIVILEGES ON *.* TO '$morpheus_db_user_name'@'$source_ip' IDENTIFIED BY '$morpheus_db_user_pw' with grant option;
+    mysql> GRANT ALL PRIVILEGES ON morpheus_db_name.* TO 'morpheus_db_user'@'$source_ip' IDENTIFIED BY 'morpheus_db_user_pw' with grant option;
 
-    mysql>  GRANT SELECT, PROCESS, SHOW DATABASES, SUPER ON *.* TO 'morpheusdbuser'@'$source_ip' IDENTIFED BY PASSWORD 'secretpasshere';
+    mysql>  GRANT SELECT, PROCESS, SHOW DATABASES, SUPER ON *.* TO 'morpheus_db_user'@'$source_ip' IDENTIFIED BY 'morpheus_db_user_pw';
 
     mysql> FLUSH PRIVILEGES;
 
