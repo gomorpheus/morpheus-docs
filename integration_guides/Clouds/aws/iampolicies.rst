@@ -221,6 +221,32 @@ S3
  }
 
 
+
+Route 53
+''''''''
+
+.. code-block:: json
+
+ {
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+          "route53:GetHostedZone",
+          "route53:ListResourceRecordSets"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": ["route53:ListHostedZones"],
+      "Resource": "*"
+    }
+  ]
+ }
+
+
 Resource Filter
 '''''''''''''''
 
