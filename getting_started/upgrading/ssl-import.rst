@@ -15,7 +15,7 @@ Import Trusted Certificates to Morpheus
 
 .. code-block:: bash
 
-   /opt/morpheus/embedded/java/bin/keytool -import -keystore /opt/morpheus/embedded/java/lib/security/cacerts -trustcacerts -file /etc/morpheus/ssl/trusted_certs/root_ca.pem -alias some_alias -keypass changeit
+   /opt/morpheus/embedded/java/bin/keytool -import -keystore /opt/morpheus/embedded/java/lib/security/cacerts -trustcacerts -file /etc/morpheus/ssl/trusted_certs/root_ca.pem -alias some_alias -storepass changeit
 
 Do this command for each certificate in the chain adjust the file and alias name as needed. Answer yes for the root certificate when asked it you want to trust it.
 
