@@ -140,11 +140,11 @@ The following chart is useful for troubleshooting Agent install, Static IP assig
    | Cloud-init settings populated in Morpheus user settings or in `Administration –> Provisioning`"
    " ", "VMware Tools",All, , , ,"| Network configured in Morpheus (Gateway, Primary and Secondary DNS, CIDR populated, DHCP disabled)
    | VMtools installed on Template/Virtual Image"
-   Remote Console,SSH,Linux,Applaince,Node,22,"| ssh enabled on node
+   Remote Console,SSH,Linux,Appliance,Node,22,"| ssh enabled on node
    | user/password set on VM or Host in Morpheus "
    " ",RDP,Windows,Appliance,Node,3389,"| RDP Enabled on node
    | user/password set on VM or Host in Morpheus"
-   " ",Hypervisor Console,All,Appliance,ESXi Host,5900-6000+,"| GBB server opened on all ESXii host firewalls
+   " ",Hypervisor Console,All,Appliance,ESXi Host,5900-6000+,"| GBB server opened on all ESXi host firewalls
    | *Port range req's vary per env
    | ESXi host names resolvable by morpheus appliance"
    "Morpheus Catalog Image Download", ,All,Appliance,AWS S3,443,"Available space at ``/var/opt/morpheus/``"
