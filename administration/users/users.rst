@@ -51,15 +51,7 @@ To create a User:
 
     .. IMPORTANT:: Please ensure password entered is allowable by Windows.
 
-   Limits
-    Combined Instance Resource Limits for the User. When a limit is reached, the User will not be able to provision more Instances
-
-    -  STORAGE
-        - Total amount of Storage the user can Provision, set in GiB. 0.0 is unlimited.
-    -  MEMORY
-        - Total amount of RAM the user can Provision, set in MiB. 0.0 is unlimited.
-    - CPU COUNT
-       - Total combined Cores the user can Provision. 0 is unlimited.
+.. NOTE:: Instance Resource Limits for a user are now configured through :ref:`Policies`
 
 #. Select :guilabel:`SAVE CHANGES`.
 
