@@ -94,6 +94,7 @@ Steps
 
    |morpheus| will come up on all nodes and Elasticsearch will auto-cluster. The only item left is the manual clustering of RabbitMQ.
 
+
 #. Select one of the nodes to be your Source Of Truth (SOT) for RabbitMQ clustering. We need to copy the secrets for RabbitMQ, copy the erlang cookie and join the other nodes to the SOT node.
 
    Begin by copying secrets from the SOT node to the other nodes.
@@ -129,6 +130,22 @@ Steps
 #. Subsequently we need to stop and start Rabbit on the NOT SOT nodes.
 
    .. IMPORTANT:: The commands below must be run at root
+
+   .. NOTE::
+
+      If you receive an error ``unable to connect to epmd (port 4369) on app-server-1: nxdomain (non-existing domain)`` make sure to add all IPs and hostnames to the ``etc/hosts`` file like so:
+
+      .. code-block:: bash
+
+          127.0.0.1   localhost localhost.localdomain localhost4 localhost4.localdomain4
+          ::1         localhost localhost.localdomain localhost6 localhost6.localdomain6
+          127.0.0.1 app-server-1.localdomain app-server-2 localhost
+          127.0.0.1 container16
+          10.100.10.113 app-server-1
+          10.100.10.114 app-server-2
+          10.100.10.115 app-server-3
+
+
 
    .. code-block:: bash
 
