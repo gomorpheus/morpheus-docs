@@ -83,7 +83,7 @@ Linux
 
    .. code-block:: bash
 
-    curl -k -s "${opts.applianceUrl}api/server-script/agentInstall?apiKey=${opts.apiKey}" | bash
+    curl -k -s "${opts.applianceUrl}/api/server-script/agentInstall?apiKey=${opts.apiKey}" | bash
 
 #. This will pull the |morpheus| Agent install script from the |morpheus| appliance and run it.
 
