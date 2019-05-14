@@ -17,8 +17,8 @@ Offline Installer Requirements
 Offline Install
 ^^^^^^^^^^^^^^^
 
-Ubuntu
-^^^^^^
+Ubuntu/Debian
+^^^^^^^^^^^^^
 
 #. Download both the regular Morpheus Appliance package and the Offline Installer packages on to the appliance server:
 
