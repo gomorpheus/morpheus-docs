@@ -56,8 +56,8 @@ The Chef run should complete successfully. There is a small pause when Chef runs
 
 .. NOTE:: Tail the morpheus log file located at /var/log/morpheus/morpheus-ui/current with the command ``morpheus-ctl tail morpheus-ui`` and look for the Morpheus ascii logo to know when the morpheus-ui is up.
 
-CentOS
-^^^^^^
+CentOS/RHEL
+^^^^^^^^^^^
 
 #. Download both the regular Morpheus Appliance package and the Offline Installer packages on to the appliance server:
 
