@@ -31,6 +31,7 @@ Instance Naming Policy example: ``${userInitials}-${cloudCode}-${platform == 'wi
 
 	cypher: <%=cypher.read('secret/hello')%>
 	customOptions: <%=customOptions.fieldName%>
+	evar: <%=evars.name%>
 	evars: <%=evars%>
 	instance.metadata: <%=instance.metadata%>
 	instance.instanceTypeName: <%=instance.instanceTypeName%>
