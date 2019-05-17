@@ -42,33 +42,32 @@ Below is a sample output from the script for reference:
 
 .. code-block:: shell
 
-  [Admin Portal] Created port mappings on 10.30.23.120 to 192.168.102.8
-  [Admin Portal] Ports: 13011 30015 13001 13010 13021 13020 443 13003 12646 12647 12648 12649 12650 12495 13026 12499
-  [Admin Portal] DNS: 10.30.23.120 - adminportal.local.azurestack.external adminmanagement.local.azurestack.external
+        [Admin Portal] Created port mappings on 10.30.23.120 to 192.168.102.8
+        [Admin Portal] Ports: 13011 30015 13001 13010 13021 13020 443 13003 12646 12647 12648 12649 12650 12495 13026 12499
+        [Admin Portal] DNS: 10.30.23.120 - adminportal.local.azurestack.external adminmanagement.local.azurestack.external
 
-  [Tenant Portal] Created port mappings on 10.30.23.121 to 192.168.102.10
-  [Tenant Portal] Ports: 13011 30015 13001 13010 13021 13020 443 13003 12646 12647 12648 12649 12650 12495 13026 12499
-  [Tenant Portal] DNS: 10.30.23.121 - portal.local.azurestack.external management.local.azurestack.external
+        [Tenant Portal] Created port mappings on 10.30.23.121 to 192.168.102.10
+        [Tenant Portal] Ports: 13011 30015 13001 13010 13021 13020 443 13003 12646 12647 12648 12649 12650 12495 13026 12499
+        [Tenant Portal] DNS: 10.30.23.121 - portal.local.azurestack.external management.local.azurestack.external
 
-  [Blob Storage] Created port mappings on 10.30.23.122 to 192.168.102.4
-  [Blob Storage] Ports: 80 443
-  [Blob Storage] DNS: 10.30.23.122  *.blob.local.azurestack.external
+        [Blob Storage] Created port mappings on 10.30.23.122 to 192.168.102.4
+        [Blob Storage] Ports: 80 443
+        [Blob Storage] DNS: 10.30.23.122  *.blob.local.azurestack.external
 
-  VERBOSE: DNS delegation/forwarding is optional, change the DNS records on MAS-DC01 manually (dnsmgmt.msc from Host).
-  [DNS Delegation] Created port mappings on 10.30.23.120 to 192.168.200.224
-  [DNS Delegation] Ports: 53 (TCP/UDP)
-  [DNS Delegation] DNS: local.azurestack.external NS 10.30.23.120
-  [DNS Delegation] Change records on MAS-DC01 manually if you plan to use DNS forwarding.
-  [DNS Delegation] Change records back to the original internal IPs before running this script again.
+        VERBOSE: DNS delegation/forwarding is optional, change the DNS records on MAS-DC01 manually (dnsmgmt.msc from Host).
+        [DNS Delegation] Created port mappings on 10.30.23.120 to 192.168.200.224
+        [DNS Delegation] Ports: 53 (TCP/UDP)
+        [DNS Delegation] DNS: local.azurestack.external NS 10.30.23.120
+        [DNS Delegation] Change records on MAS-DC01 manually if you plan to use DNS forwarding.
+        [DNS Delegation] Change records back to the original internal IPs before running this script again.
 
-  VERBOSE: App Service detected and external IP's specified, creating mappings....
-  [App Service API] Created port mappings on 10.30.23.123 to 192.168.102.17
-  [App Service API] Ports: 443
-  [App Service API] DNS: 10.30.23.123  api.appservice.local.azurestack.external
-
-  [App Service Apps] Created port mappings on 10.30.23.124 to 192.168.102.15
-  [App Service Apps] Ports: 80 443 21 990
-  [App Service Apps] DNS: 10.30.23.124  *.appservice.local.azurestack.external
+        VERBOSE: App Service detected and external IP's specified, creating mappings....
+        [App Service API] Created port mappings on 10.30.23.123 to 192.168.102.17
+        [App Service API] Ports: 443
+        [App Service API] DNS: 10.30.23.123  api.appservice.local.azurestack.external
+        [App Service Apps] Created port mappings on 10.30.23.124 to 192.168.102.15
+        [App Service Apps] Ports: 80 443 21 990
+        [App Service Apps] DNS: 10.30.23.124  *.appservice.local.azurestack.external
 
 
 Azure Stack Resources
@@ -140,14 +139,14 @@ Configure
    CLIENT SECRET
     Key Value of Application ID used above
 
-#. Once all credentials are entered and validated, the Location and Resource Group fields will populate.
+    .. note:: Once all credentials are entered and validated, the Location and Resource Group fields will populate.
 
    Location
     Select an Azure Stack region for the cloud to scope to. This typically will be "local".
    Resource Group
     Select All or a single Resource Group to scope the cloud to. Selecting a single Resource Group will only sync resources in that Resource Group and disable Resource Group selection during provisioning. All will sync all resources and allow specifying the Resource Group during provisioning.
    Inventory Existing Instances
-    If enabled, existing Virtual Machines will be inventoried and appear as unmanaged Virtual Machines in |morpheus| .
+    If enabled, existing Virtual Machines will be inventoried and appear as unmanaged Virtual Machines in |morpheus|.
 
 #. The Azure Stack cloud is ready to be added to a group and saved. Additional configuration options available:
 
