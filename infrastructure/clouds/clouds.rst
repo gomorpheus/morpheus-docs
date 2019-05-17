@@ -13,8 +13,6 @@ Supported Cloud Types
 * Amazon
 * Azure (Public)
 * Azure Stack (Private)
-* Bluemix
-* Bluemix Platform
 * Cloud Foundry
 * Dell (Cloud type for PXE and manually added Dell EMC Hosts)
 * DigitalOcean
@@ -23,6 +21,8 @@ Supported Cloud Types
 * HPE OneView
 * Huawei
 * Hyper-V
+* IBM Cloud
+* IBM Cloud Platform
 * Kubernetes
 * MacStadium
 * Metacloud
