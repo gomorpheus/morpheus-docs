@@ -19,6 +19,7 @@ Clouds
   Clouds/nutanix/nutanix.rst
   Clouds/openstack/openstack
   Clouds/oracle/oraclevm.rst
+  Clouds/oraclecloud/oracleCloud.rst
   Clouds/OTC/otc.rst
   Clouds/scvmm/scvmm.rst
   Clouds/softlayer/softlayer.rst
