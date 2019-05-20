@@ -29,4 +29,10 @@ Morpheus Documentation
    cli/shell
    cli/commands
 
+.. toctree::
+   :maxdepth: 3
+   :caption: Morpheus API
+
+   api/index
+
 .. |morpheus| replace:: Morpheus
