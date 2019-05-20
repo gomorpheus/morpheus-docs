@@ -1,5 +1,6 @@
 Setup
 ----------------
+
 The first thing that needs to be done after installing the cli is pointing the cli to the appliance. The CLI can be pointed at many appliances and uses the RESTful OAUTH public developer apis to perform tasks. To set this up simply add a remote appliance with the morpheus remote add command.
 
   .. code-block:: text
