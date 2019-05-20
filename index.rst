@@ -4,7 +4,7 @@ Morpheus Documentation
 
 .. toctree::
    :maxdepth: 2
-   :caption: Morpheus CLI
+   :caption: Morpheus UI
 
    getting_started/getting_started
    provisioning/provisioning
