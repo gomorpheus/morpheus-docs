@@ -296,19 +296,39 @@ Most of the list command types can be queried or paged via the cli. To do this s
   .. code-block:: text
 
       morpheus> instances list -h
-      Usage: morpheus [options]
-      -g, --group GROUP                Group Name
+      Usage: morpheus instances list
+
+      -g, --group GROUP                Group Name or ID
+      -c, --cloud CLOUD                Cloud Name or ID
+          --host HOST                  Host Name or ID
+          --created-by USER            Created By User Username or ID
+          --details                    Display more details: memory and storage usage used / max values.
       -m, --max MAX                    Max Results
       -o, --offset OFFSET              Offset Results
       -s, --search PHRASE              Search Phrase
       -S, --sort ORDER                 Sort Order
       -D, --desc                       Reverse Sort Order
+      -Q, --query PARAMS               Query parameters. PARAMS format is 'phrase=foobar&category=web'
       -j, --json                       JSON Output
-      -r, --remote REMOTE              Remote Appliance
-      -U, --url REMOTE                 API Url
-      -u, --username USERNAME          Username
-      -p, --password PASSWORD          Password
-      -T, --token ACCESS_TOKEN         Access Token
-      -C, --nocolor                    ANSI
+          --yaml                       YAML Output
+          --csv                        CSV Output
+          --csv-delim CHAR             Delimiter for CSV Output values. Default: ','
+          --csv-newline [CHAR]         Delimiter for CSV Output rows. Default: '\n'
+          --csv-quotes                 Wrap CSV values with ". Default: false
+          --csv-no-header              Exclude header for CSV Output.
+      -F, --fields x,y,z               Filter Output to a limited set of fields. Default is all fields.
+      -d, --dry-run                    Dry Run, print the API request instead of executing it
+          --curl                       Dry Run to output API request as a curl command.
+          --scrub                      Mask secrets in output, such as the Authorization header. For use with --curl and --dry-run.
+      -r, --remote REMOTE              Remote name. The current remote is used by default.
+          --remote-url URL             Remote url. The current remote url is used by default.
+      -T, --token TOKEN                Access token for authentication with --remote. Saved credentials are used by default.
+      -U, --username USERNAME          Username for authentication.
+      -P, --password PASSWORD          Password for authentication.
+      -I, --insecure                   Allow insecure HTTPS communication.  i.e. bad SSL certificate.
+      -H, --header HEADER              Additional HTTP header to include with requests.
+          --timeout SECONDS            Timeout for api requests. Default is typically 30 seconds.
+      -C, --nocolor                    Disable ANSI coloring
+      -B, --benchmark                  Print benchmark time after the command is finished.
       -V, --debug                      Print extra output for debugging.
-      -h, --help                       Prints this help
+      -h, --help                       Print this help
