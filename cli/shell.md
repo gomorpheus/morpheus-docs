@@ -1,4 +1,4 @@
-#Shell
+# Shell
 
 The CLI provides a command called **shell** that allows you enter an interactive shell.
 
