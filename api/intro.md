@@ -1,4 +1,4 @@
-# Introduction
+# Getting Started
 
 Welcome to the Morpheus API Documentation. Morpheus is a powerful provisioning service complete with monitoring, logging, backups, and application deployment strategies.
 
