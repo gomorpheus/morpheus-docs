@@ -1,4 +1,4 @@
-## MORPHEUS COMMANDS
+## Morpheus Commands
 
     We divide morpheus into commands.  
     Every morpheus command may have 0-N sub-commands that it supports.
@@ -14316,7 +14316,7 @@ Usage: morpheus workflows update [name] --tasks taskId:phase,taskId2:phase,taskI
 ```
 
 
-## ENVIRONMENT VARIABLES
+## Environment Variables
 
 Morpheus has only one environment variable that it uses.
 
@@ -14360,7 +14360,7 @@ to the $MORPHEUS_HOME_DIRECTORY. These files are saved with file permissions **6
 So, only one system user should be allowed to execute morpheus with that home directory.
 See [Configuration](#Configuration) for more information on the files morpheus reads and writes.
 
-## CONFIGURATION
+## Configuration
 
 Morpheus reads and writes several configuration files within the $MORPHEUS_CLI_HOME directory.
 
