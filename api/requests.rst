@@ -5,4 +5,4 @@ Requests
    :maxdepth: 1
    :glob:
 
-   api/includes/*
+   includes/*
