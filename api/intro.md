@@ -39,5 +39,3 @@ Morpheus expects all api requests to use the resultant `access_token` from the r
 <aside class="notice">
 You must replace <code>access_token</code> with your generated Access Token.
 </aside>
-
-# Requests
