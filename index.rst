@@ -19,4 +19,22 @@ Morpheus Documentation
    troubleshooting/troubleshooting
    release_notes/release_notes
 
+.. toctree::
+   :maxdepth: 3
+   :caption: Morpheus CLI
+
+   cli/gettingStarted
+   cli/setupAppliance
+   cli/instances
+   cli/shell
+   cli/commands
+
+.. toctree::
+   :maxdepth: 3
+   :caption: Morpheus API
+
+   api/intro
+   api/requests
+
+
 .. |morpheus| replace:: Morpheus
