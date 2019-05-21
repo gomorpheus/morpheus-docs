@@ -1,6 +1,5 @@
-************
 morpheus>cli
-************
+------------
 
 .. toctree::
    :maxdepth: 3

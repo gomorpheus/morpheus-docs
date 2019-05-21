@@ -34,5 +34,7 @@ Morpheus Documentation
    :caption: Morpheus API
 
    api/index
+   api/includes/
+
 
 .. |morpheus| replace:: Morpheus

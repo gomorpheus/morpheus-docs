@@ -1,60 +1,3 @@
----
-title: Morpheus Developer APIs
-
-language_tabs:
-  - shell
-
-includes:
-  - apps
-  - blueprints
-  - instances
-  - instancetypes
-  - provisioning
-  - provision_types
-  - option_types
-  - deploys
-  - checks
-  - monitor_incidents
-  - check_types
-  - groups
-  - zones
-  - zonetypes
-  - zone_datastores
-  - storage_buckets
-  - servers
-  - server_types
-  - virtual_images
-  - certificates
-  - keypairs
-  - accounts
-  - account_groups
-  - user_sources
-  - users
-  - roles
-  - policies
-  - power_schedules
-  - execute_schedules
-  - errors
-  - security_groups
-  - security_group_rules
-  - tasks
-  - task_types
-  - workflows
-  - billing
-  - cypher
-  - archives
-  - image_builds
-  - boot_scripts
-  - preseed_scripts
-  - setup
-  - whoami
-  - user_settings
-  - execution_request
-  - processes
-
-search: true
----
-
 # Introduction
 
 Welcome to the Morpheus API Documentation. Morpheus is a powerful provisioning service complete with monitoring, logging, backups, and application deployment strategies.
@@ -96,3 +39,5 @@ Morpheus expects all api requests to use the resultant `access_token` from the r
 <aside class="notice">
 You must replace <code>access_token</code> with your generated Access Token.
 </aside>
+
+# Requests
