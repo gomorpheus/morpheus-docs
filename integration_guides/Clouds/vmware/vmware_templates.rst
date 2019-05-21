@@ -21,17 +21,19 @@ Create a new machine in VMware vCenter and install a base version of your prefer
 
 1.  Ensure VMtools is installed on the operating system.
 2.  Apply any service packs / updates to the operating system.
-3.  Configure WinRM to allow remote management and open the firewall. This is optional if using VMtools RPC mode for agent install and Morpheus Agent for guest exec.  To enable this, under local computer Administrator, open a command prompt and run 
-    
+3.  Configure WinRM to allow remote management and open the firewall. This is optional if using VMtools RPC mode for agent install and Morpheus Agent for guest exec.  To enable this, under local computer Administrator, open a command prompt and run
+
     .. code-block:: PowerShell
 
       winrm quickconfig
-      
+
 4.	Install .Net at least 4.5
 5.	Ensure Windows Firewall will allow WinRM connections.
 6.  Shutdown the virtual machine and convert to a template.
 
-.. NOTE:: Morpheus will sysprep images based on the "Enabled Sysprep?" flag under the Virtual Image's settings. Ensure a sysprep has not been performed on the template if this flag is enabled.
+.. NOTE:: WinRM is not required and is used as a fallback when using vmtools guest exec and customizations 
+
+.. NOTE:: Morpheus will sysprep images based on the "Force Guest Customizations" flag under the Virtual Image's settings when using DHCP. Ensure a sysprep has not been performed on the template if this flag is enabled or if using Static IPs/IP Pools when provisioning, which will always use Guest Customizations and trigger a sysprep.
 
 
 
