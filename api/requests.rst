@@ -10,7 +10,6 @@ Requests
    includes/_billing
    includes/_blueprints
    includes/_boot_scripts
-   includes/_certificates
    includes/_check_types
    includes/_servers
    includes/_server_types
