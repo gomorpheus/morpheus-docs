@@ -1,4 +1,6 @@
-# Compute Zones
+# Compute Zones (Clouds)
+
+**NOTE:** A Zone in the API Is equivalent to a Cloud within the morpheus UI.
 
 Zones are a means of zoning various servers based on provisioning type or subnets. Typically a Zone belongs to a zone and a zone can have many zones. There are several supported zone types that can be used for hardware/vm procurement such as the OpenStack zone type. The zone holds the credentials necessary to provision virtual machines on the open stack api. Amazon is another openstack zone type currently in the works. Of course, we also have the Standard zone type which allows for manual vm procurement.
 
@@ -236,4 +238,3 @@ curl -XPOST "https://api.gomorpheus.com/api/zones/1/security-groups" \
 Parameter   | Default | Description
 ---------   | ------- | -----------
 securityGroupIds | null | List of all security groups ids which should be applied.  If no security groups should apply, pass '[]'
-

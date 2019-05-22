@@ -5,7 +5,6 @@ Requests
    :maxdepth: 2
 
    includes/_accounts
-   includes/_account_groups
    includes/_apps
    includes/_archives
    includes/_billing
@@ -13,17 +12,23 @@ Requests
    includes/_boot_scripts
    includes/_certificates
    includes/_check_types
-   includes/_checks
+   includes/_servers
+   includes/_server_types
+   includes/_zones
+   includes/_zonetypes
    includes/_cypher
+   includes/_zone_datastores
    includes/_deploys
    includes/_errors
    includes/_execute_schedules
    includes/_execution_request
    includes/_groups
+   includes/_account_groups
    includes/_image_builds
    includes/_instances
    includes/_instancetypes
    includes/_keypairs
+   includes/_checks
    includes/_monitor_incidents
    includes/_option_types
    includes/_policies
@@ -35,18 +40,14 @@ Requests
    includes/_roles
    includes/_security_group_rules
    includes/_security_groups
-   includes/_server_types
-   includes/_servers
    includes/_setup
+   includes/_certificates
    includes/_storage_buckets
-   includes/_task_types
    includes/_tasks
+   includes/_task_types
    includes/_user_settings
    includes/_user_sources
    includes/_users
    includes/_virtual_images
    includes/_whoami
    includes/_workflows
-   includes/_zone_datastores
-   includes/_zones
-   includes/_zonetypes

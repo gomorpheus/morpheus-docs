@@ -1,6 +1,6 @@
-# Zone Types
+# Compute Zone (Cloud) Types
 
-Provides a means to find out which zone types are available for zone provisioning and in the  future what config properties are required. 
+Provides a means to find out which zone types are available for zone provisioning and in the  future what config properties are required.
 
 **NOTE:** A Zone Type in the API Is equivalent to a Cloud Type within the morpheus UI.
 
@@ -86,4 +86,3 @@ curl "https://api.gomorpheus.com/api/zone-types/1"
 ### HTTP Request
 
 `GET https://api.gomorpheus.com/api/zone-types/:id`
-
