@@ -4,7 +4,7 @@ Oracle Cloud
 Add Oracle Public Cloud
 ^^^^^^^^^^^^^^^^^^^^^^^
 
-.. important:: A Keypair (both public and private keys) must be added to |morpheus| with Public Key added to Oracle Cloud users keys in Oracle Cloud console for authentication.
+.. important:: A Keypair (both public and private keys) must be added to |morpheus| with the Public Key in ssh-rsa format added to Oracle Cloud users keys in Oracle Cloud console for authentication.
 
 .. note:: Information on uploading the Public Key and generating Tenancy's OCID and User's OCID can be found at https://docs.cloud.oracle.com/iaas/Content/API/Concepts/apisigningkey.htm
 
