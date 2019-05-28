@@ -20,4 +20,4 @@ Troubleshooting
   Restart_Install.rst
   Unable_To_Delete_Tenant.rst
   Unable_To_Provision_Custom_Image.rst
-  Variables.rst
+  Variables_Examples.rst
