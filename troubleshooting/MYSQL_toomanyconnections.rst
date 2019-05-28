@@ -1,4 +1,4 @@
-mysql Too many connections error
+MySQL Too many connections error
 ================================
 
 If you see the following error in the |morpheus| UI logs:

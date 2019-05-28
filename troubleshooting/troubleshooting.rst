@@ -15,7 +15,7 @@ Troubleshooting
   Deleting_Instances.rst
   Morpheus_Agent.rst
   Morpheus_UI_Not_Loading.rst
-  MYSQL_toomanyconnections.rst
+  MySQL_toomanyconnections.rst
   Remote_Console.rst
   Restart_Install.rst
   Unable_To_Delete_Tenant.rst
