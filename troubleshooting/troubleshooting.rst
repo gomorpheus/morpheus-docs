@@ -11,7 +11,6 @@ Troubleshooting
   Cant_Login.rst
   CLI_Trouble.rst
   Common_Ports.rst
-  Custom_Image.rst
   How_To_Unmanage.rst
   Deleting_Instances.rst
   Morpheus_Agent.rst
@@ -20,4 +19,5 @@ Troubleshooting
   Remote_Console.rst
   Restart_Install.rst
   Unable_To_Delete_Tenant.rst
+  Unable_To_Provision_Custom_Image.rst
   Variables.rst
