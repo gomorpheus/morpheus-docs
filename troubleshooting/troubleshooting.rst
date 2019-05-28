@@ -9,7 +9,7 @@ Troubleshooting
   Attaching_Logs.rst
   Blank_Dashboard.rst
   Cannot_Login.rst
-  CLI_Trouble.rst
+  CLI_Troubleshooting.rst
   Common_Ports.rst
   How_To_Unmanage.rst
   Deleting_Instances.rst
