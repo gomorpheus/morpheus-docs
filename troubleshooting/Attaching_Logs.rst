@@ -9,4 +9,4 @@ Log rotation takes the current file each night or after it's a certain size and 
 
 The logs can also be captured from the Morpheus UI.  Under ``Operations -> Health -> Morpheus Logs``.  Please copy relevant logs and add to case as an attachment.
 
-.. image:: images/troubleshooting/Morpheus-Health-Logs.png
+.. image:: /images/troubleshooting/Morpheus-Health-Logs.png
