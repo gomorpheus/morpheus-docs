@@ -7,8 +7,10 @@ Verify Ansible is installed on the |morpheus| Appliance.
 
 Ansible should be automatically but certain os's or network conditions can prevent automated install. You can run ``ansible --version`` in the |morpheus|, or in the Ansible integration details page (``Administration -> Integrations -> Select Ansible Integration``, or in the Ansible tab of a group or cloud scoped to Ansible) just run ``--version`` as ansible is already included in the command.
 
-If Ansible is not installed, follow these instructions to install, or use your preferred installation method
--------------------------------------------------------------------------------------------------------------
+If Ansible is not installed
+----------------------------
+
+Follow these instructions to install, or use your preferred installation method
 
   Ubuntu:
 
