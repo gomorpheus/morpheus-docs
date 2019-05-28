@@ -8,7 +8,7 @@ Troubleshooting
   Ansible_Troubleshooting.rst
   Attaching_Logs.rst
   Blank_Dashboard.rst
-  Cant_Login.rst
+  Cannot_Login.rst
   CLI_Trouble.rst
   Common_Ports.rst
   How_To_Unmanage.rst
