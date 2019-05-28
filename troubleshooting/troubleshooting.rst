@@ -7,6 +7,7 @@ Troubleshooting
 
   ports.rst
   agent.rst
+  Attaching_Logs.rst
   remoteconsole.rst
   deletingInstances.rst
   cant_login.rst
