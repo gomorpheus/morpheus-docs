@@ -34,7 +34,9 @@ While an infinite number of steps can happen when provisioning an Instance or Ap
 - Wait for Power On status and Network info
   |morpheus| will wait to hear back from the target cloud/hypervisor that the VM has successfully started and has an IP address.
 
-  .. NOTE:: If `VM TOOLS INSTALLED` is NOT checked on the source Virtual Image configuration, |morpheus| will skip waiting for network.
+  .. NOTE::
+
+     If ``VM TOOLS INSTALLED`` is NOT checked on the source Virtual Image configuration, |morpheus| will skip waiting for network.
 
 - Finalize
     By default this will include Agent Installation and any post-provison scripts or workflows or integration automation steps.
