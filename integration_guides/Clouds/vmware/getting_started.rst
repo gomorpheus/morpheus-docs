@@ -25,6 +25,15 @@ The `Use VNC` console option on the VMware cloud requires special configuration 
 
 When following this add cloud wizard an option will be presented to create a group or add to an existing group. These groups can be given provisioning permission via  role based access control. It is normally recommended that groups are organized such that one cloud exists in one group unless the networks are setup such that internal routing is possible between the clouds. This is very useful for bursting, or hybrid cloud configurations.
 
+Windows Provisioning Tips
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+By default when provisioning windows templates, |morpheus| performs guest customizations which initiates a sysprep. This resets the Administrator user and password. |morpheus| will set the Administrator password from ``Administration > Provisioning > Windows Settings > Password``.
+
+Users can also set the username on an image as Administrator and enter a different password if unique passwords are required per image.
+
+Guest customizations are required when assigning static IP's manually or using IP pools. They can be disabled per virtual image advanced settings under ``Provisioning > Virtual Images > Edit Image > Advanced > Uncheck "Force Guest Customization"`` if using DHCP. However the SID will not be changed from the source template. In addition, new VM's will not be able to join a domain that had already been joined by the source template or any other VM's with that SID.
+
 Existing Instances
 ^^^^^^^^^^^^^^^^^^
 
