@@ -128,7 +128,7 @@ The following chart is useful for troubleshooting Agent install, Static IP assig
    " ",Cloud-init,Linux, , , ,"| Cloud-init installed on template/image
    | Cloud-init settings populated in User Settings or in `Admin –> Provisioning`
    | Agent install mode set to Cloud-Init in Cloud Settings"
-   " ",Cloudbase-init,Windows, , , ," Cloudbase-init installed on template/image
+   " ",Cloudbase-init,Windows, , , ,"| Cloudbase-init installed on template/image
    | Cloud-init settings populated in User Settings or in `Admin –> Provisioning`
    | Agent install mode set to Cloud-Init in Cloud Settings"
    " ",VMtools,All, , , ,"| VMtools installed on template
