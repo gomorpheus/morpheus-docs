@@ -36,7 +36,7 @@ While an infinite number of steps can happen when provisioning an Instance or Ap
 
   .. NOTE::
 
-     If ``VM TOOLS INSTALLED`` is NOT checked on the source Virtual Image configuration, |morpheus| will skip waiting for network.
+     If ``VM TOOLS INSTALLED?`` is NOT checked on the source Virtual Image configuration, |morpheus| will skip waiting for network.
 
 - Finalize
     By default this will include Agent Installation and any post-provison scripts or workflows or integration automation steps.
