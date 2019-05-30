@@ -12,6 +12,7 @@ A Tenant in |morpheus| is an isolated environment with unique users and workload
 - Tenants are isolated environments.
     - Tenants have unique users
     - Tenants have unique workloads
+    - Tenants have unique Groups
 - The Master Tenant can share or assign Master Tenants resources with/to Sub Tenants
 - Sub Tenants cannot share their resources with other tenants
 - Sub Tenants cannot see resources from other Sub Tenants
@@ -30,7 +31,8 @@ Tenant Roles
        - Tenant Roles determine Public Cloud access for the tenant.
           - All Clouds in the Master Tenants the have Visibility set to `Public` will show as options in the Tenant Role Cloud Access.
           - Only Master Tenant Clouds given access in a Tenants assigned Tenants role will be accessible in the Sub Tenant.
-           ..IMPORTANT: Tenant Roles cap permissions on all Sub Tenant user roles. Sub Tenant user roles can be created in the sub Tenant will lesser permissions than the Tenant Role allows. Tenant Roles are designed for a Master Tenant Admin to set max permissions for a Tenant, and a Sub Tenant Admin to configure User Roles inside the Sub Tenant.
+
+          .. IMPORTANT:: Tenant Roles cap permissions on all Sub Tenant user roles. Sub Tenant user roles can be created in the sub Tenant will lesser permissions than the Tenant Role allows. Tenant Roles are designed for a Master Tenant Admin to set max permissions for a Tenant, and a Sub Tenant Admin to configure User Roles inside the Sub Tenant.
 
 User Roles
    User Roles determine Feature, Group and Instance Type access for all Users. For multi-tenancy, there are two types of User Roles, Single Tenant User Roles and Multi Tenant User Roles.
@@ -172,11 +174,9 @@ To delete a Tenant User
 Subtenant User Login
 ^^^^^^^^^^^^^^^^^^^^^
 
-Subusers can have the same username as the user on the master tenant or any other tenant. Subusers will now have to login using the subdomain prefix.
+Subtenant users can have the same username as the user on the master tenant or any other tenant. Subusers will now have to login using the subdomain prefix.
 
-.. important::
-
-  Subtenant users will no longer be able to login from the main login page without specifying their subdomain.
+.. important:: Subtenant users will no longer be able to login from the main login page without specifying their subdomain.
 
 
 Example:
