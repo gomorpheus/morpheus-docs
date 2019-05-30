@@ -69,7 +69,7 @@ When using a |morpheus| configuration with locally installed ElasticSearch, VM, 
 |morpheus| Services Logs
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-Logs for services local to the |morpheus| Appliance, such as the Morpheus ui, elasticsearch, rabbitmq, mysql, nginx and guacd are written to ``/var/log/morpheus/``. Current logs are rotated nightly, zipped, and files older than 30 days are automatically removed. Misconfigured services, ports and permissions can cause excessive log file sizes.
+Logs for services local to the |morpheus| Appliance, such as the Morpheus UI, elasticsearch, rabbitmq, mysql, nginx and guacd are written to ``/var/log/morpheus/``. Current logs are rotated nightly, zipped, and files older than 30 days are automatically removed. Misconfigured services, ports and permissions can cause excessive log file sizes.
 
 
 Network Connectivity
@@ -128,7 +128,7 @@ The following chart is useful for troubleshooting Agent install, Static IP assig
    " ",Cloud-init,Linux, , , ,"| Cloud-init installed on template/image
    | Cloud-init settings populated in User Settings or in `Admin –> Provisioning`
    | Agent install mode set to Cloud-Init in Cloud Settings"
-   " ",Cloudbase-init,Windows, , , ,"| Cloudbase-init installed on template/image
+   " ",Cloudbase-init,Windows, , , ," Cloudbase-init installed on template/image
    | Cloud-init settings populated in User Settings or in `Admin –> Provisioning`
    | Agent install mode set to Cloud-Init in Cloud Settings"
    " ",VMtools,All, , , ,"| VMtools installed on template
@@ -140,12 +140,11 @@ The following chart is useful for troubleshooting Agent install, Static IP assig
    | Cloud-init settings populated in Morpheus user settings or in `Administration –> Provisioning`"
    " ", "VMware Tools",All, , , ,"| Network configured in Morpheus (Gateway, Primary and Secondary DNS, CIDR populated, DHCP disabled)
    | VMtools installed on Template/Virtual Image"
-   Remote Console,SSH,Linux,Appliance,Node,22,"| ssh enabled on node
+   Remote Console,SSH,Linux,Appliance,Node,22,"ssh enabled on node
    | user/password set on VM or Host in Morpheus "
-   " ",RDP,Windows,Appliance,Node,3389,"| RDP Enabled on node
+   " ",RDP,Windows,Appliance,Node,3389,"RDP Enabled on node
    | user/password set on VM or Host in Morpheus"
-   " ",Hypervisor Console,All,Appliance,ESXi Host,5900-6000+,"| GBB server opened on all ESXi host firewalls
-   | *Port range req's vary per env
-   | ESXi host names resolvable by morpheus appliance"
+   " ",Hypervisor Console,All,Appliance,Hypervisor Hosts,443,"
+   |  Hypervisor host names resolvable by morpheus appliance"
    "Morpheus Catalog Image Download", ,All,Appliance,AWS S3,443,"Available space at ``/var/opt/morpheus/``"
    "Image Transfer",Stream,All,Appliance,Datastore,443,"Hypervisor Host Names resolvable by Morpheus Appliance"
