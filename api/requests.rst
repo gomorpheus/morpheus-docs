@@ -36,6 +36,8 @@ Requests
    includes/_processes
    includes/_provision_types
    includes/_provisioning
+   includes/_zone_folders.md
+   includes/_zone_resource_pools.md
    includes/_roles
    includes/_security_group_rules
    includes/_security_groups
