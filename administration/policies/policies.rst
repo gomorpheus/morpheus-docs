@@ -28,7 +28,7 @@ Budget
 Expiration
   Sets an expiration timeframe in days after which the Instance will be deleted. Extensions can be auto-approved or require approval immediately or after x amount of auto-extensions using Morpheus Approvals or an Approval Integration.
 Host Name
-  Pre-populates a fixed or editable name for Hosts and Virtual Machines using ${variable} ${variable}_ naming patterns and/or text.
+  Pre-populates a fixed or editable name for Hosts and Virtual Machines using ${variable} :ref:`${variable}` naming patterns and/or text.
 Hostname
   Pre-populates a fixed or editable name for hostnames/machine names using ${variable} naming patterns and/or text.
 Instance Name
