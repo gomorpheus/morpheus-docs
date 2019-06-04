@@ -1,6 +1,6 @@
 .. _${variable}:
 
-${variable}
+Variables
 =========
 
 The following are the map structures passed to scripts and templates during provisioning inside of a ``<%= %>`` block.
