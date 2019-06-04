@@ -2,16 +2,15 @@ Users & User Groups
 ====================
 
 Users
----------
+-----
 
 Overview
-^^^^^^^^^
+^^^^^^^^
 
 The Users page displays a list of all users. From the users page:
 Create, Edit, and Delete users. The list of users displayed on this page displays Account, Name, Username, Email, and Role.
 
 .. NOTE:: Some User data from Users created via an Identity Source Integration such as Active Directory is not editable in |morpheus|, as it is synced with the Identity Source.
-
 
 Create User
 ^^^^^^^^^^^
@@ -93,12 +92,12 @@ Additional settings for a User can be found in the User Settings section, includ
 
 To access User Settings:
 
-#. Select your name in the very top right of the browser window.
+#. Select your name in the header
 #. Select `User Settings`
 
 To edit the User you are currently logged in as from `User Settings`:
 
-#. Select your name in the very top right of the window
+#. Select your name in the header
 #. Select `User Settings`
 #. Make changes.
 #. Select :guilabel:`SAVE`.
@@ -110,7 +109,7 @@ API and CLI Access Tokens can be regenerated from the `User Settings` section.
 
 To regenerate a CLI or API Access Token:
 
-#. Select your name in the very top right of the window.
+#. Select your name in the header
 #. Select `User Settings`.
 #. Select `API ACCESS` under the `Windows Settings` section.
 #. Select `ACTIONS` for the Client ID the token will be generated for.

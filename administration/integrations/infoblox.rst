@@ -69,7 +69,7 @@ Cloud Configuration
 Provisioning with Infoblox Pool
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Once the Infoblox integration has been configured, while provisioning you can now select networks that have the Network Pools added, and the name of the Infoblox IP Pool will populate to the right of the selected network:
+Once the Infoblox integration has been configured, while provisioning you can now select networks that have the Network Pools added, and the name of the Infoblox IP Pool will populate next to the selected network:
 
 .. image:: /images/administration/infoblox-40fdb.png :alt: Infoblox IP Pool listed next to selected network
 

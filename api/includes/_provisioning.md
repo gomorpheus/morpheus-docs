@@ -69,7 +69,7 @@ curl -X POST "https://api.gomorpheus.com/api/instances" \
 }'
 ```
 
-> The above command returns a similar JSON structure when submitting a GET request for a single check 
+> The above command returns a similar JSON structure when submitting a GET request for a single check
 
 ### HTTP Request
 
@@ -144,7 +144,7 @@ vmwareDomainName | N | null | Domain name to be given to instance
 vmwareCustomSpec | N | null | Customization spec ID
 
 #### Metadata
-This is specific to AWS Metadata tags.  Name-Values pairs can be anything you like and are added to the instance JSON as an array of n-v pairs per the example to the right:
+This is specific to AWS Metadata tags.  Name-Values pairs can be anything you like and are added to the instance JSON as an array of n-v pairs per the example:
 
 ```shell
 -d '{

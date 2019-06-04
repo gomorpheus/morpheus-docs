@@ -26,7 +26,7 @@ Configure Azure SSO
 
 This guide assumes an Azure AD Application has already been created in Azure, with a subscription level high enough to configure SSO in the application. Please refer to Azure documentation if this has not already been configured.
 
-#. Next, in the Azure Active Directory Application details page, select ``Single sign-on`` in the Apps left hand nav, then enter the following:
+#. Next, in the Azure Active Directory Application details page, select ``Single sign-on``, then enter the following:
 
    * Single Sign-on Mode dropdown
         Select ``SAML-based Sign-on``
