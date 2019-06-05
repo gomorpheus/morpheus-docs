@@ -1,0 +1,43 @@
+v3.6.3
+=======
+
+Release date: TBD
+
+
+
+
+Fixes
+-----
+- UI: Fix for wizard not displaying validation error for blank disk size
+- Admin: Fix for alarms for a cloud not being removed when cloud is deleted
+- Oracle: Default Docker host updated to Ubuntu 16
+- UI: Fix for discovery size log error
+- VMware: Fix for Operating System sync accuracy
+- General:  Fix for duplicate "running" records accumulating cost for the same instance in the usage selection
+- General: Added UI error when attempting option type delete when in use
+- SCVMM: Fix for the cluster assigning the same hosts
+- SCVMM: Fix for discovered VMs not being removed when deleted in SCVMM
+- General: Fix for Syslog integration creating Ansible integration
+- VMware: Fix for vmxnet3 not set as default VMware Network adapter type for second network
+- General: Fix for provision review tab showing networks incorrectly listed as pool instead of DHCP or IP
+- General: Fix for User password managment.  Salt being set to morpheus instead of random string.
+- General: Users can no longer choose image source -> target conversion type if the underlying converter does not exist
+- vCD: If windows guest customization takes longer then 5 minutes to run the agent has to be manually installed
+- SCVMM: Fix for Morpheus overiding the settings in SCVMM VM template
+- General: Fix for inconsistent instance naming when instance is renamed
+- General: Fix for recentActivity shows strange characters when resource has a Chinese name
+- OpenStack: Fix for collective memory usage of OpenStack cloud <0%
+- Networking: Fix for Setting Domain on Networks via Shell
+- General:  Fix for Result type not working for task type "Local Shell Script"
+- General: Fix for SSH task using ssh key fails
+- Health: Fix for password for MySQL backup in clear text in health log
+- General: Fix for platform analysis incorrect on review
+- Fix for security groups for instance wizard sometimes not scoped to selected resource pool on load
+- API/CLI : Fix for Amazon add network update to handle VPC fix suppressed validation errors
+- General: Fix for provisioning set to user inhibits deployments
+- Tenant:  Fix for reconfigure modal not working with new tenant settings for plans
+- VCD: Fix for API portion of cloud integration url
+- OTC: Fix for backups not being deleted on instance deletion and backup archive list
+- Terraform:  Added known Terraform plan errors to UI review pane
+- Monitoring:  Fix for it unclear what text is clickable in monitoring page in UI
+-
