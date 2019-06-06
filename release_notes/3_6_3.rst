@@ -24,7 +24,7 @@ Fixes
 - General: Users can no longer choose image source -> target conversion type if the underlying converter does not exist
 - vCD: If windows guest customization takes longer then 5 minutes to run the agent has to be manually installed
 - SCVMM: Fix for Morpheus overiding the settings in SCVMM VM template
-- General: Fix for inconsistent instance naming when instance is renamed
+- Instances: Fix for inconsistent instance naming when instance is renamed
 - General: Fix for recentActivity shows strange characters when resource has a Chinese name
 - OpenStack: Fix for collective memory usage of OpenStack cloud <0%
 - Networking: Fix for Setting Domain on Networks via Shell
@@ -42,3 +42,15 @@ Fixes
 - Monitoring:  Fix for it unclear what text is clickable in monitoring page in UI
 - vCD: Fix for CLI uploaded ovf/vmdk virtual machine images are not being mapped to vCD
 - Health:  Fix for sensitive info shown in Health Logs
+- OVM: Fix for limitations to use Slot4 as CDROM disk
+- Administration:  Fix for security groups for all vpc's being displayed to a tenant locked down to one vpc
+- Networking: Fix for changing the router / gateway and DNS addresses not updating the network in the cloud
+- OTC: Fix for VMs losing their security groups
+- Library: Fix for custom library items not syncing default /var/log/ on instance details logs
+- Commvault: Fix for backup jobs selection appears on backup automation tab during instance creation
+- General: Made it more  clear on the summary page which jobs are not scheduled to running
+- Backups: Fix for job backup create schedule for non scheduled job
+- Clouds: Fix for powering on VM directly in Nutanix Prism or Azure not triggering a status change to "running" for the instance within Morpheus
+- Loadbalancer:  Fix for missing LBAAS2 logo on infrastructure > load-balancers and loadbalancer details page
+- VCD: Fix for VCD docker host custom image not respected
+- VCD: Fix for adding a private vCloud director assigned to a subtenant fails to scope the networks and data stores to the subtenant
