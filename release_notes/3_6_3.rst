@@ -66,3 +66,18 @@ Fixes
 - Docker host: Fix for docker host provision fails when using infrastructure > hosts add when browser language is in German
 - Backup: Appliance backup broken
 - VM:  Fix for appliance resize not updating total storage on instance record
+- OTC: Fix for issue deleting instance and LBaaS load balancer
+- Migration: Fix for multiple running usage records for Windows and Linux instances
+- VMware: Fix for errors when cloud is privately shared from the master tenant and the LBaas2 service does not appear for the sub-tenant
+- Router: Fix for tenant permissions not saving
+- Ansible: Fix for the password showing when using cypher in playbooks
+- Virtual Image: Fix for minimum memory not saving correctly
+- Security Groups: Fix for groups getting duplicated in Morpheus but not AWS
+- OVM: Fix for builds via API/CLI failing due to template disk resize
+- Azure: Fix for Docker host customer image failing to provision
+- API/CLI: Fix for AWS instances not being built when the image disk size is greater than the plan disk size
+- Plans: Fix for plan matching not correctly determined if Custom Cores is check but not Custom Memory
+- Virtual Images: Fix for private images showing for tenants
+- Networking: Fix for network issue when a network is created without specifying a CIDR
+- Hosts: Fix for the host wizard not displaying private plans scoped to subtenant for OpenStack/OTC/Huawei
+- Plans: Fix for OpenStack/OTC/Huawei service plans not displaying all tenants
