@@ -4,11 +4,11 @@ Policies
 Overview
 --------
 
-Policies add governance, ease of use, cost-savings, and auditing features to |morpheus|.  |morpheus| enables end users to create user, group, cloud, and global policies to give users full control and governance over their environments!  Policies can apply towards any instance provisioned by a specific user, globally or into a group or cloud with active policies.  Policy generation is a role permission.
+Policies add governance, ease of use, cost-savings, and auditing features to |morpheus|.  |morpheus| enables end users to create user, role, group, cloud, and global policies to give users full control and governance over their environments!  Policies can apply towards any instance provisioned by a specific user or user with a specific role, globally or into a group or cloud with active policies.  Policy generation is a role permission.
 
 Creating Policies
 -----------------
- 
+
 Policies can be created in three different locations.
 
 * ``Administration -> Policies``
@@ -74,6 +74,16 @@ To create a Policy for a User:
 #. Under filter next to scope select :guilabel:`User` a drop down menu will appear below allowing you to select a user
 #. Select :guilabel:`SAVE CHANGES`
 
+To create a Policy for a Role:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.. NOTE:: Resource Limitation Policies apply to all Instances owned by users with the role the Policy is applied to.
+
+#. Navigate to ``Administration -> Policies``
+#. Select :guilabel:`+ ADD Policy` and choose from the available policy types.
+#. Refer to Policy Type sections below for Configuration options.
+#. Under filter next to scope select :guilabel:`Role` a drop down menu will appear below allowing you to select a role
+#. Select :guilabel:`SAVE CHANGES`
+
 To create a Policy for a Cloud:
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -104,7 +114,7 @@ Policy Types
 Expiration Policies
 ^^^^^^^^^^^^^^^^^^^
 
-Expiration policies set an expiration timeframe for any instance provisioned into the cloud or group the policy is added to. When an instance expires, it is terminated and deleted.
+Expiration policies set an expiration timeframe for any instance provisioned into the cloud, role, group or by the user the policy is added to. When an instance expires, it is terminated and deleted.
 
 Configuration options for expiration policies:
 
@@ -229,7 +239,7 @@ TENANTS
 Max Resources
 ^^^^^^^^^^^^^
 
-Max Resource policies allow setting quotas for Clouds and Groups for maximum amount of Memory, Storage, Cores, Hosts, VM's, or Containers that can be created in the Cloud or Group the Policy is assigned to.
+Max Resource policies allow setting quotas for Clouds, Groups, Roles or Users for maximum amount of Memory, Storage, Cores, Hosts, VM's, or Containers that can be created in the Cloud, Group, Role or by the User the Policy is assigned to.
 
 Configuration options for Max Resources Policies:
 
