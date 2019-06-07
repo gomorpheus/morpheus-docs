@@ -20,10 +20,10 @@ Fixes
 - General: Fix for Syslog integration creating Ansible integration
 - VMware: Fix for vmxnet3 not set as default VMware Network adapter type for second network
 - General: Fix for provision review tab showing networks incorrectly listed as pool instead of DHCP or IP
-- General: Fix for User password managment.  Salt being set to morpheus instead of random string.
+- General: Fix for User password management.  Salt being set to morpheus instead of random string.
 - General: Users can no longer choose image source -> target conversion type if the underlying converter does not exist
 - vCD: If windows guest customization takes longer then 5 minutes to run the agent has to be manually installed
-- SCVMM: Fix for Morpheus overiding the settings in SCVMM VM template
+- SCVMM: Fix for Morpheus overriding the settings in SCVMM VM template
 - Instances: Fix for inconsistent instance naming when instance is renamed
 - General: Fix for recentActivity shows strange characters when resource has a Chinese name
 - OpenStack: Fix for collective memory usage of OpenStack cloud <0%
@@ -40,10 +40,10 @@ Fixes
 - OTC: Fix for backups not being deleted on instance deletion and backup archive list
 - Terraform:  Added known Terraform plan errors to UI review pane
 - Monitoring:  Fix for it unclear what text is clickable in monitoring page in UI
-- vCD: Fix for CLI uploaded ovf/vmdk virtual machine images are not being mapped to vCD
+- vCD: Fix for CLI uploaded OVF/VMDK virtual machine images are not being mapped to vCD
 - Health:  Fix for sensitive info shown in Health Logs
 - OVM: Fix for limitations to use Slot4 as CDROM disk
-- Administration:  Fix for security groups for all vpc's being displayed to a tenant locked down to one vpc
+- Administration:  Fix for security groups for all VPC's being displayed to a tenant locked down to one VPC
 - Networking: Fix for changing the router / gateway and DNS addresses not updating the network in the cloud
 - OTC: Fix for VMs losing their security groups
 - Library: Fix for custom library items not syncing default /var/log/ on instance details logs
@@ -51,6 +51,18 @@ Fixes
 - General: Made it more  clear on the summary page which jobs are not scheduled to running
 - Backups: Fix for job backup create schedule for non scheduled job
 - Clouds: Fix for powering on VM directly in Nutanix Prism or Azure not triggering a status change to "running" for the instance within Morpheus
-- Loadbalancer:  Fix for missing LBAAS2 logo on infrastructure > load-balancers and loadbalancer details page
+- Load Balancer:  Fix for missing LBAAS2 logo on infrastructure > load-balancers and Load Balancer details page
 - VCD: Fix for VCD docker host custom image not respected
 - VCD: Fix for adding a private vCloud director assigned to a subtenant fails to scope the networks and data stores to the subtenant
+- Administration: Fix for approval issue with Restore New and Clone
+- Policy: Fix for missing naming convention policy on cloud
+- Tenant: Fix for tenant can not be deleted if any custom environment tags have been created within tenant
+- Console:  Fix for console resize makes height progressively smaller on refresh
+- VCD: Fix for datastores recreated on cloud sync error
+- Security: Fix for server side template injection vulnerability
+- Storage: Fix for Tenant settings on storage servers
+- OTC: Fix for hypervisor console not working
+- Ansible Tower: fix for limit run to instance
+- Docker host: Fix for docker host provision fails when using infrastructure > hosts add when browser language is in German
+- Backup: Appliance backup broken
+- VM:  Fix for appliance resize not updating total storage on instance record
