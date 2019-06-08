@@ -8,7 +8,7 @@ Policies add governance, ease of use, cost-savings, and auditing features to |mo
 
 Creating Policies
 -----------------
-
+ 
 Policies can be created in three different locations.
 
 * ``Administration -> Policies``
