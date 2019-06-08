@@ -6,50 +6,54 @@ Release date: TBD
 New Features
 -------------
 
-- Policies: Scoping a policy to a role
-- API/CLI: VCD Datastore ID added to billing API
-      a morpheus admin can create an Object Store Endpoint in an available region.
-- Provisioning: Include provisioning failure error message in email notification
-- Policies: A Morpheus admin can assign a maximum quota that a tenant can consume
-- Storage: An admin can create a Scalable File Storage server
-- Tenants: A Morpheus admin can assign an object store endpoint to a tenant
-- Infoblox: Automated DNS record creation in Infoblox that do nut use the IPAM functionality
-- Storage: A Morpheus user can create a bucket in one of the object storage endpoints assigned to them.
-- SCVMM: Allow adding disks to existing templates
-- Storage: A Morpheus admin can assign a Scalable File Storage server to a tenant
-- Storage: A user can create an NFS share on one of the file storage servers assigned to their account
-- Storage: Storage quota on OBS bucket will honor server's global storage quota policy and restrict the size of the bucket to no greater than the storage quota
-- AWS: Support Scale groups (CloudFormation Support)
+- API & CLI: Security Groups updated to support Security Group Rule management
+- API & CLI: Resource Pool and Folder endpoints added
+- API: VCD Datastore ID added to billing API
+- Appliance: Expired license notification added
+- Apps: AWS Scale Groups created from Cloud Formation and Terraform Blueprints now automatically created in |morpheus|
+- Apps: Security Groups created from Cloud Formation and Terraform Blueprints now automatically associated with the App
+- Automation: Tasks: `Python Script (jython)` updated to `Python Script`
+- AWS: Security Group Rule management added. AWS Security group rules can now be created, edited and deleted in |morpheus|
+- Azure: Network Security Group Rule management added. Azure Network Security group rules can now be created, edited and deleted in |morpheus|
+- Backups: Enhanced error messages with STDOUT added to failed mysql backups
+- Blueprints: AWS Scale Groups created in Cloud Formation and Terraform templates now automatically created in |morpheus|
 - Cherwell: Expansion of integration to support dynamic business object creation and additional field configurations for advisory change requests
+- Cloud Wizard: Code and Tenant fields added to new Cloud Wizard when creating cloud from `Infrastructure -> Clouds ->` :guilabel:`+ ADD`, matching wizard from `Infrastructure -> Groups -> Clouds ->` :guilabel:`+ ADD`
+- Clouds: ``Security Server`` setting for AWS, Azure, Openstack, OTC, and Huawei Clouds configurations will be automatically set to matching type on Appliance start up
+- Deployments: Windows Deployment support added
+- Guacamole: Updated 1.0.0 to support Appliances installed on Ubuntu 18.04
+- Infoblox: DNS Integration added.
+- Infrastructure: Storage: Buckets: Huawei OBS Bucket, Open Telekom OBS Bucket creation and management added
+- Infrastructure: Storage: File Shares: Huawei SFS Share, Open Telekom SFS Share creation and management added
+- Infrastructure: Storage: Servers: Huawei OBS, Huawei SFS, Open Telekom OBS, Open Telekom SFS Integrations added
 - Installation: Add UTF8 encoding to Morpheus App startup
-- Database: Upgrade Database Level Encryption from AES-128 to AES-256
-- AWS: Support Scale groups (Terraform Support)
-- CloudFormation: Create Security Groups in morpheus when included in CloudFormation template
-- Cloud: Updating and improving create cloud dialogs
-      OTC/Huawei Storage Issues
-- OTC: LBaaS v2 support
-- AWS: Add, edit, delete security group rules
-- VCD: Hypervisor console support
-      Chef: Updated runit to 4.3.0
-- Guacamole: Updated 1.0.0 to supp ort Ubuntu 18.04fc
-      Update for jython-standalone
-- Azure: Add, remove, and update security group rules
-- Installation: Security server setup for Openstack, AWS and Azure on appliance start up
-- Backups: Job is marked as failed when a connection failure occurs in a MySQL backup
-- Pricing: Added ability to set or seed default datastore pricing
-- API: Resource Pools and Folders
-- Deployments: Windows Support
-- OpenStack: Scoped OpenStack cloud to region
-- Load Balancers: Added the ability to assign LB's to a tenant
-- Morpheus: Expired license error notice shows up on all pages
-- VCD: No network Agent Install with VCD IP pools
-- API: Security Groups updates
-
+- Load Balancers: LBaaS v2 support added for Open Telekom and Huawei
+- Load Balancers: Tenant assignment added
+- OpenStack: `REGION` scope option added to Openstack Cloud configurations
+- Policies: Role scope option added for Policies. When a policy is scoped to a Role, the Policy will apply to all users with that Role.
+	.. note:: For max resource policies, resource totals are calculated and enforced in aggregate, not per user.
+- Policies: Storage Server Storage Quota Policy type added
+- Provisioning: Error messages now included in Failed provision email notifications
+- SCVMM: Additional disks can now be added to sync templates during provisioning
+- System: `runit` updated to to 4.3.0. Services such as nginx will now restart when config changes are detected during |morpheus| reconfigures
+- System: Database: Database Level Encryption upgraded to AES-256
+- System: jython removed per CVE-2016-4000
+  .. important:: Jython replaced with Python. Users with python tasks are responsible for ensuring Python in installed on their appliance(s)
+- System: Ubuntu 18.04 now supported for Morpheus Appliance Installations
+- System: Update for commons-compress, addresses CVE-2018-11771
+- System: Update for spring-security-oauth2, addresses CVE-2019-3778
+- Tenants: A Morpheus admin can assign an object store endpoint to a tenant
+- VCD: Windows Agent Install via guest customizations added.
+	.. note:: Requires ``Agent Install Mode`` set to ``Cloud-init / Unattend (when available)`` in VMware Cloud Advanced Options
+- vCloud Director: Hypervisor Console support added
+- VMware: Windows Agent Install via guest customizations added
+	.. note:: Requires ``Agent Install Mode`` set to ``Cloud-init / Unattend (when available)`` in vCD Cloud Advanced Options
 
 
 
 Fixes
 -----
+- vCD: Routed Network Support Added
 - UI: Fix for wizard not displaying validation error for blank disk size
 - Admin: Fix for alarms for a cloud not being removed when cloud is deleted
 - Oracle: Default Docker host updated to Ubuntu 16
@@ -111,7 +115,6 @@ Fixes
 - OTC: Fix for issue deleting instance and LBaaS load balancer
 - Migration: Fix for multiple running usage records for Windows and Linux instances
 - VMware: Fix for errors when cloud is privately shared from the master tenant and the LBaas2 service does not appear for the sub-tenant
-- Router: Fix for tenant permissions not saving
 - Ansible: Fix for the password showing when using cypher in playbooks
 - Virtual Image: Fix for minimum memory not saving correctly
 - Security Groups: Fix for groups getting duplicated in Morpheus but not AWS
@@ -123,3 +126,29 @@ Fixes
 - Networking: Fix for network issue when a network is created without specifying a CIDR
 - Hosts: Fix for the host wizard not displaying private plans scoped to subtenant for OpenStack/OTC/Huawei
 - Plans: Fix for OpenStack/OTC/Huawei service plans not displaying all tenants
+
+
+N- Network: Routers: Tenant Permissions Added
+N - System: Logs: Updates to mask additional sensitive data in logs
+N - VMware: Windows Agent Install: Timeout and Retries added to reachability command to improve Windows Agent Install via VMware Tools Guest Exec
+N - Huawei: ``af-south-1`` & ``eu-west-0`` regions/az's added
+N - Roles: ``MULTITENANT LOCKED`` option added for User Roles. When lock is enabled, the linked sub-tenant roles cannot be edited in subtenant.
+F - Chef: Fix for Chef run task execution
+F- Fix for power state showing as running on Managed VM's that have been removed from vCenter
+F - Monitoring Checks no longer automatically configured when agent install is not select on Convert to Managed
+F- Fix for unknown power status on KVM nodes
+N- ARM retry for update app resource
+F- Azure- azure plan change detection updated
+F- fixing user source delete and role interference
+N- increasing template data type longtext
+F- fixing lb delete
+N - Instance and App wizards now can create multiple load balancer ports
+N - Add support for 'local firewall' option to Security Mode selection in cloud edit for clouds which do not have native security group support (azure, openstack flavors, amazon)
+N- Expired License updates ?
+F- Fix for max price policies ?
+N- Redis 3.0 for Azure, Bluemix and UpCloud
+N- MySQL 5.7 replaces 5.6 for Azure, Bluemix, DigitalOcean, SoftLayer and UpCloud System Layouts
+N service plans for servers?
+N- Add ignore ssl flag to remedy and cherwell integrations
+N- Ansible:  now handling group and host vars relative to inventory
+F- fixing negative execution times
