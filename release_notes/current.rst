@@ -187,4 +187,5 @@ Security Vulnerabilities Remediated
 - CVE-2013-4002
 - CVE-2013-5960
 - CVE-2013-5679
-- CVE-2014-3604
+- CVE-2018-11771
+- CVE-2019-3778
