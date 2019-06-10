@@ -1,7 +1,7 @@
 Import Trusted Certificates to Morpheus
 ------------------------------------------
 
-#. Obtain the full SSL certificate chain in PEM format. How you get this just depends on how your organization distributes the internal CA certificate and if it has an intermediate CA or not. I can help you figure out how to get the right format or you can Google the ways to convert what you have into a PEM formatted certificate chain.
+#. Obtain the full SSL certificate chain in PEM format. 
 
 #. Once you have the certificates, copy them to each appliance and place them in the /etc/morpheus/ssl/trusted_certificates directory.
 
