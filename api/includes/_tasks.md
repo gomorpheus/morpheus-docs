@@ -122,8 +122,13 @@ curl -XPOST "https://api.gomorpheus.com/api/tasks" \
 Parameter | Default | Description
 --------- | ------- | -----------
 name      | null | A unique name for the task
+code      | null | A unique code for the task
 taskType.code      | null | The type of task
 taskOptions | {} | Map of options specific to each type. eg. script
+resultType      | null | The result type eg. value, exitCode, keyValue, json
+retryable      | false | If the task should be retried or not.
+retryCount      | null | The number of times to retry.
+retryDelaySeconds      | null | The delay, between retries.
 
 
 ## Updating a Task
