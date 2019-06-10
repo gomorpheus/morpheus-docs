@@ -17,7 +17,7 @@ Morpheus Documentation
    services/services
    integration_guides/integration_guides
    troubleshooting/troubleshooting
-   release_notes/release_notes
+
 
 .. toctree::
    :maxdepth: 3
@@ -35,6 +35,12 @@ Morpheus Documentation
 
    api/intro
    api/requests
+
+.. toctree::
+   :maxdepth: 3
+   :caption: Release Notes
+
+   release_notes/release_notes
 
 
 .. |morpheus| replace:: Morpheus
