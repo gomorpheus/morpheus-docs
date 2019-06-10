@@ -40,7 +40,8 @@ Morpheus Documentation
    :maxdepth: 3
    :caption: Release Notes
 
-   release_notes/release_notes
+   release_notes/3_6_3.rst
+   release_notes/archived/previousReleases.rst
 
 
 .. |morpheus| replace:: Morpheus
