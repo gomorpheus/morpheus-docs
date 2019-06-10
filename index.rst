@@ -41,7 +41,7 @@ Morpheus Documentation
    :caption: Release Notes
 
    release_notes/3_6_3.rst
-   release_notes/archived/previousReleases.rst
+   release_notes/previousReleases.rst
 
 
 .. |morpheus| replace:: Morpheus
