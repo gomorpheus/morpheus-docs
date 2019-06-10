@@ -40,7 +40,7 @@ Morpheus Documentation
    :maxdepth: 3
    :caption: Release Notes
 
-   release_notes/3_6_3.rst
+   release_notes/current.rst
    release_notes/previousReleases.rst
 
 
