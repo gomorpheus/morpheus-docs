@@ -36,8 +36,7 @@ New Features
 - Load Balancers: Tenant assignment added
 - Network: Routers: Tenant Permissions added to Routers
 - OpenStack: `REGION` scope option added to Openstack Cloud configurations
-- Policies: Role scope option added for Policies. When a policy is scoped to a Role, the Policy will apply to all users with that Role.
-	.. note:: For max resource policies, resource totals are calculated and enforced in aggregate, not per user.
+- Policies: Role scope option added for Policies. When a policy is scoped to a Role, the Policy will apply to all users with that Role. NOTE: For max resource policies, resource totals are calculated and enforced in aggregate, not per user.
 - Policies: Storage Server Storage Quota Policy type added
 - Provisioning: Error messages now included in Failed provision email notifications
 - Provisioning: Instance and App wizards now can create multiple load balancer ports
@@ -46,12 +45,9 @@ New Features
 - SCVMM: Additional disks can now be added to sync templates during provisioning
 - vCloud Director: Routed Network Support Added
 - Tenants: A Morpheus admin can assign an object store endpoint to a tenant
-
-- vCloud Director: Windows Agent Install via guest customizations added.
-	 .. note:: Requires ``Agent Install Mode`` set to ``Cloud-init / Unattend (when available)`` in VMware Cloud Advanced Options
+- vCloud Director: Windows Agent Install via guest customizations added. NOTE: Requires ``Agent Install Mode`` set to ``Cloud-init / Unattend (when available)`` in VMware Cloud Advanced Options
 - vCloud Director: Hypervisor Console support added
-- VMware: Windows Agent Install via guest customizations added
-   .. note:: Requires ``Agent Install Mode`` set to ``Cloud-init / Unattend (when available)`` in vCloud Director Cloud Advanced Options
+- VMware: Windows Agent Install via guest customizations added. NOTE: Requires ``Agent Install Mode`` set to ``Cloud-init / Unattend (when available)`` in vCloud Director Cloud Advanced Options
 - VMware: Windows Agent Install: Timeout and Retries added to reachability command to improve Windows Agent Install via VMware Tools Guest Exec
 
 System Updates
@@ -59,20 +55,11 @@ System Updates
 
 - System: `runit` updated to to 4.3.0. Services such as nginx will now restart when config changes are detected during |morpheus| reconfigures
 - System: Database: Database Level Encryption upgraded to AES-256
-- System: jython removed per CVE-2016-4000
-  .. important:: Jython replaced with Python. Users with python tasks are responsible for ensuring Python in installed on their appliance(s)
+- System: jython removed per CVE-2016-4000. IMPORTANT: Jython replaced with Python. Users with python tasks are responsible for ensuring Python in installed on their appliance(s)
 - System: Logs: Updates to mask additional sensitive data in logs
 - System: Ubuntu 18.04 now supported for Morpheus Appliance Installations
 - System: Update for commons-compress, addresses CVE-2018-11771
 - System: Update for spring-security-oauth2, addresses CVE-2019-3778
-
-
-System Library Updates
-----------------------
-
-- MySQL: 5.7 replaces 5.6 for Azure, Bluemix, DigitalOcean, SoftLayer and UpCloud System Layouts
-- Redis: Added 3.0 for Azure, Bluemix and UpCloud
-- Oracle Cloud: Default |morpheus| Docker Host Image updated to Ubuntu 16.04
 
 Fixes
 -----
@@ -150,4 +137,11 @@ API & CLI Fixes
 - API & CLI: Amazon: Add Network: Fix for issue creating networks due to ``vpcId`` error
 - API/CLI: Fix for AWS Provisioning Issue when image disk size is greater than Plan disk size
 - API & CLI: Fix for Oracle VM provisioning failures when using |morpheus| API & CLI
-- CLI: Fix for setting Domain on Networks via |morpheus| CLI Shell
+- CLI: networks: Fix for setting Domain on Networks via |morpheus| CLI Shell
+
+System Library Updates
+----------------------
+
+- MySQL: 5.7 replaces 5.6 for Azure, Bluemix, DigitalOcean, SoftLayer and UpCloud System Layouts
+- Redis: Added 3.0 for Azure, Bluemix and UpCloud
+- Oracle Cloud: Default |morpheus| Docker Host Image updated to Ubuntu 16.04
