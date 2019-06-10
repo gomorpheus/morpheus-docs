@@ -1,6 +1,5 @@
-******
 v3.6.3
-******
+======
 
 Release date: 6/10/2019
 
@@ -33,6 +32,8 @@ New Features
 - Infrastructure: Storage: Buckets: Huawei OBS Bucket, Open Telekom OBS Bucket creation and management added
 - Infrastructure: Storage: File Shares: Huawei SFS Share, Open Telekom SFS Share creation and management added
 - Infrastructure: Storage: Servers: Huawei OBS, Huawei SFS, Open Telekom OBS, Open Telekom SFS Integrations added
+- Library: Node Types retain Image link when Image is not found.
+    Library Node Types now retain the Image link for Virtual Images that are converted to templates or for another reason no longer synced by Morpheus. When the Image syncs back in it will still be associated with
 - Load Balancers: LBaaS v2 support added for Open Telekom and Huawei
 - Load Balancers: Tenant assignment added
 - Network: Routers: Tenant Permissions added to Routers
