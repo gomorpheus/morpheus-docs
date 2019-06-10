@@ -3,12 +3,45 @@ v3.6.3
 
 Release date: 6/10/2019
 
+Highlights
+----------
+
+Enhanced Security Group Management
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Cloud Security Groups can now be fully managed in Morpheus! AWS, Azure, Openstack, Huawei & Open Telekom Cloud Security Group and Rules sync and can be created, edited and deleted directly in |morpheus|.
+
+Windows Deployments
+^^^^^^^^^^^^^^^^^^^
+
+Previously only available for Linux, Provisioning -> Deployments now support Windows Operating Systems!
+
+Cherwell
+^^^^^^^^
+
+The Cherwell Integration has been expanded to support dynamic business object creation and adds additional field configuration options for change requests
+
+Python Tasks
+^^^^^^^^^^^^
+
+``Python Script (jython)`` updated to ``Python Script``, removing the limitations of jython tasks. Please ensure Python is installed on appliance app nodes if you are using Python Tasks.
+
+Unattend Agent Install mode
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The |morpheus| Windows Agent can now be installed via VMware Guest Execution in VMware and vCloud Director clouds. To enabled, set Agent Install Mode to ``Cloud-init / Unattend (when available)`` in target cloud Advanced Settings.
+
+Ubuntu 18.04 Support for Morpheus App Nodes
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+v3.6.3 adds native support for Installing |morpheus| on Ubuntu 18.04, in addition to Ubuntu 16.04. Ubuntu 14.04 has also been removed from recommended versions.
+
 New Features
 ------------
 
 - Ansible:  Now handling group and host vars relative to inventory
-- API & CLI: Security Groups updated to support Security Group Rule management
 - API & CLI: Resource Pool and Folder endpoints added
+- API & CLI: Security Groups updated to support Security Group Rule management
 - API & CLI: vCloud Director Datastore ID added to Billing Data
 - Appliance: Expired license notification added
 - Apps: AWS Scale Groups created from Cloud Formation and Terraform Blueprints are now automatically created in |morpheus|
@@ -22,18 +55,13 @@ New Features
 - Blueprints: AWS Scale Groups created in Cloud Formation and Terraform templates now automatically created in |morpheus|
 - Cherwell: Added ignore ssl flag Cherwell Integration options
 - Cherwell: Expansion of integration to support dynamic business object creation and additional field configurations for advisory change requests
-- Clouds: Added support for 'local firewall' option to Security Mode selection in cloud edit for clouds which do not have native security group support (azure, openstack flavors, amazon)
 - Clouds : Code and Tenant fields added to Cloud Wizard when creating cloud from `Infrastructure -> Clouds ->` :guilabel:`+ ADD`, matching wizard from `Infrastructure -> Groups -> Clouds ->` :guilabel:`+ ADD`
 - Clouds: ``Security Server`` setting for AWS, Azure, Openstack, Open Telekom Cloud, and Huawei Clouds configurations will be automatically set to matching type on Appliance start up
+- Clouds: Added support for 'local firewall' option to Security Mode selection in cloud edit for clouds which do not have native security group support (azure, openstack flavors, amazon)
 - Deployments: Windows Deployment support added
-- Guacamole: Updated 1.0.0 to support Appliances installed on Ubuntu 18.04
 - Huawei: ``af-south-1`` & ``eu-west-0`` Regions added
-- Infoblox: DNS Integration added.
-- Infrastructure: Storage: Buckets: Huawei OBS Bucket, Open Telekom OBS Bucket creation and management added
-- Infrastructure: Storage: File Shares: Huawei SFS Share, Open Telekom SFS Share creation and management added
-- Infrastructure: Storage: Servers: Huawei OBS, Huawei SFS, Open Telekom OBS, Open Telekom SFS Integrations added
-- Library: Node Types retain Image link when Image is not found.
-    Library Node Types now retain the Image link for Virtual Images that are converted to templates or for another reason no longer synced by Morpheus. When the Image syncs back in it will still be associated with
+- Infoblox: Infoblox DNS Integration added.
+- Library: Node Types retain Image link when Image is not found, retaining the Image link for Virtual Images that are converted to templates or for another reason not found during a sync.
 - Load Balancers: LBaaS v2 support added for Open Telekom and Huawei
 - Load Balancers: Tenant assignment added
 - Network: Routers: Tenant Permissions added to Routers
@@ -45,10 +73,12 @@ New Features
 - Remedy: Added ignore ssl flag to Remedy Integration options
 - Roles: ``MULTITENANT LOCKED`` option added for User Roles. When lock is enabled, the linked sub-tenant roles cannot be edited in subtenant.
 - SCVMM: Additional disks can now be added to sync templates during provisioning
-- vCloud Director: Routed Network Support Added
-- Tenants: A Morpheus admin can assign an object store endpoint to a tenant
-- vCloud Director: Windows Agent Install via guest customizations added. NOTE: Requires ``Agent Install Mode`` set to ``Cloud-init / Unattend (when available)`` in VMware Cloud Advanced Options
+- Storage: Buckets: Huawei OBS Bucket, Open Telekom OBS Bucket creation and management added
+- Storage: File Shares: Huawei SFS Share, Open Telekom SFS Share creation and management added
+- Storage: Servers: Huawei OBS, Huawei SFS, Open Telekom OBS, Open Telekom SFS Integrations added
 - vCloud Director: Hypervisor Console support added
+- vCloud Director: Routed Network Support Added
+- vCloud Director: Windows Agent Install via guest customizations added. NOTE: Requires ``Agent Install Mode`` set to ``Cloud-init / Unattend (when available)`` in VMware Cloud Advanced Options
 - VMware: Windows Agent Install via guest customizations added. NOTE: Requires ``Agent Install Mode`` set to ``Cloud-init / Unattend (when available)`` in vCloud Director Cloud Advanced Options
 - VMware: Windows Agent Install: Timeout and Retries added to reachability command to improve Windows Agent Install via VMware Tools Guest Exec
 
@@ -56,32 +86,31 @@ System Updates
 --------------
 
 - `runit` updated to to 4.3.0. Services such as nginx will now restart when config changes are detected during |morpheus| reconfigures
+- Added new MySQL JDBC override string for morpheus/rb using ```mysql['mysql_url_overide']```
+- Added setting for `SQLTransientConnectionException` in JDBC, the failover settings can be modified using the setting ```mysql['mysql_failover_params']```
 - Database: Database Level Encryption upgraded to AES-256
-- jython removed per CVE-2016-4000. IMPORTANT: Jython replaced with Python. Users with python tasks are responsible for ensuring Python in installed on their appliance(s)
+- Fixed post install script that was prepping for ElasticSearch upgrade on a new install
+- Fixed restart of nginx and guac when the configuration changes.
+- Guacamole updated to 1.0.0
+- jython removed per CVE-2016-4000. IMPORTANT: Jython replaced with Python. Users with python tasks are responsible for ensuring Python is installed on their appliance(s)
 - Logs: Updates to mask additional sensitive data in logs
+- MySQL: 5.7 replaces 5.6 for Azure, Bluemix, DigitalOcean, SoftLayer and UpCloud System Layouts
+- NTP config is skipped on Ubuntu 18.04 and Debian 9
+- Oracle Cloud: Default |morpheus| Docker Host Image updated to Ubuntu 16.04
+- Redis: Added 3.0 for Azure, Bluemix and UpCloud
 - Ubuntu 18.04 now supported for Morpheus Appliance Installations
 - Update for commons-compress, addresses CVE-2018-11771
 - Update for spring-security-oauth2, addresses CVE-2019-3778
-- Guacamole updated to 1.0.0
-- Added new MySQL JDBC override string for morpheus/rb using ```mysql['mysql_url_overide']```
-- Added setting for `SQLTransientConnectionException` in JDBC, the failover settings can be modified using the setting ```mysql['mysql_failover_params']```
-- Fixed restart of nginx and guac when the configuration changes.
-- NTP config is skipped on Ubuntu 18.04 and Debian 9
-- Fixed post install script that was prepping for ElasticSearch upgrade on a new install
-
-
-System Library Updates
-----------------------
-
-- MySQL: 5.7 replaces 5.6 for Azure, Bluemix, DigitalOcean, SoftLayer and UpCloud System Layouts
-- Redis: Added 3.0 for Azure, Bluemix and UpCloud
-- Oracle Cloud: Default |morpheus| Docker Host Image updated to Ubuntu 16.04
 
 Fixes
 -----
 
 - Amazon: Fix for security groups not being filtered by resource pool in Instance and App wizards when default security group is populated
 - Ansible Tower: Fix for ``Limit to Instance`` flag
+- API & CLI: Amazon: Add Network: Fix for issue creating networks due to ``vpcId`` error
+- API/CLI: Fix for AWS Provisioning Issue when image disk size is greater than Plan disk size
+- API & CLI: Fix for Oracle VM provisioning failures when using |morpheus| API & CLI
+- CLI: networks: Fix for setting Domain on Networks via |morpheus| CLI Shell
 - AWS:  Fix for security groups not filtering by VPC
 - Azure: Fix for creating |morpheus| Docker Hosts with custom Image
 - Azure: Updates to Azure Sync: Plan change detection
@@ -146,11 +175,3 @@ Fixes
 - VMware: Fix for additional networks not defaulting type to ``vmxnet3``
 - VMware: Fix for incorrect Operating System mappings on discovered Virtual Machines
 - VMware: Fix for power state showing as running on Managed VM's that have been removed from vCenter
-
-API & CLI Fixes
----------------
-
-- API & CLI: Amazon: Add Network: Fix for issue creating networks due to ``vpcId`` error
-- API/CLI: Fix for AWS Provisioning Issue when image disk size is greater than Plan disk size
-- API & CLI: Fix for Oracle VM provisioning failures when using |morpheus| API & CLI
-- CLI: networks: Fix for setting Domain on Networks via |morpheus| CLI Shell
