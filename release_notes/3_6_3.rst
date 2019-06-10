@@ -1,154 +1,153 @@
 v3.6.3
 =======
 
-Release date: TBD
+Release date: 6/10/2019
 
 New Features
--------------
+------------
 
+- Ansible:  Now handling group and host vars relative to inventory
 - API & CLI: Security Groups updated to support Security Group Rule management
 - API & CLI: Resource Pool and Folder endpoints added
-- API: VCD Datastore ID added to billing API
+- API: vCloud Director Datastore ID added to billing API
 - Appliance: Expired license notification added
-- Apps: AWS Scale Groups created from Cloud Formation and Terraform Blueprints now automatically created in |morpheus|
-- Apps: Security Groups created from Cloud Formation and Terraform Blueprints now automatically associated with the App
+- Apps: AWS Scale Groups created from Cloud Formation and Terraform Blueprints are now automatically created in |morpheus|
+- Apps: Retry added for ARM App resource updates
+- Apps: Security Groups created from Cloud Formation and Terraform Blueprints are now automatically associated with the App
+- Apps: Terraform: Validation errors now displayed in Configure step
 - Automation: Tasks: `Python Script (jython)` updated to `Python Script`
 - AWS: Security Group Rule management added. AWS Security group rules can now be created, edited and deleted in |morpheus|
 - Azure: Network Security Group Rule management added. Azure Network Security group rules can now be created, edited and deleted in |morpheus|
 - Backups: Enhanced error messages with STDOUT added to failed mysql backups
 - Blueprints: AWS Scale Groups created in Cloud Formation and Terraform templates now automatically created in |morpheus|
+- Cherwell: Added ignore ssl flag Cherwell Integration options
 - Cherwell: Expansion of integration to support dynamic business object creation and additional field configurations for advisory change requests
-- Cloud Wizard: Code and Tenant fields added to new Cloud Wizard when creating cloud from `Infrastructure -> Clouds ->` :guilabel:`+ ADD`, matching wizard from `Infrastructure -> Groups -> Clouds ->` :guilabel:`+ ADD`
-- Clouds: ``Security Server`` setting for AWS, Azure, Openstack, OTC, and Huawei Clouds configurations will be automatically set to matching type on Appliance start up
+- Clouds: Added support for 'local firewall' option to Security Mode selection in cloud edit for clouds which do not have native security group support (azure, openstack flavors, amazon)
+- Clouds : Code and Tenant fields added to Cloud Wizard when creating cloud from `Infrastructure -> Clouds ->` :guilabel:`+ ADD`, matching wizard from `Infrastructure -> Groups -> Clouds ->` :guilabel:`+ ADD`
+- Clouds: ``Security Server`` setting for AWS, Azure, Openstack, Open Telekom Cloud, and Huawei Clouds configurations will be automatically set to matching type on Appliance start up
 - Deployments: Windows Deployment support added
 - Guacamole: Updated 1.0.0 to support Appliances installed on Ubuntu 18.04
+- Huawei: ``af-south-1`` & ``eu-west-0`` regions/az's added
 - Infoblox: DNS Integration added.
 - Infrastructure: Storage: Buckets: Huawei OBS Bucket, Open Telekom OBS Bucket creation and management added
 - Infrastructure: Storage: File Shares: Huawei SFS Share, Open Telekom SFS Share creation and management added
 - Infrastructure: Storage: Servers: Huawei OBS, Huawei SFS, Open Telekom OBS, Open Telekom SFS Integrations added
-- Installation: Add UTF8 encoding to Morpheus App startup
 - Load Balancers: LBaaS v2 support added for Open Telekom and Huawei
 - Load Balancers: Tenant assignment added
+- Network: Routers: Tenant Permissions added to Routers
 - OpenStack: `REGION` scope option added to Openstack Cloud configurations
 - Policies: Role scope option added for Policies. When a policy is scoped to a Role, the Policy will apply to all users with that Role.
 	.. note:: For max resource policies, resource totals are calculated and enforced in aggregate, not per user.
 - Policies: Storage Server Storage Quota Policy type added
 - Provisioning: Error messages now included in Failed provision email notifications
+- Provisioning: Instance and App wizards now can create multiple load balancer ports
+- Remedy: Added ignore ssl flag to Remedy Integration options
+- Roles: ``MULTITENANT LOCKED`` option added for User Roles. When lock is enabled, the linked sub-tenant roles cannot be edited in subtenant.
 - SCVMM: Additional disks can now be added to sync templates during provisioning
+- vCloud Director: Routed Network Support Added
+- Tenants: A Morpheus admin can assign an object store endpoint to a tenant
+
+- vCloud Director: Windows Agent Install via guest customizations added.
+	 .. note:: Requires ``Agent Install Mode`` set to ``Cloud-init / Unattend (when available)`` in VMware Cloud Advanced Options
+- vCloud Director: Hypervisor Console support added
+- VMware: Windows Agent Install via guest customizations added
+   .. note:: Requires ``Agent Install Mode`` set to ``Cloud-init / Unattend (when available)`` in vCloud Director Cloud Advanced Options
+- VMware: Windows Agent Install: Timeout and Retries added to reachability command to improve Windows Agent Install via VMware Tools Guest Exec
+
+System Updates
+--------------
+
 - System: `runit` updated to to 4.3.0. Services such as nginx will now restart when config changes are detected during |morpheus| reconfigures
 - System: Database: Database Level Encryption upgraded to AES-256
 - System: jython removed per CVE-2016-4000
   .. important:: Jython replaced with Python. Users with python tasks are responsible for ensuring Python in installed on their appliance(s)
+- System: Logs: Updates to mask additional sensitive data in logs
 - System: Ubuntu 18.04 now supported for Morpheus Appliance Installations
 - System: Update for commons-compress, addresses CVE-2018-11771
 - System: Update for spring-security-oauth2, addresses CVE-2019-3778
-- Tenants: A Morpheus admin can assign an object store endpoint to a tenant
-- VCD: Windows Agent Install via guest customizations added.
-	.. note:: Requires ``Agent Install Mode`` set to ``Cloud-init / Unattend (when available)`` in VMware Cloud Advanced Options
-- vCloud Director: Hypervisor Console support added
-- VMware: Windows Agent Install via guest customizations added
-	.. note:: Requires ``Agent Install Mode`` set to ``Cloud-init / Unattend (when available)`` in vCD Cloud Advanced Options
 
 
+System Library Updates
+----------------------
+
+- MySQL: 5.7 replaces 5.6 for Azure, Bluemix, DigitalOcean, SoftLayer and UpCloud System Layouts
+- Redis: Added 3.0 for Azure, Bluemix and UpCloud
+- Oracle Cloud: Default |morpheus| Docker Host Image updated to Ubuntu 16.04
 
 Fixes
 -----
-- vCD: Routed Network Support Added
-- UI: Fix for wizard not displaying validation error for blank disk size
-- Admin: Fix for alarms for a cloud not being removed when cloud is deleted
-- Oracle: Default Docker host updated to Ubuntu 16
-- UI: Fix for discovery size log error
-- VMware: Fix for Operating System sync accuracy
-- General:  Fix for duplicate "running" records accumulating cost for the same instance in the usage selection
-- General: Added UI error when attempting option type delete when in use
-- SCVMM: Fix for the cluster assigning the same hosts
-- SCVMM: Fix for discovered VMs not being removed when deleted in SCVMM
-- General: Fix for Syslog integration creating Ansible integration
-- VMware: Fix for vmxnet3 not set as default VMware Network adapter type for second network
-- General: Fix for provision review tab showing networks incorrectly listed as pool instead of DHCP or IP
-- General: Fix for User password management.  Salt being set to morpheus instead of random string.
-- General: Users can no longer choose image source -> target conversion type if the underlying converter does not exist
-- vCD: If windows guest customization takes longer then 5 minutes to run the agent has to be manually installed
-- SCVMM: Fix for Morpheus overriding the settings in SCVMM VM template
-- Instances: Fix for inconsistent instance naming when instance is renamed
-- General: Fix for recentActivity shows strange characters when resource has a Chinese name
-- OpenStack: Fix for collective memory usage of OpenStack cloud <0%
-- Networking: Fix for Setting Domain on Networks via Shell
-- General:  Fix for Result type not working for task type "Local Shell Script"
-- General: Fix for SSH task using ssh key fails
-- Health: Fix for password for MySQL backup in clear text in health log
-- General: Fix for platform analysis incorrect on review
-- Fix for security groups for instance wizard sometimes not scoped to selected resource pool on load
-- API/CLI : Fix for Amazon add network update to handle VPC fix suppressed validation errors
-- General: Fix for provisioning set to user inhibits deployments
-- Tenant:  Fix for reconfigure modal not working with new tenant settings for plans
-- VCD: Fix for API portion of cloud integration url
-- OTC: Fix for backups not being deleted on instance deletion and backup archive list
-- Terraform:  Added known Terraform plan errors to UI review pane
-- Monitoring:  Fix for it unclear what text is clickable in monitoring page in UI
-- vCD: Fix for CLI uploaded OVF/VMDK virtual machine images are not being mapped to vCD
-- Health:  Fix for sensitive info shown in Health Logs
-- OVM: Fix for limitations to use Slot4 as CDROM disk
-- Administration:  Fix for security groups for all VPC's being displayed to a tenant locked down to one VPC
-- Networking: Fix for changing the router / gateway and DNS addresses not updating the network in the cloud
-- OTC: Fix for VMs losing their security groups
-- Library: Fix for custom library items not syncing default /var/log/ on instance details logs
-- Commvault: Fix for backup jobs selection appears on backup automation tab during instance creation
+
+- Amazon: Fix for security groups not being filtered by resource pool in Instance and App wizards when default security group is populated
+- Ansible Tower: Fix for ``Limit to Instance`` flag
+- AWS:  Fix for security groups not filtering by VPC
+- Azure: Fix for creating |morpheus| Docker Hosts with custom Image
+- Azure: Updates to Azure Sync: Plan change detection
+- Backups: Fix for running on-demand backup creating a scheduled job.
+- Backups: Unscheduled Backups Jobs are no longer listed on Backups Summary page
+- Commvault: Fix for Backups tab in Provisioning Wizard showing Nutanix Snapshot instead of Commvault when Commvault is set to Nutanix Cloud Backup Provider
+- Console: Fix for in-page Hypervisor Console window height becoming progressively smaller on page refresh
+- Dashboard: Fix for Dashboard showing old name after an Instance is renamed
+- Database: Fix for default encoding not set to utf-8
 - General: Made it more  clear on the summary page which jobs are not scheduled to running
-- Backups: Fix for job backup create schedule for non scheduled job
-- Clouds: Fix for powering on VM directly in Nutanix Prism or Azure not triggering a status change to "running" for the instance within Morpheus
-- Load Balancer:  Fix for missing LBAAS2 logo on infrastructure > load-balancers and Load Balancer details page
-- VCD: Fix for VCD docker host custom image not respected
-- VCD: Fix for adding a private vCloud director assigned to a subtenant fails to scope the networks and data stores to the subtenant
-- Administration: Fix for approval issue with Restore New and Clone
-- Policy: Fix for missing naming convention policy on cloud
-- Tenant: Fix for tenant can not be deleted if any custom environment tags have been created within tenant
-- Console:  Fix for console resize makes height progressively smaller on refresh
-- VCD: Fix for datastores recreated on cloud sync error
-- Security: Fix for server side template injection vulnerability
-- Storage: Fix for Tenant settings on storage servers
-- OTC: Fix for hypervisor console not working
-- Ansible Tower: fix for limit run to instance
-- Docker host: Fix for docker host provision fails when using infrastructure > hosts add when browser language is in German
-- Backup: Appliance backup broken
-- VM:  Fix for appliance resize not updating total storage on instance record
-- OTC: Fix for issue deleting instance and LBaaS load balancer
-- Migration: Fix for multiple running usage records for Windows and Linux instances
-- VMware: Fix for errors when cloud is privately shared from the master tenant and the LBaas2 service does not appear for the sub-tenant
-- Ansible: Fix for the password showing when using cypher in playbooks
-- Virtual Image: Fix for minimum memory not saving correctly
-- Security Groups: Fix for groups getting duplicated in Morpheus but not AWS
-- OVM: Fix for builds via API/CLI failing due to template disk resize
-- Azure: Fix for Docker host customer image failing to provision
-- API/CLI: Fix for AWS instances not being built when the image disk size is greater than the plan disk size
-- Plans: Fix for plan matching not correctly determined if Custom Cores is check but not Custom Memory
-- Virtual Images: Fix for private images showing for tenants
-- Networking: Fix for network issue when a network is created without specifying a CIDR
-- Hosts: Fix for the host wizard not displaying private plans scoped to subtenant for OpenStack/OTC/Huawei
-- Plans: Fix for OpenStack/OTC/Huawei service plans not displaying all tenants
+- Guidance: Fix for shutdown discovery service errors
+- Health:  Fix for sensitive info shown in Health Logs
+- Health: Logs: Additional masking added for sensitive data
+- Instances: Fix for issue Restoring and Cloning Instances in Groups or Clouds with an active Approval Policy
+- Instances: Fix for powering on VM directly in Nutanix or Azure not triggering a status change to "running" for associated Instance within Morpheus
+- Instances: Process History: Fix for negative execution times
+- Integrations: Fix for Syslog integration creating Ansible integration
+- KVM: Fix for unknown power status on KVM nodes
+- Library: Added Error message for when attempting to delete an Option Type that is in use
+- Library: Fix for custom Node Types not displaying default ``/var/log/`` logs in Instance detail Logs tab when no log path is set on Node Type. NOTE: Node Types must be edited and saved to enable fix
+- Library: vCloud Director Node Types: The VM Image dropdown under the vCloud Director VM Options will now find image types ``vmware/vmdk/ovf``, where it previously only found ``vmdk/ovf``
+- Load Balancer:  Fix for missing LBAAS2 logo on ``Infrastructure > Load Balancers`` and ``Load Balancers`` details page
+- Migration: Fix for multiple running Usage records for Instances migrated from onapp to VMware
+- Monitoring:  Fix for hyperlink hover behavior in the Apps and Checks sections
+- Monitoring: Checks no longer automatically configured when Agent install is not selected on `Convert to Managed`
+- |morpheus| Docker Hosts: Fix for |morpheus| Docker Host provisioning failures when using ``Infrastructure > Hosts`` and browser language is to German
+- Networks: Fix for edits to Network Name or DNS settings not propagating to Openstack; CIDR field updated to read-only on edit.
+- Open Telekom Cloud: Fix for backups not being deleted on instance deletion and backup archive list when preserve backups is not checked
+- Open Telekom Cloud: Fix for default security groups being disassociated with VM's
+- Open Telekom Cloud: Fix for Hypervisor Console not displaying
+- OpenStack: Fix for incorrect memory utilization shown for Openstack Cloud on Cloud detail page and Virtual Machine Inventory Summary reports
+- Openstack: Validation added to CIDR field when creating Openstack Networks
+- Operations: Activity: Alarms: Fix for alarms for a cloud not being removed when cloud is deleted
+- Oracle VM: CD-ROM slot assignment no longer uses Slot 4
+- Policies: Updates to Max Price policy enforcement
+- Policy: Fix for active Naming Policy not applying to first selected Cloud when no Default Cloud is set and multiple Clouds exist in selected Group.
+- Provisioning: Fix for App and Clone wizards not displaying validation error for blank disk size
+- Provisioning: Fix for evaluation of Platform variable on Provisioning Wizard Review panel
+- Provisioning: Fix for review tab of the Instance and App Wizards incorrectly showing networks as set to an IP Range when using network override
+- Roles: Fix for ``Provisioning : User`` role permission setting inhibiting Deployments
+- SCVMM: Fix for discovered VMs not being removed when deleted in SCVMM
+- SCVMM: Fix for Morpheus overriding some settings in SCVMM VM templates
+- SCVMM: Fix for |morpheus| defaulting to the same target Host when Host is not specified during provisioning.
+- Security Groups: Fix for duplicate AWS Security groups being displayed in |morpheus|
+- Security: Fix for potential server side injection vulnerability
+- Tasks:  Fix for Result type not working for task type "Local Shell Script"
+- Tasks: Fix for Chef Tasks -> Chef Run execution
+- Tasks: Fix for SSH task auth when using Keys
+- Tenant:  Fix for reconfiguring Openstack Instance in subtenant not applying new flavor
+- Tenant: Fix for deleting Tenants with existing custom Environments
+- Usage: Fix for non-stopped usage records for discovered servers not closing after converting to managed and changing plan at same time.
+- User Settings: Improvements added to user password salting
+- vCloud Director: Fix for adding a private vCloud Director Cloud assigned to a subtenant not assigning networks and data stores to the subtenant
+- vCloud Director: Fix for creating a vCloud Director Docker Host with custom image using default image instead
+- vCloud Director: Fix for datastores recreated on cloud sync error
+- vCloud Director: Fix for Discovered VM Plan matching not using Plans with `Custom Cores` checked and `Custom Memory` not checked on Plan config
+- vCloud Director: Fix for Windows Agent install when guest customization takes longer then 5 minutes
+- vCloud Director: |morpheus| will now automatically remove ``/api`` or ``/api/`` if added to end of vCloud Director integration url
+- Virtual Images: Fix for Master Tenant Private Images with no Tenant assigned being listed in Sub-Tenants Virtual Images section
+- Virtual Images: Fix for Minimum Memory setting not saving when uploading a new Image
+- Virtual Images: Users can no longer choose Image Source -> Target Conversion Type if the conversion type is not supported for source Image
+- VMware: Fix for additional networks not defaulting type to ``vmxnet3``
+- VMware: Fix for incorrect Operating System mappings on discovered Virtual Machines
+- VMware: Fix for power state showing as running on Managed VM's that have been removed from vCenter
 
+API & CLI Fixes
+---------------
 
-N- Network: Routers: Tenant Permissions Added
-N - System: Logs: Updates to mask additional sensitive data in logs
-N - VMware: Windows Agent Install: Timeout and Retries added to reachability command to improve Windows Agent Install via VMware Tools Guest Exec
-N - Huawei: ``af-south-1`` & ``eu-west-0`` regions/az's added
-N - Roles: ``MULTITENANT LOCKED`` option added for User Roles. When lock is enabled, the linked sub-tenant roles cannot be edited in subtenant.
-F - Chef: Fix for Chef run task execution
-F- Fix for power state showing as running on Managed VM's that have been removed from vCenter
-F - Monitoring Checks no longer automatically configured when agent install is not select on Convert to Managed
-F- Fix for unknown power status on KVM nodes
-N- ARM retry for update app resource
-F- Azure- azure plan change detection updated
-F- fixing user source delete and role interference
-N- increasing template data type longtext
-F- fixing lb delete
-N - Instance and App wizards now can create multiple load balancer ports
-N - Add support for 'local firewall' option to Security Mode selection in cloud edit for clouds which do not have native security group support (azure, openstack flavors, amazon)
-N- Expired License updates ?
-F- Fix for max price policies ?
-N- Redis 3.0 for Azure, Bluemix and UpCloud
-N- MySQL 5.7 replaces 5.6 for Azure, Bluemix, DigitalOcean, SoftLayer and UpCloud System Layouts
-N service plans for servers?
-N- Add ignore ssl flag to remedy and cherwell integrations
-N- Ansible:  now handling group and host vars relative to inventory
-F- fixing negative execution times
+- API & CLI: Amazon: Add Network: Fix for issue creating networks due to ``vpcId`` error
+- API/CLI: Fix for AWS Provisioning Issue when image disk size is greater than Plan disk size
+- API & CLI: Fix for Oracle VM provisioning failures when using |morpheus| API & CLI
+- CLI: Fix for setting Domain on Networks via |morpheus| CLI Shell
