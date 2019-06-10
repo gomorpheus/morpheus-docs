@@ -8,8 +8,6 @@ We currently provide an OAUTH 2.0 based authentication model and are working on 
 Replace the <code>morpheus-appliance-url</code> in the examples with your custom Morpheus appliance URL.
 </aside>
 
-The current version is |version|
-
 # Authentication
 
 The Morpheus API follows the OAuth 2.0 Specification and acts as an OAUTH 2.0 provider. To authorize your account you will need to use the same credentials you normally use to login to morpheus which will provide you with an `accessToken` as well as a `refreshToken`.
