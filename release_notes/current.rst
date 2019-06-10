@@ -29,7 +29,7 @@ Python Tasks
 Unattend Agent Install mode
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The |morpheus| Windows Agent can now be installed via VMware Guest Execution in VMware and vCloud Director clouds. To enabled, set Agent Install Mode to ``Cloud-init / Unattend (when available)`` in target cloud Advanced Settings.
+The |morpheus| Windows Agent can now be installed via the unattend.xml during Guest Customizations in VMware and vCloud Director clouds. To enabled, set Agent Install Mode to ``Cloud-init / Unattend (when available)`` in target Cloud(s) Advanced Settings.
 
 Ubuntu 18.04 Support for Morpheus App Nodes
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -61,7 +61,7 @@ New Features
 - Deployments: Windows Deployment support added
 - Huawei: ``af-south-1`` & ``eu-west-0`` Regions added
 - Infoblox: Infoblox DNS Integration added.
-- Library: Node Types retain Image link when Image is not found, retaining the Image link for Virtual Images that are converted to templates or for another reason not found during a sync.
+- Library: Node Types retain Image link when Image is not found, retaining the info for Virtual Images that are converted to templates or for another reason not found during a sync.
 - Load Balancers: LBaaS v2 support added for Open Telekom and Huawei
 - Load Balancers: Tenant assignment added
 - Network: Routers: Tenant Permissions added to Routers
@@ -78,8 +78,8 @@ New Features
 - Storage: Servers: Huawei OBS, Huawei SFS, Open Telekom OBS, Open Telekom SFS Integrations added
 - vCloud Director: Hypervisor Console support added
 - vCloud Director: Routed Network Support Added
-- vCloud Director: Windows Agent Install via guest customizations added. NOTE: Requires ``Agent Install Mode`` set to ``Cloud-init / Unattend (when available)`` in VMware Cloud Advanced Options
-- VMware: Windows Agent Install via guest customizations added. NOTE: Requires ``Agent Install Mode`` set to ``Cloud-init / Unattend (when available)`` in vCloud Director Cloud Advanced Options
+- vCloud Director: Windows Agent Install via guest customizations unattend.xml added. NOTE: Requires ``Agent Install Mode`` set to ``Cloud-init / Unattend (when available)`` in vCloud Director Cloud(s) Advanced Options
+- VMware: Windows Agent Install via guest customizations unattend.xml added. NOTE: Requires ``Agent Install Mode`` set to ``Cloud-init / Unattend (when available)`` in VMware Cloud(s) Advanced Options
 - VMware: Windows Agent Install: Timeout and Retries added to reachability command to improve Windows Agent Install via VMware Tools Guest Exec
 
 System Updates
@@ -175,3 +175,16 @@ Fixes
 - VMware: Fix for additional networks not defaulting type to ``vmxnet3``
 - VMware: Fix for incorrect Operating System mappings on discovered Virtual Machines
 - VMware: Fix for power state showing as running on Managed VM's that have been removed from vCenter
+
+Security Vulnerabilities Remediated
+-----------------------------------
+
+- CVE-2019-5427
+- CVE-2019-12086
+- CVE-2017-5929
+- CVE-2019-0199
+- CVE-2012-0881
+- CVE-2013-4002
+- CVE-2013-5960
+- CVE-2013-5679
+- CVE-2014-3604
