@@ -55,13 +55,20 @@ New Features
 System Updates
 --------------
 
-- System: `runit` updated to to 4.3.0. Services such as nginx will now restart when config changes are detected during |morpheus| reconfigures
-- System: Database: Database Level Encryption upgraded to AES-256
-- System: jython removed per CVE-2016-4000. IMPORTANT: Jython replaced with Python. Users with python tasks are responsible for ensuring Python in installed on their appliance(s)
-- System: Logs: Updates to mask additional sensitive data in logs
-- System: Ubuntu 18.04 now supported for Morpheus Appliance Installations
-- System: Update for commons-compress, addresses CVE-2018-11771
-- System: Update for spring-security-oauth2, addresses CVE-2019-3778
+- `runit` updated to to 4.3.0. Services such as nginx will now restart when config changes are detected during |morpheus| reconfigures
+- Database: Database Level Encryption upgraded to AES-256
+- jython removed per CVE-2016-4000. IMPORTANT: Jython replaced with Python. Users with python tasks are responsible for ensuring Python in installed on their appliance(s)
+- Logs: Updates to mask additional sensitive data in logs
+- Ubuntu 18.04 now supported for Morpheus Appliance Installations
+- Update for commons-compress, addresses CVE-2018-11771
+- Update for spring-security-oauth2, addresses CVE-2019-3778
+- Guacamole updated to 1.0.0
+- Added new MySQL JDBC override string for morpheus/rb using ```mysql['mysql_url_overide']```
+- Added setting for `SQLTransientConnectionException` in JDBC, the failover settings can be modified using the setting ```mysql['mysql_failover_params']```
+- Fixed restart of nginx and guac when the configuration changes.
+- NTP config is skipped on Ubuntu 18.04 and Debian 9
+- Fixed post install script that was prepping for ElasticSearch upgrade on a new install
+
 
 System Library Updates
 ----------------------
