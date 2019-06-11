@@ -15184,11 +15184,11 @@ Usage: morpheus workflows update [name] --tasks taskId:phase,taskId2:phase,taskI
 ```
 
 
-## ENVIRONMENT VARIABLES
+# Environment Variables
 
 Morpheus has only one environment variable that it uses.
 
-### MORPHEUS_CLI_HOME
+## MORPHEUS_CLI_HOME
 
 The **MORPHEUS_CLI_HOME** variable is where morpheus CLI stores its configuration files.
 This can be set to allow a single system user to maintain many different configurations
@@ -15228,13 +15228,13 @@ to the $MORPHEUS_HOME_DIRECTORY. These files are saved with file permissions **6
 So, only one system user should be allowed to execute morpheus with that home directory.
 See [Configuration](#Configuration) for more information on the files morpheus reads and writes.
 
-## CONFIGURATION
+# Configuration
 
 Morpheus reads and writes several configuration files within the $MORPHEUS_CLI_HOME directory.
 
 **Note:** These files are maintained by the program. It is not recommended for you to manipulate them.
 
-### appliances file
+## appliances file
 
 The `appliances` YAML file contains a list of known appliances, keyed by name.
 
@@ -15248,28 +15248,28 @@ Example:
   :active: false
 ```
 
-### credentials file
+## credentials file
 
 The `.morpheus/credentials` YAML file contains access tokens for each known appliance.
 
-### groups file
+## groups file
 
 The `.morpheus/groups` YAML file contains the active group information for each known appliance.
 
 
-## Startup scripts
+# Startup scripts
 
 When Morpheus starts, it executes the commands in a couple of dot files.
 
 These scripts are written in morpheus commands, not bash, so they can only execute morpheus commands and aliases.
 
-### .morpheus_profile file
+## .morpheus_profile file
 
 It looks for `$MORPHEUS_CLI_HOME/.morpheus_profile`, and reads and executes it (if it exists).
 
 This may be inhibited by using the `--noprofile` option.
 
-### .morpheusrc file
+## .morpheusrc file
 
 When started as an interactive shell with the `morpheus shell` command,
 Morpheus reads and executes `$MORPHEUS_CLI_HOME/.morpheusrc` (if it exists). This may be inhibited by using the `--norc` option.
