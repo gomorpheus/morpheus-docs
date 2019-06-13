@@ -21,5 +21,5 @@ Recommended Rabbitmq Policies:
 
 .. code-block:: bash
 
-   rabbitmqctl set_policy -p morpheus --apply-to queues --priority 1 statCommands "statCommands.*" '{expires:1800000}'
-   rabbitmqctl set_policy -p morpheus --apply-to queues --priority 1 morpheusAgentActions "morpheusAgentActions.*" '{expires:1800000}'
+   rabbitmqctl set_policy -p morpheus --apply-to queues --priority 10 statCommands "statCommands.*" '{expires:1800000}'
+   rabbitmqctl set_policy -p morpheus --apply-to queues --priority 10 morpheusAgentActions "morpheusAgentActions.*" '{expires:1800000}'
