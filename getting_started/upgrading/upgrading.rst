@@ -35,7 +35,7 @@ different.
 
 .. code-block:: bash
 
-  sudo rpm -U morpheus-appliance-x.x.x-1.x86_64.rpm
+  sudo rpm -Uhv morpheus-appliance-x.x.x-1.x86_64.rpm
   sudo morpheus-ctl stop morpheus-ui
   sudo morpheus-ctl reconfigure
   sudo morpheus-ctl start morpheus-ui
@@ -46,34 +46,41 @@ different.
 
 .. include ssl-import.rst
 
-Deploy WAR file
----------------
+Morpheus UI war files
+---------------------
 
-Download the war file
-^^^^^^^^^^^^^^^^^^^^^
+Pre-release or patched versions of the |morpheus| UI are sometimes provided. To deploy the ui war on a |morpheus| Appliance:
 
-.. code-block:: text
+#. Download the war file to the target appliance
 
-    wget <url>
+   .. code-block:: bash
 
-Move the file
-^^^^^^^^^^^^^
+    wget https://url/war_file
 
-.. code-block:: text
+   .. note:: If the war file is provided via a droplr link, ensure a ``+`` is added to end of droplr url or the file will not download
 
-    mv <file> /opt/morpheus/lib/morpheus/morpheus-ui.war 
+#. Backup current war file
 
-Change permissions
-^^^^^^^^^^^^^^^^^^
+   .. code-block:: bash
 
-.. code-block:: text
+    sudo mv /opt/morpheus/lib/morpheus/morpheus-ui.war /opt/morpheus/lib/morpheus/morpheus-ui.bak.`date +"%m-%d-%Y"`
 
-    chown morpheus-app.morpheus-app /opt/morpheus/lib/morpheus/morpheus-ui.war
+#. Move and rename new war file
 
-Restart UI
-^^^^^^^^^^
+   .. code-block:: bash
 
-.. code-block:: text
+    sudo mv <file> /opt/morpheus/lib/morpheus/morpheus-ui.war 
 
-    morpheus-ctl restart morpheus-ui
+#. Ensure war is owned by ``morpheus-app``
 
+   .. code-block:: bash
+
+    sudo chown morpheus-app.morpheus-app /opt/morpheus/lib/morpheus/morpheus-ui.war
+
+#. Restart the |morpheus| UI
+
+   .. code-block:: bash
+
+    sudo morpheus-ctl restart morpheus-ui
+
+The new ui war will load on startup!

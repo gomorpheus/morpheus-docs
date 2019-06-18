@@ -3,7 +3,7 @@ Morpheus Documentation
 ======================
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 3
    :caption: Morpheus UI
 
    getting_started/getting_started
@@ -17,7 +17,7 @@ Morpheus Documentation
    services/services
    integration_guides/integration_guides
    troubleshooting/troubleshooting
-   release_notes/release_notes
+
 
 .. toctree::
    :maxdepth: 3
@@ -35,6 +35,13 @@ Morpheus Documentation
 
    api/intro
    api/requests
+
+.. toctree::
+   :maxdepth: 3
+   :caption: Release Notes
+
+   release_notes/current.rst
+   release_notes/previousReleases.rst
 
 
 .. |morpheus| replace:: Morpheus

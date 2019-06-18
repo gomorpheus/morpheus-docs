@@ -1,4 +1,4 @@
-## Morpheus Commands
+# Morpheus Commands
 
     We divide morpheus into commands.  
     Every morpheus command may have 0-N sub-commands that it supports.
@@ -8,6 +8,7 @@
 
     The available commands and their options are also documented below.
 
+## morpheus
 
 ```
 Usage: morpheus [command] [options]
@@ -65,8 +66,10 @@ Commands:
 	process
 	recent-activity
 	remote
+	reports
+	resource-folders
+	resource-pools
 	roles
-	security-group-rules
 	security-groups
 	shell
 	storage-buckets
@@ -534,6 +537,14 @@ Usage: morpheus apps logs [app]
     -d, --dry-run                    Dry Run, print the API request instead of executing it
         --curl                       Dry Run to output API request as a curl command.
         --scrub                      Mask secrets in output, such as the Authorization header. For use with --curl and --dry-run.
+    -r, --remote REMOTE              Remote name. The current remote is used by default.
+        --remote-url URL             Remote url. The current remote url is used by default.
+    -T, --token TOKEN                Access token for authentication with --remote. Saved credentials are used by default.
+    -U, --username USERNAME          Username for authentication.
+    -P, --password PASSWORD          Password for authentication.
+    -I, --insecure                   Allow insecure HTTPS communication.  i.e. bad SSL certificate.
+    -H, --header HEADER              Additional HTTP header to include with requests.
+        --timeout SECONDS            Timeout for api requests. Default is typically 30 seconds.
     -C, --nocolor                    Disable ANSI coloring
     -B, --benchmark                  Print benchmark time after the command is finished.
     -V, --debug                      Print extra output for debugging.
@@ -750,7 +761,7 @@ Usage: morpheus archives add [options]
         --accounts LIST              Tenant Accounts (comma separated ids)
         --isPublic [on|off]          Enabling Public URL allows files to be downloaded without any authentication.
     -O, --option OPTION              Option in the format -O field="value"
-    -P, --prompt                     Always prompts. Use passed options as the default value.
+        --prompt                     Always prompts. Use passed options as the default value.
     -N, --no-prompt                  Skip prompts. Use default values for all optional fields.
         --payload FILE               Payload from a local JSON or YAML file, skip all prompting
         --payload-dir DIRECTORY      Payload from a local directory containing 1-N JSON or YAML files, skip all prompting
@@ -761,6 +772,14 @@ Usage: morpheus archives add [options]
         --curl                       Dry Run to output API request as a curl command.
         --scrub                      Mask secrets in output, such as the Authorization header. For use with --curl and --dry-run.
     -q, --quiet                      No Output, do not print to stdout
+    -r, --remote REMOTE              Remote name. The current remote is used by default.
+        --remote-url URL             Remote url. The current remote url is used by default.
+    -T, --token TOKEN                Access token for authentication with --remote. Saved credentials are used by default.
+    -U, --username USERNAME          Username for authentication.
+    -P, --password PASSWORD          Password for authentication.
+    -I, --insecure                   Allow insecure HTTPS communication.  i.e. bad SSL certificate.
+    -H, --header HEADER              Additional HTTP header to include with requests.
+        --timeout SECONDS            Timeout for api requests. Default is typically 30 seconds.
     -C, --nocolor                    Disable ANSI coloring
     -B, --benchmark                  Print benchmark time after the command is finished.
     -V, --debug                      Print extra output for debugging.
@@ -779,6 +798,14 @@ Usage: morpheus archives add-file-link [bucket:/path]
         --curl                       Dry Run to output API request as a curl command.
         --scrub                      Mask secrets in output, such as the Authorization header. For use with --curl and --dry-run.
     -q, --quiet                      No Output, do not print to stdout
+    -r, --remote REMOTE              Remote name. The current remote is used by default.
+        --remote-url URL             Remote url. The current remote url is used by default.
+    -T, --token TOKEN                Access token for authentication with --remote. Saved credentials are used by default.
+    -U, --username USERNAME          Username for authentication.
+    -P, --password PASSWORD          Password for authentication.
+    -I, --insecure                   Allow insecure HTTPS communication.  i.e. bad SSL certificate.
+    -H, --header HEADER              Additional HTTP header to include with requests.
+        --timeout SECONDS            Timeout for api requests. Default is typically 30 seconds.
     -C, --nocolor                    Disable ANSI coloring
     -B, --benchmark                  Print benchmark time after the command is finished.
     -V, --debug                      Print extra output for debugging.
@@ -799,6 +826,14 @@ Usage: morpheus archives download [bucket:/path] [local-file]
         --curl                       Dry Run to output API request as a curl command.
         --scrub                      Mask secrets in output, such as the Authorization header. For use with --curl and --dry-run.
     -q, --quiet                      No Output, do not print to stdout
+    -r, --remote REMOTE              Remote name. The current remote is used by default.
+        --remote-url URL             Remote url. The current remote url is used by default.
+    -T, --token TOKEN                Access token for authentication with --remote. Saved credentials are used by default.
+    -U, --username USERNAME          Username for authentication.
+    -P, --password PASSWORD          Password for authentication.
+    -I, --insecure                   Allow insecure HTTPS communication.  i.e. bad SSL certificate.
+    -H, --header HEADER              Additional HTTP header to include with requests.
+        --timeout SECONDS            Timeout for api requests. Default is typically 30 seconds.
     -C, --nocolor                    Disable ANSI coloring
     -B, --benchmark                  Print benchmark time after the command is finished.
     -V, --debug                      Print extra output for debugging.
@@ -820,6 +855,14 @@ Usage: morpheus archives download-bucket [bucket] [local-file]
         --curl                       Dry Run to output API request as a curl command.
         --scrub                      Mask secrets in output, such as the Authorization header. For use with --curl and --dry-run.
     -q, --quiet                      No Output, do not print to stdout
+    -r, --remote REMOTE              Remote name. The current remote is used by default.
+        --remote-url URL             Remote url. The current remote url is used by default.
+    -T, --token TOKEN                Access token for authentication with --remote. Saved credentials are used by default.
+    -U, --username USERNAME          Username for authentication.
+    -P, --password PASSWORD          Password for authentication.
+    -I, --insecure                   Allow insecure HTTPS communication.  i.e. bad SSL certificate.
+    -H, --header HEADER              Additional HTTP header to include with requests.
+        --timeout SECONDS            Timeout for api requests. Default is typically 30 seconds.
     -C, --nocolor                    Disable ANSI coloring
     -B, --benchmark                  Print benchmark time after the command is finished.
     -V, --debug                      Print extra output for debugging.
@@ -841,6 +884,14 @@ Usage: morpheus archives download-link [link-key] [local-file]
         --curl                       Dry Run to output API request as a curl command.
         --scrub                      Mask secrets in output, such as the Authorization header. For use with --curl and --dry-run.
     -q, --quiet                      No Output, do not print to stdout
+    -r, --remote REMOTE              Remote name. The current remote is used by default.
+        --remote-url URL             Remote url. The current remote url is used by default.
+    -T, --token TOKEN                Access token for authentication with --remote. Saved credentials are used by default.
+    -U, --username USERNAME          Username for authentication.
+    -P, --password PASSWORD          Password for authentication.
+    -I, --insecure                   Allow insecure HTTPS communication.  i.e. bad SSL certificate.
+    -H, --header HEADER              Additional HTTP header to include with requests.
+        --timeout SECONDS            Timeout for api requests. Default is typically 30 seconds.
     -C, --nocolor                    Disable ANSI coloring
     -B, --benchmark                  Print benchmark time after the command is finished.
     -V, --debug                      Print extra output for debugging.
@@ -856,11 +907,19 @@ Download an archive file link.
 ```
 Usage: morpheus archives file [bucket:/path]
     -L, --all-links                  Display all links instead of only 10.
-    -H, --all-history                Display all history instead of only 10.
+        --all-history                Display all history instead of only 10.
     -j, --json                       JSON Output
     -d, --dry-run                    Dry Run, print the API request instead of executing it
         --curl                       Dry Run to output API request as a curl command.
         --scrub                      Mask secrets in output, such as the Authorization header. For use with --curl and --dry-run.
+    -r, --remote REMOTE              Remote name. The current remote is used by default.
+        --remote-url URL             Remote url. The current remote url is used by default.
+    -T, --token TOKEN                Access token for authentication with --remote. Saved credentials are used by default.
+    -U, --username USERNAME          Username for authentication.
+    -P, --password PASSWORD          Password for authentication.
+    -I, --insecure                   Allow insecure HTTPS communication.  i.e. bad SSL certificate.
+    -H, --header HEADER              Additional HTTP header to include with requests.
+        --timeout SECONDS            Timeout for api requests. Default is typically 30 seconds.
     -C, --nocolor                    Disable ANSI coloring
     -B, --benchmark                  Print benchmark time after the command is finished.
     -V, --debug                      Print extra output for debugging.
@@ -884,6 +943,14 @@ Usage: morpheus archives file-history [bucket:/path]
     -d, --dry-run                    Dry Run, print the API request instead of executing it
         --curl                       Dry Run to output API request as a curl command.
         --scrub                      Mask secrets in output, such as the Authorization header. For use with --curl and --dry-run.
+    -r, --remote REMOTE              Remote name. The current remote is used by default.
+        --remote-url URL             Remote url. The current remote url is used by default.
+    -T, --token TOKEN                Access token for authentication with --remote. Saved credentials are used by default.
+    -U, --username USERNAME          Username for authentication.
+    -P, --password PASSWORD          Password for authentication.
+    -I, --insecure                   Allow insecure HTTPS communication.  i.e. bad SSL certificate.
+    -H, --header HEADER              Additional HTTP header to include with requests.
+        --timeout SECONDS            Timeout for api requests. Default is typically 30 seconds.
     -C, --nocolor                    Disable ANSI coloring
     -B, --benchmark                  Print benchmark time after the command is finished.
     -V, --debug                      Print extra output for debugging.
@@ -905,6 +972,14 @@ Usage: morpheus archives file-links [bucket:/path]
     -d, --dry-run                    Dry Run, print the API request instead of executing it
         --curl                       Dry Run to output API request as a curl command.
         --scrub                      Mask secrets in output, such as the Authorization header. For use with --curl and --dry-run.
+    -r, --remote REMOTE              Remote name. The current remote is used by default.
+        --remote-url URL             Remote url. The current remote url is used by default.
+    -T, --token TOKEN                Access token for authentication with --remote. Saved credentials are used by default.
+    -U, --username USERNAME          Username for authentication.
+    -P, --password PASSWORD          Password for authentication.
+    -I, --insecure                   Allow insecure HTTPS communication.  i.e. bad SSL certificate.
+    -H, --header HEADER              Additional HTTP header to include with requests.
+        --timeout SECONDS            Timeout for api requests. Default is typically 30 seconds.
     -C, --nocolor                    Disable ANSI coloring
     -B, --benchmark                  Print benchmark time after the command is finished.
     -V, --debug                      Print extra output for debugging.
@@ -921,6 +996,14 @@ Usage: morpheus archives get [bucket:/path]
     -d, --dry-run                    Dry Run, print the API request instead of executing it
         --curl                       Dry Run to output API request as a curl command.
         --scrub                      Mask secrets in output, such as the Authorization header. For use with --curl and --dry-run.
+    -r, --remote REMOTE              Remote name. The current remote is used by default.
+        --remote-url URL             Remote url. The current remote url is used by default.
+    -T, --token TOKEN                Access token for authentication with --remote. Saved credentials are used by default.
+    -U, --username USERNAME          Username for authentication.
+    -P, --password PASSWORD          Password for authentication.
+    -I, --insecure                   Allow insecure HTTPS communication.  i.e. bad SSL certificate.
+    -H, --header HEADER              Additional HTTP header to include with requests.
+        --timeout SECONDS            Timeout for api requests. Default is typically 30 seconds.
     -C, --nocolor                    Disable ANSI coloring
     -B, --benchmark                  Print benchmark time after the command is finished.
     -V, --debug                      Print extra output for debugging.
@@ -944,6 +1027,14 @@ Usage: morpheus archives list
     -d, --dry-run                    Dry Run, print the API request instead of executing it
         --curl                       Dry Run to output API request as a curl command.
         --scrub                      Mask secrets in output, such as the Authorization header. For use with --curl and --dry-run.
+    -r, --remote REMOTE              Remote name. The current remote is used by default.
+        --remote-url URL             Remote url. The current remote url is used by default.
+    -T, --token TOKEN                Access token for authentication with --remote. Saved credentials are used by default.
+    -U, --username USERNAME          Username for authentication.
+    -P, --password PASSWORD          Password for authentication.
+    -I, --insecure                   Allow insecure HTTPS communication.  i.e. bad SSL certificate.
+    -H, --header HEADER              Additional HTTP header to include with requests.
+        --timeout SECONDS            Timeout for api requests. Default is typically 30 seconds.
     -C, --nocolor                    Disable ANSI coloring
     -B, --benchmark                  Print benchmark time after the command is finished.
     -V, --debug                      Print extra output for debugging.
@@ -966,6 +1057,14 @@ Usage: morpheus archives list-files [bucket:/path]
     -d, --dry-run                    Dry Run, print the API request instead of executing it
         --curl                       Dry Run to output API request as a curl command.
         --scrub                      Mask secrets in output, such as the Authorization header. For use with --curl and --dry-run.
+    -r, --remote REMOTE              Remote name. The current remote is used by default.
+        --remote-url URL             Remote url. The current remote url is used by default.
+    -T, --token TOKEN                Access token for authentication with --remote. Saved credentials are used by default.
+    -U, --username USERNAME          Username for authentication.
+    -P, --password PASSWORD          Password for authentication.
+    -I, --insecure                   Allow insecure HTTPS communication.  i.e. bad SSL certificate.
+    -H, --header HEADER              Additional HTTP header to include with requests.
+        --timeout SECONDS            Timeout for api requests. Default is typically 30 seconds.
     -C, --nocolor                    Disable ANSI coloring
     -B, --benchmark                  Print benchmark time after the command is finished.
     -V, --debug                      Print extra output for debugging.
@@ -981,7 +1080,7 @@ Include [/path] to show files under a directory.
 Usage: morpheus archives ls [bucket/path]
     -a, --all                        Show all files, including subdirectories under the /path.
     -l, --long                       Lists files in the long format, which contains lots of useful information, e.g. the exact size of the file, the file type, and when it was last modified.
-    -H, --human                      Humanized file sizes. The default is just the number of bytes.
+        --human                      Humanized file sizes. The default is just the number of bytes.
     -1, --oneline                    One file per line. The default delimiter is a single space.
     -m, --max MAX                    Max Results
     -o, --offset OFFSET              Offset Results
@@ -992,6 +1091,14 @@ Usage: morpheus archives ls [bucket/path]
     -d, --dry-run                    Dry Run, print the API request instead of executing it
         --curl                       Dry Run to output API request as a curl command.
         --scrub                      Mask secrets in output, such as the Authorization header. For use with --curl and --dry-run.
+    -r, --remote REMOTE              Remote name. The current remote is used by default.
+        --remote-url URL             Remote url. The current remote url is used by default.
+    -T, --token TOKEN                Access token for authentication with --remote. Saved credentials are used by default.
+    -U, --username USERNAME          Username for authentication.
+    -P, --password PASSWORD          Password for authentication.
+    -I, --insecure                   Allow insecure HTTPS communication.  i.e. bad SSL certificate.
+    -H, --header HEADER              Additional HTTP header to include with requests.
+        --timeout SECONDS            Timeout for api requests. Default is typically 30 seconds.
     -C, --nocolor                    Disable ANSI coloring
     -B, --benchmark                  Print benchmark time after the command is finished.
     -V, --debug                      Print extra output for debugging.
@@ -1009,6 +1116,14 @@ Usage: morpheus archives read [bucket:/path]
     -d, --dry-run                    Dry Run, print the API request instead of executing it
         --curl                       Dry Run to output API request as a curl command.
         --scrub                      Mask secrets in output, such as the Authorization header. For use with --curl and --dry-run.
+    -r, --remote REMOTE              Remote name. The current remote is used by default.
+        --remote-url URL             Remote url. The current remote url is used by default.
+    -T, --token TOKEN                Access token for authentication with --remote. Saved credentials are used by default.
+    -U, --username USERNAME          Username for authentication.
+    -P, --password PASSWORD          Password for authentication.
+    -I, --insecure                   Allow insecure HTTPS communication.  i.e. bad SSL certificate.
+    -H, --header HEADER              Additional HTTP header to include with requests.
+        --timeout SECONDS            Timeout for api requests. Default is typically 30 seconds.
     -C, --nocolor                    Disable ANSI coloring
     -B, --benchmark                  Print benchmark time after the command is finished.
     -V, --debug                      Print extra output for debugging.
@@ -1029,6 +1144,14 @@ Usage: morpheus archives remove [bucket]
     -d, --dry-run                    Dry Run, print the API request instead of executing it
         --curl                       Dry Run to output API request as a curl command.
         --scrub                      Mask secrets in output, such as the Authorization header. For use with --curl and --dry-run.
+    -r, --remote REMOTE              Remote name. The current remote is used by default.
+        --remote-url URL             Remote url. The current remote url is used by default.
+    -T, --token TOKEN                Access token for authentication with --remote. Saved credentials are used by default.
+    -U, --username USERNAME          Username for authentication.
+    -P, --password PASSWORD          Password for authentication.
+    -I, --insecure                   Allow insecure HTTPS communication.  i.e. bad SSL certificate.
+    -H, --header HEADER              Additional HTTP header to include with requests.
+        --timeout SECONDS            Timeout for api requests. Default is typically 30 seconds.
     -C, --nocolor                    Disable ANSI coloring
     -B, --benchmark                  Print benchmark time after the command is finished.
     -V, --debug                      Print extra output for debugging.
@@ -1045,6 +1168,14 @@ Usage: morpheus archives remove-file [bucket:/path]
     -d, --dry-run                    Dry Run, print the API request instead of executing it
         --curl                       Dry Run to output API request as a curl command.
         --scrub                      Mask secrets in output, such as the Authorization header. For use with --curl and --dry-run.
+    -r, --remote REMOTE              Remote name. The current remote is used by default.
+        --remote-url URL             Remote url. The current remote url is used by default.
+    -T, --token TOKEN                Access token for authentication with --remote. Saved credentials are used by default.
+    -U, --username USERNAME          Username for authentication.
+    -P, --password PASSWORD          Password for authentication.
+    -I, --insecure                   Allow insecure HTTPS communication.  i.e. bad SSL certificate.
+    -H, --header HEADER              Additional HTTP header to include with requests.
+        --timeout SECONDS            Timeout for api requests. Default is typically 30 seconds.
     -C, --nocolor                    Disable ANSI coloring
     -B, --benchmark                  Print benchmark time after the command is finished.
     -V, --debug                      Print extra output for debugging.
@@ -1062,6 +1193,14 @@ Usage: morpheus archives remove-file-link [bucket:/path] [token]
         --curl                       Dry Run to output API request as a curl command.
         --scrub                      Mask secrets in output, such as the Authorization header. For use with --curl and --dry-run.
     -q, --quiet                      No Output, do not print to stdout
+    -r, --remote REMOTE              Remote name. The current remote is used by default.
+        --remote-url URL             Remote url. The current remote url is used by default.
+    -T, --token TOKEN                Access token for authentication with --remote. Saved credentials are used by default.
+    -U, --username USERNAME          Username for authentication.
+    -P, --password PASSWORD          Password for authentication.
+    -I, --insecure                   Allow insecure HTTPS communication.  i.e. bad SSL certificate.
+    -H, --header HEADER              Additional HTTP header to include with requests.
+        --timeout SECONDS            Timeout for api requests. Default is typically 30 seconds.
     -C, --nocolor                    Disable ANSI coloring
     -B, --benchmark                  Print benchmark time after the command is finished.
     -V, --debug                      Print extra output for debugging.
@@ -1081,6 +1220,14 @@ Usage: morpheus archives remove-file [bucket:/path]
     -d, --dry-run                    Dry Run, print the API request instead of executing it
         --curl                       Dry Run to output API request as a curl command.
         --scrub                      Mask secrets in output, such as the Authorization header. For use with --curl and --dry-run.
+    -r, --remote REMOTE              Remote name. The current remote is used by default.
+        --remote-url URL             Remote url. The current remote url is used by default.
+    -T, --token TOKEN                Access token for authentication with --remote. Saved credentials are used by default.
+    -U, --username USERNAME          Username for authentication.
+    -P, --password PASSWORD          Password for authentication.
+    -I, --insecure                   Allow insecure HTTPS communication.  i.e. bad SSL certificate.
+    -H, --header HEADER              Additional HTTP header to include with requests.
+        --timeout SECONDS            Timeout for api requests. Default is typically 30 seconds.
     -C, --nocolor                    Disable ANSI coloring
     -B, --benchmark                  Print benchmark time after the command is finished.
     -V, --debug                      Print extra output for debugging.
@@ -1101,7 +1248,7 @@ Usage: morpheus archives update [bucket] [options]
         --accounts LIST              Tenant Accounts (comma separated ids)
         --isPublic [on|off]          Enabling Public URL allows files to be downloaded without any authentication.
     -O, --option OPTION              Option in the format -O field="value"
-    -P, --prompt                     Always prompts. Use passed options as the default value.
+        --prompt                     Always prompts. Use passed options as the default value.
     -N, --no-prompt                  Skip prompts. Use default values for all optional fields.
         --payload FILE               Payload from a local JSON or YAML file, skip all prompting
         --payload-dir DIRECTORY      Payload from a local directory containing 1-N JSON or YAML files, skip all prompting
@@ -1112,6 +1259,14 @@ Usage: morpheus archives update [bucket] [options]
         --curl                       Dry Run to output API request as a curl command.
         --scrub                      Mask secrets in output, such as the Authorization header. For use with --curl and --dry-run.
     -q, --quiet                      No Output, do not print to stdout
+    -r, --remote REMOTE              Remote name. The current remote is used by default.
+        --remote-url URL             Remote url. The current remote url is used by default.
+    -T, --token TOKEN                Access token for authentication with --remote. Saved credentials are used by default.
+    -U, --username USERNAME          Username for authentication.
+    -P, --password PASSWORD          Password for authentication.
+    -I, --insecure                   Allow insecure HTTPS communication.  i.e. bad SSL certificate.
+    -H, --header HEADER              Additional HTTP header to include with requests.
+        --timeout SECONDS            Timeout for api requests. Default is typically 30 seconds.
     -C, --nocolor                    Disable ANSI coloring
     -B, --benchmark                  Print benchmark time after the command is finished.
     -V, --debug                      Print extra output for debugging.
@@ -1131,6 +1286,14 @@ Usage: morpheus archives upload [local-file] [bucket:/path]
     -d, --dry-run                    Dry Run, print the API request instead of executing it
         --curl                       Dry Run to output API request as a curl command.
         --scrub                      Mask secrets in output, such as the Authorization header. For use with --curl and --dry-run.
+    -r, --remote REMOTE              Remote name. The current remote is used by default.
+        --remote-url URL             Remote url. The current remote url is used by default.
+    -T, --token TOKEN                Access token for authentication with --remote. Saved credentials are used by default.
+    -U, --username USERNAME          Username for authentication.
+    -P, --password PASSWORD          Password for authentication.
+    -I, --insecure                   Allow insecure HTTPS communication.  i.e. bad SSL certificate.
+    -H, --header HEADER              Additional HTTP header to include with requests.
+        --timeout SECONDS            Timeout for api requests. Default is typically 30 seconds.
     -C, --nocolor                    Disable ANSI coloring
     -B, --benchmark                  Print benchmark time after the command is finished.
     -V, --debug                      Print extra output for debugging.
@@ -2616,8 +2779,7 @@ Commands:
 #### morpheus datastores get
 
 ```
-Usage: morpheus datastores get [datastore]
-    -c, --cloud CLOUD                Cloud Name or ID
+Usage: morpheus datastores get [cloud] [datastore]
     -j, --json                       JSON Output
         --yaml                       YAML Output
         --csv                        CSV Output
@@ -2643,15 +2805,14 @@ Usage: morpheus datastores get [datastore]
     -h, --help                       Print this help
 
 Get details about a datastore.
+[cloud] is required. This is the name or id of the cloud.
 [datastore] is required. This is the name or id of a datastore.
--c [cloud] is required. This is the name or id of the cloud.
 ```
 
 #### morpheus datastores list
 
 ```
-Usage: morpheus datastores list -c [cloud]
-    -c, --cloud CLOUD                Cloud Name or ID
+Usage: morpheus datastores list [cloud]
     -m, --max MAX                    Max Results
     -o, --offset OFFSET              Offset Results
     -s, --search PHRASE              Search Phrase
@@ -2682,14 +2843,13 @@ Usage: morpheus datastores list -c [cloud]
     -h, --help                       Print this help
 
 List datastores for a cloud.
--c [cloud] is required. This is the name or id of the cloud.
+[cloud] is required. This is the name or id of the cloud.
 ```
 
 #### morpheus datastores update
 
 ```
-Usage: morpheus datastores update [datastore] -c [cloud] [options]
-    -c, --cloud CLOUD                Cloud Name or ID
+Usage: morpheus datastores update [cloud] [datastore] [options]
         --group-access-all [on|off]  Toggle Access for all groups.
         --group-access LIST          Group Access, comma separated list of group IDs.
         --tenants LIST               Tenant Access, comma separated list of account IDs
@@ -2721,7 +2881,8 @@ Usage: morpheus datastores update [datastore] -c [cloud] [options]
     -h, --help                       Print this help
 
 Update a datastore.
-[datastore] is required. This is the id of a datstore.
+[cloud] is required. This is the name or id of the cloud.
+[datastore] is required. This is the name or id of a datastore.
 ```
 
 
@@ -4739,7 +4900,7 @@ The available options vary by --type.
 #### morpheus instances apply-security-groups
 
 ```
-Usage: morpheus instances apply-security-groups [name] [-S] [-c]
+Usage: morpheus instances apply-security-groups [instance] [-S] [-c]
     -S, --secgroups SECGROUPS        Apply the specified comma separated security group ids
     -c, --clear                      Clear all security groups
     -j, --json                       JSON Output
@@ -4764,7 +4925,7 @@ Usage: morpheus instances apply-security-groups [name] [-S] [-c]
 #### morpheus instances backup
 
 ```
-Usage: morpheus instances backup [name]
+Usage: morpheus instances backup [instance]
     -y, --yes                        Auto Confirm
     -j, --json                       JSON Output
     -d, --dry-run                    Dry Run, print the API request instead of executing it
@@ -4787,7 +4948,7 @@ Usage: morpheus instances backup [name]
 #### morpheus instances backups
 
 ```
-Usage: morpheus instances backups [name]
+Usage: morpheus instances backups [instance]
     -j, --json                       JSON Output
     -d, --dry-run                    Dry Run, print the API request instead of executing it
         --curl                       Dry Run to output API request as a curl command.
@@ -4809,7 +4970,7 @@ Usage: morpheus instances backups [name]
 #### morpheus instances clone
 
 ```
-Usage: morpheus instances clone [name] -g GROUP
+Usage: morpheus instances clone [instance] -g GROUP
         --name VALUE                 Name - Enter a name for the new instance
     -g, --group GROUP                Group Name or ID for the new instance
     -c, --cloud CLOUD                Cloud Name or ID for the new instance
@@ -4835,7 +4996,7 @@ Usage: morpheus instances clone [name] -g GROUP
 #### morpheus instances console
 
 ```
-Usage: morpheus instances console [name]
+Usage: morpheus instances console [instance]
     -n, --node NODE_ID               Scope console to specific Container or VM
     -r, --remote REMOTE              Remote name. The current remote is used by default.
         --remote-url URL             Remote url. The current remote url is used by default.
@@ -4854,7 +5015,7 @@ Usage: morpheus instances console [name]
 #### morpheus instances containers
 
 ```
-Usage: morpheus instances containers [name]
+Usage: morpheus instances containers [instance]
     -j, --json                       JSON Output
         --yaml                       YAML Output
         --csv                        CSV Output
@@ -4912,7 +5073,7 @@ Get the number of instances.
 #### morpheus instances delenv
 
 ```
-Usage: morpheus instances delenv [name] VAR
+Usage: morpheus instances delenv [instance] VAR
     -j, --json                       JSON Output
     -d, --dry-run                    Dry Run, print the API request instead of executing it
         --curl                       Dry Run to output API request as a curl command.
@@ -4934,7 +5095,7 @@ Usage: morpheus instances delenv [name] VAR
 #### morpheus instances eject
 
 ```
-Usage: morpheus instances eject [name]
+Usage: morpheus instances eject [instance]
     -y, --yes                        Auto Confirm
     -q, --quiet                      No Output, do not print to stdout
     -j, --json                       JSON Output
@@ -4955,13 +5116,13 @@ Usage: morpheus instances eject [name]
     -h, --help                       Print this help
 
 Eject an instance.
-[name] is required. This is the name or id of an instance. Supports 1-N [name] arguments.
+[instance] is required. This is the name or id of an instance. Supports 1-N [instance] arguments.
 ```
 
 #### morpheus instances envs
 
 ```
-Usage: morpheus instances envs [name]
+Usage: morpheus instances envs [instance]
     -j, --json                       JSON Output
     -d, --dry-run                    Dry Run, print the API request instead of executing it
         --curl                       Dry Run to output API request as a curl command.
@@ -5020,7 +5181,7 @@ Execute an arbitrary script or command on an instance.
 #### morpheus instances firewall-disable
 
 ```
-Usage: morpheus instances firewall-disable [name]
+Usage: morpheus instances firewall-disable [instance]
     -j, --json                       JSON Output
     -d, --dry-run                    Dry Run, print the API request instead of executing it
         --curl                       Dry Run to output API request as a curl command.
@@ -5043,7 +5204,7 @@ Usage: morpheus instances firewall-disable [name]
 #### morpheus instances firewall-enable
 
 ```
-Usage: morpheus instances firewall-enable [name]
+Usage: morpheus instances firewall-enable [instance]
     -j, --json                       JSON Output
     -d, --dry-run                    Dry Run, print the API request instead of executing it
         --curl                       Dry Run to output API request as a curl command.
@@ -5216,7 +5377,7 @@ Display history details for a specific process event.
 #### morpheus instances import-snapshot
 
 ```
-Usage: morpheus instances import-snapshot [name]
+Usage: morpheus instances import-snapshot [instance]
         --storage-provider ID        Optional storage provider
     -y, --yes                        Auto Confirm
     -j, --json                       JSON Output
@@ -5282,7 +5443,7 @@ List instances.
 #### morpheus instances logs
 
 ```
-Usage: morpheus instances logs [name]
+Usage: morpheus instances logs [instance]
     -n, --node NODE_ID               Scope logs to specific Container or VM
     -m, --max MAX                    Max Results
     -o, --offset OFFSET              Offset Results
@@ -5316,7 +5477,7 @@ Usage: morpheus instances logs [name]
 #### morpheus instances remove
 
 ```
-Usage: morpheus instances remove [name]
+Usage: morpheus instances remove [instance]
         --keep-backups               Preserve copy of backups
         --preserve-volumes [on|off]  Preserve Volumes. Default is off. Applies to certain types only.
         --releaseEIPs [on|off]       Release EIPs. Default is on. Applies to Amazon only.
@@ -5344,7 +5505,7 @@ Usage: morpheus instances remove [name]
 #### morpheus instances resize
 
 ```
-Usage: morpheus instances resize [name]
+Usage: morpheus instances resize [instance]
     -O, --option OPTION              Option in the format -O field="value"
         --prompt                     Always prompts. Use passed options as the default value.
     -N, --no-prompt                  Skip prompts. Use default values for all optional fields.
@@ -5369,7 +5530,7 @@ Usage: morpheus instances resize [name]
 #### morpheus instances restart
 
 ```
-Usage: morpheus instances restart [name]
+Usage: morpheus instances restart [instance]
         --mute-monitoring [on|off]   Mute monitoring. Default is on.
     -y, --yes                        Auto Confirm
     -q, --quiet                      No Output, do not print to stdout
@@ -5391,13 +5552,13 @@ Usage: morpheus instances restart [name]
     -h, --help                       Print this help
 
 Restart an instance.
-[name] is required. This is the name or id of an instance. Supports 1-N [name] arguments.
+[instance] is required. This is the name or id of an instance. Supports 1-N [instance] arguments.
 ```
 
 #### morpheus instances restart-service
 
 ```
-Usage: morpheus instances restart-service [name]
+Usage: morpheus instances restart-service [instance]
         --mute-monitoring [on|off]   Mute monitoring. Default is on.
     -y, --yes                        Auto Confirm
     -q, --quiet                      No Output, do not print to stdout
@@ -5419,13 +5580,13 @@ Usage: morpheus instances restart-service [name]
     -h, --help                       Print this help
 
 Restart service on an instance.
-[name] is required. This is the name or id of an instance. Supports 1-N [name] arguments.
+[instance] is required. This is the name or id of an instance. Supports 1-N [instance] arguments.
 ```
 
 #### morpheus instances run-workflow
 
 ```
-Usage: morpheus instances run-workflow [name] [workflow] [options]
+Usage: morpheus instances run-workflow [instance] [workflow] [options]
     -O, --option OPTION              Option in the format -O field="value"
         --prompt                     Always prompts. Use passed options as the default value.
     -N, --no-prompt                  Skip prompts. Use default values for all optional fields.
@@ -5450,7 +5611,7 @@ Usage: morpheus instances run-workflow [name] [workflow] [options]
 #### morpheus instances scaling
 
 ```
-Usage: morpheus instances scaling [name]
+Usage: morpheus instances scaling [instance]
     -j, --json                       JSON Output
         --yaml                       YAML Output
         --csv                        CSV Output
@@ -5481,7 +5642,7 @@ Show scaling threshold information for an instance.
 #### morpheus instances scaling-update
 
 ```
-Usage: morpheus instances scaling-update [name]
+Usage: morpheus instances scaling-update [instance]
         --autoUp on|off              Auto Upscale - Enable auto upscaling
         --autoDown on|off            Auto Downscale - Enable auto downscaling
         --zoneId ID                  Cloud (optional) - Choose a cloud to scale into.
@@ -5522,7 +5683,7 @@ Update scaling threshold information for an instance.
 #### morpheus instances security-groups
 
 ```
-Usage: morpheus instances security-groups [name]
+Usage: morpheus instances security-groups [instance]
     -j, --json                       JSON Output
     -d, --dry-run                    Dry Run, print the API request instead of executing it
         --curl                       Dry Run to output API request as a curl command.
@@ -5544,7 +5705,7 @@ Usage: morpheus instances security-groups [name]
 #### morpheus instances setenv
 
 ```
-Usage: morpheus instances setenv [name] VAR VALUE [-e]
+Usage: morpheus instances setenv [instance] VAR VALUE [-e]
     -e                               Exportable
     -M                               Masked
     -j, --json                       JSON Output
@@ -5569,7 +5730,7 @@ Usage: morpheus instances setenv [name] VAR VALUE [-e]
 #### morpheus instances start
 
 ```
-Usage: morpheus instances start [name]
+Usage: morpheus instances start [instance]
     -y, --yes                        Auto Confirm
     -q, --quiet                      No Output, do not print to stdout
     -j, --json                       JSON Output
@@ -5590,13 +5751,13 @@ Usage: morpheus instances start [name]
     -h, --help                       Print this help
 
 Start an instance.
-[name] is required. This is the name or id of an instance. Supports 1-N [name] arguments.
+[instance] is required. This is the name or id of an instance. Supports 1-N [instance] arguments.
 ```
 
 #### morpheus instances start-service
 
 ```
-Usage: morpheus instances start-service [name]
+Usage: morpheus instances start-service [instance]
     -y, --yes                        Auto Confirm
     -q, --quiet                      No Output, do not print to stdout
     -j, --json                       JSON Output
@@ -5617,13 +5778,13 @@ Usage: morpheus instances start-service [name]
     -h, --help                       Print this help
 
 Start service on an instance.
-[name] is required. This is the name or id of an instance. Supports 1-N [name] arguments.
+[instance] is required. This is the name or id of an instance. Supports 1-N [instance] arguments.
 ```
 
 #### morpheus instances stats
 
 ```
-Usage: morpheus instances stats [name]
+Usage: morpheus instances stats [instance]
     -j, --json                       JSON Output
         --yaml                       YAML Output
         --csv                        CSV Output
@@ -5652,7 +5813,7 @@ Usage: morpheus instances stats [name]
 #### morpheus instances status-check
 
 ```
-Usage: morpheus instances status-check [name]
+Usage: morpheus instances status-check [instance]
     -q, --quiet                      No Output, do not print to stdout
     -j, --json                       JSON Output
     -r, --remote REMOTE              Remote name. The current remote is used by default.
@@ -5672,7 +5833,7 @@ Usage: morpheus instances status-check [name]
 #### morpheus instances stop
 
 ```
-Usage: morpheus instances stop [name]
+Usage: morpheus instances stop [instance]
         --mute-monitoring [on|off]   Mute monitoring. Default is off.
     -y, --yes                        Auto Confirm
     -q, --quiet                      No Output, do not print to stdout
@@ -5700,7 +5861,7 @@ Stop an instance.
 #### morpheus instances stop-service
 
 ```
-Usage: morpheus instances stop-service [name]
+Usage: morpheus instances stop-service [instance]
         --mute-monitoring [on|off]   Mute monitoring. Default is off.
     -y, --yes                        Auto Confirm
     -q, --quiet                      No Output, do not print to stdout
@@ -5722,13 +5883,13 @@ Usage: morpheus instances stop-service [name]
     -h, --help                       Print this help
 
 Stop service on an instance.
-[name] is required. This is the name or id of an instance. Supports 1-N [name] arguments.
+[instance] is required. This is the name or id of an instance. Supports 1-N [instance] arguments.
 ```
 
 #### morpheus instances suspend
 
 ```
-Usage: morpheus instances suspend [name]
+Usage: morpheus instances suspend [instance]
         --muteMonitoring [on|off]    Mute monitoring. Default is off.
     -y, --yes                        Auto Confirm
     -q, --quiet                      No Output, do not print to stdout
@@ -5750,13 +5911,13 @@ Usage: morpheus instances suspend [name]
     -h, --help                       Print this help
 
 Suspend an instance.
-[name] is required. This is the name or id of an instance. Supports 1-N [name] arguments.
+[instance] is required. This is the name or id of an instance. Supports 1-N [instance] arguments.
 ```
 
 #### morpheus instances update
 
 ```
-Usage: morpheus instances update [name]
+Usage: morpheus instances update [instance]
         --name VALUE                 Name
         --description VALUE          Description
         --environment VALUE          Environment
@@ -5793,7 +5954,7 @@ Usage: morpheus instances update [name]
 #### morpheus instances update-notes
 
 ```
-Usage: morpheus instances update-notes [name]
+Usage: morpheus instances update-notes [instance]
         --notes VALUE                Notes content (Markdown)
         --file FILE                  File containing the notes content. This can be used instead of --notes
         --clear                      Clear current notes
@@ -10240,6 +10401,8 @@ Usage: morpheus network-services list
     -s, --search PHRASE              Search Phrase
     -S, --sort ORDER                 Sort Order
     -D, --desc                       Reverse Sort Order
+    -Q, --query PARAMS               Query parameters. PARAMS format is 'phrase=foobar&category=web'
+    -j, --json                       JSON Output
         --yaml                       YAML Output
         --csv                        CSV Output
         --csv-delim CHAR             Delimiter for CSV Output values. Default: ','
@@ -10247,7 +10410,6 @@ Usage: morpheus network-services list
         --csv-quotes                 Wrap CSV values with ". Default: false
         --csv-no-header              Exclude header for CSV Output.
     -F, --fields x,y,z               Filter Output to a limited set of fields. Default is all fields.
-    -j, --json                       JSON Output
     -d, --dry-run                    Dry Run, print the API request instead of executing it
         --curl                       Dry Run to output API request as a curl command.
         --scrub                      Mask secrets in output, such as the Authorization header. For use with --curl and --dry-run.
@@ -10264,7 +10426,7 @@ Usage: morpheus network-services list
     -V, --debug                      Print extra output for debugging.
     -h, --help                       Print this help
 
-List network services.
+List network services (Integrations).
 ```
 
 
@@ -10277,6 +10439,7 @@ Commands:
 	get
 	list
 	remove
+	types
 	update
 ```
 
@@ -10434,6 +10597,44 @@ Delete a network.
 [network] is required. This is the name or id of a network.
 ```
 
+#### morpheus networks types
+
+```
+Usage: morpheus networks types
+    -c, --cloud CLOUD                Cloud Name or ID
+    -m, --max MAX                    Max Results
+    -o, --offset OFFSET              Offset Results
+    -s, --search PHRASE              Search Phrase
+    -S, --sort ORDER                 Sort Order
+    -D, --desc                       Reverse Sort Order
+    -Q, --query PARAMS               Query parameters. PARAMS format is 'phrase=foobar&category=web'
+    -j, --json                       JSON Output
+        --yaml                       YAML Output
+        --csv                        CSV Output
+        --csv-delim CHAR             Delimiter for CSV Output values. Default: ','
+        --csv-newline [CHAR]         Delimiter for CSV Output rows. Default: '\n'
+        --csv-quotes                 Wrap CSV values with ". Default: false
+        --csv-no-header              Exclude header for CSV Output.
+    -F, --fields x,y,z               Filter Output to a limited set of fields. Default is all fields.
+    -d, --dry-run                    Dry Run, print the API request instead of executing it
+        --curl                       Dry Run to output API request as a curl command.
+        --scrub                      Mask secrets in output, such as the Authorization header. For use with --curl and --dry-run.
+    -r, --remote REMOTE              Remote name. The current remote is used by default.
+        --remote-url URL             Remote url. The current remote url is used by default.
+    -T, --token TOKEN                Access token for authentication with --remote. Saved credentials are used by default.
+    -U, --username USERNAME          Username for authentication.
+    -P, --password PASSWORD          Password for authentication.
+    -I, --insecure                   Allow insecure HTTPS communication.  i.e. bad SSL certificate.
+    -H, --header HEADER              Additional HTTP header to include with requests.
+        --timeout SECONDS            Timeout for api requests. Default is typically 30 seconds.
+    -C, --nocolor                    Disable ANSI coloring
+    -B, --benchmark                  Print benchmark time after the command is finished.
+    -V, --debug                      Print extra output for debugging.
+    -h, --help                       Print this help
+
+List host types.
+```
+
 #### morpheus networks update
 
 ```
@@ -10544,6 +10745,8 @@ Usage: morpheus policies add -t TYPE
     -g, --group GROUP                Group Name or ID, for scoping the policy to a group.
     -c, --cloud CLOUD                Cloud Name or ID, for scoping the policy to a cloud
     -u, --user USER                  Username or ID, for scoping the policy to a user
+        --role ROLE                  Role Authority or ID, for scoping the policy to a user
+        --each-user [on|off]         Apply individually to each user in role, for use with policy scoped by role.
     -t, --type ID                    Policy Type Name or ID
         --name VALUE                 Name for this policy
         --description VALUE          Description of policy
@@ -10647,6 +10850,7 @@ Usage: morpheus policies list
     -g, --group GROUP                Group Name or ID
     -c, --cloud CLOUD                Cloud Name or ID
     -u, --user USER                  Username or ID
+        --role ROLE                  Role Authority or ID
     -G, --global                     Global policies only
     -m, --max MAX                    Max Results
     -o, --offset OFFSET              Offset Results
@@ -10747,6 +10951,7 @@ Usage: morpheus policies update [policy] [options]
         --name VALUE                 Name for this policy
         --description VALUE          Description of policy
         --accounts LIST              Tenant accounts, comma separated list of account IDs
+        --each-user [on|off]         Apply individually to each user in role, for use with policy scoped by role.
         --enabled [on|off]           Can be used to disable a policy
         --config JSON                Policy Config JSON
         --config-yaml YAML           Policy Config YAML
@@ -11325,6 +11530,7 @@ It makes an api request to the configured appliance url to check the status and 
 ```
 Usage: morpheus remote current
     -n, --name                       Print only the name.
+    -u, --url                        Print only the url.
     -C, --nocolor                    Disable ANSI coloring
     -B, --benchmark                  Print benchmark time after the command is finished.
     -V, --debug                      Print extra output for debugging.
@@ -11337,6 +11543,7 @@ Print details about the current remote appliance.The default behavior is the sam
 
 ```
 Usage: morpheus remote get [name]
+    -u, --url                        Print only the url.
     -j, --json                       JSON Output
         --csv                        CSV Output
         --csv-delim CHAR             Delimiter for CSV Output values. Default: ','
@@ -11453,6 +11660,533 @@ Usage: morpheus remote use [name]
 Make an appliance the current remote appliance.
 This allows you to switch between your different appliances.
 You may override this with the --remote option in your commands.
+```
+
+
+### morpheus reports
+
+```
+Usage: morpheus reports [command] [options]
+Commands:
+	export
+	get
+	list
+	remove
+	run
+	types
+	view
+```
+
+#### morpheus reports export
+
+```
+Usage: morpheus reports export [id] [file]
+    -d, --dry-run                    Dry Run, print the API request instead of executing it
+        --curl                       Dry Run to output API request as a curl command.
+        --scrub                      Mask secrets in output, such as the Authorization header. For use with --curl and --dry-run.
+    -r, --remote REMOTE              Remote name. The current remote is used by default.
+        --remote-url URL             Remote url. The current remote url is used by default.
+    -T, --token TOKEN                Access token for authentication with --remote. Saved credentials are used by default.
+    -U, --username USERNAME          Username for authentication.
+    -P, --password PASSWORD          Password for authentication.
+    -I, --insecure                   Allow insecure HTTPS communication.  i.e. bad SSL certificate.
+    -H, --header HEADER              Additional HTTP header to include with requests.
+        --timeout SECONDS            Timeout for api requests. Default is typically 30 seconds.
+    -C, --nocolor                    Disable ANSI coloring
+    -B, --benchmark                  Print benchmark time after the command is finished.
+    -V, --debug                      Print extra output for debugging.
+    -h, --help                       Print this help
+        --format VALUE               Report Format for exported file, json or csv. Default is json.
+    -f, --force                      Overwrite existing [local-file] if it exists.
+    -p, --mkdir                      Create missing directories for [local-file] if they do not exist.
+
+Export a report result as json or csv.
+[id] is required. This is id of the report result.
+[file] is required. This is local destination for the downloaded file.
+```
+
+#### morpheus reports get
+
+```
+Usage: morpheus reports get [id]
+        --refresh [SECONDS]          Refresh until status is ready,failed. Default interval is 5 seconds.
+        --refresh-until STATUS       Refresh until a specified status is reached.
+        --rows                       Print Report Data rows too.
+    -j, --json                       JSON Output
+        --yaml                       YAML Output
+        --csv                        CSV Output
+        --csv-delim CHAR             Delimiter for CSV Output values. Default: ','
+        --csv-newline [CHAR]         Delimiter for CSV Output rows. Default: '\n'
+        --csv-quotes                 Wrap CSV values with ". Default: false
+        --csv-no-header              Exclude header for CSV Output.
+    -F, --fields x,y,z               Filter Output to a limited set of fields. Default is all fields.
+        --out FILE                   Write standard output to a file instead of the terminal.
+    -d, --dry-run                    Dry Run, print the API request instead of executing it
+        --curl                       Dry Run to output API request as a curl command.
+        --scrub                      Mask secrets in output, such as the Authorization header. For use with --curl and --dry-run.
+    -r, --remote REMOTE              Remote name. The current remote is used by default.
+        --remote-url URL             Remote url. The current remote url is used by default.
+    -T, --token TOKEN                Access token for authentication with --remote. Saved credentials are used by default.
+    -U, --username USERNAME          Username for authentication.
+    -P, --password PASSWORD          Password for authentication.
+    -I, --insecure                   Allow insecure HTTPS communication.  i.e. bad SSL certificate.
+    -H, --header HEADER              Additional HTTP header to include with requests.
+        --timeout SECONDS            Timeout for api requests. Default is typically 30 seconds.
+    -C, --nocolor                    Disable ANSI coloring
+    -B, --benchmark                  Print benchmark time after the command is finished.
+    -V, --debug                      Print extra output for debugging.
+    -h, --help                       Print this help
+
+Get details about a report result.
+```
+
+#### morpheus reports list
+
+```
+Usage: morpheus reports list
+        --type CODE                  Report Type code(s)
+    -m, --max MAX                    Max Results
+    -o, --offset OFFSET              Offset Results
+    -s, --search PHRASE              Search Phrase
+    -S, --sort ORDER                 Sort Order
+    -D, --desc                       Reverse Sort Order
+    -j, --json                       JSON Output
+    -d, --dry-run                    Dry Run, print the API request instead of executing it
+        --curl                       Dry Run to output API request as a curl command.
+        --scrub                      Mask secrets in output, such as the Authorization header. For use with --curl and --dry-run.
+    -r, --remote REMOTE              Remote name. The current remote is used by default.
+        --remote-url URL             Remote url. The current remote url is used by default.
+    -T, --token TOKEN                Access token for authentication with --remote. Saved credentials are used by default.
+    -U, --username USERNAME          Username for authentication.
+    -P, --password PASSWORD          Password for authentication.
+    -I, --insecure                   Allow insecure HTTPS communication.  i.e. bad SSL certificate.
+    -H, --header HEADER              Additional HTTP header to include with requests.
+        --timeout SECONDS            Timeout for api requests. Default is typically 30 seconds.
+    -C, --nocolor                    Disable ANSI coloring
+    -B, --benchmark                  Print benchmark time after the command is finished.
+    -V, --debug                      Print extra output for debugging.
+    -h, --help                       Print this help
+
+List report history.
+```
+
+#### morpheus reports remove
+
+```
+Usage: morpheus reports remove [id]
+    -y, --yes                        Auto Confirm
+    -j, --json                       JSON Output
+    -d, --dry-run                    Dry Run, print the API request instead of executing it
+        --curl                       Dry Run to output API request as a curl command.
+        --scrub                      Mask secrets in output, such as the Authorization header. For use with --curl and --dry-run.
+    -r, --remote REMOTE              Remote name. The current remote is used by default.
+        --remote-url URL             Remote url. The current remote url is used by default.
+    -T, --token TOKEN                Access token for authentication with --remote. Saved credentials are used by default.
+    -U, --username USERNAME          Username for authentication.
+    -P, --password PASSWORD          Password for authentication.
+    -I, --insecure                   Allow insecure HTTPS communication.  i.e. bad SSL certificate.
+    -H, --header HEADER              Additional HTTP header to include with requests.
+        --timeout SECONDS            Timeout for api requests. Default is typically 30 seconds.
+    -C, --nocolor                    Disable ANSI coloring
+    -B, --benchmark                  Print benchmark time after the command is finished.
+    -V, --debug                      Print extra output for debugging.
+    -h, --help                       Print this help
+
+Delete a report result.
+[id] is required. This is id of the report result.
+```
+
+#### morpheus reports run
+
+```
+Usage: morpheus reports run [type] [options]
+        --type CODE                  Report Type code
+        --no-refresh                 Do not refresh until finished
+        --rows                       Print Report Data rows too.
+    -O, --option OPTION              Option in the format -O field="value"
+        --prompt                     Always prompts. Use passed options as the default value.
+    -N, --no-prompt                  Skip prompts. Use default values for all optional fields.
+        --payload FILE               Payload from a local JSON or YAML file, skip all prompting
+        --payload-dir DIRECTORY      Payload from a local directory containing 1-N JSON or YAML files, skip all prompting
+        --payload-json JSON          Payload JSON, skip all prompting
+        --payload-yaml YAML          Payload YAML, skip all prompting
+    -j, --json                       JSON Output
+    -d, --dry-run                    Dry Run, print the API request instead of executing it
+        --curl                       Dry Run to output API request as a curl command.
+        --scrub                      Mask secrets in output, such as the Authorization header. For use with --curl and --dry-run.
+    -r, --remote REMOTE              Remote name. The current remote is used by default.
+        --remote-url URL             Remote url. The current remote url is used by default.
+    -T, --token TOKEN                Access token for authentication with --remote. Saved credentials are used by default.
+    -U, --username USERNAME          Username for authentication.
+    -P, --password PASSWORD          Password for authentication.
+    -I, --insecure                   Allow insecure HTTPS communication.  i.e. bad SSL certificate.
+    -H, --header HEADER              Additional HTTP header to include with requests.
+        --timeout SECONDS            Timeout for api requests. Default is typically 30 seconds.
+    -C, --nocolor                    Disable ANSI coloring
+    -B, --benchmark                  Print benchmark time after the command is finished.
+    -V, --debug                      Print extra output for debugging.
+    -h, --help                       Print this help
+
+Run a report to generate a new result.
+[type] is required. This is code of the report type.
+```
+
+#### morpheus reports types
+
+```
+Usage: morpheus reports types
+    -m, --max MAX                    Max Results
+    -o, --offset OFFSET              Offset Results
+    -s, --search PHRASE              Search Phrase
+    -S, --sort ORDER                 Sort Order
+    -D, --desc                       Reverse Sort Order
+    -j, --json                       JSON Output
+    -d, --dry-run                    Dry Run, print the API request instead of executing it
+        --curl                       Dry Run to output API request as a curl command.
+        --scrub                      Mask secrets in output, such as the Authorization header. For use with --curl and --dry-run.
+    -r, --remote REMOTE              Remote name. The current remote is used by default.
+        --remote-url URL             Remote url. The current remote url is used by default.
+    -T, --token TOKEN                Access token for authentication with --remote. Saved credentials are used by default.
+    -U, --username USERNAME          Username for authentication.
+    -P, --password PASSWORD          Password for authentication.
+    -I, --insecure                   Allow insecure HTTPS communication.  i.e. bad SSL certificate.
+    -H, --header HEADER              Additional HTTP header to include with requests.
+        --timeout SECONDS            Timeout for api requests. Default is typically 30 seconds.
+    -C, --nocolor                    Disable ANSI coloring
+    -B, --benchmark                  Print benchmark time after the command is finished.
+    -V, --debug                      Print extra output for debugging.
+    -h, --help                       Print this help
+
+List report types.
+```
+
+#### morpheus reports view
+
+```
+Usage: morpheus reports view [id]
+    -y, --yes                        Auto Confirm
+    -j, --json                       JSON Output
+    -d, --dry-run                    Dry Run, print the API request instead of executing it
+        --curl                       Dry Run to output API request as a curl command.
+        --scrub                      Mask secrets in output, such as the Authorization header. For use with --curl and --dry-run.
+    -r, --remote REMOTE              Remote name. The current remote is used by default.
+        --remote-url URL             Remote url. The current remote url is used by default.
+    -T, --token TOKEN                Access token for authentication with --remote. Saved credentials are used by default.
+    -U, --username USERNAME          Username for authentication.
+    -P, --password PASSWORD          Password for authentication.
+    -I, --insecure                   Allow insecure HTTPS communication.  i.e. bad SSL certificate.
+    -H, --header HEADER              Additional HTTP header to include with requests.
+        --timeout SECONDS            Timeout for api requests. Default is typically 30 seconds.
+    -C, --nocolor                    Disable ANSI coloring
+    -B, --benchmark                  Print benchmark time after the command is finished.
+    -V, --debug                      Print extra output for debugging.
+    -h, --help                       Print this help
+
+View a report result in a web browser
+[id] is required. This is id of the report result.
+```
+
+
+### morpheus resource-folders
+
+```
+Usage: morpheus resource-folders [command] [options]
+Commands:
+	get
+	list
+	update
+```
+
+#### morpheus resource-folders get
+
+```
+Usage: morpheus resource-folders get [cloud] [folder]
+    -j, --json                       JSON Output
+        --yaml                       YAML Output
+        --csv                        CSV Output
+        --csv-delim CHAR             Delimiter for CSV Output values. Default: ','
+        --csv-newline [CHAR]         Delimiter for CSV Output rows. Default: '\n'
+        --csv-quotes                 Wrap CSV values with ". Default: false
+        --csv-no-header              Exclude header for CSV Output.
+    -F, --fields x,y,z               Filter Output to a limited set of fields. Default is all fields.
+    -d, --dry-run                    Dry Run, print the API request instead of executing it
+        --curl                       Dry Run to output API request as a curl command.
+        --scrub                      Mask secrets in output, such as the Authorization header. For use with --curl and --dry-run.
+    -r, --remote REMOTE              Remote name. The current remote is used by default.
+        --remote-url URL             Remote url. The current remote url is used by default.
+    -T, --token TOKEN                Access token for authentication with --remote. Saved credentials are used by default.
+    -U, --username USERNAME          Username for authentication.
+    -P, --password PASSWORD          Password for authentication.
+    -I, --insecure                   Allow insecure HTTPS communication.  i.e. bad SSL certificate.
+    -H, --header HEADER              Additional HTTP header to include with requests.
+        --timeout SECONDS            Timeout for api requests. Default is typically 30 seconds.
+    -C, --nocolor                    Disable ANSI coloring
+    -B, --benchmark                  Print benchmark time after the command is finished.
+    -V, --debug                      Print extra output for debugging.
+    -h, --help                       Print this help
+
+Get details about a resource folder.
+[cloud] is required. This is the name or id of the cloud.
+```
+
+#### morpheus resource-folders list
+
+```
+Usage: morpheus resource-folders list [cloud]
+    -m, --max MAX                    Max Results
+    -o, --offset OFFSET              Offset Results
+    -s, --search PHRASE              Search Phrase
+    -S, --sort ORDER                 Sort Order
+    -D, --desc                       Reverse Sort Order
+    -j, --json                       JSON Output
+        --yaml                       YAML Output
+        --csv                        CSV Output
+        --csv-delim CHAR             Delimiter for CSV Output values. Default: ','
+        --csv-newline [CHAR]         Delimiter for CSV Output rows. Default: '\n'
+        --csv-quotes                 Wrap CSV values with ". Default: false
+        --csv-no-header              Exclude header for CSV Output.
+    -F, --fields x,y,z               Filter Output to a limited set of fields. Default is all fields.
+    -d, --dry-run                    Dry Run, print the API request instead of executing it
+        --curl                       Dry Run to output API request as a curl command.
+        --scrub                      Mask secrets in output, such as the Authorization header. For use with --curl and --dry-run.
+    -r, --remote REMOTE              Remote name. The current remote is used by default.
+        --remote-url URL             Remote url. The current remote url is used by default.
+    -T, --token TOKEN                Access token for authentication with --remote. Saved credentials are used by default.
+    -U, --username USERNAME          Username for authentication.
+    -P, --password PASSWORD          Password for authentication.
+    -I, --insecure                   Allow insecure HTTPS communication.  i.e. bad SSL certificate.
+    -H, --header HEADER              Additional HTTP header to include with requests.
+        --timeout SECONDS            Timeout for api requests. Default is typically 30 seconds.
+    -C, --nocolor                    Disable ANSI coloring
+    -B, --benchmark                  Print benchmark time after the command is finished.
+    -V, --debug                      Print extra output for debugging.
+    -h, --help                       Print this help
+
+List resource folders for a cloud.
+[cloud] is required. This is the name or id of the cloud.
+```
+
+#### morpheus resource-folders update
+
+```
+Usage: morpheus resource-folders update [cloud] [folder] [options]
+        --group-access-all [on|off]  Toggle Access for all groups.
+        --group-access LIST          Group Access, comma separated list of group IDs.
+        --tenants LIST               Tenant Access, comma separated list of account IDs
+        --visibility [private|public]
+                                     Visibility
+        --active [on|off]            Can be used to disable a resource folder
+    -O, --option OPTION              Option in the format -O field="value"
+        --prompt                     Always prompts. Use passed options as the default value.
+    -N, --no-prompt                  Skip prompts. Use default values for all optional fields.
+        --payload FILE               Payload from a local JSON or YAML file, skip all prompting
+        --payload-dir DIRECTORY      Payload from a local directory containing 1-N JSON or YAML files, skip all prompting
+        --payload-json JSON          Payload JSON, skip all prompting
+        --payload-yaml YAML          Payload YAML, skip all prompting
+    -j, --json                       JSON Output
+    -d, --dry-run                    Dry Run, print the API request instead of executing it
+        --curl                       Dry Run to output API request as a curl command.
+        --scrub                      Mask secrets in output, such as the Authorization header. For use with --curl and --dry-run.
+    -r, --remote REMOTE              Remote name. The current remote is used by default.
+        --remote-url URL             Remote url. The current remote url is used by default.
+    -T, --token TOKEN                Access token for authentication with --remote. Saved credentials are used by default.
+    -U, --username USERNAME          Username for authentication.
+    -P, --password PASSWORD          Password for authentication.
+    -I, --insecure                   Allow insecure HTTPS communication.  i.e. bad SSL certificate.
+    -H, --header HEADER              Additional HTTP header to include with requests.
+        --timeout SECONDS            Timeout for api requests. Default is typically 30 seconds.
+    -C, --nocolor                    Disable ANSI coloring
+    -B, --benchmark                  Print benchmark time after the command is finished.
+    -V, --debug                      Print extra output for debugging.
+    -h, --help                       Print this help
+
+Update a resource folder.
+[cloud] is required. This is the name or id of the cloud.
+```
+
+
+### morpheus resource-pools
+
+```
+Usage: morpheus resource-pools [command] [options]
+Commands:
+	add
+	get
+	list
+	remove
+	update
+```
+
+#### morpheus resource-pools add
+
+```
+Usage: morpheus resource-pools add [cloud] [pool] [options]
+        --name VALUE                 Name
+        --group-access-all [on|off]  Toggle Access for all groups.
+        --group-access LIST          Group Access, comma separated list of group IDs.
+        --tenants LIST               Tenant Access, comma separated list of account IDs
+        --visibility [private|public]
+                                     Visibility
+        --active [on|off]            Can be used to disable a resource pool
+    -O, --option OPTION              Option in the format -O field="value"
+        --prompt                     Always prompts. Use passed options as the default value.
+    -N, --no-prompt                  Skip prompts. Use default values for all optional fields.
+        --payload FILE               Payload from a local JSON or YAML file, skip all prompting
+        --payload-dir DIRECTORY      Payload from a local directory containing 1-N JSON or YAML files, skip all prompting
+        --payload-json JSON          Payload JSON, skip all prompting
+        --payload-yaml YAML          Payload YAML, skip all prompting
+    -j, --json                       JSON Output
+    -d, --dry-run                    Dry Run, print the API request instead of executing it
+        --curl                       Dry Run to output API request as a curl command.
+        --scrub                      Mask secrets in output, such as the Authorization header. For use with --curl and --dry-run.
+    -r, --remote REMOTE              Remote name. The current remote is used by default.
+        --remote-url URL             Remote url. The current remote url is used by default.
+    -T, --token TOKEN                Access token for authentication with --remote. Saved credentials are used by default.
+    -U, --username USERNAME          Username for authentication.
+    -P, --password PASSWORD          Password for authentication.
+    -I, --insecure                   Allow insecure HTTPS communication.  i.e. bad SSL certificate.
+    -H, --header HEADER              Additional HTTP header to include with requests.
+        --timeout SECONDS            Timeout for api requests. Default is typically 30 seconds.
+    -C, --nocolor                    Disable ANSI coloring
+    -B, --benchmark                  Print benchmark time after the command is finished.
+    -V, --debug                      Print extra output for debugging.
+    -h, --help                       Print this help
+
+Update a resource pool.
+[cloud] is required. This is the name or id of the cloud.
+```
+
+#### morpheus resource-pools get
+
+```
+Usage: morpheus resource-pools get [cloud] [pool]
+    -j, --json                       JSON Output
+        --yaml                       YAML Output
+        --csv                        CSV Output
+        --csv-delim CHAR             Delimiter for CSV Output values. Default: ','
+        --csv-newline [CHAR]         Delimiter for CSV Output rows. Default: '\n'
+        --csv-quotes                 Wrap CSV values with ". Default: false
+        --csv-no-header              Exclude header for CSV Output.
+    -F, --fields x,y,z               Filter Output to a limited set of fields. Default is all fields.
+    -d, --dry-run                    Dry Run, print the API request instead of executing it
+        --curl                       Dry Run to output API request as a curl command.
+        --scrub                      Mask secrets in output, such as the Authorization header. For use with --curl and --dry-run.
+    -r, --remote REMOTE              Remote name. The current remote is used by default.
+        --remote-url URL             Remote url. The current remote url is used by default.
+    -T, --token TOKEN                Access token for authentication with --remote. Saved credentials are used by default.
+    -U, --username USERNAME          Username for authentication.
+    -P, --password PASSWORD          Password for authentication.
+    -I, --insecure                   Allow insecure HTTPS communication.  i.e. bad SSL certificate.
+    -H, --header HEADER              Additional HTTP header to include with requests.
+        --timeout SECONDS            Timeout for api requests. Default is typically 30 seconds.
+    -C, --nocolor                    Disable ANSI coloring
+    -B, --benchmark                  Print benchmark time after the command is finished.
+    -V, --debug                      Print extra output for debugging.
+    -h, --help                       Print this help
+
+Get details about a resource pool.
+[cloud] is required. This is the name or id of the cloud.
+```
+
+#### morpheus resource-pools list
+
+```
+Usage: morpheus resource-pools list [cloud]
+    -m, --max MAX                    Max Results
+    -o, --offset OFFSET              Offset Results
+    -s, --search PHRASE              Search Phrase
+    -S, --sort ORDER                 Sort Order
+    -D, --desc                       Reverse Sort Order
+    -j, --json                       JSON Output
+        --yaml                       YAML Output
+        --csv                        CSV Output
+        --csv-delim CHAR             Delimiter for CSV Output values. Default: ','
+        --csv-newline [CHAR]         Delimiter for CSV Output rows. Default: '\n'
+        --csv-quotes                 Wrap CSV values with ". Default: false
+        --csv-no-header              Exclude header for CSV Output.
+    -F, --fields x,y,z               Filter Output to a limited set of fields. Default is all fields.
+    -d, --dry-run                    Dry Run, print the API request instead of executing it
+        --curl                       Dry Run to output API request as a curl command.
+        --scrub                      Mask secrets in output, such as the Authorization header. For use with --curl and --dry-run.
+    -r, --remote REMOTE              Remote name. The current remote is used by default.
+        --remote-url URL             Remote url. The current remote url is used by default.
+    -T, --token TOKEN                Access token for authentication with --remote. Saved credentials are used by default.
+    -U, --username USERNAME          Username for authentication.
+    -P, --password PASSWORD          Password for authentication.
+    -I, --insecure                   Allow insecure HTTPS communication.  i.e. bad SSL certificate.
+    -H, --header HEADER              Additional HTTP header to include with requests.
+        --timeout SECONDS            Timeout for api requests. Default is typically 30 seconds.
+    -C, --nocolor                    Disable ANSI coloring
+    -B, --benchmark                  Print benchmark time after the command is finished.
+    -V, --debug                      Print extra output for debugging.
+    -h, --help                       Print this help
+
+List resource pools for a cloud.
+[cloud] is required. This is the name or id of the cloud.
+```
+
+#### morpheus resource-pools remove
+
+```
+Usage: morpheus resource-pools remove [cloud] [pool]
+    -y, --yes                        Auto Confirm
+    -j, --json                       JSON Output
+    -d, --dry-run                    Dry Run, print the API request instead of executing it
+        --curl                       Dry Run to output API request as a curl command.
+        --scrub                      Mask secrets in output, such as the Authorization header. For use with --curl and --dry-run.
+    -r, --remote REMOTE              Remote name. The current remote is used by default.
+        --remote-url URL             Remote url. The current remote url is used by default.
+    -T, --token TOKEN                Access token for authentication with --remote. Saved credentials are used by default.
+    -U, --username USERNAME          Username for authentication.
+    -P, --password PASSWORD          Password for authentication.
+    -I, --insecure                   Allow insecure HTTPS communication.  i.e. bad SSL certificate.
+    -H, --header HEADER              Additional HTTP header to include with requests.
+        --timeout SECONDS            Timeout for api requests. Default is typically 30 seconds.
+    -C, --nocolor                    Disable ANSI coloring
+    -B, --benchmark                  Print benchmark time after the command is finished.
+    -V, --debug                      Print extra output for debugging.
+    -h, --help                       Print this help
+
+Delete a resource pool.
+[cloud] is required. This is the name or id of the cloud.
+```
+
+#### morpheus resource-pools update
+
+```
+Usage: morpheus resource-pools update [cloud] [pool] [options]
+        --group-access-all [on|off]  Toggle Access for all groups.
+        --group-access LIST          Group Access, comma separated list of group IDs.
+        --tenants LIST               Tenant Access, comma separated list of account IDs
+        --visibility [private|public]
+                                     Visibility
+        --active [on|off]            Can be used to disable a resource pool
+    -O, --option OPTION              Option in the format -O field="value"
+        --prompt                     Always prompts. Use passed options as the default value.
+    -N, --no-prompt                  Skip prompts. Use default values for all optional fields.
+        --payload FILE               Payload from a local JSON or YAML file, skip all prompting
+        --payload-dir DIRECTORY      Payload from a local directory containing 1-N JSON or YAML files, skip all prompting
+        --payload-json JSON          Payload JSON, skip all prompting
+        --payload-yaml YAML          Payload YAML, skip all prompting
+    -j, --json                       JSON Output
+    -d, --dry-run                    Dry Run, print the API request instead of executing it
+        --curl                       Dry Run to output API request as a curl command.
+        --scrub                      Mask secrets in output, such as the Authorization header. For use with --curl and --dry-run.
+    -r, --remote REMOTE              Remote name. The current remote is used by default.
+        --remote-url URL             Remote url. The current remote url is used by default.
+    -T, --token TOKEN                Access token for authentication with --remote. Saved credentials are used by default.
+    -U, --username USERNAME          Username for authentication.
+    -P, --password PASSWORD          Password for authentication.
+    -I, --insecure                   Allow insecure HTTPS communication.  i.e. bad SSL certificate.
+    -H, --header HEADER              Additional HTTP header to include with requests.
+        --timeout SECONDS            Timeout for api requests. Default is typically 30 seconds.
+    -C, --nocolor                    Disable ANSI coloring
+    -B, --benchmark                  Print benchmark time after the command is finished.
+    -V, --debug                      Print extra output for debugging.
+    -h, --help                       Print this help
+
+Update a resource pool.
+[cloud] is required. This is the name or id of the cloud.
 ```
 
 
@@ -11878,140 +12612,135 @@ Update role access for an instance type or all instance types.
 ```
 
 
-### morpheus security-group-rules
-
-```
-Usage: morpheus security-group-rules [command] [options]
-Commands:
-	add-custom-rule
-	add-instance-rule
-	list
-	remove
-```
-
-#### morpheus security-group-rules add-custom-rule
-
-```
-Usage: morpheus security-group-rules add-custom-rule SOURCE_CIDR PORT_RANGE PROTOCOL [options]
-	SOURCE_CIDR: CIDR to white-list
-	PORT_RANGE: Port value (i.e. 123) or port range (i.e. 1-65535)
-	PROTOCOL: tcp, udp, icmp
-    -s, --secgroup SECGROUP          Security Group ID (Use will use security as set with 'security-groups use id'
-    -j, --json                       JSON Output
-    -d, --dry-run                    Dry Run, print the API request instead of executing it
-        --curl                       Dry Run to output API request as a curl command.
-        --scrub                      Mask secrets in output, such as the Authorization header. For use with --curl and --dry-run.
-    -r, --remote REMOTE              Remote name. The current remote is used by default.
-        --remote-url URL             Remote url. The current remote url is used by default.
-    -T, --token TOKEN                Access token for authentication with --remote. Saved credentials are used by default.
-    -U, --username USERNAME          Username for authentication.
-    -P, --password PASSWORD          Password for authentication.
-    -I, --insecure                   Allow insecure HTTPS communication.  i.e. bad SSL certificate.
-    -H, --header HEADER              Additional HTTP header to include with requests.
-        --timeout SECONDS            Timeout for api requests. Default is typically 30 seconds.
-    -C, --nocolor                    Disable ANSI coloring
-    -B, --benchmark                  Print benchmark time after the command is finished.
-    -V, --debug                      Print extra output for debugging.
-    -h, --help                       Print this help
-```
-
-#### morpheus security-group-rules add-instance-rule
-
-```
-Usage: morpheus security-group-rules add_instance_rule SOURCE_CIDR INSTANCE_TYPE_ID [options]
-	SOURCE_CIDR: CIDR to white-list
-	INSTANCE_TYPE_ID: ID of the Instance Type to access
-    -s, --secgroup secgroup          Security Group ID (Use will use security as set with 'security-groups use id'
-    -j, --json                       JSON Output
-    -d, --dry-run                    Dry Run, print the API request instead of executing it
-        --curl                       Dry Run to output API request as a curl command.
-        --scrub                      Mask secrets in output, such as the Authorization header. For use with --curl and --dry-run.
-    -r, --remote REMOTE              Remote name. The current remote is used by default.
-        --remote-url URL             Remote url. The current remote url is used by default.
-    -T, --token TOKEN                Access token for authentication with --remote. Saved credentials are used by default.
-    -U, --username USERNAME          Username for authentication.
-    -P, --password PASSWORD          Password for authentication.
-    -I, --insecure                   Allow insecure HTTPS communication.  i.e. bad SSL certificate.
-    -H, --header HEADER              Additional HTTP header to include with requests.
-        --timeout SECONDS            Timeout for api requests. Default is typically 30 seconds.
-    -C, --nocolor                    Disable ANSI coloring
-    -B, --benchmark                  Print benchmark time after the command is finished.
-    -V, --debug                      Print extra output for debugging.
-    -h, --help                       Print this help
-```
-
-#### morpheus security-group-rules list
-
-```
-Usage: morpheus security-group-rules list [id]
-    -j, --json                       JSON Output
-    -d, --dry-run                    Dry Run, print the API request instead of executing it
-        --curl                       Dry Run to output API request as a curl command.
-        --scrub                      Mask secrets in output, such as the Authorization header. For use with --curl and --dry-run.
-    -r, --remote REMOTE              Remote name. The current remote is used by default.
-        --remote-url URL             Remote url. The current remote url is used by default.
-    -T, --token TOKEN                Access token for authentication with --remote. Saved credentials are used by default.
-    -U, --username USERNAME          Username for authentication.
-    -P, --password PASSWORD          Password for authentication.
-    -I, --insecure                   Allow insecure HTTPS communication.  i.e. bad SSL certificate.
-    -H, --header HEADER              Additional HTTP header to include with requests.
-        --timeout SECONDS            Timeout for api requests. Default is typically 30 seconds.
-    -C, --nocolor                    Disable ANSI coloring
-    -B, --benchmark                  Print benchmark time after the command is finished.
-    -V, --debug                      Print extra output for debugging.
-    -h, --help                       Print this help
-```
-
-#### morpheus security-group-rules remove
-
-```
-Usage: morpheus security-group-rules remove [id] [options]
-    -s, --secgroup secgroup          Security Group ID (Use will use security as set with 'security-groups use id'
-    -j, --json                       JSON Output
-    -d, --dry-run                    Dry Run, print the API request instead of executing it
-        --curl                       Dry Run to output API request as a curl command.
-        --scrub                      Mask secrets in output, such as the Authorization header. For use with --curl and --dry-run.
-    -r, --remote REMOTE              Remote name. The current remote is used by default.
-        --remote-url URL             Remote url. The current remote url is used by default.
-    -T, --token TOKEN                Access token for authentication with --remote. Saved credentials are used by default.
-    -U, --username USERNAME          Username for authentication.
-    -P, --password PASSWORD          Password for authentication.
-    -I, --insecure                   Allow insecure HTTPS communication.  i.e. bad SSL certificate.
-    -H, --header HEADER              Additional HTTP header to include with requests.
-        --timeout SECONDS            Timeout for api requests. Default is typically 30 seconds.
-    -C, --nocolor                    Disable ANSI coloring
-    -B, --benchmark                  Print benchmark time after the command is finished.
-    -V, --debug                      Print extra output for debugging.
-    -h, --help                       Print this help
-```
-
-
 ### morpheus security-groups
 
 ```
 Usage: morpheus security-groups [command] [options]
 Commands:
 	add
+	add-location
+	add-rule
 	get
 	list
 	remove
-	unuse
-	use
+	remove-location
+	remove-rule
+	update
+	update-rule
 ```
 
 #### morpheus security-groups add
 
 ```
 Usage: morpheus security-groups add [name] [options]
+        --name Name                  Name of the security group
         --description Description    Description of the security group
+    -c, --cloud CLOUD                Scoped Cloud Name or ID
+    -O, --option OPTION              Option in the format -O field="value"
+        --prompt                     Always prompts. Use passed options as the default value.
+    -N, --no-prompt                  Skip prompts. Use default values for all optional fields.
+        --payload FILE               Payload from a local JSON or YAML file, skip all prompting
+        --payload-dir DIRECTORY      Payload from a local directory containing 1-N JSON or YAML files, skip all prompting
+        --payload-json JSON          Payload JSON, skip all prompting
+        --payload-yaml YAML          Payload YAML, skip all prompting
     -j, --json                       JSON Output
     -d, --dry-run                    Dry Run, print the API request instead of executing it
         --curl                       Dry Run to output API request as a curl command.
         --scrub                      Mask secrets in output, such as the Authorization header. For use with --curl and --dry-run.
+    -r, --remote REMOTE              Remote name. The current remote is used by default.
+        --remote-url URL             Remote url. The current remote url is used by default.
+    -T, --token TOKEN                Access token for authentication with --remote. Saved credentials are used by default.
+    -U, --username USERNAME          Username for authentication.
+    -P, --password PASSWORD          Password for authentication.
+    -I, --insecure                   Allow insecure HTTPS communication.  i.e. bad SSL certificate.
+    -H, --header HEADER              Additional HTTP header to include with requests.
+        --timeout SECONDS            Timeout for api requests. Default is typically 30 seconds.
     -C, --nocolor                    Disable ANSI coloring
     -B, --benchmark                  Print benchmark time after the command is finished.
     -V, --debug                      Print extra output for debugging.
     -h, --help                       Print this help
+
+Create a security group.
+[name] is required. This is the name of the security group.
+```
+
+#### morpheus security-groups add-location
+
+```
+Usage: morpheus security-groups add-location [security-group] [options]
+    -c, --cloud CLOUD                Cloud Name or ID
+        --resource-pool ID           ID of the Resource Pool for Amazon VPC and Azure Resource Group
+    -O, --option OPTION              Option in the format -O field="value"
+        --prompt                     Always prompts. Use passed options as the default value.
+    -N, --no-prompt                  Skip prompts. Use default values for all optional fields.
+        --payload FILE               Payload from a local JSON or YAML file, skip all prompting
+        --payload-dir DIRECTORY      Payload from a local directory containing 1-N JSON or YAML files, skip all prompting
+        --payload-json JSON          Payload JSON, skip all prompting
+        --payload-yaml YAML          Payload YAML, skip all prompting
+    -j, --json                       JSON Output
+    -d, --dry-run                    Dry Run, print the API request instead of executing it
+        --curl                       Dry Run to output API request as a curl command.
+        --scrub                      Mask secrets in output, such as the Authorization header. For use with --curl and --dry-run.
+    -r, --remote REMOTE              Remote name. The current remote is used by default.
+        --remote-url URL             Remote url. The current remote url is used by default.
+    -T, --token TOKEN                Access token for authentication with --remote. Saved credentials are used by default.
+    -U, --username USERNAME          Username for authentication.
+    -P, --password PASSWORD          Password for authentication.
+    -I, --insecure                   Allow insecure HTTPS communication.  i.e. bad SSL certificate.
+    -H, --header HEADER              Additional HTTP header to include with requests.
+        --timeout SECONDS            Timeout for api requests. Default is typically 30 seconds.
+    -C, --nocolor                    Disable ANSI coloring
+    -B, --benchmark                  Print benchmark time after the command is finished.
+    -V, --debug                      Print extra output for debugging.
+    -h, --help                       Print this help
+
+Add security group to a location (cloud).
+[security-group] is required. This is the name or id of the security group.
+```
+
+#### morpheus security-groups add-rule
+
+```
+Usage: morpheus security-groups add-rule [security-group] [options]
+    -O, --option OPTION              Option in the format -O field="value"
+        --prompt                     Always prompts. Use passed options as the default value.
+    -N, --no-prompt                  Skip prompts. Use default values for all optional fields.
+        --payload FILE               Payload from a local JSON or YAML file, skip all prompting
+        --payload-dir DIRECTORY      Payload from a local directory containing 1-N JSON or YAML files, skip all prompting
+        --payload-json JSON          Payload JSON, skip all prompting
+        --payload-yaml YAML          Payload YAML, skip all prompting
+    -j, --json                       JSON Output
+    -d, --dry-run                    Dry Run, print the API request instead of executing it
+        --curl                       Dry Run to output API request as a curl command.
+        --scrub                      Mask secrets in output, such as the Authorization header. For use with --curl and --dry-run.
+    -r, --remote REMOTE              Remote name. The current remote is used by default.
+        --remote-url URL             Remote url. The current remote url is used by default.
+    -T, --token TOKEN                Access token for authentication with --remote. Saved credentials are used by default.
+    -U, --username USERNAME          Username for authentication.
+    -P, --password PASSWORD          Password for authentication.
+    -I, --insecure                   Allow insecure HTTPS communication.  i.e. bad SSL certificate.
+    -H, --header HEADER              Additional HTTP header to include with requests.
+        --timeout SECONDS            Timeout for api requests. Default is typically 30 seconds.
+    -C, --nocolor                    Disable ANSI coloring
+    -B, --benchmark                  Print benchmark time after the command is finished.
+    -V, --debug                      Print extra output for debugging.
+    -h, --help                       Print this help
+        --name VALUE                 Name of the rule
+        --direction VALUE            Direction
+        --rule-type VALUE            Rule Type
+        --protocol VALUE             Protocol
+        --port-range VALUE           Port Range
+        --source-type VALUE          Source Type
+        --source VALUE               Source
+        --source-group VALUE         Source Security Group
+        --source-tier VALUE          Source Tier
+        --destination-type VALUE     Destination Type
+        --destination VALUE          Destination
+        --destination-group VALUE    Destination Security Group
+        --destination-tier VALUE     Destination Tier
+
+Create a security group rule.
+[security-group] is required. This is the name or id of the security group.
 ```
 
 #### morpheus security-groups get
@@ -12022,10 +12751,20 @@ Usage: morpheus security-groups get [id]
     -d, --dry-run                    Dry Run, print the API request instead of executing it
         --curl                       Dry Run to output API request as a curl command.
         --scrub                      Mask secrets in output, such as the Authorization header. For use with --curl and --dry-run.
+    -r, --remote REMOTE              Remote name. The current remote is used by default.
+        --remote-url URL             Remote url. The current remote url is used by default.
+    -T, --token TOKEN                Access token for authentication with --remote. Saved credentials are used by default.
+    -U, --username USERNAME          Username for authentication.
+    -P, --password PASSWORD          Password for authentication.
+    -I, --insecure                   Allow insecure HTTPS communication.  i.e. bad SSL certificate.
+    -H, --header HEADER              Additional HTTP header to include with requests.
+        --timeout SECONDS            Timeout for api requests. Default is typically 30 seconds.
     -C, --nocolor                    Disable ANSI coloring
     -B, --benchmark                  Print benchmark time after the command is finished.
     -V, --debug                      Print extra output for debugging.
     -h, --help                       Print this help
+
+Get details about a security group.
 ```
 
 #### morpheus security-groups list
@@ -12061,42 +12800,166 @@ Usage: morpheus security-groups list
     -B, --benchmark                  Print benchmark time after the command is finished.
     -V, --debug                      Print extra output for debugging.
     -h, --help                       Print this help
+
+List security groups.
 ```
 
 #### morpheus security-groups remove
 
 ```
 Usage: morpheus security-groups remove [id]
+    -y, --yes                        Auto Confirm
     -j, --json                       JSON Output
     -d, --dry-run                    Dry Run, print the API request instead of executing it
         --curl                       Dry Run to output API request as a curl command.
         --scrub                      Mask secrets in output, such as the Authorization header. For use with --curl and --dry-run.
+    -r, --remote REMOTE              Remote name. The current remote is used by default.
+        --remote-url URL             Remote url. The current remote url is used by default.
+    -T, --token TOKEN                Access token for authentication with --remote. Saved credentials are used by default.
+    -U, --username USERNAME          Username for authentication.
+    -P, --password PASSWORD          Password for authentication.
+    -I, --insecure                   Allow insecure HTTPS communication.  i.e. bad SSL certificate.
+    -H, --header HEADER              Additional HTTP header to include with requests.
+        --timeout SECONDS            Timeout for api requests. Default is typically 30 seconds.
     -C, --nocolor                    Disable ANSI coloring
     -B, --benchmark                  Print benchmark time after the command is finished.
     -V, --debug                      Print extra output for debugging.
     -h, --help                       Print this help
+
+Delete a security group.
+[security-group] is required. This is the name or id of the security group.
 ```
 
-#### morpheus security-groups unuse
+#### morpheus security-groups remove-location
 
 ```
-Usage: morpheus security-groups use [id] [--none]
-        --none                       Do not use an active group.
+Usage: morpheus security-groups remove-location [security-group] [options]
+    -c, --cloud CLOUD                Cloud Name or ID
+    -y, --yes                        Auto Confirm
+    -j, --json                       JSON Output
+    -d, --dry-run                    Dry Run, print the API request instead of executing it
+        --curl                       Dry Run to output API request as a curl command.
+        --scrub                      Mask secrets in output, such as the Authorization header. For use with --curl and --dry-run.
+    -r, --remote REMOTE              Remote name. The current remote is used by default.
+        --remote-url URL             Remote url. The current remote url is used by default.
+    -T, --token TOKEN                Access token for authentication with --remote. Saved credentials are used by default.
+    -U, --username USERNAME          Username for authentication.
+    -P, --password PASSWORD          Password for authentication.
+    -I, --insecure                   Allow insecure HTTPS communication.  i.e. bad SSL certificate.
+    -H, --header HEADER              Additional HTTP header to include with requests.
+        --timeout SECONDS            Timeout for api requests. Default is typically 30 seconds.
     -C, --nocolor                    Disable ANSI coloring
     -B, --benchmark                  Print benchmark time after the command is finished.
     -V, --debug                      Print extra output for debugging.
     -h, --help                       Print this help
+
+Remove security group from a location (cloud).
+[security-group] is required. This is the name or id of the security group.
 ```
 
-#### morpheus security-groups use
+#### morpheus security-groups remove-rule
 
 ```
-Usage: morpheus security-groups use [id] [--none]
-        --none                       Do not use an active group.
+Usage: morpheus security-groups remove-rule [security-group] [id]
+    -y, --yes                        Auto Confirm
+    -j, --json                       JSON Output
+    -d, --dry-run                    Dry Run, print the API request instead of executing it
+        --curl                       Dry Run to output API request as a curl command.
+        --scrub                      Mask secrets in output, such as the Authorization header. For use with --curl and --dry-run.
+    -r, --remote REMOTE              Remote name. The current remote is used by default.
+        --remote-url URL             Remote url. The current remote url is used by default.
+    -T, --token TOKEN                Access token for authentication with --remote. Saved credentials are used by default.
+    -U, --username USERNAME          Username for authentication.
+    -P, --password PASSWORD          Password for authentication.
+    -I, --insecure                   Allow insecure HTTPS communication.  i.e. bad SSL certificate.
+    -H, --header HEADER              Additional HTTP header to include with requests.
+        --timeout SECONDS            Timeout for api requests. Default is typically 30 seconds.
     -C, --nocolor                    Disable ANSI coloring
     -B, --benchmark                  Print benchmark time after the command is finished.
     -V, --debug                      Print extra output for debugging.
     -h, --help                       Print this help
+
+Delete a security group rule.
+[security-group] is required. This is the name or id of the security group.
+```
+
+#### morpheus security-groups update
+
+```
+Usage: morpheus security-groups update [security-group] [options]
+        --name Name                  Name of the security group
+        --description Description    Description of the security group
+    -O, --option OPTION              Option in the format -O field="value"
+        --prompt                     Always prompts. Use passed options as the default value.
+    -N, --no-prompt                  Skip prompts. Use default values for all optional fields.
+        --payload FILE               Payload from a local JSON or YAML file, skip all prompting
+        --payload-dir DIRECTORY      Payload from a local directory containing 1-N JSON or YAML files, skip all prompting
+        --payload-json JSON          Payload JSON, skip all prompting
+        --payload-yaml YAML          Payload YAML, skip all prompting
+    -j, --json                       JSON Output
+    -d, --dry-run                    Dry Run, print the API request instead of executing it
+        --curl                       Dry Run to output API request as a curl command.
+        --scrub                      Mask secrets in output, such as the Authorization header. For use with --curl and --dry-run.
+    -r, --remote REMOTE              Remote name. The current remote is used by default.
+        --remote-url URL             Remote url. The current remote url is used by default.
+    -T, --token TOKEN                Access token for authentication with --remote. Saved credentials are used by default.
+    -U, --username USERNAME          Username for authentication.
+    -P, --password PASSWORD          Password for authentication.
+    -I, --insecure                   Allow insecure HTTPS communication.  i.e. bad SSL certificate.
+    -H, --header HEADER              Additional HTTP header to include with requests.
+        --timeout SECONDS            Timeout for api requests. Default is typically 30 seconds.
+    -C, --nocolor                    Disable ANSI coloring
+    -B, --benchmark                  Print benchmark time after the command is finished.
+    -V, --debug                      Print extra output for debugging.
+    -h, --help                       Print this help
+
+Update a security group.
+[security-group] is required. This is the name or id of the security group.
+```
+
+#### morpheus security-groups update-rule
+
+```
+Usage: morpheus security-groups update-rule [security-group] [rule]
+        --name VALUE                 Name of the rule
+        --direction VALUE            Direction
+        --rule-type VALUE            Rule Type
+        --protocol VALUE             Protocol
+        --port-range VALUE           Port Range
+        --source-type VALUE          Source Type
+        --source VALUE               Source
+        --source-group VALUE         Source Security Group
+        --source-tier VALUE          Source Tier
+        --destination-type VALUE     Destination Type
+        --destination VALUE          Destination
+        --destination-group VALUE    Destination Security Group
+        --destination-tier VALUE     Destination Tier
+    -O, --option OPTION              Option in the format -O field="value"
+        --prompt                     Always prompts. Use passed options as the default value.
+    -N, --no-prompt                  Skip prompts. Use default values for all optional fields.
+        --payload FILE               Payload from a local JSON or YAML file, skip all prompting
+        --payload-dir DIRECTORY      Payload from a local directory containing 1-N JSON or YAML files, skip all prompting
+        --payload-json JSON          Payload JSON, skip all prompting
+        --payload-yaml YAML          Payload YAML, skip all prompting
+    -j, --json                       JSON Output
+    -d, --dry-run                    Dry Run, print the API request instead of executing it
+        --curl                       Dry Run to output API request as a curl command.
+        --scrub                      Mask secrets in output, such as the Authorization header. For use with --curl and --dry-run.
+    -r, --remote REMOTE              Remote name. The current remote is used by default.
+        --remote-url URL             Remote url. The current remote url is used by default.
+    -T, --token TOKEN                Access token for authentication with --remote. Saved credentials are used by default.
+    -U, --username USERNAME          Username for authentication.
+    -P, --password PASSWORD          Password for authentication.
+    -I, --insecure                   Allow insecure HTTPS communication.  i.e. bad SSL certificate.
+    -H, --header HEADER              Additional HTTP header to include with requests.
+        --timeout SECONDS            Timeout for api requests. Default is typically 30 seconds.
+    -C, --nocolor                    Disable ANSI coloring
+    -B, --benchmark                  Print benchmark time after the command is finished.
+    -V, --debug                      Print extra output for debugging.
+    -h, --help                       Print this help
+
+Update a security group rule.
+[security-group] is required. This is the name or id of the security group.
 ```
 
 
@@ -12489,6 +13352,11 @@ Commands:
 Usage: morpheus tasks add [name] -t TASK_TYPE
     -t, --type TASK_TYPE             Task Type
         --name NAME                  Task Name
+        --code CODE                  Task Code
+        --result-type VALUE          Result Type
+        --retryable [on|off]         Retryable
+        --retry-count COUNT          Retry Count
+        --retry-delay SECONDS        Retry Delay Seconds
         --file FILE                  File containing the script. This can be used instead of --O taskOptions.script
     -O, --option OPTION              Option in the format -O field="value"
         --prompt                     Always prompts. Use passed options as the default value.
@@ -14316,11 +15184,11 @@ Usage: morpheus workflows update [name] --tasks taskId:phase,taskId2:phase,taskI
 ```
 
 
-## Environment Variables
+# Environment Variables
 
 Morpheus has only one environment variable that it uses.
 
-### MORPHEUS_CLI_HOME
+## MORPHEUS_CLI_HOME
 
 The **MORPHEUS_CLI_HOME** variable is where morpheus CLI stores its configuration files.
 This can be set to allow a single system user to maintain many different configurations
@@ -14360,13 +15228,13 @@ to the $MORPHEUS_HOME_DIRECTORY. These files are saved with file permissions **6
 So, only one system user should be allowed to execute morpheus with that home directory.
 See [Configuration](#Configuration) for more information on the files morpheus reads and writes.
 
-## Configuration
+# Configuration
 
 Morpheus reads and writes several configuration files within the $MORPHEUS_CLI_HOME directory.
 
 **Note:** These files are maintained by the program. It is not recommended for you to manipulate them.
 
-### appliances file
+## appliances file
 
 The `appliances` YAML file contains a list of known appliances, keyed by name.
 
@@ -14380,28 +15248,28 @@ Example:
   :active: false
 ```
 
-### credentials file
+## credentials file
 
 The `.morpheus/credentials` YAML file contains access tokens for each known appliance.
 
-### groups file
+## groups file
 
 The `.morpheus/groups` YAML file contains the active group information for each known appliance.
 
 
-## Startup scripts
+# Startup scripts
 
 When Morpheus starts, it executes the commands in a couple of dot files.
 
 These scripts are written in morpheus commands, not bash, so they can only execute morpheus commands and aliases.
 
-### .morpheus_profile file
+## .morpheus_profile file
 
 It looks for `$MORPHEUS_CLI_HOME/.morpheus_profile`, and reads and executes it (if it exists).
 
 This may be inhibited by using the `--noprofile` option.
 
-### .morpheusrc file
+## .morpheusrc file
 
 When started as an interactive shell with the `morpheus shell` command,
 Morpheus reads and executes `$MORPHEUS_CLI_HOME/.morpheusrc` (if it exists). This may be inhibited by using the `--norc` option.

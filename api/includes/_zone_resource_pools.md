@@ -212,8 +212,8 @@ config.tenancy      | default | default or dedicated
 Parameter | Default | Description
 --------- | ------- | -----------
 config.managers      | [] | Array of manager usernames
-config.developers      | [] | Array of manager developers
-config.auditors      | [] | Array of manager auditors
+config.developers      | [] | Array of developer usernames
+config.auditors      | [] | Array of auditor usernames
 
 ## Updating a Resource Pool
 
