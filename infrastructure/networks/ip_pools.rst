@@ -22,6 +22,6 @@ To add a |morpheus| Network Pool
 
 3. Save Changes
 
-.. NOTE:: Multiple Address Ranges can be added to a pool by selecting the + icon to the right of the first address range.
+.. NOTE:: Multiple Address Ranges can be added to a pool by selecting the + icon next to the address range.
 
 After saving the IP pool will be available for assignment to networks in the NETWORK POOL dropdown when adding or editing a network.

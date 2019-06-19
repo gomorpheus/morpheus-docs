@@ -1,0 +1,185 @@
+v3.6.2
+=======
+
+Release date: 4/9/2019
+
+.. IMPORTANT:: As of v3.6.2 Ubuntu 14.04 is no longer supported for Docker Hosts OS due to Docker version upgrade to address CVE-2019-5736. Existing Morpheus Docker Hosts running on 14.04 will not be able to upgrade to latest Morpheus Agent version. All new Morpheus Docker hosts using Ubuntu require Ubuntu 16.04 or 18.04.
+
+Highlights
+------------
+
+Amazon: Infrastructure Expansion
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+AWS VPCs can now be created and deleted directly from the Infrastructure section with the :guilabel:`+ ADD RESOURCE POOL` button in the RESOURCES tab in AWS Cloud detail pages. AWS Subnets can also be created and deleted from the Infrastructure -> Networks section. In addition, VPC's and subnets created with CloudFormation blueprints will automatically created in Morpheus upon CloudFormation App provisioning.
+
+Existing AWS S3 Buckets, ELB's and ALBs now sync for AWS Clouds, and Amazon Security Groups and Rules are now listed in the Network Security Group section. Full Amazon Auto Scale Group support added too, including creation, and management of Scale Groups, as well as adding new or existing Instances to Scale Groups and managing auto scale settings.
+
+Task Results
+^^^^^^^^^^^^
+
+Task Results bring the ability for Tasks in a Workflow to use output from other Tasks via results variables. Result types, include json, key/vale pairs and single results, can be set on script tasks and the results are available using ``<%=results.taskCode%>`` variables. See https://docs.morpheusdata.com/en/3.6.2/provisioning/automation/automation.html#task-results for more details.
+
+
+Azure Costs & Cloud Summary Tab
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Azure Cloud costs now sync nightly, reflecting actual charges from Azure rather than estimates for tracked resources. Azure Cloud detail pages now contain a Summary tab with details about the cloud config, Azure resources statistics, and a Costing section including month to date costs, estimated spend, last months costs, and and a Services Breakdown for costs.
+
+Infoblox Optimizations
+^^^^^^^^^^^^^^^^^^^^^^
+
+Infoblox can contain a ton of records, and while |morpheus| can sync all of them in, we added a few more options to allow syncing in only what is needed. The Zone Filter, like Network Filter, allows control over which zones/domains are synced using Infoblox API filters, and the new “Inventory Existing” flag in the Infoblox Integration settings allows disabling the sync of host and zone record details.
+
+These new controls as well as additional sync optimizations allow for a reduction in network and cpu overhead when Integrating large enterprise Infoblox environments with |morpheus|.
+
+More Ansible Love
+^^^^^^^^^^^^^^^^^
+
+3.6.2 adds another performance improvement (up to 40%) for the Morpheus Agent Command Bus mode for Ansible Integrations, Ansible Group management for existing and brownfield Instances, live std out for Ansible executions, and additional governance role permission for Ansible Integrations.
+
+Security
+^^^^^^^^
+
+3.6.2 contains multiple upgrades to address vulnerabilities and enhance security. To address CVE-2019-5736 Docker has been upgraded to 18.09.3, which results in the removal of support for Docker Hosts running Ubuntu 14.04. All new Morpheus Docker hosts require Ubuntu 16.04 or 18.04, or CentOS/RHEL 7+. Existing Morpheus Docker Hosts running on 14.04 will not be able to upgrade to latest Morpheus Agent version.
+
+
+
+
+New Features
+------------
+
+- Analytics: Completely revamped Analytics section that expands available metrics, filtering and flexibility.
+- Ansible: Live std out of Ansible execution added to instance history
+- Ansible: Ansible Group field added to Edit Instance Modal for Instances in Groups scoped to Ansible
+- Ansible: Command Bus Execution times improved up to 40%
+- Ansible: "Integrations: Ansible" Role Permission added. Controls User access to Ansible Tab in Groups & Clouds, Access to Ansible Integration detail page, and ability for User to edit or delete Ansible Integrations.
+- API: A Master Tenant Multitenant User Role can now be used when creating Subtenant Users
+- API: Additional validation added for Instance and App creation
+- API: ownerId added to ``/api/zones/list``
+- API: UUID added to Clouds, Instances, Hosts, Apps, Groups, Containers for ``/api/billing`` reference
+- Appliance: ``ntp['enable'] = false`` option added for ``/etc/morpheus/morpheus.rb``
+- AWS: Application Load Balancer sync added
+- AWS: Elastic Load Balancer (ELB) and Application Load Balancer (ALB) sync added in Infrastructure - Load Balancers and AWS Cloud detail pages Load Balancers tab
+- AWS: Existing S3 bucket sync added in Infrastructure - Storage- Buckets
+- AWS: Amazon Auto Scale Groups sync and creation added. Auto Scale Groups can be created and managed in Provisioning -> Automation -> Scale Thresholds`, and Scale Groups can be configured during Provisioning or in the Instances Scale tab for Instances that support scaling.
+- AWS: Security Group Rule syncing added, AWS Security groups now listed in `Infrastructure -> Network -> Security Groups`
+- AWS: Subnet creation and deletion added to `Infrastructure -> Network`
+- AWS: VPC creation and deletion added to AWS Cloud detail pages `Resources` tab
+- AWS: Security Groups now filter by VPC selection during provisioning
+- Azure: Azure Costs sync added
+- Azure: Cloud Summary tab added to Azure Cloud Detail page with cloud config summary, Azure Resources summary, and Costing section including month to date, estimated spend, Services Breakdown list and chart.
+- Azure: Sync optimizations improve sync times and reduce api calls to Azure
+- CloudFormation: Added "Apply State" action to apply updates to a Cloud Formation stack
+- CloudFormation: VPC's and Subnets created from CloudFormation Blueprints are now created in Morpheus
+- Docker: Added support for Docker Host provisioning on Ubuntu 18.04
+- Docker: Removed support for Docker Host provisioning on Ubuntu 14.04
+- Docker: Updated the version of docker installed on docker hosts from 1.12.6 to 18.09.3
+  .. IMPORTANT:: The Docker v18.09.3 upgrade addresses CVE-2019-5736. Docker v18.09.3 does not support Ubuntu 14.04. Existing Morpheus Docker Hosts running on 14.04 will not be able to upgrade to the latest Morpheus Agent version, as the host Docker version will be upgraded to v18.09.3 upon Agent upgrade. All new Morpheus Docker hosts using
+- Google Cloud: Added public image syncing
+- Hosts: Windows Server option added to ``+ BARE METAL`` action
+- Infoblox: "Inventory Existing" flag added to enabled/disable sync of host and zone records
+- Infoblox: Zone filter added to filter Zones/Domains synced from Infoblox
+- Instances: New Cloning Wizard adds all of the capabilities of the Provisioning Wizard to Cloning.
+- Instances: Sync restore status added
+- Library: Instance Types and Layouts now filter by user role permissions
+- Library: Ubuntu 18.04 VMware Layout and Node Type added to system Ubuntu Instance Type
+- Load Balancers: AD Authentication added for F5 Integrations
+- Operations: New Budgets section
+- Plans: Group access settings added
+- Policies: When scaling or adding nodes to an Instance with ${sequence} naming policy, the ${sequence} is now used for additional nodes (previously -1, -2 etc was appended)
+- Policies: Workflow Policy type added
+- Pricing: CAD currency added
+- Provisioning: ``${app.name}``, ``${customOptions.}`` and ``${instance.instanceContext}`` variables now evaluated in review pane
+- Provisioning: Cloning wizard updated to match provisioning configuration options.
+- Roles: "Integrations: Ansible" permission added
+- Roles: "Operations: Activity" permission added
+- Roles: "Operations: Budgets" permission added
+- SCVMM: Hosts selection no longer required
+- SCVMM: Generation selection moved from Provisioning modals to Virtual Image settings
+- SCVMM: Hypervisor Console added (beta)
+- Storage: Delete confirmation modal w/ validation added when deleting Storage Buckets
+- Tasks: Local Shell Script task type added w/ git repo Integration option
+- Tasks: Task Results added. Allow Tasks to use the output from preceding Tasks in the same Workflow via results variables. Single Value, Key/Value Pairs, and JSOn results types. Output is stored in ``<%=results.taskCode%>`` or ``<%=results["Task Name"]%>`` variables.
+- Tenants: CAD currency added
+- UI: "Services" tabs renamed to "Integrations"
+- vCloud Director: Additional error messages displayed upon provisioning failure
+- vCloud Director: Discovered server usage tracking added
+- vCloud Director: Plan matching added for Discovered Servers
+- Virtual Images: Ubuntu 18.04 vmdk system image added
+- VMware: Windows VM auto-resolution added for Hypervisor Console
+- VMware: Networks now filter by cluster during provisioning when cloud is scoped to all clusters
+
+
+Fixes
+-----
+
+- Ansible: Fix for running playbooks from Ansible Integrations section
+- Apps: Fix for ${App.name} not showing correct value in the Review App section
+- Apps: Fix for Instance configurations get reset when going back from the REVIEW page
+- AWS: Fix for detecting ip address changes during provisioning due to EIP assignment
+- Backups: Fix for backups associated with an Instance not moving to subtenant when the Instance is assigned to a subtenant
+- Backups: Fix for recent backups failures entries and deletion
+- Backups: Fix for snapshot retention when "Archive Snapshots" is disabled on target Storage Provider
+- Blueprints: Fix for sub-tenants not able to set blueprint access when custom access has been set at the master tenant level for blueprints.
+- CLI: Fix for morpheus groups use command error when not using morpheus shell
+- CLI: Fix for morpheus instances add using Nutanix Instance Types
+- CLI: Fix for missing field prompts in morpheus apps add $name --blueprints
+- Commvault: Fix for Backup deletion handling
+- Commvault: Fix for cloning a synced job
+- Commvault: Fix for Sub-Tenants using Commvault Integration shared form Master Tenant
+- Console: ctl-alt-delete restart warning dialog no longer displayed for Windows vm's
+- GCP: Fix for image selection when creating Google Node Types
+- HA: Fix for mysql read-only and auto-commit locks when using external mysql failover configurations
+- Health: Updates to Appliance Health: System Memory Usage accuracy
+- Hosts: Fix for converting to managed using key instead of username/password
+- Instances: Fix for core count updated after reconfigured Instances that were converted to managed
+- KVM: Fix for cloning kvm hosts
+- NSX: Fix for creating NSX Integration from ``Administration - Integrations``
+- Nutanix: Fix for cloning Instances with 1 TB+ storage
+- Nutanix: Fix for cloud-init iso upload for docker host provisioning
+- Nutanix: Fix for duplicate Virtual Images
+- OpenStack: Fix for reconfiguring Host and VM's from Infrastructure - Hosts
+- Option Types: source_url length increased to from 255 to 1000
+- OTC & Huawei: Fix for Backups: Restore to New
+- OTC: Fix for Cloning instances
+- Plans & Pricing: Fix for price plans assigned to sub-tenant hidden from master tenant in ui
+- Plans & Pricing: Price Sets and Price tabs now hidden for sub-tenants
+- SCVMM: Fix for unattend and iso cleanup
+- SCVMM: Fix for Gen 2 Provisioning issue caused by hardware profile
+- Storage: ECS bucket url added to bucket details
+- Tenants: Fix for Tenant delete error due to missing storage_group_storage_volume
+- Tenants: Fix for Users paging issue
+- UI: Fix for Hosts pagination removing filters
+- vCD: /api removed from new cloud wizard placeholder text
+- vCD: Fix for adding network adapter during reconfigure
+- vCD: Fix for Inventory Existing when 50-100 vapps exist in target vCD
+- vCD: Fix for inventory issues (instances not showing storage and aren't getting tied to correct plans)
+- VCD: Fix for stop/start Instance not updating usage records
+- VCD: Fix for Discovery vDC scoping.
+- VIO: Fix for Backups created in qcow2 format
+- Veeam: Fix for service hidden from UI when disabled
+- VMware: Fix for blank hypervisor console displaying for certain Windows VM resolutions
+- VMware: Fix for restoring a VMware backup after deleting associated Instance
+- VMware: Fix for issue where incorrect thin/thick provision spec was applied
+
+Appliance Package Version Updates
+---------------------------------
+
+- commons-fileupload 1.3.2
+- commons-httpclient 3.1
+- gettext 0.19.8.1
+- jsch 0.1.53
+- jackson-databind 2.8.10
+- lucene-queryparser 6.6.1
+- myqsl-connector-java 5.1.33
+- spring-security-web 4.2.3
+- spring-amqp 1.7.4
+- spring-websocket 4.3.7
+- spring-security-oauth2 2.0.14
+- spring-core 4.3.12
+- spring-web 4.3.12
+- spring-webmvc 4.3.12
+- spring-messaging 4.3.7
+- tomcat-embed-core 8.5.23
+- tomcat-util-scan 8.0.36

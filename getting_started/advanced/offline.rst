@@ -1,3 +1,5 @@
+.. _offline-installation:
+
 Offline Installer
 -----------------
 
@@ -15,8 +17,8 @@ Offline Installer Requirements
 Offline Install
 ^^^^^^^^^^^^^^^
 
-Ubuntu
-^^^^^^
+Ubuntu/Debian
+^^^^^^^^^^^^^
 
 #. Download both the regular Morpheus Appliance package and the Offline Installer packages on to the appliance server:
 
@@ -37,7 +39,7 @@ Ubuntu
 
     sudo dpkg -i morpheus-appliance-offline_version_all.deb
 
-#. Set the Morpheus UI applaicne url (if needed, hostname will be automatically set).
+#. Set the Morpheus UI appliance url (if needed, hostname will be automatically set).
 
    .. code-block:: bash
 
@@ -52,10 +54,10 @@ Ubuntu
 
 The Chef run should complete successfully. There is a small pause when Chef runs the resource remote_file[package_name] action create while Chef verifies the checksum. After the reconfigure is complete, the morpheus-ui will start and be up in a few minutes.
 
-.. NOTE:: Tail the morpheus-ui log file with ``morpheus-ctl tail morpheus-ui`` and look for the Morpheus ascii logo to know when the morpheus-ui is up.
+.. NOTE:: Tail the morpheus log file located at /var/log/morpheus/morpheus-ui/current with the command ``morpheus-ctl tail morpheus-ui`` and look for the Morpheus ascii logo to know when the morpheus-ui is up.
 
-CentOS
-^^^^^^
+CentOS/RHEL
+^^^^^^^^^^^
 
 #. Download both the regular Morpheus Appliance package and the Offline Installer packages on to the appliance server:
 

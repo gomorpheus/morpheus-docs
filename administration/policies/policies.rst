@@ -4,20 +4,19 @@ Policies
 Overview
 --------
 
-Policies add governance, ease of use, cost-savings, and auditing features to |morpheus| . Policies can be created in the Policies tabs in Groups and Clouds. Policy generation is a role permission.
+Policies add governance, ease of use, cost-savings, and auditing features to |morpheus|.  |morpheus| enables end users to create Policies scoped to Users, Roles, Groups, Clouds, Tenants and Global scoping to give Admins full control and governance over their environments! Policy generation is a role permission.
 
-Policies apply towards any instance provisioned into a group or cloud with active policies. Cloud policies will override matching or conflicting group policies during provisioning.
+Policy Types
+------------
 
-.. note::
-
-	Policies have been added to ``Administration -> Policies`` where they can be managed on a global level, per group, user, cloud, or tenant.
-
-Available Policy Types
-^^^^^^^^^^^^^^^^^^^^^^
+Backup Creation
+  Disable or enable the ability to create a backup when provisioning an instance.
 Budget
-  Sets a maximum total price for all instances this policy is applied to.
+  Sets a maximum total combined price for all instances in the Group, Cloud, Tenant or owned by the User this policy is applied to.
 Expiration
   Sets an expiration timeframe in days after which the Instance will be deleted. Extensions can be auto-approved or require approval immediately or after x amount of auto-extensions using Morpheus Approvals or an Approval Integration.
+File Share Storage Quota
+  Sets a Storage Quota for File Share usage (in GB) to scoped User, Role, Tenant or Global.
 Host Name
   Pre-populates a fixed or editable name for Hosts and Virtual Machines using ${variable} naming patterns and/or text.
 Hostname
@@ -36,21 +35,67 @@ Max Storage
   Sets the max number of total of Storage combined for Instances in the Group or Cloud the Policy is added to.
 Max VMs
   Sets the max number of Virtual Machines for the Group or Cloud the Policy is added to.
+Object Storage Quota
+  Sets a Storage Quota for Object Storage usage (in GB) to scoped User, Role, Tenant or Global.
 Power Scheduling
   Adds a Power Schedule for the Instances in a Group or Cloud. Power Schedules can be created in ``Operations -> Scheduling``
 Provision Approval
   Sets an Approval requirement for Provisioning into a Group or Cloud using Morpheus Approvals or an Approval Integration such a Service Now.
 Shutdown
   Sets a shutdown timeframe in days upon provision after which the Instance will be stopped. Extensions can be auto-approved or require approval immediately or after x amount of auto-extensions using Morpheus Approvals or an Approval Integration.
+Storage Server Storage Quota
+  Sets a Storage Quota for selected Storage Server (in GB), applied Globally or per specified Tenants.
 User Creation
   Controls the "CREATE YOUR USER" flag in the User Config options during provisioning do be always disabled, always enabled, enabled by default, or disabled by default.
+User Group Creation
+  Forces User Creation of members in the selected User Group during Provisioning.
+Workflow
+  Forces execution of selected Workflow for Instance Provisioning.
 
 
 Creating Policies
 -----------------
 
-Policies can be created, edited, and set to active or inactive in the a
-group or cloud detail pane under the Policies tab.
+Policies can be created in three different locations.
+
+* ``Administration -> Policies``
+* ``Infrastructure -> Groups -> Group -> Policies``
+* ``Infrastructure -> Clouds -> Cloud -> Policies``
+
+Policies can be disabled and re-enabled at anytime.
+
+.. IMPORTANT:: Cloud policies will override matching or conflicting Group policies during provisioning.
+
+To create a Global Policy:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+#. Navigate to ``Administration -> Policies``
+#. Select :guilabel:`+ ADD Policy` and choose from the available policy types.
+#. Refer to Policy Type sections below for Configuration options.
+#. Under Filter next to scope select :guilabel:`Global`
+#. Select :guilabel:`SAVE CHANGES`
+
+
+To create a Policy for a User:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+#. Navigate to ``Administration -> Policies``
+#. Select :guilabel:`+ ADD Policy` and choose from the available policy types.
+#. Refer to Policy Type sections below for Configuration options.
+#. Under filter next to scope select :guilabel:`User` a drop down menu will appear below allowing you to select a user
+#. Select :guilabel:`SAVE CHANGES`
+
+To create a Policy for a Role:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+#. Navigate to ``Administration -> Policies``
+#. Select :guilabel:`+ ADD Policy` and choose from the available policy types.
+#. Refer to Policy Type sections below for Configuration options.
+#. Under filter next to scope select :guilabel:`Role` a drop down menu will appear below allowing you to select a Role
+#. For ``APPLY INDIVIDUALLY TO EACH USER IN ROLE``
+    - Select for Max Resource/Quota Policies to be calculated per user
+    - Leave unselected to calculate by total usage of all users within that Role.
+#. Select :guilabel:`SAVE CHANGES`
 
 To create a Policy for a Cloud:
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -82,7 +127,7 @@ Policy Types
 Expiration Policies
 ^^^^^^^^^^^^^^^^^^^
 
-Expiration policies set an expiration timeframe for any instance provisioned into the cloud or group the policy is added to. When an instance expires, it is terminated and deleted.
+Expiration policies set an expiration timeframe for any instance provisioned into the cloud, role, group or by the user the policy is added to. When an instance expires, it is terminated and deleted.
 
 Configuration options for expiration policies:
 
@@ -105,7 +150,7 @@ Instances with expirations show the time until expiration in the instance detail
 
 Expirations can also be added to any instance during provisioning by entering the number of days in the EXPIRATION DAYS field in the Lifecycle section of the automation section of the provisioning wizard. Expiration can be added to any instance even if no policies have been created.
 
-NOTE:: Expiration and Shutdown Policies will be enforced on Instances moved into a Group with an Active Policy or Instances created when converting an unmanaged host to managed.
+.. NOTE:: Expiration and Shutdown Policies will be enforced on Instances moved into a Group with an Active Policy or Instances created when converting an unmanaged host to managed.
 
 Instance and Host Names
 ^^^^^^^^^^^^^^^^^^^^^^^
@@ -119,7 +164,9 @@ NAMING TYPE
     Naming pattern will pre-populate during provisioning and cannot be changed.
 
 NAME PATTERN
-  The Name Pattern field uses ``${variable}`` string interpolation.
+  The Name Pattern field uses Static text and/or ``${variable}`` string interpolation, such as ``morpheus${cloudCode}${type}${sequence+3000}``
+
+  An example Instance Name Policy using a naming pattern with User Initials, Cloud Code, Instance Type, and a sequential number starting at 3000 is ``${userInitials}-${cloudCode}-${type}-${sequence+3000}``, resulting in an Instance Name of **md-vmwd3-centos-3001** for the first instance, followed by **md-vmwd3-centos-3002** and so on.
 
   Commonly used variables for naming patterns include:
 
@@ -134,19 +181,17 @@ NAME PATTERN
     ${account}
     ${accountType}
     ${platform}
+    ${platform == 'windows' ? 'w':'l'} # results in `w` for Windows platforms and `l` for Linux Platforms
     ${userId}
     ${userName}
     ${userInitials}
     ${provisionType}
-    ${sequence} #results in 1
-    ${sequence+100} #results in 101
+    ${instance.instanceContext} # Environment Code
+    ${sequence} # results in 1
+    ${sequence+100} # results in 101
     ${sequence.toString().padLeft(5,'0')} #results in 00001
 
-  An example Instance Name Policy using a naming pattern with User Initials, Cloud Code, Instance Type, and a sequential number starting at 3000 is ``${userInitials}-${cloudCode}-${type}-${sequence+3000}``, resulting in an Instance Name of **md-vmwd3-centos-3001** for the first instance, followed by **md-vmwd3-centos-3002** and so on.
-
   Cloud codes and Group codes are fields found in their respective configuration panes.
-
-  .. NOTE:: Static text can also be used in conjunction with ${variable}'s, such as ``morpheus${cloudCode}${type}${sequence+3000}``
 
 AUTO RESOLVE CONFLICTS
   |morpheus| will automatically resolve naming conflicts by appending a sequential -number to the name when enabled.
@@ -207,23 +252,25 @@ TENANTS
 Max Resources
 ^^^^^^^^^^^^^
 
-Max Resource policies allow setting quotas for Clouds and Groups for maximum amount of Memory, Storage, Cores, Hosts, VM's, or Containers that can be created in the Cloud or Group the Policy is assigned to.
+Max Resource policies allow setting quotas for Clouds, Groups, Roles or Users for maximum amount of Memory, Storage, Cores, Hosts, VM's, or Containers that can be created in the Cloud, Group, Role or by the User the Policy is assigned to.
 
 Configuration options for Max Resources Policies:
 
 Max Containers
-    Sets the max number of Containers for the Group or Cloud the Policy is added to.
+    Sets the maximum combined total of Containers in Instances per Policy Scope.
 Max Cores
-    Sets the max number of total of Cores combined for Instances in the Group or Cloud the Policy is added to.
+    Sets the maximum combined total of Cores in Instances per Policy Scope.
 Max Hosts
-    Sets the max number of total Hosts in the Group or Cloud the Policy is added to.
+    Sets the maximum total of Hosts per Policy Scope.
 Max Memory
-    Sets the max number of total of RAM combined for Instances in the Group or Cloud the Policy is added to.
+    Sets the maximum combined total of RAM (capacity) for Instances per Policy Scope.
 Max Storage
-    Sets the max number of total of Storage combined for Instances in the Group or Cloud the Policy is added to.
+    Sets the maximum combined total of Storage (capacity) for Instances per Policy Scope.
 Max VMs
-    Sets the max number of Virtual Machines for the Group or Cloud the Policy is added to.
-Tenants
+    Sets the maximum total of managed Virtual Machines per Policy Scope.
+Scope
+
+TENANTS
     Leave blank for the Policy to apply to all Tenants, or search for and select Tenants to enforce the Policy on specific Tenants.
 
 User Creation

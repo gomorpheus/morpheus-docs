@@ -131,13 +131,13 @@ RDS:
         "rds:AddTagsToResource",
         "rds:ApplyPendingMaintenanceAction",
         "rds:AuthorizeDBSecurityGroupIngress",
-        "rds:CopyDBClusterParameterGroup",
+        "rds:CopyDBParameterGroup",
         "rds:CopyDBClusterSnapshot",
         "rds:CopyDBSnapshot",
         "rds:CreateDBCluster",
         "rds:CreateDBClusterSnapshot",
-        "rds:CraeteDBInstance",
-        "rds:CreateDBInstnaceReadReplica",
+        "rds:CreateDBInstance",
+        "rds:CreateDBInstanceReadReplica",
         "rds:CreateDBSecurityGroup",
         "rds:CreateDBSnapshot",
         "rds:DeleteDBCluster",
@@ -162,26 +162,21 @@ RDS:
         "rds:DescribeDBSubnetGroups",
         "rds:DescribeEngineDefaultClusterParameters",
         "rds:DescribeEngineDefaultParameters",
-        "rds:DescribeEventCatagories",
-        "rds:DescrbieEvents",
+        "rds:DescribeEventCategories",
+        "rds:DescribeEvents",
         "rds:DescribeOptionGroupOptions",
         "rds:DescribeOptionGroups",
         "rds:DescribeOrderableDBInstanceOptions",
-        "rds:DescribeSourceRegions",
         "rds:ListTagsForResource",
         "rds:ModifyDBCluster",
         "rds:ModifyDBClusterParameterGroup",
         "rds:ModifyDBClusterSnapshotAttribute",
         "rds:ModifyDBInstance",
         "rds:ModifyDBParameterGroup",
-        "rds:ModifyDBSnapshot",
         "rds:ModifyDBSnapshotAttribute",
         "rds:PromoteReadReplica",
-        "rds:PromoteReadReplicaDBCluster",
         "rds:RebootDBInstance",
-        "rds:RemoveRoleFromDBCluster",
         "rds:RemoveTagsFromResource",
-        "rds:RestoreDBClusterFromS3",
         "rds:RestoreDBClusterFromSnapshot",
         "rds:RestoreDBClusterToPointInTime",
         "rds:RestoreDBInstanceFromDBSnapshot",
@@ -203,7 +198,6 @@ S3
   "Version": "2012-10-17",
   "Statement": [
     {
-      "Sid": "access-1",
       "Effect": "Allow",
       "Action": [
         "s3:AbortMultipartUpload",
@@ -211,17 +205,43 @@ S3
         "s3:DeleteObjectVersion",
         "s3:GetBucketLocation",
         "s3:GetObject",
-        "s3:GetObjectVersion”,
+        "s3:GetObjectVersion",
         "s3:ListBucket",
         "s3:ListBucketMultipartUploads",
         "s3:ListBucketVersions",
-        "s3:ListMultipartUploads",
+        "s3:ListMultipartUploadParts",
         "s3:PutObject"
       ],
       "Resource": [
         "arn:aws:s3:::bucketname",
         "arn:aws:s3:::bucketname/*"
       ]
+    }
+  ]
+ }
+
+
+
+Route 53
+''''''''
+
+.. code-block:: json
+
+ {
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+          "route53:GetHostedZone",
+          "route53:ListResourceRecordSets"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": ["route53:ListHostedZones"],
+      "Resource": "*"
     }
   ]
  }
@@ -255,4 +275,25 @@ Resource filter example:
         "ec2:ResourceTag/purpose": "test"
       }
     }
+  }
+
+Amazon Cost and Reservation Sync
+''''''''''''''''''''''''''''''''
+If you are enabling costing or costing and reservations sync on an amazon cloud then you will need to enable the following policy.
+
+.. code-block:: json
+
+  {
+    "Version": "2012-10-17",
+    "Statement": [
+      {
+        "Effect": "Allow",
+        "Action": [
+          "ce:*"
+        ],
+        "Resource": [
+          "*"
+        ]
+      }
+    ]
   }

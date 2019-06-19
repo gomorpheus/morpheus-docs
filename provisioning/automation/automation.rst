@@ -8,3 +8,4 @@ The Automation section is composed of Tasks and Workflows. Tasks can be scripts 
 .. include:: tasks.rst
 .. include:: workflows.rst
 .. .. include:: automation/scale_thresholds.rst
+.. include:: /troubleshooting/Variables_Examples.rst

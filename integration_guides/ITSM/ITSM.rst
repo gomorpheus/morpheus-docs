@@ -1,5 +1,7 @@
 ITSM
 =====
 
-
-.. include:: /integration_guides/ITSM/ServiceNow.rst
+.. toctree::
+  ITSM/ServiceNow.rst
+  ITSM/cherwell.rst
+  ITSM/remedy.rst

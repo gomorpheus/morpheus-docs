@@ -1,0 +1,134 @@
+v3.5.3
+=======
+
+Release date: 12/13/18
+
+.. note:: yum and msi agent installs are now over port 443
+
+.. important:: Ngnix needs to be restarted after 3.5.3 upgrade with ``morpheus-ctl restart nginx``
+
+New Features
+------------
+
+- API: Added externalId for vm's
+- API: Added user setting endpoints
+- API: Blueprint Group & Tenant Access
+- API: Customizing Blueprint Access
+- API: Instance history added
+- API: Provision Instances/Apps using Workflow names
+- API: Track usage for Discovered VM's
+- API: Update host ssh password
+- Appliance: ElasticSearch: Added support for ElasticSearch TLS connections
+- Appliance: Global general performance improvement
+- Appliance: Increase timeout for linux tasks
+- Appliance: RabbitMQ: STOMP SSL support added
+- Apps: Added App execution aborting
+- Apps: Added review tab to app wizard
+- Automation: Ansible: Morpheus Variables support added. containerScriptConfig map now sent to an extraVars.yml for Ansible use
+- Backups: Commvault: Refactored Commvault integration
+- Backups: Rubrik integration added with SLA Domain sync, Backup creation and restore.
+- Backups: Rubrik Integration added.
+- Backups: Zerto improvements
+- Blueprints: Permissions section with Group Access and Tenant visibility added
+- Clouds: Nutanix: CVM's now shown as Hosts
+- Clouds: Nutanix: V2 & V3 API stats for discovered VMs, Image Sync
+- Clouds: Nutanix: Windows: Domain Join added to unattend.xml
+- Clouds: Nutanix: Windows: License application added to unattend.xml
+- Clouds: OpenStack: Added Network type choices for OpenStack SDN
+- Clouds: OpenStack: LBaaSv2 API endpoints for VIO added
+- Clouds: Openstack: Specify Floating IP option added
+- Clouds: OTC: Added support for availability zones
+- Clouds: SCVMM: Static IP's now injected in unattend.xml
+- Clouds: SCVMM: Windows: Domain Join added to unattend.xml
+- Clouds: SCVMM: Windows: License application added to unattend.xml
+- Clouds: Status in Clouds list view now shown as disabled and greyed out when when a Cloud is not enabled
+- Clouds: VMware: Hypervisor Console: WMKS console added, replacing VNC. GDB Server port requirement on ESXi hosts is not required for WMKS.
+- Load Balancers: F5: SSL profile creation added
+- Infrastructure: Custom Instance Types can now be used on Convert To Managed
+- Infrastructure: Renamed "Unmanaged" to "Discovered"
+- Infrastructure: Service Plan can now be specified on Convert to Managed
+- ITSM: New Cherwell Integration
+- ITSM: New Remedy Integration
+- ITSM: ServiceNow: CMDB update CI on status change
+- Library: "Supports Convert To Managed" flag added to Layouts
+- Operations: Activity: New History section added with active processes and process history
+- Operations: Health: Added info message for single node Elasticsearch health
+- Operations: Usage: Added Type Filter with Container, Host and Discovered options
+- Provisioning: Auto-truncation of Windows hostnames if specified hostname is over 15 character limit. If truncated name matches existing hostname sequence added.
+- Provisioning: Morpheus Agent msi and yum packages now transferred over 443. 80 still required for deb agents
+- Provisioning: Support Deployments enabled on System MySQL Instance Type
+- Provisioning: Windows: Agent install optimizations, speed improvements
+- Storage: Dell EMC Isilon: Create exports to allow access from ip addresses
+- Storage: Dell EMC Isilon: Create new NFS shares
+- Storage: Dell EMC Isilon: Create storage providers from an Isilon volume
+- Storage: Dell EMC Isilon: Manage existing NFS shares
+- Storage: Dell EMC Isilon: Sync NFS volume shares to Morpheus
+- Virtual Images: Prevent form autofill for username/password
+
+Fixes
+-----
+
+- Administration: Fix for deleting users that have history records in Archives
+- Administration: Fix for external smtp settings requiring username
+- Administration: Fix for saving white label settings in subtenants
+- Administration: Fix for Windows passwords with ampersand
+- Analytics: Fix for utilization time filters not returning data
+- Ansible Tower: Fix for "Limit to Instance" flag
+- Ansible Tower: Fix for Ansible Tower groups not set to mandatory
+- Ansible Tower: Fix for Ansible Tower integration details search
+- Ansible Tower: Fix for editing an Ansible Tower in Provisioning: Automation: Services
+- Ansible: Fix for Ansible workflow execution fails as no hosts are found
+- Ansible: Fix for intermittent git lock issue
+- Ansible: Security Updates
+- Appliance: Installer: Fix for :9200 being appended in elasticsearch.yml unicast hosts array
+- Apps: Fix for App export creating extra configs when group is defined
+- Apps: Fix for variables in Instance names not evaluated in App Tier view
+- Automation: Fix for Automation Tasks search not working beyond first page
+- Azure: Scale Sets: Fix for missed deployments when scaling multiple nodes
+- Blueprints: Fix for blueprint export including name and templateName
+- Blueprints: Fix for incorrect price data displayed for custom plans
+- CLI: Fix for sub-tenant user invalid login counter
+- Clouds: Fix for display of warning message when attempting to delete a cloud with existing managed vm's
+- Clouds: Fix for Instance usage record creation for Convert to Managed
+- Dell ECS: Fix for ECS Bucket Edit unknown error on Bucket Name Update
+- ESXI: Fix for ESXI Docker Host not using LVM on 2 disk Hosts
+- Git: Fix for auto appending of .git to git url in Git Integrations
+- Global Search: Fix for partial Instance Name search
+- Groups: Fix for add clouds to group buttons hidden if no public clouds are enabled in Administraiton - Settings
+- Instances: Fix for instance clone not respecting cloud selection
+- Instances: Fix for instance details auto refresh resetting history pagination
+- Integrations: Fix for Integration: Edit dialog clearing host, username, & password fields on authentication failure
+- Integrations: Fix for issue with display of Group & Cloud Integration scoping
+- Load Balancers: F5: Fix for adding F5 Load balancer with SSL configured from instance scale tab
+- Load Balancers: F5: Fix for editing F5 Load balancer settings from instance scale tab
+- Logs: Fix for date filters
+- Logs: Fix for log availability timeframe setting not applying
+- Logs: Fix for page size when using log level filter
+- Networking: Security Groups: Fix for ICMP rule requiring port
+- Nutanix: Fix for plan assignment on Instances and associated VM's for convert to managed
+- Nutanix: Fix for Windows unattend.xml DNS settings
+- Nutanix: Windows unattend.xml forced flag corrected to force
+- OTC: Fix for OTC provisioning not surfacing failures
+- Pricing: Fix for OracleVM plans issue with incorrect cores
+- Pricing: Fix for price comparison missing some expected cloud prices
+- Pricing: Fix for tenant Plan visibility
+- Provisioning: /morpheus directory perms created by Agent Install now set to drwxrwxr-x
+- Provisioning: Fix for Load Balancer not retaining settings in instance wizard
+- Provisioning: Fix for overzealous enforcement of min ram setting on custom Plans
+- Provisioning: Fix for scaling down not cleaning up environment variables
+- SCVMM: Fix for Resource Pool input styling
+- SCVMM: Fix for Network Group Validation error
+- SCVMM: Fix for VHD/VHDX in node type dropdown
+- Storage: Fix for storage bucket/shares input validation
+- Tenants: Fix for inability to delete tenants with IP pools in use
+- UCS: Fix for UCS cloud credentials not working on add, only edit
+- User Settings: Fix for Default Cloud selection displaying clouds in groups not accessible to user
+- Users: Fix for Bearer token expiration
+- VCD: Fix for provisioning when using a synced Image from non-morpheus generated vCD catalogue.
+- VCD: Fix for uploading Images over 1 GB
+- VCD: Network DNS settings now updated upon cloud sync
+- VCD: Removed Hostname value in discovered vm's detail view. This was set to machine name previously as Hostname is not avilable via vcd cloud sync.
+- Veeam: Fix for Veeam backup restores not working for existing jobs
+- VMware: Fix for VMware Docker Host creation when cloud is scoped to a Resource Pool
+- VMware: Fix for VMware reconfigure listing duplicate storage controllers
+- Workflows: Fix for executing workflows on Hosts

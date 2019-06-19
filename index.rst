@@ -3,7 +3,8 @@ Morpheus Documentation
 ======================
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 3
+   :caption: Morpheus UI
 
    getting_started/getting_started
    provisioning/provisioning
@@ -16,6 +17,31 @@ Morpheus Documentation
    services/services
    integration_guides/integration_guides
    troubleshooting/troubleshooting
-   release_notes/release_notes
+
+
+.. toctree::
+   :maxdepth: 3
+   :caption: Morpheus CLI
+
+   cli/gettingStarted
+   cli/setupAppliance
+   cli/instances
+   cli/shell
+   cli/commands
+
+.. toctree::
+   :maxdepth: 3
+   :caption: Morpheus API
+
+   api/intro
+   api/requests
+
+.. toctree::
+   :maxdepth: 3
+   :caption: Release Notes
+
+   release_notes/current.rst
+   release_notes/previousReleases.rst
+
 
 .. |morpheus| replace:: Morpheus

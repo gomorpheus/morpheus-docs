@@ -1,5 +1,5 @@
 Upgrading
-=========
+==========
 
 |morpheus| provides a very simple and convenient upgrade process. In
 most cases it is simply a matter of installing the new package on top of
@@ -35,9 +35,12 @@ different.
 
 .. code-block:: bash
 
-  sudo rpm -U morpheus-appliance-x.x.x-1.x86_64.rpm
+  sudo rpm -Uhv morpheus-appliance-x.x.x-1.x86_64.rpm
   sudo morpheus-ctl stop morpheus-ui
   sudo morpheus-ctl reconfigure
   sudo morpheus-ctl start morpheus-ui
 
 .. TIP:: Sometimes it may be necessary to restart all appliance services on the host. In order to do this simply type ``sudo morpheus-ctl restart``. This will restart ALL services.
+
+.. include:: ssl-import.rst
+.. include:: wars.rst

@@ -18,7 +18,14 @@ Github/Git Repo
 
 * To use .tf files from a Git repo a Git or Github integration needs to be configured in `Administration - Integrations`. If one is not configured .tf or .tf.json files can be manually added to Terraform App Blueprints.
 
-.. IMPORTANT:: In |morpheus| versions 3.3.0 and 3.3.1 VMware cloud types are supported for Terraform App provisioning targets. Additional clouds will be available in later releases.
+Supported App Provisioning Targets
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+* VMware
+* AWS
+* Oracle Cloud
+
+.. NOTE::  Additional clouds will be available in later releases.
+
 
 Terraform Installation
 ^^^^^^^^^^^^^^^^^^^^^^

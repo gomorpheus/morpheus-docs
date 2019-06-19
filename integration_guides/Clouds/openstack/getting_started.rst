@@ -4,7 +4,44 @@ Getting Started
 
 Adding an Openstack cloud to |morpheus| is one of the simpler cloud integrations to get started with. First go to the ``Infrastructure -> Clouds`` section and click add cloud. From here there are several options including Metapod, Helion, and general Openstack. Any of these options will actually work and for the most part the branded Openstack options are represented to make it clearer to the user as to the capabilities of |morpheus| .
 
-.. update image:: /images/openstack/add_cloud.png
+NAME
+ Internal name for the Cloud in |morpheus|
+CODE
+  Short code used for api and variables (Optional)
+LOCATION
+  Can be used to specify the location of the Cloud or add a description. (Optional)
+VISIBILITY
+ Determines Tenant visibility for the Cloud.
+   * Private: Access to the Cloud is limited to the assigned Tenant (Master Tenant by default)
+   * Public: Access to the Cloud can be configured for Tenants in their Tenant Role permissions.
+TENANT
+  Assigned Tenant when VISIBILITY is set to Private.
+Enabled
+  When unchecked, the cloud will not sync and is not accessible for provisioning actions.
+IDENTITY API URL
+  v2.0 or v3 Identity endpoint.
+DOMAIN ID
+  For `Default` domains, Default can be used. For other domain the Domain ID must be entered, not the Domain Name.
+PROJECT
+  Target project
+USERNAME
+  Service Username
+PASSWORD
+  Service user password
+OS VERSION
+  Select Openstack Version.
+IMAGE FORMAT
+  Select QCOW2, RAW or VMDK Image Type
+LB TYPE
+  Select LB Type for Openstack LB syncing and creation
+ Inventory Existing Instances
+  Select for |morpheus| to discover and sync existing VM's
+ Enable Hypervisor Console
+  Hypervisor console support for openstack currently only supports novnc. Be sure the novnc proxy is configured properly in your openstack environment. When disabled |morpheus| will use ssh and rdp for console conneciton (vm/host credentials required)
+
+.. include:: /integration_guides/advanced_options.rst
+
+image:: /images/openstack/add_cloud.png
 
 .. caption="Figure 1: ", title="Add Openstack Cloud form", alt="Add Openstack Cloud form"]
 

@@ -22,6 +22,8 @@ Features
 
 |morpheus| can provide a single pane of glass and self-service portal for managing multiple Nutanix Clusters and allowing the seamless deployment of applications.
 
+.. Note:: Prism Central is not currently supported
+
 Getting Started
 ^^^^^^^^^^^^^^^^
 
@@ -41,7 +43,7 @@ PASSWORD
 Inventory Existing Instances
   If enabled, existing Virtual Machines will be inventoried and appear as unmanaged Virtual Machines in |morpheus| .
 
-.. .. include:: /integration_guides/advanced_options.rst
+.. include:: /integration_guides/advanced_options.rst
 
 Service Plans
 ^^^^^^^^^^^^^^

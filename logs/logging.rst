@@ -149,3 +149,31 @@ The final log type that may require export is the |morpheus| Activity log. This 
 Once you see the ASCI art show up you will be able to log back into the User Interface. A new audit file will have been created called audit.log and will found in the default |morpheus| log path which is ``/var/log/morpheus/morpheus-ui/``
 
 Instead of writing the output to a logile, you could create an Appender definition for your SIEM audit database product
+
+
+morpheus-ssl nginx logs
+------------------------
+
+.. NOTE:: Morpheus does not put a logrotate in for Morpheus-ssl access logs
+
+svlogd will only rotate the current file, nginx is setup to write the access logs to separate files and not stdout.
+
+Implementation of a log rotate is left up to up to end users for files outside of the services.  This is done in case end users have a log management solution.
+
+
+Below is what a suggested configuration looks like for the file ``/etc/logrotate.d/morpheus-nginx``:
+
+     .. code-block:: bash
+
+       /var/log/morpheus/nginx/morpheus*access.log {
+               daily
+               rotate 14
+               compress
+               delaycompress
+               missingok
+               notifempty
+               create 644 morpheus-app morpheus-app
+               postrotate
+                       [ ! -f /var/run/morpheus/nginx/nginx.pid ] || kill -USR1 `cat /var/run/morpheus/nginx/nginx.pid`
+               endscript
+       }

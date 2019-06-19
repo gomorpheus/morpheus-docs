@@ -3,9 +3,20 @@ RHEL
 
 To get started installing |morpheus| on RHEL 7 a few prerequisite items are required.
 
+#. Configure firewalld to allow access from users on port 80 or 443 (Or remove firewall if not required).
+#. Make sure the machine is self resolvable to its own hostname.
+#. For RHEL, In order for the guacamole service (remote console) to properly install some additional optional repositories first need added.
+
+   *  **RHEL 7.x Amazon:** ``yum-config-manager --enable rhui-REGION-rhel-server-optional``
+   *  **RHEL 7.x:** ``yum-config-manager --enable rhel-7-server-optional-rpms``
+
+   .. note:: For Amazon users a redhat subscription is not required if the appropriate yum REGION repository is added instead as demonstrated above.
+
+.. IMPORTANT:: If the machine is unable to resolve its own hostname ``nslookup hostname`` some installation commands will be unable to verify service health during installation and fail.
+
 The RedHat Enterprise Linux 7 server needs to be registered and activated with Redhat subscription. The server optional rpms repo needs to be enabled as well.
 
-To check if the server has been actived please run the subscription-manager version. Subscription manager will return the version plus the python depency version.
+To check if the server has been activated please run the subscription-manager version. Subscription manager will return the version plus the python dependency version.
 
 If the server has not been registered and activated then the subscription manager version will return the below message.
 

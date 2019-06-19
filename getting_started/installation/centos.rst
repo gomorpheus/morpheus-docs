@@ -1,19 +1,14 @@
 CentOS
 ------
 
-To get started installing |morpheus| on CentOS/RHEL a few preparatory items should be addressed first.
+To get started installing |morpheus| on CentOS a few preparatory items should be addressed first.
 
 #. Configure firewalld to allow access from users on port 80 or 443 (Or remove firewall if not required).
 #. Make sure the machine is self resolvable to its own hostname.
-#. For RHEL: In order for the guacamole service (remote console) to properly install some additional optional repositories first need added.
-
-   *  **RHEL 7.x Amazon:** ``yum-config-manager --enable rhui-REGION-rhel-server-optional``
-   *  **RHEL 7.x:** ``yum-config-manager --enable rhel-7-server-optional-rpms``
-   * For Amazon users a redhat subscription is not required if the appropriate yum REGION repository is added instead as demonstrated above.
 
    .. IMPORTANT:: If the machine is unable to resolve its own hostname ``nslookup hostname`` some installation commands will be unable to verify service health during installation and fail.
 
-#. Next simply download the relevant ``.rpm`` package for installation. This package can be acquired from your account rep or via a free trial request from |morpheushub|.
+#. Next simply download the relevant ``.rpm`` package for installation. This package can be acquired from https://morpheushub.com downloads section.
 
    .. TIP:: Use the ``wget`` command to directly download the package to your appliance server. i.e. ``wget https://downloads.morpheusdata.com/path/to/package.rpm``
 

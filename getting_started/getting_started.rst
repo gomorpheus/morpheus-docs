@@ -11,5 +11,6 @@ Getting Started
   upgrading/upgrading.rst
   advanced/advanced_configuration.rst
   ha/ha_setup.rst
-  cli/cli_master.rst
   agent/morpheus_agent.rst
+  discovery/morpheus_discovery.rst
+  morpheus-ctl/morpheus-ctl.rst

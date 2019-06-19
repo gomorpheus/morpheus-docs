@@ -2,24 +2,30 @@ Commvault
 ---------
 
 Adding Commvault Integration
-^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-#. Navigate to `Administration -> Backups`
-#. Expand the Commvault section
-#. Enable the integration
+#. Navigate to `Backups -> Services`
+#. Select :guilabel:`+ ADD`
+#. Select Commvault
 #. Fill in the following:
 
-    Enabled
+   Name
+      Name of the Integration in |morpheus|
+   Enabled
       Enable the Commvault integration
-    Default Backup Provider
-      Sets Commvault as the Default Backup Provider in |morpheus| . Backup Providers can be configured per Instance backup settings.
-    Host
+   Host
       IP or Hostname of the Commvault server.
-    Port
-      Port configured to access the
-    Commvault server Username
+   Port
+      Port number configured to access the Commvault server
+   Username
       Admin Username for Commvault
-    Password
-      Password for Username provided (encrypted in |morpheus| ).
+   Password
+      Password for Username provided (encrypted in |morpheus|).
+   Visibility
+      Sets Multi-Tenant Visibility
+        Private
+          Only Available to the Tenant the Integration is added by
+        Public
+          Available to Sub-Tenants (master tenant option only)
 
 #. :guilabel:`SAVE`
