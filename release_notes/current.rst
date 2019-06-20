@@ -11,23 +11,28 @@ Enhanced Security Group Management
 
 Cloud Security Groups can now be fully managed in Morpheus! AWS, Azure, Openstack, Huawei & Open Telekom Cloud Security Group and Rules sync and can be created, edited and deleted directly in |morpheus|.
 
-New Storage Integrations & Policy
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+New Storage Integrations & Policies
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Huawei OBS, Huawei SFS, Open Telekom Cloud & Huawei OBS & SFS Storage Server Integrations added, including OBS Bucket and SFS File Share creation and management. These are accompanied by new Storage Server Storage Quota Policy, which also governs existing Storage Integrations.
+Huawei OBS, Huawei SFS, Open Telekom Cloud & Huawei OBS & SFS Storage Server Integrations added, including OBS Bucket and SFS File Share creation and management. These are accompanied by a new Storage Server Storage Quota Policy, which also governs existing Storage Integrations.
 
 Windows File Deployments
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
 Previously only available for Linux, ``Provisioning -> Deployments`` now support Windows Operating Systems! Windows Instances can now utilize the ``DEPLOY`` feature for local or source controlled File Deployments, Upgrades and Rollbacks.
 
-Cherwell
-^^^^^^^^
+Infoblox DNS Expansion
+^^^^^^^^^^^^^^^^^^^^^^
+
+In addition to the existing IPAM integration associated DNS record creation, Infoblox Integrations now can be set as the DNS Provider on Clouds and Groups, allowing automated DNS record creation in Infoblox for clouds not utilizing IPAM.
+
+Cherwell Additions
+^^^^^^^^^^^^^^^^^^
 
 The Cherwell Integration has been expanded to support dynamic business object creation and adds additional field configuration options for change requests
 
-Python Tasks
-^^^^^^^^^^^^
+Full Python Tasks
+^^^^^^^^^^^^^^^^^
 
 ``Python Script (jython)`` updated to ``Python Script``, removing the limitations of jython tasks. Please ensure Python is installed on appliance app nodes if you are using Python Tasks.
 
@@ -36,15 +41,17 @@ Unattend Agent Install mode
 
 The |morpheus| Windows Agent can now be installed via the unattend.xml during Guest Customizations in VMware and vCloud Director clouds. To enabled, set Agent Install Mode to ``Cloud-init / Unattend (when available)`` in target Cloud(s) Advanced Settings.
 
+VMware Extra Options
+^^^^^^^^^^^^^^^^^^^^
+
+Extra Options key/value fields added to VMware Node Types for setting Advanced Options on VMware VM's.``*``
+
 Ubuntu 18.04 Support for Morpheus App Nodes
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 v3.6.3 adds native support for Installing |morpheus| on Ubuntu 18.04, in addition to Ubuntu 16.04. Ubuntu 14.04 has also been removed from recommended versions.
 
-VMware Extra Options
-^^^^^^^^^^^^^^^^^^^^
 
-Extra Options key/value fields added to VMware Node Types for setting Advanced Options on VMware VM's.
 
 New Features
 ------------
@@ -54,7 +61,7 @@ New Features
 - API & CLI: Security Groups updated to support Security Group Rule management
 - API & CLI: vCloud Director Datastore ID added to Billing Data
 - Appliance: Expired license notification added
-- Appliance: Removed requirement for multi-app node configurations to use shared storage for Morpheus Agent yum repo.
+- Appliance: Removed requirement for multi-app node configurations to use shared storage for Morpheus Agent yum repo.``*``
 - Apps: AWS Scale Groups created from Cloud Formation and Terraform Blueprints are now automatically created in |morpheus|
 - Apps: Retry added for ARM App resource updates
 - Apps: Security Groups created from Cloud Formation and Terraform Blueprints are now automatically associated with the App
@@ -121,6 +128,7 @@ Fixes
 - API & CLI: Amazon: Add Network: Fix for issue creating networks due to ``vpcId`` error
 - API/CLI: Fix for AWS Provisioning Issue when image disk size is greater than Plan disk size
 - API & CLI: Fix for Oracle VM provisioning failures when using |morpheus| API & CLI
+- API & CLI: Fixes for cloning Instances with Custom Options, VMware clones potentially triggering ovf exports``*``
 - CLI: networks: Fix for setting Domain on Networks via |morpheus| CLI Shell
 - AWS:  Fix for security groups not filtering by VPC
 - Azure: Fix for creating |morpheus| Docker Hosts with custom Image
@@ -169,7 +177,7 @@ Fixes
 - Security: Fix for potential server side injection vulnerability
 - Tasks: Fix for Chef Tasks -> Chef Run execution
 - Tasks: Fix for some Results not working for Local Shell Script tasks
-- Tasks: Fix for Local Shell Script tasks permissions issue (3.6.3-2)
+- Tasks: Fix for Local Shell Script tasks permissions issue ``*``
 - Tasks: Fix for SSH task auth when using Keys
 - Tenant:  Fix for reconfiguring Openstack Instance in subtenant not applying new flavor
 - Tenant: Fix for deleting Tenants with existing custom Environments
@@ -179,7 +187,7 @@ Fixes
 - vCloud Director: Fix for creating a vCloud Director Docker Host with custom image using default image instead
 - vCloud Director: Fix for datastores recreated on cloud sync error
 - vCloud Director: Fix for Discovered VM Plan matching not using Plans with `Custom Cores` checked and `Custom Memory` not checked on Plan config
-- vCloud Director: Fix for Provisioning issue when using Isolated Networks (3.6.3-2)
+- vCloud Director: Fix for Provisioning issue when using Isolated Networks``*``
 - vCloud Director: Fix for Windows Agent install when guest customization takes longer then 5 minutes
 - vCloud Director: |morpheus| will now automatically remove ``/api`` or ``/api/`` if added to end of vCloud Director integration url
 - Virtual Images: Fix for Master Tenant Private Images with no Tenant assigned being listed in Sub-Tenants Virtual Images section
@@ -188,6 +196,7 @@ Fixes
 - VMware: Fix for additional networks not defaulting type to ``vmxnet3``
 - VMware: Fix for incorrect Operating System mappings on discovered Virtual Machines
 - VMware: Fix for power state showing as running on Managed VM's that have been removed from vCenter
+- VMware: Fix for unattend Agent Install mode on Windows 2008/R2*
 
 Security Vulnerabilities Remediated
 -----------------------------------
@@ -202,3 +211,5 @@ Security Vulnerabilities Remediated
 - CVE-2013-5679
 - CVE-2018-11771
 - CVE-2019-3778
+
+``* Included in 3.6.3-2 packages``
