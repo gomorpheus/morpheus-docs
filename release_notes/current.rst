@@ -44,7 +44,7 @@ The |morpheus| Windows Agent can now be installed via the unattend.xml during Gu
 VMware Extra Options
 ^^^^^^^^^^^^^^^^^^^^
 
-Extra Options key/value fields added to VMware Node Types for setting Advanced Options on VMware VM's.``*``
+Extra Options key/value fields added to VMware Node Types for setting Advanced Options on VMware VM's. ``*``
 
 Ubuntu 18.04 Support for Morpheus App Nodes
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -61,7 +61,7 @@ New Features
 - API & CLI: Security Groups updated to support Security Group Rule management
 - API & CLI: vCloud Director Datastore ID added to Billing Data
 - Appliance: Expired license notification added
-- Appliance: Removed requirement for multi-app node configurations to use shared storage for Morpheus Agent yum repo.``*``
+- Appliance: Removed requirement for multi-app node configurations to use shared storage for Morpheus Agent yum repo. ``*``
 - Apps: AWS Scale Groups created from Cloud Formation and Terraform Blueprints are now automatically created in |morpheus|
 - Apps: Retry added for ARM App resource updates
 - Apps: Security Groups created from Cloud Formation and Terraform Blueprints are now automatically associated with the App
@@ -104,8 +104,8 @@ System Updates
 --------------
 
 - `runit` updated to to 4.3.0. Services such as nginx will now restart when config changes are detected during |morpheus| reconfigures
-- Added new MySQL JDBC override string for morpheus/rb using ```mysql['mysql_url_overide']```
-- Added setting for `SQLTransientConnectionException` in JDBC, the failover settings can be modified using the setting ```mysql['mysql_failover_params']```
+- Added new MySQL JDBC override string for morpheus/rb using ``mysql['mysql_url_overide']``
+- Added setting for `SQLTransientConnectionException` in JDBC, the failover settings can be modified using the setting ``mysql['mysql_failover_params']``
 - Database: Database Level Encryption upgraded to AES-256
 - Fixed post install script that was prepping for ElasticSearch upgrade on a new install
 - Fixed restart of nginx and guac when the configuration changes.
@@ -128,7 +128,7 @@ Fixes
 - API & CLI: Amazon: Add Network: Fix for issue creating networks due to ``vpcId`` error
 - API/CLI: Fix for AWS Provisioning Issue when image disk size is greater than Plan disk size
 - API & CLI: Fix for Oracle VM provisioning failures when using |morpheus| API & CLI
-- API & CLI: Fixes for cloning Instances with Custom Options, VMware clones potentially triggering ovf exports``*``
+- API & CLI: Fixes for cloning Instances with Custom Options, VMware clones potentially triggering ovf exports ``*``
 - CLI: networks: Fix for setting Domain on Networks via |morpheus| CLI Shell
 - AWS:  Fix for security groups not filtering by VPC
 - Azure: Fix for creating |morpheus| Docker Hosts with custom Image
@@ -187,7 +187,7 @@ Fixes
 - vCloud Director: Fix for creating a vCloud Director Docker Host with custom image using default image instead
 - vCloud Director: Fix for datastores recreated on cloud sync error
 - vCloud Director: Fix for Discovered VM Plan matching not using Plans with `Custom Cores` checked and `Custom Memory` not checked on Plan config
-- vCloud Director: Fix for Provisioning issue when using Isolated Networks``*``
+- vCloud Director: Fix for Provisioning issue when using Isolated Networks ``*``
 - vCloud Director: Fix for Windows Agent install when guest customization takes longer then 5 minutes
 - vCloud Director: |morpheus| will now automatically remove ``/api`` or ``/api/`` if added to end of vCloud Director integration url
 - Virtual Images: Fix for Master Tenant Private Images with no Tenant assigned being listed in Sub-Tenants Virtual Images section
