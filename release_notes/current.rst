@@ -11,10 +11,15 @@ Enhanced Security Group Management
 
 Cloud Security Groups can now be fully managed in Morpheus! AWS, Azure, Openstack, Huawei & Open Telekom Cloud Security Group and Rules sync and can be created, edited and deleted directly in |morpheus|.
 
-Windows Deployments
-^^^^^^^^^^^^^^^^^^^
+New Storage Integrations & Policy
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Previously only available for Linux, Provisioning -> Deployments now support Windows Operating Systems!
+Huawei OBS, Huawei SFS, Open Telekom Cloud & Huawei OBS & SFS Storage Server Integrations added, including OBS Bucket and SFS File Share creation and management. These are accompanied by new Storage Server Storage Quota Policy, which also governs existing Storage Integrations.
+
+Windows File Deployments
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+Previously only available for Linux, ``Provisioning -> Deployments`` now support Windows Operating Systems! Windows Instances can now utilize the ``DEPLOY`` feature for local or source controlled File Deployments, Upgrades and Rollbacks.
 
 Cherwell
 ^^^^^^^^
@@ -36,6 +41,11 @@ Ubuntu 18.04 Support for Morpheus App Nodes
 
 v3.6.3 adds native support for Installing |morpheus| on Ubuntu 18.04, in addition to Ubuntu 16.04. Ubuntu 14.04 has also been removed from recommended versions.
 
+VMware Extra Options
+^^^^^^^^^^^^^^^^^^^^
+
+Extra Options key/value fields added to VMware Node Types for setting Advanced Options on VMware VM's.
+
 New Features
 ------------
 
@@ -44,6 +54,7 @@ New Features
 - API & CLI: Security Groups updated to support Security Group Rule management
 - API & CLI: vCloud Director Datastore ID added to Billing Data
 - Appliance: Expired license notification added
+- Appliance: Removed requirement for multi-app node configurations to use shared storage for Morpheus Agent yum repo.
 - Apps: AWS Scale Groups created from Cloud Formation and Terraform Blueprints are now automatically created in |morpheus|
 - Apps: Retry added for ARM App resource updates
 - Apps: Security Groups created from Cloud Formation and Terraform Blueprints are now automatically associated with the App
@@ -66,7 +77,7 @@ New Features
 - Load Balancers: Tenant assignment added
 - Network: Routers: Tenant Permissions added to Routers
 - OpenStack: `REGION` scope option added to Openstack Cloud configurations
-- Policies: Role scope option added for Policies. When a policy is scoped to a Role, the Policy will apply to all users with that Role. NOTE: For max resource policies, resource totals are calculated and enforced in aggregate, not per user.
+- Policies: Role scope option added for Policies with flag to enforced in aggregate or per user.
 - Policies: Storage Server Storage Quota Policy type added
 - Provisioning: Error messages now included in Failed provision email notifications
 - Provisioning: Instance and App wizards now can create multiple load balancer ports
@@ -78,8 +89,8 @@ New Features
 - Storage: Servers: Huawei OBS, Huawei SFS, Open Telekom OBS, Open Telekom SFS Integrations added
 - vCloud Director: Hypervisor Console support added
 - vCloud Director: Routed Network Support Added
-- vCloud Director: Windows Agent Install via guest customizations unattend.xml added. NOTE: Requires ``Agent Install Mode`` set to ``Cloud-init / Unattend (when available)`` in vCloud Director Cloud(s) Advanced Options
-- VMware: Windows Agent Install via guest customizations unattend.xml added. NOTE: Requires ``Agent Install Mode`` set to ``Cloud-init / Unattend (when available)`` in VMware Cloud(s) Advanced Options
+- vCloud Director: Windows Agent Install via guest customizations unattend.xml added. NOTE: Requires ``Agent Install Mode`` set to ``Cloud-init / Unattend (when available)`` in vCloud Director Cloud(s) Advanced Options (Windows 2008 support added in 3.6.3-2)
+- VMware: Windows Agent Install via guest customizations unattend.xml added. NOTE: Requires ``Agent Install Mode`` set to ``Cloud-init / Unattend (when available)`` in VMware Cloud(s) Advanced Options (Windows 2008 support added in 3.6.3-2)
 - VMware: Windows Agent Install: Timeout and Retries added to reachability command to improve Windows Agent Install via VMware Tools Guest Exec
 
 System Updates
@@ -118,7 +129,7 @@ Fixes
 - Backups: Unscheduled Backups Jobs are no longer listed on Backups Summary page
 - Commvault: Fix for Backups tab in Provisioning Wizard showing Nutanix Snapshot instead of Commvault when Commvault is set to Nutanix Cloud Backup Provider
 - Console: Fix for in-page Hypervisor Console window height becoming progressively smaller on page refresh
-- Dashboard: Fix for Dashboard showing old name after an Instance is renamed
+- Dashboard: Fix for displaying old Instance name on the Dashboard after an Instance is renamed
 - Database: Fix for default encoding not set to utf-8
 - General: Made it more  clear on the summary page which jobs are not scheduled to running
 - Guidance: Fix for shutdown discovery service errors
@@ -156,8 +167,9 @@ Fixes
 - SCVMM: Fix for |morpheus| defaulting to the same target Host when Host is not specified during provisioning.
 - Security Groups: Fix for duplicate AWS Security groups being displayed in |morpheus|
 - Security: Fix for potential server side injection vulnerability
-- Tasks:  Fix for Result type not working for task type "Local Shell Script"
 - Tasks: Fix for Chef Tasks -> Chef Run execution
+- Tasks: Fix for some Results not working for Local Shell Script tasks
+- Tasks: Fix for Local Shell Script tasks permissions issue (3.6.3-2)
 - Tasks: Fix for SSH task auth when using Keys
 - Tenant:  Fix for reconfiguring Openstack Instance in subtenant not applying new flavor
 - Tenant: Fix for deleting Tenants with existing custom Environments
@@ -167,6 +179,7 @@ Fixes
 - vCloud Director: Fix for creating a vCloud Director Docker Host with custom image using default image instead
 - vCloud Director: Fix for datastores recreated on cloud sync error
 - vCloud Director: Fix for Discovered VM Plan matching not using Plans with `Custom Cores` checked and `Custom Memory` not checked on Plan config
+- vCloud Director: Fix for Provisioning issue when using Isolated Networks (3.6.3-2)
 - vCloud Director: Fix for Windows Agent install when guest customization takes longer then 5 minutes
 - vCloud Director: |morpheus| will now automatically remove ``/api`` or ``/api/`` if added to end of vCloud Director integration url
 - Virtual Images: Fix for Master Tenant Private Images with no Tenant assigned being listed in Sub-Tenants Virtual Images section
