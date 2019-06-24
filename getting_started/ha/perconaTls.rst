@@ -23,62 +23,56 @@ Add Percona Repo
 
    .. code-block:: bash
 
-    sudo yum install http://www.percona.com/downloads/percona-release/redhat/0.1-4/percona-release-0.1-4.noarch.rpm
+    [root]# wget https://www.percona.com/downloads/RPM-GPG-KEY-percona && rpm --import RPM-GPG-KEY-percona
 
-#. Check the repo by running the below command.
-
-   .. code-block:: bash
-
-    sudo yum list | grep percona
+    [root]# yum install -y https://repo.percona.com/yum/percona-release-latest.noarch.rpm
 
 #. The below commands will clean the repos and update the server.
 
    .. code-block:: bash
 
-    sudo yum clean all
-    sudo yum update -y --skip-broken
+    [root]# yum clean all
+    [root]# yum update -y --skip-broken
 
 Installing Percona XtraDB Cluster
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-#. The below command will install the Percona XtraDB Cluster software and it’s dependences.
+#. Install the Percona XtraDB Cluster software and it’s dependences.
 
    .. code-block:: bash
 
-    sudo yum install Percona-XtraDB-Cluster-57
+    [root]# yum install -y Percona-XtraDB-Cluster-57
 
-   .. NOTE:: During the installation you will need to Accept the Percona PGP key to install the software.
-
-#. Next we need enable the mysql service so that the service started at boot.
+#. Enable the mysql service so that the service started at boot.
 
    .. code-block:: bash
 
-    sudo systemctl enable mysql
+    [root]# systemctl enable mysql
 
-#. Next we need to start mysql
-
-   .. code-block:: bash
-
-    sudo systemctl start mysql
-
-#. Next we will log into the mysql server and set a new password. To get the temporary root mysql password you will need to run the below command.The command will print the password to the screen. Copy the password.
+#. Start mysql
 
    .. code-block:: bash
 
-      sudo grep 'temporary password' /var/log/mysqld.log
+    [root]# systemctl start mysql
+
+#. Log into the mysql server and set a new password. To get the temporary root mysql password you will need to run the below command.The command will print the password to the screen. Copy the password.
+
+   .. code-block:: bash
+
+      [root]# grep 'temporary password' /var/log/mysqld.log
 
 #. Login to mysql
 
    .. code-block:: bash
 
-    mysql -u root -p
-    password: `enter password copied above`
+    [root]# mysql -u root -p
+      password: `enter password copied above`
 
 #. Change the root user password to the mysql db
 
    .. code-block:: bash
 
-    ALTER USER 'root'@'localhost' IDENTIFIED BY 'rootPassword';
+    mysql> ALTER USER 'root'@'localhost' IDENTIFIED BY 'rootPassword';
 
 #. Create the sstuser user and grant the permissions.
 
@@ -100,9 +94,9 @@ Installing Percona XtraDB Cluster
 
     mysql> exit
     Bye
-    $ sudo systemctl stop mysql.service
+    [root]# systemctl stop mysql.service
 
-#. Now install Percona on to the other nodes using the same steps.
+#. Install Percona on to the other nodes using the same steps.
 
 Once the service is stopped on all nodes move onto the next step.
 
@@ -115,7 +109,7 @@ Node 01:
 
    .. code-block:: bash
 
-      $ sudo vi /etc/my.cnf
+      [root]# vi /etc/my.cnf
 
    .. code-block:: bash
 
@@ -144,7 +138,7 @@ Node 02
 
    .. code-block:: bash
 
-      $ sudo vi /etc/my.cnf
+      $ [root]# vi /etc/my.cnf
 
    .. code-block:: bash
 
@@ -174,7 +168,7 @@ Node 03
 
    .. code-block:: bash
 
-      $ sudo vi /etc/my.cnf
+      $ [root]# vi /etc/my.cnf
 
    .. code-block:: bash
 
@@ -217,7 +211,7 @@ Bootstrap Node 01
 
    .. NOTE:: The mysql service will start during the bootstrap.
 
-   .. NOTE:: Startup failures are commonly caused by misconfigured ``/etc/my.cnf`` files. Also verify ``safe_to_bootstrap`` is set to ``1`` on Node 01.
+   .. NOTE:: Startup failures are commonly caused by misconfigured ``/etc/my.cnf`` files. Also verify ``safe_to_bootstrap`` is set to ``1`` on Node 01 in ``/var/lib/mysql/grastate.dat``.
 
 Configure Morpheus Database and User
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -252,6 +246,8 @@ Login to mysql on Node 01:
 
     .. important:: If you grant privileges to the morpheusDbUser to only the morpheusdb database, you will also need to GRANT SELECT, PROCESS, SHOW DATABASES, SUPER ON PRIVILEGES to the morpheusDbUser on *.* for the Appliance Health service.
 
+    mysql> exit
+
 Copy SSL Files to other nodes
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -276,7 +272,7 @@ Start the Remaining Nodes
 
    .. code-block:: bash
 
-    sudo systemctl start mysql.service
+    [root]# systemctl start mysql.service
 
    The services will automatically join the cluster using the sstuser we created earlier.
 
@@ -307,4 +303,37 @@ If you are unable to login to mysql from an app node, ensure credentials are cor
 
 To validate network accessibility, use telnet to verify app node can reach db nodes on 3306: ``telnet 10.30.20.10 3306``
 
-#. All done!
+
+.. selinux
+.. ^^^^^^^
+
+    .. code-block:: bash
+
+    semanage port -m -t mysqld_port_t -p tcp 4444
+    semanage port -m -t mysqld_port_t -p tcp 4567
+    semanage port -a -t mysqld_port_t -p tcp 4568
+
+
+
+    module PXC 1.0;
+    require {
+            type unconfined_t;
+            type mysqld_t;
+            type unconfined_service_t;
+            type tmp_t;
+            type sysctl_net_t;
+            type kernel_t;
+            type mysqld_safe_t;
+            class process { getattr setpgid };
+            class unix_stream_socket connectto;
+            class system module_request;
+            class file { getattr open read write };
+            class dir search;
+    }
+    #============= mysqld_t ==============
+    allow mysqld_t kernel_t:system module_request;
+    allow mysqld_t self:process { getattr setpgid };
+    allow mysqld_t self:unix_stream_socket connectto;
+    allow mysqld_t sysctl_net_t:dir search;
+    allow mysqld_t sysctl_net_t:file { getattr open read };
+    allow mysqld_t tmp_t:file write;
