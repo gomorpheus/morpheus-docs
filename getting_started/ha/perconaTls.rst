@@ -16,6 +16,53 @@ Percona nodes.
 - 4567
 - 4568
 
+Configure SElinux
+^^^^^^^^^^^^^^^^^
+
+When SELinux is set to ``Enforcing``, by default it will block Percona Cluster communication.
+
+To allow Percona XtraDB Cluster functionality when SELinux is ``Enforcing``, run the following on each Database Node:
+
+#. Install SELinux utilities
+
+   .. code-block:: bash
+
+    [root]# yum install -y policycoreutils-python.x86_64
+
+#. Configure Percona ports for SELinux:
+
+    .. code-block:: bash
+
+     [root]# semanage port -m -t mysqld_port_t -p tcp 4444
+     [root]# semanage port -m -t mysqld_port_t -p tcp 4567
+     [root]# semanage port -a -t mysqld_port_t -p tcp 4568
+
+#. Create the policy file PXC.te
+
+    .. code-block:: bash
+
+      [root]# vi PXC.te
+
+      module PXC 1.0;
+
+      require {
+              type mysqld_t;
+              class process setpgid;
+              class unix_stream_socket connectto;
+      }
+
+      #============= mysqld_t ==============
+      allow mysqld_t self:process setpgid;
+
+#. Compile and load the SELinux policy
+
+    .. code-block:: bash
+
+      [root]# checkmodule -M -m -o PXC.mod PXC.te
+      [root]# semodule_package -o PXC.pp -m PXC.mod
+      [root]# semodule -i PXC.pp
+
+
 Add Percona Repo
 ^^^^^^^^^^^^^^^^
 
@@ -119,7 +166,9 @@ Node 01:
       wsrep_provider=/usr/lib64/galera3/libgalera_smm.so
 
       wsrep_cluster_name=morpheusdb-cluster
-      wsrep_cluster_address=gcomm://
+      wsrep_cluster_address=gcomm://10.30.20.10,10.30.20.11,10.30.20.12
+
+      # for wsrep_cluster_address=gcomm://Enter the IP address of the primary node first then remaining nodes. Separating the ip addresses with commas
 
       wsrep_node_name=morpheus-node01
       wsrep_node_address=10.30.20.10
@@ -198,6 +247,7 @@ Node 03
 
 #. Save ``/etc/my.cnf``
 
+
 Bootstrap Node 01
 ^^^^^^^^^^^^^^^^^
 
@@ -240,7 +290,7 @@ Login to mysql on Node 01:
 
    .. code-block:: bash
 
-    mysql> GRANT ALL PRIVILEGES ON *.* TO 'morpheusDbUser'@'%' IDENTIFIED BY 'morpheusDbUserPassword' with grant option;
+    mysql> GRANT ALL PRIVILEGES ON *.* TO 'morpheusDbUser'@'%' IDENTIFIED BY 'morpheusDbUserPassword';
 
     mysql> FLUSH PRIVILEGES;
 
@@ -278,14 +328,30 @@ Start the Remaining Nodes
 
    .. NOTE:: Startup failures are commonly caused by misconfigured /etc/my.cnf files.
 
-Verification
-^^^^^^^^^^^^
 
-#. To verify the cluster, on the master login to mysql and run ``show status like 'wsrep%';``
+Verify Configuration
+^^^^^^^^^^^^^^^^^^^^
+
+#. Verify SELinux is not rejecting any db cluster communication by running the below on all db nodes:
+
+    .. code-block:: bash
+
+       [root@allDbNodes]# grep -i denied /var/log/audit/audit.log | grep mysqld_t
+
+   If there are any results, run the following to update the SELinux Policy:
 
    .. code-block:: bash
 
-     $ mysql -u root -p
+      [root@allDbNodes]# rm -f PXC.*
+      [root@allDbNodes]# grep -i denied /var/log/audit/audit.log | grep mysqld_t | audit2allow -M PXC
+      [root@allDbNodes]# semodule -i PXC.pp
+
+
+#. To verify all nodes joined the cluster, on any db node login to mysql and run ``show status like 'wsrep%';``
+
+   .. code-block:: bash
+
+      [root@anyDbNode]# mysql -u root -p
 
       mysql>  show status like 'wsrep%';
 
@@ -295,45 +361,11 @@ Verification
 
    .. code-block:: bash
 
-    mysql -u morpheusDbUser -p  -h 10.30.20.10
-    mysql -u morpheusDbUser -p  -h 10.30.20.11
-    mysql -u morpheusDbUser -p  -h 10.30.20.12
+      [root@allAppNodes] cd
+      [root@appNode01]# ./mysql -u morpheusDbUser -p  -h 10.30.20.10
+      [root@appNode02]# ./mysql -u morpheusDbUser -p  -h 10.30.20.11
+      [root@appNode03]# ./mysql -u morpheusDbUser -p  -h 10.30.20.12
 
 If you are unable to login to mysql from an app node, ensure credentials are correct, privileges have been granted, and mysql is running.
 
 To validate network accessibility, use telnet to verify app node can reach db nodes on 3306: ``telnet 10.30.20.10 3306``
-
-
-.. selinux
-.. ^^^^^^^
-
-    .. code-block:: bash
-
-    semanage port -m -t mysqld_port_t -p tcp 4444
-    semanage port -m -t mysqld_port_t -p tcp 4567
-    semanage port -a -t mysqld_port_t -p tcp 4568
-
-
-
-    module PXC 1.0;
-    require {
-            type unconfined_t;
-            type mysqld_t;
-            type unconfined_service_t;
-            type tmp_t;
-            type sysctl_net_t;
-            type kernel_t;
-            type mysqld_safe_t;
-            class process { getattr setpgid };
-            class unix_stream_socket connectto;
-            class system module_request;
-            class file { getattr open read write };
-            class dir search;
-    }
-    #============= mysqld_t ==============
-    allow mysqld_t kernel_t:system module_request;
-    allow mysqld_t self:process { getattr setpgid };
-    allow mysqld_t self:unix_stream_socket connectto;
-    allow mysqld_t sysctl_net_t:dir search;
-    allow mysqld_t sysctl_net_t:file { getattr open read };
-    allow mysqld_t tmp_t:file write;
