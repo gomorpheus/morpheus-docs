@@ -18,163 +18,126 @@ The Library section is used to add virtual images as custom instances to the pro
 
 Uploaded or synced images from the virtual images section are added to nodes, a node or multiple nodes are added to layouts, and layouts are added to Instance Types. Scripts and File Templates can be attached to nodes, with phased execution options for scripts.
 
-Instance Types
---------------
+.. tabs::
 
-.. image:: /images/provisioning/library/Types_Library_Morpheus_salt_library_item.png
+   .. tab:: Instance Types
 
-Adding an Instance Type creates a new Library Item category. Multiple layouts can be added to an instance type, and these layout can have different nodes attached. The instance wizard will present the layout options compatible with the selected cloud. If cloud selection is turned off, all layouts will be presented for all cloud types accessible by the user.
+       Instance Types
+       --------------
 
-Name
-  Name of the Instance Type in the Provisioning Library
-Code
-  Useful shortcode for provisioning naming schemes and export reference.
-Description
-  The description of the Instance Type shown in the Provisioning Library. (255 characters max)
-Category
-  For filtering in Instance sections and Provisioning Wizard
+       Adding an Instance Type creates a new Library Item category. Multiple layouts can be added to an instance type, and these layout can have different nodes attached. The instance wizard will present the layout options compatible with the selected cloud. If cloud selection is turned off, all layouts will be presented for all cloud types accessible by the user.
 
-  * Web
-  * SQL
-  * NoSLQ
-  * Apps
-  * Network
-  * Messaging
-  * Cache
-  * OS
-  * Cloud
-  * Utility
+       Name
+         Name of the Instance Type in the Provisioning Library
+       Code
+         Useful shortcode for provisioning naming schemes and export reference.
+       Description
+         The description of the Instance Type shown in the Provisioning Library. (255 characters max)
+       Category
+         For filtering in Instance sections and Provisioning Wizard
 
-Icon
-  Suggested Dimensions: 150 x 51
-Visibility
-  * Private- Only accessibly by assigned Accounts/Tenants
-  * Public- accessible by all Accounts/Tenants
-Environment Prefix
-  Used for exportable environment variables when tying instance types together environment Variables in app contexts. If not specified a name will be generated
-Enable Scaling (Horizontal)
-  Enables load balancer assignment and auto-scaling features
-Supports Deployments
-  Enables deployment features (Requires a data volume be configured on each version. Files will be copied into this location)
+         * Web
+         * SQL
+         * NoSLQ
+         * Apps
+         * Network
+         * Messaging
+         * Cache
+         * OS
+         * Cloud
+         * Utility
 
-Upon saving, this Instance Type will be available in the Provisioning Catalog, per user role access. However we still need to add layouts to the Instance Type, and prior to creating a layout, we will add a node type.
+       Icon
+         Suggested Dimensions: 150 x 51
+       Visibility
+         * Private- Only accessibly by assigned Accounts/Tenants
+         * Public- accessible by all Accounts/Tenants
+       Environment Prefix
+         Used for exportable environment variables when tying instance types together environment Variables in app contexts. If not specified a name will be generated
+       Enable Scaling (Horizontal)
+         Enables load balancer assignment and auto-scaling features
+       Supports Deployments
+         Enables deployment features (Requires a data volume be configured on each version. Files will be copied into this location)
 
-.. NOTE:: Custom Instance Types do not display logs on the instance page. Logs will only show on the VM page.
+       Upon saving, this Instance Type will be available in the Provisioning Catalog, per user role access. However we still need to add layouts to the Instance Type, and prior to creating a layout, we will add a node type.
 
-Node Types
-----------
+    .. tab:: Layouts
 
-.. image:: /images/provisioning/library/salt_node_type.png
+        Layouts
+        -------
 
-The following fields are for all node technology types:
+        .. image::
 
-* Name
-* Short Name
-* Version
-* Category
-* Technology
-  * Alibaba
-  * Amazon
-  * Azure
-  * Docker
-  * ESXi
-  * Fusion
-  * Google
-  * Hyper-V
-  * KVM
-  * Nutanix
-  * OpenStack
-  * Oracle VM
-  * SCVMM
-  * UpCloud
-  * vCloud Director
-  * VMware
-  * Xen
+        - Layouts are attached to Instance types. A Layout can only be attached to a single Instance Type and a single Technology Type.
 
-* Environment Variables
+        - An Instance Type can have one or many Layouts attached to it, allowing for a single Instance Type to work with any Technology Type.
 
-The Options fields will change depending on the Technology option selected.
+        - Node Types are added to Layouts. A Layout can have one or many node types attached to it. Node types can be shared across Layouts of matching Technology Types.
 
-For VM provisioning technology options, select an image from the VM Image dropdown, which is populated from the Virtual Images Section and will include images uploaded into |morpheus|, and synced images from added clouds.
+        .. important:: Once an Instance Type is defined on a Layout and saved, the Instance Type setting on the Layout cannot be changed.
 
-.. NOTE:: Amazon and Azure Marketplace Images can be added in the Virtual Images section for use as node types in custom library items.
+        Layout List view
+        ^^^^^^^^^^^^^^^^
 
-For Docker, type in the name and version of the Docker Image and select the integrated registry.
+        The Layout list view shows all available Instances Types including Name, Version, associated Instance Type and description.
 
-Expose Ports
-  To open port on the node, select "Add Port" and enter the name and port to expose. The Load Balancer http, https or tcp setting is only required when attaching to load balancers.
+        - The Technology Filter will filter the displayed layouts by selected Technology.
+        - The Instance Type Filter will filter the displayed Layout by associated Instance Type.
+        - Layout Names link to the Layouts associated Layout Detail page.
+        - Instance Types link to the Layouts associated Layout Detail page.
+        - The pencil icon open the Edit Layout modal
+        - The Trash Can icon deletes the Layout.
 
-Example port configuration:
+          .. note:: A Layout that is in use cannot be deleted.
 
-.. image:: /images/provisioning/library/node_ports.png
+        - Select :guilabel:`+ ADD` to add a new Layout. Layouts can also be created form an Instance Types detail page.
 
-Scripts & File Templates
--------------------
+        Layout Detail View
+        ^^^^^^^^^^^^^^^^^^
 
-To attach scripts and templates that have been added to the Library to a node type, start typing the name and then select the script(s) and/or template(s).
+        The Layout Detail view shows details on the Layout and all associated Node Types.
 
-* Multiple scripts and templates can be added to a node type
-* Scripts and Templates can be added/shared among multiple node types
-* The Execution Phase can be set for scripts in the Scripts section.
-* Search will populate Scripts or Templates containing the characters entered anywhere in their name, not just the first letter(s) of the name.
+        - Select a Layout Name from the Layout list page or Instance Type Detail page to get to a Layout Detail page.
 
-.. image:: /images/provisioning/library/library_add_script.png
 
-Upon save the Node Type will be created, and available for adding to layouts.
+        Layout Configuration Options
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Layouts
--------
+        Instance Type
+          Select the Instance Type to add the new Layout to. Custom Instance Types must already be created and one layout cannot be added to multiple instance types, or change Instance Types after creation.
 
-.. image:: /images/provisioning/library/salt_new_layout.png
+          .. NOTE:: Layouts cannot be added to System Instance Types.
 
-Layouts are added to Instance types, and will be presented under the Configuration Options dropdown in the Provisioning Wizard for that Instance type.
+        Name
+          The name the layout will present as in the Configuration Options dropdown in the provisioning wizard
+        Version
+          The version number or name for the Layout. Layouts in an Instance Type with the same version will all show under the Configuration Options dropdown when that version in selected while provisioning.
+        Description
+          Description of the layout, viewable on the Layout list tab.
+        Technology
+          Technology determines which cloud this layout will be available for, and which Node Types can be added to it.
+        Minimum Memory
+          Defines the Minimum amount of Memory required for this Layout. Only Service Plans that meet the defined Minimum Memory value will be available during Provisioning when this Layout is selected, and custom memory values must meet this minimum. 0 equals no Minimum Memory requirement. This Minimum Memory value will override any Virtual Image Minimum Memory requirements.
+        Workflow
+          Select a Workflow to automatically run and be attached to associated Instances using this Layout. If a Workflow is defined, it is not presented in the Provisioning Wizard and is not user configurable.
+        Supports Convert to Managed
+          Enabled to allow users to select this layout when converting a Discovered workload to managed.
+        Enable Scaling (Horizontal)
+          Enables Instances with this layout to use Scaling features
+        Environment Variables
+          Custom evars to be added to the instance when provisioned.
+        Option Types
+          Search for and then select one or multiple Option Types to add to Layout. Option Type input fields (except for Hidden Option Types) will appear in Provisioning, App, Blueprint, and Cloning wizards when this layout is selected.
+        Nodes
+          Single or multiple nodes can be added to a Layout by searching for and selecting the node(s). An example of a layout with multiple nodes is the Hyper-V MySQL Master/Slave layout pictured below (note this is the Layout detail screen after the layout has been created.)
 
-Instance Type
-  Select the Instance Type to add the new Layout to. Custom Instance Types must already be created and one layout cannot be added to multiple instance types, or change Instance Types after creation.
+.. toctree::
+  :maxdepth: 2
 
-.. NOTE:: Layouts cannot be added to |morpheus| provided library items at this time.
-
-Name
-  The name the layout will present as in the Configuration Options dropdown in the provisioning wizard
-Version
-  The version number or name for the Layout. Layouts in an Instance Type with the same version will all show under the Configuration Options dropdown when that version in selected while provisioning.
-Description
-  Description of the layout
-Technology
-  Technology determines which cloud this layout will be available for.
-Environment Variables
-  Custom evars to be added to the instance when provisioned.
-Nodes
-  Single or multiple nodes can be added to a Layout by searching for and selecting the node(s). An example of a layout with multiple nodes is the Hyper-V MySQL Master/Slave layout pictured below (note this is the Layout detail screen after the layout has been created.)
-
-Multi-node Layout example:
-
-.. image:: /images/provisioning/library/hyper-v_master_slave.png
-
-Upon save, the layout will be attached to the selected Instance Type, and available when provisioning that Instance Type for the appropriate cloud technology.
-
-.. image:: /images/provisioning/library/salt_instance_type_layout_detail.png
-
-Option Types
-------------
-
-Option Types allow you to create additional fields within the provisioning wizard.
-
-.. image:: /images/provisioning/library/OptionType.png
-
-These field entries can then be used in scripts and templates using our variable naming convention (more here).
-
-.. image:: /images/provisioning/library/variable.png
-
-Option List
------------
-
-Much like Option Types, Option Lists allow you to give the user more choices during provisioning to then be passed to scripts and/or automation.  Option Lists, however, are pre-defined insofar as they are not free-form. They can either be manually entered CSV or JSON or they can be dynamically compiled from REST calls via GET or POST requests.
-
-.. NOTE:: JSON entries must be formatted like the following example: ``[{"name":"Test","value":1},{"name":"Testing","value":2}]``
-
-.. image:: /images/provisioning/library/optionlist.png
-
-.. image:: /images/provisioning/library/OptionListREST.png
-
-Your new Library Item is now ready for provisioning. Multiple Layouts, Versions and Technology types can be added to a single Instance Type.
+  instance_types.rst
+  layouts.rst
+  node_types.rst
+  option_types.rst
+  option_lists.rst
+  file_templates.rst
+  scripts.rst
