@@ -4,8 +4,6 @@ Library
 Overview
 --------
 
-.. image:: /images/provisioning/library/instancetype2.png
-
 The Library section is used to add virtual images as custom instances to the provisioning catalog. The Library Section is composed of:
 
 * Instance Types
@@ -61,7 +59,7 @@ Uploaded or synced images from the virtual images section are added to nodes, a 
 
        Upon saving, this Instance Type will be available in the Provisioning Catalog, per user role access. However we still need to add layouts to the Instance Type, and prior to creating a layout, we will add a node type.
 
-    .. tab:: Layouts
+   .. tab:: Layouts
 
         Layouts
         -------
@@ -131,13 +129,165 @@ Uploaded or synced images from the virtual images section are added to nodes, a 
         Nodes
           Single or multiple nodes can be added to a Layout by searching for and selecting the node(s). An example of a layout with multiple nodes is the Hyper-V MySQL Master/Slave layout pictured below (note this is the Layout detail screen after the layout has been created.)
 
-.. toctree::
-  :maxdepth: 2
+   .. tab:: Node Types
 
-  instance_types.rst
-  layouts.rst
-  node_types.rst
-  option_types.rst
-  option_lists.rst
-  file_templates.rst
-  scripts.rst
+       Node Types
+       ----------
+
+       Node Types are the link between Images and Layouts.
+
+       Node Type Configuration Options
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+       The following fields are for all node technology types:
+
+       Name
+         Name of the Node Type in |morpheus|
+       Short Name
+         The short name is a lowercase name with no spaces used for display in your container list.
+       Version
+         Version for the Node Type. Examples: 7.5, 2012 R2, latest
+       Technology
+         Select associated Technology. This will filter the available configuration Options, Images and which Layouts the Node Type can be added to.
+       Environment Variables
+         Add pre-set evars to the Node Type. Click OPTIONS for additional evar config options.
+
+       The Options fields will change depending on the Technology option selected.
+
+       For VM provisioning technology options, select an image from the VM Image dropdown, which is populated from the Virtual Images Section and will include images uploaded into |morpheus|, and synced images from added clouds.
+
+       .. NOTE:: Amazon and Azure Marketplace Images can be added in the Virtual Images section for use as node types in custom library items.
+
+       For Docker, type in the name and version of the Docker Image and select the integrated registry.
+
+       Expose Ports
+         To open port on the node, select "Add Port" and enter the name and port to expose. The Load Balancer http, https or tcp setting is required when attaching to Load Balancers.
+
+         Defining an Exposed port will also create a hyperlink(s) on the container location (ip) in the VM or Container section of the associated Instance Detail page.
+
+       Scripts
+         Search for and select one or multiple scripts to be executed when the Node Type is provisioned.
+
+       File Templates
+         Search for and select one or multiple File Templates to be written when the Node Type is provisioned.
+
+       Example port configuration:
+
+       .. image:: /images/provisioning/library/node_ports.png
+
+       VMware Extra Options
+       ````````````````````
+
+       When VMware Technology Type is selected, EXTRA OPTIONS will be available in the VMware VM Options section. These allow defining Advance vmx-file parameters during provisioning.
+
+       Some Example include:
+
+       .. code-block:: bash
+
+         tools.setinfo.sizeLimit : 1048576
+         vmci0.unrestricted : FALSE
+         isolation.tools.diskWiper.disable : TRUE
+
+       .. NOTE:: Not all parameters can be set using extra config parameters. A sample reference list can be found at http://www.sanbarrow.com/vmx/vmx-advanced.html#vmx
+
+       .. IMPORTANT:: Use caution when setting Extra Options. Malformed config files can break provisioning. Issues related to the Extra Options defined by the user are the users responsibility to troubleshoot.
+
+   .. tab:: Option Types
+
+       Option Types
+       ------------
+
+       Option Types are custom input fields that can be added to Instance Types and Layouts and used in Instance, App and Cloning wizards. The resulting value is available in the Instance config map as <%=customOptions.fieldName%>, and the filedName and value can also be exported as metadata.
+
+       .. image:: /images/provisioning/library/OptionType.png
+
+
+       .. image:: /images/provisioning/library/variable.png
+
+   .. tab:: Option Lists
+
+       Option Lists
+       ------------
+
+       Option Lists allow you to give the user more choices during provisioning to then be passed to scripts and/or automation.  Option Lists, however, are pre-defined insofar as they are not free-form. They can either be manually entered CSV or JSON or they can be dynamically compiled from REST calls via GET or POST requests.
+
+       .. NOTE:: JSON entries must be formatted like the following example: ``[{"name":"Test","value":1},{"name":"Testing","value":2}]``
+
+       .. image:: /images/provisioning/library/optionlist.png
+
+       .. image:: /images/provisioning/library/OptionListREST.png
+
+
+   .. tab:: File Templates
+
+      File Templates
+      --------------
+
+      File Templates are for generating config files, such as my.cnf, elasticsearch.yml, morpheus.rb etc, or any text file. With full config map variable support, Template Files are dynamically generated during a workflow phase or ad hoc via Instance Actions.
+
+      Examples:
+
+      HA Proxy Config (haproxy.cfg)
+
+      - FILE NAME: haproxy.cfg
+      - FILE PATH: /config/haproxy.cfg
+      - PHASE: Pre Provision
+      - TEMPLATE:
+      - SETTING NAME: haproxyConfig
+      - SETTING CATEGORY: haproxy
+
+      .. code-block:: bash
+
+        #!/bin/bash
+
+        global
+         maxconn 256
+         log /dev/log local0 warning
+         log-tag <%=logTag%>
+
+        defaults
+         mode http
+         timeout connect 5000ms
+         timeout client 50000ms
+         timeout server 50000ms
+         log global
+
+        frontend http-in
+         bind *:<%=container.externalPort%>
+         default_backend servers
+
+        backend servers
+         # server server1 127.0.0.1:80 maxconn 32
+
+
+      mysql config (mysqld.cnf)
+
+      - FILE NAME: mysqld.cnf
+      - FILE PATH: /config/mysqld.cnf
+      - PHASE: Pre Provision
+
+      .. code-block:: bash
+
+         #!/bin/bash
+
+         [mysqld]
+         pid-file= /var/run/mysqld/mysqld.pid
+         socket= /var/run/mysqld/mysqld.sock
+         datadir= /var/lib/mysql
+         # Disabling symbolic-links is recommended to prevent assorted security risks
+         symbolic-links=0
+         explicit_defaults_for_timestamp = 1
+
+
+
+   .. tab:: Scripts
+
+       Scripts
+       -------
+
+       To attach scripts and templates that have been added to the Library to a node type, start typing the name and then select the script(s) and/or template(s).
+
+       * Multiple scripts and templates can be added to a node type
+       * Scripts and Templates can be added/shared among multiple node types
+       * The Execution Phase can be set for scripts in the Scripts section.
+       * Search will populate Scripts or Templates containing the characters entered anywhere in their name, not just the first letter(s) of the name.
