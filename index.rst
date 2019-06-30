@@ -3,7 +3,7 @@ Morpheus Documentation
 ======================
 
 .. toctree::
-   :maxdepth: 3
+   :maxdepth: 4
    :caption: Morpheus UI
 
    getting_started/getting_started
