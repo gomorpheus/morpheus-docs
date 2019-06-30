@@ -25,9 +25,7 @@ Instance Naming Policy example: ``${userInitials}-${cloudCode}-${platform == 'wi
 
 .. image:: /images/troubleshooting/Tags-Variable-Spot
 
-
-
-.. NOTE:: customOptions are user defined as Option Types or Option Lists in custom Library items.
+.. NOTE:: customOptions values are defined from custom Option Types.
 
 .. code-block:: bash
 
