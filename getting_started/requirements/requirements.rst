@@ -84,12 +84,7 @@ outbound SSL (https/wss) connection to the appliance server. This is what is kno
 Admin->Settings). When the agent is started it automatically makes this connection and securely authenticates. Therefore, it is necessary for
 all vm's and docker based hosts that are managed by morpheus to be able to reach the appliance server ip on port 443.
 
-|morpheus| also utilizes SSH (Port 22) and Windows Remote Management (Port 5985) to initialize a server. This includes sending remote command
-instructions to install the agent. It is actually possible for |morpheus| to operate without agent connectivity (though stats and logs
-will not function) and utilize SSH/WinRM to perform operations. Once the agent is installed and connections are established SSH/WinRM
-communication will stop. This is why an outbound requirement exists for the appliance server to be able to utilize port 22 and 5985.
-
-.. NOTE:: In newer versions of morpheus this outbound connectivity is not mandatory. The agent can be installed by hand or via Guest Process API's on cloud integrations like VMware.
+|morpheus| has numerous methods to execute agent installation, including zero open port methods.
 
 Components
 ----------
@@ -122,7 +117,7 @@ The following chart is useful for troubleshooting Agent install, Static IP assig
    " ", "SSH", "Linux", "Appliance", "Node", 22, "| DNS Resolution from node to appliance url
    | Virtual Images configured
    | SSH Enabled on Virtual Image"
-   "","WinRM",Windows,Appliance,Node,5985,"| DNS Resolution from node to appliance url
+   "","WinRM",Windows,Appliance,Node,5985,"| Not required for agent installation in VMware vCenter and vCloud Director type clouds. Otherwise, access from |morpheus| App Nodes to Instance Node on 5985
    | Virtual Images configured
    | WinRM Enabled on Virtual Image(`winrm quickconfig`)"
    " ",Cloud-init,Linux, , , ,"| Cloud-init installed on template/image
