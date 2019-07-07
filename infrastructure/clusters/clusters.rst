@@ -81,23 +81,30 @@ Kubernetes Cluster Detail Pages
 
 .. tabs::
 
-   .. tab:: SUMMARY
+    .. tab:: SUMMARY
 
         .. image:: /images/infrastructure/clusters/kubeClusterSummary.png
 
-   .. tab:: NAMESPACES
-       .. image:: /images/infrastructure/clusters/kubeClusterNamespaces.png
-   .. tab:: WIKI
-       .. image:: /images/infrastructure/clusters/kubeClusterWiki.png
-   .. tab:: MASTERS
+    .. tab:: NAMESPACES
+
+        .. image:: /images/infrastructure/clusters/kubeClusterNamespaces.png
+
+    .. tab:: WIKI
+
+        .. image:: /images/infrastructure/clusters/kubeClusterWiki.png
+
+    .. tab:: MASTERS
+
         .. image:: /images/infrastructure/clusters/kubeClusterMasters.png
-   .. tab:: WORKERS
+
+    .. tab:: WORKERS
+
         .. image:: /images/infrastructure/clusters/kubeClusterWorkers.png
-   .. tab:: SERVICES
-   .. tab:: CONTAINERS
+
+    .. tab:: CONTAINERS
+
         .. image:: /images/infrastructure/clusters/kubeClusterContainers.png
-   .. tab:: JOBS
-   .. tab:: VOLUMES
-   .. tab:: LOGS
-   .. tab:: HISTORY
+
+    .. tab:: HISTORY
+
         .. image:: /images/infrastructure/clusters/kubeClusterHistory.png
