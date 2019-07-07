@@ -11,6 +11,7 @@ public infrastructure.
 
   groups/groups.rst
   clouds/clouds.rst
+  clusters/clusters.rst
   hosts/hosts.rst
   networks/network.rst
   loadbalancers/lb.rst
