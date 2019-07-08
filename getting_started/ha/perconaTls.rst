@@ -150,7 +150,7 @@ Once the service is stopped on all nodes move onto the next step.
 Add [mysqld] to my.cnf in /etc/
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-#. Add the following to ``/etc/my.cnf``.  The node_name and node_address needs to be unique on each of the nodes. The first node does not require the gcomm value to be set.
+#. Add the following to ``/etc/my.cnf``.  The node_name and node_address needs to be unique on each of the nodes. 
 
 Node 01:
 
