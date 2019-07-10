@@ -27,6 +27,7 @@ Morpheus Documentation
    cli/walkthrough
    cli/shell
    cli/commands
+   cli/changelog
 
 .. toctree::
    :maxdepth: 3
