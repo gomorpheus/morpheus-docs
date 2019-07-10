@@ -3,7 +3,7 @@ Deleting Instances
 
 It is important to know the difference between deleting an Instance from the Provisioning section, and deleting a VM from the Infrastructure section.
 
-.. IMPORTATNT:: Deleting an Instance a with Virtual Machines in it will always try to delete the actual Virtual Machines.
+.. IMPORTANT:: Deleting an Instance a with Virtual Machines in it will always try to delete the actual Virtual Machines.
 
 Instances are managed resources that may have one or multiple Virtual Machines associated. Since the vm's in the Instance are managed by |morphues|, deleting an Instance a with Virtual Machines in it will always try to delete the actual Virtual Machines.
 
@@ -63,4 +63,4 @@ To select an Instance and/or VM record in |morpheus| for a Virtual Machine that 
 
 The key point is when deleting an Instance, or when selecting "Remove Infrastructure" when deleting a VM record, |morpheus| will always try to remove the Infrastructure. If the Infrastructure/VM no longer exists, or you do not want to remove it, simply delete from the Infrastructure section and uncheck "Remove Infrastructure".
 
-.. NOTE:: When deleting a managed VM, if that VM is the only VM inside the associated Instance, the Associated Instance must also be removed.  
+.. NOTE:: When deleting a managed VM, if that VM is the only VM inside the associated Instance, the Associated Instance must also be removed.

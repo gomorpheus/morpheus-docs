@@ -4,7 +4,7 @@ VMware Permissions
 Usage
 `````
 
-VCenter
+vCenter
   * Non-Propagating
 
 Datacenter
