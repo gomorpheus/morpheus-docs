@@ -23,7 +23,7 @@
     -y, --yes                        Auto confirm, skip any 'Are you sure?' confirmations.
     -r, --quiet                      No Output, when successful.
 
-## Morpheus Commands
+## morpheus Commands
 
     We divide morpheus into commands.  
     Every morpheus command may have 0-N sub-commands that it supports.
