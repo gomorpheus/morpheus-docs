@@ -2,9 +2,9 @@ VMware Permissions
 ^^^^^^^^^^^^^^^^^^
 
 Usage
-''''''
+`````
 
-VCenter
+vCenter
   * Non-Propagating
 
 Datacenter
@@ -20,10 +20,8 @@ Datastore
   * Propagating
 
 
-
-
 Privileges
-''''''''''
+``````````
 
 Datastore
   * Allocate Space

@@ -73,7 +73,7 @@ Morpheus allows for additional advanced customizations to the morpheus.rb file l
   mysql['host'] = '127.0.0.1'
   mysql['port'] = 3306
   mysql['tmp_dir'] = '/tmp/mysql'
-  mysql['mysql_url_overide'] = 'jdbc:mysql://10.30.20.10:3306,10.30.20.11:3306,10.30.20.12:3306/morpheusdb?autoReconnect=true&useUnicode=true&characterEncoding=utf8&failoverReadOnly=false&useSSL=false'
+  mysql['mysql_url_overide'] = 'jdbc:mysql://10.30.20.10:3306,10.30.20.11:3306,10.30.20.12:3306/morpheusdb?autoReconnect=true&useUnicode=true&characterEncoding=utf8&failOverReadOnly=false&useSSL=false'
 
   logging['svlogd_size'] = 209715200 # 200 MB in bytes
   logging['svlogd_num'] = 30 # keep 30 rotated log files

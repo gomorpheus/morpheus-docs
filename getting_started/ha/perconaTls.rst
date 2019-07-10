@@ -150,7 +150,7 @@ Once the service is stopped on all nodes move onto the next step.
 Add [mysqld] to my.cnf in /etc/
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-#. Add the following to ``/etc/my.cnf``.  The node_name and node_address needs to be unique on each of the nodes. The first node does not require the gcomm value to be set.
+#. Add the following to ``/etc/my.cnf``.  The node_name and node_address needs to be unique on each of the nodes.
 
 Node 01:
 
@@ -179,6 +179,8 @@ Node 01:
       wsrep_sync_wait=2
 
       binlog_format=ROW
+      expire_logs_days=3
+      max_binlog_size=100M
       default_storage_engine=InnoDB
       innodb_autoinc_lock_mode=2
 
@@ -210,6 +212,8 @@ Node 02
       wsrep_sync_wait=2
 
       binlog_format=ROW
+      expire_logs_days=3
+      max_binlog_size=100M
       default_storage_engine=InnoDB
       innodb_autoinc_lock_mode=2
 
@@ -240,6 +244,8 @@ Node 03
       wsrep_sync_wait=2
 
       binlog_format=ROW
+      expire_logs_days=3
+      max_binlog_size=100M
       default_storage_engine=InnoDB
       innodb_autoinc_lock_mode=2
 

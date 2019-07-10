@@ -23,9 +23,8 @@ Morpheus Documentation
    :maxdepth: 3
    :caption: Morpheus CLI
 
-   cli/gettingStarted
-   cli/setupAppliance
-   cli/instances
+   cli/install
+   cli/walkthrough
    cli/shell
    cli/commands
 

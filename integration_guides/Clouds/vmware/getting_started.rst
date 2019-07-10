@@ -1,19 +1,19 @@
 Getting Started
 ^^^^^^^^^^^^^^^
 
-To get started with vmware, simply start by adding a Cloud in the ``Infrastructure -> Clouds`` section.
+To get started with VMware, simply start by adding a Cloud in the ``Infrastructure -> Clouds`` section.
 
 .. image:: /images/vmware/add_cloud.png
 
 
 To start adding a VMware cloud there will be some things you will need:
 
-Vcenter API Url
-  Typically this is the url to the Vcenter web client with a ``/sdk`` in the path
+vCenter API Url
+  Typically this is the url to the vCenter web client with a ``/sdk`` in the path
 Username/Password
   A set of credentials with high level access to VMware (ensure the account has Datacenter level access)
 
-Once these fields are entered, some selections will start pre-populating. A cloud integration must be scoped to a specific data center and cluster. If the drop downs do not populate, please  verify the api url and provided credentials have access to Vcenter.
+Once these fields are entered, some selections will start pre-populating. A cloud integration is scoped to a specific data center, and can optionally be scoped down to a single cluster or even a single resource pool. If the drop downs do not populate, please verify the api url is resolvable, morpheus has access to vCenter on 443, and the provided credentials are correct and the user has sufficient permissions.
 
 Another cool feature provided with the cloud integration is optional `Resource Pool` scoping. One can choose to allow the cloud to provision into All Resource Pools or a singular Resource Pool. When choosing `All`, these Resource Pools can be managed from a sub-account and visibility perspective via the Cloud Detail page (multi-tenancy).
 
@@ -26,7 +26,7 @@ The `Use VNC` console option on the VMware cloud requires special configuration 
 When following this add cloud wizard an option will be presented to create a group or add to an existing group. These groups can be given provisioning permission via  role based access control. It is normally recommended that groups are organized such that one cloud exists in one group unless the networks are setup such that internal routing is possible between the clouds. This is very useful for bursting, or hybrid cloud configurations.
 
 Windows Provisioning Tips
-^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^
 
 By default when provisioning windows templates, |morpheus| performs guest customizations which initiates a sysprep. This resets the Administrator user and password. |morpheus| will set the Administrator password from ``Administration > Provisioning > Windows Settings > Password``.
 
@@ -52,7 +52,7 @@ A default set of Service Plans are created in |morpheus| for the VMware provisio
 Virtual Images / Blueprints
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-|morpheus| will automatically take an inventory of all blueprints configured in Vcenter and present them as options during provisioning. However, in order for |morpheus| to properly provision these virtual machines and provide accurate stats and health of these virtual machines, an agent must be installed during virtual machine startup. This means remote access needs to be granted at the guest operating system level to |morpheus| . To properly configure these virtual images, find the relevant images in ``Provisioning -> Virtual Images`` and edit the entry. On this form, a few options are presented. The first is a check box asking whether or not cloud-init is enabled. If cloud-init is enabled, simply provide the default OS username configured (for Ubuntu the username is `ubuntu` and for CentOS the username is `centos`). For those looking to add cloud-init to existing blueprints |morpheus| requires no special configuration and can use the default `cloud.cfg` settings.
+|morpheus| will automatically take an inventory of all blueprints configured in vCenter and present them as options during provisioning. However, in order for |morpheus| to properly provision these virtual machines and provide accurate stats and health of these virtual machines, an agent must be installed during virtual machine startup. This means remote access needs to be granted at the guest operating system level to |morpheus| . To properly configure these virtual images, find the relevant images in ``Provisioning -> Virtual Images`` and edit the entry. On this form, a few options are presented. The first is a check box asking whether or not cloud-init is enabled. If cloud-init is enabled, simply provide the default OS username configured (for Ubuntu the username is `ubuntu` and for CentOS the username is `centos`). For those looking to add cloud-init to existing blueprints |morpheus| requires no special configuration and can use the default `cloud.cfg` settings.
 
 A global cloud-init username/password can also be configured per account as well as a keypair via the ``Admin->Provisioning`` settings section. The great benefit of utilizing cloud-init is default blueprints do not need common credential sets thereby increasing provisioning security.
 
