@@ -47,7 +47,7 @@ LB TYPE
 
 .. NOTE:: The user id used to connect to a project only needs to be a member ('_member_') of the project rather then an Admin.  Admin will work but it exposes some additonal items to the project the Openstack Admin typically does not want portal users to see.
 
-Most of the information in the dialog can be acquired from the Openstack dashboard. under ``Project -> Access & Security -> API Access``. The API Url that is needed is the one tied to `Identity`. The Domain and Project inputs typically correlate to the multitenant domain setup within Openstack (sometimes just left at default) as well as the project name given to instances. |morpheus| allows multiple integrations to the same Openstack cluster scopable to domains and projects as needed.
+Most of the information in the dialog can be acquired from the Openstack dashboard. under ``Project -> Access & Security -> API Access``. The API Url that is needed is the one tied to `Identity`. The Domain and Project inputs typically correlate to the multitenant domain setup within Openstack (sometimes just left at default) as well as the project name given to instances. |morpheus| allows multiple integrations to the same Openstack cluster to be scoped to domains and projects as needed.
 
 The remaining options help |morpheus| determine what api capabilities exist in the selected Openstack environment. Hence the need for the Openstack version and image format. If a newer Openstack cluster is being used then exists in the dropdown, simply select the most recent version in the dropdown and this should function sufficiently until the new version is added.
 
