@@ -1,6 +1,6 @@
-# Commands
+# CLI Commands
 
-## GLOBAL OPTIONS
+## Global Options
 
     Morpheus supports a few global options.
 
@@ -10,7 +10,7 @@
     -V, --debug                      Print extra output for debugging.
     -h, --help                       Print this help
 
-## COMMON OPTIONS
+## Common Options
 
     There are some common options that many commands support. They work the same way for each command.
 
@@ -23,7 +23,7 @@
     -y, --yes                        Auto confirm, skip any 'Are you sure?' confirmations.
     -r, --quiet                      No Output, when successful.
 
-## MORPHEUS COMMANDS
+## Morpheus Commands
 
     We divide morpheus into commands.  
     Every morpheus command may have 0-N sub-commands that it supports.
@@ -33,7 +33,7 @@
 
     The available commands and their options are also documented below.
 
-## morpheus
+### morpheus
 
 ```
 Usage: morpheus [command] [options]
@@ -108,7 +108,6 @@ Commands:
 	version
 	virtual-images
 	whoami
-	wiki
 	workflows
 Options:
     -e, --exec EXPRESSION            Execute the command(s) expression. This is an alternative to passing [command] [options]
@@ -15471,234 +15470,6 @@ Usage: morpheus whoami [options]
 ```
 
 
-### morpheus wiki
-
-```
-Usage: morpheus wiki [command] [options]
-Commands:
-	add
-	categories
-	get
-	list
-	remove
-	update
-	view
-```
-
-#### morpheus wiki add
-
-```
-Usage: morpheus wiki add [name] [options]
-        --name VALUE                 Name
-        --category VALUE             Category (optional)
-        --content VALUE              Content
-        --payload FILE               Payload from a local JSON or YAML file, skip all prompting
-        --payload-dir DIRECTORY      Payload from a local directory containing 1-N JSON or YAML files, skip all prompting
-        --payload-json JSON          Payload JSON, skip all prompting
-        --payload-yaml YAML          Payload YAML, skip all prompting
-    -O, --option OPTION              Option in the format -O field="value"
-        --prompt                     Always prompts. Use passed options as the default value.
-    -N, --no-prompt                  Skip prompts. Use default values for all optional fields.
-    -j, --json                       JSON Output
-    -d, --dry-run                    Dry Run, print the API request instead of executing it
-        --curl                       Dry Run to output API request as a curl command.
-        --scrub                      Mask secrets in output, such as the Authorization header. For use with --curl and --dry-run.
-    -r, --remote REMOTE              Remote name. The current remote is used by default.
-        --remote-url URL             Remote url. The current remote url is used by default.
-    -T, --token TOKEN                Access token for authentication with --remote. Saved credentials are used by default.
-    -U, --username USERNAME          Username for authentication.
-    -P, --password PASSWORD          Password for authentication.
-    -I, --insecure                   Allow insecure HTTPS communication.  i.e. bad SSL certificate.
-    -H, --header HEADER              Additional HTTP header to include with requests.
-        --timeout SECONDS            Timeout for api requests. Default is typically 30 seconds.
-    -C, --nocolor                    Disable ANSI coloring
-    -B, --benchmark                  Print benchmark time after the command is finished.
-    -V, --debug                      Print extra output for debugging.
-    -h, --help                       Print this help
-```
-
-#### morpheus wiki categories
-
-```
-Usage: morpheus wiki categories
-    -m, --max MAX                    Max Results
-    -o, --offset OFFSET              Offset Results
-    -s, --search PHRASE              Search Phrase
-    -S, --sort ORDER                 Sort Order
-    -D, --desc                       Reverse Sort Order
-    -Q, --query PARAMS               Query parameters. PARAMS format is 'phrase=foobar&category=web'
-    -j, --json                       JSON Output
-        --yaml                       YAML Output
-        --csv                        CSV Output
-        --csv-delim CHAR             Delimiter for CSV Output values. Default: ','
-        --csv-newline [CHAR]         Delimiter for CSV Output rows. Default: '\n'
-        --csv-quotes                 Wrap CSV values with ". Default: false
-        --csv-no-header              Exclude header for CSV Output.
-    -F, --fields x,y,z               Filter Output to a limited set of fields. Default is all fields.
-    -d, --dry-run                    Dry Run, print the API request instead of executing it
-        --curl                       Dry Run to output API request as a curl command.
-        --scrub                      Mask secrets in output, such as the Authorization header. For use with --curl and --dry-run.
-    -r, --remote REMOTE              Remote name. The current remote is used by default.
-        --remote-url URL             Remote url. The current remote url is used by default.
-    -T, --token TOKEN                Access token for authentication with --remote. Saved credentials are used by default.
-    -U, --username USERNAME          Username for authentication.
-    -P, --password PASSWORD          Password for authentication.
-    -I, --insecure                   Allow insecure HTTPS communication.  i.e. bad SSL certificate.
-    -H, --header HEADER              Additional HTTP header to include with requests.
-        --timeout SECONDS            Timeout for api requests. Default is typically 30 seconds.
-    -C, --nocolor                    Disable ANSI coloring
-    -B, --benchmark                  Print benchmark time after the command is finished.
-    -V, --debug                      Print extra output for debugging.
-    -h, --help                       Print this help
-```
-
-#### morpheus wiki get
-
-```
-Usage: morpheus wiki get [name]
-        --view                       View wiki page in web browser too.
-    -Q, --query PARAMS               Query parameters. PARAMS format is 'phrase=foobar&category=web'
-    -j, --json                       JSON Output
-        --yaml                       YAML Output
-        --csv                        CSV Output
-        --csv-delim CHAR             Delimiter for CSV Output values. Default: ','
-        --csv-newline [CHAR]         Delimiter for CSV Output rows. Default: '\n'
-        --csv-quotes                 Wrap CSV values with ". Default: false
-        --csv-no-header              Exclude header for CSV Output.
-    -F, --fields x,y,z               Filter Output to a limited set of fields. Default is all fields.
-    -d, --dry-run                    Dry Run, print the API request instead of executing it
-        --curl                       Dry Run to output API request as a curl command.
-        --scrub                      Mask secrets in output, such as the Authorization header. For use with --curl and --dry-run.
-    -r, --remote REMOTE              Remote name. The current remote is used by default.
-        --remote-url URL             Remote url. The current remote url is used by default.
-    -T, --token TOKEN                Access token for authentication with --remote. Saved credentials are used by default.
-    -U, --username USERNAME          Username for authentication.
-    -P, --password PASSWORD          Password for authentication.
-    -I, --insecure                   Allow insecure HTTPS communication.  i.e. bad SSL certificate.
-    -H, --header HEADER              Additional HTTP header to include with requests.
-        --timeout SECONDS            Timeout for api requests. Default is typically 30 seconds.
-    -C, --nocolor                    Disable ANSI coloring
-    -B, --benchmark                  Print benchmark time after the command is finished.
-    -V, --debug                      Print extra output for debugging.
-    -h, --help                       Print this help
-```
-
-#### morpheus wiki list
-
-```
-Usage: morpheus wiki list
-        --category VALUE             Category
-    -m, --max MAX                    Max Results
-    -o, --offset OFFSET              Offset Results
-    -s, --search PHRASE              Search Phrase
-    -S, --sort ORDER                 Sort Order
-    -D, --desc                       Reverse Sort Order
-    -Q, --query PARAMS               Query parameters. PARAMS format is 'phrase=foobar&category=web'
-    -j, --json                       JSON Output
-        --yaml                       YAML Output
-        --csv                        CSV Output
-        --csv-delim CHAR             Delimiter for CSV Output values. Default: ','
-        --csv-newline [CHAR]         Delimiter for CSV Output rows. Default: '\n'
-        --csv-quotes                 Wrap CSV values with ". Default: false
-        --csv-no-header              Exclude header for CSV Output.
-    -F, --fields x,y,z               Filter Output to a limited set of fields. Default is all fields.
-    -d, --dry-run                    Dry Run, print the API request instead of executing it
-        --curl                       Dry Run to output API request as a curl command.
-        --scrub                      Mask secrets in output, such as the Authorization header. For use with --curl and --dry-run.
-    -r, --remote REMOTE              Remote name. The current remote is used by default.
-        --remote-url URL             Remote url. The current remote url is used by default.
-    -T, --token TOKEN                Access token for authentication with --remote. Saved credentials are used by default.
-    -U, --username USERNAME          Username for authentication.
-    -P, --password PASSWORD          Password for authentication.
-    -I, --insecure                   Allow insecure HTTPS communication.  i.e. bad SSL certificate.
-    -H, --header HEADER              Additional HTTP header to include with requests.
-        --timeout SECONDS            Timeout for api requests. Default is typically 30 seconds.
-    -C, --nocolor                    Disable ANSI coloring
-    -B, --benchmark                  Print benchmark time after the command is finished.
-    -V, --debug                      Print extra output for debugging.
-    -h, --help                       Print this help
-```
-
-#### morpheus wiki remove
-
-```
-Usage: morpheus wiki remove [name]
-    -y, --yes                        Auto Confirm
-    -j, --json                       JSON Output
-    -d, --dry-run                    Dry Run, print the API request instead of executing it
-        --curl                       Dry Run to output API request as a curl command.
-        --scrub                      Mask secrets in output, such as the Authorization header. For use with --curl and --dry-run.
-    -r, --remote REMOTE              Remote name. The current remote is used by default.
-        --remote-url URL             Remote url. The current remote url is used by default.
-    -T, --token TOKEN                Access token for authentication with --remote. Saved credentials are used by default.
-    -U, --username USERNAME          Username for authentication.
-    -P, --password PASSWORD          Password for authentication.
-    -I, --insecure                   Allow insecure HTTPS communication.  i.e. bad SSL certificate.
-    -H, --header HEADER              Additional HTTP header to include with requests.
-        --timeout SECONDS            Timeout for api requests. Default is typically 30 seconds.
-    -C, --nocolor                    Disable ANSI coloring
-    -B, --benchmark                  Print benchmark time after the command is finished.
-    -V, --debug                      Print extra output for debugging.
-    -h, --help                       Print this help
-```
-
-#### morpheus wiki update
-
-```
-Usage: morpheus wiki update [name] [options]
-        --name VALUE                 Name (optional)
-        --category VALUE             Category (optional)
-        --content VALUE              Content (optional)
-        --payload FILE               Payload from a local JSON or YAML file, skip all prompting
-        --payload-dir DIRECTORY      Payload from a local directory containing 1-N JSON or YAML files, skip all prompting
-        --payload-json JSON          Payload JSON, skip all prompting
-        --payload-yaml YAML          Payload YAML, skip all prompting
-    -O, --option OPTION              Option in the format -O field="value"
-        --prompt                     Always prompts. Use passed options as the default value.
-    -N, --no-prompt                  Skip prompts. Use default values for all optional fields.
-    -j, --json                       JSON Output
-    -d, --dry-run                    Dry Run, print the API request instead of executing it
-        --curl                       Dry Run to output API request as a curl command.
-        --scrub                      Mask secrets in output, such as the Authorization header. For use with --curl and --dry-run.
-    -r, --remote REMOTE              Remote name. The current remote is used by default.
-        --remote-url URL             Remote url. The current remote url is used by default.
-    -T, --token TOKEN                Access token for authentication with --remote. Saved credentials are used by default.
-    -U, --username USERNAME          Username for authentication.
-    -P, --password PASSWORD          Password for authentication.
-    -I, --insecure                   Allow insecure HTTPS communication.  i.e. bad SSL certificate.
-    -H, --header HEADER              Additional HTTP header to include with requests.
-        --timeout SECONDS            Timeout for api requests. Default is typically 30 seconds.
-    -C, --nocolor                    Disable ANSI coloring
-    -B, --benchmark                  Print benchmark time after the command is finished.
-    -V, --debug                      Print extra output for debugging.
-    -h, --help                       Print this help
-```
-
-#### morpheus wiki view
-
-```
-Usage: morpheus wiki view [id]
-    -d, --dry-run                    Dry Run, print the API request instead of executing it
-        --curl                       Dry Run to output API request as a curl command.
-        --scrub                      Mask secrets in output, such as the Authorization header. For use with --curl and --dry-run.
-    -r, --remote REMOTE              Remote name. The current remote is used by default.
-        --remote-url URL             Remote url. The current remote url is used by default.
-    -T, --token TOKEN                Access token for authentication with --remote. Saved credentials are used by default.
-    -U, --username USERNAME          Username for authentication.
-    -P, --password PASSWORD          Password for authentication.
-    -I, --insecure                   Allow insecure HTTPS communication.  i.e. bad SSL certificate.
-    -H, --header HEADER              Additional HTTP header to include with requests.
-        --timeout SECONDS            Timeout for api requests. Default is typically 30 seconds.
-    -C, --nocolor                    Disable ANSI coloring
-    -B, --benchmark                  Print benchmark time after the command is finished.
-    -V, --debug                      Print extra output for debugging.
-    -h, --help                       Print this help
-
-View a wiki page in a web browser
-[id] is required. This is name or id of the wiki page.
-```
-
-
 ### morpheus workflows
 
 ```
@@ -15861,117 +15632,4 @@ Usage: morpheus workflows update [name] --tasks taskId:phase,taskId2:phase,taskI
     -B, --benchmark                  Print benchmark time after the command is finished.
     -V, --debug                      Print extra output for debugging.
     -h, --help                       Print this help
-```
-
-
-# ENVIRONMENT VARIABLES
-
-Morpheus has only one environment variable that it uses.
-
-## MORPHEUS_CLI_HOME
-
-The **MORPHEUS_CLI_HOME** variable is where morpheus CLI stores its configuration files.
-This can be set to allow a single system user to maintain many different configurations
-If the directory does not exist, morpheus will attempt to create it.
-
-The default home directory is **$HOME/.morpheus**
-
-To see how this works, run the following:
-
-```shell
-MORPHEUS_CLI_HOME=~/.morpheus_test morpheus shell
-```
-
-Now, in your new morpheus shell, you can see that it is a fresh environment.
-There are no remote appliances configured.
-
-```shell
-morpheus> remote list
-
-Morpheus Appliances
-==================
-
-You have no appliances configured. See the `remote add` command.
-
-```
-
-You can use this to create isolated environments (sandboxes), within which to execute your morpheus commands.
-
-```shell
-export MORPHEUS_CLI_HOME=~/morpheus_test
-morpheus remote add myremote https://testmorpheusappliance.mycompany.com --insecure
-morpheus instances list
-```
-
-Morpheus saves the remote appliance information, including api access tokens,
-to the $MORPHEUS_HOME_DIRECTORY. These files are saved with file permissions **6000**.
-So, only one system user should be allowed to execute morpheus with that home directory.
-See [Configuration](#Configuration) for more information on the files morpheus reads and writes.
-
-# CONFIGURATION
-
-Morpheus reads and writes several configuration files within the $MORPHEUS_CLI_HOME directory.
-
-**Note:** These files are maintained by the program. It is not recommended for you to manipulate them.
-
-## appliances file
-
-The `appliances` YAML file contains a list of known appliances, keyed by name.
-
-Example:
-```yaml
-:qa:
-  :host: https://qa.mycoolsite.com
-  :active: true
-:production:
-  :host: https://morpheus.mycoolsite.com
-  :active: false
-```
-
-## credentials file
-
-The `.morpheus/credentials` YAML file contains access tokens for each known appliance.
-
-## groups file
-
-The `.morpheus/groups` YAML file contains the active group information for each known appliance.
-
-
-# Startup scripts
-
-When Morpheus starts, it executes the commands in a couple of dot files.
-
-These scripts are written in morpheus commands, not bash, so they can only execute morpheus commands and aliases.
-
-## .morpheus_profile file
-
-It looks for `$MORPHEUS_CLI_HOME/.morpheus_profile`, and reads and executes it (if it exists).
-
-This may be inhibited by using the `--noprofile` option.
-
-## .morpheusrc file
-
-When started as an interactive shell with the `morpheus shell` command,
-Morpheus reads and executes `$MORPHEUS_CLI_HOME/.morpheusrc` (if it exists). This may be inhibited by using the `--norc` option.
-
-An example startup script might look like this:
-
-```
-# .morpheusrc
-
-# aliases
-alias our-instances='instances list -c "Our Cloud"'
-
-# switch to our appliance that we created with `remote add morphapp1`
-remote use morphapp1
-
-# greeting
-echo "Welcome back human,  have fun!"
-
-# print current user information
-whoami
-
-# print the list of instances in our cloud
-our-instances
-
 ```

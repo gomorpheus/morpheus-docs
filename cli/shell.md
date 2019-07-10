@@ -1,6 +1,8 @@
-# Shell
+# morpheus shell
 
-The CLI provides a command called **shell** that allows you enter an interactive shell.
+To get started with the morpheus cli its helpful to use `morpheus shell`.
+
+The **shell** allows you enter an interactive shell that provides history and autocomplete features for learning to use the cli. All commands mentioned prefixed with `morpheus` can be omitted since we are in shell mode.
 
 This is a convenient way to test things out quickly, and to avoid prefixing your commands with `morpheus `
 
@@ -23,6 +25,8 @@ To see the list of all available commands, use `help`
 ```bash
 morpheus> help
 ```
+
+## Shell Features
 
 **TAB** can be used to auto-complete the name of a command or any aliases you've defined.
 
@@ -52,7 +56,6 @@ morpheus> !!
 ```
 
 The `flush-history` command can be used to delete the shell history.
-
 
 It is possible to execute multiple commands sequentially inside a shell, like this:
 
