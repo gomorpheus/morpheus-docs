@@ -1,3 +1,5 @@
+# Changelog
+
 This is a list of changes in the most recent versions of the CLI.
 
 Backwards compatibility with older appliances should be preserved in most cases.
