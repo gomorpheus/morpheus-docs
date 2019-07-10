@@ -1,4 +1,4 @@
-# CLI Commands
+# Commands
 
 ## Global Options
 
