@@ -9,8 +9,8 @@ Operations
   reports.rst
   analytics.rst
   guidance.rst
+  wiki.rst
   budgets.rst
   approvals.rst
-  usage.rst
   activity.rst
   health.rst

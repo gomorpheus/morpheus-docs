@@ -7,7 +7,9 @@ The Automation section is composed of Tasks and Workflows. Tasks can be scripts 
 
 .. include:: tasks.rst
 .. include:: workflows.rst
-.. .. include:: automation/scale_thresholds.rst
+.. include:: executions.rst
+.. include:: scaleThresholds.rst
+.. include:: integrations.rst
 .. include:: power_scheduling.rst
-.. .. include:: execution_scheduling.rst
+.. include:: execute_scheduling.rst
 .. include:: /troubleshooting/Variables_Examples.rst

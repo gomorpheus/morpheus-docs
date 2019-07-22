@@ -6,5 +6,4 @@ Option Types are custom input fields that can be added to Instance Types and Lay
 .. image:: /images/provisioning/library/OptionType.png
 
 
-
 .. image:: /images/provisioning/library/variable.png

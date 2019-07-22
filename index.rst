@@ -14,7 +14,7 @@ Morpheus Documentation
    logs/logs
    backups/backups
    operations/operations
-   services/services
+   tools/tools
    integration_guides/integration_guides
    troubleshooting/troubleshooting
 

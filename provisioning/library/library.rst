@@ -13,6 +13,7 @@ The Library section is used to add virtual images as custom instances to the pro
 * Option Lists
 * File Templates
 * Scripts
+* Spec Templates
 
 Uploaded or synced images from the virtual images section are added to nodes, a node or multiple nodes are added to layouts, and layouts are added to Instance Types. Scripts and File Templates can be attached to nodes, with phased execution options for scripts.
 
@@ -334,7 +335,7 @@ Uploaded or synced images from the virtual images section are added to nodes, a 
           SCRIPT
             Enter bash or powershell script.
 
-            .. note:: |morpheus| variables are supported in Library Scripts using ``<%= variable.var %>`` format 
+            .. note:: |morpheus| variables are supported in Library Scripts using ``<%= variable.var %>`` format
 
           RUN AS USER
             By default script are execute as ``morpheus-node``. To execute as another User, populate ``RUN AS USER`` and ensure proper user permissions & group access.
