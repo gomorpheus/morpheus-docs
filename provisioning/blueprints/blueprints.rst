@@ -16,4 +16,9 @@ Blueprint Types
 - Kubernetes
 - Helm
 
-.. include:: /provisioning/blueprints/morpheus_blueprints.rst
+.. include:: /provisioning/blueprints/morpheus.rst
+.. include:: /provisioning/blueprints/terraform.rst
+.. include:: /provisioning/blueprints/arm.rst
+.. include:: /provisioning/blueprints/cloudFormation.rst
+.. include:: /provisioning/blueprints/kubernetes.rst
+.. include:: /provisioning/blueprints/helm.rst

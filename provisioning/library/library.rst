@@ -349,3 +349,5 @@ Uploaded or synced images from the virtual images section are added to nodes, a 
        * Scripts and Templates can be added/shared among multiple node types
        * The Execution Phase can be set for scripts in the Scripts section.
        * Search will populate Scripts or Templates containing the characters entered anywhere in their name, not just the first letter(s) of the name.
+
+.. include:: /provisioning/library/specTemplates.rst
