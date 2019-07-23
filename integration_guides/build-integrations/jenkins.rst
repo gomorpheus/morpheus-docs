@@ -6,6 +6,8 @@ The Morpheus Jenkins integration is easy to add and will allow you to see all jo
 Adding Jenkins Integration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+.. IMAGE:: /images/integration_guides/build-integrations/Jenkins-add-modal.png
+
 #. Navigate to ```Administration -> integrations```
 #. Select :guilabel:`+ NEW INTEGRATION`
 #. Select Jenkins
@@ -24,7 +26,6 @@ Adding Jenkins Integration
 
 #. :guilabel:`SAVE CHANGES`
 
-.. IMAGE:: /images/integration_guides/build-integrations/Jenkins-add-modal.png
 
 .. IMPORTANT::
 
