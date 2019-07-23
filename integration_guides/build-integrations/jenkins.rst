@@ -24,7 +24,7 @@ Adding Jenkins Integration
 
 #. :guilabel:`SAVE CHANGES`
 
-.. IMAGE:: /images/integration_guides/build/Jenkins-add-modal.png
+.. IMAGE:: /images/integration_guides/build-integrations/Jenkins-add-modal.png
 
 .. IMPORTANT::
 
@@ -36,11 +36,11 @@ Viewing Jobs in Jenkins Integration
 
 In the |morpheus| Jenkins integration you can view all of your jobs.
 
-.. IMAGE:: /images/integration_guides/build/Jenkins-Jobs-View.png
+.. IMAGE:: /images/integration_guides/build-integrations/Jenkins-Jobs-View.png
 
 
 Viewing Builds and Build Statuses
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 In the |morpheus| Jenkins integration you can view all of your builds and statuses.
 
-.. IMAGE:: /images/integration_guides/build/Jenkins-Builds-View.png
+.. IMAGE:: /images/integration_guides/build-integrations/Jenkins-Builds-View.png
