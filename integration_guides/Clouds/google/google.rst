@@ -8,7 +8,7 @@ Requirements
 * `project_id`, `private_key` and `client_email` for the Service Account
 * `Compute Engine API` enabled in GCP `API's and Services`
 
-.. IMAGE:: /images/integration_guides/clouds/Google-API-Compute
+.. IMAGE:: /images/integration_guides/clouds/Google-API-Compute.png
 
 
 Features
