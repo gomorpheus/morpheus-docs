@@ -13,8 +13,9 @@ Take advantage of custom tasks and workflows within any environment by building 
   instances/instances.rst
   apps/apps.rst
   blueprints/blueprints.rst
+  jobs/jobs.rst
   automation/automation.rst
   virtual_images/virtual_images.rst
   library/library.rst
-  migrations/migrations.rst
   deployments/deployments.rst
+  serviceMesh/serviceMesh.rst

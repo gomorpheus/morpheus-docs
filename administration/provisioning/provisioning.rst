@@ -21,6 +21,8 @@ Show Pricing
   Displays or hides Pricing in Provisioning wizard and Instance and Host detail pages.
 Deployment Archive Store
   Default Storage Provider for storing Deployment Archives.
+Cross-Tenant Naming Policies
+  Enable for the ``sequence`` value in naming policies to apply across tenants 
 
 .. NOTE:: Storage Providers can be configured and managed in the `Infrastructure -> Storage` section.
 
