@@ -21,6 +21,7 @@ INVENTORY REPORTS
   Provisioning
     * Instance Inventory Summary
     * Virtual Machine Inventory Summary
+    * Workload Summary
 
 CLOUD REPORTS
   Usage
