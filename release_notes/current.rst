@@ -8,11 +8,12 @@ Clusters & Kubernetes
 ^^^^^^^^^^^^^^^^^^^^^
 New ``Infrastructure -> Clusters`` section
  - Cluster tab added to Cloud detail pages
- - New Clusters are automatically created for existing Docker Hosts
  - Kubernetes Cluster provisioning
-   - Rebuilt from ground up to allow custom layouts and services
+   - Rebuilt from the ground up, CNCF certified
  - Docker Cluster provisioning
+   - New Clusters are automatically created for existing Docker Hosts
  - Amazon EKS Cluster provisioning
+   - Kubernetes EKS 1.13 layout provided (note: Kubernetes Clusters can also be created in AWS EC2 using Kubernetes Cluster type)
 Cluster List View
    - Create new Kubernetes, Morpheus Docker, and EKS clusters
    - Lists existing Clusters with Cluster Status, Cluster Type, Cluster Layout, Worker count, Cluster resource utilization stats, and actions including adding new worker nodes.
@@ -20,12 +21,12 @@ Cluster List View
    - Cluster search field
 Cluster Detail view
     - Cluster resource utilization statistics for compute, memory and storage
-    - Total Cluster Costs (month do date)
-    - Masters, Workers, Containers, Services, Jobs and Discovered stats
+    - Total Cluster Costs (month to date)
+    - Masters, Workers, Containers, Services, Jobs and Discovered containers stats
     - Summary, Namespaces, Masters, Workers, Services, Containers, Jobs, Volumes, Lobs, History and Wiki tabs
-    - Easy access to Kubernetes API and Config
+    - Easy access to Kubernetes API and Config via ``Actions``
     - Group, Tenant and Service Plan permissions per Cluster
-    - Detailed Metadata and Status views for all Masters, Workers, Containers, Deployments and Pods
+    - Detailed Metadata and Status views for all Masters, Workers, Containers, Deployments and Pods (``i`` bubble)
     - Real-time process event history
 - Kubernetes Blueprints
 - Helm Blueprints
