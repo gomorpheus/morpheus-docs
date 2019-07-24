@@ -3,7 +3,6 @@ Docker Clusters
 
 Provisions a new Docker Cluster managed by Morpheus.
 
-
 To create a new Docker Cluster:
 
 #. Navigate to ``Infrastructure - Clusters``
@@ -31,7 +30,7 @@ To create a new Docker Cluster:
 #. Populate the following (options depend on Cloud Selection and will vary):
 
    LAYOUT
-    Select from available layouts. 
+    Select from available layouts.
    PLAN
     Select plan for Docker Host
    VOLUMES
