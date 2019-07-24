@@ -38,6 +38,9 @@ To create a new Kubernetes Cluster:
    TAGS
     Internal label(s)
 
+#. Select :guilabel:`NEXT`
+#. Populate the following:
+
    LAYOUT
     Select from available layouts. System provided layouts include Single Master and Cluster Layouts.
    PLAN
@@ -56,6 +59,22 @@ To create a new Kubernetes Cluster:
     Plan for Worker Nodes (cluster layouts only)
    LOAD BALANCER
     Select an available Load Balancer (cluster layouts only) }
+   User Config
+     CREATE YOUR USER
+       Select to create your user on provisioned hosts (requires Linux user config in |morpheus| User Profile)
+     USER GROUP
+       Select User group to create users for all User Group members on provisioned hosts (requires Linux user config in |morpheus| User Profile for all members of User Group)
+   Advanced Options
+    DOMAIN
+      Specify Domain for DNS records
+    HOSTNAME
+      Set hostname (defaults to Instance name)
+
+#. Select :guilabel:`NEXT`
+#. Select optional Workflow to execute
+#. Select :guilabel:`NEXT`
+#. Review and select :guilabel:`COMPLETE`
+
 
 Kubernetes Cluster Detail Pages
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
