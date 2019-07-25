@@ -39,7 +39,6 @@ Uploaded or synced images from the virtual images section are added to nodes, a 
 
        .. include:: /provisioning/library/option_lists.rst
 
-
    .. tab:: File Templates
 
        .. include:: /provisioning/library/file_templates.rst
