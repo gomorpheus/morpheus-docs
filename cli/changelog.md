@@ -4,6 +4,16 @@ This is a list of changes in the most recent versions of the CLI.
 
 Backwards compatibility with older appliances should be preserved in most cases.
 
+## 3.6.36
+
+### Fixes
+* Fix issue with `instances start-service`
+
+## 3.6.35
+
+### Fixes
+* Fix issue with download/export commands that use arrays as query parameter values
+
 ## 3.6.34
 
 ### Fixes
