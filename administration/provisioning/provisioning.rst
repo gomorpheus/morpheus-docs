@@ -17,14 +17,18 @@ Allow Cloud Selection
   Displays or hides Cloud Selection dropdown in Provisioning wizard.
 Allow Host Selection
   Displays or hides Host Selection dropdown in Provisioning wizard.
+Require Environment Selection
+  Forces users to select and Environment during provisioning
 Show Pricing
   Displays or hides Pricing in Provisioning wizard and Instance and Host detail pages.
+Hide Datastore Stats On Selection
+  Hides Datastore utilization and size stats in provisioning and app wizards
+Cross-Tenant Naming Policies
+  Enable for the ``sequence`` value in naming policies to apply across tenants
 Deployment Archive Store
   Default Storage Provider for storing Deployment Archives.
-Cross-Tenant Naming Policies
-  Enable for the ``sequence`` value in naming policies to apply across tenants 
 
-.. NOTE:: Storage Providers can be configured and managed in the `Infrastructure -> Storage` section.
+  .. NOTE:: Storage Providers can be configured and managed in the `Infrastructure -> Storage` section.
 
 Cloud-Init Settings
 -------------------
@@ -49,3 +53,15 @@ Default Root Password
 
 .. include:: environments.rst
 .. include:: licenses.rst
+
+App Blueprint Settings
+----------------------
+
+Determines the Default Blueprint Type selected in new App Wizard
+
+ - Morpheus
+ - ARM Template
+ - Cloud Formation
+ - Terraform
+ - Kubernetes Spec
+ - Helm Chart
