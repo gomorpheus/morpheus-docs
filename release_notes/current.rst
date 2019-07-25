@@ -14,6 +14,8 @@ New ``Infrastructure -> Clusters`` section
    - New Clusters are automatically created for existing Docker Hosts
  - Amazon EKS Cluster provisioning
    - Kubernetes EKS 1.13 layout provided (note: Kubernetes Clusters can also be created in AWS EC2 using Kubernetes Cluster type)
+ - KVM Cluster Provisioning
+   - Spin up Morpheus KVM Clusters
 Cluster List View
    - Create new Kubernetes, Morpheus Docker, and EKS clusters
    - Lists existing Clusters with Cluster Status, Cluster Type, Cluster Layout, Worker count, Cluster resource utilization stats, and actions including adding new worker nodes.
@@ -28,11 +30,19 @@ Cluster Detail view
     - Group, Tenant and Service Plan permissions per Cluster
     - Detailed Metadata and Status views for all Masters, Workers, Containers, Deployments and Pods (``i`` bubble)
     - Real-time process event history
-- Kubernetes Blueprints
-- Helm Blueprints
-- Library Spec Templates
-- Kubernetes Cluster provisioning is supported in VMware, AWS, Openstack, Nutanix, vCloud Director, Xen, Google, Softlayer, Huawei, Digital Ocean, Fusion, Hyper-v, Open Telekom Cloud cloud types
+New Blueprint Types
+    - Kubernetes Blueprints
+    - Helm Blueprints
+Library: Spec Templates added
+   - Kubernetes Spec, Helm Chart and Swarm Template Spec Template Types added
+   - Kubernetes and Helm Spec Temples can be provisioned using the system Kubernetes Instance type, or added to Custom layouts
+   - Code Repository, URL and Local sources supported
+   - Terraform, ARM and CloudFormation Spec Template types also added
+     - Allows provisioning of Terraform, ARM and CloudFormation templates as Instances
+Library: Cluster Layouts added
+   - Create your own Kubernetes, Docker, EKS and KVM Cluster Layouts using your own images and config
 
+.. Note:: Kubernetes Cluster provisioning is supported in VMware, AWS, Openstack, Nutanix, vCloud Director, Xen, Google, Softlayer, Huawei, Digital Ocean, Fusion, Hyper-v, Open Telekom Cloud cloud types
 
 Automation Expansion
 ^^^^^^^^^^^^^^^^^^^^^
