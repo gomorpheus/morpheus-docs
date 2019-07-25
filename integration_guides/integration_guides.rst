@@ -6,6 +6,7 @@ Integration Guides
 
 .. include:: Automation/automation.rst
 .. include:: Backups/backups.rst
+.. include:: build-integrations/build-integrations.rst
 .. include:: Clouds/clouds.rst
 .. include:: Containers/containers.rst
 .. include:: Deployments/deployment.rst
