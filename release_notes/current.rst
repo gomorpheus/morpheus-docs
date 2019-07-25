@@ -118,6 +118,25 @@ AWS Updates
 - Security Groups can now be viewed and managed from Instance detail Network tab
 - AWS GovCloud US East Region added
 
+Role Permission Updates
+^^^^^^^^^^^^^^^^^^^^^^^
+- Infrastructure: Clusters (None, Read, Full)
+- Operations: Wiki (None, Read, Full)
+- Provisioning: Advanced Node Type Options (None, Full)
+- Provisioning: Blueprints - Helm (None, Provision, Full)
+- Provisioning: Blueprints - Kubernetes (None, Provision, Full)
+- Provisioning: Instances (None, Read, User, Full)
+- Provisioning: Job Executions (None, Read)
+- Provisioning: Jobs (None, Read, Full)
+- Provisioning: Scheduling - Execute (None, Read, Full)
+- Provisioning: Scheduling - Power (None, Read, Full)
+- Provisioning: Service Mesh (None, Read, User, Full)
+- Snapshots (None, Read, Full)
+- Tools: Archives (None, Read, Full)
+- Tools: Cypher (None, Read, Full, Full Decrypted)
+- Tools: Image Builder (None, Read, Full)
+- Tools: Migrations (None, Read, Full)
+
 Other
 ^^^^^
 - ``Download Agent Script`` added to VM Actions. Generates script for manual agent installs with appliance url and api key included
