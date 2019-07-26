@@ -42,10 +42,11 @@ Library: Spec Templates added
 Library: Cluster Layouts added
    - Create your own Kubernetes, Docker, EKS and KVM Cluster Layouts using your own images and config
 
-.. Note:: Kubernetes Cluster provisioning is supported in VMware, AWS, Openstack, Nutanix, vCloud Director, Xen, Google, Softlayer, Huawei, Digital Ocean, Fusion, Hyper-v, Open Telekom Cloud cloud types
+.. note:: Kubernetes Cluster provisioning is only supported in VMware, AWS, Azure, Openstack, Nutanix, vCloud Director, Xen, Google, IBM, Upcloud, Huawei, Digital Ocean, VMware Fusion, Hyper-V, and Open Telekom Cloud Cloud types
 
 Automation Expansion
-^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^
+
 Jobs
  - New ``Provisioning -> Jobs`` section with Jobs and Job Executions tabs
  - Task and Operational Workflow Job types
@@ -107,14 +108,14 @@ UI Navigation Updates
 SolarWinds
 ^^^^^^^^^^
 - SolarWinds IPAM Integration added
-- Network Pool sync. Polls are set on networks in |morpheus| for automated IP allocation and record creation.
-- Optional network pool allocation record sync. ``Inventory Existing`` option syncs all individual ip's records and status, not required for provisioning.
-- Grid and list displays with ip record overlays and color coding for static, available, reserved and transient status
-- Manual record creation
+- Network Pool sync. Network Pools can be set on networks in |morpheus| for automated IP allocation and record creation.
+- Optional Network Pool allocation and record sync. ``Inventory Existing`` option syncs all individual ip's records and corresponding status. Inventory is not required for provisioning.
+- Grid and list displays with IP record overlays and color coding for static, available, reserved and transient status.
+- Manual IP Host record creation from Network Pool detail pages.
 
 AWS Updates
 ^^^^^^^^^^^
-- EKS Cluster creation added
+- EKS Cluster integration added
 - Security Groups can now be viewed and managed from Instance detail Network tab
 - AWS GovCloud US East Region added
 
