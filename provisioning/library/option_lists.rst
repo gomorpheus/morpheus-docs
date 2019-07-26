@@ -6,7 +6,7 @@ Option Lists allow you to give the user more choices during provisioning to then
 .. NOTE:: JSON entries must be formatted like the following example: ``[{"name":"Test","value":1},{"name":"Testing","value":2}]``
 
 .. image:: /images/provisioning/library/newOptionList.png
-
+   :align: center
 Create Option List
 ^^^^^^^^^^^^^^^^^^
 
