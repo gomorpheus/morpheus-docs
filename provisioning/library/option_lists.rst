@@ -7,6 +7,7 @@ Option Lists allow you to give the user more choices during provisioning to then
 
 .. image:: /images/provisioning/library/newOptionList.png
    :align: center
+   
 Create Option List
 ^^^^^^^^^^^^^^^^^^
 
