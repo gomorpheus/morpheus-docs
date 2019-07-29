@@ -3,4 +3,4 @@ Build
 
 .. toctree::
 
-  build-integrations/jenkins.rst
+  BuildIntegrations/jenkins.rst
