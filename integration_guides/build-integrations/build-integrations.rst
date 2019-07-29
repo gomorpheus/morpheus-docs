@@ -3,4 +3,4 @@ Backups
 
 .. toctree::
 
-  Build/jenkins.rst
+  build-integrations/jenkins.rst
