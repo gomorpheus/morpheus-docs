@@ -3,7 +3,6 @@ Morpheus Agent
 
 The |morpheus| Agent is an important and powerful facet of |morpheus| as a orchestration tool.  Though it is not required (one unique capability of our platform vs. some of the competitors out there), it is recommended for use as it brings with it a lot of insightful benefits.  Not only does it provide statistics of the guest operating system and resource utilization, it also brings along with it monitoring and log aggregation capabilities.  After an initial brownfield discovery users can decide to convert unmanaged vms to managed.  The |morpheus| Agent is very lightweight and secure.
 
-
 .. NOTE::
       **The agent is not required** by |morpheus| to become a managed instance.  If you don't have the agent installed we try to aggregate stats but it can vary based on the cloud and can be limited or inaccurate.
 
@@ -16,54 +15,205 @@ Key Agent Features
 * Handles log aggregation
 * Provides a command bus to where |morpheus| doesn't need to get credentials to access a box. Can still run workflows if credentials are changed
 * SSH agent can be disabled and still get access to the box
-* Agent can be installed over Cloud Init for internetless situations
+* Agent can be installed over Cloud-init, Windows unattend.xml, VMware Tools, SSH, WinRM, Cloudbase-init, or manually.
 *  **The Morpheus agent is optional**
 * Makes a single connect that's persistence over HTTPs web socket and runs as a service
-* Health checks for Linux (not available on windows)
+* Health and Monitoring Checks
 * **No inbound Ports**
 * Agent buffers and compresses logs and sends them in chunks to minimize packets
-* Can be configured to collect logs and send them somewhere
+* Support syslog forwarding
 * Linux agent can be shrunk and should be less then .2% peak (Windows less 97 kb)
-* Run workflows, Have expiration/shutdown policies and can help reign in environments amongst other things
+* Command bus execution
 * Accepts commands, can execute commands, write files, and manipulate firewall
 
-Morpheus Agent Support
-------------------------
+Morpheus Agent OS Support
+-------------------------
 
-Microsoft Windows
++--------------------------+--------------+--------------+---------------+---------------------+
+| **Name**                 | **Platform** | **Category** | **Bit Count** | **Agent Supported** |
++--------------------------+--------------+--------------+---------------+---------------------+
+| centOS                   | linux        | centos       | 64            | 1                   |
++--------------------------+--------------+--------------+---------------+---------------------+
+| centOS 6                 | linux        | centos       | 64            | 1                   |
++--------------------------+--------------+--------------+---------------+---------------------+
+| centOS 6 64-bit          | linux        | centos       | 64            | 1                   |
++--------------------------+--------------+--------------+---------------+---------------------+
+| centOS 64-bit            | linux        | centos       | 64            | 1                   |
++--------------------------+--------------+--------------+---------------+---------------------+
+| centOS 7                 | linux        | centos       | 64            | 1                   |
++--------------------------+--------------+--------------+---------------+---------------------+
+| centOS 7 64-bit          | linux        | centos       | 64            | 1                   |
++--------------------------+--------------+--------------+---------------+---------------------+
+| debian                   | linux        | debian       | 32            | 1                   |
++--------------------------+--------------+--------------+---------------+---------------------+
+| debian 6                 | linux        | debian       | 32            | 1                   |
++--------------------------+--------------+--------------+---------------+---------------------+
+| debian 6 64-bit          | linux        | debian       | 64            | 1                   |
++--------------------------+--------------+--------------+---------------+---------------------+
+| debian 64-bit            | linux        | debian       | 64            | 1                   |
++--------------------------+--------------+--------------+---------------+---------------------+
+| debian 7                 | linux        | debian       | 32            | 1                   |
++--------------------------+--------------+--------------+---------------+---------------------+
+| debian 7 64-bit          | linux        | debian       | 64            | 1                   |
++--------------------------+--------------+--------------+---------------+---------------------+
+| debian 8                 | linux        | debian       | 32            | 1                   |
++--------------------------+--------------+--------------+---------------+---------------------+
+| debian 8 64-bit          | linux        | debian       | 64            | 1                   |
++--------------------------+--------------+--------------+---------------+---------------------+
+| debian 9.4 64-bit        | linux        | debian       | 64            | 1                   |
++--------------------------+--------------+--------------+---------------+---------------------+
+| fedora                   | linux        | fedora       | 32            | 1                   |
++--------------------------+--------------+--------------+---------------+---------------------+
+| fedora 64-bit            | linux        | fedora       | 64            | 1                   |
++--------------------------+--------------+--------------+---------------+---------------------+
+| mac os                   | osx          | mac          | 64            | 1                   |
++--------------------------+--------------+--------------+---------------+---------------------+
+| oracle enterprise        | linux        | oracle       | 32            | 1                   |
++--------------------------+--------------+--------------+---------------+---------------------+
+| oracle enterprise 64-bit | linux        | oracle       | 64            | 1                   |
++--------------------------+--------------+--------------+---------------+---------------------+
+| oracle linux 64-bit      | linux        | oracle       | 64            | 1                   |
++--------------------------+--------------+--------------+---------------+---------------------+
+| redhat                   | linux        | redhat       | 64            | 1                   |
++--------------------------+--------------+--------------+---------------+---------------------+
+| redhat 6                 | linux        | redhat       | 64            | 1                   |
++--------------------------+--------------+--------------+---------------+---------------------+
+| redhat 6 64-bit          | linux        | redhat       | 64            | 1                   |
++--------------------------+--------------+--------------+---------------+---------------------+
+| redhat 64-bit            | linux        | redhat       | 64            | 1                   |
++--------------------------+--------------+--------------+---------------+---------------------+
+| redhat 7                 | linux        | redhat       | 64            | 1                   |
++--------------------------+--------------+--------------+---------------+---------------------+
+| redhat 7 64-bit          | linux        | redhat       | 64            | 1                   |
++--------------------------+--------------+--------------+---------------+---------------------+
+| ubuntu                   | linux        | ubuntu       | 32            | 1                   |
++--------------------------+--------------+--------------+---------------+---------------------+
+| ubuntu 12                | linux        | ubuntu       | 32            | 1                   |
++--------------------------+--------------+--------------+---------------+---------------------+
+| ubuntu 12 64-bit         | linux        | ubuntu       | 64            | 1                   |
++--------------------------+--------------+--------------+---------------+---------------------+
+| ubuntu 13                | linux        | ubuntu       | 32            | 1                   |
++--------------------------+--------------+--------------+---------------+---------------------+
+| ubuntu 13 64-bit         | linux        | ubuntu       | 64            | 1                   |
++--------------------------+--------------+--------------+---------------+---------------------+
+| ubuntu 14                | linux        | ubuntu       | 32            | 1                   |
++--------------------------+--------------+--------------+---------------+---------------------+
+| ubuntu 14 64-bit         | linux        | ubuntu       | 64            | 1                   |
++--------------------------+--------------+--------------+---------------+---------------------+
+| ubuntu 15                | linux        | ubuntu       | 32            | 1                   |
++--------------------------+--------------+--------------+---------------+---------------------+
+| ubuntu 15 64-bit         | linux        | ubuntu       | 64            | 1                   |
++--------------------------+--------------+--------------+---------------+---------------------+
+| ubuntu 16                | linux        | ubuntu       | 32            | 1                   |
++--------------------------+--------------+--------------+---------------+---------------------+
+| ubuntu 16 64-bit         | linux        | ubuntu       | 64            | 1                   |
++--------------------------+--------------+--------------+---------------+---------------------+
+| ubuntu 18.04             | linux        | ubuntu       | 32            | 1                   |
++--------------------------+--------------+--------------+---------------+---------------------+
+| ubuntu 18.04 64-bit      | linux        | ubuntu       | 64            | 1                   |
++--------------------------+--------------+--------------+---------------+---------------------+
+| ubuntu 64-bit            | linux        | ubuntu       | 64            | 1                   |
++--------------------------+--------------+--------------+---------------+---------------------+
+| windows 10               | windows      | windows      | 32            | 1                   |
++--------------------------+--------------+--------------+---------------+---------------------+
+| windows 10 64-bit        | windows      | windows      | 64            | 1                   |
++--------------------------+--------------+--------------+---------------+---------------------+
+| windows 7                | windows      | windows      | 32            | 1                   |
++--------------------------+--------------+--------------+---------------+---------------------+
+| windows 7 64-bit         | windows      | windows      | 64            | 1                   |
++--------------------------+--------------+--------------+---------------+---------------------+
+| windows 8 64-bit         | windows      | windows      | 64            | 1                   |
++--------------------------+--------------+--------------+---------------+---------------------+
+| windows server 2008      | windows      | windows      | 64            | 1                   |
++--------------------------+--------------+--------------+---------------+---------------------+
+| windows server 2008 R2   | windows      | windows      | 64            | 1                   |
++--------------------------+--------------+--------------+---------------+---------------------+
+| windows server 2012      | windows      | windows      | 64            | 1                   |
++--------------------------+--------------+--------------+---------------+---------------------+
+| windows server 2016      | windows      | windows      | 64            | 1                   |
++--------------------------+--------------+--------------+---------------+---------------------+
+| windows server 2019      | windows      | windows      | 64            | 1                   |
++--------------------------+--------------+--------------+---------------+---------------------+
+
+
+Agent Install
+--------------
+
+When provisioning an nstance, there are some network and configuration requirements to successfully install the morpheus agent.  Typically when a vm instance is still in the provisioning phase long after the vm is up, the instance is unable to reach |morpheus| , or depending on agent install mode, |morpheus| is unable to reach the instance.
+
+The most common reason an agent install fails is the provisioned instance cannot reach the |morpheus| Appliance via the appliance_url set in Admin -> Settings over both 443 and 80. When an instance is provisioned from |morpheus|, it must be able to reach the |morpheus| appliance via the appliance_url or the agent will not be installed.
+
+.. image:: /images/agent-7c9a2.png
+    :align: center
+
+
+In addition to the main appliance_url in Admin -> Settings, additional appliance_urls can be set per cloud in the Advanced options of the cloud configuration pane when creating or editing a cloud. When this field is populated, it will override the main appliance url for anything provisioned into that cloud.
+
+.. TIP:: The |morpheus| UI current log, located at /var/log/morpheus/morpheus-ui/current, is very helpful when troubleshooting agent installations.
+
+Agent Install Methods
 ^^^^^^^^^^^^^^^^^^^^^
 
-.. NOTE:: if you require tls 1.2 then .net 4.5 should be installed.
+.. image:: /images/provisioning/agent_ssh.gif
+   :height: 400px
 
-* Windows Server 2008R2 (Requires .Net 4.3 framework)
-* Windows Server 2012
-* Windows Server 2012R2
-* Windows Server 2016
-* Windows Server 2019
-* Windows 10 PRO
+The Morpheus Agent can be installed with a variety of automated methods, or manually installed.
 
-Redhat Based linux Distrubution:
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+- ssh (linux)
+- winRM
+- VMware Tools
+- Cloud-init
+- Cloudbase-init
+- Windows unattend.xml
 
-* Redhat 6.6
-* Redhat 7.x
-* CentOS 6.x
-* CentOS 7.x
-* Oracle 6.x
-* Oracle 7.x
 
-Debian Based linux Distrubutions:
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+For All Agent Install modes
+............................
 
-* Ubuntu 14.04.x
-* Ubuntu 16.04.x
-* Ubuntu 18.04.x (Only supported for VM, not docker host)
-* Debian 8.x
-* Debian 9.x
+When an instance is provisioned and the agent does not install, verify the following for any agent install mode:
 
-Unix Based Operating Systems:
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+* The |morpheus| appliance_url (Admin -> Settings) is both reachable and resolvable from the provisioned node.
+* The appliance_url begins with to https://, not http://.
 
-* MacOS Mojave
-* MacOS High Sierra
-* MacOS Sierra
+.. NOTE:: Be sure to use https:// even when using an ip address for the appliance.
+
+* Inbound connectivity access to the |morpheus| Appliance from provisioned VM's and container hosts on port 443 (needed for agent communication)
+
+* Private (non-morpheus provided) vm images/templates must have their credentials entered. These can be entered/edited in the Provisioning - Virtual Images section but clicking the Actions dropdown of an image and selecting Edit.
+
+.. NOTE:: Administrator user is required for Windows agent install.
+
+* The instance does not have an IP address assigned. For scenarios without a dhcp server, static IP information must be entered by selecting the Network Type: Static in the Advanced section during provisioning. IP Pools can also be created in the Infrastructure -> Networks -> IP Pools section and added to clouds network sections for IPAM.
+
+* DNS is not configured and the node cannot resolve the appliance. If dns cannot be configure, the ip address of the |morpheus| appliance can be used as the main or cloud appliance.
+
+SSH/Winrm
+^^^^^^^^^
+
+Linux Agent
+............
+
+* Port 22 is open for Linux images, and ssh is enabled
+* Credentials have been entered on the image if using custom or synced image. Credentials can be entered on images in the Provisioning -> Virtual Images section.
+
+
+
+Windows Agent
+..............
+
+* Port 5985 must be open and winRM enabled for Windows images.
+* Credentials have been entered on the image if using custom or synced image. Credentials can be entered on images in the Provisioning -> Virtual Images section.
+
+.. NOTE:: Administrator user is required for Windows agent install.
+
+VMware tools (vmtools) rpc mode
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+* VMware tools is installed on the template(s)
+* Credentials have been entered on the Image if using uploaded or synced image when Cloud-init or Guest Customizations or Sysprep for Windows are not used. Credentials can be entered on Images in the `Provisioning -> Virtual Images` section.
+
+Cloud-Init agent install mode
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+* Cloud-Init is configured in Admin -> Provisioning section
+* Provisioned image/blueprint has Cloud-Init (linux) or Cloudbase-Init (windows) installed
