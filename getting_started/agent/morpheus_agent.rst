@@ -196,8 +196,6 @@ Linux Agent
 * Port 22 is open for Linux images, and ssh is enabled
 * Credentials have been entered on the image if using custom or synced image. Credentials can be entered on images in the Provisioning -> Virtual Images section.
 
-
-
 Windows Agent
 ..............
 
