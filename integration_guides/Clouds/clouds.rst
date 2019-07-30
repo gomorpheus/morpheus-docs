@@ -30,6 +30,5 @@ Clouds
   Clouds/vmware/vmware.rst
   Clouds/vmwarefusion/vmwarefusion.rst
   Clouds/xen/xen.rst
-  Clouds/cloudbase-init.rst
   Clouds/centos7template.rst
   Clouds/cloudCoverage/cloudCoverage.rst

@@ -16,15 +16,13 @@ Key Agent Features
 * Provides a command bus to where |morpheus| doesn't need to get credentials to access a box. Can still run workflows if credentials are changed
 * SSH agent can be disabled and still get access to the box
 * Agent can be installed over Cloud-init, Windows unattend.xml, VMware Tools, SSH, WinRM, Cloudbase-init, or manually.
-*  **The Morpheus agent is optional**
 * Makes a single connect that's persistence over HTTPs web socket and runs as a service
 * Health and Monitoring Checks
-* **No inbound Ports**
 * Agent buffers and compresses logs and sends them in chunks to minimize packets
-* Support syslog forwarding
-* Linux agent can be shrunk and should be less then .2% peak (Windows less 97 kb)
-* Command bus execution
-* Accepts commands, can execute commands, write files, and manipulate firewall
+* Supports syslog forwarding
+* Linux agent can be shrunk and should be less then 0.2% peak
+* Accepts commands, can execute commands, write files, and manipulate firewalls
+* Agent installation is optional for provisioning and converting Discovered resources to managed
 
 Morpheus Agent OS Support
 -------------------------
@@ -155,9 +153,10 @@ Agent Install Methods
 ^^^^^^^^^^^^^^^^^^^^^
 
 .. image:: /images/provisioning/agent_ssh.gif
-   :height: 400px
+   :height: 500px
+   :align: center
 
-The Morpheus Agent can be installed with a variety of automated methods, or manually installed.
+The Morpheus Agent can be installed with a variety of automated methods:
 
 - ssh (linux)
 - winRM
@@ -166,6 +165,7 @@ The Morpheus Agent can be installed with a variety of automated methods, or manu
 - Cloudbase-init
 - Windows unattend.xml
 
+Agents can also be manually installed.
 
 For All Agent Install modes
 ............................
@@ -217,3 +217,5 @@ Cloud-Init agent install mode
 
 * Cloud-Init is configured in Admin -> Provisioning section
 * Provisioned image/blueprint has Cloud-Init (linux) or Cloudbase-Init (windows) installed
+
+.. include:: /troubleshooting/Morpheus_Agent.rst
