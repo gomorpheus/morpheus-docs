@@ -1,5 +1,3 @@
-.. _${variable}:
-
 Variables
 =========
 
@@ -29,318 +27,320 @@ Instance Naming Policy example: ``${userInitials}-${cloudCode}-${platform == 'wi
 
 .. code-block:: bash
 
-	cypher: <%=cypher.read('secret/hello')%>
-	customOptions: <%=customOptions.fieldName%>
-	evar: <%=evars.name%>
-	evars: <%=evars%>
-	instance.metadata: <%=instance.metadata%>
-	instance.instanceTypeName: <%=instance.instanceTypeName%>
-	instance.instanceTypeCode: <%=instance.instanceTypeCode%>
-	instance.provisionType: <%=instance.provisionType%>
-	instance.instanceVersion: <%=instance.instanceVersion%>
-	instance.plan: <%=instance.plan%>
-	instance.name: <%=instance.name%>
-	instance.displayName: <%=instance.displayName%>
-	instance.description: <%=instance.description%>
-	instance.environmentPrefix: <%=instance.environmentPrefix%>
-	instance.hostname: <%=instance.hostname%>
-	instance.domainName: <%=instance.domainName%>
-	instance.firewallEnabled: <%=instance.firewallEnabled%>
-	instance.status: <%=instance.status%>
-	instance.userStatus: <%=instance.userStatus%>
-	instance.networkLevel: <%=instance.networkLevel%>
-	instance.instanceLevel: <%=instance.instanceLevel%>
-	instance.deployGroup: <%=instance.deployGroup%>
-	instance.instanceContext: <%=instance.instanceContext%>
-	instance.autoScale: <%=instance.autoScale%>
-	instance.statusMessage: <%=instance.statusMessage%>
-	instance.expireDate: <%=instance.expireDate%>
-	instance.tags: <%=instance.tags%>
-	instance.storage: <%=instance.storage%>
-	instance.memory: <%=instance.memory%>
-	instance.cores: <%=instance.cores%>
-	instance.configId: <%=instance.configId%>
-	instance.configGroup: <%=instance.configGroup%>
-	instance.configRole: <%=instance.configRole%>
-	instance.containers[0]: <%=instance.containers[0].containerTypeName%>
-	instance.createdBYUsername: <%=instance.createdByUsername%>
-	instance.createdByEmail: <%=instance.createdByEmail%>
-	instance.createdByFirstName: <%=instance.createdByFirstName%>
-	instance.createdByLastName: <%=instance.createdByLastName%>
-	instance.createdById: <%=instance.createdById%>
-	container.containerTypeName: <%=container.containerTypeName%>
-	container.containerTypeCode: <%=container.containerTypeCode%>
-	container.containerTypeShortName: <%=container.containerTypeShortName%>
-	container.provisionType: <%=container.provisionType%>
-	container.dataPath: <%=container.dataPath%>
-	container.logsPath: <%=container.logsPath%>
-	container.configPath: <%=container.configPath%>
-	container.planCode: <%=container.planCode%>
-	container.dateCreated: <%=container.dateCreated%>
-	container.status: <%=container.status%>
-	container.environmentPrefix: <%=container.environmentPrefix%>
-	container.version: <%=container.version%>
-	container.image: <%=container.image%>
-	container.internalHostname: <%=container.internalHostname%>
-	container.hostname: <%=container.hostname%>
-	container.domainName: <%=container.domainName%>
-	container.storage: <%=container.storage%>
-	container.memory: <%=container.memory%>
-	container.cores: <%=container.cores%>
-	container.internalIp: <%=container.internalIp%>
-	container.externalIp: <%=container.externalIp%>
-	container.sshHost: <%=container.sshHost%>
-	container.hostMountPoint: <%=container.hostMountPoint%>
-	container.configId: <%=container.configId%>
-	container.configGroup: <%=container.configGroup%>
-	container.configRole: <%=container.configRole%>
-	container.serverId: <%=container.serverId%>
-	container.server: <%=container.server.serverTypeName%>
-	server.serverTypeName: <%=server.serverTypeName%>
-	server.serverTypeCode: <%=server.serverTypeCode%>
-	server.parentServerId: <%=server.parentServerId%>
-	server.plan: <%=server.plan%>
-	server.visibility: <%=server.visibility%>
-	server.osTypeCode: <%=server.osTypeCode%>
-	server.sourceImageId: <%=server.sourceImageId%>
-	server.name: <%=server.name%>
-	server.displayName: <%=server.displayName%>
-	server.internalName: <%=server.internalName%>
-	server.category: <%=server.category%>
-	server.description: <%=server.description%>
-	server.internalId: <%=server.internalId%>
-	server.externalId: <%=server.externalId%>
-	server.platform: <%=server.platform%>
-	server.platformVersion: <%=server.platformVersion%>
-	server.agentVersion: <%=server.agentVersion%>
-	server.nodePackageVersion: <%=server.nodePackageVersion%>
-	server.sshHost: <%=server.sshHost%>
-	server.sshPort: <%=server.sshPort%>
-	server.sshUsername: <%=server.sshUsername%>
-	server.consoleType: <%=server.consoleType%>
-	server.consoleHost: <%=server.consoleHost%>
-	server.consolePort: <%=server.consolePort%>
-	server.consoleUsername: <%=server.consoleUsername%>
-	server.internalSshUsername: <%=server.internalSshUsername%>
-	server.internalIp: <%=server.internalIp%>
-	server.externalIp: <%=server.externalIp%>
-	server.osDevice: <%=server.osDevice%>
-	server.dataDevice: <%=server.dataDevice%>
-	server.lvmEnabled: <%=server.lvmEnabled%>
-	server.apiKey: <%=server.apiKey%>
-	server.softwareRaid: <%=server.softwareRaid%>
-	server.status: <%=server.status%>
-	server.powerState: <%=server.powerState%>
-	server.dateCreated: <%=server.dateCreated%>
-	server.lastAgentUpdate: <%=server.lastAgentUpdate%>
-	server.serverType: <%=server.serverType%>
-	server.osType: <%=server.osType%>
-	server.commType: <%=server.commType%>
-	server.managed: <%=server.managed%>
-	server.agentInstalled: <%=server.agentInstalled%>
-	server.toolsInstalled: <%=server.toolsInstalled%>
-	server.hostname: <%=server.hostname%>
-	server.domainName: <%=server.domainName%>
-	server.statusMessage: <%=server.statusMessage%>
-	server.maxStorage: <%=server.maxStorage%>
-	server.maxMemory: <%=server.maxMemory%>
-	server.maxCores: <%=server.maxCores%>
-	server.macAddress: <%=server.macAddress%>
-	server.serverVendor: <%=server.serverVendor%>
-	server.serverModel: <%=server.serverModel%>
-	server.serialNumber: <%=server.serialNumber%>
-	server.tags: <%=server.tags%>
-	server.configId: <%=server.configId%>
-	server.configGroup: <%=server.configGroup%>
-	server.configRole: <%=server.configRole%>
-	task.results (using task code): <%=results.taskCode%>
-	task.results (using task name): <%=results["Task Name"]%>
-	task.results.value: <%=results.taskCode.key%>
-	zone.name: <%=zone.name%>
-	zone.code: <%=zone.code%>
-	zone.location: <%=zone.location%>
-	zone.cloudTypeName: <%=zone.cloudTypeName%>
-	zone.cloudTypeCode: <%=zone.cloudTypeCode%>
-	zone.domainName: <%=zone.domainName%>
-	zone.scalePriority: <%=zone.scalePriority%>
-	zone.firewallEnabled: <%=zone.firewallEnabled%>
-	zone.regionCode: <%=zone.regionCode%>
-	zone.agentMode: <%=zone.agentMode%>
-	zone.datacenterId: <%=zone.datacenterId%>
-	group.code: <%=group.code%>
-	group.name: <%=group.name%>
-	group.location: <%=group.location%>
-	group.datacenterId: <%=group.datacenterId%>
+			container.configGroup: <%=container.configGroup%>
+			container.configId: <%=container.configId%>
+			container.configPath: <%=container.configPath%>
+			container.configRole: <%=container.configRole%>
+			container.containerTypeCode: <%=container.containerTypeCode%>
+			container.containerTypeName: <%=container.containerTypeName%>
+			container.containerTypeShortName: <%=container.containerTypeShortName%>
+			container.cores: <%=container.cores%>
+			container.dataPath: <%=container.dataPath%>
+			container.dateCreated: <%=container.dateCreated%>
+			container.domainName: <%=container.domainName%>
+			container.environmentPrefix: <%=container.environmentPrefix%>
+			container.externalIp: <%=container.externalIp%>
+			container.hostMountPoint: <%=container.hostMountPoint%>
+			container.hostname: <%=container.hostname%>
+			container.image: <%=container.image%>
+			container.internalHostname: <%=container.internalHostname%>
+			container.internalIp: <%=container.internalIp%>
+			container.logsPath: <%=container.logsPath%>
+			container.memory: <%=container.memory%>
+			container.planCode: <%=container.planCode%>
+			container.provisionType: <%=container.provisionType%>
+			container.server: <%=container.server.serverTypeName%>
+			container.serverId: <%=container.serverId%>
+			container.sshHost: <%=container.sshHost%>
+			container.status: <%=container.status%>
+			container.storage: <%=container.storage%>
+			container.version: <%=container.version%>
+			customOptions: <%=customOptions.fieldName%>
+			evar: <%=evars.name%>
+			evars: <%=evars%>
+			group.code: <%=group.code%>
+			group.datacenterId: <%=group.datacenterId%>
+			group.location: <%=group.location%>
+			group.name: <%=group.name%>
+			instance.autoScale: <%=instance.autoScale%>
+			instance.configGroup: <%=instance.configGroup%>
+			instance.configId: <%=instance.configId%>
+			instance.configRole: <%=instance.configRole%>
+			instance.containers[0]: <%=instance.containers[0].containerTypeName%>
+			instance.cores: <%=instance.cores%>
+			instance.createdByEmail: <%=instance.createdByEmail%>
+			instance.createdByFirstName: <%=instance.createdByFirstName%>
+			instance.createdById: <%=instance.createdById%>
+			instance.createdByLastName: <%=instance.createdByLastName%>
+			instance.createdBYUsername: <%=instance.createdByUsername%>
+			instance.deployGroup: <%=instance.deployGroup%>
+			instance.description: <%=instance.description%>
+			instance.displayName: <%=instance.displayName%>
+			instance.domainName: <%=instance.domainName%>
+			instance.environmentPrefix: <%=instance.environmentPrefix%>
+			instance.expireDate: <%=instance.expireDate%>
+			instance.firewallEnabled: <%=instance.firewallEnabled%>
+			instance.hostname: <%=instance.hostname%>
+			instance.instanceContext: <%=instance.instanceContext%>
+			instance.instanceLevel: <%=instance.instanceLevel%>
+			instance.instanceTypeCode: <%=instance.instanceTypeCode%>
+			instance.instanceTypeName: <%=instance.instanceTypeName%>
+			instance.instanceVersion: <%=instance.instanceVersion%>
+			instance.memory: <%=instance.memory%>
+			instance.metadata: <%=instance.metadata%>
+			instance.name: <%=instance.name%>
+			instance.networkLevel: <%=instance.networkLevel%>
+			instance.plan: <%=instance.plan%>
+			instance.provisionType: <%=instance.provisionType%>
+			instance.status: <%=instance.status%>
+			instance.statusMessage: <%=instance.statusMessage%>
+			instance.storage: <%=instance.storage%>
+			instance.tags: <%=instance.tags%>
+			instance.userStatus: <%=instance.userStatus%>
+			server.agentInstalled: <%=server.agentInstalled%>
+			server.agentVersion: <%=server.agentVersion%>
+			server.apiKey: <%=server.apiKey%>
+			server.category: <%=server.category%>
+			server.commType: <%=server.commType%>
+			server.configGroup: <%=server.configGroup%>
+			server.configId: <%=server.configId%>
+			server.configRole: <%=server.configRole%>
+			server.consoleHost: <%=server.consoleHost%>
+			server.consolePort: <%=server.consolePort%>
+			server.consoleType: <%=server.consoleType%>
+			server.consoleUsername: <%=server.consoleUsername%>
+			server.dataDevice: <%=server.dataDevice%>
+			server.dateCreated: <%=server.dateCreated%>
+			server.description: <%=server.description%>
+			server.displayName: <%=server.displayName%>
+			server.domainName: <%=server.domainName%>
+			server.externalId: <%=server.externalId%>
+			server.externalIp: <%=server.externalIp%>
+			server.fqdn: <%=server.fqdn%>
+			server.hostname: <%=server.hostname%>
+			server.internalId: <%=server.internalId%>
+			server.internalIp: <%=server.internalIp%>
+			server.internalName: <%=server.internalName%>
+			server.internalSshUsername: <%=server.internalSshUsername%>
+			server.lastAgentUpdate: <%=server.lastAgentUpdate%>
+			server.lvmEnabled: <%=server.lvmEnabled%>
+			server.macAddress: <%=server.macAddress%>
+			server.managed: <%=server.managed%>
+			server.maxCores: <%=server.maxCores%>
+			server.maxMemory: <%=server.maxMemory%>
+			server.maxStorage: <%=server.maxStorage%>
+			server.name: <%=server.name%>
+			server.nodePackageVersion: <%=server.nodePackageVersion%>
+			server.osDevice: <%=server.osDevice%>
+			server.osType: <%=server.osType%>
+			server.osTypeCode: <%=server.osTypeCode%>
+			server.parentServerId: <%=server.parentServerId%>
+			server.plan: <%=server.plan%>
+			server.platform: <%=server.platform%>
+			server.platformVersion: <%=server.platformVersion%>
+			server.powerState: <%=server.powerState%>
+			server.serialNumber: <%=server.serialNumber%>
+			server.serverModel: <%=server.serverModel%>
+			server.serverType: <%=server.serverType%>
+			server.serverTypeCode: <%=server.serverTypeCode%>
+			server.serverTypeName: <%=server.serverTypeName%>
+			server.serverVendor: <%=server.serverVendor%>
+			server.softwareRaid: <%=server.softwareRaid%>
+			server.sourceImageId: <%=server.sourceImageId%>
+			server.sshHost: <%=server.sshHost%>
+			server.sshPort: <%=server.sshPort%>
+			server.sshUsername: <%=server.sshUsername%>
+			server.status: <%=server.status%>
+			server.statusMessage: <%=server.statusMessage%>
+			server.tags: <%=server.tags%>
+			server.toolsInstalled: <%=server.toolsInstalled%>
+			server.visibility: <%=server.visibility%>
+			task.results (using task code): <%=results.taskCode%>
+			task.results (using task name): <%=results["Task Name"]%>
+			task.results.value: <%=results.taskCode.key%>
+			zone.agentMode: <%=zone.agentMode%>
+			zone.cloudTypeCode: <%=zone.cloudTypeCode%>
+			zone.cloudTypeName: <%=zone.cloudTypeName%>
+			zone.code: <%=zone.code%>
+			zone.datacenterId: <%=zone.datacenterId%>
+			zone.domainName: <%=zone.domainName%>
+			zone.firewallEnabled: <%=zone.firewallEnabled%>
+			zone.location: <%=zone.location%>
+			zone.name: <%=zone.name%>
+			zone.regionCode: <%=zone.regionCode%>
+			zone.scalePriority: <%=zone.scalePriority%>
+			cypher: <%=cypher.read('secret/hello')%>
 
 
 .. code-block:: bash
 
-	instance {
-		instanceTypeName,
-		instanceTypeCode,
-		provisionType,
-		instanceVersion,
-		tenantSubdomain,
-		plan,
-		name,
-		displayName,
-		description,
-		environmentPrefix,
-		hostname,
-		domainName,
-		firewallEnabled,
-		status,
-		userStatus,
-		networkLevel,
-		instanceLevel,
-		deployGroup,
-		instanceContext,
-		autoScale,
-		statusMessage,
-		expireDate,
-		tags,
-		storage,
-		memory,
-		cores,
-		configId,
-		configGroup,
-		configRole
-		containers:[],
-		metadata:[],
-		evars:[]
-	}
+			instance {
+				autoScale,
+				configGroup,
+				configId,
+				configRole
+				containers:[],
+				cores,
+				deployGroup,
+				description,
+				displayName,
+				domainName,
+				environmentPrefix,
+				evars:[],
+				expireDate,
+				firewallEnabled,
+				hostname,
+				instanceContext,
+				instanceLevel,
+				instanceTypeCode,
+				instanceVersion,
+				memory,
+				metadata:[],
+				name,
+				networkLevel,
+				plan,
+				provisionType,
+				status,
+				statusMessage,
+				storage,
+				tags,
+				tenantSubdomain,
+				userStatus,
+				instanceTypeName
+			}
+
+		.. code-block:: bash
+
+			container {
+				configGroup,
+				configId,
+				configPath,
+				configRole,
+				containerTypeCode,
+				containerTypeShortName,
+				cores,
+				dataPath,
+				dateCreated,
+				domainName,
+				environmentPrefix,
+				externalIp,
+				hostMountPoint,
+				hostname,
+				image,
+				internalHostname,
+				internalIp,
+				logsPath,
+				memory,
+				planCode,
+				provisionType,
+				server:{},
+				serverId,
+				sshHost,
+				status,
+				storage,
+				version,
+				containerTypeName
+			}
 
 .. code-block:: bash
 
-	container {
-		containerTypeName,
-		containerTypeCode,
-		containerTypeShortName,
-		provisionType,
-		dataPath,
-		logsPath,
-		configPath,
-		planCode,
-		dateCreated,
-		status,
-		environmentPrefix,
-		version,
-		image,
-		internalHostname,
-		hostname,
-		domainName,
-		storage,
-		memory,
-		cores,
-		internalIp,
-		externalIp,
-		sshHost,
-		hostMountPoint,
-		configId,
-		configGroup,
-		configRole,
-		serverId,
-		server:{}
-	}
+			server {
+				agentInstalled,
+				agentVersion,
+				apiKey,
+				category,
+				commType,
+				configGroup,
+				configId,
+				configRole
+				consoleHost,
+				consolePort,
+				consoleType,
+				consoleUsername,
+				dataDevice,
+				dateCreated,
+				description,
+				displayName,
+				domainName,
+				externalId,
+				externalIp,
+				fqdn,
+				hostname,
+				internalId,
+				internalIp,
+				internalName,
+				internalSshUsername,
+				lastAgentUpdate,
+				lvmEnabled,
+				macAddress,
+				managed,
+				maxCores,
+				maxMemory,
+				maxStorage,
+				name,
+				nodePackageVersion,
+				osDevice,
+				osType,
+				osTypeCode,
+				parentServerId,
+				plan,
+				platform,
+				platformVersion,
+				powerState,
+				serialNumber,
+				serverModel,
+				serverType,
+				serverTypeCode,
+				serverTypeName,
+				serverVendor,
+				softwareRaid,
+				sourceImageId,
+				sshHost,
+				sshPort,
+				sshUsername,
+				status,
+				statusMessage,
+				tags,
+				toolsInstalled,
+				visibility,
+				volumes {
+					name
+					id
+					deviceName
+					maxStorage
+					unitNumber
+					displayOrder
+					rootVolume
+				}
+			}
 
 .. code-block:: bash
 
-	server {
-		serverTypeName,
-		serverTypeCode,
-		parentServerId,
-		plan,
-		visibility,
-		osTypeCode,
-		sourceImageId,
-		name,
-		displayName,
-		internalName,
-		category,
-		description
-		internalId,
-		externalId,
-		platform,
-		platformVersion,
-		agentVersion,
-		nodePackageVersion,
-		sshHost,
-		sshPort,
-		sshUsername,
-		consoleType,
-		consoleHost,
-		consolePort,
-		consoleUsername,
-		internalSshUsername,
-		internalIp,
-		externalIp,
-		osDevice,
-		dataDevice,
-		lvmEnabled,
-		apiKey,
-		softwareRaid,
-		status,
-		powerState,
-		dateCreated,
-		lastAgentUpdate,
-		serverType,
-		osType,
-		commType,
-		managed,
-		agentInstalled,
-		toolsInstalled,
-		hostname,
-		domainName,
-		statusMessage,
-		maxStorage,
-		maxMemory,
-		maxCores,
-		macAddress,
-		serverVendor,
-		serverModel,
-		serialNumber,
-		tags,
-		configId,
-		configGroup,
-		configRole
-		volumes {
-			name
-			id
-			deviceName
-			maxStorage
-			unitNumber
-			displayOrder
-			rootVolume
-		}
-	}
+			zone {
+				agentMode,
+				cloudTypeCode,
+				cloudTypeName,
+				code,
+				datacenterId,
+				domainName,
+				firewallEnabled,
+				location,
+				name,
+				regionCode,
+				scalePriority
+			}
 
 .. code-block:: bash
 
-	zone {
-		name,
-		code,
-		location,
-		cloudTypeName,
-		cloudTypeCode,
-		domainName,
-		scalePriority,
-		firewallEnabled,
-		regionCode,
-		agentMode,
-		datacenterId
-	}
+			group {
+				code,
+				location,
+				datacenterId,
+				name
+			}
 
 .. code-block:: bash
 
-	group {
-		code,
-		name,
-		location,
-		datacenterId
-	}
-
-.. code-block:: bash
-
-	customOptions {
-		customOptions.fieldName
-	}
+			customOptions {
+				customOptions.fieldName
+			}
