@@ -1,5 +1,3 @@
-.. _${variable}:
-
 Variables
 =========
 
@@ -176,173 +174,173 @@ Instance Naming Policy example: ``${userInitials}-${cloudCode}-${platform == 'wi
 
 .. code-block:: bash
 
-	instance {
-		autoScale,
-		configGroup,
-		configId,
-		configRole
-		containers:[],
-		cores,
-		deployGroup,
-		description,
-		displayName,
-		domainName,
-		environmentPrefix,
-		evars:[],
-		expireDate,
-		firewallEnabled,
-		hostname,
-		instanceContext,
-		instanceLevel,
-		instanceTypeCode,
-		instanceVersion,
-		memory,
-		metadata:[],
-		name,
-		networkLevel,
-		plan,
-		provisionType,
-		status,
-		statusMessage,
-		storage,
-		tags,
-		tenantSubdomain,
-		userStatus,
-		instanceTypeName
-	}
+			instance {
+				autoScale,
+				configGroup,
+				configId,
+				configRole
+				containers:[],
+				cores,
+				deployGroup,
+				description,
+				displayName,
+				domainName,
+				environmentPrefix,
+				evars:[],
+				expireDate,
+				firewallEnabled,
+				hostname,
+				instanceContext,
+				instanceLevel,
+				instanceTypeCode,
+				instanceVersion,
+				memory,
+				metadata:[],
+				name,
+				networkLevel,
+				plan,
+				provisionType,
+				status,
+				statusMessage,
+				storage,
+				tags,
+				tenantSubdomain,
+				userStatus,
+				instanceTypeName
+			}
+
+		.. code-block:: bash
+
+			container {
+				configGroup,
+				configId,
+				configPath,
+				configRole,
+				containerTypeCode,
+				containerTypeShortName,
+				cores,
+				dataPath,
+				dateCreated,
+				domainName,
+				environmentPrefix,
+				externalIp,
+				hostMountPoint,
+				hostname,
+				image,
+				internalHostname,
+				internalIp,
+				logsPath,
+				memory,
+				planCode,
+				provisionType,
+				server:{},
+				serverId,
+				sshHost,
+				status,
+				storage,
+				version,
+				containerTypeName
+			}
 
 .. code-block:: bash
 
-	container {
-		configGroup,
-		configId,
-		configPath,
-		configRole,
-		containerTypeCode,
-		containerTypeShortName,
-		cores,
-		dataPath,
-		dateCreated,
-		domainName,
-		environmentPrefix,
-		externalIp,
-		hostMountPoint,
-		hostname,
-		image,
-		internalHostname,
-		internalIp,
-		logsPath,
-		memory,
-		planCode,
-		provisionType,
-		server:{},
-		serverId,
-		sshHost,
-		status,
-		storage,
-		version,
-		containerTypeName
-	}
+			server {
+				agentInstalled,
+				agentVersion,
+				apiKey,
+				category,
+				commType,
+				configGroup,
+				configId,
+				configRole
+				consoleHost,
+				consolePort,
+				consoleType,
+				consoleUsername,
+				dataDevice,
+				dateCreated,
+				description,
+				displayName,
+				domainName,
+				externalId,
+				externalIp,
+				fqdn,
+				hostname,
+				internalId,
+				internalIp,
+				internalName,
+				internalSshUsername,
+				lastAgentUpdate,
+				lvmEnabled,
+				macAddress,
+				managed,
+				maxCores,
+				maxMemory,
+				maxStorage,
+				name,
+				nodePackageVersion,
+				osDevice,
+				osType,
+				osTypeCode,
+				parentServerId,
+				plan,
+				platform,
+				platformVersion,
+				powerState,
+				serialNumber,
+				serverModel,
+				serverType,
+				serverTypeCode,
+				serverTypeName,
+				serverVendor,
+				softwareRaid,
+				sourceImageId,
+				sshHost,
+				sshPort,
+				sshUsername,
+				status,
+				statusMessage,
+				tags,
+				toolsInstalled,
+				visibility,
+				volumes {
+					name
+					id
+					deviceName
+					maxStorage
+					unitNumber
+					displayOrder
+					rootVolume
+				}
+			}
 
 .. code-block:: bash
 
-	server {
-		agentInstalled,
-		agentVersion,
-		apiKey,
-		category,
-		commType,
-		configGroup,
-		configId,
-		configRole
-		consoleHost,
-		consolePort,
-		consoleType,
-		consoleUsername,
-		dataDevice,
-		dateCreated,
-		description,
-		displayName,
-		domainName,
-		externalId,
-		externalIp,
-		fqdn,
-		hostname,
-		internalId,
-		internalIp,
-		internalName,
-		internalSshUsername,
-		lastAgentUpdate,
-		lvmEnabled,
-		macAddress,
-		managed,
-		maxCores,
-		maxMemory,
-		maxStorage,
-		name,
-		nodePackageVersion,
-		osDevice,
-		osType,
-		osTypeCode,
-		parentServerId,
-		plan,
-		platform,
-		platformVersion,
-		powerState,
-		serialNumber,
-		serverModel,
-		serverType,
-		serverTypeCode,
-		serverTypeName,
-		serverVendor,
-		softwareRaid,
-		sourceImageId,
-		sshHost,
-		sshPort,
-		sshUsername,
-		status,
-		statusMessage,
-		tags,
-		toolsInstalled,
-		visibility,
-		volumes {
-			name
-			id
-			deviceName
-			maxStorage
-			unitNumber
-			displayOrder
-			rootVolume
-		}
-	}
+			zone {
+				agentMode,
+				cloudTypeCode,
+				cloudTypeName,
+				code,
+				datacenterId,
+				domainName,
+				firewallEnabled,
+				location,
+				name,
+				regionCode,
+				scalePriority
+			}
 
 .. code-block:: bash
 
-	zone {
-		agentMode,
-		cloudTypeCode,
-		cloudTypeName,
-		code,
-		datacenterId,
-		domainName,
-		firewallEnabled,
-		location,
-		name,
-		regionCode,
-		scalePriority
-	}
+			group {
+				code,
+				location,
+				datacenterId,
+				name
+			}
 
 .. code-block:: bash
 
-	group {
-		code,
-		location,
-		datacenterId,
-		name
-	}
-
-.. code-block:: bash
-
-	customOptions {
-		customOptions.fieldName
-	}
+			customOptions {
+				customOptions.fieldName
+			}
