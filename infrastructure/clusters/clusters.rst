@@ -10,12 +10,20 @@ Creating Clusters
 
 The following Cluster Types can be created from the ``Infrastructure - Clusters`` page:
 
-Kubernetes
-  Provisions a new Kubernetes Cluster
-Docker
-  Provisions a new Docker Cluster managed by Morpheus
-EKS
-  Provisions a new Elastic Kubernetes Service (EKS) Cluster in target AWS Cloud
++--------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------+------------------------+
+| **Name**           | **Description**                                                                                                                                                                                                                  | **Supported Clouds** | **Provision Type **    |
++--------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------+------------------------+
+| Kubernetes Cluster | Provisions by default a Kubernetes cluster consisting of 1 Kubernates Master and 3 Kubernetes Worker nodes. Additional system layouts available including Master clusters. Custom layouts can be created.                        | All                  | Docker                 |
++--------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------+------------------------+
+| Docker Cluster     | Provisions by default a Morpheus controlled Docker Cluster with 1 host. Additional hosts can be added. Custom layouts can be created. Existing Morpheus Docker Hosts are automatically converted to Clusters upon 4.0.0 upgrade. | All                  | Docker                 |
++--------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------+------------------------+
+| EKS Cluster        | Provisions a EKS master and 3 EC2 worker node.                                                                                                                                                                                   | AWS                  | Docker                 |
++--------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------+------------------------+
+| KVM Cluster        | Provisions by default a Morpheus controlled KVM Cluster with 1 host. Additional hosts can be added. Custom layouts can be created. Existing Morpheus KVM Hosts are automatically converted to Clusters upon 4.0.0 upgrade.       | All                  | VM                     |
++--------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------+------------------------+
+| Triforce           | Provisions by default a Morpheus controlled Docker, VM and Functions* Cluster with 1 host. Additional hosts can be added.                                                                                                        | VMware, Bare Metal   | Docker, VM, Functions* |
++--------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------+------------------------+
+
 
 .. Requirements
 .. ^^^^^^^^^^^^
