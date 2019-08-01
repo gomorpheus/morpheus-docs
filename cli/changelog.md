@@ -4,6 +4,17 @@ This is a list of changes in the most recent versions of the CLI.
 
 Backwards compatibility with older appliances should be preserved in most cases.
 
+## 3.6.38
+
+### Fixes
+* Fix issue with `virtual-images add` to send imageType 'vmdk' instead of 'vmware'.
+* Fix issue with `monitor-apps get` and `monitor-groups get` displaying Open Incidents as json
+
+## 3.6.37
+
+### Fixes
+* Fix issue with `instances suspend` passing `server=true`
+
 ## 3.6.36
 
 ### Fixes
