@@ -7,3 +7,4 @@ Services
 
   cypher.rst
   archives.rst
+  imageBuilder.rst
