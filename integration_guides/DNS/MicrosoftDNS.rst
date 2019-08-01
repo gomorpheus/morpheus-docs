@@ -9,6 +9,8 @@ Overview
 Add Microsoft DNS Integration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+.. IMPORTANT:: The |morpheus| Microsoft DNS integration works over http/5985.  If you have turned off the http listener on 5985 and only enabled https/5986 it will fail.
+
 Microsoft DNS can be added in the `Administration` or `Infrastructure` sections:
 
 #. In ``Administration -> Integrations``, select :guilabel:`+ New Integration`
