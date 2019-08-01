@@ -21,7 +21,7 @@ Morpheus Sample AWS IAM Policy
                "Effect": "Allow",
                "Action": [
                    "autoscaling:DescribeAutoScalingGroups",
-                   "ce:*", //only required if cost and reservation sync is enabled
+                   "ce:*", //Required only if cost and reservation sync is enabled on AWS Cloud
                    "cloudwatch:GetMetricStatistics",
                    "ec2:AllocateAddress",
                    "ec2:AssignPrivateIpAddresses",
@@ -174,6 +174,8 @@ Morpheus Sample AWS IAM Policy
                    "route53:ListHostedZones",
                    "route53:ListResourceRecordSets",
                    "s3:AbortMultipartUpload",
+                   "s3:CreateBucket",
+                   "s3:DeleteBucket",
                    "s3:DeleteObject",
                    "s3:DeleteObjectVersion",
                    "s3:GetBucketLocation",
