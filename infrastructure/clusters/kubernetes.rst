@@ -1,6 +1,24 @@
 Kubernetes Clusters
 -------------------
 
+Requirements
+^^^^^^^^^^^^
+
+- Agent installation is required for Master and Worker Nodes. Refer to `Morpheus Agent`_ section for additional information.
+- Access to Cloud Front, Image copy access and permissions for System and Uploaded Images used in Cluster Layouts
+   Image(s) used in Cluster Layouts must either exist in destination cloud/resource or be able to be copied to destination by Morpheus, typically applicable for non-public clouds. For the initial provision, Morpheus System Images are streamed from Cloud Front through Morpheus to target destination. Subsequent provisions clone the local Image.
+- System Kubernetes Layouts require Master and Worker nodes to access to the following over 443 during K8s install and configuration:
+
+  * Morpheus Appliance url (443)
+  * https://packages.cloud.google.com
+  * https://storage.googleapis.com
+  * https://docs.projectcalico.org
+  * https://openebs.github.io
+  * https://cloud.weave.works/
+
+- Morpheus Role permission ``Infrastructure: Clusters -> Full`` required for Viewing, Creating, Editing and Deleting Clusters.
+- Morpheus Role permission ``Infrastructure: Clusters -> Read`` required for Viewing Cluster list and detail pages.
+
 Creating Kubernetes Clusters
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -20,6 +38,8 @@ To create a new Kubernetes Cluster:
 #. Navigate to ``Infrastructure - Clusters``
 #. Select :guilabel:`+ ADD CLUSTER`
 #. Select ``Kubernetes Cluster``
+#. Select a Group for the Cluster
+#. Select :guilabel:`NEXT`
 #. Populate the following:
 
    CLOUD
@@ -74,6 +94,8 @@ To create a new Kubernetes Cluster:
 #. Select optional Workflow to execute
 #. Select :guilabel:`NEXT`
 #. Review and select :guilabel:`COMPLETE`
+
+- The Master Node(s) will provision first. Individual Master provision status can be viewed by
 
 
 Kubernetes Cluster Detail Pages

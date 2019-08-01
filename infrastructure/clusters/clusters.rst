@@ -1,14 +1,13 @@
 Clusters
 ========
 
-``Infrastructure -> Clusters`` is for creating and managing Container clusters, including Kubernetes Clusters, |morpheus| manager Docker Clusters, or Cloud specific Kubernetes services such as EKS.
+Overview
+--------
 
-Creating Clusters
------------------
+``Infrastructure -> Clusters`` is for creating and managing Kubernetes Clysters, |morpheus| manager Docker Clusters, KVM Clusters, or Cloud specific Kubernetes services such as EKS. The ``Triforce`` Cluster is a combination Kubernetes, KVM and Functions* Cluster, with all nodes supporting all three provision types.
 
-.. NOTE:: Clusters will automatically be created for Clouds with existing Docker Hosts upon upgrade to 4.0.0. Multiple Docker Hosts in the same Cloud will be added to the same Cluster.
-
-The following Cluster Types can be created from the ``Infrastructure - Clusters`` page:
+Cluster Types
+^^^^^^^^^^^^^
 
 +--------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------+------------------------+
 | **Name**           | **Description**                                                                                                                                                                                                                  | **Supported Clouds** | **Provider Type **    |
@@ -19,14 +18,24 @@ The following Cluster Types can be created from the ``Infrastructure - Clusters`
 +--------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------+------------------------+
 | EKS Cluster        | Provisions a EKS master and 3 EC2 worker node.                                                                                                                                                                                   | AWS                  | Kubernetes                 |
 +--------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------+------------------------+
-| KVM Cluster        | Provisions by default a Morpheus controlled KVM Cluster with 1 host. Additional hosts can be added. Custom layouts can be created. Existing Morpheus KVM Hosts are automatically converted to Clusters upon 4.0.0 upgrade.       | All                  | KVM                     |
+| KVM Cluster        | Provisions by default a Morpheus controlled KVM Cluster with 1 host. Additional hosts can be added. Custom layouts can be created. Existing Morpheus KVM Hosts are automatically converted to Clusters upon 4.0.0 upgrade.       | VMware, Bare Metal     | KVM                     |
 +--------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------+------------------------+
-| Triforce           | Provisions by default a Morpheus controlled Docker, VM and Functions* Cluster with 1 host. Additional hosts can be added.                                                                                                        | VMware, Bare Metal   | Morpheus |
+| Triforce Cluster   | Provisions by default a Morpheus controlled Docker, VM and Functions* Cluster with 1 host. Additional hosts can be added.                                                                                                        | VMware, Bare Metal   | Morpheus |
 +--------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------+------------------------+
 
+Requirements
+------------
 
-.. Requirements
-.. ^^^^^^^^^^^^
+- Morpheus Role permission ``Infrastructure: Clusters -> Full`` required for Viewing, Creating, Editing and Deleting Clusters.
+- Morpheus Role permission ``Infrastructure: Clusters -> Read`` required for Viewing Cluster list and detail pages.
+
+Cluster Permissions
+-------------------
+
+- Cluster Permissions
+    Each Cluster has Group, Tenant and Service Plan access permissions settings.
+- Namespace Permissions
+    Individual Namespaces also have Group, Tenant and Service Plan access permissions settings
 
 .. include:: /infrastructure/clusters/kubernetes.rst
 .. include:: /infrastructure/clusters/docker.rst
