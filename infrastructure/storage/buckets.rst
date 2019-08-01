@@ -52,7 +52,7 @@ To Add an Alibaba Storage Bucket:
         DAYS OLD
           Files older than the set number of days will be automatically backed up to the selected Backup Bucket.
         BACKUP BUCKET
-          Search for and select the Bucket the files will be backed up to.
+          Search for and then select the Bucket the files will be backed up to.
     DELETE OLD FILES
       This option will delete files from this bucket after a set amount of days.
         DAYS OLD
@@ -113,7 +113,7 @@ To Add an Amazon S3 Storage Bucket:
         DAYS OLD
           Files older than the set number of days will be automatically backed up to the selected Backup Bucket.
         BACKUP BUCKET
-          Search for and select the Bucket the files will be backed up to.
+          Search for and then select the Bucket the files will be backed up to.
     DELETE OLD FILES
       This option will delete files from this bucket after a set amount of days.
         DAYS OLD
@@ -172,7 +172,7 @@ To Add an Azure Storage Bucket:
         DAYS OLD
           Files older than the set number of days will be automatically backed up to the selected Backup Bucket.
         BACKUP BUCKET
-          Search for and select the Bucket the files will be backed up to.
+          Search for and then select the Bucket the files will be backed up to.
     DELETE OLD FILES
       This option will delete files from this bucket after a set amount of days.
         DAYS OLD
@@ -237,7 +237,7 @@ To Add a Dell EMC ECS Storage Bucket:
         DAYS OLD
           Files older than the set number of days will be automatically backed up to the selected Backup Bucket.
         BACKUP BUCKET
-          Search for and select the Bucket the files will be backed up to.
+          Search for and then select the Bucket the files will be backed up to.
     DELETE OLD FILES
       This option will delete files from this bucket after a set amount of days.
         DAYS OLD
@@ -297,7 +297,7 @@ To Add an Azure Storage Bucket:
         DAYS OLD
           Files older than the set number of days will be automatically backed up to the selected Backup Bucket.
         BACKUP BUCKET
-          Search for and select the Bucket the files will be backed up to.
+          Search for and then select the Bucket the files will be backed up to.
     DELETE OLD FILES
       This option will delete files from this bucket after a set amount of days.
         DAYS OLD
@@ -358,7 +358,7 @@ To Add a Rackspace CDN Bucket:
         DAYS OLD
           Files older than the set number of days will be automatically backed up to the selected Backup Bucket.
         BACKUP BUCKET
-          Search for and select the Bucket the files will be backed up to.
+          Search for and then select the Bucket the files will be backed up to.
     DELETE OLD FILES
       This option will delete files from this bucket after a set amount of days.
         DAYS OLD
