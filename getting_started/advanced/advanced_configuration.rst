@@ -6,3 +6,4 @@ Advanced Configuration
 .. include:: offline.rst
 .. include:: proxies.rst
 .. include:: db_migration.rst
+.. include:: scaling.rst
