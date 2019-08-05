@@ -82,3 +82,12 @@ On All Nodes:
 .. code-block:: bash
 
   rabbitmq-plugins enable rabbitmq_stomp
+
+Recommended Rabbitmq Policies:
+..................................
+
+.. code-block:: bash
+
+   rabbitmqctl set_policy -p morpheus --apply-to queues --priority 2 statCommands "statCommands.*" '{"expires":1800000, "ha-mode":"all"}'
+   rabbitmqctl set_policy -p morpheus --apply-to queues --priority 2 morpheusAgentActions "morpheusAgentActions.*" '{"expires":1800000, "ha-mode":"all"}'
+   rabbitmqctl set_policy -p morpheus --apply-to all --priority 1 ha ".*" '{"ha-mode":"all"}'
