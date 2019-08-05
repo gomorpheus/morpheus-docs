@@ -67,19 +67,6 @@ On Nodes 2 & 3:
     rabbitmqctl join_cluster rabbit@<<node 1 shortname>>
     rabbitmqctl start_app
 
-
-  .. note:: If you receive an error ``ERROR: unable to connect to node 'rabbit@ha': nodedown`` run the following commands
-
-      .. code-block:: bash
-
-        sudo ps aux | grep rabbit | grep -v grep | awk '{print $2}' | xargs kill -9
-        ps aux | grep rabbit  "to make sure rabbit is down"
-        rabbitmq-server -detached
-        "if detach was passed then run" ps aux | grep rabbit "to make sure rabbit is up and running"
-
-      Now ``rabbitmqctl stop`` should work
-
-
 On Node 1:
 ..........
 
@@ -95,3 +82,12 @@ On All Nodes:
 .. code-block:: bash
 
   rabbitmq-plugins enable rabbitmq_stomp
+
+Recommended Rabbitmq Policies:
+..................................
+
+.. code-block:: bash
+
+   rabbitmqctl set_policy -p morpheus --apply-to queues --priority 2 statCommands "statCommands.*" '{"expires":1800000, "ha-mode":"all"}'
+   rabbitmqctl set_policy -p morpheus --apply-to queues --priority 2 morpheusAgentActions "morpheusAgentActions.*" '{"expires":1800000, "ha-mode":"all"}'
+   rabbitmqctl set_policy -p morpheus --apply-to all --priority 1 ha ".*" '{"ha-mode":"all"}'
