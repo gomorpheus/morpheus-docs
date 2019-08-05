@@ -1,5 +1,5 @@
-3 Node with Externalized DB Configuration
------------------------------------------
+Distributed App Nodes with Externalized DB
+------------------------------------------
 
 Assumptions
 ^^^^^^^^^^^^

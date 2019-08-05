@@ -1,5 +1,5 @@
-Upgrading
-==========
+Maintenance
+===========
 
 |morpheus| provides a very simple and convenient upgrade process. In
 most cases it is simply a matter of installing the new package on top of

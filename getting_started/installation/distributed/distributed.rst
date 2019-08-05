@@ -1,5 +1,5 @@
-High Availability Configuration
-===============================
+Distributed Configurations
+==========================
 
 Overview
 --------
@@ -34,9 +34,5 @@ The application tier is easily installed with the same debian or yum repository 
 
 .. image:: /images/morpheus-ha-multi-configuration.png
 
-.. include:: percona.rst
-.. include:: rabbitmq.rst
-.. include:: elasticsearch.rst
-.. include:: appliance_ha.rst
-.. include:: HA_Shared_Storage.rst
-.. include:: 3node.rst
+.. include:: /getting_started/installation/distributed/full/distributedFull.rst
+.. include:: /getting_started/installation/distributed/3node/3node.rst

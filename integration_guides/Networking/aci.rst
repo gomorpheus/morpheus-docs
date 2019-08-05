@@ -32,7 +32,7 @@ Add Network Integration
 
    NAME
       ACI Integration Name/Label in |morpheus|
-        This is unique to |morphues| and not part of authentication
+        This is unique to |morpheus| and not part of authentication
    URL
       ACI fabric url, eg ``https://apicdc.company.com``
    USERNAME

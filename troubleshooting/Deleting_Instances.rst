@@ -5,7 +5,7 @@ It is important to know the difference between deleting an Instance from the Pro
 
 .. IMPORTANT:: Deleting an Instance a with Virtual Machines in it will always try to delete the actual Virtual Machines.
 
-Instances are managed resources that may have one or multiple Virtual Machines associated. Since the vm's in the Instance are managed by |morphues|, deleting an Instance a with Virtual Machines in it will always try to delete the actual Virtual Machines.
+Instances are managed resources that may have one or multiple Virtual Machines associated. Since the vm's in the Instance are managed by |morpheus|, deleting an Instance a with Virtual Machines in it will always try to delete the actual Virtual Machines.
 
 There are scenarios where deleting, or attempting to delete the associated Virtual Machines is not desired:
 
