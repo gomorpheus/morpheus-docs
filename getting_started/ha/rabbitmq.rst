@@ -1,21 +1,13 @@
 RabbitMQ Cluster
 ----------------
 
-An HA deployment will also include a Highly Available RabbitMQ.  This can be achieved through RabbitMQ's HA-Mirrored Queues on at least 3, independent nodes.  To accomplish this we recommend following Pivotal's documentation on RabbitMQ here: https://www.rabbitmq.com/ha.html and https://www.rabbitmq.com/clustering.html
-
-Install RabbitMQ on the 3 nodes and create a cluster.
-
-.. NOTE:: For the most up to date RPM package we recommend using this link: https://www.rabbitmq.com/install-rpm.html#downloads
-
-.. IMPORTANT:: Morpheus connects to AMQP over 5672 or 5671(SSL) and 61613 or 61614(SSL)
-
 RabbitMQ Installation and Configuration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. IMPORTANT:: This is a sample configuration only. Customer configurations and requirements will vary.
 
 Prerequisites
-``````````````
+.................
 
 .. code-block:: bash
 
@@ -23,7 +15,7 @@ Prerequisites
   yum install erlang
 
 Install RabbitMQ on the 3 nodes
-````````````````````````````````
+...............................
 
 .. code-block:: bash
 
@@ -38,7 +30,7 @@ Install RabbitMQ on the 3 nodes
    rabbitmq-server -detached
 
 On Node 1:
-...........
+..........
 
 .. code-block:: bash
 
@@ -75,7 +67,7 @@ On Nodes 2 & 3:
     rabbitmqctl join_cluster rabbit@<<node 1 shortname>>
     rabbitmqctl start_app
 
-On Node 1
+On Node 1:
 ..........
 
 .. code-block:: bash
@@ -89,10 +81,10 @@ On All Nodes:
 
 .. code-block:: bash
 
-   rabbitmq-plugins enable rabbitmq_stomp
+  rabbitmq-plugins enable rabbitmq_stomp
 
 Recommended Rabbitmq Policies:
-```````````````````````````````
+..................................
 
 .. code-block:: bash
 

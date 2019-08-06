@@ -1,17 +1,28 @@
-Centralized
+Single Node
 ------------
 
-In the Single Node/All-in-one configuration, all components required for Morpheus are installed and configured during the Morpheus ```reconfigure`` command, including:
+.. image:: /images/arch/morpharch single v3.png
+   :align: center
+
+In the Single Node/All-in-one configuration, all components required for Morpheus are installed and configured during the Morpheus ``reconfigure`` command.
 
 Appliance Host
- - Application Tier
+ - Application
     - Morpheus App
- - Database Tier
+ - Web Server/Proxy
+    - Nginix
+ - Cache
+    - Redis
+ - Database
     - MySQL
- - Message Tier
+ - Messaging
     - RabbitMQ
- - Search Tier
+ - Search
     - Elasticsearch
+ - Console
+    - Guacamole
+ - Monitoring
+    - Check Server
 
 .. include:: debian.rst
 .. include:: centos.rst

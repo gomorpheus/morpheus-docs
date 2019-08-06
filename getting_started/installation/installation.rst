@@ -1,29 +1,92 @@
 Installation
 ============
 
-|morpheus| comes packaged as a ``debian`` or ``yum`` based package. It can be installed on a single on/off premise linux based host, or configured for high availability and horizontal scaling.
+|morpheus| comes packaged as a ``debian`` or ``yum`` based package. The default configuration installs all required services on a single vm or bare metal node. Morpheus can be configured in a distributed architecture to use one or multiple external services, and multiple application nodes can be configured for High Availability configurations.
+
+All components required for Morpheus are installed and configured by default during the Morpheus ``reconfigure`` command. The Morpheus config file, ``morpheus.rb``, can optionally be configured to point the Morpheus App to external services (distributed configuration).
+
+Morpheus can optionally be configured to use external Database, Messaging, and/or Search Tiers. This means instead of installing, for example, MySQL on the same host as the Morpheus App, the Morpheus configuration file (morpheus.rb) is setup to point to an external MySQL host, cluster or service, and MySQL will not be installed or configured on the Appliance Host.
 
 Configurations
 --------------
 
-All components required for Morpheus are installed and configured by default during the Morpheus ``reconfigure`` command. The Morpheus config file, ``morpheus.rb``, can optionally be configured to point the Morpheus App to external services (distributed configuration).
+- Single App Node
+- Single App Node with Distributed Service(s)
+- Clustered App Nodes with Distributed Database
+- Multiple App Nodes with Distributed Services
 
-on a single host.
+Pros/Cons
+^^^^^^^^^
 
-- Application Tier
-   - Morpheus App
-- Database Tier
-   - MySQL
-- Message Tier
-   - RabbitMQ
-- Search Tier
-   - Elasticsearch
+Single Node
+````````````
 
-This is the single node/all-in-one configuration, as all tiers are local to the appliance and no services are external to the Appliance Host.
+Advantages
+ - Simple Installation
+   - Morpheus Installs all required services
+ - Simple Configuration
+   - Morpheus configures all required services
+ - Simple Maintenance
+   - All service connections and credential are local
+   - All logs are local
+   - All Data is local (by default)
+ - Not dependent on network connections for vital services
+   - Facilitates speed and reliability
+Disadvantages
+   - Single point of failure
+   - Individual services cannot be scaled
+   - Upgrades require (minimal) downtime
+   - Single region
 
-Morpheus can optionally be configured to use external Database, Messaging, and/or Search Tiers. This means instead of installing, for example, MySQL on the same host as the Morpheus App, the Morpheus configuration file (morpheus.rb) is setup to point to an external MySQL host, cluster or service, and MySQL will not be installed or configured on the Appliance Host.
+Single App Node with Distributed Service(s)
+````````````````````````````````````````````
 
-This is one example of a distributed configuration, as the database tier is external from the Application tier.
+Advantages
+ - Individual services can be scaled
+ - Managed Services such as RDS can be utilized
+Disadvantages
+ - Single region
+ - External services require additional configuration and maintenance
+ - Morpheus is subject to network performance, configuration and availability
+ - Increased Installation time possible
+
+Clustered App Nodes with Distributed Database
+``````````````````````````````````````````````
+
+Advantages
+ - Database can be scaled vertically and/or horizontally
+ - Managed Services such as RDS can be utilized
+ - Zero down time upgrades
+ - No single point of failure
+ - RabbitMQ and Elasticsearch Clusters
+Disadvantages
+ - External Database services requires additional configuration and maintenance
+ - App node Clustering requires additional configuration and maintenance
+ - Morpheus service is reliance on network performance, configuration and availability
+ - Extended Installation time
+ - Increased Infrastructure requirements
+ - Load Balancer required to front App Nodes
+ - Shared Storage configuration required
+
+Multiple App Nodes with Distributed Services
+`````````````````````````````````````````````
+
+Advantages
+ - Individual services can be scaled vertically and/or horizontally
+ - Managed Services such as RDS can be utilized
+ - Zero down time upgrades
+ - No single point of failure
+ - Multi region support
+Disadvantages
+ - External services require additional configuration and maintenance
+ - Morpheus service is reliance on network performance, configuration and availability
+ - Extended Installation time
+ - Increased Infrastructure Requirements
+ - Increased Networking requirements
+ - Load Balancer required to front App Nodes
+ - Shared Storage configuration required
+ - Rabbit Load balancer required
+
 
 .. Note::  You can view our offline installation guide at :ref:`offline-installer`.
 
