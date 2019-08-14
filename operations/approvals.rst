@@ -72,7 +72,8 @@ Create Approval Policies
 #. Select + ADD POLICY to open the New Policy wizard
 #. Select Provision Approval from the Type dropdown
 #. Add an optional description
-#. Leave Enabled selected for this Policy to be active once saved. *Enabled can be deselected to disable to policy.
+#. Leave Enabled selected for this Policy to be active once saved.
+    * Enabled can be deselected to disable to policy.
 #. In the config section, select either Internal Approvals or ServiceNow Approvals:
 
    * Internal Approvals
