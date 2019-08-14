@@ -1,8 +1,10 @@
+3-Node Distributed
+^^^^^^^^^^^^^^^^^^
+
 Distributed App Nodes with Externalized DB
-------------------------------------------
 
 Assumptions
-^^^^^^^^^^^^
+````````````
 
 This guide assumes the following:
 
@@ -19,7 +21,7 @@ This guide assumes the following:
     :alt: Morpheus 3-Node HA Architecture
 
 Default Locations
-^^^^^^^^^^^^^^^^^
+```````````````````
 
 |morpheus| follows several install location conventions. Below is a list of system defaults for convenient management:
 
@@ -36,7 +38,7 @@ Default Locations
 *  User-defined install/config: ``/etc/morpheus/morpheus.rb``
 
 Steps
-^^^^^
+``````
 
 #. First begin by downloading the requisite |morpheus| packages either to the nodes or to your workstation for transfer. These packages need to be made available on the nodes you wish to install |morpheus| on.
 
@@ -233,7 +235,7 @@ Steps
 #. Subsequently you can start all |morpheus| services on all three nodes and tail the |morpheus| UI log file to inspect errors.
 
 Database Migration
-^^^^^^^^^^^^^^^^^^^
+````````````````````
 
 If your new installation is part of a migration then you need to move the data from your original |morpheus| database to your new one. This is easily accomplished by using a stateful dump.
 

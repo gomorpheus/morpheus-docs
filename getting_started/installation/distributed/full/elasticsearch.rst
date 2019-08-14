@@ -1,12 +1,12 @@
 Elasticsearch
--------------
+^^^^^^^^^^^^^^
 
 Install 3 node Elasticsearch Cluster on Centos 7
 
 .. IMPORTANT:: This is a sample configuration only. Customer configurations and requirements will vary.
 
 Requirements
-^^^^^^^^^^^^
+````````````
 
 #. Three Existing CentOS 7+ nodes accessible to the Morpheus Appliance
 
@@ -34,7 +34,7 @@ Requirements
       OpenJDK 64-Bit Server VM (build 25.65-b01, mixed mode)
 
 Installation
-^^^^^^^^^^^^
+````````````
 
 To install Elasticsearch please use the following instructions
 
@@ -48,7 +48,7 @@ Once installed, to make sure Elasticsearch starts and stops automatically, add i
  sudo systemctl enable elasticsearch.service
 
 Configuring Elastic
-^^^^^^^^^^^^^^^^^^^
+```````````````````
 
    Now that Elasticsearch and its Java dependencies have been installed, it is time to configure Elasticsearch.
 
@@ -113,7 +113,7 @@ Configuring Elastic
     sudo service network restart
 
 Testing
-^^^^^^^
+```````
 
 To make sure Elasticsearch is running use the following commands
 

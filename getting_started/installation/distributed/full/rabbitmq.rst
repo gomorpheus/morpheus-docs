@@ -1,5 +1,5 @@
 RabbitMQ Cluster
-----------------
+^^^^^^^^^^^^^^^^^
 
 An HA deployment will also include a Highly Available RabbitMQ.  This can be achieved through RabbitMQ's HA-Mirrored Queues on at least 3, independent nodes.  To accomplish this we recommend following Pivotal's documentation on RabbitMQ here: https://www.rabbitmq.com/ha.html and https://www.rabbitmq.com/clustering.html
 
@@ -10,24 +10,24 @@ Install RabbitMQ on the 3 nodes and create a cluster.
 .. IMPORTANT:: Morpheus connects to AMQP over 5672 or 5671(SSL) and 61613 or 61614(SSL)
 
 RabbitMQ Installation and Configuration
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+````````````````````````````````````````
 
 .. IMPORTANT:: This is a sample configuration only. Customer configurations and requirements will vary.
 
 Prerequisites
-``````````````
+..............
 
 .. code-block:: bash
 
-  yum install epel-release
-  yum install erlang
+   yum install epel-release
+   yum install erlang
 
 Install RabbitMQ on the 3 nodes
-````````````````````````````````
+.................................
 
 .. code-block:: bash
 
-  wget https://dl.bintray.com/rabbitmq/rabbitmq-server-rpm/rabbitmq-server-3.6.12-1.el7.noarch.rpm
+   wget https://dl.bintray.com/rabbitmq/rabbitmq-server-rpm/rabbitmq-server-3.6.12-1.el7.noarch.rpm
 
    rpm --import https://www.rabbitmq.com/rabbitmq-release-signing-key.asc
 
@@ -38,7 +38,7 @@ Install RabbitMQ on the 3 nodes
    rabbitmq-server -detached
 
 On Node 1:
-...........
+>>>>>>>>>>>
 
 .. code-block:: bash
 
@@ -47,14 +47,14 @@ On Node 1:
 Copy this value
 
 On Nodes 2 & 3:
-...............
+>>>>>>>>>>>>>>>
 
 #. Overwrite ``/var/lib/rabbitmq/.erlang.cookie`` with value from previous step and change its permissions using the follow commands.
 
    .. code-block:: bash
 
-    chown rabbitmq:rabbitmq /var/lib/rabbitmq/*
-    chmod 400 /var/lib/rabbitmq/.erlang.cookie
+      chown rabbitmq:rabbitmq /var/lib/rabbitmq/*
+      chmod 400 /var/lib/rabbitmq/.erlang.cookie
 
 
 #. edit ``/etc/hosts`` file to refer to shortname of node 1
@@ -69,14 +69,14 @@ On Nodes 2 & 3:
 
    .. code-block:: bash
 
-    rabbitmqctl stop
-    rabbitmq-server -detached
-    rabbitmqctl stop_app
-    rabbitmqctl join_cluster rabbit@<<node 1 shortname>>
-    rabbitmqctl start_app
+      rabbitmqctl stop
+      rabbitmq-server -detached
+      rabbitmqctl stop_app
+      rabbitmqctl join_cluster rabbit@<<node 1 shortname>>
+      rabbitmqctl start_app
 
 On Node 1
-..........
+>>>>>>>>>>
 
 .. code-block:: bash
 
@@ -85,7 +85,7 @@ On Node 1
    rabbitmqctl set_user_tags <<admin username>> administrator
 
 On All Nodes:
-.............
+>>>>>>>>>>>>>
 
 .. code-block:: bash
 
