@@ -73,7 +73,7 @@ Add Power Schedule Policy
 
    POWER SCHEDULE
     Select Power Schedule to use in the Policy. Power schedule can be added in ``Provisioning -> Automation -> Power Scheduling``
-  SCOPE
+   SCOPE
     Global
       Applies to all Instances created while the Policy is enabled
     Group
