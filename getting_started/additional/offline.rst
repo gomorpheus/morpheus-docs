@@ -1,18 +1,18 @@
 .. _offline-installation:
 
-Offline Installer
------------------
+Offline Installations and Upgrades
+----------------------------------
 
 For customers that have an appliance behind a firewall/proxy that does not allow downloads from our Amazon download site, you can have the offline package to add the needed packages the standard Morpheus installer would have downloaded.
 
-Offline Installer Requirements
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Offline Installation Requirements
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 - NTP should be correctly configured and the server is able to connect to the NTP server in the ntp.conf file.
 - The OS package repositories should be configured to use local LAN repository servers or the server should be able to receive packages from the configured repositories.
 - The standard Morpheus and offline packages must be downloaded from another system and transferred to the Morpheus Appliance server.
 
-.. NOTE:: The offline package is linked 1-to-1 to the appliance release. For example the offline package for 2.12.2-1 should be used with the appliance package 2.12.2-1
+.. NOTE:: The offline package is linked 1-to-1 to the appliance release. For example the offline package for 4.0.0-1 should be used with the appliance package 4.0.0-1
 
 Offline Install
 ^^^^^^^^^^^^^^^
@@ -78,7 +78,7 @@ CentOS/RHEL
 
     sudo rpm -i morpheus-appliance-offline_version_all.rpm
 
-#. Set the Morpheus UI applaicne url (if needed, hostname will be automatically set). Edit appliance_url to resolvable url (if not configured correctly by default)
+#. Set the Morpheus UI appliance url (if needed, hostname will be automatically set). Edit appliance_url to resolvable url (if not configured correctly by default)
 
    .. code-block:: bash
 

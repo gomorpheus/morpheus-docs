@@ -62,7 +62,6 @@ Advantages
 Disadvantages
  - External Database services requires additional configuration and maintenance
  - App node Clustering requires additional configuration and maintenance
- - Morpheus service is reliance on network performance, configuration and availability
  - Extended Installation time
  - Increased Infrastructure requirements
  - Load Balancer required to front App Nodes
@@ -79,7 +78,6 @@ Advantages
  - Multi region support
 Disadvantages
  - External services require additional configuration and maintenance
- - Morpheus service is reliance on network performance, configuration and availability
  - Extended Installation time
  - Increased Infrastructure Requirements
  - Increased Networking requirements
@@ -87,13 +85,5 @@ Disadvantages
  - Shared Storage configuration required
  - Rabbit Load balancer required
 
-
-.. Note::  You can view our offline installation guide at :ref:`offline-installer`.
-
 .. include:: /getting_started/installation/singleNode/singleNode.rst
 .. include:: /getting_started/installation/distributed/distributed.rst
-.. include:: additional.rst
-
-.. |morpheushub| raw:: html
-
-   <a href="https://morpheushub.com/" target="_blank">morpheushub.com</a>

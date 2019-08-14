@@ -34,5 +34,5 @@ The application tier is easily installed with the same debian or yum repository 
 
 .. image:: /images/morpheus-ha-multi-configuration.png
 
-.. include:: /getting_started/installation/distributed/full/distributedFull.rst
 .. include:: /getting_started/installation/distributed/3node/3node.rst
+.. include:: /getting_started/installation/distributed/full/distributedFull.rst
