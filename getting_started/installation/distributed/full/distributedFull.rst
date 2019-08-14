@@ -20,4 +20,4 @@ Default Locations
 .. include:: /getting_started/installation/distributed/full/rabbitmq.rst
 .. include:: /getting_started/installation/distributed/full/elasticsearch.rst
 .. include:: /getting_started/installation/distributed/full/appliance_ha.rst
-.. include:: /getting_started/installation/distributed/full/HA_Shared_Storage.rst
+.. include:: /getting_started/installation/distributed/HA_Shared_Storage.rst

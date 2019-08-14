@@ -1,7 +1,7 @@
 Single Node
 ------------
 
-.. image:: /images/arch/morpharch single v3.png
+.. image:: /images/arch/morpharchSingleV3.png
    :align: center
 
 In the Single Node/All-in-one configuration, all components required for Morpheus are installed and configured during the Morpheus ``reconfigure`` command.
@@ -42,7 +42,7 @@ Default Locations
 
 *  User-defined install/config: ``/etc/morpheus/morpheus.rb``
 
-.. include:: debian.rst
-.. include:: centos.rst
-.. include:: redhat.rst
-.. include:: additional.rst
+.. include:: /getting_started/installation/singleNode/debian.rst
+.. include:: /getting_started/installation/singleNode/centos.rst
+.. include:: /getting_started/installation/singleNode/redhat.rst
+.. include:: /getting_started/installation/additional.rst
