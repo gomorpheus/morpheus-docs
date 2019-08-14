@@ -194,7 +194,7 @@ The Bucket will be created and displayed in the Buckets tab.
 
 
 Dell EMC ECS Buckets
-^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^
 
 .. NOTE:: A Dell EMC ECS Storage Server must be configured in `Infrastructure - Storage - Servers` prior to adding a Dell EMC ECS Bucket.
 
