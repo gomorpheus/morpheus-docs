@@ -71,5 +71,37 @@ Due to RabbitMQ going from 3.4.x to 3.7.x, which has no direct upgrade path, the
 5. Establish the RabbitMQ cluster again using the steps from the 3 Node install guide.
 6. Start all services
 
+Fix if Install Hangs
+--------------------
+
+Some very old all-in-one appliances may hang during the mysql upgrade process during the 4.0.0 deb or rpm package upgrade. 
+
+To resolve, run the following in a separate session while the process is hanging:
+
+#. Create a file ``vi mysqlfix``
+#. paste the following:
+
+   .. code-block:: bash
+
+          export PATH=/opt/morpheus/sbin:/opt/morpheus/sbin:/opt/morpheus/embedded/sbin:/opt/morpheus/embedded/bin:$PATH
+          MYSQL_ROOT=$(grep root /etc/morpheus/morpheus-secrets.json | awk '{print substr($2,2,length($2)-3)}')
+          if [[ -z $MYSQL_ROOT ]]; then
+            echo "Failed to lookup the MySQL root password, please enter it when prompted."
+          else
+            /opt/morpheus/embedded/bin/mysqld_safe --defaults-file=/opt/morpheus/embedded/mysql/my.cnf \
+              --log-error=/var/log/morpheus/mysql/mysql_error.log --pid-file=/var/run/morpheus/mysqld/mysqld.pid &
+            until [[ -S /var/run/morpheus/mysqld/mysqld.sock ]]; do
+              sleep 1
+            done
+            /opt/morpheus/embedded/bin/mysql_upgrade --defaults-extra-file=/opt/morpheus/embedded/mysql/my.cnf -u root -p${MYSQL_ROOT}
+            /opt/morpheus/embedded/bin/mysqladmin --defaults-extra-file=/opt/morpheus/embedded/mysql/my.cnf -u root -p${MYSQL_ROOT} shutdown
+            touch /var/opt/morpheus/mysql/.mysql57_table_upgrade_done
+          fi
+
+#. Run ``./mysqlfix``
+
+The upgrade will then proceed.
+
+
 .. include:: ssl-import.rst
 .. include:: wars.rst

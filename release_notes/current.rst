@@ -1,6 +1,8 @@
 v4.0.0
 ======
 
+.. important:: v3.6.0 or later required to upgrade to 4.0.0. Upgrade steps have been changed. 4.0.0 contains upgrades to MySQL, RabbitMQ, and Elasticsearch. Please refer to 4.0.0 Upgrade Requirements before upgrading, and BACKUP YOUR DATABASE before upgrade.
+
 Highlights
 ----------
 
@@ -146,3 +148,5 @@ Other
 - Option for Cross-Tenant Naming Policies (sequence applies across tenants) added to ``Administration -> Provisioning``
 - Migration wizard: new Ports component added
 - vCloud Director: Network reconfigure added
+
+.. important:: v3.6.0 or later required to upgrade to 4.0.0. Upgrade steps have been changed. 4.0.0 contains upgrades to MySQL, RabbitMQ, and Elasticsearch. Please refer to 4.0.0 Upgrade Requirements before upgrading, and BACKUP YOUR DATABASE before upgrade.             
