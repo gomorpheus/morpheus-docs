@@ -15,6 +15,8 @@ Features
 Adding Infoblox Integration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+.. IMPORTANT:: The Infoblox integration requires a service user that is member of admin-group
+
 #. Navigate to ``Infrastructure - Network - Services``
 #. Select :guilabel:`+ ADD` -> IPAM -> Infoblox
 #. Enter the following:
