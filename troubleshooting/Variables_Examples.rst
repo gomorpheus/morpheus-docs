@@ -81,7 +81,7 @@ Instance Naming Policy example: ``${userInitials}-${cloudCode}-${platform == 'wi
 			instance.expireDate: <%=instance.expireDate%>
 			instance.firewallEnabled: <%=instance.firewallEnabled%>
 			instance.hostname: <%=instance.hostname%>
-			instance.instanceContext: <%=instance.instanceContext%>
+			instance.instanceContext: <%=instance.instanceContext%> (tip: instanceContext = Environment)
 			instance.instanceLevel: <%=instance.instanceLevel%>
 			instance.instanceTypeCode: <%=instance.instanceTypeCode%>
 			instance.instanceTypeName: <%=instance.instanceTypeName%>
