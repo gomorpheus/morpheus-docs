@@ -2,8 +2,9 @@ Storage
 =======
 
 .. toctree::
-
-   3par.rst
-   AzureStorage.rst
-   dell_ecs.rst
-   isilon.rst
+  storage/3par.rst
+  storage/AzureStorage.rst
+  storage/dell_ecs.rst
+  storage/isilon.rst
+  storage/rubrik-test.rst
+  storage/zerto-test.rst
