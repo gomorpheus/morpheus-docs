@@ -136,7 +136,7 @@ The Provision Types api can be used to see which options are available.
 Parameter | Required | Default | Description
 --------- | -------- | ------- | -----------
 publicKeyId | N | null | ID of a public key to add to the instance
-vmwareResourcePoolId | Y | null | ID of the resource group to use for instance
+resourcePoolId | Y | null | External ID of the resource group to use for instance
 hostId | N | null | Specific host to deploy to if so desired
 vmwareUsr | N | null | Additional user to provision to instance
 vmwarePwd | N | null | Password for additional user
@@ -148,6 +148,7 @@ vmwareCustomSpec | N | null | Customization spec ID
 Parameter | Required | Default | Description
 --------- | -------- | ------- | -----------
 provisionServerId | N | null | Specific host to deploy to if so desired
+resourcePoolId | Y | null | External ID of the resource group to use for instance
 
 #### Metadata
 This is specific to AWS Metadata tags.  Name-Values pairs can be anything you like and are added to the instance JSON as an array of n-v pairs per the example to the right:

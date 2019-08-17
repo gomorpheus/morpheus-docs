@@ -156,7 +156,7 @@ curl -XPOST "https://api.gomorpheus.com/api/zones/5/resource-pools" \
   -H "Authorization: BEARER access_token" \
   -H "Content-Type: application/json" \
   -d '{"resourcePool": {
-    "name": "jdtestrp",
+    "name": "mypool",
     "config": {
       "cidrBlock": "10.20.254.0/28",
       "tenancy": "default"

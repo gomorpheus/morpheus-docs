@@ -79,7 +79,7 @@ This endpoint retrieves a specific key.
 
 Parameter | Description
 --------- | -----------
-ID | The ID of the key pair to retrieve
+ID | The ID of the key pair
 
 ## Create a KeyPair
 
@@ -136,3 +136,8 @@ If a key pair is actively in use, a delete will fail.
 
 `DELETE https://api.gomorpheus.com/api/key-pairs/:id`
 
+### URL Parameters
+
+Parameter | Description
+--------- | -----------
+ID | The ID of the key pair

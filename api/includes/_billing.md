@@ -293,7 +293,7 @@ curl "https://api.gomorpheus.com/api/billing/servers"
 }
 ```
 
-Retrieves billing information for all servers on the requestor's account.
+Retrieves billing information for all servers (container hosts) on the requestor's account.
 
 ### HTTP Request
 
@@ -335,7 +335,7 @@ curl "https://api.gomorpheus.com/api/billing/servers/1"
 }
 ```
 
-Retrieves billing information for a specific server in the requestor's account.
+Retrieves billing information for a specific server (container host) in the requestor's account.
 
 ### HTTP Request
 

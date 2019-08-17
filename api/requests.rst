@@ -11,6 +11,7 @@ Requests
    includes/_blueprints
    includes/_boot_scripts
    includes/_check_types
+   includes/_contacts
    includes/_servers
    includes/_server_types
    includes/_zones
@@ -18,16 +19,20 @@ Requests
    includes/_cypher
    includes/_zone_datastores
    includes/_deploys
+   includes/_environments
    includes/_errors
    includes/_execute_schedules
    includes/_execution_request
    includes/_groups
+   includes/_account_groups
    includes/_account_groups
    includes/_image_builds
    includes/_instances
    includes/_instancetypes
    includes/_keypairs
    includes/_checks
+   includes/_monitor_apps
+   includes/_monitor_groups
    includes/_monitor_incidents
    includes/_option_types
    includes/_policies
@@ -51,4 +56,5 @@ Requests
    includes/_users
    includes/_virtual_images
    includes/_whoami
+   includes/_wiki
    includes/_workflows

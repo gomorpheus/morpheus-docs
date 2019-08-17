@@ -15880,6 +15880,216 @@ Commands:
 
 ```
 Usage: morpheus wiki add [name] [options]
+        --name VALUE                 Name
+        --category VALUE             Category (optional)
+        --content VALUE              Content
+        --payload FILE               Payload from a local JSON or YAML file, skip all prompting
+        --payload-dir DIRECTORY      Payload from a local directory containing 1-N JSON or YAML files, skip all prompting
+        --payload-json JSON          Payload JSON, skip all prompting
+        --payload-yaml YAML          Payload YAML, skip all prompting
+    -O, --option OPTION              Option in the format -O field="value"
+        --prompt                     Always prompts. Use passed options as the default value.
+    -N, --no-prompt                  Skip prompts. Use default values for all optional fields.
+    -j, --json                       JSON Output
+    -d, --dry-run                    Dry Run, print the API request instead of executing it
+        --curl                       Dry Run to output API request as a curl command.
+        --scrub                      Mask secrets in output, such as the Authorization header. For use with --curl and --dry-run.
+    -r, --remote REMOTE              Remote name. The current remote is used by default.
+        --remote-url URL             Remote url. The current remote url is used by default.
+    -T, --token TOKEN                Access token for authentication with --remote. Saved credentials are used by default.
+    -U, --username USERNAME          Username for authentication.
+    -P, --password PASSWORD          Password for authentication.
+    -I, --insecure                   Allow insecure HTTPS communication.  i.e. bad SSL certificate.
+    -H, --header HEADER              Additional HTTP header to include with requests.
+        --timeout SECONDS            Timeout for api requests. Default is typically 30 seconds.
+    -C, --nocolor                    Disable ANSI coloring
+    -B, --benchmark                  Print benchmark time after the command is finished.
+    -V, --debug                      Print extra output for debugging.
+    -h, --help                       Print this help
+```
+
+#### morpheus wiki categories
+
+```
+Usage: morpheus wiki categories
+    -m, --max MAX                    Max Results
+    -o, --offset OFFSET              Offset Results
+    -s, --search PHRASE              Search Phrase
+    -S, --sort ORDER                 Sort Order
+    -D, --desc                       Reverse Sort Order
+    -Q, --query PARAMS               Query parameters. PARAMS format is 'phrase=foobar&category=web'
+    -j, --json                       JSON Output
+        --yaml                       YAML Output
+        --csv                        CSV Output
+        --csv-delim CHAR             Delimiter for CSV Output values. Default: ','
+        --csv-newline [CHAR]         Delimiter for CSV Output rows. Default: '\n'
+        --csv-quotes                 Wrap CSV values with ". Default: false
+        --csv-no-header              Exclude header for CSV Output.
+    -F, --fields x,y,z               Filter Output to a limited set of fields. Default is all fields.
+    -d, --dry-run                    Dry Run, print the API request instead of executing it
+        --curl                       Dry Run to output API request as a curl command.
+        --scrub                      Mask secrets in output, such as the Authorization header. For use with --curl and --dry-run.
+    -r, --remote REMOTE              Remote name. The current remote is used by default.
+        --remote-url URL             Remote url. The current remote url is used by default.
+    -T, --token TOKEN                Access token for authentication with --remote. Saved credentials are used by default.
+    -U, --username USERNAME          Username for authentication.
+    -P, --password PASSWORD          Password for authentication.
+    -I, --insecure                   Allow insecure HTTPS communication.  i.e. bad SSL certificate.
+    -H, --header HEADER              Additional HTTP header to include with requests.
+        --timeout SECONDS            Timeout for api requests. Default is typically 30 seconds.
+    -C, --nocolor                    Disable ANSI coloring
+    -B, --benchmark                  Print benchmark time after the command is finished.
+    -V, --debug                      Print extra output for debugging.
+    -h, --help                       Print this help
+```
+
+#### morpheus wiki get
+
+```
+Usage: morpheus wiki get [name]
+        --view                       View wiki page in web browser too.
+    -Q, --query PARAMS               Query parameters. PARAMS format is 'phrase=foobar&category=web'
+    -j, --json                       JSON Output
+        --yaml                       YAML Output
+        --csv                        CSV Output
+        --csv-delim CHAR             Delimiter for CSV Output values. Default: ','
+        --csv-newline [CHAR]         Delimiter for CSV Output rows. Default: '\n'
+        --csv-quotes                 Wrap CSV values with ". Default: false
+        --csv-no-header              Exclude header for CSV Output.
+    -F, --fields x,y,z               Filter Output to a limited set of fields. Default is all fields.
+    -d, --dry-run                    Dry Run, print the API request instead of executing it
+        --curl                       Dry Run to output API request as a curl command.
+        --scrub                      Mask secrets in output, such as the Authorization header. For use with --curl and --dry-run.
+    -r, --remote REMOTE              Remote name. The current remote is used by default.
+        --remote-url URL             Remote url. The current remote url is used by default.
+    -T, --token TOKEN                Access token for authentication with --remote. Saved credentials are used by default.
+    -U, --username USERNAME          Username for authentication.
+    -P, --password PASSWORD          Password for authentication.
+    -I, --insecure                   Allow insecure HTTPS communication.  i.e. bad SSL certificate.
+    -H, --header HEADER              Additional HTTP header to include with requests.
+        --timeout SECONDS            Timeout for api requests. Default is typically 30 seconds.
+    -C, --nocolor                    Disable ANSI coloring
+    -B, --benchmark                  Print benchmark time after the command is finished.
+    -V, --debug                      Print extra output for debugging.
+    -h, --help                       Print this help
+```
+
+#### morpheus wiki list
+
+```
+Usage: morpheus wiki list
+        --category VALUE             Category
+    -m, --max MAX                    Max Results
+    -o, --offset OFFSET              Offset Results
+    -s, --search PHRASE              Search Phrase
+    -S, --sort ORDER                 Sort Order
+    -D, --desc                       Reverse Sort Order
+    -Q, --query PARAMS               Query parameters. PARAMS format is 'phrase=foobar&category=web'
+    -j, --json                       JSON Output
+        --yaml                       YAML Output
+        --csv                        CSV Output
+        --csv-delim CHAR             Delimiter for CSV Output values. Default: ','
+        --csv-newline [CHAR]         Delimiter for CSV Output rows. Default: '\n'
+        --csv-quotes                 Wrap CSV values with ". Default: false
+        --csv-no-header              Exclude header for CSV Output.
+    -F, --fields x,y,z               Filter Output to a limited set of fields. Default is all fields.
+    -d, --dry-run                    Dry Run, print the API request instead of executing it
+        --curl                       Dry Run to output API request as a curl command.
+        --scrub                      Mask secrets in output, such as the Authorization header. For use with --curl and --dry-run.
+    -r, --remote REMOTE              Remote name. The current remote is used by default.
+        --remote-url URL             Remote url. The current remote url is used by default.
+    -T, --token TOKEN                Access token for authentication with --remote. Saved credentials are used by default.
+    -U, --username USERNAME          Username for authentication.
+    -P, --password PASSWORD          Password for authentication.
+    -I, --insecure                   Allow insecure HTTPS communication.  i.e. bad SSL certificate.
+    -H, --header HEADER              Additional HTTP header to include with requests.
+        --timeout SECONDS            Timeout for api requests. Default is typically 30 seconds.
+    -C, --nocolor                    Disable ANSI coloring
+    -B, --benchmark                  Print benchmark time after the command is finished.
+    -V, --debug                      Print extra output for debugging.
+    -h, --help                       Print this help
+```
+
+#### morpheus wiki remove
+
+```
+Usage: morpheus wiki remove [name]
+    -y, --yes                        Auto Confirm
+    -j, --json                       JSON Output
+    -d, --dry-run                    Dry Run, print the API request instead of executing it
+        --curl                       Dry Run to output API request as a curl command.
+        --scrub                      Mask secrets in output, such as the Authorization header. For use with --curl and --dry-run.
+    -r, --remote REMOTE              Remote name. The current remote is used by default.
+        --remote-url URL             Remote url. The current remote url is used by default.
+    -T, --token TOKEN                Access token for authentication with --remote. Saved credentials are used by default.
+    -U, --username USERNAME          Username for authentication.
+    -P, --password PASSWORD          Password for authentication.
+    -I, --insecure                   Allow insecure HTTPS communication.  i.e. bad SSL certificate.
+    -H, --header HEADER              Additional HTTP header to include with requests.
+        --timeout SECONDS            Timeout for api requests. Default is typically 30 seconds.
+    -C, --nocolor                    Disable ANSI coloring
+    -B, --benchmark                  Print benchmark time after the command is finished.
+    -V, --debug                      Print extra output for debugging.
+    -h, --help                       Print this help
+```
+
+#### morpheus wiki update
+
+```
+Usage: morpheus wiki update [name] [options]
+        --name VALUE                 Name (optional)
+        --category VALUE             Category (optional)
+        --content VALUE              Content (optional)
+        --payload FILE               Payload from a local JSON or YAML file, skip all prompting
+        --payload-dir DIRECTORY      Payload from a local directory containing 1-N JSON or YAML files, skip all prompting
+        --payload-json JSON          Payload JSON, skip all prompting
+        --payload-yaml YAML          Payload YAML, skip all prompting
+    -O, --option OPTION              Option in the format -O field="value"
+        --prompt                     Always prompts. Use passed options as the default value.
+    -N, --no-prompt                  Skip prompts. Use default values for all optional fields.
+    -j, --json                       JSON Output
+    -d, --dry-run                    Dry Run, print the API request instead of executing it
+        --curl                       Dry Run to output API request as a curl command.
+        --scrub                      Mask secrets in output, such as the Authorization header. For use with --curl and --dry-run.
+    -r, --remote REMOTE              Remote name. The current remote is used by default.
+        --remote-url URL             Remote url. The current remote url is used by default.
+    -T, --token TOKEN                Access token for authentication with --remote. Saved credentials are used by default.
+    -U, --username USERNAME          Username for authentication.
+    -P, --password PASSWORD          Password for authentication.
+    -I, --insecure                   Allow insecure HTTPS communication.  i.e. bad SSL certificate.
+    -H, --header HEADER              Additional HTTP header to include with requests.
+        --timeout SECONDS            Timeout for api requests. Default is typically 30 seconds.
+    -C, --nocolor                    Disable ANSI coloring
+    -B, --benchmark                  Print benchmark time after the command is finished.
+    -V, --debug                      Print extra output for debugging.
+    -h, --help                       Print this help
+```
+
+#### morpheus wiki view
+
+```
+Usage: morpheus wiki view [id]
+    -d, --dry-run                    Dry Run, print the API request instead of executing it
+        --curl                       Dry Run to output API request as a curl command.
+        --scrub                      Mask secrets in output, such as the Authorization header. For use with --curl and --dry-run.
+    -r, --remote REMOTE              Remote name. The current remote is used by default.
+        --remote-url URL             Remote url. The current remote url is used by default.
+    -T, --token TOKEN                Access token for authentication with --remote. Saved credentials are used by default.
+    -U, --username USERNAME          Username for authentication.
+    -P, --password PASSWORD          Password for authentication.
+    -I, --insecure                   Allow insecure HTTPS communication.  i.e. bad SSL certificate.
+    -H, --header HEADER              Additional HTTP header to include with requests.
+        --timeout SECONDS            Timeout for api requests. Default is typically 30 seconds.
+    -C, --nocolor                    Disable ANSI coloring
+    -B, --benchmark                  Print benchmark time after the command is finished.
+    -V, --debug                      Print extra output for debugging.
+    -h, --help                       Print this help
+
+View a wiki page in a web browser
+[id] is required. This is name or id of the wiki page.
+```
+
+
 ### morpheus workflows
 
 ```

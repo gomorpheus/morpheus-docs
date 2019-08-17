@@ -1,4 +1,4 @@
-# Compute Zone (Cloud) Types
+# Zone (Cloud) Types
 
 Provides a means to find out which zone types are available for zone provisioning and in the  future what config properties are required.
 

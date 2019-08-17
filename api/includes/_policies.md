@@ -432,7 +432,7 @@ curl -XPOST "https://api.gomorpheus.com/api/policies" \
 }'
 ```
 
-> The above command returns JSON structured like getting a single policy:
+> The above command returns JSON structured like getting a single policy: 
 
 ### HTTP Request
 
@@ -500,7 +500,7 @@ curl -XPUT "https://api.gomorpheus.com/api/policies/1" \
 }'
 ```
 
-> The above command returns JSON structured like getting a single policy:
+> The above command returns JSON structured like getting a single policy: 
 
 ### HTTP Request
 
@@ -551,7 +551,7 @@ ID | The ID of the policy
 
 ## Group Policies
 
-Policies scoped to a specific group can also be managed at another endpoint.
+Policies scoped to a specific group can also be managed at another endpoint. 
 
 ```shell
 curl "https://api.gomorpheus.com/api/groups/1/policies"
@@ -589,7 +589,7 @@ curl "https://api.gomorpheus.com/api/groups/1/policies"
         "name": "root"
       },
       "accounts": [
-
+        
       ]
     }
   ],
@@ -618,7 +618,7 @@ This resource also provides endpoints for GET, POST, PUT and DELETE that work ju
 
 ## Cloud Policies
 
-Policies scoped to a specific cloud can also be managed at another endpoint.
+Policies scoped to a specific cloud can also be managed at another endpoint. 
 
 ```shell
 curl "https://api.gomorpheus.com/api/zones/1/policies"
@@ -656,7 +656,7 @@ curl "https://api.gomorpheus.com/api/zones/1/policies"
         "name": "root"
       },
       "accounts": [
-
+        
       ]
     }
   ],

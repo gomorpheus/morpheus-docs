@@ -302,5 +302,3 @@ This endpoint can be used to toggle the mute state (`inUptime`) of an incident o
 ### HTTP Request
 
 `PUT https://api.gomorpheus.com/api/monitoring/incidents/:id/reopen`
-
-

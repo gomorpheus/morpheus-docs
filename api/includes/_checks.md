@@ -1,6 +1,6 @@
 # Monitor Checks
 
- These entities define what and when a check is executed within the Morpheus system. Morpheus supports a vast array of different check types (not solely web checks). The API provides a means to list all of an account's checks in addition to create, modify, mute, and or delete them.
+ These entities define what and when a monitoring check is executed within the Morpheus system. Morpheus supports a vast array of different check types (not solely web checks). The API provides a means to list all of an account's checks in addition to create, modify, mute, and or delete them.
 
 ## Get All Checks
 
@@ -23,7 +23,7 @@ curl "https://api.gomorpheus.com/api/monitoring/checks"
       "availability": 99.9804109,
       "checkAgent": null,
       "checkIntegrations": [
-        
+
       ],
       "checkInterval": 300,
       "checkSpec": null,
@@ -101,7 +101,7 @@ curl "https://api.gomorpheus.com/api/monitoring/checks/1" \
     "availability": 99.9804109,
     "checkAgent": null,
     "checkIntegrations": [
-      
+
     ],
     "checkInterval": 300,
     "checkSpec": null,
@@ -170,7 +170,7 @@ curl -XPOST "https://api.gomorpheus.com/api/monitoring/checks" \
   }}'
 ```
 
-> The above command returns a similar JSON structure when submitting a GET request for a single check 
+> The above command returns a similar JSON structure when submitting a GET request for a single check
 
 ### HTTP Request
 
@@ -212,7 +212,7 @@ curl -XPUT "https://api.gomorpheus.com/api/monitoring/checks/1" \
   }}'
 ```
 
-> The above command returns a similar JSON structure when submitting a GET request for a single check 
+> The above command returns a similar JSON structure when submitting a GET request for a single check
 
 ### HTTP Request
 
@@ -234,7 +234,7 @@ config | null | JSON encoded list of parameters that varies by check type. See b
 
 ## Check Types and Options
 
-We support a wide variety of check types. Each check type varies in its configuration payload when determining how the check should be run.
+Morpheus supports a wide variety of check types. Each check type varies in its configuration payload when determining how the check should be run.
 
 
 > Creates a Web type Check
@@ -391,7 +391,7 @@ Elasticsearch check is capable of connecting to your Elasticsearch, cluster or n
 Parameter | Requirement | Description
 --------- | ----------- | -----------
 esHost      | Yes         | Hostname or IP address of the Elasticsearch server
-esPort      | Yes         | Port to connect to the HTTP service 
+esPort      | Yes         | Port to connect to the HTTP service
 
 <aside class="notice">Direct access over the Internet to Elasticsearch is not required.  SSH tunneling is available to protect the communication, which is configured using additional JSON parameters (see SSH checks). Also, you can run our agent, with the correct subscription plan, where the check is executed from a host behind your firewall.</aside>
 
@@ -412,7 +412,7 @@ A Push check is a check that is updated by a web hook. An external source is res
 
 ## SSH Tunneling
 
-SSH tunneling options allow the different check types to tunnel to a host via a proxy, and execute checks relative to the proxy. A SSH tunnel can use your account generated public and private key-pairs or SSH password (we **strongly** recommend using a key-pair).
+SSH tunneling options allow the different check types to tunnel to a host via a proxy, and execute checks relative to the proxy. A SSH tunnel can use your account generated public and private key-pairs or SSH password. It is  **strongly recommended** to use a key-pair.
 
 To enable SSH tunneling for a check, add the following parameters to any check type config as seen earlier in the Check Types section.
 
@@ -518,4 +518,3 @@ A deleted check can be fetched from the API using the GET method to synchronize 
 ### HTTP Request
 
 `DELETE https://api.gomorpheus.com/api/monitoring/checks/:id`
-

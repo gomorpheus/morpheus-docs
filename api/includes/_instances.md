@@ -980,30 +980,6 @@ metadata |  | Array of metadata objects
 powerScheduleType |  | Power Schedule ID
 site.id |  | Group ID
 
-## Updating Instance Notes
-
-```shell
-curl -X PUT "https://api.gomorpheus.com/api/instances/1/notes" \
-  -H "Authorization: BEARER access_token" \
-  -H "Content-Type: application/json" \
-  -d '{ "instance": {
-  "notes": "My notes about this instance."
-  }}'
-```
-
-> The above command returns a similar JSON structure when submitting a GET request for a single check
-
-### HTTP Request
-
-`PUT https://api.gomorpheus.com/api/instances/:id/notes`
-
-### JSON Instance Parameters
-
-Parameter | Default | Description
---------- | ------- | -----------
-notes      |  | Notes in markdown format.
-
-
 ## Stop an Instance
 
 ```shell
