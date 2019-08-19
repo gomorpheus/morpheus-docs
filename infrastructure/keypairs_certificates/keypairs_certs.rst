@@ -14,6 +14,8 @@ To navigate to the Key Pairs section:
 Add Key Pair
 ------------
 
+.. IMPORTANT::  Keys need to be RSA format.  Open SSH format is not accepted. 
+
 To Add Key Pair:
 
 #. Select the Infrastructure link in the navigation bar.
