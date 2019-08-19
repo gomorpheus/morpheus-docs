@@ -14,7 +14,7 @@ To navigate to the Key Pairs section:
 Add Key Pair
 ------------
 
-.. IMPORTANT::  Keys need to be RSA format.  Open SSH format is not accepted. 
+.. IMPORTANT::  Keys need to be RSA format, OpenSSH format is not accepted. Some operating systems, such as Mac OS X, default to OpenSSH. When generating keys in these operating systems, `we must specify generation in RSA format <https://support.morpheusdata.com/s/article/ssh-key-not-showing-new-integration?language=en_US>`_. 
 
 To Add Key Pair:
 
