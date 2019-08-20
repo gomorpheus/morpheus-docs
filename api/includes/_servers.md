@@ -1,8 +1,6 @@
 # Compute Servers
 
- A Compute Server is either a bare metal machine or virtual machine that is provisioned into morpheus via Chef. These servers are setup as Docker Hosts and used to provision containers into. They also run the morphd agent which reports server statistics and logs back to the morpheus stack.
-
- <aside class="warning">You must be authorized as a System Admin to provision servers into Morpheus cloud or in an Appliance context.</aside>
+A Compute Server is either a virtual machine, host, or bare metal machine, which are found in the ui under Infrastructure -> Hosts.
 
 ## Get All Servers
 
