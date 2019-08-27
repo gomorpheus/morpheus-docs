@@ -6,7 +6,7 @@ The Morpheus Image Builder service creates vmdk, qcow2, vhd and raw Images from 
 Requirements
 ------------
 
-- DHCP must be enabled on the network specified for the VM in Mophues, and network settings configured for DHCP in Morpheus
+- DHCP must be enabled on the network specified for the VM in Morpheus, and network settings configured for DHCP in Morpheus
    The blank VM must get network configuration via DHCP upon boot. Static IP assignment is not possible.
 - Hypervisor Console must be enabled on the Target Cloud
    Morpheus utilizes VNC to pass the boot script to the VM.
