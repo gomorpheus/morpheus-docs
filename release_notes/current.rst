@@ -25,7 +25,7 @@ New Features
 - Nutanix: Snapshot creation and rollback support added (separate from Backups).
 - Openstack: Availability Zones added
 - Openstack: Parallel provisioning added
-- OVM: Fix for intermittent disk mapping issue, causing provisioning failure due to resize attempt on cd-rom
+- Oracle VM: Fix for intermittent disk mapping issue, causing provisioning failure due to resize attempt on cd-rom
 - Plans & Pricing: Default Datastore Pricing. ``APPLY PRICE ACROSS CLOUDS`` option will apply Datastore price for selected Datastore across all Clouds with same Datastore. Note: Additional Prices defined for the same datastore but scoped to a specific Tenant take priority.
 - Plans & Pricing: RESOURCE POOL scoping option added to Price Set configurations.
 - Reports: Filtering by tag and metadata added
