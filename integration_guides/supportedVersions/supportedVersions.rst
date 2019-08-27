@@ -17,7 +17,7 @@ Nutanix Acropolis       5.0 - 5.10
 
                         Note: In 5.5 - 5.7 if Prism Central is enabled, no actions that create images in Prism will function due to Prism Central Image Management.
 Openstack               Juno, Kilo, Liberty, Mitaka, Newton, Ocata, Pike, Queens
-vCloud Director         8.20, 9.1
+vCloud Director         8.20, 9.1, 9.5
 VMware vCenter          5.5, 6.0, 6.5, 6.7
 VMware ESXi             5.5, 6.0, 6.5, 6.7
 VMware Fusion           8, 9, 10+
