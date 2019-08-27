@@ -1,12 +1,12 @@
 Image Builder
 =============
 
-The Morpheus Image Builder tools creates vmdk, qcow2, vhd and raw Images from scratch. The Image Builder creates a blank VM in VMware, attaches an os iso, executes a boot script on the VM at startup via VNC which calls a preseed script which runs the unattended os installation and configuration. Morpheus then executes an ova export of the completed vmdk to target Storage provider, and converts the image to all other specified formats. The new Virtual Image records are automatically added to Morpheus and the Images are then available for use.
+The Morpheus Image Builder tool creates vmdk, qcow2, vhd and raw Images from scratch. The Image Builder creates a blank VM in VMware, attaches an os iso, executes a boot script on the VM at startup via VNC which calls a preseed script which runs the unattended os installation and configuration. Morpheus then executes an ova export of the completed vmdk to target Storage provider, and converts the image to all other specified formats. The new Virtual Image records are automatically added to Morpheus and the Images are then available for use.
 
 Requirements
 ------------
 
-- DHCP must be enabled on the network specified for the VM in Mophues, and network settings configured for DHCP in Morpheus
+- DHCP must be enabled on the network specified for the VM in Morpheus, and network settings configured for DHCP in Morpheus
    The blank VM must get network configuration via DHCP upon boot. Static IP assignment is not possible.
 - Hypervisor Console must be enabled on the Target Cloud
    Morpheus utilizes VNC to pass the boot script to the VM.
