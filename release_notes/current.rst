@@ -35,6 +35,7 @@ New Features
 - Tenants don't inherit the correct iteration of the instance naming policy and instead start from the beginning
 - vCloud Director: Network reconfigure now supported
 - vCloud Director: Shared/public catalog management added
+- vCloud Director: v9.5 support added
 - Veeam: Tenant permissions for Veeam backup jobs and repositories added
 - VMware: Snapshot creation and rollback support added (separate from Backups)
 
