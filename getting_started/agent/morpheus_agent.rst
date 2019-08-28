@@ -52,6 +52,8 @@ Redhat Based linux Distrubution:
 * Oracle 6.x
 * Oracle 7.x
 
+.. important:: Amazon Linux in not supported by the Morpheus Agent
+
 Debian Based linux Distrubutions:
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
