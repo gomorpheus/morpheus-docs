@@ -133,6 +133,7 @@ Morpheus Agent OS Support
 | windows server 2019      | windows      | windows      | 64            | 1                   |
 +--------------------------+--------------+--------------+---------------+---------------------+
 
+.. important:: Amazon Linux is not supported by the Morpheus Agent
 
 Agent Install
 --------------
