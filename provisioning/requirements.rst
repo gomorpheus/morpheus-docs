@@ -48,7 +48,7 @@ While an infinite number of steps can happen when provisioning an Instance or Ap
 Virtual Images
 ---------------
 
-While containers are the future, the most common provisioning method involves Virtual Machines, and the most important part of Provisioning a VM is the Virtual Image. When provisioning a VM, |morpheus| will need to do a few tings depending on the location of the Virtual Image and if agent install, console access, and scrip execution is desired.
+While containers are the future, the most common provisioning method involves Virtual Machines, and the most important part of Provisioning a VM is the Virtual Image. When provisioning a VM, |morpheus| will need to do a few things depending on the location of the Virtual Image and if agent install, console access, and scrip execution is desired.
 
 Synced Images need to be properly configured
     |morpheus| gathers as much metadata for synced images as possible, but depending on the cloud, os, image configuration, agent install settings, by default the synced Virtual Images may not be ready to provision until configured. The Virtual Image is already at the target Cloud, but datastore selection, credentials, cloud-init settings, and networks and security settings on the Virtual Image can cause provisioning issues.
