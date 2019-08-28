@@ -57,9 +57,9 @@ Redhat Based linux Distrubution:
 Debian Based linux Distrubutions:
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-* Ubuntu 14.04.x
+* Ubuntu 14.04.x (Only supported for VMs, not Docker hosts)
 * Ubuntu 16.04.x
-* Ubuntu 18.04.x (Only supported for VM, not docker host)
+* Ubuntu 18.04.x
 * Debian 8.x
 * Debian 9.x
 
