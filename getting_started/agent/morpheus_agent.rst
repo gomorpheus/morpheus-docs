@@ -52,12 +52,14 @@ Redhat Based linux Distrubution:
 * Oracle 6.x
 * Oracle 7.x
 
+.. important:: Amazon Linux in not supported by the Morpheus Agent
+
 Debian Based linux Distrubutions:
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-* Ubuntu 14.04.x
+* Ubuntu 14.04.x (Only supported for VMs, not Docker hosts)
 * Ubuntu 16.04.x
-* Ubuntu 18.04.x (Only supported for VM, not docker host)
+* Ubuntu 18.04.x
 * Debian 8.x
 * Debian 9.x
 
