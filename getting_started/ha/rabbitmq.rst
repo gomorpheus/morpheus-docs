@@ -16,8 +16,10 @@ On All Nodes:
 
   rabbitmq-plugins enable rabbitmq_stomp
 
-Recommended Rabbitmq Policies:
-..................................
+Required Rabbitmq Policies:
+...........................
+
+The following policies must be set on the morpheus vhost. Failure to apply these policies will cause performance and/or stability issues.
 
 .. code-block:: bash
 

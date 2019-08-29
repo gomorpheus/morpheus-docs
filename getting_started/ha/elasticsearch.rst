@@ -5,6 +5,8 @@ Install 3 node Elasticsearch Cluster on Centos 7
 
 .. IMPORTANT:: This is a sample configuration only. Customer configurations and requirements will vary.
 
+.. IMPORTANT:: Enabling watcher and monitoring in elasticsearch with default configurations (xpack) can cause storage constraints in ``/var/log/elasticsearch`` and ``/var/lib/elasticsearch``. While this is not related to Morpheus and not controlled by Morpheus, please be aware of and monitor available storage for your elasticsearch cluster configuration.
+
 Requirements
 ^^^^^^^^^^^^
 
@@ -116,5 +118,19 @@ Testing
 ^^^^^^^
 
 To make sure Elasticsearch is running use the following commands
+
+#. Testing
+
+Elasticsearch should be running on port 9200. You can test it with curl, the command line client-side URL transfers tool and a simple GET request like this:
+
+ .. code-block:: bash
+
+   [~]$ sudo curl -X GET 'http://10.30.20.149:9200'
+         {
+           "status" : 200,
+           "name" : "morpheuses1",
+           "cluster_name" : "morpheusha1",
+           ...
+           },
 
 https://www.elastic.co/guide/en/elasticsearch/reference/current/rpm.html#rpm-check-running
