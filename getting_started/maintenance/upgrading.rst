@@ -34,7 +34,6 @@ To upgrade Morpheus running on Ubuntu/Debian, download and install the new deb p
   sudo wget https://packageUrl.morpheus-appliance_x.x.x-x.amd64.deb
   sudo dpkg -i morpheus-appliance_x.x.x-1.amd64.deb
   sudo morpheus-ctl stop
-  sudo morpheus-ctl graceful-kill morpheus-ui (morpheus-ui should already be stopped, this just ensures it is stopped)
   sudo morpheus-ctl reconfigure
   sudo morpheus-ctl start morpheus-ui
 
@@ -48,7 +47,6 @@ To upgrade Morpheus running on CentOS/RHEL, download and install the new rpm pac
   sudo wget https://packageUrl.morpheus-appliance-x.x.x-x.x86_64.rpm
   sudo rpm -Uhv morpheus-appliance-x.x.x-x.x86_64.rpm
   sudo morpheus-ctl stop
-  sudo morpheus-ctl graceful-kill morpheus-ui
   sudo morpheus-ctl reconfigure
   sudo morpheus-ctl start morpheus-ui
 
@@ -74,7 +72,7 @@ Due to RabbitMQ going from 3.4.x to 3.7.x, which has no direct upgrade path, the
 Fix if Install Hangs
 --------------------
 
-Some very old all-in-one appliances may hang during the mysql upgrade process during the 4.0.0 deb or rpm package upgrade. 
+Some very old all-in-one appliances may hang during the mysql upgrade process during the 4.0.0 deb or rpm package upgrade.
 
 To resolve, run the following in a separate session while the process is hanging:
 
