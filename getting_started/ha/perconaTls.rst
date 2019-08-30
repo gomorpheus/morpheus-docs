@@ -152,98 +152,98 @@ Add [mysqld] to my.cnf in /etc/
 
 #. Add the following to ``/etc/my.cnf``.  The node_name and node_address needs to be unique on each of the nodes.
 
-Node 01:
+   Node 01:
 
-   .. code-block:: bash
+      .. code-block:: bash
 
-      [root]# vi /etc/my.cnf
+         [root]# vi /etc/my.cnf
 
-   .. code-block:: bash
+      .. code-block:: bash
 
-      [mysqld]
-      pxc_encrypt_cluster_traffic=ON
-      max_connections = 300
-      wsrep_provider=/usr/lib64/galera3/libgalera_smm.so
+         [mysqld]
+         pxc_encrypt_cluster_traffic=ON
+         max_connections = 300
+         wsrep_provider=/usr/lib64/galera3/libgalera_smm.so
 
-      wsrep_cluster_name=morpheusdb-cluster
-      wsrep_cluster_address=gcomm://10.30.20.10,10.30.20.11,10.30.20.12
+         wsrep_cluster_name=morpheusdb-cluster
+         wsrep_cluster_address=gcomm://10.30.20.10,10.30.20.11,10.30.20.12
 
-      # for wsrep_cluster_address=gcomm://Enter the IP address of the primary node first then remaining nodes. Separating the ip addresses with commas
+         # for wsrep_cluster_address=gcomm://Enter the IP address of the primary node first then remaining nodes. Separating the ip addresses with commas
 
-      wsrep_node_name=morpheus-node01
-      wsrep_node_address=10.30.20.10
+         wsrep_node_name=morpheus-node01
+         wsrep_node_address=10.30.20.10
 
-      wsrep_sst_method=xtrabackup-v2
-      wsrep_sst_auth=sstuser:sstUserPassword
-      pxc_strict_mode=PERMISSIVE
-      wsrep_sync_wait=2
+         wsrep_sst_method=xtrabackup-v2
+         wsrep_sst_auth=sstuser:sstUserPassword
+         pxc_strict_mode=PERMISSIVE
+         wsrep_sync_wait=2
 
-      skip-log-bin
-      default_storage_engine=InnoDB
-      innodb_autoinc_lock_mode=2
+         skip-log-bin
+         default_storage_engine=InnoDB
+         innodb_autoinc_lock_mode=2
 
 
-Node 02
+   Node 02
 
-   .. code-block:: bash
+      .. code-block:: bash
 
-      $ [root]# vi /etc/my.cnf
+         $ [root]# vi /etc/my.cnf
 
-   .. code-block:: bash
+      .. code-block:: bash
 
-      [mysqld]
-      pxc_encrypt_cluster_traffic=ON
-      max_connections = 300
-      wsrep_provider=/usr/lib64/galera3/libgalera_smm.so
+         [mysqld]
+         pxc_encrypt_cluster_traffic=ON
+         max_connections = 300
+         wsrep_provider=/usr/lib64/galera3/libgalera_smm.so
 
-      wsrep_cluster_name=morpheusdb-cluster
-      wsrep_cluster_address=gcomm://10.30.20.10,10.30.20.11,10.30.20.12
+         wsrep_cluster_name=morpheusdb-cluster
+         wsrep_cluster_address=gcomm://10.30.20.10,10.30.20.11,10.30.20.12
 
-      # for wsrep_cluster_address=gcomm://Enter the IP address of the primary node first then remaining nodes. Separating the ip addresses with commas
+         # for wsrep_cluster_address=gcomm://Enter the IP address of the primary node first then remaining nodes. Separating the ip addresses with commas
 
-      wsrep_node_name=morpheus-db-node02
-      wsrep_node_address=10.30.20.11
+         wsrep_node_name=morpheus-db-node02
+         wsrep_node_address=10.30.20.11
 
-      wsrep_sst_method=xtrabackup-v2
-      wsrep_sst_auth=sstuser:sstUserPassword
-      pxc_strict_mode=PERMISSIVE
-      wsrep_sync_wait=2
+         wsrep_sst_method=xtrabackup-v2
+         wsrep_sst_auth=sstuser:sstUserPassword
+         pxc_strict_mode=PERMISSIVE
+         wsrep_sync_wait=2
 
-      skip-log-bin
-      default_storage_engine=InnoDB
-      innodb_autoinc_lock_mode=2
+         skip-log-bin
+         default_storage_engine=InnoDB
+         innodb_autoinc_lock_mode=2
 
-Node 03
+   Node 03
 
-   .. code-block:: bash
+      .. code-block:: bash
 
-      $ [root]# vi /etc/my.cnf
+         $ [root]# vi /etc/my.cnf
 
-   .. code-block:: bash
+      .. code-block:: bash
 
-      [mysqld]
-      pxc_encrypt_cluster_traffic=ON
-      max_connections = 300
-      wsrep_provider=/usr/lib64/galera3/libgalera_smm.so
+         [mysqld]
+         pxc_encrypt_cluster_traffic=ON
+         max_connections = 300
+         wsrep_provider=/usr/lib64/galera3/libgalera_smm.so
 
-      wsrep_cluster_name=morpheusdb-cluster
-      wsrep_cluster_address=gcomm://10.30.20.10,10.30.20.11,10.30.20.12
+         wsrep_cluster_name=morpheusdb-cluster
+         wsrep_cluster_address=gcomm://10.30.20.10,10.30.20.11,10.30.20.12
 
-      # for wsrep_cluster_address=gcomm://Enter the IP address of the primary node first then remaining nodes. Separating the ip addresses with commas
+         # for wsrep_cluster_address=gcomm://Enter the IP address of the primary node first then remaining nodes. Separating the ip addresses with commas
 
-      wsrep_node_name=morpheus-node03
-      wsrep_node_address=10.30.20.12
+         wsrep_node_name=morpheus-node03
+         wsrep_node_address=10.30.20.12
 
-      wsrep_sst_method=xtrabackup-v2
-      wsrep_sst_auth=sstuser:sstUserPassword
-      pxc_strict_mode=PERMISSIVE
-      wsrep_sync_wait=2
+         wsrep_sst_method=xtrabackup-v2
+         wsrep_sst_auth=sstuser:sstUserPassword
+         pxc_strict_mode=PERMISSIVE
+         wsrep_sync_wait=2
 
-      skip-log-bin
-      default_storage_engine=InnoDB
-      innodb_autoinc_lock_mode=2
+         skip-log-bin
+         default_storage_engine=InnoDB
+         innodb_autoinc_lock_mode=2
 
-      .. note:: The default setting on |morpheus| app nodes for ``max_active`` database connections is 100. For this example we are setting ``max_connections = 300`` to account for 3 maximum simultaneous morpheus app node connections. If ``max_active`` is configured higher on the app nodes, or the number of app nodes is not 3, adjust accordingly for your configuration.
+         .. note:: The default setting on |morpheus| app nodes for ``max_active`` database connections is 100. For this example we are setting ``max_connections = 300`` to account for 3 maximum simultaneous morpheus app node connections. If ``max_active`` is configured higher on the app nodes, or the number of app nodes is not 3, adjust accordingly for your configuration.
 
 #. Save ``/etc/my.cnf``
 
