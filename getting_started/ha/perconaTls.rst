@@ -109,13 +109,13 @@ Once the service is stopped on all nodes move onto the next step.
 Add [mysqld] to my.cnf in /etc/
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-#. Add the following to ``/etc/my.cnf``.  The node_name and node_address needs to be unique on each of the nodes. The first node does not require the gcomm value to be set.
+#. Add the following to ``/etc/my.cnf``.  The node_name and node_address needs to be unique on each of the nodes.
 
 Node 01:
 
    .. code-block:: bash
 
-      $ sudo vi /etc/my.cnf
+      [root]# vi /etc/my.cnf
 
    .. code-block:: bash
 
@@ -125,7 +125,9 @@ Node 01:
       wsrep_provider=/usr/lib64/galera3/libgalera_smm.so
 
       wsrep_cluster_name=morpheusdb-cluster
-      wsrep_cluster_address=gcomm://
+      wsrep_cluster_address=gcomm://10.30.20.10,10.30.20.11,10.30.20.12
+
+      # for wsrep_cluster_address=gcomm://Enter the IP address of the primary node first then remaining nodes. Separating the ip addresses with commas
 
       wsrep_node_name=morpheus-node01
       wsrep_node_address=10.30.20.10
@@ -135,7 +137,7 @@ Node 01:
       pxc_strict_mode=PERMISSIVE
       wsrep_sync_wait=2
 
-      binlog_format=ROW
+      skip-log-bin
       default_storage_engine=InnoDB
       innodb_autoinc_lock_mode=2
 
@@ -144,7 +146,7 @@ Node 02
 
    .. code-block:: bash
 
-      $ sudo vi /etc/my.cnf
+      $ [root]# vi /etc/my.cnf
 
    .. code-block:: bash
 
@@ -166,7 +168,7 @@ Node 02
       pxc_strict_mode=PERMISSIVE
       wsrep_sync_wait=2
 
-      binlog_format=ROW
+      skip-log-bin
       default_storage_engine=InnoDB
       innodb_autoinc_lock_mode=2
 
@@ -174,7 +176,7 @@ Node 03
 
    .. code-block:: bash
 
-      $ sudo vi /etc/my.cnf
+      $ [root]# vi /etc/my.cnf
 
    .. code-block:: bash
 
@@ -196,7 +198,7 @@ Node 03
       pxc_strict_mode=PERMISSIVE
       wsrep_sync_wait=2
 
-      binlog_format=ROW
+      skip-log-bin
       default_storage_engine=InnoDB
       innodb_autoinc_lock_mode=2
 
