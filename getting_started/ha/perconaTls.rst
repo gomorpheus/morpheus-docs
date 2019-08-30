@@ -178,9 +178,7 @@ Node 01:
       pxc_strict_mode=PERMISSIVE
       wsrep_sync_wait=2
 
-      binlog_format=ROW
-      expire_logs_days=3
-      max_binlog_size=100M
+      skip-log-bin
       default_storage_engine=InnoDB
       innodb_autoinc_lock_mode=2
 
@@ -211,9 +209,7 @@ Node 02
       pxc_strict_mode=PERMISSIVE
       wsrep_sync_wait=2
 
-      binlog_format=ROW
-      expire_logs_days=3
-      max_binlog_size=100M
+      skip-log-bin
       default_storage_engine=InnoDB
       innodb_autoinc_lock_mode=2
 
@@ -243,9 +239,7 @@ Node 03
       pxc_strict_mode=PERMISSIVE
       wsrep_sync_wait=2
 
-      binlog_format=ROW
-      expire_logs_days=3
-      max_binlog_size=100M
+      skip-log-bin
       default_storage_engine=InnoDB
       innodb_autoinc_lock_mode=2
 
