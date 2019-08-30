@@ -178,9 +178,7 @@ Node 01:
       pxc_strict_mode=PERMISSIVE
       wsrep_sync_wait=2
 
-      binlog_format=ROW
-      expire_logs_days=3
-      max_binlog_size=100M
+      skip-log-bin
       default_storage_engine=InnoDB
       innodb_autoinc_lock_mode=2
 
@@ -211,9 +209,7 @@ Node 02
       pxc_strict_mode=PERMISSIVE
       wsrep_sync_wait=2
 
-      binlog_format=ROW
-      expire_logs_days=3
-      max_binlog_size=100M
+      skip-log-bin
       default_storage_engine=InnoDB
       innodb_autoinc_lock_mode=2
 
@@ -243,9 +239,7 @@ Node 03
       pxc_strict_mode=PERMISSIVE
       wsrep_sync_wait=2
 
-      binlog_format=ROW
-      expire_logs_days=3
-      max_binlog_size=100M
+      skip-log-bin
       default_storage_engine=InnoDB
       innodb_autoinc_lock_mode=2
 
@@ -268,6 +262,7 @@ Bootstrap Node 01
    .. NOTE:: The mysql service will start during the bootstrap.
 
    .. NOTE:: Startup failures are commonly caused by misconfigured ``/etc/my.cnf`` files. Also verify ``safe_to_bootstrap`` is set to ``1`` on Node 01 in ``/var/lib/mysql/grastate.dat``.
+
 
 Configure Morpheus Database and User
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -304,6 +299,7 @@ Login to mysql on Node 01:
 
     mysql> exit
 
+
 Copy SSL Files to other nodes
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -320,6 +316,7 @@ During initialization of Node 01 the required `pem` files will be generated in `
     .. important:: Ensure all 3 files match on all 3 nodes, including path, owner and permissions.
 
     .. note:: The generated certificate is self signed. Consult Percona documentation for [mysqld] and SSL file configuration when providing your own.
+
 
 Start the Remaining Nodes
 ^^^^^^^^^^^^^^^^^^^^^^^^^
