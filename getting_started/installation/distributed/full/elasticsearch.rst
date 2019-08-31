@@ -1,5 +1,5 @@
 Elasticsearch
-^^^^^^^^^^^^^^
+^^^^^^^^^^^^^
 
 Install 3 node Elasticsearch Cluster on Centos 7
 
