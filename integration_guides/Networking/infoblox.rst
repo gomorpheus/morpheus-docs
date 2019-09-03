@@ -17,11 +17,11 @@ Adding Infoblox Integration
 
 .. IMPORTANT:: The Infoblox integration requires a service user that is member of admin-group
 
-#. Navigate to ``Infrastructure - Network - Services``
-#. Select :guilabel:`+ ADD` -> IPAM -> Infoblox
+#. Navigate to ``Infrastructure - Network - Integrations``
+#. Select :guilabel:`+ ADD` -> Infoblox (from within the IPAM category)
 #. Enter the following:
 
-   .. image:: /images/infrastructure/network/infoblox/infoblox_settings.png
+   .. image:: /images/infrastructure/network/infoblox/infoblox_settings_new.png
 
    NAME
     Name of the Integration in |morpheus|
@@ -45,7 +45,7 @@ Adding Infoblox Integration
    IP MODE
     Static IPs or DHCP Reservations
 
-#. Select :guilabel:`SAVE IPAM INTEGRATION`
+#. Select :guilabel:`SAVE CHANGES`
 
 Upon save the Infoblox IPAM integration will be created and the following will sync:
 
