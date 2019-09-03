@@ -19,9 +19,12 @@ Adding Infoblox Integration
 
 #. Navigate to ``Infrastructure - Network - Integrations``
 #. Select :guilabel:`+ ADD` -> Infoblox (from within the IPAM category)
-#. Enter the following:
+
+The new IPAM integration window appears as shown:
 
    .. image:: /images/infrastructure/network/infoblox/infoblox_settings_new.png
+
+#. Enter the following:
 
    NAME
     Name of the Integration in |morpheus|
