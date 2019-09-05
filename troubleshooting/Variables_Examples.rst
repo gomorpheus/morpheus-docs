@@ -163,7 +163,6 @@ Instance Naming Policy example: ``${userInitials}-${cloudCode}-${platform == 'wi
 			zone.cloudTypeCode: <%=zone.cloudTypeCode%>
 			zone.cloudTypeName: <%=zone.cloudTypeName%>
 			zone.code: <%=zone.code%>
-			zone.datacenterId: <%=zone.datacenterId%>
 			zone.domainName: <%=zone.domainName%>
 			zone.firewallEnabled: <%=zone.firewallEnabled%>
 			zone.location: <%=zone.location%>
