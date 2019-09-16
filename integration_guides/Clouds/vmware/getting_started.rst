@@ -56,4 +56,9 @@ Virtual Images / Blueprints
 
 A global cloud-init username/password can also be configured per account as well as a keypair via the ``Admin->Provisioning`` settings section. The great benefit of utilizing cloud-init is default blueprints do not need common credential sets thereby increasing provisioning security.
 
-Windows systems do not typically support cloud-init. So simply turn this checkbox off and provide the `Administrator` credentials. It should be noted that these credentials are encrypted in the database. If using WinRM for the RPC Mode instead of VMware tools, a Local or Domain Administrator account credential set can be provided instead.
+Windows systems do not typically support cloud-init. So simply turn this checkbox off and provide the `Administrator` credentials. It should be noted that these credentials are encrypted in the database. If using WinRM for the RPC Mode instead of VMware tools, a Local or Domain Administrator account credential set can be provided instead
+
+Snapshots
+^^^^^^^^^^^
+
+|morpheus| allows the ability to create a snapshot of a VM in VMware.  Simply select ``Actions -> Create Snapshot``.  Snapshots can be viewed in the ``BACKUPS`` tab on an Instance.  Snapshots taken in VMware will sync into |morpheus|.  To revert to a previous snapshot click on the revert icon located on the right side of the Snapshot.
