@@ -42,7 +42,7 @@ Adding Infoblox Integration
    Disable SSL SNI Verification
     Leave selected to disable SSL SNI Verification
    NETWORK FILTER
-    Filter which networks are synced into |morpheus|. Example: Network Filter: ``[ network_view=default&*Building=work ]``
+    Filter which networks are synced into |morpheus|. Example: Network Filter: ``network~=.*(10.116.82.0|10.116.83.0|10.116.84.0)`` 
    TENANT MATCH ATTRIBUTE
      This can be set to the name of the extended attribute in Infoblox where |morpheus| will check for the id of a morpheus tenant.  This allows for setting the tenant’s |morpheus| id to an extended attribute field on a network view or network in Infoblox, and when the network or view is discovered by morpheus, it will be auto assigned to the right tenant.
    IP MODE
