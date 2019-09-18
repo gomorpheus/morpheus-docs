@@ -10,9 +10,9 @@ Setting up the vRO integration involves some steps which vary depending on the a
 
 When using OAUTH, the Client ID must be gathered first. This can be found by browsing a file on the actual VRA server using SSH. On the vRA server, run the following command:
 
-``
+```
 grep -i cafe_cli= /etc/vcac/solution-users.properties | sed -e ‘s/cafe_cli=//’
-``
+```
 
 Secondly, you will need the username, password, and host API URL. Typically, the API URL is run on port 8283. A sample API URL may look like the following example: `https://vrahost.com:8283/`
 
@@ -35,7 +35,7 @@ First, go to `Provisioning -> Automation` and create a new task. Choose a task t
 
 An exmaple payload for the `SSH / Run SSH Command` Workflow would look like this:
 
-``
+```
 {
     "parameters": [
         {
@@ -121,14 +121,14 @@ An exmaple payload for the `SSH / Run SSH Command` Workflow would look like this
         }
     ]
 }
-``
+```
 
 Note that all |morpheus| variables can be injected into the parameter body. In the above example we inject the instance name into the sample command with `<%=instance.name%>`.
 
 Adding this task to a workflow allows the result parameters to be referenced in subsequent tasks called throughout the workflow. For example, a local script task type could reference the output text of the above ssh command by injecting the following results map:
 
-``
+```
 echo "results.vro: <%=results.vro.find{it.name == 'outputText'}?.value?.string?.value%>"
-``
+```
 
 There are very powerful options available for chaining results and injecting variables relevant to the instance being provisioned or even custom inputs from an operational workflow. Please reference the rest of the Automation documentation for examples.
