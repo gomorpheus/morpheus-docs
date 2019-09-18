@@ -9,3 +9,4 @@ Automation
   Automation/puppet.rst
   Automation/salt.rst
   Automation/terraform.rst
+  Automation/vro.rst
