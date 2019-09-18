@@ -8,11 +8,7 @@ Adding the Integration
 
 Setting up the vRO integration involves some steps which vary depending on the authentication model being used.
 
-When using OAUTH, the Client ID must be gathered first. This can be found by browsing a file on the actual VRA server using SSH. On the vRA server, run the following command:
-
-```
-grep -i cafe_cli= /etc/vcac/solution-users.properties | sed -e ‘s/cafe_cli=//’
-```
+When using OAUTH, the Client ID must be gathered first. This can be found by browsing a file on the actual VRA server using SSH. On the vRA server, run the following command: ``grep -i cafe_cli= /etc/vcac/solution-users.properties | sed -e ‘s/cafe_cli=//’``
 
 Secondly, you will need the username, password, and host API URL. Typically, the API URL is run on port 8283. A sample API URL may look like the following example: `https://vrahost.com:8283/`
 
@@ -35,100 +31,96 @@ First, go to `Provisioning -> Automation` and create a new task. Choose a task t
 
 An exmaple payload for the `SSH / Run SSH Command` Workflow would look like this:
 
-```
-{
-    "parameters": [
-        {
-            "name": "hostNameOrIP",
-            "type": "string",
-            "value": {
-                "string": {
-                    "value": "x.x.x.x"
-                }
-            }
-        },
-        {
-            "name": "port",
-            "type": "number",
-            "value": {
-                "number": {
-                    "value": 22
-                }
-            }
-        },
-        {
-            "name": "cmd",
-            "type": "string",
-            "value": {
-                "string": {
-                    "value": "echo \"Hello <%=instance.name%>\""
-                }
-            }
-        },
-        {
-            "name": "encoding",
-            "type": "string",
-            "value": {
-                "string": {
-                    "value": ""
-                }
-            }
-        },
-        {
-            "name": "username",
-            "type": "string",
-            "value": {
-                "string": {
-                    "value": "myuser"
-                }
-            }
-        },
-        {
-            "name": "passwordAuthentication",
-            "type": "boolean",
-            "value": {
-                "boolean": {
-                    "value": true
-                }
-            }
-        },
-        {
-            "name": "password",
-            "type": "string",
-            "value": {
-                "string": {
-                    "value": "password"
-                }
-            }
-        },
-        {
-            "name": "path",
-            "type": "string",
-            "value": {
-                "string": {
-                    "value": "\/var\/lib\/vco\/app-server\/conf\/vco_key"
-                }
-            }
-        },
-        {
-            "name": "passphrase",
-            "type": "string",
-            "value": {
-                "string": {
-                    "value": ""
-                }
-            }
-        }
-    ]
-}
-```
+.. code-block:: JSON
+
+  {
+      "parameters": [
+          {
+              "name": "hostNameOrIP",
+              "type": "string",
+              "value": {
+                  "string": {
+                      "value": "x.x.x.x"
+                  }
+              }
+          },
+          {
+              "name": "port",
+              "type": "number",
+              "value": {
+                  "number": {
+                      "value": 22
+                  }
+              }
+          },
+          {
+              "name": "cmd",
+              "type": "string",
+              "value": {
+                  "string": {
+                      "value": "echo \"Hello <%=instance.name%>\""
+                  }
+              }
+          },
+          {
+              "name": "encoding",
+              "type": "string",
+              "value": {
+                  "string": {
+                      "value": ""
+                  }
+              }
+          },
+          {
+              "name": "username",
+              "type": "string",
+              "value": {
+                  "string": {
+                      "value": "myuser"
+                  }
+              }
+          },
+          {
+              "name": "passwordAuthentication",
+              "type": "boolean",
+              "value": {
+                  "boolean": {
+                      "value": true
+                  }
+              }
+          },
+          {
+              "name": "password",
+              "type": "string",
+              "value": {
+                  "string": {
+                      "value": "password"
+                  }
+              }
+          },
+          {
+              "name": "path",
+              "type": "string",
+              "value": {
+                  "string": {
+                      "value": "\/var\/lib\/vco\/app-server\/conf\/vco_key"
+                  }
+              }
+          },
+          {
+              "name": "passphrase",
+              "type": "string",
+              "value": {
+                  "string": {
+                      "value": ""
+                  }
+              }
+          }
+      ]
+  }
 
 Note that all |morpheus| variables can be injected into the parameter body. In the above example we inject the instance name into the sample command with `<%=instance.name%>`.
 
-Adding this task to a workflow allows the result parameters to be referenced in subsequent tasks called throughout the workflow. For example, a local script task type could reference the output text of the above ssh command by injecting the following results map:
-
-```
-echo "results.vro: <%=results.vro.find{it.name == 'outputText'}?.value?.string?.value%>"
-```
+Adding this task to a workflow allows the result parameters to be referenced in subsequent tasks called throughout the workflow. For example, a local script task type could reference the output text of the above ssh command by injecting the following results map: ``echo "results.vro: <%=results.vro.find{it.name == 'outputText'}?.value?.string?.value%>"``
 
 There are very powerful options available for chaining results and injecting variables relevant to the instance being provisioned or even custom inputs from an operational workflow. Please reference the rest of the Automation documentation for examples.
