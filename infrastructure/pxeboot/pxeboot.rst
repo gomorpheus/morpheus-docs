@@ -140,7 +140,6 @@ Add Images
       .. important:: Ensure the case of file references match actual file names.
 
       .. code-block:: bash
-         :name: PXE 6.5.0 Menu
 
         DEFAULT vesamenu.c32
         TIMEOUT 300
