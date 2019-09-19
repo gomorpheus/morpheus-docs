@@ -112,9 +112,6 @@ Script Config Examples
     Results Task Output
       ``json value: pong``
 
-Python
-  Python tasks can access the results dictionary directly:``results[key]``. To pass the results of a Python task to the next task within a workflow add the results as a value within the results dictionary. For example ``results['taskcode'] = 'Hello World'`` where 'taskcode' is the code of the task.
-
   :Multiple Task Results:
     Results Task Script
        .. code-block:: bash
