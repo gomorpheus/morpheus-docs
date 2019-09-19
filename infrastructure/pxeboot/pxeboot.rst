@@ -188,4 +188,4 @@ Remove Image
 #. Select the Image tab.
 #. Click the `Actions` drop and select `Remove`.
 
-.. include:: infrastructure/pxeboot/esxi65.rst
+.. include:: /infrastructure/pxeboot/esxi65.rst
