@@ -1,8 +1,6 @@
 PXE Boot
 ========
 
-.. add images menu info
-
 Overview
 --------
 
@@ -135,15 +133,40 @@ Add Images
     Name of the Image.
    Operating System
     List of available operating systems.
-   .. Menu
-   Storage Provider
-    List of available storage providers.
+   MENU
+     Paste in PXE Menu
+      Example PXE 6.5.0 Menu:
+
+      .. important:: Ensure the case of file references match actual file names.
+
+      .. code-block:: bash
+         :name: PXE 6.5.0 Menu
+
+       DEFAULT vesamenu.c32
+       TIMEOUT 300
+       ONTIMEOUT esxi
+       PROMPT 0
+       MENU INCLUDE pxelinux.cfg/pxe.conf
+       NO ESCAPE 1
+       LABEL local
+         menu LABEL Boot to local disk
+         localboot 0
+         TEXT HELP
+         Boot to local hard disk
+         ENDTEXT
+       LABEL esxi
+         menu LABEL ESXI 6.5.0 u1
+         kernel tftp://${bootUrl}/image/${imageId}/MBOOT.C32
+         append -c tftp://${bootUrl}/image/${imageId}/BOOT.CFG ks=${answerFile}
+         TEXT HELP
+           Boot the ESXI 6.5.0 u1 install
+         ENDTEXT
+       MENU END
+   Bucket
+    Select Bucket or File Share where PXE Image files exist
    Image Path
-    Path of the image.
-   Visibility
-    Private or Public
-   Account
-    List of accounts to allow permission to this image.
+    Path of the image relative to the selected Bucket or Storage Provider
+
 
 #. Save Changes
 
@@ -157,21 +180,6 @@ Edit Image
 #. Modify information as needed.
 #. Click the Save Changes button to save.
 
-Convert Image
-^^^^^^^^^^^^^
-
-#. Click the Infrastructure link in the navigation bar.
-#. Click the Boot link in the sub navigation bar.
-#. Select the Images tab
-#. Click the `Actions` drop and select `Convert`.
-
-Download Image
-^^^^^^^^^^^^^^
-
-#. Click the Infrastructure link in the navigation bar.
-#. Click the Boot link in the sub navigation bar.
-#. Select the Images tab
-#. Click the `Actions` drop and select `Download`.
 
 Remove Image
 ^^^^^^^^^^^^
@@ -180,3 +188,5 @@ Remove Image
 #. Click the Boot link in the sub navigation bar.
 #. Select the Image tab.
 #. Click the `Actions` drop and select `Remove`.
+
+.. include:: infrastructure/pxeboot/esxi65.rst
