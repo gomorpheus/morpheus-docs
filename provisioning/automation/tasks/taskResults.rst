@@ -112,7 +112,7 @@ Script Config Examples
     Results Task Output
       ``json value: pong``
 
-:Multiple Task Results:
+ :Multiple Task Results:
     Results Task Script
        .. code-block:: bash
 
