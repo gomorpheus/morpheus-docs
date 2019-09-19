@@ -167,7 +167,6 @@ Add Images
    Image Path
     Path of the image relative to the selected Bucket or Storage Provider
 
-
 #. Save Changes
 
 Edit Image
