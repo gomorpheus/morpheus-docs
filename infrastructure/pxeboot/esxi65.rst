@@ -1,13 +1,14 @@
 Adding ESXi 6.5 PXE Image
 -------------------------
 
-When adding a PXE Image for ESXi 6.5, a few requirements must be met for a successful PXE Boot.
+When adding a PXE Image for ESXi 6.5, a few requirements must be met for a successful PXE Boot:
 
 - Image/iso must be expanded and added to a Bucket or File Share in Morpheus
 - The ESXi ``BOOT.CFG`` needs to be edited to be PXE compatible:
+
   - The ESXi ``BOOT.CFG`` uses lowercase file references, while the actual file names are CAPS. Change all file reference names to CAPS.
   - The ESXi ``BOOT.CFG`` references empty files, which while cause PXE checksum failures, and the file references need to be removed.
-  - The ESXi ``BOOT.CFG`` has ``\``'s in front of all filenames that need to be removed
+  - The ESXi ``BOOT.CFG`` has ``/``'s in front of all filenames that need to be removed
 
 Create ESXi 6.5 PXE Image
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -59,7 +60,6 @@ Create ESXi 6.5 PXE Image
 
    #. The Bucket or File Share and path to the iso files will be used when adding a PXE image.
 
-
 #. Create PXE Image
 
    #. Navigate to ``Infrastructure -> Boot``
@@ -74,8 +74,7 @@ Create ESXi 6.5 PXE Image
       MINIMUM MEMORY
        n/a leave default ``0``
       MENU
-       Paste in PXE Menu
-        Example PXE 6.5.0 Menu:
+       Paste in the PXE Menu, an example PXE 6.5.0 Menu is below:
 
         .. important:: Ensure the case of file references match actual file names.
 
@@ -109,6 +108,6 @@ Create ESXi 6.5 PXE Image
       IMAGE PATH
        Enter the path to the iso files relative to the Bucket or File Share, eg ``/pxe-images/VMware-6.5.0/``
 
-      #. Select :guilabel:`SAVE CHANGES`
+    #. Select :guilabel:`SAVE CHANGES`
 
-#. Your ESXi 6.5 PXE image is ready to be added to a mapping.
+Your ESXi 6.5 PXE image is now ready to be added to a mapping.
