@@ -43,11 +43,16 @@ Create ESXi 6.5 PXE Image
    #. Navigate to ``Infrastructure -> Storage``
    #. Select Bucket or File Share Tab
    #. Select target Bucket or File Share
+
       #. If a bucket or File Share does not exist, select :guilabel:`+ ADD` to create one.
+
    #. If the iso contents are already in the file share/bucket, skip to next step
+
       #. To add 6.5 iso contents, click :guilabel:`+ ADD` and drag the expanded ESXi ISO folder to the upload modal
       #. One call files have been uploaded, select :guilabel:`DONE`
+
    #. Note the path to the ESXi 6.5 files, relative to the bucket/file share.
+
        - For example, the screenshot below shows an iso expanded into a folder called ``VMware-6.5.0`` which was added to ``pxe-images`` folder inside ``morpheus-ui local images`` local file share. The path to the files from the file share is ``/pxe-images/VMware-6.5.0/``
 
        .. image:: /images/infrastructure/boot/ESXi650fileshare.png
