@@ -108,6 +108,6 @@ Create ESXi 6.5 PXE Image
       IMAGE PATH
        Enter the path to the iso files relative to the Bucket or File Share, eg ``/pxe-images/VMware-6.5.0/``
 
-    #. Select :guilabel:`SAVE CHANGES`
+   #. Select :guilabel:`SAVE CHANGES`
 
 Your ESXi 6.5 PXE image is now ready to be added to a mapping.
