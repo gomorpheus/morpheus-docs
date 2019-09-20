@@ -12,7 +12,7 @@ Firstly you need a local fork of the the project, so go ahead and press the “f
 
 Now you need a copy locally, so find the “SSH clone URL” in the right hand column and use that to clone locally using a terminal:
 ```
-$ git@github.com:tadamhicks/morpheus-docs.git
+$ git clone git@github.com:tadamhicks/morpheus-docs.git
 ```
 
 Change into the new project’s directory:
