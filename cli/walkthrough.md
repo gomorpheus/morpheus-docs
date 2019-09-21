@@ -8,7 +8,6 @@ Lets look at what happens when we simply type `morpheus` on the command line:
 
 ```
 Usage: morpheus [command] [options]
-
 Commands:
 	access-token
 	alias
@@ -80,7 +79,9 @@ Commands:
 	version
 	virtual-images
 	whoami
+	wiki
 	workflows
+	
 Options:
     -e, --exec EXPRESSION            Execute the command(s) expression. This is an alternative to passing [command] [options]
         --noprofile                  Do not read and execute the personal initialization script .morpheus_profile

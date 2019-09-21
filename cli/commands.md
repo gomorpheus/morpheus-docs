@@ -33,7 +33,7 @@
 
     The available commands and their options are also documented below.
 
-## morpheus
+### morpheus
 
 ```
 Usage: morpheus [command] [options]
@@ -7588,6 +7588,10 @@ Usage: morpheus library-option-types add [options]
     -O, --option OPTION              Option in the format -O field="value"
         --prompt                     Always prompts. Use passed options as the default value.
     -N, --no-prompt                  Skip prompts. Use default values for all optional fields.
+        --payload FILE               Payload from a local JSON or YAML file, skip all prompting
+        --payload-dir DIRECTORY      Payload from a local directory containing 1-N JSON or YAML files, skip all prompting
+        --payload-json JSON          Payload JSON, skip all prompting
+        --payload-yaml YAML          Payload YAML, skip all prompting
     -j, --json                       JSON Output
     -d, --dry-run                    Dry Run, print the API request instead of executing it
         --curl                       Dry Run to output API request as a curl command.
@@ -7703,6 +7707,10 @@ Usage: morpheus library-option-types update [name] [options]
     -O, --option OPTION              Option in the format -O field="value"
         --prompt                     Always prompts. Use passed options as the default value.
     -N, --no-prompt                  Skip prompts. Use default values for all optional fields.
+        --payload FILE               Payload from a local JSON or YAML file, skip all prompting
+        --payload-dir DIRECTORY      Payload from a local directory containing 1-N JSON or YAML files, skip all prompting
+        --payload-json JSON          Payload JSON, skip all prompting
+        --payload-yaml YAML          Payload YAML, skip all prompting
     -j, --json                       JSON Output
     -d, --dry-run                    Dry Run, print the API request instead of executing it
         --curl                       Dry Run to output API request as a curl command.

@@ -4,6 +4,19 @@ This is a list of changes in the most recent versions of the CLI.
 
 Backwards compatibility with older appliances should be preserved in most cases.
 
+## 4.0.0.1
+
+### Fixes
+* Fix issue with `instances history-event` breaking when an event had an error to display.
+
+## 4.0.0
+
+### Enhancements
+* New command `wiki`
+* New subcommands `network-pools list-ips|get-ip|etc` for managing network pool IPs
+* New subcommands `network-domains list-records|get-record|etc` for managing network network domain records.
+* Changed `--refresh` default interval to 30 seconds, instead of 5.
+
 ## 3.6.38
 
 ### Fixes
