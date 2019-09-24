@@ -22,6 +22,10 @@ Or install it yourself as:
 
     $ gem install morpheus-cli
 
+To install a specific version of Morpheus CLI, pass in a -v option as shown in the example below:
+
+    $ gem install morpheus-cli -v 3.6.38
+
 ### Windows
 
 To get started, we must first ensure ruby is running on the windows machine in question. To do this please visit [http://rubyinstaller.org/downloads](http://rubyinstaller.org/downloads) and download at least Ruby version 2.0.0 (2.3.3 recommended).
