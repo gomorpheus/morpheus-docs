@@ -35,11 +35,11 @@ There are 5 Agent install modes:
 
 - SSH / WinRM /Guest Execution
 - VMware Tools / guest execution
-- cloud-init/ cloudbase-init
+- cloud-init / cloudbase-init
 - Unattend
 - Manual installation
 
-On each cloud you can select between two options for your preferred agent installation method under the advanced options.  The recommended method to install the |morpheus| agent is cloud init / Unattend (when available).  If this fails it will call back to SSH / WinRM / Guest Execution.  
+On each cloud, you can select between two options for your preferred agent installation method under advanced options.  The recommended method to install the |morpheus| agent is cloud init / Unattend (when available).  If this fails it will call back to SSH / WinRM / Guest Execution.  
 
 
 .. IMPORTANT::
