@@ -5,18 +5,18 @@ Highlights
 ----------
 
 vRealize Orchestrator Integration (vRO)
-^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 - Syncs all available vRO workflows by category
 - These workflows can also be chained easily into non-vRO workflows
 - `vRealize Orchestrator Workflow` now available as a task type in ``Provisioning > Automation > Tasks``
 
 Automation tasks
-^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^
 - `Ansible Tower` automation task type added in ``Provisioning > Automation``
 - `Email` tasks can now be created and added to Workflows
 
 Subnet handling
-^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^
 
 - Added `SUBNETS` tab to the network detail page in ``Infrastructure > Network > (Your specific Network)`` which allows subnets to be searched and edited.
 - Subnets can now be created and edited on an Azure VNet from ``Infrastructure > Network``.
@@ -27,7 +27,7 @@ Subnet handling
 - Subnets are now selectable when adding or editing a Network Group in ``Infrastructure > Network > NETWORK GROUPS``
 
 Additional Changes and Improvements
-^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 - Job executions can now be expanded to show process details in ``Provisioning > Automation > Executions``
 - Individual tasks and scripts can now be run against hosts and virtual machines in ``Infrastructure > Hosts``. Previously workflows could be executed but not individual scripts or tasks.
@@ -43,7 +43,7 @@ Additional Changes and Improvements
 - `Morpheus Api` has been added as a type selection in Option Lists (``Provisioning > Library > OPTION LISTS``)
 
 Fixes
-----------
+-----
 - Output results now appear correctly in the Execution Detail window in ``Provisioning > Automation > Executions``. Similarly, output results will also now appear correctly in the Execution Detail window in ``Provisioning > Jobs > Job Executions``.
 - Fixed an issue where backups were not being created in some cases when integrating with Veeam 9.5
 - Time period definitions within the specified dates are now honored in data calls to the Billing API
@@ -57,7 +57,7 @@ Role Permission Updates
 
 Service Version Compatibility
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-When externalizing MySQL, Elasticsearch and/or RabbitMQ services, the following versions are compatible with Morpheus 4.0.0:
+When externalizing MySQL, Elasticsearch and/or RabbitMQ services, the following versions are compatible with Morpheus 4.1.0:
 
 +---------------------------------------+----------------------+-----------------------------+
 | **Service**                           |**Compatible Branch** | **4.1.0 Installed Version** |
