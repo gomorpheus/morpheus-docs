@@ -2483,20 +2483,18 @@ Commands:
 #### morpheus clusters add
 
 ```
-Usage: morpheus clusters add [name] [description]
+Usage: morpheus clusters add [name]
         --name NAME                  Cluster Name
         --description [TEXT]         Description
         --resource-name NAME         Resource Name
-        --resource-description DESCRIPTION
-                                     Resource Description
         --tags LIST                  Tags
     -g, --group GROUP                Group Name or ID
-    -c, --cloud CLOUD                Cloud Name or ID
     -t, --cluster-type TYPE          Cluster Type Name or ID
     -l, --layout LAYOUT              Layout Name or ID
-        --create-user on|off         User Config: Create Your User. Default is off
-        --user-group USERGROUP       User Config: User Group
+        --visibility [private|public]
+                                     Visibility
         --refresh [SECONDS]          Refresh until status is provisioned,failed. Default interval is 30 seconds.
+    -c, --cloud CLOUD                Cloud Name or ID
         --resource-pool ID           ID of the Resource Pool for Amazon VPC and Azure Resource Group
     -p, --plan PLAN                  Service Plan
         --max-memory VALUE           Maximum Memory (MB)
@@ -2510,8 +2508,10 @@ Usage: morpheus clusters add [name] [description]
         --network-interfaces-file FILE
                                      Network Interfaces Config from a local JSON or YAML file
         --security-groups LIST       Security Groups
-        --visibility [private|public]
-                                     Visibility
+        --create-user on|off         User Config: Create Your User. Default is off
+        --user-group USERGROUP       User Config: User Group
+        --domain VALUE               Network Domain ID
+        --hostname VALUE             Hostname
     -O, --option OPTION              Option in the format -O field="value"
         --prompt                     Always prompts. Use passed options as the default value.
     -N, --no-prompt                  Skip prompts. Use default values for all optional fields.
@@ -2535,7 +2535,7 @@ Usage: morpheus clusters add [name] [description]
     -B, --benchmark                  Print benchmark time after the command is finished.
     -V, --debug                      Print extra output for debugging.
     -h, --help                       Print this help
-    
+
 Create a cluster.
 [name] is required. This is the name of the new cluster.
 ```
@@ -2549,8 +2549,13 @@ Usage: morpheus clusters add-namespace [cluster] [name] [options]
         --active [on|off]            Enable namespace
         --group-access-all [on|off]  Toggle Access for all groups.
         --group-access LIST          Group Access, comma separated list of group IDs.
+        --group-defaults LIST        Group Default Selection, comma separated list of group IDs
         --plan-access-all [on|off]   Toggle Access for all service plans.
         --plan-access LIST           Service Plan Access, comma separated list of plan IDs.
+        --plan-defaults LIST         Plan Default Selection, comma separated list of plan IDs
+        --visibility [private|public]
+                                     Visibility
+        --tenants LIST               Tenant Access, comma separated list of account IDs
     -O, --option OPTION              Option in the format -O field="value"
         --prompt                     Always prompts. Use passed options as the default value.
     -N, --no-prompt                  Skip prompts. Use default values for all optional fields.
@@ -2574,17 +2579,19 @@ Usage: morpheus clusters add-namespace [cluster] [name] [options]
     -B, --benchmark                  Print benchmark time after the command is finished.
     -V, --debug                      Print extra output for debugging.
     -h, --help                       Print this help
-    
+
 Create a cluster namespace.
 [cluster] is required. This is the name or id of an existing cluster.
-[name] is required. This is the name of the new namespace.    
+[name] is required. This is the name of the new namespace.
 ```
 
 #### morpheus cluster add-worker
 
 ```
 Usage: morpheus clusters add-worker [cluster] [options]
-        --name NAME                  Worker Name
+        --name NAME                  Name of the new worker
+        --description [TEXT]         Description
+    -c, --cloud CLOUD                Cloud Name or ID
         --resource-pool ID           ID of the Resource Pool for Amazon VPC and Azure Resource Group
     -p, --plan PLAN                  Service Plan
         --max-memory VALUE           Maximum Memory (MB)
@@ -2598,8 +2605,10 @@ Usage: morpheus clusters add-worker [cluster] [options]
         --network-interfaces-file FILE
                                      Network Interfaces Config from a local JSON or YAML file
         --security-groups LIST       Security Groups
-        --visibility [private|public]
-                                     Visibility
+        --create-user on|off         User Config: Create Your User. Default is off
+        --user-group USERGROUP       User Config: User Group
+        --domain VALUE               Network Domain ID
+        --hostname VALUE             Hostname
     -O, --option OPTION              Option in the format -O field="value"
         --prompt                     Always prompts. Use passed options as the default value.
     -N, --no-prompt                  Skip prompts. Use default values for all optional fields.
@@ -2623,10 +2632,10 @@ Usage: morpheus clusters add-worker [cluster] [options]
     -B, --benchmark                  Print benchmark time after the command is finished.
     -V, --debug                      Print extra output for debugging.
     -h, --help                       Print this help
-    
+
 Add worker to a cluster.
 [cluster] is required. This is the name or id of an existing cluster.
-[name] is required. This is the name of the new worker.    
+[name] is required. This is the name of the new worker.
 ```
 
 #### morpheus clusters count
@@ -2660,6 +2669,7 @@ Usage: morpheus clusters get [id]
         --hosts                      Display masters and workers
         --masters                    Display masters
         --workers                    Display workers
+        --permissions                Display permissions
         --refresh [SECONDS]          Refresh until status is provisioned,failed. Default interval is 30 seconds.
         --refresh-until STATUS       Refresh until a specified status is reached.
     -j, --json                       JSON Output
@@ -2678,7 +2688,7 @@ Usage: morpheus clusters get [id]
     -B, --benchmark                  Print benchmark time after the command is finished.
     -V, --debug                      Print extra output for debugging.
     -h, --help                       Print this help
-    
+
 Get details about a cluster.
 ```
 
@@ -2686,6 +2696,7 @@ Get details about a cluster.
 
 ```
 Usage: morpheus clusters get-namespace [cluster] [namespace]
+        --permissions                Display permissions
     -Q, --query PARAMS               Query parameters. PARAMS format is 'phrase=foobar&category=web'
     -j, --json                       JSON Output
         --yaml                       YAML Output
@@ -3003,6 +3014,7 @@ Delete a volume within a cluster.
 Usage: morpheus clusters update [cluster] --name --description --active
         --name NAME                  Updates Cluster Name
         --description [TEXT]         Updates Cluster Description
+        --api-url [TEXT]             Updates Cluster API Url
         --active [on|off]            Can be used to enable / disable the cluster. Default is on
     -O, --option OPTION              Option in the format -O field="value"
         --prompt                     Always prompts. Use passed options as the default value.
@@ -3036,7 +3048,17 @@ Update a cluster.
 
 ```
 Usage: morpheus clusters update-namespace [cluster] [namespace] [options]
-        --name NAME                  Namespace Name
+        --description [TEXT]         Description
+        --active [on|off]            Enable namespace
+        --group-access-all [on|off]  Toggle Access for all groups.
+        --group-access LIST          Group Access, comma separated list of group IDs.
+        --group-defaults LIST        Group Default Selection, comma separated list of group IDs
+        --plan-access-all [on|off]   Toggle Access for all service plans.
+        --plan-access LIST           Service Plan Access, comma separated list of plan IDs.
+        --plan-defaults LIST         Plan Default Selection, comma separated list of plan IDs
+        --visibility [private|public]
+                                     Visibility
+        --tenants LIST               Tenant Access, comma separated list of account IDs
     -O, --option OPTION              Option in the format -O field="value"
         --prompt                     Always prompts. Use passed options as the default value.
     -N, --no-prompt                  Skip prompts. Use default values for all optional fields.
@@ -3064,6 +3086,47 @@ Usage: morpheus clusters update-namespace [cluster] [namespace] [options]
 Update a cluster namespace.
 [cluster] is required. This is the name or id of an existing cluster.
 [namespace] is required. This is the name or id of an existing namespace.
+```
+
+#### morpheus clusters update-permissions
+
+```
+Usage: morpheus clusters update-permissions [cluster]
+        --group-access-all [on|off]  Toggle Access for all groups.
+        --group-access LIST          Group Access, comma separated list of group IDs.
+        --group-defaults LIST        Group Default Selection, comma separated list of group IDs
+        --plan-access-all [on|off]   Toggle Access for all service plans.
+        --plan-access LIST           Service Plan Access, comma separated list of plan IDs.
+        --plan-defaults LIST         Plan Default Selection, comma separated list of plan IDs
+        --visibility [private|public]
+                                     Visibility
+        --tenants LIST               Tenant Access, comma separated list of account IDs
+    -O, --option OPTION              Option in the format -O field="value"
+        --prompt                     Always prompts. Use passed options as the default value.
+    -N, --no-prompt                  Skip prompts. Use default values for all optional fields.
+        --payload FILE               Payload from a local JSON or YAML file, skip all prompting
+        --payload-dir DIRECTORY      Payload from a local directory containing 1-N JSON or YAML files, skip all prompting
+        --payload-json JSON          Payload JSON, skip all prompting
+        --payload-yaml YAML          Payload YAML, skip all prompting
+    -j, --json                       JSON Output
+    -d, --dry-run                    Dry Run, print the API request instead of executing it
+        --curl                       Dry Run to output API request as a curl command.
+        --scrub                      Mask secrets in output, such as the Authorization header. For use with --curl and --dry-run.
+    -r, --remote REMOTE              Remote name. The current remote is used by default.
+        --remote-url URL             Remote url. The current remote url is used by default.
+    -T, --token TOKEN                Access token for authentication with --remote. Saved credentials are used by default.
+    -U, --username USERNAME          Username for authentication.
+    -P, --password PASSWORD          Password for authentication.
+    -I, --insecure                   Allow insecure HTTPS communication.  i.e. bad SSL certificate.
+    -H, --header HEADER              Additional HTTP header to include with requests.
+        --timeout SECONDS            Timeout for api requests. Default is typically 30 seconds.
+    -C, --nocolor                    Disable ANSI coloring
+    -B, --benchmark                  Print benchmark time after the command is finished.
+    -V, --debug                      Print extra output for debugging.
+    -h, --help                       Print this help
+
+Update a clusters permissions.
+[cluster] is required. This is the name or id of an existing cluster.
 ```
 
 #### morpheus clusters view 
