@@ -140,6 +140,20 @@ Role Permission Updates
 - Tools: Image Builder (None, Read, Full)
 - Tools: Migrations (None, Read, Full)
 
+Service Version Compatibility
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+When externalizing MySQL, Elasticsearch and/or RabbitMQ services, the following versions are compatible with Morpheus 4.0.0:
+
++---------------------------------------+----------------------+-----------------------------+
+| **Service**                           |**Compatible Branch** | **4.0.0 Installed Version** |
++---------------------------------------+----------------------+-----------------------------+
+| MySQL                                 | 5.7                  | 5.7.27                      |
++---------------------------------------+----------------------+-----------------------------+
+| Elasticsearch: 5.6 (5.6.16 installed) | 5.6                  | 5.6.16                      |
++---------------------------------------+----------------------+-----------------------------+
+| RabbitMQ: 3.7 (3.7.16 installed)      | 3.7                  | 3.7.16                      |
++---------------------------------------+----------------------+-----------------------------+
+
 Other
 ^^^^^
 - ``Download Agent Script`` added to VM Actions. Generates script for manual agent installs with appliance url and api key included
@@ -149,4 +163,4 @@ Other
 - Migration wizard: new Ports component added
 - vCloud Director: Network reconfigure added
 
-.. important:: v3.6.0 or later required to upgrade to 4.0.0. Upgrade steps have been changed. 4.0.0 contains upgrades to MySQL, RabbitMQ, and Elasticsearch. Please refer to 4.0.0 Upgrade Requirements before upgrading, and BACKUP YOUR DATABASE before upgrade.             
+.. important:: v3.6.0 or later required to upgrade to 4.0.0. Upgrade steps have been changed. 4.0.0 contains upgrades to MySQL, RabbitMQ, and Elasticsearch. Please refer to 4.0.0 Upgrade Requirements before upgrading, and BACKUP YOUR DATABASE before upgrade.

@@ -1,5 +1,7 @@
-Install Percona XtraDB Cluster with TLS
----------------------------------------
+.. _Percona TLS:
+
+Percona XtraDB Cluster with TLS
+-------------------------------
 
 Installation and configuration of Percona XtraDB Cluster on CentOS/RHEL 7 with TLS enabled for all comms.
 
