@@ -171,6 +171,12 @@ This would grab the `value` property off the nested json data stored within the 
 
 Cypher is very powerful for storing these temporary or permanent secrets that one may need to orchestrate various tasks and workflows within Ansible.
 
+Custom Inventory Entries
+^^^^^^^^^^^^^^^
+
+With Morpheus it is possible to add custom inventory entries that exist outside of morpheus host/server entry. This is global across cloud or group and is done on the integration details page of the Ansible integration. To add a custom inventory entry navigate to ``Provisioning > Automation > Integrations > (Your specific Ansible integration)``. Click on the ``ACTIONS`` button, then click ``EDIT INVENTORY``. Inventory should be in the default Ansible ini format.
+
+.. image:: /images/integration_guides/automation/ansible_inventory.png
 
 Using Ansible over the |morpheus| Agent Command Bus
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
