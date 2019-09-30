@@ -35,7 +35,7 @@ To get started, we must first ensure ruby is running on the windows machine in q
 Now that ruby is installed, simply open a `PowerShell` window and run
 
 ```
-gem install morpheus-cli --no-ri --no-rdoc
+gem install morpheus-cli --no-document
 ```
 
 A list of installed dependencies should start sliding by the screen. Once this has completed the CLI setup is complete. Now all that must be done is configuring the cli to point to an appliance for use.
