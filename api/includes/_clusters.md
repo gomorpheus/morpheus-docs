@@ -570,8 +570,7 @@ curl -XPUT "https://api.gomorpheus.com/api/clusters/1" \
        "name": "Cluster Name",
        "description": "Cluster Description",
        "enabled": true,
-       "serviceUrl": "https://api-endpoint.com",
-       "refresh": true
+       "serviceUrl": "https://api-endpoint.com"
       }}' 
 ```
 
@@ -595,7 +594,7 @@ name | null | Cluster name
 description | null | Cluster description
 enabled | null | Cluster enabled
 serviceUrl | null | Cluster API Url
-refresh | null | Queue cluster refresh
+
 
 ## Update Cluster Permissions
 

@@ -3016,7 +3016,6 @@ Usage: morpheus clusters update [cluster] --name --description --active
         --description [TEXT]         Updates Cluster Description
         --api-url [TEXT]             Updates Cluster API Url
         --active [on|off]            Can be used to enable / disable the cluster. Default is on
-        --refresh                    Queue cluster refresh
     -O, --option OPTION              Option in the format -O field="value"
         --prompt                     Always prompts. Use passed options as the default value.
     -N, --no-prompt                  Skip prompts. Use default values for all optional fields.
