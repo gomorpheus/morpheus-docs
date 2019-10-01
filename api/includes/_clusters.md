@@ -378,40 +378,7 @@ curl "https://api.gomorpheus.com/api/clusters/1" \
                 "status": "pod status"
             }
         ],
-        "podCount": 1,
-        "permissions": {
-            "resourcePool": {
-                "id": 12,
-                "visibility": "public"
-            },
-            "resourcePermissions": {
-                "allGroups": true,
-                "defaultStore": false,
-                "allPlans": false,
-                "defaultTarget": false,
-                "morpheusResourceType": "ComputeZonePool",
-                "morpheusResourceId": 12,
-                "canManage": false,
-                "all": true,
-                "account": {
-                    "id": 1
-                },
-                "sites": [
-                    {
-                        "id": 2,
-                        "name": "dans aws group",
-                        "default": true
-                    }
-                ],
-                "plans": [
-                    {
-                        "id": 88,
-                        "name": "128MB Memory, 1GB Storage",
-                        "default": false
-                    }
-                ]
-            }
-        }
+        "podCount": 1
     }
 }
 ```
@@ -569,8 +536,7 @@ curl -XPUT "https://api.gomorpheus.com/api/clusters/1" \
   -d '{"cluster": {
        "name": "Cluster Name",
        "description": "Cluster Description",
-       "enabled": true,
-       "serviceUrl": "https://api-endpoint.com"
+       "enabled": true
       }}' 
 ```
 
@@ -593,55 +559,6 @@ Parameter | Default | Description
 name | null | Cluster name
 description | null | Cluster description
 enabled | null | Cluster enabled
-serviceUrl | null | Cluster API Url
-
-
-## Update Cluster Permissions
-
-```shell
-curl -XPUT "https://api.gomorpheus.com/api/clusters/1/permissions" \
-  -H "Authorization: BEARER access_token" \
-  -H "Content-Type: application/json" \
-  -d '{"permissions": {
-       "resourcePermissions": {
-         "all": true,
-         "sites": [{"id": 1, "default": true}],
-         "allPlans": true,
-         "plans": [{"id": 1, "default": false}]
-       }
-      }}' 
-```
-
-> The above command returns a similar JSON structure when submitting a GET request for a single cluster 
-
-### HTTP Request
-
-`PUT https://api.gomorpheus.com/api/clusters/:id/permissions`
-
-### URL Parameters
-
-Parameter | Description
---------- | -----------
-id | The ID of the security group
-
-### JSON Cluster Parameters
-
-Parameter | Required | Default | Description
---------- | -------- | ------- | -----------
-permissions | Y | n/a | Key for server configuration, see [Permissions](#permissions)
-
-#### Permissions
-
-The `permissions` parameter is for permissions for clusters and namespaces.
-
-Parameter | Default | Description
---------- | ------- | -----------
-resourcePool.visibility | null | Applicable to clusters only
-resourcePermissions.all  | null | Pass true to allow access all groups
-resourcePermissions.sites  | null | Array of groups that are allowed access
-resourcePermissions.allPlans | null | Pass true to allow access all plans
-resourcePermissions.plans | null | Array of plans that are allowed access
-tenantPermissions.accounts  | null | Array of tenant account ids that are allowed access
 
 
 ## Delete a Cluster
@@ -827,14 +744,12 @@ curl -XPUT "https://api.gomorpheus.com/api/clusters/1/namespaces" \
   -d '{"namespace": {
        "description": "Description",
        "active": true,
-       "permissions": {
-         "resourcePermissions": {
-           "all": true,
-           "sites": [{"id": 1, "default": true}],
-           "allPlans": true,
-           "plans": [{"id": 1, "default": false}]
-         }
-       }  
+       "resourcePermissions": {
+         "all": true,
+         "allPlans": true,
+         "sites": [{"id": 2,"default": true}],
+         "plans": [{"id": 88,"default": false}]
+       }
       }}'
 ```         
 
@@ -856,7 +771,18 @@ Parameter | Required | Default | Description
 --------- | -------- | ------- | -----------
 description | N | null | Namespace description
 active | N | false | Namespace active
-permissions | N | null | Key for resource permission configuration, see [Permissions](#permissions)  
+resourcePermissions | N | null | Key for resource permission configuration, see [Resource Permissions](#resource-permissions)  
+
+#### Resource Permissions
+
+The `resourcePermissions` parameter is map for namespace group and service plan permissions.
+
+Parameter | Required | Default | Description
+--------- | -------- | ------- | -----------
+all | N | null | Pass true to allow access all groups
+sites | N | null | Array of groups that are allowed access
+allPlans | N | null | Pass true to allow access all service plans
+plans | N | n/a | Array of service plans that are allowed access
 
 
 ## Delete a Namespace
