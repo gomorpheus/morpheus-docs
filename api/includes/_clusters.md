@@ -37,7 +37,6 @@ curl "https://api.gomorpheus.com/api/clusters"
             "serviceVersion": null,
             "searchDomains": null,
             "enableInternalDns": false,
-            "apiKey": "a3914182-0f2f-4e9c-a6d2-63822747b9cd",
             "internalId": null,
             "externalId": null,
             "datacenterId": null,
@@ -69,6 +68,11 @@ curl "https://api.gomorpheus.com/api/clusters"
                 {
                     "id": 1,
                     "name": "cluster-1",
+                    "typeSet": {
+                        "id": 5,
+                        "code": "kubernetes-amazon-ubuntu-16.04-set",
+                        "name": "kubernetes master"
+                    },
                     "computeServerType": {
                         "id": 99,
                         "code": "amazonLinux",
@@ -274,111 +278,24 @@ curl "https://api.gomorpheus.com/api/clusters/1" \
             }
         },
         "config": "{\"initConfig\":\"\"}",
-        "workers": [
-            {
-                "id": 14,
-                "name": "kube1-worker-2",
-                "status": "failed",
-                "powerState": "unknown"
-            },
-            {
-                "id": 13,
-                "name": "kube1-worker-1",
-                "status": "failed",
-                "powerState": "unknown"
-            },
-            {
-                "id": 15,
-                "name": "kube1-worker-3",
-                "status": "failed",
-                "powerState": "unknown"
-            }
-        ],
-        "workerCount": 3,
         "workerStats": {
             "usedStorage": 0,
-            "maxStorage": 32212254720,
+            "maxStorage": 53687091200,
             "usedMemory": 0,
-            "maxMemory": 1610612736,
+            "maxMemory": 2147483648,
             "usedCpu": 0.0,
             "cpuUsage": 0.0,
             "cpuUsagePeak": 0.0,
             "cpuUsageAvg": 0.0
         },
-        "masters": [
-            {
-                "id": 12,
-                "name": "kube1-master",
-                "status": "provisioning",
-                "powerState": "on",
-                "stats": {
-                    "usedStorage": null,
-                    "reservedStorage": 0,
-                    "maxStorage": 10737418240,
-                    "usedMemory": 0,
-                    "reservedMemory": 0,
-                    "maxMemory": 536870912
-                }
-            }
-        ],
-        "masterCount": 1,
-        "namespaces": [
-            {
-                "id": 13,
-                "name": "kube",
-                "description": null,
-                "status": "available"
-            }
-        ],
-        "namespaceCount": 1,
-        "volumes": [
-            {
-                "id": 123,
-                "name": "root",
-                "status": "provisioned"
-            }
-        ],
-        "volumeCount": 1,
-        "jobs": [
-            {
-                "id": 4,
-                "name": "test job display name",
-                "status": null
-            }
-        ],
-        "jobCount": 1,
-        "containers": [
-            {
-                "id": 11,
-                "name": "container display name",
-                "status": "unknown"
-            }
-        ],
-        "containerCount": 1,
-        "services": [
-            {
-                "id": 2,
-                "name": "test service",
-                "status": "service status"
-            }
-        ],
-        "serviceCount": 1,
-        "deployments": [
-            {
-                "id": 1,
-                "name": "test deployment display name",
-                "status": "deployment status"
-            }
-        ],
-        "deploymentCount": 1,
-        "pods": [
-            {
-                "id": 2,
-                "name": "test pod display name",
-                "status": "pod status"
-            }
-        ],
-        "podCount": 1,
+        "containersCount": 35,
+        "servicesCount": 1,
+        "deploymentsCount": 1,
+        "podsCount": 33,
+        "jobsCount": 1,
+        "volumesCount": 2,
+        "namespacesCount": 1,
+        "workersCount": 4,
         "permissions": {
             "resourcePool": {
                 "id": 12,
@@ -418,7 +335,6 @@ curl "https://api.gomorpheus.com/api/clusters/1" \
 
 This endpoint retrieves a specific cluster.
 
-
 ### HTTP Request
 
 `GET https://api.gomorpheus.com/api/cluster/:id`
@@ -427,7 +343,7 @@ This endpoint retrieves a specific cluster.
 
 Parameter | Description
 --------- | -----------
-ID | ID of the check to retrieve
+ID | ID of the cluster
 
 ## Create a Cluster
 
@@ -585,7 +501,7 @@ curl -XPUT "https://api.gomorpheus.com/api/clusters/1" \
 
 Parameter | Description
 --------- | -----------
-id | The ID of the security group
+id | The ID of the cluster
 
 ### JSON Cluster Parameters
 
@@ -623,7 +539,7 @@ curl -XPUT "https://api.gomorpheus.com/api/clusters/1/permissions" \
 
 Parameter | Description
 --------- | -----------
-id | The ID of the security group
+id | The ID of the cluster
 
 ### JSON Cluster Parameters
 
@@ -675,6 +591,83 @@ removeInstances | off | Remove Associated Instances
 preserveVolumes | off | Preserve Volumes
 releaseEIPs | on | Release EIPs
 force | off | Force Delete
+
+
+## Get API Config
+
+```shell
+curl "https://api.gomorpheus.com/api/clusters/1/api-config" \
+  -H "Authorization: BEARER access_token" \
+  -H "Content-Type: application/json" 
+```
+
+> The above comand returns JSON structure like this:
+
+```json
+{
+  "serviceUrl": null,
+  "serviceHost": null,
+  "servicePath": null,
+  "serviceHostname": null,
+  "servicePort": 22,
+  "serviceUsername": null,
+  "servicePassword": null,
+  "serviceToken": null,
+  "serviceAccess": null,
+  "serviceCert": null,
+  "serviceConfig": null,
+  "serviceVersion": null
+}
+```
+
+### HTTP Request
+
+`GET https://api.gomorpheus.com/api/clusters/:id/api-config`
+
+### URL Parameters
+
+Parameter | Description
+--------- | -----------
+id | The ID of the cluster
+
+
+## Get API Token 
+
+```shell
+curl "https://api.gomorpheus.com/api/clusters/1/api-token" \
+  -H "Authorization: BEARER access_token" \
+  -H "Content-Type: application/json" 
+```
+
+> The above comand returns JSON structure like this:
+
+```json
+{
+  "serviceUrl": null,
+  "serviceHost": null,
+  "servicePath": null,
+  "serviceHostname": null,
+  "servicePort": 22,
+  "serviceUsername": null,
+  "servicePassword": null,
+  "serviceToken": null,
+  "serviceAccess": null,
+  "serviceCert": null,
+  "serviceConfig": null,
+  "serviceVersion": null
+}
+```
+
+### HTTP Request
+
+`GET https://api.gomorpheus.com/api/clusters/:id/api-token`
+
+### URL Parameters
+
+Parameter | Description
+--------- | -----------
+id | The ID of the cluster
+
 
 ## List Namespaces (Kubernetes)
 
@@ -729,12 +722,40 @@ curl "https://api.gomorpheus.com/api/clusters/:clusterId/namespaces/:id"
 ```json
 {
   "namespace": {
-    "id": 1,
+    "id": 13,
+    "visibility": "public",
     "name": "My Namespace",
-    "description": "My namespace description",
-    "regionCode": null,
-    "externalId": null,
-    "status": "available"
+    "status": "available",
+    "description": "new description",
+    "permissions": {
+      "resourcePermissions": {
+        "allGroups": true,
+        "defaultStore": false,
+        "allPlans": true,
+        "defaultTarget": false,
+        "morpheusResourceType": "ComputeZonePool",
+        "morpheusResourceId": 13,
+        "canManage": false,
+        "all": true,
+        "account": {
+          "id": 1
+        },
+        "sites": [
+          {
+            "id": 2,
+            "name": "aws group",
+            "default": false
+          }
+        ],
+        "plans": [
+          {
+            "id": 88,
+            "name": "128MB Memory, 1GB Storage",
+            "default": true
+          }
+        ]
+      }
+    }
   }
 }
 ```
@@ -1208,3 +1229,711 @@ id | The ID of the namespace to delete
 Parameter | Default | Description
 --------- | ------- | -----------
 force | off | Force Delete
+
+ 
+## Get Containers
+
+```shell
+curl "https://api.gomorpheus.com/api/clusters/:id/containers"
+  -H "Authorization: BEARER access_token"
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+  "containers": [
+    {
+      "id": 14,
+      "uuid": "",
+      "accountId": 1,
+      "instance": null,
+      "containerType": {
+        "id": 50,
+        "code": "ubuntu-14.04.03",
+        "category": null,
+        "name": "Ubuntu 14.04"
+      },
+      "containerTypeSet": {
+        "id": null,
+        "code": null,
+        "category": null
+      },
+      "server": {
+        "id": 20,
+        "name": "cluster 2"
+      },
+      "cloud": {
+        "id": 3,
+        "name": "aws cloud"
+      },
+      "name": "ubuntu_14",
+      "ip": "172.31.0.197",
+      "internalIp": "172.31.0.197",
+      "internalHostname": "container14",
+      "externalHostname": "container14",
+      "externalDomain": "localdomain",
+      "externalFqdn": "container14.localdomain",
+      "ports": [
+
+      ],
+      "plan": {
+        "id": null,
+        "code": null,
+        "name": null
+      },
+      "dateCreated": null,
+      "lastUpdated": "2019-10-01T13:55:23+0000",
+      "statsEnabled": false,
+      "status": "unknown",
+      "userStatus": "stopped",
+      "environmentPrefix": null,
+      "stats": {
+      },
+      "runtimeInfo": {
+      },
+      "containerVersion": null,
+      "repositoryImage": null,
+      "planCategory": null,
+      "hostname": null,
+      "domainName": null,
+      "volumeCreated": false,
+      "containerCreated": false,
+      "maxStorage": null,
+      "maxMemory": null,
+      "maxCores": null,
+      "maxCpu": null,
+      "availableActions": [
+
+      ]
+    }
+  ],
+  "meta": {
+    "size": 1,
+    "total": 1,
+    "offset": 0,
+    "max": 25
+  }
+}
+```
+
+This endpoint retrieves containers of a specified cluster.
+
+### HTTP Request
+
+`GET https://api.gomorpheus.com/api/clusters/:id/containers`
+
+### URL Parameters
+
+Parameter | Description
+--------- | -----------
+id | The ID of the cluster
+
+### Query Parameters
+
+Parameter | Default | Description
+--------- | ------- | -----------
+max | 25 | Max number of results to return
+offset | 0 | Offset of records you want to load
+sort | name | Sort order
+order | asc | Sort direction, use 'desc' to reverse sort
+phrase | null | Name or internalId filter, restricts query to only load volumes which contain the phrase specified
+resourceLevel | null | Resource level filter
+
+
+## Get Deployments
+
+```shell
+curl "https://api.gomorpheus.com/api/clusters/:id/deployments"
+  -H "Authorization: BEARER access_token"
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+  "deployments": [
+    {
+      "id": 4,
+      "code": "test_pod_code",
+      "lastUpdated": "2019-10-01T02:09:53+0000",
+      "managed": false,
+      "resourceType": "deployment",
+      "category": "kubernetes.deployment.cluster.3",
+      "status": "starting",
+      "name": "test deployment display name",
+      "owner": {
+        "id": 1
+      },
+      "totalCpuUsage": 0,
+      "stats": {
+      }
+    }
+  ],
+  "meta": {
+    "size": 1,
+    "total": 1,
+    "offset": 0,
+    "max": 25
+  }
+}
+```
+
+This endpoint retrieves deployments of a specified cluster.
+
+### HTTP Request
+
+`GET https://api.gomorpheus.com/api/clusters/:id/deployments`
+
+### URL Parameters
+
+Parameter | Description
+--------- | -----------
+id | The ID of the cluster
+
+### Query Parameters
+
+Parameter | Default | Description
+--------- | ------- | -----------
+max | 25 | Max number of results to return
+offset | 0 | Offset of records you want to load
+sort | name | Sort order
+order | asc | Sort direction, use 'desc' to reverse sort
+phrase | null | Name or internalId filter, restricts query to only load volumes which contain the phrase specified
+resourceLevel | null | Resource level filter
+
+
+## Get Jobs
+
+```shell
+curl "https://api.gomorpheus.com/api/clusters/:id/jobs"
+  -H "Authorization: BEARER access_token"
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+  "jobs": [
+    {
+      "id": 5,
+      "name": "Job 1",
+      "type": "morpheus.task",
+      "status": null,
+      "namespace": null,
+      "category": "kubernetes.job.cluster.3",
+      "description": null,
+      "enabled": true,
+      "dateCreated": "2019-09-29T19:51:37+0000",
+      "lastUpdated": "2019-09-29T20:00:58+0000",
+      "lastRun": null,
+      "createdBy": {
+        "id": 1,
+        "username": "root"
+      }
+    }
+  ],
+  "meta": {
+    "size": 1,
+    "total": 1,
+    "offset": 0,
+    "max": 25
+  }
+}
+```
+
+This endpoint retrieves jobs of a specified cluster.
+
+### HTTP Request
+
+`GET https://api.gomorpheus.com/api/clusters/:id/jobs`
+
+### URL Parameters
+
+Parameter | Description
+--------- | -----------
+id | The ID of the cluster
+
+### Query Parameters
+
+Parameter | Default | Description
+--------- | ------- | -----------
+max | 25 | Max number of results to return
+offset | 0 | Offset of records you want to load
+sort | name | Sort order
+order | asc | Sort direction, use 'desc' to reverse sort
+phrase | null | Name or internalId filter, restricts query to only load volumes which contain the phrase specified
+
+
+## Get Pods
+
+```shell
+curl "https://api.gomorpheus.com/api/clusters/:id/pods"
+  -H "Authorization: BEARER access_token"
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+  "pods": [
+    {
+      "id": 2,
+      "code": "test_pod_code",
+      "lastUpdated": "2019-10-01T02:23:19+0000",
+      "managed": false,
+      "resourceType": "pod",
+      "category": "kubernetes.pod.cluster.3",
+      "status": "starting",
+      "name": "test pod display name",
+      "owner": {
+        "id": 1
+      },
+      "totalCpuUsage": 0,
+      "stats": {
+      }
+    }
+  ],
+  "meta": {
+    "size": 1,
+    "total": 1,
+    "offset": 0,
+    "max": 25
+  }
+}
+```
+
+This endpoint retrieves pods of a specified cluster.
+
+### HTTP Request
+
+`GET https://api.gomorpheus.com/api/clusters/:id/deployments`
+
+### URL Parameters
+
+Parameter | Description
+--------- | -----------
+id | The ID of the cluster
+
+### Query Parameters
+
+Parameter | Default | Description
+--------- | ------- | -----------
+max | 25 | Max number of results to return
+offset | 0 | Offset of records you want to load
+sort | name | Sort order
+order | asc | Sort direction, use 'desc' to reverse sort
+phrase | null | Name or internalId filter, restricts query to only load volumes which contain the phrase specified
+resourceLevel | null | Resource level filter
+
+
+## Get Services
+
+```shell
+curl "https://api.gomorpheus.com/api/clusters/:id/services"
+  -H "Authorization: BEARER access_token"
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+  "services": [
+    {
+      "id": 5,
+      "name": "test service",
+      "type": null,
+      "code": null,
+      "externalIp": null,
+      "internalIp": null,
+      "externalPort": null,
+      "internalPort": null,
+      "status": null,
+      "dateCreated": null,
+      "lastUpdated": null
+    }
+  ],
+  "meta": {
+    "size": 1,
+    "total": 1,
+    "offset": 0,
+    "max": 25
+  }
+}
+```
+
+This endpoint retrieves services of a specified cluster.
+
+### HTTP Request
+
+`GET https://api.gomorpheus.com/api/clusters/:id/services`
+
+### URL Parameters
+
+Parameter | Description
+--------- | -----------
+id | The ID of the cluster
+
+### Query Parameters
+
+Parameter | Default | Description
+--------- | ------- | -----------
+max | 25 | Max number of results to return
+offset | 0 | Offset of records you want to load
+sort | name | Sort order
+order | asc | Sort direction, use 'desc' to reverse sort
+phrase | null | Name or internalId filter, restricts query to only load volumes which contain the phrase specified
+
+
+## Get Stateful Sets
+
+```shell
+curl "https://api.gomorpheus.com/api/clusters/:id/statefulsets"
+  -H "Authorization: BEARER access_token"
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+  "statefulsets": [
+    {
+      "id": 3,
+      "code": "test_pod_code",
+      "lastUpdated": "2019-10-01T02:10:32+0000",
+      "managed": false,
+      "resourceType": "statefulset",
+      "category": "kubernetes.statefulset.cluster.3",
+      "status": "starting",
+      "name": "test statefulset display name",
+      "owner": {
+        "id": 1
+      },
+      "totalCpuUsage": 0,
+      "stats": {
+      }
+    }
+  ],
+  "meta": {
+    "size": 1,
+    "total": 1,
+    "offset": 0,
+    "max": 25
+  }
+}
+```
+
+This endpoint retrieves stateful sets of a specified cluster.
+
+### HTTP Request
+
+`GET https://api.gomorpheus.com/api/clusters/:id/statefulsets`
+
+### URL Parameters
+
+Parameter | Description
+--------- | -----------
+id | The ID of the cluster
+
+### Query Parameters
+
+Parameter | Default | Description
+--------- | ------- | -----------
+max | 25 | Max number of results to return
+offset | 0 | Offset of records you want to load
+sort | name | Sort order
+order | asc | Sort direction, use 'desc' to reverse sort
+phrase | null | Name or internalId filter, restricts query to only load volumes which contain the phrase specified
+resourceLevel | null | Resource level filter
+
+
+## Delete Container
+
+```shell
+curl -XDELETE "https://api.gomorpheus.com/api/clusters/:clusterId/containers/:id" \
+  -H "Authorization: BEARER access_token"
+```
+
+> The above command returns JSON structure like this:
+
+```json
+{
+  "success": true
+}
+```
+
+Will delete a container from the specified cluster
+
+### HTTP Request
+
+`DELETE https://api.gomorpheus.com/api/clusters/:clusterId/containers/:id`
+
+### URL Parameters
+
+Parameter | Description
+--------- | -----------
+clusterId | The ID of the cluster
+id | The ID of the container to delete
+
+### Query Parameters
+
+Parameter | Default | Description
+--------- | ------- | -----------
+force | off | Force Delete
+
+
+## Delete a Deployment
+
+```shell
+curl -XDELETE "https://api.gomorpheus.com/api/clusters/:clusterId/deployments/:id" \
+  -H "Authorization: BEARER access_token"
+```
+
+> The above command returns JSON structure like this:
+
+```json
+{
+  "success": true
+}
+```
+
+Will delete a deployment from the specified cluster
+
+### HTTP Request
+
+`DELETE https://api.gomorpheus.com/api/clusters/:clusterId/deployments/:id`
+
+### URL Parameters
+
+Parameter | Description
+--------- | -----------
+clusterId | The ID of the cluster
+id | The ID of the deployment to delete
+
+### Query Parameters
+
+Parameter | Default | Description
+--------- | ------- | -----------
+force | off | Force Delete
+
+
+## Delete a Job
+
+```shell
+curl -XDELETE "https://api.gomorpheus.com/api/clusters/:clusterId/jobs/:id" \
+  -H "Authorization: BEARER access_token"
+```
+
+> The above command returns JSON structure like this:
+
+```json
+{
+  "success": true
+}
+```
+
+Will delete a job from the specified cluster
+
+### HTTP Request
+
+`DELETE https://api.gomorpheus.com/api/clusters/:clusterId/jobs/:id`
+
+### URL Parameters
+
+Parameter | Description
+--------- | -----------
+clusterId | The ID of the cluster
+id | The ID of the job to delete
+
+### Query Parameters
+
+Parameter | Default | Description
+--------- | ------- | -----------
+force | off | Force Delete
+
+
+## Delete a Service
+
+```shell
+curl -XDELETE "https://api.gomorpheus.com/api/clusters/:clusterId/services/:id" \
+  -H "Authorization: BEARER access_token"
+```
+
+> The above command returns JSON structure like this:
+
+```json
+{
+  "success": true
+}
+```
+
+Will delete a service from the specified cluster
+
+### HTTP Request
+
+`DELETE https://api.gomorpheus.com/api/clusters/:clusterId/services/:id`
+
+### URL Parameters
+
+Parameter | Description
+--------- | -----------
+clusterId | The ID of the cluster
+id | The ID of the service to delete
+
+### Query Parameters
+
+Parameter | Default | Description
+--------- | ------- | -----------
+force | off | Force Delete
+
+
+## Delete a Stateful Set
+
+```shell
+curl -XDELETE "https://api.gomorpheus.com/api/clusters/:clusterId/statefulset/:id" \
+  -H "Authorization: BEARER access_token"
+```
+
+> The above command returns JSON structure like this:
+
+```json
+{
+  "success": true
+}
+```
+
+Will delete a stateful set from the specified cluster
+
+### HTTP Request
+
+`DELETE https://api.gomorpheus.com/api/clusters/:clusterId/statefulset/:id`
+
+### URL Parameters
+
+Parameter | Description
+--------- | -----------
+clusterId | The ID of the cluster
+id | The ID of the stateful set to delete
+
+### Query Parameters
+
+Parameter | Default | Description
+--------- | ------- | -----------
+force | off | Force Delete
+
+
+## Restart a Container
+
+```shell
+curl -XPUT "https://api.gomorpheus.com/api/clusters/:clusterId/containers/:id/restart" \
+  -H "Authorization: BEARER access_token"
+```
+
+> The above command returns JSON structure like this:
+
+```json
+{
+  "success": true
+}
+```
+
+Will restart a container in the specified cluster
+
+### HTTP Request
+
+`PUT https://api.gomorpheus.com/api/clusters/:clusterId/containers/:id/restart`
+
+### URL Parameters
+
+Parameter | Description
+--------- | -----------
+clusterId | The ID of the cluster
+id | The ID of the container to restart
+
+
+## Restart a Deployment
+
+```shell
+curl -XPUT "https://api.gomorpheus.com/api/clusters/:clusterId/deployments/:id/restart" \
+  -H "Authorization: BEARER access_token"
+```
+
+> The above command returns JSON structure like this:
+
+```json
+{
+  "success": true
+}
+```
+
+Will restart a deployment in the specified cluster
+
+### HTTP Request
+
+`PUT https://api.gomorpheus.com/api/clusters/:clusterId/deployments/:id/restart`
+
+### URL Parameters
+
+Parameter | Description
+--------- | -----------
+clusterId | The ID of the cluster
+id | The ID of the deployment to restart
+
+
+## Restart a Pod
+
+```shell
+curl -XPUT "https://api.gomorpheus.com/api/clusters/:clusterId/pods/:id/restart" \
+  -H "Authorization: BEARER access_token"
+```
+
+> The above command returns JSON structure like this:
+
+```json
+{
+  "success": true
+}
+```
+
+Will restart a pod in the specified cluster
+
+### HTTP Request
+
+`PUT https://api.gomorpheus.com/api/clusters/:clusterId/pods/:id/restart`
+
+### URL Parameters
+
+Parameter | Description
+--------- | -----------
+clusterId | The ID of the cluster
+id | The ID of the pod to restart
+
+
+## Restart a Stateful Set
+
+```shell
+curl -XPUT "https://api.gomorpheus.com/api/clusters/:clusterId/statefulsets/:id/restart" \
+  -H "Authorization: BEARER access_token"
+```
+
+> The above command returns JSON structure like this:
+
+```json
+{
+  "success": true
+}
+```
+
+Will restart a stateful set in the specified cluster
+
+### HTTP Request
+
+`PUT https://api.gomorpheus.com/api/clusters/:clusterId/statefulsets/:id/restart`
+
+### URL Parameters
+
+Parameter | Description
+--------- | -----------
+clusterId | The ID of the cluster
+id | The ID of the stateful set to restart
+
