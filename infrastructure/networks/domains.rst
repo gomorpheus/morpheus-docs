@@ -30,7 +30,7 @@ Adding Domains
    Join Domain Controller
     Enable to have Windows instances join a Domain Controller
    Username
-    Admin user for Domain Controller
+    Admin user for Domain Controller (in domain/username format)
    Password
     Password for DC Username
    DC Server
