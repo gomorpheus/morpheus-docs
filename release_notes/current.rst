@@ -7,11 +7,10 @@ Highlights
 
 Fixes
 ----------
-- Job executions can now be expanded to show process details in `Provisioning > Automation > Executions`
+- Output results now appear correctly in the Execution Detail window in `Provisioning > Automation > Executions`. Similarly, output results will also now appear correctly in the Execution Detail window in `Provisioning > Jobs > Job Executions`.
 
 Role Permission Updates
 ^^^^^^^^^^^^^^^^^^^^^^^
-- Output results now appear correctly in the Execution Detail window in `Provisioning > Automation > Executions`. Similarly, output results will also now appear correctly in the Execution Detail window in `Provisioning > Jobs > Job Executions`.
 
 Service Version Compatibility
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
