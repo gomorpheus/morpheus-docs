@@ -3,7 +3,8 @@ v4.1.0
 
 Highlights
 ----------
-- Job executions can now be expanded to show process details in `Provisioning > Automation > Executions`
+- Job executions can now be expanded to show process details in ```Provisioning > Automation > Executions```
+- Added `SUBNETS` tab to the network detail page in ```Infrastructure > Network > (Your specific Network)``` which allows subnets to be searched and edited. Subnets can also be created on an Azure VNet.
 
 Fixes
 ----------

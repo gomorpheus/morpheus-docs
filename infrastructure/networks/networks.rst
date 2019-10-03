@@ -78,3 +78,10 @@ Advanced Options (Scan Network)
 When adding or editing a network there is an option to scan network.  If checked scan network will ping the IP's in the network range, and if ping is successful Morpheus will quickly check for listening ports on the IP.
 
 .. IMPORTANT:: Network scanning may cause network monitoring or other alerts
+
+Subnets
+................................
+
+Subnet details can be viewed from the `SUBNETS` tab on the detail page of a specific network. From the `SUBNETS` tab, Morpheus allows the user to search and edit existing subnets. In an Azure VNet, you can also create new subnets with the `+ADD` button.
+
+.. image:: /images/infrastructure/network/create_subnet.png
