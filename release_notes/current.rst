@@ -5,6 +5,8 @@ Highlights
 ----------
 - Job executions can now be expanded to show process details in ```Provisioning > Automation > Executions```
 - Added `SUBNETS` tab to the network detail page in ```Infrastructure > Network > (Your specific Network)``` which allows subnets to be searched and edited. Subnets can also be created on an Azure VNet.
+- Individual tasks and scripts can now be run against hosts and virtual machines in ``Infrastructure > Hosts``. Previously workflows would be executed but not individual scripts or tasks.
+- Clone system layouts in ``Provisioning > Library > CLUSTER LAYOUTS`` for use in custom layouts. Buttons to edit and delete existing custom layouts also appear alongside the clone button in the list view.
 
 Fixes
 ----------
