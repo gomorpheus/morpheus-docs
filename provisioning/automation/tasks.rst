@@ -2,6 +2,7 @@ Tasks
 -----
 
 .. |ansible| image:: /images/automation/tasks/ansible-e488f61cefa223236abd1b40af950439.png
+.. |ansibletower| image:: /images/automation/tasks/.. |ansible| image:: /images/automation/tasks/ansible-e488f61cefa223236abd1b40af950439.png
 .. |chef| image:: /images/automation/tasks/chef-66ca1aef7d659471d9219530dd576ce9.png
 .. |groovy| image:: /images/automation/tasks/groovy-3ae2a0a8a649cf64717fc8b159d6836b.png
 .. |http| image:: /images/automation/tasks/http-2d0ab035cb2ee622c520ad3e013e959d.png
@@ -46,6 +47,12 @@ Task Types
      - Runs an Ansible playbook. Ansible Integration required
      - Instance or Host
      - Existing Ansible Integration
+     - Provisioning: Tasks
+   * - |ansibletower|
+     - Ansible Tower
+     - Relays Ansible calls to Ansible Tower
+     - Instance or Host
+     - Existing Ansible Tower Integration
      - Provisioning: Tasks
    * - |chef|
      - Chef bootstrap
