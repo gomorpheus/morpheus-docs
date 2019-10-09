@@ -18,6 +18,7 @@ Highlights
 - Network subnets can now be selected from the `Networks` dropdown list when provisioning an instance
 - Updates to Morpheus API and CLI to handle management of Kubernetes cluster namespaces
 - Updates to Morpheus API and CLI to handle management of Kubernetes and Docker cluster workers
+- Metadata is now synced to vCenter to set tags on VMs. Existing tags are also inventoried into Morpheus as Metadata
 
 Fixes
 ----------
