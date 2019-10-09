@@ -224,8 +224,8 @@ Troubleshooting Ansible
 
   .. code-block:: bash
 
-      sudo mkdir /opt/morpheus/.ansible
-      sudo chown morpheus-local.morpheus-local /opt/morpheus/.ansible
+      sudo mkdir /opt/morpheus/.local/.ansible
+      sudo chown morpheus-local.morpheus-local /opt/morpheus/.local/.ansible
 
 
 * Validate the git repo is authorizing and the paths are configured correctly.
