@@ -3,9 +3,25 @@ v4.1.0
 
 Highlights
 ----------
-- Job executions can now be expanded to show process details in ``Provisioning > Automation > Executions``
+
+Subnet handling
+^^^^^^^^^^^^^^^^^^^^^^^
+
 - Added `SUBNETS` tab to the network detail page in ``Infrastructure > Network > (Your specific Network)`` which allows subnets to be searched and edited.
 - Subnets can now be created and edited on an Azure VNet from ``Infrastructure > Network``.
+- Azure networks sync as subnets. Previously, subnets were synced as individual networks
+- Network subnets can now be selected from the `Networks` dropdown list when provisioning an instance
+- Group permissions can now be modified on subnets just like networks
+
+API/CLI changes
+^^^^^^^^^^^^^^^^^^^^^^^
+
+- Updates to Morpheus API and CLI to handle management of Kubernetes cluster namespaces
+- Updates to Morpheus API and CLI to handle management of Kubernetes and Docker cluster workers
+- Updates to Morpheus API and CLI related to network domain record management
+- Updates to Morpheus API and CLI related to network pool IP management
+
+- Job executions can now be expanded to show process details in ``Provisioning > Automation > Executions``
 - Individual tasks and scripts can now be run against hosts and virtual machines in ``Infrastructure > Hosts``. Previously workflows would be executed but not individual scripts or tasks.
 - Clone system layouts in ``Provisioning > Library > CLUSTER LAYOUTS`` for use in custom layouts. Buttons to edit and delete existing custom layouts also appear alongside the clone button in the list view.
 - Ansible Tower automation task type added in ``Provisioning > Automation``
@@ -15,12 +31,6 @@ Highlights
 - `User Data` field on images and clouds now supports YAML
 - Kubernetes clusters can now be created in ``Infrastructure > Clusters > +ADD CLUSTER``
 - Kubernetes blueprints can now be created in ``Provisioning > Blueprints``
-- Azure networks sync as subnets. Previously, subnets were synced as individual networks
-- Network subnets can now be selected from the `Networks` dropdown list when provisioning an instance
-- Updates to Morpheus API and CLI to handle management of Kubernetes cluster namespaces
-- Updates to Morpheus API and CLI to handle management of Kubernetes and Docker cluster workers
-- Updates to Morpheus API and CLI related to network domain record management
-- Updates to Morpheus API and CLI related to network pool IP management
 - Metadata is now synced to vCenter to set tags on VMs. Existing tags are also inventoried into Morpheus as Metadata
 
 Fixes
@@ -30,6 +40,7 @@ Fixes
 - Time period definitions within the specified dates are now honored in data calls to the Billing API
 - Removing an instance or VM from Morpheus no longer removes serverExternalID and serverInternalID values from /api/billing records
 - General improvements to Usage data
+- Fixed an issue where the list of floating or elastic IP addresses available was not being immediately updated on some clouds when provisioning an instance and selecting an external IP pool for the floating IP pool
 
 Role Permission Updates
 ^^^^^^^^^^^^^^^^^^^^^^^
