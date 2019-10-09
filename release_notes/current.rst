@@ -11,6 +11,13 @@ Highlights
 - Data Stores, History, and Logs tabs added to detail page for KVM clusters
 - Setting to Reuse Sequence Numbers added to ``Administration > Provisioning``
 - `VMWare on AWS` cloud type added to ``Infrastructure > Clouds``
+- `User Data` field on images and clouds now supports YAML
+- Kubernetes clusters can now be created in ``Infrastructure > Clusters > +ADD CLUSTER``
+- Kubernetes blueprints can now be created in ``Provisioning > Blueprints``
+- Azure networks sync as subnets. Previously, subnets were synced as individual networks
+- Network subnets can now be selected from the `Networks` dropdown list when provisioning an instance
+- Updates to Morpheus API and CLI to handle management of Kubernetes cluster namespaces
+- Updates to Morpheus API and CLI to handle management of Kubernetes and Docker cluster workers
 
 Fixes
 ----------
@@ -18,6 +25,7 @@ Fixes
 - Fixed an issue where backups were not being created in some cases when integrating with Veeam 9.5
 - Time period definitions within the specified dates are now honored in data calls to the Billing API
 - Removing an instance or VM from Morpheus no longer removes serverExternalID and serverInternalID values from /api/billing records
+- General improvements to Usage data
 
 Role Permission Updates
 ^^^^^^^^^^^^^^^^^^^^^^^
