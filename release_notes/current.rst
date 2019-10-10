@@ -54,9 +54,6 @@ Fixes
 - Fixed an issue where the list of floating or elastic IP addresses available was not being immediately updated on some clouds when provisioning an instance and selecting an external IP pool for the floating IP pool
 - Stopped and started usage records (``Operations > Activity > USAGE``) are no longer created when there is an error in calling the Azure API. In some cases this could cause interruptions in billing data.
 
-Role Permission Updates
-^^^^^^^^^^^^^^^^^^^^^^^
-
 Service Version Compatibility
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 When externalizing MySQL, Elasticsearch and/or RabbitMQ services, the following versions are compatible with Morpheus 4.1.0:
