@@ -7,7 +7,6 @@ Highlights
 - Job executions can now be expanded to show process details in ``Provisioning > Automation > Executions``
 - Individual tasks and scripts can now be run against hosts and virtual machines in ``Infrastructure > Hosts``. Previously workflows would be executed but not individual scripts or tasks.
 - Clone system layouts in ``Provisioning > Library > CLUSTER LAYOUTS`` for use in custom layouts. Buttons to edit and delete existing custom layouts also appear alongside the clone button in the list view.
-- Ansible Tower automation task type added in ``Provisioning > Automation``
 - Data Stores, History, and Logs tabs added to detail page for KVM clusters
 - Setting to Reuse Sequence Numbers added to ``Administration > Provisioning``
 - `VMWare on AWS` cloud type added to ``Infrastructure > Clouds``
@@ -16,6 +15,12 @@ Highlights
 - Kubernetes blueprints can now be created in ``Provisioning > Blueprints``
 - Metadata is now synced to vCenter to set tags on VMs. Existing tags are also inventoried into Morpheus as Metadata
 - Static IP addresses can now be assigned on vCD cloud via Guest Customizations during instance provisioning
+- `Morpheus Api` has been added as a type selection in Option Lists (``Provisioning > Library > OPTION LISTS``)
+
+Automation tasks
+^^^^^^^^^^^^^^^^^^^^^^^
+- Ansible Tower automation task type added in ``Provisioning > Automation``
+- `Email` tasks can now be created and added to Workflows
 
 Subnet handling
 ^^^^^^^^^^^^^^^^^^^^^^^
