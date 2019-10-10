@@ -4,22 +4,15 @@ v4.1.0
 Highlights
 ----------
 
-- Job executions can now be expanded to show process details in ``Provisioning > Automation > Executions``
-- Individual tasks and scripts can now be run against hosts and virtual machines in ``Infrastructure > Hosts``. Previously workflows would be executed but not individual scripts or tasks.
-- Clone system layouts in ``Provisioning > Library > CLUSTER LAYOUTS`` for use in custom layouts. Buttons to edit and delete existing custom layouts also appear alongside the clone button in the list view.
-- Data Stores, History, and Logs tabs added to detail page for KVM clusters
-- Setting to Reuse Sequence Numbers added to ``Administration > Provisioning``
-- `VMWare on AWS` cloud type added to ``Infrastructure > Clouds``
-- `User Data` field on images and clouds now supports YAML
-- Kubernetes clusters can now be created in ``Infrastructure > Clusters > +ADD CLUSTER``
-- Kubernetes blueprints can now be created in ``Provisioning > Blueprints``
-- Metadata is now synced to vCenter to set tags on VMs. Existing tags are also inventoried into Morpheus as Metadata
-- Static IP addresses can now be assigned on vCD cloud via Guest Customizations during instance provisioning
-- `Morpheus Api` has been added as a type selection in Option Lists (``Provisioning > Library > OPTION LISTS``)
+vRealize Orchestrator Integration (vRO)
+^^^^^^^^^^^^^^^^^^^^^^^
+- Syncs all available vRO workflows by category
+- These workflows can also be chained easily into non-vRO workflows
+- `vRealize Orchestrator Workflow` now available as a task type in ``Provisioning > Automation > Tasks``
 
 Automation tasks
 ^^^^^^^^^^^^^^^^^^^^^^^
-- Ansible Tower automation task type added in ``Provisioning > Automation``
+- `Ansible Tower` automation task type added in ``Provisioning > Automation``
 - `Email` tasks can now be created and added to Workflows
 
 Subnet handling
@@ -32,6 +25,22 @@ Subnet handling
 - Group permissions can now be modified on subnets just like networks
 - Subnet options are now respected just like networks in terms of visibility, group access, and defaults
 - Subnets are now selectable when adding or editing a Network Group in ``Infrastructure > Network > NETWORK GROUPS``
+
+Additional Changes and Improvements
+^^^^^^^^^^^^^^^^^^^^^^^
+
+- Job executions can now be expanded to show process details in ``Provisioning > Automation > Executions``
+- Individual tasks and scripts can now be run against hosts and virtual machines in ``Infrastructure > Hosts``. Previously workflows could be executed but not individual scripts or tasks.
+- Clone system layouts in ``Provisioning > Library > CLUSTER LAYOUTS`` for use in custom layouts. Buttons to edit and delete existing custom layouts also appear alongside the clone button in the list view.
+- Data Stores, History, and Logs tabs added to detail page for KVM clusters
+- Setting to Reuse Sequence Numbers added to ``Administration > Provisioning``
+- `VMWare on AWS` cloud type added to ``Infrastructure > Clouds``
+- `User Data` field on images and clouds now supports YAML
+- Kubernetes clusters can now be created in ``Infrastructure > Clusters > +ADD CLUSTER``
+- Kubernetes blueprints can now be created in ``Provisioning > Blueprints``
+- Metadata is now synced to vCenter to set tags on VMs. Existing tags are also inventoried into Morpheus as Metadata
+- Static IP addresses can now be assigned on vCD cloud via Guest Customizations during instance provisioning
+- `Morpheus Api` has been added as a type selection in Option Lists (``Provisioning > Library > OPTION LISTS``)
 
 Fixes
 ----------
