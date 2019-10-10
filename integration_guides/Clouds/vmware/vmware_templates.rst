@@ -31,7 +31,7 @@ Create a new machine in VMware vCenter and install a base version of your prefer
 5.	Ensure Windows Firewall will allow WinRM connections.
 6.  Shutdown the virtual machine and convert to a template.
 
-.. NOTE:: WinRM is not required and is used as a fallback when using vmtools guest exec and customizations 
+.. NOTE:: WinRM is not required and is used as a fallback when using vmtools guest exec and customizations
 
 .. NOTE:: Morpheus will sysprep images based on the "Force Guest Customizations" flag under the Virtual Image's settings when using DHCP. Ensure a sysprep has not been performed on the template if this flag is enabled or if using Static IPs/IP Pools when provisioning, which will always use Guest Customizations and trigger a sysprep.
 
@@ -99,6 +99,14 @@ Below is a script that we run on our packer builds to prepare the machines netwo
   sudo sed -i -e "s/$iface_name/eth0/" /etc/sysconfig/network-scripts/ifcfg-eth0
   sudo bash -c 'echo NM_CONTROLLED=\"no\" >> /etc/sysconfig/network-scripts/ifcfg-eth0'
 
+
+You may need to rename the interface name, example ens2344 will need to be changed to eth0.
+
+.. code-block:: bash
+
+  ip link set ens2344 down
+  ip link set ens2344 name eth0
+  ip link set eth0 up
 
 This script tries to ensure there is a new ifcfg-eth0 config created to replace the old ens config file. Please do verify this config exists after running. If it does not you will have to be sure to build one on your own.
 
