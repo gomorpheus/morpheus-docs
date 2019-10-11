@@ -16,6 +16,7 @@ Commands:
 	benchmark
 	blueprints
 	clouds
+	clusters
 	containers
 	cypher
 	datastores
@@ -81,7 +82,7 @@ Commands:
 	whoami
 	wiki
 	workflows
-	
+
 Options:
     -e, --exec EXPRESSION            Execute the command(s) expression. This is an alternative to passing [command] [options]
         --noprofile                  Do not read and execute the personal initialization script .morpheus_profile
