@@ -36,31 +36,37 @@ Subnets
 - Subnet options are now respected just like networks in terms of visibility, group access, and defaults
 - Subnets are now selectable when adding or editing a Network Group in ``Infrastructure > Network > NETWORK GROUPS``
 
+VMware on AWS support added
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+- ``VMware on AWS`` Clouds can now be added to Morpheus
+- ``VMware on AWS``Cloud Type Added
+- ``VMware on AWS`` Clouds support the same Feature set as VMware vCenter Clouds
+
+
 Additional Changes and Improvements
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-- Job executions can now be expanded to show process details in ``Provisioning > Automation > Executions``
-- Individual tasks and scripts can now be run against hosts and virtual machines in ``Infrastructure > Hosts``. Previously workflows could be executed but not individual scripts or tasks.
-- Clone system layouts in ``Provisioning > Library > CLUSTER LAYOUTS`` for use in custom layouts. Buttons to edit and delete existing custom layouts also appear alongside the clone button in the list view.
-- Data Stores, History, and Logs tabs added to detail page for KVM clusters
-- Setting to Reuse Sequence Numbers added to ``Administration > Provisioning``
-- `VMWare on AWS` cloud type added to ``Infrastructure > Clouds``
-- `User Data` field on images and clouds now supports YAML
-- Kubernetes clusters can now be created in ``Infrastructure > Clusters > +ADD CLUSTER``
-- Kubernetes blueprints can now be created in ``Provisioning > Blueprints``
-- Metadata is now synced to vCenter to set tags on VMs. Existing tags are also inventoried into Morpheus as Metadata
-- Static IP addresses can now be assigned on vCD cloud via Guest Customizations during instance provisioning
-- `Morpheus Api` has been added as a type selection in Option Lists (``Provisioning > Library > OPTION LISTS``)
-- ServiceNow integrations now allow for custom CMDB record mapping and give the user the ability to define the table that CMDB records are written to
-- Listed datastores in wizards for SCVMM instances are now limited to those that make sense for the given host and resource pool rather than displaying all of them
-- Listed datastore names for SCVMM instances (``Infrastructure > Clouds > DATASTORES``) are now prefixed with the host or cluster name for easier identification
-- Amazon M5A and M5AD plans can now be selected when provisioning instances. In most cases, this requires a custom AMI due to this instance type not supporting Enhanced Networking (ENA)
-- Stopped and started usage records are created appropriately for managed and unmanaged instances on each cloud sync when stopping or starting them outside of Morpheus
-- `AUTOMATICALLY POWER ON VMS` checkbox added to add and edit cloud wizards (``Infrastructure > Clouds``). When checked, VMs will match the power state of the Morpheus instance
-- Added support for Openstack Availability Zones
-- Added Morpheus-provided catalog image for Ubuntu 18 on UpCloud
+- Jobs: Job executions can now be expanded to show process details in ``Provisioning > Automation > Executions``
+- Library: ``Clone`` action added to clone system layouts in ``Provisioning > Library > CLUSTER LAYOUTS`` for use in custom layouts.
+- KVM: Clusters: Data Stores, History, and Logs tabs added to detail page for KVM clusters
+- Provisioning: ``Reuse Naming Sequence Numbers`` setting added to ``Administration > Provisioning``. If enabled, ${sequence} numbers used in naming patterns will be re-used once they are available again. When disabled, ${sequence} numbers will always increase by one, ensuring the same number in a pattern is never re-used (default and previous behavior).
+- Cloud-Init: ``USER DATA (LINUX)`` field on Virtual Image and Clouds Settings now supports Cloud Config Data YAML
+- VMware: Tagging support added. Metadata is now synced to vCenter to set tags on VMs. Existing tags are also inventoried into Morpheus as Metadata.
+- vCloud Director: Added support for Static IP assignment via Guest Customizations in vCD.
+- ServiceNow: CMDB: CMDB Target table now customizable
+- ServiceNow: CMDB: Custom Mapping for CMDB records added
+- SCVMM: Listed datastores in wizards for SCVMM instances are now filter by host and resource pool association
+- SCVMM: Listed datastore names for SCVMM instances (``Infrastructure > Clouds > DATASTORES``) are now prefixed with the host or cluster name for easier identification
+- AWS: Amazon M5A and M5AD Plans (Amazon Instance Types) added
+- Openstack: Added support for Openstack Availability Zones
+- Upcloud: Added Morpheus-provided catalog image for Ubuntu 18 on UpCloud
+- Localization: German l8n properties updated with improved translations.
+- Ansible: Removed requirement of an Ansible Integration being set on a Group or Cloud Configuration Management setting for Windows playbooks to execute via WinRM.
+-
+
 
 Fixes
 -----
+- Stopped and started usage records are created appropriately for managed and unmanaged instances on each cloud sync when stopping or starting them outside of Morpheus
 - Output results now appear correctly in the Execution Detail window in ``Provisioning > Automation > Executions``. Similarly, output results will also now appear correctly in the Execution Detail window in ``Provisioning > Jobs > Job Executions``.
 - Fixed an issue where backups were not being created in some cases when integrating with Veeam 9.5
 - Time period definitions within the specified dates are now honored in data calls to the Billing API
