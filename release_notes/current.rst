@@ -43,6 +43,9 @@ Additional Changes and Improvements
 - Metadata is now synced to vCenter to set tags on VMs. Existing tags are also inventoried into Morpheus as Metadata
 - Static IP addresses can now be assigned on vCD cloud via Guest Customizations during instance provisioning
 - `Morpheus Api` has been added as a type selection in Option Lists (``Provisioning > Library > OPTION LISTS``)
+- ServiceNow integrations now allow for custom CMDB record mapping and give the user the ability to define the table that CMDB records are written to
+- Listed datastores in wizards for SCVMM instances are now limited to those that make sense for the given host and resource pool rather than displaying all of them
+- Listed datastore names for SCVMM instances (``Infrastructure > Clouds > DATASTORES``) are now prefixed with the host or cluster name for easier identification
 
 Fixes
 -----

@@ -25,6 +25,10 @@ Add Service Now Integration
     A user in ServiceNow that is able to access the REST interface and create/update/delete incidents, requests, requested items, item options, catalog items, workflows, etc.
    PASSWORD
     Above ServiceNow user's password
+   CMDB CUSTOM MAPPING
+    Configure custom mapping for CMDB records
+   CMDB BUSINESS OBJECT
+    Allows the user to define the table CMDB records are written to if they prefer this over Morpheus defaults
 
 #. Save Changes
 
