@@ -69,12 +69,24 @@ Fixes
 - Fixed an issue where the list of floating or elastic IP addresses available was not being immediately updated on some clouds when provisioning an instance and selecting an external IP pool for the floating IP pool
 - Stopped and started usage records (``Operations > Activity > USAGE``) are no longer created when there is an error in calling the Azure API. In some cases this could cause interruptions in billing data.
 
-.. API/CLI #Awaiting cli release
-.. -------
-.. API/CLI: Infrastructure > Clusters (Kubernetes) functionality added
-.. API/CLI: Network Domain Records added
-.. API/CLI: Network Pool IP management added
-.. API/CLI: provision instances to docker & Kubernetes clusters
+CLI
+---
+
+v4.1.0
+
+Enhancements
+^^^^^^^^^^^^
+- New command ``clusters``
+- New command ``networks list-subnets|get-subnet|etc`` for managing network subnets.
+- New option ``user-settings --user-id`` for managing other users tokens,etc.
+- Updated roles add and roles update to support the ``--payload`` option.
+- New command ``networks list-subnets|get-subnet|etc`` for managing network subnets.
+- New subcommand ``containers logs``
+
+Fixes
+^^^^^
+- Fix issue with ``library-option-lists update`` not allowing arbitrary ``-O`` options.
+- Fix error seen with ``library-node-type remove``.
 
 Service Version Compatibility
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
