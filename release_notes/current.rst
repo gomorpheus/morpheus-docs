@@ -1,7 +1,7 @@
-New in v4.1.0
+v4.1.0
 ======
 
-.. important:: v3.6.0 or later required to upgrade to 4.0.0. Upgrade steps have been changed. 4.0.0 contains upgrades to MySQL, RabbitMQ, and Elasticsearch. Please refer to 4.0.0 Upgrade Requirements before upgrading, and BACKUP YOUR DATABASE before upgrade.
+.. important:: v3.6.0 or later required to upgrade to 4.1.0. Upgrading from v3.6.x to v4.x contains upgrades to MySQL, RabbitMQ, and Elasticsearch. Please refer to Upgrade Requirements before upgrading. When upgrading from v3.6.x to v4.x a database backup is recommended due to MySQL version upgrade.
 
 Highlights
 ----------
@@ -10,16 +10,24 @@ vRealize Orchestrator Integration (vRO)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 - Syncs all available vRO workflows by category
 - These workflows can also be chained easily into non-vRO workflows
-- `vRealize Orchestrator Workflow` now available as a task type in ``Provisioning > Automation > Tasks``
+- ``vRealize Orchestrator Workflow`` (vRO) Task Type added. Executes Workflow from any vRO integration. Parameter Body accepts JSON.
 
-Automation tasks
-^^^^^^^^^^^^^^^^
-- `Ansible Tower` automation task type added in ``Provisioning > Automation``
-- `Email` tasks can now be created and added to Workflows
+New Automation Task Types
+^^^^^^^^^^^^^^^^^^^^^^^^^
+- New ``Ansible Tower Job`` Task Type added. Executes a Job from any Ansible Tower integration with inventory, group, execution mode and target options.
+- ``Email`` Task Type added. Sends email to specified address with defined subject and body upon successful workflow execution. Address, Subject and Body fields support variables, and body field supports html.
+- ``vRealize Orchestrator Workflow`` (vRO) Task Type added. Executes Workflow from any vRO integration. Parameter Body accepts JSON.
 
-Subnet handling
-^^^^^^^^^^^^^^^
+Option Types & Lists Enhancements
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+- New ``Typeahead`` Option Type with multi-selection support. Presents an Option List in a typeahead field vs the dropdown selection list field in ``Select List`` types.
+- New ``Morpheus API`` Option List type with Clouds, Groups, Instances, Instances Wiki, Servers and Servers Wiki object targets.
+- New ``REQUEST SCRIPT`` field added to ``REST`` and ``Morpheus API`` option list settings. Create a js script to prepare the request. Return a data object as the body. The input data is provided as data and the result should be put on the global variable results.
+- ``Select`` Option Type name changed to ``Select List``
+- New ``DEPENDENT FIELD`` setting in ``Select List`` Option Types. Allows using results from a previous Option Type in a ``Select List`` Option List script. Data will reload when an associated dependent fields value is defined or changed.
 
+Subnets
+^^^^^^^
 - Added `SUBNETS` tab to the network detail page in ``Infrastructure > Network > (Your specific Network)`` which allows subnets to be searched and edited.
 - Subnets can now be created and edited on an Azure VNet from ``Infrastructure > Network``.
 - Azure networks sync as subnets. Previously, subnets were synced as individual networks
@@ -30,7 +38,6 @@ Subnet handling
 
 Additional Changes and Improvements
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
 - Job executions can now be expanded to show process details in ``Provisioning > Automation > Executions``
 - Individual tasks and scripts can now be run against hosts and virtual machines in ``Infrastructure > Hosts``. Previously workflows could be executed but not individual scripts or tasks.
 - Clone system layouts in ``Provisioning > Library > CLUSTER LAYOUTS`` for use in custom layouts. Buttons to edit and delete existing custom layouts also appear alongside the clone button in the list view.
@@ -58,6 +65,13 @@ Fixes
 - Fixed an issue where the list of floating or elastic IP addresses available was not being immediately updated on some clouds when provisioning an instance and selecting an external IP pool for the floating IP pool
 - Stopped and started usage records (``Operations > Activity > USAGE``) are no longer created when there is an error in calling the Azure API. In some cases this could cause interruptions in billing data.
 
+.. API/CLI #Awaiting cli release
+.. -------
+.. API/CLI: Infrastructure > Clusters (Kubernetes) functionality added
+.. API/CLI: Network Domain Records added
+.. API/CLI: Network Pool IP management added
+.. API/CLI: provision instances to docker & Kubernetes clusters
+
 Service Version Compatibility
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 When externalizing MySQL, Elasticsearch and/or RabbitMQ services, the following versions are compatible with Morpheus 4.1.0:
@@ -72,7 +86,7 @@ When externalizing MySQL, Elasticsearch and/or RabbitMQ services, the following 
 | RabbitMQ: 3.7 (3.7.16 installed)      | 3.7                  | 3.7.16                      |
 +---------------------------------------+----------------------+-----------------------------+
 
-Changes from v4.0.0
+v4.0.0
 ======
 
 Highlights
