@@ -54,7 +54,6 @@ Additional Changes and Improvements
 - vCloud Director: Added support for Static IP assignment via Guest Customizations in vCD.
 - ServiceNow: CMDB: CMDB Target table now customizable
 - ServiceNow: CMDB: Custom Mapping for CMDB records added
-- SCVMM: Listed datastores in wizards for SCVMM instances are now filter by host and resource pool association
 - SCVMM: Listed datastore names for SCVMM instances (``Infrastructure > Clouds > DATASTORES``) are now prefixed with the host or cluster name for easier identification
 - AWS: Amazon M5A and M5AD Plans (Amazon Instance Types) added
 - Openstack: Added support for Openstack Availability Zones
