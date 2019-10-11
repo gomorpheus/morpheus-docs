@@ -54,6 +54,10 @@ Additional Changes and Improvements
 - Listed datastores in wizards for SCVMM instances are now limited to those that make sense for the given host and resource pool rather than displaying all of them
 - Listed datastore names for SCVMM instances (``Infrastructure > Clouds > DATASTORES``) are now prefixed with the host or cluster name for easier identification
 - Amazon M5A and M5AD plans can now be selected when provisioning instances. In most cases, this requires a custom AMI due to this instance type not supporting Enhanced Networking (ENA)
+- Stopped and started usage records are created appropriately for managed and unmanaged instances on each cloud sync when stopping or starting them outside of Morpheus
+- `AUTOMATICALLY POWER ON VMS` checkbox added to add and edit cloud wizards (``Infrastructure > Clouds``). When checked, VMs will match the power state of the Morpheus instance
+- Added support for Openstack Availability Zones
+- Added Morpheus-provided catalog image for Ubuntu 18 on UpCloud
 
 Fixes
 -----
