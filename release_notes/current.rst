@@ -46,6 +46,7 @@ Additional Changes and Improvements
 - ServiceNow integrations now allow for custom CMDB record mapping and give the user the ability to define the table that CMDB records are written to
 - Listed datastores in wizards for SCVMM instances are now limited to those that make sense for the given host and resource pool rather than displaying all of them
 - Listed datastore names for SCVMM instances (``Infrastructure > Clouds > DATASTORES``) are now prefixed with the host or cluster name for easier identification
+- Amazon M5A and M5AD plans can now be selected when provisioning instances. In most cases, this requires a custom AMI due to this instance type not supporting Enhanced Networking (ENA)
 
 Fixes
 -----
