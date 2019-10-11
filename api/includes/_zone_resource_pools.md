@@ -197,8 +197,10 @@ defaultImage      | false | Set as the Default Image Target
 active      | true | Activate (true) or disable (false) the resource pool
 visibility      | private | private or public
 tenantPermissions.accounts  | null | Array of tenant account ids that are allowed access
-resourcePermissions.all  | null | Pass true to allow access all groups
+resourcePermissions.all  | true | Pass true to allow access all groups
 resourcePermissions.sites  | null | Array of groups that are allowed access
+resourcePermissions.allPlans  | true | Pass true to allow access all plans
+resourcePermissions.plans  | null | Array of plans that are allowed access
 
 ### JSON Parameters for Amazon Resource Pool
 
@@ -260,6 +262,8 @@ visibility      | private | private or public
 tenantPermissions.accounts  | null | Array of tenant account ids that are allowed access
 resourcePermissions.all  | null | Pass true to allow access all groups
 resourcePermissions.sites  | null | Array of groups that are allowed access
+resourcePermissions.allPlans  | null | Pass true to allow access all plans
+resourcePermissions.plans  | null | Array of plans that are allowed access
 
 ## Delete a Resource Pool
 

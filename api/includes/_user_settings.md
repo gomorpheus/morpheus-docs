@@ -44,6 +44,12 @@ This endpoint retrieves your user settings and API access token information.
 
 `GET https://api.gomorpheus.com/api/user-settings`
 
+### Query Parameters
+
+Parameter | Default | Description
+--------- | ------- | -----------
+userId      | (current user) | ID of User, requires the correct permission to operate on users other than yourself.
+
 ## Update User Settings
 
 ```shell
@@ -68,6 +74,12 @@ curl -XPUT "https://api.gomorpheus.com/api/user-settings" \
 ### HTTP Request
 
 `PUT https://api.gomorpheus.com/api/user-settings`
+
+### Query Parameters
+
+Parameter | Default | Description
+--------- | ------- | -----------
+userId      | (current user) | ID of User, requires the correct permission to operate on users other than yourself.
 
 ### JSON Parameters
 
@@ -105,6 +117,12 @@ curl -XPOST "https://api.gomorpheus.com/api/user-settings/avatar" \
 
 `POST https://api.gomorpheus.com/api/user-settings/avatar`
 
+### Query Parameters
+
+Parameter | Default | Description
+--------- | ------- | -----------
+userId      | (current user) | ID of User, requires the correct permission to operate on users other than yourself.
+
 ### Parameters
 
 Parameter | Default | Description
@@ -134,6 +152,11 @@ curl -XDELETE "https://api.gomorpheus.com/api/user-settings/avatar" \
 
 Delete your avatar image.  Expects multipart form data as the request format, not JSON.
 
+### Query Parameters
+
+Parameter | Default | Description
+--------- | ------- | -----------
+userId      | (current user) | ID of User, requires the correct permission to operate on users other than yourself.
 
 ## Regenerate API Access Token
 
@@ -160,6 +183,8 @@ curl -XPUT "https://api.gomorpheus.com/api/user-settings/regenerate-access-token
 Parameter | Default | Description
 --------- | ------- | -----------
 clientId      |  | Client ID
+userId      | (current user) | ID of User, requires the correct permission to operate on users other than yourself.
+
 
 > The above command returns JSON structured like this:
 
@@ -197,6 +222,7 @@ curl -XPUT "https://api.gomorpheus.com/api/user-settings/clear-access-token?clie
 Parameter | Default | Description
 --------- | ------- | -----------
 clientId      |  | Client ID
+userId      | (current user) | ID of User, requires the correct permission to operate on users other than yourself.
 
 This endpoint revokes your API access token for the specified client.
 
@@ -236,3 +262,9 @@ curl "https://api.gomorpheus.com/api/user-settings/api-clients" \
 `GET https://api.gomorpheus.com/api/user-settings/api-clients`
 
 This endpoint retrieves a list of available API clients.
+
+### Query Parameters
+
+Parameter | Default | Description
+--------- | ------- | -----------
+userId      | (current user) | ID of User, requires the correct permission to operate on users other than yourself.

@@ -1,6 +1,6 @@
-# Monitor Incidents
+# Monitoring Incidents
 
-These entities are incidents that result from [Checks](#monitor-checks). The API provides a means to list all of an account's incidents and also update, mute, close, and reopen them.
+These entities are incidents that result from [Checks](#checks). The API provides a means to list all of an account's incidents and also update, mute, close, and reopen them.
 
 ## Get All Incidents
 

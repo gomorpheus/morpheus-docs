@@ -187,3 +187,5 @@ visibility      | private | private or public
 tenantPermissions.accounts  | null | Array of tenant account ids that are allowed access
 resourcePermissions.all  | null | Pass true to allow access all groups
 resourcePermissions.sites  | null | Array of groups that are allowed access
+resourcePermissions.allPlans  | null | Pass true to allow access all plans
+resourcePermissions.plans  | null | Array of plans that are allowed access

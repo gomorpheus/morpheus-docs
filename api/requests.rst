@@ -11,6 +11,7 @@ Requests
    includes/_blueprints
    includes/_boot_scripts
    includes/_check_types
+   includes/_clusters
    includes/_contacts
    includes/_servers
    includes/_server_types
@@ -24,7 +25,6 @@ Requests
    includes/_execute_schedules
    includes/_execution_request
    includes/_groups
-   includes/_account_groups
    includes/_account_groups
    includes/_image_builds
    includes/_instances

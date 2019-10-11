@@ -21,7 +21,6 @@ curl "https://api.gomorpheus.com/api/groups"
       "code": "amazon",
       "active": true,
       "location": null,
-      "visibility": "public",
       "zones": [
         {
           "id": 1,
@@ -30,7 +29,7 @@ curl "https://api.gomorpheus.com/api/groups"
           "name": "VPC 1a",
           "description": "1a VPC Subnet",
           "location": null,
-          "visibility": "public",
+          "visibility": "private",
           "zoneTypeId": 1
         }
       ]
@@ -77,7 +76,6 @@ curl "https://api.gomorpheus.com/api/groups/1" \
     "code": null,
     "active": true,
     "location": null,
-    "visibility": "public",
     "zones": [
       {
         "id": 1,
@@ -86,7 +84,7 @@ curl "https://api.gomorpheus.com/api/groups/1" \
         "name": "Davids Laptop",
         "description": "My Laptop Vagrant",
         "location": null,
-        "visibility": "public",
+        "visibility": "private",
         "zoneTypeId": 1
       }
     ]

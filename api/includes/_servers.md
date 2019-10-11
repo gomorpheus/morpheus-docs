@@ -185,6 +185,20 @@ This endpoint retrieves all servers and their JSON encoded configuration attribu
 
 Parameter | Default | Description
 --------- | ------- | -----------
+name | null | Filter by name
+phrase | null | Filter by wildcard search of name and description
+siteId | null | Filter by group ID
+zoneId | null | Filter by zone ID
+clusterId | null | Filter by cluster ID
+managed | null | Filter by managed (true) or unmanaged (false)
+serverType | null | Filter by server type code
+powerState | null | Filter by power status
+ip | null | Filter by IP address
+vm | null | Filter to show only Virtual Machines (true)
+vmHypervisor | null | Filter to show only VM Hypervisors (true)
+bareMetalHost | null | Filter to show only Baremetal Servers (true)
+status | null | Filter by status
+agentInstalled | null | Filter by agent installed (true)
 max | 25 | Max number of results to return
 offset | 0 | Offset of records you want to load
 lastUpdated | null | Date filter, restricts query to only load servers updated  timestamp is more recent or equal to the date specified
