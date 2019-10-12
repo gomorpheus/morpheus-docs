@@ -4,6 +4,20 @@ This is a list of changes in the most recent versions of the CLI.
 
 Backwards compatibility with older appliances should be preserved in most cases.
 
+## 4.1.0
+
+### Enhancements
+* New command `clusters`
+* New command `networks list-subnets|get-subnet|etc` for managing network subnets.
+* New option `user-settings --user-id` for managing other users tokens,etc.
+* Updated `roles add` and `roles update` to support the `--payload` option.
+* New command `networks list-subnets|get-subnet|etc` for managing network subnets.
+* New subcommand `containers logs`
+
+### Fixes
+* Fix issue with `library-option-lists update`  not allowing arbitrary `-O` options.
+* Fix error seen with `library-node-type remove`.
+
 ## 4.0.0.1
 
 ### Fixes
