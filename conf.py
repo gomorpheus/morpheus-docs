@@ -55,7 +55,7 @@ author = u'Morpheus'
 # built documents.
 #
 # The short X.Y version.
-version = '3.6.3'
+version = '4.1.0'
 # The full version, including alpha/beta/rc tags.
 # release =
 
