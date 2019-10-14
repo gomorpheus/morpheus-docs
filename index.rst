@@ -1,4 +1,3 @@
-
 Morpheus Documentation
 ======================
 
@@ -102,7 +101,7 @@ Additional Changes and Improvements
    api/requests
 
 .. toctree::
-   :maxdepth: 3
+   :maxdepth: 4
    :caption: Release Notes
 
    release_notes/current.rst
