@@ -1,66 +1,90 @@
 v4.1.0
 ======
 
+.. |vro| image:: /images/automation/tasks/vro_logo.png
+.. |email| image:: /images/automation/tasks/email_logo.png
+.. |ansibletower| image:: /images/automation/tasks/ansible_tower_logo.png
+.. |typeahead| image:: /provisioning/library/typeahead.png
+
 .. important:: v3.6.0 or later required to upgrade to 4.1.0. Upgrading from v3.6.x to v4.x contains upgrades to MySQL, RabbitMQ, and Elasticsearch. Please refer to Upgrade Requirements before upgrading. When upgrading from v3.6.x to v4.x a database backup is recommended due to MySQL version upgrade.
 
 Highlights
 ----------
 
+VMware on AWS support added
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. image:: /images/infrastructure/clouds/vmwareCloudAws.png
+
+- ``VMware on AWS`` Clouds can now be added to Morpheus
+- ``VMware on AWS`` Cloud Type Added
+- ``VMware on AWS`` Clouds support the same Feature set as VMware vCenter Clouds
+
 vRealize Orchestrator Integration (vRO)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+|vro|
+
+Morpheus now integrates with vRealize Orchestrator to call any VRO workflow via Morpheus tasks.
+
 - Syncs all available vRO workflows by category
 - These workflows can also be chained easily into non-vRO workflows
 - ``vRealize Orchestrator Workflow`` (vRO) Task Type added. Executes Workflow from any vRO integration. Parameter Body accepts JSON.
 
+.. image:: /images/automation/tasks/vROSample.gif
+   :width: 500
+
 New Automation Task Types
 ^^^^^^^^^^^^^^^^^^^^^^^^^
-- New ``Ansible Tower Job`` Task Type added. Executes a Job from any Ansible Tower integration with inventory, group, execution mode and target options.
-- ``Email`` Task Type added. Sends email to specified address with defined subject and body upon successful workflow execution. Address, Subject and Body fields support variables, and body field supports html.
-- ``vRealize Orchestrator Workflow`` (vRO) Task Type added. Executes Workflow from any vRO integration. Parameter Body accepts JSON.
+|ansibletower|
+
+New ``Ansible Tower Job`` Task Type added. Executes a Job from any Ansible Tower integration with inventory, group, execution mode and target options.
+
+|email|
+
+New ``Email`` Task Type added. Sends email to specified address with defined subject and body upon successful workflow execution. Address, Subject and Body fields support variables, and body field supports html.
+
+|vro|
+
+New ``vRealize Orchestrator Workflow`` (vRO) Task Type added. Executes Workflow from any vRO integration. Parameter Body accepts JSON.
 
 Option Types & Lists Enhancements
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-- New ``Typeahead`` Option Type with multi-selection support. Presents an Option List in a typeahead field vs the dropdown selection list field in ``Select List`` types.
-- New ``Morpheus API`` Option List type with Clouds, Groups, Instances, Instances Wiki, Servers and Servers Wiki object targets.
-- New ``REQUEST SCRIPT`` field added to ``REST`` and ``Morpheus API`` option list settings. Create a js script to prepare the request. Return a data object as the body. The input data is provided as data and the result should be put on the global variable results.
-- ``Select`` Option Type name changed to ``Select List``
-- New ``DEPENDENT FIELD`` setting in ``Select List`` Option Types. Allows using results from a previous Option Type in a ``Select List`` Option List script. Data will reload when an associated dependent fields value is defined or changed.
+New ``Typeahead`` Option Type with multi-selection support. Presents an Option List in a typeahead field vs the dropdown selection list field in ``Select List`` types.
 
-Subnets
-^^^^^^^
-- Added `SUBNETS` tab to the network detail page in ``Infrastructure > Network > (Your specific Network)`` which allows subnets to be searched and edited.
-- Subnets can now be created and edited on an Azure VNet from ``Infrastructure > Network``.
-- Azure networks sync as subnets. Previously, subnets were synced as individual networks
-- Network subnets can now be selected from the `Networks` dropdown list when provisioning an instance
-- Group permissions can now be modified on subnets just like networks
-- Subnet options are now respected just like networks in terms of visibility, group access, and defaults
-- Subnets are now selectable when adding or editing a Network Group in ``Infrastructure > Network > NETWORK GROUPS``
+.. image:: /provisioning/library/typeahead.png
 
-VMware on AWS support added
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
-- ``VMware on AWS`` Clouds can now be added to Morpheus
-- ``VMware on AWS``Cloud Type Added
-- ``VMware on AWS`` Clouds support the same Feature set as VMware vCenter Clouds
+New ``Morpheus API`` Option List type with Clouds, Groups, Instances, Instances Wiki, Servers and Servers Wiki object targets.
 
+New ``REQUEST SCRIPT`` field added to ``REST`` and ``Morpheus API`` option list settings. Create a js script to prepare the request. Return a data object as the body. The input data is provided as data and the result should be put on the global variable results.
+
+.. image:: /provisioning/library/morphuesApiOptionType.png
+
+``Select`` Option Type name changed to ``Select List``
+
+New ``DEPENDENT FIELD`` setting in ``Select List`` Option Types. Allows using results from a previous Option Type in a ``Select List`` Option List script. Data will reload when an associated dependent fields value is defined or changed.
+
+.. image:: /provisioning/library/dependentField.png
 
 Additional Changes and Improvements
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-- Jobs: Job executions can now be expanded to show process details in ``Provisioning > Automation > Executions``
-- Library: ``Clone`` action added to clone system layouts in ``Provisioning > Library > CLUSTER LAYOUTS`` for use in custom layouts.
-- KVM: Clusters: Data Stores, History, and Logs tabs added to detail page for KVM clusters
-- Provisioning: ``Reuse Naming Sequence Numbers`` setting added to ``Administration > Provisioning``. If enabled, ${sequence} numbers used in naming patterns will be re-used once they are available again. When disabled, ${sequence} numbers will always increase by one, ensuring the same number in a pattern is never re-used (default and previous behavior).
+- Ansible: Removed requirement of an Ansible Integration being set on a Group or Cloud Configuration Management setting for Windows playbooks to execute via WinRM.
+- Appliance: Quartz removed from system services
+- AWS: Amazon M5A and M5AD Plans (Amazon Instance Types) added
 - Cloud-Init: ``USER DATA (LINUX)`` field on Virtual Image and Clouds Settings now supports Cloud Config Data YAML
-- VMware: Tagging support added. Metadata is now synced to vCenter to set tags on VMs. Existing tags are also inventoried into Morpheus as Metadata.
-- vCloud Director: Added support for Static IP assignment via Guest Customizations in vCD.
+- Jobs: Job executions can now be expanded to show process details in ``Provisioning > Automation > Executions``
+- KVM: Clusters: Data Stores, History, and Logs tabs added to detail page for KVM clusters
+- Library: ``Clone`` action added to clone system layouts in ``Provisioning > Library > CLUSTER LAYOUTS`` for use in custom layouts.
+- Localization: German l8n properties updated with improved translations.
+- Openstack: Added support for Openstack Availability Zones
+- Provisioning: ``Reuse Naming Sequence Numbers`` setting added to ``Administration > Provisioning``. If enabled, ${sequence} numbers used in naming patterns will be re-used once they are available again. When disabled, ${sequence} numbers will always increase by one, ensuring the same number in a pattern is never re-used (default and previous behavior).
+- SCVMM: Listed datastore names for SCVMM instances (``Infrastructure > Clouds > DATASTORES``) are now prefixed with the host or cluster name for easier identification
 - ServiceNow: CMDB: CMDB Target table now customizable
 - ServiceNow: CMDB: Custom Mapping for CMDB records added
-- SCVMM: Listed datastore names for SCVMM instances (``Infrastructure > Clouds > DATASTORES``) are now prefixed with the host or cluster name for easier identification
-- AWS: Amazon M5A and M5AD Plans (Amazon Instance Types) added
-- Openstack: Added support for Openstack Availability Zones
+- Subnets can be created and edited from ``Infrastructure > Network``.
+- Subnets now represented as type: subnet and are nested under parent networks when appropriate.
 - Upcloud: Added Morpheus-provided catalog image for Ubuntu 18 on UpCloud
-- Localization: German l8n properties updated with improved translations.
-- Ansible: Removed requirement of an Ansible Integration being set on a Group or Cloud Configuration Management setting for Windows playbooks to execute via WinRM.
--
+- vCloud Director: Added support for Static IP assignment via Guest Customizations in vCD.
+- VMware: Tagging support added. Metadata is now synced to vCenter to set tags on VMs. Existing tags are also inventoried into Morpheus as Metadata.
 
 
 Fixes
@@ -106,6 +130,13 @@ When externalizing MySQL, Elasticsearch and/or RabbitMQ services, the following 
 +---------------------------------------+----------------------+-----------------------------+
 | RabbitMQ: 3.7 (3.7.16 installed)      | 3.7                  | 3.7.16                      |
 +---------------------------------------+----------------------+-----------------------------+
+
+Security
+^^^^^^^^
+CVEs remediated in 4.1.0
+
+- CVE-2019-8323 - RubyGems 2.7
+- CVE-2019-13990 - quartz-2.2.4
 
 v4.0.0
 ======
