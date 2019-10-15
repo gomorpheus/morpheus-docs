@@ -26,7 +26,7 @@ Follow these instructions to install, or use your preferred installation method
   .. code-block:: bash
 
       sudo yum install epel-release
-      sudo yum install ansible
+      sudo yum install ansible python-requests
 
   Then create the working Ansible directory for Morpheus:
 
