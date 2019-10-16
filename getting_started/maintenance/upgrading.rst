@@ -43,10 +43,11 @@ To upgrade Morpheus running on Ubuntu/Debian, download and install the new deb p
 .. code-block:: bash
 
   sudo wget https://packageUrl.morpheus-appliance_x.x.x-x.amd64.deb
-  sudo dpkg -i morpheus-appliance_x.x.x-1.amd64.deb
   sudo morpheus-ctl stop
+  sudo dpkg -i morpheus-appliance_x.x.x-1.amd64.deb
   sudo morpheus-ctl reconfigure
-  sudo morpheus-ctl start morpheus-ui
+
+.. note:: In 4.x the morpheus-ui service will automatically start after reconfigure succeeds.
 
 CentOS / RHEL
 ^^^^^^^^^^^^^
@@ -56,10 +57,11 @@ To upgrade Morpheus running on CentOS/RHEL, download and install the new rpm pac
 .. code-block:: bash
 
   sudo wget https://packageUrl.morpheus-appliance-x.x.x-x.x86_64.rpm
-  sudo rpm -Uhv morpheus-appliance-x.x.x-x.x86_64.rpm
   sudo morpheus-ctl stop
+  sudo rpm -Uhv morpheus-appliance-x.x.x-x.x86_64.rpm
   sudo morpheus-ctl reconfigure
-  sudo morpheus-ctl start morpheus-ui
+
+.. note:: In 4.x the morpheus-ui service will automatically start after reconfigure succeeds.
 
 3-Node Appliance Upgrade
 ------------------------
