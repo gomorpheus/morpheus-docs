@@ -32,7 +32,7 @@ REPLICATION PROVIDER
 GUIDANCE
   Enable Guidance recommendations on cloud resources.
 COSTING
-  Enable for Morpheus to sync Costing data from the Cloud provider, when available.
+  Enable for Morpheus to sync Costing data from the Cloud provider, when available. If your organization utilizes reserved instances and you want to pull in related pricing data, select `Costing and Reservations`. If this is not relevant, select `Costing` to save money on additional calls to the AWS Cost Explorer API.
 DNS INTEGRATION
   Records for instances provisioned in this cloud will be added to selected DNS integration.
 SERVICE REGISTRY
