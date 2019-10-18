@@ -118,7 +118,8 @@ Fixes
 - Fix error seen with ``library-node-type remove``.
 
 Service Version Compatibility
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+-----------------------------
+
 When externalizing MySQL, Elasticsearch and/or RabbitMQ services, the following versions are compatible with Morpheus 4.1.0:
 
 +---------------------------------------+----------------------+-----------------------------+
@@ -132,7 +133,7 @@ When externalizing MySQL, Elasticsearch and/or RabbitMQ services, the following 
 +---------------------------------------+----------------------+-----------------------------+
 
 Security
-^^^^^^^^
+--------
 CVEs remediated in 4.1.0
 
 - CVE-2019-8323 - RubyGems 2.7
