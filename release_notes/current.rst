@@ -44,7 +44,7 @@ Library: Spec Templates added
 Library: Cluster Layouts added
    - Create your own Kubernetes, Docker, EKS and KVM Cluster Layouts using your own images and config
 
-.. note:: Kubernetes Cluster provisioning is only supported in VMware, AWS, Azure, Openstack, Nutanix, vCloud Director, Xen, Google, IBM, Upcloud, Huawei, Digital Ocean, VMware Fusion, Hyper-V, and Open Telekom Cloud Cloud types
+.. note:: Kubernetes Cluster provisioning is only supported in VMware, AWS, Azure, Openstack, Nutanix, vCloud Director, Xen, Google, IBM, Upcloud, Huawei, Digital Ocean, VMware Fusion, Hyper-V, and Open Telekom Cloud types
 
 Automation Expansion
 ^^^^^^^^^^^^^^^^^^^^
