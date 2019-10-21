@@ -1,5 +1,5 @@
-v4.1.0
-======
+v4.1.0 Release Notes
+====================
 
 .. |vro| image:: /images/automation/tasks/vro_logo.png
 .. |email| image:: /images/automation/tasks/email_logo.png
@@ -126,9 +126,9 @@ When externalizing MySQL, Elasticsearch and/or RabbitMQ services, the following 
 +---------------------------------------+----------------------+-----------------------------+
 | MySQL                                 | 5.7                  | 5.7.27                      |
 +---------------------------------------+----------------------+-----------------------------+
-| Elasticsearch: 5.6 (5.6.16 installed) | 5.6                  | 5.6.16                      |
+| Elasticsearch                         | 5.6                  | 5.6.16                      |
 +---------------------------------------+----------------------+-----------------------------+
-| RabbitMQ: 3.7 (3.7.16 installed)      | 3.7                  | 3.7.16                      |
+| RabbitMQ                              | 3.7                  | 3.7.16                      |
 +---------------------------------------+----------------------+-----------------------------+
 
 Security
@@ -138,8 +138,8 @@ CVEs remediated in 4.1.0
 - CVE-2019-8323 - RubyGems 2.7
 - CVE-2019-13990 - quartz-2.2.4
 
-v4.0.0
-======
+v4.0.0 Release Notes
+====================
 
 Highlights
 ----------
