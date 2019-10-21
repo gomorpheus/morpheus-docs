@@ -31,7 +31,7 @@ Morpheus now integrates with vRealize Orchestrator to call any VRO workflow via 
 - ``vRealize Orchestrator Workflow`` (vRO) Task Type added. Executes Workflow from any vRO integration. Parameter Body accepts JSON.
 
 .. image:: /images/automation/tasks/vROSample.gif
-   :width: 500
+   :width: 600
 
 New Automation Task Types
 ^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -178,6 +178,7 @@ CVEs remediated in 4.1.0
    :caption: Release Notes
 
    release_notes/current.rst
+   release_notes/compatibility.rst
    release_notes/previousReleases.rst
 
 
