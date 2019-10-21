@@ -109,7 +109,6 @@ Enhancements
 - New command ``networks list-subnets|get-subnet|etc`` for managing network subnets.
 - New option ``user-settings --user-id`` for managing other users tokens,etc.
 - Updated roles add and roles update to support the ``--payload`` option.
-- New command ``networks list-subnets|get-subnet|etc`` for managing network subnets.
 - New subcommand ``containers logs``
 
 Fixes
