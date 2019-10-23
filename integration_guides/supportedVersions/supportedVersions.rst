@@ -31,6 +31,7 @@ VMware NSX              -V
 Veeam                   9.5
 Commvault               v11 sp 12
 Rubrik                  4.2
+Avamar                  18.1
 **Containers**          ..
 Docker                  1.12.6
 Kubernetes              1.11
