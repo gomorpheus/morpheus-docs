@@ -131,7 +131,9 @@ ServiceNow Configuration
    - catalog_admin
    - itil
    - rest_service
+   - import_transformer
 
+  .. NOTE:: The import_transformer role is only needed for creating incidents in SNOW.
 
   .. IMPORTANT:: When using ServiceNow version London, the following steps must also be performed.  An administrator needs to modify the access permissions on the 'catalog_script_client' and 'io_set_item' tables.  This is performed by ensuring the 'Can create', 'Can update', and 'Can Delete' are checked under Application Access for 'All application scopes' for these tables.
 
