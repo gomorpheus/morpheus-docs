@@ -8,8 +8,7 @@ Installation and configuration of Percona XtraDB Cluster on CentOS/RHEL 7 with T
 Requirements
 ^^^^^^^^^^^^
 
-Percona requires the following ports for the cluster nodes. Please create the appropriate firewall rules on your
-Percona nodes.
+Percona requires the following ports for the cluster nodes. Please create the appropriate firewall rules on your Percona nodes.
 
 - 3306
 - 4444
@@ -81,8 +80,8 @@ Add Percona Repo
     [root]# yum clean all
     [root]# yum update -y --skip-broken
 
-Installing Percona XtraDB Cluster
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Install Percona XtraDB Cluster
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 #. Install the Percona XtraDB Cluster software and it’s dependences.
 

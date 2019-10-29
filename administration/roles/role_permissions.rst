@@ -83,6 +83,7 @@ Remote Console: Auto Login
 - Provisioning: Virtual Images (None, Read, Full)
 - Remote Console (None, Provisioned, Full)
 - Remote Console: Auto Login (No, Yes)
+- Snapshots (None, Read, Full)
 - Services: Archives (None, Read, Full)
 - Services: Cypher (None, Read, Full, Full Decrypted)
 - Services: Image Builder (None, Read, Full)

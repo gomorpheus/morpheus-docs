@@ -140,28 +140,28 @@ Add Images
       .. important:: Ensure the case of file references match actual file names.
 
       .. code-block:: bash
-         :name: PXE 6.5.0 Menu
 
-       DEFAULT vesamenu.c32
-       TIMEOUT 300
-       ONTIMEOUT esxi
-       PROMPT 0
-       MENU INCLUDE pxelinux.cfg/pxe.conf
-       NO ESCAPE 1
-       LABEL local
-         menu LABEL Boot to local disk
-         localboot 0
-         TEXT HELP
-         Boot to local hard disk
-         ENDTEXT
-       LABEL esxi
-         menu LABEL ESXI 6.5.0 u1
-         kernel tftp://${bootUrl}/image/${imageId}/MBOOT.C32
-         append -c tftp://${bootUrl}/image/${imageId}/BOOT.CFG ks=${answerFile}
-         TEXT HELP
-           Boot the ESXI 6.5.0 u1 install
-         ENDTEXT
-       MENU END
+        DEFAULT vesamenu.c32
+        TIMEOUT 300
+        ONTIMEOUT esxi
+        PROMPT 0
+        MENU INCLUDE pxelinux.cfg/pxe.conf
+        NO ESCAPE 1
+        LABEL local
+          menu LABEL Boot to local disk
+          localboot 0
+          TEXT HELP
+          Boot to local hard disk
+          ENDTEXT
+        LABEL esxi
+          menu LABEL ESXI 6.5.0 u1
+          kernel tftp://${bootUrl}/image/${imageId}/MBOOT.C32
+          append -c tftp://${bootUrl}/image/${imageId}/BOOT.CFG ks=${answerFile}
+          TEXT HELP
+            Boot the ESXI 6.5.0 u1 install
+          ENDTEXT
+        MENU END
+
    Bucket
     Select Bucket or File Share where PXE Image files exist
    Image Path
@@ -188,4 +188,4 @@ Remove Image
 #. Select the Image tab.
 #. Click the `Actions` drop and select `Remove`.
 
-.. include:: infrastructure/pxeboot/esxi65.rst
+.. include:: /infrastructure/pxeboot/esxi65.rst

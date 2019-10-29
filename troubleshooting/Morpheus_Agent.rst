@@ -1,3 +1,5 @@
+.. _Agent Troubleshooting:
+
 |morpheus| Agent Install Troubleshooting
 ========================================
 
