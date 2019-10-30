@@ -21,6 +21,14 @@ New Features
 - Veeam: Support for Veeam 9.5u4 added
 - White Labelling: Sub-tenant notifications branding added
 
+SolarWinds
+^^^^^^^^^^
+- SolarWinds IPAM Integration back-ported from version 4
+- Network Pool sync. Network Pools can be set on networks in |morpheus| for automated IP allocation and record creation.
+- Optional Network Pool allocation and record sync. ``Inventory Existing`` option syncs all individual ip's records and corresponding status. Inventory is not required for provisioning.
+- Grid and list displays with IP record overlays and color coding for static, available, reserved and transient status.
+- Manual IP Host record creation from Network Pool detail pages.
+
 Fixes
 -----
 - Ansible: Fix for Inventory File VM naming in multi-node deployments using old style of <instancename>, <instancename>-2, <instancename>-3
