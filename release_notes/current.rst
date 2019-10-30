@@ -1,30 +1,29 @@
 v3.6.5
 ======
 
-Release date:
+Release date: 10/29/2019
 
 New Features
 ------------
-
-Amazon Plans - seed plans for T3A and R5A Add Amazon M5A and M5AD Instance Types
-Static Address not working in AWS
-don't filter usage records for deleted zones
-SCVMM : Prepend host name or cluster name to datastores
-API/CLI: Incidents create
-User Settings Password Strength
-Async App Provision
-UpCloud Ubuntu 18
-Veeam: SCVMM Support
-Static IP address assign on vCD cloud via guest customisations
-Openstack Clouds: should update available EIPs/FIPs immediately after provision
-Provision Setting: Reuse Sequence Numbers
-Support Veeam 9.5
-Additional metadata for /api/billing records.
+- Amazon: Plans: Seed plans for M5A, M5AD, R5A, T3A Instance Types added
+- Static Address not working in AWS
+- Usage: Usage records for deleted Clouds are no longer filtered from Usage
+- SCVMM: Associated Host or Cluster name prepended to datastores names for identification
+- API/CLI: Incidents create
+- User Settings: Complex Passwords now required for Linux and Windows users in User Settings. Password must contain at least one uppercase letter, one lowercase letter, a number, and a symbol.
+- Apps: Asynchronous App Provisioning added
+- UpCloud: Ubuntu 18.04 System Image added
+- Veeam: SCVMM Support added
+- Static IP address assign on vCD cloud via guest customizations
+- Openstack Clouds: should update available EIPs/FIPs immediately after provision
+- Provisioning: Reuse Naming Sequence Numbers setting added to ``Administration > Provisioning``. If enabled, ``${sequence}`` numbers used in naming patterns will be re-used once they are available again. When disabled, ``${sequence}`` numbers will always increase by one, ensuring the same number in a pattern is never re-used (default and previous behavior).
+- Veeam: Support for Veeam 9.5u4 added
+- Usage: ``createdByUser``, ``createdByUserId``, ``siteId``, ``siteName``, ``siteUUID``, ``siteCode``, and ``metadata []`` now returned for ``/api/billing`` records. ``serverUniqueId`` added for Containers, ``serverUniqueId`` added for Servers, ``zoneCode`` added for Zones/Clouds. .. note:: These values will only be populated for newly created usage records. Not all record will have values for all fields, such as ``createdByUser`` and ``createdByUserId`` for discovered servers, site information for non-instance records)
 - White Labelling: Sub-tenant notifications branding added
+- Instances: Hourly Job added to update managed VM record to unmanaged when no Instance association exists
 
 Fixes
 -----
-
 - Ansible: Fix for Inventory File VM naming in multi-node deployments using old style of <instancename>, <instancename>-2, <instancename>-3
 - Usage: Fix for Duplicate account usage records created when `startDate` is in the last half of a sec
 - Apps: Fix for Blueprint fields locks
@@ -43,48 +42,55 @@ Fixes
 - Usage: Fix for Usage records restarting when $0 price added or when Plan Name or Details are edited.
 - Security Group: Accepted port ranges updated from ``0-65535`` to ``1-65535``
 - vCloud Director: Fix for large VM counts causing multiple Usage record restarts
-VMs can be removed from Morpheus if a network problem interrupts the API call to vapps (VcdComputeUtility.callApi("${vappUrl.protocol}://${vappUrl.host}".toString()) 
-Instance provisioning does not complete
-Tenant deletion fails with "Table 'morpheusdb.storage_group_storage_volume' doesn't exist" in 3.6.4
-Vmware Container Hosts Unmount Disk
-Task Results from a Library Script Task = null
-AWS misleading error if pub image used where disk size is lower than expected
-Deleting instances with Preserve backups unchecked does not delete the snapshots in AHV
-Network Filter limited to 20 list.
-Network config error
-Teardown workflows do not run when the user deletes the instance from the VM details page/infrastructure/servers/virtual-machines
-Licenses tenant permission issues
-If container plan_id and compute_server plan_id are different then each cloud refresh will create a new usage record
-Ensure that VCD cacheVirtualMachines updates instance & container plan and resource information if it differs from compute_server or when a plan/resource change is detected
-Cant delete Tenant with assigned Policy
-Security group:  Morpheus rule types are not being created within Openstack
-Service Plan Errors Out When Required Fields Aren't Selected
-Add VM Type dialogue input checks incorrect, incorrectly documented or missing (trivial)
-vCD: When user sets a hostname during a instance provision, The hostname is being applied to the vm and vapp instead of the instance name.
-Issue with Budget policies and Azure Blob storage
-Deploying App from Blueprint default cloud is not required, which is causing network not to load correctly
-AMI region validation for VirtualImageLocation unsuccessful on Amazon Instance type provisioning
-AWS AMI's in Dev Morpheus are not sychronizing (Previous Case: 45600)
-Amazon Cost Explorer not working for China Region cn-north-1
-DNS Integration stopped working - MicrosoftDNS won't pull in records or domains.t
-Correct managed virtual machines that have not got associated container & instance records
-VMware instance reconfigure option & plan code variable issue
+- vCloud Director: Fix for potential for Discovered VM records to be removed when network outage occurs during cloud sync
+- Tenants: Fix for Tenant deletion failing due to 'morpheusdb.storage_group_storage_volume' doesn't exist" in 3.6.4
+- Docker: Fix for cloud-init iso not being ejected after VMware Docker host creation
+- Tasks: Fix for Task Results for Library Script Task task types returning ``null``
+- AWS: Fix for "image is larger than select plan" error displaying on Plan when volume size is less than minimum requirement for Image
+- Nutanix: Fix for deleting instances with ``Preserve Backups`` unchecked not deleting associated snapshots in AHV
+- IPAM Integrations: Fix for Network Filter and Zone Filter field character limit <255
+- VMware: Child Network: Fix for ``network config error`` when using IP Pools with VMware Child Networks
+- Workflows: Fix for teardown workflows do not run when the user deletes a VM and its associated Instance from the VM details page (infrastructure/servers/virtual-machines) instead of from Instances section
+- Licenses: Fix for Windows Licenses still being applied to scoped Images in Tenants without permissions to Licenses
+- Usage: Fix for Instance Plan not updating when source VM plan is change but associated Instance is not in a running state
+- Tenants: Fix for inability to delete a tenant with an assigned Master Tenant Policy
+- Security Groups:  Fix for non-applicable Security Group Rule Types listed when scoped Cloud does not have associated Instance
+- Service Plans: Fix for Required Field validation
+- Library: Node Types: Fix for Count and Image selection validation
+- vCloud Director: Fix for DSN Hostname field override
+- Azure: Fix for provisioning issue using Azure Blob storage in conjunction with an active Budget Policy
+- Apps: Fix for Blueprint configurations not loading when no Cloud is selected during New App -> Setup step
+- AWS: Fix for inconsistent synced AMI region validation for Ireland region
+- AWS: Fix for Proxy Settings not applying to Amazon Cost Service data
+- Reconfigure: Validation added for Plan selection before Reconfigure can be triggered
 
+CLI Updates
+-----------
 
+Enhancements
+^^^^^^^^^^^^
+- New format for -S, --sort ORDER Sort Order. DIRECTION may be included as "ORDER [asc|desc]". Example: ``instances list -S "dateCreated desc"``
+- Improved commands monitor-contacts add, monitor-checks, monitor-groups and monitor-apps by adding prompting.
 
-The api has changed now to include some new behavior and new query parameters. (Existing functionality should also be retested.. along with tenant vs master account behavior)
+Fixes
+^^^^^
+- Fixed roles update to support the --payload option.
+- Fixed issue with instances logs, containers logs, etc displaying records in the reverse order. Changed to match the UI.
+- Fixed instances view and apps view only allowing one [instance] argument.
 
-For the /zones, /instances, /servers, and /discoveredServers endpoints, the following changes have been made:
+API Updates
+-----------
+The Pricing API endpoint has changed now to include some new behavior and new query parameters.
+ - For the ``/zones``, ``/instances``, ``/servers``, and ``/discoveredServers`` endpoints, the following changes have been made:
 
-Existing behavior is preserved.. only the current account data is returned.
-An optional 'includeTenants=true' query parameter may be passed. If the account is a master account, the tenant billing/usage records will also be included
-An optional 'accountId=2' query parameter may be passed when calling from a master tenant user. It will then scope the return values to only that account. (When specified with the 'includeTenants=true' this parameter is ignored)
-Users of the api should be migrating to using the UUIDs rather than IDs. Therefore, a UUID may now be passed to these calls in addition to the previously supported ID.
+   - Existing behavior is preserved. Only the current Account data is returned.
+   - An optional ``includeTenants=true`` query parameter may be passed. If the account is a master account, the tenant billing/usage records will also be included
+   - An optional ``accountId=2`` query parameter may be passed when calling from a master tenant user. It will then scope the return values to only that account. (When specified with the 'includeTenants=true' this parameter is ignored)
+   - Users of the Pricing API should be migrating to using the UUIDs rather than IDs. Therefore, a UUID may now be passed to these calls in addition to the previously supported ID.
 
 ..  issue where plan change that coincided with rabbit problem caused usage records to be stopped and not restarted. processPriceChanges discovered the plan change, stopped the appropriate usage records and then the task to start the new usage records was sent through rabbit - which never executed. From a discussion on slack this case was created as a suggestion on preventing this rare occurrence in the future.
 
 System Updates
 --------------
-
 - Appliances: Java updated to OpenJDK JRE 8u232
 - Node Packages: Java updated to OpenJDK JRE 8u232
