@@ -48,7 +48,6 @@ Fixes
 - Library > Instance Types: Fix for Filters not applying to pagination
 - Library: Node Types: Fix for Count and Image selection validation
 - Licenses: Fix for Windows Licenses still being applied to scoped Images in Tenants without permissions to Licenses
-- Morpheus UI Bug -filter doesn't apply to pagination
 - Nutanix: Fix for deleting instances with ``Preserve Backups`` unchecked not deleting associated snapshots in AHV
 - Openstack/Huawei/OTC: Fix for previously used floating IPs not displaying in IP selection list
 - Prices: Storage and Datastore prices: Updated the output in applicablePrices to change the pricePerUnit and costPerUnit to be consistent with the other price types.
