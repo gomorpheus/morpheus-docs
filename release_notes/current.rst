@@ -6,88 +6,105 @@ v4.1.1 Release Notes
 New Features
 ------------
 
-SCVMM : Filter datastore selections based on resource pool and host
-Email branding does not follow white labelling of tenancy
-Template Instance - Cloud Formation
-User Settings Password Strength
-API/CLI: Incidents create
-Static Address not working in AWS
-API/CLI: Monitoring - Alert Rules
-Instances List- remove ability to execute actions on Instances in read-only groups
-Amazon Plans - seed plans for T3A and R5A
-Community License display changes
-Free - License Type
-Free - Registration
-Morpheus Hub Registration - UI Tweaks
-Free - License Restrictions
-Subnets: API/CLI: networks and network-groups
-Free - Auto Skip if can't access hub
-Free - Amazon Marketplace
-Free - Azure Marketplace
-Free - Hub Analytics
-Amazon RDS - MS SQL Server
+- SCVMM : Datastore selection options now filter based on selected resource pool and host
+- White Labelling: Sub-tenant notifications branding added
+- Cloud Formation: CF templates can now be provisioned as Instances using Cloud Formation layout types and Spec Templates
+- Library: Node Types: New Cloud Formation Layout technology Type. Allows CF Spec Templates as Instances
+- Library: Spec Templates: New Cloud Formation Spec Template type
+- User Settings: Complex Passwords now required for Linux and Windows users in User Settings. Password must contain at least one uppercase letter, one lowercase letter, a number, and a symbol.
+- AWS: Support added for Static IP Assignment
+- Instances: List View: Actions selection removed when multiple Instances are selected and at least one is in a Read Only Group
+- AWS: Plans: Seeded plans for ``R5A`` and ``T3A`` AWS Instance Types added
+- AWS: RDS: MSSQL Server support added
+- Usage: ``createdByUser``, ``createdByUserId``, ``siteId``, ``siteName``, ``siteUUID``, ``siteCode``, and ``metadata []`` now returned for ``/api/billing`` records. ``serverUniqueId`` added for Containers, ``serverUniqueId`` added for Servers, ``zoneCode`` added for Zones/Clouds. NOTE: These values will only be populated for newly created usage records. Not all record will have values for all fields, such as ``createdByUser`` and ``createdByUserId`` for discovered servers, site information for non-instance records)
 
 Fixes
 -----
 
-Tenant deletion fails with "Table 'morpheusdb.storage_group_storage_volume' doesn't exist" in 3.6.4
-Vmware Container Hosts Unmount Disk
-Task Results from a Library Script Task = null
-AWS misleading error if pub image used where disk size is lower than expected
-Deleting instances with Preserve backups unchecked does not delete the snapshots in AHV
-Network Filter limited to 20 list.
-Network config error
-Teardown workflows do not run when the user deletes the instance from the VM details page/infrastructure/servers/virtual-machines
-Licenses tenant permission issues
-CF Template Spec - issue using Repository
-CF Template Provision - Error parsing string
-CF Template Provision - Review cleanup
-If container plan_id and compute_server plan_id are different then each cloud refresh will create a new usage record
-Ensure that VCD cacheVirtualMachines updates instance & container plan and resource information if it differs from compute_server or when a plan/resource change is detected
-CF Template - Layouts Only
-SCVMM datastores being recreated
-Cant delete Tenant with assigned Policy
-Security group:  Morpheus rule types are not being created within Openstack
-Edit Network Interface: not displaying assigned Network
-CF Template: Provision - issue with variables
-Service Plan Errors Out When Required Fields Aren't Selected
-Add VM Type dialogue input checks incorrect, incorrectly documented or missing (trivial)
-Cloud vCD| When user sets a hostname during a instance provision, The hostname is being applied to the vm and vapp instead of the instance name.
-Issue with Budget policies and Azure Blob storage
-Deploying App from Blueprint default cloud is not required, which is causing network not to load correctly
-AMI region validation for VirtualImageLocation unsuccessful on Amazon Instance type provisioning
-AWS AMI's in Dev Morpheus are not sychronizing (Previous Case: 45600)
-Amazon Cost Explorer not working for China Region cn-north-1
-DNS Integration stopped working - MicrosoftDNS won't pull in records or domains.t
-Correct managed virtual machines that have not got associated container & instance records
-VMware instance reconfigure option & plan code variable issue
-Cloud details: Networks - issue with pagination
-500 Error when trying to delete node type that in use
-CF Template - surface provision failures
-API: Refresh Access Token issues
-API Access - Refresh Token
-CF Template - failing to provision amazon services
-CF Template: Provision - errors when switching layouts
-Fresh Setup - 500 errors
-CF Template: Provision - Install Agent and AWS Instance Stats
-CF Template: Resource Type - Instance
-CF Template: Instance Details - connection info
-ESXi: image data store selection on cloud not saving on cloud when updated.l
-CF Template - layout form issue on validation error
+- Tenants: Fix for Tenant deletion failing due to "'morpheusdb.storage_group_storage_volume' doesn't exist"
+- Docker: Fix for cloud-init iso not being ejected after VMware Docker host creation
+- Tasks: Fix for Task Results for Library Script Task task types returning ``null``
+- AWS: Fix for "image is larger than select plan" error displaying on Plan when volume size is less than minimum requirement for Image
+- Nutanix: Fix for deleting instances with ``Preserve Backups`` unchecked not deleting associated snapshots in AHV
+- IPAM Integrations: Fix for Network Filter and Zone Filter field character limit <255
+- VMware: Child Network: Fix for ``network config error`` when using IP Pools with VMware Child Networks
+- vCloud Director: Fix for CD-ROM addressed potentially conflicting with additional network interface addresses
+- Workflows: Fix for teardown workflows do not run when the user deletes a VM and its associated Instance from the VM details page (infrastructure/servers/virtual-machines) instead of from Instances section
+- Licenses: Fix for Windows Licenses still being applied to scoped Images in Tenants without permissions to Licenses
+- Usage: Fix for Instance Plan not updating when source VM plan is change but associated Instance is not in a running state
+- Tenants: Fix for inability to delete a tenant with an assigned Master Tenant Policy
+- Security Groups:  Fix for non-applicable Security Group Rule Types listed when scoped Cloud does not have associated Instance
+- Service Plans: Fix for Required Field validation
+- Library: Node Types: Fix for Count and Image selection validation
+- vCloud Director: Fix for DSN Hostname field override
+- Azure: Fix for provisioning issue using Azure Blob storage in conjunction with an active Budget Policy
+- Apps: Fix for Blueprint configurations not loading when no Cloud is selected during New App -> Setup step
+- AWS: Fix for inconsistent synced AMI region validation for Ireland region
+- AWS: Fix for Proxy Settings not applying to Amazon Cost Service data
+- Microsoft DNS: Fix for ``Last Updated`` date display
+- Instances: Hourly Job added to update `Managed` VM records to `Unmanaged` when no Instance association exists
+- Reconfigure: Validation added for Plan selection before Reconfigure can be triggered
+- Library: Fix for 500 Error when trying to delete Node Type that in use or was previously used
+
+.. API: Refresh Access Token issues
+.. API Access - Refresh Token
+.. Fresh Setup - 500 errors
+.. - ESXi: Fix for image data store selection on cloud not saving when updated.
 
 CLI
 ---
 
+v4.1.5
+^^^^^^
 Enhancements
-^^^^^^^^^^^^
+````````````
+New format for -S, --sort ORDER Sort Order. DIRECTION may be included as "ORDER [asc|desc]". Example: instances list -S "dateCreated desc"
+New command monitor-alerts. Requires appliance version 4.1.1
+Improved commands monitor-contacts add, monitor-checks, monitor-groups and monitor-apps by adding prompting.
 
 Fixes
-^^^^^
+````````````
+Fixed roles update to support the --payload option.
+Fixed issue with instances logs, containers logs, etc displaying records in the reverse order. Changed to match the UI.
+Fixed instances view and apps view only allowing one [instance] argument.
+
+v4.1.4
+^^^^^^
+Fixes
+````````````
+Fix issue with blueprints add-instance that would not allow multiple instances of the same type for a tier.
+Fix issue with blueprints add-instance-config not prompting for Group, and instance can now be specified by name or index instead of just type.
+
+v4.1.3
+^^^^^^
+Fixes
+````````````
+Fix issue with instances clone that would result in a 'Cloud not found' error when trying to use a shared/public cloud.
+Fixed an error that could be seen with select options having an Integer default value.
+
+v4.1.2
+^^^^^^
+Enhancements
+````````````
+Improved APIClient so that is easier to use. See APIClient.
+
+v4.1.1
+^^^^^^
+Fixes
+````````````
+Fix issue with resource-pools add resulting in no Group and Plan access. Now it passes resourcePermissions.all=true by default.
 
 Security
 --------
+- Appliances: Java updated to OpenJDK JRE 8u232
+- Node Packages: Java updated to OpenJDK JRE 8u232
 
 Morpheus Hub
 ------------
 Morpheus Hub Login - bad creds
 Morpheus Hub Registration - insufficient password
+Community License display changes
+Free - License Type
+Free - Registration
+Morpheus Hub Registration - UI Tweaks
+Free - License Restrictions
