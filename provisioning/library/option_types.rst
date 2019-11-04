@@ -22,12 +22,14 @@ EXPORT AS METADATA
 TYPE
  Text
   Text Input Field
- Select
+ Select List
   Used with Option Lists, presents a manual or rest populated dropdown list
  Checkbox
   Checkbox with true or false values
  Number
   Input field allowing only numbers
+ Typeahead
+  Used with Option Lists: Rather than presenting a potentially-large dropdown menu, the user can begin typing a selection into a text field and choose the desired option. Multiple selections can be allowed with this type by marking the 'ALLOW MULTIPLE SELECTIONS' box
  Hidden
   No filed will be displays, but the field name and default value will be added to Instance config map for reference.
 LABEL
