@@ -27,7 +27,7 @@ App Dynamics            4.5.1
 **Networking**          ..
 Cisco ACI               3.10
 VMware NSX              -V
-phpIPAM                 1.3
+phpIPAM                 1.3.1
 **Backups**             ..
 Veeam                   9.5
 Commvault               v11 sp 12
