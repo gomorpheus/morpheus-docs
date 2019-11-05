@@ -10,7 +10,7 @@ Delete
 
 .. IMPORTANT:: Deleting an Instance will delete associated VM's or Containers and cannot be undone. To delete instances without deleting associated VM's, delete the VM from the Infrastructure section and uncheck "Remove Infrastructure" while checking "Remove Associated Instances" in the delete modal options.
 
-.. TIP:: You can change the owner of an instance easily by selecting the edit button and entering a new owner in the corresponding field.  
+.. TIP:: You can change the owner of an instance easily by selecting the edit button and entering a new owner in the corresponding field.
 
 Actions
 ^^^^^^^
@@ -23,10 +23,12 @@ Stop/Start/Restart Service
   Stops, Starts or Restarts the service associated with the Instance Type.
 Stop/Start/Restart Server
   Stops, Starts or Restarts the Virtual Machine.
+Import as Image
+  Creates a Virtual Image Blueprint from the Instance at its current state and adds it to the Virtual Image library with corresponding metadata.
+Clone to Image
+  Stores the image in vCenter as a virtual image record
 Lock/Unlock Instance
   A locked instance cannot be deleted until it is unlocked.
-Import As Image
-  Creates a Virtual Image Blueprint from the Instance at its current state and adds it to the Virtual Image library with corresponding metadata.
 Reconfigure
   The Reconfigure action allows service plan, disk, cpu, ram, networks and storage controller changes. Available options depend on the instance type and service plan configuration. Some resize actions require an instance restart.
 Clone
