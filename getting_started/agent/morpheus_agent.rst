@@ -29,9 +29,13 @@ Key Agent Features
 * Run workflows, Have expiration/shutdown policies and can help reign in environments amongst other things
 * Accepts commands, can execute commands, write files, and manipulate firewall
 
+<<<<<<< HEAD
 Agent Install Modes
 -------------------
 There are 5 Agent install modes:
+=======
+When provisioning an instance, there are some network and configuration requirements to successfully install the morpheus agent.  Typically when a vm instance is still in the provisioning phase long after the vm is up, the instance is unable to reach |morpheus|, or depending on agent install mode, |morpheus| is unable to reach the instance.
+>>>>>>> c4a6f91f... Correct typo on agent install page
 
 - SSH / WinRM /Guest Execution
 - VMware Tools / guest execution
