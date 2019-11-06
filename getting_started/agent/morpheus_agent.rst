@@ -1,12 +1,12 @@
 Morpheus Agent
 ===============
 
-The |morpheus| Agent is an important and powerful facet of |morpheus| as a orchestration tool.  Though it is not required (one unique capability of our platform vs. some of the competitors out there), it is recommended for use as it brings with it a lot of insightful benefits.  Not only does it provide statistics of the guest operating system and resource utilization, it also brings along with it monitoring and log aggregation capabilities.  After an initial brownfield discovery users can decide to convert unmanaged vms to managed.  The |morpheus| Agent is very lightweight and secure.
+The |morpheus| Agent is an important and powerful facet of |morpheus| as a orchestration tool.  Though not required, it is recommended for use as it brings with it a lot of insightful benefits. It's also a key differentiator between Morpheus and some other competing platforms. Not only does it provide statistics of the guest operating system and resource utilization, it also brings along with it monitoring and log aggregation capabilities. After an initial brownfield discovery, users can decide to convert unmanaged virtual machines to managed. Even with the numerous benefits it provides, the |morpheus| Agent is very lightweight and secure.
 
 .. NOTE::
-      **The agent is not required** by |morpheus| to become a managed instance.  If you don't have the agent installed we try to aggregate stats but it can vary based on the cloud and can be limited or inaccurate.
+      **The agent is not required** by |morpheus| to become a managed instance.  If you don't have the agent installed we try to aggregate stats but it can vary based on the cloud and can be limited.
 
-The |morpheus| Agent does not open any inbound network ports but rather only opens an outbound connection back to the Morpheus appliance over port 443 (https or wss protocol). This allows for a bidirectional command bus where instructions can be sent to orchestrate a workload without needing access to things like SSH or WinRM. The tool can even be installed at provision time via things like cloud-init, such that the |morpheus| appliance itself doesn't even need direct network access to the VLAN under which the workload resides. By doing this we address many of the network security concerns that come up with regards to the agent while demonstrating its security benefits as well as analytics benefits. We can even use this statistical data at the guest OS level rather than the hypervisor level to provide extremely precise right-sizing recommendations.
+The |morpheus| Agent does not open any inbound network ports but rather only opens an outbound connection back to the Morpheus appliance over port 443 (https or wss protocol). This allows for a bidirectional command bus where instructions can be sent to orchestrate a workload without needing access to things like SSH or WinRM. The tool can even be installed at provision time via things like cloud-init, such that the |morpheus| appliance itself doesn't even need direct network access to the VLAN under which the workload resides. By doing this we address many of the network security concerns that arise with regards to the agent while demonstrating its security benefits as well as analytics benefits. We can even use this statistical data at the guest OS level rather than the hypervisor level to provide extremely precise right-sizing recommendations.
 
 
 Key Agent Features
@@ -138,7 +138,7 @@ Morpheus Agent OS Support
 Agent Install
 --------------
 
-When provisioning an instance, there are some network and configuration requirements to successfully install the morpheus agent.  Typically when a vm instance is still in the provisioning phase long after the vm is up, the instance is unable to reach |morpheus|, or depending on agent install mode, |morpheus| is unable to reach the instance.
+When provisioning an instance, there are network and configuration requirements to successfully install the morpheus agent. Typically when a VM instance is still in the provisioning phase long after the VM is up, the instance is unable to reach |morpheus|. Alternatively, depending on the agent install mode, |morpheus| may be unable to reach the instance.
 
 The most common reason an agent install fails is the provisioned instance cannot reach the |morpheus| Appliance via the appliance_url set in Admin -> Settings over both 443 and 80. When an instance is provisioned from |morpheus|, it must be able to reach the |morpheus| appliance via the appliance_url or the agent will not be installed.
 
@@ -146,7 +146,7 @@ The most common reason an agent install fails is the provisioned instance cannot
     :align: center
 
 
-In addition to the main appliance_url in Admin -> Settings, additional appliance_urls can be set per cloud in the Advanced options of the cloud configuration pane when creating or editing a cloud. When this field is populated, it will override the main appliance url for anything provisioned into that cloud.
+In addition to the main appliance_url in Admin -> Settings, additional appliance_urls can be set per cloud in the Advanced options section of the cloud configuration pane when creating or editing a cloud. When this field is populated, it will override the main appliance url for anything provisioned into that cloud.
 
 .. TIP:: The |morpheus| UI current log, located at /var/log/morpheus/morpheus-ui/current, is very helpful when troubleshooting agent installations.
 
@@ -180,13 +180,13 @@ When an instance is provisioned and the agent does not install, verify the follo
 
 * Inbound connectivity access to the |morpheus| Appliance from provisioned VM's and container hosts on port 443 (needed for agent communication)
 
-* Private (non-morpheus provided) vm images/templates must have their credentials entered. These can be entered/edited in the Provisioning - Virtual Images section but clicking the Actions dropdown of an image and selecting Edit.
+* Private (non-morpheus provided) VM images/templates must have their credentials entered. These can be entered/edited in the Provisioning > Virtual Images section by clicking the Actions dropdown of an image and selecting Edit.
 
 .. NOTE:: Administrator user is required for Windows agent install.
 
-* The instance does not have an IP address assigned. For scenarios without a dhcp server, static IP information must be entered by selecting the Network Type: Static in the Advanced section during provisioning. IP Pools can also be created in the Infrastructure -> Networks -> IP Pools section and added to clouds network sections for IPAM.
+* The instance does not have an IP address assigned. For scenarios without a dhcp server, static IP information must be entered by selecting the Network Type: Static in the Advanced section during provisioning. IP Pools can also be created in the Infrastructure -> Networks -> IP Pools section and added to the clouds network sections for IPAM.
 
-* DNS is not configured and the node cannot resolve the appliance. If dns cannot be configure, the ip address of the |morpheus| appliance can be used as the main or cloud appliance.
+* DNS is not configured and the node cannot resolve the appliance. If dns cannot be configured, the IP address of the |morpheus| appliance can be used as the main or cloud appliance.
 
 SSH/Winrm
 ^^^^^^^^^
