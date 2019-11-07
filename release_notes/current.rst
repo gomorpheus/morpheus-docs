@@ -6,45 +6,46 @@ v4.1.1 Release Notes
 New Features
 ------------
 
-- SCVMM : Datastore selection options now filter based on selected resource pool and host
-- White Labelling: Sub-tenant notifications branding added
-- Cloud Formation: CF templates can now be provisioned as Instances using Cloud Formation layout types and Spec Templates
-- Library: Node Types: New Cloud Formation Layout technology Type. Allows CF Spec Templates as Instances
-- Library: Spec Templates: New Cloud Formation Spec Template type
-- User Settings: Complex Passwords now required for Linux and Windows users in User Settings. Password must contain at least one uppercase letter, one lowercase letter, a number, and a symbol.
-- AWS: Support added for Static IP Assignment
-- Instances: List View: Actions selection removed when multiple Instances are selected and at least one is in a Read Only Group
-- AWS: Plans: Seeded plans for ``R5A`` and ``T3A`` AWS Instance Types added
-- AWS: RDS: MSSQL Server support added
-- Usage: ``createdByUser``, ``createdByUserId``, ``siteId``, ``siteName``, ``siteUUID``, ``siteCode``, and ``metadata []`` now returned for ``/api/billing`` records. ``serverUniqueId`` added for Containers, ``serverUniqueId`` added for Servers, ``zoneCode`` added for Zones/Clouds. NOTE: These values will only be populated for newly created usage records. Not all record will have values for all fields, such as ``createdByUser`` and ``createdByUserId`` for discovered servers, site information for non-instance records)
+AWS: Plans: Seeded plans for R5A and T3A AWS Instance Types added
+AWS: RDS: MSSQL Server support added
+AWS: Support added for Static IP Assignment
+Cloud Formation: CF templates can now be provisioned as Instances using Cloud Formation layout types and Spec Templates
+Instances: List View: Actions selection removed when multiple Instances are selected and at least one is in a Read Only Group
+IPAM: ``THROTTLE RATE`` setting added to Infoblox and Bluecat to control API/sync rate.
+Library: Node Types: New Cloud Formation Layout technology Type. Allows CF Spec Templates as Instances
+Library: Spec Templates: New Cloud Formation Spec Template type
+SCVMM : Datastore selection options now filter based on selected resource pool and host
+Usage: createdByUser, createdByUserId, siteId, siteName, siteUUID, siteCode, and metadata [] now returned for /api/billing records. serverUniqueId added for Containers, serverUniqueId added for Servers, zoneCode added for Zones/Clouds. NOTE: These values will only be populated for newly created usage records. Not all record will have values for all fields, such as createdByUser and createdByUserId for discovered servers, site information for non-instance records)
+User Settings: Complex Passwords now required for Linux and Windows users in User Settings. Password must contain at least one uppercase letter, one lowercase letter, a number, and a symbol.
+White Labelling: Sub-tenant notifications branding added
 
 Fixes
 -----
 
-- Tenants: Fix for Tenant deletion failing due to "'morpheusdb.storage_group_storage_volume' doesn't exist"
-- Docker: Fix for cloud-init iso not being ejected after VMware Docker host creation
-- Tasks: Fix for Task Results for Library Script Task task types returning ``null``
-- AWS: Fix for "image is larger than select plan" error displaying on Plan when volume size is less than minimum requirement for Image
-- Nutanix: Fix for deleting instances with ``Preserve Backups`` unchecked not deleting associated snapshots in AHV
-- IPAM Integrations: Fix for Network Filter and Zone Filter field character limit <255
-- VMware: Child Network: Fix for ``network config error`` when using IP Pools with VMware Child Networks
-- vCloud Director: Fix for CD-ROM addressed potentially conflicting with additional network interface addresses
-- Workflows: Fix for teardown workflows do not run when the user deletes a VM and its associated Instance from the VM details page (infrastructure/servers/virtual-machines) instead of from Instances section
-- Licenses: Fix for Windows Licenses still being applied to scoped Images in Tenants without permissions to Licenses
-- Usage: Fix for Instance Plan not updating when source VM plan is change but associated Instance is not in a running state
-- Tenants: Fix for inability to delete a tenant with an assigned Master Tenant Policy
-- Security Groups:  Fix for non-applicable Security Group Rule Types listed when scoped Cloud does not have associated Instance
-- Service Plans: Fix for Required Field validation
-- Library: Node Types: Fix for Count and Image selection validation
-- vCloud Director: Fix for DSN Hostname field override
-- Azure: Fix for provisioning issue using Azure Blob storage in conjunction with an active Budget Policy
 - Apps: Fix for Blueprint configurations not loading when no Cloud is selected during New App -> Setup step
+- AWS: Fix for "image is larger than select plan" error displaying on Plan when volume size is less than minimum requirement for Image
 - AWS: Fix for inconsistent synced AMI region validation for Ireland region
 - AWS: Fix for Proxy Settings not applying to Amazon Cost Service data
-- Microsoft DNS: Fix for ``Last Updated`` date display
+- Azure: Fix for provisioning issue using Azure Blob storage in conjunction with an active Budget Policy
+- Docker: Fix for cloud-init iso not being ejected after VMware Docker host creation
 - Instances: Hourly Job added to update `Managed` VM records to `Unmanaged` when no Instance association exists
-- Reconfigure: Validation added for Plan selection before Reconfigure can be triggered
+- IPAM Integrations: Fix for Network Filter and Zone Filter field character limit <255
 - Library: Fix for 500 Error when trying to delete Node Type that in use or was previously used
+- Library: Node Types: Fix for Count and Image selection validation
+- Licenses: Fix for Windows Licenses still being applied to scoped Images in Tenants without permissions to Licenses
+- Microsoft DNS: Fix for ``Last Updated`` date display
+- Nutanix: Fix for deleting instances with ``Preserve Backups`` unchecked not deleting associated snapshots in AHV
+- Reconfigure: Validation added for Plan selection before Reconfigure can be triggered
+- Security Groups:  Fix for non-applicable Security Group Rule Types listed when scoped Cloud does not have associated Instance
+- Service Plans: Fix for Required Field validation
+- Tasks: Fix for Task Results for Library Script Task task types returning ``null``
+- Tenants: Fix for inability to delete a tenant with an assigned Master Tenant Policy
+- Tenants: Fix for Tenant deletion failing due to "'morpheusdb.storage_group_storage_volume' doesn't exist"
+- Usage: Fix for Instance Plan not updating when source VM plan is change but associated Instance is not in a running state
+- vCloud Director: Fix for CD-ROM addressed potentially conflicting with additional network interface addresses
+- vCloud Director: Fix for DSN Hostname field override
+- VMware: Child Network: Fix for ``network config error`` when using IP Pools with VMware Child Networks
+- Workflows: Fix for teardown workflows do not run when the user deletes a VM and its associated Instance from the VM details page (infrastructure/servers/virtual-machines) instead of from Instances section
 
 .. API: Refresh Access Token issues
 .. API Access - Refresh Token
@@ -101,10 +102,5 @@ Security
 
 Morpheus Hub
 ------------
-Morpheus Hub Login - bad creds
-Morpheus Hub Registration - insufficient password
-Community License display changes
-Free - License Type
-Free - Registration
-Morpheus Hub Registration - UI Tweaks
-Free - License Restrictions
+
+- Morpheus Hub Registration and Login added to initial Appliance Setup for licenses. Note the registration and login options will only appear if the Appliance can reach https://morpheushub.com
