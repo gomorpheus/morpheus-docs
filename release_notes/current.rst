@@ -6,18 +6,18 @@ v4.1.1 Release Notes
 New Features
 ------------
 
-AWS: Plans: Seeded plans for R5A and T3A AWS Instance Types added
-AWS: RDS: MSSQL Server support added
-AWS: Support added for Static IP Assignment
-Cloud Formation: CF templates can now be provisioned as Instances using Cloud Formation layout types and Spec Templates
-Instances: List View: Actions selection removed when multiple Instances are selected and at least one is in a Read Only Group
-IPAM: ``THROTTLE RATE`` setting added to Infoblox and Bluecat to control API/sync rate.
-Library: Node Types: New Cloud Formation Layout technology Type. Allows CF Spec Templates as Instances
-Library: Spec Templates: New Cloud Formation Spec Template type
-SCVMM : Datastore selection options now filter based on selected resource pool and host
-Usage: createdByUser, createdByUserId, siteId, siteName, siteUUID, siteCode, and metadata [] now returned for /api/billing records. serverUniqueId added for Containers, serverUniqueId added for Servers, zoneCode added for Zones/Clouds. NOTE: These values will only be populated for newly created usage records. Not all record will have values for all fields, such as createdByUser and createdByUserId for discovered servers, site information for non-instance records)
-User Settings: Complex Passwords now required for Linux and Windows users in User Settings. Password must contain at least one uppercase letter, one lowercase letter, a number, and a symbol.
-White Labelling: Sub-tenant notifications branding added
+- AWS: Plans: Seeded plans for R5A and T3A AWS Instance Types added
+- AWS: RDS: MSSQL Server support added
+- AWS: Support added for Static IP Assignment
+- Cloud Formation: CF templates can now be provisioned as Instances using Cloud Formation layout types and Spec Templates
+- Instances: List View: Actions selection removed when multiple Instances are selected and at least one is in a Read Only Group
+- IPAM: ``THROTTLE RATE`` setting added to Infoblox and Bluecat to control API/sync rate.
+- Library: Node Types: New Cloud Formation Layout technology Type. Allows CF Spec Templates as Instances
+- Library: Spec Templates: New Cloud Formation Spec Template type
+- SCVMM : Datastore selection options now filter based on selected resource pool and host
+- Usage: createdByUser, createdByUserId, siteId, siteName, siteUUID, siteCode, and metadata [] now returned for /api/billing records. serverUniqueId added for Containers, serverUniqueId added for Servers, zoneCode added for Zones/Clouds. NOTE: These values will only be populated for newly created usage records. Not all record will have values for all fields, such as createdByUser and createdByUserId for discovered servers, site information for non-instance records)
+- User Settings: Complex Passwords now required for Linux and Windows users in User Settings. Password must contain at least one uppercase letter, one lowercase letter, a number, and a symbol.
+- White Labelling: Sub-tenant notifications branding added
 
 Fixes
 -----
@@ -59,41 +59,41 @@ v4.1.5
 ^^^^^^
 Enhancements
 ````````````
-New format for -S, --sort ORDER Sort Order. DIRECTION may be included as "ORDER [asc|desc]". Example: instances list -S "dateCreated desc"
-New command monitor-alerts. Requires appliance version 4.1.1
-Improved commands monitor-contacts add, monitor-checks, monitor-groups and monitor-apps by adding prompting.
+- New format for -S, --sort ORDER Sort Order. DIRECTION may be included as "ORDER [asc|desc]". Example: instances list -S "dateCreated desc"
+- New command monitor-alerts. Requires appliance version 4.1.1
+- Improved commands monitor-contacts add, monitor-checks, monitor-groups and monitor-apps by adding prompting.
 
 Fixes
 ````````````
-Fixed roles update to support the --payload option.
-Fixed issue with instances logs, containers logs, etc displaying records in the reverse order. Changed to match the UI.
-Fixed instances view and apps view only allowing one [instance] argument.
+- Fixed roles update to support the --payload option.
+- Fixed issue with instances logs, containers logs, etc displaying records in the reverse order. Changed to match the UI.
+- Fixed instances view and apps view only allowing one [instance] argument.
 
 v4.1.4
 ^^^^^^
 Fixes
 ````````````
-Fix issue with blueprints add-instance that would not allow multiple instances of the same type for a tier.
-Fix issue with blueprints add-instance-config not prompting for Group, and instance can now be specified by name or index instead of just type.
+- Fix issue with blueprints add-instance that would not allow multiple instances of the same type for a tier.
+- Fix issue with blueprints add-instance-config not prompting for Group, and instance can now be specified by name or index instead of just type.
 
 v4.1.3
 ^^^^^^
 Fixes
 ````````````
-Fix issue with instances clone that would result in a 'Cloud not found' error when trying to use a shared/public cloud.
-Fixed an error that could be seen with select options having an Integer default value.
+- Fix issue with instances clone that would result in a 'Cloud not found' error when trying to use a shared/public cloud.
+- Fixed an error that could be seen with select options having an Integer default value.
 
 v4.1.2
 ^^^^^^
 Enhancements
 ````````````
-Improved APIClient so that is easier to use. See APIClient.
+- Improved APIClient so that is easier to use. See APIClient.
 
 v4.1.1
 ^^^^^^
 Fixes
 ````````````
-Fix issue with resource-pools add resulting in no Group and Plan access. Now it passes resourcePermissions.all=true by default.
+- Fix issue with resource-pools add resulting in no Group and Plan access. Now it passes resourcePermissions.all=true by default.
 
 Security
 --------
