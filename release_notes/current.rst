@@ -24,7 +24,7 @@ Fixes
 
 - Apps: Fix for Blueprint configurations not loading when no Cloud is selected during New App -> Setup step
 - AWS: Fix for "image is larger than select plan" error displaying on Plan when volume size is less than minimum requirement for Image
-- AWS: Fix for inconsistent synced AMI region validation for Ireland region
+- AWS: Fix for AMI Image Location issue when two AMI's have them same name in different regions, affecting provisioning of Images to Regions added after first Region.
 - AWS: Fix for Proxy Settings not applying to Amazon Cost Service data
 - Azure: Fix for provisioning issue using Azure Blob storage in conjunction with an active Budget Policy
 - Docker: Fix for cloud-init iso not being ejected after VMware Docker host creation
@@ -99,6 +99,11 @@ Security
 --------
 - Appliances: Java updated to OpenJDK JRE 8u232
 - Node Packages: Java updated to OpenJDK JRE 8u232
+
+System
+------
+
+- Added improved handling of messages when database is unreachable to prevent out of memory errors and improve application recovery
 
 Morpheus Hub
 ------------
