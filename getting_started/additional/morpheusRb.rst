@@ -83,5 +83,17 @@ Morpheus allows for additional advanced customizations to the morpheus.rb file l
 
 .. NOTE:: elasticsearch['replica_count'] settings only apply to local Elasticsearch and not an external cluster. The user must set the replica count in the code for each index. The setting in morpheus.rb is only the cluster default and only applies to the all-in-one appliance. If the cluster is external, the user must set the default on their Elasticsearch config file.
 
+Enabling SSL for connecting to external Elasticsearch
+----------------------------------
+
+Users must turn on Elasticsearch HTTPS configuration in morpheus.rb in order to connect to Elasticsearch externally. The elasticsearch['es_hosts'] value is a hash where the host name is the key and the value is the port. We must also set elasticsearch['use_tls'] to true. An example configuration is below:
+
+.. code-block:: bash
+
+  elasticsearch['enable'] = false
+  elasticsearch['cluster'] = 'yourCluster'
+  elasticsearch['es_hosts'] = {'10.0.0.1' => 9200, '10.0.0.2' => 9200, '10.0.0.3' => 9200}
+  elasticsearch['use_tls'] = true
+
 .. include:: offline.rst
 .. include:: proxies.rst
