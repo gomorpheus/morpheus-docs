@@ -1,7 +1,7 @@
 Morpheus Documentation
 ======================
 
-What's new in v4.1.0
+What's new in v4.1.1
 --------------------
 
 - AWS: Plans: Seeded plans for R5A and T3A AWS Instance Types added
@@ -37,7 +37,7 @@ Morpheus Hub
 ------------
 - Morpheus Hub Registration and Login added to initial Appliance Setup for licenses. Note the registration and login options will only appear if the Appliance can reach https://morpheushub.com
 
-See :doc:`release_notes/current.rst` for additional information. 
+See :doc:`release_notes/current.rst` for additional information.
 
 .. toctree::
    :maxdepth: 3
