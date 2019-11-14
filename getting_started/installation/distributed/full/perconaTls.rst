@@ -1,14 +1,14 @@
 .. _Percona TLS:
 
 Percona XtraDB Cluster with TLS
--------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Installation and configuration of Percona XtraDB Cluster on CentOS/RHEL 7 with TLS enabled for all comms.
 
 .. IMPORTANT:: This is a sample configuration only. Customer configurations and requirements will vary.
 
 Requirements
-^^^^^^^^^^^^
+````````````
 
 Percona requires the following ports for the cluster nodes. Please create the appropriate firewall rules on your
 Percona nodes.
@@ -19,7 +19,7 @@ Percona nodes.
 - 4568
 
 Configure SElinux
-^^^^^^^^^^^^^^^^^
+`````````````````
 
 When SELinux is set to ``Enforcing``, by default it will block Percona Cluster communication.
 
@@ -66,7 +66,7 @@ To allow Percona XtraDB Cluster functionality when SELinux is ``Enforcing``, run
 
 
 Add Percona Repo
-^^^^^^^^^^^^^^^^
+````````````````
 
 #. Add the percona repo to your Linux Distro.
 
@@ -84,7 +84,7 @@ Add Percona Repo
     [root]# yum update -y --skip-broken
 
 Installing Percona XtraDB Cluster
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+`````````````````````````````````
 
 #. Install the Percona XtraDB Cluster software and it’s dependences.
 
@@ -150,7 +150,7 @@ Installing Percona XtraDB Cluster
 Once the service is stopped on all nodes move onto the next step.
 
 Add [mysqld] to my.cnf in /etc/
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+```````````````````````````````
 
 #. Add the following to ``/etc/my.cnf``.  The node_name and node_address needs to be unique on each of the nodes.
 
@@ -251,7 +251,7 @@ Add [mysqld] to my.cnf in /etc/
 
 
 Bootstrap Node 01
-^^^^^^^^^^^^^^^^^
+``````````````````
 
 .. IMPORTANT:: Ensure mysql.service is stopped prior to bootstrap.
 
@@ -266,7 +266,7 @@ Bootstrap Node 01
    .. NOTE:: Startup failures are commonly caused by misconfigured ``/etc/my.cnf`` files. Also verify ``safe_to_bootstrap`` is set to ``1`` on Node 01 in ``/var/lib/mysql/grastate.dat``.
 
 Configure Morpheus Database and User
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+````````````````````````````````````
 
 #. Create the Database you will be using with morpheus.
 
@@ -301,7 +301,7 @@ Login to mysql on Node 01:
     mysql> exit
 
 Copy SSL Files to other nodes
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+`````````````````````````````
 
 During initialization of Node 01 the required `pem` files will be generated in ``/var/lib/mysql``. The ``ca.pem``, ``server-cert.pem`` and ``server-key.pem`` files need to match on all nodes in the cluster.
 
@@ -318,7 +318,7 @@ During initialization of Node 01 the required `pem` files will be generated in `
     .. note:: The generated certificate is self signed. Consult Percona documentation for [mysqld] and SSL file configuration when providing your own.
 
 Start the Remaining Nodes
-^^^^^^^^^^^^^^^^^^^^^^^^^
+`````````````````````````
 
 #. Start mysql on Node 02 and Node 03
 
@@ -332,7 +332,7 @@ Start the Remaining Nodes
 
 
 Verify Configuration
-^^^^^^^^^^^^^^^^^^^^
+````````````````````
 
 #. Verify SELinux is not rejecting any db cluster communication by running the below on all db nodes:
 
