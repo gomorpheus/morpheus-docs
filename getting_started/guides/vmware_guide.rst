@@ -1,3 +1,6 @@
+Getting started with Morpheus and VMware
+====================================================================
+
 INTRODUCTION
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -108,7 +111,7 @@ In the prior section, we manually provisioned our first instance. However, Morph
 
 Navigate to `Provisioning > Library > NODE TYPES` and click "+ADD".
 
-.. image:: /Desktop/vCenter Guide Images/addNode.png
+.. image:: vCenter Guide Images/NewCatalogItem/1addNode.png
 
 In this example, I am going to set the following options in the "NEW NODE TYPE" wizard:
 
