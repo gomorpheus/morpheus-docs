@@ -100,7 +100,7 @@ Playbook
 Running Playbooks
 ^^^^^^^^^^^^^^^^^
 
-Playbooks can also be ran on all inventory groups, individual groups, or added as a task and ran with workflows.
+Playbooks can also be run on all inventory groups, individual groups, or added as a task and ran with workflows.
 
 To run Ansible on all or a single inventory group, in the Ansible tab of the |morpheus| Group page, select the `Actions` dropdown and click `Run`.
 
