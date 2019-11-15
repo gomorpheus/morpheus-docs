@@ -4,7 +4,7 @@ Getting started with Morpheus and VMware
 Introduction
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Welcome to Morpheus! This guide is designed to help you get started and quickly get the most out of Morpheus with VMWare. By the end, you will integrate your first cloud, configure networking, prepare and consume images, provision instances, and get started with automation. We will briefly discuss installation and account setup but will provide links to additional resources for those very first steps. For the most part, this guide assumes you are able to get Morpheus installed and are ready to move forward from that point. There is a lot more to see and do in Morpheus that is beyond the scope of this guide. For more, consult the complete Morpheus documentation or take part in our user community forum.
+This guide is designed to help you get started and quickly get the most out of Morpheus with VMWare. By the end, you will integrate your first cloud, configure networking, prepare and consume images, provision instances, and get started with automation. We will briefly discuss installation and account setup but will provide links to additional resources for those very first steps. For the most part, this guide assumes you are able to get Morpheus installed and are ready to move forward from that point. There is a lot more to see and do in Morpheus that is beyond the scope of this guide. For more, consult the complete Morpheus documentation or take part in our user community forum.
 
 Installation & Setup
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -111,7 +111,7 @@ In the prior section, we manually provisioned our first instance. However, Morph
 
 Navigate to `Provisioning > Library > NODE TYPES` and click "+ADD".
 
-.. image:: /images/vCenter Guide Images/NewCatalogItem/1addNode.png
+.. image:: /images/vCenterGuideImages/NewCatalogItem/1addNode.png
 
 In this example, I am going to set the following options in the "NEW NODE TYPE" wizard:
 
@@ -127,11 +127,19 @@ In this example, I am going to set the following options in the "NEW NODE TYPE" 
 
 .. NOTE:: Within the "VMware VM Options" section you should add anything that will always be used for this node, regardless of the specific deployment details. This can include LDAP Authentication, bash scripts that should run on installation, among other things.
 
+.. image:: /images/vCenterGuideImages/NewCatalogItem/2nodeSettings.png
+
 With the new node created, we'll now add a new instance type which will be accessable from the provisioning wizard once created. Move from the "NODE TYPES" tab to the "INSTANCE TYPES" tab and click "#ADD".
+
+.. image:: /images/vCenterGuideImages/NewCatalogItem/3addInstanceType.png
 
 In the "NEW INSTANCE TYPE" wizard, I'll simply enter a **NAME** and **CODE** value. Click "SAVE CHANGES".
 
+.. image:: /images/vCenterGuideImages/NewCatalogItem/4instanceTypeSettings.png 
+
 Now that we've created a new instance type, access it by clicking on the name in the list of custom instances you've created. In my case, I've given the name "NewInstanceType".
+
+.. image:: /images/vCenterGuideImages/NewCatalogItem/5openInstanceType.png
 
 Once we've opened the new instance type, by default, we should be on the "LAYOUTS" tab. Click "+ADD LAYOUT".
 
@@ -147,11 +155,21 @@ I've set the following fields on my example layout:
 
 Click "SAVE CHANGES".
 
-At this point we've completed the setup work and can now provision the instance we've created to our specifications. Navigate to `Provisioning > Instances` and click "+ADD". From the search bar we can search for the new instance type we've created. In the example case, we called it "newinstancetype". Click "NEXT". As before, we can select a group and cloud to provision this new instance. Click "NEXT". On the "CONFIGURE" tab, make note that the layout and plan are already selected because they were configured as part of creating the new instance type. Select a network and click "NEXT". Once again we will also click "NEXT" through the "AUTOMATION" tab. Finally, click "COMPLETE".
+.. image:: /images/vCenterGuideImages/NewCatalogItem/6layoutSettings.png
+
+At this point we've completed the setup work and can now provision the instance we've created to our specifications. Navigate to `Provisioning > Instances` and click "+ADD". From the search bar we can search for the new instance type we've created. In the example case, we called it "newinstancetype". Click "NEXT". 
+
+.. image:: /images/vCenterGuideImages/NewCatalogItem/7newInstanceSearch.png
+
+As before, we can select a group and cloud to provision this new instance. Click "NEXT". On the "CONFIGURE" tab, make note that the layout and plan are already selected because they were configured as part of creating the new instance type. Select a network and click "NEXT". Once again we will also click "NEXT" through the "AUTOMATION" tab. Finally, click "COMPLETE".
+
+.. image:: /images/vCenterGuideImages/NewCatalogItem/8newInstanceConfigure.png
 
 As before when we manually provisioned an instance, Morpheus will now begin to spin up the new VM. How long this will take depends on your environment but Morpheus will predict how long this process will take and represent that on a progress bar. Over time, Morpheus begins to learn how long these processes take and becomes more accurate in predicting spin-up time.
 
 Once the privisioning process has completed, open the instance detail page in Morpheus and click on the "CONSOLE" tab. You'll be logged in with your user account and are then able to confirm the machine is ready and available.
+
+.. image:: /images/vCenterGuideImages/NewCatalogItem/10newInstanceConsole.png
 
 Automation and Configuration Management
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
