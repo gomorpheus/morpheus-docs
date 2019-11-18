@@ -129,7 +129,7 @@ In this example, I am going to set the following options in the "NEW NODE TYPE" 
 
 .. image:: /images/vCenterGuideImages/NewCatalogItem/2nodeSettings.png
 
-With the new node created, we'll now add a new instance type which will be accessable from the provisioning wizard once created. Move from the "NODE TYPES" tab to the "INSTANCE TYPES" tab and click "#ADD".
+With the new node created, we'll now add a new instance type which will be accessable from the provisioning wizard once created. Move from the "NODE TYPES" tab to the "INSTANCE TYPES" tab and click "+ADD".
 
 .. image:: /images/vCenterGuideImages/NewCatalogItem/3addInstanceType.png
 
@@ -173,6 +173,46 @@ Once the privisioning process has completed, open the instance detail page in Mo
 
 Automation and Configuration Management
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Morpheus automation is composed of Tasks and Workflows. A task could be a script added directly, scripts or blueprints pulled from the Morpheus Library, playbooks, recipes, or a number of other things. The complete list of task types can be found in the `Automation section <https://docs.morpheusdata.com/en/4.1.1/provisioning/automation/automation.html#automation>`_ of Morpheus docs. Tasks can be executed individually but they are often combined into workflows. We can opt to run a workflow at provision time or they can be executed on existing instances through the Actions menu.
+
+In this guide we will set up an Ansible integration, create a task, add the task to a workflow, and run the workflow against a new and existing instance. If you've worked through this guide to this point, you should already have an Apache instance running. If you don't yet have that, provision one before continuing with this guide and ensure it's reachable on port 80.
+
+We'll first set up the Ansible integration, you can integrate with the sample repository referenced here or integrate with your own. Go to 'Administration > Integrations'. Click "+NEW INTEGRATION" and select Ansible from the dropdown menu. Fill in the following details:
+
+- **NAME**
+
+- **ANSIBLE GIT URL**: https://github.com/ncelebic/morpheus-ansible-example, or enter the URL for your own Ansible git repository
+
+- **PLAYBOOKS PATH**
+
+- **ROLES PATH**
+
+- Mark the box to "USE MORPHEUS AGENT COMMAND BUS"
+
+.. NOTE:: If your git repository requires authentication, you should create a keypair and use the following URL format: git@github.com:ncelebic/morpheus-ansible-example.git.
+
+Click "SAVE CHANGES". You'll now see our new Ansible integration listed among any other configured inetegrations. If we click on this new integration to view detail, a green checkmark icon indicates the git repository has been fully synced.
+
+With the Ansible integration set up, we can now create a task that includes our playbook. Go to `Provisioning > Automation`, click "+ADD". We'll first set our "TYPE" value to Ansible Playbook so that the correct set of fields appear in the "NEW TASK" wizard. Set the following options:
+
+- **NAME**
+
+- **ANSIBLE REPO**: Here we will choose the Ansible integration that we just created
+
+- **PLAYBOOK**: In our example case, enter 'playbook.yml'
+
+Click "SAVE CHANGES" to save our new task. We can test the new task on our Apache VM now by going to `Provisioning > Instances` and clicking into our VM. From the "ACTIONS" menu select "Run Task". From the "TASK" dropdown menu, select the task we just added and click "EXECUTE".
+
+To see the progress of the task, click on the "HISTORY" tab and click on the (i) button to the right of each entry in the list. In this case, we can also see the results of the task by clicking on the link in the "LOCATION" column of the "VMS" section.
+
+Now that our task is created, we can put it into a workflow. Back in `Provisioning > Automation` we will click on the "WORKFLOWS" tab. Click "+ADD" and select Provisioning Workflow. We'll give the new workflow a name and expand the Post Provision section. As we begin to type in the name of the task we've created, it should appear as a selection. Click "SAVE CHANGES".
+
+Now that we have a workflow, return to `Provisioning > Instances` and begin to provision another Apache instance. More detailed instructions on provisioning a new Apache instance are included earlier in this guide if needed. Now, when you reach the "AUTOMATION" section of the "CREATE INSTANCE" wizard, we have a workflow to select. From the "WORKFLOW" dropdown menu, select the workflow we just created and complete provisioning of the new instance.
+
+As the instance is provisioning, we can go to the "HISTORY" tab and see Morpheus executing the tasks that were contained in our workflow.
+
+This is just one example of using Morpheus to automate the process of configuring and instance to your needs. There are a number of other automation types that can be built into your workflows as well. For further information, take a look at the `automation integrations <https://docs.morpheusdata.com/en/4.1.1/integration_guides/integration_guides.html#automation>`_ guide in Morpheus docs.
 
 Advanced VMware Configuration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
