@@ -189,7 +189,7 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-    (master_doc, 'morpheusdocs', u'Morpheus Documentation',
+    (master_doc, 'morpheusdocs', u'os.environ.get('COMPANY')',
      author, 'Morpheus', 'Morpheus Documentation',
      'UI Docs'),
 ]
@@ -198,8 +198,8 @@ html_theme = "sphinx_rtd_theme"
 html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
 
 def setup(app):
-    app.add_stylesheet('my_theme.css')
+    app.add_stylesheet('hpe_theme.css')
 
 rst_epilog = """
-.. |morpheus| replace:: HPE
+.. |morpheus| replace:: os.environ.get('COMPANY')
 """
