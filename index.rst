@@ -1,5 +1,5 @@
-Morpheus Documentation
-======================
+|morpheus| Documentation
+========================
 
 What's new in v4.1.1
 --------------------
