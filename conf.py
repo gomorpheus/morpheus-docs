@@ -93,7 +93,7 @@ html_theme_options = {
 'logo_only': True
 }
 
-html_logo = "_static/hpe_logo.svg"
+html_logo = "_static/hpe_logo.png"
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
@@ -189,7 +189,7 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-    (master_doc, 'morpheusdocs', "os.environ.get('COMPANY')",
+    (master_doc, 'morpheusdocs', u"os.environ.get('COMPANY')",
      author, 'Morpheus', 'Morpheus Documentation',
      'UI Docs'),
 ]
