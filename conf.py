@@ -189,7 +189,7 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-    (master_doc, 'morpheusdocs', u %s """" % os.environ['COMPANY'] + """",
+    (master_doc, 'morpheusdocs', u'company',
      author, 'Morpheus', 'Morpheus Documentation',
      'UI Docs'),
 ]
@@ -201,6 +201,9 @@ def setup(app):
     app.add_stylesheet('hpe_theme.css')
 
 # Access to our custom environment variables
+company = os.environ.get('COMPANY')
+
+
 
 rst_epilog = """
 .. |morpheus| replace:: %s """ % os.environ['COMPANY'] + """
