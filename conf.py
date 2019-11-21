@@ -183,6 +183,10 @@ man_pages = [
 ]
 
 
+# Access to our custom environment variables
+company = os.environ.get('COMPANY')
+
+
 # -- Options for Texinfo output -------------------------------------------
 
 # Grouping the document tree into Texinfo files. List of tuples
