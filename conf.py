@@ -189,7 +189,7 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-    (master_doc, 'morpheusdocs', u"os.environ.get('COMPANY')",
+    (master_doc, 'morpheusdocs', u %s """" % os.environ['COMPANY'] + """",
      author, 'Morpheus', 'Morpheus Documentation',
      'UI Docs'),
 ]
@@ -200,6 +200,8 @@ html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
 def setup(app):
     app.add_stylesheet('hpe_theme.css')
 
+# Access to our custom environment variables
+
 rst_epilog = """
-.. |morpheus| replace:: os.environ.get('COMPANY')
+.. |morpheus| replace:: %s """ % os.environ['COMPANY'] + """
 """
