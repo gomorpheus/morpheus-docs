@@ -41,7 +41,7 @@ See :doc:`release_notes/current.rst` for additional information.
 
 .. toctree::
    :maxdepth: 3
-   :caption: Morpheus UI
+   :caption: |morpheus| UI
 
    getting_started/getting_started
    provisioning/provisioning
