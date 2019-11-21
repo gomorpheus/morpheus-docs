@@ -52,34 +52,9 @@ See :doc:`release_notes/current.rst` for additional information.
    backups/backups
    operations/operations
    tools/tools
-   integration_guides/integration_guides
+     ..    integration_guides/integration_guides
    troubleshooting/troubleshooting
 
 
-.. toctree::
-   :maxdepth: 3
-   :caption: Morpheus CLI
 
-   cli/install
-   cli/walkthrough
-   cli/shell
-   cli/commands
-   cli/changelog
-
-.. toctree::
-   :maxdepth: 3
-   :caption: Morpheus API
-
-   api/intro
-   api/requests
-
-.. toctree::
-   :maxdepth: 4
-   :caption: Release Notes
-
-   release_notes/current.rst
-   release_notes/compatibility.rst
-   release_notes/previousReleases.rst
-
-
-.. |morpheus| replace:: Morpheus
+.. |morpheus| replace:: HPE

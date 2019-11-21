@@ -46,16 +46,16 @@ source_suffix = ['.rst', '.md']
 master_doc = 'index'
 
 # General information about the project.
-project = u'Morpheus Docs'
+project = u'Gemini Docs'
 copyright = u'2019, Morpheus Data'
-author = u'Morpheus'
+author = u'HPE'
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
 # built documents.
 #
 # The short X.Y version.
-version = '4.1.0'
+version = '4.1.1'
 # The full version, including alpha/beta/rc tags.
 # release =
 
@@ -93,7 +93,7 @@ html_theme_options = {
 'logo_only': True
 }
 
-html_logo = "_static/logo.svg"
+html_logo = "_static/hpe_logo.svg"
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
@@ -201,5 +201,5 @@ def setup(app):
     app.add_stylesheet('my_theme.css')
 
 rst_epilog = """
-.. |morpheus| replace:: Morpheus
+.. |morpheus| replace:: HPE
 """
