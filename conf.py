@@ -178,7 +178,7 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    (master_doc, 'morpheusdocs', u'Morpheus Documentation',
+    (master_doc, 'morpheusdocs', u'%s """ % os.environ['COMPANY'] + """ Documentation',
      [author], 1)
 ]
 
@@ -194,7 +194,7 @@ company = os.environ.get('COMPANY')
 #  dir menu entry, description, category)
 texinfo_documents = [
     (master_doc, 'morpheusdocs', u'company',
-     author, 'Morpheus', 'Morpheus Documentation',
+     author, 'Morpheus', '%s """ % os.environ['COMPANY'] + """ Documentation',
      'UI Docs'),
 ]
 import sphinx_rtd_theme
