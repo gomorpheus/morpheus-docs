@@ -152,4 +152,5 @@ Once the instance is provisioned, as part of the final phase, the load balancer 
 
 Another benefit to associating load-balancers this way is that the pool members are automatically maintained during scaling events, either via auto-scaling thresholds or manual node additions / removals.
 
-.. include:: f5.rst
+.. include:: /infrastructure/loadbalancers/f5.rst
+.. include:: /infrastructure/loadbalancers/netscaler.rst
