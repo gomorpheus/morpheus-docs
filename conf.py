@@ -136,7 +136,7 @@ def setup(app):
 context = {
     'display_github': False,
 }
-html_favicon = "_static/hpe_fav_64.ico"
+html_favicon = "_static/hpe_fav.ico"
 
 # -- Options for HTMLHelp output ------------------------------------------
 
