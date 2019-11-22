@@ -168,7 +168,7 @@ latex_elements = {
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-    (master_doc, 'morpheus301.tex', '%s """ % os.environ['COMPANY'] + """ Documentation',
+    (master_doc, 'morpheus301.tex', 'HPE Documentation',
      u'Morpheus', 'manual'),
 ]
 
@@ -178,7 +178,7 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    (master_doc, 'morpheusdocs', '%s """ % os.environ['COMPANY'] + """ Documentation',
+    (master_doc, 'morpheusdocs', 'HPE Documentation Documentation',
      [author], 1)
 ]
 
@@ -194,7 +194,7 @@ company = os.environ.get('COMPANY')
 #  dir menu entry, description, category)
 texinfo_documents = [
     (master_doc, 'morpheusdocs', u'company',
-     author, 'Morpheus', '%s """ % os.environ['COMPANY'] + """ Documentation',
+     author, 'Morpheus', 'HPE Documentation',
      'UI Docs'),
 ]
 import sphinx_rtd_theme
@@ -203,10 +203,6 @@ html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
 
 def setup(app):
     app.add_stylesheet('hpe_theme.css')
-
-# Access to our custom environment variables
-company = os.environ.get('COMPANY')
-
 
 
 rst_epilog = """
