@@ -168,7 +168,7 @@ latex_elements = {
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-    (master_doc, 'morpheus301.tex', u'Morpheus Documentation',
+    (master_doc, 'morpheus301.tex', '%s """ % os.environ['COMPANY'] + """ Documentation',
      u'Morpheus', 'manual'),
 ]
 
@@ -178,7 +178,7 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    (master_doc, 'morpheusdocs', u'%s """ % os.environ['COMPANY'] + """ Documentation',
+    (master_doc, 'morpheusdocs', '%s """ % os.environ['COMPANY'] + """ Documentation',
      [author], 1)
 ]
 
