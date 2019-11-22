@@ -25,6 +25,8 @@ Hide Datastore Stats On Selection
   Hides Datastore utilization and size stats in provisioning and app wizards
 Cross-Tenant Naming Policies
   Enable for the ``sequence`` value in naming policies to apply across tenants
+Reuse Sequence Numbers
+  Enable for sequence numbers to always increment and never be reused. When disabled, sequence numbers will be reused.
 Deployment Archive Store
   Default Storage Provider for storing Deployment Archives.
 

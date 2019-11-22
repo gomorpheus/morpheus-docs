@@ -16,7 +16,7 @@ Configure phpIPAM API
 Add phpIPAM integration to |morpheus|
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-#. Navigate to `Infrastructure - Network - Services`
+#. Navigate to ``Infrastructure > Network > Integrations``
 #. Select :guilabel:`+ ADD` -> IPAM -> phpIPAM
 #. Enter the following:
 

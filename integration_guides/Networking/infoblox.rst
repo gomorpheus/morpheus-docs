@@ -15,7 +15,7 @@ Features
 Adding Infoblox Integration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-#. Navigate to ``Infrastructure - Network - Services``
+#. Navigate to ``Infrastructure - Network - Integrations``
 #. Select :guilabel:`+ ADD` -> IPAM -> Infoblox
 #. Enter the following:
 

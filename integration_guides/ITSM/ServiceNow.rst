@@ -25,6 +25,10 @@ Add Service Now Integration
     A user in ServiceNow that is able to access the REST interface and create/update/delete incidents, requests, requested items, item options, catalog items, workflows, etc.
    PASSWORD
     Above ServiceNow user's password
+   CMDB CUSTOM MAPPING
+    Configure custom mapping for CMDB records
+   CMDB BUSINESS OBJECT
+    Allows the user to define the table CMDB records are written to if they prefer this over Morpheus defaults
 
 #. Save Changes
 
@@ -127,7 +131,9 @@ ServiceNow Configuration
    - catalog_admin
    - itil
    - rest_service
+   - import_transformer
 
+  .. NOTE:: The import_transformer role is only needed for creating incidents in SNOW.
 
   .. IMPORTANT:: When using ServiceNow version London, the following steps must also be performed.  An administrator needs to modify the access permissions on the 'catalog_script_client' and 'io_set_item' tables.  This is performed by ensuring the 'Can create', 'Can update', and 'Can Delete' are checked under Application Access for 'All application scopes' for these tables.
 

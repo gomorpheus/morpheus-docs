@@ -12,8 +12,6 @@ Once created or integrated, Load Balancers are available as an option to be adde
 
 Once a Load Balancer is added to an instance, you can manually scale or configure auto-scaling based on thresholds or schedules, and burst across clouds with cloud priority.
 
-.. NOTE:: HaProxy VM Load Balancer option, Load Balancer detail pages, Balance Mode, Sticky Mode and Shared VIP address option are available in |morpheus| 2.11.3+.
-
 .. image Load_Balancers___|morpheus| .png
 
 In the Load Balancers page there are two sections:
@@ -152,4 +150,5 @@ Once the instance is provisioned, as part of the final phase, the load balancer 
 
 Another benefit to associating load-balancers this way is that the pool members are automatically maintained during scaling events, either via auto-scaling thresholds or manual node additions / removals.
 
-.. include:: f5.rst
+.. include:: /infrastructure/loadbalancers/f5.rst
+.. include:: /infrastructure/loadbalancers/netscaler.rst

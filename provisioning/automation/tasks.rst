@@ -2,7 +2,9 @@ Tasks
 -----
 
 .. |ansible| image:: /images/automation/tasks/ansible-e488f61cefa223236abd1b40af950439.png
+.. |ansibletower| image:: /images/automation/tasks/ansible_tower_logo.png
 .. |chef| image:: /images/automation/tasks/chef-66ca1aef7d659471d9219530dd576ce9.png
+.. |email| image:: /images/automation/tasks/email_logo.png
 .. |groovy| image:: /images/automation/tasks/groovy-3ae2a0a8a649cf64717fc8b159d6836b.png
 .. |http| image:: /images/automation/tasks/http-2d0ab035cb2ee622c520ad3e013e959d.png
 .. |javascript| image:: /images/automation/tasks/javascript-1b4151066591cf1150ce76904e63dd04.png
@@ -16,6 +18,7 @@ Tasks
 .. |libraryscript| image:: /images/automation/tasks/containerScript-5ec043b7a9611549f58ae27d9e9aa88a.png
 .. |puppet| image:: /images/automation/tasks/puppet-d39e3a20a47d04a44d6d2a854b2acd65.png
 .. |localscript| image:: /images/automation/tasks/localScript-bfbe0063e4e6c35ed1c4e5898c88e007.png
+.. |vro| image:: /images/automation/tasks/vro_logo.png
 
 Overview
 ^^^^^^^^
@@ -47,6 +50,12 @@ Task Types
      - Instance or Host
      - Existing Ansible Integration
      - Provisioning: Tasks
+   * - |ansibletower|
+     - Ansible Tower
+     - Relays Ansible calls to Ansible Tower
+     - Instance or Host
+     - Existing Ansible Tower Integration
+     - Provisioning: Tasks
    * - |chef|
      - Chef bootstrap
      - Executes Chef bootstrap and run list. Chef Integration required
@@ -59,6 +68,12 @@ Task Types
      - Local
      - None
      - Provisioning: Tasks, Tasks - Script Engines
+   * - |Email|
+     - Email
+     - Send an email from a Workflow
+     - Local
+     - None
+     - Provisioning: Tasks
    * - |http|
      - HTTP
      - Executes REST call for targeting external API's.
@@ -210,6 +225,25 @@ Task Types
   SCRIPT
     Contents of Groovy Script to execute
 
+Email
+```````````````````````
+:Description:
+  Allows for sending of email via Workflows
+:Target:
+  Local
+:Role Permissions:
+  Provisioning: Tasks
+:Task Configuration:
+  NAME
+    Name of the Task
+  CODE
+    Unique code name for api, cli, and variable reference
+:Email Address:
+  Email addresses can be entered literally or Morpheus automation variables can be injected, such as ``<%=instance.createdByEmail%>``
+:Subject:
+  Morpheus automation variables can be injected into the subject field when needed
+:Body:
+  The body of the email is HTML. Morpheus automation variables can be injected into the email body when needed
 
 |http| HTTP (api)
 ```````````````````

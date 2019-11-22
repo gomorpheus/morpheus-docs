@@ -57,3 +57,23 @@ Virtual Images / Blueprints
 A global cloud-init username/password can also be configured per account as well as a keypair via the ``Admin->Provisioning`` settings section. The great benefit of utilizing cloud-init is default blueprints do not need common credential sets thereby increasing provisioning security.
 
 Windows systems do not typically support cloud-init. So simply turn this checkbox off and provide the `Administrator` credentials. It should be noted that these credentials are encrypted in the database. If using WinRM for the RPC Mode instead of VMware tools, a Local or Domain Administrator account credential set can be provided instead.
+
+Snapshots
+^^^^^^^^^^^
+
+|morpheus| allows the ability to create a snapshot of a VM in VMware vCenter.  From the instance detail page, simply select ``Actions -> Create Snapshot`` to begin creation of a new Snapshot.  Existing snapshots can be viewed in the ``BACKUPS`` tab on the instance detail page.  Snapshots taken in vCenter will sync into |morpheus| every five minutes.  To revert to a previous snapshot, click on the revert icon located on the right side of the Snapshot. Snapshots can be deleted by clicking on the trash can icon.
+
+.. Note:: Access to Snapshots can be limited or removed entirely for specific user roles as needed. To edit a role's Snapshots permissions, go to ``Administration > Roles > (Your selected role) > Snapshots``. Users can be given Full, Read-only, or No access.
+
+Tagging and Metadata
+^^^^^^^^^^^
+
+As of Morpheus version 4.1.0, tagging support is included for vCenter in addition to the other clouds that have already supported it in past versions. Tags will sync to vCenter from Morpheus and existing tags are also inventoried from vCenter into Morpheus.
+
+.. NOTE:: This feature requires a minimum API version of vCenter 6.5. The API version can be edited by navigating to 'Infrastructure > Clouds' and clicking the edit (pencil) button in the row for the relevant cloud. The field is labeled 'VERSION'.
+
+Tags can be created on-demand when provisioning from the 'CONFIGURE' tab of the 'CREATE INSTANCE' wizard (Provisioning > Instances). Within the 'Metadata' drawer, you will see sets of fields to enter key/value pairs. On creation of the instance, this metadata will be synced into vCenter.
+
+'Option Types' from your library can also be exported as metadata for use with vCenter. When adding or editing a new Option Type (Provisioning > Library > OPTION TYPES), simply mark the box labeled 'EXPORT AS METADATA'. The 'FIELD NAME' becomes the tag category in VMWare.
+
+.. image:: /images/integration_guides/clouds/tagging_at_provisioning.png

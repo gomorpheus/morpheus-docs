@@ -81,5 +81,7 @@ Morpheus allows for additional advanced customizations to the morpheus.rb file l
 
   repo['repo_host_url'] = 'https://downloads.morpheusdata.com'
 
+.. NOTE:: elasticsearch['replica_count'] settings only apply to local Elasticsearch and not an external cluster. The user must set the replica count in the code for each index. The setting in morpheus.rb is only the cluster default and only applies to the all-in-one appliance. If the cluster is external, the user must set the default on their Elasticsearch config file.
+
 .. include:: offline.rst
 .. include:: proxies.rst

@@ -40,6 +40,7 @@ Supported Cloud Types
 * UpCloud
 * VMWare ESXi
 * VMware Fusion
+* VMWare on AWS
 * VMware vCenter
 * VMware vCloud Air
 * VMware vCloud Director

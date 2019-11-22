@@ -1,10 +1,10 @@
 3-Node Distributed
-^^^^^^^^^^^^^^^^^^
+------------------
 
 Distributed App Nodes with Externalized DB
 
 Assumptions
-````````````
+^^^^^^^^^^^
 
 This guide assumes the following:
 
@@ -21,7 +21,7 @@ This guide assumes the following:
     :alt: Morpheus 3-Node HA Architecture
 
 Default Locations
-```````````````````
+^^^^^^^^^^^^^^^^^
 
 |morpheus| follows several install location conventions. Below is a list of system defaults for convenient management:
 
@@ -38,7 +38,7 @@ Default Locations
 *  User-defined install/config: ``/etc/morpheus/morpheus.rb``
 
 Steps
-``````
+^^^^^
 
 #. First begin by downloading the requisite |morpheus| packages either to the nodes or to your workstation for transfer. These packages need to be made available on the nodes you wish to install |morpheus| on.
 
@@ -83,7 +83,7 @@ Steps
     rabbitmq['host'] = '0.0.0.0'
     rabbitmq['nodename'] = 'rabbit@node02'
     mysql['enable'] = false
-    mysql['host'] = '10.100.10.112'
+    mysql['host'] = '10.100.10.111'
     mysql['morpheus_db'] = 'morpheusdb'
     mysql['morpheus_db_user'] = 'morpheus'
     mysql['morpheus_password'] = 'password'
@@ -99,7 +99,7 @@ Steps
        rabbitmq['host'] = '0.0.0.0'
        rabbitmq['nodename'] = 'rabbit@node03'
        mysql['enable'] = false
-       mysql['host'] = '10.100.10.113'
+       mysql['host'] = '10.100.10.111'
        mysql['morpheus_db'] = 'morpheusdb'
        mysql['morpheus_db_user'] = 'morpheus'
        mysql['morpheus_password'] = 'password'
@@ -235,7 +235,7 @@ Steps
 #. Subsequently you can start all |morpheus| services on all three nodes and tail the |morpheus| UI log file to inspect errors.
 
 Database Migration
-````````````````````
+^^^^^^^^^^^^^^^^^^
 
 If your new installation is part of a migration then you need to move the data from your original |morpheus| database to your new one. This is easily accomplished by using a stateful dump.
 
@@ -299,7 +299,7 @@ If your new installation is part of a migration then you need to move the data f
 
 
 Recovery
-^^^^^^^^^
+^^^^^^^^
 
 If a node happens to crash most of the time |morpheus| will start upon boot of the server and the services will self-recover. However, there can be cases where RabbitMQ and Elasticsearch are unable to recover in a clean fashion and it require minor manual intervention. Regardless, it is considered best practice when recovering a restart to perform some manual health checks.
 

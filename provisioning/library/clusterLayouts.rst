@@ -106,3 +106,7 @@ Cluster Layouts
 +---------------------------------------------------------+---------+---------------------------------------------------------------------------------------+--+
 | KVM on CentOS 7.5                                       | 7.5     | This will provision a single kvm host vm in vmware                                    |  |
 +---------------------------------------------------------+---------+---------------------------------------------------------------------------------------+--+
+
+Users can add new cluster layouts using the ``+ADD`` button. Morpheus-provided cluster layouts can be cloned for use in creating custom layouts. Custom cluster layouts can also be deleted or edited from the list view using the pencil or trash can icons.
+
+.. image:: /images/provisioning/library/cloneclusterlayout.png

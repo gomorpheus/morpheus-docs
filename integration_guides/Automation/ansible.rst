@@ -100,7 +100,7 @@ Playbook
 Running Playbooks
 ^^^^^^^^^^^^^^^^^
 
-Playbooks can also be ran on all inventory groups, individual groups, or added as a task and ran with workflows.
+Playbooks can also be run on all inventory groups, individual groups, or added as a task and ran with workflows.
 
 To run Ansible on all or a single inventory group, in the Ansible tab of the |morpheus| Group page, select the `Actions` dropdown and click `Run`.
 
@@ -171,6 +171,12 @@ This would grab the `value` property off the nested json data stored within the 
 
 Cypher is very powerful for storing these temporary or permanent secrets that one may need to orchestrate various tasks and workflows within Ansible.
 
+Custom Inventory Entries
+^^^^^^^^^^^^^^^
+
+With Morpheus it is possible to add custom inventory entries that exist outside of morpheus host/server entry. This is global across cloud or group and is done on the integration details page of the Ansible integration. To add a custom inventory entry navigate to ``Provisioning > Automation > Integrations > (Your specific Ansible integration)``. Click on the ``ACTIONS`` button, then click ``EDIT INVENTORY``. Inventory should be in the default Ansible ini format.
+
+.. image:: /images/integration_guides/automation/ansible_inventory.png
 
 Using Ansible over the |morpheus| Agent Command Bus
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -218,8 +224,8 @@ Troubleshooting Ansible
 
   .. code-block:: bash
 
-      sudo mkdir /opt/morpheus/.ansible
-      sudo chown morpheus-local.morpheus-local /opt/morpheus/.ansible
+      sudo mkdir /opt/morpheus/.local/.ansible
+      sudo chown morpheus-local.morpheus-local /opt/morpheus/.local/.ansible
 
 
 * Validate the git repo is authorizing and the paths are configured correctly.

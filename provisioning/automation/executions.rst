@@ -19,3 +19,5 @@ RESULTS
  Result status of execution (Succeeded, Failed, In-Progress or Pending)
 Execution Detail (i)
  Click on the ``i`` to view process output results
+
+ .. note:: Job and automation executions can be expanded to show process details by clicking on the arrow icon immediately to the right of the `NAME` column. 

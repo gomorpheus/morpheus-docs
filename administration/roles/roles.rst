@@ -31,6 +31,13 @@ down to all subtenants within morpheus. These can be viewed as pre-canned role t
 Another note about user roles is that when a user role is copied down to a subtenant, the permission scopes cannot supersede the tenants assigned
 tenant role. If they do they are automatically downgraded when propagated to the specific tenant. Any changes made to the tenant role will automatically ensure roles within the tenant are downgraded appropriately.
 
+Multi-Tenant User Role Lock
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+As discussed above, multi-tenanted user roles are made available within all subtenants as ‘canned’ user role sets. Master tenant administrators can prevent changes to these ‘canned’ user roles by marking the box labeled ‘MULTITENANT LOCKED’ when creating or editing the role. In addition to preventing subtenant administrators from modifying permissions of these roles within their subtenancy, this option also ensures master tenant administrators can propagate new changes to that role. Modification of the role by the subtenant (if allowed) breaks the link back to the master tenant and the copy of the role within the subtenant will become its own unlinked role.
+
+.. NOTE:: Multi-tenant role lock applies only to permission sets on the ‘FEATURE ACCESS’ tab. Permissions in the ‘GROUP ACCESS’, ‘INSTANCE TYPE ACCESS’, and ‘BLUEPRINT ACCESS’ tabs are not locked. Similarly, changes made to the role on these tabs in the master tenant are not synced down.
+
 Roles and Identity Sources
 --------------------------
 

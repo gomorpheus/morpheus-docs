@@ -1,5 +1,5 @@
-Maintenance
-===========
+Upgrades & Maintenance
+======================
 
 .. include:: /getting_started/maintenance/upgrading.rst
 .. include:: /getting_started/maintenance/morpheus-ctl.rst

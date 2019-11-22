@@ -1,4 +1,4 @@
-# Monitor Checks
+# Monitoring Checks
 
  These entities define what and when a monitoring check is executed within the Morpheus system. Morpheus supports a vast array of different check types (not solely web checks). The API provides a means to list all of an account's checks in addition to create, modify, mute, and or delete them.
 

@@ -22,6 +22,14 @@ Or install it yourself as:
 
     $ gem install morpheus-cli
 
+To install a specific version of Morpheus CLI, pass in a -v option as shown in the example below:
+
+    $ gem install morpheus-cli -v 3.6.38
+
+To upgrade Morpheus CLI to the latest version, use the following command:
+
+    $ gem update morpheus-cli
+
 ### Windows
 
 To get started, we must first ensure ruby is running on the windows machine in question. To do this please visit [http://rubyinstaller.org/downloads](http://rubyinstaller.org/downloads) and download at least Ruby version 2.0.0 (2.3.3 recommended).
@@ -31,7 +39,7 @@ To get started, we must first ensure ruby is running on the windows machine in q
 Now that ruby is installed, simply open a `PowerShell` window and run
 
 ```
-gem install morpheus-cli --no-ri --no-rdoc
+gem install morpheus-cli --no-document
 ```
 
 A list of installed dependencies should start sliding by the screen. Once this has completed the CLI setup is complete. Now all that must be done is configuring the cli to point to an appliance for use.
@@ -43,6 +51,12 @@ morpheus login
 ```
 
 Credentials are used to acquire an access token which is then stored in the users home directory in a folder called `.morpheus`. Now all commands provided by the CLI are available for use just as if running in a *nix based environment*.
+
+To upgrade Morpheus CLI to the latest version, use the following command:
+
+```
+gem update morpheus-cli
+```
 
 ### Docker
 

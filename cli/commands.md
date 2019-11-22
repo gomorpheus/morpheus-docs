@@ -1,16 +1,6 @@
-# Commands
+# CLI Commands
 
-## Global Options
-
-    Morpheus supports a few global options.
-
-    -v, --version                    Print the version.
-        --noprofile                  Do not read and execute the personal initialization script .morpheus_profile
-    -C, --nocolor                    Disable ANSI coloring
-    -V, --debug                      Print extra output for debugging.
-    -h, --help                       Print this help
-
-## Common Options
+## COMMON OPTIONS
 
     There are some common options that many commands support. They work the same way for each command.
 
@@ -22,8 +12,9 @@
     -I, --insecure                   Allow for insecure HTTPS communication i.e. bad SSL certificate       
     -y, --yes                        Auto confirm, skip any 'Are you sure?' confirmations.
     -r, --quiet                      No Output, when successful.
+    -h, --help                       Print help
 
-## Morpheus Commands
+## MORPHEUS COMMANDS
 
     We divide morpheus into commands.  
     Every morpheus command may have 0-N sub-commands that it supports.
@@ -45,6 +36,7 @@ Commands:
 	benchmark
 	blueprints
 	clouds
+	clusters
 	containers
 	cypher
 	datastores
@@ -532,7 +524,15 @@ Usage: morpheus apps logs [app]
     -s, --search PHRASE              Search Phrase
     -S, --sort ORDER                 Sort Order
     -D, --desc                       Reverse Sort Order
+    -Q, --query PARAMS               Query parameters. PARAMS format is 'phrase=foobar&category=web'
     -j, --json                       JSON Output
+        --yaml                       YAML Output
+        --csv                        CSV Output
+        --csv-delim CHAR             Delimiter for CSV Output values. Default: ','
+        --csv-newline [CHAR]         Delimiter for CSV Output rows. Default: '\n'
+        --csv-quotes                 Wrap CSV values with ". Default: false
+        --csv-no-header              Exclude header for CSV Output.
+    -F, --fields x,y,z               Filter Output to a limited set of fields. Default is all fields.
     -d, --dry-run                    Dry Run, print the API request instead of executing it
         --curl                       Dry Run to output API request as a curl command.
         --scrub                      Mask secrets in output, such as the Authorization header. For use with --curl and --dry-run.
@@ -2456,6 +2456,1540 @@ View wiki page details for a cloud.
 ```
 
 
+### morpheus clusters
+
+```
+Usage: morpheus clusters [command] [options]
+Commands:
+	add
+	add-namespace
+	add-worker
+	api-config
+	count
+	get
+	get-namespace
+	history
+	history-details
+	history-event
+	list
+	list-containers
+	list-deployments
+	list-jobs
+	list-masters
+	list-namespaces
+	list-pods
+	list-services
+	list-stateful-sets
+	list-volumes
+	list-workers
+	logs
+	remove
+	remove-container
+	remove-deployment
+	remove-job
+	remove-namespace
+	remove-pod
+	remove-service
+	remove-stateful-set
+	remove-volume
+	restart-container
+	restart-deployment
+	restart-pod
+	restart-stateful-set
+	update
+	update-namespace
+	update-permissions
+	update-wiki
+	view
+	view-api-token
+	view-kube-config
+	wiki
+```
+
+#### morpheus clusters add
+
+```
+Usage: morpheus clusters add [name]
+        --name NAME                  Cluster Name
+        --description [TEXT]         Description
+        --resource-name NAME         Resource Name
+        --tags LIST                  Tags
+    -g, --group GROUP                Group Name or ID
+    -t, --cluster-type TYPE          Cluster Type Name or ID
+    -l, --layout LAYOUT              Layout Name or ID
+        --visibility [private|public]
+                                     Visibility
+        --refresh [SECONDS]          Refresh until status is provisioned,failed. Default interval is 30 seconds.
+        --workflow ID                Workflow
+    -c, --cloud CLOUD                Cloud Name or ID
+        --resource-pool ID           ID of the Resource Pool for Amazon VPC and Azure Resource Group
+    -p, --plan PLAN                  Service Plan
+        --max-memory VALUE           Maximum Memory (MB)
+        --cpu-count VALUE            CPU Count
+        --core-count VALUE           Core Count
+        --cores-per-socket VALUE     Cores Per Socket
+        --volumes JSON               Volumes Config JSON
+        --volumes-file FILE          Volumes Config from a local JSON or YAML file
+        --config-file FILE           Instance Config from a local JSON or YAML file
+        --network-interfaces JSON    Network Interfaces Config JSON
+        --network-interfaces-file FILE
+                                     Network Interfaces Config from a local JSON or YAML file
+        --security-groups LIST       Security Groups
+        --create-user on|off         User Config: Create Your User. Default is off
+        --user-group USERGROUP       User Config: User Group
+        --domain VALUE               Network Domain ID
+        --hostname VALUE             Hostname
+    -O, --option OPTION              Option in the format -O field="value"
+        --prompt                     Always prompts. Use passed options as the default value.
+    -N, --no-prompt                  Skip prompts. Use default values for all optional fields.
+        --payload FILE               Payload from a local JSON or YAML file, skip all prompting
+        --payload-dir DIRECTORY      Payload from a local directory containing 1-N JSON or YAML files, skip all prompting
+        --payload-json JSON          Payload JSON, skip all prompting
+        --payload-yaml YAML          Payload YAML, skip all prompting
+    -j, --json                       JSON Output
+    -d, --dry-run                    Dry Run, print the API request instead of executing it
+        --curl                       Dry Run to output API request as a curl command.
+        --scrub                      Mask secrets in output, such as the Authorization header. For use with --curl and --dry-run.
+    -r, --remote REMOTE              Remote name. The current remote is used by default.
+        --remote-url URL             Remote url. The current remote url is used by default.
+    -T, --token TOKEN                Access token for authentication with --remote. Saved credentials are used by default.
+    -U, --username USERNAME          Username for authentication.
+    -P, --password PASSWORD          Password for authentication.
+    -I, --insecure                   Allow insecure HTTPS communication.  i.e. bad SSL certificate.
+    -H, --header HEADER              Additional HTTP header to include with requests.
+        --timeout SECONDS            Timeout for api requests. Default is typically 30 seconds.
+    -C, --nocolor                    Disable ANSI coloring
+    -B, --benchmark                  Print benchmark time after the command is finished.
+    -V, --debug                      Print extra output for debugging.
+    -h, --help                       Print this help
+
+Create a cluster.
+[name] is required. This is the name of the new cluster.
+```
+
+#### morpheus clusters add-namespace
+
+```
+Usage: morpheus clusters add-namespace [cluster] [name] [options]
+        --name NAME                  Name of the new namespace
+        --description [TEXT]         Description
+        --active [on|off]            Enable namespace
+        --group-access-all [on|off]  Toggle Access for all groups.
+        --group-access LIST          Group Access, comma separated list of group IDs.
+        --group-defaults LIST        Group Default Selection, comma separated list of group IDs
+        --plan-access-all [on|off]   Toggle Access for all service plans.
+        --plan-access LIST           Service Plan Access, comma separated list of plan IDs.
+        --plan-defaults LIST         Plan Default Selection, comma separated list of plan IDs
+        --visibility [private|public]
+                                     Visibility
+        --tenants LIST               Tenant Access, comma separated list of account IDs
+    -O, --option OPTION              Option in the format -O field="value"
+        --prompt                     Always prompts. Use passed options as the default value.
+    -N, --no-prompt                  Skip prompts. Use default values for all optional fields.
+        --payload FILE               Payload from a local JSON or YAML file, skip all prompting
+        --payload-dir DIRECTORY      Payload from a local directory containing 1-N JSON or YAML files, skip all prompting
+        --payload-json JSON          Payload JSON, skip all prompting
+        --payload-yaml YAML          Payload YAML, skip all prompting
+    -j, --json                       JSON Output
+    -d, --dry-run                    Dry Run, print the API request instead of executing it
+        --curl                       Dry Run to output API request as a curl command.
+        --scrub                      Mask secrets in output, such as the Authorization header. For use with --curl and --dry-run.
+    -r, --remote REMOTE              Remote name. The current remote is used by default.
+        --remote-url URL             Remote url. The current remote url is used by default.
+    -T, --token TOKEN                Access token for authentication with --remote. Saved credentials are used by default.
+    -U, --username USERNAME          Username for authentication.
+    -P, --password PASSWORD          Password for authentication.
+    -I, --insecure                   Allow insecure HTTPS communication.  i.e. bad SSL certificate.
+    -H, --header HEADER              Additional HTTP header to include with requests.
+        --timeout SECONDS            Timeout for api requests. Default is typically 30 seconds.
+    -C, --nocolor                    Disable ANSI coloring
+    -B, --benchmark                  Print benchmark time after the command is finished.
+    -V, --debug                      Print extra output for debugging.
+    -h, --help                       Print this help
+
+Create a cluster namespace.
+[cluster] is required. This is the name or id of an existing cluster.
+[name] is required. This is the name of the new namespace.
+```
+
+#### morpheus clusters add-worker
+
+```
+Usage: morpheus clusters add-worker [cluster] [options]
+        --name NAME                  Name of the new worker
+        --description [TEXT]         Description
+    -c, --cloud CLOUD                Cloud Name or ID
+        --resource-pool ID           ID of the Resource Pool for Amazon VPC and Azure Resource Group
+    -p, --plan PLAN                  Service Plan
+        --max-memory VALUE           Maximum Memory (MB)
+        --cpu-count VALUE            CPU Count
+        --core-count VALUE           Core Count
+        --cores-per-socket VALUE     Cores Per Socket
+        --volumes JSON               Volumes Config JSON
+        --volumes-file FILE          Volumes Config from a local JSON or YAML file
+        --config-file FILE           Instance Config from a local JSON or YAML file
+        --network-interfaces JSON    Network Interfaces Config JSON
+        --network-interfaces-file FILE
+                                     Network Interfaces Config from a local JSON or YAML file
+        --security-groups LIST       Security Groups
+        --create-user on|off         User Config: Create Your User. Default is off
+        --user-group USERGROUP       User Config: User Group
+        --domain VALUE               Network Domain ID
+        --hostname VALUE             Hostname
+    -O, --option OPTION              Option in the format -O field="value"
+        --prompt                     Always prompts. Use passed options as the default value.
+    -N, --no-prompt                  Skip prompts. Use default values for all optional fields.
+        --payload FILE               Payload from a local JSON or YAML file, skip all prompting
+        --payload-dir DIRECTORY      Payload from a local directory containing 1-N JSON or YAML files, skip all prompting
+        --payload-json JSON          Payload JSON, skip all prompting
+        --payload-yaml YAML          Payload YAML, skip all prompting
+    -j, --json                       JSON Output
+    -d, --dry-run                    Dry Run, print the API request instead of executing it
+        --curl                       Dry Run to output API request as a curl command.
+        --scrub                      Mask secrets in output, such as the Authorization header. For use with --curl and --dry-run.
+    -r, --remote REMOTE              Remote name. The current remote is used by default.
+        --remote-url URL             Remote url. The current remote url is used by default.
+    -T, --token TOKEN                Access token for authentication with --remote. Saved credentials are used by default.
+    -U, --username USERNAME          Username for authentication.
+    -P, --password PASSWORD          Password for authentication.
+    -I, --insecure                   Allow insecure HTTPS communication.  i.e. bad SSL certificate.
+    -H, --header HEADER              Additional HTTP header to include with requests.
+        --timeout SECONDS            Timeout for api requests. Default is typically 30 seconds.
+    -C, --nocolor                    Disable ANSI coloring
+    -B, --benchmark                  Print benchmark time after the command is finished.
+    -V, --debug                      Print extra output for debugging.
+    -h, --help                       Print this help
+
+Add worker to a cluster.
+[cluster] is required. This is the name or id of an existing cluster.
+[name] is required. This is the name of the new worker.
+```
+
+#### morpheus clusters api-config
+
+```
+Usage: morpheus clusters api-config [cluster]
+    -Q, --query PARAMS               Query parameters. PARAMS format is 'phrase=foobar&category=web'
+    -j, --json                       JSON Output
+        --yaml                       YAML Output
+        --csv                        CSV Output
+        --csv-delim CHAR             Delimiter for CSV Output values. Default: ','
+        --csv-newline [CHAR]         Delimiter for CSV Output rows. Default: '\n'
+        --csv-quotes                 Wrap CSV values with ". Default: false
+        --csv-no-header              Exclude header for CSV Output.
+    -F, --fields x,y,z               Filter Output to a limited set of fields. Default is all fields.
+    -d, --dry-run                    Dry Run, print the API request instead of executing it
+        --curl                       Dry Run to output API request as a curl command.
+        --scrub                      Mask secrets in output, such as the Authorization header. For use with --curl and --dry-run.
+    -r, --remote REMOTE              Remote name. The current remote is used by default.
+        --remote-url URL             Remote url. The current remote url is used by default.
+    -T, --token TOKEN                Access token for authentication with --remote. Saved credentials are used by default.
+    -U, --username USERNAME          Username for authentication.
+    -P, --password PASSWORD          Password for authentication.
+    -I, --insecure                   Allow insecure HTTPS communication.  i.e. bad SSL certificate.
+    -H, --header HEADER              Additional HTTP header to include with requests.
+        --timeout SECONDS            Timeout for api requests. Default is typically 30 seconds.
+    -C, --nocolor                    Disable ANSI coloring
+    -B, --benchmark                  Print benchmark time after the command is finished.
+    -V, --debug                      Print extra output for debugging.
+    -h, --help                       Print this help
+
+Display API service settings for a cluster.
+```
+
+#### morpheus clusters count
+
+```
+Usage: morpheus clusters count [options]
+    -Q, --query PARAMS               Query parameters. PARAMS format is 'phrase=foobar&category=web'
+    -r, --remote REMOTE              Remote name. The current remote is used by default.
+        --remote-url URL             Remote url. The current remote url is used by default.
+    -T, --token TOKEN                Access token for authentication with --remote. Saved credentials are used by default.
+    -U, --username USERNAME          Username for authentication.
+    -P, --password PASSWORD          Password for authentication.
+    -I, --insecure                   Allow insecure HTTPS communication.  i.e. bad SSL certificate.
+    -H, --header HEADER              Additional HTTP header to include with requests.
+        --timeout SECONDS            Timeout for api requests. Default is typically 30 seconds.
+    -d, --dry-run                    Dry Run, print the API request instead of executing it
+        --curl                       Dry Run to output API request as a curl command.
+        --scrub                      Mask secrets in output, such as the Authorization header. For use with --curl and --dry-run.
+    -C, --nocolor                    Disable ANSI coloring
+    -B, --benchmark                  Print benchmark time after the command is finished.
+    -V, --debug                      Print extra output for debugging.
+    -h, --help                       Print this help
+
+Get the number of clusters.
+```
+
+#### morpheus clusters get
+
+```
+Usage: morpheus clusters get [id]
+        --hosts                      Display masters and workers
+        --masters                    Display masters
+        --workers                    Display workers
+        --permissions                Display permissions
+        --refresh [SECONDS]          Refresh until status is provisioned,failed. Default interval is 30 seconds.
+        --refresh-until STATUS       Refresh until a specified status is reached.
+    -j, --json                       JSON Output
+    -d, --dry-run                    Dry Run, print the API request instead of executing it
+        --curl                       Dry Run to output API request as a curl command.
+        --scrub                      Mask secrets in output, such as the Authorization header. For use with --curl and --dry-run.
+    -r, --remote REMOTE              Remote name. The current remote is used by default.
+        --remote-url URL             Remote url. The current remote url is used by default.
+    -T, --token TOKEN                Access token for authentication with --remote. Saved credentials are used by default.
+    -U, --username USERNAME          Username for authentication.
+    -P, --password PASSWORD          Password for authentication.
+    -I, --insecure                   Allow insecure HTTPS communication.  i.e. bad SSL certificate.
+    -H, --header HEADER              Additional HTTP header to include with requests.
+        --timeout SECONDS            Timeout for api requests. Default is typically 30 seconds.
+    -C, --nocolor                    Disable ANSI coloring
+    -B, --benchmark                  Print benchmark time after the command is finished.
+    -V, --debug                      Print extra output for debugging.
+    -h, --help                       Print this help
+
+Get details about a cluster.
+```
+
+#### morpheus clusters get-namespace
+
+```
+Usage: morpheus clusters get-namespace [cluster] [namespace]
+        --permissions                Display permissions
+    -Q, --query PARAMS               Query parameters. PARAMS format is 'phrase=foobar&category=web'
+    -j, --json                       JSON Output
+        --yaml                       YAML Output
+        --csv                        CSV Output
+        --csv-delim CHAR             Delimiter for CSV Output values. Default: ','
+        --csv-newline [CHAR]         Delimiter for CSV Output rows. Default: '\n'
+        --csv-quotes                 Wrap CSV values with ". Default: false
+        --csv-no-header              Exclude header for CSV Output.
+    -F, --fields x,y,z               Filter Output to a limited set of fields. Default is all fields.
+    -d, --dry-run                    Dry Run, print the API request instead of executing it
+        --curl                       Dry Run to output API request as a curl command.
+        --scrub                      Mask secrets in output, such as the Authorization header. For use with --curl and --dry-run.
+    -r, --remote REMOTE              Remote name. The current remote is used by default.
+        --remote-url URL             Remote url. The current remote url is used by default.
+    -T, --token TOKEN                Access token for authentication with --remote. Saved credentials are used by default.
+    -U, --username USERNAME          Username for authentication.
+    -P, --password PASSWORD          Password for authentication.
+    -I, --insecure                   Allow insecure HTTPS communication.  i.e. bad SSL certificate.
+    -H, --header HEADER              Additional HTTP header to include with requests.
+        --timeout SECONDS            Timeout for api requests. Default is typically 30 seconds.
+    -C, --nocolor                    Disable ANSI coloring
+    -B, --benchmark                  Print benchmark time after the command is finished.
+    -V, --debug                      Print extra output for debugging.
+    -h, --help                       Print this help
+
+Get details about a cluster namespace.
+[cluster] is required. This is the name or id of an existing cluster.
+[namespace] is required. This is the name or id of an existing namespace.
+```
+
+#### morpheus clusters history
+
+```
+Usage: morpheus clusters history [cluster]
+        --events                     Display sub processes (events).
+        --output                     Display process output.
+        --details                    Display more details: memory and storage usage used / max values.
+        --process-id ID              Display details about a specfic process only.
+        --event-id ID                Display details about a specfic process event only.
+    -m, --max MAX                    Max Results
+    -o, --offset OFFSET              Offset Results
+    -s, --search PHRASE              Search Phrase
+    -S, --sort ORDER                 Sort Order
+    -D, --desc                       Reverse Sort Order
+    -Q, --query PARAMS               Query parameters. PARAMS format is 'phrase=foobar&category=web'
+    -j, --json                       JSON Output
+        --yaml                       YAML Output
+        --csv                        CSV Output
+        --csv-delim CHAR             Delimiter for CSV Output values. Default: ','
+        --csv-newline [CHAR]         Delimiter for CSV Output rows. Default: '\n'
+        --csv-quotes                 Wrap CSV values with ". Default: false
+        --csv-no-header              Exclude header for CSV Output.
+    -F, --fields x,y,z               Filter Output to a limited set of fields. Default is all fields.
+    -d, --dry-run                    Dry Run, print the API request instead of executing it
+        --curl                       Dry Run to output API request as a curl command.
+        --scrub                      Mask secrets in output, such as the Authorization header. For use with --curl and --dry-run.
+    -r, --remote REMOTE              Remote name. The current remote is used by default.
+        --remote-url URL             Remote url. The current remote url is used by default.
+    -T, --token TOKEN                Access token for authentication with --remote. Saved credentials are used by default.
+    -U, --username USERNAME          Username for authentication.
+    -P, --password PASSWORD          Password for authentication.
+    -I, --insecure                   Allow insecure HTTPS communication.  i.e. bad SSL certificate.
+    -H, --header HEADER              Additional HTTP header to include with requests.
+        --timeout SECONDS            Timeout for api requests. Default is typically 30 seconds.
+    -C, --nocolor                    Disable ANSI coloring
+    -B, --benchmark                  Print benchmark time after the command is finished.
+    -V, --debug                      Print extra output for debugging.
+    -h, --help                       Print this help
+
+List historical processes for a specific cluster.
+[cluster] is required. This is the name or id of an cluster.
+```
+
+#### morpheus clusters history-details
+
+```
+Usage: morpheus clusters history-details [cluster] [process-id]
+    -Q, --query PARAMS               Query parameters. PARAMS format is 'phrase=foobar&category=web'
+    -j, --json                       JSON Output
+        --yaml                       YAML Output
+        --csv                        CSV Output
+        --csv-delim CHAR             Delimiter for CSV Output values. Default: ','
+        --csv-newline [CHAR]         Delimiter for CSV Output rows. Default: '\n'
+        --csv-quotes                 Wrap CSV values with ". Default: false
+        --csv-no-header              Exclude header for CSV Output.
+    -F, --fields x,y,z               Filter Output to a limited set of fields. Default is all fields.
+    -d, --dry-run                    Dry Run, print the API request instead of executing it
+        --curl                       Dry Run to output API request as a curl command.
+        --scrub                      Mask secrets in output, such as the Authorization header. For use with --curl and --dry-run.
+    -r, --remote REMOTE              Remote name. The current remote is used by default.
+        --remote-url URL             Remote url. The current remote url is used by default.
+    -T, --token TOKEN                Access token for authentication with --remote. Saved credentials are used by default.
+    -U, --username USERNAME          Username for authentication.
+    -P, --password PASSWORD          Password for authentication.
+    -I, --insecure                   Allow insecure HTTPS communication.  i.e. bad SSL certificate.
+    -H, --header HEADER              Additional HTTP header to include with requests.
+        --timeout SECONDS            Timeout for api requests. Default is typically 30 seconds.
+    -C, --nocolor                    Disable ANSI coloring
+    -B, --benchmark                  Print benchmark time after the command is finished.
+    -V, --debug                      Print extra output for debugging.
+    -h, --help                       Print this help
+
+Display history details for a specific process.
+[cluster] is required. This is the name or id of a cluster.
+[process-id] is required. This is the id of the process.
+```
+
+#### morpheus clusters history-event
+
+```
+Usage: morpheus clusters history-event [cluster] [event-id]
+    -Q, --query PARAMS               Query parameters. PARAMS format is 'phrase=foobar&category=web'
+    -j, --json                       JSON Output
+        --yaml                       YAML Output
+        --csv                        CSV Output
+        --csv-delim CHAR             Delimiter for CSV Output values. Default: ','
+        --csv-newline [CHAR]         Delimiter for CSV Output rows. Default: '\n'
+        --csv-quotes                 Wrap CSV values with ". Default: false
+        --csv-no-header              Exclude header for CSV Output.
+    -F, --fields x,y,z               Filter Output to a limited set of fields. Default is all fields.
+    -d, --dry-run                    Dry Run, print the API request instead of executing it
+        --curl                       Dry Run to output API request as a curl command.
+        --scrub                      Mask secrets in output, such as the Authorization header. For use with --curl and --dry-run.
+    -r, --remote REMOTE              Remote name. The current remote is used by default.
+        --remote-url URL             Remote url. The current remote url is used by default.
+    -T, --token TOKEN                Access token for authentication with --remote. Saved credentials are used by default.
+    -U, --username USERNAME          Username for authentication.
+    -P, --password PASSWORD          Password for authentication.
+    -I, --insecure                   Allow insecure HTTPS communication.  i.e. bad SSL certificate.
+    -H, --header HEADER              Additional HTTP header to include with requests.
+        --timeout SECONDS            Timeout for api requests. Default is typically 30 seconds.
+    -C, --nocolor                    Disable ANSI coloring
+    -B, --benchmark                  Print benchmark time after the command is finished.
+    -V, --debug                      Print extra output for debugging.
+    -h, --help                       Print this help
+
+Display history details for a specific process event.
+[cluster] is required. This is the name or id of an cluster.
+[event-id] is required. This is the id of the process event.
+```
+
+#### morpheus clusters list
+
+```
+Usage: morpheus clusters list
+    -m, --max MAX                    Max Results
+    -o, --offset OFFSET              Offset Results
+    -s, --search PHRASE              Search Phrase
+    -S, --sort ORDER                 Sort Order
+    -D, --desc                       Reverse Sort Order
+    -Q, --query PARAMS               Query parameters. PARAMS format is 'phrase=foobar&category=web'
+    -j, --json                       JSON Output
+        --yaml                       YAML Output
+        --csv                        CSV Output
+        --csv-delim CHAR             Delimiter for CSV Output values. Default: ','
+        --csv-newline [CHAR]         Delimiter for CSV Output rows. Default: '\n'
+        --csv-quotes                 Wrap CSV values with ". Default: false
+        --csv-no-header              Exclude header for CSV Output.
+    -F, --fields x,y,z               Filter Output to a limited set of fields. Default is all fields.
+    -d, --dry-run                    Dry Run, print the API request instead of executing it
+        --curl                       Dry Run to output API request as a curl command.
+        --scrub                      Mask secrets in output, such as the Authorization header. For use with --curl and --dry-run.
+    -r, --remote REMOTE              Remote name. The current remote is used by default.
+        --remote-url URL             Remote url. The current remote url is used by default.
+    -T, --token TOKEN                Access token for authentication with --remote. Saved credentials are used by default.
+    -U, --username USERNAME          Username for authentication.
+    -P, --password PASSWORD          Password for authentication.
+    -I, --insecure                   Allow insecure HTTPS communication.  i.e. bad SSL certificate.
+    -H, --header HEADER              Additional HTTP header to include with requests.
+        --timeout SECONDS            Timeout for api requests. Default is typically 30 seconds.
+    -C, --nocolor                    Disable ANSI coloring
+    -B, --benchmark                  Print benchmark time after the command is finished.
+    -V, --debug                      Print extra output for debugging.
+    -h, --help                       Print this help
+
+List clusters.
+```
+
+#### morpheus clusters list-containers
+
+```
+Usage: morpheus clusters list-containers [cluster]
+        --resource-level LEVEL       Resource Level
+        --worker WORKER              Worker
+    -m, --max MAX                    Max Results
+    -o, --offset OFFSET              Offset Results
+    -s, --search PHRASE              Search Phrase
+    -S, --sort ORDER                 Sort Order
+    -D, --desc                       Reverse Sort Order
+    -Q, --query PARAMS               Query parameters. PARAMS format is 'phrase=foobar&category=web'
+    -j, --json                       JSON Output
+        --yaml                       YAML Output
+        --csv                        CSV Output
+        --csv-delim CHAR             Delimiter for CSV Output values. Default: ','
+        --csv-newline [CHAR]         Delimiter for CSV Output rows. Default: '\n'
+        --csv-quotes                 Wrap CSV values with ". Default: false
+        --csv-no-header              Exclude header for CSV Output.
+    -F, --fields x,y,z               Filter Output to a limited set of fields. Default is all fields.
+    -d, --dry-run                    Dry Run, print the API request instead of executing it
+        --curl                       Dry Run to output API request as a curl command.
+        --scrub                      Mask secrets in output, such as the Authorization header. For use with --curl and --dry-run.
+    -r, --remote REMOTE              Remote name. The current remote is used by default.
+        --remote-url URL             Remote url. The current remote url is used by default.
+    -T, --token TOKEN                Access token for authentication with --remote. Saved credentials are used by default.
+    -U, --username USERNAME          Username for authentication.
+    -P, --password PASSWORD          Password for authentication.
+    -I, --insecure                   Allow insecure HTTPS communication.  i.e. bad SSL certificate.
+    -H, --header HEADER              Additional HTTP header to include with requests.
+        --timeout SECONDS            Timeout for api requests. Default is typically 30 seconds.
+    -C, --nocolor                    Disable ANSI coloring
+    -B, --benchmark                  Print benchmark time after the command is finished.
+    -V, --debug                      Print extra output for debugging.
+    -h, --help                       Print this help
+
+List containers for a cluster.
+[cluster] is required. This is the name or id of an existing cluster.
+```
+
+#### morpheus clusters list-deployments
+
+```
+Usage: morpheus clusters list-deployments [cluster]
+        --resource-level LEVEL       Resource Level
+    -m, --max MAX                    Max Results
+    -o, --offset OFFSET              Offset Results
+    -s, --search PHRASE              Search Phrase
+    -S, --sort ORDER                 Sort Order
+    -D, --desc                       Reverse Sort Order
+    -Q, --query PARAMS               Query parameters. PARAMS format is 'phrase=foobar&category=web'
+    -j, --json                       JSON Output
+        --yaml                       YAML Output
+        --csv                        CSV Output
+        --csv-delim CHAR             Delimiter for CSV Output values. Default: ','
+        --csv-newline [CHAR]         Delimiter for CSV Output rows. Default: '\n'
+        --csv-quotes                 Wrap CSV values with ". Default: false
+        --csv-no-header              Exclude header for CSV Output.
+    -F, --fields x,y,z               Filter Output to a limited set of fields. Default is all fields.
+    -d, --dry-run                    Dry Run, print the API request instead of executing it
+        --curl                       Dry Run to output API request as a curl command.
+        --scrub                      Mask secrets in output, such as the Authorization header. For use with --curl and --dry-run.
+    -r, --remote REMOTE              Remote name. The current remote is used by default.
+        --remote-url URL             Remote url. The current remote url is used by default.
+    -T, --token TOKEN                Access token for authentication with --remote. Saved credentials are used by default.
+    -U, --username USERNAME          Username for authentication.
+    -P, --password PASSWORD          Password for authentication.
+    -I, --insecure                   Allow insecure HTTPS communication.  i.e. bad SSL certificate.
+    -H, --header HEADER              Additional HTTP header to include with requests.
+        --timeout SECONDS            Timeout for api requests. Default is typically 30 seconds.
+    -C, --nocolor                    Disable ANSI coloring
+    -B, --benchmark                  Print benchmark time after the command is finished.
+    -V, --debug                      Print extra output for debugging.
+    -h, --help                       Print this help
+
+List deployments for a cluster.
+[cluster] is required. This is the name or id of an existing cluster.
+```
+
+#### morpheus clusters list-jobs
+
+```
+Usage: morpheus clusters list-jobs [cluster]
+    -m, --max MAX                    Max Results
+    -o, --offset OFFSET              Offset Results
+    -s, --search PHRASE              Search Phrase
+    -S, --sort ORDER                 Sort Order
+    -D, --desc                       Reverse Sort Order
+    -Q, --query PARAMS               Query parameters. PARAMS format is 'phrase=foobar&category=web'
+    -j, --json                       JSON Output
+        --yaml                       YAML Output
+        --csv                        CSV Output
+        --csv-delim CHAR             Delimiter for CSV Output values. Default: ','
+        --csv-newline [CHAR]         Delimiter for CSV Output rows. Default: '\n'
+        --csv-quotes                 Wrap CSV values with ". Default: false
+        --csv-no-header              Exclude header for CSV Output.
+    -F, --fields x,y,z               Filter Output to a limited set of fields. Default is all fields.
+    -d, --dry-run                    Dry Run, print the API request instead of executing it
+        --curl                       Dry Run to output API request as a curl command.
+        --scrub                      Mask secrets in output, such as the Authorization header. For use with --curl and --dry-run.
+    -r, --remote REMOTE              Remote name. The current remote is used by default.
+        --remote-url URL             Remote url. The current remote url is used by default.
+    -T, --token TOKEN                Access token for authentication with --remote. Saved credentials are used by default.
+    -U, --username USERNAME          Username for authentication.
+    -P, --password PASSWORD          Password for authentication.
+    -I, --insecure                   Allow insecure HTTPS communication.  i.e. bad SSL certificate.
+    -H, --header HEADER              Additional HTTP header to include with requests.
+        --timeout SECONDS            Timeout for api requests. Default is typically 30 seconds.
+    -C, --nocolor                    Disable ANSI coloring
+    -B, --benchmark                  Print benchmark time after the command is finished.
+    -V, --debug                      Print extra output for debugging.
+    -h, --help                       Print this help
+
+List jobs for a cluster.
+[cluster] is required. This is the name or id of an existing cluster.
+```
+
+#### morpheus clusters list-masters
+
+```
+Usage: morpheus clusters list-masters [cluster]
+    -m, --max MAX                    Max Results
+    -o, --offset OFFSET              Offset Results
+    -s, --search PHRASE              Search Phrase
+    -S, --sort ORDER                 Sort Order
+    -D, --desc                       Reverse Sort Order
+    -Q, --query PARAMS               Query parameters. PARAMS format is 'phrase=foobar&category=web'
+    -j, --json                       JSON Output
+        --yaml                       YAML Output
+        --csv                        CSV Output
+        --csv-delim CHAR             Delimiter for CSV Output values. Default: ','
+        --csv-newline [CHAR]         Delimiter for CSV Output rows. Default: '\n'
+        --csv-quotes                 Wrap CSV values with ". Default: false
+        --csv-no-header              Exclude header for CSV Output.
+    -F, --fields x,y,z               Filter Output to a limited set of fields. Default is all fields.
+    -d, --dry-run                    Dry Run, print the API request instead of executing it
+        --curl                       Dry Run to output API request as a curl command.
+        --scrub                      Mask secrets in output, such as the Authorization header. For use with --curl and --dry-run.
+    -r, --remote REMOTE              Remote name. The current remote is used by default.
+        --remote-url URL             Remote url. The current remote url is used by default.
+    -T, --token TOKEN                Access token for authentication with --remote. Saved credentials are used by default.
+    -U, --username USERNAME          Username for authentication.
+    -P, --password PASSWORD          Password for authentication.
+    -I, --insecure                   Allow insecure HTTPS communication.  i.e. bad SSL certificate.
+    -H, --header HEADER              Additional HTTP header to include with requests.
+        --timeout SECONDS            Timeout for api requests. Default is typically 30 seconds.
+    -C, --nocolor                    Disable ANSI coloring
+    -B, --benchmark                  Print benchmark time after the command is finished.
+    -V, --debug                      Print extra output for debugging.
+    -h, --help                       Print this help
+
+List masters for a cluster.
+[cluster] is required. This is the name or id of an existing cluster.
+```
+
+#### morpheus clusters list-namespaces
+
+```
+Usage: morpheus clusters list-namespaces [cluster]
+    -m, --max MAX                    Max Results
+    -o, --offset OFFSET              Offset Results
+    -s, --search PHRASE              Search Phrase
+    -S, --sort ORDER                 Sort Order
+    -D, --desc                       Reverse Sort Order
+    -Q, --query PARAMS               Query parameters. PARAMS format is 'phrase=foobar&category=web'
+    -j, --json                       JSON Output
+        --yaml                       YAML Output
+        --csv                        CSV Output
+        --csv-delim CHAR             Delimiter for CSV Output values. Default: ','
+        --csv-newline [CHAR]         Delimiter for CSV Output rows. Default: '\n'
+        --csv-quotes                 Wrap CSV values with ". Default: false
+        --csv-no-header              Exclude header for CSV Output.
+    -F, --fields x,y,z               Filter Output to a limited set of fields. Default is all fields.
+    -d, --dry-run                    Dry Run, print the API request instead of executing it
+        --curl                       Dry Run to output API request as a curl command.
+        --scrub                      Mask secrets in output, such as the Authorization header. For use with --curl and --dry-run.
+    -r, --remote REMOTE              Remote name. The current remote is used by default.
+        --remote-url URL             Remote url. The current remote url is used by default.
+    -T, --token TOKEN                Access token for authentication with --remote. Saved credentials are used by default.
+    -U, --username USERNAME          Username for authentication.
+    -P, --password PASSWORD          Password for authentication.
+    -I, --insecure                   Allow insecure HTTPS communication.  i.e. bad SSL certificate.
+    -H, --header HEADER              Additional HTTP header to include with requests.
+        --timeout SECONDS            Timeout for api requests. Default is typically 30 seconds.
+    -C, --nocolor                    Disable ANSI coloring
+    -B, --benchmark                  Print benchmark time after the command is finished.
+    -V, --debug                      Print extra output for debugging.
+    -h, --help                       Print this help
+
+List namespaces for a cluster.
+[cluster] is required. This is the name or id of an existing cluster.
+```
+
+#### morpheus clusters list-pods
+
+```
+Usage: morpheus clusters list-pods [cluster]
+        --resource-level LEVEL       Resource Level
+    -m, --max MAX                    Max Results
+    -o, --offset OFFSET              Offset Results
+    -s, --search PHRASE              Search Phrase
+    -S, --sort ORDER                 Sort Order
+    -D, --desc                       Reverse Sort Order
+    -Q, --query PARAMS               Query parameters. PARAMS format is 'phrase=foobar&category=web'
+    -j, --json                       JSON Output
+        --yaml                       YAML Output
+        --csv                        CSV Output
+        --csv-delim CHAR             Delimiter for CSV Output values. Default: ','
+        --csv-newline [CHAR]         Delimiter for CSV Output rows. Default: '\n'
+        --csv-quotes                 Wrap CSV values with ". Default: false
+        --csv-no-header              Exclude header for CSV Output.
+    -F, --fields x,y,z               Filter Output to a limited set of fields. Default is all fields.
+    -d, --dry-run                    Dry Run, print the API request instead of executing it
+        --curl                       Dry Run to output API request as a curl command.
+        --scrub                      Mask secrets in output, such as the Authorization header. For use with --curl and --dry-run.
+    -r, --remote REMOTE              Remote name. The current remote is used by default.
+        --remote-url URL             Remote url. The current remote url is used by default.
+    -T, --token TOKEN                Access token for authentication with --remote. Saved credentials are used by default.
+    -U, --username USERNAME          Username for authentication.
+    -P, --password PASSWORD          Password for authentication.
+    -I, --insecure                   Allow insecure HTTPS communication.  i.e. bad SSL certificate.
+    -H, --header HEADER              Additional HTTP header to include with requests.
+        --timeout SECONDS            Timeout for api requests. Default is typically 30 seconds.
+    -C, --nocolor                    Disable ANSI coloring
+    -B, --benchmark                  Print benchmark time after the command is finished.
+    -V, --debug                      Print extra output for debugging.
+    -h, --help                       Print this help
+
+List pods for a cluster.
+[cluster] is required. This is the name or id of an existing cluster.
+```
+
+#### morpheus clusters list-services
+
+```
+Usage: morpheus clusters list-services [cluster]
+    -m, --max MAX                    Max Results
+    -o, --offset OFFSET              Offset Results
+    -s, --search PHRASE              Search Phrase
+    -S, --sort ORDER                 Sort Order
+    -D, --desc                       Reverse Sort Order
+    -Q, --query PARAMS               Query parameters. PARAMS format is 'phrase=foobar&category=web'
+    -j, --json                       JSON Output
+        --yaml                       YAML Output
+        --csv                        CSV Output
+        --csv-delim CHAR             Delimiter for CSV Output values. Default: ','
+        --csv-newline [CHAR]         Delimiter for CSV Output rows. Default: '\n'
+        --csv-quotes                 Wrap CSV values with ". Default: false
+        --csv-no-header              Exclude header for CSV Output.
+    -F, --fields x,y,z               Filter Output to a limited set of fields. Default is all fields.
+    -d, --dry-run                    Dry Run, print the API request instead of executing it
+        --curl                       Dry Run to output API request as a curl command.
+        --scrub                      Mask secrets in output, such as the Authorization header. For use with --curl and --dry-run.
+    -r, --remote REMOTE              Remote name. The current remote is used by default.
+        --remote-url URL             Remote url. The current remote url is used by default.
+    -T, --token TOKEN                Access token for authentication with --remote. Saved credentials are used by default.
+    -U, --username USERNAME          Username for authentication.
+    -P, --password PASSWORD          Password for authentication.
+    -I, --insecure                   Allow insecure HTTPS communication.  i.e. bad SSL certificate.
+    -H, --header HEADER              Additional HTTP header to include with requests.
+        --timeout SECONDS            Timeout for api requests. Default is typically 30 seconds.
+    -C, --nocolor                    Disable ANSI coloring
+    -B, --benchmark                  Print benchmark time after the command is finished.
+    -V, --debug                      Print extra output for debugging.
+    -h, --help                       Print this help
+
+List services for a cluster.
+[cluster] is required. This is the name or id of an existing cluster.
+```
+
+#### morpheus clusters list-stateful-sets
+
+```
+Usage: morpheus clusters list-stateful-sets [cluster]
+        --resource-level LEVEL       Resource Level
+    -m, --max MAX                    Max Results
+    -o, --offset OFFSET              Offset Results
+    -s, --search PHRASE              Search Phrase
+    -S, --sort ORDER                 Sort Order
+    -D, --desc                       Reverse Sort Order
+    -Q, --query PARAMS               Query parameters. PARAMS format is 'phrase=foobar&category=web'
+    -j, --json                       JSON Output
+        --yaml                       YAML Output
+        --csv                        CSV Output
+        --csv-delim CHAR             Delimiter for CSV Output values. Default: ','
+        --csv-newline [CHAR]         Delimiter for CSV Output rows. Default: '\n'
+        --csv-quotes                 Wrap CSV values with ". Default: false
+        --csv-no-header              Exclude header for CSV Output.
+    -F, --fields x,y,z               Filter Output to a limited set of fields. Default is all fields.
+    -d, --dry-run                    Dry Run, print the API request instead of executing it
+        --curl                       Dry Run to output API request as a curl command.
+        --scrub                      Mask secrets in output, such as the Authorization header. For use with --curl and --dry-run.
+    -r, --remote REMOTE              Remote name. The current remote is used by default.
+        --remote-url URL             Remote url. The current remote url is used by default.
+    -T, --token TOKEN                Access token for authentication with --remote. Saved credentials are used by default.
+    -U, --username USERNAME          Username for authentication.
+    -P, --password PASSWORD          Password for authentication.
+    -I, --insecure                   Allow insecure HTTPS communication.  i.e. bad SSL certificate.
+    -H, --header HEADER              Additional HTTP header to include with requests.
+        --timeout SECONDS            Timeout for api requests. Default is typically 30 seconds.
+    -C, --nocolor                    Disable ANSI coloring
+    -B, --benchmark                  Print benchmark time after the command is finished.
+    -V, --debug                      Print extra output for debugging.
+    -h, --help                       Print this help
+
+List statefulsets for a cluster.
+[cluster] is required. This is the name or id of an existing cluster.
+```
+
+#### morpheus clusters list-volumes
+
+```
+Usage: morpheus clusters list-volumes [cluster]
+    -m, --max MAX                    Max Results
+    -o, --offset OFFSET              Offset Results
+    -s, --search PHRASE              Search Phrase
+    -S, --sort ORDER                 Sort Order
+    -D, --desc                       Reverse Sort Order
+    -Q, --query PARAMS               Query parameters. PARAMS format is 'phrase=foobar&category=web'
+    -j, --json                       JSON Output
+        --yaml                       YAML Output
+        --csv                        CSV Output
+        --csv-delim CHAR             Delimiter for CSV Output values. Default: ','
+        --csv-newline [CHAR]         Delimiter for CSV Output rows. Default: '\n'
+        --csv-quotes                 Wrap CSV values with ". Default: false
+        --csv-no-header              Exclude header for CSV Output.
+    -F, --fields x,y,z               Filter Output to a limited set of fields. Default is all fields.
+    -d, --dry-run                    Dry Run, print the API request instead of executing it
+        --curl                       Dry Run to output API request as a curl command.
+        --scrub                      Mask secrets in output, such as the Authorization header. For use with --curl and --dry-run.
+    -r, --remote REMOTE              Remote name. The current remote is used by default.
+        --remote-url URL             Remote url. The current remote url is used by default.
+    -T, --token TOKEN                Access token for authentication with --remote. Saved credentials are used by default.
+    -U, --username USERNAME          Username for authentication.
+    -P, --password PASSWORD          Password for authentication.
+    -I, --insecure                   Allow insecure HTTPS communication.  i.e. bad SSL certificate.
+    -H, --header HEADER              Additional HTTP header to include with requests.
+        --timeout SECONDS            Timeout for api requests. Default is typically 30 seconds.
+    -C, --nocolor                    Disable ANSI coloring
+    -B, --benchmark                  Print benchmark time after the command is finished.
+    -V, --debug                      Print extra output for debugging.
+    -h, --help                       Print this help
+
+List volumes for a cluster.
+[cluster] is required. This is the name or id of an existing cluster.
+```
+
+#### morpheus clusters list-workers
+
+```
+Usage: morpheus clusters list-workers [cluster]
+    -m, --max MAX                    Max Results
+    -o, --offset OFFSET              Offset Results
+    -s, --search PHRASE              Search Phrase
+    -S, --sort ORDER                 Sort Order
+    -D, --desc                       Reverse Sort Order
+    -Q, --query PARAMS               Query parameters. PARAMS format is 'phrase=foobar&category=web'
+    -j, --json                       JSON Output
+        --yaml                       YAML Output
+        --csv                        CSV Output
+        --csv-delim CHAR             Delimiter for CSV Output values. Default: ','
+        --csv-newline [CHAR]         Delimiter for CSV Output rows. Default: '\n'
+        --csv-quotes                 Wrap CSV values with ". Default: false
+        --csv-no-header              Exclude header for CSV Output.
+    -F, --fields x,y,z               Filter Output to a limited set of fields. Default is all fields.
+    -d, --dry-run                    Dry Run, print the API request instead of executing it
+        --curl                       Dry Run to output API request as a curl command.
+        --scrub                      Mask secrets in output, such as the Authorization header. For use with --curl and --dry-run.
+    -r, --remote REMOTE              Remote name. The current remote is used by default.
+        --remote-url URL             Remote url. The current remote url is used by default.
+    -T, --token TOKEN                Access token for authentication with --remote. Saved credentials are used by default.
+    -U, --username USERNAME          Username for authentication.
+    -P, --password PASSWORD          Password for authentication.
+    -I, --insecure                   Allow insecure HTTPS communication.  i.e. bad SSL certificate.
+    -H, --header HEADER              Additional HTTP header to include with requests.
+        --timeout SECONDS            Timeout for api requests. Default is typically 30 seconds.
+    -C, --nocolor                    Disable ANSI coloring
+    -B, --benchmark                  Print benchmark time after the command is finished.
+    -V, --debug                      Print extra output for debugging.
+    -h, --help                       Print this help
+
+List workers for a cluster.
+[cluster] is required. This is the name or id of an existing cluster.
+```
+
+#### morpheus clusters logs
+
+```
+Usage: morpheus clusters logs [cluster]
+    -m, --max MAX                    Max Results
+    -o, --offset OFFSET              Offset Results
+    -s, --search PHRASE              Search Phrase
+    -S, --sort ORDER                 Sort Order
+    -D, --desc                       Reverse Sort Order
+    -Q, --query PARAMS               Query parameters. PARAMS format is 'phrase=foobar&category=web'
+    -j, --json                       JSON Output
+        --yaml                       YAML Output
+        --csv                        CSV Output
+        --csv-delim CHAR             Delimiter for CSV Output values. Default: ','
+        --csv-newline [CHAR]         Delimiter for CSV Output rows. Default: '\n'
+        --csv-quotes                 Wrap CSV values with ". Default: false
+        --csv-no-header              Exclude header for CSV Output.
+    -F, --fields x,y,z               Filter Output to a limited set of fields. Default is all fields.
+    -d, --dry-run                    Dry Run, print the API request instead of executing it
+        --curl                       Dry Run to output API request as a curl command.
+        --scrub                      Mask secrets in output, such as the Authorization header. For use with --curl and --dry-run.
+    -r, --remote REMOTE              Remote name. The current remote is used by default.
+        --remote-url URL             Remote url. The current remote url is used by default.
+    -T, --token TOKEN                Access token for authentication with --remote. Saved credentials are used by default.
+    -U, --username USERNAME          Username for authentication.
+    -P, --password PASSWORD          Password for authentication.
+    -I, --insecure                   Allow insecure HTTPS communication.  i.e. bad SSL certificate.
+    -H, --header HEADER              Additional HTTP header to include with requests.
+        --timeout SECONDS            Timeout for api requests. Default is typically 30 seconds.
+    -C, --nocolor                    Disable ANSI coloring
+    -B, --benchmark                  Print benchmark time after the command is finished.
+    -V, --debug                      Print extra output for debugging.
+    -h, --help                       Print this help
+```
+
+#### morpheus clusters remove
+
+```
+Usage: morpheus clusters remove [cluster]
+        --remove-resources [on|off]  Remove Infrastructure. Default is on.
+        --preserve-volumes [on|off]  Preserve Volumes. Default is off.
+        --remove-instances [on|off]  Remove Associated Instances. Default is off.
+        --release-eips [on|off]      Release EIPs, default is on. Amazon only.
+    -f, --force                      Force Delete
+    -y, --yes                        Auto Confirm
+    -j, --json                       JSON Output
+    -d, --dry-run                    Dry Run, print the API request instead of executing it
+        --curl                       Dry Run to output API request as a curl command.
+        --scrub                      Mask secrets in output, such as the Authorization header. For use with --curl and --dry-run.
+    -q, --quiet                      No Output, do not print to stdout
+    -r, --remote REMOTE              Remote name. The current remote is used by default.
+        --remote-url URL             Remote url. The current remote url is used by default.
+    -T, --token TOKEN                Access token for authentication with --remote. Saved credentials are used by default.
+    -U, --username USERNAME          Username for authentication.
+    -P, --password PASSWORD          Password for authentication.
+    -I, --insecure                   Allow insecure HTTPS communication.  i.e. bad SSL certificate.
+    -H, --header HEADER              Additional HTTP header to include with requests.
+        --timeout SECONDS            Timeout for api requests. Default is typically 30 seconds.
+    -C, --nocolor                    Disable ANSI coloring
+    -B, --benchmark                  Print benchmark time after the command is finished.
+    -V, --debug                      Print extra output for debugging.
+    -h, --help                       Print this help
+
+Delete a cluster.
+[cluster] is required. This is the name or id of an existing cluster.
+```
+
+#### morpheus clusters remove-container
+
+```
+Usage: morpheus clusters remove-container [cluster] [container]
+    -f, --force                      Force Delete
+    -y, --yes                        Auto Confirm
+    -j, --json                       JSON Output
+    -d, --dry-run                    Dry Run, print the API request instead of executing it
+        --curl                       Dry Run to output API request as a curl command.
+        --scrub                      Mask secrets in output, such as the Authorization header. For use with --curl and --dry-run.
+    -q, --quiet                      No Output, do not print to stdout
+    -r, --remote REMOTE              Remote name. The current remote is used by default.
+        --remote-url URL             Remote url. The current remote url is used by default.
+    -T, --token TOKEN                Access token for authentication with --remote. Saved credentials are used by default.
+    -U, --username USERNAME          Username for authentication.
+    -P, --password PASSWORD          Password for authentication.
+    -I, --insecure                   Allow insecure HTTPS communication.  i.e. bad SSL certificate.
+    -H, --header HEADER              Additional HTTP header to include with requests.
+        --timeout SECONDS            Timeout for api requests. Default is typically 30 seconds.
+    -C, --nocolor                    Disable ANSI coloring
+    -B, --benchmark                  Print benchmark time after the command is finished.
+    -V, --debug                      Print extra output for debugging.
+    -h, --help                       Print this help
+
+Delete a container within a cluster.
+[cluster] is required. This is the name or id of an existing cluster.
+[container] is required. This is the name or id of an existing container.
+```
+
+#### morpheus clusters remove-deployment
+
+```
+Usage: morpheus clusters remove-deployment [cluster] [deployment]
+    -f, --force                      Force Delete
+    -y, --yes                        Auto Confirm
+    -j, --json                       JSON Output
+    -d, --dry-run                    Dry Run, print the API request instead of executing it
+        --curl                       Dry Run to output API request as a curl command.
+        --scrub                      Mask secrets in output, such as the Authorization header. For use with --curl and --dry-run.
+    -q, --quiet                      No Output, do not print to stdout
+    -r, --remote REMOTE              Remote name. The current remote is used by default.
+        --remote-url URL             Remote url. The current remote url is used by default.
+    -T, --token TOKEN                Access token for authentication with --remote. Saved credentials are used by default.
+    -U, --username USERNAME          Username for authentication.
+    -P, --password PASSWORD          Password for authentication.
+    -I, --insecure                   Allow insecure HTTPS communication.  i.e. bad SSL certificate.
+    -H, --header HEADER              Additional HTTP header to include with requests.
+        --timeout SECONDS            Timeout for api requests. Default is typically 30 seconds.
+    -C, --nocolor                    Disable ANSI coloring
+    -B, --benchmark                  Print benchmark time after the command is finished.
+    -V, --debug                      Print extra output for debugging.
+    -h, --help                       Print this help
+
+Delete a deployment within a cluster.
+[cluster] is required. This is the name or id of an existing cluster.
+[deployment] is required. This is the name or id of an existing deployment.
+```
+
+#### morpheus clusters remove-job
+
+```
+Usage: morpheus clusters remove-job [cluster] [job]
+    -y, --yes                        Auto Confirm
+    -j, --json                       JSON Output
+    -d, --dry-run                    Dry Run, print the API request instead of executing it
+        --curl                       Dry Run to output API request as a curl command.
+        --scrub                      Mask secrets in output, such as the Authorization header. For use with --curl and --dry-run.
+    -q, --quiet                      No Output, do not print to stdout
+    -r, --remote REMOTE              Remote name. The current remote is used by default.
+        --remote-url URL             Remote url. The current remote url is used by default.
+    -T, --token TOKEN                Access token for authentication with --remote. Saved credentials are used by default.
+    -U, --username USERNAME          Username for authentication.
+    -P, --password PASSWORD          Password for authentication.
+    -I, --insecure                   Allow insecure HTTPS communication.  i.e. bad SSL certificate.
+    -H, --header HEADER              Additional HTTP header to include with requests.
+        --timeout SECONDS            Timeout for api requests. Default is typically 30 seconds.
+    -C, --nocolor                    Disable ANSI coloring
+    -B, --benchmark                  Print benchmark time after the command is finished.
+    -V, --debug                      Print extra output for debugging.
+    -h, --help                       Print this help
+
+Delete a job within a cluster.
+[cluster] is required. This is the name or id of an existing cluster.
+[job] is required. This is the name or id of an existing job.
+```
+
+#### morpheus clusters remove-namespace
+
+```
+Usage: morpheus clusters remove-namespace [cluster] [namespace]
+    -f, --force                      Force Delete
+    -y, --yes                        Auto Confirm
+    -j, --json                       JSON Output
+    -d, --dry-run                    Dry Run, print the API request instead of executing it
+        --curl                       Dry Run to output API request as a curl command.
+        --scrub                      Mask secrets in output, such as the Authorization header. For use with --curl and --dry-run.
+    -q, --quiet                      No Output, do not print to stdout
+    -r, --remote REMOTE              Remote name. The current remote is used by default.
+        --remote-url URL             Remote url. The current remote url is used by default.
+    -T, --token TOKEN                Access token for authentication with --remote. Saved credentials are used by default.
+    -U, --username USERNAME          Username for authentication.
+    -P, --password PASSWORD          Password for authentication.
+    -I, --insecure                   Allow insecure HTTPS communication.  i.e. bad SSL certificate.
+    -H, --header HEADER              Additional HTTP header to include with requests.
+        --timeout SECONDS            Timeout for api requests. Default is typically 30 seconds.
+    -C, --nocolor                    Disable ANSI coloring
+    -B, --benchmark                  Print benchmark time after the command is finished.
+    -V, --debug                      Print extra output for debugging.
+    -h, --help                       Print this help
+
+Delete a namespace within a cluster.
+```
+
+#### morpheus clusters remove-pod
+
+```
+Usage: morpheus clusters remove-pod [cluster] [pod]
+    -f, --force                      Force Delete
+    -y, --yes                        Auto Confirm
+    -j, --json                       JSON Output
+    -d, --dry-run                    Dry Run, print the API request instead of executing it
+        --curl                       Dry Run to output API request as a curl command.
+        --scrub                      Mask secrets in output, such as the Authorization header. For use with --curl and --dry-run.
+    -q, --quiet                      No Output, do not print to stdout
+    -r, --remote REMOTE              Remote name. The current remote is used by default.
+        --remote-url URL             Remote url. The current remote url is used by default.
+    -T, --token TOKEN                Access token for authentication with --remote. Saved credentials are used by default.
+    -U, --username USERNAME          Username for authentication.
+    -P, --password PASSWORD          Password for authentication.
+    -I, --insecure                   Allow insecure HTTPS communication.  i.e. bad SSL certificate.
+    -H, --header HEADER              Additional HTTP header to include with requests.
+        --timeout SECONDS            Timeout for api requests. Default is typically 30 seconds.
+    -C, --nocolor                    Disable ANSI coloring
+    -B, --benchmark                  Print benchmark time after the command is finished.
+    -V, --debug                      Print extra output for debugging.
+    -h, --help                       Print this help
+
+Delete a pod within a cluster.
+[cluster] is required. This is the name or id of an existing cluster.
+[pod] is required. This is the name or id of an existing pod.
+```
+
+#### morpheus clusters remove-service
+
+```
+Usage: morpheus clusters remove-service [cluster] [service]
+    -y, --yes                        Auto Confirm
+    -j, --json                       JSON Output
+    -d, --dry-run                    Dry Run, print the API request instead of executing it
+        --curl                       Dry Run to output API request as a curl command.
+        --scrub                      Mask secrets in output, such as the Authorization header. For use with --curl and --dry-run.
+    -q, --quiet                      No Output, do not print to stdout
+    -r, --remote REMOTE              Remote name. The current remote is used by default.
+        --remote-url URL             Remote url. The current remote url is used by default.
+    -T, --token TOKEN                Access token for authentication with --remote. Saved credentials are used by default.
+    -U, --username USERNAME          Username for authentication.
+    -P, --password PASSWORD          Password for authentication.
+    -I, --insecure                   Allow insecure HTTPS communication.  i.e. bad SSL certificate.
+    -H, --header HEADER              Additional HTTP header to include with requests.
+        --timeout SECONDS            Timeout for api requests. Default is typically 30 seconds.
+    -C, --nocolor                    Disable ANSI coloring
+    -B, --benchmark                  Print benchmark time after the command is finished.
+    -V, --debug                      Print extra output for debugging.
+    -h, --help                       Print this help
+
+Delete a service within a cluster.
+[cluster] is required. This is the name or id of an existing cluster.
+[service] is required. This is the name or id of an existing service.
+```
+
+#### morpheus clusters remove-stateful-set
+
+```
+Usage: morpheus clusters remove-stateful-set [cluster] [statefulset]
+    -f, --force                      Force Delete
+    -y, --yes                        Auto Confirm
+    -j, --json                       JSON Output
+    -d, --dry-run                    Dry Run, print the API request instead of executing it
+        --curl                       Dry Run to output API request as a curl command.
+        --scrub                      Mask secrets in output, such as the Authorization header. For use with --curl and --dry-run.
+    -q, --quiet                      No Output, do not print to stdout
+    -r, --remote REMOTE              Remote name. The current remote is used by default.
+        --remote-url URL             Remote url. The current remote url is used by default.
+    -T, --token TOKEN                Access token for authentication with --remote. Saved credentials are used by default.
+    -U, --username USERNAME          Username for authentication.
+    -P, --password PASSWORD          Password for authentication.
+    -I, --insecure                   Allow insecure HTTPS communication.  i.e. bad SSL certificate.
+    -H, --header HEADER              Additional HTTP header to include with requests.
+        --timeout SECONDS            Timeout for api requests. Default is typically 30 seconds.
+    -C, --nocolor                    Disable ANSI coloring
+    -B, --benchmark                  Print benchmark time after the command is finished.
+    -V, --debug                      Print extra output for debugging.
+    -h, --help                       Print this help
+
+Delete a statefulset within a cluster.
+[cluster] is required. This is the name or id of an existing cluster.
+[statefulset] is required. This is the name or id of an existing statefulset.
+```
+
+#### morpheus clusters remove-volume
+
+```
+Usage: morpheus clusters remove-volume [cluster] [volume]
+    -y, --yes                        Auto Confirm
+    -j, --json                       JSON Output
+    -d, --dry-run                    Dry Run, print the API request instead of executing it
+        --curl                       Dry Run to output API request as a curl command.
+        --scrub                      Mask secrets in output, such as the Authorization header. For use with --curl and --dry-run.
+    -q, --quiet                      No Output, do not print to stdout
+    -r, --remote REMOTE              Remote name. The current remote is used by default.
+        --remote-url URL             Remote url. The current remote url is used by default.
+    -T, --token TOKEN                Access token for authentication with --remote. Saved credentials are used by default.
+    -U, --username USERNAME          Username for authentication.
+    -P, --password PASSWORD          Password for authentication.
+    -I, --insecure                   Allow insecure HTTPS communication.  i.e. bad SSL certificate.
+    -H, --header HEADER              Additional HTTP header to include with requests.
+        --timeout SECONDS            Timeout for api requests. Default is typically 30 seconds.
+    -C, --nocolor                    Disable ANSI coloring
+    -B, --benchmark                  Print benchmark time after the command is finished.
+    -V, --debug                      Print extra output for debugging.
+    -h, --help                       Print this help
+
+Delete a volume within a cluster.
+[cluster] is required. This is the name or id of an existing cluster.
+[volume] is required. This is the name or id of an existing volume.
+```
+
+#### morpheus clusters restart-container
+
+```
+Usage: morpheus clusters restart-container [cluster] [container]
+    -y, --yes                        Auto Confirm
+    -j, --json                       JSON Output
+    -d, --dry-run                    Dry Run, print the API request instead of executing it
+        --curl                       Dry Run to output API request as a curl command.
+        --scrub                      Mask secrets in output, such as the Authorization header. For use with --curl and --dry-run.
+    -q, --quiet                      No Output, do not print to stdout
+    -r, --remote REMOTE              Remote name. The current remote is used by default.
+        --remote-url URL             Remote url. The current remote url is used by default.
+    -T, --token TOKEN                Access token for authentication with --remote. Saved credentials are used by default.
+    -U, --username USERNAME          Username for authentication.
+    -P, --password PASSWORD          Password for authentication.
+    -I, --insecure                   Allow insecure HTTPS communication.  i.e. bad SSL certificate.
+    -H, --header HEADER              Additional HTTP header to include with requests.
+        --timeout SECONDS            Timeout for api requests. Default is typically 30 seconds.
+    -C, --nocolor                    Disable ANSI coloring
+    -B, --benchmark                  Print benchmark time after the command is finished.
+    -V, --debug                      Print extra output for debugging.
+    -h, --help                       Print this help
+
+Restart a container within a cluster.
+[cluster] is required. This is the name or id of an existing cluster.
+[container] is required. This is the name or id of an existing container.
+```
+
+#### morpheus clusters restart-deployment
+
+```
+Usage: morpheus clusters restart-deployment [cluster] [deployment]
+    -y, --yes                        Auto Confirm
+    -j, --json                       JSON Output
+    -d, --dry-run                    Dry Run, print the API request instead of executing it
+        --curl                       Dry Run to output API request as a curl command.
+        --scrub                      Mask secrets in output, such as the Authorization header. For use with --curl and --dry-run.
+    -q, --quiet                      No Output, do not print to stdout
+    -r, --remote REMOTE              Remote name. The current remote is used by default.
+        --remote-url URL             Remote url. The current remote url is used by default.
+    -T, --token TOKEN                Access token for authentication with --remote. Saved credentials are used by default.
+    -U, --username USERNAME          Username for authentication.
+    -P, --password PASSWORD          Password for authentication.
+    -I, --insecure                   Allow insecure HTTPS communication.  i.e. bad SSL certificate.
+    -H, --header HEADER              Additional HTTP header to include with requests.
+        --timeout SECONDS            Timeout for api requests. Default is typically 30 seconds.
+    -C, --nocolor                    Disable ANSI coloring
+    -B, --benchmark                  Print benchmark time after the command is finished.
+    -V, --debug                      Print extra output for debugging.
+    -h, --help                       Print this help
+
+Restart a deployment within a cluster.
+[cluster] is required. This is the name or id of an existing cluster.
+[deployment] is required. This is the name or id of an existing deployment.
+```
+
+#### morpheus clusters restart-pod
+
+```
+Usage: morpheus clusters restart-pod [cluster] [pod]
+    -y, --yes                        Auto Confirm
+    -j, --json                       JSON Output
+    -d, --dry-run                    Dry Run, print the API request instead of executing it
+        --curl                       Dry Run to output API request as a curl command.
+        --scrub                      Mask secrets in output, such as the Authorization header. For use with --curl and --dry-run.
+    -q, --quiet                      No Output, do not print to stdout
+    -r, --remote REMOTE              Remote name. The current remote is used by default.
+        --remote-url URL             Remote url. The current remote url is used by default.
+    -T, --token TOKEN                Access token for authentication with --remote. Saved credentials are used by default.
+    -U, --username USERNAME          Username for authentication.
+    -P, --password PASSWORD          Password for authentication.
+    -I, --insecure                   Allow insecure HTTPS communication.  i.e. bad SSL certificate.
+    -H, --header HEADER              Additional HTTP header to include with requests.
+        --timeout SECONDS            Timeout for api requests. Default is typically 30 seconds.
+    -C, --nocolor                    Disable ANSI coloring
+    -B, --benchmark                  Print benchmark time after the command is finished.
+    -V, --debug                      Print extra output for debugging.
+    -h, --help                       Print this help
+
+Restart a pod within a cluster.
+[cluster] is required. This is the name or id of an existing cluster.
+[pod] is required. This is the name or id of an existing pod.
+```
+
+#### morpheus clusters restart-stateful-set
+
+```
+Usage: morpheus clusters restart-stateful-set [cluster] [statefulset]
+    -y, --yes                        Auto Confirm
+    -j, --json                       JSON Output
+    -d, --dry-run                    Dry Run, print the API request instead of executing it
+        --curl                       Dry Run to output API request as a curl command.
+        --scrub                      Mask secrets in output, such as the Authorization header. For use with --curl and --dry-run.
+    -q, --quiet                      No Output, do not print to stdout
+    -r, --remote REMOTE              Remote name. The current remote is used by default.
+        --remote-url URL             Remote url. The current remote url is used by default.
+    -T, --token TOKEN                Access token for authentication with --remote. Saved credentials are used by default.
+    -U, --username USERNAME          Username for authentication.
+    -P, --password PASSWORD          Password for authentication.
+    -I, --insecure                   Allow insecure HTTPS communication.  i.e. bad SSL certificate.
+    -H, --header HEADER              Additional HTTP header to include with requests.
+        --timeout SECONDS            Timeout for api requests. Default is typically 30 seconds.
+    -C, --nocolor                    Disable ANSI coloring
+    -B, --benchmark                  Print benchmark time after the command is finished.
+    -V, --debug                      Print extra output for debugging.
+    -h, --help                       Print this help
+
+Restart a statefulset within a cluster.
+[cluster] is required. This is the name or id of an existing cluster.
+[statefulset] is required. This is the name or id of an existing statefulset.
+```
+
+#### morpheus clusters update
+
+```
+Usage: morpheus clusters update [cluster] --name --description --active
+        --name NAME                  Updates Cluster Name
+        --description [TEXT]         Updates Cluster Description
+        --api-url [TEXT]             Updates Cluster API Url
+        --active [on|off]            Can be used to enable / disable the cluster. Default is on
+        --refresh                    Refresh cluster
+        --tenant ACCOUNT             Account ID or Name
+    -O, --option OPTION              Option in the format -O field="value"
+        --prompt                     Always prompts. Use passed options as the default value.
+    -N, --no-prompt                  Skip prompts. Use default values for all optional fields.
+        --payload FILE               Payload from a local JSON or YAML file, skip all prompting
+        --payload-dir DIRECTORY      Payload from a local directory containing 1-N JSON or YAML files, skip all prompting
+        --payload-json JSON          Payload JSON, skip all prompting
+        --payload-yaml YAML          Payload YAML, skip all prompting
+    -j, --json                       JSON Output
+    -d, --dry-run                    Dry Run, print the API request instead of executing it
+        --curl                       Dry Run to output API request as a curl command.
+        --scrub                      Mask secrets in output, such as the Authorization header. For use with --curl and --dry-run.
+    -r, --remote REMOTE              Remote name. The current remote is used by default.
+        --remote-url URL             Remote url. The current remote url is used by default.
+    -T, --token TOKEN                Access token for authentication with --remote. Saved credentials are used by default.
+    -U, --username USERNAME          Username for authentication.
+    -P, --password PASSWORD          Password for authentication.
+    -I, --insecure                   Allow insecure HTTPS communication.  i.e. bad SSL certificate.
+    -H, --header HEADER              Additional HTTP header to include with requests.
+        --timeout SECONDS            Timeout for api requests. Default is typically 30 seconds.
+    -C, --nocolor                    Disable ANSI coloring
+    -B, --benchmark                  Print benchmark time after the command is finished.
+    -V, --debug                      Print extra output for debugging.
+    -h, --help                       Print this help
+
+Update a cluster.
+[cluster] is required. This is the name or id of an existing cluster.
+```
+
+#### morpheus clusters update-namespace
+
+```
+Usage: morpheus clusters update-namespace [cluster] [namespace] [options]
+        --description [TEXT]         Description
+        --active [on|off]            Enable namespace
+        --group-access-all [on|off]  Toggle Access for all groups.
+        --group-access LIST          Group Access, comma separated list of group IDs.
+        --group-defaults LIST        Group Default Selection, comma separated list of group IDs
+        --plan-access-all [on|off]   Toggle Access for all service plans.
+        --plan-access LIST           Service Plan Access, comma separated list of plan IDs.
+        --plan-defaults LIST         Plan Default Selection, comma separated list of plan IDs
+        --visibility [private|public]
+                                     Visibility
+        --tenants LIST               Tenant Access, comma separated list of account IDs
+    -O, --option OPTION              Option in the format -O field="value"
+        --prompt                     Always prompts. Use passed options as the default value.
+    -N, --no-prompt                  Skip prompts. Use default values for all optional fields.
+        --payload FILE               Payload from a local JSON or YAML file, skip all prompting
+        --payload-dir DIRECTORY      Payload from a local directory containing 1-N JSON or YAML files, skip all prompting
+        --payload-json JSON          Payload JSON, skip all prompting
+        --payload-yaml YAML          Payload YAML, skip all prompting
+    -j, --json                       JSON Output
+    -d, --dry-run                    Dry Run, print the API request instead of executing it
+        --curl                       Dry Run to output API request as a curl command.
+        --scrub                      Mask secrets in output, such as the Authorization header. For use with --curl and --dry-run.
+    -r, --remote REMOTE              Remote name. The current remote is used by default.
+        --remote-url URL             Remote url. The current remote url is used by default.
+    -T, --token TOKEN                Access token for authentication with --remote. Saved credentials are used by default.
+    -U, --username USERNAME          Username for authentication.
+    -P, --password PASSWORD          Password for authentication.
+    -I, --insecure                   Allow insecure HTTPS communication.  i.e. bad SSL certificate.
+    -H, --header HEADER              Additional HTTP header to include with requests.
+        --timeout SECONDS            Timeout for api requests. Default is typically 30 seconds.
+    -C, --nocolor                    Disable ANSI coloring
+    -B, --benchmark                  Print benchmark time after the command is finished.
+    -V, --debug                      Print extra output for debugging.
+    -h, --help                       Print this help
+
+Update a cluster namespace.
+[cluster] is required. This is the name or id of an existing cluster.
+[namespace] is required. This is the name or id of an existing namespace.
+```
+
+#### morpheus clusters update-permissions
+
+```
+Usage: morpheus clusters update-permissions [cluster]
+        --group-access-all [on|off]  Toggle Access for all groups.
+        --group-access LIST          Group Access, comma separated list of group IDs.
+        --group-defaults LIST        Group Default Selection, comma separated list of group IDs
+        --plan-access-all [on|off]   Toggle Access for all service plans.
+        --plan-access LIST           Service Plan Access, comma separated list of plan IDs.
+        --plan-defaults LIST         Plan Default Selection, comma separated list of plan IDs
+        --visibility [private|public]
+                                     Visibility
+        --tenants LIST               Tenant Access, comma separated list of account IDs
+    -O, --option OPTION              Option in the format -O field="value"
+        --prompt                     Always prompts. Use passed options as the default value.
+    -N, --no-prompt                  Skip prompts. Use default values for all optional fields.
+        --payload FILE               Payload from a local JSON or YAML file, skip all prompting
+        --payload-dir DIRECTORY      Payload from a local directory containing 1-N JSON or YAML files, skip all prompting
+        --payload-json JSON          Payload JSON, skip all prompting
+        --payload-yaml YAML          Payload YAML, skip all prompting
+    -j, --json                       JSON Output
+    -d, --dry-run                    Dry Run, print the API request instead of executing it
+        --curl                       Dry Run to output API request as a curl command.
+        --scrub                      Mask secrets in output, such as the Authorization header. For use with --curl and --dry-run.
+    -r, --remote REMOTE              Remote name. The current remote is used by default.
+        --remote-url URL             Remote url. The current remote url is used by default.
+    -T, --token TOKEN                Access token for authentication with --remote. Saved credentials are used by default.
+    -U, --username USERNAME          Username for authentication.
+    -P, --password PASSWORD          Password for authentication.
+    -I, --insecure                   Allow insecure HTTPS communication.  i.e. bad SSL certificate.
+    -H, --header HEADER              Additional HTTP header to include with requests.
+        --timeout SECONDS            Timeout for api requests. Default is typically 30 seconds.
+    -C, --nocolor                    Disable ANSI coloring
+    -B, --benchmark                  Print benchmark time after the command is finished.
+    -V, --debug                      Print extra output for debugging.
+    -h, --help                       Print this help
+
+Update a clusters permissions.
+[cluster] is required. This is the name or id of an existing cluster.
+```
+
+#### morpheus clusters update-wiki
+
+```
+Usage: morpheus clusters update-wiki [cluster] [options]
+        --name VALUE                 Name (optional) - The name of the wiki page for this instance. Default is the instance name.
+        --content VALUE              Content (optional) - The content (markdown) of the wiki page.
+        --file FILE                  File containing the wiki content. This can be used instead of --content
+        --clear                      Clear current page content
+    -O, --option OPTION              Option in the format -O field="value"
+        --prompt                     Always prompts. Use passed options as the default value.
+    -N, --no-prompt                  Skip prompts. Use default values for all optional fields.
+        --payload FILE               Payload from a local JSON or YAML file, skip all prompting
+        --payload-dir DIRECTORY      Payload from a local directory containing 1-N JSON or YAML files, skip all prompting
+        --payload-json JSON          Payload JSON, skip all prompting
+        --payload-yaml YAML          Payload YAML, skip all prompting
+    -j, --json                       JSON Output
+    -d, --dry-run                    Dry Run, print the API request instead of executing it
+        --curl                       Dry Run to output API request as a curl command.
+        --scrub                      Mask secrets in output, such as the Authorization header. For use with --curl and --dry-run.
+    -r, --remote REMOTE              Remote name. The current remote is used by default.
+        --remote-url URL             Remote url. The current remote url is used by default.
+    -T, --token TOKEN                Access token for authentication with --remote. Saved credentials are used by default.
+    -U, --username USERNAME          Username for authentication.
+    -P, --password PASSWORD          Password for authentication.
+    -I, --insecure                   Allow insecure HTTPS communication.  i.e. bad SSL certificate.
+    -H, --header HEADER              Additional HTTP header to include with requests.
+        --timeout SECONDS            Timeout for api requests. Default is typically 30 seconds.
+    -C, --nocolor                    Disable ANSI coloring
+    -B, --benchmark                  Print benchmark time after the command is finished.
+    -V, --debug                      Print extra output for debugging.
+    -h, --help                       Print this help
+```
+
+#### morpheus clusters view
+
+```
+Usage: morpheus clusters view [cluster]
+    -w, --wiki                       Open the wiki tab for this cluster
+        --tab VALUE                  Open a specific tab
+    -d, --dry-run                    Dry Run, print the API request instead of executing it
+        --curl                       Dry Run to output API request as a curl command.
+        --scrub                      Mask secrets in output, such as the Authorization header. For use with --curl and --dry-run.
+    -r, --remote REMOTE              Remote name. The current remote is used by default.
+        --remote-url URL             Remote url. The current remote url is used by default.
+    -T, --token TOKEN                Access token for authentication with --remote. Saved credentials are used by default.
+    -U, --username USERNAME          Username for authentication.
+    -P, --password PASSWORD          Password for authentication.
+    -I, --insecure                   Allow insecure HTTPS communication.  i.e. bad SSL certificate.
+    -H, --header HEADER              Additional HTTP header to include with requests.
+        --timeout SECONDS            Timeout for api requests. Default is typically 30 seconds.
+    -C, --nocolor                    Disable ANSI coloring
+    -B, --benchmark                  Print benchmark time after the command is finished.
+    -V, --debug                      Print extra output for debugging.
+    -h, --help                       Print this help
+
+View a cluster in a web browser
+[cluster] is required. This is the name or id of a cluster. Supports 1-N [cluster] arguments.
+```
+
+#### morpheus clusters view-api-token
+
+```
+Usage: morpheus clusters view-api-token [cluster]
+    -d, --dry-run                    Dry Run, print the API request instead of executing it
+        --curl                       Dry Run to output API request as a curl command.
+        --scrub                      Mask secrets in output, such as the Authorization header. For use with --curl and --dry-run.
+    -r, --remote REMOTE              Remote name. The current remote is used by default.
+        --remote-url URL             Remote url. The current remote url is used by default.
+    -T, --token TOKEN                Access token for authentication with --remote. Saved credentials are used by default.
+    -U, --username USERNAME          Username for authentication.
+    -P, --password PASSWORD          Password for authentication.
+    -I, --insecure                   Allow insecure HTTPS communication.  i.e. bad SSL certificate.
+    -H, --header HEADER              Additional HTTP header to include with requests.
+        --timeout SECONDS            Timeout for api requests. Default is typically 30 seconds.
+    -C, --nocolor                    Disable ANSI coloring
+    -B, --benchmark                  Print benchmark time after the command is finished.
+    -V, --debug                      Print extra output for debugging.
+    -h, --help                       Print this help
+    -t, --token-only                 Print the api token only
+
+Display api token for a cluster.
+```
+
+#### morpheus clusters view-kube-config
+
+```
+Usage: morpheus clusters view-kube-config [cluster]
+    -Q, --query PARAMS               Query parameters. PARAMS format is 'phrase=foobar&category=web'
+    -j, --json                       JSON Output
+        --yaml                       YAML Output
+        --csv                        CSV Output
+        --csv-delim CHAR             Delimiter for CSV Output values. Default: ','
+        --csv-newline [CHAR]         Delimiter for CSV Output rows. Default: '\n'
+        --csv-quotes                 Wrap CSV values with ". Default: false
+        --csv-no-header              Exclude header for CSV Output.
+    -F, --fields x,y,z               Filter Output to a limited set of fields. Default is all fields.
+    -d, --dry-run                    Dry Run, print the API request instead of executing it
+        --curl                       Dry Run to output API request as a curl command.
+        --scrub                      Mask secrets in output, such as the Authorization header. For use with --curl and --dry-run.
+    -r, --remote REMOTE              Remote name. The current remote is used by default.
+        --remote-url URL             Remote url. The current remote url is used by default.
+    -T, --token TOKEN                Access token for authentication with --remote. Saved credentials are used by default.
+    -U, --username USERNAME          Username for authentication.
+    -P, --password PASSWORD          Password for authentication.
+    -I, --insecure                   Allow insecure HTTPS communication.  i.e. bad SSL certificate.
+    -H, --header HEADER              Additional HTTP header to include with requests.
+        --timeout SECONDS            Timeout for api requests. Default is typically 30 seconds.
+    -C, --nocolor                    Disable ANSI coloring
+    -B, --benchmark                  Print benchmark time after the command is finished.
+    -V, --debug                      Print extra output for debugging.
+    -h, --help                       Print this help
+
+Display Kubernetes config for a cluster.
+```
+
+#### morpheus clusters wiki
+
+```
+Usage: morpheus clusters wiki [cluster]
+        --view                       View wiki page in web browser.
+    -j, --json                       JSON Output
+    -d, --dry-run                    Dry Run, print the API request instead of executing it
+        --curl                       Dry Run to output API request as a curl command.
+        --scrub                      Mask secrets in output, such as the Authorization header. For use with --curl and --dry-run.
+    -r, --remote REMOTE              Remote name. The current remote is used by default.
+        --remote-url URL             Remote url. The current remote url is used by default.
+    -T, --token TOKEN                Access token for authentication with --remote. Saved credentials are used by default.
+    -U, --username USERNAME          Username for authentication.
+    -P, --password PASSWORD          Password for authentication.
+    -I, --insecure                   Allow insecure HTTPS communication.  i.e. bad SSL certificate.
+    -H, --header HEADER              Additional HTTP header to include with requests.
+        --timeout SECONDS            Timeout for api requests. Default is typically 30 seconds.
+    -C, --nocolor                    Disable ANSI coloring
+    -B, --benchmark                  Print benchmark time after the command is finished.
+    -V, --debug                      Print extra output for debugging.
+    -h, --help                       Print this help
+
+View wiki page details for a cluster.
+[cluster] is required. This is the name or id of a cluster.
+```
+
+
 ### morpheus containers
 
 ```
@@ -2466,6 +4000,7 @@ Commands:
 	eject
 	exec
 	get
+	logs
 	restart
 	start
 	stop
@@ -2587,7 +4122,7 @@ Execute an arbitrary command or script on a container.
 #### morpheus containers get
 
 ```
-Usage: morpheus containers get [name]
+Usage: morpheus containers get [id]
         --actions                    Display Available Actions
         --refresh [SECONDS]          Refresh until status is running,failed. Default interval is 30 seconds.
         --refresh-until STATUS       Refresh until a specified status is reached.
@@ -2614,6 +4149,44 @@ Usage: morpheus containers get [name]
     -B, --benchmark                  Print benchmark time after the command is finished.
     -V, --debug                      Print extra output for debugging.
     -h, --help                       Print this help
+```
+
+#### morpheus containers logs
+
+```
+Usage: morpheus containers logs [id]
+    -m, --max MAX                    Max Results
+    -o, --offset OFFSET              Offset Results
+    -s, --search PHRASE              Search Phrase
+    -S, --sort ORDER                 Sort Order
+    -D, --desc                       Reverse Sort Order
+    -Q, --query PARAMS               Query parameters. PARAMS format is 'phrase=foobar&category=web'
+    -j, --json                       JSON Output
+        --yaml                       YAML Output
+        --csv                        CSV Output
+        --csv-delim CHAR             Delimiter for CSV Output values. Default: ','
+        --csv-newline [CHAR]         Delimiter for CSV Output rows. Default: '\n'
+        --csv-quotes                 Wrap CSV values with ". Default: false
+        --csv-no-header              Exclude header for CSV Output.
+    -F, --fields x,y,z               Filter Output to a limited set of fields. Default is all fields.
+    -d, --dry-run                    Dry Run, print the API request instead of executing it
+        --curl                       Dry Run to output API request as a curl command.
+        --scrub                      Mask secrets in output, such as the Authorization header. For use with --curl and --dry-run.
+    -r, --remote REMOTE              Remote name. The current remote is used by default.
+        --remote-url URL             Remote url. The current remote url is used by default.
+    -T, --token TOKEN                Access token for authentication with --remote. Saved credentials are used by default.
+    -U, --username USERNAME          Username for authentication.
+    -P, --password PASSWORD          Password for authentication.
+    -I, --insecure                   Allow insecure HTTPS communication.  i.e. bad SSL certificate.
+    -H, --header HEADER              Additional HTTP header to include with requests.
+        --timeout SECONDS            Timeout for api requests. Default is typically 30 seconds.
+    -C, --nocolor                    Disable ANSI coloring
+    -B, --benchmark                  Print benchmark time after the command is finished.
+    -V, --debug                      Print extra output for debugging.
+    -h, --help                       Print this help
+
+List logs for a container.
+[id] is required. This is the id of a container.
 ```
 
 #### morpheus containers restart
@@ -4393,6 +5966,7 @@ Usage: morpheus hosts list
     -t, --type TYPE                  Show only Certain Server Types
     -p, --power STATE                Filter by Power Status
     -i, --ip IPADDRESS               Filter by IP Address
+        --cluster CLUSTER            Filter by Cluster Name or ID
         --vm
                                      Show only virtual machines
         --hypervisor
@@ -4451,7 +6025,15 @@ Usage: morpheus hosts logs [name]
     -s, --search PHRASE              Search Phrase
     -S, --sort ORDER                 Sort Order
     -D, --desc                       Reverse Sort Order
+    -Q, --query PARAMS               Query parameters. PARAMS format is 'phrase=foobar&category=web'
     -j, --json                       JSON Output
+        --yaml                       YAML Output
+        --csv                        CSV Output
+        --csv-delim CHAR             Delimiter for CSV Output values. Default: ','
+        --csv-newline [CHAR]         Delimiter for CSV Output rows. Default: '\n'
+        --csv-quotes                 Wrap CSV values with ". Default: false
+        --csv-no-header              Exclude header for CSV Output.
+    -F, --fields x,y,z               Filter Output to a limited set of fields. Default is all fields.
     -d, --dry-run                    Dry Run, print the API request instead of executing it
         --curl                       Dry Run to output API request as a curl command.
         --scrub                      Mask secrets in output, such as the Authorization header. For use with --curl and --dry-run.
@@ -5860,11 +7442,13 @@ Usage: morpheus instances logs [instance]
     -D, --desc                       Reverse Sort Order
     -Q, --query PARAMS               Query parameters. PARAMS format is 'phrase=foobar&category=web'
     -j, --json                       JSON Output
+        --yaml                       YAML Output
         --csv                        CSV Output
         --csv-delim CHAR             Delimiter for CSV Output values. Default: ','
         --csv-newline [CHAR]         Delimiter for CSV Output rows. Default: '\n'
         --csv-quotes                 Wrap CSV values with ". Default: false
         --csv-no-header              Exclude header for CSV Output.
+    -F, --fields x,y,z               Filter Output to a limited set of fields. Default is all fields.
     -d, --dry-run                    Dry Run, print the API request instead of executing it
         --curl                       Dry Run to output API request as a curl command.
         --scrub                      Mask secrets in output, such as the Authorization header. For use with --curl and --dry-run.
@@ -7588,6 +9172,10 @@ Usage: morpheus library-option-types add [options]
     -O, --option OPTION              Option in the format -O field="value"
         --prompt                     Always prompts. Use passed options as the default value.
     -N, --no-prompt                  Skip prompts. Use default values for all optional fields.
+        --payload FILE               Payload from a local JSON or YAML file, skip all prompting
+        --payload-dir DIRECTORY      Payload from a local directory containing 1-N JSON or YAML files, skip all prompting
+        --payload-json JSON          Payload JSON, skip all prompting
+        --payload-yaml YAML          Payload YAML, skip all prompting
     -j, --json                       JSON Output
     -d, --dry-run                    Dry Run, print the API request instead of executing it
         --curl                       Dry Run to output API request as a curl command.
@@ -7703,6 +9291,10 @@ Usage: morpheus library-option-types update [name] [options]
     -O, --option OPTION              Option in the format -O field="value"
         --prompt                     Always prompts. Use passed options as the default value.
     -N, --no-prompt                  Skip prompts. Use default values for all optional fields.
+        --payload FILE               Payload from a local JSON or YAML file, skip all prompting
+        --payload-dir DIRECTORY      Payload from a local directory containing 1-N JSON or YAML files, skip all prompting
+        --payload-json JSON          Payload JSON, skip all prompting
+        --payload-yaml YAML          Payload YAML, skip all prompting
     -j, --json                       JSON Output
     -d, --dry-run                    Dry Run, print the API request instead of executing it
         --curl                       Dry Run to output API request as a curl command.
@@ -11250,11 +12842,19 @@ List network services (Integrations).
 Usage: morpheus networks [command] [options]
 Commands:
 	add
+	add-subnet
 	get
+	get-subnet
+	get-subnet-type
+	get-type
 	list
+	list-subnets
 	remove
+	remove-subnet
+	subnet-types
 	types
 	update
+	update-subnet
 ```
 
 #### morpheus networks add
@@ -11314,6 +12914,47 @@ Create a new network.
 [name] is required and can be passed as --name instead.
 ```
 
+#### morpheus networks add-subnet
+
+```
+Usage: morpheus networks add-subnet [network]
+    -t, --type ID                    Subnet Type Name or ID
+        --name VALUE                 Name for this subnet
+        --group-access-all [on|off]  Toggle Access for all groups.
+        --group-access LIST          Group Access, comma separated list of group IDs.
+        --group-defaults LIST        Group Default Selection, comma separated list of group IDs
+        --tenants LIST               Tenant Access, comma separated list of account IDs
+        --accounts LIST              alias for --tenants
+        --visibility [private|public]
+                                     Visibility
+    -O, --option OPTION              Option in the format -O field="value"
+        --prompt                     Always prompts. Use passed options as the default value.
+    -N, --no-prompt                  Skip prompts. Use default values for all optional fields.
+        --payload FILE               Payload from a local JSON or YAML file, skip all prompting
+        --payload-dir DIRECTORY      Payload from a local directory containing 1-N JSON or YAML files, skip all prompting
+        --payload-json JSON          Payload JSON, skip all prompting
+        --payload-yaml YAML          Payload YAML, skip all prompting
+    -j, --json                       JSON Output
+    -d, --dry-run                    Dry Run, print the API request instead of executing it
+        --curl                       Dry Run to output API request as a curl command.
+        --scrub                      Mask secrets in output, such as the Authorization header. For use with --curl and --dry-run.
+    -r, --remote REMOTE              Remote name. The current remote is used by default.
+        --remote-url URL             Remote url. The current remote url is used by default.
+    -T, --token TOKEN                Access token for authentication with --remote. Saved credentials are used by default.
+    -U, --username USERNAME          Username for authentication.
+    -P, --password PASSWORD          Password for authentication.
+    -I, --insecure                   Allow insecure HTTPS communication.  i.e. bad SSL certificate.
+    -H, --header HEADER              Additional HTTP header to include with requests.
+        --timeout SECONDS            Timeout for api requests. Default is typically 30 seconds.
+    -C, --nocolor                    Disable ANSI coloring
+    -B, --benchmark                  Print benchmark time after the command is finished.
+    -V, --debug                      Print extra output for debugging.
+    -h, --help                       Print this help
+
+Create a new subnet.
+[network] is required. This is the name or id of a network.
+```
+
 #### morpheus networks get
 
 ```
@@ -11344,6 +12985,115 @@ Usage: morpheus networks get [network]
 
 Get details about a network.
 [network] is required. This is the name or id of a network.
+```
+
+#### morpheus networks get-subnet
+
+```
+Usage: morpheus networks get-subnet [network] [subnet]
+    -j, --json                       JSON Output
+        --yaml                       YAML Output
+        --csv                        CSV Output
+        --csv-delim CHAR             Delimiter for CSV Output values. Default: ','
+        --csv-newline [CHAR]         Delimiter for CSV Output rows. Default: '\n'
+        --csv-quotes                 Wrap CSV values with ". Default: false
+        --csv-no-header              Exclude header for CSV Output.
+    -F, --fields x,y,z               Filter Output to a limited set of fields. Default is all fields.
+    -d, --dry-run                    Dry Run, print the API request instead of executing it
+        --curl                       Dry Run to output API request as a curl command.
+        --scrub                      Mask secrets in output, such as the Authorization header. For use with --curl and --dry-run.
+    -r, --remote REMOTE              Remote name. The current remote is used by default.
+        --remote-url URL             Remote url. The current remote url is used by default.
+    -T, --token TOKEN                Access token for authentication with --remote. Saved credentials are used by default.
+    -U, --username USERNAME          Username for authentication.
+    -P, --password PASSWORD          Password for authentication.
+    -I, --insecure                   Allow insecure HTTPS communication.  i.e. bad SSL certificate.
+    -H, --header HEADER              Additional HTTP header to include with requests.
+        --timeout SECONDS            Timeout for api requests. Default is typically 30 seconds.
+    -C, --nocolor                    Disable ANSI coloring
+    -B, --benchmark                  Print benchmark time after the command is finished.
+    -V, --debug                      Print extra output for debugging.
+    -h, --help                       Print this help
+
+Get details about a subnet.
+[network] is required. This is the name or id of a network.
+[subnet] is required. This is the name or id of a subnet.
+```
+
+#### morpheus networks get-subnet-type
+
+```
+Usage: morpheus networks get-subnet-type [type]
+    -m, --max MAX                    Max Results
+    -o, --offset OFFSET              Offset Results
+    -s, --search PHRASE              Search Phrase
+    -S, --sort ORDER                 Sort Order
+    -D, --desc                       Reverse Sort Order
+    -Q, --query PARAMS               Query parameters. PARAMS format is 'phrase=foobar&category=web'
+    -j, --json                       JSON Output
+        --yaml                       YAML Output
+        --csv                        CSV Output
+        --csv-delim CHAR             Delimiter for CSV Output values. Default: ','
+        --csv-newline [CHAR]         Delimiter for CSV Output rows. Default: '\n'
+        --csv-quotes                 Wrap CSV values with ". Default: false
+        --csv-no-header              Exclude header for CSV Output.
+    -F, --fields x,y,z               Filter Output to a limited set of fields. Default is all fields.
+    -d, --dry-run                    Dry Run, print the API request instead of executing it
+        --curl                       Dry Run to output API request as a curl command.
+        --scrub                      Mask secrets in output, such as the Authorization header. For use with --curl and --dry-run.
+    -r, --remote REMOTE              Remote name. The current remote is used by default.
+        --remote-url URL             Remote url. The current remote url is used by default.
+    -T, --token TOKEN                Access token for authentication with --remote. Saved credentials are used by default.
+    -U, --username USERNAME          Username for authentication.
+    -P, --password PASSWORD          Password for authentication.
+    -I, --insecure                   Allow insecure HTTPS communication.  i.e. bad SSL certificate.
+    -H, --header HEADER              Additional HTTP header to include with requests.
+        --timeout SECONDS            Timeout for api requests. Default is typically 30 seconds.
+    -C, --nocolor                    Disable ANSI coloring
+    -B, --benchmark                  Print benchmark time after the command is finished.
+    -V, --debug                      Print extra output for debugging.
+    -h, --help                       Print this help
+
+Get details about a subnet type.
+[type] is required. This is the id or name of a subnet type.
+```
+
+#### morpheus networks get-type
+
+```
+Usage: morpheus networks get-type [type]
+    -m, --max MAX                    Max Results
+    -o, --offset OFFSET              Offset Results
+    -s, --search PHRASE              Search Phrase
+    -S, --sort ORDER                 Sort Order
+    -D, --desc                       Reverse Sort Order
+    -Q, --query PARAMS               Query parameters. PARAMS format is 'phrase=foobar&category=web'
+    -j, --json                       JSON Output
+        --yaml                       YAML Output
+        --csv                        CSV Output
+        --csv-delim CHAR             Delimiter for CSV Output values. Default: ','
+        --csv-newline [CHAR]         Delimiter for CSV Output rows. Default: '\n'
+        --csv-quotes                 Wrap CSV values with ". Default: false
+        --csv-no-header              Exclude header for CSV Output.
+    -F, --fields x,y,z               Filter Output to a limited set of fields. Default is all fields.
+    -d, --dry-run                    Dry Run, print the API request instead of executing it
+        --curl                       Dry Run to output API request as a curl command.
+        --scrub                      Mask secrets in output, such as the Authorization header. For use with --curl and --dry-run.
+    -r, --remote REMOTE              Remote name. The current remote is used by default.
+        --remote-url URL             Remote url. The current remote url is used by default.
+    -T, --token TOKEN                Access token for authentication with --remote. Saved credentials are used by default.
+    -U, --username USERNAME          Username for authentication.
+    -P, --password PASSWORD          Password for authentication.
+    -I, --insecure                   Allow insecure HTTPS communication.  i.e. bad SSL certificate.
+    -H, --header HEADER              Additional HTTP header to include with requests.
+        --timeout SECONDS            Timeout for api requests. Default is typically 30 seconds.
+    -C, --nocolor                    Disable ANSI coloring
+    -B, --benchmark                  Print benchmark time after the command is finished.
+    -V, --debug                      Print extra output for debugging.
+    -h, --help                       Print this help
+
+Get details about a network type.
+[type] is required. This is the id or name of a network type.
 ```
 
 #### morpheus networks list
@@ -11384,6 +13134,43 @@ Usage: morpheus networks list
 List networks.
 ```
 
+#### morpheus networks list-subnets
+
+```
+Usage: morpheus networks list-subnets [network] [subnet]
+    -m, --max MAX                    Max Results
+    -o, --offset OFFSET              Offset Results
+    -s, --search PHRASE              Search Phrase
+    -S, --sort ORDER                 Sort Order
+    -D, --desc                       Reverse Sort Order
+    -j, --json                       JSON Output
+        --yaml                       YAML Output
+        --csv                        CSV Output
+        --csv-delim CHAR             Delimiter for CSV Output values. Default: ','
+        --csv-newline [CHAR]         Delimiter for CSV Output rows. Default: '\n'
+        --csv-quotes                 Wrap CSV values with ". Default: false
+        --csv-no-header              Exclude header for CSV Output.
+    -F, --fields x,y,z               Filter Output to a limited set of fields. Default is all fields.
+    -d, --dry-run                    Dry Run, print the API request instead of executing it
+        --curl                       Dry Run to output API request as a curl command.
+        --scrub                      Mask secrets in output, such as the Authorization header. For use with --curl and --dry-run.
+    -r, --remote REMOTE              Remote name. The current remote is used by default.
+        --remote-url URL             Remote url. The current remote url is used by default.
+    -T, --token TOKEN                Access token for authentication with --remote. Saved credentials are used by default.
+    -U, --username USERNAME          Username for authentication.
+    -P, --password PASSWORD          Password for authentication.
+    -I, --insecure                   Allow insecure HTTPS communication.  i.e. bad SSL certificate.
+    -H, --header HEADER              Additional HTTP header to include with requests.
+        --timeout SECONDS            Timeout for api requests. Default is typically 30 seconds.
+    -C, --nocolor                    Disable ANSI coloring
+    -B, --benchmark                  Print benchmark time after the command is finished.
+    -V, --debug                      Print extra output for debugging.
+    -h, --help                       Print this help
+
+Get details about a network.
+[network] is required. This is the name or id of a network.
+```
+
 #### morpheus networks remove
 
 ```
@@ -11410,6 +13197,73 @@ Usage: morpheus networks remove [network]
 
 Delete a network.
 [network] is required. This is the name or id of a network.
+```
+
+#### morpheus networks remove-subnet
+
+```
+Usage: morpheus networks remove-subnet [network] [subnet]
+    -a, --account ACCOUNT            Account Name
+    -A, --account-id ID              Account ID
+    -y, --yes                        Auto Confirm
+    -j, --json                       JSON Output
+    -d, --dry-run                    Dry Run, print the API request instead of executing it
+        --curl                       Dry Run to output API request as a curl command.
+        --scrub                      Mask secrets in output, such as the Authorization header. For use with --curl and --dry-run.
+    -r, --remote REMOTE              Remote name. The current remote is used by default.
+        --remote-url URL             Remote url. The current remote url is used by default.
+    -T, --token TOKEN                Access token for authentication with --remote. Saved credentials are used by default.
+    -U, --username USERNAME          Username for authentication.
+    -P, --password PASSWORD          Password for authentication.
+    -I, --insecure                   Allow insecure HTTPS communication.  i.e. bad SSL certificate.
+    -H, --header HEADER              Additional HTTP header to include with requests.
+        --timeout SECONDS            Timeout for api requests. Default is typically 30 seconds.
+    -C, --nocolor                    Disable ANSI coloring
+    -B, --benchmark                  Print benchmark time after the command is finished.
+    -V, --debug                      Print extra output for debugging.
+    -h, --help                       Print this help
+
+Delete a subnet.
+[network] is required. This is the name or id of a network.
+[subnet] is required. This is the name or id of a subnet.
+```
+
+#### morpheus networks subnet-types
+
+```
+Usage: morpheus networks subnet-types
+    -c, --cloud CLOUD                Cloud Name or ID
+    -m, --max MAX                    Max Results
+    -o, --offset OFFSET              Offset Results
+    -s, --search PHRASE              Search Phrase
+    -S, --sort ORDER                 Sort Order
+    -D, --desc                       Reverse Sort Order
+    -Q, --query PARAMS               Query parameters. PARAMS format is 'phrase=foobar&category=web'
+    -j, --json                       JSON Output
+        --yaml                       YAML Output
+        --csv                        CSV Output
+        --csv-delim CHAR             Delimiter for CSV Output values. Default: ','
+        --csv-newline [CHAR]         Delimiter for CSV Output rows. Default: '\n'
+        --csv-quotes                 Wrap CSV values with ". Default: false
+        --csv-no-header              Exclude header for CSV Output.
+    -F, --fields x,y,z               Filter Output to a limited set of fields. Default is all fields.
+    -d, --dry-run                    Dry Run, print the API request instead of executing it
+        --curl                       Dry Run to output API request as a curl command.
+        --scrub                      Mask secrets in output, such as the Authorization header. For use with --curl and --dry-run.
+    -r, --remote REMOTE              Remote name. The current remote is used by default.
+        --remote-url URL             Remote url. The current remote url is used by default.
+    -T, --token TOKEN                Access token for authentication with --remote. Saved credentials are used by default.
+    -U, --username USERNAME          Username for authentication.
+    -P, --password PASSWORD          Password for authentication.
+    -I, --insecure                   Allow insecure HTTPS communication.  i.e. bad SSL certificate.
+    -H, --header HEADER              Additional HTTP header to include with requests.
+        --timeout SECONDS            Timeout for api requests. Default is typically 30 seconds.
+    -C, --nocolor                    Disable ANSI coloring
+    -B, --benchmark                  Print benchmark time after the command is finished.
+    -V, --debug                      Print extra output for debugging.
+    -h, --help                       Print this help
+
+List subnet types.
 ```
 
 #### morpheus networks types
@@ -11447,7 +13301,7 @@ Usage: morpheus networks types
     -V, --debug                      Print extra output for debugging.
     -h, --help                       Print this help
 
-List host types.
+List network types.
 ```
 
 #### morpheus networks update
@@ -11502,6 +13356,46 @@ Usage: morpheus networks update [network] [options]
 
 Update a network.
 [network] is required. This is the id of a network.
+```
+
+#### morpheus networks update-subnet
+
+```
+Usage: morpheus networks update-subnet [network] [subnet]
+        --group-access-all [on|off]  Toggle Access for all groups.
+        --group-access LIST          Group Access, comma separated list of group IDs.
+        --group-defaults LIST        Group Default Selection, comma separated list of group IDs
+        --tenants LIST               Tenant Access, comma separated list of account IDs
+        --accounts LIST              alias for --tenants
+        --visibility [private|public]
+                                     Visibility
+    -O, --option OPTION              Option in the format -O field="value"
+        --prompt                     Always prompts. Use passed options as the default value.
+    -N, --no-prompt                  Skip prompts. Use default values for all optional fields.
+        --payload FILE               Payload from a local JSON or YAML file, skip all prompting
+        --payload-dir DIRECTORY      Payload from a local directory containing 1-N JSON or YAML files, skip all prompting
+        --payload-json JSON          Payload JSON, skip all prompting
+        --payload-yaml YAML          Payload YAML, skip all prompting
+    -j, --json                       JSON Output
+    -d, --dry-run                    Dry Run, print the API request instead of executing it
+        --curl                       Dry Run to output API request as a curl command.
+        --scrub                      Mask secrets in output, such as the Authorization header. For use with --curl and --dry-run.
+    -r, --remote REMOTE              Remote name. The current remote is used by default.
+        --remote-url URL             Remote url. The current remote url is used by default.
+    -T, --token TOKEN                Access token for authentication with --remote. Saved credentials are used by default.
+    -U, --username USERNAME          Username for authentication.
+    -P, --password PASSWORD          Password for authentication.
+    -I, --insecure                   Allow insecure HTTPS communication.  i.e. bad SSL certificate.
+    -H, --header HEADER              Additional HTTP header to include with requests.
+        --timeout SECONDS            Timeout for api requests. Default is typically 30 seconds.
+    -C, --nocolor                    Disable ANSI coloring
+    -B, --benchmark                  Print benchmark time after the command is finished.
+    -V, --debug                      Print extra output for debugging.
+    -h, --help                       Print this help
+
+Update a subnet.
+[network] is required. This is the name or id of a network.
+[subnet] is required. This is the name or id of a subnet.
 ```
 
 
@@ -12790,6 +14684,10 @@ Usage: morpheus resource-folders update [cloud] [folder] [options]
     -c, --cloud CLOUD                Cloud Name or ID
         --group-access-all [on|off]  Toggle Access for all groups.
         --group-access LIST          Group Access, comma separated list of group IDs.
+        --group-defaults LIST        Group Default Selection, comma separated list of group IDs
+        --plan-access-all [on|off]   Toggle Access for all plans.
+        --plan-access LIST           Plan Access, comma separated list of plan IDs.
+        --plan-defaults LIST         Plan Default Selection, comma separated list of plan IDs
         --tenants LIST               Tenant Access, comma separated list of account IDs
         --visibility [private|public]
                                      Visibility
@@ -12843,6 +14741,10 @@ Usage: morpheus resource-pools add [cloud] [pool] [options]
         --name VALUE                 Name
         --group-access-all [on|off]  Toggle Access for all groups.
         --group-access LIST          Group Access, comma separated list of group IDs.
+        --group-defaults LIST        Group Default Selection, comma separated list of group IDs
+        --plan-access-all [on|off]   Toggle Access for all plans.
+        --plan-access LIST           Plan Access, comma separated list of plan IDs.
+        --plan-defaults LIST         Plan Default Selection, comma separated list of plan IDs
         --tenants LIST               Tenant Access, comma separated list of account IDs
         --visibility [private|public]
                                      Visibility
@@ -12979,6 +14881,10 @@ Usage: morpheus resource-pools update [cloud] [pool] [options]
     -c, --cloud CLOUD                Cloud Name or ID
         --group-access-all [on|off]  Toggle Access for all groups.
         --group-access LIST          Group Access, comma separated list of group IDs.
+        --group-defaults LIST        Group Default Selection, comma separated list of group IDs
+        --plan-access-all [on|off]   Toggle Access for all plans.
+        --plan-access LIST           Plan Access, comma separated list of plan IDs.
+        --plan-defaults LIST         Plan Default Selection, comma separated list of plan IDs
         --tenants LIST               Tenant Access, comma separated list of account IDs
         --visibility [private|public]
                                      Visibility
@@ -13042,15 +14948,13 @@ Usage: morpheus roles add [options]
         --roleType VALUE             Role Type (optional) Default: user
         --baseRole VALUE             Copy From Role (optional)
         --multitenant on|off         Multitenant (optional) Default: off - A Multitenant role is automatically copied into all existing subaccounts as well as placed into a subaccount when created. Useful for providing a set of predefined roles a Customer can use
-        --instanceLimits.maxStorage VALUE
-                                     Max Storage (bytes) (optional)
-        --instanceLimits.maxMemory VALUE
-                                     Max Memory (bytes) (optional)
-        --instanceLimits.maxCpu VALUE
-                                     CPU Count (optional)
     -O, --option OPTION              Option in the format -O field="value"
         --prompt                     Always prompts. Use passed options as the default value.
     -N, --no-prompt                  Skip prompts. Use default values for all optional fields.
+        --payload FILE               Payload from a local JSON or YAML file, skip all prompting
+        --payload-dir DIRECTORY      Payload from a local directory containing 1-N JSON or YAML files, skip all prompting
+        --payload-json JSON          Payload JSON, skip all prompting
+        --payload-yaml YAML          Payload YAML, skip all prompting
     -j, --json                       JSON Output
     -d, --dry-run                    Dry Run, print the API request instead of executing it
         --curl                       Dry Run to output API request as a curl command.
@@ -13174,12 +15078,6 @@ Usage: morpheus roles update [name] [options]
         --authority VALUE            Name
         --description VALUE          Description (optional)
         --multitenant on|off         Multitenant (optional) Default: off - A Multitenant role is automatically copied into all existing subaccounts as well as placed into a subaccount when created. Useful for providing a set of predefined roles a Customer can use
-        --instanceLimits.maxStorage VALUE
-                                     Max Storage (bytes) (optional)
-        --instanceLimits.maxMemory VALUE
-                                     Max Memory (bytes) (optional)
-        --instanceLimits.maxCpu VALUE
-                                     CPU Count (optional)
     -O, --option OPTION              Option in the format -O field="value"
         --prompt                     Always prompts. Use passed options as the default value.
     -N, --no-prompt                  Skip prompts. Use default values for all optional fields.
@@ -14793,6 +16691,7 @@ Commands:
 
 ```
 Usage: morpheus user-settings clear-access-token [client-id]
+        --user-id ID                 User ID
         --payload FILE               Payload from a local JSON or YAML file, skip all prompting
         --payload-dir DIRECTORY      Payload from a local directory containing 1-N JSON or YAML files, skip all prompting
         --payload-json JSON          Payload JSON, skip all prompting
@@ -14826,6 +16725,7 @@ Clear API access token for a specific client.
 
 ```
 Usage: morpheus user-settings get
+        --user-id ID                 User ID
     -Q, --query PARAMS               Query parameters. PARAMS format is 'phrase=foobar&category=web'
     -j, --json                       JSON Output
         --yaml                       YAML Output
@@ -14890,6 +16790,7 @@ List available api clients.
 
 ```
 Usage: morpheus user-settings regenerate-access-token [client-id]
+        --user-id ID                 User ID
         --payload FILE               Payload from a local JSON or YAML file, skip all prompting
         --payload-dir DIRECTORY      Payload from a local directory containing 1-N JSON or YAML files, skip all prompting
         --payload-json JSON          Payload JSON, skip all prompting
@@ -14923,6 +16824,7 @@ Regenerate API access token for a specific client.
 
 ```
 Usage: morpheus user-settings update [options]
+        --user-id ID                 User ID
         --payload FILE               Payload from a local JSON or YAML file, skip all prompting
         --payload-dir DIRECTORY      Payload from a local directory containing 1-N JSON or YAML files, skip all prompting
         --payload-json JSON          Payload JSON, skip all prompting
@@ -14955,6 +16857,7 @@ Update your user settings.
 
 ```
 Usage: morpheus user-settings update-avatar [file]
+        --user-id ID                 User ID
     -j, --json                       JSON Output
     -d, --dry-run                    Dry Run, print the API request instead of executing it
         --curl                       Dry Run to output API request as a curl command.
@@ -14981,6 +16884,7 @@ Update your avatar profile image.
 
 ```
 Usage: morpheus user-settings view-avatar
+        --user-id ID                 User ID
     -r, --remote REMOTE              Remote name. The current remote is used by default.
         --remote-url URL             Remote url. The current remote url is used by default.
     -T, --token TOKEN                Access token for authentication with --remote. Saved credentials are used by default.
@@ -16252,4 +18156,117 @@ Usage: morpheus workflows update [name] --tasks taskId:phase,taskId2:phase,taskI
     -B, --benchmark                  Print benchmark time after the command is finished.
     -V, --debug                      Print extra output for debugging.
     -h, --help                       Print this help
+```
+
+
+## ENVIRONMENT VARIABLES
+
+Morpheus has only one environment variable that it uses.
+
+### MORPHEUS_CLI_HOME
+
+The **MORPHEUS_CLI_HOME** variable is where morpheus CLI stores its configuration files.
+This can be set to allow a single system user to maintain many different configurations
+If the directory does not exist, morpheus will attempt to create it.
+
+The default home directory is **$HOME/.morpheus**
+
+To see how this works, run the following:
+
+```shell
+MORPHEUS_CLI_HOME=~/.morpheus_test morpheus shell
+```
+
+Now, in your new morpheus shell, you can see that it is a fresh environment.
+There are no remote appliances configured.
+
+```shell
+morpheus> remote list
+
+Morpheus Appliances
+==================
+
+You have no appliances configured. See the `remote add` command.
+
+```
+
+You can use this to create isolated environments (sandboxes), within which to execute your morpheus commands.
+
+```shell
+export MORPHEUS_CLI_HOME=~/morpheus_test
+morpheus remote add myremote https://testmorpheusappliance.mycompany.com --insecure
+morpheus instances list
+```
+
+Morpheus saves the remote appliance information, including api access tokens,
+to the $MORPHEUS_HOME_DIRECTORY. These files are saved with file permissions **6000**.
+So, only one system user should be allowed to execute morpheus with that home directory.
+See [Configuration](#Configuration) for more information on the files morpheus reads and writes.
+
+## CONFIGURATION
+
+Morpheus reads and writes several configuration files within the $MORPHEUS_CLI_HOME directory.
+
+**Note:** These files are maintained by the program. It is not recommended for you to manipulate them.
+
+### appliances file
+
+The `appliances` YAML file contains a list of known appliances, keyed by name.
+
+Example:
+```yaml
+:qa:
+  :host: https://qa.mycoolsite.com
+  :active: true
+:production:
+  :host: https://morpheus.mycoolsite.com
+  :active: false
+```
+
+### credentials file
+
+The `.morpheus/credentials` YAML file contains access tokens for each known appliance.
+
+### groups file
+
+The `.morpheus/groups` YAML file contains the active group information for each known appliance.
+
+
+## Startup scripts
+
+When Morpheus starts, it executes the commands in a couple of dot files.
+
+These scripts are written in morpheus commands, not bash, so they can only execute morpheus commands and aliases.
+
+### .morpheus_profile file
+
+It looks for `$MORPHEUS_CLI_HOME/.morpheus_profile`, and reads and executes it (if it exists).
+
+This may be inhibited by using the `--noprofile` option.
+
+### .morpheusrc file
+
+When started as an interactive shell with the `morpheus shell` command,
+Morpheus reads and executes `$MORPHEUS_CLI_HOME/.morpheusrc` (if it exists). This may be inhibited by using the `--norc` option.
+
+An example startup script might look like this:
+
+```
+# .morpheusrc
+
+# aliases
+alias our-instances='instances list -c "Our Cloud"'
+
+# switch to our appliance that we created with `remote add morphapp1`
+remote use morphapp1
+
+# greeting
+echo "Welcome back human,  have fun!"
+
+# print current user information
+whoami
+
+# print the list of instances in our cloud
+our-instances
+
 ```

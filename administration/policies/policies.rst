@@ -114,9 +114,9 @@ To create a Policy for a Group:
 
 .. NOTE:: Resource Limitation Policies apply to all Instances in the Group the Policy is added to. Approval, Naming, Power, Shutdown and Expiration Policies apply to Instances created after the Policy is enabled.
 
-#. Navigate to ``Infrastructure -> Clouds``
-#. Select a Cloud by clicking on the name of the Cloud to go to the Cloud Detail page.
-#. Select the ``POLICIES`` tab in the Cloud Detail page.
+#. Navigate to ``Infrastructure -> Groups``
+#. Select a Group by clicking on the name of the Group to go to the Group Detail page.
+#. Select the ``POLICIES`` tab in the Group Detail page.
 #. Select :guilabel:`+ ADD` and choose from the available policy types.
 #. Refer to Policy Types sections below for Configuration options.
 #. Select :guilabel:`SAVE CHANGES`

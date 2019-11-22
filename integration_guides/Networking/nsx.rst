@@ -4,8 +4,7 @@ NSX
 Add NSX Integration
 ^^^^^^^^^^^^^^^^^^^
 
-#. Navigate to `INFRASTRUCTURE -> NETWORK`
-#. Select the  `SERVICES` tab
+#. Navigate to ``Infrastructure > Network > Integrations``
 #. Select Select :guilabel:`+ ADD` -> VMWare NSX
 #. Enter the following:
 

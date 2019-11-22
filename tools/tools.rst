@@ -7,3 +7,5 @@ Tools
 
   cypher.rst
   archives.rst
+  image_builder.rst
+  migrations.rst

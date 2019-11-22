@@ -27,10 +27,12 @@ App Dynamics            4.5.1
 **Networking**          ..
 Cisco ACI               3.10
 VMware NSX              -V
+phpIPAM                 1.3.1
 **Backups**             ..
 Veeam                   9.5
 Commvault               v11 sp 12
 Rubrik                  4.2
+Avamar                  18.1
 **Containers**          ..
 Docker                  1.12.6
 Kubernetes              1.11

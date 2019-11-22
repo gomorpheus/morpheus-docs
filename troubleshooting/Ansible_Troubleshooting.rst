@@ -19,14 +19,14 @@ Follow these instructions to install, or use your preferred installation method
       sudo apt-get install software-properties-common
       sudo apt-add-repository ppa:ansible/ansible
       sudo apt-get update
-      sudo apt-get install ansible
+      sudo apt-get install ansible python-requests
 
   CentOS:
 
   .. code-block:: bash
 
       sudo yum install epel-release
-      sudo yum install ansible
+      sudo yum install ansible python-requests
 
   Then create the working Ansible directory for Morpheus:
 
