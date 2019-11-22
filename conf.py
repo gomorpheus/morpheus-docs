@@ -54,7 +54,7 @@ author = u'Morpheus'
 # built documents.
 #
 # The short X.Y version.
-version = '3.6.3'
+version = '3.6.5'
 # The full version, including alpha/beta/rc tags.
 # release =
 
@@ -167,7 +167,7 @@ latex_elements = {
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-    (master_doc, 'morpheus411.tex', u'Morpheus Documentation',
+    (master_doc, 'morpheus365.tex', u'Morpheus Documentation',
      u'Morpheus', 'manual'),
 ]
 
