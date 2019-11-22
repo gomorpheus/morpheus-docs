@@ -3,9 +3,9 @@
 
 .. toctree::
    :maxdepth: 3
-   :caption: %s """ % os.environ['COMPANY'] + """ UI
+   .. :caption: %s """ % os.environ['COMPANY'] + """ UI
 
-   .. getting_started/getting_started
+    .. getting_started/getting_started
    provisioning/provisioning
    infrastructure/infrastructure
     .. administration/administration
@@ -15,7 +15,7 @@
    operations/operations
    tools/tools
      ..    integration_guides/integration_guides
-    .. troubleshooting/troubleshooting
+     .. troubleshooting/troubleshooting
 
 
 
