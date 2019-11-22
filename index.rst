@@ -3,9 +3,7 @@
 
 .. toctree::
    :maxdepth: 3
-   .. :caption: %s """ % os.environ['COMPANY'] + """ UI
-
-    .. getting_started/getting_started
+     
    provisioning/provisioning
    infrastructure/infrastructure
     .. administration/administration
@@ -16,7 +14,7 @@
    tools/tools
      ..    integration_guides/integration_guides
      .. troubleshooting/troubleshooting
-
+     .. getting_started/getting_started
 
 
 .. |morpheus| replace:: HPE
