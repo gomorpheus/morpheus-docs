@@ -55,23 +55,17 @@ See :doc:`release_notes/current.rst` for additional information.
    integration_guides/integration_guides
    troubleshooting/troubleshooting
 
-
 .. toctree::
-   :maxdepth: 3
+   :maxdepth: 1
    :caption: Morpheus CLI
 
-   cli/install
-   cli/walkthrough
-   cli/shell
-   cli/commands
-   cli/changelog
+   Morpheus CLI <https://github.com/gomorpheus/morpheus-cli/wiki>
 
 .. toctree::
-   :maxdepth: 3
+   :maxdepth: 1
    :caption: Morpheus API
 
-   api/intro
-   api/requests
+   Morpheus API <http://bertramdev.github.io/morpheus-apidoc/#introduction>
 
 .. toctree::
    :maxdepth: 4
