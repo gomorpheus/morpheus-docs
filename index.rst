@@ -57,13 +57,13 @@ See :doc:`release_notes/current.rst` for additional information.
 
 .. toctree::
    :maxdepth: 1
-   :caption: Morpheus CLI
+   :caption: CLI Documentation
 
    Morpheus CLI <https://github.com/gomorpheus/morpheus-cli/wiki>
 
 .. toctree::
    :maxdepth: 1
-   :caption: Morpheus API
+   :caption: API Documentation
 
    Morpheus API <http://bertramdev.github.io/morpheus-apidoc/#introduction>
 
