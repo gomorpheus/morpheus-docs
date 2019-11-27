@@ -59,4 +59,4 @@ PROXY
 Bypass Proxy for Appliance URL
   Enable to bypass proxy settings (if added) for Instance Agent communication to the Appliance URL.
 USER DATA (LINUX)
-  Add cloud-init user data or scripts. Assumes bash syntax.
+  Add cloud-init user data. |morpheus| 4.1.0 and earlier assumes bash syntax. |morpheus| 4.1.1 and later supports all User Data formats. Refer to https://cloudinit.readthedocs.io/en/latest/topics/format.html for more information.
