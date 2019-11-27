@@ -69,7 +69,7 @@ See :doc:`release_notes/current.rst` for additional information.
 
 .. toctree::
    :maxdepth: 4
-   :caption: 4.1.1 Release Notes
+   :caption: Release Notes
 
    release_notes/current.rst
    release_notes/compatibility.rst
