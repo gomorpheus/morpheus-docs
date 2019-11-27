@@ -84,4 +84,3 @@ See :doc:`release_notes/current.rst` for additional information.
 
 
 .. |morpheus| replace:: Morpheus
-.. |version| replace:: 4.1.1

@@ -203,7 +203,3 @@ def setup(app):
 rst_epilog = """
 .. |morpheus| replace:: Morpheus
 """
-
-rst_epilog = """
-.. |version| replace:: v4.1.1
-"""
