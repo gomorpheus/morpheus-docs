@@ -57,19 +57,19 @@ See :doc:`release_notes/current.rst` for additional information.
 
 .. toctree::
    :maxdepth: 1
-   :caption: CLI Documentation
+   :caption: Morpheus CLI
 
-   Morpheus CLI <https://github.com/gomorpheus/morpheus-cli/wiki>
+   CLI Documentation <https://github.com/gomorpheus/morpheus-cli/wiki>
 
 .. toctree::
    :maxdepth: 1
-   :caption: API Documentation
+   :caption: Morpheus API
 
-   Morpheus API <http://bertramdev.github.io/morpheus-apidoc/#introduction>
+   API Documentation <http://bertramdev.github.io/morpheus-apidoc/#introduction>
 
 .. toctree::
    :maxdepth: 4
-   :caption: Release Notes
+   :caption: |version| Release Notes
 
    release_notes/current.rst
    release_notes/compatibility.rst
@@ -84,3 +84,4 @@ See :doc:`release_notes/current.rst` for additional information.
 
 
 .. |morpheus| replace:: Morpheus
+.. |version| replace:: 4.1.1
