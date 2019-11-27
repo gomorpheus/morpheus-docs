@@ -75,5 +75,12 @@ See :doc:`release_notes/current.rst` for additional information.
    release_notes/compatibility.rst
    release_notes/previousReleases.rst
 
+.. toctree::
+   :maxdepth: 1
+   :caption: Resource Center
+
+   Resource Center <https://www.morpheusdata.com/resource-center>
+
+
 
 .. |morpheus| replace:: Morpheus
