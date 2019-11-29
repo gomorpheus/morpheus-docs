@@ -31,8 +31,6 @@ To get started, we will navigate to `Infrastructure > Clouds`. This is the cloud
 
 Click the "+ADD" button to pop the "CREATE CLOUD" wizard. Select "AMAZON" and click the "NEXT" button.
 
-.. image:: /images/AwsGuideImages/FirstCloud/1createCloud.png
-
 On the "CONFIGURE" tab, give your cloud a "NAME". Select your Amazon region and enter your credentials in the "ACCESS KEY" and "SECRET KEY" fields. We can also set a number of advanced options here that may be relevant to your AWS use case.
 
 Once you're satisfied with your selections, click "NEXT"
@@ -78,7 +76,7 @@ In `Infrastructure > Networking` we can also set up IP address pools from the IP
 
 .. image:: /images/vCenterGuideImages/Network/3addIPPool.png
 
-Since this guide is focused on working within the AWS cloud that we integrated at the start, we will take a look at our network configurations on the cloud detail page as well. Navigate to `Infrastructure > Clouds > (your VMware cloud) > NETWORKS tab`. Just as with resource pools, we have the ability to make certain networks inactive in Morpheus, or scope them to be usable only for certain groups or tenants.
+Since this guide is focused on working within the AWS cloud that we integrated at the start, we will take a look at our network configurations on the cloud detail page as well. Navigate to `Infrastructure > Clouds > (your AWS cloud) > NETWORKS tab`. Just as with resource pools, we have the ability to make certain networks inactive in Morpheus, or scope them to be usable only for certain groups or tenants.
 
 .. image:: /images/AwsGuideImages/Networks/1cloudNetwork.png
 
@@ -112,15 +110,11 @@ From the "CONFIGURE" tab, we're presented with a number of options. The options 
 
 Under the "User Config" drawer, mark the box to "CREATE YOUR USER". Click "NEXT".
 
-.. image:: /images/AwsGuideImages/FirstInstance/2instanceConfigure.png
-
 .. NOTE:: "CREATE YOUR USER" will seed a user account into the VM with credentials set in your Morpheus user account settings. If you've not yet defined these credentials, you can do so by clicking on your username in the upper-right corner of the application window and selecting "USER SETTINGS".
 
 For now, we'll simply click "NEXT" to move through the "AUTOMATION" tab but feel free to stop and take a look at the available selections here. There is more information later in this guide on automation and even more beyond that in the rest of Morpheus docs.
 
 Review the settings for your first instance and click "COMPLETE".
-
-.. image:: /images/AwsGuideImages/FirstInstance/3completeInstance.png
 
 We are now dropped back onto the instances list page. We can see a new entry in the list at this point with a status indicator that the new machine is being launched (rocket icon in the status field). We can double click on the instance in the list to move to the instance detail page. For now we will see a progress bar indicating that the instance is being created and is starting up. The exact amount of time this process will take depends selections made when provisioning the instance. For more detailed information on the status of various provisioning processes, we can scroll down and select the "HISTORY" tab. The "STATUS" icon will change from the blue rocket to a green play button when the instance is fully ready. Furthermore, we can click on the hyperlinked IP address in the "VMS" section of this page to view a default page in a web browser to confirm success.
 
@@ -174,8 +168,6 @@ I've set the following fields on my example layout:
 - **Nodes**: Select the node we created earlier, if desired you can specify multiple nodes
 
 Click "SAVE CHANGES".
-
-.. image:: /images/AwsGuideImages/NewCatalogItem/6layoutSettings.png
 
 At this point we've completed the setup work and can now provision the instance we've created to our specifications. Navigate to `Provisioning > Instances` and click "+ADD". From the search bar we can search for the new instance type we've created. In the example case, we called it "newinstancetype". Click "NEXT".
 
