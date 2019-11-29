@@ -78,7 +78,7 @@ In `Infrastructure > Networking` we can also set up IP address pools from the IP
 
 .. image:: /images/vCenterGuideImages/Network/3addIPPool.png
 
-Since this guide is focused on working within the AWS cloud that we integrated at the start, we will take a look at our network configurations on the cloud detail page as well. Navigate to `Infrastructure > Clouds > (your VMware cloud) > NETWORKS tab`. Just as with resource pools and data stores, we have the ability to make certain networks inactive in Morpheus, or scope them to be usable only for certain groups or tenants.
+Since this guide is focused on working within the AWS cloud that we integrated at the start, we will take a look at our network configurations on the cloud detail page as well. Navigate to `Infrastructure > Clouds > (your VMware cloud) > NETWORKS tab`. Just as with resource pools, we have the ability to make certain networks inactive in Morpheus, or scope them to be usable only for certain groups or tenants.
 
 .. image:: /images/AwsGuideImages/Networks/1cloudNetwork.png
 
@@ -155,7 +155,7 @@ With the new node created, we'll now add a new instance type which will be acces
 
 In the "NEW INSTANCE TYPE" wizard, I'll simply enter a **NAME** and **CODE** value. Click "SAVE CHANGES".
 
-.. image:: /images/vCenterGuideImages/NewCatalogItem/4instanceTypeSettings.png 
+.. image:: /images/vCenterGuideImages/NewCatalogItem/4instanceTypeSettings.png
 
 Now that we've created a new instance type, access it by clicking on the name in the list of custom instances you've created. In my case, I've given the name "NewInstanceType".
 
@@ -241,4 +241,4 @@ This is just one example of using Morpheus to automate the process of configurin
 Conclusion
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-At this point you should be up and running in Morpheus, ready to consume AWS. This guide only scratches the surface, there is a lot more to see and do in Morpheus. Take a look at the rest of `Morpheus Docs <https://docs.morpheusdata.com/en/4.1.1/index.html>`_ for more information on supported integrations and other things possible. 
+At this point you should be up and running in Morpheus, ready to consume AWS. This guide only scratches the surface, there is a lot more to see and do in Morpheus. Take a look at the rest of `Morpheus Docs <https://docs.morpheusdata.com/en/4.1.1/index.html>`_ for more information on supported integrations and other things possible.
