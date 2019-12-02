@@ -19,6 +19,8 @@ Groups in Morpheus define which resources a user has access to. Clouds are added
 Navigate to `Infrastructure > Groups`. Here we will see a list of all configured groups but, of course, this will be empty immediately after installation. Click "+CREATE". Give your group a name, such as "All Clouds". The "CODE" field is used when calling Morpheus through Morpheus API or Morpheus CLI. It's useful in most cases to have an "All Clouds" group for testing purposes so this will likely help you down the road.
 
 .. image:: /images/vCenterGuideImages/Groups/1groupConfig.png
+  :scale: 80
+  :alt: The new group dialog box showing a name for the group filled in
 
 Click "SAVE CHANGES". Your group is now ready to accept clouds.
 
@@ -186,7 +188,7 @@ With the new node created, we'll now add a new instance type which will be acces
 
 In the "NEW INSTANCE TYPE" wizard, I'll simply enter a **NAME** and **CODE** value. Click "SAVE CHANGES".
 
-.. image:: /images/vCenterGuideImages/NewCatalogItem/4instanceTypeSettings.png 
+.. image:: /images/vCenterGuideImages/NewCatalogItem/4instanceTypeSettings.png
 
 Now that we've created a new instance type, access it by clicking on the name in the list of custom instances you've created. In my case, I've given the name "NewInstanceType".
 
@@ -208,7 +210,7 @@ Click "SAVE CHANGES".
 
 .. image:: /images/vCenterGuideImages/NewCatalogItem/6layoutSettings.png
 
-At this point we've completed the setup work and can now provision the instance we've created to our specifications. Navigate to `Provisioning > Instances` and click "+ADD". From the search bar we can search for the new instance type we've created. In the example case, we called it "newinstancetype". Click "NEXT". 
+At this point we've completed the setup work and can now provision the instance we've created to our specifications. Navigate to `Provisioning > Instances` and click "+ADD". From the search bar we can search for the new instance type we've created. In the example case, we called it "newinstancetype". Click "NEXT".
 
 .. image:: /images/vCenterGuideImages/NewCatalogItem/7newInstanceSearch.png
 
@@ -280,4 +282,4 @@ This is just one example of using Morpheus to automate the process of configurin
 Conclusion
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-At this point you should be up and running in Morpheus, ready to consume VMware. This guide only scratches the surface, there is a lot more to see and do in Morpheus. Take a look at the rest of `Morpheus Docs <https://docs.morpheusdata.com/en/4.1.1/index.html>`_ for more information on supported integrations and other things possible. 
+At this point you should be up and running in Morpheus, ready to consume VMware. This guide only scratches the surface, there is a lot more to see and do in Morpheus. Take a look at the rest of `Morpheus Docs <https://docs.morpheusdata.com/en/4.1.1/index.html>`_ for more information on supported integrations and other things possible.
