@@ -19,7 +19,7 @@ Groups in Morpheus define which resources a user has access to. Clouds are added
 Navigate to `Infrastructure > Groups`. Here we will see a list of all configured groups but, of course, this will be empty immediately after installation. Click "+CREATE". Give your group a name, such as "All Clouds". The "CODE" field is used when calling Morpheus through Morpheus API or Morpheus CLI. It's useful in most cases to have an "All Clouds" group for testing purposes so this will likely help you down the road.
 
 .. image:: /images/vCenterGuideImages/Groups/1groupConfig.png
-  :scale: 80
+  :width: 80%
   :alt: The new group dialog box showing a name for the group filled in
 
 Click "SAVE CHANGES". Your group is now ready to accept clouds.
