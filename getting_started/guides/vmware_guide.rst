@@ -153,7 +153,141 @@ Since this guide is focused on working within a VMware cloud that we integrated 
 Prepping an Image
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-As we'll discuss and try out in the next section, Morpheus comes out of the box with a default set of blueprints that are relevant to many modern deployment scenarios. For the most part, these are base operating system images with a few additional adjustments. However, in many on-premise deployments, there are often custom image and networking requirements. We will work with the images included in Morpheus by default but have guides in Morpheus Docs for `creating Windows and Linux images <https://docs.morpheusdata.com/en/4.1.1/integration_guides/Clouds/vmware/vmware_templates.html>`_ which are consumable in Morpheus.
+As we'll discuss and try out in the next section, Morpheus comes out of the box with a default set of blueprints that are relevant to many modern deployment scenarios. For the most part, these are base operating system images with a few additional adjustments. However, in many on-premise deployments, there are often custom image and networking requirements. We will work with images included in Morpheus by default in this guide but it's important to discuss how to prep custom images as well.
+
+**Creating a Windows Image**
+
+The following versions of Windows Server are supported:
+
+- 2008 R2
+
+- 2012
+
+- 2012 R2
+
+- 2016
+
+- 2019
+
+To start, create a new Windows machine in vCenter using a base version of your selected Windows build.
+
+.. NOTE:: It's recommended to make the VMDK drive as small as possible for your purposes as this generally speeds cloning and deploy times. Morpheus provisioning and post-deploy scripts allow to to expand the drive to any size that you need.
+
+Once the machine is created, ensure VMtools is installed on the operating system. Then, apply all updates and service packs. Next, configure WinRM and open the firewall:
+
+.. code:: bash
+
+winrm quickconfig
+
+.. NOTE:: WinRM configuration is optional if using VMtools RPC mode for agent install and Morpheus Agent for guest exec.
+
+Next, we'll install .NET 4.5 or higher. Ensure Windows Firewall will allow WinRM connections and shut down the virtual instance. Finally, convert it to a template.
+
+.. NOTE:: Morpheus will Sysprep images based on the "Force Guest Customizations" flag under VM settings when using DHCP. If this flag is enabled or if using static IP addresses or IP pools when provisioning, ensure a Sysprep has not been performed. In such cases, guest customization will always be performed and a Sysprep will be triggered.
+
+**Creating a CentOS/RHEL Image**
+
+Create a new machine in vCenter and install a base version of your preferred Linux distro.
+
+.. NOTE:: If you are using cloud-init as part of your image, you will need to ensure your virtual machine has a cdrom.
+
+Before installing the operating system, set up a single ext or xfs partition without a swap disk. Next, install the distro applying any updates to the operating system or security updates. Once the operating system is running and updated, install the following:
+
+.. code:: bash
+
+yum install cloud-init
+yum install cloud-utils-growpart
+yum install open-vm-tools
+yum install git
+yum install epel-release
+
+Set selinux to permissive as the enforced setting can cause problems with cloud-init:
+
+.. code:: bash
+
+sudo vi /etc/selinux/config
+
+**Cloud-Init**
+
+We'll get started by installing cloud-init using the following command:
+
+.. code:: bash
+
+yum -y install epel-release
+yum -y install git wget ntp curl cloud-init dracut-modules-growroot
+rpm -qa kernel | sed 's/^kernel-//'  | xargs -I {} dracut -f /boot/initramfs-{}.img {}
+
+.. NOTE:: The above command will install some core dependencies for cloud-init and automation later as you work with your provisioned instances. For example, we install Git here as it is used for Ansible automation. If you had no plans to use Ansible, this installation could be skipped. The dracut-modules-growroot is responsible for resizing the root partition upon initial boot which was potentially adjusted during provisioning.
+
+One key benefit of using cloud-init is that we don't have to lock credentials into the blueprint. We recommend configuring a default cloud-init user that will get created automatically when the VM is booted by cloud-init. We can define that default user in `Administration > Provisioning > Cloud-Init`.
+
+**Network Interfaces**
+
+As of CentOS 7, network interface naming conventions have changed. You can check this by running `ifconfig` and noting that the primary network interface has some value similar to "ens2344". The naming is dynamic and typically set based on hardware ID. We don't want this to fluctuate when provisioning this blueprint in our VMware environments. To accomplish this end, we will rename the interface back to "eth0" using the steps below.
+
+First, adjust the bootloader to disable interface naming:
+
+.. code:: bash
+
+sed -i -e 's/quiet/quiet net.ifnames=0 biosdevname=0/' /etc/default/grub
+grub2-mkconfig -o /boot/grub2/grub.cfg
+
+The next step is to adjust network scripts in CentOS. Start by confiming the presence of a file called `/etc/sysconfig/network-scripts/ifcfg-eth0`. Once confirmed, run the following script:
+
+.. code:: bash
+
+export iface_file=$(basename "$(find /etc/sysconfig/network-scripts/ -name 'ifcfg*' -not -name 'ifcfg-lo' | head -n 1)")
+export iface_name=${iface_file:6}
+echo $iface_file
+echo $iface_name
+sudo mv /etc/sysconfig/network-scripts/$iface_file /etc/sysconfig/network-scripts/ifcfg-eth0
+sudo sed -i -e "s/$iface_name/eth0/" /etc/sysconfig/network-scripts/ifcfg-eth0
+sudo bash -c 'echo NM_CONTROLLED=\"no\" >> /etc/sysconfig/network-scripts/ifcfg-eth0'
+
+This script tries to confirm there is a new `ifcfg-eth0` config created to replace the old config file. Confirm this config exists after running and if not you will have to build your own:
+
+.. code:: bash
+
+TYPE=Ethernet
+DEVICE=eth0
+NAME=eth0
+ONBOOT=yes
+NM_CONTROLLED="no"
+BOOTPROTO="dhcp"
+DEFROUTE=yes
+
+For more on CentOS/RHEL image prep, including additional configurations for specific scenarios, take a look at the `VMware image prep <https://docs.morpheusdata.com/en/4.1.1/integration_guides/Clouds/vmware/vmware_templates.html#gotyas>`_ page in Morpheus Docs.
+
+**Creating an Ubuntu Image**
+
+Create a new machine in vCenter and install a base version of your preferred Linux distro.
+
+.. NOTE:: If you are using cloud-init as part of your image, you will need to ensure your virtual machine has a cdrom.
+
+Before installing the operating system, set up a single ext partition without a swap disk. Install the distro and apply any operating system and security updates. Ensure you've set a root password.
+
+Install cloud-init and cloud-utils-growpart:
+
+.. code:: bash
+
+sudo apt install cloud-init
+sudo apt install cloud-utils
+
+Install desired hypervisor drivers, such as Virto or Open-VM Tools
+
+Install Git:
+
+.. code:: bash
+
+sudo apt install git
+
+Since Debian 9 includes network manager, ensure this is disabled. You can do this by editing the configuration file at `/etc/NetworkManager/NetworkManager.conf`. Within that file, update the "managed" flag to false:
+
+.. code:: bash
+
+managed=false
+
+We also recommend setting the network adapter to "eth0". This process is described above in the "Network Interfaces" section of the CentOS image prep guide above.
 
 Provisioning Your First Instance
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
