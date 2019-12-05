@@ -12,6 +12,11 @@ Add a private Github or Git repository. Authentication can be handled by supplyi
 
 - Key pair
 
+.. image:: /images/integration_guides/deployments/addgitintegration.png
+  :width: 80%
+  :alt: The add github integration modal
+  :align: center
+
 Key pairs are stored in Morpheus and selected from a dropdown menu when needed. To add a key pair to Morpheus:
 
 #. Generate an SSH key pair, or use an existing SSH key pair.
