@@ -4,7 +4,7 @@ Zerto
 Adding Zerto Integration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-#. Navigate to `Backups -> Services`
+#. Navigate to `Backups -> Integrations`
 #. Select :guilabel:`+ ADD`
 #. Select Zerto
 #. Fill in the following:
@@ -14,7 +14,8 @@ Adding Zerto Integration
    Enabled
       Enable the Integration
    API URL
-      API URL or Zerto Replication Manager
+      API URL for Zerto Virtual Manager
+        Example ```API URL: https://zvm_IP:9669``
    Username
       Admin Username for Zerto
    Password
