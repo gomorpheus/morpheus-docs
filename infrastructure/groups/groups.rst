@@ -33,7 +33,7 @@ To View Groups:
 #. Click the Groups link
 
 .. Viewing Groups
-^^^^^^^^^^^^^^
+
 
 .. UI
 .. ---
@@ -42,6 +42,7 @@ To View Groups:
 
 .. CLI
 ---
+
   View all groups: ``groups list``
   To use the group: ``groups use <id>`` or ``groups use "group name"``
   Json output of a specific group: ``groups get <id> -j`` or ``groups get "group name" -j``
@@ -56,7 +57,7 @@ Adding Groups
 -------------
 
 .. UI
----
+
 
 .. image:: /images/infrastructure/add_group.png
 
@@ -71,13 +72,13 @@ To add a group:
 #. Click the Save Changes button to save
 
 .. CLI
----
+
 
 .. All in one command: ``groups add CLITest -O code=cli -O location=`` I have added code and value for location is empty. The value for code and location are optional.
 Minimal values: ``groups add CLITest`` There would be prompt to provide optional values for code and location.
 
 .. API
----
+
 
 .. HTTP Request
   ``POST https://api.gomorpheus.com/api/groups``
