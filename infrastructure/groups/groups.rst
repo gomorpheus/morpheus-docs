@@ -35,12 +35,12 @@ To View Groups:
 .. Viewing Groups
 
 
-.. UI
-.. ---
-  .. #. Select the Infrastructure link in the navigation bar
-  .. #. Click the Groups link
+UI
+---
+  #. Select the Infrastructure link in the navigation bar
+  #. Click the Groups link
 
-.. CLI
+CLI
 ---
 
   View all groups: ``groups list``
@@ -48,7 +48,7 @@ To View Groups:
   Json output of a specific group: ``groups get <id> -j`` or ``groups get "group name" -j``
 
 
-.. API
+API
 ---
   View all groups: ``curl https://api.gomorpheus.com/api/groups -H "Authorization: BEARER access_token"``
   View a specific group: ``curl https://api.gomorpheus.com/api/groups/:id -H "Authorization: BEARER access_token"``
@@ -75,7 +75,7 @@ To add a group:
 
 
 .. All in one command: ``groups add CLITest -O code=cli -O location=`` I have added code and value for location is empty. The value for code and location are optional.
-Minimal values: ``groups add CLITest`` There would be prompt to provide optional values for code and location.
+.. Minimal values: ``groups add CLITest`` There would be prompt to provide optional values for code and location.
 
 .. API
 
