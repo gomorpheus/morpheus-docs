@@ -22,3 +22,4 @@ Default Locations
 .. include:: /getting_started/installation/distributed/full/elasticsearch.rst
 .. include:: /getting_started/installation/distributed/full/appliance_ha.rst
 .. include:: /getting_started/installation/distributed/HA_Shared_Storage.rst
+.. include:: /getting_started/additional/additional_configuration.rst

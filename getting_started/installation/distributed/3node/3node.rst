@@ -190,11 +190,15 @@ Steps
 
     [root@app-server-2 ~] morpheus-ctl reconfigure
 
-#. Once the Rabbit services are up and clustered on all nodes they need to be set to HA/Mirrored Queues:
+#. Once the Rabbit services are up and clustered on all nodes, apply required ``ha-mode`` and ``expires`` policies to the morpheus vhost:
 
    .. code-block:: bash
 
-    [root@app-server-2 ~]# rabbitmqctl set_policy -p morpheus --priority 1 --apply-to all ha ".*" '{"ha-mode": "all"}'
+    [root@app-server-2 ~] rabbitmqctl set_policy -p morpheus --apply-to queues --priority 2 statCommands "statCommands.*" '{"expires":1800000, "ha-mode":"all"}'
+    [root@app-server-2 ~] rabbitmqctl set_policy -p morpheus --apply-to queues --priority 2 morpheusAgentActions "morpheusAgentActions.*" '{"expires":1800000, "ha-mode":"all"}'
+    [root@app-server-2 ~] rabbitmqctl set_policy -p morpheus --apply-to all --priority 1 ha ".*" '{"ha-mode":"all"}'
+
+   .. important:: Failure to set the proper policies will result in degraded RabbitMQ performance, Java Heap issues, and/or refused RabbitMQ connections resulting in degraded |morpheus| UI performance, unconsumed messages or UI failure.
 
 #. The last thing to do is restart the |morpheus| UI on the two nodes that are NOT the SOT node.
 
@@ -424,3 +428,6 @@ If this is not the case it is worth investigating the Elasticsearch logs to unde
 ``/var/log/morpheus/elasticsearch/current``
 
 Outside of these stateful tiers, the “morpheus-ctl status” command will not output a “run” status unless the service is successfully running. If a stateless service reports a failure to run, the logs should be investigated and/or sent to |morpheus| for additional support. Logs for all |morpheus| embedded services are found in ``/var/log/morpheus``.
+
+.. include:: /getting_started/additional/additional_configuration.rst
+.. include:: /getting_started/installation/distributed/HA_Shared_Storage.rst
