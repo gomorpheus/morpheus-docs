@@ -1,5 +1,5 @@
 SSL Certificates
-^^^^^^^^^^^^^^^^
+----------------
 
 The default installation generates a self-signed SSL certificate. To implement a third-party certificate:
 

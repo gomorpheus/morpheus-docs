@@ -7,8 +7,8 @@ Getting Started
 
   requirements/requirements.rst
   installation/installation.rst
-  additional/additional_configuration.rst
   maintenance/maintenance.rst
+  additional/additional_configuration.rst
   appliance_setup/appliance_setup.rst
   guides/vmware_guide.rst
   guides/aws_guide.rst

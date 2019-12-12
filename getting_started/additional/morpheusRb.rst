@@ -1,5 +1,5 @@
 Advanced morpheus.rb Settings
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+-----------------------------
 
 Morpheus allows for additional advanced customizations to the morpheus.rb file located in ``/etc/morpheus/morpheus.rb``.  Below is a list of the supported items available in the morpheus.rb file.
 

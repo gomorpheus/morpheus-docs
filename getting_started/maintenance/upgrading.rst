@@ -14,7 +14,7 @@ Upgrading
 * Warnings about missing files during the removal phase are expected and can be ignored.
 5. The repo download location has changed to https://downloads.morpheusdata.com from https://downloads.gomorpheus.com so if a customer has an ACL on their firewall or proxy they will need to update the ACL.
 
-Refer to CM for externalized MySQL, Elasticsearch and/or RabbitMQ
+Refer to :doc:`/release_notes/compatibility.rst` for externalized MySQL, Elasticsearch and/or RabbitMQ version requirements.
 
 Single Node Appliance Upgrade
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -61,7 +61,7 @@ When upgrading a 3-Node appliance from 3.6.x to 4.0.0 or 4.1.0, the following se
 - RabbitMQ upgrade to v3.7
 - Elasticsearch upgrade to v5.6
 
-The upgrade process will not upgrade the external MySQL node(s). MySQL v5.7 is required for external databases.
+The upgrade process will not upgrade the external MySQL node(s). Refer to :doc:`/release_notes/compatibility.rst` for externalized database version requirements.
 
 Due to RabbitMQ going from 3.4.x to 3.7.x, which has no direct upgrade path, the RabbitMQ queues and configuration will be dropped, and the cluster will need to be configured and established again. This also ensures new queues are created using our new declaration settings, and removes any old queues not in use anymore.
 
@@ -77,9 +77,9 @@ Due to RabbitMQ going from 3.4.x to 3.7.x, which has no direct upgrade path, the
 Other Appliance Configurations Upgrades
 ---------------------------------------
 
-When upgrading other Appliance Configurations from 3.6.x to 4.0.0, 4.1.0 or 4.1.1 only services local to the Morpheus App node(s) will be upgraded. For fully distributed configurations, where MySQL, RabbitMQ and Elasticsearch are external, the upgrade process will not upgrade the external serviced.
+When upgrading other Appliance Configurations from 3.6.x to 4.0.0, 4.1.0 or 4.1.1 only services local to the Morpheus App node(s) will be upgraded. For fully distributed configurations, where MySQL, RabbitMQ and Elasticsearch are external, the upgrade process will not upgrade the external services.
 
-
+Refer to :doc:`/release_notes/compatibility.rst` for externalized MySQL, Elasticsearch and/or RabbitMQ version requirements.
 
 Fix if Install Hangs
 --------------------
