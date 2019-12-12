@@ -68,7 +68,7 @@ Click the :guilabel:`CREATE USER` button, then from the New User wizard input th
 * Password
 * Confirm Password
 
-. Click :guilabel:`Save Changes`.
+Click :guilabel:`Save Changes`.
 
 .. NOTE:: Users are specific to each Tenant. Users created in the Master Tenant or other sub-Tenants will only have access to the Tenant they are created in.
 
