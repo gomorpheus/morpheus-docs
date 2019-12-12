@@ -112,6 +112,5 @@ To resolve, run the following in a separate session while the process is hanging
 
 The upgrade will then proceed.
 
-
 .. include:: ssl-import.rst
 .. include:: wars.rst

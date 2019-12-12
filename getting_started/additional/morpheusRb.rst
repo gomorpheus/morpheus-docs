@@ -17,8 +17,8 @@ Morpheus allows for additional advanced customizations to the morpheus.rb file l
   ui['memory_top_pad'] = 131072
   ui['memory_map_max'] = 65536
   ui['memory_alloc_arena_max'] = 2
-  ui['http_client_connect_timeout'] = 10000
-  ui['http_client_connect_timeout'] = 600000
+  ui['http_client_connect_timeout'] = 10000  #in seconds
+  ui['http_client_connect_timeout'] = 600000 #in seconds
 
   mysql['enable'] = true
   mysql['morpheus_db'] = 'morpheus'
