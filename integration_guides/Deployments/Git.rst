@@ -4,11 +4,23 @@ Git
 Authentication
 ^^^^^^^^^^^^^^
 
-Add add a private Github or Git Repository, an SSH Key pair must be added to Morpheus and the public key added to Github or the Git Repository for authentication.
+Add a private Github or Git repository. Authentication can be handled by supplying any of the following:
 
-To add a Key Pair to Morpheus:
+- Username and password
 
-#. Generate an SSH Key Pair, or use an existing SSH Key Pair.
-#. Navigate to ``Infrastructure -> Key Pairs``
+- Access token
+
+- Key pair
+
+.. image:: /images/integration_guides/deployments/addgitintegration.png
+  :width: 80%
+  :alt: The add github integration modal
+  :align: center
+
+Key pairs are stored in Morpheus and selected from a dropdown menu when needed. To add a key pair to Morpheus:
+
+#. Generate an SSH key pair, or use an existing SSH key pair.
+#. Navigate to ``Infrastructure -> Keys & Certs``
 #. Select :guilabel:`+ ADD`
-# Enter both the Public and Private Pirvate
+#. Enter both the Public and Private keys
+#. Click :guilabel:`SAVE CHANGES`

@@ -42,3 +42,5 @@ To copy the ```morpheus-ui``` directory to the shared storage follow the below s
     cp -r morpheus-ui morpheus-ui-bkp
 
 .. TIP:: when adding additional nodes you will only need to run step 6 and 7
+
+.. important:: NFS mounts require ``sync`` option when using Ansible integration with |morpheus| Agent command bus execution enabled.

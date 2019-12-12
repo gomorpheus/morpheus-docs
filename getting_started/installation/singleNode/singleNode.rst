@@ -45,4 +45,4 @@ Default Locations
 .. include:: /getting_started/installation/singleNode/debian.rst
 .. include:: /getting_started/installation/singleNode/centos.rst
 .. include:: /getting_started/installation/singleNode/redhat.rst
-.. include:: /getting_started/installation/additional.rst
+.. include:: /getting_started/additional/additional_configuration.rst

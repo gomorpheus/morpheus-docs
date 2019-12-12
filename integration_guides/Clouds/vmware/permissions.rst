@@ -76,3 +76,16 @@ vApp
   * Clone
   * Export
   * Import
+
+vSphere Tagging
+  * Assign or Unassign vSphere Tag
+  * Create vSphere Tag
+  * Create vSphere Tag Category
+  * Delete vSphere Tag
+  * Delete vSphere Tag Category
+  * Edit vSphere Tag
+  * Edit vSphere Tag Category
+  * Modify UsedBy Field For Category
+  * Modify UsedBy Field For Tag
+  * privilege.InventoryService.Tagging.CreateScope.label
+  * privilege.InventoryService.Tagging.DeleteScope.label

@@ -24,9 +24,9 @@ Services
 When externalizing MySQL, Elasticsearch and/or RabbitMQ services, the following versions are compatible with Morpheus 4.1.1:
 
 +---------------------------------------+----------------------+-----------------------------+
-| **Service**                           |**Compatible Branch** | **4.1.0 Installed Version** |
+| **Service**                           |**Compatible Branch** | **4.1.1 Installed Version** |
 +---------------------------------------+----------------------+-----------------------------+
-| MySQL                                 | 5.7                  | 5.7.27                      |
+| MySQL                                 | 5.7                  | 5.7.28                      |
 +---------------------------------------+----------------------+-----------------------------+
 | Percona                               | 5.7, WSREP 31        | n/a                         |
 +---------------------------------------+----------------------+-----------------------------+
