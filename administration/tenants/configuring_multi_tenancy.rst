@@ -33,11 +33,11 @@ To create a new sub-Tenant
    * Base Role
    * Currency (for pricing)
 
- The Base Role defines a role set from which all roles created within the Tenant will inherit.
+The Base Role defines a role set from which all roles created within the Tenant will inherit.
 
 .. NOTE:: In prior versions, we could set Limits when creating a Subtenant. These could restrict the amount of storage, memory, and CPUs that can be collectively provisioned by all users in the Tenant. In more recent versions, this functionality has been rolled into Policies (Administration > Policies). When creating a Policy, we are able to specify a Tenant to which the Policy should apply.
 
-#. Click the :guilabel:`Save Changes` button.
+Click the :guilabel:`Save Changes` button.
 
 .. image:: /images/advanced/tenant/createtenant.png
 	:width: 80%
@@ -58,15 +58,15 @@ Tenant Users
 
 To create a new user within the Tenant:
 
-. Click the :guilabel:`CREATE USER` button
-. From the New User wizard input the fields below.
-* First Name of the user being created
-* Last Name of the user being created
-* Username used to login
-* Email address of the new user
-* Role to be inherited by the user
+Click the :guilabel:`CREATE USER` button, then from the New User wizard input the fields below:
+
+* First Name
+* Last Name
+* Username
+* Email
+* Role
 * Password
-* Storage, Memory and CPU limits for this specific user, if any (0 is no limit)
+* Confirm Password
 
 . Click :guilabel:`Save Changes`.
 
