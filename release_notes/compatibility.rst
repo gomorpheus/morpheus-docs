@@ -1,5 +1,8 @@
+.. _compatibility:
 v4.1.1 Compatibility
 ====================
+
+When installing and upgrading to |morpheus| v4.1.1, refer to the following to ensure compatibility.
 
 |morpheus| Application OS
 -------------------------
