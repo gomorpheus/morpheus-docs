@@ -10,7 +10,7 @@ Getting Started
   maintenance/maintenance.rst
   additional/additional_configuration.rst
   appliance_setup/appliance_setup.rst
-  guides/vmware_guide.rst
-  guides/aws_guide.rst
   agent/morpheus_agent.rst
   discovery/morpheus_discovery.rst
+  guides/vmware_guide.rst
+  guides/aws_guide.rst

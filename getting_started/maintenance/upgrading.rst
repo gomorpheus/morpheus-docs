@@ -14,7 +14,7 @@ Upgrading
 * Warnings about missing files during the removal phase are expected and can be ignored.
 5. The repo download location has changed to https://downloads.morpheusdata.com from https://downloads.gomorpheus.com so if a customer has an ACL on their firewall or proxy they will need to update the ACL.
 
-Refer to :doc:`/release_notes/compatibility.rst` for externalized MySQL, Elasticsearch and/or RabbitMQ version requirements.
+Refer to :ref:`compatibility` for externalized MySQL, Elasticsearch and/or RabbitMQ version requirements.
 
 Single Node Appliance Upgrade
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -56,7 +56,7 @@ To upgrade Morpheus running on CentOS/RHEL, download and install the new rpm pac
 3-Node Appliance Upgrade
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-When upgrading a 3-Node appliance from 3.6.x to 4.0.0 or 4.1.0, the following services will be upgraded:
+When upgrading a 3-Node appliance from 3.6.x to 4.0.0, 4.1.0 or 4.1.1 the following services will be upgraded:
 
 - RabbitMQ upgrade to v3.7
 - Elasticsearch upgrade to v5.6
@@ -79,7 +79,7 @@ Other Appliance Configurations Upgrades
 
 When upgrading other Appliance Configurations from 3.6.x to 4.0.0, 4.1.0 or 4.1.1 only services local to the Morpheus App node(s) will be upgraded. For fully distributed configurations, where MySQL, RabbitMQ and Elasticsearch are external, the upgrade process will not upgrade the external services.
 
-Refer to :doc:`/release_notes/compatibility.rst` for externalized MySQL, Elasticsearch and/or RabbitMQ version requirements.
+Refer to :ref:`compatibility` for externalized MySQL, Elasticsearch and/or RabbitMQ version requirements.
 
 Fix if Install Hangs
 --------------------
