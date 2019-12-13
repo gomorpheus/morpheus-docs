@@ -42,11 +42,11 @@ User Roles
       The Master Tenant and only the Master Tenant can create Multi Tenant User Roles. These Roles are for automatically creating base user Roles in Sub Tenants.
         - Multi Tenant User Roles will automatically create matching User Roles in all Tenants
 
-        .. NOTE:: Multi Tenant User Roles are intended to make Sub Tenant User Role creation easier, so Master Tenant users do not have to re-created the same base Sub Tenant Users Roles for every Sub Tenant. Multi Tenant User Roles are not a single role across Tenants, but more of a template that creates new Sub Tenant User Roles that can then be managed in the Sub Tenant.
+        .. NOTE:: Multi Tenant User Roles are intended to make Sub Tenant User Role creation easier, so Master Tenant users do not have to re-create the same base Subtenant Users Roles for every Subtenant. Multi-Tenant User Roles are not a single role across Tenants, but more of a template that creates new Sub Tenant User Roles that can then be managed in the Sub Tenant.
 
         - Multi Tenant User Role changes will propagate to all Sub Tenants unless edited by a Sub Tenant
         - Once a Multi Tenant User Role is edited inside a Sub Tenant, it is no longer connected to the Multi Tenant User Role and is it own unique Role.
-        - At least one Multi Tenant User Role is required before any Sub Tenants can be created
+        - At least one Multi-Tenant User Role is required before Users can be created within a Subtenant.
 
         .. IMPORTANT:: Deleting a Multi Tenant User Role from the Master tenant will not remove that Role from Sub Tenants.
 

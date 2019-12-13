@@ -24,5 +24,5 @@ Incident Severity Mapping
 ------------------- -----------------
 Info                Low/Medium/High
 Warning             Low/Medium/High
-Critical	          Low/Medium/High
+Critical	        Low/Medium/High
 =================== =================
