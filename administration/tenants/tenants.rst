@@ -137,7 +137,7 @@ To create a Tenant User:
    - Password
    - Any default Windows or Linux credentials
 
-Click :guilabel: `SAVE CHANGES`
+Click :guilabel:`SAVE CHANGES`
 
 .. IMPORTANT:: In versions 3.1.1 and 2.12.5 and later, a Multi-Tenant User Role must be created prior to adding Subtenant Users or the User will not save. In previous versions a default Multi-Tenant Role was seeded. Due to customer requests, the seeded role was removed and a Multi-Tenant Role must be created by the Master Tenant for Subtenant Users.
 
@@ -154,7 +154,7 @@ To edit a User:
 
    .. NOTE:: Name, Username, Passwords and e-mail addresses cannot be edited on Users created from Identity Source Integrations.
 
-Click :guilabel: `SAVE CHANGES`
+Click :guilabel:`SAVE CHANGES`
 
 Delete Tenant User
 ^^^^^^^^^^^^^^^^^^
