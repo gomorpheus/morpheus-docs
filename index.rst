@@ -1,7 +1,7 @@
 |morpheus| v|version| Documentation
 ===================================
 
-:ref:`releaseNotes`
+:ref:`Release Notes`
 :ref:`Percona TLS`
 
 .. toctree::

@@ -172,7 +172,6 @@ latex_documents = [
      u'Morpheus', 'manual'),
 ]
 
-
 # -- Options for manual page output ---------------------------------------
 
 # One entry per manual page. List of tuples
@@ -181,7 +180,6 @@ man_pages = [
     (master_doc, 'morpheusdocs', u'Morpheus Documentation',
      [author], 1)
 ]
-
 
 # -- Options for Texinfo output -------------------------------------------
 
