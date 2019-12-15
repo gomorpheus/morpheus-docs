@@ -48,3 +48,4 @@
 
 
 .. |morpheus| replace:: Morpheus
+.. |version| replace:: 4.1.2
