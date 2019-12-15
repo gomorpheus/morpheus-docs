@@ -1,8 +1,8 @@
 .. _compatibility:
-v4.1.1 Compatibility
+v|version| Compatibility
 ====================
 
-When installing and upgrading to |morpheus| v4.1.1, refer to the following to ensure compatibility.
+When installing and upgrading to |morpheus| v|version|, refer to the following to ensure compatibility.
 
 |morpheus| Application OS
 -------------------------
@@ -24,10 +24,10 @@ The Morpheus Applications can be installed on the following Operating System ver
 Services
 --------
 
-When externalizing MySQL, Elasticsearch and/or RabbitMQ services, the following versions are compatible with Morpheus 4.1.1:
+When externalizing MySQL, Elasticsearch and/or RabbitMQ services, the following versions are compatible with Morpheus |version|:
 
 +---------------------------------------+----------------------+-----------------------------+
-| **Service**                           |**Compatible Branch** | **4.1.1 Installed Version** |
+| **Service**                           |**Compatible Branch** | **|version| Installed Version** |
 +---------------------------------------+----------------------+-----------------------------+
 | MySQL                                 | 5.7                  | 5.7.28                      |
 +---------------------------------------+----------------------+-----------------------------+
