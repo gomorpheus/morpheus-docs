@@ -43,10 +43,6 @@ Messaging Tier
 ``````````````
 The Messaging tier is an AMQP based tier along with STOMP Protocol (used for agent communication). The primary model recommended is to use RabbitMQ for queue services. RabbitMQ is also a clustered based queuing system and needs at least 3 instances for HA configurations. This is due to elections in the failover scenarios rabbitmq can manage. If doing a cross-region HA rabbitmq cluster it is recommended to have at least 3 rabbit queue clusters per region. Typically to handle HA a RabbitMQ cluster should be placed between a load balancer and the front-end application server to handle cross host connections. The ports necessary to forward in a Rabbit MQ cluster are (5672, and 61613). A rabbitmq cluster can run on smaller memory machines depending on how frequent large requests bursts occur. 4–8gb of Memory is recommended to start.
 
-
-.. include:: /getting_started/installation/distributed/3node/3node.rst
-.. include:: /getting_started/installation/distributed/full/distributedFull.rst
-
 Pros/Cons
 ^^^^^^^^^
 Single Host
@@ -112,6 +108,6 @@ Disadvantages
  - Shared Storage configuration required
  - Rabbit Load balancer required
 
-.. include:: /getting_started/installation/singleHost/singleNode.rst
+.. include:: /getting_started/installation/singleNode/singleNode.rst
 .. include:: /getting_started/installation/distributed/3node/3node.rst
 .. include:: /getting_started/installation/distributed/full/distributedFull.rst
