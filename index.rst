@@ -44,6 +44,3 @@
    :caption: Resource Center
 
    Resource Center <https://www.morpheusdata.com/resource-center>
-
-.. |morpheus| replace:: Morpheus
-.. |version| replace:: 4.1.2
