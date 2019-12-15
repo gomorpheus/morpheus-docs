@@ -1,10 +1,10 @@
-Single Node
-------------
+Single Host
+-----------
 
 .. image:: /images/arch/morpharchSingleV3.png
    :align: center
 
-In the Single Node/All-in-one configuration, all components required for Morpheus are installed and configured during the Morpheus ``reconfigure`` command.
+In the Single Host/All-in-one configuration, all components required for Morpheus are installed and configured during the Morpheus ``reconfigure`` command.
 
 Appliance Host
  - Application
