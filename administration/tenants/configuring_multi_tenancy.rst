@@ -18,7 +18,7 @@ Creating Tenants
 
 The Master Tenant is created during the initial appliance setup. Additional sub-Tenants can be created in the `Administration -> Tenants` section.
 
-The Tenants page displays a list of all Tenants. This page enables users to: Create, Edit, and Delete Tenants. The list of Tenants displays the Tenant Name, Role, Total Instances, Total Users, and the Created Date. Click the Tenant Name to drill into the Tenant View where you can again Edit, Delete, as well as Create Users, Edit Users, and Delete Users users belonging to the Tenant.
+The Tenants page displays a list of all Tenants. This page enables users to: Create, Edit, and Delete Tenants. The list of Tenants displays the Tenant Name, Role, Total Instances, Total Users, Status (active or inactive) and the Created Date. Click the Tenant Name to drill into the Tenant View where you can edit or delete the Tenant, as well as create, edit and delete users belonging to the Tenant.
 
 .. NOTE:: At least one Tenant in addition to the Master Tenant is required to scope resources across Tenants.
 
@@ -26,54 +26,58 @@ To create a new sub-Tenant
 
 #. Select the Administration link in the navigation bar.
 #. Select the Tenants link in the sub navigation bar.
-#. lick the Create Tenant button.
+#. Click the :guilabel:`+Create Tenant` button.
 #. From the New Tenant wizard input
-   * Name
-   * Description(optional)
-   * Base Role- Primary role of the Tenant. All roles created within the Tenant must inherit this role as the base role.
+   * Name (Required)
+   * Description
+   * Base Role
    * Currency (for pricing)
-   * Limits- These restrict the amount of Storage, Memory, and CPUs that can be collectively provisioned by all users in the Tenant. The default is 0 for these limits, which means no limits will be applied.
 
-#. Click the :guilabel:`Save Changes` button.
+The Base Role defines a role set from which all roles created within the Tenant will inherit.
 
-.. image:: /images/advanced/configuring_multi_tenancy-09a1e.png
+.. NOTE:: In prior versions, we could set Limits when creating a Subtenant. These could restrict the amount of storage, memory, and CPUs that can be collectively provisioned by all users in the Tenant. In more recent versions, this functionality has been rolled into Policies (Administration > Policies). When creating a Policy, we are able to specify a Tenant to which the Policy should apply.
+
+Click the :guilabel:`Save Changes` button.
+
+.. image:: /images/advanced/tenant/createtenant.png
+	:width: 80%
+	:alt: The Create Tenant dialog box is shown
+	:align: center
 
 Viewing Tenants
 ```````````````````
 
 To View an individual Tenant page, select the Tenant name from the main Tenants section.
 
-.. image:: /images/advanced/configuring_multi_tenancy-fa0d8.png
+.. image:: /images/advanced/tenant/viewtenant.png
 
-From inside this Tenant view, the Tenant settings can be edited, existing users can be viewed or edited, and new users for this Tenant can be created.
+From inside the Tenant view, we can edit or delete the Tenant, as well as click into any of the Tenant's users.
 
 Tenant Users
 `````````````
 
-To create a new user for an Tenant (Note: Users are specific to each Tenant. Users created in the Master Tenant or other sub-Tenants will only have access to the Tenant they are created in.)*
+To create a new user within the Tenant:
 
-. Click the :guilabel:`CREATE USER` button
-. From the New User wizard input the fields below.
-* First Name of the user being created
-* Last Name of the user being created
-* Username used to login
-* Email address of the new user
-* Role to be inherited by the user
+Click the :guilabel:`CREATE USER` button, then from the New User wizard input the fields below:
+
+* First Name
+* Last Name
+* Username
+* Email
+* Role
 * Password
-* Storage, Memory and CPU limits for this specific user, if any (0 is no limit)
+* Confirm Password
 
-. Click :guilabel:`Save Changes`.
+Click :guilabel:`Save Changes`.
 
-.. image:: /images/advanced/configuring_multi_tenancy-e194d.png
+.. NOTE:: Users are specific to each Tenant. Users created in the Master Tenant or other sub-Tenants will only have access to the Tenant they are created in.
 
 Impersonate Tenant User
 ```````````````````````
 
-"Impersonate User" enables administrators to login as sub-Tenant users directly from the master Tenant.
+Morheus allows admin users in the Master Tenant to impersonate any user in the Subtenants to see the application as if they are that user. To impersonate a user, you must be logged in as a user with the "Impersonate User" feature enabled in the assigned role.
 
-To impersonate a user, you must be logged in as a user with the "Impersonate User" feature enabled in assigned role.
-
-Navigate to Tenants, select an Tenant, and in the specific user ACTIONS drop down, select "Impersonate"
+From inside a Tenant detail page (containing the list of that Tenant's users), and in the specific user's ACTIONS drop down, select "Impersonate".
 
 .. image:: /images/advanced/configuring_multi_tenancy-9583a.png
 
@@ -86,11 +90,11 @@ Resources
 In the Master Tenant, resources can be configured with private or public visibility:
 
 * Private Visibility: Only available to the assigned Tenant.
-* Public Visibility (master Tenant only): Available across all Tenants
+* Public Visibility (option available in Master Tenant only): Available across all Tenants
 
-Resources in the Master Tenant can also be assigned directly to sub-Tenants. When a resource is assigned to a sub-Tenant, it is only available for that sub-Tenant, and its visibility is automatically set to private. Public Visibility is not an option for any resource assigned to or created in a sub-Tenant.
+Resources in the Master Tenant can also be assigned directly to Subtenants. When a resource is assigned to a Subtenant, it is only available for that Subtenant, and its visibility is automatically set to private. Public visibility is not an option for any resource assigned to or created in a Subtenant.
 
-From the master Tenant, the following resources can be configured for public visibility across all Tenants, or assigned to individual sub-Tenants
+From the Master Tenant, the following resources can be configured for public visibility across all Tenants, or assigned to individual sub-Tenants
 
 * Clouds
 * Hosts
@@ -106,32 +110,32 @@ From the master Tenant, the following resources can be configured for public vis
 * Workflows
 * Roles
 
-.. NOTE:: Virtual Image Blueprints can also be made available to multiple select Tenants when set to private.
+.. NOTE:: Virtual Image Blueprints can be made available to multiple select Tenants when set to private.
 
 Cloud Visibility & Assignment
 ``````````````````````````````
-Edit Visibility of a Cloud
 
-To set the Visibility of cloud to Public (shared across all Tenants) or Private (only available to the assigned Tenant):
+To set the visibility of a Cloud to Public (shared across all Tenants) or Private (only available to the assigned Tenant):
 
-#. Navigate to Infrastructure, Clouds
+#. Navigate to Infrastructure > Clouds
 #. Select either the pencil/edit icon on the end of the cloud row, or click the name of the cloud and select "Edit" in the cloud page.
 #. From the "Visibility" drop down, select either "Public" or "Private"
 #. Select :guilabel:`Save Changes` in the footer of the Edit Cloud modal.
 
 .. image:: /images/advanced/configuring_multi_tenancy-349e2.png
 
-When a cloud is set to Public visibility, it is available to be added to sub Tenants. All sub-Tenants created after a master Tenant cloud is set to public will automatically have clouds with public visibility added, and a group will be created for each available cloud matching the cloud name in the new sub Tenant(s).
+When a cloud is set to Public visibility, it is available to be added to Subtenants. All Subtenants created after a Master Tenant cloud is set to public will automatically have clouds with public visibility added, and a group will be created for each available cloud matching the cloud name in the new Subtenant(s).
 
-For Tenants created prior to a Master Tenant cloud being set to public visibility, the sub Tenant will have the option to add that cloud but it will not automatically be added.
+For Tenants created prior to a Master Tenant cloud being set to public visibility, the Subtenant will have the option to add that cloud but it will not automatically be added.
 
-While the cloud will be available for Sub-Tenants, the resources available in that cloud to the sub-Tenant(s) depends on the visibility or assignment of the individual resources.
+While the cloud will be available for Subtenants, the resources available in that cloud to the Subtenant(s) depends on the visibility or assignment of the individual resources.
 
-.. NOTE:: A sub-Tenant user must have sufficient role permissions/cloud access to add publicly available clouds. Master Tenant clouds settings cannot be edited from sub Tenants.
+.. NOTE:: A Subtenant user must have sufficient role permissions and cloud access to add publicly available clouds. Master Tenant clouds settings cannot be edited from Subtenants.
 
 Assign a Cloud to an Tenant
 ```````````````````````````
-.. IMPORTANT:: When assigning a Cloud to an Tenant, all resources for that Cloud will only be available to the assigned Tenant. If a cloud is created in the Master Tenant and assigned to a sub-Tenant, it will no longer be available for use by the Master Tenant or any other sub-Tenants, although it can be assigned back to the Master Tenant, or to another sub-Tenant.
+
+.. IMPORTANT:: When assigning a Cloud to a Tenant, all resources for that Cloud will only be available to the assigned Tenant. If a cloud is created in the Master Tenant and assigned to a sub-Tenant, it will no longer be available for use by the Master Tenant or any other sub-Tenants, although it can be assigned back to the Master Tenant, or to another sub-Tenant.
 
 It may be preferable for service providers to share or assign their cloud resources, such as specific hosts, networks, resources pools and datastores, across sub-Tenants, rather than an entire cloud.
 

@@ -1,5 +1,5 @@
-3-Node Distributed
-------------------
+3-Node HA
+---------
 
 Distributed App Nodes with Externalized DB
 
@@ -428,6 +428,3 @@ If this is not the case it is worth investigating the Elasticsearch logs to unde
 ``/var/log/morpheus/elasticsearch/current``
 
 Outside of these stateful tiers, the “morpheus-ctl status” command will not output a “run” status unless the service is successfully running. If a stateless service reports a failure to run, the logs should be investigated and/or sent to |morpheus| for additional support. Logs for all |morpheus| embedded services are found in ``/var/log/morpheus``.
-
-.. include:: /getting_started/additional/additional_configuration.rst
-.. include:: /getting_started/installation/distributed/HA_Shared_Storage.rst

@@ -1,5 +1,5 @@
 Scaling Morpheus Nodes
------------------------
+----------------------
 
 Morpheus App nodes can be scaled to accommodate additional load. Appliance nodes can be scaled vertically in centralized architectures, and both vertically and horizontally in distributed architectures.
 
@@ -39,5 +39,3 @@ Additional Morpheus App Nodes can be added at any time to Fully Distributed Arch
 During ``morpheus-ctl reconfigure``, the new App Node(s) will validate and be configured to use the existing tiers for the UI service. Upon successful reconfigure, the Morpheus service will be available on the App Node(s) with consistent data and capabilities.
 
 .. note:: No services, including ``morphues-ui``, are required to be shut down on existing nodes when adding new App Nodes
-
- 

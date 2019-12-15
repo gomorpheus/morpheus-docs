@@ -81,7 +81,7 @@ Typically |morpheus| does not have sufficient metatdata to successfully provisio
 Provisioning Images
 -------------------
 
-When provisioning a System Image for the first time, |morpheus| will download and stream the image from S3 to the source Cloud if the image is not local to the Cloud. The Image will also be cached on the |morpheus| Appliance under ``/var/opt/morpheus/vm/vmcache``. Subsequent provisions of the image will use the created template in the Cloud or the cached local Image if the images does not exist in the selected Cloud, in which case the cached Image will be copied to the Cloud.
+When provisioning a System Image for the first time, |morpheus| will download and stream the image from S3 to the target Cloud if the image is not local to the Cloud. The Image will also be cached on the |morpheus| Appliance under ``/var/opt/morpheus/vm/vmcache``. Subsequent provisions of the image will use the created template in the Cloud or the cached local Image if the images does not exist in the selected Cloud, in which case the cached Image will be copied to the Cloud.
 
 When using Images that already exist in the destination cloud, such as synced, marketplace, or previously copied images, no image transfer between the |morpheus| Appliance and destination cloud will take place.
 

@@ -1,33 +1,23 @@
 Upgrading
-=========
+---------
 
 4.x Upgrade Requirements
-------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^
 
 * Only appliances running Morpheus v3.6.0 or higher can upgrade to 4.x.
 * MySQL will be upgraded to 5.7.x on Appliances with MySQL running on the app node (Single Node or "all-in-one" Appliances). Backup your database before running the upgrade.
 
-   .. important:: BACKUP YOUR DATABASE before the upgrade. You can use the appliance backup job in Morpheus, but make sure you download it before you do the upgrade.
+  .. important:: BACKUP YOUR DATABASE before the upgrade. You can use the appliance backup job in Morpheus, but make sure you download it before you do the upgrade.
 
 * RabbitMQ will be upgrade from 3.4.x to 3.7.x. On 3-Node configurations, the RabbitMQ queues and configuration will be dropped and the cluster will need to be configured and established again.
 * Stop all morpheus services, not just the morpheus-ui, before the upgrade. Although the upgrade process will also stop the services, take this step to ensure they are stopped.
 * Warnings about missing files during the removal phase are expected and can be ignored.
 5. The repo download location has changed to https://downloads.morpheusdata.com from https://downloads.gomorpheus.com so if a customer has an ACL on their firewall or proxy they will need to update the ACL.
 
-When externalizing MySQL, Elasticsearch and/or RabbitMQ services, the following versions are compatible with Morpheus 4.1.0:
-
-+---------------------------------------+----------------------+-----------------------------+
-| **Service**                           |**Compatible Branch** | **4.1.0 Installed Version** |
-+---------------------------------------+----------------------+-----------------------------+
-| MySQL                                 | 5.7                  | 5.7.27                      |
-+---------------------------------------+----------------------+-----------------------------+
-| Elasticsearch: 5.6 (5.6.16 installed) | 5.6                  | 5.6.16                      |
-+---------------------------------------+----------------------+-----------------------------+
-| RabbitMQ: 3.7 (3.7.16 installed)      | 3.7                  | 3.7.16                      |
-+---------------------------------------+----------------------+-----------------------------+
+Refer to :ref:`compatibility` for externalized MySQL, Elasticsearch and/or RabbitMQ version requirements.
 
 Single Node Appliance Upgrade
------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 When upgrading from 3.6.x to 4.0.0 or 4.1.0, the following services will be upgraded on Single Node (all-in-one) Appliances:
 
@@ -36,7 +26,7 @@ When upgrading from 3.6.x to 4.0.0 or 4.1.0, the following services will be upgr
 - Elasticsearch upgrade to v5.6
 
 Debian / Ubuntu
-^^^^^^^^^^^^^^^
+```````````````
 
 To upgrade Morpheus running on Ubuntu/Debian, download and install the new deb package, stop the morpheus-ui, reconfigure and start the morpheus-ui:
 
@@ -50,7 +40,7 @@ To upgrade Morpheus running on Ubuntu/Debian, download and install the new deb p
 .. note:: In 4.x the morpheus-ui service will automatically start after reconfigure succeeds.
 
 CentOS / RHEL
-^^^^^^^^^^^^^
+`````````````
 
 To upgrade Morpheus running on CentOS/RHEL, download and install the new rpm package, stop the morpheus-ui, reconfigure and then start the morpheus-ui:
 
@@ -64,14 +54,14 @@ To upgrade Morpheus running on CentOS/RHEL, download and install the new rpm pac
 .. note:: In 4.x the morpheus-ui service will automatically start after reconfigure succeeds.
 
 3-Node Appliance Upgrade
-------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^
 
-When upgrading a 3-Node appliance from 3.6.x to 4.0.0 or 4.1.0, the following services will be upgraded:
+When upgrading a 3-Node appliance from 3.6.x to 4.0.0, 4.1.0 or 4.1.1 the following services will be upgraded:
 
 - RabbitMQ upgrade to v3.7
 - Elasticsearch upgrade to v5.6
 
-The upgrade process will not upgrade the external MySQL node(s). MySQL v5.7 is required for external databases.
+The upgrade process will not upgrade the external MySQL node(s). Refer to :doc:`/release_notes/compatibility.rst` for externalized database version requirements.
 
 Due to RabbitMQ going from 3.4.x to 3.7.x, which has no direct upgrade path, the RabbitMQ queues and configuration will be dropped, and the cluster will need to be configured and established again. This also ensures new queues are created using our new declaration settings, and removes any old queues not in use anymore.
 
@@ -85,25 +75,14 @@ Due to RabbitMQ going from 3.4.x to 3.7.x, which has no direct upgrade path, the
 6. Start all services
 
 Other Appliance Configurations Upgrades
----------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-When upgrading other Appliance Configurations from 3.6.x to 4.0.0 or 4.1.0, only services local to the Morpheus App node(s) will be upgraded. For fully distributed configurations, where MySQL, RabbitMQ and Elasticsearch are external, the upgrade process will not upgrade the external serviced.
+When upgrading other Appliance Configurations from 3.6.x to 4.0.0, 4.1.0 or 4.1.1 only services local to the Morpheus App node(s) will be upgraded. For fully distributed configurations, where MySQL, RabbitMQ and Elasticsearch are external, the upgrade process will not upgrade the external services.
 
-When externalizing MySQL, Elasticsearch and/or RabbitMQ services, the following versions are compatible with Morpheus 4.1.0:
-
-+---------------------------------------+----------------------+-----------------------------+
-| **Service**                           |**Compatible Branch** | **4.1.0 Installed Version** |
-+---------------------------------------+----------------------+-----------------------------+
-| MySQL                                 | 5.7                  | 5.7.27                      |
-+---------------------------------------+----------------------+-----------------------------+
-| Elasticsearch: 5.6 (5.6.16 installed) | 5.6                  | 5.6.16                      |
-+---------------------------------------+----------------------+-----------------------------+
-| RabbitMQ: 3.7 (3.7.16 installed)      | 3.7                  | 3.7.16                      |
-+---------------------------------------+----------------------+-----------------------------+
-
+Refer to :ref:`compatibility` for externalized MySQL, Elasticsearch and/or RabbitMQ version requirements.
 
 Fix if Install Hangs
---------------------
+^^^^^^^^^^^^^^^^^^^^
 
 Some very old all-in-one appliances may hang during the mysql upgrade process during the 4.0.0 deb or rpm package upgrade.
 
@@ -132,7 +111,6 @@ To resolve, run the following in a separate session while the process is hanging
 #. Run ``./mysqlfix``
 
 The upgrade will then proceed.
-
 
 .. include:: ssl-import.rst
 .. include:: wars.rst
