@@ -2,7 +2,6 @@
 ===================================
 
 :ref:`Release Notes`
-:ref:`Percona TLS`
 
 .. toctree::
    :maxdepth: 3
