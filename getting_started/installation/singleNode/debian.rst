@@ -1,7 +1,7 @@
-Ubuntu
-------
+Debian/Ubuntu
+^^^^^^^^^^^^^
 
-To get started installing |morpheus| on Ubuntu a few preparatory items should be addressed first.
+To get started installing |morpheus| on Ubuntu or Debian a few preparatory items should be addressed first.
 
 #. First make sure the apt repository is up to date by running ``sudo apt-get update``. It is advisable to verify the assigned hostname of the machine is self-resolvable.
 

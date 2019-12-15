@@ -1,7 +1,7 @@
 RHEL
-----
+^^^^
 
-To get started installing |morpheus| on RHEL 7 a few prerequisite items are required.
+To get started installing |morpheus| on RHEL/RedHat 7 a few prerequisite items are required.
 
 #. Configure firewalld to allow access from users on port 80 or 443 (Or remove firewall if not required).
 #. Make sure the machine is self resolvable to its own hostname.
