@@ -75,14 +75,14 @@ Due to RabbitMQ going from 3.4.x to 3.7.x, which has no direct upgrade path, the
 6. Start all services
 
 Other Appliance Configurations Upgrades
----------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 When upgrading other Appliance Configurations from 3.6.x to 4.0.0, 4.1.0 or 4.1.1 only services local to the Morpheus App node(s) will be upgraded. For fully distributed configurations, where MySQL, RabbitMQ and Elasticsearch are external, the upgrade process will not upgrade the external services.
 
 Refer to :ref:`compatibility` for externalized MySQL, Elasticsearch and/or RabbitMQ version requirements.
 
 Fix if Install Hangs
---------------------
+^^^^^^^^^^^^^^^^^^^^
 
 Some very old all-in-one appliances may hang during the mysql upgrade process during the 4.0.0 deb or rpm package upgrade.
 
