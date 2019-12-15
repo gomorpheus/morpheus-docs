@@ -1,5 +1,5 @@
-3-Node Distributed
-------------------
+3-Node HA
+---------
 
 Distributed App Nodes with Externalized DB
 

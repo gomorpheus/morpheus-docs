@@ -1,5 +1,5 @@
-Fully Distributed Configuration
--------------------------------
+Full HA
+-------
 
 Default Locations
 ^^^^^^^^^^^^^^^^^
