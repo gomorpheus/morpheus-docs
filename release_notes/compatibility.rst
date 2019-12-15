@@ -1,6 +1,7 @@
 .. _compatibility:
+
 v|version| Compatibility
-====================
+========================
 
 When installing and upgrading to |morpheus| v|version|, refer to the following to ensure compatibility.
 

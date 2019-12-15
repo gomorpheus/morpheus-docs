@@ -1,7 +1,8 @@
 |morpheus| v|version| Documentation
 ===================================
 
-:doc:`release_notes/current.rst`
+:ref:`releaseNotes`
+:ref:`Percona TLS`
 
 .. toctree::
    :maxdepth: 3
