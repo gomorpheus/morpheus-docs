@@ -40,6 +40,8 @@ Add Ansible Integration
     Path of the Group Variables relative to the Git url.
    Host Variables Path
     Path of the Host Variables relative to the Git url.
+   Use Ansible Galaxy
+    Enables the use of Ansible Galaxy with this Ansible integration
    Enable Verbose Logging
     Enable to output verbose logging for Ansible task history
    Use Morpheus Agent Command Bus
