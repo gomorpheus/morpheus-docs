@@ -4,7 +4,7 @@ Veeam
 Adding Veeam Integration
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-#. Navigate to `Backups -> Services`
+#. Navigate to `Backups -> Integrations`
 #. Select :guilabel:`+ ADD`
 #. Select Veeam
 #. Fill in the following:
