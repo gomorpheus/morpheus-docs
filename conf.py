@@ -55,7 +55,7 @@ author = u'Morpheus'
 # built documents.
 #
 # The short X.Y version.
-version = '4.1.2'
+version = 4.1.2
 # The full version, including alpha/beta/rc tags.
 # release =
 
@@ -200,5 +200,4 @@ def setup(app):
 
 rst_epilog = """
 .. |morpheus| replace:: Morpheus
-.. |version| replace:: 4.1.2
 """
