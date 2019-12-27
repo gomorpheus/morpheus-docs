@@ -24,6 +24,14 @@ On the |morpheus| appliance:
 
 #. Re-install |morpheus|
 
+  Check the status of the |morpheus| service, start if needed:
+
+    .. code-block:: bash
+
+      systemctl status morpheus-runsvdir.service
+      systemctl enable morpheus-runsvdir.service
+      systemctl start morpheus-runsvdir.service
+
   If the elasticsearch cluster is unhealthy and needs purged, run:
 
   .. code-block:: bash
