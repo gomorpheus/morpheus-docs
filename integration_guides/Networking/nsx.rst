@@ -1,6 +1,17 @@
 NSX
 ---
 
+Overview
+^^^^^^^^
+
+- SUMMARY
+- TRANSPORT ZONES
+- SWITCHES
+- LOGICAL SWITCHES
+- FIREWALL
+- LOGICAL ROUTERS
+- EDGE GATEWAYS
+
 Add NSX Integration
 ^^^^^^^^^^^^^^^^^^^
 
