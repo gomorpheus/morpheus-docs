@@ -14,7 +14,7 @@ Create Option Type
 NAME
  Name of the Option Type
 DESCRIPTION
- Description for reference in Option Type list view
+ Description for reference in the Option Type list view
 FIELD NAME
  This is the input fieldName property that the value gets assigned to.
 EXPORT AS METADATA
@@ -32,6 +32,8 @@ TYPE
   Used with Option Lists: Rather than presenting a potentially-large dropdown menu, the user can begin typing a selection into a text field and choose the desired option. Multiple selections can be allowed with this type by marking the 'ALLOW MULTIPLE SELECTIONS' box
  Hidden
   No filed will be displays, but the field name and default value will be added to Instance config map for reference.
+ Password
+  A specific Option Type for accepting password values
 LABEL
  This is the input label that shows typically to the left of a custom option.
 PLACEHOLDER
@@ -43,6 +45,10 @@ REQUIRED
 DEFAULT CHECKED
  For ``Checkbox`` types, when enabled Checkbox will be checked by default
 OPTION LIST
- For ``Select`` types, select associated Option List
+ For ``Select`` types, select associated Option List. The needed Option List must already exist must already exist if you plan to create an Option Type relying on selct lists.
+DEPENDENT FIELD
+ An associated fieldName that will trigger reloading the Option List based on the chosen selection. This option is available in Morpheus version 4.1.0 and greater.
 
- .. NOTE:: ``Select`` Option Types require creation and association of an Option List
+.. NOTE:: To see an example of an Option Type with a dependent list and how they can be added as a selection when provisioning a custom instance type, see our `Knowledge Base <https://support.morpheusdata.com/s/article/How-to-create-option-lists>`_ article on the subject.
+
+
