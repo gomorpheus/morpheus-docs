@@ -36,10 +36,12 @@ Avamar                  18.1
 **Containers**          ..
 Docker                  1.12.6
 Kubernetes              1.11
+**Deployments**         ..
 Jenkins                 1.64
-Terraform				Pre-0.12 (Support for later versions is planned but not yet tagged for a specific release.)
 **ITSM**                ..
 ServiceNow              Istanbul, Jakarta, Kingston, London
+**IaC**                 ..
+Terraform				Pre-0.12 (Support for later versions is planned but not yet tagged for a specific release.)
 **Logging**             ..
 Splunk                  7.10
 =====================   =================
