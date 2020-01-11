@@ -26,7 +26,7 @@ XenServer               7.0
 App Dynamics            4.5.1
 **Networking**          ..
 Cisco ACI               3.10
-VMware NSX              -V
+VMware NSX              -V (-T planned for 4.2.1)
 phpIPAM                 1.3.1
 **Backups**             ..
 Veeam                   9.5
@@ -37,9 +37,9 @@ Avamar                  18.1
 Docker                  1.12.6
 Kubernetes              1.11
 Jenkins                 1.64
-Terraform				Pre-0.12
-						
-						Note: Support for later versions is planned but not yet tagged for a specific release.
+Terraform				        v0.11 or earlier
+
+						            Note: Support for v0.12 is planned.
 **ITSM**                ..
 ServiceNow              Istanbul, Jakarta, Kingston, London
 **Logging**             ..
