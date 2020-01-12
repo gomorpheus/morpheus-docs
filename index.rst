@@ -1,5 +1,4 @@
 |morpheus| v|morphver| Documentation
-===================================
 
 :ref:`Release Notes`
 

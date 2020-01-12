@@ -37,9 +37,9 @@ Avamar                  18.1
 Docker                  1.12.6
 Kubernetes              1.11
 Jenkins                 1.64
-Terraform				        v0.11 or earlier
+Terraform               v0.11 or earlier
 
-						            Note: Support for v0.12 is planned.
+                        Note: Support for v0.12 is planned.
 **ITSM**                ..
 ServiceNow              Istanbul, Jakarta, Kingston, London
 **Logging**             ..
