@@ -1,4 +1,4 @@
-|version| API and CLI Updates
+|morphver| API and CLI Updates
 
 # Whitelabel Settings
 

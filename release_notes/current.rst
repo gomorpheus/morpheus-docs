@@ -1,10 +1,10 @@
 .. _Release Notes:
 
 ************************
-v|version| Release Notes
+v|morphver| Release Notes
 ************************
 
-.. important:: v4.1.2 requires Elasticsearch v7.x. Please refer to `Elasticseatch Upgrade Documentation <https://www.elastic.co/guide/en/elasticsearch/reference/current/setup-upgrade.html>`_ before installing or upgrading to v4.1.2 if your Applaince's Elasticsearch is external.
+.. important:: v4.1.2 requires Elasticsearch v7.x. Please refer to `Elasticsearch Upgrade Documentation <https://www.elastic.co/guide/en/elasticsearch/reference/current/setup-upgrade.html>`_ before installing or upgrading to v4.1.2 if your Appliance's Elasticsearch is external.
 
 .. important:: v3.6.0 or later required to upgrade to 4.1.2. Upgrading from v3.6.x to v4.x contains upgrades to MySQL, RabbitMQ, and Elasticsearch. Please refer to Upgrade Requirements before upgrading. When upgrading from v3.6.x to v4.x a database backup is recommended due to MySQL version upgrade.
 
@@ -24,7 +24,7 @@ Agent: SSL Verification of Agent Communications option added
   - Enabling SSL Verification of Agent Communications requires a valid Certificate be installed on the Appliance.
     - If ``Enable SSL Verification of Agent`` is enabled and the Appliance has a valid 3rd party SSL Certificate and the verify peer is set on the Agent, the Agent can connect to the Appliance.
     - If ``Enable SSL Verification of Agent`` is enabled and the Appliance has a self-signed Certificate  (default), the Agent will not be able to connect to the Appliance.
-    - SSL Verification of Agent Communications requires the node's Agent configuraiton to have ``morphd['verify_peer'] = true`` set in ``/etc/morpheus/morpheus-node.rb``.
+    - SSL Verification of Agent Communications requires the node's Agent configuration to have ``morphd['verify_peer'] = true`` set in ``/etc/morpheus/morpheus-node.rb``.
 
 Apps: Kubernetes: Spec-Based App: Parsing errors surfaced
   When provisioning Kubernetes Spec-Based Apps, syntax and/or parsing errors are now surfaced in the UI.
@@ -153,3 +153,86 @@ VM "Dashboard" tab renamed "Summary"
 Virtual Images: "OCI" added to Image Type Filter for Oracle Cloud Images
 Workflows Provision Phase support for Cluster/Host Provisioning
   In addition to Post-Provision phases, Provision phases now supported for Workflows executed during Cluster and Host Provisioning
+
+Fixes
+-----
+
+.. - Powered On VMs should set instance back to running
+- Usage: Fix and additional jobs added to prevent discovered virtual machines from having both running & stopped usage records active.
+- ServiceNow: Unsupported Instance Types (Google) with typeahead fields removed from ServiceNow Integration EXPOSED LIBRARIES Library Item configuration.
+- ESXi: image data store selection on cloud not saving on cloud when updated.l
+- Required Option Types not actually Required
+- Networks not appearing in New Instance dialog
+- Not exposing errors in provisioning wizard - Ansible
+- SAML: issue when `Do not validate SAML Response signatures` is disabled
+- If storage controller on VM in VMware is changed not reflected in Morpheus
+- VCD "/api/vApp/${server.externalId}/guestcustomizationstatus" null pointer errors
+- Subsequent task retry attempts are not being executed on 'RETRYABLE' Ansible tasks
+- Reconfigure - Adding new network adapter fails with error: Service plan not found
+- Storage server in sub-tenant causing tenant delete issue
+- Problems with Shutdown and Expire Policies
+- Powered Off VMs should set instance to stopped
+- used memory in compute_capacity_info for container hosts is being set to max_memory after provisioning a container
+- Provision wizards: Network Static IP - validation when blank
+- Default resource pool prevents ability to change resource pool on price-set
+- Recent Activity: User Filter - only listing first 25
+- Instance Wizard: No Customize Root Volume: sizes of the additional disks are changed to a "default" value
+- ServiceNow plug-in: VCD: vApp field options not populating
+- ServiceNow plug-in: provisioning fails for DigitalOcean, Nutanix, & Oracle Cloud instance types
+- 500 error when adding Favicon to whitelabel
+- Confirmation email does not send on tenant self-registration
+- White-labelling favicon of ‚ÄúTerms of Use‚Äù and ‚ÄúPrivacy page‚Äù
+- Assigning managed VM to subtenant that does not have access to cloud or a group throws a nested warning in the UI
+- VMwareResourcePoolId is not recognized anymore as json input
+- Zerto Integration missing Replication Groups and pulling information
+- ssh validation when using cloud-init agent install mode issue
+- [Security Issue DE761] Tomcat version Outdated
+- OpenStack deployment to SG that was renamed failing
+- Usage records not created for Azure discovered virtual machines.
+- Scoped Cloud Cost Report does not show costs for subtenant
+- Instance should go to Unknown if VM deleted on cloud
+- Morpheus does not update hostname record in solarwinds when IP is reserved
+- "See Case# 45828 	Add Instance to Apps doesn't appear in UI"
+- Group Inventory Summary Report: VM Count should be for group, not just one cloud
+- App creating stops on configure phase when extending the attached app
+- Azure provision fail - volume too small error
+- Price estimate algorithm triggered from provisioning instance wizard does not incorporate selected resource pool as a parameter
+- Ansible run from integration page displays only the Warning of the output
+- vCloud Director Console
+- Problem using default resource pool on cloud
+- Nutanix Managed VM Reconfigure Wizard not Responding
+- Openstack Security group rules are not being created when the destination is a Security group.
+- Unable to create servers with an AMI that has the same name in two different AWS accounts
+- Value of cypher created from API/CLI is a key pair string instead of just the value
+- vCloud API Errors: From upgrading vCD from 8.2 > 9.5
+- Messed up Layout seed
+- API: Hosts: Convert to Managed: should return 404 not 200 when invalid server ID
+- CLI: apps add: undefined method + for nil:nilClass error when not setting instance name
+- Cluster Add Node: Manual - not working due to form issues
+- CLI: networks & security-groups: add fails with resource group error
+- [API] Failed to create role using API, however UI is able create the same.
+- [API] PUT /api/virtual-images is not disabling "installAgent" option for virtual images
+- Unable to clone instances via the API/CLI
+- Backup archives produced on QA are corrupt or not complete.
+- API: Discovered VMs - start not working
+- CLI: blueprints add: @clouds_interface not defined error
+- CLI: Hosts: issues
+- Infrastructure Clouds Actions menu
+- CLI: hosts run-workflow: failing with async error
+- Password exposed during agent install through vmtools
+- Admin Integrations: Stealth - missing fields
+- [API] [UI] Sub tenant user cannot toggle feature using both API and UI for instance-types created by himself
+- Disabling user account does not clear user access token session
+- AWS: Subnet Default selection for Instance Public IPs not working, always assigning public IP
+- Openstack VM's console does not work
+- UI bug on budgets. Budget shown in US Dollars rather than selected currency
+- VIO: Instances within volumes are aborted during clone
+- SAML identity Source: Azure AD SAML graph support
+- Static IP Assignment - Linux Images
+- OTC: Network/Router creation is missing SNAT and CIDR
+- Policies: Delayed Removal: not working properly for app instances & expired instances
+- Could not create NSX Edge Service Gateway on Morpheus UI. Error "Resource pool 14 is not valid. Reconfigure NSX Edge appliance with valid resource pool or cluster and retry the operation." was shown in morpheus-ui log
+- NSX Integration Issues
+- Create/Edit NSX Edge Gateway operation is failing due to missing null protector on router.zone
+- NSX - Error creating Logical Switch
+- NSX - cant create security rules
