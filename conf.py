@@ -200,4 +200,5 @@ def setup(app):
 
 rst_epilog = """
 .. |morpheus| replace:: Morpheus
+.. |version| replace:: 4.1.2
 """
