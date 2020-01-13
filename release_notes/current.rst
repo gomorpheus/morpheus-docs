@@ -1,8 +1,8 @@
 .. _Release Notes:
 
-************************
-v|morphver| Release Notes
-************************
+*************************
+|morphver| Release Notes
+*************************
 
 .. important:: v4.1.2 requires Elasticsearch v7.x. Please refer to `Elasticsearch Upgrade Documentation <https://www.elastic.co/guide/en/elasticsearch/reference/current/setup-upgrade.html>`_ before installing or upgrading to v4.1.2 if your Appliance's Elasticsearch is external.
 
