@@ -1,9 +1,10 @@
-Pricing
----------
+.. _pricing:
 
+Pricing
+-------
 
 Price Sets
-^^^^^^^^^^^
+^^^^^^^^^^
 
 Price sets combine Prices and then attach to Plans. Prices must be created prior to creating Price Sets, but it is recommended to review the Price Set Type options prior to creating Prices.
 
@@ -41,7 +42,7 @@ Prices
   Search for and select Prices to be added to the Price Set. One of each Price Type required for the Price Set Type selected must be added for the Price Set to save.
 
 Price Types
-^^^^^^^^^^^^
+^^^^^^^^^^^
 
 - Everything
 
@@ -55,7 +56,7 @@ Price Types
 - Software
 
 Price Units
-^^^^^^^^^^^^
+^^^^^^^^^^^
 -  Minute
 -  Hour
 -  Day
@@ -67,7 +68,7 @@ Price Units
 -  Five Year
 
 Currency
-^^^^^^^^^
+^^^^^^^^
 
 -  AUD
 -  CHF
@@ -90,13 +91,13 @@ Currency
 -  ZAR (South African Rand)
 
 Cost
-^^^^^
+^^^^
 
 The base cost of the resource(s). The Price will match the Cost unless a
 Price Adjustment is added.
 
 Price Adjustment
-^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^
 
 None
   Default, no markup added and Price will match Cost

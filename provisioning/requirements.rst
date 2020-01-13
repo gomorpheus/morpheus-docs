@@ -3,7 +3,7 @@ Requirements
 
 Provisioning Instances and Apps typically involves many steps beyond starting a workload. |morpheus| is centered around automating everything desired for your application to be fully operational, including networking, storage, hostnames, domains, dns, licenses, scripts/automation, scaling, load balancers, security, accessibility, governance, auditing, monitoring, backups, costs, sizing and on and on. Point being there is a lots that goes on when spinning up an instance or app, and to make the magic happen a few requirements need to be met.
 
-.. IMPORTANT:: By default, Agent Installation is enabled when provisioning, unless deselected on the Virtual Images or `SKIP AGENT INSTALL` is selected when provisioning.
+.. IMPORTANT:: By default, Agent Installation is enabled when provisioning unless deselected on the Virtual Images or `SKIP AGENT INSTALL` is selected when provisioning.
 
 VM Provision Steps
 ------------------
@@ -30,7 +30,7 @@ While an infinite number of steps can happen when provisioning an Instance or Ap
       Attached cloud-init iso
         When using cloud-init, |morpheus| will attach a tiny metadata iso to new VM. Network, Machine, User and any other cloud-init metadata will be sourced from this iso.
       VM Tools
-        |Morpheus will run Guest Customizations via VMware VM Tools, including network config when assigning static IP's.
+        |morpheus| will run Guest Customizations via VMware VM Tools, including network config when assigning static IP's.
 - Wait for Power On status and Network info
   |morpheus| will wait to hear back from the target cloud/hypervisor that the VM has successfully started and has an IP address.
 
@@ -46,7 +46,7 @@ While an infinite number of steps can happen when provisioning an Instance or Ap
     If agent installation is not possible or desired, uncheck "Install Agent" on the source Virtual Image configuration or select "Skip Agent Install" during provisioning to speed up provisioning completion.
 
 Virtual Images
----------------
+--------------
 
 While containers are the future, the most common provisioning method involves Virtual Machines, and the most important part of Provisioning a VM is the Virtual Image. When provisioning a VM, |morpheus| will need to do a few things depending on the location of the Virtual Image and if agent install, console access, and scrip execution is desired.
 
@@ -58,7 +58,7 @@ Marketplace Images
   AWS and Azure marketplace Images can be provisioned using the generic Amazon or Azure Instance Types, or added as Virtual Images as scoped to Node Types for custom Instance Types. Marketplace items provisioned/added to |morpheus| still fall upon the requirements of the target Cloud, such as matching the region with the Image and licensing.
 
 Synced Images
-^^^^^^^^^^^^^^
+^^^^^^^^^^^^^
 
 When a Cloud is added to |morpheus|, all available Images/Templates records from that Cloud will be synced in regardless of Inventory settings on the Cloud. These Image records will be available in the Virtual Images section and can be provisioned by using the target clouds generic Instance Type, ie VMware, Amazon, Azure, Openstack etc Instance Types, or by creating custom Instance Types and selecting the Image on a Node Type.
 
@@ -116,7 +116,7 @@ Enabled Sysprep?
 
 
 Local Virtual Images
-^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^
 A Local Virtual Image means it has been uploaded to |morpheus|.  To provision, |morpheus| will need to upload the Image to the target Cloud upon first provision.
 
 - Ensure the Virtual Image is valid for the target Cloud, the Image meets the target cloud upload requirements, and |morpheus| has network access and permissions to upload the image.
@@ -150,7 +150,7 @@ There are 3 Agent install modes:
 - cloud-init
 
 For All Agent Install modes
-............................
+```````````````````````````
 
 When an instance is provisioned and the agent does not install, verify the following for any agent install mode:
 
@@ -173,7 +173,7 @@ SSH/Winrm
 ^^^^^^^^^
 
 Linux Agent
-............
+```````````
 
 * Port 22 is open for Linux images, and ssh is enabled
 * Credentials have been entered on the image if using custom or synced image. Credentials can be entered on images in the Provisioning -> Virtual Images section.
@@ -182,7 +182,7 @@ Linux Agent
 
 
 Windows Agent
-..............
+`````````````
 
 * Port 5985 must be open and winRM enabled for Windows images.
 * Credentials have been entered on the image if using custom or synced image. Credentials can be entered on images in the Provisioning -> Virtual Images section.

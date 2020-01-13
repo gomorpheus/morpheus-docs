@@ -58,7 +58,7 @@ CREATE VOLUME
 At least one Storage Server Integration from `Infrastructure- Storage - Servers` is required to create volumes from `Infrastructure- Storage - Volumes`.
 
 3par
-....
+````
 
 To Add a 3Par Volume:
 
@@ -94,7 +94,7 @@ To Add a 3Par Volume:
          Select :guilabel:`COMPLETE`
 
 Dell EMC ECS
-............
+````````````
 
 To Add a Dell EMC ECS Volume:
 
@@ -123,7 +123,7 @@ To Add a Dell EMC ECS Volume:
 
 
 Dell EMC Isilon
-...............
+```````````````
 
 To Add a Dell EMC ECS Volume:
 

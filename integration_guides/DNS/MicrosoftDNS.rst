@@ -51,7 +51,7 @@ DNS Integrations are available in the `DNS Integration` dropdown in Cloud and Gr
 |morpheus| will register Instances with the DNS provider when provisioned into a Cloud or Group with a DNS Integration added.
 
 Add DNS Integration to a Cloud
-..............................
+``````````````````````````````
 
 #. In ``Infrastructure -> Clouds`` edit the target Cloud.
 #. Expand the `Advanced Options` section.
@@ -59,7 +59,7 @@ Add DNS Integration to a Cloud
 #. Save Changes
 
 Add DNS Integration to a Group
-..............................
+``````````````````````````````
 
 #. In ``Infrastructure -> Groups`` select the target Group.
 #. Select the `Edit` button for the Group

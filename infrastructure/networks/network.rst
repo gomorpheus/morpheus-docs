@@ -3,6 +3,7 @@ Network
 
 .. include:: networks.rst
 .. .. include:: network_groups.rst
+.. .. include:: routers.rst
 .. include:: services.rst
 .. include:: ip_pools.rst
 .. include:: domains.rst

@@ -28,7 +28,7 @@ Adding Infoblox Integration
    URL
     Infoblox wapi url. Example: https://x.x.x.x/wapi/v2.2.1
 
-    .. INFO:: The Infoblox wapi version can be found at https://x.x.x.x/wapidoc/
+    .. info:: The Infoblox wapi version can be found at https://x.x.x.x/wapidoc/
 
    USERNAME
     Infoblox user username

@@ -42,7 +42,7 @@ To allow Percona XtraDB Cluster functionality when SELinux is ``Enforcing``, run
 #. Create the policy file PXC.te
 
     .. code-block:: bash
-    
+
      [root]# vi PXC.te
 
        require {

@@ -27,7 +27,7 @@ Load Balancers
 The Load Balancers tab list currently available Load Balancers, which you can select, edit or delete, and is where you can create new or integrate with external Load Balancers.
 
 Add a new Load Balancer
-.......................
+```````````````````````
 
 Select + LOAD BALANCER, chose an option, and fill in the required information:
 
@@ -103,7 +103,7 @@ HaProxy Container (Internal, will create a HaProxy container, must have availabl
 Upon saving your new Load Balancer will be added to the Load Balancers list and available in the Load Balancer dropdown in the Provisioning Wizard Automation Section for Instance Types that have scaling enabled.
 
 Load Balancer Detail Pages
-..........................
+``````````````````````````
 
 In the main Load Balancer page, select an existing Load Balancer to go to that Load Balancers Details Page, which lists Stats, Settings, Actions and Virtual Servers for that load balancer.
 
@@ -136,7 +136,7 @@ Morpheus exposes configuration options during provisioning of an Instance releva
 By tying the Load Balancer associations into the provisioning of instances and the definition of the instance catalog item, the lifecycle of the VIP can more easily be maintained throughout the lifecycle of whatever application may be deployed.
 
 Setting up an Instance for Load Balancer Consumption
-....................................................
+````````````````````````````````````````````````````
 
 Several of the provided Morpheus instance types are ready to go with load balancer orchestration out of the box (Apache, Nginx, Tomcat, Node.js, etc). It is also fairly easy to extend existing generic instance types during provisioning to be tied to load balancers or to set up said catalog items in advanced for such functionality.
 

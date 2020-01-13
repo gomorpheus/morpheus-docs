@@ -1,101 +1,96 @@
 RabbitMQ Cluster
-^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^
 
 An HA deployment will also include a Highly Available RabbitMQ.  This can be achieved through RabbitMQ's HA-Mirrored Queues on at least 3, independent nodes.  To accomplish this we recommend following Pivotal's documentation on RabbitMQ here: https://www.rabbitmq.com/ha.html and https://www.rabbitmq.com/clustering.html
 
 Install RabbitMQ on the 3 nodes and create a cluster.
 
-.. NOTE:: For the most up to date RPM package we recommend using this link: https://www.rabbitmq.com/install-rpm.html#downloads
+.. NOTE:: For the most up to date RPM package we recommend using this link: :link: https://www.rabbitmq.com/install-rpm.html#downloads
 
 .. IMPORTANT:: Morpheus connects to AMQP over 5672 or 5671(SSL) and 61613 or 61614(SSL)
 
 RabbitMQ Installation and Configuration
-````````````````````````````````````````
+```````````````````````````````````````
 
 .. IMPORTANT:: This is a sample configuration only. Customer configurations and requirements will vary.
 
-Prerequisites
-..............
+#. Install epel-release and erlang
 
-.. code-block:: bash
+   .. code-block:: bash
 
-   yum install epel-release
-   yum install erlang
+           yum install epel-release
+           yum install erlang
 
-Install RabbitMQ on the 3 nodes
-.................................
+#. Install RabbitMQ on all 3 Nodes
 
-.. code-block:: bash
+   .. code-block:: bash
 
-   wget https://dl.bintray.com/rabbitmq/rabbitmq-server-rpm/rabbitmq-server-3.6.12-1.el7.noarch.rpm
+      wget https://dl.bintray.com/rabbitmq/rabbitmq-server-rpm/rabbitmq-server-3.6.12-1.el7.noarch.rpm
 
-   rpm --import https://www.rabbitmq.com/rabbitmq-release-signing-key.asc
+      rpm --import https://www.rabbitmq.com/rabbitmq-release-signing-key.asc
 
-   yum -y install rabbitmq-server-3.6.12-1.el7.noarch.rpm
+      yum -y install rabbitmq-server-3.6.12-1.el7.noarch.rpm
 
-   chkconfig rabbitmq-server on
+      chkconfig rabbitmq-server on
 
-   rabbitmq-server -detached
+      rabbitmq-server -detached
 
-On Node 1:
->>>>>>>>>>>
+#. Copy the erlang.cookie from Node 1
 
-.. code-block:: bash
+   .. code-block:: bash
 
-  cat /var/lib/rabbitmq/.erlang.cookie
+     cat /var/lib/rabbitmq/.erlang.cookie
 
-Copy this value
+   # Copy the .erlang.cookie value
 
-On Nodes 2 & 3:
->>>>>>>>>>>>>>>
-
-#. Overwrite ``/var/lib/rabbitmq/.erlang.cookie`` with value from previous step and change its permissions using the follow commands.
+#. Overwrite /var/lib/rabbitmq/.erlang.cookie`` on Nodes 2 & 3 with value from Node 1 and change its permissions using the follow commands:
 
    .. code-block:: bash
 
       chown rabbitmq:rabbitmq /var/lib/rabbitmq/*
       chmod 400 /var/lib/rabbitmq/.erlang.cookie
 
+#. Edit ``/etc/hosts`` file on all 3 nodes to refer to shortnames of the other nodes
 
-#. edit ``/etc/hosts`` file to refer to shortname of node 1
-
-   example:
-
-   .. code-block:: bash
-
-    10.30.20.100 rabbit-1
-
-#. Run the commands to join each node to the cluster
+   Example for node 1 (adjust for nodes 2 and 3):
 
    .. code-block:: bash
 
-      rabbitmqctl stop
-      rabbitmq-server -detached
-      rabbitmqctl stop_app
-      rabbitmqctl join_cluster rabbit@<<node 1 shortname>>
-      rabbitmqctl start_app
+    vi /etc/hosts
 
-On Node 1
->>>>>>>>>>
+     10.30.20.101 rabbit-2
+     10.30.20.102 rabbit-3
 
-.. code-block:: bash
+#. Run the following commands on Node 2 and on Node 3 to join them to the Cluster:
 
-   rabbitmqctl add_user <<admin username>> <<password>>
-   rabbitmqctl set_permissions -p / <<admin username>> ".*" ".*" ".*"
-   rabbitmqctl set_user_tags <<admin username>> administrator
+   .. code-block:: bash
 
-On All Nodes:
->>>>>>>>>>>>>
+       rabbitmqctl stop
+       rabbitmq-server -detached
+       rabbitmqctl stop_app
+       rabbitmqctl join_cluster rabbit@<<node 1 shortname>>
+       rabbitmqctl start_app
 
-.. code-block:: bash
+#. On Node 1, add Admin user for |morpheus|
 
-   rabbitmq-plugins enable rabbitmq_stomp
+   .. code-block:: bash
 
-Recommended Rabbitmq Policies:
-```````````````````````````````
+      rabbitmqctl add_user <<admin username>> <<password>>
+      rabbitmqctl set_permissions -p / <<admin username>> ".*" ".*" ".*"
+      rabbitmqctl set_user_tags <<admin username>> administrator
 
-.. code-block:: bash
+#. On All Nodes, enable stomp and management plugins:
 
-   rabbitmqctl set_policy -p morpheus --apply-to queues --priority 2 statCommands "statCommands.*" '{"expires":1800000, "ha-mode":"all"}'
-   rabbitmqctl set_policy -p morpheus --apply-to queues --priority 2 morpheusAgentActions "morpheusAgentActions.*" '{"expires":1800000, "ha-mode":"all"}'
-   rabbitmqctl set_policy -p morpheus --apply-to all --priority 1 ha ".*" '{"ha-mode":"all"}'
+   .. code-block:: bash
+
+      rabbitmq-plugins enable rabbitmq_stomp
+      rabbitmq-plugins enable rabbitmq_management
+
+#. On Node 1, add required Rabbitmq Policies:
+
+   .. code-block:: bash
+
+      rabbitmqctl set_policy -p morpheus --apply-to queues --priority 2 statCommands "statCommands.*" '{"expires":1800000, "ha-mode":"all"}'
+      rabbitmqctl set_policy -p morpheus --apply-to queues --priority 2 morpheusAgentActions "morpheusAgentActions.*" '{"expires":1800000, "ha-mode":"all"}'
+      rabbitmqctl set_policy -p morpheus --apply-to queues --priority 2 monitorJobs "monitorJobs.*" '{"expires":1800000, "ha-mode":"all"}'
+      rabbitmqctl set_policy -p morpheus --apply-to all --priority 1 ha ".*" '{"ha-mode":"all"}'

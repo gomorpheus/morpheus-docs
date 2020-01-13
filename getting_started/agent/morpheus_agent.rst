@@ -10,7 +10,7 @@ The |morpheus| Agent does not open any inbound network ports but rather only ope
 
 
 Key Agent Features
--------------------
+------------------
 * Provides key enhanced statistics (disc usage, CPU usage, network, disc IO)
 * Handles log aggregation
 * Provides a command bus to where |morpheus| doesn't need to get credentials to access a box. Can still run workflows if credentials are changed
@@ -136,7 +136,7 @@ Morpheus Agent OS Support
 .. important:: Amazon Linux is not supported by the Morpheus Agent
 
 Agent Install
---------------
+-------------
 
 When provisioning an instance, there are some network and configuration requirements to successfully install the morpheus agent.  Typically when a vm instance is still in the provisioning phase long after the vm is up, the instance is unable to reach |morpheus| , or depending on agent install mode, |morpheus| is unable to reach the instance.
 
@@ -171,8 +171,7 @@ The Morpheus Agent can be installed with a variety of automated methods:
 Agents can also be manually installed.
 
 For All Agent Install modes
-............................
-
+```````````````````````````
 When an instance is provisioned and the agent does not install, verify the following for any agent install mode:
 
 * The |morpheus| appliance_url (Admin -> Settings) is both reachable and resolvable from the provisioned node.
@@ -194,13 +193,13 @@ SSH/Winrm
 ^^^^^^^^^
 
 Linux Agent
-............
+```````````
 
 * Port 22 is open for Linux images, and ssh is enabled
 * Credentials have been entered on the image if using custom or synced image. Credentials can be entered on images in the Provisioning -> Virtual Images section.
 
 Windows Agent
-..............
+`````````````
 
 * Port 5985 must be open and winRM enabled for Windows images.
 * Credentials have been entered on the image if using custom or synced image. Credentials can be entered on images in the Provisioning -> Virtual Images section.

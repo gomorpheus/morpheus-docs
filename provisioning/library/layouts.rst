@@ -1,8 +1,6 @@
 Layouts
 -------
 
-.. image::
-
 - Layouts are attached to Instance types. A Layout can only be attached to a single Instance Type and a single Technology Type.
 
 - An Instance Type can have one or many Layouts attached to it, allowing for a single Instance Type to work with any Technology Type.
@@ -11,7 +9,7 @@ Layouts
 
 .. important:: Once an Instance Type is defined on a Layout and saved, the Instance Type setting on the Layout cannot be changed.
 
-Layout List view
+Layout List View
 ^^^^^^^^^^^^^^^^
 
 The Layout list view shows all available Instances Types including Name, Version, associated Instance Type and description.

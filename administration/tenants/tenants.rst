@@ -1,3 +1,5 @@
+.. _tenants:
+
 Tenants
 =======
 
