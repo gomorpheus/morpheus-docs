@@ -4,7 +4,7 @@
 |morphver| Release Notes
 *************************
 
-.. important:: v4.1.2 requires Elasticsearch v7.x. Please refer to `Elasticsearch Upgrade Documentation <https://www.elastic.co/guide/en/elasticsearch/reference/current/setup-upgrade.html>`_ before installing or upgrading to v4.1.2 if your Appliance's Elasticsearch is external.
+.. important:: v4.1.2 requires Elasticsearch v7.x. Please refer to :ref:`esupgrade` and ``Elasticsearch Upgrade Documentation <https://www.elastic.co/guide/en/elasticsearch/reference/current/setup-upgrade.html>`_ before installing or upgrading to v4.1.2 if your Appliance's Elasticsearch is external.
 
 .. important:: v3.6.0 or later required to upgrade to 4.1.2. Upgrading from v3.6.x to v4.x contains upgrades to MySQL, RabbitMQ, and Elasticsearch. Please refer to Upgrade Requirements before upgrading. When upgrading from v3.6.x to v4.x a database backup is recommended due to MySQL version upgrade.
 
@@ -161,78 +161,78 @@ Workflows Provision Phase support for Cluster/Host Provisioning
 Fixes
 -----
 
-- Usage: Fix and additional jobs added to prevent discovered virtual machines from having both running & stopped usage records active.
-- ServiceNow: Unsupported Instance Types (Google) with typeahead fields removed from ServiceNow Integration EXPOSED LIBRARIES Library Item configuration.
-- ESXi: Fix for updating Image Store on Cloud Configuration not saving, using previous Image Store.
-- Provisioning: Fix for scenarios when Option Type requirement is not validated
-- Provisioning: Fix for Ansible Tower section not expanding to expose the validation message when a required field is empty.
-- SAML: Fix for SAML Response signature validation when enabled
-- VMware: Fix for duplicate storage controller ``controllerKey`` values
-- vCloud Director: Provisions now properly fail when there is a Guest Customizations failure
-- Tasks: PROCESS OUTPUT is no longer hidden after the last retry attempt on task history if automation task is 'RETRYABLE' and fails.
-- Instances: Reconfigure: Fix for adding networks during a reconfigure to a sub-tenant instance using a master-tenant owned private service plan.
-- Tenants: Fix for Tenant deletion when a Storage Server still exists in the Tenant
-- Policies: Shutdown and Expiration policies no longer allow negative values
-.. - Powered Off VMs should set instance to stopped
-- Docker: Fix for inaccurate Used Memory stat on Docker Hosts with running Instances
-- Provisioning: Validation added for Network Static IP fields
-- Plans & Pricing: Fix for Price Sets displaying default Resource Pool (if set) instead of saved Resource Pool.
-- Recent Activity: Fix for User Filter only listing first 25 Users
-- Provisioning: Fix for allowing customization of additional volume sizes when ``CUSTOMIZE ROOT VOLUME`` is unchecked in selected Service Plan
-.. - ServiceNow plug-in: VCD: vApp field options not populating
-.. - ServiceNow plug-in: provisioning fails for DigitalOcean, Nutanix, & Oracle Cloud instance types
-- Whitelabel: Fix for favicon not being displayed in Terms of Use or Privacy Policy pages
-- Tenants: Fix for Confirmation emails during Tenant self-registration
-- Tenants: Improved error handling for when assigning a managed VM to subtenant that does not have access to the associated Cloud
-- API: Added support for both ``resourcePoolId`` & ``vmwareResourcePoolId`` for specifying VMware Resource Pool.
-- Zerto: Fix for Replication Group sync
+- Administration: Disabling a user account now clears user access token session
 - Agent Installation: SSH validation when using cloud-init agent install mode timeout increased from 2 seconds to 60 seconds
-- OpenStack: Fix for sync of Security Groups that have been renamed in Openstack after initial sync
+- Ansible: Integration detail pages now display streaming output of workflow runs
+- API: Added support for both ``resourcePoolId`` & ``vmwareResourcePoolId`` for specifying VMware Resource Pool.
+- Apps: Fix for validation error not exposed when Group is not specified and Instance configuration is extended in App wizard
+- AWS: Fix for Elastic IP assignment when ``None`` is selected and subnet does not default to assigning an EIP.
+- AWS: Fix for synced AMI Image location for AMI's with the same name in two different AWS accounts, with an AWS cloud added for each account.
 - Azure: Fix for Azure Discovered VM's usage records.
 
   .. note:: If inventory level is set to basic, Morpheus does not know the power state of discovered VMs. Usage records will only be created as Stopped in this case.
 
-- Reports: Cloud Cost Reports now include subtenant costs when filtering by subtenant Cloud
-- Instances: Instance status now reflected as unknown if the VM has been deleted in the target Cloud
-- Solarwinds: Fix for hostname record update in Solarwinds when IP is reserved
-.. - Add Instance to Apps doesn't appear in UI"
-- Reports: Fix for Group Inventory Summary report VM Count
-- Apps: Fix for validation error not exposed when Group is not specified and Instance configuration is extended in App wizard
 - Azure: Fix for validation of minimum root volume size requirement on Private Azure Images
-- Provisioning: Price estimates in provisioning instance wizard now incorporate selected resource pool as a price parameter
-- Ansible: Integration detail pages now display streaming output of workflow runs
-.. - vCloud Director: Hypervisor Console
-- VMware: Fix for Default Resource Pool specification propagating to sub-tenants
+- Budgets. Fix for displayed currency when USD is not specified
+- Docker: Fix for inaccurate Used Memory stat on Docker Hosts with running Instances
+- ESXi: Fix for updating Image Store on Cloud Configuration not saving, using previous Image Store.
+- Infrastructure Clouds Actions menu
+- Instances: Instance status now reflected as unknown if the VM has been deleted in the target Cloud
+- Instances: Reconfigure: Fix for adding networks during a reconfigure to a sub-tenant instance using a master-tenant owned private service plan.
 - Nutanix: Fix for default Plan selection when reconfiguring an Instance when scoped plan has been deactivated
 - Openstack: Fix for Security group rules not being created when the destination is a Security group
-- AWS: Fix for synced AMI Image location for AMI's with the same name in two different AWS accounts, with an AWS cloud added for each account.
+- OpenStack: Fix for sync of Security Groups that have been renamed in Openstack after initial sync
+- Password exposed during agent install through vmtools
+- Plans & Pricing: Fix for Price Sets displaying default Resource Pool (if set) instead of saved Resource Pool.
+- Policies: Shutdown and Expiration policies no longer allow negative values
+- Provisioning: Fix for allowing customization of additional volume sizes when ``CUSTOMIZE ROOT VOLUME`` is unchecked in selected Service Plan
+- Provisioning: Fix for Ansible Tower section not expanding to expose the validation message when a required field is empty.
+- Provisioning: Fix for scenarios when Option Type requirement is not validated
+- Provisioning: Price estimates in provisioning instance wizard now incorporate selected resource pool as a price parameter
+- Provisioning: Validation added for Network Static IP fields
+- Recent Activity: Fix for User Filter only listing first 25 Users
+- Reports: Cloud Cost Reports now include subtenant costs when filtering by subtenant Cloud
+- Reports: Fix for Group Inventory Summary report VM Count
+- SAML: Fix for SAML Response signature validation when enabled
+- ServiceNow: Unsupported Instance Types (Google) with typeahead fields removed from ServiceNow Integration EXPOSED LIBRARIES Library Item configuration.
+- Solarwinds: Fix for hostname record update in Solarwinds when IP is reserved
+- Tasks: PROCESS OUTPUT is no longer hidden after the last retry attempt on task history if automation task is 'RETRYABLE' and fails.
+- Tenants: Fix for Confirmation emails during Tenant self-registration
+- Tenants: Fix for Tenant deletion when a Storage Server still exists in the Tenant
+- Tenants: Improved error handling for when assigning a managed VM to subtenant that does not have access to the associated Cloud
+- Usage: Fix and additional jobs added to prevent discovered virtual machines from having both running & stopped usage records active.
+- vCloud Director: Provisions now properly fail when there is a Guest Customizations failure
 - vCloud Director: Support added for VCD 9.5 upload api's removal of support for Content-Length header
-.. - API: Hosts: Convert to Managed: should return 404 not 200 when invalid server ID
-.. - CLI: apps add: undefined method + for nil:nilClass error when not setting instance name
-.. - Cluster Add Node: Manual - not working due to form issues
-.. - CLI: networks & security-groups: add fails with resource group error
+- VMware: Fix for Default Resource Pool specification propagating to sub-tenants
+- VMware: Fix for duplicate storage controller ``controllerKey`` values
+- Whitelabel: Fix for favicon not being displayed in Terms of Use or Privacy Policy pages
+- Zerto: Fix for Replication Group sync
+.. - [API] [UI] Sub tenant user cannot toggle feature using both API and UI for instance-types created by himself
 .. - [API] Failed to create role using API, however UI is able create the same.
 .. - [API] PUT /api/virtual-images is not disabling "installAgent" option for virtual images
-.. - Unable to clone instances via the API/CLI
-.. - Backup archives produced on QA are corrupt or not complete.
-.. - API: Discovered VMs - start not working
-.. - CLI: blueprints add: @clouds_interface not defined error
-.. - CLI: Hosts: issues
-- Infrastructure Clouds Actions menu
-.. - CLI: hosts run-workflow: failing with async error
-- Password exposed during agent install through vmtools
+.. - Add Instance to Apps doesn't appear in UI"
 .. - Admin Integrations: Stealth - missing fields
-.. - [API] [UI] Sub tenant user cannot toggle feature using both API and UI for instance-types created by himself
-- Administration: Disabling a user account now clears user access token session
-- AWS: Fix for Elastic IP assignment when ``None`` is selected and subnet does not default to assigning an EIP.
+.. - API: Discovered VMs - start not working
+.. - API: Hosts: Convert to Managed: should return 404 not 200 when invalid server ID
+.. - Backup archives produced on QA are corrupt or not complete.
+.. - CLI: apps add: undefined method + for nil:nilClass error when not setting instance name
+.. - CLI: blueprints add: @clouds_interface not defined error
+.. - CLI: hosts run-workflow: failing with async error
+.. - CLI: Hosts: issues
+.. - CLI: networks & security-groups: add fails with resource group error
+.. - Cluster Add Node: Manual - not working due to form issues
+.. - Could not create NSX Edge Service Gateway on |morpheus| UI. Error "Resource pool 14 is not valid. Reconfigure NSX Edge appliance with valid resource pool or cluster and retry the operation." was shown in morpheus-ui log
+.. - Create/Edit NSX Edge Gateway operation is failing due to missing null protector on router.zone
+.. - NSX - cant create security rules
+.. - NSX - Error creating Logical Switch
+.. - NSX Integration Issues
 .. - Openstack VM's console does not work
-- Budgets. Fix for displayed currency when USD is not specified
-.. - VIO: Instances within volumes are aborted during clone
-.. - Static IP Assignment - Linux Images
 .. - OTC: Network/Router creation is missing SNAT and CIDR
 .. - Policies: Delayed Removal: not working properly for app instances & expired instances
-.. - Could not create NSX Edge Service Gateway on |morpheus| UI. Error "Resource pool 14 is not valid. Reconfigure NSX Edge appliance with valid resource pool or cluster and retry the operation." was shown in morpheus-ui log
-.. - NSX Integration Issues
-.. - Create/Edit NSX Edge Gateway operation is failing due to missing null protector on router.zone
-.. - NSX - Error creating Logical Switch
-.. - NSX - cant create security rules
+.. - Powered Off VMs should set instance to stopped
+.. - ServiceNow plug-in: provisioning fails for DigitalOcean, Nutanix, & Oracle Cloud instance types
+.. - ServiceNow plug-in: VCD: vApp field options not populating
+.. - Static IP Assignment - Linux Images
+.. - Unable to clone instances via the API/CLI
+.. - vCloud Director: Hypervisor Console
+.. - VIO: Instances within volumes are aborted during clone

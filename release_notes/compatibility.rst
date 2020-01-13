@@ -28,6 +28,9 @@ Services
 
 When externalizing MySQL, Elasticsearch and/or RabbitMQ services, the following versions are compatible with Morpheus |morphver|:
 
+.. important:: Elasticsearch 7.x is required for v4.1.2. Refer to :ref:`esupgrade` for more information.
+
+
 +---------------------------------------+----------------------+---------------------------------+
 | **Service**                           |**Compatible Branch** | **|morphver| Installed Version**|
 +---------------------------------------+----------------------+---------------------------------+
@@ -35,7 +38,7 @@ When externalizing MySQL, Elasticsearch and/or RabbitMQ services, the following 
 +---------------------------------------+----------------------+---------------------------------+
 | Percona                               | 5.7, WSREP 31        | n/a                             |
 +---------------------------------------+----------------------+---------------------------------+
-| Elasticsearch                         | 7.4                  | 7.4.2                           |
+| Elasticsearch                         | 7.x                 | 7.4.2                           |
 +---------------------------------------+----------------------+---------------------------------+
 | RabbitMQ                              | 3.7                  | 3.7.16                          |
 +---------------------------------------+----------------------+---------------------------------+
