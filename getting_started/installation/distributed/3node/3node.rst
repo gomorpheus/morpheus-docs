@@ -279,7 +279,7 @@ If your new installation is part of a migration then you need to move the data f
 
 #. Take note of this password as it will be used to invoke a dump. |morpheus| provides embedded binaries for this task. Invoke it via the embedded path and specify the host. In this example we are using the |morpheus| database on the MySQL listening on localhost. Enter the password copied from the previous step when prompted:
 
-   .. code-block::
+   .. code-block:: bash
 
       [root@app-server-old ~]# /opt/morpheus/embedded/mysql/bin/mysqldump -u morpheus -h 127.0.0.1 morpheus -p > /tmp/morpheus_backup.sql
 
