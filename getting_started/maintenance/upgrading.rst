@@ -61,7 +61,7 @@ When upgrading a 3-Node appliance from 3.6.x to 4.0.0, 4.1.0 or 4.1.1 the follow
 - RabbitMQ upgrade to v3.7
 - Elasticsearch upgrade to v5.6
 
-The upgrade process will not upgrade the external MySQL node(s). Refer to :doc:`/release_notes/compatibility.rst` for externalized database version requirements.
+The upgrade process will not upgrade the external MySQL node(s). Refer to :ref:`compatibility` for externalized database version requirements.
 
 Due to RabbitMQ going from 3.4.x to 3.7.x, which has no direct upgrade path, the RabbitMQ queues and configuration will be dropped, and the cluster will need to be configured and established again. This also ensures new queues are created using our new declaration settings, and removes any old queues not in use anymore.
 

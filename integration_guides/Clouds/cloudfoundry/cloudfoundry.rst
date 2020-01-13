@@ -1,11 +1,11 @@
 Cloud Foundry
---------------
+-------------
 
 Configuration
-^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^
 
 Adding PCF Cloud From `Infrastructure -> Clouds`
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+````````````````````````````````````````````````
 
 #. Navigate to ``Infrastructure -> Clouds``
 #. Select :guilabel:`+ ADD`
@@ -42,7 +42,7 @@ Adding PCF Cloud From `Infrastructure -> Clouds`
 
 
 Adding PCF Cloud From `Infrastructure -> Groups`
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+````````````````````````````````````````````````
 
 #. Navigate to ``Infrastructure -> Groups``
 #. Select a Group
@@ -77,7 +77,7 @@ Adding PCF Cloud From `Infrastructure -> Groups`
 #. Review and then Select :guilabel:`COMPLETE`
 
 Adding Spaces
-^^^^^^^^^^^^^^
+^^^^^^^^^^^^^
 Cloud Foundry Spaces are referred to as Resource Pools in Morpheus.  You can add a new Space by:
 
 #. Navigating to the Cloud and selecting the Resources tab.
@@ -85,14 +85,13 @@ Cloud Foundry Spaces are referred to as Resource Pools in Morpheus.  You can add
 #. Give the Resource a Name
 #. Expand the Managers, Developers, and Auditors section to add specific Cloud Foundry users to the roles.  When adding a user to these sections, use their Cloud Foundry email addresses.
 
-
 Provisioning
-^^^^^^^^^^^^^
+^^^^^^^^^^^^
 
 |morpheus| automatically seeds MySQL, Redis and RabbitMQ PCF Instance Types, as well as a generic Cloud Foundry Instance Type that will create a shell app used in conjunction with deployments. PCF Marketplace items can also be added to the Provisioning Library in the Cloud detail view Marketplace tab. The Marketplace item will be added to the selected Instance Type and available when selecting the Cloud Foundry Cloud during Instance or App Template creation.
 
 Deployments
-^^^^^^^^^^^^^
+^^^^^^^^^^^
 
 The Cloud Foundry App Instance Type is used in conjunction with deployments. Users do not have to pick deployment when creating a Cloud Foundry App Instance Type, but then Instance will only be a shell of a Cloud Foundry Application.
 
@@ -133,7 +132,7 @@ Using the Cloud Foundry docs (https://docs.cloudfoundry.org/devguide/deploy-apps
 
 
 Adding Marketplace Items
-^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^
 
 #. Navigate to ``Infrastructure -> Clouds`` and select your Cloud Foundry Cloud
 #. Select the MARKETPLACE tab
@@ -149,7 +148,7 @@ Provisioning Instances
 ^^^^^^^^^^^^^^^^^^^^^^
 
 Seeded and Marketplace Items
-............................
+````````````````````````````
 
 |morpheus| automatically seeds MySQL, Redis and RabbitMQ PCF Instance Types, and PCF Marketplace items can also be easily added to the Provisioning Library in the Cloud detail view Marketplace tab. The Marketplace item will be added to the selected Instance Type and available when selecting the Cloud Foundry Cloud during Instance or App Template creation.
 
@@ -171,7 +170,7 @@ Seeded and Marketplace Items
 .. NOTE:: Compute, Memory, and CPU stats will be pulled, and a Cloud Foundry monitoring health check will be automatically configured for the instance.
 
 Cloud Foundry App Instance Type
-...............................
+```````````````````````````````
 
 .. IMPORTANT:: Add Deployments in ``Provisioning -> Deployments`` to be used when provisioning a Cloud Foundry App Instance Type.
 

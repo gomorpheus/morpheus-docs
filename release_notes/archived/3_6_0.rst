@@ -60,7 +60,7 @@ Highlights
 ----------
 
 AWS: Amazon Costing & Reservations sync
-.......................................
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Morpheus now syncs in actual costs from AWS, including Month To Date, estimated spend, last months costs, broken down by service, including On-Demand and Reserved hours per EC2 Instance Type.
 
@@ -70,14 +70,14 @@ Morpheus now syncs in actual costs from AWS, including Month To Date, estimated 
 
 
 Amazon Clouds can now be scoped to all VPCs
-............................................
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Morpheus v3.6.0 added the ability to choose all VPC's in an AWS region when adding an Amazon cloud. VPS's are listed in the Resources tab in an Amazon Cloud detail page and similar to other resource pools, a VPC has Group Access, Tenant Access, Service Plan Access, default and active configuration options. This allows users to add a single aws cloud per region and then carve up access across groups and tenants and limit which Service Plans/EC2 Instance Types can be access per VPC. Users with access to multiple VPC's can choose target VPC at provision time.
 
 .. image:: /images/infrastructure/clouds/aws/3_6_0_aws_all_vpcs.png
 
 Ansible execution over command bus
-..................................
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Morpheus has removed the need for ssh or winrm for Ansible! The new Ansible execution over command bus feature allows running ansible over the |morpheus| agent command bus, removing the need for an ssh or winrm connection for Ansible, or any open incoming ports on the target host. The Morpheus Agent (which can be installed with no open incoming ports on the target vm/host as well) will pull and execute Ansible commands locally.
 
@@ -87,7 +87,7 @@ To enable Ansible execution over the |morpheus| agent command bus, edit you Ansi
 
 
 Ansible verbose logging mode
-............................
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 When using Ansible execution over the Morpheus Agent command bus, verbose debug logging can be enabled but editing an Ansible Integration. Along with the "Use Morpheus Agent Command Bus" flag, "Enable Verbose Logging" is a new setting on Ansible integration settings that will output debug level logs for Ansible execution, visible in the Instance history section by selection the "i" bubble on an executed Ansible task.
 
@@ -95,7 +95,7 @@ When using Ansible execution over the Morpheus Agent command bus, verbose debug 
 
 
 File Share Storage Quotas
-.........................
+^^^^^^^^^^^^^^^^^^^^^^^^^
 
 The new File Share Storage Quotas Policy type allows, you guessed it, setting Storage Quotas for File Shares.
 
@@ -109,7 +109,7 @@ Then set the Name, give it a good description, set the size in GB, and scope it 
 
 
 Object Storage Quotas
-......................
+^^^^^^^^^^^^^^^^^^^^^
 
 The new Object Storage Quotas Policy type allows, you guessed it, setting Storage Quotas for Object Stores.
 
@@ -125,7 +125,7 @@ Then set the Name, give it a good description, set the size in GB, and scope it 
 
 
 Disable Clouds now filtered
-...........................
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Previously, deselecting "Enabled" in a Clouds configuration settings only disabled sync and greyed it out in the Clouds list view. Now disabled clouds are filtered out/hidden in Instance, App, Host, Migration and Blueprint wizards.
 
@@ -133,28 +133,28 @@ Previously, deselecting "Enabled" in a Clouds configuration settings only disabl
 
 
 Long Instance and Host names now wrap
-.....................................
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Instance and Host list pages now wrap long Instance and Host names, allowing for viewing the entirety of a long Instance or Host name without having to select or hover.
 
 .. image:: /images/provisioning/automation/ansible/3_6_0_name_wrap
 
 Huawei Cloud integration added
-..............................
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Huawei Cloud now available as a Cloud integration in Morpheus v3.6.0.
 
 .. image:: /images/provisioning/automation/ansible/3_6_0_huawei
 
 NFS mount path for Isilon volumes
-..................................
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 The path to the file share is now displayed on the Isilon tab to make it easier for users to know how to mount the share in a VM
 
 .. image:: /images/infrastructure/Storage/3_6_0_isilon_share_path.png
 
 Mute and Unmute Monitoring Checks now available from CLI & API
-................................................................
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code-block:: bash
 
@@ -184,14 +184,14 @@ Mute and Unmute Monitoring Checks now available from CLI & API
 
 
 Morpheus Windows Agent Install modes
-....................................
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 3.6.0 adds the ability to execute Windows Agent install script with vmware guest customizations or cloudbase-Init utilizing unattend.xml. Now, in addition to winrm and vmtools, morpheus can inject the agent install script into the unattend.xml, reducing vmware provision times and removing winrm/5985 requirement for agent install when using images configured with cloudbase-init.
 
 .. NOTE:: Agent Install mode must be set to "Cloud-init when available" on target cloud for cloudbase-init agent install.
 
 New User Group Creation Policy Type
-....................................
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Automatically add User Groups via Global, Tenant, Group, Cloud and User Policies
 
@@ -200,14 +200,14 @@ Automatically add User Groups via Global, Tenant, Group, Cloud and User Policies
 .. image:: /images/administration/policies/360_user_group_creation_policy
 
 Apply State Action added to Terraform Apps
-..........................................
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 New Apply State action brings up the new Apply App State wizard to re-apply state to TerraForm Apps.
 
 .. image:: /images/provisioning/automation/Terraform/360_terraform_apply_state_action
 
 Keyboard layout selection added to VMware vCenter Clouds
-..............................................................
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Keyboard layouts for Remote Console connections cannot be set in VMware vCenter cloud in the Cloud configuration.
 
