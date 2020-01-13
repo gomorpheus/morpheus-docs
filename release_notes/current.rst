@@ -12,7 +12,7 @@ New Features
 ============
 
 Agents: FIPS enabled packages installed when FIPS is enabled on target
-  Morpheus will now use FIPS enabled agent packages when FIPS is enabled.
+  |morpheus| will now use FIPS enabled agent packages when FIPS is enabled.
 
   - The Agent install process will detect if FIPS is enabled on the target VM or Host, and then call the package `morpheus-node-fips` or `morpheus-vm-node-fips` instead of the non-FIPS compliant packages during the agent install process.
   - The Appliance repo will contain both non-FIPS and FIPS package versions.
@@ -35,12 +35,12 @@ Appliance: Elasticsearch 7 upgrade
    - For Appliances with the default local Elasticsearch, no action is required.
    - For existing Appliances using an external Elasticsearch Host, Cluster or Service, Elasticsearch v7.x upgrade is required.
    - New installations require any external Elasticsearch Host, Cluster or Service to be on Elasticsearch v7.x.
-   - Elasticsearch v5.6 was the previous version used by Morpheus. Please refer to Elasticsearch Upgrade Documentation for upgrade instructions.
-  .. important:: Elasticsearch 7 is required for v4.1.2+. Running Morpheus v4.1.2+ with Elasticsearch 5.x or 6.x is NOT supported."
+   - Elasticsearch v5.6 was the previous version used by |morpheus|. Please refer to Elasticsearch Upgrade Documentation for upgrade instructions.
+  .. important:: Elasticsearch 7 is required for v4.1.2+. Running |morpheus| v4.1.2+ with Elasticsearch 5.x or 6.x is NOT supported."
 
 Azure: CSP and EA price sync
   Azure EA (enterprise agreement) and CSP (Cloud Solution Provider) pricing support added.
-   - ACCOUNT TYPE field added to Azure Cloud settings, with Standard, EA and CSP options.† The Account Type selection determines what prices are synced to Morpheus. Standard is Default and the same prices synced in earlier versions.
+   - ACCOUNT TYPE field added to Azure Cloud settings, with Standard, EA and CSP options.† The Account Type selection determines what prices are synced to |morpheus|. Standard is Default and the same prices synced in earlier versions.
    - To change an Azure Cloud Account Type from Standard to either CSP or EA pricing, in ``Infrastructure -> Clouds``, edit the target Azure Cloud. In the Details section, select Standard, CSP, or EA from the ACCOUNT TYPE dropdown. Select SAVE CHANGES. A new cloud sync will be triggered and the specified Account Type pricing will sync.
        .. note:: CSP and EA pricing sync is only available for Azure EA (Enterprise Agreement) and CSP (Cloud Solution Provider) subscriptions.
 
@@ -49,7 +49,7 @@ Azure: ARM templates: Custom naming of parameters for display
 Azure: ARM Spec Templates & Layouts
   ARM Spec Templates & Layouts
   - Users can now create an ARM layout type and then select a Spec Template created with an ARM template.
-  - The options in the ARM template then appear in the instance wizard. Upon provision, Morpheus will look through the template and create matching resource records in Morpheus mapped to those created in Azure. - - - Post-provision, records will also be created for any additional indirect resources that are created during provisioning.
+  - The options in the ARM template then appear in the instance wizard. Upon provision, |morpheus| will look through the template and create matching resource records in |morpheus| mapped to those created in Azure. - - - Post-provision, records will also be created for any additional indirect resources that are created during provisioning.
   - ARM Spec Templates support Local, Repository and URL Sources.
   - Spec Templates: /provisioning/library/resource-specs"
 
@@ -78,7 +78,7 @@ Clouds: `Cloud Init/ Unattend` default Agent Install mode
   - `SSH / WinRM / Gust Execution` was previously the default setting and ` Cloud Init / Unattend (when available)` needed to be set manually, which is the recommended Agent Install mode.
 
 Instances: Warning message added for "Force Delete" option
-  Checking "Force Delete" when deleting now displays a warning message "After force deleting you may need to remove the corresponding infrastructure manually", as force deletes can leave target resources up if Morpheus is unable to validate their removal.
+  Checking "Force Delete" when deleting now displays a warning message "After force deleting you may need to remove the corresponding infrastructure manually", as force deletes can leave target resources up if |morpheus| is unable to validate their removal.
 Identity Sources: SAML: Logout Redirect improvements
   Logout Redirect functionality improved for SAML Identity Source Integrations when the Logout Redirect URL is specified.
 Identity Sources: SAML: Azure AD SAML Graph support
@@ -100,7 +100,7 @@ Openstack: Backups: Storage Provider options added
 Openstack: Migrations
   Ability to migrate an Instance from an openstack-based cloud to any other openstack-based cloud
 
-  .. note:: Migrations to OTC/Huawei will not be supported via the Migrations tool in Morpheus. This capability will only be covered via instance clone
+  .. note:: Migrations to OTC/Huawei will not be supported via the Migrations tool in |morpheus|. This capability will only be covered via instance clone
 
 Openstack: Support for multiple Routers within the same network
   Support added for multiple Routers within the same network. Previously, only one Router could be created per Network.
@@ -108,7 +108,7 @@ Openstack: Support for multiple Routers within the same network
 Provisioning: Actions removed for Canceled or Denied Instances & Apps.
   On Instance and App detail pages, invalid Instance and Node Actions are no longer listed for Instances with a status of Canceled or Denied (Approval).
 Policies: Message of the Day (MOTD) Policy Type
-  Message of the Day"" Policy for displaying Alerts in Morpheus.
+  Message of the Day"" Policy for displaying Alerts in |morpheus|.
 
   - Configurable as a pop-up or full-page notification with Info, Warning and Critical message types.
   - Includes new Role Permission: Admin: Message Of the Day - None/Full
@@ -124,9 +124,9 @@ Provisioning: System 'Existing' Instance Layouts removed.
 Roles: Identity Sources: Roles Admin permission
   Role permission for Identity Sources allowing the user to only edit Role Mappings and no other settings of the Identity Source.
 ServiceNow Plugin: App Provisioning
-  Apps from Blueprints can now be provisioned from ServiceNow via the Morpheus ServiceNow App. Blueprint section added to the ServiceNow Integration details page in Morpheus for managing the Blueprints exposed in ServiceNow.
+  Apps from Blueprints can now be provisioned from ServiceNow via the |morpheus| ServiceNow App. Blueprint section added to the ServiceNow Integration details page in |morpheus| for managing the Blueprints exposed in ServiceNow.
 ServiceNow: Plugin Support added for vCD, Xen, and ESXi Cloud Types
-  The Morpheus ServiceNow Plugin now supports vCloud Director (vCD), Xen, and ESXi Cloud Types.
+  The |morpheus| ServiceNow Plugin now supports vCloud Director (vCD), Xen, and ESXi Cloud Types.
 Security: opensaml updated
   Addressed ``CVE-2015-1796 - opensaml-2.6.4 - A``
 Tenants: Logouts now redirect to subdomain login
@@ -154,85 +154,85 @@ Virtual Images: "OCI" added to Image Type Filter for Oracle Cloud Images
 Workflows Provision Phase support for Cluster/Host Provisioning
   In addition to Post-Provision phases, Provision phases now supported for Workflows executed during Cluster and Host Provisioning
 
+
+.. - Value of cypher created from API/CLI is a key pair string instead of just the value
+
+
 Fixes
 -----
 
-.. - Powered On VMs should set instance back to running
 - Usage: Fix and additional jobs added to prevent discovered virtual machines from having both running & stopped usage records active.
 - ServiceNow: Unsupported Instance Types (Google) with typeahead fields removed from ServiceNow Integration EXPOSED LIBRARIES Library Item configuration.
-- ESXi: image data store selection on cloud not saving on cloud when updated.l
-- Required Option Types not actually Required
-- Networks not appearing in New Instance dialog
-- Not exposing errors in provisioning wizard - Ansible
-- SAML: issue when `Do not validate SAML Response signatures` is disabled
-- If storage controller on VM in VMware is changed not reflected in Morpheus
-- VCD "/api/vApp/${server.externalId}/guestcustomizationstatus" null pointer errors
-- Subsequent task retry attempts are not being executed on 'RETRYABLE' Ansible tasks
-- Reconfigure - Adding new network adapter fails with error: Service plan not found
-- Storage server in sub-tenant causing tenant delete issue
-- Problems with Shutdown and Expire Policies
-- Powered Off VMs should set instance to stopped
-- used memory in compute_capacity_info for container hosts is being set to max_memory after provisioning a container
-- Provision wizards: Network Static IP - validation when blank
-- Default resource pool prevents ability to change resource pool on price-set
-- Recent Activity: User Filter - only listing first 25
-- Instance Wizard: No Customize Root Volume: sizes of the additional disks are changed to a "default" value
-- ServiceNow plug-in: VCD: vApp field options not populating
-- ServiceNow plug-in: provisioning fails for DigitalOcean, Nutanix, & Oracle Cloud instance types
-- 500 error when adding Favicon to whitelabel
-- Confirmation email does not send on tenant self-registration
-- White-labelling favicon of ‚ÄúTerms of Use‚Äù and ‚ÄúPrivacy page‚Äù
-- Assigning managed VM to subtenant that does not have access to cloud or a group throws a nested warning in the UI
-- VMwareResourcePoolId is not recognized anymore as json input
-- Zerto Integration missing Replication Groups and pulling information
-- ssh validation when using cloud-init agent install mode issue
-- [Security Issue DE761] Tomcat version Outdated
-- OpenStack deployment to SG that was renamed failing
-- Usage records not created for Azure discovered virtual machines.
-- Scoped Cloud Cost Report does not show costs for subtenant
-- Instance should go to Unknown if VM deleted on cloud
-- Morpheus does not update hostname record in solarwinds when IP is reserved
-- "See Case# 45828 	Add Instance to Apps doesn't appear in UI"
-- Group Inventory Summary Report: VM Count should be for group, not just one cloud
-- App creating stops on configure phase when extending the attached app
-- Azure provision fail - volume too small error
-- Price estimate algorithm triggered from provisioning instance wizard does not incorporate selected resource pool as a parameter
-- Ansible run from integration page displays only the Warning of the output
-- vCloud Director Console
-- Problem using default resource pool on cloud
-- Nutanix Managed VM Reconfigure Wizard not Responding
-- Openstack Security group rules are not being created when the destination is a Security group.
-- Unable to create servers with an AMI that has the same name in two different AWS accounts
-- Value of cypher created from API/CLI is a key pair string instead of just the value
-- vCloud API Errors: From upgrading vCD from 8.2 > 9.5
-- Messed up Layout seed
-- API: Hosts: Convert to Managed: should return 404 not 200 when invalid server ID
-- CLI: apps add: undefined method + for nil:nilClass error when not setting instance name
-- Cluster Add Node: Manual - not working due to form issues
-- CLI: networks & security-groups: add fails with resource group error
-- [API] Failed to create role using API, however UI is able create the same.
-- [API] PUT /api/virtual-images is not disabling "installAgent" option for virtual images
-- Unable to clone instances via the API/CLI
-- Backup archives produced on QA are corrupt or not complete.
-- API: Discovered VMs - start not working
-- CLI: blueprints add: @clouds_interface not defined error
-- CLI: Hosts: issues
+- ESXi: Fix for updating Image Store on Cloud Configuration not saving, using previous Image Store.
+- Provisioning: Fix for scenarios when Option Type requirement is not validated
+- Provisioning: Fix for Ansible Tower section not expanding to expose the validation message when a required field is empty.
+- SAML: Fix for SAML Response signature validation when enabled
+- VMware: Fix for duplicate storage controller ``controllerKey`` values
+- vCloud Director: Provisions now properly fail when there is a Guest Customizations failure
+- Tasks: PROCESS OUTPUT is no longer hidden after the last retry attempt on task history if automation task is 'RETRYABLE' and fails.
+- Instances: Reconfigure: Fix for adding networks during a reconfigure to a sub-tenant instance using a master-tenant owned private service plan.
+- Tenants: Fix for Tenant deletion when a Storage Server still exists in the Tenant
+- Policies: Shutdown and Expiration policies no longer allow negative values
+.. - Powered Off VMs should set instance to stopped
+- Docker: Fix for inaccurate Used Memory stat on Docker Hosts with running Instances
+- Provisioning: Validation added for Network Static IP fields
+- Plans & Pricing: Fix for Price Sets displaying default Resource Pool (if set) instead of saved Resource Pool.
+- Recent Activity: Fix for User Filter only listing first 25 Users
+- Provisioning: Fix for allowing customization of additional volume sizes when ``CUSTOMIZE ROOT VOLUME`` is unchecked in selected Service Plan
+.. - ServiceNow plug-in: VCD: vApp field options not populating
+.. - ServiceNow plug-in: provisioning fails for DigitalOcean, Nutanix, & Oracle Cloud instance types
+- Whitelabel: Fix for favicon not being displayed in Terms of Use or Privacy Policy pages
+- Tenants: Fix for Confirmation emails during Tenant self-registration
+- Tenants: Improved error handling for when assigning a managed VM to subtenant that does not have access to the associated Cloud
+- API: Added support for both ``resourcePoolId`` & ``vmwareResourcePoolId`` for specifying VMware Resource Pool.
+- Zerto: Fix for Replication Group sync
+- Agent Installation: SSH validation when using cloud-init agent install mode timeout increased from 2 seconds to 60 seconds
+- OpenStack: Fix for sync of Security Groups that have been renamed in Openstack after initial sync
+- Azure: Fix for Azure Discovered VM's usage records.
+
+  .. note:: If inventory level is set to basic, Morpheus does not know the power state of discovered VMs. Usage records will only be created as Stopped in this case.
+
+- Reports: Cloud Cost Reports now include subtenant costs when filtering by subtenant Cloud
+- Instances: Instance status now reflected as unknown if the VM has been deleted in the target Cloud
+- Solarwinds: Fix for hostname record update in Solarwinds when IP is reserved
+.. - Add Instance to Apps doesn't appear in UI"
+- Reports: Fix for Group Inventory Summary report VM Count
+- Apps: Fix for validation error not exposed when Group is not specified and Instance configuration is extended in App wizard
+- Azure: Fix for validation of minimum root volume size requirement on Private Azure Images
+- Provisioning: Price estimates in provisioning instance wizard now incorporate selected resource pool as a price parameter
+- Ansible: Integration detail pages now display streaming output of workflow runs
+.. - vCloud Director: Hypervisor Console
+- VMware: Fix for Default Resource Pool specification propagating to sub-tenants
+- Nutanix: Fix for default Plan selection when reconfiguring an Instance when scoped plan has been deactivated
+- Openstack: Fix for Security group rules not being created when the destination is a Security group
+- AWS: Fix for synced AMI Image location for AMI's with the same name in two different AWS accounts, with an AWS cloud added for each account.
+- vCloud Director: Support added for VCD 9.5 upload api's removal of support for Content-Length header
+.. - API: Hosts: Convert to Managed: should return 404 not 200 when invalid server ID
+.. - CLI: apps add: undefined method + for nil:nilClass error when not setting instance name
+.. - Cluster Add Node: Manual - not working due to form issues
+.. - CLI: networks & security-groups: add fails with resource group error
+.. - [API] Failed to create role using API, however UI is able create the same.
+.. - [API] PUT /api/virtual-images is not disabling "installAgent" option for virtual images
+.. - Unable to clone instances via the API/CLI
+.. - Backup archives produced on QA are corrupt or not complete.
+.. - API: Discovered VMs - start not working
+.. - CLI: blueprints add: @clouds_interface not defined error
+.. - CLI: Hosts: issues
 - Infrastructure Clouds Actions menu
-- CLI: hosts run-workflow: failing with async error
+.. - CLI: hosts run-workflow: failing with async error
 - Password exposed during agent install through vmtools
-- Admin Integrations: Stealth - missing fields
-- [API] [UI] Sub tenant user cannot toggle feature using both API and UI for instance-types created by himself
-- Disabling user account does not clear user access token session
-- AWS: Subnet Default selection for Instance Public IPs not working, always assigning public IP
-- Openstack VM's console does not work
-- UI bug on budgets. Budget shown in US Dollars rather than selected currency
-- VIO: Instances within volumes are aborted during clone
-- SAML identity Source: Azure AD SAML graph support
-- Static IP Assignment - Linux Images
-- OTC: Network/Router creation is missing SNAT and CIDR
-- Policies: Delayed Removal: not working properly for app instances & expired instances
-- Could not create NSX Edge Service Gateway on Morpheus UI. Error "Resource pool 14 is not valid. Reconfigure NSX Edge appliance with valid resource pool or cluster and retry the operation." was shown in morpheus-ui log
-- NSX Integration Issues
-- Create/Edit NSX Edge Gateway operation is failing due to missing null protector on router.zone
-- NSX - Error creating Logical Switch
-- NSX - cant create security rules
+.. - Admin Integrations: Stealth - missing fields
+.. - [API] [UI] Sub tenant user cannot toggle feature using both API and UI for instance-types created by himself
+- Administration: Disabling a user account now clears user access token session
+- AWS: Fix for Elastic IP assignment when ``None`` is selected and subnet does not default to assigning an EIP.
+.. - Openstack VM's console does not work
+- Budgets. Fix for displayed currency when USD is not specified
+.. - VIO: Instances within volumes are aborted during clone
+.. - Static IP Assignment - Linux Images
+.. - OTC: Network/Router creation is missing SNAT and CIDR
+.. - Policies: Delayed Removal: not working properly for app instances & expired instances
+.. - Could not create NSX Edge Service Gateway on |morpheus| UI. Error "Resource pool 14 is not valid. Reconfigure NSX Edge appliance with valid resource pool or cluster and retry the operation." was shown in morpheus-ui log
+.. - NSX Integration Issues
+.. - Create/Edit NSX Edge Gateway operation is failing due to missing null protector on router.zone
+.. - NSX - Error creating Logical Switch
+.. - NSX - cant create security rules
