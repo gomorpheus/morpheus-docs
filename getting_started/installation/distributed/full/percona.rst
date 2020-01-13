@@ -28,7 +28,7 @@ Once you have your database installed and configured:
 
     mysql> ALTER DATABASE morpheusdb CHARACTER SET utf8 COLLATE utf8_general_ci;
 
-    .. NOTE:: Percona defaults to Latin-1 and, as a result, some customers have created databases with Latin-1 as the default character set. In some cases, this can create problems down the road as the application is accepting UTF-8. Setting UTF-8 collation at the time of database creation may prevent problems in the future.
+  .. NOTE:: Percona defaults to Latin-1 and, as a result, some customers have created databases with Latin-1 as the default character set. In some cases, this can create problems down the road as the application is accepting UTF-8. Setting UTF-8 collation at the time of database creation may prevent problems in the future.
 
 #. Next, create your morpheus database user. The user needs to be either at the IP address of the morpheus application server or use ``@'%'`` within the user name to allow the user to login from anywhere.
 
