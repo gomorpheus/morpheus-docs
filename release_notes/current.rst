@@ -60,6 +60,9 @@ Backups: Tenant Backups Visibility added to Master Tenant
 
 Backups: (GB, 7 DAY TOTAL) added to SIZE OF BACKUPS widget.
   Title for "Size of backups" on /backups summary updated to make it clearer the values in the widget reflect the last 7 days and are in GB.
+
+Currencies: Brazil, Chile currencies added
+
 Convert To Managed: Instance Type list filtered by Role Permissions
   The Instance Types available to a user to select from during the Convert to Managed action are now filtered by the users Instance Type Access Role permissions.
 Clusters: Create Cluster: Review Tab Enhancements
@@ -76,6 +79,8 @@ Clouds: `Cloud Init/ Unattend` default Agent Install mode
 
   - The setting for existing clouds will not be changed.
   - `SSH / WinRM / Gust Execution` was previously the default setting and ` Cloud Init / Unattend (when available)` needed to be set manually, which is the recommended Agent Install mode.
+
+Google Cloud: Shared network support added
 
 Instances: Warning message added for "Force Delete" option
   Checking "Force Delete" when deleting now displays a warning message "After force deleting you may need to remove the corresponding infrastructure manually", as force deletes can leave target resources up if |morpheus| is unable to validate their removal.
@@ -154,9 +159,7 @@ Virtual Images: "OCI" added to Image Type Filter for Oracle Cloud Images
 Workflows Provision Phase support for Cluster/Host Provisioning
   In addition to Post-Provision phases, Provision phases now supported for Workflows executed during Cluster and Host Provisioning
 
-
 .. - Value of cypher created from API/CLI is a key pair string instead of just the value
-
 
 Fixes
 -----
