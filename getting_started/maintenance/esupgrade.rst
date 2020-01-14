@@ -1,3 +1,5 @@
+.. _esupgrade:
+
 Elasticsearch 7.x Upgrade
 -------------------------
 
@@ -87,6 +89,7 @@ Install Elasticsearch 7.x
           discovery.zen.minimum_master_nodes: 2 ##enabled after cluster is up
 
 #. Save elasticsearch.yml
+
 #. Restart Ealsticsearch service, one node at a time (2 nodes are now required to be running in the cluster at any give time)
 
    .. code-block:: bash
@@ -97,10 +100,10 @@ Install Elasticsearch 7.x
 
    .. code-block:: bash
 
-   curl http://localhost:9200/_cluster/health
+    curl http://localhost:9200/_cluster/health
 
-   or
+    or
 
-   curl http://node_ip:9200/_cluster/health
+    curl http://node_ip:9200/_cluster/health
 
 #. Once the cluster status is green, |morpheus| can be upgraded to v4.1.2+. No configuration or port changes in morpheus.rb on the appliance nodes are required.
