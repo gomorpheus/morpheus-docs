@@ -36,7 +36,7 @@ Appliance: Elasticsearch 7 upgrade
    - For existing Appliances using an external Elasticsearch Host, Cluster or Service, Elasticsearch v7.x upgrade is required.
    - New installations require any external Elasticsearch Host, Cluster or Service to be on Elasticsearch v7.x.
    - Elasticsearch v5.6 was the previous version used by |morpheus|. Please refer to Elasticsearch Upgrade Documentation for upgrade instructions.
-  .. important:: Elasticsearch 7 is required for v4.1.2+. Running |morpheus| v4.1.2+ with Elasticsearch 5.x or 6.x is NOT supported."
+  .. important:: Elasticsearch 7.x is required for v4.1.2+. Running |morpheus| v4.1.2 with Elasticsearch 5.x or 6.x is NOT supported."
 
 Azure: CSP and EA price sync
   Azure EA (enterprise agreement) and CSP (Cloud Solution Provider) pricing support added.
@@ -53,6 +53,11 @@ Azure: ARM Spec Templates & Layouts
   - ARM Spec Templates support Local, Repository and URL Sources.
   - Spec Templates: /provisioning/library/resource-specs"
 
+Azure: Virtual Networks filtered
+  Parent Virtual Networks are no longer listed in Instance, App, Blueprint, Host, Reconfigure, Clone and Network Group Wizards, allowing clearer selection of appropriate Subnet(s).
+  - Previously Virtual Networks would be displayed along with Subnets. If a Virtual Network was selection, |morpheus| would round-robin select a subnet in the vnet.
+  - Use ``Network Groups`` to place appropriate subnets in a Network Group for round robin provisioning options.
+
 Backups: Tenant Backups Visibility added to Master Tenant
   Sub-Tenants Backups are now visible in the Master Tenant for Backups in Clouds owned by the Master Tenant and either shared Publicly or Private and assigned to a Sub-Tenant.
 
@@ -60,6 +65,9 @@ Backups: Tenant Backups Visibility added to Master Tenant
 
 Backups: (GB, 7 DAY TOTAL) added to SIZE OF BACKUPS widget.
   Title for "Size of backups" on /backups summary updated to make it clearer the values in the widget reflect the last 7 days and are in GB.
+
+Currencies: Brazil, Chile currencies added
+
 Convert To Managed: Instance Type list filtered by Role Permissions
   The Instance Types available to a user to select from during the Convert to Managed action are now filtered by the users Instance Type Access Role permissions.
 Clusters: Create Cluster: Review Tab Enhancements
@@ -77,6 +85,8 @@ Clouds: `Cloud Init/ Unattend` default Agent Install mode
   - The setting for existing clouds will not be changed.
   - `SSH / WinRM / Gust Execution` was previously the default setting and ` Cloud Init / Unattend (when available)` needed to be set manually, which is the recommended Agent Install mode.
 
+Google Cloud: Shared network support added
+
 Instances: Warning message added for "Force Delete" option
   Checking "Force Delete" when deleting now displays a warning message "After force deleting you may need to remove the corresponding infrastructure manually", as force deletes can leave target resources up if |morpheus| is unable to validate their removal.
 Identity Sources: SAML: Logout Redirect improvements
@@ -87,6 +97,18 @@ Library: Option Types: Typeahead now returns value(s) only
   Typeahead Option Types now return value(s) only, like Select List Option Types. Previously [name:name, value:value] was returned.
 Networks: Cloud List Filter
   Cloud Type Filter added to /infrastructure/networks
+
+NSX: NSX-V Enhancements
+  Major additions to NSX-V Integration
+
+  - Logical Routers section added with Logical Router creation
+  - Summary view added with Global, System and Component statuses, additional stats
+  - Switches section added
+  - Firewall section added with Group and Rule creation
+  - Edge Gateway detail section added with Summary, Firewall, DHCP and Routing sections
+  - Enhanced capabilities for NSX object creation during provisioning
+  - Refresh Action added for NSX Integrations
+
 .. NSX Object Permissions
   All of the NSX network objects to be scoped to a group by default and have individual role permission for each nsx object.Owned by and only visible by default to that group. Permission to create each object type can be assigned via user roles NSX objects are: ?	Transport Zones ?	Logical Switches (VxLans) ?	DLR ?	Edge Services Gateway (Firewall, NAT, DHCP, VPN, Load Balancing) ?	Load Balancers ?	Security Groups"
 
@@ -107,6 +129,16 @@ Openstack: Support for multiple Routers within the same network
 
 Provisioning: Actions removed for Canceled or Denied Instances & Apps.
   On Instance and App detail pages, invalid Instance and Node Actions are no longer listed for Instances with a status of Canceled or Denied (Approval).
+
+Policies: New Delayed Removal Policy
+  Delayed Removals allow for soft deletion of Instances and Apps. Instead of deleting immediately, Instances and Apps with a Delayed Removal policy applied will be shutdown upon deletion request and hidden by default from the ui. The Instance/App will then be in ``Pending Removal`` status.
+
+  - If no action is taken, the resources will be deleted in the timeframe set in the policy.
+  - An ``Undo Delete`` action is available for Instance and Apps in pending removal status. Triggering ``Undo Delete`` will remove the scheduled deletion and restore the Instance or App status to stopped.
+  - A new ``Pending Removal`` filter has been added to ``/provisioning/instances`` and ``/provisioning/apps``
+  - Delayed Removal policies do not current apply to Docker Hosts or Discovered VM's.
+  - Available Scopes for Delayed Removal policies are Global, Cloud, Group, User and Role and can be applied to a single or multiple Tenants.
+
 Policies: Message of the Day (MOTD) Policy Type
   Message of the Day"" Policy for displaying Alerts in |morpheus|.
 
@@ -151,12 +183,18 @@ UI: Alarm Icon with Alarm Count badge added to Global Header
 VM "Dashboard" tab renamed "Summary"
   The "Dashboard" tab on Virtual Machine Detail pages (/infrastructure/servers/{id}) has been renamed to "Summary"
 Virtual Images: "OCI" added to Image Type Filter for Oracle Cloud Images
+
+Whitelabel: Security Banner section added
+  The Security Banner section in ``/admin/settings#!whitelabel`` displays content on the login screen for Security and Consent messaging and warnings.
+
+  - Applicable at Global and Tenant levels
+  - Security Banner input field accepts plain text and markdown
+  - Content is displayed below login section in scoped ``/login/auth`` pages.
+
 Workflows Provision Phase support for Cluster/Host Provisioning
   In addition to Post-Provision phases, Provision phases now supported for Workflows executed during Cluster and Host Provisioning
 
-
 .. - Value of cypher created from API/CLI is a key pair string instead of just the value
-
 
 Fixes
 -----
@@ -207,6 +245,7 @@ Fixes
 - VMware: Fix for duplicate storage controller ``controllerKey`` values
 - Whitelabel: Fix for favicon not being displayed in Terms of Use or Privacy Policy pages
 - Zerto: Fix for Replication Group sync
+
 .. - [API] [UI] Sub tenant user cannot toggle feature using both API and UI for instance-types created by himself
 .. - [API] Failed to create role using API, however UI is able create the same.
 .. - [API] PUT /api/virtual-images is not disabling "installAgent" option for virtual images
