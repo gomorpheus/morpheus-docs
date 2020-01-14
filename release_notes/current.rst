@@ -222,21 +222,20 @@ Workflows Provision Phase support for Cluster/Host Provisioning
 API Enhancements
 ----------------
 
-- New Endpoint: Service Plans ``/api/service-plans``
-- New Endpoint: Appliance Settings ``/api/appliance-settings``
-- New Endpoint: Backup Settings ``/api/backup-settings``
-- New Endpoint: Clusters: Datastores ``/api/clusters/:id/datastores``
-
-- New Endpoint: Log Settings ``/api/log-settings``
-- New Endpoint: Operational Workflows ``/api/task-sets``
-- New Endpoint: Operations - Health ``/api//health``
-- New Endpoint: Provisioning > Jobs ``/api/jobs``
-- New Endpoint: Provisioning Settings ``/api/provisioning-settings``
-- New Endpoint: Whitelabel Settings ``/api/whitelabel-settings``
-- New Endpoint: Approvals ``/api/approvals``
-- New Endpoint: Operations - Budgets ``/api/budgets`` 
-- New Endpoint: Reports ``/api/reports`` & ``/api/report-types``
-- Convert to Managed - manual agent install flag ``/api/servers/1/make-managed`` ``"installAgent": true`` Set to false to manually install agent instead
+- New Endpoint: `Service Plans <https://bertramdev.github.io/morpheus-apidoc/#service-plans>`_ ``/api/service-plans``
+- New Endpoint: `Appliance Settings <https://bertramdev.github.io/morpheus-apidoc/#appliance-settings>`_ ``/api/appliance-settings``
+- New Endpoint: `Backup Settings <https://bertramdev.github.io/morpheus-apidoc/index.html#backup-settings>`_ ``/api/backup-settings``
+- New Endpoint: `Clusters: Datastores <https://bertramdev.github.io/morpheus-apidoc/index.html#get-datastores>`_ ``/api/clusters/:id/datastores``
+- New Endpoint: `Log Settings <https://bertramdev.github.io/morpheus-apidoc/index.html#log-settings>`_ ``/api/log-settings``
+- New Endpoint: `Operational Workflows <https://bertramdev.github.io/morpheus-apidoc/index.html#create-an-operational-workflow>`_ ``/api/task-sets``
+- New Endpoint: `Operations - Health <https://bertramdev.github.io/morpheus-apidoc/index.html#health>`_ ``/api//health``
+- New Endpoint: `Provisioning > Jobs <https://bertramdev.github.io/morpheus-apidoc/index.html#jobs>`_ ``/api/jobs``
+- New Endpoint: `Provisioning Settings <https://bertramdev.github.io/morpheus-apidoc/index.html#provisioning-settings>`_ ``/api/provisioning-settings``
+- New Endpoint: `Whitelabel Settings <https://bertramdev.github.io/morpheus-apidoc/index.html#whitelabel-settings>`_ ``/api/whitelabel-settings``
+- New Endpoint: `Approvals <https://bertramdev.github.io/morpheus-apidoc/index.html#approvals>`_ ``/api/approvals``
+- New Endpoint: `Operations - Budgets <https://bertramdev.github.io/morpheus-apidoc/index.html#budgets>`_ ``/api/budgets`` 
+- New Endpoint: `Reports <https://bertramdev.github.io/morpheus-apidoc/index.html#reports>`_ ``/api/reports`` & ``/api/report-types``
+- Convert to Managed:  `Manual agent install flag added <https://bertramdev.github.io/morpheus-apidoc/index.html#convert-to-managed>`_ ``/api/servers/1/make-managed`` ``"installAgent": true`` Set to false to manually install agent instead
 
 
 CLI Enhancements
