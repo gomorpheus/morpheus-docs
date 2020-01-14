@@ -196,8 +196,73 @@ Workflows Provision Phase support for Cluster/Host Provisioning
 
 .. - Value of cypher created from API/CLI is a key pair string instead of just the value
 
+
+
+API Enhancements
+----------------
+
+- New Endpoint: Service Plans ``/api/service-plans``
+- New Endpoint: Appliance Settings ``/api/appliance-settings``
+- New Endpoint: Backup Settings ``/api/backup-settings``
+- New Endpoint: Clusters: Datastores ``/api/clusters/:id/datastores``
+
+- New Endpoint: Log Settings ``/api/log-settings``
+- New Endpoint: Operational Workflows ``/api/task-sets``
+- New Endpoint: Operations - Health ``/api//health``
+- New Endpoint: Provisioning > Jobs ``/api/jobs``
+- New Endpoint: Provisioning Settings ``/api/provisioning-settings``
+- New Endpoint: Whitelabel Settings ``/api/whitelabel-settings``
+- New Endpoint: Approvals ``/api/approvals``
+- New Endpoint: Operations - Budgets ``/api/budgets`` 
+- New Endpoint: Reports ``/api/reports`` & ``/api/report-types``
+- Convert to Managed - manual agent install flag ``/api/servers/1/make-managed`` ``"installAgent": true`` Set to false to manually install agent instead
+
+
+CLI Enhancements
+----------------
+
+.. note:: CLI v4.1.9 corresponds to the release of the Morpheus API version 4.1.2
+
+- New command ``appliance-settings``
+- New command ``provisioning-settings``
+- New command ``whitelabel-settings``
+- New command ``log-settings``
+- New command ``approvals``
+- New command ``budgets``
+- New command ``health``
+- New command ``service-plans``
+- New command ``prices``
+- New command ``price-sets``
+- Updated command logs output format to match more closely with the UI. This includes logs list, instances logs, apps logs, etc.
+- Updated command cypher put to support more flexible format and store secret values as a string or object. Default TTL is now unlimited (0.)
+- Updated command workflows add to create operational workflows, associate option types and to prompt for inputs.
+- New subcommands workflows execute and tasks execute.
+- Updated prompting to support dependsOnCode option type setting. This improves prompting for commands like instances add where irrelevant or duplicate option prompts could be seen.
+
+CVE's Addressed 
+---------------
+
+- CVE-2012-5783
+- CVE-2012-6153
+- CVE-2012-6708
+- CVE-2013-6440
+- CVE-2015-1796
+- CVE-2015-1796
+- CVE-2015-9251
+- CVE-2016-7954
+- CVE-2018-12629
+- CVE-2019-0232
+- CVE-2019-10072
+- CVE-2019-10202
+- CVE-2019-10202
+- CVE-2019-12402
+- CVE-2019-16869
+- CVE-2019-16892
+- CVE-2019-16942
+- CVE-2019-16943
+
 Fixes
------
+=====
 
 - Administration: Disabling a user account now clears user access token session
 - Agent Installation: SSH validation when using cloud-init agent install mode timeout increased from 2 seconds to 60 seconds
@@ -212,6 +277,10 @@ Fixes
 
 - Azure: Fix for validation of minimum root volume size requirement on Private Azure Images
 - Budgets. Fix for displayed currency when USD is not specified
+- CLI: Fixed an error seen on Windows with select prompting.
+- CLI: Fixed shell prompt still having ansi coloring with shell -C and after coloring off.
+- CLI: Fixed issue with -r [remote] still using the previous remote's active group for instances add, clusters add, apps add.
+- CLI: Fixed issue with the -F, --fields not excluding keys outside of the object scope. eg. meta: {...}.
 - Docker: Fix for inaccurate Used Memory stat on Docker Hosts with running Instances
 - ESXi: Fix for updating Image Store on Cloud Configuration not saving, using previous Image Store.
 - Infrastructure Clouds Actions menu
