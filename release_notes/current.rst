@@ -28,8 +28,7 @@ Agent: SSL Verification of Agent Communications option added
 
 Apps: Kubernetes: Spec-Based App: Parsing errors surfaced
   When provisioning Kubernetes Spec-Based Apps, syntax and/or parsing errors are now surfaced in the UI.
-Appliance: Redis removed
-  Redis has been removed for security enhancements. Redis is no longer installed or needed.
+
 Appliance: Elasticsearch 7 upgrade
   4.1.2 installs and requires Elasticsearch v7.x.
    - For Appliances with the default local Elasticsearch, no action is required.
@@ -38,6 +37,14 @@ Appliance: Elasticsearch 7 upgrade
    - Elasticsearch v5.6 was the previous version used by |morpheus|. Please refer to Elasticsearch Upgrade Documentation for upgrade instructions.
   .. important:: Elasticsearch 7.x is required for v4.1.2+. Running |morpheus| v4.1.2 with Elasticsearch 5.x or 6.x is NOT supported."
 
+Appliance: Redis removed
+  Redis dependency has been removed for security enhancements. Redis is no longer installed or required.
+
+Appliance: Nginx now defaults to ``tls 1.2`` only
+  The default Nginx config removes support for tls 1.0 and 1.1. 
+   - Some older OS's such as CentOS 6 will not be able to install the |morpheus| Agent or communicate with the Appliance without updating the image or configuring nginx to allow lower tls versions via morpheus.rb config.
+   - Windows versions such as Windows 2008 require .net 4.5 minimum
+  
 Azure: CSP and EA price sync
   Azure EA (enterprise agreement) and CSP (Cloud Solution Provider) pricing support added.
    - ACCOUNT TYPE field added to Azure Cloud settings, with Standard, EA and CSP options.† The Account Type selection determines what prices are synced to |morpheus|. Standard is Default and the same prices synced in earlier versions.
@@ -46,6 +53,7 @@ Azure: CSP and EA price sync
 
 Azure: ARM templates: Custom naming of parameters for display
   Currently, the key in an Azure ARM template is used as the display name. See https://bertram.d.pr/13G6gf. Now, a user can specify 'fieldLabel' under the 'metadata' block for a parameter and that will be picked up and displayed as the label when provisioning.
+
 Azure: ARM Spec Templates & Layouts
   ARM Spec Templates & Layouts
   - Users can now create an ARM layout type and then select a Spec Template created with an ARM template.
@@ -70,6 +78,7 @@ Currencies: Brazil, Chile currencies added
 
 Convert To Managed: Instance Type list filtered by Role Permissions
   The Instance Types available to a user to select from during the Convert to Managed action are now filtered by the users Instance Type Access Role permissions.
+
 Clusters: Create Cluster: Review Tab Enhancements
   The Review Tab in the Create Cluster wizard has been update with:
      - Added:
@@ -79,6 +88,7 @@ Clusters: Create Cluster: Review Tab Enhancements
 
 Clouds: Type and Status filters added
   In the Clouds List page /infrastructure/clouds, Clouds can now be filtered by status (All/Enabled/Disabled) and/or by Cloud Type
+
 Clouds: `Cloud Init/ Unattend` default Agent Install mode
   The default AGENT INSTALL MODE setting for new Clouds is now set to ``Cloud Init / Unattend (when available) ``
 
@@ -89,12 +99,16 @@ Google Cloud: Shared network support added
 
 Instances: Warning message added for "Force Delete" option
   Checking "Force Delete" when deleting now displays a warning message "After force deleting you may need to remove the corresponding infrastructure manually", as force deletes can leave target resources up if |morpheus| is unable to validate their removal.
+
 Identity Sources: SAML: Logout Redirect improvements
   Logout Redirect functionality improved for SAML Identity Source Integrations when the Logout Redirect URL is specified.
+
 Identity Sources: SAML: Azure AD SAML Graph support
   Azure AD SAML now supports graph links in saml responses for Azure AD SAML, sent when the number of groups a user is a member exceeds 150.
+
 Library: Option Types: Typeahead now returns value(s) only
   Typeahead Option Types now return value(s) only, like Select List Option Types. Previously [name:name, value:value] was returned.
+
 Networks: Cloud List Filter
   Cloud Type Filter added to /infrastructure/networks
 
@@ -147,6 +161,7 @@ Policies: Message of the Day (MOTD) Policy Type
 
 Policies: Backup Targets
   Backup Targets Policy Type added. A master account can determine storage provider options for backups with Backup Targets policies.
+
 Provisioning: System 'Existing' Instance Layouts removed.
   v4.1.2 no longer seeds the legacy and disabled "Existing" System Layout options.
 
@@ -155,18 +170,25 @@ Provisioning: System 'Existing' Instance Layouts removed.
 
 Roles: Identity Sources: Roles Admin permission
   Role permission for Identity Sources allowing the user to only edit Role Mappings and no other settings of the Identity Source.
+
 ServiceNow Plugin: App Provisioning
   Apps from Blueprints can now be provisioned from ServiceNow via the |morpheus| ServiceNow App. Blueprint section added to the ServiceNow Integration details page in |morpheus| for managing the Blueprints exposed in ServiceNow.
+
 ServiceNow: Plugin Support added for vCD, Xen, and ESXi Cloud Types
   The |morpheus| ServiceNow Plugin now supports vCloud Director (vCD), Xen, and ESXi Cloud Types.
+
 Security: opensaml updated
   Addressed ``CVE-2015-1796 - opensaml-2.6.4 - A``
+
 Tenants: Logouts now redirect to subdomain login
   When logging out of a sub-tenant, users are now redirected to the Tenants login url, rather than the Master Tenant login url.
+
 Tasks: Shell Task: KEY Field Added
   Keys can now be used on Shell Tasks when using Remote Execution Targets
+
 Tasks: Remote Shell, Local Shell, SSH Script Tasks Merged into "Shell Script"
   With the addition of task execution targets, the fRemote Shell Script, Local Shell Script and SSH Script task types offered redundant functionality and have been have been merged into a single "Shell Script" task type.
+
 Tasks: "WinRM Script" renamed "Powershell Script"
   The WinRM Script Task type has been renamed Powershell Script, as the Task Type supports Command Bus, Local and Guest Execution in addition to WinRM connections for executing Powershell Scripts.
 
@@ -182,6 +204,7 @@ UI: Alarm Icon with Alarm Count badge added to Global Header
 
 VM "Dashboard" tab renamed "Summary"
   The "Dashboard" tab on Virtual Machine Detail pages (/infrastructure/servers/{id}) has been renamed to "Summary"
+
 Virtual Images: "OCI" added to Image Type Filter for Oracle Cloud Images
 
 Whitelabel: Security Banner section added
@@ -195,8 +218,6 @@ Workflows Provision Phase support for Cluster/Host Provisioning
   In addition to Post-Provision phases, Provision phases now supported for Workflows executed during Cluster and Host Provisioning
 
 .. - Value of cypher created from API/CLI is a key pair string instead of just the value
-
-
 
 API Enhancements
 ----------------
