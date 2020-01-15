@@ -29,6 +29,8 @@ Getting Started
 
 To get started this a few prerequisites must first be met.  The Nutanix cluster should be provisioned and available on the network. |morpheus| will look login to the Nutanix cluster with the Nutanix admin credentials and is typically located at the https://fqdn:9440 url.
 
+.. NOTE:: |morpheus| requires a Cluster Admin role in Nutanix
+
 Adding a Nutanix Cloud
 ^^^^^^^^^^^^^^^^^^^^^^^
 
