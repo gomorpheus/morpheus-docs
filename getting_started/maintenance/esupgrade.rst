@@ -3,6 +3,8 @@
 Elasticsearch 7.x Upgrade
 -------------------------
 
+.. important:: This is an example Elasticsearch Upgrade for reference only, and is not indicative of the upgrade procedure for every environment/user/customer/configuration. This example assumes CentOS hosts and will result in loss of existing Elasticsearch data and is the fastest upgrade path. Data retention is possible through alternate upgrade paths. Refer to ```Elasticsearch Upgrade Documentation <https://www.elastic.co/guide/en/elasticsearch/reference/current/setup-upgrade.html>`_ before upgrading to v4.1.2 if your Appliance's Elasticsearch service is external.
+	
 Overview
 ^^^^^^^^
 |morpheus| v4.1.2+ requires Elasticsearch 7.x. Earlier versions of |morpheus| ran against Elasticsearch v5.x. The Elasticsearch version for Appliance configurations with the default local Elasticsearch target will automatically be upgraded and no manual upgrade is required.
