@@ -14,6 +14,13 @@ Header Logo
 	Top left header logo. Preferred Image Size (500x76)
 Disable Support Menu
 	Enable this flag to hide the support dropdown menu in the header.
+Support Menu Links
+	Customize support links. Label Code can be used for translations and is optional. Be sure to specify fully qualified url if linking to external sites.
+Security Banner
+	The Security Banner section in /admin/settings#!whitelabel displays content on the login screen for Security and Consent messaging and warnings.
+		- Applicable at Global and Tenant levels
+		- Security Banner input field accepts plain text and markdown
+		- Content is displayed below login section in scoped /login/auth pages.
 Footer Logo
 	Footer Logo in bottom left. Preferred Image Size (264x54)
 Login Logo
@@ -71,7 +78,7 @@ Available Copy fields
 .. NOTE:: Terms of Use and Privacy Policy Footer links will load internal pages at `https://applaince_url/privacy-policy` and `https://applaince_url/terms-of-use` displaying the entered info as plain text.
 ​
 UI Loading Page
-^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^
 
 When the |morpheus| UI is restarted or loading, a default "Morpheus is Loading" page is displayed. This page can be changed by adding the following to `/etc/morpheus/morpheus.rb` and adjusting the values.
 
