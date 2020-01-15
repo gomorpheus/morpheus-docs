@@ -86,7 +86,7 @@ Create NSX Logical Switch and Edge Gateway
    NAME
     Name of the Logical Switch
    DESCRIPTION
-    d
+    Description of the Logical Switch
    TRANSPORT ZONE
     Select an existing Transport Zone
    CIDR
@@ -155,6 +155,8 @@ To create a new group:
 #. Click "Create Group"
 
 .. image:: /images/integration_guides/networking/nsx/new_group.png
+  :width: 80%
+  :align: center
 
 To create a new rule:
 
@@ -162,6 +164,8 @@ To create a new rule:
 #. Click "Create Rule"
 
 .. image:: /images/integration_guides/networking/nsx/new_rule.png
+  :width: 80%
+  :align: center
 
 Logical Routers
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -179,3 +183,5 @@ To create a new logical router:
 #. Click :guilabel:`ADD NETWORK ROUTER`
 
 .. image:: /images/integration_guides/networking/nsx/add_logical_router.png
+  :width: 80%
+  :align: center
