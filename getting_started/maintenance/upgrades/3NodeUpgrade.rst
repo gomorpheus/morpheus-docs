@@ -18,5 +18,5 @@ Due to RabbitMQ going from 3.4.x to 3.7.x, which has no rolling upgrade path, th
 2. Upgrade Node 1, then run a reconfigure on Node 1
 3. Upgrade Node 2, then run a reconfigure on Node 2
 4. Upgrade Node 3, then run a reconfigure on Node 3
-5. Establish the RabbitMQ cluster again using the steps from the 3 Node install guide.
+5. Establish the RabbitMQ cluster again using the steps from the :ref:`3nodeinstall` guide.
 6. Restart the morpheus-ui service.

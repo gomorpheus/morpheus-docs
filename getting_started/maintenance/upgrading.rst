@@ -30,3 +30,4 @@ Refer to :ref:`compatibility` for externalized MySQL, Elasticsearch and/or Rabbi
 .. include:: /getting_started/maintenance/upgrades/singleNodeUpgrade.rst
 .. include:: /getting_started/maintenance/upgrades/3NodeUpgrade.rst
 .. include:: /getting_started/maintenance/upgrades/fullHaUpgrade.rst
+.. include:: /getting_started/maintenance/upgrades/esupgrade.rst

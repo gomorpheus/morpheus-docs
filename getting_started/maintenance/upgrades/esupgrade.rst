@@ -1,12 +1,12 @@
 .. _esupgrade:
 
 Elasticsearch 7.x Upgrade
--------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. important:: This is an example Elasticsearch Upgrade for reference only, and is not indicative of the upgrade procedure for every environment/user/customer/configuration. This example assumes CentOS hosts and will result in loss of existing Elasticsearch data and is the fastest upgrade path. Data retention is possible through alternate upgrade paths. Refer to ```Elasticsearch Upgrade Documentation <https://www.elastic.co/guide/en/elasticsearch/reference/current/setup-upgrade.html>`_ before upgrading to v4.1.2 if your Appliance's Elasticsearch service is external.
-	
+.. important:: This is an example Elasticsearch Upgrade for reference only, and is not indicative of the upgrade procedure for every environment/user/customer/configuration. This example assumes CentOS hosts and will result in loss of existing Elasticsearch data and is the fastest upgrade path. Data retention is possible through alternate upgrade paths. Refer to `Elasticsearch Upgrade Documentation <https://www.elastic.co/guide/en/elasticsearch/reference/current/setup-upgrade.html>`_ before upgrading to v4.1.2 if your Appliance's Elasticsearch service is external.
+
 Overview
-^^^^^^^^
+````````
 |morpheus| v4.1.2+ requires Elasticsearch 7.x. Earlier versions of |morpheus| ran against Elasticsearch v5.x. The Elasticsearch version for Appliance configurations with the default local Elasticsearch target will automatically be upgraded and no manual upgrade is required.
 
 For Appliance configurations with an existing external Elasticsearch service, an upgrade of Elasticsearch to v7.x is required to upgrade |morpheus| to v4.1.2+. |morpheus| can be pointed to a new Elasticsearch 7.x service as an alternate to upgrading an existing cluster.
@@ -16,9 +16,11 @@ Elasticsearch 7.x upgrade is really a new install, as by default no data will be
 .. important:: Elasticsearch 7.x configuration and paths are not the same as v5.x. Please pay attention to the elasticsearch.yml config changes and ensure proper permissions on specified paths.
 
 Install Elasticsearch 7.x
-^^^^^^^^^^^^^^^^^^^^^^^^^
+`````````````````````````
+.. important:: This is an example Elasticsearch Upgrade for reference only, and is not indicative of the upgrade procedure for every environment/user/customer/configuration. This example assumes CentOS hosts and will result in loss of existing Elasticsearch data and is the fastest upgrade path. Data retention is possible through alternate upgrade paths. Refer to `Elasticsearch Upgrade Documentation <https://www.elastic.co/guide/en/elasticsearch/reference/current/setup-upgrade.html>`_ before upgrading to v4.1.2 if your Appliance's Elasticsearch service is external.
 
-.. important:: Upgrading from v5.x to 7.x requires all nodes in a Cluster to be stopped. The |morpheus| ui should be stopped prior to the cluster upgrade.
+.. important:: Upgrading from v5.x directly to 7.x requires all nodes in a Cluster to be stopped. The |morpheus| ui should be stopped prior to the cluster upgrade.
+
 
 #. Stop Elasticsearch on all nodes in the Cluster
 
