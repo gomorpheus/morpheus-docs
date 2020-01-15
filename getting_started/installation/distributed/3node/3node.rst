@@ -94,21 +94,19 @@ Steps
 
    .. code-block:: bash
 
-       appliance_url 'https://morpheus3.localdomain'
-       elasticsearch['es_hosts'] = {'10.100.10.121' => 9200, '10.100.10.122' => 9200, '10.100.10.123' => 9200}
-       elasticsearch['node_name'] = 'morpheus3'
-       elasticsearch['host'] = '0.0.0.0'
-       rabbitmq['host'] = '0.0.0.0'
-       rabbitmq['nodename'] = 'rabbit@node03'
-       mysql['enable'] = false
-       mysql['host'] = '10.100.10.111'
-       mysql['morpheus_db'] = 'morpheusdb'
-       mysql['morpheus_db_user'] = 'morpheus'
-       mysql['morpheus_password'] = 'password'
+    appliance_url 'https://morpheus3.localdomain'
+    elasticsearch['es_hosts'] = {'10.100.10.121' => 9200, '10.100.10.122' => 9200, '10.100.10.123' => 9200}
+    elasticsearch['node_name'] = 'morpheus3'
+    elasticsearch['host'] = '0.0.0.0'
+    rabbitmq['host'] = '0.0.0.0'
+    rabbitmq['nodename'] = 'rabbit@node03'
+    mysql['enable'] = false
+    mysql['host'] = '10.100.10.111'
+    mysql['morpheus_db'] = 'morpheusdb'
+    mysql['morpheus_db_user'] = 'morpheus'
+    mysql['morpheus_password'] = 'password'
 
-   .. note:: If you are running MySQL in a Master/Master configuration we will need to slightly alter the mysql['host'] line in the ``morpheus.rb`` to account for both masters in a failover configuration. As an example: ``mysql['host'] = '10.100.10.111:3306,10.100.10.112'``. |morpheus| will append the ‘3306’ port to the end of the final IP in the string, which is why we leave it off but explicitly type it for the first IP in the string. The order of IPs matters in that it should be the same across all three |morpheus| Application Servers. As mentioned, this will be a failover configuration for MySQL in that the application will only read/write from the second master if the first master becomes unavailable. This way we can avoid commit lock issues that might arise from a load balanced Master/Master.
-
-#. Run the reconfigure on all nodes
+   #. Run the reconfigure on all nodes
 
    .. code-block:: bash
 
@@ -168,12 +166,11 @@ Steps
           10.100.10.115 app-server-3
 
 
-
    .. code-block:: bash
 
      [root@app-server-2 ~]# morpheus-ctl stop rabbitmq
      [root@app-server-2 ~]# morpheus-ctl start rabbitmq
-     [root@app-server-2 ~]# PATH=/opt/morpheus/sbin:/opt/morpheus/sbin:/opt/morpheus/embedded/sbin:/opt/morpheus/embedded/bin:$PATH
+     [root@app-server-2 ~]# source /opt/morpheus/embedded/rabbitmq/.profile
      [root@app-server-2 ~]# rabbitmqctl stop_app
 
      Stopping node 'rabbit@app-server-2' ...
