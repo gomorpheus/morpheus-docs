@@ -34,6 +34,13 @@ Add NSX Integration
 
 Once the NSX Integration is added |morpheus| will sync in existing Transport Zones, Logical Switches, and Edge Gateways. New Transport Zones, Logical Switches, and Edge Gateways can be now be created.
 
+Summary View
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
+When accessing an NSX integration (``Infrastructure > Network > Integrations``), you're taken to the SUMMARY tab by default. As of Morpheus version 4.1.2, the NSX-V integration includes an enhanced summary view that includes global, system, and component statuses, as well as enhanced stats. As of Morpheus version 4.1.2, you can also force a manual refresh of the integration details by clicking :guilabel:`ACTIONS` > Refresh.
+
+.. image:: /images/integration_guides/networking/nsx/summary.png
+
 Create NSX Transport Zone
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -49,6 +56,19 @@ Create NSX Transport Zone
     Description for the Transport Zone
    CLUSTER
     Select the Cluster the Transport Zone will be provisioned to
+
+Switches
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Morpheus version 4.1.2 adds SWITCHES tab to view switches associated with the selected NSX integration. Information displayed on each switch include the following:
+
+- NAME
+- UPLINK PORT
+- TYPE
+- SWITCH ID
+- DESCRIPTION
+
+.. image:: /images/integration_guides/networking/nsx/switches.png
 
 Create NSX Logical Switch and Edge Gateway
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -100,3 +120,62 @@ Create NSX Logical Switch and Edge Gateway
     .. NOTE:: Password length must be at-least 12 characters and at-max 255 characters. It must contain mix of alphabets with both upper case and lower case, numbers and at-least one special character. Password must not contain username as substring. Character must not consecutively repeat 3 or more times.
 
 #. Select :guilabel:`+ CREATE`
+
+Morpheus version 4.1.2 also extends the details we can see on existing Edge Gateways. First, to view the list of Edge Gateways, navigate to your selected NSX integration, and click on the EDGE GATEWAYS tab. Here you will see a list of existing Edge Gateways, including their NAME and DESCRIPTION values. To see the enhanced details view for your Edge Gateways, click on the name of a selected Edge Gateway.
+
+.. image:: /images/integration_guides/networking/nsx/edge_gateway_detail.png
+
+The new Edge Gateway detail view includes the following tabs:
+
+- SUMMARY: Includes general configuration details for the selected Edge Gateway
+- FIREWALL: Includes firewall configuration detail and includes the ability to create rules
+- DHCP: Includes details on IP pools
+- ROUTING: Includes details on configured routes and includes the ability to create routes
+
+Firewall
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Morpheus version 4.1.2 adds a FIREWALL tab which allows you to view existing firewall rules as well as create new rules and groups. From the rules summary list, the following fields are displayed for each rule:
+
+- NAME
+- TYPE
+- POLICY
+- DIRECTION
+- SOURCE
+- DESTINATION
+- PROTOCOL
+
+.. image:: /images/integration_guides/networking/nsx/firewall_rules.png
+
+Morpheus also allows you to create new firewall groups and new firewall rules.
+
+To create a new group:
+
+#. Click on the :guilabel:`ACTIONS` button from within the list of firewall rules
+#. Click "Create Group"
+
+.. image:: /images/integration_guides/networking/nsx/new_group.png
+
+To create a new rule:
+
+#. Click on the :guilabel:`ACTIONS` button from within the list of firewall rules
+#. Click "Create Rule"
+
+.. image:: /images/integration_guides/networking/nsx/new_rule.png
+
+Logical Routers
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Morpheus version 4.1.2 adds a Logical Routers section to the NSX integration, including the ability to view and create new logical routers. From the LOGICAL ROUTERS tab, a list of logical routers associated with your selected integration is shown. Values displayed for each logical router include the following:
+
+- NAME
+- DESCRIPTION
+
+To create a new logical router:
+
+#. Navigate to the LOGICAL ROUTERS tab for the chosen integration
+#. Click on :guilabel:`+ CREATE NSX LOGICAL ROUTER`
+#. Complete the presented modal
+#. Click :guilabel:`ADD NETWORK ROUTER`
+
+.. image:: /images/integration_guides/networking/nsx/add_logical_router.png
