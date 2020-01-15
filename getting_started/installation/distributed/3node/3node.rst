@@ -1,5 +1,7 @@
-3-Node HA
----------
+.. _3nodeinstall:
+
+3-Node HA Install
+-----------------
 
 Distributed App Nodes with Externalized DB
 
