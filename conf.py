@@ -202,4 +202,5 @@ def setup(app):
 
 rst_epilog = """
 .. |morpheus| replace:: Morpheus
+.. |morphver| relpace:: 4.1.1
 """

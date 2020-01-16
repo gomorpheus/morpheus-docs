@@ -1,0 +1,110 @@
+CentOS / RHEL
+`````````````
+
+The following covers upgrading the |morpheus| App nodes in Full HA Architecture configurations to |morphver|.
+
+.. important:: The following is only for Full HA Architecture configurations, where MySQL, Elasticsearch and RabbitMQ services are external to the App nodes.
+
+4.x -> |morphver| Upgrade
+.........................
+
+#. Starting with Node 3, on All App Nodes, stop all Morpheus services via ``morpheus-ctl stop``. This will stop all system services. If any services timeout, run ``morpheus-ctl stop`` again.
+
+   .. code-block:: bash
+
+    [root@app-server-3 ~]# morpheus-ctl stop
+
+    .. code-block:: bash
+
+    [root@app-server-2 ~]# morpheus-ctl stop
+
+    .. code-block:: bash
+
+    [root@app-server-1 ~]# morpheus-ctl stop
+
+#. Upgrade the rpm package on Node 1, then run a Reconfigure on Node 1
+
+   .. code-block:: bash
+
+    [root@app-server-1 ~]# sudo wget https://packageUrl.morpheus-appliance-x.x.x-x.x86_64.rpm
+    [root@app-server-1 ~]# sudo rpm -Uhv morpheus-appliance-x.x.x-x.x86_64.rpm
+    [root@app-server-1 ~]# sudo morpheus-ctl reconfigure
+
+   .. note::
+
+   	All local services will automatically start during the reconfigure process. After the reconfigure has succeeded, tail the ui service to watch ui startup logs with ``morpheus-ctl tail morpheus-ui``.
+
+#. Once Node 1 upgrade has completed and the ui is available, upgrade the rpm package on Node 2, then run a Reconfigure on Node 2.
+
+   .. code-block:: bash
+
+    [root@app-server-2 ~]# sudo wget https://packageUrl.morpheus-appliance-x.x.x-x.x86_64.rpm
+    [root@app-server-2 ~]# sudo rpm -Uhv morpheus-appliance-x.x.x-x.x86_64.rpm
+    [root@app-server-2 ~]# sudo morpheus-ctl reconfigure
+
+#. Then upgrade the rpm package on Node 3, then run a Reconfigure on Node 3
+
+   .. code-block:: bash
+
+    [root@app-server-3 ~]# sudo wget https://packageUrl.morpheus-appliance-x.x.x-x.x86_64.rpm
+    [root@app-server-3 ~]# sudo rpm -Uhv morpheus-appliance-x.x.x-x.x86_64.rpm
+    [root@app-server-3 ~]# sudo morpheus-ctl reconfigure
+
+#. After all morpheus-ui services have finished loading, the upgrade is complete.
+
+|
+|
+
+3.6.x -> |morphver|
+...................
+
+* MySQL 5.7.x is required for external MySQL clusters or services. Refer to `Percona Upgrade Documentation <https://www.percona.com/doc/percona-server/5.7/upgrading_guide_56_57.html>`_ for upgrading external Percona Clusters. The |morpheus| |morphver| package upgrade and reconfigure process will NOT upgrade external services.
+
+* The |morpheus| package repo download location has changed to https://downloads.morpheusdata.com from https://downloads.gomorpheus.com. Update firewall and proxy ACLs when applicable.
+
+#. Starting with Node 3, on All App Nodes, stop all Morpheus services via ``morpheus-ctl stop``. This will stop all system services. If any services timeout, run ``morpheus-ctl stop`` again.
+
+   .. code-block:: bash
+
+    [root@app-server-3 ~]# morpheus-ctl stop
+
+    .. code-block:: bash
+
+    [root@app-server-2 ~]# morpheus-ctl stop
+
+    .. code-block:: bash
+
+    [root@app-server-1 ~]# morpheus-ctl stop
+
+#. Upgrade the rpm package on Node 1, then run a Reconfigure on Node 1
+
+   .. code-block:: bash
+
+    [root@app-server-1 ~]# sudo wget https://packageUrl.morpheus-appliance-x.x.x-x.x86_64.rpm
+    [root@app-server-1 ~]# sudo rpm -Uhv morpheus-appliance-x.x.x-x.x86_64.rpm
+    [root@app-server-1 ~]# sudo morpheus-ctl reconfigure
+
+   .. note::
+
+   	All local services will automatically start during the reconfigure process. After the reconfigure has succeeded, tail the ui service to watch ui startup logs with ``morpheus-ctl tail morpheus-ui``.
+
+#. Once Node 1 upgrade has completed and the ui is available, upgrade the rpm package on Node 2, then run a Reconfigure on Node 2.
+
+   .. code-block:: bash
+
+    [root@app-server-2 ~]# sudo wget https://packageUrl.morpheus-appliance-x.x.x-x.x86_64.rpm
+    [root@app-server-2 ~]# sudo rpm -Uhv morpheus-appliance-x.x.x-x.x86_64.rpm
+    [root@app-server-2 ~]# sudo morpheus-ctl reconfigure
+
+#. Then upgrade the rpm package on Node 3, then run a Reconfigure on Node 3
+
+   .. code-block:: bash
+
+    [root@app-server-3 ~]# sudo wget https://packageUrl.morpheus-appliance-x.x.x-x.x86_64.rpm
+    [root@app-server-3 ~]# sudo rpm -Uhv morpheus-appliance-x.x.x-x.x86_64.rpm
+    [root@app-server-3 ~]# sudo morpheus-ctl reconfigure
+
+#. After all morpheus-ui services have finished loading, the upgrade is complete.
+
+|
+|
