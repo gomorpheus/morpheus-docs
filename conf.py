@@ -47,7 +47,7 @@ master_doc = 'index'
 
 # General information about the project.
 project = u'Morpheus Docs'
-copyright = u'2019, Morpheus Data'
+copyright = u'2020, Morpheus Data'
 author = u'Morpheus'
 
 # The version info for the project you're documenting, acts as replacement for
@@ -200,8 +200,16 @@ def setup(app):
 
 rst_prolog = """
 .. |morpheus| replace:: Morpheus
+.. |morphbranch| replace:: v4.1
 .. |morphver| replace:: v4.1.2
+.. |rmqbranch| replace:: v3.5+
+.. |rmqver| replace:: v3.7.16 
+.. |mysqlbranch| replace:: v5.7
+.. |mysqlver| replace:: v5.7.27
+.. |esbranch| replace:: v7.4
+.. |esver| replace:: v7.4.2
 """
+
 
 # -- levels -----
 #****************

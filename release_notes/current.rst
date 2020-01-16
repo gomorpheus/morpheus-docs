@@ -4,7 +4,7 @@
 |morphver| Release Notes
 *************************
 
-.. important:: v4.1.2 requires Elasticsearch v7.x. Please refer to :ref:`esupgrade` and ``Elasticsearch Upgrade Documentation <https://www.elastic.co/guide/en/elasticsearch/reference/current/setup-upgrade.html>`_ before installing or upgrading to v4.1.2 if your Appliance's Elasticsearch is external.
+.. important:: v4.1.2 requires Elasticsearch v7.x. Please refer to :ref:`upgrading` and `Elasticsearch Upgrade Documentation <https://www.elastic.co/guide/en/elasticsearch/reference/current/setup-upgrade.html>`_ before installing or upgrading to v4.1.2 if your Appliance's Elasticsearch is external.
 
 .. important:: v3.6.0 or later required to upgrade to 4.1.2. Upgrading from v3.6.x to v4.x contains upgrades to MySQL, RabbitMQ, and Elasticsearch. Please refer to Upgrade Requirements before upgrading. When upgrading from v3.6.x to v4.x a database backup is recommended due to MySQL version upgrade.
 
@@ -26,10 +26,6 @@ Agent: SSL Verification of Agent Communications option added
     - If ``Enable SSL Verification of Agent`` is enabled and the Appliance has a self-signed Certificate  (default), the Agent will not be able to connect to the Appliance.
     - SSL Verification of Agent Communications requires the node's Agent configuration to have ``morphd['verify_peer'] = true`` set in ``/etc/morpheus/morpheus-node.rb``.
 
-Apps: Kubernetes: Spec-Based App: Parsing errors surfaced
-  When provisioning Kubernetes Spec-Based Apps, syntax and/or parsing errors are now surfaced in the UI.
-Appliance: Redis removed
-  Redis has been removed for security enhancements. Redis is no longer installed or needed.
 Appliance: Elasticsearch 7 upgrade
   4.1.2 installs and requires Elasticsearch v7.x.
    - For Appliances with the default local Elasticsearch, no action is required.
@@ -38,14 +34,17 @@ Appliance: Elasticsearch 7 upgrade
    - Elasticsearch v5.6 was the previous version used by |morpheus|. Please refer to Elasticsearch Upgrade Documentation for upgrade instructions.
   .. important:: Elasticsearch 7.x is required for v4.1.2+. Running |morpheus| v4.1.2 with Elasticsearch 5.x or 6.x is NOT supported."
 
-Azure: CSP and EA price sync
-  Azure EA (enterprise agreement) and CSP (Cloud Solution Provider) pricing support added.
-   - ACCOUNT TYPE field added to Azure Cloud settings, with Standard, EA and CSP options.† The Account Type selection determines what prices are synced to |morpheus|. Standard is Default and the same prices synced in earlier versions.
-   - To change an Azure Cloud Account Type from Standard to either CSP or EA pricing, in ``Infrastructure -> Clouds``, edit the target Azure Cloud. In the Details section, select Standard, CSP, or EA from the ACCOUNT TYPE dropdown. Select SAVE CHANGES. A new cloud sync will be triggered and the specified Account Type pricing will sync.
-       .. note:: CSP and EA pricing sync is only available for Azure EA (Enterprise Agreement) and CSP (Cloud Solution Provider) subscriptions.
+ Appliance: Nginx now defaults to ``tls 1.2`` only
+   The default Nginx config removes support for tls 1.0 and 1.1.
+    - Some older OS's such as CentOS 6 will not be able to install the |morpheus| Agent or communicate with the Appliance without updating the image or configuring nginx to allow lower tls versions via morpheus.rb config.
+    - Windows versions such as Windows 2008 require .net 4.5 minimum
 
-Azure: ARM templates: Custom naming of parameters for display
-  Currently, the key in an Azure ARM template is used as the display name. See https://bertram.d.pr/13G6gf. Now, a user can specify 'fieldLabel' under the 'metadata' block for a parameter and that will be picked up and displayed as the label when provisioning.
+Appliance: Redis removed
+  Redis dependency has been removed for security enhancements. Redis is no longer installed or required.
+
+Apps: Kubernetes: Spec-Based App: Parsing errors surfaced
+  When provisioning Kubernetes Spec-Based Apps, syntax and/or parsing errors are now surfaced in the UI.
+
 Azure: ARM Spec Templates & Layouts
   ARM Spec Templates & Layouts
   - Users can now create an ARM layout type and then select a Spec Template created with an ARM template.
@@ -53,23 +52,45 @@ Azure: ARM Spec Templates & Layouts
   - ARM Spec Templates support Local, Repository and URL Sources.
   - Spec Templates: /provisioning/library/resource-specs"
 
+Azure: ARM Templates: Custom naming of parameters for display
+  Currently, the key in an Azure ARM template is used as the display name. See https://bertram.d.pr/13G6gf. Now, a user can specify 'fieldLabel' under the 'metadata' block for a parameter and that will be picked up and displayed as the label when provisioning.
+
+Azure: CSP and EA price sync
+  Azure EA (enterprise agreement) and CSP (Cloud Solution Provider) pricing support added.
+   - ACCOUNT TYPE field added to Azure Cloud settings, with Standard, EA and CSP options.† The Account Type selection determines what prices are synced to |morpheus|. Standard is Default and the same prices synced in earlier versions.
+   - To change an Azure Cloud Account Type from Standard to either CSP or EA pricing, in ``Infrastructure -> Clouds``, edit the target Azure Cloud. In the Details section, select Standard, CSP, or EA from the ACCOUNT TYPE dropdown. Select SAVE CHANGES. A new cloud sync will be triggered and the specified Account Type pricing will sync.
+       .. note:: CSP and EA pricing sync is only available for Azure EA (Enterprise Agreement) and CSP (Cloud Solution Provider) subscriptions.
+
 Azure: Virtual Networks filtered
   Parent Virtual Networks are no longer listed in Instance, App, Blueprint, Host, Reconfigure, Clone and Network Group Wizards, allowing clearer selection of appropriate Subnet(s).
   - Previously Virtual Networks would be displayed along with Subnets. If a Virtual Network was selection, |morpheus| would round-robin select a subnet in the vnet.
   - Use ``Network Groups`` to place appropriate subnets in a Network Group for round robin provisioning options.
+
+Backups: (GB, 7 DAY TOTAL) added to SIZE OF BACKUPS widget.
+  Title for "Size of backups" on /backups summary updated to make it clearer the values in the widget reflect the last 7 days and are in GB.
 
 Backups: Tenant Backups Visibility added to Master Tenant
   Sub-Tenants Backups are now visible in the Master Tenant for Backups in Clouds owned by the Master Tenant and either shared Publicly or Private and assigned to a Sub-Tenant.
 
   - Tenant field added to Backup List ( /backups/list) and Backup Details ( /backups/show/{id}) pages.
 
-Backups: (GB, 7 DAY TOTAL) added to SIZE OF BACKUPS widget.
-  Title for "Size of backups" on /backups summary updated to make it clearer the values in the widget reflect the last 7 days and are in GB.
+Clouds: Security & Firewall configuration updates
+   - Host Firewall and Local Firewall combined into Local Firewall
+     - Enabling this will control ip table rules on Managed VM's and Hosts via Security Groups in Clouds without native Security Groups
+   - Local Firewall and Cloud Native options removed from Security Server Options
+     - Cloud Native security groups cannot be disabled so they are no longer a configuration option
+     - Local Firewall is now controlled by Local Firewall setting instead of Security Server Setting
+   - Security Server setting is for Security Service Integrations such as ACI
 
-Currencies: Brazil, Chile currencies added
+Clouds: Type and Status filters added
+  In the Clouds List page /infrastructure/clouds, Clouds can now be filtered by status (All/Enabled/Disabled) and/or by Cloud Type
 
-Convert To Managed: Instance Type list filtered by Role Permissions
-  The Instance Types available to a user to select from during the Convert to Managed action are now filtered by the users Instance Type Access Role permissions.
+Clouds: `Cloud Init/ Unattend` default Agent Install mode
+  The default AGENT INSTALL MODE setting for new Clouds is now set to ``Cloud Init / Unattend (when available) ``
+
+  - The setting for existing clouds will not be changed.
+  - `SSH / WinRM / Gust Execution` was previously the default setting and ` Cloud Init / Unattend (when available)` needed to be set manually, which is the recommended Agent Install mode.
+
 Clusters: Create Cluster: Review Tab Enhancements
   The Review Tab in the Create Cluster wizard has been update with:
      - Added:
@@ -77,26 +98,28 @@ Clusters: Create Cluster: Review Tab Enhancements
      - Removed:
         GROUP
 
-Clouds: Type and Status filters added
-  In the Clouds List page /infrastructure/clouds, Clouds can now be filtered by status (All/Enabled/Disabled) and/or by Cloud Type
-Clouds: `Cloud Init/ Unattend` default Agent Install mode
-  The default AGENT INSTALL MODE setting for new Clouds is now set to ``Cloud Init / Unattend (when available) ``
 
-  - The setting for existing clouds will not be changed.
-  - `SSH / WinRM / Gust Execution` was previously the default setting and ` Cloud Init / Unattend (when available)` needed to be set manually, which is the recommended Agent Install mode.
+Convert To Managed: Instance Type list filtered by Role Permissions
+  The Instance Types available to a user to select from during the Convert to Managed action are now filtered by the users Instance Type Access Role permissions.
+
+Currencies: Brazil, Chile currencies added
 
 Google Cloud: Shared network support added
 
 Instances: Warning message added for "Force Delete" option
   Checking "Force Delete" when deleting now displays a warning message "After force deleting you may need to remove the corresponding infrastructure manually", as force deletes can leave target resources up if |morpheus| is unable to validate their removal.
+
 Identity Sources: SAML: Logout Redirect improvements
   Logout Redirect functionality improved for SAML Identity Source Integrations when the Logout Redirect URL is specified.
+
 Identity Sources: SAML: Azure AD SAML Graph support
   Azure AD SAML now supports graph links in saml responses for Azure AD SAML, sent when the number of groups a user is a member exceeds 150.
+
 Library: Option Types: Typeahead now returns value(s) only
   Typeahead Option Types now return value(s) only, like Select List Option Types. Previously [name:name, value:value] was returned.
+
 Networks: Cloud List Filter
-  Cloud Type Filter added to /infrastructure/networks
+  Cloud Type Filter added to ``/infrastructure/networks``
 
 NSX: NSX-V Enhancements
   Major additions to NSX-V Integration
@@ -113,12 +136,8 @@ NSX: NSX-V Enhancements
   All of the NSX network objects to be scoped to a group by default and have individual role permission for each nsx object.Owned by and only visible by default to that group. Permission to create each object type can be assigned via user roles NSX objects are: ?	Transport Zones ?	Logical Switches (VxLans) ?	DLR ?	Edge Services Gateway (Firewall, NAT, DHCP, VPN, Load Balancing) ?	Load Balancers ?	Security Groups"
 
 Openstack: Backups: Storage Provider options added
-  Openstack backup creation now allows for choosing a storage provider.
+  Openstack backup creation now allows for choosing a storage provider. Openstack Backup/Restores work with Local disk types, Volume disk types and Multiple disks.
 
-  - Openstack Backup/Restores works with Local disk types, Volume disk types and Multiple disks.
-  - If 'Archive Snapshots' is set on the Storage Provider, backups will be offloaded from Openstack onto the specified storage provider.
-  - If 'Archive Snapshots' is unchecked, backups will remain on Openstack.
-  - Offloaded backups can still be restored to Openstack.
 Openstack: Migrations
   Ability to migrate an Instance from an openstack-based cloud to any other openstack-based cloud
 
@@ -127,8 +146,8 @@ Openstack: Migrations
 Openstack: Support for multiple Routers within the same network
   Support added for multiple Routers within the same network. Previously, only one Router could be created per Network.
 
-Provisioning: Actions removed for Canceled or Denied Instances & Apps.
-  On Instance and App detail pages, invalid Instance and Node Actions are no longer listed for Instances with a status of Canceled or Denied (Approval).
+Policies: New Backup Targets Policy
+  Backup Targets Policy Type added. A master account can determine storage provider options for backups with Backup Targets policies.
 
 Policies: New Delayed Removal Policy
   Delayed Removals allow for soft deletion of Instances and Apps. Instead of deleting immediately, Instances and Apps with a Delayed Removal policy applied will be shutdown upon deletion request and hidden by default from the ui. The Instance/App will then be in ``Pending Removal`` status.
@@ -139,14 +158,15 @@ Policies: New Delayed Removal Policy
   - Delayed Removal policies do not current apply to Docker Hosts or Discovered VM's.
   - Available Scopes for Delayed Removal policies are Global, Cloud, Group, User and Role and can be applied to a single or multiple Tenants.
 
-Policies: Message of the Day (MOTD) Policy Type
+Policies: New Message of the Day (MOTD) Policy
   Message of the Day"" Policy for displaying Alerts in |morpheus|.
 
   - Configurable as a pop-up or full-page notification with Info, Warning and Critical message types.
   - Includes new Role Permission: Admin: Message Of the Day - None/Full
 
-Policies: Backup Targets
-  Backup Targets Policy Type added. A master account can determine storage provider options for backups with Backup Targets policies.
+Provisioning: Actions removed for Canceled or Denied Instances & Apps.
+  On Instance and App detail pages, invalid Instance and Node Actions are no longer listed for Instances with a status of Canceled or Denied (Approval).
+
 Provisioning: System 'Existing' Instance Layouts removed.
   v4.1.2 no longer seeds the legacy and disabled "Existing" System Layout options.
 
@@ -155,22 +175,26 @@ Provisioning: System 'Existing' Instance Layouts removed.
 
 Roles: Identity Sources: Roles Admin permission
   Role permission for Identity Sources allowing the user to only edit Role Mappings and no other settings of the Identity Source.
+
 ServiceNow Plugin: App Provisioning
   Apps from Blueprints can now be provisioned from ServiceNow via the |morpheus| ServiceNow App. Blueprint section added to the ServiceNow Integration details page in |morpheus| for managing the Blueprints exposed in ServiceNow.
+
 ServiceNow: Plugin Support added for vCD, Xen, and ESXi Cloud Types
   The |morpheus| ServiceNow Plugin now supports vCloud Director (vCD), Xen, and ESXi Cloud Types.
-Security: opensaml updated
-  Addressed ``CVE-2015-1796 - opensaml-2.6.4 - A``
-Tenants: Logouts now redirect to subdomain login
-  When logging out of a sub-tenant, users are now redirected to the Tenants login url, rather than the Master Tenant login url.
-Tasks: Shell Task: KEY Field Added
-  Keys can now be used on Shell Tasks when using Remote Execution Targets
-Tasks: Remote Shell, Local Shell, SSH Script Tasks Merged into "Shell Script"
-  With the addition of task execution targets, the fRemote Shell Script, Local Shell Script and SSH Script task types offered redundant functionality and have been have been merged into a single "Shell Script" task type.
+
 Tasks: "WinRM Script" renamed "Powershell Script"
   The WinRM Script Task type has been renamed Powershell Script, as the Task Type supports Command Bus, Local and Guest Execution in addition to WinRM connections for executing Powershell Scripts.
 
   - Existing WinRM Script Tasks are not affected, this is only a label change.
+
+Tasks: Remote Shell, Local Shell, SSH Script Tasks Merged into "Shell Script"
+  With the addition of task execution targets, the fRemote Shell Script, Local Shell Script and SSH Script task types offered redundant functionality and have been have been merged into a single "Shell Script" task type.
+
+Tasks: Shell Task: KEY Field Added
+  Keys can now be used on Shell Tasks when using Remote Execution Targets
+
+Tenants: Logouts now redirect to subdomain login
+  When logging out of a sub-tenant, users are now redirected to the Tenants login url, rather than the Master Tenant login url.
 
 UI: Alarm Icon with Alarm Count badge added to Global Header
   Alarm Icon added to Global Header that links to Operations: Health: Alarms.
@@ -182,6 +206,7 @@ UI: Alarm Icon with Alarm Count badge added to Global Header
 
 VM "Dashboard" tab renamed "Summary"
   The "Dashboard" tab on Virtual Machine Detail pages (/infrastructure/servers/{id}) has been renamed to "Summary"
+
 Virtual Images: "OCI" added to Image Type Filter for Oracle Cloud Images
 
 Whitelabel: Security Banner section added
@@ -196,8 +221,70 @@ Workflows Provision Phase support for Cluster/Host Provisioning
 
 .. - Value of cypher created from API/CLI is a key pair string instead of just the value
 
+API Enhancements
+----------------
+
+- New Endpoint: `Service Plans <https://bertramdev.github.io/morpheus-apidoc/#service-plans>`_ ``/api/service-plans``
+- New Endpoint: `Appliance Settings <https://bertramdev.github.io/morpheus-apidoc/#appliance-settings>`_ ``/api/appliance-settings``
+- New Endpoint: `Backup Settings <https://bertramdev.github.io/morpheus-apidoc/index.html#backup-settings>`_ ``/api/backup-settings``
+- New Endpoint: `Clusters: Datastores <https://bertramdev.github.io/morpheus-apidoc/index.html#get-datastores>`_ ``/api/clusters/:id/datastores``
+- New Endpoint: `Log Settings <https://bertramdev.github.io/morpheus-apidoc/index.html#log-settings>`_ ``/api/log-settings``
+- New Endpoint: `Operational Workflows <https://bertramdev.github.io/morpheus-apidoc/index.html#create-an-operational-workflow>`_ ``/api/task-sets``
+- New Endpoint: `Operations - Health <https://bertramdev.github.io/morpheus-apidoc/index.html#health>`_ ``/api//health``
+- New Endpoint: `Provisioning > Jobs <https://bertramdev.github.io/morpheus-apidoc/index.html#jobs>`_ ``/api/jobs``
+- New Endpoint: `Provisioning Settings <https://bertramdev.github.io/morpheus-apidoc/index.html#provisioning-settings>`_ ``/api/provisioning-settings``
+- New Endpoint: `Whitelabel Settings <https://bertramdev.github.io/morpheus-apidoc/index.html#whitelabel-settings>`_ ``/api/whitelabel-settings``
+- New Endpoint: `Approvals <https://bertramdev.github.io/morpheus-apidoc/index.html#approvals>`_ ``/api/approvals``
+- New Endpoint: `Operations - Budgets <https://bertramdev.github.io/morpheus-apidoc/index.html#budgets>`_ ``/api/budgets``
+- New Endpoint: `Reports <https://bertramdev.github.io/morpheus-apidoc/index.html#reports>`_ ``/api/reports`` & ``/api/report-types``
+- Convert to Managed:  `Manual agent install flag added <https://bertramdev.github.io/morpheus-apidoc/index.html#convert-to-managed>`_ ``/api/servers/1/make-managed`` ``"installAgent": true`` Set to false to manually install agent instead
+
+
+CLI Enhancements
+----------------
+
+.. note:: CLI v4.1.9 corresponds to the release of the Morpheus API version 4.1.2
+
+- New command ``appliance-settings``
+- New command ``provisioning-settings``
+- New command ``whitelabel-settings``
+- New command ``log-settings``
+- New command ``approvals``
+- New command ``budgets``
+- New command ``health``
+- New command ``service-plans``
+- New command ``prices``
+- New command ``price-sets``
+- Updated command logs output format to match more closely with the UI. This includes logs list, instances logs, apps logs, etc.
+- Updated command cypher put to support more flexible format and store secret values as a string or object. Default TTL is now unlimited (0.)
+- Updated command workflows add to create operational workflows, associate option types and to prompt for inputs.
+- New subcommands workflows execute and tasks execute.
+- Updated prompting to support dependsOnCode option type setting. This improves prompting for commands like instances add where irrelevant or duplicate option prompts could be seen.
+
+CVE's Addressed
+---------------
+
+- CVE-2012-5783
+- CVE-2012-6153
+- CVE-2012-6708
+- CVE-2013-6440
+- CVE-2015-1796
+- CVE-2015-1796
+- CVE-2015-9251
+- CVE-2016-7954
+- CVE-2018-12629
+- CVE-2019-0232
+- CVE-2019-10072
+- CVE-2019-10202
+- CVE-2019-10202
+- CVE-2019-12402
+- CVE-2019-16869
+- CVE-2019-16892
+- CVE-2019-16942
+- CVE-2019-16943
+
 Fixes
------
+=====
 
 - Administration: Disabling a user account now clears user access token session
 - Agent Installation: SSH validation when using cloud-init agent install mode timeout increased from 2 seconds to 60 seconds
@@ -212,6 +299,10 @@ Fixes
 
 - Azure: Fix for validation of minimum root volume size requirement on Private Azure Images
 - Budgets. Fix for displayed currency when USD is not specified
+- CLI: Fixed an error seen on Windows with select prompting.
+- CLI: Fixed shell prompt still having ansi coloring with shell -C and after coloring off.
+- CLI: Fixed issue with -r [remote] still using the previous remote's active group for instances add, clusters add, apps add.
+- CLI: Fixed issue with the -F, --fields not excluding keys outside of the object scope. eg. meta: {...}.
 - Docker: Fix for inaccurate Used Memory stat on Docker Hosts with running Instances
 - ESXi: Fix for updating Image Store on Cloud Configuration not saving, using previous Image Store.
 - Infrastructure Clouds Actions menu
@@ -249,8 +340,6 @@ Fixes
 .. - [API] [UI] Sub tenant user cannot toggle feature using both API and UI for instance-types created by himself
 .. - [API] Failed to create role using API, however UI is able create the same.
 .. - [API] PUT /api/virtual-images is not disabling "installAgent" option for virtual images
-.. - Add Instance to Apps doesn't appear in UI"
-.. - Admin Integrations: Stealth - missing fields
 .. - API: Discovered VMs - start not working
 .. - API: Hosts: Convert to Managed: should return 404 not 200 when invalid server ID
 .. - Backup archives produced on QA are corrupt or not complete.
@@ -260,11 +349,6 @@ Fixes
 .. - CLI: Hosts: issues
 .. - CLI: networks & security-groups: add fails with resource group error
 .. - Cluster Add Node: Manual - not working due to form issues
-.. - Could not create NSX Edge Service Gateway on |morpheus| UI. Error "Resource pool 14 is not valid. Reconfigure NSX Edge appliance with valid resource pool or cluster and retry the operation." was shown in morpheus-ui log
-.. - Create/Edit NSX Edge Gateway operation is failing due to missing null protector on router.zone
-.. - NSX - cant create security rules
-.. - NSX - Error creating Logical Switch
-.. - NSX Integration Issues
 .. - Openstack VM's console does not work
 .. - OTC: Network/Router creation is missing SNAT and CIDR
 .. - Policies: Delayed Removal: not working properly for app instances & expired instances

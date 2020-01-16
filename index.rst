@@ -38,7 +38,6 @@
    release_notes/current.rst
    release_notes/compatibility.rst
    release_notes/previousReleases.rst
-   release_notes/API_CLI_updates.md
 
 .. toctree::
    :maxdepth: 1
