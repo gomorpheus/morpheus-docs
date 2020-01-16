@@ -14,11 +14,11 @@ The following covers upgrading the |morpheus| App nodes in Full HA Architecture 
 
     [root@app-server-3 ~]# morpheus-ctl stop
 
-    .. code-block:: bash
+   .. code-block:: bash
 
     [root@app-server-2 ~]# morpheus-ctl stop
 
-    .. code-block:: bash
+   .. code-block:: bash
 
     [root@app-server-1 ~]# morpheus-ctl stop
 
@@ -68,11 +68,11 @@ The following covers upgrading the |morpheus| App nodes in Full HA Architecture 
 
     [root@app-server-3 ~]# morpheus-ctl stop
 
-    .. code-block:: bash
+   .. code-block:: bash
 
     [root@app-server-2 ~]# morpheus-ctl stop
 
-    .. code-block:: bash
+   .. code-block:: bash
 
     [root@app-server-1 ~]# morpheus-ctl stop
 
