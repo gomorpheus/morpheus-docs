@@ -1,39 +1,85 @@
-3-Node HA Appliance Upgrade
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-3-Node HA Appliance represent 3 App nodes with local RabbitMQ and Elasticsearch services clustered across the app nodes, and an external Galera or Percona MySQL cluster.
-
-When upgrading a 3-Node appliance from 3.6.x to |morphver| the following services will be upgraded:
-
-- RabbitMQ upgrade to v3.7
-- Elasticsearch upgrade to v7.4
-
-The upgrade process will not upgrade the external MySQL node(s). Refer to :ref:`compatibility` for externalized database version requirements.
-
-Due to RabbitMQ going from 3.4 to 3.7, which has no rolling upgrade path, the RabbitMQ queues and configuration will be dropped, and the cluster will need to be configured and established again. This also ensures new queues are created using our new declaration settings, and removes any old queues not in use anymore.
-
-.. important:: Due to the RabbitMQ upgrade from 3.4 to 3.7, the RabbitMQ configuration will be dropped and the cluster will need to be configured and established again.
-
 CentOS / RHEL
 `````````````
-Applies to 3.6.x -> 4.0.x, 4.1.0 or 4.1.1
+
+The following covers upgrading the |morpheus| App nodes in 3 Node HA configurations to |morphver|.
+
+.. important:: The following is only for 3 Node HA Architecture configurations, where MySQL services are external to the App nodes.
+
+4.x -> |morphver|
+.................
+
+* Elasticsearch will be upgraded from 5.6 to 7.2.
 
 #. Starting with Node 3, on All App Nodes, stop all Morpheus services via ``morpheus-ctl stop``. This will stop all system services. If any services timeout, run ``morpheus-ctl stop`` again.
-   
+
    .. code-block:: bash
-    
+
     [root@app-server-3 ~]# morpheus-ctl stop
-    
+
     .. code-block:: bash
-    
+
     [root@app-server-2 ~]# morpheus-ctl stop
-    
+
     .. code-block:: bash
-    
+
     [root@app-server-1 ~]# morpheus-ctl stop
 
 #. Upgrade the rpm package on Node 1, then run a Reconfigure on Node 1
-  
+
+   .. code-block:: bash
+
+    [root@app-server-1 ~]# sudo wget https://packageUrl.morpheus-appliance-x.x.x-x.x86_64.rpm
+    [root@app-server-1 ~]# sudo rpm -Uhv morpheus-appliance-x.x.x-x.x86_64.rpm
+    [root@app-server-1 ~]# sudo morpheus-ctl reconfigure
+
+   .. note::
+
+   	All services will automatically start during the reconfigure process. After the reconfigure has succeeded, tail the ui service to watch ui startup logs with ``morpheus-ctl tail morpheus-ui``.
+
+#. Once Node 1 upgrade has completed and the u is available, upgrade the rpm package on Node 2, then run a Reconfigure on Node 2.
+
+   .. code-block:: bash
+
+    [root@app-server-2 ~]# sudo wget https://packageUrl.morpheus-appliance-x.x.x-x.x86_64.rpm
+    [root@app-server-2 ~]# sudo rpm -Uhv morpheus-appliance-x.x.x-x.x86_64.rpm
+    [root@app-server-2 ~]# sudo morpheus-ctl reconfigure
+
+#. Then upgrade the rpm package on Node 3, then run a Reconfigure on Node 3
+
+   .. code-block:: bash
+
+    [root@app-server-3 ~]# sudo wget https://packageUrl.morpheus-appliance-x.x.x-x.x86_64.rpm
+    [root@app-server-3 ~]# sudo rpm -Uhv morpheus-appliance-x.x.x-x.x86_64.rpm
+    [root@app-server-3 ~]# sudo morpheus-ctl reconfigure
+
+#. The upgrade is complete and the |morpheus|-ui services should be running with clustered Elasticsearch and RabbitMQ services across the 3 nodes.
+
+3.6.x -> |morphver|
+...................
+
+* RabbitMQ will be upgraded from 3.5 to 3.7. On 3-Node configurations, the RabbitMQ queues and configuration will be dropped and the cluster will need to be configured and established again.
+* Elasticsearch will be upgraded from 5.6 to 7.2. Refer to `Elasticsearch Upgrade Documentation <https://www.elastic.co/guide/en/elasticsearch/reference/current/setup-upgrade.html>`_ for upgrading external ES Clusters.
+* Stop all morpheus services, not just the morpheus-ui, before the upgrade. Although the upgrade process will also stop the services, take this step to ensure they are stopped.
+* Warnings about missing files during the removal phase are expected and can be ignored.
+* The |morpheus| package repo download location has changed to https://downloads.morpheusdata.com from https://downloads.gomorpheus.com. Update firewall and proxy ACLs when applicable.
+
+
+#. Starting with Node 3, on All App Nodes, stop all Morpheus services via ``morpheus-ctl stop``. This will stop all system services. If any services timeout, run ``morpheus-ctl stop`` again.
+
+   .. code-block:: bash
+
+    [root@app-server-3 ~]# morpheus-ctl stop
+
+    .. code-block:: bash
+
+    [root@app-server-2 ~]# morpheus-ctl stop
+
+    .. code-block:: bash
+
+    [root@app-server-1 ~]# morpheus-ctl stop
+
+#. Upgrade the rpm package on Node 1, then run a Reconfigure on Node 1
+
    .. code-block:: bash
 
     [root@app-server-1 ~]# sudo wget https://packageUrl.morpheus-appliance-x.x.x-x.x86_64.rpm
@@ -67,15 +113,15 @@ Applies to 3.6.x -> 4.0.x, 4.1.0 or 4.1.1
     [root@app-server-1 ~] rabbitmqctl set_policy -p morpheus --apply-to all --priority 1 ha ".*" '{"ha-mode":"all"}'
 
    .. important:: Failure to set the proper policies will result in degraded RabbitMQ performance, Java Heap issues, and/or refused RabbitMQ connections resulting in degraded |morpheus| UI performance, unconsumed messages or UI failure.
-   
+
 #. After reconfigure has completed on Nodes 2 and 3, stop the morpheus-ui service that was automatically started during the reconfigure process.
-  
+
     .. code-block:: bash
-    
+
      [root@app-server-2 ~]# morpheus-ctl stop morpheus-ui
-    
+
     .. code-block:: bash
-    
+
      [root@app-server-1 ~]# morpheus-ctl stop morpheus-ui
 
 #. Copy the secrets and erlang cookie from Node 1 to Nodes 2 and 3
@@ -108,7 +154,7 @@ Applies to 3.6.x -> 4.0.x, 4.1.0 or 4.1.1
 
    .. NOTE::
 
-      This step will fail. This is ok, and expected. If the reconfigure hangs then use Ctrl+C to quit the reconfigure run and force a failure.
+      If the reconfigure fails or hangs it is ok. If the reconfigure hangs then use Ctrl+C to quit the reconfigure run and force a failure. Another reconfigure will be run after clustering.
 
 #. Next on Node 2, ensure the ui is stopped, then stop and start RabbitMQ and join the Node to the Cluster. Do not stop and start RabbitMQ on Node 1.
 
@@ -152,13 +198,16 @@ Applies to 3.6.x -> 4.0.x, 4.1.0 or 4.1.1
      [root@app-server-3 ~]# rabbitmqctl start_app
 
      Starting node 'rabbit@app-server-3' ...
-     
-#. Next run a reconfigure on Nodes 2 & 3.
+
+#. Next run a final reconfigure on Nodes 2 & 3 and start the |morpheus| ui.
 
    .. code-block:: bash
 
     [root@app-server-2 ~] morpheus-ctl reconfigure
+    [root@app-server-2 ~] morpheus-ctl start morpheus-ui
+
     [root@app-server-3 ~] morpheus-ctl reconfigure
+    [root@app-server-3 ~] morpheus-ctl start morpheus-ui
 
 #. You will be able to verify that the UI services have restarted properly by inspecting the logfiles. A standard practice after running a restart is to tail the UI log file.
 

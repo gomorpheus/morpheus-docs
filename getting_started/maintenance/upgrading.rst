@@ -1,5 +1,7 @@
-Upgrading
----------
+.. _upgrading:
+
+Upgrading |morpheus|
+--------------------
 
 .. important:: |morpheus| v4.1.2+ requires Elasticsearch 7.x. Earlier versions of |morpheus| ran against Elasticsearch v5.x.
 
@@ -10,7 +12,6 @@ Upgrading
     - If log and stat data stored in Elasticsearch is not critical, a 5.x Elasticsearch data backup and restoration to 7.x, or a 5.x -> 6.x -7.x rolling upgrade is not necessary as |morphues| will rebuild the indices upon connection to the 7.x cluster.
 
     - Please refer to `Elasticsearch Upgrade Documentation <https://www.elastic.co/guide/en/elasticsearch/reference/current/setup-upgrade.html>`_ before installing or upgrading to v4.1.2 if your Appliance's Elasticsearch is external.
-
 
 Upgrade Requirements
 ^^^^^^^^^^^^^^^^^^^^
@@ -23,7 +24,7 @@ Upgrade Requirements
 
   .. important:: BACKUP YOUR DATABASE before the upgrade. You can use the appliance backup job in Morpheus, but make sure you download it before you do the upgrade.
 
-* RabbitMQ will be upgraded from 3.4.x to 3.7.x. On 3-Node configurations, the RabbitMQ queues and configuration will be dropped and the cluster will need to be configured and established again.
+* RabbitMQ will be upgraded to v3.7 on Appliances with RabbitMQ running on the app node (Single Node or "all-in-one" Appliances). On 3-Node configurations, the RabbitMQ queues and configuration will be dropped and the cluster will need to be configured and established again.
 * Elasticsearch will be upgraded from 5.x to 7.x. Refer to `Elasticsearch Upgrade Documentation <https://www.elastic.co/guide/en/elasticsearch/reference/current/setup-upgrade.html>`_ for upgrading external ES Clusters.
 * Stop all morpheus services, not just the morpheus-ui, before the upgrade. Although the upgrade process will also stop the services, take this step to ensure they are stopped.
 * Warnings about missing files during the removal phase are expected and can be ignored.
@@ -36,7 +37,6 @@ Refer to :ref:`compatibility` for externalized MySQL, Elasticsearch and/or Rabbi
 
 * Elasticsearch will be upgraded from 5.x to 7.x. Refer to `Elasticsearch Upgrade Documentation <https://www.elastic.co/guide/en/elasticsearch/reference/current/setup-upgrade.html>`_ for upgrading external ES Clusters.
 
-.. include:: /getting_started/maintenance/upgrades/singleNodeUpgrade.rst
-.. include:: /getting_started/maintenance/upgrades/3NodeUpgrade.rst
-.. include:: /getting_started/maintenance/upgrades/fullHaUpgrade.rst
-.. include:: /getting_started/maintenance/upgrades/esupgrade.rst
+.. include:: /getting_started/maintenance/upgrades/single/singlenode.rst
+.. include:: /getting_started/maintenance/upgrades/3node/overview.rst
+.. include:: /getting_started/maintenance/upgrades/fullha/overview.rst
