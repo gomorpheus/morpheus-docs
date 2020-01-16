@@ -5,8 +5,10 @@ The following covers upgrading the |morpheus| App nodes in 3 Node HA configurati
 
 .. important:: The following is only for 3 Node HA Architecture configurations, where MySQL services are external to the App nodes.
 
-4.x -> |morphver|
-.................
+|
+
+4.x -> |morphver| Upgrade
+.........................
 
 * Elasticsearch will be upgraded from 5.6 to 7.2.
 
@@ -16,11 +18,11 @@ The following covers upgrading the |morpheus| App nodes in 3 Node HA configurati
 
     [root@app-server-3 ~]# morpheus-ctl stop
 
-    .. code-block:: bash
+   .. code-block:: bash
 
     [root@app-server-2 ~]# morpheus-ctl stop
 
-    .. code-block:: bash
+   .. code-block:: bash
 
     [root@app-server-1 ~]# morpheus-ctl stop
 
@@ -54,8 +56,10 @@ The following covers upgrading the |morpheus| App nodes in 3 Node HA configurati
 
 #. The upgrade is complete and the |morpheus|-ui services should be running with clustered Elasticsearch and RabbitMQ services across the 3 nodes.
 
-3.6.x -> |morphver|
-...................
+|
+
+3.6.x -> |morphver| Upgrade
+...........................
 
 * RabbitMQ will be upgraded from 3.5 to 3.7. On 3-Node configurations, the RabbitMQ queues and configuration will be dropped and the cluster will need to be configured and established again.
 * Elasticsearch will be upgraded from 5.6 to 7.2. Refer to `Elasticsearch Upgrade Documentation <https://www.elastic.co/guide/en/elasticsearch/reference/current/setup-upgrade.html>`_ for upgrading external ES Clusters.
@@ -70,11 +74,11 @@ The following covers upgrading the |morpheus| App nodes in 3 Node HA configurati
 
     [root@app-server-3 ~]# morpheus-ctl stop
 
-    .. code-block:: bash
+   .. code-block:: bash
 
     [root@app-server-2 ~]# morpheus-ctl stop
 
-    .. code-block:: bash
+   .. code-block:: bash
 
     [root@app-server-1 ~]# morpheus-ctl stop
 
@@ -214,3 +218,6 @@ The following covers upgrading the |morpheus| App nodes in 3 Node HA configurati
    .. code-block:: bash
 
       root@app-server-2 ~]# morpheus-ctl tail morpheus-ui
+
+|
+|

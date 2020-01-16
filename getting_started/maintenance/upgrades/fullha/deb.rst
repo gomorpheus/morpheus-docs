@@ -5,8 +5,8 @@ The following covers upgrading the |morpheus| App nodes in Full HA Architecture 
 
 .. important:: The following is only for Full HA Architecture configurations, where MySQL, Elasticsearch and RabbitMQ services are external to the App nodes.
 
-4.x -> |morphver|
-.................
+4.x -> |morphver| Upgrade
+.........................
 
 * Elasticsearch 7.x is required for the external Elasticsearch cluster or services. Refer to `Elasticsearch Upgrade Documentation <https://www.elastic.co/guide/en/elasticsearch/reference/current/setup-upgrade.html>`_ for upgrading external ES Clusters. The |morpheus| |morphver| package upgrade and reconfigure process will NOT upgrade external services.
 
@@ -16,11 +16,11 @@ The following covers upgrading the |morpheus| App nodes in Full HA Architecture 
 
     [root@app-server-3 ~]# morpheus-ctl stop
 
-    .. code-block:: bash
+   .. code-block:: bash
 
     [root@app-server-2 ~]# morpheus-ctl stop
 
-    .. code-block:: bash
+   .. code-block:: bash
 
     [root@app-server-1 ~]# morpheus-ctl stop
 
@@ -55,8 +55,8 @@ The following covers upgrading the |morpheus| App nodes in Full HA Architecture 
 #. After all morpheus-ui services have finished loading, the upgrade is complete.
 
 
-3.6.x -> |morphver|
-...................
+3.6.x -> |morphver| Upgrade
+...........................
 
 * MySQL 5.7.x is required for external MySQL clusters or services. Refer to `Percona Upgrade Documentation <https://www.percona.com/doc/percona-server/5.7/upgrading_guide_56_57.html>`_ for upgrading external Percona Clusters. The |morpheus| |morphver| package upgrade and reconfigure process will NOT upgrade external services.
 
@@ -71,11 +71,11 @@ The following covers upgrading the |morpheus| App nodes in Full HA Architecture 
 
     [root@app-server-3 ~]# morpheus-ctl stop
 
-    .. code-block:: bash
+   .. code-block:: bash
 
     [root@app-server-2 ~]# morpheus-ctl stop
 
-    .. code-block:: bash
+   .. code-block:: bash
 
     [root@app-server-1 ~]# morpheus-ctl stop
 
