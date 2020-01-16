@@ -35,7 +35,7 @@ Add NSX Integration
 Once the NSX Integration is added |morpheus| will sync in existing Transport Zones, Logical Switches, and Edge Gateways. New Transport Zones, Logical Switches, and Edge Gateways can be now be created.
 
 Summary View
-^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^
 
 When accessing an NSX integration (``Infrastructure > Network > Integrations``), you're taken to the SUMMARY tab by default. As of Morpheus version 4.1.2, the NSX-V integration includes an enhanced summary view that includes global, system, and component statuses, as well as enhanced stats. As of Morpheus version 4.1.2, you can also force a manual refresh of the integration details by clicking :guilabel:`ACTIONS` > Refresh.
 
@@ -58,7 +58,7 @@ Create NSX Transport Zone
     Select the Cluster the Transport Zone will be provisioned to
 
 Switches
-^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^
 
 Morpheus version 4.1.2 adds SWITCHES tab to view switches associated with the selected NSX integration. Information displayed on each switch include the following:
 
@@ -133,7 +133,7 @@ The new Edge Gateway detail view includes the following tabs:
 - ROUTING: Includes details on configured routes and includes the ability to create routes
 
 Firewall
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^
 
 Morpheus version 4.1.2 adds a FIREWALL tab which allows you to view existing firewall rules as well as create new rules and groups. From the rules summary list, the following fields are displayed for each rule:
 
@@ -168,7 +168,7 @@ To create a new rule:
   :align: center
 
 Logical Routers
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^‰
 
 Morpheus version 4.1.2 adds a Logical Routers section to the NSX integration, including the ability to view and create new logical routers. From the LOGICAL ROUTERS tab, a list of logical routers associated with your selected integration is shown. Values displayed for each logical router include the following:
 
