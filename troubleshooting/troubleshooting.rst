@@ -4,4 +4,4 @@ Troubleshooting
 
 .. toctree::
       :glob:
-      /troubleshooting/*
+      *
