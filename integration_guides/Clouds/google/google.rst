@@ -1,5 +1,5 @@
 Google
--------
+------
 
 Requirements
 ^^^^^^^^^^^^
@@ -10,7 +10,6 @@ Requirements
 
 .. IMAGE:: /images/integration_guides/clouds/Google-API-Compute.png
 
-
 Features
 ^^^^^^^^^
 * Provisioning Virtual Machines
@@ -20,9 +19,10 @@ Features
 * Brownfield Inventory
 * Costing
 * Right sizing
+* Shared Network Support
 
 Add a Google Cloud
-^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^
 
 .. TIP:: All of the required Google Cloud credentials can be found in the .json file created when generating a key for a Google Cloud service account.
 
