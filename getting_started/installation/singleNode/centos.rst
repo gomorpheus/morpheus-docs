@@ -1,5 +1,5 @@
-CentOS
-^^^^^^
+Single Node Install on CentOS
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 To get started installing |morpheus| on CentOS a few preparatory items should be addressed first.
 

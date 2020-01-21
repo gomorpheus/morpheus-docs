@@ -1,5 +1,5 @@
-RHEL
-^^^^
+Single Node Install on RHEL
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 To get started installing |morpheus| on RHEL/RedHat 7 a few prerequisite items are required.
 

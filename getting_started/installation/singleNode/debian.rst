@@ -1,5 +1,5 @@
-Debian/Ubuntu
-^^^^^^^^^^^^^
+Single Node Install on Debian/Ubuntu
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 To get started installing |morpheus| on Ubuntu or Debian a few preparatory items should be addressed first.
 
