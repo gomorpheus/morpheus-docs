@@ -4,6 +4,6 @@ Installation
 .. toctree::
    :maxdepth: 2
 
-   installation/overview
-   installation/singleNode/singleNode
-   installation/distributed/distributed
+   /getting_started/installation/overview.rst
+   /getting_started/installation/singleNode/singleNode.rst
+   /getting_started/installation/distributed/distributed.rst
