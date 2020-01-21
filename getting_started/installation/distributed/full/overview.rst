@@ -67,6 +67,5 @@ Default Locations
   * Morpheus-UI: ``/var/log/morpheus/morpheus-ui``
   * NGINX: ``/var/log/morpheus/nginx``
   * Check Server: ``/var/log/morpheus/check-server``
-  * Redis: ``/var/log/morpheus/redis``
 
 *  User-defined install/config: ``/etc/morpheus/morpheus.rb``
