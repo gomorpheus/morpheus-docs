@@ -4,6 +4,6 @@ Installation
 .. toctree::
    :maxdepth: 2
 
-   overview
-   singleNode/*
-   distributed/*
+   installation/overview
+   installation/singleNode/singleNode
+   installation/distributed/distributed
