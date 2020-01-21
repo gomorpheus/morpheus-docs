@@ -31,7 +31,7 @@ phpIPAM                 1.3.1
 **Backups**             ..
 Veeam                   9.5
 Commvault               v11 sp 12
-Rubrik                  4.2
+Rubrik                  5.0.3
 Avamar                  18.1
 **Containers**          ..
 Docker                  1.12.6
