@@ -43,7 +43,7 @@ PASSWORD
 Inventory Existing Instances
   If enabled, existing Virtual Machines will be inventoried and appear as unmanaged Virtual Machines in |morpheus| .
 
-.. include:: /integration_guides/advanced_options.rst
+.. include:: /integration_guides/Clouds/advanced_options.rst
 
 Service Plans
 ^^^^^^^^^^^^^
