@@ -2,7 +2,6 @@ Clouds
 ======
 
 .. toctree::
-  :maxdepth: 2
-  :glob:
+      :glob:
 
-    Clouds/*
+      Clouds/*
