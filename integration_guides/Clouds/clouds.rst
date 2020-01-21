@@ -4,4 +4,4 @@ Clouds
 .. toctree::
       :glob:
 
-      Clouds/*
+      /integration_guides/Clouds/*
