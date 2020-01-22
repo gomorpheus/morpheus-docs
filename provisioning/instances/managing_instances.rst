@@ -8,7 +8,7 @@ Edit
 Delete
   Deletes the Instance.
 
-.. IMPORTANT:: Deleting an Instance will delete associated VM's or Containers and cannot be undone. To delete instances without deleting associated VM's, delete the VM from the Infrastructure section and uncheck "Remove Infrastructure" while checking "Remove Associated Instances" in the delete modal options.
+.. IMPORTANT:: Deleting an Instance will delete the actual VM's or Containers and cannot be undone, unless a Delayed Removal policy has been applied prior to the Deletion. To delete Instances without deleting associated VM's, delete the Instances VM record(s) from the Infrastructure section with "Remove Infrastructure" deselected and select "Remove Associated Instances" in the VM delete modal options. This will delete the records in |morpheus| but leave the infrastructure in place.
 
 .. TIP:: You can change the owner of an instance easily by selecting the edit button and entering a new owner in the corresponding field.
 
@@ -24,9 +24,9 @@ Stop/Start/Restart Service
 Stop/Start/Restart Server
   Stops, Starts or Restarts the Virtual Machine.
 Import as Image
-  Creates a Virtual Image Blueprint from the Instance at its current state and adds it to the Virtual Image library with corresponding metadata.
+  Clones and exports VM in its current state to target Storage provider and adds Virtual Image Record with metadata matching the source Instance's configuration.
 Clone to Image
-  Stores the image in vCenter as a virtual image record
+  Clones and converts VM in its current state to image in the source Cloud and adds Virtual Image Record with metadata matching the source Instance's configuration.
 Lock/Unlock Instance
   A locked instance cannot be deleted until it is unlocked.
 Reconfigure
@@ -67,6 +67,6 @@ Performing Instance Actions
 Notes
 ^^^^^
 
-Every Instance has a Notes section for adding useful information about the Instance. Notes can be added by selecting the ``ADD NOTES`` button on the bottom of Instance Detail pages. Existing notes can be edited by selecting the ``EDIT NOTES``
+Every Instance has a Wiki section for adding useful information about the Instance. Wiki can be added by selecting the Wiki tab button on the bottom of Instance Detail pages. Instances with associated VMware VM's will bi-directionally sync |morpheus| Instance Wiki content and VMware VM Notes. See the :ref:`wiki` Section for more details.
 
-.. TIP:: Markdown Syntax is supported in Instance Notes.
+.. TIP:: Markdown Syntax is supported in Wikis.
