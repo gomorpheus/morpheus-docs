@@ -5,7 +5,7 @@ Add Storage Server
 ^^^^^^^^^^^^^^^^^^
 
 Adding 3Par Storage Server
-...........................
+``````````````````````````
 
 #. Select the Infrastructure link in the navigation bar.
 #. Select the Storage link in the sub navigation bar.
@@ -31,7 +31,7 @@ The 3Par Storage Server will be added and displayed in the Buckets tab.
 Buckets, Files Shares and Storage Groups will be synced in.
 
 Adding Dell EMC ECS Storage Server
-..................................
+``````````````````````````````````
 
 #. Select the Infrastructure link in the navigation bar.
 #. Select the Storage link in the sub navigation bar.
@@ -65,7 +65,7 @@ The Dell EMC ECS Storage Server will be added and displayed in the Buckets tab.
 Buckets, Files Shares and Storage Groups will be synced in.
 
 Adding Dell EMC Isilon Storage Server
-.....................................
+`````````````````````````````````````
 
 #. Select the Infrastructure link in the navigation bar.
 #. Select the Storage link in the sub navigation bar.

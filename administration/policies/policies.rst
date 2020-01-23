@@ -1,3 +1,5 @@
+.. _policies:
+
 Policies
 ========
 
@@ -9,10 +11,33 @@ Policies add governance, ease of use, cost-savings, and auditing features to |mo
 Policy Types
 ------------
 
+Policies: New s Policy
+  Backup Targets Policy Type added.
+
+Policies: New  Policy
+  Delayed Removals allow for soft deletion of Instances and Apps. Instead of deleting immediately, Instances and Apps with a Delayed Removal policy applied will be shutdown upon deletion request and hidden by default from the ui. The Instance/App will then be in ``Pending Removal`` status.
+
+  - If no action is taken, the resources will be deleted in the timeframe set in the policy.
+  - An ``Undo Delete`` action is available for Instance and Apps in pending removal status. Triggering ``Undo Delete`` will remove the scheduled deletion and restore the Instance or App status to stopped.
+  - A new ``Pending Removal`` filter has been added to ``/provisioning/instances`` and ``/provisioning/apps``
+  - Delayed Removal policies do not current apply to Docker Hosts or Discovered VM's.
+  - Available Scopes for Delayed Removal policies are Global, Cloud, Group, User and Role and can be applied to a single or multiple Tenants.
+
+Policies: New Message of the Day (MOTD) Policy
+  Message of the Day"" Policy for displaying Alerts in |morpheus|.
+
+  - Configurable as a pop-up or full-page notification with Info, Warning and Critical message types.
+  - Includes new Role Permission: Admin: Message Of the Day - None/Full
+
+
 Backup Creation
   Disable or enable the ability to create a backup when provisioning an instance.
+Backup Target
+  A master account can determine storage provider options for backups with Backup Targets policies.
 Budget
   Sets a maximum total combined price for all instances in the Group, Cloud, Tenant or owned by the User this policy is applied to.
+Delayed Removal
+  Delayed Removals allow for soft deletion of Instances and Apps. Instead of deleting immediately, Instances and Apps with a Delayed Removal policy applied will be shutdown upon deletion request and hidden by default from the ui. The Instance/App will then be in ``Pending Removal`` status.
 Expiration
   Sets an expiration timeframe in days after which the Instance will be deleted. Extensions can be auto-approved or require approval immediately or after x amount of auto-extensions using Morpheus Approvals or an Approval Integration.
 File Share Storage Quota
@@ -35,6 +60,11 @@ Max Storage
   Sets the max number of total of Storage combined for Instances in the Group or Cloud the Policy is added to.
 Max VMs
   Sets the max number of Virtual Machines for the Group or Cloud the Policy is added to.
+Message of the Day (MOTD)
+  Message of the Day"" Policy for displaying Alerts in |morpheus|. Configurable as a pop-up or full-page notification with Info, Warning and Critical message types.
+
+  .. note:: Requires Role Permission: ``Admin: Message Of the Day`` -> Full to create and manage MOTD Policies.
+
 Object Storage Quota
   Sets a Storage Quota for Object Storage usage (in GB) to scoped User, Role, Tenant or Global.
 Power Scheduling

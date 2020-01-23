@@ -1,138 +1,45 @@
-Upgrading
-=========
+.. _upgrading:
 
-4.x Upgrade Requirements
-------------------------
+Upgrading |morpheus|
+--------------------
+
+.. important:: |morpheus| v4.1.2+ requires Elasticsearch 7.x. Earlier versions of |morpheus| ran against Elasticsearch v5.x.
+
+    - The Elasticsearch version for Appliance configurations with the default local Elasticsearch target will automatically be upgraded and no manual upgrade is required.
+    - For Appliance configurations with an existing external Elasticsearch service, an upgrade of Elasticsearch to v7.x is required to upgrade |morpheus| to v4.1.2+.
+    - |morpheus| can also be pointed to a new Elasticsearch 7.x cluster or service as an alternate to upgrading an existing cluster.
+    - Elasticsearch data will not be retained during a direct 5.x to 7.x upgrade by default. Please refer to Elasticsearch documentation if backing up and restoring your 5.x Elasticsearch |morpheus| data is required.
+    - If log and stat data stored in Elasticsearch is not critical, a 5.x Elasticsearch data backup and restoration to 7.x, or a 5.x -> 6.x -7.x rolling upgrade is not necessary as |morpheus| will rebuild the indices upon connection to the 7.x cluster.
+
+    - Please refer to `Elasticsearch Upgrade Documentation <https://www.elastic.co/guide/en/elasticsearch/reference/current/setup-upgrade.html>`_ before installing or upgrading to v4.1.2 if your Appliance's Elasticsearch is external.
+
+Upgrade Requirements
+^^^^^^^^^^^^^^^^^^^^
+
+3.6.x to |morphver| Upgrade
+```````````````````````````
 
 * Only appliances running Morpheus v3.6.0 or higher can upgrade to 4.x.
 * MySQL will be upgraded to 5.7.x on Appliances with MySQL running on the app node (Single Node or "all-in-one" Appliances). Backup your database before running the upgrade.
 
-   .. important:: BACKUP YOUR DATABASE before the upgrade. You can use the appliance backup job in Morpheus, but make sure you download it before you do the upgrade.
+  .. important:: BACKUP YOUR DATABASE before the upgrade. You can use the appliance backup job in Morpheus, but make sure you download it before you do the upgrade.
 
-* RabbitMQ will be upgrade from 3.4.x to 3.7.x. On 3-Node configurations, the RabbitMQ queues and configuration will be dropped and the cluster will need to be configured and established again.
+* RabbitMQ will be upgraded to v3.7 on Appliances with RabbitMQ running on the app node (Single Node or "all-in-one" Appliances). On 3-Node configurations, the RabbitMQ queues and configuration will be dropped and the cluster will need to be configured and established again.
+* Elasticsearch will be upgraded from 5.x to 7.x. Refer to `Elasticsearch Upgrade Documentation <https://www.elastic.co/guide/en/elasticsearch/reference/current/setup-upgrade.html>`_ for upgrading external ES Clusters.
 * Stop all morpheus services, not just the morpheus-ui, before the upgrade. Although the upgrade process will also stop the services, take this step to ensure they are stopped.
 * Warnings about missing files during the removal phase are expected and can be ignored.
-5. The repo download location has changed to https://downloads.morpheusdata.com from https://downloads.gomorpheus.com so if a customer has an ACL on their firewall or proxy they will need to update the ACL.
+* The repo download location has changed to https://downloads.morpheusdata.com from https://downloads.gomorpheus.com so if a customer has an ACL on their firewall or proxy they will need to update the ACL.
 
-When externalizing MySQL, Elasticsearch and/or RabbitMQ services, the following versions are compatible with Morpheus 4.1.0:
+Refer to :ref:`compatibility` for externalized MySQL, Elasticsearch and/or RabbitMQ version requirements.
 
-+---------------------------------------+----------------------+-----------------------------+
-| **Service**                           |**Compatible Branch** | **4.1.0 Installed Version** |
-+---------------------------------------+----------------------+-----------------------------+
-| MySQL                                 | 5.7                  | 5.7.27                      |
-+---------------------------------------+----------------------+-----------------------------+
-| Elasticsearch: 5.6 (5.6.16 installed) | 5.6                  | 5.6.16                      |
-+---------------------------------------+----------------------+-----------------------------+
-| RabbitMQ: 3.7 (3.7.16 installed)      | 3.7                  | 3.7.16                      |
-+---------------------------------------+----------------------+-----------------------------+
+4.x to |morphver| Upgrade
+`````````````````````````
 
-Single Node Appliance Upgrade
------------------------------
+* Elasticsearch will be upgraded from 5.x to 7.x. Refer to `Elasticsearch Upgrade Documentation <https://www.elastic.co/guide/en/elasticsearch/reference/current/setup-upgrade.html>`_ for upgrading external ES Clusters.
 
-When upgrading from 3.6.x to 4.0.0 or 4.1.0, the following services will be upgraded on Single Node (all-in-one) Appliances:
-
-- MySQL upgrade to v5.7
-- RabbitMQ upgrade to v3.7
-- Elasticsearch upgrade to v5.6
-
-Debian / Ubuntu
-^^^^^^^^^^^^^^^
-
-To upgrade Morpheus running on Ubuntu/Debian, download and install the new deb package, stop the morpheus-ui, reconfigure and start the morpheus-ui:
-
-.. code-block:: bash
-
-  sudo wget https://packageUrl.morpheus-appliance_x.x.x-x.amd64.deb
-  sudo morpheus-ctl stop
-  sudo dpkg -i morpheus-appliance_x.x.x-1.amd64.deb
-  sudo morpheus-ctl reconfigure
-
-.. note:: In 4.x the morpheus-ui service will automatically start after reconfigure succeeds.
-
-CentOS / RHEL
-^^^^^^^^^^^^^
-
-To upgrade Morpheus running on CentOS/RHEL, download and install the new rpm package, stop the morpheus-ui, reconfigure and then start the morpheus-ui:
-
-.. code-block:: bash
-
-  sudo wget https://packageUrl.morpheus-appliance-x.x.x-x.x86_64.rpm
-  sudo morpheus-ctl stop
-  sudo rpm -Uhv morpheus-appliance-x.x.x-x.x86_64.rpm
-  sudo morpheus-ctl reconfigure
-
-.. note:: In 4.x the morpheus-ui service will automatically start after reconfigure succeeds.
-
-3-Node Appliance Upgrade
-------------------------
-
-When upgrading a 3-Node appliance from 3.6.x to 4.0.0 or 4.1.0, the following services will be upgraded:
-
-- RabbitMQ upgrade to v3.7
-- Elasticsearch upgrade to v5.6
-
-The upgrade process will not upgrade the external MySQL node(s). MySQL v5.7 is required for external databases.
-
-Due to RabbitMQ going from 3.4.x to 3.7.x, which has no direct upgrade path, the RabbitMQ queues and configuration will be dropped, and the cluster will need to be configured and established again. This also ensures new queues are created using our new declaration settings, and removes any old queues not in use anymore.
-
-.. important:: Due to the RabbitMQ upgrade from 3.4.x to 3.7.x, the RabbitMQ queues and configuration will be dropped and the cluster will need to be configured and established again.
-
-1. Stop all Morpheus services via ``morpheus-ctl stop`` on all Nodes
-2. Upgrade Node 1, then run a reconfigure on Node 1
-3. Upgrade Node 2, then run a reconfigure on Node 2
-4. Upgrade Node 3, then run a reconfigure on Node 3
-5. Establish the RabbitMQ cluster again using the steps from the 3 Node install guide.
-6. Start all services
-
-Other Appliance Configurations Upgrades
----------------------------------------
-
-When upgrading other Appliance Configurations from 3.6.x to 4.0.0 or 4.1.0, only services local to the Morpheus App node(s) will be upgraded. For fully distributed configurations, where MySQL, RabbitMQ and Elasticsearch are external, the upgrade process will not upgrade the external serviced.
-
-When externalizing MySQL, Elasticsearch and/or RabbitMQ services, the following versions are compatible with Morpheus 4.1.0:
-
-+---------------------------------------+----------------------+-----------------------------+
-| **Service**                           |**Compatible Branch** | **4.1.0 Installed Version** |
-+---------------------------------------+----------------------+-----------------------------+
-| MySQL                                 | 5.7                  | 5.7.27                      |
-+---------------------------------------+----------------------+-----------------------------+
-| Elasticsearch: 5.6 (5.6.16 installed) | 5.6                  | 5.6.16                      |
-+---------------------------------------+----------------------+-----------------------------+
-| RabbitMQ: 3.7 (3.7.16 installed)      | 3.7                  | 3.7.16                      |
-+---------------------------------------+----------------------+-----------------------------+
-
-
-Fix if Install Hangs
---------------------
-
-Some very old all-in-one appliances may hang during the mysql upgrade process during the 4.0.0 deb or rpm package upgrade.
-
-To resolve, run the following in a separate session while the process is hanging:
-
-#. Create a file ``vi mysqlfix``
-#. paste the following:
-
-   .. code-block:: bash
-
-          export PATH=/opt/morpheus/sbin:/opt/morpheus/sbin:/opt/morpheus/embedded/sbin:/opt/morpheus/embedded/bin:$PATH
-          MYSQL_ROOT=$(grep root /etc/morpheus/morpheus-secrets.json | awk '{print substr($2,2,length($2)-3)}')
-          if [[ -z $MYSQL_ROOT ]]; then
-            echo "Failed to lookup the MySQL root password, please enter it when prompted."
-          else
-            /opt/morpheus/embedded/bin/mysqld_safe --defaults-file=/opt/morpheus/embedded/mysql/my.cnf \
-              --log-error=/var/log/morpheus/mysql/mysql_error.log --pid-file=/var/run/morpheus/mysqld/mysqld.pid &
-            until [[ -S /var/run/morpheus/mysqld/mysqld.sock ]]; do
-              sleep 1
-            done
-            /opt/morpheus/embedded/bin/mysql_upgrade --defaults-extra-file=/opt/morpheus/embedded/mysql/my.cnf -u root -p${MYSQL_ROOT}
-            /opt/morpheus/embedded/bin/mysqladmin --defaults-extra-file=/opt/morpheus/embedded/mysql/my.cnf -u root -p${MYSQL_ROOT} shutdown
-            touch /var/opt/morpheus/mysql/.mysql57_table_upgrade_done
-          fi
-
-#. Run ``./mysqlfix``
-
-The upgrade will then proceed.
-
-
-.. include:: ssl-import.rst
-.. include:: wars.rst
+.. toctree::
+   :maxdepth: 2
+      
+   upgrades/single/singlenode.rst
+   upgrades/3node/overview.rst
+   upgrades/fullha/overview.rst

@@ -14,7 +14,7 @@ Configuring Networks
 ^^^^^^^^^^^^^^^^^^^^
 
 DHCP
-....
+````
 
 To configure a network for DHCP:
 
@@ -33,7 +33,7 @@ To configure a network for DHCP:
 .. NOTE:: When selecting a network with DHCP enabled during provisioning, "DHCP" will populate to the right of the selected network:
 
 Static and IP Pools
-...................
+```````````````````
 
 To configure a network for Static IP Assignment:
 
@@ -73,14 +73,14 @@ To configure a network for Static IP Assignment:
 .. NOTE:: When selecting a network with an IP Pool assigned during provisioning, the name of the IP pool will populate to the right of the selected network(s). IP Pools override DHCP.
 
 Advanced Options (Scan Network)
-................................
+```````````````````````````````
 
 When adding or editing a network there is an option to scan network.  If checked scan network will ping the IP's in the network range, and if ping is successful Morpheus will quickly check for listening ports on the IP.
 
 .. IMPORTANT:: Network scanning may cause network monitoring or other alerts
 
 Subnets
-................................
+```````
 
 Subnet details can be viewed from the `SUBNETS` tab on the detail page of a specific network. From the `SUBNETS` tab, Morpheus allows the user to search and edit existing subnets. In an Azure VNet, you can also create new subnets with the `+ADD` button.
 

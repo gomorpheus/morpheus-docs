@@ -1,7 +1,7 @@
-Ubuntu
-------
+Single Node Install on Debian/Ubuntu
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-To get started installing |morpheus| on Ubuntu a few preparatory items should be addressed first.
+To get started installing |morpheus| on Ubuntu or Debian a few preparatory items should be addressed first.
 
 #. First make sure the apt repository is up to date by running ``sudo apt-get update``. It is advisable to verify the assigned hostname of the machine is self-resolvable.
 
@@ -29,7 +29,7 @@ To get started installing |morpheus| on Ubuntu a few preparatory items should be
 
    .. NOTE:: The `morpheus-ui` can take 2-3 minutes to startup before it becomes available.
 
-There are additional post install settings that can be viewed in the Advanced section of the guide.
+There are additional install settings that can be viewed in the :ref:`additional_options` section.
 
 Once the browser is pointed to the appliance a first time setup wizard will be presented. Please follow the on screen instructions by creating the master account. From there you will be presented with the license settings page where a license can be applied for use (if a license is required you may request one or purchase one by contacting your sales representative).
 

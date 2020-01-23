@@ -1,5 +1,5 @@
 Scaling Morpheus Nodes
------------------------
+----------------------
 
 Morpheus App nodes can be scaled to accommodate additional load. Appliance nodes can be scaled vertically in centralized architectures, and both vertically and horizontally in distributed architectures.
 
@@ -28,7 +28,7 @@ Additional Morpheus App Nodes can be added at any time to Fully Distributed Arch
 
 - Configure Shared Storage paths for the new App Node(s)
 - Install, but do not run the ``morpheus-ctl reconfigure`` command on the new App Node(s), using the same Morpheus version as the existing Appliance nodes.
-- Copy the ``morphues.rb`` from an existing App Node to the new App Node(s)
+- Copy the ``morpheus.rb`` from an existing App Node to the new App Node(s)
 - Ensure permissions and network configuration for the new App Node(s) to access all MySQL and Elasticsearch nodes, and the RabbitMQ VIP.
 - Ensure permissions and network configuration for all required UI services and Integrations, such as network access to ESXi hosts over 443 for Hypervisor console and/or image transfers.
 - Add associated SSL files and configuration, of not on shared storage.
@@ -38,6 +38,4 @@ Additional Morpheus App Nodes can be added at any time to Fully Distributed Arch
 
 During ``morpheus-ctl reconfigure``, the new App Node(s) will validate and be configured to use the existing tiers for the UI service. Upon successful reconfigure, the Morpheus service will be available on the App Node(s) with consistent data and capabilities.
 
-.. note:: No services, including ``morphues-ui``, are required to be shut down on existing nodes when adding new App Nodes
-
- 
+.. note:: No services, including ``morpheus-ui``, are required to be shut down on existing nodes when adding new App Nodes

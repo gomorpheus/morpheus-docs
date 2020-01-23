@@ -43,18 +43,31 @@ To allow Percona XtraDB Cluster functionality when SELinux is ``Enforcing``, run
 
     .. code-block:: bash
 
-      [root]# vi PXC.te
+     [root]# vi PXC.te
 
-      module PXC 1.0;
+       require {
+               type unconfined_t;
+               type mysqld_t;
+               type unconfined_service_t;
+               type tmp_t;
+               type sysctl_net_t;
+               type kernel_t;
+               type mysqld_safe_t;
+               class process { getattr setpgid };
+               class unix_stream_socket connectto;
+               class system module_request;
+               class file { getattr open read write };
+               class dir search;
+        }
 
-      require {
-              type mysqld_t;
-              class process setpgid;
-              class unix_stream_socket connectto;
-      }
+        #============= mysqld_t ==============
 
-      #============= mysqld_t ==============
-      allow mysqld_t self:process setpgid;
+        allow mysqld_t kernel_t:system module_request;
+        allow mysqld_t self:process { getattr setpgid };
+        allow mysqld_t self:unix_stream_socket connectto;
+        allow mysqld_t sysctl_net_t:dir search;
+        allow mysqld_t sysctl_net_t:file { getattr open read };
+        allow mysqld_t tmp_t:file write;
 
 #. Compile and load the SELinux policy
 
@@ -340,7 +353,9 @@ Verify Configuration
 
        [root@allDbNodes]# grep -i denied /var/log/audit/audit.log | grep mysqld_t
 
-   If there are any results, run the following to update the SELinux Policy:
+   If there are any results, address the source or update the SELinux Policy to resolve.
+
+..   #. Set SELinux to permissive.
 
    .. code-block:: bash
 

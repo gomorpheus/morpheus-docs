@@ -1,5 +1,5 @@
 Dell ECS
----------
+--------
 
 Overview
 ^^^^^^^^
@@ -23,7 +23,7 @@ Storage Servers
 The first step in the Dell EMC ECS integration is to add a Dell EMC ECS Storage Server. Once added, Buckets, Files Shares and Storage Groups will be synced in and can be access and managed in |morpheus|.
 
 Adding Dell EMC ECS Storage Server
-..................................
+``````````````````````````````````
 
 #. Select the Infrastructure link in the navigation bar.
 #. Select the Storage link in the sub navigation bar.

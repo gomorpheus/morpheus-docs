@@ -1,5 +1,5 @@
 Infoblox
----------
+--------
 
 Features
 ^^^^^^^^
@@ -28,7 +28,7 @@ Adding Infoblox Integration
    URL
     Infoblox wapi url. Example: https://x.x.x.x/wapi/v2.2.1
 
-    .. INFO:: The Infoblox wapi version can be found at https://x.x.x.x/wapidoc/
+    .. info:: The Infoblox wapi version can be found at https://x.x.x.x/wapidoc/
 
    USERNAME
     Infoblox user username
@@ -59,7 +59,7 @@ Upon save the Infoblox IPAM integration will be created and the following will s
   .. image:: /images/infrastructure/network/infoblox/infoblox_zonerecords.png
 
 Adding IP Pools to Networks
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 |morpheus| can automatically assign the next available Infoblox IP in an IP/Network Pool and create the corresponding DNS records, as well as remove the records upon teardown. To enable this, add an Infoblox IP/Network Pool to the `Network Pool` section on a Network(s).
 
@@ -74,9 +74,9 @@ Adding IP Pools to Networks
 #. Select :guilabel:`SAVE CHANGES`
 
 
-
 Creating Host Records
 ^^^^^^^^^^^^^^^^^^^^^
+
 #. Select a Network Pool from `Infrastructure - Network - IP Pools` or `Infrastructure - Network - Services - Infoblox`
 #. Select :guilabel:`+ ADD`
 #. Enter the following

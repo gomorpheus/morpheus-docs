@@ -5,7 +5,7 @@ Configuration
 ^^^^^^^^^^^^^
 
 Add vCD Cloud From `Infrastructure -> Clouds`
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+`````````````````````````````````````````````
 
 #. Navigate to ``Infrastructure -> Clouds``
 #. Select :guilabel:`+ ADD`
@@ -47,7 +47,7 @@ Add vCD Cloud From `Infrastructure -> Clouds`
 
 
 Add vCD Cloud From `Infrastructure -> Groups`
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+`````````````````````````````````````````````
 
 #. Navigate to ``Infrastructure -> Groups``
 #. Select a Group

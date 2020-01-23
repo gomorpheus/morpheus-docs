@@ -12,15 +12,11 @@ TIME ZONE
 DATACENTER ID
   Used for differentiating pricing among multiple datacenters. Leave blank unless prices are properly configured.
 NETWORK MODE
-  Unmanaged or Managed
-HOST FIREWALL
-  On or Off. Enable to managed Host firewall/IP Table rules (linux only)
-SECURITY MODE
-  Defines if Morpheus will control local firewall of provisioned servers and hosts.
-
-  .. IMPORTANT:: When local firewall management is enabled, Morpheus will automatically set an IP table rule to allow incoming connections on tcp port 22 from the Morpheus Appliance.
+  Unmanaged or select a Network Integration (NSX, ACI etc) 
+LOCAL FIREWALL
+  On or Off. Enable to managed Host and VM firewall/IP Table rules (linux only)
 SECURITY SERVER
-  Select security off or Local Firewall
+  Security Server setting is for Security Service Integrations such as ACI
 TRUST PROVIDER
   Select Internal (Morpheus) or an existing Trust Provider Integration
 STORAGE MODE
@@ -45,9 +41,9 @@ CHANGE MANAGEMENT
   Select an existing Change Management Integration to set on the Cloud. ex: Cherwell
 AGENT INSTALL MODE
   * SSH / WINRM: |morpheus| will use SSH or WINRM for Agent install.
-  * Cloud Init / Unattend (when available): |morpheus| will utilize Cloud-Init or Cloudbase-Init for agent install when provisioning images with Cloud-Init/Cloudbase-Init installed. |morpheus| will fall back on SSH or WINRM if cloud-init is not installed on the provisioned image. Morpheus will also add Agent installation to Windows unattend.xml data when performing Guest Customizaitons or utilizing syspreped images.
+  * Cloud Init / Unattend (when available): (DEFAULT) |morpheus| will utilize Cloud-Init or Cloudbase-Init for agent install when provisioning images with Cloud-Init/Cloudbase-Init installed. |morpheus| will fall back on SSH or WINRM if cloud-init is not installed on the provisioned image. Morpheus will also add Agent installation to Windows unattend.xml data when performing Guest Customizations or utilizing syspreped images.
 API PROXY
-  Required when a Proxy Server blocks communication between the |morpheus| Appliance and the Cloud. Proxies can be added in the `Infrastructure -> Networks -> Proxies` tab.
+  Set a proxy for outbound communication from the |morpheus| Appliance to the Cloud endpoints. Proxies can be added in the `Infrastructure -> Networks -> Proxies` tab.
 INSTALL AGENT
   Enable to have Agent Installation on by default for all provisioning into this Cloud. Disable for Agent Installation to be off by default for all provisioning into this Cloud.
 
@@ -55,8 +51,8 @@ Provisioning Options
 ^^^^^^^^^^^^^^^^^^^^
 
 PROXY
-  Required when a Proxy Server blocks communication between an Instance and the |morpheus| Appliance. Proxies can be added in the `Infrastructure -> Networks -> Proxies` tab.
+  Set a proxy for inbound communication from Instances to the |morpheus| Appliance. Proxies can be added in the `Infrastructure -> Networks -> Proxies` tab.
 Bypass Proxy for Appliance URL
-  Enable to bypass proxy settings (if added) for Instance Agent communication to the Appliance URL.
+  Enable to bypass proxy settings (if added) for |morpheus| Agent communication to the Appliance URL.
 USER DATA (LINUX)
-  Add cloud-init user data or scripts. Assumes bash syntax.
+  Add cloud-init user data. |morpheus| 4.1.0 and earlier assumes bash syntax. |morpheus| 4.1.1 and later supports all User Data formats. Refer to https://cloudinit.readthedocs.io/en/latest/topics/format.html for more information.
