@@ -2,12 +2,12 @@ Azure
 -----
 
 Overview
-^^^^^^^^^
+^^^^^^^^
 
 Azure is Microsoft's public cloud offering. Offering a full range of services and features across the globe in various datacenters. It is the equivalent of AWS for Microsoft running primarily on the Hyper-V based hypervisor. While it is a great public cloud offering, it can be somewhat difficult to get integrated with which is what this guide aims to cover.
 
 Features
-^^^^^^^^^
+^^^^^^^^
 
 * Virtual Machine Provisioning
 * Azure SQL Database
@@ -34,7 +34,7 @@ Combine these features with on premise solutions like Azure-Stack and |morpheus|
 .. NOTE:: |morpheus| supports integrating with CSP based accounts in Azure (typically used by managed service providers).
 
 Requirements
-^^^^^^^^^^^^^
+^^^^^^^^^^^^
 
 * Azure Active Directory Application & Credentials
 
@@ -78,7 +78,7 @@ If you do not already have the Azure Active Directory credentials required to ad
    "Client ID", "Application ID"
 
 Creating an Azure Active Directory Application
-'''''''''''''''''''''''''''''''''''''''''''''''
+``````````````````````````````````````````````
 
 If you do not have an existing Azure Active Directory application for |morpheus| , you will need to create a new on by:
 
@@ -100,7 +100,7 @@ If you do not have an existing Azure Active Directory application for |morpheus|
 Now that we have (or already had) our AD app, we will gather the credentials required for the |morpheus| Azure integration.
 
 Tenant ID/Directory ID
-'''''''''''''''''''''''
+``````````````````````
 
 While still in the Active Directory Section:
 
@@ -111,7 +111,7 @@ While still in the Active Directory Section:
    .. image:: /images/azure/newazure-044cf.png
 
 Client ID/Application ID
-'''''''''''''''''''''''''
+````````````````````````
 
 #. Select App Registrations
 #. Select your Active Directory Application
@@ -121,7 +121,7 @@ Client ID/Application ID
    .. image:: /images/azure/newazure-3c6fa.png
 
 Client Secret/Key Value
-''''''''''''''''''''''''
+```````````````````````
 
 While still in your Active Directory Application:
 
@@ -139,7 +139,7 @@ While still in your Active Directory Application:
 You now have the 3 Active directory credentials required for |morpheus| Azure cloud integration.
 
 Subscription ID
-''''''''''''''''
+```````````````
 
 The last credential required for the |morpheus| Azure cloud integration is the Azure Subscription ID
 
@@ -151,7 +151,7 @@ The last credential required for the |morpheus| Azure cloud integration is the A
    .. image:: /images/azure/newazure-e446f.png
 
 Make Azure Active Directory Application owner of Subscription
-'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+`````````````````````````````````````````````````````````````
 
 The Active Directory Application used needs to be an owner of the subscription used for the Azure |morpheus| cloud integration.
 
@@ -237,7 +237,7 @@ Create a Network Security Group
 #. Configure inbound and outbound rules for the security group. Ports 80 (http), 443 (https) 22 (ssh) and 5985 (winrm) need to be open to and from the |morpheus| appliance.
 
 Create a Virtual Network
-'''''''''''''''''''''''''
+````````````````````````
 
 #. In the main Azure toolbar, select the right arrow at the bottom of the toolbar (if collapsed) and search for and select Virtual Networks.
 
@@ -252,7 +252,7 @@ Create a Virtual Network
    .. image:: /images/azure/newazure-a3066.png
 
 Create a Storage Account
-'''''''''''''''''''''''''
+````````````````````````
 
 #. In the main Azure toolbar, select the right arrow at the bottom of the toolbar (if collapsed) and search for and select Storage Accounts.
 

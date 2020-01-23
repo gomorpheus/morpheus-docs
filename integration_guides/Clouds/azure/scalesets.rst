@@ -6,7 +6,7 @@ Auto-scaling Azure instances can be done with the native Morpheus scaling servic
 .. NOTE:: Instances can only be added to Azure Scale Sets at provision time.
 
 Adding an Instance to a Scale Set
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+`````````````````````````````````
 
 #. In ``Provisioning - Instances`` select :guilabel:`+ ADD`
 #. Select an Instance Type that has scaling enabled (Advanced section when editing an Instance Type in `Provisioning - Library`)
@@ -21,7 +21,7 @@ Adding an Instance to a Scale Set
 A Virtual Machine scale set will be created in Azure with the selected threshold and min/max node settings.
 
 Create Threshold Presets
-^^^^^^^^^^^^^^^^^^^^^^^^
+```````````````````````
 
 
 #. In ``Provisioning - Automation`` select the `SCALE THRESHOLDS` tab
@@ -40,7 +40,7 @@ The new Threshold will be available for selection in the SCALE section during pr
 
 
 Edit Thresholds on an Instance
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+``````````````````````````````
 
 #. In ``Provisioning - Instances`` select the target Instance.
 #. Select the `SCALE` tab below the VM's section

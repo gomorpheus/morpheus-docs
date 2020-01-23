@@ -203,7 +203,7 @@ rst_prolog = """
 .. |morphbranch| replace:: v4.1
 .. |morphver| replace:: v4.1.2
 .. |rmqbranch| replace:: v3.5+
-.. |rmqver| replace:: v3.7.16 
+.. |rmqver| replace:: v3.7.16
 .. |mysqlbranch| replace:: v5.7
 .. |mysqlver| replace:: v5.7.27
 .. |esbranch| replace:: v7.4

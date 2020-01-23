@@ -2,12 +2,12 @@ Mac Stadium
 -----------
 
 Overview
-^^^^^^^^^^
+^^^^^^^^
 
 MacStadium is a provider of enterprise-class hosting solutions for Apple Mac infrastructure. It can be used to deploy a hosted private cloud for large-scale CI/CD or even a single Mac mini to test an iOS app. It allows virtualized Mac build machines
 
 Features
-^^^^^^^^^
+^^^^^^^^
 
 * Virtual Machine Provisioning
 * Backups / Snapshots

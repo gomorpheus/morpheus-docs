@@ -2,7 +2,7 @@ Digital Ocean
 -------------
 
 Add a Digital Ocean Cloud
-^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^
 
 DigitalOcean Cloud Integration Detail fields:
 

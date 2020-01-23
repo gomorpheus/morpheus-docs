@@ -1,8 +1,8 @@
 Softlayer
-----------
+---------
 
 Add a Softlayer Cloud
-^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^
 
 Name
   Name of the Cloud in |morpheus|

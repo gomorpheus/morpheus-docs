@@ -27,51 +27,50 @@ Azure Stack is Microsoft's Azure Cloud for on-premises environments. Azure Stack
 Combine these features with public Azure and |morpheus| can provide a single pane of glass and self service portal for managing instances scattered across both Azure offerings.
 
 Requirements
-^^^^^^^^^^^^^
+^^^^^^^^^^^^
 
 Azure Stack Accessibility
-~~~~~~~~~~~~~~~~~~~~~~~~~
+`````````````````````````
 
 By default, the Azure Stack management url's are not accessible from an external network. Port mappings and DNS must be configured for communication between the |morpheus| Appliance and Azure Stack.
 
 .. IMPORTANT:: In order to communicate with Azure Stack, |morpheus| must be able to reach the internal Azure Stack network. The Azure Stack Portal needs to be exposed to the |morpheus| Appliances' network with corresponding entries added to DNS.
 
-One option to expose the Internal Azure Stack network to the |morpheus| Appliances' network is to use the 'Expose-AzureStackPortal.ps1' powershell script from https://gallery.technet.microsoft.com/scriptcenter/Expose-the-Azure-Stack-7ef68b19. An Azure Stack Port Mapping Tool is also available.
+One option to expose the Internal Azure Stack network to the |morpheus| Appliances network is to use the ``Expose-AzureStackPortal.ps1`` powershell script from https://gallery.technet.microsoft.com/scriptcenter/Expose-the-Azure-Stack-7ef68b19. An Azure Stack Port Mapping Tool is also available.
 
 Below is a sample output from the script for reference:
 
-.. code-block:: shell
+.. code-block:: bash
 
-        [Admin Portal] Created port mappings on 10.30.23.120 to 192.168.102.8
-        [Admin Portal] Ports: 13011 30015 13001 13010 13021 13020 443 13003 12646 12647 12648 12649 12650 12495 13026 12499
-        [Admin Portal] DNS: 10.30.23.120 - adminportal.local.azurestack.external adminmanagement.local.azurestack.external
+   [Admin Portal] Created port mappings on 10.30.23.120 to 192.168.102.8
+   [Admin Portal] Ports: 13011 30015 13001 13010 13021 13020 443 13003 12646 12647 12648 12649 12650 12495 13026 12499
+   [Admin Portal] DNS: 10.30.23.120 - adminportal.local.azurestack.external adminmanagement.local.azurestack.external
 
-        [Tenant Portal] Created port mappings on 10.30.23.121 to 192.168.102.10
-        [Tenant Portal] Ports: 13011 30015 13001 13010 13021 13020 443 13003 12646 12647 12648 12649 12650 12495 13026 12499
-        [Tenant Portal] DNS: 10.30.23.121 - portal.local.azurestack.external management.local.azurestack.external
+   [Tenant Portal] Created port mappings on 10.30.23.121 to 192.168.102.10
+   [Tenant Portal] Ports: 13011 30015 13001 13010 13021 13020 443 13003 12646 12647 12648 12649 12650 12495 13026 12499
+   [Tenant Portal] DNS: 10.30.23.121 - portal.local.azurestack.external management.local.azurestack.external
 
-        [Blob Storage] Created port mappings on 10.30.23.122 to 192.168.102.4
-        [Blob Storage] Ports: 80 443
-        [Blob Storage] DNS: 10.30.23.122  *.blob.local.azurestack.external
+   [Blob Storage] Created port mappings on 10.30.23.122 to 192.168.102.4
+   [Blob Storage] Ports: 80 443
+   [Blob Storage] DNS: 10.30.23.122  *.blob.local.azurestack.external
 
-        VERBOSE: DNS delegation/forwarding is optional, change the DNS records on MAS-DC01 manually (dnsmgmt.msc from Host).
-        [DNS Delegation] Created port mappings on 10.30.23.120 to 192.168.200.224
-        [DNS Delegation] Ports: 53 (TCP/UDP)
-        [DNS Delegation] DNS: local.azurestack.external NS 10.30.23.120
-        [DNS Delegation] Change records on MAS-DC01 manually if you plan to use DNS forwarding.
-        [DNS Delegation] Change records back to the original internal IPs before running this script again.
+   VERBOSE: DNS delegation/forwarding is optional, change the DNS records on MAS-DC01 manually (dnsmgmt.msc from Host).
+   [DNS Delegation] Created port mappings on 10.30.23.120 to 192.168.200.224
+   [DNS Delegation] Ports: 53 (TCP/UDP)
+   [DNS Delegation] DNS: local.azurestack.external NS 10.30.23.120
+   [DNS Delegation] Change records on MAS-DC01 manually `if` you plan to use DNS forwarding.
+   [DNS Delegation] Change records back to the original internal IPs before running this script again.
 
-        VERBOSE: App Service detected and external IP's specified, creating mappings....
-        [App Service API] Created port mappings on 10.30.23.123 to 192.168.102.17
-        [App Service API] Ports: 443
-        [App Service API] DNS: 10.30.23.123  api.appservice.local.azurestack.external
-        [App Service Apps] Created port mappings on 10.30.23.124 to 192.168.102.15
-        [App Service Apps] Ports: 80 443 21 990
-        [App Service Apps] DNS: 10.30.23.124  *.appservice.local.azurestack.external
-
+   VERBOSE: App Service detected and external IPs specified, creating mappings.
+   [App Service API] Created port mappings on 10.30.23.123 to 192.168.102.17
+   [App Service API] Ports: 443
+   [App Service API] DNS: 10.30.23.123  api.appservice.local.azurestack.external
+   [App Service Apps] Created port mappings on 10.30.23.124 to 192.168.102.15
+   [App Service Apps] Ports: 80 443 21 990
+   [App Service Apps] DNS: 10.30.23.124  *.appservice.local.azurestack.external
 
 Azure Stack Resources
-~~~~~~~~~~~~~~~~~~~~~
+`````````````````````
 
 The following resources need to be created and configured inside Azure Stack for successful provisioning:
 
@@ -86,7 +85,7 @@ The following resources need to be created and configured inside Azure Stack for
 .. NOTE:: Proper Network and Network Security Group configuration is required for |morpheus| agent install, communication, and remote console access. Other configurations, such as docker instances, will need the appropriate ports opened as well.
 
 Required Credentials & Permissions
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+``````````````````````````````````
 
 Credentials to integrate |morpheus| with Azure Stack are located in both the public Azure Portal and the Private Azure Stack Portal. The Azure Active Directory Application used must be an owner of the Azure Stack subscription.
 
@@ -107,7 +106,7 @@ Adding an Azure Stack Cloud
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Configure
-~~~~~~~~~~
+`````````
 
 #. In the |morpheus| UI, navigate to ``Infrastructure -> Clouds`` and Select :guilabel:`+ CREATE CLOUD`
 #. Select *AZURE STACK (PRIVATE)* from the Clouds list and select :guilabel:`NEXT`
@@ -189,7 +188,7 @@ Provisioning Options
 Once all options are configured, select NEXT to add the cloud to a Group.
 
 Group
-~~~~~~
+`````
 
 A Group must be specified or created for the new Cloud to be added to. Clouds can be added to additional Groups or removed from Groups after being created.
 
@@ -199,7 +198,7 @@ CREATE NEW
   Creates a new Group in |morpheus| and adds the Cloud to the Group.
 
 Review
-~~~~~~~
+``````
 
 Confirm all settings are correct and select COMPLETE. The Azure Stack Cloud will be added, and |morpheus| will perform the initial cloud sync of:
 

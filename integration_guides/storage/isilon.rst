@@ -1,10 +1,10 @@
 Isilon
--------
+------
 
 Add Dell EMC Isilon Storage Server
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. IMPORTANT:: Enable insecure mode on the NFS settings.  This allows non-root ports to be used.  Setting the insecure/privileged mode will require a restart of the Isilon nodes.  
+.. IMPORTANT:: Enable insecure mode on the NFS settings.  This allows non-root ports to be used.  Setting the insecure/privileged mode will require a restart of the Isilon nodes.
 
 #. Select the Infrastructure link in the navigation bar.
 #. Select the Storage link in the sub navigation bar.
@@ -37,7 +37,7 @@ The Dell EMC Isilon Storage Server will be added and displayed in the Buckets ta
 Buckets, Files Shares and Storage Groups will be synced in.
 
 Add Dell EMC Isilon File Share
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 To Add a Dell EMC Isilon File Share:
 
