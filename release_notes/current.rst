@@ -8,6 +8,8 @@
 
 .. important:: v3.6.0 or later required to upgrade to 4.1.2. Upgrading from v3.6.x to v4.x contains upgrades to MySQL, RabbitMQ, and Elasticsearch. Please refer to Upgrade Requirements before upgrading. When upgrading from v3.6.x to v4.x a database backup is recommended due to MySQL version upgrade.
 
+.. important:: It is recommend to upgrade existing VM and Host Agents after upgrading to |morphver| for Automation tasks with large task outputs/results when executing over |morpheus| Agent Command Bus.
+
 New Features
 ============
 
@@ -34,7 +36,7 @@ Appliance: Elasticsearch 7 upgrade
    - Elasticsearch v5.6 was the previous version used by |morpheus|. Please refer to Elasticsearch Upgrade Documentation for upgrade instructions.
   .. important:: Elasticsearch 7.x is required for v4.1.2+. Running |morpheus| v4.1.2 with Elasticsearch 5.x or 6.x is NOT supported."
 
- Appliance: Nginx now defaults to ``tls 1.2`` only
+Appliance: Nginx now defaults to ``tls 1.2`` only
    The default Nginx config removes support for tls 1.0 and 1.1.
     - Some older OS's such as CentOS 6 will not be able to install the |morpheus| Agent or communicate with the Appliance without updating the image or configuring nginx to allow lower tls versions via morpheus.rb config.
     - Windows versions such as Windows 2008 require .net 4.5 minimum
@@ -311,7 +313,6 @@ Fixes
 - Nutanix: Fix for default Plan selection when reconfiguring an Instance when scoped plan has been deactivated
 - Openstack: Fix for Security group rules not being created when the destination is a Security group
 - OpenStack: Fix for sync of Security Groups that have been renamed in Openstack after initial sync
-- Password exposed during agent install through vmtools
 - Plans & Pricing: Fix for Price Sets displaying default Resource Pool (if set) instead of saved Resource Pool.
 - Policies: Shutdown and Expiration policies no longer allow negative values
 - Provisioning: Fix for allowing customization of additional volume sizes when ``CUSTOMIZE ROOT VOLUME`` is unchecked in selected Service Plan
@@ -336,26 +337,3 @@ Fixes
 - VMware: Fix for duplicate storage controller ``controllerKey`` values
 - Whitelabel: Fix for favicon not being displayed in Terms of Use or Privacy Policy pages
 - Zerto: Fix for Replication Group sync
-
-.. - [API] [UI] Sub tenant user cannot toggle feature using both API and UI for instance-types created by himself
-.. - [API] Failed to create role using API, however UI is able create the same.
-.. - [API] PUT /api/virtual-images is not disabling "installAgent" option for virtual images
-.. - API: Discovered VMs - start not working
-.. - API: Hosts: Convert to Managed: should return 404 not 200 when invalid server ID
-.. - Backup archives produced on QA are corrupt or not complete.
-.. - CLI: apps add: undefined method + for nil:nilClass error when not setting instance name
-.. - CLI: blueprints add: @clouds_interface not defined error
-.. - CLI: hosts run-workflow: failing with async error
-.. - CLI: Hosts: issues
-.. - CLI: networks & security-groups: add fails with resource group error
-.. - Cluster Add Node: Manual - not working due to form issues
-.. - Openstack VM's console does not work
-.. - OTC: Network/Router creation is missing SNAT and CIDR
-.. - Policies: Delayed Removal: not working properly for app instances & expired instances
-.. - Powered Off VMs should set instance to stopped
-.. - ServiceNow plug-in: provisioning fails for DigitalOcean, Nutanix, & Oracle Cloud instance types
-.. - ServiceNow plug-in: VCD: vApp field options not populating
-.. - Static IP Assignment - Linux Images
-.. - Unable to clone instances via the API/CLI
-.. - vCloud Director: Hypervisor Console
-.. - VIO: Instances within volumes are aborted during clone

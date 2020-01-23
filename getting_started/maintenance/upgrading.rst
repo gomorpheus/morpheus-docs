@@ -9,7 +9,7 @@ Upgrading |morpheus|
     - For Appliance configurations with an existing external Elasticsearch service, an upgrade of Elasticsearch to v7.x is required to upgrade |morpheus| to v4.1.2+.
     - |morpheus| can also be pointed to a new Elasticsearch 7.x cluster or service as an alternate to upgrading an existing cluster.
     - Elasticsearch data will not be retained during a direct 5.x to 7.x upgrade by default. Please refer to Elasticsearch documentation if backing up and restoring your 5.x Elasticsearch |morpheus| data is required.
-    - If log and stat data stored in Elasticsearch is not critical, a 5.x Elasticsearch data backup and restoration to 7.x, or a 5.x -> 6.x -7.x rolling upgrade is not necessary as |morphues| will rebuild the indices upon connection to the 7.x cluster.
+    - If log and stat data stored in Elasticsearch is not critical, a 5.x Elasticsearch data backup and restoration to 7.x, or a 5.x -> 6.x -7.x rolling upgrade is not necessary as |morpheus| will rebuild the indices upon connection to the 7.x cluster.
 
     - Please refer to `Elasticsearch Upgrade Documentation <https://www.elastic.co/guide/en/elasticsearch/reference/current/setup-upgrade.html>`_ before installing or upgrading to v4.1.2 if your Appliance's Elasticsearch is external.
 
@@ -37,6 +37,9 @@ Refer to :ref:`compatibility` for externalized MySQL, Elasticsearch and/or Rabbi
 
 * Elasticsearch will be upgraded from 5.x to 7.x. Refer to `Elasticsearch Upgrade Documentation <https://www.elastic.co/guide/en/elasticsearch/reference/current/setup-upgrade.html>`_ for upgrading external ES Clusters.
 
-.. include:: /getting_started/maintenance/upgrades/single/singlenode.rst
-.. include:: /getting_started/maintenance/upgrades/3node/overview.rst
-.. include:: /getting_started/maintenance/upgrades/fullha/overview.rst
+.. toctree::
+   :maxdepth: 2
+      
+   upgrades/single/singlenode.rst
+   upgrades/3node/overview.rst
+   upgrades/fullha/overview.rst
