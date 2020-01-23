@@ -7,7 +7,7 @@ Overview
 The Kubernetes Cloud type allow users to inventory and provision to existing Kubernetes clusters. New Kubernetes clusters can also be provisioning using Docker mode setting in clouds and provisioning new Docker hosts.
 
 Add Kubernetes Cloud
-^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^
 
 #. Navigate to ``Infrastructure -> Clouds``
 #. Select :guilabel:`+ CREATE CLOUD`, select Kubernetes Cloud, and then click :guilabel:`Next`.
@@ -29,7 +29,7 @@ Add Kubernetes Cloud
 #. Save Changes
 
 Create Kubernetes Cluster
-^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Kubernetes Clusters can be provisioned into any Cloud Type by setting the CONTAINER MODE to Kubernetes in the Advanced Settings of a Cloud.
 

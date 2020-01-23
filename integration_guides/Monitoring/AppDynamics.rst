@@ -1,11 +1,10 @@
 AppDynamics
------------
+------------
 
 AppDynamics is a very powerful performance and application monitoring tool. It features advanced correlation features and profiling capabilities for a very wide range of application platforms including native Docker support. Due to the level of capabilities of AppDyanmics there are more required settings to integrate it with |morpheus|.
 
 Configuring The AppDynamics Integration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
   #. Navigate to Administration > Monitoring
   #. Expand the AppDynamics section
   #. Toggle the Enable slider

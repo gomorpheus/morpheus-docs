@@ -1,10 +1,14 @@
 .. _snow:
 
 ServiceNow
-----------
+------------
+
+
+
+
 
 Add Service Now Integration
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 #. Navigate to ``Administration -> Integrations``
 #. Select ``+ NEW INTEGRATION``
@@ -28,13 +32,13 @@ Add Service Now Integration
 
 #. Save Changes
 
-.. IMPORTANT:: When using ServiceNow version London, the following steps must also be performed.  An administrator needs to modify the access permissions on the ``catalog_script_client`` and ``io_set_item`` tables.  This is performed by ensuring the ``Can create``, ``Can update``, and ``Can Delete`` are checked under Application Access for ``All application scopes`` for these tables.
+.. IMPORTANT:: When using ServiceNow version London, the following steps must also be performed.  An administrator needs to modify the access permissions on the 'catalog_script_client' and 'io_set_item' tables.  This is performed by ensuring the 'Can create', 'Can update', and 'Can Delete' are checked under Application Access for 'All application scopes' for these tables.
 
 ServiceNow Approval Policies
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Add ServiceNow Provision Approval Policy to a Cloud
-```````````````````````````````````````````````````
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. NOTE:: Any Instance provisioned into a Cloud with an Approval Policy enabled will require approval.
 
@@ -60,7 +64,7 @@ To add a ServiceNow Approval policy to a Cloud:
 #. Save Changes
 
 Add ServiceNow Provision Approval Policy to a Group
-```````````````````````````````````````````````````
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. NOTE:: Any Instance provisioned into a Group with an Approval Policy enabled will require approval.
 
@@ -86,7 +90,7 @@ To add a ServiceNow Approval policy to a Group:
 #. Save Changes
 
 Using ServiceNow Approval Policies
-``````````````````````````````````
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Any Instance provisioned into a Cloud or Group with an Approval Policy enabled will be in a PENDING state until the request in Approved.
 
@@ -100,14 +104,15 @@ ServiceNow Approval requests are displayed in Morpheus under ``Operations -> App
 Once a pending ServiceNow Approval request is Approved in ServiceNow, the Instance(s) will begin to provision in Morpheus within 5 minutes of being approved in ServiceNow.
 
 ServiceNow Service Catalog Integration
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 The following is a guide to installing the Morpheus ServiceNow application.
 
 .. IMPORTANT:: A valid SSL Certificate is required on the |morpheus| Appliance for the ServiceNow plugin to be able to communicate with the appliance.
 
 ServiceNow Configuration
-````````````````````````
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
 #. Install the Morpheus Application from the ServiceNow store
 #. Navigate to Morpheus Catalog -> Properties
 #. Set the following properties:
@@ -133,7 +138,7 @@ ServiceNow Configuration
   .. IMPORTANT:: When using ServiceNow version London, the following steps must also be performed.  An administrator needs to modify the access permissions on the 'catalog_script_client' and 'io_set_item' tables.  This is performed by ensuring the 'Can create', 'Can update', and 'Can Delete' are checked under Application Access for 'All application scopes' for these tables.
 
 Morpheus Configuration
-``````````````````````
+~~~~~~~~~~~~~~~~~~~~~~~
 
 #. Navigate to ``Administration -> Integrations``
 #. Click :guilabel:`+ NEW INTEGRATION`
@@ -141,6 +146,7 @@ Morpheus Configuration
 #. Fill in the Host, User and Password fields (using the User and Password created in the previous section)
 
 .. ServiceNow Monitoring Notifications
+
 
 ServiceNow Monitoring Integration Settings
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

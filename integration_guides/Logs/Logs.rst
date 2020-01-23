@@ -1,5 +1,5 @@
 Logs
-====
+=====
 
 .. toctree::
   Logs/LogRhythm.rst

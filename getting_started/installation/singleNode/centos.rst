@@ -1,5 +1,5 @@
-Single Node Install on CentOS
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+CentOS
+^^^^^^
 
 To get started installing |morpheus| on CentOS a few preparatory items should be addressed first.
 
@@ -29,7 +29,7 @@ To get started installing |morpheus| on CentOS a few preparatory items should be
 
    .. note:: The morpheus-ui can take 2-3 minutes to startup before it becomes available.
 
-There are additional install settings that can be viewed in the :ref:`additional_options` section.
+There are additional post install settings that can be viewed in the Advanced section of the guide.
 
 Once the browser is pointed to the appliance a first time setup wizard will be presented. Please follow the on screen instructions by creating the master account. From there you will be presented with the license settings page where a license can be applied for use (if a license is required you may request one or purchase one by contacting your sales representative).
 

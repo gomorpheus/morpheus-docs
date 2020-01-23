@@ -10,7 +10,7 @@ morpheus-ctl status
 morpheus-ctl start (service)
   This starts all services if no service is specified, or starts the specified service. For example,
 
-  - ``morpheus-ctl start/stop/restart/kill`` on an all-in-one appliance will start, stop, restart or kill mysql, elasticsearch, rabbitmq, check-server, guacd and the morpheus-ui, one by one.
+  - ``morpheus-ctl start/stop/restart/kill`` on an all-in-one appliance will start, stop, restart or kill mysql, elasticsearch, rabbitmq, check-server, redis, guacd and the morpheus-ui, one by one.
   - ``morpheus-ctl start/stop/restart/kill morpheus-ui`` will only start, stop, restart or kill the morpheus-ui service, leaving the other service in their current state.  Same goes for ``morpheus-ctl start/stop/restart/kill mysql``, ``morpheus-ctl start/stop/restart/kill elasticsearch`` etc.
 
 

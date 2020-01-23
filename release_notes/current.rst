@@ -36,7 +36,7 @@ Appliance: Elasticsearch 7 upgrade
    - Elasticsearch v5.6 was the previous version used by |morpheus|. Please refer to Elasticsearch Upgrade Documentation for upgrade instructions.
   .. important:: Elasticsearch 7.x is required for v4.1.2+. Running |morpheus| v4.1.2 with Elasticsearch 5.x or 6.x is NOT supported."
 
-Appliance: Nginx now defaults to ``tls 1.2`` only
+ Appliance: Nginx now defaults to ``tls 1.2`` only
    The default Nginx config removes support for tls 1.0 and 1.1.
     - Some older OS's such as CentOS 6 will not be able to install the |morpheus| Agent or communicate with the Appliance without updating the image or configuring nginx to allow lower tls versions via morpheus.rb config.
     - Windows versions such as Windows 2008 require .net 4.5 minimum

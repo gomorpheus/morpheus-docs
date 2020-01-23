@@ -1,14 +1,14 @@
 UpCloud
--------
+--------
 
 Overview
-^^^^^^^^
+^^^^^^^^^^
 
 UpCloud is a cloud hosting provider that offers both Linux and Windows virtual machines on their MAXIOPS infrastructure which is billed as I.A.A.S ( infrastructure-as-a-service ).
 They have datacenters based in the UK, USA, Germany, Netherlands, Singapore and Finland. Servers can be created a lightning fast 45 seconds with their faster than SSD technology.
 
 Features
-^^^^^^^^
+^^^^^^^^^^
 
 - Virtual Machine Provisioning
 - Containers
@@ -23,7 +23,7 @@ Features
 - Cloudinit
 
 Requirements
-^^^^^^^^^^^^
+^^^^^^^^^^^^^
 
 An UpCloud User with API, Server and Storage permissions is required.
 
@@ -50,7 +50,7 @@ Adding an UpCloud Cloud
 ^^^^^^^^^^^^^^^^^^^^^^^
 
 Configure
-`````````
+~~~~~~~~~~
 
 #. Navigate to ``Infrastructure -> Clouds``
 #. Select :guilabel:`+ Create Cloud` Button
@@ -82,7 +82,7 @@ The Cloud can now be added to a Group or configured with additional Advanced opt
 .. .. include:: /integration_guides/advanced_options.rst
 
 Group
-`````
+~~~~~~
 
 A Group must be specified or created for the new Cloud to be added to. Clouds can be added to additional Groups or removed from Groups after being created.
 
@@ -90,7 +90,7 @@ A Group must be specified or created for the new Cloud to be added to. Clouds ca
 * *CREATE NEW*: Creates a new Group in |morpheus| and adds the Cloud to the Group.
 
 Review
-``````
+~~~~~~
 
 Confirm all settings are correct and select `COMPLETE`.
 

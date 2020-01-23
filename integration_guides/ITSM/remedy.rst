@@ -3,9 +3,8 @@ Remedy
 
 PreRequisites
 ^^^^^^^^^^^^^
-
-The user used for this integration need to be an Administrator in Remedy or have all the permissions to the form that is outlined in the table below.
-
+ The user used for this integration need to be an Administrator in Remedy or have all the permissions to the form that is outlined in the table below.
+ 
     +-------------------------------------------------------------------------------------+--------+---------------------------+------------------------------+
     | API Endpoint                                                                        | Action | BMC Form                  | Existing BMC Role            |
     +=====================================================================================+========+===========================+==============================+
@@ -89,7 +88,7 @@ The user used for this integration need to be an Administrator in Remedy or have
     +-------------------------------------------------------------------------------------+--------+---------------------------+------------------------------+
 
 Add Remedy Integration
-^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^
 
 #. Navigate to ``Administration -> Integrations``
 #. Select ``+ NEW INTEGRATION``

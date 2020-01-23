@@ -1,21 +1,21 @@
 Creating a CentOS 7 |morpheus| Image
-------------------------------------
+-------------------------------------
 
 Overview
-^^^^^^^^
+^^^^^^^^^
 
 |morpheus| comes out of the box with a default set of blueprints for use in many modern deployment scenarios. These consist mostly of base operating system images with a few additional adjustments. These adjustments typically include the addition of cloud-init (which is highly recommended to be used in most environments, but not mandatory). However, in many on-premise deployments there are custom image requirements as well as networking requirements. This guide will go over how to create a base CentOS 7 Image for use within |morpheus|.
 
 Creating a CentOS 7 |morpheus| VMware Image
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 VMWare
-^^^^^^
+^^^^^^^
 
 When running in VMWare it is highly recommended that VMware Tools be installed. Without it, |morpheus| will have difficulty assessing the host ip address and performing some additional automation tasks for the operating system.
 
 Cloud-Init
-^^^^^^^^^^
+^^^^^^^^^^^
 
 To get started with a base CentOS image we first install cloud-init. This is a relatively simple process using yum:
 
@@ -73,14 +73,14 @@ This script tries to ensure there is a new ifcfg-eth0 config created to replace 
 
 
 Gotyas
-^^^^^^
+^^^^^^^
 
 SELinux can cause issues with cloud-init when in enforced mode. It may be advisable to set this to permissive unless it is mandatory within your organization to use an enforced SELinux configuration. If that is the case please see the documentation for the cloud_init_t security policies.
 
 Network Manager will also prevent the required restart of the Network Service when assigning static IP's. Disable Network Manager when possible or Static IP assignment may not work until the Network Service is restarted manually.
 
 A Note on Proxies
-^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^
 
 Proxy configurations are known to vary in some organizations and makes building a base blueprint a little more difficult. In order to fully configure proxies a few environment variables must be set in the `/etc/environment` file (This can be done automatically in a default user-data script for cloud-init as well in edit cloud).
 

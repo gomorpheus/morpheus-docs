@@ -4,7 +4,7 @@
 :ref:`Release Notes`
 
 .. toctree::
-   :maxdepth: 1
+   :maxdepth: 3
    :caption: Morpheus UI
 
    getting_started/getting_started
@@ -32,7 +32,7 @@
    API Documentation <http://bertramdev.github.io/morpheus-apidoc/#introduction>
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 4
    :caption: Release Notes
 
    release_notes/current.rst

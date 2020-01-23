@@ -2,7 +2,7 @@ LogRhythm
 ---------
 
 Adding LogRhythm Integration
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^
 
 #. Navigate to ``Administration -> Logs``
 #. Expand the LogRhythm section

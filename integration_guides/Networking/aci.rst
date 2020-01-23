@@ -1,5 +1,5 @@
 Cisco ACI
----------
+----------
 
 Overview
 ^^^^^^^^
@@ -58,7 +58,6 @@ For your ACI Integration to be available during provisioning, ACI needs to be de
 
 Instance Provisioning
 ^^^^^^^^^^^^^^^^^^^^^
-
 .. image:: /images/aci2.png
    :alt: ACI Instance provisioning options
 
@@ -69,7 +68,6 @@ Once ACI is integration to a cloud, it can be used during instance provisioning:
 
 Blueprint Configuration
 ^^^^^^^^^^^^^^^^^^^^^^^
-
 .. image:: /images/aci2.png
    :alt: ACI Blueprint options
 

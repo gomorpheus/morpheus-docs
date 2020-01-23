@@ -1,8 +1,8 @@
 Bluecat
--------
+--------
 
 Overview
-^^^^^^^^
+^^^^^^^^^
 
 |morpheus| integrates with Bluecat IPAM to scope pools to networks for Static IP assignment from Infoblox to your |morpheus| instances.
 
@@ -34,7 +34,7 @@ The Bluecat Integration will be saved, IP pools will sync in and populate under 
 .. IMPORTANT:: `Quick Deployments` must be enabled in Bluecat for |morpheus| to create instantly available DNS records when using Bluecat DNS.
 
 Adding IP Pools to Networks
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 |morpheus| can automatically assign the next available Bluecat IP in an IP/Network Pool and create the corresponding DNS records, as well as remove the records upon teardown. To enable this, add an Bluecat IP/Network Pool to the `Network Pool` section on a Network(s).
 

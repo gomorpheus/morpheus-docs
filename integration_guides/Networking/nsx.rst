@@ -72,7 +72,6 @@ Morpheus version 4.1.2 adds SWITCHES tab to view switches associated with the se
 
 Create NSX Logical Switch and Edge Gateway
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
 .. IMPORTANT:: Prior to creating a Logical Switch and Edge Gateway, associated External VMware Networks must be configured in |morpheus|. Navigate to `INFRASTRUCTURE -> NETWORK` and edit any Distributed Switch Groups that will be used and populate the Gateway, DNS and CIDR
 
 #. Navigate to `INFRASTRUCTURE -> NETWORK`
@@ -169,7 +168,7 @@ To create a new rule:
   :align: center
 
 Logical Routers
-^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^‰
 
 Morpheus version 4.1.2 adds a Logical Routers section to the NSX integration, including the ability to view and create new logical routers. From the LOGICAL ROUTERS tab, a list of logical routers associated with your selected integration is shown. Values displayed for each logical router include the following:
 

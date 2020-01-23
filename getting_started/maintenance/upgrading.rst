@@ -37,9 +37,6 @@ Refer to :ref:`compatibility` for externalized MySQL, Elasticsearch and/or Rabbi
 
 * Elasticsearch will be upgraded from 5.x to 7.x. Refer to `Elasticsearch Upgrade Documentation <https://www.elastic.co/guide/en/elasticsearch/reference/current/setup-upgrade.html>`_ for upgrading external ES Clusters.
 
-.. toctree::
-   :maxdepth: 2
-      
-   upgrades/single/singlenode.rst
-   upgrades/3node/overview.rst
-   upgrades/fullha/overview.rst
+.. include:: /getting_started/maintenance/upgrades/single/singlenode.rst
+.. include:: /getting_started/maintenance/upgrades/3node/overview.rst
+.. include:: /getting_started/maintenance/upgrades/fullha/overview.rst

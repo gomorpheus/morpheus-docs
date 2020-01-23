@@ -9,7 +9,7 @@ Active Directory is Microsoft’s primary authentication service widely used in 
 .. NOTE:: To use Active Directory, a valid / trusted SSL certificate must be in place on the Active Directory services (self signed will not work).
 
 Adding an Active Directory Integration
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 #. Navigate to ``Administration -> Tenants``
 #. Select a Tenant

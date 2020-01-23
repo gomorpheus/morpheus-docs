@@ -35,6 +35,7 @@ Default Locations
   * Check Server: ``/var/log/morpheus/check-server``
   * Elastic Search: ``/var/log/morpheus/elsticsearch``
   * RabbitMQ: ``/var/log/morpheus/rabbitmq``
+  * Redis: ``/var/log/morpheus/redis``
 
 *  User-defined install/config: ``/etc/morpheus/morpheus.rb``
 
@@ -321,6 +322,7 @@ If a node happens to crash most of the time |morpheus| will start upon boot of t
    run: log: (pid 544) 8401s
    run: rabbitmq: (pid 17850) 7708s;
    run: log: (pid 542) 8401s
+   run: redis: (pid 572) 8401s;
    run: log: (pid 548) 8401s
 
 

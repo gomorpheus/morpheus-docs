@@ -1,18 +1,21 @@
 Creating a |morpheus| VMware Image
-----------------------------------
+-------------------------------------
 
 Overview
-^^^^^^^^
+^^^^^^^^^
 
 |morpheus| comes out of the box with a default set of blueprints for use in many modern deployment scenarios. These consist mostly of base operating system images with a few additional adjustments. These adjustments typically include the addition of cloud-init (which is highly recommended to be used in most environments, but not mandatory). However, in many on-premise deployments there are custom image requirements as well as networking requirements. This guide will go over how to create a VMware Images for use within |morpheus|.
 
-Supported Verisons
-``````````````````
+Creating a Windows Image
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Supported
+^^^^^^^^^
 
 2008R2,2012,2012R2,2016,2019
 
-Creating a Windows Image
-^^^^^^^^^^^^^^^^^^^^^^^^
+Steps
+^^^^^^^^^
 
 Create a new machine in VMware vCenter and install a base version of your preferred Windows build.  The smaller the VMDK drive, typically the faster you can clone and deploy.  Utilizing |morpheus|, provisioning and post deploy scripts can expand drives to desired sizing.
 
@@ -28,14 +31,19 @@ Create a new machine in VMware vCenter and install a base version of your prefer
 5.	Ensure Windows Firewall will allow WinRM connections.
 6.  Shutdown the virtual machine and convert to a template.
 
-.. NOTE:: WinRM is not required and is used as a fallback when using vmtools guest exec and customizations
+.. NOTE:: WinRM is not required and is used as a fallback when using vmtools guest exec and customizations 
 
 .. NOTE:: Morpheus will sysprep images based on the "Force Guest Customizations" flag under the Virtual Image's settings when using DHCP. Ensure a sysprep has not been performed on the template if this flag is enabled or if using Static IPs/IP Pools when provisioning, which will always use Guest Customizations and trigger a sysprep.
 
-Creating a CentOS/RHEL Image
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Create a new virtual machine in VMware vCenter and install a base version of your preferred Linux distro build. If you are using cloud init as part of your image you will need to ensure your virtual machine has a cdrom.
+
+Creating a CentOS/RHEL Image
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Steps
+^^^^^^^^^
+
+Create a new machine in VMware vCenter and install a base version of your preferred Linux distro build. If you are using cloud init as part of your image you will need to ensure your virtual machine has a cdrom.
 
 #.	Before installing the operating system setup a single ``ext`` or ``xfs`` partition without a swap disk (This is so that growpart can extend the disk. growpart currently does not support lvm)
 #.	Install the distro and apply any updates to the operating system and security updates
@@ -48,7 +56,7 @@ Create a new virtual machine in VMware vCenter and install a base version of you
 
 
 Cloud-Init
-``````````
+^^^^^^^^^^^
 
 To get started with a base CentOS image we first install cloud-init. This is a relatively simple process using yum:
 
@@ -63,7 +71,7 @@ There are two parts to this yum installation. We are first ensuring some core de
 A great benefit to using cloud-init is credentials don't have to be locked into the blueprint. It is advisable, within |morpheus| , to configure the default cloud-init user that gets created when the vm boots automatically by cloud-init. This is located in the `Administration -> Provisioning -> Cloud-Init` Settings section.
 
 Network Interfaces
-``````````````````
+^^^^^^^^^^^^^^^^^^
 
 A slightly annoying change with centOS 7 is that the network interfaces have changed naming convention. You may notice when running ifconfig that the primary network interface is set to something like ens2344 or some other random number. This naming is dynamic typically by hardware id and we don't want this to fluctuate when provisioning the blueprint in various VMware environments. Fortunately, there is a way to turn this functionality off and restore the interface back to eth0.
 
@@ -105,24 +113,8 @@ This script tries to ensure there is a new ifcfg-eth0 config created to replace 
   DEFROUTE=yes
 
 
-Creating an Ubuntu Image
-^^^^^^^^^^^^^^^^^^^^^^^^
-
-Create a new machine in VMware vCenter and install a base version of your preferred Linux distro build. If you are using cloud init as part of your image you will need to ensure your virtual machine has a cdrom.
-
-#.	Before installing the operating system setup a single ``ext`` partition without a swap disk (This is so that growpart can extend the disk. growpart currently does not support lvm)
-#.	Install the distro and apply any updates to the operating system and security updates
-#.	Ensure you have set a root password
-#.	Install cloud-init by running ``sudo apt install cloud-init``
-#.	Install cloud-utils-growpart ``sudo apt install cloud-utils``
-#.	Install desired hypervisor drivers (Virto, Open-VM Tools)
-#.	Install git by running ``sudo apt install git``
-#.	As Debian 9 includes network manager ensure this is disabled, set ```/etc/NetworkManager/NetworkManager.conf`` to ``managed=false``
-
-We also recommend disabling network manager and setting the network adapter to eth0 rather than the automatically assigned name as described in the CentOS/RHEL section above.
-
 Gotyas
-^^^^^^
+^^^^^^^
 
 SELinux can cause issues with cloud-init when in enforced mode. It may be advisable to set this to permissive unless it is mandatory within your organization to use an enforced SELinux configuration. If that is the case please see the documentation for the cloud_init_t security policies.
 
@@ -147,3 +139,31 @@ Proxy configurations are known to vary in some organizations and makes building 
 .. NOTE:: If using cloud-init agent install mode these settings need to be set in the custom Cloud-Init User data section of “Edit Cloud” or “Edit Virtual Image”
 
 .. IMPORTANT:: If using this virtual machine as a docker host, proxy settings must also be configured in the docker config. See Docker guides for instructions on how to properly set this. If necessary this can be wrapped in a task automation workflow for your own use.
+
+Creating an Ubuntu Image
+``````````````````````````````````
+
+Create a new machine in VMware vCenter and install a base version of your preferred Linux distro build. If you are using cloud init as part of your image you will need to ensure your virtual machine has a cdrom.
+
+#.	Before installing the operating system setup a single ``ext`` partition without a swap disk (This is so that growpart can extend the disk. growpart currently does not support lvm)
+#.	Install the distro and apply any updates to the operating system and security updates
+#.	Ensure you have set a root password
+#.	Install cloud-init by running ``sudo apt install cloud-init``
+#.	Install cloud-utils-growpart ``sudo apt install cloud-utils``
+#.	Install desired hypervisor drivers (Virto, Open-VM Tools)
+#.	Install git by running ``sudo apt install git``
+#.	As Debian 9 includes network manager ensure this is disabled. Change the below file
+
+      .. code-block:: bash
+
+        /etc/NetworkManager/NetworkManager.conf
+
+ to the following:
+
+      .. code-block:: bash
+
+        managed=false
+
+
+
+We also recommend disabling network manager and setting the network adapter to eth0 rather than the automatically assigned name as described in the CentOS/RHEL section above.

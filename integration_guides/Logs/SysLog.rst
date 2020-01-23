@@ -1,8 +1,8 @@
 Syslog
-------
+-------
 
 Adding Syslog Integration
-^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 #. Navigate to ``Administration -> Logs``
 #. Expand the |morpheus| logging section
