@@ -1,5 +1,5 @@
-RHEL
-^^^^
+Single Node Install on RHEL
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 To get started installing |morpheus| on RHEL/RedHat 7 a few prerequisite items are required.
 
@@ -95,7 +95,7 @@ Once the installation is complete the web interface will automatically start up.
 
 .. NOTE:: The ``morpheus-ui`` can take 2-3 minutes to startup before it becomes available.
 
-There are additional post install settings that can be viewed in the Advanced section of the guide.
+There are additional install settings that can be viewed in the :ref:`additional_options` section.
 
 Once the browser is pointed to the appliance a first time setup wizard will be presented. Please follow the on screen instructions by creating the master account. From there you will be presented with the license settings page where a license can be applied for use (if a license is required you may request one or purchase one by contacting your sales representative).
 

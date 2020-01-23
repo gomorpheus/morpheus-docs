@@ -2,11 +2,12 @@ NewRelic
 --------
 
 Configuring The NewRelic Integration
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  #. Navigate to Administration > Monitoring
-  #. Expand the NewRelics section
-  #. Toggle the Enable slider
-  #. Enter License Key to be used when installing the New Relic agent in order for the agent to report data to your New Relic account
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+#. Navigate to Administration > Monitoring
+#. Expand the NewRelics section
+#. Toggle the Enable slider
+#. Enter License Key to be used when installing the New Relic agent in order for the agent to report data to your New Relic account
 
 .. NOTE::
 

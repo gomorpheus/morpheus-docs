@@ -1,8 +1,8 @@
 AzureStorage
--------------
+------------
 
 To Add Azure Storage
-^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^
 
 #. Navigate to `Infrastructure -> Storage` Hola
 #. Select :guilabel:`+ ADD`

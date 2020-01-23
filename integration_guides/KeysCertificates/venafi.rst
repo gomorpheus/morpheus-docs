@@ -1,10 +1,10 @@
 Venafi
--------
+------
 
 Overview
-^^^^^^^^^
+^^^^^^^^
 
-Morpheus integrates with Venafi to sync and request SSL certificates 
+Morpheus integrates with Venafi to sync and request SSL certificates
 
 Add Venafi
 ^^^^^^^^^^
@@ -21,7 +21,7 @@ Add Venafi
 #. Click :guilabel:`SAVE CHANGES`
 
 Link Venafi To Cloud
-^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^
 
 To add Venafi as the `Trust Provider` for a cloud
 
