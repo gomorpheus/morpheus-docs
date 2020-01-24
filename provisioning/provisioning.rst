@@ -18,4 +18,4 @@ Take advantage of custom tasks and workflows within any environment by building 
   virtual_images/virtual_images.rst
   library/library.rst
   deployments/deployments.rst
-  serviceMesh/serviceMesh.rst
+  .. serviceMesh/serviceMesh.rst

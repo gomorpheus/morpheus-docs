@@ -3,12 +3,12 @@
 
 |morpheus| App Blueprints allow pre-configured full multi-tier application deployments for multiple environments. Blueprints can be provisioned from the ``Provisioning -> Apps`` section and can be fully configured for one click provisioning. Blueprints can be built within the ``Builder`` section or by code in the ``Raw`` section. Blueprints can also be exported as YAML or JSON and created with the |morpheus| API and CLI.
 
-A unique capability of the YAML/JSON based Morpheus blueprint structure is the ability to have multiple configurations per instance being provisioned within the app blueprint. This can be a scoped configuration that acts as overrides based on selected cloud, group, and/or environment the app is being provisioned in as a target. For example. maybe the "development" environment doesn't need as many horizontally scaled nodes as the "production" environment. Another great aspect of this configuration markup is a blueprint can be defined as a hybrid cloud blueprint. This makes the app blueprint structure very powerful and in some ways better than alternative infrastructure as code orchestrators. For Example, ARM is locked into Azure, while Cloud Formation is locked into AWS. Even Terraform does not allow a tf file to expand its bounds beyond a specific provider type.
+A unique capability of the YAML/JSON based |morpheus| blueprint structure is the ability to have multiple configurations per instance being provisioned within the app blueprint. This can be a scoped configuration that acts as overrides based on selected cloud, group, and/or environment the app is being provisioned in as a target. For example. maybe the "development" environment doesn't need as many horizontally scaled nodes as the "production" environment. Another great aspect of this configuration markup is a blueprint can be defined as a hybrid cloud blueprint. This makes the app blueprint structure very powerful and in some ways better than alternative infrastructure as code orchestrators. For Example, ARM is locked into Azure, while Cloud Formation is locked into AWS. Even Terraform does not allow a tf file to expand its bounds beyond a specific provider type.
 
 Basic Blueprint Structure
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
-In a Morpheus App Blueprint there are a few structural concepts to be aware of. Firstly there is a concept of a `Tier`. A `Tier` is a grouping of instances within an app blueprint. Tiers can be used for a variety of things including sequenced booting of instances or even properly creating endpoint groups and security group contexts in network security tools like Cisco ACI. An example of a Tier structure might be a ``Web`` tier and a ``Database`` tier. These tiers can also be marked as connected such that network communication rules can appropriately be defined. A basic 2 Tier blueprint skeleton might look something like this:
+In a |morpheus| App Blueprint there are a few structural concepts to be aware of. Firstly there is a concept of a `Tier`. A `Tier` is a grouping of instances within an app blueprint. Tiers can be used for a variety of things including sequenced booting of instances or even properly creating endpoint groups and security group contexts in network security tools like Cisco ACI. An example of a Tier structure might be a ``Web`` tier and a ``Database`` tier. These tiers can also be marked as connected such that network communication rules can appropriately be defined. A basic 2 Tier blueprint skeleton might look something like this:
 
 .. code-block:: bash
 
@@ -32,7 +32,7 @@ This example has defined 2 tiers as yaml properties under the `tiers` object. Th
 Configuration Scopes
 ^^^^^^^^^^^^^^^^^^^^
 
-Another capability of Morpheus App Blueprint structure is its configuration scoping. This allows properties to be overridden based on the apps target environment or even target group and cloud. For example. Maybe we want to use a larger plan size in production vs. development
+Another capability of |morpheus| App Blueprint structure is its configuration scoping. This allows properties to be overridden based on the apps target environment or even target group and cloud. For example. Maybe we want to use a larger plan size in production vs. development
 
 An example of that can be done using "environments" overrides.
 

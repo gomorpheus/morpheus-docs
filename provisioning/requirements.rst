@@ -108,7 +108,7 @@ Force Guest Customization?
 Trial Version
  Enable to automatically re-arm the expiration on Windows Trial Images during provisioning.
 Enabled Sysprep?
- Applicable to Nutanix Only. Enable of the Windows Image has been sys-prepped. If enabled Morpheus will inject Unattend.xml through the Nutanix API (v3+ only)
+ Applicable to Nutanix Only. Enable of the Windows Image has been sys-prepped. If enabled |morpheus| will inject Unattend.xml through the Nutanix API (v3+ only)
 
 .. IMPORTANT:: Provisioning a Virtual Images that has `Cloud Init Enabled?` checked on the Virtual Record in |morpheus| but does not have cloud-init install will result in immediate provisioning failure.
 

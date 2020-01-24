@@ -72,7 +72,7 @@ Typically |morpheus| does not have sufficient metatdata to successfully provisio
    Trial Version
     Enable to automatically re-arm the expiration on Windows Trial Images during provisioning.
    Enabled Sysprep?
-    Applicable to Nutanix Only. Enable of the Windows Image has been sys-prepped. If enabled Morpheus will inject Unattend.xml through the Nutanix API (v3+ only)
+    Applicable to Nutanix Only. Enable of the Windows Image has been sys-prepped. If enabled |morpheus| will inject Unattend.xml through the Nutanix API (v3+ only)
 
 3. Save Changes
 
@@ -149,7 +149,7 @@ To Add Virtual Image:
    Trial Version
     Enable to automatically re-arm the expiration on Windows Trial Images during provisioning.
    Enabled Sysprep?
-    Applicable to Nutanix Only. Enable of the Windows Image has been sys-prepped. If enabled Morpheus will inject Unattend.xml through the Nutanix API (v3+ only)
+    Applicable to Nutanix Only. Enable of the Windows Image has been sys-prepped. If enabled |morpheus| will inject Unattend.xml through the Nutanix API (v3+ only)
 
 .. NOTE:: Default Storage location is ``/var/opt/morpheus/morpheus-ui/vms``. Additional Storage Providers can be configured in `Infrastructure -> Storage`. Ensure local folders are owned by morpheus-app.morpheus-app if used.
 
