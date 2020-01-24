@@ -93,7 +93,7 @@ html_theme_options = {
 'logo_only': True
 }
 
-html_logo = "_static/hpesm_spec_grn_pos_rgb_500x76.png"
+html_logo = "_static/HPE_log_left_wht.png"
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
