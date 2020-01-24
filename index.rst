@@ -1,11 +1,9 @@
 HPE GreenLake Private Cloud Documentation
 =========================================
 
-:ref:`Release Notes`
-
 .. toctree::
    :maxdepth: 1
-   :caption: Morpheus UI
+   :caption: HPE GreenLake Private Cloud
 
    getting_started/getting_started
    provisioning/provisioning
