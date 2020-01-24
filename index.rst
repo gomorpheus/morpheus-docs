@@ -2,8 +2,7 @@ HPE GreenLake Private Cloud Documentation
 =========================================
 
 .. toctree::
-   :maxdepth: 1
-   :caption: HPE GreenLake Private Cloud
+   :maxdepth: 2
 
    getting_started/getting_started
    provisioning/provisioning
