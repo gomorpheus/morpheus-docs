@@ -203,11 +203,17 @@ html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
 def setup(app):
     app.add_stylesheet('hpe_theme.css')
 
-
-rst_epilog = """
+rst_prolog = """
 .. |morpheus| replace:: %s """ % os.environ['COMPANY'] + """
+.. |morphbranch| replace:: v4.1
+.. |morphver| replace:: v4.1.2
+.. |rmqbranch| replace:: v3.5+
+.. |rmqver| replace:: v3.7.16
+.. |mysqlbranch| replace:: v5.7
+.. |mysqlver| replace:: v5.7.27
+.. |esbranch| replace:: v7.4
+.. |esver| replace:: v7.4.2
 """
-
 
 # -- levels -----
 #****************
