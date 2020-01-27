@@ -290,7 +290,7 @@ Login to mysql on Node 01:
     mysql -u root -p
     password:
 
-    mysql> CREATE DATABASE morpheusdb;
+    mysql> CREATE DATABASE morpheus CHARACTER SET utf8 COLLATE utf8_general_ci;
 
     mysql> show databases;
 
