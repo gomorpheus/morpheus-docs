@@ -1,5 +1,7 @@
 .. _upgrading:
 
+Upgrading
+---------
 
 .. toctree::
    :maxdepth: 2

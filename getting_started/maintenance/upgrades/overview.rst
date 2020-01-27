@@ -1,5 +1,5 @@
 Upgrading Overview
-------------------
+^^^^^^^^^^^^^^^^^^
 
 .. important:: |morpheus| v4.1.2+ requires Elasticsearch 7.x. Earlier versions of |morpheus| ran against Elasticsearch v5.x.
 
