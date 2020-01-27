@@ -108,7 +108,3 @@ Disadvantages
  - Load Balancer required to front App Hosts
  - Shared Storage configuration required
  - Rabbit Load balancer required
-
-.. include:: /getting_started/installation/singleNode/singleNode.rst
-.. include:: /getting_started/installation/distributed/3node/3node.rst
-.. include:: /getting_started/installation/distributed/full/distributedFull.rst
