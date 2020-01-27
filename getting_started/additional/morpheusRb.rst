@@ -5,8 +5,10 @@ Morpheus allows for additional advanced customizations to the morpheus.rb file l
 
 .. code-block:: bash
 
-  appliance_url 'https://morpheus.appliance-url.com' # do not add a trailing `/`.
+  appliance_url 'https://morpheus.appliance-url.com'
+    # The appliance_url must not contain a trailing `/`.
     # Appending alternate port to appliance_url is supported. ie 'https://morpheus.appliance-url.com:8443'
+    # The appliance_url cannot exceed 64 characters
 
   ui['vm_images_cdn_url'] = 'https://morpheus-images.morpheusdata.com'
   ui['kerberos_config'] = nil
