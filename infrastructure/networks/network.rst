@@ -1,11 +1,14 @@
 Network
 =======
 
-.. include:: networks.rst
-.. .. include:: network_groups.rst
-.. .. include:: routers.rst
-.. include:: services.rst
-.. include:: ip_pools.rst
-.. include:: domains.rst
-.. include:: proxies.rst
-.. include:: security_groups.rst
+.. toctree::
+   :maxdepth: 2
+
+   networks.rst
+   .. network_groups.rst
+   .. routers.rst
+   ip_pools.rst
+   domains.rst
+   proxies.rst
+   security_groups.rst
+   services.rst

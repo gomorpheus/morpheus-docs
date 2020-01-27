@@ -1,5 +1,5 @@
-Debian / Ubuntu
-```````````````
+Full HA Debian / Ubuntu Upgrade
+```````````````````````````````
 
 The following covers upgrading the |morpheus| App nodes in Full HA Architecture configurations to |morphver|.
 

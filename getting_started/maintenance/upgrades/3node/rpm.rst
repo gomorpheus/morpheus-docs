@@ -1,5 +1,5 @@
-CentOS / RHEL
-`````````````
+3-Node HA CentOS / RHEL Upgrade
+```````````````````````````````
 
 The following covers upgrading the |morpheus| App nodes in 3 Node HA configurations to |morphver|.
 

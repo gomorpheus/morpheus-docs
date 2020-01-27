@@ -17,6 +17,8 @@ Refer to :ref:`compatibility` for externalized MySQL, Elasticsearch and/or Rabbi
 
     - Refer to `Elasticsearch Upgrade Documentation <https://www.elastic.co/guide/en/elasticsearch/reference/current/setup-upgrade.html>`_ before installing or upgrading to v4.1.2 if your Appliance's Elasticsearch is external.
 
+.. toctree::
+   :maxdepth: 3
 
-.. include:: /getting_started/maintenance/upgrades/fullha/deb.rst
-.. include:: /getting_started/maintenance/upgrades/fullha/rpm.rst
+   deb.rst
+   rpm.rst
