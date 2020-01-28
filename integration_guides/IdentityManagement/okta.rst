@@ -14,7 +14,7 @@ Adding an Okta Integration
 #. Select :guilabel:`IDENTITY SOURCES`
 #. Select :guilabel:`+ IDENTITY SOURCE`
 #. Choose TYPE: "Okta"
-#. Populate the following:
+#. Populate the following, then select :guilabel:`SAVE CHANGES`:
 
 Name
   Unique name for authentication type
@@ -28,8 +28,6 @@ Required Group
   The Okta group that users must be in to have access (optional)
 Default Role
   The default role a user is assigned if no group is listed under an Okta user that maps within the Morpheus Role Mappings section
-
-#. Select :guilabel:`SAVE CHANGES`
 
 Now, allowed Okta users can log into |morpheus| via their Okta credentials and a user will be automatically generated within |morpheus| with matching metadata and mapped Role permissions.
 
