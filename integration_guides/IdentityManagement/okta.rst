@@ -4,7 +4,7 @@ Okta
 Overview
 ^^^^^^^^
 
-|morpheus| allows users to integrate an Okta deployment for user management and authentication. In |morpheus|, identity sources are added on a per-Tenant basis and Morpheus allows you to map Okta user groups with |morpheus| user groups. User accounts are automatically created with matching metadata and role permissions when users are authenticated.
+|morpheus| allows users to integrate an Okta deployment for user management and authentication. In |morpheus|, identity sources are added on a per-Tenant basis and Morpheus allows you to map Okta user groups to |morpheus| user groups. User accounts are automatically created with matching metadata and role permissions when users are authenticated.
 
 Adding an Okta Integration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
