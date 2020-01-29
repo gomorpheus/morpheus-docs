@@ -7,14 +7,14 @@ To view this information, navigate to ``Provisioning > Service Mesh``.
 
 The SERVICES tab displays the following fields:
 
-- *NAME*
-- *CLOUD*
-- *SERVICE ID*
-- *LOCATION*
+- **NAME**
+- **CLOUD**
+- **SERVICE ID**
+- **LOCATION**
 
 The DNS tab displays the following fields:
 
-- *NAME*
-- *DOMAIN*
-- *TYPE*
-- *TTL*
+- **NAME**
+- **DOMAIN**
+- **TYPE**
+- **TTL**
