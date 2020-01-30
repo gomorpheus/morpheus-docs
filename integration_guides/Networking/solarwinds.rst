@@ -45,8 +45,6 @@ Host records can also be viewed here by clicking on the name of a SolarWinds net
 .. image:: /images/integration_guides/networking/solarwinds/hostrecords.png
   :align: center
 
-Integrating with SolarWinds will also sync DNS zones, which can be viewed in ``Infrastructure > Network > DOMAINS``. They can also be viewed from within the integration detail page at ``Infrastructure > Network > INTEGRATIONS > (your SolarWinds integration) > ZONES``.
-
 .. NOTE:: |morpheus| SolarWinds integration does not support zone record syncing despite the presence of the ZONES tab on the integration detail page. This is a UI feature carried over from other networking integrations and is not supported at this time.
 
 Adding IP Pools to Networks
