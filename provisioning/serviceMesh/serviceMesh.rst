@@ -1,7 +1,7 @@
 Service Mesh
 ============
 
-A service mesh is an infrastructure layer which handles network communication between application services. A service mesh ensures fast and reliable between containerized application services. Morpheus will consume and display information on service meshes.
+A service mesh is an infrastructure layer which handles network communication between application services. A service mesh ensures fast and reliable communication between containerized application services. Morpheus will consume and display information on service meshes.
 
 To view this information, navigate to ``Provisioning > Service Mesh``.
 
