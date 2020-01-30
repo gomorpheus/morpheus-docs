@@ -24,7 +24,7 @@ Adding SolarWinds to |morpheus|
     Enabled
       Deselect to disable sync with the SolarWinds endpoint
     URL
-      URL of the SolarWinds server, ex: ``http://10.30.20.10``
+      URL of the SolarWinds server, ex: ``http://10.30.20.10:17778``
     Username
       Username of SolarWinds API User. API and root level propagating read access required, read/write access required for target networks and domains.
     Password
@@ -38,12 +38,16 @@ Consuming SolarWinds in |morpheus|
 On saving your new integration, SolarWinds networks will be synced and can be viewed by navigating to ``Infrastructure > Network > IP POOLS``. They're also viewable from the detail section of the SolarWinds integration at ``Infrastructure > Network > INTEGRATIONS > (your SolarWinds integration) > NETWORK POOLS``.
 
 .. image:: /images/integration_guides/networking/solarwinds/networkpools.png
+  :align: center
 
 Host records can also be viewed here by clicking on the name of a SolarWinds network.
 
 .. image:: /images/integration_guides/networking/solarwinds/hostrecords.png
+  :align: center
 
 Integrating with SolarWinds will also sync DNS zones, which can be viewed in ``Infrastructure > Network > DOMAINS``. They can also be viewed from within the integration detail page at ``Infrastructure > Network > INTEGRATIONS > (your SolarWinds integration) > ZONES``.
+
+.. NOTE:: |morpheus| SolarWinds integration does not support zone record syncing despite the presence of the ZONES tab on the integration detail page. This is a UI feature carried over from other networking integrations and is not supported at this time.
 
 Adding IP Pools to Networks
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -55,7 +59,7 @@ Adding IP Pools to Networks
 #. In the NETWORK POOL typeahead field, search for and select the name of the selected IP/Network Pool.
 
    * Gateway, DNS, and CIDR must be populated for static/pool IP assignment
-   * Select ALLOW IP OVERRIDE to allow selecting between DHCP, static IP address entry, and pool address selection at provision time
+   * Select ALLOW IP OVERRIDE, if desired, to allow selecting between DHCP, static IP address entry, and pool address selection at provision time
    * Deselect DHCP server if a DHCP server will not be used on the network (only static and/or IP Pool IP assignment)
 
 #. Select :guilabel:`SAVE CHANGES`
@@ -77,11 +81,3 @@ Creating Host Records
 .. image:: /images/integration_guides/networking/solarwinds/createhost.png
   :width: 80%
   :align: center
-
-Creating Zone Records
-^^^^^^^^^^^^^^^^^^^^^
-
-#. Select a domain from ``Infrastructure > Network > DOMAINS``
-#. Click :guilabel:`+ ADD`
-#. Complete the fields in the CREATE ZONE RECORD modal
-#. Click :guilabel:`SAVE CHANGES`
