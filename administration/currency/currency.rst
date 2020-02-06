@@ -1,5 +1,5 @@
 Currency Settings
-================
+=================
 
 Overview
 ^^^^^^^^
@@ -7,7 +7,7 @@ Overview
 In |morpheus|, Tenants are separate environments which can be defined as using currencies that are unique from one Tenant to the next. In addition, these currencies may be different from the currency in which Price Sets have been defined. In order to present pricing to Subtenant users in their designated currency, |morpheus| allows for integration with currency conversion services "open exchange rates" and "fixer.io". This article goes through the process of setting up the integration and how it works to determine pricing conversions.
 
 Integrating With a Currency Exchange Provider
-^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 #. Navigate to ``Administration > Settings > APPLIANCE``
 #. Under the Currency Settings heading, make a "Currency Provider" selection
@@ -16,7 +16,7 @@ Integrating With a Currency Exchange Provider
 The service is now integrated and can be used as described in the next section.
 
 Consuming Currency Exchange in |morpheus|
-^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Currency exchange data is synced from the integrated provider once every 12 hours. When needed, Morpheus will use this cached data to present currency conversions rather than hitting the API directly each time. This limits the total number of API hits and reduces costs.
 
