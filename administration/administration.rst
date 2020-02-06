@@ -20,3 +20,4 @@ of capabilities when it comes to managing customer accounts and users.
   backups/backup_settings.rst
   logs/logs.rst
   settings/settings.rst
+  currency/currency.rst
