@@ -1,7 +1,10 @@
 SSL Certificates
 ----------------
 
-The default installation generates a self-signed SSL certificate. To implement a third-party certificate:
+By default |morpheus| generates a Self-Signed SSL Certificate. The Self-Signed SSL Certificate can be replaced with a Trusted CA Signed SSL Certificate.
+
+Trusted CA Signed SSL Certificate Implementation
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 #. Copy the private key and certificate to ``/etc/morpheus/ssl/your_fqdn_name.key`` and ``/etc/morpheus/ssl/your_fqdn_name.crt`` respectively.
 
@@ -12,7 +15,7 @@ The default installation generates a self-signed SSL certificate. To implement a
     nginx['ssl_certificate'] = 'path to the certificate file'
     nginx['ssl_server_key'] = 'path to the server key file'
 
-   .. NOTE:: Both files should be owned by root and only readable by root, also if the server certificate is signed by an intermediate then you should include the signing chain inside the certificate file. The key file needs to decrypted for Morpheus to install it properly.
+   .. NOTE:: Both files should be owned by root and only readable by root, also if the server certificate is signed by an intermediate then you should include the signing chain inside the certificate file. The key file needs to be decrypted for Morpheus to install it properly.
 
 #. Next simply reconfigure the appliance and restart nginx:
 
@@ -21,21 +24,21 @@ The default installation generates a self-signed SSL certificate. To implement a
     sudo morpheus-ctl reconfigure
     sudo morpheus-ctl restart nginx
 
-SSL Self-signed Certificate Regeneration
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Self-Signed SSL Certificate Regeneration
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-When Morpheus is deployed it generates a 10 year self-signed non-trusted SSL certificate.  Below details the process to regenerate this certificate and key.
+When Morpheus is deployed it generates a 10 year Self-Signed SSL Certificate.  Below details the process to regenerate the Certificate and Key files.
 
-Replacing both the certificate and private key
-*************************************************
+Regenerate both the Certificate and Key
+```````````````````````````````````````
 
-#. Delete the certificate and key files in ``/etc/morpheus/ssl/`` that end in ``.crt`` and ``.key``
-#. Run Reconfigure ``morpheus-ctl reconfigure``
-#. Restart NGINX ``morpheus-ctl restart nginx``
+#. Delete the certificate and key files in ``/etc/morpheus/ssl/``.
+#. Run Reconfigure ``morpheus-ctl reconfigure``.
+#. Restart NGINX ``morpheus-ctl restart nginx``.
 
-Replacing only the certificate
-********************************
+Regenerate only the Certificate
+```````````````````````````````
 
-#. Delete the certificate file in ``/etc/morpheus/ssl/`` it ends in ``.crt``
-#. Run Reconfigure ``morpheus-ctl reconfigure``
-#. Restart NGINX ``morpheus-ctl restart nginx``
+#. Delete the certificate file in ``/etc/morpheus/ssl/`.
+#. Run Reconfigure ``morpheus-ctl reconfigure``.
+#. Restart NGINX ``morpheus-ctl restart nginx``.
