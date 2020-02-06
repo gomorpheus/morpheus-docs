@@ -6,3 +6,4 @@ Identity Management
   IdentityManagement/saml.rst
   IdentityManagement/AzureAD.rst
   IdentityManagement/onelogin.rst
+  IdentityManagement/okta.rst

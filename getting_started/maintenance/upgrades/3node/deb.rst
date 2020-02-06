@@ -1,5 +1,5 @@
-Debian / Ubuntu
-```````````````
+3-Node HA Debian / Ubuntu Upgrade
+`````````````````````````````````
 
 The following covers upgrading the |morpheus| App nodes in 3 Node HA configurations to |morphver|.
 

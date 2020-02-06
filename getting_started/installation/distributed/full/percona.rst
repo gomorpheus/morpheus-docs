@@ -18,7 +18,7 @@ Once you have your database installed and configured:
 
    .. code-block:: bash
 
-    mysql> CREATE DATABASE morpheusdb;
+    mysql> CREATE DATABASE morpheus CHARACTER SET utf8 COLLATE utf8_general_ci;
 
     mysql> show databases;
 

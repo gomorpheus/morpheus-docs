@@ -27,7 +27,7 @@ When upgrading from 3.6.x to |morphver|, the following services will be automati
 Debian / Ubuntu
 ...............
 
-To upgrade Morpheus running on Ubuntu/Debian, download new deb package, stop the morpheus-ui, install the new deb package, then reconfigure.
+To upgrade Morpheus running on Ubuntu/Debian, download the new deb package, stop morpheus services, install the new deb package, then reconfigure:
 
 .. code-block:: bash
 
@@ -47,7 +47,7 @@ After the morpheus-ui service finishes loading, the upgrade is complete.
 CentOS / RHEL
 .............
 
-To upgrade Morpheus running on CentOS/RHEL, download and install the new rpm package, stop the morpheus-ui, reconfigure and then start the morpheus-ui:
+To upgrade Morpheus running on CentOS/RHEL, download the new rpm package, stop morpheus services, install the new rpm package, then  reconfigure:
 
 .. code-block:: bash
 

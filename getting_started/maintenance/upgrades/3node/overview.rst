@@ -14,5 +14,8 @@ Due to RabbitMQ going from 3.4 to 3.7, which has no rolling upgrade path, the Ra
 
 .. important:: Due to the RabbitMQ upgrade from 3.4 to 3.7, the RabbitMQ configuration will be dropped and the cluster will need to be configured and established again.
 
-.. include:: /getting_started/maintenance/upgrades/3node/deb.rst
-.. include:: /getting_started/maintenance/upgrades/3node/rpm.rst
+.. toctree::
+   :maxdepth: 3
+
+   deb.rst
+   rpm.rst

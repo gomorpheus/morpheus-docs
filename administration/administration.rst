@@ -2,10 +2,7 @@
 Administration
 **************
 
-There are several administrative integrations built into |morpheus| that
-make it great to work with within any organization ranging from small to
-large. Especially, with its built in white label support and
-multitenancy capabilities, managed service providers have a wide range
+There are several administrative integrations built into |morpheus| that make it great to work with within any organization ranging from small to large. Especially, with its built in white label support and multitenancy capabilities, managed service providers have a wide range
 of capabilities when it comes to managing customer accounts and users.
 
 .. toctree::
@@ -23,3 +20,4 @@ of capabilities when it comes to managing customer accounts and users.
   backups/backup_settings.rst
   logs/logs.rst
   settings/settings.rst
+  currency/currency.rst
