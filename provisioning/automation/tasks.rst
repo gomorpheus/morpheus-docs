@@ -104,12 +104,12 @@ Task Types
      - Instance or Host
      - Existing Library Templates
      - Provisioning: Tasks
-   * - |localscript|
-     - Local Shell Script
-     - Executes Bash script locally (on |morpheus| app node)
-     - Local
+   * - |winrm|
+     - PowerShell Script
+     - Execute PowerShell script against IP specified in Task.
+     - IP specified in Task
      - None
-     - Provisioning: Tasks, Tasks - Script Engines
+     - Provisioning: Tasks
    * - |puppet|
      - Puppet Agent Install
      - Executes Puppet Agent bootstrap, writes ``puppet.conf`` and triggers agent checkin. Puppet Integration required
@@ -122,28 +122,16 @@ Task Types
      - Local
      - None
      - Provisioning: Tasks, Tasks - Script Engines
-   * - |shellscript|
-     - Remote Shell Script
-     - Executes Bash script against the Instance or Host the Task or Workflow is ran on
-     - Instance or Host
-     - None
-     - Provisioning: Tasks
    * - |restart|
      - Restart
      - Restarts target VM/Host/Container and confirms status before executing next task in Workflow
      - Instance or Host
      - None
      - Provisioning: Tasks
-   * - |ssh|
-     - SSH Script
-     - Execute Bash script against IP specified in Task.
-     - IP specified in Task
-     - None
-     - Provisioning: Tasks
-   * - |winrm|
-     - WinRM Script
-     - Execute Powershell script against IP specified in Task.
-     - IP specified in Task
+   * - |shellscript|
+     - Shell Script
+     - Executes Bash script against the Instance or Host the Task or Workflow is ran on
+     - Instance or Host
      - None
      - Provisioning: Tasks
 
@@ -361,15 +349,16 @@ Email
   TEMPLATE
     Search for and select existing Library Template
 
-|localscript| Local Shell Script
-`````````````````````````````````
+PowerShell Script
+````````````
+|winrm|
+
 :Description:
-  Executes Bash script locally (on |morpheus| app node)
+  Execute Powershell script against IP specified in Task.
 :Target:
-  Local App Node
+  IP specified in Task
 :Role Permissions:
   Provisioning: Tasks
-  Provisioning: Tasks - Script Engines
 :Task Configuration:
   NAME
     Name of the Task
@@ -379,12 +368,16 @@ Email
     - Single Value
     - Key/Value Pairs
     - JSON
-  GIT REPO
-    Select a Git Repo which can be referenced in the Script.
-  GIT REF
-    Specify git ref such as branch
+  IP ADDRESS
+    IP Address of the PowerShell task target
+  PORT
+    SSH port for PowerShell task target (5985 default)
+  USERNAME
+    Username for PowerShell task target
+  PASSWORD
+    Password for PowerShell task target
   SCRIPT
-    Bash Script to execute. If a Git Repo is specified, files in the repo can be called in the script.
+    Enter Script to execute
 
 |puppet| Puppet Agent Install
 ```````````````````````````````````
@@ -428,26 +421,6 @@ Email
   SCRIPT
     Python Script (jython) Script to execute
 
-|shellscript| Remote Shell Script
-``````````````````````````````````
-:Description:
-  Executes Bash script against the Instance or Host the Task or Workflow is ran on
-:Target:
-  Instance or Host
-:Role Permissions:
-  Provisioning: Tasks
-:Task Configuration:
-  NAME
-    Name of the Task
-  CODE
-    Unique code name for api, cli, and variable reference
-  RESULT TYPE
-    - Single Value
-    - Key/Value Pairs
-    - JSON
-  SCRIPT
-    Enter Bash Script to execute
-
 |restart| Restart
 ``````````````````````
 :Description:
@@ -462,12 +435,12 @@ Email
   CODE
     Unique code name for api, cli, and variable reference
 
-|ssh| SSH Script
-`````````````````````````
+|shellscript| Shell Script
+``````````````````````````````````
 :Description:
-  Execute Bash script against IP specified in Task.
+  Executes Bash script locally (on |morpheus| app node), against the Instance or Host the Task or Workflow is run on, or against the IP specified in the Task
 :Target:
-  IP specified in Task
+  Instance or Host, specified IP, or the local app node
 :Role Permissions:
   Provisioning: Tasks
 :Task Configuration:
@@ -479,49 +452,9 @@ Email
     - Single Value
     - Key/Value Pairs
     - JSON
-  IP ADDRESS
-    IP Address of the ssh task target
-  PORT
-    SSH port for ssh task target (22 default)
-  KEY
-    Select existing Keypair for key auth
-  USERNAME
-    Username for ssh task target
-  PASSWORD
-    Password for ssh task target
   SCRIPT
     Enter Bash Script to execute
 
-
-WinRM Script
-````````````
-|winrm|
-
-:Description:
-  Execute Powershell script against IP specified in Task.
-:Target:
-  IP specified in Task
-:Role Permissions:
-  Provisioning: Tasks
-:Task Configuration:
-  NAME
-    Name of the Task
-  CODE
-    Unique code name for api, cli, and variable reference
-  RESULT TYPE
-    - Single Value
-    - Key/Value Pairs
-    - JSON
-  IP ADDRESS
-    IP Address of the WinRM task target
-  PORT
-    SSH port for WinRM task target (5985 default)
-  USERNAME
-    Username for WinRM task target
-  PASSWORD
-    Password for WinRM task target
-  SCRIPT
-    Enter Script to execute
 
 Task Management
 ^^^^^^^^^^^^^^^
