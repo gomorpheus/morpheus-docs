@@ -19,7 +19,7 @@ Adding Infoblox Integration
 #. Select :guilabel:`+ ADD` -> IPAM -> Infoblox
 #. Enter the following:
 
-   .. image:: /images/infrastructure/network/infoblox/infoblox_settings.png
+   .. image:: /images/infrastructure/network/infoblox/infoblox_settings_new.png
 
    NAME
     Name of the Integration in |morpheus|
