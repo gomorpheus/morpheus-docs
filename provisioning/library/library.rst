@@ -6,15 +6,19 @@ Overview
 
 The Library section is used to add virtual images as custom instances to the provisioning catalog. The Library Section is composed of:
 
-* Instance Types
-* Layouts
-* Node Types
-* Option Types
-* Option Lists
-* File Templates
-* Scripts
-* Spec Templates
-* Cluster Layouts
+.. toctree::
+  :maxdepth: 2
+  
+  instance_types.rst
+  layouts.rst
+  node_types.rst
+  option_types.rst
+  option_lists.rst
+  file_templates.rst
+  scripts.rst
+  specTemplates.rst
+  clusterLayouts.rst
+
 
 Uploaded or synced images from the virtual images section are added to nodes, a node or multiple nodes are added to layouts, and layouts are added to Instance Types. Scripts and File Templates can be attached to nodes, with phased execution options for scripts.
 
