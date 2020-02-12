@@ -50,12 +50,10 @@ Platform support
 Provisioning Jobs
 -----------------
 
-- Jobs can now be executed at a single point in time: LINK
+- Jobs can now be executed at a single point in time: `LINK <https://docs.morpheusdata.com/en/4.2.0/provisioning/jobs/jobs.html#creating-jobs>`_
 
 .. image:: /images/provisioning/jobs/dateandtime_job.png
-  :width: 80%
-  :alt: The new group dialog box showing a name for the group filled in
-  :align: left
+  :width: 60%
 
 Cloud Enhancement - SCVMM
 -------------------------
@@ -71,6 +69,11 @@ UI Changes
 ----------
 
 - Instance Prov Wizard: Tags renamed Labels, Metadata key/value pairs are now Tags. Change made to align Morpheus UI with public cloud terminology.
+
+Uncategorized
+-------------
+
+
 
 API Enhancements
 ================
