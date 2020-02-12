@@ -16,56 +16,61 @@ New Features
 Kubernetes
 ----------
 
-Kubernetes Amazon EKS
-Kubernetes Azure EKS
-Brownfield Kubernetes Cluster Support
+- Kubernetes Amazon EKS
+- Kubernetes Azure EKS
+- Brownfield Kubernetes Cluster Support
 
 VMware NSX
 ----------
 
-NSX Object Permissions
-NSX-V Security Groups
-NSX Object Quota Policies
+- NSX Object Permissions
+- NSX-V Security Groups
+- NSX Object Quota Policies
 
 Security Config
 ---------------
 
-NIST Database
+- NIST Database
 
 ServiceNow
 ----------
 
-ServiceNow custom application changes
+- ServiceNow custom application changes
 
 HashiCorp
 ---------
 
-Terraform Provider
+- Terraform Provider
 
 Platform support
 ----------------
 
-Installer support for RHEL 8
+- Installer support for RHEL 8
 
 Provisioning Jobs
 -----------------
 
-Jobs can now be executed at a single point in time
+- Jobs can now be executed at a single point in time: LINK
+
+.. image:: /images/provisioning/jobs/dateandtime_job.png
+  :width: 80%
+  :alt: The new group dialog box showing a name for the group filled in
+  :align: left
 
 Cloud Enhancement - SCVMM
 -------------------------
 
-Pull non-Managed VM IPs from SCVMM
+- Pull non-Managed VM IPs from SCVMM
 
 AWS Security Enhancement
 ------------------------
 
-AWS support security token service AssumeRole
+- AWS support security token service AssumeRole
 
 UI Changes
 ----------
 
-Instance Prov Wizard: Tags renamed Labels, Metadata key/value pairs are now Tags. Change made to align Morpheus UI with public cloud terminology.
+- Instance Prov Wizard: Tags renamed Labels, Metadata key/value pairs are now Tags. Change made to align Morpheus UI with public cloud terminology.
 
 API Enhancements
 ================
