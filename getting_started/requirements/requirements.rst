@@ -25,7 +25,7 @@ Base Requirements
     - Inbound connectivity access from provisioned vm's and container hosts on ports 443 (Agent install and communication) and 80 (Linux Agent installs via yum and apt)
     - An Appliance URL that is accessible/resolvable to all managed hosts. It is necessary for all hosts that are managed by |morpheus| to be able to communicate with the appliance server ip on port 443. This URL is configured under Admin->Settings.
 
-.. NOTE:: Ubuntu 16.10, CentOS/RHEL 8.x and Amazon Linux are not currently supported. 
+.. NOTE:: Ubuntu 16.10, CentOS/RHEL 8.x and Amazon Linux are not currently supported.
 
 Storage Considerations
 ----------------------
@@ -94,7 +94,6 @@ The Appliance Server automatically installs several components for the operation
 -  RabbitMQ (Messaging)
 -  MySQL (Logistical Data store)
 -  Elasticsearch (Logs / Metrics store)
--  Redis (Cache store)
 -  Tomcat (|morpheus| Application)
 -  Nginx (Web frontend)
 -  Guacamole (Remote console service for clientless remote console)
