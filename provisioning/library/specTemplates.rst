@@ -24,13 +24,7 @@ Creating a Spec Template
 #. Click :guilabel:`+ ADD`
 #. Complete the following fields, then click :guilabel:`SAVE CHANGES`:
 
-  - *NAME*
-
-  - *TYPE*
-    See the previous section for a complete list of Spec Template types
-
-  - *SOURCE*
-    Local, Repository, or URL
-
-  - *CONTENT*
-    If this is a local Spec Template, supply the template in this field. If the template is supplied through a URL or online repository, the CONTENT field will change to allow the user to point |morpheus| to that resource.
+  - **NAME:**
+  - **TYPE:** See the previous section for a complete list of Spec Template types
+  - **SOURCE:** Local, Repository, or URL
+  - **CONTENT:** If this is a local Spec Template, supply the template in this field. If the template is supplied through a URL or online repository, the CONTENT field will change to allow the user to point |morpheus| to that resource.
