@@ -110,13 +110,14 @@ Each Approval Request will have:
 * Status
 * Date Created
 * Requested By
-* Actions dropdown
-  * For Internal Approval Requests
+* Actions dropdown (for internal approval requests)
     * Approve
     * Deny
     * Cancel
-  * For ServiceNow Approval Requests
+* Actions dropdown (for ServiceNow requests)
     * Cancel
+
+.. NOTE:: The Approvals list view can be sorted by NAME, REQUEST TYPE, EXTERNAL NAME, DATE CREATED, and REQUESTED BY
 
 Internal approval requests
 ^^^^^^^^^^^^^^^^^^^^^^^^^^

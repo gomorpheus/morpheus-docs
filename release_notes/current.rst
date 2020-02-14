@@ -47,6 +47,11 @@ Platform support
 
 - Installer support for RHEL 8
 
+SCVMM
+-----
+
+- IP addresses for non-managed VMs in SCVMM are now pulled into Morpheus
+
 Provisioning Jobs
 -----------------
 
@@ -65,15 +70,20 @@ AWS Security Enhancement
 
 - AWS support security token service AssumeRole
 
+Security Changes
+----------------
+
+- New toggle added to `Administration > Settings > APPLIANCE` requiring the agent to validate the presence of an SSL certificate in order to connect the appliance to the instance being managed: `LINK <https://docs.morpheusdata.com/en/4.2.0/administration/settings/settings.html#id1>`_
+
 UI Changes
 ----------
 
 - Instance Prov Wizard: Tags renamed Labels, Metadata key/value pairs are now Tags. Change made to align Morpheus UI with public cloud terminology.
 
-Uncategorized
--------------
+Other UI Enhancements
+---------------------
 
-
+- Approvals (`Operations > Approvals`) can be sorted by DATE CREATED
 
 API Enhancements
 ================
@@ -95,4 +105,6 @@ CVEs Addressed
 Fixes
 =====
 
-4.2.0 Fixes here
+- Removed a hard-coded message stating "You have logged out of morpheus." when users who were authenticated through a SAML integration logged out. This could cause confusion when using white-labeled Morpheus appliances.
+- Fixed an issue where the HISTORY tab of an ARM Blueprint App detail page would only show deployment information if a VM resource was being deployed
+- Creation of networks and routers are now asynchronous processes to improve performance and prevent timeout of the modal in some scenarios
