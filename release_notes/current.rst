@@ -60,10 +60,20 @@ Provisioning Jobs
 .. image:: /images/provisioning/jobs/dateandtime_job.png
   :width: 60%
 
+Git/Github Integration
+----------------------
+
+- Git and Github integrations now utilize HTTPS and do not require SSH
+
 Cloud Enhancement - SCVMM
 -------------------------
 
 - Pull non-Managed VM IPs from SCVMM
+
+Cloud Enhancement - Google Cloud Platform (GCP)
+-----------------------------------------------
+
+- API Proxy values can now be set under Advanced Options for GCP clouds (when creating new integration or editing an existing one) as is already possible for other clouds: `LINK <https://docs.morpheusdata.com/en/4.2.0/integration_guides/Clouds/google/google.html#advanced-options>`_
 
 AWS Security Enhancement
 ------------------------
@@ -79,10 +89,6 @@ UI Changes
 ----------
 
 - Instance Prov Wizard: Tags renamed Labels, Metadata key/value pairs are now Tags. Change made to align Morpheus UI with public cloud terminology.
-
-Other UI Enhancements
----------------------
-
 - Approvals (`Operations > Approvals`) can be sorted by DATE CREATED
 
 API Enhancements
@@ -106,5 +112,6 @@ Fixes
 =====
 
 - Removed a hard-coded message stating "You have logged out of morpheus." when users who were authenticated through a SAML integration logged out. This could cause confusion when using white-labeled Morpheus appliances.
+- Removed a message stating "If supported by your identity provider and configuration, you have also been logged out of your identity provider" that appeared in some instances when logging out of |morpheus| through Identity Source authentication
 - Fixed an issue where the HISTORY tab of an ARM Blueprint App detail page would only show deployment information if a VM resource was being deployed
 - Creation of networks and routers are now asynchronous processes to improve performance and prevent timeout of the modal in some scenarios
