@@ -15,6 +15,8 @@ Add Workflow
 #. For multi-tenant environments, select Public or Private visibility for the Workflow.
 #. Click the :guilabel:`Save Changes` button to save.
 
+.. NOTE:: When setting Workflow visibility to Public in a multi-Tenant environment, Tenants will be able to see the Workflow and also execute it directly from the Workflows list (if it's an Operational Workflow). They will not be able to edit or delete the Workflow.
+
 Workflow Execution Phases
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 

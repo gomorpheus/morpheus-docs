@@ -23,7 +23,7 @@ To create a new Docker Cluster:
       Available to all Tenants
     Private
       Available to Master Tenant
-   TAGS
+   LABELS
     Internal label(s)
 
 #. Select :guilabel:`NEXT`
@@ -37,6 +37,8 @@ To create a new Docker Cluster:
     Configure volumes for Docker Host
    NETWORKS
     Select the network for Docker Master & Worker VM's
+   NUMBER OF HOSTS
+    Specify the number of hosts to be created
    User Config
      CREATE YOUR USER
        Select to create your user on provisioned hosts (requires Linux user config in |morpheus| User Profile)

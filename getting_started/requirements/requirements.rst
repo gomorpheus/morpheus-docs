@@ -8,7 +8,7 @@ In the simplest configuration |morpheus| needs one Appliance Server. The Applian
 Base Requirements
 -----------------
 
-- **Operating System:** Ubuntu 16.04 /18.04 or CentOS/RHEL 7.x
+- **Operating System:** Ubuntu 16.04 /18.04 or CentOS/RHEL 7.x, 8.x
 - **Memory:** 16 GB recommended for default installations. 8 GB minimum required with 4 GB+ available storage swap space
 - **Storage:** 200 GB storage minimum (see Storage Considerations below)
 - Network connectivity from your users to the appliance over TCP 443 (HTTPS)
