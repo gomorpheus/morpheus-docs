@@ -30,6 +30,10 @@ Adding OneLogin Identity Source Integration
       The default Morpheus Role applied to users created from OneLogin Integration if no other role mapping is specified below
     ROLE MAPPINGS
       Existing Morpheus Roles will be listed with fields to enter OneLogin Roles to map to. Users with OneLogin roles matching the role mappings will be assigned the appropriate Role(s) in Morpheus when signing in.
+    ENABLE ROLE MAPPING PERMISSION
+      When selected, Tenant users with appropriate rights to view and edit Roles will have the ability to set role mapping for the Identity Source integration. This allows the Tenant user to edit only the role mappings without viewing or potentially editing the Identity Source configuration.
+
+    .. NOTE:: For more on Identity Source role mapping permissions, see the `associated guide <https://docs.morpheusdata.com/en/4.1.1/getting_started/agent/morpheus_agent.html#morpheus-agent>`_ in our KnowledgeBase.
 
 #. Select :guilabel:`SAVE CHANGES` and the OneLogin Integration will be added.
 

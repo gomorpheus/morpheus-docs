@@ -47,6 +47,10 @@ ROLE ATTRIBUTE NAME
   The name of the attribute filed that will map to morpheus roles, such a MemberOf
 REQUIRED ROLE ATTRIBUTE VALUE
   Role attribute value that a user must be assigned/a member of to be authorized, such as group or role in the SAML SP.
+ENABLE ROLE MAPPING PERMISSION
+  When selected, Tenant users with appropriate rights to view and edit Roles will have the ability to set role mapping for the Identity Source integration. This allows the Tenant user to edit only the role mappings without viewing or potentially editing the Identity Source configuration.
+
+.. NOTE:: For more on Identity Source role mapping permissions, see the `associated guide <https://docs.morpheusdata.com/en/4.1.1/getting_started/agent/morpheus_agent.html#morpheus-agent>`_ in our KnowledgeBase.
 
 The rest of the Role Mapping Fields will be the existing Roles in morpheus with a Role Attribute Value field.
 

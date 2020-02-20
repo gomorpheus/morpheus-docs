@@ -110,6 +110,11 @@ Additional Role Mappings
 
 .. IMPORTANT:: Use an Azure Groups ``Object ID``, not Group name, when entering Role Mappings. Example: ``7626a4a2-b388-4d9b-a228-72ce9a33bd4b``
 
+ENABLE ROLE MAPPING PERMISSION
+  When selected, Tenant users with appropriate rights to view and edit Roles will have the ability to set role mapping for the Identity Source integration. This allows the Tenant user to edit only the role mappings without viewing or potentially editing the Identity Source configuration.
+
+.. NOTE:: For more on Identity Source role mapping permissions, see the `associated guide <https://docs.morpheusdata.com/en/4.1.1/getting_started/agent/morpheus_agent.html#morpheus-agent>`_ in our KnowledgeBase.
+
 Once populated, select :guilabel:`SAVE CHANGES` and the SAML identity source integration will be added. The Identity Source can be edited anytime to deactivate or change Role Mappings or other values.
 
 .. NOTE:: If Role mappings are edited after Azure AD SSO users have signed into |morpheus|, currently logged in users will need to log out of |morpheus| for the new Role mappings to take effect, when applicable.
