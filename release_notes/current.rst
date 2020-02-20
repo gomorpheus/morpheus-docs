@@ -17,7 +17,7 @@ Kubernetes
 ----------
 
 - Kubernetes Amazon EKS
-- Kubernetes Azure EKS
+- Kubernetes Azure AKS
 - Brownfield Kubernetes Cluster Support
 
 VMware NSX
@@ -63,7 +63,7 @@ Provisioning Jobs
 Git/Github Integration
 ----------------------
 
-- Git and Github integrations now utilize HTTPS and do not require SSH
+- Git and Github integrations now have the option to utilize HTTPS and do not require SSH
 - Git integration now exists for Groovy Script-type Automation Tasks
 
 Cloud Enhancement - SCVMM
@@ -106,11 +106,6 @@ CLI Enhancements
 
 4.2.0 CLI Enhancements here
 
-CVEs Addressed
-==============
-
-4.2.0 CVEs addressed here
-
 Fixes
 =====
 
@@ -119,3 +114,8 @@ Fixes
 - Fixed an issue where the HISTORY tab of an ARM Blueprint App detail page would only show deployment information if a VM resource was being deployed
 - Creation of networks and routers are now asynchronous processes to improve performance and prevent modal timeout in some scenarios
 - Updated |morpheus| installer to force a version of FreeRDP which is compatible with Guacd. CentOS/RHEL 7.7+ include FreeRDP 2.0 by default which is not compatible.
+
+CVEs Addressed
+==============
+
+4.2.0 CVEs addressed here
