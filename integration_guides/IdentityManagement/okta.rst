@@ -31,7 +31,7 @@ Default Role
 ENABLE ROLE MAPPING PERMISSION
   When selected, Tenant users with appropriate rights to view and edit Roles will have the ability to set role mapping for the Identity Source integration. This allows the Tenant user to edit only the role mappings without viewing or potentially editing the Identity Source configuration.
 
-.. NOTE:: For more on Identity Source role mapping permissions, see the `associated guide <https://docs.morpheusdata.com/en/4.1.1/getting_started/agent/morpheus_agent.html#morpheus-agent>`_ in our KnowledgeBase.
+.. NOTE:: For more on Identity Source role mapping permissions, see the `associated guide <https://support.morpheusdata.com/s/article/How-to-enable-Subtenant-admins-to-edit-Identity-Source-role-mapping?language=en_US>`_ in our KnowledgeBase.
 
 Now, allowed Okta users can log into |morpheus| via their Okta credentials and a user will be automatically generated within |morpheus| with matching metadata and mapped Role permissions.
 
