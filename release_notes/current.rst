@@ -45,7 +45,7 @@ HashiCorp
 Platform support
 ----------------
 
-- The |morpheus| installer now supports Red Hat Enterprise Linux 8 (RHEL 8): `LINK <https://docs.morpheusdata.com/en/4.2.0/provisioning/jobs/jobs.html#creating-jobs>`_
+- The |morpheus| installer now supports Red Hat Enterprise Linux 8 (RHEL 8): `LINK <https://docs.morpheusdata.com/en/4.2.0/release_notes/compatibility.html>`_
 
 Morpheus Catalog Enhancements
 -----------------------------
@@ -79,7 +79,10 @@ Cloud Enhancement - Google Cloud Platform (GCP)
 AWS Security Enhancement
 ------------------------
 
-- AWS support security token service AssumeRole
+- Now supports security token service to AssumeRole by entering AWS role ARN value when editing or integrating new Amazon cloud
+
+.. image:: /images/integration_guides/clouds/aws_role_arn.png
+  :width: 60%
 
 Security Changes
 ----------------
@@ -89,7 +92,11 @@ Security Changes
 UI Changes
 ----------
 
-- Create Clusters wizard (`Infrastructure > Clusters > + ADD CLUSTER`) now allows users to specify the number of worker nodes or the number of hosts for Kubernetes clusters or Docker/KVM clusters, respectively
+- Create Cluster wizard (`Infrastructure > Clusters > + ADD CLUSTER`) now allows users to specify the number of worker nodes or the number of hosts for Kubernetes clusters or Docker/KVM clusters, respectively
+
+  .. image:: /images/infrastructure/clusters/workers_cluster_wizard.png
+    :width: 60%
+
 - Workflows with a visibility value of "Public" are now viewable and executable by Tenants: `LINK <https://docs.morpheusdata.com/en/4.2.0/provisioning/automation/automation.html#add-workflow>`_
 - In |morpheus| UI, TAGS have been renamed to LABELS and METADATA has been renamed to TAGS in all places where these fields appear, such as the Instance provisioning wizard, clone wizard, App wizard, Blueprint wizard, and perhaps other places. This change was made to align |morpheus| UI more closely with public cloud terminology. |morpheus| variables and API naming conventions are not affected.
 - Approvals (`Operations > Approvals`) can be sorted by DATE CREATED
