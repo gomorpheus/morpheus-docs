@@ -115,6 +115,8 @@ UI Changes
 - Workflows with a visibility value of "Public" are now viewable and executable by Tenants: `LINK <https://docs.morpheusdata.com/en/4.2.0/provisioning/automation/automation.html#add-workflow>`_
 - In |morpheus| UI, TAGS have been renamed to LABELS and METADATA has been renamed to TAGS in all places where these fields appear, such as the Instance provisioning wizard, clone wizard, App wizard, Blueprint wizard, and perhaps other places. This change was made to align |morpheus| UI more closely with public cloud terminology. |morpheus| variables and API naming conventions are not affected.
 - Approvals (`Operations > Approvals`) can be sorted by DATE CREATED
+- Recent Activity Report now displays Impersonated User info. 
+  - The Recent Activity Report in /operations/activity now shows "User as Impersonated User" for activity records from an Impersonated User. Impersonations were previously shown in the Dashboard Activity section, as well as the Audit Log and UI Logs, and now shown in the Recent Activity Report too.
 
 API Enhancements
 ================
