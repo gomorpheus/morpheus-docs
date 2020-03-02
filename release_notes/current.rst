@@ -37,10 +37,25 @@ ServiceNow
 
 - ServiceNow custom application changes
 
-HashiCorp
----------
+.. HashiCorp
+.. ---------
+.. - Terraform Provider
 
-- Terraform Provider
+PXE Boot Menu section updates
+-----------------------------
+
+The PXE Boot Menu section in /infrastructure/boot#!boot-menus has been updated for Boot Menu creation and management, the ability to set Root and Sub Menus, and configure image and answer file scoping.
+
+- Boot Menu Creation with
+  - Enabled flag
+  - Default Menu flag
+  - Root Menu Flag
+  - Boot Image scoping (optional)
+  - Answer File scoping (optional)
+  - Menu Content field
+  - Sub Menu(s) selection
+- Ability to edit user created Boot Menus
+- System seeded Boot Menus are now displayed
 
 Platform support
 ----------------
