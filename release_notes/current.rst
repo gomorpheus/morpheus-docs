@@ -13,12 +13,31 @@
 New Features
 ============
 
+Tag Enforcement and Compliance Policy
+-------------------------------------
+New Tag Policy Type with enforcement and compliance scanning added.
+ - A Tag policy can be enforced both actively (at provision time) as well as Passively on supported clouds.
+ - A Tag policy defines the relevant key to validate the presence of as well as an optional option list to validate valid values.
+ - Multiple tag policies can be combined to get an overall view of tag compliance.
+ - Servers detail pages show warnings if tags are not compliant.
+ - Strict will block provisioning of an instance without the valid tags. These valid tags can be manually entered in tags fieldset or as part of an export as tag Option Type.
+
+.. note:: Tag Policy scanning and enforcement is only currently functional for three cloud types. Azure, Amazon, and VMware.
+
+.. image:: /images/administration/settings/policies/tagPolicy.jpeg
+
+
+.. image:: /images/administration/settings/policies/tagComplianceWarning.jpeg
+
+
+﻿Annotation on 2020-02-19 at 01-47-49.png
+
 Kubernetes
 ----------
 
-- Kubernetes Amazon EKS
 - Kubernetes Azure AKS
 - Brownfield Kubernetes Cluster Support
+- Reconfigure Action now available for Kubernetes Instances.
 
 VMware NSX
 ----------
@@ -31,15 +50,13 @@ Security Config
 ---------------
 
 - NIST Database
+- Cloud-Init: Added support for hashing change passwords in target cloud-init data for any non-Ubuntu 14 based image (Ubuntu 14.04 restriction). Note: Dependent on Virtual Image OS type and version settings; ensure OS Type is accurately set.
 
 ServiceNow
 ----------
 
 - ServiceNow custom application changes
 
-.. HashiCorp
-.. ---------
-.. - Terraform Provider
 
 PXE Boot Menu section updates
 -----------------------------
@@ -113,11 +130,25 @@ UI Changes
     :width: 60%
 
 - Workflows with a visibility value of "Public" are now viewable and executable by Tenants: `LINK <https://docs.morpheusdata.com/en/4.2.0/provisioning/automation/automation.html#add-workflow>`_
-- In |morpheus| UI, TAGS have been renamed to LABELS and METADATA has been renamed to TAGS in all places where these fields appear, such as the Instance provisioning wizard, clone wizard, App wizard, Blueprint wizard, and perhaps other places. This change was made to align |morpheus| UI more closely with public cloud terminology. |morpheus| variables and API naming conventions are not affected.
-- Approvals (`Operations > Approvals`) can be sorted by DATE CREATED
-- Recent Activity Report now displays Impersonated User info. 
-  - The Recent Activity Report in /operations/activity now shows "User as Impersonated User" for activity records from an Impersonated User. Impersonations were previously shown in the Dashboard Activity section, as well as the Audit Log and UI Logs, and now shown in the Recent Activity Report too.
 
+TAGS have been renamed to LABELS and METADATA has been renamed to TAGS
+  In |morpheus| UI, TAGS have been renamed to LABELS and METADATA has been renamed to TAGS in all places where these fields appear, such as the Instance provisioning wizard, clone wizard, App wizard, Blueprint wizard, and perhaps other places. This change was made to align |morpheus| UI more closely with public cloud terminology. 
+  
+  .. note:: |morpheus| variables and API naming conventions have not been changed.
+
+Approvals (`Operations > Approvals`) can be sorted by DATE CREATED
+
+Recent Activity Report now displays Impersonated User info. 
+  The Recent Activity Report in /operations/activity now shows "User as Impersonated User" for activity records from an Impersonated User. Impersonations were previously shown in the Dashboard Activity section, as well as the Audit Log and UI Logs, and now shown in the Recent Activity Report too.
+CloudFormation: Improved conditional resource handling
+  When Conditional Resources fail to create when provisioning CloudFormation Instances or Apps, the resources are removed instead of remaining in Morpheus as Failed.
+vCloud Director: API Version Specification
+  The API Version can now be specified in vCloud Director Cloud configurations.
+   - API VERSION field added to vCD Cloud configs
+   - To override system API version, enter version in API VERSION field
+     - ex: 31.0
+ 
+ 
 API Enhancements
 ================
 
