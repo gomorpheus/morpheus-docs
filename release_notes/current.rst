@@ -20,7 +20,7 @@ New Tag Policy Type with enforcement and compliance scanning added.
  - A Tag policy defines the relevant key to validate the presence of as well as an optional option list to validate valid values.
  - Multiple tag policies can be combined to get an overall view of tag compliance.
  - Servers detail pages show warnings if tags are not compliant.
- - Strict will block provisioning of an instance without the valid tags. These valid tags can be manually entered in tags fieldset or as part of an export as tag Option Type.
+ - Strict will block provisioning of an instance without the valid tags. These valid tags can be manually entered in tags field set or as part of an export as tag Option Type.
 
 .. note:: Tag Policy scanning and enforcement is only currently functional for three cloud types. Azure, Amazon, and VMware.
 
@@ -98,10 +98,9 @@ Git/Github Integration
 - Git and Github integrations now have the option to utilize HTTPS and do not require SSH
 - Git integration now exists for Groovy Script-type Automation Tasks
 
-Cloud Enhancement - SCVMM
--------------------------
-
-- IP addresses for non-managed VMs in SCVMM are now pulled into Morpheus
+SCVMM: Discovered VM IP Address Sync
+ SCVMM Cloud Discovery now syncs in IP addresses for Discover VM's. 
+  - Inventory Existing setting must be enabled on SCVMM Cloud config.
 
 Cloud Enhancement - Google Cloud Platform (GCP)
 -----------------------------------------------
@@ -146,9 +145,40 @@ vCloud Director: API Version Specification
   The API Version can now be specified in vCloud Director Cloud configurations.
    - API VERSION field added to vCD Cloud configs
    - To override system API version, enter version in API VERSION field
-     - ex: 31.0
- 
- 
+     - example API verison value: ``31.0``
+
+VMware: Tag Enhancements
+  Post-Provision Tag additions, updates, and/or removals in Morpheus on VMware Instances are now synced into VMware
+Azure: Tag Enhancements
+  Post-Provision Tag additions, updates, and/or removals in Morpheus on Azure Instances are now synced into Azure
+IBM Cloud: Frankfurt 4 & 5 Datacenters now supported
+ Frankfurt 4 & 5 Datacenters are now available for IBM Clouds.
+Softlayer: Frankfurt 4 & 5 Datacenters now supported
+ Frankfurt 4 & 5 Datacenters are now available for Softlayer Clouds.
+Policies: Network Quotas
+ Network Quota Policies limit the number of Networks that can be created within the Policy's scope.
+  - Once the Quote limit is reached, Users will not be able to create additional Networks within the applicable Policy Enforcement scope.
+  - Scopes include:
+
+    - Global
+    - Tenant
+    - Group
+    - Cloud
+    - Role
+    - User
+
+Policies: Router Quotas
+ Router Quota Policies limit the number of Router that can be created within the Policy's scope.
+  - Once the Quote limit is reached, Users will not be able to create additional Routers within the applicable Policy Enforcement scope.
+  - Scopes include:
+
+    - Global
+    - Tenant
+    - Group
+    - Cloud
+    - Role
+    - User
+    
 API Enhancements
 ================
 
