@@ -36,7 +36,7 @@ Kubernetes
 ----------
 
 - Kubernetes Azure AKS
-- Brownfield Kubernetes Cluster Support
+- Brownfield Kubernetes Cluster Support, create a new Cluster (Infrastructure > Clusters) with "External Kubernetes Cluster" type to bring an existing Kubernetes cluster into Morpheus: `LINK <https://support.morpheusdata.com/s/article/How-to-add-existing?language=en_US>`_
 - Reconfigure Action now available for Kubernetes Instances.
 
 
@@ -230,6 +230,8 @@ Fixes
 - Creation of networks and routers are now asynchronous processes to improve performance and prevent modal timeout in some scenarios
 - Updated |morpheus| installer to force a version of FreeRDP which is compatible with Guacd. CentOS/RHEL 7.7+ include FreeRDP 2.0 by default which is not compatible.
 - The Activity page (Operations > Activity) now identifies actions taken by impersonated Users in the same way they are on the Dashboard (Operations > Dashboard), for example, "Author: User1 as User2"
+- Fixed an issue where the reconfigure function did not work properly on Instances provisioned to a kubernetes host in some cases
+- Fixed an issue preventing a second router from being added to a |morpheus|-created Openstack network in certain scenarios
 
 CVEs Addressed
 ==============
