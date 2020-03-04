@@ -39,12 +39,7 @@ Kubernetes
 - Brownfield Kubernetes Cluster Support
 - Reconfigure Action now available for Kubernetes Instances.
 
-VMware NSX
-----------
 
-- NSX Object Permissions
-- NSX-V Security Groups
-- NSX Object Quota Policies
 
 Security Config
 ---------------
@@ -79,7 +74,7 @@ Platform support
 
 - The |morpheus| installer now supports Red Hat Enterprise Linux 8 (RHEL 8): `LINK <https://docs.morpheusdata.com/en/4.2.0/release_notes/compatibility.html>`_
 
-Morpheus Catalog Enhancements
+|morpheus| Catalog Enhancements
 -----------------------------
 
 - Ubuntu 18 catalog images have been added for the following clouds: Upcloud, Azure, DigitalOcean, IBM, Oracle Cloud, Open Telekom, SoftLayer, vCD, SCVMM, Alibaba, Hyper-V, ESXi
@@ -140,7 +135,7 @@ Approvals (`Operations > Approvals`) can be sorted by DATE CREATED
 Recent Activity Report now displays Impersonated User info.
   The Recent Activity Report in /operations/activity now shows "User as Impersonated User" for activity records from an Impersonated User. Impersonations were previously shown in the Dashboard Activity section, as well as the Audit Log and UI Logs, and now shown in the Recent Activity Report too.
 CloudFormation: Improved conditional resource handling
-  When Conditional Resources fail to create when provisioning CloudFormation Instances or Apps, the resources are removed instead of remaining in Morpheus as Failed.
+  When Conditional Resources fail to create when provisioning CloudFormation Instances or Apps, the resources are removed instead of remaining in |morpheus| as Failed.
 vCloud Director: API Version Specification
   The API Version can now be specified in vCloud Director Cloud configurations.
    - API VERSION field added to vCD Cloud configs
@@ -148,9 +143,9 @@ vCloud Director: API Version Specification
      - example API verison value: ``31.0``
 
 VMware: Tag Enhancements
-  Post-Provision Tag additions, updates, and/or removals in Morpheus on VMware Instances are now synced into VMware
+  Post-Provision Tag additions, updates, and/or removals in |morpheus| on VMware Instances are now synced into VMware
 Azure: Tag Enhancements
-  Post-Provision Tag additions, updates, and/or removals in Morpheus on Azure Instances are now synced into Azure
+  Post-Provision Tag additions, updates, and/or removals in |morpheus| on Azure Instances are now synced into Azure
 IBM Cloud: Frankfurt 4 & 5 Datacenters now supported
  Frankfurt 4 & 5 Datacenters are now available for IBM Clouds.
 Softlayer: Frankfurt 4 & 5 Datacenters now supported
@@ -179,6 +174,41 @@ Policies: Router Quotas
     - Role
     - User
 
+Network ``GROUP`` ownership setting 
+  - Available for Networks created in |morpheus|
+  - Relevant for users with ``Infrastructure: Networks: Group`` Role permissions
+  - If a Group is selected, only users with ``Infrastructure: Networks: Group`` Role Permission and Access to specified Group, or ``Infrastructure: Networks: Full`` Role Permission can Manage the Network.
+  - If "Shared" is selected, only users with ``Infrastructure: Networks: Full`` Role Permission can Manage the Network. 
+
+
+Role Permission Updates
+-----------------------
+
+Group Access Level option added for Networks and Routers
+  - A user with ``Infrastructure: Networks: Group`` Access permissions can:
+    - Create shared Networks or assign to Group(s) the User has ``Full`` access to.
+    - Manage Networks assigned to Group(s) the User has ``Full`` access to.
+    - View and use Shared Networks (Group set to ``Shared`` in Network config) 
+    - View Networks assigned to Group(s) the user has ``Read`` access to.
+  - A user with ``Infrastructure: Network Routers: Group`` Access permissions can:
+    - Create, Manage and use Routers assigned to Group(s) the user has ``Full`` access to.
+    - View and use Shared Routers (Group set to ``Shared`` in Router config) 
+    - View Routers assigned to Group(s) the user has ``Read`` access to.
+
+New and updated FEATURE ACCESS Permissions to allow more granular access to Network Domains, Routers and Proxies.
+ - Infrastructure: Network Domains	 
+   - Access Levels: None/Read/Full
+ - Infrastructure: Network IP Pools 
+   - Access Levels: None/Read/Full
+ - Infrastructure: Network Proxies
+   - Access Levels: None/Read/Full
+ - Infrastructure: Network Routers 
+   - Access Levels: None/Read/Group/Full
+ - Infrastructure: Networks 
+   - **Group** Access option
+   - Access Levels: None/Read/Group/Full
+
+
 API Enhancements
 ================
 
@@ -187,14 +217,14 @@ API Enhancements
 CLI Enhancements
 ================
 
-.. note:: CLI vXXXXXXXX corresponds to the release of the Morpheus API version XXXXX
+.. note:: CLI vXXXXXXXX corresponds to the release of the |morpheus| API version XXXXX
 
 4.2.0 CLI Enhancements here
 
 Fixes
 =====
 
-- Removed a hard-coded message stating "You have logged out of morpheus." when users who were authenticated through a SAML integration logged out. This could cause confusion when using white-labeled Morpheus appliances.
+- Removed a hard-coded message stating "You have logged out of |morpheus|." when users who were authenticated through a SAML integration logged out. This could cause confusion when using white-labeled |morpheus| Appliances.
 - Removed a message stating "If supported by your identity provider and configuration, you have also been logged out of your identity provider" that appeared in some instances when logging out of |morpheus| through Identity Source authentication
 - Fixed an issue where the HISTORY tab of an ARM Blueprint App detail page would only show deployment information if a VM resource was being deployed
 - Creation of networks and routers are now asynchronous processes to improve performance and prevent modal timeout in some scenarios
