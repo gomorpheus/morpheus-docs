@@ -99,7 +99,7 @@ Git/Github Integration
 - Git integration now exists for Groovy Script-type Automation Tasks
 
 SCVMM: Discovered VM IP Address Sync
- SCVMM Cloud Discovery now syncs in IP addresses for Discover VM's. 
+ SCVMM Cloud Discovery now syncs in IP addresses for Discover VM's.
   - Inventory Existing setting must be enabled on SCVMM Cloud config.
 
 Cloud Enhancement - Google Cloud Platform (GCP)
@@ -131,13 +131,13 @@ UI Changes
 - Workflows with a visibility value of "Public" are now viewable and executable by Tenants: `LINK <https://docs.morpheusdata.com/en/4.2.0/provisioning/automation/automation.html#add-workflow>`_
 
 TAGS have been renamed to LABELS and METADATA has been renamed to TAGS
-  In |morpheus| UI, TAGS have been renamed to LABELS and METADATA has been renamed to TAGS in all places where these fields appear, such as the Instance provisioning wizard, clone wizard, App wizard, Blueprint wizard, and perhaps other places. This change was made to align |morpheus| UI more closely with public cloud terminology. 
-  
+  In |morpheus| UI, TAGS have been renamed to LABELS and METADATA has been renamed to TAGS in all places where these fields appear, such as the Instance provisioning wizard, clone wizard, App wizard, Blueprint wizard, and perhaps other places. This change was made to align |morpheus| UI more closely with public cloud terminology.
+
   .. note:: |morpheus| variables and API naming conventions have not been changed.
 
 Approvals (`Operations > Approvals`) can be sorted by DATE CREATED
 
-Recent Activity Report now displays Impersonated User info. 
+Recent Activity Report now displays Impersonated User info.
   The Recent Activity Report in /operations/activity now shows "User as Impersonated User" for activity records from an Impersonated User. Impersonations were previously shown in the Dashboard Activity section, as well as the Audit Log and UI Logs, and now shown in the Recent Activity Report too.
 CloudFormation: Improved conditional resource handling
   When Conditional Resources fail to create when provisioning CloudFormation Instances or Apps, the resources are removed instead of remaining in Morpheus as Failed.
@@ -178,7 +178,7 @@ Policies: Router Quotas
     - Cloud
     - Role
     - User
-    
+
 API Enhancements
 ================
 
@@ -199,6 +199,7 @@ Fixes
 - Fixed an issue where the HISTORY tab of an ARM Blueprint App detail page would only show deployment information if a VM resource was being deployed
 - Creation of networks and routers are now asynchronous processes to improve performance and prevent modal timeout in some scenarios
 - Updated |morpheus| installer to force a version of FreeRDP which is compatible with Guacd. CentOS/RHEL 7.7+ include FreeRDP 2.0 by default which is not compatible.
+- The Activity page (Operations > Activity) now identifies actions taken by impersonated Users in the same way they are on the Dashboard (Operations > Dashboard), for example, "Author: User1 as User2"
 
 CVEs Addressed
 ==============
