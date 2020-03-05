@@ -11,7 +11,7 @@ PowerShell Example: ``$app_id = "<%= instance.metadata.app_id %>"``
 
 Bash Example:	``HOSTNAME="<%= container.server.hostname %>"``
 
-Python Example: ``hostname = container['server']['hostname']``
+Python Example: ``hostname = morpheus['server']['hostname']``
 
 HTTP Body Example: ``{"name": "<%= instance.createdByUsername %>"}``
 

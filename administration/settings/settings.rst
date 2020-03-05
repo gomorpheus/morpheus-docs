@@ -14,7 +14,9 @@ Appliance URL
 Internal Appliance URL (PXE)
   For PXE-Boot your appliance needs to be routable directly with minimal NAT masquerading. This allows one to override the default appliance url endpoint for use by the PXE Server. If this is unset, the default appliance url will be used instead.
 API Allowed Origins
-  Specifies which origins are allowed to access the |morpheus| API.
+  Specifies which origins are allowed to access the |morpheus| API
+Enable SSL Verification of Agent
+  Enable to require SSL certificate installed on appliance for Agent communication
 
 Tenant Management Settings
 ^^^^^^^^^^^^^^^^^^^^^^^^^^

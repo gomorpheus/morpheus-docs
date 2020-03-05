@@ -28,6 +28,10 @@ Required Group
   The Okta group that users must be in to have access (optional)
 Default Role
   The default role a user is assigned if no group is listed under an Okta user that maps within the Morpheus Role Mappings section
+ENABLE ROLE MAPPING PERMISSION
+  When selected, Tenant users with appropriate rights to view and edit Roles will have the ability to set role mapping for the Identity Source integration. This allows the Tenant user to edit only the role mappings without viewing or potentially editing the Identity Source configuration.
+
+.. NOTE:: For more on Identity Source role mapping permissions, see the `associated guide <https://support.morpheusdata.com/s/article/How-to-enable-Subtenant-admins-to-edit-Identity-Source-role-mapping?language=en_US>`_ in our KnowledgeBase.
 
 Now, allowed Okta users can log into |morpheus| via their Okta credentials and a user will be automatically generated within |morpheus| with matching metadata and mapped Role permissions.
 

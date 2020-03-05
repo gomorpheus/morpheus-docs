@@ -8,9 +8,9 @@ Provisioning: Jobs
   None
     Cannot access ``Provisioning: Jobs : Jobs``
   Read
-    Can access ``Provisioning: Jobs: Jobs`` but cannot create, edit or delete Jobs
+    Can access ``Provisioning: Jobs: Jobs`` but cannot create, edit, or delete Jobs
   Full
-    Full permissions to create, edit and delete Jobs
+    Full permissions to create, edit, and delete Jobs
 
 Provisioning: Job Executions
   None
@@ -49,10 +49,12 @@ To create a new job:
          Specify custom config for task execution (not required)
        Execution Config
          SCHEDULE
-           manual
-             Job will not be executed on a schedule. Job can be executed fro ``Provisioning: Jobs`` and selecting ``Actions -> Execute``
+           Manual
+             Job will not be executed on a schedule. Job can be executed from ``Provisioning: Jobs`` and selecting ``Actions -> Execute``
+           Date And Time
+             Job will be executed at one specific point in time and not again (unless rescheduled or executed manually)
            Schedules
-             Available Execution Schedules will populate.
+             Available Execution Schedules will populate
 
              .. note:: |morpheus| provides two system default execution schedules, ``Daily at Midnight`` and ``Weekly on Sunday at Midnight``. Additional schedules can be added in ``Provisioning -> Automation -> Execute Scheduling``
 

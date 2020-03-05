@@ -11,8 +11,6 @@ Appliance Host
     - Morpheus App
  - Web Server/Proxy
     - Nginix
- - Cache
-    - Redis
  - Database
     - MySQL
  - Messaging

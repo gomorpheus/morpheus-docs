@@ -34,6 +34,10 @@ Adding an Active Directory Integration
     The default role a user is assigned if no group is listed under AD user that maps under Role Mappings section.
    Service Account Holder
     This is the admin account type in |morpheus| and an AD group can be created and populated to a user that this role should be assigned. Roles are assigned dynamically based on group membership.
+   ENABLE ROLE MAPPING PERMISSION
+    When selected, Tenant users with appropriate rights to view and edit Roles will have the ability to set role mapping for the Identity Source integration. This allows the Tenant user to edit only the role mappings without viewing or potentially editing the Identity Source configuration.
+
+  .. NOTE:: For more on Identity Source role mapping permissions, see the `associated guide <https://support.morpheusdata.com/s/article/How-to-enable-Subtenant-admins-to-edit-Identity-Source-role-mapping?language=en_US>`_ in our KnowledgeBase.
 
 #. Select :guilabel:`SAVE CHANGES`.
 

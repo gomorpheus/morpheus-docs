@@ -77,5 +77,5 @@ Creating Host Records
 #. Select :guilabel:`SAVE CHANGES`
 
 .. image:: /images/integration_guides/networking/solarwinds/createhost.png
-  :width: 80%
+  :width: 60%
   :align: center

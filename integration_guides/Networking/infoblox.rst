@@ -19,7 +19,7 @@ Adding Infoblox Integration
 #. Select :guilabel:`+ ADD` -> IPAM -> Infoblox
 #. Enter the following:
 
-   .. image:: /images/infrastructure/network/infoblox/infoblox_settings.png
+   .. image:: /images/infrastructure/network/infoblox/infoblox_settings_new.png
 
    NAME
     Name of the Integration in |morpheus|
@@ -34,41 +34,46 @@ Adding Infoblox Integration
     Infoblox user username
    PASSWORD
     Infoblox user password
-   Disable SSL SNI Verification
+   THROTTLE RATE
+    In milliseconds (ms)
+   DISABLE SSL SNI VERIFICATION
     Leave selected to disable SSL SNI Verification
+   INVENTORY EXISTING
+    Mark this option to inventory existing network pools from Infoblox
    NETWORK FILTER
     Filter which networks are synced into |morpheus|. Example: Network Filter: ``[ network_view=default&*Building=work ]``
+   ZONE FILTER
+    Filter terms for Zone Records
    TENANT MATCH ATTRIBUTE
      This can be set to the name of the extended attribute in Infoblox where |morpheus| will check for the id of a morpheus tenant.  This allows for setting the tenant’s |morpheus| id to an extended attribute field on a network view or network in Infoblox, and when the network or view is discovered by morpheus, it will be auto assigned to the right tenant.
    IP MODE
     Static IPs or DHCP Reservations
+   EXTRA ATTRIBUTES
+    Accepts a JSON input of custom attributes that can be saved on host records in Infoblox
 
-#. Select :guilabel:`SAVE IPAM INTEGRATION`
+#. Select :guilabel:`SAVE CHANGES`
 
 Upon save the Infoblox IPAM integration will be created and the following will sync:
 
-* Infoblox networks will be synced in and populate in the `Infrastructure - Network - IP Pools` tab and in the Infoblox detail page under the `NETWORK POOLS` tab.
+* Infoblox networks will be synced in and populate in the `Infrastructure - Network - IP Pools` tab and in the Infoblox detail page under the `NETWORK POOLS` tab
+
 * Host Records will sync and populate in the Network Pool detail view (select an IP Pool name to view)
 
-  .. image:: /images/infrastructure/network/infoblox/infoblox_grid.png
-
-* DNS Zones will sync and populate under `Infrastructure - Network - Domains` and in the Infoblox detail page under the `HOSTS` tab.
+* DNS Zones will sync and populate under `Infrastructure - Network - Domains` and in the Infoblox detail page under the `HOSTS` tab
 
 * DNS Zone Records will sync and populate
-
-  .. image:: /images/infrastructure/network/infoblox/infoblox_zonerecords.png
 
 Adding IP Pools to Networks
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 |morpheus| can automatically assign the next available Infoblox IP in an IP/Network Pool and create the corresponding DNS records, as well as remove the records upon teardown. To enable this, add an Infoblox IP/Network Pool to the `Network Pool` section on a Network(s).
 
-#. Navigate to `Infrastructure - Network- Networks`
-#. Select a Network name and EDIT, or select `ACTIONS - Edit`
+#. Navigate to `Infrastructure > Network > Networks`
+#. Select a Network name and click :guilabel:`EDIT`
 #. In the `NETWORK POOL` section, search for and select the name of the IP/Network Pool.
 
    * Gateway, DNS and CIDR must be populated for static/pool IP assignment
-   * Select `Allow IP Override` to allow selecting between DHCP, Static entry and Pool Selection at provision time
+   * Select `Allow IP Override` to allow selecting between DHCP, Static entry and Pool Selection at provision time (if desired)
    * Deselect DHCP server if a DHCP server will not be used on the network (only static and/or IP Pool IP assignment)
 
 #. Select :guilabel:`SAVE CHANGES`
@@ -77,7 +82,7 @@ Adding IP Pools to Networks
 Creating Host Records
 ^^^^^^^^^^^^^^^^^^^^^
 
-#. Select a Network Pool from `Infrastructure - Network - IP Pools` or `Infrastructure - Network - Services - Infoblox`
+#. Select a Network Pool from `Infrastructure > Network > IP Pools` or `Infrastructure > Network > Services > Infoblox`
 #. Select :guilabel:`+ ADD`
 #. Enter the following
 
@@ -97,7 +102,7 @@ Creating Host Records
 Creating Zone Records
 ^^^^^^^^^^^^^^^^^^^^^
 
-#. Select a Domain from `Infrastructure - Network - Domains` or `Infrastructure - Network - Services - Infoblox - Zones`
+#. Select a Domain from `Infrastructure > Network > Domains` or `Infrastructure > Network > Services > Infoblox > Zones`
 #. Select :guilabel:`+ ADD`
 #. Enter the following
 

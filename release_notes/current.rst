@@ -4,336 +4,214 @@
 |morphver| Release Notes
 *************************
 
-.. important:: v4.1.2 requires Elasticsearch v7.x. Please refer to :ref:`upgrading` and `Elasticsearch Upgrade Documentation <https://www.elastic.co/guide/en/elasticsearch/reference/current/setup-upgrade.html>`_ before installing or upgrading to v4.1.2 if your Appliance's Elasticsearch is external.
+.. important:: |morphver| requires Elasticsearch v7.x. Please refer to :ref:`upgrading` and `Elasticsearch Upgrade Documentation <https://www.elastic.co/guide/en/elasticsearch/reference/current/setup-upgrade.html>`_ before installing or upgrading to |morphver| if your Appliance's Elasticsearch is external.
 
-.. important:: v3.6.0 or later required to upgrade to 4.1.2. Upgrading from v3.6.x to v4.x contains upgrades to MySQL, RabbitMQ, and Elasticsearch. Please refer to Upgrade Requirements before upgrading. When upgrading from v3.6.x to v4.x a database backup is recommended due to MySQL version upgrade.
+.. important:: v3.6.0 or later required to upgrade to |morphver|. Upgrading from v3.6.x to v4.2.0 contains upgrades to MySQL, RabbitMQ, and Elasticsearch. Please refer to Upgrade Requirements before upgrading. When upgrading from v3.6.x to v4.x, a database backup is recommended due to MySQL version upgrade.
 
 .. important:: It is recommend to upgrade existing VM and Host Agents after upgrading to |morphver| for Automation tasks with large task outputs/results when executing over |morpheus| Agent Command Bus.
 
 New Features
 ============
 
-Agents: FIPS enabled packages installed when FIPS is enabled on target
-  |morpheus| will now use FIPS enabled agent packages when FIPS is enabled.
+Tag Enforcement and Compliance Policy
+-------------------------------------
+New Tag Policy Type with enforcement and compliance scanning added.
+ - A Tag Policy can be enforced both actively (at provision time) as well as Passively on supported clouds.
+ - A Tag Policy defines the relevant key to validate the presence of as well as an optional option list to validate valid values.
+ - Multiple Tag Policies can be combined to get an overall view of tag compliance.
+ - Servers detail pages show warnings if Tags are not compliant.
+ - Strict will block provisioning of an instance without the valid Tag(s). These valid tags can be manually entered in Tags field set or as part of an export as tag Option Type.
 
-  - The Agent install process will detect if FIPS is enabled on the target VM or Host, and then call the package `morpheus-node-fips` or `morpheus-vm-node-fips` instead of the non-FIPS compliant packages during the agent install process.
-  - The Appliance repo will contain both non-FIPS and FIPS package versions.
+.. note:: Tag Policy scanning and enforcement is currently supports Azure, Amazon, and VMware.
 
-Agent: SSL Verification of Agent Communications option added
-  SSL Verification of Agent Communications can now be enforced.
-
-  - ``Enable SSL Verification of Agent`` toggle added to ``/admin/settings#!appliance``
-  - Enabling SSL Verification of Agent Communications requires a valid Certificate be installed on the Appliance.
-    - If ``Enable SSL Verification of Agent`` is enabled and the Appliance has a valid 3rd party SSL Certificate and the verify peer is set on the Agent, the Agent can connect to the Appliance.
-    - If ``Enable SSL Verification of Agent`` is enabled and the Appliance has a self-signed Certificate  (default), the Agent will not be able to connect to the Appliance.
-    - SSL Verification of Agent Communications requires the node's Agent configuration to have ``morphd['verify_peer'] = true`` set in ``/etc/morpheus/morpheus-node.rb``.
-
-Appliance: Elasticsearch 7 upgrade
-  4.1.2 installs and requires Elasticsearch v7.x.
-   - For Appliances with the default local Elasticsearch, no action is required.
-   - For existing Appliances using an external Elasticsearch Host, Cluster or Service, Elasticsearch v7.x upgrade is required.
-   - New installations require any external Elasticsearch Host, Cluster or Service to be on Elasticsearch v7.x.
-   - Elasticsearch v5.6 was the previous version used by |morpheus|. Please refer to Elasticsearch Upgrade Documentation for upgrade instructions.
-  .. important:: Elasticsearch 7.x is required for v4.1.2+. Running |morpheus| v4.1.2 with Elasticsearch 5.x or 6.x is NOT supported."
-
-Appliance: Nginx now defaults to ``tls 1.2`` only
-   The default Nginx config removes support for tls 1.0 and 1.1.
-    - Some older OS's such as CentOS 6 will not be able to install the |morpheus| Agent or communicate with the Appliance without updating the image or configuring nginx to allow lower tls versions via morpheus.rb config.
-    - Windows versions such as Windows 2008 require .net 4.5 minimum
-
-Appliance: Redis removed
-  Redis dependency has been removed for security enhancements. Redis is no longer installed or required.
-
-Apps: Kubernetes: Spec-Based App: Parsing errors surfaced
-  When provisioning Kubernetes Spec-Based Apps, syntax and/or parsing errors are now surfaced in the UI.
-
-Azure: ARM Spec Templates & Layouts
-  ARM Spec Templates & Layouts
-  - Users can now create an ARM layout type and then select a Spec Template created with an ARM template.
-  - The options in the ARM template then appear in the instance wizard. Upon provision, |morpheus| will look through the template and create matching resource records in |morpheus| mapped to those created in Azure. - - - Post-provision, records will also be created for any additional indirect resources that are created during provisioning.
-  - ARM Spec Templates support Local, Repository and URL Sources.
-  - Spec Templates: /provisioning/library/resource-specs"
-
-Azure: ARM Templates: Custom naming of parameters for display
-  Currently, the key in an Azure ARM template is used as the display name. See https://bertram.d.pr/13G6gf. Now, a user can specify 'fieldLabel' under the 'metadata' block for a parameter and that will be picked up and displayed as the label when provisioning.
-
-Azure: CSP and EA price sync
-  Azure EA (enterprise agreement) and CSP (Cloud Solution Provider) pricing support added.
-   - ACCOUNT TYPE field added to Azure Cloud settings, with Standard, EA and CSP options.† The Account Type selection determines what prices are synced to |morpheus|. Standard is Default and the same prices synced in earlier versions.
-   - To change an Azure Cloud Account Type from Standard to either CSP or EA pricing, in ``Infrastructure -> Clouds``, edit the target Azure Cloud. In the Details section, select Standard, CSP, or EA from the ACCOUNT TYPE dropdown. Select SAVE CHANGES. A new cloud sync will be triggered and the specified Account Type pricing will sync.
-       .. note:: CSP and EA pricing sync is only available for Azure EA (Enterprise Agreement) and CSP (Cloud Solution Provider) subscriptions.
-
-Azure: Virtual Networks filtered
-  Parent Virtual Networks are no longer listed in Instance, App, Blueprint, Host, Reconfigure, Clone and Network Group Wizards, allowing clearer selection of appropriate Subnet(s).
-  - Previously Virtual Networks would be displayed along with Subnets. If a Virtual Network was selection, |morpheus| would round-robin select a subnet in the vnet.
-  - Use ``Network Groups`` to place appropriate subnets in a Network Group for round robin provisioning options.
-
-Backups: (GB, 7 DAY TOTAL) added to SIZE OF BACKUPS widget.
-  Title for "Size of backups" on /backups summary updated to make it clearer the values in the widget reflect the last 7 days and are in GB.
-
-Backups: Tenant Backups Visibility added to Master Tenant
-  Sub-Tenants Backups are now visible in the Master Tenant for Backups in Clouds owned by the Master Tenant and either shared Publicly or Private and assigned to a Sub-Tenant.
-
-  - Tenant field added to Backup List ( /backups/list) and Backup Details ( /backups/show/{id}) pages.
-
-Clouds: Security & Firewall configuration updates
-   - Host Firewall and Local Firewall combined into Local Firewall
-     - Enabling this will control ip table rules on Managed VM's and Hosts via Security Groups in Clouds without native Security Groups
-   - Local Firewall and Cloud Native options removed from Security Server Options
-     - Cloud Native security groups cannot be disabled so they are no longer a configuration option
-     - Local Firewall is now controlled by Local Firewall setting instead of Security Server Setting
-   - Security Server setting is for Security Service Integrations such as ACI
-
-Clouds: Type and Status filters added
-  In the Clouds List page /infrastructure/clouds, Clouds can now be filtered by status (All/Enabled/Disabled) and/or by Cloud Type
-
-Clouds: `Cloud Init/ Unattend` default Agent Install mode
-  The default AGENT INSTALL MODE setting for new Clouds is now set to ``Cloud Init / Unattend (when available) ``
-
-  - The setting for existing clouds will not be changed.
-  - `SSH / WinRM / Gust Execution` was previously the default setting and ` Cloud Init / Unattend (when available)` needed to be set manually, which is the recommended Agent Install mode.
-
-Clusters: Create Cluster: Review Tab Enhancements
-  The Review Tab in the Create Cluster wizard has been update with:
-     - Added:
-        VOLUME DETAILS, NETWORK DETAILS, SERVICE PLAN, POD CIDR, and LAYOUT
-     - Removed:
-        GROUP
+.. image:: /images/administration/settings/policies/tagPolicy.jpeg
+   :width: 60%
 
 
-Convert To Managed: Instance Type list filtered by Role Permissions
-  The Instance Types available to a user to select from during the Convert to Managed action are now filtered by the users Instance Type Access Role permissions.
+.. image:: /images/administration/settings/policies/tagComplianceWarning.jpeg
+   :width: 80%
 
-Currencies: Brazil, Chile currencies added
 
-Google Cloud: Shared network support added
+TAGS renamed to LABELS, METADATA renamed to TAGS
+ In |morpheus| UI, TAGS have been renamed to LABELS and METADATA has been renamed to TAGS in all places where these fields appear, such as the Instance provisioning wizard, clone wizard, App wizard, Blueprint wizard, and perhaps other places. This change was made to align |morpheus| UI more closely with public cloud terminology.
 
-Instances: Warning message added for "Force Delete" option
-  Checking "Force Delete" when deleting now displays a warning message "After force deleting you may need to remove the corresponding infrastructure manually", as force deletes can leave target resources up if |morpheus| is unable to validate their removal.
+ .. note:: |morpheus| variables and API naming conventions have not been changed.
 
-Identity Sources: SAML: Logout Redirect improvements
-  Logout Redirect functionality improved for SAML Identity Source Integrations when the Logout Redirect URL is specified.
+NSX Updates 
+-----------
 
-Identity Sources: SAML: Azure AD SAML Graph support
-  Azure AD SAML now supports graph links in saml responses for Azure AD SAML, sent when the number of groups a user is a member exceeds 150.
+- NSX Logical Router config : ``EXTERNAL NETWORK`` renamed to ``UPLINK NETWORK``
+- Multi-network support added for Uplink and Internal Networks
+  - Uplink and Internal IP Addresses now specified per Network after adding via ``+``
+- NSX Edge Gateway modal updated with Appliance, Interfaces, DNS Client and Routing configurations.
+- NSX Firewall Rule modal updated with PROTOCOL specification. 
+- Status icons added to Logical Switch tab 
+- 	APPLICATION column added to Firewall tab 
+- :guilabel:`+ Create Rule` added to new ``v MORE`` dropdown per security group
+- Group and Rule Icons added 
+- ``Appliance`` Config section added to NSX Logical Router creation
+- Group permission added for new Networks and Edge Gateways/Routers 
+.. add link to network and group secitons below 
 
-Library: Option Types: Typeahead now returns value(s) only
-  Typeahead Option Types now return value(s) only, like Select List Option Types. Previously [name:name, value:value] was returned.
+Role Permission Updates
+-----------------------
 
-Networks: Cloud List Filter
-  Cloud Type Filter added to ``/infrastructure/networks``
+Group Access Level option added for Networks and Routers
+  - A user with ``Infrastructure: Networks: Group`` Access permissions can:
+    - Create shared Networks or assign to Group(s) the User has ``Full`` access to.
+    - Manage Networks assigned to Group(s) the User has ``Full`` access to.
+    - View and use Shared Networks (Group set to ``Shared`` in Network config) 
+    - View Networks assigned to Group(s) the user has ``Read`` access to.
+  - A user with ``Infrastructure: Network Routers: Group`` Access permissions can:
+    - Create, Manage and use Routers assigned to Group(s) the user has ``Full`` access to.
+    - View and use Shared Routers (Group set to ``Shared`` in Router config) 
+    - View Routers assigned to Group(s) the user has ``Read`` access to.
 
-NSX: NSX-V Enhancements
-  Major additions to NSX-V Integration
+New and updated FEATURE ACCESS Permissions to allow more granular access to Network Domains, Routers and Proxies.
+ - Infrastructure: Network Domains	 
+   - Access Levels: None/Read/Full
+ - Infrastructure: Network IP Pools 
+   - Access Levels: None/Read/Full
+ - Infrastructure: Network Proxies
+   - Access Levels: None/Read/Full
+ - Infrastructure: Network Routers 
+   - Access Levels: None/Read/Group/Full
+ - Infrastructure: Networks 
+   - **Group** Access option
+   - Access Levels: None/Read/Group/Full
 
-  - Logical Routers section added with Logical Router creation
-  - Summary view added with Global, System and Component statuses, additional stats
-  - Switches section added
-  - Firewall section added with Group and Rule creation
-  - Edge Gateway detail section added with Summary, Firewall, DHCP and Routing sections
-  - Enhanced capabilities for NSX object creation during provisioning
-  - Refresh Action added for NSX Integrations
+Network ``GROUP`` ownership setting 
+  - Available for Networks created in |morpheus|
+  - Relevant for users with ``Infrastructure: Networks: Group`` Role permissions
+  - If a Group is selected, only users with ``Infrastructure: Networks: Group`` Role Permission and Access to specified Group, or ``Infrastructure: Networks: Full`` Role Permission can Manage the Network.
+  - If "Shared" is selected, only users with ``Infrastructure: Networks: Full`` Role Permission can Manage the Network. 
 
-.. NSX Object Permissions
-  All of the NSX network objects to be scoped to a group by default and have individual role permission for each nsx object.Owned by and only visible by default to that group. Permission to create each object type can be assigned via user roles NSX objects are: ?	Transport Zones ?	Logical Switches (VxLans) ?	DLR ?	Edge Services Gateway (Firewall, NAT, DHCP, VPN, Load Balancing) ?	Load Balancers ?	Security Groups"
 
-Openstack: Backups: Storage Provider options added
-  Openstack backup creation now allows for choosing a storage provider. Openstack Backup/Restores work with Local disk types, Volume disk types and Multiple disks.
+PXE Boot Menu section updates
+-----------------------------
 
-Openstack: Migrations
-  Ability to migrate an Instance from an openstack-based cloud to any other openstack-based cloud
+The PXE Boot Menu section in /infrastructure/boot#!boot-menus has been updated for Boot Menu creation and management, the ability to set Root and Sub Menus, and configure image and answer file scoping.
 
-  .. note:: Migrations to OTC/Huawei will not be supported via the Migrations tool in |morpheus|. This capability will only be covered via instance clone
+- Boot Menu Creation with
+  - Enabled flag
+  - Default Menu flag
+  - Root Menu Flag
+  - Boot Image scoping (optional)
+  - Answer File scoping (optional)
+  - Menu Content field
+  - Sub Menu(s) selection
+- Ability to edit user created Boot Menus
+- System seeded Boot Menus are now displayed
 
-Openstack: Support for multiple Routers within the same network
-  Support added for multiple Routers within the same network. Previously, only one Router could be created per Network.
 
-Policies: New Backup Targets Policy
-  Backup Targets Policy Type added. A master account can determine storage provider options for backups with Backup Targets policies.
+Jobs: Scheduled run-once executions
+-----------------------------------
 
-Policies: New Delayed Removal Policy
-  Delayed Removals allow for soft deletion of Instances and Apps. Instead of deleting immediately, Instances and Apps with a Delayed Removal policy applied will be shutdown upon deletion request and hidden by default from the ui. The Instance/App will then be in ``Pending Removal`` status.
+- Jobs can now be scheduled to execute once at a specified Date and Time. `LINK <https://docs.morpheusdata.com/en/4.2.0/provisioning/jobs/jobs.html#creating-jobs>`_
+    - Jobs - Execution Config
+     SCHEDULE
+      Manual
+       Job will not be executed on a schedule. Job can be executed from Provisioning: Jobs and selecting Actions -> Execute
+     Date And Time
+        Job will be executed at one specific point in time and not again (unless rescheduled or executed manually)
+     Schedules
+         Available Execution Schedules will populate
+         
+       .. note:: Morpheus provides two system default execution schedules, Daily at Midnight and Weekly on Sunday at Midnight. Additional schedules can be added in Provisioning -> Automation -> Execute Scheduling
 
-  - If no action is taken, the resources will be deleted in the timeframe set in the policy.
-  - An ``Undo Delete`` action is available for Instance and Apps in pending removal status. Triggering ``Undo Delete`` will remove the scheduled deletion and restore the Instance or App status to stopped.
-  - A new ``Pending Removal`` filter has been added to ``/provisioning/instances`` and ``/provisioning/apps``
-  - Delayed Removal policies do not current apply to Docker Hosts or Discovered VM's.
-  - Available Scopes for Delayed Removal policies are Global, Cloud, Group, User and Role and can be applied to a single or multiple Tenants.
+       .. image:: /images/provisioning/jobs/dateandtime_job.png 
+          :width: 60%
 
-Policies: New Message of the Day (MOTD) Policy
-  Message of the Day"" Policy for displaying Alerts in |morpheus|.
+Kubernetes Updates
+------------------
+- Brownfield Kubernetes Cluster Support, create a new Cluster (Infrastructure > Clusters) with "External Kubernetes Cluster" type to bring an existing Kubernetes cluster into Morpheus: `LINK <https://support.morpheusdata.com/s/article/How-to-add-existing?language=en_US>`_
+- Azure AKS Integration 
+- Reconfigure Action now available for Kubernetes Instances.
+- Create Cluster wizard (`Infrastructure > Clusters > + ADD CLUSTER`) now allows users to specify the number of worker nodes or the number of hosts for Kubernetes Clusters or Docker/KVM clusters, respectively
 
-  - Configurable as a pop-up or full-page notification with Info, Warning and Critical message types.
-  - Includes new Role Permission: Admin: Message Of the Day - None/Full
+  .. image:: /images/infrastructure/clusters/workers_cluster_wizard.png
+    :width: 60%
 
-Provisioning: Actions removed for Canceled or Denied Instances & Apps.
-  On Instance and App detail pages, invalid Instance and Node Actions are no longer listed for Instances with a status of Canceled or Denied (Approval).
 
-Provisioning: System 'Existing' Instance Layouts removed.
-  v4.1.2 no longer seeds the legacy and disabled "Existing" System Layout options.
+SCVMM: Discovered VM IP Address Sync
+ SCVMM Cloud Discovery now syncs in IP addresses for Discover VM's.
+  - Inventory Existing setting must be enabled on SCVMM Cloud config.
 
-  - The "Existing" layout options, used for adding non-inventoried/discovered hosts and vm's in older releases, no are longer supported/retired.
-  - Existing Hosts, Virtual Machines and Bare Metal can be added in the Infrastructure -> Hosts section, or through Cloud Discovery.
+- API Proxy values can now be set under Advanced Options for GCP clouds (when creating new integration or editing an existing one) as is already possible for other clouds: `LINK <https://docs.morpheusdata.com/en/4.2.0/integration_guides/Clouds/google/google.html#advanced-options>`_
 
-Roles: Identity Sources: Roles Admin permission
-  Role permission for Identity Sources allowing the user to only edit Role Mappings and no other settings of the Identity Source.
 
-ServiceNow Plugin: App Provisioning
-  Apps from Blueprints can now be provisioned from ServiceNow via the |morpheus| ServiceNow App. Blueprint section added to the ServiceNow Integration details page in |morpheus| for managing the Blueprints exposed in ServiceNow.
+- Now supports security token service to AssumeRole by entering AWS role ARN value when editing or integrating new Amazon cloud
 
-ServiceNow: Plugin Support added for vCD, Xen, and ESXi Cloud Types
-  The |morpheus| ServiceNow Plugin now supports vCloud Director (vCD), Xen, and ESXi Cloud Types.
+.. image:: /images/integration_guides/clouds/aws_role_arn.png
+  :width: 60%
 
-Tasks: "WinRM Script" renamed "Powershell Script"
-  The WinRM Script Task type has been renamed Powershell Script, as the Task Type supports Command Bus, Local and Guest Execution in addition to WinRM connections for executing Powershell Scripts.
 
-  - Existing WinRM Script Tasks are not affected, this is only a label change.
 
-Tasks: Remote Shell, Local Shell, SSH Script Tasks Merged into "Shell Script"
-  With the addition of task execution targets, the fRemote Shell Script, Local Shell Script and SSH Script task types offered redundant functionality and have been have been merged into a single "Shell Script" task type.
+- Workflows with a visibility value of "Public" are now viewable and executable by Tenants: `LINK <https://docs.morpheusdata.com/en/4.2.0/provisioning/automation/automation.html#add-workflow>`_
+- Approvals (`Operations > Approvals`) can be sorted by DATE CREATED
+- Recent Activity Report now displays Impersonated User info.
+  The Recent Activity Report in /operations/activity now shows "User as Impersonated User" for activity records from an Impersonated User. Impersonations were previously shown in the Dashboard Activity section, as well as the Audit Log and UI Logs, and now shown in the Recent Activity Report too.
+- CloudFormation: Improved conditional resource handling
+   When Conditional Resources fail to create when provisioning CloudFormation Instances or Apps, the resources are removed instead of remaining in |morpheus| as Failed.
+- vCloud Director: API Version Specification
+   The API Version can now be specified in vCloud Director Cloud configurations.
+   - API VERSION field added to vCD Cloud configs
+   - To override system API version, enter version in API VERSION field
+     - example API verison value: ``31.0``
+- VMware: Tag Enhancements
+  - Post-Provision Tag additions, updates, and/or removals in |morpheus| on VMware Instances are now synced into VMware
+- Azure: Tag Enhancements
+  - Post-Provision Tag additions, updates, and/or removals in |morpheus| on Azure Instances are now synced into Azure
+- IBM Cloud: Frankfurt 4 & 5 Datacenters now supported
+   Frankfurt 4 & 5 Datacenters are now available for IBM Clouds.
+- Softlayer: Frankfurt 4 & 5 Datacenters now supported
+   Frankfurt 4 & 5 Datacenters are now available for Softlayer Clouds.
+Policies: Network Quotas
+ Network Quota Policies limit the number of Networks that can be created within the Policy's scope.
+  - Once the Quote limit is reached, Users will not be able to create additional Networks within the applicable Policy Enforcement scope.
+  - Scopes include:
 
-Tasks: Shell Task: KEY Field Added
-  Keys can now be used on Shell Tasks when using Remote Execution Targets
+    - Global
+    - Tenant
+    - Group
+    - Cloud
+    - Role
+    - User
 
-Tenants: Logouts now redirect to subdomain login
-  When logging out of a sub-tenant, users are now redirected to the Tenants login url, rather than the Master Tenant login url.
+Policies: Router Quotas
+ Router Quota Policies limit the number of Router that can be created within the Policy's scope.
+  - Once the Quote limit is reached, Users will not be able to create additional Routers within the applicable Policy Enforcement scope.
+  - Scopes include:
 
-UI: Alarm Icon with Alarm Count badge added to Global Header
-  Alarm Icon added to Global Header that links to Operations: Health: Alarms.
+    - Global
+    - Tenant
+    - Group
+    - Cloud
+    - Role
+    - User
 
-  - Active Alarm Count displayed with Badge on Alarm Icon
-  - 100 or more alarms will display as 99+
-  - Alarm Icon links to Operations: Health: Alarms
-  - Alarm Count Icon
-
-VM "Dashboard" tab renamed "Summary"
-  The "Dashboard" tab on Virtual Machine Detail pages (/infrastructure/servers/{id}) has been renamed to "Summary"
-
-Virtual Images: "OCI" added to Image Type Filter for Oracle Cloud Images
-
-Whitelabel: Security Banner section added
-  The Security Banner section in ``/admin/settings#!whitelabel`` displays content on the login screen for Security and Consent messaging and warnings.
-
-  - Applicable at Global and Tenant levels
-  - Security Banner input field accepts plain text and markdown
-  - Content is displayed below login section in scoped ``/login/auth`` pages.
-
-Workflows Provision Phase support for Cluster/Host Provisioning
-  In addition to Post-Provision phases, Provision phases now supported for Workflows executed during Cluster and Host Provisioning
-
-.. - Value of cypher created from API/CLI is a key pair string instead of just the value
+- Git and Github Integrations: HTTPS only auth support added
+- Tasks: Git integration now exists for Groovy Script-type Automation Tasks
+- System Images: Ubuntu 18.04 Node Types have been added for the following Clouds: Upcloud, Azure, DigitalOcean, IBM, Oracle Cloud, Open Telekom, SoftLayer, vCD, SCVMM, Alibaba, Hyper-V, ESXi
+- Cloud-Init: Added support for hashing change passwords in target cloud-init data for any non-Ubuntu 14 based image (Ubuntu 14.04 restriction). Note: Dependent on Virtual Image OS type and version settings; ensure OS Type is accurately set.
 
 API Enhancements
-----------------
-
-- New Endpoint: `Service Plans <https://bertramdev.github.io/morpheus-apidoc/#service-plans>`_ ``/api/service-plans``
-- New Endpoint: `Appliance Settings <https://bertramdev.github.io/morpheus-apidoc/#appliance-settings>`_ ``/api/appliance-settings``
-- New Endpoint: `Backup Settings <https://bertramdev.github.io/morpheus-apidoc/index.html#backup-settings>`_ ``/api/backup-settings``
-- New Endpoint: `Clusters: Datastores <https://bertramdev.github.io/morpheus-apidoc/index.html#get-datastores>`_ ``/api/clusters/:id/datastores``
-- New Endpoint: `Log Settings <https://bertramdev.github.io/morpheus-apidoc/index.html#log-settings>`_ ``/api/log-settings``
-- New Endpoint: `Operational Workflows <https://bertramdev.github.io/morpheus-apidoc/index.html#create-an-operational-workflow>`_ ``/api/task-sets``
-- New Endpoint: `Operations - Health <https://bertramdev.github.io/morpheus-apidoc/index.html#health>`_ ``/api//health``
-- New Endpoint: `Provisioning > Jobs <https://bertramdev.github.io/morpheus-apidoc/index.html#jobs>`_ ``/api/jobs``
-- New Endpoint: `Provisioning Settings <https://bertramdev.github.io/morpheus-apidoc/index.html#provisioning-settings>`_ ``/api/provisioning-settings``
-- New Endpoint: `Whitelabel Settings <https://bertramdev.github.io/morpheus-apidoc/index.html#whitelabel-settings>`_ ``/api/whitelabel-settings``
-- New Endpoint: `Approvals <https://bertramdev.github.io/morpheus-apidoc/index.html#approvals>`_ ``/api/approvals``
-- New Endpoint: `Operations - Budgets <https://bertramdev.github.io/morpheus-apidoc/index.html#budgets>`_ ``/api/budgets``
-- New Endpoint: `Reports <https://bertramdev.github.io/morpheus-apidoc/index.html#reports>`_ ``/api/reports`` & ``/api/report-types``
-- Convert to Managed:  `Manual agent install flag added <https://bertramdev.github.io/morpheus-apidoc/index.html#convert-to-managed>`_ ``/api/servers/1/make-managed`` ``"installAgent": true`` Set to false to manually install agent instead
-
+================
 
 CLI Enhancements
-----------------
+================
 
-.. note:: CLI v4.1.9 corresponds to the release of the Morpheus API version 4.1.2
-
-- New command ``appliance-settings``
-- New command ``provisioning-settings``
-- New command ``whitelabel-settings``
-- New command ``log-settings``
-- New command ``approvals``
-- New command ``budgets``
-- New command ``health``
-- New command ``service-plans``
-- New command ``prices``
-- New command ``price-sets``
-- Updated command logs output format to match more closely with the UI. This includes logs list, instances logs, apps logs, etc.
-- Updated command cypher put to support more flexible format and store secret values as a string or object. Default TTL is now unlimited (0.)
-- Updated command workflows add to create operational workflows, associate option types and to prompt for inputs.
-- New subcommands workflows execute and tasks execute.
-- Updated prompting to support dependsOnCode option type setting. This improves prompting for commands like instances add where irrelevant or duplicate option prompts could be seen.
-
-CVE's Addressed
----------------
-
-- CVE-2012-5783
-- CVE-2012-6153
-- CVE-2012-6708
-- CVE-2013-6440
-- CVE-2015-1796
-- CVE-2015-1796
-- CVE-2015-9251
-- CVE-2016-7954
-- CVE-2018-12629
-- CVE-2019-0232
-- CVE-2019-10072
-- CVE-2019-10202
-- CVE-2019-10202
-- CVE-2019-12402
-- CVE-2019-16869
-- CVE-2019-16892
-- CVE-2019-16942
-- CVE-2019-16943
+Security Enhancements
+=====================
 
 Fixes
 =====
 
-- Administration: Disabling a user account now clears user access token session
-- Agent Installation: SSH validation when using cloud-init agent install mode timeout increased from 2 seconds to 60 seconds
-- Ansible: Integration detail pages now display streaming output of workflow runs
-- API: Added support for both ``resourcePoolId`` & ``vmwareResourcePoolId`` for specifying VMware Resource Pool.
-- Apps: Fix for validation error not exposed when Group is not specified and Instance configuration is extended in App wizard
-- AWS: Fix for Elastic IP assignment when ``None`` is selected and subnet does not default to assigning an EIP.
-- AWS: Fix for synced AMI Image location for AMI's with the same name in two different AWS accounts, with an AWS cloud added for each account.
-- Azure: Fix for Azure Discovered VM's usage records.
-
-  .. note:: If inventory level is set to basic, Morpheus does not know the power state of discovered VMs. Usage records will only be created as Stopped in this case.
-
-- Azure: Fix for validation of minimum root volume size requirement on Private Azure Images
-- Budgets. Fix for displayed currency when USD is not specified
-- CLI: Fixed an error seen on Windows with select prompting.
-- CLI: Fixed shell prompt still having ansi coloring with shell -C and after coloring off.
-- CLI: Fixed issue with -r [remote] still using the previous remote's active group for instances add, clusters add, apps add.
-- CLI: Fixed issue with the -F, --fields not excluding keys outside of the object scope. eg. meta: {...}.
-- Docker: Fix for inaccurate Used Memory stat on Docker Hosts with running Instances
-- ESXi: Fix for updating Image Store on Cloud Configuration not saving, using previous Image Store.
-- Infrastructure Clouds Actions menu
-- Instances: Instance status now reflected as unknown if the VM has been deleted in the target Cloud
-- Instances: Reconfigure: Fix for adding networks during a reconfigure to a sub-tenant instance using a master-tenant owned private service plan.
-- Nutanix: Fix for default Plan selection when reconfiguring an Instance when scoped plan has been deactivated
-- Openstack: Fix for Security group rules not being created when the destination is a Security group
-- OpenStack: Fix for sync of Security Groups that have been renamed in Openstack after initial sync
-- Plans & Pricing: Fix for Price Sets displaying default Resource Pool (if set) instead of saved Resource Pool.
-- Policies: Shutdown and Expiration policies no longer allow negative values
-- Provisioning: Fix for allowing customization of additional volume sizes when ``CUSTOMIZE ROOT VOLUME`` is unchecked in selected Service Plan
-- Provisioning: Fix for Ansible Tower section not expanding to expose the validation message when a required field is empty.
-- Provisioning: Fix for scenarios when Option Type requirement is not validated
-- Provisioning: Price estimates in provisioning instance wizard now incorporate selected resource pool as a price parameter
-- Provisioning: Validation added for Network Static IP fields
-- Recent Activity: Fix for User Filter only listing first 25 Users
-- Reports: Cloud Cost Reports now include subtenant costs when filtering by subtenant Cloud
-- Reports: Fix for Group Inventory Summary report VM Count
-- SAML: Fix for SAML Response signature validation when enabled
-- ServiceNow: Unsupported Instance Types (Google) with typeahead fields removed from ServiceNow Integration EXPOSED LIBRARIES Library Item configuration.
-- Solarwinds: Fix for hostname record update in Solarwinds when IP is reserved
-- Tasks: PROCESS OUTPUT is no longer hidden after the last retry attempt on task history if automation task is 'RETRYABLE' and fails.
-- Tenants: Fix for Confirmation emails during Tenant self-registration
-- Tenants: Fix for Tenant deletion when a Storage Server still exists in the Tenant
-- Tenants: Improved error handling for when assigning a managed VM to subtenant that does not have access to the associated Cloud
-- Usage: Fix and additional jobs added to prevent discovered virtual machines from having both running & stopped usage records active.
-- vCloud Director: Provisions now properly fail when there is a Guest Customizations failure
-- vCloud Director: Support added for VCD 9.5 upload api's removal of support for Content-Length header
-- VMware: Fix for Default Resource Pool specification propagating to sub-tenants
-- VMware: Fix for duplicate storage controller ``controllerKey`` values
-- Whitelabel: Fix for favicon not being displayed in Terms of Use or Privacy Policy pages
-- Zerto: Fix for Replication Group sync
+- Removed a hard-coded message stating "You have logged out of |morpheus|." when users who were authenticated through a SAML integration logged out. This could cause confusion when using white-labeled |morpheus| Appliances.
+- Removed a message stating "If supported by your identity provider and configuration, you have also been logged out of your identity provider" that appeared in some instances when logging out of |morpheus| through Identity Source authentication
+- Fixed an issue where the HISTORY tab of an ARM Blueprint App detail page would only show deployment information if a VM resource was being deployed
+- Creation of networks and routers are now asynchronous processes to improve performance and prevent modal timeout in some scenarios
+- Updated |morpheus| installer to force a version of FreeRDP which is compatible with Guacd. CentOS/RHEL 7.7+ include FreeRDP 2.0 by default which is not compatible.
+- The Activity page (Operations > Activity) now identifies actions taken by impersonated Users in the same way they are on the Dashboard (Operations > Dashboard), for example, "Author: User1 as User2"
+- Fixed an issue where the reconfigure function did not work properly on Instances provisioned to a kubernetes host in some cases
+- Fixed an issue preventing a second router from being added to a |morpheus|-created Openstack network in certain scenarios

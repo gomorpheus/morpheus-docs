@@ -55,7 +55,7 @@ To create a new Kubernetes Cluster:
       Available to all Tenants
     Private
       Available to Master Tenant
-   TAGS
+   LABELS
     Internal label(s)
 
 #. Select :guilabel:`NEXT`
@@ -79,6 +79,8 @@ To create a new Kubernetes Cluster:
     POD network range in CIDR format ie 192.168.0.0/24 (cluster layouts only)
    WORKER PLAN
     Plan for Worker Nodes (cluster layouts only)
+   NUMBER OF WORKERS
+    Specify the number of workers to provision
    LOAD BALANCER
     Select an available Load Balancer (cluster layouts only) }
    User Config
