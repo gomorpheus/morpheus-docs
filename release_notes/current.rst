@@ -51,52 +51,60 @@ NSX Updates
 Role Permission Updates
 -----------------------
 
-Group Access Level option added for Networks and Routers
-  - A user with ``Infrastructure: Networks: Group`` Access permissions can:
-    - Create shared Networks or assign to Group(s) the User has ``Full`` access to.
-    - Manage Networks assigned to Group(s) the User has ``Full`` access to.
-    - View and use Shared Networks (Group set to ``Shared`` in Network config)
-    - View Networks assigned to Group(s) the user has ``Read`` access to.
-  - A user with ``Infrastructure: Network Routers: Group`` Access permissions can:
-    - Create, Manage and use Routers assigned to Group(s) the user has ``Full`` access to.
-    - View and use Shared Routers (Group set to ``Shared`` in Router config)
-    - View Routers assigned to Group(s) the user has ``Read`` access to.
+Group Access level option added for Networks and Routers
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-New and updated FEATURE ACCESS Permissions to allow more granular access to Network Domains, Routers and Proxies.
- - Infrastructure: Network Domains (Access Levels: None/Read/Full)
- - Infrastructure: Network IP Pools (Access Levels: None/Read/Full)
- - Infrastructure: Network Proxies (Access Levels: None/Read/Full)
- - Infrastructure: Network Routers (Access Levels: None/Read/Group/Full)
- - Infrastructure: Networks (Access Levels: None/Read/Group/Full)
+*A user with ``Infrastructure: Networks: Group`` access permissions can:*
 
-Network ``GROUP`` ownership setting: `LINK <https://support.morpheusdata.com/s/article/Working-with-Network-Group-ownership?language=en_US>`_
-  - Available for Networks created in |morpheus|
-  - Relevant for users with ``Infrastructure: Networks: Group`` Role permissions
-  - If a Group is selected, only users with ``Infrastructure: Networks: Group`` Role Permission and Access to specified Group, or ``Infrastructure: Networks: Full`` Role Permission can Manage the Network.
-  - If "Shared" is selected, only users with ``Infrastructure: Networks: Full`` Role Permission can Manage the Network.
+- Create shared Networks or assign to Group(s) the User has ``Full`` access to
+- Manage Networks assigned to Group(s) the User has ``Full`` access to
+- View and use Shared Networks (Group set to ``Shared`` in Network config)
+- View Networks assigned to Group(s) the user has ``Read`` access to
 
+*A user with ``Infrastructure: Network Routers: Group`` Access permissions can:*
+
+- Create, Manage and use Routers assigned to Group(s) the user has ``Full`` access to
+- View and use Shared Routers (Group set to ``Shared`` in Router config)
+- View Routers assigned to Group(s) the user has ``Read`` access to
+
+Feature Access permissions updates offer more granular access to Network Domains, Routers and Proxies:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+- Infrastructure: Network Domains (Access Levels: None/Read/Full)
+- Infrastructure: Network IP Pools (Access Levels: None/Read/Full)
+- Infrastructure: Network Proxies (Access Levels: None/Read/Full)
+- Infrastructure: Network Routers (Access Levels: None/Read/Group/Full)
+- Infrastructure: Networks (Access Levels: None/Read/Group/Full)
+
+Added Network ``GROUP`` ownership setting: `LINK <https://support.morpheusdata.com/s/article/Working-with-Network-Group-ownership?language=en_US>`_
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+- Available for Networks created in |morpheus|
+- Relevant for users with ``Infrastructure: Networks: Group`` Role permissions
+- If a Group is selected, only users with ``Infrastructure: Networks: Group`` Role Permission and Access to specified Group, or ``Infrastructure: Networks: Full`` Role Permission can Manage the Network.
+- If "Shared" is selected, only users with ``Infrastructure: Networks: Full`` Role Permission can Manage the Network.
 
 PXE Boot Menu section updates
 -----------------------------
 
-The PXE Boot Menu section in /infrastructure/boot#!boot-menus has been updated for Boot Menu creation and management, the ability to set Root and Sub Menus, and configure image and answer file scoping.
+The PXE Boot Menu section in *Infrastructure > Boot > BOOT MENUS* has been updated for Boot Menu creation and management, the ability to set Root and Sub Menus, configure images, and answer file scoping: `LINK <https://docs.morpheusdata.com/en/4.2.0/infrastructure/pxeboot/pxeboot.html>`_
 
-- Boot Menu Creation with
-  - Enabled flag
-  - Default Menu flag
-  - Root Menu Flag
-  - Boot Image scoping (optional)
-  - Answer File scoping (optional)
-  - Menu Content field
-  - Sub Menu(s) selection
-- Ability to edit user created Boot Menus
-- System seeded Boot Menus are now displayed
+Boot Menu Creation with:
 
+- Enabled flag
+- Default Menu flag
+- Root Menu Flag
+- Boot Image scoping (optional)
+- Answer File scoping (optional)
+- Menu Content field
+- Sub Menu(s) selection
+
+System-seeded Boot Menus are displayed and user-created Boot Menus can be edited and deleted.
 
 Jobs: Scheduled run-once executions
 -----------------------------------
 
-- Jobs can now be scheduled to execute once at a specified Date and Time. `LINK <https://docs.morpheusdata.com/en/4.2.0/provisioning/jobs/jobs.html#creating-jobs>`_
+- Jobs can now be scheduled to execute once at a specified Date and Time: `LINK <https://docs.morpheusdata.com/en/4.2.0/provisioning/jobs/jobs.html#creating-jobs>`_
     - Jobs - Execution Config
      SCHEDULE
       Manual
