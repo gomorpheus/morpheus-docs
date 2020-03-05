@@ -6,9 +6,9 @@ Networks
 Overview
 ^^^^^^^^
 
-The Networks section is for configuring networks across all clouds in |morpheus| . Existing networks from the Clouds added in |morpheus| will auto-populate in the Networks section.
+The Networks section is for configuring networks across all clouds in |morpheus|. Existing networks from Clouds added in |morpheus| will auto-populate in the Networks section.
 
-Networks can be configured for DHCP or Static IP assignment, assigned IP pools, and configured for visibility and account assignment for multi-tenancy usage. Networks can also be set as inactive and unavailable for provisioning use.
+Networks can be configured for DHCP or Static IP assignment, assigned IP pools, and configured for visibility and account assignment for multi-tenancy usage. Inactive Networks are unavailable for provisioning use. In addition, |morpheus| allows administrators to restrict management of |morpheus|-created Networks through Role permissions.
 
 Configuring Networks
 ^^^^^^^^^^^^^^^^^^^^

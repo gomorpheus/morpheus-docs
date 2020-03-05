@@ -15,43 +15,38 @@ New Features
 
 Tag Enforcement and Compliance Policy
 -------------------------------------
-New Tag Policy Type with enforcement and compliance scanning added.
- - A Tag Policy can be enforced both actively (at provision time) as well as Passively on supported clouds.
- - A Tag Policy defines the relevant key to validate the presence of as well as an optional option list to validate valid values.
- - Multiple Tag Policies can be combined to get an overall view of tag compliance.
- - Servers detail pages show warnings if Tags are not compliant.
- - Strict will block provisioning of an instance without the valid Tag(s). These valid tags can be manually entered in Tags field set or as part of an export as tag Option Type.
 
-.. note:: Tag Policy scanning and enforcement is currently supports Azure, Amazon, and VMware.
+New Tag Policy Type with enforcement and compliance scanning added: `LINK <https://support.morpheusdata.com/s/article/How-to-work-with-cloud-tagging-policies?language=en_US>`_
+ - A Tag Policy can be enforced both strictly (at provision time) as well as passively on supported clouds
+ - A Tag Policy defines the relevant key to validate the presence of, as well as an optional Option List to validate valid values
+ - Multiple Tag Policies can be combined to enforce a comprehensive Tag compliance program
+ - Server detail pages show warnings if Tags are not compliant
+
+.. note:: Tag Policy scanning and enforcement is currently supported only in Azure, Amazon, and VMware clouds.
 
 .. image:: /images/administration/settings/policies/tagPolicy.jpeg
    :width: 60%
 
-
-.. image:: /images/administration/settings/policies/tagComplianceWarning.jpeg
-   :width: 80%
-
-
 TAGS renamed to LABELS, METADATA renamed to TAGS
  In |morpheus| UI, TAGS have been renamed to LABELS and METADATA has been renamed to TAGS in all places where these fields appear, such as the Instance provisioning wizard, clone wizard, App wizard, Blueprint wizard, and perhaps other places. This change was made to align |morpheus| UI more closely with public cloud terminology.
 
- .. note:: |morpheus| variables and API naming conventions have not been changed.
+.. note:: |morpheus| variables and API naming conventions have not been changed.
 
-NSX Updates 
+NSX Updates
 -----------
 
 - NSX Logical Router config : ``EXTERNAL NETWORK`` renamed to ``UPLINK NETWORK``
 - Multi-network support added for Uplink and Internal Networks
-  - Uplink and Internal IP Addresses now specified per Network after adding via ``+``
+- Uplink and Internal IP Addresses now specified per Network after adding via ``+``
 - NSX Edge Gateway modal updated with Appliance, Interfaces, DNS Client and Routing configurations.
-- NSX Firewall Rule modal updated with PROTOCOL specification. 
-- Status icons added to Logical Switch tab 
-- 	APPLICATION column added to Firewall tab 
+- NSX Firewall Rule modal updated with PROTOCOL specification.
+- Status icons added to Logical Switch tab
+- APPLICATION column added to Firewall tab
 - :guilabel:`+ Create Rule` added to new ``v MORE`` dropdown per security group
-- Group and Rule Icons added 
+- Group and Rule Icons added
 - ``Appliance`` Config section added to NSX Logical Router creation
-- Group permission added for new Networks and Edge Gateways/Routers 
-.. add link to network and group secitons below 
+- Group permission added for new Networks and Edge Gateways/Routers
+.. add link to network and group sections below
 
 Role Permission Updates
 -----------------------
@@ -60,31 +55,25 @@ Group Access Level option added for Networks and Routers
   - A user with ``Infrastructure: Networks: Group`` Access permissions can:
     - Create shared Networks or assign to Group(s) the User has ``Full`` access to.
     - Manage Networks assigned to Group(s) the User has ``Full`` access to.
-    - View and use Shared Networks (Group set to ``Shared`` in Network config) 
+    - View and use Shared Networks (Group set to ``Shared`` in Network config)
     - View Networks assigned to Group(s) the user has ``Read`` access to.
   - A user with ``Infrastructure: Network Routers: Group`` Access permissions can:
     - Create, Manage and use Routers assigned to Group(s) the user has ``Full`` access to.
-    - View and use Shared Routers (Group set to ``Shared`` in Router config) 
+    - View and use Shared Routers (Group set to ``Shared`` in Router config)
     - View Routers assigned to Group(s) the user has ``Read`` access to.
 
 New and updated FEATURE ACCESS Permissions to allow more granular access to Network Domains, Routers and Proxies.
- - Infrastructure: Network Domains	 
-   - Access Levels: None/Read/Full
- - Infrastructure: Network IP Pools 
-   - Access Levels: None/Read/Full
- - Infrastructure: Network Proxies
-   - Access Levels: None/Read/Full
- - Infrastructure: Network Routers 
-   - Access Levels: None/Read/Group/Full
- - Infrastructure: Networks 
-   - **Group** Access option
-   - Access Levels: None/Read/Group/Full
+ - Infrastructure: Network Domains (Access Levels: None/Read/Full)
+ - Infrastructure: Network IP Pools (Access Levels: None/Read/Full)
+ - Infrastructure: Network Proxies (Access Levels: None/Read/Full)
+ - Infrastructure: Network Routers (Access Levels: None/Read/Group/Full)
+ - Infrastructure: Networks (Access Levels: None/Read/Group/Full)
 
-Network ``GROUP`` ownership setting 
+Network ``GROUP`` ownership setting: `LINK <https://support.morpheusdata.com/s/article/Working-with-Network-Group-ownership?language=en_US>`_
   - Available for Networks created in |morpheus|
   - Relevant for users with ``Infrastructure: Networks: Group`` Role permissions
   - If a Group is selected, only users with ``Infrastructure: Networks: Group`` Role Permission and Access to specified Group, or ``Infrastructure: Networks: Full`` Role Permission can Manage the Network.
-  - If "Shared" is selected, only users with ``Infrastructure: Networks: Full`` Role Permission can Manage the Network. 
+  - If "Shared" is selected, only users with ``Infrastructure: Networks: Full`` Role Permission can Manage the Network.
 
 
 PXE Boot Menu section updates
@@ -116,16 +105,16 @@ Jobs: Scheduled run-once executions
         Job will be executed at one specific point in time and not again (unless rescheduled or executed manually)
      Schedules
          Available Execution Schedules will populate
-         
+
        .. note:: Morpheus provides two system default execution schedules, Daily at Midnight and Weekly on Sunday at Midnight. Additional schedules can be added in Provisioning -> Automation -> Execute Scheduling
 
-       .. image:: /images/provisioning/jobs/dateandtime_job.png 
+       .. image:: /images/provisioning/jobs/dateandtime_job.png
           :width: 60%
 
 Kubernetes Updates
 ------------------
 - Brownfield Kubernetes Cluster Support, create a new Cluster (Infrastructure > Clusters) with "External Kubernetes Cluster" type to bring an existing Kubernetes cluster into Morpheus: `LINK <https://support.morpheusdata.com/s/article/How-to-add-existing?language=en_US>`_
-- Azure AKS Integration 
+- Azure AKS Integration
 - Reconfigure Action now available for Kubernetes Instances.
 - Create Cluster wizard (`Infrastructure > Clusters > + ADD CLUSTER`) now allows users to specify the number of worker nodes or the number of hosts for Kubernetes Clusters or Docker/KVM clusters, respectively
 

@@ -94,6 +94,7 @@ Create NSX Logical Switch and Edge Gateway
     Add the CIDR for the Logical Switch. Example: 10.30.28.0/24
    TENANT NAME
     Enter Tenant name for the Logical Switch (Optional)
+
    Edge Gateway Configuration:
 
    HOSTNAME
@@ -136,7 +137,7 @@ The new Edge Gateway detail view includes the following tabs:
 Firewall
 ^^^^^^^^
 
-Morpheus version 4.1.2 adds a FIREWALL tab which allows you to view existing firewall rules as well as create new rules and groups. From the rules summary list, the following fields are displayed for each rule:
+|morpheus| version 4.1.2 adds a FIREWALL tab which allows you to view existing firewall rules as well as create new rules and groups. From the rules summary list, the following fields are displayed for each rule:
 
 - NAME
 - TYPE
@@ -144,7 +145,7 @@ Morpheus version 4.1.2 adds a FIREWALL tab which allows you to view existing fir
 - DIRECTION
 - SOURCE
 - DESTINATION
-- PROTOCOL
+- APPLICATION
 
 .. image:: /images/integration_guides/networking/nsx/firewall_rules.png
 
@@ -173,6 +174,7 @@ Logical Routers
 
 Morpheus version 4.1.2 adds a Logical Routers section to the NSX integration, including the ability to view and create new logical routers. From the LOGICAL ROUTERS tab, a list of logical routers associated with your selected integration is shown. Values displayed for each logical router include the following:
 
+- STATUS
 - NAME
 - DESCRIPTION
 
