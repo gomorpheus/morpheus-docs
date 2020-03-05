@@ -26,6 +26,9 @@ New Tag Policy Type with enforcement and compliance scanning added: `LINK <https
 
 .. image:: /images/administration/settings/policies/tagPolicy.jpeg
    :width: 60%
+   
+.. image:: /images/administration/settings/policies/tagComplianceWarning.jpeg
+   :width: 80%
 
 TAGS renamed to LABELS, METADATA renamed to TAGS
  In |morpheus| UI, TAGS have been renamed to LABELS and METADATA has been renamed to TAGS in all places where these fields appear, such as the Instance provisioning wizard, clone wizard, App wizard, Blueprint wizard, and perhaps other places. This change was made to align |morpheus| UI more closely with public cloud terminology.
