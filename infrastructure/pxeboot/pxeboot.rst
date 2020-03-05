@@ -72,6 +72,29 @@ Delete Mapping
 
 #. Click the delete icon on the row of the mapping you wish to delete.
 
+Boot Menus
+----------
+
+System-seeded Boot Menus are displayed and user-created Boot Menus can be edited and deleted. User-created Boot Menus are edited or deleted by clicking on the pencil or trash can icon in the appropriate row.
+
+Adding a Boot Menu
+^^^^^^^^^^^^^^^^^^
+
+To begin, click :guilabel:`+ ADD`. Available fields include:
+
+- NAME
+- DESCRIPTION
+- ENABLED
+- DEFAULT MENU
+- ROOT MENU
+- MENU NAME
+- BOOT IMAGE
+- ANSWER FILE
+- MENU CONTENT
+- SUB MENUS
+
+Click :guilabel:`SAVE CHANGES`
+
 Answer Files
 ------------
 

@@ -74,6 +74,10 @@ Adding an AWS Cloud
      Access Key ID from AWS IAM User Security Credentials.
    Secret Key
      Secret Access Key associate with the Access Key ID.
+   Use Host IAM Credentials
+     Must be marked to use secure token service (STS) AssumeRole
+   Role ARN
+     Supports security token service (STS) to AssumeRole by entering an AWS Role ARN
    Inventory
      Basic
       |morpheus| will sync information on all EC2 Instances in the selected VPC the IAM user has access to, including Name, IP Addresses, Platform Type, Power Status, and overall resources sizing for Storage, CPU and RAM, every 5 minutes. Inventoried EC2 Instances will appear as Unmanaged VM's.
