@@ -13,16 +13,16 @@
 New Features
 ============
 
-Tag Enforcement and Compliance Policy
--------------------------------------
+Tag Enforcement and Compliance Policies
+---------------------------------------
 New Tag Policy Type with enforcement and compliance scanning added.
- - A Tag Policy can be enforced both actively (at provision time) as well as Passively on supported clouds.
+ - A Tag Policy can be enforced both actively (at provision time) as well as Passively on supported Clouds.
  - A Tag Policy defines the relevant key to validate the presence of as well as an optional option list to validate valid values.
  - Multiple Tag Policies can be combined to get an overall view of tag compliance.
  - Servers detail pages show warnings if Tags are not compliant.
  - Strict will block provisioning of an instance without the valid Tag(s). These valid tags can be manually entered in Tags field set or as part of an export as tag Option Type.
 
-.. note:: Tag Policy scanning and enforcement is currently supports Azure, Amazon, and VMware.
+.. note:: Tag Policy scanning and enforcement currently supports Azure, Amazon, and VMware.
 
 .. image:: /images/administration/settings/policies/tagPolicy.jpeg
    :width: 60%
@@ -31,12 +31,16 @@ New Tag Policy Type with enforcement and compliance scanning added.
 .. image:: /images/administration/settings/policies/tagComplianceWarning.jpeg
    :width: 80%
 
-
 TAGS renamed to LABELS, METADATA renamed to TAGS
  In |morpheus| UI, TAGS have been renamed to LABELS and METADATA has been renamed to TAGS in all places where these fields appear, such as the Instance provisioning wizard, clone wizard, App wizard, Blueprint wizard, and perhaps other places. This change was made to align |morpheus| UI more closely with public cloud terminology.
 
  .. note:: |morpheus| variables and API naming conventions have not been changed.
 
+- VMware: Tag Enhancements
+  - Post-Provision Tag additions, updates, and/or removals in |morpheus| on VMware Instances are now synced into VMware
+- Azure: Tag Enhancements
+  - Post-Provision Tag additions, updates, and/or removals in |morpheus| on Azure Instances are now synced into Azure
+  
 NSX Updates 
 -----------
 
@@ -51,7 +55,7 @@ NSX Updates
 - Group and Rule Icons added 
 - ``Appliance`` Config section added to NSX Logical Router creation
 - Group permission added for new Networks and Edge Gateways/Routers 
-.. add link to network and group secitons below 
+.. add link to network and group sections below 
 
 Role Permission Updates
 -----------------------
@@ -86,7 +90,43 @@ Network ``GROUP`` ownership setting
   - If a Group is selected, only users with ``Infrastructure: Networks: Group`` Role Permission and Access to specified Group, or ``Infrastructure: Networks: Full`` Role Permission can Manage the Network.
   - If "Shared" is selected, only users with ``Infrastructure: Networks: Full`` Role Permission can Manage the Network. 
 
+New Policies
+------------
 
+Policies: Tags
+ New Tag Policy Type with enforcement and compliance scanning added.
+ - A Tag Policy can be enforced both actively (at provision time) as well as Passively on supported Clouds.
+ - A Tag Policy defines the relevant key to validate the presence of as well as an optional option list to validate valid values.
+ - Multiple Tag Policies can be combined to get an overall view of tag compliance.
+ - Servers detail pages show warnings if Tags are not compliant.
+ - Strict will block provisioning of an instance without the valid Tag(s). These valid tags can be manually entered in Tags field set or as part of an export as tag Option Type.
+
+.. note:: Tag Policy scanning and enforcement currently supports Azure, Amazon, and VMware.
+
+Policies: Network Quotas
+ Network Quota Policies limit the number of Networks that can be created within the Policy's scope.
+  - Once the Quote limit is reached, Users will not be able to create additional Networks within the applicable Policy Enforcement scope.
+  - Scopes include:
+
+    - Global
+    - Tenant
+    - Group
+    - Cloud
+    - Role
+    - User
+
+Policies: Router Quotas
+ Router Quota Policies limit the number of Router that can be created within the Policy's scope.
+  - Once the Quote limit is reached, Users will not be able to create additional Routers within the applicable Policy Enforcement scope.
+  - Scopes include:
+
+    - Global
+    - Tenant
+    - Group
+    - Cloud
+    - Role
+    - User
+    
 PXE Boot Menu section updates
 -----------------------------
 
@@ -132,20 +172,16 @@ Kubernetes Updates
   .. image:: /images/infrastructure/clusters/workers_cluster_wizard.png
     :width: 60%
 
-
 SCVMM: Discovered VM IP Address Sync
  SCVMM Cloud Discovery now syncs in IP addresses for Discover VM's.
   - Inventory Existing setting must be enabled on SCVMM Cloud config.
 
 - API Proxy values can now be set under Advanced Options for GCP clouds (when creating new integration or editing an existing one) as is already possible for other clouds: `LINK <https://docs.morpheusdata.com/en/4.2.0/integration_guides/Clouds/google/google.html#advanced-options>`_
 
-
 - Now supports security token service to AssumeRole by entering AWS role ARN value when editing or integrating new Amazon cloud
 
 .. image:: /images/integration_guides/clouds/aws_role_arn.png
   :width: 60%
-
-
 
 - Workflows with a visibility value of "Public" are now viewable and executable by Tenants: `LINK <https://docs.morpheusdata.com/en/4.2.0/provisioning/automation/automation.html#add-workflow>`_
 - Approvals (`Operations > Approvals`) can be sorted by DATE CREATED
@@ -157,7 +193,7 @@ SCVMM: Discovered VM IP Address Sync
    The API Version can now be specified in vCloud Director Cloud configurations.
    - API VERSION field added to vCD Cloud configs
    - To override system API version, enter version in API VERSION field
-     - example API verison value: ``31.0``
+     - example API version value: ``31.0``
 - VMware: Tag Enhancements
   - Post-Provision Tag additions, updates, and/or removals in |morpheus| on VMware Instances are now synced into VMware
 - Azure: Tag Enhancements
@@ -166,30 +202,8 @@ SCVMM: Discovered VM IP Address Sync
    Frankfurt 4 & 5 Datacenters are now available for IBM Clouds.
 - Softlayer: Frankfurt 4 & 5 Datacenters now supported
    Frankfurt 4 & 5 Datacenters are now available for Softlayer Clouds.
-Policies: Network Quotas
- Network Quota Policies limit the number of Networks that can be created within the Policy's scope.
-  - Once the Quote limit is reached, Users will not be able to create additional Networks within the applicable Policy Enforcement scope.
-  - Scopes include:
 
-    - Global
-    - Tenant
-    - Group
-    - Cloud
-    - Role
-    - User
-
-Policies: Router Quotas
- Router Quota Policies limit the number of Router that can be created within the Policy's scope.
-  - Once the Quote limit is reached, Users will not be able to create additional Routers within the applicable Policy Enforcement scope.
-  - Scopes include:
-
-    - Global
-    - Tenant
-    - Group
-    - Cloud
-    - Role
-    - User
-
+- Tasks: HTTP Tasks now handle pre-authentication
 - Git and Github Integrations: HTTPS only auth support added
 - Tasks: Git integration now exists for Groovy Script-type Automation Tasks
 - System Images: Ubuntu 18.04 Node Types have been added for the following Clouds: Upcloud, Azure, DigitalOcean, IBM, Oracle Cloud, Open Telekom, SoftLayer, vCD, SCVMM, Alibaba, Hyper-V, ESXi
