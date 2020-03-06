@@ -129,10 +129,6 @@ SCVMM: Discovered VM IP Address Sync
 
   .. note:: Inventory Existing setting must be enabled on SCVMM Cloud config
 
-Google Cloud Platform (GCP) Enhancements
-----------------------------------------
-
-- API Proxy values can now be set under Advanced Options for GCP clouds (when creating a new integration or editing an existing one) as is already possible for other clouds: `LINK <https://docs.morpheusdata.com/en/4.2.0/integration_guides/Clouds/google/google.html#advanced-options>`_
 
 vCloud Director (vCD) Enhancements
 ----------------------------------
@@ -195,37 +191,29 @@ Azure: Tag Enhancements
 
 - Post-Provision Tag additions, updates, and/or removals in |morpheus| on Azure Instances are now synced into Azure
 
-Cloud Datacenter Expansion
---------------------------
-
-- IBM Cloud: Frankfurt 4 & 5 Datacenters now supported
-- Softlayer: Frankfurt 4 & 5 Datacenters now supported
-
-System Image Catalog Improvements
----------------------------------
-
-- Ubuntu 18.04 Node Types have been added for the following Clouds: Upcloud, Azure, DigitalOcean, IBM, Oracle Cloud, Open Telekom, SoftLayer, vCD, SCVMM, Alibaba, Hyper-V, ESXi
-
 Other Enhancements
 ------------------
 
-- Workflows with a visibility value of "Public" are now viewable and executable by Tenants: `LINK <https://docs.morpheusdata.com/en/4.2.0/provisioning/automation/automation.html#add-workflow>`_
-- Approvals (`Operations > Approvals`) can be sorted by DATE CREATED
-- Recent Activity Report now displays impersonated User info. The Recent Activity Report (Operations > Activity) now shows "User as Impersonated User" for activity records from an impersonated User. Impersonations were previously shown in the Dashboard Activity section, as well as the Audit Log and UI Logs. They are now shown in the Recent Activity Report as well.
+- Google Cloud: API Proxy values can now be set under Advanced Options for GCP clouds (when creating a new integration or editing an existing one) as is already possible for other clouds: `LINK <https://docs.morpheusdata.com/en/4.2.0/integration_guides/Clouds/google/google.html#advanced-options>`_
+- Workflows: Workflows with a visibility value of "Public" are now viewable and executable by Tenants: `LINK <https://docs.morpheusdata.com/en/4.2.0/provisioning/automation/automation.html#add-workflow>`_
+- Approvals: Reversed default DATE CREATED sort order for Approvals in ``/operations/approvals``
+- Activty: Recent Activity Report now displays impersonated User info. The Recent Activity Report (Operations > Activity) now shows "User as Impersonated User" for activity records from an impersonated User. Impersonations were previously shown in the Dashboard Activity section, as well as the Audit Log and UI Logs. They are now shown in the Recent Activity Report as well.
 - CloudFormation: Improved conditional resource handling. When conditional resources fail to create when provisioning CloudFormation Instances or Apps, the resources are removed instead of remaining in |morpheus| as failed.
 - Git and Github Integrations: HTTPS-only auth support added
 - Tasks: Git integration now exists for Groovy Script-type Automation Tasks
 - Cloud-Init: Added support for hashing change passwords in target cloud-init data for any non-Ubuntu 14 based image (Ubuntu 14.04 restriction). This is dependent on Virtual Image OS type and version settings, ensure OS Type is accurately set.
-- Removed a hard-coded message stating "You have logged out of |morpheus|." when users who were authenticated through a SAML integration logged out. This could cause confusion when using white-labeled |morpheus| Appliances.
-- Removed a message stating "If supported by your identity provider and configuration, you have also been logged out of your identity provider" that appeared in some instances when logging out of |morpheus| through Identity Source authentication
-- Fixed an issue where the HISTORY tab of an ARM Blueprint App detail page would only show deployment information if a VM resource was being deployed
+.. - Removed a hard-coded message stating "You have logged out of |morpheus|." when users who were authenticated through a SAML integration logged out. 
+.. - Removed a message stating "If supported by your identity provider and configuration, you have also been logged out of your identity provider" that appeared in some instances when logging out of |morpheus| through Identity Source authentication
+- ARM: Added process output to history tab for non-VM resources
 - Creation of networks and routers are now asynchronous processes to improve performance and prevent modal timeout in some scenarios
-- Updated |morpheus| installer to force a version of FreeRDP which is compatible with Guacd. CentOS/RHEL 7.7+ include FreeRDP 2.0 by default which is not compatible.
-- Fixed an issue preventing a second router from being added to a |morpheus|-created Openstack network in certain scenarios
+- Console: Guacamole upgraded to v1.1.0 on Appliances running on CentOS/RHEL 7.x and Ubuntu 18.04 to add support for FreeRDP 2.0. 
+- Openstack: Added support for attaching multiple Routers to |morpheus|-created Openstack Networks
 - Appliance: MySQL: Default value for ``max_allowed_packet`` set to ``5242880``
 - Azure: ARM:  Added support for ``copyindex`` in the event template doesn't properly use ``copyIndex``
 - NSX: Logical Switch creation: Given name is now appended onto end of Logical Switch/Network name
-
+- IBM Cloud: Frankfurt 4 & 5 Datacenters now supported
+- Softlayer: Frankfurt 4 & 5 Datacenters now supported
+- System Library: Ubuntu 18.04 Node Types have been added for the following Clouds: Upcloud, Azure, DigitalOcean, IBM, Oracle Cloud, Open Telekom, SoftLayer, vCD, SCVMM, Alibaba, Hyper-V, ESXi
 
 
 API Enhancements
@@ -240,8 +228,6 @@ API Enhancements
   - ``dateTime`` scheduleMode added 
   - ``dateTime`` | N | Date and Time to execute the job. Use UTC time in the format 2020-02-15T05:00:00Z. Required when scheduleMode is ``dateTime``.
 - API: Clusters: Support for number of workers parameter added
-
-
 .. API/CLI: instances update --created-by not working
 .. API: Appliance Settings: cannot PUT json in the same format as GET returns for
 
@@ -296,14 +282,11 @@ Fixes
 - Policies: Security Banner: Fixed issues with Security Banner display for Subtenant Login URLs
 - Xen: Resolved issue where volume size changes in Xen were only reflected on Virtual Machine records, not Instance and Container records.
 - Networks: Fixed issue with Custom Network updates not saving when no Tenants exist. 
-
-
-.. ARM tags variable lookup bug
-.. Plan X scoped to Tenant Y can be assigned to Tenant Z when assigning to discovered or updating existing compute_server records
-.. CustomOptions.x typeahead vars not evaluating in prov wizard review pane
-.. Network changes in Infrastructure -> Network doesnt work if there is no subtenant
-.. Reports are only printing 1 page
-.. Kubernetes Instance: Network - service mesh issues
+- ARM: Added support for ``"tags": "[variables('resourceTags')]`` 
+- Provisioning: Fix for Typeahead Option Type variables not evaluating in Provisioning Wizard Review tab.
+- Networks: Fixed issue with Custom Network updates not saving when no Tenants exist. 
+- Reports: Updates for ``Print`` layout formatting 
+- Kubernetes: Service Mesh improvements
 .. Cluster Details: Kubernetes Volumes - error on delete
 .. Kubernetes: Volumes - view modal doesn't load
 .. Kubernetes Host: Reconfigure - not updating plan values
