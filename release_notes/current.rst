@@ -16,7 +16,7 @@ New Features
 Tag Enforcement and Compliance Policy
 -------------------------------------
 
-New Tag Policy Type with enforcement and compliance scanning added: `LINK <https://support.morpheusdata.com/s/article/How-to-work-with-cloud-tagging-policies?language=en_US>`_
+New Tag Policy type with enforcement and compliance scanning added: `LINK <https://support.morpheusdata.com/s/article/How-to-work-with-cloud-tagging-policies?language=en_US>`_
  - A Tag Policy can be enforced both strictly (at provision time) as well as passively on supported clouds
  - A Tag Policy defines the relevant key to validate the presence of, as well as an optional Option List to validate valid values
  - Multiple Tag Policies can be combined to enforce a comprehensive Tag compliance program
@@ -114,6 +114,7 @@ Jobs: Scheduled run-once executions
 
 Kubernetes Updates
 ------------------
+
 - Brownfield Kubernetes Cluster Support, create a new Cluster (Infrastructure > Clusters) with "External Kubernetes Cluster" type to bring an existing Kubernetes cluster into Morpheus: `LINK <https://support.morpheusdata.com/s/article/How-to-add-existing?language=en_US>`_
 - Azure AKS Integration
 - Reconfigure Action now available for Kubernetes Instances
@@ -212,10 +213,10 @@ Other Enhancements
 - Workflows with a visibility value of "Public" are now viewable and executable by Tenants: `LINK <https://docs.morpheusdata.com/en/4.2.0/provisioning/automation/automation.html#add-workflow>`_
 - Approvals (`Operations > Approvals`) can be sorted by DATE CREATED
 - Recent Activity Report now displays impersonated User info. The Recent Activity Report (Operations > Activity) now shows "User as Impersonated User" for activity records from an impersonated User. Impersonations were previously shown in the Dashboard Activity section, as well as the Audit Log and UI Logs. They are now shown in the Recent Activity Report as well.
-- CloudFormation: Improved conditional resource handling. When Conditional Resources fail to create when provisioning CloudFormation Instances or Apps, the resources are removed instead of remaining in |morpheus| as failed.
-- Git and Github Integrations: HTTPS only auth support added
+- CloudFormation: Improved conditional resource handling. When conditional resources fail to create when provisioning CloudFormation Instances or Apps, the resources are removed instead of remaining in |morpheus| as failed.
+- Git and Github Integrations: HTTPS-only auth support added
 - Tasks: Git integration now exists for Groovy Script-type Automation Tasks
-- Cloud-Init: Added support for hashing change passwords in target cloud-init data for any non-Ubuntu 14 based image (Ubuntu 14.04 restriction). Note: Dependent on Virtual Image OS type and version settings; ensure OS Type is accurately set.
+- Cloud-Init: Added support for hashing change passwords in target cloud-init data for any non-Ubuntu 14 based image (Ubuntu 14.04 restriction). This is dependent on Virtual Image OS type and version settings, ensure OS Type is accurately set.
 - Removed a hard-coded message stating "You have logged out of |morpheus|." when users who were authenticated through a SAML integration logged out. This could cause confusion when using white-labeled |morpheus| Appliances.
 - Removed a message stating "If supported by your identity provider and configuration, you have also been logged out of your identity provider" that appeared in some instances when logging out of |morpheus| through Identity Source authentication
 - Fixed an issue where the HISTORY tab of an ARM Blueprint App detail page would only show deployment information if a VM resource was being deployed
