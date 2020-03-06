@@ -29,9 +29,6 @@ New Tag Policy Type with enforcement and compliance scanning added: `LINK <https
 .. image:: /images/administration/settings/policies/tagPolicy.jpeg
    :width: 60%
 
-.. image:: /images/administration/settings/policies/tagComplianceWarning.jpeg
-   :width: 80%
-
 TAGS renamed to LABELS, METADATA renamed to TAGS
  In |morpheus| UI, TAGS have been renamed to LABELS and METADATA has been renamed to TAGS in all places where these fields appear, such as the Instance provisioning wizard, clone wizard, App wizard, Blueprint wizard, and perhaps other places. This change was made to align |morpheus| UI more closely with public cloud terminology.
 
@@ -224,6 +221,11 @@ Other Enhancements
 - Creation of networks and routers are now asynchronous processes to improve performance and prevent modal timeout in some scenarios
 - Updated |morpheus| installer to force a version of FreeRDP which is compatible with Guacd. CentOS/RHEL 7.7+ include FreeRDP 2.0 by default which is not compatible.
 - Fixed an issue preventing a second router from being added to a |morpheus|-created Openstack network in certain scenarios
+- Appliance: MySQL: Default value for ``max_allowed_packet`` set to ``5242880``
+- Azure: ARM:  Added support for ``copyindex`` in the event template doesn't properly use ``copyIndex``
+- NSX: Logical Switch creation: Given name is now appended onto end of Logical Switch/Network name
+
+
 
 API Enhancements
 ================
@@ -238,11 +240,159 @@ API Enhancements
   - ``dateTime`` | N | Date and Time to execute the job. Use UTC time in the format 2020-02-15T05:00:00Z. Required when scheduleMode is ``dateTime``.
 - API: Clusters: Support for number of workers parameter added
 
+
+.. API/CLI: instances update --created-by not working
+.. API: Appliance Settings: cannot PUT json in the same format as GET returns for
+
 .. CLI Enhancements
 .. ================
 
 .. Security Enhancements
 .. =====================
 
+.. Exposed Passwords in Logs
+.. .[Security Issue DE771] Session Cookies are not marked Secure
+.. Java Vulnerable in Elastic search on 4.1.2 Can you provide a recommendation for remediation and ensure this is addressed in 4.2?
+.. patch MySQL
+
 Fixes
 =====
+
+- Security Groups: Fixed possibility of synced private security groups listing in subtenants 
+- vCloud Director: Fixed Cloud Sync Status showing ``OK`` when Cloud Sync was not successful
+- vCloud Director: Fixes scenario where plan size changes in vCD were not detected on next sync, potentially causing restart warning on reconfigure to not display.
+- vCloud Director: Fixed issue with volume deletes on discovered server syncing, preventing Usage Record updates.
+- Oracle VM: Fixed issues with intermittent provision failures in a HA environments due to appliance in-memory cloud-init ISO config.
+- Instances: Groups Filter: Fixed issue listing all Groups in filter choices when more 100+ Groups exist.
+- Openstack Clouds: Fixed default tenant assignment of synced Routers upon cloud creation when cloud is assigned to sub-tenant.
+- Azure: Fixed usage records not updating when Morpheus Agent fails to install.
+- VMware: Fixed issue with Datastore placement calculations and error surfacing when creating 2+ VMware Instance copies.
+- NSX: Fixed issue with Logical Switch and Edge Gateway Tenant assignment on Logical Switches and Edge Gateways created inside a Subtenant. 
+- NSX: Fixed issue with NSX Edge Gateway creation related to invalid Resource Pool specification
+- NSX: Fixed network creation on synced DLR's
+- NSX: Fixed secondary network creation on created DLR's
+- Automation: Execute Scheduling: Fixed issues with deletion of Execution Schedules
+- Kubernetes: Fixed issue when provisioning Hosts with insufficient memory
+- vCloud Director: Windows: Fixed Agent Installation Script injection into Guest OS Customizations when Domain Join is enabled
+- OTC: Added image deletion for failed image import service uploads.
+- Azure: SQL DBaaS: Added support Databases names that include spaces.
+- Convert to Managed: Fixed issue with Tenant visibility on Library Layouts when "Support Convert to managed" is enabled.
+- vCloud Director: Fix removal of vApp when deleting an Instance in morpheus that has been stopped in vCD and vApp is in partially running state.
+- Tenants: Fixed issue when deleting a Tenant with existing Power Schedules
+- Workflows: Fixed issue with Workflows with Multiple Options Types displaying when 2nd Option Type has no default value. 
+- Openstack: Synced Private Networks' Type now displayed as ``Private Network`` instead of ``VLAN`` 
+- Openstack Clouds:  Fixed associated Load Balancer visibility not updating when Cloud visibility is changed from Public to Private.
+- Cisco ACI: Fixed issue with deleting Cisco ACI Integrations
+- Reports: Cloud-specific tenant costing analytics report values fix
+- Python Tasks: Fix for Python Tasks script and output size constraints
+- Backups: Local Time value now displayed for Latest date/time on Backup Detail pages
+- Backups: Backup List: Fixed ``All`` Status filter value displayed as as ``Undefined`` 
+- Tenant Registration: Email sign-in link now links to Tenant url/subdomain instead of Master Tenant base url.
+- Tenants: Fixed issues where existing ``reference_data`` would prevent Tenant deletion.
+- Amazon/AWS: Fixed issue with detected Plan changes updating VM records but not Instance records
+- Windows Execution: Fixed potential issue in HA Environments related to Windows Agent websocket session ID, .net not being good at random, and Spring.
+- VMware: Fixed 'Import As Image' session timeouts when ovf export takes longer than 20 minutes.
+- Policies: Security Banner: Fixed issues with Security Banner display for Subtenant Login URLs
+- Xen: Resolved issue where volume size changes in Xen were only reflected on Virtual Machine records, not Instance and Container records.
+- Networks: Fixed issue with Custom Network updates not saving when no Tenants exist. 
+
+
+.. ARM tags variable lookup bug
+.. Plan X scoped to Tenant Y can be assigned to Tenant Z when assigning to discovered or updating existing compute_server records
+.. CustomOptions.x typeahead vars not evaluating in prov wizard review pane
+.. Network changes in Infrastructure -> Network doesnt work if there is no subtenant
+.. Reports are only printing 1 page
+.. Kubernetes Instance: Network - service mesh issues
+.. Cluster Details: Kubernetes Volumes - error on delete
+.. Kubernetes: Volumes - view modal doesn't load
+.. Kubernetes Host: Reconfigure - not updating plan values
+.. Cluster Add Node - naming issue with incrementing numbers
+.. Cluster Details: Master/Workers - sort by name
+.. Kubernetes Instance: Logs - not retrieving log data
+.. Cluster Layouts: only displaying first 50 layouts (need pagination)
+.. Cluster Provision: Combo - unable to provision
+.. Cluster Layouts: issues with creating workers, node count, & priority
+.. Cluster: Add Host - empty Cloud field
+.. Kubernetes Instance: Catalog - Grails
+.. Ansible Tower Task - not showing Errors
+.. Kubernetes Cluster Layouts: workers shouldn't show up on Masters tab
+.. Kubernetes Spec-Based App: delete doesn't complete
+.. Cluster Add Host/Worker: cleanup field handling
+.. Network modal - Improvements
+.. Clusters: Delete - handle various options correctly
+.. Kubernetes Instance: Add Node - not working
+.. Kubernetes Spec-Based Apps: instance detail content issues
+.. Cluster Provision: Kubernetes HA - load balancer selection doesnt work
+.. Cluster Detail: cluster and host status issues 
+.. Kubernetes Instance: Catalog - Tomcat (deployments)
+.. VCD - remove backup & clone actions
+.. App Wizard: Review: CloudFormation: should display all Resources
+.. Kubernetes Add Worker: should hide cluster related fields
+.. Kubernetes: AKS/EKS - unable to delete cloud with sync'd in cluster
+.. Kubernetes Instance: Service Mesh - not updating IP
+.. API/CLI: Create Azure Subnet: failing with timeout, error
+.. API: improve authorization validation
+.. API: Network Pools/Domains/Proxies/Services: Create/Update syntax needs to be documented
+.. API: Validation fails on certain app provisions
+.. API: Provisioning > Library > Layouts: no signature of method error when updating version property
+.. CLI: health alarms: not able to acknowledge unacknowledged alarms
+.. Cloudformation InstanceType No Default Option
+.. NSX-V - Firewall Issues
+.. Policy: Router Quota - missing translation
+.. Set default max_allowed_packet to 5M for MySQL
+.. Subnets not being removed, no parent network
+.. VMware: max_storage on instance and container not updated if associate compute_server volume size changes directly on cloud.
+.. NSX-V: Sync Error
+.. NSX-V: Transport Zone issues
+.. NSX-V - do not log passwords
+.. NSX-V: Firewall Group issues
+.. NSX-V: Logical Switch issues
+.. NSX-V: Logical Router issues
+.. NSX-V: UI and Routing Issues
+.. NSX-V: Firewall Rule issues
+.. AWS CE: API error due to date range
+.. Backup Jobs: duration for in-progress jobs inaccurate
+.. Blueprint wiz & group access fields
+.. Azure - Windows agent does not install when using ARM  Spec Template
+.. Backups: cleanup on backup counts
+.. Using a `$` in a MySQL alters password in config data
+.. App Wizard: Policies: not bubbling up specific error on complete
+.. Amazon ALB/ELB: issues with adding LBs
+.. OTC/Huawei - surface provision failures
+.. KVM instance showing healthy despite deleted VM
+.. Backup status widget - wrong order
+.. Image Builder - force hypervisor
+.. ServiceNow: OracleVM - fail to provision
+.. Kubernetes Blueprint from Spec: App Wizard: Review: should bubble up validation errors, Plan (Development Plan / Config) field not displaying
+.. OTC Networks: type not consistent (private network or VLAN) across 3.6 and 4.0 versions
+.. Nutanix Snapshots show up as 0kb
+.. Amazon ALB: Scheme & VPC validation issues
+.. Service Plans: can't save plan with manual type
+.. Migrated Veeam Integration - can't delete
+.. Network Router Detail: blank except for NSX firewall properties
+.. Deleted Azure Plans sync new Plans, cause permission issues
+.. String/label cleanup
+.. SCVMM: Skip Agent Install being ignored on instance provisioning
+.. ESXi VM Stop - log error
+.. Amazon Servers: failing to delete because of server not empty error
+.. Tenant Delete Error - Network Domain
+.. Tenant Delete - doesnt work if Tenant has Operation Data (ie: amazon costing data)
+.. Existing SAML sign-in error HTTP-Artifact
+.. SQL Error in Logs
+.. VM that wont delete
+.. Google log spam
+.. AWS: use root device mappings from AMI
+.. Policies: "Auto-Approve Extensions" settings not saving
+.. Router Details issues
+.. SCVMM - dont provision to hypervisors that are offline
+.. Network router wizard not filtering network service for selected router type
+.. Disabling OTC / Huawei routers fails
+.. Amazon costing service log error
+.. ServiceNow: Docker Provisioning: not seeing docker hosts
+.. Boot Menus for PXE are blank
+.. Tenant Delete - can't delete with jobs/executions
+.. A network read-only user should not be able to view the details of a network integration.
+.. Logs: shouldn't log vSphere password
+.. 
+.. Kubernetes - exposed passwords in logs
+.. Cloudformation Capability IAM Missing
