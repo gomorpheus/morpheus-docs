@@ -4,6 +4,8 @@
 |morphver| Release Notes
 *************************
 
+4.2.0 brings all of the new features and enhancements from the 4.1 Feature Branch to a LTS branch. Future versions of 4.2 will add additional capabilities, fixes, performance improvements and security enhancements to the existing feature set of 4.2.0, while net new Feature and changes to the platform will be added to the upcoming 4.3 Feature branch.
+
 .. important:: |morphver| requires Elasticsearch v7.x. Please refer to :ref:`upgrading` and `Elasticsearch Upgrade Documentation <https://www.elastic.co/guide/en/elasticsearch/reference/current/setup-upgrade.html>`_ before installing or upgrading to |morphver| if your Appliance's Elasticsearch is external.
 
 .. important:: v3.6.0 or later required to upgrade to |morphver|. Upgrading from v3.6.x to v4.2.0 contains upgrades to MySQL, RabbitMQ, and Elasticsearch. Please refer to Upgrade Requirements before upgrading. When upgrading from v3.6.x to v4.x, a database backup is recommended due to MySQL version upgrade.
@@ -139,7 +141,7 @@ vCloud Director (vCD) Enhancements
 
 The vCloud Director API version can now be specified in vCD Cloud configurations in the API VERSION field
 
-  - To override system API version, enter version in API VERSION field (for example: ``31.0``)
+- To override system API version, enter version in API VERSION field (for example: ``31.0``)
 
 AWS Security Token Service (STS) to AssumeRole
 ----------------------------------------------
@@ -226,11 +228,21 @@ Other Enhancements
 API Enhancements
 ================
 
-CLI Enhancements
-================
+- API: ``Library - Cluster Layouts`` added
+- API: ``Provisioning - Library`` updated
+- API: ``Infrastructure - Network Routers`` added
+- API: ``Infrastructure - Network Integrations`` added
+- API: `` /servers`` and ``/servers/{server_id}`` calls now return the ``resourcePoolId`` and ``folderId`` properties for discovered VMware servers.
+- API: Jobs: Point in Time (Date and Time) execution added. 
+  - ``dateTime`` scheduleMode added 
+  - ``dateTime`` | N | Date and Time to execute the job. Use UTC time in the format 2020-02-15T05:00:00Z. Required when scheduleMode is ``dateTime``.
+- API: Clusters: Support for number of workers parameter added
 
-Security Enhancements
-=====================
+.. CLI Enhancements
+.. ================
+
+.. Security Enhancements
+.. =====================
 
 Fixes
 =====
