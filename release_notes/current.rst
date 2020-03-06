@@ -6,7 +6,7 @@
 
 4.2.0 brings all of the new features and enhancements from the 4.1 Feature Branch to a LTS branch. Future versions of 4.2 will add additional capabilities, fixes, performance improvements and security enhancements to the existing feature set of 4.2.0, while net new Feature and changes to the platform will be added to the upcoming 4.3 Feature branch.
 
-.. important:: |morphver| requires Elasticsearch v7.x. Please refer to :ref:`upgrading` and `Elasticsearch Upgrade Documentation <https://www.elastic.co/guide/en/elasticsearch/reference/current/setup-upgrade.html>`_ before installing or upgrading to |morphver| if your Appliance's Elasticsearch is external.
+.. important:: |morphver| requires Elasticsearch v7.x. Please refer to :ref:`upgrading` and `Elasticsearch Upgrade Documentation <https://www.elastic.co/guide/en/elasticsearch/reference/current/setup-upgrade.html>`_ before installing or upgrading to |morphver| if your Appliance's Elasticsearch is external. As of 4.2.0, Ubuntu 14.04 is no longer supported, you must be running Ubuntu 16.04+.
 
 .. important:: v3.6.0 or later required to upgrade to |morphver|. Upgrading from v3.6.x to v4.2.0 contains upgrades to MySQL, RabbitMQ, and Elasticsearch. Please refer to Upgrade Requirements before upgrading. When upgrading from v3.6.x to v4.x, a database backup is recommended due to MySQL version upgrade.
 
@@ -214,7 +214,7 @@ Other Enhancements
 - Recent Activity Report now displays impersonated User info. The Recent Activity Report (Operations > Activity) now shows "User as Impersonated User" for activity records from an impersonated User. Impersonations were previously shown in the Dashboard Activity section, as well as the Audit Log and UI Logs. They are now shown in the Recent Activity Report as well.
 - CloudFormation: Improved conditional resource handling. When conditional resources fail to create when provisioning CloudFormation Instances or Apps, the resources are removed instead of remaining in |morpheus| as failed.
 - Git and Github Integrations: HTTPS-only auth support added
-- Tasks: Git integration now exists for Groovy Script-type Automation Tasks
+- Tasks: Git integration now exists for Groovy Script and Python-type Automation Tasks
 - Cloud-Init: Added support for hashing change passwords in target cloud-init data for any non-Ubuntu 14 based image (Ubuntu 14.04 restriction). This is dependent on Virtual Image OS type and version settings, ensure OS Type is accurately set.
 - Removed a hard-coded message stating "You have logged out of |morpheus|." when users who were authenticated through a SAML integration logged out. This could cause confusion when using white-labeled |morpheus| Appliances.
 - Removed a message stating "If supported by your identity provider and configuration, you have also been logged out of your identity provider" that appeared in some instances when logging out of |morpheus| through Identity Source authentication
@@ -225,6 +225,7 @@ Other Enhancements
 - Appliance: MySQL: Default value for ``max_allowed_packet`` set to ``5242880``
 - Azure: ARM:  Added support for ``copyindex`` in the event template doesn't properly use ``copyIndex``
 - NSX: Logical Switch creation: Given name is now appended onto end of Logical Switch/Network name
+- Tasks: HTTP Task now does preemptive basic AUTH and parses variables in custom header values
 
 
 
@@ -235,9 +236,9 @@ API Enhancements
 - API: ``Provisioning - Library`` updated
 - API: ``Infrastructure - Network Routers`` added
 - API: ``Infrastructure - Network Integrations`` added
-- API: `` /servers`` and ``/servers/{server_id}`` calls now return the ``resourcePoolId`` and ``folderId`` properties for discovered VMware servers.
-- API: Jobs: Point in Time (Date and Time) execution added. 
-  - ``dateTime`` scheduleMode added 
+- API: ``/servers`` and ``/servers/{server_id}`` calls now return the ``resourcePoolId`` and ``folderId`` properties for discovered VMware servers.
+- API: Jobs: Point in Time (Date and Time) execution added.
+  - ``dateTime`` scheduleMode added
   - ``dateTime`` | N | Date and Time to execute the job. Use UTC time in the format 2020-02-15T05:00:00Z. Required when scheduleMode is ``dateTime``.
 - API: Clusters: Support for number of workers parameter added
 
@@ -259,43 +260,43 @@ API Enhancements
 Fixes
 =====
 
-- Security Groups: Fixed possibility of synced private security groups listing in subtenants 
-- vCloud Director: Fixed Cloud Sync Status showing ``OK`` when Cloud Sync was not successful
-- vCloud Director: Fixes scenario where plan size changes in vCD were not detected on next sync, potentially causing restart warning on reconfigure to not display.
-- vCloud Director: Fixed issue with volume deletes on discovered server syncing, preventing Usage Record updates.
-- Oracle VM: Fixed issues with intermittent provision failures in a HA environments due to appliance in-memory cloud-init ISO config.
-- Instances: Groups Filter: Fixed issue listing all Groups in filter choices when more 100+ Groups exist.
-- Openstack Clouds: Fixed default tenant assignment of synced Routers upon cloud creation when cloud is assigned to sub-tenant.
-- Azure: Fixed usage records not updating when Morpheus Agent fails to install.
-- VMware: Fixed issue with Datastore placement calculations and error surfacing when creating 2+ VMware Instance copies.
-- NSX: Fixed issue with Logical Switch and Edge Gateway Tenant assignment on Logical Switches and Edge Gateways created inside a Subtenant. 
+- Security Groups: Fixed possibility of synced private security groups listing in subtenants
+- vCloud Director: Fixed Cloud sync status showing ``OK`` when sync was not successful
+- vCloud Director: Fixes scenario where plan size changes in vCD were not detected on next sync, potentially causing restart warning on reconfigure to not display
+- vCloud Director: Fixed issue with volume deletes on discovered server syncing, preventing usage record updates.
+- Oracle VM: Fixed issues with intermittent provision failures in HA environments due to appliance in-memory cloud-init ISO config
+- Instances: Groups Filter: Fixed issue listing all Groups in filter choices when more 100+ Groups exist
+- Openstack Clouds: Fixed default tenant assignment of synced Routers upon cloud creation when cloud is assigned to sub-tenant
+- Azure: Fixed usage records not updating when Morpheus Agent fails to install
+- VMware: Fixed issue with Datastore placement calculations and error surfacing when creating 2+ VMware Instance copies
+- NSX: Fixed issue with Logical Switch and Edge Gateway Tenant assignment on Logical Switches and Edge Gateways created inside a Subtenant
 - NSX: Fixed issue with NSX Edge Gateway creation related to invalid Resource Pool specification
-- NSX: Fixed network creation on synced DLR's
-- NSX: Fixed secondary network creation on created DLR's
+- NSX: Fixed network creation on synced DLRs
+- NSX: Fixed secondary network creation on created DLRs
 - Automation: Execute Scheduling: Fixed issues with deletion of Execution Schedules
 - Kubernetes: Fixed issue when provisioning Hosts with insufficient memory
 - vCloud Director: Windows: Fixed Agent Installation Script injection into Guest OS Customizations when Domain Join is enabled
-- OTC: Added image deletion for failed image import service uploads.
-- Azure: SQL DBaaS: Added support Databases names that include spaces.
-- Convert to Managed: Fixed issue with Tenant visibility on Library Layouts when "Support Convert to managed" is enabled.
-- vCloud Director: Fix removal of vApp when deleting an Instance in morpheus that has been stopped in vCD and vApp is in partially running state.
+- OTC: Added image deletion for failed image import service uploads
+- Azure: SQL DBaaS: Added support database names that include spaces
+- Convert to Managed: Fixed issue with Tenant visibility on Library Layouts when "Support Convert to Managed" is enabled
+- vCloud Director: Fix removal of vApp when deleting an Instance in |morpheus| that has been stopped in vCD and vApp is in partially running state
 - Tenants: Fixed issue when deleting a Tenant with existing Power Schedules
-- Workflows: Fixed issue with Workflows with Multiple Options Types displaying when 2nd Option Type has no default value. 
-- Openstack: Synced Private Networks' Type now displayed as ``Private Network`` instead of ``VLAN`` 
-- Openstack Clouds:  Fixed associated Load Balancer visibility not updating when Cloud visibility is changed from Public to Private.
-- Cisco ACI: Fixed issue with deleting Cisco ACI Integrations
-- Reports: Cloud-specific tenant costing analytics report values fix
+- Workflows: Fixed issue with Workflows with multiple Options Types displaying when second Option Type has no default value
+- Openstack: Synced Private Network's type now displayed as ``Private Network`` instead of ``VLAN``
+- Openstack Clouds: Fixed associated Load Balancer visibility not updating when Cloud visibility is changed from Public to Private
+- Cisco ACI: Fixed issue with deleting Cisco ACI integrations
+- Reports: Cloud-specific Tenant costing analytics report values fix
 - Python Tasks: Fix for Python Tasks script and output size constraints
-- Backups: Local Time value now displayed for Latest date/time on Backup Detail pages
-- Backups: Backup List: Fixed ``All`` Status filter value displayed as as ``Undefined`` 
-- Tenant Registration: Email sign-in link now links to Tenant url/subdomain instead of Master Tenant base url.
-- Tenants: Fixed issues where existing ``reference_data`` would prevent Tenant deletion.
+- Backups: Local Time value now displayed for latest date/time on Backup detail pages
+- Backups: Backup List: Fixed ``All`` Status filter value displayed as as ``Undefined``
+- Tenant Registration: Email sign-in link now links to Tenant URL/subdomain instead of Master Tenant base URL
+- Tenants: Fixed issue where existing ``reference_data`` would prevent Tenant deletion
 - Amazon/AWS: Fixed issue with detected Plan changes updating VM records but not Instance records
-- Windows Execution: Fixed potential issue in HA Environments related to Windows Agent websocket session ID, .net not being good at random, and Spring.
-- VMware: Fixed 'Import As Image' session timeouts when ovf export takes longer than 20 minutes.
-- Policies: Security Banner: Fixed issues with Security Banner display for Subtenant Login URLs
-- Xen: Resolved issue where volume size changes in Xen were only reflected on Virtual Machine records, not Instance and Container records.
-- Networks: Fixed issue with Custom Network updates not saving when no Tenants exist. 
+- Windows Execution: Fixed potential issue in HA environments related to Windows Agent websocket session ID, .NET not being good at random, and Spring
+- VMware: Fixed 'Import As Image' session timeouts when OVF export takes longer than 20 minutes
+- Policies: Security Banner: Fixed issues with Security Banner display for Subtenant login URLs
+- Xen: Resolved issue where volume size changes in Xen were only reflected on Virtual Machine records, not Instance and Container records
+- Networks: Fixed issue with custom Network updates not saving when no Tenants exist
 
 
 .. ARM tags variable lookup bug
@@ -324,7 +325,7 @@ Fixes
 .. Kubernetes Instance: Add Node - not working
 .. Kubernetes Spec-Based Apps: instance detail content issues
 .. Cluster Provision: Kubernetes HA - load balancer selection doesnt work
-.. Cluster Detail: cluster and host status issues 
+.. Cluster Detail: cluster and host status issues
 .. Kubernetes Instance: Catalog - Tomcat (deployments)
 .. VCD - remove backup & clone actions
 .. App Wizard: Review: CloudFormation: should display all Resources
@@ -394,6 +395,6 @@ Fixes
 .. Tenant Delete - can't delete with jobs/executions
 .. A network read-only user should not be able to view the details of a network integration.
 .. Logs: shouldn't log vSphere password
-.. 
+..
 .. Kubernetes - exposed passwords in logs
 .. Cloudformation Capability IAM Missing
