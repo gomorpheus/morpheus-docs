@@ -26,7 +26,7 @@ New Tag Policy Type with enforcement and compliance scanning added: `LINK <https
 
 .. image:: /images/administration/settings/policies/tagPolicy.jpeg
    :width: 60%
-   
+
 .. image:: /images/administration/settings/policies/tagComplianceWarning.jpeg
    :width: 80%
 
@@ -107,93 +107,121 @@ System-seeded Boot Menus are displayed and user-created Boot Menus can be edited
 Jobs: Scheduled run-once executions
 -----------------------------------
 
-- Jobs can now be scheduled to execute once at a specified Date and Time: `LINK <https://docs.morpheusdata.com/en/4.2.0/provisioning/jobs/jobs.html#creating-jobs>`_
-    - Jobs - Execution Config
-     SCHEDULE
-      Manual
-       Job will not be executed on a schedule. Job can be executed from Provisioning: Jobs and selecting Actions -> Execute
-     Date And Time
-        Job will be executed at one specific point in time and not again (unless rescheduled or executed manually)
-     Schedules
-         Available Execution Schedules will populate
+- Jobs can now be scheduled to execute once at a specified date and time: `LINK <https://docs.morpheusdata.com/en/4.2.0/provisioning/jobs/jobs.html#creating-jobs>`_
 
-       .. note:: Morpheus provides two system default execution schedules, Daily at Midnight and Weekly on Sunday at Midnight. Additional schedules can be added in Provisioning -> Automation -> Execute Scheduling
-
-       .. image:: /images/provisioning/jobs/dateandtime_job.png
-          :width: 60%
+  .. image:: /images/provisioning/jobs/dateandtime_job.png
+    :width: 60%
 
 Kubernetes Updates
 ------------------
 - Brownfield Kubernetes Cluster Support, create a new Cluster (Infrastructure > Clusters) with "External Kubernetes Cluster" type to bring an existing Kubernetes cluster into Morpheus: `LINK <https://support.morpheusdata.com/s/article/How-to-add-existing?language=en_US>`_
 - Azure AKS Integration
-- Reconfigure Action now available for Kubernetes Instances.
+- Reconfigure Action now available for Kubernetes Instances
 - Create Cluster wizard (`Infrastructure > Clusters > + ADD CLUSTER`) now allows users to specify the number of worker nodes or the number of hosts for Kubernetes Clusters or Docker/KVM clusters, respectively
 
   .. image:: /images/infrastructure/clusters/workers_cluster_wizard.png
     :width: 60%
 
-
 SCVMM: Discovered VM IP Address Sync
- SCVMM Cloud Discovery now syncs in IP addresses for Discover VM's.
-  - Inventory Existing setting must be enabled on SCVMM Cloud config.
+------------------------------------
 
-- API Proxy values can now be set under Advanced Options for GCP clouds (when creating new integration or editing an existing one) as is already possible for other clouds: `LINK <https://docs.morpheusdata.com/en/4.2.0/integration_guides/Clouds/google/google.html#advanced-options>`_
+- SCVMM cloud discovery now syncs in IP addresses for discovered VMs.
 
+  .. note:: Inventory Existing setting must be enabled on SCVMM Cloud config
 
-- Now supports security token service to AssumeRole by entering AWS role ARN value when editing or integrating new Amazon cloud
+Google Cloud Platform (GCP) Enhancements
+----------------------------------------
+
+- API Proxy values can now be set under Advanced Options for GCP clouds (when creating a new integration or editing an existing one) as is already possible for other clouds: `LINK <https://docs.morpheusdata.com/en/4.2.0/integration_guides/Clouds/google/google.html#advanced-options>`_
+
+vCloud Director (vCD) Enhancements
+----------------------------------
+
+The vCloud Director API version can now be specified in vCD Cloud configurations in the API VERSION field
+
+  - To override system API version, enter version in API VERSION field (for example: ``31.0``)
+
+AWS Security Token Service (STS) to AssumeRole
+----------------------------------------------
+
+- Now supports security token service to AssumeRole by entering AWS role ARN value when editing or integrating a new Amazon cloud
 
 .. image:: /images/integration_guides/clouds/aws_role_arn.png
   :width: 60%
 
+Policy Enhancements
+-------------------
 
+Policies: Network Quotas
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+Network Quota Policies limit the number of Networks that can be created within the Policy's scope
+
+- Once the quota is reached, Users will not be able to create additional Networks within the applicable Policy enforcement scope
+- Scopes include:
+
+  - Global
+  - Tenant
+  - Group
+  - Cloud
+  - Role
+  - User
+
+Policies: Router Quotas
+^^^^^^^^^^^^^^^^^^^^^^^
+
+Router Quota Policies limit the number of Routers that can be created within the Policy's scope.
+
+- Once the quota limit is reached, Users will not be able to create additional Routers within the applicable Policy enforcement scope
+- Scopes include:
+
+  - Global
+  - Tenant
+  - Group
+  - Cloud
+  - Role
+  - User
+
+Tag Enhancements
+----------------
+
+VMware: Tag Enhancements
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+- Post-Provision Tag additions, updates, and/or removals in |morpheus| on VMware Instances are now synced into VMware
+
+Azure: Tag Enhancements
+^^^^^^^^^^^^^^^^^^^^^^^
+
+- Post-Provision Tag additions, updates, and/or removals in |morpheus| on Azure Instances are now synced into Azure
+
+Cloud Datacenter Expansion
+--------------------------
+
+- IBM Cloud: Frankfurt 4 & 5 Datacenters now supported
+- Softlayer: Frankfurt 4 & 5 Datacenters now supported
+
+System Image Catalog Improvements
+---------------------------------
+
+- Ubuntu 18.04 Node Types have been added for the following Clouds: Upcloud, Azure, DigitalOcean, IBM, Oracle Cloud, Open Telekom, SoftLayer, vCD, SCVMM, Alibaba, Hyper-V, ESXi
+
+Other Enhancements
+------------------
 
 - Workflows with a visibility value of "Public" are now viewable and executable by Tenants: `LINK <https://docs.morpheusdata.com/en/4.2.0/provisioning/automation/automation.html#add-workflow>`_
 - Approvals (`Operations > Approvals`) can be sorted by DATE CREATED
-- Recent Activity Report now displays Impersonated User info.
-  The Recent Activity Report in /operations/activity now shows "User as Impersonated User" for activity records from an Impersonated User. Impersonations were previously shown in the Dashboard Activity section, as well as the Audit Log and UI Logs, and now shown in the Recent Activity Report too.
-- CloudFormation: Improved conditional resource handling
-   When Conditional Resources fail to create when provisioning CloudFormation Instances or Apps, the resources are removed instead of remaining in |morpheus| as Failed.
-- vCloud Director: API Version Specification
-   The API Version can now be specified in vCloud Director Cloud configurations.
-   - API VERSION field added to vCD Cloud configs
-   - To override system API version, enter version in API VERSION field
-     - example API verison value: ``31.0``
-- VMware: Tag Enhancements
-  - Post-Provision Tag additions, updates, and/or removals in |morpheus| on VMware Instances are now synced into VMware
-- Azure: Tag Enhancements
-  - Post-Provision Tag additions, updates, and/or removals in |morpheus| on Azure Instances are now synced into Azure
-- IBM Cloud: Frankfurt 4 & 5 Datacenters now supported
-   Frankfurt 4 & 5 Datacenters are now available for IBM Clouds.
-- Softlayer: Frankfurt 4 & 5 Datacenters now supported
-   Frankfurt 4 & 5 Datacenters are now available for Softlayer Clouds.
-Policies: Network Quotas
- Network Quota Policies limit the number of Networks that can be created within the Policy's scope.
-  - Once the Quote limit is reached, Users will not be able to create additional Networks within the applicable Policy Enforcement scope.
-  - Scopes include:
-
-    - Global
-    - Tenant
-    - Group
-    - Cloud
-    - Role
-    - User
-
-Policies: Router Quotas
- Router Quota Policies limit the number of Router that can be created within the Policy's scope.
-  - Once the Quote limit is reached, Users will not be able to create additional Routers within the applicable Policy Enforcement scope.
-  - Scopes include:
-
-    - Global
-    - Tenant
-    - Group
-    - Cloud
-    - Role
-    - User
-
+- Recent Activity Report now displays impersonated User info. The Recent Activity Report (Operations > Activity) now shows "User as Impersonated User" for activity records from an impersonated User. Impersonations were previously shown in the Dashboard Activity section, as well as the Audit Log and UI Logs. They are now shown in the Recent Activity Report as well.
+- CloudFormation: Improved conditional resource handling. When Conditional Resources fail to create when provisioning CloudFormation Instances or Apps, the resources are removed instead of remaining in |morpheus| as failed.
 - Git and Github Integrations: HTTPS only auth support added
 - Tasks: Git integration now exists for Groovy Script-type Automation Tasks
-- System Images: Ubuntu 18.04 Node Types have been added for the following Clouds: Upcloud, Azure, DigitalOcean, IBM, Oracle Cloud, Open Telekom, SoftLayer, vCD, SCVMM, Alibaba, Hyper-V, ESXi
 - Cloud-Init: Added support for hashing change passwords in target cloud-init data for any non-Ubuntu 14 based image (Ubuntu 14.04 restriction). Note: Dependent on Virtual Image OS type and version settings; ensure OS Type is accurately set.
+- Removed a hard-coded message stating "You have logged out of |morpheus|." when users who were authenticated through a SAML integration logged out. This could cause confusion when using white-labeled |morpheus| Appliances.
+- Removed a message stating "If supported by your identity provider and configuration, you have also been logged out of your identity provider" that appeared in some instances when logging out of |morpheus| through Identity Source authentication
+- Fixed an issue where the HISTORY tab of an ARM Blueprint App detail page would only show deployment information if a VM resource was being deployed
+- Creation of networks and routers are now asynchronous processes to improve performance and prevent modal timeout in some scenarios
+- Updated |morpheus| installer to force a version of FreeRDP which is compatible with Guacd. CentOS/RHEL 7.7+ include FreeRDP 2.0 by default which is not compatible.
+- Fixed an issue preventing a second router from being added to a |morpheus|-created Openstack network in certain scenarios
 
 API Enhancements
 ================
@@ -206,12 +234,3 @@ Security Enhancements
 
 Fixes
 =====
-
-- Removed a hard-coded message stating "You have logged out of |morpheus|." when users who were authenticated through a SAML integration logged out. This could cause confusion when using white-labeled |morpheus| Appliances.
-- Removed a message stating "If supported by your identity provider and configuration, you have also been logged out of your identity provider" that appeared in some instances when logging out of |morpheus| through Identity Source authentication
-- Fixed an issue where the HISTORY tab of an ARM Blueprint App detail page would only show deployment information if a VM resource was being deployed
-- Creation of networks and routers are now asynchronous processes to improve performance and prevent modal timeout in some scenarios
-- Updated |morpheus| installer to force a version of FreeRDP which is compatible with Guacd. CentOS/RHEL 7.7+ include FreeRDP 2.0 by default which is not compatible.
-- The Activity page (Operations > Activity) now identifies actions taken by impersonated Users in the same way they are on the Dashboard (Operations > Dashboard), for example, "Author: User1 as User2"
-- Fixed an issue where the reconfigure function did not work properly on Instances provisioned to a kubernetes host in some cases
-- Fixed an issue preventing a second router from being added to a |morpheus|-created Openstack network in certain scenarios
