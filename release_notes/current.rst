@@ -227,6 +227,7 @@ API Enhancements
   - ``dateTime`` scheduleMode added
   - ``dateTime`` | N | Date and Time to execute the job. Use UTC time in the format 2020-02-15T05:00:00Z. Required when scheduleMode is ``dateTime``.
 - API: Clusters: Support for number of workers parameter added
+
 .. API/CLI: instances update --created-by not working
 .. API: Appliance Settings: cannot PUT json in the same format as GET returns for
 

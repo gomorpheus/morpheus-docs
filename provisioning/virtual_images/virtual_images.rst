@@ -25,7 +25,7 @@ Configuring Virtual Images
 System Images
 ^^^^^^^^^^^^^
 
-System Virtual Images are pre-configured with metadata and have Cloud-Init or Cloudbase-Init installed. These images are ready to be provisioned with no configuration necessary, however it is required to populate ``Administration -> Provisioning -> Cloud-Init`` section with user data as well as User Profile(s) users data when creating additional users prior to provisioning, as the user data from these sections is required when provisioning System provided Virtual Images. 
+System Virtual Images are pre-configured with metadata and have Cloud-Init or Cloudbase-Init installed. These images are ready to be provisioned with no configuration necessary, however it is required to populate ``Administration -> Provisioning -> Cloud-Init`` section with user data as well as User Profile(s) users data when creating additional users prior to provisioning, as the user data from these sections is required when provisioning System provided Virtual Images.
 
 .. NOTE:: System Images settings are not editable.
 
@@ -81,11 +81,11 @@ Typically |morpheus| does not have sufficient metatdata to successfully provisio
 Provisioning Images
 -------------------
 
-When provisioning a System Image for the first time, |morpheus| will download and stream the image from S3 to the target Cloud if the image is not local to the Cloud. The Image will also be cached on the |morpheus| Appliance under ``/var/opt/morpheus/vm/vmcache``. Subsequent provisions of the image will use the created template in the Cloud or the cached local Image if the images does not exist in the selected Cloud, in which case the cached Image will be copied to the Cloud.
+When provisioning a system image, |morpheus| will stream the image from Amazon S3 to the target Cloud if the image is not local to the Cloud.
 
-When using Images that already exist in the destination cloud, such as synced, marketplace, or previously copied images, no image transfer between the |morpheus| Appliance and destination cloud will take place.
+When using iamges that already exist in the destination Cloud, such as synced, marketplace, or previously copied images, no image stream from S3 through the |morpheus| Appliance to the destination cloud will take place.
 
-.. NOTE:: The |morpheus| Appliance must be able to download from Amazon S3 when provisioning System Images for the first time.
+.. NOTE:: The |morpheus| Appliance must be able to download from Amazon S3 when provisioning system images.
 
 .. NOTE:: The |morpheus| Appliance must be able reach and resolve the destination Host when provisioning System Images or uploaded Images for the first time. This included being able to resolve ESXi host names in VMware vCenter clouds, and reach the destination ESXi host over port 443.
 
