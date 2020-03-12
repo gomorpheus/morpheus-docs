@@ -15,9 +15,9 @@ Getting started with |morpheus| and VMware
 Groups
 ^^^^^^
 
-Groups in |morpheus| define which resources a user has access to. Clouds are added to groups and a user can only access clouds that are in the groups to which their roles give them access. More information on |morpheus| groups is `here <https://docs.morpheusdata.com/en/4.1.1/infrastructure/groups/groups.html#groups>`_. A deep dive into groups goes beyond the scope of this guide but it's often useful to create a group that contains all clouds for testing purposes. We will create that group now so that we can add our first cloud into this group in the next section.
+Groups in |morpheus| define which resources a user has access to. Clouds are added to Groups and a User can only access Clouds in the Groups to which their Role(s) give them access. More information on |morpheus| groups is at :ref:`Groups`. A deep dive into groups goes beyond the scope of this guide but it's often useful to create a group that contains all clouds for testing purposes. We will create that group now so that we can add our first cloud into this group in the next section.
 
-Navigate to `Infrastructure > Groups`. Here we will see a list of all configured groups but, of course, this will be empty immediately after installation. Click "+CREATE". Give your group a name, such as "All Clouds". The "CODE" field is used when calling |morpheus| through |morpheus| API or |morpheus| CLI. It's useful in most cases to have an "All Clouds" group for testing purposes so this will likely help you down the road.
+Navigate to ``Infrastructure > Groups``. Here we will see a list of all configured groups but, of course, this will be empty immediately after installation. Click "+CREATE". Give your group a name, such as "All Clouds". The "CODE" field is used when calling |morpheus| through |morpheus| API or |morpheus| CLI. It's useful in most cases to have an "All Clouds" group for testing purposes so this will likely help you down the road.
 
 Configuring Network for Provisioning
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

@@ -60,7 +60,7 @@ Or use the tenant specific URL which can be found and configured under Administr
 Configure Cloud-init Global Settings
 ------------------------------------
 
-When using cloud-init, cloudbase-init, VMware Tools customizations, or Nutanix Sysprep, Global Linux User and Windows Administrator credentials can be set using the settings in `Administraiton - Provisioning`. Its is recommended to define these settings after installation unless credentials are defined per Virtual Image for Provisioning.
+When using cloud-init, cloudbase-init, VMware Tools customizations, or Nutanix Sysprep, Global Linux User and Windows Administrator credentials can be set using the settings in `Administration - Provisioning`. Its is recommended to define these settings after installation unless credentials are defined per Virtual Image for Provisioning.
 
 Add a License Key
 -----------------
