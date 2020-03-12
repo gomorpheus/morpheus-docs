@@ -1,7 +1,7 @@
 File Templates
 --------------
 
-File Templates are for generating config files, such as my.cnf, elasticsearch.yml, morpheus.rb etc, or any text file. With full config map variable support, Template Files are dynamically generated during a workflow phase or ad hoc via Instance Actions.
+File Templates are for generating config files, such as my.cnf, elasticsearch.yml, morpheus.rb, or any text file. With full config map variable support, Template Files are dynamically generated during a Workflow phase or ad hoc via Instance actions.
 
 File Templates can also be exposed on Instances in the Settings Tab. Ensure the Instance Type supports settings, and Category is defined in Advance Options on the Library Template config.
 
