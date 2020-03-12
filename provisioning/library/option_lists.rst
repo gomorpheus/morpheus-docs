@@ -40,5 +40,7 @@ INITIAL DATASET
  Create an initial JSON or CSV dataset to be used as the collection for this option list. It should be a list containing objects with properties 'name' and 'value'
 TRANSLATION SCRIPT
  Create a JS script to translate the result data object into an array containing objects with properties 'name' and 'value'. The input data is provided as data and the result should be put on the global variable results.
+REQUEST SCRIPT
+ Create a JS script to prepare the request. Return a data object as the body for a POST request, and return an array containing properties 'name' and 'value' for a GET request. The input data is provided as 'data' and the result should be put on the global variable 'results'.
 
 .. NOTE:: Option Lists must be set on one or multiple ``Select List`` Option Types. The Option Type is then set on an Instance Type, Layout, Cluster Layout, and/or Operational Workflow for input during provisioning or execution.

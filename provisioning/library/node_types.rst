@@ -21,11 +21,15 @@ Environment Variables
 Category
   Node Types of differing categories within the same Layout can have differing sizing
 
-The Options fields will change depending on the Technology option selected.
+Technology-Specific Options
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-For VM provisioning technology options, select an image from the VM Image dropdown. This list is populated from the |morpheus| Virtual Images section and will include images uploaded into |morpheus| as well as synced images from added clouds.
+The Options fields will change depending on the Technology option selected. For VM provisioning technology options, select an image from the VM Image dropdown. This list is populated from the |morpheus| Virtual Images section and will include images uploaded into |morpheus| as well as synced images from added clouds.
 
 .. NOTE:: Amazon and Azure Marketplace Images can be added in the Virtual Images section for use as Node Types in custom library items.
+
+Docker Options
+````````````````````
 
 For Docker, type in the name and version of the Docker Image, then select the integrated registry.
 
@@ -44,7 +48,7 @@ Example port configuration:
 
 .. image:: /images/provisioning/library/node_ports.png
 
-VMware Extra Options
+VMware Options
 ````````````````````
 
 When VMware Technology Type is selected, EXTRA OPTIONS will be available in the VMware VM Options section. These allow defining Advance vmx-file parameters during provisioning.
