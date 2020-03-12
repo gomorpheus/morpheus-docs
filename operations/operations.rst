@@ -7,10 +7,10 @@ Operations
 
   dashboard.rst
   reports.rst
-  analytics.rst
-  guidance.rst
+  .. analytics.rst
+  .. guidance.rst
   wiki.rst
   budgets.rst
   approvals.rst
   activity.rst
-  health.rst
+  .. health.rst
