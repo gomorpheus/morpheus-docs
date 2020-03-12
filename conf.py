@@ -204,7 +204,7 @@ def setup(app):
     app.add_stylesheet('hpe_theme.css')
 
 rst_prolog = """
-.. |morpheus| replace:: %s """ % os.environ[`COMPANY`] + """
+.. |morpheus| replace:: %s """ % os.environ['COMPANY'] + """
 .. |morphbranch| replace:: v4.1
 .. |morphver| replace:: v4.1.2
 .. |rmqbranch| replace:: v3.5+
