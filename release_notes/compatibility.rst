@@ -9,7 +9,7 @@ When installing and upgrading to |morpheus| |morphver|, refer to the following t
 |morpheus| Application OS
 =========================
 
-The Morpheus Applications can be installed on the following Operating System versions:
+The Morpheus Application can be installed on the following Operating System versions:
 
 +--------+--------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | OS     | Version(s)   | Notes                                                                                                                                                                                             |
