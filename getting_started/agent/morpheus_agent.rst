@@ -1,8 +1,8 @@
 Morpheus Agent
-**************
+==============
 
 Overview
-========
+--------
 
 The |morpheus| Agent is an important and powerful facet of |morpheus| as a orchestration tool.  Though it is not required (one unique capability of our platform vs. some of the competitors out there), it is recommended for use as it brings with it a lot of insightful benefits.  Not only does it provide statistics of the guest operating system and resource utilization, it also brings along with it monitoring and log aggregation capabilities.  After an initial brownfield discovery users can decide to convert unmanaged vms to managed.  The |morpheus| Agent is very lightweight and secure.
 

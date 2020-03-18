@@ -1,5 +1,5 @@
 Agent Installation
-==================
+------------------
 
 There are numerous methods to install the |morpheus| Agent on supported Targets. All Agent Installation Methods are executing a script on the target that calls back to the |morpheus| Appliance over 443.  
 
@@ -49,78 +49,77 @@ Manual
 
 
 SSH
-^^^
-
+```
 Process
-```````
+.......
 Morpheus ssh’s to the VM/Host, curls and executes Agent Install script 
   eg curl -k -s "https://${applianceUrl}/api/server-script/agentInstall?apiKey=${apiKey}" | bash
 
 Requirements
-````````````
+............
 * Port 22 is open for Linux images, and ssh is enabled
 * Credentials have been entered on the image if using custom or synced image. Credentials can be entered on images in the Provisioning -> Virtual Images section.
 
 WinRM
-^^^^^
+`````
 
 Process
-```````
+.......
 Morpheus winRM’s to VM/Host and executes Agent Install script. 
 
 Requirements
-````````````
+............
 * Port 5985 must be open and winRM enabled for Windows images.
 * Credentials have been entered on the image if using custom or synced image. Credentials can be entered on images in the Provisioning -> Virtual Images section.
 * Administrator User (SID 500) is required for Windows agent install.
 
 VMware Tools
-^^^^^^^^^^^^
+````````````
 
 Process
-```````
+.......
 Morpheus executes agentInstall.sh or agentInstall.ps1 via VMware Tools Guest Execution 
 
 Requirements
-````````````
+............
 * VMware tools is installed on the template(s)
 * Credentials have been entered on the Image if using uploaded or synced image when Cloud-init or Guest Customizations or Sysprep for Windows are not used. Credentials can be entered on Images in the `Provisioning -> Virtual Images` section.
 * Administrator User (SID 500) is required for Windows agent install.
 
 Cloud-Init
-^^^^^^^^^^
+``````````
 
 Process
-```````
+.......
 Morpheus executes agentInstall.sh via cloud-init runcmd
 
 Requirements
-````````````
+............
 * Cloud-init installed on Virtual Image
 * "IS CLOUD INIT ENABLED?" checked/true on Virtual Image record
 * Cloud-Init User is configured in Admin -> Provisioning section
 
 Cloudbase-init
-^^^^^^^^^^^^^^
+``````````````
 
 Process
-```````
+.......
 Morpheus adds WindowsAgentCloudInitInstallScript to CloudbaseInitUserData
 Requirements
-````````````
+............
 * Cloudbase-init installed on Virtual Image
 * "IS CLOUD INIT ENABLED?" checked/true on Virtual Image record
 * Windows Administrator Password defined in Admin -> Provisioning section
 
 Windows Unattend
-^^^^^^^^^^^^^^^^
+````````````````
 
 Process
-```````
+.......
 Morpheus adds getWindowsAgentDownloadScript to unattend.xml (RunSynchronousCommand)
 
 Requirements
-````````````
+............
 VMware 
   - Windows Administrator Password defined in Admin -> Provisioning section
     - OR ``Administrator`` User (SID 500) and valid Windows password defined on Virtual Image Record 
@@ -134,10 +133,10 @@ Nutainx/SCVMM/Openstack
   - "IS CLOUD INIT ENABLED?" unchecked/false on Virtual Image record
  
 Manual
-^^^^^^
+``````
 
-Process 
-```````
+Process
+.......
 #. From the VM/Host record page (``/infrastructure/servers/${id}``) run :guilabel:`ACTIONS` -> ``Download Agent Script``
    - This is will generate an Agent Install Script based of the Target VM/Host OS/Platform, Appliance URL, and API Key.  
 #. Manually execute the downloaded script on the Target VM or Host
