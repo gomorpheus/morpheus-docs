@@ -14,6 +14,6 @@ The |morpheus| Agent does not open any inbound network ports but rather only ope
 .. toctree::
   :maxdepth: 2
 
-  agent/features.rst
-  agent/agentInstallation.rst
-  agent/osSupport.rst
+  /getting_started/agent/agentInstallation.rst
+  /getting_started/agent/osSupport.rst
+  /getting_started/getting_started/agent/agentInstallation.rst
