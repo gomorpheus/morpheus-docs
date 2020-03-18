@@ -4,7 +4,7 @@ Library
 Overview
 --------
 
-The Library section is used to add virtual images as custom instances to the provisioning catalog. The Library Section is composed of:
+The Library section is used to add Virtual Images as custom Instance Types to the provisioning catalog. The Library section is composed of:
 
 * Instance Types
 * Layouts
@@ -16,7 +16,9 @@ The Library section is used to add virtual images as custom instances to the pro
 * Spec Templates
 * Cluster Layouts
 
-Uploaded or synced images from the virtual images section are added to nodes, a node or multiple nodes are added to layouts, and layouts are added to Instance Types. Scripts and File Templates can be attached to nodes, with phased execution options for scripts.
+When provisioning, the User selects an INSTANCE TYPE from the provisioning wizard. At this stage, we can present custom OPTION TYPES to the User which alter deployment in ways the administrator predetermines. Based on the selected Cloud technology and Version, the User is presented with applicable LAYOUTS selections. LAYOUTS can take advantage of Workflows which automate Tasks and can utilize a wide range of DevOps automation technologies. One or more NODE TYPES is associated with the LAYOUT. NODE TYPES are the bridge between LAYOUTS and Images. NODE TYPES can also take advantage of File Templates for custom configuration and Scripts which can be queued to run at any stage of the Instance lifecycle.
+
+.. image:: /images/provisioning/library/library_items_final.png
 
 .. include:: /provisioning/library/instance_types.rst
 .. include:: /provisioning/library/layouts.rst
