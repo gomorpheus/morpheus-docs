@@ -30,6 +30,8 @@ Key Enhanced Statistics:
   - Net TX Rate
   - Net RX Rate
 
+Additional benefits:
+
 * Log aggregation
 * Provides a command bus such that |morpheus| doesn't need credentials to access a box
 * Can still manage workflows if credentials are changed

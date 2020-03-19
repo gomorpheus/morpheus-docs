@@ -385,14 +385,14 @@ Fixes
 4.2.0 Patch 2 (4.2.0-2) Fixes
 =============================
 
-- Updates NSX Network display names on the Instance provisioning wizard to make them prettier
-- Fixes an issue that caused appliances upgrading directly to 4.1.2+ from any version prior to 4.1.0 to not receive the seeded Service Plan for Amazon EKS, thus preventing them from provisioning EKS Clusters altogether
-- Fixes an issue where |morpheus| would throw an error if editing Network Tenant access from the Networks list on the Cloud detail page
-- Converts a variable data type from integer to long text which prevents an error in the ‘Convert to Managed’ process in certain scenarios
-- Fixes an issue causing App validation to fail in certain scenarios
-- Fixes an issue that caused datastore billing not to appear for Morpheus-managed machines with correct Price Sets and Plans under specific conditions
-- NSX-V: Fixes an issue where vNIC was not set on default routes for DLR and EDGE
-- NSX-V: Fixes an issue preventing the creation of firewall rules with source and destination
+- Updated NSX Network display names on the Instance provisioning wizard to make them prettier
+- Fixed an issue that caused appliances upgrading directly to 4.1.2+ from any version prior to 4.1.0 to not receive the seeded Service Plan for Amazon EKS, thus preventing them from provisioning EKS Clusters altogether
+- Fixed an issue where |morpheus| would throw an error if editing Network Tenant access from the Networks list on the Cloud detail page
+- Converted a variable data type from integer to long text which prevents an error in the ‘Convert to Managed’ process in certain scenarios
+- Fixed an issue causing App validation to fail in certain scenarios
+- Fixed an issue that caused datastore billing not to appear for Morpheus-managed machines with correct Price Sets and Plans under specific conditions
+- NSX-V: Fixed an issue where vNIC was not set on default routes for DLR and EDGE
+- NSX-V: Fixed an issue preventing the creation of firewall rules with source and destination
 - NSX-V: Can now set default gateway (Logical Routers > Gateway)
 
 .. 4.2.0 Patch 2 (4.2.0-2) CLI Fixes
