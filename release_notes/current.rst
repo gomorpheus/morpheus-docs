@@ -391,6 +391,9 @@ Fixes
 - Converts a variable data type from integer to long text which prevents an error in the ‘Convert to Managed’ process in certain scenarios
 - Fixes an issue causing App validation to fail in certain scenarios
 - Fixes an issue that caused datastore billing not to appear for Morpheus-managed machines with correct Price Sets and Plans under specific conditions
+- NSX-V: Fixes an issue where vNIC was not set on default routes for DLR and EDGE
+- NSX-V: Fixes an issue preventing the creation of firewall rules with source and destination
+- NSX-V: Can now set default gateway (Logical Routers > Gateway)
 
 .. 4.2.0 Patch 2 (4.2.0-2) CLI Fixes
 .. =================================
