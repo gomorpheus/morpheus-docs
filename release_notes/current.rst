@@ -394,6 +394,17 @@ Fixes
 - NSX-V: Fixed an issue where vNIC was not set on default routes for DLR and EDGE
 - NSX-V: Fixed an issue preventing the creation of firewall rules with source and destination
 - NSX-V: Can now set default gateway (Logical Routers > Gateway)
+- NGINX updated to 1.17.9
+- Tomcat updated to 9.0.33
+
+4.2.0 Patch 2 (4.2.0-2) CVEs Addressed
+======================================
+
+- CVE-2019-17563
+- CVE-2019-17569
+- CVE-2020-1935
+- CVE-2020-1938
+- CVE-2019-20372
 
 .. 4.2.0 Patch 2 (4.2.0-2) CLI Fixes
 .. =================================
