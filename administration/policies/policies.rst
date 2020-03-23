@@ -99,7 +99,7 @@ Policies can be created in three different locations.
 
 Policies can be disabled and re-enabled at anytime.
 
-.. IMPORTANT:: Cloud policies will override matching or conflicting Group policies during provisioning.
+.. IMPORTANT:: Precedence is applied to matching or conflicting Policies in the following order: Cloud > Group > Role > User > Global.
 
 To create a Global Policy:
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
