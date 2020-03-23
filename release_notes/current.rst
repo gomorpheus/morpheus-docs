@@ -228,41 +228,86 @@ API Enhancements
   - ``dateTime`` | N | Date and Time to execute the job. Use UTC time in the format 2020-02-15T05:00:00Z. Required when scheduleMode is ``dateTime``.
 - API: Clusters: Support for number of workers parameter added
 
-.. API/CLI: instances update --created-by not working
-.. API: Appliance Settings: cannot PUT json in the same format as GET returns for
+CLI Updates 
+===========
 
-.. CLI Enhancements
-.. ================
+4.2.7
+ Enhancements
+  - New options --wrap and --all-fields for all list commands.
+  - New option remote check --all that works just like remote check-all.
+  - Updated command groups current to support --remote option.
+4.2.4 - 4.2.6
+ Fixes
+  - Fixes for new invoices command.
+4.2.3
+ Enhancements
+  - Updated command invoices to show more info and make --raw-data an option.
+ Fixes
+  - Fixed clouds add groups dropdown being limited to 25.
+  - Fixed multiselect option types not working when passed in eg. --tenants "one, two"
+4.2.2
+ Enhancements
+  - New command invoices
+ Fixes
+  - Fixed instances add requiring Library permission to fetch layout.
+  - Fixed instances add requiring Clouds permission to fetch datastores.
+  - Fixed instances add potential 500 error when retrieving datastores.
 
-.. Security Enhancements
-.. =====================
+4.2.1
+ Enhancements
+  - New subcommand service-plans activate
+ Fixes
+  - Fixed 404 error when fetching layout seen when pointing at appliance versions older than 4.2. This change is to use /library instead of /libray/instance-types when for those resources.
 
-.. Exposed Passwords in Logs
-.. .[Security Issue DE771] Session Cookies are not marked Secure
-.. Java Vulnerable in Elastic search on 4.1.2 Can you provide a recommendation for remediation and ensure this is addressed in 4.2?
-.. patch MySQL
+4.2 - This release corresponds to the release of the Morpheus API version 4.2.
+ Enhancements
+  - New command network-routers
+  - New option networks add --group
+  - New options tasks add --source --url for task types that supporting file-content instead of script content. ie. Groovy and Python
+  - Updated command tasks get with improved output format.
+  - New command library-spec-templates
+  - Updated commands library-option-types, library-option-lists by adding , library-scripts, and library-file-templates with prompting and standard option support.
+  - New option library-instance-types add --option-types [x,y,z].
+  - New option clusters add --worker-count N and clusters add-worker -n N
+  - New option service-plans update --active.
+  - Updated jobs add to support --schedule datetime --datetime DATE.
+  - New option instances add --ports ARRAY and prompting for exposed ports.
+ Fixes
+  - Fixed tasks update --payload not being supported.
+  - Fixed prices add and price-sets add prompts to match -O options
+  - Fixed library-cluster-layouts add prompts to match -O options
+  - Fixed cypher put not respecting --key and --value options
 
 Fixes
 =====
 
 - Amazon/AWS: Fixed issue with detected Plan changes updating VM records but not Instance records
+- Apps: App wizard validation fixes *
 - ARM: Added support for ``"tags": "[variables('resourceTags')]``
 - Automation: Execute Scheduling: Fixed issues with deletion of Execution Schedules
 - Azure: Fixed usage records not updating when Morpheus Agent fails to install.
 - Azure: SQL DBaaS: Added support Databases names that include spaces.
 - Backups: Backup List: Fixed ``All`` Status filter value displayed as as ``Undefined``
 - Backups: Local Time value now displayed for Latest date/time on Backup Detail pages
+- Billing: Fixed an issue that caused datastore billing not to appear for managed vm's under specific conditions *
 - Cisco ACI: Fixed issue with deleting Cisco ACI Integrations
+- Convert to managed: Converted a variable data type from integer to long text which prevents an error in the ‘Convert to Managed’ process in certain scenarios *
 - Convert to Managed: Fixed issue with Tenant visibility on Library Layouts when "Support Convert to managed" is enabled.
+- EKS: Fixed Amazon EKS Service Plan seed issue when upgrading from v4.0.0 or prior *
 - Instances: Groups Filter: Fixed issue listing all Groups in filter choices when more 100+ Groups exist.
 - Kubernetes: Fixed issue when provisioning Hosts with insufficient memory
 - Kubernetes: Service Mesh improvements
+- Networks: Fixed error when editing Network Tenant access from the Networks list on the Cloud detail page *
 - Networks: Fixed issue with Custom Network updates not saving when no Tenants exist.
 - Networks: Fixed issue with Custom Network updates not saving when no Tenants exist.
+- NSX-V: Can now set default gateway (Logical Routers > Gateway) *
+- NSX-V: Fixed an issue preventing the creation of firewall rules with source and destination *
+- NSX-V: Fixed an issue where vNIC was not set on default routes for DLR and EDGE *
 - NSX: Fixed issue with Logical Switch and Edge Gateway Tenant assignment on Logical Switches and Edge Gateways created inside a Subtenant.
 - NSX: Fixed issue with NSX Edge Gateway creation related to invalid Resource Pool specification
 - NSX: Fixed network creation on synced DLR's
 - NSX: Fixed secondary network creation on created DLR's
+- NSX: Updated NSX Network display names on the Instance provisioning wizard to make them prettier *
 - Openstack Clouds:  Fixed associated Load Balancer visibility not updating when Cloud visibility is changed from Public to Private.
 - Openstack Clouds: Fixed default tenant assignment of synced Routers upon cloud creation when cloud is assigned to sub-tenant.
 - Openstack: Synced Private Networks' Type now displayed as ``Private Network`` instead of ``VLAN``
@@ -288,123 +333,20 @@ Fixes
 - Workflows: Fixed issue with Workflows with Multiple Options Types displaying when 2nd Option Type has no default value.
 - Xen: Resolved issue where volume size changes in Xen were only reflected on Virtual Machine records, not Instance and Container records.
 
-.. Cluster Details: Kubernetes Volumes - error on delete
-.. Kubernetes: Volumes - view modal doesn't load
-.. Kubernetes Host: Reconfigure - not updating plan values
-.. Cluster Add Node - naming issue with incrementing numbers
-.. Cluster Details: Master/Workers - sort by name
-.. Kubernetes Instance: Logs - not retrieving log data
-.. Cluster Layouts: only displaying first 50 layouts (need pagination)
-.. Cluster Provision: Combo - unable to provision
-.. Cluster Layouts: issues with creating workers, node count, & priority
-.. Cluster: Add Host - empty Cloud field
-.. Kubernetes Instance: Catalog - Grails
-.. Ansible Tower Task - not showing Errors
-.. Kubernetes Cluster Layouts: workers shouldn't show up on Masters tab
-.. Kubernetes Spec-Based App: delete doesn't complete
-.. Cluster Add Host/Worker: cleanup field handling
-.. Network modal - Improvements
-.. Clusters: Delete - handle various options correctly
-.. Kubernetes Instance: Add Node - not working
-.. Kubernetes Spec-Based Apps: instance detail content issues
-.. Cluster Provision: Kubernetes HA - load balancer selection doesnt work
-.. Cluster Detail: cluster and host status issues
-.. Kubernetes Instance: Catalog - Tomcat (deployments)
-.. VCD - remove backup & clone actions
-.. App Wizard: Review: CloudFormation: should display all Resources
-.. Kubernetes Add Worker: should hide cluster related fields
-.. Kubernetes: AKS/EKS - unable to delete cloud with sync'd in cluster
-.. Kubernetes Instance: Service Mesh - not updating IP
-.. API/CLI: Create Azure Subnet: failing with timeout, error
-.. API: improve authorization validation
-.. API: Network Pools/Domains/Proxies/Services: Create/Update syntax needs to be documented
-.. API: Validation fails on certain app provisions
-.. API: Provisioning > Library > Layouts: no signature of method error when updating version property
-.. CLI: health alarms: not able to acknowledge unacknowledged alarms
-.. Cloudformation InstanceType No Default Option
-.. NSX-V - Firewall Issues
-.. Policy: Router Quota - missing translation
-.. Set default max_allowed_packet to 5M for MySQL
-.. Subnets not being removed, no parent network
-.. VMware: max_storage on instance and container not updated if associate compute_server volume size changes directly on cloud.
-.. NSX-V: Sync Error
-.. NSX-V: Transport Zone issues
-.. NSX-V - do not log passwords
-.. NSX-V: Firewall Group issues
-.. NSX-V: Logical Switch issues
-.. NSX-V: Logical Router issues
-.. NSX-V: UI and Routing Issues
-.. NSX-V: Firewall Rule issues
-.. AWS CE: API error due to date range
-.. Backup Jobs: duration for in-progress jobs inaccurate
-.. Blueprint wiz & group access fields
-.. Azure - Windows agent does not install when using ARM  Spec Template
-.. Backups: cleanup on backup counts
-.. Using a `$` in a MySQL alters password in config data
-.. App Wizard: Policies: not bubbling up specific error on complete
-.. Amazon ALB/ELB: issues with adding LBs
-.. OTC/Huawei - surface provision failures
-.. KVM instance showing healthy despite deleted VM
-.. Backup status widget - wrong order
-.. Image Builder - force hypervisor
-.. ServiceNow: OracleVM - fail to provision
-.. Kubernetes Blueprint from Spec: App Wizard: Review: should bubble up validation errors, Plan (Development Plan / Config) field not displaying
-.. OTC Networks: type not consistent (private network or VLAN) across 3.6 and 4.0 versions
-.. Nutanix Snapshots show up as 0kb
-.. Amazon ALB: Scheme & VPC validation issues
-.. Service Plans: can't save plan with manual type
-.. Migrated Veeam Integration - can't delete
-.. Network Router Detail: blank except for NSX firewall properties
-.. Deleted Azure Plans sync new Plans, cause permission issues
-.. String/label cleanup
-.. SCVMM: Skip Agent Install being ignored on instance provisioning
-.. ESXi VM Stop - log error
-.. Amazon Servers: failing to delete because of server not empty error
-.. Tenant Delete Error - Network Domain
-.. Tenant Delete - doesnt work if Tenant has Operation Data (ie: amazon costing data)
-.. Existing SAML sign-in error HTTP-Artifact
-.. SQL Error in Logs
-.. VM that wont delete
-.. Google log spam
-.. AWS: use root device mappings from AMI
-.. Policies: "Auto-Approve Extensions" settings not saving
-.. Router Details issues
-.. SCVMM - dont provision to hypervisors that are offline
-.. Network router wizard not filtering network service for selected router type
-.. Disabling OTC / Huawei routers fails
-.. Amazon costing service log error
-.. ServiceNow: Docker Provisioning: not seeing docker hosts
-.. Boot Menus for PXE are blank
-.. Tenant Delete - can't delete with jobs/executions
-.. A network read-only user should not be able to view the details of a network integration.
-.. Logs: shouldn't log vSphere password
-..
-.. Kubernetes - exposed passwords in logs
-.. Cloudformation Capability IAM Missing
 
-4.2.0 Patch 2 (4.2.0-2) Fixes
-=============================
+CVEs Addressed
+==============
 
-- Updated NSX Network display names on the Instance provisioning wizard to make them prettier
-- Fixed an issue that caused appliances upgrading directly to 4.1.2+ from any version prior to 4.1.0 to not receive the seeded Service Plan for Amazon EKS, thus preventing them from provisioning EKS Clusters altogether
-- Fixed an issue where |morpheus| would throw an error if editing Network Tenant access from the Networks list on the Cloud detail page
-- Converted a variable data type from integer to long text which prevents an error in the ‘Convert to Managed’ process in certain scenarios
-- Fixed an issue causing App validation to fail in certain scenarios
-- Fixed an issue that caused datastore billing not to appear for Morpheus-managed machines with correct Price Sets and Plans under specific conditions
-- NSX-V: Fixed an issue where vNIC was not set on default routes for DLR and EDGE
-- NSX-V: Fixed an issue preventing the creation of firewall rules with source and destination
-- NSX-V: Can now set default gateway (Logical Routers > Gateway)
+- CVE-2019-17563 *
+- CVE-2019-17569 *
+- CVE-2020-1935 *
+- CVE-2020-1938 *
+- CVE-2019-20372 *
+
+Services 
+========
+
 - NGINX updated to 1.17.9
 - Tomcat updated to 9.0.33
 
-4.2.0 Patch 2 (4.2.0-2) CVEs Addressed
-======================================
-
-- CVE-2019-17563
-- CVE-2019-17569
-- CVE-2020-1935
-- CVE-2020-1938
-- CVE-2019-20372
-
-.. 4.2.0 Patch 2 (4.2.0-2) CLI Fixes
-.. =================================
+* Found in v4.2.0-2
