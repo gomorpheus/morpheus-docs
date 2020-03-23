@@ -15,17 +15,23 @@ Base Requirements
 - Superuser privileges via the sudo command for the user installing the |morpheus| Appliance package.
 - Access to base yum and apt repos
 - An Appliance License is required for any operations involving provisioning.
+
 - Internet Connectivity (optional)
    - To download from |morpheus|' public docker repositories and system Virtual Image catalog
    - Offline installation require installing the offline package in addition to the regular installation package.
 
-   .. NOTE:: Access to base yum and apt repos is still required for offline installations.
+.. NOTE:: Access to base yum and apt repos is still required for offline installations.
 
 -  VM and Host Agent Install (optional)
     - Inbound connectivity access from provisioned vm's and container hosts on ports 443 (Agent install and communication) and 80 (Linux Agent installs via yum and apt)
     - An Appliance URL that is accessible/resolvable to all managed hosts. It is necessary for all hosts that are managed by |morpheus| to be able to communicate with the appliance server ip on port 443. This URL is configured under Admin->Settings.
 
 .. NOTE:: Ubuntu 16.10, CentOS/RHEL 8.x and Amazon Linux are not currently supported.
+
+- SELinux (optional)
+    - |morpheus| versions 3.6.0 and higher support SELinux ``enforcing`` mode
+    - If required due to organizational policy, set the mode appropriately prior to running the |morpheus| installer
+    - The installer will make appropriate changes based on the SELinux context as needed
 
 Storage Considerations
 ----------------------
