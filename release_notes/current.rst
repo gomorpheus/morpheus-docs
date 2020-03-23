@@ -228,7 +228,7 @@ API Enhancements
   - ``dateTime`` | N | Date and Time to execute the job. Use UTC time in the format 2020-02-15T05:00:00Z. Required when scheduleMode is ``dateTime``.
 - API: Clusters: Support for number of workers parameter added
 
-CLI Updates 
+CLI Updates
 ===========
 
 4.2.7
@@ -343,10 +343,10 @@ CVEs Addressed
 - CVE-2020-1938 *
 - CVE-2019-20372 *
 
-Services 
+Services
 ========
 
 - NGINX updated to 1.17.9
 - Tomcat updated to 9.0.33
 
-* Found in v4.2.0-2
+(* Found in v4.2.0-2)
