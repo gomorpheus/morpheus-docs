@@ -288,7 +288,8 @@ Fixes
 - Azure: Fixed usage records not updating when Morpheus Agent fails to install.
 - Azure: SQL DBaaS: Added support Databases names that include spaces.
 - Backups: Backup List: Fixed ``All`` Status filter value displayed as as ``Undefined``
-- Backups: Local Time value now displayed for Latest date/time on Backup Detail pages
+- Backups: Local Time value now displayed for Latest date/time on Backup Detail
+- Backups: Minor backend fix to ensure proper behavior when creating a backup ^
 - Billing: Fixed an issue that caused datastore billing not to appear for managed vm's under specific conditions *
 - Cisco ACI: Fixed issue with deleting Cisco ACI Integrations
 - Convert to managed: Converted a variable data type from integer to long text which prevents an error in the ‘Convert to Managed’ process in certain scenarios *
@@ -297,9 +298,9 @@ Fixes
 - Instances: Groups Filter: Fixed issue listing all Groups in filter choices when more 100+ Groups exist.
 - Kubernetes: Fixed issue when provisioning Hosts with insufficient memory
 - Kubernetes: Service Mesh improvements
+- Kubernetes: Fixed an issue preventing Kubernetes App Blueprint deployment ^
 - Networks: Fixed error when editing Network Tenant access from the Networks list on the Cloud detail page *
-- Networks: Fixed issue with Custom Network updates not saving when no Tenants exist.
-- Networks: Fixed issue with Custom Network updates not saving when no Tenants exist.
+- Networks: Fixed issue with Custom Network updates not saving when no Tenants exist
 - NSX-V: Can now set default gateway (Logical Routers > Gateway) *
 - NSX-V: Fixed an issue preventing the creation of firewall rules with source and destination *
 - NSX-V: Fixed an issue where vNIC was not set on default routes for DLR and EDGE *
@@ -349,4 +350,4 @@ Services
 - NGINX updated to 1.17.9
 - Tomcat updated to 9.0.33
 
-(* Found in v4.2.0-2)
+(* Found in v4.2.0-2; ^ Found in v4.2.0-3)
