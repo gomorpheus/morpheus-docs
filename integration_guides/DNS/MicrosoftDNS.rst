@@ -46,9 +46,14 @@ Once the integration is added, Microsoft DNS Domains will sync and listed under 
 Configuring Microsoft DNS with Clouds and Groups
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-DNS Integrations are available in the `DNS Integration` dropdown in Cloud and Group settings.
+DNS Integrations are available in the `DNS Integration` dropdown in Cloud and Group settings. |morpheus| will register Instances with the DNS provider when provisioned into a Cloud or Group with a DNS Integration added.
 
-|morpheus| will register Instances with the DNS provider when provisioned into a Cloud or Group with a DNS Integration added.
+To take full advantage of the |morpheus| Microsoft DNS integration, a service account in the Admins group is not required. However, an account must have the following minimum access to use all features:
+
+- Read, Create, and Delete rights on objects
+- Belongs to the local group "WinRMRemoteWMIUsers__"
+- WinRM Quickconfig must be run on the DNS server
+- CIMv2 needs access according to instructions in our `KnowledgeBase <https://support.morpheusdata.com/s/article/How-to-give-C?language=en_US>`_
 
 Add DNS Integration to a Cloud
 ``````````````````````````````
