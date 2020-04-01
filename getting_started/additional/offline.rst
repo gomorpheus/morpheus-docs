@@ -3,7 +3,7 @@
 Offline Installations and Upgrades
 ----------------------------------
 
-For customers that have an appliance behind a firewall/proxy that does not allow downloads from our Amazon download site, you can have the offline package to add the needed packages the standard Morpheus installer would have downloaded.
+For customers that have an appliance behind a firewall/proxy that does not allow downloads from our Amazon download site, you can add the offline package to add the needed packages the standard Morpheus installer would have downloaded.
 
 Offline Installation Requirements
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
