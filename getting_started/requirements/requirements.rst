@@ -28,11 +28,6 @@ Base Requirements
 
 .. NOTE:: Ubuntu 16.10, CentOS/RHEL 8.x and Amazon Linux are not currently supported.
 
-- SELinux (optional)
-    - |morpheus| versions 3.6.0 and higher support SELinux ``enforcing`` mode
-    - If required due to organizational policy, set the mode appropriately prior to running the |morpheus| installer
-    - The installer will make appropriate changes based on the SELinux context as needed
-
 Storage Considerations
 ----------------------
 
@@ -148,6 +143,13 @@ The following chart is useful for troubleshooting Agent install, Static IP assig
    |  Hypervisor host names resolvable by morpheus appliance"
    "Morpheus Catalog Image Download", ,All,Appliance,AWS S3,443,"Available space at ``/var/opt/morpheus/``"
    "Image Transfer",Stream,All,Appliance,Datastore,443,"Hypervisor Host Names resolvable by Morpheus Appliance"
+
+SELinux
+-------
+
+If not required by organizational policy, we recommend setting SELinux to "Permissive" or "Disabled" modes to prevent any unnecessary security-related issues. |morpheus| versions 3.6.0 and higher do support "Enfocing" mode if it is required by your organization due to IT policies. Set the mode appropriately prior to running the |morpheus| installer and it will make the required changes based on your chosen SELinux context.
+
+.. IMPORTANT:: Setting SELinux for "Enforcing" mode requires policies to be configured correctly in order for the |morpheus| appliance to function correctly.
 
 Supported Languages
 ----------------------------
