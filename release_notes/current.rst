@@ -286,7 +286,8 @@ Fixes
 - ARM: Added support for ``"tags": "[variables('resourceTags')]``
 - Automation: Execute Scheduling: Fixed issues with deletion of Execution Schedules
 - Azure: Fixed usage records not updating when Morpheus Agent fails to install.
-- Azure: SQL DBaaS: Added support Databases names that include spaces.
+- Azure: SQL DBaaS: Added support Databases names that include spaces
+- Azure: Fixed an issue causing Network permissions not to be retained after an upgrade %
 - Backups: Backup List: Fixed ``All`` Status filter value displayed as as ``Undefined``
 - Backups: Local Time value now displayed for Latest date/time on Backup Detail
 - Backups: Minor backend fix to ensure proper behavior when creating a backup ^
@@ -295,7 +296,8 @@ Fixes
 - Convert to managed: Converted a variable data type from integer to long text which prevents an error in the ‘Convert to Managed’ process in certain scenarios *
 - Convert to Managed: Fixed issue with Tenant visibility on Library Layouts when "Support Convert to managed" is enabled.
 - EKS: Fixed Amazon EKS Service Plan seed issue when upgrading from v4.0.0 or prior *
-- Instances: Groups Filter: Fixed issue listing all Groups in filter choices when more 100+ Groups exist.
+- Instances: Groups Filter: Fixed issue listing all Groups in filter choices when more 100+ Groups exist
+- Instances: Fixed an issue causing pagination not to work on the History tab %
 - Kubernetes: Fixed issue when provisioning Hosts with insufficient memory
 - Kubernetes: Service Mesh improvements
 - Kubernetes: Fixed an issue preventing Kubernetes App Blueprint deployment ^
@@ -350,4 +352,4 @@ Services
 - NGINX updated to 1.17.9
 - Tomcat updated to 9.0.33
 
-(* Found in v4.2.0-2; ^ Found in v4.2.0-3)
+(* Found in v4.2.0-2; ^ Found in v4.2.0-3; % Found in v4.2.0-4)

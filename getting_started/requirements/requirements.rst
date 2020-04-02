@@ -149,7 +149,7 @@ SELinux
 
 If not required by organizational policy, we recommend setting SELinux to "Permissive" or "Disabled" modes to prevent any unnecessary security-related issues. |morpheus| versions 3.6.0 and higher do support "Enfocing" mode if it is required by your organization due to IT policies. Set the mode appropriately prior to running the |morpheus| installer and it will make the required changes based on your chosen SELinux context.
 
-.. IMPORTANT:: Setting SELinux for "Enforcing" mode requires policies to be configured correctly in order for the |morpheus| appliance to function correctly.
+.. IMPORTANT:: Setting SELinux to "Enforcing" mode requires policies to be configured correctly in order for the |morpheus| appliance to function correctly.
 
 Supported Languages
 ----------------------------
