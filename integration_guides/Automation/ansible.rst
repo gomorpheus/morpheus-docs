@@ -40,6 +40,8 @@ Add Ansible Integration
     Path of the Group Variables relative to the Git url.
    Host Variables Path
     Path of the Host Variables relative to the Git url.
+   Use Ansible Galaxy
+    Install roles defined in ``requirements.yml``
    Enable Verbose Logging
     Enable to output verbose logging for Ansible task history
    Use Morpheus Agent Command Bus
@@ -193,6 +195,27 @@ One of the great things about |morpheus| is it's Agent Optional approach. This m
 When this functionality is enabled on an Ansible integration, a `connection_plugin` is registered with Ansible of type `morpheus` and `morpheus_win`. These direct bash or powershell commands, in their raw form, from Ansible to run over a |morpheus| api. The Ansible binary sends commands to be executed as an https request over the API utilizing a one time execution lease token that is sent to the Ansible binary. File transfers can also be enacted by this API interface. When |morpheus| receives these commands, they are sent to the target instances agent to be executed. Once they have completed a response is sent back and updated on the `ExecutionRequest` within |morpheus|. Ansible polls for the state and output on these requests and uses those as the response of the execution. This means Ansible needs zero knowledge of a machines target ip address, nor its credentials. These are all stored and safely encrypted within |morpheus|.
 
 It has also been pointed out that this execution bus is dramatically simpler than utilizing `pywinrm` when it comes to orchestrating Windows  as the winrm configurations can be cumbersome to properly setup, especially in tightly secured Enterprise environments.
+
+Using Ansible Galaxy
+^^^^^^^^^^^^^^^^^^^^
+
+|morpheus| can use a ``requirements.yml`` file to define Ansible roles to download prior to running your playbook.  Place ``requirements.yml`` into the root of your Git repository and make sure `Use Ansible Galaxy` is checked in the integration.  Roles will be installed in the root of the repository if a directory is not defined in `Roles Path`.
+
+* Example requirements.yml:
+
+.. code-block:: yaml
+
+  - src: https://github.com/geerlingguy/ansible-role-java
+    name: java
+
+* Example playbook.yml:
+
+.. code-block:: yaml
+
+  - hosts: all
+    gather_facts: true
+    roles:
+      - java
 
 Troubleshooting Ansible
 ^^^^^^^^^^^^^^^^^^^^^^^
