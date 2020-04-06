@@ -169,13 +169,14 @@ Blueprints can be create, edited or Exported in the RAW section when creating or
 
 To Export a Blueprint as JSON or YAML:
 
-#. Create or Edit a Blueprint
-#. Select the RAW section on the top of the APP BLUEPRINT modal.
-#. Select JSON or YAML in the top right of the RAW section.
-#. Select the :guilabel:`EXPORT` button.
-#. Select the Configurations to include in the Export by clicking on a Configuration. Selected Configurations will be highlighted.
-#. Select the DOWNLOAD CONFIGURATION button.
-#. The Blueprint Export file will be downloaded to your computer as ``{template_name}-config.json`` or ``{template_name}-config.yaml``.
+#. Navigate to  ``Provisioning > Blueprints``
+#. Edit an existing App by clicking on the pencil icon
+#. On the Edit Blueprint modal, select the Raw tab
+#. Select YAML or JSON from the dropdown in the top right
+#. Click the Export button
+#. Select the configurations to include in the export by selecting or deselecting configurations as needed. Selected configurations will be highlighted
+#. Click the DOWNLOAD CONFIGURATION button
+#. The Blueprint export file will be downloaded to your computer as ``{app_name}-config.json or {app_name}-config.yaml``
 
 Preview
 ^^^^^^^
