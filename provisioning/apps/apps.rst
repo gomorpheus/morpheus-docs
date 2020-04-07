@@ -58,8 +58,6 @@ To export a Blueprint as JSON:
 #. Click the Actions button and select Export
 #. The App export file will be downloaded to your computer as ``{app_name}.json``
 
-.. image:: /images/provisioning/apps_301_3.png
-
 Provisioning Apps via API
 -------------------------
 

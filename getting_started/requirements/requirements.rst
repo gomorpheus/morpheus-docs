@@ -28,6 +28,8 @@ Base Requirements
 
 .. NOTE:: Ubuntu 16.10, CentOS/RHEL 8.x and Amazon Linux are not currently supported.
 
+.. NOTE:: Morpheus fully supports running the appliance in a VMware environment and many other virtualized environments, as well as on a physical platform.
+
 Storage Considerations
 ----------------------
 
