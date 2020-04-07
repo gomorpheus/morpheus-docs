@@ -21,3 +21,4 @@ of capabilities when it comes to managing customer accounts and users.
   logs/logs.rst
   settings/settings.rst
   currency/currency.rst
+  user_settings/user_settings.rst
