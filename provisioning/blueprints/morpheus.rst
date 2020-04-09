@@ -73,7 +73,7 @@ Note the new environments object. The object graph of the morpheus blueprint str
 Getting Started
 ^^^^^^^^^^^^^^^
 
-To get started, it may be best to look at a simple App Blueprint configuration. Docker templates are less complex than virtual machine based templates so lets look at a Blueprint that deploys a single nginx container to a target cloud:
+To get started, it may be best to look at a simple App Blueprint configuration. Docker templates are less complex than virtual machine based templates so lets look at a Blueprint that deploys a single Nginx container to a target cloud:
 
 .. code-block:: bash
 
@@ -190,4 +190,4 @@ In the APP BLUEPRINT modal, select the Preview section to display a graphical re
 Provisioning
 ^^^^^^^^^^^^
 
-To provision a Blueprint, navigate to ``Provisioning -> Apps`` and select the Blueprint when creating an App.
+To provision a Blueprint, navigate to ``Provisioning -> Apps`` and select the Blueprint when creating an App. See the `App section <https://docs.morpheusdata.com/en/latest/provisioning/apps/apps.html>`_ of |morpheus| docs for more on provisioning Apps.

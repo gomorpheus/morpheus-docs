@@ -11,10 +11,11 @@ Base Requirements
 - **Operating System:** Ubuntu 16.04, 18.04 or CentOS/RHEL 7.x
 - **Memory:** 16 GB recommended for default installations. 8 GB minimum required with 4 GB+ available storage swap space
 - **Storage:** 200 GB storage minimum (see Storage Considerations below)
+- **CPU:** 4-core, 1.4 GHz (or better), 64-bit CPU recommended for all-in-one systems. For a distributed-tier installation, it's recommended each tier have 2-core, 1.4 GHz (or better), 64-bit CPU
 - Network connectivity from your users to the appliance over TCP 443 (HTTPS)
-- Superuser privileges via the sudo command for the user installing the |morpheus| Appliance package.
+- Superuser privileges via the sudo command for the user installing the |morpheus| appliance package
 - Access to base yum and apt repos
-- An Appliance License is required for any operations involving provisioning.
+- An appliance license is required for any operations involving provisioning
 
 - Internet Connectivity (optional)
    - To download from |morpheus|' public docker repositories and system Virtual Image catalog
