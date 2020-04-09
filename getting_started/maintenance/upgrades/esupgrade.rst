@@ -36,11 +36,11 @@ Install Elasticsearch 7.x
 
    .. code-block:: bash
 
-     wget https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-7.5.0-x86_64.rpm
+     wget https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-7.6.2-x86_64.rpm
 
    .. code-block:: bash
 
-    sudo rpm -Uhv elasticsearch-7.5.0-x86_64.rpm
+    sudo rpm -Uhv elasticsearch-7.6.2-x86_64.rpm
 
 #. If necessary, update permissions for the specified log and data paths
 
@@ -63,10 +63,10 @@ Install Elasticsearch 7.x
           http.port: 9200
           discovery.seed_hosts: ["10.30.22.152","10.30.22.153","10.30.22.154"] ## add all cluster node ip's
           cluster.initial_master_nodes: ["10.30.22.152","10.30.22.153","10.30.22.154"] ## add all cluster node ip's
-          path.logs: /var/log/elasticsearch ## Ensure permissions on specified path
-          path.data: /usr/share/elasticsearch ## Ensure permissions on specified path
-          ## discovery.zen.minimum_master_nodes: 2 ##enabled after cluster is up
-
+          path.logs: /var/log/elasticsearch ## Or your preferred location. 
+          path.data: /usr/share/elasticsearch/ ## Or your preferred location.
+          discovery.zen.minimum_master_nodes: 2 
+          
 #. Save elasticsearch.yml
 #. Start Elasticsearch on each node.
 
@@ -90,7 +90,7 @@ Install Elasticsearch 7.x
           cluster.initial_master_nodes: ["10.30.22.152","10.30.22.153","10.30.22.154"] ## add all cluster node ip's
           path.logs: /var/log/elasticsearch ## Ensure permissions on specified path
           path.data: /usr/share/elasticsearch ## Ensure permissions on specified path
-          discovery.zen.minimum_master_nodes: 2 ##enabled after cluster is up
+          discovery.zen.minimum_master_nodes: 2 
 
 #. Save elasticsearch.yml
 
