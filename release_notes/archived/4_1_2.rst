@@ -39,7 +39,10 @@ Appliance: Nginx now defaults to ``tls 1.2`` only
    The default Nginx config removes support for tls 1.0 and 1.1.
     - Some older OS's such as CentOS 6 will not be able to install the |morpheus| Agent or communicate with the Appliance without updating the image or configuring nginx to allow lower tls versions via morpheus.rb config.
     - Windows versions such as Windows 2008 require .net 4.5.2 minimum
+    - |morphues| front-end Load Balancer monitors/checks that do not support TLS 1.2 will by default not succeed. Updating checks to TLS 1.2 support or configuring nginx to allow lower tls versions via morpheus.rb config will be required.
 
+    .. important:: Please be aware of the new default security enhancements added to v4.1.2 and assess potential impacts to your env. 
+   
 Appliance: Redis removed
   Redis dependency has been removed for security enhancements. Redis is no longer installed or required.
 
@@ -221,6 +224,13 @@ Workflows Provision Phase support for Cluster/Host Provisioning
   In addition to Post-Provision phases, Provision phases now supported for Workflows executed during Cluster and Host Provisioning
 
 .. - Value of cypher created from API/CLI is a key pair string instead of just the value
+
+Security 
+========
+
+.. important:: Please be aware of the default security enhancements added to v4.1.2 and assess potential impacts to your env, including agent installation and front end load balancers. 
+
+Appliance: Starting in v4.1.2, the default |morphues| Nginx config removes support for incoming ``TLS v1.0 and v1.1`` connections. Please update source config to be compatible. If necessary, |morphues| can be configured to support older TLS versions via :ref:`morpheus.rb` config. 
 
 API Enhancements
 ----------------
