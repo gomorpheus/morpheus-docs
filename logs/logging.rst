@@ -9,14 +9,15 @@ The logging architecture backing |morpheus| uses the latest and greatest technol
 Configuration
 ^^^^^^^^^^^^^
 
-Logging configuration can be setup in the ``Admin -> Logs`` section. There are a couple useful settings here including customizing the retainment policy (by default 7 days). This could be expanded to years for PCI Compliance purposes or other potential requirements an organization might have.
+Logging configuration can be setup in the ``Admin > Logs`` section. There are useful settings here, including customizing the retainment policy (7 days by default). This could be expanded to years for PCI compliance purposes or other requirements an organization might have.
 
-.. NOTE:: When increasing the retainment policy of the logging system it may be necessary to scale out the elasticsearch cluster. Please refer to the relevant information with regards to scaling elasticsearch and advanced installation options for externalizing the elasticsearch cluster.
+.. NOTE:: When increasing the retainment policy of the logging system, it may be necessary to scale out the elasticsearch cluster. Please refer to the relevant information with regards to scaling elasticsearch and advanced installation options for externalizing the elasticsearch cluster.
 
-This area of administration also provides options for setting custom syslog forward rules. These rules are applied on each individual host therefore keeping the |morpheus| appliance itself out of the data plane. For information on different syslog formatting rules please refer to the http://www.rsyslog.com/sending-messages-to-a-remote-syslog-server/[rsyslog] documentation.
+The Log administration section also provides options for setting custom syslog forward rules. These rules are applied on each individual host therefore keeping the |morpheus| appliance itself out of the data plane. For information on different syslog formatting rules please refer to the http://www.rsyslog.com/sending-messages-to-a-remote-syslog-server/[rsyslog] documentation.
 
 Usage
 ^^^^^^^^
+
 |morpheus| automatically sets up and configures logging for all of the standard catalog items provisioned through morpheus. This includes both Docker containers as well as virtual machines. Simple view instance specific logs in instance detail via the "Logs" tab.
 
 There are several filtering capabilities built into the logging ui with more being added continually. Easily toggle log level filters from the dropdown or change the date range filter using the handy date filter component. A chart is also displayed above logs representing the log counts by level over the selected time range (default last 24 hours). A handy pattern search is also available with some rather capable features based on Lucene search syntax.
@@ -58,19 +59,9 @@ There are three main log areas in |morpheus|
 Agent Logs
 -----------
 
-When instances are deployed through |morpheus|, the agent that is installed, captures Application logs and sends them back to the |morpheus| Server.
+When Instances are deployed through |morpheus|, the installed Agent captures application logs and sends them back to the |morpheus| server.
 
-While the built-in logging solution provided by |morpheus| is sufficient for most, there are some scenarios in which a more advanced logging system may be desired or already in place. To facilitate this |morpheus| makes it easy to add custom syslog rules as well as built in direct integrations with Splunk and LogRhythm. All integrations pertaining to logging can be configured in the Administration -> Logging section.
-
-Splunk
-^^^^^^
-
-To configure Splunk simply create a syslog listener configuration in Splunk. Then it is simply a matter of expanding the section in Logging settings pertaining to Splunk and filling out the host and port of the appender. Once saved, all hosts managed by |morpheus| will be configured to forward logs to the target Splunk listener.
-
-LogRhythm
-^^^^^^^^^
-
-Configuring LogRhythm is much like configuring Splunk. Simply toggle the enabled flag in the LogRhythm section to enabled and fill in the Host, and Port information for the LogRhythm listener.
+In most cases, the built-in |morpheus| logging features are sufficient for tracking and reviewing Agent logs. However, if needed, |morpheus| supports integration with advanced logging systems. See the `log integration section <https://docs.morpheusdata.com/en/4.2.0/logs/logging.html#integrations>`_ above for more information.
 
 |morpheus| Server Logs
 ----------------------
