@@ -25,7 +25,7 @@ TYPE
  Select List
   Used with Option Lists, presents a manual or REST-populated dropdown list
  Checkbox
-  Checkbox for true or false values
+  Checkbox for ``on`` or ```off`` values
  Number
   Input field allowing only numbers
  Typeahead
