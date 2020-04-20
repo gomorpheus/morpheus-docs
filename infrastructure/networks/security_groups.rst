@@ -51,11 +51,10 @@ Add Cloud Security Group
 To add Cloud security group
 
 #. Navigate to `Infrastructure -> Clouds`
-#. Click the name of the cloud to add an ACL.
-#. Click the Security Groups tab.
-#. Click the `Edit Security Groups` button.
-#. Click the + (Add) button next to the Security Group(s) in the Available Security Groups list to add to Added Security groups list.
-#. Save Changes
+#. Click the name of the desired cloud to add a security group
+#. Click the Networks tab
+#. Within the "Security Groups" section, click on a security group to edit its rules
+#. Alternatively, click :guilabel:`+ ADD SECURITY GROUP` to create a new one
 
 Remove Cloud Security Group
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
