@@ -1,7 +1,7 @@
 ARM Blueprints
 --------------
 
-ARM template Blueprints provide a simple and repeatable way of deploying infrastructure-as-code to Azure Clouds. Objects and properties are defined in a JSON file and are provisionable on-demand in *Provisioning > Apps*
+ARM Blueprints provide a simple and repeatable way of deploying infrastructure-as-code to Azure Clouds. Objects and properties are defined in a JSON file and are provisionable on-demand in *Provisioning > Apps*
 
 To create a new ARM Blueprint, navigate to Provisioning > Blueprints. Click :guilabel:`+ ADD`.
 
