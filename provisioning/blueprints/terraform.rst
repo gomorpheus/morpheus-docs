@@ -36,7 +36,7 @@ In the Terraform Configuration section, complete the following fields as needed 
 - **BRANCH OR TAG:** The branch in which your configuration resides
 - **WORKING PATH:** The path to your configuration files
 - **CONFIG:** Your selected config file
-- **TFVAR SECRET:** Select an existing TFVar-formatted Cypher. See the Cyphers section or |morpheus| docs for more information on Cyphers
+- **TFVAR SECRET:** Select an existing TFVar-formatted Cypher. See the Cyphers section of |morpheus| docs for more information on Cyphers
 - **OPTIONS:** Enter any additional options, such as a variable definition
 
 Once finished, click :guilabel:`COMPLETE`.
