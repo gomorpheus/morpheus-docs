@@ -31,7 +31,7 @@ Change the values to match your configured services:
 .. code-block:: bash
 
     mysql['enable'] = false
-    mysql['host'] = '10.30.20.139:3306,10.30.20.153:3306,10.30.20.196'
+    mysql['host'] = {'10.30.20.139' => 3306, '10.30.20.153' => 3306, '10.30.20.196' => 3306}
     mysql['morpheus_db'] = 'morpheusdb'
     mysql['morpheus_db_user'] = 'dbuser'
     mysql['morpheus_password'] = 'dbuserpassword'
