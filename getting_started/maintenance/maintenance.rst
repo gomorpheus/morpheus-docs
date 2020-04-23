@@ -8,3 +8,4 @@ Upgrades & Maintenance
    morpheus-ctl.rst
    db_migration.rst
    scaling.rst
+   wars.rst

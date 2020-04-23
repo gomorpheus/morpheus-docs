@@ -16,14 +16,14 @@ Cluster
 Host
   * Non-Propagating
 
-Datastore
+Datastore/Datastore Cluster
   * Propagating
 
 
 Privileges
 ``````````
 
-Datastore
+Datastore/Datastore Cluster
   * Allocate Space
   * Browse Datastore
   * Low Level file Operations

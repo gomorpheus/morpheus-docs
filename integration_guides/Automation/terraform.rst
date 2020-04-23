@@ -7,11 +7,11 @@ Requirements
 Role Access
 ^^^^^^^^^^^
 
-* In order to see the Terraform Blueprint type option and create Terraform App Blueprints in `Provisioning -> Blueprints`, the Morpheus user must have Role permissions for `Provisioning: Blueprints - Terraform` set to `Full`.
+* In order to see the Terraform Blueprint type option and create Terraform App Blueprints in `Provisioning > Blueprints`, the Morpheus user must have Role permissions for `Provisioning: Blueprints - Terraform` set to `Full`.
 
-* In order to provision Terraform Apps in `Provisioning -> Apps`, the Morpheus user must have Role permissions for `Provisioning: Blueprints - Terraform` set to `Provision` or `Full`.
+* In order to provision Terraform Apps in `Provisioning -> Apps`, the Morpheus user must have Role permissions for `Provisioning: Blueprints > Terraform` set to `Provision` or `Full`.
 
-* Existing Terraform Blueprints must be added before they can be provisioned from `Provisioning -> Apps`.
+* Existing Terraform Blueprints must be added before they can be provisioned from `Provisioning > Apps`.
 
 Github/Git Repo
 ^^^^^^^^^^^^^^^
@@ -100,7 +100,7 @@ Creating Terraform App Blueprints
 
 In order to provision Terraform apps, Terraform App Blueprints must be created first.
 
-.. IMPORTANT:: In |morpheus| versions 3.3.0 and 3.3.1 VMware cloud types are supported for Terraform App provisioning targets. Additional clouds will be available in later releases.
+.. IMPORTANT:: In |morpheus| version 4.2.0, VMware and AWS Cloud types are supported for Terraform App provisioning targets. Additional clouds will be available in later releases.
 
 #. Navigate to `Provisioning -> Blueprints`
 #. Select :guilabel:`+ ADD`

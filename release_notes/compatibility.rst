@@ -9,7 +9,7 @@ When installing and upgrading to |morpheus| |morphver|, refer to the following t
 |morpheus| Application OS
 =========================
 
-The Morpheus Applications can be installed on the following Operating System versions:
+The Morpheus Application can be installed on the following Operating System versions:
 
 +--------+--------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | OS     | Version(s)   | Notes                                                                                                                                                                                             |
@@ -18,7 +18,7 @@ The Morpheus Applications can be installed on the following Operating System ver
 +--------+--------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Ubuntu | 16.04, 18.04 | FreeRDP 2.0 is not compatible with 16.04. Guacd will remain at 1.0.0 for Appliances running on 16.04, and is upgraded to 1.1.0 on Appliances running on 18.04.                                    |
 +--------+--------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Debian | 8, 9         | FreeRDP 2.0 is not compatible with Debian 8. Guacd will remain at 1.0.0 for Appliances running on 8, and is upgraded to 1.1.0 on Appliances running on 9.                                         |
+| Debian | 8, 9         | FreeRDP 2.0 is not compatible with Debian 9. Guacd will remain at 1.0.0 for Appliances running on 9.                                                                                              |
 +--------+--------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | RHEL   | 7.x          | RHEL 8 for Appliance Hosts is scheduled for v4.2.1. v4.2.0 adds support for Morpheus Agent on RHEL 8.                                                                                             |
 +--------+--------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -41,8 +41,22 @@ When externalizing MySQL, Elasticsearch and/or RabbitMQ services, the following 
 +---------------------------------------+-----------------------+-------------------------------------+
 | RabbitMQ                              | 3.5-3.7               | 3.7.16                              |
 +---------------------------------------+-----------------------+-------------------------------------+
-| Redis                                 | REMOVED in v4.2.1     | REMOVED in v4.2.1                   |
+| Redis                                 | REMOVED in v4.1.2     | REMOVED in v4.1.2                   |
 +---------------------------------------+-----------------------+-------------------------------------+
+
+Security 
+========
+
+.. important:: Please be aware of the default security enhancements added to v4.1.2+ and assess potential impacts to your env, including agent installation and front end load balancers. 
+
+- Appliance: Starting in v4.1.2 (not new but worth mentioning again), the default |morphues| Nginx config removes support for incoming ``TLS v1.0 and v1.1`` connections. Please update source config to be compatible. If necessary, |morphues| can be configured to support older TLS versions via :ref:`morpheus.rb` config. 
+
+- CVEs Addressed
+  - CVE-2019-17563 *
+  - CVE-2019-17569 *
+  - CVE-2020-1935 *
+  - CVE-2020-1938 *
+  - CVE-2019-20372 *
 
 Integrations
 ============

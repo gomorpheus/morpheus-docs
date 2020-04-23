@@ -48,19 +48,15 @@ Creating Apps from Existing Instances
 
 .. image:: /images/provisioning/apps_301_2.png
 
-Exporting JSON or YAML
-----------------------
+Exporting Configuration JSON
+----------------------------
 
-#. Navigate to  ``Provisioning -> Apps``
-#. On an existing App, select ``ACTIONS -> EXPORT``
-#. Select YAML or JSON in the top right.
-#. Select the Configurations to include in the Export by clicking on a Configuration. Selected Configurations will be highlighted.
-#. Select the DOWNLOAD CONFIGURATION button.
-#. The Blueprint Export file will be downloaded to your computer as ``{app_name}-config.json or {app_name}-config.yaml``.
+To export a Blueprint as JSON:
 
-.. TIP:: JSON or YAML can also be Viewed, Edited, Copied, or Exported by selecting ``ACTIONS -> EDIT`` on an App and clicking the RAW section in the Edit App modal.
-
-.. image:: /images/provisioning/apps_301_3.png
+#. Navigate to  ``Provisioning > Apps``
+#. Select an App from the list to view the App detail page
+#. Click the Actions button and select Export
+#. The App export file will be downloaded to your computer as ``{app_name}.json``
 
 Provisioning Apps via API
 -------------------------

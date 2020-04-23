@@ -1,9 +1,11 @@
 Elasticsearch
 ^^^^^^^^^^^^^
 
-Install 3 node Elasticsearch Cluster on Centos 7
+Sample Install of 3 node Elasticsearch Cluster on CentOS 7
 
 .. IMPORTANT:: This is a sample configuration only. Customer configurations and requirements will vary.
+
+.. IMPORTANT:: |morpheus| v4.1.2+ requires Elasticsearch v7.x. 
 
 Requirements
 ````````````
@@ -33,88 +35,101 @@ Requirements
       OpenJDK Runtime Environment (build 1.8.0_65-b17)
       OpenJDK 64-Bit Server VM (build 25.65-b01, mixed mode)
 
-Installation
-````````````
+Install Elasticsearch 7.x
+`````````````````````````
+.. important:: This is an example Elasticsearch Upgrade for reference only, and is not indicative of the upgrade procedure for every environment/user/customer/configuration. 
 
-To install Elasticsearch please use the following instructions
-
-https://www.elastic.co/guide/en/elasticsearch/reference/current/rpm.html#install-rpm
-
-
-Once installed, to make sure Elasticsearch starts and stops automatically, add its init script to the default runlevels with the command:
-
-.. code-block:: bash
-
- sudo systemctl enable elasticsearch.service
-
-Configuring Elastic
-```````````````````
-
-   Now that Elasticsearch and its Java dependencies have been installed, it is time to configure Elasticsearch.
-
-   The Elasticsearch configuration files are in the ``/etc/elasticsearch`` directory. There are two files:
+#. On each ES node run the following to install Elasticsearch.
 
    .. code-block:: bash
 
+    rpm --import https://artifacts.elastic.co/GPG-KEY-elasticsearch
+
+   .. code-block:: bash
+
+    wget https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-7.6.2-x86_64.rpm
+
+   .. code-block:: bash
+
+    sudo rpm -Uhv elasticsearch-7.6.2-x86_64.rpm
+
+#. If necessary, update permissions for the specified log and data paths
+
+   .. code-block:: bash
+
+    sudo chown -R elasticsearch:elasticsearch /var/log/elasticsearch/
+    sudo chown -R elasticsearch:elasticsearch /usr/share/elasticsearch/
+
+#. Edit ``/etc/elasticsearch/elasticsearch.yml`` and update each nodes configurations accordingly. Please note several attributes differ in 7.x from 5.x.
+
+   Node 1 Example (customer configurations will vary)
+   
+   .. code-block:: bash
+   
     sudo vi /etc/elasticsearch/elasticsearch.yml
 
-   elasticsearch.yml
-    Configures the Elasticsearch server settings. This is where all options, except those for logging, are stored, which is why we are mostly interested in this file.
+          #Sample elasticsearch.yml config. Adjusting values in elasticsearch.yml for each node in the cluster.
+          #Note: Sample only, user configurations and requirements will vary.
 
-   logging.yml
-    Provides configuration for logging. In the beginning, you don't have to edit this file. You can leave all default logging options. You can find the resulting logs in ``/var/log/elasticsearch`` by default.
+          node.name: "es-node-01" ##unique name of this node
+          network.host: 10.30.22.152 ##ip of this node
+          http.port: 9200
+          discovery.seed_hosts: ["10.30.22.152","10.30.22.153","10.30.22.154"] ## add all cluster node ip's
+          cluster.initial_master_nodes: ["10.30.22.152","10.30.22.153","10.30.22.154"] ## add all cluster node ip's
+          path.logs: /var/log/elasticsearch ## Or your preferred location. 
+          path.data: /usr/share/elasticsearch/ ## Or your preferred location.
+          discovery.zen.minimum_master_nodes: 2 
+          
+   Node 2 Example (customer configurations will vary)
+   
+   .. code-block:: bash
+   
+    sudo vi /etc/elasticsearch/elasticsearch.yml
 
-   The first variables to customize on any Elasticsearch server are ``node.name`` and ``cluster.name`` in ``elasticsearch.yml``. As their names suggest, node.name specifies the name of the server (node) and the cluster to which the latter is associated.
+          #Sample elasticsearch.yml config. Adjusting values in elasticsearch.yml for each node in the cluster.
+          #Note: Sample only, user configurations and requirements will vary.
 
-   .. important:: Make sure to uncomment each of the following listed below in `/etc/elasticsearch/elasticsearch.yml`
+          node.name: "es-node-02" ##unique name of this node
+          network.host: 10.30.22.153 ##ip of this node
+          http.port: 9200
+          discovery.seed_hosts: ["10.30.22.152","10.30.22.153","10.30.22.154"] ## add all cluster node ip's
+          cluster.initial_master_nodes: ["10.30.22.152","10.30.22.153","10.30.22.154"] ## add all cluster node ip's
+          path.logs: /var/log/elasticsearch ## Or your preferred location. 
+          path.data: /usr/share/elasticsearch/ ## Or your preferred location.
+          discovery.zen.minimum_master_nodes: 2 
 
+   Node 3 Example (customer configurations will vary)
+   
+   .. code-block:: bash
+   
+    sudo vi /etc/elasticsearch/elasticsearch.yml
 
+          #Sample elasticsearch.yml config. Adjusting values in elasticsearch.yml for each node in the cluster.
+          #Note: Sample only, user configurations and requirements will vary.
 
-   Node 1
+          node.name: "es-node-03" ##unique name of this node
+          network.host: 10.30.22.154 ##ip of this node
+          http.port: 9200
+          discovery.seed_hosts: ["10.30.22.152","10.30.22.153","10.30.22.154"] ## add all cluster node ip's
+          cluster.initial_master_nodes: ["10.30.22.152","10.30.22.153","10.30.22.154"] ## add all cluster node ip's
+          path.logs: /var/log/elasticsearch ## Or your preferred location. 
+          path.data: /usr/share/elasticsearch/ ## Or your preferred location.
+          discovery.zen.minimum_master_nodes: 2 
+                    
+#. Save elasticsearch.yml
 
-   .. code-block:: yaml
-
-    cluster.name: morpheusha1
-    node.name: "morpheuses1"
-    network.host: enter the IP of the node ex: 10.30.22.130
-    http.port: 9200
-    discovery.zen.ping.unicast.hosts: ["10.30.20.91","10.30.20.149","10.30.20.165"]
-
-   Node 2
-
-   .. code-block:: yaml
-
-     cluster.name: morpheusha1
-     node.name: "morpheuses2"
-     network.host: enter the IP of the node ex: 10.30.22.130
-     http.port: 9200
-     discovery.zen.ping.unicast.hosts: ["10.30.20.91","10.30.20.149","10.30.20.165"]
-
-   Node 3
-
-   .. code-block:: yaml
-
-     cluster.name: morpheusha1
-     node.name: "morpheuses3"
-     network.host: enter the IP of the node ex: 10.30.22.130
-     http.port: 9200
-     discovery.zen.ping.unicast.hosts: ["10.30.20.91","10.30.20.149","10.30.20.165"]
-
-   For the above changes to take effect, you will have to restart Elasticsearch with the command:
+#. Start Elasticsearch on each node.
 
    .. code-block:: bash
 
-    sudo service elasticsearch restart
+    sudo service elasticsearch start
 
-   Next restart the network with the command:
+#. Verify cluster health
 
    .. code-block:: bash
 
-    sudo service network restart
+    curl http://localhost:9200/_cluster/health
 
-Testing
-```````
+    or
 
-To make sure Elasticsearch is running use the following commands
-
-https://www.elastic.co/guide/en/elasticsearch/reference/current/rpm.html#rpm-check-running
+    curl http://node_ip:9200/_cluster/health

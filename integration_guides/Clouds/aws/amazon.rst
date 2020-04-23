@@ -92,7 +92,14 @@ Adding an AWS Cloud
 
 IMAGE TRANSFER STORE
   S3 bucket for Image transfers, required for migrations into AWS.
-
+EBS ENCRYPTION
+  Enable or disable encrytion of EBS Volumes 
+COSTING KEY
+  For Gov Cloud pricing only, key for standard managing cost account
+COSTING SECRET
+  For Gov Cloud pricing only, secret for standard managing cost account
+  
+  
 .. include:: /integration_guides/Clouds/advanced_options.rst
 
 .. NOTE:: All fields and options can be edited after the Cloud is created.

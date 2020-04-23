@@ -25,7 +25,7 @@ Add vCD Cloud From `Infrastructure -> Clouds`
    USERNAME
      vCD Organization Administrator User
 
-     NOTE:: User must have an Organizational Administrator Role in the selected Origination for successful provisioning
+     ..NOTE:: User must have an Organizational Administrator Role in the selected Origination for successful provisioning
 
    PASSWORD
      vCD Organization Administrator User password

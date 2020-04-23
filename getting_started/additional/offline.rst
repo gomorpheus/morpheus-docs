@@ -3,14 +3,15 @@
 Offline Installations and Upgrades
 ----------------------------------
 
-For customers that have an appliance behind a firewall/proxy that does not allow downloads from our Amazon download site, you can have the offline package to add the needed packages the standard Morpheus installer would have downloaded.
+For customers that have an appliance behind a firewall/proxy that does not allow downloads from our Amazon download site, you can add the offline package to add the needed packages the standard Morpheus installer would have downloaded.
 
 Offline Installation Requirements
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-- NTP should be correctly configured and the server is able to connect to the NTP server in the ntp.conf file.
-- The OS package repositories should be configured to use local LAN repository servers or the server should be able to receive packages from the configured repositories.
-- The standard Morpheus and offline packages must be downloaded from another system and transferred to the Morpheus Appliance server.
+- NTP should be correctly configured and the server is able to connect to the NTP server in the ntp.conf file
+- The OS package repositories should be configured to use local LAN repository servers or the server should be able to receive packages from the configured repositories
+- The standard Morpheus and offline packages must be downloaded from another system and transferred to the Morpheus Appliance server
+- The offline package is additive, the full installer is also required
 
 .. NOTE:: The offline package is linked 1-to-1 to the appliance release. For example the offline package for 4.0.0-1 should be used with the appliance package 4.0.0-1
 

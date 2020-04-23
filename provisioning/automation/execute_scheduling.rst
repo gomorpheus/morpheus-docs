@@ -1,25 +1,27 @@
 Execute Scheduling
 ------------------
 
-Execute Scheduling creates Schedules for Jobs, including Task, Workflow and Backup Jobs.
+Execute Scheduling creates time schedules for Jobs, including Task, Workflow and Backup Jobs. Jobs, which are discussed in greater detail in `another section <https://docs.morpheusdata.com/en/4.2.0/provisioning/jobs/jobs.html#jobs>`_ of |morpheus| docs, combine either a Task or Workflow with an Execute Schedule to run the selected Task or Workflow at the needed time. Backup Jobs are a special type of Job configured in the Backups section which also use Execute Schedules to time backup runs as needed.
 
 Schedules use CRON expressions, such as ``0 23 * * 2`` equalling ``Executes every week on Tuesday at 23:00``. CRON expressions can easily be created by clicking the corresponding translation in the create or edit Execution Schedule modal below the Schedule field and selecting a new value.
+
+.. Note:: For more on writing CRON expressions, see our `KnowledgeBase article <https://support.morpheusdata.com/s/article/How-to-write-execute-schedule-intervals-in-Morpheus?language=en_US>`_ on the topic.
 
 Create Execution Schedules
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 NAME
- Name of the Schedule
+ Name of the Execution Schedule
 
- .. note:: When assigning Execution Schedules, the Name will appear in the selection drop-down. Using a name that references the schedule is advised.
+ .. Note:: When assigning Execution Schedules, the name value will appear in the selection drop-down. Using a name that references the time interval is often helpful
 
 DESCRIPTION
  Description of the Execution Schedule for reference in the Execution Schedules list
 TIME ZONE
  Time zone for execution
 Enabled
- Check to enable the schedule. Uncheck to disable all associated executions.
+ Check to enable the schedule. Uncheck to disable all associated executions and remove the schedule as an option for Jobs in the future
 SCHEDULE
- Enter CRON expression for the Execution Schedule. Example ``0 0 * * *`` equals ``Every day at 00:00`` (default)
+ Enter CRON expression for the Execution Schedule, for example ``0 0 * * *`` equals ``Every day at 00:00``
 SCHEDULE TRANSLATION
- The entered CRON schedule is translated below the SCHEDULE field. Highlighted values can be updated by selecting the value, and relevant options will be presented. The CRON expression will automatically be updated. 
+ The entered CRON schedule is translated below the SCHEDULE field. Highlighted values can be updated by selecting the value, and relevant options will be presented. The CRON expression will automatically be updated
