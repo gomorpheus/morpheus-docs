@@ -31,25 +31,25 @@ When externalizing MySQL, Elasticsearch and/or RabbitMQ services, the following 
 .. important:: Elasticsearch 7.x is required for |morphver|. Refer to :ref:`upgrading` section for more information.
 
 +---------------------------------------+-----------------------+-------------------------------------+
-| **Service**                           | **Compatible Branch** | **|morphver| Installer Version**    |
+| **Service**                           | **Compatible Branch** | **Morpheus Installer Version**      |
 +---------------------------------------+-----------------------+-------------------------------------+
 | MySQL                                 | 5.7                   | 5.7.29                              |
 +---------------------------------------+-----------------------+-------------------------------------+
 | Percona                               | 5.7, WSREP 31         | n/a                                 |
 +---------------------------------------+-----------------------+-------------------------------------+
-| Elasticsearch                         | 7.x                   | 7.6.0                               |
+| Elasticsearch                         | 7.x                   | 7.6.1                               |
 +---------------------------------------+-----------------------+-------------------------------------+
 | RabbitMQ                              | 3.5-3.7               | 3.7.16                              |
 +---------------------------------------+-----------------------+-------------------------------------+
 | Redis                                 | REMOVED in v4.1.2     | REMOVED in v4.1.2                   |
 +---------------------------------------+-----------------------+-------------------------------------+
 
-Security 
+Security
 ========
 
-.. important:: Please be aware of the default security enhancements added to v4.1.2+ and assess potential impacts to your env, including agent installation and front end load balancers. 
+.. important:: Please be aware of the default security enhancements added to v4.1.2+ and assess potential impacts to your env, including agent installation and front end load balancers.
 
-- Appliance: Starting in v4.1.2 (not new but worth mentioning again), the default |morphues| Nginx config removes support for incoming ``TLS v1.0 and v1.1`` connections. Please update source config to be compatible. If necessary, |morphues| can be configured to support older TLS versions via :ref:`morpheus.rb` config. 
+- Appliance: Starting in v4.1.2 (not new but worth mentioning again), the default |morpheus| Nginx config removes support for incoming ``TLS v1.0 and v1.1`` connections. Please update source config to be compatible. If necessary, |morpheus| can be configured to support older TLS versions via :ref:`morpheus.rb` config.
 
 - CVEs Addressed
   - CVE-2019-17563 *

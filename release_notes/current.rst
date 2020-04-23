@@ -43,6 +43,14 @@ NSX Updates
 - ``Appliance`` Config section added to NSX Logical Router creation
 - Group permission added for new Networks and Edge Gateways/Routers
 .. add link to network and group sections below
+- Added Edge Border Gateway Protocol (BGP) route redistribution $
+- Added Edge Border Gateway Protocol (BGP) Neighbors $
+- Added high availability (HA) configuration for Distributed Logical Routers (DLR) $
+- Added high availability (HA) configuration for Edge Routers $
+- Border Gateway Protocol (BGP) is enabled and started when an Edge Router or Distributed Logical Router (DLR) is created $
+- When creating an Edge Gateway and populating the Uplink Network IP address, the Router ID field is automatically pre-populated $
+- Improved validation on the Create Edge Logical Router modal $
+- Added the ability to add ‘any’ direction to Routers and Gateways, previously egress and ingress were the only options $
 
 Role Permission Updates
 -----------------------
@@ -199,10 +207,12 @@ Other Enhancements
 - Creation of networks and routers are now asynchronous processes to improve performance and prevent modal timeout in some scenarios
 - Git and Github Integrations: HTTPS-only auth support added
 - Google Cloud: API Proxy values can now be set under Advanced Options for GCP clouds (when creating a new integration or editing an existing one) as is already possible for other clouds: `LINK <https://docs.morpheusdata.com/en/4.2.0/integration_guides/Clouds/google/google.html#advanced-options>`_
-- IBM Cloud: Frankfurt 4 & 5 Datacenters now supported
+- IBM Cloud: Frankfurt 4 and 5 Datacenters now supported
 - NSX: Logical Switch creation: Given name is now appended onto end of Logical Switch/Network name
 - Openstack: Added support for attaching multiple Routers to |morpheus|-created Openstack Networks
-- Softlayer: Frankfurt 4 & 5 Datacenters now supported
+- RabbitMQ: Updated policies to include HA mode $
+- RabbitMQ: Updated cluster healing strategy to autoheal $
+- Softlayer: Frankfurt 4 and 5 Datacenters now supported
 - System Library: Ubuntu 18.04 Node Types have been added for the following Clouds: Upcloud, Azure, DigitalOcean, IBM, Oracle Cloud, Open Telekom, SoftLayer, vCD, SCVMM, Alibaba, Hyper-V, ESXi
 - Tasks: Git integration now exists for Groovy Script-type Automation Tasks
 - Workflows: Workflows with a visibility value of "Public" are now viewable and executable by Tenants: `LINK <https://docs.morpheusdata.com/en/4.2.0/provisioning/automation/automation.html#add-workflow>`_
@@ -221,6 +231,7 @@ API Enhancements
   - ``dateTime`` scheduleMode added
   - ``dateTime`` | N | Date and Time to execute the job. Use UTC time in the format 2020-02-15T05:00:00Z. Required when scheduleMode is ``dateTime``.
 - API: Clusters: Support for number of workers parameter added
+- API: Added validation of environment values during Instance or App provisioning $
 
 CLI Updates
 ===========
@@ -275,6 +286,7 @@ CLI Updates
 Fixes
 =====
 
+- Active Directory: Fixed an issue where users whose UPN is an alternative UPN containing a number would fail authentication $
 - Amazon/AWS: Fixed issue with detected Plan changes updating VM records but not Instance records
 - Apps: App wizard validation fixes *
 - ARM: Added support for ``"tags": "[variables('resourceTags')]``
@@ -287,8 +299,10 @@ Fixes
 - Backups: Minor backend fix to ensure proper behavior when creating a backup ^
 - Billing: Fixed an issue that caused datastore billing not to appear for managed vm's under specific conditions *
 - Cisco ACI: Fixed issue with deleting Cisco ACI Integrations
+- Clusters: Fixed an issue where the Add Clusters wizard was not respecting Tenant permissions on Security Groups $
 - Convert to managed: Converted a variable data type from integer to long text which prevents an error in the ‘Convert to Managed’ process in certain scenarios *
 - Convert to Managed: Fixed issue with Tenant visibility on Library Layouts when "Support Convert to managed" is enabled.
+- Dell EMC Isilon: Fixed an issue with Dell EMC Isilon integration causing high CPU use $
 - EKS: Fixed Amazon EKS Service Plan seed issue when upgrading from v4.0.0 or prior *
 - Instances: Groups Filter: Fixed issue listing all Groups in filter choices when more 100+ Groups exist
 - Instances: Fixed an issue causing pagination not to work on the History tab %
@@ -302,16 +316,19 @@ Fixes
 - NSX-V: Fixed an issue where vNIC was not set on default routes for DLR and EDGE *
 - NSX: Fixed issue with Logical Switch and Edge Gateway Tenant assignment on Logical Switches and Edge Gateways created inside a Subtenant.
 - NSX: Fixed issue with NSX Edge Gateway creation related to invalid Resource Pool specification
-- NSX: Fixed network creation on synced DLR's
-- NSX: Fixed secondary network creation on created DLR's
+- NSX: Fixed network creation on synced DLRs
+- NSX: Fixed secondary network creation on created DLRs
 - NSX: Updated NSX Network display names on the Instance provisioning wizard to make them prettier *
+- NSX: North-South network traffic now properly handled by Distributed Logical Routers (DLR) created through |morpheus| integration $
 - Openstack Clouds:  Fixed associated Load Balancer visibility not updating when Cloud visibility is changed from Public to Private.
 - Openstack Clouds: Fixed default tenant assignment of synced Routers upon cloud creation when cloud is assigned to sub-tenant.
 - Openstack: Synced Private Networks' Type now displayed as ``Private Network`` instead of ``VLAN``
+- Openstack: Fixed an issue with IP assignment when selecting an available address from a floating IP pool during provisioning $
 - Oracle VM: Fixed issues with intermittent provision failures in a HA environments due to appliance in-memory cloud-init ISO config.
 - OTC: Added image deletion for failed image import service uploads.
 - Policies: Security Banner: Fixed issues with Security Banner display for Subtenant Login URLs
 - Provisioning: Fix for Typeahead Option Type variables not evaluating in Provisioning Wizard Review tab.
+- Provisioning: Fixed an issue that could cause duplicate IP address assignment during provisioning when |morpheus| is installed in an HA cluster with three app nodes and provisioning occurs on separate nodes at approximately the same time $
 - Python Tasks: Fix for Python Tasks script and output size constraints
 - Reports: Cloud-specific tenant costing analytics report values fix
 - Reports: Updates for ``Print`` layout formatting
@@ -319,6 +336,8 @@ Fixes
 - Tenant Registration: Email sign-in link now links to Tenant url/subdomain instead of Master Tenant base url.
 - Tenants: Fixed issue when deleting a Tenant with existing Power Schedules
 - Tenants: Fixed issues where existing ``reference_data`` would prevent Tenant deletion.
+- Tenants: Fixed an issue causing Tenant removal to fail when Infoblox is integrated through the Tenant $
+- Usage: Fixed an issue that caused “running” usage records to be closed when a container or VM is in a suspended state $
 - vCloud Director: Fix removal of vApp when deleting an Instance in morpheus that has been stopped in vCD and vApp is in partially running state.
 - vCloud Director: Fixed Cloud Sync Status showing ``OK`` when Cloud Sync was not successful
 - vCloud Director: Fixed issue with volume deletes on discovered server syncing, preventing Usage Record updates.
@@ -326,6 +345,8 @@ Fixes
 - vCloud Director: Windows: Fixed Agent Installation Script injection into Guest OS Customizations when Domain Join is enabled
 - VMware: Fixed 'Import As Image' session timeouts when ovf export takes longer than 20 minutes.
 - VMware: Fixed issue with Datastore placement calculations and error surfacing when creating 2+ VMware Instance copies.
+- VMware: Fixed an issue causing metadata Tags set by exported Option Types to be cleared during provisioning to vCenter 6.0 $
+- VMware: Fixed an issue causing metadata Tags set by exported Option Types to be cleared during |morpheus| upgrade to 4.2.0 when using vCenter 6 $
 - Windows Execution: Fixed potential issue in HA Environments related to Windows Agent websocket session ID, .net not being good at random, and Spring.
 - Workflows: Fixed issue with Workflows with Multiple Options Types displaying when 2nd Option Type has no default value.
 - Xen: Resolved issue where volume size changes in Xen were only reflected on Virtual Machine records, not Instance and Container records.
@@ -339,11 +360,13 @@ CVEs Addressed
 - CVE-2020-1935 *
 - CVE-2020-1938 *
 - CVE-2019-20372 *
+- CVE-2020-11612 $
 
 Services
 ========
 
 - NGINX updated to 1.17.9
 - Tomcat updated to 9.0.33
+- Netty updated to 4.1.46 $
 
-(* Found in v4.2.0-2; ^ Found in v4.2.0-3; % Found in v4.2.0-4)
+(* Found in v4.2.0-2; ^ Found in v4.2.0-3; % Found in v4.2.0-4; $ Found in v4.2.0-5)
