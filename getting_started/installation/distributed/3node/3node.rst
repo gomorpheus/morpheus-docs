@@ -33,7 +33,7 @@ Default Locations
   * Morpheus-UI: ``/var/log/morpheus/morpheus-ui``
   * NginX: ``/var/log/morpheus/nginx``
   * Check Server: ``/var/log/morpheus/check-server``
-  * Elastic Search: ``/var/log/morpheus/elsticsearch``
+  * Elastic Search: ``/var/log/morpheus/elasticsearch``
   * RabbitMQ: ``/var/log/morpheus/rabbitmq``
 
 *  User-defined install/config: ``/etc/morpheus/morpheus.rb``
