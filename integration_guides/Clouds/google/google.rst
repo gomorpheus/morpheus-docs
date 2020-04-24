@@ -62,14 +62,14 @@ Finally, add Google Cloud to an existing Group or create a new Group, and you ha
 Windows Images
 ^^^^^^^^^^^^^^
 
-|morpheus| can add custom metatdata that will be injected into the unattend conf by GCP during provisioning. This is required for customizations including setting the Windows Administrator password during provisioning. GCP Windows Images must be syspreped using the ``GCESysprep`` command prior to image creation, and must have platform/os set on the Virtul Image record in |morphues| after image sync for successful customization and Agent Installation.
+|morpheus| can add custom metatdata that will be injected into the unattend conf by GCP during provisioning. This is required for customizations including setting the Windows Administrator password during provisioning. GCP Windows Images must be syspreped using the ``GCESysprep`` command prior to image creation, and must have platform/os set on the Virtul Image record in |morpheus| after image sync for successful customization and Agent Installation.
 
 GCP Windows Requirements
 ````````````````````````
 
 - GCP Windows Images must be syspreped using the ``GCESysprep`` command prior to Image creation in GCP. Refer to `Googles "creating-windows-os-image" doc <https://cloud.google.com/compute/docs/instances/windows/creating-windows-os-image>`_.
-- Once the Image is synced into Morpheus, the Platform (Windows, Windows 2016 etc) must be set on the |morphues| Virtual Image record, otherwise linux is assumed and the metadata will not be generated correctly.
-- The Global Windows "Administrator" password must be set in |morphues| under ``/admin/provisioning/settings`` -> Windows Settings -> Administrator Password, or Administrator and password defined on the |morpheus| Virtual Image record.
+- Once the Image is synced into Morpheus, the Platform (Windows, Windows 2016 etc) must be set on the |morpheus| Virtual Image record, otherwise linux is assumed and the metadata will not be generated correctly.
+- The Global Windows "Administrator" password must be set in |morpheus| under ``/admin/provisioning/settings`` -> Windows Settings -> Administrator Password, or Administrator and password defined on the |morpheus| Virtual Image record.
 - Be aware the unattend configuration during startup after sysprep delays causes a reboot and a prolonged finalization process during provisioning, and console/rdp may not be available during this time as windows is configuring.
 
 .. note:: Some Google provided Windows Images have slow startups that cause the Morpheus Agent service to not start within the default 30 second service startup timeframe, including after initial reboot after sysprep/unattend configuration. This can be adjusted by running ``New-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Control\" -Name "ServicesPipeTimeout" -PropertyType DWORD -Value 180000`` in powershell on the Windows Image.
