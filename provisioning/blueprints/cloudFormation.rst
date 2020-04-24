@@ -7,7 +7,7 @@ If needed, Amazon has educational resources available for getting started with C
 
 To create a new CloudFormation Blueprint, navigate to Provisioning > Blueprints. Click :guilabel:`+ ADD`.
 
-On the Name tab of the New Blueprint modal, enter a name for your new Blueprint. In the Type dropdown menu, select CloudFormation. :guilabel:`NEXT`
+On the Name tab of the New Blueprint modal, enter a name for your new Blueprint. In the Type dropdown menu, select CloudFormation. Click :guilabel:`NEXT`
 
 In the Blueprint Summary section, complete the following fields as needed:
 
