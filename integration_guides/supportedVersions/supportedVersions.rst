@@ -41,7 +41,7 @@ Terraform               v0.11 or earlier
 
                         Note: Support for v0.12 is planned.
 **ITSM**                ..
-ServiceNow              Istanbul, Jakarta, Kingston, London
+ServiceNow              Istanbul, Jakarta, Kingston, London, Madrid, NewYork and Orlando
 **Logging**             ..
 Splunk                  7.10
 =====================   =================
