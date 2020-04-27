@@ -38,6 +38,7 @@ To create a new job:
 
    Task Jobs
      **TASK:** Select target Task. If relevant to the Task, Option Type fields will be presented
+
      **SCHEDULE:**
          Manual: Job is not scheduled but can be executed from ``Provisioning > Jobs`` and selecting ``Actions > Execute``
 
@@ -55,6 +56,7 @@ To create a new job:
 
     Workflow Jobs
       **WORKFLOW:** Select target Workflow. If relevant to the Workflow, Option Type fields will be presented
+
       **SCHEDULE:**
           Manual: Job is not scheduled but can be executed from ``Provisioning > Jobs`` and selecting ``Actions > Execute``
 
