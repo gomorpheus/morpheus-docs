@@ -40,29 +40,35 @@ To create a new job:
      **TASK:** Select target Task. If relevant to the Task, Option Type fields will be presented
      **SCHEDULE:**
          Manual: Job is not scheduled but can be executed from ``Provisioning > Jobs`` and selecting ``Actions > Execute``
+
          Date And Time: Job will be executed at one specific point in time and not again (unless rescheduled or executed manually)
+
          Schedule: Select a configured Execution Schedule. Execution Schedules are created in ``Provisioning > Automation > EXECUTE SCHEDULING``
 
          .. note:: |morpheus| provides two default execution schedules, ``Daily at Midnight`` and ``Weekly on Sunday at Midnight``. Any additional schedules were created by a User. Additional schedules can be added in ``Provisioning > Automation > EXECUTE SCHEDULING``
 
       **CONTEXT TYPE:** Server or Instance
+
       **CONTEXT SERVER/INSTANCE:** Select the Server or Instance you wish to target with the Job
 
-      RUN NOW: When checked, the Job will execute on save regardless of ``SCHEDULE`` setting.
+      **RUN NOW:** When checked, the Job will execute on save regardless of ``SCHEDULE`` setting.
 
     Workflow Jobs
       **WORKFLOW:** Select target Workflow. If relevant to the Workflow, Option Type fields will be presented
       **SCHEDULE:**
           Manual: Job is not scheduled but can be executed from ``Provisioning > Jobs`` and selecting ``Actions > Execute``
+
           Date And Time: Job will be executed at one specific point in time and not again (unless rescheduled or executed manually)
+
           Schedule: Select a configured Execution Schedule. Execution Schedules are created in ``Provisioning > Automation > EXECUTE SCHEDULING``
 
           .. note:: |morpheus| provides two default execution schedules, ``Daily at Midnight`` and ``Weekly on Sunday at Midnight``. Any additional schedules were created by a User. Additional schedules can be added in ``Provisioning > Automation > EXECUTE SCHEDULING``
 
       **CONTEXT TYPE:** Server or Instance
+
       **CONTEXT SERVER/INSTANCE:** Select the Server or Instance you wish to target with the Job
 
-      RUN NOW: When checked, the Job will execute on save regardless of ``SCHEDULE`` setting.
+      **RUN NOW:** When checked, the Job will execute on save regardless of ``SCHEDULE`` setting.
 
 #. Select :guilabel:`NEXT`
 #. Select :guilabel:`COMPLETE`
