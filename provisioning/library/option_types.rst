@@ -5,6 +5,7 @@ Option Types are custom input fields that can be added to Instance Types and Lay
 
 .. image:: /images/provisioning/library/newOptionType.png
    :align: center
+   :width: 80%
 
 Create Option Type
 ^^^^^^^^^^^^^^^^^^
@@ -20,13 +21,13 @@ FIELD NAME
 EXPORT AS TAG
  Creates Tags for fieldName/value (key/value) on Instances
 TYPE
- **Text:** Text Input Field
- **Select List:** Populated by Option Lists, presents a manual or REST-populated dropdown list
- **Checkbox:** Checkbox for ``on`` or `off`` values
- **Number:** Input field allowing only numbers
- **Typeahead:** Populated by Option Lists: Rather than presenting a potentially-large dropdown menu, the user can begin typing a selection into a text field and choose the desired option. Multiple selections can be allowed with this type by marking the 'ALLOW MULTIPLE SELECTIONS' box
- **Hidden:** No field will be displayed, but the field name and default value will be added to the Instance config map for reference
- **Password:** An input field with suitable encryption for accepting passwords
+- **Text:** Text Input Field
+- **Select List:** Populated by Option Lists, presents a manual or REST-populated dropdown list
+- **Checkbox:** Checkbox for ``on`` or `off`` values
+- **Number:** Input field allowing only numbers
+- **Typeahead:** Populated by Option Lists: Rather than presenting a potentially-large dropdown menu, the user can begin typing a selection into a text field and choose the desired option. Multiple selections can be allowed with this type by marking the 'ALLOW MULTIPLE SELECTIONS' box
+- **Hidden:** No field will be displayed, but the field name and default value will be added to the Instance config map for reference
+- **Password:** An input field with suitable encryption for accepting passwords
 LABEL
  This is the input label that typically shows to the left of a custom option
 PLACEHOLDER
