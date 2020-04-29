@@ -25,7 +25,7 @@ TYPE
 
   - **Select List:** Populated by Option Lists, presents a manual or REST-populated dropdown list
 
-  - **Checkbox:** Checkbox for ``on`` or `off`` values
+  - **Checkbox:** Checkbox for ``on`` or ``off`` values
 
   - **Number:** Input field allowing only numbers
 
