@@ -15,7 +15,7 @@ server where the configuration file resides.
 
    .. code-block:: bash
 
-      sudo sudo rpm -i morpheus-appliance-x.x.x-1.x86_64.rpm
+      sudo rpm -i morpheus-appliance-x.x.x-1.x86_64.rpm
 
 #. After installing and prior to reconfiguring, edit the ``morpheus.rb`` file
 
