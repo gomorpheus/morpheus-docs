@@ -226,12 +226,16 @@ Email
     Name of the Task
   CODE
     Unique code name for api, cli, and variable reference
+:Source:
+  Choose local to draft or paste the email directly into the Task. Choose Repository or URL to bring in a template from a Git repository or an outside source
 :Email Address:
   Email addresses can be entered literally or Morpheus automation variables can be injected, such as ``<%=instance.createdByEmail%>``
 :Subject:
   Morpheus automation variables can be injected into the subject field when needed
-:Body:
+:Content:
   The body of the email is HTML. Morpheus automation variables can be injected into the email body when needed
+:Skip Wrapped Email Template:
+  The |morpheus| email template is ignored and only HTML in the Content field is used
 
 |http| HTTP (api)
 ```````````````````

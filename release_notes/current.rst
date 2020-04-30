@@ -9,8 +9,13 @@
 New Features
 ============
 
+Tasks: For email-type Tasks, added an option to remove the |morpheus| email template and render only email content contained in the "CONTENT" field of the Task
+Tasks: For email-type Tasks, added a Source field to optionally use templates stored in a Git repository or outside URL destination
+
 Other Enhancements
 ------------------
+
+Catalog: CentOS catalog images added for SCVMM, Hyper-V, and UpCloud Clouds
 
 API Enhancements
 ================
