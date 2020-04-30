@@ -15,6 +15,8 @@ Features
 Adding Infoblox Integration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+.. Note:: Making full use of the |morpheus| Infoblox integration requires credentials for an Infoblox user account with API access granted, access to list the pools and zones you wish to work with, and rights to create and destroy records. See Infoblox documentation for more information on user rights administration in that product.
+
 #. Navigate to ``Infrastructure - Network - Integrations``
 #. Select :guilabel:`+ ADD` -> IPAM -> Infoblox
 #. Enter the following:
