@@ -78,7 +78,7 @@ Storage Server Storage Quota
 Tags
   Requires the user to add compliant Tags at provision time, this can be enforced on a strict or non-strict basis
 
-  .. note:: Tag scanning and enforcement is currently only available for Azure, Amazon, and VMware clouds. For a more comprehensive guide on implementing Tag Policies, see the associated article in our `KnowledgeBase <https://support.morpheusdata.com/s/article/How-to-work-with-cloud-tagging-policies?language=en_US>`_.
+  .. note:: Tag scanning and enforcement is currently only available for Azure, Amazon, Google, and VMware clouds. For a more comprehensive guide on implementing Tag Policies, see the associated article in our `KnowledgeBase <https://support.morpheusdata.com/s/article/How-to-work-with-cloud-tagging-policies?language=en_US>`_.
 
 User Creation
   Controls the "CREATE YOUR USER" flag in the User Config options during provisioning do be always disabled, always enabled, enabled by default, or disabled by default.

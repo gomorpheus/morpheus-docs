@@ -82,6 +82,8 @@ When adding or editing a network there is an option to scan network.  If checked
 Subnets
 ```````
 
-Subnet details can be viewed from the `SUBNETS` tab on the detail page of a specific network. From the `SUBNETS` tab, Morpheus allows the user to search and edit existing subnets. In an Azure VNet, you can also create new subnets with the `+ADD` button.
+Subnet details can be viewed from the `SUBNETS` tab on the detail page of a specific network. From the `SUBNETS` tab, Morpheus allows the user to search and edit existing subnets.
 
-.. image:: /images/infrastructure/network/create_subnet.png
+In an Azure VNet, you can also create new subnets with the `+ADD` button.
+
+.. image:: /images/infrastructure/network/create_subnet_421.png
