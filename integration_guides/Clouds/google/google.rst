@@ -3,15 +3,6 @@
 Google Cloud
 ------------
 
-Requirements
-^^^^^^^^^^^^
-
-* IAM Service Account with `Owner` or `Compute Admin` Role permissions
-* `project_id`, `private_key` and `client_email` for the Service Account
-* `Compute Engine API` enabled in GCP `API's and Services`
-
-.. IMAGE:: /images/integration_guides/clouds/Google-API-Compute.png
-
 Features
 ^^^^^^^^^
 * Provisioning Virtual Machines
@@ -23,8 +14,6 @@ Features
 * Right sizing
 * Shared Network Support
 
-<<<<<<< HEAD
-=======
 Requirements for Integration with |morpheus|
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -83,7 +72,6 @@ Generating Keys and Integrating with |morpheus|
 3. Select JSON format and click CREATE
 4. A JSON-formatted document will be downloaded, this document contains the Project ID, private key, and client email values needed to complete the integration process in the next step
 
->>>>>>> f1f4141c... Fix list numbering in GCP integration guide
 Add a Google Cloud Cloud
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -112,19 +100,11 @@ Add a Google Cloud Cloud
 
 .. NOTE:: |morpheus| scopes clouds to single regions. Multiple clouds can be added for multi-region support, and then optionally added to the same group.
 
-<<<<<<< HEAD
-The Cloud can now be added to a Group or configured with additional Advanced options.
-
-.. include:: /integration_guides/Clouds/advanced_options.rst
-
-Finally, add Google Cloud to an existing Group or create a new Group, and you have now integrated |morpheus| with Google Cloud!
-=======
 If advanced options are not needed, click :guilabel:`NEXT` to advance to the Group selection page. Otherwise, continue on with this guide and review advanced or provisioning options.
 
 .. include:: /integration_guides/Clouds/advanced_options.rst
 
 After reviewing all options, click :guilabel:`NEXT` to advance to the Group selection page. Following Group selection, click :guilabel:`COMPLETE` to finish the integration process. If you've opted to inventory existing Instances, they will be viewable in |morpheus| shortly. At this point, you are ready to provision new resources in Google Cloud Platform as needed!
->>>>>>> f1f4141c... Fix list numbering in GCP integration guide
 
 .. IMPORTANT:: If you experience difficulties adding a GCP Cloud, ensure you have met all the Requirements above, and have logged into Google Cloud and navigated to the Compute Engine sections as it will not be initialized until navigated to upon Google Cloud account creation.
 
