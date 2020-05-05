@@ -19,9 +19,9 @@ Requirements for Integration with |morpheus|
 
 To integrate |morpheus| with Google Cloud Platform, you will need the following:
 
-* The `Compute Engine API` enabled in GCP `API's and Services`
-* Credentials for an IAM service account with `Owner` or `Compute Admin` role permissions
-* The `project_id`, `private_key`, and `client_email` for the service account
+* The Compute Engine API enabled in GCP "APIs & Services"
+* Credentials for an IAM service account with Owner or Compute Admin role permissions
+* The Project ID, private key, and client email for the service account
 
 This integration guide goes through the process of configuring your account and obtaining the information necessary to integrate with |morpheus|.
 
@@ -34,11 +34,11 @@ Enabling the Compute Engine API
 
   .. image:: /images/integration_guides/clouds/gcp/1enable_apis.png
 
-#. In the search bar, search for "Compute Engine API"
+4. In the search bar, search for "Compute Engine API"
 
   .. image:: /images/integration_guides/clouds/gcp/2search_apis.png
 
-#. Select "Compute Engine API" and click ENABLE. It may take a few moments for the API to be fully enabled
+5. Select "Compute Engine API" and click :guilabel:`ENABLE`. It may take a few moments for the API to be fully enabled
 
 .. Note:: If the button is labeled MANAGE rather than ENABLE, the API is already enabled.
 
@@ -50,16 +50,16 @@ Creating a Service Account
 
   .. image:: /images/integration_guides/clouds/gcp/3create_service_acct.png
 
-#. Enter at least a name for your new service and click CREATE
+3. Enter at least a name for your new service and click CREATE
 
   .. image:: /images/integration_guides/clouds/gcp/4config_service_acct.png
 
-#. After creating the service account, you'll be prompted to set a role for the account. In order to fully integrate with |morpheus|, you must use an account in the Owner role or the Compute Admin role
-#. Click CONTINUE
+4. After creating the service account, you'll be prompted to set a role for the account. In order to fully integrate with |morpheus|, you must use an account in the Owner role or the Compute Admin role
+5. Click CONTINUE
 
   .. image:: /images/integration_guides/clouds/gcp/5service_acct_role.png
 
-#. Following creation of the service account, you'll be taken back to the list of existing service accounts
+6. Following creation of the service account, you'll be taken back to the list of existing service accounts
 
 Generating Keys and Integrating with |morpheus|
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -69,8 +69,8 @@ Generating Keys and Integrating with |morpheus|
 
   .. image:: /images/integration_guides/clouds/gcp/6create_key.png
 
-#. Select JSON format and click CREATE
-#. A JSON-formatted document will be downloaded, this document contains the `project_id`, `private_key`, and `client_email` values needed to complete the integration process
+3. Select JSON format and click CREATE
+4. A JSON-formatted document will be downloaded, this document contains the Project ID, private key, and client email values needed to complete the integration process in the next step
 
 Add a Google Cloud Cloud
 ^^^^^^^^^^^^^^^^^^^^^^^^
@@ -100,11 +100,11 @@ Add a Google Cloud Cloud
 
     .. NOTE:: |morpheus| scopes Clouds to single regions. Multiple clouds can be added for multi-region support, and then optionally added to the same group.
 
-#. If advanced options are not needed, click :guilabel:`NEXT` to advance to the Group selection page. Otherwise, continue on with this guide and review advanced or provisioning options.
+If advanced options are not needed, click :guilabel:`NEXT` to advance to the Group selection page. Otherwise, continue on with this guide and review advanced or provisioning options.
 
 .. include:: /integration_guides/Clouds/advanced_options.rst
 
-After reviewing all options, click :guilabel:`NEXT` to advance to the Group selection page. Following Group selection, click :guilabel:`COMPLETE` to finish the integration process. If you've opted to inventory existing Instance, they will be viewable in |morpheus| shortly. At this point, you are ready to provision new resources in Google Cloud Platform as needed.
+After reviewing all options, click :guilabel:`NEXT` to advance to the Group selection page. Following Group selection, click :guilabel:`COMPLETE` to finish the integration process. If you've opted to inventory existing Instances, they will be viewable in |morpheus| shortly. At this point, you are ready to provision new resources in Google Cloud Platform as needed!
 
 .. IMPORTANT:: If you experience difficulties adding a GCP Cloud, review the above guide and ensure you've met all requirements for completing the integration. For example, if the Compute Engine API is not enabled, |morpheus| will not accept credentials entered on the Create Cloud modal. If you repeatedly run into problems completing the integration process, review the above guide in its entirely and double check that each step is completed and your account meets all configuration requirements.
 
