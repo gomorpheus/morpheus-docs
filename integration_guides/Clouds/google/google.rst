@@ -11,7 +11,7 @@ Integration Features
 * Google VM Snapshots
 * Brownfield Inventory
 * Costing
-* Right sizing
+* Right-sizing
 * Shared Network Support
 
 Requirements for Integration with |morpheus|
@@ -90,7 +90,7 @@ Add a Google Cloud Cloud
    Project ID
     Google Cloud Project ID
    Private Key
-    The service account private key. Paste in the entire value between (but not including) the quotation marks in your downloaded JSON document, formatted like the following example: "-----BEGIN PRIVATE KEY-----\n(your_key)\n-----END PRIVATE KEY-----\n".
+    The service account private key. Paste in the entire value between (but not including) the quotation marks in your downloaded JSON document, formatted like the following example: "-----BEGIN PRIVATE KEY-----(your_key)-----END PRIVATE KEY-----".
    Client Email
     The service account client email, ex: `morpheus@morpheus.iam.gserviceaccount.com`
    Region
@@ -98,7 +98,7 @@ Add a Google Cloud Cloud
    Inventory Existing Instances
     If checked, existing Google Instances will be inventoried and appear as unmanaged virtual machines in |morpheus|.
 
-    .. NOTE:: |morpheus| scopes Clouds to single regions. Multiple clouds can be added for multi-region support, and then optionally added to the same group.
+.. NOTE:: |morpheus| scopes Clouds to single regions. Multiple clouds can be added for multi-region support, and then optionally added to the same group.
 
 If advanced options are not needed, click :guilabel:`NEXT` to advance to the Group selection page. Otherwise, continue on with this guide and review advanced or provisioning options.
 
