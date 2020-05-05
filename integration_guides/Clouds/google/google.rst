@@ -1,17 +1,17 @@
 .. _Google Cloud:
 
-Google Cloud
-------------
+Google Cloud Platform (GCP)
+---------------------------
 
-Features
-^^^^^^^^^
+Integration Features
+^^^^^^^^^^^^^^^^^^^^
 * Provisioning Virtual Machines
 * Network tagging
 * Private and Local Images
 * Google VM Snapshots
 * Brownfield Inventory
 * Costing
-* Right sizing
+* Right-sizing
 * Shared Network Support
 
 Requirements for Integration with |morpheus|
@@ -75,30 +75,30 @@ Generating Keys and Integrating with |morpheus|
 Add a Google Cloud Cloud
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. TIP:: All of the required Google Cloud credentials can be found in the .json file created when generating a key for a Google Cloud service account.
+.. Note:: The JSON-formatted document downloaded when creating a key for your service account contains all of the required values for completing the integration. Consult the above section on generating keys if needed.
 
-#. Navigate to Infrastructure -> Clouds
-#. Select :guilabel:`+ CREATE CLOUD`, select Google Cloud, and then click :guilabel:`Next`.
+#. Navigate to Infrastructure > Clouds
+#. Select :guilabel:`+ CREATE CLOUD`, select Google Cloud, and then click :guilabel:`NEXT`.
 #. Enter the following into the Create Cloud modal:
 
    Name
     Name of the Cloud in |morpheus|
    Location
-    Description field for adding notes on the cloud, such as location.
+    Description field for adding notes on the cloud, such as location
    Visibility
-    For setting cloud permissions in a multi-tenant environment. Not applicable in single tenant environments.
+    For setting Cloud permissions in a multi-tenant environment, not applicable in single-tenant environments
    Project ID
     Google Cloud Project ID
    Private Key
-    Service Account Private key, beginning with `-----BEGIN PRIVATE KEY-----\` and ending with `-----END PRIVATE KEY-----`
+    The service account private key. Paste in the entire value between (but not including) the quotation marks in your downloaded JSON document, formatted like the following example: "-----BEGIN PRIVATE KEY-----(your_key)-----END PRIVATE KEY-----".
    Client Email
-    Service Account Client Email. ex: `morpheus@morpheus.iam.gserviceaccount.com`
+    The service account client email, ex: `morpheus@morpheus.iam.gserviceaccount.com`
    Region
-    Regions will auto-populate upon successful authentication with the above credentials. Select appropriate region for this Cloud.
+    Regions will auto-populate upon successful authentication with the above credentials. If no regions are found, double check your entered credentials and try again. Select the appropriate region for this Cloud
    Inventory Existing Instances
-    If enabled, existing Google Instances will be inventoried and appear as unmanaged Virtual Machines in |morpheus| .
+    If checked, existing Google Instances will be inventoried and appear as unmanaged virtual machines in |morpheus|.
 
-.. NOTE:: |morpheus| scopes clouds to single regions. Multiple clouds can be added for multi-region support, and then optionally added to the same group.
+.. NOTE:: |morpheus| scopes Clouds to single regions. Multiple clouds can be added for multi-region support, and then optionally added to the same group.
 
 If advanced options are not needed, click :guilabel:`NEXT` to advance to the Group selection page. Otherwise, continue on with this guide and review advanced or provisioning options.
 
@@ -106,7 +106,7 @@ If advanced options are not needed, click :guilabel:`NEXT` to advance to the Gro
 
 After reviewing all options, click :guilabel:`NEXT` to advance to the Group selection page. Following Group selection, click :guilabel:`COMPLETE` to finish the integration process. If you've opted to inventory existing Instances, they will be viewable in |morpheus| shortly. At this point, you are ready to provision new resources in Google Cloud Platform as needed!
 
-.. IMPORTANT:: If you experience difficulties adding a GCP Cloud, ensure you have met all the Requirements above, and have logged into Google Cloud and navigated to the Compute Engine sections as it will not be initialized until navigated to upon Google Cloud account creation.
+.. IMPORTANT:: If you experience difficulties adding a GCP Cloud, review the above guide and ensure you've met all requirements for completing the integration. For example, if the Compute Engine API is not enabled, |morpheus| will not accept credentials entered on the Create Cloud modal. If you repeatedly run into problems completing the integration process, review the above guide in its entirely and double check that each step is completed and your account meets all configuration requirements.
 
 Windows Images
 ^^^^^^^^^^^^^^
