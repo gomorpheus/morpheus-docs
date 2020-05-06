@@ -46,9 +46,12 @@ Change the values to match your configured services:
     elasticsearch['enable'] = false
     elasticsearch['cluster'] = 'esclustername'
     elasticsearch['es_hosts'] = {'10.30.20.91' => 9200, '10.30.20.149' => 9200, '10.30.20.165' => 9200}
+    elasticsearch['use_tls'] = true
+    elasticsearch['auth_user'] = 'morpheus-user'
+    elasticsearch['auth_password'] = 'xxxxxxxxxxxxxxxx'
 
 
-#. Reconfigure Morpheus
+4. Reconfigure Morpheus
 
 .. code-block:: bash
 
