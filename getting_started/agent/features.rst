@@ -37,7 +37,7 @@
 | Other                     | Health & Monitoring     | Yes            | No                |
 +---------------------------+-------------------------+----------------+-------------------+
 
-Additional benefits:
+**Additional benefits:**
 
 * Installation is optional for provisioned and managed VMs
 * The Linux agent can be shrunk and should be less then 0.2% peak
