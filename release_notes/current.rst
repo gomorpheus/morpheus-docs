@@ -12,25 +12,28 @@ New Features
 UI Design Updates
 -----------------
 
+Network Integration Enhancements
+--------------------------------
 
+- NSX-T
+- Stealth
+
+Clouds Integration Enhancements
+-------------------------------
+
+- Azure: Premium SSD disks can now be selected when provisioning or reconfiguring to add volumes
+- Azure: Static IP addresses and IP pools can now be used with subnets, previously subnets defaulted to DHCP
+- Google: Tag compliance policies are now supported for Google clouds, including scanning of existing resources and banner display for non-compliant machines
+- Google: Added the ability to set a statically-assigned DHCP addresses when provisioning
+- Oracle Cloud:
+- SCVMM:
+- OpenStack:
 
 Tasks and Workflows
 -------------------
 
 - Tasks: For email-type Tasks, added an option to remove the |morpheus| email template and render only email content contained in the "CONTENT" field of the Task
 - Tasks: For email-type Tasks, added a Source field to optionally use templates stored in a Git repository or outside URL destination
-
-Azure Enhancements
-------------------
-
-- Azure: Premium SSD disks can now be selected when provisioning or reconfiguring to add volumes
-- Azure: Static IP addresses and IP pools can now be used with subnets, previously subnets defaulted to DHCP
-
-Google (GCP) Enhancements
--------------------
-
-- Google: Tag compliance policies are now supported for Google clouds, including scanning of existing resources and banner display for non-compliant machines
-- Google: Added the ability to set a statically-assigned DHCP addresses when provisioning
 
 Other Enhancements
 ------------------
