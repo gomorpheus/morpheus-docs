@@ -17,6 +17,8 @@ API Allowed Origins
   Specifies which origins are allowed to access the |morpheus| API
 Enable SSL Verification of Agent
   Enable to require SSL certificate installed on appliance for Agent communication
+Disable SSH Password Authentication
+  Disables SSH password authentication as part of provisioning
 
 Tenant Management Settings
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
