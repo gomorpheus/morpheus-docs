@@ -44,7 +44,7 @@ To allow Percona XtraDB Cluster functionality when SELinux is ``Enforcing``, run
     .. code-block:: bash
 
      [root]# vi PXC.te
-
+       module PXC 1.0;
        require {
                type unconfined_t;
                type mysqld_t;
