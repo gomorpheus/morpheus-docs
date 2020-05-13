@@ -72,8 +72,8 @@ Generating Keys and Integrating with |morpheus|
 3. Select JSON format and click CREATE
 4. A JSON-formatted document will be downloaded, this document contains the Project ID, private key, and client email values needed to complete the integration process in the next step
 
-Add a Google Cloud Cloud
-^^^^^^^^^^^^^^^^^^^^^^^^
+Add a GCP Cloud
+^^^^^^^^^^^^^^^
 
 .. Note:: The JSON-formatted document downloaded when creating a key for your service account contains all of the required values for completing the integration. Consult the above section on generating keys if needed.
 
@@ -90,7 +90,7 @@ Add a Google Cloud Cloud
    Project ID
     Google Cloud Project ID
    Private Key
-    The service account private key. Paste in the entire value between (but not including) the quotation marks in your downloaded JSON document, formatted like the following example: "-----BEGIN PRIVATE KEY-----(your_key)-----END PRIVATE KEY-----".
+    The service account private key. Paste in the entire value between (but not including) the quotation marks in your downloaded JSON document, formatted like the following example: -----BEGIN PRIVATE KEY-----(your_key)-----END PRIVATE KEY-----.
    Client Email
     The service account client email, ex: `morpheus@morpheus.iam.gserviceaccount.com`
    Region

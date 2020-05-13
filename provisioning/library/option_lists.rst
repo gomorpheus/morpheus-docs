@@ -11,7 +11,7 @@ Option Lists allow you to give the user more choices during provisioning to then
 Option List Fields
 ^^^^^^^^^^^^^^^^^^
 
-.. NOTE:: The displayed fields in the create/edit Option List modal depend on the TYPE value selected.
+The displayed fields in the create/edit Option List modal depend on the TYPE value selected.
 
 NAME
  Name of the Option List
@@ -20,7 +20,7 @@ DESCRIPTION
 TYPE
  - **REST:** REST API call to populate Option List
  - **Manual:** Manually entered dataset, CSV or JSON
- - **Morpheus API:** Call to |morpheus| API to populate the Option List
+ - ** |morpheus| API:** Call to |morpheus| API to populate the Option List
  - **LDAP:** Searches and returns a list of Active Directory objects
 VISIBILITY
  If the account currently signed in is not in the master tenant, visibility will automatically change to private
@@ -49,17 +49,17 @@ TRANSLATION SCRIPT
 REQUEST SCRIPT
  Create a JS script to prepare the request. Return a data object as the body for a POST request, and return an array containing properties 'name' and 'value' for a GET request. The input data is provided as 'data' and the result should be put on the global variable 'results'
 
-**For Option Lists populated by an LDAP query:**
+ **For Option Lists populated by an LDAP query:**
 
-LDAP URL
+ LDAP URL
   The URL pointing to the LDAP server
-USERNAME
+ USERNAME
   The fully qualified username (with @ suffix syntax) for the binding account
-PASSWORD
+ PASSWORD
   The password for the above account
-LDAP Query
+ LDAP Query
    The LDAP query to pull the appropriate objects. See the next section for an example use case
-TRANSLATION SCRIPT
+ TRANSLATION SCRIPT
    Create a JS script to translate the result data object into an array containing objects with properties 'name' and 'value'. The input data is provided as 'data' and the result should be put on the global variable 'results'.
 
 .. NOTE:: Option Lists are set on one or multiple ``Select List`` or ``Typeahead`` Option Types. The Option Type is then set on an Instance Type, Layout, Cluster Layout, and/or Operational Workflow for input during provisioning or execution.
