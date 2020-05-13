@@ -53,12 +53,6 @@ Security
 
 - Appliance: Starting in v4.1.2 (not new but worth repeating), the default |morpheus| Nginx config removes support for incoming ``TLS v1.0 and v1.1`` connections. Please update source config to be compatible. If necessary, |morpheus| can be configured to support older TLS versions via :ref:`morpheus.rb` config. 
 
-- CVEs Addressed
-  - CVE-2019-17563 *
-  - CVE-2019-17569 *
-  - CVE-2020-1935 *
-  - CVE-2020-1938 *
-  - CVE-2019-20372 *
 
 Integrations
 ============
