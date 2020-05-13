@@ -1,23 +1,34 @@
 .. _integration-guide:
 
-*******************
-Integration Guides
-*******************
+******
+Guides
+******
 
-.. include:: Automation/automation.rst
-.. include:: Backups/backups.rst
-.. include:: BuildIntegrations/buildIntegrations.rst
-.. include:: Clouds/clouds.rst
-.. include:: Containers/containers.rst
-.. include:: Deployments/deployment.rst
-.. include:: DNS/DNS.rst
-.. include:: IdentityManagement/IdentityManagement.rst
-.. include:: ITSM/ITSM.rst
-.. include:: KeysCertificates/keysandcerts.rst
-.. include:: LoadBalancers/LoadBalancers.rst
-.. include:: Logs/Logs.rst
-.. include:: Monitoring/Monitoring.rst
-.. include:: Networking/networking.rst
-.. include:: serviceDiscovery/serviceDiscovery.rst
-.. include:: storage/storage.rst
-.. include:: supportedVersions/supportedVersions.rst
+.. toctree::
+   :maxdepth: 1
+   glob
+   :caption: User Guides
+   
+   getting_started/guides/*
+   
+.. toctree::
+   :maxdepth: 1
+   :caption: Integration Guides
+
+   Automation/automation.rst
+   Backups/backups.rst
+   BuildIntegrations/buildIntegrations.rst
+   Clouds/clouds.rst
+   Containers/containers.rst
+   Deployments/deployment.rst
+   DNS/DNS.rst
+   IdentityManagement/IdentityManagement.rst
+   ITSM/ITSM.rst
+   KeysCertificates/keysandcerts.rst
+   LoadBalancers/LoadBalancers.rst
+   Logs/Logs.rst
+   Monitoring/Monitoring.rst
+   Networking/networking.rst
+   serviceDiscovery/serviceDiscovery.rst
+   storage/storage.rst
+   supportedVersions/supportedVersions.rst

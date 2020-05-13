@@ -16,9 +16,14 @@
    backups/backups
    operations/operations
    tools/tools
-   integration_guides/integration_guides
    troubleshooting/troubleshooting
 
+.. toctree::
+   :maxdepth: 1
+   :caption: Guides
+
+   integration_guides/integration_guides
+   
 .. toctree::
    :maxdepth: 1
    :caption: Morpheus CLI
