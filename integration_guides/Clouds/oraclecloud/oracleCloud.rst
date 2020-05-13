@@ -37,4 +37,4 @@ COMPARTMENT
 INVENTORY
   Turn on for |morpheus| to discover and sync existing VMs
 
-.. include:: /integration_guides/advanced_options.rst
+.. include:: /integration_guides/Clouds/advanced_options.rst

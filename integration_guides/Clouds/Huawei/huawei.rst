@@ -39,4 +39,4 @@ LB TYPE
  Enable Hypervisor Console
   Hypervisor console support for openstack currently only supports novnc. Be sure the novnc proxy is configured properly in your openstack environment.
 
-.. include:: /integration_guides/advanced_options.rst
+.. include:: /integration_guides/Clouds/advanced_options.rst

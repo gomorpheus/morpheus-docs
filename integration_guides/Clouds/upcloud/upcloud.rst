@@ -79,7 +79,7 @@ Configure
 
 The Cloud can now be added to a Group or configured with additional Advanced options.
 
-.. .. include:: /integration_guides/advanced_options.rst
+.. .. include:: /integration_guides/Clouds/advanced_options.rst
 
 Group
 `````
