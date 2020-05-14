@@ -4,6 +4,8 @@ NSX-T
 Overview
 ^^^^^^^^
 
+VMware NSX-T offers network virtualization allowing for creation and management of software-based virtual networks in an efficient and programmatic way. |morpheus| offers a full-featured integration with NSX-T, exposing its networking abstractions in the following sections of the |morpheus| NSX-T integration:
+
 - SUMMARY
 - TRANSPORT ZONES
 - SEGMENTS
@@ -11,8 +13,10 @@ Overview
 - TIER-1 GATEWAYS
 - TIER-0 GATEWAYS
 
-Add NSX-T Integration
-^^^^^^^^^^^^^^^^^^^^^
+This guide goes through the process of integrating an existing NSX-T installation with |morpheus| and working with the associated objects synced in with the integration. For more on installing NSX-T and an overview of its concepts, please review the `NSX-T overview documentation <https://docs.vmware.com/en/VMware-NSX-T-Data-Center/2.0/com.vmware.nsxt.install.doc/GUID-10B1A61D-4DF2-481E-A93E-C694726393F9.html>`_ provided by VMware.
+
+Add NSX-T Integration to |morpheus|
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 #. Navigate to ``Infrastructure > Network > Integrations``
 #. Select Select :guilabel:`+ ADD` > VMWare NSX-T
@@ -46,7 +50,7 @@ Access Transport Zones by navigating to Infrastructure > Networks > Integrations
 - **HOST MEMBERSHIP CRITERIA:** "Standard" or "Enhanced Datapath"
 
 Creating NSX-T Transport Zones
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+``````````````````````````````
 
 #. Navigate to `Infrastructure -> Network`
 #. Select the  `Integrations` tab
@@ -68,7 +72,7 @@ Access Segments by navigating to Infrastructure > Networks > Integrations > (You
 - **HOST MEMBERSHIP CRITERIA:** "Standard" or "Enhanced Datapath"
 
 Creating NSX-T Segments
-^^^^^^^^^^^^^^^^^^^^^^^
+```````````````````````
 
 #. Navigate to `Infrastructure -> Network`
 #. Select the  `Integrations` tab
@@ -95,7 +99,7 @@ Access firewalls by navigating to Infrastructure > Networks > Integrations > (Yo
 - **APPLICATION:** Applies only to rules, "Any", by default
 
 Creating NSX-T Firewall Groups
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+``````````````````````````````
 
 #. Navigate to `Infrastructure -> Network`
 #. Select the  `Integrations` tab
@@ -105,14 +109,14 @@ Creating NSX-T Firewall Groups
 #. Select :guilabel:`Create Group`
 #. Complete the fields in the CREATE GROUP modal:
 
-  - **NAME:** The name of the rule or group within |morpheus|
-  - **DESCRIPTION:** An optional description value for the group
-  - **CATEGORY:** "Ethernet", "Emergency", "Infrastructure", "Environment", or "Application"
+   - **NAME:** The name of the rule or group within |morpheus|
+   - **DESCRIPTION:** An optional description value for the group
+   - **CATEGORY:** "Ethernet", "Emergency", "Infrastructure", "Environment", or "Application"
 
 #. Click :guilabel:`SAVE CHANGES`
 
 Creating NSX-T Firewall Rules
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+`````````````````````````````
 
 #. Navigate to `Infrastructure -> Network`
 #. Select the  `Integrations` tab
@@ -122,16 +126,16 @@ Creating NSX-T Firewall Rules
 #. Select :guilabel:`Create Rule`
 #. Complete the fields in the CREATE RULE modal:
 
-  - **NAME:** The name of the rule or group within |morpheus|
-  - **DESCRIPTION:** An optional description value for the rules
-  - **ENABLED:** Rule is enforced when checked
-  - **DIRECTION:** "In", "Out", or "In-Out"
-  - **SOURCES:** "Any", by default
-  - **DESTINATIONS:** "Any", by default
-  - **SERVICES:** "Any", by default
-  - **PROFILES:** "Any", by default
-  - **SCOPES:** "Any", by default
-  - **POLICY:** "Allow", "Drop", or "Reject"
+   - **NAME:** The name of the rule or group within |morpheus|
+   - **DESCRIPTION:** An optional description value for the rules
+   - **ENABLED:** Rule is enforced when checked
+   - **DIRECTION:** "In", "Out", or "In-Out"
+   - **SOURCES:** "Any", by default
+   - **DESTINATIONS:** "Any", by default
+   - **SERVICES:** "Any", by default
+   - **PROFILES:** "Any", by default
+   - **SCOPES:** "Any", by default
+   - **POLICY:** "Allow", "Drop", or "Reject"
 
 #. Click :guilabel:`+ CREATE`
 
@@ -145,7 +149,7 @@ Access Tier-1 Gateways by navigating to Infrastructure > Networks > Integrations
 - **DESCRIPTION:** An optional description value for the gateway
 
 Creating Tier-1 Gateways
-^^^^^^^^^^^^^^^^^^^^^^^^
+````````````````````````
 
 #. Navigate to `Infrastructure -> Network`
 #. Select the  `Integrations` tab
@@ -154,11 +158,11 @@ Creating Tier-1 Gateways
 #. Select :guilabel:`+ CREATE NSX-T TIER-1 GATEWAY`
 #. Complete the fields in the ADD NETWORK ROUTER modal:
 
-  - **GROUP:** If desired, scope the Tier-1 Gateway to a |morpheus| Group
-  - **NAME:** The name of the Tier-1 Gateway within |morpheus|
-  - **ENABLED:** Tier-1 Gateway is available for use when checked
-  - **TIER-0 Gateway:** Select an existing and enabled Tier-0 Gateway
-  - **EDGE CLUSTER:** Select an existing Edge Cluster
+   - **GROUP:** If desired, scope the Tier-1 Gateway to a |morpheus| Group
+   - **NAME:** The name of the Tier-1 Gateway within |morpheus|
+   - **ENABLED:** Tier-1 Gateway is available for use when checked
+   - **TIER-0 Gateway:** Select an existing and enabled Tier-0 Gateway
+   - **EDGE CLUSTER:** Select an existing Edge Cluster
 
 #. Make selections as needed in the "Route Advertisement" section
 #. Click :guilabel:`ADD NETWORK ROUTER`
@@ -173,7 +177,7 @@ Access Tier-0 Gateways by navigating to Infrastructure > Networks > Integrations
 - **DESCRIPTION:** An optional description value for the gateway
 
 Creating Tier-0 Gateways
-^^^^^^^^^^^^^^^^^^^^^^^^
+````````````````````````
 
 #. Navigate to `Infrastructure -> Network`
 #. Select the  `Integrations` tab
@@ -182,11 +186,11 @@ Creating Tier-0 Gateways
 #. Select :guilabel:`+ CREATE NSX-T TIER-0 GATEWAY`
 #. Complete the fields in the ADD NETWORK ROUTER modal:
 
-  - **GROUP:** If desired, scope the Tier-0 Gateway to a |morpheus| Group
-  - **NAME:** The name of the Tier-0 Gateway within |morpheus|
-  - **ENABLED:** Tier-1 Gateway is available for use when checked
-  - **HA MODE:** "Active Active" or "Active Standby"
-  - **EDGE CLUSTER:** Select an existing Edge Cluster
+   - **GROUP:** If desired, scope the Tier-0 Gateway to a |morpheus| Group
+   - **NAME:** The name of the Tier-0 Gateway within |morpheus|
+   - **ENABLED:** Tier-1 Gateway is available for use when checked
+   - **HA MODE:** "Active Active" or "Active Standby"
+   - **EDGE CLUSTER:** Select an existing Edge Cluster
 
 #. Make selections as needed in the routing and BGP sections
 #. Click :guilabel:`ADD NETWORK ROUTER`
