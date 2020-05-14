@@ -41,7 +41,6 @@ templates_path = ['_templates']
 #
 source_suffix = ['.rst', '.md']
 
-results.fragmenter.maxchars = 300
 # The master toctree document.
 master_doc = 'index'
 
