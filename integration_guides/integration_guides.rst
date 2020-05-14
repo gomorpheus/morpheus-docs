@@ -9,27 +9,27 @@ Guides
    glob
    :caption: User Guides
    
-   /getting_started/guides/*
+   getting_started/guides/*
    
 .. toctree::
    :maxdepth: 1
    :caption: Integration Guides
 
 
-   integration_guides/Automation/automation.rst
-   integration_guides/Backups/backups.rst
-   integration_guides/BuildIntegrations/buildIntegrations.rst
-   integration_guides/Clouds/clouds.rst
-   integration_guides/Containers/containers.rst
-   integration_guides/Deployments/deployment.rst
-   integration_guides/DNS/DNS.rst
-   integration_guides/IdentityManagement/IdentityManagement.rst
-   integration_guides/ITSM/ITSM.rst
-   integration_guides/KeysCertificates/keysandcerts.rst
-   integration_guides/LoadBalancers/LoadBalancers.rst
-   integration_guides/Logs/Logs.rst
-   integration_guides/Monitoring/Monitoring.rst
-   integration_guides/Networking/networking.rst
-   integration_guides/serviceDiscovery/serviceDiscovery.rst
-   integration_guides/storage/storage.rst
-   integration_guides/supportedVersions/supportedVersions.rst
+   integration_guides/Automation/automation
+   integration_guides/Backups/backups
+   integration_guides/BuildIntegrations/buildIntegrations
+   integration_guides/Clouds/clouds
+   integration_guides/Containers/containers
+   integration_guides/Deployments/deployment
+   integration_guides/DNS/DNS
+   integration_guides/IdentityManagement/IdentityManagement
+   integration_guides/ITSM/ITSM
+   integration_guides/KeysCertificates/keysandcerts
+   integration_guides/LoadBalancers/LoadBalancers
+   integration_guides/Logs/Logs
+   integration_guides/Monitoring/Monitoring
+   integration_guides/Networking/networking
+   integration_guides/serviceDiscovery/serviceDiscovery
+   integration_guides/storage/storage
+   integration_guides/supportedVersions/supportedVersions

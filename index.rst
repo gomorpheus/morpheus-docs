@@ -22,7 +22,7 @@
    :maxdepth: 1
    :caption: Guides
 
-   integration_guides/integration_guides
+   integration_guides/guides
    
 .. toctree::
    :maxdepth: 1
