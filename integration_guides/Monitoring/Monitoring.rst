@@ -2,7 +2,8 @@ Monitoring
 ==========
 
 .. toctree::
-  Monitoring/ServiceNowMon.rst
-  Monitoring/AppDynamics.rst
-  Monitoring/NewRelic.rst
+  
+   ServiceNowMon.rst
+   AppDynamics.rst
+   NewRelic.rst
   .. Monitoring/MorpheusInternalMonitoring.rst

@@ -2,8 +2,9 @@ Identity Management
 ===================
 
 .. toctree::
-  IdentityManagement/active_directory.rst
-  IdentityManagement/saml.rst
-  IdentityManagement/AzureAD.rst
-  IdentityManagement/onelogin.rst
-  IdentityManagement/okta.rst
+ 
+   active_directory.rst
+   saml.rst
+   AzureAD.rst
+   onelogin.rst
+   okta.rst

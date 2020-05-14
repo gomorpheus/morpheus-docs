@@ -6,7 +6,7 @@ Morpheus supports an extensive range of software integrations and versions past 
 In addition, |morpheus| is verified to work with, but not limited to:
 
 Integrations
-============
+------------
 
 .. note:: Current iterations of Amazon AWS, Microsoft Azure, Google Cloud Platform, Digital Ocean, HPE OneView, OpenTelekom Cloud, IBM Bluemix, Softlayer and UpCloud are all supported.
 
