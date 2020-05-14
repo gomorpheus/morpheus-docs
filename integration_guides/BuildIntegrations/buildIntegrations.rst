@@ -1,6 +1,6 @@
 Build
-========
+=====
 
 .. toctree::
 
-  BuildIntegrations/jenkins.rst
+  jenkins.rst

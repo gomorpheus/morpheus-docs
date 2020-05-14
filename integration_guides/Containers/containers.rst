@@ -2,4 +2,4 @@ Containers
 ==========
 
 .. toctree::
-  Containers/docker_registry.rst
+   docker_registry.rst
