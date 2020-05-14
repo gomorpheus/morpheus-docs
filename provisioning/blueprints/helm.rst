@@ -20,8 +20,8 @@ In the Helm Configuration section, complete the following fields as needed to sy
 - **SCM INTEGRATION:** If a pre-existing SCM integration is selected here, the available selections in the "Repository" dropdown menu will be filtered to show only those associated with the chosen SCM integration
 - **REPOSITORY:** Select the repository in which your configuration resides
 - **BRANCH OR TAG:** The branch in which your configuration resides
-- **CHART PATH:** The path to your configuration files
-- **CONFIG:** Your selected config file
+- **CHART PATH:** The path to the folder within the repository containing your configuration files, enter "./" if this is the top level folder within the repository
+- **CONFIG:** Config files within your selected folder are displayed here for confirmation
 
 Once finished, click :guilabel:`COMPLETE`.
 
