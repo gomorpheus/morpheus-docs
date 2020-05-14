@@ -270,6 +270,11 @@ display: none;
     background: #404040 !important
 }
 
+@media screen and (max-width: 768px) 
+.wy-nav-top {
+    background: #404040 !important
+}
+
 h2 {
     border-bottom: 2px solid #777777;
 }
@@ -300,12 +305,17 @@ h2 {
 }
 
 .search__result__title {
-    color: #d8292f;
-    border-bottom: 1px solid #6ea0ec;
+    color: #d8292f !important;
+    border-bottom: 1px solid #6ea0ec !important;
 }
 
 .search__outer .bar:after, .search__outer .bar:before {
     background: none;
+}
+
+.search__outer .search__result__content span {
+    background-color: #8cb9d100;
+    border-bottom: 1px solid #000;
 }
 
 .rst-content .highlighted {
