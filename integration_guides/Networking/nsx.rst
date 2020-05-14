@@ -1,5 +1,5 @@
-NSX
----
+NSX-V
+-----
 
 Overview
 ^^^^^^^^
@@ -12,11 +12,11 @@ Overview
 - LOGICAL ROUTERS
 - EDGE GATEWAYS
 
-Add NSX Integration
-^^^^^^^^^^^^^^^^^^^
+Add NSX-V Integration
+^^^^^^^^^^^^^^^^^^^^^
 
 #. Navigate to ``Infrastructure > Network > Integrations``
-#. Select Select :guilabel:`+ ADD` -> VMWare NSX
+#. Select Select :guilabel:`+ ADD` -> VMWare NSX-V
 #. Enter the following:
 
    NAME
@@ -28,7 +28,7 @@ Add NSX Integration
    PASSWORD
     NSX Manager Admin password
    VMWARE CLOUD
-    Select the existing VMware cloud associated with this NSX integration.
+    Select the existing VMware cloud associated with this NSX integration
 
 #. Select :guilabel:`ADD NETWORK INTEGRATION`
 
@@ -37,17 +37,17 @@ Once the NSX Integration is added |morpheus| will sync in existing Transport Zon
 Summary View
 ^^^^^^^^^^^^
 
-When accessing an NSX integration (``Infrastructure > Network > Integrations``), you're taken to the SUMMARY tab by default. As of Morpheus version 4.1.2, the NSX-V integration includes an enhanced summary view that includes global, system, and component statuses, as well as enhanced stats. As of Morpheus version 4.1.2, you can also force a manual refresh of the integration details by clicking :guilabel:`ACTIONS` > Refresh.
+When accessing an NSX-V integration (``Infrastructure > Network > Integrations``), you're taken to the SUMMARY tab by default. In |morpheus| 4.1.2 and later, the NSX-V integration includes an enhanced summary view that includes global, system, and component statuses, as well as enhanced stats. As of Morpheus version 4.1.2, you can also force a manual refresh of the integration details by clicking :guilabel:`ACTIONS` > Refresh.
 
 .. image:: /images/integration_guides/networking/nsx/summary.png
 
 Create NSX Transport Zone
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
-#. Navigate to `INFRASTRUCTURE -> NETWORK`
-#. Select the  `SERVICES` tab
-#. Select the name of NSX Integration
-#. Select the `TRANSPORT ZONES` tab
+#. Navigate to `Infrastructure -> Network`
+#. Select the  `Integrations` tab
+#. Select the name of NSX-V integration
+#. Select the `Transport Zones` tab
 #. Select :guilabel:`+ CREATE NSX TRANSPORT ZONE`
 
    NAME
@@ -56,6 +56,8 @@ Create NSX Transport Zone
     Description for the Transport Zone
    CLUSTER
     Select the Cluster the Transport Zone will be provisioned to
+   REPLICATION MODE
+    "multicast", "unicast", or "hybrid"
 
 Switches
 ^^^^^^^^

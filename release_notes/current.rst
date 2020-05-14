@@ -11,6 +11,7 @@ New Features
 
 UI Design Updates
 -----------------
+
 - Theme: New theme and styling for appliances which are not whitelabeled
 
 Network Integration Enhancements
@@ -26,6 +27,7 @@ Network Integration Enhancements
 
 Cloud Integrations Enhancements
 -------------------------------
+
 - Azure: Premium SSD disks can now be selected when provisioning or reconfiguring to add volumes
 - Azure: Static IP addresses and IP pools can now be used with subnets, previously subnets defaulted to DHCP
 - Azure: Kubernetes AKS version 1.15 replaces 1.13
@@ -38,6 +40,7 @@ Cloud Integrations Enhancements
 
 Tasks and Workflows
 -------------------
+
 - Tasks: For email-type Tasks, added an option to remove the |morpheus| email template and render only email content contained in the "CONTENT" field of the Task
 - Tasks: For email-type Tasks, added a Source field to optionally use templates stored in a Git repository or outside URL destination
 - Tasks: Git repository integration now supported for Shell, Powershell, and jRuby Task types
@@ -262,7 +265,6 @@ API/CLI: CLI | Adding the vCD cloud type using the cli fails to add Cloud
 - Cloud sync on SCVMM cloud discovers all VMs within all clouds when SCVMM cloud is scoped on cloud config.
 - has_auto_scale not flagged for supported nutanix system layouts
 - Convert to managed: Instance record issue when vm name not unique
-
 
 CVEs Addressed
 ==============
