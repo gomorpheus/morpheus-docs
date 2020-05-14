@@ -48,6 +48,10 @@ Tasks and Workflows
 
 Other Enhancements
 ------------------
+
+- Appliance Compatibility: Amazon Linux 2 appliance installation support
+- Appliance Compatibility: RHEL 8 appliance installation support
+- Appliance Compatibility: SUSE 12 and 15 appliance installation support
 - Apps: The App owner can now be edited in Provisioning > Apps > (Selected App) > :guilabel:`EDIT`
 - Blueprints: The Blueprint owner can now be edited or removed in Provisioning > Blueprints > :guilabel:`MORE` > Permissions
 - Catalog: CentOS catalog items added for SCVMM, Hyper-V, and UpCloud Clouds
@@ -57,6 +61,7 @@ Other Enhancements
 - Convert to Managed: Added the option to apply tags when converting an Instance to managed. Tag policy validation (if applicable) also applies
 - Layouts: Layouts can now be scoped to Groups making the list of available Groups at provision time much smaller in appliances that have many
 - Licenses: Version column added to the License list view in Administration > Provisioning > Licenses
+- Maintenance Mode: Drains active sessions and queues so an auto-scaling group can scale down. Can be enabled by System Administrators in Administration > Settings > Utilities > Toggle Maintenance Mode
 - Option Lists: Option Lists can now be populated by LDAP queries
 - Provisioning: |morpheus| will now retry some steps of the provisioning process when needed to prevent occasional node provisioning failure due to environmental factors when provisioning multiple Instances at once
 - Puppet: |morpheus| integration now supports version 6+
@@ -70,6 +75,12 @@ Other Enhancements
 
 API Updates
 ===========
+
+- Amazon: Increased pricing granularity available for individual servers including for compute, storage, memory, and network
+- Azure: Increased pricing granularity available for individual servers including for compute, storage, memory, and network
+- Azure: Static IP addresses and IP pools supported on Azure Subnets
+- Licenses: Improved API coverage of licenses (Administration > Provisioning > Licenses)
+- Prices: Prices can be filtered by platform type
 
 CLI Updates
 ===========

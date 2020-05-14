@@ -23,7 +23,7 @@ Add NSX-T Integration to |morpheus|
 #. Enter the following:
 
    - **NAME:** Name for the NSX Integration in |morpheus|
-   - **API HOST:** URL of NSX Manager
+   - **API HOST:** URL of the NSX Manager (ex. https://x.x.x.x/api)
    - **USERNAME:** NSX Manager Admin Username
    - **PASSWORD:** NSX Manager Admin password
    - **VMWARE CLOUD:** Select the existing VMware cloud associated with this NSX integration
