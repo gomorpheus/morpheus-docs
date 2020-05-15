@@ -9,17 +9,11 @@
 New Features
 ============
 
-UI Design Updates
------------------
-
-- Advanced Filtering: Potentially-large lists, such as Instances (Provisioning > Instances), Hosts (Infrastructure > Hosts > Hosts), and Virtual Machines (Infrastructure > Hosts > Virtual Machines) now have a group of advanced filters that can be activated when needed
-- Custom Views: Many list view pages, such as Instances, Hosts, and Virtual Machines, allow custom views with user-selected output columns. Custom views can also be saved and set as the user's default
-- Theme: New theme and styling for appliances which are not whitelabeled
-
 Network Integration Enhancements
 --------------------------------
 
 - NSX: NSX-T Integration added
+
   - Create, manage, and sync NSX-T security groups and firewall rules
   - Create, manage, and sync NSX-T Transport Zones
   - Create, manage, and sync NSX-T Segments
@@ -48,6 +42,13 @@ Tasks and Workflows
 - Tasks: For email-type Tasks, added a Source field to optionally use templates stored in a Git repository or outside URL destination
 - Tasks: Git repository integration now supported for Shell, Powershell, and jRuby Task types
 - Tasks: Python Tasks now have support for virtual environments
+
+UI Design Updates
+-----------------
+
+- Advanced Filtering: Potentially-large lists, such as Instances (Provisioning > Instances), Hosts (Infrastructure > Hosts > Hosts), and Virtual Machines (Infrastructure > Hosts > Virtual Machines) now have a group of advanced filters that can be activated when needed
+- Custom Views: Many list view pages, such as Instances, Hosts, and Virtual Machines, allow custom views with user-selected output columns. Custom views can also be saved and set as the user's default
+- Theme: New theme and styling for appliances which are not whitelabeled
 
 Other Enhancements
 ------------------
