@@ -3,7 +3,7 @@ Single Node Install on CentOS
 
 To get started installing |morpheus| on CentOS a few preparatory items should be addressed first.
 
-#. Configure firewalld to allow access from users on port 80 or 443 (Or remove firewall if not required).
+#. Configure firewalld to allow access from users on port 443 (Or remove firewall if not required).
 #. Make sure the machine is self resolvable to its own hostname.
 
    .. IMPORTANT:: If the machine is unable to resolve its own hostname ``nslookup hostname`` some installation commands will be unable to verify service health during installation and fail.
