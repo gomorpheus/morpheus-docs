@@ -419,6 +419,7 @@ PowerShell Script
   TYPE
     Python Script (jython)
   RESULT TYPE
+    - None
     - Single Value
     - Key/Value Pairs
     - JSON

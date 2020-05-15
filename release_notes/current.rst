@@ -12,6 +12,8 @@ New Features
 UI Design Updates
 -----------------
 
+- Advanced Filtering: Potentially-large lists, such as Instances (Provisioning > Instances), Hosts (Infrastructure > Hosts > Hosts), and Virtual Machines (Infrastructure > Hosts > Virtual Machines) now have a group of advanced filters that can be activated when needed
+- Custom Views: Many list view pages, such as Instances, Hosts, and Virtual Machines, allow custom views with user-selected output columns. Custom views can also be saved and set as the user's default
 - Theme: New theme and styling for appliances which are not whitelabeled
 
 Network Integration Enhancements
@@ -23,14 +25,14 @@ Network Integration Enhancements
   - Create, manage, and sync NSX-T Segments
   - Create, manage, and sync NSX-T Tier-0 Gateways
   - Create, manage, and sync NSX-T Tier-1 Gateways
- 
+
 - Stealth Integration added
 
 Cloud Integrations Enhancements
 -------------------------------
 
 - Azure: Premium SSD disks can now be selected when provisioning or reconfiguring to add volumes
-- Azure: Static IP addresses and IP pools can now be used with subnets, previously subnets defaulted to DHCP
+- Azure: Static IP addresses and IP pools can now be used with subnets, previously subnets were forced to DHCP
 - Azure: Kubernetes AKS version 1.15 replaces 1.13
 - Google: Tag compliance policies are now supported for Google clouds, including scanning of existing resources and banner display for non-compliant machines
 - Google: Added the ability to set a statically-assigned DHCP addresses when provisioning
@@ -50,9 +52,10 @@ Tasks and Workflows
 Other Enhancements
 ------------------
 
+- Agent Compatibility: SUSE SLES 12 and 15, OpenSUSE Leap agent installation support
 - Appliance Compatibility: Amazon Linux 2 appliance installation support
-- Appliance Compatibility: RHEL 8 appliance installation support
-- Appliance Compatibility: SUSE 12 and 15 appliance installation support
+- Appliance Compatibility: RHEL 8 and CentOS 8 appliance installation support
+- Appliance Compatibility: SUSE SLES 12 and 15, OpenSUSE Leap appliance installation support
 - Apps: The App owner can now be edited in Provisioning > Apps > (Selected App) > :guilabel:`EDIT`
 - Blueprints: The Blueprint owner can now be edited or removed in Provisioning > Blueprints > :guilabel:`MORE` > Permissions
 - Catalog: CentOS catalog items added for SCVMM, Hyper-V, and UpCloud Clouds
@@ -60,6 +63,8 @@ Other Enhancements
 - Catalog: openSUSE 15.1 catalog items added for Amazon, VMware, Nutanix, OpenStack, KVM, and Hyper-V Clouds
 - Convert to Managed: When converting an instance to managed and specifying a Layout tied to custom options (Option Types), the user is prompted with the same options as when provisioning a new Instance with that Layout. If Option Types are configured as required, this validation is also honored when converting to managed
 - Convert to Managed: Added the option to apply tags when converting an Instance to managed. Tag policy validation (if applicable) also applies
+- Docker: System Docker version upgraded to 19.03.8
+- Identity Sources: SAML SSO and Azure AD SAML SSO now allow "Force Authn" in the Advanced Validation Options section of the create and edit identity source modals
 - Layouts: Layouts can now be scoped to Groups making the list of available Groups at provision time much smaller in appliances that have many
 - Licenses: Version column added to the License list view in Administration > Provisioning > Licenses
 - Maintenance Mode: Drains active sessions and queues so an auto-scaling group can scale down. Can be enabled by System Administrators in Administration > Settings > Utilities > Toggle Maintenance Mode
@@ -74,13 +79,32 @@ Other Enhancements
 - VMware vCenter: Removed "Customization Spec" provisioning option to prevent possible conflict with |morpheus|' own guest customization
 - Veeam: |morpheus| Veeam integration now supports version 10
 
+CVEs Addressed
+==============
+
+- CVE-2017-18640
+- CVE-2019-12418
+
+Service Version Changes
+=======================
+
+- ElasticSearch: Upgraded to 7.6.2 from 7.6.1
+- Erlang: Upgraded to 22.3 from 22.0
+- NGINX: Upgraded to 1.17.9 from 1.17.6
+- OpenJDK JRE: Upgraded to 8u252 from 8u242
+- OpenSSL: Upgraded to 1.0.2u from 1.0.2t
+- RabbitMQ: Upgraded to 3.8.3 from 3.7.16
+- Tomcat: Upgraded to 3.0.33 from 9.0.31
+
 API Updates
 ===========
 
 - Amazon: Increased pricing granularity available for individual servers including for compute, storage, memory, and network
 - Azure: Increased pricing granularity available for individual servers including for compute, storage, memory, and network
 - Azure: Static IP addresses and IP pools supported on Azure Subnets
+- Invoices: Invoice line items are now exposed through the API
 - Licenses: Improved API coverage of licenses (Administration > Provisioning > Licenses)
+- Ping: API supports "GET /api/ping" endpoint to replace "GET /setup/check". The new endpoint returns the same information
 - Prices: Prices can be filtered by platform type
 
 CLI Updates
@@ -234,8 +258,8 @@ Fixes
 - IBM Cloud: Fix for Inventory issue when using Proxy
 - vCloud Director: Fix for specified service version not being honored when created a Cloud
 - Openstack: Service Plans that do not meet the selected Image's minimum storage requirements are not filtered in Provisioning Wizards
-- Cloud Formation: Fix for Task or Workflow execution on CF Instances 
-- Docker: Fix for updating the url of a Docker Registry Integration 
+- Cloud Formation: Fix for Task or Workflow execution on CF Instances
+- Docker: Fix for updating the url of a Docker Registry Integration
 
 - Azure API Error Provisioning Error
 - Incorrect Syntax Error when deploying Apps for Helm Blueprint types
@@ -273,13 +297,10 @@ Fixes
 
 .. Issues with SCVMM (great story title)
 
-.. api fixes 
+.. api fixes
 
 .. API/CLI: Security Group 'canManage' Flag not consumable via API
 .. API/CLI: IndexOutOfBounds when updating price-set over API
 .. API/CLI: IndexOutOfBounds when updating price-set over API
 .. API/CLI: Adding subnet permissions through API call returns incorrect status
 .. API/CLI: CLI | Adding the vCD cloud type using the cli fails to add Cloud
-
-CVEs Addressed
-==============
