@@ -17,13 +17,14 @@ UI Design Updates
 Network Integration Enhancements
 --------------------------------
 
-- NSX-T: Ability to integrate with VMware NSX-T server(s)
-- NSX-T: Create, manage, and sync existing NSX-T security groups and firewall rules
-- NSX-T: Create, manage, and sync existing NSX-T Transport Zones
-- NSX-T: Create, manage, and sync existing NSX-T Segments
-- NSX-T: Create, manage, and sync existing NSX-T Tier-0 Gateways
-- NSX-T: Create, manage, and sync existing NSX-T Tier-1 Gateways
-- Stealth
+- NSX: NSX-T Integration added
+  - Create, manage, and sync NSX-T security groups and firewall rules
+  - Create, manage, and sync NSX-T Transport Zones
+  - Create, manage, and sync NSX-T Segments
+  - Create, manage, and sync NSX-T Tier-0 Gateways
+  - Create, manage, and sync NSX-T Tier-1 Gateways
+ 
+- Stealth Integration added
 
 Cloud Integrations Enhancements
 -------------------------------
@@ -217,11 +218,7 @@ Fixes
 
 - Openstack: Fix for generic error message when Openstack quote is exceeded during provisioning. |morpheus| now displays Quota exceeded message with statistics in provisioning wizards.
 - Openstack: Fix for secondary network interface IP address not displaying in UI.
-API/CLI: Security Group 'canManage' Flag not consumable via API
-API/CLI: IndexOutOfBounds when updating price-set over API
-API/CLI: IndexOutOfBounds when updating price-set over API
-API/CLI: Adding subnet permissions through API call returns incorrect status
-API/CLI: CLI | Adding the vCD cloud type using the cli fails to add Cloud
+
 - Apps: Fixe for datastore selection changing when layout was changed to ``Auto Datastore`` in App Wizard
 - NSX-V: Fixed issue where firewall functionality for NSX integration was not applicable for all NSX objects
 - Automation: Fix for Post Provision Tasks executing prior to finalization of Provision phase Config Management Tasks (Salt Stack)
@@ -230,19 +227,16 @@ API/CLI: CLI | Adding the vCD cloud type using the cli fails to add Cloud
 - Clone Wizard: Fix for incorrect layout version displaying when cloning instances from VIO to native openstack
 - PXE: Added support for <%=%> variable syntax in custom Kickstart files
 - AWS: Unsupported RAW image formats removed from provisioning options.
-.. ? SCVMM: Multiple Datastores
+- Openstack: Fix for Octavia Loadbalancer ephemeral ports for containers not being created within the backend listeners
+- Backups: "Backup Retention Count" renamed to "Default Retention Count" in /admin/backup-settings
+- ARM Templates: Fix for ARM Templates with ARM schema '2019-04-01' parsed as invalid json when using repo source
+- Apps: Fix for some Option Type dependencies not being honored
+- IBM Cloud: Fix for Inventory issue when using Proxy
+- vCloud Director: Fix for specified service version not being honored when created a Cloud
+- Openstack: Service Plans that do not meet the selected Image's minimum storage requirements are not filtered in Provisioning Wizards
+- Cloud Formation: Fix for Task or Workflow execution on CF Instances 
+- Docker: Fix for updating the url of a Docker Registry Integration 
 
-.. unformated
-- Ephemeral ports for containers are not being created within the backend listeners on Octavia Loadbalancer
-- Issues with SCVMM
-- Default Backup Retention - Update confusing text
-- Microsoft Azure ARM Templates with ARM schema '2019-04-01' parsed as invalid json when provisioned from Github repo
-- Option Type dependencies not honored when used from within a blueprint/layout
-- IBM Cloud not running inventory correctly - possible Proxy issue
-- vCloud service version in UI
-- Plan:Flavor filter on instance provision wizard
-- Tasks/workflows aren't executing against CF Instance Types
-- Docker registry URL is not saved when creating a new registry integration
 - Azure API Error Provisioning Error
 - Incorrect Syntax Error when deploying Apps for Helm Blueprint types
 - Workflows do not populate option types upon execution when workflows page is not touched for about a minute
@@ -276,6 +270,16 @@ API/CLI: CLI | Adding the vCD cloud type using the cli fails to add Cloud
 - Cloud sync on SCVMM cloud discovers all VMs within all clouds when SCVMM cloud is scoped on cloud config.
 - has_auto_scale not flagged for supported nutanix system layouts
 - Convert to managed: Instance record issue when vm name not unique
+
+.. Issues with SCVMM (great story title)
+
+.. api fixes 
+
+.. API/CLI: Security Group 'canManage' Flag not consumable via API
+.. API/CLI: IndexOutOfBounds when updating price-set over API
+.. API/CLI: IndexOutOfBounds when updating price-set over API
+.. API/CLI: Adding subnet permissions through API call returns incorrect status
+.. API/CLI: CLI | Adding the vCD cloud type using the cli fails to add Cloud
 
 CVEs Addressed
 ==============
