@@ -10,7 +10,7 @@ The Job Executions tab contains execution history of completed Jobs, including a
 - **ETA/TIME:** The time taken for the Job to complete. When expanded, the time to complete each individual Task is also shown
 - **ERROR:** Any errors surfaced are shown here. When expanded, any surfaced errors for individual Tasks are also shown
 
-Click the :guilabel:`(i)` icon at the end of the row for a Job Execution or individual Task (when a Job Execution is expanded) to view the Execution Detail modal which provides the following information:
+Click the ⓘ icon at the end of the row for a Job Execution or individual Task (when a Job Execution is expanded) to view the Execution Detail modal which provides the following information:
 
 - **Name of the Job or individual Task**
 - **Description**
