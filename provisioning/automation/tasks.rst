@@ -9,7 +9,7 @@ Tasks
 .. |http| image:: /images/automation/tasks/http-2d0ab035cb2ee622c520ad3e013e959d.png
 .. |javascript| image:: /images/automation/tasks/javascript-1b4151066591cf1150ce76904e63dd04.png
 .. |jruby| image:: /images/automation/tasks/jruby-3de7c63116cea7cce4116db537ac2458.png
-.. |jython| image:: /images/automation/tasks/jython-842a43046c24ba18f4d78088bce6105f.png
+.. |python| image:: /images/automation/tasks/jython-842a43046c24ba18f4d78088bce6105f.png
 .. |restart| image:: /images/automation/tasks/restart-9fefb1980aa7ff8ecd7f782f19376cda.png
 .. |shellscript| image:: /images/automation/tasks/script-501d006c699c8ffbb471e05e1b975005.png
 .. |template| image:: /images/automation/tasks/containerTemplate-cd1594dec2fd11d5709e12cb94e22d68.png
@@ -41,103 +41,125 @@ Task Types
    * -
      - Task Type
      - Task Description
-     - Task Target
+     - Source Options
+     - Execute Target Options
      - Configuration Requirements
      - Role Permissions Requirements
    * - |ansible|
      - Ansible
      - Runs an Ansible playbook. Ansible Integration required
-     - Instance or Host
+     - Ansible Repo (Git)
+     - Local, Resource
      - Existing Ansible Integration
      - Provisioning: Tasks
    * - |ansibletower|
      - Ansible Tower
      - Relays Ansible calls to Ansible Tower
-     - Instance or Host
+     - Tower Integration
+     - Local, Remote, Resource
      - Existing Ansible Tower Integration
      - Provisioning: Tasks
    * - |chef|
      - Chef bootstrap
      - Executes Chef bootstrap and run list. Chef Integration required
-     - Instance or Host
+     - Chef Server
+     - Resource
      - Existing Chef Integration
+     - Provisioning: Tasks
+   * - |Email|
+     - Email
+     - Send an email from a Workflow
+     - Task Content
+     - Local
+     - SMTP Configured
      - Provisioning: Tasks
    * - |groovy|
      - Groovy script
      - Executes Groovy Script locally (on |morpheus| app node)
+     - Local, Repository, Url
      - Local
      - None
      - Provisioning: Tasks, Tasks - Script Engines
-   * - |Email|
-     - Email
-     - Send an email from a Workflow
-     - Local
-     - None
-     - Provisioning: Tasks
    * - |http|
      - HTTP
      - Executes REST call for targeting external API's.
-     - URL specified in Task
+     - Local
+     - Local
      - None
      - Provisioning: Tasks
    * - |javascript|
      - Javascript
      - Executes Javascript locally (on |morpheus| app node)
      - Local
+     - Local
      - None
      - Provisioning: Tasks, Tasks - Script Engines
    * - |jruby|
      - jRuby Scirpt
      - Executes Ruby script locally (on |morpheus| app node)
+     - Local, Repository, Url
      - Local
      - None
      - Provisioning: Tasks, Tasks - Script Engines
    * - |libraryscript|
      - Library Script
      - Creates a Task from an existing Library Script (``Provisioning -> Library -> Scripts``)
-     - Instance or Host
+     - Library Script
+     - Resource
      - Existing Library Script
      - Provisioning: Tasks
    * - |template|
      - Library Template
      - Creates a Task from an existing Library Template (``Provisioning -> Library-> Templates``)
-     - Instance or Host
+     - Library Template
+     - Resource
      - Existing Library Templates
      - Provisioning: Tasks
-   * - |winrm|
+   * - |powershell|
      - PowerShell Script
-     - Execute PowerShell script against IP specified in Task.
-     - IP specified in Task
+     - Execute PowerShell Script on the Target Resource
+     - Local, Repository, Url
+     - Remote, Resource
      - None
      - Provisioning: Tasks
    * - |puppet|
      - Puppet Agent Install
      - Executes Puppet Agent bootstrap, writes ``puppet.conf`` and triggers agent checkin. Puppet Integration required
-     - Instance or Host
+     - Puppet Master
+     - Resource
      - Existing Puppet Integration
      - Provisioning: Tasks
-   * - |jython|
-     - Python Script (jython)
+   * - |Python|
+     - Python Script
      - Executes Python script locally (on |morpheus| app node)
+     - Local, Repository, Url
      - Local
-     - None
+     - ``virtualenv`` installed on Appliance Nodes (``pip install virtualenv``)
      - Provisioning: Tasks, Tasks - Script Engines
    * - |restart|
      - Restart
-     - Restarts target VM/Host/Container and confirms status before executing next task in Workflow
-     - Instance or Host
+     - Restarts target VM/Host/Container and confirms startup status before executing next task in Workflow
+     - System
+     - Resource
      - None
      - Provisioning: Tasks
    * - |shellscript|
      - Shell Script
-     - Executes Bash script against the Instance or Host the Task or Workflow is ran on
-     - Instance or Host
+     - Executes Bash script on the Target Resource
+     - Local, Repository, Url
+     - Local, Remote, Resource
      - None
      - Provisioning: Tasks
-
+   * - |vro|
+     - vRealize Orchestrator Workflow
+     - Executes vRO Workflow on the Target Resource
+     - vRO Integraiton
+     - Local, Resource
+     - Existing vRO Integration
+     - Provisioning: Tasks
 
 |ansible| Ansible Playbook
-``````````````````````````````````
+``````````````````````````
 :Description:
   Runs an Ansible playbook. Ansible Integration required
 :Target:
@@ -164,7 +186,7 @@ Task Types
    .. IMPORTANT:: Using different Git Ref's for multiple Ansible Tasks in same Workflow is not supported. Git Refs can vary between Workflows, but Tasks in each workflow must use the same Git Ref.
 
 |chef| Chef Bootstrap
-````````````````````````````
+`````````````````````
 :Description:
   Executes Chef bootstrap and run list. Chef Integration required
 :Target:
@@ -193,7 +215,7 @@ Task Types
 
 
 |groovy| Groovy script
-```````````````````````
+``````````````````````
 :Description:
   Executes Groovy Script locally (on app node)
 :Target:
@@ -214,7 +236,7 @@ Task Types
     Contents of Groovy Script to execute
 
 Email
-```````````````````````
+`````
 :Description:
   Allows for sending of email via Workflows
 :Target:
@@ -238,7 +260,7 @@ Email
   The |morpheus| email template is ignored and only HTML in the Content field is used
 
 |http| HTTP (api)
-```````````````````
+`````````````````
 :Description:
   Executes REST call for targeting external API's.
 :Target:
@@ -296,7 +318,7 @@ Email
 
 
 |jruby| jRuby Script
-````````````````````````````
+````````````````````
 :Description:
   Executes Ruby script locally (on app node)
 :Target:
@@ -318,7 +340,7 @@ Email
 
 
 |libraryscript| Library Script
-```````````````````````````````
+``````````````````````````````
 :Description:
   Creates a Task for an existing Library Script (``Provisioning -> Library -> Scripts``)
 :Target:
@@ -338,7 +360,7 @@ Email
     Search for and select existing Library Script
 
 |template| Library Template
-```````````````````````````````
+```````````````````````````
 :Description:
   Creates a Task for an existing Library Template (``Provisioning -> Library-> Templates``)
 :Target:
@@ -354,7 +376,7 @@ Email
     Search for and select existing Library Template
 
 PowerShell Script
-````````````
+`````````````````
 |winrm|
 
 :Description:
@@ -384,7 +406,7 @@ PowerShell Script
     Enter Script to execute
 
 |puppet| Puppet Agent Install
-```````````````````````````````````
+`````````````````````````````
 :Description:
   Executes Puppet Agent bootstrap, writes ``puppet.conf`` and triggers agent checkin. Puppet Integration required
 :Target:
@@ -402,8 +424,8 @@ PowerShell Script
     Enter Puppet Env. eg. ``production``
 
 
-|jython| Python Script (jython)
-`````````````````````````````````````
+|python| Python Script
+``````````````````````
 :Description:
   Executes Python script locally (on app node)
 :Target:
@@ -427,7 +449,7 @@ PowerShell Script
     Python Script (jython) Script to execute
 
 |restart| Restart
-``````````````````````
+`````````````````
 :Description:
   Specifically for use in Workflows after a task that requires a restart, the Restart task executes a restart on the target Instance or Host. Morpheus will wait until the restart is complete to execute the next task in the workflow phase.
 :Target:
@@ -441,7 +463,7 @@ PowerShell Script
     Unique code name for api, cli, and variable reference
 
 |shellscript| Shell Script
-``````````````````````````````````
+``````````````````````````
 :Description:
   Executes Bash script locally (on |morpheus| app node), against the Instance or Host the Task or Workflow is run on, or against the IP specified in the Task
 :Target:
