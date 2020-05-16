@@ -75,7 +75,7 @@ Available Copy fields
 * Terms of Use
 * Privacy Policy
 
-.. NOTE:: Terms of Use and Privacy Policy Footer links will load internal pages at `https://applaince_url/privacy-policy` and `https://applaince_url/terms-of-use` displaying the entered info as plain text.
+.. NOTE:: Terms of Use and Privacy Policy Footer links will load internal pages at ``https://applaince_url/privacy-policy`` and ``https://applaince_url/terms-of-use`` displaying the entered info as plain text.
 ​
 UI Loading Page
 ^^^^^^^^^^^^^^^

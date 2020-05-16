@@ -32,7 +32,7 @@ Users can be created from `Administration -> Users` or `Administration -> Tenant
 
 To create a User:
 
-#. Navigate to either `Administration -> Users` or `Administration -> Tenants -> Select a Tenant.
+#. Navigate to either ``Administration -> Users`` or ``Administration -> Tenants -> Select a Tenant``.
 #. Select :guilabel:`+ CREATE USER`.
 #. From the New User Wizard input:
 
