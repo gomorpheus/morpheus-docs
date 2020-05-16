@@ -14,7 +14,7 @@ Tasks
 .. |shellscript| image:: /images/automation/tasks/script-501d006c699c8ffbb471e05e1b975005.png
 .. |template| image:: /images/automation/tasks/containerTemplate-cd1594dec2fd11d5709e12cb94e22d68.png
 .. |ssh| image:: /images/automation/tasks/ssh-ab1b26b75b17c3ef85f99afdadeb0371.png
-.. |winrm| image:: /images/automation/tasks/winrm-944c5bdddc2dc53b1c32dda533a09ee8.png
+.. |powershell| image:: /images/automation/tasks/winrm-944c5bdddc2dc53b1c32dda533a09ee8.png
 .. |libraryscript| image:: /images/automation/tasks/containerScript-5ec043b7a9611549f58ae27d9e9aa88a.png
 .. |puppet| image:: /images/automation/tasks/puppet-d39e3a20a47d04a44d6d2a854b2acd65.png
 .. |localscript| image:: /images/automation/tasks/localScript-bfbe0063e4e6c35ed1c4e5898c88e007.png
@@ -131,7 +131,7 @@ Task Types
      - Provisioning: Tasks
    * - |Python|
      - Python Script
-     - Executes Python script locally (on |morpheus| app node)
+     - Executes Python Script locally
      - Local, Repository, Url
      - Local
      - ``virtualenv`` installed on Appliance Nodes (``pip install virtualenv``)

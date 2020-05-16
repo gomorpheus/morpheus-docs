@@ -6,6 +6,9 @@
 
 .. IMPORTANT:: There are a number of important considerations to make before upgrading to |morpheus| version |morphver|. Please review our KnowledgeBase article on `upgrade considerations <https://support.morpheusdata.com/s/article/What-to-consider-before-upgrading-to-Morpheus-4-2-0?language=en_US>`_ and read the release notes below thoroughly.
 
+|morpheus| UI Updates
+*********************
+
 New Features
 ============
 
@@ -80,164 +83,6 @@ Other Enhancements
 - VMware vCenter: Removed "Customization Spec" provisioning option to prevent possible conflict with |morpheus|' own guest customization
 - Veeam: |morpheus| Veeam integration now supports version 10
 
-CVEs Addressed
-==============
-
-- CVE-2017-18640
-- CVE-2019-12418
-
-Service Version Changes
-=======================
-
-- ElasticSearch: Upgraded to 7.6.2 from 7.6.1
-- Erlang: Upgraded to 22.3 from 22.0
-- NGINX: Upgraded to 1.17.9 from 1.17.6
-- OpenJDK JRE: Upgraded to 8u252 from 8u242
-- OpenSSL: Upgraded to 1.0.2u from 1.0.2t
-- RabbitMQ: Upgraded to 3.8.3 from 3.7.16
-- Tomcat: Upgraded to 3.0.33 from 9.0.31
-
-API Updates
-===========
-
-- Amazon: Increased pricing granularity available for individual servers including for compute, storage, memory, and network
-- Azure: Increased pricing granularity available for individual servers including for compute, storage, memory, and network
-- Azure: Static IP addresses and IP pools supported on Azure Subnets
-- Invoices: Invoice line items are now exposed through the API
-- Licenses: Improved API coverage of licenses (Administration > Provisioning > Licenses)
-- Ping: API supports "GET /api/ping" endpoint to replace "GET /setup/check". The new endpoint returns the same information
-- Prices: Prices can be filtered by platform type
-
-CLI Updates
-===========
-
-4.2.11
-------
-Fixes
-^^^^^
-- Fixed ping resulting in an error when used on older appliances. Now it falls back to use /api/setup/check instead of erroring.
-- Fixed remote setup error and also improved error handling for setup --remote-url with an insecure url.
-
-4.2.10
-------
-Enhancements
-^^^^^^^^^^^^
-- Prompt for credentials by default, instead of erroring. This was the behavior a long time ago, and now it is once again.
-- Improved output of remote list and remote get
-- Changed remote get to refresh status and version by default, can use option --offline to avoid this.
-- Changed remote get to work like remote current when called with 0 arguments
-- New subcommand remote version.
-- New subcommand remote view.
-- New command setup that works like remote setup
-- New command ping that works like remote check
-- New command activity that works like recent-activity
-- Deprecated recent-activity
-- Updated instances command renaming options --created-by to --owner
-- Updated apps command to show Owner.
-- Updated blueprints command to support Owner.
-- Updated blueprints and apps command to show more information.
-- Updated invoices list -c CLOUD so that name can be passed instead of just id.
-- New option apps update --owner.
-- Removed deprecated command instances update-notes.
-- New subcommand library-layouts update-permissions.
-- Changed the way role permission access values displayed, so they look more like a grid and full is green, while other values are cyan.
-- Some of these enhancements require remote version 4.2.1 to behave properly.
-
-Fixes
-^^^^^
-- Fixed error seen with instances import-snapshot
-- Fixed instances add payload duplicating plan.
-- Grooming of help info for instances, apps and blueprints.
-- Fixed --quiet option still printing a newline.
-- Fixed issues with --remote-url option, it could cause errors or otherwise behave incorrectly.
-- Fixed issue with instances add using the wrong version when specified with -O layout=ID instead of --layout ID
-- Fix library-layouts get ID 404 error incorrectly saying 'Instance Type not found'
-- Fix clouds add not merging -O options into the payload
-- Fixed invoices cost display issues
-
-4.2.9
------
-- Does not exist, skipped release 4.2.9 in favor of calling it 4.2.10
-
-4.2.8
------
-Enhancements
-^^^^^^^^^^^^
-- New option workflows list --type.
-Fixes
-^^^^^
-- Fix apps add including -O networkInterface options when the blueprint has that field locked. This fixes potential serverside error 'ip address required'.
-- Fix users permissions error when using older appliance versions.
-
-.. note:: Some of these enhancements require remote version 4.2.1 to behave properly.
-
-4.2.7
------
-Enhancements
-^^^^^^^^^^^^
-- New options --wrap and --all-fields for all list commands.
-- New option remote check --all that works just like remote check-all.
-- New option curl -v.
-- Updated command groups current to support --remote option.
-- Updated command apps add Environment prompt to be a select instead of text.
-- Updated command apps add Environment prompt to be a select instead of text.
-- Updated apps list and apps get to display Environment
-- Changed No records found messages to be cyan instead of yellow.
-- New option --can-manage for security-groups add/update.
-- Changed workflows get to just show TASK ID in the tasks list, and no longer display ID ('taskSetTaskId').
-- Renamed 'Tags' to 'Labels' in instances get
-- Renamed option --tags to --labels for instances add.
-- Added options --labels and --metadata to instances add
-- Updated command users permissions and users get --all to show all access. requires api 4.2.1
-- Updated command whitelabel-settings to support --account option. requires api 4.2.1
-- New subcommand clouds refresh. requires api 4.2.1
-- New command guidance. requires api 4.2.1
-- Some of these enhancements require remote version 4.2.1 to behave properly.
-
-Fixes
-^^^^^
-- Fix apps add not using blueprint values for layout,plan,networks,volumes,etc.
-- Fix apps add not printing some error messages eg. 'name must be unique'.
-- Fix instances add --security-groups causing invalid argument error.
-- Fix instances add infinite name must be unique error when --no-prompt is used.
-- Fix passwd extraneous output 'args is'.
-
-4.2.4 - 4.2.6
--------------
-Fixes
-^^^^^
-- Fixes for new invoices command.
-
-4.2.3
------
-Enhancements
-^^^^^^^^^^^^
-- Updated command invoices to show more info and make --raw-data an option.
-Fixes
-^^^^^
-- Fixed clouds add groups dropdown being limited to 25.
-- Fixed multiselect option types not working when passed in eg. --tenants "one, two"
-
-4.2.2
------
-Enhancements
-^^^^^^^^^^^^
-- New command ``invoices``
-Fixes
-^^^^^
-Fixed instances add requiring Library permission to fetch layout.
-Fixed instances add requiring Clouds permission to fetch datastores.
-Fixed instances add potential 500 error when retrieving datastores.
-
-4.2.1
------
-Enhancements
-^^^^^^^^^^^^
-- New subcommand service-plans activate
-Fixes
-^^^^^
-Fixed 404 error when fetching layout seen when pointing at appliance versions older than 4.2. This change is to use /library instead of /libray/instance-types when for those resources.
-
 Fixes
 =====
 
@@ -294,14 +139,123 @@ Fixes
 - API payloads are being exposed in workflow execution logs
 - Cloud sync on SCVMM cloud discovers all VMs within all clouds when SCVMM cloud is scoped on cloud config.
 - has_auto_scale not flagged for supported nutanix system layouts
-- Convert to managed: Instance record issue when vm name not unique
+- Fixed Convert to Managed Instance record issue when vm name not unique
 
 .. Issues with SCVMM (great story title)
 
-.. api fixes
+|morpheus| API Updates
+**********************
 
-.. API/CLI: Security Group 'canManage' Flag not consumable via API
-.. API/CLI: IndexOutOfBounds when updating price-set over API
-.. API/CLI: IndexOutOfBounds when updating price-set over API
-.. API/CLI: Adding subnet permissions through API call returns incorrect status
-.. API/CLI: CLI | Adding the vCD cloud type using the cli fails to add Cloud
+API Enhancements
+================
+
+- Amazon: Increased pricing granularity available for individual servers including for compute, storage, memory, and network
+- Azure: Increased pricing granularity available for individual servers including for compute, storage, memory, and network
+- Azure: Static IP addresses and IP pools supported on Azure Subnets
+- Invoices: Invoice line items are now exposed through the API
+- Licenses: Improved API coverage of licenses (Administration > Provisioning > Licenses)
+- Ping: API supports "GET /api/ping" endpoint to replace "GET /setup/check". The new endpoint returns the same information
+- Prices: Prices can be filtered by platform type
+
+API Fixes
+=========
+
+- API/CLI: Fixed Security Group 'canManage' Flag not consumable via API
+- API/CLI: Fixed IndexOutOfBounds when updating price-set over API
+- API/CLI: Fixed IndexOutOfBounds when updating price-set over API
+- API/CLI: Fixed Adding subnet permissions through API call returns incorrect status
+- API/CLI: Fixed CLI | Adding the vCD cloud type using the cli fails to add Cloud
+
+|morpheus| CLI Updates
+**********************
+
+CLI Enhancements
+================
+
+Enhancements
+^^^^^^^^^^^^
+- Prompt for credentials by default, instead of erroring. This was the behavior a long time ago, and now it is once again.
+- Improved output of ``remote list`` and ``remote get``
+- Changed ``remote get`` to refresh status and version by default, can use option ``--offline`` to avoid this.
+- Changed ``remote`` get to work like ``remote current`` when called with 0 arguments
+- New subcommand ``remote version``.
+- New subcommand ``remote view``.
+- New command ``setup`` that works like remote setup
+- New command ``ping`` that works like remote check
+- New command ``activity`` that works like ``recent-activity``
+- Deprecated ``recent-activity``
+- Updated ``instances`` command renaming options ``--created-by`` to ``--owner``
+- Updated ``apps`` command to show Owner.
+- Updated ``blueprints`` command to support Owner.
+- Updated ``blueprints`` and ``apps`` command to show more information.
+- Updated ``invoices list -c CLOUD`` so that name can be passed instead of just id.
+- New option ``apps update --owner``.
+- Removed deprecated command ``instances update-notes``.
+- New subcommand ``library-layouts update-permissions``.
+- Changed the way role permission access values displayed, so they look more like a grid and full is green, while other values are cyan.
+- New option ``workflows list --type``.
+- New options ``--wrap`` and ``--all-fields`` for all list commands.
+- New option ``remote check --all`` that works just like ``remote check-all``.
+- New option ``curl -v``.
+- Updated command ``groups current`` to support ``--remote`` option.
+- Updated command ``apps add Environment`` prompt to be a select instead of text.
+- Updated ``apps list`` and apps get to display Environment
+- Changed No records found messages to be cyan instead of yellow.
+- New option ``--can-manage`` for ``security-groups add/update``.
+- Changed workflows get to just show ``TASK ID`` in the tasks list, and no longer display ``ID`` ('taskSetTaskId').
+- Renamed ``'Tags'`` to ``'Labels'`` in instances get
+- Renamed option ``--tags`` to ``--labels`` for instances add.
+- Added options ``--labels`` and ``--metadata`` to ``instances add``
+- Updated command ``users permissions`` and ``users get --all`` to show all access. requires api 4.2.1
+- Updated command ``whitelabel-settings`` to support ``--account`` option. requires api 4.2.1
+- New subcommand ``clouds refresh``. requires api 4.2.1
+- New command ``guidance``. requires api 4.2.1
+- Some of these enhancements require remote version 4.2.1 to behave properly.
+- Updated command invoices to show more info and make ``--raw-data`` an option.
+- New command ``invoices``
+- New subcommand service-plans activate
+
+Fixes
+^^^^^
+- Fixed ping resulting in an error when used on older appliances. Now it falls back to use ``/api/setup/check`` instead of erroring.
+- Fixed remote setup error and also improved error handling for ``setup --remote-url`` with an insecure url.
+- Fixed error seen with ``instances import-snapshot``
+- Fixed instances add payload duplicating plan.
+- Grooming of help info for instances, apps and blueprints.
+- Fixed ``--quiet`` option still printing a newline.
+- Fixed issues with ``--remote-url`` option, it could cause errors or otherwise behave incorrectly.
+- Fixed issue with instances add using the wrong version when specified with ``-O layout=ID`` instead of ``--layout ID``
+- Fix library-layouts get ID 404 error incorrectly saying ``'Instance Type not found'``
+- Fix clouds add not merging ``-O options`` into the payload
+- Fixed invoices cost display issues
+- Fix apps add including ``-O networkInterface`` options when the blueprint has that field locked. This fixes potential serverside error ``'ip address required'``.
+- Fix users permissions error when using older appliance versions.
+- Fix apps add not using blueprint values for layout,plan,networks,volumes,etc.
+- Fix apps add not printing some error messages eg. ``'name must be unique'``.
+- Fix instances add ``--security-groups`` causing invalid argument error.
+- Fix instances add infinite name must be unique error when --no-prompt is used.
+- Fix passwd extraneous output ``'args is'``.
+- Fixes for new invoices command.
+- Fixed clouds add groups dropdown being limited to 25.
+- Fixed multiselect option types not working when passed in eg. ``--tenants "one, two"``
+- Fixed instances add requiring Library permission to fetch layout.
+- Fixed instances add requiring Clouds permission to fetch datastores.
+- Fixed instances add potential 500 error when retrieving datastores.
+- Fixed 404 error when fetching layout seen when pointing at appliance versions older than 4.2. This change is to use ``/library`` instead of ``/library/instance-types`` when for those resources.
+
+CVEs Addressed
+==============
+
+- CVE-2017-18640
+- CVE-2019-12418
+
+Service Version Changes
+=======================
+
+- ElasticSearch: Upgraded to 7.6.2 from 7.6.1
+- Erlang: Upgraded to 22.3 from 22.0
+- NGINX: Upgraded to 1.17.9 from 1.17.6
+- OpenJDK JRE: Upgraded to 8u252 from 8u242
+- OpenSSL: Upgraded to 1.0.2u from 1.0.2t
+- RabbitMQ: Upgraded to 3.8.3 from 3.7.16
+- Tomcat: Upgraded to 3.0.33 from 9.0.31

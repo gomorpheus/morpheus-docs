@@ -19,7 +19,7 @@
    troubleshooting/troubleshooting
 
 .. toctree::
-   :maxdepth: 1
+   :maxdepth: 3
    :caption: Guides
 
    integration_guides/integration_guides.rst
@@ -37,7 +37,7 @@
    API Documentation <http://bertramdev.github.io/morpheus-apidoc/#introduction>
 
 .. toctree::
-   :maxdepth: 1
+   :maxdepth: 3
    :caption: Release Notes
 
    release_notes/current.rst
