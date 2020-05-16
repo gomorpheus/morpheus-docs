@@ -25,7 +25,6 @@ Clouds
   ucs_manager/ucs_manager.rst
   upcloud/upcloud.rst
   vCloudDirector/vclouddirector.rst
-  virtualbox/virtualbox.rst
   vmware/vmware.rst
   vmwarefusion/vmwarefusion.rst
   xen/xen.rst

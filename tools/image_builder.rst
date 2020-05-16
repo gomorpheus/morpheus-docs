@@ -81,7 +81,7 @@ Sample Preseed Script
 
     %packages --nobase --ignoremissing --excludedocs
     openssh-clients
-    # Prerequisites for installing VMware Tools or VirtualBox guest additions.
+    # Prerequisites for installing VMware Tools guest additions.
     # Put in kickstart to ensure first version installed is from install disk,
     # not latest from a mirror.
     kernel-headers

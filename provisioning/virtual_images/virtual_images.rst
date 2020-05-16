@@ -110,8 +110,6 @@ To Add Virtual Image:
    * QCOW2
    * RAW
    * VHD
-   * VirtualBox
-   * VirtualBox (vdi)
    * VMware (vmdk/ovf/ova)
 
 3. Configure the following on the Virtual Image:
