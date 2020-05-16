@@ -210,37 +210,36 @@ Enhancements
 - Updated command ``whitelabel-settings`` to support ``--account`` option. requires api 4.2.1
 - New subcommand ``clouds refresh``. requires api 4.2.1
 - New command ``guidance``. requires api 4.2.1
-- Some of these enhancements require remote version 4.2.1 to behave properly.
-- Updated command invoices to show more info and make ``--raw-data`` an option.
+- Updated command ``invoices`` to show more info and make ``--raw-data`` an option.
 - New command ``invoices``
 - New subcommand service-plans activate
 
 Fixes
 ^^^^^
-- Fixed ping resulting in an error when used on older appliances. Now it falls back to use ``/api/setup/check`` instead of erroring.
-- Fixed remote setup error and also improved error handling for ``setup --remote-url`` with an insecure url.
+- Fixed ``ping`` resulting in an error when used on older appliances. Now it falls back to use ``/api/setup/check`` instead of erroring.
+- Fixed ``remote setup`` error and also improved error handling for ``setup --remote-url`` with an insecure url.
 - Fixed error seen with ``instances import-snapshot``
-- Fixed instances add payload duplicating plan.
+- Fixed ``instances add`` payload duplicating plan.
 - Grooming of help info for instances, apps and blueprints.
 - Fixed ``--quiet`` option still printing a newline.
 - Fixed issues with ``--remote-url`` option, it could cause errors or otherwise behave incorrectly.
 - Fixed issue with instances add using the wrong version when specified with ``-O layout=ID`` instead of ``--layout ID``
-- Fix library-layouts get ID 404 error incorrectly saying ``'Instance Type not found'``
-- Fix clouds add not merging ``-O options`` into the payload
-- Fixed invoices cost display issues
-- Fix apps add including ``-O networkInterface`` options when the blueprint has that field locked. This fixes potential serverside error ``'ip address required'``.
-- Fix users permissions error when using older appliance versions.
-- Fix apps add not using blueprint values for layout,plan,networks,volumes,etc.
-- Fix apps add not printing some error messages eg. ``'name must be unique'``.
-- Fix instances add ``--security-groups`` causing invalid argument error.
-- Fix instances add infinite name must be unique error when --no-prompt is used.
-- Fix passwd extraneous output ``'args is'``.
+- Fixed ``library-layouts get ID`` 404 error incorrectly saying ``'Instance Type not found'``
+- Fixed ``clouds add`` not merging ``-O options`` into the payload
+- Fixed ``invoices`` cost display issues
+- Fixed ``apps add`` including ``-O networkInterface`` options when the blueprint has that field locked. This fixes potential serverside error ``'ip address required'``.
+- Fixed users permissions error when using older appliance versions.
+- Fixed ``apps add`` not using blueprint values for layout,plan,networks,volumes,etc.
+- Fixed ``apps add`` not printing some error messages eg. ``'name must be unique'``.
+- Fixed ``instances add --security-groups`` causing invalid argument error.
+- Fixed ``instances add`` infinite name must be unique error when --no-prompt is used.
+- Fixed passwd extraneous output ``'args is'``.
 - Fixes for new invoices command.
-- Fixed clouds add groups dropdown being limited to 25.
+- Fixed ``clouds add`` groups dropdown being limited to 25.
 - Fixed multiselect option types not working when passed in eg. ``--tenants "one, two"``
-- Fixed instances add requiring Library permission to fetch layout.
-- Fixed instances add requiring Clouds permission to fetch datastores.
-- Fixed instances add potential 500 error when retrieving datastores.
+- Fixed ``instances add`` requiring Library permission to fetch layout.
+- Fixed ``instances add`` requiring Clouds permission to fetch datastores.
+- Fixed ``instances add`` potential 500 error when retrieving datastores.
 - Fixed 404 error when fetching layout seen when pointing at appliance versions older than 4.2. This change is to use ``/library`` instead of ``/library/instance-types`` when for those resources.
 
 CVEs Addressed
