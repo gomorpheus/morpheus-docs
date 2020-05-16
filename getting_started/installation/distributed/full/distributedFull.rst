@@ -1,13 +1,10 @@
 Full HA Install
 ---------------
 
-.. toctree::
-   :maxdepth: 2
-
-   overview
-   percona
-   perconaTls
-   rabbitmq
-   elasticsearch
-   appliance_ha
-   /getting_started/installation/distributed/HA_Shared_Storage.rst
+.. include::   overview
+.. include::   percona
+.. include::   perconaTls
+.. include::   rabbitmq
+.. include::   elasticsearch
+.. include::   appliance_ha
+.. include::   /getting_started/installation/distributed/HA_Shared_Storage.rst
