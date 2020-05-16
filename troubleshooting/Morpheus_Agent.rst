@@ -22,8 +22,8 @@ Morpheus Agent installation supports multiple install methods.
 - Windows Unattended 
 - Manual 
 
-For All Agent Install modes
----------------------------
+For All Agent Install Methods
+-----------------------------
 
 When an Instance is provisioned and the Agent does not install, verify the following for any Agent install mode:
 
@@ -47,7 +47,7 @@ SSH
 
 * Port 22 is open for Linux images, and SSH is enabled
 
-* Credentials have been stored on the image if using a custom or synced image. Credentials can be entered on images in the Provisioning > Virtual Images section
+* Credentials set on the image if using a custom or synced image. Credentials can be entered on images in the Provisioning > Virtual Images section
 
 WinRM
 -----
@@ -91,7 +91,7 @@ Windows Unattended
 Manual
 ------
 
-1. Agent Install scripts can be downloaded from Morpheus and ran manually on the target host when required via ``Actions -> Download Agent Script`` on the managed Resource. Please note the script will be unique per managed Resource.
+* Agent Install scripts can be downloaded from Morpheus and ran manually on the target host when required via ``Actions -> Download Agent Script`` on the managed Resource. Please note the script will be unique per managed Resource.
 
 Restarting the |morpheus| Agent
 ===============================
