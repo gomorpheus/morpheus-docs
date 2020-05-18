@@ -424,15 +424,11 @@ PowerShell Script
     Enter Puppet Env. eg. ``production``
 
 
-<<<<<<< HEAD
 |jython| Python Script (jython)
-`````````````````````````````````````
+```````````````````````````````
+
 .. IMPORTANT:: Beginning with |morheus| version 4.2.1, Python tasks support virtual environments. For this reason, virtualenv must be installed on your appliances in order to work with Python tasks. Connect to the appliance node(s) and run "pip install virtualenv".
 
-=======
-|python| Python Script
-``````````````````````
->>>>>>> 6168a4e6f52c05d2bd92e6f87dc0efe6ce61732a
 :Description:
   Executes Python script locally (on app node)
 :Target:

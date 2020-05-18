@@ -21,32 +21,32 @@ New Features
 - Azure: Premium SSD disk types are now supported
 - Azure: Static IP address assignment now supported
 - Blueprints: The Blueprint owner can now be edited or removed in Provisioning > Blueprints > :guilabel:`MORE` > Permissions
-- Convert to Managed: Options Types are now supported when converting a resource to managed and selecting a custom layout with associated Option Types. 
+- Convert to Managed: Options Types are now supported when converting a resource to managed and selecting a custom layout with associated Option Types.
 - Convert to Managed: Tags are now supported when converting an Instance to managed. Tag policy validation (if applicable) also applies
 - Docker: System Docker version upgraded to 19.03.8
 - Google: Static IP address assignment now supported
 - Google: Tag compliance policies are now supported for Google clouds, including scanning of existing resources and banner display for non-compliant machines
 - Identity Sources: SAML SSO and Azure AD SAML SSO now allow "Force Authn" in the Advanced Validation Options section of the create and edit Identity Source modals
-- Layouts: Group Access Permissions added to Instance Type Layouts. 
+- Layouts: Group Access Permissions added to Instance Type Layouts.
 - Library: Amazon Linux 2 added to System Library for AWS Clouds
 - Library: openSUSE 15.1 added to System Library for for Amazon, VMware, Nutanix, OpenStack, KVM, and Hyper-V Clouds
 - Licenses: Version column added to the License list view in Administration > Provisioning > Licenses
 - Morpheus UI: Advanced Filters added including Tag Name, Clusters, Instance Type, Resource Pool, and Plan filters on Instance, Host, VM and Bare Metal list views.
 - Morpheus UI: Instance, Host, VM and Bare Metal list view columns can now be arranged via drag and drop
 - Morpheus UI: New top level Status filters added to Instance, Host, VM and Bare Metal list views
-- Morpheus UI: Updated default System Theme with refreshed Logo, Icons and Colors.  
+- Morpheus UI: Updated default System Theme with refreshed Logo, Icons and Colors.
 - Morpheus UI: Views added for Instance, Host and Virtual Machine list views
 - Network: Stealth Security Service Integration added
 - NSX: NSX-T Integration added
-- OpenStack: Rocky, Stein, and Train added to Openstack Version options. 
+- OpenStack: Rocky, Stein, and Train added to Openstack Version options.
 - Option Lists: New LDAP Option List type added
 - Oracle Cloud: |morpheus| now syncs in pricing/costing data for Oracle Cloud Resources
 - Oracle Cloud: Added support for new Regional-type subnets
-- Oracle Cloud: Costing data added to Oracle Cloud summary tab, including current, estimated, historical and per service data. 
+- Oracle Cloud: Costing data added to Oracle Cloud summary tab, including current, estimated, historical and per service data.
 - Provisioning: Retry attempts added to IP Pool address allocation when initial allocation fails
 - Puppet: The |morpheus| Puppet integration now supports version 6+. Note: Puppet versions prior to 6 are no longer supported.
 - Roles: "Reconfigure Servers" Feature Access permission added (Full or None). When set to None, Instance and Host Reconfigure Actions will not be available for applicable users
-- SCVMM: Multiple |morpheus| SCVMM Clouds can now be pointed to the same SCVMM controller. Please note multiple Morpheus Appliances pointed to the same SCVMM controller is not yet supported. 
+- SCVMM: Multiple |morpheus| SCVMM Clouds can now be pointed to the same SCVMM controller. Please note multiple Morpheus Appliances pointed to the same SCVMM controller is not yet supported.
 - ServiceNow: |morpheus| plugin now certified and available on Orlando
 - Settings: ``Disable SSH Password Authentication`` option added to Administration > Settings > Appliance
 - Tasks: Email: Git Repository support added for Email Task content source
@@ -55,8 +55,8 @@ New Features
 - Tasks: Powershell Script: Git Repository support added for Powershell Task script source
 - Tasks: Python: Virtual environment are now used for Python Tasks. Note: ``virtualenv`` is required on all Appliance App nodes. ``pip install virtualenv``
 - Tasks: Shell Script: Git Repository support added for Shell Task script source
-- Users: Effective Role Permissions added to User detail pages to assist in determining a User with multiple Roles assigned's effective permissions 
-- Utilities: Maintenance Mode added. Maintenance Mode drains active sessions and queues to support auto-scale down of |Morpues| Appliance nodes. Note: System Administrator Role required to access ``admin/settings#!utilities``.
+- Users: Effective Role Permissions added to User detail pages to assist in determining effective permissions for a User with multiple roles
+- Utilities: Maintenance Mode added. Maintenance Mode drains active sessions and queues to support auto-scale down of |morpheus| Appliance nodes. Note: System Administrator Role required to access ``admin/settings#!utilities``.
 - Veeam: |morpheus| Veeam integration now supports Veeam version 10
 - VMware: Removed "Customization Spec" provisioning option to prevent possible conflict with |morpheus| triggered Guest Customization
 .. - Catalog: CentOS catalog items added for SCVMM, Hyper-V, and UpCloud Clouds
@@ -86,7 +86,7 @@ Fixes
 - HyperV: Fixed Instance deletion issue when Instance record has associated Backup Results
 - IBM Cloud: Fix for Inventory issue when using Proxy
 - Instances: Fixed existing Network Interface fields not set to Read-Only in Reconfigure modal
-- Jobs:  Fixed Execution logs including associated Morpheus process logs 
+- Jobs:  Fixed Execution logs including associated Morpheus process logs
 - Logs: Fixed rare condition where Instance Log tab would include unrelated log entries
 - NSX-V: Fixed issue where firewall functionality for NSX integration was not applicable for all NSX objects
 - Networks UI: Fix for sorting Network By Service in Networks list view resulted in page error.
@@ -96,20 +96,20 @@ Fixes
 - Openstack: Fix for Octavia Loadbalancer ephemeral ports for containers not being created within the backend listeners
 - Openstack: Fix for generic error message when Openstack quote is exceeded during provisioning. |morpheus| now displays Quota exceeded message with statistics in provisioning wizards.
 - Openstack: Fix for secondary network interface IP address not displaying in UI.
-- Openstack: Fixed issue creating Security Group Rules with source "all" 
+- Openstack: Fixed issue creating Security Group Rules with source "all"
 - Openstack: Service Plans that do not meet the selected Image's minimum storage requirements are not filtered in Provisioning Wizards
 - PXE: Added support for <%=%> variable syntax in custom Kickstart files
 - Reports: Fixed Instance Inventory Summary report displaying deprecated ``max_cpu`` instead of ``max_cores``
-- Reports: Virtual Machine Inventory Report: All IP Addresses are now shown on VM's with multiple IP Addresses. 
-- Reports: Virtual Machine Inventory Report: VM's that have been stopped now display 0% CPU utilization instead of last reported %. Note the updated CPU % can take up to 5 minutes to update. 
-- Roles: Fixed Tenant Role Instance Type and Blueprint Access propagation 
+- Reports: Virtual Machine Inventory Report: All IP Addresses are now shown on VM's with multiple IP Addresses.
+- Reports: Virtual Machine Inventory Report: VM's that have been stopped now display 0% CPU utilization instead of last reported %. Note the updated CPU % can take up to 5 minutes to update.
+- Roles: Fixed Tenant Role Instance Type and Blueprint Access propagation
 - SCVMM: Fixed overzealous SCVMM discovery when |morpheus| SCVMM Cloud config is scoped to a single SCVMM Cloud.
 - Shutdown Policies: Fixed for Extension banners not being displayed on Instances already shutdown from an active Shutdown Policy.
 - Tenants: Fixed expired Subtenant ui session not redirecting to subtenant login url.
 - VMware: Fixed synced Virtual Image Location record issue
 - Wiki: Fixed \`code\` and \`\`\` code block \`\`\` syntax display
 - Workflows: Fixed timeout issue with Option Types not loading when /automation/workflow page that has been open for several minutes
-- Zerto: Fixed paging error on Replication Sites list views. 
+- Zerto: Fixed paging error on Replication Sites list views.
 - vCloud Director: Fix for specified service version not being honored when created a Cloud
 
 |morpheus| API Updates

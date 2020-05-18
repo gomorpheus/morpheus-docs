@@ -9,10 +9,10 @@ When installing and upgrading to |morpheus| |morphver|, refer to the following t
 Breaking Changes
 ================
 
-- Appliance: OS: Ubuntu 14.04 (eol'd) is not longer supported for the Morpheus Appliance Host(s) Operating System. Any |morpheus| Appliance running on 14.04 must be upgraded to 16.04, 18.04 or 20.04 BEFORE upgrading to 4.2.1+. Upgrades on 14.04 will not succeed. 
-- Clouds: VirtualBox, VirtuSteam, and MetaCloud Cloud Types are no longer supported or available. 
+- Appliance: OS: Ubuntu 14.04 has reached its end of life (EOL) and is no longer supported as a Morpheus Appliance Host Operating System. Any |morpheus| Appliance running on 14.04 must be upgraded to 16.04, 18.04 or 20.04 BEFORE upgrading to 4.2.1+. Upgrades on 14.04 will not succeed.
+- Clouds: VirtualBox, VirtuSteam, and MetaCloud Cloud Types are no longer supported or available.
 - Puppet: |morpheus| integration now supports version 6+. Puppet versions prior to 6 are no longer supported.
-- Tasks: Python: Virtual environment are now used for Python Tasks. Note: ``virtualenv`` is required on all Appliance App nodes. ``pip install virtualenv``. 
+- Tasks: Python: Virtual environment are now used for Python Tasks. **Note:** ``virtualenv`` is required on all Appliance App nodes. ``pip install virtualenv``.
 
 |morpheus| Application OS
 =========================
@@ -24,7 +24,7 @@ The Morpheus Application can be installed on the following Operating System vers
 +================+==============+===================================================================================================================================================================================================+
 | CentOS         | 7.x, 8.x     |                                                                                                                                                                                                   |
 +----------------+--------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Ubuntu         | 16.04, 18.04 | 14.04 is no longer supported for Appliance OS. Existing Appliances on 14.04 must upgrade to 16.04 or 18.04 PRIOR to upgrading to v4.2.1! Not: 14.04 is still supported by the |morpheus| Agent.   |
+| Ubuntu         | 16.04, 18.04 | 14.04 is no longer supported for Appliance OS. Existing Appliances on 14.04 must upgrade to 16.04 or 18.04 PRIOR to upgrading to v4.2.1! Note: 14.04 is still supported by the |morpheus| Agent.   |
 +----------------+--------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Debian         | 8, 9         | FreeRDP 2.0 is not compatible with Debian 9. Guacd will remain at 1.0.0 for Appliances running on 9.                                                                                              |
 +----------------+--------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -41,7 +41,7 @@ Services
 |morphver| Service Version Changes
 ----------------------------------
 
-The following service versions have changed from the prior release. Service version changes are only applicable when using Morpheus System services. Externalized services are not upgraded by |morpheus|. 
+The following service versions have changed from the prior release. Service version changes are only applicable when using Morpheus System services. Externalized services are not upgraded by |morpheus|.
 
 - ElasticSearch: Upgraded to 7.6.2 from 7.6.1
 - Erlang: Upgraded to 22.3 from 22.0
@@ -86,8 +86,8 @@ Integrations
 
 .. note:: Current iterations of Amazon AWS, Microsoft Azure, Google Cloud Platform, Digital Ocean, HPE OneView, OpenTelekom Cloud, IBM Bluemix, Softlayer and UpCloud are all supported.
 
-.. important:: VirtualBox, VirtuSteam, and MetaCloud Cloud Types are no longer supported. 
-	
+.. important:: VirtualBox, VirtuSteam, and MetaCloud Cloud Types are no longer supported.
+
 +-------------------+-------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------+
 | Integration       | Supported Version(s)                                                          | Known incompatibilities                                                                                                               |
 +===================+===============================================================================+=======================================================================================================================================+
