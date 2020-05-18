@@ -17,6 +17,8 @@ Breaking Changes
 |morpheus| Application OS
 =========================
 
+.. important:: Existing Appliances on 14.04 must upgrade to 16.04 or 18.04 PRIOR to upgrading to v4.2.1.
+
 The Morpheus Application can be installed on the following Operating System versions:
 
 .. list-table:: **Supported Appliance Operating Systems**
@@ -42,9 +44,8 @@ The Morpheus Application can be installed on the following Operating System vers
      - 
    * - Ubuntu
      - 16.04, 18.04 
-     - 14.04 is no longer supported for Appliance OS. Existing Appliances on 14.04 must upgrade to 16.04 or 18.04 PRIOR to upgrading to v4.2.1! Not: 14.04 is still supported by the |morpheus| Agent.
-     
-     
+     - 14.04 is no longer supported for Appliance OS. Existing Appliances on 14.04 must upgrade to 16.04 or 18.04 PRIOR to upgrading to v4.2.1. Note: 14.04 is still supported by the |morpheus| Agent.
+          
 Services
 ========
 
