@@ -405,6 +405,7 @@ PowerShell Script
   SCRIPT
     Enter Script to execute
 
+
 |puppet| Puppet Agent Install
 `````````````````````````````
 :Description:
@@ -424,10 +425,10 @@ PowerShell Script
     Enter Puppet Env. eg. ``production``
 
 
-|jython| Python Script (jython)
-```````````````````````````````
+|python| Python Script
+``````````````````````
 
-.. IMPORTANT:: Beginning with |morheus| version 4.2.1, Python tasks support virtual environments. For this reason, virtualenv must be installed on your appliances in order to work with Python tasks. Connect to the appliance node(s) and run "pip install virtualenv".
+.. IMPORTANT:: Beginning with |morpheus| version 4.2.1, Python tasks use virtual environments. For this reason, virtualenv must be installed on your appliances in order to work with Python tasks. Connect to the appliance node(s) and run "pip install virtualenv".
 
 :Description:
   Executes Python script locally (on app node)
@@ -442,14 +443,15 @@ PowerShell Script
   CODE
     Unique code name for api, cli, and variable reference
   TYPE
-    Python Script (jython)
+    Python Script
   RESULT TYPE
     - None
     - Single Value
     - Key/Value Pairs
     - JSON
   SCRIPT
-    Python Script (jython) Script to execute
+    Python Script Script to execute
+
 
 |restart| Restart
 `````````````````
@@ -484,7 +486,6 @@ PowerShell Script
     - JSON
   SCRIPT
     Enter Bash Script to execute
-
 
 Task Management
 ^^^^^^^^^^^^^^^
