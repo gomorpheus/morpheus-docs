@@ -1,10 +1,18 @@
 .. _compatibility:
 
-************************
-|morphver| Compatibility
-************************
+*******************************************
+|morphver| Compatibility & Breaking Chnages
+*******************************************
 
 When installing and upgrading to |morpheus| |morphver|, refer to the following to ensure compatibility.
+
+Breaking Changes
+================
+
+- Appliance: OS: Ubuntu 14.04 (eol'd) is not longer supported for the Morpheus Appliance Host(s) Operating System. Any |morpheus| Appliance running on 14.04 must be upgraded to 16.04, 18.04 or 20.04 BEFORE upgrading to 4.2.1+. Upgrades on 14.04 will not succeed. 
+- Clouds: VirtualBox, VirtuSteam, and MetaCloud Cloud Types are no longer supported or available. 
+- Puppet: |morpheus| integration now supports version 6+. Puppet versions prior to 6 are no longer supported.
+- Tasks: Python: Virtual environment are now used for Python Tasks. Note: ``virtualenv`` is required on all Appliance App nodes. ``pip install virtualenv``. 
 
 |morpheus| Application OS
 =========================
@@ -16,7 +24,7 @@ The Morpheus Application can be installed on the following Operating System vers
 +================+==============+===================================================================================================================================================================================================+
 | CentOS         | 7.x, 8.x     |                                                                                                                                                                                                   |
 +----------------+--------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Ubuntu         | 16.04, 18.04 | FreeRDP 2.0 is not compatible with 16.04. Guacd will remain at 1.0.0 for Appliances running on 16.04, and is upgraded to 1.1.0 on Appliances running on 18.04.                                    |
+| Ubuntu         | 16.04, 18.04 | 14.04 is no longer supported for Appliance OS. Existing Appliances on 14.04 must upgrade to 16.04 or 18.04 PRIOR to upgrading to v4.2.1! Not: 14.04 is still supported by the |morpheus| Agent.   |
 +----------------+--------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Debian         | 8, 9         | FreeRDP 2.0 is not compatible with Debian 9. Guacd will remain at 1.0.0 for Appliances running on 9.                                                                                              |
 +----------------+--------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -29,6 +37,19 @@ The Morpheus Application can be installed on the following Operating System vers
 
 Services
 ========
+
+|morphver| Service Version Changes
+----------------------------------
+
+The following service versions have changed from the prior release. Service version changes are only applicable when using Morpheus System services. Externalized services are not upgraded by |morpheus|. 
+
+- ElasticSearch: Upgraded to 7.6.2 from 7.6.1
+- Erlang: Upgraded to 22.3 from 22.0
+- NGINX: Upgraded to 1.17.9 from 1.17.6
+- OpenJDK JRE: Upgraded to 8u252 from 8u242
+- OpenSSL: Upgraded to 1.0.2u from 1.0.2t
+- RabbitMQ: Upgraded to 3.8.3 from 3.7.16
+- Tomcat: Upgraded to 3.0.33 from 9.0.31
 
 When externalizing MySQL, Elasticsearch and/or RabbitMQ services, the following versions are compatible with Morpheus |morphver|:
 
@@ -45,8 +66,6 @@ When externalizing MySQL, Elasticsearch and/or RabbitMQ services, the following 
 +---------------------------------------+-----------------------+-------------------------------------+
 | RabbitMQ                              | 3.5-3.8               | 3.8.3                              |
 +---------------------------------------+-----------------------+-------------------------------------+
-| Redis                                 | REMOVED in v4.1.2     | REMOVED in v4.1.2                   |
-+---------------------------------------+-----------------------+-------------------------------------+
 
 Security
 ========
@@ -54,13 +73,21 @@ Security
 .. important:: Please be aware of the default security enhancements added to v4.1.2+ and assess potential impacts to your env, including agent installation and front end load balancers.
 
 - Appliance: Starting in v4.1.2 (not new but worth repeating), the default |morpheus| Nginx config removes support for incoming ``TLS v1.0 and v1.1`` connections. Please update source config to be compatible. If necessary, |morpheus| can be configured to support older TLS versions via :ref:`morpheus.rb` config.
+- Security: Web Security response headers set for enhanced security
 
+CVEs Addressed
+--------------
+
+- CVE-2017-18640
+- CVE-2019-12418
 
 Integrations
 ============
 
 .. note:: Current iterations of Amazon AWS, Microsoft Azure, Google Cloud Platform, Digital Ocean, HPE OneView, OpenTelekom Cloud, IBM Bluemix, Softlayer and UpCloud are all supported.
 
+.. important:: VirtualBox, VirtuSteam, and MetaCloud Cloud Types are no longer supported. 
+	
 +-------------------+-------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------+
 | Integration       | Supported Version(s)                                                          | Known incompatibilities                                                                                                               |
 +===================+===============================================================================+=======================================================================================================================================+
@@ -112,5 +139,3 @@ Integrations
 +-------------------+-------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------+
 
 .. note:: Non-listed versions may be compatible but are not verified.
-
-If you have any specific requirements please contact support@morpheusdata.com
