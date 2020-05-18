@@ -22,6 +22,7 @@ Breaking Changes
 The Morpheus Application can be installed on the following Operating System versions:
 
 .. list-table:: **Supported Appliance Operating Systems**
+   :widths: auto
    :header-rows: 1
 
    * - OS
