@@ -1,7 +1,7 @@
 .. _compatibility:
 
 *******************************************
-|morphver| Compatibility & Breaking Chnages
+|morphver| Compatibility & Breaking Changes
 *******************************************
 
 When installing and upgrading to |morpheus| |morphver|, refer to the following to ensure compatibility.
