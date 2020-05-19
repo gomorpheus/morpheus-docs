@@ -44,10 +44,10 @@ Ubuntu/Debian
 
    .. code-block:: bash
 
-    sudo vi /etc/morpheus/morpheus.rb
-    
     # edit appliance_url to resolvable url (if not configured correctly by default)
 
+    sudo vi /etc/morpheus/morpheus.rb
+    
 #. Reconfigure the appliance to install required packages
 
    .. code-block:: bash
@@ -57,6 +57,7 @@ Ubuntu/Debian
 The Chef run should complete successfully. There is a small pause when Chef runs the resource remote_file[package_name] action create while Chef verifies the checksum. After the reconfigure is complete, the morpheus-ui will start and be up in a few minutes.
 
 .. NOTE:: Tail the morpheus log file located at /var/log/morpheus/morpheus-ui/current with the command ``morpheus-ctl tail morpheus-ui`` and look for the Morpheus ascii logo to know when the morpheus-ui is up.
+
 
 CentOS/RHEL
 ^^^^^^^^^^^
@@ -80,10 +81,12 @@ CentOS/RHEL
 
     sudo rpm -i morpheus-appliance_package_supplemental_url.noarch.rpm
 
-#. Set the Morpheus UI appliance url (if needed, hostname will be automatically set). Edit appliance_url to resolvable url (if not configured correctly by default)
+#. Set the Morpheus UI appliance url (if needed, hostname will be automatically set). 
 
    .. code-block:: bash
 
+    #Edit appliance_url to resolvable url (if not configured correctly by default)
+    
     sudo vi /etc/morpheus/morpheus.rb
 
 #. Reconfigure the appliance to install required packages
