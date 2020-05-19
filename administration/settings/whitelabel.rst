@@ -77,12 +77,13 @@ Available Copy fields
 
 .. NOTE:: Terms of Use and Privacy Policy Footer links will load internal pages at ``https://applaince_url/privacy-policy`` and ``https://applaince_url/terms-of-use`` displaying the entered info as plain text.
 ​
+
 UI Loading Page
-^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^
 
 When the |morpheus| UI is restarted or loading, a default "Morpheus is Loading" page is displayed. This page can be changed by adding the following to `/etc/morpheus/morpheus.rb` and adjusting the values.
 
-.. NOTE:: `morpheus-ctl reconfigure` must be ran for any chnages to `/etc/morpheus/morpheus.rb` to take effect.
+.. NOTE:: ``morpheus-ctl reconfigure`` must be ran for any changes to `/etc/morpheus/morpheus.rb` to take effect.
 
 .. code-block:: bash
 
