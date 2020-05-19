@@ -35,7 +35,7 @@ The Morpheus Application can be installed on the following Operating System vers
      - 7.x, 8.x 
      -
    * - Debian
-     - 8, 9 
+     - 9, 10
      - FreeRDP 2.0 is not compatible with Debian 9. Guacd will remain at 1.0.0 for Appliances running on 9.
    * - RHEL
      - 7.x, 8.x 
