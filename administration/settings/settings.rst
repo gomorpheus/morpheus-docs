@@ -10,13 +10,17 @@ Host Level Firewall Enabled
   Enables or Disables the host level firewall. This must be Enabled to use |morpheus| Security Groups.
 Appliance URL
   The default URL used for Agent install and Agent functionality. All Instances and Hosts must be able to resolve and reach this URL over 443 for successful agent install and communication.
+  
 .. NOTE:: Alternate Appliance URLs can be configured per Cloud in the `Edit Cloud -> Advanced Options` section.
+
 Internal Appliance URL (PXE)
   For PXE-Boot your appliance needs to be routable directly with minimal NAT masquerading. This allows one to override the default appliance url endpoint for use by the PXE Server. If this is unset, the default appliance url will be used instead.
 API Allowed Origins
-  Specifies which origins are allowed to access the |morpheus| API
-Enable SSL Verification of Agent
-  Enable to require SSL certificate installed on appliance for Agent communication
+  Specifies which origins are allowed to access the |morpheus| API.
+Enable SSL Verification of Agent (Communications)
+  Enabling SSL Verification of Agent Communications requires a valid Certificate be installed on the Appliance.
+Disable SSH Password Authentication
+  Only allow ssh login using SSH keys. When true, SSH Password Authentication will not be enabled for VM's and Hosts provisioned after the setting is enabled. 
 
 Tenant Management Settings
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -48,7 +52,6 @@ To add your own SMTP server you will need to go to the Administration and Settin
 We recommend that you add your Morpheus server to your SMTP white list as well as using user authentication as an additional security measure.
 
 Once you have added your SMTP server information into Morpheus scroll down the Administration and Settings page and press the blue save button which can be found under enabled clouds.
-
 
 When you have saved your SMTP server settings in the Morpheus appliance you will then need to restart the Morpheus-ui. To restart the Morpheus-ui connection to your Morpheus server via ssh and run the below command.
 
@@ -83,40 +86,13 @@ Add a Global Proxy server by entering the following:
 * Proxy Domain
 * Proxy Workstation
 
-Enabled Clouds
-^^^^^^^^^^^^^^
+Enabled Clouds (Types)
+^^^^^^^^^^^^^^^^^^^^^^^
 
-Cloud types can be Enabled or Disabled in this section. When a Cloud type is disabled, it will be removed from the available options when adding new clouds in the `Infrastructure` section.
+Controls which types of Cloud can be created.
 
-Available Cloud types:
-
-* Morpheus
-* OpenStack
-* Amazon
-* Metacloud
-* VMware vCenter
-* VMware vCloud Air
-* SoftLayer
-* Google Cloud
-* Azure (Public)
-* Azure Stack (Private)
-* DigitalOcean
-* VirtualBox
-* VMware Fusion
-* VMWare ESXi
-* Nutanix
-* UCS
-* XenServer
-* Hyper-V
-* MacStadium
-* Oracle VM
-* HP
-* Supermicro
-* Dell
-* SCVMM
-* UpCloud
-* Kubernetes
-* Cloud Foundry
+- When a Cloud type is disabled, it will be removed from the available options when adding new Clouds in ``Infrastructure``. Existing Clouds will not be affected. 
 
 .. include:: whitelabel.rst
 .. include:: license.rst
+.. include:: utilities.rst

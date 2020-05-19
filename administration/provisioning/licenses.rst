@@ -5,7 +5,7 @@ Licenses
 Overview
 --------
 
-The License section is for automating the application of Licensee to Instances while provisioning. Licenses can be added to |morpheus| and then attached to images. |morpheus| will then apply the license to Instances provisioned using the images with license attached. Licenses can be configured for single or multiple Tenants.
+The License section is for automating the application of Licenses to Instances while provisioning. Licenses can be added to |morpheus| and then attached to images. |morpheus| will then apply the license to Instances provisioned using the images with license attached. Licenses can be configured for single or multiple Tenants.
 
 Creating Licenses
 -----------------
@@ -24,11 +24,11 @@ Creating Licenses
    * Full Name
       The Full Name (if applicable) related to the license key
    * Version
-      License Version
+      The License Version
    * Copies
       The Number of copies available on the License
    * Description
-      License description displayed in the Licenses list in |morpheus| . Helpful for identifying License after creation
+      License description displayed in the Licenses list in |morpheus|, helpful for identifying the License after creation
    * Virtual Images
       Search for existing Virtual Images by name and select to attach the image to the license.
           .. NOTE:: Virtual Images are synced from Clouds or added in the `Provisioning -> Virtual Images` section.

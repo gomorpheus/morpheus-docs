@@ -3,8 +3,8 @@ Backups
 
 .. toctree::
 
-  Backups/commvault.rst
-  Backups/veeam.rst
-  Backups/rubrik.rst
-  Backups/zerto.rst
-  Backups/avamar.rst
+  commvault.rst
+  veeam.rst
+  rubrik.rst
+  zerto.rst
+  avamar.rst

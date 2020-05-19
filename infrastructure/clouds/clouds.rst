@@ -25,8 +25,7 @@ Supported Cloud Types
 * IBM Cloud Platform
 * Kubernetes
 * MacStadium
-* Metacloud
-* Morpheus (Generic Cloud type for PXE and manually added Hosts)
+* Morpheus (Generic Cloud type for PXE/Bare Metal and manually added Hosts)
 * Nutanix
 * Open Telekom Cloud
 * OpenStack
@@ -44,8 +43,6 @@ Supported Cloud Types
 * VMware vCenter
 * VMware vCloud Air
 * VMware vCloud Director
-* VirtualBox
-* Virtustream
 * XenServer
 
 Information on each cloud type can be found in the :ref:`integration-guide` section.

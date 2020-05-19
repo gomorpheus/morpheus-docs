@@ -12,7 +12,7 @@ Requirements
 Agent Requirement
 -----------------
 
-SCVMM and Hyper-V integrations utilize the |morpheus| Agent for communication with the |morpheus| appliance, making the |morpheus| Agent required. This also means SCVMM and Hyper-V Clouds can only point to one |morpheus| Appliance at any given time. If another |morpheus| Appliance adds an SCVMM or Hyper-V Cloud thats is already managed by another |morpheus| Appliance, the |morpheus| Agent appliance_url will be updated to point to the new |morpheus| appliance_url, and the previous |morpheus| Appliance will no longer be able to communicate with the SCVMM Cloud or Hyper-V Cloud until the Agent configuration is updated to point to the previous appliance again.
+SCVMM and Hyper-V integrations utilize the |morpheus| Agent for communication with the |morpheus| appliance, making the |morpheus| Agent required. This also means SCVMM and Hyper-V Clouds can only point to one |morpheus| Appliance at any given time. If another |morpheus| Appliance adds an SCVMM or Hyper-V Cloud thats is already managed by another |morpheus| Appliance, the |morpheus| Agent appliance_url will be updated to point to the new |morpheus| appliance_url, and the previous |morpheus| Appliance will no longer be able to communicate with the SCVMM Cloud or Hyper-V Cloud until the Agent configuration is updated to point to the previous appliance again. In |morpheus| version 4.2.1 and higher, multiple |morpheus| clouds can be created by integrating with the same SCVMM host. This allows users to create separate Clouds with are scoped to different SCVMM Cloud, Host and/or Cluster combinations.
 
 .. NOTE:: |morpheus| only supports integration with standalone SCVMM installations and not high-availability cluster installation at this time.
 
@@ -49,6 +49,10 @@ HOST GROUP
   To scope the SCVMM Integration to a single host group, select a host group from the dropdown list. To scope to all host groups, select ``All Hosts``
 CLUSTER
  To scope the SCVMM Integration to a single cluster, select a cluster from the dropdown list. To scope to all host groups, select ``All``
+LIBRARY SHARE
+  Select a Library Share to be used with the cloud integration
+SHARED CONTROLLER
+  When creating additional |morpheus| clouds that point to an SCVMM host already integrated with this appliance, select the appropriate shared controller value from the dropdown
 WORKING PATH
   Path for |morpheus| to write to, for example ``c:\cloud``
 DISK PATH

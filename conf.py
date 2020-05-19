@@ -41,7 +41,6 @@ templates_path = ['_templates']
 #
 source_suffix = ['.rst', '.md']
 
-
 # The master toctree document.
 master_doc = 'index'
 
@@ -90,7 +89,8 @@ html_theme = 'sphinx_rtd_theme'
 # documentation.
 #
 html_theme_options = {
-'logo_only': True
+'logo_only': True,
+'sticky_navigation': True
 }
 
 html_logo = "_static/logo.svg"
@@ -168,7 +168,7 @@ latex_elements = {
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-    (master_doc, 'morpheus411.tex', u'Morpheus Documentation',
+    (master_doc, 'morpheus421.tex', u'Morpheus Documentation',
      u'Morpheus', 'manual'),
 ]
 
@@ -196,12 +196,12 @@ html_theme = "sphinx_rtd_theme"
 html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
 
 def setup(app):
-    app.add_stylesheet('my_theme.css')
+    app.add_stylesheet('morpheusTheme.css')
 
 rst_prolog = """
 .. |morpheus| replace:: Morpheus
 .. |morphbranch| replace:: v4.2
-.. |morphver| replace:: v4.2.0
+.. |morphver| replace:: v4.2.1
 .. |rmqbranch| replace:: v3.5+
 .. |rmqver| replace:: v3.7.16
 .. |mysqlbranch| replace:: v5.7

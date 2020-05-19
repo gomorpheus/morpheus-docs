@@ -8,18 +8,27 @@ Layouts are attached to Instance Types. A Layout can only be attached to a singl
 Layout List View
 ^^^^^^^^^^^^^^^^
 
-The Layout list view shows all available Layouts including Name, Version, associated Instance Type, and Description.
+The default page for Layouts is the Layout list view. Select :guilabel:`+ ADD` to create a new Layout. Layouts can also be created from an Instance Type detail page.
 
-- The Technology filter will filter the displayed Layouts by selected Technology
-- The Instance Type filter will filter the displayed Layouts by associated Instance Type
-- Layout Names link to the Layouts associated Layout Detail page.
-- Instance Types link to the Layouts associated Instance Type Detail page.
-- The pencil icon opens the Edit Layout modal
-- The Trash Can icon deletes the Layout.
+The following fields are displayed for each Layout:
 
-  .. note:: A Layout that is in use cannot be deleted.
+- **NAME:** Links to the Layout detail page
+- **VERSION**
+- **INSTANCE TYPE:** Links to the associated Instance Type
+- **DESCRIPTION**
 
-- Select :guilabel:`+ ADD` to create a new Layout. Layouts can also be created from an Instance Type detail page.
+The Actions menu in each row reveals the following options:
+
+- **Permissions:** Scope the Layout to Group(s) to narrow the list of available groups for a chosen Instance Type at provision time
+- **Edit:** Edit the Layout
+- **Delete:** Delete the Layout
+
+.. note:: A Layout that is in use cannot be deleted.
+
+Available Filters:
+
+- **Technology:** Display Layouts by selected Cloud technology
+- **Instance Type:** Display Layouts by the associated Instance Type
 
 Layout Detail View
 ^^^^^^^^^^^^^^^^^^

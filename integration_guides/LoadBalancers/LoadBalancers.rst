@@ -2,8 +2,8 @@ Load Balancers
 ==============
 
 .. toctree::
-  LoadBalancers/AzureLB.rst
-  LoadBalancers/F5.rst
+   AzureLB.rst
+   F5.rst
   .. LoadBalancers/A10.rst
   .. LoadBalancers/AmazonALB.rst
   .. LoadBalancers/AmazonELB.rst

@@ -10,9 +10,6 @@ Assumptions
 
 This guide assumes the following:
 
-- There is an externalized database running for |morpheus| to access.
-- The database service is a MySQL dialect (MySQL, MariaDB, Galera, etc...)
-- A database has been created for |morpheus| as well as a user and proper grants have been run for the user. |morpheus| will create the schema.
 - The Baremetal nodes cannot access the public internet
 - The base OS is RHEL 7.x
 - Shortname versions of hostnames will be resolvable
@@ -33,13 +30,58 @@ Default Locations
   * Morpheus-UI: ``/var/log/morpheus/morpheus-ui``
   * NginX: ``/var/log/morpheus/nginx``
   * Check Server: ``/var/log/morpheus/check-server``
-  * Elastic Search: ``/var/log/morpheus/elsticsearch``
+  * Elastic Search: ``/var/log/morpheus/elasticsearch``
   * RabbitMQ: ``/var/log/morpheus/rabbitmq``
 
 *  User-defined install/config: ``/etc/morpheus/morpheus.rb``
 
-Steps
-^^^^^
+Database Cluster Setup (Percona XtraDB Cluster)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Out of the box Morpheus uses MySQL but Morpheus supports any mySQL-compliant database. There are many ways to set up a highly available, MySQL dialect-based database. One which has found favor with many of our customers is Percona's XtraDB Cluster.  Percona's product is based off of Galera's WSREP Clustering, which is also supported.
+
+.. important:: Additional configuration for Percona Clusters with TLS enabled is required. Refer to :ref:`Percona TLS` Configuration in our full HA docs for details.
+
+Requirements
+````````````
+
+.. NOTE:: Morpheus idiomatically connects to database nodes over 3306
+
+Once you have your database installed and configured:
+
+#. Create the Database you will be using with morpheus.
+
+   .. code-block:: bash
+
+    mysql> CREATE DATABASE morpheus CHARACTER SET utf8 COLLATE utf8_general_ci;
+
+    mysql> show databases;
+
+#. Next create your morpheus database user. The user needs to be either at the IP address of the morpheus application server or use ``@'%'`` within the user name to allow the user to login from anywhere.
+
+   .. code-block:: bash
+
+    mysql> CREATE USER '$morpheus_db_user_name'@'$source_ip' IDENTIFIED BY '$morpheus_db_user_pw';
+
+#. Next Grant your new morpheus user permissions to the database.
+
+   .. code-block:: bash
+
+    mysql> GRANT ALL PRIVILEGES ON morpheus_db_name.* TO 'morpheus_db_user'@'$source_ip' IDENTIFIED BY 'morpheus_db_user_pw' with grant option;
+
+
+    mysql>  GRANT SELECT, PROCESS, SHOW DATABASES, SUPER ON *.* TO 'morpheus_db_user'@'$source_ip' IDENTIFIED BY 'morpheus_db_user_pw';
+
+    mysql> FLUSH PRIVILEGES;
+
+#. Checking Permissions for your user.
+
+   .. code-block:: bash
+
+    SHOW GRANTS FOR '$morpheus_db_user_name'@'$source_ip';
+
+Continued Installation Steps
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 #. First begin by downloading the requisite |morpheus| packages either to the nodes or to your workstation for transfer. These packages need to be made available on the nodes you wish to install |morpheus| on.
 
@@ -105,14 +147,13 @@ Steps
     mysql['morpheus_db_user'] = 'morpheus'
     mysql['morpheus_password'] = 'password'
 
-   #. Run the reconfigure on all nodes
+   Run the reconfigure on all nodes
 
    .. code-block:: bash
 
     [root@app-server-1 ~] morpheus-ctl reconfigure
 
    |morpheus| will come up on all nodes and Elasticsearch will auto-cluster. The only item left is the manual clustering of RabbitMQ.
-
 
 #. Select one of the nodes to be your Source Of Truth (SOT) for RabbitMQ clustering. We need to copy the secrets for RabbitMQ, copy the erlang cookie and join the other nodes to the SOT node.
 
@@ -284,7 +325,7 @@ If your new installation is part of a migration then you need to move the data f
       Enter password:
 
    This file needs to be pushed to the new |morpheus| Installation’s backend. Depending on the GRANTS in the new MySQL backend, this will likely require moving this file to one of the new |morpheus| frontend servers.
-
+ 
 #. Once the file is in place it can be imported into the backend. Begin by ensuring the |morpheus| UI service is stopped on all of the application servers:
 
    .. code-block:: bash

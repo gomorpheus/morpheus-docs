@@ -9,21 +9,30 @@ Users
 Overview
 ^^^^^^^^
 
-The Users page displays a list of all users. From the users page:
-Create, Edit, and Delete users. The list of users displayed on this page displays Account, Name, Username, Email, and Role.
+The Users page displays a list of all Users. The following fields are surfaced for each User:
 
-.. NOTE:: Some User data from Users created via an Identity Source Integration such as Active Directory is not editable in |morpheus|, as it is synced with the Identity Source.
+- Tenant
+- Display Name
+- Username
+- Email
+- Role
+
+Users which are grayed out in the list are currently inactive and cannot log in. From the Actions menu in each User row, the option is given to Impersonate the User, Edit, or Remove the User.
+
+In |morpheus| 4.2.1 and higher, click on the hyperlinked Display Name of the User to see a page detailing their effective Role permissions. This is especially useful for Users in multiple Roles where it might otherwise be difficult to determine their exact rights. This page looks identical to a User Role create/edit page except none of the fields are editable. Edit the User Role permissions for the User if changes need to be made.
+
+.. NOTE:: Some User data created through an Identity Source integration (such as Active Directory) is not editable in |morpheus|, as it is synced from the Identity Source.
 
 Create User
 ^^^^^^^^^^^
 
-Users can be created from `Administration -> Users` or `Administration -> Tenants -> Select a Tenant -> Users tab`.
+Users can be created from `Administration -> Users` or `Administration -> Tenants -> (selected Tenant) -> Users tab`.
 
 .. NOTE:: Authorized Identity Source Users will be automatically created upon first sign in.
 
 To create a User:
 
-#. Navigate to either `Administration -> Users` or `Administration -> Tenants -> Select a Tenant.
+#. Navigate to either ``Administration -> Users`` or ``Administration -> Tenants -> Select a Tenant``.
 #. Select :guilabel:`+ CREATE USER`.
 #. From the New User Wizard input:
 

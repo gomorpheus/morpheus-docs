@@ -4,346 +4,209 @@
 |morphver| Release Notes
 *************************
 
-.. IMPORTANT:: There are a number of important considerations to make before upgrading to |morpheus| version 4.2.0. Please review our KnowledgeBase article on `upgrade considerations <https://support.morpheusdata.com/s/article/What-to-consider-before-upgrading-to-Morpheus-4-2-0?language=en_US>`_ and read the release notes below thoroughly.
+.. IMPORTANT:: Review :ref:`compatibility` before installing or upgrading to |morpheus| |morphver|.
+
+|morpheus| UI Updates
+*********************
 
 New Features
 ============
 
-Tag Enforcement and Compliance Policy
--------------------------------------
-
-New Tag Policy type with enforcement and compliance scanning added: `LINK <https://support.morpheusdata.com/s/article/How-to-work-with-cloud-tagging-policies?language=en_US>`_
- - A Tag Policy can be enforced both strictly (at provision time) as well as passively on supported clouds
- - A Tag Policy defines the relevant key to validate the presence of, as well as an optional Option List to validate valid values
- - Multiple Tag Policies can be combined to enforce a comprehensive Tag compliance program
- - Server detail pages show warnings if Tags are not compliant
-
-.. note:: Tag Policy scanning and enforcement is currently supported only in Azure, Amazon, and VMware clouds.
-
-.. image:: /images/administration/settings/policies/tagPolicy.jpeg
-   :width: 60%
-
-TAGS renamed to LABELS, METADATA renamed to TAGS
- In |morpheus| UI, TAGS have been renamed to LABELS and METADATA has been renamed to TAGS in all places where these fields appear, such as the Instance provisioning wizard, clone wizard, App wizard, Blueprint wizard, and perhaps other places. This change was made to align |morpheus| UI more closely with public cloud terminology.
-
-.. note:: |morpheus| variables and API naming conventions have not been changed.
-
-NSX Updates
------------
-
-- NSX Logical Router config : ``EXTERNAL NETWORK`` renamed to ``UPLINK NETWORK``
-- Multi-network support added for Uplink and Internal Networks
-- Uplink and Internal IP Addresses now specified per Network after adding via ``+``
-- NSX Edge Gateway modal updated with Appliance, Interfaces, DNS Client and Routing configurations.
-- NSX Firewall Rule modal updated with PROTOCOL specification.
-- Status icons added to Logical Switch tab
-- APPLICATION column added to Firewall tab
-- :guilabel:`+ Create Rule` added to new ``v MORE`` dropdown per security group
-- Group and Rule Icons added
-- ``Appliance`` Config section added to NSX Logical Router creation
-- Group permission added for new Networks and Edge Gateways/Routers
-.. add link to network and group sections below
-
-Role Permission Updates
------------------------
-
-Group Access level option added for Networks and Routers
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-*A user with ``Infrastructure: Networks: Group`` access permissions can:*
-
-- Create shared Networks or assign to Group(s) the User has ``Full`` access to
-- Manage Networks assigned to Group(s) the User has ``Full`` access to
-- View and use Shared Networks (Group set to ``Shared`` in Network config)
-- View Networks assigned to Group(s) the user has ``Read`` access to
-
-*A user with ``Infrastructure: Network Routers: Group`` Access permissions can:*
-
-- Create, Manage and use Routers assigned to Group(s) the user has ``Full`` access to
-- View and use Shared Routers (Group set to ``Shared`` in Router config)
-- View Routers assigned to Group(s) the user has ``Read`` access to
-
-Feature Access permissions updates offer more granular access to Network Domains, Routers and Proxies:
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-- Infrastructure: Network Domains (Access Levels: None/Read/Full)
-- Infrastructure: Network IP Pools (Access Levels: None/Read/Full)
-- Infrastructure: Network Proxies (Access Levels: None/Read/Full)
-- Infrastructure: Network Routers (Access Levels: None/Read/Group/Full)
-- Infrastructure: Networks (Access Levels: None/Read/Group/Full)
-
-Added Network ``GROUP`` ownership setting: `LINK <https://support.morpheusdata.com/s/article/Working-with-Network-Group-ownership?language=en_US>`_
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-- Available for Networks created in |morpheus|
-- Relevant for users with ``Infrastructure: Networks: Group`` Role permissions
-- If a Group is selected, only users with ``Infrastructure: Networks: Group`` Role Permission and Access to specified Group, or ``Infrastructure: Networks: Full`` Role Permission can Manage the Network.
-- If "Shared" is selected, only users with ``Infrastructure: Networks: Full`` Role Permission can Manage the Network.
-
-PXE Boot Menu section updates
------------------------------
-
-The PXE Boot Menu section in *Infrastructure > Boot > BOOT MENUS* has been updated for Boot Menu creation and management, the ability to set Root and Sub Menus, configure images, and answer file scoping: `LINK <https://docs.morpheusdata.com/en/4.2.0/infrastructure/pxeboot/pxeboot.html>`_
-
-Boot Menu Creation with:
-
-- Enabled flag
-- Default Menu flag
-- Root Menu Flag
-- Boot Image scoping (optional)
-- Answer File scoping (optional)
-- Menu Content field
-- Sub Menu(s) selection
-
-System-seeded Boot Menus are displayed and user-created Boot Menus can be edited and deleted.
-
-Jobs: Scheduled run-once executions
------------------------------------
-
-- Jobs can now be scheduled to execute once at a specified date and time: `LINK <https://docs.morpheusdata.com/en/4.2.0/provisioning/jobs/jobs.html#creating-jobs>`_
-
-  .. image:: /images/provisioning/jobs/dateandtime_job.png
-    :width: 60%
-
-Kubernetes Updates
-------------------
-
-- Brownfield Kubernetes Cluster Support, create a new Cluster (Infrastructure > Clusters) with "External Kubernetes Cluster" type to bring an existing Kubernetes cluster into Morpheus: `LINK <https://support.morpheusdata.com/s/article/How-to-add-existing?language=en_US>`_
-- Azure AKS Integration
-- Reconfigure Action now available for Kubernetes Instances
-- Create Cluster wizard (`Infrastructure > Clusters > + ADD CLUSTER`) now allows users to specify the number of worker nodes or the number of hosts for Kubernetes Clusters or Docker/KVM clusters, respectively
-
-  .. image:: /images/infrastructure/clusters/workers_cluster_wizard.png
-    :width: 60%
-
-SCVMM: Discovered VM IP Address Sync
-------------------------------------
-
-- SCVMM cloud discovery now syncs in IP addresses for discovered VMs.
-
-  .. note:: Inventory Existing setting must be enabled on SCVMM Cloud config
-
-
-vCloud Director (vCD) Enhancements
-----------------------------------
-
-The vCloud Director API version can now be specified in vCD Cloud configurations in the API VERSION field
-
-- To override system API version, enter version in API VERSION field (for example: ``31.0``)
-
-AWS Security Token Service (STS) to AssumeRole
-----------------------------------------------
-
-- Now supports security token service to AssumeRole by entering AWS role ARN value when editing or integrating a new Amazon cloud
-
-.. image:: /images/integration_guides/clouds/aws_role_arn.png
-  :width: 60%
-
-Policy Enhancements
--------------------
-
-Policies: Network Quotas
-^^^^^^^^^^^^^^^^^^^^^^^^
-
-Network Quota Policies limit the number of Networks that can be created within the Policy's scope
-
-- Once the quota is reached, Users will not be able to create additional Networks within the applicable Policy enforcement scope
-- Scopes include:
-
-  - Global
-  - Tenant
-  - Group
-  - Cloud
-  - Role
-  - User
-
-Policies: Router Quotas
-^^^^^^^^^^^^^^^^^^^^^^^
-
-Router Quota Policies limit the number of Routers that can be created within the Policy's scope.
-
-- Once the quota limit is reached, Users will not be able to create additional Routers within the applicable Policy enforcement scope
-- Scopes include:
-
-  - Global
-  - Tenant
-  - Group
-  - Cloud
-  - Role
-  - User
-
-Tag Enhancements
-----------------
-
-VMware: Tag Enhancements
-^^^^^^^^^^^^^^^^^^^^^^^^
-
-- Post-Provision Tag additions, updates, and/or removals in |morpheus| on VMware Instances are now synced into VMware
-
-Azure: Tag Enhancements
-^^^^^^^^^^^^^^^^^^^^^^^
-
-- Post-Provision Tag additions, updates, and/or removals in |morpheus| on Azure Instances are now synced into Azure
-
-Other Enhancements
-------------------
-
-- Activty: Recent Activity Report now displays impersonated User info. The Recent Activity Report (Operations > Activity) now shows "User as Impersonated User" for activity records from an impersonated User. Impersonations were previously shown in the Dashboard Activity section, as well as the Audit Log and UI Logs. They are now shown in the Recent Activity Report as well.
-- Appliance: MySQL: Default value for ``max_allowed_packet`` set to ``5242880``
-- Approvals: Reversed default DATE CREATED sort order for Approvals in ``/operations/approvals``
-- ARM: Added process output to history tab for non-VM resources
-- Azure: ARM:  Added support for ``copyindex`` in the event template doesn't properly use ``copyIndex``
-- Cloud-Init: Added support for hashing change passwords in target cloud-init data for any non-Ubuntu 14 based image (Ubuntu 14.04 restriction). This is dependent on Virtual Image OS type and version settings, ensure OS Type is accurately set.
-- CloudFormation: Improved conditional resource handling. When conditional resources fail to create when provisioning CloudFormation Instances or Apps, the resources are removed instead of remaining in |morpheus| as failed.
-- Console: Guacamole upgraded to v1.1.0 on Appliances running on CentOS/RHEL 7.x and Ubuntu 18.04 to add support for FreeRDP 2.0.
-- Creation of networks and routers are now asynchronous processes to improve performance and prevent modal timeout in some scenarios
-- Git and Github Integrations: HTTPS-only auth support added
-- Google Cloud: API Proxy values can now be set under Advanced Options for GCP clouds (when creating a new integration or editing an existing one) as is already possible for other clouds: `LINK <https://docs.morpheusdata.com/en/4.2.0/integration_guides/Clouds/google/google.html#advanced-options>`_
-- IBM Cloud: Frankfurt 4 & 5 Datacenters now supported
-- NSX: Logical Switch creation: Given name is now appended onto end of Logical Switch/Network name
-- Openstack: Added support for attaching multiple Routers to |morpheus|-created Openstack Networks
-- Softlayer: Frankfurt 4 & 5 Datacenters now supported
-- System Library: Ubuntu 18.04 Node Types have been added for the following Clouds: Upcloud, Azure, DigitalOcean, IBM, Oracle Cloud, Open Telekom, SoftLayer, vCD, SCVMM, Alibaba, Hyper-V, ESXi
-- Tasks: Git integration now exists for Groovy Script-type Automation Tasks
-- Workflows: Workflows with a visibility value of "Public" are now viewable and executable by Tenants: `LINK <https://docs.morpheusdata.com/en/4.2.0/provisioning/automation/automation.html#add-workflow>`_
-.. - Removed a hard-coded message stating "You have logged out of |morpheus|." when users who were authenticated through a SAML integration logged out.
-.. - Removed a message stating "If supported by your identity provider and configuration, you have also been logged out of your identity provider" that appeared in some instances when logging out of |morpheus| through Identity Source authentication
-
-API Enhancements
-================
-
-- API: ``Library - Cluster Layouts`` added
-- API: ``Provisioning - Library`` updated
-- API: ``Infrastructure - Network Routers`` added
-- API: ``Infrastructure - Network Integrations`` added
-- API: ``/servers`` and ``/servers/{server_id}`` calls now return the ``resourcePoolId`` and ``folderId`` properties for discovered VMware servers.
-- API: Jobs: Point in Time (Date and Time) execution added.
-  - ``dateTime`` scheduleMode added
-  - ``dateTime`` | N | Date and Time to execute the job. Use UTC time in the format 2020-02-15T05:00:00Z. Required when scheduleMode is ``dateTime``.
-- API: Clusters: Support for number of workers parameter added
-
-CLI Updates
-===========
-
-4.2.7
- Enhancements
-  - New options --wrap and --all-fields for all list commands.
-  - New option remote check --all that works just like remote check-all.
-  - Updated command groups current to support --remote option.
-4.2.4 - 4.2.6
- Fixes
-  - Fixes for new invoices command.
-4.2.3
- Enhancements
-  - Updated command invoices to show more info and make --raw-data an option.
- Fixes
-  - Fixed clouds add groups dropdown being limited to 25.
-  - Fixed multiselect option types not working when passed in eg. --tenants "one, two"
-4.2.2
- Enhancements
-  - New command invoices
- Fixes
-  - Fixed instances add requiring Library permission to fetch layout.
-  - Fixed instances add requiring Clouds permission to fetch datastores.
-  - Fixed instances add potential 500 error when retrieving datastores.
-
-4.2.1
- Enhancements
-  - New subcommand service-plans activate
- Fixes
-  - Fixed 404 error when fetching layout seen when pointing at appliance versions older than 4.2. This change is to use /library instead of /libray/instance-types when for those resources.
-
-4.2 - This release corresponds to the release of the Morpheus API version 4.2.
- Enhancements
-  - New command network-routers
-  - New option networks add --group
-  - New options tasks add --source --url for task types that supporting file-content instead of script content. ie. Groovy and Python
-  - Updated command tasks get with improved output format.
-  - New command library-spec-templates
-  - Updated commands library-option-types, library-option-lists by adding , library-scripts, and library-file-templates with prompting and standard option support.
-  - New option library-instance-types add --option-types [x,y,z].
-  - New option clusters add --worker-count N and clusters add-worker -n N
-  - New option service-plans update --active.
-  - Updated jobs add to support --schedule datetime --datetime DATE.
-  - New option instances add --ports ARRAY and prompting for exposed ports.
- Fixes
-  - Fixed tasks update --payload not being supported.
-  - Fixed prices add and price-sets add prompts to match -O options
-  - Fixed library-cluster-layouts add prompts to match -O options
-  - Fixed cypher put not respecting --key and --value options
+- Agent Compatibility: SUSE SLES 12 and 15, OpenSUSE Leap agent installation support
+- Appliance Compatibility: Amazon Linux 2 appliance installation support
+- Appliance Compatibility: RHEL 8 and CentOS 8 appliance installation support
+- Appliance Compatibility: SUSE SLES 12 and 15, OpenSUSE Leap appliance installation support
+- Apps: The App owner can now be edited in Provisioning > Apps > (Selected App) > :guilabel:`EDIT`
+- Azure: Kubernetes AKS version updated to v1.15 (replaces 1.13)
+- Azure: Premium SSD disk types are now supported
+- Azure: Static IP address assignment now supported
+- Blueprints: The Blueprint owner can now be edited or removed in Provisioning > Blueprints > :guilabel:`MORE` > Permissions
+- Convert to Managed: Options Types are now supported when converting a resource to managed and selecting a custom layout with associated Option Types.
+- Convert to Managed: Tags are now supported when converting an Instance to managed. Tag policy validation (if applicable) also applies
+- Docker: System Docker version upgraded to 19.03.8
+- Google: Static IP address assignment now supported
+- Google: Tag compliance policies are now supported for Google clouds, including scanning of existing resources and banner display for non-compliant machines
+- Identity Sources: SAML SSO and Azure AD SAML SSO now allow "Force Authn" in the Advanced Validation Options section of the create and edit Identity Source modals
+- Layouts: Group Access Permissions added to Instance Type Layouts.
+- Library: Amazon Linux 2 added to System Library for AWS Clouds
+- Library: openSUSE 15.1 added to System Library for for Amazon, VMware, Nutanix, OpenStack, KVM, and Hyper-V Clouds
+- Licenses: Version column added to the License list view in Administration > Provisioning > Licenses
+- Morpheus UI: Advanced Filters added including Tag Name, Clusters, Instance Type, Resource Pool, and Plan filters on Instance, Host, VM and Bare Metal list views.
+- Morpheus UI: Instance, Host, VM and Bare Metal list view columns can now be arranged via drag and drop
+- Morpheus UI: New top level Status filters added to Instance, Host, VM and Bare Metal list views
+- Morpheus UI: Updated default System Theme with refreshed Logo, Icons and Colors.
+- Morpheus UI: Views added for Instance, Host and Virtual Machine list views
+- Network: Stealth Security Service Integration added
+- NSX: NSX-T Integration added
+- OpenStack: Rocky, Stein, and Train added to Openstack Version options.
+- Option Lists: New LDAP Option List type added
+- Oracle Cloud: |morpheus| now syncs in pricing/costing data for Oracle Cloud Resources
+- Oracle Cloud: Added support for new Regional-type subnets
+- Oracle Cloud: Costing data added to Oracle Cloud summary tab, including current, estimated, historical and per service data.
+- Provisioning: Retry attempts added to IP Pool address allocation when initial allocation fails
+- Puppet: The |morpheus| Puppet integration now supports version 6+. Note: Puppet versions prior to 6 are no longer supported.
+- Roles: "Reconfigure Servers" Feature Access permission added (Full or None). When set to None, Instance and Host Reconfigure Actions will not be available for applicable users
+- SCVMM: Multiple |morpheus| SCVMM Clouds can now be pointed to the same SCVMM controller. Please note multiple Morpheus Appliances pointed to the same SCVMM controller is not yet supported.
+- ServiceNow: |morpheus| plugin now certified and available on Orlando
+- Settings: ``Disable SSH Password Authentication`` option added to Administration > Settings > Appliance
+- Tasks: Email: Git Repository support added for Email Task content source
+- Tasks: Email: Whitelabel support added for Email Task types
+- Tasks: jRuby Script: Git Repository support added for jRuby Task script source
+- Tasks: Powershell Script: Git Repository support added for Powershell Task script source
+- Tasks: Python: Virtual environment are now used for Python Tasks. Note: ``virtualenv`` is required on all Appliance App nodes. ``pip install virtualenv``
+- Tasks: Shell Script: Git Repository support added for Shell Task script source
+- Users: Effective Role Permissions added to User detail pages to assist in determining effective permissions for a User with multiple roles
+- Utilities: Maintenance Mode added. Maintenance Mode drains active sessions and queues to support auto-scale down of |morpheus| Appliance nodes. Note: System Administrator Role required to access ``admin/settings#!utilities``.
+- Veeam: |morpheus| Veeam integration now supports Veeam version 10
+- VMware: Removed "Customization Spec" provisioning option to prevent possible conflict with |morpheus| triggered Guest Customization
+.. - Catalog: CentOS catalog items added for SCVMM, Hyper-V, and UpCloud Clouds
 
 Fixes
 =====
 
-- Amazon/AWS: Fixed issue with detected Plan changes updating VM records but not Instance records
-- Apps: App wizard validation fixes *
-- ARM: Added support for ``"tags": "[variables('resourceTags')]``
-- Automation: Execute Scheduling: Fixed issues with deletion of Execution Schedules
-- Azure: Fixed usage records not updating when Morpheus Agent fails to install.
-- Azure: SQL DBaaS: Added support Databases names that include spaces
-- Azure: Fixed an issue causing Network permissions not to be retained after an upgrade %
-- Backups: Backup List: Fixed ``All`` Status filter value displayed as as ``Undefined``
-- Backups: Local Time value now displayed for Latest date/time on Backup Detail
-- Backups: Minor backend fix to ensure proper behavior when creating a backup ^
-- Billing: Fixed an issue that caused datastore billing not to appear for managed vm's under specific conditions *
-- Cisco ACI: Fixed issue with deleting Cisco ACI Integrations
-- Convert to managed: Converted a variable data type from integer to long text which prevents an error in the ‘Convert to Managed’ process in certain scenarios *
-- Convert to Managed: Fixed issue with Tenant visibility on Library Layouts when "Support Convert to managed" is enabled.
-- EKS: Fixed Amazon EKS Service Plan seed issue when upgrading from v4.0.0 or prior *
-- Instances: Groups Filter: Fixed issue listing all Groups in filter choices when more 100+ Groups exist
-- Instances: Fixed an issue causing pagination not to work on the History tab %
-- Kubernetes: Fixed issue when provisioning Hosts with insufficient memory
-- Kubernetes: Service Mesh improvements
-- Kubernetes: Fixed an issue preventing Kubernetes App Blueprint deployment ^
-- Networks: Fixed error when editing Network Tenant access from the Networks list on the Cloud detail page *
-- Networks: Fixed issue with Custom Network updates not saving when no Tenants exist
-- NSX-V: Can now set default gateway (Logical Routers > Gateway) *
-- NSX-V: Fixed an issue preventing the creation of firewall rules with source and destination *
-- NSX-V: Fixed an issue where vNIC was not set on default routes for DLR and EDGE *
-- NSX: Fixed issue with Logical Switch and Edge Gateway Tenant assignment on Logical Switches and Edge Gateways created inside a Subtenant.
-- NSX: Fixed issue with NSX Edge Gateway creation related to invalid Resource Pool specification
-- NSX: Fixed network creation on synced DLR's
-- NSX: Fixed secondary network creation on created DLR's
-- NSX: Updated NSX Network display names on the Instance provisioning wizard to make them prettier *
-- Openstack Clouds:  Fixed associated Load Balancer visibility not updating when Cloud visibility is changed from Public to Private.
-- Openstack Clouds: Fixed default tenant assignment of synced Routers upon cloud creation when cloud is assigned to sub-tenant.
-- Openstack: Synced Private Networks' Type now displayed as ``Private Network`` instead of ``VLAN``
-- Oracle VM: Fixed issues with intermittent provision failures in a HA environments due to appliance in-memory cloud-init ISO config.
-- OTC: Added image deletion for failed image import service uploads.
-- Policies: Security Banner: Fixed issues with Security Banner display for Subtenant Login URLs
-- Provisioning: Fix for Typeahead Option Type variables not evaluating in Provisioning Wizard Review tab.
-- Python Tasks: Fix for Python Tasks script and output size constraints
-- Reports: Cloud-specific tenant costing analytics report values fix
-- Reports: Updates for ``Print`` layout formatting
-- Security Groups: Fixed possibility of synced private security groups listing in subtenants
-- Tenant Registration: Email sign-in link now links to Tenant url/subdomain instead of Master Tenant base url.
-- Tenants: Fixed issue when deleting a Tenant with existing Power Schedules
-- Tenants: Fixed issues where existing ``reference_data`` would prevent Tenant deletion.
-- vCloud Director: Fix removal of vApp when deleting an Instance in morpheus that has been stopped in vCD and vApp is in partially running state.
-- vCloud Director: Fixed Cloud Sync Status showing ``OK`` when Cloud Sync was not successful
-- vCloud Director: Fixed issue with volume deletes on discovered server syncing, preventing Usage Record updates.
-- vCloud Director: Fixes scenario where plan size changes in vCD were not detected on next sync, potentially causing restart warning on reconfigure to not display.
-- vCloud Director: Windows: Fixed Agent Installation Script injection into Guest OS Customizations when Domain Join is enabled
-- VMware: Fixed 'Import As Image' session timeouts when ovf export takes longer than 20 minutes.
-- VMware: Fixed issue with Datastore placement calculations and error surfacing when creating 2+ VMware Instance copies.
-- Windows Execution: Fixed potential issue in HA Environments related to Windows Agent websocket session ID, .net not being good at random, and Spring.
-- Workflows: Fixed issue with Workflows with Multiple Options Types displaying when 2nd Option Type has no default value.
-- Xen: Resolved issue where volume size changes in Xen were only reflected on Virtual Machine records, not Instance and Container records.
+- ARM Templates: Fix for ARM Templates with ARM schema '2019-04-01' parsed as invalid json when using repo source
+- AWS: Fixed synced Security Group Rule "Source" field value
+- AWS: The Name value for synced Security Group Rules will now equal the source rules Description value if populated in AWS. If Description is not populate, Port Range will continue to be used for the Security Group Rule Name
+- AWS: Unsupported RAW image formats removed from provisioning options.
+- Active Directory: Fixed issue with User authentication when a Users domain suffix contains numbers
+- Active Directory: Fixed issue with colons in active directory group names
+- Apps: Fix for some Option Type dependencies not being honored
+- Apps: Fixe for datastore selection changing when layout was changed to ``Auto Datastore`` in App Wizard
+- Automation: Fix for Post Provision Tasks executing prior to finalization of Provision phase Config Management Tasks (Salt Stack)
+- Azure: Added support for creating additional Volumes on Azure Private Images at provision time (Previously only supported on Reconfigure)
+- Azure: Fixed "StandardSSD_LRS" API Version issue
+- Azure: Fixed syncing of Service Plans that are not available in scoped Azure Region
+- Backups: "Backup Retention Count" renamed to "Default Retention Count" in /admin/backup-settings
+- Blueprints: Fixed incorrect Syntax error for Helm Blueprint types
+- Clone Wizard: Fix for incorrect layout version displaying when cloning instances from VIO to native openstack
+- Cloud Formation: Fix for Task or Workflow execution on CF Instances
+- Convert to Managed: Fixed `Convert to Managed` Instance record creation issue when the source VM name matches existing Instance name (Instance Name uniqueness constraint).
+- Docker: Fix for updating the url of a Docker Registry Integration
+- Domains: Fixed Cloud Default Domain setting not applying to Domain Joins when Domain not set on Network
+- HyperV: Fixed Instance deletion issue when Instance record has associated Backup Results
+- IBM Cloud: Fix for Inventory issue when using Proxy
+- Instances: Fixed existing Network Interface fields not set to Read-Only in Reconfigure modal
+- Jobs:  Fixed Execution logs including associated Morpheus process logs
+- Logs: Fixed rare condition where Instance Log tab would include unrelated log entries
+- NSX-V: Fixed issue where firewall functionality for NSX integration was not applicable for all NSX objects
+- Networks UI: Fix for sorting Network By Service in Networks list view resulted in page error.
+- Nutanix Fixed partial Virtual Image sync when the same Nutanix cluster is added to Master Tenant and Subtenant Clouds
+- Nutanix: Added auto-scaling support for system Nutanix Tomcat layouts
+- Openstack clouds: Fixed creation of additional Network Interfaces during Reconfigure
+- Openstack: Fix for Octavia Loadbalancer ephemeral ports for containers not being created within the backend listeners
+- Openstack: Fix for generic error message when Openstack quote is exceeded during provisioning. |morpheus| now displays Quota exceeded message with statistics in provisioning wizards.
+- Openstack: Fix for secondary network interface IP address not displaying in UI.
+- Openstack: Fixed issue creating Security Group Rules with source "all"
+- Openstack: Service Plans that do not meet the selected Image's minimum storage requirements are not filtered in Provisioning Wizards
+- PXE: Added support for <%=%> variable syntax in custom Kickstart files
+- Reports: Fixed Instance Inventory Summary report displaying deprecated ``max_cpu`` instead of ``max_cores``
+- Reports: Virtual Machine Inventory Report: All IP Addresses are now shown on VM's with multiple IP Addresses.
+- Reports: Virtual Machine Inventory Report: VM's that have been stopped now display 0% CPU utilization instead of last reported %. Note the updated CPU % can take up to 5 minutes to update.
+- Roles: Fixed Tenant Role Instance Type and Blueprint Access propagation
+- SCVMM: Fixed overzealous SCVMM discovery when |morpheus| SCVMM Cloud config is scoped to a single SCVMM Cloud.
+- Shutdown Policies: Fixed for Extension banners not being displayed on Instances already shutdown from an active Shutdown Policy.
+- Tenants: Fixed expired Subtenant ui session not redirecting to subtenant login url.
+- VMware: Fixed synced Virtual Image Location record issue
+- Wiki: Fixed \`code\` and \`\`\` code block \`\`\` syntax display
+- Workflows: Fixed timeout issue with Option Types not loading when /automation/workflow page that has been open for several minutes
+- Zerto: Fixed paging error on Replication Sites list views.
+- vCloud Director: Fix for specified service version not being honored when created a Cloud
 
+|morpheus| API Updates
+**********************
 
-CVEs Addressed
-==============
+API Enhancements
+================
 
-- CVE-2019-17563 *
-- CVE-2019-17569 *
-- CVE-2020-1935 *
-- CVE-2020-1938 *
-- CVE-2019-20372 *
+- Amazon: Increased pricing granularity available for individual servers including for compute, storage, memory, and network
+- Azure: Increased pricing granularity available for individual servers including for compute, storage, memory, and network
+- Azure: Static IP addresses and IP pools supported on Azure Subnets
+- Invoices: Invoice line items are now exposed through the API
+- Licenses: Improved API coverage of licenses (Administration > Provisioning > Licenses)
+- Ping: API supports "GET /api/ping" endpoint to replace "GET /setup/check". The new endpoint returns the same information
+- Prices: Prices can be filtered by platform type
 
-Services
-========
+API Fixes
+=========
 
-- NGINX updated to 1.17.9
-- Tomcat updated to 9.0.33
+- API/CLI: Fixed Security Group 'canManage' Flag not consumable via API
+- API/CLI: Fixed IndexOutOfBounds when updating price-set over API
+- API/CLI: Fixed IndexOutOfBounds when updating price-set over API
+- API/CLI: Fixed Adding subnet permissions through API call returns incorrect status
+- API/CLI: Fixed CLI | Adding the vCD cloud type using the cli fails to add Cloud
 
-(* Found in v4.2.0-2; ^ Found in v4.2.0-3; % Found in v4.2.0-4)
+|morpheus| CLI Updates
+**********************
+
+CLI Enhancements
+================
+
+Enhancements
+^^^^^^^^^^^^
+- Prompt for credentials by default, instead of erroring. This was the behavior a long time ago, and now it is once again.
+- Improved output of ``remote list`` and ``remote get``
+- Changed ``remote get`` to refresh status and version by default, can use option ``--offline`` to avoid this.
+- Changed ``remote`` get to work like ``remote current`` when called with 0 arguments
+- New subcommand ``remote version``.
+- New subcommand ``remote view``.
+- New command ``setup`` that works like remote setup
+- New command ``ping`` that works like remote check
+- New command ``activity`` that works like ``recent-activity``
+- Deprecated ``recent-activity``
+- Updated ``instances`` command renaming options ``--created-by`` to ``--owner``
+- Updated ``apps`` command to show Owner.
+- Updated ``blueprints`` command to support Owner.
+- Updated ``blueprints`` and ``apps`` command to show more information.
+- Updated ``invoices list -c CLOUD`` so that name can be passed instead of just id.
+- New option ``apps update --owner``.
+- Removed deprecated command ``instances update-notes``.
+- New subcommand ``library-layouts update-permissions``.
+- Changed the way role permission access values displayed, so they look more like a grid and full is green, while other values are cyan.
+- New option ``workflows list --type``.
+- New options ``--wrap`` and ``--all-fields`` for all list commands.
+- New option ``remote check --all`` that works just like ``remote check-all``.
+- New option ``curl -v``.
+- Updated command ``groups current`` to support ``--remote`` option.
+- Updated command ``apps add Environment`` prompt to be a select instead of text.
+- Updated ``apps list`` and apps get to display Environment
+- Changed No records found messages to be cyan instead of yellow.
+- New option ``--can-manage`` for ``security-groups add/update``.
+- Changed workflows get to just show ``TASK ID`` in the tasks list, and no longer display ``ID`` ('taskSetTaskId').
+- Renamed ``'Tags'`` to ``'Labels'`` in instances get
+- Renamed option ``--tags`` to ``--labels`` for instances add.
+- Added options ``--labels`` and ``--metadata`` to ``instances add``
+- Updated command ``users permissions`` and ``users get --all`` to show all access. requires api 4.2.1
+- Updated command ``whitelabel-settings`` to support ``--account`` option. requires api 4.2.1
+- New subcommand ``clouds refresh``. requires api 4.2.1
+- New command ``guidance``. requires api 4.2.1
+- Updated command ``invoices`` to show more info and make ``--raw-data`` an option.
+- New command ``invoices``
+- New subcommand service-plans activate
+
+Fixes
+^^^^^
+- Fixed ``ping`` resulting in an error when used on older appliances. Now it falls back to use ``/api/setup/check`` instead of erroring.
+- Fixed ``remote setup`` error and also improved error handling for ``setup --remote-url`` with an insecure url.
+- Fixed error seen with ``instances import-snapshot``
+- Fixed ``instances add`` payload duplicating plan.
+- Grooming of help info for instances, apps and blueprints.
+- Fixed ``--quiet`` option still printing a newline.
+- Fixed issues with ``--remote-url`` option, it could cause errors or otherwise behave incorrectly.
+- Fixed issue with instances add using the wrong version when specified with ``-O layout=ID`` instead of ``--layout ID``
+- Fixed ``library-layouts get ID`` 404 error incorrectly saying ``'Instance Type not found'``
+- Fixed ``clouds add`` not merging ``-O options`` into the payload
+- Fixed ``invoices`` cost display issues
+- Fixed ``apps add`` including ``-O networkInterface`` options when the blueprint has that field locked. This fixes potential serverside error ``'ip address required'``.
+- Fixed users permissions error when using older appliance versions.
+- Fixed ``apps add`` not using blueprint values for layout,plan,networks,volumes,etc.
+- Fixed ``apps add`` not printing some error messages eg. ``'name must be unique'``.
+- Fixed ``instances add --security-groups`` causing invalid argument error.
+- Fixed ``instances add`` infinite name must be unique error when --no-prompt is used.
+- Fixed passwd extraneous output ``'args is'``.
+- Fixes for new invoices command.
+- Fixed ``clouds add`` groups dropdown being limited to 25.
+- Fixed multiselect option types not working when passed in eg. ``--tenants "one, two"``
+- Fixed ``instances add`` requiring Library permission to fetch layout.
+- Fixed ``instances add`` requiring Clouds permission to fetch datastores.
+- Fixed ``instances add`` potential 500 error when retrieving datastores.
+- Fixed 404 error when fetching layout seen when pointing at appliance versions older than 4.2. This change is to use ``/library`` instead of ``/library/instance-types`` when for those resources.

@@ -39,6 +39,6 @@ Regenerate both the Certificate and Key
 Regenerate only the Certificate
 ```````````````````````````````
 
-#. Delete the certificate file in ``/etc/morpheus/ssl/`.
+#. Delete the certificate file in ``/etc/morpheus/ssl/``.
 #. Run Reconfigure ``morpheus-ctl reconfigure``.
 #. Restart NGINX ``morpheus-ctl restart nginx``.

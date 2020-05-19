@@ -16,9 +16,14 @@
    backups/backups
    operations/operations
    tools/tools
-   integration_guides/integration_guides
    troubleshooting/troubleshooting
 
+.. toctree::
+   :maxdepth: 3
+   :caption: Guides
+
+   integration_guides/integration_guides.rst
+   
 .. toctree::
    :maxdepth: 1
    :caption: Morpheus CLI
@@ -32,7 +37,7 @@
    API Documentation <http://bertramdev.github.io/morpheus-apidoc/#introduction>
 
 .. toctree::
-   :maxdepth: 1
+   :maxdepth: 3
    :caption: Release Notes
 
    release_notes/current.rst

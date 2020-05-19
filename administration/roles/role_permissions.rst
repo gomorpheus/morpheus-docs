@@ -13,7 +13,7 @@ CLOUD ACCESS
   Controls Sub-Tenant access level for Master Tenant publicly visible Clouds.
 INSTANCE TYPE User only has access to Objects they have created/own.
   Controls Tenant and User access level for Instance Types.
-BLUEPRINT ACCESS 
+BLUEPRINT ACCESS
 
 Feature Access Permissions
 ``````````````````````````
@@ -34,7 +34,7 @@ Remote Console: Provisioned
 Remote Console: Auto Login
   RDP and SSH only, controls if user is auto-logged in to Remote Console or presented with login prompt.
 Role Mappings
-  Gives User Access to Role Mappings config in ``/admin/roles`` for configuring Identity Source Role Mappings without providing Access to other Identity Source configuration settings. 
+  Gives User Access to Role Mappings config in ``/admin/roles`` for configuring Identity Source Role Mappings without providing Access to other Identity Source configuration settings.
 
 
 +-------------------------------------------+-----------------+---------------+-------+------+----------------+
@@ -197,6 +197,8 @@ Role Mappings
 | Provisioning: Thresholds                  | None            | Read          | Full  |      |                |
 +-------------------------------------------+-----------------+---------------+-------+------+----------------+
 | Provisioning: Virtual Images              | None            | Read          | Full  |      |                |
++-------------------------------------------+-----------------+---------------+-------+------+----------------+
+| Reconfigure Servers                       | None            | Full          |       |      |                |
 +-------------------------------------------+-----------------+---------------+-------+------+----------------+
 | Remote Console:                           | None            | Provisioned   | Full  |      |                |
 +-------------------------------------------+-----------------+---------------+-------+------+----------------+

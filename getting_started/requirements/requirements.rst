@@ -8,28 +8,50 @@ In the simplest configuration |morpheus| needs one Appliance Server. The Applian
 Base Requirements
 -----------------
 
-- **Operating System:** Ubuntu 16.04, 18.04 or CentOS/RHEL 7.x
+.. list-table:: **Supported Appliance Operating Systems**
+   :widths: auto
+   :header-rows: 1
+
+   * - OS
+     - Version(s)
+     - Notes
+   * - Amazon Linux
+     - 2 
+     - 
+   * - CentOS
+     - 7.x, 8.x 
+     -
+   * - Debian
+     - 8, 9, 10
+     - FreeRDP 2.0 is not compatible with Debian 9. Guacd will remain at 1.0.0 for Appliances running on 9.
+   * - RHEL
+     - 7.x, 8.x 
+     - 
+   * - SUSE SLES
+     - 12, 15 
+     - 
+   * - Ubuntu
+     - 16.04, 18.04 
+     - 14.04 is no longer supported for Appliance OS. Existing Appliances on 14.04 must upgrade to 16.04 or 18.04 PRIOR to upgrading to v4.2.1. Note: 14.04 is still supported by the |morpheus| Agent.
+     
 - **Memory:** 16 GB recommended for default installations. 8 GB minimum required with 4 GB+ available storage swap space
 - **Storage:** 200 GB storage minimum (see Storage Considerations below)
 - **CPU:** 4-core, 1.4 GHz (or better), 64-bit CPU recommended for all-in-one systems. For a distributed-tier installation, it's recommended each tier have 2-core, 1.4 GHz (or better), 64-bit CPU
 - Network connectivity from your users to the appliance over TCP 443 (HTTPS)
 - Superuser privileges via the sudo command for the user installing the |morpheus| appliance package
-- Access to base yum and apt repos
+- Access to base yum or apt repos. Access to Optional RPMs repo required for RHEL 7.x
 - An appliance license is required for any operations involving provisioning
-
 - Internet Connectivity (optional)
    - To download from |morpheus|' public docker repositories and system Virtual Image catalog
-   - Offline installation require installing the offline package in addition to the regular installation package.
+   - Offline installation require installing the supplemental package in addition to the regular installation package. Local yum/apt repo access still required for offline installations.
 
-.. NOTE:: Access to base yum and apt repos is still required for offline installations.
+.. NOTE:: Access to yum and apt repos is still required for offline installations.
 
 -  VM and Host Agent Install (optional)
     - Inbound connectivity access from provisioned vm's and container hosts on ports 443 (Agent install and communication) and 80 (Linux Agent installs via yum and apt)
     - An Appliance URL that is accessible/resolvable to all managed hosts. It is necessary for all hosts that are managed by |morpheus| to be able to communicate with the appliance server ip on port 443. This URL is configured under Admin->Settings.
 
-.. NOTE:: Ubuntu 16.10, CentOS/RHEL 8.x and Amazon Linux are not currently supported.
-
-.. NOTE:: Morpheus fully supports running the appliance in a VMware environment and many other virtualized environments, as well as on a physical platform.
+.. NOTE:: Ubuntu 16.10 is not currently supported.
 
 Storage Considerations
 ----------------------

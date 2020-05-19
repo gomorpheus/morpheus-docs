@@ -20,19 +20,21 @@ VISIBILITY
    * Public: Access to the Cloud can be configured for Tenants in their Tenant Role permissions.
 TENANT
   Assigned Tenant when VISIBILITY is set to Private.
-Enabled
+ENABLED
   When unchecked, the cloud will not sync and is not accessible for provisioning actions.
+AUTOMATICALLY POWER ON VMS
+  When checked, provisioned VMs are automatically powered on
 TENANCY OCID
-  OCID string from `Tenancy Information` section in Oracle Cloud
+  The OCID string from `Tenancy Information` section in Oracle Cloud
 USER OCID
-  OCID String for OPC API user
+  OCID String for the OPC API user
 SELECT KEY PAIR
-  Select keypair added to Morpheus matching public key added to specified OPC API user
+  Select a keypair added to |morpheus| matching the public key added to specified OPC API user
 REGION
-  Select Region (populates after successful auth validation)
+  Select the OPC region (populates after successful account authentication)
 COMPARTMENT
-  Select Compartment (populates after successful auth validation)
+  Select Compartment (populates after successful account authentication)
 INVENTORY
-  Turn on for |morpheus| to discover and sync existing VM's
+  Turn on for |morpheus| to discover and sync existing VMs
 
-.. include:: /integration_guides/advanced_options.rst
+.. include:: /integration_guides/Clouds/advanced_options.rst

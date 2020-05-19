@@ -1,20 +1,18 @@
 Single Node Install on RHEL
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-To get started installing |morpheus| on RHEL/RedHat 7 a few prerequisite items are required.
+To get started installing |morpheus| on RHEL/RedHat a few prerequisite items are required.
 
-#. Configure firewalld to allow access from users on port 80 or 443 (Or remove firewall if not required).
+#. Configure firewalld to allow access from users on 443 (Or remove firewall if not required).
 #. Make sure the machine is self resolvable to its own hostname.
-#. For RHEL, In order for the guacamole service (remote console) to properly install some additional optional repositories first need added.
+#. For RHEL 7.x, the Optional RPMS repo needs to be added for Reconfigure to succeed. Its does not need to be added For RHEL 8.x, as the Optional RPMs repo is now part of the appstream repo that is enabled by default in RHEL 8.x.
 
    *  **RHEL 7.x Amazon:** ``yum-config-manager --enable rhui-REGION-rhel-server-optional``
    *  **RHEL 7.x:** ``yum-config-manager --enable rhel-7-server-optional-rpms``
 
-   .. note:: For Amazon users a redhat subscription is not required if the appropriate yum REGION repository is added instead as demonstrated above.
+.. note:: For Amazon users a Redhat subscription is not required if the appropriate yum REGION repository is added instead as demonstrated above.
 
-.. IMPORTANT:: If the machine is unable to resolve its own hostname ``nslookup hostname`` some installation commands will be unable to verify service health during installation and fail.
-
-The RedHat Enterprise Linux 7 server needs to be registered and activated with Redhat subscription. The server optional rpms repo needs to be enabled as well.
+The RedHat Enterprise Linux server needs to be registered and activated with Redhat subscription. The server optional rpms repo needs to be enabled as well.
 
 To check if the server has been activated please run the subscription-manager version. Subscription manager will return the version plus the python dependency version.
 
@@ -74,7 +72,7 @@ If the repo status was returned as disabled then you will need to enable the rep
 
 The message ``Repo 'rhel-7-server-optional-rpms' is enabled for this system.`` will appear after enabling the repo. This will confirm that the repo has been enabled.
 
-Next simply download the relevant ``.rpm`` package for installation. This package can be acquired from your account rep or via a free trial request from |morpheushub|.
+Next simply download the relevant ``.rpm`` package for installation. This package can be acquired from morphueshub.com.
 
 .. TIP:: Use the ``wget`` command to directly download the package to your appliance server. i.e. ``wget https://downloads.morpheusdata.com/path/to/package.rpm``
 

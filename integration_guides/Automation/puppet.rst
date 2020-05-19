@@ -15,4 +15,4 @@ Add Puppet Integration
     * Puppet Master: Hostname
     * Allow Immediate Execution: Yes or No
 
-  #. Save Changes
+  4. Save Changes
