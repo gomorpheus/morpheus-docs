@@ -10,7 +10,7 @@ Host Level Firewall Enabled
   Enables or Disables the host level firewall. This must be Enabled to use |morpheus| Security Groups.
 Appliance URL
   The default URL used for Agent install and Agent functionality. All Instances and Hosts must be able to resolve and reach this URL over 443 for successful agent install and communication.
-  
+
 .. NOTE:: Alternate Appliance URLs can be configured per Cloud in the `Edit Cloud -> Advanced Options` section.
 
 Internal Appliance URL (PXE)
@@ -20,7 +20,7 @@ API Allowed Origins
 Enable SSL Verification of Agent (Communications)
   Enabling SSL Verification of Agent Communications requires a valid Certificate be installed on the Appliance.
 Disable SSH Password Authentication
-  Only allow ssh login using SSH keys. When true, SSH Password Authentication will not be enabled for VM's and Hosts provisioned after the setting is enabled. 
+  Only allow ssh login using SSH keys. When true, SSH Password Authentication will not be enabled for VM's and Hosts provisioned after the setting is enabled.
 
 Tenant Management Settings
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -33,6 +33,18 @@ Default User Role
   Sets the default User Role applied to the User created from a Tenant Registration.
 
 .. Docker Privileged Mode::
+
+User Management Settings
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+Expire Password After (Days)
+  User account passwords will expire after the entered number of days. Enter 0 or leave the field empty to opt out of this feature.
+Disable User After Attempts (Number of Attempts)
+  Disable a User account after a specified number of failed login attempts. Enter 0 or leave the field empty to opt out of this feature.
+Disable User If Inactive For (Days)
+  Disable a User account if inactive for the entered number of days. The User will not be able to log into the appliance again until another User with sufficient rights enables the account. Enter 0 or leave the field empty to opt out of this feature.
+Send warning email before deactivating (Days)
+  Enter the number of days prior to account deactivation that a warning email should be sent. For example, enter "5" to warn the User when they are five days short of the deactivation time entered in the prior field. Enter 0 or leave the field empty to opt out of this feature.
 
 Email Settings
 ^^^^^^^^^^^^^^
@@ -91,7 +103,7 @@ Enabled Clouds (Types)
 
 Controls which types of Cloud can be created.
 
-- When a Cloud type is disabled, it will be removed from the available options when adding new Clouds in ``Infrastructure``. Existing Clouds will not be affected. 
+- When a Cloud type is disabled, it will be removed from the available options when adding new Clouds in ``Infrastructure``. Existing Clouds will not be affected.
 
 .. include:: whitelabel.rst
 .. include:: license.rst
