@@ -29,24 +29,24 @@ The Morpheus Application can be installed on the following Operating System vers
      - Version(s)
      - Notes
    * - Amazon Linux
-     - 2 
-     - 
+     - 2
+     -
    * - CentOS
-     - 7.x, 8.x 
+     - 7.x, 8.x
      -
    * - Debian
      - 9, 10
      - FreeRDP 2.0 is not compatible with Debian 9. Guacd will remain at 1.0.0 for Appliances running on 9.
    * - RHEL
-     - 7.x, 8.x 
-     - 
+     - 7.x, 8.x
+     -
    * - SUSE SLES
-     - 12, 15 
-     - 
+     - 12, 15
+     -
    * - Ubuntu
-     - 16.04, 18.04 
+     - 16.04, 18.04
      - 14.04 is no longer supported for Appliance OS. Existing Appliances on 14.04 must upgrade to 16.04 or 18.04 PRIOR to upgrading to v4.2.1. Note: 14.04 is still supported by the |morpheus| Agent.
-          
+
 Services
 ========
 
@@ -61,7 +61,7 @@ The following service versions have changed from the prior release. Service vers
 - OpenJDK JRE: Upgraded to 8u252 from 8u242
 - OpenSSL: Upgraded to 1.0.2u from 1.0.2t
 - RabbitMQ: Upgraded to 3.8.3 from 3.7.16
-- Tomcat: Upgraded to 3.0.33 from 9.0.31
+- Tomcat: Upgraded to 3.0.33 from 3.0.31
 
 When externalizing MySQL, Elasticsearch and/or RabbitMQ services, the following versions are compatible with Morpheus |morphver|:
 
