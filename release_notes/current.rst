@@ -9,8 +9,49 @@
 |morpheus| UI Updates
 *********************
 
-New Features
-============
+Highlights
+==========
+
+Full integration with **VMware NSX-T**
+
+- Create and manage software-based virtual networks efficiently and programmatically
+- Sync, edit, create, and manage transfer zones, distributed firewalls, edge gateways, load balancers and more
+
+.. image:: /images/releases/421/nsxt.png
+
+Full integration with **Unisys Stealth**
+
+- Protects sensitive systems with identity-driven microsegmentation
+- Sync, create, and manage roles and communities of interest (COIs)
+- Assign Stealth configuration at provision time
+
+.. image:: /images/releases/421/stealth.png
+
+Keep more **Task** types under version control with expanded Git integration for automation
+
+- Email Tasks, jRuby scripts, and shell scripts can now be kept under Git version control
+- |morpheus| runs the current version of the script at execution time
+
+.. image:: /images/releases/421/task.png
+
+**Usability and navigation** improvements
+
+- Advanced filtering for Instance, Host, VM, and Bare Metal server lists
+- Create custom views for Instance, Host and VM lists and set them as your default view
+- Refreshed default theme for improved visibility and enhanced contrast (does not affect whitelabeled appliances)
+- Drag and drop columns in large list views to bring the most relevant information to the forefront
+
+.. image:: /images/releases/421/advanced_filters.png
+
+Enhanced existing **public and on-prem cloud** integrations
+
+- Updated support for the latest version of Azure Kubernetes Service (AKS) and premium SSD tiers in Microsoft Azure cloud
+- Expanded |morpheus| tagging policies to include Google Cloud Platform in addition to previously supported clouds
+- Sync real-time pricing data from Oracle Cloud in addition to clouds that previously supported live pricing data
+- Slice a single SCVMM cluster into a fully multi-tenant private cloud
+
+All New Features
+================
 
 - Agent Compatibility: SUSE SLES 12 and 15, OpenSUSE Leap agent installation support
 - Appliance Compatibility: Amazon Linux 2 appliance installation support
