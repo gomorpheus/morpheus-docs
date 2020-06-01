@@ -1,7 +1,6 @@
 Cherwell
 ---------
 
-
 Add Cherwell Integration
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -38,7 +37,6 @@ Add Cherwell Integration
           {
           "Description":"Created from Morpheus by ${instance.createdByUsername} in ${zone.name}"
           }
-
 
 
 #. Save Changes
