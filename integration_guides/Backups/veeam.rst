@@ -14,9 +14,9 @@ Adding Veeam Integration
    Enabled
       Enable the Veeam integration
    Host
-      IP or Hostname of the Veeam server.
+      IP or Hostname of the Veeam server, must be HTTPS for VEEAM 10
    Port
-      Port number configured to access the Veeam server
+      Port number configured to access the Veeam server, must be 9398 for VEEAM 10
    Username
       Admin Username for Veeam
    Password
