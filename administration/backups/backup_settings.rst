@@ -1,39 +1,30 @@
 Backup Settings
 ===============
 
-``Administration -> Backups``
+``Administration > Backups``
 
 Overview
 --------
 
-The Backups Settings page allows you enable or disableScheduled Backups, and select a Default Backup Storage Provider Backups within |morpheus| can always be run manually. However the scheduled backups toggle must be enabled to run jobs automatically. Configure the default storage provider to select the target location for all new backups. (This does not affect existing backups.)
+The Backup settings page allows you enable or disable scheduled backups, select a default backup bucket, and administer global settings related to backups. Changes to global settings only affect new backups going forward and do not affect existing backups.
 
 |morpheus| Backup Settings
 --------------------------
 
-Options:
-
 Scheduled Backups
-  Enable automatic scheduled backups for provisioned instances.
+  Enable automatic scheduled backups for provisioned instances
 
 Create Backups
-  When enabled, |morpheus| will automatically configure instances for manual or scheduled backups.
+  When enabled, |morpheus| will automatically configure instances for manual or scheduled backups
 
-Copy Snapshots to Store
-  Copy VMware snapshots to selected Backup
-Storage Provider
-  Default Backups Storage Provider
 Backup Appliance
-  When enabled, a Backup will be created to backup the |morpheus| appliance database. Select the ``Backup`` text link to edit Appliance Backup Settings and view existing Appliance Backups.
+  When enabled, a backup will be created for the |morpheus| appliance database. Select the ``Backup`` text link to view or edit settings related to the appliance backup
 
-Default Backup Provider
-  Enable/Disable |morpheus| as the default backup provider.
+Default Backup Bucket
+  Select an existing bucket as the default for future backup runs. Click the ``Infrastructure Storage`` text link to add a new storage bucket to |morpheus| if needed
 
-Default Backup Storage Provider
-  Storage Providers can be configured and managed in the Infrastructure Storage section.
+Default Backup Schedule
+  Choose a default schedule interval for automated backups. The available selections in this dropdown menu are Execution Schedules defined in ``Provisioning > Automation > Execute Scheduling``
 
-Backup Retention Count
-  Default maximum number of successful backups to retain.
-
-.. include:: /administration/backups/veeam_config.rst
-.. include:: /administration/backups/commvault_config.rst
+Default Backup Retention
+  Choose the default number of backups to be retained for automated Instance and appliance backup jobs
