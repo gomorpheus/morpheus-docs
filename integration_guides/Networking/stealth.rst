@@ -33,10 +33,14 @@ Integrating Stealth with |morpheus|
 
 #. Click :guilabel:`ADD SECURITY INTEGRATION`
 
+.. image:: /images/integration_guides/networking/stealth/add_stealth.png
+
 Summary View
 ^^^^^^^^^^^^
 
 The default view when accessing a Stealth integration in |morpheus| is the Summary view. In addition to basic information about the Stealth server itself, we can see system status, license and service information.
+
+.. image:: /images/integration_guides/networking/stealth/stealth_summary.png
 
 Endpoints
 ^^^^^^^^^
@@ -103,6 +107,8 @@ Creating Stealth Roles
 
 #. Click :guilabel:`ADD ROLE`
 
+.. image:: /images/integration_guides/networking/stealth/add_role.png
+
 COIs (Communities of Interest)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -131,6 +137,8 @@ Creating Stealth COIs
 	- **DIRECTION:** Default (enables COI to accept inbound and initiate outbound tunnels), Initiate (restricts the COI to only initiate outbound tunnels), or Accept (restricts the COI to only accept inbound tunnels)
 
 #. Click :guilabel:`CREATE COI`
+
+.. image:: /images/integration_guides/networking/stealth/create_coi.png
 
 Filters
 ^^^^^^^
@@ -166,3 +174,5 @@ Once we have selected our Stealth integration as the security server for at leas
 #. Select the Instance Type, Cloud, and Group making sure to choose a Cloud that has been set up for an existing Stealth integration
 #. On the Configure tab of the provisioning wizard, choose a Stealth Configuration and a Stealth Role according to the needs of the machine(s) being provisioning
 #. Once the provisioning process is complete, the new Stealth-managed endpoints will be available and restricted based on the Stealth implementation
+
+.. image:: /images/integration_guides/networking/stealth/provision_endpoint.png
