@@ -10,3 +10,4 @@ Networking
    aci.rst
    bluecat.rst
    solarwinds.rst
+   stealth.rst
