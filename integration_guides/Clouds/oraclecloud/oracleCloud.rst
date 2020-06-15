@@ -82,6 +82,8 @@ The Client ID and Client Secret value will be shown at this point. If these valu
 
 .. image:: /images/integration_guides/clouds/oraclepubliccloud/7secretvalues.png
 
-Back in |morpheus|, enter these values in the COSTING KEY and COSTING SECRET fields of the add/edit cloud modal for your Oracle Public Cloud integration.
+Back in |morpheus|, enter these values in the COSTING KEY and COSTING SECRET fields of the add/edit cloud modal for your Oracle Public Cloud integration. You also need to fill in the IDENTITY SERVICE value. This value can be found in the URL for your Oracle admin console as shown in the image below. It will be in a format ``idcs-xxxxxx``.
+
+.. image:: /images/integration_guides/clouds/oraclepubliccloud/8identityservice.png
 
 Save changes to the Cloud.
