@@ -51,7 +51,24 @@ All New Features
 Fixes
 =====
 
-
+- API/CLI: Fixed calls to instances without containers throwing a gasket
+- API/CLI: The exportMeta property is now provided for an option type in both the CLI and API. This maps to the "Export As Tag" checkbox setting on the Option Type dialog in the UI.
+- Bluecat: Fixed removal of Network Pool record when deleting a Bluecat Integration 
+- Clusters: Fixed available host check when adding new nodes to Instances in Docker Clusters 
+- Hosts: Fixed for bulk convert-to-managed 
+- Identity Sources: Custom External SSO Identity Source: Fixed AES encryption setting
+- Instances: Fixed edit Wiki button displayed on Instances when user has Read Only Instance access.
+- Instances: Special Characters can now be used in Instances names, will be stripped from hostname and host names. 
+- Logs: Removed ``println "Not a master"`` from MorphTagLib service
+- Networks: Fixed display error when editing tenant permissions on existing network
+- Networks: IP Pools: Fixed conflict when using 169.x.x.x pool address ranges 
+- SCVMM: Guacd updated to support SCVMM Hypervisor Console 
+- ServiceNow: Plugin: v2.0.6  Fixed multiple Name fields appear for Instance provisioning form in ServiceNow catalog Item. (Plugin: v > 2.0.6)
+- ServiceNow: Plugin: v2.0.6: Fixed snow plugin not including Instance environment data in Blueprint provisioning requests from ServiceNow
+- Usage: Fixed Usage record time periods overlapping time periods (milliseconds) for the same object
+- Users: Fixed "Disable User if Inactive For" User setting locking non-local user accounts
+- vCloud Director: Fixed ``validateResizeContainer error`` in morpheus-ui logs  
+- vCloud Director: Fixed cloud-sync connection timeouts
 
 |morpheus| API Updates
 **********************
