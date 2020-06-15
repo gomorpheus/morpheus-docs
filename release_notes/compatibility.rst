@@ -9,17 +9,15 @@ When installing and upgrading to |morpheus| |morphver|, refer to the following t
 Breaking Changes
 ================
 
-- Appliance: OS: Ubuntu 14.04 has reached its end of life (EOL) and is no longer supported as a Morpheus Appliance Host Operating System. Any |morpheus| Appliance running on 14.04 must be upgraded to 16.04, 18.04 or 20.04 BEFORE upgrading to 4.2.1+. Upgrades on 14.04 will not succeed.
-- Clouds: VirtualBox, VirtuSteam, and MetaCloud Cloud Types are no longer supported or available.
-- Puppet: |morpheus| integration now supports version 6+. Puppet versions prior to 6 are no longer supported.
-- Tasks: Python: Virtual environment are now used for Python Tasks. **Note:** ``virtualenv`` is required on all Appliance App nodes. ``pip install virtualenv``.
+- Appliance: OS: Ubuntu 14.04 has reached its end of life (EOL) and is no longer supported as a Morpheus Appliance Host Operating System. Any |morpheus| Appliance running on 14.04 must be upgraded to 16.04, 18.04 or 20.04 BEFORE upgrading to 4.2.1+. Upgrades on 14.04 will not succeed
+- Clouds: VirtualBox, VirtuSteam, and MetaCloud Cloud Types are no longer supported or available
+- Puppet: |morpheus| integration now supports version 6+. Puppet versions prior to 6 are no longer supported
+- Tasks: Python: Virtual environment are now used for Python Tasks. **Note:** ``virtualenv`` is required on all Appliance App nodes: ``pip install virtualenv``
 
 |morpheus| Application OS
 =========================
 
 .. important:: Existing Appliances on 14.04 must upgrade to 16.04 or 18.04 PRIOR to upgrading to v4.2.1.
-
-The Morpheus Application can be installed on the following Operating System versions:
 
 .. list-table:: **Supported Appliance Operating Systems**
    :widths: auto
@@ -50,18 +48,19 @@ The Morpheus Application can be installed on the following Operating System vers
 Services
 ========
 
-|morphver| Service Version Changes
-----------------------------------
+..
+  |morphver| Service Version Changes
+  ----------------------------------
 
-The following service versions have changed from the prior release. Service version changes are only applicable when using Morpheus System services. Externalized services are not upgraded by |morpheus|.
+  The following service versions have changed from the prior release. Service version changes are only applicable when using Morpheus System services. Externalized services are not upgraded by |morpheus|.
 
-- ElasticSearch: Upgraded to 7.6.2 from 7.6.1
-- Erlang: Upgraded to 22.3 from 22.0
-- NGINX: Upgraded to 1.17.9 from 1.17.6
-- OpenJDK JRE: Upgraded to 8u252 from 8u242
-- OpenSSL: Upgraded to 1.0.2u from 1.0.2t
-- RabbitMQ: Upgraded to 3.8.3 from 3.7.16
-- Tomcat: Upgraded to 3.0.33 from 3.0.31
+  - ElasticSearch: Upgraded to 7.6.2 from 7.6.1
+  - Erlang: Upgraded to 22.3 from 22.0
+  - NGINX: Upgraded to 1.17.9 from 1.17.6
+  - OpenJDK JRE: Upgraded to 8u252 from 8u242
+  - OpenSSL: Upgraded to 1.0.2u from 1.0.2t
+  - RabbitMQ: Upgraded to 3.8.3 from 3.7.16
+  - Tomcat: Upgraded to 3.0.33 from 3.0.31
 
 When externalizing MySQL, Elasticsearch and/or RabbitMQ services, the following versions are compatible with Morpheus |morphver|:
 
@@ -82,16 +81,17 @@ When externalizing MySQL, Elasticsearch and/or RabbitMQ services, the following 
 Security
 ========
 
-.. important:: Please be aware of the default security enhancements added to v4.1.2+ and assess potential impacts to your env, including agent installation and front end load balancers.
+.. important:: Please be aware of the default security enhancements added to v4.1.2+ and assess potential impacts to your environment, including agent installation and frontend load balancers.
 
-- Appliance: Starting in v4.1.2 (not new but worth repeating), the default |morpheus| Nginx config removes support for incoming ``TLS v1.0 and v1.1`` connections. Please update source config to be compatible. If necessary, |morpheus| can be configured to support older TLS versions via :ref:`morpheus.rb` config.
+- Appliance: Starting in v4.1.2, the default |morpheus| Nginx config removes support for incoming ``TLS v1.0 and v1.1`` connections. Please update source config to be compatible. If necessary, |morpheus| can be configured to support older TLS versions via :ref:`morpheus.rb` config.
 - Security: Web Security response headers set for enhanced security
 
-CVEs Addressed
---------------
+..
+  CVEs Addressed
+  --------------
 
-- CVE-2017-18640
-- CVE-2019-12418
+  - CVE-2017-18640
+  - CVE-2019-12418
 
 Integrations
 ============
@@ -113,7 +113,7 @@ Integrations
 +-------------------+-------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------+
 | Cisco ACI         | 3.10                                                                          |                                                                                                                                       |
 +-------------------+-------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------+
-| Commvault         | v11 sp 12                                                                     |                                                                                                                                       |
+| Commvault         | v11 sp 19                                                                     |                                                                                                                                       |
 +-------------------+-------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------+
 | Jenkins           | < 2.176.1                                                                     |                                                                                                                                       |
 +-------------------+-------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------+
