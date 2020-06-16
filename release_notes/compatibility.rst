@@ -17,7 +17,7 @@ Breaking Changes
 |morpheus| Application OS
 =========================
 
-.. important:: Existing Appliances on 14.04 must upgrade to 16.04 or 18.04 PRIOR to upgrading to v4.2.1.
+.. important:: Existing Appliances on 14.04 must upgrade to 16.04 or 18.04 PRIOR to upgrading to v4.2.1+.
 
 .. list-table:: **Supported Appliance Operating Systems**
    :widths: auto
@@ -43,7 +43,7 @@ Breaking Changes
      -
    * - Ubuntu
      - 16.04, 18.04
-     - 14.04 is no longer supported for Appliance OS. Existing Appliances on 14.04 must upgrade to 16.04 or 18.04 PRIOR to upgrading to v4.2.1. Note: 14.04 is still supported by the |morpheus| Agent.
+     - 14.04 is no longer supported for Appliance OS. Existing Appliances on 14.04 must upgrade to 16.04 or 18.04 PRIOR to upgrading to v4.2.1+. Note: 14.04 is still supported by the |morpheus| Agent.
 
 Services
 ========
@@ -51,7 +51,7 @@ Services
 |morphver| Service Version Changes
 ----------------------------------
 
-No service verison changes between v4.2.1 and v4.2.2
+No service version changes between v4.2.1 and v4.2.2
 
 |morphver| Service Version Compatibility
 ----------------------------------------
