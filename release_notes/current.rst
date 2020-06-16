@@ -15,9 +15,9 @@ Highlights
 **NSX-T Integration** Enhancements
 
 - Create and manage NSX-T load balancers for NSX-T
-- Create and manage load balance monitors
-- Create and manage load balance pools and pool members
-- Create an manage virtual servers for NSX-T
+- Create and manage load balancer monitors
+- Create and manage load balancer pools and pool members
+- Create and manage virtual servers for NSX-T
 - Reserve and release IP addresses NSX-T IP pools when provisioning and decommissioning
 
 .. image:: /images/releases/422/nsxt.png
@@ -25,10 +25,10 @@ Highlights
 **NSX-V Integration** Enhancements
 
 - Create, manage and sync load balancers for NSX-V
-- Configure a load balancer in an instance/app wizard
+- Configure nsx-v load balancers in instance/app wizards
 - Add or remove load balancers to/from existing Instances
 - Edit load balancers on existing Instances
-- Create and manage load balance monitors
+- Create and manage load balancer monitors
 - Create and manage pools and pool members
 - Create and manage virtual servers for NSX-V
 - Scope NSX-V load balancers to Groups such that they are owned by and, by default, only visible to that Group. They are also subject to Group-level policies
@@ -45,17 +45,15 @@ Other New Features
 - Catalog: openSUSE 15.1 catalog item added for SCVMM Clouds
 - Kubernetes: Version 1.17 support for Morpheus-type Kubernetes deployments (MKS)
 - NSX-T: Improvements to NSX-T integration including the ability to work with load balancers and virtual servers
-- NSX-V: Improvements to NSX-V integration including the ability to work with load valancers and virtual servers
+- NSX-V: Improvements to NSX-V integration including the ability to work with load balancers and virtual servers
 - Open Telekom Cloud: Added bandwidth option to floating IP selection
 - RabbitMQ: Stomp Broker removed. A Load Balancer is no longer required for external RabbitMQ clusters.
 - RabbitMQ: Agent Queue consolidation. ``monitorJobs*`` and ``statCommands*`` agent queues removed, agent messages now use ``morpheusAgentActions`` queue.
-- vCloud Director: Proxy support
+- vCloud Director: Proxy support added
 
 Fixes
 =====
 
-- API/CLI: Fixed calls to instances without containers throwing a gasket
-- API/CLI: The exportMeta property is now provided for an option type in both the CLI and API. This maps to the "Export As Tag" checkbox setting on the Option Type dialog in the UI.
 - Bluecat: Fixed removal of Network Pool record when deleting a Bluecat Integration
 - Clusters: Fixed available host check when adding new nodes to Instances in Docker Clusters
 - Hosts: Fixed for bulk convert-to-managed
@@ -73,17 +71,27 @@ Fixes
 - vCloud Director: Fixed ``validateResizeContainer error`` in morpheus-ui logs
 - vCloud Director: Fixed cloud-sync connection timeouts
 
-..
-  |morpheus| API Updates
-  **********************
 
-  API Fixes
-  =========
+|morpheus| API Updates
+**********************
+
+API Fixes
+=========
+- API/CLI: Fixed calls to instances without containers throwing a gasket
+- API/CLI: The exportMeta property is now provided for an option type in both the CLI and API. This maps to the "Export As Tag" checkbox setting on the Option Type dialog in the UI.
 
 
+|morpheus| CLI Updates
+**********************
 
-  |morpheus| CLI Updates
-  **********************
+CLI Enhancements
+================
+- CLI: Improved logs list output, the message output will flex to the width of the terminal and show more than one line, also new option --table is available. This also impacts health logs , instances logs, etc.
 
-  CLI Fixes
-  =========
+CLI Fixes
+=========
+
+- CLI: Fixed tasks add add --no-prompt still prompting for Content Ref. This fixes spec-templates add as well.
+- CLI: Fixed login -T always resulting in Token not valid error.
+- CLI: Fixed remote add --insecure not working.
+- CLI: Fixed several issues with invoices.
