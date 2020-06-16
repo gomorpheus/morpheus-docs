@@ -37,15 +37,18 @@ Highlights
 
 - Kubernetes version 1.17 support for Morpheus-type (MKS) Kubernetes deployments
 
-All New Features
-================
+Other New Features
+==================
 
+- Appliance: Various optimizations resulting in reduced CPU usage and improved performance 
 - Advanced Search: Enhancements and stability improvements to advanced search and filtering tools released in |morpheus| 4.2.1
 - Catalog: openSUSE 15.1 catalog item added for SCVMM Clouds
 - Kubernetes: Version 1.17 support for Morpheus-type Kubernetes deployments (MKS)
 - NSX-T: Improvements to NSX-T integration including the ability to work with load balancers and virtual servers
 - NSX-V: Improvements to NSX-V integration including the ability to work with load valancers and virtual servers
 - Open Telekom Cloud: Added bandwidth option to floating IP selection
+- RabbitMQ: Stomp Broker removed. A Load Balancer is no longer required for external RabbitMQ clusters.
+- RabbitMQ: Agent Queue consolidation. ``monitorJobs*`` and ``statCommands*`` agent queues removed, agent messages now use ``morpheusAgentActions`` queue.
 - vCloud Director: Proxy support
 
 Fixes
