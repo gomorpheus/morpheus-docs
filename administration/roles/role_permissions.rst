@@ -1,10 +1,10 @@
 Role Permissions
-^^^^^^^^^^^^^^^^
+----------------
 
 .. NOTE:: Permission options for sub-tenant user roles will only list options permitted by the Tenant role applied to the sub-tenant. Sub-Tenant user roles permissions cannot exceed permissions set by the overriding Tenant Role.
 
 User Role Permission Sections
-`````````````````````````````
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 FEATURE ACCESS
   Controls Tenant and User access level for sections and features in |morpheus|.
 GROUP ACCESS
@@ -16,7 +16,7 @@ INSTANCE TYPE User only has access to Objects they have created/own.
 BLUEPRINT ACCESS
 
 Feature Access Permissions
-``````````````````````````
+^^^^^^^^^^^^^^^^^^^^^^^^^^
 Feature Access settings control permissions for sections and objects in |morpheus|. Permission options include:
 
 None
