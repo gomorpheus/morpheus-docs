@@ -130,13 +130,13 @@ Role Mappings
     - ✔
     -
     -
-  * - Admin: Tenant - Impersonate ✔s
+  * - Admin: Tenant - Impersonate Users
     - ✔
     -
     - ✔
     -
     -
-  * - Admin: ✔s
+  * - Admin: Users
     - ✔
     - ✔
     - ✔
@@ -460,7 +460,7 @@ Role Mappings
     - ✔
     - ✔
     - ✔
-    - 
+    -
   * - Provisioning: Job Executions
     - ✔
     - ✔
