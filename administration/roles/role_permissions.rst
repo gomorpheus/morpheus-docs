@@ -40,34 +40,38 @@ Role Mappings
    :widths: auto
    :header-rows: 1
      
- * - ﻿Permission 
-   - None 
-   - Read 
-   - Full 
-   - User 
-   - Other                                          
- * - Admin: Appliance Settings                  
-   - X
-   - 
-   - X
-   -
-   -
- * - Admin: Backup Settings
-   - X
-   - X
-   - X
-   -
-   -
-
-
-
-.. 
- * - Admin: Backup Settings                   
-   - None             Read           Full                        
- * - Admin: Environment Settings              
-   - None             Full                                       
- * - Admin: Identity Source                   
-   - None             Role Mappings  Full                        
+   * - ﻿Permission 
+     - None 
+     - Read 
+     - Full 
+     - User 
+     - Other                                          
+   * - Admin: Appliance Settings                  
+     - ✔
+     - 
+     - ✔
+     -
+     -
+   * - Admin: Backup Settings
+     - ✔
+     - ✔
+     - ✔
+     -
+     -
+   * - Admin: Environment Settings              
+     - ✔
+     - 
+     - ✔
+     -
+     -                                     
+   * - Admin: Identity Source                   
+     - ✔
+     - 
+     - ✔
+     -
+     - Role Mappings
+     
+ ..                           
  * - Admin: Integrations                      
    - None             Read           Full                        
  * - Admin: License Settings                  
