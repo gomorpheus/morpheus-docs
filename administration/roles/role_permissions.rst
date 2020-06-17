@@ -37,209 +37,541 @@ Role Mappings
   Gives User Access to Role Mappings config in ``/admin/roles`` for configuring Identity Source Role Mappings without providing Access to other Identity Source configuration settings.
 
 .. list-table:: **Feature Access Role Permission Options**
-   :widths: auto
-   :header-rows: 1
+  :widths: auto
+  :header-rows: 1
 
-   * - Permission 
-     - None
-     - Read
-     - Full
-     - User
-     - Other
-   * - Admin: Appliance Settings
-     - ✔
-     -
-     - ✔
-     -
-     -
-   * - Admin: Backup Settings
-     - ✔
-     - ✔
-     - ✔
-     -
-     -
-   * - Admin: Environment Settings              
-     - ✔
-     -
-     - ✔
-     -
-     -
-   * - Admin: Identity Source                   
-     - ✔
-     -
-     - ✔
-     -
-     - Role Mappings
+  * - Permission
+    - None
+    - Read
+    - Full
+    - User
+    - Other
+  * - Admin: Appliance Settings
+    - ✔
+    -
+    - ✔
+    -
+    -
+  * - Admin: Backup Settings
+    - ✔
+    - ✔
+    - ✔
+    -
+    -
+  * - Admin: Environment Settings
+    - ✔
+    -
+    - ✔
+    -
+    -
+  * - Admin: Identity Source
+    - ✔
+    -
+    - ✔
+    -
+    - Role Mappings
+  * - Admin: Integrations
+    - ✔
+    - ✔
+    - ✔
+    -
+    -
+  * - Admin: License Settings
+    - ✔
+    -
+    - ✔
+    -
+    -
+  * - Admin: Log Settings
+    - ✔
+    -
+    - ✔
+    -
+    -
+  * - Admin: Message of the day
+    - ✔
+    -
+    - ✔
+    -
+    -
+  * - Admin: Monitoring Settings
+    - ✔
+    -
+    - ✔
+    -
+    -
+  * - Admin: Policies
+    - ✔
+    - ✔
+    - ✔
+    -
+    -
+  * - Admin: Provisioning Settings
+    - ✔
+    -
+    - ✔
+    -
+    -
+  * - Admin: Roles
+    - ✔
+    - ✔
+    - ✔
+    -
+    -
+  * - Admin: Service Plans
+    - ✔
+    - ✔
+    - ✔
+    -
+    -
+  * - Admin: Tenant
+    - ✔
+    - ✔
+    - ✔
+    -
+    -
+  * - Admin: Tenant - Impersonate ✔s
+    - ✔
+    -
+    - ✔
+    -
+    -
+  * - Admin: ✔s
+    - ✔
+    - ✔
+    - ✔
+    -
+    -
+  * - Admin: Whitelabel Settings
+    - ✔
+    -
+    - ✔
+    -
+    -
+  * - API: Execution Request
+    - ✔
+    -
+    - ✔
+    -
+    -
+  * - Backups
+    - ✔
+    - View
+    - ✔
+    - ✔
+    - ✔
+  * - Backups: Integrations
+    - ✔
+    - ✔
+    - ✔
+    -
+    -
+  * - Backups: Services
+    - ✔
+    - ✔
+    - ✔
+    -
+    -
+  * - Billing:
+    - ✔
+    - ✔
+    - ✔
+    -
+    -
+  * - Infrastructure: Boot
+    - ✔
+    - ✔
+    - ✔
+    -
+    -
+  * - Infrastructure: Certificates
+    - ✔
+    - ✔
+    - ✔
+    -
+    -
+  * - Infrastructure: Clouds
+    - ✔
+    - ✔
+    - ✔
+    -
+    -
+  * - Infrastructure: Clusters
+    - ✔
+    - ✔
+    - ✔
+    -
+    -
+  * - Infrastructure: Groups
+    - ✔
+    - ✔
+    - ✔
+    -
+    -
+  * - Infrastructure: Hosts
+    - ✔
+    - ✔
+    - ✔
+    -
+    -
+  * - Infrastructure: KeyPairs
+    - ✔
+    - ✔
+    - ✔
+    -
+    -
+  * - Infrastructure: Load Balancers
+    - ✔
+    - ✔
+    - ✔
+    -
+    -
+  * - Infrastructure: Network Domains
+    - ✔
+    - ✔
+    - ✔
+    -
+    -
+  * - Infrastructure: Network IP Pools
+    - ✔
+    - ✔
+    - ✔
+    -
+    -
+  * - Infrastructure: Network Proxies
+    - ✔
+    - ✔
+    - ✔
+    -
+    -
+  * - Infrastructure: Network Routers
+    - ✔
+    - ✔
+    - ✔
+    -
+    - Group
+  * - Infrastructure: Networks
+    - ✔
+    - ✔
+    - ✔
+    -
+    - Group
+  * - Infrastructure: Policies
+    - ✔
+    - ✔
+    - ✔
+    -
+    -
+  * - Infrastructure: Security Groups
+    - ✔
+    -
+    - ✔
+    -
+    -
+  * - Infrastructure: State
+    - ✔
+    - ✔
+    - ✔
+    -
+    -
+  * - Infrastructure: Storage
+    - ✔
+    - ✔
+    - ✔
+    -
+    -
+  * - Infrastructure: Storage Browser
+    - ✔
+    - ✔
+    - ✔
+    -
+    -
+  * - Infrastructure: Trust Integrations
+    - ✔
+    - ✔
+    - ✔
+    -
 
-
-..                           
-   * - Admin: Integrations                      
-     - None             Read           Full                        
-   * - Admin: License Settings                  
-     - None             Full                                       
-   * - Admin: Log Settings                      
-     - None             Full                                       
-   * - Admin: Message of the day                
-     - None             Full                                       
-   * - Admin: Monitoring Settings               
-     - None             Full                                       
-   * - Admin: Policies                          
-     - None             Read           Full                        
-   * - Admin: Provisioning Settings             
-     - None             Full                                       
-   * - Admin: Roles                             
-     - None             Read           Full                        
-   * - Admin: Service Plans                     
-     - None             Read           Full                        
-   * - Admin: Tenant                            
-     - None             Read           Full                        
-   * - Admin: Tenant - Impersonate Users        
-     - None             Full                                       
-   * - Admin: Users                             
-     - None             Read           Full                        
-   * - Admin: Whitelabel Settings               
-     - None             Full                                       
-   * - API: Execution Request                   
-     - None             Full                                       
-   * - Backups:                                 
-     - None             View           Read   User  Full           
-   * - Backups: Integrations                    
-     - None             Read           Full                        
-   * - Backups: Services                        
-     - None             Read           Full                        
-   * - Billing:                                 
-     - None             Read           Full                        
-   * - Infrastructure: Boot                     
-     - None             Read           Full                        
-   * - Infrastructure: Certificates             
-     - None             Read           Full                        
-   * - Infrastructure: Clouds                   
-     - None             Read           Full                        
-   * - Infrastructure: Clusters                 
-     - None             Read           Full                        
-   * - Infrastructure: Groups                   
-     - None             Read           Full                        
-   * - Infrastructure: Hosts                    
-     - None             Read           Full                        
-   * - Infrastructure: KeyPairs                 
-     - None             Read           Full                        
-   * - Infrastructure: Load Balancers           
-     - None             Read           Full                        
-   * - Infrastructure: Network Domains          
-     - None             Read           Full                        
-   * - Infrastructure: Network IP Pools         
-     - None             Read           Full                        
-   * - Infrastructure: Network Proxies          
-     - None             Read           Full                        
-   * - Infrastructure: Network Routers          
-     - None             Read           Group  Full                 
-   * - Infrastructure: Networks                 
-     - None             Read           Group  Full                 
-   * - Infrastructure: Policies                 
-     - None             Read           Full                        
-   * - Infrastructure: Security Groups          
-     - None             Read           Full                        
-   * - Infrastructure: State                    
-     - None             Read           Full                        
-   * - Infrastructure: Storage                  
-     - None             Read           Full                        
-   * - Infrastructure: Storage Browser          
-     - None             Read           Full                        
-   * - Infrastructure: Trust Integrations       
-     - None             Read           Full                        
-   * - Integrations: Ansible                    
-     - None             Full                                       
-   * - Logs:                                    
-     - None             Read           User   Full                 
-   * - Monitoring:                              
-     - None             Read           User   Full                 
-   * - Operations: Activity                     
-     - None             Read                                       
-   * - Operations: Analytics                    
-     - None             Read           Full                        
-   * - Operations: Approvals                    
-     - None             Read           Full                        
-   * - Operations: Budgets                      
-     - None             Read           Full                        
-   * - Operations: Dashboard                    
-     - None             Read                                       
-   * - Operations: Guidance                     
-     - None             Read           Full                        
-   * - Operations: Health                       
-     - None             Read                                       
-   * - Operations: Reports                      
-     - None             Read           Full                        
-   * - Operations: Usage                        
-     - None             Read           Full                        
-   * - Operations: Wiki                         
-     - None             Read           Full                        
-   * - Provisioning Administrator               
-     - None             Full                                       
-   * - Provisioning: Advanced Node Type Option  
-     - None             Full                                       
-   * - Provisioning: Allow Force Delete:        
-     - None             Full                                       
-   * - Provisioning: Apps:                      
-     - None             Read           User   Full                 
-   * - Provisioning: Automation Integrations    
-     - None             Read           Full                        
-   * - Provisioning: Automation Services        
-     - None             Read           Full                        
-   * - Provisioning: Blueprints                 
-     - None             Read           Full                        
-   * - Provisioning: Blueprints - ARM           
-     - None             Provision      Full                        
-   * -  Provisioning: Blueprints - CloudFormatin 
-     - None             Provision      Full                        
-   * - Provisioning: Blueprints - Helm          
-     - None             Provision      Full                        
-   * - Provisioning: Blueprints - Kubernetes    
-     - None             Provision      Full                        
-   * - Provisioning: Blueprints - Terraform     
-     - None             Provision      Full                        
-   * - Provisioning: Deployment Integrations    
-     - None             Read           Full                        
-   * - Provisioning: Deployments                
-     - None             Read           Full                        
-   * - Provisioning: Instances                  
-     - None             Read           User   Full                 
-   * - Provisioning: Job Executions             
-     - None             Read                                       
-   * - Provisioning: Jobs                       
-     - None             Read           Full                        
-   * - Provisioning: Library                    
-     - None             Read           Full                        
-   * - Provisioning: Scheduling - Execute       
-     - None             Read           Full                        
-   * - Provisioning: Scheduling - Power         
-     - None             Read           Full                        
-   * - Provisioning: Service Mesh               
-     - None             Read           User   Full                 
-   * - Provisioning: Tasks                      
-     - None             Read           Full                        
-   * - Provisioning: Tasks - Script Engines     
-     - None             Full                                       
-   * - Provisioning: Thresholds                 
-     - None             Read           Full                        
-   * - Provisioning: Virtual Images             
-     - None             Read           Full                        
-   * - Reconfigure Servers                      
-     - None             Full                                       
-   * - Remote Console:                          
-     - None             Provisioned    Full                        
-   * - Remote Console - Auto Login:             
-     - No               Yes                                        
-   * - Snapshots:                               
-     - None             Read           Full                        
-   * - Tools: Archives                          
-     - None             Read           Full                        
-   * - Tools: Cypher                            
-     - None             Read           User   Full  Full Decrypted 
-   * - Tools: Image Builder                     
-     - None             Read           Full                        
-   * - Tools: Kubernetes  (Deprecated)          
-     - None             Read           User   Full                 
-   * - Tools: Migrations                          - 
-     - None              Read           Full                       -    
-
-  .. o
+    -
+  * - Integrations: Ansible
+    - ✔
+    -
+    - ✔
+    -
+    -
+  * - Logs:
+    - ✔
+    - ✔
+    - ✔
+    - ✔
+    -
+  * - Monitoring:
+    - ✔
+    - ✔
+    - ✔
+    - ✔
+    -
+  * - Operations: Activity
+    - ✔
+    - ✔
+    -
+    -
+    -
+  * - Operations: Analytics
+    - ✔
+    - ✔
+    - ✔
+    -
+    -
+  * - Operations: Approvals
+    - ✔
+    - ✔
+    - ✔
+    -
+    -
+  * - Operations: Budgets
+    - ✔
+    - ✔
+    - ✔
+    -
+    -
+  * - Operations: Dashboard
+    - ✔
+    - ✔
+    -
+    -
+    -
+  * - Operations: Guidance
+    - ✔
+    - ✔
+    - ✔
+    -
+    -
+  * - Operations: Health
+    - ✔
+    - ✔
+    -
+    -
+    -
+  * - Operations: Reports
+    - ✔
+    - ✔
+    - ✔
+    -
+    -
+  * - Operations: Usage
+    - ✔
+    - ✔
+    - ✔
+    -
+    -
+  * - Operations: Wiki
+    - ✔
+    - ✔
+    - ✔
+    -
+    -
+  * - Provisioning Administrator
+    - ✔
+    -
+    - ✔
+    -
+    -
+  * - Provisioning: Advanced Node Type Option
+    - ✔
+    -
+    - ✔
+    -
+    -
+  * - Provisioning: Allow Force Delete:
+    - ✔
+    -
+    - ✔
+    -
+    -
+  * - Provisioning: Apps:
+    - ✔
+    - ✔
+    - ✔
+    - ✔
+    -
+  * - Provisioning: Automation Integrations
+    - ✔
+    - ✔
+    - ✔
+    -
+    -
+  * - Provisioning: Automation Services
+    - ✔
+    - ✔
+    - ✔
+    -
+    -
+  * - Provisioning: Blueprints
+    - ✔
+    - ✔
+    - ✔
+    -
+    -
+  * - Provisioning: Blueprints - ARM
+    - ✔
+    -
+    - ✔
+    -
+    - Provision
+  * - Provisioning: Blueprints - CloudFormation
+    - ✔
+    -
+    - ✔
+    -
+    - Provision
+  * - Provisioning: Blueprints - Helm
+    - ✔
+    -
+    - ✔
+    -
+    - Provision
+  * - Provisioning: Blueprints - Kubernetes
+    - ✔
+    -
+    - ✔
+    -
+    - Provision
+  * - Provisioning: Blueprints - Terraform
+    - ✔
+    -
+    - ✔
+    -
+    - Provision
+  * - Provisioning: Deployment Integrations
+    - ✔
+    - ✔
+    - ✔
+    -
+    -
+  * - Provisioning: Deployments
+    - ✔
+    - ✔
+    - ✔
+    -
+    -
+  * - Provisioning: Instances
+    - ✔
+    - ✔
+    - ✔
+    -
+    - ✔
+  * - Provisioning: Job Executions
+    - ✔
+    - ✔
+    -
+    -
+    -
+  * - Provisioning: Jobs
+    - ✔
+    - ✔
+    - ✔
+    -
+    -
+  * - Provisioning: Library
+    - ✔
+    - ✔
+    - ✔
+    -
+    -
+  * - Provisioning: Scheduling - Execute
+    - ✔
+    - ✔
+    - ✔
+    -
+    -
+  * - Provisioning: Scheduling - Power
+    - ✔
+    - ✔
+    - ✔
+    -
+    -
+  * - Provisioning: Service Mesh
+    - ✔
+    - ✔
+    - ✔
+    - ✔
+    -
+  * - Provisioning: Tasks
+    - ✔
+    - ✔
+    - ✔
+    -
+    -
+  * - Provisioning: Tasks - Script Engines
+    - ✔
+    -
+    - ✔
+    -
+    -
+  * - Provisioning: Thresholds
+    - ✔
+    - ✔
+    - ✔
+    -
+    -
+  * - Provisioning: Virtual Images
+    - ✔
+    - ✔
+    - ✔
+    -
+    -
+  * - Reconfigure Servers
+    - ✔
+    -
+    - ✔
+    -
+    -
+  * - Remote Console:
+    - ✔
+    -
+    - ✔
+    -
+    - Provisioned
+  * - Remote Console - Auto Login:
+    -
+    -
+    -
+    -
+    - No/Yes
+  * - Snapshots:
+    - ✔
+    - ✔
+    - ✔
+    -
+    -
+  * - Tools: Archives
+    - ✔
+    - ✔
+    - ✔
+    -
+    -
+  * - Tools: Cypher
+    - ✔
+    - ✔
+    - ✔
+    - ✔
+    - ✔ Decrypted
+  * - Tools: Image Builder
+    - ✔
+    - ✔
+    - ✔
+    -
+    -
+  * - Tools: Kubernetes  (Deprecated)
+    - ✔
+    - ✔
+    - ✔
+    - ✔
+    -
+  * - Tools: Migrations
+    - ✔
+    - ✔
+    - ✔
+    -
+    -
