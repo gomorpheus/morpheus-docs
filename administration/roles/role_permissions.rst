@@ -156,10 +156,10 @@ Role Mappings
     -
   * - Backups
     - ✔
+    - ✔
+    - ✔
+    - ✔
     - View
-    - ✔
-    - ✔
-    - ✔
   * - Backups: Integrations
     - ✔
     - ✔
@@ -459,8 +459,8 @@ Role Mappings
     - ✔
     - ✔
     - ✔
-    -
     - ✔
+    - 
   * - Provisioning: Job Executions
     - ✔
     - ✔
@@ -538,7 +538,7 @@ Role Mappings
     -
     -
     -
-    - No/Yes
+    - Yes/No
   * - Snapshots:
     - ✔
     - ✔
@@ -556,7 +556,7 @@ Role Mappings
     - ✔
     - ✔
     - ✔
-    - ✔ Decrypted
+    - Decrypted
   * - Tools: Image Builder
     - ✔
     - ✔
