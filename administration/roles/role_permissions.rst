@@ -39,37 +39,37 @@ Role Mappings
 .. list-table:: **Feature Access Role Permission Options**
    :widths: auto
    :header-rows: 1
-     
-  * - Permission 
-    - None
-    - Read
-    - Full
-    - User
-    - Other
-  * - Admin: Appliance Settings
-    - ✔
-    -
-    - ✔
-    -
-    -
-  * - Admin: Backup Settings
-    - ✔
-    - ✔
-    - ✔
-    -
-    -
-  * - Admin: Environment Settings              
-    - ✔
-    -
-    - ✔
-    -
-    -
-  * - Admin: Identity Source                   
-    - ✔
-    -
-    - ✔
-    -
-    - Role Mappings
+
+   * - Permission 
+     - None
+     - Read
+     - Full
+     - User
+     - Other
+   * - Admin: Appliance Settings
+     - ✔
+     -
+     - ✔
+     -
+     -
+   * - Admin: Backup Settings
+     - ✔
+     - ✔
+     - ✔
+     -
+     -
+   * - Admin: Environment Settings              
+     - ✔
+     -
+     - ✔
+     -
+     -
+   * - Admin: Identity Source                   
+     - ✔
+     -
+     - ✔
+     -
+     - Role Mappings
 
 
 ..                           
