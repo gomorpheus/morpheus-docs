@@ -56,9 +56,7 @@ No service version changes between v4.2.1 and v4.2.2
 |morphver| Service Version Compatibility
 ----------------------------------------
 
-**When externalizing MySQL, Elasticsearch and/or RabbitMQ services, the following versions are compatible with Morpheus |morphver|:**
-
-.. important:: Elasticsearch 7.x is required for |morphver|. Refer to :ref:`upgrading` section for more information.
+When externalizing MySQL, Elasticsearch and/or RabbitMQ services, the following versions are compatible with version |morpheus| |morphver|
 
 +---------------------------------------+-----------------------+-------------------------------------+
 | **Service**                           | **Compatible Branch** | **Morpheus Installer Version**      |
@@ -71,6 +69,8 @@ No service version changes between v4.2.1 and v4.2.2
 +---------------------------------------+-----------------------+-------------------------------------+
 | RabbitMQ                              | 3.5-3.8               | 3.8.3                               |
 +---------------------------------------+-----------------------+-------------------------------------+
+
+.. important:: Elasticsearch 7.x is required for |morphver|. Refer to :ref:`upgrading` section for more information.
 
 Security
 ========
