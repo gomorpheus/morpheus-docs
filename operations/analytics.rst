@@ -339,7 +339,7 @@ Workloads: Blueprint Usage
 
 The Blueprint Usage dashboard lists all provisioned Apps that meet filters set on the dashboard. Once the desired group of Apps is filtered into the dashboard, administrators will see the total provisioned from each Blueprint, total number of Instances created from the Apps, and costing details.
 
- **Filters**
+**Filters**
 
 Filter the Apps pulled into the dashboard by one or more of the following fields:
 
@@ -373,7 +373,7 @@ Workloads: Apps Usage
 
 The Apps Usage dashboard lists all provisioned Apps that meet a set of filters and organizes them by Cloud. Totals for cost and resource usage of all relevant Apps can be viewed with a per-Cloud breakdown.
 
- **Filters**
+**Filters**
 
 Filter the Apps pulled into the dashboard by one or more of the following fields:
 
