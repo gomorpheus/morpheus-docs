@@ -1,285 +1,229 @@
-Azure
------
+Azure (Public)
+--------------
 
 Overview
 ^^^^^^^^
 
-Azure is Microsoft's public cloud offering. Offering a full range of services and features across the globe in various datacenters. It is the equivalent of AWS for Microsoft running primarily on the Hyper-V based hypervisor. While it is a great public cloud offering, it can be somewhat difficult to get integrated with which is what this guide aims to cover.
+Morpheus offers a complete Integration with Microsoft Azure including the following:
 
-Features
-^^^^^^^^
-
-* Virtual Machine Provisioning
-* Azure SQL Database
-* Backups / Snapshots
-* Resource Group Sync & Selection
-* Network Sync & Selection
-* Security Group Sync & Selection
-* Storage Account Sync & Selection
-* Marketplace Search and Provisioning
+* Virtual Machine Sync, Create, Delete, Manage, RBAC, Tenant Permissions, Policies 
+* Resource Group Sync, Create, Delete, RBAC, Tenant Permissions
+* Network Sync, Create, Delete, RBAC, Tenant Permissions
+* Subnet Sync, Create, Delete, RBAC, Tenant Permissions
+* Security Group Sync, Create, Delete, Tenant Permissions  
+* Security Group Rule Sync, Create, Delete, Tenant Permissions
+* ARM Blueprints, Spec Templates, Deployment Logs Sync, Git/GitHub Integration  
+* MSSQL Service Sync, Create, Delete, Manage, RBAC, Tenant Permissions
+* AKS Sync, Sync, Create, Delete, Manage, RBAC, Tenant Permissions
+* Backup Create, Delete, Manage, RBAC, Policies 
+* Storage Sync, Create, Delete, Manage, Browse, RBAC, Tenant Permissions, Policies 
+* Marketplace Sync
+* Private Image Sync & Upload 
 * Azure Marketplace Custom Library Item Support
-* Remote Console
-* Periodic Synchronization
-* Lifecycle Management and Resize
+* Remote Console (SSH & RDP)
+* Lifecycle Management
 * Availability Set Support
-* Azure Load Balancers
-* Azure Storage
-* Docker Host Provisioning & Management
-* Service Plan Sync
-* Pricing Sync with markup options
+* Scale Set Sync, Create, Assign, Manage, Delete
+* Azure Load Balancer Create, Assign, Manage, Delete, RBAC, Tenant Permissions 
+* Docker (VM) Cluster Sync, Create, Delete, Manage, RBAC, Tenant Permissions
+* Kubernetes (VM) Cluster Sync, Create, Delete, Manage, RBAC, Tenant Permissions
+* Service Plan Sync, Tenant Permissions, RBAC
+* Pricing Sync RBAC, Tenant Permissions, Markup
+* Costing Sync, Reporting, Invoicing
+* Reservations Sync, Guidance Recommendations
+* Azure Stack Support
+* Tag Bi-Directional Sync, Creation, Deletion Policy Enforcement 
 * Cost Estimator
-
-Combine these features with on premise solutions like Azure-Stack and |morpheus| can provide a single pane of glass and self service portal for managing instances scattered across both public Azure and private Azure Stack offerings.
-
-.. NOTE:: |morpheus| supports integrating with CSP based accounts in Azure (typically used by managed service providers).
+* Azure US Gov Support
+* Azure China Support
+* Azure Germany Support 
+* CSP Account Support 
 
 Requirements
 ^^^^^^^^^^^^
 
-* Azure Active Directory Application & Credentials
+Morpheus Azure Integration requires Owner or Contributor access to subscription via App Registration. Adding an Azure Cloud or Clouds to |morpheus| will require the following: 
 
-  * Client ID (old portal) / Application ID (new portal)
-  * Client Secret (old portal) / Key Value (new portal)
-  * Tenant ID (old Portal) / Directory ID (new portal)
-  * Azure Subscription ID
+* Azure Subscription ID
+* Directory (tenant) ID 
+* Application (client) ID 
+* Application (client) Secret 
+* Application (client) must be Owner or Contributor of Subscription
 
-* Above Active Directory App added as owner of this Azure Subscription
-* Existing Azure Resources
+CSP Accounts require the additional following input:
 
-  * Network Security Group(s)
-    * Typical Inbound ports open from |morpheus| Appliance: 22, 5985, 3389
+* CSP Directory (tenant) ID
+* CSP Application (client) ID
+* CSP Application (client) SECRET
 
-    * Typical Outbound to |morpheus| Appliance: 80, 443
+Credentials & Permissions 
+^^^^^^^^^^^^^^^^^^^^^^^^^
 
-      * These are required for |morpheus| agent install, communication, and remote console access for windows and linux. Other configurations, such as docker instances, will need the appropriate ports opened as well.
+Morpheus authenticates with Azure via an App Registration with an Owner or Contributor Role on a Subscription. Use the steps below to create and collect the required credentials and assign the required permissions to integrate Azure with |morpheus|.
 
-  * Virtual Network(s)
+.. warning:: Using an App Registration (service principal) that has selective resource permissions and is not an Owner or Contributor of the Subscription is not supported and will cause failures/issues. Please confirm the App Registration you use to integrate Azure with Morpheus has Owner or Contributor permissions on the specified Subscription before contacting support. 
 
-    * Public IP assignment required for instances if |morpheus| Appliance is not able to communicate with Azure instances private ip's.
+Create an App Registration
+``````````````````````````
 
-  * Resource Group(s)
-  * Storage Account(s)
-
-.. NOTE:: |morpheus| v2.10.3 added support for multiple Resource Groups and Storage Accounts per cloud, making our Azure integration more capable and easier to configure. Prior versions of |morpheus| supported one resource group and one storage account per cloud, with the security group and network selection limited to the scoped Resource Group. If you are on an earlier version of |morpheus| , please note you will need to add an Azure cloud integration for each Resource Group and Storage Account you would like to use.
-
-Azure Active Directory Credentials
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-If you do not already have the Azure Active Directory credentials required to add an Azure cloud to |morpheus| , use the steps below to obtain them.
-
-.. IMPORTANT:: Microsoft recently added support for Active Directory application configuration in the new Azure portal. Previously, users had to use the old portal to get the required credentials to integrate Azure with |morpheus| . The instructions below are updated for the new portal. Microsoft also changed the naming conventions of the credentials:
-
-
-.. csv-table:: Old and New Portal Naming Conventions:
-   :header: Old Azure Portal Name, New Azure Portal Name
-   :widths: 100, 100
-
-   "Tenant ID", "Directory ID"
-   "Client ID", "Application ID"
-
-Creating an Azure Active Directory Application
-``````````````````````````````````````````````
-
-If you do not have an existing Azure Active Directory application for |morpheus| , you will need to create a new on by:
+If you do not have an existing Azure Active Directory App Registration, or you wish to use an new one for |morpheus| , you will need to create one.
 
 #. Log into the Azure portal
 #. Select "Azure Active Directory"
 #. Select "App Registrations"
-#. Select "New Application Registration"
+#. Select "New Registration"
 
-   .. image:: /images/azure/newazure-f3af4.png
+   .. image:: /images/clouds/azure/Default_Directory_App_registrations_Microsoft_Azure.png
 
-#. Next, give your new AD app a name, specify Web app / API for the type (default) and enter any url for the Sign-on URL:
 
-   .. image:: /images/azure/newazure-8c7ca.png
+#. Next, give app a name, specify Web app / API for the type (default) and enter any url for the Sign-on URL:
+#. Click Create and your new App Registration will be created.
 
-#. Click Create and your new Azure Active Directory Application will be created.
+   .. image:: /images/clouds/azure/Register_an_application_Microsoft_Azure.png
+   
+Now that we have (or already had) our App Registration, we will gather the credentials required for the |morpheus| Azure integration.
 
-   .. image:: /images/azure/newazure-f4e2d.png
+Copy Directory (tenant) and Application (client) IDs
+````````````````````````````````````````````````````
 
-Now that we have (or already had) our AD app, we will gather the credentials required for the |morpheus| Azure integration.
+The App Registration Directory (tenant) and Application (client) ID are required for the |morpheus| Azure integration. Both can be found in the overview section of the App Registration.
 
-Tenant ID/Directory ID
-``````````````````````
-
-While still in the Active Directory Section:
-
-#. Select Properties
-#. Copy the Directory ID
+#. Go to the Overview section of your App Registration
+#. Copy the Directory (tenant) ID
 #. Store/Paste for use as the Tenant ID when Adding your Azure cloud in |morpheus|
-
-   .. image:: /images/azure/newazure-044cf.png
-
-Client ID/Application ID
-````````````````````````
-
-#. Select App Registrations
-#. Select your Active Directory Application
-#. Copy the Application ID
+#. Copy the Application (client) ID
 #. Store/Paste for use as the Client ID when Adding your Azure cloud in |morpheus|
 
-   .. image:: /images/azure/newazure-3c6fa.png
+.. image:: /images/clouds/azure/morpheusAppReg_Microsoft_Azure.png
 
-Client Secret/Key Value
-```````````````````````
+Generate a Client Secret
+````````````````````````
+While still in your App Registration:
 
-While still in your Active Directory Application:
+#. Select Certificates & secrets in the Manage Section
+#. Select ``+ New client secret``
 
-#. Select Keys in the Settings pane
-#. Enter a name for the key
+   .. image:: /images/clouds/azure/morpheusAppReg_Certificates_secrets_Microsoft_Azure (1).png
+   
+#. The "Add a client secret" modal will come up 
+#. Add a description to help identify the secret in the future
 #. Select a duration
-#. Select save
-#. Copy the Key Value
+#. Select :guilabel:`Add`
+
+   .. image:: /images/clouds/azure/morpheusAppReg_Certificates_secrets_Add.png
+
+#. Copy the newly generated Client Secret Value. It is important to copy the Client Secret Value now as it will not be displayed/available
+   
+   .. IMPORTANT:: Copy the key value before continuing as it will not be displayed/available again.
+      
+   .. image:: /images/clouds/azure/morpheusAppReg_Certificates_secrets_Copy.png
+      
 #. Store/Paste for use as the Client Secret when Adding your Azure cloud in |morpheus|
 
-   .. IMPORTANT:: Copy the key value. You won't be able to retrieve after you leave this blade.
-
-   .. image:: /images/azure/newazure-7b82b.png
-
-You now have the 3 Active directory credentials required for |morpheus| Azure cloud integration.
+You now have 3 or the 4 credentials required for |morpheus| Azure cloud integration. The last credential required is the Azure Subscription ID.
 
 Subscription ID
 ```````````````
 
-The last credential required for the |morpheus| Azure cloud integration is the Azure Subscription ID
+To get the Azure Subscription ID:
 
-#. Select Resource Groups
-#. Select a Resource Group (instruction below if you do not have an existing resource group)
-#. Copy the Subscription ID
+#. Navigate to the main Subscriptions section. One way is to search for "Subscriptions" and select Subscriptions in the search results 
+
+   .. image:: /images/clouds/azure/azure subscriptions search.png
+
+#. In the main "Subscriptions" section, copy the Subscription ID 
+
+   .. image:: /images/clouds/azure/Subscriptions_Microsoft_Azure.png
+
 #. Store/Paste for use as the Subscription ID when Adding your Azure cloud in |morpheus|
 
-   .. image:: /images/azure/newazure-e446f.png
+Make App Registration owner or contributor of Subscription
+``````````````````````````````````````````````````````````
 
-Make Azure Active Directory Application owner of Subscription
-`````````````````````````````````````````````````````````````
+The App Registration created/used needs to be an owner of the Azure Subscription used for the |morpheus| cloud integration. If lesser permissions are given or permissions are assigned at individual resource levels, |morpheus| will not be able to properly inventory/sync, create and/or remove resources. 
 
-The Active Directory Application used needs to be an owner of the subscription used for the Azure |morpheus| cloud integration.
-
+#. In the main "Subscriptions" section in Azure, select the Subscription 
 #. In the Subscription pane, select "Access Control (IAM)"
+#. Either Click "+ Add", and the "Add Role Assignment", or simply select "Add a role assignment" 
 
-   .. image:: /images/azure/newazure-bd9f1.png
+   .. image:: /images/clouds/azure/Azure_subscription_1_Access_control_IAM_Microsoft_Azure.png
+   
+#. In the right pane, select "Owner" or "Contributor" Role type
+#. Search for the name of the App Registration used for the |morpheus| integration
+#. Select the App Registration in the search results 
+#. Select "Save"
 
-#. Click "+ Add", in the pane to the right, select "1 Select a role" and then select "Owner"
+   .. image:: /images/clouds/azure/Add_role_assignment_save.png
 
-   .. image:: /images/azure/newazure-cfd51.png
+You now have the required Credentials and permissions to add an Azure Cloud Integration(s) into |morpheus|.
 
-#. Select "2. Add Users" and in the search box begin to type the name of the AD Application created earlier.
-
-   .. NOTE:: the AD Application will not display by default and must be searched for.
-
-   .. image:: /images/azure/newazure-7f61c.png
-
-#. Select the Application, then click "Select" at the bottom of the Add Users pane, and the select "OK" at the bottom of the Add Access pane.
-
-   .. IMPORTANT:: Be sure to select "OK" at the bottom of the Add Access pane or the user addition will not save.
-
-   .. image:: /images/azure/newazure-560be.png
-
-You now have the required Credentials to add an Azure cloud integration into |morpheus| .
-
-.. IMPORTANT:: You will also need to have existing Network Security Group(s), Virtual Networks(s) and Storage Accounts(s). Instructions for creating these can be found later in this article.
-
-Add Azure cloud in |morpheus|
+Add an Azure Cloud Integration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Azure is now ready to be added into |morpheus| . Ensure you have the noted Subscription ID, Tenant ID, Client ID, and Client Secret accessible.
+To add a new Azure Cloud integration into |morpheus| using the credentials created/collected from the previous section, perform the following:
 
-#. In Infrastructure - Clouds, select :guilabel:`+ CREATE CLOUD` and select Azure from the cloud widget.
+#. In |morpheus|, navigate to ``Infrastructure -> Clouds`` and select :guilabel:`+ ADD`
 
-   OR
+   .. image:: /images/clouds/azure/Clouds_Morpheus_Add.png
+   
+#. Select "AZURE (PUBLIC)" from the Cloud Types list and click :guilabel:`NEXT`
 
-#. In Infrastructure, Groups- you can select the Clouds tab of a Group and click :guilabel:`+ ADD` next to Azure in the Public Cloud section
+   .. image:: /images/clouds/azure/Clouds_Morpheus.png
+   
+#. Populate the Following 
 
-#. Enter the following:
+   NAME
+     Name of the Cloud in |morpheus|
+   CODE
+     Optional, code is useful for the API/CLI and can be useful for Naming Policies 
+   LOCATION
+     Optional field for additional details such as locaiton 
+   CLOUD TYPE
+     - Standard (Azure Cloud)
+     - US Gov (Azure US Government)
+     - German (Azure German Cloud)
+     - China (Azure China Cloud)
+   SUBSCRIPTION ID
+     The target Azure Subscription ID obtained from the previous section 
+   TENANT ID
+     The Directory (tenant) ID obtained from the previous section 
+   CLIENT ID
+     The Application (client) ID obtained from the previous section 
+   CLIENT SECRET
+     The Application (client) Secret obtained from the previous section 
+   LOCATION
+     Once valid credentials are populate above and |morpheus| is able to successfully authenticate with Azure, the available locations/regions will populate. 
+   RESOURCE GROUP
+     - Select "All" to scope the Cloud to all available Resource Groups in the specified location/region.
+     - Select a single Resource Group to limit |morpheus| resource creation, selection and discovery to just this Resource Group.
+   INVENTORY EXISTING INSTANCES
+     Check to enable discovery/inventory of existing VM's in the scoped Region and Resource Group(s)
+   INVENTORY LEVEL
+     Basic
+      |morpheus| will sync information on all resources in the selected Resource Group(s), including Name, IP Addresses, Platform Type, Power Status, and overall resources sizing for Storage, CPU and RAM, every 5 minutes. Inventoried VM's will appear as Unmanaged VM's.
+     Full (API Heavy)
+      In addition to the information synced from Basic Inventory level, |morpheus| will gather Resource Utilization metrics for Memory, Storage and CPU utilization per VM when available.
+     Off
+      Existing VM's will not be inventoried
+   ACCOUNT TYPE
+     Standard, EA or CSP
+     
+     .. note:: For CSP Accounts, also enter CSP TENANT ID, CSP CLIENT ID and CSP CLIENT SECRET in the Advanced Options section.
+     
+     .. image:: /images/clouds/azure/addAzureCloudMorphuesS1.png
+     
+#. Once done configuring the Cloud, select :guilabel:`NEXT`. Note all specified values except the Subscription ID can be changes after the Cloud is created. 
 
-   * Name
-   * Location (optional)
-   * Domain (if not localdomain)
-   * Scale Priority
-   * Subscription ID (from step 18)
-   * Tenant ID (from step 16)
-   * Client ID (from step 13)
-   * Client Secret (from step 13)
+#. Next select an existing Group to add the Azure Cloud to, or create a new Group, then select :guilabel:`NEXT`
 
-   If everything is entered correctly, the Location dropdown will populate.
+   .. image:: /images/clouds/azure/Clouds_MorpheusAddGroup.png
+   
+#. Review the configuration and then select :guilabel:`COMPLETE`
 
-#. Select the Location/Region to scope the cloud to (additional Clouds can be added for multiple regions)
-#. Select All or specify a Resource Group to scope this cloud to
-#. Optionally select "Inventory Existing Instances" (This will inventory your existing vm's in Azure and list them in |morpheus| as unmanaged instances.)
-#. Click :guilabel:`+ Save Changes`
+   .. image:: /images/clouds/azure/Clouds_MorpheusComplete.png
+  
+Your new Azure Cloud integration will be created and begin to sync.
 
-   .. image:: /images/azure/newazure-5f512.png
-
-Your Azure Cloud will be created.
-
-   .. image:: /images/azure/newazure-2a7fe.png
-
-Creating Resources in Azure
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-If you do not have existing Network Security Groups, Virtual Networks, or Storage Accounts, you can create them by following the steps below:
-
-Create a Network Security Group
-'''''''''''''''''''''''''''''''
-
-#. In the main Azure toolbar, select the right arrow at the bottom of the toolbar (if collapsed) and search for and select Network Security Groups.
-
-   .. image:: /images/azure/newazure-83506.png
-
-#. Click "+ Add" at the top of the Network security groups pane
-
-   .. image:: /images/azure/newazure-3357f.png
-
-#. Enter a unique name for the security group, select the correct subscription, and either select the resource group being used, or create a new one as shown below. Also verify the Location is the same, and then click "Create" at the bottom of the pane.
-
-   .. image:: /images/azure/newazure-7c098.png
-
-#. Configure inbound and outbound rules for the security group. Ports 80 (http), 443 (https) 22 (ssh) and 5985 (winrm) need to be open to and from the |morpheus| appliance.
-
-Create a Virtual Network
-````````````````````````
-
-#. In the main Azure toolbar, select the right arrow at the bottom of the toolbar (if collapsed) and search for and select Virtual Networks.
-
-   .. image:: /images/azure/newazure-7ecb2.png
-
-#. Click "+ Add" at the top of the Virtual Networks pane
-
-   .. image:: /images/azure/newazure-db3a5.png
-
-#. Enter a unique name for the virtual network, the correct subscription, select "Use existing" and select the same resource group as the Network Security Group. Also verify the Location is the same, and then click "Create" at the bottom of the pane.
-
-   .. image:: /images/azure/newazure-a3066.png
-
-Create a Storage Account
-````````````````````````
-
-#. In the main Azure toolbar, select the right arrow at the bottom of the toolbar (if collapsed) and search for and select Storage Accounts.
-
-   .. image:: /images/azure/newazure-4429f.png
-
-#. Click "+ Add" at the top of the Storage accounts pane
-
-   .. image:: /images/azure/newazure-7947e.png
-
-#. Enter a unique name for the storage account, select "Locally-redundant storage (LRS) for Replication, select the correct subscription, select "Use existing" and select the same resource group as the Network Security Group and Virtual Network. Also verify the Location is the same, and finally click "Create" at the bottom of the pane.
-
-   .. image:: /images/azure/newazure-b89ea.png
-
-Docker
-^^^^^^
-
-So far this document has covered how to add the Azure cloud integration and has enabled users the ability to provision virtual machine based instances via the Add Instance catalog in Provisioning. Another great feature provided by |morpheus| out of the box is the ability to use Docker containers and even support multiple containers per Docker host. To do this a Docker Host must first be provisioned into Azure (multiple are needed when dealing with horizontal scaling scenarios).
-
-.. image:: /images/azure/newazure-7971d.png
-
-To provision a Docker Host simply navigate to the Cloud detail page or Infrastructure?Hosts section. From there click the + Container Host button to add a Azure Docker Host. This host will show up in the Hosts tab. |morpheus| views a Docker host just like any other Hypervisor with the caveat being that it is used for running containerized images instead of virtualized ones. Once a Docker Host is successfully provisioned a green checkmark will appear to the right of the host marking it as available for use. In the event of a failure click into the relevant host that failed and an error explaining the failure will be displayed in red at the top.
-
-Some common error scenarios include network connectivity. For a Docker Host to function properly, it must be able to resolve the |morpheus| appliance url which can be configured in Admin|Settings. If it is unable to resolve and negotiate with the appliance than the agent installation will fail and provisioning instructions will not be able to be issued to the host.
-
-Multi-tenancy
-^^^^^^^^^^^^^
-
-A very common scenario for Managed Service Providers is the need to provide access to Azure resources on a customer by customer basis. With Azure several administrative features have been added to ensure customer resources are properly scoped and isolated. For Azure it is possible to assign specific Networks, and Resource Groups to customer accounts or even set the public visibility of certain resources, therefore allowing all sub accounts access to the resource.
-
-.. include:: scalesets.rst
+.. note:: The initial sync of an Azure Cloud can take some time due to Marketplace data sync.
+  
+.. image:: /images/clouds/azure/Clouds_MorpheusNewCloudAdded.png
