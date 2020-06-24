@@ -21,23 +21,18 @@ Offline Install
 Ubuntu/Debian
 ^^^^^^^^^^^^^
 
-#. Download both the regular Morpheus Appliance package and the supplemental Installer packages on to the appliance server:
+#. Download both the regular Morpheus Appliance package and the Supplemental packages on to the appliance server:
 
    .. code-block:: bash
 
     wget http://example_url/morpheus-appliance_version_amd64.deb
     wget http://example_url/morpheus-appliance-supplemental_version_all.deb
 
-#. Install the appliance package. DO NOT run morpheus-ctl reconfigure yet.
+#. Install the both the Appliance package AND the Supplemental package.
 
    .. code-block:: bash
 
     sudo dpkg -i morpheus-appliance_version_amd64.deb
-
-#. Install the supplemental package:
-
-   .. code-block:: bash
-
     sudo dpkg -i morpheus-appliance-supplemental_version_all.deb
 
 #. Set the Morpheus UI appliance url (if needed, hostname will be automatically set).
@@ -62,23 +57,18 @@ The Chef run should complete successfully. There is a small pause when Chef runs
 CentOS/RHEL
 ^^^^^^^^^^^
 
-#. Download both the regular Morpheus Appliance package and the matching Supplemental Installer package on to the Appliance server:
+#. Download both the regular Morpheus Appliance package and the matching Supplemental package on to the Appliance server:
 
    .. code-block:: bash
 
     wget http://example_url/morpheus-appliance_package_url.noarch.rpm
     wget http://example_url/morpheus-appliance_package_supplemental_url.noarch.rpm
 
-#. Install the appliance package. DO NOT run morpheus-ctl reconfigure yet.
+#. Install the both the Appliance package AND the Supplemental package. 
 
    .. code-block:: bash
 
-    sudo rpm -i morpheus-appliance_package_supplemental_url.noarch.rpm
-
-#. Install the supplemental package:
-
-   .. code-block:: bash
-
+    sudo rpm -i morpheus-appliance_package_url.noarch.rpm
     sudo rpm -i morpheus-appliance_package_supplemental_url.noarch.rpm
 
 #. Set the Morpheus UI appliance url (if needed, hostname will be automatically set). 

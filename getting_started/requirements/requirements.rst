@@ -185,6 +185,7 @@ Morpheus supports a number of different UI languages, including:
   - German
   - Spanish
   - Chinese (Simplified)
+  - Portuguese (Brazil)
 
 Currently, UI language is not configurable from within Morpheus itself. Changing the language within the application will involve some combination of operating system and web browser language setting changes. Morpheus must also have a translation set for your chosen language to see a change. Depending on the browser and the operating system, you may need to fully close and reopen the web browser or restart the machine completely.
 

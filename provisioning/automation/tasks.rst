@@ -428,7 +428,7 @@ PowerShell Script
 |python| Python Script
 ``````````````````````
 
-.. IMPORTANT:: Beginning with |morpheus| version 4.2.1, Python tasks use virtual environments. For this reason, virtualenv must be installed on your appliances in order to work with Python tasks. Connect to the appliance node(s) and run "pip install virtualenv".
+.. IMPORTANT:: Beginning with |morpheus| version 4.2.1, Python Tasks use virtual environments. For this reason, "virtualenv" must be installed on your appliances in order to work with Python tasks. Connect to the appliance node(s) and run "pip install virtualenv".
 
 :Description:
   Executes Python script locally (on app node)

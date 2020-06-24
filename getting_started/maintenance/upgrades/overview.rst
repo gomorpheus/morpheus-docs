@@ -1,6 +1,5 @@
 Upgrading Overview
 ^^^^^^^^^^^^^^^^^^
-
 .. important:: |morpheus| v4.1.2+ requires Elasticsearch 7.x. Earlier versions of |morpheus| ran against Elasticsearch v5.x.
 
     - The Elasticsearch version for Appliance configurations with the default local Elasticsearch target will automatically be upgraded and no manual upgrade is required.
@@ -11,9 +10,13 @@ Upgrading Overview
 
     - Please refer to `Elasticsearch Upgrade Documentation <https://www.elastic.co/guide/en/elasticsearch/reference/current/setup-upgrade.html>`_ before installing or upgrading to v4.1.2 if your Appliance's Elasticsearch is external.
 
+|morpheus| Packages
+^^^^^^^^^^^^^^^^^^^
+|morpheus| Release Package urls can be obtained from `https://morpheushub.com <https://morpheushub.com>`_ 
+    
+
 Upgrade Requirements
 ^^^^^^^^^^^^^^^^^^^^
-
 3.6.x to |morphver| Upgrade
 ```````````````````````````
 
@@ -26,11 +29,17 @@ Upgrade Requirements
 * Elasticsearch will be upgraded from 5.x to 7.x. Refer to `Elasticsearch Upgrade Documentation <https://www.elastic.co/guide/en/elasticsearch/reference/current/setup-upgrade.html>`_ for upgrading external ES Clusters.
 * Stop all morpheus services, not just the morpheus-ui, before the upgrade. Although the upgrade process will also stop the services, take this step to ensure they are stopped.
 * Warnings about missing files during the removal phase are expected and can be ignored.
-* The repo download location has changed to https://downloads.morpheusdata.com from https://downloads.gomorpheus.com so if a customer has an ACL on their firewall or proxy they will need to update the ACL.
+* For firewall/proxy/acl considerations, the domain for Appliance, Supplemental and Agent packages was changed recently to https://downloads.morpheusdata.com from https://downloads.gomorpheus.com. Please update ACL's to allow access to https://downloads.morpheusdata.com when necessary. 
 
 Refer to :ref:`compatibility` for externalized MySQL, Elasticsearch and/or RabbitMQ version requirements.
 
-4.x to |morphver| Upgrade
-`````````````````````````
 
+4.0.0, 4.1.0, 4.1.1 to |morphver| Upgrade
+`````````````````````````````````````````
 * Elasticsearch will be upgraded from 5.x to 7.x. Refer to `Elasticsearch Upgrade Documentation <https://www.elastic.co/guide/en/elasticsearch/reference/current/setup-upgrade.html>`_ for upgrading external ES Clusters.
+* For firewall/proxy/acl considerations, the domain for Appliance, Supplemental and Agent packages was changed recently to https://downloads.morpheusdata.com from https://downloads.gomorpheus.com. Please update ACL's to allow access to https://downloads.morpheusdata.com when necessary. 
+
+
+4.1.2+ to |morphver| Upgrade
+````````````````````````````
+No major service changes 

@@ -21,7 +21,7 @@ Adding an Instance to a Scale Set
 A Virtual Machine scale set will be created in Azure with the selected threshold and min/max node settings.
 
 Create Threshold Presets
-```````````````````````
+````````````````````````
 
 
 #. In ``Provisioning - Automation`` select the `SCALE THRESHOLDS` tab

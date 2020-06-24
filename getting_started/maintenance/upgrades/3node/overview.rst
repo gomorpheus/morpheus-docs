@@ -3,6 +3,23 @@
 
 3-Node HA Appliance represent 3 App nodes with local RabbitMQ and Elasticsearch services clustered across the app nodes, and an external Galera/Percona MySQL cluster.
 
+|morpheus| Packages
+```````````````````
+|morpheus| Release Package urls can be obtained from `https://morpheushub.com <https://morpheushub.com>`_ 
+
+
+4.2.1 -> 4.2+ upgrade 
+.....................
+No major system service version changes.
+
+
+4.0.0, 4.1.0, 4.1.1 -> |morphver| Upgrade
+.........................................
+* Elasticsearch will be upgraded from 5.6 to 7.2.
+
+
+3.6.x -> 4.2+ upgrade 
+.....................
 When upgrading a 3-Node appliance from 3.6.x to |morphver| the following services will be upgraded:
 
 - RabbitMQ upgrade to v3.7
@@ -13,6 +30,10 @@ The upgrade process will not upgrade the external MySQL node(s). Refer to :ref:`
 Due to RabbitMQ going from 3.4 to 3.7, which has no rolling upgrade path, the RabbitMQ queues and configuration will be dropped, and the cluster will need to be configured and established again. This also ensures new queues are created using our new declaration settings, and removes any old queues not in use anymore.
 
 .. important:: Due to the RabbitMQ upgrade from 3.4 to 3.7, the RabbitMQ configuration will be dropped and the cluster will need to be configured and established again.
+
+
+Upgrade Instructions
+````````````````````
 
 .. toctree::
    :maxdepth: 3

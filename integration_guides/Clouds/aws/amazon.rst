@@ -75,7 +75,7 @@ Adding an AWS Cloud
    Secret Key
      Secret Access Key associate with the Access Key ID.
    Use Host IAM Credentials
-     Must be marked to use secure token service (STS) AssumeRole
+     Check to use use Host IAM Credentials
    Role ARN
      Supports security token service (STS) to AssumeRole by entering an AWS Role ARN
    Inventory

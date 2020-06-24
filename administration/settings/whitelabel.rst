@@ -11,7 +11,7 @@ Enable Whitelabel
 Appliance Name
 	Replaces |morpheus| in page titles.
 Header Logo
-	Top left header logo. Preferred Image Size (500x76)
+	Top left header logo. Uploaded image is resized to 38 pixels high with a proportional width at that height.
 Disable Support Menu
 	Enable this flag to hide the support dropdown menu in the header.
 Support Menu Links
@@ -22,9 +22,9 @@ Security Banner
 		- Security Banner input field accepts plain text and markdown
 		- Content is displayed below login section in scoped /login/auth pages.
 Footer Logo
-	Footer Logo in bottom left. Preferred Image Size (264x54)
+	Footer Logo in bottom left. Uploaded image is resized to 27 pixels high with a proportional width at that height.
 Login Logo
-	Logo shown on Login screen. Preferred Image Size (228x280)
+	Logo shown on Login screen. Uploaded image is resized to 192 pixels wide with an unbound height proportional to that locked width.
 Favicon
 	Must be a .ico file type.
 Reset

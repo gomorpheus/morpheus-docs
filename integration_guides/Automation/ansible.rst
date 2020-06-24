@@ -4,23 +4,25 @@ Ansible
 Overview
 ^^^^^^^^
 
-Ansible is a configuration management engine that is rapidly growing in popularity in the IT and DevOPS community. While it lacks some of the benefits at scale that solutions such as Salt, Chef, or Puppet offer. It is very easy to get started and allows engineers to develop tasks in a simplistic markup language known as YAML.  |morpheus| integrates with an existing repository of playbooks as the master in a master-slave Ansible architecture.
+Ansible is a configuration management engine that is rapidly growing in popularity in the IT and DevOPS community. While it lacks some of the benefits at scale that solutions such as Salt, Chef, or Puppet offer. It is very easy to get started and allows engineers to develop tasks in a simplistic markup language known as YAML. |morpheus| integrates with an existing repository of playbooks as the master in a master-slave Ansible architecture.
 
-|morpheus| not only supports Ansible but greatly enhances Ansible to do things that it could not do in its native form. For example, Ansible can now be configured to run over the |morpheus| agent communication bus. This allows playbooks to be ran against instances where ssh/winrm access may not be feasible due to networking restrictions or other firewall constraints. Instead it can run over the |morpheus| Agent which only requires port 443 access back to the |morpheus| appliance URL.
+|morpheus| not only supports Ansible but greatly enhances Ansible to do things that it could not do in its native form. For example, Ansible can now be configured to run over the |morpheus| agent communication bus. This allows playbooks to be run against instances where SSH/WinRM access may not be feasible due to networking restrictions or other firewall constraints. Instead it can run over the |morpheus| Agent which only requires port 443 access back to the |morpheus| appliance URL.
 
-This integration supports both Linux based and Windows platforms for playbook execution and can also be configured to query secrets from the |morpheus| Cypher services (similar to Vault).
+This integration supports both Linux-based and Windows platforms for playbook execution and can also be configured to query secrets from |morpheus| Cypher services (similar to Vault).
 
 Requirements
 ^^^^^^^^^^^^
 * Minimum Ansible Version Requirement is 2.7.x
-* For agentless non commandbus sshpass is required
-* For windows non agent command bus pywinrm is required
+* For agentless non-commandbus, sshpass is required
+* For Windows non-agent command bus, pywinrm is required
 * ``Integrations: Ansible`` User Role Permission required for access to Ansible Details Pages and Ansible tabs in Groups and Clouds
+
+.. NOTE:: Installing Ansible on the |morpheus| appliance is a requirement. In most cases, this is handled automatically but in certain situations you may have to install manually. See the section below on `troubleshooting Ansible <https://docs.morpheusdata.com/en/latest/integration_guides/Automation/ansible.html#troubleshooting-ansible>`_ for installation steps.
 
 Add Ansible Integration
 ^^^^^^^^^^^^^^^^^^^^^^^
 
-#. Navigate to `Provisioning -> Automation -> Integrations` and select `+ New Integration`
+#. Navigate to `Provisioning > Automation > Integrations` and select `+ New Integration`
 #. Select Integration Type "Ansible"
 #. Populate the following fields:
 
@@ -224,7 +226,7 @@ Troubleshooting Ansible
 
 * Verify Ansible is installed on the |morpheus| Appliance.
 
-  Ansible should be automatically but certain os's or network conditions can prevent automated install. You can run ``ansible --version`` in the |morpheus| Appliance, or in the Ansible integration details page (Administration -> Integrations -> Select Ansible Integration, or in the Ansible tab of a group or cloud scoped to Ansible) just run ``--version`` as ansible is already included in the command.
+  Ansible should be automatically installed but certain OS or network conditions can prevent the automated install. You can confirm installation by running ``ansible --version`` in the |morpheus| appliance, or by viewing the Ansible integration details page (``Administration > Integrations > Select Ansible Integration``). We also see it in the Ansible tab of a Group or Cloud scoped to Ansible, just run ``--version`` as ansible is already included in the command.
 
   If Ansible is not installed, follow these instructions to install, or use your preferred installation method:
 

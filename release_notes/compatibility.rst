@@ -9,17 +9,15 @@ When installing and upgrading to |morpheus| |morphver|, refer to the following t
 Breaking Changes
 ================
 
-- Appliance: OS: Ubuntu 14.04 has reached its end of life (EOL) and is no longer supported as a Morpheus Appliance Host Operating System. Any |morpheus| Appliance running on 14.04 must be upgraded to 16.04, 18.04 or 20.04 BEFORE upgrading to 4.2.1+. Upgrades on 14.04 will not succeed.
-- Clouds: VirtualBox, VirtuSteam, and MetaCloud Cloud Types are no longer supported or available.
-- Puppet: |morpheus| integration now supports version 6+. Puppet versions prior to 6 are no longer supported.
-- Tasks: Python: Virtual environment are now used for Python Tasks. **Note:** ``virtualenv`` is required on all Appliance App nodes. ``pip install virtualenv``.
+- 4.2.1: Appliance: OS: Ubuntu 14.04 has reached its end of life (EOL) and is no longer supported as a Morpheus Appliance Host Operating System. Any |morpheus| Appliance running on 14.04 must be upgraded to 16.04, 18.04 or 20.04 BEFORE upgrading to 4.2.1+. Upgrades on 14.04 will not succeed
+- 4.2.1: Clouds: VirtualBox, VirtuSteam, and MetaCloud Cloud Types are no longer supported or available
+- 4.2.1: Puppet: |morpheus| integration now supports version 6+. Puppet versions prior to 6 are no longer supported
+- 4.2.1: Tasks: Python: Virtual environment are now used for Python Tasks. **Note:** ``virtualenv`` is required on all Appliance App nodes: ``pip install virtualenv``
 
 |morpheus| Application OS
 =========================
 
-.. important:: Existing Appliances on 14.04 must upgrade to 16.04 or 18.04 PRIOR to upgrading to v4.2.1.
-
-The Morpheus Application can be installed on the following Operating System versions:
+.. important:: Existing Appliances on 14.04 must upgrade to 16.04 or 18.04 PRIOR to upgrading to v4.2.1+.
 
 .. list-table:: **Supported Appliance Operating Systems**
    :widths: auto
@@ -29,43 +27,36 @@ The Morpheus Application can be installed on the following Operating System vers
      - Version(s)
      - Notes
    * - Amazon Linux
-     - 2 
-     - 
+     - 2
+     -
    * - CentOS
-     - 7.x, 8.x 
+     - 7.x, 8.x
      -
    * - Debian
      - 9, 10
      - FreeRDP 2.0 is not compatible with Debian 9. Guacd will remain at 1.0.0 for Appliances running on 9.
    * - RHEL
-     - 7.x, 8.x 
-     - 
+     - 7.x, 8.x
+     -
    * - SUSE SLES
-     - 12, 15 
-     - 
+     - 12, 15
+     -
    * - Ubuntu
-     - 16.04, 18.04 
-     - 14.04 is no longer supported for Appliance OS. Existing Appliances on 14.04 must upgrade to 16.04 or 18.04 PRIOR to upgrading to v4.2.1. Note: 14.04 is still supported by the |morpheus| Agent.
-          
+     - 16.04, 18.04
+     - 14.04 is no longer supported for Appliance OS. Existing Appliances on 14.04 must upgrade to 16.04 or 18.04 PRIOR to upgrading to v4.2.1+. Note: 14.04 is still supported by the |morpheus| Agent.
+
 Services
 ========
 
 |morphver| Service Version Changes
 ----------------------------------
 
-The following service versions have changed from the prior release. Service version changes are only applicable when using Morpheus System services. Externalized services are not upgraded by |morpheus|.
+No service version changes between v4.2.1 and v4.2.2
 
-- ElasticSearch: Upgraded to 7.6.2 from 7.6.1
-- Erlang: Upgraded to 22.3 from 22.0
-- NGINX: Upgraded to 1.17.9 from 1.17.6
-- OpenJDK JRE: Upgraded to 8u252 from 8u242
-- OpenSSL: Upgraded to 1.0.2u from 1.0.2t
-- RabbitMQ: Upgraded to 3.8.3 from 3.7.16
-- Tomcat: Upgraded to 3.0.33 from 9.0.31
+|morphver| Service Version Compatibility
+----------------------------------------
 
-When externalizing MySQL, Elasticsearch and/or RabbitMQ services, the following versions are compatible with Morpheus |morphver|:
-
-.. important:: Elasticsearch 7.x is required for |morphver|. Refer to :ref:`upgrading` section for more information.
+When externalizing MySQL, Elasticsearch and/or RabbitMQ services, the following versions are compatible with version |morpheus| |morphver|
 
 +---------------------------------------+-----------------------+-------------------------------------+
 | **Service**                           | **Compatible Branch** | **Morpheus Installer Version**      |
@@ -76,22 +67,25 @@ When externalizing MySQL, Elasticsearch and/or RabbitMQ services, the following 
 +---------------------------------------+-----------------------+-------------------------------------+
 | Elasticsearch                         | 7.x                   | 7.6.2                               |
 +---------------------------------------+-----------------------+-------------------------------------+
-| RabbitMQ                              | 3.5-3.8               | 3.8.3                              |
+| RabbitMQ                              | 3.5-3.8               | 3.8.3                               |
 +---------------------------------------+-----------------------+-------------------------------------+
+
+.. important:: Elasticsearch 7.x is required for |morphver|. Refer to :ref:`upgrading` section for more information.
 
 Security
 ========
 
-.. important:: Please be aware of the default security enhancements added to v4.1.2+ and assess potential impacts to your env, including agent installation and front end load balancers.
+.. important:: Please be aware of the default security enhancements added to v4.1.2+ and assess potential impacts to your environment, including agent installation and frontend load balancers.
 
-- Appliance: Starting in v4.1.2 (not new but worth repeating), the default |morpheus| Nginx config removes support for incoming ``TLS v1.0 and v1.1`` connections. Please update source config to be compatible. If necessary, |morpheus| can be configured to support older TLS versions via :ref:`morpheus.rb` config.
-- Security: Web Security response headers set for enhanced security
+- 4.1.2: Appliance: Starting in v4.1.2, the default |morpheus| Nginx config removes support for incoming ``TLS v1.0 and v1.1`` connections. Please update source config to be compatible. If necessary, |morpheus| can be configured to support older TLS versions via :ref:`morpheus.rb` config.
+- 4.2.1: Security: Web Security response headers set for enhanced security
 
-CVEs Addressed
---------------
+..
+  CVEs Addressed
+  --------------
 
-- CVE-2017-18640
-- CVE-2019-12418
+  - CVE-2017-18640
+  - CVE-2019-12418
 
 Integrations
 ============
@@ -100,54 +94,6 @@ Integrations
 
 .. important:: VirtualBox, VirtuSteam, and MetaCloud Cloud Types are no longer supported.
 
-+-------------------+-------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------+
-| Integration       | Supported Version(s)                                                          | Known incompatibilities                                                                                                               |
-+===================+===============================================================================+=======================================================================================================================================+
-| Ansible           | 2.7.x                                                                         |                                                                                                                                       |
-+-------------------+-------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------+
-| Ansible Tower     | 3.3.x                                                                         |                                                                                                                                       |
-+-------------------+-------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------+
-| App Dynamics      | 4.5.x                                                                         |                                                                                                                                       |
-+-------------------+-------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------+
-| Azure Stack       | GA                                                                            |                                                                                                                                       |
-+-------------------+-------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------+
-| Cisco ACI         | 3.10                                                                          |                                                                                                                                       |
-+-------------------+-------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------+
-| Commvault         | v11 sp 12                                                                     |                                                                                                                                       |
-+-------------------+-------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------+
-| Jenkins           | < 2.176.1                                                                     |                                                                                                                                       |
-+-------------------+-------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------+
-| Kubernetes        | 1.x                                                                           |                                                                                                                                       |
-+-------------------+-------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------+
-| Kubernetes        | Major:"1", Minor:"14", GitVersion:"v1.14.1"                                   |                                                                                                                                       |
-+-------------------+-------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------+
-| Microsoft Hyper-V | 2012R2, 2016, 2019                                                            |                                                                                                                                       |
-+-------------------+-------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------+
-| Nutanix AHV       | 5.0 - 5.10                                                                    | In 5.5 - 5.7 if Prism Central is managing Prism Element, image creation in Prism Element will function due to PC Image Management.    |
-+-------------------+-------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------+
-| Openstack         | Juno, Kilo, Liberty, Mitaka, Newton, Ocata, Pike, Queens, Rocky, Stein, Train |                                                                                                                                       |
-+-------------------+-------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------+
-| Rubrik            | 4.2                                                                           |                                                                                                                                       |
-+-------------------+-------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------+
-| ServiceNow        | Kingston, London, Madrid, New York, and Orlando                               |                                                                                                                                       |
-+-------------------+-------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------+
-| Splunk            | 7.10                                                                          |                                                                                                                                       |
-+-------------------+-------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------+
-| Terraform         | v0.11.x                                                                       | Not Compatible with v0.12.x (Support Planned)                                                                                         |
-+-------------------+-------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------+
-| vCloud Director   | 8.20, 9.1, 9.5                                                                |                                                                                                                                       |
-+-------------------+-------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------+
-| Veeam             | 9.5u3, 9.5u4, 10                                                              |                                                                                                                                       |
-+-------------------+-------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------+
-| VMware ESXi       | 5.5, 6.0, 6.5, 6.7                                                            |                                                                                                                                       |
-+-------------------+-------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------+
-| VMware Fusion     | 8, 9, 10+                                                                     |                                                                                                                                       |
-+-------------------+-------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------+
-| VMware NSX        | -V, -T                                                                        |                                                                                                                                       |
-+-------------------+-------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------+
-| VMware vCenter    | 5.5, 6.0, 6.5, 6.7                                                            |                                                                                                                                       |
-+-------------------+-------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------+
-| XenServer         | 7.x                                                                           |                                                                                                                                       |
-+-------------------+-------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------+
+.. include:: compatibility_table.rst
 
 .. note:: Non-listed versions may be compatible but are not verified.

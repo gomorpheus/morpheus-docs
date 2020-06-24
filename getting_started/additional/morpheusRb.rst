@@ -26,8 +26,7 @@ Morpheus allows for additional advanced customizations to the morpheus.rb file l
   mysql['morpheus_db'] = 'morpheus'
   mysql['morpheus_db_user'] = 'morpheus'
   mysql['max_active'] = 100
-  mysql['host'] = '127.0.0.1'
-  mysql['port'] = 3306
+  mysql['host'] = {'127.0.0.1' => 3306}
   mysql['tmp_dir'] = '/tmp/mysql'
   mysql['mysql_url_overide'] = 'jdbc:mysql://10.30.20.10:3306,10.30.20.11:3306,10.30.20.12:3306/morpheusdb?autoReconnect=true&useUnicode=true&characterEncoding=utf8&failOverReadOnly=false&useSSL=false'
 
