@@ -5,9 +5,42 @@ The following covers upgrading the |morpheus| App nodes in Full HA Architecture 
 
 .. important:: The following is only for Full HA Architecture configurations, where MySQL, Elasticsearch and RabbitMQ services are external to the App nodes.
 
-4.x -> |morphver| Upgrade
-.........................
+4.1.2+ -> |morphver| (rolling)
+..............................
+.. note:: All system services will automatically be stopped during the package install, and started during the reconfigure process. After the reconfigure has succeeded, tail the ui service to watch ui startup logs with ``morpheus-ctl tail morpheus-ui``. 
+ 
+.. important:: Any externalized/non-system install services will not be stopped/started/upgraded/touched during package installs/upgrades or during reconfigures.
+ 
+ 
+#. Upgrade the RPM package on Node 1, then run a Reconfigure on Node 1
 
+   .. code-block:: bash
+
+    [root@app-server-1 ~]# sudo wget https://packageUrl.morpheus-appliance-x.x.x-x.x86_64.rpm
+    [root@app-server-1 ~]# sudo rpm -Uhv morpheus-appliance-x.x.x-x.x86_64.rpm
+    [root@app-server-1 ~]# sudo morpheus-ctl reconfigure
+
+#. Once Node 1 upgrade has completed and the u is available, upgrade the RPM package on Node 2, then run a Reconfigure on Node 2.
+
+   .. code-block:: bash
+
+    [root@app-server-2 ~]# sudo wget https://packageUrl.morpheus-appliance-x.x.x-x.x86_64.rpm
+    [root@app-server-2 ~]# sudo rpm -Uhv morpheus-appliance-x.x.x-x.x86_64.rpm
+    [root@app-server-2 ~]# sudo morpheus-ctl reconfigure
+
+#. Then upgrade the RPM package and run a Reconfigure on Node 3.
+
+   .. code-block:: bash
+
+    [root@app-server-3 ~]# sudo wget https://packageUrl.morpheus-appliance-x.x.x-x.x86_64.rpm
+    [root@app-server-3 ~]# sudo rpm -Uhv morpheus-appliance-x.x.x-x.x86_64.rpm
+    [root@app-server-3 ~]# sudo morpheus-ctl reconfigure
+
+#. The upgrade is complete and the |morpheus|-ui services should be running across the 3 nodes.
+
+
+4.0.0, 4.1.0, 4.1.1 -> |morphver| Upgrade
+.........................................
 * Elasticsearch 7.x is required for the external Elasticsearch cluster or services. Refer to `Elasticsearch Upgrade Documentation <https://www.elastic.co/guide/en/elasticsearch/reference/current/setup-upgrade.html>`_ for upgrading external ES Clusters. The |morpheus| |morphver| package upgrade and reconfigure process will NOT upgrade external services.
 
 #. Starting with Node 3, on All App Nodes, stop all Morpheus services via ``morpheus-ctl stop``. This will stop all system services. If any services timeout, run ``morpheus-ctl stop`` again.
@@ -57,7 +90,6 @@ The following covers upgrading the |morpheus| App nodes in Full HA Architecture 
 
 3.6.x -> |morphver| Upgrade
 ...........................
-
 * MySQL 5.7.x is required for external MySQL clusters or services. Refer to `Percona Upgrade Documentation <https://www.percona.com/doc/percona-server/5.7/upgrading_guide_56_57.html>`_ for upgrading external Percona Clusters. The |morpheus| |morphver| package upgrade and reconfigure process will NOT upgrade external services.
 
 * Elasticsearch 7.x is required for the external Elasticsearch cluster or services. Refer to `Elasticsearch Upgrade Documentation <https://www.elastic.co/guide/en/elasticsearch/reference/current/setup-upgrade.html>`_ for upgrading external ES Clusters. The |morpheus| |morphver| package upgrade and reconfigure process will NOT upgrade external services.

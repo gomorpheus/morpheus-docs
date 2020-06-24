@@ -9,6 +9,11 @@ All components required for Morpheus are installed and configured by default dur
 
 Morpheus can optionally be configured to use external Database, Messaging, and/or Search Tiers. This means instead of installing, for example, MySQL on the same host as the Morpheus App, the Morpheus configuration file (morpheus.rb) is setup to point to an external MySQL host, cluster or service, and MySQL will not be installed or configured on the Appliance Host.
 
+Install Packages
+^^^^^^^^^^^^^^^^
+
+|morpheus| Release Package urls can be obtained from `https://morpheushub.com <https://morpheushub.com>`_ 
+
 Configuration Options
 ^^^^^^^^^^^^^^^^^^^^^
 
