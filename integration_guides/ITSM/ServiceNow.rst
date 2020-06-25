@@ -3,35 +3,84 @@
 ServiceNow
 ----------
 
+Overview
+^^^^^^^^
+
+IT Service Management (ITSM) is an important area of focus for many organizations. Organizations invested in ServiceNow as an ITSM provider will find that |morpheus| integrates tightly with some of the most-used features. After integrating ServiceNow with |morpheus|, both environments can be used interchangeably and the results are synced to both places. This guide walks administrators through the process of integrating ServiceNow with |morpheus| and how |morpheus| can be used to effectively leverage the best of ServiceNow.
+
 Add Service Now Integration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-#. Navigate to ``Administration -> Integrations``
+#. Navigate to ``Administration > Integrations``
 #. Select ``+ NEW INTEGRATION``
 #. Select ``ServiceNow`` from the TYPE dropdown.
 #. Add the following:
 
    NAME
-    Name of the Integration in Morpheus.
+    A friendly name to describe the ServiceNow integration in |morpheus|.
    ENABLED
-    Leave checked to enable the Integration.
+    Check "Enabled" to allow consumption of this ServiceNow integration in |morpheus|.
    HOST
-    Url of the ServiceNow Instance ex: https://your.instance.service-now.com
-   USER
-    A user in ServiceNow that is able to access the REST interface and create/update/delete incidents, requests, requested items, item options, catalog items, workflows, etc.
-   PASSWORD
-    Above ServiceNow user's password
+    URL of the ServiceNow instance (ex: https://your.instance.service-now.com), keep in mind you can create multiple ServiceNow integrations in |morpheus| if needed.
+   USER/PASSWORD
+    A user in ServiceNow that is able to access the REST interface and create/update/delete incidents, requests, requested items, item options, catalog items, workflows, etc. The list of necessary roles includes ``x_moda_morpheus_ca.integration`` (available if the |morpheus| ServiceNow plugin is installed from the ServiceNow Store), ``catalog_admin``, ``itil``, ``rest_service``, and ``import_transformer``.
    CMDB CUSTOM MAPPING
-    Configure custom mapping for CMDB records
+    If needed, administrators can opt to populate a specific field in the ServiceNow table and such mapping is identified here with a JSON code snippet. Below is an example that populates the ``object_id`` field in the CM database with the |morpheus| instance name:
+
+    .. code-block:: json
+      {
+      "object_id":"<${instance.name}>"
+      }
+
    CMDB BUSINESS OBJECT
-    Allows the user to define the table CMDB records are written to if they prefer this over Morpheus defaults
+    Allows the user to define the table CMDB records are written to if they prefer this over |morpheus| default. By default, |morpheus| writes to the ``cmdb_ci_vm_instance`` table.
 
 #. Save Changes
 
 .. IMPORTANT:: When using ServiceNow version London, the following steps must also be performed.  An administrator needs to modify the access permissions on the ``catalog_script_client`` and ``io_set_item`` tables.  This is performed by ensuring the ``Can create``, ``Can update``, and ``Can Delete`` are checked under Application Access for ``All application scopes`` for these tables.
 
+ServiceNow Configuration Management Database (CMDB)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+ServiceNow CMDB is central to maintaining record of all IT infrastructure at many organizations. The |morpheus| ServiceNow integration can create and update configuration item (CIs) records as new services are provisioned or existing services are reconfigured. Once a ServiceNow integration is set as the CMDB for a Cloud or Group, CI records are created and managed by |morpheus|.
+
+Setting a CMDB on a Group
+`````````````````````````
+
+When adding or editing a |morpheus| Group, any active ServiceNow integration can be set as the CMDB.
+
+#. Navigate to Infrastructure > Groups
+#. Select an existing Group name from the list
+#. Click :guilabel:`EDIT`
+#. Under "Advanced Options", select an active ServiceNow integration from the CMDB dropdown menu
+
+This setting is also available when creating a Group. Rather than selecting an existing Group in step 2 above, click :guilabel:`+ CREATE` to make a new Group.
+
+Setting a CMDB on a Cloud
+`````````````````````````
+
+When adding or editing a |morpheus| Cloud, any active ServiceNow integration can be set as the CMDB.
+
+#. Navigate to Infrastructure > Clouds
+#. Select an existing Cloud name from the list
+#. Click :guilabel:`EDIT`
+#. Under "Advanced Options", select an active ServiceNow integration from the CMDB dropdown menu
+
+This setting is also available when creating a Group. Rather than selecting an existing Group in step 2 above, click :guilabel:`+ ADD` to make a new Group.
+
+Provisioning and CI Records
+```````````````````````````
+
+With a ServiceNow instance integrated with |morpheus| and the instance set as the CMDB for a |morpheus| Group or Cloud, we will see CI records created as new resources are provisioned to the Cloud or Group in |morpheus|. After the provisioning process has completed, a CI record should exist with a name value equal to the Instance name in |morpheus|.
+
+Provisioned and active Instances in |morpheus| will have CI records with an "On" state in ServiceNow. After they are deleted in |morpheus|, the state value will be rolled to "Terminated" in ServiceNow as expected.
+
+|morpheus| will also populate a number of additional fields in ServiceNow including IP address, FQDN and more. Custom views can be created in ServiceNow to expose these fields.
+
 ServiceNow Approval Policies
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+|morpheus| offers its own approval system out of the box, but some organizations prefer ServiceNow to be their final approval authority. With a ServiceNow instance integrated with |morpheus|, administrators can create provision approval policies and tie them to an active ServiceNow integration. With the policy in place, all new provisionings within the policy scope (Global, Group, Cloud, User or Role) are sent to ServiceNow for approval before provisioning will go ahead in |morpheus|. Approvals are synced between the two applications every minute.
 
 Add ServiceNow Provision Approval Policy to a Cloud
 ```````````````````````````````````````````````````
@@ -40,7 +89,7 @@ Add ServiceNow Provision Approval Policy to a Cloud
 
 To add a ServiceNow Approval policy to a Cloud:
 
-#. Navigate to ``Infrastructure -> Clouds``
+#. Navigate to ``Infrastructure > Clouds``
 #. Select a Cloud by clicking on the Cloud Name link
 #. Select the POLICIES tab
 #. Select + ADD POLICY
@@ -49,13 +98,13 @@ To add a ServiceNow Approval policy to a Cloud:
 #. Configure the following:
 
    APPROVAL INTEGRATION
-    Select the ServiceNow Integration already configured in ``Administration -> Integrations`` to use for the Approval Policy.
+    Select the ServiceNow Integration already configured in ``Administration > Integrations`` to use for the Approval Policy.
 
    WORKFLOW
-    Select the ServiceNow workflow for the Approval workflow in ServiceNow. Note these workflows are configured and synced in from the ServiceNow Integration.
+    Select the ServiceNow workflow for the approval in ServiceNow (if desired). These workflows are configured and synced in from the ServiceNow Integration.
 
    TENANTS (if applicable)
-     Only required for multi-tenant permission scoping. For the policy to apply to a sub-tenant, type the name of the tenant(s) and select the Tenant(s) from the list.
+     Only required for multi-tenant permission scoping. For the policy to apply to a Subtenant, type the name of the tenant(s) and select the Tenant(s) from the list.
 
 #. Save Changes
 
@@ -66,95 +115,54 @@ Add ServiceNow Provision Approval Policy to a Group
 
 To add a ServiceNow Approval policy to a Group:
 
-#. Navigate to ``Infrastructure -> Groups``
-#. Select a Group by clicking on the Group Name link
+#. Navigate to ``Infrastructure > Groups``
+#. Select a Group by clicking on the Group name
 #. Select the POLICIES tab
 #. Select + ADD POLICY
 #. Select ``Provision Approval``
 #. Optionally enter a description for the Policy
 #. Configure the following:
 
-   APPROVAL INTEGRATION
-    Select the ServiceNow Integration already configured in ``Administration -> Integrations`` to use for the Approval Policy.
+  APPROVAL INTEGRATION
+   Select the ServiceNow Integration already configured in ``Administration > Integrations`` to use for the Approval Policy.
 
-   WORKFLOW
-    Select the ServiceNow workflow for the Approval workflow in ServiceNow. Note these workflows are configured and synced in from the ServiceNow Integration.
+  WORKFLOW
+   Select the ServiceNow workflow for the approval in ServiceNow (if desired). These workflows are configured and synced in from the ServiceNow Integration.
 
-   TENANTS (if applicable)
-     Only required for multi-tenant permission scoping. For the policy to apply to a sub-tenant, type the name of the tenant(s) and select the Tenant(s) from the list.
+  TENANTS (if applicable)
+    Only required for multi-tenant permission scoping. For the policy to apply to a Subtenant, type the name of the tenant(s) and select the Tenant(s) from the list.
 
 #. Save Changes
 
 Using ServiceNow Approval Policies
 ``````````````````````````````````
 
-Any Instance provisioned into a Cloud or Group with an Approval Policy enabled will be in a PENDING state until the request in Approved.
+Any Instance provisioned into a Cloud or Group with an Approval Policy enabled will be in a PENDING state until the request is approved.
 
 Instances pending a ServiceNow approval will show "Waiting for Approval" with the Requested Item number and Request number, ex: ``Waiting for Approval [RITM0010002 - REQ0010002]``.
 
-ServiceNow Approval requests are displayed in ``Operations -> Approvals``.
-Instances pending a ServiceNow approval must be Approved in ServiceNow for provisioning to initiate. Approval requests from a ServiceNow Approval Policy cannot be approved in Morpheus, only Internal Approvals.
+ServiceNow Approval requests are displayed in ``Operations > Approvals``.
+Instances pending a ServiceNow approval must be approved in ServiceNow for provisioning to initiate. Approval requests from a ServiceNow approval policy cannot be approved in |morpheus|, only approvals originating from |morpheus|.
 
-ServiceNow Approval requests are displayed in Morpheus under ``Operations -> Approvals``. Pending ServiceNow Approval requests can be cancelled in Morpheus by selecting the request and then selecting ``ACTIONS -> Cancel``.
+ServiceNow approval requests are displayed in |morpheus| under ``Operations > Approvals``. Pending ServiceNow approval requests can be cancelled in |morpheus| by selecting the request and then selecting ``ACTIONS > Cancel``.
 
-Once a pending ServiceNow Approval request is Approved in ServiceNow, the Instance(s) will begin to provision in Morpheus within 5 minutes of being approved in ServiceNow.
-
-ServiceNow Service Catalog Integration
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-The following is a guide to installing the Morpheus ServiceNow application.
-
-.. IMPORTANT:: A valid SSL Certificate is required on the |morpheus| Appliance for the ServiceNow plugin to be able to communicate with the appliance.
-
-ServiceNow Configuration
-````````````````````````
-#. Install the Morpheus Application from the ServiceNow store
-#. Navigate to Morpheus Catalog -> Properties
-#. Set the following properties:
-
-   Morpheus Appliance Endpoint
-    The full url to your Morpheus appliance
-   Password
-    Password of the Morpheus Administrator
-   Username
-    Username of the Morpheus Administrator
-
-#. Create a new User
-#. Assign the following roles to the user:
-
-   - x_moda_morpheus_ca.integration
-   - catalog_admin
-   - itil
-   - rest_service
-   - import_transformer
-
-  .. NOTE:: The import_transformer role is only needed for creating incidents in SNOW.
-
-  .. IMPORTANT:: When using ServiceNow version London, the following steps must also be performed.  An administrator needs to modify the access permissions on the 'catalog_script_client' and 'io_set_item' tables.  This is performed by ensuring the 'Can create', 'Can update', and 'Can Delete' are checked under Application Access for 'All application scopes' for these tables.
-
-Morpheus Configuration
-``````````````````````
-
-#. Navigate to ``Administration -> Integrations``
-#. Click :guilabel:`+ NEW INTEGRATION`
-#. Select ‘ServiceNow’ in the Type field
-#. Fill in the Host, User and Password fields (using the User and Password created in the previous section)
-
-.. ServiceNow Monitoring Notifications
+Once a pending ServiceNow approval request is approved in ServiceNow, the Instance(s) will begin to provision in |morpheus| within one minute of being approved in ServiceNow.
 
 ServiceNow Monitoring Integration Settings
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. NOTE:: A ServiceNow Integration must be already configured in `Administration -> Integrations` to enable the ServiceNow Monitoring Integration.
+.. NOTE:: A ServiceNow integration must be already configured in `Administration > Integrations` to enable ServiceNow monitoring.
+
+The ServiceNow monitoring integration is enabled and configured in `Administration > Monitoring`. As long as the "Enabled" switch is activated, |morpheus| will report monitoring data to ServiceNow. Configuration selections are described below:
 
 Enabled
-  Enables the ServiceNow Monitoring Integration
+  Enables the ServiceNow monitoring integration
 Integration
-  Select from a ServiceNow Integration added in `Administration -> Integrations`
+  Select from a ServiceNow integration added in `Administration > Integrations`
 New Incident Action
-  The Service Now action to take when a Morpheus incident is created.
+  The ServiceNow action to take when a |morpheus| incident is created.
 Close Incident Action
-  The Service Now action to take when a Morpheus incident is closed.
+  The Service Now action to take when a |morpheus| incident is closed.
 
 Incident Severity Mapping
 
@@ -167,3 +175,38 @@ Info                Low/Medium/High
 Warning             Low/Medium/High
 Critical	          Low/Medium/High
 =================== =================
+
+Once finished working with configuration, click :guilabel:`APPLY`
+
+ServiceNow Service Catalog Integration
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+In addition to integrating with key ServiceNow features, |morpheus| offers a free plugin directly from the ServiceNow Store. At the time of this writing, the plugin supports ServiceNow releases Madrid, New York, and Orlando. Once the plugin is installed, |morpheus| Instance Types and Blueprints can be presented as provisioning options in the ServiceNow catalog for ordering. The following is a guide to installing the Morpheus ServiceNow application.
+
+.. IMPORTANT:: A valid SSL Certificate is required on the |morpheus| Appliance for the ServiceNow plugin to be able to communicate with the appliance.
+
+ServiceNow Configuration
+````````````````````````
+
+#. Install the |morpheus| plugin from the ServiceNow store
+#. Navigate to |morpheus| Catalog > Properties
+#. Set the following properties:
+
+   |morpheus| Appliance Endpoint
+    The full URL to your |morpheus| appliance
+   Password
+    Password of the |morpheus| administrator user
+   Username
+    Username of the |morpheus| administrator user
+
+Adding to ServiceNow Catalog
+````````````````````````````
+
+Once the ServiceNow plugin is installed and configured, items can be added to the ServiceNow catalog from back in |morpheus|. Follow the guide below to expose |morpheus| Clouds, Library Items, and Blueprints to users in the ServiceNow catalog.
+
+#. Navigate to `Administration > Integrations`
+#. Select the relevant ServiceNow integration
+#. From the Instances tab we can :guilabel:`+ ADD CLOUD` or :guilabel:`+ ADD LIBRARY ITEM`
+#. From the Blueprints tab we can :guilabel:`+ ADD BLUEPRINT`
+#. Back in ServiceNow, access the Morpheus plugin from the Service Catalog
+#. Exposed |morpheus| Library Items and Blueprints are visible here for ServiceNow users with sufficient role permissions
