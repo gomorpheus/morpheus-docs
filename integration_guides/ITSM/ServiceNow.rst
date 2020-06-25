@@ -27,7 +27,8 @@ Add Service Now Integration
    CMDB CUSTOM MAPPING
     If needed, administrators can opt to populate a specific field in the ServiceNow table and such mapping is identified here with a JSON code snippet. Below is an example that populates the ``object_id`` field in the CM database with the |morpheus| instance name:
 
-    .. code-block:: json
+    .. code-block:: guess
+
       {
       "object_id":"<${instance.name}>"
       }
@@ -132,7 +133,7 @@ To add a ServiceNow Approval policy to a Group:
   TENANTS (if applicable)
     Only required for multi-tenant permission scoping. For the policy to apply to a Subtenant, type the name of the tenant(s) and select the Tenant(s) from the list.
 
-#. Save Changes
+8. Save Changes
 
 Using ServiceNow Approval Policies
 ``````````````````````````````````
