@@ -27,7 +27,7 @@ Add Service Now Integration
    CMDB CUSTOM MAPPING
     If needed, administrators can opt to populate a specific field in the ServiceNow table and such mapping is identified here with a JSON code snippet. Below is an example that populates the ``object_id`` field in the CM database with the |morpheus| instance name:
 
-    .. code-block:: guess
+    .. code-block:: bash
 
       {
       "object_id":"<${instance.name}>"
