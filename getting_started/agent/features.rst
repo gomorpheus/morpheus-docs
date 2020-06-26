@@ -49,5 +49,6 @@
 * Buffers and compresses logs, then sends them in chunks to minimize packets
 * Supports syslog forwarding
 * Accepts commands, executes commands, writes files, and manipulates firewalls
+* Significantly enhances Guidance recommendations through enhanced statistics
 
 .. NOTE:: The |morpheus| Agent is required for managed Docker, Kubernetes, SCVMM, Hyper-V, KVM, and ESXi Hosts (for ESXi-only Cloud, not vCenter Clouds).
