@@ -21,7 +21,7 @@ Enabled
 IDENTITY API URL
   v2.0 or v3 Identity endpoint.
 DOMAIN ID
-  For `Default` domains, Default can be used. For other domain the Domain ID must be entered, not the Domain Name.
+  The DOMAIN ID field takes the "Account Name" as shown on the `Basic Information page <https://account-intl.huaweicloud.com/usercenter/?locale=en-us#/userindex/accountInfo>`_ of the account
 PROJECT
   Target project
 USERNAME
