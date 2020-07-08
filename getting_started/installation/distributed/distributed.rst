@@ -1,5 +1,5 @@
 Distributed Installations
--------------------------
+--------------------------
 
 .. toctree::
    :maxdepth: 3
