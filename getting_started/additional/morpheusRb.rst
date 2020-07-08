@@ -21,6 +21,7 @@ Morpheus allows for additional advanced customizations to the morpheus.rb file l
   ui['memory_alloc_arena_max'] = 2
   ui['http_client_connect_timeout'] = 10000  #in seconds
   ui['http_client_connect_timeout'] = 600000 #in seconds
+  ui['log_dir'] = '/var/log/morpheus/morpheus-ui'
 
   mysql['enable'] = true
   mysql['morpheus_db'] = 'morpheus'
@@ -28,7 +29,9 @@ Morpheus allows for additional advanced customizations to the morpheus.rb file l
   mysql['max_active'] = 100
   mysql['host'] = {'127.0.0.1' => 3306}
   mysql['tmp_dir'] = '/tmp/mysql'
+  mysql['log_dir'] = '/var/log/morpheus/mysql'
   mysql['mysql_url_overide'] = 'jdbc:mysql://10.30.20.10:3306,10.30.20.11:3306,10.30.20.12:3306/morpheusdb?autoReconnect=true&useUnicode=true&characterEncoding=utf8&failOverReadOnly=false&useSSL=false'
+
 
   logging['svlogd_size'] = 209715200 # 200 MB in bytes
   logging['svlogd_num'] = 30 # keep 30 rotated log files
@@ -42,6 +45,7 @@ Morpheus allows for additional advanced customizations to the morpheus.rb file l
   rabbitmq['nodename'] = 'rabbit@localhost'
   rabbitmq['stomp_port'] = 61613
   rabbitmq['heartbeat'] = nil
+  rabbitmq['log_dir'] = '/var/log/morpheus/rabbitmq'
 
   elasticsearch['enable'] = true
   elasticsearch['host'] = "127.0.0.1"
@@ -53,7 +57,8 @@ Morpheus allows for additional advanced customizations to the morpheus.rb file l
   elasticsearch['memory_map_max'] = 65536
   elasticsearch['memory_alloc_arena_max'] = 2
   elasticsearch['replica_count'] = 1
-
+  elaseticsearch['log_dir'] = '/var/log/morpheus/elaseticsearch'
+  
   nginx['enable'] = true
   nginx['workers'] = integer calculated from number of cpus
   nginx['worker_connections'] = 10240
