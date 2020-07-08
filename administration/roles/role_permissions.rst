@@ -41,12 +41,20 @@ Role Mappings
   :header-rows: 1
 
   * - Permission
+    - Access
+    - Description
+    - Recommendations
+    - Tenant Role Recommendation
     - None
     - Read
     - Full
     - User
     - Other
   * - Admin: Appliance Settings
+    - Allows or disallows access to the Appliance and License tabs on the Administration > Settings page.
+    - The Appliance tab in Administration > Settings is where Morpheus administrators configure the Appliance URL and configure Tenant and User management, Email, Proxy, and Currency settings. Additionally, administrators can define which Clouds are available in |morpheus|. On the License tab, information about the current |morpheus| license may be viewed and a new license may be applied when needed.
+    - This permission is recommended to only be assigned to Roles utilized within the Master Tenant. Those responsible for configuring Currency, Email, and Proxy settings for Cloud API access may also need this Role permission.
+    - In most cases, this permission is recommended to be set to None in the Tenant Role to prevent Subtenant access to high-level appliance settings and information regarding other Tenants.
     - ✔
     -
     - ✔
