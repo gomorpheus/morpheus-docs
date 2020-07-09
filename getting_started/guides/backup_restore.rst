@@ -3,6 +3,8 @@ Backing Up and Restoring |morpheus| Appliance
 
 |morpheus| includes built-in tools for backing up managed Instances as well as the appliance itself. Use this guide to configure a location and schedule for backing up your |morpheus| appliance. This guide also includes steps for restoring or migrating your appliance from the created backup. The steps are the same whether your appliance is deployed in a single node or distributed architecture.
 
+The built-in |morpheus| appliance backup functionality backs up the MySql data. In addition to the database, it's advisable to back up your shared storage (at ``/var/opt/morpheus/morpheus-ui``) and the morpheus.rb configuration file.
+
 Create A Backup Job
 ^^^^^^^^^^^^^^^^^^^
 
