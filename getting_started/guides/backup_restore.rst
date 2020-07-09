@@ -23,17 +23,18 @@ With the execution schedule created, we can move on to creating the Backup Job i
 #. Name the Job, then configure the retention count and the schedule
 #. Click :guilabel:`SAVE`
 
-Integrate a Bucket
-^^^^^^^^^^^^^^^^^^
+Integrate a Bucket or File Share
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-When configuring a |morpheus| appliance backup, a storage bucket is selected. If you already have the destination bucket integrated with |morpheus|, skip to the next section.
+When configuring a |morpheus| appliance backup, a storage location is selected. If you already have the destination bucket or file share integrated with |morpheus|, skip to the next section.
 
 #. Navigate to Infrastructure > Storage
+#. Click on the Buckets or File Shares tab depending on your chosen storage type
 #. Click :guilabel:`+ ADD`
-#. Select the appropriate bucket type
+#. Select the appropriate bucket or file share type
 #. Complete the required fields and click :guilabel:`SAVE CHANGES`
 
-.. NOTE:: Additional guidance on integrating each of the supported bucket types can be found elsewhere in |morpheus| documentation.
+.. NOTE:: Additional guidance on integrating each of the supported bucket and file share types can be found elsewhere in |morpheus| documentation.
 
 Configuring |morpheus| Appliance Backup
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -48,11 +49,11 @@ On saving this change, a text link labeled "Backup" will be activated which will
 
 #. Click :guilabel:`EDIT`
 #. Enter a name for the appliance backup job
-#. Select an integrated storage bucket
+#. Select an integrated storage bucket or file share
 #. Choose a pre-created backup job. If you do not have an existing backup job that fits, a retention count and schedule can be manually created in this modal. If you manually configure retention counts and schedules in addition to associating a Job, the Job values will override any manual settings.
 #. Click :guilabel:`SAVE CHANGES`
 
-At this point, your appliance will be automatically backed up on the schedule you chose and stored in the selected bucket. An appliance backup will store backup copies of the appliance MySQL database. Should you need to restore or migrate your database from backup, follow the steps in the next section of this guide.
+At this point, your appliance will be automatically backed up on the schedule you chose and stored in the selected location. An appliance backup will store backup copies of the appliance MySQL database. Should you need to restore or migrate your database from backup, follow the steps in the next section of this guide.
 
 Restoring an Appliance from Backup
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
