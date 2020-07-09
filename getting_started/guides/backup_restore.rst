@@ -5,6 +5,8 @@ Backing Up and Restoring |morpheus| Appliance
 
 The built-in |morpheus| appliance backup functionality backs up the MySql data. In addition to the database, it's advisable to back up your shared storage (at ``/var/opt/morpheus/morpheus-ui``) and the morpheus.rb configuration file.
 
+.. note:: The destination |morpheus| appliance must be running the same version as that which the backup was taken from.
+
 Create A Backup Job
 ^^^^^^^^^^^^^^^^^^^
 
@@ -64,7 +66,17 @@ Begin by ensuring the Morpheus UI service is stopped on all of the application s
 
  [root@app-server-new ~] morpheus-ctl stop morpheus-ui
 
-Then you can import the MySQL dump into the target database using the embedded MySQL binaries, specifying the database host, and entering the password for the morpheus user when prompted:
+To access the MySQL shell we will need the password for the Morpheus DB user. We can find this in the morpheus-secrets file:
+
+.. code-block:: bash
+
+ [root@app-server-old ~] cat /etc/morpheus/morpheus-secrets.json | grep morpheus_password
+ "morpheus_password": "451e122cr5d122asw3de5e1b", <---- this one
+ "morpheus_password": "9b5vdj4de5awf87d",
+
+Make note of the first ``morpheus_password`` value as indicated above.
+
+Copy the SQL database backup from the backup bucket or file share to an appliance node at ``/tmp/morpheus_backup.sql``. Then, you can import the MySQL dump into the target database using the embedded MySQL binaries, specifying the database host, and entering the password for the morpheus user when prompted:
 
 .. code-block:: bash
 
