@@ -128,7 +128,7 @@ To create a Tenant User:
 #. Select the Administration link in the navigation bar.
 #. Select the Tenants link in the sub navigation bar.
 #. Click the Tenant Name on the row of the Tenant where the user will be added.
-#. Click the Create User button.
+#. Click :guilabel:`+ ADD USER`
 #. From the New User wizard, input the fields below:
 
    - First Name
