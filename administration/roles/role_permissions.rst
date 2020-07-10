@@ -41,11 +41,11 @@ Role Mappings
   :header-rows: 1
 
   * - ﻿Permission Name
-  	- Permission Options
-  	- Feature Access
-  	- Description
-  	- Recommendations
-  	- Tenant Role Recommendations
+    - Permission Options
+    - Feature Access
+    - Description
+    - Recommendations
+    - Tenant Role Recommendations
   * - Admin: Appliance Settings
   	- None, Full
   	- This allows or disallows access to the Administration → Settings page, Appliance and License tabs.
