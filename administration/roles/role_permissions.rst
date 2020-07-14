@@ -432,133 +432,133 @@ Role Mappings
     -
   * - Provisioning: Deployment Integrations
     - None, Read, Full
-    - This allows or disallows full or read access to the Provisioning → Deployments page, Integrations tab.
+    - Determines access to the Integrations tab on the Provisioning > Deployments page.
     - From this page deployment integrations may be created, edited, or deleted. On create the integration product is selected and all associated connection and authentication information must be provided. Integrations available include Git, Github, and Jenkins.
-    - This permission is recommended for those responsible for the integration between |morpheus| and integrated deployment technologies.
-    - This permission is recommended to be set to None or Read for any subtenant user roles via use of a Tenant Role.
+    - This permission is recommended for those responsible for the integration between |morpheus| and deployment technologies.
+    - This permission is recommended to be set to None on the Tenant Role to restrict access for Subtenant users.
   * - Provisioning: Deployments
     - None, Read, Full
-    - This allows or disallows full or read access to the Provisioning → Deployments page, Deployments tab.
-    - The Provisioning Deployments page provides the ability to use git, fetch from a url, or upload a file to be utilized during the provisioning of an instance or pushed to an existing instance.
+    - Determines access to the Deployments tab on the Provisioning > Deployments page.
+    - The Deployments page provides the ability to use git, fetch from a url, or upload a file to be utilized during the provisioning of an Instance or pushed to an existing Instance.
     - This permission is recommended for those responsible for providing and managing software.
     -
   * - Provisioning: Instances
     - None, Read, User, Full
-    - This allows or disallows full or read access to the Provisioning → Instances page.  User will allow access to only object the user owns.
-    - The Provisioning Instances page allows containers or virtual machines to be provisioned in a single horizontally scalable entity or a service suite.
+    - Determines access to the Provisioning > Instances page. The "User" permission will allow access only to objects the user owns.
+    - Provisioning > Instances is where |morpheus|-managed Instances are displayed, including some details about each one. It also allows containers or virtual machines to be provisioned as a single horizontally-scalable entity or service suite.
     - This permission is recommended for those responsible for provisioning.
     -
   * - Provisioning: Job Executions
     - None, Read
-    - This allows or disallows access to the Provisioning → Jobs page, Job Executions tab.
-    - The Provisioning Jobs Job Execution page contains execution history of completed Jobs, including any process outputs and error messages.
-    - This permission is recommened for those who are responsible for managing or troubleshooting jobs.
+    - Determines access to the Job Executions tab on the Provisioning > Jobs page.
+    - The Job Executions page contains execution history of completed jobs, including any process outputs and error messages.
+    - This permission is recommended for those who are responsible for managing or troubleshooting jobs.
     -
   * - Provisioning: Jobs
     - None, Read, Full
-    - This allows or disallows full or read access to the Provisioning → Jobs page, Jobs tab.
-    - The Provisioning Jobs page is where jobs are scheduled for the execution of Automation Tasks and Workflows.
+    - Determines access to the Jobs tab on the Provisioning > Jobs page.
+    - The Jobs page is where jobs are scheduled for the execution of automation Tasks and Workflows against Instances or servers.
     - This permission is recommended for those responsible to schedule the exectution of Tasks or Workflows.
     -
   * - Provisioning: Library
     - None, Read, Full
-    - This allows or disallows full or read access to the Provisioning → Library page, including the Instance Types, Layouts, Node Types, Option Types, Option Lists, File Templates, Scripts, Spec Templates, and Cluster Layouts tabs.
-    - The Provisioning Library pages is where the various library elements are created and maintained.  These include: Instance Types, Layouts, Node Types, Option Types, Option Lists, File Templates, Scripts, Spec Templates, and  Cluster Layouts.
-    - This permission is recommended for those reponsible to manage the library.
+    - Determines access to the Provisioning > Library page, including the Instance Types, Layouts, Node Types, Option Types, Option Lists, File Templates, Scripts, Spec Templates, and Cluster Layouts tabs.
+    - The Provisioning Library pages is where the various library elements are created and maintained. These include: Instance Types, Layouts, Node Types, Option Types, Option Lists, File Templates, Scripts, Spec Templates, and  Cluster Layouts.
+    - This permission is recommended for those responsible for managing the library.
     -
   * - Provisioning: Scheduling - Execute
     - None, Read, Full
-    - This allows or disallows full or read access to the Provisioning → Automation page, Execute Scheduling tab.
-    - The Provisioning Automation Execute Scheduling page is where time schedules for Jobs, including Task, Workflows and Backup Jobs are created.
+    - Determines access to the Execute Scheduling tab of the Provisioning > Automation page.
+    - The Execute Scheduling page is where time schedules for Jobs, including Task, Workflow, and Backup Jobs are created.
     - This permission is recommended for those responsible to create and manage schedules to be selected when scheduling jobs.
     -
   * - Provisioning: Scheduling - Power
     - None, Read, Full
-    - This allows or disallows full or read access to the Provisioning → Automation page, Power Scheduling tab.
-    - The Provisioning Automation Power Scheduling page is where startup and shutdown times are created, these schedules can be applied via policy to groups or clouds.
-    - This permission is recommneded for those responsible to create and managed schedules for startup and shutdown.
+    - Determines access to the Power Scheduling tab of the Provisioning > Automation page.
+    - The Power Scheduling page is where startup and shutdown times are created, these schedules can be applied via policy to Groups or Clouds.
+    - This permission is recommended for those responsible to create and manage schedules for startup and shutdown.
     -
   * - Provisioning: Service Mesh
     - None, Read, User, Full
-    - This allows or disallows full or read access to the Provisioning → Service Mesh page, including the Services and DNS tabs.  User will allow access to only object the user owns.
-    - The Provisioning Service Mesh page displays container services and DNS information.  A service mesh ensures fast and reliable communication between containerized application services.
-    - This permission is recommended for those repsonsible for container management.
+    - Determines access to the Provisioning > Service Mesh page, including the Services and DNS tabs. The "User" permission will allow access only to objects the user owns.
+    - The Service Mesh page displays container services and DNS information. A service mesh ensures fast and reliable communication between containerized application services.
+    - This permission is recommended for those responsible for container management.
     -
   * - Provisioning: Tasks
     - None, Read, Full
-    - This allows or disallows full or read access to the Provisioning → Automation page, including the Tasks, Workflows, and Executions tabs.
-    - The Provisioning Automation Tasks page is where tasks are created and managed.  Task types include: scripts added directly, scripts and templates from the Library section, recipes, playbooks, salt states, puppet agent installs, and http (api) calls.  The Provisioning Automation Workflows page offer both Provisioning and Operational Workflows.  Workflows are used to execute one or many tasks during specified phases.  The Provisioning Automation Executions pages shows the status of executed tasks and workflows.
+    - Determines access to the Tasks, Workflows, and Executions tabs on the Provisioning > Automation page.
+    - The Tasks page is where Tasks are created and managed. Task types include: scripts added directly, scripts and templates from the Library section, recipes, playbooks, salt states, puppet agent installs, and HTTP (API) calls. The Workflows page offer both Provisioning and Operational Workflows. Workflows are used to execute one or many tasks during specified phases. The Executions page shows the status of executed Tasks and Workflows.
     - This permission is recommended for those responsible for creating provisioning and operational scripts.
     -
   * - Provisioning: Tasks - Script Engines
     - None, Full
-    - This allows or disallows access to the Provisioning → Automation page, Tasks tab, on task create, Type displays advanced script capabilities.
-    - The Provisioning Automation Tasks page is where tasks are created and managed.  This permission adds the ability to select Groovy Script, Javascript, jRuby Script, and Python Script from the Task Types drop down.
-    - This permssion is recommended for those responsible for Tasks containing advanced script capabilities.
+    - Determines access to the Tasks tab of the Provisioning > Automation page. When full permission is given, advanced Task types will be available in the TYPE dropdown menu when new Tasks are created. Advanced Task types include Groovy Script, Javascript, jRuby Script, and Python Script.
+    - Tasks page is where tasks are created and managed. This permission adds the ability to select Groovy Script, Javascript, jRuby Script, and Python Script from the Task Types dropdown menu.
+    - This permission is recommended for those responsible for Tasks containing advanced script capabilities.
     -
-  * - Provisioning: Threshholds
+  * - Provisioning: Thresholds
     - None, Read, Full
-    - This allows or disallows full or read access to the Provisioning page, Scale Thresholds tab.
-    - The Provisioning Scale Thresholds page is where pre-configured settings for auto-scaling Instances is configured. When adding auto-scaling to an instance, existing Scale Thresholds can be selected to define auto-scaling rules.
-    - This permission is recommended for those responsible for defining auto scaling for instances.
-    - This permission is recommended to be set to None or Read for any subtenant user roles via use of a Tenant Role.
+    - Determines access to the Scale Thresholds tab of the Provisioning > Automation page.
+    - The Scale Thresholds page is where preconfigured settings for auto-scaling Instances is configured. When adding auto-scaling to an Instance, existing Scale Thresholds can be selected to define auto-scaling rules.
+    - This permission is recommended for those responsible for defining auto-scaling for Instances.
+    - This permission is recommended to be set to None or Read on the Tenant Role to restrict access for Subtenant users.
   * - Provisioning: Virtual Images
     - None, Read, Full
-    - This allows or disallows full or read access to the Provisioning → Virtual Images page.
-    - The Provisioning Virtual Images page displays a list of all images, local and synced, that are available to deploy.  Available images include those that are shipped with |morpheus|, synced from integrated clouds, and uploaded directly into |morpheus| by the user.
-    - This permission is recommended for thosre responsible for Image management.
+    - Determines access to the Provisioning > Virtual Images page.
+    - The Virtual Images page displays a list of all images, local and synced, that are available to deploy. Available images include those that are shipped with |morpheus|, synced from integrated clouds, and uploaded directly into |morpheus| by the user.
+    - This permission is recommended for those who are responsible for image management.
     -
   * - Remote Console
     - None, Provisioned, Full
-    - This allows or disallows access to the Infrastructure → Hosts page, Hosts, Virtual Machines, or Bare Metal, Console.
-    - Remote Console for Instances, Hosts, Virtual Machines and Bare Metal.
-    - This permission is recommended for those whom should be allow to access the machine via remote console.
+    - Determines access to the console on a Host detail page (Infrastructure > Hosts > selected Host, VM, or Bare Metal resource > Console tab). The "Provisioned" permission gives access to the console only for resources the logged in user has provisioned.
+    - Remote console access for Instances, hosts, virtual machines, and bare metal.
+    - This permission is recommended for those who need console access for provisioned Cloud resources.
     -
   * - Remote Console: Auto Login
     - No, Yes
-    - This allows or disallows the ability to Auto Login to the Remote Console.
-    - |morpheus| will automatically login to the machine using the credentials defined on the VM or Host. The credentials are defined either from the credentials defined on the Virtual Image used, added via cloud-init or VMware Tools using the global cloud-init settings (Administration - Provisioning) or the Linux or Windows settings defined in User Settings.
-    - This permission is recommneded when an organization utilizes |morpheus| to create user accounts on provisioning or managed machines, as well as, allow remote console access.
+    - This allows or disallows the ability to automatically log into the remote console.
+    - |morpheus| will automatically log into the machine using the credentials defined on the VM or Host. The credentials are defined either from the virtual image used, added via cloud-init or VMware Tools using the global cloud-init settings (Administration > Provisioning), or the Linux or Windows settings defined in User Settings.
+    - This permission is recommended when an organization utilizes |morpheus| to create user accounts on provisioned or managed machines, as well as, allow remote console access.
     -
   * - Snapshots
     - None, Read, Full
-    - This allows or disallows full or read access to the Provisioning → Instances page, Actions Menu: Create Snapshot.
-    - If utilizing a Vmware Cloud, the ability to Create Snapshots is avaialbe on the Provisinnig Instances page after selecting the instance within the Actions Menu.
-    - This permission is recommended for instance owners whom should be allowed to take snapshots.
+    - Determines access to the "Create Snapshot" function in the Actions menu on an Instance detail page (Provisoning > Instances > selected Instance).
+    - If utilizing a VMware Cloud, the ability to create snapshots is available on the Instance detail page (Provisoning > Instances > selected Instance).
+    - This permission is recommended for Instance owners who should be allowed to take snapshots.
     -
   * - Tools: Archives
     - None, Read, Full
-    - This allows or disallows full or read access to the Tools → Archives page.
-    - Archives provides a way to store files and make them available for download by Scripts and Users. Archives are organized by buckets. Each bucket has a unique name that is used to identify it in URLs and Scripts.
+    - Determines access to the Tools > Archives page.
+    - Archives provides a way to store files and make them available for download by scripts and users. Archives are organized by buckets. Each bucket has a unique name that is used to identify it in URLs and Scripts.
     - This permission is recommended for those responsible for storage or scripts which will use the Archive.
     -
   * - Tools: Cypher
     - None, Read, User, Full, Full Decrypt
-    - This allows or disallows full or read access to the Tools → Cypher page. User will allow access to only object the user owns.  Full Decrypt will allow for decryption of secrets.
+    - Determines access to the Tools > Cypher page. The "User" permission will allow access only to objects the user owns. The "Full Decrypt" permission will allow for decryption of secrets.
     - Secure key/value store. Cypher keys can be used in scripts.
     - Recommended for those who need to store or use security key value pairs.
     -
   * - Tools: Image Builder
     - None, Read, Full
-    - This allows or disallows full or read access to the Tools → Image Builder page, Image Builds, Boot Scripts, and Preseed Scripts tabs.
-    - The |morpheus| Image Builder tool creates vmdk, qcow2, vhd and raw Images.  The Image Builder creates a blank VM in VMware, attaches an os iso, executes a boot script on the VM at startup via VNC which calls a preseed script which runs the unattended os installation and configuration. |morpheus| then executes an ova export of the completed vmdk to target Storage provider, and converts the image to all other specified formats.
+    - Determines access to the Tools > Image Builder page, Image Builds, Boot Scripts, and Preseed Scripts tabs.
+    - The |morpheus| Image Builder tool creates vmdk, qcow2, vhd and raw images. The Image Builder creates a blank VM in VMware, attaches an OS ISO, executes a boot script on the VM at startup via VNC, which calls a preseed script that runs the unattended OS installation and configuration. |morpheus| then executes an OVA export of the completed vmdk to the target storage provider and converts the image to all other specified formats.
     - Recommended for those who are responsible for image creation.
     -
   * - Tools: Kubernetes
-    - To be deprecated
-    - Allows for the management of Kubernetes Clusters via the API.
-    -
-    - This permssion is recommended for those that need to manage Kubernetes Clusters via the API.
-    - This permission is recommended to be set to None for any subtenant user roles via use of a Tenant Role.
+    - None, Read, User, Full
+    - Allows for the management of Kubernetes clusters via the API (may be deprecated in the near future).
+    - Allows for the management of Kubernetes clusters via the API
+    - This permission is recommended for those who need to manage Kubernetes clusters via the API.
+    - It is recommended this permission is set to None on the Tenant Role to restrict access for Subtenant users.
   * - Tools: Migrations
     - None, Read, Full
-    - This allows or disallows full or read access to the Tools → Migrations page.
-    - The Migration Tool creates a snapshot of an existing VM, converts it to the destination formation and provisions the machine on the target.
-    - Recommend for only those responsible for lifting and shifting VMs.
-    - This permission is recommended to be set to None for any subtenant user roles via use of a Tenant Role.
+    - Determines access to the Tools > Migrations page.
+    - The Migration tool creates a snapshot of an existing VM, converts it to the destination format and provisions the machine on the target.
+    - Recommend only for those responsible for lifting and shifting VMs.
+    - It is recommended this permission is set to None on the Tenant Role to restrict access for Subtenant users.
   * - None - No Permissions
-    -
-    - This allows only access to the User Setting page displayed, which is accessed by clicking on the user's name in the upper-right corner of the application window.
+    - None
+    - When all permissions are set to None, the following behavior can be expected: This allows only access to the User Setting page displayed, which is accessed by clicking on the user's name in the upper-right corner of the application window.
     - The User Settings page is where users may upload their photo, enter values for username, first name, last name, email address, and password, as well as, defining both user-specific Linux and Windows settings (usernames, passwords, and SSH Key for Linux to be added to machines during provisioning). Additionally, generating and refreshing API Access tokens is done via this page.
     -
     -
