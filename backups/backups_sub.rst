@@ -42,32 +42,33 @@ To create instance backup
 #. Schedule the backup Days, Time, Storage Provider & Retention Count.
 #. Click Complete to save.
 
-Create Server Backup
---------------------
+..
+  Create Server Backup
+  --------------------
 
-To create a server backup:
+  To create a server backup:
 
-#. Select the Backups link in the navigation bar.
-#. Select the Backups link in the sub navigation bar.
-#. Click Add Backup.
-#. From the Create Backup Wizard select the radio button Server, then click Next.
-#. Input the following:
+  #. Select the Backups link in the navigation bar.
+  #. Select the Backups link in the sub navigation bar.
+  #. Click Add Backup.
+  #. From the Create Backup Wizard select the radio button Server, then click Next.
+  #. Input the following:
 
-   - Name of the backup job being created
-   - Server
-   - Type of backup you wish to create.
+     - Name of the backup job being created
+     - Server
+     - Type of backup you wish to create.
 
-     - File
-     - Directory
-     - Mongo
-     - MySQL
-     - Postgres
+       - File
+       - Directory
+       - Mongo
+       - MySQL
+       - Postgres
 
-#. Click Next. Different options are presented based upon the type of backup being created.
+  #. Click Next. Different options are presented based upon the type of backup being created.
 
-   - File/Directory - input path for the backup.
-   - Mongo/MySQL/Postgres - input 'Database IP Address/URL', 'Database Port', 'Database Username', 'Database Password', 'Database Name', and the option to select 'All Databases'.
+     - File/Directory - input path for the backup.
+     - Mongo/MySQL/Postgres - input 'Database IP Address/URL', 'Database Port', 'Database Username', 'Database Password', 'Database Name', and the option to select 'All Databases'.
 
-#. Click Next.
-#. Schedule the backup Days, Time, Storage Provider & Retention Count.
-#. Click Complete to save.
+  #. Click Next.
+  #. Schedule the backup Days, Time, Storage Provider & Retention Count.
+  #. Click Complete to save.

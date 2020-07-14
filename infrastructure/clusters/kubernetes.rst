@@ -33,9 +33,11 @@ Kubernetes Cluster 1.14 on Ubuntu 16.04, Weave, OpenEBS
 Kubernetes 1.14 on Ubuntu 16.04, Weave, OpenEBS
   Single Kubernetes Master
 
+.. note:: The minimum recommended memory size for a Kubernetes cluster is 8 GB.
+
 To create a new Kubernetes Cluster:
 
-#. Navigate to ``Infrastructure - Clusters``
+#. Navigate to ``Infrastructure > Clusters``
 #. Select :guilabel:`+ ADD CLUSTER`
 #. Select ``Kubernetes Cluster``
 #. Select a Group for the Cluster
@@ -113,7 +115,7 @@ To create a new Kubernetes Cluster:
 
 #. Once all Master and Worker Nodes are successfully provisioned and Kubernetes is installed and configured, the Cluster status will turn green.
 
-    .. IMPORTANT:: Cluster provisioning requires successful creation of VM's, Agent Installation, and execution of Kubernetes workflows. Consult process output from ````Infrastructure -> Clusters - Details`` and morpheus-ui current logs at ``Operations - Health - Morpheus Logs`` for information on failed Clusters.
+    .. IMPORTANT:: Cluster provisioning requires successful creation of VMs, Agent Installation, and execution of Kubernetes workflows. Consult process output from ````Infrastructure -> Clusters - Details`` and morpheus-ui current logs at ``Operations - Health - Morpheus Logs`` for information on failed Clusters.
 
 Adding Worker Nodes
 ^^^^^^^^^^^^^^^^^^^
