@@ -52,391 +52,383 @@ Role Mappings
   	- The Appliance tab in Administration > Settings is where |morpheus| administrators would configure the appliance URL, Tenant and User management, email, proxy, and currency settings. Additionally, defining which Clouds are available for integration within |morpheus| is done on this page. On the License tab information about the current |morpheus| license may be viewed and a new license may be applied when needed.
   	- This permission is recommended to only be assigned to Roles utilized within the Master Tenant. Those responsible for configuring currency, email, and proxy settings for Cloud API access will need this permission.
   	- This permission is recommended to be set to None on the Tenant Role to restrict this access for all Subtenant Users.
-
-..
   * - Admin: Backup Settings
     - None, Full
-    - This allows or disallows access to the Administration → Backups page.  When given to a Master Tenant user additonal settings are made available.
-    - The Administration Backup Settings page is where users define the default |morpheus| Backup Bucket, Backup Schedule, and Retention Count, additionally, if given to a Master Tenant user they will have the ability to enable Scheduled backups, Create Backups, and Backup Appliance.
+    - Allows or disallows access to Administration > Backups. Master Tenant administrators have additional settings for appliance backups and defaults on this page.
+    - The Backup Settings page is where users define the default |morpheus| backup bucket, backup schedule, and retention count. Additionally, if given to a Master Tenant user they will have the ability to enable scheduled backups, create backups, and backup appliance.
     - This permission is recommended for those responsible for enabling backups and setting default backup buckets within |morpheus|.
     -
   * - Admin: Environment Settings
     - None, Full
-    - This allows or disallows access to the Administration → Provisioning page, Environments tab.  When given to a Master Tenant user they may define the visibility of the environment to either private or public.  When given to a Subtenant user the environment is only visible to the subtenant.
-    - The Administration Provisioning Environments tab is where environments such as development or production are created and given a description as well as a code for use within the API. A display order and visibility is also set.
-    - This permission is recommended for those responsible for defining environments that will be available to select whether they are the Master Tenant or individual Subtenants.
+    - Allows or disallows access to the Environments tab in Administration > Provisioning. When given to a Master Tenant user they may define the visibility of the environment to either private or public.  When given to a Subtenant user the environments are only visible to the subtenant (private).
+    - The Environments tab is where named environments such as development or production are created and given a description as well as a code for use within the API. A display order and visibility is also set.
+    - This permission is recommended for those responsible for defining environments that will be available to select at provision time whether they are the Master Tenant or Subtenant users.
     -
   * - Admin: Identity Source
     - None, Role Mappings, Full
-    - This allows or disallows access to create, edit, or delete Identity Sources associated with selected subtenants.  Role Mappings allows edit to role mappings.
-    - The Identity Sources page associated with the selected Tenant allows for creating, editing, and removing of identity sources in addition to configuring Role Mapping for the identity source.
-    - This permission is recommended for those responsible for integrating |morpheus| with Identity Providers.  Role Mapping permission is recommended for those responsible for Role Based Access Control (RBAC).
+    - Allows or disallows access to create, edit, or delete integrated Identity Sources associated with subtenants. The "Role Mappings" option allows the user to edit role mappings without seeing higher level details about the integration itself (such as server IP addresses and admin usernames).
+    - The Identity Sources page associated with the selected Tenant allows for creating, editing, and removing of identity sources in addition to configuring role mapping between |morpheus| and the identity provider.
+    - Full permission is recommended for those responsible for integrating |morpheus| with Identity Providers. Role Mapping permission is recommended for those responsible for Role Based Access Control (RBAC).
     - This permission is recommended to be set to None for any subtenant user roles via use of a Tenant Role unless they manage their own RBAC.
   * - Admin: Integrations
     - None, Read, Full
-    - This allows or disallows full or read access to the Administration → Integrations page.
-    - The Administration Integrations tab is where new integration can be configured. These include Chef, Puppet, Ansible, Salt Master, Ansible Tower, vRealize Orchestrator, Microsoft DNS, PowerDNS, Route 53, Git, GitHub, Docker, Consul, Jenkins, ServiceNow, Cherwell, Remedy, ACI, and Venafi
-    - This permission is recommended for those responsible for the integration between |morpheus| and Integrated technologies.
+    - This allows or disallows full or read access to the Administration > Integrations.
+    - The Administration Integrations tab is where many new or existing integration types can be configured. These include Chef, Puppet, Ansible, Salt Master, Ansible Tower, vRealize Orchestrator, Microsoft DNS, PowerDNS, Route 53, Git, GitHub, Docker, Consul, Jenkins, ServiceNow, Cherwell, Remedy, ACI, and Venafi.
+    - This permission is recommended for those responsible for the integration between |morpheus| and integrated technologies.
     -
   * - Admin: License Settings
     - None, Full
-    - This allows or disallows access to the Administration → Provisioning page, Licenses tab.  When given to a Master Tenant user they may define specific subtenants in which the licenses may be used.
-    - The Administration Provisioning Licenses tab is where licenses may be added to |morpheus|.  |morpheus| may then be configured to apply these licenses on provision.  Currently only Windows license types are available.
+    - Allows or disallows access to the Licenses tab in Administration > Provisioning. When given to a Master Tenant user they may define specific subtenants in which the licenses may be used.
+    - The Licenses tab is where software licenses may be added for tracking in |morpheus|. |morpheus| may then be configured to apply these licenses on provision. Currently, only Windows license types are available.
     - This permission is recommended for those responsible for managing Windows licenses.
     -
   * - Admin: Log Settings
     - None, Full
-    - This allows or disallows access to the Administration → Logs page.
-    - The Administration Logs page is where logs are enabled,  Syslog forwarding rules and Splunk and/or LogRhythm integrations are configured.
+    - Allows or disallows access to the Administration > Logs.
+    - The Logs page is where logs are enabled. Syslog forwarding rules, Splunk integrations and LogRhythm integrations are also configured here.
     - This permission is recommended for those responsible for configuring |morpheus| log settings and integrations.
-    - This permission is recommended to be set to None for any subtenant user roles via use of a Tenant Role.
+    - This permission is recommended to be set to None in the Tenant Role to restrict this access to Subtenant Users.
   * - Admin: Message of the day
     - None, Full
-    - This allows or disallows access to create and edit, the Administration → Policies page, Message of the day policy.
-    - The Policies page is where policies are defined. On create the type of policy is selected, a name, description, and scope are defined.
+    - Allows or disallows access to create and edit Message of the Day policies in Administration > Policies
+    - The Policies page is where policies are defined. When creating a policy, users can select "Message of the Day" from the TYPE dropdown with this permission set to Full.
     - This permission is recommended for those responsible for publishing the Message of the Day.
-    - This permission is recommended to be set to None for any subtenant user roles via use of a Tenant Role.
+    - This permission is recommended to be set to None in the Tenant Role to restrict this access from Subtenant Users.
   * - Admin: Monitoring Settings
     - None, Full
-    - This allows or disallows access to the Administration → Monitoring page.
-    - The Administration Monitoring page is where |morpheus| Monitoring and Monitoring Integrations are configured.  Available integrations are AppDynamics, ServiceNow, and New Relic.  Availability timeframe, check interval, and precision are also configured on this page.
-    - This permission is recommended for those responsible for configuring |morpheus| montoring settings and integrations.
-    - This permission is recommended to be set to None for any subtenant user roles via use of a Tenant Role.
+    - Allows or disallows access to Administration > Monitoring
+    - The monitoring settings page is where |morpheus| monitoring and monitoring integrations are configured.  Available integrations are AppDynamics, ServiceNow, and New Relic. Monitoring checks can be turned on or off, and availability time frame, check interval period, and reported availability precision are also configured on this page.
+    - This permission is recommended for those responsible for configuring |morpheus| monitoring settings and integrations.
+    - This permission is recommended to be set to None in the Tenant Role to restrict this access from Subtenant Users.
   * - Admin: Policies
     - None, Read, Full
-    - This allows or disallows full or read access to the Administration → Policies page.  When given to a Master Tenant user the ability to define Global policies and associate them with one or many subtenants is granted.  When given to a subtenant user, a global policy applies only to their subtenant.
-    - The Policies page is where policies are defined. On create the type of policy is selected, a name, description, and scope are defined.
+    - This setting determines the level of access to Administration > Policies. When given to a Master Tenant user the ability to define Global policies and associate them with one or many Subtenants is granted.  When given to a Subtenant user, a global policy applies only to their subtenant.
+    - The Policies page is where policies are defined. On create, the type of policy is selected, a name, description, and scope are defined.
     - This permission is recommended for those responsible for configuring and managing policies either at the Master Tenant or Subtenant.
     -
   * - Admin: Provisioning Settings
     - None, Full
-    - This allows or disallows access to the Administration → Provisioning page, Settings tab.  When given to a Master Tenant user additional settings are displayed as compared to a subtenant user.
-    - The Settings tab is where the global provisioning settings are configured. Such as, Allowing Cloud Selection, Allowing Host Selection, Requiring Environment Selection, Showing Pricing, Hidding datastore Stats on Selection, Cross-Tenant Naming Policies, and Reusing Naming Sequence Number for a Master Tenant User, additionally, for both Master Tenant and Subtenant user defining the Deployment Archive Store, the Cloud-Init Settings, the PXE Boot Root Password, and App Blueprint Default Types are available.
+    - Allows or disallows access to the Settings tab of the Administration > Provisioning page.
+    - The Settings tab is where global provisioning settings are configured. For Master Tenant users, these include allowing Cloud selection, allowing host selection, requiring environment selection, showing pricing, hiding datastore stats on selection, cross-Tenant naming policies, and reusing naming sequence numbers. For both Master Tenant and Subtenant users, defining the deploy archive store, cloud-init setting, the PXE boot root password, and default App Blueprint types are available.
     - This permission is recommended to only be assigned to roles utilized within the Master Tenant.
     -
   * - Admin: Roles
     - None, Read, Full
-    - This allows or disallows full or read access to the Administration → Roles page.  When given to a subtenant user the ability to create user roles is granted.  When given to a Master Tenant user the ability to create and manage Tenant and Multi-Tenant Users roles is also granted.
-    - The Roles page is where roles are defined. On create a name and description are defined, once created the role is accessed and feature access, group access, instance type access and blueprint access may be configured.
-    - This permission is recommended for those responsible for configuring Role Based Access Control (RBAC) either globally or with subtenants.
+    - This setting determines access to the Administration > Roles page. When given to a Subtenant user, the ability to create user roles is granted.  When given to a Master Tenant user, the ability to create and manage Tenant and Multi-Tenant Users roles is also granted.
+    - The Roles page is where roles are defined. On create, a name and description are defined. Once created, the Role is accessed and feature access, Group access, Instance Type access and Blueprint access may be configured.
+    - This permission is recommended for those responsible for configuring Role Based Access Control (RBAC) either globally or within their Subtenant.
     -
   * - Admin: Service Plans
     - None, Read, Full
-    - This allows or disallows full or read access to the Administration → Plans & Pricing page, Plans tab when given to a user of a subtenant.  When given to a user of the master tenant, the Price Sets and Prices tabs are also available.
-    - The Plans tab is where service plans are defined. On create a name and code (for API) are defined, display order, provisioning type, storage, memory, core count and the price may be configured. Additionally, the actions menu will allow group access to be scoped.
+    - This setting determines access to Administration > Plans & Pricing. When given to a Subtenant user, access to the Plans tab is granted. When given to a user in the Master Tenant, the Price Sets and Prices tabs are also available.
+    - The Plans tab is where service plans are defined. On create, a name and code (for API) are defined, display order, provisioning type, storage, memory, core count and the price may be configured. Additionally, the actions menu will allow group access to be scoped.
     - This permission is recommended for those responsible for defining and managing pricing and applying plans.
     -
   * - Admin: Tenant
     - None, Read, Full
-    - This allows or disallows full or read access to the Administration → Tenants page. With this permission, local users may be created or deleted within each tenant.  Critical Note: Granting this permission to subtenant users will expose all tenants and tenant users to the subtenant.
-    - The Tenant page is where all tenants may be viewed, edited, created, or even deleted.
-    - This permission is recommended to only be assigned to roles utilized within the Master Tenant who are responsible for the creation, configuration, and/or deletion of subtenants.
-    - This permission is recommended to be set to None for any subtenant user roles via use of a Tenant Role.
+    - This setting determines access to the Administration > Tenants page. With this permission, local users may be created or deleted within each Tenant. Critical Note: Granting this permission to Subtenant users will expose all Tenants and Tenant users to the Subtenant.
+    - The Tenant page is where all Tenants may be viewed, edited, created, or even deleted.
+    - This permission is recommended to only be assigned to Roles utilized within the Master Tenant who are responsible for the creation, configuration, and/or deletion of Subtenants.
+    - It is recommended this setting be set to None on the Tenant Role to restrict access for Subtenant users.
   * - Admin: Tenant - Impersonate Users
     - None, Full
-    - This allows or disallows access to impersonate users, on the Administration → Users page, actions menu, Impersonate User is available.
-    - This permissions allows for users in the Master Tenant to impersonate users of the Master Tenant and subtenants.
-    - This permission is recommended to be assigned to only roles utilized within the Master Tenant who are responsible for configuring RBAC or for supporting users.
-    - This permission is recommended to be set to None for any subtenant user roles via use of a Tenant Role.
+    - This setting allows or disallows access to impersonate users. This selection is located on the Administration > Users page in the Actions menu. When set to Full, Impersonate selection is available.
+    - This permissions allows for users in the Master Tenant to impersonate users of the Master Tenant and Subtenants.
+    - This permission is recommended to be assigned only to Roles utilized within the Master Tenant who are responsible for configuring RBAC or for supporting users.
+    - It is recommended this setting be set to None on the Tenant Role to restrict access for Subtenant users.
   * - Admin: Users
     - None, Read, Full
-    - This allows or disallows full or read access to the Administration → Users page, both the Users and User Groups tabs, as well as, Assignment of these users to User Roles during creation and while editing.  Note:  A Master Tenant user with the Admin: Tenants (Full) permision may also access and perform user management from the tenant page.
-    - The User tab is where all users may be viewed, edited, created, or even deleted. The User Groups tab is where User Groups may be viewed, edited, created, or even deleted. Within |morpheus|, a User Group may be selected during provisioning in order to add each group member's credentials to an instance. When creating a User Group a name, description, server group (in Linux, name of the grouped to assign members), sudo access toggle, and a list of users are defined.
+    - This setting determines access to the Administration > Users page (both Users and User Groups tabs). User Roles can also be set or edited when creating or editing a User on this page. Note: A Master Tenant user with the Admin: Tenants (Full) permission may also access and perform user management from the associated Tenant page.
+    - The User tab is where all users may be viewed, edited, created, or even deleted. The User Groups tab is where User Groups may be viewed, edited, created, or even deleted. Within |morpheus|, a User Group may be selected during provisioning in order to add each group member's credentials to an Instance. When creating a User Group a name, description, server group (in Linux, name of the group to assign members), sudo access toggle, and a list of users are defined.
     - This permission is recommended for those responsible for managing users and RBAC.
     -
   * - Admin: Whitelabel Settings
     - None, Full
-    - This allows or disallows access to the Administration → Settings page, Whitelabel tab.
-    - The Whitelabel tab is where tenant logos, colors, and security banners may be configured.
-    - This permission is recommended for those responsible for branding tenants whether they are the Master Tenant or individual Subtenants.
+    - Allows or disallows access to the Whitelabel tab in Administration > Settings.
+    - The Whitelabel tab is where custom Tenant logos, colors, and security banners may be configured.
+    - This permission is recommended for those responsible for branding tenants, whether they are Master Tenant users or individual Subtenant users.
     -
   * - API: Billing
     - None, Read, Full
-    - This allows or disallows access to the invoices and projects API/CLI.
-    - The invoices API/CLI is used to generate bills.  Read access allows list and get functions and Full allows access to post (refresh).
+    - Allows or disallows access to invoices and projects via |morpheus| API/CLI.
+    - The invoices API/CLI is used to generate bills and gather highly-granular costing data for supported Clouds. Read access allows list and get functions and Full allows access to post (refresh).
     - This permission is recommended for those responsible for generating invoices or projects.
-    - This permission is recommended to be set to None for any subtenant user roles via use of a Tenant Role.
+    - It is recommended this setting be set to None on the Tenant Role to restrict access for Subtenant users.
   * - API: Execution Request
     - None, Full
-    - This allows or disallows access to an API enpoint.
-    - Enpoint that allows you to execute scripts on instances, containers, or hosts and then polls for a response.
-    - This permssion is recommended for those responsible for arbitrary API script execution.
-    - This permission is recommended to be set to None for any subtenant user roles via use of a Tenant Role.
+    - Allows or disallows access to an API endpoint.
+    - This endpoint allows users to execute scripts on Instances, containers, or hosts and then polls for a response.
+    - This permission is recommended for those responsible for arbitrary API script execution.
+    - It is recommended this setting be set to None on the Tenant Role to restrict access for Subtenant users.
   * - Backups
     - None, View, Read, User, Full
-    - This allows or disallows full or read access the Backups page, including the Summary, Jobs, Backups, and History subpages.  User will allow access to only objects the user owns.
-    - The Summary subpage allows the user to see the number of configured backups, the success rate, recent failures, and the size of the backups, as well as, the upcoming and in progress backups. The Jobs subpage is where backup jobs may be created, cloned, edited or deleted. On create a name, code (for use within the API), retention count, and schedule are selected (Note: Selectable schedules are defined within the Provisioning → Automation, Execute Scheduling tab). On the backups subpage, a list of configured backups is provided and new backups maybe created or on-demand backup may be executed. On create the place where the target exists is selected (Instance, Host, or Provider), the source is selected and a name is defined as well as the schedule which is selected. On the History subpage both the backups and restores tabs are available. Names, statuses, start times, durations and size may be viewed
+    - Determines access to the Backups secton of |morpheus| UI, including the Summary, Jobs, Backups, and History subpages. The "User" permission allows access only to backup objects the user owns.
+    - The Summary subpage allows the user to see the number of configured backups, the success rate, recent failures, and the size of the backups, as well as, the upcoming and in-progress backups. The Jobs subpage is where backup jobs may be created, cloned, edited or deleted. On create, a name, code (for use within the API), retention count, and schedule are selected (Note: Selectable schedules are defined Execution Schedules which are created in the Provisioning > Automation). On the backups subpage, a list of configured backups is provided and new backups maybe created or on-demand backups may be executed. On create, the place where the target exists is selected (Instance, Host, or Provider), the source is selected and a name is defined as well as the selected execution schedule. On the History subpage both the backups and restores tabs are available. Names, statuses, start times, durations and size may be viewed.
     - This permission is recommended for those responsible for performing the backup and restoration of workloads.
     -
   * - Backups: Integrations
     - None, Read, Full
-    - This allows or disallows full or read access to the Backups → Integrations page.
-    - From this page backup integrations may be created, edited, or deleted. The page also provides the status of existing integrations. On create the integration product is selected and all associated connection and authentication information must be provided. Additionally, visibility is set to either public or private. Integrations available include Avamar, Commvault, Rubrik, Veeam, and Zerto.
-    - This permission is recommended for those responsible for the integration between |morpheus| and Integrated Backup technologies.
-    - This permission is recommended to be set to None for any subtenant user roles via use of a Tenant Role.
+    - Determines access to the Backups > Integrations page.
+    - From this page, backup integrations may be created, edited, or deleted. The page also provides the status of existing integrations. On create the integration product is selected and all associated connection and authentication information must be provided. Additionally, visibility is set to either public or private. Integrations available include Avamar, Commvault, Rubrik, Veeam, and Zerto.
+    - This permission is recommended for those responsible for the integration between |morpheus| and backup technologies.
+    - It is recommended this setting be set to None on the Tenant Role to restrict access for Subtenant users.
   * - Infrastructure: Boot
     - None, Read, Full
-    - This allows or disallows full or read access to the Infrastructure → Boot page, including the Mapping, Boot Menus, Answer Files, Images, and Discovered MAC Addresses tabs.
-    - |morpheus| includes a PXE Server to provide for rapid bare metal provisioning.  The Infrastructure Boot page is where users may add, edit, or delete Answer Files, as well as, manage their own images or use existing ones.  Boot Menu's and Mappings are also managed here and Discovered MAC Addresses are displayed.
+    - Determines access to the Integrations > Boot page, including the Mapping, Boot Menus, Answer Files, Images, and Discovered MAC Addresses tabs.
+    - |morpheus| includes a PXE Server to provide for rapid bare metal provisioning. The Boot page is where users may add, edit, or delete answer files, as well as, manage their own images or use existing ones. Boot menus and mappings are also managed here and discovered MAC addresses are displayed.
     - This permission is recommend for those responsible for bare metal provisioning.
     -
   * - Infrastructure: Certificates
     - None, Read, Full
-    - This allows or disallows full or read access to the Infrastructure → Keys & Certs page, SSL Certificates tab.
-    - The Infrastructure Keys and Certs SSL Certificates page is where certificates may be uploaded and managed.  These certificates may then be used within |morpheus| when orchestrating Load Balancers.
+    - Determines access to the SSL Certificates tab on the Infrastructure > Keys & Certs page.
+    - The SSL Certificates page is where certificates may be uploaded and managed. These certificates may then be used within |morpheus| when orchestrating load balancers.
     - This permission is recommended for personnel who will be orchestrating and provisioning load balancers.
     -
   * - Infrastructure: Cloud
     - None, Read, Full
-    - This allows or disallows full or read access to the Infrastructure → Clouds page.
-    - The Infrastructure Cloud page is where clouds are added to |morpheus| this includes creating a code for use within the API, the location, visibility, tenant, and whether or not it should be enabled and if VMs should be automatically powered on.  Additionally, clouds may be added from the Infrastructure Groups Clouds page.
+    - Determines access to the Infrastructure > Clouds page.
+    - The Cloud page is where new Clouds are integrated with |morpheus| and existing Cloud integrations are managed. This includes creating a code for use within the API, the location, visibility, tenant, whether or not it should be enabled, and if VMs should be automatically powered on. Additionally, Clouds may be integrated from the Clouds tab of a Group detail page.
     - This permission is recommended for those responsible for configuring RBAC as well as those responsible for |morpheus| Cloud Integrations.
     -
   * - Infrastructure: Clusters
     - None, Read, Full
-    - This allows or disallows full or read access to the Infrastructure → Clusters page.
-    - The Infrastructure Clusters page allows you to create and managing Kubernetes, Docker, and KVM Clusters, and Cloud specific Kubernetes services such as EKS.
+    - Determines access to the Infrastructure > Clusters page.
+    - The Clusters page allows you to create and manage Kubernetes, Docker, and KVM Clusters, as well as Cloud-specific Kubernetes services such as EKS.
     - This permission is recommend for those creating and managing containers or container services.
     -
   * - Infrastructure: Groups
     - None, Read, Full
-    - This allows or disallows full or read access to the Infrastructure → Groups page.
-    - The Infrastructure Groups page is where groups are created and given a code for use within the API.  Additionally, the DNS Service, CMDB, Service Reqistry, and Config Management may be selected.  Existing Clouds/Hosts or new Clouds/Hosts are added to the group and Virtual and Bare Metal machines may be viewed.
+    - Determines access to the Infrastructure > Groups page.
+    - The Groups page is where |morpheus| Groups are created and given a code for use within the API. Additionally, the DNS service, CMDB, service registry, and config management may be selected. Existing Clouds/Hosts or new Clouds/Hosts are added to the Group and virtual or bare metal machines may be viewed.
     - This permission is recommended for those responsible for configuring Role Based Access Control (RBAC).
     -
   * - Infrastructure: Hosts
     - None, Read, Full
-    - This allows or disallows full or read access to the Infrastructure → Hosts page, including the Hosts, Virtual Machines, and Bare Metal tabs.
-    - The Infrastructure Hosts page provides for viewing and managing Hosts, Virtual Machines, and Bare Metal hosts.  On the Bare Metal hosts page hosts may come from PXE Boot or may be manually added.  On the Hosts page hypervisors and Docker hosts are displayed. The Virtual Machines page lists all VM's.  On all three pages actions may be performed against machines.  Additionally, views may be refined by altering columns displayed and csv or json eporting of lists is available.
-    - This permission is recommend for those whom need to take action upon machines and those responsible for bare metal provisioning.
+    - Determines access to the Infrastructure > Hosts page, including the Hosts, Virtual Machines, and Bare Metal tabs.
+    - The Hosts page provides for viewing and managing hosts, virtual machines, and bare metal hosts. On the bare metal hosts page, hosts may come from PXE boot or may be manually added. On the Hosts page hypervisors and Docker hosts are displayed. The Virtual Machines page lists all VMs. On all three pages actions may be performed against machines. Additionally, views may be refined by altering the columns displayed and CSV/JSON exporting of lists is available.
+    - This permission is recommend for those whom need to take action on machines and those responsible for bare metal provisioning.
     -
   * - Infrastructure: Keypairs
     - None, Read, Full
-    - This allows or disallows full or read access to the Infrastructure → Keys & Certs page, Key Pairs tab.
-    - The Infrastructure keypairs page allows for ease in accessing instances via SSH. On create a name, Public Key, Private Key, and Passphrase are entered.
-    - This permission is recommended for those whom utilize |morpheus| is deployment and/or management of Linux instances.
+    - Determines access to the Key Pairs tab on the Infrastructure > Keys & Certs page.
+    - The Keypairs page allows for ease in accessing instances via SSH. On create a name, public key, private key, and passphrase are entered.
+    - This permission is recommended for those whom utilize |morpheus| deployment and management of Linux Instances.
     -
   * - Infrastructure: Load Balancers
     - None, Read, Full
-    - This allows or disallows full or read access to the Infrastructure → Load Balancers page, including both the Load Balancers and Virtual Servers tabs.
-    - The Infrastructure Load Balancers page is where new load balancer integrations may be configured.  Additionally, existing integration may be managed.  The Infrastructure Virtual Services page is where Virtual Servers to include Policies, Pools, Profiles, Monitors, Nodes, and Rule Scripts may be managed.
-    - This permission is recommended for those responsible for integrating |morpheus| with Load Balancers as well as those responsible for managing Virtual Servers.
+    - Determines access to the Infrastructure > Load Balancers page, including both the Load Balancers and Virtual Servers tabs.
+    - The Load Balancers page is where new load balancer integrations may be configured. Additionally, existing integrations may be managed. The Virtual Servers page is where virtual servers are managed to include policies, pools, profiles, monitors, nodes, and rule scripts may be managed.
+    - This permission is recommended for those responsible for integrating |morpheus| with load balancers as well as those responsible for managing virtual servers.
     -
   * - Infrastructure: Network Domains
     - None, Read, Full
-    - This allows or disallows full or read access to the Infrastructure → Networks page, Domains tab.
-    - The Infrastructure Networks Domain page is where domains are managed.  Domains are used for setting FQDNs, joining Windows Instances to Domains, and creating A Records with DNS Integrations.  On create the domain controller and credentials for domain join must be provided.
-    - This permission is recommended for those responsible for |morpheus| to DNS as well as domain join integrations.
+    - Determines access to the Domains tab on the Infrastructure > Network page.
+    - The Domains page is where network domains are managed. Domains are used for setting FQDNs, joining Windows Instances to domains, and creating A-Records with DNS integrations. On create the domain controller and credentials for domain join must be provided.
+    - This permission is recommended for those responsible for |morpheus| DNS and domain-join integrations.
     -
   * - Infrastructure: Network Proxies
     - None, Read, Full
-    - This allows or disallows full or read access to the Infrastructure → Networks page, Proxies tab.
-    - The Infrastructure Networks Proxies page is where Proxy configurations are stored. These are for use by provisioning engines
+    - Determines access to the Proxies tab on the Infrastructure > Networks page.
+    - The Infrastructure Networks Proxies page is where Proxy configurations are stored, which are available for use by the provisioning engines.
     - This permission is recommended for those responsible for configuring proxies to be used when provisioning.
     -
   * - Infrastructure: Network Routers
     - None, Read, Group, Full
-    - This allows or disallows full or read access to the Infrastructure → Networks page, Routers tab.  Group allows access to Objects shared to groups associated with the user.
-    - The Infrastructure Networks Routers page is where virtual Routers are created and managed from Cloud and Network integrations.
+    - Determines access to the Routers tab on the Infrastructure > Networks page. The "Group" permission setting allows access to objects shared to Groups associated with the user.
+    - The Routers page is where virtual routers are created and managed from Cloud and Network integrations.
     - This permission is recommended for those responsible for network management.
     -
   * - Infrastructure: Networks
     - None, Read, Group, Full
-    - This allows or disallows full or read access to the Infrastructure → Network page, including the Networks, Network Groups, and Integrations tabs.  Group allows access to Objects shared to groups associated with the user.
-    - The Infrastructure Networks page is where networks are configured for DHCP or Static IP assignement and existing networks are displayed.  The Infrastructure Network Groups page is where networks are grouped to allow round robin provisioning among the group.  The Infrastructure Networks Integrations page is where IPAM, DNS, Security, Service Registry, and Virtual Network tools are integrated.  These include Cisco ACI, VMware NSX T and V, Infoblox, Bluecat, phpIPAM, SolarWinds, Stealth, Microsoft DNS, PowerDNS, Route 53, and Consul.
-    - This permission is recommended for those responsible for |morpheus| to network technology integrations and the configuration and management of networks to be use during provisioning.
+    - Determines access to the Infrastructure > Networks page, including the Networks, network groups, and integrations tabs. The "Group" permission setting allows access to objects shared to Groups associated with the user.
+    - The Networks page is where networks are configured for DHCP or static IP assignment and existing networks are displayed. The Network Groups page is where networks are grouped to allow round robin provisioning among the group. The Integrations page is where IPAM, DNS, security, service registry, and virtual network tools are integrated. These include Cisco ACI, VMware NSX T and V, Infoblox, Bluecat, phpIPAM, SolarWinds, Stealth, Microsoft DNS, PowerDNS, Route 53, and Consul.
+    - This permission is recommended for those responsible for integration with network technologies and the configuration and management of networks to be used during provisioning.
     -
-  * - Infrastructure: Nework IP Pools
+  * - Infrastructure: Network IP Pools
     - None, Read, Full
-    - This allows or disallows full or read access to the Infrastructure → Networks page, IP Pools tab.
-    - The Infrastructure Networks IP Pools page is where |morpheus| IP Pools may be created.  On create a name and IP Range are provided.  Additionally, pools from IPAM integrations are displayed.
-    - This permission is recommended for those responsible for IP Management and for those responsible for IPAM Integrations.
+    - Determines access to the IP Pools tab on the Infrastructure > Network page.
+    - The IP Pools page is where |morpheus| IP pools may be created. On create, a name and IP range are provided. Additionally, pools from IPAM integrations are displayed.
+    - This permission is recommended for those responsible for IP address management and those responsible for IPAM Integrations.
     -
   * - Infrastructure: Policies
-    - Deprecated
-    -
-    -
-    -
+    - None, Read, Full
+    - Determines access to the Policies tabs on the Group and Cloud detail pages (Infrastructure > Groups > selected Group OR Infrastructure > Cloud > selected Cloud).
+    - Policies can be created from this tab which are scoped to the Cloud or Group being viewed.
+    - This permission is recommended for users who will need to set quotas which pertain specifically to Groups or Clouds the user has access to.
     -
   * - Infrastructure: Security Groups
     - None, Read, Full
-    - This allows or disallows full or read access to the Infrastructure → Network page, Security Groups tab.
-    - The Infrastructure Network Security Group page is where Security Groups (aka Virtual Firewalls) are defined.
-    - This permission is recommended for thosre responsible for Firewall configuration and management
+    - Determines access to the Security Groups tab on the Infrastructure > Networks page.
+    - The Security Groups page is where Security Groups (aka virtual firewalls) are defined.
+    - This permission is recommended for those responsible for firewall configuration and management.
     -
   * - Infrastructure: State
-    - Deprecated
-    -
-    -
-    -
+    - None, Read, Full
+    - Determines access to the power state toggle on the Infrastructure > Hosts page.
+    - This toggle moves Hosts between a started and stopped state.
+    - This permission is recommended for those responsible for managing Hosts.
     -
   * - Infrastructure: Storage
     - None, Read, Full
-    - This allows or disallows full or read access to the Infrastructure → Storage page, including the Buckets, File Shares, Volumes, Data Stores, and Servers tabs.
-    - The Infrastructure Storage Servers page is where |morpheus| to Storage Server integration are configured.  Integration available include 3Par, AWS S3, Dell EMC ECS and Isilon, Huawei or Open Telekom OBS and Huawei, Open Telekom, OpenStack SFS  The Infrastructure Storage Volumes page is where volumes may be created or viewed.   The Infrastructure Storage File Shares page is where File Shares of types CIFS, Dell EMC ECS or Isilon, Local Storage, and NFSv3 may be configured.  The Infrastructure Storage Buckets page is where storage buckets of type AWS S3, Alibaba, Azure, Open Telekom OBS, OpenStack Swift, Racspace CDN may be created.  Storage Buckets are used for Backup, Archives, and Virtual Images.  The Infrastructure Storage Data Store page is where permissions to data stores may be managed.
+    - Determines access to the Infrastructure > Storage page, including the Buckets, File Shares, Volumes, Data Stores, and Servers tabs.
+    - The Servers page is where storage integrations are configured. Integrations available include 3Par, AWS S3, Dell EMC ECS and Isilon, Huawei or Open Telekom OBS and Huawei, Open Telekom, OpenStack SFS. The Volumes page is where storage volumes may be created or viewed. The File Shares page is where File Shares of types CIFS, Dell EMC ECS or Isilon, local storage, and NFSv3 may be configured. The Buckets page is where storage buckets of type AWS S3, Alibaba, Azure, Open Telekom OBS, OpenStack Swift, Racspace CDN may be created. Storage buckets are used for Backup, Archives, and Virtual Images. The Data Store page is where permissions to data stores may be managed and new data stores are added.
     - This permission is recommended for those responsible for storage integrations and configurations.
-    - This permission is recommended to be set to None or Read for any subtenant user roles via use of a Tenant Role.
+    - This permission is recommended to be set to None on the Tenant Role to restrict access to Subtentant users.
   * - Infrastructure: Storage Browser
     - None, Read, Full
-    - This allows or disallows full or read access to capability to browse files on the Infrastructure → Storage page, Buckets and File Shares tabs.
-    - The Infrastructure Storage Browser permissions allows users whom have the Infrastructure Storage permission to browse, add files and folders, download and delete from the Buckets and Files Shares.
+    - Determines file browsing access to buckets and file shares on the Buckets and File Shares tabs of the Infrastructure > Storage page.
+    - The Storage Browser permission allows users who also have appropriate Infrastructure: Storage permission to browse, add files and folders, download, and delete from the buckets and file shares.
     - This permission is recommended for those who need to browse storage.
     -
   * - Infrastructure: Trust Integrations
     - None, Read, Full
-    - This allows or disallows full or read access to the Infrastructure → Keys & Certs page, integrations tab.
-    - The Infrastructure Keys & Certs Integrations tab is where new integrations can be configured. This includes Venafi.
+    - Determines access to the Integrations tab of the Infrastructure > Keys & Certs page.
+    - The Integrations tab is where new trust integrations can be configured. This includes Venafi.
     - This permission is recommended for those responsible for the integration between |morpheus| and Venafi.
-    - This permission is recommended to be set to None or Read for any subtenant user roles via use of a Tenant Role.
+    - This permission is recommended to be set to None on the Tenant Role to restrict access to Subtentant users.
   * - Integrations: Ansible
     - None, Full
-    - This allows or disallows access to the Administration → Integrations page.
-    - The Administration Integrations tab is where existing integrations are displayed and new integrations may be created. This permission applies only to existing Ansible integrations.  It allows or disallows the ability to edit existing Ansible Integrations.
-    - This permission is recommened for those responsible for |morpheus| to Ansible integrations.
-    - This permission is recommended to be set to None for any subtenant user roles via use of a Tenant Role.
+    - Determines access to Ansible integrations on the Administration > Integrations page.
+    - The Integrations tab is where existing integrations are displayed and new integrations may be created. This permission applies only to existing Ansible integrations. It allows or disallows the ability to edit existing Ansible integrations.
+    - This permission is recommended for those responsible for integrations between |morpheus| and Ansible.
+    - This permission is recommended to be set to None on the Tenant Role to restrict access to Subtentant users.
   * - Logs
     - None, Read, User, Full
-    - This allows or disallows full or read access to the Logs page.  User will allow access to only object the user owns.
+    - Determines level of access to the Logs section of |morpheus| UI. The "User" permission will allow access only to objects the user owns.
     - The Logs page is where logs may be viewed.
-    - This permission is recommended for those responsible for troublshooting.
+    - This permission is recommended for those responsible for troubleshooting.
     -
   * - Monitoring
     - None, Read, User, Full
-    - This allows or disallows full or read access to the Monitoring page, including the Status, Apps, Checks, Groups, Incidents, Contacts, and Alert Rules subpages.  User will allow access to only object the user owns.
-    - The Monitoring Checks page is where automatically created checks are customized or new checks are created.  The Monitoring Groups and Apps pages is where checks may be grouped.  The Monitoring Incidents page is where incidents are created upon Check failure.  The Monitoring Contacts page is where contacts may be added for notifications.  Then Monitoring Alert Rules page is where notification are configured.
-    - This permission is recommended for those responsible for montoring applications, incidents, or configuring notifications.
-    -
-  * - None - No Permissions
-    -
-    - This allows only access to the User Setting page displayed under the Operations tab.
-    - The User Settings page is where users may upload their photo, enter values for username, first name, last name, email address, and password, as well as, defining both user-specific Linux and Windows settings (user names and passwords (SSH Key for Linux) to be added to machines during provisioning). Additionally, generating and refreshing API Access tokens is done via this page.
-    -
+    - Determines level of access to the Monitoring section of |morpheus| UI, including the Status, Apps, Checks, Groups, Incidents, Contacts, and Alert Rules subpages. The "User" permission will allow access only to objects the user owns.
+    - The Checks page is where automatically-created checks are customized or new checks are created. The Groups and Apps pages are where checks may be grouped. The Incidents page is where incidents are created upon Check failure. The Contacts page is where contacts may be added for notifications. Then Alert Rules page is where notification are configured.
+    - This permission is recommended for those responsible for monitoring applications, incidents, or configuring notifications.
     -
   * - Operations: Activity
     - None, Read
-    - This allows or disallows access to the Operations → Activity page, including the Activity and History tabs.
-    - The Operations Activity page displays 5 types of recent activities: Provisioning, Alerts, Backups, and Permissions.
-    - This permission is recommned for those repsonsible to monitor or view activities and their status within |morpheus|.
+    - Determines access to the Activity and History tabs on the Operations > Activity page.
+    - The Activity page displays four types of recent activities: Provisioning, Alerts, Backups, and Permissions.
+    - This permission is recommended for those responsible to monitor or view activities and their statuses within |morpheus|.
     -
   * - Operations: Analytics
     - None, Read, Full
-    - This allows or disallows full or read access to the Operations → Analytics page.
-    - The Operations Analytics page gives administrators the ability to break down costs and usage, then filter the results by relevant delineations including Groups, Clouds, Tenants or even tag values.
+    - Determines access to the Operations > Analytics page.
+    - The Analytics page gives administrators the ability to break down costs and usage, then filter the results by relevant delineations including Groups, Clouds, Tenants or even tag values.
     - This permission is recommended for those responsible for understanding utilization and costs.
     -
   * - Operations: Approvals
     - None, Read, Full
-    - This allows or disallows full or read access to the Operations → Approvals page.
-    - For Internal |morpheus| or ServiceNow, When a Provisioning Approval Policy is created for a group or cloud, on provision an approval request will be generated.
-    - This permission is recommended for those responsible for approving, denying, or canceling Approval Requests.
+    - Determines access to the Operations > Approvals page.
+    - When a Provision Approval-type Policy is enabled for a Group or Cloud, an approval request will be created on each relevant provision attempt. These approvals can be handled directly in |moprheus| or dealt with in ServiceNow with a properly-configured integration.
+    - This permission is recommended for those responsible for approving, denying, or canceling approval requests.
     -
   * - Operations: Budgets
     - None, Read, Full
-    - This allows or disallows full or read access to the Operations → Budgets page.
-    - The Operations Budgets page is where budgets are created and applied to clouds, tenants, users, or groups.
-    - This permission is recommended for those responsible for manageing budgets.
+    - Determines access to the Operations > Budgets page.
+    - The Budgets page is where budgets are created and applied to clouds, tenants, users, or groups.
+    - This permission is recommended for those responsible for managing budgets.
     -
   * - Operations: Dashboards
     - None, Read
-    - This allows or disallows access to the Operations → Dashboards page.
-    - The Operations Dashboard page is a single pane of glass showing quick, easy to read performance and configuration information about the |morpheus| Environment.
-    - This permission is recommended for all users.
+    - Determines access to the Operations > Dashboard page (default |morpheus| landing page).
+    - The Dashboard page is a single pane of glass showing quick, easy-to-read performance and configuration information about the |morpheus| environment.
+    - "Read" permission is recommended for all users. When set to None, Operations > Reports becomes the default landing page and attempts to go to the Dashboard will redirect users to their User Settings page.
     -
   * - Operations: Guidance
     - None, Read, Full
-    - This allows or disallows full or read access to the Operations → Guidance page.
-    - The Operations Guidance page shows recommendations for resource and costs utilization optimization.
-    - This permission is recommended for those responsible to optimize utilization and costs of clouds.
+    - Determines access to the Operations > Guidance page.
+    - The Guidance page shows recommendations for resource and cost-utilization optimization.
+    - This permission is recommended for those responsible to optimize utilization and costs of Cloud-based resources.
     -
   * - Operations: Health
     - None, Read
-    - This allows or disallows access to the Operations → Health page, including the |morpheus| Health, Alarms, and |morpheus| Logs tabs.
-    - The Operations Health pages provide an overview of |morpheus| health, notifications from integrations, and the current |morpheus|-ui log.
+    - Determines access to the Operations > Health page, including the |morpheus| Health, Alarms, and |morpheus| Logs tabs.
+    - The Health pages provide an overview of |morpheus| health, notifications from integrations, and the current |morpheus|-ui log.
     - This permission is recommended for those responsible for administering and troubleshooting |morpheus|.
-    - This permission is recommended to be set to None for any subtenant user roles via use of a Tenant Role.
+    - This permission is recommended to be set to None on the Tenant Role to restrict access for Subtenant users.
   * - Operations: Reports
     - None, Read, Full
-    - This allows or disallows full or read access to the Operations → Reports page.
-    - The Operations Reports page is where reports may be generated and exported into JSON or CSV format.
-    - This permission is recommened for those interested in Account, Infrastructure, Provisioning, Usage, and Cost reports.
+    - Determines access to the Operations > Reports page.
+    - The Reports page is where reports may be generated and exported into JSON or CSV format.
+    - This permission is recommended for those responsible for account, infrastructure, provisioning, usage, and cost reports.
     -
   * - Operations: Usage
     - None, Read, Full
-    - This allows or disallows full or read access to the Operations → Activity page, Usage tab.
-    - The Operations Activity Usage page shows Billing information for Instances and Hosts that have pricing configured on their Service Plan.
-    - This permissions is recommended for those responsible for costs.
+    - Determines access to the Usage tab on the Operations > Activity page.
+    - The Usage tab shows billing information for Instances and hosts that have pricing configured on their Service Plans.
+    - This permissions is recommended for those responsible for cost accounting.
     -
   * - Operations: Wiki
     - None, Read, Full
-    - This allows or disallows full or read access to the Operations → Wiki page.
-    - The Operations Wiki page allows easy UI, API and CLI access to information to be referenced or shared with others. Wiki pages encompass individual Clouds, Groups, Servers, Instances, Clusters, and other pages can be manually created. Wiki pages from resources are accessible from Operations - Wiki or in within individual resource detail pages in the Wiki tab.
-    - This permission is recommend for those interested in documenation and knowledge management.
+    - Determines access to the Operations > Wiki page.
+    - The Wiki page allows easy UI, API and CLI access to information to be referenced or shared with others. Wiki pages encompass individual Clouds, Groups, Servers, Instances, Clusters, and other pages can be manually created. Wiki pages from resources are accessible from the Operations > Wiki page or within individual resource detail pages on their respective Wiki tabs.
+    - This permission is recommend for those responsible for documenation and knowledge management.
     -
   * - Provisioning Administrator
     - None, Full
-    - This allows or disallows access to the Provisioning → Instances page, On Edit, Owner.
-    - Allows you to change the ownership of an instance.
+    - When editing an Instance (Provisioning > Instance > selected Instance > EDIT button), this permission determines access to changing the owner of an Instance.
+    - Allows you to change the owning user of an Instance.
     - This permission is recommended for those responsible to ensure all instances are owned by appropriate personnel.
     -
   * - Provisioning: Advanced Node Type Options
     - None, Full
-    - This allows or disallows access to the Provisioning → Library page, Node Types tab, Vmware Type, Advanced Options.
-    - The Provisioning Library Node Type page when VMware Technology Type is selected, extra options will be available in the VMware VM Options section. These allow defining advance vmx-file parameters during provisioning.
-    - This permission is recommended for those responsible for manageing VMware Node Types (Images).
+    - This allows or disallows access to the "Extra Options" field of the Node Types tab on the Provisioning > Library page when the Node Type Technology value is set to "VMware".
+    - When VMware technology type is selected for a new or existing Node Type (Provisioning > Library > Node Types), the "Extra Options" field will be available in the VMware VM Options section. These allow defining advanced vmx-file parameters during provisioning.
+    - This permission is recommended for those responsible for managing VMware Node Types (images).
     -
   * - Provisioning: Allow Force Delete
     - None, Full
-    - This allows or disallows access to the Infrastructure → Hosts page, including the Hosts, Virtual Machines, and Bare Metal tabs, Delete on the actions menu with the option for select Force Delete.
+    - This allows or disallows access to the "Force Delete" action on the Infrastructure > Hosts page, including the Hosts, Virtual Machines, and Bare Metal tabs. Click Delete on the actions menu to see the check box for the Force Delete action.
     - Allows force delete to delete instances, virtual machines or hosts but may cause orphaned objects.
-    - This permission is recommened for those responsible to ensure orphaned objects are removed.
+    - This permission is recommended for those responsible to ensure orphaned objects are removed from |morpheus|.
     -
   * - Provisioning: Apps
     - None, Read, User, Full
-    - This allows or disallows full or read access to the Provisioning → Apps page.  User will allow access to only object the user owns.
-    - The Provisioning Apps page allows instances to be grouped and tiered.  From this page Apps can be deployed and instances can be added to existing Apps.  Security groups, Environmental Variables (Linux Only) may be added and edited.  The App log, history, and monitoring tabs may be viewed.
+    - Determines access to the Provisioning > Apps page. The "User" permission will allow access to only object the user owns.
+    - The Apps page allows Instances to be grouped and tiered logically into Apps. From this page, Apps can be deployed from existing Blueprints and Instances can be added to existing Apps. Security groups and environmental variables (Linux Only) may be added and edited. The App log, history, and monitoring tabs may be viewed.
     - This permission is recommended for those responsible for provisioning.
     -
-  * - Provisioning: Automation integrations
+  * - Provisioning: Automation Integrations
     - None, Read, Full
-    - This allows or disallows full or read access to the Provisioning → Automations page, Integrations tab.
-    - The Provisioning Automation Integrations tab is where new integration can be configured. These include Chef, Puppet, Ansible, Salt Master, Ansible Tower, vRealize Orchestrator.
+    - Determines access to the Integrations tab on the Provisioning > Automation page.
+    - The Integrations tab is where new integrations can be configured. These include Chef, Puppet, Ansible, Salt Master, Ansible Tower, vRealize Orchestrator.
     - This permission is recommended for those responsible for the integration between |morpheus| and integrated automation technologies.
-    - This permission is recommended to be set to None or Read for any subtenant user roles via use of a Tenant Role.
-  * - Provisioning: Blueprint - Terraform
-    - None, Provision, Full
-    - This allows or disallows access to the Provisioning → Blueprints page, Blueprint Type: Terraform.  Provision allows for the provisioning of Terraform Blueprints.
-    - The Provisioning Blueprints page allows for the creation of  pre-configured full multi-tier application definitions which can be deployed via the Apps page.  With this permisison the blueprint type of Terraform is available.
-    - This permission is recommneded for those responsible for defining Terraform blueprints.
-    -
+    - This permission is recommended to be set to None on the Tenant Role to restrict access for Subtenant users.
   * - Provisioning: Blueprints
     - None, Read, Full
-    - This allows or disallows full or read access to the Provisioning → Blueprints page.
-    - The Provisioning Blueprints page allows for the creation of  pre-configured full multi-tier application definitions which can be deployed via the Apps page.  With this permisison the blueprint type of |morpheus| is available.
-    - This permission is recommneded for those responsible for defining |morpheus| blueprints.
+    - Determines access to the Provisioning > Blueprints page.
+    - The Blueprints page allows for the creation of pre-configured, multi-tier application definitions which can be deployed via the Apps page. With this permission the blueprint type of |morpheus| is available.
+    - This permission is recommended for those responsible for defining |morpheus|-type Blueprints.
+    -
+  * - Provisioning: Blueprint - Terraform
+    - None, Provision, Full
+    - Determines access to Terraform-type Blueprints on the Provisioning > Blueprints page. The "Provision" permission allows for provisioning Apps from Terraform Blueprints without the ability to create or edit them.
+    - The Blueprints page allows for the creation of pre-configured, multi-tier application definitions which can be deployed via the Apps page. With this permission the blueprint type of Terraform is available.
+    - This permission is recommended for those responsible for defining Terraform blueprints.
     -
   * - Provisioning: Blueprints - ARM
     - None, Provision, Full
-    - This allows or disallows access to the Provisioning → Blueprints page, Blueprint Type: ARM. Provision allows for the provisioning of ARM Blueprints.
-    - The Provisioning Blueprints page allows for the creation of  pre-configured full multi-tier application definitions which can be deployed via the Apps page.  With this permisison the blueprint type of ARM is available.
-    - This permission is recommneded for those responsible for defining ARM blueprints.
+    - Determines access to ARM-type Blueprints on the Provisioning > Blueprints page. The "Provision" permission allows for provisioning Apps from ARM Blueprints without the ability to create or edit them.
+    - The Blueprints page allows for the creation of pre-configured, multi-tier application definitions which can be deployed via the Apps page. With this permission the blueprint type of ARM is available.
+    - This permission is recommended for those responsible for defining ARM blueprints.
     -
   * - Provisioning: Blueprints - CloudFormation
     - None, Provision, Full
-    - This allows or disallows access to the Provisioning → Blueprints page, Blueprint Type: CloudFormation.  Provision allows for the provisioning of CloudFormation Blueprints.
-    - The Provisioning Blueprints page allows for the creation of  pre-configured full multi-tier application definitions which can be deployed via the Apps page.  With this permisison the blueprint type of CloudFormation is available.
-    - This permission is recommneded for those responsible for defining CloudFormation blueprints.
+    - Determines access to CloudFormation-type Blueprints on the Provisioning > Blueprints page. The "Provision" permission allows for provisioning Apps from CloudFormation Blueprints without the ability to create or edit them.
+    - The Blueprints page allows for the creation of pre-configured, multi-tier application definitions which can be deployed via the Apps page. With this permission the blueprint type of CloudFormation is available.
+    - This permission is recommended for those responsible for defining CloudFormation blueprints.
     -
   * - Provisioning: Blueprints - Helm
     - None, Provision, Full
-    - This allows or disallows access to the Provisioning → Blueprints page, Blueprint Type: Helm. Provision allows for the provisioning of Helm Blueprints.
-    - The Provisioning Blueprints page allows for the creation of  pre-configured full multi-tier application definitions which can be deployed via the Apps page.  With this permisison the blueprint type of Helm is available.
-    - This permission is recommneded for those responsible for defining Helm blueprints.
+    - Determines access to Helm-type Blueprints on the Provisioning > Blueprints page. The "Provision" permission allows for provisioning Apps from Helm Blueprints without the ability to create or edit them.
+    - The Blueprints page allows for the creation of pre-configured, multi-tier application definitions which can be deployed via the Apps page. With this permission the blueprint type of Helm is available.
+    - This permission is recommended for those responsible for defining Helm blueprints.
     -
   * - Provisioning: Blueprints - Kubernetes
     - None, Provision, Full
-    - This allows or disallows access to the Provisioning → Blueprints page, Blueprint Type: Kubernetes. Provision allows for the provisioning of Kubernetes Blueprints.
-    - The Provisioning Blueprints page allows for the creation of  pre-configured full multi-tier application definitions which can be deployed via the Apps page.  With this permisison the blueprint type of Kubernetes is available.
-    - This permission is recommneded for those responsible for defining Kubernetes blueprints.
+    - Determines access to Kubernetes-type Blueprints on the Provisioning > Blueprints page. The "Provision" permission allows for provisioning Apps from Kubernetes Blueprints without the ability to create or edit them.
+    - The Blueprints page allows for the creation of pre-configured, multi-tier application definitions which can be deployed via the Apps page. With this permission the blueprint type of Kubernetes is available.
+    - This permission is recommended for those responsible for defining Kubernetes blueprints.
     -
   * - Provisioning: Deployment Integrations
     - None, Read, Full
@@ -564,3 +556,9 @@ Role Mappings
     - The Migration Tool creates a snapshot of an existing VM, converts it to the destination formation and provisions the machine on the target.
     - Recommend for only those responsible for lifting and shifting VMs.
     - This permission is recommended to be set to None for any subtenant user roles via use of a Tenant Role.
+  * - None - No Permissions
+    -
+    - This allows only access to the User Setting page displayed, which is accessed by clicking on the user's name in the upper-right corner of the application window.
+    - The User Settings page is where users may upload their photo, enter values for username, first name, last name, email address, and password, as well as, defining both user-specific Linux and Windows settings (usernames, passwords, and SSH Key for Linux to be added to machines during provisioning). Additionally, generating and refreshing API Access tokens is done via this page.
+    -
+    -
