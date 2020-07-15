@@ -47,11 +47,11 @@ Role Mappings
     - Recommendations
     - Tenant Role Recommendations
   * - Admin: Appliance Settings
-  	- None, Full
-  	- Allows or disallows access to the Appliance and License tabs in Administration > Settings
-  	- The Appliance tab in Administration > Settings is where |morpheus| administrators would configure the appliance URL, Tenant and User management, email, proxy, and currency settings. Additionally, defining which Clouds are available for integration within |morpheus| is done on this page. On the License tab information about the current |morpheus| license may be viewed and a new license may be applied when needed.
-  	- This permission is recommended to only be assigned to Roles utilized within the Master Tenant. Those responsible for configuring currency, email, and proxy settings for Cloud API access will need this permission.
-  	- This permission is recommended to be set to None on the Tenant Role to restrict this access for all Subtenant Users.
+   	- None, Full
+   	- Allows or disallows access to the Appliance and License tabs in Administration > Settings
+   	- The Appliance tab in Administration > Settings is where |morpheus| administrators would configure the appliance URL, Tenant and User management, email, proxy, and currency settings. Additionally, defining which Clouds are available for integration within |morpheus| is done on this page. On the License tab information about the current |morpheus| license may be viewed and a new license may be applied when needed.
+   	- This permission is recommended to only be assigned to Roles utilized within the Master Tenant. Those responsible for configuring currency, email, and proxy settings for Cloud API access will need this permission.
+   	- This permission is recommended to be set to None on the Tenant Role to restrict this access for all Subtenant Users.
   * - Admin: Backup Settings
     - None, Full
     - Allows or disallows access to Administration > Backups. Master Tenant administrators have additional settings for appliance backups and defaults on this page.
