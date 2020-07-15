@@ -40,7 +40,7 @@ Role Mappings
   :widths: auto
   :header-rows: 1
 
-  * - ﻿Permission Name
+  * - Permission Name
     - Permission Options
     - Feature Access
     - Description
