@@ -37,8 +37,8 @@ Role Mappings
   Gives User Access to Role Mappings config in ``/admin/roles`` for configuring Identity Source Role Mappings without providing Access to other Identity Source configuration settings.
 
 .. list-table:: **Feature Access Role Permission Options**
-  :widths: auto
-  :header-rows: 1
+   :widths: auto
+   :header-rows: 1
 
   * - Permission Name
     - Permission Options
