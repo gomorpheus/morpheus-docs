@@ -75,28 +75,26 @@ Cloud Detail Tabs
 
 .. NOTE:: Not all tabs are available for all Cloud Types.
 
+Clusters
+  The Clusters tab displays clusters provisioned into the Cloud being viewed, including their status, type, name, layout, workers, and compute, memory, and storage stats. You can add a cluster by clicking :guilabel:`ADD CLUSTER`.
 Hosts
-  The hosts tab panel displays available hosts in the cloud and displays power, os, name, type, cloud, ip address, nodes, disc space, memory, and status. You can add a container host from this by clicking the Container Hosts button, add a hypervisor host by clicking the HyperVisor button, or perform actions actions by click the Actions button.
-Virtual Machine
-  Displays an Inventory of Existing Instances in your cloud configuration and provides details such as power, os, name, type, cloud, ip address, nodes, disc space, memory, and status.
+  The Hosts tab displays available hosts in the Cloud and displays power, OS, name, type, cloud, IP address, nodes, disk space, memory, and status. You can add a resource by clicking :guilabel:`ADD RESOURCE`, add a hypervisor host by clicking :guilabel:`ADD HYPERVISOR`, or perform action an action by selecting one or more Hosts and clicking :guilabel:`ACTIONS`.
+ VMs (Virtual Machines)
+  Displays an inventory of existing Instances in your Cloud configuration and provides details such as power, OS, name, type, cloud, IP address, nodes, disk space, memory, and status.
 Bare Metal
-  Setup PXE Boot in the Boot section to add bare metal servers. Once setup you can view information such as power, os, name, type, cloud, ip address, nodes, disc space, memory, and status.
+  Setup PXE Boot in the Boot section to add bare metal servers. Once set up you can view information such as power, OS, name, type, cloud, IP address, nodes, disk space, memory, and status.
 Security Groups
-  The Security Groups tab panel displays a list of existing Security groups in the cloud. You can add a security group to this cloud by clicking the Edit Security Groups button.
+  The Security Groups tab displays a list of existing security groups in the cloud. You can add a security group to this cloud by clicking :guilabel:`EDIT SECURITY GROUPS`.
 Load Balancers
-  The load balancers tab panel displays available load balancers in the cloud and displays the name, description, type, cloud and host. You can add a load balancer from this tab by clicking the Add Load Balancer button.
+  The load balancers tab panel displays available load balancers in the cloud including the name, description, type, cloud and host. You can add a load balancer from this tab by clicking :guilabel:`ADD LOAD BALANCER`.
 Networks
-  Displays Networks synced or added to the Cloud.
-DataStores
-  Displays Datastores synced or added to the Cloud.
-Resource Pools
-  Displays Resource Pools synced from the Cloud.
+  Displays Networks synced or added to the Cloud, including their name, type, CIDR, pool, DHCP status, visibility and targeted Tenant.
+Data Stores
+  Displays Datastores synced or added to the Cloud, including their name, type, capacity, online status, visibility, and targeted Tenant.
+Resources
+  Displays Resource Pools synced from the Cloud, including their name, description, and targeted Tenant.
 Policies
-  Manages Policies enforced on the Cloud.
-:guilabel:`+ Container Host`
-  Provisions a Docker host into the Cloud, or adds an existing Docker Host (manual) to the Cloud. KVM hosts are also available for |morpheus| and Bare Metal cloud types.
-:guilabel:`+ Hypervisor`
-  Add an existing Hypervisor to the Cloud. Not available for all Cloud types.
+  Manages Policies enforced on the Cloud. Setting a policy on this tab is equal to creating a policy in Administration > Policies and scoping it to the selected Cloud.
 
 Deleting Clouds
 ---------------
@@ -107,4 +105,4 @@ To delete a cloud:
 #. Select the Clouds link in the sub navigation bar.
 #. Click the Delete icon of the cloud to delete.
 
-.. IMPORTANT:: All Instances and managed Hosts and VM's must be removed prior to deleting a cloud. To remove Instances, Hosts and VM's from |morpheus| without deleting them in the actual Cloud, select Delete on the Host or VM, unselect "Remove Infrastructure" and select "Remove Associated Instances" if Instance are associated with the Hosts or VMs.
+.. IMPORTANT:: All Instances, managed Hosts and VMs must be removed prior to deleting a Cloud. To remove Instances, hosts and VMs from |morpheus| without deleting the Cloud resources they represent, select Delete on the host or VM, unselect "Remove Infrastructure", and select "Remove Associated Instances" if Instance are associated with the selected Hosts or VMs.
