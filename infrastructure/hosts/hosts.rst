@@ -9,8 +9,6 @@ The `Infrastructure -> Hosts` section provides a universal stage for viewing and
 In this section you can:
 
 * View & Manage all Hosts, Virtual Machines & Bare Metal
-* Provision Docker & KVM Hosts
-* Convert existing hosts to Docker & KVM Hosts
 * Add Hypervisors
 * Convert Hosts, Virtual Machines and Bare Metal to Managed
 
@@ -19,7 +17,9 @@ In this section you can:
 Hosts
 -----
 
-Hosts in |morpheus| are Hypervisors and Docker Hosts that your VM's and Container are hosted on, such as ESXi, Hyper-V and Docker Hosts. These Hosts are populated from integrated clouds, hosts provisioned from Morpheus, or manually added Hosts.
+Hosts in |morpheus| are hypervisors and Docker hosts that your VMs and Container are hosted on, such as ESXi, Hyper-V and Docker hosts. These hosts are populated from integrated clouds, hosts provisioned from Morpheus, or manually added hosts.
+
+Provisioning new hosts takes place in the Infrastructure > Clusters section of |morpheus|. For example, provisioning a new Docker cluster in that section will begin the process of creating a |morpheus|-managed Docker cluster with one host (by default). Additional hosts and custom layouts can also be created. See the `Clusters section <https://docs.morpheusdata.com/en/latest/infrastructure/clusters/clusters.html>`_ of |morpheus| docs for more information.
 
 .. //==== Adding Hosts
 .. //==== Managing Hosts
@@ -29,7 +29,7 @@ Hosts in |morpheus| are Hypervisors and Docker Hosts that your VM's and Containe
 Virtual Machines
 ----------------
 
-The Virtual Machines tab lists all Managed and Unmanaged VM's across |morpheus| . Managed VM's are either provisioned by Morpheus, or inventoried VM's that were converted to managed. Unmanaged VM's are from Cloud integrations with "Inventory Existing Instances" enabled in the Cloud settings.
+The Virtual Machines tab lists all managed and unmanaged VMs across |morpheus|. Managed VMs are either provisioned by |morpheus|, or are inventoried VMs that were converted to managed. Unmanaged VMs are from Cloud integrations with "Inventory Existing Instances" enabled in the Cloud settings.
 
 .. //==== Managing Virtual Machines
 .. //==== Removing Virtual Machines
@@ -41,5 +41,3 @@ Bare Metal hosts are from PXE Boot or manually added in this section. Bare Metal
 
 .. //==== Managing Bare Metal
 .. //==== Removing Bare Metal
-
-.. include:: adddockerhost.rst
