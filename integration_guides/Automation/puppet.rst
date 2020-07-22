@@ -1,18 +1,16 @@
 Puppet
 ------
 
-Overview
-^^^^^^^^^
-
 Add Puppet Integration
 ^^^^^^^^^^^^^^^^^^^^^^^
 
-  #. Navigate to Administration -> Integrations and select + New Integration
+  #. Navigate to Administration > Integrations
+  #. Click :guilabel:`+ NEW INEGRATION`
   #. Select Integration type "Puppet"
   #. Populate the following fields
 
-    * Name: Name of the Puppet Integration in |morpheus|
-    * Puppet Master: Hostname
+    * Name: A friendly name for this Puppet integration in |morpheus|
+    * Puppet Master (Hostname): The resolvable DNS name to the Puppet Master, communicating on port 443 by default
     * Allow Immediate Execution: Yes or No
 
-  4. Save Changes
+  4. Click :guilabel:`SAVE CHANGES`
