@@ -13,4 +13,4 @@ Add Puppet Integration
     * Puppet Master (Hostname): The resolvable DNS name to the Puppet Master, communicating on port 443 by default
     * Allow Immediate Execution: Yes or No
 
-  4. Click :guilabel:`SAVE CHANGES`
+  5. Click :guilabel:`SAVE CHANGES`
