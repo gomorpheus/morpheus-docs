@@ -34,7 +34,7 @@
    :maxdepth: 1
    :caption: Morpheus API
 
-   API Documentation <http://bertramdev.github.io/morpheus-apidoc/#introduction>
+   API Documentation <https://apidocs.morpheusdata.com>
 
 .. toctree::
    :maxdepth: 3
