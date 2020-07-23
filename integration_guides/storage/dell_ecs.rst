@@ -12,7 +12,7 @@ When you add a ECS Server, |morpheus| will sync in the following.
 - Buckets
 - File shares
 
-Users will be able to create the following times within ECS without direct access to the ECS console.
+Users will be able to create the following items within ECS without direct access to the ECS console.
 
 - Buckets
 - File shares
