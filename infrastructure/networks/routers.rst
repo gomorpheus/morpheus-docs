@@ -1,15 +1,11 @@
 Routers
 -------
 
-``Infrastructure -> Network -> Routers``
-
 Overview
 ^^^^^^^^
 
-View, edit, create and delete Routers from Cloud and Network Integrations.
+Routers can be viewed, created, and managed from the Routers tab of the Infrastructure > Networks page. |morpheus| supports the creation of the following router types depending on networks that are currently configured:
 
-Router Types
-^^^^^^^^^^^^
 - Huawei Router
 - Neutron Router
 - NSX Edge Gateway
@@ -20,36 +16,24 @@ Router Types
 - NSX-T Tier1 Gateway
 - Open Telekom Router
 
-Add Network Router
-^^^^^^^^^^^^^^^^^^
+Create New Router
+^^^^^^^^^^^^^^^^^
 
-NSX
-```
+#. Navigate to Infrastructure > Networks > Routers tab
+#. Click :guilabel:`+ ADD`
+#. Select the router type and complete the fields on the resulting modal
+#. Once complete, click :guilabel:`ADD NETWORK ROUTER`
 
-- ADD NETWORK ROUTER
-- NETWORK SERVICE
-- NAME
-- DESCRIPTION
-- ENABLED
-- HOSTNAME
-- TENANT NAME
-- SIZE
-- DATASTORE
-- RESOURCE POOL
-- FOLDER
-- EXTERNAL NETWORK
-- IP ADDRESS
-- INTERNAL NETWORK
-- USERNAME
-- PASSWORD
+Editing Existing Routers
+^^^^^^^^^^^^^^^^^^^^^^^^
 
+#. Navigate to Infrastructure > Networks > Routers tab
+#. Click on the pencil icon for the appropriate router
+#. After editing router fields, click :guilabel:`SAVE`
 
-Neutron
-```````
+Deleting Existing Routers
+^^^^^^^^^^^^^^^^^^^^^^^^^
 
-- ADD NETWORK ROUTER
-- CLOUD
-- NAME
-- ENABLED
-- EXTERNAL NETWORK
-- INTERNAL SUBNET
+#. Navigate to Infrastructure > Networks > Routers tab
+#. Click on the trash can icon for the appropriate router
+#. Acknowledge the pop-up banner ensuring you wish to delete the router
