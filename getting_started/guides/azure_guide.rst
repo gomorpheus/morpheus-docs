@@ -4,10 +4,12 @@ Getting started with |morpheus| and Azure
 Introduction
 ^^^^^^^^^^^^
 
+This guide is designed to help you get started and quickly get the most out of Morpheus with Microsoft Azure public cloud. By the end, you will integrate your first cloud with |morpheus|, configure networking, prepare and consume images, provision instances, and get started with automation. We will briefly discuss installation and account setup but will provide links to additional resources for those very first steps. For the most part, this guide assumes you are able to get |morpheus| installed and are ready to move forward from that point. There is a lot more to see and do in Morpheus that is beyond the scope of this guide. For more, consult the complete Morpheus documentation or take part in our `Reddit user community forum <https://www.reddit.com/r/morpheusdata/>_.
+
 Installation & Setup
 ^^^^^^^^^^^^^^^^^^^^
 
-In the simplest configuration, |morpheus| needs one appliance server which will contain all the components necessary to orchestrate virtual machines and containers. Full requirements, including storage and networking considerations, can be found in |morpheus| documentation `here <https://docs.morpheusdata.com/en//getting_started/requirements/requirements.html#requirements>`_. In order to provision any new instances, hosts, or applications, (or convert any discovered resources to managed resources) you will need a valid license. If you don't have one, you can request a lab license for free at `|morpheus| Hub <https://www.|morpheus|hub.com>`_. Once obtained, the license can be applied in Administration > Settings > LICENSE.
+In the simplest configuration, |morpheus| needs one appliance server which will contain all the components necessary to orchestrate virtual machines and containers. Full requirements, including storage and networking considerations, can be found in |morpheus| documentation `here <https://docs.morpheusdata.com/en/latest/getting_started/requirements/requirements.html>`_. In order to provision any new Instances, hosts, or applications (or convert any discovered resources to managed resources) you will need a valid license. If you don't have one, you can request a community edition license for free at `Morpheus Hub <https://www.morpheushub.com>`_. Once obtained, the license can be applied in Administration > Settings > LICENSE. For more, take a look at our community edition `welcome package <https://www.morpheusdata.com/community-welcome`_.
 
 Groups
 ^^^^^^
@@ -16,20 +18,18 @@ Groups in |morpheus| define which resources a user has access to. Clouds are add
 
 Navigate to `Infrastructure > Groups`. Here we will see a list of all configured groups but, of course, this will be empty immediately after installation. Click "+CREATE". Give your group a name, such as "All Clouds". The "CODE" field is used when calling |morpheus| through |morpheus| API or |morpheus| CLI. It's useful in most cases to have an "All Clouds" group for testing purposes so this will likely help you down the road.
 
-.. image::
+.. image:: /images/azureguideimages/1newGroup.png
 
-Click "SAVE CHANGES". Your Group is now ready to accept Clouds.
+Click :guilabel:`SAVE CHANGES`. Your Group is now ready to accept Clouds.
 
 Integrating Your First Cloud
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Clouds in |morpheus| consist of any consumable endpoint whether that be On-Prem, Public clouds, or even bare metal. In this guide, we will focus on integrating and working with Microsoft Azure.
+Clouds in |morpheus| consist of any consumable endpoint whether that be on-prem, public clouds, or even bare metal. In this guide, we will focus on integrating and working with Microsoft Azure public cloud.
 
 To get started, we will navigate to `Infrastructure > Clouds`. This is the Cloud list page which lists all configured Clouds. It will be empty if you've just completed installation and setup of |morpheus| but soon we will see our integrated Azure cloud here.
 
 Click the "+ADD" button to pop the "CREATE CLOUD" wizard. Select "AZURE (PUBLIC)" and click the "NEXT" button.
-
-.. image::
 
 On the "CONFIGURE" tab, we're asked to provide Azure-specific details to connect to the cloud. |morpheus| Azure integration requires Owner or Contributor access to subscription via App Registration. Adding an Azure Cloud or Clouds to |morpheus| will require the following:
 
@@ -45,7 +45,7 @@ CSP Accounts require the additional following input:
 * CSP Application (client) ID
 * CSP Application (client) SECRET
 
-.. image::
+.. image:: /images/azureguideimages/2createCloud.png
 
 Create App Registration
 ```````````````````````
@@ -81,7 +81,7 @@ The App Registration Directory (tenant) and Application (client) ID are required
 #. Copy the Application (client) ID
 #. Store/Paste for use as the Client ID when adding your Azure cloud in |morpheus|
 
-.. image:: /images/clouds/azure/morpheus/AppReg_Microsoft_Azure.png
+.. image:: /images/clouds/azure/morpheusAppReg_Microsoft_Azure.png
 
 Generate a Client Secret
 ````````````````````````
@@ -91,20 +91,20 @@ While still in your App Registration:
 #. Select "Certificates & secrets" in the Manage section
 #. Select ``+ New client secret``
 
-   .. image:: /images/clouds/azure/morpheus/AppReg_Certificates_secrets_Microsoft_Azure.png
+   .. image:: /images/clouds/azure/morpheusAppReg_Certificates_secrets_Microsoft_Azure.png
 
 #. The "Add a client secret" modal will come up
 #. Add a description to help identify the secret in the future
 #. Select an expiration duration
 #. Click :guilabel:`Add`
 
-   .. image:: /images/clouds/azure/morpheus/AppReg_Certificates_secrets_Add.png
+   .. image:: /images/clouds/azure/morpheusAppReg_Certificates_secrets_Add.png
 
 #. Copy the newly-generated client secret value.
 
    .. IMPORTANT:: Copy the client secret value before continuing as it will not be viewable again later.
 
-   .. image:: /images/clouds/azure/morpheus/AppReg_Certificates_secrets_Copy.png
+   .. image:: /images/clouds/azure/morpheusAppReg_Certificates_secrets_Copy.png
 
 #. Store/Paste client secret for use later when adding your Azure cloud in |morpheus|
 
@@ -117,7 +117,7 @@ To get the Azure Subscription ID:
 
 #. Navigate to the Subscriptions section. The search function can help to locate these sections if they aren't immediately apparent in the UI menu
 
-   .. image:: /images/clouds/azure/azure subscriptions search.png
+   .. image:: /images/clouds/azure/azuresubscriptionssearch.png
 
 #. In the Subscriptions section, copy the Subscription ID
 
@@ -170,13 +170,11 @@ To move on, expand the "Advanced Options" section.
 
 Within the "Advanced Options" drawer are additional configurations to consider for your first Cloud. Some of these won't usable until they reference additional configured integrations. Common settings to consider are **DOMAIN**, **STORAGE TYPE**, **APPLIANCE URL** (overrides the |morpheus| URL for external systems), **GUIDANCE** (setting "Manual" will make recommendations for rightsizing), **COSTING**, **DNS INTEGRATION**, **CMDB**, and **AGENT INSTALL MODE**.
 
-.. image::
-
 Once you're satisfied with your selections, click "NEXT"
 
 We have now arrived at the "GROUP" tab. In this case, we will mark the radio button to "USE EXISTING" Groups if you wish to use the Group we configured earlier. Alternatively, you can create a new one here.
 
-.. image::
+.. image:: /images/azureguideimages/3cloudGroup.png
 
 Once you've selected or created the Group, click "NEXT"
 
@@ -194,11 +192,11 @@ With our Azure Cloud configured, |morpheus| will automatically sync in available
 
 For resource pools, once |morpheus| has had time to ingest them, then will be visible from the cloud detail page. Navigate to `Infrastructure > Clouds > (your Azure cloud) > Resources tab`. In here, we are able to see and control access to the various resource pools that have been configured in Azure. For example, we can restrict access to a specific resource pool within |morpheus| completely by clicking on the "ACTIONS" button, then clicking "Edit". If we unmark the "ACTIVE" button and then click "SAVE CHANGES" we will see that the resource pool is now grayed out in the list. The resources contained in that pool will not be accessible for provisioning within |morpheus| if it is not configured as active.
 
-.. image::
+.. image:: /images/azureguideimages/4resourcePool.png
 
 Often our clients will want to make specific blocks of resources available to their own customers. This can be easily and conveniently controlled through the same "EDIT RESOURCE POOL" dialog box we were just working in. If we expand the "Group Access" drawer, we are able to give or remove access to each pool to any Group we'd like. We can also choose to make some or all of our resource pools available to every Group. Specific resource pools can also be defined as the default for each Group when needed.
 
-.. image::
+.. image:: /images/azureguideimages/5resourcePoolGroup.png
 
 Additionally, we may choose to allow only certain service plans to be provisioned into a specific pool of resources. For example, perhaps a specific cluster is my SQL cluster and only specific services plans should be consumable within it. We can control that through this same dialog box.
 
@@ -209,30 +207,22 @@ To take a look at data stores, we'll move from the "Resources" tab to the "Data 
 
 |morpheus| gives the user similar control with data stores to what we saw with our resources pools earlier. Just like with resource pools, we can disable access within |morpheus| completely by clicking on "ACTIONS" and then "Edit". If we unmark the "ACTIVE" checkbox and click "SAVE CHANGES", you will see that specific data store has been grayed out.
 
-.. image::
+.. image:: /images/azureguideimages/6dataStore.png
 
 Just like with resource pools, we are also able to scope data stores to specific Groups. This ensures that the members of each Group are only able to consume the data stores they should have access to.
-
-.. image::
 
 Configuring Network for Provisioning
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 When configuring networking, we can set global defaults by going to `Infrastructure > Network > NETWORKS tab`. Here we can add or configure networks from all Clouds integrated into |morpheus|. Depending on the number of clouds |morpheus| has ingested, this list may be quite large and may also be paginated across a large number of pages. In such a case, it may be easier to view or configure networks from the specific Cloud detail page so that networks from other Clouds are not shown.
 
-.. image::
-
 Still in `Infrastructure > Network`, make note of the "INTEGRATIONS" tab. It's here that we can set up any integrations that may be relevant, such as IPAM integrations. Generally speaking, when adding IPAM integrations, we simply need to name our new integration, give the API URL, and provide credentials. There's more information in the `IPAM integration <https://docs.morpheusdata.com/en/latest/integration_guides/integration_guides.html#networking>`_ section of |morpheus| Docs.
-
-.. image::
 
 In `Infrastructure > Networking` we can also set up IP address pools from the IP Pools tab. These pools can be manually defined, known as a |morpheus|-type IP pool, or they can come from any IPAM integrations you've configured. As Instances are provisioned, |morpheus| will assign IP addresses from the pool chosen during provisioning. When the Instance is later dissolved, |morpheus| will automatically release the IP address to be used by another Instance when needed. When adding or editing a network, we can opt to scope the network to one of these configured IP address pools.
 
-.. image::
-
 Since this guide is focused on working within an Azure cloud that we integrated at the start, we will take a look at our network configurations on the cloud detail page as well. Navigate to `Infrastructure > Clouds > (your Azure cloud) > NETWORKS tab`. Just as with resource pools and data stores, we have the ability to make certain networks inactive in |morpheus|, or scope them to be usable only for certain Groups or Tenants.
 
-.. image::
+.. image:: /images/azureguideimages/7cloudNetworks.png
 
 ..
   Prepping an Image
@@ -381,7 +371,7 @@ At this point, the groundwork is laid and we are ready to attempt our first new 
 
 Navigate to `Provisioning > Instances`. If any Instances are currently provisioned, we will see them listed here. To start a new Instance we click :guilabel:`+ ADD` to open the "CREATE INSTANCE" wizard. We'll scroll down to and select the Apache instance type and click "NEXT".
 
-.. image::
+.. image:: /images/azureguideimages/8createInstance.png
 
 First, we'll specify the Group to provision into which determines the Clouds available. If you've followed this guide to this point, you should at least have a Group that houses all of your Clouds which you can select here. This will allow us to select the Azure cloud from the "CLOUD" dropdown menu. Provide a unique name to this instance and then click "NEXT"
 
@@ -397,19 +387,15 @@ From the "CONFIGURE" tab, we're presented with a number of options. The options 
 
 Under the "User Config" drawer, mark the box to "CREATE YOUR USER". Click :guilabel:`NEXT`.
 
-.. image::
+.. image:: /images/azureguideimages/9configureInstance.png
 
 .. NOTE:: "CREATE YOUR USER" will seed a user account into the VM with credentials set in your |morpheus| user account settings. If you've not yet defined these credentials, you can do so by clicking on your username in the upper-right corner of the application window and selecting "USER SETTINGS".
 
-For now, we'll simply click "NEXT" to move through the "AUTOMATION" tab but feel free to stop and take a look at the available selections here. There is more information later in this guide on automation and even more beyond that in the rest of |morpheus| docs.
+For now, we'll simply click :guilabel:`NEXT` to move through the "AUTOMATION" tab but feel free to stop and take a look at the available selections here. There is more information later in this guide on automation and even more beyond that in the rest of |morpheus| docs.
 
-Review the settings for your first instance and click "COMPLETE".
-
-.. image::
+Review the settings for your first instance and click :guilabel:`COMPLETE`.
 
 We are now dropped back onto the Instances list page. We can see a new entry in the list at this point with a status indicator that the new machine is being launched (rocket icon in the status field). We can double click on the Instance in the list to move to the Instance detail page. For now we will see a progress bar indicating that the Instance is being created and is starting up. The exact amount of time this process will take depends on selections made when provisioning the Instance. Initially, |morpheus| will guess as to how long this will take and the progress bar may not be accurate. Over time, |morpheus| will learn how long these processes take and progress bar accuracy will improve. For more detailed information on the status of various provisioning processes, we can scroll down and select the "HISTORY" tab. The "STATUS" icon will change from the blue rocket to a green play button when the Instance is fully ready. Furthermore, we can click on the hyperlinked IP address in the "VMS" section of this page to view a default page in a web browser to confirm success.
-
-.. image:: 
 
 Creating Your First Library Item
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -421,8 +407,6 @@ In the prior section, we manually provisioned our first Instance. However, |morp
 Provisionable elements in |morpheus| combine a Node Type(s), Layout(s), and an Instance Type. The `Overview section <https://docs.morpheusdata.com/en/latest/provisioning/library/library.html#overview>`_ of |morpheus| docs discusses these objects and how they work together in greater detail. Our first step here will be to create a Node Type which wrap the image itself with additional configuration, templates, and scripts. While not strictly required, creating the Node Type, Instance Type, and then the Layout is often a good workflow for creating Library items. That is the order we will follow in this guide.
 
 Navigate to `Provisioning > Library > NODE TYPES` and click :guilabel:`+ ADD`
-
-.. image::
 
 In this example, I am going to set the following options in the "NEW NODE TYPE" wizard:
 
@@ -438,23 +422,17 @@ In this example, I am going to set the following options in the "NEW NODE TYPE" 
 
 Click :guilabel:`SAVE CHANGES`
 
-.. image::
+.. image:: /images/azureguideimages/10addNodeType.png
 
 With the new Node Type created, we'll now add a new Instance type which will be accessible from the provisioning wizard once created. Move from the "NODE TYPES" tab to the "INSTANCE TYPES" tab and click :guilabel:`+ ADD`.
 
-.. image::
-
 In the "NEW INSTANCE TYPE" wizard, I'll simply enter a **NAME** and **CODE** value. Click :guilabel:`SAVE CHANGES`. You could also provide a description, icon, and category for easier identification from the provisioning wizard later.
 
-.. image::
+.. image:: /images/azureguideimages/11addInstanceType.png
 
 Now that we've created a new Instance type, access it by clicking on the name in the list of custom Instances you've created. In my case, I've given the name "*Example Azure CentOS 7".
 
-.. image::
-
-Once we've opened the new Instance type, by default, we should be on the "LAYOUTS" tab. Click :guilabel:`+ ADD LAYOUT`.
-
-I've set the following fields on my example layout:
+Once we've opened the new Instance type, by default, we should be on the "LAYOUTS" tab. Click :guilabel:`+ ADD LAYOUT`. I've set the following fields on my example layout:
 
 - **NAME**: *Example Azure CentOS 7
 
@@ -466,21 +444,17 @@ I've set the following fields on my example layout:
 
 Click :guilabel:`SAVE CHANGES`.
 
-.. image::
+.. image:: /images/azureguideimages/12addLayout.png
 
 At this point we've completed the setup work and can now provision the Instance we've created to our specifications. Navigate to `Provisioning > Instances` and click :guilabel:`+ ADD`. From the search bar we can search for the new Instance type we've created.
 
-.. image::
+.. image:: /images/azureguideimages/13createCustomInstance.png
 
 As before, we can select a Group and Cloud to provision this new Instance. Click :guilabel:`NEXT`. On the "CONFIGURE" tab, make note that the layout and plan are already selected because they were configured as part of creating the new Instance type. Select a network and click :guilabel:`NEXT`. Once again we will also click :guilabel:`NEXT` through the "AUTOMATION" tab. Finally, click :guilabel:`COMPLETE`.
-
-.. image::
 
 As before when we provisioned a pre-existing Instance from the default catalog, |morpheus| will now begin to spin up the new VM. How long this will take depends on the configuration and environmental factors but |morpheus| will predict how long this process will take and represent that on a progress bar. Over time, |morpheus| begins to learn how long these processes take and becomes more accurate in predicting spin-up time.
 
 Once the provisioning process has completed, open the Instance detail page in |morpheus| and click on the "CONSOLE" tab. You'll be logged in with your user account and are then able to confirm the machine is ready and available, assuming the image and your custom catalog item were configured to seed user accounts and connect back to the |morpheus| appliance.
-
-.. image::
 
 Automation and Configuration Management
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -488,8 +462,6 @@ Automation and Configuration Management
 |morpheus| automation is composed of Tasks and Workflows. A Task could be a script added directly, scripts or Blueprints pulled from the |morpheus| Library, playbooks, recipes, or a number of other things. The complete list of Task types can be found in the `Automation section <https://docs.morpheusdata.com/en/latest/provisioning/automation/automation.html#automation>`_ of |morpheus| docs. Tasks can be executed individually but they are often combined into workflows. We can opt to run a workflow at provision time or they can be executed on existing instances through the Actions menu.
 
 In this guide we will set up an Ansible integration, create a Task, add the Task to a Workflow, and run the Workflow against a new and existing Instance. If you've worked through this guide to this point, you should already have an Apache instance running. If you don't yet have that, provision one before continuing with this guide and ensure it's reachable on port 80.
-
-.. image::
 
 We'll first set up the Ansible integration, you can integrate with the sample repository referenced here or integrate with your own. Go to 'Administration > Integrations'. Click :guilabel:`+NEW INTEGRATION` and select Ansible from the dropdown menu. Fill in the following details:
 
@@ -505,8 +477,6 @@ We'll first set up the Ansible integration, you can integrate with the sample re
 
 .. NOTE:: If your git repository requires authentication, you should create a keypair and use the following URL format: git@github.com:ncelebic/morpheus/-ansible-example.git.
 
-.. image::
-
 Click :guilabel:`SAVE CHANGES`. You'll now see our new Ansible integration listed among any other configured integrations. If we click on this new integration to view detail, a green checkmark icon indicates the git repository has been fully synced.
 
 With the Ansible integration set up, we can now create a task that includes our playbook. Go to `Provisioning > Automation`, click :guilabel:`+ ADD`. We'll first set our "TYPE" value to Ansible Playbook so that the correct set of fields appear in the "NEW TASK" wizard. Set the following options:
@@ -517,21 +487,13 @@ With the Ansible integration set up, we can now create a task that includes our 
 
 - **PLAYBOOK**: In our example case, enter 'playbook.yml'
 
-.. image::
-
 Click "SAVE CHANGES" to save our new task. We can test the new task on our Apache VM now by going to `Provisioning > Instances` and clicking into our VM. From the "ACTIONS" menu select "Run Task". From the "TASK" dropdown menu, select the task we just added and click "EXECUTE".
-
-.. image::
 
 To see the progress of the task, click on the "HISTORY" tab and click on the (i) button to the right of each entry in the list. In this case, we can also see the results of the task by clicking on the link in the "LOCATION" column of the "VMS" section.
 
 Now that our task is created, we can put it into a workflow. Back in `Provisioning > Automation` we will click on the "WORKFLOWS" tab. Click "+ADD" and select Provisioning Workflow. We'll give the new workflow a name and expand the Post Provision section. As we begin to type in the name of the task we've created, it should appear as a selection. Click "SAVE CHANGES".
 
-.. image::
-
 Now that we have a Workflow, return to `Provisioning > Instances` and begin to provision another Apache instance. More detailed instructions on provisioning a new Apache instance are included earlier in this guide if needed. Now, when you reach the "AUTOMATION" section of the "CREATE INSTANCE" wizard, we have a workflow to select. From the "WORKFLOW" dropdown menu, select the workflow we just created and complete provisioning of the new instance.
-
-.. image::
 
 As the instance is provisioning, we can go to the "HISTORY" tab and see |morpheus| executing the tasks that were contained in our workflow.
 
