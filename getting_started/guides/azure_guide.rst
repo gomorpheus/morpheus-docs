@@ -4,12 +4,12 @@ Getting started with |morpheus| and Azure
 Introduction
 ^^^^^^^^^^^^
 
-This guide is designed to help you get started and quickly get the most out of Morpheus with Microsoft Azure public cloud. By the end, you will integrate your first cloud with |morpheus|, configure networking, prepare and consume images, provision instances, and get started with automation. We will briefly discuss installation and account setup but will provide links to additional resources for those very first steps. For the most part, this guide assumes you are able to get |morpheus| installed and are ready to move forward from that point. There is a lot more to see and do in Morpheus that is beyond the scope of this guide. For more, consult the complete Morpheus documentation or take part in our `Reddit user community forum <https://www.reddit.com/r/morpheusdata/>_.
+This guide is designed to help you get started and quickly get the most out of Morpheus with Microsoft Azure public cloud. By the end, you will integrate your first cloud with |morpheus|, configure networking, prepare and consume images, provision instances, and get started with automation. We will briefly discuss installation and account setup but will provide links to additional resources for those very first steps. For the most part, this guide assumes you are able to get |morpheus| installed and are ready to move forward from that point. There is a lot more to see and do in Morpheus that is beyond the scope of this guide. For more, consult the complete Morpheus documentation or take part in our `Reddit user community forum <https://www.reddit.com/r/morpheusdata/>`_.
 
 Installation & Setup
 ^^^^^^^^^^^^^^^^^^^^
 
-In the simplest configuration, |morpheus| needs one appliance server which will contain all the components necessary to orchestrate virtual machines and containers. Full requirements, including storage and networking considerations, can be found in |morpheus| documentation `here <https://docs.morpheusdata.com/en/latest/getting_started/requirements/requirements.html>`_. In order to provision any new Instances, hosts, or applications (or convert any discovered resources to managed resources) you will need a valid license. If you don't have one, you can request a community edition license for free at `Morpheus Hub <https://www.morpheushub.com>`_. Once obtained, the license can be applied in Administration > Settings > LICENSE. For more, take a look at our community edition `welcome package <https://www.morpheusdata.com/community-welcome`_.
+In the simplest configuration, |morpheus| needs one appliance server which will contain all the components necessary to orchestrate virtual machines and containers. Full requirements, including storage and networking considerations, can be found in |morpheus| documentation `here <https://docs.morpheusdata.com/en/latest/getting_started/requirements/requirements.html>`_. In order to provision any new Instances, hosts, or applications (or convert any discovered resources to managed resources) you will need a valid license. If you don't have one, you can request a community edition license for free at `Morpheus Hub <https://www.morpheushub.com>`_. Once obtained, the license can be applied in Administration > Settings > LICENSE. For more, take a look at our community edition `welcome package <https://www.morpheusdata.com/community-welcome>`_.
 
 Groups
 ^^^^^^
@@ -18,9 +18,9 @@ Groups in |morpheus| define which resources a user has access to. Clouds are add
 
 Navigate to `Infrastructure > Groups`. Here we will see a list of all configured groups but, of course, this will be empty immediately after installation. Click "+CREATE". Give your group a name, such as "All Clouds". The "CODE" field is used when calling |morpheus| through |morpheus| API or |morpheus| CLI. It's useful in most cases to have an "All Clouds" group for testing purposes so this will likely help you down the road.
 
-.. image:: /images/azureguideimages/1newGroup.png
-
 Click :guilabel:`SAVE CHANGES`. Your Group is now ready to accept Clouds.
+
+.. image:: /images/azureguideimages/1newGroup.png
 
 Integrating Your First Cloud
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
