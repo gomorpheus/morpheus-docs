@@ -502,4 +502,4 @@ This is just one example of using |morpheus| to automate the process of configur
 Conclusion
 ^^^^^^^^^^
 
-At this point you should be up and running in |morpheus|, ready to consume Azure public cloud. This guide only scratches the surface, there is a lot more to see and do in |morpheus|. Take a look at the rest of `|morpheus| Docs <https://docs.morpheusdata.com/en/latest/index.html>`_ for more information on supported integrations and other things possible.
+At this point you should be up and running in |morpheus|, ready to consume Azure public cloud. This guide only scratches the surface, there is a lot more to see and do in |morpheus|. Take a look at the rest of `Morpheus Docs <https://docs.morpheusdata.com/en/latest/index.html>`_ for more information on supported integrations and other things possible.
