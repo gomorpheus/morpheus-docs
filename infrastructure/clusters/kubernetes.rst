@@ -32,6 +32,10 @@ Kubernetes Cluster 1.14 on Ubuntu 16.04, Weave, OpenEBS
   Kubernetes Master and 3 Worker Nodes
 Kubernetes 1.14 on Ubuntu 16.04, Weave, OpenEBS
   Single Kubernetes Master
+Kubernetes Cluster 1.17 on Ubuntu 18.04, Weave, OpenEBS
+  Kubernetes Master and 3 Worker Nodes
+Kubernetes 1.17 on Ubuntu 18.04, Weave, OpenEBS
+  Single Kubernetes Master
 
 To create a new Kubernetes Cluster:
 

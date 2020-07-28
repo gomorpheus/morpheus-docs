@@ -7,10 +7,11 @@ Guides
 .. toctree::
    :maxdepth: 1
    :caption: User Guides
-   
+
    /getting_started/guides/aws_guide.rst
    /getting_started/guides/vmware_guide.rst
-   
+   /getting_started/guides/azure_guide.rst
+
 .. toctree::
    :maxdepth: 1
    :caption: Integration Guides

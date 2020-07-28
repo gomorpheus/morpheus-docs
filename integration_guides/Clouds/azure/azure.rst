@@ -66,7 +66,7 @@ Morpheus authenticates with Azure via an App Registration with an Owner or Contr
 Create an App Registration
 ``````````````````````````
 
-If you do not have an existing Azure Active Directory App Registration, or you wish to use an new one for |morpheus| , you will need to create one.
+If you do not have an existing Azure Active Directory App Registration, or you wish to use an new one for |morpheus|, you will need to create one.
 
 #. Log into the Azure portal
 #. Select "Azure Active Directory"
@@ -74,7 +74,6 @@ If you do not have an existing Azure Active Directory App Registration, or you w
 #. Select "New Registration"
 
    .. image:: /images/clouds/azure/Default_Directory_App_registrations_Microsoft_Azure.png
-
 
 #. Next, give app a name, specify Web app / API for the type (default) and enter any url for the Sign-on URL:
 #. Click Create and your new App Registration will be created.
