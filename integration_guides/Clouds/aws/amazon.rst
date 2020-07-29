@@ -104,7 +104,7 @@ COSTING SECRET
 Enhanced Invoice Costing Configuration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-In addition to standard AWS costing data (Enabled by editing the AWS cloud integration and setting the COSTING value to "Costing" or "Costing and Reservations"), |morpheus| can also utilize highly-granular from AWS Costing and Utilization Reports (CUR) in its integration. Once enabled, this data can be consumed by accessing Invoice endpoints of |morpheus| API and eventually through the UI after a future update. Continue on with this section to enable these reports in the AWS web console and configure the |morpheus| cloud integration to work with the report data.
+In addition to standard AWS costing data (Enabled by editing the AWS cloud integration and setting the COSTING value to "Costing" or "Costing and Reservations"), |morpheus| can utilize highly-granular data from AWS Costing and Utilization Reports (CUR) in its integration. Once enabled, this data can be consumed by accessing Invoice endpoints of |morpheus| API and eventually through the UI after a future update. Continue on with this section to enable these reports in the AWS web console and configure the |morpheus| cloud integration to work with this report data.
 
 Begin by logging into the `AWS Billing Console <https://console.aws.amazon.com/billing/home?#/>`_, then click :guilabel:`Create report`.
 
@@ -202,6 +202,8 @@ Once back in |morpheus|, add or edit the relevant AWS cloud integration (Infrast
 .. NOTE:: If the AWS cloud account is a GovCloud account, enter the COSTING KEY, COSTING SECRET, and LINKED ACCOUNT ID for the master commercial account your GovCloud account is associated with.
 
 .. image:: /images/clouds/aws/invoiceCosting/7morphConfig.png
+
+Save changes to your cloud integration.
 
 .. IMPORTANT:: It may take as long as one hour for |morpheus| to process the next CUR report.
 
