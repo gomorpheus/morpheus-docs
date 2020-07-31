@@ -87,7 +87,7 @@ Enable Hypervisor Console
 .. TIP:: When using the RAW image format, you can bypass the image conversion service within the cloud leading to quicker performance. Other image formats are converted to RAW format and back when performing various actions. Using the RAW format from the start will bypass these conversion steps.
 
 Advanced Options
-^^^^^^^^^^^^^^^^
+````````````````
 
 BACKUP PROVIDER
   Select Internal Backups (Morpheus) or a Backup Integration
@@ -132,11 +132,80 @@ API PROXY
   Field present but locked out for this Cloud integration
 
 Provisioning Options
-^^^^^^^^^^^^^^^^^^^^
+````````````````````
 
 PROXY
-  Set a proxy for inbound communication from Instances to the |morpheus| Appliance. Proxies can be added in the `Infrastructure -> Networks -> Proxies` tab.
+  Field present but locked for this Cloud inegration
 Bypass Proxy for Appliance URL
-  Enable to bypass proxy settings (if added) for |morpheus| Agent communication to the Appliance URL.
+  Enable to bypass proxy settings (if added) for |morpheus| Agent communication to the Appliance URL. It is currently not possible to set a proxy for Huawei Cloud integrations
 USER DATA (LINUX)
-  Add cloud-init user data. |morpheus| 4.1.0 and earlier assumes bash syntax. |morpheus| 4.1.1 and later supports all User Data formats. Refer to https://cloudinit.readthedocs.io/en/latest/topics/format.html for more information.
+  Add cloud-init user data. |morpheus| 4.1.0 and earlier assumes bash syntax. |morpheus| 4.1.1 and later supports all user data formats. Refer to `cloud-init documentation <https://cloudinit.readthedocs.io/en/latest/topics/format.html>`_ for more information
+
+Huawei Scalable File Service (SFS)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The |morpheus| integration with Huawei Cloud includes the capability to work with Huawei Scalable File Service (SFS). SFS is shared file storage hosted on Huawei Cloud. By integrating |morpheus| with Huawei Cloud you can discover, create, manage, and delete SFS servers, as well as view and work with the file shares and files contained therein.
+
+SFS Server Discovery and Management
+```````````````````````````````````
+
+On integrating Huawei Cloud with |morpheus|, SFS servers and file shares are discovered automatically after a short time. The server(s) can be viewed in Infrastructure > Storage > Servers. By viewing the server detail page and clicking :guilabel:`EDIT`, the storage server can be scoped as needed. Administrators can choose to scope to other Huawei Cloud integrations (if more than one relevant integration currently exists), select from synced availability zones, and scope the storage server to specific Tenants if desired.
+
+.. image:: /images/integration_guides/clouds/huawei/sfs/1editServer.png
+
+Additionally, Huawei SFS servers can be created from the storage server list page (Infrastructure > Storage > Servers) directly in |morpheus|. Click :guilabel:`+ ADD` to begin and set the storage server type value to "Huawei SFS". Just like with existing synced SFS servers, those created from |morpheus| can be scoped as needed.
+
+.. image:: /images/integration_guides/clouds/huawei/sfs/2addServer.png
+
+SFS File Share Discovery and Management
+```````````````````````````````````````
+
+Discovered file shares will appear among other file shares synced with |morpheus| in Infrastructure > Storage > File Shares. Depending on the number of cloud integrations in your |morpheus| appliance and the number of cloud integrations available to your user account, this list may be quite large. Using the search bar on this page, we can narrow down the list to file shares displayed to those whose names match the search terms.
+
+.. image:: /images/integration_guides/clouds/huawei/sfs/3shareList.png
+
+We can drill into individual file shares by clicking on their hyperlinked name in the list of all integrated file shares. From the file share detail page, a list of files will appear on the files tab. Begin the process of adding a new file by clicking :guilabel:`+ ADD`. The Access tab on the file shares detail page allows users to view and manage ACL rules.
+
+.. NOTE:: A "Failed to load files from storage provider" is present when the |morpheus| appliance doesn't have access to the file share.
+
+New Huawei SFS file shares can be created directly in |morpheus|. From the file shares list page, get started by clicking :guilabel:`+ ADD`. Select the type "Huawei SFS Share". Set the storage service field to a pre-existing Huawei SFS server. A friendly name for the file share in |morpheus| and selecting from synced availability zones are required fields.
+
+.. image:: /images/integration_guides/clouds/huawei/sfs/4addShare.png
+
+Huawei Object Storage Service (OBS)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The |morpheus| integration with Huawei Cloud also supports Object Storage Service (OBS). |morpheus| will automatically onboard existing OBS servers and buckets shortly after completing the cloud integration. Before you can add a new OBS server from |morpheus|, you must know or generate a key and secret value from the Huawei console and must provide a Huawei OBS API endpoint.
+
+Generate a Key and Secret
+`````````````````````````
+
+From the Huawei web console, log into the account used to integrate Huawei Cloud with |morpheus|. Hover over your account name in the upper-right corner of the application window and click "My Credentials". Select "Access Keys" from the left-hand sidebar. To create a new key, click :guilabel:`+ Create Access Key`. Complete the two-factor authentication steps in the box that appears.
+
+.. image:: /images/integration_guides/clouds/huawei/obs/1createKey.png
+
+Once the key is generated, download or record the key and store it in a safe location. The key will not be viewable or available for download again after this point.
+
+Create OBS Server in |morpheus|
+```````````````````````````````
+
+With the key and secret value in hand from the previous section, navigate to Infrastructure > Storage > Servers. Click :guilabel:`+ ADD`. On changing the server type to Huawei OBS, you will see the fields for the access key and the secret key. OBS API endpoints can be found in `Huawei endpoint documentation <https://developer.huaweicloud.com/en-us/endpoint>`_. Include those three values in the Create Server modal along with a friendly name for use in |morpheus| UI. Just like with SFS objects, we can choose to scope the server to all or specific Tenants at this time.
+
+.. image:: /images/integration_guides/clouds/huawei/obs/2addObsServer.png
+
+Create Huawei OBS Bucket
+````````````````````````
+
+With an OBS server onboarded or created in |morpheus|, you're able to create and manage Huawei OBS buckets as needed. To create a new bucket, navigate to Infrastructure > Storage > Buckets. Click :guilabel:`+ ADD` and select "Huawei OBS Bucket". The following fields are required when creating a Huawei OBS bucket:
+
+- **NAME**: A friendly name for use in |morpheus| UI
+- **STORAGE SERVICE**: Choose the OBS server to associate the new bucket with
+- **BUCKET NAME**: The name of the bucket in Huawei Cloud, this must be unique
+- **STORAGE CLASS**: If needed, view the `discussion of storage classes <https://support.huaweicloud.com/en-us/eu-west-0-usermanual-obs/en-us_topic_0050937852.html>`_ in Huawei support documentation
+- **BUCKET ACL**: Public Read, Public Read/Write, or Private
+- **BUCKET POLICY**: Public Read, Public Read/Write, or Private
+- **STORAGE QUOTA**: Set to 0 for no quota
+
+Once finished, click :guilabel:`SAVE CHANGES`
+
+.. image:: /images/integration_guides/clouds/huawei/obs/3createBucket.png
