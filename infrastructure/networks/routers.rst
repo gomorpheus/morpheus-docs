@@ -6,6 +6,7 @@ Overview
 
 Routers can be viewed, created, and managed from the Routers tab of the Infrastructure > Networks page. |morpheus| supports the creation of the following router types depending on networks that are currently configured:
 
+- Amazon Internet Gateway
 - Huawei Router
 - Neutron Router
 - NSX Edge Gateway
