@@ -55,8 +55,9 @@ Services
 - ElasticSearch updated to 7.8.1^
 - Java for ElasticSearch updated to 14.0.2^
 - NGINX updated to 1.19.1^
+- RabbitMQ updated to 3.8.5^
 
-^ Indicates features and fixes included in 4.2.2-3 release packages
+^ Indicates service version changes included in 4.2.2-3 release packages
 
 |morphver| Service Version Compatibility
 ----------------------------------------
@@ -70,10 +71,12 @@ When externalizing MySQL, Elasticsearch and/or RabbitMQ services, the following 
 +---------------------------------------+-----------------------+-------------------------------------+
 | Percona                               | 5.7, WSREP 31         | n/a                                 |
 +---------------------------------------+-----------------------+-------------------------------------+
-| Elasticsearch                         | 7.x                   | 7.6.2                               |
+| Elasticsearch                         | 7.x                   | 7.6.2, 7.8.1^                       |
 +---------------------------------------+-----------------------+-------------------------------------+
-| RabbitMQ                              | 3.5-3.8               | 3.8.3                               |
+| RabbitMQ                              | 3.5-3.8               | 3.8.3, 3.8.5^                       |
 +---------------------------------------+-----------------------+-------------------------------------+
+
+^ Indicates version changes included in 4.2.2-3 release packages
 
 .. important:: Elasticsearch 7.x is required for |morphver|. Refer to :ref:`upgrading` section for more information.
 
@@ -85,13 +88,12 @@ Security
 - 4.1.2: Appliance: Starting in v4.1.2, the default |morpheus| Nginx config removes support for incoming ``TLS v1.0 and v1.1`` connections. Please update source config to be compatible. If necessary, |morpheus| can be configured to support older TLS versions via :ref:`morpheus.rb` config.
 - 4.2.1: Security: Web Security response headers set for enhanced security
 
-..
-  CVEs Addressed
-  --------------
+CVEs Addressed
+--------------
 
-  - CVE-2019-11358
+- CVE-2019-11358^
 
-  ^ Indicates features and fixes included in 4.2.2-3 release packages
+^ Indicates features and fixes included in 4.2.2-3 release packages
 
 Integrations
 ============
