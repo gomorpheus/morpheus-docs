@@ -51,7 +51,12 @@ Services
 |morphver| Service Version Changes
 ----------------------------------
 
-No service version changes between v4.2.1 and v4.2.2
+- Java updated to 8u262^
+- ElasticSearch updated to 7.8.1^
+- Java for ElasticSearch updated to 14.0.2^
+- NGINX updated to 1.19.1^
+
+^ Indicates features and fixes included in 4.2.2-3 release packages
 
 |morphver| Service Version Compatibility
 ----------------------------------------
@@ -84,8 +89,9 @@ Security
   CVEs Addressed
   --------------
 
-  - CVE-2017-18640
-  - CVE-2019-12418
+  - CVE-2019-11358
+
+  ^ Indicates features and fixes included in 4.2.2-3 release packages
 
 Integrations
 ============
