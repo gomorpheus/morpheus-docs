@@ -70,6 +70,7 @@ Fixes
 =====
 
 - Amazon: Fixed issue with Amazon Costing Inventory Reports not handling changing rates from previously processed line items correctly. Totals are also now recalculated on a daily basis*
+- Amazon: Fixed deletion of non-|morpheus| keypairs when deleting the first |morpheus| integration created with an AWS account^
 - Bluecat: Fixed removal of Network Pool record when deleting a Bluecat Integration
 - Chef: Chef private keys are now masked like passwords when later viewing the edit integration modal^
 - Clusters: Fixed available host check when adding new nodes to Instances in Docker Clusters
@@ -79,7 +80,7 @@ Fixes
 - Fixed issue we found causing slow Elasticsearch queries on certain indices*
 - Hosts: Fixed for bulk convert-to-managed
 - Identity Sources: Custom External SSO Identity Source: Fixed AES encryption setting
-- Instances: Fixed edit Wiki button displayed on Instances when user has Read Only Instance access.
+- Instances: Fixed edit Wiki button displayed on Instances when user has Read Only Instance access
 - Instances: Special Characters can now be used in Instances names, will be stripped from hostname and host names.
 - Instances: Fixed issue where hostname would be set to "null" on nodes added to an Instance via the Actions menu on the Instance detail page^
 - Logs: Removed ``println "Not a master"`` from MorphTagLib service
