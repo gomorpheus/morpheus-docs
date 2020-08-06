@@ -15,6 +15,9 @@ Highlights
 Other New Features
 ==================
 
+- Amazon: Create and manage Amazon Internet Gateway routers including syncing, creating and managing routes
+- UI: Environment Tag field relabeled as "Environment" on Group tab of the Instance provisioning wizard
+
 Fixes
 =====
 
