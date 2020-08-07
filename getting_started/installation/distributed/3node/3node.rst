@@ -105,7 +105,7 @@ Continued Installation Steps
 
      appliance_url 'https://morpheus1.localdomain'
      elasticsearch['es_hosts'] = {'10.100.10.121' => 9200, '10.100.10.122' => 9200, '10.100.10.123' => 9200}
-     elasticsearch['node_name'] = 'morpheus1'
+     elasticsearch['node_name'] = '10.100.10.121'
      elasticsearch['host'] = '0.0.0.0'
      rabbitmq['host'] = '0.0.0.0'
      rabbitmq['nodename'] = 'rabbit@node01'
@@ -121,7 +121,7 @@ Continued Installation Steps
 
     appliance_url 'https://morpheus2.localdomain'
     elasticsearch['es_hosts'] = {'10.100.10.121' => 9200, '10.100.10.122' => 9200, '10.100.10.123' => 9200}
-    elasticsearch['node_name'] = 'morpheus2'
+    elasticsearch['node_name'] = '10.100.10.122'
     elasticsearch['host'] = '0.0.0.0'
     rabbitmq['host'] = '0.0.0.0'
     rabbitmq['nodename'] = 'rabbit@node02'
@@ -137,7 +137,7 @@ Continued Installation Steps
 
     appliance_url 'https://morpheus3.localdomain'
     elasticsearch['es_hosts'] = {'10.100.10.121' => 9200, '10.100.10.122' => 9200, '10.100.10.123' => 9200}
-    elasticsearch['node_name'] = 'morpheus3'
+    elasticsearch['node_name'] = '10.100.10.123'
     elasticsearch['host'] = '0.0.0.0'
     rabbitmq['host'] = '0.0.0.0'
     rabbitmq['nodename'] = 'rabbit@node03'
@@ -147,7 +147,10 @@ Continued Installation Steps
     mysql['morpheus_db_user'] = 'morpheus'
     mysql['morpheus_password'] = 'password'
 
-   Run the reconfigure on all nodes
+
+   .. important:: The elasticsearch node names set in ``elasticsearch['node_name']`` must match the host entries in elasticsearch['es_hosts']. ``node_name`` is used for ``node.name`` and ``es_hosts`` is used for ``cluster.initial_master_nodes`` in the generated elasticsearch.yml config. node names that do not match entries in cluster.initial_master_nodes will cause clustering issues.
+    	
+#. Reconfigure on all nodes
 
    .. code-block:: bash
 
