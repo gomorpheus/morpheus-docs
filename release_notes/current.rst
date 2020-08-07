@@ -44,9 +44,9 @@ Other New Features
 - Appliance: Various optimizations resulting in reduced CPU usage and improved performance
 - Azure: Azure China Cloud support added :superscript:`-2`
 - Azure: Azure German Cloud Support added :superscript:`-2`
-- Azure: Azure Stack Integration updated to support latest Azure Stack version & 2019-03-01-hybrid api-profile:superscript:`-2`
+- Azure: Azure Stack Integration updated to support latest Azure Stack version & 2019-03-01-hybrid api-profile :superscript:`-2`
 - Azure: Azure US Government support added :superscript:`-2`
-- Azure: Cloud Type selection added to Azure Cloud config for specifying Standard, US Gov, China and German environments:superscript:`-2`
+- Azure: Cloud Type selection added to Azure Cloud config for specifying Standard, US Gov, China and German environments :superscript:`-2`
 - Azure: Costing sync updates and enhancements :superscript:`-2`
 - Catalog: openSUSE 15.1 catalog item added for SCVMM Clouds
 - Kubernetes: Version 1.17 support for Morpheus-type Kubernetes deployments (MKS)
@@ -69,7 +69,7 @@ Other New Features
 Fixes
 =====
 
-- Amazon: Fixed issue with Amazon Costing Inventory Reports not handling changing rates from previously processed line items correctly. Totals are also now recalculated on a daily basis:superscript:`-2`
+- Amazon: Fixed issue with Amazon Costing Inventory Reports not handling changing rates from previously processed line items correctly. Totals are also now recalculated on a daily basis :superscript:`-2`
 - Amazon: Fixed deletion of non-|morpheus| keypairs when deleting the first |morpheus| integration created with an AWS account :superscript:`-3`
 - Bluecat: Fixed removal of Network Pool record when deleting a Bluecat Integration
 - Chef: Chef private keys are now masked like passwords when later viewing the edit integration modal :superscript:`-3`
