@@ -25,7 +25,7 @@ Highlights
 **NSX-V Integration** Enhancements
 
 - Create, manage and sync load balancers for NSX-V
-- Configure nsx-v load balancers in instance/app wizards
+- Configure NSX-V load balancers in instance/app wizards
 - Add or remove load balancers to/from existing Instances
 - Edit load balancers on existing Instances
 - Create and manage load balancer monitors
@@ -134,5 +134,5 @@ CLI Fixes
 - CLI: Fixed remote add --insecure not working.
 - CLI: Fixed several issues with invoices.
 
-* Indicates features and fixes included in 4.2.2-2 release packages
+\* Indicates features and fixes included in 4.2.2-2 release packages
 ^ Indicates features and fixes included in 4.2.2-3 release packages
