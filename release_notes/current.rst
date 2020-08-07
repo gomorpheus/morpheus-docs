@@ -12,11 +12,14 @@
 Highlights
 ==========
 
-Other New Features
-==================
+New Features
+============
 
 - Amazon: Create and manage Amazon Internet Gateway routers including syncing, creating and managing routes
+- NSX-T: Create, manage and delete NSX-T load balancers from the scale tab of the Instance detail page
+- OpenTelekom Cloud: A floating IP can now have variable bandwidth, option is available in the Instance and App provisioning wizards
 - UI: Environment Tag field relabeled as "Environment" on Group tab of the Instance provisioning wizard
+- UI: Advanced views and filtering added to networks list page (Infrastructure > Networks)
 
 Fixes
 =====
@@ -27,6 +30,10 @@ Fixes
 API Enhancements
 ================
 
+- Azure: Added granular invoice and line item costing as we currently have for Amazon and Oracle Clouds
+- Azure: CSP pricing support
+- User Sources: The ``userSources`` API now returns ``externalLogin`` and ``allowCustomMappings`` fields
+
 API Fixes
 =========
 
@@ -35,6 +42,8 @@ API Fixes
 
 CLI Enhancements
 ================
+
+- User Sources: External Login and Allow Custom Mappings can now be displayed
 
 CLI Fixes
 =========
