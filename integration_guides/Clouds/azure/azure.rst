@@ -171,12 +171,11 @@ To add a new Azure Cloud integration into |morpheus| using the credentials creat
 
 #. Populate the Following
 
-   NAME
-     Name of the Cloud in |morpheus|
-   CODE
-     Optional, code is useful for the API/CLI and can be useful for Naming Policies
-   LOCATION
-     Optional field for additional details such as locaiton
+   .. include:: /integration_guides/Clouds/base_options.rst
+
+   Details
+   ```````
+            
    CLOUD TYPE
      - Standard (Azure Cloud)
      - US Gov (Azure US Government)
@@ -211,7 +210,9 @@ To add a new Azure Cloud integration into |morpheus| using the credentials creat
 
      .. image:: /images/clouds/azure/addAzureCloudMorphuesS1.png
 
-#. Once done configuring the Cloud, select :guilabel:`NEXT`. Note all specified values except the Subscription ID can be changes after the Cloud is created.
+   .. include:: /integration_guides/Clouds/advanced_options.rst
+    
+#. Once done configuring the Cloud, select :guilabel:`NEXT`. NOTE all specified values except the Subscription ID can be changes after the Cloud is created.
 
 #. Next select an existing Group to add the Azure Cloud to, or create a new Group, then select :guilabel:`NEXT`
 

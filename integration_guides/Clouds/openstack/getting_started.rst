@@ -4,20 +4,10 @@ Getting Started
 
 OpenStack Clouds are very easy to integrate with |morpheus|. First, go to the ``Infrastructure > Clouds`` section and click :guilabel:`+ ADD`. Select OpenStack to begin the integration process, most branded flavors of OpenStack will work with this Cloud selection as well.
 
-NAME
- Internal name for the Cloud in |morpheus|
-CODE
-  Short code used for api and variables (Optional)
-LOCATION
-  Can be used to specify the location of the Cloud or add a description. (Optional)
-VISIBILITY
- Determines Tenant visibility for the Cloud.
-   * Private: Access to the Cloud is limited to the assigned Tenant (Master Tenant by default)
-   * Public: Access to the Cloud can be configured for Tenants in their Tenant Role permissions.
-TENANT
-  Assigned Tenant when VISIBILITY is set to Private.
-Enabled
-  When unchecked, the cloud will not sync and is not accessible for provisioning actions.
+.. include:: /integration_guides/Clouds/base_options.rst
+
+Details
+```````
 IDENTITY API URL
   v2.0 or v3 Identity endpoint.
 DOMAIN ID

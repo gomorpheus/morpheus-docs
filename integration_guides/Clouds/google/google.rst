@@ -81,30 +81,28 @@ Add a GCP Cloud
 #. Select :guilabel:`+ CREATE CLOUD`, select Google Cloud, and then click :guilabel:`NEXT`.
 #. Enter the following into the Create Cloud modal:
 
-   Name
-    Name of the Cloud in |morpheus|
-   Location
-    Description field for adding notes on the cloud, such as location
-   Visibility
-    For setting Cloud permissions in a multi-tenant environment, not applicable in single-tenant environments
-   Project ID
+   .. include:: /integration_guides/Clouds/base_options.rst
+
+   Details
+   ```````
+   PROJECT ID
     Google Cloud Project ID
-   Private Key
+   PRIVATE KEY
     The service account private key. Paste in the entire value between (but not including) the quotation marks in your downloaded JSON document, formatted like the following example: -----BEGIN PRIVATE KEY-----(your_key)-----END PRIVATE KEY-----.
-   Client Email
+   CLIENT EMAIL
     The service account client email, ex: `morpheus@morpheus.iam.gserviceaccount.com`
-   Region
+   REGION
     Regions will auto-populate upon successful authentication with the above credentials. If no regions are found, double check your entered credentials and try again. Select the appropriate region for this Cloud
-   Inventory Existing Instances
+   INVENTORY EXISTING INSTANCES
     If checked, existing Google Instances will be inventoried and appear as unmanaged virtual machines in |morpheus|.
 
-.. NOTE:: |morpheus| scopes Clouds to single regions. Multiple clouds can be added for multi-region support, and then optionally added to the same group.
+   .. NOTE:: |morpheus| scopes Clouds to single regions. Multiple clouds can be added for multi-region support, and then optionally added to the same group.
 
-If advanced options are not needed, click :guilabel:`NEXT` to advance to the Group selection page. Otherwise, continue on with this guide and review advanced or provisioning options.
+   If advanced options are not needed, click :guilabel:`NEXT` to advance to the Group selection page. Otherwise, continue on with this guide and review advanced or provisioning options.
 
-.. include:: /integration_guides/Clouds/advanced_options.rst
+   .. include:: /integration_guides/Clouds/advanced_options.rst
 
-After reviewing all options, click :guilabel:`NEXT` to advance to the Group selection page. Following Group selection, click :guilabel:`COMPLETE` to finish the integration process. If you've opted to inventory existing Instances, they will be viewable in |morpheus| shortly. At this point, you are ready to provision new resources in Google Cloud Platform as needed!
+#. After reviewing all options, click :guilabel:`NEXT` to advance to the Group selection page. Following Group selection, click :guilabel:`COMPLETE` to finish the integration process. If you've opted to inventory existing Instances, they will be viewable in |morpheus| shortly. At this point, you are ready to provision new resources in Google Cloud Platform as needed!
 
 .. IMPORTANT:: If you experience difficulties adding a GCP Cloud, review the above guide and ensure you've met all requirements for completing the integration. For example, if the Compute Engine API is not enabled, |morpheus| will not accept credentials entered on the Create Cloud modal. If you repeatedly run into problems completing the integration process, review the above guide in its entirely and double check that each step is completed and your account meets all configuration requirements.
 

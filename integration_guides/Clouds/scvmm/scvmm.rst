@@ -23,47 +23,43 @@ Add a SCVMM Cloud
 #. Select :guilabel:`+ CREATE CLOUD`, select SCVMM, and then click :guilabel:`Next`.
 #. Enter the following into the Create Cloud modal:
 
-.. NOTE::  You will need to open port 5985 in order for |morpheus| to communicate to SCVMM. You will also want to make sure SCVMM has WinRM enabled.
+   .. NOTE::  You will need to open port 5985 in order for |morpheus| to communicate to SCVMM. You will also want to make sure the SCVMM Controller has WinRM enabled.
 
-NAME
-  Name of the Cloud in |morpheus|
-CODE
-  An optional short code used for API and variables
-LOCATION
-  Description field for adding Cloud locations
-VISIBILITY
-  For setting Cloud permissions in a multi-tenant environment, this field is not applicable in single-Tenant environments
-ENABLED
-  When checked, makes the configured Cloud available for use in |morpheus|
-AUTOMATICALLY POWER ON VMS
-  When checked, provisioned VMs will automatically be powered on
-SCVMM HOST
-  IP address or URL of SCVMM host server
-USERNAME
-  SCVMM Username, for example: svc.scvmm
-PASSWORD
-  SCVMM user Password
-CLOUD
-  To scope the SCVMM Integration to a single Cloud, select it from the Cloud dropdown, which populates after establishing communication and authorization over port 5985 using the supplied username and password. To scope to all Clouds, leave the dropdown selection as ``Select Cloud``
-HOST GROUP
-  To scope the SCVMM Integration to a single host group, select a host group from the dropdown list. To scope to all host groups, select ``All Hosts``
-CLUSTER
- To scope the SCVMM Integration to a single cluster, select a cluster from the dropdown list. To scope to all host groups, select ``All``
-LIBRARY SHARE
-  Select a Library Share to be used with the cloud integration
-SHARED CONTROLLER
-  When creating additional |morpheus| clouds that point to an SCVMM host already integrated with this appliance, select the appropriate shared controller value from the dropdown
-WORKING PATH
-  Path for |morpheus| to write to, for example ``c:\cloud``
-DISK PATH
-  Path for Virtual Disks, for example ``c:\virtualdisks``
-HIDE HOST SELECTION FROM USERS
-  Prevents host selection from appearing in provisioning wizards
-INVENTORY EXISTING INSTANCES
-  Enable for |morpheus| to automatically discover existing VMs in the scoped resources
-ENABLE HYPERVISOR CONSOLE
-  Enable to use VNC Hypervisor Console for |morpheus| console connection as opposed to the default SSH and RDP console connection methods. Requires resolution of all Hyper-V host names and access over port 443 from the |morpheus| appliance to Hyper-V hosts.
+   .. include:: /integration_guides/Clouds/base_options.rst
 
-.. include:: /integration_guides/Clouds/advanced_options.rst
+   Details
+   ```````
 
-After clicking :guilabel:`NEXT`, the new Cloud can be added to a Group or configured with additional advanced options.
+   SCVMM HOST
+     IP address or URL of SCVMM host server
+   USERNAME
+     SCVMM Username, for example: svc.scvmm
+   PASSWORD
+     SCVMM user Password
+   CLOUD
+     To scope the SCVMM Integration to a single Cloud, select it from the Cloud dropdown, which populates after establishing communication and authorization over port 5985 using the supplied username and password. To scope to all Clouds, leave the dropdown selection as ``Select Cloud``
+   HOST GROUP
+     To scope the SCVMM Integration to a single host group, select a host group from the dropdown list. To scope to all host groups, select ``All Hosts``
+   CLUSTER
+    To scope the SCVMM Integration to a single cluster, select a cluster from the dropdown list. To scope to all host groups, select ``All``
+   LIBRARY SHARE
+     Select a Library Share to be used with the cloud integration
+   SHARED CONTROLLER
+     When creating additional |morpheus| clouds that point to an SCVMM host already integrated with this appliance, select the appropriate shared controller value from the dropdown.
+     
+     .. important:: Only set ``SHARED CONTROLLER`` on additional |morpheus| clouds and not on the Primary |morpheus| SCVMM cloud. Failure to set the ``SHARED CONTROLLER`` on secondary |morpheus| clouds pointed to the same SCVMM cluster will cause agent comm issues resulting in provisioning failures. 
+     
+    WORKING PATH
+      Path for |morpheus| to write to, for example ``c:\cloud``
+    DISK PATH
+      Path for Virtual Disks, for example ``c:\virtualdisks``
+    HIDE HOST SELECTION FROM USERS
+      Prevents host selection from appearing in provisioning wizards
+    INVENTORY EXISTING INSTANCES
+      Enable for |morpheus| to automatically discover existing VMs in the scoped resources
+    ENABLE HYPERVISOR CONSOLE
+      Enable to use VNC Hypervisor Console for |morpheus| console connection as opposed to the default SSH and RDP console connection methods. Requires resolution of all Hyper-V host names and access over port 443 from the |morpheus| appliance to Hyper-V hosts.
+
+    .. include:: /integration_guides/Clouds/advanced_options.rst
+
+#. After clicking :guilabel:`NEXT`, the new Cloud can be added to a Group or configured with additional advanced options.
