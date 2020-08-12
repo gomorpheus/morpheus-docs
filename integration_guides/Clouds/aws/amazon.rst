@@ -58,51 +58,50 @@ Network(s)
 Adding an AWS Cloud
 ^^^^^^^^^^^^^^^^^^^
 
-#. Navigate to `Infrastructure -> Clouds`
-#. Select `+ Create Cloud`
-#. Select AWS
-#. Enter the following:
+1. Navigate to `Infrastructure -> Clouds`
+2. Select `+ Create Cloud`
+3. Select AWS
+4. Enter the following:
 
-   .. include:: /integration_guides/Clouds/base_options.rst
+.. include:: /integration_guides/Clouds/base_options.rst
 
-   Details
-   ```````
-            
-   REGION
-     Select AWS Region for the Cloud
-   ACCESS KEY
-     Access Key ID from AWS IAM User Security Credentials.
-   SECRET KEY
-     Secret Access Key associate with the Access Key ID.
-   USE HOST IAM CREDENTIALS
-     Check to use use Host IAM Credentials
-   ROLE ARN
-     Supports security token service (STS) to AssumeRole by entering an AWS Role ARN
-   INVENTORY
-     Basic
-      |morpheus| will sync information on all EC2 Instances in the selected VPC the IAM user has access to, including Name, IP Addresses, Platform Type, Power Status, and overall resources sizing for Storage, CPU and RAM, every 5 minutes. Inventoried EC2 Instances will appear as Unmanaged VM's.
-     Full
-      In addition to the information synced from Basic Inventory level, |morpheus| will gather Resource Utilization metrics for Memory, Storage and CPU utilization per VM.
-     Off
-      Existing EC2 Instances will not be inventoried
+Details
+```````
+REGION
+  Select AWS Region for the Cloud
+ACCESS KEY
+  Access Key ID from AWS IAM User Security Credentials.
+SECRET KEY
+  Secret Access Key associate with the Access Key ID.
+USE HOST IAM CREDENTIALS
+  Check to use use Host IAM Credentials
+ROLE ARN
+  Supports security token service (STS) to AssumeRole by entering an AWS Role ARN
+INVENTORY
+  Basic
+   |morpheus| will sync information on all EC2 Instances in the selected VPC the IAM user has access to, including Name, IP Addresses, Platform Type, Power Status, and overall resources sizing for Storage, CPU and RAM, every 5 minutes. Inventoried EC2 Instances will appear as Unmanaged VM's.
+  Full
+   In addition to the information synced from Basic Inventory level, |morpheus| will gather Resource Utilization metrics for Memory, Storage and CPU utilization per VM.
+  Off
+   Existing EC2 Instances will not be inventoried
 
-     .. NOTE:: Cloud Watch must be configured in AWS for |morpheus| to collect Memory and Storage utilization metrics on inventoried EC2 instances.
+  .. NOTE:: Cloud Watch must be configured in AWS for |morpheus| to collect Memory and Storage utilization metrics on inventoried EC2 instances.
 
-   USE VPC
-      Specify if the target account is using EC2-VPC or EC2-Classic Platform. In almost all cases, VPC should be selected, and then select the target VPC from the synced available VPC's list, or `All` VPC's.
-      
-#. The AWS cloud is ready to be added to a group and saved. Additional configuration options available:
+USE VPC
+   Specify if the target account is using EC2-VPC or EC2-Classic Platform. In almost all cases, VPC should be selected, and then select the target VPC from the synced available VPC's list, or `All` VPC's.
+   
+5. The AWS cloud is ready to be added to a group and saved. Additional configuration options available:
 
-   IMAGE TRANSFER STORE
-     S3 bucket for Image transfers, required for migrations into AWS.
-   EBS ENCRYPTION
-     Enable or disable encrytion of EBS Volumes
-   COSTING KEY
-     For Gov Cloud pricing only, key for standard managing cost account
-   COSTING SECRET
-     For Gov Cloud pricing only, secret for standard managing cost account
+IMAGE TRANSFER STORE
+  S3 bucket for Image transfers, required for migrations into AWS.
+EBS ENCRYPTION
+  Enable or disable encrytion of EBS Volumes
+COSTING KEY
+  For Gov Cloud pricing only, key for standard managing cost account
+COSTING SECRET
+  For Gov Cloud pricing only, secret for standard managing cost account
 
-   .. include:: /integration_guides/Clouds/advanced_options.rst
+.. include:: /integration_guides/Clouds/advanced_options.rst
 
 Enhanced Invoice Costing Configuration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
