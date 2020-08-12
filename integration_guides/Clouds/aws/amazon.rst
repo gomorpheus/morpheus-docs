@@ -9,33 +9,33 @@ AWS is the Amazon public cloud, offering a full range of services and features a
 Features
 ^^^^^^^^
 
-* Virtual Machine Provisioning
-* Containers
+* Instance, Service, Infrastructure Provisioning & Synchronization
+* EKS Cluster Creation & Synchronization
+* |morpheus| Kubernetes, Docker & KVM Cluster Creation 
+* ELB Classic Load Balancer Creation & Synchronization
+* ELB Application Load Balancer (ALB) Creation & Synchronization
+* Security Group Creation & Synchronization
+* Security Group Rule Creation & Synchronization
+* Network Synchronization
+* VPC Creation & Synchronization
+* CloudFormation Provisioning & Resource Synchronization 
+* Terraform Provisioning & Resource Synchronization
+* Pricing & Costing Synchronization
+* MetaData Tag Creation & Synchronization
+* S3 Bucket Creation & Synchronization
+* Route53 Automation & Synchronization
+* IAM Profile Synchronization and Assignment
+* RDS Support 
 * Backups / Snapshots
-* Resources Groups
 * Migrations
 * Auto Scaling
-* Load Balancing
-* AWS Marketplace Search and Provisioning
-* Remote Console
-* Periodic Synchronization
+* Remote Console (SSH & RDP)
 * Lifecycle Management and Resize
 * Restore from Snapshots
-* EC2
-* RDS
-* S3
-* ELBs
-* ALBs
-* Route53
-* IAM Profile sync and assignment
-* Network Sync
-* Security Group Sync (selectable when provisioning, will not appear in Security Groups section)
-* Pricing Sync
-* Assign Elastic IP's
+* Elastic IP Assignment
 * Network Pools
-* MetaData Tag creation
+* Enhanced Invoice Costing
 
-|morpheus| can provide a single pane of glass and self-service portal for managing instances scattered across both AWS and private cloud offerings like VMWare and Hyper-V.
 
 Requirements
 ^^^^^^^^^^^^
@@ -45,10 +45,11 @@ AWS IAM Security Credentials
   Secret Key
   Sufficient User Privileges (see MinimumIAMPolicies_ section for more info)
 Security Group Configuration for Agent Install, Script Execution, and Remote Console Access
-  Typical Inbound ports open from |morpheus| Appliance: 22, 5985, 3389
-  Typical Outbound to |morpheus| Appliance: 80, 443
+  - Typical Inbound ports open from |morpheus| Appliance: 22, 5985, 3389 (22 & 3389 required for Console. 22 & 5985 required for agent-less comms)
+  - Typical Outbound to |morpheus| Appliance: 443 (Required for Agent install & comms)
 
   .. NOTE:: These are required for |morpheus| agent install, communication, and remote console access for windows and linux. Other configurations, such as docker instances, will need the appropriate ports opened as well. Cloud-init Agent Install mode does not require incoming access for port 22.
+  
 Network(s)
   IP assignment required for Agent install, Script Execution, and Console if the |morpheus| Appliance is not able to communicate with AWS instances private ip's.
 
@@ -62,23 +63,22 @@ Adding an AWS Cloud
 #. Select AWS
 #. Enter the following:
 
-   Name
-     Name of the Cloud in |morpheus|
-   Location
-     Description field for adding notes on the cloud, such as location.
-   Visibility
-     For setting cloud permissions in a multi-tenant environment. Not applicable in single tenant environments.
-   Region
+   .. include:: /integration_guides/Clouds/base_options.rst
+
+   Details
+   ```````
+            
+   REGION
      Select AWS Region for the Cloud
-   Access Key
+   ACCESS KEY
      Access Key ID from AWS IAM User Security Credentials.
-   Secret Key
+   SECRET KEY
      Secret Access Key associate with the Access Key ID.
-   Use Host IAM Credentials
+   USE HOST IAM CREDENTIALS
      Check to use use Host IAM Credentials
-   Role ARN
+   ROLE ARN
      Supports security token service (STS) to AssumeRole by entering an AWS Role ARN
-   Inventory
+   INVENTORY
      Basic
       |morpheus| will sync information on all EC2 Instances in the selected VPC the IAM user has access to, including Name, IP Addresses, Platform Type, Power Status, and overall resources sizing for Storage, CPU and RAM, every 5 minutes. Inventoried EC2 Instances will appear as Unmanaged VM's.
      Full
@@ -88,18 +88,21 @@ Adding an AWS Cloud
 
      .. NOTE:: Cloud Watch must be configured in AWS for |morpheus| to collect Memory and Storage utilization metrics on inventoried EC2 instances.
 
+   USE VPC
+      Specify if the target account is using EC2-VPC or EC2-Classic Platform. In almost all cases, VPC should be selected, and then select the target VPC from the synced available VPC's list, or `All` VPC's.
+      
 #. The AWS cloud is ready to be added to a group and saved. Additional configuration options available:
 
-IMAGE TRANSFER STORE
-  S3 bucket for Image transfers, required for migrations into AWS.
-EBS ENCRYPTION
-  Enable or disable encrytion of EBS Volumes
-COSTING KEY
-  For Gov Cloud pricing only, key for standard managing cost account
-COSTING SECRET
-  For Gov Cloud pricing only, secret for standard managing cost account
+   IMAGE TRANSFER STORE
+     S3 bucket for Image transfers, required for migrations into AWS.
+   EBS ENCRYPTION
+     Enable or disable encrytion of EBS Volumes
+   COSTING KEY
+     For Gov Cloud pricing only, key for standard managing cost account
+   COSTING SECRET
+     For Gov Cloud pricing only, secret for standard managing cost account
 
-.. include:: /integration_guides/Clouds/advanced_options.rst
+   .. include:: /integration_guides/Clouds/advanced_options.rst
 
 Enhanced Invoice Costing Configuration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

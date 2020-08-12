@@ -22,7 +22,7 @@ Features
 
 |morpheus| can provide a single pane of glass and self-service portal for managing multiple Nutanix Clusters and allowing the seamless deployment of applications.
 
-.. Note:: Prism Central is not currently supported
+.. Note:: Prism Central is not currently supported as a Cloud endpoint target
 
 Getting Started
 ^^^^^^^^^^^^^^^
@@ -34,8 +34,25 @@ Adding a Nutanix Cloud
 
 The Nutanix cluster should be available and responding to the https://fqdn:9440 url for authentication by |morpheus| .
 
+NAME
+  Name of the Cloud in |morpheus|
+CODE 
+  Unique code used for api/cli, automation and policies.
+LOCATION
+  Description field for adding notes on the cloud, such as location.
+VISIBILITY
+  For setting cloud permissions in a multi-tenant environment. Not applicable in single tenant environments.
+TENANT
+  If Visibility is set to Private, select the Tenant the Cloud resources will assigned to.
+ENABLED
+  When disabled, automatic Cloud sync is paused and the Cloud will not be selectable for provisioning. 
+AUTOMATICALLY POWER ON VMS
+  When enabled, Morpheus will maintain the expected powered on state of managed VM's and power on any managed VM's in the cloud that have been shut down for unknown reasons (not powered off by |morpheus|) to ensure availability of services. 
+  
+  .. note:: When "AUTOMATICALLY POWER ON VMS" is enabled, the power state of managed VM's should be maintained in |morpheus|. This setting is not applicable to discovered/unmanaged resources.
+
 API URL
-  example: https://10.30.21.220:9440
+  URL of the Nutanix Prism API, example: https://10.30.21.220:9440. Prism Central is not currently supported as a Cloud endpoint target
 USERNAME
   Nutanix admin username
 PASSWORD

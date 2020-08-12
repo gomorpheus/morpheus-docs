@@ -1,5 +1,5 @@
 Advanced Options
-^^^^^^^^^^^^^^^^
+````````````````
 
 DOMAIN
   Specify a default domain for instances provisioned to this Cloud.
@@ -48,7 +48,7 @@ INSTALL AGENT
   Enable to have Agent Installation on by default for all provisioning into this Cloud. Disable for Agent Installation to be off by default for all provisioning into this Cloud.
 
 Provisioning Options
-^^^^^^^^^^^^^^^^^^^^
+````````````````````
 
 PROXY
   Set a proxy for inbound communication from Instances to the |morpheus| Appliance. Proxies can be added in the `Infrastructure -> Networks -> Proxies` tab.

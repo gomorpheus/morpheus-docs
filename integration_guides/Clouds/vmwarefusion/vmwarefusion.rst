@@ -8,12 +8,11 @@ Add a VMware Fusion Cloud
 #. Select :guilabel:`+ CREATE CLOUD`, select VMware Fusion, and then click :guilabel:`Next`.
 #. Enter the following into the Create Cloud modal:
 
-   Name
-      Name of the Cloud in |morpheus|
-   Location
-      Description field for adding notes on the cloud, such as location.
-   Visibility
-      For setting cloud permissions in a multi-tenant environment. Not applicable in single tenant environments.
+   .. include:: /integration_guides/Clouds/base_options.rst
+
+   Details
+   ```````
+
    VMWARE FUSION HOST
       IP or URL of VMware Fusion Host
    WORKING PATH
