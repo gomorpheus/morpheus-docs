@@ -51,12 +51,7 @@ Services
 |morphver| Service Version Changes
 ----------------------------------
 
-- Java updated to 8u262^
-- ElasticSearch updated to 7.8.1^
-- Java for ElasticSearch updated to 14.0.2^
-- NGINX updated to 1.19.1^
-
-^ Indicates features and fixes included in 4.2.2-3 release packages
+- MySQL updated to 5.7.30
 
 |morphver| Service Version Compatibility
 ----------------------------------------
@@ -66,7 +61,7 @@ When externalizing MySQL, Elasticsearch and/or RabbitMQ services, the following 
 +---------------------------------------+-----------------------+-------------------------------------+
 | **Service**                           | **Compatible Branch** | **Morpheus Installer Version**      |
 +---------------------------------------+-----------------------+-------------------------------------+
-| MySQL                                 | 5.7                   | 5.7.29                              |
+| MySQL                                 | 5.7                   | 5.7.30                              |
 +---------------------------------------+-----------------------+-------------------------------------+
 | Percona                               | 5.7, WSREP 31         | n/a                                 |
 +---------------------------------------+-----------------------+-------------------------------------+
@@ -88,10 +83,6 @@ Security
 ..
   CVEs Addressed
   --------------
-
-  - CVE-2019-11358
-
-  ^ Indicates features and fixes included in 4.2.2-3 release packages
 
 Integrations
 ============

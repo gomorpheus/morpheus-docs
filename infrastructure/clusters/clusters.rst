@@ -37,7 +37,7 @@ Cluster Permissions
 -------------------
 
 - Cluster Permissions
-    Each Cluster has Group, Tenant and Service Plan access permissions settings.
+    Each Cluster has Group, Tenant and Service Plan access permissions settings ("MORE" > Permissions on the Clusters list page).
 - Namespace Permissions
     Individual Namespaces also have Group, Tenant and Service Plan access permissions settings
 

@@ -93,23 +93,25 @@ Upon saving, a new policy is created in the Group or Cloud Policies tab.
 Managing Approval Requests
 --------------------------
 
-Once Instance Approval policies are added to a group or cloud, any Instance or App provisioned into that group or cloud will create an approval request entry in the `Operations -> Approvals` section.
+Once Instance approval policies are added to a Group or Cloud, any Instance or App provisioned into that Group or Cloud will create an approval request entry in the `Operations -> Approvals` section.
 
-.. NOTE:: User Role permission `Operations: Approvals -> FULL` required to manage Approvals.
+.. NOTE:: User Role permission `Operations: Approvals -> FULL` is required to manage Approvals.
 
-* To Approve, Deny, or Cancel an internal Approval request, select the request and use the Actions dropdown.
+* To Approve, Deny, or Cancel an internal approval request, select the request and use the Actions dropdown.
 * To Cancel a ServiceNow Approval request, select the request and use the Actions dropdown. ServiceNow approvals are managed in ServiceNow.
 
 .. NOTE:: Instances requiring provisioning approval will have a PENDING status until approved.
 
 Each Approval Request will have:
 
-* Request: What is being requested
-* Type: The type of the approval request
-* Request For: Name and link to Instance
+* Name: A name for the approval in |morpheus|
+* Monthly Price (Est.): The estimated monthly price of the Instance to be provisioned
+* Request Type: What is being requested, such as Instance approval
+* External Name: For ServiceNow integrations, the name of the approval in the ServiceNow console
+* Type: Internal or ServiceNow
 * Status
 * Date Created
-* Requested By
+* Requested By: The |morpheus| user making the request
 * Actions dropdown (for internal approval requests)
     * Approve
     * Deny

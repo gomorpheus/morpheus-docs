@@ -294,6 +294,8 @@ Email
            - Bearer `token`
          * - Content-Type
            - application/json
+  IGNORE SSL ERRORS
+    Mark when making REST calls to systems without a trusted SSL certificate
 
 |javascript| Javascript
 ```````````````````````

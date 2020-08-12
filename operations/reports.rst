@@ -20,6 +20,8 @@ INVENTORY REPORTS
     * Tenant Resource Allocation
   Provisioning
     * Instance Inventory Summary
+    * Software Inventory
+    * Software Inventory By Server
     * Virtual Machine Inventory Summary
     * Workload Summary
 

@@ -184,14 +184,14 @@ Role Mappings
     - The SSL Certificates page is where certificates may be uploaded and managed. These certificates may then be used within |morpheus| when orchestrating load balancers.
     - This permission is recommended for personnel who will be orchestrating and provisioning load balancers.
     -
-  * - Infrastructure: Cloud
+  * - Infrastructure: Clouds
     - None, Read, Full
-    - Determines access to the Infrastructure > Clouds page.
+    - Determines access to the Infrastructure > Clouds page. The "Group" permission limits the Cloud list page (Infrastructure > Clouds) to show only Clouds in their assigned Groups.
     - The Cloud page is where new Clouds are integrated with |morpheus| and existing Cloud integrations are managed. This includes creating a code for use within the API, the location, visibility, tenant, whether or not it should be enabled, and if VMs should be automatically powered on. Additionally, Clouds may be integrated from the Clouds tab of a Group detail page.
     - This permission is recommended for those responsible for configuring RBAC as well as those responsible for |morpheus| Cloud Integrations.
     -
   * - Infrastructure: Clusters
-    - None, Read, Full
+    - None, Read, Group, Full
     - Determines access to the Infrastructure > Clusters page.
     - The Clusters page allows you to create and manage Kubernetes, Docker, and KVM Clusters, as well as Cloud-specific Kubernetes services such as EKS.
     - This permission is recommend for those creating and managing containers or container services.
@@ -430,6 +430,12 @@ Role Mappings
     - The Blueprints page allows for the creation of pre-configured, multi-tier application definitions which can be deployed via the Apps page. With this permission the blueprint type of Kubernetes is available.
     - This permission is recommended for those responsible for defining Kubernetes blueprints.
     -
+  * - Provisioning: Clone Instance
+    - None, Full
+    - Determines access to the Clone Instance selection from the Actions menu on an Instance detail page
+    - This selection launches the wizard to begin the process of provisioning an identical Instance
+    - This permission is recommended for those responsible for provisioning.
+    -
   * - Provisioning: Deployment Integrations
     - None, Read, Full
     - Determines access to the Integrations tab on the Provisioning > Deployments page.
@@ -441,6 +447,30 @@ Role Mappings
     - Determines access to the Deployments tab on the Provisioning > Deployments page.
     - The Deployments page provides the ability to use git, fetch from a url, or upload a file to be utilized during the provisioning of an Instance or pushed to an existing Instance.
     - This permission is recommended for those responsible for providing and managing software.
+    -
+  * - Provisioning: Execute Script
+    - None, Full
+    - Determines access to the Run Script and Apply Template selections from the Actions menu on an Instance detail page
+    - These selections bring up a menu allowing the user to select a script and run it against the viewed Instance or select a template to write to the Instance
+    - This permission is recommended for those running day two automations against existing Instances
+    -
+  * - Provisioning: Execute Task
+    - None, Full
+    - Determines access to the Run Task selection from the Actions menu on an Instance detail page
+    - This selection brings up a menu allowing the user to select a Task and run it against the viewed Instance
+    - This permission is recommended for those running day two automations against existing Instances
+    -
+  * - Provisioning: Execute Workflow
+    - None, Full
+    - Determines access to the Run Workflow selection from the Actions menu on an Instance detail page
+    - This selection brings up a menu allowing the user to select a Workflow and run it against the viewed Instance
+    - This permission is recommended for those running day two automations against existing Instances
+    -
+  * - Provisioning: Import Image
+    - None, Full
+    - Determines access to the Import as Image and Clone to Image selections from the Actions menu on an Instance detail page
+    - These selections allow users to create an image from an existing Instance or import the Instance as an image to a selected bucket
+    - This permission is recommended for those responsible for managing the library of provisionable items
     -
   * - Provisioning: Instances
     - None, Read, User, Full

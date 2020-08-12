@@ -106,6 +106,39 @@ Enhanced Invoice Costing Configuration
 
 In addition to standard AWS costing data (Enabled by editing the AWS cloud integration and setting the COSTING value to "Costing" or "Costing and Reservations"), |morpheus| can utilize highly-granular data from AWS Costing and Utilization Reports (CUR) in its integration. Once enabled, this data can be consumed by accessing Invoice endpoints of |morpheus| API and eventually through the UI after a future update. Continue on with this section to enable these reports in the AWS web console and configure the |morpheus| cloud integration to work with this report data.
 
+In |morpheus| version 4.2.3 and higher, |morpheus| can do most of the legwork to create or sync in the CUR report for you. In versions prior, the report needed to be set up within the AWS web console and the configuration information provided to the |morpheus| cloud inegration. Both processes are outlined below.
+
+For |morpheus| 4.2.3 and Above
+``````````````````````````````
+
+In |morpheus| 4.2.3+, edit the Amazon cloud integration or create a new Amazon Cloud to get started. On the Create/Edit Cloud modal, open the advanced options section. The relevant fields for configuring invoice costing are shown below:
+
+.. image:: /images/clouds/aws/invoiceCosting/0billingFields.png
+
+In the example case above, a new report and a new S3 bucket are created but |morpheus| will also sync in buckets and reports that meet the required parameters if they already exist. For reports to be synced they must meet the requirements listed below:
+
+- Hourly time granularity
+- Include resource IDs
+- GZIP compression
+- CSV format
+
+If you don't currently have a report meeting those criteria, you can create one by selecting "New Report" from the REPORT NAME dropdown menu. A new S3 bucket can be created in similar fashion if needed. You may also want to review the section below on configuration for |morpheus| 4.2.2 and below to note policies that will be applied to your selected bucket and Cost Explorer permissions required for the AWS cloud user associated with the |morpheus| Cloud integration.
+
+In the end, the following fields must be filled in order to complete the process:
+
+- **COSTING BUCKET:** The S3 bucket name
+- **COSTING REGION:** The region the bucket was created in
+- **COSTING FOLDER:** This is the report path prefix if you configured one earlier
+- **COSTING REPORT NAME:** The name given to your CUR report
+- **COSTING KEY:** If the IAM user for this AWS cloud integration does not have access to the S3 bucket with the CUR data, enter the AWS Key ID for an IAM user with access
+- **COSTING SECRET:** If the IAM user for this AWS cloud integration does not have access to the S3 bucket with the CUR data, enter the AWS Secret Key for the IAM account whose Key ID you entered in the previous field
+- **LINKED ACCOUNT ID:** If the IAM user for this AWS cloud integration does not have access to the S3 bucket with the CUR data, enter the AWS account number that the IAM user from the above step resides in
+
+.. NOTE:: If the AWS cloud account is a GovCloud account, enter the COSTING KEY, COSTING SECRET, and LINKED ACCOUNT ID for the master commercial account your GovCloud account is associated with.
+
+For |morpheus| 4.2.2 and Below
+``````````````````````````````
+
 Begin by logging into the `AWS Billing Console <https://console.aws.amazon.com/billing/home?#/>`_, then click :guilabel:`Create report`.
 
 .. image:: /images/clouds/aws/invoiceCosting/1billingConsole.png
