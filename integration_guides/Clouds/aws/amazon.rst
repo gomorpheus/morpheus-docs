@@ -67,28 +67,28 @@ Adding an AWS Cloud
 
 Details
 ```````
-REGION
-  Select AWS Region for the Cloud
-ACCESS KEY
-  Access Key ID from AWS IAM User Security Credentials.
-SECRET KEY
-  Secret Access Key associate with the Access Key ID.
-USE HOST IAM CREDENTIALS
-  Check to use use Host IAM Credentials
-ROLE ARN
-  Supports security token service (STS) to AssumeRole by entering an AWS Role ARN
-INVENTORY
-  Basic
-   |morpheus| will sync information on all EC2 Instances in the selected VPC the IAM user has access to, including Name, IP Addresses, Platform Type, Power Status, and overall resources sizing for Storage, CPU and RAM, every 5 minutes. Inventoried EC2 Instances will appear as Unmanaged VM's.
-  Full
-   In addition to the information synced from Basic Inventory level, |morpheus| will gather Resource Utilization metrics for Memory, Storage and CPU utilization per VM.
-  Off
-   Existing EC2 Instances will not be inventoried
+ REGION
+   Select AWS Region for the Cloud
+ ACCESS KEY
+   Access Key ID from AWS IAM User Security Credentials.
+ SECRET KEY
+   Secret Access Key associate with the Access Key ID.
+ USE HOST IAM CREDENTIALS
+   Check to use use Host IAM Credentials
+ ROLE ARN
+   Supports security token service (STS) to AssumeRole by entering an AWS Role ARN
+ INVENTORY
+   Basic
+    |morpheus| will sync information on all EC2 Instances in the selected VPC the IAM user has access to, including Name, IP Addresses, Platform Type, Power Status, and overall resources sizing for Storage, CPU and RAM, every 5 minutes. Inventoried EC2 Instances will appear as Unmanaged VM's.
+   Full
+    In addition to the information synced from Basic Inventory level, |morpheus| will gather Resource Utilization metrics for Memory, Storage and CPU utilization per VM.
+   Off
+    Existing EC2 Instances will not be inventoried
 
-  .. NOTE:: Cloud Watch must be configured in AWS for |morpheus| to collect Memory and Storage utilization metrics on inventoried EC2 instances.
+   .. NOTE:: Cloud Watch must be configured in AWS for |morpheus| to collect Memory and Storage utilization metrics on inventoried EC2 instances.
 
-USE VPC
-   Specify if the target account is using EC2-VPC or EC2-Classic Platform. In almost all cases, VPC should be selected, and then select the target VPC from the synced available VPC's list, or `All` VPC's.
+ USE VPC
+    Specify if the target account is using EC2-VPC or EC2-Classic Platform. In almost all cases, VPC should be selected, and then select the target VPC from the synced available VPC's list, or `All` VPC's.
    
 5. The AWS cloud is ready to be added to a group and saved. Additional configuration options available:
 
