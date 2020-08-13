@@ -9,8 +9,8 @@
 |morpheus| UI Updates
 =====================
 
-Highlights
-----------
+.. Highlights
+   ----------
 
 New Features
 ------------
@@ -40,6 +40,7 @@ New Features
         - DEFAULT ROUTE flag
         - ROUTE TABLE selection 
         - NETWORK source specification
+        - DESTINATION specification 
         - DESTINATION TYPE options 
           - Egress Only Internet Gateway 
           - Instance 
@@ -48,11 +49,10 @@ New Features
           - VPC Peering Connection 
           - Transit Gateway
           - Virtual Private Gateway
-        - DESTINATION specification 
-      
+
       .. image:: /images/clouds/aws/network/Networks-Routers-Morpheus.png
      
-- .. toggle-header:: :header: Amazon: **COSTING REPORT automation added to simplify AWS Costing and Utilization Report (CUR) configuration for highly-granular costing and invoicing data**
+- .. toggle-header:: :header: Amazon: **AWS Costing and Utilization Report automation added **
 
      |morpheus| now sync's existing and can create new correctly-configured ``AWS Costing and Utilization Reports (CUR)`` needed to consume highly-granular invoicing data in |morpheus|.
       - Costing and Utilization Report sync and creaiton added

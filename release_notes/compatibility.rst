@@ -17,9 +17,11 @@ Breaking Changes
 |morpheus| Application OS
 =========================
 
-.. important:: Existing Appliances on 14.04 must upgrade to 16.04 or 18.04 PRIOR to upgrading to v4.2.1+.
+|morpheus| can be installed on the following platforms. Please note the table below is for |morpheus| Application OS support, not |morpheus| Agent OS Support.
 
-.. list-table:: **Supported Appliance Operating Systems**
+.. important:: Existing |morpheus| Appliances on 14.04 must upgrade to 16.04 or 18.04 PRIOR to upgrading to v4.2+.
+
+.. list-table:: **Supported |morpheus| Appliance Operating Systems**
    :widths: auto
    :header-rows: 1
 
@@ -88,7 +90,5 @@ Integrations
 ============
 
 .. note:: Current iterations of Amazon AWS, Microsoft Azure, Google Cloud Platform, Digital Ocean, HPE OneView, OpenTelekom Cloud, IBM Bluemix, Softlayer and UpCloud are all supported.
-
-.. important:: VirtualBox, VirtuSteam, and MetaCloud Cloud Types are no longer supported.
 
 .. include:: compatibility_table.rst
