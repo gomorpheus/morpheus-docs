@@ -31,7 +31,7 @@
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 
-extensions = ['recommonmark','sphinx_markdown_tables','sphinx_tabs.tabs']
+extensions = ['recommonmark','sphinx_markdown_tables','sphinx_tabs.tabs','sphinxcontrib.contentui']
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
@@ -168,7 +168,7 @@ latex_elements = {
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-    (master_doc, 'morpheus421.tex', u'Morpheus Documentation',
+    (master_doc, 'morpheus4.2.3-1.tex', u'Morpheus Documentation',
      u'Morpheus', 'manual'),
 ]
 
@@ -201,13 +201,13 @@ def setup(app):
 rst_prolog = """
 .. |morpheus| replace:: Morpheus
 .. |morphbranch| replace:: v4.2
-.. |morphver| replace:: v4.2.2
-.. |rmqbranch| replace:: v3.5+
-.. |rmqver| replace:: v3.7.16
+.. |morphver| replace:: v4.2.3
+.. |rmqbranch| replace:: v3.5-3.8
+.. |rmqver| replace:: v3.8.3
 .. |mysqlbranch| replace:: v5.7
-.. |mysqlver| replace:: v5.7.27
-.. |esbranch| replace:: v7.4
-.. |esver| replace:: v7.4.2
+.. |mysqlver| replace:: v5.7.30
+.. |esbranch| replace:: v7.x
+.. |esver| replace:: v7.8.1
 """
 
 
@@ -217,8 +217,6 @@ rst_prolog = """
 #****************
 #
 #       H2
-#****************
-#
 #================
 #----------------
 #^^^^^^^^^^^^^^^^

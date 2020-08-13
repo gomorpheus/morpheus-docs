@@ -13,12 +13,10 @@ Adding PCF Cloud From `Infrastructure -> Clouds`
 #. Select :guilabel:`NEXT`
 #. Populate the following:
 
-   Name
-    Name of the Cloud in |morpheus|
-   Location
-    Description field for adding notes on the cloud, such as location.
-   Visibility
-    For setting cloud permissions in a multi-tenant environment. Not applicable in single tenant environments.
+   .. include:: /integration_guides/Clouds/base_options.rst
+
+   Details
+   ```````
    API URL
      Cloud Foundry API Url
    CLIENT ID
@@ -32,7 +30,6 @@ Adding PCF Cloud From `Infrastructure -> Clouds`
    ORGANIZATION
     Select Organization. Dropdown populates upon successful authorization.
 
-#. Select :guilabel:`NEXT`
    .. include:: /integration_guides/Clouds/advanced_options.rst
 
 #. Select :guilabel:`NEXT`

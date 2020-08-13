@@ -23,7 +23,7 @@ After installation, log into the appliance at the URL presented upon completion.
 
    * The Appliance Name is used for white labeling and as a reference for multi-appliance installations.
 
-   * The Appliance URL is the URL all provisioned instances will report back to. Example: https://example.morpheusdata.com. The Appliance URL can be changed later, and also set to different url per cloud integration.
+   * The Appliance URL is the URL all provisioned instances will report back to. Example: https://example.morpheusdata.com. The Appliance URL can be changed later, and also set to different url per cloud integration.
 
 #. Optionally Enable or Disable Backups, Monitoring, or Logs from this screen.
 

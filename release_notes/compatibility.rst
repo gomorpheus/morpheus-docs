@@ -17,9 +17,11 @@ Breaking Changes
 |morpheus| Application OS
 =========================
 
-.. important:: Existing Appliances on 14.04 must upgrade to 16.04 or 18.04 PRIOR to upgrading to v4.2.1+.
+|morpheus| can be installed on the following platforms. Please note the table below is for |morpheus| Application OS support, not |morpheus| Agent OS Support.
 
-.. list-table:: **Supported Appliance Operating Systems**
+.. important:: Existing |morpheus| Appliances on 14.04 must upgrade to 16.04 or 18.04 PRIOR to upgrading to v4.2+.
+
+.. list-table:: **Supported |morpheus| Appliance Operating Systems**
    :widths: auto
    :header-rows: 1
 
@@ -61,13 +63,13 @@ When externalizing MySQL, Elasticsearch and/or RabbitMQ services, the following 
 +---------------------------------------+-----------------------+-------------------------------------+
 | **Service**                           | **Compatible Branch** | **Morpheus Installer Version**      |
 +---------------------------------------+-----------------------+-------------------------------------+
-| MySQL                                 | 5.7                   | 5.7.30                              |
+| MySQL                                 | |mysqlbranch|         | |mysqlver|                          |
 +---------------------------------------+-----------------------+-------------------------------------+
 | Percona                               | 5.7, WSREP 31         | n/a                                 |
 +---------------------------------------+-----------------------+-------------------------------------+
-| Elasticsearch                         | 7.x                   | 7.6.2                               |
+| Elasticsearch                         | |esbranch|            | |esver|                             |
 +---------------------------------------+-----------------------+-------------------------------------+
-| RabbitMQ                              | 3.5-3.8               | 3.8.3                               |
+| RabbitMQ                              | |rmqbranch|           | |rmqver|                            |
 +---------------------------------------+-----------------------+-------------------------------------+
 
 .. important:: Elasticsearch 7.x is required for |morphver|. Refer to :ref:`upgrading` section for more information.
@@ -89,8 +91,4 @@ Integrations
 
 .. note:: Current iterations of Amazon AWS, Microsoft Azure, Google Cloud Platform, Digital Ocean, HPE OneView, OpenTelekom Cloud, IBM Bluemix, Softlayer and UpCloud are all supported.
 
-.. important:: VirtualBox, VirtuSteam, and MetaCloud Cloud Types are no longer supported.
-
 .. include:: compatibility_table.rst
-
-.. note:: Non-listed versions may be compatible but are not verified.

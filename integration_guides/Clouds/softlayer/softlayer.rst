@@ -4,12 +4,10 @@ Softlayer
 Add a Softlayer Cloud
 ^^^^^^^^^^^^^^^^^^^^^
 
-Name
-  Name of the Cloud in |morpheus|
-Location
-  Description field for adding notes on the cloud, such as location.
-Visibility
-  For setting cloud permissions in a multi-tenant environment. Not applicable in single tenant environments.
+.. include:: /integration_guides/Clouds/base_options.rst
+
+Details
+```````
 Username
   Softlayer Username
 API Key

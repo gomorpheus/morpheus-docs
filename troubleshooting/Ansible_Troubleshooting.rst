@@ -1,5 +1,5 @@
 Ansible Troubleshooting
-========================
+=======================
 
 When a workflow is executed manually, the Ansible run output is available in the Instance History tab. Select the ``i`` bubble next to the Ansible task to see the output. You can also see the run output in UI logs at ``/var/log/morpheus/morpheus-ui/current​``. These can be tailed by running ``morpheus-ctl tail morpheus-ui``.
 

@@ -1,5 +1,5 @@
 SSL Self-signed Certificate Regeneration
-=========================================
+========================================
 
 When Morpheus is deployed it generates a 10 year self-signed non-trusted SSL certificate.  Below details the process to regenerate this certificate and key.
 
