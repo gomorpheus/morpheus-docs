@@ -9,8 +9,8 @@
 |morpheus| UI Updates
 =====================
 
-.. Highlights
-   ----------
+Highlights
+----------
 
 **Terraform Improvements**
 
