@@ -12,6 +12,28 @@
 Highlights
 ==========
 
+**Terraform Improvements**
+
+**Increased Flexibility with Identity Source Services**
+
+- Identity sources can be added and configured on the Tenant detail page (Administration > Tenants > Selected Tenant) or on the User list page (Administration > Users) allowing Tenant administrators to configure their own identity source services and mapping without exposing information on other Tenants
+- Identity sources can be configured to allow manual role assignment providing administrators the flexibility to change a user's role in |morpheus| regardless of their role or group within the identity source environment
+
+.. image:: /images/releases/423/identitySources.png
+
+**NSX-T Integration Enhancements**
+
+- Added support for NSX-T version 3
+- Create, manage, and delete NSX-T load balancers
+- Create, manage, and delete NSX-T IP Pools
+
+**Enhanced Governance Around Instance Actions**
+
+- User role permission set expanded to include governance around Instance actions
+- Rights to clone Instances, run scripts or Workflows, import images, and more can now be controlled through |morpheus| RBAC functionality
+
+.. image:: /images/releases/423/userRoles.png
+
 New Features
 ============
 
@@ -40,7 +62,6 @@ New Features
 - Security: General security enhancements
 - Tasks: Added the option to ignore SSL errors for HTTP Tasks to allow REST calls to systems without a trusted SSL certificate
 - UI: Environment Tag field relabeled as "Environment" on Group tab of the Instance provisioning wizard
-- UI: Advanced views and filtering added to networks list page (Infrastructure > Networks)
 - UI: The Clouds list page (Infrastructure > Clouds) is now paginated
 - UI: Advanced and customizable views added to many new UI pages including the integrations list page (Administration > Integration), the network domains tab (Infrastructure > Network > Domains), the network groups tab (Infrastructure > Network > Network Groups), the network IP pools tab (Infrastructure > Network > IP Pools), the network proxies tab (Infrastructure > Network > Proxies), the network routers tab (Infrastructure > Network > Routers), the network security groups tab (Infrastructure > Network > Security Groups), the network list page (Infrastructure > Network), the user groups list page (Administration > Users > User Groups), the users list page (Administration > Users). In addition, these capabilities and views have been standardized across supported pages
 - vCloud Director: Veeam servers can now be selected as backup destinations for vCD Clouds, restore actions are also supported
