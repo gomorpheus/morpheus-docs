@@ -15,20 +15,21 @@ Highlights
 New Features
 ------------
 
-- .. toggle-header:: :header: Amazon: **Create and manage Amazon Internet Gateways**
+- .. toggle-header:: :header: Amazon: **Amazon Internet Gateway support added**
 
-      Amazon Internet Gateway Discovery and CRUD support added.
-       - Discovery & synchronization of existing Amazon Internet Gateways
-       - Create new Amazon Internet Gateways & attach to VPC
-       - Edit Existing Amazon Internet Gateways Name, VPC Attachment
-       - Delete Amazon Internet Gateways
-      
-      .. image:: /images/clouds/aws/network/gatewayTest.gif
-      
-      .. note:: ``Infrastructure: Network Routers`` Role permissions required. 
+     Create and manage Amazon Internet Gateways
+      - Discovery & synchronization of existing Amazon Internet Gateways
+      - Create new Amazon Internet Gateways & attach to VPC
+      - Edit Existing Amazon Internet Gateways Name, VPC Attachment
+      - Delete Amazon Internet Gateways
+     
+     .. image:: /images/clouds/aws/network/gatewayTest.gif
+     
+     .. note:: ``Infrastructure: Network Routers`` Role permissions required. 
         
-- .. toggle-header:: :header: Amazon: **Create and manage Amazon VPC Routers including syncing, creating and managing Routes**
+- .. toggle-header:: :header: Amazon: **AWS VPC Router Integration added**
       
+     Create and manage Amazon VPC Routers including syncing, creating and managing Routes
       - Discovery & synchronization of existing Amazon VPC Routers
       - Automatic creation of Amazon VPC Router when creating a new VPC from |morpheus|
       - Discovery & synchronization of existing Routes
@@ -65,18 +66,14 @@ New Features
            
 - .. toggle-header:: :header: Amazon: **Unattached AWS Volume sync added**
 
-      Unattached AWS EBS Volumes are now synced to improve visibility and tracking of orphaned resources. Volume data is available via API/CLI, Reports and in ``/infrastructure/storage/volumes``
+     Unattached AWS EBS Volumes are now synced to improve visibility and tracking of orphaned resources. Volume data is available via API/CLI, Reports and in ``/infrastructure/storage/volumes``
 
-      .. image:: /images/clouds/aws/storage/Storage-Volumes-Morpheus.png
+     .. image:: /images/clouds/aws/storage/Storage-Volumes-Morpheus.png
       
 - Approvals: Added estimated pricing details to approval list and detail pages (Operations > Approvals) as well as to the price field for the request in ServiceNow for clients routing their approvals through a ServiceNow integration
-
-
-.. - Apps: Error output exposed on App detail page in the event of a provisioning issue
-.. - Apps: Process history details added to App detail page with tf process output ? 
-
-- .. toggle-header:: :header: Apps: Provisioning Process/Status bar, VM & Container lists, Summary tab added to App detail page
-      
+- .. toggle-header:: :header: Apps: **Provisioning Process/Status bar, VM & Container lists, Summary tab added to App detail page**
+     
+     App Details page enhancements for greater visibility of App provisioning status, App resources visibility and management
       - App Provisioning Process/Status bar added to App Detail Pages
       - App VM & Container lists added to App Detail Pages with list, stats and actions for all nodes in an App
       -  App Summary tab added to App details page with App statistics
@@ -84,22 +81,22 @@ New Features
       .. image:: /images/provisioning/apps/423-Apps-Morpheus.png
 
 - .. toggle-header:: :header: Azure: **Added support for Azure Run Command**
+     
+     Facilitates Agent Install and other RPC commands to execute through Azure Run Command when SSH or WinRM is not available/accessible/open.
+      - "RPC MODE" setting added to cloud config with ``Azure Run Command`` and legacy ``SSH/WinRM`` options
 
-         - Enables Agent Install and other RPC commands to execute through Azure Run Command when SSH or WinRM is not available/accessible/open.
-         - "RPC MODE" setting added to cloud config with ``Azure Run Command`` and legacy ``SSH/WinRM`` options
-
-         .. image:: /images/clouds/azure/azureRunCmd.png
+      .. image:: /images/clouds/azure/azureRunCmd.png
        
 - Backups: Backup Jobs can be scoped to specific Tenants ("ACTIONS" > Permissions from the Backup Jobs list page)
 - Blueprints: Form validation improved when creating or editing Blueprints to specifically highlight the invalid field rather than give a generic validation warning
 - .. toggle-header:: :header: Clouds: **``NO PROXY`` option added to Cloud configurations**
-         
-         -``NO PROXY`` field added to ``Provisioning Command`` section of Cloud configurations
-         - Adds the ability to bypass configured proxy traversal for specified IP addresses or hosts
-         - Accepts list of ip addresses or name servers to exclude proxy traversal for. Typically locally routable servers are excluded.
-         
-         .. image:: /images/clouds/Cloud-Morpheus-NOPROXY.png
-         
+
+     Adds the ability to bypass configured proxy traversal for specified IP addresses or hosts
+      - ``NO PROXY`` field added to ``Provisioning Command`` section of Cloud configurations
+      - Accepts list of ip addresses or name servers to exclude proxy traversal for. Typically locally routable servers are excluded.
+
+      .. image:: /images/clouds/Cloud-Morpheus-NOPROXY.png
+       
 - Clusters: Scope Clusters by Group, Service Plan, or Tenant by clicking Permissions from inside the "MORE" dropdown on the Clusters list page
 - Identity Sources: Identity source integrations can now be configured from the Users page (Administration > Users). This allows Tenant administrators to configure these integrations without giving access to the Tenants page (Administration > Tenants), which exposes information on other Tenants
 - Networks: Added capability to activate and deactivate network security groups when creating or editing (Infrastructure > Networks > Security Groups)
@@ -122,8 +119,7 @@ New Features
 - Terraform: v0.12 support added
 - .. toggle-header:: :header: UI: **Expansion of Advanced Lists Tables** 
 
-      Advanced Lists tables added to:
-
+     Advanced Lists tables added to:
       - Integrations (Administration > Integration)
       - Network Domains (Infrastructure > Network > Domains)
       - Network Groups (Infrastructure > Network > Network Groups)
@@ -134,12 +130,12 @@ New Features
       - Networks (Infrastructure > Network)
       - User Groups (Administration > Users > User Groups)
       - Users (Administration > Users)
-      
+
 - UI: ``Environment Tag`` field relabeled as ``Environment`` on GROUP tab of the Instance provisioning wizard and on SETUP tab of the App provisioning wizard
 - UI: Improved pagination for Infrastructure > Clouds list
 - .. toggle-header:: :header: Veeam: **vCloud Director (vCD) support added** 
      
-      Veeam Integraiton can now be scoped to vCloud Director clouds
+     Veeam Integraiton can now be scoped to vCloud Director clouds
       - Veeam Backup creation added for vCD Instances
       - Restore from Veeam Backup support added for vCD Instances
       
@@ -178,3 +174,9 @@ CLI Enhancements
 
 CLI Fixes
 ---------
+
+
+
+
+.. - Apps: Error output exposed on App detail page in the event of a provisioning issue
+.. - Apps: Process history details added to App detail page with tf process output ? 
