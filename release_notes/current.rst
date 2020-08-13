@@ -15,8 +15,12 @@ Highlights
 New Features
 ============
 
+.. toggle-header::
+    :header: **Amazon** Create and manage Amazon Internet Gateways
 
-- Amazon: Create and manage Amazon Internet Gateways 
+        .. image:: /images/clouds/aws/network/gatewayTest.png
+        
+        
 - Amazon: Create and manage Amazon VPC Routers including syncing, creating and managing Routes
 - Amazon: |morpheus| can now create or sync in a correctly-configured AWS Costing and Utilization Report (CUR) needed to consume highly-granular invoicing data in |morpheus|, previously these needed to be configured in AWS
 - Amazon: Unattached AWS volumes now sync to |morpheus|
