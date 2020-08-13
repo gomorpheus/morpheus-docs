@@ -7,13 +7,13 @@
 .. IMPORTANT:: Review :ref:`compatibility` before installing or upgrading to |morpheus| |morphver|.
 
 |morpheus| UI Updates
-*********************
+=====================
 
 Highlights
-==========
+----------
 
 New Features
-============
+------------
 
 - .. toggle-header:: :header: Amazon: **Create and manage Amazon Internet Gateways**
 
@@ -50,8 +50,8 @@ New Features
         - DESTINATION specification 
       
       .. image:: /images/clouds/aws/network/Networks-Routers-Morpheus.png
-      
-- .. toggle-header:: :header: Amazon: COSTING REPORT automation added to simplify AWS Costing and Utilization Report (CUR) configuration for highly-granular costing and invoicing data.
+     
+- .. toggle-header:: :header: Amazon: **COSTING REPORT automation added to simplify AWS Costing and Utilization Report (CUR) configuration for highly-granular costing and invoicing data**
 
      |morpheus| now sync's existing and can create new correctly-configured ``AWS Costing and Utilization Reports (CUR)`` needed to consume highly-granular invoicing data in |morpheus|.
       - Costing and Utilization Report sync and creaiton added
@@ -62,14 +62,22 @@ New Features
          - Existing S3 Buckets can now be selected in the COSTING BUCKET field
          - New S3 Bucket creation option added for COSTING BUCKET
            - COSTING BUCKET REGION updated to pre-populated Region Select List
+           
+- .. toggle-header:: :header: Amazon: **Unattached AWS Volume sync added**
 
-- Amazon: Unattached AWS Volume sync added
+      Unattached AWS EBS Volumes are now synced to improve visibility and tracking of orphaned resources. Volume data is available via API/CLI, Reports and in ``/infrastructure/storage/volumes``
+
+      .. image:: /images/clouds/aws/storage/Storage-Volumes-Morpheus.png
+      
 - Approvals: Added estimated pricing details to approval list and detail pages (Operations > Approvals) as well as to the price field for the request in ServiceNow for clients routing their approvals through a ServiceNow integration
-- Apps: Error output exposed on App detail page in the event of a provisioning issue
-- Apps: Process history details added to App detail page with tf process output ? 
+
+
+.. - Apps: Error output exposed on App detail page in the event of a provisioning issue
+.. - Apps: Process history details added to App detail page with tf process output ? 
+
 - Apps: Provisioning process/status bar added to App detail page
-- Apps: VM & Container lists added to App Detail Pages with list, stats an actions for all nodes in an App
--  Apps: Summary tab added to App details page with App statistics 
+- Apps: VM & Container lists added to App Detail Pages with list, stats and actions for all nodes in an App
+-  Apps: Summary tab added to App details page with App statistics
 - Azure: Added support for Azure Run Command as "RPC Mode" setting in addition to SSH/WinRM which previously existed
 - Backups: Backup Jobs can be scoped to specific Tenants ("ACTIONS" > Permissions from the Backup Jobs list page)
 - Blueprints: Form validation improved when creating or editing Blueprints to specifically highlight the invalid field rather than give a generic validation warning
@@ -94,24 +102,42 @@ New Features
 - Terraform: Implemented template validation in App wizard prior to review step.
 - Terraform: Morpheus now continuously refresh state looking for drift Terraform: Preview section added to Blueprint and App Modals
 - Terraform: v0.12 support added
-- UI: Advanced and customizable views added to many new UI pages including the integrations list page (Administration > Integration), the network domains tab (Infrastructure > Network > Domains), the network groups tab (Infrastructure > Network > Network Groups), the network IP pools tab (Infrastructure > Network > IP Pools), the network proxies tab (Infrastructure > Network > Proxies), the network routers tab (Infrastructure > Network > Routers), the network security groups tab (Infrastructure > Network > Security Groups), the network list page (Infrastructure > Network), the user groups list page (Administration > Users > User Groups), the users list page (Administration > Users). In addition, these capabilities and views have been standardized across supported pages
-- UI: Advanced views and filtering added to networks list page (Infrastructure > Networks)
-- UI: Environment Tag field relabeled as "Environment" on Group tab of the Instance provisioning wizard
-- UI: The Clouds list page (Infrastructure > Clouds) is now paginated
-- vCloud Director: Veeam servers can now be selected as backup destinations for vCD Clouds, restore actions are also supported
+- .. toggle-header:: :header: UI: **Expansion of Advanced Lists Tables** 
+
+      Advanced Lists tables added to:
+
+      - Integrations (Administration > Integration)
+      - Network Domains (Infrastructure > Network > Domains)
+      - Network Groups (Infrastructure > Network > Network Groups)
+      - Network IP pools (Infrastructure > Network > IP Pools)
+      - Network Proxies (Infrastructure > Network > Proxies)
+      - Network Routers (Infrastructure > Network > Routers)
+      - Network Security Groups (Infrastructure > Network > Security Groups)
+      - Networks (Infrastructure > Network)
+      - User Groups (Administration > Users > User Groups)
+      - Users (Administration > Users)
+      
+- UI: ``Environment Tag`` field relabeled as ``Environment`` on GROUP tab of the Instance provisioning wizard and on SETUP tab of the App provisioning wizard
+- UI: Improved pagination for Infrastructure > Clouds list
+- .. toggle-header:: :header: Veeam: **vCloud Director (vCD) support added** 
+     
+      Veeam Integraiton can now be scoped to vCloud Director clouds
+      - Veeam Backup creation added for vCD Instances
+      - Restore from Veeam Backup support added for vCD Instances
+      
 - Whitelabeling: Improved handling of whitelabel images for the login screen to prevent low image quality in specific scenarios
 
 Fixes
-=====
+-----
 
 - Roles: Access to the Network Proxies tab (Infrastructure > Networks > Proxies) is now controlled exclusively by the "Infrastructure: Network Proxies" feature permission
 - Roles: Access to monitoring settings (Administration > Monitoring) is now controlled exclusively by the "Admin: Monitoring Settings" feature permission
 
 |morpheus| API Updates
-**********************
+======================
 
 API Enhancements
-================
+----------------
 
 - Azure: Added granular invoice and line item costing as we currently have for Amazon and Oracle Clouds
 - Azure: CSP pricing support
@@ -121,16 +147,16 @@ API Enhancements
 - Users: Users across all Tenants can now be returned with a single call
 
 API Fixes
-=========
+---------
 
 |morpheus| CLI Updates
-**********************
+======================
 
 CLI Enhancements
-================
+----------------
 
 - Networks: Security Groups can now be activated and deactivated
 - User Sources: External Login and Allow Custom Mappings can now be displayed
 
 CLI Fixes
-=========
+---------

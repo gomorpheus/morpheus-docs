@@ -8,7 +8,7 @@ As organizations scale their cloud environments, they often need to devise metho
 
 This guide will go through Morpheus tagging features and best practices, as well as include provisioning examples from some of the most commonly integrated clouds.
 
-.. NOTE:: Tag syncing is a two-way street in Morpheus for supported clouds. At the time of this writing (Morpheus 4.2.2), tag syncing is supported in Amazon, Azure, Google, VMware, and Alibaba Clouds.
+.. NOTE:: Tag syncing is bi-directional in Morpheus for supported clouds. Tag syncing is currently supported in Amazon, Azure, Google, VMware, and Alibaba Clouds.
 
 Tagging on Provisioning
 ^^^^^^^^^^^^^^^^^^^^^^^
