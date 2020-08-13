@@ -113,137 +113,137 @@ In |morpheus| version 4.2.3 and higher, |morpheus| can do most of the legwork to
 .. content-tabs::
 
     .. tab-container:: tab1
-    :title: |morpheus| 4.2.3 and Above
+        :title: v4.2.3 and Above
 
-    In |morpheus| 4.2.3+, edit the Amazon cloud integration or create a new Amazon Cloud to get started. On the Create/Edit Cloud modal, open the advanced options section. The relevant fields for configuring invoice costing are shown below:
+        In |morpheus| 4.2.3+, edit the Amazon cloud integration or create a new Amazon Cloud to get started. On the Create/Edit Cloud modal, open the advanced options section. The relevant fields for configuring invoice costing are shown below:
 
-    .. image:: /images/clouds/aws/invoiceCosting/0billingFields.png
+        .. image:: /images/clouds/aws/invoiceCosting/0billingFields.png
 
-    In the example case above, a new report and a new S3 bucket are created but |morpheus| will also sync in buckets and reports that meet the required parameters if they already exist. For reports to be synced they must meet the requirements listed below:
+        In the example case above, a new report and a new S3 bucket are created but |morpheus| will also sync in buckets and reports that meet the required parameters if they already exist. For reports to be synced they must meet the requirements listed below:
 
-    - Hourly time granularity
-    - Include resource IDs
-    - GZIP compression
-    - CSV format
+        - Hourly time granularity
+        - Include resource IDs
+        - GZIP compression
+        - CSV format
 
-    If you don't currently have a report meeting those criteria, you can create one by selecting "New Report" from the REPORT NAME dropdown menu. A new S3 bucket can be created in similar fashion if needed. You may also want to review the section below on configuration for |morpheus| 4.2.2 and below to note policies that will be applied to your selected bucket and Cost Explorer permissions required for the AWS cloud user associated with the |morpheus| Cloud integration.
+        If you don't currently have a report meeting those criteria, you can create one by selecting "New Report" from the REPORT NAME dropdown menu. A new S3 bucket can be created in similar fashion if needed. You may also want to review the section below on configuration for |morpheus| 4.2.2 and below to note policies that will be applied to your selected bucket and Cost Explorer permissions required for the AWS cloud user associated with the |morpheus| Cloud integration.
 
-    In the end, the following fields must be filled in order to complete the process:
+        In the end, the following fields must be filled in order to complete the process:
 
-    - **COSTING BUCKET:** The S3 bucket name
-    - **COSTING REGION:** The region the bucket was created in
-    - **COSTING FOLDER:** This is the report path prefix if you configured one earlier
-    - **COSTING REPORT NAME:** The name given to your CUR report
-    - **COSTING KEY:** If the IAM user for this AWS cloud integration does not have access to the S3 bucket with the CUR data, enter the AWS Key ID for an IAM user with access
-    - **COSTING SECRET:** If the IAM user for this AWS cloud integration does not have access to the S3 bucket with the CUR data, enter the AWS Secret Key for the IAM account whose Key ID you entered in the previous field
-    - **LINKED ACCOUNT ID:** If the IAM user for this AWS cloud integration does not have access to the S3 bucket with the CUR data, enter the AWS account number that the IAM user from the above step resides in
+        - **COSTING BUCKET:** The S3 bucket name
+        - **COSTING REGION:** The region the bucket was created in
+        - **COSTING FOLDER:** This is the report path prefix if you configured one earlier
+        - **COSTING REPORT NAME:** The name given to your CUR report
+        - **COSTING KEY:** If the IAM user for this AWS cloud integration does not have access to the S3 bucket with the CUR data, enter the AWS Key ID for an IAM user with access
+        - **COSTING SECRET:** If the IAM user for this AWS cloud integration does not have access to the S3 bucket with the CUR data, enter the AWS Secret Key for the IAM account whose Key ID you entered in the previous field
+        - **LINKED ACCOUNT ID:** If the IAM user for this AWS cloud integration does not have access to the S3 bucket with the CUR data, enter the AWS account number that the IAM user from the above step resides in
 
-    .. NOTE:: If the AWS cloud account is a GovCloud account, enter the COSTING KEY, COSTING SECRET, and LINKED ACCOUNT ID for the master commercial account your GovCloud account is associated with.
+        .. NOTE:: If the AWS cloud account is a GovCloud account, enter the COSTING KEY, COSTING SECRET, and LINKED ACCOUNT ID for the master commercial account your GovCloud account is associated with.
     
 
 
-  .. tab-container:: tab2
-      :title: |morpheus| 4.2.2 and Below
+    .. tab-container:: tab2
+        :title: v4.2.2 and Below
 
-      Begin by logging into the `AWS Billing Console <https://console.aws.amazon.com/billing/home?#/>`_, then click :guilabel:`Create report`.
+        Begin by logging into the `AWS Billing Console <https://console.aws.amazon.com/billing/home?#/>`_, then click :guilabel:`Create report`.
 
-      .. image:: /images/clouds/aws/invoiceCosting/1billingConsole.png
+        .. image:: /images/clouds/aws/invoiceCosting/1billingConsole.png
 
-      Include a name for your report and mark the box to "Include resource IDs". |morpheus| uses these resource IDs to map costs to various resources. Click :guilabel:`Next`.
+        Include a name for your report and mark the box to "Include resource IDs". |morpheus| uses these resource IDs to map costs to various resources. Click :guilabel:`Next`.
 
-      .. image:: /images/clouds/aws/invoiceCosting/2reportConfig.png
+        .. image:: /images/clouds/aws/invoiceCosting/2reportConfig.png
 
-      On the following page, begin by identifying an S3 bucket to house reports. Click :guilabel:`Configure` near the top of the page and select an existing bucket or create a new one.
+        On the following page, begin by identifying an S3 bucket to house reports. Click :guilabel:`Configure` near the top of the page and select an existing bucket or create a new one.
 
-      .. image:: /images/clouds/aws/invoiceCosting/4chooseBucket.png
+        .. image:: /images/clouds/aws/invoiceCosting/4chooseBucket.png
 
-      After identifying the bucket, you must mark the box to accept the default policy being applied to the bucket. Click :guilabel:`Save`.
+        After identifying the bucket, you must mark the box to accept the default policy being applied to the bucket. Click :guilabel:`Save`.
 
-      .. image:: /images/clouds/aws/invoiceCosting/5confirmPolicy.png
+        .. image:: /images/clouds/aws/invoiceCosting/5confirmPolicy.png
 
-      The default policy applied to the bucket is below:
+        The default policy applied to the bucket is below:
 
-      .. code-block:: bash
+        .. code-block:: bash
 
-        {
-          "Version": "2008-10-17",
-          "Id": "SomeID",
-          "Statement": [
-            {
-              "Sid": "SomeStmtID",
-              "Effect": "Allow",
-              "Principal": {
-                "Service": "billingreports.amazonaws.com"
+          {
+            "Version": "2008-10-17",
+            "Id": "SomeID",
+            "Statement": [
+              {
+                "Sid": "SomeStmtID",
+                "Effect": "Allow",
+                "Principal": {
+                  "Service": "billingreports.amazonaws.com"
+                },
+                "Action": [
+                  "s3:GetBucketAcl",
+                  "s3:GetBucketPolicy"
+                ],
+                "Resource": "arn:aws:s3:::bucket-name"
               },
-              "Action": [
-                "s3:GetBucketAcl",
-                "s3:GetBucketPolicy"
-              ],
-              "Resource": "arn:aws:s3:::bucket-name"
-            },
-            {
-              "Sid": "SomeStmtID",
-              "Effect": "Allow",
-              "Principal": {
-                "Service": "billingreports.amazonaws.com"
-              },
-              "Action": [
-                "s3:PutObject"
-              ],
-              "Resource": "arn:aws:s3:::bucket-name/*"
-            }
-          ]
-        }
+              {
+                "Sid": "SomeStmtID",
+                "Effect": "Allow",
+                "Principal": {
+                  "Service": "billingreports.amazonaws.com"
+                },
+                "Action": [
+                  "s3:PutObject"
+                ],
+                "Resource": "arn:aws:s3:::bucket-name/*"
+              }
+            ]
+          }
 
-      After choosing a bucket, accepting the default policy, and saving the change, you're brought back to the report delivery page. By default, CUR reports are saved to a folder at the path ``my-report-name/date-folder``. If this bucket already contains CUR reports, you may want to specify a prefix path in the "Report path prefix" field. Outside of this field, use the default values as shown in the screenshot below, then click :guilabel:`Next`.
+        After choosing a bucket, accepting the default policy, and saving the change, you're brought back to the report delivery page. By default, CUR reports are saved to a folder at the path ``my-report-name/date-folder``. If this bucket already contains CUR reports, you may want to specify a prefix path in the "Report path prefix" field. Outside of this field, use the default values as shown in the screenshot below, then click :guilabel:`Next`.
 
-      .. image:: /images/clouds/aws/invoiceCosting/6completeDelivery.png
+        .. image:: /images/clouds/aws/invoiceCosting/6completeDelivery.png
 
-      On the following page, make your final review and click :guilabel:`Review and Complete`. Following this, you will see your newly configured report in the list of CUR report(s).
+        On the following page, make your final review and click :guilabel:`Review and Complete`. Following this, you will see your newly configured report in the list of CUR report(s).
 
-      In addition, the AWS cloud user associated with the integration in |morpheus| needs IAM policy permission to access Cost Explorer. Attach a policy like the one below to this cloud user:
+        In addition, the AWS cloud user associated with the integration in |morpheus| needs IAM policy permission to access Cost Explorer. Attach a policy like the one below to this cloud user:
 
-      .. code-block:: bash
+        .. code-block:: bash
 
-        {
-          "Version": "2012-10-17",
-          "Id": "SomeID",
-          "Statement": [
-            {
-              "Sid": "SomeStmtID",
-              "Effect": "Allow",
-              "Action": [
-                "ce:DescribeReportDefinitions",
-                "ce:DescribeCostCategoryDefinition",
-                "ce:ListCostCategoryDefinitions"
-              ],
-              "Resource": [
-                "*"
-              ]
-            }
-          ]
-        }
+          {
+            "Version": "2012-10-17",
+            "Id": "SomeID",
+            "Statement": [
+              {
+                "Sid": "SomeStmtID",
+                "Effect": "Allow",
+                "Action": [
+                  "ce:DescribeReportDefinitions",
+                  "ce:DescribeCostCategoryDefinition",
+                  "ce:ListCostCategoryDefinitions"
+                ],
+                "Resource": [
+                  "*"
+                ]
+              }
+            ]
+          }
 
-      .. NOTE:: If the Cost Explorer permissions are granted at the master account level, the user will see all costs for each member account; if granted at the member account, only the costs for that member account are available.
+        .. NOTE:: If the Cost Explorer permissions are granted at the master account level, the user will see all costs for each member account; if granted at the member account, only the costs for that member account are available.
 
-      With the AWS console configuration steps complete, we can move back into |morpheus|. Keep in mind it is only necessary to set up one AWS cloud for Costing since we process all records in the CUR report.
+        With the AWS console configuration steps complete, we can move back into |morpheus|. Keep in mind it is only necessary to set up one AWS cloud for Costing since we process all records in the CUR report.
 
-      Once back in |morpheus|, add or edit the relevant AWS cloud integration (Infrastructure > Clouds > :guilabel:`+ ADD` OR click the pencil icon in the row for the chosen AWS integration). Expand the Advanced Options drawer and complete the following fields:
+        Once back in |morpheus|, add or edit the relevant AWS cloud integration (Infrastructure > Clouds > :guilabel:`+ ADD` OR click the pencil icon in the row for the chosen AWS integration). Expand the Advanced Options drawer and complete the following fields:
 
-      - **COSTING BUCKET:** The S3 bucket name
-      - **COSTING REGION:** The region the bucket was created in
-      - **COSTING FOLDER:** This is the report path prefix if you configured one earlier
-      - **COSTING REPORT NAME:** The name given to your CUR report
-      - **COSTING KEY:** If the IAM user for this AWS cloud integration does not have access to the S3 bucket with the CUR data, enter the AWS Key ID for an IAM user with access
-      - **COSTING SECRET:** If the IAM user for this AWS cloud integration does not have access to the S3 bucket with the CUR data, enter the AWS Secret Key for the IAM account whose Key ID you entered in the previous field
-      - **LINKED ACCOUNT ID:** If the IAM user for this AWS cloud integration does not have access to the S3 bucket with the CUR data, enter the AWS account number that the IAM user from the above step resides in
+        - **COSTING BUCKET:** The S3 bucket name
+        - **COSTING REGION:** The region the bucket was created in
+        - **COSTING FOLDER:** This is the report path prefix if you configured one earlier
+        - **COSTING REPORT NAME:** The name given to your CUR report
+        - **COSTING KEY:** If the IAM user for this AWS cloud integration does not have access to the S3 bucket with the CUR data, enter the AWS Key ID for an IAM user with access
+        - **COSTING SECRET:** If the IAM user for this AWS cloud integration does not have access to the S3 bucket with the CUR data, enter the AWS Secret Key for the IAM account whose Key ID you entered in the previous field
+        - **LINKED ACCOUNT ID:** If the IAM user for this AWS cloud integration does not have access to the S3 bucket with the CUR data, enter the AWS account number that the IAM user from the above step resides in
 
-      .. NOTE:: If the AWS cloud account is a GovCloud account, enter the COSTING KEY, COSTING SECRET, and LINKED ACCOUNT ID for the master commercial account your GovCloud account is associated with.
+        .. NOTE:: If the AWS cloud account is a GovCloud account, enter the COSTING KEY, COSTING SECRET, and LINKED ACCOUNT ID for the master commercial account your GovCloud account is associated with.
 
-      .. image:: /images/clouds/aws/invoiceCosting/7morphConfig.png
+        .. image:: /images/clouds/aws/invoiceCosting/7morphConfig.png
 
-      Save changes to your cloud integration.
+        Save changes to your cloud integration.
 
-      .. IMPORTANT:: It may take as long as one hour for |morpheus| to process the next CUR report.
+        .. IMPORTANT:: It may take as long as one hour for |morpheus| to process the next CUR report.
 
-      .. include:: iampolicies.rst
+        .. include:: iampolicies.rst
