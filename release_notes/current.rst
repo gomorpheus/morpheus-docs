@@ -70,7 +70,10 @@ New Features
 
      .. image:: /images/clouds/aws/storage/Storage-Volumes-Morpheus.png
       
-- Approvals: Added estimated pricing details to approval list and detail pages (Operations > Approvals) as well as to the price field for the request in ServiceNow for clients routing their approvals through a ServiceNow integration
+- .. toggle-header:: :header: Approvals: **Estimated pricing details to Approvals**
+
+     Added estimated pricing details to Approvals list and detail pages (Operations > Approvals) as well as to the price field for the request in ServiceNow for clients routing their approvals through a ServiceNow integration.
+    
 - .. toggle-header:: :header: Apps: **Provisioning Process/Status bar, VM & Container lists, Summary tab added to App detail page**
      
      App Details page enhancements for greater visibility of App provisioning status, App resources visibility and management
@@ -78,7 +81,7 @@ New Features
       - App VM & Container lists added to App Detail Pages with list, stats and actions for all nodes in an App
       -  App Summary tab added to App details page with App statistics
       
-      .. image:: /images/provisioning/apps/423-Apps-Morpheus.png
+     .. image:: /images/provisioning/apps/423-Apps-Morpheus.png
 
 - .. toggle-header:: :header: Azure: **Added support for Azure Run Command**
      
@@ -87,8 +90,14 @@ New Features
 
       .. image:: /images/clouds/azure/azureRunCmd.png
        
-- Backups: Backup Jobs can be scoped to specific Tenants ("ACTIONS" > Permissions from the Backup Jobs list page)
-- Blueprints: Form validation improved when creating or editing Blueprints to specifically highlight the invalid field rather than give a generic validation warning
+- .. toggle-header:: :header: Backups: Jobs: **Tenant Permissions added**
+     
+     Backup Jobs can be scoped to specific Tenants ("ACTIONS" > Permissions from the Backup Jobs list page)
+     
+- .. toggle-header:: :header:  Blueprints: **Improved Validaiton**
+ 
+     Form validation improved when creating or editing Blueprints to specifically highlight the invalid field rather than give a generic validation warning
+     
 - .. toggle-header:: :header: Clouds: **``NO PROXY`` option added to Cloud configurations**
 
      Adds the ability to bypass configured proxy traversal for specified IP addresses or hosts
