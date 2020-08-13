@@ -92,5 +92,3 @@ Integrations
 .. important:: VirtualBox, VirtuSteam, and MetaCloud Cloud Types are no longer supported.
 
 .. include:: compatibility_table.rst
-
-.. note:: Non-listed versions may be compatible but are not verified.

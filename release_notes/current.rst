@@ -75,17 +75,35 @@ New Features
 .. - Apps: Error output exposed on App detail page in the event of a provisioning issue
 .. - Apps: Process history details added to App detail page with tf process output ? 
 
-- Apps: Provisioning process/status bar added to App detail page
-- Apps: VM & Container lists added to App Detail Pages with list, stats and actions for all nodes in an App
--  Apps: Summary tab added to App details page with App statistics
-- Azure: Added support for Azure Run Command as "RPC Mode" setting in addition to SSH/WinRM which previously existed
+- .. toggle-header:: :header: Apps: Provisioning Process/Status bar, VM & Container lists, Summary tab added to App detail page
+      
+      - App Provisioning Process/Status bar added to App Detail Pages
+      - App VM & Container lists added to App Detail Pages with list, stats and actions for all nodes in an App
+      -  App Summary tab added to App details page with App statistics
+      
+      .. image:: /images/provisioning/apps/423-Apps-Morpheus.png
+
+- .. toggle-header:: :header: Azure: **Added support for Azure Run Command**
+
+         - Enables Agent Install and other RPC commands to execute through Azure Run Command when SSH or WinRM is not available/accessible/open.
+         - "RPC MODE" setting added to cloud config with ``Azure Run Command`` and legacy ``SSH/WinRM`` options
+
+         .. image:: /images/clouds/azure/azureRunCmd.png
+       
 - Backups: Backup Jobs can be scoped to specific Tenants ("ACTIONS" > Permissions from the Backup Jobs list page)
 - Blueprints: Form validation improved when creating or editing Blueprints to specifically highlight the invalid field rather than give a generic validation warning
-- Clouds: Added the ability to bypass configured proxy traversal for a specific group of IP addresses or name servers
+- .. toggle-header:: :header: Clouds: **``NO PROXY`` option added to Cloud configurations**
+         
+         -``NO PROXY`` field added to ``Provisioning Command`` section of Cloud configurations
+         - Adds the ability to bypass configured proxy traversal for specified IP addresses or hosts
+         - Accepts list of ip addresses or name servers to exclude proxy traversal for. Typically locally routable servers are excluded.
+         
+         .. image:: /images/clouds/Cloud-Morpheus-NOPROXY.png
+         
 - Clusters: Scope Clusters by Group, Service Plan, or Tenant by clicking Permissions from inside the "MORE" dropdown on the Clusters list page
 - Identity Sources: Identity source integrations can now be configured from the Users page (Administration > Users). This allows Tenant administrators to configure these integrations without giving access to the Tenants page (Administration > Tenants), which exposes information on other Tenants
 - Networks: Added capability to activate and deactivate network security groups when creating or editing (Infrastructure > Networks > Security Groups)
-- NSX-T: Added ability to created, manage, and delete NSX-T IP Pools from |morpheus|
+- NSX-T: Added ability to created, manage and delete NSX-T IP Pools from |morpheus|
 - NSX-T: Added support for version 3
 - NSX-T: Create, manage and delete NSX-T load balancers from the scale tab of the Instance detail page
 - OpenTelekom Cloud: A floating IP can now have variable bandwidth, option is available in the Instance and App provisioning wizards
@@ -94,9 +112,9 @@ New Features
 - Reports: Added the Software Inventory By Server report to list out all software running on each server within the chosen cloud
 - Roles: "Group" feature permission added to "Infrastructure: Clouds". When selected, the user will only see Clouds in their assigned Groups when viewing the Cloud list page (Infrastructure > Clouds)
 - Roles: Added controls around Instance actions (Provisioning > Instance > Selected Instance > Actions): "Provisioning: Clone Instance", "Provisioning: Execute Script", "Provisioning: Execute Task", Provisioning: Execute Workflow", "Provisioning: Import Image"
-- Roles: User roles can be manually assigned for users coming through an identity source integration rather than being locked to the automatic mapping based on their role in the identity service
+- Roles: User Roles can be manually assigned for Users coming through an Identity Source Integration rather than being locked to the automatic mapping based on their role in the Identity Provider
 - Security: General security enhancements
-- Tasks: Added the option to ignore SSL errors for HTTP Tasks to allow REST calls to systems without a trusted SSL certificate
+- Tasks: Added "Ignore SSL errors" flag for HTTP Tasks to allow REST calls to systems without trusted SSL certificates
 - Terraform: All tf app created resources are now inventoried  Terraform: Added support for generated keypairs in terraform
 - Terraform: Azure support added
 - Terraform: Implemented template validation in App wizard prior to review step.
