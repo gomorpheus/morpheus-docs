@@ -22,7 +22,7 @@ New Features
 - Amazon: Unattached AWS volumes now sync to |morpheus|
 - Approvals: Added estimated pricing details to approval list and detail pages (Operations > Approvals) as well as to the price field for the request in ServiceNow for clients routing their approvals through a ServiceNow integration
 - Apps: Error output exposed on App detail page in the event of a provisioning issue
-- Apps: Process history details added to App detail page with tf process output 
+- Apps: Process history details added to App detail page with tf process output ? 
 - Apps: Provisioning process/status bar added to App detail page
 - Apps: VM & Container lists added to App Detail Pages with list, stats an actions for all nodes in an App Apps: Summary tab added to App details page with App statistics 
 - Azure: Added support for Azure Run Command as "RPC Mode" setting in addition to SSH/WinRM which previously existed

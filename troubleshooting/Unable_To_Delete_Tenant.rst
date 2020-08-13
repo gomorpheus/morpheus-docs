@@ -1,5 +1,5 @@
 Unable to Delete Tenant
-========================
+=======================
 
 Problem
   When trying to delete a tenant, a message stating manage resources must be removed or other error occurs and the tenant is not deleted. The tenant may be stuck in a deleting status or return to OK status after delete attempt.
