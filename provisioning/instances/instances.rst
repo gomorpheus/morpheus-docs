@@ -30,7 +30,7 @@ Instances
         .. tab-container:: tab1
             :title: CLI
 
-            .. include:: /provisioning/instances/instancecli.md
+            .. include:: /provisioning/instances/instancecli.rst
 
         .. tab-container:: tab2
             :title: API
