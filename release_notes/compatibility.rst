@@ -51,13 +51,13 @@ Services
 |morphver| Service Version Changes
 ----------------------------------
 
-- Java updated to 8u262^
-- ElasticSearch updated to 7.8.1^
-- Java for ElasticSearch updated to 14.0.2^
-- NGINX updated to 1.19.1^
-- RabbitMQ updated to 3.8.5^
+- Java updated to 8u262 :superscript:`-4`
+- ElasticSearch updated to 7.8.1 :superscript:`-4`
+- Java for ElasticSearch updated to 14.0.2 :superscript:`-4`
+- NGINX updated to 1.19.1 :superscript:`-4`
+- RabbitMQ updated to 3.8.5 :superscript:`-4`
 
-^ Indicates service version changes included in 4.2.2-3 release packages
+ :superscript:`-4` Indicates service version changes included in 4.2.2-3 release packages
 
 |morphver| Service Version Compatibility
 ----------------------------------------
@@ -71,12 +71,12 @@ When externalizing MySQL, Elasticsearch and/or RabbitMQ services, the following 
 +---------------------------------------+-----------------------+-------------------------------------+
 | Percona                               | 5.7, WSREP 31         | n/a                                 |
 +---------------------------------------+-----------------------+-------------------------------------+
-| Elasticsearch                         | 7.x                   | 7.6.2, 7.8.1^                       |
+| Elasticsearch                         | 7.x                   | 7.6.2, 7.8.1 :superscript:`-4`      |
 +---------------------------------------+-----------------------+-------------------------------------+
-| RabbitMQ                              | 3.5-3.8               | 3.8.3, 3.8.5^                       |
+| RabbitMQ                              | 3.5-3.8               | 3.8.3, 3.8.5 :superscript:`-4`      |
 +---------------------------------------+-----------------------+-------------------------------------+
 
-^ Indicates version changes included in 4.2.2-3 release packages
+ :superscript:`-4` Indicates version changes included in 4.2.2-4 release packages
 
 .. important:: Elasticsearch 7.x is required for |morphver|. Refer to :ref:`upgrading` section for more information.
 
@@ -91,9 +91,9 @@ Security
 CVEs Addressed
 --------------
 
-- CVE-2019-11358^
+- CVE-2019-11358 :superscript:`-4`
 
-^ Indicates features and fixes included in 4.2.2-3 release packages
+ :superscript:`-4` Indicates features and fixes included in 4.2.2-3 release packages
 
 Integrations
 ============
