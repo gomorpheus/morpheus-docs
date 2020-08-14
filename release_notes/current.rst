@@ -14,6 +14,11 @@ Highlights
 
 **Terraform Improvements**
 
+- Terraform version 0.12 support added
+- Support added for Azure deployment
+- Template validation added to the Create App wizard
+- |morpheus| now continuously refreshes state looking for drift
+
 **Increased Flexibility with Identity Source Services**
 
 - Identity sources can be added and configured on the Tenant detail page (Administration > Tenants > Selected Tenant) or on the User list page (Administration > Users) allowing Tenant administrators to configure their own identity source services and mapping without exposing information on other Tenants
@@ -149,7 +154,8 @@ New Features
 - Roles: User Roles can be manually assigned for Users coming through an Identity Source Integration rather than being locked to the automatic mapping based on their role in the Identity Provider
 - Security: General security enhancements
 - Tasks: Added "Ignore SSL errors" flag for HTTP Tasks to allow REST calls to systems without trusted SSL certificates
-- Terraform: All tf app created resources are now inventoried Terraform: Added support for generated keypairs in terraform
+- Terraform: All tf app created resources are now inventoried
+- Terraform: Added support for generated keypairs in terraform
 - Terraform: Azure support added
 - Terraform: Implemented template validation in App wizard prior to review step.
 - Terraform: Morpheus now continuously refresh state looking for drift
