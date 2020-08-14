@@ -4,7 +4,11 @@
 |morphver| Release Notes
 *************************
 
-.. IMPORTANT:: Review :ref:`compatibility` before installing or upgrading to |morpheus| |morphver|.
+.. IMPORTANT:: Review :ref:`compatibility` before installing or upgrading to |morpheus| 
+
+.. attention:: |morphver|. v4.2.2-4 updates an incorrect file version found in the 4.2.2-3 build. The 4.2.2-3 packages have been replaced with the updated 4.2.2-4 packages and 4.2.2-3 is no longer available. Installing or upgrading to 4.2.2-3 would not cause any issues but the file version did prevent some of the release updates from applying. All appliances running 4.2.2-3 should upgrade to 4.2.2-4 to ensure the expected updates are applied.
+
+.. note:: |morphver| Release Notes contain updates from v4.2.2-1, as well as v4.2.2-2 (:superscript:`-2`) and v4.2.2-4 (:superscript:`-4`) patch releases. 
 
 |morpheus| UI Updates
 *********************
@@ -52,11 +56,11 @@ Other New Features
 - Kubernetes: Version 1.17 support for Morpheus-type Kubernetes deployments (MKS)
 - NSX-T: Improvements to NSX-T integration including the ability to work with load balancers and virtual servers
 - NSX-V: Improvements to NSX-V integration including the ability to work with load balancers and virtual servers
-- NSX-V: Expanded options for NSX-V load balancer pool members to include more objects available in vCenter :superscript:`-3`
-- NSX-V: Create, manage, and delete NSX-V SSL certificates :superscript:`-3`
-- NSX-V: Create, manage, and delete NSX-V load balancer profiles :superscript:`-3`
-- NSX-V: Create, manage, and delete NSX-V load balancer rule scripts :superscript:`-3`
-- NSX-V: Status of pools and pool nodes is now displayed :superscript:`-3`
+- NSX-V: Expanded options for NSX-V load balancer pool members to include more objects available in vCenter :superscript:`-4`
+- NSX-V: Create, manage, and delete NSX-V SSL certificates :superscript:`-4`
+- NSX-V: Create, manage, and delete NSX-V Load Balancer profiles :superscript:`-4`
+- NSX-V: Create, manage, and delete NSX-V load balancer rule scripts :superscript:`-4`
+- NSX-V: Status of pools and pool nodes is now displayed :superscript:`-4`
 - Nutanix: MAC Address now displayed in the Instance/Server Detail Network tab :superscript:`-2`
 - OCI: Support for Recursive Compartments added :superscript:`-2`
 - Open Telekom Cloud: Added bandwidth option to floating IP selection
@@ -70,40 +74,40 @@ Fixes
 =====
 
 - Amazon: Fixed issue with Amazon Costing Inventory Reports not handling changing rates from previously processed line items correctly. Totals are also now recalculated on a daily basis :superscript:`-2`
-- Amazon: Fixed deletion of non-|morpheus| keypairs when deleting the first |morpheus| integration created with an AWS account :superscript:`-3`
+- Amazon: Fixed deletion of non-|morpheus| keypairs when deleting the first |morpheus| integration created with an AWS account :superscript:`-4`
 - Bluecat: Fixed removal of Network Pool record when deleting a Bluecat Integration
-- Chef: Chef private keys are now masked like passwords when later viewing the edit integration modal :superscript:`-3`
+- Chef: Chef private keys are now masked like passwords when later viewing the edit integration modal :superscript:`-4`
 - Clusters: Fixed available host check when adding new nodes to Instances in Docker Clusters
-- Clusters: Fixed an issue causing service plans with "private" visibility to not appear on cluster provisioning :superscript:`-3`
+- Clusters: Fixed an issue causing service plans with "private" visibility to not appear on cluster provisioning :superscript:`-4`
 - Console: Fixed issue causing Instance and Server Consoles form displaying in Safari browsers :superscript:`-2`
-- Cypher: Fixed an issue where Cypher-generated passwords could contain breaking characters in certain scenarios :superscript:`-3`
+- Cypher: Fixed an issue where Cypher-generated passwords could contain breaking characters in certain scenarios :superscript:`-4`
 - Fixed issue we found causing slow Elasticsearch queries on certain indices :superscript:`-2`
 - Hosts: Fixed for bulk convert-to-managed
 - Identity Sources: Custom External SSO Identity Source: Fixed AES encryption setting
 - Instances: Fixed edit Wiki button displayed on Instances when user has Read Only Instance access
 - Instances: Special Characters can now be used in Instances names, will be stripped from hostname and host names.
-- Instances: Fixed issue where hostname would be set to "null" on nodes added to an Instance via the Actions menu on the Instance detail page :superscript:`-3`
+- Instances: Fixed issue where hostname would be set to "null" on nodes added to an Instance via the Actions menu on the Instance detail page :superscript:`-4`
 - Logs: Removed ``println "Not a master"`` from MorphTagLib service
 - Networks: Fixed display error when editing tenant permissions on existing network
 - Networks: IP Pools: Fixed conflict when using 169.x.x.x pool address ranges
-- NSX-V: Fixed an issue that could cause changes to not be saved after editing an NSX-V load balancer :superscript:`-3`
-- NSX-V: Fixed an issue that caused an error when syncing back a NSX-V ESG with DHCP IP pool :superscript:`-3`
-- NSX-V: General cleanup of minor issues around NSX-V load balancers :superscript:`-3`
-- NSX-V: Fixed an issue affecting updating of HTTPS offloading profiles for NSX-V load balancers :superscript:`-3`
-- NSX-V: Fixed an issue with the NSX-V load balancer service that could cause high CPU usage in certain scenarios :superscript:`-3`
-- NSX-V: Edits made to NSX-V router interface addresses are now reflected properly in vCenter :superscript:`-3`
-- OpenStack: Synced images from OpenStack clouds now appear as provisionable images for OpenStack clouds privately assigned to a Subtenant :superscript:`-3`
+- NSX-V: Fixed an issue that could cause changes to not be saved after editing an NSX-V load balancer :superscript:`-4`
+- NSX-V: Fixed an issue that caused an error when syncing back a NSX-V ESG with DHCP IP pool :superscript:`-4`
+- NSX-V: General cleanup of minor issues around NSX-V load balancers :superscript:`-4`
+- NSX-V: Fixed an issue affecting updating of HTTPS offloading profiles for NSX-V load balancers :superscript:`-4`
+- NSX-V: Fixed an issue with the NSX-V load balancer service that could cause high CPU usage in certain scenarios :superscript:`-4`
+- NSX-V: Edits made to NSX-V router interface addresses are now reflected properly in vCenter :superscript:`-4`
+- OpenStack: Synced images from OpenStack clouds now appear as provisionable images for OpenStack clouds privately assigned to a Subtenant :superscript:`-4`
 - Option Types: Fixed Field Name returning instead of Field Value for Custom Options variables when using Typeahead Option Types in Blueprints/Apps*
 - Option Types: Fixed LDAP Typeahead search not searching against multiple fields :superscript:`-2`
 - Oracle Cloud: Fix Oracle Cloud Costing sync when using a Proxy :superscript:`-2`
 - SCVMM: Guacd updated to support SCVMM Hypervisor Console
-- SCVMM: Fixed issue causing console not to connect :superscript:`-3`
-- Security: Fixed a path traversal vulnerability in specific file upload scenarios :superscript:`-3`
-- Security: Resolved reflected cross-site scripting (XSS) vulnerabilities :superscript:`-3`
-- Security: Other security enhancements :superscript:`-3`
+- SCVMM: Fixed issue causing console not to connect :superscript:`-4`
+- Security: Fixed a path traversal vulnerability in specific file upload scenarios :superscript:`-4`
+- Security: Resolved reflected cross-site scripting (XSS) vulnerabilities :superscript:`-4`
+- Security: Other security enhancements :superscript:`-4`
 - ServiceNow: Plugin: v2.0.6  Fixed multiple Name fields appear for Instance provisioning form in ServiceNow catalog Item. (Plugin: v > 2.0.6)
 - ServiceNow: Plugin: v2.0.6: Fixed snow plugin not including Instance environment data in Blueprint provisioning requests from ServiceNow
-- UI: "Administrator" is now spelled correctly in the Windows Settings > Administrator Password field in Administration > Provisioning > Settings tab :superscript:`-3`
+- UI: "Administrator" is now spelled correctly in the Windows Settings > Administrator Password field in Administration > Provisioning > Settings tab :superscript:`-4`
 - Usage: Fixed Usage record time periods overlapping time periods (milliseconds) for the same object
 - Users: Fixed "Disable User if Inactive For" User setting locking non-local user accounts
 - vCloud Director: Fixed ``validateResizeContainer error`` in morpheus-ui logs
@@ -116,8 +120,8 @@ API Fixes
 =========
 - API/CLI: Fixed calls to instances without containers throwing a gasket
 - API/CLI: The exportMeta property is now provided for an option type in both the CLI and API. This maps to the "Export As Tag" checkbox setting on the Option Type dialog in the UI.
-- API/CLI: Changes to expiration now honored when cloning an Instance :superscript:`-3`
-- API: Fixed an issue that caused processed versions of PNG whitelabel images uploaded over API not to be saved :superscript:`-3`
+- API/CLI: Changes to expiration now honored when cloning an Instance :superscript:`-4`
+- API: Fixed an issue that caused processed versions of PNG whitelabel images uploaded over API not to be saved :superscript:`-4`
 
 |morpheus| CLI Updates
 **********************
@@ -137,4 +141,5 @@ CLI Fixes
 .. note::  
    
    | :superscript:`-2` Indicates features and fixes added in 4.2.2-2 release packages
-   | :superscript:`-3` Indicates features and fixes added in 4.2.2-3 release packages
+   | :superscript:`-4` Indicates features and fixes added in 4.2.2-4 release packages
+   
