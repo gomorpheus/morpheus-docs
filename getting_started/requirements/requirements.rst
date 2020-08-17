@@ -172,6 +172,8 @@ The following chart is useful for troubleshooting Agent install, Static IP assig
 Communication Data
 ------------------
 
+The following table contains communication information, including frequency and configurability between |morpheus| and its supported technology integrations.
+
 .. list-table:: **Communication Frequency, Ports, and Protocols**
   :widths: auto
   :header-rows: 1
