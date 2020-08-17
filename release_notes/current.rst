@@ -186,6 +186,43 @@ Fixes
 
 - Roles: Access to the Network Proxies tab (Infrastructure > Networks > Proxies) is now controlled exclusively by the "Infrastructure: Network Proxies" feature permission
 - Roles: Access to monitoring settings (Administration > Monitoring) is now controlled exclusively by the "Admin: Monitoring Settings" feature permission
+- USD is being displayed instead of local currency ( ZAR ) on the Guidance section of the Cloud details page.
+- Global Hostname: When using a sequencing in the naming type fixed the sequence increases by 2 instead of 1
+- HTTP 400 when creating OTC cloud via cli
+- discoveredServers (and computeServers) usage and price data missing when using includeTenants=true on /api/billing endpoints
+- Synced NSX-v network have scope_id as null
+- customOptions.xxxx variables, they are showing as null
+- VMware: Resource Pool scoped price-sets within VMware plans will not be discovered on price calculation
+- Convert to managed instance will always be given running status
+- Bluecat: Network Pool / Network association removed on network pool sync error
+- Cannot connect morpheus to HyperV
+- Instance naming policy not applying to scaled instance nodes from App provision
+- Tenant Admin user creation hangs with CLI/API with ‚Äú-O roleId‚Äù
+- VCD: removing a single vm from host is deleting the entire vAPP
+- VCD: Cannot get property 'id' on null object
+- VCD: Cannot invoke method size() on null object | VcloudDirectorComputeService.createNetworkPoolName
+- Auto Data Store toggle not working
+- VCD: Reconfigure: modifying size of volume does not inform of restart
+- VCD: Usage records restart for VM with zero disks each cloud refresh
+- REST POST Option List Request Script incorrectly parses javascript objects that contain lists into JSON
+- Missing NULL protector on Kubernetes Summary Page (kubernetes/_summary.gsp)
+- Type ahead in Option Type does not restrict to retrieved values
+- subtenant Blueprint instanceContext null
+- Convert to manage multiple VMs lists master tenant groups instead of subtenant
+- vCloud VDC shared networks not appearing for additional vCD cloud
+- Group Names are Truncated on the layout permission form
+- Cannot add additional hosts to HyperV Cloud
+- Tenant Usage Report currently only aggregates usage statistics for hosts and not guest virtual machines
+- SQL Server in AWS creates ‚Äúmorpheus‚Äù user instead of provided user
+- Instance plan incorrectly changes when container or compute_server correctly remains the same on reconfigure where plan resources are not changing
+- Backups list is displaying all sub-tenant backups when the user role is set to backup user. ( The role setting should only display the users backups )
+- When VMs have workflows with tasks at post provisioning phase they get reported into the salt-provisioning
+- appliance backup doesnt work via morpheus UI if password has wildcard characters
+- Ansible Tower execution limit with wrong host
+- Morpheus creating duplicated entries for OVM Virtual Images
+- OVM images are not being grouped similar to VmWare images
+- Undetermined Security Group Null Pointer Exceptions
+- command options are not passed when the Ansible playbook task has a resource execute target
 
 |morpheus| API Updates
 ======================
