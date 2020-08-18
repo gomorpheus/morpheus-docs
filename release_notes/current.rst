@@ -15,9 +15,11 @@ Highlights
 **Terraform Improvements**
 
 - Terraform version 0.12 support added
-- Support added for Azure deployment
-- Template validation added to the Create App wizard
-- |morpheus| now continuously refreshes state looking for drift
+- Terraform support added for Azure Clouds
+- Automatic Resource Mapping added for all Terraform created resources
+- Additional Template validation and Terraform Plan previews added to App and Blueprint wizards
+- Added continuous state refresh for drift monitoring
+
 
 **Increased Flexibility with Identity Source Services**
 
@@ -122,7 +124,7 @@ New Features
 
       .. image:: /images/clouds/Cloud-Morpheus-NOPROXY.png
 
-- Clusters: Scope Clusters by Group, Service Plan, or Tenant by clicking Permissions from inside the "MORE" dropdown on the Clusters list page
+- Clusters: Group, Service Plan, and Tenant Permission scoping added for Clusters
 
 - .. toggle-header:: :header: Identity Sources: **Identity source integrations can now be configured from the Users page (Administration > Users)**
 
@@ -147,6 +149,8 @@ New Features
 
 - Roles: User Roles can be manually assigned for Users coming through an Identity Source Integration rather than being locked to automatic mapping based on their role in the Identity Provider
 - Security: General security enhancements
+- Security: Added support for encrypted strings using ``ENC()`` in |morpheus| appliance config files
+- Security: New encryption service added to generate ENC strings for use in |morpheus| appliance config files: ``morpheus-ctl get-crypto-string migrate|string``
 - Tasks: Added "Ignore SSL errors" flag for HTTP Tasks to allow REST calls to systems without trusted SSL certificates
 - Terraform: All tf app created resources are now inventoried
 - Terraform: Added support for generated keypairs in terraform
@@ -237,7 +241,7 @@ API Enhancements
 API Fixes
 ---------
 
-discoveredServers usage and price data missing when using includeTenants=true on /api/billing endpoints
+- Billing: Fixed ``discoveredServers`` usage and price data missing when using ``includeTenants=true`` on ``/api/billing`` endpoints
 
 
 |morpheus| CLI Updates
@@ -246,12 +250,15 @@ discoveredServers usage and price data missing when using includeTenants=true on
 CLI Enhancements
 ----------------
 
-- Networks: Security Groups can now be activated and deactivated
+- Updated ``security-groups`` to display the Active flag and it can be updated with ``--active [on|off]``
+- Updated ``invoices list`` to display Tags and allow filtering with ``--tags Foo=Bar --tags Hello=World``
 - User Sources: External Login and Allow Custom Mappings can now be displayed
+- Updated ``invoices`` command to support new option ``--sig`` and some other tweaks to the way data is displayed.
 
 CLI Fixes
 ---------
 
+- Fixed ``instances update --group`` not working.
 - OpenTelekom: Fixed optionType value issue preventing creation of new OTC Cloud's via cli 
 - Users: Fixed issue with ``morpheus user add`` when using ``-O roleId=`` instead of ``--role``
 
