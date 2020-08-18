@@ -184,45 +184,42 @@ New Features
 Fixes
 -----
 
-- Roles: Access to the Network Proxies tab (Infrastructure > Networks > Proxies) is now controlled exclusively by the "Infrastructure: Network Proxies" feature permission
+- Ansible Tower: Fixed scenario where an Ansible Tower job execution references a legacy record when both records contain matching external_ip address.
+- Ansible: Command options are now passed when the Ansible playbook task has a resource execution target
+- Apps: Fixed ``instance.instanceContext`` variable evaluation in Subtenants when selecting an environment shared from the Primary Tenant during provisioning 
+- Apps: Fixed issue where new Instance Name policies were not applying to scaled Instance nodes from App provisions when a new instance Name Policy was set to enforce after Blueprint creation
+- AWS: RDS: Fixed SQL Server provisioning specified Database User creation
+- Azure: Fixed Security group Rule sync for Security Group rules with location paths longer than 255 chars 
+- Backups: Appliance Backup: Resolved issue with Appliance database backup auth when external database password contains wildcard character(s)
+- Backups: Fixed non-user backups displaying in subtenants when effective ``Backups`` User Role Feature Access permission is set to ``User``
+- Bluecat: Fixed issue where the Network Pool -> Network association for Bluecat Network Pools would be removed after incomplete sync jobs caused by API errors
+- Clusters: ``customOptions.x`` values set during Cluster provisioning are not properly mapped and available post-provision
+- Convert to Manage: Fixed populated Group list values when converting multiple VM's to managed and assigning to a subtenant 
+- Convert to Managed: Fixed issue when converted the status value of a stopped target is set to running after conversion 
+- Currencies: Fixed ZAR currency being displayed as USD on Guidance section of the Cloud details page
+- Hyper-V: Fixed service plans not loading when adding additional hosts to a Hyper-V Cloud
+- Kubernetes: Discovery: Fixed loading Kubernetes Summary Page when discovered cluster k8s version does not match available cluster layout versions 
+- NSX: Fixed removal of synced NSX-V networks when transport zone association is not set
+- Option Lists: Fixed REST POST Option List Request Scripts incorrectly parsing javascript objects that contain lists into JSON
+- Option Types: Fixed Type Ahead Option Types not requiring retrieved value from associated Option Lists
+- Oracle VM: Fixed duplicate synced Virtual Image record creation
+- Oracle VM: Virtual Images spanning multiple locations are now merged into a single Virtual Image record with location references 
+- Permissions: Added additional space to account for long Group names in Group permissions sections. Note Group names containing more than 50 characters will still be truncated 
+- Policies: Fixed additional scenarios where ``${sequence}`` in Instance Name Policies would increment ``instance.name`` by +2 instead of +1
+- Provisioning: Datastore selection is now preserved during provisioning when a new layout is selected after selecting a single Datastore on the previous layout.
+- Reconfigure: Fixed issue with server plan association when selecting a new plan with identical resources during reconfigure and new plan only applying to Instance
+- Reports: Tenant Usage Report: Fixed issue with aggregate usage statistics for Tenant assigned guest virtual machines
 - Roles: Access to monitoring settings (Administration > Monitoring) is now controlled exclusively by the "Admin: Monitoring Settings" feature permission
-- USD is being displayed instead of local currency ( ZAR ) on the Guidance section of the Cloud details page.
-- Global Hostname: When using a sequencing in the naming type fixed the sequence increases by 2 instead of 1
-- HTTP 400 when creating OTC cloud via cli
-- discoveredServers (and computeServers) usage and price data missing when using includeTenants=true on /api/billing endpoints
-- Synced NSX-v network have scope_id as null
-- customOptions.xxxx variables, they are showing as null
-- VMware: Resource Pool scoped price-sets within VMware plans will not be discovered on price calculation
-- Convert to managed instance will always be given running status
-- Bluecat: Network Pool / Network association removed on network pool sync error
-- Cannot connect morpheus to HyperV
-- Instance naming policy not applying to scaled instance nodes from App provision
-- Tenant Admin user creation hangs with CLI/API with ‚Äú-O roleId‚Äù
-- VCD: removing a single vm from host is deleting the entire vAPP
-- VCD: Cannot get property 'id' on null object
-- VCD: Cannot invoke method size() on null object | VcloudDirectorComputeService.createNetworkPoolName
-- Auto Data Store toggle not working
-- VCD: Reconfigure: modifying size of volume does not inform of restart
-- VCD: Usage records restart for VM with zero disks each cloud refresh
-- REST POST Option List Request Script incorrectly parses javascript objects that contain lists into JSON
-- Missing NULL protector on Kubernetes Summary Page (kubernetes/_summary.gsp)
-- Type ahead in Option Type does not restrict to retrieved values
-- subtenant Blueprint instanceContext null
-- Convert to manage multiple VMs lists master tenant groups instead of subtenant
-- vCloud VDC shared networks not appearing for additional vCD cloud
-- Group Names are Truncated on the layout permission form
-- Cannot add additional hosts to HyperV Cloud
-- Tenant Usage Report currently only aggregates usage statistics for hosts and not guest virtual machines
-- SQL Server in AWS creates ‚Äúmorpheus‚Äù user instead of provided user
-- Instance plan incorrectly changes when container or compute_server correctly remains the same on reconfigure where plan resources are not changing
-- Backups list is displaying all sub-tenant backups when the user role is set to backup user. ( The role setting should only display the users backups )
-- When VMs have workflows with tasks at post provisioning phase they get reported into the salt-provisioning
-- appliance backup doesnt work via morpheus UI if password has wildcard characters
-- Ansible Tower execution limit with wrong host
-- Morpheus creating duplicated entries for OVM Virtual Images
-- OVM images are not being grouped similar to VmWare images
-- Undetermined Security Group Null Pointer Exceptions
-- command options are not passed when the Ansible playbook task has a resource execute target
+- Roles: Access to the Network Proxies tab (Infrastructure > Networks > Proxies) is now controlled exclusively by the "Infrastructure: Network Proxies" feature permission
+- Salt Stack: Fixed issue with `Post Provision` phase Task execution history being associated with `Salt Provision` provisioning phase
+- SCVMM/Hyper-V: Fixed Cloud creation validation issue when when disk size query response contains additional empty lines
+- Usage: Fixed Resource Pool scoped price-sets within VMware plans not being associated on price calculation
+- vCloud Director: Fixed irrelevant morpheus-ui log errors during vcd Cloud sync inventory 
+- vCloud Director: Fixed issue where vApp would be removed when removing a single node from a multiple node Instance
+- vCloud Director: Fixed Network Pool sync error for Network pools with no CIDR defined
+- vCloud Director: Fixed restarting VM's when only modifying volume size during reconfigure
+- vCloud Director: Fixed trigger of Usage records restarts during Cloud sync for VCD VM's with no disks attached
+- vCloud Director: Fixed VDC shared networks not appearing for additional vCD clouds
 
 |morpheus| API Updates
 ======================
@@ -240,6 +237,9 @@ API Enhancements
 API Fixes
 ---------
 
+discoveredServers usage and price data missing when using includeTenants=true on /api/billing endpoints
+
+
 |morpheus| CLI Updates
 ======================
 
@@ -252,8 +252,8 @@ CLI Enhancements
 CLI Fixes
 ---------
 
-
-
+- OpenTelekom: Fixed optionType value issue preventing creation of new OTC Cloud's via cli 
+- Users: Fixed issue with ``morpheus user add`` when using ``-O roleId=`` instead of ``--role``
 
 .. - Apps: Error output exposed on App detail page in the event of a provisioning issue
 .. - Apps: Process history details added to App detail page with tf process output ?
