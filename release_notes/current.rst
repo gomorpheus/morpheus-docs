@@ -190,25 +190,25 @@ Fixes
 
 - Ansible Tower: Fixed scenario where an Ansible Tower job execution references a legacy record when both records contain matching external_ip address.
 - Ansible: Command options are now passed when the Ansible playbook task has a resource execution target
-- Apps: Fixed ``instance.instanceContext`` variable evaluation in Subtenants when selecting an environment shared from the Primary Tenant during provisioning 
+- Apps: Fixed ``instance.instanceContext`` variable evaluation in Subtenants when selecting an environment shared from the Primary Tenant during provisioning
 - Apps: Fixed issue where new Instance Name policies were not applying to scaled Instance nodes from App provisions when a new instance Name Policy was set to enforce after Blueprint creation
 - AWS: RDS: Fixed SQL Server provisioning specified Database User creation
-- Azure: Fixed Security group Rule sync for Security Group rules with location paths longer than 255 chars 
+- Azure: Fixed Security group Rule sync for Security Group rules with location paths longer than 255 chars
 - Backups: Appliance Backup: Resolved issue with Appliance database backup auth when external database password contains wildcard character(s)
 - Backups: Fixed non-user backups displaying in subtenants when effective ``Backups`` User Role Feature Access permission is set to ``User``
 - Bluecat: Fixed issue where the Network Pool -> Network association for Bluecat Network Pools would be removed after incomplete sync jobs caused by API errors
 - Clusters: ``customOptions.x`` values set during Cluster provisioning are not properly mapped and available post-provision
-- Convert to Manage: Fixed populated Group list values when converting multiple VM's to managed and assigning to a subtenant 
-- Convert to Managed: Fixed issue when converted the status value of a stopped target is set to running after conversion 
+- Convert to Manage: Fixed populated Group list values when converting multiple VM's to managed and assigning to a subtenant
+- Convert to Managed: Fixed issue when converted the status value of a stopped target is set to running after conversion
 - Currencies: Fixed ZAR currency being displayed as USD on Guidance section of the Cloud details page
 - Hyper-V: Fixed service plans not loading when adding additional hosts to a Hyper-V Cloud
-- Kubernetes: Discovery: Fixed loading Kubernetes Summary Page when discovered cluster k8s version does not match available cluster layout versions 
+- Kubernetes: Discovery: Fixed loading Kubernetes Summary Page when discovered cluster k8s version does not match available cluster layout versions
 - NSX: Fixed removal of synced NSX-V networks when transport zone association is not set
 - Option Lists: Fixed REST POST Option List Request Scripts incorrectly parsing javascript objects that contain lists into JSON
 - Option Types: Fixed Type Ahead Option Types not requiring retrieved value from associated Option Lists
 - Oracle VM: Fixed duplicate synced Virtual Image record creation
-- Oracle VM: Virtual Images spanning multiple locations are now merged into a single Virtual Image record with location references 
-- Permissions: Added additional space to account for long Group names in Group permissions sections. Note Group names containing more than 50 characters will still be truncated 
+- Oracle VM: Virtual Images spanning multiple locations are now merged into a single Virtual Image record with location references
+- Permissions: Added additional space to account for long Group names in Group permissions sections. Note Group names containing more than 50 characters will still be truncated
 - Policies: Fixed additional scenarios where ``${sequence}`` in Instance Name Policies would increment ``instance.name`` by +2 instead of +1
 - Provisioning: Datastore selection is now preserved during provisioning when a new layout is selected after selecting a single Datastore on the previous layout.
 - Reconfigure: Fixed issue with server plan association when selecting a new plan with identical resources during reconfigure and new plan only applying to Instance
@@ -218,7 +218,7 @@ Fixes
 - Salt Stack: Fixed issue with `Post Provision` phase Task execution history being associated with `Salt Provision` provisioning phase
 - SCVMM/Hyper-V: Fixed Cloud creation validation issue when when disk size query response contains additional empty lines
 - Usage: Fixed Resource Pool scoped price-sets within VMware plans not being associated on price calculation
-- vCloud Director: Fixed irrelevant morpheus-ui log errors during vcd Cloud sync inventory 
+- vCloud Director: Fixed irrelevant morpheus-ui log errors during vcd Cloud sync inventory
 - vCloud Director: Fixed issue where vApp would be removed when removing a single node from a multiple node Instance
 - vCloud Director: Fixed Network Pool sync error for Network pools with no CIDR defined
 - vCloud Director: Fixed restarting VM's when only modifying volume size during reconfigure
@@ -243,7 +243,6 @@ API Fixes
 
 - Billing: Fixed ``discoveredServers`` usage and price data missing when using ``includeTenants=true`` on ``/api/billing`` endpoints
 
-
 |morpheus| CLI Updates
 ======================
 
@@ -259,7 +258,7 @@ CLI Fixes
 ---------
 
 - Fixed ``instances update --group`` not working.
-- OpenTelekom: Fixed optionType value issue preventing creation of new OTC Cloud's via cli 
+- OpenTelekom: Fixed optionType value issue preventing creation of new OTC Cloud's via cli
 - Users: Fixed issue with ``morpheus user add`` when using ``-O roleId=`` instead of ``--role``
 
 .. - Apps: Error output exposed on App detail page in the event of a provisioning issue
