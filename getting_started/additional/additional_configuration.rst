@@ -8,3 +8,4 @@ Additional Configuration Options
 .. include:: /getting_started/additional/proxies.rst
 .. include:: /getting_started/additional/morpheusSslCerts.rst
 .. include:: /getting_started/additional/ssl-import.rst
+.. include:: /getting_started/additional/encryption.rst
