@@ -112,7 +112,7 @@ New Features
 
      - Backup Jobs can be scoped to specific Tenants ("ACTIONS" > Permissions from the Backup Jobs list page)
 
-- .. toggle-header:: :header:  Blueprints: **Improved Validaiton**
+- .. toggle-header:: :header:  Blueprints: **Improved Validation**
 
      - Form validation improved when creating or editing Blueprints to specifically highlight the invalid field rather than give a generic validation warning
 
