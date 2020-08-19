@@ -4,7 +4,11 @@
 |morphver| Release Notes
 *************************
 
-.. IMPORTANT:: Review :ref:`compatibility` before installing or upgrading to |morpheus| |morphver|.
+.. IMPORTANT:: Review :ref:`compatibility` before installing or upgrading to |morpheus|
+
+.. attention:: v4.2.2-4 updates an incorrect file version found in the 4.2.2-3 build. The 4.2.2-3 packages have been replaced with the updated 4.2.2-4 packages and 4.2.2-3 is no longer available. Installing or upgrading to 4.2.2-3 would not cause any issues but the file version did prevent some of the release updates from applying. All appliances running 4.2.2-3 should upgrade to 4.2.2-4 to ensure the expected updates are applied.
+
+.. note:: |morphver| Release Notes contain updates from v4.2.2-1, as well as v4.2.2-2 (:superscript:`-2`) and v4.2.2-4 (:superscript:`-4`) patch releases.
 
 |morpheus| UI Updates
 =====================

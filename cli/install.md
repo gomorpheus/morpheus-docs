@@ -72,6 +72,12 @@ docker pull morpheusdata/morpheus-cli
 
 The CLI looks for a user directory to store remote appliance credentials which may need mounted into the container for persistence between runs. Within the container the cli will look for ~/.morpheus
 
+The container also needs a path to write config to and read config from:
+
+```
+docker run -ti -v ~/Documents/Docker/:/root/.morpheus morpheusdata/morpheus-cli shell
+```
+
 To get started using the interactive morpheus cli shell simply run:
 
 ```
