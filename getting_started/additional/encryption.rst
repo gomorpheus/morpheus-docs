@@ -41,7 +41,7 @@ ENC() strings can be generated for sensitive data set in morpheus.rb, such as th
 
 To generate ENC(0) strings for morpheus.rb entries:
 
-#. On the |morpheus| appliance, run ``morpheus-ctl get-crypto-string $clear_text '$suffix'`` which will output strings for the passwords in morpheus-secrets.json
+#. On the |morpheus| appliance, run ``morpheus-ctl get-crypto-string string $clear_text '$suffix'`` which will output strings for the passwords in morpheus-secrets.json
 
    - Replace $clear_text with the string to be encrypted
    - If a suffix is defined in morpheus.rb, replace $suffix with your suffix.
