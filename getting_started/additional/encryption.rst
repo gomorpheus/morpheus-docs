@@ -1,25 +1,25 @@
 Data Encryption
 ---------------
 
-By default, Morpheus encrypts sensitive data in the Database using AES encryption mode with GCM. Passwords and other strings in |morpheus| Appliance configuration files such as ``morpheus-secrets.json`` and ``morpheus.rb`` are in plain text as they are only accessible by root. 
+By default, Morpheus encrypts sensitive data in the Database using AES encryption mode with GCM. Passwords and other strings in |morpheus| Appliance configuration files such as ``morpheus-secrets.json`` and ``morpheus.rb`` are in plain text as they are only accessible by root.
 
-Passwords and other strings in |morpheus| Appliance configuration files can be set to an encrypted string using the |morpheus| crypto service to generate ENC strings and then using ``ENC(string)`` as the value in the configuration file.
+Passwords and other strings in |morpheus| Appliance configuration files can be set to an encrypted string using the |morpheus| crypto utility to generate ENC strings and then using ``ENC(string)`` as the value in the configuration file.
 
-Additionally a custom Encryption Key Suffix can be set in the morpheus.rb configuration file. This suffix will be combined with a system string to generate a SHA-256 Has, which is used to generate the AES encryption key. 
+Additionally a custom Encryption Key Suffix can be set in the morpheus.rb configuration file. This suffix will be combined with a system string to generate a SHA-256 Has, which is used to generate the AES encryption key.
 
 Encrypted Key Suffix
 ^^^^^^^^^^^^^^^^^^^^
 
-A custom Encryption Key Suffix can be set in the morpheus.rb configuration file. This suffix will be combined with a system string to generate a SHA-256 Hash, which is used in the generation of the system AES encryption key. 
+A custom Encryption Key Suffix can be set in the morpheus.rb configuration file. This suffix will be combined with a system string to generate a SHA-256 Hash, which is used in the generation of the system AES encryption key.
 
-.. danger:: Setting a custom Encryption Key Suffix affects all data encrypted by |morpheus|, including database and cypher data. Encryption Key Suffix is required in the event data needs to be migrated or recovered. Once the Encryption Key Suffix is set, data cannot be recovered without it. Store any Encryption Key Suffix externally where it can be referenced for future scenarios. 
+.. danger:: Setting a custom Encryption Key Suffix affects all data encrypted by |morpheus|, including database and cypher data. Encryption Key Suffix is required in the event data needs to be migrated or recovered. Once the Encryption Key Suffix is set, data cannot be recovered without it. Store any Encryption Key Suffix externally where it can be referenced for future scenarios.
 
-.. important:: The Encryption Key Suffix cannot be changed or removed after being set. Changing or removing an existing Encryption Key Suffix will prevent data access. If an existing suffix is altered in the morpheus.rb file, it must be restore to its original value. 
+.. important:: The Encryption Key Suffix cannot be changed or removed after being set. Changing or removing an existing Encryption Key Suffix will prevent data access. If an existing suffix is altered in the morpheus.rb file, it must be restore to its original value.
 
-#. Add ``app['encrypted_key_suffix'] = '$suffix'`` to ``/etc/morpheus/morpheus.rb``, replacing ``$suffix`` with your suffix. 
+#. Add ``app['encrypted_key_suffix'] = '$suffix'`` to ``/etc/morpheus/morpheus.rb``, replacing ``$suffix`` with your suffix.
 
    .. danger:: Once an Encryption Key Suffix is set and applied via reconfigure, it cannot be altered or removed and data cannot be migrated or recovered without it.
-   
+
 #. Run ``morpheus-ctl reconfigure``
 
    - Reconfigure will generate a new encryption key using the suffix and set (ENC) values for service password in application.yml
@@ -42,11 +42,11 @@ ENC() strings can be generated for sensitive data set in morpheus.rb, such as th
 To generate ENC(0) strings for morpheus.rb entries:
 
 #. On the |morpheus| appliance, run ``morpheus-ctl get-crypto-string $clear_text '$suffix'`` which will output ENC() strings for the passwords in morpheus-secrets.json
-    
+
    - Replace $clear_text with the string to be encrypted
-   - If a suffix is defined in morpheus.rb, replace $suffix with your suffix. 
+   - If a suffix is defined in morpheus.rb, replace $suffix with your suffix.
    - If no suffix has been defined in morpheus.rb, use ``''``
-   
+
    .. note:: It is advisable to disable bash history logging by running ``unset HISTFILE`` before running the morphesu-ctl get-crypto-string command and then ``set HISTFILE=$HOME/.bash_history`` to reenable.
 
 #. Update the desired password strings in the ``morpheus.rb`` config file with the matching ENC() string.
