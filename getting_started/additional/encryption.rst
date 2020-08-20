@@ -41,14 +41,16 @@ ENC() strings can be generated for sensitive data set in morpheus.rb, such as th
 
 To generate ENC(0) strings for morpheus.rb entries:
 
-#. On the |morpheus| appliance, run ``morpheus-ctl get-crypto-string $clear_text '$suffix'`` which will output ENC() strings for the passwords in morpheus-secrets.json
+#. On the |morpheus| appliance, run ``morpheus-ctl get-crypto-string $clear_text '$suffix'`` which will output strings for the passwords in morpheus-secrets.json
 
    - Replace $clear_text with the string to be encrypted
    - If a suffix is defined in morpheus.rb, replace $suffix with your suffix.
-   - If no suffix has been defined in morpheus.rb, use ``''``
 
    .. note:: It is advisable to disable bash history logging by running ``unset HISTFILE`` before running the morphesu-ctl get-crypto-string command and then ``set HISTFILE=$HOME/.bash_history`` to reenable.
 
-#. Update the desired password strings in the ``morpheus.rb`` config file with the matching ENC() string.
+#. Update the desired password strings in the ``morpheus.rb`` config file with the matching string output, using ``ENC($output)`` format 
+
+      - Example: ``mysql['morpheus_password'] = 'ENC($ZI5DnaO0quhxKe$kDFD+U2ZeJUuYiNC$F1+czPNyo+3lAdq7V0gcrWwHnkINYqr13cUGrDVyog==)'``
+      
 #. Save ``morpheus.rb``
 #. Run ``morpheus-ctl reconfigure``
