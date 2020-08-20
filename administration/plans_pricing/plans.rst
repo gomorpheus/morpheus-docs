@@ -6,7 +6,7 @@ Plans & Pricing
 Overview
 --------
 
-The Plans & Pricing page displays a list of all of your available service plans. From the service plans page you will be able to Create, Edit, and Delete service plans, as well as review basic plan details. The list of plans displayed on this page displays planName, Description, Instances Layout, Memory, Storage, and Cost, as well as an action column to edit and delete. A default set of Service Plans are created in |morpheus| . They provide a means to set predefined tiers on memory, storage, cores, and cpu. Price tables can also be applied to these so estimated cost per virtual machine can be tracked as well as pricing for customers.
+The Plans & Pricing page displays a list of all of your available service plans. From the service plans page you will be able to Create, Edit, and Delete service plans, as well as review basic plan details. The list of plans displayed on this page displays the plan name, description, Instances layout, memory, storage, and cost, as well as an action column to edit and delete. A default set of Service Plans are created in |morpheus|. They provide a means to set predefined tiers on memory, storage, cores, and cpu. Price tables can also be applied to these so estimated cost per virtual machine can be tracked as well as pricing for customers.
 
 Service Plans
 -------------
@@ -51,7 +51,7 @@ To delete a service plan
 
 #. Select the Administration link in the navigation bar.
 #. Select the Plans & Pricing link in the sub navigation bar.
-#. Click the Delete trashcan icon on the row of the#  plan to delete.
+#. Click the Delete trashcan icon on the row of the plan to delete.
 #. Confirm
 
 .. include:: prices.rst
