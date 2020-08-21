@@ -182,7 +182,7 @@ Once finished working with configuration, click :guilabel:`APPLY`
 ServiceNow Service Catalog Integration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-In addition to integrating with key ServiceNow features, |morpheus| offers a free plugin directly from the ServiceNow Store. At the time of this writing, the plugin supports ServiceNow releases Madrid, New York, and Orlando. Once the plugin is installed, |morpheus| Instance Types and Blueprints can be presented as provisioning options in the ServiceNow catalog for ordering. The following is a guide to installing the Morpheus ServiceNow application.
+In addition to integrating with key ServiceNow features, |morpheus| offers a free plugin directly from the ServiceNow Store. At the time of this writing, the plugin supports ServiceNow releases Madrid, New York, Orlando, and Paris. Once the plugin is installed, |morpheus| Instance Types and Blueprints can be presented as provisioning options in the ServiceNow catalog for ordering. The following is a guide to installing the Morpheus ServiceNow application.
 
 .. IMPORTANT:: A valid SSL Certificate is required on the |morpheus| Appliance for the ServiceNow plugin to be able to communicate with the appliance.
 

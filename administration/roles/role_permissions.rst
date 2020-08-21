@@ -64,6 +64,12 @@ Role Mappings
     - The Environments tab is where named environments such as development or production are created and given a description as well as a code for use within the API. A display order and visibility is also set.
     - This permission is recommended for those responsible for defining environments that will be available to select at provision time whether they are the Master Tenant or Subtenant users.
     -
+  * - Admin: Health
+    - None, Read
+    - Determines access to the Operations > Health page, including the |morpheus| Health, Alarms, and |morpheus| Logs tabs.
+    - The Health pages provide an overview of |morpheus| health, notifications from integrations, and the current |morpheus|-ui log.
+    - This permission is recommended for those responsible for administering and troubleshooting |morpheus|.
+    - This permission is recommended to be set to None on the Tenant Role to restrict access for Subtenant users.
   * - Admin: Identity Source
     - None, Role Mappings, Full
     - Allows or disallows access to create, edit, or delete integrated Identity Sources associated with subtenants. The "Role Mappings" option allows the user to edit role mappings without seeing higher level details about the integration itself (such as server IP addresses and admin usernames).
@@ -310,6 +316,12 @@ Role Mappings
     - The Activity page displays four types of recent activities: Provisioning, Alerts, Backups, and Permissions.
     - This permission is recommended for those responsible to monitor or view activities and their statuses within |morpheus|.
     -
+  * - Operations: Alarms
+    - None, Read, Full
+    - Determines access to the Alarms tab in the Activity section (Operations > Health)
+    - The Alarms tab is where alarms are listed and acknowledgement actions can be taken against them
+    - This permission is recommended for those responsible for monitoring
+    -
   * - Operations: Analytics
     - None, Read, Full
     - Determines access to the Operations > Analytics page.
@@ -340,12 +352,6 @@ Role Mappings
     - The Guidance page shows recommendations for resource and cost-utilization optimization.
     - This permission is recommended for those responsible to optimize utilization and costs of Cloud-based resources.
     -
-  * - Operations: Health
-    - None, Read
-    - Determines access to the Operations > Health page, including the |morpheus| Health, Alarms, and |morpheus| Logs tabs.
-    - The Health pages provide an overview of |morpheus| health, notifications from integrations, and the current |morpheus|-ui log.
-    - This permission is recommended for those responsible for administering and troubleshooting |morpheus|.
-    - This permission is recommended to be set to None on the Tenant Role to restrict access for Subtenant users.
   * - Operations: Reports
     - None, Read, Full
     - Determines access to the Operations > Reports page.
