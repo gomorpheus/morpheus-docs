@@ -62,6 +62,7 @@ Create Reports
 To create a new report, navigate to the report type list page (Operations > Reports). Click :guilabel:`RUN NOW` to the right of the specific report type to bring up the wizard to run that particular report. The required and optional fields to run the selected report type will appear, for example, the configuration panel for the Instance Cost report is shown below:
 
 .. image:: /images/operations/reports/2reportExample.png
+  :width: 60%
 
 In this case, we can choose to scope the report by start and end dates, Groups, Clouds, Tenants, and can specific include or omit Instances based on tags. Once the report is run, it will be visible in the list of Instance Cost reports and all reports until deleted.
 
@@ -73,6 +74,7 @@ In addition to running on-demand reports, |morpheus| also allows reports to be s
 The process of scheduling a report is nearly identical to running on on-demand. From the report type list page (Operations > Reports) click :guilabel:`SCHEDULE` to the right of the report type you wish to schedule. The required and optional fields to schedule the selected report type will appear, for example, the configuration panel for the Instance Cost report is shown below:
 
 .. image:: /images/operations/reports/3scheduleExample.png
+  :width: 60%
 
 In this case, we can choose to scope the report by start and end dates, Groups, Clouds, Tenants, and can specific include or omit Instances based on tags. Additionally, we select the time schedule on which this report should automatically run.
 
