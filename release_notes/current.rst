@@ -24,7 +24,7 @@ New Features
 
 - Reports: Many report types now allow filtering to include or exclude resources based on multiple tags rather than just one
 
-- .. toggle-header:: :header: Reports: **Automated Generation of Custom Reports
+- .. toggle-header:: :header: Reports: **Automated Generation of Custom Reports**
 
      - Click :guilabel:`SCHEDULE` in the row for the report type you wish to run
      - After completing required fields to configure the report, select any default or custom execution schedule from the "SCHEDULE" dropdown list to set the interval
@@ -47,7 +47,7 @@ New Features
 
 - .. toggle-header:: :header: UI: **Expansion of Advanced Lists Tables**
 
-     **Advanced Lists tables added to:
+     **Advanced Lists tables added to:**
 
       - Load balancers list page at Infrastructure > Load Balancers
       - Clusters lis page at Infrastructure > Clusters
