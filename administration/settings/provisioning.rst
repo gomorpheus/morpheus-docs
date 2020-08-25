@@ -1,8 +1,5 @@
 Provisioning Settings
-=====================
-
-Provisioning Settings
----------------------
+^^^^^^^^^^^^^^^^^^^^^
 
 Allow Cloud Selection
   Displays or hides Cloud Selection dropdown in Provisioning wizard.
@@ -24,7 +21,7 @@ Deployment Archive Store
   .. NOTE:: Storage Providers can be configured and managed in the `Infrastructure -> Storage` section.
 
 Cloud-Init Settings
--------------------
+^^^^^^^^^^^^^^^^^^^
 
 |morpheus| can add global users for Linux and Windows at provision time. Cloud-init/Cloudbase-Init or VMware Tools installed on the provisioned virtual images is required.
 
@@ -36,12 +33,12 @@ Linux
 .. NOTE:: Either a password, keypair, or both can be populated for the Linux user. Keypairs can be added in the `Infrastructure > Keys & Certs` section.
 
 Windows Settings
-----------------
+^^^^^^^^^^^^^^^^
 
   * **Administrator Password:** Enter password to be set for the Windows Administrator User during provisioning.
 
 PXE Boot Settings
------------------
+^^^^^^^^^^^^^^^^^
 
 Default Root Password
   Enter the default password to be set for Root during PXE Boots.
@@ -50,7 +47,7 @@ Default Root Password
 .. include:: licenses.rst
 
 App Blueprint Settings
-----------------------
+^^^^^^^^^^^^^^^^^^^^^^
 
 Determines the Default Blueprint Type selected in new App Wizard
 

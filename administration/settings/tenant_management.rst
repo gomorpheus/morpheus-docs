@@ -1,5 +1,5 @@
 Tenant Management Settings
---------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Registration Enabled
   If enabled, the appliance login screen will have a "NEED AN ACCOUNT? SIGN UP HERE" link added, enabling new Tenant registration.

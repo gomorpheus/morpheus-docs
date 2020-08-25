@@ -1,8 +1,8 @@
 Service Now
------------
+^^^^^^^^^^^
 
 ServiceNow Monitoring Integration Settings
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+``````````````````````````````````````````
 
 .. NOTE:: A ServiceNow Integration must be already configured in `Administration -> Integrations` to enable the ServiceNow Monitoring Integration.
 
@@ -24,5 +24,5 @@ Incident Severity Mapping
 ------------------- -----------------
 Info                Low/Medium/High
 Warning             Low/Medium/High
-Critical	           Low/Medium/High
+Critical	          Low/Medium/High
 =================== =================

@@ -1,5 +1,5 @@
 Email Settings
---------------
+^^^^^^^^^^^^^^
 
 A default installation of Morpheus uses a online service called postmarkapp. Morpheus api requests to the postmarkapp service to send notification e-mails.
 

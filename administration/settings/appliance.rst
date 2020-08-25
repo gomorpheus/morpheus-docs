@@ -1,5 +1,5 @@
 Appliance Settings
-------------------
+^^^^^^^^^^^^^^^^^^
 
 Host Level Firewall Enabled
   Enables or Disables the host level firewall. This must be Enabled to use |morpheus| Security Groups.

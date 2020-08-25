@@ -1,5 +1,5 @@
 User Management Settings
-------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^
 
 Expire Password After (Days)
   User account passwords will expire after the entered number of days. Enter 0 or leave the field empty to opt out of this feature.

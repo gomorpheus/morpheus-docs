@@ -1,5 +1,5 @@
 Proxy Settings
---------------
+^^^^^^^^^^^^^^
 
 The |morpheus| Appliance can be configured to communicate through a Proxy server for Cloud API's and Agent communication back to the Appliance.
 

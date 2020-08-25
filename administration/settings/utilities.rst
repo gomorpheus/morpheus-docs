@@ -1,6 +1,3 @@
-Utilities Settings
-------------------
-
 System administrators have access to a utilities panel with the following options:
 
 - **Reindex all searchable data:** Execute

@@ -1,5 +1,5 @@
 Currency Settings
------------------
+^^^^^^^^^^^^^^^^^
 
 In |morpheus|, Tenants are separate environments which can be defined as using currencies that are unique from one Tenant to the next. In addition, these currencies may be different from the currency in which Price Sets have been defined. In order to present pricing to Subtenant users in their designated currency, |morpheus| allows for integration with currency conversion services "open exchange rates" and "fixer.io". This article goes through the process of setting up the integration and how it works to determine pricing conversions.
 

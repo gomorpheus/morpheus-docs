@@ -1,8 +1,8 @@
 New Relic
----------
+^^^^^^^^^
 
 New Relic Integration Settings
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+``````````````````````````````
 
 Enabled
   Enables the New Relic Monitoring Integration
