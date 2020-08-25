@@ -3,22 +3,22 @@ Settings
 
 The `Administration > Settings` section sets global configuration parameters for the |morpheus| appliance, whitelabeling, provisioning, monitoring, backups, logs, software licenses, and the license for |morpheus| itself.
 
-.. toggle-header:: :header: Appliance
--------------------------------------
+Appliance
+---------
 
-  .. include:: appliance.rst
+.. include:: appliance.rst
 
-  .. include:: tenant_management.rst
+.. include:: tenant_management.rst
 
-  .. include:: user_management.rst
+.. include:: user_management.rst
 
-  .. include:: email.rst
+.. include:: email.rst
 
-  .. include:: proxy.rst
+.. include:: proxy.rst
 
-  .. include:: currency.rst
+.. include:: currency.rst
 
-  .. include:: enabled_cloud.rst
+.. include:: enabled_cloud.rst
 
 Whitelabel
 ----------
@@ -57,7 +57,7 @@ Environments
 Software Licenses
 -----------------
 
-.. include: licenses.rst
+.. include:: licenses.rst
 
 License
 -------
