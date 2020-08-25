@@ -4,7 +4,7 @@
 |morphver| Release Notes
 *************************
 
-.. IMPORTANT:: Review :ref:`compatibility` before installing or upgrading to |morpheus|
+.. IMPORTANT:: Review :ref:`compatibility` before installing or upgrading |morpheus|
 
 |morpheus| UI Updates
 =====================
