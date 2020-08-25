@@ -1,11 +1,3 @@
-Monitoring Settings
--------------------
-
-Overview
-^^^^^^^^
-
-The ``Administration -> Monitoring`` section is for configuring |morpheus| Monitoring and Monitoring Integrations.
-
 |morpheus| Monitoring Settings
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
