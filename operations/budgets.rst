@@ -1,6 +1,3 @@
-Budgets
-=======
-
 Budgets provide insight into spending across entire accounts, allowing users to create and plan a budget scoped to their account, clouds, tenants, users, or groups.
 
 Creating A Budget

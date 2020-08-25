@@ -1,17 +1,8 @@
 Provisioning Settings
 =====================
 
-`Administration -> Provisioning`
-
-Settings
-  Configure Global Provisioning, Cloud-init and PXE Boot settings.
-Environments
-  Create and manage Environment Tags
-Licenses
-  Add License to apply to Windows Instances during Provisioning.
-
-Settings
---------
+Provisioning Settings
+---------------------
 
 Allow Cloud Selection
   Displays or hides Cloud Selection dropdown in Provisioning wizard.
@@ -35,17 +26,19 @@ Deployment Archive Store
 Cloud-Init Settings
 -------------------
 
-|morpheus| can add Global users for Linux and Windows at provision time. Cloud-init/Cloudbase-Init or VMware Tools installed on the provisioned Virtual Images is required.
+|morpheus| can add global users for Linux and Windows at provision time. Cloud-init/Cloudbase-Init or VMware Tools installed on the provisioned virtual images is required.
 
 Linux
-  * *Username*: Enter User to be added to Linux Instances during provisioning.
-  * *Password*: Enter password to be set for the above Linux user.
-  * *KeyPair*: Select KeyPair to be added for the above Linux user.
+  * **Username:** Enter User to be added to Linux Instances during provisioning.
+  * **Password:** Enter password to be set for the above Linux user.
+  * **KeyPair:** Select KeyPair to be added for the above Linux user.
 
-.. NOTE:: Either a Password, KeyPair, or both can be populated for the Linux User. KeyPairs can be added in the `Infrastructure -> Key Pairs` section.
+.. NOTE:: Either a password, keypair, or both can be populated for the Linux user. Keypairs can be added in the `Infrastructure > Keys & Certs` section.
 
-Windows
-  * *Administrator Password*: Enter password to be set for the Windows Administrator User during provisioning.
+Windows Settings
+----------------
+
+  * **Administrator Password:** Enter password to be set for the Windows Administrator User during provisioning.
 
 PXE Boot Settings
 -----------------

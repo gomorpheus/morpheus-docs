@@ -1,7 +1,3 @@
-Environments
-
-`Administration -> Provisioning -> Environments`
-
 Overview
 --------
 

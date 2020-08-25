@@ -15,10 +15,12 @@ of capabilities when it comes to managing customer accounts and users.
   users/users.rst
   integrations/integrations.rst
   policies/policies.rst
+  health/health.rst
+  settings/settings.rst
+
   provisioning/provisioning.rst
   monitoring/monitoring.rst
   backups/backup_settings.rst
   logs/logs.rst
-  settings/settings.rst
   currency/currency.rst
   user_settings/user_settings.rst
