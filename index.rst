@@ -42,7 +42,6 @@
 
    release_notes/current.rst
    release_notes/compatibility.rst
-   release_notes/previousReleases.rst
 
 .. toctree::
    :maxdepth: 1
