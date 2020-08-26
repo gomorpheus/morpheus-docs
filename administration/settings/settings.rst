@@ -45,9 +45,10 @@ Logs
 
 .. include:: logs.rst
 
-..
-  Guidance
-  --------
+Guidance
+--------
+
+.. include:: guidance.rst
 
 Environments
 ------------
