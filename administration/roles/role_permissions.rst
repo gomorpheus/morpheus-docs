@@ -64,6 +64,12 @@ Role Mappings
     - The Environments tab is where named environments such as development or production are created and given a description as well as a code for use within the API. A display order and visibility is also set.
     - This permission is recommended for those responsible for defining environments that will be available to select at provision time whether they are the Master Tenant or Subtenant users.
     -
+  * - Admin: Guidance
+    - None, Full
+    - Allows or disallows access to the Guidance tab in Administration > Settings
+    - The Guidance tab controls global thresholds for |morpheus| guidance recommendations
+    - This permission is recommended for those responsible for cost and resource management
+    - 
   * - Admin: Health
     - None, Read
     - Determines access to the Operations > Health page, including the |morpheus| Health, Alarms, and |morpheus| Logs tabs.

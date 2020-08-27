@@ -36,6 +36,7 @@ New Features
 
      - Permission added for Alarms (Operations: Alarms), previously this permission was dictated by Operations: Health
      - Operations: Health permission relabeled as Admin: Health
+     - Permission added to grant access to global guidance thresholds (Admin: Guidance Settings)
 
 - .. toggle-header:: :header: UI: **Reorganization of UI Menu**
 
@@ -50,7 +51,7 @@ New Features
      **Advanced Lists tables added to:**
 
       - Load balancers list page at Infrastructure > Load Balancers
-      - Clusters lis page at Infrastructure > Clusters
+      - Clusters list page at Infrastructure > Clusters
 
 - .. toggle-header:: :header: Veeam: **Backup Jobs can now be deleted**
 

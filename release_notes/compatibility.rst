@@ -53,17 +53,7 @@ Services
 |morphver| Service Version Changes
 ----------------------------------
 
-<<<<<<< HEAD
 - MySQL updated to 5.7.30
-=======
-- Java updated to 8u262 :superscript:`-4`
-- ElasticSearch updated to 7.8.1 :superscript:`-4`
-- Java for ElasticSearch updated to 14.0.2 :superscript:`-4`
-- NGINX updated to 1.19.1 :superscript:`-4`
-- RabbitMQ updated to 3.8.5 :superscript:`-4`
-
- :superscript:`-4` Indicates service version changes included in 4.2.2-3 release packages
->>>>>>> 4.2.2
 
 |morphver| Service Version Compatibility
 ----------------------------------------
@@ -77,21 +67,11 @@ When externalizing MySQL, Elasticsearch and/or RabbitMQ services, the following 
 +---------------------------------------+-----------------------+-------------------------------------+
 | Percona                               | 5.7, WSREP 31         | n/a                                 |
 +---------------------------------------+-----------------------+-------------------------------------+
-<<<<<<< HEAD
 | Elasticsearch                         | |esbranch|            | |esver|                             |
 +---------------------------------------+-----------------------+-------------------------------------+
 | RabbitMQ                              | |rmqbranch|           | |rmqver|                            |
 +---------------------------------------+-----------------------+-------------------------------------+
 
-=======
-| Elasticsearch                         | 7.x                   | 7.6.2, 7.8.1 :superscript:`-4`      |
-+---------------------------------------+-----------------------+-------------------------------------+
-| RabbitMQ                              | 3.5-3.8               | 3.8.3, 3.8.5 :superscript:`-4`      |
-+---------------------------------------+-----------------------+-------------------------------------+
-
- :superscript:`-4` Indicates version changes included in 4.2.2-4 release packages
-
->>>>>>> 4.2.2
 .. important:: Elasticsearch 7.x is required for |morphver|. Refer to :ref:`upgrading` section for more information.
 
 Security
@@ -102,18 +82,9 @@ Security
 - 4.1.2: Appliance: Starting in v4.1.2, the default |morpheus| Nginx config removes support for incoming ``TLS v1.0 and v1.1`` connections. Please update source config to be compatible. If necessary, |morpheus| can be configured to support older TLS versions via :ref:`morpheus.rb` config.
 - 4.2.1: Security: Web Security response headers set for enhanced security
 
-<<<<<<< HEAD
 ..
   CVEs Addressed
   --------------
-=======
-CVEs Addressed
---------------
-
-- CVE-2019-11358 :superscript:`-4`
-
- :superscript:`-4` Indicates features and fixes included in 4.2.2-3 release packages
->>>>>>> 4.2.2
 
 Integrations
 ============
