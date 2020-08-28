@@ -375,7 +375,7 @@ Navigate to `Provisioning > Instances`. If any Instances are currently provision
 
 First, we'll specify the Group to provision into which determines the Clouds available. If you've followed this guide to this point, you should at least have a Group that houses all of your Clouds which you can select here. This will allow us to select the Azure cloud from the "CLOUD" dropdown menu. Provide a unique name to this instance and then click "NEXT"
 
-From the "CONFIGURE" tab, we're presented with a number of options. The options are cloud and layout-specific, more generalized information on creating Instances and available options is `here <https://docs.morpheusdata.com/en/latest/getting_started/agent/morpheus/_agent.html#|morpheus|-agent>`_. For our purposes, we'll select the following options:
+From the "CONFIGURE" tab, we're presented with a number of options. The options are cloud and layout-specific, more generalized information on creating Instances and available options is `here <https://docs.morpheusdata.com/en/latest/provisioning/instances/instances.html>`_. For our purposes, we'll select the following options:
 
 - **LAYOUT**: Includes options such as the base OS, custom layouts will also be here when available
 
