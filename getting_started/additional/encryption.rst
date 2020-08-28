@@ -27,7 +27,7 @@ A custom Encryption Key Suffix can be set in the morpheus.rb configuration file.
 Generate ENC Strings for morpheus-secrets.json
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-System generated passwords are set in ``morpheus-secrets.json``. These entries can be updated to ENC strings with the following steps:
+System generated passwords are set in ``/etc/morpheus/morpheus-secrets.json``. These entries can be updated to ENC strings with the following steps:
 
 #. On the |morpheus| appliance, run ``morpheus-ctl get-crypto-string migrate`` which will output ENC() strings for the passwords in morpheus-secrets.json
 #. Update the desired password strings in the ``morpheus-secrets.json`` config file with the matching ENC() string.
@@ -37,7 +37,7 @@ System generated passwords are set in ``morpheus-secrets.json``. These entries c
 Generate ENC Strings for custom morpheus.rb entries
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-ENC() strings can be generated for sensitive data set in morpheus.rb, such as the password to an external service. 
+ENC() strings can be generated for sensitive data set in morpheus.rb, such as the password to an external service.
 
 To generate ENC(0) strings for morpheus.rb entries:
 
@@ -48,9 +48,9 @@ To generate ENC(0) strings for morpheus.rb entries:
 
    .. note:: It is advisable to disable bash history logging by running ``unset HISTFILE`` before running the morphesu-ctl get-crypto-string command and then ``set HISTFILE=$HOME/.bash_history`` to reenable.
 
-#. Update the desired password strings in the ``morpheus.rb`` config file with the matching string output, using ``ENC($output)`` format 
+#. Update the desired password strings in the ``morpheus.rb`` config file with the matching string output, using ``ENC($output)`` format
 
       - Example: ``mysql['morpheus_password'] = 'ENC($ZI5DnaO0quhxKe$kDFD+U2ZeJUuYiNC$F1+czPNyo+3lAdq7V0gcrWwHnkINYqr13cUGrDVyog==)'``
-      
+
 #. Save ``morpheus.rb``
 #. Run ``morpheus-ctl reconfigure``
