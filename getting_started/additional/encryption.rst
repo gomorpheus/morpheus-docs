@@ -27,7 +27,7 @@ To generate ENC(0) strings for morpheus.rb entries:
 #. On the |morpheus| appliance, run ``morpheus-ctl get-crypto-string string $clear_text '$suffix'`` which will output strings for the passwords in morpheus-secrets.json
 
    - Replace ``$clear_text`` with the string to be encrypted
-   - If a suffix is defined in morpheus.rb, replace ``$suffix`` with your suffix.
+   - If a suffix is defined in morpheus.rb (as described in the next section), replace ``$suffix`` with your suffix.
 
    .. note:: It is advisable to disable bash history logging by running ``unset HISTFILE`` before running the morphesu-ctl get-crypto-string command and then ``set HISTFILE=$HOME/.bash_history`` to reenable.
 
