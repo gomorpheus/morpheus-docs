@@ -1,7 +1,7 @@
 Contacts
 ========
 
-To configure user notifications, a contact must first be created in ```Monitoring > Contacts``. These contacts can be one of a few types:
+To configure user notifications, a contact must first be created in ``Monitoring > Contacts``. These contacts can be one of a few types:
 
 * **Contact:** Used for either Email or SMS
 * **Web Hook:** Used for posting a notification to a web endpoint or Alert Ops
