@@ -787,7 +787,7 @@ If not required by organizational policy, we recommend setting SELinux to "Permi
 .. IMPORTANT:: Setting SELinux to "Enforcing" mode requires policies to be configured correctly in order for the |morpheus| appliance to function correctly.
 
 Supported Languages
-----------------------------
+-------------------
 
 Morpheus supports a number of different UI languages, including:
 
