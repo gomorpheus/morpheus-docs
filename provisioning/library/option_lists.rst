@@ -50,8 +50,23 @@ REST Option List Fields
     Create an initial JSON or CSV dataset to be used as the collection for this option list. It should be a list containing objects with properties 'name' and 'value'
   TRANSLATION SCRIPT
     Create a JS script to translate the result data object into an array containing objects with properties 'name' and 'value'. The input data is provided as 'data' and the result should be put on the global variable 'results'.
+
+    **Example:**
+
+    .. code-block:: javascript
+
+      for(var x=0;x < data.length; x++) {
+        results.push({name: data[x].title,value:data[x].id});
+      }
+
   REQUEST SCRIPT
     Create a JS script to prepare the request. Return a data object as the body for a POST request, and return an array containing properties 'name' and 'value' for a GET request. The input data is provided as 'data' and the result should be put on the global variable 'results'
+
+    **Example:**
+
+    .. code-block:: javascript
+
+      results.push({name: 'userId', value : data.users})
 
 Morpheus API Option List Fields
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
