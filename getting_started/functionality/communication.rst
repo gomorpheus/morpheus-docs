@@ -1,9 +1,14 @@
 Communication Data
 ------------------
 
+The following page contains communication information between the |morpheus| appliance, integrated technologies, managed machines, and services.
+
+Communication Frequency and Configurability
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 The following table contains communication information, including frequency and configurability between |morpheus| and its supported technology integrations.
 
-.. list-table:: **Communication Frequency, Ports, and Protocols**
+.. list-table:: **Communication Frequency and Configurability**
   :widths: auto
   :header-rows: 1
 
@@ -607,3 +612,165 @@ The following table contains communication information, including frequency and 
     - Secure Web Socket
     - Persistent
     - No
+
+Ports and Protocols
+^^^^^^^^^^^^^^^^^^^
+
+The following table contains communication port and protocol data between |morpheus| appliance tiers, managed machines, and services.
+
+.. list-table:: **Ports and Protocols**
+  :widths: auto
+  :header-rows: 1
+
+  * - ﻿Source
+    - Destination
+    - Port
+    - Protocol
+  * - User
+    - Application Tier
+    - 443
+    - TCP
+  * - Morpheus Servers
+    - DNS Servers
+    - 53
+    - TCP
+  * - Morpheus Servers
+    - Time Source
+    - 123
+    - TCP
+  * - Morpheus Servers
+    - Web or Offline Installer
+    - 80, 443
+    - TCP
+  * - Managed Machine
+    - Application Tier
+    - 443
+    - TCP
+  * - Managed Machine
+    - Application Tier
+    - 80, 443
+    - TCP
+  * - Managed Machine
+    - Application Tier
+    - N/A
+    - N/A
+  * - Managed Machine
+    - Application Tier
+    - N/A
+    - N/A
+  * - Managed Machine
+    - Application Tier
+    - N/A
+    - N/A
+  * - Managed Machine
+    - Application Tier
+    - N/A
+    - N/A
+  * - Managed Machine
+    - Docker Image Repo
+    - 443
+    - TCP
+  * - Managed Machine
+    - Application Tier
+    - 69
+    - TCP/UDP
+  * - Application Tier
+    - Managed Machine
+    - 5985
+    - TCP
+  * - Application Tier
+    - Managed Machine
+    - 22
+    - TCP
+  * - Morpheus Application Tier
+    - Managed Machine
+    - 22, 3389, 443
+    - TCP
+  * - Application Tier
+    - AWS S3
+    - 443
+    - TCP
+  * - Application Tier
+    - Hypervisor
+    - 443
+    - TCP
+  * - Application Tier
+    - Non- Transactional Database Tier
+    - 443
+    - TCP
+  * - Application Tier
+    - Docker CE Repo
+    - 443
+    - TCP
+  * - Application Tier
+    - Rubygems
+    - 443
+    - TCP
+  * - Application Tier
+    - Morpheus Hub
+    - 443
+    - TCP
+  * - Application Tier
+    - Mail Server
+    - 25 or 465
+    - SMTP
+  * - Application Tier
+    - Messaging Tier
+    - 5672
+    - TCP
+  * - Application Tier
+    - Messaging Tier
+    - 5671
+    - TCP
+  * - Application Tier
+    - Messaging Tier
+    - 61613
+    - TCP
+  * - Application Tier
+    - Messaging Tier
+    - 61614
+    - TCP
+  * - Messaging Tier
+    - Messaging Tier
+    - 25672
+    - TCP
+  * - Administrator Web Browser
+    - RabbitMQ Server Management
+    - 15672
+    - TCP
+  * - Administrator Web Browser
+    - RabbitMQ Server Management
+    - 15671
+    - TCP
+  * - Messaging Tier Cluster Node
+    - Messaging Tier Cluster Node
+    - 4369
+    - TCP
+  * - Application Tier
+    - Non- Transactional Database Tier
+    - 9200
+    - TCP
+  * - Non- Transactional Database Tier
+    - Non- Transactional Database Tier
+    - 9300
+    - TCP
+  * - Transactional Database Tier
+    - Transactional Database Tier
+    - 4567
+    - TCP/UDP
+  * - Transactional Database Tier
+    - Transactional Database Tier
+    - 4568
+    - TCP
+  * - Application Tier
+    - Transactional Database Tier
+    - 3306
+    - TCP
+  * - Backup Solution
+    - Transactional Database Tier
+    - 4444
+    - TCP
+  * - Application Tier
+    - Integrated Technology
+    - Varies
+    - TCP
