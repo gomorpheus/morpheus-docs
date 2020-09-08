@@ -616,7 +616,9 @@ The following table contains communication information, including frequency and 
 Ports and Protocols
 ^^^^^^^^^^^^^^^^^^^
 
-The following table contains communication port and protocol data between |morpheus| appliance tiers, managed machines, and services.
+The following table contains communication port and protocol data between |morpheus| appliance tiers, managed machines, and services. All communication to and from |morpheus| goes thru the application tier with exception of inter-cluster communications for each of the |morpheus| tiers when using a distributed architecture.
+
+Ports used to communicate with integrated technologies are those defined for the integration’s API. They are not represented in this table as many of these are configurable and may be different in each customer environment. Additionally, ports used to complete Morpheus checks are customizable and may vary for each check configured. They are also not represented in this table.
 
 .. list-table:: **Ports and Protocols**
   :widths: auto
@@ -626,151 +628,191 @@ The following table contains communication port and protocol data between |morph
     - Destination
     - Port
     - Protocol
+    - Description
   * - User
     - Application Tier
     - 443
     - TCP
+    - User Access
   * - Morpheus Servers
     - DNS Servers
     - 53
     - TCP
+    - Domain Name Resolution
   * - Morpheus Servers
     - Time Source
     - 123
     - TCP
+    - Time Resolution
   * - Morpheus Servers
     - Web or Offline Installer
     - 80, 443
     - TCP
+    - Download repos and Morpheus packages (yum/apt repos)
   * - Managed Machine
     - Application Tier
     - 443
     - TCP
+    - Morpheus Agent Communications
   * - Managed Machine
     - Application Tier
     - 80, 443
     - TCP
+    - Agent Installation. (Requires port 80 only for Ubuntu 14.04)
   * - Managed Machine
     - Application Tier
     - N/A
     - N/A
+    - Agent Installation Clout-init (Linux)
   * - Managed Machine
     - Application Tier
     - N/A
     - N/A
+    - Agent Installation Cloudbase-init (Windows)
   * - Managed Machine
     - Application Tier
     - N/A
     - N/A
+    - Agent Installation VMtools
   * - Managed Machine
     - Application Tier
     - N/A
     - N/A
+    - Static IP Assignment & IP Pools (Cloud-init or VMware Tools)
   * - Managed Machine
     - Docker Image Repo
     - 443
     - TCP
+    - Applicable if using docker
   * - Managed Machine
     - Application Tier
     - 69
     - TCP/UDP
+    - PXE Boot (Forwarded to internal PXE port 6969)
   * - Application Tier
     - Managed Machine
     - 5985
     - TCP
+    - Agent Installation WinRM (Windows)
   * - Application Tier
     - Managed Machine
     - 22
     - TCP
+    - Agent Installation SSH (Linux)
   * - Morpheus Application Tier
     - Managed Machine
     - 22, 3389, 443
     - TCP
+    - Remote Console (SSH, RDP, Hypervisor Console
   * - Application Tier
     - AWS S3
     - 443
     - TCP
+    - Morpheus Catalog Image Download
   * - Application Tier
     - Hypervisor
     - 443
     - TCP
+    - Hypervisor hostname resolvable by Morpheus Application Tier
   * - Application Tier
     - Non- Transactional Database Tier
     - 443
     - TCP
+    - Applicable if using Amazon Elasticsearch Service
   * - Application Tier
     - Docker CE Repo
     - 443
     - TCP
+    - Applicable only when integrated with Docker
   * - Application Tier
     - Rubygems
     - 443
     - TCP
+    -
   * - Application Tier
     - Morpheus Hub
     - 443
     - TCP
+    - (Optional) Telemetry data (Disabled only via license feature)
   * - Application Tier
     - Mail Server
     - 25 or 465
     - SMTP
+    - Send email from Morpheus
   * - Application Tier
     - Messaging Tier
     - 5672
     - TCP
+    - AMQP non-TLS connections
   * - Application Tier
     - Messaging Tier
     - 5671
     - TCP
+    - AMQPS TLS enabled connections
   * - Application Tier
     - Messaging Tier
     - 61613
     - TCP
+    - STOMP Plugin connections (Required only for Morpheus versions 4.2.1 or prior)
   * - Application Tier
     - Messaging Tier
     - 61614
     - TCP
+    - STOMP Plugin TLS enabled connections (Required only for Morpheus versions 4.2.1 or prior)
   * - Messaging Tier
     - Messaging Tier
     - 25672
     - TCP
+    - Inter-node and CLI tool communication
   * - Administrator Web Browser
     - RabbitMQ Server Management
     - 15672
     - TCP
+    - Management plugin
   * - Administrator Web Browser
     - RabbitMQ Server Management
     - 15671
     - TCP
+    - Management plugin SSL
   * - Messaging Tier Cluster Node
     - Messaging Tier Cluster Node
     - 4369
     - TCP
+    - erlang (epmd) peer discovery service used by RabbitMQ nodes and CLI tools
   * - Application Tier
     - Non- Transactional Database Tier
     - 9200
     - TCP
+    - Elasticsearch requests (Used in all cases except when utilizing AWS ES service)
   * - Non- Transactional Database Tier
     - Non- Transactional Database Tier
     - 9300
     - TCP
+    - Elasticsearch Cluster
   * - Transactional Database Tier
     - Transactional Database Tier
     - 4567
     - TCP/UDP
+    - Write-set replication traffic (over TCP) and multicast replication (over TCP and UDP).
   * - Transactional Database Tier
     - Transactional Database Tier
     - 4568
     - TCP
+    - Incremental State Transfer (IST)
   * - Application Tier
     - Transactional Database Tier
     - 3306
     - TCP
+    - MySQL client connections
   * - Backup Solution
     - Transactional Database Tier
     - 4444
     - TCP
+    - State Snapshot Transfer (SST)
   * - Application Tier
     - Integrated Technology
     - Varies
     - TCP
+    - Integrations (Uses the port of the 3rd party systems API)
+
+.. NOTE::
