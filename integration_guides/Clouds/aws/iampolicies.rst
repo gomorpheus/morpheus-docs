@@ -9,7 +9,7 @@ See http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies.html for 
 
 
 Morpheus Sample AWS IAM Policy
-'''''''''''''''''''''''''''''''
+``````````````````````````````
 
 .. code-block:: bash
 
@@ -209,7 +209,7 @@ Morpheus Sample AWS IAM Policy
   }
 
 Resource Filter
-'''''''''''''''
+```````````````
 
 If you need to limit actions based on filters you have to pull out the action and put it in a resource based policy since not all the actions support resource filters.
 
