@@ -15,12 +15,15 @@ Highlights
 New Features
 ------------
 
-- .. toggle-header:: :header: Reports: **Reports UI overhauled**
+- Amazon: ROI (return on investment) figure displayed in Reservation Recommendations and Savings Plan Recommendations tables on Amazon Cloud detail pages. This is the length of time required to make back the original investment when reserving instances or purchasing a savings plan
+- Guidance: Recommendations can now be made based on 30, 60, or 90 day periods
+
+- .. toggle-header:: :header: Reports: **Reports UI and feature set overhauled**
 
      - New report types added
      - Landing page for Reports now lists report types with buttons to run a selected report type now or schedule one on a recurring basis
      - Clicking into a report type lists all viewable runs of that report type, one-off runs can be executed, schedules for that report type can be viewed or deleted
-     - See Reports section of |morpheus| docs
+     - See Reports section of |morpheus| docs for complete feature guides
 
 - Reports: Many report types now allow filtering to include or exclude resources based on multiple tags rather than just one
 
@@ -52,6 +55,8 @@ New Features
 
       - Load balancers list page at Infrastructure > Load Balancers
       - Clusters list page at Infrastructure > Clusters
+
+- vCloud Director: Create and delete Snapshots in a vCD Cloud
 
 - .. toggle-header:: :header: Veeam: **Backup Jobs can now be deleted**
 
