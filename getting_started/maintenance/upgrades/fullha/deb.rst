@@ -21,24 +21,24 @@ The following covers upgrading the |morpheus| App nodes in Full HA Architecture 
 
    .. code-block:: bash
 
-    [root@app-server-1 ~]# sudo wget https://packageUrl.morpheus-appliance_x.x.x-x.amd64.deb
-    [root@app-server-1 ~]# sudo dpkg -i morpheus-appliance_x.x.x-x.amd64.deb
+    [root@app-server-1 ~]# sudo wget https://packageUrl.morpheus-appliance_x.x.x-x_amd64.deb
+    [root@app-server-1 ~]# sudo dpkg -i morpheus-appliance_x.x.x-x_amd64.deb
     [root@app-server-1 ~]# sudo morpheus-ctl reconfigure
 
 #. Once Node 1 upgrade has completed and the u is available, upgrade the DEB package on Node 2, then run a Reconfigure on Node 2.
 
    .. code-block:: bash
 
-    [root@app-server-2 ~]# sudo wget https://packageUrl.morpheus-appliance_x.x.x-x.amd64.de
-    [root@app-server-2 ~]# sudo dpkg -i morpheus-appliance_x.x.x-x.amd64.deb
+    [root@app-server-2 ~]# sudo wget https://packageUrl.morpheus-appliance_x.x.x-x_amd64.de
+    [root@app-server-2 ~]# sudo dpkg -i morpheus-appliance_x.x.x-x_amd64.deb
     [root@app-server-2 ~]# sudo morpheus-ctl reconfigure
 
 #. Then upgrade the DEB package and run a Reconfigure on Node 3.
 
    .. code-block:: bash
 
-    [root@app-server-3 ~]# sudo wget https://packageUrl.morpheus-appliance_x.x.x-x.amd64.de
-    [root@app-server-3 ~]# ssudo dpkg -i morpheus-appliance_x.x.x-x.amd64.deb
+    [root@app-server-3 ~]# sudo wget https://packageUrl.morpheus-appliance_x.x.x-x_amd64.de
+    [root@app-server-3 ~]# ssudo dpkg -i morpheus-appliance_x.x.x-x_amd64.deb
     [root@app-server-3 ~]# sudo morpheus-ctl reconfigure
 
 #. The upgrade is complete and the |morpheus|-ui services should be running across the 3 nodes.
@@ -66,8 +66,8 @@ The following covers upgrading the |morpheus| App nodes in Full HA Architecture 
 
    .. code-block:: bash
 
-    [root@app-server-1 ~]# sudo wget https://packageUrl.morpheus-appliance_x.x.x-x.amd64.deb
-    [root@app-server-1 ~]# sudo dpkg -i morpheus-appliance_x.x.x-1.amd64.deb
+    [root@app-server-1 ~]# sudo wget https://packageUrl.morpheus-appliance_x.x.x-x_amd64.deb
+    [root@app-server-1 ~]# sudo dpkg -i morpheus-appliance_x.x.x-1_amd64.deb
     [root@app-server-1 ~]# sudo morpheus-ctl reconfigure
 
    .. note::
@@ -78,16 +78,16 @@ The following covers upgrading the |morpheus| App nodes in Full HA Architecture 
 
    .. code-block:: bash
 
-    [root@app-server-2 ~]# sudo wget https://packageUrl.morpheus-appliance_x.x.x-x.amd64.deb
-    [root@app-server-2 ~]# sudo dpkg -i morpheus-appliance_x.x.x-1.amd64.deb
+    [root@app-server-2 ~]# sudo wget https://packageUrl.morpheus-appliance_x.x.x-x_amd64.deb
+    [root@app-server-2 ~]# sudo dpkg -i morpheus-appliance_x.x.x-1_amd64.deb
     [root@app-server-2 ~]# sudo morpheus-ctl reconfigure
 
 #. Then upgrade the deb package on Node 3, then run a Reconfigure on Node 3
 
    .. code-block:: bash
 
-    [root@app-server-3 ~]# sudo wget https://packageUrl.morpheus-appliance_x.x.x-x.amd64.deb
-    [root@app-server-3 ~]# sudo dpkg -i morpheus-appliance_x.x.x-1.amd64.deb
+    [root@app-server-3 ~]# sudo wget https://packageUrl.morpheus-appliance_x.x.x-x_amd64.deb
+    [root@app-server-3 ~]# sudo dpkg -i morpheus-appliance_x.x.x-1_amd64.deb
     [root@app-server-3 ~]# sudo morpheus-ctl reconfigure
 
 #. After all morpheus-ui services have finished loading, the upgrade is complete.
@@ -120,8 +120,8 @@ The following covers upgrading the |morpheus| App nodes in Full HA Architecture 
 
    .. code-block:: bash
 
-    [root@app-server-1 ~]# sudo wget https://packageUrl.morpheus-appliance_x.x.x-x.amd64.deb
-    [root@app-server-1 ~]# sudo dpkg -i morpheus-appliance_x.x.x-1.amd64.deb
+    [root@app-server-1 ~]# sudo wget https://packageUrl.morpheus-appliance_x.x.x-x_amd64.deb
+    [root@app-server-1 ~]# sudo dpkg -i morpheus-appliance_x.x.x-1_amd64.deb
     [root@app-server-1 ~]# sudo morpheus-ctl reconfigure
 
    .. note::
@@ -132,16 +132,16 @@ The following covers upgrading the |morpheus| App nodes in Full HA Architecture 
 
    .. code-block:: bash
 
-    [root@app-server-2 ~]# sudo wget https://packageUrl.morpheus-appliance_x.x.x-x.amd64.deb
-    [root@app-server-2 ~]# sudo dpkg -i morpheus-appliance_x.x.x-1.amd64.deb
+    [root@app-server-2 ~]# sudo wget https://packageUrl.morpheus-appliance_x.x.x-x_amd64.deb
+    [root@app-server-2 ~]# sudo dpkg -i morpheus-appliance_x.x.x-1_amd64.deb
     [root@app-server-2 ~]# sudo morpheus-ctl reconfigure
 
 #. Then upgrade the deb package on Node 3, then run a Reconfigure on Node 3
 
    .. code-block:: bash
 
-    [root@app-server-3 ~]# sudo wget https://packageUrl.morpheus-appliance_x.x.x-x.amd64.deb
-    [root@app-server-3 ~]# sudo dpkg -i morpheus-appliance_x.x.x-1.amd64.deb
+    [root@app-server-3 ~]# sudo wget https://packageUrl.morpheus-appliance_x.x.x-x_amd64.deb
+    [root@app-server-3 ~]# sudo dpkg -i morpheus-appliance_x.x.x-1_amd64.deb
     [root@app-server-3 ~]# sudo morpheus-ctl reconfigure
 
 #. After all morpheus-ui services have finished loading, the upgrade is complete.

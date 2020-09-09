@@ -31,9 +31,9 @@ To upgrade Morpheus running on Ubuntu/Debian, download the new deb package, stop
 
 .. code-block:: bash
 
-  sudo wget https://packageUrl.morpheus-appliance_x.x.x-x.amd64.deb
+  sudo wget https://packageUrl.morpheus-appliance_x.x.x-x_amd64.deb
   sudo morpheus-ctl stop
-  sudo dpkg -i morpheus-appliance_x.x.x-1.amd64.deb
+  sudo dpkg -i morpheus-appliance_x.x.x-1_amd64.deb
   sudo morpheus-ctl reconfigure
 
 .. note:: In 4.x services will be stopped during package installation and started during the reconfigure process, including the |morpheus|-ui service.
@@ -81,9 +81,9 @@ To upgrade Morpheus running on Ubuntu/Debian, download new deb package, stop the
 
 .. code-block:: bash
 
-  sudo wget https://packageUrl.morpheus-appliance_x.x.x-x.amd64.deb
+  sudo wget https://packageUrl.morpheus-appliance_x.x.x-x_amd64.deb
   sudo morpheus-ctl stop
-  sudo dpkg -i morpheus-appliance_x.x.x-1.amd64.deb
+  sudo dpkg -i morpheus-appliance_x.x.x-1_amd64.deb
   sudo morpheus-ctl reconfigure
 
 .. note:: In 4.x services will be stopped during package installation and started during the reconfigure process, including the |morpheus|-ui service.
