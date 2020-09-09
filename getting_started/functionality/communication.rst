@@ -814,5 +814,3 @@ Ports used to communicate with integrated technologies are those defined for the
     - Varies
     - TCP
     - Integrations (Uses the port of the 3rd party systems API)
-
-.. NOTE::
