@@ -71,12 +71,13 @@ RabbitMQ Installation and Configuration
        rabbitmqctl join_cluster rabbit@<<node 1 shortname>>
        rabbitmqctl start_app
 
-#. On Node 1, add Admin user for |morpheus|
+#. On Node 1, create vhost and add Admin user for |morpheus|
 
    .. code-block:: bash
 
+      rabbitmqctl add_vhost morpheus
       rabbitmqctl add_user <<admin username>> <<password>>
-      rabbitmqctl set_permissions -p / <<admin username>> ".*" ".*" ".*"
+      rabbitmqctl set_permissions -p morpheus <<admin username>> ".*" ".*" ".*"
       rabbitmqctl set_user_tags <<admin username>> administrator
 
 #. On All Nodes, enable stomp and management plugins:
@@ -86,7 +87,7 @@ RabbitMQ Installation and Configuration
       rabbitmq-plugins enable rabbitmq_stomp
       rabbitmq-plugins enable rabbitmq_management
 
-#. On Node 1, add required Rabbitmq Policies:
+#. On Node 1, add the required Rabbitmq Policies. The policies will propagate to all nodes.
 
    .. code-block:: bash
 
