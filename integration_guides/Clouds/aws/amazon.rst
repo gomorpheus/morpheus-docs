@@ -11,21 +11,21 @@ Features
 
 * Instance, Service, Infrastructure Provisioning & Synchronization
 * EKS Cluster Creation & Synchronization
-* |morpheus| Kubernetes, Docker & KVM Cluster Creation 
+* |morpheus| Kubernetes, Docker & KVM Cluster Creation
 * ELB Classic Load Balancer Creation & Synchronization
 * ELB Application Load Balancer (ALB) Creation & Synchronization
 * Security Group Creation & Synchronization
 * Security Group Rule Creation & Synchronization
 * Network Synchronization
 * VPC Creation & Synchronization
-* CloudFormation Provisioning & Resource Synchronization 
+* CloudFormation Provisioning & Resource Synchronization
 * Terraform Provisioning & Resource Synchronization
 * Pricing & Costing Synchronization
 * MetaData Tag Creation & Synchronization
 * S3 Bucket Creation & Synchronization
 * Route53 Automation & Synchronization
 * IAM Profile Synchronization and Assignment
-* RDS Support 
+* RDS Support
 * Backups / Snapshots
 * Migrations
 * Auto Scaling
@@ -49,7 +49,7 @@ Security Group Configuration for Agent Install, Script Execution, and Remote Con
   - Typical Outbound to |morpheus| Appliance: 443 (Required for Agent install & comms)
 
   .. NOTE:: These are required for |morpheus| agent install, communication, and remote console access for windows and linux. Other configurations, such as docker instances, will need the appropriate ports opened as well. Cloud-init Agent Install mode does not require incoming access for port 22.
-  
+
 Network(s)
   IP assignment required for Agent install, Script Execution, and Console if the |morpheus| Appliance is not able to communicate with AWS instances private ip's.
 
@@ -89,7 +89,7 @@ Details
 
  USE VPC
     Specify if the target account is using EC2-VPC or EC2-Classic Platform. In almost all cases, VPC should be selected, and then select the target VPC from the synced available VPC's list, or `All` VPC's.
-   
+
 5. The AWS cloud is ready to be added to a group and saved. Additional configuration options available:
 
 IMAGE TRANSFER STORE
@@ -107,6 +107,8 @@ Enhanced Invoice Costing Configuration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 In addition to standard AWS costing data (Enabled by editing the AWS cloud integration and setting the COSTING value to "Costing" or "Costing and Reservations"), |morpheus| can utilize highly-granular data from AWS Costing and Utilization Reports (CUR) in its integration. Once enabled, this data can be consumed by accessing Invoice endpoints of |morpheus| API and eventually through the UI after a future update. Continue on with this section to enable these reports in the AWS web console and configure the |morpheus| cloud integration to work with this report data.
+
+.. NOTE:: Even with a costing report configured in the Cloud integration as described below, the COSTING value must also be set to "Costing and Reservations" in order for enhanced invoice data to be brought into |morpheus|. Confirm this setting by editing the Amazon Cloud integration, and checking the COSTING value in the Advanced Options panel before continuing.
 
 In |morpheus| version 4.2.3 and higher, |morpheus| can do most of the legwork to create or sync in the CUR report for you. In versions prior, the report needed to be set up within the AWS web console and the configuration information provided to the |morpheus| cloud integration. Both processes are outlined below.
 
@@ -139,7 +141,7 @@ In |morpheus| version 4.2.3 and higher, |morpheus| can do most of the legwork to
         - **LINKED ACCOUNT ID:** If the IAM user for this AWS cloud integration does not have access to the S3 bucket with the CUR data, enter the AWS account number that the IAM user from the above step resides in
 
         .. NOTE:: If the AWS cloud account is a GovCloud account, enter the COSTING KEY, COSTING SECRET, and LINKED ACCOUNT ID for the master commercial account your GovCloud account is associated with.
-    
+
 
 
     .. tab-container:: tab2
