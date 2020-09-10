@@ -246,4 +246,5 @@ In |morpheus| version 4.2.3 and higher, |morpheus| can do most of the legwork to
 
         .. IMPORTANT:: It may take as long as one hour for |morpheus| to process the next CUR report.
 
-        .. include:: iampolicies.rst
+
+.. include:: /integration_guides/Clouds/aws/iampolicies.rst
