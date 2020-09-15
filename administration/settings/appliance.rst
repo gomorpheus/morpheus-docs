@@ -12,6 +12,8 @@ Internal Appliance URL (PXE)
   For PXE-Boot your appliance needs to be routable directly with minimal NAT masquerading. This allows one to override the default appliance url endpoint for use by the PXE Server. If this is unset, the default appliance url will be used instead.
 API Allowed Origins
   Specifies which origins are allowed to access the |morpheus| API.
+Cloud Sync Interval
+  Data is refreshed through cloud integrations at the interval specified here in seconds, the default value is 300 seconds (five minutes). Appliances managing a very large number of clouds may be adversely affected by setting this value too low.
 Enable SSL Verification of Agent (Communications)
   Enabling SSL Verification of Agent Communications requires a valid Certificate be installed on the Appliance.
 Disable SSH Password Authentication

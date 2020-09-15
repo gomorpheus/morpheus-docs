@@ -15,7 +15,9 @@ Highlights
 New Features
 ------------
 
+- Amazon: Processing of costing (CUR) reports for detailed invoice costing now occurs when the cloud integration COSTING value is set to "Costing" or "Costing and Reservations". Previously report processing only took place if the cloud integration was configured to get "Costing and Reservations"
 - Amazon: ROI (return on investment) figure displayed in Reservation Recommendations and Savings Plan Recommendations tables on Amazon Cloud detail pages. This is the length of time required to make back the original investment when reserving instances or purchasing a savings plan
+- Amazon:
 - Guidance: Recommendations can now be made based on 30, 60, or 90 day periods
 
 - .. toggle-header:: :header: Reports: **Reports UI and feature set overhauled**
@@ -41,6 +43,8 @@ New Features
      - Operations: Health permission relabeled as Admin: Health
      - Permission added to grant access to global guidance thresholds (Admin: Guidance Settings)
 
+- Settings: Cloud refresh interval is now user-configurable, the settings can be changed in Administration > Settings > Appliance
+
 - .. toggle-header:: :header: UI: **Reorganization of UI Menu**
 
      - Health section moved from Operations menu to Administration menu
@@ -55,6 +59,7 @@ New Features
 
       - Load balancers list page at Infrastructure > Load Balancers
       - Clusters list page at Infrastructure > Clusters
+
 
 - vCloud Director: Create and delete Snapshots in a vCD Cloud
 

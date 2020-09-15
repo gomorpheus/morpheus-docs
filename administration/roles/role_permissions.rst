@@ -69,7 +69,7 @@ Role Mappings
     - Allows or disallows access to the Guidance tab in Administration > Settings
     - The Guidance tab controls global thresholds for |morpheus| guidance recommendations
     - This permission is recommended for those responsible for cost and resource management
-    - 
+    -
   * - Admin: Health
     - None, Read
     - Determines access to the Operations > Health page, including the |morpheus| Health, Alarms, and |morpheus| Logs tabs.
@@ -594,10 +594,16 @@ Role Mappings
     - It is recommended this permission is set to None on the Tenant Role to restrict access for Subtenant users.
   * - Tools: Migrations
     - None, Read, Full
-    - Determines access to the Tools > Migrations page.
+    - Determines access to the Tools > Migrations page
     - The Migration tool creates a snapshot of an existing VM, converts it to the destination format and provisions the machine on the target.
     - Recommend only for those responsible for lifting and shifting VMs.
     - It is recommended this permission is set to None on the Tenant Role to restrict access for Subtenant users.
+  * - Tools: Self Service
+    - None, Read, Full
+    - Determines access to the Tools > Self Service page
+    - The Self Service pages allows administrators to configure easily-deployable catalog items for Service Catalog Persona users
+    - Recommended for those tasked with creating and curating items for the self service catalog
+    - 
   * - None - No Permissions
     - None
     - When all permissions are set to None, the following behavior can be expected: This allows only access to the User Setting page displayed, which is accessed by clicking on the user's name in the upper-right corner of the application window.
