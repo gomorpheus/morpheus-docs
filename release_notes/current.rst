@@ -82,6 +82,8 @@ New Features
 
           - COSTING BUCKET REGION updated to pre-populated Region Select List
 
+      - Configuring CURs now required as |morpheus| no longer supports AWS Cost Explorer for billing data aggregation
+
 - .. toggle-header:: :header: Amazon: **Unattached AWS Volume sync added**
 
      - Unattached AWS EBS Volumes are now synced to improve visibility and tracking of orphaned resources. Volume data is available via API/CLI, Reports and in ``/infrastructure/storage/volumes``

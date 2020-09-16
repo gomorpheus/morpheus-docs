@@ -106,11 +106,9 @@ COSTING SECRET
 Enhanced Invoice Costing Configuration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-In addition to standard AWS costing data (Enabled by editing the AWS cloud integration and setting the COSTING value to "Costing" or "Costing and Reservations"), |morpheus| can utilize highly-granular data from AWS Costing and Utilization Reports (CUR) in its integration. Once enabled, this data can be consumed by accessing Invoice endpoints of |morpheus| API and eventually through the UI after a future update. Continue on with this section to enable these reports in the AWS web console and configure the |morpheus| cloud integration to work with this report data.
+As of version 4.2.3, AWS cloud integrations in |morpheus| sync billing data solely through the use of AWS Costing & Utilization Reports (CUR). In prior versions users could instead sync billing data through AWS Cost Explorer if desired. Version 4.2.3 also simplified the way CUR reports can be selected or created in order to sync costing data. The section below discusses setting up enhanced costing through CUR reports both in 4.2.3 and versions prior. Keep in mind you must go through this process in version 4.2.3 and higher in order for |morpheus| to aggregate billing data.
 
 .. NOTE:: Even with a costing report configured in the Cloud integration as described below, the COSTING value must also be set to "Costing and Reservations" in order for enhanced invoice data to be brought into |morpheus|. Confirm this setting by editing the Amazon Cloud integration, and checking the COSTING value in the Advanced Options panel before continuing.
-
-In |morpheus| version 4.2.3 and higher, |morpheus| can do most of the legwork to create or sync in the CUR report for you. In versions prior, the report needed to be set up within the AWS web console and the configuration information provided to the |morpheus| cloud integration. Both processes are outlined below.
 
 .. content-tabs::
 
