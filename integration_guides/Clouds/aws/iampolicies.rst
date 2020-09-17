@@ -94,6 +94,7 @@ Morpheus Sample AWS IAM Policy
                   "ec2:DescribeVpcClassicLinkDnsSupport",
                   "ec2:DescribeVpcEndpoints",
                   "ec2:DescribeVpcEndpointServices",
+                  "ec2:DescribeVpcPeeringConnections",
                   "ec2:DescribeVpcs",
                   "ec2:DetachInternetGateway",
                   "ec2:DetachNetworkInterface",
@@ -183,7 +184,7 @@ Morpheus Sample AWS IAM Policy
                   "rds:RestoreDBClusterFromSnapshot",
                   "rds:RestoreDBClusterToPointInTime",
                   "rds:RestoreDBInstanceFromDBSnapshot",
-                  "rds:RestoreDBInstanceToPointInTime"
+                  "rds:RestoreDBInstanceToPointInTime",
                   "rds:RevokeDBSecurityGroupIngress",
                   "route53:GetHostedZone",
                   "route53:ListHostedZones",
@@ -201,7 +202,7 @@ Morpheus Sample AWS IAM Policy
                   "s3:ListBucketMultipartUploads",
                   "s3:ListBucketVersions",
                   "s3:ListMultipartUploadParts",
-                  "s3:PutObject",
+                  "s3:PutObject"
               ],
               "Resource": "*"
           }
