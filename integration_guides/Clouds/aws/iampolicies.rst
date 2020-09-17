@@ -94,6 +94,7 @@ Morpheus Sample AWS IAM Policy
                   "ec2:DescribeVpcClassicLinkDnsSupport",
                   "ec2:DescribeVpcEndpoints",
                   "ec2:DescribeVpcEndpointServices",
+                  "ec2:DescribeVpcPeeringConnections",
                   "ec2:DescribeVpcs",
                   "ec2:DetachInternetGateway",
                   "ec2:DetachNetworkInterface",
