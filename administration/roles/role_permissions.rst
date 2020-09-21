@@ -112,6 +112,12 @@ Role Mappings
     - The monitoring settings page is where |morpheus| monitoring and monitoring integrations are configured.  Available integrations are AppDynamics, ServiceNow, and New Relic. Monitoring checks can be turned on or off, and availability time frame, check interval period, and reported availability precision are also configured on this page.
     - This permission is recommended for those responsible for configuring |morpheus| monitoring settings and integrations.
     - This permission is recommended to be set to None in the Tenant Role to restrict this access from Subtenant Users.
+  * - Admin: Plugins
+    - None, Full
+    - Allows or disallows access to the Plugins tab on the Integrations page (Administration > Integrations)
+    - The Plugins tab is where custom plugins are added to extend |morpheus| functionality.
+    - This permission is recommended for those responsible for extending |morpheus| functionality through custom plugins.
+    - This permission is recommended to be set to None in the Tenant Role to restrict this access from Subtenant Users.
   * - Admin: Policies
     - None, Read, Full
     - This setting determines the level of access to Administration > Policies. When given to a Master Tenant user the ability to define Global policies and associate them with one or many Subtenants is granted.  When given to a Subtenant user, a global policy applies only to their subtenant.
@@ -603,7 +609,7 @@ Role Mappings
     - Determines access to the Tools > Self Service page
     - The Self Service pages allows administrators to configure easily-deployable catalog items for Service Catalog Persona users
     - Recommended for those tasked with creating and curating items for the self service catalog
-    - 
+    -
   * - None - No Permissions
     - None
     - When all permissions are set to None, the following behavior can be expected: This allows only access to the User Setting page displayed, which is accessed by clicking on the user's name in the upper-right corner of the application window.

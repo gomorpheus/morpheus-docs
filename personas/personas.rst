@@ -35,7 +35,7 @@ Configuring Global Access:
 Accessing Alternate Personas
 ----------------------------
 
-Switch Personas by clicking on your name in the upper-left corner of the application window. If your Role gives you access to any additional Personas, they will be listed here.
+Switch Personas by clicking on your name in the upper-right corner of the application window. If your Role gives you access to any additional Personas, they will be listed here.
 
 .. image:: /images/personas/2switchPersona.png
 
