@@ -48,7 +48,7 @@ When creating an invoices view, there are many output columns available to selec
 
 .. toggle-header:: :header: Available Output Columns: **Expand for Complete List**
 
-  - **Invoice ID:** The unique ID in |moprheus| for the invoice
+  - **Invoice ID:** The unique ID in |morpheus| for the invoice
   - **Type:** The invoice type; Cloud, Container, Group, Server, Instance, Resource, User, or Volume
   - **Ref ID:** An ID for the reference object tied to the invoice (server, instance, cloud, etc.). Reference IDs are reused across invoice types so invoices referring to identical Ref IDs may not necessarily refer to the same reference object
   - **Reference:** The name of the reference object (server, cloud, user, group, etc.) tied to the invoice
@@ -101,7 +101,8 @@ When creating an invoices view, there are many output columns available to selec
   - **Active:** Indicates whether or not the reference object is currently existing and active
   - **Date Created:** The date and time the invoice is created
   - **Last Updated:** The date and time the invoice was last updated
-  |br|
+
+|br|
 
 Invoice Types
 ^^^^^^^^^^^^^
