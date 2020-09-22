@@ -74,6 +74,194 @@ Morpheus API Option List Fields
     A list of available object types to return
   TRANSLATION SCRIPT
     Create a JS script to translate the result data object into an array containing objects with properties 'name' and 'value'. The input data is provided as 'data' and the result should be put on the global variable 'results'.
+
+    Translation script inputs:
+
+      **Clouds**
+      - ``id: <Number>``
+      - ``value: <Number>`` // id, convenience
+      - ``name: <String>``
+      - ``displayName: <String>``
+      - ``category: <String>``
+      - ``description: <String>``
+      - ``apiKey: <String>``
+      - ``status: <String>``
+      - ``hourlyPrice: <Number>``
+      - ``hourlyCost: <Number>``
+      - ``instanceType: <Object>``
+
+        - ``id: <Number>``
+        - ``name: <String>``
+
+      - ``plan:<Object>``
+
+        - ``id: <Number>``
+        - ``name: <String>``
+
+      - ``site:<Object>``
+
+        - ``id: <Number>``
+        - ``name: <String>``
+
+      **Environments**
+      - ``id: <Number>``
+      - ``value: <Number>`` // id, convenience attribute to avoid requiring translation
+      - ``code: <String>``
+      - ``name: <String>``
+
+      **Groups**
+      - ``id: <Number>``
+      - ``value: <Number>`` // id, convenience attribute to avoid requiring translation
+      - ``name: <String>``
+      - ``code: <String>``
+      - ``uuid: <String>``
+      - ``location: <String>``
+      - ``datacenterId: <Number>``
+
+      **Instances**
+      - ``id: <Number>``
+      - ``value: <Number>`` // id, convenience
+      - ``name: <String>``
+      - ``displayName: <String>``
+      - ``category: <String>``
+      - ``description: <String>``
+      - ``apiKey: <String>``
+      - ``status: <String>``
+      - ``hourlyPrice: <Number>``
+      - ``hourlyCost: <Number>``
+      - ``instanceType: <Object>``
+
+        - ``id: <Number>``
+        - ``name: <String>``
+
+      - ``plan: <Object>``
+
+        - ``id: <Number>``
+        - ``name: <String>``
+
+      - ``site: <Object>``
+
+        - ``id: <Number>``
+        - ``name: <String>``
+
+      **Instances Wiki**
+      - ``id: <Number>``
+      - ``value: <Number>`` // id, convenience
+      - ``name: <String>``
+      - ``urlName: <String>``
+      - ``category: <String>``
+      - ``instanceId: <String>``
+      - ``content: <String>``
+      - ``contentFormatted: <String>``
+      - ``format: <String>``
+      - ``createdByUsername: <String>``
+      - ``updatedByUsername: <String>``
+
+      **Networks**
+      - ``id: <Number>``
+      - ``value: <Number>`` // id, convenience
+      - ``code: <String>``
+      - ``category: <String>``
+      - ``name: <String>``
+      - ``status: <String>``
+      - ``cloudId: <Number>``
+      - ``groupId: <Number>``
+      - ``networkType:<Object>``
+
+        - ``id: <Number>``
+        - ``code: <String>``
+        - ``name: <String>``
+
+      - ``externalId: <String>``
+      - ``externalNetworkType: <String>``
+      - ``networkDomain: <Object>``
+
+        - ``id: <Number>``
+        - ``name: <String>``
+
+      - ``networkPool: <Object>``
+
+        - ``id: <Number>``
+        - ``name: <String>``
+
+      - ``createdBy: <String>``
+
+      **Plans**
+      - ``id: <Number>``
+      - ``value: <Number>`` // id, convenience
+      - ``code: <String>``
+      - ``name: <String>``
+      - ``storage: <Integer, bytes>``
+      - ``memory: <Integer, bytes>``
+      - ``cores: <Number>``
+
+      **Resource Pools**
+      - ``id: <Number>``
+      - ``value: <Number>`` // id, convenience
+      - ``code: <String>``
+      - ``externalId: <String>``
+      - ``name: <String>``
+      - ``serverGroupId: <Number>``
+      - ``status: <String>``
+      - ``regionCode: <String>``
+      - ``parentPoolId: <Number>``
+      - ``type: <String>``
+
+      **Security Groups**
+      - ``id: <Number>``
+      - ``value: <Number>`` // id, convenience
+      - ``code: <String>``
+      - ``name: <String>``
+      - ``externalType: <String>``
+      - ``externalId: <String>``
+      - ``cloudId: <Number>``
+      - ``scopeMode: <String>``
+      - ``scopeId: <Number>``
+
+      **Servers**
+      - ``id: <Number>``
+      - ``value: <Number>`` // id, convenience
+      - ``name: <String>``
+      - ``displayName: <String>``
+      - ``description: <String>``
+      - ``category: <String>``
+      - ``osType: <String>``
+      - ``powerState: <String>``
+      - ``lastStats: <String>``
+      - ``zone: <Object>``
+
+        - ``id: <Number>``
+        - ``name: <String>``
+
+      - ``capacityInfo: <Object>``
+
+        - ``maxStorage: <Integer, bytes>``
+        - ``maxMemory: <Integer, bytes>``
+        - ``maxCores: <Number>``
+        - ``usedMemory: <Integer, bytes>``
+        - ``usedStorage: <Integer, bytes>``
+
+      - ``computeServerType: <Object>``
+
+        - ``id: <Number>``
+        - ``name: <String>``
+        - ``nodeType: <String>``
+        - ``vmHypervisor: <String>``
+        - ``containerHypervisor: <String>``
+
+      **Servers Wiki**
+      - ``id: <Number>``
+      - ``value: <Number>`` // id, convenience
+      - ``name: <String>``
+      - ``urlName: <String>``
+      - ``category: <String>``
+      - ``serverId: <String>``
+      - ``content: <String>``
+      - ``contentFormatted: <String>``
+      - ``format: <String>``
+      - ``createdByUsername: <String>``
+      - ``updatedByUsername: <String>``
+
   REQUEST SCRIPT
     The request script is used differently for Morpheus API Option List types. A Morpheus API option list type will use an internal API to return a list of objects instead of performing HTTP(S) requests to the Morpheus API. Due to this approach, the results object will not be used to generate query parameters or a JSON body. The results object will instead be used to contain a map of accepted key:value pairs that can be used to filter, sort and order the list of objects that get returned.
 
@@ -85,6 +273,30 @@ Morpheus API Option List Fields
         - ``order: <string>`` // Order of returned values. Accepted values: 'asc', 'desc'. Default: 'asc'
         **Example:**
         ``results = {max: 5, order : 'desc'}``
+
+      **Networks**
+      - ``zoneId``
+      - ``siteId``
+      - ``planId``
+      - ``provisionTypeId: <Number>`` // Id of the provision type (technology), filters to only networks associated with this provision type
+      - ``layoutId: <Number>`` // Id of an Instance Layout, ignored if provisionTypeId is supplied, otherwise used to look up the provision type
+      - ``poolId: <Number>`` // Id of a network pool, filters to only networks within the specified network pool
+
+      **Plans**
+      - ``zoneId``
+      - ``siteId``
+      - ``layoutId``
+      - ``provisionTypeId: <Number>`` // Id of the provision type (technology), filters to only plans associated with this provision type
+
+      **Resource Pools**
+      - ``zoneId``
+      - ``siteId``
+      - ``planId``
+      - ``layoutId: <Number>`` // Id of an Instance Layout, used to get the associated provision type and filter to that provision type
+
+      **Security Groups**
+      - ``zoneId`` // required
+      - ``poolId``
 
       **Clouds**
         - ``zoneId : <integer>``  // Database ID of cloud to return
