@@ -12,12 +12,17 @@
 Highlights
 ----------
 
+- Self Service / Personas
+- Invoices
+- Reports
+- Custom plugins
+
 New Features
 ------------
 
 - Amazon: Processing of costing (CUR) reports for detailed invoice costing now occurs when the cloud integration COSTING value is set to "Costing" or "Costing and Reservations". Previously report processing only took place if the cloud integration was configured to get "Costing and Reservations"
 - Amazon: ROI (return on investment) figure displayed in Reservation Recommendations and Savings Plan Recommendations tables on Amazon Cloud detail pages. This is the length of time required to make back the original investment when reserving instances or purchasing a savings plan
-- Amazon:
+- Amazon: Routes on AWS routers are now editable (Infrastructure > Network > Selected AWS Network > Routing tab > Pencil icon) in addition to viewing, creating and deleting which could be done previously
 - Clouds: Canonical BMaaS Cloud integration type added
 - Guidance: Recommendations can now be made based on 30, 60, or 90 day periods
 
@@ -43,7 +48,26 @@ New Features
 
 - Plugins: Add custom plugins to |morpheus| by uploading them in Administration > Integrations > Plugins. See documentation on the plugin architecture SDK for details on getting started with plugin development
 
-- Reports: Many report types now allow filtering to include or exclude resources based on multiple tags rather than just one
+- .. toggle-header:: :header: Reports: **Reports UI and feature set overhauled**
+
+     - New report types added
+     - Landing page for Reports now lists report types with buttons to run a selected report type now or schedule one on a recurring basis
+     - Clicking into a report type lists all viewable runs of that report type, one-off runs can be executed, schedules for that report type can be viewed or deleted
+     - See Reports section of |morpheus| docs for complete feature guides
+     - Many report types now allow filtering to include or exclude resources based on multiple tags rather than just one
+
+- .. toggle-header:: :header: Reports: **New report types added**
+
+     Several new report types are added, note that the Amazon costing reports listed below are not shown for users that don't have an Amazon cloud integration exposed to them:
+
+     - Guidance
+     - Migration Planning
+     - Time Series Cost
+     - Amazon Reservation Coverage
+     - Amazon Reservation Utilization
+     - Amazon Savings Inventory Summary
+     - Amazon Savings Plan Coverage
+     - Amazon Savings Plan Utilization
 
 - .. toggle-header:: :header: Reports: **Automated Generation of Custom Reports**
 
@@ -52,13 +76,6 @@ New Features
      - In the future, automated runs will appear for viewing or exporting in the list of reports
 
      .. image:: /images/releases/500/scheduleReport.png
-
-- .. toggle-header:: :header: Reports: **Reports UI and feature set overhauled**
-
-     - New report types added
-     - Landing page for Reports now lists report types with buttons to run a selected report type now or schedule one on a recurring basis
-     - Clicking into a report type lists all viewable runs of that report type, one-off runs can be executed, schedules for that report type can be viewed or deleted
-     - See Reports section of |morpheus| docs for complete feature guides
 
 - .. toggle-header:: :header: Roles: **Changes to User Role Permissions**
 
@@ -100,6 +117,8 @@ New Features
 
      - Backup Jobs are deleted from the :guilabel:`ACTIONS` menu on the Backup Jobs list page (Backups > Jobs)
      - Delete action existed previously but, due to Veeam API limitations, |morpheus| could only disable the job
+
+- Windows: Windows VMs will now auto-expand their root storage partitions to fill drive space, previously this was done manually
 
 Fixes
 -----
