@@ -154,6 +154,18 @@ New Features
 Fixes
 -----
 
+- Azure: Fixed AKS Cluster Deployment Failure when Azure Cloud is scoped to single Resource Group
+- Azure: Fixed issue with deleting a Resource Group created from an ARM App when an Azure Cloud is scoped to a single Resource Group.
+- Azure: Fixed provisioning issue when specifying mixed managed disk types
+- Azure: Fixed user provided disk labels being overwritten with external_id names
+- Budgets: Fixed current years actuals displaying in future years budgets
+- ElasticSearch: Added auto-reconnect or rebuilding of client on runtime exception 
+- NSX-T: Fixed issue with NSX-T IP Pool creation
+- Reconfigure: Fixed issue where field values were not being updated to default values when selecting plans with customizable inputs.
+- SCVMM: Fixed issue where selected SCVMM Cloud was not being passed in SCVMM VM config 
+- SCVVM: Fixed Instance reconfigure startup memory and fixed memory allocation
+- VCD: Fixed Image Sync not working for Catalogs with spaces in the Catalog name
+
 |morpheus| API Updates
 ======================
 
@@ -171,3 +183,6 @@ CLI Enhancements
 
 CLI Fixes
 ---------
+
+- CLI: Added more specific error when specified cores exceed policy allowance.
+- CLI: Fixed issue with blueprint creation via cli using yaml or json file
