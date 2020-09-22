@@ -78,6 +78,7 @@ Morpheus API Option List Fields
     Translation script inputs:
 
       **Clouds**
+
       - ``id: <Number>``
       - ``value: <Number>`` // id, convenience
       - ``name: <String>``
@@ -104,12 +105,14 @@ Morpheus API Option List Fields
         - ``name: <String>``
 
       **Environments**
+
       - ``id: <Number>``
       - ``value: <Number>`` // id, convenience attribute to avoid requiring translation
       - ``code: <String>``
       - ``name: <String>``
 
       **Groups**
+
       - ``id: <Number>``
       - ``value: <Number>`` // id, convenience attribute to avoid requiring translation
       - ``name: <String>``
@@ -119,6 +122,7 @@ Morpheus API Option List Fields
       - ``datacenterId: <Number>``
 
       **Instances**
+
       - ``id: <Number>``
       - ``value: <Number>`` // id, convenience
       - ``name: <String>``
@@ -145,6 +149,7 @@ Morpheus API Option List Fields
         - ``name: <String>``
 
       **Instances Wiki**
+
       - ``id: <Number>``
       - ``value: <Number>`` // id, convenience
       - ``name: <String>``
@@ -158,6 +163,7 @@ Morpheus API Option List Fields
       - ``updatedByUsername: <String>``
 
       **Networks**
+
       - ``id: <Number>``
       - ``value: <Number>`` // id, convenience
       - ``code: <String>``
@@ -187,6 +193,7 @@ Morpheus API Option List Fields
       - ``createdBy: <String>``
 
       **Plans**
+
       - ``id: <Number>``
       - ``value: <Number>`` // id, convenience
       - ``code: <String>``
@@ -196,6 +203,7 @@ Morpheus API Option List Fields
       - ``cores: <Number>``
 
       **Resource Pools**
+
       - ``id: <Number>``
       - ``value: <Number>`` // id, convenience
       - ``code: <String>``
@@ -208,6 +216,7 @@ Morpheus API Option List Fields
       - ``type: <String>``
 
       **Security Groups**
+
       - ``id: <Number>``
       - ``value: <Number>`` // id, convenience
       - ``code: <String>``
@@ -219,6 +228,7 @@ Morpheus API Option List Fields
       - ``scopeId: <Number>``
 
       **Servers**
+
       - ``id: <Number>``
       - ``value: <Number>`` // id, convenience
       - ``name: <String>``
@@ -250,6 +260,7 @@ Morpheus API Option List Fields
         - ``containerHypervisor: <String>``
 
       **Servers Wiki**
+
       - ``id: <Number>``
       - ``value: <Number>`` // id, convenience
       - ``name: <String>``
@@ -301,7 +312,7 @@ Morpheus API Option List Fields
       **Clouds**
         - ``zoneId : <integer>``  // Database ID of cloud to return
         - ``tenantId : <integer>`` // Database ID of tenant where clouds are added. Filters to only clouds added within the specified tenant. Only available in Master Tenant
-        - ``zoneTypeId : <integer>`` Database ID of cloud type. Filters to only clouds with the specified cloud type
+        - ``zoneTypeId : <integer>`` // Database ID of cloud type. Filters to only clouds with the specified cloud type
         - ``siteId : <integer>`` // Database ID of group. Filters to only clouds within the specified group
         - ``tagName : <string>`` // Filters to clouds with servers with tags containing the tagName
         - ``tagValue : <mixed>`` // Requires tagName. Filters to clouds with servers that have tags containing the tagName and specified tagValue
