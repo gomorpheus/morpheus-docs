@@ -1,3 +1,8 @@
+.. # define a hard line break for HTML
+.. |br| raw:: html
+
+   <br />
+
 Invoices
 --------
 
@@ -94,7 +99,7 @@ When creating an invoices view, there are many output columns available to selec
   - Active: Indicates whether or not the reference object is currently existing and active
   - Date Created: The date and time the invoice is created
   - Last Updated: The date and time the invoice was last updated
-
+|br|
 Invoice Types
 ^^^^^^^^^^^^^
 
