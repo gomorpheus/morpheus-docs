@@ -246,8 +246,4 @@ As of version 4.2.3, AWS cloud integrations in |morpheus| sync billing data sole
 
         .. IMPORTANT:: It may take as long as one hour for |morpheus| to process the next CUR report.
 
-<<<<<<< HEAD
-
-=======
->>>>>>> 4.2.3
 .. include:: /integration_guides/Clouds/aws/iampolicies.rst

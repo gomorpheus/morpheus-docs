@@ -53,11 +53,7 @@ Services
 |morphver| Service Version Changes
 ----------------------------------
 
-<<<<<<< HEAD
 - MySQL updated to 5.7.30
-=======
-No service version changes from 4.2.2-4
->>>>>>> 4.2.3
 
 |morphver| Service Version Compatibility
 ----------------------------------------
@@ -76,10 +72,6 @@ When externalizing MySQL, Elasticsearch and/or RabbitMQ services, the following 
 | RabbitMQ                              | |rmqbranch|           | |rmqver|                            |
 +---------------------------------------+-----------------------+-------------------------------------+
 
-<<<<<<< HEAD
-=======
-
->>>>>>> 4.2.3
 .. important:: Elasticsearch 7.x is required for |morphver|. Refer to :ref:`upgrading` section for more information.
 
 Security
@@ -90,15 +82,12 @@ Security
 - 4.1.2: Appliance: Starting in v4.1.2, the default |morpheus| Nginx config removes support for incoming ``TLS v1.0 and v1.1`` connections. Please update source config to be compatible. If necessary, |morpheus| can be configured to support older TLS versions via :ref:`morpheus.rb` config.
 - 4.2.1: Security: Web Security response headers set for enhanced security
 
-<<<<<<< HEAD
 CVEs Addressed
 --------------
 
 - CVE-2018-15758
 - CVE-2019-10172
 
-=======
->>>>>>> 4.2.3
 Integrations
 ============
 
