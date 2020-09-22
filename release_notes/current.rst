@@ -17,9 +17,6 @@ Service Catalog Persona and Self Service Catalog Item Builder
 
 - Configure Instance types and Blueprints as Catalog Items for easy provisioning
 - Control access to Catalog Items through Role permissions and Tenant controls
-
-.. image:: /images/releases/500/catalogList.png
-
 - Give users access to the Service Catalog Persona for an easy provisioning experience
 - Select resource configurations and "check out" to provision all items in the cart
 - Control access to the Service Catalog Persona and make subsets of Catalog Items available through Role permissions

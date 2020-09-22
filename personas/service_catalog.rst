@@ -33,3 +33,13 @@ Access the detail page for an item in your inventory by clicking the View Detail
 
 Placing Orders
 --------------
+
+From the Catalog page, select the tile for your chosen item to see any custom options that may need to be set prior to provisioning.
+
+.. image:: /images/personas/7catalogOrder.png
+
+Once the item is in the cart, make any additional selections to complete the order. Once finished, proceed to the cart by clicking on the cart icon at the top of the application window. Click "Review Order". When reviewing your order, each selected item is listed along with its estimated cost. The total estimated cost for the entire order is also computed.
+
+.. image:: /images/personas/8catalogCart.png
+
+Once :guilabel:`PLACE ORDER` is clicked, the provisioning process will begin and the user is redirected back to the catalog page. Any new orders can be viewed in Inventory and additional details can be accessed through the Inventory item detail page.
