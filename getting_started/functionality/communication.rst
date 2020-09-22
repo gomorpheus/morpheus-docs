@@ -1,180 +1,14 @@
-Requirements
-============
-
-|morpheus| is a software based appliance installation capable of orchestrating many clouds and hypervisors. Before an installation is started it is important to understand some of the base requirements.
-
-In the simplest configuration |morpheus| needs one Appliance Server. The Appliance Server, by default, contains all the components necessary to orchestrate both vm's and containers. To get started some base requirements are recommended:
-
-Base Requirements
------------------
-
-.. list-table:: **Supported Appliance Operating Systems**
-   :widths: auto
-   :header-rows: 1
-
-   * - OS
-     - Version(s)
-     - Notes
-   * - Amazon Linux
-     - 2
-     -
-   * - CentOS
-     - 7.x, 8.x
-     -
-   * - Debian
-     - 8, 9, 10
-     - FreeRDP 2.0 is not compatible with Debian 9. Guacd will remain at 1.0.0 for Appliances running on 9.
-   * - RHEL
-     - 7.x, 8.x
-     -
-   * - SUSE SLES
-     - 12, 15
-     -
-   * - Ubuntu
-     - 16.04, 18.04
-     - 14.04 is no longer supported for Appliance OS. Existing Appliances on 14.04 must upgrade to 16.04 or 18.04 PRIOR to upgrading to v4.2.1. Note: 14.04 is still supported by the |morpheus| Agent.
-
-- **Memory:** 16 GB recommended for default installations. 8 GB minimum required with 4 GB+ available storage swap space
-- **Storage:** 200 GB storage minimum (see Storage Considerations below)
-- **CPU:** 4-core, 1.4 GHz (or better), 64-bit CPU recommended for all-in-one systems. For a distributed-tier installation, it's recommended each tier have 2-core, 1.4 GHz (or better), 64-bit CPU
-- Network connectivity from your users to the appliance over TCP 443 (HTTPS)
-- Superuser privileges via the sudo command for the user installing the |morpheus| appliance package
-- Access to base yum or apt repos. Access to Optional RPMs repo required for RHEL 7.x
-- An appliance license is required for any operations involving provisioning
-- Internet Connectivity (optional)
-   - To download from |morpheus|' public docker repositories and system Virtual Image catalog
-   - Offline installation require installing the supplemental package in addition to the regular installation package. Local yum/apt repo access still required for offline installations.
-
-.. NOTE:: Access to yum and apt repos is still required for offline installations.
-
--  VM and Host Agent Install (optional)
-    - Inbound connectivity access from provisioned vm's and container hosts on ports 443 (Agent install and communication) and 80 (Linux Agent installs via yum and apt)
-    - An Appliance URL that is accessible/resolvable to all managed hosts. It is necessary for all hosts that are managed by |morpheus| to be able to communicate with the appliance server ip on port 443. This URL is configured under Admin->Settings.
-
-.. NOTE:: Ubuntu 16.10 is not currently supported.
-
-Storage Considerations
-----------------------
-
-Upon initial installation |morpheus| takes up less than 10 GB of space, however Morpheus Services, Virtual Images, Backups, Logs and stats and user uploaded and imported data require adequate space on the Morpheus Appliance(s) per Appliance Configuration and activity.
-
-.. IMPORTANT:: It is the customers responsibility to ensure adequate storage space per configuration and use case.
-
-Default Paths
-^^^^^^^^^^^^^
-
-``/opt/morpheus``
-  Morpheus Application and Services Files
-``/var/opt/morpheus``
-  User, Application and Services Data, including default config Elasticsearch, RabbitMQ and Database data, and default Virtual Image path.
-``/var/log``
-  Morpheus Service logs
-``/tmp/morpheus``
-  Working directory for Backups
-
-Images
-^^^^^^
-
-Virtual Images can be uploaded to |morpheus| Storage Providers for use across Clouds. By default when no Storage Provider has been added, images will write to ``/var/opt/morpheus/morpheus-ui/vms``. Please ensure adequate space when uploading Images using local file paths.
-
-Backups
-^^^^^^^
-
-|morpheus| can offload snapshots when performing backups to local or other Storage Providers. By default when no Storage Provider has been added, backups will write to ``/tmp/morpheus/backups/``. When using none NFS Storage providers, the backup file(s) must be written to ``/tmp/morpheus/working/`` before they can be zipped, sent to the destination Storage provider such as S3, and removed from ``/tmp/morpheus/working/``. Please ensure adequate space in ``/tmp/morpheus/`` when offloading Backups.
-
-Migrations
-^^^^^^^^^^
-
-When performing a Hypervisor to Hypervisor migration, such as VMware to AWS, Virtual Images are written to local storage before conversion and/or upload to the target hypervisor. Please ensure adequate space in ``/var/opt/morpheus/morpheus-ui/vms`` or other configured local Storage Provider paths when performing Migrations.
-
-VM Logs and Stats
-^^^^^^^^^^^^^^^^^
-
-When using a |morpheus| configuration with locally installed ElasticSearch, VM, Container, Host and Appliance logs and stats are are stored in Elasticsearch. Please ensure adequate space in ``/var``, specifically ``/var/opt/morpheus/elasticsearch`` in relation to the number or Instances reporting logs, log frequency, and log retention count.
-
-|morpheus| Services Logs
-^^^^^^^^^^^^^^^^^^^^^^^^
-
-Logs for services local to the |morpheus| Appliance, such as the Morpheus UI, elasticsearch, rabbitmq, mysql, nginx and guacd are written to ``/var/log/morpheus/``. Current logs are rotated nightly, zipped, and files older than 30 days are automatically removed. Misconfigured services, ports and permissions can cause excessive log file sizes.
-
-
-Network Connectivity
---------------------
-
-|morpheus| primarily operates via communication with its agent that is installed on all managed vm's or docker hosts. This is a lightweight
-agent responsible for aggregating logs and stats and sending them back to the client with minimal network traffic overhead. It also is capable
-of processing instructions related to provisioning and deployments instigated by the appliance server.
-
-The |morpheus| Agent exists for both linux and windows based platforms and opens NO ports on the guest operating system. Instead it makes an
-outbound SSL (https/wss) connection to the appliance server. This is what is known as the ``appliance url`` during configuration (in
-Admin->Settings). When the agent is started it automatically makes this connection and securely authenticates. Therefore, it is necessary for
-all vm's and docker based hosts that are managed by morpheus to be able to reach the appliance server ip on port 443.
-
-|morpheus| has numerous methods to execute agent installation, including zero open port methods.
-
-Components
-----------
-
-The Appliance Server automatically installs several components for the operation of |morpheus|. This includes:
-
--  RabbitMQ (Messaging)
--  MySQL (Logistical Data store)
--  Elasticsearch (Logs / Metrics store)
--  Tomcat (|morpheus| Application)
--  Nginx (Web frontend)
--  Guacamole (Remote console service for clientless remote console)
--  Check Server (Monitoring Agent for custom checks added via UI)
-
-All of these are installed in an isolated way using chef zero to ``/opt/morpheus``. It is also important to note these services can be
-offloaded to separate servers or clusters as desired. For details check the installation section and high availability.
-
-Common Ports & Requirements
-----------------------------
-
-The following chart is useful for troubleshooting Agent install, Static IP assignment, Remote Console connectivity, and Image transfers.
-
-.. csv-table:: Common Ports & Requirements
-   :header: "Feature", "Method",  "OS", "Source", "Destination", "Port", "Requirement"
-   :widths: 35, 25, 15, 15, 15, 10, 100
-
-   "Agent Communication", "All", "All", "Node", "Appliance", 443, "DNS Resolution from node to appliance url"
-   "Agent Install", "All", "Linux", "Node", "Appliance", 80, "Used for appliance yum and apt repos"
-   " ", "SSH", "Linux", "Appliance", "Node", 22, "| DNS Resolution from node to appliance url
-   | Virtual Images configured
-   | SSH Enabled on Virtual Image"
-   "","WinRM",Windows,Appliance,Node,5985,"| Not required for agent installation in VMware vCenter and vCloud Director type clouds. Otherwise, access from |morpheus| App Nodes to Instance Node on 5985
-   | Virtual Images configured
-   | WinRM Enabled on Virtual Image(`winrm quickconfig`)"
-   " ",Cloud-init,Linux, , , ,"| Cloud-init installed on template/image
-   | Cloud-init settings populated in User Settings or in `Admin –> Provisioning`
-   | Agent install mode set to Cloud-Init in Cloud Settings"
-   " ",Cloudbase-init,Windows, , , ,"| Cloudbase-init installed on template/image
-   | Cloud-init settings populated in User Settings or in `Admin –> Provisioning`
-   | Agent install mode set to Cloud-Init in Cloud Settings"
-   " ",VMtools,All, , , ,"| VMtools installed on template
-   | Cloud-init settings populated in Morpheus user settings or in `Administration –> Provisioning` when using Static IP’s
-   | Existing User credentials entered on Virtual Image when using DHCP
-   | RPC mode set to VMtools in VMware cloud settings."
-   "Static IP Assignment & IP Pools",Cloud-Init,All, , , ,"| Network configured in Morpheus (Gateway, Primary and Secondary DNS, CIDR populated, DHCP disabled)
-   | Cloud-init/Cloudbase-init installed on template/image
-   | Cloud-init settings populated in Morpheus user settings or in `Administration –> Provisioning`"
-   " ", "VMware Tools",All, , , ,"| Network configured in Morpheus (Gateway, Primary and Secondary DNS, CIDR populated, DHCP disabled)
-   | VMtools installed on Template/Virtual Image"
-   Remote Console,SSH,Linux,Appliance,Node,22,"ssh enabled on node
-   | user/password set on VM or Host in Morpheus "
-   " ",RDP,Windows,Appliance,Node,3389,"RDP Enabled on node
-   | user/password set on VM or Host in Morpheus"
-   " ",Hypervisor Console,All,Appliance,Hypervisor Hosts,443,"
-   |  Hypervisor host names resolvable by morpheus appliance"
-   "Morpheus Catalog Image Download", ,All,Appliance,AWS S3,443,"Available space at ``/var/opt/morpheus/``"
-   "Image Transfer",Stream,All,Appliance,Datastore,443,"Hypervisor Host Names resolvable by Morpheus Appliance"
-
 Communication Data
 ------------------
 
+The following page contains communication information between the |morpheus| appliance, integrated technologies, managed machines, and services.
+
+Communication Frequency and Configurability
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 The following table contains communication information, including frequency and configurability between |morpheus| and its supported technology integrations.
 
-.. list-table:: **Communication Frequency, Ports, and Protocols**
+.. list-table:: **Communication Frequency and Configurability**
   :widths: auto
   :header-rows: 1
 
@@ -779,24 +613,204 @@ The following table contains communication information, including frequency and 
     - Persistent
     - No
 
-SELinux
--------
+Ports and Protocols
+^^^^^^^^^^^^^^^^^^^
 
-If not required by organizational policy, we recommend setting SELinux to "Permissive" or "Disabled" modes to prevent any unnecessary security-related issues. |morpheus| versions 3.6.0 and higher do support "Enforcing" mode if it is required by your organization due to IT policies. Set the mode appropriately prior to running the |morpheus| installer and it will make the required changes based on your chosen SELinux context.
+The following table contains communication port and protocol data between |morpheus| appliance tiers, managed machines, and services. All communication to and from |morpheus| goes thru the application tier with exception of inter-cluster communications for each of the |morpheus| tiers when using a distributed architecture.
 
-.. IMPORTANT:: Setting SELinux to "Enforcing" mode requires policies to be configured correctly in order for the |morpheus| appliance to function correctly.
+Ports used to communicate with integrated technologies are those defined for the integration’s API. They are not represented in this table as many of these are configurable and may be different in each customer environment. Additionally, ports used to complete Morpheus checks are customizable and may vary for each check configured. They are also not represented in this table.
 
-Supported Languages
--------------------
+.. list-table:: **Ports and Protocols**
+  :widths: auto
+  :header-rows: 1
 
-Morpheus supports a number of different UI languages, including:
-
-  - English
-  - German
-  - Spanish
-  - Chinese (Simplified)
-  - Portuguese (Brazil)
-
-Currently, UI language is not configurable from within Morpheus itself. Changing the language within the application will involve some combination of operating system and web browser language setting changes. Morpheus must also have a translation set for your chosen language to see a change. Depending on the browser and the operating system, you may need to fully close and reopen the web browser or restart the machine completely.
-
-.. NOTE:: Many of Morpheus' language packs are generated by our clients. For that reason, we cannot guarantee accuracy and completeness of the translation. As new UI elements are added, existing language sets may not have immediate updates to keep pace with application changes. If you would like to contribute to a new or existing language pack, contact your account team or Morpheus support. Contributed content would be included with the next application update.
+  * - ﻿Source
+    - Destination
+    - Port
+    - Protocol
+    - Description
+  * - User
+    - Application Tier
+    - 443
+    - TCP
+    - User Access
+  * - Morpheus Servers
+    - DNS Servers
+    - 53
+    - TCP
+    - Domain Name Resolution
+  * - Morpheus Servers
+    - Time Source
+    - 123
+    - TCP
+    - Time Resolution
+  * - Morpheus Servers
+    - Web or Offline Installer
+    - 80, 443
+    - TCP
+    - Download repos and Morpheus packages (yum/apt repos)
+  * - Managed Machine
+    - Application Tier
+    - 443
+    - TCP
+    - Morpheus Agent Communications
+  * - Managed Machine
+    - Application Tier
+    - 80, 443
+    - TCP
+    - Agent Installation. (Requires port 80 only for Ubuntu 14.04)
+  * - Managed Machine
+    - Application Tier
+    - N/A
+    - N/A
+    - Agent Installation Clout-init (Linux)
+  * - Managed Machine
+    - Application Tier
+    - N/A
+    - N/A
+    - Agent Installation Cloudbase-init (Windows)
+  * - Managed Machine
+    - Application Tier
+    - N/A
+    - N/A
+    - Agent Installation VMtools
+  * - Managed Machine
+    - Application Tier
+    - N/A
+    - N/A
+    - Static IP Assignment & IP Pools (Cloud-init or VMware Tools)
+  * - Managed Machine
+    - Docker Image Repo
+    - 443
+    - TCP
+    - Applicable if using docker
+  * - Managed Machine
+    - Application Tier
+    - 69
+    - TCP/UDP
+    - PXE Boot (Forwarded to internal PXE port 6969)
+  * - Application Tier
+    - Managed Machine
+    - 5985
+    - TCP
+    - Agent Installation WinRM (Windows)
+  * - Application Tier
+    - Managed Machine
+    - 22
+    - TCP
+    - Agent Installation SSH (Linux)
+  * - Morpheus Application Tier
+    - Managed Machine
+    - 22, 3389, 443
+    - TCP
+    - Remote Console (SSH, RDP, Hypervisor Console
+  * - Application Tier
+    - AWS S3
+    - 443
+    - TCP
+    - Morpheus Catalog Image Download
+  * - Application Tier
+    - Hypervisor
+    - 443
+    - TCP
+    - Hypervisor hostname resolvable by Morpheus Application Tier
+  * - Application Tier
+    - Non- Transactional Database Tier
+    - 443
+    - TCP
+    - Applicable if using Amazon Elasticsearch Service
+  * - Application Tier
+    - Docker CE Repo
+    - 443
+    - TCP
+    - Applicable only when integrated with Docker
+  * - Application Tier
+    - Rubygems
+    - 443
+    - TCP
+    -
+  * - Application Tier
+    - Morpheus Hub
+    - 443
+    - TCP
+    - (Optional) Telemetry data (Disabled only via license feature)
+  * - Application Tier
+    - Mail Server
+    - 25 or 465
+    - SMTP
+    - Send email from Morpheus
+  * - Application Tier
+    - Messaging Tier
+    - 5672
+    - TCP
+    - AMQP non-TLS connections
+  * - Application Tier
+    - Messaging Tier
+    - 5671
+    - TCP
+    - AMQPS TLS enabled connections
+  * - Application Tier
+    - Messaging Tier
+    - 61613
+    - TCP
+    - STOMP Plugin connections (Required only for Morpheus versions 4.2.1 or prior)
+  * - Application Tier
+    - Messaging Tier
+    - 61614
+    - TCP
+    - STOMP Plugin TLS enabled connections (Required only for Morpheus versions 4.2.1 or prior)
+  * - Messaging Tier
+    - Messaging Tier
+    - 25672
+    - TCP
+    - Inter-node and CLI tool communication
+  * - Administrator Web Browser
+    - RabbitMQ Server Management
+    - 15672
+    - TCP
+    - Management plugin
+  * - Administrator Web Browser
+    - RabbitMQ Server Management
+    - 15671
+    - TCP
+    - Management plugin SSL
+  * - Messaging Tier Cluster Node
+    - Messaging Tier Cluster Node
+    - 4369
+    - TCP
+    - erlang (epmd) peer discovery service used by RabbitMQ nodes and CLI tools
+  * - Application Tier
+    - Non- Transactional Database Tier
+    - 9200
+    - TCP
+    - Elasticsearch requests (Used in all cases except when utilizing AWS ES service)
+  * - Non- Transactional Database Tier
+    - Non- Transactional Database Tier
+    - 9300
+    - TCP
+    - Elasticsearch Cluster
+  * - Transactional Database Tier
+    - Transactional Database Tier
+    - 4567
+    - TCP/UDP
+    - Write-set replication traffic (over TCP) and multicast replication (over TCP and UDP).
+  * - Transactional Database Tier
+    - Transactional Database Tier
+    - 4568
+    - TCP
+    - Incremental State Transfer (IST)
+  * - Application Tier
+    - Transactional Database Tier
+    - 3306
+    - TCP
+    - MySQL client connections
+  * - Backup Solution
+    - Transactional Database Tier
+    - 4444
+    - TCP
+    - State Snapshot Transfer (SST)
+  * - Application Tier
+    - Integrated Technology
+    - Varies
+    - TCP
+    - Integrations (Uses the port of the 3rd party systems API)

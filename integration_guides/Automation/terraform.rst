@@ -9,23 +9,23 @@ Role Access
 
 * In order to see the Terraform Blueprint type option and create Terraform App Blueprints in `Provisioning > Blueprints`, the Morpheus user must have Role permissions for `Provisioning: Blueprints - Terraform` set to `Full`.
 
-* In order to provision Terraform Apps in `Provisioning -> Apps`, the Morpheus user must have Role permissions for `Provisioning: Blueprints > Terraform` set to `Provision` or `Full`.
+* In order to provision Terraform Apps in ``Provisioning > Apps``, the Morpheus user must have Role permissions for `Provisioning: Blueprints > Terraform` set to `Provision` or `Full`.
 
 * Existing Terraform Blueprints must be added before they can be provisioned from `Provisioning > Apps`.
 
 Github/Git Repo
 ^^^^^^^^^^^^^^^
 
-* To use .tf files from a Git repo a Git or Github integration needs to be configured in `Administration - Integrations`. If one is not configured .tf or .tf.json files can be manually added to Terraform App Blueprints.
+* To use .tf files from a Git repo a Git or Github integration needs to be configured in ```Administration > Integrations``. If one is not configured .tf or .tf.json files can be manually added to Terraform App Blueprints.
 
 Supported App Provisioning Targets
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 * VMware
-* AWS
+* Amazon AWS
+* Microsoft Azure
 * Oracle Cloud
 
 .. NOTE::  Additional clouds will be available in later releases.
-
 
 Terraform Installation
 ^^^^^^^^^^^^^^^^^^^^^^

@@ -20,8 +20,13 @@ Add Workflow
 Workflow Execution Phases
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
-For VM’s, Pre-Provision and Provision execute after the VM is running. Pre-Provision can be used for a blueprint so it is added before a script set at the Provision phase executes. Pre-Provision for scripts is mainly for Docker as you can execute on the host before the container is up. Post-Provision will execute after the entire provisioning process is complete.
+For VMs, Pre Provision and Provision phases execute after the VM is running. Pre Provision can be used for a Blueprint so it is added before a script set at the Provision phase executes. Pre Provision for scripts is mainly for Docker as you can execute on the host before the container is up. Post Provision will execute after the entire provisioning process is complete.
 
+<<<<<<< HEAD
+=======
+.. NOTE:: When adding a node to an Instance, Workflow Tasks in the Post Provision phase will be run on all nodes in the Instance after the new node is provisioned. This is because Post Provision operations may need to affect all nodes, such as when joining a new node to a cluster. Tasks in the Pre Provision and Provision phases would only be run on the new node.
+
+>>>>>>> 4.2.3
 Edit Workflow
 ^^^^^^^^^^^^^
 

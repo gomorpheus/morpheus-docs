@@ -4,7 +4,7 @@
 |morphver| Release Notes
 *************************
 
-.. IMPORTANT:: Review :ref:`compatibility` before installing or upgrading to |morpheus|
+.. IMPORTANT:: Review :ref:`compatibility` before installing or upgrading |morpheus|
 
 |morpheus| UI Updates
 =====================
@@ -102,9 +102,15 @@ New Features
 
 - .. toggle-header:: :header: Reports: **Automated Generation of Custom Reports**
 
+<<<<<<< HEAD
      - Click :guilabel:`SCHEDULE` in the row for the report type you wish to run
      - After completing required fields to configure the report, select any default or custom execution schedule from the "SCHEDULE" dropdown list to set the interval. Reports can also be scheduled to be run once at a specific date and time
      - In the future, automated runs will appear for viewing or exporting in the list of reports
+=======
+      - Configuring CURs now required as |morpheus| no longer supports AWS Cost Explorer for billing data aggregation
+
+- .. toggle-header:: :header: Amazon: **Unattached AWS Volume sync added**
+>>>>>>> 4.2.3
 
      .. image:: /images/releases/500/scheduleReport.png
 

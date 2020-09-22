@@ -30,6 +30,8 @@ Adding an Active Directory Integration
     Password for bind service account.
    Required Group
     The AD group users must be in to have access (optional)
+   Include Member Groups
+    When checked, groups nested inside the required group will also be included
    Default Role
     The default role a user is assigned if no group is listed under AD user that maps under Role Mappings section.
    Service Account Holder

@@ -39,6 +39,8 @@ Other types of Guidance recommendations, such as reserve compute recommendations
   :alt: The execute button is not present on a reserve compute recommendation
   :align: center
 
+.. NOTE:: The IGNORE button will remove the recommendation from the UI. Subsequent recommendations of the same type will NOT display for the same object (VM, Cloud etc) again unless the original recommendation is resolved.
+
 Recommendations
 ^^^^^^^^^^^^^^^^^^
 

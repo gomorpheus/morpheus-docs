@@ -379,7 +379,6 @@ Email
 
 PowerShell Script
 `````````````````
-|winrm|
 
 :Description:
   Execute Powershell script against IP specified in Task.
