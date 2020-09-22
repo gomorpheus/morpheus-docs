@@ -9,4 +9,4 @@ Tools
   archives.rst
   image_builder.rst
   migrations.rst
-  self_service.rst
+  self-service.rst
