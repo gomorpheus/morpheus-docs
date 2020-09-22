@@ -278,12 +278,13 @@ Morpheus API Option List Fields
 
     Below is a list of accepted ``key:value`` pairs for each object type:
       **Generic options available for all object types**
-        - ``max: <integer>`` // Maximum number of results to return. Default: 25
-        - ``offset: <integer>`` // Offset for returned results. Default: 0
-        - ``sort: <string>`` // Field to sort on. Default: 'name'
-        - ``order: <string>`` // Order of returned values. Accepted values: 'asc', 'desc'. Default: 'asc'
-        **Example:**
-        ``results = {max: 5, order : 'desc'}``
+
+      - ``max: <integer>`` // Maximum number of results to return. Default: 25
+      - ``offset: <integer>`` // Offset for returned results. Default: 0
+      - ``sort: <string>`` // Field to sort on. Default: 'name'
+      - ``order: <string>`` // Order of returned values. Accepted values: 'asc', 'desc'. Default: 'asc'
+      **Example:**
+      ``results = {max: 5, order : 'desc'}``
 
       **Networks**
 
@@ -314,44 +315,48 @@ Morpheus API Option List Fields
       - ``poolId``
 
       **Clouds**
-        - ``zoneId : <integer>``  // Database ID of cloud to return
-        - ``tenantId : <integer>`` // Database ID of tenant where clouds are added. Filters to only clouds added within the specified tenant. Only available in Master Tenant
-        - ``zoneTypeId : <integer>`` // Database ID of cloud type. Filters to only clouds with the specified cloud type
-        - ``siteId : <integer>`` // Database ID of group. Filters to only clouds within the specified group
-        - ``tagName : <string>`` // Filters to clouds with servers with tags containing the tagName
-        - ``tagValue : <mixed>`` // Requires tagName. Filters to clouds with servers that have tags containing the tagName and specified tagValue
-        - ``phrase : <string>`` // Fuzzy matches phrase on cloud name and description
-        **Example:**
-        ``results = {tenantId: 1, siteId: 1, tagName: "morpheus"}``
+
+      - ``zoneId : <integer>``  // Database ID of cloud to return
+      - ``tenantId : <integer>`` // Database ID of tenant where clouds are added. Filters to only clouds added within the specified tenant. Only available in Master Tenant
+      - ``zoneTypeId : <integer>`` // Database ID of cloud type. Filters to only clouds with the specified cloud type
+      - ``siteId : <integer>`` // Database ID of group. Filters to only clouds within the specified group
+      - ``tagName : <string>`` // Filters to clouds with servers with tags containing the tagName
+      - ``tagValue : <mixed>`` // Requires tagName. Filters to clouds with servers that have tags containing the tagName and specified tagValue
+      - ``phrase : <string>`` // Fuzzy matches phrase on cloud name and description
+      **Example:**
+      ``results = {tenantId: 1, siteId: 1, tagName: "morpheus"}``
 
       **Instances**
-         - ``appsId : <integer>`` // Database ID of app to filter by. Returns instances linked to the app
-         - ``tenantId : <integer>`` // Database ID of tenant where instances are located. Filters to only instances within the specified tenant. Only available in Master Tenant
-         - ``serverId : <integer>`` // Database ID of server. Filters to the instance that contains the specified server 
-         - ``tagName : <string>`` // Filters to instances with tags containing the tagName
-         - ``tagValue : <mixed>`` // Requires tagName. Filters to instances with tags containing the tagName and specified tagValue
-         - ``phrase : <string>`` // Fuzzy matches phrase on instance name and description
-         **Example:**
-         ``results = {tenantId:1, phrase: "ha"}``
+
+       - ``appsId : <integer>`` // Database ID of app to filter by. Returns instances linked to the app
+       - ``tenantId : <integer>`` // Database ID of tenant where instances are located. Filters to only instances within the specified tenant. Only available in Master Tenant
+       - ``serverId : <integer>`` // Database ID of server. Filters to the instance that contains the specified server 
+       - ``tagName : <string>`` // Filters to instances with tags containing the tagName
+       - ``tagValue : <mixed>`` // Requires tagName. Filters to instances with tags containing the tagName and specified tagValue
+       - ``phrase : <string>`` // Fuzzy matches phrase on instance name and description
+       **Example:**
+       ``results = {tenantId:1, phrase: "ha"}``
 
       **Groups**
-        - ``tenantId : <integer>`` // Database ID of tenant where groups are located. Filters to only groups added within the specified tenant. Only available in Master Tenant
-        - ``zoneTypeId : <integer>`` Database ID of cloud type. Filters to only groups that contain clouds with the specified cloud type
-        - ``zoneId : <integer>``  // Database ID of cloud. Filters to only groups that contain the cloud with the specified ID
-        - ``siteId : <integer>`` // Database ID of group to return
-        - ``phrase : <string>`` // Fuzzy matches phrase on group name and location.
+
+      - ``tenantId : <integer>`` // Database ID of tenant where groups are located. Filters to only groups added within the specified tenant. Only available in Master Tenant
+      - ``zoneTypeId : <integer>`` Database ID of cloud type. Filters to only groups that contain clouds with the specified cloud type
+      - ``zoneId : <integer>``  // Database ID of cloud. Filters to only groups that contain the cloud with the specified ID
+      - ``siteId : <integer>`` // Database ID of group to return
+      - ``phrase : <string>`` // Fuzzy matches phrase on group name and location.
 
       **Servers**
-        - ``tenantId : <integer>`` // Database ID of tenant where servers are located. Filters to only servers within the specified tenant. Only available in Master Tenant
-        - ``serverId : <integer>`` // Database ID of server. Filters to the server specified by the ID
-        - ``siteZoneId : <integer>`` // Database ID of cloud. Filters to servers contained within the specified cloud
-        - ``serverType : <string>`` // Type of server. Accepted values: 'host', 'baremetal', 'vm'
-        - ``siteId : <integer>`` // Database ID of group. Filters to only servers contained within clouds that are added in the specified group
-        - ``tagName : <string>`` // Filters to servers with tags containing the tagName
-        - ``tagValue : <mixed>`` // Requires tagName. Filters to servers with tags containing the tagName and specified tagValue
-        - ``phrase : <string>`` // Fuzzy matches phrase on server name and description.
-        **Example:**
-        ``results = {max: 50, siteZoneId : 3}``
+
+      - ``tenantId : <integer>`` // Database ID of tenant where servers are located. Filters to only servers within the specified tenant. Only available in Master Tenant
+      - ``serverId : <integer>`` // Database ID of server. Filters to the server specified by the ID
+      - ``siteZoneId : <integer>`` // Database ID of cloud. Filters to servers contained within the specified cloud
+      - ``serverType : <string>`` // Type of server. Accepted values: 'host', 'baremetal', 'vm'
+      - ``siteId : <integer>`` // Database ID of group. Filters to only servers contained within clouds that are added in the specified group
+      - ``tagName : <string>`` // Filters to servers with tags containing the tagName
+      - ``tagValue : <mixed>`` // Requires tagName. Filters to servers with tags containing the tagName and specified tagValue
+      - ``phrase : <string>`` // Fuzzy matches phrase on server name and description.
+      **Example:**
+      ``results = {max: 50, siteZoneId : 3}``
 
       **instance-wiki:**
       Contains same options for Instances Morpheus API type.
