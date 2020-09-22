@@ -48,58 +48,61 @@ When creating an invoices view, there are many output columns available to selec
 
 .. toggle-header:: :header: Available Output Columns: **Expand for Complete List**
 
-  - Invoice ID: The unique ID in |moprheus| for the invoice
-  - Type: The invoice type; Cloud, Container, Group, Server, Instance, Resource, User, or Volume
-  - Ref ID: An ID for the reference object tied to the invoice (server, instance, cloud, etc.). Reference IDs are reused across invoice types so invoices referring to identical Ref IDs may not necessarily refer to the same reference object
-  - Reference: The name of the reference object (server, cloud, user, group, etc.) tied to the invoice
-  - Cloud ID: The internal ID for a Cloud integration in |morpheus|. This field will be blank unless the invoice references a Cloud
-  - Cloud: The name for a Cloud integration in |morpheus|. This field will be blank unless the invoice references a Cloud
-  - Instance ID: The internal ID for an Instance in |morpheus|. This field will be blank unless the invoice references an Instance
-  - Instance: The name for an Instance in |morpheus|. This field will be blank unless the invoice references an Instance
-  - Server ID: The internal ID for a server in |morpheus|. This field will be blank unless the invoice references a server
-  - Server: The name for a server in |morpheus|. This field will be blank unless the invoice references a server
-  - Cluster ID: The internal ID for a cluster in |morpheus|. This field will be blank unless the invoice references a cluster
-  - Cluster: The name for a cluster in |morpheus|. This field will be blank unless the invoice references a cluster
-  - Plan ID: The internal ID for a service plan in |morpheus|. This field will be populated only for invoices that reference an object which would be associated with a service plan (server, Instance, container, etc.).
-  - Plan: The name for a service plan in |morpheus|. This field will be populated only for invoices that reference an object which would be associated with a service plan (server, Instance, container, etc.).
-  - Group ID: The internal ID for a Group in |morpheus|. This field will be blank unless the invoice references a Group
-  - Group: The name for a Group in |morpheus|. This field will be blank unless the invoice references a Group
-  - User ID: The internal ID for a User in |morpheus|. This field will be blank unless the invoice references a User.
-  - User: The name for a User in |morpheus|. This field will be blank unless the invoice references a User.
-  - Tenant ID: The internal ID for the |morpheus| Tenant which owns the reference object
-  - Tenant: The name of the |morpheus| Tenant which owns the reference object
-  - Period: The monthly period during which the invoice was generated
-  - Interval: The length of the invoice billing period, currently all invoices are generated at a one-month interval
-  - Start Date: The start date and time for the invoice period, typically the first of the month at midnight
-  - End Date: The end date and time for the invoice period, typically the last day of the month at midnight
-  - Ref Start: The date and time the reference object is created or the start of the invoicing period if the reference object existed prior to the start of the invoicing period
-  - Ref End: The date and time the reference object is decommissioned or the end of the invoicing period if the reference object still existed at the end of the period
-  - Compute Cost:
-  - Storage Cost
-  - Network Cost
-  - Extra Cost
-  - MTD Cost
-  - Total Cost
-  - Metered Storage Cost
-  - Metered Network Cost
-  - Metered Extra Cost
-  - Metered MTD Cost
-  - Metered Total Cost
-  - Compute Price
-  - Storage Price
-  - Network Price
-  - Extra Price
-  - MTD Price
-  - Total Price
-  - Metered Storage Price
-  - Metered Network Price
-  - Metered Extra Price
-  - Metered MTD Price
-  - Metered Total Price
-  - Active: Indicates whether or not the reference object is currently existing and active
-  - Date Created: The date and time the invoice is created
-  - Last Updated: The date and time the invoice was last updated
-|br|
+  - **Invoice ID:** The unique ID in |moprheus| for the invoice
+  - **Type:** The invoice type; Cloud, Container, Group, Server, Instance, Resource, User, or Volume
+  - **Ref ID:** An ID for the reference object tied to the invoice (server, instance, cloud, etc.). Reference IDs are reused across invoice types so invoices referring to identical Ref IDs may not necessarily refer to the same reference object
+  - **Reference:** The name of the reference object (server, cloud, user, group, etc.) tied to the invoice
+  - **Cloud ID:** The internal ID for a Cloud integration in |morpheus|. This field will be blank unless the invoice references a Cloud
+  - **Cloud:** The name for a Cloud integration in |morpheus|. This field will be blank unless the invoice references a Cloud
+  - **Instance ID:** The internal ID for an Instance in |morpheus|. This field will be blank unless the invoice references an Instance
+  - **Instance:** The name for an Instance in |morpheus|. This field will be blank unless the invoice references an Instance
+  - **Server ID:** The internal ID for a server in |morpheus|. This field will be blank unless the invoice references a server
+  - **Server:** The name for a server in |morpheus|. This field will be blank unless the invoice references a server
+  - **Cluster ID:** The internal ID for a cluster in |morpheus|. This field will be blank unless the invoice references a cluster
+  - **Cluster:** The name for a cluster in |morpheus|. This field will be blank unless the invoice references a cluster
+  - **Plan ID:** The internal ID for a service plan in |morpheus|. This field will be populated only for invoices that reference an object which would be associated with a service plan (server, Instance, container, etc.).
+  - **Plan:** The name for a service plan in |morpheus|. This field will be populated only for invoices that reference an object which would be associated with a service plan (server, Instance, container, etc.).
+  - **Group ID:** The internal ID for a Group in |morpheus|. This field will be blank unless the invoice references a Group
+  - **Group:** The name for a Group in |morpheus|. This field will be blank unless the invoice references a Group
+  - **User ID:** The internal ID for a User in |morpheus|. This field will be blank unless the invoice references a User.
+  - **User:** The name for a User in |morpheus|. This field will be blank unless the invoice references a User.
+  - **Tenant ID:** The internal ID for the |morpheus| Tenant which owns the reference object
+  - **Tenant:** The name of the |morpheus| Tenant which owns the reference object
+  - **Period:** The monthly period during which the invoice was generated
+  - **Interval:** The length of the invoice billing period, currently all invoices are generated at a one-month interval
+  - **Start Date:** The start date and time for the invoice period, typically the first of the month at midnight
+  - **End Date:** The end date and time for the invoice period, typically the last day of the month at midnight
+  - **Ref Start:** The date and time the reference object is created or the start of the invoicing period if the reference object existed prior to the start of the invoicing period
+  - **Ref End:** The date and time the reference object is decommissioned or the end of the invoicing period if the reference object still existed at the end of the period
+  - **Compute Cost:** The actual compute costs for the invoice (from public cloud costing API when available, otherwise mirrored metered cost)
+  - **Storage Cost:** The actual storage costs for the invoice (from public cloud costing API when available, otherwise mirrored metered cost)
+  - **Network Cost:** The actual network costs for the invoice (from public cloud costing API when available, otherwise mirrored metered cost)
+  - **Extra Cost:** The actual additional costs for the invoice (from public cloud costing API when available, otherwise mirrored metered cost)
+  - **MTD Cost:** The actual month-to-date costs for the invoice (from public cloud costing API when available, otherwise mirrored metered cost)
+  - **Total Cost:** The actual total costs for the invoice (from public cloud costing API when available, otherwise mirrored metered cost)
+  - **Metered Compute Cost:** Compute costs determined by |morpheus| usage and pricing data (when live pricing data from a public cloud is not available, such as with an on-prem cloud)
+  - **Metered Storage Cost:** Storage costs determined by |morpheus| usage and pricing data (when live pricing data from a public cloud is not available, such as with an on-prem cloud)
+  - **Metered Network Cost:** Network costs determined by |morpheus| usage and pricing data (when live pricing data from a public cloud is not available, such as with an on-prem cloud)
+  - **Metered Extra Cost:** Additional costs determined by |morpheus| usage and pricing data (when live pricing data from a public cloud is not available, such as with an on-prem cloud)
+  - **Metered MTD Cost:** Month-to-date costs determined by |morpheus| usage and pricing data (when live pricing data from a public cloud is not available, such as with an on-prem cloud)
+  - **Metered Total Cost:** Total costs determined by |morpheus| usage and pricing data (when live pricing data from a public cloud is not available, such as with an on-prem cloud)
+  - **Compute Price:** The actual compute price (cost plus markup) for the invoice (from public cloud costing API when available, otherwise mirrored metered cost)
+  - **Storage Price:** The actual storage price (cost plus markup) for the invoice (from public cloud costing API when available, otherwise mirrored metered cost)
+  - **Network Price::** The actual network price (cost plus markup) for the invoice (from public cloud costing API when available, otherwise mirrored metered cost)
+  - **Extra Price:** The actual additional price (cost plus markup) for the invoice (from public cloud costing API when available, otherwise mirrored metered cost)
+  - **MTD Price:** The actual month-to-date price (cost plus markup) for the invoice (from public cloud costing API when available, otherwise mirrored metered cost)
+  - **Total Price:** The actual total price (cost plus markup) for the invoice (from public cloud costing API when available, otherwise mirrored metered cost)
+  - **Metered Compute Price:** Compute price (cost plus markup) determined by |morpheus| usage and pricing data (when live pricing data from a public cloud is not available, such as with an on-prem cloud)
+  - **Metered Storage Price:** Storage price (cost plus markup) determined by |morpheus| usage and pricing data (when live pricing data from a public cloud is not available, such as with an on-prem cloud)
+  - **Metered Network Price:** Network price (cost plus markup) determined by |morpheus| usage and pricing data (when live pricing data from a public cloud is not available, such as with an on-prem cloud)
+  - **Metered Extra Price:** Additional price (cost plus markup) determined by |morpheus| usage and pricing data (when live pricing data from a public cloud is not available, such as with an on-prem cloud)
+  - **Metered MTD Price:** Month-to-date price (cost plus markup) determined by |morpheus| usage and pricing data (when live pricing data from a public cloud is not available, such as with an on-prem cloud)
+  - **Metered Total Price:** Total price (cost plus markup) determined by |morpheus| usage and pricing data (when live pricing data from a public cloud is not available, such as with an on-prem cloud)
+  - **Active:** Indicates whether or not the reference object is currently existing and active
+  - **Date Created:** The date and time the invoice is created
+  - **Last Updated:** The date and time the invoice was last updated
+  |br|
+
 Invoice Types
 ^^^^^^^^^^^^^
 
