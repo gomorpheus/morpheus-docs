@@ -21,7 +21,7 @@ Service Catalog Persona and Self Service Catalog Item Builder
 - Select resource configurations and "check out" to provision all items in the cart
 - Control access to the Service Catalog Persona and make subsets of Catalog Items available through Role permissions
 
-.. image:: /images/releases/500/catalogTiles.png
+.. image:: /images/releases/500/morpheusCatalog500-1.gif
 
 Invoices
 ````````
