@@ -12,10 +12,44 @@
 Highlights
 ----------
 
-- Self Service / Personas
-- Invoices
-- Reports
-- Custom plugins
+Service Catalog Persona and Self Service Catalog Item Builder
+`````````````````````````````````````````````````````````````
+
+- Configure Instance types and Blueprints as Catalog Items for easy provisioning
+- Control access to Catalog Items through Role permissions and Tenant controls
+
+.. image:: /images/releases/500/catalogList.png
+
+- Give users access to the Service Catalog Persona for an easy provisioning experience
+- Select resource configurations and "check out" to provision all items in the cart
+- Control access to the Service Catalog Persona and make subsets of Catalog Items available through Role permissions
+
+.. image:: /images/releases/500/catalogTiles.png
+
+Invoices
+````````
+
+- View highly-granular costing data through Invoices
+- Create Invoice views with custom filtering and output columns
+- View historical costing trends and individual line items
+
+.. image:: /images/releases/500/invoiceList.png
+
+Reports
+```````
+
+- Rewritten reports UI
+- Schedule reports to be run at a specific point in time or on a specific recurring schedule
+- Eight new report types added for additional costing and usage breakdowns
+- New filtering options added for new and existing reports
+
+.. image:: /images/releases/500/reportsHome.png
+
+Custom Plugins
+``````````````
+
+- Extend |morpheus| functionality by adding custom plugins
+- See |morpheus| SDK documentation for more information on building your own plugins
 
 New Features
 ------------
