@@ -286,6 +286,7 @@ Morpheus API Option List Fields
         ``results = {max: 5, order : 'desc'}``
 
       **Networks**
+
       - ``zoneId``
       - ``siteId``
       - ``planId``
@@ -294,18 +295,21 @@ Morpheus API Option List Fields
       - ``poolId: <Number>`` // Id of a network pool, filters to only networks within the specified network pool
 
       **Plans**
+
       - ``zoneId``
       - ``siteId``
       - ``layoutId``
       - ``provisionTypeId: <Number>`` // Id of the provision type (technology), filters to only plans associated with this provision type
 
       **Resource Pools**
+
       - ``zoneId``
       - ``siteId``
       - ``planId``
       - ``layoutId: <Number>`` // Id of an Instance Layout, used to get the associated provision type and filter to that provision type
 
       **Security Groups**
+
       - ``zoneId`` // required
       - ``poolId``
 
