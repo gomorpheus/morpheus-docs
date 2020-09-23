@@ -16,11 +16,5 @@ Plugin Examples
 Below are some basic and preliminary plugin samples from the upcoming sdk docs.
 
 .. include:: /administration/integrations/plugin_examples.rst/TaskPlugin.rst
-
------
-
 .. include:: /administration/integrations/plugin_examples.rst/PluginTabs.rst
-
------
-
 .. include:: /administration/integrations/plugin_examples.rst/ApprovalsPlugin.rst

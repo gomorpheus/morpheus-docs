@@ -1,6 +1,8 @@
 Task Plugin
 ```````````
 
+-----
+
 Add custom Tasks types to Morpheus
 
 Setup

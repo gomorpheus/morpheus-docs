@@ -6,7 +6,7 @@ There are several administrative integrations built into |morpheus| that make it
 of capabilities when it comes to managing customer accounts and users.
 
 .. toctree::
-  :maxdepth: 2
+  :maxdepth: 3
 
   tenants/tenants.rst
   identity_sources/identity_sources.rst

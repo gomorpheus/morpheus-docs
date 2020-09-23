@@ -1,6 +1,8 @@
 Instance Tabs
 `````````````
 
+-----
+
 Customize the UI for your Instances by providing your own tabs.
 
 Setup

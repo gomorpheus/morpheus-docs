@@ -1,6 +1,8 @@
 Approvals plugin
 ````````````````
 
+-----
+
 Integrate Morpheus with your own ITSM solution
 
 Setup
