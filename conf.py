@@ -168,7 +168,7 @@ latex_elements = {
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-    (master_doc, 'morpheus4.2.3-1.tex', u'Morpheus Documentation',
+    (master_doc, 'morpheus5.0.0-1.tex', u'Morpheus Documentation',
      u'Morpheus', 'manual'),
 ]
 
@@ -200,7 +200,7 @@ def setup(app):
 
 rst_prolog = """
 .. |morpheus| replace:: Morpheus
-.. |morphbranch| replace:: v4.2
+.. |morphbranch| replace:: v5.0
 .. |morphver| replace:: v5.0.0
 .. |rmqbranch| replace:: v3.5-3.8
 .. |rmqver| replace:: v3.8.5
