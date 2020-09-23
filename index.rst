@@ -1,7 +1,7 @@
 |morpheus| |morphver| Documentation
 ===================================
 
-.. include:: /release_notes/current.rst
+.. include:: /release_notes/highlights.rst
 
 .. toctree::
    :maxdepth: 2
@@ -48,4 +48,4 @@
    :maxdepth: 1
    :caption: Resource Center
 
-   Resource Center <https://www.morpheusdata.com/resource-center> 
+   Resource Center <https://www.morpheusdata.com/resource-center>
