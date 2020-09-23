@@ -12,7 +12,7 @@
 Introducing Personas
 --------------------
 
-5.0.0 introduces Personas, a new approach to streamline, optimize and simplify targeted self-service across disciplines. Our first Persona is Service Catalog, a paradigm shift to self-service that removes the complexity of multi-cloud, multi-format, multi-service offerings and presents a simple RBAC Catalog with one-click ordering of any resource. The new Self Service tool allows Admins to easily create Catalog Items using existing wizards and specs that minimize or even eliminate end-user input. Personas are assigned using existing Roles users can be give access to multiple Personas, with quick access to each Persona available in the main nav. 
+5.0.0 introduces Personas, a new approach to streamline, optimize and simplify targeted self-service across disciplines. Our first Persona is Service Catalog, a paradigm shift to self-service that removes the complexity of multi-cloud, multi-format, multi-service offerings and presents a simple RBAC Catalog with one-click ordering of any resource. The new Self Service tool allows Admins to easily create Catalog Items using existing wizards and specs that minimize or even eliminate end-user input. Personas are assigned using existing Roles and users can be give access to multiple Personas with quick access to each Persona added to the global nav. 
 
 - Personas further optimize interfaces and processes for target audiences.
 - The Service Catalog Persona further simplifies self-service provisioning of any resource with minimum or even zero user input.
