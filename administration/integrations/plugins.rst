@@ -6,3 +6,7 @@ Plugins
 Please see the Plugin Architecture SDK documentation for help getting started with custom plugin development.
 
 .. image:: /images/administration/plugins.png
+
+.. include:: /administration/integrations/plugin_examples.rst/TaskPlugin.rst
+.. include:: /administration/integrations/plugin_examples.rst/PluginTabs.rst
+.. include:: /administration/integrations/plugin_examples.rst/ApprovalsPlugin.rst

@@ -51,7 +51,7 @@ Network Quota
 Object Storage Quota
   Sets a Storage Quota for Object Storage usage (in GB) to scoped User, Role, Tenant or Global.
 Power Scheduling
-  Adds a Power Schedule for the Instances in a Group or Cloud. Power Schedules can be created in ``Operations -> Scheduling``
+  Adds a Power Schedule for the Instances in a Group or Cloud. Power Schedules can be created in ``Provisioning -> Automation -> Power Scheduling``
 Provision Approval
   Sets an Approval requirement for Provisioning into a Group or Cloud using Morpheus Approvals or an Approval Integration such a Service Now.
 Router Quota
@@ -251,7 +251,7 @@ This ServiceNow approval integration enables users to use the |morpheus| Self-Se
 Power Schedules
 ^^^^^^^^^^^^^^^
 
-Power Schedules set daily times to shutdown and startup instances. Power schedule can be created and managed in ``Operations -> Scheduling``.
+Power Schedules set daily times to shutdown and startup instances. Power schedule can be created and managed in ``Provisioning -> Automation -> Power Scheduling ``.
 
 .. NOTE:: Power Schedule Policies will apply to Instances created in a Group or Cloud after the Policy is enabled, and will not apply to pre-existing Instances.
 
@@ -265,7 +265,7 @@ ENFORCEMENT TYPE
   * User Configurable: Power Schedule choice is editable by User during provisioning.
   * Fixed Schedule: User cannot change Power Schedule setting during provisioning.
 POWER SCHEDULE
-  Select Power Schedule to use in the Policy. Power schedule can be added in ``Operations -> Scheduling``
+  Select Power Schedule to use in the Policy. Power schedule can be added in ``Provisioning -> Automation -> Power Scheduling``
 TENANTS
   Leave blank for the Policy to apply to all Tenants, or search for and select Tenants to enforce the Policy on specific Tenants.
 

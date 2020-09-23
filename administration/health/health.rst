@@ -4,7 +4,9 @@ Health
 |Morpheus| Health
 ------------------
 
-The |Morpheus| health section provides an overview of the health of your |Morpheus| appliance. It includes data on the following:
+.. image:: /images/administration/health/morpheusHealth500.png
+
+The |Morpheus| Health section provides an overview of the health of your |Morpheus| appliance. It includes data on the following:
   - Health Levels
   - CPU
   - Memory
@@ -12,6 +14,7 @@ The |Morpheus| health section provides an overview of the health of your |Morphe
   - Elastic
   - Queues
 
+.. note:: An Elasticsearch warning status is typical for single node Appliances due to a single elasticsearch node and default replica count exceeding available nodes.
 
 HEALTH LEVELS include
   - |Morpheus| CPU
