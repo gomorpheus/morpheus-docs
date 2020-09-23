@@ -13,13 +13,12 @@ Breaking Changes
 - 4.2.1: Clouds: VirtualBox, VirtuSteam, and MetaCloud Cloud Types are no longer supported or available
 - 4.2.1: Puppet: |morpheus| integration now supports version 6+. Puppet versions prior to 6 are no longer supported
 - 4.2.1: Tasks: Python: Virtual environment are now used for Python Tasks. **Note:** ``virtualenv`` is required on all Appliance App nodes: ``pip install virtualenv``
+- 5.0.0: Upgrade requirement: v4.2.0 minimum required to upgrade to v5.0.0. Appliances running 4.1.x or earlier must be upgraded to 4.2.x prior to upgrading to 5.0.0.
 
 |morpheus| Application OS
 =========================
 
 |morpheus| can be installed on the following platforms. Please note the table below is for |morpheus| Application OS support, not |morpheus| Agent OS Support.
-
-.. important:: Existing |morpheus| Appliances on 14.04 must upgrade to 16.04 or 18.04 PRIOR to upgrading to v4.2+.
 
 .. list-table:: **Supported Appliance Operating Systems**
    :widths: auto
@@ -53,7 +52,7 @@ Services
 |morphver| Service Version Changes
 ----------------------------------
 
-- MySQL updated to 5.7.30
+- Grails upgraded to v4
 
 |morphver| Service Version Compatibility
 ----------------------------------------
