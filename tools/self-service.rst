@@ -56,7 +56,7 @@ Configure the following:
 - **VISIBILITY:** Set to private to keep the catalog item available only to users in the current Tenant. Master Tenant administrators may set catalog items to public to make them viewable and usable by Subtenant users
 - **LOGO:** Select or upload a logo to be associated with this catalog item
 - **BLUEPRINT:** Select a pre-configured Blueprint (Provisioning > Blueprints) to associate with this catalog item
-- **APP SPEC:** View and edit the app template for your catalog item
+- **APP SPEC:** Inject override Blueprint spec here if desired. Currently this only supports YAML format
 - **OPTION TYPES:** If desired, select Option Types to present users with mandatory or optional selections prior to provisioning
 
 Once done, click :guilabel:`SAVE CHANGES`
