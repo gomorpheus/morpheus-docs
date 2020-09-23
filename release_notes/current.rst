@@ -23,6 +23,8 @@ Introducing Personas
 
 .. image:: /images/releases/500/morpheusCatalog500-1.gif
 
+|
+
 Morpheus Plugins
 ----------------
 
@@ -37,6 +39,8 @@ The Morpheus Core Plugin Library provides a common framework for extending and c
 
 Additional information will be accessible in the Morpheus Developer Portal.
 
+|
+
 Invoices UI
 -----------
 
@@ -47,6 +51,8 @@ The new Invoices UI brings the existing powerful Invoices API <https://apidocs.m
 - View Invoice summaries, historical Cost and Price charts, and individual Line Item details
 
 .. image:: /images/releases/500/invoiceList.png
+
+|
 
 Enhanced Reports
 ----------------
