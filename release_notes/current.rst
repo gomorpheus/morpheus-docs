@@ -24,7 +24,7 @@ All New Features
      - Invoice list page results can be filtered and customized with desired output columns
      - Click into an Invoice from the list page to see a detail page for the Invoice
 
-- Java: Ugpraded to version 8u265 for VM node packages
+- Java: Upgraded to version 8u265 for VM node packages
 - Networks: vCloud Director-managed IP Pools from privately-assigned Clouds are now shown on the Subtenant's IP Pools page (Infrastructure > Networks > IP Pools)
 
 - .. toggle-header:: :header: Personas: **Service Catalog Persona Added**
