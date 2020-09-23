@@ -1,7 +1,7 @@
 |morpheus| |morphver| Documentation
 ===================================
 
-.. IMPORTANT:: There are a number of important considerations to make before upgrading to |morpheus| version 4.2.0. Please review our KnowledgeBase article on `upgrade considerations <https://support.morpheusdata.com/s/article/What-to-consider-before-upgrading-to-Morpheus-4-2-0?language=en_US>`_ and read the release notes below thoroughly.
+.. include:: /release_notes/current.rst
 
 .. toctree::
    :maxdepth: 2
@@ -48,4 +48,4 @@
    :maxdepth: 1
    :caption: Resource Center
 
-   Resource Center <https://www.morpheusdata.com/resource-center>
+   Resource Center <https://www.morpheusdata.com/resource-center> 
