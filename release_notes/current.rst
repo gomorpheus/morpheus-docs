@@ -60,13 +60,14 @@ Reporting capabilities have been expanding with a new interface, additional repo
 .. image:: /images/releases/500/reportsHome.png
 
 
-Additional New Features
------------------------
+All New Features
+----------------
 
 - Amazon: Processing of costing (CUR) reports for detailed invoice costing now occurs when the cloud integration COSTING value is set to "Costing" or "Costing and Reservations". Previously report processing only took place if the cloud integration was configured to get "Costing and Reservations"
 - Amazon: ROI (return on investment) figure displayed in Reservation Recommendations and Savings Plan Recommendations tables on Amazon Cloud detail pages. This is the length of time required to make back the original investment when reserving instances or purchasing a savings plan
 - Amazon: Routes on AWS routers are now editable (Infrastructure > Network > Selected AWS Network > Routing tab > Pencil icon) in addition to viewing, creating and deleting which could be done previously
-- Clouds: Canonical BMaaS Cloud integration type added
+- Clouds: Canonical BMaaS Cloud integration added
+- Core: Major optimizations for Cloud synchronization resulting in faster sync times 
 - Guidance: Recommendations can now be made based on 30, 60, or 90 day periods
 
 - .. toggle-header:: :header: Invoices: **Highly-granular costing data surfaced into UI**
@@ -151,8 +152,8 @@ Additional New Features
 
      **Advanced Lists tables added to:**
 
-      - Load balancers list page at Infrastructure > Load Balancers
-      - Clusters list page at Infrastructure > Clusters
+     - Load balancers list page at Infrastructure > Load Balancers
+     - Clusters list page at Infrastructure > Clusters
 
 - vCloud Director: Create and delete Snapshots in a vCD Cloud
 
