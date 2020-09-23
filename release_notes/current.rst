@@ -109,6 +109,7 @@ All New Features
 
      - Backup Jobs are deleted from the :guilabel:`ACTIONS` menu on the Backup Jobs list page (Backups > Jobs)
      - Delete action existed previously but, due to Veeam API limitations, |morpheus| could only disable the job
+     - Backup job delete is supported only on Veeam version 10
 
 - Windows: Windows VMs will now auto-expand their root storage partitions to fill drive space, previously this was done manually
 
