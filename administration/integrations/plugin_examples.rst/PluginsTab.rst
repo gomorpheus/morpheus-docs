@@ -1,10 +1,10 @@
 Instance Tabs
-^^^^^^^^^^^^^
+`````````````
 
 Customize the UI for your Instances by providing your own tabs.
 
 Setup
-`````
+.....
 Create a new class that extends ``com.morpheusdata.core.AbstractInstanceTabProvider``. When the Morpheus UI builds the Instance UI it calls the ``renderTemplate`` method. Below is a simple example binding the Instance object to the template model.
 
 .. code-block:: groovy
@@ -23,12 +23,12 @@ Handlebars <https://github.com/jknack/handlebars.java> is the default provided t
 
 
 Templating
-``````````
+..........
 See the Views <https://github.com/gomorpheus/morpheus-plugin-core/blob/master/morpheus-plugin-docs/src/docs/asciidoc/Views.adoc> section and the documentation for your templating engine for specific syntax.
 
 
 Security Policies
-`````````````````
+.................
 
 User Permissions
 ................
