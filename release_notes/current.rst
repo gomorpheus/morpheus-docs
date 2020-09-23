@@ -4,7 +4,7 @@
 |morphver| Release Notes
 *************************
 
-.. IMPORTANT:: Morpheus 5.0.0 is a Beta Release and should not be installed in Production environments. Review :ref:`compatibility` before installing or upgrading |morpheus|
+.. IMPORTANT:: Morpheus 5.0.0 is a beta release and should not be installed in production environments. Review :ref:`compatibility` before installing or upgrading |morpheus|.
 
 .. include:: highlights.rst
 
