@@ -64,7 +64,7 @@ Role Mappings
     - The Environments tab is where named environments such as development or production are created and given a description as well as a code for use within the API. A display order and visibility is also set.
     - This permission is recommended for those responsible for defining environments that will be available to select at provision time whether they are the Master Tenant or Subtenant users.
     -
-  * - Admin: Guidance
+  * - Admin: Guidance Settings
     - None, Full
     - Allows or disallows access to the Guidance tab in Administration > Settings
     - The Guidance tab controls global thresholds for |morpheus| guidance recommendations
@@ -244,6 +244,12 @@ Role Mappings
     - The Domains page is where network domains are managed. Domains are used for setting FQDNs, joining Windows Instances to domains, and creating A-Records with DNS integrations. On create the domain controller and credentials for domain join must be provided.
     - This permission is recommended for those responsible for |morpheus| DNS and domain-join integrations.
     -
+  * - Infrastructure: Network IP Pools
+    - None, Read, Full
+    - Determines access to the IP Pools tab on the Infrastructure > Network page.
+    - The IP Pools page is where |morpheus| IP pools may be created. On create, a name and IP range are provided. Additionally, pools from IPAM integrations are displayed.
+    - This permission is recommended for those responsible for IP address management and those responsible for IPAM Integrations.
+    -
   * - Infrastructure: Network Proxies
     - None, Read, Full
     - Determines access to the Proxies tab on the Infrastructure > Networks page.
@@ -261,12 +267,6 @@ Role Mappings
     - Determines access to the Infrastructure > Networks page, including the Networks, network groups, and integrations tabs. The "Group" permission setting allows access to objects shared to Groups associated with the user.
     - The Networks page is where networks are configured for DHCP or static IP assignment and existing networks are displayed. The Network Groups page is where networks are grouped to allow round robin provisioning among the group. The Integrations page is where IPAM, DNS, security, service registry, and virtual network tools are integrated. These include Cisco ACI, VMware NSX T and V, Infoblox, Bluecat, phpIPAM, SolarWinds, Stealth, Microsoft DNS, PowerDNS, Route 53, and Consul.
     - This permission is recommended for those responsible for integration with network technologies and the configuration and management of networks to be used during provisioning.
-    -
-  * - Infrastructure: Network IP Pools
-    - None, Read, Full
-    - Determines access to the IP Pools tab on the Infrastructure > Network page.
-    - The IP Pools page is where |morpheus| IP pools may be created. On create, a name and IP range are provided. Additionally, pools from IPAM integrations are displayed.
-    - This permission is recommended for those responsible for IP address management and those responsible for IPAM Integrations.
     -
   * - Infrastructure: Policies
     - None, Read, Full
@@ -364,6 +364,12 @@ Role Mappings
     - The Guidance page shows recommendations for resource and cost-utilization optimization.
     - This permission is recommended for those responsible to optimize utilization and costs of Cloud-based resources.
     -
+  * - Operations: Invoices
+    - None, Read, Full
+    - Determines access to the Invoices tab in Operations > Costing
+    - The Invoices tab allows access to highly-granular historical costing data
+    - This permission is recommended for those responsible for generating invoices and analyzing spend
+    -
   * - Operations: Reports
     - None, Read, Full
     - Determines access to the Operations > Reports page.
@@ -380,7 +386,13 @@ Role Mappings
     - None, Read, Full
     - Determines access to the Operations > Wiki page.
     - The Wiki page allows easy UI, API and CLI access to information to be referenced or shared with others. Wiki pages encompass individual Clouds, Groups, Servers, Instances, Clusters, and other pages can be manually created. Wiki pages from resources are accessible from the Operations > Wiki page or within individual resource detail pages on their respective Wiki tabs.
-    - This permission is recommend for those responsible for documenation and knowledge management.
+    - This permission is recommend for those responsible for documentation and knowledge management.
+    -
+  * - Projects
+    - None, Read, Full
+    - Determines access to Projects through |morpheus| API
+    - Projects are used to associate resources together and apply common tags to their invoices
+    - This permission is recommended for those responsible for cost analysis and invoice reporting
     -
   * - Provisioning Administrator
     - None, Full
@@ -418,12 +430,6 @@ Role Mappings
     - The Blueprints page allows for the creation of pre-configured, multi-tier application definitions which can be deployed via the Apps page. With this permission the blueprint type of |morpheus| is available.
     - This permission is recommended for those responsible for defining |morpheus|-type Blueprints.
     -
-  * - Provisioning: Blueprint - Terraform
-    - None, Provision, Full
-    - Determines access to Terraform-type Blueprints on the Provisioning > Blueprints page. The "Provision" permission allows for provisioning Apps from Terraform Blueprints without the ability to create or edit them.
-    - The Blueprints page allows for the creation of pre-configured, multi-tier application definitions which can be deployed via the Apps page. With this permission the blueprint type of Terraform is available.
-    - This permission is recommended for those responsible for defining Terraform blueprints.
-    -
   * - Provisioning: Blueprints - ARM
     - None, Provision, Full
     - Determines access to ARM-type Blueprints on the Provisioning > Blueprints page. The "Provision" permission allows for provisioning Apps from ARM Blueprints without the ability to create or edit them.
@@ -447,6 +453,12 @@ Role Mappings
     - Determines access to Kubernetes-type Blueprints on the Provisioning > Blueprints page. The "Provision" permission allows for provisioning Apps from Kubernetes Blueprints without the ability to create or edit them.
     - The Blueprints page allows for the creation of pre-configured, multi-tier application definitions which can be deployed via the Apps page. With this permission the blueprint type of Kubernetes is available.
     - This permission is recommended for those responsible for defining Kubernetes blueprints.
+    -
+  * - Provisioning: Blueprint - Terraform
+    - None, Provision, Full
+    - Determines access to Terraform-type Blueprints on the Provisioning > Blueprints page. The "Provision" permission allows for provisioning Apps from Terraform Blueprints without the ability to create or edit them.
+    - The Blueprints page allows for the creation of pre-configured, multi-tier application definitions which can be deployed via the Apps page. With this permission the blueprint type of Terraform is available.
+    - This permission is recommended for those responsible for defining Terraform blueprints.
     -
   * - Provisioning: Clone Instance
     - None, Full
@@ -567,6 +579,24 @@ Role Mappings
     - This allows or disallows the ability to automatically log into the remote console.
     - |morpheus| will automatically log into the machine using the credentials defined on the VM or Host. The credentials are defined either from the virtual image used, added via cloud-init or VMware Tools using the global cloud-init settings (Administration > Provisioning), or the Linux or Windows settings defined in User Settings.
     - This permission is recommended when an organization utilizes |morpheus| to create user accounts on provisioned or managed machines, as well as, allow remote console access.
+    -
+  * - Service Catalog: Catalog
+    - None, Full
+    - Determines access to the Catalog page of the Service Catalog Persona view
+    - The Catalog page displays the complete list of Instance and App configurations (as determined by Catalog Item types allowed in the user's Role) that can be provisioned from the Service Catalog Persona view
+    - This permission is recommended for users who will use the Service Catalog Persona to select items for provisioning
+    -
+  * - Service Catalog: Dashboard
+    - None, Read
+    - Determines access to the Dashboard page of the Service Catalog Persona view
+    - The Dashboard is the default landing page for the Service Catalog Persona view. It displays featured Catalog Items, recently-ordered Catalog items, and an abbreviated list of Inventory items
+    - This permission is recommended for users who will use the Service Catalog Persona for quick access to new Inventory items and featured Catalog items
+    -
+  * - Service Catalog: Inventory
+    - None, Full
+    - Determines access to the Inventory page of the Service Catalog Persona view
+    - The Inventory is the complete list of user-owned items provisioned from the Service Catalog
+    - This permission is recommended for users who will use the Service Catalog Persona and need to be able to view details on the items they've provisioned from the Catalog
     -
   * - Snapshots
     - None, Read, Full
