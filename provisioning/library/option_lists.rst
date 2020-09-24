@@ -75,6 +75,16 @@ Morpheus API Option List Fields
   TRANSLATION SCRIPT
     Create a JS script to translate the result data object into an array containing objects with properties 'name' and 'value'. The input data is provided as 'data' and the result should be put on the global variable 'results'.
 
+    **Example:**
+
+    .. code-block:: javascript
+
+      var i=0;
+      results = [];
+      for(i; i<data.length; i++) {
+        results.push({name: data[i].name, value: data[i].value});
+      }
+
     Translation script inputs:
 
       **Clouds**
