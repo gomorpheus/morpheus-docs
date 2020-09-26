@@ -1,5 +1,5 @@
 Getting started with |morpheus| and Azure
-========================================
+=========================================
 
 Introduction
 ^^^^^^^^^^^^
@@ -410,7 +410,7 @@ Navigate to `Provisioning > Library > NODE TYPES` and click :guilabel:`+ ADD`
 
 In this example, I am going to set the following options in the "NEW NODE TYPE" wizard:
 
-- **NAME**: *Example Azure CentOS 7
+- **NAME**: *Example Azure CentOS 7*
 
 - **SHORT NAME**: eac7 (Identifies the Node Type in |morpheus| API/CLI)
 
@@ -430,11 +430,11 @@ In the "NEW INSTANCE TYPE" wizard, I'll simply enter a **NAME** and **CODE** val
 
 .. image:: /images/azureguideimages/11addInstanceType.png
 
-Now that we've created a new Instance type, access it by clicking on the name in the list of custom Instances you've created. In my case, I've given the name "*Example Azure CentOS 7".
+Now that we've created a new Instance type, access it by clicking on the name in the list of custom Instances you've created. In my case, I've given the name "*Example Azure CentOS 7*".
 
 Once we've opened the new Instance type, by default, we should be on the "LAYOUTS" tab. Click :guilabel:`+ ADD LAYOUT`. I've set the following fields on my example layout:
 
-- **NAME**: *Example Azure CentOS 7
+- **NAME**: *Example Azure CentOS 7*
 
 - **VERSION**: 7 (This is the version number of the layout itself, which is labeled 7 in the example)
 

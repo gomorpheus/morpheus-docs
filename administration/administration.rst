@@ -17,6 +17,7 @@ of capabilities when it comes to managing customer accounts and users.
   policies/policies.rst
   health/health.rst
   settings/settings.rst
+  user_settings/user_settings.rst
 
 ..
   provisioning/provisioning.rst
@@ -24,4 +25,4 @@ of capabilities when it comes to managing customer accounts and users.
   backups/backup_settings.rst
   logs/logs.rst
   currency/currency.rst
-  user_settings/user_settings.rst
+  

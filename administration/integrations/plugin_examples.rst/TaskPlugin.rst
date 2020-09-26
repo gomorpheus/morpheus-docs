@@ -1,8 +1,5 @@
 Task Plugin
 ```````````
-
------
-
 Add custom Tasks types to Morpheus
 
 Setup
@@ -51,3 +48,8 @@ Task Logo
 
 A custom logo can be used in the Morpheus UI by placing an image at ``src/assets/images/{task-code}.png``.
 Recommended file size is 180 x 60 px.
+
+|
+|
+
+-----
