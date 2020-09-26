@@ -172,8 +172,10 @@ To add a new Azure Cloud integration into |morpheus| using the credentials creat
 
    .. include:: /integration_guides/Clouds/base_options.rst
 
-   Details
-   ```````
+   **Details**
+   
+   ------
+      
    CLOUD TYPE
      - Standard (Azure Cloud)
      - US Gov (Azure US Government)

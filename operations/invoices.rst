@@ -115,7 +115,7 @@ Invoices can reference any of the |morpheus| workload element types or resource 
 - Server: A server refers to any individual host, virtual machine, or bare metal server that is inventoried or managed by |morpheus|. This can include servers which are parts of |morpheus|-managed Instances or inventoried servers from integrated Clouds
 - Instance: A set of containers or virtual machines which correlate to a single horizontally-scalable entity. This could be a single VM or it could be many VMs operating as a service
 - Resource: Resource-type invoices are generated when |morpheus| cannot determine that the referenced costs belong to any of the other resource reference types in this list
-- User: User-type invoices aggregate the costs of resources owned by a specific |moprheus| user during the invoicing period
+- User: User-type invoices aggregate the costs of resources owned by a specific |morpheus| user during the invoicing period
 - Volume: When possible, costs will be tied to known volumes and a volume-type invoice is generated as a result
 
 Invoice Detail Page
