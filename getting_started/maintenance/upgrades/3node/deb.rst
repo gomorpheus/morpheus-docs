@@ -13,7 +13,7 @@ The following covers upgrading the |morpheus| App nodes in 3 Node HA configurati
 4.2.0+ -> |morphver| Upgrade
 ............................
 
-.. important:: Dues to Database schema changes in |morphver| it is important to stop the morpheus-ui service on all app nodes prior to upgrade. Failure to do so may result in errors or database corruption.
+.. important:: Due to Database schema changes in |morphver| it is important to stop the morpheus-ui service on all app nodes prior to upgrade. Failure to do so may result in errors or database corruption.
 
 #. Starting with Node 3, on **All** App Nodes, stop the morpheus-ui services via ``morpheus-ctl stop morpheus-ui``. If you receive a timeout, run ``morpheus-ctl graceful-kill morpheus-ui``.
 
