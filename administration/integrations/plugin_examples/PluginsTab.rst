@@ -1,8 +1,6 @@
 Instance Tabs
 `````````````
 
------
-
 Customize the UI for your Instances by providing your own tabs.
 
 Setup
@@ -65,3 +63,6 @@ If your custom UI needs to include external resources such as scripts, styleshee
      csp.styleSrc = 'https: *.bootstrapcdn.com'
      csp
    }
+
+|
+|

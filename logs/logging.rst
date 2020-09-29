@@ -128,13 +128,13 @@ The final log type that may require export is the |morpheus| Activity log. This 
 
    .. code-block:: bash
 
-      morpheus-ctl start moprheus-ui
+      morpheus-ctl start morpheus-ui
 
 #. To know when the UI is up and running you can run the following command
 
    .. code-block:: bash
 
-      morpheus-ctl tail moprheus-ui
+      morpheus-ctl tail morpheus-ui
 
 Once you see the ASCI art show up you will be able to log back into the User Interface. A new audit file will have been created called audit.log and will found in the default |morpheus| log path which is ``/var/log/morpheus/morpheus-ui/``
 

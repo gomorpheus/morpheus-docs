@@ -6,7 +6,7 @@ The following covers upgrading single node (All-In-One) Appliance configurations
 .. important:: Only appliances running Morpheus v4.2.0 or higher can upgrade to 4.x. Always backup your database before running any upgrade.
 
 4.2.0 to |morphver| Upgrade
-`````````````````````````
+```````````````````````````
 
 Debian / Ubuntu
 ...............

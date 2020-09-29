@@ -3,7 +3,6 @@ Azure (Public)
 
 Overview
 ^^^^^^^^
-
 Morpheus offers a complete Integration with Microsoft Azure including the following:
 
 * Virtual Machine Sync, Create, Delete, Manage, RBAC, Tenant Permissions, Policies
@@ -173,9 +172,10 @@ To add a new Azure Cloud integration into |morpheus| using the credentials creat
 
    .. include:: /integration_guides/Clouds/base_options.rst
 
-   Details
-   ```````
-            
+   **Details**
+   
+   ------
+      
    CLOUD TYPE
      - Standard (Azure Cloud)
      - US Gov (Azure US Government)

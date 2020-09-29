@@ -14,7 +14,8 @@ CLOUD ACCESS
 INSTANCE TYPE User only has access to Objects they have created/own.
   Controls Tenant and User access level for Instance Types.
 BLUEPRINT ACCESS
-
+  Controls Tenant and User access level for Blueprints during App provisioning.
+  
 Feature Access Permissions
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 Feature Access settings control permissions for sections and objects in |morpheus|. Permission options include:
@@ -343,7 +344,7 @@ Role Mappings
   * - Operations: Approvals
     - None, Read, Full
     - Determines access to the Operations > Approvals page.
-    - When a Provision Approval-type Policy is enabled for a Group or Cloud, an approval request will be created on each relevant provision attempt. These approvals can be handled directly in |moprheus| or dealt with in ServiceNow with a properly-configured integration.
+    - When a Provision Approval-type Policy is enabled for a Group or Cloud, an approval request will be created on each relevant provision attempt. These approvals can be handled directly in |morpheus| or dealt with in ServiceNow with a properly-configured integration.
     - This permission is recommended for those responsible for approving, denying, or canceling approval requests.
     -
   * - Operations: Budgets

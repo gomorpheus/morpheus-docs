@@ -1,5 +1,5 @@
 Getting started with |morpheus| and Azure
-========================================
+=========================================
 
 Introduction
 ^^^^^^^^^^^^
@@ -367,7 +367,7 @@ Since this guide is focused on working within an Azure cloud that we integrated 
 Provisioning Your First Instance
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-At this point, the groundwork is laid and we are ready to attempt our first new provisioning. As a first Instance, we'll provision an Apache web server to our Azure cloud. |moprheus| includes a very robust catalog of pre-configured Instance types. We'll use one of these included catalog items for this guide but you'll likely also need to prep your own custom images and Instance types to make available to your users. Much more on this can be found elsewhere in |morpheus| documentation.
+At this point, the groundwork is laid and we are ready to attempt our first new provisioning. As a first Instance, we'll provision an Apache web server to our Azure cloud. |morpheus| includes a very robust catalog of pre-configured Instance types. We'll use one of these included catalog items for this guide but you'll likely also need to prep your own custom images and Instance types to make available to your users. Much more on this can be found elsewhere in |morpheus| documentation.
 
 Navigate to `Provisioning > Instances`. If any Instances are currently provisioned, we will see them listed here. To start a new Instance we click :guilabel:`+ ADD` to open the "CREATE INSTANCE" wizard. We'll scroll down to and select the Apache instance type and click "NEXT".
 
@@ -410,7 +410,7 @@ Navigate to `Provisioning > Library > NODE TYPES` and click :guilabel:`+ ADD`
 
 In this example, I am going to set the following options in the "NEW NODE TYPE" wizard:
 
-- **NAME**: *Example Azure CentOS 7
+- **NAME**: *Example Azure CentOS 7*
 
 - **SHORT NAME**: eac7 (Identifies the Node Type in |morpheus| API/CLI)
 
@@ -430,11 +430,11 @@ In the "NEW INSTANCE TYPE" wizard, I'll simply enter a **NAME** and **CODE** val
 
 .. image:: /images/azureguideimages/11addInstanceType.png
 
-Now that we've created a new Instance type, access it by clicking on the name in the list of custom Instances you've created. In my case, I've given the name "*Example Azure CentOS 7".
+Now that we've created a new Instance type, access it by clicking on the name in the list of custom Instances you've created. In my case, I've given the name "*Example Azure CentOS 7*".
 
 Once we've opened the new Instance type, by default, we should be on the "LAYOUTS" tab. Click :guilabel:`+ ADD LAYOUT`. I've set the following fields on my example layout:
 
-- **NAME**: *Example Azure CentOS 7
+- **NAME**: *Example Azure CentOS 7*
 
 - **VERSION**: 7 (This is the version number of the layout itself, which is labeled 7 in the example)
 

@@ -251,7 +251,7 @@ This ServiceNow approval integration enables users to use the |morpheus| Self-Se
 Power Schedules
 ^^^^^^^^^^^^^^^
 
-Power Schedules set daily times to shutdown and startup instances. Power schedule can be created and managed in ``Provisioning -> Automation -> Power Scheduling ``.
+Power Schedules set daily times to shutdown and startup instances. Power schedule can be created and managed in ``Provisioning -> Automation -> Power Scheduling``
 
 .. NOTE:: Power Schedule Policies will apply to Instances created in a Group or Cloud after the Policy is enabled, and will not apply to pre-existing Instances.
 
@@ -288,8 +288,6 @@ Max Storage
     Sets the maximum combined total of Storage (capacity) for Instances per Policy Scope.
 Max VMs
     Sets the maximum total of managed Virtual Machines per Policy Scope.
-Scope
-
 TENANTS
     Leave blank for the Policy to apply to all Tenants, or search for and select Tenants to enforce the Policy on specific Tenants.
 
