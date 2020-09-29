@@ -203,7 +203,7 @@ NAME PATTERN
     ${platform}
     ${platform == 'windows' ? 'w':'l'} # results in `w` for Windows platforms and `l` for Linux Platforms
     ${userId}
-    ${userName}
+    ${username}
     ${userInitials}
     ${provisionType}
     ${instance.instanceContext} # Environment Code
