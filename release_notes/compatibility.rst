@@ -70,6 +70,8 @@ When externalizing MySQL, Elasticsearch and/or RabbitMQ services, the following 
 +---------------------------------------+-----------------------+-------------------------------------+
 | RabbitMQ                              | |rmqbranch|           | |rmqver|                            |
 +---------------------------------------+-----------------------+-------------------------------------+
+| Tomcat                                |                       | |tcver|                             |
++---------------------------------------+-----------------------+-------------------------------------+
 
 .. important:: Elasticsearch 7.x is required for |morphver|. Refer to :ref:`upgrading` section for more information.
 
