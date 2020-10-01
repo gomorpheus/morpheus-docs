@@ -263,3 +263,31 @@ Troubleshooting Ansible
 * When running a playbook that is in a workflow, the additional playbooks fields do not need to be populated, they are for running a different playbook than the one set in the Ansible task in the Workflow, or using a different Git Ref.
 
 * If you are manually running Workflows with Ansible tasks on existing Instances through `Actions -> Run Workflow​` and not seeing results, set the Provision Phase on the Ansible task to Provision​ as there may be issues with executing tasks on other phases when executing manually.
+
+* If you try to run an Ansible playbook and receive the following error: ``sudo: sorry, you must have a tty to run sudo``, do the following. Check ``/etc/sudoers`` and look for the following line: ``Defaults requiretty``. If this line is required by your infosec policy, you can add an exception in order to run automation tasks. Under that line, enter the following: ``Defaults: morpheus-app !requiretty``. This line adds an exception only for the ``morpheus-app`` user.
+
+* If you are trying to run an Ansible playbook and you receive output similar to the following:
+
+  .. code-block:: bash
+
+    We trust you have received the usual lecture from the local System
+
+    Administrator. It usually boils down to these three things:
+
+    #1) Respect the privacy of others.
+    #2) Think before you type.
+    #3) With great power comes great responsibility.
+
+    [sudo] password for morpheus-app: Sorry, try again.
+    [sudo] password for morpheus-app: Sorry, try again.
+    [sudo] password for morpheus-app:
+    sudo: 2 incorrect password attempts
+
+  As root, run:
+
+  .. code-block:: bash
+
+    su - morpheus-app
+    sudo -l
+
+  If it prompts you for a password, there may be management of the ``sudo`` command that ``morpheus-ctl reconfigure`` cannot automatically configure. The ``morpheus-app`` user must be able to ``sudo`` to the ``morpheus-local`` user with no password. This config is normally in the file ``/etc/sudoers.d/80-morpheus-app`` which is created by ``morpheus-ctl reconfigure``.
