@@ -16,7 +16,7 @@ From the API keys page, select the displayed key and copy it. Alternatively, you
 
 .. image:: /images/integration_guides/clouds/maas/2maasApi.png
 
-In addition to the API key, we need the MAAS API URL. This URL is given in the format ``http://<maas-hostname-or-ip>/MAAS/api/2.0``. Plug the hostname or host IP address into the example shown in the previous sentence and store the complete API URL for use in the next step.
+In addition to the API key, we need the MAAS API URL. This URL is given in the format ``http://<maas-hostname-or-ip>:5240/MAAS/api/2.0``. Plug the hostname or host IP address into the example shown in the previous sentence and store the complete API URL for use in the next step.
 
 In |morpheus|, navigate to the list of integrated Clouds and start a new MAAS Cloud integration:
 
