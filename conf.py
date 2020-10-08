@@ -209,6 +209,7 @@ rst_prolog = """
 .. |esbranch| replace:: v7.x
 .. |esver| replace:: v7.8.1
 .. |tcver| replace:: v9.0.37
+.. |morphdat| replace:: Morpheus Data, LLC
 """
 
 
