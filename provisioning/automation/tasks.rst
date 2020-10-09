@@ -158,32 +158,22 @@ Task Types
      - Existing vRO Integration
      - Provisioning: Tasks
 
-|ansible| Ansible Playbook
-``````````````````````````
-:Description:
-  Runs an Ansible playbook. Ansible Integration required
-:Target:
-  Instance or Host
-:Role Permissions:
-  Provisioning: Tasks
-:Task Configuration:
-   NAME
-     Name of the Task
-   CODE
-     Unique code name for api, cli, and variable reference
-   ANSIBLE REPO
-    Select existing Ansible Integration
-   GIT REF
-    Specify tag or branch (Option, blank assumes default)
-   PLAYBOOK
-    Name of playbook to execute
-       Both ``playbook`` and ``playbook.yml`` format supported
-   TAGS
-    Enter comma separated tags to filter executed tasks by (ie ``--tags``)
-   SKIP TAGS
-    Enter comma separated tags to run the playbook without matching tagged tasks (ie ``--skip-tags``)
+Task Configuration
+^^^^^^^^^^^^^^^^^^
 
-   .. IMPORTANT:: Using different Git Ref's for multiple Ansible Tasks in same Workflow is not supported. Git Refs can vary between Workflows, but Tasks in each workflow must use the same Git Ref.
+- .. toggle-header:: :header: **Ansible Playbook**
+
+     |ansible|
+
+     - **NAME:** Name of the Task
+     - **CODE:** Unique code name for api, cli, and variable reference
+     - **ANSIBLE REPO:** Select existing Ansible Integration
+     - **GIT REF:** Specify tag or branch (Option, blank assumes default)
+     - **PLAYBOOK:** Name of playbook to execute, both ``playbook`` and ``playbook.yml`` format supported
+     - **TAGS:** Enter comma separated tags to filter executed tasks by (ie ``--tags``)
+     - **SKIP TAGS: Enter comma separated tags to run the playbook without matching tagged tasks (ie ``--skip-tags``)
+
+     .. IMPORTANT:: Using different Git Refs for multiple Ansible Tasks in same Workflow is not supported. Git Refs can vary between Workflows, but Tasks in each Workflow must use the same Git Ref.
 
 |chef| Chef Bootstrap
 `````````````````````
