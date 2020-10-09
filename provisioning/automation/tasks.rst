@@ -171,23 +171,16 @@ Task Configuration
      - **GIT REF:** Specify tag or branch (Option, blank assumes default)
      - **PLAYBOOK:** Name of playbook to execute, both ``playbook`` and ``playbook.yml`` format supported
      - **TAGS:** Enter comma separated tags to filter executed tasks by (ie ``--tags``)
-     - **SKIP TAGS: Enter comma separated tags to run the playbook without matching tagged tasks (ie ``--skip-tags``)
+     - **SKIP TAGS:** Enter comma separated tags to run the playbook without matching tagged tasks (ie ``--skip-tags``)
 
      .. IMPORTANT:: Using different Git Refs for multiple Ansible Tasks in same Workflow is not supported. Git Refs can vary between Workflows, but Tasks in each Workflow must use the same Git Ref.
 
-|chef| Chef Bootstrap
-`````````````````````
-:Description:
-  Executes Chef bootstrap and run list. Chef Integration required
-:Target:
-  Instance or Host
-:Role Permissions:
-  Provisioning: Tasks
-:Task Configuration:
-  NAME
-   Name of the Task
-  CODE
-    Unique code name for api, cli, and variable reference
+- .. toggle-header:: :header: **Chef bootstrap**
+
+     |chef|
+
+     - **NAME:** Name of the Task
+     - **CODE:** Unique code name for api, cli, and variable reference
   CHEF SERVER
     Select existing Chef Integration
   ENVIRONMENT
