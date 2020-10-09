@@ -167,7 +167,7 @@ Task Configuration
 ^^^^^^^^^^^^^^^^^^
 
 - .. toggle-header:: :header: **Ansible Playbook**
-|br|
+
      |ansible|
 
      - **NAME:** Name of the Task
@@ -177,7 +177,7 @@ Task Configuration
      - **PLAYBOOK:** Name of playbook to execute, both ``playbook`` and ``playbook.yml`` format supported
      - **TAGS:** Enter comma separated tags to filter executed tasks by (ie ``--tags``)
      - **SKIP TAGS:** Enter comma separated tags to run the playbook without matching tagged tasks (ie ``--skip-tags``)
-|br|
+     |br|
      .. IMPORTANT:: Using different Git Refs for multiple Ansible Tasks in same Workflow is not supported. Git Refs can vary between Workflows, but Tasks in each Workflow must use the same Git Ref.
 
 - .. toggle-header:: :header: **Chef bootstrap**
@@ -186,20 +186,13 @@ Task Configuration
 
      - **NAME:** Name of the Task
      - **CODE:** Unique code name for api, cli, and variable reference
-  CHEF SERVER
-    Select existing Chef Integration
-  ENVIRONMENT
-    Populate Chef environment, or leave as ``_default``
-  RUN LIST
-    Enter Run List, eg ``role[web]``
-  DATA BAG KEY
-    Enter data bag key (will be masked uon save)
-  DATA BAG KEY PATH
-    Enter data bag key path, eg ``/etc/chef/databag_secret``
-  NODE NAME
-    Defaults to instance name, configurable.
-  NODE ATTRIBUTES
-    Specify attributes inside the ``{}``
+     - **CHEF SERVER:** Select existing Chef integration
+     - **ENVIRONMENT:** Populate Chef environment, or leave as ``_default``
+     - **RUN LIST:** Enter Run List, eg ``role[web]``
+     - **DATA BAG KEY:** Enter data bag key (will be masked upon save)
+     - **DATA BAG KEY PATH:** Enter data bag key path, eg ``/etc/chef/databag_secret``
+     - **NODE NAME:** Defaults to Instance name, configurable
+     - **NODE ATTRIBUTES: Specify attributes inside the ``{}``
 
 
 |groovy| Groovy script
