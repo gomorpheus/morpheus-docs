@@ -171,13 +171,13 @@ Task Configuration
      |ansible|
 
      - **NAME:** Name of the Task
-     - **CODE:** Unique code name for api, cli, and variable reference
+     - **CODE:** Unique code name for API, CLI, and variable references
      - **ANSIBLE REPO:** Select existing Ansible Integration
      - **GIT REF:** Specify tag or branch (Option, blank assumes default)
      - **PLAYBOOK:** Name of playbook to execute, both ``playbook`` and ``playbook.yml`` format supported
      - **TAGS:** Enter comma separated tags to filter executed tasks by (ie ``--tags``)
      - **SKIP TAGS:** Enter comma separated tags to run the playbook without matching tagged tasks (ie ``--skip-tags``)
-     |br|
+
      .. IMPORTANT:: Using different Git Refs for multiple Ansible Tasks in same Workflow is not supported. Git Refs can vary between Workflows, but Tasks in each Workflow must use the same Git Ref.
 
 - .. toggle-header:: :header: **Chef bootstrap**
@@ -185,7 +185,7 @@ Task Configuration
      |chef|
 
      - **NAME:** Name of the Task
-     - **CODE:** Unique code name for api, cli, and variable reference
+     - **CODE:** Unique code name for API, CLI, and variable references
      - **CHEF SERVER:** Select existing Chef integration
      - **ENVIRONMENT:** Populate Chef environment, or leave as ``_default``
      - **RUN LIST:** Enter Run List, eg ``role[web]``
@@ -194,89 +194,49 @@ Task Configuration
      - **NODE NAME:** Defaults to Instance name, configurable
      - **NODE ATTRIBUTES: Specify attributes inside the ``{}``
 
+- .. toggle-header:: :header: Groovy script
 
-|groovy| Groovy script
-``````````````````````
-:Description:
-  Executes Groovy Script locally (on app node)
-:Target:
-  Local App Node
-:Role Permissions:
-  Provisioning: Tasks
-  Provisioning: Tasks - Script Engines
-:Task Configuration:
-  NAME
-    Name of the Task
-  CODE
-    Unique code name for api, cli, and variable reference
-  RESULT TYPE
-    - Single Value
-    - Key/Value Pairs
-    - JSON
-  SCRIPT
-    Contents of Groovy Script to execute
+     |groovy|
 
-Email
-`````
-:Description:
-  Allows for sending of email via Workflows
-:Target:
-  Local
-:Role Permissions:
-  Provisioning: Tasks
-:Task Configuration:
-  NAME
-    Name of the Task
-  CODE
-    Unique code name for api, cli, and variable reference
-:Source:
-  Choose local to draft or paste the email directly into the Task. Choose Repository or URL to bring in a template from a Git repository or an outside source
-:Email Address:
-  Email addresses can be entered literally or Morpheus automation variables can be injected, such as ``<%=instance.createdByEmail%>``
-:Subject:
-  Morpheus automation variables can be injected into the subject field when needed
-:Content:
-  The body of the email is HTML. Morpheus automation variables can be injected into the email body when needed
-:Skip Wrapped Email Template:
-  The |morpheus| email template is ignored and only HTML in the Content field is used
+     - **NAME:** Name of the Task
+     - **CODE:** Unique code name for API, CLI, and variable references
+     - **RESULT TYPE:** Single Value, Key/Value Pairs, or JSON
+     - **CONTENT:** Contents of the Groovy script if not sourcing it from a repository
 
-|http| HTTP (api)
-`````````````````
-:Description:
-  Executes REST call for targeting external API's.
-:Target:
-  URL specified in Task
-:Role Permissions:
-  Provisioning: Tasks
-:Task Configuration:
-  NAME
-    Name of the Task
-  CODE
-    Unique code name for api, cli, and variable reference
-  RESULT TYPE
-    - Single Value
-    - Key/Value Pairs
-    - JSON
-  URL
-    http or https url for http task target
-  HTTP METHOD
-    GET (default), POST, PUT, PATCH, HEAD, or DELETE
-  AUTH USER
-    Username for username/password authentication
-  PASSWORD
-    Password for username/password authentication
-  BODY
-    Request Body
-  HTTP HEADERS
-    Enter requests headers
-      .. list-table:: **Http Header examples**
+- .. toggle-header:: :header: Email
 
-         * - Authorization
-           - Bearer `token`
-         * - Content-Type
-           - application/json
-  IGNORE SSL ERRORS
-    Mark when making REST calls to systems without a trusted SSL certificate
+     - **NAME:** Name of the Task
+     - **CODE:** Unique code name for API, CLI, and variable references
+     - **SOURCE:** Choose local to draft or paste the email directly into the Task. Choose Repository or URL to bring in a template from a Git repository or another outside source
+     - **EMAIL ADDRESS:** Email addresses can be entered literally or |morpheus| automation variables can be injected, such as ``<%=instance.createdByEmail%>``
+     - **SUBJECT:** The subject line of the email, |morpheus| automation variables can be injected into the subject field
+     - **CONTENT:** The body of the email is HTML. |morpheus| automation variables can be injected into the email body when needed
+     - **SKIP WRAPPED EMAIL TEMPLATE:** The |morpheus|-styled email template is ignored and only HTML in the Content field is used
+
+     .. TIP:: To whitelabel email sent from Tasks, select SKIP WRAPPED EMAIL TEMPLATE and use an HTML with your own CSS styling
+
+- .. toggle-header:: :header: HTTP (API)
+
+     |http|
+
+     - **NAME:** Name of the Task
+     - **CODE:** Unique code name for API, CLI, and variable references
+     - **RESULT TYPE:** Single Value, Key/Value Pairs, or JSON
+     - **URL:** An HTTP or HTTPS URL as the HTTP Task target
+     - **HTTP METHOD:** GET (default), POST, PUT, PATCH, HEAD, or DELETE
+     - **AUTH USER:** Username for username/password authentication
+     - **PASSWORD:** Password for username/password authentication
+     - **BODY:** Request Body
+     - **HTTP HEADERS: Enter requests headers
+
+     .. list-table:: **Http Header examples**
+
+       * - Authorization
+         - Bearer `token`
+       * - Content-Type
+         - application/json
+
+     - **IGNORE SSL ERRORS:** Mark when making REST calls to systems without a trusted SSL certificate
 
 |javascript| Javascript
 ```````````````````````
