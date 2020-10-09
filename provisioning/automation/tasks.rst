@@ -1,3 +1,8 @@
+.. # define a hard line break for HTML
+.. |br| raw:: html
+
+   <br />
+
 Tasks
 -----
 
@@ -162,7 +167,7 @@ Task Configuration
 ^^^^^^^^^^^^^^^^^^
 
 - .. toggle-header:: :header: **Ansible Playbook**
-
+|br|
      |ansible|
 
      - **NAME:** Name of the Task
@@ -172,7 +177,7 @@ Task Configuration
      - **PLAYBOOK:** Name of playbook to execute, both ``playbook`` and ``playbook.yml`` format supported
      - **TAGS:** Enter comma separated tags to filter executed tasks by (ie ``--tags``)
      - **SKIP TAGS:** Enter comma separated tags to run the playbook without matching tagged tasks (ie ``--skip-tags``)
-
+|br|
      .. IMPORTANT:: Using different Git Refs for multiple Ansible Tasks in same Workflow is not supported. Git Refs can vary between Workflows, but Tasks in each Workflow must use the same Git Ref.
 
 - .. toggle-header:: :header: **Chef bootstrap**
