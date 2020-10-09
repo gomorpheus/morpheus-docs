@@ -31,7 +31,7 @@ Morpheus offers a complete Integration with Microsoft Azure including the follow
 * Pricing Sync RBAC, Tenant Permissions, Markup
 * Costing Sync, Reporting, Invoicing
 
-.. note:: Month-to-date (MTD) Azure cost invoices may not exactly match the Azure portal cost analysis due to possible delays in cost data availability on the Azure API. This is only temporary and cost data will be consistent on month end.
+  Note: Month-to-date (MTD) Azure cost invoices may not exactly match the Azure portal cost analysis due to possible delays in cost data availability on the Azure API. This is only temporary and cost data will be consistent on month end.
 
 * Reservations Sync, Guidance Recommendations
 * Azure Stack Support
