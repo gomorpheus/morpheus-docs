@@ -31,7 +31,7 @@
    :maxdepth: 1
    :caption: Morpheus CLI
 
-   CLI Documentation <https://github.com/gomorpheus/morpheus-cli/wiki>
+   CLI Documentation <https://morpheus-morpheus-cli-docs.readthedocs-hosted.com/en/latest/CLI-Manual.html>
 
 .. toctree::
    :maxdepth: 1
