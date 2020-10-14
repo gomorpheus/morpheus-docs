@@ -43,7 +43,7 @@
    :maxdepth: 1
    :caption: Morpheus Developer Portal
 
-   Dev Portal Documentation <https://developer.morpheusdata.com/>
+   Developer Zone <https://developer.morpheusdata.com/>
 
 .. toctree::
    :maxdepth: 3
