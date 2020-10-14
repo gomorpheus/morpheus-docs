@@ -40,6 +40,12 @@
    API Documentation <https://apidocs.morpheusdata.com>
 
 .. toctree::
+   :maxdepth: 1
+   :caption: Morpheus Developer Portal
+
+   Dev Portal Documentation <https://developer.morpheusdata.com/>
+
+.. toctree::
    :maxdepth: 3
    :caption: Release Notes
 
