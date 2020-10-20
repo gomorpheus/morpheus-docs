@@ -226,11 +226,35 @@ Role Mappings
     - The Domains page is where network domains are managed. Domains are used for setting FQDNs, joining Windows Instances to domains, and creating A-Records with DNS integrations. On create the domain controller and credentials for domain join must be provided.
     - This permission is recommended for those responsible for |morpheus| DNS and domain-join integrations.
     -
+  * - Infrastructure: Network Firewalls
+    - None, Read, Full
+    - Determines access to the Firewall tab on applicable network integrations detail pages
+    - The Firewall tab is where network firewall groups and rules are viewed, created and managed
+    - This permission is recommended for those tasked with network security management
+    -
+  * - Infrastructure: Network Integration
+    - None, Read, Full
+    - Determines access to the Integrations tab on the Network list page (Infrastructure > Network)
+    - The integrations tab is where network integrations can be viewed, added and managed. Additionally, the detail pages for network integrations are accessed here
+    - This permission is recommended for those tasked with handling network integrations and their use within |morpheus|
+    -
+  * - Infrastructure: Network IP Pools
+    - None, Read, Full
+    - Determines access to the IP Pools tab on the Network list page (Infrastructure > Network)
+    - The IP Pools tab is where IP pools from various networks are displayed. Detail pages for IP pools can also be accessed here
+    - This permission is recommended for those tasked with IP address management
+    -
   * - Infrastructure: Network Proxies
     - None, Read, Full
     - Determines access to the Proxies tab on the Infrastructure > Networks page.
     - The Infrastructure Networks Proxies page is where Proxy configurations are stored, which are available for use by the provisioning engines.
     - This permission is recommended for those responsible for configuring proxies to be used when provisioning.
+    -
+  * - Infrastructure: Network Router DHCP Pool
+    - None, Read, Full
+    - Determines access to the DHCP tab on the detail page for a Router associated with certain network integrations (Example: Infrastructure > Network > Integrations > Routers tab > selected router > DHCP tab)
+    - The DHCP tab is where DHCP pools are viewed, created and managed
+    - This permission is recommended for those responsible for DHCP pool management
     -
   * - Infrastructure: Network Routers
     - None, Read, Group, Full
@@ -243,12 +267,6 @@ Role Mappings
     - Determines access to the Infrastructure > Networks page, including the Networks, network groups, and integrations tabs. The "Group" permission setting allows access to objects shared to Groups associated with the user.
     - The Networks page is where networks are configured for DHCP or static IP assignment and existing networks are displayed. The Network Groups page is where networks are grouped to allow round robin provisioning among the group. The Integrations page is where IPAM, DNS, security, service registry, and virtual network tools are integrated. These include Cisco ACI, VMware NSX T and V, Infoblox, Bluecat, phpIPAM, SolarWinds, Stealth, Microsoft DNS, PowerDNS, Route 53, and Consul.
     - This permission is recommended for those responsible for integration with network technologies and the configuration and management of networks to be used during provisioning.
-    -
-  * - Infrastructure: Network IP Pools
-    - None, Read, Full
-    - Determines access to the IP Pools tab on the Infrastructure > Network page.
-    - The IP Pools page is where |morpheus| IP pools may be created. On create, a name and IP range are provided. Additionally, pools from IPAM integrations are displayed.
-    - This permission is recommended for those responsible for IP address management and those responsible for IPAM Integrations.
     -
   * - Infrastructure: Policies
     - None, Read, Full
@@ -363,6 +381,12 @@ Role Mappings
     - Determines access to the Operations > Wiki page.
     - The Wiki page allows easy UI, API and CLI access to information to be referenced or shared with others. Wiki pages encompass individual Clouds, Groups, Servers, Instances, Clusters, and other pages can be manually created. Wiki pages from resources are accessible from the Operations > Wiki page or within individual resource detail pages on their respective Wiki tabs.
     - This permission is recommend for those responsible for documenation and knowledge management.
+    -
+  * - Projects
+    - None, Full, Read
+    - Determines access to Projects through |morpheus| API
+    - Projects are used to associate resources together and apply common tags to their invoices
+    - This permission is recommended for those responsible for cost analysis and invoice reporting
     -
   * - Provisioning Administrator
     - None, Full
@@ -538,6 +562,12 @@ Role Mappings
     - The Virtual Images page displays a list of all images, local and synced, that are available to deploy. Available images include those that are shipped with |morpheus|, synced from integrated clouds, and uploaded directly into |morpheus| by the user.
     - This permission is recommended for those who are responsible for image management.
     -
+  * - Reconfigure Servers
+    - None, Full
+    - Determines access to Reconfigure from the Actions menu on an Instance or Host detail page
+    - Reconfigure allows for certain alterations of the Instance or machine, such as plan, volumes or networking
+    - This permission is recommended for those responsible for adjusting or resizing active systems
+    -
   * - Remote Console
     - None, Provisioned, Full
     - Determines access to the console on a Host detail page (Infrastructure > Hosts > selected Host, VM, or Bare Metal resource > Console tab). The "Provisioned" permission gives access to the console only for resources the logged in user has provisioned.
@@ -549,6 +579,12 @@ Role Mappings
     - This allows or disallows the ability to automatically log into the remote console.
     - |morpheus| will automatically log into the machine using the credentials defined on the VM or Host. The credentials are defined either from the virtual image used, added via cloud-init or VMware Tools using the global cloud-init settings (Administration > Provisioning), or the Linux or Windows settings defined in User Settings.
     - This permission is recommended when an organization utilizes |morpheus| to create user accounts on provisioned or managed machines, as well as, allow remote console access.
+    -
+  * - Security: Scanning
+    - None, Read, Full
+    - Determines access to the Security Packages tab on the Jobs list page (Provisioning > Jobs), Security Scanning type Jobs, and Security Subtab inside the Software tab on a server detail page where the results of security scans are viewed
+    - Allows access to view, create, and run security scans on existing systems, as well as view the results of previously-run scans
+    - This permission is recommended for those responsible for security compliance of existing systems
     -
   * - Snapshots
     - None, Read, Full

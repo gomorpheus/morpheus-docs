@@ -1,7 +1,7 @@
 Appliance Settings
 ==================
 
-The `Administration -> Settings` section sets global configuration parameters for the Appliance, Tenant Registration, Email, Proxy and sets which Cloud types are enabled.
+The `Administration > Settings` section sets global configuration parameters for the Appliance, Tenant Registration, Email, Proxy and sets which Cloud types are enabled.
 
 Appliance Settings
 ------------------
@@ -17,6 +17,8 @@ Internal Appliance URL (PXE)
   For PXE-Boot your appliance needs to be routable directly with minimal NAT masquerading. This allows one to override the default appliance url endpoint for use by the PXE Server. If this is unset, the default appliance url will be used instead.
 API Allowed Origins
   Specifies which origins are allowed to access the |morpheus| API.
+Cloud Sync Interval
+  Data from integrated clouds is synced to |morpheus| at an interval equal to the number of seconds entered. The default value is 300 seconds (equal to five minutes). It's important to note that changing this value can have adverse effects on performance, especially in environments with very large numbers of Clouds.
 Enable SSL Verification of Agent (Communications)
   Enabling SSL Verification of Agent Communications requires a valid Certificate be installed on the Appliance.
 Disable SSH Password Authentication
@@ -37,6 +39,10 @@ Default User Role
 User Management Settings
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
+Session Expires (Minutes)
+  User sessions are automatically closed when inactive for the number of minutes entered.
+Session Warning (Minutes)
+  A pop-up warning is shown to the user when they have been inactive for the number of minutes entered. Example: If sessions are set to expire after 90 minutes, warn the user after 60 minutes if you intend to provide 30 minutes advance warning.
 Expire Password After (Days)
   User account passwords will expire after the entered number of days. Enter 0 or leave the field empty to opt out of this feature.
 Disable User After Attempts (Number of Attempts)
