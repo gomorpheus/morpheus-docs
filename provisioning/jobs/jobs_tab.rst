@@ -15,10 +15,10 @@ Provisioning: Job Executions
 - **None:** Cannot access ``Provisioning > Jobs > Job Executions tab``
 - **Read:** Can access and view ``Provisioning > Jobs > Job Executions tab`` including job execution history, status, and Job output
 
-Creating Jobs
-^^^^^^^^^^^^^
+Creating Task and Workflow Jobs
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. note:: Jobs require existing Tasks or Workflows. See the appropriate section of |morpheus| docs for more on creating `Tasks <https://docs.morpheusdata.com/en/latest/provisioning/automation/automation.html#tasks>`_ and `Workflows <https://docs.morpheusdata.com/en/latest/provisioning/automation/automation.html#workflows>`_.
+.. note:: These Jobs require existing Tasks or Workflows. See the appropriate section of |morpheus| docs for more on creating `Tasks <https://docs.morpheusdata.com/en/latest/provisioning/automation/automation.html#tasks>`_ and `Workflows <https://docs.morpheusdata.com/en/latest/provisioning/automation/automation.html#workflows>`_.
 
 To create a new job:
 
