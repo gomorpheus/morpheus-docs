@@ -6,11 +6,8 @@
 
 .. IMPORTANT:: Review :ref:`compatibility` before installing or upgrading |morpheus|
 
-|morpheus| UI Updates
-=====================
-
 4.2.4 Highlights
-----------------
+================
 
 SCAP Scans Confirm Security Compliance
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -93,7 +90,6 @@ All New Features
   API Enhancements
   ----------------
 
-  ..
     - .. toggle-header:: :header: Deployments: **Deployments API/CLI Improvements**
 
          - Support for adding files to a Deployment version
@@ -102,7 +98,6 @@ All New Features
   API Fixes
   ---------
 
-  ..
     - Billing: Optional parameters added to support pagination of large returns
     - Deployments: The command ``morpheus deploy`` was fixed to correct some unwanted behavior, the ``--help`` flag output was also improved
     - Hosts: Search by tag names and values
