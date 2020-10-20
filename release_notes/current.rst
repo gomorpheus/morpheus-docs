@@ -18,14 +18,21 @@ The SCAP program (Security Content Automation Program) from NIST (National Insti
 - Call in existing SCAP packages and checklists from online repositories
 - Create Jobs to run SCAP scans against any group of Instances or Servers either on-demand or on recurring schedules
 - View complete SCAP evaluation reports on your systems from inside the |morpheus| UI
-- `Full SCAP SCAN documentation here <https://docs.morpheusdata.com/en/4.2.4/provisioning/jobs/jobs.html#running-security-scan-jobs>`_
+- `Learn how to run SCAP scans in Morpheus <https://docs.morpheusdata.com/en/4.2.4/provisioning/jobs/jobs.html#creating-and-running-security-scan-jobs>`_
 
 .. image:: /images/provisioning/jobs/security/6server_results.png
 
 ServiceNow Incident Report Improvements
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-- xxxxxxx
+Through its ServiceNow integration, |morpheus| can pass incident data for viewing and handling through the ServiceNow console. In |morpheus| 4.2.4, additional details are passed through to the ServiceNow incident record to directly link back to the specific incident in |morpheus|, as well as provide details on the severity and current resource status.
+
+- Link directly to the matching incident object in |morpheus|
+- See incident severity information
+- Link directly to the associated Check or Check Group in |morpheus|
+- See additional details on the check including its interval, number of failed checks, and whether this incident impacts availability percentage
+
+.. image:: /images/releases/424/servicenow.png
 
 All New Features
 ----------------
@@ -42,7 +49,12 @@ All New Features
 
 - Azure AKS: Support added for version 1.7.11
 - Azure Stack: Deploy ARM template Blueprints on Azure Stack Clouds
-- KVM: Console access is now available for VMs on the KVM server which were not provisioned by |morpheus|
+
+- .. toggle-header:: :header: KVM: **KVM Improvements**
+
+     - KVM Windows provisioning support added
+     - Console access is now available for VMs on the KVM server which were not provisioned by |morpheus|
+
 - OpenStack: Clone updated to work with new OpenStack backup process
 - NSX-V: Create and manage DHCP Pools for Edge Gateway routers
 - Policies: Load balancer pricing is factored when enforcing budget policies during provisioning and reconfiguration

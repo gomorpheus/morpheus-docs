@@ -1,7 +1,7 @@
 Creating and Running Security Scan Jobs
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Security scan Jobs allow users to create and schedule SCAP program (Security Content Automation Program) scans for groups of managed systems. These Jobs can call in existing SCAP packages and checklists, which are used to scan the targeted systems on-demand or on a scheduled basis. Historical data for these scans is saved in the Job Execution list and in the software section of server detail pages. Detailed scan reports can also be viewed for each system as needed once the scan is complete. See the `SCAP documentation <https://csrc.nist.gov/CSRC/media/Projects/Security-Content-Automation-Protocol/documents/docs/scap-nistir-7343.pdf>`_ on the NIST website for information on developing your own scanning procedures.
+Security Scan Jobs allow users to create and schedule SCAP program (Security Content Automation Program) scans for groups of managed systems. These Jobs can call in existing SCAP packages and checklists, which are used to scan the targeted systems on-demand or on a scheduled basis. Historical data for these scans is saved in the Job Execution list and in the software section of server detail pages. Detailed scan reports can also be viewed for each system as needed once the scan is complete. See the `SCAP documentation <https://csrc.nist.gov/CSRC/media/Projects/Security-Content-Automation-Protocol/documents/docs/scap-nistir-7343.pdf>`_ on the NIST website for information on developing your own scanning procedures.
 
 .. NOTE:: Creating and editing Security Scan Jobs requires the "Security: Scanning" Role permission set to Full. Viewing Security Scan Jobs and seeing the results for scanned servers requires at least a Read-level permission.
 
@@ -24,7 +24,7 @@ Add a new Security Scan Job
 #. Navigate to Provisioning > Jobs > Jobs Tab
 #. Click :guilabel:`+ADD`
 #. Set the Job type to "Security Scan Job" and provide a friendly name for the Job
-#. Click:guilabel:`NEXT`
+#. Click :guilabel:`NEXT`
 
     .. image:: /images/provisioning/jobs/security/2new_job.png
       :width: 50%
@@ -36,8 +36,8 @@ Add a new Security Scan Job
 #. Click :guilabel:`NEXT`
 #. After final review, click :guilabel:`COMPLETE`
 
-.. image:: /images/provisioning/jobs/security/3job_details.png
-  :width: 50%
+    .. image:: /images/provisioning/jobs/security/3job_details.png
+      :width: 50%
 
 Running Security Scan Jobs
 ``````````````````````````
@@ -48,7 +48,7 @@ Once created, Security Scan Jobs will run based on the configured schedule. They
 #. Click :guilabel:`MORE`
 #. Click "Execute"
 
-.. image:: /images/provisioning/jobs/security/4execute_scan.png
+    .. image:: /images/provisioning/jobs/security/4execute_scan.png
 
 Viewing Completed Security Scan Jobs
 ````````````````````````````````````
@@ -58,7 +58,7 @@ To view a list of completed Security Scan Jobs (and Jobs of other types):
 #. Navigate to Provisioning > Jobs > Job Executions Tab
 #. Additional details can be viewed by clicking :guilabel:`(i)`
 
-.. image:: /images/provisioning/jobs/security/5execution_list.png
+    .. image:: /images/provisioning/jobs/security/5execution_list.png
 
 To view scan results for specific servers:
 
