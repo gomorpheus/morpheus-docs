@@ -16,7 +16,7 @@ Add a new Security Package
 .. NOTE:: Currently URL is the only source option for security packages
 
 .. image:: /images/provisioning/jobs/security/1add_package.png
-  :width: 80%
+  :width: 50%
 
 Add a new Security Scan Job
 ```````````````````````````
@@ -27,7 +27,7 @@ Add a new Security Scan Job
 #. Click:guilabel:`NEXT`
 
     .. image:: /images/provisioning/jobs/security/2new_job.png
-      :width: 80%
+      :width: 50%
 
 #. Select a security package, see the previous section to add a new one
 #. Enter your Scan Checklist (XML document) and Security Profile (XCCDF document), more information on these can be found in the SCAP documentation linked above
@@ -37,7 +37,7 @@ Add a new Security Scan Job
 #. After final review, click :guilabel:`COMPLETE`
 
 .. image:: /images/provisioning/jobs/security/3job_details.png
-  :width: 80%
+  :width: 50%
 
 Running Security Scan Jobs
 ``````````````````````````

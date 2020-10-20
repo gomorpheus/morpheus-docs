@@ -18,6 +18,9 @@ The SCAP program (Security Content Automation Program) from NIST (National Insti
 - Call in existing SCAP packages and checklists from online repositories
 - Create Jobs to run SCAP scans against any group of Instances or Servers either on-demand or on recurring schedules
 - View complete SCAP evaluation reports on your systems from inside the |morpheus| UI
+- `Full SCAP SCAN documentation here <https://docs.morpheusdata.com/en/4.2.4/provisioning/jobs/jobs.html#running-security-scan-jobs>`_
+
+.. image:: /images/provisioning/jobs/security/6server_results.png
 
 ServiceNow Incident Report Improvements
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
