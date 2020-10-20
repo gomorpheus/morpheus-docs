@@ -30,6 +30,9 @@ Morpheus offers a complete Integration with Microsoft Azure including the follow
 * Service Plan Sync, Tenant Permissions, RBAC
 * Pricing Sync RBAC, Tenant Permissions, Markup
 * Costing Sync, Reporting, Invoicing
+
+  Note: Month-to-date (MTD) Azure cost invoices may not exactly match the Azure portal cost analysis due to possible delays in cost data availability on the Azure API. This is only temporary and cost data will be consistent on month end.
+
 * Reservations Sync, Guidance Recommendations
 * Azure Stack Support
 * Tag Bi-Directional Sync, Creation, Deletion Policy Enforcement
@@ -175,7 +178,7 @@ To add a new Azure Cloud integration into |morpheus| using the credentials creat
 
    Details
    ```````
-            
+
    CLOUD TYPE
      - Standard (Azure Cloud)
      - US Gov (Azure US Government)
@@ -211,7 +214,7 @@ To add a new Azure Cloud integration into |morpheus| using the credentials creat
      .. image:: /images/clouds/azure/addAzureCloudMorphuesS1.png
 
    .. include:: /integration_guides/Clouds/advanced_options.rst
-    
+
 #. Once done configuring the Cloud, select :guilabel:`NEXT`. NOTE all specified values except the Subscription ID can be changes after the Cloud is created.
 
 #. Next select an existing Group to add the Azure Cloud to, or create a new Group, then select :guilabel:`NEXT`
