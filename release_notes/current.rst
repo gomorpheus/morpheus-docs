@@ -60,7 +60,7 @@ All New Features
      - KVM Windows provisioning support added
      - Console access is now available for VMs on the KVM server which were not provisioned by |morpheus|
 
-- OpenStack: Clone updated to work with new OpenStack backup process
+- OpenStack: Backup process improved to handle longer running jobs for backing up large instances
 - NSX-V: Create and manage DHCP Pools for Edge Gateway routers
 - Policies: Load balancer pricing is factored when enforcing budget policies during provisioning and reconfiguration
 
