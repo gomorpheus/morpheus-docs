@@ -69,6 +69,8 @@ When externalizing MySQL, Elasticsearch and/or RabbitMQ services, the following 
 +---------------------------------------+-----------------------+-------------------------------------+
 | MySQL                                 | |mysqlbranch|         | |mysqlver|                          |
 +---------------------------------------+-----------------------+-------------------------------------+
+| MySQL (FIPS)                          | |mysqlbranch|         | |mysqlverfips|                      |
++---------------------------------------+-----------------------+-------------------------------------+
 | Percona                               | 5.7, WSREP 31         | n/a                                 |
 +---------------------------------------+-----------------------+-------------------------------------+
 | Elasticsearch                         | |esbranch|            | |esver|                             |
@@ -79,6 +81,7 @@ When externalizing MySQL, Elasticsearch and/or RabbitMQ services, the following 
 +---------------------------------------+-----------------------+-------------------------------------+
 | Nginx                                 |                       | |nginxver|                          |
 +---------------------------------------+-----------------------+-------------------------------------+
+
 
 .. important:: Elasticsearch 7.x is required for |morphver|. Refer to :ref:`upgrading` section for more information.
 
