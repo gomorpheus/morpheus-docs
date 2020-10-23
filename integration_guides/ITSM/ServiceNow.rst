@@ -30,7 +30,7 @@ Add Service Now Integration
     .. code-block:: bash
 
       {
-      "object_id":"<${instance.name}>"
+       "object_id":"<%=instance.name%>"
       }
 
    CMDB BUSINESS OBJECT
