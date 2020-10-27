@@ -14,7 +14,7 @@ Adding an Instance to a Scale Set
 #. In the `AUTOMATION` section under `Scale - Scale Type` select `Azure Scale Set`
 #. Select a default Threshold. Threshold pre-sets can be added in `Provisioning - Automation- Scale Thresholds` (requires Instances - Thresholds permission)
 
-   .. image:: /images/azure/azure_scale_sets1.png
+   .. image:: /images/clouds/azure/azure_scale_sets1.png
 
 #. Complete the instance configuration and provision the instance.
 
