@@ -9,7 +9,7 @@ Overview
 Supported Verisons
 ``````````````````
 
-2008R2,2012,2012R2,2016,2019
+2008 R2, 2012, 2012 R2, 2016, 2019
 
 Creating a Windows Image
 ^^^^^^^^^^^^^^^^^^^^^^^^
