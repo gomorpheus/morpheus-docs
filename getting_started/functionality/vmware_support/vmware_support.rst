@@ -3,7 +3,7 @@ VMware Support Statement
 
 |morphdat| will support customers who run |morpheus| products on supported operating systems, irrespective of whether they are running in VMware environments or not. |morphdat| supports operating systems, not specific hardware configurations. Accordingly, VMware operates as a hardware abstraction layer.
 
-VMware supports a set of certified operating systems and hardware. The customer and VMware will be responsible for any interactions or issues that arise at the hardware or oprating system layer as a result of their use of VMware.
+VMware supports a set of certified operating systems and hardware. The customer and VMware will be responsible for any interactions or issues that arise at the hardware or operating system layer as a result of their use of VMware.
 
 |morphdat| will not require clients to recreate and troubleshoot every issue in a non-VMware environment; however, |morphdat| does reserve the right to request our customers to diagnose certain issues in a native certified operating system environment, operating without the virtual environment. |morphdat| will only make this request when there is reason to believe that the virtual environment is a contributing factor to the issue.
 
