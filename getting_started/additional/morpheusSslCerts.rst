@@ -6,6 +6,8 @@ By default |morpheus| generates a Self-Signed SSL Certificate. The Self-Signed S
 Trusted CA Signed SSL Certificate Implementation
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+#. If you don't already have your certificate, run an OpenSSL command to generate an SSL certificate request (.csr) and private key (.key). If you need help formatting the command, `DigiCert provides a helpful tool <https://www.digicert.com/easy-csr/openssl.htm>`_.
+
 #. Copy the private key and certificate to ``/etc/morpheus/ssl/your_fqdn_name.key`` and ``/etc/morpheus/ssl/your_fqdn_name.crt`` respectively.
 
 #. Edit the configuration file ``/etc/morpheus/morpheus.rb`` and add the following entries:
