@@ -6,10 +6,10 @@ Overview
 
 |morpheus| comes out of the box with a default set of blueprints for use in many modern deployment scenarios. These consist mostly of base operating system images with a few additional adjustments. These adjustments typically include the addition of cloud-init (which is highly recommended to be used in most environments, but not mandatory). However, in many on-premise deployments there are custom image requirements as well as networking requirements. This guide will go over how to create a VMware Images for use within |morpheus|.
 
-Supported Verisons
+Supported Versions
 ``````````````````
 
-2008 R2, 2012, 2012 R2, 2016, 2019
+2008 R2, 2012, 2012 R2, 2016, 2019, Windows 10
 
 Creating a Windows Image
 ^^^^^^^^^^^^^^^^^^^^^^^^
