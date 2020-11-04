@@ -4,128 +4,125 @@
 |morphver| Release Notes
 *************************
 
-.. IMPORTANT:: Morpheus 5.0.0 is a beta release and should not be installed in production environments. Review :ref:`compatibility` before installing or upgrading |morpheus|.
+.. NOTE: This list includes improvements added in 4.2.4 which were not part of the 5.0.0 beta. Users upgrading from 4.x.x may also want to review the `5.0.0 change list <https://docs.morpheusdata.com/en/5.0.0/release_notes/current.html>`_ to get a complete picture of the changes.
 
 .. include:: highlights.rst
 
 All New Features
 ----------------
 
-- Amazon: Processing of costing (CUR) reports for detailed invoice costing now occurs when the cloud integration COSTING value is set to "Costing" or "Costing and Reservations". Previously report processing only took place if the cloud integration was configured to get "Costing and Reservations"
-- Amazon: ROI (return on investment) figure displayed in Reservation Recommendations and Savings Plan Recommendations tables on Amazon Cloud detail pages. This is the length of time required to make back the original investment when reserving instances or purchasing a savings plan
-- Amazon: Routes on AWS routers are now editable (Infrastructure > Network > Selected AWS Network > Routing tab > Pencil icon) in addition to viewing, creating and deleting which could be done previously
-- Clouds: Canonical BMaaS Cloud integration added
-- Core: Major optimizations for Cloud synchronization resulting in faster sync times
-- Guidance: Recommendations can now be made based on 30, 60, or 90 day periods
+- Amazon: Deploying MySQL or SQL Server with Amazon RDS now automatically creates the corresponding check and Instance status is reported
+- Amazon EKS: Support added for version 1.7.x
+- Azure AKS: Support added for version 1.7.11
 
-- .. toggle-header:: :header: Invoices: **Highly-granular costing data surfaced into UI**
+- .. toggle-header:: :header: Azure Public Cloud: **Azure Cloud Integration Improvements**
 
-     - Added list view showing high-level detail about groups of Invoices (Operations > Costing > Invoices)
-     - Invoice list page results can be filtered and customized with desired output columns
-     - Click into an Invoice from the list page to see a detail page for the Invoice
+     - Option to enable Azure Guest OS Diagnostics when provisioning Instance or App
+     - Added option to enable Azure Boot Diagnostics when provisioning an Instance or App
+     - Set disk encryption (user or platform-managed) and an encryption set (if user-managed) for an Azure Cloud integration (Add/Edit Cloud modal)
 
-- Java: Upgraded to version 8u265 for VM node packages
-- Networks: vCloud Director-managed IP Pools from privately-assigned Clouds are now shown on the Subtenant's IP Pools page (Infrastructure > Networks > IP Pools)
+- Azure Stack: Azure Stack: Added support for ARM templates
 
-- .. toggle-header:: :header: Personas: **Service Catalog Persona Added**
+- Blueprints: Added ability to set fields as hidden when creating a Blueprint. These fields will not be visible when provisioning an App from the Blueprint. Previously fields could be locked but not hidden.
+- Clouds: Cloud sync enhancements including variable sync schedules that auto-adjust per cloud, resulting in optimized sync times and reduction in sync overlaps and record lock conflicts
 
-     - Simplified Service Catalog Persona created for easy provisioning of curated Instance and Blueprint configurations
-     - Add items to a cart and "check out" to begin the provisioning process
-     - Users can make configuration selections when ordering based on Option Types defined for the catalog item
-     - Service Catalog Dashboard displays recent orders, featured catalog items, and an abbreviated list of inventory items
-     - Inventory list view for user-owned Instances and Apps
-     - View details on user-owned Instances and Apps
-     - Control catalog selection and access to specific personas through Role permissions
-     - Catalog items with invalid configuration cannot be ordered and friendly error messages are surfaced to aid troubleshooting
+- .. toggle-header:: :header: KVM: **KVM Improvements**
 
-- Plugins: Add custom plugins to |morpheus| by uploading them in Administration > Integrations > Plugins. See documentation on the plugin architecture SDK for details on getting started with plugin development
+     - Console access is now available for VMs on the KVM server which were not provisioned by Morpheus
 
-- .. toggle-header:: :header: Reports: **Reports UI and feature set overhauled**
+- Networks: Visibility and Tenant permissions added for IP Pools (select Permissions under the "MORE" menus on the IP Pools)
+- NSX-V: Create and manage DHCP Pools for Edge Gateway routers
 
-     - New report types added
-     - Landing page for Reports now lists report types with buttons to run a selected report type now or schedule one on a recurring basis
-     - Clicking into a report type lists all viewable runs of that report type, one-off runs can be executed, schedules for that report type can be viewed or deleted
-     - See Reports section of |morpheus| docs for complete feature guides
-     - Many report types now allow filtering to include or exclude resources based on multiple tags rather than just one
+- .. toggle-header:: :header: NSX-T: **NSX-T Integration Improvements**
 
-- .. toggle-header:: :header: Reports: **New report types added**
+     - Visibility and Tenant permissions added for Transport Zones (select Permissions under the "MORE" menus on the Transport Zone tab)
+     - Visibility and Tenant permissions added for Edge Clusters (select Permissions under the "MORE" menus on the Edge Clusters tab)
+     - Create and manage NAT rules for T-0 and T-1 routers (see NAT tab on the detail page for a T-0 or T-1 router)
+     - Role permissions added to control access to the T-0 and T-1 routers tabs for an NSX-T network integration
+     - Interfaces tab for T-1 routers renamed to Service Interfaces for clarity
 
-     Several new report types are added, note that the Amazon costing reports listed below are not shown for users that don't have an Amazon cloud integration exposed to them:
+- OpenStack: Backup process improved to handle longer running jobs for backing up large instances
+- Policies: Load balancer pricing is factored when enforcing budget policies during provisioning and reconfiguration
 
-     - Guidance
-     - Migration Planning
-     - Time Series Cost
-     - Amazon Reservation Coverage
-     - Amazon Reservation Utilization
-     - Amazon Savings Inventory Summary
-     - Amazon Savings Plan Coverage
-     - Amazon Savings Plan Utilization
+- .. toggle-header:: :header: Pricing: **Load Balancer Price Tracking**
 
-- .. toggle-header:: :header: Reports: **Automated Generation of Custom Reports**
+     - Load balancer support in Price Plans, Price Sets, and Prices (Administration > Plans & Pricing)
+     - Load balancer price data sync for Azure and Amazon
+     - Automatically apply Price Plans to load balancers based on Plan configuration
+     - Usage and Billing data for load balancers
 
-     - Click :guilabel:`SCHEDULE` in the row for the report type you wish to run
-     - After completing required fields to configure the report, select any default or custom execution schedule from the "SCHEDULE" dropdown list to set the interval. Reports can also be scheduled to be run once at a specific date and time
-     - In the future, automated runs will appear for viewing or exporting in the list of reports
+- Provisioning: Set a value to be prepended to all environment variables loaded as part of Instance or App provisioning
+- Proxies: Global proxy setting now applies to all Morpheus functionality, including local integrations such as Ansible and Terraform
+- Reports: "Invoice Details" report added to list of available report types. For a selected Cloud, group invoices by up to two additional parameters (Region, Cloud, Plan, Tag or Tenant)
 
-     .. image:: /images/releases/500/scheduleReport.png
+- .. toggle-header:: :header: Security Scanning: **Run SCAP Scans to Confirm Security Compliance**
 
-- .. toggle-header:: :header: Roles: **Changes to User Role Permissions**
+     - Create Jobs to run SCAP scans against any group of Instances or Servers either on-demand or on recurring schedules
+     - View complete SCAP evaluation reports on your systems from inside the Morpheus UI
+     - View and track security scan run histories
 
-     - Permission added for Alarms (Operations: Alarms), previously this permission was dictated by Operations: Health
-     - Operations: Health permission relabeled as Admin: Health
-     - Permission added to grant access to global guidance thresholds (Admin: Guidance Settings)
-     - Permission added for integration of custom plugins
+- .. toggle-header:: :header: Roles: **Role Permission Changes**
 
-- .. toggle-header:: :header: Self Service: **Catalog Item Builder Added**
+     - Network integration firewall permissions (Infrastructure > Network > Integrations > Selected integration > Firewalls) now have their own setting (Infrastructure: Network Firewalls). Previously they were inherited from the “Network: Integrations” permission
+     - Role permissions added to control access to the T-0 and T-1 routers tabs for an NSX-T network integration
+     - ``Security: Scanning`` **Feature Access Permission added**
 
-     - Self Service section added at Tools > Self Service
-     - Configure Instances or Blueprints which will appear as selections when viewing the Service Catalog Persona
-     - Control access to the builder through Role permissions and Tenant visibility
-     - Select Option Types from the |morpheus| Library for user-selected configuration on provisioning
+      - Determines access to the Security Packages tab on the Jobs list page (Provisioning > Jobs), Security Scanning type Jobs, and Security Subtab inside the Software tab on a server detail page where the results of security scans are viewed
+      - Allows access to view, create, and run security scans on existing systems, as well as view the results of previously-run scans
+      - This permission is recommended for those responsible for security compliance of existing systems
 
-- Settings: Cloud refresh interval is now user-configurable, the settings can be changed in Administration > Settings > Appliance
+- .. toggle-header:: :header: Service Catalog: **Service Catalog Persona Improvements**
 
-- .. toggle-header:: :header: UI: **Reorganization of UI Menu**
+     - Operational Workflows can be made available as Service Catalog Items and ordered by Service Catalog Persona users
+     - Catalog Items can be categorized under specific headers for easier discoverability as the catalog grows
+     - Quantity selector added for items in cart to avoid the need for adding duplicate items
 
-     - Health section moved from Operations menu to Administration menu
-     - Alarms tab moved from Health to Activity (Operations > Activity)
-     - Budgets section moved to a tab in Costing (Operations > Costing) rather than having its own top-level menu selection in the Operations menu
-     - Usage tab moved from Activity (Operations > Activity) to Costing (Operations > Costing)
-     - Settings (Administration > Settings) now holds settings tabs for Monitoring, Backups, Logs, Provisioning, Environments and Software Licenses rather than keeping them in distinct sections under the Administration menu
+- .. toggle-header:: :header: ServiceNow: **ServiceNow Integration Improvements**
 
-- UI: The User Detail page (Administration > Users > Selected User) now includes tabs for viewing Persona and Catalog Item access specific to the user
-- UI: The Instance Detail page now has a maximum number of tabbed sections with an overflow element to handle any additional tabs
+     - "Morpheus Incident” alerts are now more insightful including links to the related Morpheus incident or check, severity information, and other details about the failing check
+     - Provision Service Catalog Items through the Morpheus ServiceNow plugin
+     - Inventory list view now includes much greater detail about each inventory item
+     - Added the capability to identify a MID server once on the properties page rather than setting it individually for each call
+     - Pricing data is now available to the ServiceNow plugin when ordering Service Catalog items. This is made available on the XML as a monthly price, users would have to modify the form UI to surface this information
 
-- .. toggle-header:: :header: UI: **Expansion of Advanced Lists Tables**
+- Tasks: Tasks now have a detail page with a Summary tab showing the script and a Workflows tab listing the Workflows in which the Task is used
 
-     **Advanced Lists tables added to:**
+- .. toggle-header:: :header: UI: **Interface and Usability Improvements**
 
-     - Load balancers list page at Infrastructure > Load Balancers
-     - Clusters list page at Infrastructure > Clusters
+     - When applying state to Terraform and CloudFormation Apps, a friendly progress bar is displayed to indicate the change
+     - Icons added for AWS services (such as in Service Catalog), including AWS App Mesh, AWS SQS, and AWS SDB
+     - MySQL tmp file location moved from ``/tmp`` to ``/var/run/morpheus/mysqld``
+     - Session expiration times can now be configured (Administration > Settings > Appliance), if desired a window can also be displayed at a specified time to warn about the impending logout
+     - All navigations bars with potential for high tab counts now handle this scenario gracefully
+     - Visibility column added to Catalog Item list (Tools > Self Service) to conveniently indicate whether an item is shared with Tenants
+     - Friendly error messages are surfaced if there is a problem creating the items checked out in a Service Catalog cart, the Instance was simply not created and log access was needed to see what went wrong
 
-- vCloud Director: Create and delete Snapshots in a vCD Cloud
+- Workflows: "Configuration" phase added to Provisioning Workflows. Tasks in this phase are run prior to the initial provision.
 
-- .. toggle-header:: :header: Veeam: **Backup Jobs can now be deleted**
+|morpheus| API & CLI Improvements
+-------------------------------
 
-     - Backup Jobs are deleted from the :guilabel:`ACTIONS` menu on the Backup Jobs list page (Backups > Jobs)
-     - Delete action existed previously but, due to Veeam API limitations, |morpheus| could only disable the job
-     - Backup job delete is supported only on Veeam version 10
+- Billing: Optional parameters added to support pagination of large returns
 
-- Windows: Windows VMs will now auto-expand their root storage partitions to fill drive space, previously this was done manually
+- .. toggle-header:: :header: Deployments: **Deployments API/CLI Improvements**
 
-Fixes
------
+     - Support for adding files to a Deployment version
+     - Support for managing Instance deploys (appDeploys). This used to only provide endpoints for a specific instance to deploy and list deploys. Now it has full CRUD, and list shows account wide deploys. See `morpheus deploys`.
 
-- Azure: Fixed AKS Cluster Deployment Failure when Azure Cloud is scoped to single Resource Group
-- Azure: Fixed issue with deleting a Resource Group created from an ARM App when an Azure Cloud is scoped to a single Resource Group.
-- Azure: Fixed provisioning issue when specifying mixed managed disk types
-- Azure: Fixed user provided disk labels being overwritten with external_id names
-- Budgets: Fixed current years actuals displaying in future years budgets
-- CLI: Added more specific error when specified cores exceed policy allowance.
-- CLI: Fixed issue with blueprint creation via cli using yaml or json file
-- ElasticSearch: Added auto-reconnect or rebuilding of client on runtime exception
-- NSX-T: Fixed issue with NSX-T IP Pool creation
-- Reconfigure: Fixed issue where field values were not being updated to default values when selecting plans with customizable inputs.
-- SCVMM: Fixed issue where selected SCVMM Cloud was not being passed in SCVMM VM config
-- SCVVM: Fixed Instance reconfigure startup memory and fixed memory allocation
-- VCD: Fixed Image Sync not working for Catalogs with spaces in the Catalog name
+- Instances: Support added for filtering by ``expireDate`` and ``shutdownDate``
+- Instances: Search by tag names and values
+
+- .. toggle-header:: :header: Personas: **Personas and Service Catalog Persona Functionality Added**
+
+     - Set the default Persona for a user
+     - Create catalog items for Service Catalog Persona users
+     - Set Role permissions regarding Persona and Catalog Item type access
+     - Browse the catalog, add items to cart, and checkout as a Service Catalog Persona user
+
+- Search: Global search added similar to the global search bar that has existed in the UI
+- Virtual Images: Associated ``volumes`` are returned with ``maxStorage`` viewable for each
+
+
+..
+  Fixes
+  -----
