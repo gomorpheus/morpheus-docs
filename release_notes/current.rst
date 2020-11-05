@@ -79,7 +79,7 @@ All New Features
 
 - .. toggle-header:: :header: ServiceNow: **ServiceNow Integration Improvements**
 
-     - "Morpheus Incident” alerts are now more insightful including links to the related Morpheus incident or check, severity information, and other details about the failing check
+     - "|morpheus| Incident” alerts are now more insightful including links to the related Morpheus incident or check, severity information, and other details about the failing check
      - Provision Service Catalog Items through the Morpheus ServiceNow plugin
      - Inventory list view now includes much greater detail about each inventory item
      - Added the capability to identify a MID server once on the properties page rather than setting it individually for each call
