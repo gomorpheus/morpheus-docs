@@ -59,6 +59,8 @@ Configure the following:
 - **APP SPEC:** Inject override Blueprint spec here if desired. Currently this only supports YAML format
 - **OPTION TYPES:** If desired, select Option Types to present users with mandatory or optional selections prior to provisioning
 
+  .. note:: App spec custom option variables should be single quoted in YAML: ``cloud: '<%= customOption.cloud %>'``
+
 Once done, click :guilabel:`SAVE CHANGES`
 
 Editing and Deleting from the Self Service Catalog
