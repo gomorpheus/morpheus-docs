@@ -4,7 +4,7 @@
 |morphver| Release Notes
 *************************
 
-.. NOTE: This list includes improvements added in 4.2.4 which were not part of the 5.0.0 beta. Users upgrading from 4.x.x may also want to review the `5.0.0 change list <https://docs.morpheusdata.com/en/5.0.0/release_notes/current.html>`_ to get a complete picture of the changes.
+.. NOTE:: This list includes improvements added in 4.2.4 which were not part of the 5.0.0 beta. Users upgrading from 4.x.x may also want to review the `5.0.0 change list <https://docs.morpheusdata.com/en/5.0.0/release_notes/current.html>`_ to get a complete picture of the changes.
 
 .. include:: highlights.rst
 

@@ -1,7 +1,7 @@
 |morphver| Highlights
 =====================
 
-.. NOTE: This highlight list includes only major new features added with version 5.2.0, not those first added with the 5.0.0 beta. Users upgrading directly from 4.x.x may wish to review the `5.0.0 release notes <https://docs.morpheusdata.com/en/5.0.0/release_notes/current.html>`_ to review the changes first added with that preview release.
+.. NOTE:: This highlight list includes only major new features added with version 5.2.0, not those first added with the 5.0.0 beta. Users upgrading directly from 4.x.x may wish to review the `5.0.0 release notes <https://docs.morpheusdata.com/en/5.0.0/release_notes/current.html>`_ to review the changes first added with that preview release.
 
 Service Catalog Persona Improvements
 ------------------------------------
@@ -16,8 +16,8 @@ The |morpheus| version 5.0.0 beta introduced Personas, which are a new approach 
 
 .. image:: /images/releases/520/catalogWorkflow.png
 
-ServiceNow Improvements
------------------------
+ServiceNow Integration Improvements
+-----------------------------------
 
 |morpheus| 5.2.0 brings improvements to the ServiceNow integration, including upgrades to incident surfacing, integration with service catalog items, and more.
 
