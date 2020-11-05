@@ -9,12 +9,16 @@ Access is granted to the Self Service section through the Tools: Self Service Ro
 
 Additionally, a user's Role determines access to the standard and/or service catalog persona and which service catalog items are available for a user under the service catalog persona. See the Roles section of |morpheus| documentation for more information on administering Roles.
 
+|
+
 Viewing the Self Service Catalog
 --------------------------------
 
 The complete Self Service catalog can be viewed by clicking on Self Service from the Tools menu. The complete list of items available for the Self Service catalog are shown here but users working in the Service Catalog Persona will see only those allowed based on their user role. In addition to the name and type of each catalog item, we can also see a description and whether not the catalog item is featured or active. Featured items are given special visibility in the Service Catalog Persona and inactive items will not appear as provisioning options.
 
 .. image:: /images/tools/self_service/catalogList.png
+
+|
 
 Building Catalog Instances
 --------------------------
@@ -40,6 +44,8 @@ Once done, click :guilabel:`SAVE CHANGES`
 
 .. TIP:: Building catalog items through the configuration wizard is similar to the typical provisioning process for Instances in |morpheus|. For more details on selections available in the configuration wizard, take a look at other sections of |morpheus| docs on provisioning Instances.
 
+|
+
 Building Catalog Blueprints
 ---------------------------
 
@@ -56,10 +62,14 @@ Configure the following:
 - **VISIBILITY:** Set to private to keep the catalog item available only to users in the current Tenant. Master Tenant administrators may set catalog items to public to make them viewable and usable by Subtenant users
 - **LOGO:** Select or upload a logo to be associated with this catalog item
 - **BLUEPRINT:** Select a pre-configured Blueprint (Provisioning > Blueprints) to associate with this catalog item
-- **APP SPEC:** Inject override Blueprint spec here if desired. Currently this only supports YAML format
+- **APP SPEC:** Inject override Blueprint spec here if desired. Currently this only supports YAML format. 
 - **OPTION TYPES:** If desired, select Option Types to present users with mandatory or optional selections prior to provisioning
 
+  .. note:: App spec custom option variables should be single quoted in YAML: ``cloud: '<%= customOption.cloud %>'``
+
 Once done, click :guilabel:`SAVE CHANGES`
+
+|
 
 Editing and Deleting from the Self Service Catalog
 --------------------------------------------------
