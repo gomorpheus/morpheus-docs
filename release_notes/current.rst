@@ -114,10 +114,12 @@ Fixes
 - ACI: Fixed invalid display error when creating ACI Application Profile
 - ACI: Fixed network deletion issue caused by illegal characters in CIDR
 - ACI: Fixed tabs not displaying on ACI integration detail pages when accessed via ``/infrastructure/networks`` (displayed when accessed via ``/admin/integrations``)
+- Amazon: ALB's: Fix for adding ALBs in a subtenant :superscript:`-2`
 - Amazon: Cloud Summary Page: Resources: Fixed ``Security Groups`` stat always showing ``0``
 - Amazon: Route53: Updates to handle rate limits when syncing large number of Route53 domain records
 - Amazon: Fixed issue with S3 bucket sync that could cause excessive Appliance memory usage.
 - Ansible Tower: Fixed invalid Ansible Tower integration link in cloud details pages
+- Ansible: Fixed Ansible Proxy check  :superscript:`-2`
 - API/CLI: Fixed Task creation when using Repository Source.
 - Apps: Fixed inconsistent app, node and execution statuses during App provisioning when a Workflow Task fails during Provision Phase.
 - Apps: Updated the NAME property for VM and Container lists on App Detail views to match Instance Detail views
@@ -141,7 +143,7 @@ Fixes
 - Git: Fixed issue deleting Git Integrations with existing file content associations
 - Health: Fixed display of ``Memory: System Swap`` and ``Memory: Free Swap`` values in the Appliance Health section. 
 - Infrastructure: Hosts: Virtual Machines: The Remove Infrastructure and Preserve Volumes checkboxes are now present and functional when performing bulk VM delegations.
-- Instance Power On / Power Off actions (including power schedule) broken for Exis
+- Load Balancers: Added read socket timeouts for F5 connections :superscript:`-2`
 - Networks: Fixed display of invalid Groups in Network Group Access section, causing Group Access changes to not persist
 - Networks: If a user has only read permissions for the Infrastructure: Network Routers feature permission, that user no longer has the ability to edit or delete router firewall rules.
 - Networks::  If a user has only read permissions for the Infrastructure: Network Routers feature permission, the Create Neighbor button on the router detail page's BGP tab is now hidden
@@ -174,13 +176,16 @@ Fixes
 - SCVVM: Fixed Instance reconfigure startup memory and fixed memory allocation
 - SCVVM: Fixed startup memory and fixed memory allocations when dynamic memory is enabled
 - Security: XSS vulnerability removed
+- Stats: Fixed offline server stats updates :superscript:`-2`
 - Tags: Fixed error when trying to create a tag without a value
+- Tags: Fixed masked tags issue found in 4.2.4-1 :superscript:`-2`
 - Terraform: App Provision: Resolved issue where :guilabel:`Next` button would become re-enabled prior to completion of validations over 35 seconds 
 - UI: Updates to prevent Invalid CSRF Token Error on stale pages.
 - User Profiles: Clouds listed in ``Default Cloud`` now filtered by Group association/access
 - vCloud Director: Fixed issue with frequent usage record restarts
 - VMware: Fixed datastore cluster references for datastores shared across multiple clusters
 - VMware: Fixed issue with Subtenant setting VMware Folder Group Access permissions.
+- VMware: Fixed some sync issues found in 4.2.4-1 :superscript:`-2`
 - VMware: Hypervisor Console: Fixed issue with high resolution consoles showing blank on initial uncompressed connection
 - Waiting for network message during SCVMM provisioning
 - White-labelling: Fixed page refresh issue with custom ``Terms and Conditions`` and ``Privacy`` Pages
@@ -215,3 +220,7 @@ API & CLI Fixes
 - Proper error message returned when provision request exceeds max cores policy limit.
 - Validation and response added when passing invalid value for ``POST /api/roles`` : ``roleType`` 
 - virtual-images GET no longer returns information on soft deleted Virtual Images
+
+.. note::  
+   
+   | :superscript:`-2` Indicates features and fixes added in 4.2.4-2 release packages
