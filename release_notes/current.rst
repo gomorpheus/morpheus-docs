@@ -86,6 +86,7 @@ All New Features
      - Pricing data is now available to the ServiceNow plugin when ordering Service Catalog items. This is made available on the XML as a monthly price, users would have to modify the form UI to surface this information
 
 - Tasks: Tasks now have a detail page with a Summary tab showing the script and a Workflows tab listing the Workflows in which the Task is used
+- Tenants: Metadata, specifically an account number, account name, and customer number, can now be tracked for Tenants
 
 - .. toggle-header:: :header: UI: **Interface and Usability Improvements**
 
@@ -96,6 +97,7 @@ All New Features
      - All navigations bars with potential for high tab counts now handle this scenario gracefully
      - Visibility column added to Catalog Item list (Tools > Self Service) to conveniently indicate whether an item is shared with Tenants
      - Friendly error messages are surfaced if there is a problem creating the items checked out in a Service Catalog cart, the Instance was simply not created and log access was needed to see what went wrong
+     - CenturyLink Edge Cloud type renamed to Lumen Edge
 
 - Workflows: "Configuration" phase added to Provisioning Workflows. Tasks in this phase are run prior to the initial provision.
 
@@ -120,6 +122,7 @@ All New Features
      - Browse the catalog, add items to cart, and checkout as a Service Catalog Persona user
 
 - Search: Global search added similar to the global search bar that has existed in the UI
+- Tenants: Account (Tenant) metadata field support added (``customerNumber``, ``accountNumber``, and ``accountName``)
 - Virtual Images: Associated ``volumes`` are returned with ``maxStorage`` viewable for each
 
 

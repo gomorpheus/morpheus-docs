@@ -1,8 +1,6 @@
 |morpheus| |morphver| Documentation
 ===================================
 
-.. IMPORTANT:: Morpheus 5.0.0 is a beta release and should not be installed in production environments. Review :ref:`compatibility` before installing or upgrading |morpheus|.
-
 .. include:: /release_notes/highlights.rst
 
 .. toctree::
