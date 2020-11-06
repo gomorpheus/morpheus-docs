@@ -90,6 +90,7 @@ All New Features
 
 - .. toggle-header:: :header: UI: **Interface and Usability Improvements**
 
+     - Administrators can now determine the required length and complexity of user passwords (Administration > Settings > Appliance > User Management Settings)
      - When applying state to Terraform and CloudFormation Apps, a friendly progress bar is displayed to indicate the change
      - Icons added for AWS services (such as in Service Catalog), including AWS App Mesh, AWS SQS, and AWS SDB
      - MySQL tmp file location moved from ``/tmp`` to ``/var/run/morpheus/mysqld``
