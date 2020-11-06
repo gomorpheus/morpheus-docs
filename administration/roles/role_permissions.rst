@@ -15,7 +15,7 @@ INSTANCE TYPE User only has access to Objects they have created/own.
   Controls Tenant and User access level for Instance Types.
 BLUEPRINT ACCESS
   Controls Tenant and User access level for Blueprints during App provisioning.
-  
+
 Feature Access Permissions
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 Feature Access settings control permissions for sections and objects in |morpheus|. Permission options include:
@@ -245,11 +245,23 @@ Role Mappings
     - The Domains page is where network domains are managed. Domains are used for setting FQDNs, joining Windows Instances to domains, and creating A-Records with DNS integrations. On create the domain controller and credentials for domain join must be provided.
     - This permission is recommended for those responsible for |morpheus| DNS and domain-join integrations.
     -
+  * - Infrastructure: Network Firewalls
+    - None, Read, Full
+    - Determines access to the Firewall tab on applicable network integrations detail pages
+    - The Firewall tab is where network firewall groups and rules are viewed, created and managed
+    - This permission is recommended for those tasked with network security management
+    -
+  * - Infrastructure: Network Integration
+    - None, Read, Full
+    - Determines access to the Integrations tab on the Network list page (Infrastructure > Network)
+    - The integrations tab is where network integrations can be viewed, added and managed. Additionally, the detail pages for network integrations are accessed here
+    - This permission is recommended for those tasked with handling network integrations and their use within |morpheus|
+    -
   * - Infrastructure: Network IP Pools
     - None, Read, Full
-    - Determines access to the IP Pools tab on the Infrastructure > Network page.
-    - The IP Pools page is where |morpheus| IP pools may be created. On create, a name and IP range are provided. Additionally, pools from IPAM integrations are displayed.
-    - This permission is recommended for those responsible for IP address management and those responsible for IPAM Integrations.
+    - Determines access to the IP Pools tab on the Network list page (Infrastructure > Network)
+    - The IP Pools tab is where IP pools from various networks are displayed. Detail pages for IP pools can also be accessed here
+    - This permission is recommended for those tasked with IP address management
     -
   * - Infrastructure: Network Proxies
     - None, Read, Full
@@ -257,6 +269,17 @@ Role Mappings
     - The Infrastructure Networks Proxies page is where Proxy configurations are stored, which are available for use by the provisioning engines.
     - This permission is recommended for those responsible for configuring proxies to be used when provisioning.
     -
+  * - Infrastructure: Network Router DHCP Pool
+    - None, Read, Full
+    - Determines access to the DHCP tab on the detail page for a Router associated with certain network integrations (Example: Infrastructure > Network > Integrations > Routers tab > selected router > DHCP tab)
+    - The DHCP tab is where DHCP pools are viewed, created and managed
+    - This permission is recommended for those responsible for DHCP pool management
+    -
+  * - Infrastructure: Network Router Firewalls
+  * - Infrastructure: Network Router Interfaces
+  * - Infrastructure: Network Router NAT
+  * - Infrastructure: Network Router Redistribution
+  * - Infrastructure: Network Router Routes
   * - Infrastructure: Network Routers
     - None, Read, Group, Full
     - Determines access to the Routers tab on the Infrastructure > Networks page. The "Group" permission setting allows access to objects shared to Groups associated with the user.
@@ -580,6 +603,12 @@ Role Mappings
     - This allows or disallows the ability to automatically log into the remote console.
     - |morpheus| will automatically log into the machine using the credentials defined on the VM or Host. The credentials are defined either from the virtual image used, added via cloud-init or VMware Tools using the global cloud-init settings (Administration > Provisioning), or the Linux or Windows settings defined in User Settings.
     - This permission is recommended when an organization utilizes |morpheus| to create user accounts on provisioned or managed machines, as well as, allow remote console access.
+    -
+  * - Security: Scanning
+    - 
+    -
+    -
+    -
     -
   * - Service Catalog: Catalog
     - None, Full
