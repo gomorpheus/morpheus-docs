@@ -46,7 +46,7 @@ All New Features
      - Interfaces tab for T-1 routers renamed to Service Interfaces for clarity
 
 - OpenStack: Backup process improved to handle longer running jobs for backing up large instances
-- Openstack: ``Service Endpoints`` section added to cloud config for manually overriding an OpenStack cloud's API endpoints
+- Openstack: ``Service Endpoints`` section added to Cloud config for manually overriding OpenStack API endpoints
 - Policies: Load balancer pricing is factored when enforcing budget policies during provisioning and reconfiguration
 
 - .. toggle-header:: :header: Pricing: **Load Balancer Price Tracking**
