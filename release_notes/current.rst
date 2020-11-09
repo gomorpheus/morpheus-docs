@@ -145,7 +145,7 @@ Fixes
 - API/CLI: Validation and response added when passing invalid value for ``POST /api/roles`` : ``roleType`` :superscript:`+`
 - Apps: Fixed inconsistent app, node and execution statuses during App provisioning when a Workflow Task fails during the Provision phase :superscript:`+`
 - Apps: Updated the NAME property for VM and Container lists on App Detail views to match Instance Detail views :superscript:`+`
-- Archives: Fixed timeout issue with archive files > 1GB caused by legacy Archives path set in default Nginx config 
+- Archives: Fixed timeout issue with archive files > 1GB caused by legacy Archives path set in default Nginx config
 - Azure: Fix for automated Active Directory domain joins due to ``-NewName`` :superscript:`+`
 - Azure: Fixed long running provision timeouts for ARM Instance Spec Templates :superscript:`+`
 - Commvault: Fixed issue with subtenant Commvault Backup Job completion when Backup and Backup Job names use custom values
