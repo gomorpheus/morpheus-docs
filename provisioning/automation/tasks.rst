@@ -210,7 +210,7 @@ Task Configuration
     - **CONTENT:** The body of the email is HTML. |morpheus| automation variables can be injected into the email body when needed
     - **SKIP WRAPPED EMAIL TEMPLATE:** The |morpheus|-styled email template is ignored and only HTML in the Content field is used
 
-    .. TIP:: To whitelabel email sent from Tasks, select SKIP WRAPPED EMAIL TEMPLATE and use an HTML with your own CSS styling
+    .. TIP:: To whitelabel email sent from Tasks, select SKIP WRAPPED EMAIL TEMPLATE and use an HTML template with your own CSS styling
 
 - .. toggle-header:: :header: **HTTP (API)**
 

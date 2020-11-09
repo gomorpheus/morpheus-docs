@@ -11,7 +11,11 @@
 All New Features
 ----------------
 
-- Amazon: Deploying MySQL or SQL Server with Amazon RDS now automatically creates the corresponding check and Instance status is reported
+- .. toggle-header:: :header: Amazon: **Amazon AWS Cloud Integration Improvements**
+
+     - Deploying MySQL or SQL Server with Amazon RDS now automatically creates the corresponding check and Instance status is reported
+     - Hong Kong region (ap-east-1) support added
+
 - Amazon EKS: Support added for version 1.7.x
 - Azure AKS: Support added for version 1.7.11
 
