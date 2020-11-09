@@ -32,7 +32,7 @@ To upgrade Morpheus running on Ubuntu/Debian, download the new deb package, stop
 .. code-block:: bash
 
   sudo wget https://packageUrl.morpheus-appliance_x.x.x-x_amd64.deb
-  sudo morpheus-ctl stop
+  sudo morpheus-ctl stop morpheus-ui
   sudo dpkg -i morpheus-appliance_x.x.x-1_amd64.deb
   sudo morpheus-ctl reconfigure
 
@@ -52,7 +52,7 @@ To upgrade Morpheus running on CentOS/RHEL, download the new rpm package, stop m
 .. code-block:: bash
 
   sudo wget https://packageUrl.morpheus-appliance-x.x.x-x.x86_64.rpm
-  sudo morpheus-ctl stop
+  sudo morpheus-ctl stop morpheus-ui
   sudo rpm -Uhv morpheus-appliance-x.x.x-x.x86_64.rpm
   sudo morpheus-ctl reconfigure
 
@@ -82,7 +82,7 @@ To upgrade Morpheus running on Ubuntu/Debian, download new deb package, stop the
 .. code-block:: bash
 
   sudo wget https://packageUrl.morpheus-appliance_x.x.x-x_amd64.deb
-  sudo morpheus-ctl stop
+  sudo morpheus-ctl stop morpheus-ui
   sudo dpkg -i morpheus-appliance_x.x.x-1_amd64.deb
   sudo morpheus-ctl reconfigure
 
@@ -102,7 +102,7 @@ To upgrade Morpheus running on CentOS/RHEL, download and install the new rpm pac
 .. code-block:: bash
 
   sudo wget https://packageUrl.morpheus-appliance-x.x.x-x.x86_64.rpm
-  sudo morpheus-ctl stop
+  sudo morpheus-ctl stop morpheus-ui
   sudo rpm -Uhv morpheus-appliance-x.x.x-x.x86_64.rpm
   sudo morpheus-ctl reconfigure
 
