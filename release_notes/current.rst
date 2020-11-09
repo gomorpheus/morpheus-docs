@@ -76,6 +76,8 @@ All New Features
       - Allows access to view, create, and run security scans on existing systems, as well as view the results of previously-run scans
       - This permission is recommended for those responsible for security compliance of existing systems
 
+- Security Scanning: Windows support added for SCAP security scans
+
 - .. toggle-header:: :header: Service Catalog: **Service Catalog Persona Improvements**
 
      - Operational Workflows can be made available as Service Catalog Items and ordered by Service Catalog Persona users
