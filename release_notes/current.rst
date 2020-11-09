@@ -46,7 +46,7 @@ All New Features
      - Interfaces tab for T-1 routers renamed to Service Interfaces for clarity
 
 - OpenStack: Backup process improved to handle longer running jobs for backing up large instances
-- Openstack: ``Service Endpoints`` section added to cloud config for manually overriding an OpenStack cloud's api endpoints.
+- Openstack: ``Service Endpoints`` section added to cloud config for manually overriding an OpenStack cloud API endpoints
 - Policies: Load balancer pricing is factored when enforcing budget policies during provisioning and reconfiguration
 
 - .. toggle-header:: :header: Pricing: **Load Balancer Price Tracking**
@@ -135,7 +135,7 @@ Fixes
 -----
 
 - ACI: Fixed network deletion issue caused by illegal characters in CIDR :superscript:`+`
-- Amazon: ALB’s: Fix for adding ALBs in a subtenant 
+- Amazon: ALB’s: Fix for adding ALBs in a subtenant
 - Amazon: Fixed ``Security Groups`` stat always showing ``0`` on the Resources tab of the Cloud summary page :superscript:`+`
 - Amazon: Fixed S3 Bucket create and delete not utilizing AWS Cloud API Proxy config
 - Ansible Tower: Fixed invalid Ansible Tower integration link in cloud details pages :superscript:`+`
@@ -149,7 +149,7 @@ Fixes
 - Azure: Fixed long running provision timeouts for ARM Instance Spec Templates :superscript:`+`
 - Commvault: Fixed issue with subtenant Commvault Backup Job completion when Backup and Backup Job names use custom values
 - Git: Fixed issue deleting Git integrations with existing file content associations :superscript:`+`
-- Github: Github integrations now utilize Global Proxy config for Github connections 
+- Github: Github integrations now utilize Global Proxy config for Github connections
 - Hosts: The Remove Infrastructure and Preserve Volumes checkboxes are now present and functional when performing bulk VM delegations (Infrastructure > Hosts > Virtual Machines) :superscript:`+`
 - Identity Sources: SAML: Fixed issue with checkbox rendering in Firefox browsers
 - Networks:  If a user has only read-level permission for the "Infrastructure: Network Routers" feature, the :guilabel:`+ CREATE NEIGHBOR` button on the BGP tab of the Router Detail page is now hidden :superscript:`+`
@@ -176,7 +176,7 @@ Fixes
 - SCVVM: Fixed startup memory and fixed memory allocations when dynamic memory is enabled :superscript:`+`
 - Security: XSS vulnerability removed :superscript:`+`
 - Tags: Fixed error when trying to create a tag without a value :superscript:`+`
-- Tenants: Fixed Tenant deletion issue related to existing network_security_server records 
+- Tenants: Fixed Tenant deletion issue related to existing network_security_server records
 - Terraform: Resolved issue where :guilabel:`NEXT` button would become re-enabled on App provisioning prior to completion of validations over 35 seconds  :superscript:`+`
 - vCloud Director: Fixed issue with frequent usage record restarts :superscript:`+`
 - VMware: Fixed datastore cluster references for datastores shared across multiple clusters :superscript:`+`
