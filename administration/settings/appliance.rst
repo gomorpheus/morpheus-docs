@@ -14,6 +14,8 @@ API Allowed Origins
   Specifies which origins are allowed to access the |morpheus| API.
 Cloud Sync Interval
   Data is refreshed through cloud integrations at the interval specified here in seconds, the default value is 300 seconds (five minutes). Appliances managing a very large number of clouds may be adversely affected by setting this value too low.
+Blacklisted Hosts
+  Provide a comma-separated list of IP addresses or hostnames which should be blocked when using HTTP Task types and/or REST-sourced Option Lists
 Enable SSL Verification of Agent (Communications)
   Enabling SSL Verification of Agent Communications requires a valid Certificate be installed on the Appliance.
 Disable SSH Password Authentication

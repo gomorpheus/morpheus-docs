@@ -276,10 +276,35 @@ Role Mappings
     - This permission is recommended for those responsible for DHCP pool management
     -
   * - Infrastructure: Network Router Firewalls
+    - None, Read, Full
+    - Determines access to Firewall tabs on Router Detail pages (Infrastructure > Network > Routers tab > Selected Router)
+    - The Firewall tab is where firewall rules are viewed, created, and managed
+    - This permission is recommended for those responsible for managing firewall rules
+    -
   * - Infrastructure: Network Router Interfaces
+    - None, Read, Full
+    - Determines access to Interfaces tabs on Router Detail pages (Infrastructure > Network > Routers tab > Selected Router)
+    - The Interface tab is where router interfaces can be viewed, created and managed
+    - This permission is recommended for those responsible for network traffic flow
+    -
   * - Infrastructure: Network Router NAT
+    - None, Read, Full
+    - Determines access to the NAT tab on Router Detail pages (Infrastructure > Network > Routers tab > Selected Router)
+    - The NAT tab is where NAT rules are viewed, created, and managed
+    - This permission is recommended for those responsible for network traffic flow
+    -
   * - Infrastructure: Network Router Redistribution
+    - None, Read, Full
+    - Determines access to Route Redistribution tabs on Router Detail pages (Infrastructure > Network > Routers tab > Selected Router)
+    - The Route Redistribution tab is where redistribution rules are viewed, created, and managed
+    - This permission is recommended for those responsible for redistribution rules
+    -
   * - Infrastructure: Network Router Routes
+    - None, Read, Full
+    - Determines access to Routing tabs on Router Detail pages (Infrastructure > Network > Routers tab > Selected Router)
+    - The Routing tab is where routes are viewed, created, and managed
+    - This permission is recommended for those responsible for network route management
+    -
   * - Infrastructure: Network Routers
     - None, Read, Group, Full
     - Determines access to the Routers tab on the Infrastructure > Networks page. The "Group" permission setting allows access to objects shared to Groups associated with the user.
@@ -605,10 +630,10 @@ Role Mappings
     - This permission is recommended when an organization utilizes |morpheus| to create user accounts on provisioned or managed machines, as well as, allow remote console access.
     -
   * - Security: Scanning
-    - 
-    -
-    -
-    -
+    - None, Read, Full
+    - Determines access to the Security Packages tab on the Jobs list page (Provisioning > Jobs), Security Scanning type Jobs, and Security Subtab inside the Software tab on a server detail page where the results of security scans are viewed
+    - Allows access to view, create, and run security scans on existing systems, as well as view the results of previously-run scans
+    - This permission is recommended for those responsible for security compliance of existing systems
     -
   * - Service Catalog: Catalog
     - None, Full

@@ -126,54 +126,51 @@ All New Features
 - Tenants: Account (Tenant) metadata field support added (``customerNumber``, ``accountNumber``, and ``accountName``)
 - Virtual Images: Associated ``volumes`` are returned with ``maxStorage`` viewable for each
 
-
 Fixes
 -----
-  
-  - vCloud Director: Fixed issue with frequent usage record restarts :superscript:`+`
- - Tags: Fixed error when trying to create a tag without a value :superscript:`+`
- - Nutanix: Removed root disk storage container selection during provisioning as root disk must be created on same Storage Container as Template (Nutanix req). :superscript:`+`
- - VMware: Fixed datastore cluster references for datastores shared across multiple clusters :superscript:`+`
- - ACI: Fixed network deletion issue caused by illegal characters in CIDR :superscript:`+`
- - NSX-V: Create and manage DHCP Pools for Edge Gateway routers :superscript:`+`
- - Openstack Clouds: Fixed security groups scoped to "All" Clouds not displayed during provisioning. :superscript:`+`
- - Nutanix: Fixed issue provisioning custom images stored in S3 :superscript:`+`
- - SCVMM: Adding a disk, resizing a data disk, or removing a data disk during Reconfigure will no longer trigger a restart. :superscript:`+`
- - SCVMM: Fixed adding disks during reconfigure of Generation 2 virtual machines :superscript:`+`
- - SCVMM: Fixed issue where selected SCVMM Cloud was not being passed in SCVMM VM config :superscript:`+`
- - SCVMM: Fixed issue with Optical drive being removed during provisioning of Generation 2 virtual machines :superscript:`+`
- - SCVVM: Fixed Instance reconfigure startup memory and fixed memory allocation :superscript:`+`
- - SCVVM: Fixed startup memory and fixed memory allocations when dynamic memory is enabled :superscript:`+`
- - Azure: Fix for automated Active Directory domain joins due to -NewName :superscript:`+`
- - Reports: Fixed issue with Instance Inventory Summary Report potentially showing old resource values on reconfigured Instances :superscript:`+`
- - Infrastructure: Hosts: Virtual Machines: The Remove Infrastructure and Preserve Volumes checkboxes are now present and functional when performing bulk VM delegations. :superscript:`+`
- - Provisioning: Fixed sudoer permissions for Users created during provisioning when users linux username contains a ``.``   :superscript:`+`
- - Git: Fixed issue deleting Git Integrations with existing file content associations :superscript:`+`
- - Policies: Fixed issue with Expiration policies not removing resources in a Failed state :superscript:`+`
- - Policies: Tags: Fixed issue where vm tags were allowed to be changed to values not compliant with an active, strictly enforced Tag policy. :superscript:`+`
- - PXE Boot: Fixed editing of discovered Mac Addresses :superscript:`+`
- - PowerDNS: Fixed display issue with Power DNS records "Content" field :superscript:`+`
- - RDS: Fixed issue with editing Power Schedules for AWS RDS Instances :superscript:`+`
- - Policies: Updated email notification Instance links to redirect to subtenant logins :superscript:`+`
- - Azure: ARM Instance Spec Templates: Fixed long running provision timeouts :superscript:`+`
- - Networks::  If a user has only read permissions for the Infrastructure: Network Routers feature permission, the Create Neighbor button on the router detail page's BGP tab is now hidden :superscript:`+`
- - Terraform: App Provision: Resolved issue where :guilabel:`Next` button would become re-enabled prior to completion of validations over 35 seconds  :superscript:`+`
- - VMware: Fixed issue with Subtenant setting VMware Folder Group Access permissions. :superscript:`+`
- - Amazon: Cloud Summary Page: Resources: Fixed ``Security Groups`` stat always showing ``0`` :superscript:`+`
- ??????- SCVMM: Fixed issue with Optical drive being removed during provisioning of Generation 2 virtual machines :superscript:`+`
- - Networks: If a user has only read permissions for the Infrastructure: Network Routers feature permission, that user no longer has the ability to edit or delete router firewall rules. :superscript:`+`
- - Networks::  If a user has only read permissions for the Infrastructure: Network Routers feature permission, the Create Neighbor button on the router detail page's BGP tab is now hidden :superscript:`+`
- - Ansible Tower: Fixed invalid Ansible Tower integration link in cloud details pages :superscript:`+`
- - Reconfigure: Fixed page error when decimal is specified in a disk size during reconfigure :superscript:`+`
- - Apps: Updated the NAME property for VM and Container lists on App Detail views to match Instance Detail views :superscript:`+`
- - OTC: Fixed issue with long running Instance backups not exporting. :superscript:`+`
- - Security: XSS vulnerability removed :superscript:`+`
- - Apps: Fixed inconsistent app, node and execution statuses during App provisioning when a Workflow Task fails during Provision Phase. :superscript:`+`
- - VMware: Hypervisor Console: Fixed issue with high resolution consoles showing blank on initial uncompressed connection :superscript:`+`
 
-
- - API/CLI: Validation and response added when passing invalid value for ``POST /api/roles`` : ``roleType`` :superscript:`+`
- - API/CLI: Fixed Task creation when using Repository Source. :superscript:`+`
- - API/CLI: Fixed config property of azure image type missing in GET and POST(CLI) :superscript:`+`
+- vCloud Director: Fixed issue with frequent usage record restarts :superscript:`+`
+- Tags: Fixed error when trying to create a tag without a value :superscript:`+`
+- Nutanix: Removed root disk storage container selection during provisioning as root disk must be created on same Storage Container as Template (Nutanix req). :superscript:`+`
+- VMware: Fixed datastore cluster references for datastores shared across multiple clusters :superscript:`+`
+- ACI: Fixed network deletion issue caused by illegal characters in CIDR :superscript:`+`
+- NSX-V: Create and manage DHCP Pools for Edge Gateway routers :superscript:`+`
+- Openstack Clouds: Fixed security groups scoped to "All" Clouds not displayed during provisioning. :superscript:`+`
+- Nutanix: Fixed issue provisioning custom images stored in S3 :superscript:`+`
+- SCVMM: Adding a disk, resizing a data disk, or removing a data disk during Reconfigure will no longer trigger a restart. :superscript:`+`
+- SCVMM: Fixed adding disks during reconfigure of Generation 2 virtual machines :superscript:`+`
+- SCVMM: Fixed issue where selected SCVMM Cloud was not being passed in SCVMM VM config :superscript:`+`
+- SCVMM: Fixed issue with Optical drive being removed during provisioning of Generation 2 virtual machines :superscript:`+`
+- SCVVM: Fixed Instance reconfigure startup memory and fixed memory allocation :superscript:`+`
+- SCVVM: Fixed startup memory and fixed memory allocations when dynamic memory is enabled :superscript:`+`
+- Azure: Fix for automated Active Directory domain joins due to -NewName :superscript:`+`
+- Reports: Fixed issue with Instance Inventory Summary Report potentially showing old resource values on reconfigured Instances :superscript:`+`
+- Infrastructure: Hosts: Virtual Machines: The Remove Infrastructure and Preserve Volumes checkboxes are now present and functional when performing bulk VM delegations. :superscript:`+`
+- Provisioning: Fixed sudoer permissions for Users created during provisioning when users linux username contains a ``.``   :superscript:`+`
+- Git: Fixed issue deleting Git Integrations with existing file content associations :superscript:`+`
+- Policies: Fixed issue with Expiration policies not removing resources in a Failed state :superscript:`+`
+- Policies: Tags: Fixed issue where vm tags were allowed to be changed to values not compliant with an active, strictly enforced Tag policy. :superscript:`+`
+- PXE Boot: Fixed editing of discovered Mac Addresses :superscript:`+`
+- PowerDNS: Fixed display issue with Power DNS records "Content" field :superscript:`+`
+- RDS: Fixed issue with editing Power Schedules for AWS RDS Instances :superscript:`+`
+- Policies: Updated email notification Instance links to redirect to subtenant logins :superscript:`+`
+- Azure: ARM Instance Spec Templates: Fixed long running provision timeouts :superscript:`+`
+- Networks::  If a user has only read permissions for the Infrastructure: Network Routers feature permission, the Create Neighbor button on the router detail page's BGP tab is now hidden :superscript:`+`
+- Terraform: App Provision: Resolved issue where :guilabel:`Next` button would become re-enabled prior to completion of validations over 35 seconds  :superscript:`+`
+- VMware: Fixed issue with Subtenant setting VMware Folder Group Access permissions. :superscript:`+`
+- Amazon: Cloud Summary Page: Resources: Fixed ``Security Groups`` stat always showing ``0`` :superscript:`+`
+.. - SCVMM: Fixed issue with Optical drive being removed during provisioning of Generation 2 virtual machines :superscript:`+`
+- Networks: If a user has only read permissions for the Infrastructure: Network Routers feature permission, that user no longer has the ability to edit or delete router firewall rules. :superscript:`+`
+- Networks::  If a user has only read permissions for the Infrastructure: Network Routers feature permission, the Create Neighbor button on the router detail page's BGP tab is now hidden :superscript:`+`
+- Ansible Tower: Fixed invalid Ansible Tower integration link in cloud details pages :superscript:`+`
+- Reconfigure: Fixed page error when decimal is specified in a disk size during reconfigure :superscript:`+`
+- Apps: Updated the NAME property for VM and Container lists on App Detail views to match Instance Detail views :superscript:`+`
+- OTC: Fixed issue with long running Instance backups not exporting. :superscript:`+`
+- Security: XSS vulnerability removed :superscript:`+`
+- Apps: Fixed inconsistent app, node and execution statuses during App provisioning when a Workflow Task fails during Provision Phase. :superscript:`+`
+- VMware: Hypervisor Console: Fixed issue with high resolution consoles showing blank on initial uncompressed connection :superscript:`+`
+- API/CLI: Validation and response added when passing invalid value for ``POST /api/roles`` : ``roleType`` :superscript:`+`
+- API/CLI: Fixed Task creation when using Repository Source. :superscript:`+`
+- API/CLI: Fixed config property of azure image type missing in GET and POST(CLI) :superscript:`+`
 
 .. note:: :superscript:`+` indicates fix also released in v4.2.4
