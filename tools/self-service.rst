@@ -34,6 +34,7 @@ Configure the following:
 - **VISIBILITY:** Set to private to keep the catalog item available only to users in the current Tenant. Master Tenant administrators may set catalog items to public to make them viewable and usable by Subtenant users
 - **LOGO:** Select or upload a logo to be associated with this catalog item
 - **CONFIG:** Enter, view, or edit Instance config here. Click :guilabel:`CONFIGURATION WIZARD` to build this catalog item through the |morpheus| Add Instance wizard
+- **CONTENT:** Optionally include documentation content for this Catalog Item. Markdown-formatted text is accepted and displayed appropriately when the item is ordered from the Service Catalog. A new Catalog Item-type Wiki entry will also be added containing this information.
 - **OPTION TYPES:** If desired, select Option Types to present users with mandatory or optional selections prior to provisioning
 
 Once done, click :guilabel:`SAVE CHANGES`
@@ -57,9 +58,29 @@ Configure the following:
 - **LOGO:** Select or upload a logo to be associated with this catalog item
 - **BLUEPRINT:** Select a pre-configured Blueprint (Provisioning > Blueprints) to associate with this catalog item
 - **APP SPEC:** Inject override Blueprint spec here if desired. Currently this only supports YAML format
+- **CONTENT:** Optionally include documentation content for this Catalog Item. Markdown-formatted text is accepted and displayed appropriately when the item is ordered from the Service Catalog. A new Catalog Item-type Wiki entry will also be added containing this information.
 - **OPTION TYPES:** If desired, select Option Types to present users with mandatory or optional selections prior to provisioning
 
   .. note:: App spec custom option variables should be single quoted in YAML: ``cloud: '<%= customOption.cloud %>'``
+
+Once done, click :guilabel:`SAVE CHANGES`
+
+Building Catalog Workflows
+--------------------------
+
+From the Catalog Items List Page (Tools > Self Service), click :guilabel:`ADD`. From the dropdown menu, select Workflow. The modal window will appear to configure and add a new catalog Workflow.
+
+Configure the following:
+
+- **NAME:** A friendly name for the catalog item in |morpheus|
+- **DESCRIPTION:** An optional description identifying the catalog item
+- **ENABLED:** When checked, this Workflow item will be available for selection in the Service Catalog
+- **FEATURED:** When checked, this catalog item will be given special visibility in the Service Catalog Persona view
+- **VISIBILITY:** Set to private to keep the catalog item available only to users in the current Tenant. Master Tenant administrators may set catalog items to public to make them viewable and usable by Subtenant users
+- **LOGO:** Select or upload a logo to be associated with this catalog item
+- **WORKFLOW:** Select an existing Workflow to be associated with this Catalog Item, new Workflows are created in Provisioning > Automation
+- **CONTEXT TYPE:** Optionally restrict users to a specific target context, Instance, Server, or None
+- **CONTENT:** Optionally include documentation content for this Catalog Item. Markdown-formatted text is accepted and displayed appropriately when the item is ordered from the Service Catalog. A new Catalog Item-type Wiki entry will also be added containing this information.
 
 Once done, click :guilabel:`SAVE CHANGES`
 
