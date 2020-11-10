@@ -26,7 +26,7 @@ All New Features
      - Set disk encryption (user or platform-managed) and an encryption set (if user-managed) for an Azure Cloud integration (Add/Edit Cloud modal)
 
 - Azure Stack: Azure Stack: Added support for ARM templates
-
+- BlueCat: Support added for Bluecat 9.x :superscript:`+`
 - Blueprints: Added ability to set fields as hidden when creating a Blueprint. These fields will not be visible when provisioning an App from the Blueprint. Previously fields could be locked but not hidden.
 - Clouds: Cloud sync enhancements including variable sync schedules that auto-adjust per cloud, resulting in optimized sync times and reduction in sync overlaps and record lock conflicts
 
@@ -136,8 +136,11 @@ All New Features
 Fixes
 -----
 
+- ACI: Fixed invalid display error when creating ACI Application Profile :superscript:`+`
 - ACI: Fixed network deletion issue caused by illegal characters in CIDR :superscript:`+`
-- Amazon: ALB’s: Fix for adding ALBs in a subtenant
+- ACI: Fixed potential issues preventing deletion of Cisco ACI Integrations :superscript:`+`
+- Agent: Auto-recovery settings now enabled for Morpheus Windows Agent service. :superscript:`+`
+- Amazon: ALB’s: Fix for adding ALBs in a subtenant :superscript:`+`
 - Amazon: Fixed ``Security Groups`` stat always showing ``0`` on the Resources tab of the Cloud summary page :superscript:`+`
 - Amazon: Fixed S3 Bucket create and delete not utilizing AWS Cloud API Proxy config
 - Ansible Tower: Fixed invalid Ansible Tower integration link in cloud details pages :superscript:`+`
@@ -150,9 +153,11 @@ Fixes
 - Archives: Fixed timeout issue with archive files > 1GB caused by legacy Archives path set in default Nginx config
 - Azure: Fix for automated Active Directory domain joins due to ``-NewName`` :superscript:`+`
 - Azure: Fixed long running provision timeouts for ARM Instance Spec Templates :superscript:`+`
+- Cloud Formation: Fixed issue creating Lambda resources from CF Blueprints. (Note: Lambda resource objects will be added in future release) :superscript:`+`v
 - Commvault: Fixed issue with subtenant Commvault Backup Job completion when Backup and Backup Job names use custom values
 - Git: Fixed issue deleting Git integrations with existing file content associations :superscript:`+`
 - Github: Github integrations now utilize Global Proxy config for Github connections
+- Health: Fixed display of Memory: System Swap and Memory: Free Swap values in the Appliance Health section. :superscript:`+`
 - Hosts: The Remove Infrastructure and Preserve Volumes checkboxes are now present and functional when performing bulk VM delegations (Infrastructure > Hosts > Virtual Machines) :superscript:`+`
 - Identity Sources: SAML: Fixed issue with checkbox rendering in Firefox browsers
 - Networks:  If a user has only read-level permission for the "Infrastructure: Network Routers" feature, the :guilabel:`+ CREATE NEIGHBOR` button on the BGP tab of the Router Detail page is now hidden :superscript:`+`
@@ -185,5 +190,6 @@ Fixes
 - VMware: Fixed datastore cluster references for datastores shared across multiple clusters :superscript:`+`
 - VMware: Fixed issue with high-resolution hypervisor consoles showing blank on initial uncompressed connection :superscript:`+`
 - VMware: Fixed issue with Subtenant setting VMware Folder Group Access permissions :superscript:`+`
+- Workflows: Fixed issue with Reboot tasks potentially causing Instance state to show as Running when a Provision phase task has failed :superscript:`+`
 
 .. note:: :superscript:`+` indicates fix also released in v4.2.4
