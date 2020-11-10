@@ -40,7 +40,7 @@ All New Features
 - Amazon: Deploying MySQL or SQL Server with Amazon RDS now automatically creates the corresponding check and Instance status is reported
 - Amazon: Routes on AWS routers are now editable (Infrastructure > Network > Selected AWS Network > Routing tab > Pencil icon) in addition to viewing, creating and deleting which could be done previously
 - Amazon: Cloud Sync enhancements, reduced sync times
-- Amazon EKS: Support Added for version k8s v1.7.11
+- Amazon EKS: Support Added for version k8s v1.17.11
 
 - .. toggle-header:: :header: Azure Public Cloud: **Azure Cloud Integration Improvements**
 
@@ -48,7 +48,7 @@ All New Features
      - Added option to enable Azure Boot Diagnostics when provisioning an Instance or App
      - Set disk encryption (user or platform-managed) and an encryption set (if user-managed) for an Azure Cloud integration (Add/Edit Cloud modal)
 
-- Azure AKS: Support added for version 1.7.11
+- Azure AKS: Support added for version 1.17.11
 - Azure Stack: Added support for ARM templates
 - Automation: Option Types: ``DISPLAY VALUE ON DETAILS`` flag added to Option Types to toggle display of associated Option Type values on Instance Detail pages 
 - BlueCat: Support added for Bluecat 9.x
