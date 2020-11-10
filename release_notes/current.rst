@@ -192,4 +192,4 @@ Fixes
 - VMware: Fixed issue with Subtenant setting VMware Folder Group Access permissions :superscript:`+`
 - Workflows: Fixed issue with Reboot tasks potentially causing Instance state to show as Running when a Provision phase task has failed :superscript:`+`
 
-.. note:: :superscript:`+` indicates fix also released in v4.2.4
+.. note:: :superscript:`+` indicates items also released in v4.2.4
