@@ -9,7 +9,7 @@
 .. include:: highlights.rst
 
 All New Features
-----------------
+================
 
 - .. toggle-header:: :header: Amazon: **Amazon AWS Cloud Integration Improvements**
 
@@ -110,7 +110,7 @@ All New Features
 - Workflows: "Configuration" phase added to Provisioning Workflows. Tasks in this phase are run prior to the initial provision.
 
 |morpheus| API & CLI Improvements
--------------------------------
+=================================
 
 - Billing: Optional parameters added to support pagination of large returns
 
@@ -134,7 +134,7 @@ All New Features
 - Virtual Images: Associated ``volumes`` are returned with ``maxStorage`` viewable for each
 
 Fixes
------
+=====
 
 - ACI: Fixed invalid display error when creating ACI Application Profile :superscript:`+`
 - ACI: Fixed network deletion issue caused by illegal characters in CIDR :superscript:`+`
