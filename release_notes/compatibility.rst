@@ -41,7 +41,7 @@ Breaking Changes
    * - RHEL
      - 7.x, 8.x
      -
-   * - SUSE SLES
+   * - SUSE Linux Enterprise Server (SLES)
      - 12, 15
      -
    * - Ubuntu
