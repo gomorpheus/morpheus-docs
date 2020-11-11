@@ -72,7 +72,7 @@ Details
  ACCESS KEY
    Access Key ID from AWS IAM User Security Credentials.
  SECRET KEY
-   Secret Access Key associate with the Access Key ID.
+   Secret Access Key associated with the Access Key ID.
  USE HOST IAM CREDENTIALS
    Check to use use Host IAM Credentials
  ROLE ARN

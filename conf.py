@@ -206,6 +206,7 @@ rst_prolog = """
 .. |rmqver| replace:: v3.8.9
 .. |mysqlbranch| replace:: v5.7
 .. |mysqlver| replace:: v5.7.32
+.. |mysqlverfips| replace:: v.5.7.29
 .. |esbranch| replace:: v7.x
 .. |esver| replace:: v7.8.1
 .. |tcver| replace:: v9.0.39
