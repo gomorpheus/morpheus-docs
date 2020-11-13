@@ -25,23 +25,26 @@
 
    integration_guides/integration_guides.rst
 
+..
+  .. toctree::
+     :maxdepth: 1
+     :caption: Morpheus CLI
+
+     CLI Documentation <https://morpheus-morpheus-cli-docs.readthedocs-hosted.com/en/latest/CLI-Manual.html>
+
 .. toctree::
    :maxdepth: 1
-   :caption: Morpheus CLI
-
-   CLI Documentation <https://morpheus-morpheus-cli-docs.readthedocs-hosted.com/en/latest/CLI-Manual.html>
-
-.. toctree::
-   :maxdepth: 1
-   :caption: Morpheus API
+   :caption: Morpheus API & CLI
 
    API Documentation <https://apidocs.morpheusdata.com>
+   CLI Documentation <https://morpheus-morpheus-cli-docs.readthedocs-hosted.com/en/latest/CLI-Manual.html>
 
-.. toctree::
-   :maxdepth: 1
-   :caption: Morpheus Developer Portal
+..
+  .. toctree::
+     :maxdepth: 1
+     :caption: Morpheus Developer Portal
 
-   Developer Zone <https://developer.morpheusdata.com/>
+     Developer Zone <https://developer.morpheusdata.com/>
 
 .. toctree::
    :maxdepth: 3
@@ -54,4 +57,6 @@
    :maxdepth: 1
    :caption: Resource Center
 
-   Resource Center <https://www.morpheusdata.com/resource-center>
+   Developer Zone <https://developer.morpheusdata.com/>
+   Support KnowledgeBase <https://support.morpheusdata.com/s/knowledge-base?language=en_US>
+   White Papers <https://www.morpheusdata.com/resource-center>
