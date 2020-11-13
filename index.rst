@@ -25,6 +25,13 @@
 
    integration_guides/integration_guides.rst
 
+.. toctree::
+   :maxdepth: 3
+   :caption: Release Notes
+
+   release_notes/current.rst
+   release_notes/compatibility.rst
+
 ..
   .. toctree::
      :maxdepth: 1
@@ -45,13 +52,6 @@
      :caption: Morpheus Developer Portal
 
      Developer Zone <https://developer.morpheusdata.com/>
-
-.. toctree::
-   :maxdepth: 3
-   :caption: Release Notes
-
-   release_notes/current.rst
-   release_notes/compatibility.rst
 
 .. toctree::
    :maxdepth: 1
