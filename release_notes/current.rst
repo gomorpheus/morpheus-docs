@@ -15,6 +15,12 @@ All New Features
 
 - Amazon AWS Cloud Integration: Hong Kong region (ap-east-1) support added
 
+- .. toggle-header:: :header: **Azure Clouds Integration Enhancements**
+
+    - Azure Marketplace images now synced by region rather than by Cloud
+    - Azure pricing now synced by region and currency rather than Cloud
+    - Azure VM sizes (Service Plans) now synced by region rather than Cloud
+
 - .. toggle-header:: :header: **NSX-T Integration Improvements**
 
     - Scope NSX-T routers to Groups and assign visibility permissions for Tenants
@@ -34,12 +40,23 @@ All New Features
 
 - Security Scanning: Windows support added for SCAP security scans
 
+- .. toggle-header:: :header: **UI and Usability Improvements**
+
+    - Tokens in forgot/reset password email now expire after seven days
+
 Fixes
 -----
 
-- Instances: Passing ``masked=true`` flag for tags masks the value of the tag
-- Metadata: Metadata tags now referred to as ``tags`` and labels now referred to as ``labels``, previously metadata tags were referred to as ``metadata`` and labels were referred to as ``tags``
-- Virtual Images: Associated ``volumes`` are returned with ``maxStorage`` viewable for each
 
 API & CLI Enhancements
 ----------------------
+
+- Hosts: Added ability to tag servers (hosts). These are automatically updated when Instance tags are updated but useful for tagging discovered servers (currently API only)
+- Instances: Passing ``masked=true`` flag for tags masks the value of the tag
+- Metadata: Metadata tags now referred to as ``tags`` and labels now referred to as ``labels``, previously metadata tags were referred to as ``metadata`` and labels were referred to as ``tags``
+- Snapshots: Create and view snapshots
+
+- .. toggle-header:: :header: **Virtual Images**
+
+    - Associated ``volumes`` are returned with ``maxStorage`` viewable for each
+    - Added ability to tag Virtual Images (currently API only)
