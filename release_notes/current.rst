@@ -6,12 +6,8 @@
 
 .. IMPORTANT:: Review :ref:`compatibility` before installing or upgrading |morpheus|
 
-|morphver| Highlights
-=====================
-
-
-All New Features
-----------------
+New Features
+------------
 
 - Amazon AWS Cloud Integration: Hong Kong region (ap-east-1) support added
 
