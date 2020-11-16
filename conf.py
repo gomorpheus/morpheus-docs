@@ -201,7 +201,7 @@ def setup(app):
 rst_prolog = """
 .. |morpheus| replace:: Morpheus
 .. |morphbranch| replace:: v4.2
-.. |morphver| replace:: v4.2.4
+.. |morphver| replace:: v4.2.5
 .. |rmqbranch| replace:: v3.5-3.8
 .. |rmqver| replace:: v3.8.9
 .. |mysqlbranch| replace:: v5.7
