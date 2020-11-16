@@ -256,6 +256,36 @@ Role Mappings
     - The DHCP tab is where DHCP pools are viewed, created and managed
     - This permission is recommended for those responsible for DHCP pool management
     -
+  * - Infrastructure: Network Router Firewalls
+    - None, Read, Full
+    - Determines access to Firewall tabs on Router Detail pages (Infrastructure > Network > Routers tab > Selected Router)
+    - The Firewall tab is where firewall rules are viewed, created, and managed
+    - This permission is recommended for those responsible for managing firewall rules
+    -
+  * - Infrastructure: Network Router Interfaces
+    - None, Read, Full
+    - Determines access to Interfaces tabs on Router Detail pages (Infrastructure > Network > Routers tab > Selected Router)
+    - The Interface tab is where router interfaces can be viewed, created and managed
+    - This permission is recommended for those responsible for network traffic flow
+    -
+  * - Infrastructure: Network Router NAT
+    - None, Read, Full
+    - Determines access to the NAT tab on Router Detail pages (Infrastructure > Network > Routers tab > Selected Router)
+    - The NAT tab is where NAT rules are viewed, created, and managed
+    - This permission is recommended for those responsible for network traffic flow
+    -
+  * - Infrastructure: Network Router Redistribution
+    - None, Read, Full
+    - Determines access to Route Redistribution tabs on Router Detail pages (Infrastructure > Network > Routers tab > Selected Router)
+    - The Route Redistribution tab is where redistribution rules are viewed, created, and managed
+    - This permission is recommended for those responsible for redistribution rules
+    -
+  * - Infrastructure: Network Router Routes
+    - None, Read, Full
+    - Determines access to Routing tabs on Router Detail pages (Infrastructure > Network > Routers tab > Selected Router)
+    - The Routing tab is where routes are viewed, created, and managed
+    - This permission is recommended for those responsible for network route management
+    -
   * - Infrastructure: Network Routers
     - None, Read, Group, Full
     - Determines access to the Routers tab on the Infrastructure > Networks page. The "Group" permission setting allows access to objects shared to Groups associated with the user.
