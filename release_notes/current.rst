@@ -46,7 +46,7 @@ Fixes
 -----
 
 - Amazon ALB: Fix for adding ALBs in a subtenant
-- Amazon: Fixed S3 Bucket create and delete not utilizing AWS Cloud API Proxy config
+- Amazon AWS Cloud: Fixed S3 Bucket create and delete not utilizing AWS Cloud API Proxy config
 - Analytics: Fixed "Utilization vs. Cost" not reflecting Tenant currency setting
 - Ansible: Ansible integrations now utilize global proxy configuration for repository connections
 - Ansible Tower: Fixed inventory sync issue preventing Jobs from triggering. Note: Ansible Tower Tasks may need to be relined to Tower Jobs post 4.2.5 update
@@ -59,15 +59,23 @@ Fixes
 - SAML Identity Source Integration: Fixed issue with checkbox rendering in Firefox browsers
 - Infoblox: Added PTR record creation to Infoblox
 - NSX-T: Fixed issue loading provisioned Tier-0 & Tier-1 gateways in a Subtenant
-- NSX-V: Fixed DLRs displaying in the create network page outside of Group scope
-- NSX-V: Fixed members not automatically being added to NSX-V pools during Instance & App provisioning
-- NSX-V: Fixed new Firewall rules creation for DLRs created with Group scoping
+
+- .. toggle-header:: :header: **NSX-V Network Integration Fixes**
+
+    - NSX-V: Fixed DLRs displaying in the create network page outside of Group scope
+    - NSX-V: Fixed members not automatically being added to NSX-V pools during Instance & App provisioning
+    - NSX-V: Fixed new Firewall rules creation for DLRs created with Group scoping
+
 - OTC: Fixed minimum disk issue when uploading raw images to OTC from |morpheus|
-- Policies: Extended 255 character limits for Instance ``unformatted_name`` and ``unformatted_name`` fields to allow for longer naming policies
-- Policies: Fixed Approval policy conflict when an active Workflow, Tag Compliance, or Storage policy is applied
-- Policies: Fixed issue with expiration policies not removing resources which are in a failed state
-- Policies: Fixed scenario where warning emails for expiring Instances not triggered
-- Policies: Power Schedule Policies will no longer power on a VM that has been shutdown and is in "Pending Removal" state from a Delayed Removal Policy
+
+- .. toggle-header:: :header: **Policy Fixes**
+
+    - Extended 255 character limits for Instance ``unformatted_name`` and ``unformatted_name`` fields to allow for longer naming policies
+    - Fixed Approval policy conflict when an active Workflow, Tag Compliance, or Storage policy is applied
+    - Fixed issue with expiration policies not removing resources which are in a failed state
+    - Fixed scenario where warning emails for expiring Instances not triggered
+    - Power Schedule Policies will no longer power on a VM that has been shutdown and is in "Pending Removal" state from a Delayed Removal Policy
+
 - Tags: Fixed deleting Tags created from Option Types from Instances
 - Tenants: Fixed Tenant deletion issue related to existing network_security_server records
 
