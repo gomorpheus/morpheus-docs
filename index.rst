@@ -23,18 +23,13 @@
    :caption: Guides
 
    integration_guides/integration_guides.rst
-   
-.. toctree::
-   :maxdepth: 1
-   :caption: Morpheus CLI
-
-   CLI Documentation <https://github.com/gomorpheus/morpheus-cli/wiki>
 
 .. toctree::
    :maxdepth: 1
-   :caption: Morpheus API
+   :caption: Morpheus API & CLI
 
    API Documentation <https://apidocs.morpheusdata.com>
+   CLI Documentation <https://github.com/gomorpheus/morpheus-cli/wiki>
 
 .. toctree::
    :maxdepth: 3
