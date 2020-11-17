@@ -13,7 +13,7 @@ The default page for the Service Catalog Persona is the Dashboard. The Dashboard
 Catalog
 -------
 
-The catalog shows the complete list of pre-defined catalog items available to the user for provisioning. Catalog items are not created in the Service Catalog Persona. For more on creating catalog items, see the Self Service section (Tools > Self Service) of |morpheus| docs.
+The catalog shows the complete list of pre-defined catalog items available to the user for provisioning. Catalog items are not created in the Service Catalog Persona. For more on creating catalog items, see the `Self Service section <https://docs.morpheusdata.com/en/latest/tools/self-service.html>`_ (Tools > Self Service) of |morpheus| docs.
 
 .. image:: /images/personas/4scCatalog.png
 
