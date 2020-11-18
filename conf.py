@@ -84,6 +84,8 @@ todo_include_todos = False
 #
 html_theme = 'sphinx_rtd_theme'
 
+html_use_opensearch = 'https://docs/morpheusdata.com'
+
 # Theme options are theme-specific and customize the look and feel of a theme
 # further.  For a list of options available for each theme, see the
 # documentation.
@@ -201,11 +203,11 @@ def setup(app):
 rst_prolog = """
 .. |morpheus| replace:: Morpheus
 .. |morphbranch| replace:: v4.2
-.. |morphver| replace:: v4.2.4
+.. |morphver| replace:: v4.2.5
 .. |rmqbranch| replace:: v3.5-3.8
 .. |rmqver| replace:: v3.8.9
 .. |mysqlbranch| replace:: v5.7
-.. |mysqlver| replace:: v5.7.31
+.. |mysqlver| replace:: v5.7.32
 .. |mysqlverfips| replace:: v5.7.29
 .. |esbranch| replace:: v7.x
 .. |esver| replace:: v7.8.1
@@ -219,6 +221,7 @@ rst_prolog = """
 #****************
 #       H1
 #****************
+#
 #
 #       H2
 #================
