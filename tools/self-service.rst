@@ -57,7 +57,28 @@ Configure the following:
 - **VISIBILITY:** Set to private to keep the catalog item available only to users in the current Tenant. Master Tenant administrators may set catalog items to public to make them viewable and usable by Subtenant users
 - **LOGO:** Select or upload a logo to be associated with this catalog item
 - **BLUEPRINT:** Select a pre-configured Blueprint (Provisioning > Blueprints) to associate with this catalog item
-- **APP SPEC:** Inject override Blueprint spec here if desired. Currently this only supports YAML format
+- **APP SPEC:** Inject App spec here for any fields required to provision an App from your Blueprint. You may also inject any overrides to the existing Blueprint spec that are desired. App Spec configuration must be YAML, a simple example that names the App and sets the Group and Cloud is included below:
+
+    .. code-block:: yaml
+
+      #Example App Spec
+
+      name: '${userInitials}-${groupCode}-myapp-${sequence}'
+      group:
+        name: Dev Group
+      environment: Dev
+      tiers:
+        Web:
+          instances:
+            - instance:
+                type: nginx
+                cloud: Dev AWS
+        App:
+          instances:
+            - instance:
+                type: apache
+                cloud: Dev AWS
+
 - **CONTENT:** Optionally include documentation content for this Catalog Item. Markdown-formatted text is accepted and displayed appropriately when the item is ordered from the Service Catalog. A new Catalog Item-type Wiki entry will also be added containing this information.
 - **OPTION TYPES:** If desired, select Option Types to present users with mandatory or optional selections prior to provisioning
 
