@@ -3,7 +3,7 @@ Requirements
 
 |morpheus| is a software based appliance installation capable of orchestrating many clouds and hypervisors. Before an installation is started it is important to understand some of the base requirements.
 
-In the simplest configuration |morpheus| needs one Appliance Server. The Appliance Server, by default, contains all the components necessary to orchestrate both vm's and containers. To get started some base requirements are recommended:
+In the simplest configuration |morpheus| needs one Appliance Server. The Appliance Server, by default, contains all the components necessary to orchestrate both VMs and containers. To get started some base requirements are recommended:
 
 Base Requirements
 -----------------
@@ -34,18 +34,18 @@ Base Requirements
      - 16.04, 18.04
      - 14.04 is no longer supported for Appliance OS. Existing Appliances on 14.04 must upgrade to 16.04 or 18.04 PRIOR to upgrading to v4.2.1. Note: 14.04 is still supported by the |morpheus| Agent.
 
-- **Memory:** 16 GB recommended for default installations. 8 GB minimum required with 4 GB+ available storage swap space
+- **Memory:** `16 GB recommended <https://support.morpheusdata.com/s/article/How-does-Morpheus-manage-the-memory-it-uses?language=en_US>`_ for default installations. 8 GB minimum required with 4 GB+ available storage swap space
 - **Storage:** 200 GB storage minimum (see Storage Considerations below)
 - **CPU:** 4-core, 1.4 GHz (or better), 64-bit CPU recommended for all-in-one systems. For a distributed-tier installation, it's recommended each tier have 2-core, 1.4 GHz (or better), 64-bit CPU
 - Network connectivity from your users to the appliance over TCP 443 (HTTPS)
 - Superuser privileges via the sudo command for the user installing the |morpheus| appliance package
-- Access to base yum or apt repos. Access to Optional RPMs repo required for RHEL 7.x
+- Access to base ``yum`` or ``apt`` repos. Access to Optional RPMs repo required for RHEL 7.x
 - An appliance license is required for any operations involving provisioning
 - Internet Connectivity (optional)
    - To download from |morpheus|' public docker repositories and system Virtual Image catalog
    - Offline installation require installing the supplemental package in addition to the regular installation package. Local yum/apt repo access still required for offline installations.
 
-.. NOTE:: Access to yum and apt repos is still required for offline installations.
+.. NOTE:: Access to ``yum`` and ``apt`` repos is still required for offline installations.
 
 -  VM and Host Agent Install (optional)
     - Inbound connectivity access from provisioned vm's and container hosts on ports 443 (Agent install and communication) and 80 (Linux Agent installs via yum and apt)
@@ -96,7 +96,6 @@ When using a |morpheus| configuration with locally installed ElasticSearch, VM, 
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
 Logs for services local to the |morpheus| Appliance, such as the Morpheus UI, elasticsearch, rabbitmq, mysql, nginx and guacd are written to ``/var/log/morpheus/``. Current logs are rotated nightly, zipped, and files older than 30 days are automatically removed. Misconfigured services, ports and permissions can cause excessive log file sizes.
-
 
 Network Connectivity
 --------------------
