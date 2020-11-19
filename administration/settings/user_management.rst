@@ -10,7 +10,7 @@ Min Password Numbers
 Min Password Symbols
   User passwords must include at least as many special characters as the entered value
 Session Expires (Minutes)
-  A user session is forcibly logged out after the entered number of minutes
+  A user session is forcibly logged out after the entered number of minutes of inactivity
 Session Warning (Minutes)
   A pop-up warning is shown to the user when they have been inactive for the number of minutes entered. Example: If sessions are set to expire after 90 minutes, warn the user after 60 minutes if you intend to provide 30 minutes advance warning
 Expire Password After (Days)
