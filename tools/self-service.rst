@@ -63,7 +63,7 @@ Configure the following:
 
       #Example App Spec
 
-      name: '${userInitials}-${groupCode}-myapp-${sequence}'
+      name: '<%= customOption.appName %>'
       group:
         name: Dev Group
       environment: Dev
