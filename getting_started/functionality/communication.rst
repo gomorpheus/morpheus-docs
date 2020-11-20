@@ -699,7 +699,7 @@ Ports used to communicate with integrated technologies are those defined for the
     - 22
     - TCP
     - Agent Installation SSH (Linux)
-  * - Morpheus Application Tier
+  * - Application Tier
     - Managed Machine
     - 22, 3389, 443
     - TCP
@@ -739,6 +739,11 @@ Ports used to communicate with integrated technologies are those defined for the
     - 25 or 465
     - SMTP
     - Send email from Morpheus
+  * - Application Tier
+    - postmarkapp
+    - 2525
+    - TCP
+    - Send email from Morpheus (such as alerts and password reset requests) when custom SMTP settings aren't present
   * - Application Tier
     - Messaging Tier
     - 5672
@@ -780,12 +785,12 @@ Ports used to communicate with integrated technologies are those defined for the
     - TCP
     - erlang (epmd) peer discovery service used by RabbitMQ nodes and CLI tools
   * - Application Tier
-    - Non- Transactional Database Tier
+    - Non-Transactional Database Tier
     - 9200
     - TCP
     - Elasticsearch requests (Used in all cases except when utilizing AWS ES service)
-  * - Non- Transactional Database Tier
-    - Non- Transactional Database Tier
+  * - Non-Transactional Database Tier
+    - Non-Transactional Database Tier
     - 9300
     - TCP
     - Elasticsearch Cluster
