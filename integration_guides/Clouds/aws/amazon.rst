@@ -246,4 +246,17 @@ As of version 4.2.3, AWS cloud integrations in |morpheus| sync billing data sole
 
         .. IMPORTANT:: It may take as long as one hour for |morpheus| to process the next CUR report.
 
+AWS Reserved Instances and Savings Plans
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Amazon AWS public cloud offers Reserved Instances (RI) and Savings Plans, which allow organizations with consistent use patterns to reduce cloud spend significantly. |morpheus| analyzes AWS cloud usage and spend, which allows it to make intelligent recommendations that can lead to significant savings. This data can be reviewed in the Reservation Recommendations and Savings Plan Recommendations tables on any AWS Cloud detail page (Infrastructure > Clouds > Selected Amazon Cloud).
+
+Savings Plans potentially offer greater than 70% savings in exchange for a commitment to consistent usage levels for a 1- or 3-year term. |morpheus| provides Savings Plan guidance based on learned analytics; allowing you to analyze Savings Plans based on different term commitments and upfront costs to choose the best savings plan.
+
+.. image:: /images/integration_guides/clouds/aws/savingsPlan.png
+
+Reserved Instances (RI) provide a discounted hourly rate and optional capacity reservation for EC2 instances. AWS billing automatically applies your RI-discounted rate when the attributes of EC2 instance usage match attributes of an active RI. |morpheus| provides RI guidance based on learned analytics.
+
+.. image:: /images/integration_guides/clouds/aws/ri.png
+
 .. include:: /integration_guides/Clouds/aws/iampolicies.rst
