@@ -73,11 +73,14 @@ If you do not have an existing Azure Active Directory App Registration, or you w
 #. Select "New Registration"
 
    .. image:: /images/clouds/azure/Default_Directory_App_registrations_Microsoft_Azure.png
+      :scale: 80%
+
 
 #. Next, give app a name, specify Web app / API for the type (default) and enter any url for the Sign-on URL:
 #. Click Create and your new App Registration will be created.
 
    .. image:: /images/clouds/azure/Register_an_application_Microsoft_Azure.png
+      :scale: 80%
 
 Now that we have (or already had) our App Registration, we will gather the credentials required for the |morpheus| Azure integration.
 
@@ -93,6 +96,7 @@ The App Registration Directory (tenant) and Application (client) ID are required
 #. Store/Paste for use as the Client ID when Adding your Azure cloud in |morpheus|
 
 .. image:: /images/clouds/azure/morpheusAppReg_Microsoft_Azure.png
+   :scale: 80%
 
 Generate a Client Secret
 ````````````````````````
@@ -102,6 +106,7 @@ While still in your App Registration:
 #. Select ``+ New client secret``
 
    .. image:: /images/clouds/azure/morpheusAppReg_Certificates_secrets_Microsoft_Azure.png
+      :scale: 80%
 
 #. The "Add a client secret" modal will come up
 #. Add a description to help identify the secret in the future
@@ -109,12 +114,14 @@ While still in your App Registration:
 #. Select :guilabel:`Add`
 
    .. image:: /images/clouds/azure/morpheusAppReg_Certificates_secrets_Add.png
+      :scale: 80%
 
 #. Copy the newly generated Client Secret Value. It is important to copy the Client Secret Value now as it will not be displayed/available
 
    .. IMPORTANT:: Copy the key value before continuing as it will not be displayed/available again.
 
    .. image:: /images/clouds/azure/morpheusAppReg_Certificates_secrets_Copy.png
+      :scale: 80%
 
 #. Store/Paste for use as the Client Secret when Adding your Azure cloud in |morpheus|
 
@@ -132,6 +139,7 @@ To get the Azure Subscription ID:
 #. In the main "Subscriptions" section, copy the Subscription ID
 
    .. image:: /images/clouds/azure/Subscriptions_Microsoft_Azure.png
+      :scale: 80%
 
 #. Store/Paste for use as the Subscription ID when Adding your Azure cloud in |morpheus|
 
@@ -145,6 +153,7 @@ The App Registration created/used needs to be an owner of the Azure Subscription
 #. Either Click "+ Add", and the "Add Role Assignment", or simply select "Add a role assignment"
 
    .. image:: /images/clouds/azure/Azure_subscription_1_Access_control_IAM_Microsoft_Azure.png
+      :scale: 80%
 
 #. In the right pane, select "Owner" or "Contributor" Role type
 #. Search for the name of the App Registration used for the |morpheus| integration
@@ -152,6 +161,7 @@ The App Registration created/used needs to be an owner of the Azure Subscription
 #. Select "Save"
 
    .. image:: /images/clouds/azure/Add_role_assignment_save.png
+      :scale: 80%
 
 You now have the required Credentials and permissions to add an Azure Cloud Integration(s) into |morpheus|.
 
@@ -163,10 +173,12 @@ To add a new Azure Cloud integration into |morpheus| using the credentials creat
 #. In |morpheus|, navigate to ``Infrastructure -> Clouds`` and select :guilabel:`+ ADD`
 
    .. image:: /images/clouds/azure/Clouds_Morpheus_Add.png
+      :scale: 80%
 
 #. Select "AZURE (PUBLIC)" from the Cloud Types list and click :guilabel:`NEXT`
 
    .. image:: /images/clouds/azure/Clouds_Morpheus.png
+      :scale: 80%
 
 #. Populate the Following
 
@@ -209,6 +221,7 @@ To add a new Azure Cloud integration into |morpheus| using the credentials creat
      .. note:: For CSP Accounts, also enter CSP TENANT ID, CSP CLIENT ID and CSP CLIENT SECRET in the Advanced Options section.
 
      .. image:: /images/clouds/azure/addAzureCloudMorphuesS1.png
+        :scale: 80%
 
    .. include:: /integration_guides/Clouds/advanced_options.rst
     
@@ -217,13 +230,16 @@ To add a new Azure Cloud integration into |morpheus| using the credentials creat
 #. Next select an existing Group to add the Azure Cloud to, or create a new Group, then select :guilabel:`NEXT`
 
    .. image:: /images/clouds/azure/Clouds_MorpheusAddGroup.png
+      :scale: 80%
 
 #. Review the configuration and then select :guilabel:`COMPLETE`
 
    .. image:: /images/clouds/azure/Clouds_MorpheusComplete.png
+      :scale: 80%
 
 Your new Azure Cloud integration will be created and begin to sync.
 
 .. note:: The initial sync of an Azure Cloud can take some time due to Marketplace data sync.
 
 .. image:: /images/clouds/azure/Clouds_MorpheusNewCloudAdded.png
+   :scale: 80%

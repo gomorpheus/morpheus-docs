@@ -13,6 +13,7 @@ The |morpheus| version 5.0.0 beta introduced Personas, which are a new approach 
 - With the added quantity selector, order additional copies of items in your cart without creating duplicate selections
 
 .. image:: /images/releases/520/catalogWorkflow.png
+   :scale: 80%
 
 ServiceNow Integration Improvements
 -----------------------------------
@@ -30,3 +31,4 @@ Hide Blueprint fields
 Administrators have been able to lock Blueprint fields to restrict editing during App provisioning for a long time. Fields can now be hidden from view completely by toggling the lock/unlock icon to the hidden setting. When users provision Apps based on this Blueprint, they will not see hidden fields at all. This gives administrators additional flexibility to mask unneeded complexity from users.
 
 .. image:: /images/releases/520/blueprint.png
+   :scale: 80%
