@@ -220,8 +220,7 @@ To add a new Azure Cloud integration into |morpheus| using the credentials creat
 
      .. note:: For CSP Accounts, also enter CSP TENANT ID, CSP CLIENT ID and CSP CLIENT SECRET in the Advanced Options section.
 
-     .. image:: /images/clouds/azure/addAzureCloudMorphuesS1.png
-        :scale: 80%
+     .. thumbnail:: /images/clouds/azure/addAzureCloudMorphuesS1.png
 
    .. include:: /integration_guides/Clouds/advanced_options.rst
     
@@ -241,5 +240,4 @@ Your new Azure Cloud integration will be created and begin to sync.
 
 .. note:: The initial sync of an Azure Cloud can take some time due to Marketplace data sync.
 
-.. image:: /images/clouds/azure/Clouds_MorpheusNewCloudAdded.png
-   :scale: 80%
+.. thumbnail::  /images/clouds/azure/Clouds_MorpheusNewCloudAdded.png

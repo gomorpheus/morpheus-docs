@@ -31,7 +31,7 @@
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 
-extensions = ['recommonmark','sphinx_markdown_tables','sphinx_tabs.tabs','sphinxcontrib.contentui']
+extensions = ['recommonmark','sphinx_markdown_tables','sphinx_tabs.tabs','sphinxcontrib.contentui','sphinxcontrib.images']
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
