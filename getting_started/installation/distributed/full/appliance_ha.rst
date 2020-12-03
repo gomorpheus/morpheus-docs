@@ -41,7 +41,6 @@ Change the values to match your configured services:
     rabbitmq['queue_user_password'] = 'lbuserpassword'
     rabbitmq['host'] = 'rabbitvip'
     rabbitmq['port'] = '5672'
-    rabbitmq['stomp_port'] = '61613'
     rabbitmq['heartbeat'] = 50
     elasticsearch['enable'] = false
     elasticsearch['cluster'] = 'esclustername'
