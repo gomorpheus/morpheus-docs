@@ -27,6 +27,7 @@ Morpheus Sample AWS IAM Policy
                   "ec2:AssignPrivateIpAddresses",
                   "ec2:AssociateAddress",
                   "ec2:AttachInternetGateway",
+                  "ec2:AttachNetworkInterface",
                   "ec2:AttachVolume",
                   "ec2:AuthorizeSecurityGroupEgress",
                   "ec2:AuthorizeSecurityGroupIngress",

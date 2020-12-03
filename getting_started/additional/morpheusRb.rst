@@ -9,9 +9,9 @@ Morpheus allows for additional advanced customizations to the morpheus.rb file l
     # The appliance_url must not contain a trailing `/`.
     # Appending alternate port to appliance_url is supported. ie 'https://morpheus.appliance-url.com:8443'
     # The appliance_url cannot exceed 64 characters
-    
+
   app['encrypted_key_suffix'] = 'suffix'
-  
+
   ui['http_client_connect_timeout'] = 10000  #in seconds
   ui['http_client_connect_timeout'] = 600000 #in seconds
   ui['kerberos_config'] = nil
@@ -45,7 +45,6 @@ Morpheus allows for additional advanced customizations to the morpheus.rb file l
   rabbitmq['nodename'] = 'rabbit@localhost'
   rabbitmq['port'] = '5672'
   rabbitmq['queue_user'] = 'queue_user'
-  rabbitmq['stomp_port'] = 61613
   rabbitmq['vhost'] = 'morpheus'
 
   elasticsearch['log_dir'] = '/var/log/morpheus/elaseticsearch'
@@ -59,7 +58,7 @@ Morpheus allows for additional advanced customizations to the morpheus.rb file l
   elasticsearch['memory_trim_threshold'] = 131072
   elasticsearch['open_files'] = 204800
   elasticsearch['replica_count'] = 1
-  
+
   nginx['cache_max_size'] = '5000m'
   nginx['enable'] = true
   nginx['loading_pages']['failure_page_h1'] = 'Morpheus Server Error'
