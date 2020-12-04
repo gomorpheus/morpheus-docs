@@ -31,10 +31,6 @@ LB TYPE
 
 .. include:: /integration_guides/Clouds/openstack/advanced_options.rst
 
-.. image:: /images/openstack/add_cloud.png
-
-.. caption="Figure 1: ", title="Add Openstack Cloud form", alt="Add Openstack Cloud form"]
-
 .. NOTE:: The user which is used connect to a project only needs to be a member ('_member_') of the project rather than an admin. Admin will work but it exposes some additional items to the project that an Openstack Admin typically does not want portal users to see.
 
 Most of the information in the dialog can be acquired from the Openstack dashboard. under ``Project > Access & Security > API Access``. The API URL that is needed is the one tied to `Identity`. The Domain and Project inputs typically correlate to the multitenant domain setup within Openstack (sometimes just left at default) as well as the project name given to instances. |morpheus| allows multiple integrations to the same Openstack cluster to be scoped to various domains and projects as needed.
