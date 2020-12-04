@@ -55,7 +55,8 @@ Service Ports
 
 |morpheus| consumes the following OpenStack service ports by default as part of its cloud integration. If your OpenStack implementation has been configured to use alternate service ports, these can be overwritten in the Cloud configuration under the Service Endpoints section when adding or editing the Cloud integration.
 
-<Service Endpoints Image>
+.. image:: /images/integration_guides/clouds/openstack/serviceEndpoints.png
+  :width: 50%
 
 Default Service Ports
 `````````````````````
