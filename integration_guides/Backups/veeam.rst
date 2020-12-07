@@ -30,6 +30,6 @@ Adding Veeam Integration
 
 #. Click :guilabel:`SAVE`
 
-.. NOTE:: Veeam Backup Enterprise Manager must be installed on the Veeam server in order to successfully integrate Morpheus with Veeam. In addition, |morpheus| does not currently support VEEAM backup job deletion. Jobs must be deleted from VEEAM directly but |morpheus| will disable the job as a best effort measure. This is due to a limitation in the VEEAM API.
+.. NOTE:: Veeam Backup Enterprise Manager must be installed on the Veeam server in order to successfully integrate |morpheus| with Veeam.
 
-.. IMPORTANT:: Once a Veeam Integration has been enabled, a ``VEEAM SERVER`` setting will be available in VMware and Hyper-V cloud settings (``Infrastructure -> Clouds -> Edit a Cloud``). To enable backups on a cloud, a Veeam server must be selected in the ``VEEAM SERVER`` dropdown of the cloud settings and saved. Failure to do so will result in blank ``Backup Repositories`` and ``Backup Job Templates`` options when configuring Veeam Backups during provisioning.
+.. IMPORTANT:: Once Veeam service has been integrated with |morpheus|, Veeam server(s) will be available to select as the backup provider for VMware, Hyper-V, and vCloud Director cloud integrations (Infrastructure > Clouds > Edit a compatible Cloud). To enable Veeam backups, select the appropriate Veeam server as the "backup provider" for your cloud integrations as needed. Failure to do so will result in blank ``Backup Repositories`` and ``Backup Job Templates`` options when configuring Veeam Backups during provisioning.

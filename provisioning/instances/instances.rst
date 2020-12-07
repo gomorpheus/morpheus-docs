@@ -1,6 +1,9 @@
 Instances
 =========
 
+..
+  .. container:: left-col
+
 Instances is a great starting point for taking advantage of self service features and spinning up both VM's and containers. In |morpheus| it may be advisable to cover the definition of a few terms used within the application so as to reduce confusion.
 
 Instance
@@ -20,3 +23,18 @@ The Instance list contains important information about each instance, including 
 .. include:: instance_details.rst
 .. include:: managing_instances.rst
 .. include:: /troubleshooting/Remote_Console.rst
+
+..
+  .. container:: right-col
+
+      .. content-tabs::
+
+          .. tab-container:: tab1
+              :title: CLI
+
+              .. include:: /provisioning/instances/instancecli.rst
+
+          .. tab-container:: tab2
+              :title: API
+
+              in progress...

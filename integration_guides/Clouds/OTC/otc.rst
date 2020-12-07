@@ -5,21 +5,10 @@ Open Telekom Cloud
 Add an Open Telekom Cloud
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
-NAME
-  Name of the Cloud in |morpheus|
-
-CODE
-
-LOCATION
-  Description field for adding notes on the cloud, such as location.
-
-VISIBILITY
-  Description field for adding notes on the cloud, such as location.
-
-TENANT
-  Enabled
+.. include:: /integration_guides/Clouds/base_options.rst
 
 Details
+```````
   
 IDENTITY API URL
   

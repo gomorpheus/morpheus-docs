@@ -9,7 +9,7 @@ User Roles can be single or multitenant. A Multitenant User Role is automaticall
 .. important:: Multitenant Roles still need to be configured/managed be each subtenant, as Groups are unique per Tenant, and Instance and Blueprints can be a mix of unique and shared items.
 
 .. note:: User Roles cannot exceed Tenant Role permissions. If a Multitenant User Role has higher permissions than the Tenant Role assigned to a subtenant, the Multitenant User Role permissions in that Tenant will automatically be reduced to match the Tenant Role permissions.
- 
+
 
 Create a Single Tenant User Role
 ````````````````````````````````
@@ -50,7 +50,7 @@ After saving the Role will be created, and you will be redirected to the Roles P
 Tenant Roles
 ^^^^^^^^^^^^
 
-A Tenant Role sets the highest possible permissions for a Tenant. User Roles within that Tenant cannot exceed those of the Tenants assigned Tenant Role. Tenant Roles can be assigned to single or multiple Tenants, and do not apply to the Mater Account.
+A Tenant Role sets the highest possible permissions for a Tenant. User Roles within that Tenant cannot exceed those of the Tenants assigned Tenant Role. Tenant Roles can be assigned to single or multiple Tenants, and do not apply to the Master Account.
 
 To create a Tenant Role:
 ````````````````````````

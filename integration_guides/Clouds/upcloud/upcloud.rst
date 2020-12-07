@@ -58,12 +58,11 @@ Configure
 #. Select :guilabel:`NEXT`
 #. Enter the following:
 
-   Name
-    Name of the Cloud in |morpheus|
-   Location
-    Description field for adding notes on the cloud, such as location.
-   Visibility
-    For setting cloud permissions in a multi-tenant environment. Not applicable in single tenant environments.
+   .. include:: /integration_guides/Clouds/base_options.rst
+
+   Details
+   ```````
+   
    USERNAME
     UpCloud User Account Username
    PASSWORD
@@ -75,11 +74,11 @@ Configure
     * *Basic*: Existing Servers are Inventoried with Power state, Memory and Cores statistics synced.
     * *Full*: Existing Servers are Inventoried with Power state, Memory and Cores statistics, plus IP Addresses, Storage Info, and Console VNC Information.
 
-.. NOTE:: Full Inventory level recommended. Basic Inventory level can reduce Cloud Sync times when inventorying Datacenters with large amounts of servers. Credentials need to be added by editing the Virtual Machine in order to connect.
+   .. NOTE:: Full Inventory level recommended. Basic Inventory level can reduce Cloud Sync times when inventorying Datacenters with large amounts of servers. Credentials need to be added by editing the Virtual Machine in order to connect.
 
-The Cloud can now be added to a Group or configured with additional Advanced options.
+   The Cloud can now be added to a Group or configured with additional Advanced options.
 
-.. .. include:: /integration_guides/Clouds/advanced_options.rst
+   .. include:: /integration_guides/Clouds/advanced_options.rst
 
 Group
 `````

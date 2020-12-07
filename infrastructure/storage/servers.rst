@@ -26,9 +26,7 @@ Adding 3Par Storage Server
 
 #. Select :guilabel:`SAVE CHANGES`
 
-The 3Par Storage Server will be added and displayed in the Buckets tab.
-
-Buckets, Files Shares and Storage Groups will be synced in.
+The 3Par Storage Server will be added and displayed in the Buckets tab. Buckets, Files Shares and Storage Groups will be synced in.
 
 Adding Dell EMC ECS Storage Server
 ``````````````````````````````````
@@ -60,9 +58,7 @@ Adding Dell EMC ECS Storage Server
 
 #. Select :guilabel:`SAVE CHANGES`
 
-The Dell EMC ECS Storage Server will be added and displayed in the Buckets tab.
-
-Buckets, Files Shares and Storage Groups will be synced in.
+The Dell EMC ECS Storage Server will be added and displayed in the Buckets tab. Buckets, Files Shares and Storage Groups will be synced in.
 
 Adding Dell EMC Isilon Storage Server
 `````````````````````````````````````
@@ -89,10 +85,8 @@ Adding Dell EMC Isilon Storage Server
     Select Provision Group
    ROOT PATH
     Enter Root Path
-      Example : `\`
+      Example : ``\``
 
 #. Select :guilabel:`SAVE CHANGES`
 
-The Dell EMC Isilon Storage Server will be added and displayed in the Buckets tab.
-
-Buckets, Files Shares and Storage Groups will be synced in.
+The Dell EMC Isilon Storage Server will be added and displayed in the Buckets tab. Buckets, Files Shares and Storage Groups will be synced in.

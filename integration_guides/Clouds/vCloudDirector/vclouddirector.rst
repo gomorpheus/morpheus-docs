@@ -4,7 +4,7 @@ vCloud Director
 Configuration
 ^^^^^^^^^^^^^
 
-Add vCD Cloud From `Infrastructure -> Clouds`
+Add vCD Cloud From ``Infrastructure > Clouds``
 `````````````````````````````````````````````
 
 #. Navigate to ``Infrastructure -> Clouds``
@@ -13,12 +13,10 @@ Add vCD Cloud From `Infrastructure -> Clouds`
 #. Select :guilabel:`NEXT`
 #. Populate the following:
 
-   Name
-    Name of the Cloud in |morpheus|
-   Location
-    Description field for adding notes on the cloud, such as location.
-   Visibility
-    For setting cloud permissions in a multi-tenant environment. Not applicable in single tenant environments.
+   .. include:: /integration_guides/Clouds/base_options.rst
+
+   Details
+   ```````
    API URL
      vCloud Director API Url
       Example: ``https://org.vcd.company.com``

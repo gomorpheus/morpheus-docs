@@ -6,9 +6,31 @@ By default |morpheus| generates a Self-Signed SSL Certificate. The Self-Signed S
 Trusted CA Signed SSL Certificate Implementation
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-#. Copy the private key and certificate to ``/etc/morpheus/ssl/your_fqdn_name.key`` and ``/etc/morpheus/ssl/your_fqdn_name.crt`` respectively.
+#. If you don't already have your certificate, run an OpenSSL command to generate an SSL certificate request (.csr) and private key (.key). If you need help formatting the command, `DigiCert provides a helpful tool <https://www.digicert.com/easy-csr/openssl.htm>`_
 
-#. Edit the configuration file ``/etc/morpheus/morpheus.rb`` and add the following entries:
+#. Submit your certificate request (.csr) and await approval of the request and return of the certificate (.crt)
+
+#. Copy the private key and certificate to ``/etc/morpheus/ssl/your_fqdn_name.key`` and ``/etc/morpheus/ssl/your_fqdn_name.crt`` respectively
+
+    - .. toggle-header:: :header: **Extracting Certificates in PFX Format**
+
+       .. code-block:: bash
+
+         # Extract the private key
+         openssl pkcs12 -in example.pfx -nocerts -nodes -out priv.key
+         # Extract the public key
+         openssl pkcs12 -in example.pfx -clcerts -nokeys -out pub.crt
+         # Extract the CA cert chain
+         openssl pkcs12 -in example.pfx -cacerts -nokeys -chain -out ca.crt
+
+    - .. toggle-header:: :header: **Extracting Certificates in PEM Format**
+
+       .. code-block:: bash
+
+         # Extract the private key
+         openssl x509 -outform der -in your-cert.pem -out your-cert.key
+         # Extract the public key
+         openssl x509 -outform der -in your-cert.pem -out your-cert.key
 
    .. code-block:: bash
 

@@ -10,7 +10,6 @@ Operations
   analytics.rst
   guidance.rst
   wiki.rst
-  budgets.rst
+  costing.rst
   approvals.rst
   activity.rst
-  health.rst

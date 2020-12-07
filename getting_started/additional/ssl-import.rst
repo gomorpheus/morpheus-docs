@@ -21,7 +21,7 @@ Steps to import trusted certificates to |morpheus| after an upgrade.
 
     .. code-block:: bash
 
-       /opt/morpheus/embedded/java/bin/keytool -import -keystore /opt/morpheus/embedded/java/lib/security/cacerts -trustcacerts -file /etc/morpheus/ssl/trusted_certs/root_ca.pem -alias some_alias -storepass changeit
+       /opt/morpheus/embedded/java/jre/bin/keytool -import -keystore /opt/morpheus/embedded/java/jre/lib/security/cacerts -trustcacerts -file /etc/morpheus/ssl/trusted_certs/root_ca.pem -alias some_alias -storepass changeit
 
 #. Verify by running:
 

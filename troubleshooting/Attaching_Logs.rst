@@ -1,5 +1,5 @@
 Attaching Logs to Case
-========================
+======================
 
 When submitting a case it is critical to attach the relevant logs. The logs can be found at ``/var/log/morpheus/morpheus-ui/current``.  Logs can be attached to the case at anytime.
 

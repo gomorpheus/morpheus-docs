@@ -6,7 +6,7 @@ Network
 
    networks.rst
    network_groups.rst
-   .. routers.rst
+   routers.rst
    ip_pools.rst
    domains.rst
    proxies.rst

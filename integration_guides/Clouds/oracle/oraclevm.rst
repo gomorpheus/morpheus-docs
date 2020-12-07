@@ -4,12 +4,10 @@ Oracle VM
 Add an Oracle VM Cloud
 ^^^^^^^^^^^^^^^^^^^^^^
 
-Name
-  Name of the Cloud in |morpheus|
-Location
-  Description field for adding notes on the cloud, such as location.
-Visibility
-  For setting cloud permissions in a multi-tenant environment. Not applicable in single tenant environments.
+.. include:: /integration_guides/Clouds/base_options.rst
+
+Details
+```````
 API URL
   Oracle VM API URL. ex: https://10.20.30.40:7002/ovm/core/wsapi/rest
 USERNAME
@@ -25,4 +23,4 @@ Inventory Existing Instances
 
 The Cloud can now be added to a Group or configured with additional Advanced options.
 
-.. .. include:: /integration_guides/Clouds/advanced_options.rst
+.. include:: /integration_guides/Clouds/advanced_options.rst

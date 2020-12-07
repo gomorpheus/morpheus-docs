@@ -1,8 +1,8 @@
 Whitelabel Settings
--------------------
+^^^^^^^^^^^^^^^^^^^
 
 Overview
-^^^^^^^^
+````````
 
 |morpheus| Tenants can be WhiteLabeled with custom Logos, Colors, Copy, and custom CSS. Sub-Tenants can be individually white-labeled, or the Master Tenant Whitelabel can apply to all Sub-Tenants.
 
@@ -31,7 +31,7 @@ Reset
 	When selected and Whitelabel settings are saved, associated logo is returned to blank default value.
 
 Colors
-^^^^^^
+``````
 
 Update Colors by entering HEX value or selecting the Color Selector pop-up next to each filed and selecting a color.
 
@@ -49,7 +49,7 @@ Update Colors by entering HEX value or selecting the Color Selector pop-up next 
 * Login Background
 
 Override CSS
-^^^^^^^^^^^^
+````````````
 
 Override CSS settings by entering CSS in `Override CSS` field.
 
@@ -65,7 +65,7 @@ Example: (this will add one continues background image to the Header)
 		}
 
 Copy
-^^^^
+````
 
 Add custom Copyright String, Terms of Use, Privacy Policy contained in the Footer text and links in the App and on the login page and emails.
 
@@ -78,7 +78,7 @@ Available Copy fields
 .. NOTE:: Terms of Use and Privacy Policy Footer links will load internal pages at ``https://applaince_url/privacy-policy`` and ``https://applaince_url/terms-of-use`` displaying the entered info as plain text.
 ​
 UI Loading Page
-^^^^^^^^^^^^^^^
+```````````````
 
 When the |morpheus| UI is restarted or loading, a default "Morpheus is Loading" page is displayed. This page can be changed by adding the following to `/etc/morpheus/morpheus.rb` and adjusting the values.
 

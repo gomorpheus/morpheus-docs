@@ -158,334 +158,182 @@ Task Types
      - Existing vRO Integration
      - Provisioning: Tasks
 
-|ansible| Ansible Playbook
-``````````````````````````
-:Description:
-  Runs an Ansible playbook. Ansible Integration required
-:Target:
-  Instance or Host
-:Role Permissions:
-  Provisioning: Tasks
-:Task Configuration:
-   NAME
-     Name of the Task
-   CODE
-     Unique code name for api, cli, and variable reference
-   ANSIBLE REPO
-    Select existing Ansible Integration
-   GIT REF
-    Specify tag or branch (Option, blank assumes default)
-   PLAYBOOK
-    Name of playbook to execute
-       Both ``playbook`` and ``playbook.yml`` format supported
-   TAGS
-    Enter comma separated tags to filter executed tasks by (ie ``--tags``)
-   SKIP TAGS
-    Enter comma separated tags to run the playbook without matching tagged tasks (ie ``--skip-tags``)
+Task Configuration
+^^^^^^^^^^^^^^^^^^
 
-   .. IMPORTANT:: Using different Git Ref's for multiple Ansible Tasks in same Workflow is not supported. Git Refs can vary between Workflows, but Tasks in each workflow must use the same Git Ref.
+- .. toggle-header:: :header: **Ansible Playbook**
 
-|chef| Chef Bootstrap
-`````````````````````
-:Description:
-  Executes Chef bootstrap and run list. Chef Integration required
-:Target:
-  Instance or Host
-:Role Permissions:
-  Provisioning: Tasks
-:Task Configuration:
-  NAME
-   Name of the Task
-  CODE
-    Unique code name for api, cli, and variable reference
-  CHEF SERVER
-    Select existing Chef Integration
-  ENVIRONMENT
-    Populate Chef environment, or leave as ``_default``
-  RUN LIST
-    Enter Run List, eg ``role[web]``
-  DATA BAG KEY
-    Enter data bag key (will be masked uon save)
-  DATA BAG KEY PATH
-    Enter data bag key path, eg ``/etc/chef/databag_secret``
-  NODE NAME
-    Defaults to instance name, configurable.
-  NODE ATTRIBUTES
-    Specify attributes inside the ``{}``
+    |ansible|
 
+    - **NAME:** Name of the Task
+    - **CODE:** Unique code name for API, CLI, and variable references
+    - **ANSIBLE REPO:** Select existing Ansible Integration
+    - **GIT REF:** Specify tag or branch (Option, blank assumes default)
+    - **PLAYBOOK:** Name of playbook to execute, both ``playbook`` and ``playbook.yml`` format supported
+    - **TAGS:** Enter comma separated tags to filter executed tasks by (ie ``--tags``)
+    - **SKIP TAGS:** Enter comma separated tags to run the playbook without matching tagged tasks (ie ``--skip-tags``)
 
-|groovy| Groovy script
-``````````````````````
-:Description:
-  Executes Groovy Script locally (on app node)
-:Target:
-  Local App Node
-:Role Permissions:
-  Provisioning: Tasks
-  Provisioning: Tasks - Script Engines
-:Task Configuration:
-  NAME
-    Name of the Task
-  CODE
-    Unique code name for api, cli, and variable reference
-  RESULT TYPE
-    - Single Value
-    - Key/Value Pairs
-    - JSON
-  SCRIPT
-    Contents of Groovy Script to execute
+    .. IMPORTANT:: Using different Git Refs for multiple Ansible Tasks in same Workflow is not supported. Git Refs can vary between Workflows, but Tasks in each Workflow must use the same Git Ref.
 
-Email
-`````
-:Description:
-  Allows for sending of email via Workflows
-:Target:
-  Local
-:Role Permissions:
-  Provisioning: Tasks
-:Task Configuration:
-  NAME
-    Name of the Task
-  CODE
-    Unique code name for api, cli, and variable reference
-:Source:
-  Choose local to draft or paste the email directly into the Task. Choose Repository or URL to bring in a template from a Git repository or an outside source
-:Email Address:
-  Email addresses can be entered literally or Morpheus automation variables can be injected, such as ``<%=instance.createdByEmail%>``
-:Subject:
-  Morpheus automation variables can be injected into the subject field when needed
-:Content:
-  The body of the email is HTML. Morpheus automation variables can be injected into the email body when needed
-:Skip Wrapped Email Template:
-  The |morpheus| email template is ignored and only HTML in the Content field is used
+- .. toggle-header:: :header: **Chef bootstrap**
 
-|http| HTTP (api)
-`````````````````
-:Description:
-  Executes REST call for targeting external API's.
-:Target:
-  URL specified in Task
-:Role Permissions:
-  Provisioning: Tasks
-:Task Configuration:
-  NAME
-    Name of the Task
-  CODE
-    Unique code name for api, cli, and variable reference
-  RESULT TYPE
-    - Single Value
-    - Key/Value Pairs
-    - JSON
-  URL
-    http or https url for http task target
-  HTTP METHOD
-    GET (default), POST, PUT, PATCH, HEAD, or DELETE
-  AUTH USER
-    Username for username/password authentication
-  PASSWORD
-    Password for username/password authentication
-  BODY
-    Request Body
-  HTTP HEADERS
-    Enter requests headers
-      .. list-table:: **Http Header examples**
+    |chef|
 
-         * - Authorization
-           - Bearer `token`
-         * - Content-Type
-           - application/json
+    - **NAME:** Name of the Task
+    - **CODE:** Unique code name for API, CLI, and variable references
+    - **CHEF SERVER:** Select existing Chef integration
+    - **ENVIRONMENT:** Populate Chef environment, or leave as ``_default``
+    - **RUN LIST:** Enter Run List, eg ``role[web]``
+    - **DATA BAG KEY:** Enter data bag key (will be masked upon save)
+    - **DATA BAG KEY PATH:** Enter data bag key path, eg ``/etc/chef/databag_secret``
+    - **NODE NAME:** Defaults to Instance name, configurable
+    - **NODE ATTRIBUTES:** Specify attributes inside the ``{}``
 
-|javascript| Javascript
-```````````````````````
-:Description:
-  Executes Javascript locally (on app node)
-:Target:
-  Local App Node
-:Role Permissions:
-  Provisioning: Tasks
-  Provisioning: Tasks - Script Engines
-:Task Configuration:
-  NAME
-    Name of the Task
-  CODE
-    Unique code name for api, cli, and variable reference
-  RESULT TYPE
-    - Single Value
-    - Key/Value Pairs
-    - JSON
-  SCRIPT
-    Contents of Javascript to execute
+- .. toggle-header:: :header: **Groovy script**
 
+    |groovy|
 
-|jruby| jRuby Script
-````````````````````
-:Description:
-  Executes Ruby script locally (on app node)
-:Target:
-  Local App Node
-:Role Permissions:
-  Provisioning: Tasks
-  Provisioning: Tasks - Script Engines
-:Task Configuration:
-  NAME
-    Name of the Task
-  CODE
-    Unique code name for api, cli, and variable reference
-  RESULT TYPE
-    - Single Value
-    - Key/Value Pairs
-    - JSON
-  SCRIPT
-    Contents of jRuby Script to execute
+    - **NAME:** Name of the Task
+    - **CODE:** Unique code name for API, CLI, and variable references
+    - **RESULT TYPE:** Single Value, Key/Value Pairs, or JSON
+    - **CONTENT:** Contents of the Groovy script if not sourcing it from a repository
 
+- .. toggle-header:: :header: **Email**
 
-|libraryscript| Library Script
-``````````````````````````````
-:Description:
-  Creates a Task for an existing Library Script (``Provisioning -> Library -> Scripts``)
-:Target:
-  Instance or Host
-:Role Permissions:
-  Provisioning: Tasks
-:Task Configuration:
-  NAME
-    Name of the Task
-  CODE
-    Unique code name for api, cli, and variable reference
-  RESULT TYPE
-    - Single Value
-    - Key/Value Pairs
-    - JSON
-  SCRIPT
-    Search for and select existing Library Script
+    |email|
 
-|template| Library Template
-```````````````````````````
-:Description:
-  Creates a Task for an existing Library Template (``Provisioning -> Library-> Templates``)
-:Target:
-  Instance or Host
-:Role Permissions:
-  Provisioning: Tasks
-:Task Configuration:
-  NAME
-    Name of the Task
-  CODE
-    Unique code name for api, cli, and variable reference
-  TEMPLATE
-    Search for and select existing Library Template
+    - **NAME:** Name of the Task
+    - **CODE:** Unique code name for API, CLI, and variable references
+    - **SOURCE:** Choose local to draft or paste the email directly into the Task. Choose Repository or URL to bring in a template from a Git repository or another outside source
+    - **EMAIL ADDRESS:** Email addresses can be entered literally or |morpheus| automation variables can be injected, such as ``<%=instance.createdByEmail%>``
+    - **SUBJECT:** The subject line of the email, |morpheus| automation variables can be injected into the subject field
+    - **CONTENT:** The body of the email is HTML. |morpheus| automation variables can be injected into the email body when needed
+    - **SKIP WRAPPED EMAIL TEMPLATE:** The |morpheus|-styled email template is ignored and only HTML in the Content field is used
 
-PowerShell Script
-`````````````````
-|winrm|
+    .. TIP:: To whitelabel email sent from Tasks, select SKIP WRAPPED EMAIL TEMPLATE and use an HTML template with your own CSS styling
 
-:Description:
-  Execute Powershell script against IP specified in Task.
-:Target:
-  IP specified in Task
-:Role Permissions:
-  Provisioning: Tasks
-:Task Configuration:
-  NAME
-    Name of the Task
-  CODE
-    Unique code name for api, cli, and variable reference
-  RESULT TYPE
-    - Single Value
-    - Key/Value Pairs
-    - JSON
-  IP ADDRESS
-    IP Address of the PowerShell task target
-  PORT
-    SSH port for PowerShell task target (5985 default)
-  USERNAME
-    Username for PowerShell task target
-  PASSWORD
-    Password for PowerShell task target
-  SCRIPT
-    Enter Script to execute
+- .. toggle-header:: :header: **HTTP (API)**
 
+    |http|
 
-|puppet| Puppet Agent Install
-`````````````````````````````
-:Description:
-  Executes Puppet Agent bootstrap, writes ``puppet.conf`` and triggers agent checkin. Puppet Integration required
-:Target:
-  Instance or Host
-:Role Permissions:
-  Provisioning: Tasks
-:Task Configuration:
-  NAME
-    Name of the Task
-  PUPPET MASTER
-    Select Puppet Master from existing Puppet Integration
-  PUPPET NODE NAME
-    Enter Puppet Node Name. Variables supported eg. ``"<%= instance.name %>"``
-  PUPPET ENVIRONMENT
-    Enter Puppet Env. eg. ``production``
+    - **NAME:** Name of the Task
+    - **CODE:** Unique code name for API, CLI, and variable references
+    - **RESULT TYPE:** Single Value, Key/Value Pairs, or JSON
+    - **URL:** An HTTP or HTTPS URL as the HTTP Task target
+    - **HTTP METHOD:** GET (default), POST, PUT, PATCH, HEAD, or DELETE
+    - **AUTH USER:** Username for username/password authentication
+    - **PASSWORD:** Password for username/password authentication
+    - **BODY:** Request Body
+    - **HTTP HEADERS:** Enter requests headers, examples below:
 
+    .. list-table::
 
-|python| Python Script
-``````````````````````
+      * - Authorization
+        - Bearer `token`
+      * - Content-Type
+        - application/json
 
-.. IMPORTANT:: Beginning with |morpheus| version 4.2.1, Python Tasks use virtual environments. For this reason, "virtualenv" must be installed on your appliances in order to work with Python tasks. Connect to the appliance node(s) and run "pip install virtualenv".
+    - **IGNORE SSL ERRORS:** Mark when making REST calls to systems without a trusted SSL certificate
 
-:Description:
-  Executes Python script locally (on app node)
-:Target:
-  Local App Node
-:Role Permissions:
-  Provisioning: Tasks
-  Provisioning: Tasks - Script Engines
-:Task Configuration:
-  NAME
-    Name of the Task
-  CODE
-    Unique code name for api, cli, and variable reference
-  TYPE
-    Python Script
-  RESULT TYPE
-    - None
-    - Single Value
-    - Key/Value Pairs
-    - JSON
-  SCRIPT
-    Python Script Script to execute
+- .. toggle-header:: :header: **Javascript**
 
+    |javascript|
 
-|restart| Restart
-`````````````````
-:Description:
-  Specifically for use in Workflows after a task that requires a restart, the Restart task executes a restart on the target Instance or Host. Morpheus will wait until the restart is complete to execute the next task in the workflow phase.
-:Target:
-  Instance or Host
-:Role Permissions:
-  Provisioning: Tasks
-:Task Configuration:
-  NAME
-    Name of the Task
-  CODE
-    Unique code name for api, cli, and variable reference
+    - **NAME:** Name of the Task
+    - **CODE:** Unique code name for API, CLI, and variable references
+    - **RESULT TYPE:** Single Value, Key/Value Pairs, or JSON
+    - **SCRIPT:** Javascript contents to execute
 
-|shellscript| Shell Script
-``````````````````````````
-:Description:
-  Executes Bash script locally (on |morpheus| app node), against the Instance or Host the Task or Workflow is run on, or against the IP specified in the Task
-:Target:
-  Instance or Host, specified IP, or the local app node
-:Role Permissions:
-  Provisioning: Tasks
-:Task Configuration:
-  NAME
-    Name of the Task
-  CODE
-    Unique code name for api, cli, and variable reference
-  RESULT TYPE
-    - Single Value
-    - Key/Value Pairs
-    - JSON
-  SCRIPT
-    Enter Bash Script to execute
+- .. toggle-header:: :header: **jRuby Script**
+
+    |jruby|
+
+    - **NAME:** Name of the Task
+    - **CODE:** Unique code name for API, CLI, and variable references
+    - **RESULT TYPE:** Single Value, Key/Value Pairs, or JSON
+    - **CONTENT:** Contents of the jRuby script is entered here if it's not being called in from an outside source
+
+- .. toggle-header:: :header: **Library Script**
+
+    |libraryscript|
+
+    - **NAME:** Name of the Task
+    - **CODE:** Unique code name for API, CLI, and variable references
+    - **RESULT TYPE:** Single Value, Key/Value Pairs, or JSON
+    - **SCRIPT:** Search for an existing script in the typeahead field
+
+- .. toggle-header:: :header: **Library Template**
+
+    |template|
+
+    - **NAME:** Name of the Task
+    - **CODE:** Unique code name for API, CLI, and variable references
+    - **TEMPLATE:** Search for an existing template in the typeahead field
+
+- .. toggle-header:: :header: **Powershell Script**
+
+    |powershell|
+
+    - **NAME:** Name of the Task
+    - **CODE:** Unique code name for API, CLI, and variable references
+    - **RESULT TYPE:** Single Value, Key/Value Pairs, or JSON
+    - **ELEVATED SHELL:** Run script with administrator privileges
+    - **IP ADDRESS:** IP address of the PowerShell Task target
+    - **PORT:** SSH port for PowerShell Task target (5985 default)
+    - **USERNAME:** Username for PowerShell Task target
+    - **PASSWORD:** Password for PowerShell Task target
+    - **Content:**  Enter script to execute if not calling the script in from an outside source
+
+- .. toggle-header:: :header: **Puppet Agent Install**
+
+    |puppet|
+
+    - **NAME:** Name of the Task
+    - **CODE:** Unique code name for API, CLI, and variable references
+    - **PUPPET MASTER:** Select Puppet Master from an existing Puppet integration
+    - **PUPPET NODE NAME:** Enter Puppet node name. Variables supported eg. ``<%= instance.name %>``
+    - **PUPPET ENVIRONMENT:** Enter Puppet environment, eg. ``production``
+
+- .. toggle-header:: :header: **Python Script**
+
+    |python|
+
+    .. IMPORTANT:: Beginning with |morpheus| version 4.2.1, Python Tasks use virtual environments. For this reason, "virtualenv" must be installed on your appliances in order to work with Python tasks. Connect to the appliance node(s) and run "pip install virtualenv".
+
+    - **NAME:** Name of the Task
+    - **CODE:** Unique code name for API, CLI, and variable references
+    - **RESULT TYPE:** Single Value, Key/Value Pairs, or JSON
+    - **CONTENT:** Python script to execute is entered here if not pulled in from an outside repository
+    - **COMMAND ARGUMENTS:** Optional arguments passed into the Python script. Variables supported eg. ``<%= instance.name %>``
+    - **ADDITIONAL PACKAGES:** Additional packages to be installed after ``requirements.txt`` (if detected). Expected format for additional packages: 'packageName==x.x.x packageName2==x.x.x', the version must be specified
+    - **PYTHON BINARY:** Optional binary to override the default Python binary
+
+- .. toggle-header:: :header: **Restart**
+
+    |restart|
+
+    - **NAME:** Name of the Task
+    - **CODE:** Unique code name for API, CLI, and variable references
+
+- .. toggle-header:: :header: **Shell Script**
+
+    |shellscript|
+
+    - **NAME:** Name of the Task
+    - **CODE:** Unique code name for API, CLI, and variable references
+    - **RESULT TYPE:** Single Value, Key/Value Pairs, or JSON
+    - **CONTENT:** Script to execute is entered here if not pulled in from an outside repository
+
+- .. toggle-header:: :header: **vRealize Orchestrator Workflow**
+
+    |vro|
+
+    - **NAME:** Name of the Task
+    - **CODE:** Unique code name for API, CLI, and variable references
+    - **RESULT TYPE:** Single Value, Key/Value Pairs, or JSON
+    - **vRO INTEGRATION:** Select an existing vRO integration
+    - **WORKFLOW:** Select a vRO workflow from the list synced from the selected integration
+    - **PARAMETER BODY (JSON):**
 
 Task Management
 ^^^^^^^^^^^^^^^

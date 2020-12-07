@@ -150,7 +150,7 @@ Add Configurations to Instances
 #. Populate the Configuration
 
    * Configurations can be fully partially or populated
-   * Fields can be locked by selecting the Lock icon next to the Field. Locking prevent the field from being editable when provisioning an App using the Blueprint.
+   * Fields can be locked or hidden by selecting the Lock icon next to the Field. Locking prevents the field from being editable when provisioning an App using the Blueprint while hidden fields are not revealed to the user at all
    * ALLOW EXISTING INSTANCE will allow users to add existing Instances to the App when using the blueprint
 
 Save

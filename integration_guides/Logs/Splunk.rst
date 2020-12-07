@@ -10,7 +10,7 @@ Adding Splunk Integration
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
 #. Add a syslog listener configuration in Splunk.
-#. Navigate to ``Administration -> Logs``
+#. Navigate to ``Administration > Settings > Logs``
 #. Expand the Splunk section
 #. Enable the integration
 #. Fill in the following:

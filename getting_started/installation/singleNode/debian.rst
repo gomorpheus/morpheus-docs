@@ -9,13 +9,13 @@ To get started installing |morpheus| on Ubuntu or Debian a few preparatory items
 
  #. Next simply download the relevant ``.deb`` package for installation. This package can be acquired from https://morpheushub.com downloads section.
 
-    .. TIP:: Use the ``wget`` command to directly download the package to your appliance server. i.e. ``wget https://downloads.morpheusdata.com/path/to/package/morpheus-appliance_x.x.x-1.amd64.deb``
+    .. TIP:: Use the ``wget`` command to directly download the package to your appliance server. i.e. ``wget https://downloads.morpheusdata.com/path/to/package/morpheus-appliance_x.x.x-1_amd64.deb``
 
 #. Next we must install the package onto the machine and configure the morpheus services:
 
    .. code-block:: bash
 
-     sudo dpkg -i morpheus-appliance_x.x.x-1.amd64.deb
+     sudo dpkg -i morpheus-appliance_x.x.x-1_amd64.deb
      sudo morpheus-ctl reconfigure
 
 

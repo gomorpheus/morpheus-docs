@@ -1,5 +1,5 @@
 Advanced Options
-^^^^^^^^^^^^^^^^
+````````````````
 
 DOMAIN
   Specify a default domain for instances provisioned to this Cloud.
@@ -12,7 +12,7 @@ TIME ZONE
 DATACENTER ID
   Used for differentiating pricing among multiple datacenters. Leave blank unless prices are properly configured.
 NETWORK MODE
-  Unmanaged or select a Network Integration (NSX, ACI etc) 
+  Unmanaged or select a Network Integration (NSX, ACI etc)
 LOCAL FIREWALL
   On or Off. Enable to managed Host and VM firewall/IP Table rules (linux only)
 SECURITY SERVER
@@ -48,11 +48,13 @@ INSTALL AGENT
   Enable to have Agent Installation on by default for all provisioning into this Cloud. Disable for Agent Installation to be off by default for all provisioning into this Cloud.
 
 Provisioning Options
-^^^^^^^^^^^^^^^^^^^^
+````````````````````
 
 PROXY
   Set a proxy for inbound communication from Instances to the |morpheus| Appliance. Proxies can be added in the `Infrastructure -> Networks -> Proxies` tab.
 Bypass Proxy for Appliance URL
   Enable to bypass proxy settings (if added) for |morpheus| Agent communication to the Appliance URL.
+NO PROXY
+  Include a list of IP addresses or name servers to exclude from proxy traversal
 USER DATA (LINUX)
   Add cloud-init user data. |morpheus| 4.1.0 and earlier assumes bash syntax. |morpheus| 4.1.1 and later supports all User Data formats. Refer to https://cloudinit.readthedocs.io/en/latest/topics/format.html for more information.

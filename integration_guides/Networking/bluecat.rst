@@ -4,7 +4,7 @@ Bluecat
 Overview
 ^^^^^^^^
 
-|morpheus| integrates with Bluecat IPAM to scope pools to networks for Static IP assignment from Infoblox to your |morpheus| instances.
+|morpheus| integrates with Bluecat IPAM to scope pools to networks for static IP assignment from Bluecat to your |morpheus| Instances.
 
 Adding Bluecat to |morpheus|
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^

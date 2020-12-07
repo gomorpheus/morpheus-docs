@@ -1,5 +1,5 @@
 Okta
-----------------
+----
 
 Overview
 ^^^^^^^^
@@ -7,7 +7,7 @@ Overview
 |morpheus| allows users to integrate an Okta deployment for user management and authentication. In |morpheus|, identity sources are added on a per-Tenant basis and Morpheus allows you to map Okta user groups to |morpheus| user groups. User accounts are automatically created with matching metadata and role permissions when users are authenticated.
 
 Adding an Okta Integration
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 #. Navigate to ``Administration -> Tenants``
 #. Select a Tenant
@@ -30,6 +30,8 @@ Default Role
   The default role a user is assigned if no group is listed under an Okta user that maps within the Morpheus Role Mappings section
 ENABLE ROLE MAPPING PERMISSION
   When selected, Tenant users with appropriate rights to view and edit Roles will have the ability to set role mapping for the Identity Source integration. This allows the Tenant user to edit only the role mappings without viewing or potentially editing the Identity Source configuration.
+MANUAL ROLE ASSIGNMENT
+  When selected, administrators can manually edit Roles for users created through this identity source integration from the user detail page (Administration > Users > Selected user).
 
 .. NOTE:: For more on Identity Source role mapping permissions, see the `associated guide <https://support.morpheusdata.com/s/article/How-to-enable-Subtenant-admins-to-edit-Identity-Source-role-mapping?language=en_US>`_ in our KnowledgeBase.
 

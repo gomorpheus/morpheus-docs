@@ -5,7 +5,7 @@ Provisions a new Docker Cluster managed by Morpheus.
 
 To create a new Docker Cluster:
 
-#. Navigate to ``Infrastructure - Clusters``
+#. Navigate to ``Infrastructure > Clusters``
 #. Select :guilabel:`+ ADD CLUSTER`
 #. Select ``Docker Cluster``
 #. Populate the following:

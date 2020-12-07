@@ -22,7 +22,7 @@ Features
 
 |morpheus| can provide a single pane of glass and self-service portal for managing multiple Nutanix Clusters and allowing the seamless deployment of applications.
 
-.. Note:: Prism Central is not currently supported
+.. Note:: Prism Central is not currently supported as a Cloud endpoint target
 
 Getting Started
 ^^^^^^^^^^^^^^^
@@ -34,8 +34,25 @@ Adding a Nutanix Cloud
 
 The Nutanix cluster should be available and responding to the https://fqdn:9440 url for authentication by |morpheus| .
 
+NAME
+  Name of the Cloud in |morpheus|
+CODE 
+  Unique code used for api/cli, automation and policies.
+LOCATION
+  Description field for adding notes on the cloud, such as location.
+VISIBILITY
+  For setting cloud permissions in a multi-tenant environment. Not applicable in single tenant environments.
+TENANT
+  If Visibility is set to Private, select the Tenant the Cloud resources will assigned to.
+ENABLED
+  When disabled, automatic Cloud sync is paused and the Cloud will not be selectable for provisioning. 
+AUTOMATICALLY POWER ON VMS
+  When enabled, Morpheus will maintain the expected powered on state of managed VM's and power on any managed VM's in the cloud that have been shut down for unknown reasons (not powered off by |morpheus|) to ensure availability of services. 
+  
+  .. note:: When "AUTOMATICALLY POWER ON VMS" is enabled, the power state of managed VM's should be maintained in |morpheus|. This setting is not applicable to discovered/unmanaged resources.
+
 API URL
-  example: https://10.30.21.220:9440
+  URL of the Nutanix Prism API, example: https://10.30.21.220:9440. Prism Central is not currently supported as a Cloud endpoint target
 USERNAME
   Nutanix admin username
 PASSWORD
@@ -55,7 +72,7 @@ Docker
 
 So far this document has covered how to add the Nutanix cloud integration and has enabled users the ability to provision virtual machine based instances via the Add Instance catalog in Provisioning. Another great feature provided by |morpheus| out of the box is the ability to use Docker containers and even support multiple containers per Docker host. To do this a Docker Host must first be provisioned into Nutanix (multiple are needed when dealing with horizontal scaling scenarios).
 
-To provision a Docker Host, simply navigate to the Cloud detail page or Infrastructure Hosts section. From there click the + Container Host button to add a Nutanix Docker Host. |morpheus| views a Docker host just like any other Hypervisor with the caveat being that it is used for running containerized images instead of virtualized ones. Once a Docker Host is successfully provisioned a green checkmark will appear to the right of the host marking it as available for use. In the event of a failure click into the relevant host that failed and an error explaining the failure will be displayed in red at the top.
+To provision a Docker Host, simply navigate to the Cloud detail page or Infrastructure > Clusters section. From there click :guilabel:`+ ADD CLUSTER` to add a Nutanix Docker Host. |morpheus| views a Docker host just like any other Hypervisor with the caveat being that it is used for running containerized images instead of virtualized ones. Once a Docker Host is successfully provisioned a green checkmark will appear to the right of the host marking it as available for use. In the event of a failure click into the relevant host that failed and an error explaining the failure will be displayed in red at the top.
 
 Some common error scenarios include network connectivity. For a Docker Host to function properly, it must be able to resolve the |morpheus| appliance url which can be configured in Admin Settings. If it is unable to resolve and negotiate with the appliance than the agent installation will fail and provisioning instructions will not be able to be issued to the host.
 

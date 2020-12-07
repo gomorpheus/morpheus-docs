@@ -75,7 +75,7 @@ Click :guilabel:`Save Changes`.
 Impersonate Tenant User
 ```````````````````````
 
-Morheus allows admin users in the Master Tenant to impersonate any user in the Subtenants to see the application as if they are that user. To impersonate a user, you must be logged in as a user with the "Impersonate User" feature enabled in the assigned role.
+|morpheus| allows admin users in the Master Tenant to impersonate any user in the Subtenants to see the application as if they are that user. To impersonate a user, you must be logged in as a user with the "Impersonate User" feature enabled in the assigned role.
 
 From inside a Tenant detail page (containing the list of that Tenant's users), and in the specific user's ACTIONS drop down, select "Impersonate".
 

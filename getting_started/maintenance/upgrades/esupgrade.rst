@@ -74,7 +74,7 @@ Install Elasticsearch 7.x
 
     sudo service elasticsearch start
 
-#. Once all nodes have joined the cluster, update ``/etc/elasticsearch/elasticsearch.yml`` and uncomment ``discovery.zen.minimum_master_nodes: 2`:
+#. Once all nodes have joined the cluster, update ``/etc/elasticsearch/elasticsearch.yml`` and uncomment ``discovery.zen.minimum_master_nodes: 2``:
 
    .. code-block:: bash
 

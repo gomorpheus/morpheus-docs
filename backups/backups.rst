@@ -26,7 +26,7 @@ Backup Appliance
 Default Backup Storage Provider
   Storage Providers can be configured and managed in the `Infrastructure -> Storage` section.
 Default Backup Schedule
-  Schedules can be configured and managed in the `Operations -> Scheduling -> Execution Schedules`
+  Schedules can be configured and managed in the `Provisioning -> Automation  -> Execution Schedules`
 Backup Retention Count
   Default maximum number of successful backups to retain.
 

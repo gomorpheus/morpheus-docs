@@ -9,15 +9,19 @@ When installing and upgrading to |morpheus| |morphver|, refer to the following t
 Breaking Changes
 ================
 
-- 4.2.1: Appliance: OS: Ubuntu 14.04 has reached its end of life (EOL) and is no longer supported as a Morpheus Appliance Host Operating System. Any |morpheus| Appliance running on 14.04 must be upgraded to 16.04, 18.04 or 20.04 BEFORE upgrading to 4.2.1+. Upgrades on 14.04 will not succeed
-- 4.2.1: Clouds: VirtualBox, VirtuSteam, and MetaCloud Cloud Types are no longer supported or available
-- 4.2.1: Puppet: |morpheus| integration now supports version 6+. Puppet versions prior to 6 are no longer supported
-- 4.2.1: Tasks: Python: Virtual environment are now used for Python Tasks. **Note:** ``virtualenv`` is required on all Appliance App nodes: ``pip install virtualenv``
+- 4.2.1+: Appliance: OS: Ubuntu 14.04 has reached its end of life (EOL) and is no longer supported as a Morpheus Appliance Host Operating System. Any |morpheus| Appliance running on 14.04 must be upgraded to 16.04, 18.04 or 20.04 BEFORE upgrading to 4.2.1+. Upgrades on 14.04 will not succeed
+- 4.2.1+: Clouds: VirtualBox, VirtuSteam, and MetaCloud Cloud Types are no longer supported or available
+- 4.2.1+: Puppet: |morpheus| integration now supports version 6+. Puppet versions prior to 6 are no longer supported
+- 4.2.1+: Tasks: Python: Virtual environment are now used for Python Tasks. **Note:** ``virtualenv`` is required on all Appliance App nodes: ``pip install virtualenv``
+- 4.2.4: For appliances with externalized MySQL databases, due to MySQL deprecation of the "EDT" timezone you may need to update your database timezone to UTC or another compatible value. If this is not done, you will receive errors referencing timezone and |morpheus| will not start. |morpheus| should handle this change automatically for all-in-one appliances.
+- 5.0.0+: When upgrading to 5.0.0+ from 4.x.x, any bearer tokens that have been generated are deleted which requires users to request new bearer tokens
 
 |morpheus| Application OS
 =========================
 
-.. important:: Existing Appliances on 14.04 must upgrade to 16.04 or 18.04 PRIOR to upgrading to v4.2.1+.
+|morpheus| can be installed on the following platforms. Please note the table below is for |morpheus| Application OS support, not |morpheus| Agent OS Support.
+
+.. important:: Existing |morpheus| Appliances on 14.04 must upgrade to 16.04 or 18.04 PRIOR to upgrading to v4.2+.
 
 .. list-table:: **Supported Appliance Operating Systems**
    :widths: auto
@@ -38,7 +42,7 @@ Breaking Changes
    * - RHEL
      - 7.x, 8.x
      -
-   * - SUSE SLES
+   * - SUSE Linux Enterprise Server (SLES)
      - 12, 15
      -
    * - Ubuntu
@@ -51,7 +55,10 @@ Services
 |morphver| Service Version Changes
 ----------------------------------
 
-No service version changes between v4.2.1 and v4.2.2
+- MySQL: Upgraded to 5.7.32 for non-fips versions (5.7.29)
+- Nginx: Upgraded to v1.19.3
+- RabbitMQ: Upgraded to v3.8.9
+- Tomcat: Upgraded to 9.0.39
 
 |morphver| Service Version Compatibility
 ----------------------------------------
@@ -61,14 +68,21 @@ When externalizing MySQL, Elasticsearch and/or RabbitMQ services, the following 
 +---------------------------------------+-----------------------+-------------------------------------+
 | **Service**                           | **Compatible Branch** | **Morpheus Installer Version**      |
 +---------------------------------------+-----------------------+-------------------------------------+
-| MySQL                                 | 5.7                   | 5.7.29                              |
+| MySQL                                 | |mysqlbranch|         | |mysqlver|                          |
++---------------------------------------+-----------------------+-------------------------------------+
+| MySQL (FIPS)                          | |mysqlbranch|         | |mysqlverfips|                      |
 +---------------------------------------+-----------------------+-------------------------------------+
 | Percona                               | 5.7, WSREP 31         | n/a                                 |
 +---------------------------------------+-----------------------+-------------------------------------+
-| Elasticsearch                         | 7.x                   | 7.6.2                               |
+| Elasticsearch                         | |esbranch|            | |esver|                             |
 +---------------------------------------+-----------------------+-------------------------------------+
-| RabbitMQ                              | 3.5-3.8               | 3.8.3                               |
+| RabbitMQ                              | |rmqbranch|           | |rmqver|                            |
 +---------------------------------------+-----------------------+-------------------------------------+
+| Tomcat                                |                       | |tcver|                             |
++---------------------------------------+-----------------------+-------------------------------------+
+| Nginx                                 |                       | |nginxver|                          |
++---------------------------------------+-----------------------+-------------------------------------+
+
 
 .. important:: Elasticsearch 7.x is required for |morphver|. Refer to :ref:`upgrading` section for more information.
 
@@ -77,23 +91,18 @@ Security
 
 .. important:: Please be aware of the default security enhancements added to v4.1.2+ and assess potential impacts to your environment, including agent installation and frontend load balancers.
 
-- 4.1.2: Appliance: Starting in v4.1.2, the default |morpheus| Nginx config removes support for incoming ``TLS v1.0 and v1.1`` connections. Please update source config to be compatible. If necessary, |morpheus| can be configured to support older TLS versions via :ref:`morpheus.rb` config.
-- 4.2.1: Security: Web Security response headers set for enhanced security
+CVEs Addressed
+--------------
 
-..
-  CVEs Addressed
-  --------------
-
-  - CVE-2017-18640
-  - CVE-2019-12418
+- CVE-2017-5929
+- CVE-2019-2692
+- CVE-2020-2933
+- CVE-2020-14338
+- CVE-2020-15250
 
 Integrations
 ============
 
 .. note:: Current iterations of Amazon AWS, Microsoft Azure, Google Cloud Platform, Digital Ocean, HPE OneView, OpenTelekom Cloud, IBM Bluemix, Softlayer and UpCloud are all supported.
 
-.. important:: VirtualBox, VirtuSteam, and MetaCloud Cloud Types are no longer supported.
-
 .. include:: compatibility_table.rst
-
-.. note:: Non-listed versions may be compatible but are not verified.

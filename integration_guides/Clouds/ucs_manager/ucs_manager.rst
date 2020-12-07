@@ -14,19 +14,11 @@ Adding UCS Manager Cloud
 #. Select **UCS MANAGER** from the Clouds list
 #. Populate the following:
 
-   Name
-    Name of the Cloud in |morpheus|
-   Code
-    Cloud Code for variables
+   .. include:: /integration_guides/Clouds/base_options.rst
 
-   Location
-    Description field for adding notes on the cloud, such as location.
-   Visibility
-     For setting cloud permissions in a multi-tenant environment. Not applicable in single tenant environments.
-   Tenant
-     Select which Tenant to scope visibility to when Visibility is set to Private.
-   Enabled
-     Unchecking will disable the scheduled cloud-sync job
+   Details
+   ```````
+    
    UCS MANAGER
       IP or hostname of UCS Manager
    USERNAME

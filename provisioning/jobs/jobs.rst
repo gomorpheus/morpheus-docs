@@ -8,4 +8,5 @@ Jobs allow for scheduled execution of nearly anything as Tasks Types include Bas
 Jobs are configured in the ``JOBS`` tab, and the ``JOB EXECUTIONS`` tab contains Job execution history with result output.
 
 .. include:: jobs_tab.rst
+.. include:: security_scan.rst
 .. include:: job_executions.rst

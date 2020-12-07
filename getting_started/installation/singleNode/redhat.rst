@@ -7,7 +7,7 @@ To get started installing |morpheus| on RHEL/RedHat a few prerequisite items are
 #. Make sure the machine is self resolvable to its own hostname.
 #. For RHEL 7.x, the Optional RPMS repo needs to be added for Reconfigure to succeed. Its does not need to be added For RHEL 8.x, as the Optional RPMs repo is now part of the appstream repo that is enabled by default in RHEL 8.x.
 
-   *  **RHEL 7.x Amazon:** ``yum-config-manager --enable rhui-REGION-rhel-server-optional``
+   *  **RHEL 7.x Amazon:** ``yum-config-manager --enable rhel-7-server-rhui-optional-rpms``
    *  **RHEL 7.x:** ``yum-config-manager --enable rhel-7-server-optional-rpms``
 
 .. note:: For Amazon users a Redhat subscription is not required if the appropriate yum REGION repository is added instead as demonstrated above.
@@ -80,7 +80,7 @@ Next we must install the package onto the machine and configure the morpheus ser
 
 .. code-block:: bash
 
-  sudo rpm -i morpheus-appliance_x.x.x-1.amd64.rpm
+  sudo rpm -i morpheus-appliance_x.x.x-1_amd64.rpm
   sudo morpheus-ctl reconfigure
 
 Once the installation is complete the web interface will automatically start up. By default it will be resolvable at ``https://your_machine_name`` and in many cases this may not be resolvable from your browser. The url can be changed by editing ``/etc/morpheus/morpheus.rb`` and changing the value of ``appliance_url``. After this has been changed simply run:

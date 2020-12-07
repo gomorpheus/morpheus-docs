@@ -31,7 +31,7 @@
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 
-extensions = ['recommonmark','sphinx_markdown_tables','sphinx_tabs.tabs']
+extensions = ['recommonmark','sphinx_markdown_tables','sphinx_tabs.tabs','sphinxcontrib.contentui','sphinxcontrib.images']
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
@@ -83,6 +83,14 @@ todo_include_todos = False
 # a list of builtin themes.
 #
 html_theme = 'sphinx_rtd_theme'
+
+html_use_opensearch = 'https://docs.morpheusdata.com'
+
+linkcheck_request_headers = {
+    "*": {
+        "Accept": "text/html,application/atom+xml",
+    }
+}
 
 # Theme options are theme-specific and customize the look and feel of a theme
 # further.  For a list of options available for each theme, see the
@@ -168,7 +176,7 @@ latex_elements = {
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-    (master_doc, 'morpheus421.tex', u'Morpheus Documentation',
+    (master_doc, 'morpheus5.0.0-1.tex', u'Morpheus Documentation',
      u'Morpheus', 'manual'),
 ]
 
@@ -200,14 +208,18 @@ def setup(app):
 
 rst_prolog = """
 .. |morpheus| replace:: Morpheus
-.. |morphbranch| replace:: v4.2
-.. |morphver| replace:: v4.2.2
-.. |rmqbranch| replace:: v3.5+
-.. |rmqver| replace:: v3.7.16
+.. |morphbranch| replace:: v5.0
+.. |morphver| replace:: v5.2.0
+.. |rmqbranch| replace:: v3.5-3.8
+.. |rmqver| replace:: v3.8.9
 .. |mysqlbranch| replace:: v5.7
-.. |mysqlver| replace:: v5.7.27
-.. |esbranch| replace:: v7.4
-.. |esver| replace:: v7.4.2
+.. |mysqlver| replace:: v5.7.32
+.. |mysqlverfips| replace:: v.5.7.29
+.. |esbranch| replace:: v7.x
+.. |esver| replace:: v7.8.1
+.. |tcver| replace:: v9.0.39
+.. |morphdat| replace:: Morpheus Data, LLC
+.. |nginxver| replace:: v1.19.3
 """
 
 
@@ -217,8 +229,6 @@ rst_prolog = """
 #****************
 #
 #       H2
-#****************
-#
 #================
 #----------------
 #^^^^^^^^^^^^^^^^

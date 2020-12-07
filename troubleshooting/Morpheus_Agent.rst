@@ -1,5 +1,5 @@
 |morpheus| Agent Install Troubleshooting
-****************************************
+=========================================
 
 When provisioning an Instance, there are network and configuration requirements to consider in order to successfully install the |morpheus| Agent. Typically, when a VM Instance is still in the provisioning phase long after the VM is up, the Instance is unable to reach |morpheus|. Depending on the Agent install mode, it could also mean |morpheus| is unable to reach the Instance.
 
@@ -12,7 +12,7 @@ In addition to the main Appliance URL in Administration > Settings, additional A
 .. TIP:: The |morpheus| UI current log, located at /var/log/morpheus/morpheus-ui/current, is very helpful when troubleshooting Agent installations.
 
 Agent Install Methods
-=====================
+---------------------
 
 Morpheus Agent installation supports multiple install methods. 
 
@@ -23,7 +23,7 @@ Morpheus Agent installation supports multiple install methods.
 - Manual 
 
 For All Agent Install Methods
------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 When an Instance is provisioned and the Agent does not install, verify the following for any Agent install mode:
 
@@ -43,14 +43,14 @@ When an Instance is provisioned and the Agent does not install, verify the follo
 * DNS is not configured and the node cannot resolve the appliance. If DNS cannot be configured, the IP address of the |morpheus| appliance can be used as the main or Cloud appliance
 
 SSH
----
+^^^
 
 * Port 22 is open for Linux images, and SSH is enabled
 
 * Credentials set on the image if using a custom or synced image. Credentials can be entered on images in the Provisioning > Virtual Images section
 
 WinRM
------
+^^^^^
 
 * Port 5985 must be open and WinRM enabled for Windows images
 * Credentials have been entered on the image if using a custom or synced image. Credentials can be entered on images in the Provisioning > Virtual Images section
@@ -58,7 +58,7 @@ WinRM
 .. NOTE:: Administrator user is required for Windows Agent install.
 
 VMware Tools (vmtools)
-----------------------
+^^^^^^^^^^^^^^^^^^^^^^
 
 * VMware Tools is installed on the template(s)
 * Credentials have been entered on the image if using custom or synced image. Credentials can be entered on images in the Provisioning > Virtual Images section
@@ -66,14 +66,14 @@ VMware Tools (vmtools)
 * Administrator User required for Windows (SID 500)
 
 Cloud-Init
-----------
+^^^^^^^^^^
 
 * Cloud-Init settings configured in Administration > Provisioning section
 * Cloud-Init installed on Virtual Image
 * ``Cloud-Init`` enabled on Virtual Image config
 
 Cloudbase-Init
---------------
+^^^^^^^^^^^^^^
 
 * Windows Administrator Password defined in ``Administration > Provisioning`` section
 * Cloudbase-Init installed on Virtual Image
@@ -82,19 +82,19 @@ Cloudbase-Init
 .. note:: Unattend Agent Installation and customizations are recommended over Cloudbase-Init
 
 Windows Unattended 
-------------------
+^^^^^^^^^^^^^^^^^^
 
 * Windows Administrator Password defined in ``Administration > Provisioning`` section
 * VMware: ``Force Guest Customizations`` set to forced on Virtual Image config when using DHCP (Static Assignment will already force Guest Customizations)
 * Nutanix & SCVMM: Virtual Image is sysprepped and shutdown, ``Sysprep Enabled`` flagged on Virtual Image config
 
 Manual
-------
+^^^^^^
 
 * Agent Install scripts can be downloaded from Morpheus and ran manually on the target host when required via ``Actions -> Download Agent Script`` on the managed Resource. Please note the script will be unique per managed Resource.
 
 Restarting the |morpheus| Agent
-===============================
+-------------------------------
 
 In some situations, it may necessary to restart the |morpheus| Agent on the host to re-sync communication from the Agent to the |morpheus| appliance.
 
@@ -111,29 +111,45 @@ The |morpheus| Windows Agent service can be restarted in Administrative Tools ->
 .. TIP:: The |morpheus| Remote Console is not dependent on Agent communication and can be used to install or restart the |morpheus| agent on an Instance.
 
 Uninstall |morpheus| Agent
-==========================
+--------------------------
 
-You can use the following to uninstall the linux agent:
+Linux Agents
+^^^^^^^^^^^^
+
+You can use the following to uninstall the linux agent (contains commands for both rpm and deb agents)
 
 .. code-block:: bash
 
-  sudo rm /etc/apt/sources.list.d/morpheus.list
-  sudo morpheus-node-ctl kill
-  sudo apt-get -y purge morpheus-node
-  sudo apt-get -y purge morpheus-vm-node
-  sudo systemctl stop morpheus-node-runsvdir
-  sudo rm -f /etc/systemd/system/morpheus-node-runsvdir.service
-  sudo systemctl daemon-reload
-  sudo rm -rf /var/run/morpheus-node
-  sudo rm -rf /opt/morpheus-node
-  sudo rm -rf /etc/morpheus/
-  sudo rm -rf /var/log/morpheus-node
-  sudo pkill runsv
-  sudo pkill runsvdir
-  sudo pkill morphd
-  sudo usermod -l morpheus-old morpheus-node
+  sudo rm /etc/apt/sources.list.d/morpheus.list \
+  sudo morpheus-node-ctl kill \
+  sudo apt-get -y purge morpheus-node \
+  sudo apt-get -y purge morpheus-vm-node \
+  sudo yum -y remove morpheus-node \
+  sudo yum -y remove morpheus-vm-node \
+  sudo yum clean all \
+  sudo systemctl stop morpheus-node-runsvdir \
+  sudo rm -f /etc/systemd/system/morpheus-node-runsvdir.service \
+  sudo systemctl daemon-reload \
+  sudo rm -rf /var/run/morpheus-node \
+  sudo rm -rf /opt/morpheus-node \
+  sudo rm -rf /etc/morpheus \
+  sudo rm -rf /var/log/morpheus-node \
+  sudo pkill runsv \
+  sudo pkill runsvdir \
+  sudo pkill morphd \
+  sudo usermod -l morpheus-old morpheus-node \
+
+Windows Agents
+^^^^^^^^^^^^^^
+  
+.. code-block:: bash
+
+  $app = Get-WmiObject -Class Win32_Product
+                -Filter "Name = 'Morpheus Windows Agent'"
+  $app.Uninstall()
+  
 
 CentOS/RHEL 7 Images
-====================
+--------------------
 
 For custom CentOS 7 images we highly recommend setting up Cloud-Init and fixing the network device names. More information for custom CentOS images can be found in the CentOS 7 image guide.

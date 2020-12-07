@@ -12,7 +12,7 @@ Cluster Types
 +--------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------+------------------------+
 | **Name**           | **Description**                                                                                                                                                                                                                  | **Supported Clouds** | **Provider Type**      |
 +--------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------+------------------------+
-| Kubernetes Cluster | Provisions by default a Kubernetes cluster consisting of 1 Kubernates Master and 3 Kubernetes Worker nodes. Additional system layouts available including Master clusters. Custom layouts can be created.                        | All                  | Kubernetes             |
+| Kubernetes Cluster | Provisions by default a Kubernetes cluster consisting of 1 Kubernetes Master and 3 Kubernetes Worker nodes. Additional system layouts available including Master clusters. Custom layouts can be created.                        | All                  | Kubernetes             |
 +--------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------+------------------------+
 | Docker Cluster     | Provisions by default a Morpheus controlled Docker Cluster with 1 host. Additional hosts can be added. Custom layouts can be created. Existing Morpheus Docker Hosts are automatically converted to Clusters upon 4.0.0 upgrade. | All                  | Docker                 |
 +--------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------+------------------------+
@@ -37,7 +37,7 @@ Cluster Permissions
 -------------------
 
 - Cluster Permissions
-    Each Cluster has Group, Tenant and Service Plan access permissions settings.
+    Each Cluster has Group, Tenant and Service Plan access permissions settings ("MORE" > Permissions on the Clusters list page).
 - Namespace Permissions
     Individual Namespaces also have Group, Tenant and Service Plan access permissions settings
 

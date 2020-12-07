@@ -11,25 +11,6 @@ Policies add governance, ease of use, cost-savings, and auditing features to |mo
 Policy Types
 ------------
 
-Policies: New s Policy
-  Backup Targets Policy Type added.
-
-Policies: New  Policy
-  Delayed Removals allow for soft deletion of Instances and Apps. Instead of deleting immediately, Instances and Apps with a Delayed Removal policy applied will be shutdown upon deletion request and hidden by default from the ui. The Instance/App will then be in ``Pending Removal`` status.
-
-  - If no action is taken, the resources will be deleted in the timeframe set in the policy.
-  - An ``Undo Delete`` action is available for Instance and Apps in pending removal status. Triggering ``Undo Delete`` will remove the scheduled deletion and restore the Instance or App status to stopped.
-  - A new ``Pending Removal`` filter has been added to ``/provisioning/instances`` and ``/provisioning/apps``
-  - Delayed Removal policies do not current apply to Docker Hosts or Discovered VM's.
-  - Available Scopes for Delayed Removal policies are Global, Cloud, Group, User and Role and can be applied to a single or multiple Tenants.
-
-Policies: New Message of the Day (MOTD) Policy
-  Message of the Day"" Policy for displaying Alerts in |morpheus|.
-
-  - Configurable as a pop-up or full-page notification with Info, Warning and Critical message types.
-  - Includes new Role Permission: Admin: Message Of the Day - None/Full
-
-
 Backup Creation
   Disable or enable the ability to create a backup when provisioning an instance.
 Backup Target
@@ -43,9 +24,9 @@ Expiration
 File Share Storage Quota
   Sets a Storage Quota for File Share usage (in GB) to scoped User, Role, Tenant or Global.
 Host Name
-  Pre-populates a fixed or editable name for Hosts and Virtual Machines using ${variable} naming patterns and/or text.
+  The name of the virtual machine. Pre-populates a fixed or editable name for Hosts and Virtual Machines using ${variable} naming patterns and/or text.
 Hostname
-  Pre-populates a fixed or editable name for hostnames/machine names using ${variable} naming patterns and/or text.
+  The ``hostname`` or ``computer name`` which is set in the OS and DNS. On some platforms, hostnames are restricted by length, spaces, and/or special characters. Pre-populates a fixed or editable name for hostnames/machine names using ${variable} naming patterns and/or text.
 Instance Name
   Pre-populates a fixed or editable name for Instance Names using ${variable} naming patterns and/or text.
 Max Containers
@@ -63,14 +44,18 @@ Max VMs
 Message of the Day (MOTD)
   Message of the Day"" Policy for displaying Alerts in |morpheus|. Configurable as a pop-up or full-page notification with Info, Warning and Critical message types.
 
-  .. note:: Requires Role Permission: ``Admin: Message Of the Day`` -> Full to create and manage MOTD Policies.
+  .. note:: Requires role permission: ``Admin: Message Of the Day`` set to "Full" to create and manage MOTD Policies.
 
+Network Quota
+  Limits the number of networks that can be created within the policy's scope
 Object Storage Quota
   Sets a Storage Quota for Object Storage usage (in GB) to scoped User, Role, Tenant or Global.
 Power Scheduling
-  Adds a Power Schedule for the Instances in a Group or Cloud. Power Schedules can be created in ``Operations -> Scheduling``
+  Adds a Power Schedule for the Instances in a Group or Cloud. Power Schedules can be created in ``Provisioning -> Automation -> Power Scheduling``
 Provision Approval
   Sets an Approval requirement for Provisioning into a Group or Cloud using Morpheus Approvals or an Approval Integration such a Service Now.
+Router Quota
+  Limits the number of routers that can be created within the policy's scope
 Shutdown
   Sets a shutdown timeframe in days upon provision after which the Instance will be stopped. Extensions can be auto-approved or require approval immediately or after x amount of auto-extensions using Morpheus Approvals or an Approval Integration.
 Storage Server Storage Quota
@@ -218,7 +203,7 @@ NAME PATTERN
     ${platform}
     ${platform == 'windows' ? 'w':'l'} # results in `w` for Windows platforms and `l` for Linux Platforms
     ${userId}
-    ${userName}
+    ${username}
     ${userInitials}
     ${provisionType}
     ${instance.instanceContext} # Environment Code
@@ -266,7 +251,7 @@ This ServiceNow approval integration enables users to use the |morpheus| Self-Se
 Power Schedules
 ^^^^^^^^^^^^^^^
 
-Power Schedules set daily times to shutdown and startup instances. Power schedule can be created and managed in ``Operations -> Scheduling``.
+Power Schedules set daily times to shutdown and startup instances. Power schedule can be created and managed in ``Provisioning -> Automation -> Power Scheduling``
 
 .. NOTE:: Power Schedule Policies will apply to Instances created in a Group or Cloud after the Policy is enabled, and will not apply to pre-existing Instances.
 
@@ -280,7 +265,7 @@ ENFORCEMENT TYPE
   * User Configurable: Power Schedule choice is editable by User during provisioning.
   * Fixed Schedule: User cannot change Power Schedule setting during provisioning.
 POWER SCHEDULE
-  Select Power Schedule to use in the Policy. Power schedule can be added in ``Operations -> Scheduling``
+  Select Power Schedule to use in the Policy. Power schedule can be added in ``Provisioning -> Automation -> Power Scheduling``
 TENANTS
   Leave blank for the Policy to apply to all Tenants, or search for and select Tenants to enforce the Policy on specific Tenants.
 
@@ -303,8 +288,6 @@ Max Storage
     Sets the maximum combined total of Storage (capacity) for Instances per Policy Scope.
 Max VMs
     Sets the maximum total of managed Virtual Machines per Policy Scope.
-Scope
-
 TENANTS
     Leave blank for the Policy to apply to all Tenants, or search for and select Tenants to enforce the Policy on specific Tenants.
 

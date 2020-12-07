@@ -1,7 +1,7 @@
 Installation Overview
 ---------------------
 
-.. important:: |morpheus| v4.2.0 enhanced security configuration restricts incoming appliance connections to TLS v1.2, potentially impacting front-end load balancer monitoring/health checks that support only TLS v1.1 or lower, as well as |morpheus| Agent installations for Windows nodes using .net versions that do not support TLS v1.2. Refer to TLS 
+.. important:: |morpheus| v4.2.0 enhanced security configuration restricts incoming appliance connections to TLS v1.2, potentially impacting front-end load balancer monitoring/health checks that support only TLS v1.1 or lower, as well as |morpheus| Agent installations for Windows nodes using .net versions that do not support TLS v1.2. Refer to TLS
 
 	|morpheus| comes packaged as a ``debian`` or ``yum`` based package. The default configuration installs all required services on a single vm or bare metal Host. Morpheus can be configured in a distributed architecture to use one or multiple external services, and multiple application Hosts can be configured for High Availability configurations.
 
@@ -12,7 +12,7 @@ Morpheus can optionally be configured to use external Database, Messaging, and/o
 Install Packages
 ^^^^^^^^^^^^^^^^
 
-|morpheus| Release Package urls can be obtained from `https://morpheushub.com <https://morpheushub.com>`_ 
+|morpheus| Release Package urls can be obtained from `https://morpheushub.com <https://morpheushub.com>`_
 
 Configuration Options
 ^^^^^^^^^^^^^^^^^^^^^
@@ -35,7 +35,7 @@ There are four primary tiers of services represented within the Morpheus applian
 
 Application Tier
 `````````````````
-The application tier is easily installed with the same Debian or yum repository package that Morpheus is normally distributed with. Advanced configuration allows for the additional tiers to be skipped and leave only the “stateless” services that need run. These stateless services include Nginx, Tomcat, and Redis (to be phased out at a later date). These machines should also have at least 8gb of Memory. They can be configured across all regions and placed behind a central load-balancer or Geo based load-balancer. They typically connect to all other tiers as none of the other tiers talk to each other besides through the central application tier. One final piece when it comes to setting up the Application tier is a shared storage means is necessary when it comes to maintaining things like deployment archives, virtual image catalogs, backups, etc. These can be externalized to an object storage service such as amazon S3 or Openstack Swiftstack as well. If not using those options a simple NFS cluster can also be used to handle the shared storage structure.
+The application tier is easily installed with the same Debian or yum repository package that Morpheus is normally distributed with. Advanced configuration allows for the additional tiers to be skipped and leave only the “stateless” services that need run. These stateless services include Nginx and Tomcat. These machines should also have at least 8gb of Memory. They can be configured across all regions and placed behind a central load-balancer or Geo based load-balancer. They typically connect to all other tiers as none of the other tiers talk to each other besides through the central application tier. One final piece when it comes to setting up the Application tier is a shared storage means is necessary when it comes to maintaining things like deployment archives, virtual image catalogs, backups, etc. These can be externalized to an object storage service such as amazon S3 or Openstack Swiftstack as well. If not using those options a simple NFS cluster can also be used to handle the shared storage structure.
 
 Transactional Database Tier
 ````````````````````````````

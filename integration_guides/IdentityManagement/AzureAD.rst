@@ -39,22 +39,43 @@ This guide assumes an Azure AD Application has already been created in Azure wit
    * Reply URL (Assertion Consumer Service URL)
         Enter the ``SP ACS URL`` from the |morpheus| Identity Source Integration above.
 
-#. Save and click the `Test SAML Settings` button. Azure will confirm conneciton with |morpheus|
-#. In Azure SSO config step 3, select ``user.userprincipalname`` as the User Identifier.
-#. Also in step 3, select "View and edit all other user attributes" the copy the NAMESPACE url for the following:
+#. Save and click the `Test SAML Settings` button. Azure will confirm connection with |morpheus|
+#. In Azure's `User Attributes & Claims` settings (step 2), select ``Add a group claim`` with value ``user.groups [SecurityGroup]``
 
-   Name ``givenname`` Value: ``user.givenname``
-      Namespace: http://schemas.xmlsoap.org/ws/2005/05/identity/claims/givenname
-   Name: ``surname`` Value: ``user.surname``
-      Namespace: http://schemas.xmlsoap.org/ws/2005/05/identity/claims/surname
-   Name: ``emailaddress`` Value: ``user.mail``
-      Namespace: http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress
+   **User Attributes & Claims** config
+   
+   .. list-table:: **Required Claim**
+      :widths: auto
+      :header-rows: 1
 
-   .. NOTE:: The Namespace URLs will be used in the `Role Attribute Value` section in the |morpheus| Identity Source Integration.
+      * - Claim name
+        - Value
+      * - Unique User Identifier (Name ID)
+        - user.userprincipalname [nameid-format:emailAddress]
+   |
+    
+   .. list-table:: **Additional Claims**
+      :widths: auto
+      :header-rows: 1
 
-#. In Azure SSO config step 4, if one has not been generated, select ``Create new certificate`` to generate a new SAML Signing Certificate.
+      * - Claim name
+        - Value
+      * - http://schemas.microsoft.com/ws/2008/06/identity/claims/groups
+        - user.groups [SecurityGroup]
+      * - http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress
+        - user.mail
+      * - http://schemas.xmlsoap.org/ws/2005/05/identity/claims/givenname
+        - user.givenname
+      * - http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name
+        - user.userprincipalname
+      * - http://schemas.xmlsoap.org/ws/2005/05/identity/claims/surname
+        - user.surname
+
+
+#. Copy or keep available for reference the the Claim Names/Namespace URLs for entering Role Attribute Values in the |morpheus| Identity Source Integration.
+#. In Azure SSO config, if one has not been generated, select ``Create new certificate`` to generate a new SAML Signing Certificate.
 #. Enter a valid email address to receive certificate expiration notifications (these are not |morpheus|-generated email).
-#. In Azure SSO config step 5, select ```Configure {AD App Name}``
+#. In Azure SSO config, select ```Configure {AD App Name}``
 #. In the `Configure sign-on` pane, copy the following:
 
    * SAML Single Sign-On Service URL
@@ -112,6 +133,8 @@ Additional Role Mappings
 
 ENABLE ROLE MAPPING PERMISSION
   When selected, Tenant users with appropriate rights to view and edit Roles will have the ability to set role mapping for the Identity Source integration. This allows the Tenant user to edit only the role mappings without viewing or potentially editing the Identity Source configuration.
+MANUAL ROLE ASSIGNMENT
+  When selected, administrators can manually edit Roles for users created through this identity source integration from the user detail page (Administration > Users > Selected user).
 
 .. NOTE:: For more on Identity Source role mapping permissions, see the `associated guide <https://support.morpheusdata.com/s/article/How-to-enable-Subtenant-admins-to-edit-Identity-Source-role-mapping?language=en_US>`_ in our KnowledgeBase.
 
