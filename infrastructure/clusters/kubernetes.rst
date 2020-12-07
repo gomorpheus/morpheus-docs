@@ -159,6 +159,8 @@ Adding Worker Nodes
 #. Select :guilabel:`NEXT`
 #. Review and select :guilabel:`COMPLETE`
 
+.. note:: Ensure there is a default StorageClass available when using a Morpheus Kubernetes cluster with OpenEBS so that Kubernetes specs or HELM templates that use a default StorageClass for Persistent Volume Claims can be utilised.
+
 Kubernetes Cluster Detail Pages
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
