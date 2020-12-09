@@ -184,8 +184,6 @@ Next simply download the relevant ``.rpm`` package for installation. This packag
 
 Next, we must install the package onto the machine and configure the morpheus services:
 
-.. NOTE:: If installing on RHEL 8.0 or 8.1, ensure the PowerTools repo is enabled by running the command ``sudo dnf config-manager –set-enabled PowerTools`` prior to running the reconfigure step shown below. The reconfigure will fail if PowerTools is not enabled. RHEL 8.2+ enables PowerTools by default and this check should not be necessary in that case.
-
 .. code-block:: bash
 
   sudo rpm -i morpheus-appliance_x.x.x-1_amd64.rpm
