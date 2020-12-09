@@ -63,7 +63,7 @@ The Tenants page displays a list of all Tenants. This page enables users to Crea
 Click the Tenant Name to drill into the Tenant View where you can again Edit or Delete the Tenant, as well as Create Users, Edit Users, and Delete Users users belonging to the Tenant.
 
 Create Tenants
-^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^
 
 To Create Tenants:
 
@@ -78,7 +78,7 @@ To Create Tenants:
    - Base Role
    - Currency
 
-# Within the Advanced Options section, track customer data related to the Tenant if needed:
+#. Within the Advanced Options section, track customer data related to the Tenant if needed:
 
    - Account Number
    - Account Name
