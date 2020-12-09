@@ -8,7 +8,7 @@ To get started installing |morpheus| on RedHat, a few prerequisite items are req
 
 #. Configure ``firewalld`` to allow access from users on port 443 (Or remove the firewall if not required)
 #. Make sure the machine is self resolvable to its own hostname
-#. For RHEL 7.x, the optional RPMs repository must be added for the reconfigure to succeed at the end. This is not a requirement for installing on RHEL 8.x, as the optional RPMs repo is now part of the appstream repo that is enabled by default in RHEL 8.x. Consult the RHEL 8.x installation instructions in the next section if needed
+#. For RHEL 7.x, the optional RPMs repository must be added for the reconfigure to succeed at the end. This is not a requirement for installing on RHEL 8.x, as the optional RPMs repo is now part of the ``appstream`` repo that is enabled by default in RHEL 8.x. Consult the RHEL 8.x installation instructions in the next section if needed
 
    *  **RHEL 7.x Amazon:** ``yum-config-manager --enable rhel-7-server-rhui-optional-rpms``
    *  **RHEL 7.x:** ``yum-config-manager --enable rhel-7-server-optional-rpms``
@@ -183,6 +183,8 @@ Next simply download the relevant ``.rpm`` package for installation. This packag
 .. NOTE:: The example command above contains an example download URL. The actual URL for your specific platform and |morpheus| version can be found at morpheushub.com.
 
 Next, we must install the package onto the machine and configure the morpheus services:
+
+.. NOTE:: If installing on RHEL 8.0 or 8.1, ensure the PowerTools repo is enabled by running the command ``sudo dnf config-manager –set-enabled PowerTools`` prior to running the reconfigure step shown below. The reconfigure will fail if PowerTools is not enabled. RHEL 8.2+ enables PowerTools by default and this check should not be necessary in that case.
 
 .. code-block:: bash
 
