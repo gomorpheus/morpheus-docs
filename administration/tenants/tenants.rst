@@ -8,52 +8,42 @@ Overview
 
 A Tenant in |morpheus| is an isolated environment with unique users and workloads. The Master Tenant is the default Tenant in |morpheus|, created upon installation. All other Tenants outside of the Master Tenants are Subtenants.
 
-- The Master Tenant is the default Tenant created during the installation of |morpheus|.
-- All Tenants created after installation are Subtenants. Only one Master Tenant can exist.
+- The Master Tenant is the default Tenant created during the installation of |morpheus|
+- All Tenants created after installation are Subtenants. Only one Master Tenant can exist
 - The Master Tenant creates and controls all Subtenants.
-- Tenants are isolated environments.
-    - Tenants have unique users
-    - Tenants have unique workloads
-    - Tenants have unique Groups
-- The Master Tenant can share or assign Master Tenants resources to Subtenants
+- Tenants are isolated environments with unique users, workloads, and Groups
+- The Master Tenant can share or assign its resources to Subtenants
 - Subtenants cannot share their resources with other Tenants
 - Subtenants cannot see resources from other Subtenants
-- Subtenants can only access Master Tenant resources that have been set to Public visibility or assigned to the Subtenant.
+- Subtenants can only access Master Tenant resources that have been set to Public visibility or specifically assigned to the Subtenant
 
 Roles
-^^^^^
+-----
 
-It is important to understand Role types and permission when creating and managing Tenants.
+There are two Role types in |morpheus|, Tenant Roles and User Roles. Understanding these Role types is key to effectively administering Role permissions in |morpheus|. These two Role types are discussed in greater detail in this section.
 
 Tenant Roles
-    Tenant Roles are for capping Subtenant permissions by setting the maximum permissions for a Tenant. User Roles in a Tenant cannot exceed the permissions of the Tenant Role which is assigned to the Tenant.
-       - Tenant Roles set the maximum permissions for a Tenant
-       - User Roles in a Tenant cannot exceed the permissions of the Tenant Role.
-       - A Tenant Role can be set on one or multiple Tenants
-       - Tenant Roles determine public Cloud access for the Tenant.
-          - All Clouds in the Master Tenant which the have Visibility set to `Public` will show as options in the Tenant Role Cloud Access.
-          - Only Master Tenant Clouds given access in a Tenant's assigned Tenant Role will be accessible in the Sub Tenant.
+^^^^^^^^^^^^
 
-          .. IMPORTANT:: Tenant Roles cap permissions on all Subtenant User Roles. Subtenant User Roles can be created in the Subtenant with lesser permissions than the Tenant Role allows. Tenant Roles are designed for a Master Tenant Admin to set max permissions for the Tenant, and a Subtenant Admin to configure User Roles inside the Subtenant.
+Tenant Roles set the maximum permission levels for Users in the Tenant. User Role permissions will not exceed the permissions of the Tenant Role.
+
+- Tenant Roles set the maximum permissions for a Tenant
+- User Roles in a Tenant cannot exceed the permissions of the Tenant Role
+- A Tenant Role can be assigned to one or multiple Tenants
+- Tenant Roles determine Cloud access for the Subtenant such that all Clouds in the Master Tenant which have visibility set to Public will show as options in the Tenant Role Cloud Access tab
+- Only Master Tenant Clouds given access in the Tenant Role will be accessible in the Subtenant
+
+.. IMPORTANT:: Tenant Roles cap permissions on all Subtenant User Roles. User Roles can be created in the Subtenant with lesser permissions than the Tenant Role allows. Tenant Roles are designed for a Master Tenant Admin to set max permissions for the Subtenant, and a Subtenant Admin to configure User Roles inside the Subtenant.
 
 User Roles
-   User Roles determine feature, Group, and Instance Type access for all Users. For multi-tenancy, there are two types of User Roles, Single-Tenant User Roles and Multi-Tenant User Roles.
-    Single-Tenant User Roles
-      Single-Tenant User Roles only exist in the Tenant they exist in. All Roles created in a Subtenant are Single-Tenant User Roles.
-    Multi-Tenant User Roles
-      The Master Tenant (and only the Master Tenant) can create Multi-Tenant User Roles. These Roles are for automatically creating base User Roles in Subtenants.
-        - Multi-Tenant User Roles will automatically create matching User Roles in all Tenants
+^^^^^^^^^^
 
-        .. NOTE:: Multi-Tenant User Roles are intended to make Subtenant User Role creation easier, so Master Tenant Users do not have to re-create the same base Subtenant Users Roles for every Subtenant. Multi-Tenant User Roles are not a single Role across Tenants, but more like a template that creates new Subtenant User Roles that can then be managed in the Sub Tenant.
+User Roles determine feature, Group, and Instance Type access for all Users. In a multi-Tenant environment, there are two types of User Roles: Single-Tenant User Roles and Multi-Tenant User Roles.
 
-        - Multi-Tenant User Role changes will propagate to all Subtenants unless within the Subtenant
-        - Once a Multi-Tenant User Role is edited inside a Subtenant, it is no longer linked to the Multi-Tenant User Role and is it own unique Role.
-        - At least one Multi-Tenant User Role is required before Users can be created within a Subtenant.
+- **Single-Tenant User Roles:** These exist solely in the Tenant they are created in. All Roles created in a Subtenant will be Single-Tenant User Roles
+- **Multi-Tenant User Roles:** The Master Tenant can create Multi-Tenant User Roles. These Roles are automatically seeded into Subtenants and can be assigned to Subtenant Users. Changes to Multi-Tenant User Roles made in the Master Tenant are propagated to all Subtenants. However, once a Multi-Tenant User Role is edited inside a Subtenant, it is no longer linked to the Multi-Tenant User Role and becomes its own unique Role. It will no longer receive propagated changes.
 
-        .. IMPORTANT:: Deleting a Multi-Tenant User Role from the Master tenant will not remove that Role from Subtenants.
-
-        .. IMPORTANT:: Renaming a Multi-Tenant User Role from the Master tenant will not rename Roles created from the Multi-Tenant User Role in Subtenants.
-
+.. NOTE:: Multi-Tenant User Roles are intended to make Subtenant User Role creation easier, so Master Tenant Users do not have to re-create the same base Subtenant Users Roles for every Subtenant. Multi-Tenant User Roles are not a single Role across Tenants, but more like a template that creates new Subtenant User Roles that can then be managed in the Sub Tenant.
 
 Tenants
 --------
