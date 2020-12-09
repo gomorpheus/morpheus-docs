@@ -78,7 +78,13 @@ To Create Tenants:
    - Base Role
    - Currency
 
-#. Click the Save Changes button.
+# Within the Advanced Options section, track customer data related to the Tenant if needed:
+
+   - Account Number
+   - Account Name
+   - Customer Number
+
+#. Click the :guilabel:`Save Changes`
 
 Edit Tenant
 ^^^^^^^^^^^^
