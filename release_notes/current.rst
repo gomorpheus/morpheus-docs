@@ -142,7 +142,7 @@ Fixes
 - Agent: Auto-recovery settings now enabled for Morpheus Windows Agent service. :superscript:`+`
 - Amazon: ALB’s: Fix for adding ALBs in a subtenant :superscript:`+`
 - Amazon: Fixed ``Security Groups`` stat always showing ``0`` on the Resources tab of the Cloud summary page :superscript:`+`
-- Amazon: Fixed running state sync for Amazon Instance/Container status when Agent is not installed on associated vm. :superscript:`-2`
+- Amazon: Fixed running state sync for Amazon Instance/Container status when |morpheus| Agent is not installed on associated VM :superscript:`-2`
 - Amazon: Fixed S3 Bucket create and delete not utilizing AWS Cloud API Proxy config
 - Ansible Tower: Fixed invalid Ansible Tower integration link in cloud details pages :superscript:`+`
 - Ansible: Ansible integrations now utilize Global Proxy config for repo connections
@@ -150,7 +150,7 @@ Fixes
 - API/CLI: Fixed Task creation when using a repository source :superscript:`+`
 - API/CLI: Validation and response added when passing invalid value for ``POST /api/roles`` : ``roleType`` :superscript:`+`
 - Apps: Fixed inconsistent app, node and execution statuses during App provisioning when a Workflow Task fails during the Provision phase :superscript:`+`
-- Apps: Fixed issue with Zone selection and Instance Configurations. :superscript:`-2`
+- Apps: Fixed issue with Zone selection and Instance configurations :superscript:`-2`
 - Apps: Updated the NAME property for VM and Container lists on App Detail views to match Instance Detail views :superscript:`+`
 - Archives: Fixed timeout issue with archive files > 1GB caused by legacy Archives path set in default Nginx config
 - Azure: Fix for automated Active Directory domain joins due to ``-NewName`` :superscript:`+`
@@ -178,7 +178,7 @@ Fixes
 - RDS: Fixed issue with editing Power Schedules for AWS RDS Instances :superscript:`+`
 - Reconfigure: Fixed page error when decimal is specified in a disk size during reconfigure :superscript:`+`
 - Reports: Fixed issue with Instance Inventory Summary Report potentially showing old resource values on reconfigured Instances :superscript:`+`
-- Role: Fix issues with Persona Permissions not copying to Multitenant roles, Default Persona is copied now too. :superscript:`-2`
+- Role: Fixed issues with Persona permissions not copying to Multitenant roles, the default Persona is copied now as well :superscript:`-2`
 - SCVMM: Adding a disk, resizing a data disk, or removing a data disk during reconfigure will no longer trigger a restart :superscript:`+`
 - SCVMM: Fixed adding disks during reconfigure of Generation 2 virtual machines :superscript:`+`
 - SCVMM: Fixed issue where selected SCVMM Cloud was not being passed SCVMM VM config :superscript:`+`
