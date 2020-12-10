@@ -150,7 +150,7 @@ Fixes
 - API/CLI: Fixed Task creation when using a repository source :superscript:`+`
 - API/CLI: Validation and response added when passing invalid value for ``POST /api/roles`` : ``roleType`` :superscript:`+`
 - Apps: Fixed inconsistent app, node and execution statuses during App provisioning when a Workflow Task fails during the Provision phase :superscript:`+`
-- Apps: Fixed issue with Zone selection and Instance configurations :superscript:`-2`
+- Apps: Fixed issue with Zone selection and Instance Configurations :superscript:`-2`
 - Apps: Updated the NAME property for VM and Container lists on App Detail views to match Instance Detail views :superscript:`+`
 - Archives: Fixed timeout issue with archive files > 1GB caused by legacy Archives path set in default Nginx config
 - Azure: Fix for automated Active Directory domain joins due to ``-NewName`` :superscript:`+`
