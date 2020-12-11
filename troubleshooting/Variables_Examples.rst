@@ -1,11 +1,45 @@
 Variables
 =========
 
-The following are the map structures passed to scripts and templates during provisioning inside of a ``<%= %>`` block.
-
-Variables can also be passed in Naming Policies using ``${ }`` block.
+A vast number of variables are available for use in Tasks, Scripts, Templates, Resource Names, Cloud-Init User Data and Option List configs. 
 
 .. IMPORTANT:: Variables are case sensitive
+
+Pre-Provision Vars
+------------------
+
+A subset of variables are available for Instance, Host Name and Hostnames. These can be passed inside ``${ }`` blocks during provisioning or in relevant policy configs.
+
+Instance Naming Policy example: ``${userInitials}-${cloudCode}-${platform == 'windows' ? 'W' : 'L'}-${sequence}``
+
+Commonly used variables for naming patterns include:
+
+.. code-block:: bash
+
+		${groupName}
+		${groupCode}
+		${cloudName}
+		${cloudCode}
+		${type}
+		${accountId}
+		${account}
+		${accountType}
+		${platform}
+		${platform == 'windows' ? 'w':'l'} # results in `w` for Windows platforms and `l` for Linux Platforms
+		${userId}
+		${username}
+		${userInitials}
+		${provisionType}
+		${instance.instanceContext} # Environment Code
+		${sequence} # results in 1
+		${sequence+100} # results in 101
+		${customOption.name}
+		${sequence.toString().padLeft(5,'0')} #results in 00001
+
+An example Instance Name Policy using a naming pattern with User Initials, Cloud Code, Instance Type, and a sequential number starting at 3000 is ``${userInitials}-${cloudCode}-${type}-${sequence+3000}``, resulting in an Instance Name of **md-vmwd3-centos-3001** for the first instance, followed by **md-vmwd3-centos-3002** and so on.
+
+Syntax Examples
+---------------
 
 PowerShell Example: ``$app_id = "<%= instance.metadata.app_id %>"``
 
@@ -15,15 +49,14 @@ Python Example: ``hostname = morpheus['server']['hostname']``
 
 HTTP Body Example: ``{"name": "<%= instance.createdByUsername %>"}``
 
-Instance Naming Policy example: ``${userInitials}-${cloudCode}-${platform == 'windows' ? 'W' : 'L'}-${sequence}``
-
-.. TIP:: Variables can be extremely useful when utilized in the environment tab, metadata, and environment variables.
-
 .. image:: /images/troubleshooting/Metadata-Enviornment-Variable-Spot
 
 .. image:: /images/troubleshooting/Tags-Variable-Spot
 
 .. NOTE:: customOptions values are defined from custom Option Types.
+
+Common Examples
+---------------
 
 .. code-block:: bash
 
@@ -170,6 +203,8 @@ Instance Naming Policy example: ``${userInitials}-${cloudCode}-${platform == 'wi
 			zone.scalePriority: <%=zone.scalePriority%>
 			cypher: <%=cypher.read('secret/hello')%>
 
+Instance
+--------
 
 .. code-block:: bash
 
@@ -208,38 +243,44 @@ Instance Naming Policy example: ``${userInitials}-${cloudCode}-${platform == 'wi
 				instanceTypeName
 			}
 
-		.. code-block:: bash
+Container 
+---------
 
-			container {
-				configGroup,
-				configId,
-				configPath,
-				configRole,
-				containerTypeCode,
-				containerTypeShortName,
-				cores,
-				dataPath,
-				dateCreated,
-				domainName,
-				environmentPrefix,
-				externalIp,
-				hostMountPoint,
-				hostname,
-				image,
-				internalHostname,
-				internalIp,
-				logsPath,
-				memory,
-				planCode,
-				provisionType,
-				server:{},
-				serverId,
-				sshHost,
-				status,
-				storage,
-				version,
-				containerTypeName
-			}
+.. code-block:: bash
+
+	container {
+		configGroup,
+		configId,
+		configPath,
+		configRole,
+		containerTypeCode,
+		containerTypeShortName,
+		cores,
+		dataPath,
+		dateCreated,
+		domainName,
+		environmentPrefix,
+		externalIp,
+		hostMountPoint,
+		hostname,
+		image,
+		internalHostname,
+		internalIp,
+		logsPath,
+		memory,
+		planCode,
+		provisionType,
+		server:{},
+		serverId,
+		sshHost,
+		status,
+		storage,
+		version,
+		containerTypeName
+	}
+
+Server
+------
 
 .. code-block:: bash
 
@@ -313,6 +354,9 @@ Instance Naming Policy example: ``${userInitials}-${cloudCode}-${platform == 'wi
 				}
 			}
 
+Zone (Cloud)
+------------
+
 .. code-block:: bash
 
 			zone {
@@ -329,6 +373,9 @@ Instance Naming Policy example: ``${userInitials}-${cloudCode}-${platform == 'wi
 				scalePriority
 			}
 
+Group (Site)
+------------
+
 .. code-block:: bash
 
 			group {
@@ -337,9 +384,661 @@ Instance Naming Policy example: ``${userInitials}-${cloudCode}-${platform == 'wi
 				datacenterId,
 				name
 			}
+			
+Custom Options (Option Types)
+-----------------------------
 
 .. code-block:: bash
 
 			customOptions {
 				customOptions.fieldName
 			}
+
+Global
+------
+
+ex: ``<%= morpheus.user.id %>``
+
+.. code-block:: bash
+
+			"morpheus":{
+			   "user":{
+			      "id":value,
+			      "account":{
+			         "id":value
+			      },
+			      "username":"value",
+			      "displayName":"value",
+			      "email":"value",
+			      "firstName":"value",
+			      "lastName":"value",
+			      "dateCreated":0000-00-00T00:00:00Z,
+			      "lastUpdated":0000-00-00T00:00:00Z,
+			      "enabled":true/fase,
+			      "accountExpired":true/false,
+			      "accountLocked":false,
+			      "passwordExpired":false,
+			      "defaultGroupId":value,
+			      "defaultZoneId":value,
+			      "hasLinuxUser":true/false,
+			      "hasWindowsUser":true/false,
+			      "role":{
+			         "id":value
+			      },
+			      "instanceLimits":value
+			   },
+			}
+
+Instance Map Example 
+--------------------
+
+.. code-block:: bash
+
+		"instance":{
+		   "poolProviderType":value,
+		   "isVpcSelectable":true/false,
+		   "smbiosAssetTag":value,
+		   isEC2:true/false,
+		   "resourcePoolId":value,
+		   "hostId":value,
+		   "createUser":true/false,
+		   "nestedVirtualization":value,
+		   "vmwareFolderId":value,
+		   "expose":[
+		      
+		   ],
+		   "noAgent":value,
+		   "customOptions":value,
+		   "createBackup":true/false,
+		   "memoryDisplay":"MB/GB",
+		   "backup":{
+		      "veeamManagedServer":,
+		      "createBackup":true/false,
+		      "jobAction":"value",
+		      "jobRetentionCount":value
+		   },
+		   "expireDays":value,
+		   "layoutSize":value,
+		   "lbInstances":[
+		      
+		   ],
+		   "evars":{
+		      "evar1":{
+		         "value":value,
+		         "export":true/false,
+		         "masked":true/false,
+		         "name":"value"
+		      },
+		      "evar2":{
+		         "value":value,
+		         "export":true/false,
+		         "masked":true/false,
+		         "name":"value"
+		      }
+		   },
+		   "id":value,
+		   "instanceTypeName":"value",
+		   "instanceTypeCode":"value",
+		   "provisionType":"value",
+		   "layoutId":value,
+		   "layoutCode":value,
+		   "layoutName":"value",
+		   "instanceVersion":"value",
+		   "plan":value,
+		   "name":value,
+		   "displayName":value,
+		   "description":value,
+		   "environmentPrefix":value,
+		   "hostname":value,
+		   "domainName":"value",
+		   "assignedDomainName":,
+		   "firewallEnabled":true/false,
+		   "status":"value",
+		   "userStatus":"value",
+		   "scheduleStatus":"value",
+		   "networkLevel":"value",
+		   "instanceLevel":"value",
+		   "deployGroup":value,
+		   "instanceContext":value,
+		   "autoScale":true/false,
+		   "statusMessage":value,
+		   "expireDate":0000-00-00T00:00:00Z,
+		   "tags":"value",
+		   "storage":value(bytes),
+		   "memory":value(bytes),
+		   "cores":1,
+		   "configId":value,
+		   "configGroup":value,
+		   "configRole":value,
+		   "ports":value,
+		   "sslEnabled":true/false,
+		   "sslCertId":value,
+		   "serviceUsername":value,
+		   "servicePassword":value,
+		   "adminUsername":value,
+		   "adminPassword":value,
+		   "createdByUsername":"value",
+		   "createdByEmail":"value",
+		   "createdByFirstName":"value",
+		   "createdByLastName":"value",
+		   "createdById":value,
+		   "metadata":{
+		      
+		   },
+		   "createdByUser":{
+		      "username":"value",
+		      "displayName":"value",
+		      "firstName":"value",
+		      "lastName":"value",
+		      "email":"value",
+		      "linuxUsername":"value",
+		      "windowsUsername":"value"
+		   },
+		   "containers":[
+		      {
+		         "maxMemory":value(bytes),
+		         "maxStorage":value(bytes),
+		         "maxCpu":value,
+		         "maxCores":value,
+		         "coresPerSocket":value,
+		         "poolProviderType":value,
+		         "isVpcSelectable":true/false,
+		         "smbiosAssetTag":value,
+		         isEC2:true/false,
+		         "resourcePoolId":value,
+		         "hostId":value,
+		         "createUser":true/false,
+		         "nestedVirtualization":value,
+		         "vmwareFolderId":value,
+		         "expose":[
+		            
+		         ],
+		         "noAgent":true/false,
+		         "vm":true/false,
+		         "networkInterfaces":[
+		            {
+		               "id":value,
+		               "network":{
+		                  "id":value,
+		                  "group":value,
+		                  "subnet":value,
+		                  "dhcpServer":true/false,
+		                  "name":value,
+		                  "pool":{
+		                     "id":value,
+		                     "name":value
+		                  }
+		               },
+		               "ipAddress":value,
+		               "networkInterfaceTypeId":value,
+		               "ipMode":
+		            }
+		         ],
+		         "volumes":[
+		            {
+		               "volumeCustomizable":true/false,
+		               "readonlyName":true/false,
+		               "controllerId":value,
+		               "maxIOPS":value,
+		               "displayOrder":value,
+		               "unitNumber":value,
+		               "minStorage":value(bytes),
+		               "configurableIOPS":true/false,
+		               "controllerMountPoint":0000:0:00:0,
+		               "vId":value,
+		               "size":value,
+		               "name":"root",
+		               "rootVolume":true/false,
+		               "storageType":value,
+		               "typeId":value,
+		               "id":value,
+		               "resizeable":true/false,
+		               "datastoreId":"value",
+		               "maxStorage":value(bytes)
+		            }
+		         ],
+		         "storageController":value,
+		         "datastoreId":value,
+		         "networkId":value,
+		         "cpuCount":value,
+		         "memorySize":value,
+		         "osDiskSize":value,
+		         "publicKeyId":value,
+		         "storagePodId":value,
+		         "vmwareUsr":value,
+		         "vmwarePwd":value,
+		         "domainName":"value",
+		         "hostname":value,
+		         "networkType":value,
+		         "ipAddress":value,
+		         "netmask":value,
+		         "gateway":value,
+		         "dnsServers":value,
+		         "resourcePool":value,
+		         "folder":value,
+		         "vmwareCustomSpec":value,
+		         "hosts":{
+		            value
+		         },
+		         "evars":{
+		            
+		         },
+		         "id":value,
+		         "name":value,
+		         "containerTypeName":value,
+		         "containerTypeCode":value,
+		         "containerTypeShortName":"value",
+		         "containerTypeCategory":"value",
+		         "provisionType":"value",
+		         "dataPath":"value",
+		         "logsPath":"value",
+		         "configPath":"value",
+		         "planCode":value,
+		         "dateCreated":0000-00-00T00:00:00Z,
+		         "status":"running",
+		         "environmentPrefix":"value",
+		         "version":"value",
+		         "image":"value",
+		         "internalHostname":value,
+		         "storage":value(bytes),
+		         "memory":value(bytes),
+		         "cores":value,
+		         "internalIp":value,
+		         "externalIp":value,
+		         "sshHost":value,
+		         "hostMountPoint":value,
+		         "configId":value,
+		         "configGroup":value,
+		         "configRole":value,
+		         "certificatePath":value,
+		         "certificateStyle":value,
+		         "changeManagementExtId":value,
+		         "changeManagementServiceId":value,
+		         "serverId":value,
+		         "server":{
+		            "poolProviderType":value,
+		            "isVpcSelectable":true/false,
+		            "smbiosAssetTag":value,
+		            isEC2:true/false,
+		            "resourcePoolId":value,
+		            "hostId":value,
+		            "createUser":true/false,
+		            "nestedVirtualization":value,
+		            "vmwareFolderId":value,
+		            "noAgent":value,
+		            "id":value,
+		            "uuid":value,
+		            "serverTypeName":"value",
+		            "serverTypeCode":"value",
+		            "computeTypeName":"value",
+		            "computeTypeCode":"value",
+		            "parentServerId":value,
+		            "plan":value,
+		            "visibility":"value",
+		            "osTypeCode":value,
+		            "sourceImageId":value,
+		            "name":value,
+		            "displayName":value,
+		            "internalName":value,
+		            "category":value,
+		            "description":value,
+		            "internalId":value,
+		            "externalId":value,
+		            "platform":"value",
+		            "platformVersion":value,
+		            "agentVersion":value,
+		            "nodePackageVersion":value,
+		            "sshHost":value,
+		            "sshPort":value,
+		            "sshUsername":"value",
+		            "consoleType":value,
+		            "consoleHost":value,
+		            "consolePort":value,
+		            "consoleUsername":value,
+		            "internalSshUsername":"value",
+		            "internalIp":value,
+		            "externalIp":value,
+		            "osDevice":"value",
+		            "dataDevice":"value",
+		            "lvmEnabled":true/false,
+		            "apiKey":value,
+		            "softwareRaid":true/false,
+		            "status":"value",
+		            "powerState":"value",
+		            "dateCreated":0000-00-00T00:00:00Z,
+		            "lastAgentUpdate":0000-00-00T00:00:00Z,
+		            "serverType":"value",
+		            "osType":"value",
+		            "commType":"value",
+		            "managed":true/false,
+		            "agentInstalled":true/false,
+		            "toolsInstalled":true/false,
+		            "hostname":value,
+		            "domainName":value,
+		            "fqdn":value,
+		            "statusMessage":value,
+		            "maxStorage":value(bytes),
+		            "maxMemory":value(bytes),
+		            "maxCores":value,
+		            "macAddress":value,
+		            "serverVendor":value,
+		            "serverModel":value,
+		            "serialNumber":value,
+		            "tags":value,
+		            "configId":value,
+		            "configGroup":value,
+		            "configRole":value,
+		            "createdByUser":{
+		               "username":"value",
+		               "displayName":"value",
+		               "firstName":"value",
+		               "lastName":"value",
+		               "email":"value",
+		               "linuxUsername":"value",
+		               "windowsUsername":"value"
+		            },
+		            "volumes":[
+		               {
+		                  "id":value,
+		                  "name":"value",
+		                  "deviceName":"value",
+		                  "maxStorage":value(bytes),
+		                  "unitNumber":value,
+		                  "displayOrder":value,
+		                  "rootVolume":true/false
+		               }
+		            ]
+		         },
+		         "ports":[
+		            {
+		               "index":value,
+		               "external":value,
+		               "internal":value,
+		               "link":true/false,
+		               "loadBalance":true/false,
+		               "loadBalanceProtocol":value,
+		               "export":true/false,
+		               "exportName":value,
+		               "displayName":"value",
+		               "visible":true/false,
+		               "primaryPort":true/false,
+		               "protocol":value,
+		               "name":"value"
+		            }
+		         ],
+		         "portMap":{
+		            "rpc":{
+		               "index":value,
+		               "external":value,
+		               "internal":value,
+		               "link":true/false,
+		               "loadBalance":true/false,
+		               "loadBalanceProtocol":value,
+		               "export":true/false,
+		               "exportName":value,
+		               "displayName":"value",
+		               "visible":true/false,
+		               "primaryPort":true/false,
+		               "protocol":value,
+		               "name":"value"
+		            }
+		         },
+		         "internalPort":value,
+		         "externalPort":value
+		      }
+		   ],
+		   "container":{
+		      "maxMemory":value(bytes),
+		      "maxStorage":value,
+		      "maxCpu":value,
+		      "maxCores":value,
+		      "coresPerSocket":value,
+		      "poolProviderType":value,
+		      "isVpcSelectable":true/false,
+		      "smbiosAssetTag":value,
+		      isEC2:true/false,
+		      "resourcePoolId":value,
+		      "hostId":value,
+		      "createUser":true/false,
+		      "nestedVirtualization":value,
+		      "vmwareFolderId":value,
+		      "expose":[
+		         
+		      ],
+		      "noAgent":true/false,
+		      "vm":true/false,
+		      "networkInterfaces":[
+		         {
+		            "id":value,
+		            "network":{
+		               "id":value,
+		               "group":value,
+		               "subnet":value,
+		               "dhcpServer":true/false,
+		               "name":value,
+		               "pool":{
+		                  "id":value,
+		                  "name":value
+		               }
+		            },
+		            "ipAddress":value,
+		            "networkInterfaceTypeId":value,
+		            "ipMode":
+		         }
+		      ],
+		      "volumes":[
+		         {
+		            "volumeCustomizable":true/false,
+		            "readonlyName":true/false,
+		            "controllerId":value,
+		            "maxIOPS":value,
+		            "displayOrder":value,
+		            "unitNumber":value,
+		            "minStorage":value,
+		            "configurableIOPS":true/false,
+		            "controllerMountPoint":value,
+		            "vId":value,
+		            "size":value,
+		            "name":"root",
+		            "rootVolume":true/false,
+		            "storageType":value,
+		            "typeId":value,
+		            "id":value,
+		            "resizeable":true/false,
+		            "datastoreId":"autoCluster",
+		            "maxStorage":value(bytes)
+		         }
+		      ],
+		      "storageController":value,
+		      "datastoreId":value,
+		      "networkId":value,
+		      "cpuCount":value,
+		      "memorySize":value,
+		      "osDiskSize":value,
+		      "publicKeyId":value,
+		      "storagePodId":value,
+		      "vmwareUsr":value,
+		      "vmwarePwd":value,
+		      "domainName":"value",
+		      "hostname":value,
+		      "networkType":value,
+		      "ipAddress":value,
+		      "netmask":value,
+		      "gateway":value,
+		      "dnsServers":value,
+		      "resourcePool":value,
+		      "folder":value,
+		      "vmwareCustomSpec":value,
+		      "hosts":{
+		         value
+		      },
+		      "evars":{
+		         
+		      },
+		      "id":value,
+		      "name":value,
+		      "containerTypeName":value,
+		      "containerTypeCode":value,
+		      "containerTypeShortName":"value",
+		      "containerTypeCategory":"value",
+		      "provisionType":"vmware",
+		      "dataPath":"value",
+		      "logsPath":"value",
+		      "configPath":"value",
+		      "planCode":value,
+		      "dateCreated":0000-00-00T00:00:00Z,
+		      "status":"value",
+		      "environmentPrefix":"value",
+		      "version":"value",
+		      "image":"value",
+		      "internalHostname":value,
+		      "storage":value(bytes),
+		      "memory":value(bytes),
+		      "cores":value,
+		      "internalIp":value,
+		      "externalIp":value,
+		      "sshHost":value,
+		      "hostMountPoint":value,
+		      "configId":value,
+		      "configGroup":value,
+		      "configRole":value,
+		      "certificatePath":value,
+		      "certificateStyle":value,
+		      "changeManagementExtId":value,
+		      "changeManagementServiceId":value,
+		      "serverId":value,
+		      "server":{
+		         "poolProviderType":value,
+		         "isVpcSelectable":true/false,
+		         "smbiosAssetTag":value,
+		         isEC2:true/false,
+		         "resourcePoolId":value,
+		         "hostId":value,
+		         "createUser":true/false,
+		         "nestedVirtualization":value,
+		         "vmwareFolderId":value,
+		         "noAgent":value,
+		         "id":value,
+		         "uuid":value,
+		         "serverTypeName":"value",
+		         "serverTypeCode":"value",
+		         "computeTypeName":"value",
+		         "computeTypeCode":"value",
+		         "parentServerId":value,
+		         "plan":value,
+		         "visibility":"value",
+		         "osTypeCode":value,
+		         "sourceImageId":value,
+		         "name":value,
+		         "displayName":value,
+		         "internalName":value,
+		         "category":value,
+		         "description":value,
+		         "internalId":value,
+		         "externalId":value,
+		         "platform":"value",
+		         "platformVersion":value,
+		         "agentVersion":value,
+		         "nodePackageVersion":value,
+		         "sshHost":value,
+		         "sshPort":value,
+		         "sshUsername":"value",
+		         "consoleType":value,
+		         "consoleHost":value,
+		         "consolePort":value,
+		         "consoleUsername":value,
+		         "internalSshUsername":"value",
+		         "internalIp":value,
+		         "externalIp":value,
+		         "osDevice":"value",
+		         "dataDevice":"value",
+		         "lvmEnabled":true/false,
+		         "apiKey":value,
+		         "softwareRaid":true/false,
+		         "status":"provisioned",
+		         "powerState":"on",
+		         "dateCreated":0000-00-00T00:00:00Z,
+		         "lastAgentUpdate":0000-00-00T00:00:00Z,
+		         "serverType":"value",
+		         "osType":"value",
+		         "commType":"value",
+		         "managed":true/false,
+		         "agentInstalled":true/false,
+		         "toolsInstalled":true/false,
+		         "hostname":value,
+		         "domainName":value,
+		         "fqdn":value,
+		         "statusMessage":value,
+		         "maxStorage":value,
+		         "maxMemory":value,
+		         "maxCores":value,
+		         "macAddress":value,
+		         "serverVendor":value,
+		         "serverModel":value,
+		         "serialNumber":value,
+		         "tags":value,
+		         "configId":value,
+		         "configGroup":value,
+		         "configRole":value,
+		         "createdByUser":{
+		            "username":"value",
+		            "displayName":"value",
+		            "firstName":"value",
+		            "lastName":"value",
+		            "email":"value",
+		            "linuxUsername":"value",
+		            "windowsUsername":"value"
+		         },
+		         "volumes":[
+		            {
+		               "id":value
+		               "name":"root",
+		               "deviceName":"value",
+		               "maxStorage":value(bytes),
+		               "unitNumber":value,
+		               "displayOrder":value,
+		               "rootVolume":true/false
+		            }
+		         ]
+		      },
+		      "ports":[
+		         {
+		            "index":0,
+		            "external":value,
+		            "internal":value,
+		            "link":true/false,
+		            "loadBalance":true/false,
+		            "loadBalanceProtocol":value,
+		            "export":true/false,
+		            "exportName":value,
+		            "displayName":"value",
+		            "visible":true/false,
+		            "primaryPort":true/false,
+		            "protocol":value,
+		            "name":"value"
+		         }
+		      ],
+		      "portMap":{
+		         "rpc":{
+		            "index":0,
+		            "external":value,
+		            "internal":value,
+		            "link":true/false,
+		            "loadBalance":true/false,
+		            "loadBalanceProtocol":value,
+		            "export":true/false,
+		            "exportName":value,
+		            "displayName":"value",
+		            "visible":true/false,
+		            "primaryPort":true/false,
+		            "protocol":value,
+		            "name":"value"
+		         }
+		      },
+		      "internalPort":value,
+		      "externalPort":value
+		   },
+		   "apps":[
+		      
+		   ]
+		}
