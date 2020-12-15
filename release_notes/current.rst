@@ -9,8 +9,8 @@
 .. Small Update, omitting highlights this time
   .. include:: highlights.rst
 
-All New Features
-================
+New Features
+============
 
 - .. toggle-header:: :header: **Azure Cloud Integration Enhancements**
 
@@ -28,7 +28,7 @@ All New Features
 - Security Scanning: Windows support added for SCAP security scans :superscript:`+`
 - ServiceNow: Plugin version 3.0 now available on the ServiceNow store, see `integration guide <https://morpheusdata.com/wp-content/uploads/content/ServiceNow-Cloud-Management-Morpheus-CMP-1.pdf>`_ for new features and complete use instructions
 - Tags: |morpheus| `naming variables <https://docs.morpheusdata.com/en/latest/troubleshooting/Variables_Examples.html?highlight=naming%20policy#pre-provision-vars>`_ can be used as tag values for Instances and VMs/servers at provision time
-- Tenants: Account Name, Account Number and Customer Number values tracked on the Tenant are now resolveable from naming variables: ``${accountName}``, ``${accoountNumber}``, and ``${customerNumber}``
+- Tenants: Account Name, Account Number and Customer Number values tracked on the Tenant are now resolveable from naming variables: ``${accountName}``, ``${accountNumber}``, and ``${customerNumber}``
 
 - .. toggle-header:: :header: **UI and Usability Improvements**
 
