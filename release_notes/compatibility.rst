@@ -55,10 +55,7 @@ Services
 |morphver| Service Version Changes
 ----------------------------------
 
-- MySQL: Upgraded to 5.7.32 for non-fips versions (5.7.29)
-- Nginx: Upgraded to v1.19.3
-- RabbitMQ: Upgraded to v3.8.9
-- Tomcat: Upgraded to 9.0.39
+- Java: Upgraded to 8u275
 
 |morphver| Service Version Compatibility
 ----------------------------------------
@@ -83,7 +80,6 @@ When externalizing MySQL, Elasticsearch and/or RabbitMQ services, the following 
 | Nginx                                 |                       | |nginxver|                          |
 +---------------------------------------+-----------------------+-------------------------------------+
 
-
 .. important:: Elasticsearch 7.x is required for |morphver|. Refer to :ref:`upgrading` section for more information.
 
 Security
@@ -94,11 +90,7 @@ Security
 CVEs Addressed
 --------------
 
-- CVE-2017-5929
-- CVE-2019-2692
-- CVE-2020-2933
-- CVE-2020-14338
-- CVE-2020-15250
+- CVE-2020-8203
 
 Integrations
 ============
