@@ -1,7 +1,7 @@
 Variables
 =========
 
-A vast number of variables are available for use in Tasks, Scripts, Templates, Resource Names, Cloud-Init User Data and Option List configs. 
+A vast number of variables are available for use in Tasks, Scripts, Templates, Resource Names, Cloud-Init User Data and Option List configs.
 
 .. IMPORTANT:: Variables are case sensitive
 
@@ -35,6 +35,9 @@ Commonly used variables for naming patterns include:
 		${sequence+100} # results in 101
 		${customOption.name}
 		${sequence.toString().padLeft(5,'0')} #results in 00001
+		${accountName}
+		${accountNumber}
+		${customerNumber}
 
 An example Instance Name Policy using a naming pattern with User Initials, Cloud Code, Instance Type, and a sequential number starting at 3000 is ``${userInitials}-${cloudCode}-${type}-${sequence+3000}``, resulting in an Instance Name of **md-vmwd3-centos-3001** for the first instance, followed by **md-vmwd3-centos-3002** and so on.
 
@@ -243,7 +246,7 @@ Instance
 				instanceTypeName
 			}
 
-Container 
+Container
 ---------
 
 .. code-block:: bash
@@ -384,7 +387,7 @@ Group (Site)
 				datacenterId,
 				name
 			}
-			
+
 Custom Options (Option Types)
 -----------------------------
 
@@ -429,7 +432,7 @@ ex: ``<%= morpheus.user.id %>``
 			   },
 			}
 
-Instance Map Example 
+Instance Map Example
 --------------------
 
 .. code-block:: bash
@@ -445,7 +448,7 @@ Instance Map Example
 		   "nestedVirtualization":value,
 		   "vmwareFolderId":value,
 		   "expose":[
-		      
+
 		   ],
 		   "noAgent":value,
 		   "customOptions":value,
@@ -460,7 +463,7 @@ Instance Map Example
 		   "expireDays":value,
 		   "layoutSize":value,
 		   "lbInstances":[
-		      
+
 		   ],
 		   "evars":{
 		      "evar1":{
@@ -523,7 +526,7 @@ Instance Map Example
 		   "createdByLastName":"value",
 		   "createdById":value,
 		   "metadata":{
-		      
+
 		   },
 		   "createdByUser":{
 		      "username":"value",
@@ -551,7 +554,7 @@ Instance Map Example
 		         "nestedVirtualization":value,
 		         "vmwareFolderId":value,
 		         "expose":[
-		            
+
 		         ],
 		         "noAgent":true/false,
 		         "vm":true/false,
@@ -621,7 +624,7 @@ Instance Map Example
 		            value
 		         },
 		         "evars":{
-		            
+
 		         },
 		         "id":value,
 		         "name":value,
@@ -803,7 +806,7 @@ Instance Map Example
 		      "nestedVirtualization":value,
 		      "vmwareFolderId":value,
 		      "expose":[
-		         
+
 		      ],
 		      "noAgent":true/false,
 		      "vm":true/false,
@@ -873,7 +876,7 @@ Instance Map Example
 		         value
 		      },
 		      "evars":{
-		         
+
 		      },
 		      "id":value,
 		      "name":value,
@@ -1039,6 +1042,6 @@ Instance Map Example
 		      "externalPort":value
 		   },
 		   "apps":[
-		      
+
 		   ]
 		}

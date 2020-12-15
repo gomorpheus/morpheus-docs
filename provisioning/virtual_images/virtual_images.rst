@@ -1,7 +1,7 @@
 Virtual Images
 ==============
 
-`Provisioning -> Virtual Images`
+`Provisioning > Virtual Images`
 
 Overview
 --------
@@ -10,12 +10,12 @@ The Virtual Image section displays a list of all images, local and synced, that 
 
 .. IMPORTANT:: Invalid Image Settings cause provisioning failures. |morpheus| syncs in as much meta-data as possible for synced images, but additional configuration may be needed to ensure successful provisioning.
 
-.. WARNING:: Cloud-init is enabled by default for all Linux Images. If your Linux image does not have Cloud-init installed, `Cloud-init Enabled` must be unchecked before provisioning the image or it will fail immediately.
+.. WARNING:: Cloud-init is enabled by default for all Linux images. If your Linux image does not have Cloud-init installed, `Cloud-init Enabled` must be unchecked before provisioning the image or it will fail immediately.
 
 Image Types
 -----------
 
-|morpheus| provides a vast *System Image* repo with pre-configured images for every Cloud. All other images are *User Images*. User images can be added directly to |morpheus| , or automatically synced from integrated clouds. It is important to configure synced User Images for metadata, including specifying the Platform and User Credentials, prior to provisioning. Provisioning a User Image that has not been configured may result in failed provisioning.
+|morpheus| provides a vast *System Image* repo with pre-configured images for every Cloud. All other images are *User Images*. User images can be added directly to |morpheus|, or automatically synced from integrated clouds. It is important to configure synced User Images for metadata, including specifying the Platform and User Credentials, prior to provisioning. Provisioning a User Image that has not been configured may result in failed provisioning.
 
 .. IMPORTANT:: Synced User Images need to be configured prior to provisioning.
 
@@ -36,47 +36,49 @@ Typically |morpheus| does not have sufficient metatdata to successfully provisio
 
 **To edit and configure an existing Virtual Image:**
 
-1. Select `Actions - Edit` in the Virtual Images list, or `Edit` on a Virtual Image detail page.
-2. Configure the following on the Image:
+#. Select the pencil icon at the right of any row on the Virtual Images list page, or click :guilabel:`EDIT` on a Virtual Image detail page.
+#. Configure the following on the Image:
 
    Name
-     Name of the Virtual Image in |morpheus| . This can be changed from the name of the Image, but editing will not change the name of the actual Image.
+     Name of the Virtual Image in |morpheus|. This can be changed from the name of the image, but editing will not change the name of the actual image
    Operating System
-     Specifies the Platform and OS of the image. All Windows images will need to have Operating System specified on the  Virtual Image, as |morpheus| will assign Linux as the Platform for all Images without Operating System specified.
+     Specifies the platform and OS of the image. All Windows images will need to have the operating system specified on the Virtual Image, as |morpheus| will assign Linux as the platform for all images without an operating system specified
    Minimum Memory
-    The Minimum Memory setting will filter available Service Plans options during provisioning. Service Plans that do not meet the Minimum Memory value set on the Virtual Image will not be provided as Service Plan choices.
+    The Minimum Memory setting will filter available Service Plan options during provisioning. Service Plans that do not meet the minimum value set on the Virtual Image will not be provided as Service Plan choices
    Cloud Init Enabled?
-     On by default, uncheck for any Image that does not have Cloud-Init or Cloudbase-Init installed.
-   Install Agent
-     On by default, uncheck to skip Agent install. Note this will result in the loss of utilization statistics, logs, script execution, and monitoring. (Some utilization stats are collected for agent-less hosts and vm's from VMware and AWS clouds).
+     On by default, uncheck for any Image that does not have Cloud-Init or Cloudbase-Init installed
+   Install Agent?
+     On by default, uncheck to skip Agent install. Note this will result in the loss of utilization statistics, logs, script execution, and monitoring. (Some utilization stats are still collected for Agent-less hosts and VMs depending on the cloud)
    Username
-     Existing Username on the Image. This is required for authentication, unless |morpheus| is able to add user data, Cloud-Init, Cloudbase-Init or Guest Customizations. If Cloud-Init, Cloudbase-Init or Guest Customizations are used, credentials are defined in `Administration -> Provisioning` and `User Settings `. If credentials are defined on the Image and Cloud-Init is enabled, |morpheus| will add that user during provisioning, so ensure that user does not already exist n the image (aka ``root``). For Windows Guest Customizations, |morpheus| will set the Administrator password to what is defined on the image if Administrator user is defined. Do not define any other user than Administrator for Windows Images unless using Cloudbase-init. |morpheus| recommends running Guest Customizations for all Windows Images, which is required when joining Domains as the SID will change.
+     Existing username on the image. This is required for authentication, unless |morpheus| is able to add user data, Cloud-Init, Cloudbase-Init or Guest Customizations. If Cloud-Init, Cloudbase-Init or Guest Customizations are used, credentials are defined in ``Administration > Provisioning`` and User Settings. If credentials are defined on the image and Cloud-Init is enabled, |morpheus| will add that user during provisioning, so ensure that user does not already exist on the image (such as ``root``). For Windows Guest Customizations, |morpheus| will set the Administrator password to what is defined on the image if Administrator user is defined. Do not define any other user than Administrator for Windows Images unless using Cloudbase-init. |morpheus| recommends running Guest Customizations for all Windows Images, which is required when joining Domains as the SID will change.
    Password
-     Password for the Existing User on the image if Username is populated.
-   Storage Provider
-    Location where the Virtual Image will be stored. Default Virtual Image Storage location is /var/opt/morpheus/morpheus-ui/vms. Additional Storage Providers can be configured in `Infrastructure -> Storage`.
+     Password for the user on the image if username is populated
+   Bucket
+    Location where the Virtual Image will be stored. Default Virtual Image Storage location is ``/var/opt/morpheus/morpheus-ui/vms``. Additional Storage Providers can be configured in ``Infrastructure > Storage``.
    Cloud-Init User Data
-     Accepts what would go in runcmd and can assume bash syntax. Example use: Script to configure satellite registration at provision time.
-   Create Image
-    Select FILE to select or drag and drop image file, or URL to download the image from an accessible URL. It is recommend to configure the rest of the settings below prior to uploading the source Image File(s).
+     Accepts what would go in ``runcmd`` and can assume Bash syntax. Example use: Script to configure satellite registration at provision time
+   Create Image ID
+    Select FILE to browse locally for an image or drop an image file into the dropzone. Alternatively, select URL to download the image from an accessible URL. It is recommend to configure the rest of the settings below prior to uploading the source Image File(s).
    Permissions
-    Set Tenant permissions in a multi-tenant |morpheus| environment. No impact on single-tenant environments.
+    Set Tenant permissions in a multi-tenant |morpheus| environment. Select private visibility and select specific Tenants to which the Virtual Image will be made available. Select public visibility to share the Virtual Image with all Tenants
    Auto Join Domain?
-    Enable to have instances provisioned with this image auto-join configured domains (Windows only, domain controller must be configure in `Infrastructure -> Network` and the configured domain set on the provisioned to Cloud or Network).
+    Enable to have Instances provisioned with this image auto-join configured domains (Windows only, domain controller must be configured in ``Infrastructure > Network`` and the configured domain set on the provisioned to Cloud or Network).
    VirtIO Drivers Loaded?
-    Enable if VirtIO Drivers are installed on the image for provisioning to KVM based Hypervisors.
+    Enable if VirtIO Drivers are installed on the image for provisioning to KVM-based hypervisors
+   FIPS Compliant Image?
+    When selected, |morpheus| will install the FIPS-compliant |morpheus| Agent package
    VM Tools Installed?
-    On by default, uncheck if VMware Tools (including OpenVMTools) are not installed on the Virtual Image. |morpheus| will skip network wait during provisioning when deselected.
+    On by default, uncheck if VMware Tools (including OpenVMTools) are not installed on the Virtual Image. |morpheus| will skip network wait during provisioning when deselected
    Force Guest Customization?
-    VMware only, forces guest customizations to run during provisioning, typically when provisioning to a DHCP network where guest customizations would not run by default.
+    VMware only, forces guest customizations to run during provisioning, typically when provisioning to a DHCP network where guest customizations would not run by default
    Trial Version
-    Enable to automatically re-arm the expiration on Windows Trial Images during provisioning.
+    Enable to automatically re-arm the expiration on Windows Trial Images during provisioning
    Enabled Sysprep?
-    Applicable to Nutanix Only. Enable of the Windows Image has been sys-prepped. If enabled Morpheus will inject Unattend.xml through the Nutanix API (v3+ only)
+    Applicable to Nutanix Only. Enable if the Windows Image has been sysprepped. If enabled, |morpheus| will inject ``unattend.xml`` through the Nutanix API (v3+ only)
 
-3. Save Changes
+3. Click :guilabel:`Save Changes`
 
-.. NOTE:: Cloud-Init is enabled by default on all Images. Images without Cloud-Init or Cloudbase-Init installed must have the `cloud-init` flag disabled on the Virtual Image setting or Provisioning may fail.
+.. NOTE:: Cloud-Init is enabled by default on all images. Images without Cloud-Init or Cloudbase-Init installed must have the ``cloud-init`` flag disabled on the Virtual Image setting or Provisioning may fail.
 
 Provisioning Images
 -------------------

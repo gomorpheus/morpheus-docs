@@ -12,6 +12,8 @@
 New Features
 ============
 
+- Amazon AWS Integration: Amazon cost explorer pricing has been brought back for integrations without a costing report configured
+
 - .. toggle-header:: :header: **Azure Cloud Integration Enhancements**
 
     - Azure Marketplace images now synced by region rather than by Cloud :superscript:`+`
@@ -61,7 +63,7 @@ New Features
 Fixes
 =====
 
-
+- SCAP scan view fix
 
 .. NOTE:: :superscript:`+` indicates items also released in v4.2.5
 
