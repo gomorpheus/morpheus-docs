@@ -23,7 +23,8 @@ Add vCD Cloud From `Infrastructure -> Clouds`
    USERNAME
      vCD Organization Administrator User
 
-     ..NOTE:: User must have an Organizational Administrator Role in the selected Origination for successful provisioning
+     - User must have an Organizational Administrator Role in the selected Origination for successful provisioning
+     - Username must be in the format of <name>@<org>
 
    PASSWORD
      vCD Organization Administrator User password
@@ -31,6 +32,8 @@ Add vCD Cloud From `Infrastructure -> Clouds`
     Select Organization. Dropdown populates upon successful authorization.
    VDC
     Select VDC. Dropdown populates upon successful authorization.
+   API VERSION
+    Example. ``31.0`` Note: Full version required. ``31`` would not be valid, must be xx.x (vcd api versions are strings)
    Inventory Existing Instances
     If enabled, existing Virtual Machines will be inventoried and appear as unmanaged Virtual Machines in |morpheus| .
 
