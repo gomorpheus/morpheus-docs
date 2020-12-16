@@ -51,14 +51,11 @@ Breaking Changes
 Services
 ========
 
-..
-  |morphver| Service Version Changes
-  ----------------------------------
+|morphver| Service Version Changes
+----------------------------------
 
-  - MySQL: Upgraded to 5.7.31
-  - Nginx: Upgraded to v1.19.3
-  - RabbitMQ: Upgraded to v3.8.9
-  - Tomcat: Upgraded to 9.0.39
+- Java: Upgrade to 8u275
+
 
 |morphver| Service Version Compatibility
 ----------------------------------------
@@ -92,14 +89,10 @@ When externalizing MySQL, Elasticsearch and/or RabbitMQ services, the following 
 
   .. important:: Please be aware of the default security enhancements added to v4.1.2+ and assess potential impacts to your environment, including agent installation and frontend load balancers.
 
-  CVEs Addressed
-  --------------
+CVEs Addressed
+--------------
 
-  - CVE-2017-5929
-  - CVE-2019-2692
-  - CVE-2020-2933
-  - CVE-2020-14338
-  - CVE-2020-15250
+- CVE-2020-8203
 
 Integrations
 ============
