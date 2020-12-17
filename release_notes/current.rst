@@ -14,16 +14,19 @@ New Features
 
 - Amazon AWS Integration: Amazon cost explorer pricing has been brought back for integrations without a costing report configured
 
-- .. toggle-header:: :header: **Azure Cloud Integration Enhancements**
+- .. toggle-header:: :header: **Azure Marketplace Images, Pricing, and VM Sizes Synced by Region**
 
     - Azure Marketplace images now synced by region rather than by Cloud :superscript:`+`
     - Azure pricing now synced by region and currency rather than Cloud :superscript:`+`
     - Azure VM sizes (Service Plans) now synced by region rather than Cloud :superscript:`+`
 
-- .. toggle-header:: :header: **Budget Enhancements**
+- .. toggle-header:: :header: **Multi-year Budgets with Custom Fiscal Year Periods**
 
     - Budgets based on a yearly interval can now start on a month other than January
     - Multi-year budgets, up to three years, are now supported
+
+    .. image:: /images/operations/multiBudget.png
+      :width: 50%
 
 - NSX-V: Create and manage SNAT rules from the NAT tab of the Edge Gateway detail page of an NSX-V network integration
 - Option Types: Custom help block text can now be displayed with any Option Type
@@ -46,7 +49,7 @@ New Features
 - Hosts: Added ability to tag servers (hosts). These are automatically updated when Instance tags are updated but useful for tagging discovered servers (currently API only) :superscript:`+`
 - Instances: Passing ``masked=true`` flag for tags masks the value of the tag :superscript:`+`
 
-- .. toggle-header:: :header: **Invoices Improvements**
+- .. toggle-header:: :header: **Invoices Tagging and Other Improvements**
 
     - Invoice tags can now be updated, added and removed through API/CLI
     - Lists of invoices can be filtered by tags (API only, for now)
@@ -55,7 +58,7 @@ New Features
 - Metadata: Metadata tags now referred to as ``tags`` and labels now referred to as ``labels``, previously metadata tags were referred to as ``metadata`` and labels were referred to as ``tags`` :superscript:`+`
 - Snapshots: Create and view snapshots :superscript:`+`
 
-- .. toggle-header:: :header: **Virtual Images**
+- .. toggle-header:: :header: **Virtual Image Volumes and Tagging Enhancements**
 
     - Associated ``volumes`` are returned with ``maxStorage`` viewable for each :superscript:`+`
     - Added ability to tag Virtual Images (currently API only) :superscript:`+`
@@ -65,20 +68,20 @@ Fixes
 
 - Administration: Monitoring Settings: Fixed Validation error for monitoring availability timeframe causes 500 error
 - Ansible Galaxy: Fixed group permisison issue on folders created in Roles by Ansible Galaxy
-- API/CLI: Fixed issue with Morpheus Network Pool creation 
+- API/CLI: Fixed issue with Morpheus Network Pool creation
 - Backups: Fixed Backup job Tenant visibility issue
 - Backups: Fixed issue restoring a preserved backup to a new Instance after VM deletion.
 - Backups: Fixed issue with creating a new backup configuration from an Instance for external Backup providers and selecting "Create and Run".
 - Commvault: Fixed when restoring a instance that has been backed up via commvault the instance stays within the restore state after the vm has been restored.
 - Google Cloud: Fixed image sync issue where not all Windows 2019 images were available
-- Instances: When editing an Instance, the cursor now focuses on NAME field instead of DESCRIPTION field. 
+- Instances: When editing an Instance, the cursor now focuses on NAME field instead of DESCRIPTION field.
 - Kubernetes: Fixed service endpoint config issue when going back in wizard to change cloud during Cluster creation
 - Networks: Fixed issue with Interface Label association when removing Interfaces during Reconfigure.
 - New Ansible Tower Task Modal | Missing Job Templates
 - NSX-V: Fixed distributed firewall rules not displayed in order of priority
 - NSX: Fixed NSX Edge Logical Router (DLR) Firewall rules remote change sync
 - NSX: If you attach an IP pool to a NSX-v network as a sub-tenant, that IP pool is now visible from the network detail page
-- Policies: When using multiple Naming Policies, Tenant assigned Policies will take precedence over a Global policy. 
+- Policies: When using multiple Naming Policies, Tenant assigned Policies will take precedence over a Global policy.
 - Tags: Fixed Null Tags causing Provisioning -> Instances to throw Permission Denied
 - VCD: no reboot warning when adding IP
 - vCloud Director: Fixed incorrect NIC index sent to VCD on reconfigure
@@ -158,7 +161,7 @@ Fixes
 
 
 
-.. - EL8 offline installer stuck at powertools makecache- need clarity on exact versions imapcted 
+.. - EL8 offline installer stuck at powertools makecache- need clarity on exact versions imapcted
 .. - Upgrade to 5.2.0 from 4.2.4 fails during reconfigure- not done
 
 
@@ -180,7 +183,8 @@ Fixes
   - Java: Openjdk-jre updated to 8u275
   - Appliance Logs: Default log rotation added for Nginx and Tomcat logs //add paths & files
   - Installer: ``iptables_bach`` setup bash script moved from /tmp to /opt/morpheus/embedded/bin and renamed to iptables_morpheus.rules. Resolves reconfigure issue for systems with ``noexec`` set on ``/tmp``.
-  - Installer: Morpheus can now be installed on el8 
+  - Installer: Morpheus can now be installed on el8
+
   Agent/Node Package Updates
   ==========================
 
@@ -190,4 +194,3 @@ Fixes
   - Node and VM Node package versions updates to 3.1.11
   - FIPS mode supported now for el8
   .. add agent package version vars/list to compatibility?
-  

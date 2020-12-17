@@ -27,6 +27,7 @@ Some organizations may need to create multi-year budgets or may need to set a fi
 In the example below, I've created a three-year budget:
 
 .. image:: /images/operations/multiBudget.png
+  :width: 50%
 
 Cloud Budgets
 ^^^^^^^^^^^^^^
