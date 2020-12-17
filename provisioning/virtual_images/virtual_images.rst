@@ -116,40 +116,42 @@ To Add Virtual Image:
 
 3. Configure the following on the Virtual Image:
 
-   Name
-    Name of the Virtual Image in |morpheus| . This can be changed from the name of the Image, but editing will not change the name of the actual Image.
-   Operating System
-    Specifies the Platform and OS of the image. All Windows images will need to have Operating System specified on the Virtual Image, as |morpheus| will assign Linux as the Platform for all Images without Operating System specified.
-   Minimum Memory
-    The Minimum Memory setting will filter available Service Plans options during provisioning. Service Plans that do not meet the Minimum Memory value set on the Virtual Image will not be provided as Service Plan choices.
-   Cloud Init Enabled?
-    On by default, uncheck for any Image that does not have Cloud-Init or Cloudbase-Init installed.
-   Install Agent
-    On by default, uncheck to skip Agent install. Note this will result in the loss of utilization statistics, logs, script execution, and monitoring. (Some utilization stats are collected for agent-less hosts and vm's from VMware and AWS clouds).
-   Username
-    Existing Username on the Image. This is required for authentication, unless |morpheus| is able to add user data, Cloud-Init, Cloudbase-Init or Guest Customizations. If Cloud-Init, Cloudbase-Init or Guest Customizations are used, credentials are defined in `Administration -> Provisioning` and `User Settings `. If credentials are defined on the Image and Cloud-Init is enabled, |morpheus| will add that user during provisioning, so ensure that user does not already exist n the image (aka ``root``). For Windows Guest Customizations, |morpheus| will set the Administrator password to what is defined on the image if Administrator user is defined. Do not define any other user than Administrator for Windows Images unless using Cloudbase-init. |morpheus| recommends running Guest Customizations for all Windows Images, which is required when joining Domains as the SID will change.
-   Password
-    Password for the Existing User on the image if Username is populated.
-   Storage Provider
-    Location where the Virtual Image will be stored. Default Virtual Image Storage location is /var/opt/morpheus/morpheus-ui/vms. Additional Storage Providers can be configured in `Infrastructure -> Storage`.
-   Cloud-Init User Data
-    Accepts what would go in runcmd and can assume bash syntax. Example use: Script to configure satellite registration at provision time.
-   Create Image
-    Select FILE to select or drag and drop image file, or URL to download the image from an accessible URL. It is recommend to configure the rest of the settings below prior to uploading the source Image File(s).
-   Permissions
-    Set Tenant permissions in a multi-tenant |morpheus| environment. No impact on single-tenant environments.
-   Auto Join Domain?
-    Enable to have instances provisioned with this image auto-join configured domains (Windows only, domain controller must be configure in `Infrastructure -> Network` and the configured domain set on the provisioned to Cloud or Network).
-   VirtIO Drivers Loaded?
-    Enable if VirtIO Drivers are installed on the image for provisioning to KVM based Hypervisors.
-   VM Tools Installed?
-    On by default, uncheck if VMware Tools (including OpenVMTools) are not installed on the Virtual Image. |morpheus| will skip network wait during provisioning when deselected.
-   Force Guest Customization?
-    VMware only, forces guest customizations to run during provisioning, typically when provisioning to a DHCP network where guest customizations would not run by default.
-   Trial Version
-    Enable to automatically re-arm the expiration on Windows Trial Images during provisioning.
-   Enabled Sysprep?
-    Applicable to Nutanix Only. Enable of the Windows Image has been sys-prepped. If enabled Morpheus will inject Unattend.xml through the Nutanix API (v3+ only)
+  Name
+    Name of the Virtual Image in |morpheus|. This can be changed from the name of the image, but editing will not change the name of the actual image
+  Operating System
+    Specifies the platform and OS of the image. All Windows images will need to have the operating system specified on the Virtual Image, as |morpheus| will assign Linux as the platform for all images without an operating system specified
+  Minimum Memory
+   The Minimum Memory setting will filter available Service Plan options during provisioning. Service Plans that do not meet the minimum value set on the Virtual Image will not be provided as Service Plan choices
+  Cloud Init Enabled?
+    On by default, uncheck for any Image that does not have Cloud-Init or Cloudbase-Init installed
+  Install Agent?
+    On by default, uncheck to skip Agent install. Note this will result in the loss of utilization statistics, logs, script execution, and monitoring. (Some utilization stats are still collected for Agent-less hosts and VMs depending on the cloud)
+  Username
+    Existing username on the image. This is required for authentication, unless |morpheus| is able to add user data, Cloud-Init, Cloudbase-Init or Guest Customizations. If Cloud-Init, Cloudbase-Init or Guest Customizations are used, credentials are defined in ``Administration > Provisioning`` and User Settings. If credentials are defined on the image and Cloud-Init is enabled, |morpheus| will add that user during provisioning, so ensure that user does not already exist on the image (such as ``root``). For Windows Guest Customizations, |morpheus| will set the Administrator password to what is defined on the image if Administrator user is defined. Do not define any other user than Administrator for Windows Images unless using Cloudbase-init. |morpheus| recommends running Guest Customizations for all Windows Images, which is required when joining Domains as the SID will change.
+  Password
+    Password for the user on the image if username is populated
+  Bucket
+   Location where the Virtual Image will be stored. Default Virtual Image Storage location is ``/var/opt/morpheus/morpheus-ui/vms``. Additional Storage Providers can be configured in ``Infrastructure > Storage``.
+  Cloud-Init User Data
+    Accepts what would go in ``runcmd`` and can assume Bash syntax. Example use: Script to configure satellite registration at provision time
+  Create Image ID
+   Select FILE to browse locally for an image or drop an image file into the dropzone. Alternatively, select URL to download the image from an accessible URL. It is recommend to configure the rest of the settings below prior to uploading the source Image File(s).
+  Permissions
+   Set Tenant permissions in a multi-tenant |morpheus| environment. Select private visibility and select specific Tenants to which the Virtual Image will be made available. Select public visibility to share the Virtual Image with all Tenants
+  Auto Join Domain?
+   Enable to have Instances provisioned with this image auto-join configured domains (Windows only, domain controller must be configured in ``Infrastructure > Network`` and the configured domain set on the provisioned to Cloud or Network).
+  VirtIO Drivers Loaded?
+   Enable if VirtIO Drivers are installed on the image for provisioning to KVM-based hypervisors
+  FIPS Compliant Image?
+   When selected, |morpheus| will install the FIPS-compliant |morpheus| Agent package
+  VM Tools Installed?
+   On by default, uncheck if VMware Tools (including OpenVMTools) are not installed on the Virtual Image. |morpheus| will skip network wait during provisioning when deselected
+  Force Guest Customization?
+   VMware only, forces guest customizations to run during provisioning, typically when provisioning to a DHCP network where guest customizations would not run by default
+  Trial Version
+   Enable to automatically re-arm the expiration on Windows Trial Images during provisioning
+  Enabled Sysprep?
+   Applicable to Nutanix Only. Enable if the Windows Image has been sysprepped. If enabled, |morpheus| will inject ``unattend.xml`` through the Nutanix API (v3+ only)
 
 .. NOTE:: Default Storage location is ``/var/opt/morpheus/morpheus-ui/vms``. Additional Storage Providers can be configured in `Infrastructure -> Storage`. Ensure local folders are owned by morpheus-app.morpheus-app if used.
 
