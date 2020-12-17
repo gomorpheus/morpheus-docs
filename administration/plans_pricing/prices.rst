@@ -63,6 +63,11 @@ Price Units
   -  Four Year
   -  Five Year
 
+Incur Charges
+  - **While Running:** Charges are incurred while in a started or running state but not when suspended or stopped
+  - **While Stopped:** Charges are incurred while in a stopped or suspended state but not when started or running
+  - **Always:** Charges are always incurred
+
 Currency
   -  AUD
   -  CHF
