@@ -20,7 +20,7 @@ Breaking Changes
 
 |morpheus| can be installed on the following platforms. Please note the table below is for |morpheus| Application OS support, not |morpheus| Agent OS Support.
 
-.. important:: Existing |morpheus| Appliances on 14.04 must upgrade to 16.04 or 18.04 PRIOR to upgrading to v4.2+.
+.. important:: Existing |morpheus| Appliances on 14.04 must upgrade to 16.04, 18.04, or 20.04 PRIOR to upgrading to v4.2+.
 
 .. list-table:: **Supported Appliance Operating Systems**
    :widths: auto

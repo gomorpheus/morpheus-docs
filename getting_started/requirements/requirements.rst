@@ -31,7 +31,7 @@ Base Requirements
      - 12, 15
      -
    * - Ubuntu
-     - 16.04, 18.04
+     - 16.04, 18.04, 20.04
      - 14.04 is no longer supported for Appliance OS. Existing Appliances on 14.04 must upgrade to 16.04 or 18.04 PRIOR to upgrading to v4.2.1. Note: 14.04 is still supported by the |morpheus| Agent.
 
 - **Memory:** `16 GB recommended <https://support.morpheusdata.com/s/article/How-does-Morpheus-manage-the-memory-it-uses?language=en_US>`_ for default installations. 8 GB minimum required with 4 GB+ available storage swap space

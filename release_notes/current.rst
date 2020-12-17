@@ -9,7 +9,9 @@
 New Features
 ------------
 
-- .. toggle-header:: :header: **Budget Enhancements**
+Appliance Compatibility: Ubuntu 20.04 appliance installation is now supported
+
+- .. toggle-header:: :header: **Multi-year Budgets with Custom Fiscal Years**
 
     - Budgets based on a yearly interval can now start on a month other than January
     - Multi-year budgets, up to three years, are now supported
@@ -30,7 +32,7 @@ API & CLI Enhancements
 
 - Dashboard: dashboard command added to give a high level overview of Morpheus activities such as aggregate Instance usage data, monitoring alerts, backup event alerts, recent user activity, and more
 
-- .. toggle-header:: :header: **Invoices Improvements**
+- .. toggle-header:: :header: **Invoice Tagging and Tenant Data Filtering Improvements**
 
     - Invoice tags can now be updated, added and removed through API/CLI
     - Lists of invoices can be filtered by tags (API only, for now)
