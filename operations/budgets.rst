@@ -19,6 +19,16 @@ Creating A Budget
 
 .. image:: /images/operations/create_budget.png
 
+Multi-year Budgets
+------------------
+
+Some organizations may need to create multi-year budgets or may need to set a fiscal year period. By default, annual budgets are tied to a calendar year (January - December) but |morpheus| offers the flexibility of setting a fiscal year period when needed. When selecting a value from the YEAR dropdown in the add/edit budget modal, select "Custom" rather than one of the discreet years from the list. After selecting Custom, START DATE and END DATE fields allow the user to input any desired fiscal year period. Users can enter a period of up to three years using the start and end date bookends. The entered period must be one, two or three full years, partial years are not permitted.
+
+In the example below, I've created a three-year budget:
+
+.. image:: /images/operations/multiBudget.png
+  :width: 50%
+
 Cloud Budgets
 --------------
 
