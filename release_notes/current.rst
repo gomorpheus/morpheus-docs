@@ -138,7 +138,6 @@ Fixes
 - Workflows: Required fields in operational workflows are now being enforced
 
 ..
-
   - If role provision tasks are set to none the option list doesn't present
   - Filtering for Platform Field on Workflow Not Working
   - Checkbox option type value defaults to NULL instead of off on load.
@@ -155,12 +154,13 @@ Fixes
   - Hidden text fields not refreshed in blueprints
   - NSX-v Load Balancers: Persistence info not updating when set to ‚ÄòNone‚Äô on edit
 
-.. - EL8 offline installer stuck at powertools makecache- need clarity on exact versions imapcted
-.. - Upgrade to 5.2.0 from 4.2.4 fails during reconfigure- not done
-.. - Multiple RDS issues
+  - EL8 offline installer stuck at powertools makecache- need clarity on exact versions imapcted
+  - Upgrade to 5.2.0 from 4.2.4 fails during reconfigure- not done
+  - Multiple RDS issues
   - New Ansible Tower Task Modal | Missing Job Templates
   - SCAP scan view fix
-   .. NOTE:: :superscript:`+` indicates items also released in v4.2.5
+
+.. NOTE:: :superscript:`+` indicates items also released in v4.2.5
 
 
 Appliance Updates
