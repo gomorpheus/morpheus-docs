@@ -66,6 +66,7 @@ New Features
 Fixes
 =====
 
+- Amazon: Fixed a potential backup and restore failure when using public images on "EC2 Instance" Instance type
 - Activity: Fixed an issue where Activity History details were not shown when activating the expansion arrow
 - Activity: Fixed loading issue with Activity History Details for some Activity types
 - Administration: Monitoring Settings: Fixed an issue where the validation error for monitoring availability timeframe could cause a 500 error
@@ -79,12 +80,15 @@ Fixes
 - API/CLI: Fixed error on ``GET /api/approvals/${id}`` / ``morpheus approvals get ${id}``
 - API/CLI: Fixed issue with Morpheus Network Pool creation
 - Apps: Fixed pressing `Enter` opening App Provision wizard when cursor focus is in App search field
+- Apps: Fixed disk layout changes on App provisioning when selecting different layouts
 - AWS: Fixed AWS Security Group ICMP rule creation
 - Azure: Fixes File >2GB fails to upload to Azure-backed archive
+- Azure: Fixed a potential backup and restore failure when using public images on "Microsoft Azure" Instance type
 - Backups: Fixed Backup Job visibility issue for Tenants
 - Backups: Fixed issue restoring a preserved backup to a new Instance after VM deletion
 - Backups: Fixed issue with creating a new backup configuration from an Instance for external Backup providers and selecting "Create and Run"
 - Blueprints: Fixed an issue where creating Blueprints using Azure Spec templates could hang with "Loading configuration"
+- Blueprints: Fixed an issue related to hidden text fields not refreshing in Blueprints
 - Commvault: Fixed an issue when restoring an Instance that has been backed up via Commvault and the Instance would stay in the restore state after the VM has been restored
 - Git Integration: Successful connection validation added when creating Git repository integrations
 - Google Cloud: Fixed an image sync issue where not all Windows 2019 images were available
@@ -105,13 +109,16 @@ Fixes
 - NSX-V: "Infrastructure: Network Router Firewalls" permission added addresses new Firewall DLR visibility and creation permissions
 - NSX-V: Fixed distributed firewall rules not displayed in order of priority
 - NSX-V: Fixed DLR Group scoping visibility issue
-- NSX-V: Fixed load balancer member association with created pool during provisioning.
+- NSX-V: Fixed load balancer member association with created pool during provisioning
+- NSX-V: Fixed load balancer persistence info not updating when set to "None" after edit and save
+- NSX-V: Fixed sync issue when cloning VM template while the provisioning Instance is expecting property "uuid"
 - NSX: Added validation to SNX network deletion to prevent removal of associations when Network deletion does not succeed
 - NSX: Fixed NSX Edge Logical Router (DLR) Firewall rules remote change sync
 - NSX: If you attach an IP pool to an NSX-V network as a Subtenant, that IP pool is now visible from the Network Detail page
 - Nutanix: Fixed Hypervisor stat sync
 - Nutanix: Root disk Datastore is no longer selectable and defaults to the templates datastore as required by Nutanix
 - OpenStack: Fixed an issue where public images in OpenStack were  not listed on provisioning
+- Option Types: Checkbox option type values previously defaulted to NULL rather than OFF on initial load
 - OTC: Fixed minimum disk size issue with local RAW images provisioned to OTC
 - Policies: Fixed an issue where Approval policies could break and prevent VM deployment
 - Policies: Fixed an issue with Router Quota policies
@@ -124,7 +131,10 @@ Fixes
 - Reports: "All" placeholder text removed from Tenant filter on Reports
 - Roles: Fixed an issue where Global Access set to "None" on the Group Permissions tab was not working correctly
 - Roles: Fixed Persona tab config not cloning when copying a Role
+- Roles: Fixed an issue where users with "view" permission on "Backup" were shown delete options for failed executions
 - SCAP Scans: Fixed a display issue for SCAP scan results
+- Service Plans: Fixed an issue causing service plan names not to refresh after a reconfigure
+- Storage: Fixed storage bucket duplication for public clouds
 - Tags: Fixed ``Null`` Tags causing ``Provisioning > Instances`` to throw Permission Denied
 - Tags: Tags created from Option Types with Export as Tag enabled can now be deleted
 - Tasks: The ``help_block`` under the Additional Packages field on a Python Task now shows a correct syntax example
@@ -133,35 +143,23 @@ Fixes
 - User role Network permission with Group should not provide access to All groups
 - VCD: No reboot warning when adding IP
 - vCloud Director: Fixed incorrect NIC index sent to vCD on reconfigure
+- vCloud Director: Fixed an issue causing Virtual Images not to sync for vCD 10
 - VMware: Fixed an issue where |morpheus| Agent install could fail on VMware instances when converting to managed
 - VMware: Fixed an issue where the Docker Cluster Creation Module was not inheriting the VM template disk size
+- VMware: Fixed bulk datastore assignment for Tenants
 - Workflows: Fixed the output not displaying in Powershell tasks in the Post Provisioning phase of Workflows
 - Workflows: Required fields in operational workflows are now being enforced
+- Workflows: Fixed an issue causing filtering Workflows by the platform field not to work correctly
+
+.. NOTE:: :superscript:`+` indicates items also released in v4.2.5
 
 ..
-  - If role provision tasks are set to none the option list doesn't present
-  - Filtering for Platform Field on Workflow Not Working
-  - Checkbox option type value defaults to NULL instead of off on load.
-  - Existing backup job not found
-  - Service plan name do not refresh after reconfigure
-  - Users with "view" on backup perms shown Delete options for failed executions
-  - VCD 10 - Virtual Images not syncing
-  - VMware: Bulk datastore assignment to tenants
-  - Amazon | Backup and Restore new instance failure when using public image on "EC2 Instance" instance type
-  - Azure | Backup and Restore new instance failure when using "Microsoft Azure" instance type
-  - Storage bucket duplication for Public clouds
-  - Disk layout changes on APP provisioning when selecting different layouts
-  - NSX-V Sync Issue: Cloning VM template while provisioning instance is expecting property "uuid"
-  - Hidden text fields not refreshed in blueprints
-  - NSX-v Load Balancers: Persistence info not updating when set to ‚ÄòNone‚Äô on edit
-
   - EL8 offline installer stuck at powertools makecache- need clarity on exact versions imapcted
   - Upgrade to 5.2.0 from 4.2.4 fails during reconfigure- not done
   - Multiple RDS issues
   - New Ansible Tower Task Modal | Missing Job Templates
-  - SCAP scan view fix
-
-.. NOTE:: :superscript:`+` indicates items also released in v4.2.5
+  - Existing backup job not found
+  - If role provision tasks are set to none the option list doesn't present
 
 
 Appliance Updates
