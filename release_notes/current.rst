@@ -156,7 +156,6 @@ Fixes
 ..
   - EL8 offline installer stuck at powertools makecache- need clarity on exact versions imapcted
   - Upgrade to 5.2.0 from 4.2.4 fails during reconfigure- not done
-  - Multiple RDS issues
   - New Ansible Tower Task Modal | Missing Job Templates
   - Existing backup job not found
   - If role provision tasks are set to none the option list doesn't present
