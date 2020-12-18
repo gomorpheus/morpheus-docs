@@ -23,6 +23,17 @@ New Features
 - Tags: Morpheus `naming variables <https://docs.morpheusdata.com/en/latest/troubleshooting/Variables_Examples.html?highlight=naming%20policy#pre-provision-vars>`_ can be used as tag values for Instances and VMs/servers at provision time
 - Virtual Images: A “FIPS Compliant Image?” checkbox has been added to the Add/Edit Virtual Image modal. When checked, Morpheus will install the FIPS-compliant Agent package
 
+API & CLI Enhancements
+----------------------
+
+- Dashboard: dashboard command added to give a high level overview of Morpheus activities such as aggregate Instance usage data, monitoring alerts, backup event alerts, recent user activity, and more
+
+- .. toggle-header:: :header: **Invoice Tagging and Tenant Data Filtering Improvements**
+
+    - Invoice tags can now be updated, added and removed through API/CLI
+    - Lists of invoices can be filtered by tags (API only, for now)
+    - Subtenant users now only see prices (not costs) for Instances provisioned to Clouds owned by the Master Tenant and assigned to the Subtenant when calling the Invoices API
+
 Fixes
 -----
 
@@ -63,9 +74,10 @@ Fixes
 - Policies: When using multiple Naming Policies, Tenant-assigned Policies will take precedence over a Global policy
 - Prices: Corrected potential pricing or billing discrepancies created by currency conversion inconsistencies
 - Prices: Fixed l8n issue with South Africa English and decimal places
-- Reconfigure: Fixed existing networks hiding on reconfigure when networks are not accessible from network Group Access permissions. 
+- Reconfigure: Fixed existing networks hiding on reconfigure when networks are not accessible from network Group Access permissions.
 - Reports: "All" placeholder text removed from Tenant filter on Reports
 - Roles: Fixed an issue where Global Access set to "None" on the Group Permissions tab was not working correctly
+- SCAP Scans: Fixed a display issue for SCAP scan results
 - Tags: Fixed ``Null`` Tags causing ``Provisioning > Instances`` to throw Permission Denied
 - Tasks: The ``help_block`` under the Additional Packages field on a Python Task now shows a correct syntax example
 - UI error message doesn‚Äôt surface for the used NSX networks deletion
@@ -77,31 +89,30 @@ Fixes
 - VMware: Fixed an issue where the Docker Cluster Creation Module was not inheriting the VM template disk size
 - Workflows: Required fields in operational workflows are now being enforced
 - Dashboard: Fix issue with red X shown with 0 Incident count
+
+.. NOTE:: :superscript:`+` indicates items also released in v4.2.5
+
 ..
+  - If role provision tasks are set to none the option list doesn't present
+  - Filtering for Platform Field on Workflow Not Working
+  - Checkbox option type value defaults to NULL instead of off on load.
+  - Existing backup job not found
+  - Service plan name do not refresh after reconfigure
+  - Users with "view" on backup perms shown Delete options for failed executions
+  - VCD 10 - Virtual Images not syncing
+  - VMware: Bulk datastore assignment to tenants
+  - Amazon | Backup and Restore new instance failure when using public image on "EC2 Instance" instance type
+  - Azure | Backup and Restore new instance failure when using "Microsoft Azure" instance type
+  - Storage bucket duplication for Public clouds
+  - Disk layout changes on APP provisioning when selecting different layouts
+  - NSX-V Sync Issue: Cloning VM template while provisioning instance is expecting property "uuid"
+  - Hidden text fields not refreshed in blueprints
+  - NSX-v Load Balancers: Persistence info not updating when set to ‚ÄòNone‚Äô on edit
 
- - If role provision tasks are set to none the option list doesn't present
- - Filtering for Platform Field on Workflow Not Working
- - Checkbox option type value defaults to NULL instead of off on load.
- - Existing backup job not found
- - Service plan name do not refresh after reconfigure
- - Users with "view" on backup perms shown Delete options for failed executions
- - VCD 10 - Virtual Images not syncing
- - VMware: Bulk datastore assignment to tenants
- - Amazon | Backup and Restore new instance failure when using public image on "EC2 Instance" instance type
- - Azure | Backup and Restore new instance failure when using "Microsoft Azure" instance type
- - Storage bucket duplication for Public clouds
- - Disk layout changes on APP provisioning when selecting different layouts
- - NSX-V Sync Issue: Cloning VM template while provisioning instance is expecting property "uuid"
- - Hidden text fields not refreshed in blueprints
- - NSX-v Load Balancers: Persistence info not updating when set to ‚ÄòNone‚Äô on edit
-
-.. - EL8 offline installer stuck at powertools makecache- need clarity on exact versions imapcted
-.. - Upgrade to 5.2.0 from 4.2.4 fails during reconfigure- not done
-.. - Multiple RDS issues
+  .. - EL8 offline installer stuck at powertools makecache- need clarity on exact versions imapcted
+  .. - Upgrade to 5.2.0 from 4.2.4 fails during reconfigure- not done
+  .. - Multiple RDS issues
   - New Ansible Tower Task Modal | Missing Job Templates
-  - SCAP scan view fix
-   .. NOTE:: :superscript:`+` indicates items also released in v4.2.5
-
 
 Appliance Updates
 =================
@@ -118,15 +129,3 @@ Agent/Node Package Updates
 - Java: openjdk and openjdk-jre updated to 8u275
 - Node and VM Node package versions updates to 3.1.11
 - FIPS mode supported now for el8
-
-
-API & CLI Enhancements
-----------------------
-
-- Dashboard: dashboard command added to give a high level overview of Morpheus activities such as aggregate Instance usage data, monitoring alerts, backup event alerts, recent user activity, and more
-
-- .. toggle-header:: :header: **Invoice Tagging and Tenant Data Filtering Improvements**
-
-    - Invoice tags can now be updated, added and removed through API/CLI
-    - Lists of invoices can be filtered by tags (API only, for now)
-    - Subtenant users now only see prices (not costs) for Instances provisioned to Clouds owned by the Master Tenant and assigned to the Subtenant when calling the Invoices API
