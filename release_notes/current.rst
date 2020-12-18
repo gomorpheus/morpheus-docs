@@ -66,86 +66,84 @@ New Features
 Fixes
 =====
 
+- Activity: Fixed an issue where Activity History details were not shown when activating the expansion arrow
+- Activity: Fixed loading issue with Activity History Details for some Activity types
 - Administration: Monitoring Settings: Fixed an issue where the validation error for monitoring availability timeframe could cause a 500 error
+- Amazon: Fixed Instance Status sync when not using |morpheus| Agent
 - Analytics: Utilization vs. Cost dashboard showing prices in whole dollars
 - Ansible Galaxy: Fixed group permission issue on folders created in Roles by Ansible Galaxy
+- Ansible Tower: Fixed tower job sync issue causing existing tasks to not trigger job in Tower. Existing tasks should be edited and saved to rebind.  
+- Ansible: Fixed Inventory displaying containerid.domain for Instances that were converted to managed.
+- API/CLI: Fixed ``--group parameter`` override when using json payload for Instance config --group parameter
+- API/CLI: Fixed ``/monitoring/push`` 401 error
+- API/CLI: Fixed error on ``GET /api/approvals/${id}`` / ``morpheus approvals get ${id}``
 - API/CLI: Fixed issue with Morpheus Network Pool creation
+- Apps: Fixed pressing `Enter` opening App Provision wizard when cursor focus is in App search field
+- AWS: Fixed AWS Security Group ICMP rule creation
+- Azure: Fixes File >2GB fails to upload to Azure-backed archive
 - Backups: Fixed Backup Job visibility issue for Tenants
 - Backups: Fixed issue restoring a preserved backup to a new Instance after VM deletion
 - Backups: Fixed issue with creating a new backup configuration from an Instance for external Backup providers and selecting "Create and Run"
+- Blueprints: Fixed an issue where creating Blueprints using Azure Spec templates could hang with "Loading configuration"
 - Commvault: Fixed an issue when restoring an Instance that has been backed up via Commvault and the Instance would stay in the restore state after the VM has been restored
+- Git Integration: Successful connection validation added when creating Git repository integrations
 - Google Cloud: Fixed an image sync issue where not all Windows 2019 images were available
+- Infoblox: PTR records can now be automatically created during provisioning
+- Instance Types: Fixed issues with environment prefixes on Instance Types with periods in their name
+- Instances: ``unformatted_name`` and ``unformatted_host_name`` Field Types updates to LONGTEXT
+- Instances: Fixed an issue where the list of Instances or hosts differs between the UI and API
 - Instances: When editing an Instance, the cursor now focuses on NAME field instead of DESCRIPTION field
+- Keys & Certs: Fixe an issue where the legacy Add Certificate modal could be displayed when no trust provider integration has been added
 - Kubernetes: Fixed service endpoint configuration issue when going back a step in the wizard to change cloud selection during Cluster creation
 - Networks: Fixed issue with Interface Label association when removing Interfaces during a reconfigure
+- Networks: Fixed potential 500 errors in while accessing IP Pools with a  large set of used IPs
+- Networks: Network Security Group ``externalId`` character limit expanded to 512
+- New NSX-T segment created from morpheus defaults to the first TZ after creation
+- NSX-T: Fixed an issue where distributed firewall rules were not displayed in order of priority
+- NSX-T: Fixed an issue where the Routers tab could fail to load
+- NSX-T: Reduced the amount of log chatter created by an NSX-T integration
+- NSX-V: "Infrastructure: Network Router Firewalls" permission added addresses new Firewall DLR visibility and creation permissions
 - NSX-V: Fixed distributed firewall rules not displayed in order of priority
+- NSX-V: Fixed DLR Group scoping visibility issue
+- NSX-V: Fixed load balancer member association with created pool during provisioning.
+- NSX: Added validation to SNX network deletion to prevent removal of associations when Network deletion does not succeed
 - NSX: Fixed NSX Edge Logical Router (DLR) Firewall rules remote change sync
 - NSX: If you attach an IP pool to an NSX-V network as a Subtenant, that IP pool is now visible from the Network Detail page
+- Nutanix: Fixed Hypervisor stat sync
+- Nutanix: Root disk Datastore is no longer selectable and defaults to the templates datastore as required by Nutanix
+- OpenStack: Fixed an issue where public images in OpenStack were  not listed on provisioning
+- OTC: Fixed minimum disk size issue with local RAW images provisioned to OTC 
+- Policies: Fixed an issue where Approval policies could break and prevent VM deployment
+- Policies: Fixed an issue with Router Quota policies
+- Policies: Fixed and issue where warning emails were not received for expiring Instances
+- Policies: Fixed Instances in Pending Removal State powering back on due to Power Schedules or Availability service
 - Policies: When using multiple Naming Policies, Tenant-assigned Policies will take precedence over a Global policy
+- Prices: Corrected potential pricing or billing discrepancies created by currency conversion inconsistencies
+- Prices: Fixed l8n issue with South Africa English and decimal places
+- Reconfigure: Fixed existing networks hiding on reconfigure when networks are not accessible from network Group Access permissions. 
+- Reports: "All" placeholder text removed from Tenant filter on Reports
+- Roles: Fixed an issue where Global Access set to "None" on the Group Permissions tab was not working correctly
+- Roles: Fixed Persona tab config not cloning when copying a Role
 - Tags: Fixed ``Null`` Tags causing ``Provisioning > Instances`` to throw Permission Denied
+- Tags: Tags created from Option Types with Export as Tag enabled can now be deleted
+- Tasks: The ``help_block`` under the Additional Packages field on a Python Task now shows a correct syntax example
+- UI error message doesn‚Äôt surface for the used NSX networks deletion
+- UI: Fixed CSS issues related to language translation
+- User role Network permission with Group should not provide access to All groups
 - VCD: No reboot warning when adding IP
 - vCloud Director: Fixed incorrect NIC index sent to vCD on reconfigure
-- Policies: Fixed and issue where warning emails were not received for expiring Instances
-- Workflows: Fixed the output not displaying in Powershell tasks in the Post Provisioning phase of Workflows
-- Keys & Certs: Fixe an issue where the legacy Add Certificate modal could be displayed when no trust provider integration has been added
-- NSX-T: Fixed an issue where the Routers tab could fail to load
-- Infoblox: PTR records can now be automatically created during provisioning
-- Instances: Fixed an issue where the list of Instances or hosts differs between the UI and API
-- Blueprints: Fixed an issue where creating Blueprints using Azure Spec templates could hang with "Loading configuration"
-- Policies: Fixed an issue where Approval policies could break and prevent VM deployment
 - VMware: Fixed an issue where |morpheus| Agent install could fail on VMware instances when converting to managed
-- NSX-T: Reduced the amount of log chatter created by an NSX-T integration
-- NSX-T: Fixed an issue where distributed firewall rules were not displayed in order of priority
-- Prices: Corrected potential pricing or billing discrepancies created by currency conversion inconsistencies
-- Roles: Fixed an issue where Global Access set to "None" on the Group Permissions tab was not working correctly
-- Workflows: Required fields in operational workflows are now being enforced
-- Activity: Fixed an issue where Activity History details were not shown when activating the expansion arrow
 - VMware: Fixed an issue where the Docker Cluster Creation Module was not inheriting the VM template disk size
-- UI: Fixed CSS issues related to language translation
-- Reports: "All" placeholder text removed from Tenant filter on Reports
-- OpenStack: Fixed an issue where public images in OpenStack were  not listed on provisioning
-- Networks: Fixed potential 500 errors in while accessing IP Pools with a  large set of used IPs
-- Tasks: The ``help_block`` under the Additional Packages field on a Python Task now shows a correct syntax example
-- Instance Types: Fixed issues with environment prefixes on Instance Types with periods in their name
-- Policies: Fixed an issue with Router Quota policies
-- Git Integration: Successful connection validation added when creating Git repository integrations
-- API/CLI: Fixed ``/monitoring/push`` 401 error
-- OTC: Fixed minimum disk size issue with local RAW images provisioned to OTC 
-- Policies: Fixed Instances in Pending Removal State powering back on due to Power Schedules or Availability service
-- Instances: ``unformatted_name`` and ``unformatted_host_name`` Field Types updates to LONGTEXT
-- NSX-V: Fixed load balancer member association with created pool during provisioning.
-- Tags: Tags created from Option Types with Export as Tag enabled can now be deleted
-- Ansible Tower: Fixed tower job sync issue causing existing tasks to not trigger job in Tower. Existing tasks should be edited and saved to rebind.  
-- API/CLI: Fixed error on ``GET /api/approvals/${id}`` / ``morpheus approvals get ${id}``
-- Nutanix: Root disk Datastore is no longer selectable and defaults to the templates datastore as required by Nutanix
-- NSX-V: Fixed DLR Group scoping visibility issue
-- NSX-V: "Infrastructure: Network Router Firewalls" permission added addresses new Firewall DLR visibility and creation permissions
-- Apps: Fixed pressing `Enter` opening App Provision wizard when cursor focus is in App search field
-- NSX: Added validation to SNX network deletion to prevent removal of associations when Network deletion does not succeed
-- Networks: Network Security Group ``externalId`` character limit expanded to 512
-- UI error message doesn‚Äôt surface for the used NSX networks deletion
-- New NSX-T segment created from morpheus defaults to the first TZ after creation
-- Nutanix: Fixed Hypervisor stat sync
+- Workflows: Fixed the output not displaying in Powershell tasks in the Post Provisioning phase of Workflows
+- Workflows: Required fields in operational workflows are now being enforced
 
-.. - HA K8s Doesn't Work --4.2.6
+..
 
-
-
- - Unable to create ICMP rule on AWS Security Group
- - Command for creating new instance cannot specify Group Name with JSON file
- - Network Flashes / disappears if Group access is lost on the network permission
- - English (South Africa): Cost/Sale Price change on Save because of comma decimal
- - Persona tab doesn‚Äôt get cloned
- - Spinning ball - Activity History Details
- - Status for applications and instances in AWS ( No Agent)
- - User role Network permission with Group shouldn‚Äôt provide access to All groups
- - File >2GB fails to upload to Azure-backed archive
- - containerid.domain using ansible
  - If role provision tasks are set to none the option list doesn't present
  - Filtering for Platform Field on Workflow Not Working
  - Checkbox option type value defaults to NULL instead of off on load.
  - Existing backup job not found
- - Service plan name doesn‚Äôt refresh after reconfigure
+ - Service plan name do not refresh after reconfigure
  - Users with "view" on backup perms shown Delete options for failed executions
  - VCD 10 - Virtual Images not syncing
  - VMware: Bulk datastore assignment to tenants
@@ -157,41 +155,27 @@ Fixes
  - Hidden text fields not refreshed in blueprints
  - NSX-v Load Balancers: Persistence info not updating when set to ‚ÄòNone‚Äô on edit
 
-
-
 .. - EL8 offline installer stuck at powertools makecache- need clarity on exact versions imapcted
 .. - Upgrade to 5.2.0 from 4.2.4 fails during reconfigure- not done
 .. - Multiple RDS issues
-- New Ansible Tower Task Modal | Missing Job Templates
-- SCAP scan view fix
+  - New Ansible Tower Task Modal | Missing Job Templates
+  - SCAP scan view fix
+   .. NOTE:: :superscript:`+` indicates items also released in v4.2.5
 
 
-.. NOTE:: :superscript:`+` indicates items also released in v4.2.5
+Appliance Updates
+=================
 
+- Support added for Installing |morpheus| on Ubuntu 20.04
+- Java: Openjdk-jre updated to 8u275
+- Appliance Logs: Default log rotation added for Nginx and Tomcat logs //add paths & files
+- Installer: ``iptables_bach`` setup bash script moved from /tmp to /opt/morpheus/embedded/bin and renamed to iptables_morpheus.rules. Resolves reconfigure issue for systems with ``noexec`` set on ``/tmp``.
+- Installer: Morpheus can now be installed on el8
 
+Agent/Node Package Updates
+==========================
 
-
-
-
-
-..
-  Appliance Updates
-  =================
-
-  .. not sure if we should have separate appliance/installer updates, adding here for now
-
-  - Support added for Installing |morpheus| on Ubuntu 20.04
-  - Java: Openjdk-jre updated to 8u275
-  - Appliance Logs: Default log rotation added for Nginx and Tomcat logs //add paths & files
-  - Installer: ``iptables_bach`` setup bash script moved from /tmp to /opt/morpheus/embedded/bin and renamed to iptables_morpheus.rules. Resolves reconfigure issue for systems with ``noexec`` set on ``/tmp``.
-  - Installer: Morpheus can now be installed on el8
-
-  Agent/Node Package Updates
-  ==========================
-
-  .. same
-
-  - Java: openjdk and openjdk-jre updated to 8u275
-  - Node and VM Node package versions updates to 3.1.11
-  - FIPS mode supported now for el8
-  .. add agent package version vars/list to compatibility?
+- Java: openjdk and openjdk-jre updated to 8u275
+- Node and VM Node package versions updates to 3.1.11
+- FIPS mode supported now for el8
+.. add agent package version vars/list to compatibility?
