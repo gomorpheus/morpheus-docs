@@ -72,7 +72,7 @@ Fixes
 - Amazon: Fixed Instance Status sync when not using |morpheus| Agent
 - Analytics: Utilization vs. Cost dashboard showing prices in whole dollars
 - Ansible Galaxy: Fixed group permission issue on folders created in Roles by Ansible Galaxy
-- Ansible Tower: Fixed tower job sync issue causing existing tasks to not trigger job in Tower. Existing tasks should be edited and saved to rebind.  
+- Ansible Tower: Fixed tower job sync issue causing existing tasks to not trigger job in Tower. Existing tasks should be edited and saved to rebind.
 - Ansible: Fixed Inventory displaying containerid.domain for Instances that were converted to managed.
 - API/CLI: Fixed ``--group parameter`` override when using json payload for Instance config --group parameter
 - API/CLI: Fixed ``/monitoring/push`` 401 error
@@ -112,7 +112,7 @@ Fixes
 - Nutanix: Fixed Hypervisor stat sync
 - Nutanix: Root disk Datastore is no longer selectable and defaults to the templates datastore as required by Nutanix
 - OpenStack: Fixed an issue where public images in OpenStack were  not listed on provisioning
-- OTC: Fixed minimum disk size issue with local RAW images provisioned to OTC 
+- OTC: Fixed minimum disk size issue with local RAW images provisioned to OTC
 - Policies: Fixed an issue where Approval policies could break and prevent VM deployment
 - Policies: Fixed an issue with Router Quota policies
 - Policies: Fixed and issue where warning emails were not received for expiring Instances
@@ -120,7 +120,7 @@ Fixes
 - Policies: When using multiple Naming Policies, Tenant-assigned Policies will take precedence over a Global policy
 - Prices: Corrected potential pricing or billing discrepancies created by currency conversion inconsistencies
 - Prices: Fixed l8n issue with South Africa English and decimal places
-- Reconfigure: Fixed existing networks hiding on reconfigure when networks are not accessible from network Group Access permissions. 
+- Reconfigure: Fixed existing networks hiding on reconfigure when networks are not accessible from network Group Access permissions.
 - Reports: "All" placeholder text removed from Tenant filter on Reports
 - Roles: Fixed an issue where Global Access set to "None" on the Group Permissions tab was not working correctly
 - Roles: Fixed Persona tab config not cloning when copying a Role
@@ -139,21 +139,21 @@ Fixes
 
 ..
 
- - If role provision tasks are set to none the option list doesn't present
- - Filtering for Platform Field on Workflow Not Working
- - Checkbox option type value defaults to NULL instead of off on load.
- - Existing backup job not found
- - Service plan name do not refresh after reconfigure
- - Users with "view" on backup perms shown Delete options for failed executions
- - VCD 10 - Virtual Images not syncing
- - VMware: Bulk datastore assignment to tenants
- - Amazon | Backup and Restore new instance failure when using public image on "EC2 Instance" instance type
- - Azure | Backup and Restore new instance failure when using "Microsoft Azure" instance type
- - Storage bucket duplication for Public clouds
- - Disk layout changes on APP provisioning when selecting different layouts
- - NSX-V Sync Issue: Cloning VM template while provisioning instance is expecting property "uuid"
- - Hidden text fields not refreshed in blueprints
- - NSX-v Load Balancers: Persistence info not updating when set to ‚ÄòNone‚Äô on edit
+  - If role provision tasks are set to none the option list doesn't present
+  - Filtering for Platform Field on Workflow Not Working
+  - Checkbox option type value defaults to NULL instead of off on load.
+  - Existing backup job not found
+  - Service plan name do not refresh after reconfigure
+  - Users with "view" on backup perms shown Delete options for failed executions
+  - VCD 10 - Virtual Images not syncing
+  - VMware: Bulk datastore assignment to tenants
+  - Amazon | Backup and Restore new instance failure when using public image on "EC2 Instance" instance type
+  - Azure | Backup and Restore new instance failure when using "Microsoft Azure" instance type
+  - Storage bucket duplication for Public clouds
+  - Disk layout changes on APP provisioning when selecting different layouts
+  - NSX-V Sync Issue: Cloning VM template while provisioning instance is expecting property "uuid"
+  - Hidden text fields not refreshed in blueprints
+  - NSX-v Load Balancers: Persistence info not updating when set to ‚ÄòNone‚Äô on edit
 
 .. - EL8 offline installer stuck at powertools makecache- need clarity on exact versions imapcted
 .. - Upgrade to 5.2.0 from 4.2.4 fails during reconfigure- not done
