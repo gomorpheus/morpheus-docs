@@ -9,7 +9,8 @@
 New Features
 ------------
 
-Appliance Compatibility: Ubuntu 20.04 appliance installation is now supported
+- Amazon AWS Integration: Amazon cost explorer pricing has been brought back for integrations without a costing report configured
+- Appliance Compatibility: Ubuntu 20.04 appliance installation is now supported
 
 - .. toggle-header:: :header: **Multi-year Budgets with Custom Fiscal Years**
 
