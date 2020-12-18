@@ -124,6 +124,7 @@ Fixes
 - Reports: "All" placeholder text removed from Tenant filter on Reports
 - Roles: Fixed an issue where Global Access set to "None" on the Group Permissions tab was not working correctly
 - Roles: Fixed Persona tab config not cloning when copying a Role
+- SCAP Scans: Fixed a display issue for SCAP scan results
 - Tags: Fixed ``Null`` Tags causing ``Provisioning > Instances`` to throw Permission Denied
 - Tags: Tags created from Option Types with Export as Tag enabled can now be deleted
 - Tasks: The ``help_block`` under the Additional Packages field on a Python Task now shows a correct syntax example
