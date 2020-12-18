@@ -89,6 +89,7 @@ Fixes
 - Workflows: Fixed the output not displaying in Powershell tasks in the Post Provisioning phase of Workflows
 - Keys & Certs: Fixe an issue where the legacy Add Certificate modal could be displayed when no trust provider integration has been added
 - NSX-T: Fixed an issue where the Routers tab could fail to load
+- Infoblox: PTR records can now be automatically created during provisioning
 - Instances: Fixed an issue where the list of Instances or hosts differs between the UI and API
 - Blueprints: Fixed an issue where creating Blueprints using Azure Spec templates could hang with "Loading configuration"
 - Policies: Fixed an issue where Approval policies could break and prevent VM deployment
@@ -108,57 +109,53 @@ Fixes
 - Instance Types: Fixed issues with environment prefixes on Instance Types with periods in their name
 - Policies: Fixed an issue with Router Quota policies
 - Git Integration: Successful connection validation added when creating Git repository integrations
-
-
-
-
-
-.. FIXES BELOW THIS LINE NEED REVIEWED
-- API: Push check returns 401 unauthorized for the api key
-- Custom Image upload to OTC || Custom Library item
-- After Deletion - VMs still powered on
-- Extend Character Limitation on Instance Table Columns
-- Members don‚Äôt get added to NSX-V pool
-- NSX-V Virtual Server issue
-- Tags not removing
-- NSX-V: DLR showing up in the create network page which is group scoped
-- Unable to add new Firewall rules in the DLR created with the group scope
-- HA K8s Doesn't Work
-- Morpheus does not create PTR records using Infoblox integration
-- Ansible Tower tasks are not executed as Jobs in Tower
-- API: Get a Specific Approval: 403 error when calling on app
-- Nutanix provision - hide datastore selection on root disk - add cluster
-- Search field app opens create new app window when hit enter
-- NSX Network routing functionality is getting removed while trying to delete the network
-- Limited Column in network_security_group table
+- API/CLI: Fixed ``/monitoring/push`` 401 error
+- OTC: Fixed minimum disk size issue with local RAW images provisioned to OTC 
+- Policies: Fixed Instances in Pending Removal State powering back on due to Power Schedules or Availability service
+- Instances: ``unformatted_name`` and ``unformatted_host_name`` Field Types updates to LONGTEXT
+- NSX-V: Fixed load balancer member association with created pool during provisioning.
+- Tags: Tags created from Option Types with Export as Tag enabled can now be deleted
+- Ansible Tower: Fixed tower job sync issue causing existing tasks to not trigger job in Tower. Existing tasks should be edited and saved to rebind.  
+- API/CLI: Fixed error on ``GET /api/approvals/${id}`` / ``morpheus approvals get ${id}``
+- Nutanix: Root disk Datastore is no longer selectable and defaults to the templates datastore as required by Nutanix
+- NSX-V: Fixed DLR Group scoping visibility issue
+- NSX-V: "Infrastructure: Network Router Firewalls" permission added addresses new Firewall DLR visibility and creation permissions
+- Apps: Fixed pressing `Enter` opening App Provision wizard when cursor focus is in App search field
+- NSX: Added validation to SNX network deletion to prevent removal of associations when Network deletion does not succeed
+- Networks: Network Security Group ``externalId`` character limit expanded to 512
 - UI error message doesn‚Äôt surface for the used NSX networks deletion
 - New NSX-T segment created from morpheus defaults to the first TZ after creation
-- Unable to create ICMP rule on AWS Security Group
-- Command for creating new instance cannot specify Group Name with JSON file
-- Network Flashes / disappears if Group access is lost on the network permission
-- English (South Africa): Cost/Sale Price change on Save because of comma decimal
-- Persona tab doesn‚Äôt get cloned
-- Spinning ball - Activity History Details
-- Status for applications and instances in AWS ( No Agent)
-- User role Network permission with Group shouldn‚Äôt provide access to All groups
-- File >2GB fails to upload to Azure-backed archive
-- containerid.domain using ansible
-- If role provision tasks are set to none the option list doesn't present
-- Filtering for Platform Field on Workflow Not Working
-- Nutanix: Hypervisor stats no longer sync
-- Checkbox option type value defaults to NULL instead of off on load.
-- Existing backup job not found
-- Service plan name doesn‚Äôt refresh after reconfigure
-- Users with "view" on backup perms shown Delete options for failed executions
-- VCD 10 - Virtual Images not syncing
-- VMware: Bulk datastore assignment to tenants
-- Amazon | Backup and Restore new instance failure when using public image on "EC2 Instance" instance type
-- Azure | Backup and Restore new instance failure when using "Microsoft Azure" instance type
-- Storage bucket duplication for Public clouds
-- Disk layout changes on APP provisioning when selecting different layouts
-- NSX-V Sync Issue: Cloning VM template while provisioning instance is expecting property "uuid"
-- Hidden text fields not refreshed in blueprints
-- NSX-v Load Balancers: Persistence info not updating when set to ‚ÄòNone‚Äô on edit
+- Nutanix: Fixed Hypervisor stat sync
+
+.. - HA K8s Doesn't Work --4.2.6
+
+
+
+ - Unable to create ICMP rule on AWS Security Group
+ - Command for creating new instance cannot specify Group Name with JSON file
+ - Network Flashes / disappears if Group access is lost on the network permission
+ - English (South Africa): Cost/Sale Price change on Save because of comma decimal
+ - Persona tab doesn‚Äôt get cloned
+ - Spinning ball - Activity History Details
+ - Status for applications and instances in AWS ( No Agent)
+ - User role Network permission with Group shouldn‚Äôt provide access to All groups
+ - File >2GB fails to upload to Azure-backed archive
+ - containerid.domain using ansible
+ - If role provision tasks are set to none the option list doesn't present
+ - Filtering for Platform Field on Workflow Not Working
+ - Checkbox option type value defaults to NULL instead of off on load.
+ - Existing backup job not found
+ - Service plan name doesn‚Äôt refresh after reconfigure
+ - Users with "view" on backup perms shown Delete options for failed executions
+ - VCD 10 - Virtual Images not syncing
+ - VMware: Bulk datastore assignment to tenants
+ - Amazon | Backup and Restore new instance failure when using public image on "EC2 Instance" instance type
+ - Azure | Backup and Restore new instance failure when using "Microsoft Azure" instance type
+ - Storage bucket duplication for Public clouds
+ - Disk layout changes on APP provisioning when selecting different layouts
+ - NSX-V Sync Issue: Cloning VM template while provisioning instance is expecting property "uuid"
+ - Hidden text fields not refreshed in blueprints
+ - NSX-v Load Balancers: Persistence info not updating when set to ‚ÄòNone‚Äô on edit
 
 
 
