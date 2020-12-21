@@ -2,7 +2,7 @@ SCVMM
 -----
 
 Requirements
-------------
+^^^^^^^^^^^^
 
 - Access to SCVMM host on port 5985 for Agent installation
 - |morpheus| Agent installation (installed on the target SCVMM host via port 5985 and WinRM)
@@ -10,7 +10,7 @@ Requirements
 
 
 Agent Requirement
------------------
+^^^^^^^^^^^^^^^^^
 
 SCVMM and Hyper-V integrations utilize the |morpheus| Agent for communication with the |morpheus| appliance, making the |morpheus| Agent required. This also means SCVMM and Hyper-V Clouds can only point to one |morpheus| Appliance at any given time. If another |morpheus| Appliance adds an SCVMM or Hyper-V Cloud thats is already managed by another |morpheus| Appliance, the |morpheus| Agent appliance_url will be updated to point to the new |morpheus| appliance_url, and the previous |morpheus| Appliance will no longer be able to communicate with the SCVMM Cloud or Hyper-V Cloud until the Agent configuration is updated to point to the previous appliance again. In |morpheus| version 4.2.1 and higher, multiple |morpheus| clouds can be created by integrating with the same SCVMM host. This allows users to create separate Clouds with are scoped to different SCVMM Cloud, Host and/or Cluster combinations.
 
@@ -46,9 +46,9 @@ Add a SCVMM Cloud
      Select a Library Share to be used with the cloud integration
    SHARED CONTROLLER
      When creating additional |morpheus| clouds that point to an SCVMM host already integrated with this appliance, select the appropriate shared controller value from the dropdown.
-     
-     .. important:: Only set ``SHARED CONTROLLER`` on additional |morpheus| clouds and not on the Primary |morpheus| SCVMM cloud. Failure to set the ``SHARED CONTROLLER`` on secondary |morpheus| clouds pointed to the same SCVMM cluster will cause agent comm issues resulting in provisioning failures. 
-     
+
+     .. important:: Only set ``SHARED CONTROLLER`` on additional |morpheus| clouds and not on the Primary |morpheus| SCVMM cloud. Failure to set the ``SHARED CONTROLLER`` on secondary |morpheus| clouds pointed to the same SCVMM cluster will cause agent comm issues resulting in provisioning failures.
+
     WORKING PATH
       Path for |morpheus| to write to, for example ``c:\cloud``
     DISK PATH
