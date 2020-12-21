@@ -85,7 +85,7 @@ Provisioning Images
 
 When provisioning a system image, |morpheus| will stream the image from Amazon S3 to the target Cloud if the image is not local to the Cloud.
 
-When using iamges that already exist in the destination Cloud, such as synced, marketplace, or previously copied images, no image stream from S3 through the |morpheus| Appliance to the destination cloud will take place.
+When using images that already exist in the destination Cloud, such as synced, marketplace, or previously copied images, no image stream from S3 through the |morpheus| Appliance to the destination cloud will take place.
 
 .. NOTE:: The |morpheus| Appliance must be able to download from Amazon S3 when provisioning system images.
 
