@@ -24,6 +24,7 @@ rst_prolog = """
 .. |erlang| replace:: 22.3
 .. |repo_host_url| replace:: https://downloads.morpheusdata.com
 .. |minUpgradeVer| replace:: v4.2.0
+.. |previousMorphVer| replace:: v5.2.0
 """
 
 
@@ -62,7 +63,6 @@ html_theme_options = {
 'sticky_navigation': True
 }
 html_logo = "_static/logo.svg"
-tin "default.css".
 html_static_path = ['_static']
 
 html_sidebars = {
