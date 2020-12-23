@@ -150,16 +150,12 @@ Fixes
 - Workflows: Fixed the output not displaying in Powershell tasks in the Post Provisioning phase of Workflows
 - Workflows: Required fields in operational workflows are now being enforced
 - Workflows: Fixed an issue causing filtering Workflows by the platform field not to work correctly
-
-.. NOTE:: :superscript:`+` indicates items also released in v4.2.5
-
-..
-  - EL8 offline installer stuck at powertools makecache- need clarity on exact versions imapcted
-  - Upgrade to 5.2.0 from 4.2.4 fails during reconfigure- not done
-  - New Ansible Tower Task Modal | Missing Job Templates
+- Installer: ``guacd['yum-power-tools-repo-baseurl']`` morpheus.rb config override added to specify yum powertools repo url 
+- New Ansible Tower Task Modal | Missing Job Templates
   - Existing backup job not found
   - If role provision tasks are set to none the option list doesn't present
 
+.. NOTE:: :superscript:`+` indicates items also released in v4.2.5
 
 Appliance Updates
 =================
@@ -174,6 +170,6 @@ Agent/Node Package Updates
 ==========================
 
 - Java: openjdk and openjdk-jre updated to 8u275
-- Node and VM Node package versions updates to 3.1.11
+- Node and VM Node package versions updated to 3.1.11
 - FIPS mode supported now for el8
-.. add agent package version vars/list to compatibility?
+

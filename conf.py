@@ -1,163 +1,11 @@
-# -*- coding: utf-8 -*-
-#
-# Morpheus Documentation build configuration file
-# -- General configuration ------------------------------------------------
-
-# needs_sphinx = '1.0'
-
-# Add any Sphinx extension module names here, as strings. They can be
-# extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
-# ones.
-
-extensions = ['recommonmark','sphinx_markdown_tables','sphinx_tabs.tabs','sphinxcontrib.contentui','sphinxcontrib.images']
-
-# Add any paths that contain templates here, relative to this directory.
-templates_path = ['_templates']
-
-# The suffix(es) of source filenames.
-# You can specify multiple suffix as a list of string:
-#
-source_suffix = ['.rst', '.md']
-
-# The master toctree document.
-master_doc = 'index'
-
-# General information about the project.
-project = u'Morpheus Docs'
-copyright = u'2020, Morpheus Data'
-author = u'Morpheus'
-language = 'en'
-
-# List of patterns, relative to source directory, that match files and
-# directories to ignore when looking for source files.
-# This patterns also effect to html_static_path and html_extra_path
-exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store','z_in_progress']
-
-# The name of the Pygments (syntax highlighting) style to use.
-pygments_style = 'none'
-
-# If true, `todo` and `todoList` produce output, else they produce nothing.
-todo_include_todos = False
-
-
-# -- Options for HTML output ----------------------------------------------
-
-# The theme to use for HTML and HTML Help pages.  See the documentation for
-# a list of builtin themes.
-#
-html_theme = 'sphinx_rtd_theme'
-
-html_use_opensearch = 'https://docs.morpheusdata.com'
-
-linkcheck_request_headers = {
-    "*": {
-        "Accept": "text/html,application/atom+xml",
-    }
-}
-
-# Theme options are theme-specific and customize the look and feel of a theme
-# further.  For a list of options available for each theme, see the
-# documentation.
-#
-html_theme_options = {
-'logo_only': True,
-'sticky_navigation': True
-}
-
-html_logo = "_static/logo.svg"
-
-# Add any paths that contain custom static files (such as style sheets) here,
-# relative to this directory. They are copied after the builtin static files,
-# so a file named "default.css" will overwrite the builtin "default.css".
-html_static_path = ['_static']
-
-# Custom sidebar templates, must be a dictionary that maps document names
-# to template names.
-#
-# This is required for the alabaster theme
-# refs: http://alabaster.readthedocs.io/en/latest/installation.html#sidebars
-html_sidebars = {
-    '**': [
-        'about.html',
-        'navigation.html',
-        'relations.html',  # needs 'show_related': True theme option to display
-        'searchbox.html',
-        # 'donate.html',
-    ]
-}
-
-# If you don't want the show source link as well
-html_show_sourcelink = False
-html_show_sphinx = False
-keep_warnings = False
-github_edit_url = False
-
-def setup(app):
-# Disable the GitHub link display
-    app.config.html_context['display_github'] = False
-
-# html_context = {
-#    "display_github": False, # Integrate GitHub
-#}
-
-#html_display_github = False
-
-#display_github = False
-
-context = {
-    'display_github': False,
-}
-html_favicon = "_static/morpheus_fav_64.ico"
-
-# -- Options for HTMLHelp output ------------------------------------------
-
-# Output file base name for HTML help builder.
-htmlhelp_basename = 'morpheusdocs'
-
-
-# -- Options for LaTeX output ---------------------------------------------
-
-latex_elements = {
-
-}
-
-# Grouping the document tree into LaTeX files. List of tuples
-# (source start file, target name, title,
-#  author, documentclass [howto, manual, or own class]).
 latex_documents = [
     (master_doc, 'morpheus5.2.1-1.tex', u'Morpheus Documentation',
      u'Morpheus', 'manual'),
 ]
 
-# -- Options for manual page output ---------------------------------------
-
-# One entry per manual page. List of tuples
-# (source start file, name, description, authors, manual section).
-man_pages = [
-    (master_doc, 'morpheusdocs', u'Morpheus Documentation',
-     [author], 1)
-]
-
-# -- Options for Texinfo output -------------------------------------------
-
-# Grouping the document tree into Texinfo files. List of tuples
-# (source start file, target name, title, author,
-#  dir menu entry, description, category)
-texinfo_documents = [
-    (master_doc, 'morpheusdocs', u'Morpheus Documentation',
-     author, 'Morpheus', 'Morpheus Documentation',
-     'UI Docs'),
-]
-import sphinx_rtd_theme
-html_theme = "sphinx_rtd_theme"
-html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
-
-def setup(app):
-    app.add_stylesheet('morpheusTheme.css')
-
 rst_prolog = """
 .. |morpheus| replace:: Morpheus
-.. |morphbranch| replace:: v5.0
+.. |morphbranch| replace:: v5.2
 .. |morphver| replace:: v5.2.1
 .. |rmqbranch| replace:: v3.5-3.8
 .. |rmqver| replace:: v3.8.9
@@ -169,7 +17,13 @@ rst_prolog = """
 .. |tcver| replace:: v9.0.39
 .. |morphdat| replace:: Morpheus Data, LLC
 .. |nginxver| replace:: v1.19.3
+.. |nodePackageCer| replace:: 3.1.1
 .. |java| replace:: v8u275
+.. |openjdk-jre| replace:: v8u275
+.. |openjdk-elasticsearch| replace:: 14.0.2+12
+.. |erlang| replace:: 22.3
+.. |repo_host_url| replace:: https://downloads.morpheusdata.com
+.. |minUpgradeVer| replace:: v4.2.0
 """
 
 
@@ -184,3 +38,80 @@ rst_prolog = """
 #^^^^^^^^^^^^^^^^
 #````````````````
 #................
+
+extensions = ['recommonmark','sphinx_markdown_tables','sphinx_tabs.tabs','sphinxcontrib.contentui','sphinxcontrib.images']
+templates_path = ['_templates']
+source_suffix = ['.rst', '.md']
+master_doc = 'index'
+project = u'Morpheus Docs'
+copyright = u'2020, Morpheus Data'
+author = u'Morpheus'
+language = 'en'
+exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store','z_in_progress']
+pygments_style = 'none'
+todo_include_todos = False
+html_theme = 'sphinx_rtd_theme'
+html_use_opensearch = 'https://docs.morpheusdata.com'
+linkcheck_request_headers = {
+    "*": {
+        "Accept": "text/html,application/atom+xml",
+    }
+}
+html_theme_options = {
+'logo_only': True,
+'sticky_navigation': True
+}
+html_logo = "_static/logo.svg"
+tin "default.css".
+html_static_path = ['_static']
+
+html_sidebars = {
+    '**': [
+        'about.html',
+        'navigation.html',
+        'relations.html',  # needs 'show_related': True theme option to display
+        'searchbox.html',
+        # 'donate.html',
+    ]
+}
+
+html_show_sourcelink = False
+html_show_sphinx = False
+keep_warnings = False
+github_edit_url = False
+
+def setup(app):
+# Disable the GitHub link display
+    app.config.html_context['display_github'] = False
+
+context = {
+    'display_github': False,
+}
+html_favicon = "_static/morpheus_fav_64.ico"
+htmlhelp_basename = 'morpheusdocs'
+
+latex_elements = {
+
+}
+
+latex_documents = [
+    (master_doc, 'morpheus5.2.1-1.tex', u'Morpheus Documentation',
+     u'Morpheus', 'manual'),
+]
+
+man_pages = [
+    (master_doc, 'morpheusdocs', u'Morpheus Documentation',
+     [author], 1)
+]
+
+texinfo_documents = [
+    (master_doc, 'morpheusdocs', u'Morpheus Documentation',
+     author, 'Morpheus', 'Morpheus Documentation',
+     'UI Docs'),
+]
+import sphinx_rtd_theme
+html_theme = "sphinx_rtd_theme"
+html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
+
+def setup(app):
+    app.add_stylesheet('morpheusTheme.css')

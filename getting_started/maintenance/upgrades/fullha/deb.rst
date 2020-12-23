@@ -3,7 +3,7 @@ Full HA Debian / Ubuntu Upgrade
 
 The following covers upgrading the |morpheus| App nodes in Full HA Architecture configurations to |morphver|.
 
-.. important:: The following is only for Full HA Architecture configurations, where MySQL, Elasticsearch and RabbitMQ services are external to the App nodes. The following stes assume 3 app nodes, adjust accordingly.
+.. important:: The following is only for Full HA Architecture configurations, where MySQL, Elasticsearch and RabbitMQ services are external to the App nodes. The following steps assume 3 app nodes, adjust accordingly.
 
 |morpheus| Packages
 ...................

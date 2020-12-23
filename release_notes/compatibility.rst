@@ -23,6 +23,8 @@ Breaking Changes
 
 .. important:: Existing |morpheus| Appliances on 14.04 must upgrade to 16.04, 18.04 or 20.04 PRIOR to upgrading to v4.2+.
 
+.. note:: CentOS v8.3 repo name changes will cause reconfigure failure. ``guacd['yum-power-tools-repo-baseurl'] = 'http://mirrorlist.centos.org/?release=$releasever&arch=$basearch&repo=powertools&infra=$infra'`` can be aded to ``/etc/morpheus/morpheus.rb`` as a workaround until native support is added.
+
 .. list-table:: **Supported Appliance Operating Systems**
    :widths: auto
    :header-rows: 1
@@ -34,11 +36,11 @@ Breaking Changes
      - 2
      -
    * - CentOS
-     - 7.x, 8.x
-     -
+     - 7.x, 8.0, 8.1, 8.2
+     - CentOS v8.3 repo name changes will cause reconfigure failure. ``guacd['yum-power-tools-repo-baseurl'] = 'http://mirrorlist.centos.org/?release=$releasever&arch=$basearch&repo=powertools&infra=$infra'`` can be aded to ``/etc/morpheus/morpheus.rb`` as a workaround until native support is added.
    * - Debian
      - 9, 10
-     - FreeRDP 2.0 is not compatible with Debian 9. Guacd will remain at 1.0.0 for Appliances running on 9.
+     - FreeRDP 2.0 is not compatible with Debian 9. Guacd will remain at 1.0.0 for Appliances running on Debian 9.
    * - RHEL
      - 7.x, 8.x
      -
@@ -55,7 +57,7 @@ Services
 |morphver| Service Version Changes
 ----------------------------------
 
-- Java: Upgraded to 8u275
+No Service Version changes from |previousMorphVer|
 
 |morphver| Service Version Compatibility
 ----------------------------------------
@@ -81,16 +83,6 @@ When externalizing MySQL, Elasticsearch and/or RabbitMQ services, the following 
 +---------------------------------------+-----------------------+-------------------------------------+
 
 .. important:: Elasticsearch 7.x is required for |morphver|. Refer to :ref:`upgrading` section for more information.
-
-Security
-========
-
-.. important:: Please be aware of the default security enhancements added to v4.1.2+ and assess potential impacts to your environment, including agent installation and frontend load balancers.
-
-CVEs Addressed
---------------
-
-- CVE-2020-8203
 
 Integrations
 ============

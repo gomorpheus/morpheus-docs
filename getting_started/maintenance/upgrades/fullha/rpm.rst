@@ -1,5 +1,5 @@
-Full HA CentOS / RHEL Upgrade
-`````````````````````````````
+Full HA RPM Upgrade
+```````````````````
 
 The following covers upgrading the |morpheus| App nodes in Full HA Architecture configurations to |morphver|.
 
