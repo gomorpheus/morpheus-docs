@@ -21,7 +21,7 @@ To upgrade Morpheus running on Ubuntu/Debian, download new deb package, stop the
 
 All services will automatically start during the reconfigure process. After the reconfigure has succeeded, tail the ui service to watch ui startup logs with ``morpheus-ctl tail morpheus-ui``.
 
-.. note:: Services will be stopped during package installation and started during the reconfigure process, including the morpheus-ui service. If the reconfigure process is interrupted or fails, the morpheus-ui service may need to be manually started or restarted. In certain situations if anther service hangs on starting during reconfigure, run ``systemctl restart morpheus-runsvdir`` then reconfigure and restart morpheus-ui if successful. 
+.. note:: Services will be stopped during package installation and started during the reconfigure process, including the morpheus-ui service. If the reconfigure process is interrupted or fails, the morpheus-ui service may need to be manually started or restarted. In certain situations if another service hangs on starting during reconfigure, run ``systemctl restart morpheus-runsvdir`` then reconfigure and restart ``morpheus-ui`` if successful. 
 
 After the morpheus-ui service finishes loading, the upgrade is complete.
 
@@ -41,7 +41,7 @@ To upgrade Morpheus running on CentOS, RHEL, Amazon or SLES, download and instal
 
 All services will automatically start during the reconfigure process. After the reconfigure has succeeded, tail the ui service to watch ui startup logs with ``morpheus-ctl tail morpheus-ui``.
 
-.. note:: Services will be stopped during package installation and started during the reconfigure process, including the morpheus-ui service. If the reconfigure process is interrupted or fails, the morpheus-ui service may need to be manually started or restarted. In certain situations if anther service hangs on starting during reconfigure, run ``systemctl restart morpheus-runsvdir`` then reconfigure and restart morpheus-ui if successful. 
+.. note:: Services will be stopped during package installation and started during the reconfigure process, including the morpheus-ui service. If the reconfigure process is interrupted or fails, the morpheus-ui service may need to be manually started or restarted. In certain situations if another service hangs on starting during reconfigure, run ``systemctl restart morpheus-runsvdir`` then reconfigure and restart ``morpheus-ui`` if successful. 
 
 After the morpheus-ui service finishes loading, the upgrade is complete.
 
