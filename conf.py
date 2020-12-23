@@ -1,3 +1,5 @@
+master_doc = 'index'
+
 latex_documents = [
     (master_doc, 'morpheus5.2.1-1.tex', u'Morpheus Documentation',
      u'Morpheus', 'manual'),
@@ -43,7 +45,6 @@ rst_prolog = """
 extensions = ['recommonmark','sphinx_markdown_tables','sphinx_tabs.tabs','sphinxcontrib.contentui','sphinxcontrib.images']
 templates_path = ['_templates']
 source_suffix = ['.rst', '.md']
-master_doc = 'index'
 project = u'Morpheus Docs'
 copyright = u'2020, Morpheus Data'
 author = u'Morpheus'
