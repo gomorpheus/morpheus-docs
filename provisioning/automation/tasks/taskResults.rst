@@ -21,20 +21,19 @@ Results Types
 - JSON
    Expects ``key:value,key:value`` json formatted output. Entire task output is available with ``<%=results.taskCode%>`` or ``<%=results["Task Name"]%>`` variable (output inside ``[]``). Individual Values are avilable with ``<%=results.taskCode.key%>`` variables.
 
-
 .. important:: The entire output of a script is treated as results, not just the last line. Ensure formatting is correct for the appropriate result type. For example, if Results Type is ``json`` and the output is not fully json compatible, the result would not return properly.
 
 .. important:: Task results are not supported for Library Script task types
 
 Script Config Examples
-````````````````````````
+``````````````````````
 
 :Single Value using Task Code:
   Source Task Config
     NAME
       Var Code (single)
     CODE
-      single
+      singleExample
     RESULT TYPE
       Single Value
     SCRIPT
@@ -43,7 +42,7 @@ Script Config Examples
     ``string value``
   Results Task using task code in variable
     Results Task Script
-      ``echo "single: <%=results.single%>"``
+      ``echo "single: <%=results.singleExample%>"``
     Results Task Output
       ``single: string value``
 
@@ -71,7 +70,7 @@ Script Config Examples
     NAME
       Var Code (keyval)
     CODE
-      keyval
+      keyvalExample
     RESULT TYPE
       Key/Value pairs
     SCRIPT
@@ -80,12 +79,12 @@ Script Config Examples
     ``flash=bang,ping=pong``
   Results Task for all results
     Results Task Script
-      ``echo "keyval: <%=results.keyval%>"``
+      ``echo "keyval: <%=results.keyvalExample%>"``
     Results Task Output
       ``keyval: [flash:bang, ping:pong]``
   Results Task for a single value)
     Results Task Script
-      ``echo "keyval value: <%=results.keyval.flash%>"``
+      ``echo "keyval value: <%=results.keyvalExample.flash%>"``
     Results Task Output
       ``keyval value: bang``
 
@@ -94,7 +93,7 @@ Script Config Examples
     NAME
       Var Code (json)
     CODE
-      json
+      jsonExample
     RESULT TYPE
       JSON
     SCRIPT
@@ -103,12 +102,12 @@ Script Config Examples
     ``{"ping":"pong","flash":"bang"}``
   Results Task for all results
     Results Task Script
-      ``echo "json: <%=results.json%>"``
+      ``echo "json: <%=results.jsonExample%>"``
     Results Task Output
       ``json: [ping:pong, flash:bang]``
   Results Task for a single value
     Results Task Script
-      ``echo "json value: <%=results.json.ping%>"``
+      ``echo "json value: <%=results.jsonExample.ping%>"``
     Results Task Output
       ``json value: pong``
 
@@ -116,12 +115,12 @@ Script Config Examples
     Results Task Script
        .. code-block:: bash
 
-          echo "single: <%=results.single%>"
+          echo "single: <%=results.singleExample%>"
           echo "task name: <%=results["Var Code"]%>"
-          echo "keyval: <%=results.keyval%>"
+          echo "keyval: <%=results.keyvalExample%>"
           echo "keyval value: <%=results.keyval.flash%>"
-          echo "json: <%=results.json%>"
-          echo "json value: <%=results.json.ping%>"
+          echo "json: <%=results.jsonExample%>"
+          echo "json value: <%=results.jsonExample.ping%>"
 
     Results Task Output
        .. code-block:: bash
