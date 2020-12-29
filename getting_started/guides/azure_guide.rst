@@ -2,17 +2,17 @@ Getting started with |morpheus| and Azure
 =========================================
 
 Introduction
-^^^^^^^^^^^^
+------------
 
 This guide is designed to help you get started and quickly get the most out of Morpheus with Microsoft Azure public cloud. By the end, you will integrate your first cloud with |morpheus|, configure networking, prepare and consume images, provision instances, and get started with automation. We will briefly discuss installation and account setup but will provide links to additional resources for those very first steps. For the most part, this guide assumes you are able to get |morpheus| installed and are ready to move forward from that point. There is a lot more to see and do in Morpheus that is beyond the scope of this guide. For more, consult the complete Morpheus documentation or take part in our `Reddit user community forum <https://www.reddit.com/r/morpheusdata/>`_.
 
 Installation & Setup
-^^^^^^^^^^^^^^^^^^^^
+--------------------
 
 In the simplest configuration, |morpheus| needs one appliance server which will contain all the components necessary to orchestrate virtual machines and containers. Full requirements, including storage and networking considerations, can be found in |morpheus| documentation `here <https://docs.morpheusdata.com/en/latest/getting_started/requirements/requirements.html>`_. In order to provision any new Instances, hosts, or applications (or convert any discovered resources to managed resources) you will need a valid license. If you don't have one, you can request a community edition license for free at `Morpheus Hub <https://www.morpheushub.com>`_. Once obtained, the license can be applied in Administration > Settings > LICENSE. For more, take a look at our community edition `welcome package <https://www.morpheusdata.com/community-welcome>`_.
 
 Groups
-^^^^^^
+------
 
 Groups in |morpheus| define which resources a user has access to. Clouds are added to Groups and a user can only access Clouds that are in the Groups to which their roles give them access. More information on |morpheus| Groups is `here <https://docs.morpheusdata.com/en/latest/infrastructure/groups/groups.html#groups>`_. A deep dive into Groups goes beyond the scope of this guide but it's often useful to create a Group that contains all Clouds for testing purposes. We will create that group now so that we can add our first Cloud into this Group in the next section.
 
@@ -23,7 +23,7 @@ Click :guilabel:`SAVE CHANGES`. Your Group is now ready to accept Clouds.
 .. image:: /images/azureguideimages/1newGroup.png
 
 Integrating Your First Cloud
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+----------------------------
 
 Clouds in |morpheus| consist of any consumable endpoint whether that be on-prem, public clouds, or even bare metal. In this guide, we will focus on integrating and working with Microsoft Azure public cloud.
 
