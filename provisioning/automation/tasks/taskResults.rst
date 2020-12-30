@@ -30,21 +30,20 @@ Script Config Examples
 
 :Single Value using Task Code:
   Source Task Config
-    NAME
-      Var Code (single)
-    CODE
-      singleExample
-    RESULT TYPE
-      Single Value
-    SCRIPT
-      ``echo "string value"``
-  Source Task Output
-    ``string value``
-  Results Task using task code in variable
-    Results Task Script
-      ``echo "single: <%=results.singleExample%>"``
-    Results Task Output
-      ``single: string value``
+     - NAME: Var Code (single)
+     - CODE: singleExample
+     - RESULT TYPE: Single Value
+     - SCRIPT: ``echo "string value"``
+
+  Source Task Output: ``string value``
+  
+  Results Task Config (using task code in variable)
+   - NAME: N/A
+   - CODE: N/A
+   - RESULT TYPE: N/A
+   - SCRIPT: ``echo "single: <%=results.singleExample%>"``
+    
+  Results Task Output: ``single: string value``
 
 :Single Value using Task Name:
   Source Task Config
