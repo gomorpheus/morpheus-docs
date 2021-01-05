@@ -46,7 +46,7 @@ master_doc = 'index'
 
 # General information about the project.
 project = u'Morpheus Docs'
-copyright = u'2020, Morpheus Data'
+copyright = u'2021, Morpheus Data'
 author = u'Morpheus'
 
 # The version info for the project you're documenting, acts as replacement for
