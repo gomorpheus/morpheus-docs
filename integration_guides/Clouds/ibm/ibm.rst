@@ -12,10 +12,10 @@ Connecting an IBM Cloud account with |morpheus| is a simple process requiring on
 #. Click :guilabel:`+ ADD`
 #. Complete the following required fields:
 
-    - **NAME:** A friendly name for the cloud inegration in |morpheus|
-    - **USERNAME:** The name given to the API key you're using the authenticate the connection
-    - **API Key:** The API key value
-    - **DATACENTER:** Select the IBM Cloud data center
+  - **NAME:** A friendly name for the cloud inegration in |morpheus|
+  - **USERNAME:** The name given to the API key you're using the authenticate the connection
+  - **API Key:** The API key value
+  - **DATACENTER:** Select the IBM Cloud data center
 
 #. Click :guilabel:`NEXT`
 #. Select a Group for this Cloud
