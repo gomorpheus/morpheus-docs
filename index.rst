@@ -44,7 +44,7 @@
    :caption: Morpheus API & CLI
 
    API Documentation <https://apidocs.morpheusdata.com>
-   CLI Documentation <https://morpheus-morpheus-cli-docs.readthedocs-hosted.com/en/latest/CLI-Manual.html>
+   CLI Documentation <https://clidocs.morpheusdata.com>
 
 ..
   .. toctree::
