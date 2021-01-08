@@ -35,6 +35,7 @@
    :caption: Morpheus API
 
    API Documentation <https://apidocs.morpheusdata.com>
+   CLI Documentation <https://clidocs.morpheusdata.com>
 
 .. toctree::
    :maxdepth: 3
