@@ -29,7 +29,7 @@
    :caption: Morpheus API & CLI
 
    API Documentation <https://apidocs.morpheusdata.com>
-   CLI Documentation <https://github.com/gomorpheus/morpheus-cli/wiki>
+   CLI Documentation <https://clidocs.morpheusdata.com>
 
 .. toctree::
    :maxdepth: 3
