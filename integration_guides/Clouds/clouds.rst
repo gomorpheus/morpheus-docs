@@ -13,6 +13,7 @@ Clouds
   google/google.rst
   Huawei/huawei.rst
   hyperv/hyperv.rst
+  ibm/ibm.rst
   kvm/kvm.rst
   maas/maas.rst
   macstadium/macstadium.rst
