@@ -88,7 +88,7 @@ Add a GCP Cloud
    PROJECT ID
     Google Cloud Project ID
    PRIVATE KEY
-    The service account private key. Paste in the entire value between (but not including) the quotation marks in your downloaded JSON document, formatted like the following example: -----BEGIN PRIVATE KEY-----(your_key)-----END PRIVATE KEY-----.
+    The service account private key. Paste in the entire value between (but not including) the quotation marks in your downloaded JSON document, formatted like the following example: ```-----BEGIN PRIVATE KEY-----(your_key)-----END PRIVATE KEY-----```
    CLIENT EMAIL
     The service account client email, ex: `morpheus@morpheus.iam.gserviceaccount.com`
    REGION
