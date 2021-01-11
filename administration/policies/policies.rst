@@ -84,7 +84,7 @@ Policies can be created in three different locations.
 
 Policies can be disabled and re-enabled at anytime.
 
-.. IMPORTANT:: Precedence is applied to matching or conflicting Policies in the following order: Cloud > Group > Role > User > Global.
+.. IMPORTANT:: Precedence is applied to matching or conflicting Policies in the following order: Group > Cloud > User > Role > Global.
 
 To create a Global Policy:
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
