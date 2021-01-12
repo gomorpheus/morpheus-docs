@@ -7,7 +7,7 @@ Upgrading
 
 	
 .. toctree::
-   :maxdepth: 3
+   :maxdepth: 4
 
    upgrades/overview.rst
    upgrades/single/singlenode.rst
