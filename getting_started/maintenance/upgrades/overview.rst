@@ -2,12 +2,15 @@ Upgrading Overview
 ^^^^^^^^^^^^^^^^^^
 
 |morpheus| Packages
-^^^^^^^^^^^^^^^^^^^
+...................
+
 |morpheus| Release Package urls can be obtained from `https://morpheushub.com <https://morpheushub.com>`_ 
     
 
 Upgrade Requirements
-^^^^^^^^^^^^^^^^^^^^
+....................
+
+.. warning:: |morpheus| |morphver| contain new node and vm node packages that require 3.5GB of storage. It is safe to run ``sudo rm -Rf /var/opt/morpheus/package-repos/*`` after |morphver| package installation and before reconfigure to clean old node and vm node packages from the package-repo when room is needed. 
 
 * Only appliances running Morpheus |minUpgradeVer| or higher can upgrade to |morphver|
 
@@ -15,5 +18,5 @@ Upgrade Requirements
 
 * For firewall/proxy/acl considerations, the domain for Appliance, Supplemental and Agent packages was changed recently to https://downloads.morpheusdata.com from https://downloads.gomorpheus.com. Please update ACL's to allow access to https://downloads.morpheusdata.com when necessary. 
 
-Refer to :ref:`compatibility` for externalized MySQL, Elasticsearch and/or RabbitMQ version requirements.
+.. include:: /release_notes/compatibility.rst
 
