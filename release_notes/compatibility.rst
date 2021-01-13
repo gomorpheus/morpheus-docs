@@ -21,7 +21,9 @@ Breaking Changes
 
 |morpheus| can be installed on the following platforms. Please note the table below is for |morpheus| Application OS support, not |morpheus| Agent OS Support.
 
-.. important:: Existing |morpheus| Appliances on 14.04 must upgrade to 16.04 or 18.04 PRIOR to upgrading to v4.2+.
+.. important:: Existing |morpheus| Appliances on 14.04 must upgrade to 16.04, 18.04 or 20.04 PRIOR to upgrading to v4.2+.
+
+.. note:: CentOS v8.3 repo name changes will cause reconfigure failure. ``guacd['yum-power-tools-repo-baseurl'] = 'http://mirrorlist.centos.org/?release=$releasever&arch=$basearch&repo=powertools&infra=$infra'`` can be aded to ``/etc/morpheus/morpheus.rb`` as a workaround until native support is added.
 
 .. list-table:: **Supported Appliance Operating Systems**
    :widths: auto
@@ -34,11 +36,11 @@ Breaking Changes
      - 2
      -
    * - CentOS
-     - 7.x, 8.x
-     -
+     - 7.x, 8.0, 8.1, 8.2
+     - CentOS v8.3 repo name changes will cause reconfigure failure. ``guacd['yum-power-tools-repo-baseurl'] = 'http://mirrorlist.centos.org/?release=$releasever&arch=$basearch&repo=powertools&infra=$infra'`` can be aded to ``/etc/morpheus/morpheus.rb`` as a workaround until native support is added.
    * - Debian
      - 9, 10
-     - FreeRDP 2.0 is not compatible with Debian 9. Guacd will remain at 1.0.0 for Appliances running on 9.
+     - FreeRDP 2.0 is not compatible with Debian 9. Guacd will remain at 1.0.0 for Appliances running on Debian 9.
    * - RHEL
      - 7.x, 8.x
      -
@@ -46,8 +48,8 @@ Breaking Changes
      - 12, 15
      -
    * - Ubuntu
-     - 16.04, 18.04
-     - 14.04 is no longer supported for Appliance OS. Existing Appliances on 14.04 must upgrade to 16.04 or 18.04 PRIOR to upgrading to v4.2.1+. Note: 14.04 is still supported by the |morpheus| Agent.
+     - 16.04, 18.04, 20.04
+     - 14.04 is no longer supported for Appliance OS. Existing Appliances on 14.04 must upgrade to 16.04, 18.04 or 20.04 PRIOR to upgrading to v4.2.1+. Note: 14.04 is still supported by the |morpheus| Agent.
 
 Services
 ========
@@ -55,10 +57,7 @@ Services
 |morphver| Service Version Changes
 ----------------------------------
 
-- MySQL: Upgraded to 5.7.32 for non-fips versions (5.7.29)
-- Nginx: Upgraded to v1.19.3
-- RabbitMQ: Upgraded to v3.8.9
-- Tomcat: Upgraded to 9.0.39
+No Service Version changes from |previousMorphVer|
 
 |morphver| Service Version Compatibility
 ----------------------------------------
@@ -83,22 +82,7 @@ When externalizing MySQL, Elasticsearch and/or RabbitMQ services, the following 
 | Nginx                                 |                       | |nginxver|                          |
 +---------------------------------------+-----------------------+-------------------------------------+
 
-
 .. important:: Elasticsearch 7.x is required for |morphver|. Refer to :ref:`upgrading` section for more information.
-
-Security
-========
-
-.. important:: Please be aware of the default security enhancements added to v4.1.2+ and assess potential impacts to your environment, including agent installation and frontend load balancers.
-
-CVEs Addressed
---------------
-
-- CVE-2017-5929
-- CVE-2019-2692
-- CVE-2020-2933
-- CVE-2020-14338
-- CVE-2020-15250
 
 Integrations
 ============

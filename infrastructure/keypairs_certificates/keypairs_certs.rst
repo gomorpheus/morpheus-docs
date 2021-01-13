@@ -4,7 +4,17 @@ Key Pairs & Certificates
 Key Pairs
 ---------
 
-The Key Pairs section enables the following actions: Add and Delete key pairs. Key Pairs are commonly used by |morpheus| for accessing instances via SSH. |morpheus| stores key pairs to simplify administration and access across both private and public clouds.
+The key pairs section enables the following actions: Add and Delete key pairs. Key pairs are commonly used by |morpheus| for accessing instances via SSH. |morpheus| stores key pairs to simplify administration and access across both private and public clouds.
+
+|morpheus| only accepts key pairs in PEM format (for example, a private key beginning with ``-----BEGIN RSA PRIVATE KEY-----``). If you have a key in another format, such as OpenSSH, convert the key:
+
+.. code-block:: bash
+
+  #No passphrase
+  ssh-keygen -m pem -f /path/to/key
+
+  #With passphrase
+  ssh-keygen -p -P "old passphrase" -N "new passphrase" -m pem -f path/to/key
 
 Add Key Pair
 ------------

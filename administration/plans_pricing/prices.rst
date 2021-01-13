@@ -65,19 +65,25 @@ Price Units
 
 Currency
   -  AUD
+  -  BRL
+  -  CAD
   -  CHF
+  -  CLF
+  -  CLP
   -  DKK
   -  EUR
   -  GBP
   -  IDR
   -  ILS
   -  MAD
+  -  MXN
   -  NOK
   -  NZD
   -  ROL
   -  SEK
   -  TRL
   -  USD
+  -  USN
   -  XAF
   -  XCD
   -  XOF

@@ -40,6 +40,8 @@ PLACEHOLDER
  Background text that populates inside a field for adding example values, does not set a value
 DEFAULT VALUE
  Pre-populates field with a default value
+HELP BLOCK
+ Helpful text that will appear under your Option Type field to inform users about their selection
 REQUIRED
  Prevents User from proceeding without setting value
 DEFAULT CHECKED

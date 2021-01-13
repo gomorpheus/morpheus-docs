@@ -22,7 +22,7 @@ The Instance list contains important information about each instance, including 
 .. include:: creating_instances.rst
 .. include:: instance_details.rst
 .. include:: managing_instances.rst
-.. include:: /troubleshooting/Remote_Console.rst
+.. .. include:: /troubleshooting/Remote_Console.rst
 
 ..
   .. container:: right-col

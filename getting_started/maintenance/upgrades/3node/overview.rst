@@ -9,12 +9,6 @@
 
 Refer to :ref:`compatibility` for any 3-node variations using externalized MySQL, Elasticsearch and/or RabbitMQ version requirements.
 
-
-4.2.x -> |morphver| upgrade 
-...........................
-
-Due to Database schema changes in |morphver| it is important to stop the morpheus-ui service on all app nodes prior to upgrade. Failure to do so may result in errors or database corruption.
-
 Upgrade Instructions
 ````````````````````
 

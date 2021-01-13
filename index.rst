@@ -1,7 +1,7 @@
 |morpheus| |morphver| Documentation
 ===================================
 
-.. include:: /release_notes/highlights.rst
+:ref:`Release Notes`
 
 .. toctree::
    :maxdepth: 2

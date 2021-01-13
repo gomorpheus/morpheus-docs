@@ -170,7 +170,7 @@ Instances with expirations show the time until expiration in the instance detail
 
 Expirations can also be added to any instance during provisioning by entering the number of days in the EXPIRATION DAYS field in the Lifecycle section of the automation section of the provisioning wizard. Expiration can be added to any instance even if no policies have been created.
 
-.. NOTE:: Expiration and Shutdown Policies will be enforced on Instances moved into a Group with an Active Policy or Instances created when converting an unmanaged host to managed.
+.. NOTE:: Expiration and Shutdown Policies will be enforced on Instances created when converting a discovered host to managed.
 
 Instance and Host Names
 ^^^^^^^^^^^^^^^^^^^^^^^
@@ -239,7 +239,7 @@ Notification Message
 Auto Approve Extensions
   Enable this to auto-approve extension requests, bypassing approval workflows.
 
-.. NOTE:: Expiration and Shutdown Policies will be enforced on Instances moved into a Group with an Active Policy or Instances created when converting an unmanaged host to managed.
+.. NOTE:: Expiration and Shutdown Policies will be enforced on Instances created when converting a discovered host to managed.
 
 Provision Approval
 ^^^^^^^^^^^^^^^^^^

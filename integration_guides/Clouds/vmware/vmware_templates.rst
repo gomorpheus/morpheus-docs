@@ -1,18 +1,18 @@
 Creating a |morpheus| VMware Image
-----------------------------------
-
-Overview
-^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 |morpheus| comes out of the box with a default set of blueprints for use in many modern deployment scenarios. These consist mostly of base operating system images with a few additional adjustments. These adjustments typically include the addition of cloud-init (which is highly recommended to be used in most environments, but not mandatory). However, in many on-premise deployments there are custom image requirements as well as networking requirements. This guide will go over how to create a VMware Images for use within |morpheus|.
 
-Supported Verisons
+Creating a Windows Image
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+Supported Versions
 ``````````````````
 
 2008R2,2012,2012R2,2016,2019
 
-Creating a Windows Image
-^^^^^^^^^^^^^^^^^^^^^^^^
+Image Preparation
+`````````````````
 
 Create a new machine in VMware vCenter and install a base version of your preferred Windows build.  The smaller the VMDK drive, typically the faster you can clone and deploy.  Utilizing |morpheus|, provisioning and post deploy scripts can expand drives to desired sizing.
 

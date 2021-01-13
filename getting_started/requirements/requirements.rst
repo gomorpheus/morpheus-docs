@@ -22,7 +22,7 @@ Base Requirements
      - 7.x, 8.x
      -
    * - Debian
-     - 8, 9, 10
+     - 9, 10
      - FreeRDP 2.0 is not compatible with Debian 9. Guacd will remain at 1.0.0 for Appliances running on 9.
    * - RHEL
      - 7.x, 8.x
@@ -31,16 +31,17 @@ Base Requirements
      - 12, 15
      -
    * - Ubuntu
-     - 16.04, 18.04
+     - 16.04, 18.04, 20.04
      - 14.04 is no longer supported for Appliance OS. Existing Appliances on 14.04 must upgrade to 16.04 or 18.04 PRIOR to upgrading to v4.2.1. Note: 14.04 is still supported by the |morpheus| Agent.
 
 - **Memory:** `16 GB recommended <https://support.morpheusdata.com/s/article/How-does-Morpheus-manage-the-memory-it-uses?language=en_US>`_ for default installations. 8 GB minimum required with 4 GB+ available storage swap space
 - **Storage:** 200 GB storage minimum (see Storage Considerations below)
 - **CPU:** 4-core, 1.4 GHz (or better), 64-bit CPU recommended for all-in-one systems. For a distributed-tier installation, it's recommended each tier have 2-core, 1.4 GHz (or better), 64-bit CPU
 - Network connectivity from your users to the appliance over TCP 443 (HTTPS)
-- Superuser privileges via the sudo command for the user installing the |morpheus| appliance package
+- Superuser privileges via the ``sudo`` command for the user installing the |morpheus| appliance package
 - Access to base ``yum`` or ``apt`` repos. Access to Optional RPMs repo required for RHEL 7.x
 - An appliance license is required for any operations involving provisioning
+- Current major web browsers supporting modern standards, such as Google Chrome, Mozilla Firefox, Apple Safari, and Microsoft Edge are supported
 - Internet Connectivity (optional)
    - To download from |morpheus|' public docker repositories and system Virtual Image catalog
    - Offline installation require installing the supplemental package in addition to the regular installation package. Local yum/apt repo access still required for offline installations.
