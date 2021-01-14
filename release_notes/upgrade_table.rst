@@ -267,23 +267,6 @@
        <td class="tg-d52n">5.2.2</td>
      </tr>
      <tr>
-       <td class="tg-fckf">5.2.2 →</td>
-       <td class="tg-re1e"></td>
-       <td class="tg-re1e"></td>
-       <td class="tg-re1e"></td>
-       <td class="tg-re1e"></td>
-       <td class="tg-re1e"></td>
-       <td class="tg-re1e"></td>
-       <td class="tg-re1e"></td>
-       <td class="tg-re1e"></td>
-       <td class="tg-re1e"></td>
-       <td class="tg-re1e"></td>
-       <td class="tg-re1e"></td>
-       <td class="tg-re1e"></td>
-       <td class="tg-re1e"></td>
-       <td class="tg-0pky"></td>
-     </tr>
-     <tr>
        <td class="tg-5sf3" colspan="15">Rolling Upgrade Supported</td>
      </tr>
      <tr>

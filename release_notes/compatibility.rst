@@ -91,6 +91,8 @@ The following table shows supported version upgrade paths and methods.
 
 .. include:: upgrade_table.rst
 
+| 
+
 Integrations
 ============
 
