@@ -84,6 +84,13 @@ When externalizing MySQL, Elasticsearch and/or RabbitMQ services, the following 
 
 .. important:: Elasticsearch 7.x is required for |morphver|. Refer to :ref:`upgrading` section for more information.
 
+Upgrade Paths & Methods
+=======================
+
+The following table shows supported version upgrade paths and methods. 
+
+.. include:: upgrade_table.rst
+
 Integrations
 ============
 
