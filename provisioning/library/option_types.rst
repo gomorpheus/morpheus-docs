@@ -70,8 +70,8 @@ Putting it all together, you'll first configure visibility for your selected Opt
 
 Next, ensure the relevant Option Types are associated with the Service Catalog Item (Tools > Self Service).
 
-..image:: /images/provisioning/optionTypes/2configCatalogItem.png
+.. image:: /images/provisioning/optionTypes/2configCatalogItem.png
 
 Finally, when Service Catalog Persona users interact with my Catalog Item, they will be able to toggle additional Option Types to be visible based on their selections.
 
-..image:: /images/provisioning/optionTypes/3toggleOption.gif
+.. image:: /images/provisioning/optionTypes/3toggleOption.gif
