@@ -82,7 +82,10 @@ When externalizing MySQL, Elasticsearch and/or RabbitMQ services, the following 
 | Nginx                                 |                       | |nginxver|                          |
 +---------------------------------------+-----------------------+-------------------------------------+
 
-.. important:: Elasticsearch 7.x is required for |morphver|. Refer to :ref:`upgrading` section for more information.
+Upgrade Support Matrix
+======================
+
+.. include:: upgrade_table.rst
 
 Integrations
 ============
