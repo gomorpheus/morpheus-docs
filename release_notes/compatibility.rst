@@ -23,7 +23,7 @@ Breaking Changes
 
 .. important:: Existing |morpheus| Appliances on 14.04 must upgrade to 16.04, 18.04 or 20.04 PRIOR to upgrading to v4.2+.
 
-.. note:: CentOS v8.3 repo name changes will cause reconfigure failure. ``guacd['yum-power-tools-repo-baseurl'] = 'http://mirrorlist.centos.org/?release=$releasever&arch=$basearch&repo=powertools&infra=$infra'`` can be aded to ``/etc/morpheus/morpheus.rb`` as a workaround until native support is added.
+.. note:: If CentOS 8.2 is pinned to 8.2.2004 vault, the PowerTools repository will need to be pinned to 8.2.2004 to access freerdp-libs 2.0.0
 
 .. list-table:: **Supported Appliance Operating Systems**
    :widths: auto
@@ -36,8 +36,8 @@ Breaking Changes
      - 2
      -
    * - CentOS
-     - 7.x, 8.0, 8.1, 8.2
-     - CentOS v8.3 repo name changes will cause reconfigure failure. ``guacd['yum-power-tools-repo-baseurl'] = 'http://mirrorlist.centos.org/?release=$releasever&arch=$basearch&repo=powertools&infra=$infra'`` can be aded to ``/etc/morpheus/morpheus.rb`` as a workaround until native support is added.
+     - 7.x, 8.x
+     - If CentOS 8.2 is pinned to 8.2.2004 vault, the PowerTools repository will need to be pinned to 8.2.2004 to access freerdp-libs 2.0.0
    * - Debian
      - 9, 10
      - FreeRDP 2.0 is not compatible with Debian 9. Guacd will remain at 1.0.0 for Appliances running on Debian 9.
