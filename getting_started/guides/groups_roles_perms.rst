@@ -1,9 +1,9 @@
 Configuring Access with Clouds, Groups, and Roles
 =================================================
 
-As you get started, it's vital to understand constructs such as Clouds and Groups as they are implemented in |morpheus|. Deploying an effective strategy for dividing organizational resources and people groups under these constructs will ensure all parties have convenient access to the resources they need. Currently-existing strategies for splitting resources and controlling costs continue to be honored and your teams have access only to resources allocated to their department.
+As you get started, it's vital to understand constructs such as Clouds and Groups as they are implemented in |morpheus|. Deploying an effective strategy for dividing organizational resources and people groups under these constructs will ensure all parties have convenient access to the resources they need. Map currently-existing strategies for splitting resources and controlling costs into |morpheus| and your teams will have access only to resources allocated to their department.
 
-This guide discusses the constructs of Clouds, Groups, Roles and Policies while also presenting an example use case for allocating resources and distributing access under these umbrellas. We'll end up with a permissions structure represented by the diagram below and step through each part of the implementation process.
+This guide discusses the constructs of Clouds, Groups, Roles, Users, and Policies while also presenting an example use case for allocating resources and distributing access under these umbrellas. We'll end up with a permissions structure represented by the diagram below and step through each part of the implementation process.
 
 .. image:: /images/integration_guides/perms_guide/0permsDiagram.png
 
@@ -22,14 +22,14 @@ Groups
 
 `Groups <https://docs.morpheusdata.com/en/latest/infrastructure/groups/groups.html>`_ in |morpheus| allow administrators to determine which Clouds their users have access to. Part of defining a Role, which we'll see in the next section, is selecting which Groups are associated with the Role. One or multiple Clouds are added to each Group and passed to users through their assigned Roles.
 
-When creating a Cloud, it must be added to a Group. Additionally, Clouds can be added to a Group at any time from the Clouds tab on the Group detail page (Infrastructure > Groups > Specific Group). In the example case diagrammed above, one Cloud (Azure cloud scoped to a specific resource group) is associated with each Group but often Groups will contain many Clouds. In the screenshot below, I am adding an Azure Cloud to a Group that is currently empty.
+When creating a Cloud, it must be added to a Group. Additionally, Clouds can be added to a Group at any time from the Clouds tab on the Group detail page (Infrastructure > Groups > Specific Group). In the example case diagrammed above, one Cloud (Azure cloud account scoped to a specific resource group) is associated with each Group but often Groups will contain many Clouds. In the screenshot below, I am adding an Azure Cloud to a Group that is currently empty.
 
 .. image:: /images/integration_guides/perms_guide/2addCloudToGroup.png
 
 Roles
 -----
 
-|morpheus| Roles determine user access to many things, including application features, Groups, configured Instance Types, configured Blueprints, Personas, and Catalog Item configurations for the Service Catalog Persona. It's important to note that a user can have multiple Roles and will take the most permissive rights across all of these Roles. In many cases, this greatly simplifies Role configuration for administrators as it prevents the need to create highly-specific individual Roles that can suit every case. To illustrate this for our example case here, I will create a set of Roles to handle Group access for my users and another set of Roles to give access to the correct feature permissions.
+|morpheus| Roles determine user access to many things, including application features, Groups, configured Instance Types, configured Blueprints, Personas, and Catalog Item configurations for the Service Catalog Persona. It's important to note that a user can have multiple Roles and will take the most permissive rights across all of these Roles. In many cases, this greatly simplifies Role configuration for administrators as it prevents the need to create highly-specific individual Roles that can suit every case. To illustrate this for our example case, I will create a set of Roles to handle Group access for my users and another set of Roles to give access to the correct feature permissions.
 
 For this example case, I'll start by creating one Role for each of the three Groups we created in the previous step. By default, a new Role will have all feature permissions set to "None" as shown below meaning we can skip directly to the Group Access tab.
 
@@ -39,7 +39,7 @@ On the Group Access tab, I will toggle the Global Access setting to Custom and g
 
 .. image:: /images/integration_guides/perms_guide/4roleGroupAccess.png
 
-In addition to Roles for handling Group access, we need additional Role sets which will control our feature access. For example, we might have highly permissive feature access for administrators and more restrictive ones for developers or other users who have specific responsibilities requiring access to just a few specific areas of the UI.
+In addition to Roles for handling Group access, we need additional Role sets which will control our feature access. For example, we might have highly permissive feature access for administrators and more restrictive ones for developers or other users who have specific responsibilities requiring access to just a few specific areas of the UI. These additional Roles are created in the same way as the Group Roles we just created but all Group access will be set to "None" and the appropriate feature access will be configured on the "Feature Access" tab.
 
 Users
 -----
@@ -58,3 +58,8 @@ Policies are created from the Administration menu in the Policies section. In th
 
 .. image:: /images/integration_guides/perms_guide/6policies.png
   :width: 50%
+
+Conclusion
+----------
+
+At this point, we've completed implementation of the access structure. As new users are added, we can easily give them the Group and feature access they need. We can also easily add or edit the policies that are in place or add new Clouds and distribute access to existing users. The key is understanding the relationship between the |morpheus| constructs discussed in this guide. Armed with that understanding, the example case presented here can be expanded to suit the needs of large-scale enterprise.
