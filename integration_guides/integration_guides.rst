@@ -13,6 +13,7 @@ Guides
    /getting_started/guides/azure_guide.rst
    /getting_started/guides/backup_restore.rst
    /getting_started/guides/tagging_guide.rst
+   /getting_started/guides/groups_roles_perms.rst
 
 .. toctree::
    :maxdepth: 1
