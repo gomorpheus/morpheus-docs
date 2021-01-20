@@ -14,7 +14,7 @@ New Features
 - NSX-T: Gateway Firewall Groups can now be created and shared across Routers
 - NSX-T: Groups/Policies and CRUD methods added to Gateway Firewall tabs
 - NSX-T: Support for firewall priority on supported Router types added
-- Option Types: Added `Visibility field <https://docs.morpheusdata.com/en/latest/provisioning/library/library.html#visibility-field>_` to configure visibility of the current Option Type based on the value of another existing Option Type. For now, works only when the Option Type is associated with Service Catalog items.
+- Option Types: Added `Visibility field <https://docs.morpheusdata.com/en/latest/provisioning/library/library.html#visibility-field>`_ to configure visibility of the current Option Type based on the value of another existing Option Type. For now, works only when the Option Type is associated with Service Catalog items.
 - Policies: Improved handling for budget, max cores, max hosts, max memory, and max storage policies during cluster provisioning
 - Policies: Improved policy handling when provisioning Instances as it relates to specific handling of copy and scale scenarios, friendlier policy warning messages, and other improvements
 - Security Updates
