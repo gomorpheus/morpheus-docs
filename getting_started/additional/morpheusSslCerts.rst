@@ -32,6 +32,8 @@ Trusted CA Signed SSL Certificate Implementation
          # Extract the public key
          openssl x509 -outform der -in your-cert.pem -out your-cert.key
 
+#. Edit the configuration file ``/etc/morpheus/morpheus.rb`` and add the following entries:
+
    .. code-block:: bash
 
     nginx['ssl_certificate'] = 'path to the certificate file'
