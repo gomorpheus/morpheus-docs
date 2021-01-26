@@ -57,7 +57,7 @@ Services
 |morphver| Service Version Changes
 ----------------------------------
 
-No Service Version changes from |previousMorphVer|
+- Tomcat: Upgraded from 9.0.39 to 9.0.41
 
 |morphver| Service Version Compatibility
 ----------------------------------------
