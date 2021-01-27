@@ -101,7 +101,7 @@ Morpheus Sample AWS IAM Policy
                   "ec2:DetachNetworkInterface",
                   "ec2:DetachVolume",
                   "ec2:DisassociateAddress",
-                  "ec2:GetPasswordData"
+                  "ec2:GetPasswordData",
                   "ec2:ImportImage",
                   "ec2:ImportInstance",
                   "ec2:ImportKeyPair",
