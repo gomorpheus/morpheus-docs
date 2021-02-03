@@ -66,15 +66,15 @@ Add Migration
 Depending on the Migration Type selected input the following, then click the :guilabel:`Next` button.
 
 * Hypervisor to Hypervisor
-  * Select Cloud, and Server
-  * Input Host, Remote Port, Username, and Password
+    * Select Cloud, and Server
+    * Input Host, Remote Port, Username, and Password
 * Virtual Image Extract
-  * Select Platform, Existing or New, Cloud, and Server.
-  * Input Host, WinRM Port, WinRM User, WinRM Password, and Snapshot path.
+    * Select Platform, Existing or New, Cloud, and Server.
+    * Input Host, WinRM Port, WinRM User, WinRM Password, and Snapshot path.
 * Live Stream
-  * Select Platform, Existing or New, Cloud, and Server
-  * Input Host, SSH Port, SSH User, SSH Password, Public Key, and Logical Volume Device.
-  * Enter Destination details, then click the :guilabel:`Next` button.
+    * Select Platform, Existing or New, Cloud, and Server
+    * Input Host, SSH Port, SSH User, SSH Password, Public Key, and Logical Volume Device.
+    * Enter Destination details, then click the :guilabel:`Next` button.
 
 5. Finalize your configuration if needed, then click the complete button.
 
