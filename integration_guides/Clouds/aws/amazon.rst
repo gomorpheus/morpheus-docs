@@ -106,7 +106,7 @@ COSTING SECRET
 Enhanced Invoice Costing Configuration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-As of version 4.2.3, AWS cloud integrations in |morpheus| sync billing data solely through the use of AWS Costing & Utilization Reports (CUR). In prior versions users could instead sync billing data through AWS Cost Explorer if desired. Version 4.2.3 also simplified the way CUR reports can be selected or created in order to sync costing data. The section below discusses setting up enhanced costing through CUR reports both in 4.2.3 and versions prior. Keep in mind you must go through this process in version 4.2.3 and higher in order for |morpheus| to aggregate billing data.
+AWS cloud integrations in |morpheus| will sync highly-granular costing data through the use of AWS Costing & Utilization Reports (CUR). If desired, users can turn on costing in the |morpheus| Cloud configuration without linking a CUR to use AWS Cost Explorer instead. |morpheus| version 4.2.3 also simplified the way CUR reports can be selected or created in order to sync costing data. The section below discusses setting up enhanced costing through CUR reports both in 4.2.3 and versions prior. For additional details on setting up costing with AWS GovCloud, see the next section.
 
 .. NOTE:: Even with a costing report configured in the Cloud integration as described below, the COSTING value must also be set to "Costing and Reservations" in order for enhanced invoice data to be brought into |morpheus|. Confirm this setting by editing the Amazon Cloud integration, and checking the COSTING value in the Advanced Options panel before continuing.
 
@@ -245,6 +245,28 @@ As of version 4.2.3, AWS cloud integrations in |morpheus| sync billing data sole
         Save changes to your cloud integration.
 
         .. IMPORTANT:: It may take as long as one hour for |morpheus| to process the next CUR report.
+
+Costing and AWS GovCloud
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+AWS GovCloud delivers Amazon public cloud infrastructure and features in a way that complies with U.S. government standards for security. GovCloud accounts are applied for and must be associated with a pre-existing standard AWS account and the usage and billing data for the GovCloud account is rolled up into that of the standard AWS account. For that reason, Amazon recommends creating a new standard account solely to house the GovCloud account if usage and billing must be tracked separately.
+
+Since GovCloud accounts do not have access to billing data directly, |morpheus| must be able to access it through the associated standard account. You could do this by creating the |morpheus| cloud integration through the standard account itself or by integrating the GovCloud account and supplying an Access Key and Secret Key for the standard account when configuring costing. When needed, add the additional credentials for the standard commercial account as described below:
+
+#. Add a new AWS Cloud or edit an existing one
+#. Expand the Advanced Options section
+#. Complete the following fields in addition to other required fields needed to set up costing as described in the previous section:
+
+    - **COSTING KEY:** The AWS Key ID for an IAM user with sufficient access who is associated with the standard commercial account
+    - **COSTING SECRET:** The AWS Secret Key for an IAM user with sufficient access who is associated with the standard commercial account
+    - **LINKED ACCOUNT ID:** The AWS account number for the standard commercial account in which the IAM user referenced in the prior bullets resides
+
+#. Save the changes to the AWS Cloud integration
+
+When credentials are configured correctly, you will be able to select an existing Costing and Usage Report (CUR) from the appropriate S3 bucket if it already exists. If not, you can create one directly from the add/edit AWS Cloud modal in |morpheus|.
+
+.. image:: /images/clouds/aws/invoiceCosting/8govcloudCosting.png
+  :width: 50%
 
 AWS Reserved Instances and Savings Plans
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
