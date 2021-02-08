@@ -72,10 +72,11 @@ Add custom Copyright String, Terms of Use, Privacy Policy contained in the Foote
 Available Copy fields
 
 * Copyright String
+* Terms and Privacy String
 * Terms of Use
 * Privacy Policy
 
-.. NOTE:: Terms of Use and Privacy Policy Footer links will load internal pages at ``https://applaince_url/privacy-policy`` and ``https://applaince_url/terms-of-use`` displaying the entered info as plain text.
+.. NOTE:: Terms of Use and Privacy Policy Footer links will load internal pages at ``https://applaince_url/privacy-policy`` and ``https://applaince_url/terms-of-use`` displaying the entered info as plain text. The Terms and Privacy String will update the legal text displayed on the |morpheus| login page. This field takes any custom HTML markup allowing you to link to the internal legal pages or to your own outside legal pages if you prefer.
 ​
 UI Loading Page
 ```````````````
