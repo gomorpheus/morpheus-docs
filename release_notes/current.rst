@@ -10,6 +10,7 @@
 New Features
 ============
 
+- Amazon: AWS Instances can now be cloned to AWS Clouds associated with a different account from the source Cloud. This is currently only supported by single-disk VMs as the image to be cloned is created from the root disk only
 - Ansible Tower: Updated Ansible Tower integration to make full payload of |morpheus| variables available to Ansible Tower Tasks bringing this integration in line with what is currently available to Ansible Tasks
 - Backups: Azure VMs can now be restored to a current Instance, previously they needed to be restored to a new Instance
 - CloudFormation: YAML templates now accepted in addition to JSON for CF Blueprints and Spec Templates both entered locally and ingested through integration with a Git repository
@@ -40,12 +41,14 @@ Fixes
 
 - Backup: Fixed an issue that could cause Hyper-V Instance restore not to complete when restoring to a new Instance
 
+Appliance Updates
+=================
+
+- Installer: Improved RAM validation handling on FIPS-compliant installer to prevent unwanted validation fails in certain cases
+
 ..
   Morpheus Hub
   ============
-
-  Appliance Updates
-  =================
 
   Agent/Node Package Updates
   ==========================
