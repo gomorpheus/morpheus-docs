@@ -45,6 +45,7 @@ Appliance Updates
 =================
 
 - Installer: Improved RAM validation handling on FIPS-compliant installer to prevent unwanted validation fails in certain cases
+- Installer: Java upgrade to 8u282-b08
 
 ..
   Morpheus Hub

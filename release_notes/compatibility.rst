@@ -58,6 +58,7 @@ Services
 ----------------------------------
 
 - Tomcat: Upgraded from 9.0.39 to 9.0.41
+- Java: Upgraded to 8u282-b08
 
 |morphver| Service Version Compatibility
 ----------------------------------------
