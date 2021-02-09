@@ -71,3 +71,17 @@ To view scan results for specific servers:
 #. To view the full report, click :guilabel:`(i)`
 
     .. image:: /images/provisioning/jobs/security/7scan_report.png
+
+Security Drift
+``````````````
+
+In addition to tracking the scan results over time as described in the previous section, |morpheus| also provides detail into the change from the most recent scan to the one prior. This information is displayed in the Software tab (and Security subtab) of the detail page for the virtual machine (accessed from the associated Instance detail page or at Infrastructure > Hosts > Virtual Machines). The information surfaced by this view is listed below. If there is no change, you'll simply see a "No Drift" message.
+
+- **Title:** The criteria for the test that has newly passed or failed
+- **Severity:** The severity level for the indicated security requirement
+- **Result:** The indicator for whether this test has newly passed or failed
+- **New Pass:** The number of tests that have newly passed compared to the prior scan
+- **New Fail:** The number of tests that have newly failed compared to the prior scan
+- **Status:** An indicator of the change in security posture since the prior scan. A net gain in test failures will yield a negative status indicator while net gains in passed tests (or no change) will yield a positive status indicator
+
+.. image:: /images/provisioning/jobs/security/8securityDrift.png
