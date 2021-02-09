@@ -31,6 +31,7 @@ New Features
 - NSX-V: Create and manage SNAT rules from the NAT tab of the Edge Gateway detail page of an NSX-V network integration
 - Option Types: Custom help block text can now be displayed with any Option Type
 - Security Scanning: Windows support added for SCAP security scans :superscript:`+`
+- Security Scanning: Security Drift view section added to the Software tab on Virtual Machine Detail pages. When SCAP security scans are run, data related to changes in security posture compared to prior scans is displayed
 - ServiceNow: Plugin version 3.0 now available on the ServiceNow store, see `integration guide <https://morpheusdata.com/wp-content/uploads/content/ServiceNow-Cloud-Management-Morpheus-CMP-1.pdf>`_ for new features and complete use instructions
 - Tags: |morpheus| `naming variables <https://docs.morpheusdata.com/en/latest/troubleshooting/Variables_Examples.html?highlight=naming%20policy#pre-provision-vars>`_ can be used as tag values for Instances and VMs/servers at provision time
 - Tenants: Account Name, Account Number and Customer Number values tracked on the Tenant are now resolveable from naming variables: ``${accountName}``, ``${accountNumber}``, and ``${customerNumber}``
@@ -150,7 +151,7 @@ Fixes
 - Workflows: Fixed the output not displaying in Powershell tasks in the Post Provisioning phase of Workflows
 - Workflows: Required fields in operational workflows are now being enforced
 - Workflows: Fixed an issue causing filtering Workflows by the platform field not to work correctly
-- Installer: ``guacd['yum-power-tools-repo-baseurl']`` morpheus.rb config override added to specify yum powertools repo url 
+- Installer: ``guacd['yum-power-tools-repo-baseurl']`` morpheus.rb config override added to specify yum powertools repo url
 - New Ansible Tower Task Modal | Missing Job Templates
   - Existing backup job not found
   - If role provision tasks are set to none the option list doesn't present
@@ -172,4 +173,3 @@ Agent/Node Package Updates
 - Java: openjdk and openjdk-jre updated to 8u275
 - Node and VM Node package versions updated to 3.1.11
 - FIPS mode supported now for el8
-
