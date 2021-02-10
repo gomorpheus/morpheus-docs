@@ -21,12 +21,12 @@ rst_prolog = """
 .. |nginxver| replace:: v1.19.3
 .. |nodePackageVer| replace:: 3.1.12
 .. |java| replace:: v8u275
-.. |openjdk-jre| replace:: v8u275
+.. |openjdk-jre| replace:: v8u282
 .. |openjdk-elasticsearch| replace:: 14.0.2+12
 .. |erlang| replace:: 22.3
 .. |repo_host_url| replace:: https://downloads.morpheusdata.com
 .. |minUpgradeVer| replace:: v4.2.0
-.. |previousMorphVer| replace:: v5.2.1
+.. |previousMorphVer| replace:: v5.2.2
 """
 
 

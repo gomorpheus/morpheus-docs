@@ -44,8 +44,11 @@ Fixes
 Appliance Updates
 =================
 
-- Installer: Improved RAM validation handling on FIPS-compliant installer to prevent unwanted validation fails in certain cases
-- Installer: Java upgrade to 8u282-b08
+- Appliance & Agent Node Packages: Java upgrade to 8u282-b08
+- Installer: Fixed issue with service handing for v5.x appliance upgrades during rpm/deb package upgrade/install
+- Installer: Lowered Minimum Memory validation to 7707033 (8GB) for FIPS-compliant Installers to match non-FIPS Installers.
+- Appliance: Improved handling of Tomcat log rotation
+- Installer: Updated RHEL 8 to use codeready repo and virt-devel module, removed PowerTools dependency
 
 ..
   Morpheus Hub
