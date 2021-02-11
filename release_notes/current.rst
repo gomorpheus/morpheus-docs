@@ -11,11 +11,11 @@ New Features
 ============
 
 - Amazon: AWS Instances can now be cloned to AWS Clouds associated with a different account from the source Cloud. This is currently only supported by single-disk VMs as the image to be cloned is created from the root disk only
-- Ansible Tower: Updated Ansible Tower integration to make full payload of |morpheus| variables available to Ansible Tower Tasks bringing this integration in line with what is currently available to Ansible Tasks
+- Ansible Tower: Updated Ansible Tower integration to pass ``extra_vars`` YAML to the Tower job when using Ansible Tower with provisioning or when running Ansible Tower-type |morpheus| Tasks
 - Azure: Added Azure SQL DBaaS Service Plans and Price Sets. Note: Azure Standard S4-S11 prices are not included in Azure Ratecard data.
 - Backups: Azure VMs can now be restored to a current Instance, previously they needed to be restored to a new Instance
 - CloudFormation: YAML templates now accepted in addition to JSON for CF Blueprints and Spec Templates both entered locally and ingested through integration with a Git repository
-- Clouds: Grant read-level access to Clouds for Tenants through the applied Tenant Role
+- Clouds: Grant `read-level access <https://docs.morpheusdata.com/en/5.2.3/administration/roles/roles.html#cloud-access-levels>`_ to Clouds for Tenants through the applied Tenant Role
 - Huawei Cloud: Improved filtering to show only plan sizes which are currently available during provisioning
 - Open Telekom Cloud: Improved filtering to show only plan sizes which are currently available during provisioning
 - Oracle Cloud: Instance reconfigure support added for Oracle Cloud plan change and boot volume resizing
