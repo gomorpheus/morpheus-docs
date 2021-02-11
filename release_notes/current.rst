@@ -6,7 +6,8 @@
 
 .. Small Update, omitting highlights this time
   .. include:: highlights.rst
-
+.. important:: In 5.2.3 ``codeready`` (codeready-builder-for-rhel-8-x86_64-rpms) repo access required for RHEL 8+ Appliances, replacing the previous PowerTools/powertools requirement.
+	
 New Features
 ============
 
