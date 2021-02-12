@@ -45,39 +45,40 @@ New Features
 Fixes
 =====
 
-- Notifications: Updated Instance Shutdown and Expiration warning email notifications to use tenant url redirect (matching provisioning notification behavior)
-- OTC: Fixed user specified Floating IP bandwidth not applying
-- Deletions: Refactored monitor check group delete for improved handling of high rate Instance deletions
-- Azure: Fixed a subset of Service Plans missing Price set associations
-- Instances: Fixed Instance and Container power status when there is an execution of a server-specific power schedule startup.
-- Azure: Fixed Resource Pool Tenant Access changes persisting after provisioning ARM spec template
-- Apps: Validation added to require positive integer in Lifecycle > Expiration Days filed
-- Reports: Fixed invalid tag filter causing reports failures
-- Apps: Fixed namespace/pool access for synced Clusters during Kubernetes & HELM App provisioning..
-- Instances: Instance List csv export now respects applied filters
-- Huawei: Fixed volume type issues limiting available ECS Flavors during provisioning.
-- Apps: Fixed brief flash of previous modal when a NEW APP modal is opened after closing a NEW APP modal.
-- Plans: Reverted previous change that filtered Service Plans with STORAGE value set to 0 and "CUSTOMIZE ROOT VOLUME" disabled due to not meeting minimum storage requirements of Virtual Image. Root disk size value is now set to template root disk size. 
-- Instances: Fixed issue where the disk(s) for the selected layout were add in addition to instead of replacing previously selected layouts disk(s)
-- Jobs: Fixed ``Next Run`` value not respecting the timezone set on the assigned execute schedule.
-- Oracle Cloud: E3 Service Plans added
-- Morpheus Agent: Fixed Agent installation issue on Suselinux/OpenSuse for Appliances using a self signed certificate
-- vCloudDirector: Adding an additional NIC with static IP assignment to a VM with primary NIC using vCD IP Pool will no longer reboot the VM during reconfigure.  
-- SCVMM: OS Type now synced for SCVMM Virtual Machines
-- Veeam: When restoring a deleted VM from a Veeam backup that was created from Morpheus, the restored Instance name will now match the original Instanc ename rather than the name of the restored backup.
-- Veeam: Fixed issue with restoring non-zipped/normal Veeam backups from Morpheus. 
-- Security: Remediated potential XSS vulnerabilities
-- API /CLI: Fixed issue with multiple User Source inputs including ``searchMemberGroups``, ``confs.doNotIncludeSAMLRequest``, and ``confs.doNotValidate*``
-- PowerDNS: Validation added for saving PowerDNS Integration
-- Clusters: Fixed issue with some Localizations causing invalid config when crating new Clusters
-- Veeam: Fixed Instance, Health and VM Status for restored backups
 - Ansible Tower: Fixed sync data retention when Ansible Tower host is not reachable
-- Veeam: Added config option to remove unmanaged/discovered vm records created when Cloud sync runs during a restore but before the matching managed vm record is created, resulting in duplicate vm records.
-- AzureStack: ``update metadata`` api-version changed to 2017-12-01
+- API /CLI: Fixed issue with multiple User Source inputs including ``searchMemberGroups``, ``confs.doNotIncludeSAMLRequest``, and ``confs.doNotValidate*``
+- Apps: Fixed brief flash of previous modal when a NEW APP modal is opened after closing a NEW APP modal.
+- Apps: Fixed namespace/pool access for synced Clusters during Kubernetes & HELM App provisioning..
+- Apps: Validation added to require positive integer in Lifecycle > Expiration Days filed
 - Azure: ``buildNetworkInterfaceBlock`` API version updated to 2018-07-01
+- Azure: Fixed a subset of Service Plans missing Price set associations
+- Azure: Fixed Resource Pool Tenant Access changes persisting after provisioning ARM spec template
+- AzureStack: ``update metadata`` api-version changed to 2017-12-01
+- Backups: Fixed an issue that could cause Hyper-V Instance restore not to complete when restoring to a new Instance
+- Clusters: Fixed issue with some Localizations causing invalid config when crating new Clusters
+- Deletions: Refactored monitor check group delete for improved handling of high rate Instance deletions
 - Global Proxy: No proxy patterns support added for Global Proxy
+- Huawei: Fixed volume type issues limiting available ECS Flavors during provisioning.
+- Identity Sources: Fixed SAML logins redirecting to |morpheus| login page after authentication from SAML provider (occurred only in 5.2.3-1)
+- Instances: Fixed Instance and Container power status when there is an execution of a server-specific power schedule startup.
+- Instances: Fixed issue where the disk(s) for the selected layout were add in addition to instead of replacing previously selected layouts disk(s)
+- Instances: Instance List csv export now respects applied filters
+- Jobs: Fixed ``Next Run`` value not respecting the timezone set on the assigned execute schedule.
+- Morpheus Agent: Fixed Agent installation issue on Suselinux/OpenSuse for Appliances using a self signed certificate
+- Notifications: Updated Instance Shutdown and Expiration warning email notifications to use tenant url redirect (matching provisioning notification behavior)
+- Oracle Cloud: E3 Service Plans added
+- OTC: Fixed user specified Floating IP bandwidth not applying
+- Plans: Reverted previous change that filtered Service Plans with STORAGE value set to 0 and "CUSTOMIZE ROOT VOLUME" disabled due to not meeting minimum storage requirements of Virtual Image. Root disk size value is now set to template root disk size. 
+- PowerDNS: Validation added for saving PowerDNS Integration
+- Reports: Fixed invalid tag filter causing reports failures
 - SCAP: Fixed issue with running security scans on RHEL 7 hosts
-- Backup: Fixed an issue that could cause Hyper-V Instance restore not to complete when restoring to a new Instance
+- SCVMM: OS Type now synced for SCVMM Virtual Machines
+- Security: Remediated potential XSS vulnerabilities
+- vCloudDirector: Adding an additional NIC with static IP assignment to a VM with primary NIC using vCD IP Pool will no longer reboot the VM during reconfigure.  
+- Veeam: Added config option to remove unmanaged/discovered vm records created when Cloud sync runs during a restore but before the matching managed vm record is created, resulting in duplicate vm records.
+- Veeam: Fixed Instance, Health and VM Status for restored backups
+- Veeam: Fixed issue with restoring non-zipped/normal Veeam backups from Morpheus. 
+- Veeam: When restoring a deleted VM from a Veeam backup that was created from Morpheus, the restored Instance name will now match the original Instanc ename rather than the name of the restored backup.
 
 Appliance Updates
 =================
@@ -88,6 +89,7 @@ Appliance Updates
 - Appliance: Improved handling of Tomcat log rotation
 - Installer: Updated RHEL 8 to use codeready repo and virt-devel module, removed PowerTools dependency
 
+.. note:: |morpheus| v5.2.3-2 resolves cookie setting issue in v5.2.3-1 causing SAML logins to redirect to |morpheus| login page after authentication from SAML provider (occurred only in 5.2.3-1)
 ..
   Morpheus Hub
   ============
