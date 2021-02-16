@@ -1,3 +1,6 @@
+.. role:: raw-html(raw)
+    :format: html
+
 Tasks
 -----
 
@@ -307,6 +310,8 @@ Task Configuration
     - **COMMAND ARGUMENTS:** Optional arguments passed into the Python script. Variables supported eg. ``<%= instance.name %>``
     - **ADDITIONAL PACKAGES:** Additional packages to be installed after ``requirements.txt`` (if detected). Expected format for additional packages: 'packageName==x.x.x packageName2==x.x.x', the version must be specified
     - **PYTHON BINARY:** Optional binary to override the default Python binary
+
+    :raw-html:`<br />`
 
     Python and |morpheus|
     `````````````````````
