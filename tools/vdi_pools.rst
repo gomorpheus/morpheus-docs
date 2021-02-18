@@ -60,5 +60,5 @@ VDI Apps are created by selecting :guilabel:`+ ADD` from the VDI Apps tab or edi
 
 - **NAME:** A friendly name for the VDI App in |morpheus|
 - **DESCRIPTION:** A description of the virtual app type
-- **LAUNCH PREFIX:** A reference to the remote app registry prepended with two pipes (||). For example, we might create a registry "Chrome" for a Chrome browser VDI App and the associated launch prefix would be "||Chrome"
+- **LAUNCH PREFIX:** A reference to the remote app registry prepended with two pipes ( || ). For example, we might create a registry "Chrome" for a Chrome browser VDI App and the associated launch prefix would be "||Chrome"
 - **LOGO:** Upload or select a logo to represent the virtual app type to users
