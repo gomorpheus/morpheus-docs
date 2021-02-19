@@ -1,10 +1,10 @@
-Morpheus Virtual Desktop Environments (beta)
-============================================
+Morpheus Virtual Desktop Persona (beta)
+=======================================
 
 Overview
 --------
 
-The Morpheus VDI Persona provides a virtual desktop environment to grant users access to workstations and applications in a secure manner. Deploy pools of virtual machines on any supported |morpheus| Cloud for users to reserve and use! |morpheus| leverages open source client technologies, such as Apache Guacamole, to provide a performant and secure virtual desktop client for the end user while wrapping its frontend in a completely new framework.
+The Morpheus VDI Persona provides a virtual desktop environment to grant users access to workstations and applications in a secure manner. Deploy pools of virtual machines on any supported |morpheus| Cloud for users to reserve and use! |morpheus| leverages open source client technologies, such as Apache Guacamole, to provide a performant and secure virtual desktop client for the end user while wrapping its frontend in a completely new framework. For information on configuring VDI pools for consumption in the Virtual Desktop Persona, see the `Tools section <https://docs.morpheusdata.com/en/vdi/tools/vdi_pools.html>`_ of |morpheus| docs.
 
 .. NOTE:: This is not an integration with existing VDI Pool Managers such as VMWare Horizon, Citrix VDI, or Nutanix XiFrame. It is a standalone |morpheus| feature.
 

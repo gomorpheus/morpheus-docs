@@ -1,7 +1,7 @@
 VDI Pools (beta)
 ================
 
-The VDI Pools section of the Tools section provides a management area for defining VDI Pools and VDI Apps that a user can consume within the VDI Persona.
+The VDI Pools section of |morpheus| Tools provides a management area for defining VDI Pools and VDI Apps that a user can consume within the `Virtual Desktop Persona <https://docs.morpheusdata.com/en/vdi/personas/personas.html#morpheus-virtual-desktop-environments-beta>`_.
 
 Pools can be either persistent or non-persistent and have various controls pertaining to idle pools and minimum or maximum sizes. The idea here is to make sure a server is always quickly available to accommodate user demand.
 
