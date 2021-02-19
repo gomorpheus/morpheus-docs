@@ -40,9 +40,9 @@ The `ALARMS` section shows Operation notifications from Cloud and other Service 
 Morpheus Logs
 -------------
 
-The Logs displayed in ```Operations - Health - Morpheus Logs`` are from ``/var/log/morpheus/morpheus-ui/current``. These logs show all ui activity and are useful for troubleshooting and auditing.
+The Logs displayed in ``Administration - Health - Morpheus Logs`` are from ``/var/log/morpheus/morpheus-ui/current``. These logs show all ui activity and are useful for troubleshooting and auditing.
 
-.. NOTE:: Stack traces in ``Operations - Health - Morpheus Logs`` are filtered for |morpheus| services. Complete stack traces can be found in ``/var/log/morpheus/morpheus-ui/current``.
+.. NOTE:: Stack traces in ``Administration - Health - Morpheus Logs`` are filtered for |morpheus| services. Complete stack traces can be found in ``/var/log/morpheus/morpheus-ui/current``.
 
 History
 -------

@@ -119,7 +119,7 @@ To create a new Kubernetes Cluster:
 
 #. Once all Master and Worker Nodes are successfully provisioned and Kubernetes is installed and configured, the Cluster status will turn green.
 
-    .. IMPORTANT:: Cluster provisioning requires successful creation of VMs, Agent Installation, and execution of Kubernetes workflows. Consult process output from ````Infrastructure -> Clusters - Details`` and morpheus-ui current logs at ``Operations - Health - Morpheus Logs`` for information on failed Clusters.
+    .. IMPORTANT:: Cluster provisioning requires successful creation of VMs, Agent Installation, and execution of Kubernetes workflows. Consult process output from ````Infrastructure -> Clusters - Details`` and morpheus-ui current logs at ``Administration - Health - Morpheus Logs`` for information on failed Clusters.
 
 Adding Worker Nodes
 ^^^^^^^^^^^^^^^^^^^
