@@ -35,6 +35,8 @@ VDI pools are configured from the Tools menu (VDI Pools selection). The followin
 - **POOL USAGE:** A graph representing the usage of the VDI pool. The total length of the bar represents the maximum pool size based on the configuration. Green segments represent available virtual desktops, blue segments represent reserved virtual desktops, yellow segments represent virtual desktops which are being prepared, and gray segments represent additional pool capacity which could be made available depending on how many virtual desktops are currently reserved and how many idle machines you've configured the pool to keep available
 - **DESCRIPTION:** A description of the virtual desktop type, if provided
 
+.. image:: /images/personas/vdi/vdiPools.png
+
 Create a VDI pool by selecting :guilabel:`+ ADD` from the VDI Pools tab or edit an existing one by clicking on the pencil icon from the appropriate row. Configure the following, fields containing a vertical blue bar along the left edge are required:
 
 - **NAME:** A friendly name for the VDI pool in |morpheus|
@@ -50,6 +52,9 @@ Create a VDI pool by selecting :guilabel:`+ ADD` from the VDI Pools tab or edit 
 - **CONFIGURE:** Click this button to configure the machines that will be created when reserved by users. The wizard is identical to the Instance provisioning wizard meaning all available Instance Types, Workflows, and more are available to virtual desktop machine creation
 - **LOGO:** Upload or select a logo to represent the virtual desktop type to users
 - **VDI APPS:** Optionally select one or more frequently-used applications the user can launch directly. Users will also have the option to launch into the desktop
+
+.. image:: /images/personas/vdi/createVdiPool.png
+  :width: 50%
 
 Creating or Editing a VDI Apps
 ------------------------------

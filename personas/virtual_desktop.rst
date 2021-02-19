@@ -4,9 +4,11 @@ Morpheus Virtual Desktop Environments (beta)
 Overview
 --------
 
-The Morpheus VDI Persona provides a Virtual Desktop Environment for Companies to leverage to grant users access to Workstations and Applications in a secure manner. Deploy pools of Virtual Machines on any supported Morpheus Cloud for users to reserve and use! Morpheus leverages Open Source client technologies such as Apache Guacamole to provide a performant and secure Virtual Desktop client for the end user while wrapping its front end in a completely new framework.
+The Morpheus VDI Persona provides a virtual desktop environment to grant users access to workstations and applications in a secure manner. Deploy pools of virtual machines on any supported |morpheus| Cloud for users to reserve and use! |morpheus| leverages open source client technologies, such as Apache Guacamole, to provide a performant and secure virtual desktop client for the end user while wrapping its frontend in a completely new framework.
 
-.. NOTE:: This is not an integration with existing VDI Pool Managers such as VMWare Horizon, Citrix VDI, or Nutanix XiFrame. It is completely standalone.
+.. NOTE:: This is not an integration with existing VDI Pool Managers such as VMWare Horizon, Citrix VDI, or Nutanix XiFrame. It is a standalone |morpheus| feature.
+
+.. image:: /images/personas/vdi/vdPersona.png
 
 Key Features
 ------------
@@ -21,7 +23,7 @@ Key Features
 - Audio Playback (RDP)
 - Local Printer (RDP)
 - Auto-Resize
-- Auto Login by User Settings
+- Auto-Login based on |morpheus| User Settings
 - Customizable User Background
 
 Configuring Access to the Virtual Desktop Persona
@@ -41,7 +43,7 @@ Launching a VDI Instance
 
 VDI Instances are launched from the Virtual Desktops Persona. Depending on Role permissions, your account may default to this view or may even restrict you solely to this view. To access the Virtual Desktops Persona from the standard view or from another Persona, click on the user's name in the upper-right corner of the application window. When available, this dropdown menu will list the standard |morpheus| Persona view as well as any other Personas the user has permission to access. Click on Virtual Desktop to access the Virtual Desktop Persona.
 
-The Virtual Desktop Persona view lists out each of the virtual desktop types they can access. Click on the desired virtual desktop type to launch it. If there are virtual apps available for this desktop type, they are presented in a flyout menu alongside a "desktop" option to access the base OS over an individual app.
+The Virtual Desktop Persona view lists out each of the virtual desktop types they can access. Click on the desired virtual desktop type to launch it. If there are virtual apps available for any listed desktop types, they are presented in a flyout menu alongside a "desktop" option to access the base OS over an individual app. Items categorized as "Desktops" are VDI pools configured in the Tools menu of the Standard Persona. Items categorized as "Instances" are Instances favorited by the current user in the Standard Persona (if they have access and they have favorited any Instances). Clicking on an Instance tile offers quick access to the Instance console.
 
 .. IMPORTANT:: Virtual Desktops are launched in a pop-up window. Be sure your web browser is not blocking pop-ups or create an appropriate exception for |morpheus| virtual desktop pop-ups.
 
