@@ -23,6 +23,8 @@ Access to the Virtual Desktop Persona and individual VDI pools is handled throug
 #. Toggle access to selected VDI pools to "Full" or "None", you can also toggle permission on all pools to "Full" or "None" with the Global Access selection
 #. Role changes are saved automatically, there is no need to manually save
 
+Additionally, users should have a Linux and/or Windows username and password configured in their user profiles in order for virtual desktop login to be as seamless as possible. User profiles are accessed by clicking on the user's name in the upper-right corner of the application windows and clicking USER SETTINGS. The section to enter Windows and Linux account credentials is in the right column of the page.
+
 Creating or Editing a VDI Pool
 ------------------------------
 
