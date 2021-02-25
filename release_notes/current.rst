@@ -4,8 +4,7 @@
 |morphver| Release Notes
 *************************
 
-.. Small Update, omitting highlights this time
-  .. include:: highlights.rst
+.. include:: highlights.rst
 
 New Features
 ============
@@ -18,6 +17,7 @@ New Features
 - Clouds: The manual cloud refresh button is now a dropdown with refresh options. "Short" refresh immediately performs a cloud sync that otherwise occurs at five-minute intervals (by default), "Daily" runs the heavier nightly cloud sync, and "Costing" will immediately perform the nightly cost sync from the cloud. The costing refresh option is only available for public cloud types which offer live cost syncing
 - Networks: Removed the default and uneditable description on the ``localdomain`` (Infrastructure > Networks > Domains) which could be misleading under some configurations
 - NSX-V: Priority is now displayed for firewall groups and rules on the Firewall tab of NSX-V integrations
+- Personas: Added the Virtual Desktop Persona, a simplified view granting users access to virtual desktops and Instance consoles
 - Policies: Cloning Instances now respects policies such as budget, max containers, max cores, max memory, and max storage
 - Roles: The "Tenant Admin" Role, which is included out-of-the-box and is not editable, now gives "Full" permissions for Snapshots
 - Prices and Plans: Price Set and Pricing Plan types added for virtual image billing
@@ -25,25 +25,22 @@ New Features
 - Self- Service Catalog Tool: Configure Catalog Apps using the familiar App provisioning wizard. Previously, Catalog Apps were configured by selecting an existing Blueprint and at least setting minimally-required App Spec with YAML
 - Spec Templates: |morpheus| now intelligently detects the template file for ARM deployment in a Spec Template from a Git repository. Previously, users were required to provide a path containing just one .json file
 - Tasks: Set Shell Script Tasks to run as ``sudo`` by marking the added check box
+- Tools: Added tool for creation of VDI pools for consumption in the Virtual Desktop Persona
 - Virtual Images: Added the option to also remove Virtual Images from VMware, Amazon, OTC, Huawei, and OpenStack clouds when deleting them out of |morpheus|
 - Workflows: Startup and Shutdown phases added for Provisioning Workflows. Tasks in the Startup phase run after the target is started and Tasks in the Shutdown phase run immediately before the target is shutdown
-
-|morpheus| API & CLI Improvements
-=================================
-
-
-..
-  Morpheus Hub
-  ============
-
 
 Fixes
 =====
 
+..
+  |morpheus| API & CLI Improvements
+  =================================
 
-Appliance Updates
-=================
+  Morpheus Hub
+  ============
 
+  Appliance Updates
+  =================
 
-Agent/Node Package Updates
-==========================
+  Agent/Node Package Updates
+  ==========================
