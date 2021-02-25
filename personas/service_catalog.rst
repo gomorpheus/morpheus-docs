@@ -3,6 +3,19 @@ Service Catalog Persona
 
 The Service Catalog Persona presents a simplified catalog where users can select and deploy Instances or Blueprints with pre-defined configuration with just a few clicks and without presenting an overwhelming list of options.
 
+Configuring Catalog Item Access
+-------------------------------
+
+Within the Service Catalog Persona, users are presented with Catalog Items based on their User Role. Additionally, Catalog Item access can be set on the Tenant Role to restrict certain items from all users in the Tenant. By default, User Roles have no access to any catalog items (and no access to the Service Catalog Persona). When enabling Service Catalog Persona access for User Roles, you will also need to give access to some or all Catalog Items.
+
+Configuring Global Access:
+
+- **Full:** Gives access to all Catalog Items
+- **Custom:** Gives access to individually-selected items from the list below
+- **None:** No access is given to any Catalog Items
+
+.. TIP:: When giving Custom access, be sure to set access on some of the individual catalog items to Full in order to reveal those items to the Role group.
+
 Dashboard
 ---------
 

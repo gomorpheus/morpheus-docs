@@ -1,7 +1,9 @@
 Personas
 ========
 
-Personas are alternate views in |morpheus| UI. A user's access to certain Personas is controlled by Role permissions. At present, there are two Persona types: Standard and Service Catalog. The Standard Persona is the typical default view. The Service Catalog Persona is a simplified view where users are presented with pre-configured Instance types and Blueprints to choose from based on their Role. The rest of this section goes through the use of the Service Catalog Persona and how administrators can curate the selection their users see in this area.
+Personas are alternate views in |morpheus| UI. A user's access to the various Personas is controlled by Role permissions. At present, there are three Persona types: Standard, Service Catalog, and Virtual Desktop. The Standard Persona is the typical default view. The Service Catalog Persona is a simplified view where users are presented with pre-configured Instance types, Blueprints, and Workflows to choose from based on their Role. The Virtual Desktop Persona allows administrators to grant user access to remote workstations and applications.
+
+The rest of this section goes through the use of the Service Catalog Persona and Virtual Desktop Persona in greater detail, including how administrators can curate catalog item and virtual desktop selections for their users.
 
 Configuring Persona Access
 --------------------------
@@ -19,19 +21,6 @@ Edit Persona access on a Role with the following steps:
 
 .. image:: /images/personas/1rolePerms.png
 
-Configuring Catalog Item Access
--------------------------------
-
-Within the Service Catalog Persona, users are presented with Catalog Items based on their User Role. Additionally, Catalog Item access can be set on the Tenant Role to restrict certain items from all users in the Tenant. By default, User Roles have no access to any catalog items (and no access to the Service Catalog Persona). When enabling Service Catalog Persona access for User Roles, you will also need to give access to some or all Catalog Items.
-
-Configuring Global Access:
-
-- **Full:** Gives access to all Catalog Items
-- **Custom:** Gives access to individually-selected items from the list below
-- **None:** No access is given to any Catalog Items
-
-.. TIP:: When giving Custom access, be sure to set access on some of the individual catalog items to Full in order to reveal those items to the Role group.
-
 Accessing Alternate Personas
 ----------------------------
 
@@ -40,3 +29,5 @@ Switch Personas by clicking on your name in the upper-right corner of the applic
 .. image:: /images/personas/2switchPersona.png
 
 .. include:: service_catalog.rst
+
+.. include:: virtual_desktop.rst
