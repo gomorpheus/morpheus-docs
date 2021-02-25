@@ -26,13 +26,13 @@ uuid
 key
   Generates a Base 64 encoded AES Key of specified bit length in the key pattern (i.e. key/128/mykey generates a 128-bit key)
 
-  * Key lease times are entered in milliseconds and default to 32 days (2764800000 ms).
+  * Key lease times are entered in seconds and default to 32 days (2764800 s).
 
-    * Quick MS Time Reference:
-    * Day: 86400000
-    * Week: 604800000
-    * Month (30 days): 2592000000
-    * Year: 31536000000
+    * Quick Time Reference:
+    * Day: 86400
+    * Week: 604800
+    * Month (30 days): 2592000
+    * Year: 31536000
 
 
 Creating Cypher Keys
@@ -55,7 +55,7 @@ Value
   Leave the Value filed blank for a password, as it will be generated.
 
 Lease
-  Enter lease time in milliseconds (ex. 604800000 for one week)
+  Enter lease time in seconds (ex. 604800 for one week)
 
 Save changes and the password will be generated and available for use.
 
@@ -77,7 +77,7 @@ Value
   Add the secret value to be encrypted
 
 Lease
-  Enter lease time in milliseconds (ex. 604800000 for one week)
+  Enter lease time in seconds (ex. 604800 for one week)
 
 Save changes and the secret will be encrypted and available for use.
 
@@ -99,7 +99,7 @@ Value
   Leave the Value filed blank for UUID, as it will be generated.
 
 Lease
-  Enter lease time in milliseconds (ex. 604800000 for one week)
+  Enter lease time in seconds (ex. 604800 for one week)
 
 Save changes and the UUID will be generate and available for use.
 
@@ -121,7 +121,7 @@ Value
   Leave the Value filed blank for key, as it will be generated.
 
 Lease
-  Enter lease time in milliseconds (ex. 604800000 for one week)
+  Enter lease time in seconds (ex. 604800 for one week)
 
 Save changes and the AES Key will be generate and available for use.
 

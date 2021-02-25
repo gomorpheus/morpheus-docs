@@ -8,7 +8,7 @@ latex_documents = [
 rst_prolog = """
 .. |morpheus| replace:: Morpheus
 .. |morphbranch| replace:: v5.2
-.. |morphver| replace:: v5.2.2
+.. |morphver| replace:: v5.2.3
 .. |rmqbranch| replace:: v3.5-3.8
 .. |rmqver| replace:: v3.8.9
 .. |mysqlbranch| replace:: v5.7
@@ -16,17 +16,17 @@ rst_prolog = """
 .. |mysqlverfips| replace:: v.5.7.29
 .. |esbranch| replace:: v7.x
 .. |esver| replace:: v7.8.1
-.. |tcver| replace:: v9.0.39
+.. |tcver| replace:: v9.0.41
 .. |morphdat| replace:: Morpheus Data, LLC
 .. |nginxver| replace:: v1.19.3
 .. |nodePackageVer| replace:: 3.1.12
 .. |java| replace:: v8u275
-.. |openjdk-jre| replace:: v8u275
+.. |openjdk-jre| replace:: v8u282
 .. |openjdk-elasticsearch| replace:: 14.0.2+12
 .. |erlang| replace:: 22.3
 .. |repo_host_url| replace:: https://downloads.morpheusdata.com
 .. |minUpgradeVer| replace:: v4.2.0
-.. |previousMorphVer| replace:: v5.2.1
+.. |previousMorphVer| replace:: v5.2.2
 """
 
 

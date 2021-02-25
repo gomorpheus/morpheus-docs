@@ -8,7 +8,7 @@ Overview
 
 The logs displayed in the Instance, App, Host and overall Logs sections are only from Managed VM's and Hosts that have the |morpheus| agent installed. Instances can be configured to show additional logs by configuring the LOG FOLDER in the Library NODE TYPE. Logs from any .log file in the specified folder will be forwarded by the |morpheus| agent to the |morpheus| appliance or forwarded with Syslog Forward rules.
 
-.. NOTE:: The `Logs` section does not contain |morpheus| appliance logs, which can be found in `/var/log/morpheus/` and in 3.5.2+ in `Operations - Health`.
+.. NOTE:: The `Logs` section does not contain |morpheus| appliance logs, which can be found in `/var/log/morpheus/` and in `Administration - Health`.
 
 Logs are stored in ElasticSearch and retention can be set by adjusting the Availability Time Frame in the `Administration -> Logs` section.
 

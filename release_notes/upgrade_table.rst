@@ -23,7 +23,11 @@
    <thead>
      <tr>
        <th class="tg-j8c8">From Version</th>
+<<<<<<< HEAD
        <th class="tg-af47" colspan="14">To Verison</th>
+=======
+       <th class="tg-af47" colspan="15">To Verison</th>
+>>>>>>> 5.2.3
      </tr>
    </thead>
    <tbody>
@@ -43,6 +47,10 @@
        <td class="tg-orxw"></td>
        <td class="tg-orxw"></td>
        <td class="tg-orxw"></td>
+<<<<<<< HEAD
+=======
+       <td class="tg-orxw"></td>
+>>>>>>> 5.2.3
      </tr>
      <tr>
        <td class="tg-epna">4.1.0 →</td>
@@ -60,6 +68,10 @@
        <td class="tg-orxw"></td>
        <td class="tg-orxw"></td>
        <td class="tg-xy3e"></td>
+<<<<<<< HEAD
+=======
+       <td class="tg-orxw"></td>
+>>>>>>> 5.2.3
      </tr>
      <tr>
        <td class="tg-epna">4.1.1 →</td>
@@ -77,6 +89,10 @@
        <td class="tg-orxw"></td>
        <td class="tg-orxw"></td>
        <td class="tg-orxw"></td>
+<<<<<<< HEAD
+=======
+       <td class="tg-orxw"></td>
+>>>>>>> 5.2.3
      </tr>
      <tr>
        <td class="tg-epna">4.1.2 →</td>
@@ -94,6 +110,10 @@
        <td class="tg-orxw"></td>
        <td class="tg-orxw"></td>
        <td class="tg-orxw"></td>
+<<<<<<< HEAD
+=======
+       <td class="tg-orxw"></td>
+>>>>>>> 5.2.3
      </tr>
      <tr>
        <td class="tg-epna">4.2.0 →</td>
@@ -111,6 +131,10 @@
        <td class="tg-vkyz">5.2.0</td>
        <td class="tg-vkyz">5.2.1</td>
        <td class="tg-vkyz">5.2.2</td>
+<<<<<<< HEAD
+=======
+       <td class="tg-vkyz">5.2.3</td>
+>>>>>>> 5.2.3
      </tr>
      <tr>
        <td class="tg-epna">4.2.1 →</td>
@@ -128,6 +152,10 @@
        <td class="tg-vkyz">5.2.0</td>
        <td class="tg-vkyz">5.2.1</td>
        <td class="tg-vkyz">5.2.2</td>
+<<<<<<< HEAD
+=======
+       <td class="tg-vkyz">5.2.3</td>
+>>>>>>> 5.2.3
      </tr>
      <tr>
        <td class="tg-epna">4.2.2 →</td>
@@ -145,6 +173,10 @@
        <td class="tg-vkyz">5.2.0</td>
        <td class="tg-vkyz">5.2.1</td>
        <td class="tg-vkyz">5.2.2</td>
+<<<<<<< HEAD
+=======
+       <td class="tg-vkyz">5.2.3</td>
+>>>>>>> 5.2.3
      </tr>
      <tr>
        <td class="tg-epna">4.2.3 →</td>
@@ -162,6 +194,10 @@
        <td class="tg-vkyz">5.2.0</td>
        <td class="tg-vkyz">5.2.1</td>
        <td class="tg-vkyz">5.2.2</td>
+<<<<<<< HEAD
+=======
+       <td class="tg-vkyz">5.2.3</td>
+>>>>>>> 5.2.3
      </tr>
      <tr>
        <td class="tg-epna">4.2.4 →</td>
@@ -179,6 +215,10 @@
        <td class="tg-vkyz">5.2.0</td>
        <td class="tg-vkyz">5.2.1</td>
        <td class="tg-vkyz">5.2.2</td>
+<<<<<<< HEAD
+=======
+       <td class="tg-vkyz">5.2.3</td>
+>>>>>>> 5.2.3
      </tr>
      <tr>
        <td class="tg-epna">4.2.5 →</td>
@@ -196,6 +236,10 @@
        <td class="tg-vkyz">5.2.0</td>
        <td class="tg-vkyz">5.2.1</td>
        <td class="tg-vkyz">5.2.2</td>
+<<<<<<< HEAD
+=======
+       <td class="tg-vkyz">5.2.3</td>
+>>>>>>> 5.2.3
      </tr>
      <tr>
        <td class="tg-epna">4.2.6 →</td>
@@ -213,6 +257,10 @@
        <td class="tg-vkyz">5.2.0</td>
        <td class="tg-vkyz">5.2.1</td>
        <td class="tg-vkyz">5.2.2</td>
+<<<<<<< HEAD
+=======
+       <td class="tg-vkyz">5.2.3</td>
+>>>>>>> 5.2.3
      </tr>
      <tr>
        <td class="tg-epna">5.0.0 →</td>
@@ -230,6 +278,10 @@
        <td class="tg-0qf3">5.2.0</td>
        <td class="tg-0qf3">5.2.1</td>
        <td class="tg-0qf3">5.2.2</td>
+<<<<<<< HEAD
+=======
+       <td class="tg-0qf3">5.2.3</td>
+>>>>>>> 5.2.3
      </tr>
      <tr>
        <td class="tg-epna">5.2.0 →</td>
@@ -247,6 +299,10 @@
        <td class="tg-kw6a"></td>
        <td class="tg-0qf3">5.2.1</td>
        <td class="tg-0qf3">5.2.2</td>
+<<<<<<< HEAD
+=======
+       <td class="tg-0qf3">5.2.3</td>
+>>>>>>> 5.2.3
      </tr>
      <tr>
        <td class="tg-epna">5.2.1 →</td>
@@ -264,6 +320,7 @@
        <td class="tg-fr0y"></td>
        <td class="tg-kw6a"></td>
        <td class="tg-0qf3">5.2.2</td>
+<<<<<<< HEAD
      </tr>
      <tr>
        <td class="tg-8fch" colspan="15">Rolling Upgrade Supported</td>
@@ -279,3 +336,41 @@
      </tr>
    </tbody>
    </table>
+=======
+       <td class="tg-0qf3">5.2.3</td>
+     </tr>
+     <tr>
+       <td class="tg-epna">5.2.2 →</td>
+       <td class="tg-fr0y"></td>
+       <td class="tg-fr0y"></td>
+       <td class="tg-fr0y"></td>
+       <td class="tg-fr0y"></td>
+       <td class="tg-fr0y"></td>
+       <td class="tg-fr0y"></td>
+       <td class="tg-fr0y"></td>
+       <td class="tg-fr0y"></td>
+       <td class="tg-fr0y"></td>
+       <td class="tg-fr0y"></td>
+       <td class="tg-fr0y"></td>
+       <td class="tg-fr0y"></td>
+       <td class="tg-fr0y"></td>
+       <td class="tg-kw6a"></td>
+       <td class="tg-0qf3">5.2.3</td>
+     </tr>
+     <tr>
+       <td class="tg-8fch" colspan="16">Rolling Upgrade Supported</td>
+     </tr>
+     <tr>
+       <td class="tg-lent" colspan="16">Non-Rolling Upgrade Supported</td>
+     </tr>
+     <tr>
+       <td class="tg-xy3e" colspan="16">Upgrade Not Supported</td>
+     </tr>
+     <tr>
+       <td class="tg-q1q4" colspan="16">Downgrade Not Supported</td>
+     </tr>
+   </tbody>
+   </table>
+   
+|
+>>>>>>> 5.2.3
