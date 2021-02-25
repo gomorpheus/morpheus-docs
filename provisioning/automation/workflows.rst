@@ -18,6 +18,8 @@ Provisioning Workflow Execution Phases
 - **Deploy:** Tasks are run during App deployment
 - **Reconfigure:** Tasks are run during a reconfigure action on the Instance or host
 - **Teardown:** Tasks are run during VM or container destroy
+- **Shutdown:** Tasks are run immediately before the target is shutdown
+- **Startup:** Tasks are run immediately after the target is started
 
 For VMs, Pre Provision and Provision phases execute after the VM is running. Pre Provision can be used for a Blueprint so it is added before a script which is set at the Provision phase executes. Pre Provision for scripts is mainly for Docker as you can execute on the host before the container is running. For Tasks that need to run prior to the start of provisioning, use the Configuration phase. Post Provision will execute after the entire provisioning process is complete.
 

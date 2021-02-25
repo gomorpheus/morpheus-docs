@@ -145,7 +145,7 @@ Task Types
      - Provisioning: Tasks
    * - |shellscript|
      - Shell Script
-     - Executes Bash script on the Target Resource
+     - Executes Bash script on the target resource
      - Local, Repository, Url
      - Local, Remote, Resource
      - None
@@ -322,6 +322,7 @@ Task Configuration
     - **NAME:** Name of the Task
     - **CODE:** Unique code name for API, CLI, and variable references
     - **RESULT TYPE:** Single Value, Key/Value Pairs, or JSON
+    - **SUDO:** Mark the box to run the script as ``sudo``
     - **CONTENT:** Script to execute is entered here if not pulled in from an outside repository
 
 - .. toggle-header:: :header: **vRealize Orchestrator Workflow**

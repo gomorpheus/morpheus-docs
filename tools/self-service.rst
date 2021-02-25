@@ -56,7 +56,7 @@ Configure the following:
 - **FEATURED:** When checked, this catalog item will be given special visibility in the Service Catalog Persona view
 - **VISIBILITY:** Set to private to keep the catalog item available only to users in the current Tenant. Master Tenant administrators may set catalog items to public to make them viewable and usable by Subtenant users
 - **LOGO:** Select or upload a logo to be associated with this catalog item
-- **BLUEPRINT:** Select a pre-configured Blueprint (Provisioning > Blueprints) to associate with this catalog item
+- **CONFIGURE:** Click :guilabel:`CONFIGURE` to use the familiar App provisioning wizard to tie Blueprint and App deployment configuration to the Catalog Item
 - **APP SPEC:** Inject App spec here for any fields required to provision an App from your Blueprint. You may also inject any overrides to the existing Blueprint spec that are desired. App Spec configuration must be YAML, a simple example that names the App and sets the Group and Cloud is included below:
 
     .. code-block:: yaml
