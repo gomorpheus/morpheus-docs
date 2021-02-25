@@ -8,7 +8,7 @@ latex_documents = [
 rst_prolog = """
 .. |morpheus| replace:: Morpheus
 .. |morphbranch| replace:: v5.2
-.. |morphver| replace:: v5.2.3
+.. |morphver| replace:: v5.3.0
 .. |rmqbranch| replace:: v3.5-3.8
 .. |rmqver| replace:: v3.8.9
 .. |mysqlbranch| replace:: v5.7

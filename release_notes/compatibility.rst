@@ -16,12 +16,7 @@ Breaking Changes
 - 4.2.4: For appliances with externalized MySQL databases, due to MySQL deprecation of the "EDT" timezone you may need to update your database timezone to UTC or another compatible value. If this is not done, you will receive errors referencing timezone and |morpheus| will not start. |morpheus| should handle this change automatically for all-in-one appliances.
 - 5.0.0+: When upgrading to 5.0.0+ from 4.x.x, any bearer tokens that have been generated are deleted which requires users to request new bearer tokens
 - 5.2.1 & 4.2.5: API: Metadata: Metadata tags now referred to as ``tags`` and labels now referred to as ``labels``. Previously metadata tags were referred to as ``metadata`` and labels were referred to as ``tags``
-<<<<<<< HEAD
-- 5.2.3+: ``codeready`` (codeready-builder-for-rhel-8-x86_64-rpms) repo access required for RHEL 8+ Appliances, replacing the previous PowerTools/powertools requirement.
-=======
 - 5.2.3+: ``codeready`` (codeready-builder-for-rhel-8-x86_64-rpms) repo access required for RHEL 8+ Appliances, replacing the previous PowerTools/powertools requirement
-
->>>>>>> 5.2.3
 
 |morpheus| Application OS
 =========================
@@ -64,8 +59,7 @@ Services
 |morphver| Service Version Changes
 ----------------------------------
 
-- Tomcat: Upgraded from 9.0.39 to 9.0.41
-- Java: Upgraded to 8u282-b08
+No service version changes in |morpheus| |morphver|
 
 |morphver| Service Version Compatibility
 ----------------------------------------
@@ -96,22 +90,22 @@ Security
 CVEs Addressed
 --------------
 
-- CVE-2020-11979
-- CVE-2020-25638
+No new CVEs addressed in |morpheus| |morphver|
 
-Upgrade Support Matrix
-======================
+..
+  Upgrade Support Matrix
+  ======================
 
-.. include:: upgrade_table.rst
+  .. include:: upgrade_table.rst
 
-Upgrade Paths & Methods
-=======================
+  Upgrade Paths & Methods
+  =======================
 
-The following table shows supported version upgrade paths and methods. 
+  The following table shows supported version upgrade paths and methods.
 
-.. include:: upgrade_table.rst
+  .. include:: upgrade_table.rst
 
-| 
+  |
 
 Integrations
 ============
