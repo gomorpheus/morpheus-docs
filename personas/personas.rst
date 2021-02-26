@@ -28,6 +28,7 @@ Switch Personas by clicking on your name in the upper-right corner of the applic
 
 .. image:: /images/personas/2switchPersona.png
 
-.. include:: service_catalog.rst
-
-.. include:: virtual_desktop.rst
+.. toctree::
+      :glob:
+      
+      *

@@ -1,5 +1,5 @@
-Morpheus Virtual Desktop Persona (beta)
-=======================================
+Virtual Desktop Persona (beta)
+==============================
 
 Overview
 --------
