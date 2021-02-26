@@ -37,7 +37,6 @@ New Features
 
 Fixes
 =====
-
 - Amazon: Fixed AWS Console is not using the user supplied credentials for deployed instances.
 - Azure: Fixed Network Groups not getting mapped on provisioning
 - Costing: Account Usage Checks Refactored
@@ -47,17 +46,21 @@ Fixes
 
 Appliance Updates
 =================
-
 Installer: Fixed issue with check failing to recognize when powertools/PowerTools/codeready repos were already enabled
 
-..
-  |morpheus| API & CLI Improvements
-  =================================
+|morpheus| API & CLI Improvements
+=================================
 
-  Morpheus Hub
-  ============
+Enhancements
+------------
+- New subcommands ``instances clone-image|lock|unlock``.
+- Update ``invoices`` command to parse ``lineItemCount`` because ``lineItems`` is no longer returned with invoices list
 
+Fixes
+-----
+- Fix option ``--max -1``, since the server supports this, CLI also now supports ``-m all`` which pass ``max=-1`` in the request.
+- Fix option ``--sort x,y,z`` to allow multiple fields since some endpoints now support this.
 
-
-  Agent/Node Package Updates
-  ==========================
+Agent/Node Package Updates
+==========================
+- There are no Agent/Node package changes from v5.2.3
