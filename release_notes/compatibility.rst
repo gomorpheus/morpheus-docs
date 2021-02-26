@@ -92,20 +92,19 @@ CVEs Addressed
 
 No new CVEs addressed in |morpheus| |morphver|
 
-..
-  Upgrade Support Matrix
-  ======================
+Upgrade Support Matrix
+======================
 
-  .. include:: upgrade_table.rst
+.. include:: upgrade_table.rst
 
-  Upgrade Paths & Methods
-  =======================
+Upgrade Paths & Methods
+=======================
 
-  The following table shows supported version upgrade paths and methods.
+The following table shows supported version upgrade paths and methods.
 
-  .. include:: upgrade_table.rst
+.. include:: upgrade_table.rst
 
-  |
+|
 
 Integrations
 ============
