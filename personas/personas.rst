@@ -5,6 +5,11 @@ Personas are alternate views in |morpheus| UI. A user's access to the various Pe
 
 The rest of this section goes through the use of the Service Catalog Persona and Virtual Desktop Persona in greater detail, including how administrators can curate catalog item and virtual desktop selections for their users.
 
+.. toctree::
+      :glob:
+      
+      *
+      
 Configuring Persona Access
 --------------------------
 
@@ -28,7 +33,3 @@ Switch Personas by clicking on your name in the upper-right corner of the applic
 
 .. image:: /images/personas/2switchPersona.png
 
-.. toctree::
-      :glob:
-      
-      *
