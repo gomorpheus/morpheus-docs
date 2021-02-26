@@ -8,7 +8,7 @@ The Morpheus VDI Persona provides a virtual desktop environment to grant users a
 
 .. NOTE:: This is not an integration with existing VDI Pool Managers such as VMWare Horizon, Citrix VDI, or Nutanix XiFrame. It is a standalone |morpheus| feature.
 
-.. image:: /images/personas/vdi/vdPersona2.png
+.. thumbnail:: /images/personas/vdi/vdPersona2.png
 
 Key Features
 ------------
