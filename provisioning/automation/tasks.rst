@@ -137,7 +137,7 @@ Task Types
      - Executes Python Script locally
      - Local, Repository, Url
      - Local
-     - ``virtualenv`` installed on Appliance Nodes (``pip install virtualenv``)
+     - ``virtualenv`` installed on Appliance Nodes
      - Provisioning: Tasks, Tasks - Script Engines
    * - |restart|
      - Restart
