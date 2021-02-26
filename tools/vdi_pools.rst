@@ -1,7 +1,7 @@
 VDI Pools (beta)
 ================
 
-The VDI Pools section of |morpheus| Tools provides a management area for defining VDI Pools and VDI Apps that a user can consume within the `Virtual Desktop Persona <https://docs.morpheusdata.com/en/vdi/personas/personas.html#morpheus-virtual-desktop-environments-beta>`_.
+The VDI Pools section of |morpheus| Tools provides a management area for defining VDI Pools and VDI Apps that a user can consume within the `Virtual Desktop Persona <https://docs.morpheusdata.com/en/latest/personas/personas.html#morpheus-virtual-desktop-environments-beta>`_.
 
 Pools can be either persistent or non-persistent and have various controls pertaining to idle pools and minimum or maximum sizes. The idea here is to make sure a server is always quickly available to accommodate user demand.
 
@@ -59,7 +59,7 @@ Linked Clones are a feature of VMware which references snapshots of a VM to depl
 
 #. Locate the VM you desire to have the Linked Clone in |morpheus|. If it's not currently managed by |morpheus|, navigate to the appropriate Cloud (Infrastructure > Clouds), find the VM on the "VMs" tab, and click "Convert to Managed" from the ACTIONS menu
 #. In the CONVERT TO INSTANCE modal, select "No Agent Install" in the AGENT field
-#. If snapshots are already on the VM, these will now by synced by |morpheus|. If you have not yet created a snapshot, do so in the vCenter console (and refresh the Cloud inegration in |morpheus| afterward) or from the ACTIONS menu in |morpheus| itself. Be sure to take a snapshot of a powered-off VM and give the snapshot a name that will be identifiable for administrators
+#. If snapshots are already on the VM, these will now by synced by |morpheus|. If you have not yet created a snapshot, do so in the vCenter console (and refresh the Cloud integration in |morpheus| afterward) or from the ACTIONS menu in |morpheus| itself. Be sure to take a snapshot of a powered-off VM and give the snapshot a name that will be identifiable for administrators
 #. From the Instance detail page in |morpheus|, navigate to the Backups tab to find the snapshot
 #. Select "More" and create the Linked Clone
 #. The Linked Clone will now appear in the |morpheus| Virtual Image repository (Provisioning > Virtual Images), ready to use with your custom Layouts
