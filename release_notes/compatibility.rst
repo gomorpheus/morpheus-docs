@@ -92,11 +92,6 @@ CVEs Addressed
 
 No new CVEs addressed in |morpheus| |morphver|
 
-Upgrade Support Matrix
-======================
-
-.. include:: upgrade_table.rst
-
 Upgrade Paths & Methods
 =======================
 
