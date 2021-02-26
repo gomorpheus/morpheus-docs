@@ -37,6 +37,13 @@ New Features
 Fixes
 =====
 
+- Amazon: Fixed AWS Console is not using the user supplied credentials for deployed instances.
+- Azure: Fixed Network Groups not getting mapped on provisioning
+- Costing: Account Usage Checks Refactored
+- NSX-V: Fixed distributed firewall groups not displayed in order of priority
+- Security: Remediated Reconfigure XSS vulnerability 
+- Tasks: Fixed Task Result chaining not working when running in server context 
+
 Appliance Updates
 =================
 
