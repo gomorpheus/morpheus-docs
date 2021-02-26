@@ -32,6 +32,7 @@ New Features
 - Tasks: Set Shell Script Tasks to run as ``sudo`` by marking the added check box
 - Tools: Added tool for creation of VDI pools for consumption in the Virtual Desktop Persona
 - Virtual Images: Added the option to also remove Virtual Images from VMware, Amazon, OTC, Huawei, and OpenStack clouds when deleting them out of |morpheus|
+- VMware: Guest Customization speed enhancements with direct unattend.xml injection and support for login security banners 
 - Workflows: Startup and Shutdown phases added for Provisioning Workflows. Tasks in the Startup phase run after the target is started and Tasks in the Shutdown phase run immediately before the target is shutdown
 
 Fixes
