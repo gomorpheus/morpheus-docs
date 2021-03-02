@@ -45,3 +45,10 @@ The data form the old appliance is now replicated on the new appliance. Simply s
 .. code-block:: bash
 
   [root@app-server-new ~] morpheus-ctl start morpheus-ui
+
+With the migration complete, you will also need to update the stored password for the appliance backup job as the destination appliance will have a different dynamically-generated MySQL password. We can update that password value by altering the backup directly in the |morpheus| database.
+
+.. code-block:: bash
+
+  select * from backup where `name` ='Morpheus Appliance';
+  UPDATE `morpheus`.`backup` SET `ssh_host` = '127.0.0.1', `target_password` = 'its-a-secret' WHERE `id` = '1';
