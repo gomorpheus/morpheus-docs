@@ -1,6 +1,6 @@
 Morpheus Virtual Desktops
 =========================
 
-.. includes:: ../tools/vdi_pools.rst
+.. include:: ../tools/vdi_pools.rst
 
-.. includes:: ../personas/virtual_desktop.rst
+.. include:: ../personas/virtual_desktop.rst
