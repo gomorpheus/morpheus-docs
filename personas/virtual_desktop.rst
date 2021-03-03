@@ -1,6 +1,8 @@
 Virtual Desktop Persona (beta)
 ==============================
 
+.. vdi_persona
+
 Overview
 --------
 
