@@ -14,7 +14,7 @@ Add Azure Load Balancer
     NAME
       Name of the Load Balancer in |morpheus|
     DESCRIPTION
-      Idenetifying information displayed on the Load Balancer list page.
+      Identifying information displayed on the Load Balancer list page.
     VISIBILITY
       Define Multi-Tenant permissions
     RESOURCE GROUP
