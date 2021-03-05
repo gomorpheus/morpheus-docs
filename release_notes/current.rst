@@ -165,11 +165,11 @@ Appliance Updates
 - Java: Openjdk-jre updated to 8u275
 - Appliance Logs: Default log rotation added for Nginx and Tomcat logs //add paths & files
 - Installer: ``iptables_bach`` setup bash script moved from /tmp to /opt/morpheus/embedded/bin and renamed to iptables_morpheus.rules. Resolves reconfigure issue for systems with ``noexec`` set on ``/tmp``.
-- Installer: Morpheus can now be installed on el8
+- Installer: FIPS mode supported now for Amazon Linux 2
 
 Agent/Node Package Updates
 ==========================
 
 - Java: openjdk and openjdk-jre updated to 8u275
 - Node and VM Node package versions updated to 3.1.11
-- FIPS mode supported now for el8
+- FIPS mode supported now for Amazon Linux 2 
