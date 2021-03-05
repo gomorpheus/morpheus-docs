@@ -11,6 +11,7 @@ New Features
 ============
 
 - Clouds: The manual cloud refresh button is now a dropdown with refresh options. “Short” refresh immediately performs a cloud sync that otherwise occurs at five-minute intervals (by default), “Daily” runs the heavier nightly cloud sync, and “Costing” will immediately perform the nightly cost sync from the cloud. The costing refresh option is only available for public cloud types which offer live cost syncing
+- Self-Service Catalog Tool: Configure Catalog Apps using the familiar App provisioning wizard. Previously, Catalog Apps were configured by selecting an existing Blueprint and at least setting minimally-required App Spec with YAML
 
 |morpheus| API & CLI Improvements
 =================================
