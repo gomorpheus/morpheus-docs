@@ -36,7 +36,7 @@ New Features
 ===========================
 
 - Billing: The ``billing`` API endpoint now returns ``resourcePoolId`` and ``resourcePoolName``
-- Clouds: ``scalePriority`` is now handled properly for get, add and update requests to the ``clouds`` API
+- Clouds: ``scalePriority`` is now handled properly for get, add and update requests to the ``clouds`` API :superscript:`5.3.0`
 
 
 Fixes
