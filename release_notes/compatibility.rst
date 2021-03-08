@@ -60,8 +60,7 @@ Services
 |morphver| Service Version Changes
 ----------------------------------
 
-- Tomcat: Upgraded from 9.0.39 to 9.0.41
-- Java: Upgraded to 8u282-b08
+No service version changes in |morphver|
 
 |morphver| Service Version Compatibility
 ----------------------------------------
@@ -92,8 +91,7 @@ Security
 CVEs Addressed
 --------------
 
-- CVE-2020-11979
-- CVE-2020-25638
+No CVEs addressed in |morphver|
 
 Upgrade Support Matrix
 ======================

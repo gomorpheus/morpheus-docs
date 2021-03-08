@@ -7,7 +7,7 @@
 .. Small Update, omitting highlights this time
   .. include:: highlights.rst
 
-.. NOTE::
+.. NOTE:: Features marked with :superscript:`5.3.0` are also included in Morpheus UI 5.3.0 standard (non-LTS) release version
 
 New Features
 ============
@@ -16,8 +16,13 @@ New Features
 - Amazon: Amazon AWS Clouds can now be scoped to the “Africa (Cape Town)” region :superscript:`5.3.0`
 - CloudFormation: Values entered into password fields are no longer revealed in plaintext on the summary tab of the App provisioning wizard during provisioning :superscript:`5.3.0`
 - Clouds: The manual cloud refresh button is now a dropdown with refresh options. “Short” refresh immediately performs a cloud sync that otherwise occurs at five-minute intervals (by default), “Daily” runs the heavier nightly cloud sync, and “Costing” will immediately perform the nightly cost sync from the cloud. The costing refresh option is only available for public cloud types which offer live cost syncing :superscript:`5.3.0`
+- Library: Canonical MaaS and Lumen Edge are now selectable as technology types for Library items such as Layouts and Node Types
 - Networks: Removed the default and uneditable description on the localdomain (Infrastructure > Networks > Domains) which could be misleading under some configurations :superscript:`5.3.0`
 - NSX-V: Priority is now displayed for firewall groups and rules on the Firewall tab of NSX-V integrations :superscript:`5.3.0`
+- NSX-V: Configure DHCP and DHCP log levels on Edge Gateways
+- NSX-V: Create and manage DHCP Pools for Edge Gateways
+- NSX-V: Create and manage DHCP Relay for Edge Gateways and Logical Routers
+- NSX-V: Create and manage DHCP Bindings for Edge Gateways
 - Self-Service Catalog Tool: Configure Catalog Apps using the familiar App provisioning wizard. Previously, Catalog Apps were configured by selecting an existing Blueprint and at least setting minimally-required App Spec with YAML  :superscript:`5.3.0`
 - Plugins: Added soft reloads for updating Plugins. An updated plugin file can now be uploaded without having to delete the previous file, preserving settings such as Role Access permissions.
 - Policies: Cloning Instances now respects policies such as budget, max containers, max cores, max memory, and max storage :superscript:`5.3.0`
@@ -26,6 +31,12 @@ New Features
 - Settings: "Reuse Naming Sequence Numbers" setting in Administration > Settings > Provisioning now applies to all Instance naming patterns using``${sequence}`` values. Previously Reuse Naming Sequence Numbers = false was only applicable for Naming Policies
 - Spec Templates: Morpheus now intelligently detects the template file for ARM deployment in a Spec Template from a Git repository. Previously, users were required to provide a path containing just one .json file :superscript:`5.3.0`
 
+
+|morpheus| API Improvements
+===========================
+
+- Billing: The ``billing`` API endpoint now returns ``resourcePoolId`` and ``resourcePoolName``
+- Clouds: ``scalePriority`` is now handled properly for get, add and update requests to the ``clouds`` API
 
 
 Fixes
@@ -68,8 +79,7 @@ Agent/Node Package Updates
 ..
 
 
-  |morpheus| API Improvements
-  ===========================
+
 
   Appliance Updates
   =================
