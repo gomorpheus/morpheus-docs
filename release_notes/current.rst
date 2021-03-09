@@ -72,7 +72,7 @@ Fixes
 Agent/Node Package Updates
 ==========================
 
-|morpheus| Node & |morpheus| VM Node Packages Version: v3.1.14
-|morphues| Linux Agent version: v2.1.1
-|morphues| Linux Agent: Fixed issue with stat collector network interface bonding in Ubuntu 18.04
+- |morpheus| Node & |morpheus| VM Node Packages Version: v3.1.14
+- |morphues| Linux Agent version: v2.1.1
+- |morphues| Linux Agent: Fixed issue with stat collector network interface bonding in Ubuntu 18.04
 
