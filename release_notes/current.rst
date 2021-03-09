@@ -28,7 +28,7 @@ New Features
 - Policies: Cloning Instances now respects policies such as budget, max containers, max cores, max memory, and max storage :superscript:`5.3.0`
 - Policies: "Host Name" Policy renamed to "Cluster Resource Name" for clarity
 - Roles: The “Tenant Admin” Role, which is included out-of-the-box and is not editable, now gives “Full” permissions for Snapshots :superscript:`5.3.0`
-- Settings: "Reuse Naming Sequence Numbers" setting in Administration > Settings > Provisioning now applies to all Instance naming patterns using``${sequence}`` values. Previously Reuse Naming Sequence Numbers = false was only applicable for Naming Policies
+- Settings: "Reuse Naming Sequence Numbers" setting in Administration > Settings > Provisioning now applies to all Instance naming patterns using ``${sequence}`` values. Previously Reuse Naming Sequence Numbers = false was only applicable for Naming Policies
 - Spec Templates: Morpheus now intelligently detects the template file for ARM deployment in a Spec Template from a Git repository. Previously, users were required to provide a path containing just one .json file :superscript:`5.3.0`
 
 
