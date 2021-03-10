@@ -27,7 +27,7 @@ Steps to import trusted certificates to |morpheus| after an upgrade.
 
     .. code-block:: bash
 
-       openssl s_client -connect host:port -showcerts -tls1_2``
+       openssl s_client -connect host:port -showcerts -tls1_2
 
 #. You should get an output similar to:
 
