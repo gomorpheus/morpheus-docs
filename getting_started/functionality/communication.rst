@@ -394,7 +394,7 @@ The following table contains communication information, including frequency and 
     - Server Pull
     - Git/Github
     - Syncing latest version of Git-tracked repos
-    - On-demand when using a file or repository for Morpheus functions
+    - 5 minutes
     - No
   * - DNS Integration
     - Server Pull
