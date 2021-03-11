@@ -7,7 +7,7 @@ Steps to import trusted certificates to |morpheus| after an upgrade.
 
 #. Obtain the full SSL certificate chain in PEM format.
 
-#. Copy them to each appliance and place them in the ``/etc/morpheus/ssl/trusted_certificates`` directory.
+#. Copy them to each appliance and place them in the ``/etc/morpheus/ssl/trusted_certs`` directory.
 
 #. Run morpheus-ctl reconfigure on each appliance, note you don’t need to stop Morpheus before you run this.
 
@@ -27,7 +27,7 @@ Steps to import trusted certificates to |morpheus| after an upgrade.
 
     .. code-block:: bash
 
-       openssl s_client -connect host:port -showcerts -tls1_2``
+       openssl s_client -connect host:port -showcerts -tls1_2
 
 #. You should get an output similar to:
 
