@@ -82,7 +82,7 @@ Execute Mode
 Passing extra_vars to Ansible Tower Job
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-When provisioning or when running Ansible Tower Jobs as |morpheus| Tasks, pass the ``extra_vars`` stack to the Tower Job. First, ensure the Job Template has extra variables "Prompt on Launch" enabled as shown below:
+When provisioning or when running Ansible Tower Jobs as |morpheus| Tasks, you may pass the ``extra_vars`` stack to the Tower Job. First, ensure the Job Template has extra variables "Prompt on Launch" enabled as shown below:
 
 .. image:: /images/automation/towerExtraVars.png
 
