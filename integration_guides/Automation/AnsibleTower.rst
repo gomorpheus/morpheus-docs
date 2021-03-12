@@ -79,13 +79,38 @@ Execute Mode
     Skip execution
       This will skip the execution of the template on the instance provisioned.
 
+Passing extra_vars to Ansible Tower Job
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+When provisioning or when running Ansible Tower Jobs as |morpheus| Tasks, pass the ``extra_vars`` stack to the Tower Job. First, ensure the Job Template has extra variables "Prompt on Launch" enabled as shown below:
+
+.. image:: /images/automation/towerExtraVars.png
+
+The sample Playbook below is associated with the Tower Job Template.
+
+.. code-block:: bash
+
+  ---
+  - hosts: all
+  vars:
+    Opensource_Team: "Customer"
+  tasks:
+  - name: Print Hello World
+    debug:
+      msg:
+      - "Hello World {{ Opensource_Team }}. Here are Morpheus extra_vars: {{ morpheus }}"
+
+After executing the Tower Job, we can see the variable stack surfaced into the results as defined in the Playbook:
+
+.. image:: /images/automation/towerResults.png
+
 Use Case
 ^^^^^^^^
 
 You have Job template(s) in Ansible Tower to do post build config after the OS is deployed. The playbook with roles and tasks to do post build will add specific users and groups, install required packages, remove packages, disable services, change config for ntp, resolv, hosts etc. You want to add the instance to an existing Group/Inventory in Tower.
 
-You can achieve this by adding the Ansible Tower Integration and then scope it to a Cloud or Group. While provisioning an instance, in the config stage you have the Ansible Tower section with option to select the post build job template, select the Inventory and provide an existing Group Name or if the Group doesn't exist Morpheus will create it and submit for provisioning. 
+You can achieve this by adding the Ansible Tower Integration and then scope it to a Cloud or Group. While provisioning an instance, in the config stage you have the Ansible Tower section with option to select the post build job template, select the Inventory and provide an existing Group Name or if the Group doesn't exist Morpheus will create it and submit for provisioning.
 
-Morpheus will provision the instance, once it is in the finalize state where the instance has an ip and has completed domain join if required, added user(s) or User Groups if specified then Morpheus will add the instance to the inventory and Group and run the Template which will do all the post build of the server. 
+Morpheus will provision the instance, once it is in the finalize state where the instance has an ip and has completed domain join if required, added user(s) or User Groups if specified then Morpheus will add the instance to the inventory and Group and run the Template which will do all the post build of the server.
 
 The output of the post build template execution can be see under Instance history.
