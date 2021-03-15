@@ -7,9 +7,9 @@ The rest of this section goes through the use of the Service Catalog Persona and
 
 .. toctree::
       :glob:
-      
+
       *
-      
+
 Configuring Persona Access
 --------------------------
 
@@ -24,12 +24,12 @@ Edit Persona access on a Role with the following steps:
 #. Go to the Personas tab
 #. Allow access to one or both Personas as needed, changes are saved automatically
 
-.. image:: /images/personas/1rolePerms.png
+.. image:: /images/personas/1rolePerms2.png
 
 Accessing Alternate Personas
 ----------------------------
 
 Switch Personas by clicking on your name in the upper-right corner of the application window. If your Role gives you access to any additional Personas, they will be listed here.
 
-.. image:: /images/personas/2switchPersona.png
-
+.. image:: /images/personas/2switchPersona2.png
+  :width: 50%
