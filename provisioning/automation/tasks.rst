@@ -35,6 +35,28 @@ The User Role Permission 'Provisioning: Tasks  FULL' is required to create, edit
 
 Tasks Types that can execute locally against the |morpheus| Appliance have an additional Role Permission: ``Tasks - Script Engines``. Script Engine Task Types will be hidden for users without ``Tasks - Script Engines`` role permissions.
 
+Common Options
+^^^^^^^^^^^^^^
+
+When creating a Task, the required and optional inputs will vary significantly by the Task type. However, there are options which are common to Tasks of all types.
+
+Target Options
+``````````````
+
+When creating a Task, users can select a target to perform the execution. Some Task types allow for any of the three execution targets listed below and some will limit the user to two or just one. The table in the next section lists the available execution targets for each Task type.
+
+- **Resource:** An |morpheus|-managed Instance or server is selected to execute the Task
+- **Local:** The Task is executed by the |morpheus| appliance node
+- **Remote:** The user specifies a remote box which will execute the Task
+
+Execute Options
+```````````````
+
+- **Retryable:** When marked, this Task can be configured to be retried in the event of failure
+- **Retry Count:** The maximum number of times the Task will be retried when there is a failure
+- **Retry Delay:** The length of time (in seconds) |morpheus| will wait to retry the Task
+- **Allow Custom Config:** When marked, a text area is provided at Task execution time to allow the user to pass extra variables or specify extra configuration
+
 Task Types
 ^^^^^^^^^^
 

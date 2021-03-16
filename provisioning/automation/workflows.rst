@@ -26,18 +26,24 @@ For VMs, Pre Provision and Provision phases execute after the VM is running. Pre
 Add Workflow
 ^^^^^^^^^^^^
 
-#. Select the Provisioning link in the navigation bar.
-#. Select Automation from the sub-navigation menu.
-#. Click the Workflows tab to show the Workflows tab panel.
-#. Click the :guilabel:`Add` button.
-#. From the New Workflow Wizard input a name for the workflow.
-#. Optionally input a description.
-#. Expand the execution phases to add tasks to, and type the name of a created task and click the task when it appears to add.
-#. If multiple tasks are added to the same execution phase, their execution order can be changed by selecting the grip icon and dragging the task to the desired execution order.
-#. For multi-tenant environments, select Public or Private visibility for the Workflow.
-#. Click the :guilabel:`Save Changes` button to save.
+#. Select the Provisioning link in the navigation bar
+#. Select Automation from the sub-navigation menu
+#. Click the Workflows tab to show the Workflows tab panel
+#. Click the :guilabel:`+ Add` dropdown and select a Workflow type (Operational or Provisioning, see the section above for more on Workflow type differences)
+#. From the New Workflow Wizard input a name for the workflow
+#. Optionally input a description and a target platform
+#. Add Tasks and Option Types using the typeahead fields, Tasks must be added to the appropriate phases for Provisioning Workflows
+#. If multiple tasks are added to the same execution phase, their execution order can be changed by selecting the grip icon and dragging the task to the desired execution order
+#. For multi-Tenant environments, select Public or Private visibility for the Workflow
+#. For Operational Workflows, optionally mark "Allow Custom Config" from the Advanced Options section if needed. See the next section for more on this selection
+#. Click the :guilabel:`SAVE CHANGES` button to save
 
 .. NOTE:: When setting Workflow visibility to Public in a multi-Tenant environment, Tenants will be able to see the Workflow and also execute it directly from the Workflows list (if it's an Operational Workflow). They will not be able to edit or delete the Workflow.
+
+Allow Custom Config
+^^^^^^^^^^^^^^^^^^^
+
+When marked on Operational Workflows, the user is shown a text area for custom configuration at execution time. This could be used to pass extra variables that wouldn't normally be in the script or for specifying extra configuration.
 
 Edit Workflow
 ^^^^^^^^^^^^^
