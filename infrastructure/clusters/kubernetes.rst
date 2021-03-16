@@ -142,6 +142,11 @@ The table below includes port requirements for the machines within the cluster (
     - All
   * - TCP
     - Inbound
+    - 6783
+    - Weaveworks
+    - 
+  * - TCP
+    - Inbound
     - 2379-2380
     - etcd server client API
     - kube-apiserver, etcd
