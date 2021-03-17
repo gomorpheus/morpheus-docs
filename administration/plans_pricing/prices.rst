@@ -21,17 +21,19 @@ Price Unit
   -  Four Year
   -  Five Year
 
-  .. NOTE:: Only Prices configured with matching Price Units can be used in a Price Set.
-  .. NOTE:: Month is equivalent to 30 days by default. For AWS, month is 30.5 days. For Azure, month is 30.4 days.
+  .. NOTE:: Only Prices configured with matching Price Units can be used in a Price Set. "Month" is equivalent to 30 days by default. For AWS, month is 30.5 days. For Azure, month is 30.4 days.
 
 Type
   Price Set types determine which Prices are available to make up the set. This selection will filter the values returned in the Prices field at the bottom of the modal.
 
   .. NOTE:: It's helpful to make note of the Prices options below before creating Price Sets.
 
-  - **Everything:** 'Everything' price sets require 1 or more 'Everything' price types and may include 'Platform' or 'Software' price types.
-  - **Compute + Storage:** 'Compute + Storage' price sets require at least one of each 'Memory',  CPU', and 'Disk Only' price types and may include 'Platform' or 'Software' price types.
-  - **Component:** 'Component' price sets require at least one of each 'Memory', 'Cores', 'CPU', and 'Storage' price types and may include 'Platform' or 'Software' price types.
+  - **Everything:** 'Everything' price sets require one or more 'Everything' price types and may include 'Platform' or 'Software' price types
+  - **Compute + Storage:** 'Compute + Storage' price sets require at least one of each 'Memory',  CPU', and 'Disk Only' price types and may include 'Platform' or 'Software' price types
+  - **Component:** 'Component' price sets require at least one of each 'Memory', 'Cores', 'CPU', and 'Storage' price types and may include 'Platform' or 'Software' price types
+  - **Load Balancer:** 'Load Balancer' price sets require at least one 'Load Balancer' price type and may include 'Load Balancer Virtual Server' price types. Load Balancer price sets are the only type which can be associated with Load Balancer Price Plans
+  - **Virtual Image:** 'Virtual Image' price sets require at least one 'Storage' price type. Virtual Image price sets are the only type which can be associated with Virtual Image Price plans
+  - **Snapshot:** 'Snapshot' price sets require at least one 'Storage' price type and may include 'Datastore' price types. Snapshot price sets are the only type which can be associated with Virtual Image Price plans
 
 Apply Price Changes to Usage
   If marked, when saving a Price Set (new Price Set or saving changes to an existing one), usage records will be restarted for servers affected by the pricing change.
@@ -51,6 +53,8 @@ Price Types
   - Platform
   - Software
   - Datastore (per GB)
+  - Load Balancer
+  - Load Balancer Virtual Server
 
 Price Units
   -  Minute
