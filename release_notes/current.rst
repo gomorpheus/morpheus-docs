@@ -7,7 +7,7 @@
 .. Small Update, omitting highlights this time
   .. include:: highlights.rst
 .. important:: In 5.2.3 ``codeready`` (codeready-builder-for-rhel-8-x86_64-rpms) repo access required for RHEL 8+ Appliances, replacing the previous PowerTools/powertools requirement.
-	
+
 New Features
 ============
 
@@ -26,12 +26,13 @@ New Features
 - Policies: When completing cart checkout in the Service Catalog Persona view, the sum of all ordered items within the cart are considered against any policies that may be in place
 - Policies: When provisioning Apps, Instance types containing multiple nodes (such as Redis master/replica) or Instances with scale factor are considered against policy types including budget, max containers, max cores, max memory, max storage, and max VM
 - Storage: Added support for SMB2 file shares
+- Tasks: Task config sourced from Git/Github repository integrations is now synced of five-minute intervals as opposed to immediately on each Task execution
 - Terraform: Support added for Terraform v0.14
 - UI: Executions list page (Automation > Executions) now automatically refreshes to display new executions
 - Veeam: Added ability to disable Backup Repositories, Backup Servers and Managed Servers.
 - Veeam: Added context for Backup Servers in Backup configuration settings
-- Veeam: Managed Servers tab added. 
-- Veeam: Multiple visibility and permissions added for Backup Repositories, Backup Servers and Managed Servers. 
+- Veeam: Managed Servers tab added.
+- Veeam: Multiple visibility and permissions added for Backup Repositories, Backup Servers and Managed Servers.
 - Whitelabel: Set your own "Terms and Privacy String" to be displayed on the login page. This field takes HTML markup allowing administrators to link to an outside Terms and Conditions page, Privacy Policy page, or anything else
 
 |morpheus| API & CLI Improvements
@@ -68,16 +69,16 @@ Fixes
 - Notifications: Updated Instance Shutdown and Expiration warning email notifications to use tenant url redirect (matching provisioning notification behavior)
 - Oracle Cloud: E3 Service Plans added
 - OTC: Fixed user specified Floating IP bandwidth not applying
-- Plans: Reverted previous change that filtered Service Plans with STORAGE value set to 0 and "CUSTOMIZE ROOT VOLUME" disabled due to not meeting minimum storage requirements of Virtual Image. Root disk size value is now set to template root disk size. 
+- Plans: Reverted previous change that filtered Service Plans with STORAGE value set to 0 and "CUSTOMIZE ROOT VOLUME" disabled due to not meeting minimum storage requirements of Virtual Image. Root disk size value is now set to template root disk size.
 - PowerDNS: Validation added for saving PowerDNS Integration
 - Reports: Fixed invalid tag filter causing reports failures
 - SCAP: Fixed issue with running security scans on RHEL 7 hosts
 - SCVMM: OS Type now synced for SCVMM Virtual Machines
 - Security: Remediated potential XSS vulnerabilities
-- vCloudDirector: Adding an additional NIC with static IP assignment to a VM with primary NIC using vCD IP Pool will no longer reboot the VM during reconfigure.  
+- vCloudDirector: Adding an additional NIC with static IP assignment to a VM with primary NIC using vCD IP Pool will no longer reboot the VM during reconfigure.
 - Veeam: Added config option to remove unmanaged/discovered vm records created when Cloud sync runs during a restore but before the matching managed vm record is created, resulting in duplicate vm records.
 - Veeam: Fixed Instance, Health and VM Status for restored backups
-- Veeam: Fixed issue with restoring non-zipped/normal Veeam backups from Morpheus. 
+- Veeam: Fixed issue with restoring non-zipped/normal Veeam backups from Morpheus.
 - Veeam: When restoring a deleted VM from a Veeam backup that was created from Morpheus, the restored Instance name will now match the original Instanc ename rather than the name of the restored backup.
 
 Appliance Updates
