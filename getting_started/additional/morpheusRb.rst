@@ -57,7 +57,6 @@ Morpheus allows for additional advanced customizations to the morpheus.rb file l
   elasticsearch['memory_top_pad'] = 131072
   elasticsearch['memory_trim_threshold'] = 131072
   elasticsearch['open_files'] = 204800
-  elasticsearch['replica_count'] = 1
 
   nginx['cache_max_size'] = '5000m'
   nginx['enable'] = true
