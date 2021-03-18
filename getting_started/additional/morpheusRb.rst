@@ -56,7 +56,6 @@ Morpheus allows for additional advanced customizations to the morpheus.rb file l
   elasticsearch['memory_top_pad'] = 131072
   elasticsearch['memory_map_max'] = 65536
   elasticsearch['memory_alloc_arena_max'] = 2
-  elasticsearch['replica_count'] = 1
   elaseticsearch['log_dir'] = '/var/log/morpheus/elaseticsearch'
   
   nginx['enable'] = true
