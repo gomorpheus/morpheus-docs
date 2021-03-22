@@ -6,7 +6,7 @@ Plans & Pricing
 Overview
 --------
 
-The Plans & Pricing page displays a list of all of your available service plans. From the service plans page you will be able to Create, Edit, and Delete service plans, as well as review basic plan details. The list of plans displayed on this page displays the plan name, description, Instances layout, memory, storage, and cost, as well as an action column to edit and delete. A default set of Service Plans are created in |morpheus|. They provide a means to set predefined tiers on memory, storage, cores, and cpu. Price tables can also be applied to these so estimated cost per virtual machine can be tracked as well as pricing for customers.
+The Plans & Pricing page displays a list of all of your available service plans. Plans provide a means to set predefined tiers on memory, storage, cores, and CPU. From the service plans page you will be able to create, edit and delete service plans, as well as review basic plan details. Plans are listed along with the type, associated clouds and region codes, and number of associated price sets. A default set of Service Plans are included with |morpheus| but most users will want to create their own as well. Price tables can also be applied to these plans so estimated costs per virtual machine, load balancer, snapshot, and more can be tracked. Customer price conversions can also be configured.
 
 Service Plans
 -------------
@@ -14,22 +14,13 @@ Service Plans
 Create Service Plan
 ^^^^^^^^^^^^^^^^^^^
 
-To create service plan
+|morpheus| offers a few distinct types of service plans, each with different data fields to track and valid price types which can be associated. Price Sets can be added to the plan at the time it's created so often it makes sense to create the Prices and associate them with Price Sets before creating the plan. Additional instructions for creating Prices and Price Sets are in the next section. With the Price Sets ready, continue with the instructions below to create Price Plans of various types.
 
-#. Select the Administration link in the navigation bar.
-#. Select the Plans & Pricing link in the sub navigation bar.
-#. Click the Create Service Plan button.
-
-#. From the New Service Plan wizard, input:
-
-   * Name
-   * Code used as a unique identifier in the API and CLI.
-   * Storage size in megabytes.
-   * Memory size in megabytes.
-   * Cost is internal cost of plan.
-   * Price is what the service offering will be priced at.
-   * Instance Types that will be associated with this plan.
-   * Click the Save Changes button to save.
+#. Navigate to Administration > Plans & Pricing
+#. Click the :guilabel:`+ ADD` dropdown and select a Price Plan type
+#. Configure details on the Service Plan on the General tab, the data tracked will depend on the Plan type selected
+#. On the Price Sets tab, associate all relevant Price Sets with the Plan. Available Price Sets are automatically filtered to show only those which are relevant for the Plan type you've selected
+#. Click :guilabel:`SAVE CHANGES`
 
 Edit Service Plan
 ^^^^^^^^^^^^^^^^^
@@ -38,20 +29,21 @@ By default, these options are fixed sizes but can be configured for dynamic sizi
 
 To edit service plan:
 
-#. Select the Administration link in the navigation bar.
-#. Select the Plans & Pricing link in the sub navigation bar.
-#. Click the Edit pencil icon on the row of the plan to edit.
-#. Edit the following Edit Service Plan.
-#. Click the Save Changes button to save.
+#. Select the Administration link in the navigation bar
+#. Select the Plans & Pricing link in the sub navigation bar
+#. Click the ACTIONS dropdown in the row for the Price Plan you wish to edit
+#. Click EDIT
+#. After making changes, click the :guilabel:`SAVE CHANGES` button to save
 
 Delete Service Plan
 ^^^^^^^^^^^^^^^^^^^
 
 To delete a service plan
 
-#. Select the Administration link in the navigation bar.
-#. Select the Plans & Pricing link in the sub navigation bar.
-#. Click the Delete trashcan icon on the row of the plan to delete.
-#. Confirm
+#. Select the Administration link in the navigation bar
+#. Select the Plans & Pricing link in the sub navigation bar
+#. Click the ACTIONS dropdown in the row for the Price Plan you wish to delete
+#. Click REMOVE
+#. When the warning pop-up appears, confirm that you wish to delete the Plan
 
 .. include:: prices.rst

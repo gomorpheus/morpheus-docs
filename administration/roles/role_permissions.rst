@@ -6,15 +6,50 @@ Role Permissions
 User Role Permission Sections
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 FEATURE ACCESS
-  Controls Tenant and User access level for sections and features in |morpheus|.
+  Controls User access level for UI sections and features in |morpheus|. The complete feature permissions grid is included below.
 GROUP ACCESS
-  Controls User access level for Groups. (Groups are not Multi-Tenant.)
-CLOUD ACCESS
-  Controls Sub-Tenant access level for Master Tenant publicly visible Clouds.
-INSTANCE TYPE User only has access to Objects they have created/own.
-  Controls Tenant and User access level for Instance Types.
+  Controls User access level for Groups. Groups are not a Multi-Tenant construct, only Groups created in the current Tenant will be visible.
+INSTANCE TYPE ACCESS
+  Controls User access level for Instance Types. Only Instance Types created in the current Tenant or those created in the Master Tenant and shared with the current Tenant will be available.
 BLUEPRINT ACCESS
-  Controls Tenant and User access level for Blueprints during App provisioning.
+  Controls User access level for Blueprints during App provisioning. Only Blueprints created in the current Tenant or those created in the Master Tenant and shared with the current Tenant will be available.
+PERSONAS
+  Controls User access to |morpheus| Personas, at the time of this writing Users may be given access to the Standard (full |morpheus| experience) or Service Catalog Personas
+CATALOG ITEM TYPES
+  Controls User access to Catalog Item types within the Service Catalog Persona. Only Catalog Items created in the current Tenant or those created in the Master Tenant and shared with the current Tenant will be available.
+
+Tenant Role Permission Sections
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+FEATURE ACCESS
+  Controls Tenant access level for sections and features in |morpheus|. The complete feature permissions grid is included below.
+CLOUD ACCESS
+  Controls Tenant access level for Clouds. This list includes Clouds integrated from the Master Tenant and shared publicly. Tenants given this Tenant Role will have either Full, Read, or None access levels to a given Cloud. See the section below for more information on Cloud Access levels.
+INSTANCE TYPE ACCESS
+  Controls Tenant access level for Instance Types. Only Instance Types created in the current Tenant or those created in the Master Tenant and shared with the current Tenant will be available.
+BLUEPRINT ACCESS
+  Controls Tenant access level for Blueprints during App provisioning. Only Blueprints created in the current Tenant or those created in the Master Tenant and shared with the current Tenant will be available.
+PERSONAS
+  Controls Tenant access to |morpheus| Personas, at the time of this writing Users may be given access to the Standard (full |morpheus| experience) or Service Catalog Personas
+CATALOG ITEM TYPES
+  Controls Tenant access to Catalog Item types within the Service Catalog Persona. Only Catalog Items created in the current Tenant or those created in the Master Tenant and shared with the current Tenant will be available.
+
+Cloud Access Levels
+^^^^^^^^^^^^^^^^^^^
+
+When creating or editing a Tenant Role, Master Tenant administrators can choose which publicly-visible Clouds to share with Tenants having the current Role. Access can be completely restricted or administrators can choose between Read and Full access.
+
+Read Access
+```````````
+
+Master Tenant administrators can opt to give other Tenants read-level access to any integrated Clouds through the Tenant Role. A read-only Cloud allows the Master Tenant to assign resources for viewing by Subtenant users but not allow them to perform any actions or provision new Instances.
+
+With read-level access, Subtenant users will have access to the Cloud detail page (Infrastructure > Clouds). From the Summary subtab on the Cloud detail page, high-level information on Cloud resources are shown regardless of specific resources that have been shared with the Subtenant. Other metrics, such as costing, resource percentages (CPU, Memory, and Storage), VM counts and host counts will only be populated when servers in the Cloud have been assigned to the Tenant.
+
+Full Access
+```````````
+
+With full access, Subtenant users also have access to the Cloud detail page (Infrastructure > Clouds > Specific Cloud) and see the same level of detail as Subtenants with read-only rights. However, with full access, Subtenant users can also perform many actions including the addition of Clusters, Hosts, and VMs, changing networks, and more. This cloud will also be selectable as a provisioning target for Subtenant users when deploying Instances or Apps.
 
 Feature Access Permissions
 ^^^^^^^^^^^^^^^^^^^^^^^^^^

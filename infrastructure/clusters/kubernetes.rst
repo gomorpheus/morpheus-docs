@@ -119,7 +119,72 @@ To create a new Kubernetes Cluster:
 
 #. Once all Master and Worker Nodes are successfully provisioned and Kubernetes is installed and configured, the Cluster status will turn green.
 
-    .. IMPORTANT:: Cluster provisioning requires successful creation of VMs, Agent Installation, and execution of Kubernetes workflows. Consult process output from ````Infrastructure -> Clusters - Details`` and morpheus-ui current logs at ``Operations - Health - Morpheus Logs`` for information on failed Clusters.
+    .. IMPORTANT:: Cluster provisioning requires successful creation of VMs, Agent Installation, and execution of Kubernetes workflows. Consult process output from ````Infrastructure -> Clusters - Details`` and morpheus-ui current logs at ``Administration - Health - Morpheus Logs`` for information on failed Clusters.
+
+Intra-Kubernetes Cluster Port Requirements
+``````````````````````````````````````````
+
+The table below includes port requirements for the machines within the cluster (not for the |morpheus| appliance itself). Check that the following ports are open on Control-plane and Worker nodes:
+
+.. list-table:: **Control-plane node(s)**
+  :widths: auto
+  :header-rows: 1
+
+  * - Protocol
+    - Direction
+    - Port Range
+    - Purpose
+    - Used By
+  * - TCP
+    - Inbound
+    - 6443
+    - Kubernetes API Server
+    - All
+  * - TCP
+    - Inbound
+    - 6783
+    - Weaveworks
+    - 
+  * - TCP
+    - Inbound
+    - 2379-2380
+    - etcd server client API
+    - kube-apiserver, etcd
+  * - TCP
+    - Inbound
+    - 10250
+    - kubelet API
+    - Self, Control plane
+  * - TCP
+    - Inbound
+    - 10251
+    - kube-scheduler
+    - Self
+  * - TCP
+    - Inbound
+    - 10252
+    - kube-controller-manager
+    - Self
+
+.. list-table:: **Worker node(s)**
+  :widths: auto
+  :header-rows: 1
+
+  * - Protocol
+    - Direction
+    - Port Range
+    - Purpose
+    - Used By
+  * - TCP
+    - Inbound
+    - 10250
+    - kubelet API
+    - Self, Control plane
+  * - TCP
+    - Inbound
+    - 30000-32767
+    - NodePort Services
+    - All
 
 Adding Worker Nodes
 ^^^^^^^^^^^^^^^^^^^

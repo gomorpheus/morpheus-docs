@@ -26,11 +26,13 @@ Adding SolarWinds to |morpheus|
     URL
       URL of the SolarWinds server, ex: ``http://10.30.20.10:17778``
     Username
-      Username of SolarWinds API User. API and root level propagating read access required, read/write access required for target networks and domains.
+      Username of SolarWinds API User. See the NOTE box below for information on minimum rights requirements
     Password
       SolarWinds User password
 
 #. Click :guilabel:`SAVE CHANGES`
+
+.. NOTE:: At minimum you will need credentials for a user with API and root-level propagating read access, as well as read/write access for target networks and domains. For a quicker solution, you can also use an account with the Power User role in situations where you aren't concerned with providing only the minimum required access.
 
 Consuming SolarWinds in |morpheus|
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

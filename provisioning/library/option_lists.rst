@@ -56,7 +56,7 @@ REST Option List Fields
     .. code-block:: javascript
 
       for(var x=0;x < data.length; x++) {
-        results.push({name: data[x].title,value:data[x].id});
+        results.push({name: data[x].name,value:data[x].id});
       }
 
   REQUEST SCRIPT

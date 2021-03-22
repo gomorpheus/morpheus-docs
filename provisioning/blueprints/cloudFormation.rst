@@ -1,7 +1,7 @@
 Cloud Formation Blueprints
 --------------------------
 
-CloudFormation Blueprints consume new or existing CloudFormation templates to create easily-deployable application stacks. CloudFormation templates in |morpheus| are JSON-formatted text documents that declare all relevant AWS resources needed for the provisioned application. They can be created directly in the New Blueprint modal or pulled in from existing Git repositories.
+CloudFormation Blueprints consume new or existing CloudFormation templates to create easily-deployable application stacks. CloudFormation templates in |morpheus| are JSON or YAML-formatted text documents that declare all relevant AWS resources needed for the provisioned application. They can be created directly in the New Blueprint modal or pulled in from existing Git repositories.
 
 If needed, Amazon has educational resources available for getting started with CloudFormation. They can be found in the `AWS CloudFormation documentation <https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/Welcome.html>`_.
 
@@ -30,6 +30,7 @@ In some cases, you must explicitly acknowledge that your template contains certa
 Continuing on with the CloudFormation Configuration section, complete the following fields as needed when entering your configuration directly into the new Blueprint:
 
 - **CONFIG TYPE:** "CloudFormation Template JSON (.json)"
+- **CONFIG TYPE:** "CloudFormation Template YAML (.yaml)"
 - **CONFIG:** Enter your configuration here
 
 In the CloudFormation Configuration section, complete the following fields as needed when syncing in configuration from a Git repository:

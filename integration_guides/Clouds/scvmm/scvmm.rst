@@ -5,6 +5,7 @@ Requirements
 ^^^^^^^^^^^^
 
 - Access to SCVMM host on port 5985 for Agent installation
+- Access to Hyper-V host on port 2179 for hypervisor console access
 - |morpheus| Agent installation (installed on the target SCVMM host via port 5985 and WinRM)
 - User with administrator privileges
 
