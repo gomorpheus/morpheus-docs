@@ -12,32 +12,35 @@ A subset of variables are available for Instance, Host Name and Hostnames. These
 
 Instance Naming Policy example: ``${userInitials}-${cloudCode}-${platform == 'windows' ? 'W' : 'L'}-${sequence}``
 
-Commonly used variables for naming patterns include:
+Available variables for Naming Policy naming patterns include:
 
 .. code-block:: bash
 
-		${groupName}
-		${groupCode}
-		${cloudName}
-		${cloudCode}
-		${type}
-		${accountId}
 		${account}
-		${accountType}
-		${platform}
-		${platform == 'windows' ? 'w':'l'} # results in `w` for Windows platforms and `l` for Linux Platforms
-		${userId}
-		${username}
-		${userInitials}
-		${provisionType}
-		${instance.instanceContext} # Environment Code
-		${sequence} # results in 1
-		${sequence+100} # results in 101
-		${customOption.name}
-		${sequence.toString().padLeft(5,'0')} #results in 00001
+		${accountId}
 		${accountName}
 		${accountNumber}
+		${accountType}
+		${cloudCode}
+		${cloudName}
 		${customerNumber}
+		${customOption.name}
+		${groupCode}
+		${groupName}
+		${instance.instanceContext} # Environment Code
+		${platform == 'windows' ? 'w':'l'} # results in `w` for Windows platforms and `l` for Linux Platforms
+		${platform}
+		${provisionType}
+		${sequence} # results in 1
+			${sequence+100} # results in 101
+		  ${sequence.toString().padLeft(5,'0')} #results in 00001
+		${tenantId}
+		${tenant} # Teant Name
+		${tenantSubdomain}
+		${type}
+		${userId}
+		${userInitials}
+		${username}
 
 An example Instance Name Policy using a naming pattern with User Initials, Cloud Code, Instance Type, and a sequential number starting at 3000 is ``${userInitials}-${cloudCode}-${type}-${sequence+3000}``, resulting in an Instance Name of **md-vmwd3-centos-3001** for the first instance, followed by **md-vmwd3-centos-3002** and so on.
 
@@ -211,41 +214,87 @@ Instance
 
 .. code-block:: bash
 
-			instance {
-				autoScale,
-				configGroup,
-				configId,
-				configRole
-				containers:[],
-				cores,
-				deployGroup,
-				description,
-				displayName,
-				domainName,
-				environmentPrefix,
-				evars:[],
-				expireDate,
-				firewallEnabled,
-				hostname,
-				instanceContext,
-				instanceLevel,
-				instanceTypeCode,
-				instanceVersion,
-				memory,
-				metadata:[],
-				name,
-				networkLevel,
-				plan,
-				provisionType,
-				status,
-				statusMessage,
-				storage,
-				tags,
-				tenantSubdomain,
-				userStatus,
-				instanceTypeName
-			}
-
+	instance {
+		adminPassword,
+		adminUsername,
+		apps.[],
+		assignedDomainName,
+		autoScale,
+		backup.{},
+		configGroup,
+		configId,
+		configRole,
+		container.{},
+		containers.[],
+		cores,
+		createBackup,  true/false
+		createdByEmail,
+		createdByFirstName,
+		createdById,
+		createdByLastName,
+		createdByUser.{
+			 username,
+			 displayName,
+			 firstName,
+			 lastName,
+			 email,
+			 linuxUsername,
+			 windowsUsername
+		},
+		createdByUsername,
+		createUser, # true/false
+		customOptions,
+		deployGroup,
+		description,
+		displayName,
+		domainName,
+		environmentPrefix,
+		evars:{},
+		expireDate, # YYYY-MM-DD-T00:00:00Z
+		expireDays,
+		expose.[],
+		firewallEnabled:true/false,
+		hostId,
+		hostname,
+		id,
+		instanceContext,
+		instanceLevel,
+		instanceTypeCode,
+		instanceTypeName,
+		instanceVersion,
+		isEC2:true/false,
+		isVpcSelectable, # true/false
+		layoutCode,
+		layoutId,
+		layoutName,
+		layoutSize,
+		lbInstances.[],
+		memory(bytes),
+		memoryDisplay, #MB/GB
+		metadata.{},
+		name,
+		nestedVirtualization,
+		networkLevel,
+		noAgent,
+		plan,
+		poolProviderType,
+		ports,
+		provisionType,
+		resourcePoolId,
+		scheduleStatus,
+		servicePassword,
+		serviceUsername,
+		smbiosAssetTag,
+		sslCertId,
+		sslEnabled, # true/false
+		status,
+		statusMessage,
+		storage, # bytes
+		tags,
+		userStatus,
+		vmwareFolderId,
+	}
+	
 Container
 ---------
 
@@ -287,75 +336,75 @@ Server
 
 .. code-block:: bash
 
-			server {
-				agentInstalled,
-				agentVersion,
-				apiKey,
-				category,
-				commType,
-				configGroup,
-				configId,
-				configRole
-				consoleHost,
-				consolePort,
-				consoleType,
-				consoleUsername,
-				dataDevice,
-				dateCreated,
-				description,
-				displayName,
-				domainName,
-				externalId,
-				externalIp,
-				fqdn,
-				hostname,
-				internalId,
-				internalIp,
-				internalName,
-				internalSshUsername,
-				lastAgentUpdate,
-				lvmEnabled,
-				macAddress,
-				managed,
-				maxCores,
-				maxMemory,
-				maxStorage,
-				name,
-				nodePackageVersion,
-				osDevice,
-				osType,
-				osTypeCode,
-				parentServerId,
-				plan,
-				platform,
-				platformVersion,
-				powerState,
-				serialNumber,
-				serverModel,
-				serverType,
-				serverTypeCode,
-				serverTypeName,
-				serverVendor,
-				softwareRaid,
-				sourceImageId,
-				sshHost,
-				sshPort,
-				sshUsername,
-				status,
-				statusMessage,
-				tags,
-				toolsInstalled,
-				visibility,
-				volumes {
-					name
-					id
-					deviceName
-					maxStorage
-					unitNumber
-					displayOrder
-					rootVolume
-				}
-			}
+	server {
+		agentInstalled,
+		agentVersion,
+		apiKey,
+		category,
+		commType,
+		configGroup,
+		configId,
+		configRole
+		consoleHost,
+		consolePort,
+		consoleType,
+		consoleUsername,
+		dataDevice,
+		dateCreated,
+		description,
+		displayName,
+		domainName,
+		externalId,
+		externalIp,
+		fqdn,
+		hostname,
+		internalId,
+		internalIp,
+		internalName,
+		internalSshUsername,
+		lastAgentUpdate,
+		lvmEnabled,
+		macAddress,
+		managed,
+		maxCores,
+		maxMemory,
+		maxStorage,
+		name,
+		nodePackageVersion,
+		osDevice,
+		osType,
+		osTypeCode,
+		parentServerId,
+		plan,
+		platform,
+		platformVersion,
+		powerState,
+		serialNumber,
+		serverModel,
+		serverType,
+		serverTypeCode,
+		serverTypeName,
+		serverVendor,
+		softwareRaid,
+		sourceImageId,
+		sshHost,
+		sshPort,
+		sshUsername,
+		status,
+		statusMessage,
+		tags,
+		toolsInstalled,
+		visibility,
+		volumes {
+			name
+			id
+			deviceName
+			maxStorage
+			unitNumber
+			displayOrder
+			rootVolume
+		}
+	}
 
 Zone (Cloud)
 ------------
@@ -381,12 +430,12 @@ Group (Site)
 
 .. code-block:: bash
 
-			group {
-				code,
-				location,
-				datacenterId,
-				name
-			}
+	group {
+		code,
+		location,
+		datacenterId,
+		name
+	}
 
 Custom Options (Option Types)
 -----------------------------
@@ -441,7 +490,7 @@ Instance Map Example
 		   "poolProviderType":value,
 		   "isVpcSelectable":true/false,
 		   "smbiosAssetTag":value,
-		   isEC2:true/false,
+		   "isEC2":true/false,
 		   "resourcePoolId":value,
 		   "hostId":value,
 		   "createUser":true/false,
