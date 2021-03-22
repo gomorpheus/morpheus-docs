@@ -120,6 +120,7 @@ html_show_sourcelink = False
 html_show_sphinx = False
 keep_warnings = False
 github_edit_url = False
+html_use_opensearch = 'https://docs.morpheusdata.com/en/latest'
 
 def setup(app):
 # Disable the GitHub link display
