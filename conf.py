@@ -53,7 +53,7 @@ exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store','z_in_progress']
 pygments_style = 'none'
 todo_include_todos = False
 html_theme = 'sphinx_rtd_theme'
-html_use_opensearch = 'https://docs.morpheusdata.com'
+html_use_opensearch = 'https://docs.morpheusdata.com/en/latest'
 linkcheck_request_headers = {
     "*": {
         "Accept": "text/html,application/atom+xml",
