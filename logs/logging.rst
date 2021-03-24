@@ -85,7 +85,7 @@ If you wish to export these to an external syslog platform, do the following:
 
 #. Restart rsyslog
 
-The logfiles will now be to the destination you have defined.
+The logfiles will now be forwarded to the destination you have defined.
 
 This configuration is valid for an ‘all-in-one’ |morpheus| server. If the infrastructure components are running on separate servers /clusters, you will need to create the relevant redirects for the logs on those boxes.
 
@@ -122,7 +122,7 @@ The final log type that may require export is the |morpheus| Activity log. This 
 
       morpheus-ctl stop morpheus-ui
 
-   .. NOTE:: Please be aware this will restart the web interface for |morpheus|.
+   .. NOTE:: Please be aware this will stop the web interface for |morpheus|.
 
 #. Once the service has stopped enter the following at the shell prompt to restart (if the service does not stop, replace stop with graceful-kill and retry)
 
@@ -138,7 +138,7 @@ The final log type that may require export is the |morpheus| Activity log. This 
 
 Once you see the ASCI art show up you will be able to log back into the User Interface. A new audit file will have been created called audit.log and will found in the default |morpheus| log path which is ``/var/log/morpheus/morpheus-ui/``
 
-Instead of writing the output to a logile, you could create an Appender definition for your SIEM audit database product
+Instead of writing the output to a log file, you could create an Appender definition for your SIEM audit database product
 
 
 morpheus-ssl nginx logs
