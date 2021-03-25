@@ -9,7 +9,6 @@ Clouds are integrations or connections to public, private, hybrid clouds, or bar
 Supported Cloud Types
 ^^^^^^^^^^^^^^^^^^^^^
 
-* Alibaba Cloud
 * Amazon
 * Azure (Public)
 * Azure Stack (Private)
