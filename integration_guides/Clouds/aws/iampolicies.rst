@@ -22,6 +22,7 @@ Morpheus Sample AWS IAM Policy
               "Action": [
                   "autoscaling:DescribeAutoScalingGroups",
                   "ce:*",
+                  "cloudwatch:DescribeAlarms",
                   "cloudwatch:GetMetricStatistics",
                   "ec2:AllocateAddress",
                   "ec2:AssignPrivateIpAddresses",
