@@ -1,10 +1,7 @@
-.. _pricing:
-
-Pricing
--------
+.. _price_sets:
 
 Price Sets
-^^^^^^^^^^
+----------
 
 Price Sets combine Prices and then attach to Plans. Prices must be created prior to creating Price Sets, but it is recommended to review the Price Set Type options prior to creating Prices.
 
@@ -40,9 +37,12 @@ Apply Price Changes to Usage
 
 Prices
   Search for and select Prices to be added to the Price Set. One of each Price Type required for the Price Set Type selected must be added for the Price Set to save.
+  
+.. _pricing: 
+.. _prices:
 
 Prices
-^^^^^^
+------
 
 Price Types
   - Everything: One price for all resources Storage, CPU, Memory, and Disks

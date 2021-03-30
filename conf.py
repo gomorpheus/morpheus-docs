@@ -27,20 +27,32 @@ rst_prolog = """
 .. |repo_host_url| replace:: https://downloads.morpheusdata.com
 .. |minUpgradeVer| replace:: v4.2.0
 .. |previousMorphVer| replace:: v5.2.2
+.. |trash| unicode:: 0x0001F5D1 .. TRASH ICON
+.. |master tenant| replace:: Master Tenant
 """
 
 
 # -- levels -----
-#****************
-#       H1
-#****************
 #
-#       H2
-#================
-#----------------
-#^^^^^^^^^^^^^^^^
-#````````````````
-#................
+# ***************
+# LEVEL 1 HEADING
+# ***************
+#
+# LEVEL 2 HEADING
+# ===============
+#
+# LEVEL 3 HEADING
+# ---------------
+#
+# LEVEL 4 HEADING
+# ^^^^^^^^^^^^^^^
+#
+# LEVEL 5 HEADING
+# ```````````````
+#
+# LEVEL 6 HEADING
+# ...............
+
 
 extensions = ['recommonmark','sphinx_markdown_tables','sphinx_tabs.tabs','sphinxcontrib.contentui','sphinxcontrib.images','sphinx_search.extension','notfound.extension']
 templates_path = ['_templates']
