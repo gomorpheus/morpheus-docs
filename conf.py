@@ -7,8 +7,10 @@ latex_documents = [
 
 rst_prolog = """
 .. |morpheus| replace:: Morpheus
-.. |morphbranch| replace:: v5.2
-.. |morphver| replace:: v5.3.0
+.. |morphbranch| replace:: v5.3
+.. |morphver| replace:: v5.3.1
+.. |minUpgradeVer| replace:: v4.2.0
+.. |previousMorphVer| replace:: v5.3.0
 .. |rmqbranch| replace:: v3.5-3.8
 .. |rmqver| replace:: v3.8.9
 .. |mysqlbranch| replace:: v5.7
@@ -25,8 +27,6 @@ rst_prolog = """
 .. |openjdk-elasticsearch| replace:: 14.0.2+12
 .. |erlang| replace:: 22.3
 .. |repo_host_url| replace:: https://downloads.morpheusdata.com
-.. |minUpgradeVer| replace:: v4.2.0
-.. |previousMorphVer| replace:: v5.2.2
 .. |trash| unicode:: 0x0001F5D1 .. TRASH ICON
 .. |master tenant| replace:: Master Tenant
 """

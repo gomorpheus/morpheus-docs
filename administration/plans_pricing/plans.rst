@@ -85,7 +85,7 @@ Group and Tenant Access permissions determine availability of a Service Plan.
 Removing Plans
 ``````````````
 
-Plans can be removed by selecting **ACTIONS ▼ ** on a Plan and then selecting **Remove** from the Actions menu. Removing a Plan makes it no longer visible, however it does not hard delete the Plan as the record must remain for existing associations usage and price tracking. Synced Plans should be deactivated rather than removed.
+Plans can be removed by selecting **ACTIONS** ▼ on a Plan and then selecting **Remove** from the Actions menu. Removing a Plan makes it no longer visible, however it does not hard delete the Plan as the record must remain for existing associations usage and price tracking. Synced Plans should be deactivated rather than removed.
 
 |
 
