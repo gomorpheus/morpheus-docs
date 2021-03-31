@@ -53,11 +53,11 @@ Once you have your database installed and configured:
 
    .. code-block:: bash
 
-   [mysql]
-   default-character-set = utf8
+    [mysql]
+    default-character-set = utf8
 
-   [mysqld]
-   default_time_zone = "+00:00"
+    [mysqld]
+    default_time_zone = "+00:00"
 
 #. Create the Database you will be using with morpheus.
 
