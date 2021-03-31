@@ -393,8 +393,8 @@ The following table contains communication information, including frequency and 
   * - Deployment Integration
     - Server Pull
     - Git/Github
-    - Syncing latest version of Git-tracked repos
-    - 5 minutes
+    - Syncing latest version of Git-tracked repositories
+    - Every 5 minutes as well as immediately prior to executing any Tasks whose configuration is tracked through integrated Git repositories
     - No
   * - DNS Integration
     - Server Pull
