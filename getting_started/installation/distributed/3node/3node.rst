@@ -49,6 +49,16 @@ Requirements
 
 Once you have your database installed and configured:
 
+#. The |morpheus| appliance uses the utf8 character set and the UTC+0 timezone. Set the variables below on your external database clusters to prevent timestamp errors from being thrown later in |morpheus| UI. For all distributions, the configuration is set in /etc/my.cnf for each database node.
+
+   .. code-block:: bash
+
+   [mysql]
+   default-character-set = utf8
+
+   [mysqld]
+   default_time_zone = "+00:00"
+
 #. Create the Database you will be using with morpheus.
 
    .. code-block:: bash
@@ -149,7 +159,7 @@ Continued Installation Steps
 
 
    .. important:: The elasticsearch node names set in ``elasticsearch['node_name']`` must match the host entries in elasticsearch['es_hosts']. ``node_name`` is used for ``node.name`` and ``es_hosts`` is used for ``cluster.initial_master_nodes`` in the generated elasticsearch.yml config. node names that do not match entries in cluster.initial_master_nodes will cause clustering issues.
-    	
+
 #. Reconfigure on all nodes
 
    .. code-block:: bash
@@ -328,7 +338,7 @@ If your new installation is part of a migration then you need to move the data f
       Enter password:
 
    This file needs to be pushed to the new |morpheus| Installation’s backend. Depending on the GRANTS in the new MySQL backend, this will likely require moving this file to one of the new |morpheus| frontend servers.
- 
+
 #. Once the file is in place it can be imported into the backend. Begin by ensuring the |morpheus| UI service is stopped on all of the application servers:
 
    .. code-block:: bash

@@ -13,6 +13,16 @@ Requirements
 Once you have your database installed and configured:
 
 
+#. The |morpheus| appliance uses the utf8 character set and the UTC+0 timezone. Set the variables below on your external database clusters to prevent timestamp errors from being thrown later in |morpheus| UI. For all distributions, the configuration is set in /etc/my.cnf for each database node.
+
+   .. code-block:: bash
+
+    [mysql]
+    default-character-set = utf8
+
+    [mysqld]
+    default_time_zone = "+00:00"
+
 #. Create the Database you will be using with morpheus.
 
    .. code-block:: bash
