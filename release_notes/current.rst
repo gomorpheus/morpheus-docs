@@ -7,7 +7,7 @@
 .. Small Update, omitting highlights this time
   .. include:: highlights.rst
 
-.. NOTE:: Features marked with :superscript:`5.3.0` are also included in Morpheus UI 5.3.0 standard (non-LTS) release version. Those marked with superscript:`5.2.4-2` are only included with Morpheus UI 5.2.4-2.
+.. NOTE:: Features marked with :superscript:`5.3.0` are also included in Morpheus UI 5.3.0 standard (non-LTS) release version
 
 New Features
 ============
@@ -30,7 +30,6 @@ New Features
 - Roles: The “Tenant Admin” Role, which is included out-of-the-box and is not editable, now gives “Full” permissions for Snapshots :superscript:`5.3.0`
 - Settings: "Reuse Naming Sequence Numbers" setting in Administration > Settings > Provisioning now applies to all Instance naming patterns using ``${sequence}`` values. Previously Reuse Naming Sequence Numbers = false was only applicable for Naming Policies
 - Spec Templates: Morpheus now intelligently detects the template file for ARM deployment in a Spec Template from a Git repository. Previously, users were required to provide a path containing just one .json file :superscript:`5.3.0`
-- Tasks: Task configuration synced through a Git integration is refreshed with each Task execution rather than only once every five minutes :superscript:`5.2.4-2`
 
 
 |morpheus| API Improvements
@@ -76,3 +75,4 @@ Agent/Node Package Updates
 - |morpheus| Node & |morpheus| VM Node Packages Version: v3.1.14
 - |morpheus| Linux Agent version: v2.1.1
 - |morpheus| Linux Agent: Fixed issue with stat collector network interface bonding in Ubuntu 18.04
+
