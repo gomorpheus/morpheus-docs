@@ -12,7 +12,7 @@ public infrastructure.
   groups/groups.rst
   clouds/clouds.rst
   clusters/clusters.rst
-  hosts/hosts.rst
+  compute/compute.rst
   networks/network.rst
   loadbalancers/lb.rst
   storage/storage.rst
