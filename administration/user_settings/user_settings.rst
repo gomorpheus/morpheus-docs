@@ -37,13 +37,14 @@ When two-factor authentication isn't yet set up, this section contains a single 
 On subsequent login attempts, the user will be prompted to enter a 2FA code after successful entry of the username and password. Retrieve this code from the 2FA app you set up in the prior section and enter it to complete the login process.
 
 .. image/images/administration/settings/2fa_code_screen.png
+  :width: 30%
 
 Disabling Two-Factor Authentication
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-When two-factor authentication is set up, this section contains two buttons: :guilabel`DISABLE 2FA` and :guilabel:`GET 2FA CODE`. To generate a new QR code and configure an authenticator app, click :guilabel:`GET 2FA CODE`. Once you generate a new QR code, the old one is no longer valid. At that point you must reconfigure your authenticator app or you will not be able to access your account on the next login attempt. Generating a new QR code requires your password.
+When two-factor authentication is set up, this section contains two buttons: :guilabel:`DISABLE 2FA` and :guilabel:`GET 2FA CODE`. To generate a new QR code and configure an authenticator app, click :guilabel:`GET 2FA CODE`. Once you generate a new QR code, the old one is no longer valid. At that point you must reconfigure your authenticator app or you will not be able to access your account on the next login attempt. Generating a new QR code requires your password.
 
-To disable 2FA, click :guilabel`DISABLE 2FA`. This action does not require a password.
+To disable 2FA, click :guilabel:`DISABLE 2FA`. This action does not require a password.
 
 Handling User Lock-Out
 ^^^^^^^^^^^^^^^^^^^^^^
