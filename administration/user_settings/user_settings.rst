@@ -22,6 +22,34 @@ The fields included in this section are described below. By entering any new val
 
 .. image:: /images/administration/settings/user_settings500.png
 
+2 Factor Authentication
+-----------------------
+
+|morpheus| supports two-factor authentication (2FA) for local user accounts as well as those authenticating through Active Directory and LDAP identity sources. Authentication is handled through a 2FA app such as Authy or Google Authenticator. Other common methods for handling 2FA, such as through email or SMS text message are not currently supported. Two-factor authentication is handled on a per-user basis through the User Settings section. There is not currently a way for an administrator to enforce the use of two-factor authentication appliance-wide.
+
+Setting Up Two-Factor Authentication
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+When two-factor authentication isn't yet set up, this section contains a single button: :guilabel:`ENABLE 2FA`. To get started, click this button and |morpheus| will prompt for your password. After entering the password, you'll be shown a QR code which can be scanned into your authenticator application of choice. Once the QR code is shown, 2FA is active and the supplemental code will need to be entered each time the user logs in.
+
+.. image:: /images/administration/settings/2fa_qr.png
+
+On subsequent login attempts, the user will be prompted to enter a 2FA code after successful entry of the username and password. Retrieve this code from the 2FA app you set up in the prior section and enter it to complete the login process.
+
+.. image/images/administration/settings/2fa_code_screen.png
+
+Disabling Two-Factor Authentication
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+When two-factor authentication is set up, this section contains two buttons: :guilabel`DISABLE 2FA` and :guilabel:`GET 2FA CODE`. To generate a new QR code and configure an authenticator app, click :guilabel:`GET 2FA CODE`. Once you generate a new QR code, the old one is no longer valid. At that point you must reconfigure your authenticator app or you will not be able to access your account on the next login attempt. Generating a new QR code requires your password.
+
+To disable 2FA, click :guilabel`DISABLE 2FA`. This action does not require a password.
+
+Handling User Lock-Out
+^^^^^^^^^^^^^^^^^^^^^^
+
+If a user loses the device they've configured for authentication or if they cannot proceed through 2FA login for any other reason, an administrator should impersonate the user's account, reset their password, disable 2FA, then share the new temporary password with the user. At that point, the user can login, reset their password to something more secure, and re-enable 2FA (if desired).
+
 Preferences
 -----------
 - **Default Group:** Sets the default Group selection when provisioning.
@@ -39,7 +67,7 @@ When provisioning a Linux-based resource and opting to have your user created du
 - **Confirm:** Confirm your entered password. These must match in order for the new password value to be saved
 - **SSH Key:** Select a pre-existing SSH key pair object in Morpheus. Required of not specifying password and creating your user during provisioning, or required if ssh password authentication has been disabled.
 
-.. warning:: If your users Linux Settings password and/or key are not defined, and 'Create User" is enabled during provisioning (default), a random password will be generated but not exposed and you will not be able to login with your user. 
+.. warning:: If your users Linux Settings password and/or key are not defined, and 'Create User" is enabled during provisioning (default), a random password will be generated but not exposed and you will not be able to login with your user.
 
 
 .. image:: /images/administration/settings/user_settings_linux_500.png
@@ -67,5 +95,5 @@ After navigating away from the User Settings page, the complete access and refre
 
 .. image:: /images/administration/settings/user-tokens.png
   :width: 80%
-  
-.. note:: Access Tokens are only displayed/available after generation. Copy new Tokens and store appropriately before navigating from ``/user-settings``, they will not be displayed again. 
+
+.. note:: Access Tokens are only displayed/available after generation. Copy new Tokens and store appropriately before navigating from ``/user-settings``, they will not be displayed again.
