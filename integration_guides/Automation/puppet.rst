@@ -49,7 +49,7 @@ Puppet Agent Install Tasks automate the process of installing the Puppet Agent, 
 #. Complete the fields as needed to target a specific Puppet Master and to identify Puppet environment and node names
 #. Save changes
 
-.. image:: .. image:: /images/integration_guides/automation/puppet/puppet_task.png
+.. image:: /images/integration_guides/automation/puppet/puppet_task.png
 
 Installing Puppet Agent at Provision Time
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
