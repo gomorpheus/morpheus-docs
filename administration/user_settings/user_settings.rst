@@ -37,7 +37,7 @@ When two-factor authentication isn't yet set up, this section contains a single 
 On subsequent login attempts, the user will be prompted to enter a 2FA code after successful entry of the username and password. Retrieve this code from the 2FA app you set up in the prior section and enter it to complete the login process.
 
 .. image/images/administration/settings/2fa_code_screen.png
-  :width: 30%
+  :width: 25%
 
 Disabling Two-Factor Authentication
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

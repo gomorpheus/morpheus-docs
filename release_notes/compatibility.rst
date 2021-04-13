@@ -60,7 +60,8 @@ Services
 |morphver| Service Version Changes
 ----------------------------------
 
-- Tomcat upgraded to 9.0.43
+- Tomcat upgraded to |tcver|
+- OpenSSL upgraded to |openssl|, |openssl_fips| (FIPS)
 
 |morphver| Service Version Compatibility
 ----------------------------------------
@@ -83,6 +84,8 @@ When externalizing MySQL, Elasticsearch and/or RabbitMQ services, the following 
 | Tomcat                                |                       | |tcver|                             |
 +---------------------------------------+-----------------------+-------------------------------------+
 | Nginx                                 |                       | |nginxver|                          |
++---------------------------------------+-----------------------+-------------------------------------+
+| OpenSSL                               |                       | |openssl|, |openssl_fips| (FIPS)    |
 +---------------------------------------+-----------------------+-------------------------------------+
 
 Security

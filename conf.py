@@ -29,6 +29,7 @@ rst_prolog = """
 .. |openjdk-jre| replace:: v8u282
 .. |openjdk-elasticsearch| replace:: 14.0.2+12
 .. |openssl| replace:: 1.1.1k
+.. |openssl_fips| replace:: 1.0.2u
 .. |erlang| replace:: 22.3
 
 """
