@@ -28,13 +28,14 @@ Fixes
 
 
 
-Agent/Node Package Updates
-==========================
+.. Below items no longer tagged for 5.2.5
+  Agent/Node Package Updates
+  ==========================
 
-- RHEL 8 and CentOS 8 Agent install support added for Instances and Hosts
-- Ubuntu 20 Agent install support added for Hosts
+  - RHEL 8 and CentOS 8 Agent install support added for Instances and Hosts
+  - Ubuntu 20 Agent install support added for Hosts
 
-Installer Updates
-=================
+  Installer Updates
+  =================
 
-- Installer now removes old package versions from ``var/opt/morpheus/package-repos`` on reconfigure once they are no longer needed. Previously these could be removed manually to free up space but they were not removed automatically and could take significant space in some scenarios
+  - Installer now removes old package versions from ``var/opt/morpheus/package-repos`` on reconfigure once they are no longer needed. Previously these could be removed manually to free up space but they were not removed automatically and could take significant space in some scenarios
