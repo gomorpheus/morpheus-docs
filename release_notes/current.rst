@@ -9,7 +9,6 @@
 New Features
 ============
 
-- Network: Change network for Instances and servers via reconfigure. Previously, network details were read-only during a reconfigure
 - NSX-T: Visibility permissions added to NSX-T integrations allowing master tenant administrators to share integrations with subtenants
 - NSX-T: Distributed firewalls for NSX-T integrations shared with a subtenant can now be created and managed by subtenant users
 - NSX-T: Load balancers and LB virtual servers for NSX-T integrations shared with a subtenant can now be created and managed by subtenant users
