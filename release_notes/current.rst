@@ -17,7 +17,6 @@ New Features
 - NSX-V: Visibility permissions added to NSX-V integrations allowing master tenant administrators to share integrations with subtenants
 - Security: `Two-factor authentication <https://docs.morpheusdata.com/en/5.2.5/administration/user_settings/user_settings.html#factor-authentication>`_ added for |morpheus| local accounts as well as users from Active Directory and LDAP identity sources
 - Settings: Add IP addresses or hostnames to approved or denied lists which limits users to only approved sources when creating HTTP Tasks or populating Option Lists through REST calls. Previously, specific hosts could be denied but now administrators can opt to deny all hosts except those which are specifically approved
-- UI: Backend changes to how certain pages are loaded which can improve performance on appliances with very high numbers of certain objects, such as Clouds, Roles, or Plans
 
 |morpheus| API Improvements
 ===========================
