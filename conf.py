@@ -1,14 +1,18 @@
 master_doc = 'index'
 
 latex_documents = [
-    (master_doc, 'morpheus5.2.1-1.tex', u'Morpheus Documentation',
+    (master_doc, 'morpheus5.2.5-1.tex', u'Morpheus Documentation',
      u'Morpheus', 'manual'),
 ]
 
 rst_prolog = """
 .. |morpheus| replace:: Morpheus
+.. |morphdat| replace:: Morpheus Data, LLC
+.. |repo_host_url| replace:: https://downloads.morpheusdata.com
 .. |morphbranch| replace:: v5.2
-.. |morphver| replace:: v5.2.4
+.. |morphver| replace:: v5.2.5
+.. |previousMorphVer| replace:: v5.2.4
+.. |minUpgradeVer| replace:: v4.2.0
 .. |rmqbranch| replace:: v3.5-3.8
 .. |rmqver| replace:: v3.8.9
 .. |mysqlbranch| replace:: v5.7
@@ -16,17 +20,17 @@ rst_prolog = """
 .. |mysqlverfips| replace:: v.5.7.29
 .. |esbranch| replace:: v7.x
 .. |esver| replace:: v7.8.1
-.. |tcver| replace:: v9.0.41
-.. |morphdat| replace:: Morpheus Data, LLC
-.. |nginxver| replace:: v1.19.3
-.. |nodePackageVer| replace:: 3.1.12
+.. |tcver| replace:: v9.0.45
+.. |nginxver| replace:: v1.19.9
+.. |linuxagentver| replace:: v2.1.1
+.. |winagentver| replace:: v1.6.0.0
+.. |nodePackageVer| replace:: 3.1.14
 .. |java| replace:: v8u275
 .. |openjdk-jre| replace:: v8u282
 .. |openjdk-elasticsearch| replace:: 14.0.2+12
+.. |openssl| replace:: 1.1.1k
 .. |erlang| replace:: 22.3
-.. |repo_host_url| replace:: https://downloads.morpheusdata.com
-.. |minUpgradeVer| replace:: v4.2.0
-.. |previousMorphVer| replace:: v5.2.3
+
 """
 
 
@@ -94,11 +98,6 @@ htmlhelp_basename = 'morpheusdocs'
 latex_elements = {
 
 }
-
-latex_documents = [
-    (master_doc, 'morpheus5.2.1-1.tex', u'Morpheus Documentation',
-     u'Morpheus', 'manual'),
-]
 
 man_pages = [
     (master_doc, 'morpheusdocs', u'Morpheus Documentation',
