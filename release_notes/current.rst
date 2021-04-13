@@ -26,15 +26,20 @@ New Features
 Fixes
 =====
 
+- App: Fixed error messages that contained database exception response
+- Backups: Fixed default schedule displayed on backup screen when no job schedule is configured
+- Cloud-init: Fixed multiple Default Gateway flags when creating multiple networks
+- Identity Sources: Fixed Get Token API call with custom SSO URL returning 500 instead of 404 if the user do not exists 
+- NSX-T: Fixed network delete when network is part of a network group
+- Service Catalog: Option Types:  Fixed VISIBILITY FIELD not respecting``matchAll`` logic
+- Snapshots: Fixed revert action failing on Brownfield Snapshots when compute_server moved to another tenant
+- VMware: Folders: Fixed Group Access -> Default Folder setting only saving for one cloud when multiple VMware Clouds are in the same target Group
+
+.. 
+
+  Agent/Node Package Updates
+  ==========================
 
 
-Agent/Node Package Updates
-==========================
-
-- RHEL 8 and CentOS 8 Agent install support added for Instances and Hosts
-- Ubuntu 20 Agent install support added for Hosts
-
-Installer Updates
-=================
-
-- Installer now removes old package versions from ``var/opt/morpheus/package-repos`` on reconfigure once they are no longer needed. Previously these could be removed manually to free up space but they were not removed automatically and could take significant space in some scenarios
+  Installer Updates
+  =================
