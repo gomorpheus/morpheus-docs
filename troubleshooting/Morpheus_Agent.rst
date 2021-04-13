@@ -96,8 +96,23 @@ Agent Install scripts can be downloaded from |morpheus| by selecting ``Actions >
 When installing on Windows, continue with the steps below to complete manual installation:
 
 * Open powershell as an administrator
-* ran the unblock-file cmdlet against the download agent installation script. "Unblock-File -Path C:\Users\User01\Documents\Downloads\agentInstall.ps1"
+* Run the ``unblock-file cmdlet`` against the download agent installation script:
 
+  .. code-block:: bash
+
+    Unblock-File -Path C:\Users\User01\Documents\Downloads\agentInstall.ps1
+
+    Get-ExecutionPolicy
+
+    Set-ExecutionPolicy -ExecutionPolicy Unrestricted -Scope CurrentUser
+
+* After running the powershell script, ensure the script downloaded the msi and the Agent service started correctly:
+
+  .. code-block:: bash
+
+    Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+
+Following setup, verify that the Agent is reporting back to the |morpheus| appliance.
 
 Restarting the |morpheus| Agent
 -------------------------------
