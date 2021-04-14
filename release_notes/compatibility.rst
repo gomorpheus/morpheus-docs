@@ -61,7 +61,9 @@ Services
 ----------------------------------
 
 - Tomcat upgraded to |tcver|
-- OpenSSL upgraded to |openssl|, |openssl_fips| (FIPS)
+- Nginx updated to |nginxver|
+- OpenSSL upgraded to |openssl| for non-FIPS Appliances
+
 
 |morphver| Service Version Compatibility
 ----------------------------------------
@@ -107,4 +109,3 @@ Integrations
 
 .. note:: Current iterations of Amazon AWS, Microsoft Azure, Google Cloud Platform, Digital Ocean, HPE OneView, OpenTelekom Cloud, IBM Bluemix, Softlayer and UpCloud are all supported.
 
-.. include:: compatibility_table.rst
