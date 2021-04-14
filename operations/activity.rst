@@ -12,7 +12,6 @@ There are 5 types of activities that are displayed in the Activity Reports:
 - Monitoring
 - Alert
 - Backups
-- Logs
 
 **To View a Recent Activity report:**
 
