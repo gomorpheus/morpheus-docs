@@ -13,9 +13,6 @@ There are four types of activities that are displayed in the Activity Reports:
 - Alert
 - Backups
 
-
-
-
 **To View a Recent Activity report:**
 
 #. Select the ``Operations`` link in the navigation bar.
