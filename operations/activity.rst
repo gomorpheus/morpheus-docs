@@ -6,12 +6,14 @@ The Activity section displays a recent activity report for Auditing. |morpheus| 
 Activity
 --------
 
-There are 4 types of activities that are displayed in the Activity Reports:
+There are four types of activities that are displayed in the Activity Reports:
 
 - Provisioning
 - Monitoring
 - Alert
 - Backups
+
+
 
 
 **To View a Recent Activity report:**
@@ -25,7 +27,7 @@ Recent activity is displayed in order from recent to oldest. This view can be se
 
 To review the item the activity occurred on, click the name of the activity and it will go to a new page and display that item.
 
-.. NOTE:: Deleted activities are displayed as an alert and do not contain a link to the event item. If the activity is not a deletion event we provide a link on the activity name to go to the item the activity occurred on.
+.. NOTE:: Deleted activities are displayed as an alert and do not contain a link to the event item. If the activity is not a deletion event we provide a link on the activity name to go to the item the activity occurred on. Delete activity alerts are shown for Instances, servers, Clouds, Groups, and Monitoring Checks.
 
 **To Filter:**
 
@@ -40,11 +42,11 @@ The `ALARMS` section shows Operation notifications from Cloud and other Service 
 History
 -------
 
-The `HISTORY` section shows Process History from Instances and Apps processes. This is an aggregate view of the ``History`` tab in Instance and App details pages. 
+The `HISTORY` section shows Process History from Instances and Apps processes. This is an aggregate view of the ``History`` tab in Instance and App details pages.
 
 Processes can be expanded to view all process steps and process history detail including output and errors.
 
-Access to `HISTORY` is given by the ``Operations:Activity`` Role permission. 
+Access to `HISTORY` is given by the ``Operations:Activity`` Role permission.
 
 ..
 
