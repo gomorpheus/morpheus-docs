@@ -8,10 +8,11 @@ Activity
 
 There are four types of activities that are displayed in the Activity Reports:
 
+- Backup
 - Provisioning
-- Monitoring
 - Alert
-- Backups
+- Permissions
+
 
 **To View a Recent Activity report:**
 
