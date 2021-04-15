@@ -63,6 +63,11 @@ Click the :guilabel:`API Access` button to expand the "API ACCESS" modal. In thi
 
 If no token yet exists for a particular "CLIENT ID", click :guilabel:`ACTIONS` and then Generate. If a token has expired, we can also regenerate that token by clicking :guilabel:`ACTIONS` and then Regenerate. After regenerating a particular token, you would need to ensure any scripts using those tokens are updated.
 
+- **morph-api:** Used for |morpheus| API access and should be the default token-type used
+- **morph-cli:** Used for |morpheus| CLI access
+- **morph-automation:** Used by the internal Task engine and by jRuby-type Tasks to make API calls. It shouldn't be used externally for other types of access or in external automation. It is surfaced in the UI so users can see if a token exists and can clear it when necessary
+- **morph-customer:** This token is available for legacy implementations and was previously recommended for custom API access (similar to the morph-api token). It's not recommended for use but is still available to maintain support for legacy custom automation which may still be in use on customer sites
+
 After navigating away from the User Settings page, the complete access and refresh tokens will be masked from view. If these are lost or compromised, you can eliminate a token completely by clicking :guilabel:`ACTIONS` and then Clear. If you need to generate a new token for the same Client ID, click :guilabel:`ACTIONS` and then Regenerate.
 
 .. image:: /images/administration/settings/user-tokens.png
