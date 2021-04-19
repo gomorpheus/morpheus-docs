@@ -2,7 +2,7 @@ Distributed Installations
 -------------------------
 
 .. toctree::
-   :maxdepth: 3
+   :maxdepth: 4
 
    overview
    3node/3node.rst
