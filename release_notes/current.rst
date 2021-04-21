@@ -81,6 +81,7 @@ Fixes
 - Veeam: Fixed Instance, Health and VM Status for restored backups
 - Veeam: Fixed issue with restoring non-zipped/normal Veeam backups from Morpheus.
 - Veeam: When restoring a deleted VM from a Veeam backup that was created from Morpheus, the restored Instance name will now match the original Instanc ename rather than the name of the restored backup.
+- Zerto: Fixed replication group creation
 
 Appliance Updates
 =================
