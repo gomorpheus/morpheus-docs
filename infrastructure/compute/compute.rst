@@ -26,15 +26,10 @@ Provisioning new hosts takes place in the Infrastructure > Clusters section of |
 Virtual Machines
 ----------------
 
-The Virtual Machines tab lists all managed and unmanaged VMs across |morpheus|. Managed VMs are either provisioned by |morpheus|, or are inventoried/discovered VMs that have been converted to managed. Unmanaged VMs are typically inventoried/discovered VMs from Cloud integrations.
-
-Bare Metal
-----------
-
-Bare Metal hosts are from PXE Boot or manually added in this section. Bare Metal hosts that are also Hypervisors will be listed in both the Bare Metal and Hypervisor sections.
-
 Containers
 ----------
+
+The Virtual Machines tab lists all managed and unmanaged VMs across |morpheus|. Managed VMs are either provisioned by |morpheus|, or are inventoried/discovered VMs that have been converted to managed. Unmanaged VMs are typically inventoried/discovered VMs from Cloud integrations.
 
 Resources
 ---------
@@ -43,9 +38,9 @@ Resources
     :header: Resource Types **Click to Expand/Hide**
     
           .. include:: /infrastructure/compute/resourcetypes.rst
-
+          
 Bare Metal
 ----------
 
-Hypervisors
------------
+Bare Metal hosts are from PXE Boot or manually added in this section. Bare Metal hosts that are also Hypervisors will be listed in both the Bare Metal and Hypervisor sections.
+

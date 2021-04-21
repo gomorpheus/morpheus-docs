@@ -1,3 +1,5 @@
+.. _morpheus.rb:
+
 Advanced morpheus.rb Settings
 -----------------------------
 

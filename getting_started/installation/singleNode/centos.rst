@@ -1,33 +1,66 @@
 Single Node Install on CentOS
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-To get started installing |morpheus| on CentOS a few preparatory items should be addressed first.
+.. note:: Appliance Package links are available at https://morpheushub.com in the downloads section.
 
-#. Configure firewalld to allow access from users on port 443 (Or remove firewall if not required).
-#. Make sure the machine is self resolvable to its own hostname.
+Quick Install 
+`````````````
+#. Install the Appliance package and run ``sudo morpheus-ctl reconfigure``. 
 
-   .. IMPORTANT:: If the machine is unable to resolve its own hostname ``nslookup hostname`` some installation commands will be unable to verify service health during installation and fail.
+That is it. After the reconfigure completes, |morpheus| will start and be available at ``https://your_machine_name`` in a minute or few.
 
-#. Next simply download the relevant ``.rpm`` package for installation. This package can be acquired from https://morpheushub.com downloads section.
+Step-by-step Install Instructions
+`````````````````````````````````
 
-   .. TIP:: Use the ``wget`` command to directly download the package to your appliance server. i.e. ``wget https://downloads.morpheusdata.com/path/to/package.rpm``
+#. Ensure the |morphues| Appliance host meets the minimum :ref:`Requirements`
 
-#. Next we must install the package onto the machine and configure the morpheus services:
+#. Download the target version ``.rpm`` package for installation in a directory of your choosing. The package can be removed after successful installation.
+
+    .. code-block:: bash
+
+     wget https://downloads.morpheusdata.com/path/to/morpheus-appliance-$version.rpm
+
+#. Validate the package checksum matches source checksums. For example:
+
+    .. code-block:: bash
+
+     sha256sum morpheus-appliance-$version.rpm
+
+#. Next install the rpm package
 
    .. code-block:: bash
 
-    sudo rpm -i morpheus-appliance-x.x.x-1.x86_64.rpm
-    sudo morpheus-ctl reconfigure
+    sudo rpm -ihv morpheus-appliance-x.x.x-1.x86_64.rpm
+    
+#. By default the appliance_url uses the machines hostname, ie ``https://your_machine_name``. The default url can be changed by editing ``/etc/morpheus/morpheus.rb`` and changing the value of ``appliance_url``. Additional Appliance configuration options are available below.
 
-#. Once the installation is complete the web interface will automatically start up. By default it will be resolvable at ``https://your_machine_name`` and in many cases this may not be resolvable from your browser. The url can be changed by editing ``/etc/morpheus/morpheus.rb`` and changing the value of ``appliance_url``. After this has been changed simply run :
+   .. toggle-header::
+        :header: Appliance Configuration Options **Click to Expand/Hide**
+        
+              .. include:: /getting_started/additional/morpheusRb.rst
 
-   .. code-block:: bash
-
+#. After all configuration options have been set, run:
+    
+    .. code-block:: bash              
+    
      sudo morpheus-ctl reconfigure
-     sudo morpheus-ctl stop morpheus-ui
-     sudo morpheus-ctl start morpheus-ui
+        
+   .. note:: Configuration options can be updated after the initial reconfigure by editing ``/etc/morpheus/morpheus.rb`` and running ``sudo morpheus-ctl reconfigure`` again. Appliance and other services may need to be restarted depending on configuration changes.
 
-   .. note:: The morpheus-ui can take 2-3 minutes to startup before it becomes available.
+..   todo: add detailed reconfigure process steps link
+
+#. Once the installation is complete the morpheus-ui service will automatically start up and be available shortly. To mointor the ui startup process, run ``morphues-ctl tail morphues-ui`` and look for the ascii logo accompanied by the install version and start time: 
+
+   .. code-block:: console
+  
+      timestamp:    __  ___              __
+      timestamp:   /  |/  /__  _______  / /  ___ __ _____
+      timestamp:  / /|_/ / _ \/ __/ _ \/ _ \/ -_) // (_-<
+      timestamp: /_/  /_/\___/_/ / .__/_//_/\__/\_,_/___/
+      timestamp: ****************************************
+      timestamp:   Version: |morphver|
+      timestamp:   Start Time: xxx xxx xxx 00:00:00 UTC 2021
+      timestamp: ****************************************
 
 There are additional install settings that can be viewed in the :ref:`additional_options` section.
 
@@ -36,3 +69,5 @@ Once the browser is pointed to the appliance a first time setup wizard will be p
 More details on setting up infrastructure can be found throughout this guide.
 
 .. TIP:: If any issues occur it may be prudent to check the morpheus log for details at ``/var/log/morpheus/morpheus-ui/current``.
+
+
