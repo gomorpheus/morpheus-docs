@@ -196,8 +196,6 @@ In addition to integrating with key ServiceNow features, |morpheus| offers a fre
 
 .. IMPORTANT:: A valid SSL Certificate is required on the |morpheus| Appliance for the ServiceNow plugin to be able to communicate with the appliance.
 
-.. IMPORTANT:: The |morpheus| 
-
 ServiceNow Configuration
 ````````````````````````
 
