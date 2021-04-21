@@ -16,15 +16,15 @@ Step-by-step Install Instructions
 
 #. Download the target version ``.rpm`` package for installation in a directory of your choosing. The package can be removed after successful installation.
 
-    .. code-block:: bash
+   .. code-block:: bash
 
-     wget https://downloads.morpheusdata.com/path/to/morpheus-appliance-$version.rpm
+    wget https://downloads.morpheusdata.com/path/to/morpheus-appliance-$version.rpm
 
 #. Validate the package checksum matches source checksums. For example:
 
-    .. code-block:: bash
+   .. code-block:: bash
 
-     sha256sum morpheus-appliance-$version.rpm
+    sha256sum morpheus-appliance-$version.rpm
 
 #. Next install the rpm package
 
@@ -41,7 +41,7 @@ Step-by-step Install Instructions
 
 #. After all configuration options have been set, run:
     
-    .. code-block:: bash              
+   .. code-block:: bash              
     
      sudo morpheus-ctl reconfigure
         
