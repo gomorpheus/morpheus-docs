@@ -47,8 +47,6 @@ Step-by-step Install Instructions
         
    .. note:: Configuration options can be updated after the initial reconfigure by editing ``/etc/morpheus/morpheus.rb`` and running ``sudo morpheus-ctl reconfigure`` again. Appliance and other services may need to be restarted depending on configuration changes.
 
-..   todo: add detailed reconfigure process steps link
-
 #. Once the installation is complete the morpheus-ui service will automatically start up and be available shortly. To mointor the ui startup process, run ``morpheus-ctl tail morpheus-ui`` and look for the ascii logo accompanied by the install version and start time: 
 
    .. code-block:: console
@@ -70,4 +68,5 @@ More details on setting up infrastructure can be found throughout this guide.
 
 .. TIP:: If any issues occur it may be prudent to check the morpheus log for details at ``/var/log/morpheus/morpheus-ui/current``.
 
+..   todo: add detailed reconfigure process steps link
 
