@@ -4,20 +4,20 @@
 |morphver| Release Packages
 ***************************
 
-|morphues| Appliance Packages
+|morpheus| Appliance Packages
 =============================
 
 The |morpheus| Appliance Package is the main install package used to install and upgrade |morpheus| Appliances. 
 
-|morphues| Repository Packages
+|morpheus| Repository Packages
 ==============================
 
 The |morpheus| Repository Packages contain the Node and VM Node Packages required to install and upgrade the |morpheus| agent and provision Docker Hosts.
 
-|morphues| Supplemental Appliance Packages
+|morpheus| Supplemental Appliance Packages
 ==========================================
 
-The |morphues| Supplemental Appliance Packages contain all of the |morphues| Repository Packages as well as additional packages required to install |morphues| Appliance Packages in environments that cannot access |repo_host_url|
+The |morpheus| Supplemental Appliance Packages contain all of the |morpheus| Repository Packages as well as additional packages required to install |morpheus| Appliance Packages in environments that cannot access |repo_host_url|
 
 ..
  {

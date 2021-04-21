@@ -12,7 +12,7 @@ That is it. After the reconfigure completes, |morpheus| will start and be availa
 Step-by-step Install Instructions
 `````````````````````````````````
 
-#. Ensure the |morphues| Appliance host meets the minimum :ref:`Requirements`
+#. Ensure the |morpheus| Appliance host meets the minimum :ref:`Requirements`
 
 #. Download the target version ``.rpm`` package for installation in a directory of your choosing. The package can be removed after successful installation.
 
@@ -49,7 +49,7 @@ Step-by-step Install Instructions
 
 ..   todo: add detailed reconfigure process steps link
 
-#. Once the installation is complete the morpheus-ui service will automatically start up and be available shortly. To mointor the ui startup process, run ``morphues-ctl tail morphues-ui`` and look for the ascii logo accompanied by the install version and start time: 
+#. Once the installation is complete the morpheus-ui service will automatically start up and be available shortly. To mointor the ui startup process, run ``morpheus-ctl tail morpheus-ui`` and look for the ascii logo accompanied by the install version and start time: 
 
    .. code-block:: console
   
