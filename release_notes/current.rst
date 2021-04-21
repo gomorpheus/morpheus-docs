@@ -47,6 +47,7 @@ Fixes
 =====
 
 - Ansible Tower: Fixed sync data retention when Ansible Tower host is not reachable
+- Amazon: Costing service now uses blended rates. Previously unblended rates were used.
 - Amazon: Improved Amazon costing performance and accuracy
 - API /CLI: Fixed issue with multiple User Source inputs including ``searchMemberGroups``, ``confs.doNotIncludeSAMLRequest``, and ``confs.doNotValidate*``
 - Apps: Fixed brief flash of previous modal when a NEW APP modal is opened after closing a NEW APP modal.
