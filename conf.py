@@ -1,10 +1,5 @@
 master_doc = 'index'
 
-latex_documents = [
-    (master_doc, 'morpheus5.2.1-1.tex', u'Morpheus Documentation',
-     u'Morpheus', 'manual'),
-]
-
 rst_prolog = """
 .. |morpheus| replace:: Morpheus
 .. |morphbranch| replace:: v5.3
@@ -108,7 +103,7 @@ latex_elements = {
 }
 
 latex_documents = [
-    (master_doc, 'morpheus5.2.1-1.tex', u'Morpheus Documentation',
+    (master_doc, 'morpheus5.3.1-1.tex', u'Morpheus Documentation',
      u'Morpheus', 'manual'),
 ]
 
