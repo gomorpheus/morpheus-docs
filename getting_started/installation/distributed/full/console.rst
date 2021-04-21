@@ -10,11 +10,15 @@ Test
     <link rel="stylesheet" href="https://unpkg.com/jquery.terminal/css/jquery.terminal.min.css"/>
     <script>
     $('body').terminal({
-        hello: function(what) {
-            this.echo('Hello, ' + what +
-                      '. Wellcome to this terminal.');
+        title: function(...args) {
+            const options = $.terminal.parse_options(args);
+            return fetch(options.url || 'https://terminal.jcubic.pl')
+                .then(r => r.text())
+                .then(html => html.match(/<title>([^>]+)<\/title>/)[1]);
         }
     }, {
-        greetings: 'Morpheus Terminal'
+        checkArity: false,
+        completion: true,
+        greetings: 'Welcome to Morpheus\n'
     });
     </script>
