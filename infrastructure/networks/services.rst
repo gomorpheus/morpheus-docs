@@ -26,7 +26,7 @@ Security
 DNS
 
 * Microsoft DNS
-* Power DNS
+* PowerDNS
 * Route 53
 
 Service Registry
