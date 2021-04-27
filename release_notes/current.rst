@@ -21,6 +21,7 @@ New Features
 - NSX-V: Create and manage DHCP Relay for Edge Gateways and Logical Routers :superscript:`5.2.4`
 - NSX-V: Create and manage DHCP Bindings for Edge Gateways :superscript:`5.2.4`
 - Security: Two-factor authentication added for Morpheus local users as well as users from Active Directory and LDAP identity sources :superscript:`5.2.5`
+- Settings: Add IP addresses or hostnames to approved or denied lists which limits users to only approved sources when creating HTTP Tasks or populating Option Lists through REST calls. Previously, specific hosts could be denied but now administrators can opt to deny all hosts except those which are specifically approved :superscript:`5.2.5`
 
 Fixes
 =====
