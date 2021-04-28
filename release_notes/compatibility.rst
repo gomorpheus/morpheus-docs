@@ -90,7 +90,7 @@ Security
 CVEs Addressed
 --------------
 
-No new CVEs addressed in |morpheus| |morphver|
+- CVE-2020-28491
 
 Upgrade Paths & Methods
 =======================
