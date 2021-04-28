@@ -19,7 +19,7 @@ USERNAME
 PASSWORD
   Service user password
 OS VERSION
-  Select Openstack Version.
+  Select Openstack Version. |morpheus| supports the latest versions of OpenStack, select the latest version available if your current version is not shown.
 IMAGE FORMAT
   Select QCOW2, RAW or VMDK Image Type
 LB TYPE
