@@ -218,7 +218,7 @@ To add a new Azure Cloud integration into |morpheus| using the credentials creat
 
      .. note:: For CSP Accounts, also enter CSP TENANT ID, CSP CLIENT ID and CSP CLIENT SECRET in the Advanced Options section.
 
-     .. image:: /images/clouds/azure/addAzureCloudMorphuesS1.png
+     .. image:: /images/clouds/azure/addAzureCloudmorpheusS1.png
 
    .. include:: /integration_guides/Clouds/advanced_options.rst
     

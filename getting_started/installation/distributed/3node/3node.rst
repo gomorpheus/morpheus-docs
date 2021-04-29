@@ -1,12 +1,12 @@
 .. _3nodeinstall:
 
 3-Node HA Install
------------------
+^^^^^^^^^^^^^^^^^
 
 Distributed App Nodes with Externalized DB
 
 Assumptions
-^^^^^^^^^^^
+```````````
 
 This guide assumes the following:
 
@@ -20,7 +20,7 @@ This guide assumes the following:
     :alt: Morpheus 3-Node HA Architecture
 
 Default Locations
-^^^^^^^^^^^^^^^^^
+``````````````````
 
 |morpheus| follows several install location conventions. Below is a list of system defaults for convenient management:
 
@@ -36,18 +36,28 @@ Default Locations
 *  User-defined install/config: ``/etc/morpheus/morpheus.rb``
 
 Database Cluster Setup (Percona XtraDB Cluster)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+```````````````````````````````````````````````
 
 Out of the box Morpheus uses MySQL but Morpheus supports any mySQL-compliant database. There are many ways to set up a highly available, MySQL dialect-based database. One which has found favor with many of our customers is Percona's XtraDB Cluster.  Percona's product is based off of Galera's WSREP Clustering, which is also supported.
 
-.. important:: Additional configuration for Percona Clusters with TLS enabled is required. Refer to :ref:`Percona TLS` Configuration in our full HA docs for details.
+.. important:: Currently, you must use a v5.7-compatible version of MySQL/Percona. Complete compatibility information is available in the `Compatibility and Breaking Changes <https://docs.morpheusdata.com/en/latest/release_notes/compatibility.html>`_ page. Additional configuration for Percona Clusters with TLS enabled is required. Refer to :ref:`Percona TLS` Configuration in our full HA docs for details.
 
 Requirements
-````````````
+............
 
 .. NOTE:: Morpheus idiomatically connects to database nodes over 3306
 
 Once you have your database installed and configured:
+
+#. The |morpheus| appliance uses the utf8 character set and the UTC+0 timezone. Set the variables below on your external database clusters to prevent timestamp errors from being thrown later in |morpheus| UI. For all distributions, the configuration is set in /etc/my.cnf for each database node.
+
+   .. code-block:: bash
+
+    [mysql]
+    default-character-set = utf8
+
+    [mysqld]
+    default_time_zone = "+00:00"
 
 #. Create the Database you will be using with morpheus.
 
@@ -81,7 +91,7 @@ Once you have your database installed and configured:
     SHOW GRANTS FOR '$morpheus_db_user_name'@'$source_ip';
 
 Continued Installation Steps
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+````````````````````````````
 
 #. First begin by downloading the requisite |morpheus| packages either to the nodes or to your workstation for transfer. These packages need to be made available on the nodes you wish to install |morpheus| on.
 
@@ -149,7 +159,7 @@ Continued Installation Steps
 
 
    .. important:: The elasticsearch node names set in ``elasticsearch['node_name']`` must match the host entries in elasticsearch['es_hosts']. ``node_name`` is used for ``node.name`` and ``es_hosts`` is used for ``cluster.initial_master_nodes`` in the generated elasticsearch.yml config. node names that do not match entries in cluster.initial_master_nodes will cause clustering issues.
-    	
+
 #. Reconfigure on all nodes
 
    .. code-block:: bash
@@ -282,7 +292,7 @@ Continued Installation Steps
 #. Subsequently you can start all |morpheus| services on all three nodes and tail the |morpheus| UI log file to inspect errors.
 
 Database Migration
-^^^^^^^^^^^^^^^^^^
+``````````````````
 
 If your new installation is part of a migration then you need to move the data from your original |morpheus| database to your new one. This is easily accomplished by using a stateful dump.
 
@@ -328,7 +338,7 @@ If your new installation is part of a migration then you need to move the data f
       Enter password:
 
    This file needs to be pushed to the new |morpheus| Installation’s backend. Depending on the GRANTS in the new MySQL backend, this will likely require moving this file to one of the new |morpheus| frontend servers.
- 
+
 #. Once the file is in place it can be imported into the backend. Begin by ensuring the |morpheus| UI service is stopped on all of the application servers:
 
    .. code-block:: bash
@@ -346,7 +356,7 @@ If your new installation is part of a migration then you need to move the data f
 
 
 Recovery
-^^^^^^^^
+````````
 
 If a node happens to crash most of the time |morpheus| will start upon boot of the server and the services will self-recover. However, there can be cases where RabbitMQ and Elasticsearch are unable to recover in a clean fashion and it require minor manual intervention. Regardless, it is considered best practice when recovering a restart to perform some manual health checks.
 

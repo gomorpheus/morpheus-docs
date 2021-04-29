@@ -44,7 +44,7 @@ Add Power Schedule to Instance
 Add Power Schedule to Virtual Machine
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-#. Navigate to ``Infrastructure -> Hosts -> Virtual Machines``
+#. Navigate to ``Infrastructure -> Compute -> Virtual Machines``
 #. Select a Virtual Machine
 #. Select :guilabel:`EDIT`
 #. Expand the Advanced Options section

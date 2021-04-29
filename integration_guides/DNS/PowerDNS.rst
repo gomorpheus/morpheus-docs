@@ -1,30 +1,30 @@
-Power DNS
+PowerDNS
 ---------
 
 Overview
 ^^^^^^^^
 
-|morpheus| integrates directly with Power DNS to automatically create DNS entries for Instances provisioned to a configured Cloud or Group. |morpheus| also syncs in Power DNS Domains for easy selection while provisioning, or setting as the default Domain on a Cloud or Network.
+|morpheus| integrates directly with PowerDNS to automatically create DNS entries for Instances provisioned to a configured Cloud or Group. |morpheus| also syncs in PowerDNS Domains for easy selection while provisioning, or setting as the default Domain on a Cloud or Network.
 
-Add Power DNS Integration
+Add PowerDNS Integration
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Power DNS can be added in the `Administration` or `Infrastructure` sections:
+PowerDNS can be added in the `Administration` or `Infrastructure` sections:
 
 #. In ``Administration -> Integrations``, select :guilabel:`+ New Integration`
 #. In ``Infrastructure -> Networks -> Services``, select :guilabel:`Add Service`
 #. Provide the following:
 
    TYPE
-    Power DNS
+    PowerDNS
    NAME
     Name for the Integration in |morpheus|
    API HOST
-    URL of Power DNS API. Example: ``http://10.30.20.10:8081``
+    URL of PowerDNS API. Example: ``http://10.30.20.10:8081``
    Token
-    Power DNS API Token
+    PowerDNS API Token
    Version
-    Power DNS API Version
+    PowerDNS API Version
 
 #. Once saved the Integration will be added and visible in both ``Administration -> Integrations`` and ``Infrastructure -> Networks -> Services``
 
@@ -33,11 +33,11 @@ Power DNS can be added in the `Administration` or `Infrastructure` sections:
 Domains
 ^^^^^^^
 
-Once the integration is added, Power DNS Domains will sync and listed under ``Infrastructure -> Networks -> Domains``.
+Once the integration is added, PowerDNS Domains will sync and listed under ``Infrastructure -> Networks -> Domains``.
 
 .. NOTE:: Default Domains can be set on Networks and Clouds, and can be selected when provisioning. Additional configuration options are available by editing a domain in `Networks -> Domains`
 
-Configuring Power DNS with Clouds and Groups
+Configuring PowerDNS with Clouds and Groups
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 DNS Integrations are available in the `DNS Integration` dropdown in Cloud and Group settings.

@@ -1,14 +1,11 @@
 master_doc = 'index'
 
-latex_documents = [
-    (master_doc, 'morpheus5.2.1-1.tex', u'Morpheus Documentation',
-     u'Morpheus', 'manual'),
-]
-
 rst_prolog = """
 .. |morpheus| replace:: Morpheus
-.. |morphbranch| replace:: v5.2
-.. |morphver| replace:: v5.3.0
+.. |morphbranch| replace:: v5.3
+.. |morphver| replace:: v5.3.1
+.. |minUpgradeVer| replace:: v4.2.0
+.. |previousMorphVer| replace:: v5.3.0
 .. |rmqbranch| replace:: v3.5-3.8
 .. |rmqver| replace:: v3.8.9
 .. |mysqlbranch| replace:: v5.7
@@ -25,24 +22,34 @@ rst_prolog = """
 .. |openjdk-elasticsearch| replace:: 14.0.2+12
 .. |erlang| replace:: 22.3
 .. |repo_host_url| replace:: https://downloads.morpheusdata.com
-.. |minUpgradeVer| replace:: v4.2.0
-.. |previousMorphVer| replace:: v5.2.2
+.. |trash| unicode:: 0x0001F5D1 .. TRASH ICON
+.. |master tenant| replace:: Master Tenant
 """
 
 
 # -- levels -----
-#****************
-#       H1
-#****************
 #
-#       H2
-#================
-#----------------
-#^^^^^^^^^^^^^^^^
-#````````````````
-#................
+# ***************
+# LEVEL 1 HEADING
+# ***************
+#
+# LEVEL 2 HEADING
+# ===============
+#
+# LEVEL 3 HEADING
+# ---------------
+#
+# LEVEL 4 HEADING
+# ^^^^^^^^^^^^^^^
+#
+# LEVEL 5 HEADING
+# ```````````````
+#
+# LEVEL 6 HEADING
+# ...............
 
-extensions = ['recommonmark','sphinx_markdown_tables','sphinx_tabs.tabs','sphinxcontrib.contentui','sphinxcontrib.images','sphinx_search.extension']
+
+extensions = ['recommonmark','sphinx_markdown_tables','sphinx_tabs.tabs','sphinxcontrib.contentui','sphinxcontrib.images','sphinx_search.extension','notfound.extension']
 templates_path = ['_templates']
 source_suffix = ['.rst', '.md']
 project = u'Morpheus Docs'
@@ -53,7 +60,7 @@ exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store','z_in_progress']
 pygments_style = 'none'
 todo_include_todos = False
 html_theme = 'sphinx_rtd_theme'
-html_use_opensearch = 'https://docs.morpheusdata.com'
+html_use_opensearch = 'https://docs.morpheusdata.com/en/latest'
 linkcheck_request_headers = {
     "*": {
         "Accept": "text/html,application/atom+xml",
@@ -96,7 +103,7 @@ latex_elements = {
 }
 
 latex_documents = [
-    (master_doc, 'morpheus5.2.1-1.tex', u'Morpheus Documentation',
+    (master_doc, 'morpheus5.3.1-1.tex', u'Morpheus Documentation',
      u'Morpheus', 'manual'),
 ]
 

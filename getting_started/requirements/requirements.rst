@@ -1,3 +1,5 @@
+.. _requirements:
+
 Requirements
 ============
 
@@ -57,9 +59,9 @@ Base Requirements
 Storage Considerations
 ----------------------
 
-Upon initial installation |morpheus| takes up less than 10 GB of space, however Morpheus Services, Virtual Images, Backups, Logs and stats and user uploaded and imported data require adequate space on the Morpheus Appliance(s) per Appliance Configuration and activity.
+Upon initial installation |morpheus| takes up less than 10 GB of space, however Morpheus Services, Virtual Images, Backups, Logs and stats and user uploaded and imported data require adequate space on the Morpheus Appliance(s) per Appliance Configuration and activity. |morpheus| recommends at least 200 GB as a general figure to start from but storage needs will vary dramatically based on each specific use case. In some cases, significantly more space will be needed.
 
-.. IMPORTANT:: It is the customers responsibility to ensure adequate storage space per configuration and use case.
+.. IMPORTANT:: It is the customers responsibility to ensure adequate storage space per configuration and use case. The appliance should be properly monitored to ensure it does not run low on disk space.
 
 Default Paths
 ^^^^^^^^^^^^^
@@ -91,7 +93,7 @@ When performing a Hypervisor to Hypervisor migration, such as VMware to AWS, Vir
 VM Logs and Stats
 ^^^^^^^^^^^^^^^^^
 
-When using a |morpheus| configuration with locally installed ElasticSearch, VM, Container, Host and Appliance logs and stats are are stored in Elasticsearch. Please ensure adequate space in ``/var``, specifically ``/var/opt/morpheus/elasticsearch`` in relation to the number or Instances reporting logs, log frequency, and log retention count.
+When using a |morpheus| with a locally-installed Elasticsearch configuration; VM, Container, Host and Appliance logs and stats are are stored in Elasticsearch. Please ensure adequate space in ``/var``, specifically ``/var/opt/morpheus/elasticsearch`` in relation to the number or Instances reporting logs, log frequency, and log retention count. With partition space at 85% filled or higher (by default), Elasticsearch will enter an unhealthy state and the |morpheus| appliance will not function properly.
 
 |morpheus| Services Logs
 ^^^^^^^^^^^^^^^^^^^^^^^^

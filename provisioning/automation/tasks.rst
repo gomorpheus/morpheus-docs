@@ -345,6 +345,7 @@ Task Configuration
     If you attempt to run a python task, you will get an error similar to the following:
 
     .. code-block:: bash
+    
       Task Execution Failed on Attempt 1
       sudo: /tmp/py-8ae51ebf-749c-4354-b6e4-11ce541afad5/bin/python: command not found
 
@@ -359,6 +360,7 @@ Task Configuration
     In CentOS 8, Python is not installed by default. There is a ``platform-python`` but that should not be used for anything in userland. The error message with a default install of CentOS 8 will be similar to this:
 
     .. code-block:: bash
+    
       Task Execution Failed on Attempt 1
       sudo: /tmp/py-cffc9a8f-c40d-451d-956e-d6e9185ade33/bin/python: command not found
 

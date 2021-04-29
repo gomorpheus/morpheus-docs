@@ -17,9 +17,9 @@ Results Types
 - Single Value
    Entire task output is stored in ``<%=results.taskCode%>`` or ``<%=results["Task Name"]%>`` variable.
 - Key/Value pairs
-   Expects ``key=value,key=value`` output. Entire task output is available with ``<%=results.taskCode%>`` or ``<%=results["Task Name"]%>`` variable (output inside ``[]``). Individual Values are avilable with ``<%=results.taskCode.key%>`` variables.
+   Expects ``key=value,key=value`` output. Entire task output is available with ``<%=results.taskCode%>`` or ``<%=results["Task Name"]%>`` variable (output inside ``[]``). Individual Values are available with ``<%=results.taskCode.key%>`` variables.
 - JSON
-   Expects ``key:value,key:value`` json formatted output. Entire task output is available with ``<%=results.taskCode%>`` or ``<%=results["Task Name"]%>`` variable (output inside ``[]``). Individual Values are avilable with ``<%=results.taskCode.key%>`` variables.
+   Expects ``key:value,key:value`` json formatted output. Entire task output is available with ``<%=results.taskCode%>`` or ``<%=results["Task Name"]%>`` variable (output inside ``[]``). Individual Values are available with ``<%=results.taskCode.key%>`` variables.
 
 .. important:: The entire output of a script is treated as results, not just the last line. Ensure formatting is correct for the appropriate result type. For example, if Results Type is ``json`` and the output is not fully json compatible, the result would not return properly.
 
