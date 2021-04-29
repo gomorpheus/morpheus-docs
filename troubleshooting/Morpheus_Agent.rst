@@ -14,13 +14,13 @@ In addition to the main Appliance URL in Administration > Settings, additional A
 Agent Install Methods
 ---------------------
 
-Morpheus Agent installation supports multiple install methods. 
+Morpheus Agent installation supports multiple install methods.
 
 - SSH/WinRM
 - VM Tools
 - Cloud-Init & Cloudbase-Init
-- Windows Unattended 
-- Manual 
+- Windows Unattended
+- Manual
 
 For All Agent Install Methods
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -62,7 +62,7 @@ VMware Tools (vmtools)
 
 * VMware Tools is installed on the template(s)
 * Credentials have been entered on the image if using custom or synced image. Credentials can be entered on images in the Provisioning > Virtual Images section
-* Sudo priveleges required for Linux 
+* Sudo priveleges required for Linux
 * Administrator User required for Windows (SID 500)
 
 Cloud-Init
@@ -81,7 +81,7 @@ Cloudbase-Init
 
 .. note:: Unattend Agent Installation and customizations are recommended over Cloudbase-Init
 
-Windows Unattended 
+Windows Unattended
 ^^^^^^^^^^^^^^^^^^
 
 * Windows Administrator Password defined in ``Administration > Provisioning`` section
@@ -91,7 +91,28 @@ Windows Unattended
 Manual
 ^^^^^^
 
-* Agent Install scripts can be downloaded from Morpheus and ran manually on the target host when required via ``Actions -> Download Agent Script`` on the managed Resource. Please note the script will be unique per managed Resource.
+Agent Install scripts can be downloaded from |morpheus| by selecting ``Actions > Download Agent Script`` from an Instance detail page, then run manually on the target host when required for a given managed resource. Please note the script will be unique per managed resource and should not be saved to run as needed on any arbitrary resources in the future.
+
+When installing on Windows, continue with the steps below to complete manual installation:
+
+* Open powershell as an administrator
+* Run the ``unblock-file cmdlet`` against the download agent installation script:
+
+  .. code-block:: bash
+
+    Unblock-File -Path C:\Users\User01\Documents\Downloads\agentInstall.ps1
+
+    Get-ExecutionPolicy
+
+    Set-ExecutionPolicy -ExecutionPolicy Unrestricted -Scope CurrentUser
+
+* After running the powershell script, ensure the script downloaded the msi and the Agent service started correctly:
+
+  .. code-block:: bash
+
+    Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+
+Following setup, verify that the Agent is reporting back to the |morpheus| appliance.
 
 Restarting the |morpheus| Agent
 -------------------------------
@@ -141,13 +162,13 @@ You can use the following to uninstall the linux agent (contains commands for bo
 
 Windows Agents
 ^^^^^^^^^^^^^^
-  
+
 .. code-block:: bash
 
   $app = Get-WmiObject -Class Win32_Product
                 -Filter "Name = 'Morpheus Windows Agent'"
   $app.Uninstall()
-  
+
 
 CentOS/RHEL 7 Images
 --------------------

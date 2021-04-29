@@ -32,8 +32,8 @@ Create a new machine in VMware vCenter and install a base version of your prefer
 
 .. NOTE:: Morpheus will sysprep images based on the "Force Guest Customizations" flag under the Virtual Image's settings when using DHCP. Ensure a sysprep has not been performed on the template if this flag is enabled or if using Static IPs/IP Pools when provisioning, which will always use Guest Customizations and trigger a sysprep.
 
-Creating a CentOS/RHEL Image
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Creating a CentOS/RHEL 7 Image
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Create a new virtual machine in VMware vCenter and install a base version of your preferred Linux distro build. If you are using cloud init as part of your image you will need to ensure your virtual machine has a cdrom.
 
@@ -104,6 +104,50 @@ This script tries to ensure there is a new ifcfg-eth0 config created to replace 
   BOOTPROTO="dhcp"
   DEFROUTE=yes
 
+Creating a CentOS/RHEL 8 Image
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Create a new virtual machine in VMware vCenter and install a base version of your preferred Linux build. You must be running ESXi 6.7 Update 2 or later.
+
+Prepare The New CentOS 8/RHEL8 Image
+````````````````````````````````````
+
+#. Install epel-release: ``yum -y install epel-release`` (This step is not necessary for RHEL)
+#. Install git, wget, curl, cloud-init, cloud-utils-gropart, and open-vm-tools: ``yum -y install git wget curl cloud-init cloud-utils-growpart open-vm-tools``
+#. Update: ``yum -y update``
+#. Finally run: ``rpm -qa kernel | sed 's/^kernel-//'  | xargs -I {} dracut -f /boot/initramfs-{}.img {}``
+
+SELinux Settings
+````````````````
+
+If allowed by your internal IT policies, set SELinux to permissive to avoid potential issues with cloud-init down the road.
+
+#. Edit the following: ``vi /etc/selinux/config``
+#. Make the following change: ``setenforce 0``
+
+Network Interfaces
+``````````````````
+
+Run the following to rename the network NIC. Values inside angle brackets should be filled in with the appropriate value for your environment (ex. <varname>):
+
+#.  ``sed -i -e 's/quiet/quiet net.ifnames=0 biosdevname=0/' /etc/default/grub``
+#.  ``grub2-mkconfig -o /boot/grub2/grub.cfg`` (location may be different, could be located at /boot/efi/EFI/centos/grub.cfg)
+#.  ``ifdown <orginal-nic>``
+#.  ``mv /etc/sysconfig/network-scripts/<orginal-nic>  /etc/sysconfig/network-scripts/ifcfg-eth0`` (this changes name/device to eth0)
+#.  Edit ``ifcfg-eth0`` and change the NAME to ``eth0``
+#.  ``bash -c 'echo NM_CONTROLLED=\"no\" >> /etc/sysconfig/network-scripts/ifcfg-eth0'``
+#.  ``ip link set <orginal-nic> down``
+#.  ``ip link set <orginal-nic> name eth0``
+#.  ``ip link set eth0 up``
+#.  ``ifup eth0``
+
+Final VMWare Tasks
+``````````````````
+
+#. Detach any install media
+#. Shutdown the VM
+#. Convert the VM to template on the |morpheus| side
+#. Refresh the |morpheus| Cloud to allow the new template to sync
 
 Creating an Ubuntu Image
 ^^^^^^^^^^^^^^^^^^^^^^^^
