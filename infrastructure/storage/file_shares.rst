@@ -275,7 +275,7 @@ NFSv3 File Shares
 
 .. NOTE:: Configure access to the NFS folder on the NFS Provider prior to adding the NFSv3 File Share.
 
-.. NOTE:: Upon save |morpheus| will create a persistent mount owned by ``morpheus-app.morpheus-app`` on the |morpheus| Appliance for the NFSv3 File Share.
+.. NOTE:: Upon save |morpheus| will create a persistent mount owned by ``morpheus-app.morpheus-app`` on the |morpheus| Appliance for the NFSv3 File Share. The |morpheus| appliance will require access to the following ports in order to mount the share: 111, 54302, 20048, 2049, 46666, 42955, 875. With some storage solutions, you may need to enable insecure, unprivileged ports, or allow non-root on the export before |morpheus| is able to successfully mount the share.
 
 To Add a NFSv3 File Share:
 

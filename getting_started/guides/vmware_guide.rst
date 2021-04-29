@@ -119,6 +119,16 @@ Just like with resource pools, we are also able to scope data stores to specific
   :alt: The edit data stores dialog box
   :align: center
 
+Configuring Folders
+^^^^^^^^^^^^^^^^^^^
+
+Still within the "RESOURCES" tab, within the "FOLDERS" subtab we see the folders discovered from the vCenter Cloud. Edit folder configurations by selecting "ACTIONS" from the end of the row, then clicking "Edit". Consider the following configurations for specific folders:
+
+- **DEFAULT:** If selected, this folder will be pre-selected when provisioning new Instances to this Cloud (See the Folder option on the CONFIGURE tab of the Instance provisioning wizard)
+- **IMAGE TARGET:** |morpheus| will look in the image target folder(s) to onboard VMware images
+
+After saving the changes, you'll see any folders set as default or image target indicated in the folders list.
+
 Configuring Network for Provisioning
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 

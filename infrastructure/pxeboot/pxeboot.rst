@@ -1,5 +1,5 @@
-PXE Boot
-========
+Boot
+====
 
 .. add images menu info
 
@@ -82,9 +82,10 @@ Adding a Boot Menu
 
 To begin, click :guilabel:`+ ADD`. Available fields include:
 
-- NAME
-- DESCRIPTION
-- ENABLED
+- NAME: Name of the Boot Menu
+- DESCRIPTION: Description of the Boot Menu
+- TYPE: Select between **bios, uefi, ipxe and grub**
+- ENABLED: Determines if the Boot Menu is active
 - DEFAULT MENU
 - ROOT MENU
 - MENU NAME
