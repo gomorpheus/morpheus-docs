@@ -22,13 +22,13 @@ Microsoft DNS can be added in the `Administration` or `Infrastructure` sections:
    NAME
     Name for the Integration in |morpheus|
    DNS SERVER
-    IP or resolvable hostname of DNS server
+    IP or resolvable hostname of DNS server ``morpheus`` will connect to. If using a jump box, specify the IP or resolvable hostname of the jump box here, and the main DNS Server in the COMPUTER NAME field below.
    USERNAME
     DNS provider username
    PASSWORD
     DNS provider user password
-   ZONE
-    (Optional) Enter a dns zone to limit scope
+   COMPUTER NAME
+    If the DNS SERVER specified is not the main DNS server but rather a jump box, enter the Computer Name of the main DNS Server here. If the DNS SERVER specified above is the main DNS server and not a jump box, leave COMPUTER NAME blank.
    CREATE POINTERS
     Enabled to create A records during provisioning
 
