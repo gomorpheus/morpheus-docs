@@ -4,49 +4,33 @@
 |morphver| Release Notes
 ************************
 
-.. include:: highlights.rst
+.. No highlights this time, small update
+  .. include:: highlights.rst
 
 New Features
 ============
 
-- NSX-T: Visibility permissions added to NSX-T integrations allowing master tenant administrators to share integrations with subtenants
-- NSX-T: Distributed firewalls for NSX-T integrations shared with a subtenant can now be created and managed by subtenant users
-- NSX-T: Load balancers and LB virtual servers for NSX-T integrations shared with a subtenant can now be created and managed by subtenant users
-- NSX-T: Load balancer rule creation capability added as part of load balancer virtual server creation in |morpheus| UI
-- NSX-V: Visibility permissions added to NSX-V integrations allowing master tenant administrators to share integrations with subtenants
-- Security: `Two-factor authentication <https://docs.morpheusdata.com/en/5.2.5/administration/user_settings/user_settings.html#factor-authentication>`_ added for |morpheus| local users as well as users from Active Directory and LDAP identity sources
-- Settings: Add IP addresses or hostnames to approved or denied lists which limits users to only approved sources when creating HTTP Tasks or populating Option Lists through REST calls. Previously, specific hosts could be denied but now administrators can opt to deny all hosts except those which are specifically approved
+- Logging: Added support for custom NGINX log formats by updating ``morpheus.rb`` with a new ``log_format_name`` and ``log_format`` value
+- NSX-T: Create and manage NSX-T load balancer profiles (Infrastructure > Load Balancers > Selected Load Balancer > Profiles Tab), previously this tab was read-only
+- Software: Patch version numbers are now surfaced on the Software tab of server detail pages (mouse hover over software name) and in Software reports
 
 |morpheus| API Improvements
 ===========================
 
-- Plans: Remove Service Plans through API (and CLI) as can already be done in |morpheus| UI
+- 2FA: Enable, disable and manage two-factor authentication settings with |morpheus| API and CLI
+- Integrations: Create and manage integrations between |morpheus| and third-party technologies (including Ansible, ServiceNow, Git, Github, and several more) via |morpheus| API and ClI
+- Networking: Add a NIC to existing VMs through |morpheus| API
+- NSX-T: Subtenant users can access shared NSX-T integrations and load balancers through |morpheus| API and CLI as they already can through |morpheus| UI
+- NSX-V: Router management support added in |morpheus| API and CLI to match functionality currently available in |morpheus| UI
 
 Fixes
 =====
 
-- Activities: Fixed retention period for ``activities`` indices in Elasticsearch 
-- App: Fixed error messages that contained database exception response
-- AWS: Costing: Fix for amazon costing intgearation data sync when no costing tags exist
-- Backups: Fixed default schedule displayed on backup screen when no job schedule is configured
-- Cloud-init: Fixed multiple Default Gateway flags when creating multiple networks
-- Git: Added retries on fetch to account for possible timeouts
-- Git: Reverted 5.2.4 change that added 5 minute cache for git fetch in place of fetch at execution time.
-- Identity Sources: Fixed Get Token API call with custom SSO URL returning 500 instead of 404 if the user do not exists
-- IPAM: Fixed issue where editing an IPAM integration from ``Administration -> Integrations`` section would set invalid integration ref.
-- NSX-T: Fixed network delete when network is part of a network group
-- Oracle Cloud: Costing: Updates and optimizations for Oracle Cloud Costing integrations
-- Reports: Optimizations added to improve Report generation performance 
-- Service Catalog: Option Types:  Fixed VISIBILITY FIELD not respecting``matchAll`` logic
-- Snapshots: Fixed revert action failing on Brownfield Snapshots when compute_server moved to another tenant
-- Virtual Images: System Amazon Windows ami Virtual Image refreshed
-- VMware: Folders: Fixed Group Access -> Default Folder setting only saving for one cloud when multiple VMware Clouds are in the same target Group
+- Oracle Cloud: Fixed an issue that prevented Oracle Linux Layouts from being provisioned onto Oracle Clouds in certain scenarios
+- UI: Some UI pages have been updated to display data differently when the number of relevant objects is high enough to potentially impact application performance
 
 Appliance Updates
 =================
 
-- Tomcat upgraded to |tcver|
-- Nginx updated to |nginxver|
-- OpenSSL upgraded to |openssl| for non-FIPS Appliances
 
 Refer to :ref:`compatibility` for additional details.

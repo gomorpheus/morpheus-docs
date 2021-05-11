@@ -60,10 +60,7 @@ Services
 |morphver| Service Version Changes
 ----------------------------------
 
-- Tomcat upgraded to |tcver|
-- Nginx updated to |nginxver|
-- OpenSSL upgraded to |openssl| for non-FIPS Appliances
-
+- Java updated to |java|
 
 |morphver| Service Version Compatibility
 ----------------------------------------
@@ -108,4 +105,3 @@ Integrations
 ============
 
 .. note:: Current iterations of Amazon AWS, Microsoft Azure, Google Cloud Platform, Digital Ocean, HPE OneView, OpenTelekom Cloud, IBM Bluemix, Softlayer and UpCloud are all supported.
-

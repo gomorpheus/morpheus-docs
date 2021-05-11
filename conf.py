@@ -25,7 +25,7 @@ rst_prolog = """
 .. |linuxagentver| replace:: v2.1.1
 .. |winagentver| replace:: v1.6.0.0
 .. |nodePackageVer| replace:: 3.1.14
-.. |java| replace:: v8u275
+.. |java| replace:: v8u292-b10
 .. |openjdk-jre| replace:: v8u282
 .. |openjdk-elasticsearch| replace:: 14.0.2+12
 .. |openssl| replace:: 1.1.1k
