@@ -212,6 +212,8 @@ ServiceNow Configuration
    MID Server
     If desired, specify the name of a configured MID server to use
 
+   .. important:: Users created from SAML Identity Sources cannot authenticate with the |morpheus| API and cannot be used for the ServiceNow plugin.
+
 .. image:: /images/integration_guides/itsm/servicenow/4servicenowProperties.png
   :width: 50%
 
