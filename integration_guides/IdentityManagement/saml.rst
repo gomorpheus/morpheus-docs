@@ -6,7 +6,7 @@ Overview
 
 The |morpheus| SAML identity source integration allows customers to add user SSO to |morpheus| , authenticated by external login SAML providers.
 
-.. image:: /images/saml-2f9c4.png
+.. image:: /images/samlLoginGeneric.png
 
 Adding a SAML Integration
 ^^^^^^^^^^^^^^^^^^^^^^^^^
