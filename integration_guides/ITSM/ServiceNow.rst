@@ -196,12 +196,12 @@ In addition to integrating with key ServiceNow features, |morpheus| offers a fre
 
 .. IMPORTANT:: A valid SSL Certificate is required on the |morpheus| Appliance for the ServiceNow plugin to be able to communicate with the appliance.
 
-.. IMPORTANT:: The |morpheus| 
+.. IMPORTANT:: The |morpheus|
 
 ServiceNow Configuration
 ````````````````````````
 
-#. Install the |morpheus| plugin from the ServiceNow store. 
+#. Install the |morpheus| plugin from the ServiceNow store.
 
      - Refer to the `MORPHEUS DATA APPLICATION PLUG-IN FOR SERVICENOW <https://store.servicenow.com/appStoreAttachments.do?sys_id=73029271dbbd6450087656a8dc961995>`_ Installation Instructions for plugin installation.
 
@@ -211,14 +211,14 @@ ServiceNow Configuration
    |morpheus| Appliance Endpoint
     The full URL to your |morpheus| appliance
    Username
-    Username of the user in |morpheus| that the plugin will connect to the |morpheus| API with. 
-          
+    Username of the user in |morpheus| that the plugin will connect to the |morpheus| API with.
+
    Password
     Password of the user in |morpheus| that the plugin will connect to the |morpheus| API with.
    MID Server
     If desired, specify the name of a configured MID server to use
-     
-  .. important:: Users created from SAML Identity Sources cannot auth with the |morpheus| API and cannot be used for the servicenow plugin.
+
+  .. important:: Users created from SAML Identity Sources cannot authenticate with the |morpheus| API and cannot be used for the ServiceNow plugin.
 
 .. image:: /images/integration_guides/itsm/servicenow/4servicenowProperties.png
   :width: 50%
