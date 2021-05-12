@@ -295,10 +295,10 @@ The following table contains communication information, including frequency and 
     - 5 Minutes
     - No
   * - Automation Integration
-    -
+    - Server Pull
     - Ansible
-    -
-    - N/A
+    - Data Synchronization
+    - 10 Minutes
     - No
   * - Automation Integration
     - Server Pull
