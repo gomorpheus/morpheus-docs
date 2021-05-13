@@ -13,6 +13,7 @@ New Features
 - Logging: Added support for custom NGINX log formats by updating ``morpheus.rb`` with a new ``log_format_name`` and ``log_format`` value
 - NSX-T: Create and manage NSX-T load balancer profiles (Infrastructure > Load Balancers > Selected Load Balancer > Profiles Tab), previously this tab was read-only
 - Software: Patch version numbers are now surfaced on the Software tab of server detail pages (mouse hover over software name) and in Software reports
+- vCloud Director: Added support for API version 34.0 on vCD 10.2+
 
 |morpheus| API Improvements
 ===========================
