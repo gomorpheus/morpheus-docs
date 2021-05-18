@@ -794,6 +794,7 @@ Supported Languages
 Morpheus supports a number of different UI languages, including:
 
   - English
+  - French
   - German
   - Spanish
   - Chinese (Simplified)
