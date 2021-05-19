@@ -59,7 +59,7 @@ Services
 |morphver| Service Version Changes
 ----------------------------------
 
-No service version changes in |morpheus| |morphver|
+- Java: Upgrade version to |java|
 
 |morphver| Service Version Compatibility
 ----------------------------------------

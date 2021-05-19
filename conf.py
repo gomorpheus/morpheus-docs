@@ -17,7 +17,7 @@ rst_prolog = """
 .. |morphdat| replace:: Morpheus Data, LLC
 .. |nginxver| replace:: v1.19.3
 .. |nodePackageVer| replace:: 3.1.12
-.. |java| replace:: v8u275
+.. |java| replace:: v8u292-b10
 .. |openjdk-jre| replace:: v8u282
 .. |openjdk-elasticsearch| replace:: 14.0.2+12
 .. |erlang| replace:: 22.3

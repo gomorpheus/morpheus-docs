@@ -37,6 +37,7 @@ New Features
 - GCP: Google Cloud Instance IDs are now synced into |morpheus| as the internalId server variable value
 - Library: Canonical MaaS and Lumen Edge are now selectable as technology types for Library items such as Layouts and Node Types :superscript:`5.2.4`
 - Library: Kubernetes 1.20 cluster layouts (MKS, AKS, and EKS) added to the default library for many Cloud types including Amazon, VMware, Azure, Google, Nutanix, OpenStack, and more
+- Load Balancers: When configuring an Amazon ALB for an Instance, added stickiness mode setting, balance mode setting, and session duration setting
 - Logging: Added support for custom NGINX log formats by updating ``morpheus.rb`` with a new ``log_format_name`` and ``log_format value``
 - NSX-T: Visibility permissions added to NSX-T integrations allowing master tenant administrators to share integrations with subtenants :superscript:`5.2.5`
 - NSX-T: Distributed firewalls for NSX-T integrations shared with a subtenant can now be created and managed by subtenant users :superscript:`5.2.5`
@@ -76,6 +77,7 @@ Enhancements
 Fixes
 -----
 
+- Oracle Cloud: Fixed an issue that prevented Oracle Linux Layouts from being provisioned onto Oracle Clouds in certain scenarios
 
 Agent/Node Package Updates
 ==========================
