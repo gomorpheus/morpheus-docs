@@ -32,8 +32,8 @@ Add ServiceNow Integration
     .. code-block:: bash
 
       {
-      "object_id":"<%=instance.name%>";
-      "SN_field_id2":"<%=morph.varname2%>";
+      "object_id":"<%=instance.name%>",
+      "SN_field_id2":"<%=morph.varname2%>",
       "SN_field_id3":"<%=morph.varname3%>"
       }
 
