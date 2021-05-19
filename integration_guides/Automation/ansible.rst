@@ -16,7 +16,7 @@ Requirements
 * For agentless non-commandbus, sshpass is required
 * For Windows non-agent command bus, pywinrm is required
 * ``Integrations: Ansible`` User Role Permission required for access to Ansible Details Pages and Ansible tabs in Groups and Clouds
-* Calling |morpheus| Cypher secrets into Ansible scripts requires the Python ``requests`` module which is not part of the Python standard library. Install Pip package manager on the |morpheus| appliance if it's not already installed (``apt/yum install python-pip``) and then install the ``requests`` module (``pip install requests``)
+* Calling |morpheus| Cypher secrets into Ansible scripts requires the Python ``requests`` module which is not part of the Python standard library
 
 .. NOTE:: Installing Ansible on the |morpheus| appliance is a requirement. In some cases, this is handled automatically but in certain situations you may have to install manually. See the section below on `troubleshooting Ansible <https://docs.morpheusdata.com/en/latest/integration_guides/Automation/ansible.html#troubleshooting-ansible>`_ for installation steps.
 
