@@ -45,21 +45,30 @@ Fixes
 - VMware Cloud AWS/VMC: Fixed scenario causing editing modal of existing Cloud to hang
 - VMware: Fixed duplicate VM names in different folders causing external Id conflict
 - Workflows: Clusters provisioned used cluster layouts that have a workflow selected are now properly running the workflow at provisioning time. 
-
-
+- Amazon/AWS: CloudFormation: Fixed ``name`` tag value being set to logical id instead of tag value when ``name`` tag is specified in CF 
+- Service Catalog: Fixed validation error for ARM and CF Blueprint catalog item ordering
+- Azure: Fixed tags created in |morpheus| not being pushed to Azure for SQL Server instance types
+- Azure: Fixed provisioning issue when using and existing availability set
+- Blueprints: Fixed display issue with Typeahead option types in blueprints/apps
+- VMWare: Fixed Managed VM ``hostname`` changes syncing and updating server record but not associated container record
+- Policies: Approvals: Fixed cloning an Instance in a subtenant with an active approval policy not producing approval record, leaving Instance in pending approval state
 
 Appliance Updates
 =================
 
+- Appliance: mysql: Added ``mysql['max_connections']`` setting option to morpheus.rb for configuring system mysql max_connections parameter. Note the ``mysql['max_connections']`` setting only applies to the system managed mysql appliance service, not applicable for external appliance database configurations. 
+- Appliance & Agent java version updated to ``8u292-b10``
+
+  .. important:: jdk8u292 disables TLS 1.0 and 1.1 by default.
 
 Refer to :ref:`compatibility` for additional details.
 
 ..
  - Azure: Pricing fields removed for Service Plans where no pricing is available from Azure
- Amazon/AWS: CloudFormation: Fixed ``name`` tag value being set to logical id instead of tag value when ``name`` tag is specified in CF 
- ARM blueprint service catalog item throws app validation error
- Tags not being passed to Azure for SQL Server instance types
- Azure: Deploying instance into existing availability set fails
- Custom Options are not passed to Blueprints
+
+
+ 
+
+ 
  VMWare: Managed VM Hostname updates not synced into container record
- Tenant clone instance does not create provisioning approval
+ 
