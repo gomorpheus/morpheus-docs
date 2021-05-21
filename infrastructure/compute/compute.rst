@@ -62,7 +62,7 @@ Resources
 
 Resources represent objects that do not map to VM or Container types in |morpheus|, such as IAC resources from Terraform, Cloudformation or ARM Templates like VPC's, Gateways, Users, Policies, Brokers, API's, Endpoints, Directories, ACL's, Routes... well anything really. All resources created from IAC Templates map to iac provider resource types and |morpheus| maintains a resource object record from the mapped resource.
 
-Expand the **Resource Types** table below to see all Resource types that will be mapped to Resource objects in |morphues|:
+Expand the **Resource Types** table below to see all Resource types that will be mapped to Resource objects in |morpheus|:
 
       :header: Resource Types **Click to Expand/Hide**
 
