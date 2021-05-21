@@ -64,9 +64,9 @@ Resources represent objects that do not map to VM or Container types in |morpheu
 
 Expand the **Resource Types** table below to see all Resource types that will be mapped to Resource objects in |morphues|:
 
-:header: Resource Types **Click to Expand/Hide**
+      :header: Resource Types **Click to Expand/Hide**
 
-      .. include:: /infrastructure/compute/resourcetypes.rst
+            .. include:: /infrastructure/compute/resourcetypes.rst
           
 Bare Metal
 ----------
