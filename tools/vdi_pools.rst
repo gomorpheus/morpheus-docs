@@ -92,15 +92,29 @@ Create a VDI pool by selecting :guilabel:`+ ADD` from the VDI Pools tab or edit 
 - **MAX SIZE:** The total number of virtual desktops this pool can have. Additional users will not be able to access machines once this number is reached
 - **LEASE TIMEOUT (MINUTES):** The user lease time on a virtual desktop they've reserved. The lease will continue to auto-renew itself as long as the user is logged into |morpheus|. Once the user has logged out and the lease timeout period has expired, the machine will be released as appropriate based on your configuration
 - **PERSISTENT:** Pools with persistent virtual desktops will reserve a machine for each user in order to preserve settings, installed applications, work files and more. Machines in persistent pools will be shut down rather than destroyed when they are no longer in use
+- **ALLOW COPY** Enables or disables the ability for the VDI user to copy contents from the VDI instance to the local clipboard
+- **ALLOW PRINTER** When enabled, users local system printers can be targeted from the VDI Instance
 - **ALLOW HYPERVISOR CONSOLE:** When checked, native cloud console will be enabled (if available) rather than using |morpheus|-native RDP/SSH capability
 - **AUTO CREATE LOCAL USER UPON RESERVATION:** When marked, the user configured in |morpheus| user settings will be created when the machine is initially accessed. If unchecked or if there is no user configured in |morpheus| user settings, ensure the machine is joining a domain or there is a known user on the machine image in order to allow access
 - **ENABLED:** When marked, the initial pool size will begin to deploy once the VDI pool is saved. The icon for this desktop environment will also be presented to Virtual Desktop Persona users
 - **CONFIGURE:** Click this button to configure the deployment configuration each system will use. The wizard is identical to the Instance provisioning wizard meaning all available Instance Types, Workflows, and more are available to virtual desktop machine creation. Consult the steps above to see an example VDI image prep walkthrough
 - **LOGO:** Upload or select a logo to represent the virtual desktop type to users
 - **VDI APPS:** Optionally select one or more frequently-used applications the user can launch directly. Users will also have the option to launch into the desktop
+- **EVDI GATEWAY** Select a configure VDI Gateway for VDI sessions to be redirected to. VDI sessions will be redirected to the gateway when a gateway is specified.
+
+**Guest Console SSH Tunnel** (optional)
+  A Jump Host can be configured for Standard Persona Instance Guest Console Sessions. |morpheus| will tunnel through the Jump Host when connecting Guest Console sessions from the Standard Persona. 
+
+- **GUEST CONSOLE JUMP HOST** Jump Host ip or hostname used to connect to the Jump Host for Guest COnsole Sessions on the VDI Instance in the Standard Persona
+- **GUEST CONSOLE JUMP USERNAME** Jump Host Username used to connect to the Jump Host for Guest COnsole Sessions on the VDI Instance in the Standard Persona
+- **GUEST CONSOLE JUMP PORT** Jump Host Port used to connect to the Jump Host for Guest COnsole Sessions on the VDI Instance in the Standard Persona
+- **GUEST CONSOLE JUMP PASSWORD** Jump Host Password used to connect to the Jump Host for Guest COnsole Sessions on the VDI Instance in the Standard Persona (optional if key specified)
+- **GUEST CONSOLE KEYPAIR** Jump Host SSH Key used to connect to the Jump Host for Guest COnsole Sessions on the VDI Instance in the Standard Persona (optional if password specified) Note: Must be a local keypair, not a synced keypair.
 
 .. image:: /images/personas/vdi/createVdiPool.png
   :width: 50%
+
+|
 
 Creating or Editing a VDI Apps
 ------------------------------
@@ -122,3 +136,16 @@ VDI Apps are created by selecting :guilabel:`+ ADD` from the VDI Apps tab or edi
 - **DESCRIPTION:** A description of the virtual app type
 - **LAUNCH PREFIX:** A reference to the remote app registry prepended with two pipes ( || ). For example, we might create a registry "Chrome" for a Chrome browser VDI App and the associated launch prefix would be "||Chrome"
 - **LOGO:** Upload or select a logo to represent the virtual app type to users
+
+Creating or Editing VDI Gateways
+--------------------------------
+
+VDI Gateways can be linked to in this section and then used in VDI Pool configurations. VDI sessions will be redirected to configured gateways instead of the |morpheus| Applaince when a VDI Gateway is specified for a VDI Pool.
+
+.. note:: Adding a VDI Gateway configuraiton in this section does not create the actual VDI Gateway.
+
+- **NAME** Specify a name for the VDI Gateway in |morpheus|. Note the VDI Gateway Name is not used when connecting to the gateway
+- **DESCRIPTION** Specify a description for the VDI Gateway in |morpheus|. (optional)
+- **GATEWAY URL** The url of the VDI Gateway. This url is used to connect to the gateway, and should match the the worker url of the VDI Gateway.
+
+Upon creation, the VDI Gateway record will produce an ``API KEY``. This ``API KEY`` needs to be specified in the ``morpheus-worker.rb`` file on the API Gateway iteself under ``worker['apikey'] = '$API_KEY'``
