@@ -53,13 +53,13 @@ The containers tab lists all Containers associated with |morpheus| Instances acc
 
 Resources
 ---------
+.. image:: /images/infrastructure/compute/infra_compute_header_resources_5.3.1.png
+
 .. sidebar:: Section Features & Filters
     :guilabel:`Record Search` :guilabel:`Custom Views` :guilabel:`CSV Export` :guilabel:`JSON Export` :guilabel:`Paging Config`
 
     - Standard Filters: :guilabel:`Resource Type` :guilabel:`Cloud`
     
-.. image:: /images/infrastructure/compute/infra_compute_header_resources_5.3.1.png
-
 Resources represent objects that do not map to VM or Container types in |morpheus|, such as IAC resources from Terraform, Cloudformation or ARM Templates like VPC's, Gateways, Users, Policies, Brokers, API's, Endpoints, Directories, ACL's, Routes... well anything really. All resources created from IAC Templates map to iac provider resource types and |morpheus| maintains a resource object record from the mapped resource.
 
 Expand the **Resource Types** table below to see all Resource types that will be mapped to Resource objects in |morpheus|:
