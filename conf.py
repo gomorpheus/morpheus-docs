@@ -49,7 +49,7 @@ rst_prolog = """
 # ...............
 
 
-extensions = ['recommonmark','sphinx_markdown_tables','sphinxcontrib.contentui','sphinxcontrib.images','sphinx_search.extension','notfound.extension']
+extensions = ['recommonmark','sphinx_markdown_tables','sphinxcontrib.contentui','sphinxcontrib.images','sphinx_search.extension','notfound.extension'] #sphinx_tabs
 templates_path = ['_templates']
 source_suffix = ['.rst', '.md']
 project = u'Morpheus Docs'
@@ -121,5 +121,5 @@ import sphinx_rtd_theme
 html_theme = "sphinx_rtd_theme"
 html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
 
-def setup(app):
-    app.add_stylesheet('morpheusTheme.css')
+#def setup(app):
+    #app.add_stylesheet('morpheusTheme.css')
