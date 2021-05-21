@@ -49,7 +49,7 @@ rst_prolog = """
 # ...............
 
 
-extensions = ['recommonmark','sphinx_markdown_tables','sphinx_tabs.tabs','sphinxcontrib.contentui','sphinxcontrib.images','sphinx_search.extension','notfound.extension']
+extensions = ['recommonmark','sphinx_markdown_tables','sphinxcontrib.contentui','sphinxcontrib.images','sphinx_search.extension','notfound.extension']
 templates_path = ['_templates']
 source_suffix = ['.rst', '.md']
 project = u'Morpheus Docs'
