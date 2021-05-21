@@ -39,6 +39,7 @@ New Features
 - Library: Kubernetes 1.20 cluster layouts (MKS, AKS, and EKS) added to the default library for many Cloud types including Amazon, VMware, Azure, Google, Nutanix, OpenStack, and more
 - Load Balancers: When configuring an Amazon ALB for an Instance, added stickiness mode setting, balance mode setting, and session duration setting
 - Logging: Added support for custom NGINX log formats by updating ``morpheus.rb`` with a new ``log_format_name`` and ``log_format value``
+- Logging: Kubernetes container logs are now shown in the Logs tab of the Cluster detail page (Infrastructure > Clusters > Selected Kubernetes cluster > Logs tab)
 - NSX-T: Visibility permissions added to NSX-T integrations allowing master tenant administrators to share integrations with subtenants :superscript:`5.2.5`
 - NSX-T: Distributed firewalls for NSX-T integrations shared with a subtenant can now be created and managed by subtenant users :superscript:`5.2.5`
 - NSX-T: Load balancers and LB virtual servers for NSX-T integrations shared with a subtenant can now be created and managed by subtenant users :superscript:`5.2.5`
@@ -48,11 +49,17 @@ New Features
 - NSX-V: Create and manage DHCP Pools for Edge Gateways :superscript:`5.2.4`
 - NSX-V: Create and manage DHCP Relay for Edge Gateways and Logical Routers :superscript:`5.2.4`
 - NSX-V: Create and manage DHCP Bindings for Edge Gateways :superscript:`5.2.4`
+- Plugins: Added support for custom server tab creation
+- Plugins: Added support for custom report type creation
 - Reports: Improvements to Tenant and Group costing reports
 - Security: Two-factor authentication added for |morpheus| local users as well as users from Active Directory and LDAP identity sources :superscript:`5.2.5`
 - Settings: Add IP addresses or hostnames to approved or denied lists which limits users to only approved sources when creating HTTP Tasks or populating Option Lists through REST calls. Previously, specific hosts could be denied but now administrators can opt to deny all hosts except those which are specifically approved :superscript:`5.2.5`
+- Terraform: Build new Instance Types from Terraform spec, then deploy and conduct day-two operations such as monitoring and applying state, updating spec, and more
 - UI: Automation executions list (Provisioning > Automation > Executions tab) updated for a cleaner look and easier access to execution outputs
 - UI: Added support for French UI translation
+- UI: Added dropdown list functionality to Option Types using Typeahead lists which gives users the ability to browse the list if the name of the target item is not precisely known
+- UI: Hosts list page (Infrastructure > Hosts) is now relabeled as Compute (Infrastructure > Compute) and now lists containers and resources in addition to Hosts, VMs, and Bare Metal which were shown previously. The Containers tab shows any containers which are associated with |morpheus| Instances while the Resources tab shows IaC resources, such as those from Terraform, CloudFormation or ARM templates
+- UI: Added view customization to Tasks and Workflow lists (Provisioning > Automation) including support for customizing output columns (Gear icon) and sorting the list by additional columns
 - VDI: |morpheus| VDI is no longer a beta feature
 - VDI: Added VDI jump host feature
 - VDI: Added VDI console gateway
@@ -67,8 +74,10 @@ Appliance Updates
 
 |morpheus| API & CLI Improvements
 =================================
+- Azure: Added "All" region support for Azure Clouds to |morpheus| API and CLI
 - Billing: The ``billing`` API endpoint now returns ``resourcePoolId`` and ``resourcePoolName`` :superscript:`5.2.4`
 - Clouds: ``scalePriority`` is now handled properly for get, add and update requests to the ``clouds`` API :superscript:`5.2.4`
+- VDI: Added support for creating and managing VDI Pools, Apps, and Gateways through |morpheus| API and CLI
 
 Enhancements
 ------------
