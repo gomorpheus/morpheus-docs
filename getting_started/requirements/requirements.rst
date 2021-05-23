@@ -51,7 +51,8 @@ Base Requirements
 .. NOTE:: Access to ``yum`` and ``apt`` repos is still required for offline installations.
 
 -  VM and Host Agent Install (optional)
-    - Inbound connectivity access from provisioned vm's and container hosts on ports 443 (Agent install and communication) and 80 (Linux Agent installs via yum and apt)
+    - Inbound connectivity access from provisioned vm's and container hosts on ports 443 (Agent install and communication). Port 80 may be required for older apt distros.
+
     - An Appliance URL that is accessible/resolvable to all managed hosts. It is necessary for all hosts that are managed by |morpheus| to be able to communicate with the appliance server ip on port 443. This URL is configured under Admin->Settings.
 
 .. NOTE:: Ubuntu 16.10 is not currently supported.
