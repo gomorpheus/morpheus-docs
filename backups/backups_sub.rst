@@ -42,6 +42,8 @@ To create instance backup
 #. Schedule the backup Days, Time, Storage Provider & Retention Count.
 #. Click Complete to save.
 
+.. NOTE:: On VMware Cloud types, |morpheus| will merge and consolidate the snapshots held against a VM before exporting the OVF to the storage location or share. This is so |morpheus| has a full and consistent copy of the VM state.
+
 ..
   Create Server Backup
   --------------------

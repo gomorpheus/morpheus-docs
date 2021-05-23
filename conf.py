@@ -17,7 +17,7 @@ rst_prolog = """
 .. |morphdat| replace:: Morpheus Data, LLC
 .. |nginxver| replace:: v1.19.3
 .. |nodePackageVer| replace:: 3.1.12
-.. |java| replace:: v8u275
+.. |java| replace:: v8u292-b10
 .. |openjdk-jre| replace:: v8u282
 .. |openjdk-elasticsearch| replace:: 14.0.2+12
 .. |erlang| replace:: 22.3
@@ -49,7 +49,7 @@ rst_prolog = """
 # ...............
 
 
-extensions = ['recommonmark','sphinx_markdown_tables','sphinx_tabs.tabs','sphinxcontrib.contentui','sphinxcontrib.images','sphinx_search.extension','notfound.extension']
+extensions = ['recommonmark','sphinx_markdown_tables','sphinxcontrib.contentui','sphinx_tabs.tabs','sphinxcontrib.images','sphinx_search.extension','notfound.extension'] #sphinx_tabs
 templates_path = ['_templates']
 source_suffix = ['.rst', '.md']
 project = u'Morpheus Docs'
@@ -122,4 +122,4 @@ html_theme = "sphinx_rtd_theme"
 html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
 
 def setup(app):
-    app.add_stylesheet('morpheusTheme.css')
+    app.add_css_file('morpheusTheme.css')

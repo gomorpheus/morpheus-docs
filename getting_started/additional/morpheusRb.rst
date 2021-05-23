@@ -3,62 +3,51 @@
 Advanced morpheus.rb Settings
 -----------------------------
 
-Morpheus allows for additional advanced customizations to the morpheus.rb file located in ``/etc/morpheus/morpheus.rb``.  Below is a list of the supported items available in the morpheus.rb file.
+Morpheus allows for additional advanced customizations for system managed services within the morpheus.rb file located in ``/etc/morpheus/morpheus.rb``.  Below is a list of the supported items available in the ``morpheus.rb`` file. 
+
+.. note:: Service configuration settings are not applicable for externalized services such as external mysql/percona, elasticsearch or rabbitmq clusters. Only connection settings are applicable for external services.
 
 .. code-block:: bash
 
+  app['encrypted_key_suffix'] = 'suffix'
   appliance_url 'https://morpheus.appliance-url.com'
-    # The appliance_url must not contain a trailing `/`.
     # Appending alternate port to appliance_url is supported. ie 'https://morpheus.appliance-url.com:8443'
     # The appliance_url cannot exceed 64 characters
+    # The appliance_url must not contain a trailing `/`.
 
-  app['encrypted_key_suffix'] = 'suffix'
-
-  ui['http_client_connect_timeout'] = 10000  #in seconds
-  ui['http_client_connect_timeout'] = 600000 #in seconds
-  ui['kerberos_config'] = nil
-  ui['kerberos_login_config'] = nil
-  ui['log_dir'] = '/var/log/morpheus/morpheus-ui'
-  ui['max_memory_mb'] = nil
-  ui['memory_alloc_arena_max'] = 2
-  ui['memory_map_max'] = 65536
-  ui['memory_map_threshold'] = 131072
-  ui['memory_top_pad'] = 131072
-  ui['memory_trim_threshold'] = 131072
-  ui['vm_images_cdn_url'] = 'https://morpheus-images.morpheusdata.com'
-
-  mysql['enable'] = true
-  mysql['host'] = {'127.0.0.1' => 3306}
-  mysql['log_dir'] = '/var/log/morpheus/mysql'
-  mysql['max_active'] = 100
-  mysql['morpheus_db_user'] = 'morpheus'
-  mysql['morpheus_db'] = 'morpheus'
-  mysql['mysql_url_overide'] = 'jdbc:mysql://10.30.20.10:3306,10.30.20.11:3306,10.30.20.12:3306/morpheusdb?autoReconnect=true&useUnicode=true&characterEncoding=utf8&failOverReadOnly=false&useSSL=false'
-  mysql['tmp_dir'] = '/tmp/mysql'
-
-  logging['svlogd_num'] = 30 # keep 30 rotated log files
-  logging['svlogd_size'] = 209715200 # 200 MB in bytes
-  logging['svlogd_timeout'] = 86400 # rotate after 24 hours in seconds
-
-  rabbitmq['enable'] = true
-  rabbitmq['heartbeat'] = nil
-  rabbitmq['host'] = '127.0.0.1'
-  rabbitmq['log_dir'] = '/var/log/morpheus/rabbitmq'
-  rabbitmq['nodename'] = 'rabbit@localhost'
-  rabbitmq['port'] = '5672'
-  rabbitmq['queue_user'] = 'queue_user'
-  rabbitmq['vhost'] = 'morpheus'
-
-  elasticsearch['log_dir'] = '/var/log/morpheus/elaseticsearch'
   elasticsearch['enable'] = true
   elasticsearch['es_hosts'] = {'127.0.0.1' => 9200}
   elasticsearch['host'] = "127.0.0.1"
+  elasticsearch['use_tls'] = false
+  elasticsearch['auth_user'] = 'morpheus-es-user'
+  elasticsearch['auth_password'] = 'xxxxxxxxxxxxxxxx'
+  # Valid for Internal/System elasticsearch service only
+  elasticsearch['log_dir'] = '/var/log/morpheus/elasticsearch' 
   elasticsearch['memory_alloc_arena_max'] = 2
   elasticsearch['memory_map_max'] = 65536
   elasticsearch['memory_map_threshold'] = 131072
   elasticsearch['memory_top_pad'] = 131072
   elasticsearch['memory_trim_threshold'] = 131072
   elasticsearch['open_files'] = 204800
+
+  guacd['guacamole_enabled'] = false
+  guacd['guacamole_enabled'] = false
+
+  logging['svlogd_num'] = 30 # keep 30 rotated log files
+  logging['svlogd_size'] = 209715200 # 200 MB in bytes
+  logging['svlogd_timeout'] = 86400 # rotate after 24 hours in seconds
+
+  mysql['enable'] = true
+  mysql['host'] = {'127.0.0.1' => 3306}
+  mysql['morpheus_db_user'] = 'morpheus-db-user'
+  mysql['morpheus_db'] = 'xxxxxxxxxxxxxxxx'
+  mysql['mysql_url_overide'] = 'jdbc:mysql://10.30.20.10:3306,10.30.20.11:3306,10.30.20.12:3306/morpheusdb?autoReconnect=true&useUnicode=true&characterEncoding=utf8&failOverReadOnly=false&useSSL=false'
+  # Valid for Internal/System mysql service only
+  mysql['tmp_dir'] = '/tmp/mysql'
+  mysql['log_dir'] = '/var/log/morpheus/mysql'
+  mysql['max_active'] = 100 # The combined value off all app node max_active values must be lower than max_connections setting in mysql
+  mysql['max_allowed_packet'] = 67108864
+  mysql['max_connections'] = 151 
 
   nginx['cache_max_size'] = '5000m'
   nginx['enable'] = true
@@ -86,6 +75,30 @@ Morpheus allows for additional advanced customizations to the morpheus.rb file l
   nginx['worker_connections'] = 10240
   nginx['workers'] = integer calculated from number of cpus
 
+  rabbitmq['enable'] = true
+  rabbitmq['host'] = '127.0.0.1'
+  rabbitmq['port'] = '5672'
+  rabbitmq['queue_user'] = 'morpheus-rmq-user'
+  rabbitmq['queue_user_password'] = 'xxxxxxxxxxxxxxxx'
+  rabbitmq['vhost'] = 'morpheus'
+  # Valid for Internal/System rabbitmq service only
+  rabbitmq['heartbeat'] = nil
+  rabbitmq['log_dir'] = '/var/log/morpheus/rabbitmq'
+  rabbitmq['nodename'] = 'rabbit@localhost'
+  rabbitmq['port'] = '5672'
+  
   repo['repo_host_url'] = 'https://downloads.morpheusdata.com'
 
-.. NOTE:: elasticsearch['replica_count'] settings only apply to local Elasticsearch and not an external cluster. The user must set the replica count in the code for each index. The setting in morpheus.rb is only the cluster default and only applies to the all-in-one appliance. If the cluster is external, the user must set the default on their Elasticsearch config file.
+  ui['http_client_connect_timeout'] = 10000  #in seconds
+  ui['http_client_connect_timeout'] = 600000 #in seconds
+  ui['kerberos_config'] = nil
+  ui['kerberos_login_config'] = nil
+  ui['log_dir'] = '/var/log/morpheus/morpheus-ui'
+  ui['max_memory_mb'] = nil
+  ui['memory_alloc_arena_max'] = 2
+  ui['memory_map_max'] = 65536
+  ui['memory_map_threshold'] = 131072
+  ui['memory_top_pad'] = 131072
+  ui['memory_trim_threshold'] = 131072
+  ui['vm_images_cdn_url'] = 'https://morpheus-images.morpheusdata.com'
+

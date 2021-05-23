@@ -20,8 +20,10 @@ Requirements for Integration with |morpheus|
 To integrate |morpheus| with Google Cloud Platform, you will need the following:
 
 * The Compute Engine API enabled in GCP "APIs & Services"
+* The Cloud Resource Manager API enabled in GCP "APIs & Services"
+* The Cloud Billing API enabled in GCP "APIs & Services"
 * Credentials for an IAM service account with Owner or Compute Admin role permissions
-* The Project ID, private key, and client email for the service account
+* The private key and client email for the service account
 
 This integration guide goes through the process of configuring your account and obtaining the information necessary to integrate with |morpheus|.
 
@@ -40,7 +42,12 @@ Enabling the Compute Engine API
 
 5. Select "Compute Engine API" and click :guilabel:`ENABLE`. It may take a few moments for the API to be fully enabled
 
-.. Note:: If the button is labeled MANAGE rather than ENABLE, the API is already enabled.
+  .. NOTE:: If the button is labeled MANAGE rather than ENABLE, the API is already enabled. When enabling Compute Engine API, you may be prompted to also enable Cloud Billin API. It's also required this API is enabled so go ahead and enable it at this point and you won't have to do so later.
+
+6. Head back to the API library and search for "Cloud Resource Manager API"
+7. Select "Cloud Resource Manager API" and click :guilabel:`ENABLE`. It may take a few moments for the API to be fully enabled
+8. If you haven't already enabled Cloud Billing API, head back to the API library and search for "Cloud Billing API"
+9. Select "Cloud Billing API" and click :guilabel:`ENABLE`. It may take a few moments for the API to be fully enabled
 
 Creating a Service Account
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -65,12 +72,13 @@ Generating Keys and Integrating with |morpheus|
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 #. From the list of service accounts, click the ellipsis button (...)
-#. Click "Create Key"
+#. Click "Manage Keys"
 
   .. image:: /images/integration_guides/clouds/gcp/6create_key.png
 
-3. Select JSON format and click CREATE
-4. A JSON-formatted document will be downloaded, this document contains the Project ID, private key, and client email values needed to complete the integration process in the next step
+3. On the Keys page, click "Add Key" and then "Create New Key"
+4. Select JSON format and click CREATE
+5. A JSON-formatted document will be downloaded, this document contains the Project ID, private key, and client email values needed to complete the integration process in the next step
 
 Add a GCP Cloud
 ^^^^^^^^^^^^^^^
@@ -85,18 +93,16 @@ Add a GCP Cloud
 
    Details
    ```````
-   PROJECT ID
-    Google Cloud Project ID
    PRIVATE KEY
-    The service account private key. Paste in the entire value between (but not including) the quotation marks in your downloaded JSON document, formatted like the following example: ```-----BEGIN PRIVATE KEY-----(your_key)-----END PRIVATE KEY-----```
+    The service account private key. Paste in the entire value between (but not including) the quotation marks in your downloaded JSON document, formatted like the following example: ``-----BEGIN PRIVATE KEY-----(your_key)-----END PRIVATE KEY-----``
    CLIENT EMAIL
     The service account client email, ex: `morpheus@morpheus.iam.gserviceaccount.com`
+   PROJECT ID
+    Projects will auto-populate upon successful entry of the private key and client email. You can opt to scope the GCP integration to a single Project or select "All" to instead select the Project from the Resource Pool dropdown at provision time
    REGION
-    Regions will auto-populate upon successful authentication with the above credentials. If no regions are found, double check your entered credentials and try again. Select the appropriate region for this Cloud
+    Regions will auto-populate upon successful entry of the private key and client email. Select the appropriate region for this Cloud, if applicable. You can also opt to scope the GCP integration to all regions to allow users to select from any region at provision time
    INVENTORY EXISTING INSTANCES
-    If checked, existing Google Instances will be inventoried and appear as unmanaged virtual machines in |morpheus|.
-
-   .. NOTE:: |morpheus| scopes Clouds to single regions. Multiple clouds can be added for multi-region support, and then optionally added to the same group.
+    If checked, existing GCP resources will be inventoried and appear as unmanaged virtual machines in |morpheus|.
 
    If advanced options are not needed, click :guilabel:`NEXT` to advance to the Group selection page. Otherwise, continue on with this guide and review advanced or provisioning options.
 
@@ -105,6 +111,23 @@ Add a GCP Cloud
 #. After reviewing all options, click :guilabel:`NEXT` to advance to the Group selection page. Following Group selection, click :guilabel:`COMPLETE` to finish the integration process. If you've opted to inventory existing Instances, they will be viewable in |morpheus| shortly. At this point, you are ready to provision new resources in Google Cloud Platform as needed!
 
 .. IMPORTANT:: If you experience difficulties adding a GCP Cloud, review the above guide and ensure you've met all requirements for completing the integration. For example, if the Compute Engine API is not enabled, |morpheus| will not accept credentials entered on the Create Cloud modal. If you repeatedly run into problems completing the integration process, review the above guide in its entirely and double check that each step is completed and your account meets all configuration requirements.
+
+Create a GCP Project
+^^^^^^^^^^^^^^^^^^^^
+
+On initial integration, |morpheus| will sync Projects and allow you to scope the integration to a specific Project or to scope the integration to all Projects. As time goes on, additional Projects are continually synced and can be managed from within the Resources tab on the Cloud detail page (Infrastructure > Clouds > Selected GCP Cloud). Within the Resources tab, users can edit some Project settings as well as delete Projects if needed.
+
+To create a new GCP Project:
+
+#. Click :guilabel:`+ ADD RESOURCE POOL`
+#. Enter a name value for the new Project
+#. Mark the "DEFAULT" box if you'd prefer newly provisioned Instances default to the new Project
+#. Enter a Project ID and ensure it meets the listed validation requirements
+#. Set a Parent value if the new Project should exist underneath a parent organization
+#. Finally, select a billing account
+#. Click :guilabel:`SAVE CHANGES`
+
+After a few minutes, the new Project will be ready on the GCP side and |morpheus| will be ready to provision new resources into it.
 
 Windows Images
 ^^^^^^^^^^^^^^
