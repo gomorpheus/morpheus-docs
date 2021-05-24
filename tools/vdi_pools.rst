@@ -1,5 +1,5 @@
-VDI Pools (beta)
-================
+VDI Pools
+=========
 
 .. vdi_pool_config
 
