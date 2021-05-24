@@ -98,7 +98,7 @@ Fixes
 - Rubrik: Blueprints: Fixed SLA Domain option not displayed in Blueprints :superscript:`5.2.4`
 - Security: Fixed occurrence of user csrf token being transmitted via query string parameter :superscript:`5.2.4`
 - Security: XSS vulnerabilities closed for Reconfigure and Library :superscript:`5.2.4`
-- Service Catalog: Option Types:  Fixed VISIBILITY FIELD not respecting``matchAll`` logic :superscript:`5.2.5`
+- Service Catalog: Option Types:  Fixed VISIBILITY FIELD not respecting ``matchAll`` logic :superscript:`5.2.5`
 - Snapshots: Fixed revert action failing on Brownfield Snapshots when compute_server moved to another tenant :superscript:`5.2.5`
 - UI: Fixed unexpected logouts due to Session Expiration in another non-active tab :superscript:`5.2.4`
 - VMware: Folders: Fixed Group Access -> Default Folder setting only saving for one cloud when multiple VMware Clouds are in the same target Group :superscript:`5.2.5`
