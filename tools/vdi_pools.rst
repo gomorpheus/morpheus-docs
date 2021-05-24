@@ -103,13 +103,15 @@ Create a VDI pool by selecting :guilabel:`+ ADD` from the VDI Pools tab or edit 
 - **EVDI GATEWAY** Select a configure VDI Gateway for VDI sessions to be redirected to. VDI sessions will be redirected to the gateway when a gateway is specified.
 
 **Guest Console SSH Tunnel** (optional)
-  A Jump Host can be configured for VDI Session connections. |morpheus| will tunnel through the Jump Host when connecting Guest Console sessions for VDI. Not applicable for Hypervisor Console connections.
+  A Jump Host can be configured for VDI session connections. |morpheus| will tunnel through the Jump Host when connecting Guest Console sessions for VDI. This is not applicable for Hypervisor Console connections.
 
-- **GUEST CONSOLE JUMP HOST** Jump Host ip or hostname used to connect to the Jump Host for Guest Console sessions for VDI Instances
-- **GUEST CONSOLE JUMP USERNAME** Jump Host Username used to connect to the Jump Host for Guest Console sessions for VDI Instances
-- **GUEST CONSOLE JUMP PORT** Jump Host Port used to connect to the Jump Host for Guest Console sessions for VDI Instances
-- **GUEST CONSOLE JUMP PASSWORD** Jump Host Password used to connect to the Jump Host for Guest Console sessions for VDI Instances (optional if key specified)
-- **GUEST CONSOLE KEYPAIR** Jump Host SSH Key used to connect to the Jump Host for Guest Console sessions for VDI Instances (optional if password specified) Note: Must be a local keypair, not a synced keypair.
+- **GUEST CONSOLE JUMP HOST** Jump Host IP address or hostname used to connect to the Jump Host for Guest Console sessions to VDI Instances
+- **GUEST CONSOLE JUMP USERNAME** Jump Host Username used to connect to the Jump Host for Guest Console sessions to VDI Instances
+- **GUEST CONSOLE JUMP PORT** Jump Host Port used to connect to the Jump Host for Guest Console sessions to VDI Instances
+- **GUEST CONSOLE JUMP PASSWORD** Jump Host Password used to connect to the Jump Host for Guest Console sessions to VDI Instances (optional if key specified)
+- **GUEST CONSOLE KEYPAIR** Jump Host SSH Key used to connect to the Jump Host for Guest Console sessions to VDI Instances (optional if password specified)
+
+.. NOTE:: A Guest Console Keypair included here must be a local keypair, not a synced keypair.
 
 .. image:: /images/personas/vdi/createVdiPool.png
   :width: 50%
@@ -140,35 +142,36 @@ VDI Apps are created by selecting :guilabel:`+ ADD` from the VDI Apps tab or edi
 VDI Gateways
 ------------
 
-The Morpheus Worker is a light weight distributed worker daemon as well as a scalable VDI Gateway. Currently the features solely rely on VDI Gateway but will expand to support full plugin workloads as well as agent relay capabilities
+The |morpheus| Worker is a light weight distributed worker daemon as well as a scalable VDI Gateway. Currently, the features center around VDI Gateway but will expand to support full plugin workloads as well as agent relay capabilities.
 
 Adding VDI Gateways to |morpheus|
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-VDI Gateways can be linked to a |morpheus applaince| and then used in VDI Pool configurations. VDI sessions will be redirected to configured gateways instead of the |morpheus| Applaince when a VDI Gateway is specified for a VDI Pool.
+VDI Gateways can be linked to a |morpheus| appliance and then used in VDI Pool configurations. VDI sessions will be redirected to configured gateways instead of the |morpheus| appliance when a VDI Gateway is specified for a VDI Pool.
 
-..note:: A VDI Gateway is a seperate VM or container instance used to route users to VDI Instances. The VDI Gateway  |morphues| is for configuring a connection to a VDI Gateway, not creating the gateway instance. 
+.. NOTE:: A VDI Gateway is a separate VM or container Instance used to route users to VDI Instances. The |morpheus| VDI Gateway section is for configuring a connection to a VDI Gateway, not creating the gateway Instance itself.
 
-- **NAME** Specify a name for the VDI Gateway in |morpheus|. Note the VDI Gateway Name is not used when connecting to the gateway
+- **NAME** Specify a name for the VDI Gateway in |morpheus|. Note that the VDI Gateway Name is not used when connecting to the gateway
 - **DESCRIPTION** Specify a description for the VDI Gateway in |morpheus|. (optional)
 - **GATEWAY URL** The url of the VDI Gateway. This url is used to connect to the gateway, and should match the the worker url of the VDI Gateway.
 
-Upon creation, the VDI Gateway record will produce an ``API KEY``. This ``API KEY`` needs to be specified in the ``morpheus-worker.rb`` file on the API Gateway iteself under ``worker['apikey'] = '$API_KEY'``
+Upon creation, the VDI Gateway record will produce an ``API KEY``. This ``API KEY`` needs to be specified in the ``morpheus-worker.rb`` file on the API Gateway itself under ``worker['apikey'] = '$API_KEY'``
 
 VDI Gateway Installation
-------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^
 
 The VDI Gateway is offered as both a native VM Installer package as well as a Docker container.
 
 VDI Gateway VM Install
 ^^^^^^^^^^^^^^^^^^^^^^
 
-A VDI Gateway VM is installed and configured similarly to a |morpheus| Applaince via rpm or deb package.
+A VDI Gateway VM is installed and configured similarly to a |morpheus| appliance via ``rpm`` or ``deb`` package.
 
-.. note:: VDI Gateway Package urls are available at https://morpheushub.com in the downloads section.
+.. NOTE:: VDI Gateway Package URLs are available at https://morpheushub.com in the downloads section.
 
 **Requirements**
 
-.. list-table:: **Supported VDI Gateway package Operating Systems**
+.. list-table:: **Supported VDI Gateway Operating Systems**
    :widths: auto
    :header-rows: 1
 
@@ -186,13 +189,13 @@ A VDI Gateway VM is installed and configured similarly to a |morpheus| Applaince
      - 12
    * - Ubuntu
      - 18.04, 20.04
-     
-- **Memory:** 4 GB RAM minimum recommended for default installations supporting up to 20 concurrent sessions. Add 50 MB RAM per additional concurrent session.  
-- **Storage:** 10 GB storage minimum recommended. Storage required for VDI Gateway Packages and log files. 
+
+- **Memory:** 4 GB RAM minimum recommended for default installations supporting up to 20 concurrent sessions. Add 50 MB RAM per additional concurrent session
+- **Storage:** 10 GB storage minimum recommended. Storage is required for VDI Gateway Packages and log files
 - **CPU:** 4-core minimum recommended
-- Network connectivity to and from |morpheus| Appliance and from users to the VDI Gateway over TCP 443 (HTTPS)
+- Network connectivity to and from |morpheus| appliance and from users to the VDI Gateway over TCP 443 (HTTPS)
 - Superuser privileges via the ``sudo`` command for the user installing the |morpheus| VDI Gateway package
-- Access to base ``yum`` or ``apt`` repos. Access to Optional RPMs repo may be required for RPM distros
+- Access to base ``yum`` or ``apt`` repos. Access to Optional RPM repos may be required for RPM distros
 
 #. Download the target distro & version package for installation in a directory of your choosing. The package can be removed after successful installation.
 
@@ -205,11 +208,11 @@ A VDI Gateway VM is installed and configured similarly to a |morpheus| Applaince
    .. code-block:: bash
 
      sha256sum morpheus-worker-$version.distro
-    
-#. Next install package using your selected distros package installation command and your preferred opts. Example, for RPM:
+
+#. Next install the package using your selected distribution's package installation command and your preferred opts. Example, for RPM:
 
    rpm:
-   
+
    .. code-block:: bash
 
       sudo rpm -ihv morpheus-worker-$version.$distro
@@ -221,50 +224,50 @@ A VDI Gateway VM is installed and configured similarly to a |morpheus| Applaince
       Configure and start the Worker by running the following command:
 
       sudo morpheus-worker-ctl reconfigure
-    
-#. Configure the gateway by editing ``/etc/morpheus/morpheus-worker.rb`` and updating the following: 
+
+#. Configure the gateway by editing ``/etc/morpheus/morpheus-worker.rb`` and updating the following:
 
    .. code-block:: language
- 
-       worker_url 'https://gateway_worker_url' # This gateway's url the |morpheus| Appliance can resolve and reach on 443
-       worker['appliance_url'] = 'https://morpheus_appliance_url' # Resolvable url or ip of |morpheus| appliance the gateway can reach on 443 
-       worker['apikey'] = 'API KEY FOR THIS GATEWAY' # VDI Gateway API Key generated from |morpheus| Appliance VDI Pools:VDI Gateways configuraiton
- 
-   .. note:: By default the worker_url uses the machines hostname, ie ``https://your_machine_name``. The default worker_url can be changed by editing ``/etc/morpheus/morpheus-worker.rb`` and changing the value of ``worker_url``. Additional Appliance configuration options are available below.
+
+       worker_url 'https://gateway_worker_url' # This is the gateway URL the |morpheus| appliance can resolve and reach on 443
+       worker['appliance_url'] = 'https://morpheus_appliance_url' # The resolvable URL or IP address of |morpheus| appliance which the gateway can reach on port 443
+       worker['apikey'] = 'API KEY FOR THIS GATEWAY' # VDI Gateway API Key generated from |morpheus| Appliance VDI Pools > VDI Gateways configuraiton
+
+   .. NOTE:: By default the worker_url uses the machine's hostname, ie ``https://your_machine_name``. The default ``worker_url`` value can be changed by editing ``/etc/morpheus/morpheus-worker.rb`` and changing the value of ``worker_url``. Additional appliance configuration options are available below.
 
 #. After all configuration options have been set, run ``sudo morpheus-worker-ctl reconfigure`` to install and configure the worker, nginx and guacd services:
-    
-   .. code-block:: bash              
-    
-     sudo morpheus-worker-ctl reconfigure
-   
-   The worker reconfigure process will install and configure the worker, nginx and guacd services and dependancies.  
-   
-   .. TIP:: If the reconfigure process fails due to a missing dependancy, add the repo that the missing dependancy can be found in and run 
-   
-   .. note:: Configuration options can be updated after the initial reconfigure by editing ``/etc/morpheus/morpheus-worker.rb`` and running ``sudo morpheus-worker-ctl reconfigure`` again. 
 
-#. Once the installation is complete the morpheus worker service will automatically start and open a web socker with the specified morphues appliance. To mointor the startup process, run ``morpheus-worker-ctl tail`` to tail the logs of the worker, nginx and guacd services. Individual services can be tail by specifying the service, for example ``morpheus-worker-ctl tail worker``
+   .. code-block:: bash
+
+     sudo morpheus-worker-ctl reconfigure
+
+   The worker reconfigure process will install and configure the worker, nginx and guacd services and dependencies.
+
+   .. TIP:: If the reconfigure process fails due to a missing dependency, add the repo that the missing dependency can be found in and run
+
+   .. NOTE:: Configuration options can be updated after the initial reconfigure by editing ``/etc/morpheus/morpheus-worker.rb`` and running ``sudo morpheus-worker-ctl reconfigure`` again.
+
+#. Once the installation is complete the morpheus worker service will automatically start and open a web socket with the specified |morpheus| appliance. To monitor the startup process, run ``morpheus-worker-ctl tail`` to tail the logs of the worker, nginx and guacd services. Individual services can be tailed by specifying the service, for example ``morpheus-worker-ctl tail worker``
 
 
 VDI Gateway Docker Install
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-To Use as a VDI Gateway within Docker a few pieces of information are needed.
+To Use VDI Gateway within a Docker container, a few pieces of information are needed.
 
-Firstly, in Morpheus, go to **Tools -> VDI Pools -> VDI Gateways** and create a new VDI Gateway Record. Be sure to set the HTTPS URL where your gateway is going to be living as morpheus will need to be able to redirect the users browser to that page. An API Key will be generated. Make note of this as you will need it later.
+Firstly, in |morpheus|, go to **Tools > VDI Pools > VDI Gateways** and create a new VDI Gateway Record. Be sure to set the HTTPS URL as |morpheus| will need to be able to redirect the user's browser to that page. An API Key will be generated. Make note of this as you will need it later.
 
 Now Simply run with:
 
 .. code-block:: bash
 
   docker run -d -p 8443:8443  -e MORPHEUS_SELF_SIGNED=true -e MORPHEUS_KEY=[apiKey] -e MORPHEUS_URL=https://my.morpheusAppliance.url morpheusdata/morpheus-worker:latest``
-    
-This will setup an HTTPS self signed exposed port on 8443 for the vdi gateway. It is highly recommended to use valid certificates on your VDI Gateways. It could be terminated at the VIP or a p12 SSL File can be used and configured for the container.
 
-If the docker entrypoint detects a file at ``/etc/certs/cert.p12`` , SSL Will be enabled on port 8443 instead. be sure to set environment variables ``MORPHEUS_SSL_ALIAS`` and ``MORPHEUS_SSL_PASSWORD`` when using p12 files.
+This will setup an HTTPS self-signed exposed port on 8443 for the vdi gateway. It is highly recommended to use valid certificates on your VDI Gateways. It could be terminated at the VIP or a p12 SSL File can be used and configured for the container.
 
-If wishing to run in HTTP mode and SSL terminate at the VIP one can run the container like so:
+If the docker entrypoint detects a file at ``/etc/certs/cert.p12``, SSL Will be enabled on port 8443 instead. be sure to set environment variables ``MORPHEUS_SSL_ALIAS`` and ``MORPHEUS_SSL_PASSWORD`` when using p12 files.
+
+If you wish to run in HTTP mode and SSL terminate at the VIP, you can run the container like so:
 
 .. code-block:: bash
 
