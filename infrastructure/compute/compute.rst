@@ -12,7 +12,7 @@ In this section you can:
 * View & Manage and Hosts, Virtual Machines, Containers, Resources, Bare Metal and Hypervisors
 * Add manual Virtual Machines and Bare Metal Hosts
 * Convert Hosts, Virtual Machines and Bare Metal to Managed
-  
+
 Hosts
 -----
 
@@ -37,7 +37,7 @@ Virtual Machines
 
     - Standard Filters: :guilabel:`OS Type`
     - Advanced Filters: :guilabel:`Status` :guilabel:`Managed` :guilabel:`Server Type`
-    
+
 The Virtual Machines tab lists all managed and unmanaged VMs across |morpheus|. Managed VMs are either provisioned by |morpheus|, or are inventoried/discovered VMs that have been converted to managed. Unmanaged VMs are typically inventoried/discovered VMs from Cloud integrations.
 
 Containers
@@ -48,8 +48,8 @@ Containers
     :guilabel:`Record Search` :guilabel:`Custom Views` :guilabel:`CSV Export` :guilabel:`JSON Export` :guilabel:`Paging Config`
 
     - Standard Filters: :guilabel:`Container Type` :guilabel:`Cloud`
-    
-The containers tab lists all Containers associated with |morpheus| Instances accessible to the user. Note additional system level containers from Kubernetes and Docker Clusters are not listed here but are acceessible in Cluster detail secitons. 
+
+The containers tab lists all Containers associated with |morpheus| Instances accessible to the user. Note additional system level containers from Kubernetes and Docker Clusters are not listed here but are acceessible in Cluster detail secitons.
 
 Resources
 ---------
@@ -59,14 +59,14 @@ Resources
     :guilabel:`Record Search` :guilabel:`Custom Views` :guilabel:`CSV Export` :guilabel:`JSON Export` :guilabel:`Paging Config`
 
     - Standard Filters: :guilabel:`Resource Type` :guilabel:`Cloud`
-    
+
 Resources represent objects that do not map to VM or Container types in |morpheus|, such as IAC resources from Terraform, Cloudformation or ARM Templates like VPC's, Gateways, Users, Policies, Brokers, API's, Endpoints, Directories, ACL's, Routes... well anything really. All resources created from IAC Templates map to iac provider resource types and |morpheus| maintains a resource object record from the mapped resource.
 
 Expand the **Resource Types** table below to see all Resource types that will be mapped to Resource objects in |morpheus|:
 
-      :header: Resource Types **Click to Expand/Hide**
+- .. toggle-header:: :header: Resource Types **Click to Expand/Hide**
 
-            .. include:: /infrastructure/compute/resourcetypes.rst
+    .. include:: /infrastructure/compute/resourcetypes.rst
           
 Bare Metal
 ----------
@@ -77,6 +77,5 @@ Bare Metal
 
     - Standard Filters: :guilabel:`OS Type`
     - Advanced Filters: :guilabel:`Status` :guilabel:`Managed` :guilabel:`Server Type`
-    
-Bare Metal hosts are from discovered, PXE Boot or manually added Bare Metal hosts. Bare Metal hosts that are also Hypervisors will be listed in the Hosts section.
 
+Bare Metal hosts are from discovered, PXE Boot or manually added Bare Metal hosts. Bare Metal hosts that are also Hypervisors will be listed in the Hosts section.
