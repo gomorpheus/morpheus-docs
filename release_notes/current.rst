@@ -106,9 +106,15 @@ Fixes
 - Workflows: Fixed issue with available Group scoping during Task execution on Instances where the Instances' assigned Group is not accessible to the User who created the Instance. :superscript:`5.2.4`
 - Workflows: Fixed Task phase assignment changing upon edit and save of a Workflow when using the same Task in multiple phases in the same Workflow :superscript:`5.2.4`
 
-Appliance Updates
-=================
+Appliance & Agent Updates
+=========================
 
+- Appliance: mysql: Added ``mysql['max_connections']`` setting option to ``/etc/morpheus/morpheus.rb`` file for configuring system mysql max_connections parameter. Note the ``mysql['max_connections']`` setting only applies to the system managed mysql appliance service, not applicable for external appliance database configurations. 
+- Appliance & Agent java version updated to ``8u292-b10``
+
+  .. important:: jdk8u292 disables TLS 1.0 and 1.1 by default.
+
+Refer to :ref:`compatibility` for additional details.
 
 |morpheus| API & CLI Improvements
 =================================
@@ -122,7 +128,3 @@ Fixes
 
 - API: Fixed Access to virtual images not allowed in UI but successful using the API :superscript:`5.2.4`
 - API: Prices: Fixed ```account`` value not respected when creating a price and assigning to a Tenant. :superscript:`5.2.4`
-
-
-Agent/Node Package Updates
-==========================
