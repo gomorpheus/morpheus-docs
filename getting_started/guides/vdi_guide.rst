@@ -1,5 +1,5 @@
-Morpheus Virtual Desktops (beta)
-================================
+Morpheus Virtual Desktops
+=========================
 
 VDI Pools Overview
 ------------------
