@@ -26,7 +26,6 @@ Provisions a new Kubernetes Cluster in selected target Cloud using selected Layo
 
 System (|morpheus| provided) Kubernetes Layouts:
 
-Morpheus provides the following layouts for VMware vCenter, VMware Fusion, AWS, Openstack and Nutanix Clouds types.
 
 +--------------------------------------------------------------+-----------------------------------------------------------------------------------------+------------------------------------------------------------+
 | Cluster Type Name                                            | Description                                                                             | Code                                                       |

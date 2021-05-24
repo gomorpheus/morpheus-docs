@@ -34,7 +34,7 @@ New Features
 - GCP: Sync, create and manage Google Cloud routers (Infrastructure > Networks > Routers tab)
 - GCP: Sync, create and manage Google NAT Gateways (Infrastructure > Networks > Routers tab)
 - GCP: Update sync process to onboard Google networks and subnets distinctly. Previously, subnets were onboarded as |morpheus| networks
-- Library: Canonical MaaS and Lumen Edge are now selectable as technology types for Library items such as Layouts and Node Types :superscript:`5.2.4`
+- Library: Canonical MaaS is now selectable as technology types for Library items such as Layouts and Node Types :superscript:`5.2.4`
 - Library: Kubernetes 1.20 cluster layouts (MKS, AKS, and EKS) added to the default library for many Cloud types including Amazon, VMware, Azure, Google, Nutanix, OpenStack, and more
 - Load Balancers: When configuring an Amazon ALB for an Instance, added stickiness mode setting, balance mode setting, and session duration setting
 - Logging: Added support for custom NGINX log formats by updating ``morpheus.rb`` with a new ``log_format_name`` and ``log_format value``
