@@ -28,16 +28,134 @@ System (|morpheus| provided) Kubernetes Layouts:
 
 Morpheus provides the following layouts for VMware vCenter, VMware Fusion, AWS, Openstack and Nutanix Clouds types.
 
-Kubernetes Cluster 1.14 on Ubuntu 16.04, Weave, OpenEBS
-  Kubernetes Master and 3 Worker Nodes
-Kubernetes 1.14 on Ubuntu 16.04, Weave, OpenEBS
-  Single Kubernetes Master
-Kubernetes Cluster 1.17 on Ubuntu 18.04, Weave, OpenEBS
-  Kubernetes Master and 3 Worker Nodes
-Kubernetes 1.17 on Ubuntu 18.04, Weave, OpenEBS
-  Single Kubernetes Master
++--------------------------------------------------------------+-----------------------------------------------------------------------------------------+------------------------------------------------------------+
+| Cluster Type Name                                            | Description                                                                             | Code                                                       |
++==============================================================+=========================================================================================+============================================================+
+| MKS Kubernetes 1.20 Cluster on Ubuntu   18.04                | provision a kubernetes 1.20 cluster on ubuntu 18.04 in xen                              | kubernetes-1.20.2-ubuntu-18.04.5-xen-amd64-single          |
++--------------------------------------------------------------+-----------------------------------------------------------------------------------------+------------------------------------------------------------+
+| MKS Kubernetes 1.20 Cluster on Ubuntu   18.04                | provision a kubernetes 1.20 cluster on ubuntu 18.04 in scvmm                            | kubernetes-1.20.2-ubuntu-18.04.5-scvmm-amd64-single        |
++--------------------------------------------------------------+-----------------------------------------------------------------------------------------+------------------------------------------------------------+
+| MKS Kubernetes 1.20 Cluster on Ubuntu   18.04                | provision a kubernetes 1.20 cluster on ubuntu 18.04 in opentelekom                      | kubernetes-1.20.2-ubuntu-18.04.5-opentelekom-amd64-single  |
++--------------------------------------------------------------+-----------------------------------------------------------------------------------------+------------------------------------------------------------+
+| MKS Kubernetes 1.20 Cluster on Ubuntu   18.04                | provision a kubernetes 1.20 cluster on ubuntu 18.04                                     | kubernetes-1.20.2-ubuntu-18.04.5-nutanix-amd64-single      |
++--------------------------------------------------------------+-----------------------------------------------------------------------------------------+------------------------------------------------------------+
+| MKS Kubernetes 1.20 Cluster on Ubuntu   18.04                | provision a kubernetes 1.20 cluster on ubuntu 18.04 in manual                           | kubernetes-1.20.2-ubuntu-18.04.5-morpheus-amd64-single     |
++--------------------------------------------------------------+-----------------------------------------------------------------------------------------+------------------------------------------------------------+
+| External Kubernetes 1.20                                     | Connect to an external kubernetes cluster.                                              | kubernetes-external-1.20                                   |
++--------------------------------------------------------------+-----------------------------------------------------------------------------------------+------------------------------------------------------------+
+| MKS Kubernetes 1.20 Cluster on Ubuntu   18.04                | provision a kubernetes 1.20 cluster on ubuntu 18.04 in hyperv                           | kubernetes-1.20.2-ubuntu-18.04.5-hyperv-amd64-single       |
++--------------------------------------------------------------+-----------------------------------------------------------------------------------------+------------------------------------------------------------+
+| MKS Kubernetes 1.20 Cluster on Ubuntu   18.04                | provision a kubernetes 1.20 cluster on ubuntu 18.04 in Huawei                           | kubernetes-1.20.2-ubuntu-18.04.5-huawei-amd64-single       |
++--------------------------------------------------------------+-----------------------------------------------------------------------------------------+------------------------------------------------------------+
+| Kubernetes 1.20 Cluster AKS                                  | This 20 provision a single kubernetes master in Azure                                   | kubernetes-azure-aks-1.20                                  |
++--------------------------------------------------------------+-----------------------------------------------------------------------------------------+------------------------------------------------------------+
+| MKS Kubernetes 1.20 Cluster on Ubuntu   18.04                | provision a kubernetes 1.20 cluster on ubuntu 18.04 in Openstack                        | kubernetes-1.20.2-ubuntu-18.04.5-openstack-amd64-single    |
++--------------------------------------------------------------+-----------------------------------------------------------------------------------------+------------------------------------------------------------+
+| MKS Kubernetes 1.20 Cluster on Ubuntu   18.04                | provision a kubernetes 1.20 cluster on ubuntu 18.04                                     | kubernetes-1.20.2-ubuntu-18.04.5-google-amd64-single       |
++--------------------------------------------------------------+-----------------------------------------------------------------------------------------+------------------------------------------------------------+
+| MKS Kubernetes 1.20 Cluster on Ubuntu   18.04                | provision a kubernetes 1.20 cluster on ubuntu 18.04                                     | kubernetes-1.20.2-ubuntu-18.04.5-amazon-amd64-single       |
++--------------------------------------------------------------+-----------------------------------------------------------------------------------------+------------------------------------------------------------+
+| MKS Kubernetes 1.20 Cluster on Ubuntu   18.04                | provision a kubernetes 1.20 cluster on ubuntu 18.04 in vmware                           | kubernetes-1.20.2-ubuntu-18.04.5-vmware-amd64-single       |
++--------------------------------------------------------------+-----------------------------------------------------------------------------------------+------------------------------------------------------------+
+| MKS Kubernetes 1.20 Cluster on Ubuntu   18.04                | provision a kubernetes 1.20 cluster on ubuntu 18.04 in fusion                           | kubernetes-1.20.2-ubuntu-18.04.5-fusion-amd64-single       |
++--------------------------------------------------------------+-----------------------------------------------------------------------------------------+------------------------------------------------------------+
+| Kubernetes 1.18 Cluster AKS                                  | This will provision a single kubernetes master in Azure                                 | kubernetes-azure-aks-1.18                                  |
++--------------------------------------------------------------+-----------------------------------------------------------------------------------------+------------------------------------------------------------+
+| Kubernetes 1.17 Cluster EKS                                  | This will provision a single kubernetes master in amazon with weave and   openebs       | kubernetes-amazon-eks-1.17                                 |
++--------------------------------------------------------------+-----------------------------------------------------------------------------------------+------------------------------------------------------------+
+| Kubernetes 1.17 HA Cluster on Ubuntu   16.04, Weave, OpenEBS | This will provision a single kubernetes master in xen with weave and   openebs          | kubernetes-1.17-xen-ubuntu-16.04-cluster-weave-openebs     |
++--------------------------------------------------------------+-----------------------------------------------------------------------------------------+------------------------------------------------------------+
+| Kubernetes 1.17 Cluster on Ubuntu 16.04,   Weave, OpenEBS    | This will provision a single kubernetes master in xen with weave and   openebs          | kubernetes-xen-1.17-ubuntu-16.04-single                    |
++--------------------------------------------------------------+-----------------------------------------------------------------------------------------+------------------------------------------------------------+
+| Kubernetes 1.17 HA Cluster on Ubuntu   18.04, Weave, OpenEBS | This will provision a single kubernetes master in scvmm with weave and   openebs        | kubernetes-scvmm-ubuntu-18.04-cluster-weave-openebs        |
++--------------------------------------------------------------+-----------------------------------------------------------------------------------------+------------------------------------------------------------+
+| Kubernetes 1.17 Cluster on Ubuntu 18.04,   Weave, OpenEBS    | This will provision a single kubernetes master in scvmm with weave and   openebs        | kubernetes-scvmm-ubuntu-18.04-single                       |
++--------------------------------------------------------------+-----------------------------------------------------------------------------------------+------------------------------------------------------------+
+| Kubernetes 1.17 HA Cluster on Ubuntu   16.04, Weave, OpenEBS | This will provision a single kubernetes master in openstack with weave   and openebs    | kubernetes-openstack-ubuntu-18.04-cluster-weave-openebs    |
++--------------------------------------------------------------+-----------------------------------------------------------------------------------------+------------------------------------------------------------+
+| Kubernetes 1.17 Cluster on Ubuntu 16.04,   Weave, OpenEBS    | This will provision a single kubernetes master in openstack with weave   and openebs    | kubernetes-openstack-ubuntu-18.04-single                   |
++--------------------------------------------------------------+-----------------------------------------------------------------------------------------+------------------------------------------------------------+
+| Kubernetes 1.17 Cluster on Ubuntu 18.04,   Weave, OpenEBS    | This will provision a single kubernetes master in opentelekom with weave   and openebs  | kubernetes-opentelekom-ubuntu-18.04-single                 |
++--------------------------------------------------------------+-----------------------------------------------------------------------------------------+------------------------------------------------------------+
+| Kubernetes 1.17 HA Cluster on Ubuntu   18.04, Weave, OpenEBS | This will provision a single kubernetes master in nutanix with weave and   openebs      | kubernetes-nutanix-ubuntu-18.04-cluster-weave-openebs      |
++--------------------------------------------------------------+-----------------------------------------------------------------------------------------+------------------------------------------------------------+
+| Kubernetes 1.17 HA Cluster on Linux,   Weave, OpenEBS        | This will provision a kubernetes cluster with weave and openebs                         | kubernetes-1.17-morpheus-linux-cluster-weave-openebs       |
++--------------------------------------------------------------+-----------------------------------------------------------------------------------------+------------------------------------------------------------+
+| Kubernetes 1.17 Cluster on Linux, Weave,   OpenEBS           | This will provision a single kubernetes master with weave and openebs                   | kubernetes-1.17-morpheus-linux-single                      |
++--------------------------------------------------------------+-----------------------------------------------------------------------------------------+------------------------------------------------------------+
+| Kubernetes 1.17 HA Cluster on Ubuntu   18.04, Weave, OpenEBS | This will provision a single kubernetes master in hyperv with weave and   openebs       | kubernetes-hyperv-ubuntu-18.04-cluster-weave-openebs       |
++--------------------------------------------------------------+-----------------------------------------------------------------------------------------+------------------------------------------------------------+
+| Kubernetes 1.17 Cluster on Ubuntu 18.04,   Weave, OpenEBS    | This will provision a single kubernetes master in hyperv with weave and   openebs       | kubernetes-hyperv-ubuntu-18.04-single                      |
++--------------------------------------------------------------+-----------------------------------------------------------------------------------------+------------------------------------------------------------+
+| Kubernetes 1.17 HA Cluster on Ubuntu   18.04, Weave, OpenEBS | This will provision a single kubernetes master in huawei with weave and   openebs       | kubernetes-huawei-ubuntu-18.04-cluster-weave-openebs       |
++--------------------------------------------------------------+-----------------------------------------------------------------------------------------+------------------------------------------------------------+
+| Kubernetes 1.17 Cluster on Ubuntu 18.04,   Weave, OpenEBS    | This will provision a single kubernetes master in huawei with weave and   openebs       | kubernetes-huawei-ubuntu-18.04-single                      |
++--------------------------------------------------------------+-----------------------------------------------------------------------------------------+------------------------------------------------------------+
+| Kubernetes 1.17 HA Cluster on Ubuntu   16.04, Weave, OpenEBS | This will provision a single kubernetes master in google with weave and   openebs       | kubernetes-google-ubuntu-18.04-cluster-weave-openebs       |
++--------------------------------------------------------------+-----------------------------------------------------------------------------------------+------------------------------------------------------------+
+| Kubernetes 1.17 Cluster on Ubuntu 16.04,   Weave, OpenEBS    | This will provision a single kubernetes master in google with weave and   openebs       | kubernetes-google-ubuntu-18.04-single                      |
++--------------------------------------------------------------+-----------------------------------------------------------------------------------------+------------------------------------------------------------+
+| Kubernetes 1.17 HA Cluster on Ubuntu   18.04, Weave, OpenEBS | This will provision a single kubernetes master in esxi with weave and   openebs         | kubernetes-esxi-ubuntu-18.04-cluster-weave-openebs         |
++--------------------------------------------------------------+-----------------------------------------------------------------------------------------+------------------------------------------------------------+
+| Kubernetes 1.17 Cluster on Ubuntu 18.04,   Weave, OpenEBS    | This will provision a single kubernetes master in esxi with weave and   openebs         | kubernetes-esxi-ubuntu-18.04-single                        |
++--------------------------------------------------------------+-----------------------------------------------------------------------------------------+------------------------------------------------------------+
+| Kubernetes 1.17 HA Cluster on Ubuntu   18.04, Weave, OpenEBS | This will provision a single kubernetes master in digitalOcean with weave   and openebs | kubernetes-digitalOcean-ubuntu-18.04-cluster-weave-openebs |
++--------------------------------------------------------------+-----------------------------------------------------------------------------------------+------------------------------------------------------------+
+| Kubernetes 1.17 Cluster on Ubuntu 18.04,   Weave, OpenEBS    | This will provision a single kubernetes master in digitalOcean with weave   and openebs | kubernetes-digitalOcean-ubuntu-18.04-single                |
++--------------------------------------------------------------+-----------------------------------------------------------------------------------------+------------------------------------------------------------+
+| Kubernetes 1.17 HA Cluster on Ubuntu   18.04, Weave, OpenEBS | This will provision a single kubernetes master in azure with weave and   openebs        | kubernetes-azure-ubuntu-18.04-cluster-weave-openebs        |
++--------------------------------------------------------------+-----------------------------------------------------------------------------------------+------------------------------------------------------------+
+| Kubernetes 1.17 Cluster on Ubuntu 18.04,   Weave, OpenEBS    | This will provision a single kubernetes master in azure with weave and   openebs        | kubernetes-azure-ubuntu-18.04-single                       |
++--------------------------------------------------------------+-----------------------------------------------------------------------------------------+------------------------------------------------------------+
+| Kubernetes 1.17 HA Cluster on Ubuntu   18.04, Weave, OpenEBS | This will provision a single kubernetes master in amazon with weave and   openebs       | kubernetes-amazon-ubuntu-18.04-cluster-weave-openebs       |
++--------------------------------------------------------------+-----------------------------------------------------------------------------------------+------------------------------------------------------------+
+| Kubernetes 1.17 Cluster on Ubuntu 18.04,   Weave, OpenEBS    | This will provision a single kubernetes master in amazon with weave and   openebs       | kubernetes-amazon-ubuntu-18.04-single                      |
++--------------------------------------------------------------+-----------------------------------------------------------------------------------------+------------------------------------------------------------+
+| Kubernetes 1.17 Cluster on Ubuntu 18.04,   Weave, OpenEBS    | This will provision a single kubernetes master in alibaba with weave and   openebs      | kubernetes-alibaba-ubuntu-18.04-single                     |
++--------------------------------------------------------------+-----------------------------------------------------------------------------------------+------------------------------------------------------------+
+| Kubernetes 1.17 HA Cluster on Ubuntu   18.04, Weave, OpenEBS | This will provision a single kubernetes master in vmware with weave and   openebs       | kubernetes-vmware-ubuntu-18.04-cluster-weave-openebs       |
++--------------------------------------------------------------+-----------------------------------------------------------------------------------------+------------------------------------------------------------+
+| Kubernetes 1.17 Cluster on Ubuntu 18.04,   Weave, OpenEBS    | This will provision a single kubernetes master in vmware with weave and   openebs       | kubernetes-vmware-ubuntu-18.04-single                      |
++--------------------------------------------------------------+-----------------------------------------------------------------------------------------+------------------------------------------------------------+
+| Kubernetes 1.17 Cluster on Ubuntu 18.04,   Weave, OpenEBS    | This will provision a single kubernetes master in fusion with weave and   openebs       | kubernetes-1.17-fusion-ubuntu-18.04-single                 |
++--------------------------------------------------------------+-----------------------------------------------------------------------------------------+------------------------------------------------------------+
+| Kubernetes 1.16 Cluster on Ubuntu 18.04,   Weave, OpenEBS    | This will provision a single kubernetes master in fusion with weave and   openebs       | kubernetes-1.16-fusion-ubuntu-18.04-single                 |
++--------------------------------------------------------------+-----------------------------------------------------------------------------------------+------------------------------------------------------------+
+| Kubernetes 1.15 Cluster on Ubuntu 18.04,   Weave, OpenEBS    | This will provision a single kubernetes master in fusion with weave and   openebs       | kubernetes-1.15-fusion-ubuntu-18.04-single                 |
++--------------------------------------------------------------+-----------------------------------------------------------------------------------------+------------------------------------------------------------+
+| External Kubernetes 1.17 Cluster                             | This will allow access to an external kubernetes cluster                                | kubernetes-external-1.17                                   |
++--------------------------------------------------------------+-----------------------------------------------------------------------------------------+------------------------------------------------------------+
+| External Kubernetes 1.16 Cluster                             | This will allow access to an external kubernetes cluster                                | kubernetes-external-1.16                                   |
++--------------------------------------------------------------+-----------------------------------------------------------------------------------------+------------------------------------------------------------+
+| External Kubernetes 1.15 Cluster                             | This will allow access to an external kubernetes cluster                                | kubernetes-external-1.15                                   |
++--------------------------------------------------------------+-----------------------------------------------------------------------------------------+------------------------------------------------------------+
+| External Kubernetes 1.14 Cluster                             | This will allow access to an external kubernetes cluster                                | kubernetes-external-1.14                                   |
++--------------------------------------------------------------+-----------------------------------------------------------------------------------------+------------------------------------------------------------+
+| Morpheus Kubernetes Manual Cluster                           | This will create a kubernetes manual (self-managed) cluster                             | morpheus-kubernetes-manual-cluster                         |
++--------------------------------------------------------------+-----------------------------------------------------------------------------------------+------------------------------------------------------------+
+| Kubernetes 1.14 HA Cluster on Ubuntu   16.04, Weave, OpenEBS | This will provision a single kubernetes master in bluemix with weave and   openebs      | kubernetes-bluemix-ubuntu-16.04-cluster-weave-openebs      |
++--------------------------------------------------------------+-----------------------------------------------------------------------------------------+------------------------------------------------------------+
+| Kubernetes 1.14 Cluster on Ubuntu 16.04,   Weave, OpenEBS    | This will provision a single kubernetes master in bluemix with weave and   openebs      | kubernetes-bluemix-ubuntu-16.04-single                     |
++--------------------------------------------------------------+-----------------------------------------------------------------------------------------+------------------------------------------------------------+
+| Kubernetes 1.17 HA Cluster on Ubuntu   16.04, Weave, OpenEBS | This will provision a single kubernetes master in vcd with weave and   openebs          | kubernetes-vcd-ubuntu-16.04-cluster-weave-openebs          |
++--------------------------------------------------------------+-----------------------------------------------------------------------------------------+------------------------------------------------------------+
+| Kubernetes 1.17 Cluster on Ubuntu 16.04,   Weave, OpenEBS    | This will provision a single kubernetes master in vcd with weave and   openebs          | kubernetes-vcd-ubuntu-16.04-single                         |
++--------------------------------------------------------------+-----------------------------------------------------------------------------------------+------------------------------------------------------------+
+| Kubernetes 1.14 HA Cluster on Ubuntu   16.04, Weave, OpenEBS | This will provision a single kubernetes master in softlayer with weave   and openebs    | kubernetes-softlayer-ubuntu-16.04-cluster-weave-openebs    |
++--------------------------------------------------------------+-----------------------------------------------------------------------------------------+------------------------------------------------------------+
+| Kubernetes 1.14 Cluster on Ubuntu 16.04,   Weave, OpenEBS    | This will provision a single kubernetes master in softlayer with weave   and openebs    | kubernetes-softlayer-ubuntu-16.04-single                   |
++--------------------------------------------------------------+-----------------------------------------------------------------------------------------+------------------------------------------------------------+
+| Kubernetes Cluster 1.14 on Ubuntu 16.04,   Weave, OpenEBS    | This will provision a kubernetes cluster with weave and openebs                         | kubernetes-morpheus-ubuntu-16.04-cluster-weave-openebs     |
++--------------------------------------------------------------+-----------------------------------------------------------------------------------------+------------------------------------------------------------+
+| Kubernetes 1.14 on Ubuntu 16.04, Weave,   OpenEBS            | This will provision a single kubernetes master with weave and openebs                   | kubernetes-morpheus-ubuntu-16.04-single                    |
++--------------------------------------------------------------+-----------------------------------------------------------------------------------------+------------------------------------------------------------+
+| Kubernetes 1.14 HA Cluster on Ubuntu   16.04, Weave, OpenEBS | This will provision a single kubernetes master in fusion with weave and   openebs       | kubernetes-fusion-ubuntu-16.04-cluster-weave-openebs       |
++--------------------------------------------------------------+-----------------------------------------------------------------------------------------+------------------------------------------------------------+
+| Kubernetes 1.14 Cluster on Ubuntu 16.04,   Weave, OpenEBS    | This will provision a single kubernetes master in fusion with weave and   openebs       | kubernetes-fusion-ubuntu-16.04-single                      |
++--------------------------------------------------------------+-----------------------------------------------------------------------------------------+------------------------------------------------------------+
 
-.. note:: The minimum recommended memory size for a Kubernetes cluster is 8 GB.
+|
+
 
 To create a new Kubernetes Cluster:
 
