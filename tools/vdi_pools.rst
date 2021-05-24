@@ -157,11 +157,6 @@ VDI Gateways can be linked to a |morpheus| appliance and then used in VDI Pool c
 
 Upon creation, the VDI Gateway record will produce an ``API KEY``. This ``API KEY`` needs to be specified in the ``morpheus-worker.rb`` file on the API Gateway itself under ``worker['apikey'] = '$API_KEY'``
 
-VDI Gateway Installation
-^^^^^^^^^^^^^^^^^^^^^^^^
-
-The VDI Gateway is offered as both a native VM Installer package as well as a Docker container.
-
 VDI Gateway VM Install
 ^^^^^^^^^^^^^^^^^^^^^^
 
