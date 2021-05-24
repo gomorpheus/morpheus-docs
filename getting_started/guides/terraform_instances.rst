@@ -51,10 +51,12 @@ In order to create the Layout later in the guide, I need to create four Option T
 Option Lists are created in the Library (Provisioning > Library) under the Option Lists tab. These are lists of items which will be used to create dropdown selections at provision time. Click :guilabel:`+ ADD`, complete the fields as I've done in the example below and click :guilabel:`SAVE CHANGES`. I've created one each for the AWS account selection, region selection, and CIDR mask input.
 
 .. image:: /images/integration_guides/terr_inst_guide/7optionList.png
+  :width: 50%
 
 Option Types are also created in the Library under the Option Types tab. In this case, I'm creating four Option Types. Three of them will display as dropdown selections and will be tied to one of the Option Lists we just made. The other will be a simple text input where the user can indicate the total number of subnets that should be created. Click :guilabel:`+ ADD`, complete the fields as I've done in the example below and click :guilabel:`SAVE CHANGES`.
 
 .. image:: /images/integration_guides/terr_inst_guide/8optionType.png
+  :width: 50%
 
 Instance Type
 ^^^^^^^^^^^^^
@@ -62,6 +64,7 @@ Instance Type
 At this point we're ready to create a new Instance Type. We'll give the Instance Type a name, which users will use to identify the Instance Type from the list in the provisioning wizard. We don't need to set much else in this case, most of the pieces we've created in previous steps will be associated with the Layout that we create next. The Layout will also be tied to the Instance Type we're creating now. Instance Types are also created in the Library (Provisioning > Library) under the Instance Types tab. Click :guilabel:`+ ADD`, complete the fields as I've done in the example below and click :guilabel:`SAVE CHANGES`.
 
 .. image:: /images/integration_guides/terr_inst_guide/9instanceType.png
+  :width: 50%
 
 Layout
 ^^^^^^
@@ -71,6 +74,7 @@ The Layout will bring together everything we've made to this point, the Spec Tem
 First, change the TECHNOLOGY value to Terraform and the fields will change to allow proper configuration. Next, provide a name for your Layout. If you're creating the Layout through the Layout tab rather than from the Instance Type detail page, you'll need to identify the Instance Type the Layout goes with. Using the typeahead fields at bottom of the modal window, add our four Option Types and our five Spec Templates to the Layout. Finally, point the layout to a TFVAR SECRET from |morpheus| Cypher if needed. You can see a screenshot of my Layout configuration below
 
 .. image:: /images/integration_guides/terr_inst_guide/10Layout.png
+  :width: 50%
 
 Provisioning
 ^^^^^^^^^^^^
