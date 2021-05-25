@@ -267,3 +267,136 @@ If you wish to run in HTTP mode and SSL terminate at the VIP, you can run the co
 .. code-block:: bash
 
   docker run -d -p 8080:8080  -e MORPHEUS_SELF_SIGNED=true -e MORPHEUS_KEY=[apiKey] -e MORPHEUS_URL=https://my.morpheus.url morpheusdata/morpheus-worker:latest
+
+VDI Gateway Helm Chart Installation
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+First, configure the Helm repository:
+
+.. code-block:: bash
+
+  helm repo add morpheusdata https://gomorpheus.github.io/helm-charts-morpheus/
+
+Next, install the |morpheus| worker using ``helm install``. You can specify each parameter using ``--set key=value[,key=value]`` arguments as in the following example:
+
+.. code-block:: bash
+
+  helm install morpheus-worker --set replicaCount="1" morpheusdata/morpheus-worker
+
+Alternatively, you can create a values YAML file and pass an argument as in the following example:
+
+.. code-block:: bash
+
+  helm install -f values.yaml morpheus-worker morpheusdata/morpheus-worker
+
+Upgrading the workers node(s) is as simple as refreshing the repo and using ``helm upgrade``:
+
+.. code-block:: bash
+
+  helm repo update
+  helm upgrade -f values.yaml morpheus-worker morpheusdata/morpheus-worker
+
+To uninstall, use one of the following:
+
+.. code-block:: bash
+
+  helm uninstall morpheus-worker
+
+or
+
+.. code-block:: bash
+
+  helm delete morpheus-worker --purge
+
+.. NOTE:: ``helm delete`` removes all the Kubernetes components associated with the chart and deletes the release.
+
+The following table lists the configurable parameters of the Sentry chart and their default values:
+
+.. list-table::
+  :widths: auto
+  :header-rows: 1
+
+  * - Parameter
+    - Description
+    - Default
+  * - image.repository
+    - Image repository
+    - morpheusdata/morpheus-worker
+  * - image.tag
+    - Image tag. Possible values listed here.
+    - 5.3.1-4
+  * - image.pullPolicy
+    - Image pull policy
+    - IfNotPresent
+  * - env.MORPHEUS_KEY
+    - API Key for Morpheus Worker
+    -
+  * - env.MORPHEUS_URL
+    - Morpheus FQDN with protocol
+    -
+  * - env.MORPHEUS_SELF_SIGNED
+    - Is Morpheus using a Self Signed Certificate
+    - false
+  * - service.type
+    - Kubernetes service type for the GUI
+    - ClusterIP
+  * - service.port
+    - Kubernetes port where the GUI is exposed
+    - 8989
+  * - livenessProbe.initialDelaySeconds
+    - Initial delay (seconds) for liveness monitoring
+    - 5
+  * - livenessProbe.timeoutSeconds
+    - Timeout (seconds) before health check considered unhealthy
+    - 5
+  * - livenessProbe.periodSeconds
+    - Poll interval (seconds) between health checks
+    - 10
+  * - livenessProbe.failureThreshold
+    - Number of failed polls before restarting service
+    - 3
+  * - replicaCount
+    - Number of Replicas if AutoScaling False
+    - 1
+  * - autoscaling.enabled
+    - Enable AutoScaling
+    - false
+  * - autoscaling.minReplicas
+    - Minimum number of Replicas
+    - 1
+  * - autoscaling.maxReplicas
+    - Maximum number of Replicas
+    - 100
+  * - autoscaling.targetCPUUtilizationPercentage
+    - CPU Threshold for AutoScaling
+    - 80
+  * - autoscaling.targetMemoryUtilizationPercentage
+    - Memory Threshold for AutoScaling
+    -
+  * - ingress.enabled
+    - Enables Ingress
+    - false
+  * - ingress.annotations
+    - Ingress annotations
+    - {}
+  * - ingress.path
+    - Ingress path
+    - /
+  * - ingress.hosts
+    - Ingress accepted hostnames
+    - chart-example.local
+  * - ingress.tls
+    - Ingress TLS configuration
+    - []
+  * - resources
+    - CPU/Memory resource requests/limits
+    - {}
+  * - nodeSelector
+    - Node labels for pod assignment
+    - {}
+  * - tolerations
+    - Toleration labels for pod assignment
+    - []
+  * - affinity
+    - Affinity settings for pod assignment
+    - {}
