@@ -442,7 +442,7 @@ Populating LDAP-type Option Lists requires knowledge of LDAP query syntax. This 
     }
 
     a['value'] = row.sAMAccountName;
-    results.push;
+    results.push(a);
 
   }
 
