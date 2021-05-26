@@ -42,4 +42,4 @@ Two-factor Authentication
 - Once enabled, users will use their two factor auth app of choice (such as Google Authenticator) to obtain the access code
 - Compatible with local |morpheus| accounts as well as Active Directory and LDAP-sourced accounts
 
-.. image:: /images/releases/531/2fa.gif
+.. image:: /images/releases/531/2fa_new.gif
