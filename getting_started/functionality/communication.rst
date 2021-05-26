@@ -481,6 +481,12 @@ The following table contains communication information, including frequency and 
     - 5 Minutes
     - No
   * - ITSM Integration
+    - Server Push
+    - ServiceNow
+    - Sync |morpheus| library items to ServiceNow catalog
+    - Nightly
+    - No
+  * - ITSM Integration
     - Server Pull
     - Cherwell
     - Data synchronization
