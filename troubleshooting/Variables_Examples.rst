@@ -8,7 +8,7 @@ A vast number of variables are available for use in Tasks, Scripts, Templates, R
 Pre-Provision Vars
 ------------------
 
-A subset of variables are available for Instance, Host Name and Hostnames. These can be passed inside ``${ }`` blocks during provisioning or in relevant policy configs.
+A subset of variables are available for Instance, Host Name and Hostnames. These can be passed inside ``${ }`` blocks during provisioning or in relevant policy configs. Groovy syntax can be resolved to allow for dynamic name generation as shown in some of the examples below.
 
 Instance Naming Policy example: ``${userInitials}-${cloudCode}-${platform == 'windows' ? 'W' : 'L'}-${sequence}``
 
@@ -294,7 +294,7 @@ Instance
 		userStatus,
 		vmwareFolderId,
 	}
-	
+
 Container
 ---------
 
