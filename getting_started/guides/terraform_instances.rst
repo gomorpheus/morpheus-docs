@@ -25,23 +25,133 @@ Spec Templates are added in the |morpheus| Library (Provisioning > Library > Spe
 
 - .. toggle-header:: :header: **AWS Subnet by Count**
 
-    .. image:: /images/integration_guides/terr_inst_guide/2tfSubnetByCount.png
+    .. code-block:: bash
+
+      # This spec template creates AWS subnets based on the count requested utilizing the vpc cidr provided in var.vpc_cidr variable
+
+      locals {
+        bitCount = sum([tonumber(local.subnet_options.cidrMask),-tonumber(split("/",var.vpc_cidr)[1])])
+      }
+
+      resource "aws_subnet" "main" {
+          count = tonumber(var.subnetCount)
+          vpc_id     = aws_vpc.main.id
+          cidr_block = cidrsubnet(var.vpc_cidr, local.bitCount, count.index)
+
+          tags = merge(
+              local.default_tags,
+              {
+              Name = "${var.vpc_name}-subnet-0${count.index}"
+              }
+          )
+      }
+
+      output "aws_subnet" {
+        value = aws_subnet.main
+        sensitive = true
+      }
 
 - .. toggle-header:: :header: **AWS Terraform Default Vars**
 
-    .. image:: /images/integration_guides/terr_inst_guide/3tfDefaultVars.png
+    .. code-block:: bash
+
+      variable "access_key" {
+        type        = string
+      }
+
+      variable "secret_key" {
+        type        = string
+      }
+
+      variable "subnetCount" {
+        type = number
+        default = "<%=customOptions.subnetCount%>"
+      }
+
+      variable "sensitive_thing" {
+        type = string
+        default = "this_var_is_sensitive"
+        sensitive = true
+      }
 
 - .. toggle-header:: :header: **AWS Provider Role Assume**
 
-    .. image:: /images/integration_guides/terr_inst_guide/4tfAssumeRole.png
+    .. code-block:: bash
+
+      terraform {
+        required_providers {
+          aws = {
+            source = "hashicorp/aws"
+            version = ">= 3.35.0"
+          }
+        }
+      }
+
+      provider "aws" {
+        region     = local.vpc_options.region
+        access_key = var.access_key
+        secret_key = var.secret_key
+
+        assume_role {
+          # The role ARN within Account B to AssumeRole into.
+          role_arn = "arn:aws:iam::${local.vpc_options.aws_account}:role/OrganizationAccountAccessRole"
+        }
+      }
 
 - .. toggle-header:: :header: **AWS Terrform Locals**
 
-    .. image:: /images/integration_guides/terr_inst_guide/5tfLocals.png
+    .. code-block:: bash
+
+      locals {
+        #  Common tags to be assigned to all resources
+        default_tags = {
+          Owner    = "<%=username%>"
+          Group = "<%=groupName%>"
+          Management_Tool = "Terraform"
+          Management_Platform = "Morpheus"
+        }
+
+        subnet_options = {
+          cidrMask = "<%=customOptions.cidrMask%>"
+          subnetCount = "<%=customOptions.subnetCount%>"
+        }
+        vpc_options = {
+          region = "<%=customOptions.awsRegion%>"
+          aws_account = "<%=customOptions.awsAccount%>"
+        }
+      }
 
 - .. toggle-header:: :header: **AWS VPC**
 
-    .. image:: /images/integration_guides/terr_inst_guide/6tfVpc.png
+    .. code-block:: bash
+
+      variable "vpc_cidr" {
+        type        = string
+        description = "CIDR for the the VPC"
+        default = "172.16.0.0/24"
+      }
+
+      variable "vpc_name" {
+        type        = string
+        description = "Name for the VPC"
+        default = "durka"
+      }
+
+      resource "aws_vpc" "main" {
+          cidr_block = var.vpc_cidr
+
+       tags = merge(
+          local.default_tags,
+          {
+            Name = var.vpc_name
+          }
+        )
+      }
+
+      output "aws_vpc" {
+        value = aws_vpc.main
+        sensitive = true
+      }
 
 Option Types and Option Lists
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
