@@ -4,23 +4,25 @@ Ansible Tower
 Overview
 ^^^^^^^^
 
-|morpheus| supports Ansible Tower for configuration management.  |morpheus| accomplishes this by integrating with an existing instance running Ansible Tower (AT) 3.3.0-1 and earlier. The username and password required for integration can be a user with admin access or a user with project admin access.
+|morpheus| supports Ansible Tower for configuration management.  |morpheus| accomplishes this by integrating with an existing instance running Ansible Tower (AT) 3.3.0-1 and earlier. The username and password required for integration can be a user with admin access or a user with project admin access
+
 |morpheus| will import the current Inventory, Templates, Hosts, Groups and Projects. In the integration view it will add a Job tab which will have information of all the jobs executed from Morpheus.
-Note: It will not import data of the jobs which are not executed from Morpheus.
+
+.. Note:: This integration will not import data of the jobs which are not executed from |morpheus|.
 
 Add Ansible Tower Integration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-#. Navigate to `Administration -> Integrations` and select `+ New Integration`
+#. Navigate to `Administration > Integrations` and select :guilabel:`+ New Integration`
 #. Select Integration Type "Ansible Tower"
 #. Populate the following fields:
 
    * Name: Name of the Ansible Tower Integration in |morpheus|
-   * Enabled: Enabled by default it is enabled. To disable the integration, uncheck this option and save.
-   * Ansible Tower URL: This would be an https or http Ansible tower url.
-   * Username: The user morpheus would use to communicate with Ansible Tower.
-   * Password: Enter the password. Password is encrypted and saved in DB.
-   * API Version: This drop down has one option v2 for now but may have others in future.
+   * Enabled: To disable the integration, uncheck this option
+   * Ansible Tower URL: An HTTPS or HTTP Ansible Tower URL
+   * Username: The user |morpheus| would use to communicate with Ansible Tower
+   * Password: Enter the password. Password is encrypted and saved in DB
+   * API Version: This drop down has one option (``v2``) for now but may have others in future
 
 #. Save Changes
 
@@ -78,6 +80,28 @@ Execute Mode
       This will execute the template on all hosts in the inventory
     Skip execution
       This will skip the execution of the template on the instance provisioned.
+
+Scoping Ansible Tower Jobs to Tenant-Default Inventories
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Users in the Primary Tenant have an additional Inventory execution option when creating Ansible Tower Job-type Tasks. When making a selection in the Inventory field, "Use Tenant Default" may be selected rather than a specific Inventory. This is because Ansible Tower Jobs created in the Primary Tenant may be shared publicly to other Tenants through public Workflows or when associated with public Library items.
+
+.. image:: /images/integration_guides/automation/ansibleTower/ansibleTowerInventory.png
+  :width: 50%
+
+When this option is selected and the Task is run in a Subtenant, it will automatically be run against the default Inventory which is configured for the Subtenant. The next section includes steps for associating Tenants and default Inventories.
+
+.. IMPORTANT:: An Ansible Tower Job configured to run against a Tenant-default Inventory will fail when run by a user whose Tenant does not have a default Inventory set.
+
+Setting Default Inventories for Tenants
+```````````````````````````````````````
+
+When creating or editing Ansible Tower integrations, navigate to the Inventory tab to view all Inventories synced from the selected integration. Click "Permissions" inside the "MORE" action menu at the end of a row for the selected Invetory. Within the PERMISSIONS modal, there is a single typeahead field where a Tenant can be selected. Once the Tenant is selected, click :guilabel:`SAVE CHANGES`. Now back on the Inventory list view, you'll see the default Tenant which is associated with each Inventory.
+
+.. NOTE:: Tenants may only be associated with one Inventory, though an Inventory can have multiple Tenant associations. If a Tenant is selected to be associated with a new Inventory, its association with a previous Inventory will automatically be removed.
+
+.. image:: /images/integration_guides/automation/ansibleTower/inventoryList.png
+  :width: 50%
 
 Passing extra_vars to Ansible Tower Job
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
