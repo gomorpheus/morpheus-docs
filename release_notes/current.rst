@@ -51,7 +51,7 @@ Fixes
 - User Groups: User Group names are now required to be unique only inside same tenant, not unique across all tenants
 - VMware: vCenter: Removed name match sync function that could possibly cause wrong vm to be deleted when a provision fails to a unique name constraint in |morpheus|. external-id and uuid are now only used for sync matching
 - Whitelabing: Support Menu: Fixed re-enabling Support Menus in subtenants after they have been disabled
-NSX-V: Fixed |morpheus| generated self-signed certificates not selectable at the time of Load balancer HTTPS based application profile creation
+- NSX-V: Fixed |morpheus| generated self-signed certificates not selectable at the time of Load balancer HTTPS based application profile creation
 
 Appliance Updates
 =================
