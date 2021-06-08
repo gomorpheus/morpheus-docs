@@ -23,7 +23,7 @@ rst_prolog = """
 .. |tcver| replace:: v9.0.45
 .. |nginxver| replace:: v1.19.9
 .. |linuxagentver| replace:: v2.1.1
-.. |winagentver| replace:: v1.6.0.0
+.. |winagentver| replace:: v1.7.0.0
 .. |nodePackageVer| replace:: 3.1.14
 .. |java| replace:: v8u292-b10
 .. |openjdk-jre| replace:: v8u292
