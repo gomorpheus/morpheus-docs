@@ -34,16 +34,15 @@ Terraform Installation
 
 To manually install and configure terraform on the Morpheus Appliance:
 
-#. Run the following curl on the |morpheus| Appliance to install Terraform:
+#. Run the following cURL on the |morpheus| Appliance to install Terraform:
 
    .. code-block:: bash
 
     curl -k -s "https://applianceServerUrl/api/server-script/terraform-install?local=true" | bash
 
+   .. NOTE:: Replace applianceServerUrl with your |morpheus| appliance URL or IP address.
 
-   .. NOTE:: Replace applianceServerUrl with your |morpheus| appliance url or ip.
-
-#. Create a working directory for Terraform, and change owner to ``morpheus-app``.
+#. Create a working directory for Terraform, and change owner to ``morpheus-app``
 
    .. code-block:: bash
 
@@ -53,7 +52,7 @@ To manually install and configure terraform on the Morpheus Appliance:
 
    The default location is ``/var/opt/morpheus/morpheus-ui/terraform`` but can be changed.
 
-#. Add the Terraform working path to ``/opt/morpheus/conf/application.yml``
+#. (Optional) The Terrform working path should already be defined in application.yml. If not, add the Terraform working path to ``/opt/morpheus/conf/application.yml``
 
    .. code-block:: bash
 
@@ -85,15 +84,20 @@ To manually install and configure terraform on the Morpheus Appliance:
 
    .. IMPORTANT:: Uses spaces not tabs to indent or ui startup will fail. If you used a different path than the default location, enter that path instead.
 
-#. Restart the morpheus-ui to apply the ``application.yml`` config.
+#. Copy the Terraform directory at ``/usr/local/bin/terraform`` to ``/usr/sbin/terraform``
+
+   .. code-block:: bash
+
+    cp /usr/local/bin/terraform /usr/sbin/terraform
+
+#. Restart the morpheus-ui to apply the ``application.yml`` config
 
    .. code-block:: bash
 
     sudo morpheus-ctl restart morpheus-ui
 
 
-Terraform is now installed and configured, and Terraform apps can be provisioned from Morpheus.
-
+Terraform is now installed and configured, and Terraform apps can be provisioned from |morpheus|.
 
 Creating Terraform App Blueprints
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
