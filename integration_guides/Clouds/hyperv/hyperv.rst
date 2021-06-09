@@ -68,9 +68,9 @@ Keep the default settings for client and server components of WinRM, or customiz
 
 .. code-block:: bash
 
-    $ winrm set winrm/config/service/Auth @{Basic="true"}
-    $ winrm set winrm/config/service @{AllowUnencrypted="true"}
-    $ winrm set winrm/config/service/Auth @{Kerberos="false"}
+    $ winrm set winrm/config/service/Auth '@{Basic="true"}'
+    $ winrm set winrm/config/service '@{AllowUnencrypted="true"}'
+    $ winrm set winrm/config/service/Auth '@{Kerberos="false"}'
 
 Domain Authentication
 ^^^^^^^^^^^^^^^^^^^^^
