@@ -42,60 +42,11 @@ To manually install and configure terraform on the Morpheus Appliance:
 
    .. NOTE:: Replace applianceServerUrl with your |morpheus| appliance URL or IP address.
 
-#. Create a working directory for Terraform, and change owner to ``morpheus-app``
-
-   .. code-block:: bash
-
-    sudo mkdir /var/opt/morpheus/morpheus-ui/terraform
-
-    sudo chown morpheus-app.morpheus-app /var/opt/morpheus/morpheus-ui/terraform
-
-   The default location is ``/var/opt/morpheus/morpheus-ui/terraform`` but can be changed.
-
-#. (Optional) The Terrform working path should already be defined in application.yml. If not, add the Terraform working path to ``/opt/morpheus/conf/application.yml``
-
-   .. code-block:: bash
-
-    sudo vi /opt/morpheus/conf/application.yml
-
-   Add the following to the application.yml config below and in-line with the repo section:
-
-   .. code-block:: bash
-
-    terraform:
-        location: '/var/opt/morpheus/morpheus-ui/terraform'
-
-   Example application.yml config with Terraform location added:
-
-   .. code-block:: bash
-
-    repo:
-        git:
-            location: '/var/opt/morpheus/morpheus-ui/repo/git'
-        local:
-            location: '/var/opt/morpheus/morpheus-ui/repo/local'
-    terraform:
-        location: '/var/opt/morpheus/morpheus-ui/terraform'
-    bitcan:
-        backup:
-            destination:
-                root: '/var/opt/morpheus/bitcan/backup'
-                working: '/var/opt/morpheus/bitcan/working'
-
-   .. IMPORTANT:: Uses spaces not tabs to indent or ui startup will fail. If you used a different path than the default location, enter that path instead.
-
 #. Copy the Terraform directory at ``/usr/local/bin/terraform`` to ``/usr/sbin/terraform``
 
    .. code-block:: bash
 
     cp /usr/local/bin/terraform /usr/sbin/terraform
-
-#. Restart the morpheus-ui to apply the ``application.yml`` config
-
-   .. code-block:: bash
-
-    sudo morpheus-ctl restart morpheus-ui
-
 
 Terraform is now installed and configured, and Terraform apps can be provisioned from |morpheus|.
 
