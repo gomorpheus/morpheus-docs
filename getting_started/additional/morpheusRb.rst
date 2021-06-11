@@ -101,8 +101,3 @@ Morpheus allows for additional advanced customizations for system managed servic
   ui['memory_top_pad'] = 131072
   ui['memory_trim_threshold'] = 131072
   ui['vm_images_cdn_url'] = 'https://morpheus-images.morpheusdata.com'
-<<<<<<< HEAD
-
-
-=======
->>>>>>> 18b945f5... adds custom NGINX log format example to morpheus.rb example configuration
