@@ -442,7 +442,7 @@
        <td class="tg-fr0y"></td>
        <td class="tg-fr0y"></td>
        <td class="tg-fr0y"></td>
-       <td class="tg-kw6a"></td>
+       <td class="tg-fr0y"></td>
        <td class="tg-kw6a"></td>
        <td class="tg-0qf3">5.2.7</td>
      </tr>
