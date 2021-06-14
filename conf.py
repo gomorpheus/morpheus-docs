@@ -13,7 +13,7 @@ rst_prolog = """
 .. |mysqlverfips| replace:: v.5.7.29
 .. |esbranch| replace:: v7.x
 .. |esver| replace:: v7.8.1
-.. |tcver| replace:: v9.0.41
+.. |tcver| replace:: v9.0.45
 .. |morphdat| replace:: Morpheus Data, LLC
 .. |nginxver| replace:: v1.19.3
 .. |nodePackageVer| replace:: 3.1.12
