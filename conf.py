@@ -15,7 +15,7 @@ rst_prolog = """
 .. |esver| replace:: v7.8.1
 .. |tcver| replace:: v9.0.45
 .. |morphdat| replace:: Morpheus Data, LLC
-.. |nginxver| replace:: v1.19.3
+.. |nginxver| replace:: v1.19.9
 .. |nodePackageVer| replace:: 3.1.15
 .. |java| replace:: v8u292-b10
 .. |openjdk-jre| replace:: v8u292
