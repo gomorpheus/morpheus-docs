@@ -36,7 +36,6 @@ Cloud Budgets
 If you scope a budget to a Cloud, visit the Cloud summary tab in ``Infrastructure > Clouds > Select Cloud`` to see a cost-to-budget breakdown for that Cloud.
 
 .. image:: /images/operations/budgets/cloudBudget.png
-  :width: 50%
 
 View Budget Summary
 ^^^^^^^^^^^^^^^^^^^
