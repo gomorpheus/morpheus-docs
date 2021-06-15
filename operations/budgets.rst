@@ -1,23 +1,24 @@
 Budgets
 -------
 
-Budgets provide insight into spending across entire accounts, allowing users to create and plan a budget scoped to their account, clouds, tenants, users, or groups.
+Budgets provide insight into spending across their designated scope, allowing users to create and plan a budget targeted to their account, clouds, tenants, users, or groups.
 
 Creating A Budget
 ^^^^^^^^^^^^^^^^^^
   #. Navigate to ``Operations > Costing > Budgets``
-  #. Create a new budget and enter in the following:
+  #. Start a new budget by clicking :guilabel:`+ ADD`
 
       #. **Name**
       #. **Description**
       #. **Scope:** Here you can choose which construct this budget is tied to (Account, Tenant, Cloud, Group, or User)
-      #. **Period**
-      #. **Year:** Select a year to set budgets for future years or "custom" to create a multi-year budget or input a custom fiscal year as required by your organization
-      #. **Interval:** Choose Month, Quarter, Year then fill in the budget for that interval
+      #. **Period**: Currently "Year" is the only option
+      #. **Year:** Select a year to set budgets for future years. Alternatively, select "custom" to create a multi-year budget or input a custom fiscal year if required by your organization
+      #. **Interval:** Choose Month, Quarter, Year then fill in the budgeted amount for that interval
 
-  #. :guilabel:`SAVE CHANGES`
+  #. Click :guilabel:`SAVE CHANGES`
 
-.. image:: /images/operations/create_budget.png
+.. image:: /images/operations/budgets/createBudget.png
+  :width: 50%
 
 Multi-year Budgets
 ^^^^^^^^^^^^^^^^^^
@@ -32,22 +33,21 @@ In the example below, I've created a three-year budget:
 Cloud Budgets
 ^^^^^^^^^^^^^^
 
-If you scope a budget to a cloud visit the cloud summary page in ``Infrastructure > Clouds > Select Cloud > Summary`` for a detailed breakdown of the costing
+If you scope a budget to a Cloud, visit the Cloud summary tab in ``Infrastructure > Clouds > Select Cloud`` to see a cost-to-budget breakdown for that Cloud.
 
-.. image:: /images/operations/cloud_budget.png
+.. image:: /images/operations/budgets/cloudBudget.png
+  :width: 50%
 
 View Budget Summary
 ^^^^^^^^^^^^^^^^^^^
 
-To view the budget summary, click into the budget to see the actual vs budgeted spend for the interval selected.
+To view the budget summary, click into the budget to see a breakdown of budgeted amounts against actual costs for the selected interval period. Budgets can be edited or deleted by clicking the pencil or trash can icons, respectively, for each budget.
 
-To edit the budget just select :guilabel:`EDIT`
-
-.. image:: /images/operations/budget_summary.png
+.. image:: /images/operations/budgets/budgetSummary.png
 
 Budget Analytics
 ^^^^^^^^^^^^^^^^
 
-In ``Operations > Analytics > Budget Analysis`` select scope (Account, Tenant, Cloud, Group, User) to view the budget analysis.
+In ``Operations > Analytics > Budget Analysis`` select scope (Account, Tenant, Cloud, Group, User) to view the budget analysis. If a budget exists for the selected scope, a cost breakdown against budgeted amounts will be shown.
 
-.. image:: /images/operations/budget_analysis.png
+.. image:: /images/operations/budgets/budgetAnalysis.png
