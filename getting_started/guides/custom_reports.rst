@@ -403,7 +403,7 @@ By default, custom plugin views are handled by a Handlebars template provider to
   </div>
 
 Build the JAR
-`````````````
+^^^^^^^^^^^^^
 
 With the code written, use gradle to build the JAR which we can upload to |morpheus| so the report can be viewed. To do so, change directory into the location of the directory created earlier to hold your custom plugin code.
 
@@ -420,7 +420,7 @@ Build your new plugin.
 Once the build process has completed, locate the JAR in the ``build/libs`` directory
 
 Upload the Custom Report Plugin to Morpheus UI
-``````````````````````````````````````````````
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Custom plugins are added to |morpheus| through the Plugins tab in the Integrations section (Administration > Integrations > Plugins). Navigate to this section and click :guilabel:`Choose File`. Browse for your JAR file and upload it to |morpheus|. The new plugin will be added next to any other custom plugins that may have been developed for your appliance.
 
