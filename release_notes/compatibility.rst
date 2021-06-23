@@ -106,3 +106,5 @@ Integrations
 ============
 
 .. note:: Current iterations of Amazon AWS, Microsoft Azure, Google Cloud Platform, Digital Ocean, HPE OneView, OpenTelekom Cloud, IBM Bluemix, Softlayer and UpCloud are all supported.
+
+.. include:: compatibility_table.rst
