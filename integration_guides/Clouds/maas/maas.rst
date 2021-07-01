@@ -1,14 +1,14 @@
 Canonical MAAS
 --------------
 
-MAAS from Canonical is an open-source tool, server orchestration tool. It's designed to allow administrators to build a data center from on-premises, bare-metal servers where large networks of individual units can be discovered, deployed, and reconfigured.
+MAAS from Canonical is an open-source server orchestration tool. It's designed to allow administrators to build a datacenter from on-premises, bare-metal servers where large networks of individual units can be discovered, deployed, and reconfigured.
 
 Integrating MAAS and |morpheus|
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Integrating MAAS with |morpheus| is a simple process requiring the MAAS API URL and API Key. We'll start by gathering what we need from the MAAS UI, then move back into |morpheus| to store the required details.
 
-We can gather the API URL by clicking on the username in the upper-right corner of the MAAS UI window. From this preferences page, click on "API keys" as shown in the screenshot:
+We can gather the API key by clicking on the username in the upper-right corner of the MAAS UI window. From this preferences page, click on "API keys" as shown in the screenshot:
 
 .. image:: /images/integration_guides/clouds/maas/1prefPage.png
 
@@ -16,7 +16,7 @@ From the API keys page, select the displayed key and copy it. Alternatively, you
 
 .. image:: /images/integration_guides/clouds/maas/2maasApi.png
 
-In addition to the API key, we need the MAAS API URL. This URL is given in the format ``http://<maas-hostname-or-ip>:5240/MAAS/api/2.0``. Plug the hostname or host IP address into the example shown in the previous sentence and store the complete API URL for use in the next step.
+In addition to the API key, we need the MAAS API URL. As entered in |morpheus|, the value will be like the following example: ``http://<maas-hostname-or-ip>:5240``. We'll enter the API URL into |morpheus| duriong the next step.
 
 In |morpheus|, navigate to the list of integrated Clouds and start a new MAAS Cloud integration:
 
