@@ -40,6 +40,8 @@ TYPE
   - **Hidden:** No field will be displayed, but the field name and default value will be added to the Instance config map for reference
 
   - **Password:** An input field with suitable encryption for accepting passwords
+
+  - **Radio List:** Populated by Option Lists, presents a selection of radio buttons for the provisioning user
 LABEL
  This is the input label that typically shows to the left of a custom option
 PLACEHOLDER

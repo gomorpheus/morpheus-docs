@@ -3,7 +3,7 @@ master_doc = 'index'
 rst_prolog = """
 .. |morpheus| replace:: Morpheus
 .. |morphbranch| replace:: v5.3
-.. |morphver| replace:: v5.3.1
+.. |morphver| replace:: v5.3.2
 .. |minUpgradeVer| replace:: v4.2.0
 .. |previousMorphVer| replace:: v5.3.0
 .. |rmqbranch| replace:: v3.5-3.8
