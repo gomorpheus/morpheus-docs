@@ -102,6 +102,7 @@ Fixes
 - Snapshots: Fixed revert action failing on Brownfield Snapshots when compute_server moved to another tenant :superscript:`5.2.5`
 - UI: Fixed unexpected logouts due to Session Expiration in another non-active tab :superscript:`5.2.4`
 - VMware: Folders: Fixed Group Access -> Default Folder setting only saving for one cloud when multiple VMware Clouds are in the same target Group :superscript:`5.2.5`
+- VMware: Fixed VMware vCenter Windows Agent install over WinRM during provisioning. Note: Requires 5.3.1-2
 - Workflows: Clusters provisioned used cluster layouts that have a workflow selected are now properly running the workflow at provisioning time.  :superscript:`5.2.6`
 - Workflows: Fixed issue with available Group scoping during Task execution on Instances where the Instances' assigned Group is not accessible to the User who created the Instance. :superscript:`5.2.4`
 - Workflows: Fixed Task phase assignment changing upon edit and save of a Workflow when using the same Task in multiple phases in the same Workflow :superscript:`5.2.4`
@@ -128,3 +129,5 @@ Fixes
 
 - API: Fixed Access to virtual images not allowed in UI but successful using the API :superscript:`5.2.4`
 - API: Prices: Fixed ```account`` value not respected when creating a price and assigning to a Tenant. :superscript:`5.2.4`
+
+.. note:: v5.3.1-2 adds fix for VMware vCenter Windows Agent install over WinRM during provisioning
