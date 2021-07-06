@@ -5,34 +5,42 @@ Role Permissions
 
 User Role Permission Sections
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-FEATURE ACCESS
+Features
   Controls User access level for UI sections and features in |morpheus|. The complete feature permissions grid is included below.
-GROUP ACCESS
+Groups
   Controls User access level for Groups. Groups are not a Multi-Tenant construct, only Groups created in the current Tenant will be visible.
-INSTANCE TYPE ACCESS
+Instance Types
   Controls User access level for Instance Types. Only Instance Types created in the current Tenant or those created in the Master Tenant and shared with the current Tenant will be available.
-BLUEPRINT ACCESS
+Blueprints
   Controls User access level for Blueprints during App provisioning. Only Blueprints created in the current Tenant or those created in the Master Tenant and shared with the current Tenant will be available.
-PERSONAS
+Report Types
+  Controls User access for each report type in the Reports section (Operations > Reports). The user must also have Operations: Reports access granted under the Feature permissions tab.
+Personas
   Controls User access to |morpheus| Personas, at the time of this writing Users may be given access to the Standard (full |morpheus| experience) or Service Catalog Personas
-CATALOG ITEM TYPES
+Catalog Item Types
   Controls User access to Catalog Item types within the Service Catalog Persona. Only Catalog Items created in the current Tenant or those created in the Master Tenant and shared with the current Tenant will be available.
+VDI Pools
+  Controls User access to VDI Pools which are currently configured (Tools > VDI Pools) via the Virtual Desktops Persona view
 
 Tenant Role Permission Sections
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-FEATURE ACCESS
+Features
   Controls Tenant access level for sections and features in |morpheus|. The complete feature permissions grid is included below.
-CLOUD ACCESS
+Clouds
   Controls Tenant access level for Clouds. This list includes Clouds integrated from the Master Tenant and shared publicly. Tenants given this Tenant Role will have either Full, Read, or None access levels to a given Cloud. See the section below for more information on Cloud Access levels.
-INSTANCE TYPE ACCESS
+Instance Types
   Controls Tenant access level for Instance Types. Only Instance Types created in the current Tenant or those created in the Master Tenant and shared with the current Tenant will be available.
-BLUEPRINT ACCESS
+Blueprints
   Controls Tenant access level for Blueprints during App provisioning. Only Blueprints created in the current Tenant or those created in the Master Tenant and shared with the current Tenant will be available.
-PERSONAS
+Report Types
+  Controls Tenant access for each report type in the Reports section (Operations > Reports). The Tenant must also have Operations: Reports access granted under the Feature permissions tab.
+Personas
   Controls Tenant access to |morpheus| Personas, at the time of this writing Users may be given access to the Standard (full |morpheus| experience) or Service Catalog Personas
-CATALOG ITEM TYPES
+Catalog Item Types
   Controls Tenant access to Catalog Item types within the Service Catalog Persona. Only Catalog Items created in the current Tenant or those created in the Master Tenant and shared with the current Tenant will be available.
+VDI Pools
+  Controls Tenant access to VDI Pools which are currently configured (Tools > VDI Pools) via the Virtual Desktops Persona view
 
 Cloud Access Levels
 ^^^^^^^^^^^^^^^^^^^

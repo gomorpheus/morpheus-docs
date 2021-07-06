@@ -1,12 +1,13 @@
 Hyper-V
 -------
 
-Hyper-V is the virtualized server computing environment introduced by Microsoft. Hyper-V is consumed by |morpheus| as a private cloud offering and is a common hypervisor technology in data centers. |morpheus| provides and avenue to aggregate Hyper-V resources together to allow efficient and seamless deployment of applications as a virtual machine (VM) or Docker host in the world of Hyper-V.
+Hyper-V is the virtualized server computing environment introduced by Microsoft. Hyper-V is consumed by |morpheus| as a private cloud offering and is a common hypervisor technology in data centers. |morpheus| provides an avenue to aggregate Hyper-V resources together to allow efficient and seamless deployment of applications as a virtual machine (VM) or Docker host in the world of Hyper-V.
 
 Features
 ^^^^^^^^
 
 • Virtual Machine Provisioning
+• Discovery of Existing Instances
 • Containers
 • Backups / Snapshots
 • Resources Groups
@@ -19,25 +20,19 @@ Features
 • Lifecycle Management and Resize
 • Unique Kerberos Authentication
 
-|morpheus| can provide a single pane of glass and self-service portal for managing instances scattered across both Hyper-V and public cloud offerings like Azure.
-
 Getting Started
 ^^^^^^^^^^^^^^^
 
-To get started this a few prerequisites must first be met. The Hyper-V host most be installed with its firewall enabled and it can either be joined to a domain or standalone. The Hyper-V host must also have the external network of Hyper-V configured and it can share this network with the management operating system. This document covers Hyper-V 2008 and Hyper-V 2012.
+To get started, a few prerequisites must first be met. The Hyper-V host must be installed with its firewall enabled and it can either be joined to a domain or standalone. The Hyper-V host must also have the external network of Hyper-V configured and it can share this network with the management operating system. A user account that is part of the local administrators group on the Hyper-V host is also required. This document covers Hyper-V 2008 and Hyper-V 2012.
 
-A user account that is part of the local administrators group on the Hyper-V host is also required.
+Understanding WinRM
+^^^^^^^^^^^^^^^^^^^
 
-Understand WinRM
-^^^^^^^^^^^^^^^^
+|morpheus| uses WinRM to communicate to the Hyper-V host for deployment of the |morpheus| Agent. The |morpheus| Agent allows for the host dashboard to be populated with information in the form of graphs that cover CPU, Network, Storage, and memory consumption. Furthermore, this Agent provides logging and monitoring capabilities.
 
-|morpheus| uses WinRM to communicate to the Hyper-V host for deployment of the |morpheus| agent. The |morpheus| agent allows for the host dashboard to be populated with information in the form of graphs that cover CPU, Network, Storage, and memory consumption. Furthermore, this agent provides logging and monitoring capabilities.
+If Windows Remote Management (WinRM) is not installed and configured, WinRM scripts do not run and the WinRM command line tool cannot perform data operations or allow for the |morpheus| Agent to be installed. WinRM uses HTTP port 5985 or HTTPS port 5986 for communications.
 
-If Windows Remote Management (WinRM) is not installed and configured, WinRM scripts do not run and the WinRM command-line tool cannot perform data operations or allow for the |morpheus| agent to be installed. WinRM uses Http port 5985 or Https port 5986 for communications.
-
-To better understand all of the default settings of WinRM please refer to the below Microsoft link:
-
-https://msdn.microsoft.com/en-us/library/aa384372(v=vs.85).aspx
+To better understand all of the default settings of WinRM please refer to the `following page <https://msdn.microsoft.com/en-us/library/aa384372(v=vs.85).aspx>`_ in Microsoft documentation.
 
 Native Authentication
 ^^^^^^^^^^^^^^^^^^^^^
@@ -143,13 +138,13 @@ Create a file in /etc called krb5.conf and replace the domain name with the name
          krb4_convert = true
          krb4_get_tickets = false
 
-After creation of the krb5.conf a keytab file is also required. See below on instructions on how to create a keytab file.
+After creation of the krb5.conf a keytab file is also required. See below for instructions on how to create a keytab file.
 http://www.itadmintools.com/2011/07/creating-kerberos-keytab-files.html
 
 Adding Hyper-V as a Private Cloud
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The Hyper-V host is prepared for |morpheus| to communicated with it via WinRM so the Hyper-V private cloud is ready to be configured. Create a group and then create a |morpheus| cloud for Hyper-V. Populated the information as show in Figure 1: specific for the environment being configured.
+The Hyper-V host is prepared for |morpheus| to communicate with it via WinRM so the Hyper-V private cloud is ready to be configured. Create a group and then create a |morpheus| cloud for Hyper-V. Populated the information as show in Figure 1: specific for the environment being configured.
 
 .. image:: /images/hyperv1_original.png
 
@@ -160,14 +155,14 @@ The Hyper-V host is prepared for |morpheus| to communicated with it via WinRM so
 Service Plans
 ^^^^^^^^^^^^^
 
-A default set of Service Plans are created in |morpheus| for the VMware provisioning engine. These Service Plans can be considered akin to AWS Flavors or Openstack Flavors. They provide a means to set predefined tiers on memory, storage, cores, and cpu. Price tables can also be applied to these so estimated cost per virtual machine can be tracked as well as pricing for customers. By default, these options are fixed sizes but can be configured for dynamic sizing. A service plan can be configured to allow a custom user entry for memory, storage, or cpu. To configure this, simply edit an existing Service Plan tied to Hyper-V or create a new one. These all can be easily managed from the Admin | Service Plans & Pricing section.
+A default set of Service Plans are created in |morpheus| for the VMware provisioning engine. These Service Plans can be considered akin to AWS Flavors or Openstack Flavors. They provide a means to set predefined tiers on memory, storage, cores, and cpu. Price tables can also be applied to these so estimated cost per virtual machine can be tracked as well as pricing for customers. By default, these options are fixed sizes but can be configured for dynamic sizing. A service plan can be configured to allow a custom user entry for memory, storage, or cpu. To configure this, simply edit an existing Service Plan tied to Hyper-V or create a new one. These are managed from the Admin > Plans & Pricing section.
 
 .. image:: /images/hyperv3_original.png
 
 Docker
 ^^^^^^
 
-So far this document has covered how to add the Hyper-V cloud integration and has enabled users the ability to provision virtual machine-based instances via the Add Instance catalog in Provisioning. Another great feature provided by |morpheus| out of the box is the ability to use Docker containers and even support multiple containers per Docker host. To do this a Docker Host must first be provisioned into Hyper-V (multiple are needed when dealing with horizontal scaling scenarios).
+So far this document has covered how to add the Hyper-V cloud integration and has enabled users the ability to provision virtual machine-based instances via the Add Instance catalog under the Provisioning menu. Another great feature provided by |morpheus| out of the box is the ability to use Docker containers and even support multiple containers per Docker host. To do this a Docker Host must first be provisioned into Hyper-V (multiple are needed when dealing with horizontal scaling scenarios).
 
 To provision a Docker Host simply navigate to the Clusters tab of the Cloud detail page or Infrastructure > Clusters section. From there click :guilabel:`+ ADD CLUSTER` to add a Hyper-V Docker Host. A cluster is created when adding Docker hosts, even when only one host is needed.
 
