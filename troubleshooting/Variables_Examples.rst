@@ -16,31 +16,31 @@ Available variables for Naming Policy naming patterns include:
 
 .. code-block:: bash
 
-		${account}
-		${accountId}
-		${accountName}
-		${accountNumber}
-		${accountType}
-		${cloudCode}
-		${cloudName}
-		${customerNumber}
-		${customOptions.name}
-		${groupCode}
-		${groupName}
-		${instance.instanceContext} # Environment Code
-		${platform == 'windows' ? 'w':'l'} # results in `w` for Windows platforms and `l` for Linux Platforms
-		${platform}
-		${provisionType}
-		${sequence} # results in 1
-			${sequence+100} # results in 101
-		  ${sequence.toString().padLeft(5,'0')} #results in 00001
-		${tenantId}
-		${tenant} # Teant Name
-		${tenantSubdomain}
-		${type}
-		${userId}
-		${userInitials}
-		${username}
+  ${account}
+  ${accountId}
+  ${accountName}
+  ${accountNumber}
+  ${accountType}
+  ${cloudCode}
+  ${cloudName}
+  ${customerNumber}
+  ${customOption.name}
+  ${groupCode}
+  ${groupName}
+  ${instance.instanceContext} # Environment Code
+  ${platform == 'windows' ? 'w':'l'} # results in `w` for Windows platforms and `l` for Linux Platforms
+  ${platform}
+  ${provisionType}
+  ${sequence} # results in 1
+  ${sequence+100} # results in 101
+  ${sequence.toString().padLeft(5,'0')} # results in 00001
+  ${tenantId}
+  ${tenant} # Tenant Name
+  ${tenantSubdomain}
+  ${type}
+  ${userId}
+  ${userInitials}
+  ${username}
 
 An example Instance Name Policy using a naming pattern with User Initials, Cloud Code, Instance Type, and a sequential number starting at 3000 is ``${userInitials}-${cloudCode}-${type}-${sequence+3000}``, resulting in an Instance Name of **md-vmwd3-centos-3001** for the first instance, followed by **md-vmwd3-centos-3002** and so on.
 
