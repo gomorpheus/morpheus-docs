@@ -33,9 +33,9 @@ Available variables for Naming Policy naming patterns include:
   ${provisionType}
   ${sequence} # results in 1
   ${sequence+100} # results in 101
-  ${sequence.toString().padLeft(5,'0')} #results in 00001
+  ${sequence.toString().padLeft(5,'0')} # results in 00001
   ${tenantId}
-  ${tenant} # Teant Name
+  ${tenant} # Tenant Name
   ${tenantSubdomain}
   ${type}
   ${userId}
