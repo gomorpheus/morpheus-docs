@@ -48,6 +48,3 @@ Refer to :ref:`compatibility` for additional details.
 - NSX-T: Subtenant users can access shared NSX-T integrations and load balancers through Morpheus API and CLI as they already can through Morpheus UI:superscript:`5.2.6`
 - NSX-V: Router management support added in Morpheus API and CLI to match functionality currently available in Morpheus UI:superscript:`5.2.6`
 - Servers: The ``servers`` API endpoint returns the ``volumes`` and ``controllers`` lists when passing the ``details=true`` parameter to match behavior already included with the ``instances`` endpoint
-
-Fixes
------
