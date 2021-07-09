@@ -33,7 +33,7 @@ Commonly used variables for naming patterns include:
 		${instance.instanceContext} # Environment Code
 		${sequence} # results in 1
 		${sequence+100} # results in 101
-		${customOption.name}
+		${customOptions.fieldName}
 		${sequence.toString().padLeft(5,'0')} #results in 00001
 
 An example Instance Name Policy using a naming pattern with User Initials, Cloud Code, Instance Type, and a sequential number starting at 3000 is ``${userInitials}-${cloudCode}-${type}-${sequence+3000}``, resulting in an Instance Name of **md-vmwd3-centos-3001** for the first instance, followed by **md-vmwd3-centos-3002** and so on.
