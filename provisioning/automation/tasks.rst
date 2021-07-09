@@ -55,7 +55,49 @@ Execute Options
 - **Retryable:** When marked, this Task can be configured to be retried in the event of failure
 - **Retry Count:** The maximum number of times the Task will be retried when there is a failure
 - **Retry Delay:** The length of time (in seconds) |morpheus| will wait to retry the Task
-- **Allow Custom Config:** When marked, a text area is provided at Task execution time to allow the user to pass extra variables or specify extra configuration
+- **Allow Custom Config:** When marked, extra variables can be passed in a JSON payload at execution time. When executing the Task, pass the additional configuration with the body of the request. When executing the Task through |morpheus| UI, a text field is provided to enter the payload. See the next section for a complete example.
+
+Allow Custom Config Example
+```````````````````````````
+
+In this example, I'll create a Shell Script Task and Python Task, both of which are configured to allow custom configuration to be passed using the checkbox mentioned in the last section. When executing my Tasks via |morpheus| API, I will pass the desired values through the request body which are successfully resolved in the Task output. Custom config can be passed through either the customConfig property or the customOptions property, both of which are shown in the examples.
+
+Example Shell Script Task:
+
+.. code-block:: bash
+
+  echo "My name is <%= customOptions['myName'] %>."
+  echo "My favorite fruit is <%= customOptions['favoriteFruit'] %>."
+
+Example Python Task:
+
+.. code-block:: bash
+
+  print "My name is {}.\n".format(morpheus['customOptions']['myName'])
+  print "My favorite fruit is {}.".format(morpheus['customOptions']['favoriteFruit'])
+
+When making the call to the task execution API, pass a ``job`` JSON object containing the values that need passed into the Task:
+
+.. code-block:: bash
+
+  curl -XPOST "https://x.x.x.x/api/tasks/137/execute" \
+    -H "Authorization: Bearer xxxx" \
+    -H "Content-Type: application/json" \
+    -d '{
+    "job": {
+      "customConfig": "{\"myName\":\"Chris\"}",
+      "customOptions": {
+        "favoriteFruit": "Apple"
+      }
+    }
+  }'
+
+Process output:
+
+.. code-block:: bash
+
+  My name is Chris.
+  My favorite fruit is Apple.
 
 Task Types
 ^^^^^^^^^^
@@ -345,7 +387,7 @@ Task Configuration
     If you attempt to run a python task, you will get an error similar to the following:
 
     .. code-block:: bash
-    
+
       Task Execution Failed on Attempt 1
       sudo: /tmp/py-8ae51ebf-749c-4354-b6e4-11ce541afad5/bin/python: command not found
 
@@ -360,7 +402,7 @@ Task Configuration
     In CentOS 8, Python is not installed by default. There is a ``platform-python`` but that should not be used for anything in userland. The error message with a default install of CentOS 8 will be similar to this:
 
     .. code-block:: bash
-    
+
       Task Execution Failed on Attempt 1
       sudo: /tmp/py-cffc9a8f-c40d-451d-956e-d6e9185ade33/bin/python: command not found
 
