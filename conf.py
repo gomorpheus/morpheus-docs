@@ -5,7 +5,7 @@ rst_prolog = """
 .. |morphbranch| replace:: v5.3
 .. |morphver| replace:: v5.3.2
 .. |minUpgradeVer| replace:: v4.2.0
-.. |previousMorphVer| replace:: v5.3.0
+.. |previousMorphVer| replace:: v5.3.1
 .. |rmqbranch| replace:: v3.5-3.8
 .. |rmqver| replace:: v3.8.9
 .. |mysqlbranch| replace:: v5.7
@@ -16,7 +16,7 @@ rst_prolog = """
 .. |tcver| replace:: v9.0.45
 .. |morphdat| replace:: Morpheus Data, LLC
 .. |nginxver| replace:: v1.19.9
-.. |nodePackageVer| replace:: 3.1.15
+.. |nodePackageVer| replace:: 3.2.0
 .. |java| replace:: v8u292-b10
 .. |openjdk-jre| replace:: v8u292
 .. |openjdk-elasticsearch| replace:: 14.0.2+12
