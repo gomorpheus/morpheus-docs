@@ -198,7 +198,7 @@ Continued Installation Steps
 
    .. NOTE::
 
-      This step will fail. This is ok, and expected. If the reconfigure hangs then use Ctrl+C to quit the reconfigure run and force a failure.
+      This step will fail. This is OK and is expected because part of the reconfigure process includes an attempt to start RabbitMQ. At this point, RabbitMQ cannot be started and the reconfigure will report a failure despite serving our purposes for this step. If the reconfigure hangs then use Ctrl+C to quit the reconfigure run and force a failure.
 
 #. Subsequently we need to stop and start Rabbit on the NOT SOT nodes.
 

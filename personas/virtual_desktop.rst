@@ -1,5 +1,5 @@
-Virtual Desktop Persona (beta)
-==============================
+Virtual Desktop Persona
+=======================
 
 .. vdi_persona
 

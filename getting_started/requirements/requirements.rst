@@ -41,7 +41,7 @@ Base Requirements
 - **CPU:** 4-core, 1.4 GHz (or better), 64-bit CPU recommended for all-in-one systems. For a distributed-tier installation, it's recommended each tier have 2-core, 1.4 GHz (or better), 64-bit CPU
 - Network connectivity from your users to the appliance over TCP 443 (HTTPS)
 - Superuser privileges via the ``sudo`` command for the user installing the |morpheus| appliance package
-- Access to base ``yum`` or ``apt`` repos. Access to Optional RPMs repo required for RHEL 7.x
+- Access to base ``yum`` or ``apt`` repositories. ``codeready`` (codeready-builder-for-rhel-8-x86_64-rpms) repo access is required for RHEL 8+ appliances and access to the Optional RPMs repo is required for RHEL 7.x
 - An appliance license is required for any operations involving provisioning
 - Current major web browsers supporting modern standards, such as Google Chrome, Mozilla Firefox, Apple Safari, and Microsoft Edge are supported
 - Internet Connectivity (optional)

@@ -3,7 +3,7 @@
 Advanced morpheus.rb Settings
 -----------------------------
 
-Morpheus allows for additional advanced customizations for system managed services within the morpheus.rb file located in ``/etc/morpheus/morpheus.rb``.  Below is a list of the supported items available in the ``morpheus.rb`` file. 
+Morpheus allows for additional advanced customizations for system managed services within the morpheus.rb file located in ``/etc/morpheus/morpheus.rb``.  Below is a list of the supported items available in the ``morpheus.rb`` file.
 
 .. note:: Service configuration settings are not applicable for externalized services such as external mysql/percona, elasticsearch or rabbitmq clusters. Only connection settings are applicable for external services.
 
@@ -22,7 +22,7 @@ Morpheus allows for additional advanced customizations for system managed servic
   elasticsearch['auth_user'] = 'morpheus-es-user'
   elasticsearch['auth_password'] = 'xxxxxxxxxxxxxxxx'
   # Valid for Internal/System elasticsearch service only
-  elasticsearch['log_dir'] = '/var/log/morpheus/elasticsearch' 
+  elasticsearch['log_dir'] = '/var/log/morpheus/elasticsearch'
   elasticsearch['memory_alloc_arena_max'] = 2
   elasticsearch['memory_map_max'] = 65536
   elasticsearch['memory_map_threshold'] = 131072
@@ -47,7 +47,7 @@ Morpheus allows for additional advanced customizations for system managed servic
   mysql['log_dir'] = '/var/log/morpheus/mysql'
   mysql['max_active'] = 100 # The combined value off all app node max_active values must be lower than max_connections setting in mysql
   mysql['max_allowed_packet'] = 67108864
-  mysql['max_connections'] = 151 
+  mysql['max_connections'] = 151
 
   nginx['cache_max_size'] = '5000m'
   nginx['enable'] = true
@@ -74,6 +74,8 @@ Morpheus allows for additional advanced customizations for system managed servic
   nginx['ssl_state_name'] = "CA"
   nginx['worker_connections'] = 10240
   nginx['workers'] = integer calculated from number of cpus
+  nginx['log_format_name'] = 'custom'
+  nginx['log_format'] = '\'$remote_addr - $remote_user [$time_local] "$request" \' \'$status $body_bytes_sent "$http_referer" \' \'"$http_user_agent" "$http_x_forwarded_for" \' \'rt=$request_time uct="$upstream_connect_time" uht="$upstream_header_time" urt="$upstream_response_time"\';'
 
   rabbitmq['enable'] = true
   rabbitmq['host'] = '127.0.0.1'
@@ -86,7 +88,7 @@ Morpheus allows for additional advanced customizations for system managed servic
   rabbitmq['log_dir'] = '/var/log/morpheus/rabbitmq'
   rabbitmq['nodename'] = 'rabbit@localhost'
   rabbitmq['port'] = '5672'
-  
+
   repo['repo_host_url'] = 'https://downloads.morpheusdata.com'
 
   ui['http_client_connect_timeout'] = 10000  #in seconds
@@ -101,4 +103,3 @@ Morpheus allows for additional advanced customizations for system managed servic
   ui['memory_top_pad'] = 131072
   ui['memory_trim_threshold'] = 131072
   ui['vm_images_cdn_url'] = 'https://morpheus-images.morpheusdata.com'
-

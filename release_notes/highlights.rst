@@ -24,8 +24,16 @@ Deepened Google Cloud Platform (GCP) Integration
 |morpheus| VDI Gateways and Jump Hosts
 --------------------------------------
 
+- Configure Jump Hosts for |morpheus| to tunnel through when connecting to VDI guest console sessions
+- Link a VDI Gateway to your |morpheus| appliance
+- VDI sessions connect directly to the gateway rather than to the |morpheus| appliance directly when a VDI Gateway is configured for the VDI pool
+
 Resources UI
 ------------
+
+- The |morpheus| resources UI offers new visibility into non-VM and non-container object types
+- Accessed through Infrastructure > Compute (which replaces Infrastructure > Hosts)
+- In addition to VMs, hypervisors and bare metal hosts, containers associated with |morpheus| Instances and IaC resources are also surfaced
 
 Two-factor Authentication
 -------------------------
@@ -34,4 +42,4 @@ Two-factor Authentication
 - Once enabled, users will use their two factor auth app of choice (such as Google Authenticator) to obtain the access code
 - Compatible with local |morpheus| accounts as well as Active Directory and LDAP-sourced accounts
 
-.. image:: /images/releases/531/2fa.gif
+.. image:: /images/releases/531/2fa_new.gif

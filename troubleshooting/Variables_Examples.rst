@@ -8,7 +8,7 @@ A vast number of variables are available for use in Tasks, Scripts, Templates, R
 Pre-Provision Vars
 ------------------
 
-A subset of variables are available for Instance, Host Name and Hostnames. These can be passed inside ``${ }`` blocks during provisioning or in relevant policy configs.
+A subset of variables are available for Instance, Host Name and Hostnames. These can be passed inside ``${ }`` blocks during provisioning or in relevant policy configs. Groovy syntax can be resolved to allow for dynamic name generation as shown in some of the examples below.
 
 Instance Naming Policy example: ``${userInitials}-${cloudCode}-${platform == 'windows' ? 'W' : 'L'}-${sequence}``
 
@@ -16,31 +16,31 @@ Available variables for Naming Policy naming patterns include:
 
 .. code-block:: bash
 
-		${account}
-		${accountId}
-		${accountName}
-		${accountNumber}
-		${accountType}
-		${cloudCode}
-		${cloudName}
-		${customerNumber}
-		${customOption.name}
-		${groupCode}
-		${groupName}
-		${instance.instanceContext} # Environment Code
-		${platform == 'windows' ? 'w':'l'} # results in `w` for Windows platforms and `l` for Linux Platforms
-		${platform}
-		${provisionType}
-		${sequence} # results in 1
-			${sequence+100} # results in 101
-		  ${sequence.toString().padLeft(5,'0')} #results in 00001
-		${tenantId}
-		${tenant} # Teant Name
-		${tenantSubdomain}
-		${type}
-		${userId}
-		${userInitials}
-		${username}
+  ${account}
+  ${accountId}
+  ${accountName}
+  ${accountNumber}
+  ${accountType}
+  ${cloudCode}
+  ${cloudName}
+  ${customerNumber}
+  ${customOptions.fieldName}
+  ${groupCode}
+  ${groupName}
+  ${instance.instanceContext} # Environment Code
+  ${platform == 'windows' ? 'w':'l'} # results in `w` for Windows platforms and `l` for Linux Platforms
+  ${platform}
+  ${provisionType}
+  ${sequence} # results in 1
+  ${sequence+100} # results in 101
+  ${sequence.toString().padLeft(5,'0')} # results in 00001
+  ${tenantId}
+  ${tenant} # Tenant Name
+  ${tenantSubdomain}
+  ${type}
+  ${userId}
+  ${userInitials}
+  ${username}
 
 An example Instance Name Policy using a naming pattern with User Initials, Cloud Code, Instance Type, and a sequential number starting at 3000 is ``${userInitials}-${cloudCode}-${type}-${sequence+3000}``, resulting in an Instance Name of **md-vmwd3-centos-3001** for the first instance, followed by **md-vmwd3-centos-3002** and so on.
 
@@ -294,7 +294,7 @@ Instance
 		userStatus,
 		vmwareFolderId,
 	}
-	
+
 Container
 ---------
 
