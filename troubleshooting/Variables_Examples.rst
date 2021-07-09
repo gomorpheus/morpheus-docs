@@ -24,7 +24,7 @@ Available variables for Naming Policy naming patterns include:
   ${cloudCode}
   ${cloudName}
   ${customerNumber}
-  ${customOption.name}
+  ${customOptions.fieldName}
   ${groupCode}
   ${groupName}
   ${instance.instanceContext} # Environment Code
