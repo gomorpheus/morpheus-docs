@@ -48,4 +48,5 @@ Refer to :ref:`compatibility` for additional details.
 - Instances: The ``instances`` endpoint now returns ``volumes`` and ``containers`` lists under ``containerDetails`` to match data which was already returned for VMs
 - NSX-T: Subtenant users can access shared NSX-T integrations and load balancers through Morpheus API and CLI as they already can through Morpheus UI :superscript:`5.2.6`
 - NSX-V: Router management support added in Morpheus API and CLI to match functionality currently available in Morpheus UI :superscript:`5.2.6`
+- Option Lists: API calls to get all Option Lists (``api/option-type-lists/``) or get a specific Option List (``api/option-type-lists/:id``) no longer return ``listItems`` as this could potentially return millions of values in some scenarios. Users can now issue a GET request to ``/api/option-type-lists/:id/items`` to return all items in a specific Option List
 - Servers: The ``servers`` API endpoint returns the ``volumes`` and ``controllers`` lists when passing the ``details=true`` parameter to match behavior already included with the ``instances`` endpoint
