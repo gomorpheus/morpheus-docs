@@ -1,7 +1,7 @@
 .. _Repositories:
 
 Repositories
-============
+------------
 
 The ``/provisioning/code`` **Repositories** section contains the repositories integrated with |morpheus| allowing users to browse repositories folders and files and view file contents from any branch, trigger a refresh, and create tasks, scripts and templates directly from the repos. 
 
@@ -15,7 +15,7 @@ The ``/provisioning/code`` **Repositories** section contains the repositories in
 - Create Spec Templates from repo files
   
 Role Permission's
------------------
+^^^^^^^^^^^^^^^^^
 
 Access and capabilities for the **Repositories** section is determined by the following role permissions:
 
@@ -41,7 +41,7 @@ Role: Feature Access: ``Provisioning: Library``
   - Read or Full: Can create Spec Templates from repo files in Repository browser
   
 List Repositories
------------------
+^^^^^^^^^^^^^^^^^
 
 #. Select the ``Provisioning`` link in the navigation bar.
 #. Select the ``Code`` link in the sub-navigation bar.
@@ -51,7 +51,7 @@ List Repositories
   .. tip:: Select the gear icon in the top right of the repos list view to create and save custom list views.
 
 Refresh Repository
-------------------
+^^^^^^^^^^^^^^^^^^
 
 #. Select the ``Provisioning`` link in the navigation bar.
 #. Select the ``Code`` link in the sub-navigation bar.
@@ -59,7 +59,7 @@ Refresh Repository
 #. Select :guilabel:`ACTIONS v` -> ``Refresh``
 
 Browse Repositories
--------------------
+^^^^^^^^^^^^^^^^^^^
 
 #. Select the ``Provisioning`` link in the navigation bar.
 #. Select the ``Code`` link in the sub-navigation bar.
@@ -68,7 +68,7 @@ Browse Repositories
 #. Select target folder icon to drill into the folder | expand directory tree.
 
 View Repository File
---------------------
+^^^^^^^^^^^^^^^^^^^^
 
 #. Select the ``Provisioning`` link in the navigation bar.
 #. Select the ``Code`` link in the sub-navigation bar.
@@ -79,8 +79,8 @@ View Repository File
   
   .. note:: File contents displayed is from last repo sync. Refresh repo to ensure current version for recent commits.
 
-Create Task from Repository file
---------------------------
+Create Task from Repository File
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 #. Select the ``Provisioning`` link in the navigation bar.
 #. Select the ``Code`` link in the sub-navigation bar.
@@ -93,8 +93,8 @@ Create Task from Repository file
 
   .. note:: Users can create tasks from Repositories only with Read or Full level permission on ``Provisioning: Tasks``.
   
-Create Spec Template from Repository file
------------------------------------------
+Create Spec Template from Repository File
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 #. Select the ``Provisioning`` link in the navigation bar.
 #. Select the ``Code`` link in the sub-navigation bar.

@@ -17,5 +17,5 @@ Take advantage of custom tasks and workflows within any environment by building 
   automation/automation.rst
   virtual_images/virtual_images.rst
   library/library.rst
-  code/repositories.rst
+  code/code.rst
   serviceMesh/serviceMesh.rst
