@@ -1,5 +1,7 @@
 .. _Deployments:
 
+.. role:: redguilabel
+
 Deployments
 -----------
 
@@ -107,4 +109,4 @@ Delete Deployment
 #. Select the ``Provisioning`` link in the navigation bar.
 #. Select the ``Code`` link in the sub-navigation bar.
 #. Select the ``Deployments`` tab.
-#. Click the Delete Deployment icon on the row of the deployment you wish to delete, or click the Name of the deployment and then the .. role:: redguilabel :guilabel:`DELETE` button.
+#. Click the Delete Deployment icon on the row of the deployment you wish to delete, or click the Name of the deployment and then the :redguilabel:`DELETE` button.
