@@ -48,7 +48,7 @@ List Repositories
 #. Users with sufficient permissions will see a list view of all integrated repositories.
 #. Use the Search, Integrations or Organizations filter to filter listed repositories.
 
-  .. tip:: Select the gear icon in the top right of the repos list view to create and save custom list views.
+.. tip:: Select the gear icon |gear| in the top right of the repos list view to create and save custom list views.
 
 Refresh Repository
 ^^^^^^^^^^^^^^^^^^
@@ -75,9 +75,9 @@ View Repository File
 #. Select name of target repository.
 #. Select ``i`` icon to right of target file name.
 
-  .. note:: Users can access/view file contents only with Read or Full level permission on ``Provisioning: Code Repositories``.
+.. note:: Users can access/view file contents only with Read or Full level permission on ``Provisioning: Code Repositories``.
   
-  .. note:: File contents displayed is from last repo sync. Refresh repo to ensure current version for recent commits.
+.. note:: File contents displayed is from last repo sync. Refresh repo to ensure current version for recent commits.
 
 Create Task from Repository File
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -89,9 +89,9 @@ Create Task from Repository File
 #. Select target task type from available actions
 #. Complete the NEW TASK wizard to create a new Task. The TYPE, SOURCE, REPOSITORY and FILE PATH fields will be automatically configured.
 
-  .. note:: Shell and Powershell tasks types can be created from the code repo browser in |morphver|. Ensure file compatibility with target Task type.
+.. note:: Shell and Powershell tasks types can be created from the code repo browser in |morphver|. Ensure file compatibility with target Task type.
 
-  .. note:: Users can create tasks from Repositories only with Read or Full level permission on ``Provisioning: Tasks``.
+.. note:: Users can create tasks from Repositories only with Read or Full level permission on ``Provisioning: Tasks``.
   
 Create Spec Template from Repository File
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -103,7 +103,7 @@ Create Spec Template from Repository File
 #. Select target spec template type from available actions
 #. Complete the NEW SPEC TEMPLATE wizard to create a new Spec Template. The TYPE, SOURCE, REPOSITORY and FILE PATH fields will be automatically configured.
 
-  .. note:: Terraform spec template types can be created from the code repo browser in |morphver|. Other spec template types can be created from repo files by changing the TYPE field in the NEW SPEC TEMPLATE wizard.
+.. note:: Terraform spec template types can be created from the code repo browser in |morphver|. Other spec template types can be created from repo files by changing the TYPE field in the NEW SPEC TEMPLATE wizard.
 
-  .. note:: Users can create tasks from Repositories only with Read or Full level permission on ``Provisioning: Library``.
+.. note:: Users can create tasks from Repositories only with Read or Full level permission on ``Provisioning: Library``.
   

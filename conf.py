@@ -22,8 +22,12 @@ rst_prolog = """
 .. |openjdk-elasticsearch| replace:: 14.0.2+12
 .. |erlang| replace:: 22.3
 .. |repo_host_url| replace:: https://downloads.morpheusdata.com
-.. |trash| unicode:: 0x0001F5D1 .. TRASH ICON
 .. |master tenant| replace:: Master Tenant
+
+.. |trash| unicode:: 0x0001F5D1 .. TRASH ICON
+.. |gear| unicode:: U+02699 .. GEAR ICON
+.. |info| unicode:: U+2139 .. INFO ICON 
+
 """
 
 
@@ -103,7 +107,7 @@ latex_elements = {
 }
 
 latex_documents = [
-    (master_doc, 'morpheus5.3.1-1.tex', u'Morpheus Documentation',
+    (master_doc, 'morpheus5.3.2-1.tex', u'Morpheus Documentation',
      u'Morpheus', 'manual'),
 ]
 
