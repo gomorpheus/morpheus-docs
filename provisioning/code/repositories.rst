@@ -8,14 +8,14 @@ The ``/provisioning/code`` **Repositories** section contains the repositories in
 - Browse integrated repositories 
 - View repo files
 - Switch branches
-- Trigger repo refresh
+- Trigger repo refreshes
 - Filter by Integration, Organization or Text search
 - Create Custom Views
 - Create Tasks from repo files
 - Create Spec Templates from repo files
   
-Role Permissions
-----------------
+Role Permission's
+-----------------
 
 Access and capabilities for the **Repositories** section is determined by the following role permissions:
 
@@ -39,4 +39,71 @@ Role: Feature Access: ``Provisioning: Tasks``
 Role: Feature Access: ``Provisioning: Library``
   - None: Cannot create Spec Templates from repo files in Repository browser
   - Read or Full: Can create Spec Templates from repo files in Repository browser
+  
+List Repositories
+-----------------
+
+#. Select the ``Provisioning`` link in the navigation bar.
+#. Select the ``Code`` link in the sub-navigation bar.
+#. Users with sufficient permissions will see a list view of all integrated repositories.
+#. Use the Search, Integrations or Organizations filter to filter listed repositories.
+
+  .. tip:: Select the gear icon in the top right of the repos list view to create and save custom list views.
+
+Refresh Repository
+------------------
+
+#. Select the ``Provisioning`` link in the navigation bar.
+#. Select the ``Code`` link in the sub-navigation bar.
+#. Select name of target repository.
+#. Select :guilabel:`ACTIONS v` -> ``Refresh``
+
+Browse Repositories
+-------------------
+
+#. Select the ``Provisioning`` link in the navigation bar.
+#. Select the ``Code`` link in the sub-navigation bar.
+#. Select name of target repository.
+#. Users with sufficient permissions can browse repo folder and file names, select branches, and refresh repositories. Users can access/view file contents with Read or Full level permission on ``Provisioning: Code Repositories``.
+#. Select target folder icon to drill into the folder | expand directory tree.
+
+View Repository File
+--------------------
+
+#. Select the ``Provisioning`` link in the navigation bar.
+#. Select the ``Code`` link in the sub-navigation bar.
+#. Select name of target repository.
+#. Select ``i`` icon to right of target file name.
+
+  .. note:: Users can access/view file contents only with Read or Full level permission on ``Provisioning: Code Repositories``.
+  
+  .. note:: File contents displayed is from last repo sync. Refresh repo to ensure current version for recent commits.
+
+Create Task from Repository file
+--------------------------
+
+#. Select the ``Provisioning`` link in the navigation bar.
+#. Select the ``Code`` link in the sub-navigation bar.
+#. Select name of target repository.
+#. Select gear icon to right of compatible target file name.
+#. Select target task type from available actions
+#. Complete the NEW TASK wizard to create a new Task. The TYPE, SOURCE, REPOSITORY and FILE PATH fields will be automatically configured.
+
+  .. note:: Shell and Powershell tasks types can be created from the code repo browser in |morphver|. Ensure file compatibility with target Task type.
+
+  .. note:: Users can create tasks from Repositories only with Read or Full level permission on ``Provisioning: Tasks``.
+  
+Create Spec Template from Repository file
+-----------------------------------------
+
+#. Select the ``Provisioning`` link in the navigation bar.
+#. Select the ``Code`` link in the sub-navigation bar.
+#. Select name of target repository.
+#. Select gear icon to right of target file name.
+#. Select target spec template type from available actions
+#. Complete the NEW SPEC TEMPLATE wizard to create a new Spec Template. The TYPE, SOURCE, REPOSITORY and FILE PATH fields will be automatically configured.
+
+  .. note:: Terraform spec template types can be created from the code repo browser in |morphver|. Other spec template types can be created from repo files by changing the TYPE field in the NEW SPEC TEMPLATE wizard.
+
+  .. note:: Users can create tasks from Repositories only with Read or Full level permission on ``Provisioning: Library``.
   

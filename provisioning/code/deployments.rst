@@ -57,7 +57,7 @@ Add Deployment
 #. Click the :guilabel:`Save Changes` button to save.
 
 Add Version
-------------
+-----------
 
 #. Select the ``Provisioning`` link in the navigation bar.
 #. Select the ``Code`` link in the sub-navigation bar.
