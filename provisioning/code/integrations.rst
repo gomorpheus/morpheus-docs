@@ -3,7 +3,7 @@
 Code Integrations
 -----------------
 
-The ``/provisioning/code`` **Integrations** section is where Code Integrations, such as Git and Github Repository Integrations, and Jenkins Build Service Integrations, can be created and managed.
+The :menuselection:`Provisioning --> Code --> Integrations` section is where Code Integrations, such as Git and Github Repository Integrations, and Jenkins Build Service Integrations, can be created and managed.
 
 Role Permissions
 ^^^^^^^^^^^^^^^^

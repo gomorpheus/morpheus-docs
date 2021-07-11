@@ -3,7 +3,7 @@
 Repositories
 ------------
 
-The ``/provisioning/code`` **Repositories** section contains the repositories integrated with |morpheus| allowing users to browse repositories folders and files and view file contents from any branch, trigger a refresh, and create tasks, scripts and templates directly from the repos. 
+The :menuselection:`Provisioning --> Code --> Repositories` section contains the repositories integrated with |morpheus| allowing users to browse repositories folders and files and view file contents from any branch, trigger a refresh, and create tasks, scripts and templates directly from the repos. 
 
 - Browse integrated repositories 
 - View repo files
@@ -56,7 +56,7 @@ Refresh Repository
 #. Select the ``Provisioning`` link in the navigation bar.
 #. Select the ``Code`` link in the sub-navigation bar.
 #. Select name of target repository.
-#. Select :guilabel:`ACTIONS v` -> ``Refresh``
+#. Select :guilabel:`ACTIONS |triangledown|` -> ``Refresh``
 
 Browse Repositories
 ^^^^^^^^^^^^^^^^^^^
@@ -73,7 +73,7 @@ View Repository File
 #. Select the ``Provisioning`` link in the navigation bar.
 #. Select the ``Code`` link in the sub-navigation bar.
 #. Select name of target repository.
-#. Select ``i`` icon to right of target file name.
+#. Select |info| icon to right of target file name.
 
 .. note:: Users can access/view file contents only with Read or Full level permission on ``Provisioning: Code Repositories``.
   

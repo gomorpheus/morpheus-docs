@@ -3,7 +3,7 @@
 Deployments
 -----------
 
-.. note:: In v5.3.2+, ``provisioning/deployments`` has been moved to ``provisioning/code`` which contains the Repositories, Deployments and Code Integrations sections.
+.. note:: In v5.3.2+, :menuselection:`Provisioning --> Deployments` has been moved to :menuselection:`Provisioning --> Code --> Deployments`
 
 The deployments section provides very useful PaaS like capabilities when it comes to deploying applications into the newly provisioned environment. These can be uploaded directly from the UI, pulled from a build server, pulled from a public or private Git repository or even via the API and the various plugins created, such as Jenkins, and Gradle to support continuous build / integration workflows.
 
@@ -28,7 +28,7 @@ Getting Started
 
 Getting started with deployments is easy. They can vary slightly for the application stack being deployed but the simplest phase of a deployment is adding a version and adding the appropriate files to the deployment archive that are needed for the application to run. This could be a single file like a `WAR` file for Tomcat, or it could be hundreds of files for stacks like `Ruby on Rails`.
 
-There are a few ways to create a deployment. The first is to use the ``Provisioning -> Code -> Deployments`` section of the application to create them. Simply add a new deployment and give it a name representing the application that is being deployed. Once a deployment is created select the deployment to view its versions (which will be empty to start). Next, it is time to add a version.
+There are a few ways to create a deployment. The first is to use the :menuselection:`Provisioning --> Code --> Deployments` section of the application to create them. Simply add a new deployment and give it a name representing the application that is being deployed. Once a deployment is created select the deployment to view its versions (which will be empty to start). Next, it is time to add a version.
 
 When adding a version there are several options. There are 3 types represented by the UI. These include File, Fetch, and Git respectively. A File deployment allows the user to simply drag their files into the file explorer presented by the dialog. This file explorer can take single files or entire file trees (If files exist in subfolders then only the Chrome browser is supported due to browser limitations at the time of this writing). This is also the common type that is represented when files are uploaded via the CLI, or available build tool integration plugins. Once the files have completed their upload simply save the version for use.
 
@@ -57,7 +57,7 @@ Because of the tracked history of deployments kept within |morpheus| , the deplo
 Offloading Storage
 ^^^^^^^^^^^^^^^^^^
 
-Since a full history of the backup builds are kept in |morpheus| , as the appliance grows it becomes necessary to change where these are stored. On a fresh install these are stored on the local appliance in ``/var/opt/morpheus`` or wherever the master account may have changed the configuration to point to. It is also possible to adjust the deployment archive store by creating a `Storage Provider` tied to an S3 compatible object store, Openstack Swift object store, or any other type of mountpoint provided. This option can be adjusted in ``Admin -> Provisioning`` once a storage provider is created within the account.
+Since a full history of the backup builds are kept in |morpheus| , as the appliance grows it becomes necessary to change where these are stored. On a fresh install these are stored on the local appliance in ``/var/opt/morpheus`` or wherever the master account may have changed the configuration to point to. It is also possible to adjust the deployment archive store by creating a `Storage Provider` tied to an S3 compatible object store, Openstack Swift object store, or any other type of mountpoint provided. This option can be adjusted in ::menuselection:`Administration --> Settings --> Provisioning` once a storage provider is created within the account.
 
 
 Add Deployment
@@ -107,4 +107,4 @@ Delete Deployment
 #. Select the ``Provisioning`` link in the navigation bar.
 #. Select the ``Code`` link in the sub-navigation bar.
 #. Select the ``Deployments`` tab.
-#. Click the Delete Deployment icon on the row of the deployment you wish to delete, or click the Name of the deployment and then the .. class:: redguilabel :guilabel:`DELETE` button.
+#. Click the Delete Deployment icon on the row of the deployment you wish to delete, or click the Name of the deployment and then the .. role:: redguilabel :guilabel:`DELETE` button.
