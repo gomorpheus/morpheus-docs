@@ -19,20 +19,24 @@ Role Permissions
 
 Access and capabilities for the **Repositories** section is determined by the following role permissions:
 
-Feature Access: ``Infrastructure: Groups`` 
+Role: Feature Access: ``Infrastructure: Groups`` 
   - None: Cannot access Provisioning: Code section
   - Read or Full: Can access Provisioning: Code section
+  
+Role: Feature Access: ``Administration: Users`` 
+  - None: Can view repo list. Cannot browse repo folder and file names, select branch, refresh Repositories or access/view file contents.
+  - Read or Full: view repo list, browse repo folder and file names, select branch, refresh Repositories. Cannot access/view file contents without Read or Full level permission on ``Provisioning: Code Repositories``.
 
-Feature Access: ``Provisioning: Code Repositories``
+Role: Feature Access: ``Provisioning: Code Repositories``
   - None: Cannot access Provisioning: Code Repositories
   - List Files: Can browse repo folder and file names, select branch, refresh Repositories. Cannot access/view file contents.
   - Read or Full: Can browse repo folder and file names, select branch, refresh Repositories and access/view file contents.
   
-Feature Access: ``Provisioning: Tasks``
+Role: Feature Access: ``Provisioning: Tasks``
   - None: Cannot create Tasks from repo files in Repository browser
   - Read or Full: Can create Tasks from repo files in Repository browser
   
-  Feature Access: ``Provisioning: Library``
-    - None: Cannot create Spec Templates from repo files in Repository browser
-    - Read or Full: Can create Spec Templates from repo files in Repository browser
-    
+Role: Feature Access: ``Provisioning: Library``
+  - None: Cannot create Spec Templates from repo files in Repository browser
+  - Read or Full: Can create Spec Templates from repo files in Repository browser
+  
