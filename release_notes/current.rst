@@ -14,7 +14,7 @@ New Features
 
 - Huawei Cloud: Image upload functionality now supports images greater than 2GB in size. When adding/editing the Cloud, set an OBS bucket in the IMAGE STORE field as a permanent store location for Morpheus virtual images :superscript:`5.3.2`
 - Hyper-V: Added discovery and inventory for Hyper-V Clouds. Mark checkbox to “INVENTORY EXISTING INSTANCES” on the add/edit Cloud modal to enable or disable this option. As with other Cloud types, discovered VMs can be converted to managed Instances and deleted with or without removing the underlying infrastructure :superscript:`5.3.2`
-Invoices: The Invoices UI no longer shows Subtenant users the cost value for invoices which are owned by the primary Tenant. Instead they will see price values (which include any price markup set by primary Tenant administrators) mirrored as the cost value
+- Invoices: The Invoices UI no longer shows Subtenant users the cost value for invoices which are owned by the primary Tenant. Instead they will see price values (which include any price markup set by primary Tenant administrators) mirrored as the cost value
 - Logging: Added support for custom NGINX log formats by updating morpheus.rb with a new log_format_name and log_format value
 
 |morpheus| API Improvements
