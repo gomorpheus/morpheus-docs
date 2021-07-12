@@ -1,19 +1,20 @@
+.. _JobsJobs:
+
 Jobs
 ----
 
-Role Permissions
-^^^^^^^^^^^^^^^^
+.. toggle-header:: :header: Required Role Permissions **Click to Expand/Hide**
 
-Provisioning: Jobs
+    Provisioning: Jobs
 
-- **None:** Cannot access ``Provisioning > Jobs > Jobs tab``
-- **Read:** Can access ``Provisioning > Jobs > Jobs tab`` but cannot create, edit, or delete Jobs
-- **Full:** Full permissions to create, view, edit, and delete Jobs
+    - **None:** Cannot access ``Provisioning > Jobs > Jobs tab``
+    - **Read:** Can access ``Provisioning > Jobs > Jobs tab`` but cannot create, edit, or delete Jobs
+    - **Full:** Full permissions to create, view, edit, and delete Jobs
 
-Provisioning: Job Executions
+    Provisioning: Job Executions
 
-- **None:** Cannot access ``Provisioning > Jobs > Job Executions tab``
-- **Read:** Can access and view ``Provisioning > Jobs > Job Executions tab`` including job execution history, status, and Job output
+    - **None:** Cannot access ``Provisioning > Jobs > Job Executions tab``
+    - **Read:** Can access and view ``Provisioning > Jobs > Job Executions tab`` including job execution history, status, and Job output
 
 Creating Jobs
 ^^^^^^^^^^^^^

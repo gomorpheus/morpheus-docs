@@ -1,22 +1,31 @@
+.. _JobExecutions:
+
 Job Executions
 --------------
 
 The Job Executions tab contains execution history of completed Jobs, including any process outputs and error messages. Information included in the Job Executions list include:
 
-- **JOB:** The name of the executed Job
-- **DESCRIPTION:** When the Job Execution is expanded, the name of each executed task in the Job is listed in this column
-- **TYPE:** The Job type, either Task or Workflow. When a Workflow Job is expanded, each individual Task making up the Workflow is identified as a Task in this column
-- **START DATE:** The date and time the Job Execution kicked off. When expanded, the start date and time of each individual Task are also shown
-- **ETA/TIME:** The time taken for the Job to complete. When expanded, the time to complete each individual Task is also shown
-- **ERROR:** Any errors surfaced are shown here. When expanded, any surfaced errors for individual Tasks are also shown
+.. toggle-header:: :header: Required Role Permissions **Click to Expand/Hide**
 
-Click the ⓘ icon at the end of the row for a Job Execution or individual Task (when a Job Execution is expanded) to view the Execution Detail modal which provides the following information:
+    Access and capabilities for the **Job Executions** section is determined by the following role permissions:
+              
+    Role: Feature Access: ``Provisioning: Job Executions`` 
+      - None: Cannot access Provisioning: Job Executions section
+      - Read: Can access Provisioning: Job Executions section
 
-- **Name of the Job or individual Task**
-- **Description**
-- **Start Date**
-- **Created By**
-- **Duration**
-- **Status:** Completed, Running, or Failed
-- **PROCESS OUTPUT:** Returned values and outputs from the completed Job
-- **ERRORS:** Any errors surfaced from the completed Job
+- Execution Status Icon
+- **Job Name + Task Name + Result Error Message:** The title of each execution included the Job Name, Task or Workflow name (for Task and Workflow job types), and execution result error messages when applicable. The title also links to the Job Execution detail page.
+- **Start Date:** The date and time the Job Execution kicked off. When expanded, the start date and time of each individual Task are also shown
+- **Duration** The time taken for the Job to complete. When expanded, the time to complete each individual Task is also shown
+- **User** user who executed or scheduled the Job
+
+Additional details and actions are available per execution:
+
+- Select the Title name to go to the Job Execution detail page.
+
+- Select the ⌃ icon at the end of the row to expand the execution and view additional details including tasks process output.
+
+- Select the 📋 icon to copy process output to local clipboard
+
+- Select the ⌄ icon at the end of an expanded to to collapse
+
