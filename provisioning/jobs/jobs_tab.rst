@@ -15,6 +15,7 @@ Jobs
 
     - **None:** Cannot access ``Provisioning > Jobs > Job Executions tab``
     - **Read:** Can access and view ``Provisioning > Jobs > Job Executions tab`` including job execution history, status, and Job output
+|
 
 Creating Jobs
 ^^^^^^^^^^^^^
@@ -28,9 +29,7 @@ To create a new job:
 #. Enter the following
 
    **NAME:** Name of the Job in |morpheus|
-   **JOB TYPE:**
-      Task: Job will execute a selected Task
-      Workflow: Job will execute a selected Workflow
+   **JOB TYPE:** A Task Job will execute a selected Task, a Workflow Job will execute a selected Workflow
    **ENABLED:** When checked, the Job will run as scheduled
 
 #. Select :guilabel:`NEXT`
