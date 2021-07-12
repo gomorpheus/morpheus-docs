@@ -8,6 +8,13 @@ Invoices
 
 |morpheus| invoices offer highly-granular costing data through invoices. Invoice views are highly customizable, allowing for nearly unlimited combinations of output columns and filtering. Invoices are based on monthly periods and allow you to slice costs in a highly granular way, as well as predict final monthly costs before the end of the period. As with other |morpheus| UI pages that support advanced table customization, these views can be saved to provide easy access to costing views specific to varying business needs. By default, the invoice list page will show the last three months' invoices across all clouds and invoice types but the list can be modified to target differing time periods or resource groupings. Read on in this section to discover the meaning of various invoice types and how this tool can be used to create targeted costing views.
 
+Invoices for Public vs On-Prem Clouds
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+|morpheus| supports live cost syncing for many public clouds, including all of the most commonly-used public clouds like Amazon AWS, Microsoft Azure, and Google Cloud Platform. For these clouds, costing sync is enabled through the COSTING field on the Add/Edit Cloud modal (Infrastructure > Clouds > selected Cloud > EDIT button). When live costs are synced from public clouds, invoices will be generated for this activity including month-to-date costs, projected monthly totals, historical cost data, and a lot more which is discussed in the following sections.
+
+Additionally, |morpheus| has implemented a costing service for on-prem clouds to closely mirror the live costing experience through a public cloud. As with public clouds, this costing service is enabled for on-prem clouds through the COSTING field on the Add/Edit Cloud modal (Infrastructure > Clouds > selected Cloud > EDIT button). Change the setting to "Sync Costing" and save the changes to the cloud integration. From this point, costs will be aggregated into invoices for on-prem clouds in the same way as public clouds including complete line item listings, current costs for the month, month-end projections, and much more as discussed in the next sections.
+
 Invoice List Page
 ^^^^^^^^^^^^^^^^^
 
@@ -74,30 +81,30 @@ When creating an invoices view, there are many output columns available to selec
   - **End Date:** The end date and time for the invoice period, typically the last day of the month at midnight
   - **Ref Start:** The date and time the reference object is created or the start of the invoicing period if the reference object existed prior to the start of the invoicing period
   - **Ref End:** The date and time the reference object is decommissioned or the end of the invoicing period if the reference object still existed at the end of the period
-  - **Compute Cost:** The actual compute costs for the invoice (from public cloud costing API when available, otherwise mirrored metered cost)
-  - **Storage Cost:** The actual storage costs for the invoice (from public cloud costing API when available, otherwise mirrored metered cost)
-  - **Network Cost:** The actual network costs for the invoice (from public cloud costing API when available, otherwise mirrored metered cost)
-  - **Extra Cost:** The actual additional costs for the invoice (from public cloud costing API when available, otherwise mirrored metered cost)
-  - **MTD Cost:** The actual month-to-date costs for the invoice (from public cloud costing API when available, otherwise mirrored metered cost)
-  - **Total Cost:** The actual total costs for the invoice (from public cloud costing API when available, otherwise mirrored metered cost)
-  - **Metered Compute Cost:** Compute costs determined by |morpheus| usage and pricing data (when live pricing data from a public cloud is not available, such as with an on-prem cloud)
-  - **Metered Storage Cost:** Storage costs determined by |morpheus| usage and pricing data (when live pricing data from a public cloud is not available, such as with an on-prem cloud)
-  - **Metered Network Cost:** Network costs determined by |morpheus| usage and pricing data (when live pricing data from a public cloud is not available, such as with an on-prem cloud)
-  - **Metered Extra Cost:** Additional costs determined by |morpheus| usage and pricing data (when live pricing data from a public cloud is not available, such as with an on-prem cloud)
-  - **Metered MTD Cost:** Month-to-date costs determined by |morpheus| usage and pricing data (when live pricing data from a public cloud is not available, such as with an on-prem cloud)
-  - **Metered Total Cost:** Total costs determined by |morpheus| usage and pricing data (when live pricing data from a public cloud is not available, such as with an on-prem cloud)
-  - **Compute Price:** The actual compute price (cost plus markup) for the invoice (from public cloud costing API when available, otherwise mirrored metered cost)
-  - **Storage Price:** The actual storage price (cost plus markup) for the invoice (from public cloud costing API when available, otherwise mirrored metered cost)
-  - **Network Price::** The actual network price (cost plus markup) for the invoice (from public cloud costing API when available, otherwise mirrored metered cost)
-  - **Extra Price:** The actual additional price (cost plus markup) for the invoice (from public cloud costing API when available, otherwise mirrored metered cost)
-  - **MTD Price:** The actual month-to-date price (cost plus markup) for the invoice (from public cloud costing API when available, otherwise mirrored metered cost)
-  - **Total Price:** The actual total price (cost plus markup) for the invoice (from public cloud costing API when available, otherwise mirrored metered cost)
-  - **Metered Compute Price:** Compute price (cost plus markup) determined by |morpheus| usage and pricing data (when live pricing data from a public cloud is not available, such as with an on-prem cloud)
-  - **Metered Storage Price:** Storage price (cost plus markup) determined by |morpheus| usage and pricing data (when live pricing data from a public cloud is not available, such as with an on-prem cloud)
-  - **Metered Network Price:** Network price (cost plus markup) determined by |morpheus| usage and pricing data (when live pricing data from a public cloud is not available, such as with an on-prem cloud)
-  - **Metered Extra Price:** Additional price (cost plus markup) determined by |morpheus| usage and pricing data (when live pricing data from a public cloud is not available, such as with an on-prem cloud)
-  - **Metered MTD Price:** Month-to-date price (cost plus markup) determined by |morpheus| usage and pricing data (when live pricing data from a public cloud is not available, such as with an on-prem cloud)
-  - **Metered Total Price:** Total price (cost plus markup) determined by |morpheus| usage and pricing data (when live pricing data from a public cloud is not available, such as with an on-prem cloud)
+  - **Compute Cost:** The actual compute costs for the invoice (from public cloud costing API when available or from an on-prem cloud with "Sync Costing" enabled)
+  - **Storage Cost:** The actual storage costs for the invoice (from public cloud costing API when available or from an on-prem cloud with "Sync Costing" enabled)
+  - **Network Cost:** The actual network costs for the invoice (from public cloud costing API when available or from an on-prem cloud with "Sync Costing" enabled)
+  - **Extra Cost:** The actual additional costs for the invoice (from public cloud costing API when available or from an on-prem cloud with "Sync Costing" enabled)
+  - **MTD Cost:** The actual month-to-date costs for the invoice (from public cloud costing API when available or from an on-prem cloud with "Sync Costing" enabled)
+  - **Total Cost:** The actual total costs for the invoice (from public cloud costing API when available or from an on-prem cloud with "Sync Costing" enabled)
+  - **Metered Compute Cost:** Compute costs determined by |morpheus| usage and pricing data (when live pricing data is not available, such as with an on-prem cloud without "Sync Costing" enabled)
+  - **Metered Storage Cost:** Storage costs determined by |morpheus| usage and pricing data (when live pricing data is not available, such as with an on-prem cloud without "Sync Costing" enabled)
+  - **Metered Network Cost:** Network costs determined by |morpheus| usage and pricing data (when live pricing data is not available, such as with an on-prem cloud without "Sync Costing" enabled)
+  - **Metered Extra Cost:** Additional costs determined by |morpheus| usage and pricing data (when live pricing data is not available, such as with an on-prem cloud without "Sync Costing" enabled)
+  - **Metered MTD Cost:** Month-to-date costs determined by |morpheus| usage and pricing data (when live pricing data is not available, such as with an on-prem cloud without "Sync Costing" enabled)
+  - **Metered Total Cost:** Total costs determined by |morpheus| usage and pricing data (when live pricing data is not available, such as with an on-prem cloud without "Sync Costing" enabled)
+  - **Compute Price:** The actual compute price (cost plus markup) for the invoice (from public cloud costing API when available or from an on-prem cloud with "Sync Costing" enabled)
+  - **Storage Price:** The actual storage price (cost plus markup) for the invoice (from public cloud costing API when available or from an on-prem cloud with "Sync Costing" enabled)
+  - **Network Price::** The actual network price (cost plus markup) for the invoice (from public cloud costing API when available or from an on-prem cloud with "Sync Costing" enabled)
+  - **Extra Price:** The actual additional price (cost plus markup) for the invoice (from public cloud costing API when available or from an on-prem cloud with "Sync Costing" enabled)
+  - **MTD Price:** The actual month-to-date price (cost plus markup) for the invoice (from public cloud costing API when available or from an on-prem cloud with "Sync Costing" enabled)
+  - **Total Price:** The actual total price (cost plus markup) for the invoice (from public cloud costing API when available or from an on-prem cloud with "Sync Costing" enabled)
+  - **Metered Compute Price:** Compute price (cost plus markup) determined by |morpheus| usage and pricing data (when live pricing data is not available, such as with an on-prem cloud without "Sync Costing" enabled)
+  - **Metered Storage Price:** Storage price (cost plus markup) determined by |morpheus| usage and pricing data (when live pricing data is not available, such as with an on-prem cloud without "Sync Costing" enabled)
+  - **Metered Network Price:** Network price (cost plus markup) determined by |morpheus| usage and pricing data (when live pricing data is not available, such as with an on-prem cloud without "Sync Costing" enabled)
+  - **Metered Extra Price:** Additional price (cost plus markup) determined by |morpheus| usage and pricing data (when live pricing data is not available, such as with an on-prem cloud without "Sync Costing" enabled)
+  - **Metered MTD Price:** Month-to-date price (cost plus markup) determined by |morpheus| usage and pricing data (when live pricing data is not available, such as with an on-prem cloud without "Sync Costing" enabled)
+  - **Metered Total Price:** Total price (cost plus markup) determined by |morpheus| usage and pricing data (when live pricing data is not available, such as with an on-prem cloud without "Sync Costing" enabled)
   - **Active:** Indicates whether or not the reference object is currently existing and active
   - **Date Created:** The date and time the invoice is created
   - **Last Updated:** The date and time the invoice was last updated

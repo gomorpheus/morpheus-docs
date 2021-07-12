@@ -9,6 +9,7 @@ Supported Bucket Types
 - Alibaba
 - Amazon S3
 - Azure
+- Google Cloud Storage
 - Openstack Swift
 - Rackspace CDN
 
@@ -192,6 +193,44 @@ The Bucket will be created and displayed in the Buckets tab.
 
   .. WARNING:: When deleting a Bucket, all Deployment Versions and Backups associated with the Bucket will be deleted.
 
+
+Google Cloud Storage Buckets
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. NOTE:: Google Cloud Storage Buckets are associated with an existing GCP Cloud integration. Ensure the GCP Cloud integration is pre-existing before attempting to create a new Google Cloud Storage Bucket. On the initial integration and subsequent cloud syncs, Google Cloud Storage Buckets are automatically onboarded and updated.
+
+To add a Google Cloud Storage Bucket:
+
+#. Select the Infrastructure link in the navigation bar
+#. Select the Storage link in the sub-navigation bar
+#. In the BUCKETS tab, Click the :guilabel:`+ ADD` button
+#. Select `Google Cloud Storage` from the dropdown list
+#. From the NEW BUCKET Wizard input the following:
+
+   NAME
+     A friendly name for the bucket in |morpheus|
+   STORAGE SERVICE
+     Select the GCP cloud integration this bucket should be created in
+   PROJECT ID
+     Select the Project to create the group under, Projects are a GCP-specific concept and are logical grouping for your resources. Select any existing project associated with your selected GCP cloud integration
+   BUCKET NAME
+     The name for the bucket resource on the GCP side
+   LOCATION TYPE
+     Select Region, Dual-Region, or Multi-Region. Buckets with a Region location type will be stored in one GCP region, such as "us-east1 (South Carolina)". Dual-Region and Multi-Region data is stored in two (or more, in the case of multi-region) GCP regions separated by a significant physical distance. Dual-Region and Multi-Region data is geo-redundant across the multiple selected regions
+   LOCATION
+     A selected GCP region (or regions, in the case of dual and multi-location data) where the data will be stored
+   STORAGE CLASS
+     Select Standard, Nearline, Coldline, or Archive. The appropriate storage class will depend on how frequently the bucket data is accessed and how long the type of data in the bucket is expected to be stored. More information on storage classes can be found in `GCP Documentation <https://cloud.google.com/storage/docs/storage-classes#descriptions>`_
+   ACTIVE
+     When marked, the bucket is available for use in |morpheus|
+   DEFAULT BACKUP TARGET
+     Sets the bucket as the default storage option when creating backups at provision time or in the Backups section of |morpheus|
+   DEFAULT DEPLOYMENT ARCHIVE TARGET
+     Sets this Bucket as the default storage target when uploading deployment files in the `Deployments` section
+   DEFAULT VIRTUAL IMAGE STORE
+     Sets this bucket as the default storage target when uploading virtual images from the `Virtual Images` section, importing images from Instance actions, creating images with the `Image Builder`, and when creating new images from `Migrations`
+   RETENTION POLICY
+     Select None and the files in this bucket will never be deleted or backed up by |morpheus|. When selecting 'Backup Old Files', |morpheus| will backup files into another selected bucket once they reach a certain number of days old. When selecting 'Delete Old Files', |morpheus| will delete any files that reach a certain number of days old
 
 Dell EMC ECS Buckets
 ^^^^^^^^^^^^^^^^^^^^^

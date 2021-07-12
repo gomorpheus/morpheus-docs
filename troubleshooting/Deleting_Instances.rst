@@ -5,21 +5,21 @@ It is important to know the difference between deleting an Instance from the Pro
 
 .. IMPORTANT:: Deleting an Instance a with Virtual Machines in it will always try to delete the actual Virtual Machines.
 
-Instances are managed resources that may have one or multiple Virtual Machines associated. Since the vm's in the Instance are managed by |morpheus|, deleting an Instance a with Virtual Machines in it will always try to delete the actual Virtual Machines.
+Instances are managed resources that may have one or multiple Virtual Machines associated. Since the VMs in the Instance are managed by |morpheus|, deleting an Instance with a Virtual Machines in it will always try to delete the actual Virtual Machines.
 
 There are scenarios where deleting, or attempting to delete the associated Virtual Machines is not desired:
 
 - The Instance needs to be deleted, but the actual Virtual Machines need to remain.
-- The actual Virtual Machines have already been deleted outside of |morpheus|, so only the records in |morpheus| need to be removed.
+- The actual Virtual Machines have already been deleted outside of |morpheus|, so only the orphaned records in |morpheus| need to be removed.
 
 Deleting an Instance without deleting Infrastructure
 ----------------------------------------------------
 
-It is not possible to delete and Instance from the Provisioning section without removing the associated Infrastructure/VM's. However this can be accomplished from the Infrastructure section by deselecting "Remove Infrastructure" when deleting the VM:
+It is not possible to delete an Instance from the Provisioning section without removing the associated Infrastructure/VMs. However, this can be accomplished from the Infrastructure section by deselecting "Remove Infrastructure" when deleting the VM:
 
-1. Navigate to the Virtual Machine record by clicking on the VM's name in the Virtual Machines section in the Instances details section, or by navigating to `Infrastructure -> Compute - Virtual Machines` and selecting the VM.
+1. Navigate to the Virtual Machine record by clicking on the VM name in the Virtual Machines section of the Instance detail page or by navigating to ``Infrastructure > Compute > Virtual Machines`` and selecting the VM.
 
-.. TIP: Global Search makes it easy to find resources in any section.
+.. TIP: The global search bar makes it easy to find resources in any section.
 
 2. Click "DELETE"
 
@@ -34,7 +34,7 @@ It is not possible to delete and Instance from the Provisioning section without 
 
 4. Select DELETE
 
-This will delete the Virtual Machine record as well as the Instance record, but leave the Infrastructure/VM in place. If the VM is in a Cloud that is being inventoried, it will s
+This will delete the Virtual Machine record as well as the Instance record but leave the Infrastructure/VM in place. If the VM is in a Cloud that is being inventoried, it will sync back into |morpheus| after the next Cloud refresh. You can disable automatic Cloud inventory by editing the Cloud (Infrastructure > Clouds > selected Cloud > EDIT button) and turning off this feature.
 
 
 Deleting an Instance/VM that does not exist anymore

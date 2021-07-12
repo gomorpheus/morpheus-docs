@@ -69,6 +69,8 @@ PASSWORD
   The integration service account password. See the integration steps above for more detail
 IMAGE FORMAT
   Select QCOW2, RAW or VMDK image type
+Image Store
+  Set an OBS bucket as a permanent store location for |morpheus| virtual images. Users are limited to uploading images of 2GB or less in size if an OBS bucket is not specified here
 Inventory Existing Instances
   Select for |morpheus| to discover and sync existing VMs
 Enable Hypervisor Console

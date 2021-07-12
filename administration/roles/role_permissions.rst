@@ -5,34 +5,41 @@ Role Permissions
 
 User Role Permission Sections
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-FEATURE ACCESS
+Features
   Controls User access level for UI sections and features in |morpheus|. The complete feature permissions grid is included below.
-GROUP ACCESS
+Groups
   Controls User access level for Groups. Groups are not a Multi-Tenant construct, only Groups created in the current Tenant will be visible.
-INSTANCE TYPE ACCESS
+Instance Types
   Controls User access level for Instance Types. Only Instance Types created in the current Tenant or those created in the Master Tenant and shared with the current Tenant will be available.
-BLUEPRINT ACCESS
+Blueprints
   Controls User access level for Blueprints during App provisioning. Only Blueprints created in the current Tenant or those created in the Master Tenant and shared with the current Tenant will be available.
-PERSONAS
+Report Types
+  Controls User access for each report type in the Reports section (Operations > Reports). The user must also have Operations: Reports access granted under the Feature permissions tab.
+Personas
   Controls User access to |morpheus| Personas, at the time of this writing Users may be given access to the Standard (full |morpheus| experience) or Service Catalog Personas
-CATALOG ITEM TYPES
+Catalog Item Types
   Controls User access to Catalog Item types within the Service Catalog Persona. Only Catalog Items created in the current Tenant or those created in the Master Tenant and shared with the current Tenant will be available.
+VDI Pools
+  Controls User access to VDI Pools which are currently configured (Tools > VDI Pools) via the Virtual Desktops Persona view
 
 Tenant Role Permission Sections
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-FEATURE ACCESS
+Features
   Controls Tenant access level for sections and features in |morpheus|. The complete feature permissions grid is included below.
-CLOUD ACCESS
+Clouds
   Controls Tenant access level for Clouds. This list includes Clouds integrated from the Master Tenant and shared publicly. Tenants given this Tenant Role will have either Full, Read, or None access levels to a given Cloud. See the section below for more information on Cloud Access levels.
-INSTANCE TYPE ACCESS
+Instance Types
   Controls Tenant access level for Instance Types. Only Instance Types created in the current Tenant or those created in the Master Tenant and shared with the current Tenant will be available.
-BLUEPRINT ACCESS
+Blueprints
   Controls Tenant access level for Blueprints during App provisioning. Only Blueprints created in the current Tenant or those created in the Master Tenant and shared with the current Tenant will be available.
-PERSONAS
+Report Types
+  Controls Tenant access for each report type in the Reports section (Operations > Reports). The Tenant must also have Operations: Reports access granted under the Feature permissions tab.
+Personas
   Controls Tenant access to |morpheus| Personas, at the time of this writing Users may be given access to the Standard (full |morpheus| experience) or Service Catalog Personas
-CATALOG ITEM TYPES
+Catalog Item Types
   Controls Tenant access to Catalog Item types within the Service Catalog Persona. Only Catalog Items created in the current Tenant or those created in the Master Tenant and shared with the current Tenant will be available.
+VDI Pools
+  Controls Tenant access to VDI Pools which are currently configured (Tools > VDI Pools) via the Virtual Desktops Persona view
 
 Cloud Access Levels
 ^^^^^^^^^^^^^^^^^^^
@@ -550,16 +557,22 @@ Role Mappings
     - This selection launches the wizard to begin the process of provisioning an identical Instance
     - This permission is recommended for those responsible for provisioning.
     -
-  * - Provisioning: Deployment Integrations
+  * - Provisioning: Code Integrations
     - None, Read, Full
-    - Determines access to the Integrations tab on the Provisioning > Deployments page.
-    - From this page deployment integrations may be created, edited, or deleted. On create the integration product is selected and all associated connection and authentication information must be provided. Integrations available include Git, Github, and Jenkins.
-    - This permission is recommended for those responsible for the integration between |morpheus| and deployment technologies.
-    - This permission is recommended to be set to None on the Tenant Role to restrict access for Subtenant users.
-  * - Provisioning: Deployments
+    - Determines access to the Integrations tab on the Provisioning > Code page.
+    - From this page code integrations may be created, edited, or deleted. Integrations available include Git, Github, and Jenkins.
+    - This permission is recommended for those responsible for the integration between |morpheus| and code repositories and services.
+    - 
+  * - Provisioning: Code Deployments
     - None, Read, Full
-    - Determines access to the Deployments tab on the Provisioning > Deployments page.
+    - Determines access to the Deployments tab on the Provisioning > Code page.
     - The Deployments page provides the ability to use git, fetch from a url, or upload a file to be utilized during the provisioning of an Instance or pushed to an existing Instance.
+    - This permission is recommended for those responsible for providing and managing software.
+    -
+  * - Provisioning: Code Repositories
+    - None, List Files, Read, Full
+    - Determines access to the Deployments tab on the Provisioning > Code page.
+    - The Code Repositories contains the repositories integrated with |morpheus| allowing users to browse repositories folders and files and view file contents from any branch, trigger a refresh, and create tasks, scripts and templates directly from the repos. 
     - This permission is recommended for those responsible for providing and managing software.
     -
   * - Provisioning: Execute Script
