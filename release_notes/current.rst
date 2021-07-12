@@ -12,6 +12,7 @@
 New Features
 ============
 
+- Azure: Morpheus now syncs available (non-preview) AKS Kubernetes versions daily. Existing synced versions that are no longer supported by Azure are automatically disabled. The table below includes available AKS versions at time of |morphver| release.
 - Clouds: Added scale factor setting for Instance scaling at provision time to all cloud integrations that didn't currently support it
 - Clouds: All Cloud types now have the option to skip |morpheus| Agent installation at provision time. Previously this was only supported on the most commonly-used Cloud types
 - Google Cloud: Added disk type selection support. When provisioning (Instances, Apps, Clusters), cloning and reconfiguring, choose standard, balanced or ssd disk types. Pricing is synced based on the selected disk type and disk type information is onboarded or updated on Cloud sync
@@ -34,10 +35,64 @@ New Features
 Fixes
 =====
 
+- Amazon: EKS: Fixed display and convert to managed issue with discovered EKS Clusters
+- Amazon/AWS: CloudFormation: Fixed ``name`` tag value being set to logical id instead of tag value when ``name`` tag is specified in CF :superscript:`5.2.6`
+- Amazon/AWS: Fixed Route53 DNS integration SDK not routing through global proxy :superscript:`5.2.7`
+- Ansible Tower: Updated ``job_executions`` : ``config_settings`` field data type to LONGTEXT
+- API: Fix the ``/api/instances`` response value of ``volumes`` so it is consistent between the list and get by id actions. :superscript:`5.2.7`
+- Azure: Fixed non-ASCII UTF8 characters adminPassword encoding problem
+- Azure: Fixed provisioning issue when using and existing availability set :superscript:`5.2.6`
+- Azure: Fixed tags created in |morpheus| not being pushed to Azure for SQL Server instance types :superscript:`5.2.6`
+- Blueprints: Fixed display issue with Typeahead option types in blueprints/apps :superscript:`5.2.6`
+- Blueprints: Fixed some Custom Options not saving in blueprint due to NULL code value on Option Type record :superscript:`5.2.7`
+- Cisco ACI: Fixed issue creating and deleting ACI Contexts :superscript:`5.2.7`
+- Cisco ACI: Fixed issue deleting ACI Tenants :superscript:`5.2.7`
+- Console: Fixed paste function still showing when using Hypervisor Console mode
+- Convert to Managed: Fixed bulk convert to managed issue caused by required option types not rendering when using custom instance types :superscript:`5.2.7`
+- Convert to Managed: Fixed custom option types not reloading when changing layout selection during convert to managed :superscript:`5.2.7`
+- Convert to Managed: Plan option will now appear if the selected VMs are all of the same type (cloud) :superscript:`5.2.7`
+- Deployments: Fixed new DEPLOY FOLDER values on Node Type not saving :superscript:`5.2.7`
+- Failover Service: Fixed VMs shut down outside of |morpheus| getting auto-started by |morpheus| when another VM containing the same agent config/api key is started (from DR process or external cloning) :superscript:`5.2.7`
+- Hosts: "Open Console" action removed from Hosts list action menus :superscript:`5.2.7`
+- Hosts: Fixed ``Cores`` value on VM Detail pages :superscript:`5.2.7`
+- Infoblox: Updated Infoblox sync process to no longer remove records from |morpheus| when there are no record found during a successful sync to account for Infblox outtage/reinstall & restore scenerio :superscript:`5.2.7`
+- Jobs: Workflows: Fixed database session issue for long-running tasks executed via Operational Workflow Jobs :superscript:`5.2.7`
+- KVM: Fixed VM sync for brownfield KVM Host after initial sync
+- Login: Specifying an invalid/non-existent subdomain in account login url ``/login/account/<subdomain>`` now redirects to ``/login`` instead of causing error. :superscript:`5.2.6`
+- Maas: Fixed Maas provisioning issue caused by null tag being passed :superscript:`5.2.6`
+- NSX-T: Fixed issue removing Passive Monitors from server pools
+- NSX-T: Fixed issue with health check monitors created in sub-tenants not being removed from server pools when the NSX-T integration is owned by the master tenant :superscript:`5.2.6`
+- NSX-T: Improvements to NSX-T Load Balancer profile creation functionality :superscript:`5.2.7`
+- NSX-V: Fixed disabling distributed firewall rules created from Morpheus UI :superscript:`5.2.7`
+- NSX-V: Fixed ESG/DLR uplink interfaces deletion
+- NSX-V: Fixed Load Balancer profiles not selectable from the Blueprint Apps :superscript:`5.2.7`
+- NSX-V: Fixed monitor assignment for load balancer server pools in subtenants :superscript:`5.2.7`
+- Option Types: Fixed issue with hidden option type value saving when toggling between layouts in provisioning wizard
+- Option Types: Fixed required option type validation issue on workflow execution that could prevent workflow from executing
+- Oracle Cloud: Fixed issue with provisioning Windows images in OCI not finalizing :superscript:`5.2.7`
+- Policies: Approvals: Fixed cloning an Instance in a subtenant with an active approval policy not producing approval record, leaving Instance in pending approval state :superscript:`5.2.6`
+- Policies: Workflow Policies: Fixed Platform filter on tasks associated with Workflows in a Workflow policy not being respected :superscript:`5.2.7`
+- PowerDNS: Fixed TTL not matching TTL set in Morpheus :superscript:`5.2.7`
+- Proxies: Fixed issue with Proxy settings not being applied to Windows Instances during provisioning
+- Roles: Fixed Global Access "Read" having higher precedence than "Custom" :superscript:`5.2.7`
+- Security: XSS Vulnerability remediated :superscript:`5.2.7`
+- Service Catalog: Fixed validation error for ARM and CF Blueprint catalog item ordering :superscript:`5.2.6`
+- Sync: Fixed some cloud types sycning FQDN as container/compute_server hostname, resulting in a computed FQDN of hostname>.<domain>.<domain>
 - UI: Some UI pages have been updated to display data differently when the number of relevant objects is high enough to potentially impact application performance :superscript:`5.2.6`
+- User Groups: User Group names are now required to be unique only inside same tenant, not unique across all tenants :superscript:`5.2.7`
+- vCloud Director/vCD: Fixed issue where datastore sync would only return first 25 records :superscript:`5.2.6`
+- VMware Cloud AWS/VMC: Fixed scenario causing editing modal of existing Cloud to hang :superscript:`5.2.6`
+- VMware: Fixed duplicate VM names in different folders causing external Id conflict :superscript:`5.2.7`
+- VMWare: Fixed Managed VM ``hostname`` changes syncing and updating server record but not associated container record :superscript:`5.2.6`
+- VMware: vCenter: Removed name match sync function that could possibly cause wrong vm to be deleted when a provision fails to a unique name constraint in |morpheus|. external-id and uuid are now only used for sync matching :superscript:`5.2.6`
+- VMware: vCenter: Removed name match sync function that could possibly cause wrong vm to be deleted when a provision fails to a unique name constraint in |morpheus|. external-id and uuid are now only used for sync matching :superscript:`5.2.7`
+- Whitelabing: Support Menu: Fixed re-enabling Support Menus in subtenants after they have been disabled :superscript:`5.2.7`
 
 Appliance & Agent Updates
 =========================
+
+- Appliance: The local code repository path has been moved from ``/var/opt/morpheus/morpheus-ui/repo`` to ``/var/opt/morpheus/morpheus-local/repo`` to reduce potential shared storage issues and perfomace restrictions. The reconfigure process creates the folders and sets the paths in application.yml, no manual intervention is needed unless symlinks exisit on ``/var/opt/morpheus/morpheus-ui/repo/git`` which will need to be removed prior to reconfiguring 5.3.2. The old ``/var/opt/morpheus/morpheus-ui/repo`` path will be automatically deleted in a fulture release but can be manually recursivly deleted at any time for storage reclaimation.
+- Morpheus Windows Agent: New windows agent version 1.7.0 addresses agent issue caused by new unformatted volumes being added, resulting in ```"ERROR:Error in SendAgentInit: The volume does not contain a recognized file system. Please make sure that all required file system drivers are loaded and that the volume is not corrupted."``` agent error. :superscript:`5.2.7`
 
 Refer to :ref:`compatibility` for additional details.
 
