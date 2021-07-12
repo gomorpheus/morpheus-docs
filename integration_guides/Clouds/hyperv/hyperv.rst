@@ -7,6 +7,7 @@ Features
 ^^^^^^^^
 
 • Virtual Machine Provisioning
+• Discovery of Existing Instances
 • Containers
 • Backups / Snapshots
 • Resources Groups

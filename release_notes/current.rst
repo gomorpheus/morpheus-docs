@@ -7,53 +7,22 @@
 .. No highlights this time, small update
   .. include:: highlights.rst
 
+.. NOTE:: Items appended with :superscript:`5.3.2` are also included with that version.
+
 New Features
 ============
 
-- Keys & Certs: Added support for NSX-T SSL certificate creation (Infrastructure > Keys & Certs > SSL Certificates tab) when an NSX-T integration is present
-- VMware vCenter: CPU and memory hot-add settings are now evaluated independently when reconfiguring CPU and memory for vCenter Instances. Previously, these settings were evaluated as a group rather than independently which could cause VMs to be restarted even when they were configured to support hot-add of memory and/or CPU
+- Huawei Cloud: Image upload functionality now supports images greater than 2GB in size. When adding/editing the Cloud, set an OBS bucket in the IMAGE STORE field as a permanent store location for Morpheus virtual images :superscript:`5.3.2`
+- Hyper-V: Added discovery and inventory for Hyper-V Clouds. Mark checkbox to “INVENTORY EXISTING INSTANCES” on the add/edit Cloud modal to enable or disable this option. As with other Cloud types, discovered VMs can be converted to managed Instances and deleted with or without removing the underlying infrastructure :superscript:`5.3.2`
+Invoices: The Invoices UI no longer shows Subtenant users the cost value for invoices which are owned by the primary Tenant. Instead they will see price values (which include any price markup set by primary Tenant administrators) mirrored as the cost value
+- Logging: Added support for custom NGINX log formats by updating morpheus.rb with a new log_format_name and log_format value
 
 |morpheus| API Improvements
 ===========================
 
-- Jobs: Updated Jobs to run against multiple targets in parallel rather than sequentially. Job execution records are added for each target rather than just for the latest target as was the case previously
-- Keys & Certs: Added support for NSX-T SSL certificate creation through |morpheus| API when an NSX-T integration is present
+- Instances: The ``details`` parameter is set to ``true`` by default for API calls to GET a specific Instance. For calls to GET all Instances, the ``details`` parameter is still ``false`` by default :superscript:`5.3.2`
+- Instances: The instances endpoint now returns volumes and containers lists under containerDetails to match data which was already returned for VMs :superscript:`5.3.2`
+- ServiceNow Integration: Expose or unexpose |morpheus| Clouds, Library items, Blueprints, and Catalog Items to ServiceNow through |morpheus| API and CLI. Users can also view items which are currently exposed
 
 Fixes
 =====
-
-- Amazon/AWS: Fixed Route53 DNS integration SDK not routing through global proxy
-- API: Added support a new query parameter ``details=true`` to return more details about an instance, ie. containerDetails. This parameter applies to both list and get by id, and defaults to false because it increases the payload size and response time.
-- API: Fix the ``/api/instances`` response value of ``volumes`` so it is consistent between the list and get by id actions.
-- Blueprints: Fixed some Custom Options not saving in blueprint due to NULL code value on Option Type record
-- Cisco ACI: Fixed issue creating and deleting ACI Contexts
-- Cisco ACI: Fixed issue deleting ACI Tenants 
-- Convert to Managed: Fixed bulk convert to managed issue caused by required option types not rendering when using custom instance types
-- Convert to Managed: Fixed custom option types not reloading when changing layout selection during convert to managed
-- Convert to Managed: Plan option will now appear if the selected VMs are all of the same type (cloud)
-- Custom Table Views: Names for Views are now limited to alphanumeric characters
-- Deployments: Fixed new DEPLOY FOLDER values on Node Type not saving
-- Failover Service: Fixed VMs shut down outside of |morpheus| getting auto-started by |morpheus| when another VM containing the same agent config/api key is started (from DR process or external cloning)
-- Hosts: "Open Console" action removed from Hosts list action menus
-- Hosts: Fixed ``Cores`` value on VM Detail pages
-- Infoblox: Updated Infoblox sync process to no longer remove records from |morpheus| when there are no record found during a successful sync to account for Infblox outtage/reinstall & restore scenerio
-- Jobs: Workflows: Fixed database session issue for long-running tasks executed via Operational Workflow Jobs
-- NSX-T: Improvements to NSX-T Load Balancer profile creation functionality
-- NSX-V: Fixed disabling distributed firewall rules created from Morpheus UI
-- NSX-V: Fixed Load Balancer profiles not selectable from the Blueprint Apps
-- NSX-V: Fixed monitor assignment for load balancer server pools in subtenants
-- Oracle Cloud: Fixed issue with provisioning Windows images in OCI not finalizing
-- Policies: Tag Policies: Fixed Strict Enforce Tag policies preventing new tag creation from |morpheus| API
-- Policies: Workflow Policies: Fixed Platform filter on tasks associated with Workflows in a Workflow policy not being respected
-- PowerDNS: Fixed TTL not matching TTL set in Morpheus
-- Roles: ``Blueprint Access: Global Access`` setting now defaults to ``None``
-- Roles: Fixed Global Access "Read" having higher precedence than "Custom"
-- User Groups: User Group names are now required to be unique only inside same tenant, not unique across all tenants
-- VMware: vCenter: Removed name match sync function that could possibly cause wrong vm to be deleted when a provision fails to a unique name constraint in |morpheus|. external-id and uuid are now only used for sync matching
-- Whitelabing: Support Menu: Fixed re-enabling Support Menus in subtenants after they have been disabled
-- NSX-V: Fixed |morpheus| generated self-signed certificates not selectable at the time of Load balancer HTTPS based application profile creation
-
-Appliance Updates
-=================
-  
-- Morpheus Windows Agent: New windows agent version 1.7.0 addresses agent issue caused by new unformatted volumes being added, resulting in ```"ERROR:Error in SendAgentInit: The volume does not contain a recognized file system. Please make sure that all required file system drivers are loaded and that the volume is not corrupted."``` agent error.

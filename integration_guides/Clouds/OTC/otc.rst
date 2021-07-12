@@ -9,19 +9,22 @@ Add an Open Telekom Cloud
 
 Details
 ```````
-  
+
 IDENTITY API URL
-  
+
 DOMAIN ID
   This pertains to the Openstack V3 API and should be ignored when using V2. This is the Domain ID (Not to be confused with Domain Name). The Domain ID can be found via the CLI by typing openstack domain list.
 
 PROJECT
-  
+
 USERNAME
 
 PASSWORD
 
 OS VERSION
+
+Image Store
+  Set an OBS bucket as a permanent store location for Morpheus virtual images. Users are limited to uploading images of 2GB or less in size if an OBS bucket is not specified here
 
 IMAGE FORMAT
 
@@ -32,6 +35,5 @@ LB TYPE
 .. NOTE:: Hypervisor console support for openstack currently only supports novnc. Be sure the novnc proxy is configured properly in your openstack environment.
 
 Advanced Options
-  
+
 Provisioning Command
-  
