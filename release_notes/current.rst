@@ -104,3 +104,4 @@ Refer to :ref:`compatibility` for additional details.
 - NSX-V: Router management support added in Morpheus API and CLI to match functionality currently available in Morpheus UI :superscript:`5.2.6`
 - Option Lists: API calls to get all Option Lists (``api/option-type-lists/``) or get a specific Option List (``api/option-type-lists/:id``) no longer return ``listItems`` as this could potentially return millions of values in some scenarios. Users can now issue a GET request to ``/api/option-type-lists/:id/items`` to return all items in a specific Option List
 - Servers: The ``servers`` API endpoint returns the ``volumes`` and ``controllers`` lists when passing the ``details=true`` parameter to match behavior already included with the ``instances`` endpoint
+- ServiceNow Integration: Expose or unexpose |morpheus| Clouds, Library items, Blueprints, and Catalog Items to ServiceNow through |morpheus| API and CLI. Users can also view items which are currently exposed
