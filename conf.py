@@ -27,9 +27,11 @@ rst_prolog = """
 .. |trash| unicode:: 0x0001F5D1 .. TRASH ICON
 .. |gear| unicode:: U+02699 .. GEAR ICON
 .. |info| unicode:: U+2139 .. INFO ICON 
-.. |triangledown| unicode:: U+25BD .. TRIANGLE DOWN
-.. |rightarrow| unicode:: U+2192 .. RIGHT ARROW
+.. |triangledown| unicode:: U+25BD .. TRIANGLE DOWN ICON
+.. |rightarrow| unicode:: U+2192 .. RIGHT ARROW ICON
+.. |pencil| unicode:: U+270E .. EDIT ICON
 
+.. role:: redguilabel
 
 """
 

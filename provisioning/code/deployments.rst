@@ -1,7 +1,5 @@
 .. _Deployments:
 
-.. role:: redguilabel
-
 Deployments
 -----------
 
@@ -68,7 +66,7 @@ Add Deployment
 #. Select the ``Provisioning`` link in the navigation bar.
 #. Select the ``Code`` link in the sub-navigation bar.
 #. Select the ``Deployments`` tab.
-#. Click the :guilabel:`Add` button.
+#. Click the :guilabel:`+ Add` button.
 #. Enter a Name for the deployment and a description (optional)
 #. Click the :guilabel:`Save Changes` button to save.
 
@@ -99,7 +97,7 @@ Edit Deployment
 #. Select the ``Provisioning`` link in the navigation bar.
 #. Select the ``Code`` link in the sub-navigation bar.
 #. Select the ``Deployments`` tab.
-#. Click the Edit Deployment icon on the row of the deployment you wish to edit, or click the Name of the deployment and then the :guilabel:`Edit` button from the deployment detail page.
+#. Click the |pencil| icon on the row of the deployment you wish to edit, or click the Name of the deployment and then the :guilabel:`Edit` button from the deployment detail page.
 #. Modify information as needed
 #. Click the :guilabel:`Save Changes` button to save.
 
@@ -109,4 +107,4 @@ Delete Deployment
 #. Select the ``Provisioning`` link in the navigation bar.
 #. Select the ``Code`` link in the sub-navigation bar.
 #. Select the ``Deployments`` tab.
-#. Click the Delete Deployment icon on the row of the deployment you wish to delete, or click the Name of the deployment and then the :redguilabel:`DELETE` button.
+#. Click the |trash| icon on the row of the deployment you wish to delete, or click the Name of the deployment and then the :redguilabel:`DELETE` button.
