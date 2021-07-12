@@ -57,8 +57,7 @@ Because of the tracked history of deployments kept within |morpheus| , the deplo
 Offloading Storage
 ^^^^^^^^^^^^^^^^^^
 
-Since a full history of the backup builds are kept in |morpheus| , as the appliance grows it becomes necessary to change where these are stored. On a fresh install these are stored on the local appliance in ``/var/opt/morpheus`` or wherever the master account may have changed the configuration to point to. It is also possible to adjust the deployment archive store by creating a `Storage Provider` tied to an S3 compatible object store, Openstack Swift object store, or any other type of mountpoint provided. This option can be adjusted in ::menuselection:`Administration --> Settings --> Provisioning` once a storage provider is created within the account.
-
+Since a full history of the backup builds are kept in |morpheus| , as the appliance grows it becomes necessary to change where these are stored. On a fresh install these are stored on the local appliance in ``/var/opt/morpheus`` or wherever the master account may have changed the configuration to point to. It is also possible to adjust the deployment archive store by creating a `Storage Provider` tied to an S3 compatible object store, Openstack Swift object store, or any other type of mountpoint provided. This option can be adjusted in :menuselection:`Administration --> Settings --> Provisioning` once a storage provider is created within the account.
 
 Add Deployment
 ^^^^^^^^^^^^^^
