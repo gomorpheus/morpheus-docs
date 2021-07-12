@@ -25,7 +25,21 @@ Role: Feature Access: ``Provisioning: Code Integrations``
   - None: Cannot access Provisioning: Code Integrations.
   - Read: Can view Code Integrations. Cannot create, delete or edit Code Integrations.
   - Full: Can create, delete and edit Code Integrations
-      
+
+  .. tabs::
+
+     .. tab:: Repositories
+     
+        .. include:: repositories.rst
+    
+     .. tab:: Deployments
+     
+        .. include:: deployments.rst
+        
+     .. tab:: Code Integrations
+     
+       .. include:: integrations.rst
+       
 .. include:: repositories.rst
 .. include:: deployments.rst
 .. include:: integrations.rst
