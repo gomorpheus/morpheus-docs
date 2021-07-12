@@ -24,7 +24,6 @@ VDI Pools
 
 Tenant Role Permission Sections
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
 Features
   Controls Tenant access level for sections and features in |morpheus|. The complete feature permissions grid is included below.
 Clouds
@@ -558,16 +557,22 @@ Role Mappings
     - This selection launches the wizard to begin the process of provisioning an identical Instance
     - This permission is recommended for those responsible for provisioning.
     -
-  * - Provisioning: Deployment Integrations
+  * - Provisioning: Code Integrations
     - None, Read, Full
-    - Determines access to the Integrations tab on the Provisioning > Deployments page.
-    - From this page deployment integrations may be created, edited, or deleted. On create the integration product is selected and all associated connection and authentication information must be provided. Integrations available include Git, Github, and Jenkins.
-    - This permission is recommended for those responsible for the integration between |morpheus| and deployment technologies.
-    - This permission is recommended to be set to None on the Tenant Role to restrict access for Subtenant users.
-  * - Provisioning: Deployments
+    - Determines access to the Integrations tab on the Provisioning > Code page.
+    - From this page code integrations may be created, edited, or deleted. Integrations available include Git, Github, and Jenkins.
+    - This permission is recommended for those responsible for the integration between |morpheus| and code repositories and services.
+    - 
+  * - Provisioning: Code Deployments
     - None, Read, Full
-    - Determines access to the Deployments tab on the Provisioning > Deployments page.
+    - Determines access to the Deployments tab on the Provisioning > Code page.
     - The Deployments page provides the ability to use git, fetch from a url, or upload a file to be utilized during the provisioning of an Instance or pushed to an existing Instance.
+    - This permission is recommended for those responsible for providing and managing software.
+    -
+  * - Provisioning: Code Repositories
+    - None, List Files, Read, Full
+    - Determines access to the Deployments tab on the Provisioning > Code page.
+    - The Code Repositories contains the repositories integrated with |morpheus| allowing users to browse repositories folders and files and view file contents from any branch, trigger a refresh, and create tasks, scripts and templates directly from the repos. 
     - This permission is recommended for those responsible for providing and managing software.
     -
   * - Provisioning: Execute Script
