@@ -26,3 +26,18 @@ New Features
 
 Fixes
 =====
+
+- Ansible Tower: Updated ``job_executions`` : ``config_settings`` field data type to LONGTEXT :superscript:`5.3.2`
+- Deployments: Added proper error handling when no deployment folder is specified ona deployment
+- KVM: Fixed VM sync for brownfield KVM Host after initial sync :superscript:`5.3.2`
+- NSX-T: Fixed issue removing Passive Monitors from server pools :superscript:`5.3.2`
+- NSX-V: Fixed ESG/DLR uplink interfaces deletion :superscript:`5.3.2`
+- Option Types: Fixed issue with hidden option type value saving when toggling between layouts in provisioning wizard :superscript:`5.3.2`
+- Option Types: Fixed required option type validation issue on workflow execution that could prevent workflow from executing :superscript:`5.3.2`
+- Sync: Fixed some cloud types sycning FQDN as container/compute_server hostname, resulting in a computed FQDN of hostname>.<domain>.<domain> :superscript:`5.3.2`
+- VMware: Fixed issue with discovered Windows 2019 VM's ``os_type`` being set to ``other.64``; ``windows2019srv_64Guest`` mapping added :superscript:`5.3.2`
+
+Appliance & Agent Updates
+=========================
+
+- Appliance: The local code repository path has been moved from ``/var/opt/morpheus/morpheus-ui/repo`` to ``/var/opt/morpheus/morpheus-local/repo`` to reduce potential shared storage issues and perfomace restrictions. The reconfigure process creates the folders and sets the paths in application.yml, no manual intervention is needed unless symlinks exisit on ``/var/opt/morpheus/morpheus-ui/repo/git`` which will need to be removed prior to reconfiguring 5.3.2. The old ``/var/opt/morpheus/morpheus-ui/repo`` path will be automatically deleted in a fulture release but can be manually recursivly deleted at any time for storage reclaimation.

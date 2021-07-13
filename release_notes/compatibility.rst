@@ -18,7 +18,7 @@ Breaking Changes
 - 5.2.1 & 4.2.5: API: Metadata: Metadata tags now referred to as ``tags`` and labels now referred to as ``labels``. Previously metadata tags were referred to as ``metadata`` and labels were referred to as ``tags``
 - 5.2.3+: ``codeready`` (codeready-builder-for-rhel-8-x86_64-rpms) repo access required for RHEL 8+ Appliances, replacing the previous PowerTools/powertools requirement
 - 5.2.6+: Appliance & Agent java version updated to ``8u292-b10``. jdk8u292 disables TLS 1.0 and 1.1 by default.
-
+- 5.2.8: Appliance: The local code repository path has been moved from ``/var/opt/morpheus/morpheus-ui/repo`` to ``/var/opt/morpheus/morpheus-local/repo`` to reduce potential shared storage issues and perfomace restrictions. The reconfigure process creates the folders and sets the paths in application.yml, no manual intervention is needed unless symlinks exisit on ``/var/opt/morpheus/morpheus-ui/repo/git`` which will need to be removed prior to reconfiguring 5.3.2. The old ``/var/opt/morpheus/morpheus-ui/repo`` path will be automatically deleted in a fulture release but can be manually recursivly deleted at any time for storage reclaimation.
 
 |morpheus| Application OS
 =========================
@@ -61,7 +61,7 @@ Services
 |morphver| Service Version Changes
 ----------------------------------
 
-- Java updated to |java|
+- No service version chnages from |previousMorphVer|
 
 |morphver| Service Version Compatibility
 ----------------------------------------
@@ -88,14 +88,13 @@ When externalizing MySQL, Elasticsearch and/or RabbitMQ services, the following 
 | OpenSSL                               |                       | |openssl|, |openssl_fips| (FIPS)    |
 +---------------------------------------+-----------------------+-------------------------------------+
 
-Security
-========
+.. 
+   Security
+   ========
 
-CVEs Addressed
---------------
+   CVEs Addressed
+   --------------
 
-- CVE-2020-25649
-- CVE-2021-25122
 
 Upgrade Support Matrix
 ======================
