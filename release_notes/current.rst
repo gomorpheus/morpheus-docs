@@ -24,7 +24,7 @@ New Features
 - NSX-T: Create and manage NSX-T load balancer profiles (Infrastructure > Load Balancers > Selected Load Balancer > Profiles Tab), previously this tab was read-only :superscript:`5.2.6`
 - Open Telekom Cloud: Image upload functionality now supports images greater than 2GB in size. When adding/editing the Cloud, set an OBS bucket in the IMAGE STORE field as a permanent store location for |morpheus| virtual images
 - Option Types: "Radio List" Option Types can now be added which present options to the provisioning user as radio buttons
-- Roles: Report Types tab added to user and tenant role permission sets. Assign access permission to specific reports for users with access to the Reports section under the Operations menu
+- Roles: Report Types tab added to user and tenant role permission sets. Assign access permissions for specific report types for users with access to the Reports section under the Operations menu
 - Software: Patch version numbers are now surfaced on the Software tab of server detail pages (mouse hover over software name) and in Software reports :superscript:`5.2.6`
 - Storage: Added support for Google Cloud Storage bucket creation and management (Infrastructure > Storage > Buckets tab)
 - vCloud Director: Added support for API version 34.0 on vCD 10.2+ :superscript:`5.2.6`
@@ -50,6 +50,7 @@ Fixes
 - Convert to Managed: Fixed bulk convert to managed issue caused by required option types not rendering when using custom instance types :superscript:`5.2.7`
 - Convert to Managed: Fixed custom option types not reloading when changing layout selection during convert to managed :superscript:`5.2.7`
 - Convert to Managed: Plan option will now appear if the selected VMs are all of the same type (cloud) :superscript:`5.2.7`
+- Dashboard: Fixed permission scoping for widget visibility in the dashboard
 - Deployments: Fixed new DEPLOY FOLDER values on Node Type not saving :superscript:`5.2.7`
 - Failover Service: Fixed VMs shut down outside of |morpheus| getting auto-started by |morpheus| when another VM containing the same agent config/api key is started (from DR process or external cloning) :superscript:`5.2.7`
 - Hosts: "Open Console" action removed from Hosts list action menus :superscript:`5.2.7`
