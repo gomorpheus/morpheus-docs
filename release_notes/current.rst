@@ -83,7 +83,7 @@ Fixes
 - VMware Cloud AWS/VMC: Fixed scenario causing editing modal of existing Cloud to hang :superscript:`5.2.6`
 - VMware: Fixed duplicate VM names in different folders causing external Id conflict :superscript:`5.2.7`
 - VMWare: Fixed Managed VM ``hostname`` changes syncing and updating server record but not associated container record :superscript:`5.2.6`
-- VMware: vCenter: Removed name match sync function that could possibly cause wrong vm to be deleted when a provision fails to a unique name constraint in |morpheus|. external-id and uuid are now only used for sync matching :superscript:`5.2.6`
+- VMware: Fixed issue with discovered Windows 2019 VM's ``os_type`` being set to ``other.64``; ``windows2019srv_64Guest`` mapping added :superscript:`5.2.8`
 - VMware: vCenter: Removed name match sync function that could possibly cause wrong vm to be deleted when a provision fails to a unique name constraint in |morpheus|. external-id and uuid are now only used for sync matching :superscript:`5.2.7`
 - Whitelabing: Support Menu: Fixed re-enabling Support Menus in subtenants after they have been disabled :superscript:`5.2.7`
 
