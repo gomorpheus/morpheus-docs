@@ -37,6 +37,7 @@ Fixes
 - Amazon: EKS: Fixed display and convert to managed issue with discovered EKS Clusters
 - Amazon/AWS: CloudFormation: Fixed ``name`` tag value being set to logical id instead of tag value when ``name`` tag is specified in CF :superscript:`5.2.6`
 - Amazon/AWS: Fixed Route53 DNS integration SDK not routing through global proxy :superscript:`5.2.7`
+- Amazon/AWS: Fixed an issue that prevented AWS Gov Cloud accounts from syncing costing data through a linked AWS commercial account
 - Ansible Tower: Updated ``job_executions`` : ``config_settings`` field data type to LONGTEXT
 - API: Fix the ``/api/instances`` response value of ``volumes`` so it is consistent between the list and get by id actions. :superscript:`5.2.7`
 - Azure: Fixed non-ASCII UTF8 characters adminPassword encoding problem
