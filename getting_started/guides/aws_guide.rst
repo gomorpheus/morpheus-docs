@@ -72,7 +72,7 @@ Still in `Infrastructure > Network`, make note of the "INTEGRATIONS" tab. It's h
 
 .. image:: /images/vCenterGuideImages/Network/2addIPAM.png
 
-In `Infrastructure > Networking` we can also set up IP address pools from the IP Pools tab. These pools can be manually defined, known as a Morpheus-type IP pool, or they can come from any IPAM integrations you've configured. As instances are provisioned, Morpheus will assign IP addresses from the pool chosen during provisioning. When the instance is later dissolved, Morpheus will automatically release the IP address to be used by another instance when needed. When adding or editing a network, we can opt to scope the network to one of these configured IP address pools.
+In `Infrastructure > Networking` we can also set up IP address pools from the IP Pools tab. These pools can be manually defined, known as a Morpheus-type IP pool, or they can come from any IPAM integrations you've configured. As instances are provisioned, Morpheus will assign IP addresses from the pool chosen during provisioning. When the instance is later dissolved, Morpheus will automatically release the IP address to be used by another instance when needed. When adding or editing a network, we can opt to scope the network to one of these configured IP address pools. Edit an existing network by clicking the pencil icon on the Networks List Page (Infrastructure > Networks > Networks Tab) and fill in the "Network Pool" field to associate the IP Pool with the network.
 
 .. image:: /images/vCenterGuideImages/Network/3addIPPool.png
 
