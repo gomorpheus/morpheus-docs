@@ -1,5 +1,5 @@
-Groups
-======
+Monitoring Groups
+=================
 
 Group monitors can only contain checks and can be edited or created in `Monitoring > Groups`. Besides simply adding and removing checks to a group there are a few other useful options that can be customized in a group:
 
