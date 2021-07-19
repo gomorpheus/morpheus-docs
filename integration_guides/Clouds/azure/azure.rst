@@ -183,9 +183,9 @@ To add a new Azure Cloud integration into |morpheus| using the credentials creat
    .. include:: /integration_guides/Clouds/base_options.rst
 
    **Details**
-   
+
    ------
-      
+
    CLOUD TYPE
      - Standard (Azure Cloud)
      - US Gov (Azure US Government)
@@ -216,12 +216,12 @@ To add a new Azure Cloud integration into |morpheus| using the credentials creat
    ACCOUNT TYPE
      Standard, EA or CSP
 
-     .. note:: For CSP Accounts, also enter CSP TENANT ID, CSP CLIENT ID and CSP CLIENT SECRET in the Advanced Options section.
+     .. note:: For CSP Accounts, also enter CSP TENANT ID, CSP CLIENT ID and CSP CLIENT SECRET in the Advanced Options section. In order to enable cost sync for CSP accounts, the "CSP CUSTOMER" checkbox must be marked and "COSTING" should be set to "Costing" rather than "Costing and Reservations".
 
      .. image:: /images/clouds/azure/addAzureCloudmorpheusS1.png
 
    .. include:: /integration_guides/Clouds/advanced_options.rst
-    
+
 #. Once done configuring the Cloud, select :guilabel:`NEXT`. NOTE all specified values except the Subscription ID can be changes after the Cloud is created.
 
 #. Next select an existing Group to add the Azure Cloud to, or create a new Group, then select :guilabel:`NEXT`
