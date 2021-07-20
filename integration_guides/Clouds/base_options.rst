@@ -1,6 +1,5 @@
 Cloud Configuration
 ```````````````````
------
 
 NAME
   Name of the Cloud in |morpheus|
