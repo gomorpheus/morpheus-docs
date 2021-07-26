@@ -40,6 +40,8 @@ RabbitMQ requires Erlang to be installed, the exact version will depend on which
          - 21.3
          - 22.x
 
+|
+
 #. Install epel-release and erlang
 
    .. code-block:: bash
