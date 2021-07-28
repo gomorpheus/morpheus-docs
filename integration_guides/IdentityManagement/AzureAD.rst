@@ -148,11 +148,11 @@ Azure Group Lookups
 When a user in azure ad has more that 150 group attributes, Azure does not include the group claims in the SAML response, and |morpheus| is required to query Microsoft Graph to obtain the users group attribute values. When there are users that are members of more that 150 groups, populate the ``Azure Group Lookups`` section in order for those users to be able to use the Azure AD SAML SSO integration, otherwise no groups will be obtained and proper role mappings cannot occur. 
 
 AZURE TENANT ID
-  Add Azure AD Tenant ID if user group membership will exceed 150
+  Add Azure AD Tenant ID if user group membership will exceed 150. See :ref:`azure_ids` for information on obtaining an Azure AD Tenant ID
 AZURE APP ID
-  Add Azure AD Application (Client) ID if user group membership will exceed 150
+  Add Azure AD Application (Client) ID if user group membership will exceed 150. See :ref:`azure_ids` for information on obtaining an Azure AD Application (Client) ID
 AZURE APP SECRET
-  Add Azure Application (Client) Secret if user group membership will exceed 150
+  Add Azure Application (Client) Secret if user group membership will exceed 150. See :ref:`azure_secret` for information on creating an Azure Application (Client) Secret
 ROLE LINK ATTRIBUTE NAME
   default: http://schemas.microsoft.com/claims/groups.link. This is not normally changed.
 
