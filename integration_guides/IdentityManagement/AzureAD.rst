@@ -21,9 +21,11 @@ To add a base SAML integration:
 
 Upon save, the `Entity ID` (Identifier (Entity ID)) and `SP ACS URL` (Reply URL (Assertion Consumer Service URL)) will be provide in the Identity Source list view. Copy these for use in Azure SSO config.
 
-.. image:: /images/integration_guides/identity_sources/azure_ad_saml/saml_setup.png
-  :width: 80%
-  :align: center
+..
+  this needs replaced or just left out
+  .. image:: /images/integration_guides/identity_sources/azure_ad_saml/saml_setup.png
+    :width: 80%
+    :align: center
 
 Configure Azure SSO
 ^^^^^^^^^^^^^^^^^^^
@@ -160,7 +162,7 @@ ROLE LINK ATTRIBUTE NAME
 Signing In to |morpheus|
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-When there is an active SAML/Azure AD SSO Identity Source Integration, a new button will appear on the |morpheus| login page with the name of the Identity Source Integration as the button title. Example: :guilabel:`ADFS`. Another button titled "USERNAME AND PASSWORD" is also added for |morpheus| account authentication outside of an Identity Source.
+When there is an active SAML/Azure AD SSO Identity Source Integration, a new button will appear on the |morpheus| login page with the name of the Identity Source Integration as the button title. Example: :guilabel:`MORPHEUS SSO`. Another button titled "USERNAME AND PASSWORD" is also added for |morpheus| account authentication outside of an Identity Source.
 
 .. image:: /images/integration_guides/identity_sources/azure_ad_saml/sign_in_page.png
   :width: 60%
