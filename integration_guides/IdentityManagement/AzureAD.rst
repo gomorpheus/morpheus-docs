@@ -142,6 +142,21 @@ Once populated, select :guilabel:`SAVE CHANGES` and the SAML identity source int
 
 .. NOTE:: If Role mappings are edited after Azure AD SSO users have signed into |morpheus|, currently logged in users will need to log out of |morpheus| for the new Role mappings to take effect, when applicable.
 
+Azure Group Lookups
+^^^^^^^^^^^^^^^^^^^
+
+When a user in azure ad has more that 150 group attributes, Azure does not include the group claims in the SAML response, and |morpheus| is required to query Microsoft Graph to obtain the users group attribute values. When there are users that are members of more that 150 groups, populate the ``Azure Group Lookups`` section in order for those users to be able to use the Azure AD SAML SSO integration, otherwise no groups will be obtained and proper role mappings cannot occur. 
+
+AZURE TENANT ID
+  Add Azure AD Tenant ID if user group membership will exceed 150
+AZURE APP ID
+  Add Azure AD Application (Client) ID if user group membership will exceed 150
+AZURE APP SECRET
+  Add Azure Application (Client) Secret if user group membership will exceed 150
+ROLE LINK ATTRIBUTE NAME
+  default: http://schemas.microsoft.com/claims/groups.link. This is not normally changed.
+
+
 Signing In to |morpheus|
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
