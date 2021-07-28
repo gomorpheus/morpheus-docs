@@ -84,6 +84,7 @@ If you do not have an existing Azure Active Directory App Registration, or you w
 
 Now that we have (or already had) our App Registration, we will gather the credentials required for the |morpheus| Azure integration.
 
+.. _azure_ids:
 Copy Directory (tenant) and Application (client) IDs
 ````````````````````````````````````````````````````
 
@@ -97,7 +98,7 @@ The App Registration Directory (tenant) and Application (client) ID are required
 
    .. thumbnail:: /images/clouds/azure/morpheusAppReg_Microsoft_Azure.png
 
-
+.. _azure_secret:
 Generate a Client Secret
 ````````````````````````
 While still in your App Registration:
