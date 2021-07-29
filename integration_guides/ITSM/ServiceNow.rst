@@ -196,8 +196,6 @@ In addition to integrating with key ServiceNow features, |morpheus| offers a fre
 
 .. IMPORTANT:: A valid SSL Certificate is required on the |morpheus| Appliance for the ServiceNow plugin to be able to communicate with the appliance.
 
-.. IMPORTANT:: The |morpheus|
-
 ServiceNow Configuration
 ````````````````````````
 
@@ -218,7 +216,18 @@ ServiceNow Configuration
    MID Server
     If desired, specify the name of a configured MID server to use
 
-  .. important:: Users created from SAML Identity Sources cannot authenticate with the |morpheus| API and cannot be used for the ServiceNow plugin.
+  .. important:: The |morpheus| service account integrated with the plugin interacts with the |morpheus| appliance through |morpheus| API and must have the appropriate Role permissions to complete all provisioning requests from the ServiceNow plugin. Often it's easiest to make a service account with full administrator rights to avoid failed provisioning. If you'd prefer to create a minimal service account for security reasons, ensure the Role for the service account User has the following permissions:
+
+    - Personas: Standard: Full
+    - Personas: Service Catalog: Full
+    - Features: Provisioning: Instances: Full
+    - Features: Provisioning: Apps: Full
+    - Groups: Full rights to all Groups containing Clouds you will expose to ServiceNow
+    - Instance Types: Full rights to all Instance Types you will expose to ServiceNow
+    - Blueprints: Full rights to all Blueprints you will expose to ServiceNow
+    - Catalog Item Types: Full rights to all Catalog Item Types you will expose to ServiceNow
+
+    Users created from SAML Identity Sources cannot authenticate with the |morpheus| API and cannot be used for the ServiceNow plugin.
 
 .. image:: /images/integration_guides/itsm/servicenow/4servicenowProperties.png
   :width: 50%
