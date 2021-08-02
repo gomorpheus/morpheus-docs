@@ -149,7 +149,7 @@ Continued Installation Steps
 
 
    .. important:: The elasticsearch node names set in ``elasticsearch['node_name']`` must match the host entries in elasticsearch['es_hosts']. ``node_name`` is used for ``node.name`` and ``es_hosts`` is used for ``cluster.initial_master_nodes`` in the generated elasticsearch.yml config. node names that do not match entries in cluster.initial_master_nodes will cause clustering issues.
-    	
+
 #. Reconfigure on all nodes
 
    .. code-block:: bash
@@ -158,7 +158,15 @@ Continued Installation Steps
 
    |morpheus| will come up on all nodes and Elasticsearch will auto-cluster. The only item left is the manual clustering of RabbitMQ.
 
-#. Select one of the nodes to be your Source Of Truth (SOT) for RabbitMQ clustering. We need to copy the secrets for RabbitMQ, copy the erlang cookie and join the other nodes to the SOT node.
+#. Select one of the nodes to be your Source Of Truth (SOT) for RabbitMQ clustering. Begin by executing the contents of ``.profile`` and stopping RabbitMQ.
+
+   .. code-block:: bash
+
+    [root@app-server-1 ~] source /opt/morpheus/embedded/rabbitmq/.profile
+    [root@app-server-1 ~] rabbitmqctl stop_app
+    [root@app-server-1 ~] morpheus-ctl stop rabbitmq
+
+#. Still on the SOT node, we need to copy the secrets for RabbitMQ. Copy the erlang cookie and join the other nodes to the SOT node.
 
    Begin by copying secrets from the SOT node to the other nodes.
 
@@ -186,11 +194,7 @@ Continued Installation Steps
 
        [root@app-server-2 ~] morpheus-ctl reconfigure
 
-   .. NOTE::
-
-      This step will fail. This is ok, and expected. If the reconfigure hangs then use Ctrl+C to quit the reconfigure run and force a failure.
-
-#. Subsequently we need to stop and start Rabbit on the NOT SOT nodes.
+#. Subsequently we need to stop and start Rabbit on the non-SOT nodes.
 
    .. IMPORTANT:: The commands below must be run at root
 
@@ -328,7 +332,7 @@ If your new installation is part of a migration then you need to move the data f
       Enter password:
 
    This file needs to be pushed to the new |morpheus| Installation’s backend. Depending on the GRANTS in the new MySQL backend, this will likely require moving this file to one of the new |morpheus| frontend servers.
- 
+
 #. Once the file is in place it can be imported into the backend. Begin by ensuring the |morpheus| UI service is stopped on all of the application servers:
 
    .. code-block:: bash
