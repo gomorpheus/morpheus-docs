@@ -56,11 +56,9 @@ When adding or editing a |morpheus| Group, any active ServiceNow integration can
 #. Select an existing Group name from the list
 #. Click :guilabel:`EDIT`
 #. Under "Advanced Options", select an active ServiceNow integration from the CMDB dropdown menu
+#. If desired, select "CMDB DISCOVERY" to create CMDB CI records for discovered (unmanaged) servers that |morpheus| automatically onboards to this Group
 
 This setting is also available when creating a Group. Rather than selecting an existing Group in step two above, click :guilabel:`+ CREATE` to make a new Group.
-
-.. image:: /images/integration_guides/itsm/servicenow/1groupCmdb.png
-  :width: 50%
 
 Setting a CMDB on a Cloud
 `````````````````````````
@@ -71,11 +69,9 @@ When adding or editing a |morpheus| Cloud, any active ServiceNow integration can
 #. Select an existing Cloud name from the list
 #. Click :guilabel:`EDIT`
 #. Under "Advanced Options", select an active ServiceNow integration from the CMDB dropdown menu
+#. If desired, select "CMDB DISCOVERY" to create CMDB CI records for discovered (unmanaged) servers that |morpheus| automatically onboards to this Cloud
 
 This setting is also available when creating a Cloud. Rather than selecting an existing Cloud in step two above, click :guilabel:`+ ADD` to make a new Cloud.
-
-.. image:: /images/integration_guides/itsm/servicenow/2cloudCmdb.png
-  :width: 50%
 
 Provisioning and CI Records
 ```````````````````````````
