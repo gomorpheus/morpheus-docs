@@ -1,7 +1,7 @@
 master_doc = 'index'
 
 latex_documents = [
-    (master_doc, 'morpheus5.2.8-1.tex', u'Morpheus Documentation',
+    (master_doc, 'morpheus5.2.9-1.tex', u'Morpheus Documentation',
      u'Morpheus', 'manual'),
 ]
 
@@ -10,8 +10,8 @@ rst_prolog = """
 .. |morphdat| replace:: Morpheus Data, LLC
 .. |repo_host_url| replace:: https://downloads.morpheusdata.com
 .. |morphbranch| replace:: v5.2
-.. |morphver| replace:: v5.2.8
-.. |previousMorphVer| replace:: v5.2.7
+.. |morphver| replace:: v5.2.9
+.. |previousMorphVer| replace:: v5.2.8
 .. |minUpgradeVer| replace:: v4.2.0
 .. |rmqbranch| replace:: v3.5-3.8
 .. |rmqver| replace:: v3.8.9
@@ -24,9 +24,9 @@ rst_prolog = """
 .. |nginxver| replace:: v1.19.9
 .. |linuxagentver| replace:: v2.1.1
 .. |winagentver| replace:: v1.7.0.0
-.. |nodePackageVer| replace:: 3.1.14
-.. |java| replace:: v8u292-b10
-.. |openjdk-jre| replace:: v8u292
+.. |nodePackageVer| replace:: 3.2.1
+.. |java| replace:: v8u302
+.. |openjdk-jre| replace:: v8u302
 .. |openjdk-elasticsearch| replace:: 14.0.2+12
 .. |openssl| replace:: 1.1.1k
 .. |openssl_fips| replace:: 1.0.2u
