@@ -3,8 +3,6 @@
 Domains
 -------
 
-``Infrastructure > Network > Domains``
-
 Overview
 ^^^^^^^^
 
@@ -30,17 +28,18 @@ Adding Domains
     :DOMAIN NAME: Ex. demo.example.com
     :DESCRIPTION: Descriptive metadata for use in |morpheus|
     :DISPLAY NAME: Overrides the displayed name in domain selection components, which is useful when using many OU paths
-    :☑ PUBLIC ZONE: Check for Public Zones, leave uncheck for Private Zones
+    :PUBLIC ZONE: Check for Public Zones, leave uncheck for Private Zones
     :WORKFLOW: Select an existing Workflow which will be applied to Instances at provision time when they are associated with the domain. This is useful for any domain-related scripting you may currently use. For example, you may want to ensure a machine is removed from the domain when it's torn down which could be accomplished by creating a Provisioning Workflow (with teardown phase Tasks) and associating the Workflow with the domain
-    :☑ ACTIVE: Active Domains are available for selection in Domain selection fields across |morpheus|. Inactive Domains are removed from Domain selection fields.
+    :ACTIVE: Active Domains are available for selection in Domain selection fields across |morpheus|. Inactive Domains are removed from Domain selection fields.
     .. rubric:: Domain Controller
-    :☐ Join Domain Controller: Check to have Windows instances join a Domain Controller
+    :JOIN DOMAIN CONTROLLER: Check to have Windows instances join a Domain Controller
     :USERNAME: Admin user for Domain Controller. ``domain\username`` format required when specifying OU Path
     :PASSWORD: Password for DC user account
     :DC SERVER: (optional) Specify the URL or Path of the DC Server
     :OU PATH: (optional) Enter the OU Path for the connection string.
     :GUEST USERNAME: (optional) If set, this will change the provisioned hosts RPC Service User after domain join. Useful when a domain policy disables the  Administrator account that typically would be set as the RPC user on a host record. |morpheus| will update the RPC username and password on the host(s) record after domain join with the specified Guest Username and Guest Password. The RPC username and password are used for auth during Remote Procedure Call (RPC) executions over winrm, ssh and guest tools. 
     :GUEST PASSWORD: (optional) The password for the Guest User account indicated in the prior field
+    |
 
 4. Select :guilabel:`Save Changes`
 
