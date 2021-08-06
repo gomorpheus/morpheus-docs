@@ -31,6 +31,17 @@ rst_prolog = """
 .. |openssl| replace:: 1.1.1k
 .. |openssl_fips| replace:: 1.0.2u
 .. |erlang| replace:: 22.3
+.. |repo_host_url| replace:: https://downloads.morpheusdata.com
+.. |master tenant| replace:: Master Tenant
+
+.. |trash| unicode:: 0x0001F5D1 .. TRASH ICON
+.. |gear| unicode:: U+02699 .. GEAR ICON
+.. |info| unicode:: U+2139 .. INFO ICON 
+.. |triangledown| unicode:: U+25BD .. TRIANGLE DOWN ICON
+.. |rightarrow| unicode:: U+2192 .. RIGHT ARROW ICON
+.. |pencil| unicode:: U+270E .. EDIT ICON
+
+.. role:: redguilabel
 
 """
 
