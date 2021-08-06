@@ -8,28 +8,18 @@ OpenStack Clouds are very easy to integrate with |morpheus|. First, go to the ``
 Details
 ```````
 
-IDENTITY API URL
-  v2.0 or v3 Identity endpoint.
-DOMAIN ID
-  For `Default` domains, Default can be used. For other domain the Domain ID must be entered, not the Domain Name.
-PROJECT
-  Target project
-USERNAME
-  Service Username
-PASSWORD
-  Service user password
-OS VERSION
-  Select Openstack Version. |morpheus| supports the latest versions of OpenStack, select the latest version available if your current version is not shown.
-IMAGE FORMAT
-  Select QCOW2, RAW or VMDK Image Type
-LB TYPE
-  Select LB Type for Openstack LB syncing and creation
- Inventory Existing Instances
-  Select for |morpheus| to discover and sync existing VM's
- Enable Hypervisor Console
-  Hypervisor console support for openstack currently only supports novnc. Be sure the novnc proxy is configured properly in your openstack environment. When disabled |morpheus| will use ssh and rdp for console conneciton (vm/host credentials required)
+:IDENTITY API URL: v2.0 or v3 Identity endpoint.
+:DOMAIN ID: For `Default` domains, Default can be used. For other domain the Domain ID must be entered, not the Domain Name.
+:PROJECT: Target project
+:USERNAME: Service Username
+:PASSWORD: Service user password
+:OS VERSION: Select Openstack Version. |morpheus| supports the latest versions of OpenStack, select the latest version available if your current version is not shown.
+:IMAGE FORMAT: Select QCOW2, RAW or VMDK Image Type
+:LB TYPE: Select LB Type for Openstack LB syncing and creation
+:Inventory Existing Instances: Select for |morpheus| to discover and sync existing VM's
+:Enable Hypervisor Console: Hypervisor console support for openstack currently only supports novnc. Be sure the novnc proxy is configured properly in your openstack environment. When disabled |morpheus| will use ssh and rdp for console conneciton (vm/host credentials required)
 
-.. include:: /integration_guides/Clouds/openstack/advanced_options.rst
+.. include:: /integration_guides/Clouds/advanced_options.rst
 
 .. NOTE:: The user which is used connect to a project only needs to be a member ('_member_') of the project rather than an admin. Admin will work but it exposes some additional items to the project that an Openstack Admin typically does not want portal users to see.
 

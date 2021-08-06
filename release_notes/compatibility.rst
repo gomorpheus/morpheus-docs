@@ -100,11 +100,11 @@ When externalizing MySQL, Elasticsearch and/or RabbitMQ services, the following 
 Upgrade Support Matrix
 ======================
 
-.. include:: upgrade_table.rst
+.. include:: /release_notes/upgrade_table.rst
 
 Integrations
 ============
 
 .. note:: Current iterations of Amazon AWS, Microsoft Azure, Google Cloud Platform, Digital Ocean, HPE OneView, OpenTelekom Cloud, IBM Bluemix, Softlayer and UpCloud are all supported.
 
-.. include:: compatibility_table.rst
+.. include:: /release_notes/compatibility_table.rst

@@ -24,11 +24,11 @@ Adding Domains
 2. Select :guilabel:`+ ADD`
 3. Enter the following:
 
-   .. topic:: CREATE DOMAIN
+   .. line-block:: CREATE DOMAIN
 
-      Info
-      
-      ----
+     Info
+    
+     ----
       
      :DOMAIN NAME: Ex. demo.example.com
      :DESCRIPTION: Descriptive metadata for use in |morpheus|
