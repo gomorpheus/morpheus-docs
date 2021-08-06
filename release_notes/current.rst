@@ -12,7 +12,7 @@
 New Features
 ============
 
-Openstack: OpenStack v2 Identity API will be deprecated in v5.2.9 and will be removed in v5.3.3
+:Openstack: OpenStack v2 Identity API will be deprecated in v5.2.9 and will be removed in v5.3.3
 
 |morpheus| API Improvements
 ===========================
@@ -25,4 +25,4 @@ Fixes
 Appliance & Agent Updates
 =========================
 
-Openstack: OpenStack v2 Identity API will be deprecated in v5.2.9 and will be removed in v5.3.3
+:Openstack: OpenStack v2 Identity API will be deprecated in v5.2.9 and will be removed in v5.3.3
