@@ -23,6 +23,7 @@ Adding Domains
 3. Enter the following:
 
 .. admonition:: CREATE DOMAIN
+   :class: modal
 
     .. rubric:: Info
     :DOMAIN NAME: Ex. demo.example.com
