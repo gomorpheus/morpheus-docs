@@ -31,9 +31,11 @@ Fixes
 :Policies: Delayed Removal: Fixed deleting an unamanged vm within a Delayed Removal Policy Scope and with "Remove Associated Instances" check causing VM to shut down 
 :Reports: Fix for display of utilization statistics in some Cloud Usage Reports
 :Roles: Activity: Fixed viewing ``Operations -> Activity`` activity logs requiring ``Operations: Reports`` permissions
+        
         Datastores: Edit option no longer displayed for Role Permission ``Infrastructure -> Datastores: Read``
 :Rubrik: Backup size now displayed as ``-`` instead of ``0`` when backup size is not available
 :Tasks: Chef Bootstrap: Fixced issues where Chef Bootrap execution would fail with reason "Chef Infra Client cannot execute without accepting the license"
+        
         Variables: Fixed evaluation of <%=user.username%> variable in task executions
 :vCloud Director: Fixed ``safeComputerName`` issue during Windows Guest Customizations
 
