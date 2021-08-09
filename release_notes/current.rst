@@ -46,35 +46,37 @@ Fixes
 :Localization: Portuguese: The strings displayed in the Create Cloud dialog are now being displayed properly when selecting Portuguese as the language. Pass in ``?lang=pt_BR`` or ``?lang=pt_PT`` in the url to force the UI to Portuguese Brazil and Portugal, respectively
 :Policies: Delayed Removal: Fixed deleting an unamanged vm within a Delayed Removal Policy Scope and with "Remove Associated Instances" check causing VM to shut down
 :Reports: Fix for display of utilization statistics in some Cloud Usage Reports
-:Roles: - Activity: Fixed viewing ``Operations -> Activity`` activity logs requiring ``Operations: Reports`` permissions
-        - Datastores: Edit option no longer displayed for Role Permission ``Infrastructure -> Datastores: Read``
+:Roles: Activity: Fixed viewing ``Operations -> Activity`` activity logs requiring ``Operations: Reports`` permissions
+
+        Datastores: Edit option no longer displayed for Role Permission ``Infrastructure -> Datastores: Read``
 :Rubrik: Backup size now displayed as ``-`` instead of ``0`` when backup size is not available
 :Tasks: Chef Bootstrap: Fixced issues where Chef Bootrap execution would fail with reason "Chef Infra Client cannot execute without accepting the license"
-:Tasks: Variables: Fixed evaluation of <%=user.username%> variable in task executions
+
+        Variables: Fixed evaluation of <%=user.username%> variable in task executions
 :vCloud Director: Fixed ``safeComputerName`` issue during Windows Guest Customizations
 
 - Ansible: task execution fails when user has special characters in their name
 - Cloud count disappears inside Groups->Clouds section
 - Errors when deleting a nic in VMware
 
-Boot order for app blueprints isn‚Äôt being honoured with approval policy in place
-NSX-T: Cannot select SERVICE TYPE at the time of NSX-T SSL certificate creation
-Cannot Stop/Power off VM on Azure from Server Context
-ARM Git source issues ... Wrong path
-The jQuery libraries in use are outdated (v3.5.1)
-Copies does not work on instance provisioning
-Cloning Windows Instance - Agent Installation hangs in Finalising
-Guidance resizing incorrectly for CPU recommendations
-Resource Pools not populating in multi VMware clouds
-Not able to create prices in USN using the API.
-Updating Linux/Windows passwords on user settings doesn‚Äôt give success message
-Null values in Terraform code show as [object object] in Morpheus UI
-Image Builder Timeout
-Ansible integration issue - command bus option not saving
-API/CLI: If a tenant still has users/instances tied to it, the delete will fail
-NSX-V: Additional instance nodes are not adding under LB pool members
-Ansible Galaxy Race Condition | Roles can be removed during Ansible playbook execution causing failed task executions
-vCD:  Windows User creation is not working for guest customizations
+- Boot order for app blueprints isn‚Äôt being honoured with approval policy in place
+- NSX-T: Cannot select SERVICE TYPE at the time of NSX-T SSL certificate creation
+- Cannot Stop/Power off VM on Azure from Server Context
+- ARM Git source issues ... Wrong path
+- The jQuery libraries in use are outdated (v3.5.1)
+- Copies does not work on instance provisioning
+- Cloning Windows Instance - Agent Installation hangs in Finalising
+- Guidance resizing incorrectly for CPU recommendations
+- Resource Pools not populating in multi VMware clouds
+- Not able to create prices in USN using the API.
+- Updating Linux/Windows passwords on user settings doesn‚Äôt give success message
+- Null values in Terraform code show as [object object] in Morpheus UI
+- Image Builder Timeout
+- Ansible integration issue - command bus option not saving
+- API/CLI: If a tenant still has users/instances tied to it, the delete will fail
+- NSX-V: Additional instance nodes are not adding under LB pool members
+- Ansible Galaxy Race Condition | Roles can be removed during Ansible playbook execution causing failed task executions
+- vCD:  Windows User creation is not working for guest customizations
 
 Appliance & Agent Updates
 =========================
