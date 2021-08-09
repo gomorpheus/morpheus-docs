@@ -262,6 +262,7 @@ html.writer-html5 .rst-content .modal dl.field-list {
 
 html.writer-html5 .rst-content .modal dl.field-list>dt {
     padding-left: 2rem;
+    min-width: 300px;
     /* padding-right: 3rem; */
     /* text-align: right; */
 }
@@ -275,7 +276,29 @@ html.writer-html5 .rst-content .modal dl.field-list>dd {
 }
 
 
-/* end modal admonition */
+
+/* end custom admonition */
+
+html.writer-html5 .rst-content dl.field-list, html.writer-html5 .rst-content dl.footnote {
+    display: grid;
+    grid-template-columns: max-content auto;
+    align-items: baseline;
+}
+
+.rst-content dl:not(.docutils) dt {
+    display: table;
+    margin: 6px 0;
+    font-size: 100%;
+    line-height: normal;
+    background: #e7f2fa00;
+    color: #333;
+    border-top: solid 0px #6ab0de00;
+    padding: 6px;
+    position: relative;
+    /* min-width: 300px; */
+    /* justify-self: right; */
+    min-width: 150px;
+}
 
 
 /* https://morpheusdata1.d.pr/HsTBKB */

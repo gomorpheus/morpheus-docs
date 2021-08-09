@@ -21,24 +21,26 @@ New Features
 Fixes
 =====
 
-:Rubrik: Backup size now displayed as ``-`` instead of ``0`` when backup size is not available
-:Reports: Fix for display of utilization statistics in some Cloud Usage Reports
-:Blueprints: Rapidly activating different Builder, Raw, and Preview tabs in the blueprint wizard no longer causes the active tab content to get stuck.
-:Roles: Datastores: Edit option no longer displayed for Role Permission ``Infrastructure -> Datastores: Read``
-:Keypairs: Synced keypairs are now filtered from Key Pairs selection list in user settings and admin provisioning settings. Synced Key Pair records do not contain any key data and are not usabled for user and global keypairs.
-:Analytics: Cloud Costs: Fixed selecting a tag name and value combination in the "more" filters in Cloud Cost Analysis
-:Localization: Portuguese: The strings displayed in the Create Cloud dialog are now being displayed properly when selecting Portuguese as the language. Pass in ``?lang=pt_BR`` or ``?lang=pt_PT`` in the url to force the UI to Portuguese Brazil and Portugal, respectively
-:Health: Fixed issue with |morpheus| Appliance logs not displaying in ``Administration -> Health: Logs`` when ``appliance_instance`` id not equal to ``1``
+:Analytics: - Cloud Costs: Fixed selecting a tag name and value combination in the "more" filters in Cloud Cost Analysis
+:Blueprints: - Rapidly activating different Builder, Raw, and Preview tabs in the blueprint wizard no longer causes the active tab content to get stuck.
 :Clusters: Docker Clusters: Fixed custom option type issues required flag enforcemnet and type ahead option type issue when provisioning Docker Clusters
+:Health: Fixed issue with |morpheus| Appliance logs not displaying in ``Administration -> Health: Logs`` when ``appliance_instance`` id not equal to ``1``
+:Keypairs: Synced keypairs are now filtered from Key Pairs selection list in user settings and admin provisioning settings. Synced Key Pair records do not contain any key data and are not usabled for user and global keypairs.
 :Library: Fixed display of sub-tab selection in ``Provisioning -> Library`` UI mobile views 
+:Localization: Portuguese: The strings displayed in the Create Cloud dialog are now being displayed properly when selecting Portuguese as the language. Pass in ``?lang=pt_BR`` or ``?lang=pt_PT`` in the url to force the UI to Portuguese Brazil and Portugal, respectively
+:Policies: Delayed Removal: Fixed deleting an unamanged vm within a Delayed Removal Policy Scope and with "Remove Associated Instances" check causing VM to shut down 
+:Reports: Fix for display of utilization statistics in some Cloud Usage Reports
+:Roles: - Activity: Fixed viewing ``Operations -> Activity`` activity logs requiring ``Operations: Reports`` permissions
+        - Datastores: Edit option no longer displayed for Role Permission ``Infrastructure -> Datastores: Read``
+:Rubrik: Backup size now displayed as ``-`` instead of ``0`` when backup size is not available
+:Tasks: Chef Bootstrap: Fixced issues where Chef Bootrap execution would fail with reason "Chef Infra Client cannot execute without accepting the license"
+:Tasks: Variables: Fixed evaluation of <%=user.username%> variable in task executions
 :vCloud Director: Fixed ``safeComputerName`` issue during Windows Guest Customizations
-Unmanage VM W/ remove assoc instance option w/ Delay removal it shuts VM down
-Activity Logs is requiring Operations: Reports permission too
-Variable - Current User?
-Chef bootstrap now requires license agreement to proceed.
-Ansible task execution fails when user has special characters in their name
-Cloud count disappears inside Groups->Clouds section
-Errors when deleting a nic in VMware
+
+- Ansible: task execution fails when user has special characters in their name
+- Cloud count disappears inside Groups->Clouds section
+- Errors when deleting a nic in VMware
+
 Boot order for app blueprints isn‚Äôt being honoured with approval policy in place
 NSX-T: Cannot select SERVICE TYPE at the time of NSX-T SSL certificate creation
 Cannot Stop/Power off VM on Azure from Server Context
