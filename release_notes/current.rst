@@ -29,11 +29,9 @@ Fixes
 :Analytics: Cloud Costs: Fixed selecting a tag name and value combination in the "more" filters in Cloud Cost Analysis
 :Localization: Portuguese: The strings displayed in the Create Cloud dialog are now being displayed properly when selecting Portuguese as the language. Pass in ``?lang=pt_BR`` or ``?lang=pt_PT`` in the url to force the UI to Portuguese Brazil and Portugal, respectively
 :Health: Fixed issue with |morpheus| Appliance logs not displaying in ``Administration -> Health: Logs`` when ``appliance_instance`` id not equal to ``1``
-
-
-Docker Cluster Option Type not populating options
-UI resize on library page is hiding the menu section
-vCD Windows Instances failing Guest Customizations due to safeComputerName typo.
+:Clusters: Docker Clusters: Fixed custom option type issues required flag enforcemnet and type ahead option type issue when provisioning Docker Clusters
+:Library: Fixed display of sub-tab selection in ``Provisioning -> Library`` UI mobile views 
+:vCloud Director: Fixed ``safeComputerName`` issue during Windows Guest Customizations
 Unmanage VM W/ remove assoc instance option w/ Delay removal it shuts VM down
 Activity Logs is requiring Operations: Reports permission too
 Variable - Current User?

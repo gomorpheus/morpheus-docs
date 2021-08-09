@@ -205,7 +205,7 @@ margin-bottom: .001em;
 
 /* modal admonition */
 
-.rst-content .modal .admonition, .rst-content .admonition-todo, .rst-content .attention, .rst-content .caution, .rst-content .danger, .rst-content .error, .rst-content .hint, .rst-content .important, .rst-content .note, .rst-content .seealso, .rst-content .tip, .rst-content .warning, .wy-alert {
+.rst-content .admonition, .rst-content .admonition-todo, .rst-content .attention, .rst-content .caution, .rst-content .danger, .rst-content .error, .rst-content .hint, .rst-content .important, .rst-content .note, .rst-content .seealso, .rst-content .tip, .rst-content .warning, .wy-alert {
     padding: 12px;
     line-height: 24px;
     margin-bottom: 24px;
@@ -213,7 +213,7 @@ margin-bottom: .001em;
     border-radius: 6px;
     background: #ffffff;
     /* -webkit-box-shadow: 0 3px 9px rgb(0 0 0 / 50%); */
-    box-shadow: 0 3px 10px rgb(0 0 0 / 25%);
+    box-shadow: 0 2px 12px rgb(0 0 0 / 25%);
     /* background-clip: padding-box; */
     outline: 0;
 }
@@ -240,16 +240,17 @@ margin-bottom: .001em;
 .rst-content .modal {
   margin-right: 10%;
   margin-left: 10%;
+  background: #ffffff;
 }
 
-.rst-content .modal p.rubric {
+.rst-content p.rubric {
     border-bottom: 1px solid #cacaca;
     margin-bottom: 12px;
     /* font-weight: 500; */
 }
 
 
-html.writer-html5 .modal .rst-content dl.field-list, html.writer-html5 .rst-content dl.footnote {
+html.writer-html5 .rst-content .modal dl.field-list {
     display: grid;
     grid-template-columns: max-content auto;
     /* align-content: center; */
@@ -259,14 +260,14 @@ html.writer-html5 .modal .rst-content dl.field-list, html.writer-html5 .rst-cont
 }
 
 
-html.writer-html5 .modal .rst-content dl.field-list>dt, html.writer-html5 .rst-content dl.footnote>dt {
+html.writer-html5 .rst-content .modal dl.field-list>dt {
     padding-left: 2rem;
     /* padding-right: 3rem; */
     /* text-align: right; */
 }
 
 
-html.writer-html5 .modal .rst-content dl.field-list>dd, html.writer-html5 .rst-content dl.field-list>dt, html.writer-html5 .rst-content dl.footnote>dd, html.writer-html5 .rst-content dl.footnote>dt {
+html.writer-html5 .rst-content .modal dl.field-list>dd {
     margin-bottom: 0;
     padding-right: 2rem;
     min-width: 300px;
@@ -274,7 +275,7 @@ html.writer-html5 .modal .rst-content dl.field-list>dd, html.writer-html5 .rst-c
 }
 
 
-/* end custom admonition */
+/* end modal admonition */
 
 
 /* https://morpheusdata1.d.pr/HsTBKB */
