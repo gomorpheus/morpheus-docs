@@ -7,7 +7,7 @@
 .. No highlights this time, small update
   .. include:: highlights.rst
 
-.. NOTE:: OpenStack v2 Identity API will be deprecated in v5.2.9 and will be removed in v5.3.3
+.. WARNING:: OpenStack v2 Identity API will be deprecated in v5.2.9 and will be removed in v5.3.3
 
 New Features
 ============
@@ -41,7 +41,7 @@ Fixes
 =====
 
 :Analytics: - Cloud Costs: Fixed selecting a tag name and value combination in the "more" filters in Cloud Cost Analysis
-:Ansible: Ansible Galaxy: - New ``roles`` working folder added, resolves intermittent "galaxy dependent roles can not be found" issue when using git integraiton source
+:Ansible: - Ansible Galaxy: New ``roles`` working folder added, resolves intermittent "galaxy dependent roles can not be found" issue when using git integration source
           - Fixed display of checkbox values for ``USE ANSIBLE GALAXY``, ``ENABLE VERBOSE LOGGING`` and ``USE MORPHEUS AGENT COMMAND BUS`` options in UI. 
           - Fixed task execution isue caused by special characters in user name
 :API CLI: - Tenants: Fixed deletion of Tenants with existing Instances when ``removeResources=on``
@@ -52,7 +52,7 @@ Fixes
 :Cloning: - Agent Installation: Fixed agent installation issue when Cloning a Windows Instance caused by existing ``C:\installAgent.ps1`` file.
 :Clusters: - Docker Clusters: Fixed custom option type issues required flag enforcement and type ahead option type issue when provisioning Docker Clusters
 :Currencies: - API: Fixed creating Prices with USN currency via API
-:Groups: ``Infrastructure -> Groups`` Fixed Cloud count hiding after 30 seconds
+:Groups: - ``Infrastructure -> Groups`` Fixed Cloud count hiding after 30 seconds
 :Guidance: - CPU Recomendations: Fixed guidance execution defaulting the CPU back to 1
 :Health: - Fixed issue with |morpheus| Appliance logs not displaying in ``Administration -> Health: Logs`` when ``appliance_instance`` id not equal to ``1``
 :Image Builder: - Fixed issue with delayed boot command execution during image builds
@@ -63,14 +63,14 @@ Fixes
 :Networks:  - Removed deprecated delete option for networks interfaces in Network tab on Instance and Host detail pages. Network interfaces are managed via reconfigure.
 :NSX-T:  - Fixed ability to select SERVICE TYPE at the time of NSX-T SSL certificate creation in a Tenant.
 :NSX-V: - Fixed members being added to LB pools when adding nodes to an Instance via ``Actions -> Add Node``
-:Policies: - Delayed Removal: Fixed deleting an unamanged vm within a Delayed Removal Policy Scope and with "Remove Associated Instances" check causing VM to shut down
-           - Fixed Boot order for App tiers not being honoured when a provision approval policy is enforced
+:Policies: - Delayed Removal: Fixed deleting an unmanaged vm within a Delayed Removal Policy Scope and with "Remove Associated Instances" check causing VM to shut down
+           - Fixed Boot order for App tiers not being honored when a provision approval policy is enforced
 :Provisioning: - Fixed ``Copies`` field value not applying when using scroll up/down
 :Reports: - Fix for display of utilization statistics in some Cloud Usage Reports
 :Roles: - Activity: Fixed viewing ``Operations -> Activity`` activity logs requiring ``Operations: Reports`` permissions
         - Datastores: Edit option no longer displayed for Role Permission ``Infrastructure -> Datastores: Read``
 :Rubrik: - Backup size now displayed as ``-`` instead of ``0`` when backup size is not available
-:Tasks: - Chef Bootstrap: Fixced issues where Chef Bootrap execution would fail with reason "Chef Infra Client cannot execute without accepting the license"
+:Tasks: - Chef Bootstrap: Fixed issues where Chef Bootsrap execution would fail with reason "Chef Infra Client cannot execute without accepting the license"
         - Variables: Fixed evaluation of <%=user.username%> variable in task executions
 :Terraform: - Fixed ``null`` tf variable values redering as ``[object object]`` in UI 
 :User Settings: - Success Message added on save when updating Linux/Windows passwords in user settings (Displays for 5s then fades)
@@ -82,4 +82,5 @@ Fixes
 Appliance & Agent Updates
 =========================
 
-:Openstack: OpenStack v2 Identity API will be deprecated in v5.2.9 and will be removed in v5.3.3
+:Appliance: - The local code repository path has been moved from ``/var/opt/morpheus/morpheus-ui/repo`` to ``/var/opt/morpheus/morpheus-local/repo`` to reduce potential shared storage issues and performance restrictions. The reconfigure process creates the folders and sets the paths in application.yml, no manual intervention is needed unless symlinks exist on ``/var/opt/morpheus/morpheus-ui/repo/git`` which will need to be removed prior to reconfiguring 5.3.2. The old ``/var/opt/morpheus/morpheus-ui/repo`` path will be automatically deleted in a future release but can be manually recursivly deleted at any time for storage recursively.
+:Openstack: - OpenStack v2 Identity API will be deprecated in v5.2.9 and will be removed in v5.3.3
