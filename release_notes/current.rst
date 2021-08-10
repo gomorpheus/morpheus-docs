@@ -12,12 +12,15 @@
 New Features
 ============
 
+:Huawei Cloud: - EIP billing mode changed to bill by traffic rather than bandwidth. Note that this change does not affect OTC Clouds which only bill by traffic
 :Library: - Added Debian 9 and 10 Layouts for VMware Clouds to the standard |morpheus| Library
           - Added Ubuntu 20 Layouts for nearly all supported Clouds
 :Network: - Added ability to change network during an Instance reconfigure (Select Reconfigure from the Instance Actions menu) for Instances in VMware and OpenStack Clouds. In other Clouds, network is still a read-only field during Instance reconfigure
           - Added a Display Name field for networks, this value appears as the network name on the network display page (Infrastructure > Network). For synced networks, the name and display name will initially be identical but users can edit the display name if it makes sense to present a friendlier name to users
 :Openstack: - OpenStack v2 Identity API will be deprecated in v5.2.9 and will be removed in v5.3.3
 :UI: - Added more detailed help block text for the Private Key field when storing a new key pair in |morpheus| (Infrastructure > Keys & Certs > Key Pairs)
+:VMware vCenter: - The UUID for hypervisor hosts synced into vCenter Clouds is now stored to the ``unique_id`` field on hypervisor host ``compute_server`` records
+                 - Improved sync performance for VMware folders
 
 |morpheus| API and CLI Improvements
 ===================================
@@ -77,6 +80,7 @@ Fixes
 - NSX-V: Additional instance nodes are not adding under LB pool members
 - Ansible Galaxy Race Condition | Roles can be removed during Ansible playbook execution causing failed task executions
 - vCD:  Windows User creation is not working for guest customizations
+- If you update the image in the instance, blueprint, or app wizard, the volumes update accordingly to reflect the number of disks in the image
 
 Appliance & Agent Updates
 =========================

@@ -62,7 +62,8 @@ Services
 |morphver| Service Version Changes
 ----------------------------------
 
-- No service version chnages from |previousMorphVer|
+- Java upgraded to |java|
+- Tomcat upgraded to |tcver|
 
 |morphver| Service Version Compatibility
 ----------------------------------------
@@ -89,13 +90,14 @@ When externalizing MySQL, Elasticsearch and/or RabbitMQ services, the following 
 | OpenSSL                               |                       | |openssl|, |openssl_fips| (FIPS)    |
 +---------------------------------------+-----------------------+-------------------------------------+
 
-.. 
-   Security
-   ========
 
-   CVEs Addressed
-   --------------
+Security
+========
 
+CVEs Addressed
+--------------
+
+- CVE-2021-33037
 
 Upgrade Support Matrix
 ======================

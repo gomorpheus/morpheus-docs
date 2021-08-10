@@ -20,12 +20,12 @@ rst_prolog = """
 .. |mysqlverfips| replace:: v.5.7.29
 .. |esbranch| replace:: v7.x
 .. |esver| replace:: v7.8.1
-.. |tcver| replace:: v9.0.45
+.. |tcver| replace:: v9.0.50
 .. |nginxver| replace:: v1.19.9
 .. |linuxagentver| replace:: v2.1.1
 .. |winagentver| replace:: v1.7.0.0
 .. |nodePackageVer| replace:: 3.2.1
-.. |java| replace:: v8u302
+.. |java| replace:: v8u302-b08
 .. |openjdk-jre| replace:: v8u302
 .. |openjdk-elasticsearch| replace:: 14.0.2+12
 .. |openssl| replace:: 1.1.1k
@@ -35,7 +35,7 @@ rst_prolog = """
 
 .. |trash| unicode:: 0x0001F5D1 .. TRASH ICON
 .. |gear| unicode:: U+02699 .. GEAR ICON
-.. |info| unicode:: U+2139 .. INFO ICON 
+.. |info| unicode:: U+2139 .. INFO ICON
 .. |triangledown| unicode:: U+25BD .. TRIANGLE DOWN ICON
 .. |rightarrow| unicode:: U+2192 .. RIGHT ARROW ICON
 .. |pencil| unicode:: U+270E .. EDIT ICON
