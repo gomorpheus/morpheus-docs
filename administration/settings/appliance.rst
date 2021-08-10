@@ -1,8 +1,6 @@
 Appliance Settings
 ^^^^^^^^^^^^^^^^^^
 
-Host Level Firewall Enabled
-  Enables or Disables the host level firewall. This must be Enabled to use |morpheus| Security Groups.
 Appliance URL
   The default URL used for Agent install and Agent functionality. All Instances and Hosts must be able to resolve and reach this URL over 443 for successful agent install and communication.
 
