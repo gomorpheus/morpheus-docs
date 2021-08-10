@@ -44,7 +44,7 @@ Fixes
 :Ansible: - Ansible Galaxy: New ``roles`` working folder added, resolves intermittent "galaxy dependent roles can not be found" issue when using git integration source
           - Fixed display of checkbox values for ``USE ANSIBLE GALAXY``, ``ENABLE VERBOSE LOGGING`` and ``USE MORPHEUS AGENT COMMAND BUS`` options in UI. 
           - Fixed Ansible task execution issue caused by special characters in user name
-:API CLI: - Tenants: Fixed deletion of Tenants with existing Instances when ``removeResources=on``
+:API: - Tenants: Fixed deletion of Tenants with existing Instances when ``removeResources=on``
           - Tenants: Fixed deletion of Tenants with existing users via API/CLI
 :ARM: - Spec Templates: Fixed repo path issue with ARM spec templates stored in a Git repository
 :Azure: - Fixed ``Actions -> Start/Stop`` for discovered VMs that were converted to managed
