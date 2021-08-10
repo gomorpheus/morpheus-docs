@@ -40,44 +40,46 @@ New Features
 Fixes
 =====
 
-:Analytics: - Cloud Costs: Fixed selecting a tag name and value combination in the "more" filters in Cloud Cost Analysis
-:Ansible: - Ansible Galaxy: New ``roles`` working folder added, resolves intermittent "galaxy dependent roles can not be found" issue when using git integration source
-          - Fixed display of checkbox values for ``USE ANSIBLE GALAXY``, ``ENABLE VERBOSE LOGGING`` and ``USE MORPHEUS AGENT COMMAND BUS`` options in UI. 
-          - Fixed Ansible task execution issue caused by special characters in user name
-:API CLI: - Tenants: Fixed deletion of Tenants with existing Instances when ``removeResources=on``
-          - Tenants: Fixed deletion of Tenants with existing users via API/CLI
-:ARM: - Spec Templates: Fixed repo path issue with ARM spec templates stored in a Git repository
-:Azure: - Fixed ``Actions -> Start/Stop`` for discovered VMs that were converted to managed
-:Blueprints: - Rapidly activating different Builder, Raw, and Preview tabs in the blueprint wizard no longer causes the active tab content to get stuck.
-:Cloning: - Agent Installation: Fixed agent installation issue when Cloning a Windows Instance caused by existing ``C:\installAgent.ps1`` file.
-:Clusters: - Docker Clusters: Fixed custom option type issues required flag enforcement and type ahead option type issue when provisioning Docker Clusters
-:Currencies: - API: Fixed creating Prices with USN currency via API
-:Groups: - ``Infrastructure -> Groups`` Fixed Cloud count hiding after 30 seconds
-:Guidance: - CPU Recomendations: Fixed guidance execution defaulting the CPU back to 1
-:Health: - Fixed issue with |morpheus| Appliance logs not displaying in ``Administration -> Health: Logs`` when ``appliance_instance`` id not equal to ``1``
-:Image Builder: - Fixed issue with delayed boot command execution during image builds
-:Keys & Certs: - Synced keypairs are now filtered from Key Pairs selection list in user settings and admin provisioning settings. Synced Key Pair records do not contain any key data and are not usabled for user and global keypairs.
-:Library: - Fixed display of sub-tab selection in ``Provisioning -> Library`` UI mobile views
-          - Removed some old and unused catalog items from the |morpheus| standard Library
-:Localization: - Portuguese: The strings displayed in the Create Cloud dialog are now being displayed properly when selecting Portuguese as the language. Pass in ``?lang=pt_BR`` or ``?lang=pt_PT`` in the url to force the UI to Portuguese Brazil and Portugal, respectively
-:Networks:  - Removed deprecated delete option for networks interfaces in Network tab on Instance and Host detail pages. Network interfaces are managed via reconfigure.
-:NSX-T:  - Fixed ability to select SERVICE TYPE at the time of NSX-T SSL certificate creation in a Tenant.
-:NSX-V: - Fixed members being added to LB pools when adding nodes to an Instance via ``Actions -> Add Node``
-:Policies: - Delayed Removal: Fixed deleting an unmanaged vm within a Delayed Removal Policy Scope and with "Remove Associated Instances" check causing VM to shut down
-           - Fixed Boot order for App tiers not being honored when a provision approval policy is enforced
-:Provisioning: - Fixed ``Copies`` field value not applying when using scroll up/down
-:Reports: - Fix for display of utilization statistics in some Cloud Usage Reports
-:Roles: - Activity: Fixed viewing ``Operations -> Activity`` activity logs requiring ``Operations: Reports`` permissions
-        - Datastores: Edit option no longer displayed for Role Permission ``Infrastructure -> Datastores: Read``
-:Rubrik: - Backup size now displayed as ``-`` instead of ``0`` when backup size is not available
-:Tasks: - Chef Bootstrap: Fixed issues where Chef Bootsrap execution would fail with reason "Chef Infra Client cannot execute without accepting the license"
-        - Variables: Fixed evaluation of <%=user.username%> variable in task executions
-:Terraform: - Fixed ``null`` tf variable values redering as ``[object object]`` in UI 
-:User Settings: - Success Message added on save when updating Linux/Windows passwords in user settings (Displays for 5s then fades)
-:vCD: - Windows User creation is not working for guest customizations
-:vCloud Director: - Fixed ``safeComputerName`` issue during Windows Guest Customizations
-:VMware: - Optimizations added for Resource Pool and Folder sync. Resolves issue with loading Resource Pools in add cloud wizard in environments with 500+ Resource Pools.
-         - Volumes now update properly when changing Image selection when provisioning the VMWARE Instance Type
+.. class:: fixes
+
+    :Analytics: - Cloud Costs: Fixed selecting a tag name and value combination in the "more" filters in Cloud Cost Analysis
+    :Ansible: - Ansible Galaxy: New ``roles`` working folder added, resolves intermittent "galaxy dependent roles can not be found" issue when using git integration source
+              - Fixed display of checkbox values for ``USE ANSIBLE GALAXY``, ``ENABLE VERBOSE LOGGING`` and ``USE MORPHEUS AGENT COMMAND BUS`` options in UI. 
+              - Fixed Ansible task execution issue caused by special characters in user name
+    :API CLI: - Tenants: Fixed deletion of Tenants with existing Instances when ``removeResources=on``
+              - Tenants: Fixed deletion of Tenants with existing users via API/CLI
+    :ARM: - Spec Templates: Fixed repo path issue with ARM spec templates stored in a Git repository
+    :Azure: - Fixed ``Actions -> Start/Stop`` for discovered VMs that were converted to managed
+    :Blueprints: - Rapidly activating different Builder, Raw, and Preview tabs in the blueprint wizard no longer causes the active tab content to get stuck.
+    :Cloning: - Agent Installation: Fixed agent installation issue when Cloning a Windows Instance caused by existing ``C:\installAgent.ps1`` file.
+    :Clusters: - Docker Clusters: Fixed custom option type issues required flag enforcement and type ahead option type issue when provisioning Docker Clusters
+    :Currencies: - API: Fixed creating Prices with USN currency via API
+    :Groups: - ``Infrastructure -> Groups`` Fixed Cloud count hiding after 30 seconds
+    :Guidance: - CPU Recomendations: Fixed guidance execution defaulting the CPU back to 1
+    :Health: - Fixed issue with |morpheus| Appliance logs not displaying in ``Administration -> Health: Logs`` when ``appliance_instance`` id not equal to ``1``
+    :Image Builder: - Fixed issue with delayed boot command execution during image builds
+    :Keys & Certs: - Synced keypairs are now filtered from Key Pairs selection list in user settings and admin provisioning settings. Synced Key Pair records do not contain any key data and are not usabled for user and global keypairs.
+    :Library: - Fixed display of sub-tab selection in ``Provisioning -> Library`` UI mobile views
+              - Removed some old and unused catalog items from the |morpheus| standard Library
+    :Localization: - Portuguese: The strings displayed in the Create Cloud dialog are now being displayed properly when selecting Portuguese as the language. Pass in ``?lang=pt_BR`` or ``?lang=pt_PT`` in the url to force the UI to Portuguese Brazil and Portugal, respectively
+    :Networks:  - Removed deprecated delete option for networks interfaces in Network tab on Instance and Host detail pages. Network interfaces are managed via reconfigure.
+    :NSX-T:  - Fixed ability to select SERVICE TYPE at the time of NSX-T SSL certificate creation in a Tenant.
+    :NSX-V: - Fixed members being added to LB pools when adding nodes to an Instance via ``Actions -> Add Node``
+    :Policies: - Delayed Removal: Fixed deleting an unmanaged vm within a Delayed Removal Policy Scope and with "Remove Associated Instances" check causing VM to shut down
+               - Fixed Boot order for App tiers not being honored when a provision approval policy is enforced
+    :Provisioning: - Fixed ``Copies`` field value not applying when using scroll up/down
+    :Reports: - Fix for display of utilization statistics in some Cloud Usage Reports
+    :Roles: - Activity: Fixed viewing ``Operations -> Activity`` activity logs requiring ``Operations: Reports`` permissions
+            - Datastores: Edit option no longer displayed for Role Permission ``Infrastructure -> Datastores: Read``
+    :Rubrik: - Backup size now displayed as ``-`` instead of ``0`` when backup size is not available
+    :Tasks: - Chef Bootstrap: Fixed issues where Chef Bootsrap execution would fail with reason "Chef Infra Client cannot execute without accepting the license"
+            - Variables: Fixed evaluation of <%=user.username%> variable in task executions
+    :Terraform: - Fixed ``null`` tf variable values redering as ``[object object]`` in UI 
+    :User Settings: - Success Message added on save when updating Linux/Windows passwords in user settings (Displays for 5s then fades)
+    :vCD: - Windows User creation is not working for guest customizations
+    :vCloud Director: - Fixed ``safeComputerName`` issue during Windows Guest Customizations
+    :VMware: - Optimizations added for Resource Pool and Folder sync. Resolves issue with loading Resource Pools in add cloud wizard in environments with 500+ Resource Pools.
+             - Volumes now update properly when changing Image selection when provisioning the VMWARE Instance Type
 
 Appliance & Agent Updates
 =========================

@@ -359,6 +359,20 @@ html.writer-html5 .rst-content dl.field-list, html.writer-html5 .rst-content dl.
     color: ##ffffff !important;
 }
 
+/* Fixes List */
+
+html.writer-html5 .rst-content .fixes dl.field-list, html.writer-html5 .rst-content .fixes dl.footnote {
+    display: grid;
+    grid-template-columns: max-content auto;
+    margin-bottom: 0px;
+    align-items: baseline;
+}
+
+.rst-content .fixes dl dd {
+    margin: 0 0 -20px 24px;
+    /* line-height: 24px; */
+}
+
 /*
 .wy-nav-content-wrap {
     background: #253746;
