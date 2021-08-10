@@ -15,7 +15,7 @@ New Features
 :Library: - Added Debian 9 and 10 Layouts for VMware Clouds to the standard |morpheus| Library
           - Added Ubuntu 20 Layouts for nearly all supported Clouds
 :Network: - Added ability to change network during an Instance reconfigure (Select Reconfigure from the Instance Actions menu) for Instances in VMware and OpenStack Clouds. In other Clouds, network is still a read-only field during Instance reconfigure
-          - Added a Display Name field for networks, the listed name for the network on the networks list page will be the display name. For synced networks, the name and display name will initially be identical but users can edit the display name if it makes sense to present a friendlier name to users
+          - Added a Display Name field for networks, this value appears as the network name on the network display page (Infrastructure > Network). For synced networks, the name and display name will initially be identical but users can edit the display name if it makes sense to present a friendlier name to users
 :Openstack: - OpenStack v2 Identity API will be deprecated in v5.2.9 and will be removed in v5.3.3
 :UI: - Added more detailed help block text for the Private Key field when storing a new key pair in |morpheus| (Infrastructure > Keys & Certs > Key Pairs)
 
