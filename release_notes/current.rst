@@ -15,11 +15,13 @@ New Features
 :Huawei Cloud: - EIP billing mode changed to bill by traffic rather than bandwidth. Note that this change does not affect OTC Clouds which only bill by traffic
 :Library: - Added Debian 9 and 10 Layouts for VMware Clouds to the standard |morpheus| Library
           - Added Ubuntu 20 Layouts for nearly all supported Clouds
-          - Disabled several deprected System Instance Types and associated layouts that are no longer maintained: Cassandra, Confluence, Devstack, Hadoop, Jboss, Jenkins, Magento, Mongo, Moogsoft, Nexus, Percona, Puppet, RethinkDb, Riak, RiakCs, Stash, Solr, Wordpress, Zookeeper. Note this only disables the Instance type from the system seeded library and does not affect user created Insatnce Types or Layouts.
+          - Disabled several deprecated System Instance Types and associated Layouts that are no longer maintained: **Cassandra, Confluence, Devstack, Hadoop, Jboss, Jenkins, Magento, Mongo, Moogsoft, Nexus, Percona, Puppet, RethinkDb, Riak, RiakCs, Stash, Solr, Wordpress, and Zookeeper**. Note: this only disables the Instance type from the system seeded library and does not affect user created Insatnce Types or Layouts.
 :Network: - Added ability to change network during an Instance reconfigure (Select Reconfigure from the Instance Actions menu) for Instances in VMware and OpenStack Clouds. In other Clouds, network is still a read-only field during Instance reconfigure
           - Added a Display Name field for networks, this value appears as the network name on the network display page (Infrastructure > Network). For synced networks, the name and display name will initially be identical but users can edit the display name if it makes sense to present a friendlier name to users
 :Openstack: - OpenStack v2 Identity API will be deprecated in v5.2.9 and will be removed in v5.3.3
 :UI: - Added more detailed help block text for the Private Key field when storing a new key pair in |morpheus| (Infrastructure > Keys & Certs > Key Pairs)
+     - jQuery version update to v3.6.0
+     - Success Message added on save when updating Linux/Windows passwords in User Settings
 :VMware vCenter: - The UUID for hypervisor hosts synced into vCenter Clouds is now stored to the ``unique_id`` field on hypervisor host ``compute_server`` records
                  - Improved sync performance for VMware Resource Pools and Folders
 
@@ -36,7 +38,6 @@ New Features
         - Retrieve any NSX-T objects which are associated with Tier 0 or Tier 1 routers
         - Create, manage, and delete NSX-T segments
         - Manage Group visibility for NSX-T segments
-:UI: - jQuery version update to v3.6.0
 
 Fixes
 =====
