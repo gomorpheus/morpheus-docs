@@ -46,9 +46,9 @@ Fixes
           - Fixed display of checkbox values for ``USE ANSIBLE GALAXY``, ``ENABLE VERBOSE LOGGING`` and ``USE MORPHEUS AGENT COMMAND BUS`` options in UI. 
           - Fixed Ansible task execution issue caused by special characters in user name
 :API: - Tenants: Fixed deletion of Tenants with existing Instances when ``removeResources=on``
-          - Tenants: Fixed deletion of Tenants with existing users via API/CLI
-:ARM: - Spec Templates: Fixed repo path issue with ARM spec templates stored in a Git repository
-:Azure: - Fixed ``Actions -> Start/Stop`` for discovered VMs that were converted to managed
+      - Tenants: Fixed deletion of Tenants with existing users via API/CLI
+:Azure: - ARM Spec Templates: Fixed repo path issue with ARM spec templates stored in a Git repository
+        - Fixed ``Actions -> Start/Stop`` for discovered VMs that were converted to managed
 :Blueprints: - Rapidly activating different Builder, Raw, and Preview tabs in the blueprint wizard no longer causes the active tab content to get stuck.
 :Cloning: - Agent Installation: Fixed agent installation issue when Cloning a Windows Instance caused by existing ``C:\installAgent.ps1`` file.
 :Clusters: - Docker Clusters: Fixed custom option type issues required flag enforcement and type ahead option type issue when provisioning Docker Clusters
@@ -62,8 +62,8 @@ Fixes
           - Removed some old and unused catalog items from the |morpheus| standard Library
 :Localization: - Portuguese: The strings displayed in the Create Cloud dialog are now being displayed properly when selecting Portuguese as the language. Pass in ``?lang=pt_BR`` or ``?lang=pt_PT`` in the url to force the UI to Portuguese Brazil and Portugal, respectively
 :Networks:  - Removed deprecated delete option for networks interfaces in Network tab on Instance and Host detail pages. Network interfaces are managed via reconfigure.
-:NSX-T:  - Fixed ability to select SERVICE TYPE at the time of NSX-T SSL certificate creation in a Tenant.
-:NSX-V: - Fixed members being added to LB pools when adding nodes to an Instance via ``Actions -> Add Node``
+:NSX: - Fixed ability to select SERVICE TYPE at the time of NSX-T SSL certificate creation in a Tenant.
+      - Fixed members being added to LB pools when adding nodes to an Instance via ``Actions -> Add Node``
 :Policies: - Delayed Removal: Fixed deleting an unmanaged vm within a Delayed Removal Policy Scope and with "Remove Associated Instances" check causing VM to shut down
            - Fixed Boot order for App tiers not being honored when a provision approval policy is enforced
 :Provisioning: - Fixed ``Copies`` field value not applying when using scroll up/down
@@ -83,5 +83,10 @@ Fixes
 Appliance & Agent Updates
 =========================
 
-:Appliance: - The local code repository path has been moved from ``/var/opt/morpheus/morpheus-ui/repo`` to ``/var/opt/morpheus/morpheus-local/repo`` to reduce potential shared storage issues and performance restrictions. The reconfigure process creates the folders and sets the paths in application.yml, no manual intervention is needed unless symlinks exist on ``/var/opt/morpheus/morpheus-ui/repo/git`` which will need to be removed prior to reconfiguring 5.3.2. The old ``/var/opt/morpheus/morpheus-ui/repo`` path will be automatically deleted in a future release but can be manually recursivly deleted at any time for storage recursively.
-:Openstack: - OpenStack v2 Identity API will be deprecated in v5.2.9 and will be removed in v5.3.3
+:Appliance: - Git: The local code repository path has been moved from ``/var/opt/morpheus/morpheus-ui/repo`` to ``/var/opt/morpheus/morpheus-local/repo`` to reduce potential shared storage issues and performance restrictions. The reconfigure process creates the folders and sets the paths in application.yml, no manual intervention is needed unless symlinks exist on ``/var/opt/morpheus/morpheus-ui/repo/git`` which will need to be removed prior to reconfiguring 5.3.2. The old ``/var/opt/morpheus/morpheus-ui/repo`` path will be automatically deleted in a future release but can be manually recursivly deleted at any time for storage recursively.
+            - Java Updated to 8u302-b08
+            - Tomcat verison update to v9.0.50
+            
+:Agent Packages: - Java Updated to 8u302-b08
+                 - |morphues| Node and VM Node Packages version update to 3.2.1
+
