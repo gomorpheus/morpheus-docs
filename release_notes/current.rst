@@ -89,5 +89,5 @@ Appliance & Agent Updates
             - Tomcat verison update to v9.0.50
             
 :Agent Packages: - Java Updated to 8u302-b08
-                 - |morphues| Node and VM Node Packages version update to 3.2.1
+                 - |morpheus| Node and VM Node Packages version update to 3.2.1
 
