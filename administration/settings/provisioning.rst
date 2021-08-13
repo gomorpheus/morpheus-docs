@@ -13,7 +13,7 @@ Hide Datastore Stats On Selection
   Hides Datastore utilization and size stats in provisioning and app wizards
 Cross-Tenant Naming Policies
   Enable for the ``sequence`` value in naming policies to apply across tenants
-Reuse Sequence Numbers
+Reuse Naming Sequence Numbers
   When selected, sequence numbers can be reused when Instances are removed. Deselect this option and |morpheus| will track issued sequence numbers and use the next available number each time.
 Deployment Archive Store
   Default Storage Provider for storing Deployment Archives.
