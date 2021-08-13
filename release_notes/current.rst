@@ -30,7 +30,6 @@ New Features
 :NSX-T: - Create, manage, and delete distributed firewall groups and rules
         - Create, manage, and delete DNAT and SNAT rules
         - Create, manage, and delete Tier 0 and Tier 1 routers
-        - Manage Group visibility for Tier 0 and Tier 1 routers
         - Attach and detach Tier 1 routers to Tier 0 routers
         - Retrieve any NSX-T objects which are associated with Tier 0 or Tier 1 routers
         - Create, manage, and delete NSX-T segments
