@@ -53,7 +53,7 @@ Once the initial integration is made, set this integration as the backup provide
 #. Under "Backup Provider", select the relevant Commvault integration
 #. Click :guilabel:`SAVE CHANGES`
 
-.. image:: /images/integration_guides/commvault/1setProvider.png
+.. image:: /images/integration_guides/commvault/1setProviders.png
 
 Configure Backup at Provision Time
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -69,7 +69,7 @@ When provisioning an Instance into a Cloud where Commvault is set as the backup 
 - **Backup Job:** Select the job which will be cloned or have a backup added to it depending on your selection in the prior field
 - **Job Name:** A name for the new cloned job (if you are cloning and not creating a new Backup Job)
 
-.. image:: /images/integration_guides/commvault/2createBackup.png
+.. image:: /images/integration_guides/commvault/2createBackups.png
 
 Viewing Backups
 ^^^^^^^^^^^^^^^
