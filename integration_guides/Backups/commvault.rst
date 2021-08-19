@@ -63,7 +63,7 @@ When provisioning an Instance into a Cloud where Commvault is set as the backup 
 - **Backup Type:** Select the desired Commvault backup type
 - **Backup Server:** Select the desired server synced from the Commvault backup provider associated with the Cloud
 - **Backup Set:** Select a configured backup set synced from the Commvault backup provider associated with the Cloud
-- **Storage Policy:** Gold, Silver, or Bronze
+- **Storage Policy:** Gold, Silver, or Bronze. Select the applicable SLA or retention policy for the workload being provisioned. The meanings of these retention tiers are configurable in Commvault
 - **Backup Name:** A name for the backup in |morpheus|, this field is pre-populated with the Instance name but can be overwritten
 - **Backup Job Type:** Clone an existing backup job (Backups > Jobs) or add this backup to an existing job. A job contains a retention count and backup frequency schedule and can have as many Instances backing up under it as needed
 - **Backup Job:** Select the job which will be cloned or have a backup added to it depending on your selection in the prior field
