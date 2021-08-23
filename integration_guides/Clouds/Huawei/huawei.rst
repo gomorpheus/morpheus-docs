@@ -148,3 +148,30 @@ With an OBS server onboarded or created in |morpheus|, you're able to create and
 Once finished, click :guilabel:`SAVE CHANGES`
 
 .. image:: /images/integration_guides/clouds/huawei/obs/3createBucket.png
+
+Network and Router Creation
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Once a Huawei Cloud is integrated into |morpheus|, new network creation options become available. When adding a new network (Infrastructure > Networks > Networks Tab), a new type labeled "Huawei Private Network" is available when clicking :guilabel:`+ADD`. When the user creates this network construct in |morpheus|, a layer two subnet is created but it's not connected to a Virtual Private Cloud (VPC). This is by design as an Internet-routable network is not always desired. Continue on with this section after creating the network to also create a VPC (router).
+
+Create a network
+````````````````
+
+#. Navigate to Infrastructure > Networks
+#. Click on the Networks tab
+#. Click :guilabel:`+ADD`
+#. Select Huawei Private Network
+#. Complete the modal based on requirements for the new network
+#. Click :guilabel:`SAVE CHANGES`
+
+Create a router
+```````````````
+
+#. Navigate to Infrastructure > Networks
+#. Click on the Routers tab
+#. Click :guilabel:`+ADD`
+#. Select Huawei Router
+#. Complete the modal based on requirements for the new router
+#. Click :guilabel:`SAVE CHANGES`
+
+When creating a router, it's helpful to note that the External Network is the floating IP network that has been assigned to the Huawei project. This network will grant your Instances their routes out to the Internet. The Internal Subnet can be a layer two subnet that you may have created in the previous step. In addition, multiple subnets can be added to the router (VPC) and the IP address on the subnet would be the router's internal IP address.
