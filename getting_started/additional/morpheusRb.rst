@@ -86,6 +86,7 @@ Morpheus allows for additional advanced customizations for system managed servic
   rabbitmq['log_dir'] = '/var/log/morpheus/rabbitmq'
   rabbitmq['nodename'] = 'rabbit@localhost'
   rabbitmq['port'] = '5672'
+  rabbitmq['use_tls'] = false
 
   repo['repo_host_url'] = 'https://downloads.morpheusdata.com'
 
