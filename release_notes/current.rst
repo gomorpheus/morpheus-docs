@@ -92,7 +92,7 @@ Fixes
 Appliance & Agent Updates
 =========================
 
-- Appliance: - The local code repository path has been moved from ``/var/opt/morpheus/morpheus-ui/repo`` to ``/var/opt/morpheus/morpheus-local/repo`` to reduce potential shared storage issues and performance restrictions. The reconfigure process creates the folders and sets the paths in application.yml, no manual intervention is needed unless symlinks exist on ``/var/opt/morpheus/morpheus-ui/repo/git`` which will need to be removed prior to reconfiguring 5.3.2. The old ``/var/opt/morpheus/morpheus-ui/repo`` path will be automatically deleted in a future release but can be manually recursivly deleted at any time for storage recursively.
+- Appliance: - The local code repository path has been moved from ``/var/opt/morpheus/morpheus-ui/repo`` to ``/var/opt/morpheus/morpheus-local/repo`` to reduce potential shared storage issues and performance restrictions. The reconfigure process creates the folders and sets the paths in application.yml, no manual intervention is needed unless symlinks exist on ``/var/opt/morpheus/morpheus-ui/repo/git`` which will need to be removed prior to reconfiguring 5.3.2. The old ``/var/opt/morpheus/morpheus-ui/repo`` path will be automatically deleted in a future release but can be manually recursively deleted at any time for storage recursively.
 - Morpheus Windows Agent: New windows agent version 1.7.0 addresses agent issue caused by new unformatted volumes being added, resulting in ```"ERROR:Error in SendAgentInit: The volume does not contain a recognized file system. Please make sure that all required file system drivers are loaded and that the volume is not corrupted."``` agent error. :superscript:`5.2.7`
 
 Refer to :ref:`compatibility` for additional details.
