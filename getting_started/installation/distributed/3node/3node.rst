@@ -93,69 +93,83 @@ Once you have your database installed and configured:
 Continued Installation Steps
 ````````````````````````````
 
-#. First begin by downloading the requisite |morpheus| packages either to the nodes or to your workstation for transfer. These packages need to be made available on the nodes you wish to install |morpheus| on.
+#. First begin by downloading and installing the requisite |morpheus| packages to the |morphues| nodes.
 
-   .. code-block:: bash
+   .. note:: For offline or nodes that cannot reach |repo_host_url|, both the standard and supplemental packages will need to be transferred and then installed on the |morpheus| nodes.
+	
 
-    [root@app-server-1 ~]# wget https://example/path/morpheus-appliance-ver-1.el7.x86_64.rpm
-    [root@app-server-1 ~]# wget https://example/path/morpheus-appliance-offline-ver-1.noarch.rpm
+  .. content-tabs::
 
-#. Once the packages are available on the nodes they can be installed. Make sure that no steps beyond the rpm install are run.
+     .. tab-container:: tab1
+        :title: All Nodes
+          
+         .. code-block:: bash
 
-   .. code-block:: bash
-
-    [root@app-server-1 ~] rpm -i morpheus-appliance-ver-1.el7.x86_64.rpm
-    [root@app-server-1 ~] rpm -i morpheus-appliance-offline-ver-1.noarch.rpm
-
+          [root@app-server-(1-3) ~]# wget https://example/path/morpheus-appliance-ver-1.el7.x86_64.rpm
+          [root@app-server-(1-3) ~]# rpm -i morpheus-appliance-offline-ver-1.noarch.rpm
+        
+#. Do NOT run reconfigure yet. The |morpheus| configuration file must be edited prior to the initial reconfigure.
+      
 #. Next you will need to edit the |morpheus| configuration file ``/etc/morpheus/morpheus.rb`` on each node.
 
-   **Node 1**
+.. content-tabs::
 
-   .. code-block:: bash
+   .. tab-container:: tab1
+        :title: **Node 1**
+   
+         **Node 1**
 
-     appliance_url 'https://morpheus1.localdomain'
-     elasticsearch['es_hosts'] = {'10.100.10.121' => 9200, '10.100.10.122' => 9200, '10.100.10.123' => 9200}
-     elasticsearch['node_name'] = '10.100.10.121'
-     elasticsearch['host'] = '0.0.0.0'
-     rabbitmq['host'] = '0.0.0.0'
-     rabbitmq['nodename'] = 'rabbit@node01'
-     mysql['enable'] = false
-     mysql['host'] = '10.100.10.111'
-     mysql['morpheus_db'] = 'morpheusdb'
-     mysql['morpheus_db_user'] = 'morpheus'
-     mysql['morpheus_password'] = 'password'
+         .. code-block:: bash
 
-   **Node 2**
+           appliance_url 'https://morpheus1.localdomain'
+           elasticsearch['es_hosts'] = {'10.100.10.121' => 9200, '10.100.10.122' => 9200, '10.100.10.123' => 9200}
+           elasticsearch['node_name'] = '10.100.10.121'
+           elasticsearch['host'] = '0.0.0.0'
+           rabbitmq['host'] = '0.0.0.0'
+           rabbitmq['nodename'] = 'rabbit@node01'
+           mysql['enable'] = false
+           mysql['host'] = '10.100.10.111'
+           mysql['morpheus_db'] = 'morpheusdb'
+           mysql['morpheus_db_user'] = 'morpheus'
+           mysql['morpheus_password'] = 'password'
 
-   .. code-block:: bash
+   .. tab-container:: tab2
+      :title: Node 2
+   
+         **Node 2**
 
-    appliance_url 'https://morpheus2.localdomain'
-    elasticsearch['es_hosts'] = {'10.100.10.121' => 9200, '10.100.10.122' => 9200, '10.100.10.123' => 9200}
-    elasticsearch['node_name'] = '10.100.10.122'
-    elasticsearch['host'] = '0.0.0.0'
-    rabbitmq['host'] = '0.0.0.0'
-    rabbitmq['nodename'] = 'rabbit@node02'
-    mysql['enable'] = false
-    mysql['host'] = '10.100.10.111'
-    mysql['morpheus_db'] = 'morpheusdb'
-    mysql['morpheus_db_user'] = 'morpheus'
-    mysql['morpheus_password'] = 'password'
+         .. code-block:: bash
 
-   **Node 3**
+          appliance_url 'https://morpheus2.localdomain'
+          elasticsearch['es_hosts'] = {'10.100.10.121' => 9200, '10.100.10.122' => 9200, '10.100.10.123' => 9200}
+          elasticsearch['node_name'] = '10.100.10.122'
+          elasticsearch['host'] = '0.0.0.0'
+          rabbitmq['host'] = '0.0.0.0'
+          rabbitmq['nodename'] = 'rabbit@node02'
+          mysql['enable'] = false
+          mysql['host'] = '10.100.10.111'
+          mysql['morpheus_db'] = 'morpheusdb'
+          mysql['morpheus_db_user'] = 'morpheus'
+          mysql['morpheus_password'] = 'password'
 
-   .. code-block:: bash
+   .. tab-container:: tab3
+      :title: **Node 1**
 
-    appliance_url 'https://morpheus3.localdomain'
-    elasticsearch['es_hosts'] = {'10.100.10.121' => 9200, '10.100.10.122' => 9200, '10.100.10.123' => 9200}
-    elasticsearch['node_name'] = '10.100.10.123'
-    elasticsearch['host'] = '0.0.0.0'
-    rabbitmq['host'] = '0.0.0.0'
-    rabbitmq['nodename'] = 'rabbit@node03'
-    mysql['enable'] = false
-    mysql['host'] = '10.100.10.111'
-    mysql['morpheus_db'] = 'morpheusdb'
-    mysql['morpheus_db_user'] = 'morpheus'
-    mysql['morpheus_password'] = 'password'
+         **Node 3**
+
+         .. code-block:: bash
+
+          appliance_url 'https://morpheus3.localdomain'
+          elasticsearch['es_hosts'] = {'10.100.10.121' => 9200, '10.100.10.122' => 9200, '10.100.10.123' => 9200}
+          elasticsearch['node_name'] = '10.100.10.123'
+          elasticsearch['host'] = '0.0.0.0'
+          rabbitmq['host'] = '0.0.0.0'
+          rabbitmq['nodename'] = 'rabbit@node03'
+          mysql['enable'] = false
+          mysql['host'] = '10.100.10.111'
+          mysql['morpheus_db'] = 'morpheusdb'
+          mysql['morpheus_db_user'] = 'morpheus'
+          mysql['morpheus_password'] = 'password'
 
 
    .. important:: The elasticsearch node names set in ``elasticsearch['node_name']`` must match the host entries in elasticsearch['es_hosts']. ``node_name`` is used for ``node.name`` and ``es_hosts`` is used for ``cluster.initial_master_nodes`` in the generated elasticsearch.yml config. node names that do not match entries in cluster.initial_master_nodes will cause clustering issues.
@@ -295,6 +309,10 @@ Continued Installation Steps
 
 #. Subsequently you can start all |morpheus| services on all three nodes and tail the |morpheus| UI log file to inspect errors.
 
+|
+
+-----
+
 Database Migration
 ``````````````````
 
@@ -358,6 +376,9 @@ If your new installation is part of a migration then you need to move the data f
     [root@app-server-1 ~]# /opt/morpheus/embedded/mysql/bin/mysql -u morpheus -h 10.130.2.38 morpheus -p < /tmp/morpheus_backup.sql
     Enter password:
 
+|
+
+-------
 
 Recovery
 ````````
@@ -367,19 +388,12 @@ If a node happens to crash most of the time |morpheus| will start upon boot of t
 .. code-block:: bash
 
    [root@app-server-1 ~]# morpheus-ctl status
-   run: check-server: (pid 17808) 7714s;
-   run: log: (pid 549) 8401s
-   run: elasticsearch: (pid 19207) 5326s;
-   run: log: (pid 565) 8401s
-   run: guacd: (pid 601) 8401s;
-   run: log: (pid 573) 8401s
-   run: morpheus-ui: (pid 17976) 7633s;
-   run: log: (pid 555) 8401s
-   run: nginx: (pid 581) 8401s;
-   run: log: (pid 544) 8401s
-   run: rabbitmq: (pid 17850) 7708s;
-   run: log: (pid 542) 8401s
-   run: log: (pid 548) 8401s
+   run: check-server: (pid 17808) 7714s; run: log: (pid 549) 8401s
+   run: elasticsearch: (pid 19207) 5326s; run: log: (pid 565) 8401s
+   run: guacd: (pid 601) 8401s; run: log: (pid 573) 8401s
+   run: morpheus-ui: (pid 17976) 7633s; run: log: (pid 555) 8401s
+   run: nginx: (pid 581) 8401s; run: log: (pid 544) 8401s
+   run: rabbitmq: (pid 17850) 7708s; run: log: (pid 542) 8401s
 
 
 But, a status can report false positives if, say, RabbitMQ is in a boot loop or Elasticsearch is up, but not able to join the cluster. It is always advisable to tail the logs of the services to investigate their health.
