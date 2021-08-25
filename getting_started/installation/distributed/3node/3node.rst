@@ -97,217 +97,330 @@ Continued Installation Steps
 
    .. note:: For offline or nodes that cannot reach |repo_host_url|, both the standard and supplemental packages will need to be transferred and then installed on the |morpheus| nodes.
 	
-
-  .. content-tabs::
+   .. content-tabs::
 
      .. tab-container:: tab1
         :title: All Nodes
           
          .. code-block:: bash
 
-          [root@app-server-(1-3) ~]# wget https://example/path/morpheus-appliance-ver-1.el7.x86_64.rpm
-          [root@app-server-(1-3) ~]# rpm -i morpheus-appliance-offline-ver-1.noarch.rpm
+          [root@node-(1/2/3) ~]# wget https://example/path/morpheus-appliance-ver-1.el7.x86_64.rpm
+          [root@node-(1/2/3) ~]# rpm -i morpheus-appliance-offline-ver-1.noarch.rpm
         
 #. Do NOT run reconfigure yet. The |morpheus| configuration file must be edited prior to the initial reconfigure.
       
 #. Next you will need to edit the |morpheus| configuration file ``/etc/morpheus/morpheus.rb`` on each node.
 
-.. content-tabs::
+   .. content-tabs::
 
-   .. tab-container:: tab1
-        :title: **Node 1**
-   
-         **Node 1**
+     .. tab-container:: tab1
+          :title: Node 1
+     
+           **Node 1**
 
-         .. code-block:: bash
+           .. code-block:: bash
 
-           appliance_url 'https://morpheus1.localdomain'
-           elasticsearch['es_hosts'] = {'10.100.10.121' => 9200, '10.100.10.122' => 9200, '10.100.10.123' => 9200}
-           elasticsearch['node_name'] = '10.100.10.121'
-           elasticsearch['host'] = '0.0.0.0'
-           rabbitmq['host'] = '0.0.0.0'
-           rabbitmq['nodename'] = 'rabbit@node01'
-           mysql['enable'] = false
-           mysql['host'] = '10.100.10.111'
-           mysql['morpheus_db'] = 'morpheusdb'
-           mysql['morpheus_db_user'] = 'morpheus'
-           mysql['morpheus_password'] = 'password'
+             appliance_url 'https://morpheus1.localdomain'
+             elasticsearch['es_hosts'] = {'10.100.10.121' => 9200, '10.100.10.122' => 9200, '10.100.10.123' => 9200}
+             elasticsearch['node_name'] = '10.100.10.121'
+             elasticsearch['host'] = '0.0.0.0'
+             rabbitmq['host'] = '0.0.0.0'
+             rabbitmq['nodename'] = 'rabbit@node01'
+             mysql['enable'] = false
+             mysql['host'] = '10.100.10.111'
+             mysql['morpheus_db'] = 'morpheusdb'
+             mysql['morpheus_db_user'] = 'morpheus'
+             mysql['morpheus_password'] = 'password'
 
-   .. tab-container:: tab2
-      :title: Node 2
-   
-         **Node 2**
+     .. tab-container:: tab2
+        :title: Node 2
+     
+           Node 2
 
-         .. code-block:: bash
+           .. code-block:: bash
 
-          appliance_url 'https://morpheus2.localdomain'
-          elasticsearch['es_hosts'] = {'10.100.10.121' => 9200, '10.100.10.122' => 9200, '10.100.10.123' => 9200}
-          elasticsearch['node_name'] = '10.100.10.122'
-          elasticsearch['host'] = '0.0.0.0'
-          rabbitmq['host'] = '0.0.0.0'
-          rabbitmq['nodename'] = 'rabbit@node02'
-          mysql['enable'] = false
-          mysql['host'] = '10.100.10.111'
-          mysql['morpheus_db'] = 'morpheusdb'
-          mysql['morpheus_db_user'] = 'morpheus'
-          mysql['morpheus_password'] = 'password'
+            appliance_url 'https://morpheus2.localdomain'
+            elasticsearch['es_hosts'] = {'10.100.10.121' => 9200, '10.100.10.122' => 9200, '10.100.10.123' => 9200}
+            elasticsearch['node_name'] = '10.100.10.122'
+            elasticsearch['host'] = '0.0.0.0'
+            rabbitmq['host'] = '0.0.0.0'
+            rabbitmq['nodename'] = 'rabbit@node02'
+            mysql['enable'] = false
+            mysql['host'] = '10.100.10.111'
+            mysql['morpheus_db'] = 'morpheusdb'
+            mysql['morpheus_db_user'] = 'morpheus'
+            mysql['morpheus_password'] = 'password'
 
-   .. tab-container:: tab3
-      :title: **Node 1**
+     .. tab-container:: tab3
+        :title: Node 3
 
-         **Node 3**
+           Node 3
 
-         .. code-block:: bash
+           .. code-block:: bash
 
-          appliance_url 'https://morpheus3.localdomain'
-          elasticsearch['es_hosts'] = {'10.100.10.121' => 9200, '10.100.10.122' => 9200, '10.100.10.123' => 9200}
-          elasticsearch['node_name'] = '10.100.10.123'
-          elasticsearch['host'] = '0.0.0.0'
-          rabbitmq['host'] = '0.0.0.0'
-          rabbitmq['nodename'] = 'rabbit@node03'
-          mysql['enable'] = false
-          mysql['host'] = '10.100.10.111'
-          mysql['morpheus_db'] = 'morpheusdb'
-          mysql['morpheus_db_user'] = 'morpheus'
-          mysql['morpheus_password'] = 'password'
+            appliance_url 'https://morpheus3.localdomain'
+            elasticsearch['es_hosts'] = {'10.100.10.121' => 9200, '10.100.10.122' => 9200, '10.100.10.123' => 9200}
+            elasticsearch['node_name'] = '10.100.10.123'
+            elasticsearch['host'] = '0.0.0.0'
+            rabbitmq['host'] = '0.0.0.0'
+            rabbitmq['nodename'] = 'rabbit@node03'
+            mysql['enable'] = false
+            mysql['host'] = '10.100.10.111'
+            mysql['morpheus_db'] = 'morpheusdb'
+            mysql['morpheus_db_user'] = 'morpheus'
+            mysql['morpheus_password'] = 'password'
 
 
    .. important:: The elasticsearch node names set in ``elasticsearch['node_name']`` must match the host entries in elasticsearch['es_hosts']. ``node_name`` is used for ``node.name`` and ``es_hosts`` is used for ``cluster.initial_master_nodes`` in the generated elasticsearch.yml config. node names that do not match entries in cluster.initial_master_nodes will cause clustering issues.
 
 #. Reconfigure on all nodes
 
-   .. code-block:: bash
+   .. content-tabs::
 
-    [root@app-server-1 ~] morpheus-ctl reconfigure
+     .. tab-container:: tab1
+         :title: All Nodes
+     
+         .. code-block:: bash
+
+          [root@node-[1/2/3] ~] morpheus-ctl reconfigure
 
    |morpheus| will come up on all nodes and Elasticsearch will auto-cluster. The only item left is the manual clustering of RabbitMQ.
 
-#. Select one of the nodes to be your Source Of Truth (SOT) for RabbitMQ clustering. On the nodes that are **NOT** the SOT, begin by executing the contents of ``.profile`` and stopping RabbitMQ.
+#. Select one of the nodes to be your Source Of Truth (SOT) for RabbitMQ clustering (Node 1 for this example). On the nodes that are **NOT** the SOT (Nodes 2 & 3 in this example), begin by stopping the UI and RabbitMQ.
 
-   .. code-block:: bash
+    .. content-tabs::
 
-    [root@app-server-1 ~] source /opt/morpheus/embedded/rabbitmq/.profile
-    [root@app-server-1 ~] rabbitmqctl stop_app
-    [root@app-server-1 ~] morpheus-ctl stop rabbitmq
+      .. tab-container:: tab1
+           :title: Node 2
+           
+           .. code-block:: bash
+
+            [root@node-2 ~] morpheus-ctl stop morpheus-ui
+            [root@node-2 ~] source /opt/morpheus/embedded/rabbitmq/.profile
+            [root@node-2 ~] rabbitmqctl stop_app
+            [root@node-2 ~] morpheus-ctl stop rabbitmq
+            
+      .. tab-container:: tab2
+           :title: Node 3
+           
+           .. code-block:: bash
+
+            [root@node-3 ~] morpheus-ctl stop morpheus-ui
+            [root@node-3 ~] source /opt/morpheus/embedded/rabbitmq/.profile
+            [root@node-3 ~] rabbitmqctl stop_app
+            [root@node-3 ~] morpheus-ctl stop rabbitmq
 
 #. Then on the SOT node, we need to copy the secrets for RabbitMQ.
 
    Begin by copying secrets from the SOT node to the other nodes.
 
-   .. code-block:: bash
+   .. content-tabs::
 
-    [root@app-server-1 ~] cat /etc/morpheus/morpheus-secrets.json
+     .. tab-container:: tab1
+          :title: Node 1
+          
+       .. code-block:: bash
 
-      "rabbitmq": {
-        "morpheus_password": "***REDACTED***",
-        "queue_user_password": "***REDACTED***",
-        "cookie": "***REDACTED***"
-      },
+        [root@node-1 ~] cat /etc/morpheus/morpheus-secrets.json
 
-   Then copy the erlang.cookie from the SOT node to the other nodes
+          "rabbitmq": {
+            "morpheus_password": "***REDACTED***",
+            "queue_user_password": "***REDACTED***",
+            "cookie": "***REDACTED***"
+          },
+    
+     .. tab-container:: tab2
+         :title: Node 2
+         
+       .. code-block:: bash
 
-   .. code-block:: bash
+         [root@node-2 ~] vi /etc/morpheus/morpheus-secrets.json
 
-     [root@app-server-1 ~]# cat /opt/morpheus/embedded/rabbitmq/.erlang.cookie
+           "rabbitmq": {
+             "morpheus_password": "***node-1_morpheus_password***",
+             "queue_user_password": "***node-1_queue_user_password***",
+             "cookie": "***node-1_cookie***"
+           },
+  
+     .. tab-container:: tab3
+         :title: Node 3
+         
+       .. code-block:: bash
 
-     # 754363AD864649RD63D28
+         [root@node-3 ~] vi /etc/morpheus/morpheus-secrets.json
 
-#. Once this is done run a reconfigure on the two nodes that are NOT the SOT nodes.
+           "rabbitmq": {
+             "morpheus_password": "***node-1_morpheus_password***",
+             "queue_user_password": "***node-1_queue_user_password***",
+             "cookie": "***node-1_cookie***"
+           },
+               
+#. Then copy the erlang.cookie from the SOT node to the other nodes
 
-   .. code-block:: bash
+   .. content-tabs::
 
-       [root@app-server-2 ~] morpheus-ctl reconfigure
+     .. tab-container:: tab1
+          :title: Node 1
+          
+       .. code-block:: bash
 
-#. Subsequently we need to stop and start Rabbit on the non-SOT nodes.
+        [root@node-1 ~] cat /opt/morpheus/embedded/rabbitmq/.erlang.cookie
 
-   .. IMPORTANT:: The commands below must be run at root
+        # 754363AD864649RD63D28
+    
+     .. tab-container:: tab2
+         :title: Node 2
+         
+       .. code-block:: bash
 
-   .. NOTE::
+         [root@node-2 ~] vi /opt/morpheus/embedded/rabbitmq/.erlang.cookie
 
-      If you receive an error ``unable to connect to epmd (port 4369) on app-server-1: nxdomain (non-existing domain)`` make sure to add all IPs and hostnames to the ``etc/hosts`` file like so:
+         # node-1_erlang_cookie
+  
+     .. tab-container:: tab3
+         :title: Node 3
+         
+         .. code-block:: bash
 
-      .. code-block:: bash
+           [root@node-3 ~] vi /opt/morpheus/embedded/rabbitmq/.erlang.cookie
 
-          127.0.0.1   localhost localhost.localdomain localhost4 localhost4.localdomain4
-          ::1         localhost localhost.localdomain localhost6 localhost6.localdomain6
-          127.0.0.1 app-server-1.localdomain app-server-2 localhost
-          127.0.0.1 container16
-          10.100.10.113 app-server-1
-          10.100.10.114 app-server-2
-          10.100.10.115 app-server-3
+           # node-1_erlang_cookie
 
+#. Once the secrets and cookie are copied from node-1 to nodes 2 & 3, run a reconfigure on nodes 2 & 3.
 
-   .. code-block:: bash
+    .. content-tabs::
 
-     [root@app-server-2 ~]# morpheus-ctl stop rabbitmq
-     [root@app-server-2 ~]# morpheus-ctl start rabbitmq
-     [root@app-server-2 ~]# source /opt/morpheus/embedded/rabbitmq/.profile
-     [root@app-server-2 ~]# rabbitmqctl stop_app
+      .. tab-container:: tab1
+           :title: Node 2
+           
+           .. code-block:: bash
 
-     Stopping node 'rabbit@app-server-2' ...
+            [root@node-2 ~] morpheus-ctl reconfigure
 
-     [root@app-server-2 ~]# rabbitmqctl join_cluster rabbit@app-server-1
+      .. tab-container:: tab2
+           :title: Node 3
+           
+           .. code-block:: bash
 
-     Clustering node 'rabbit@app-server-2' with 'rabbit@app-server-1' ...
+            [root@node-3 ~] morpheus-ctl reconfigure
 
-     [root@app-server-2 ~]# rabbitmqctl start_app
+#. Next we will join nodes 2 & 3 to the cluster.
 
-     Starting node 'rabbit@app-server-2' ...
+  .. IMPORTANT:: The commands below must be run at root
+  
+  .. content-tabs::
 
-#. Now make sure to reconfigure
+    .. tab-container:: tab1
+         :title: Node 2
+         
+         .. code-block:: bash
 
-   .. code-block:: bash
+         [root@node-2 ~]# morpheus-ctl stop rabbitmq
+         [root@node-2 ~]# morpheus-ctl start rabbitmq
+         [root@node-2 ~]# source /opt/morpheus/embedded/rabbitmq/.profile
+         [root@node-2 ~]# rabbitmqctl stop_app
 
-    [root@app-server-2 ~] morpheus-ctl reconfigure
+         Stopping node 'rabbit@node-2' ...
 
-#. Once the Rabbit services are up and clustered on all nodes, apply required ``ha-mode`` and ``expires`` policies to the morpheus vhost:
+         [root@node-2 ~]# rabbitmqctl join_cluster rabbit@node-1
 
-   .. code-block:: bash
+         Clustering node 'rabbit@node-2' with 'rabbit@node-1' ...
 
-    [root@app-server-2 ~] rabbitmqctl set_policy -p morpheus --apply-to queues --priority 2 statCommands "statCommands.*" '{"expires":1800000, "ha-mode":"all"}'
-    [root@app-server-2 ~] rabbitmqctl set_policy -p morpheus --apply-to queues --priority 2 morpheusAgentActions "morpheusAgentActions.*" '{"expires":1800000, "ha-mode":"all"}'
-    [root@app-server-2 ~] rabbitmqctl set_policy -p morpheus --apply-to queues --priority 2 monitorJobs "monitorJobs.*" '{"expires":1800000, "ha-mode":"all"}'
-    [root@app-server-2 ~] rabbitmqctl set_policy -p morpheus --apply-to all --priority 1 ha ".*" '{"ha-mode":"all"}'
+         [root@node-2 ~]# rabbitmqctl start_app
 
-   .. important:: Failure to set the proper policies will result in degraded RabbitMQ performance, Java Heap issues, and/or refused RabbitMQ connections resulting in degraded |morpheus| UI performance, unconsumed messages or UI failure.
+         Starting node 'rabbit@node-2' ...
+         
+         [root@node-2 ~]#
 
-#. The last thing to do is restart the |morpheus| UI on the two nodes that are NOT the SOT node.
+    .. tab-container:: tab2
+         :title: Node 3
+         
+         .. code-block:: bash
 
-   .. code-block:: bash
+         [root@node-3 ~]# morpheus-ctl stop rabbitmq
+         [root@node-3 ~]# morpheus-ctl start rabbitmq
+         [root@node-3 ~]# source /opt/morpheus/embedded/rabbitmq/.profile
+         [root@node-3 ~]# rabbitmqctl stop_app
 
-    [root@app-server-2 ~]# morpheus-ctl restart morpheus-ui
+         Stopping node 'rabbit@node-3' ...
 
-   If this command times out then run:
+         [root@node-3 ~]# rabbitmqctl join_cluster rabbit@node-1
 
-   .. code-block:: bash
+         Clustering node 'rabbit@node-3' with 'rabbit@node-1' ...
 
-    [root@app-server-2 ~]# morpheus-ctl kill morpheus-ui
-    [root@app-server-2 ~]# morpheus-ctl start morpheus-ui
+         [root@node-3 ~]# rabbitmqctl start_app
+
+         Starting node 'rabbit@node-3' ...
+        
+         [root@node-3 ~]#
+
+     .. NOTE::
+
+        If you receive an error ``unable to connect to epmd (port 4369) on node-1: nxdomain (non-existing domain)`` make sure to add all IPs and short (non-fqdn) hostnames to the ``etc/hosts`` file to ensure each node can resolve the other hostnames.
+            
+#. Next reconfigure Nodes 2 & 3
+
+    .. content-tabs::
+
+      .. tab-container:: tab1
+           :title: Node 2
+           
+           .. code-block:: bash
+
+            [root@node-2 ~] morpheus-ctl reconfigure
+
+      .. tab-container:: tab2
+           :title: Node 3
+           
+           .. code-block:: bash
+
+            [root@node-3 ~] morpheus-ctl reconfigure
+
+#. The last thing to do is start the |morpheus| UI on the two nodes that are NOT the SOT node.
+
+    .. content-tabs::
+
+      .. tab-container:: tab1
+           :title: Node 2
+           
+           .. code-block:: bash
+
+            [root@node-2 ~] morpheus-ctl start morpheus-ui
+
+      .. tab-container:: tab2
+           :title: Node 3
+           
+           .. code-block:: bash
+
+            [root@node-3 ~] morpheus-ctl start morpheus-ui
+
 
 #. You will be able to verify that the UI services have restarted properly by inspecting the logfiles. A standard practice after running a restart is to tail the UI log file.
 
    .. code-block:: bash
 
-      root@app-server-2 ~]# morpheus-ctl tail morpheus-ui
-
-#. Lastly, we need to ensure that Elasticsearch is configured in such a way as to support a quorum of 2. We need to do this step on EVERY NODE.
-
-   .. code-block:: bash
-
-      [root@app-server-2 ~]# echo "discovery.zen.minimum_master_nodes: 2" >> /opt/morpheus/embedded/elasticsearch/config/elasticsearch.yml
-      [root@app-server-2 ~]# morpheus-ctl restart elasticsearch
+      root@node-2 ~]# morpheus-ctl tail morpheus-ui
 
 
-   .. NOTE::
-       For moving ``/var/opt/morpheus/morpheus-ui`` files into a shared volume make sure ALL |morpheus| services on ALL three nodes are down before you begin.
+..
+  #. Lastly, we need to ensure that Elasticsearch is configured in such a way as to support a quorum of 2. We need to do this step on EVERY NODE.
 
-   .. code-block:: bash
+     .. code-block:: bash
 
-    [root@app-server-1 ~]# morpheus-ctl stop
+        [root@node-2 ~]# echo "discovery.zen.minimum_master_nodes: 2" >> /opt/morpheus/embedded/elasticsearch/config/elasticsearch.yml
+        [root@node-2 ~]# morpheus-ctl restart elasticsearch
 
-#. Permissions are as important as is content, so make sure to preserve directory contents to the shared volume.
 
-#. Subsequently you can start all |morpheus| services on all three nodes and tail the |morpheus| UI log file to inspect errors.
+     .. NOTE::
+         For moving ``/var/opt/morpheus/morpheus-ui`` files into a shared volume make sure ALL |morpheus| services on ALL three nodes are down before you begin.
+
+     .. code-block:: bash
+
+      [root@node-1 ~]# morpheus-ctl stop
+
+  #. Permissions are as important as is content, so make sure to preserve directory contents to the shared volume.
+
+  #. Subsequently you can start all |morpheus| services on all three nodes and tail the |morpheus| UI log file to inspect errors.
 
 |
 
@@ -322,13 +435,13 @@ If your new installation is part of a migration then you need to move the data f
 
    .. code-block:: bash
 
-    [root@app-server-old ~]# morpheus-ctl stop morpheus-ui
+    [root@node-old ~]# morpheus-ctl stop morpheus-ui
 
 #. Once this is done you can safely export. To access the MySQL shell we will need the password for the |morpheus| DB user. We can find this in the morpheus-secrets file:
 
    .. code-block:: bash
 
-    [root@app-server-old ~]# cat /etc/morpheus/morpheus-secrets.json
+    [root@node-old ~]# cat /etc/morpheus/morpheus-secrets.json
 
    .. code-block:: json
 
@@ -355,7 +468,7 @@ If your new installation is part of a migration then you need to move the data f
 
    .. code-block:: bash
 
-      [root@app-server-old ~]# /opt/morpheus/embedded/mysql/bin/mysqldump -u morpheus -h 127.0.0.1 morpheus -p > /tmp/morpheus_backup.sql
+      [root@node-old ~]# /opt/morpheus/embedded/mysql/bin/mysqldump -u morpheus -h 127.0.0.1 morpheus -p > /tmp/morpheus_backup.sql
 
       Enter password:
 
@@ -365,15 +478,15 @@ If your new installation is part of a migration then you need to move the data f
 
    .. code-block:: bash
 
-    [root@app-server-1 ~]# morpheus-ctl stop morpheus-ui
-    [root@app-server-2 ~]# morpheus-ctl stop morpheus-ui
-    [root@app-server-3 ~]# morpheus-ctl stop morpheus-ui
+    [root@node-1 ~]# morpheus-ctl stop morpheus-ui
+    [root@node-2 ~]# morpheus-ctl stop morpheus-ui
+    [root@node-3 ~]# morpheus-ctl stop morpheus-ui
 
 #. Then you can import the MySQL dump into the target database using the embedded MySQL binaries, specifying the database host, and entering the password for the |morpheus| user when prompted:
 
    .. code-block:: bash
 
-    [root@app-server-1 ~]# /opt/morpheus/embedded/mysql/bin/mysql -u morpheus -h 10.130.2.38 morpheus -p < /tmp/morpheus_backup.sql
+    [root@node-1 ~]# /opt/morpheus/embedded/mysql/bin/mysql -u morpheus -h 10.130.2.38 morpheus -p < /tmp/morpheus_backup.sql
     Enter password:
 
 |
@@ -387,7 +500,7 @@ If a node happens to crash most of the time |morpheus| will start upon boot of t
 
 .. code-block:: bash
 
-   [root@app-server-1 ~]# morpheus-ctl status
+   [root@node-1 ~]# morpheus-ctl status
    run: check-server: (pid 17808) 7714s; run: log: (pid 549) 8401s
    run: elasticsearch: (pid 19207) 5326s; run: log: (pid 565) 8401s
    run: guacd: (pid 601) 8401s; run: log: (pid 573) 8401s
@@ -400,69 +513,69 @@ But, a status can report false positives if, say, RabbitMQ is in a boot loop or 
 
 .. code-block:: bash
 
-  [root@app-server-1 ~]# morpheus-ctl tail rabbitmq
-  [root@app-server-1 ~]# morpheus-ctl tail elasticsearch
+  [root@node-1 ~]# morpheus-ctl tail rabbitmq
+  [root@node-1 ~]# morpheus-ctl tail elasticsearch
 
 
 To minimize disruption to the user interface, it is advisable to remedy Elasticsearch clustering first. Due to write locking in Elasticsearch it can be required to restart other nodes in the cluster to allow the recovering node to join. Begin by determining which Elasticsearch node became the master during the outage. On one of the two other nodes (not the recovered node):
 
 .. code-block:: bash
 
-   [root@app-server-2 ~]# curl localhost:9200/_cat/nodes
-   app-server-1 10.100.10.121 7 47 0.21 d * morpheus1
+   [root@node-2 ~]# curl localhost:9200/_cat/nodes
+   node-1 10.100.10.121 7 47 0.21 d * morpheus1
    localhost 127.0.0.1 4 30 0.32 d m morpheus2
 
 The master is determined by identifying the row with the ``‘*’`` in it. SSH to this node (if different) and restart Elasticsearch.
 
 .. code-block:: bash
 
-   [root@app-server-1 ~]# morpheus-ctl restart elasticsearch
+   [root@node-1 ~]# morpheus-ctl restart elasticsearch
 
 Go to the other of the two ‘up’ nodes and run the curl command again. If the output contains three nodes then Elasticsearch has been recovered and you can move on to re-clustering RabbitMQ. Otherwise you will see output that contains only the node itself:
 
 .. code-block:: bash
 
-   [root@app-server-2 ~]# curl localhost:9200/_cat/nodes
+   [root@node-2 ~]# curl localhost:9200/_cat/nodes
    localhost 127.0.0.1 4 30 0.32 d * morpheus2
 
 If this is the case then restart Elasticsearch on this node as well:
 
 .. code-block:: bash
 
-   [root@app-server-2 ~]# morpheus-ctl restart elasticsearch
+   [root@node-2 ~]# morpheus-ctl restart elasticsearch
 
 After this you should be able to run the curl command and see all three nodes have rejoined the cluster:
 
 .. code-block:: bash
 
-   [root@app-server-2 ~]# curl localhost:9200/_cat/nodes
-   app-server-1 10.100.10.121 9 53 0.31 d * morpheus1
+   [root@node-2 ~]# curl localhost:9200/_cat/nodes
+   node-1 10.100.10.121 9 53 0.31 d * morpheus1
    localhost 127.0.0.1 7 32 0.22 d m morpheus2
-   app-server-3 10.100.10.123 3 28 0.02 d m morpheus3
+   node-3 10.100.10.123 3 28 0.02 d m morpheus3
 
 The most frequent case of restart errors for RabbitMQ is with epmd failing to restart. |morpheus|’s recommendation is to ensure the epmd process is running and daemonized by starting it:
 
 .. code-block:: bash
 
-   [root@app-server-1 ~]# /opt/morpheus/embedded/lib/erlang/erts-5.10.4/bin/epmd -daemon
+   [root@node-1 ~]# /opt/morpheus/embedded/lib/erlang/erts-5.10.4/bin/epmd -daemon
 
 And then restarting RabbitMQ:
 
 .. code-block:: bash
 
-   [root@app-server-1 ~]# morpheus-ctl restart rabbitmq
+   [root@node-1 ~]# morpheus-ctl restart rabbitmq
 
 And then restarting the |morpheus| UI service:
 
 .. code-block:: bash
 
-   [root@app-server-1 ~]# morpheus-ctl restart morpheus-ui
+   [root@node-1 ~]# morpheus-ctl restart morpheus-ui
 
 Again, it is always advisable to monitor the startup to ensure the |morpheus| Application is starting without error:
 
 .. code-block:: bash
 
-   [root@app-server-1 ~]# morpheus-ctl tail morpheus-ui
+   [root@node-1 ~]# morpheus-ctl tail morpheus-ui
 
 Recovery Thoughts/Further Discussion: If |morpheus| UI cannot connect to RabbitMQ, Elasticsearch or the database tier it will fail to start. The |morpheus| UI logs can indicate if this is the case.
 
@@ -476,7 +589,7 @@ Because |morpheus| can start even though the Elasticsearch node on the same host
 
 .. code-block:: bash
 
-   [root@app-server-1 ~]# curl localhost:9200/_cluster/health?pretty=true
+   [root@node-1 ~]# curl localhost:9200/_cluster/health?pretty=true
    {
    "cluster_name" : "morpheus",
    "status" : "green",
