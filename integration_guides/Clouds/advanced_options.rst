@@ -37,6 +37,8 @@ CONFIG MANAGEMENT
   Select a Chef, Salt, Ansible or Puppet integration to be used with this Cloud.
 CMDB
   Select CMDB Integration to automatically update selected CMDB.
+CMDB DISCOVERY
+  When checked, any automatically discovered (unmanaged) servers onboarded into |morpheus| from this Cloud will also have CMDB records created for them.
 CHANGE MANAGEMENT
   Select an existing Change Management Integration to set on the Cloud. ex: Cherwell
 AGENT INSTALL MODE

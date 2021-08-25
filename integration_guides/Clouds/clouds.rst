@@ -21,7 +21,7 @@ Clouds
   openstack/openstack
   oracle/oraclevm.rst
   oraclecloud/oracleCloud.rst
-  .. OTC/otc.rst
+  OTC/otc.rst
   scvmm/scvmm.rst
   softlayer/softlayer.rst
   ucs_manager/ucs_manager.rst

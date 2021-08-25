@@ -8,6 +8,8 @@ Overview
 
 The Virtual Image section displays a list of all images, local and synced, that are available to deploy. |morpheus| includes a rich catalog of pre-configured System Images available for every cloud type. User Images are automatically synced from Cloud Integrations and added to the Virtual Images section. Images can also be uploaded directly into |morpheus| via local file or url. Amazon and Azure Marketplace images can also be added to the Virtual Images Section.
 
+Understanding the process of prepping images for consumption in |morpheus| is a very important step toward building an effective |morpheus| environment. In addition to the information contained in this section on Virtual Images, it may be helpful to see a complete image prep example walkthrough. Our getting started guide for |morpheus| and VMware includes `a section on preparing images <https://docs.morpheusdata.com/en/latest/getting_started/guides/vmware_guide.html#prepping-an-image>`_ that may provide a helpful example.
+
 .. IMPORTANT:: Invalid Image Settings cause provisioning failures. |morpheus| syncs in as much meta-data as possible for synced images, but additional configuration may be needed to ensure successful provisioning.
 
 .. WARNING:: Cloud-init is enabled by default for all Linux images. If your Linux image does not have Cloud-init installed, `Cloud-init Enabled` must be unchecked before provisioning the image or it will fail immediately.
@@ -74,7 +76,7 @@ Typically |morpheus| does not have sufficient metatdata to successfully provisio
    Trial Version
     Enable to automatically re-arm the expiration on Windows Trial Images during provisioning
    Enabled Sysprep?
-    Applicable to Nutanix Only. Enable if the Windows Image has been sysprepped. If enabled, |morpheus| will inject ``unattend.xml`` through the Nutanix API (v3+ only)
+    Applicable to multiple Clouds, including VMware vCenter, SCVMM, Nutanix, Hyper-V, KVM, and Google GCP. Enable if the Windows Image has been sysprepped. If enabled, |morpheus| will inject ``unattend.xml``
 
 3. Click :guilabel:`Save Changes`
 
@@ -151,7 +153,7 @@ To Add Virtual Image:
   Trial Version
    Enable to automatically re-arm the expiration on Windows Trial Images during provisioning
   Enabled Sysprep?
-   Applicable to Nutanix Only. Enable if the Windows Image has been sysprepped. If enabled, |morpheus| will inject ``unattend.xml`` through the Nutanix API (v3+ only)
+   Applicable to multiple Clouds, including VMware vCenter, SCVMM, Nutanix, Hyper-V, KVM, and Google GCP. Enable if the Windows Image has been sysprepped. If enabled, |morpheus| will inject ``unattend.xml``
 
 .. NOTE:: Default Storage location is ``/var/opt/morpheus/morpheus-ui/vms``. Additional Storage Providers can be configured in `Infrastructure -> Storage`. Ensure local folders are owned by morpheus-app.morpheus-app if used.
 

@@ -19,7 +19,9 @@ Spec Templates
 
 Terraform configuration is stored as a Spec Template in |morpheus|. You can store your configuration as one monolithic file for each Instance Type you intend to create or you can create individual Spec Templates for modular pieces which can be reused across multiple Instance Types. When added to the Layout later, we'll be able to include as many Spec Templates as we wish which enables us to reuse smaller modular pieces if desired.
 
-Spec Templates are added in the |morpheus| Library (Provisioning > Library > Spec Templates tab). We can pull in the template from some type of repository, such as through a Github integration, or write new spec directly into the New Spec Template modal. In most cases, the spec will be pre-existing and pulled in from a version-controlled repository so that is what I will do here as well. Click :guilabel:`+ ADD`, complete the fields as I've done in the example below and click :guilabel:`SAVE CHANGES`.
+Spec Templates are added in the |morpheus| Library (Provisioning > Library > Spec Templates tab). We can pull in the template from some type of repository, such as through a Github integration, or write new spec directly into the New Spec Template modal. In most cases, the spec will be pre-existing and pulled in from a version-controlled repository but here I have my Terraform spec entered locally. Click :guilabel:`+ ADD`, complete the fields as I've done in the example below and click :guilabel:`SAVE CHANGES`.
+
+In the VERSION field at the bottom of the TF Spec Template modal, enter a Terraform version number to force that version to be used. This version is only honored if the Terraform Runtime setting (Administration > Settings > Provisioning Tab) is set to "auto". When "manual" is selected as the Terraform Runtime setting, |morpheus| will simply use the version installed on the appliance box.
 
 .. image:: /images/integration_guides/terr_inst_guide/1newSpec.png
 

@@ -208,6 +208,7 @@ Common Examples
 			zone.regionCode: <%=zone.regionCode%>
 			zone.scalePriority: <%=zone.scalePriority%>
 			cypher: <%=cypher.read('secret/hello')%>
+      cypher: <%=cypher.read('secret/' + zone.code)%> # Make variables more dynamic based off other variables
 
 Instance
 --------

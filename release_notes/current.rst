@@ -24,7 +24,7 @@ New Features
 - NSX-T: Create and manage NSX-T load balancer profiles (Infrastructure > Load Balancers > Selected Load Balancer > Profiles Tab), previously this tab was read-only :superscript:`5.2.6`
 - Open Telekom Cloud: Image upload functionality now supports images greater than 2GB in size. When adding/editing the Cloud, set an OBS bucket in the IMAGE STORE field as a permanent store location for |morpheus| virtual images
 - Option Types: "Radio List" Option Types can now be added which present options to the provisioning user as radio buttons
-- Roles: Report Types tab added to user and tenant role permission sets. Assign access permission to specific reports for users with access to the Reports section under the Operations menu
+- Roles: Report Types tab added to user and tenant role permission sets. Assign access permissions for specific report types for users with access to the Reports section under the Operations menu
 - Software: Patch version numbers are now surfaced on the Software tab of server detail pages (mouse hover over software name) and in Software reports :superscript:`5.2.6`
 - Storage: Added support for Google Cloud Storage bucket creation and management (Infrastructure > Storage > Buckets tab)
 - vCloud Director: Added support for API version 34.0 on vCD 10.2+ :superscript:`5.2.6`
@@ -37,6 +37,7 @@ Fixes
 - Amazon: EKS: Fixed display and convert to managed issue with discovered EKS Clusters
 - Amazon/AWS: CloudFormation: Fixed ``name`` tag value being set to logical id instead of tag value when ``name`` tag is specified in CF :superscript:`5.2.6`
 - Amazon/AWS: Fixed Route53 DNS integration SDK not routing through global proxy :superscript:`5.2.7`
+- Amazon/AWS: Fixed an issue that prevented AWS Gov Cloud accounts from syncing costing data through a linked AWS commercial account
 - Ansible Tower: Updated ``job_executions`` : ``config_settings`` field data type to LONGTEXT
 - API: Fix the ``/api/instances`` response value of ``volumes`` so it is consistent between the list and get by id actions. :superscript:`5.2.7`
 - Azure: Fixed non-ASCII UTF8 characters adminPassword encoding problem
@@ -50,6 +51,7 @@ Fixes
 - Convert to Managed: Fixed bulk convert to managed issue caused by required option types not rendering when using custom instance types :superscript:`5.2.7`
 - Convert to Managed: Fixed custom option types not reloading when changing layout selection during convert to managed :superscript:`5.2.7`
 - Convert to Managed: Plan option will now appear if the selected VMs are all of the same type (cloud) :superscript:`5.2.7`
+- Dashboard: Fixed permission scoping for widget visibility in the dashboard
 - Deployments: Fixed new DEPLOY FOLDER values on Node Type not saving :superscript:`5.2.7`
 - Failover Service: Fixed VMs shut down outside of |morpheus| getting auto-started by |morpheus| when another VM containing the same agent config/api key is started (from DR process or external cloning) :superscript:`5.2.7`
 - Hosts: "Open Console" action removed from Hosts list action menus :superscript:`5.2.7`
@@ -83,14 +85,14 @@ Fixes
 - VMware Cloud AWS/VMC: Fixed scenario causing editing modal of existing Cloud to hang :superscript:`5.2.6`
 - VMware: Fixed duplicate VM names in different folders causing external Id conflict :superscript:`5.2.7`
 - VMWare: Fixed Managed VM ``hostname`` changes syncing and updating server record but not associated container record :superscript:`5.2.6`
-- VMware: vCenter: Removed name match sync function that could possibly cause wrong vm to be deleted when a provision fails to a unique name constraint in |morpheus|. external-id and uuid are now only used for sync matching :superscript:`5.2.6`
+- VMware: Fixed issue with discovered Windows 2019 VM's ``os_type`` being set to ``other.64``; ``windows2019srv_64Guest`` mapping added :superscript:`5.2.8`
 - VMware: vCenter: Removed name match sync function that could possibly cause wrong vm to be deleted when a provision fails to a unique name constraint in |morpheus|. external-id and uuid are now only used for sync matching :superscript:`5.2.7`
 - Whitelabing: Support Menu: Fixed re-enabling Support Menus in subtenants after they have been disabled :superscript:`5.2.7`
 
 Appliance & Agent Updates
 =========================
 
-- Appliance: The local code repository path has been moved from ``/var/opt/morpheus/morpheus-ui/repo`` to ``/var/opt/morpheus/morpheus-local/repo`` to reduce potential shared storage issues and perfomace restrictions. The reconfigure process creates the folders and sets the paths in application.yml, no manual intervention is needed unless symlinks exisit on ``/var/opt/morpheus/morpheus-ui/repo/git`` which will need to be removed prior to reconfiguring 5.3.2. The old ``/var/opt/morpheus/morpheus-ui/repo`` path will be automatically deleted in a fulture release but can be manually recursivly deleted at any time for storage reclaimation.
+- Appliance: - The local code repository path has been moved from ``/var/opt/morpheus/morpheus-ui/repo`` to ``/var/opt/morpheus/morpheus-local/repo`` to reduce potential shared storage issues and performance restrictions. The reconfigure process creates the folders and sets the paths in application.yml, no manual intervention is needed unless symlinks exist on ``/var/opt/morpheus/morpheus-ui/repo/git`` which will need to be removed prior to reconfiguring 5.3.2. The old ``/var/opt/morpheus/morpheus-ui/repo`` path will be automatically deleted in a future release but can be manually recursivly deleted at any time for storage recursively.
 - Morpheus Windows Agent: New windows agent version 1.7.0 addresses agent issue caused by new unformatted volumes being added, resulting in ```"ERROR:Error in SendAgentInit: The volume does not contain a recognized file system. Please make sure that all required file system drivers are loaded and that the volume is not corrupted."``` agent error. :superscript:`5.2.7`
 
 Refer to :ref:`compatibility` for additional details.
@@ -104,3 +106,4 @@ Refer to :ref:`compatibility` for additional details.
 - NSX-V: Router management support added in Morpheus API and CLI to match functionality currently available in Morpheus UI :superscript:`5.2.6`
 - Option Lists: API calls to get all Option Lists (``api/option-type-lists/``) or get a specific Option List (``api/option-type-lists/:id``) no longer return ``listItems`` as this could potentially return millions of values in some scenarios. Users can now issue a GET request to ``/api/option-type-lists/:id/items`` to return all items in a specific Option List
 - Servers: The ``servers`` API endpoint returns the ``volumes`` and ``controllers`` lists when passing the ``details=true`` parameter to match behavior already included with the ``instances`` endpoint
+- ServiceNow Integration: Expose or unexpose |morpheus| Clouds, Library items, Blueprints, and Catalog Items to ServiceNow through |morpheus| API and CLI. Users can also view items which are currently exposed

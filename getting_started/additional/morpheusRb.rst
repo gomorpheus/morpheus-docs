@@ -5,7 +5,7 @@ Advanced morpheus.rb Settings
 
 Morpheus allows for additional advanced customizations for system managed services within the morpheus.rb file located in ``/etc/morpheus/morpheus.rb``.  Below is a list of the supported items available in the ``morpheus.rb`` file.
 
-.. note:: Service configuration settings are not applicable for externalized services such as external mysql/percona, elasticsearch or rabbitmq clusters. Only connection settings are applicable for external services.
+.. note:: Service configuration settings are not applicable for externalized services such as external mysql/percona, elasticsearch or rabbitmq clusters. Only connection settings are applicable for external services. Additionally, to configure |morpheus| to utilize alternate ports for SSL, you may have to take additional configuration steps. If simply appending a port to your ``appliance_url`` value doesn't work, consult the related article in our `KnowledgeBase <https://support.morpheusdata.com/s/article/Configure-Morpheus-to-utilize-and-alternate-port-for-SSL?language=en_US>`_.
 
 .. code-block:: bash
 
@@ -88,6 +88,7 @@ Morpheus allows for additional advanced customizations for system managed servic
   rabbitmq['log_dir'] = '/var/log/morpheus/rabbitmq'
   rabbitmq['nodename'] = 'rabbit@localhost'
   rabbitmq['port'] = '5672'
+  rabbitmq['use_tls'] = false
 
   repo['repo_host_url'] = 'https://downloads.morpheusdata.com'
 

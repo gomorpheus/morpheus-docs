@@ -168,7 +168,15 @@ Continued Installation Steps
 
    |morpheus| will come up on all nodes and Elasticsearch will auto-cluster. The only item left is the manual clustering of RabbitMQ.
 
-#. Select one of the nodes to be your Source Of Truth (SOT) for RabbitMQ clustering. We need to copy the secrets for RabbitMQ, copy the erlang cookie and join the other nodes to the SOT node.
+#. Select one of the nodes to be your Source Of Truth (SOT) for RabbitMQ clustering. On the nodes that are **NOT** the SOT, begin by executing the contents of ``.profile`` and stopping RabbitMQ.
+
+   .. code-block:: bash
+
+    [root@app-server-1 ~] source /opt/morpheus/embedded/rabbitmq/.profile
+    [root@app-server-1 ~] rabbitmqctl stop_app
+    [root@app-server-1 ~] morpheus-ctl stop rabbitmq
+
+#. Then on the SOT node, we need to copy the secrets for RabbitMQ.
 
    Begin by copying secrets from the SOT node to the other nodes.
 
@@ -196,11 +204,7 @@ Continued Installation Steps
 
        [root@app-server-2 ~] morpheus-ctl reconfigure
 
-   .. NOTE::
-
-      This step will fail. This is OK and is expected because part of the reconfigure process includes an attempt to start RabbitMQ. At this point, RabbitMQ cannot be started and the reconfigure will report a failure despite serving our purposes for this step. If the reconfigure hangs then use Ctrl+C to quit the reconfigure run and force a failure.
-
-#. Subsequently we need to stop and start Rabbit on the NOT SOT nodes.
+#. Subsequently we need to stop and start Rabbit on the non-SOT nodes.
 
    .. IMPORTANT:: The commands below must be run at root
 

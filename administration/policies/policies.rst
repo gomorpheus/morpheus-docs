@@ -24,11 +24,11 @@ Expiration
 File Share Storage Quota
   Sets a Storage Quota for File Share usage (in GB) to scoped User, Role, Tenant or Global.
 Host Name
-  The name of the virtual machine. Pre-populates a fixed or editable name for Hosts and Virtual Machines using ${variable} naming patterns and/or text.
+  The name of the virtual machine. Pre-populates a fixed or editable name for Hosts and Virtual Machines using ${variable} naming patterns and/or text. Many customers use ${sequence} numbering in their naming policies, users can toggle whether sequence numbers are reusable (after the resource using them is destroyed) by enabling `Reuse Naming Sequence Numbers <https://docs.morpheusdata.com/en/latest/administration/settings/settings.html#provisioning>`_ in Administration > Settings
 Hostname
   The ``hostname`` or ``computer name`` which is set in the OS and DNS. On some platforms, hostnames are restricted by length, spaces, and/or special characters. Pre-populates a fixed or editable name for hostnames/machine names using ${variable} naming patterns and/or text.
 Instance Name
-  Pre-populates a fixed or editable name for Instance Names using ${variable} naming patterns and/or text.
+  Pre-populates a fixed or editable name for Instance Names using ${variable} naming patterns and/or text. Many customers use ${sequence} numbering in their naming policies, users can toggle whether sequence numbers are reusable (after the resource using them is destroyed) by enabling `Reuse Naming Sequence Numbers <https://docs.morpheusdata.com/en/latest/administration/settings/settings.html#provisioning>`_ in Administration > Settings
 Max Containers
   Sets the max number of Containers for the Group or Cloud the Policy is added to.
 Max Cores
