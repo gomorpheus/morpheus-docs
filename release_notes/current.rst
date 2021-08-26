@@ -6,12 +6,14 @@
 
 .. WARNING:: OpenStack v2 Identity API has been removed in v5.3.3
 
-.. NOTE:: Items appended with :superscript:`5.2.x` are also included in that version
+.. NOTE:: Items appended with :superscript:`5.2.9` are also included in that version
 
 .. include:: highlights.rst
 
 New Features
 ============
+
+:Azure: - Select Availability Zones during Instance, App, and Cluster provisioning. Select "Availability Zone" from the "Availability Options" menu and then specify the appropriate Availability Zone from the additional field that appears in the wizard
 
 :Hosts: - Deleting a Host or VM (Infrastructure > Hosts) with “Remove Associated Instances” marked and “Remove Infrastructure” unmarked is now handled differently. Host records and A records are no longer removed and teardown-phase Tasks are not run. If the Cloud is configured to inventory existing resources, the host or VM will be synced back in as a unmanaged resource on the next cloud sync :superscript:`5.2.9`
 
@@ -21,10 +23,15 @@ New Features
           - Added Debian 9 and 10 Layouts for VMware Clouds to the standard Morpheus Library :superscript:`5.2.9`
           - Disabled several deprecated System Instance Types and associated Layouts that are no longer maintained: **Cassandra, Confluence, Devstack, Hadoop, Jboss, Jenkins, Magento, Mongo, Moogsoft, Nexus, Percona, Puppet, RethinkDb, Riak, RiakCs, Stash, Solr, Wordpress, and Zookeeper**. NOTE: this only disables the Instance type from the system seeded library and does not affect user created Insatnce Types or Layouts. :superscript:`5.2.9`
 
+:Logs: - Splunk and LogRhythm integrations removed from Administration > Settings > Logs
+
+:Migrations: - Migrations UI (under the Tools menu) is deprecated and removed
+
 :Network: - Added a Display Name field for networks, this value appears as the network name on the network display page (Infrastructure > Network). For synced networks, the name and display name will initially be identical but users can edit the display name if it makes sense to present a friendlier name to users :superscript:`5.2.9`
           - Added ability to change network during an Instance reconfigure (Select Reconfigure from the Instance Actions menu) for Instances in VMware and OpenStack Clouds. In other Clouds, network is still a read-only field during Instance reconfigure :superscript:`5.2.9`
 
 :UI: - Added more detailed help block text for the Private Key field when storing a new key pair in Morpheus (Infrastructure > Keys & Certs > Key Pairs) :superscript:`5.2.9`
+     - Help text added to Add Integration modals warning that HTTP URLs are insecure and not recommended
 
 :VMware vCenter: - The UUID for hypervisor hosts synced into vCenter Clouds is now stored to the ``unique_id`` field on hypervisor host ``compute_server`` records :superscript:`5.2.9`
                  - Improved sync performance for VMware Resource Pools and Folders :superscript:`5.2.9`

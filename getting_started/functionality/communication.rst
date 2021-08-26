@@ -524,18 +524,6 @@ The following table contains communication information, including frequency and 
     - No
   * - Logging Integration
     -
-    - LogRhythm
-    - On-demand
-    - N/A
-    - No
-  * - Logging Integration
-    -
-    - Splunk
-    - On-demand
-    - N/A
-    - No
-  * - Logging Integration
-    -
     - Syslog
     - On-demand
     - N/A
