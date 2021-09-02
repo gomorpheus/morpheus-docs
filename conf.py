@@ -3,7 +3,7 @@ master_doc = 'index'
 rst_prolog = """
 .. |morpheus| replace:: Morpheus
 .. |morphbranch| replace:: v5.3
-.. |morphver| replace:: v5.3.2
+.. |morphver| replace:: v5.3.3
 .. |minUpgradeVer| replace:: v4.2.0
 .. |previousMorphVer| replace:: v5.3.1
 .. |rmqbranch| replace:: v3.5-3.8
@@ -13,11 +13,11 @@ rst_prolog = """
 .. |mysqlverfips| replace:: v.5.7.29
 .. |esbranch| replace:: v7.x
 .. |esver| replace:: v7.8.1
-.. |tcver| replace:: v9.0.45
+.. |tcver| replace:: v9.0.50
 .. |morphdat| replace:: Morpheus Data, LLC
 .. |nginxver| replace:: v1.19.9
 .. |nodePackageVer| replace:: 3.2.0
-.. |java| replace:: v8u292-b10
+.. |java| replace:: v8u302-b08
 .. |openjdk-jre| replace:: v8u292
 .. |openjdk-elasticsearch| replace:: 14.0.2+12
 .. |erlang| replace:: 22.3
@@ -26,7 +26,7 @@ rst_prolog = """
 
 .. |trash| unicode:: 0x0001F5D1 .. TRASH ICON
 .. |gear| unicode:: U+02699 .. GEAR ICON
-.. |info| unicode:: U+2139 .. INFO ICON 
+.. |info| unicode:: U+2139 .. INFO ICON
 .. |triangledown| unicode:: U+25BD .. TRIANGLE DOWN ICON
 .. |rightarrow| unicode:: U+2192 .. RIGHT ARROW ICON
 .. |pencil| unicode:: U+270E .. EDIT ICON

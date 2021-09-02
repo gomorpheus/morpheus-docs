@@ -9,7 +9,7 @@ The logging architecture backing |morpheus| uses the latest and greatest technol
 Configuration
 ^^^^^^^^^^^^^
 
-Logging configuration can be setup in the ``Admin > Logs`` section. There are useful settings here, including customizing the retainment policy (7 days by default). This could be expanded to years for PCI compliance purposes or other requirements an organization might have.
+Logging configuration can be setup in the Administration > Settings > Logs section. There are useful settings here, including customizing the retainment policy (7 days by default). This could be expanded to years for PCI compliance purposes or other requirements an organization might have.
 
 .. NOTE:: When increasing the retainment policy of the logging system, it may be necessary to scale out the elasticsearch cluster. Please refer to the relevant information with regards to scaling elasticsearch and advanced installation options for externalizing the elasticsearch cluster.
 
@@ -18,30 +18,15 @@ The Log administration section also provides options for setting custom syslog f
 Usage
 ^^^^^^^^
 
-|morpheus| automatically sets up and configures logging for all of the standard catalog items provisioned through morpheus. This includes both Docker containers as well as virtual machines. Simple view instance specific logs in instance detail via the "Logs" tab.
+|morpheus| automatically sets up and configures logging for all of the standard catalog items provisioned through morpheus. This includes both Docker containers as well as virtual machines. Simply view instance-specific logs in instance detail via the "Logs" tab.
 
-There are several filtering capabilities built into the logging ui with more being added continually. Easily toggle log level filters from the dropdown or change the date range filter using the handy date filter component. A chart is also displayed above logs representing the log counts by level over the selected time range (default last 24 hours). A handy pattern search is also available with some rather capable features based on Lucene search syntax.
+There are several filtering capabilities built into the logging UI with more being added continually. Easily toggle log level filters from the dropdown or change the date range filter using the handy date filter component. A chart is also displayed above logs representing the log counts by level over the selected time range (default last 24 hours). A handy pattern search is also available with some rather capable features based on Lucene search syntax.
 
 .. TIP:: It may be useful to review the Lucene search query syntax for powerful use cases: https://lucene.apache.org/core/2_9_4/queryparsersyntax.html[Syntax Guide]
 
-There are several other places logs can be viewed. Not only can they be viewed across an application in app detail but also across all instances in the account. The main level ``Logs`` section provides an ability to query all logs produced by the system. It is also possible to view host specific logs on a docker host by viewing the host detail page via ``Infrastructure``.
+There are several other places logs can be viewed. Not only can they be viewed across an application in app detail but also across all instances in the account. The main level ``Logs`` section provides an ability to query all logs produced by the system. It is also possible to view host-specific logs on a docker host by viewing the host detail page via ``Infrastructure``.
 
 .. NOTE:: New features are on the roadmap for the main logs section including saved searches, and handy charting dashboards for garnering insights out of log data.
-
-Integrations
--------------
-
-While the built in logging solution provided by |morpheus| is sufficient for most, there are some scenarios in which a more advanced logging system may be desired or already in place. To facilitate this |morpheus| makes it easy to add custom syslog rules as well as built in direct integrations with Splunk and LogRhythm. All integrations pertaining to logging can be configured in the ``Administration -> Logging`` section.
-
-Splunk
-^^^^^^^^^
-
-To configure Splunk simply create a syslog listener configuration in Splunk. Then it is simply a matter of expanding the section in Logging settings pertaining to Splunk and filling out the host and port of the appender. Once saved, all hosts managed by |morpheus| will be configured to forward logs to the target Splunk listener.
-
-LogRhythm
-^^^^^^^^^^^^
-
-Configuring LogRhythm is much like configuring Splunk. Simply toggle the enabled flag in the LogRhythm section to enabled and fill in the Host, and Port information for the LogRhythm listener.
 
 Exporting Logs
 ---------------

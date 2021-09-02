@@ -1,7 +1,11 @@
 Cluster Layouts
 ---------------
 
-.. note:: Morpheus now syncs available (non-preview) AKS k8s versions daily. Existing synced versions that are no longer supported by Azure are automatically disabled. The table below includes available AKS versions at time of |morphver| release. 
+.. note:: Morpheus now syncs available (non-preview) AKS k8s versions daily. Existing synced versions that are no longer supported by Azure are automatically disabled. The table below includes available AKS versions at time of |morphver| release.
+
+Users can add new cluster layouts using the :guilabel:`+ADD` button. |morpheus|-provided cluster layouts can be cloned for use in creating custom layouts. Custom cluster layouts can also be deleted or edited from the list view using the pencil or trash can icons.
+
+.. image:: /images/provisioning/library/clusterlayouts.png
 
 |morpheus| provided Cluster Layouts:
 

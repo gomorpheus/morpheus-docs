@@ -140,7 +140,7 @@ Role Mappings
   * - Admin: Log Settings
     - None, Full
     - Allows or disallows access to the Administration > Logs.
-    - The Logs page is where logs are enabled. Syslog forwarding rules, Splunk integrations and LogRhythm integrations are also configured here.
+    - The Logs page is where logs are enabled. Syslog forwarding rules are also configured here.
     - This permission is recommended for those responsible for configuring |morpheus| log settings and integrations.
     - This permission is recommended to be set to None in the Tenant Role to restrict this access to Subtenant Users.
   * - Admin: Message of the day
@@ -562,7 +562,7 @@ Role Mappings
     - Determines access to the Integrations tab on the Provisioning > Code page.
     - From this page code integrations may be created, edited, or deleted. Integrations available include Git, Github, and Jenkins.
     - This permission is recommended for those responsible for the integration between |morpheus| and code repositories and services.
-    - 
+    -
   * - Provisioning: Code Deployments
     - None, Read, Full
     - Determines access to the Deployments tab on the Provisioning > Code page.
@@ -572,7 +572,7 @@ Role Mappings
   * - Provisioning: Code Repositories
     - None, List Files, Read, Full
     - Determines access to the Deployments tab on the Provisioning > Code page.
-    - The Code Repositories contains the repositories integrated with |morpheus| allowing users to browse repositories folders and files and view file contents from any branch, trigger a refresh, and create tasks, scripts and templates directly from the repos. 
+    - The Code Repositories contains the repositories integrated with |morpheus| allowing users to browse repositories folders and files and view file contents from any branch, trigger a refresh, and create tasks, scripts and templates directly from the repos.
     - This permission is recommended for those responsible for providing and managing software.
     -
   * - Provisioning: Execute Script
