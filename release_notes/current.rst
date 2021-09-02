@@ -29,6 +29,7 @@ New Features
           - Added Debian 9 and 10 Layouts for VMware Clouds to the standard Morpheus Library :superscript:`5.2.9`
           - Added CentOS 8 (7.9, 8.3, 8.4) images for nearly all Cloud types
           - Added Rocky 8 images for VMware, Amazon, Google, Nutanix, OpenStack, DigitalOcean (and more) Cloud types
+          - Added OpenSUSE 15 images for all compatible Clouds
           - Added Windows Server 2016 and 2019 images for Azure and Google Clouds
           - Disabled several deprecated System Instance Types and associated Layouts that are no longer maintained: **Cassandra, Confluence, Devstack, Hadoop, Jboss, Jenkins, Magento, Mongo, Moogsoft, Nexus, Percona, Puppet, RethinkDb, Riak, RiakCs, Stash, Solr, Wordpress, and Zookeeper**. NOTE: this only disables the Instance type from the system seeded library and does not affect user created Insatnce Types or Layouts. :superscript:`5.2.9`
 
@@ -51,9 +52,11 @@ New Features
 :VDI: - VDI pools can now be configured to be "Recyclable". When enabled, the VDI Instance will revert back to a snapshot and become available once again after the user has logged out and the VDI session has expired. This behavior will not apply to VDI pools which are also configured to be persistent because in that configuration the Instance is merely stopped and saved for the user's next session. This feature is currently only available for Cloud types which support snapshot management (VMware, Nutanix, and vCD)
 
 :vCD: - System administrator account credentials can now be provided to authenticate vCD Cloud integrations in |morpheus|. Previously, only organization administrator credentials could be used. Keep in mind that you will need to set the system administrator account credentials appropriately, for example, to be able to see entities created by the organization administrator
+      - Added the option to specify a catalog to store |morpheus|-provisioned artifacts, previously |morpheus| would always create and use a "morpheus_auto" catalog
 
 :VMware vCenter: - The UUID for hypervisor hosts synced into vCenter Clouds is now stored to the ``unique_id`` field on hypervisor host ``compute_server`` records :superscript:`5.2.9`
                  - Improved sync performance for VMware Resource Pools and Folders :superscript:`5.2.9`
+                 - Added support for VMware Content Library. |morpheus| automatically on-boards items from your content library and re-syncs them regularly to keep them up to date. Add images from the |morpheus| library to Node Types for use in Layouts and Instance Types
 
 Fixes
 =====
@@ -66,6 +69,7 @@ Fixes
 =================================
 
 :Instances: - Calls to the ``instances`` API to GET a specific Instance (at multiple levels including Instance, container details, and server) now include the ``uuid`` property :superscript:`5.2.9`
+            - Added options to remove expiration, extend expiration, cancel shutdown, extend shutdown, and cancel removal for Instances from API and CLI
 
 :Checks: - The ``apiKey`` is now returned in GET calls for Push API-Type Monitoring Checks
 
@@ -79,6 +83,10 @@ Fixes
         - Create, manage, and delete DNAT and SNAT rules :superscript:`5.2.9`
 
 :Reports: - Fix for display of utilization statistics in some Cloud Usage Reports :superscript:`5.2.9`
+
+:vCD: - Added ability to set the Recyclable attribute on VDI Pools through API and CLI
+
+:Virtual Images: - Added option to remove the virtual image from the cloud (or not) when the image is deleted from |morpheus| through API and CLI
 
 Appliance & Agent Updates
 =========================

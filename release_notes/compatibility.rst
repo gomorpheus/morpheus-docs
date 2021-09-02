@@ -89,8 +89,12 @@ When externalizing MySQL, Elasticsearch and/or RabbitMQ services, the following 
 | Nginx                                 |                       | |nginxver|                          |
 +---------------------------------------+-----------------------+-------------------------------------+
 
-.. Security
-   ========
+Security
+========
+
+**CVEs Addressed**
+
+- CVE-2021-30129
 
 Upgrade Paths & Methods
 =======================
