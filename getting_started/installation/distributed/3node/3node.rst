@@ -47,8 +47,6 @@ Out of the box Morpheus uses MySQL but Morpheus supports any mySQL-compliant dat
 Requirements
 ````````````
 
-.. NOTE:: Morpheus idiomatically connects to database nodes over 3306
-
 Once you have your database installed and configured:
 
 #. The |morpheus| appliance uses the utf8 character set and the UTC+0 timezone. Set the variables below on your external database clusters to prevent timestamp errors from being thrown later in |morpheus| UI. For all distributions, the configuration is set in /etc/my.cnf for each database node.
@@ -92,8 +90,8 @@ Once you have your database installed and configured:
 
     SHOW GRANTS FOR '$morpheus_db_user_name'@'$source_ip';
 
-Continued Installation Steps
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+App Node Installation
+^^^^^^^^^^^^^^^^^^^^^
 
 #. First begin by downloading and installing the requisite |morpheus| packages to the |morphues| nodes.
 
@@ -181,6 +179,9 @@ Continued Installation Steps
             [root@node-[1/2/3] ~] morpheus-ctl reconfigure
 
    |morpheus| will come up on all nodes and Elasticsearch will auto-cluster. The only item left is the manual clustering of RabbitMQ.
+
+Clustering RabbitMQ
+^^^^^^^^^^^^^^^^^^^
 
 #. Select one of the nodes to be your Source Of Truth (SOT) for RabbitMQ clustering (Node 1 for this example). On the nodes that are **NOT** the SOT (Nodes 2 & 3 in this example), begin by stopping the UI and RabbitMQ.
 
