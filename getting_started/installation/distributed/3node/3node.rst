@@ -16,8 +16,10 @@ This guide assumes the following:
 - All nodes have access to a shared volume for ``/var/opt/morpheus/morpheus-ui``. This can be done as a post startup step.
 - This configuration will support the complete loss of a single node, but no more.  Specifically the Elasticsearch tier requires at least two nodes to always be clustered..
 
-.. image:: /images/arch/morpheus-3node-arch-2.png
-    :alt: Morpheus 3-Node HA Architecture
+.. thumbnail:: /images/arch/morpheus-3node-arch-2.png
+   :alt: Morpheus 3-Node HA Architecture
+   
+   Morpheus 3-Node HA Architecture
 
 Default Locations
 ^^^^^^^^^^^^^^^^^
@@ -99,26 +101,24 @@ Continued Installation Steps
 	
    .. content-tabs::
 
-     .. tab-container:: tab1
-        :title: All Nodes
+      .. tab-container:: tab1
+         :title: All Nodes
           
-         .. code-block:: bash
+          .. code-block:: bash
 
-          [root@node-(1/2/3) ~]# wget https://example/path/morpheus-appliance-ver-1.el7.x86_64.rpm
-          [root@node-(1/2/3) ~]# rpm -i morpheus-appliance-offline-ver-1.noarch.rpm
-        
+             [root@node-(1/2/3) ~]# wget https://example/path/morpheus-appliance-ver-1.el7.x86_64.rpm
+             [root@node-(1/2/3) ~]# rpm -i morpheus-appliance-offline-ver-1.noarch.rpm
+          
 #. Do NOT run reconfigure yet. The |morpheus| configuration file must be edited prior to the initial reconfigure.
       
 #. Next you will need to edit the |morpheus| configuration file ``/etc/morpheus/morpheus.rb`` on each node.
 
    .. content-tabs::
 
-     .. tab-container:: tab1
-          :title: Node 1
-     
-           **Node 1**
+      .. tab-container:: tab1
+         :title: Node 1
 
-           .. code-block:: bash
+          .. code-block:: bash
 
              appliance_url 'https://morpheus1.localdomain'
              elasticsearch['es_hosts'] = {'10.100.10.121' => 9200, '10.100.10.122' => 9200, '10.100.10.123' => 9200}
@@ -132,12 +132,10 @@ Continued Installation Steps
              mysql['morpheus_db_user'] = 'morpheus'
              mysql['morpheus_password'] = 'password'
 
-     .. tab-container:: tab2
-        :title: Node 2
+      .. tab-container:: tab2
+         :title: Node 2
      
-           Node 2
-
-           .. code-block:: bash
+         .. code-block:: bash
 
             appliance_url 'https://morpheus2.localdomain'
             elasticsearch['es_hosts'] = {'10.100.10.121' => 9200, '10.100.10.122' => 9200, '10.100.10.123' => 9200}
@@ -153,10 +151,8 @@ Continued Installation Steps
 
      .. tab-container:: tab3
         :title: Node 3
-
-           Node 3
-
-           .. code-block:: bash
+ 
+        .. code-block:: bash
 
             appliance_url 'https://morpheus3.localdomain'
             elasticsearch['es_hosts'] = {'10.100.10.121' => 9200, '10.100.10.122' => 9200, '10.100.10.123' => 9200}
@@ -177,39 +173,39 @@ Continued Installation Steps
 
    .. content-tabs::
 
-     .. tab-container:: tab1
+      .. tab-container:: tab1
          :title: All Nodes
      
          .. code-block:: bash
-
-          [root@node-[1/2/3] ~] morpheus-ctl reconfigure
+      
+            [root@node-[1/2/3] ~] morpheus-ctl reconfigure
 
    |morpheus| will come up on all nodes and Elasticsearch will auto-cluster. The only item left is the manual clustering of RabbitMQ.
 
 #. Select one of the nodes to be your Source Of Truth (SOT) for RabbitMQ clustering (Node 1 for this example). On the nodes that are **NOT** the SOT (Nodes 2 & 3 in this example), begin by stopping the UI and RabbitMQ.
 
-    .. content-tabs::
+   .. content-tabs::
 
       .. tab-container:: tab1
-           :title: Node 2
-           
-           .. code-block:: bash
+         :title: Node 2
+         
+         .. code-block:: bash
 
-            [root@node-2 ~] morpheus-ctl stop morpheus-ui
-            [root@node-2 ~] source /opt/morpheus/embedded/rabbitmq/.profile
-            [root@node-2 ~] rabbitmqctl stop_app
-            [root@node-2 ~] morpheus-ctl stop rabbitmq
-            
+          [root@node-2 ~] morpheus-ctl stop morpheus-ui
+          [root@node-2 ~] source /opt/morpheus/embedded/rabbitmq/.profile
+          [root@node-2 ~] rabbitmqctl stop_app
+          [root@node-2 ~] morpheus-ctl stop rabbitmq
+          
       .. tab-container:: tab2
-           :title: Node 3
-           
-           .. code-block:: bash
+         :title: Node 3
+         
+         .. code-block:: bash
 
-            [root@node-3 ~] morpheus-ctl stop morpheus-ui
-            [root@node-3 ~] source /opt/morpheus/embedded/rabbitmq/.profile
-            [root@node-3 ~] rabbitmqctl stop_app
-            [root@node-3 ~] morpheus-ctl stop rabbitmq
-      
+          [root@node-3 ~] morpheus-ctl stop morpheus-ui
+          [root@node-3 ~] source /opt/morpheus/embedded/rabbitmq/.profile
+          [root@node-3 ~] rabbitmqctl stop_app
+          [root@node-3 ~] morpheus-ctl stop rabbitmq
+    
 
 #. Then on the SOT node, we need to copy the secrets for RabbitMQ.
 
@@ -218,37 +214,37 @@ Continued Installation Steps
    .. content-tabs::
 
      .. tab-container:: tab1
-          :title: Node 1
+        :title: Node 1
           
-       .. code-block:: bash
+        .. code-block:: bash
 
-        [root@node-1 ~] cat /etc/morpheus/morpheus-secrets.json
+           [root@node-1 ~] cat /etc/morpheus/morpheus-secrets.json
 
-          "rabbitmq": {
-            "morpheus_password": "***REDACTED***",
-            "queue_user_password": "***REDACTED***",
-            "cookie": "***REDACTED***"
-          },
+            "rabbitmq": {
+              "morpheus_password": "***REDACTED***",
+              "queue_user_password": "***REDACTED***",
+              "cookie": "***REDACTED***"
+            },
     
      .. tab-container:: tab2
-         :title: Node 2
+        :title: Node 2
          
-       .. code-block:: bash
+        .. code-block:: bash
 
-         [root@node-2 ~] vi /etc/morpheus/morpheus-secrets.json
+           [root@node-2 ~] vi /etc/morpheus/morpheus-secrets.json
 
-           "rabbitmq": {
-             "morpheus_password": "***node-1_morpheus_password***",
-             "queue_user_password": "***node-1_queue_user_password***",
-             "cookie": "***node-1_cookie***"
-           },
+             "rabbitmq": {
+               "morpheus_password": "***node-1_morpheus_password***",
+               "queue_user_password": "***node-1_queue_user_password***",
+               "cookie": "***node-1_cookie***"
+             },
            
      .. tab-container:: tab3
-         :title: Node 3
+        :title: Node 3
          
-       .. code-block:: bash
+        .. code-block:: bash
 
-         [root@node-3 ~] vi /etc/morpheus/morpheus-secrets.json
+           [root@node-3 ~] vi /etc/morpheus/morpheus-secrets.json
 
            "rabbitmq": {
              "morpheus_password": "***node-1_morpheus_password***",
@@ -258,60 +254,60 @@ Continued Installation Steps
                
 #. Then copy the erlang.cookie from the SOT node to the other nodes
 
-  .. content-tabs::
+   .. content-tabs::
 
-    .. tab-container:: tab1
-       :title: Node 1
+      .. tab-container:: tab1
+         :title: Node 1
         
-      .. code-block:: bash
+         .. code-block:: bash
 
-        [root@node-1 ~] cat /opt/morpheus/embedded/rabbitmq/.erlang.cookie
+            [root@node-1 ~] cat /opt/morpheus/embedded/rabbitmq/.erlang.cookie
 
-        # 754363AD864649RD63D28
+            # 754363AD864649RD63D28
   
-    .. tab-container:: tab2
-       :title: Node 2
+      .. tab-container:: tab2
+         :title: Node 2
        
-       .. code-block:: bash
+         .. code-block:: bash
 
-         [root@node-2 ~] vi /opt/morpheus/embedded/rabbitmq/.erlang.cookie
+            [root@node-2 ~] vi /opt/morpheus/embedded/rabbitmq/.erlang.cookie
 
-         # node-1_erlang_cookie
+            # node-1_erlang_cookie
 
-    .. tab-container:: tab3
-       :title: Nodes 3
-        
-       .. code-block:: bash
+      .. tab-container:: tab3
+         :title: Nodes 3
+          
+         .. code-block:: bash
 
-         [root@node-3 ~] vi /opt/morpheus/embedded/rabbitmq/.erlang.cookie
+           [root@node-3 ~] vi /opt/morpheus/embedded/rabbitmq/.erlang.cookie
 
-         # node-1_erlang_cookie
+           # node-1_erlang_cookie
 
 #. Once the secrets and cookie are copied from node-1 to nodes 2 & 3, run a reconfigure on nodes 2 & 3.
 
-  .. content-tabs::
+   .. content-tabs::
 
-    .. tab-container:: tab1
+      .. tab-container:: tab1
          :title: Node 2
          
          .. code-block:: bash
 
-          [root@node-2 ~] morpheus-ctl reconfigure
+            [root@node-2 ~] morpheus-ctl reconfigure
 
-    .. tab-container:: tab2
+      .. tab-container:: tab2
          :title: Node 3
          
          .. code-block:: bash
 
-          [root@node-3 ~] morpheus-ctl reconfigure
+            [root@node-3 ~] morpheus-ctl reconfigure
 
 #. Next we will join nodes 2 & 3 to the cluster.
 
-  .. IMPORTANT:: The commands below must be run at root
+   .. IMPORTANT:: The commands below must be run at root
   
-  .. content-tabs::
+   .. content-tabs::
 
-    .. tab-container:: tab1
+      .. tab-container:: tab1
          :title: Node 2
          
          .. code-block:: bash
@@ -333,7 +329,7 @@ Continued Installation Steps
            
            [root@node-2 ~]#
 
-    .. tab-container:: tab2
+      .. tab-container:: tab2
          :title: Node 3
          
          .. code-block:: bash
@@ -355,45 +351,43 @@ Continued Installation Steps
           
            [root@node-3 ~]#
 
-     .. NOTE::
-
-        If you receive an error ``unable to connect to epmd (port 4369) on node-1: nxdomain (non-existing domain)`` make sure to add all IPs and short (non-fqdn) hostnames to the ``etc/hosts`` file to ensure each node can resolve the other hostnames.
+   .. NOTE:: If you receive an error ``unable to connect to epmd (port 4369) on node-1: nxdomain (non-existing domain)`` make sure to add all IPs and short (non-fqdn) hostnames to the ``etc/hosts`` file to ensure each node can resolve the other hostnames.
             
 #. Next reconfigure Nodes 2 & 3
 
-  .. content-tabs::
+   .. content-tabs::
 
-    .. tab-container:: tab1
+      .. tab-container:: tab1
          :title: Node 2
          
          .. code-block:: bash
 
-          [root@node-2 ~] morpheus-ctl reconfigure
+            [root@node-2 ~] morpheus-ctl reconfigure
 
-    .. tab-container:: tab2
+      .. tab-container:: tab2
          :title: Node 3
          
          .. code-block:: bash
 
-          [root@node-3 ~] morpheus-ctl reconfigure
+            [root@node-3 ~] morpheus-ctl reconfigure
 
 #. The last thing to do is start the |morpheus| UI on the two nodes that are NOT the SOT node.
 
-  .. content-tabs::
+   .. content-tabs::
 
-    .. tab-container:: tab1
+      .. tab-container:: tab1
          :title: Node 2
          
          .. code-block:: bash
 
-          [root@node-2 ~] morpheus-ctl start morpheus-ui
+            [root@node-2 ~] morpheus-ctl start morpheus-ui
 
-    .. tab-container:: tab2
+      .. tab-container:: tab2
          :title: Node 3
          
          .. code-block:: bash
 
-          [root@node-3 ~] morpheus-ctl start morpheus-ui
+            [root@node-3 ~] morpheus-ctl start morpheus-ui
 
 
 #. You will be able to verify that the UI services have restarted properly by inspecting the logfiles. A standard practice after running a restart is to tail the UI log file.
@@ -442,9 +436,7 @@ If your new installation is part of a migration then you need to move the data f
 
    .. code-block:: bash
 
-    [root@node-old ~]# cat /etc/morpheus/morpheus-secrets.json
-
-   .. code-block:: json
+      [root@node-old ~]# cat /etc/morpheus/morpheus-secrets.json
 
         {
           "mysql": {
@@ -479,16 +471,16 @@ If your new installation is part of a migration then you need to move the data f
 
    .. code-block:: bash
 
-    [root@node-1 ~]# morpheus-ctl stop morpheus-ui
-    [root@node-2 ~]# morpheus-ctl stop morpheus-ui
-    [root@node-3 ~]# morpheus-ctl stop morpheus-ui
+      [root@node-1 ~]# morpheus-ctl stop morpheus-ui
+      [root@node-2 ~]# morpheus-ctl stop morpheus-ui
+      [root@node-3 ~]# morpheus-ctl stop morpheus-ui
 
 #. Then you can import the MySQL dump into the target database using the embedded MySQL binaries, specifying the database host, and entering the password for the |morpheus| user when prompted:
 
    .. code-block:: bash
 
-    [root@node-1 ~]# /opt/morpheus/embedded/mysql/bin/mysql -u morpheus -h 10.130.2.38 morpheus -p < /tmp/morpheus_backup.sql
-    Enter password:
+      [root@node-1 ~]# /opt/morpheus/embedded/mysql/bin/mysql -u morpheus -h 10.130.2.38 morpheus -p < /tmp/morpheus_backup.sql
+      Enter password:
 
 |
 
