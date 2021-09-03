@@ -1,12 +1,12 @@
 .. _3nodeinstall:
 
 3-Node HA Install
-^^^^^^^^^^^^^^^^^
+-----------------
 
 Distributed App Nodes with Externalized DB
 
 Assumptions
-```````````
+^^^^^^^^^^^
 
 This guide assumes the following:
 
@@ -20,7 +20,7 @@ This guide assumes the following:
     :alt: Morpheus 3-Node HA Architecture
 
 Default Locations
-``````````````````
+^^^^^^^^^^^^^^^^^
 
 |morpheus| follows several install location conventions. Below is a list of system defaults for convenient management:
 
@@ -36,14 +36,14 @@ Default Locations
 *  User-defined install/config: ``/etc/morpheus/morpheus.rb``
 
 Database Cluster Setup (Percona XtraDB Cluster)
-```````````````````````````````````````````````
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Out of the box Morpheus uses MySQL but Morpheus supports any mySQL-compliant database. There are many ways to set up a highly available, MySQL dialect-based database. One which has found favor with many of our customers is Percona's XtraDB Cluster.  Percona's product is based off of Galera's WSREP Clustering, which is also supported.
 
 .. important:: Currently, you must use a v5.7-compatible version of MySQL/Percona. Complete compatibility information is available in the `Compatibility and Breaking Changes <https://docs.morpheusdata.com/en/latest/release_notes/compatibility.html>`_ page. Additional configuration for Percona Clusters with TLS enabled is required. Refer to :ref:`Percona TLS` Configuration in our full HA docs for details.
 
 Requirements
-............
+````````````
 
 .. NOTE:: Morpheus idiomatically connects to database nodes over 3306
 
@@ -91,7 +91,7 @@ Once you have your database installed and configured:
     SHOW GRANTS FOR '$morpheus_db_user_name'@'$source_ip';
 
 Continued Installation Steps
-````````````````````````````
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 #. First begin by downloading and installing the requisite |morpheus| packages to the |morphues| nodes.
 
@@ -397,7 +397,7 @@ Continued Installation Steps
 -----
 
 Database Migration
-``````````````````
+^^^^^^^^^^^^^^^^^^
 
 If your new installation is part of a migration then you need to move the data from your original |morpheus| database to your new one. This is easily accomplished by using a stateful dump.
 
@@ -464,7 +464,7 @@ If your new installation is part of a migration then you need to move the data f
 -------
 
 Recovery
-````````
+^^^^^^^^
 
 If a node happens to crash most of the time |morpheus| will start upon boot of the server and the services will self-recover. However, there can be cases where RabbitMQ and Elasticsearch are unable to recover in a clean fashion and it require minor manual intervention. Regardless, it is considered best practice when recovering a restart to perform some manual health checks.
 

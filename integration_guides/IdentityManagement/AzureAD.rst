@@ -54,6 +54,7 @@ This guide assumes an Azure AD Application has already been created in Azure wit
         - Value
       * - Unique User Identifier (Name ID)
         - user.userprincipalname [nameid-format:emailAddress]
+
    |
     
    .. list-table:: **Additional Claims**

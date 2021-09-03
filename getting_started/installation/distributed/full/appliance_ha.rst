@@ -1,5 +1,5 @@
 Application Tier
-````````````````
+^^^^^^^^^^^^^^^^
 
 |morpheus| configuration is controlled by a configuration file located
 at ``/etc/morpheus/morpheus.rb``. This file is read when you run
