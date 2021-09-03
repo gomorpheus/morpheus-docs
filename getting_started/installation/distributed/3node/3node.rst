@@ -191,7 +191,7 @@ Continued Installation Steps
     .. content-tabs::
 
       .. tab-container:: tab1
-           :title: Nodes 2 & 3
+           :title: Node 2
            
            .. code-block:: bash
 
@@ -200,6 +200,16 @@ Continued Installation Steps
             [root@node-2 ~] rabbitmqctl stop_app
             [root@node-2 ~] morpheus-ctl stop rabbitmq
             
+      .. tab-container:: tab2
+           :title: Node 3
+           
+           .. code-block:: bash
+
+            [root@node-3 ~] morpheus-ctl stop morpheus-ui
+            [root@node-3 ~] source /opt/morpheus/embedded/rabbitmq/.profile
+            [root@node-3 ~] rabbitmqctl stop_app
+            [root@node-3 ~] morpheus-ctl stop rabbitmq
+      
 
 #. Then on the SOT node, we need to copy the secrets for RabbitMQ.
 
@@ -221,11 +231,24 @@ Continued Installation Steps
           },
     
      .. tab-container:: tab2
-         :title: Nodes 2 & 3
+         :title: Node 2
          
        .. code-block:: bash
 
          [root@node-2 ~] vi /etc/morpheus/morpheus-secrets.json
+
+           "rabbitmq": {
+             "morpheus_password": "***node-1_morpheus_password***",
+             "queue_user_password": "***node-1_queue_user_password***",
+             "cookie": "***node-1_cookie***"
+           },
+           
+     .. tab-container:: tab3
+         :title: Node 3
+         
+       .. code-block:: bash
+
+         [root@node-3 ~] vi /etc/morpheus/morpheus-secrets.json
 
            "rabbitmq": {
              "morpheus_password": "***node-1_morpheus_password***",
@@ -247,14 +270,22 @@ Continued Installation Steps
         # 754363AD864649RD63D28
   
     .. tab-container:: tab2
-       :title: Nodes 2 & 3
+       :title: Node 2
        
        .. code-block:: bash
 
-         [root@node-(2/3) ~] vi /opt/morpheus/embedded/rabbitmq/.erlang.cookie
+         [root@node-2 ~] vi /opt/morpheus/embedded/rabbitmq/.erlang.cookie
 
          # node-1_erlang_cookie
 
+    .. tab-container:: tab3
+       :title: Nodes 3
+        
+       .. code-block:: bash
+
+         [root@node-3 ~] vi /opt/morpheus/embedded/rabbitmq/.erlang.cookie
+
+         # node-1_erlang_cookie
 
 #. Once the secrets and cookie are copied from node-1 to nodes 2 & 3, run a reconfigure on nodes 2 & 3.
 

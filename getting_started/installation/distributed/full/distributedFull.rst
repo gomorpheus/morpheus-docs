@@ -1,5 +1,5 @@
 Full HA Install
-^^^^^^^^^^^^^^^
+---------------
 
 .. include::   /getting_started/installation/distributed/full/overview.rst
 .. include::   /getting_started/installation/distributed/full/percona.rst
