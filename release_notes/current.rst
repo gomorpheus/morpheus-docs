@@ -50,6 +50,7 @@ New Features
      - Help text added to Add Integration modals warning that HTTP URLs are insecure and not recommended
 
 :VDI: - VDI pools can now be configured to be "Recyclable". When enabled, the VDI Instance will revert back to a snapshot and become available once again after the user has logged out and the VDI session has expired. This behavior will not apply to VDI pools which are also configured to be persistent because in that configuration the Instance is merely stopped and saved for the user's next session. This feature is currently only available for Cloud types which support snapshot management (VMware, Nutanix, and vCD)
+      - Improved image streaming in low bandwidth situations
 
 :vCD: - System administrator account credentials can now be provided to authenticate vCD Cloud integrations in |morpheus|. Previously, only organization administrator credentials could be used. Keep in mind that you will need to set the system administrator account credentials appropriately, for example, to be able to see entities created by the organization administrator
       - Added the option to specify a catalog to store |morpheus|-provisioned artifacts, previously |morpheus| would always create and use a "morpheus_auto" catalog
@@ -72,6 +73,8 @@ Fixes
             - Added options to remove expiration, extend expiration, cancel shutdown, extend shutdown, and cancel removal for Instances from API and CLI
 
 :Checks: - The ``apiKey`` is now returned in GET calls for Push API-Type Monitoring Checks
+
+:Cluster Layouts: - Added flag to install Docker when creating Cluster Layouts from API and CLI. When disabled, |morpheus| assumes Docker is already installed or will be installed via Workflows or some other means
 
 :Logs: - Support removed for Splunk and LogRhythm integrations (as has been done in |morpheus| UI)
 
