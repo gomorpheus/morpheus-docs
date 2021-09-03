@@ -77,7 +77,8 @@ linkcheck_request_headers = {
 }
 html_theme_options = {
 'logo_only': True,
-'sticky_navigation': True
+'sticky_navigation': True,
+'navigation_depth': 5,
 }
 html_logo = "_static/logo.svg"
 html_static_path = ['_static']
