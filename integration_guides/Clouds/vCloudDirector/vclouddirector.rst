@@ -21,19 +21,22 @@ Add vCD Cloud From ``Infrastructure > Clouds``
      vCloud Director API Url
       Example: ``https://org.vcd.company.com``
    USERNAME
-     vCD Organization Administrator User
+     vCD Organization Administrator or System Administrator User
 
-     - User must have an Organizational Administrator Role in the selected Organization
+     - User must have an Organizational Administrator or System Administrator Role
      - Username must be in the format of <name>@<org>
+     - When using a user with the System Administrator role, ensure this user has permission set correctly, such as to view objects created by the organization administrator if needed. Otherwise, things like catalogs and vApps created by the Organization Administrator might not be visible to |morpheus|
 
    PASSWORD
-     vCD Organization Administrator User password
+    Password for the user indicated above
    ORGANIZATION
     Select Organization. Dropdown populates upon successful authorization.
    VDC
     Select VDC. Dropdown populates upon successful authorization.
    API VERSION
-    Example. ``31.0`` Note: Full version required. ``31`` would not be valid, must be xx.x (vcd api versions are strings)
+    Example. ``31.0`` Note: Full version required. ``31`` would not be valid, must be xx.x (vCD API versions are strings)
+   CATALOG
+    Optionally select a vCD catalog to store |morpheus| artifacts or use the default "morpheus_auto" catalog
    Inventory Existing Instances
     If enabled, existing Virtual Machines will be inventoried and appear as unmanaged Virtual Machines in |morpheus| .
 

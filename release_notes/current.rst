@@ -14,6 +14,12 @@
 New Features
 ============
 
+:Amazon:
+- Added Asia Pacific (Seoul) region support
+
+:Pricing:
+- Added KRW (South Korean Won) currency support
+
 :UI:
 - Help text added to Add Integration modals warning that HTTP URLs are insecure and not recommended :superscript:`5.3.3`
 

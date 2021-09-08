@@ -73,6 +73,7 @@ Currency
   -  DKK
   -  EUR
   -  GBP
+  -  KRW
   -  IDR
   -  ILS
   -  MAD

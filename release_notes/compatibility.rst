@@ -63,8 +63,7 @@ Services
 |morphver| Service Version Changes
 ----------------------------------
 
-- Java upgraded to |java|
-- Tomcat upgraded to |tcver|
+- No service version changes with this release
 
 |morphver| Service Version Compatibility
 ----------------------------------------
@@ -98,7 +97,7 @@ Security
 CVEs Addressed
 --------------
 
-- CVE-2021-33037
+- CVE-2021-30129
 
 Upgrade Support Matrix
 ======================
