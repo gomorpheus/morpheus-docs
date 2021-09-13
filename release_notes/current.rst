@@ -46,8 +46,10 @@ New Features
             - Support for v2 Identity API was deprecated in 5.2.9 and has been dropped for this release
 
 :Terraform: - Added UI feedback and status indication when refreshing Terraform Instance state (:guilabel:`REFRESH STATE` button or "Refresh State" selection from Instance Actions menu)
+            - Added support for ``count`` and ``for_each`` loops
 
 :UI: - Added more detailed help block text for the Private Key field when storing a new key pair in Morpheus (Infrastructure > Keys & Certs > Key Pairs) :superscript:`5.2.9`
+     - Execution and history tabs: Execution output is now limited on initial load to 10k characters per event with an option to load the full output for each event
      - Help text added to Add Integration modals warning that HTTP URLs are insecure and not recommended
 
 :VDI: - VDI pools can now be configured to be "Recyclable". When enabled, the VDI Instance will revert back to a snapshot and become available once again after the user has logged out and the VDI session has expired. This behavior will not apply to VDI pools which are also configured to be persistent because in that configuration the Instance is merely stopped and saved for the user's next session. This feature is currently only available for Cloud types which support snapshot management (VMware, Nutanix, and vCD)
@@ -72,19 +74,25 @@ Fixes
           - Fixed display of checkbox values for ``USE ANSIBLE GALAXY``, ``ENABLE VERBOSE LOGGING`` and ``USE MORPHEUS AGENT COMMAND BUS`` options in UI.  :superscript:`5.2.9`
           - Fixed Ansible task execution issue caused by special characters in user name :superscript:`5.2.9`
 :Appliance: - Agent installation: Reconfigure process updated to add ``/var/opt/morpheus/package-repos/yum/el/8.2 -> /var/opt/morpheus/package-repos/yum/el/8`` symlink to handle agent installation requests for centos/rhel configurations version pinned to ``8.2`` :superscript:`5.2.10`
+:Automation: - Updated cron syntax validation for schedules & human readable cron string now updates before save
 :Azure: - ARM Spec Templates: Fixed repo path issue with ARM spec templates stored in a Git repository :superscript:`5.2.9`
         - Costing: |morpheus| now stores the actual currency and conversion rates during cost syncs to address reporting, budget and analytic values of non-usd actuals when the tenants defined currency does not match actual cost currency :superscript:`5.2.10`
         - Fixed issue with record being association with the deleted record of a re-synced service plan :superscript:`5.2.10`
         - Fixed ``Actions -> Start/Stop`` for discovered VMs that were converted to managed :superscript:`5.2.9`
+        - Fixed syncing of private images that do not belong to the scoped region of the cloud (not applicable when cloud is scoped to all regions). 
 :Blueprints: - Rapidly activating different Builder, Raw, and Preview tabs in the blueprint wizard no longer causes the active tab content to get stuck. :superscript:`5.2.9`
 :Cloning: - Agent Installation: Fixed agent installation issue when Cloning a Windows Instance caused by existing ``C:\installAgent.ps1`` file. :superscript:`5.2.9`
 :Clusters: - Docker Clusters: Fixed custom option type issues required flag enforcement and type ahead option type issue when provisioning Docker Clusters :superscript:`5.2.9`
+           .. - Fixed 500 error when selecting existing K8s cluster that is associated with a disabled cluster layout
 :Code: - Git: Fixed pull issue with some git integrations (ADO) using https basic auth cause by appending ``.git`` to repo url
+:Costing: - Fixed inaccuracies on the MTD costing and pricing information getting calculated on server invoice records when ``Sync Costing`` is enabled on Cloud Types that do not have costing integrations
+:Google: - Fix duplicate subnet record creation for Shared Networks when cloud scoping is changed between a single region and all regions
 :Groups: - ``Infrastructure -> Groups`` Fixed Cloud count hiding after 30 seconds :superscript:`5.2.9`
 :Guidance: - CPU Recomendations: Fixed guidance execution defaulting the CPU back to 1 :superscript:`5.2.9`
 :Health: - Fixed issue with |morpheus| Appliance logs not displaying in ``Administration -> Health: Logs`` when ``appliance_instance`` id not equal to ``1`` :superscript:`5.2.9`
 :Keys & Certs: - Synced keypairs are now filtered from Key Pairs selection list in user settings and admin provisioning settings. Synced Key Pair records do not contain any key data and are not usable for user and global keypairs. :superscript:`5.2.9`
 :Image Builder: - Fixed issue with delayed boot command execution during image builds :superscript:`5.2.9`
+:Instance: - Tags: Fixed issue with tag sync where adding a new tag post-provision could remove existing tags
 :KVM: - Fixed infrastructure deletion of discovered VMs on brownfield KVM clusters :superscript:`5.2.10`
 :Library: - Fixed display of sub-tab selection in ``Provisioning -> Library`` UI mobile views :superscript:`5.2.9`
           - Removed some old and unused catalog items from the |morpheus| standard Library :superscript:`5.2.9`
@@ -112,13 +120,16 @@ Fixes
             - Fixed ``null`` tf variable values redering as ``[object object]`` in UI  :superscript:`5.2.9`
             - Deleting a VM associated with an Instance in Terraform App with ``Remove associated Instances`` enabled, and the associated Instance is the only Instance in the App, no longer deletes the associated App.
             - Added validation for deleting a Terraform app when ``deletion_protection=true`` in Terraform.
+            - Fixed ``for_each`` loop value nulled when using tfvars within cypher
 :User Settings: - Success Message added on save when updating Linux/Windows passwords in user settings (Displays for 5s then fades) :superscript:`5.2.9`
+:UI: Execution and history tabs: Execution output is now limited on initial load to 10k characters per event with an option to load the full output for each event to address loading of large execution history datasets 
 :vCloud Director: - Fixed issue with user-data iso attachment when provisioning cloudbase-init enabled Windows images :superscript:`5.2.10`
                   - Fixed ``safeComputerName`` issue during Windows Guest Customizations :superscript:`5.2.9`
 :VMware: - Fixed duplicate filename issue when adding multiple disks during reconfigure :superscript:`5.2.10`
          - Fixed storage volume values not updating on sync when volumes were removed in vCenter but the total number of volumes matches |morpheus| records. :superscript:`5.2.10`
          - Optimizations added for Resource Pool and Folder sync. Resolves issue with loading Resource Pools in add cloud wizard in environments with 500+ Resource Pools. :superscript:`5.2.9`
          - Volumes now update properly when changing Image selection when provisioning the VMWARE Instance Type :superscript:`5.2.9`
+         - |morpheus| will no longer append ``localdomain`` to DNS suffix information in unattend customization XML when no domain or default domain are specified.
 
 .. Tagging Policy Does not Accept Morpheus Variables as valid input
 
