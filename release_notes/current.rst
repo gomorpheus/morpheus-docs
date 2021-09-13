@@ -28,7 +28,7 @@ Fixes
 =====
 
 - Ansible Tower: Updated ``job_executions`` : ``config_settings`` field data type to LONGTEXT :superscript:`5.3.2`
-- Deployments: Added proper error handling when no deployment folder is specified ona deployment
+- Deployments: Added proper error handling when no deployment folder is specified on a deployment
 - KVM: Fixed VM sync for brownfield KVM Host after initial sync :superscript:`5.3.2`
 - NSX-T: Fixed issue removing Passive Monitors from server pools :superscript:`5.3.2`
 - NSX-V: Fixed ESG/DLR uplink interfaces deletion :superscript:`5.3.2`
