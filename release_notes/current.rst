@@ -63,21 +63,58 @@ New Features
 Fixes
 =====
 
-:API: - Updated response for ``GET ... /api/zones`` when no clouds exist. :superscript:`5.2.10`
+:API: - Currencies: Fixed creating Prices with USN currency via API :superscript:`5.2.9`
+      - Tenants: Fixed deletion of Tenants with existing Instances when ``removeResources=on`` :superscript:`5.2.9`
+      - Tenants: Fixed deletion of Tenants with existing users via API/CLI :superscript:`5.2.9`
+      - Updated response for ``GET ... /api/zones`` when no clouds exist. :superscript:`5.2.10`
+:Analytics: - Cloud Costs: Fixed selecting a tag name and value combination in the "more" filters in Cloud Cost Analysis :superscript:`5.2.9`
+:Ansible: - Ansible Galaxy: New ``roles`` working folder added, resolves intermittent "galaxy dependent roles can not be found" issue when using git integration source :superscript:`5.2.9`
+          - Fixed display of checkbox values for ``USE ANSIBLE GALAXY``, ``ENABLE VERBOSE LOGGING`` and ``USE MORPHEUS AGENT COMMAND BUS`` options in UI.  :superscript:`5.2.9`
+          - Fixed Ansible task execution issue caused by special characters in user name :superscript:`5.2.9`
 :Appliance: - Agent installation: Reconfigure process updated to add ``/var/opt/morpheus/package-repos/yum/el/8.2 -> /var/opt/morpheus/package-repos/yum/el/8`` symlink to handle agent installation requests for centos/rhel configurations version pinned to ``8.2`` :superscript:`5.2.10`
-:Azure: - Costing: |morpheus| now stores the actual currency and conversion rates during cost syncs to address reporting, budget and analytic values of non-usd actuals when the tenants defined currency does not match actual cost currency :superscript:`5.2.10`
+:Azure: - ARM Spec Templates: Fixed repo path issue with ARM spec templates stored in a Git repository :superscript:`5.2.9`
+        - Costing: |morpheus| now stores the actual currency and conversion rates during cost syncs to address reporting, budget and analytic values of non-usd actuals when the tenants defined currency does not match actual cost currency :superscript:`5.2.10`
         - Fixed issue with record being association with the deleted record of a re-synced service plan :superscript:`5.2.10`
+        - Fixed ``Actions -> Start/Stop`` for discovered VMs that were converted to managed :superscript:`5.2.9`
+:Blueprints: - Rapidly activating different Builder, Raw, and Preview tabs in the blueprint wizard no longer causes the active tab content to get stuck. :superscript:`5.2.9`
+:Cloning: - Agent Installation: Fixed agent installation issue when Cloning a Windows Instance caused by existing ``C:\installAgent.ps1`` file. :superscript:`5.2.9`
+:Clusters: - Docker Clusters: Fixed custom option type issues required flag enforcement and type ahead option type issue when provisioning Docker Clusters :superscript:`5.2.9`
+:Groups: - ``Infrastructure -> Groups`` Fixed Cloud count hiding after 30 seconds :superscript:`5.2.9`
+:Guidance: - CPU Recomendations: Fixed guidance execution defaulting the CPU back to 1 :superscript:`5.2.9`
+:Health: - Fixed issue with |morpheus| Appliance logs not displaying in ``Administration -> Health: Logs`` when ``appliance_instance`` id not equal to ``1`` :superscript:`5.2.9`
+:Keys & Certs: - Synced keypairs are now filtered from Key Pairs selection list in user settings and admin provisioning settings. Synced Key Pair records do not contain any key data and are not usable for user and global keypairs. :superscript:`5.2.9`
+:Image Builder: - Fixed issue with delayed boot command execution during image builds :superscript:`5.2.9`
 :KVM: - Fixed infrastructure deletion of discovered VMs on brownfield KVM clusters :superscript:`5.2.10`
-:NSX: - Fix visibility of NSX-T Pools created in subtenants on master tenant NSX-T public integrations :superscript:`5.2.10`
+:Library: - Fixed display of sub-tab selection in ``Provisioning -> Library`` UI mobile views :superscript:`5.2.9`
+          - Removed some old and unused catalog items from the |morpheus| standard Library :superscript:`5.2.9`
+:Localization: - Portuguese: The strings displayed in the Create Cloud dialog are now being displayed properly when selecting Portuguese as the language. Pass in ``?lang=pt_BR`` or ``?lang=pt_PT`` in the url to force the UI to Portuguese Brazil and Portugal, respectively :superscript:`5.2.9`
+:Networks:  - Removed deprecated delete option for networks interfaces in Network tab on Instance and Host detail pages. Network interfaces are managed via reconfigure. :superscript:`5.2.9`
+:NSX: - Fixed ability to select SERVICE TYPE at the time of NSX-T SSL certificate creation in a Tenant. :superscript:`5.2.9`
+      - Fixed members being added to LB pools when adding nodes to an Instance via ``Actions -> Add Node`` :superscript:`5.2.9`
       - Fixed NSX-V VMs added as a part of an app with a load balancer on 1 or more instances being added to pools :superscript:`5.2.10`
       - Fixed ui display issue updating NSX-V Firewall rule priority order after editing rule priority orders :superscript:`5.2.10`
+      - Fix visibility of NSX-T Pools created in subtenants on master tenant NSX-T public integrations :superscript:`5.2.10`
 :Provisioning: - ``Copies`` field now hidden when when a Load Balancer is configured :superscript:`5.2.10`
+               - Fixed ``Copies`` field value not applying when using scroll up/down :superscript:`5.2.9`
+:Policies: - Delayed Removal: Fixed deleting an unmanaged vm within a Delayed Removal Policy Scope and with "Remove Associated Instances" check causing VM to shut down :superscript:`5.2.9`
+           - Fixed Boot order for App tiers not being honored when a provision approval policy is enforced :superscript:`5.2.9`
+:Rubrik: - Backup size now displayed as ``-`` instead of ``0`` when backup size is not available :superscript:`5.2.9`
+:Reports: - Fix for display of utilization statistics in some Cloud Usage Reports :superscript:`5.2.9`
+:Roles: - Activity: Fixed viewing ``Operations -> Activity`` activity logs requiring ``Operations: Reports`` permissions :superscript:`5.2.9`
+        - Datastores: Edit option no longer displayed for Role Permission ``Infrastructure -> Datastores: Read`` :superscript:`5.2.9`
 :Security: - Reconfigure and Library XSS vulnerabilities remediated :superscript:`5.2.10`
            - Updated request handling of user scoped policy creation during policy creation :superscript:`5.2.10`
+:Tasks: - Chef Bootstrap: Fixed issues where Chef Bootsrap execution would fail with reason "Chef Infra Client cannot execute without accepting the license" :superscript:`5.2.9`
+       - Variables: Fixed evaluation of <%=user.username%> variable in task executions :superscript:`5.2.9`
 :Terraform: - Fixed UI issue with ``NEXT`` and ``COMPLETE`` buttons becoming active before validation had completed :superscript:`5.2.10`
+            - Fixed ``null`` tf variable values redering as ``[object object]`` in UI  :superscript:`5.2.9`
+:User Settings: - Success Message added on save when updating Linux/Windows passwords in user settings (Displays for 5s then fades) :superscript:`5.2.9`
 :vCloud Director: - Fixed issue with user-data iso attachment when provisioning cloudbase-init enabled Windows images :superscript:`5.2.10`
+                  - Fixed ``safeComputerName`` issue during Windows Guest Customizations :superscript:`5.2.9`
 :VMware: - Fixed duplicate filename issue when adding multiple disks during reconfigure :superscript:`5.2.10`
          - Fixed storage volume values not updating on sync when volumes were removed in vCenter but the total number of volumes matches |morpheus| records. :superscript:`5.2.10`
+         - Optimizations added for Resource Pool and Folder sync. Resolves issue with loading Resource Pools in add cloud wizard in environments with 500+ Resource Pools. :superscript:`5.2.9`
+         - Volumes now update properly when changing Image selection when provisioning the VMWARE Instance Type :superscript:`5.2.9`
 
 .. Tagging Policy Does not Accept Morpheus Variables as valid input
 
@@ -114,3 +151,4 @@ Appliance & Agent Updates
             - Tomcat verison update to v9.0.50 :superscript:`5.2.9`
             
 :Agent Packages: - Java Updated to 8u302-b08 :superscript:`5.2.9`
+                 - |morpheus| Node and VM Node Packages version update to 3.2.1 :superscript:`5.2.9`

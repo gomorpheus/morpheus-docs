@@ -5,7 +5,7 @@ rst_prolog = """
 .. |morphbranch| replace:: v5.3
 .. |morphver| replace:: v5.3.3
 .. |minUpgradeVer| replace:: v4.2.0
-.. |previousMorphVer| replace:: v5.3.1
+.. |previousMorphVer| replace:: v5.3.2
 .. |rmqbranch| replace:: v3.5-3.8
 .. |rmqver| replace:: v3.8.9
 .. |mysqlbranch| replace:: v5.7
@@ -18,7 +18,7 @@ rst_prolog = """
 .. |nginxver| replace:: v1.19.9
 .. |nodePackageVer| replace:: 3.2.0
 .. |java| replace:: v8u302-b08
-.. |openjdk-jre| replace:: v8u292
+.. |openjdk-jre| replace:: v8u302
 .. |openjdk-elasticsearch| replace:: 14.0.2+12
 .. |erlang| replace:: 22.3
 .. |repo_host_url| replace:: https://downloads.morpheusdata.com
