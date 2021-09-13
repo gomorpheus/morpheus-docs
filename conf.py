@@ -1,7 +1,7 @@
 master_doc = 'index'
 
 latex_documents = [
-    (master_doc, 'morpheus5.2.9-1.tex', u'Morpheus Documentation',
+    (master_doc, 'morpheus5.2.10-1.tex', u'Morpheus Documentation',
      u'Morpheus', 'manual'),
 ]
 
