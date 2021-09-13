@@ -75,7 +75,6 @@ Fixes
         - Variables: Fixed evaluation of <%=user.username%> variable in task executions
 :Terraform: - Fixed ``null`` tf variable values redering as ``[object object]`` in UI 
 :User Settings: - Success Message added on save when updating Linux/Windows passwords in user settings (Displays for 5s then fades)
-:vCD: - Windows User creation is not working for guest customizations
 :vCloud Director: - Fixed ``safeComputerName`` issue during Windows Guest Customizations
 :VMware: - Optimizations added for Resource Pool and Folder sync. Resolves issue with loading Resource Pools in add cloud wizard in environments with 500+ Resource Pools.
          - Volumes now update properly when changing Image selection when provisioning the VMWARE Instance Type
