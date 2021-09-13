@@ -9,7 +9,7 @@
 
 .. WARNING:: OpenStack v2 Identity API was deprecated in v5.2.9 and is removed in v5.3.3+
 
-.. NOTE:: Items appended with :superscript:`5.3.3` are also included in that version
+.. NOTE:: Items appended with :superscript:`x.x.x` are also included in that version
 
 New Features
 ============
