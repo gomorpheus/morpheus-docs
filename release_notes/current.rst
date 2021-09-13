@@ -79,6 +79,7 @@ Fixes
 :Blueprints: - Rapidly activating different Builder, Raw, and Preview tabs in the blueprint wizard no longer causes the active tab content to get stuck. :superscript:`5.2.9`
 :Cloning: - Agent Installation: Fixed agent installation issue when Cloning a Windows Instance caused by existing ``C:\installAgent.ps1`` file. :superscript:`5.2.9`
 :Clusters: - Docker Clusters: Fixed custom option type issues required flag enforcement and type ahead option type issue when provisioning Docker Clusters :superscript:`5.2.9`
+:Code: - Git: Fixed pull issue with some git integrations (ADO) using https basic auth cause by appending ``.git`` to repo url
 :Groups: - ``Infrastructure -> Groups`` Fixed Cloud count hiding after 30 seconds :superscript:`5.2.9`
 :Guidance: - CPU Recomendations: Fixed guidance execution defaulting the CPU back to 1 :superscript:`5.2.9`
 :Health: - Fixed issue with |morpheus| Appliance logs not displaying in ``Administration -> Health: Logs`` when ``appliance_instance`` id not equal to ``1`` :superscript:`5.2.9`
@@ -94,6 +95,7 @@ Fixes
       - Fixed NSX-V VMs added as a part of an app with a load balancer on 1 or more instances being added to pools :superscript:`5.2.10`
       - Fixed ui display issue updating NSX-V Firewall rule priority order after editing rule priority orders :superscript:`5.2.10`
       - Fix visibility of NSX-T Pools created in subtenants on master tenant NSX-T public integrations :superscript:`5.2.10`
+:Option Types: Fixed Rest Option Lists Posts filtering out dependent Variables
 :Provisioning: - ``Copies`` field now hidden when when a Load Balancer is configured :superscript:`5.2.10`
                - Fixed ``Copies`` field value not applying when using scroll up/down :superscript:`5.2.9`
 :Policies: - Delayed Removal: Fixed deleting an unmanaged vm within a Delayed Removal Policy Scope and with "Remove Associated Instances" check causing VM to shut down :superscript:`5.2.9`
@@ -108,6 +110,8 @@ Fixes
        - Variables: Fixed evaluation of <%=user.username%> variable in task executions :superscript:`5.2.9`
 :Terraform: - Fixed UI issue with ``NEXT`` and ``COMPLETE`` buttons becoming active before validation had completed :superscript:`5.2.10`
             - Fixed ``null`` tf variable values redering as ``[object object]`` in UI  :superscript:`5.2.9`
+            - Deleting a VM associated with an Instance in Terraform App with ``Remove associated Instances`` enabled, and the associated Instance is the only Instance in the App, no longer deletes the associated App.
+            - Added validation for deleting a Terraform app when ``deletion_protection=true`` in Terraform.
 :User Settings: - Success Message added on save when updating Linux/Windows passwords in user settings (Displays for 5s then fades) :superscript:`5.2.9`
 :vCloud Director: - Fixed issue with user-data iso attachment when provisioning cloudbase-init enabled Windows images :superscript:`5.2.10`
                   - Fixed ``safeComputerName`` issue during Windows Guest Customizations :superscript:`5.2.9`
