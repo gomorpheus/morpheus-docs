@@ -63,9 +63,23 @@ New Features
 Fixes
 =====
 
-:Terraform: - Fixed an issue where Terraform App and Instance wizard :guilabel:`NEXT` buttons would not deactivate once clicked, allowing multiple submissions for validation. In some scenarios, this could cause the |morpheus| app node to run out of memory
+:API: - Updated response for ``GET ... /api/zones`` when no clouds exist. :superscript:`5.2.10`
+:Appliance: - Agent installation: Reconfigure process updated to add ``/var/opt/morpheus/package-repos/yum/el/8.2 -> /var/opt/morpheus/package-repos/yum/el/8`` symlink to handle agent installation requests for centos/rhel configurations version pinned to ``8.2`` :superscript:`5.2.10`
+:Azure: - Costing: |morpheus| now stores the actual currency and conversion rates during cost syncs to address reporting, budget and analytic values of non-usd actuals when the tenants defined currency does not match actual cost currency :superscript:`5.2.10`
+        - Fixed issue with record being association with the deleted record of a re-synced service plan :superscript:`5.2.10`
+:KVM: - Fixed infrastructure deletion of discovered VMs on brownfield KVM clusters :superscript:`5.2.10`
+:NSX: - Fix visibility of NSX-T Pools created in subtenants on master tenant NSX-T public integrations :superscript:`5.2.10`
+      - Fixed NSX-V VMs added as a part of an app with a load balancer on 1 or more instances being added to pools :superscript:`5.2.10`
+      - Fixed ui display issue updating NSX-V Firewall rule priority order after editing rule priority orders :superscript:`5.2.10`
+:Provisioning: - ``Copies`` field now hidden when when a Load Balancer is configured :superscript:`5.2.10`
+:Security: - Reconfigure and Library XSS vulnerabilities remediated :superscript:`5.2.10`
+           - Updated request handling of user scoped policy creation during policy creation :superscript:`5.2.10`
+:Terraform: - Fixed UI issue with ``NEXT`` and ``COMPLETE`` buttons becoming active before validation had completed :superscript:`5.2.10`
+:vCloud Director: - Fixed issue with user-data iso attachment when provisioning cloudbase-init enabled Windows images :superscript:`5.2.10`
+:VMware: - Fixed duplicate filename issue when adding multiple disks during reconfigure :superscript:`5.2.10`
+         - Fixed storage volume values not updating on sync when volumes were removed in vCenter but the total number of volumes matches |morpheus| records. :superscript:`5.2.10`
 
-:VMware: - Volumes now update properly when changing Image selection when provisioning the VMWARE Instance Type :superscript:`5.2.9`
+.. Tagging Policy Does not Accept Morpheus Variables as valid input
 
 |morpheus| API & CLI Improvements
 =================================
@@ -95,7 +109,8 @@ Fixes
 Appliance & Agent Updates
 =========================
 
-:Appliance: - Tomcat verison update to v9.0.50 :superscript:`5.2.9`
+:Appliance: - Agent installation: Reconfigure process updated to add ``/var/opt/morpheus/package-repos/yum/el/8.2 -> /var/opt/morpheus/package-repos/yum/el/8`` symlink to handle agent installation requests for centOS/rhel configurations version pinned to ``8.2`` :superscript:`5.2.10`
             - Java Updated to 8u302-b08 :superscript:`5.2.9`
-
+            - Tomcat verison update to v9.0.50 :superscript:`5.2.9`
+            
 :Agent Packages: - Java Updated to 8u302-b08 :superscript:`5.2.9`
