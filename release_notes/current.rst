@@ -26,6 +26,8 @@ New Features
 
 :Huawei Cloud: - EIP billing mode changed to bill by traffic rather than bandwidth. Note that this change does not affect OTC Clouds which only bill by traffic :superscript:`5.2.9`
 
+:Kubernetes: - Deactivated all 1.17 Cluster Layouts (no longer supported by k8s)
+
 :Library: - Added Ubuntu 20 Layouts for nearly all supported Clouds :superscript:`5.2.9`
           - Added Debian 9 and 10 Layouts for VMware Clouds to the standard Morpheus Library :superscript:`5.2.9`
           - Added CentOS 8 (7.9, 8.3, 8.4) images for nearly all Cloud types
@@ -44,6 +46,13 @@ New Features
 :OpenStack: - Create, modify, and delete OpenStack Projects (Resource Pools) from Cloud detail pages
             - Added option to specify an OpenStack project at provision time through the Resource Pool dropdown menu. This option is available when provisioning Instances, Apps, and Clusters
             - Support for v2 Identity API was deprecated in 5.2.9 and has been dropped for this release
+
+:Packages: - New ``/administration/packages`` component added targeted for uploading future |morpheus| provided mpg's, however users will be able to create, distribute and/or import custom |morpheus| packages. Additional information on creating custom packages will be provided.
+          - New Role permission ``Admin: Packages`` (None, Full) added. Allows or disallows access to the Packages tab on the Integrations page (Administration > Integrations)
+
+:Profiles: - New ``Profiles`` component added to Clouds with ``Terraform Profile`` and ``Key/Value Profile`` types. Profiles give users the ability to create custom object associated secrets and metadata that will automatically be mapped during provisioning and automation.
+           - Terraform Profiles allow created cloud associated tfvars secrets, allowing tf apps and specs to be provisioned across multiple clouds that required different tfvars.
+           - Key/Value Profiles expand provisioning, automation, billing and reporting capabilities by allowing dynamic custom object specific metadata in provisioning and automation mappings using ``<%=cloud.profile.key%>``
 
 :Terraform: - Added UI feedback and status indication when refreshing Terraform Instance state (:guilabel:`REFRESH STATE` button or "Refresh State" selection from Instance Actions menu)
             - Added support for ``count`` and ``for_each`` loops
