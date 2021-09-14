@@ -20,7 +20,7 @@ New Features
 
 :Clusters: - Added "Install Docker" checkbox to the Add Hosts wizard. When checked, Docker is installed and when left unchecked, |morpheus| assumes Docker is already installed or will be installed via Workflows or some other means
            - Added "Install Docker" checkbox to the Add Cluster Layout modal. When checked, Docker is installed and when left unchecked, |morpheus| assumes Docker is already installed or will be installed via Workflows or some other means
-           - - New Kubernetes Cluster Layouts seeded: ``kubernetes-amazon-eks-1.20, kubernetes-external-1.21, kubernetes-1.20.2-ubuntu-18.04.5-morpheus-amd64, kubernetes-1.20.2-ubuntu-18.04.5-opentelekom-amd64, kubernetes-1.20.2-ubuntu-18.04.5-hyperv-amd64, kubernetes-1.20.2-ubuntu-18.04.5-openstack-amd64, kubernetes-1.20.2-ubuntu-18.04.5-nutanix-amd64, kubernetes-azure-aks-1.19.13, kubernetes-1.20.2-ubuntu-18.04.5-vmware-amd64, kubernetes-1.20.2-ubuntu-18.04.5-amazon-amd64, kubernetes-1.20.2-ubuntu-18.04.5-google-amd64,  kubernetes-google-gke``
+           - :ref:`New 20.1 & 20.2 Cluster Layouts seeded<k8s>`
 
 :Google: - Added sync for Service Accounts and the ability to select a service account when provisioning Instances, Blueprints and Apps, Clusters and Hosts to Google Clouds. Once the Resource Pool is selected, the available service accounts are synced and the dropdown menu to select them appears
          - When provisioning to the default service account for the selected resource pool, an additional Access Scope option is presented. Users can opt to allow default access or to allow full access to all cloud APIs
@@ -34,7 +34,7 @@ New Features
 
 :Kubernetes: - Deactivated all 1.17 Cluster Layouts (no longer supported by k8s)
              - Google Kubernetes Engine (GKE) support added for creating, managing, discovering and provisioning to GKE Kubernetes Clusters.
-             - New Cluster Layouts seeded: ``kubernetes-amazon-eks-1.20, kubernetes-external-1.21, kubernetes-1.20.2-ubuntu-18.04.5-morpheus-amd64, kubernetes-1.20.2-ubuntu-18.04.5-opentelekom-amd64, kubernetes-1.20.2-ubuntu-18.04.5-hyperv-amd64, kubernetes-1.20.2-ubuntu-18.04.5-openstack-amd64, kubernetes-1.20.2-ubuntu-18.04.5-nutanix-amd64, kubernetes-azure-aks-1.19.13, kubernetes-1.20.2-ubuntu-18.04.5-vmware-amd64, kubernetes-1.20.2-ubuntu-18.04.5-amazon-amd64, kubernetes-1.20.2-ubuntu-18.04.5-google-amd64,  kubernetes-google-gke``
+             - :ref:`New 20.1 & 20.2 Cluster Layouts seeded<k8s>`
              - Added support for either or both token and kubceconfig on external kube clusters
 
 :Library: - Added Ubuntu 20 Layouts for nearly all supported Clouds :superscript:`5.2.9`
@@ -86,6 +86,7 @@ New Features
 :VMware vCenter: - Added support for VMware Content Library. |morpheus| automatically on-boards items from your content library and re-syncs them regularly to keep them up to date. Add images from the |morpheus| library to Node Types for use in Layouts and Instance Types
                  - The UUID for hypervisor hosts synced into vCenter Clouds is now stored to the ``unique_id`` field on hypervisor host ``compute_server`` records :superscript:`5.2.9`
                  - Improved sync performance for VMware Resource Pools and Folders :superscript:`5.2.9`
+
 
 Fixes
 =====
