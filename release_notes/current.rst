@@ -15,6 +15,7 @@ New Features
 
 :Amazon: - Added KMS KEY ID field in provisioning Advanced Options sections for specify an AWS KMS key for encrypting EBS Volumes during provisioning when volume encryption is enabled
          - Asia Pacific (Seoul) ap-northeast-2 region added
+
 :Azure: - Select Availability Zones during Instance, App, and Cluster provisioning. Select "Availability Zone" from the "Availability Options" menu and then specify the appropriate Availability Zone from the additional field that appears in the wizard
 
 :Clusters: - Added "Install Docker" checkbox to the Add Hosts wizard. When checked, Docker is installed and when left unchecked, |morpheus| assumes Docker is already installed or will be installed via Workflows or some other means
@@ -56,13 +57,15 @@ New Features
             - Support for v2 Identity API was deprecated in 5.2.9 and has been dropped for this release
 
 :Packages: - New ``/administration/packages`` component added targeted for uploading future |morpheus| provided mpg's, however users will be able to create, distribute and/or import custom |morpheus| packages. Additional information on creating custom packages will be provided.
-          - New Role permission ``Admin: Packages`` (None, Full) added. Allows or disallows access to the Packages tab on the Integrations page (Administration > Integrations)
+           - New Role permission ``Admin: Packages`` (None, Full) added. Allows or disallows access to the Packages tab on the Integrations page (Administration > Integrations)
 
 :Profiles: - New ``Profiles`` component added to Clouds with ``Terraform Profile`` and ``Key/Value Profile`` types. Profiles give users the ability to create custom object associated secrets and metadata that will automatically be mapped during provisioning and automation.
            - Terraform Profiles allow created cloud associated tfvars secrets, allowing tf apps and specs to be provisioned across multiple clouds that required different tfvars.
            - Key/Value Profiles expand provisioning, automation, billing and reporting capabilities by allowing dynamic custom object specific metadata in provisioning and automation mappings using ``<%=cloud.profile.key%>``
 
 :ServiceNow: - Optimized CMDB sync performance to significantly reduce sync times for large cmdb record sets.
+             - ServiceNow Multi-Domain (domain separation) Support added. Note: Requires upcoming plugin version
+
 :Terraform: - Added UI feedback and status indication when refreshing Terraform Instance state (:guilabel:`REFRESH STATE` button or "Refresh State" selection from Instance Actions menu)
             - Added support for ``count`` and ``for_each`` loops
             - ``terraform`` command line added to State tabs for executing tf cli commands with execution output
@@ -73,11 +76,12 @@ New Features
      - Execution and history tabs: Execution output is now limited on initial load to 10k characters per event with an option to load the full output for each event
      - Help text added to Add Integration modals warning that HTTP URLs are insecure and not recommended
 
+:vCloud Director: - System administrator account credentials can now be provided to authenticate vCD Cloud integrations in |morpheus|. Previously, only organization administrator credentials could be used. Keep in mind that you will need to set the system administrator account credentials appropriately, for example, to be able to see entities created by the organization administrator
+                  - Added the option to specify a catalog to store |morpheus|-provisioned artifacts, previously |morpheus| would always create and use a "morpheus_auto" catalog
+
 :VDI: - VDI pools can now be configured to be "Recyclable". When enabled, the VDI Instance will revert back to a snapshot and become available once again after the user has logged out and the VDI session has expired. This behavior will not apply to VDI pools which are also configured to be persistent because in that configuration the Instance is merely stopped and saved for the user's next session. This feature is currently only available for Cloud types which support snapshot management (VMware, Nutanix, and vCD)
       - Improved image streaming in low bandwidth situations
 
-:vCD: - System administrator account credentials can now be provided to authenticate vCD Cloud integrations in |morpheus|. Previously, only organization administrator credentials could be used. Keep in mind that you will need to set the system administrator account credentials appropriately, for example, to be able to see entities created by the organization administrator
-      - Added the option to specify a catalog to store |morpheus|-provisioned artifacts, previously |morpheus| would always create and use a "morpheus_auto" catalog
 
 :VMware vCenter: - Added support for VMware Content Library. |morpheus| automatically on-boards items from your content library and re-syncs them regularly to keep them up to date. Add images from the |morpheus| library to Node Types for use in Layouts and Instance Types
                  - The UUID for hypervisor hosts synced into vCenter Clouds is now stored to the ``unique_id`` field on hypervisor host ``compute_server`` records :superscript:`5.2.9`
