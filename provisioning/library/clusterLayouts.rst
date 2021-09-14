@@ -5,7 +5,7 @@ Cluster Layouts
 
 Users can add new cluster layouts using the :guilabel:`+ADD` button. |morpheus|-provided cluster layouts can be cloned for use in creating custom layouts. Custom cluster layouts can also be deleted or edited from the list view using the pencil or trash can icons.
 
-.. image:: /images/provisioning/library/clusterlayouts.png
+.. image:: /images/provisioning/library/clusterLayouts.png
 
 |morpheus| provided Cluster Layouts:
 
