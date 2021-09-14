@@ -13,10 +13,12 @@
 New Features
 ============
 
+:Amazon: - Added KMS KEY ID field in provisioning Advanced Options sections for specify an AWS KMS key for encrypting EBS Volumes during provisioning when volume encryption is enabled
 :Azure: - Select Availability Zones during Instance, App, and Cluster provisioning. Select "Availability Zone" from the "Availability Options" menu and then specify the appropriate Availability Zone from the additional field that appears in the wizard
 
 :Clusters: - Added "Install Docker" checkbox to the Add Hosts wizard. When checked, Docker is installed and when left unchecked, |morpheus| assumes Docker is already installed or will be installed via Workflows or some other means
            - Added "Install Docker" checkbox to the Add Cluster Layout modal. When checked, Docker is installed and when left unchecked, |morpheus| assumes Docker is already installed or will be installed via Workflows or some other means
+           - - New Kubernetes Cluster Layouts seeded: ``kubernetes-amazon-eks-1.20, kubernetes-external-1.21, kubernetes-1.20.2-ubuntu-18.04.5-morpheus-amd64, kubernetes-1.20.2-ubuntu-18.04.5-opentelekom-amd64, kubernetes-1.20.2-ubuntu-18.04.5-hyperv-amd64, kubernetes-1.20.2-ubuntu-18.04.5-openstack-amd64, kubernetes-1.20.2-ubuntu-18.04.5-nutanix-amd64, kubernetes-azure-aks-1.19.13, kubernetes-1.20.2-ubuntu-18.04.5-vmware-amd64, kubernetes-1.20.2-ubuntu-18.04.5-amazon-amd64, kubernetes-1.20.2-ubuntu-18.04.5-google-amd64,  kubernetes-google-gke``
 
 :Google: - Added sync for Service Accounts and the ability to select a service account when provisioning Instances, Blueprints and Apps, Clusters and Hosts to Google Clouds. Once the Resource Pool is selected, the available service accounts are synced and the dropdown menu to select them appears
          - When provisioning to the default service account for the selected resource pool, an additional Access Scope option is presented. Users can opt to allow default access or to allow full access to all cloud APIs
@@ -29,6 +31,7 @@ New Features
 
 :Kubernetes: - Deactivated all 1.17 Cluster Layouts (no longer supported by k8s)
              - Google Kubernetes Engine (GKE) support added for creating, managing, discovering and provisioning to GKE Kubernetes Clusters.
+             - New Cluster Layouts seeded: ``kubernetes-amazon-eks-1.20, kubernetes-external-1.21, kubernetes-1.20.2-ubuntu-18.04.5-morpheus-amd64, kubernetes-1.20.2-ubuntu-18.04.5-opentelekom-amd64, kubernetes-1.20.2-ubuntu-18.04.5-hyperv-amd64, kubernetes-1.20.2-ubuntu-18.04.5-openstack-amd64, kubernetes-1.20.2-ubuntu-18.04.5-nutanix-amd64, kubernetes-azure-aks-1.19.13, kubernetes-1.20.2-ubuntu-18.04.5-vmware-amd64, kubernetes-1.20.2-ubuntu-18.04.5-amazon-amd64, kubernetes-1.20.2-ubuntu-18.04.5-google-amd64,  kubernetes-google-gke``
 
 :Library: - Added Ubuntu 20 Layouts for nearly all supported Clouds :superscript:`5.2.9`
           - Added Debian 9 and 10 Layouts for VMware Clouds to the standard Morpheus Library :superscript:`5.2.9`
@@ -56,8 +59,12 @@ New Features
            - Terraform Profiles allow created cloud associated tfvars secrets, allowing tf apps and specs to be provisioned across multiple clouds that required different tfvars.
            - Key/Value Profiles expand provisioning, automation, billing and reporting capabilities by allowing dynamic custom object specific metadata in provisioning and automation mappings using ``<%=cloud.profile.key%>``
 
+:ServiceNow: - Optimized CMDB sync performance to significantly reduce sync times for large cmdb record sets.
 :Terraform: - Added UI feedback and status indication when refreshing Terraform Instance state (:guilabel:`REFRESH STATE` button or "Refresh State" selection from Instance Actions menu)
             - Added support for ``count`` and ``for_each`` loops
+            - ``terraform`` command line added to State tabs for executing tf cli commands with execution output
+            - Added cloudConfig.agentInstall variable for adding agent install script to tf. Example: ``<%=instance?.cloudConfig?.agentInstall%>`` can be used in userdata section of an aws_instance
+            - Custom Options can now be used in tf library configs. For example, option types  can be set on tf layouts or associated Instance Types and <%=customOptions.key%> used tf.
 
 :UI: - Added more detailed help block text for the Private Key field when storing a new key pair in Morpheus (Infrastructure > Keys & Certs > Key Pairs) :superscript:`5.2.9`
      - Execution and history tabs: Execution output is now limited on initial load to 10k characters per event with an option to load the full output for each event
@@ -132,6 +139,7 @@ Fixes
             - Deleting a VM associated with an Instance in Terraform App with ``Remove associated Instances`` enabled, and the associated Instance is the only Instance in the App, no longer deletes the associated App.
             - Added validation for deleting a Terraform app when ``deletion_protection=true`` in Terraform.
             - Fixed ``for_each`` loop value nulled when using tfvars within cypher
+            - Fixed issue with resource -> image mapping that caused vm's associated with resources to remain as ``discovered`` server types 
 :User Settings: - Success Message added on save when updating Linux/Windows passwords in user settings (Displays for 5s then fades) :superscript:`5.2.9`
 :UI: Execution and history tabs: Execution output is now limited on initial load to 10k characters per event with an option to load the full output for each event to address loading of large execution history datasets 
 :vCloud Director: - Fixed issue with user-data iso attachment when provisioning cloudbase-init enabled Windows images :superscript:`5.2.10`

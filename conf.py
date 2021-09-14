@@ -23,6 +23,8 @@ rst_prolog = """
 .. |erlang| replace:: 22.3
 .. |repo_host_url| replace:: https://downloads.morpheusdata.com
 .. |master tenant| replace:: Master Tenant
+.. |profileObjects| replace:: Clouds
+.. |profileTypes| replace:: Terraform, Key/Value
 
 .. |trash| unicode:: 0x0001F5D1 .. TRASH ICON
 .. |gear| unicode:: U+02699 .. GEAR ICON
