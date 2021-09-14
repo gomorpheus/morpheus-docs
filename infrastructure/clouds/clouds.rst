@@ -108,3 +108,8 @@ To delete a cloud:
 #. Click the Delete icon of the cloud to delete.
 
 .. IMPORTANT:: All Instances, managed Hosts and VMs must be removed prior to deleting a Cloud. To remove Instances, hosts and VMs from |morpheus| without deleting the Cloud resources they represent, select Delete on the host or VM, unselect "Remove Infrastructure", and select "Remove Associated Instances" if Instance are associated with the selected Hosts or VMs.
+
+|
+
+.. include:: /infrastructure/clouds/profiles.rst
+
