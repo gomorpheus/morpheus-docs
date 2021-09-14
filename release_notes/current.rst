@@ -21,12 +21,14 @@ New Features
 :Google: - Added sync for Service Accounts and the ability to select a service account when provisioning Instances, Blueprints and Apps, Clusters and Hosts to Google Clouds. Once the Resource Pool is selected, the available service accounts are synced and the dropdown menu to select them appears
          - When provisioning to the default service account for the selected resource pool, an additional Access Scope option is presented. Users can opt to allow default access or to allow full access to all cloud APIs
          - |morpheus| will now onboard live cost data from GCP, see `GCP integration guide <https://docs.morpheusdata.com/en/5.3.3/integration_guides/Clouds/google/google.html#enabling-live-costing-for-gcp>`_ for configuration details
+         - Google Kubernetes Engine (GKE) support added for creating, managing, discovering and provisioning to GKE Kubernetes Clusters. 
 
 :Hosts: - Deleting a Host or VM (Infrastructure > Hosts) with “Remove Associated Instances” marked and “Remove Infrastructure” unmarked is now handled differently. Host records and A records are no longer removed and teardown-phase Tasks are not run. If the Cloud is configured to inventory existing resources, the host or VM will be synced back in as a unmanaged resource on the next cloud sync :superscript:`5.2.9`
 
 :Huawei Cloud: - EIP billing mode changed to bill by traffic rather than bandwidth. Note that this change does not affect OTC Clouds which only bill by traffic :superscript:`5.2.9`
 
 :Kubernetes: - Deactivated all 1.17 Cluster Layouts (no longer supported by k8s)
+             - Google Kubernetes Engine (GKE) support added for creating, managing, discovering and provisioning to GKE Kubernetes Clusters.
 
 :Library: - Added Ubuntu 20 Layouts for nearly all supported Clouds :superscript:`5.2.9`
           - Added Debian 9 and 10 Layouts for VMware Clouds to the standard Morpheus Library :superscript:`5.2.9`

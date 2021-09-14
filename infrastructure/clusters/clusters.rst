@@ -44,3 +44,4 @@ Cluster Permissions
 .. include:: /infrastructure/clusters/kubernetes.rst
 .. include:: /infrastructure/clusters/docker.rst
 .. include:: /infrastructure/clusters/eks.rst
+.. include:: /infrastructure/clusters/gke.rst
