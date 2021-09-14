@@ -1,40 +1,47 @@
 :orphan:
 
-404 Page Not Found
-==================
+404 Not Found
+=============
+
+Sorry this page does not exist
 
 .. raw:: html
 
-	 <body>
-	   <canvas style="position:absolute; top:0; left:0;" id="c"></canvas>
-	   <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-	   <script src="https://unpkg.com/jquery.terminal/js/jquery.terminal.min.js"></script>
-	   <link rel="stylesheet" href="https://unpkg.com/jquery.terminal/css/jquery.terminal.min.css" />
-	   <script>
-	     var c = document.getElementById("c");
-	     var ctx = c.getContext("2d");
-	     c.height = window.innerHeight;
-	     c.width = window.innerWidth;
-	     var matrix = "404NOTFOUND";
-	     matrix = matrix.split("");
-	     var font_size = 12;
-	     var columns = c.width / font_size; //number of columns for the rain
-	     var drops = [];
-	     for (var x = 0; x < columns; x++)
-	       drops[x] = 1;
-	     function draw() {
-	       ctx.fillStyle = "rgba(37, 55, 70, 0.04)";
-	       ctx.fillRect(0, 0, c.width, c.height);
-	       ctx.fillStyle = "#7CCBEB"; 
-	       ctx.font = font_size + "px arial";
-	       for (var i = 0; i < drops.length; i++) {
-	         var text = matrix[Math.floor(Math.random() * matrix.length)];
-	         ctx.fillText(text, i * font_size, drops[i] * font_size);
-	         if (drops[i] * font_size > c.height && Math.random() > 0.975)
-	           drops[i] = 0;
-	         drops[i]++;
-	       }
-	     }
-	     setInterval(draw, 35);
-	   </script>
-	 </body>
+		<body>
+			<canvas style="position:absolute; top:0; left:0;" id="c"></canvas>
+			<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+			<script src="https://unpkg.com/jquery.terminal/js/jquery.terminal.min.js"></script>
+			<link rel="stylesheet" href="https://unpkg.com/jquery.terminal/css/jquery.terminal.min.css" />
+			<script>
+				function sleep(ms) {
+					 return new Promise(resolve => setTimeout(resolve, ms));
+					 }
+					sleep(2000).then(() => {
+					var c = document.getElementById("c");
+					var ctx = c.getContext("2d");
+					c.height = window.innerHeight;
+					c.width = window.innerWidth;
+					var matrix = "404NOTFOUND";
+					matrix = matrix.split("");
+					var font_size = 14;
+					var columns = c.width / font_size;
+					var drops = [];
+					for (var x = 0; x < columns; x++)
+						drops[x] = 1;
+					function draw() {
+						ctx.fillStyle = "rgba(37, 55, 70, 0.04)";
+						ctx.fillRect(0, 0, c.width, c.height);
+						ctx.fillStyle = "#7CCBEB"; 
+						ctx.font = font_size + "px arial";
+						for (var i = 0; i < drops.length; i++) {
+							var text = matrix[Math.floor(Math.random() * matrix.length)];
+							ctx.fillText(text, i * font_size, drops[i] * font_size);
+							if (drops[i] * font_size > c.height && Math.random() > 0.975)
+								drops[i] = 0;
+							drops[i]++;
+						}
+					}
+					setInterval(draw, 35); 
+				});
+			</script>
+		</body>
