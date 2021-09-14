@@ -18,8 +18,7 @@ New Features
 
 :Azure: - Select Availability Zones during Instance, App, and Cluster provisioning. Select "Availability Zone" from the "Availability Options" menu and then specify the appropriate Availability Zone from the additional field that appears in the wizard
 
-:Clusters: - Added "Install Docker" checkbox to the Add Hosts wizard. When checked, Docker is installed and when left unchecked, |morpheus| assumes Docker is already installed or will be installed via Workflows or some other means
-           - Added "Install Docker" checkbox to the Add Cluster Layout modal. When checked, Docker is installed and when left unchecked, |morpheus| assumes Docker is already installed or will be installed via Workflows or some other means
+:Clusters: - Added "Install Docker" checkbox to the Add Cluster Layout modal. When checked, Docker is installed and when left unchecked, |morpheus| assumes Docker is already installed or will be installed via Workflows or some other means
            - :ref:`New 20.1 & 20.2 Cluster Layouts seeded<k8s>`
 
 :Google: - Added sync for Service Accounts and the ability to select a service account when provisioning Instances, Blueprints and Apps, Clusters and Hosts to Google Clouds. Once the Resource Pool is selected, the available service accounts are synced and the dropdown menu to select them appears
