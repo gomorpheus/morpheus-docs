@@ -142,10 +142,10 @@ Fixes
         - Datastores: Edit option no longer displayed for Role Permission ``Infrastructure -> Datastores: Read`` :superscript:`5.2.9`
 :Security: - Reconfigure and Library XSS vulnerabilities remediated :superscript:`5.2.10`
            - Updated request handling of user scoped policy creation during policy creation :superscript:`5.2.10`
-:Tasks: - Chef Bootstrap: Fixed issues where Chef Bootsrap execution would fail with reason "Chef Infra Client cannot execute without accepting the license" :superscript:`5.2.9`
+:Tasks: - Chef Bootstrap: Fixed issues where Chef Bootstrap execution would fail with reason "Chef Infra Client cannot execute without accepting the license" :superscript:`5.2.9`
        - Variables: Fixed evaluation of <%=user.username%> variable in task executions :superscript:`5.2.9`
 :Terraform: - Fixed UI issue with ``NEXT`` and ``COMPLETE`` buttons becoming active before validation had completed :superscript:`5.2.10`
-            - Fixed ``null`` tf variable values redering as ``[object object]`` in UI  :superscript:`5.2.9`
+            - Fixed ``null`` tf variable values rendering as ``[object object]`` in UI  :superscript:`5.2.9`
             - Deleting a VM associated with an Instance in Terraform App with ``Remove associated Instances`` enabled, and the associated Instance is the only Instance in the App, no longer deletes the associated App.
             - Added validation for deleting a Terraform app when ``deletion_protection=true`` in Terraform.
             - Fixed ``for_each`` loop value nulled when using tfvars within cypher
@@ -191,7 +191,7 @@ Appliance & Agent Updates
 
 :Appliance: - Agent installation: Reconfigure process updated to add ``/var/opt/morpheus/package-repos/yum/el/8.2 -> /var/opt/morpheus/package-repos/yum/el/8`` symlink to handle agent installation requests for centOS/rhel configurations version pinned to ``8.2`` :superscript:`5.2.10`
             - Java Updated to 8u302-b08 :superscript:`5.2.9`
-            - Tomcat verison update to v9.0.50 :superscript:`5.2.9`
+            - Tomcat version update to v9.0.50 :superscript:`5.2.9`
             
 :Agent Packages: - Java Updated to 8u302-b08 :superscript:`5.2.9`
                  - |morpheus| Node and VM Node Packages version update to 3.2.1 :superscript:`5.2.9`
