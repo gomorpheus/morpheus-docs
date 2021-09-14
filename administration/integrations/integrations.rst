@@ -30,4 +30,5 @@ To add an integration select :guilabel:`+ ADD` and choose your integration. Many
 
 Please see the :ref:`integration-guide` for each specific integration type for more detailed information on setup steps and features supported by the integration.
 
+.. include:: packages.rst
 .. include:: plugins.rst
