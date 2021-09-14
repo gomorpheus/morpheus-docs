@@ -113,7 +113,7 @@ latex_elements = {
 }
 
 latex_documents = [
-    (master_doc, 'morpheus5.3.2-1.tex', u'Morpheus Documentation',
+    (master_doc, 'morpheus5.3.3-1.tex', u'Morpheus Documentation',
      u'Morpheus', 'manual'),
 ]
 
