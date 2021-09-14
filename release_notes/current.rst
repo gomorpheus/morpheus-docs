@@ -151,7 +151,7 @@ Fixes
             - Fixed ``for_each`` loop value nulled when using tfvars within cypher
             - Fixed issue with resource -> image mapping that caused vm's associated with resources to remain as ``discovered`` server types 
 :User Settings: - Success Message added on save when updating Linux/Windows passwords in user settings (Displays for 5s then fades) :superscript:`5.2.9`
-:UI: Execution and history tabs: Execution output is now limited on initial load to 10k characters per event with an option to load the full output for each event to address loading of large execution history datasets 
+:UI: - Execution and history tabs: Execution output is now limited on initial load to 10k characters per event with an option to load the full output for each event to address loading of large execution history datasets 
 :vCloud Director: - Fixed issue with user-data iso attachment when provisioning cloudbase-init enabled Windows images :superscript:`5.2.10`
                   - Fixed ``safeComputerName`` issue during Windows Guest Customizations :superscript:`5.2.9`
 :VMware: - Fixed duplicate filename issue when adding multiple disks during reconfigure :superscript:`5.2.10`
