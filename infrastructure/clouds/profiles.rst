@@ -29,13 +29,15 @@ Create a Terraform Profile
 #. Select Terraform Profile Type 
 #. Enter tfvars in the `Terraform Profile Variables` field
     
-    -exmaple Terraform Profile Variables 
-    .. code-block:: bash
-    
-       access_key="****acccessKey****"
-       secret_key="********secretKey**********"
-       region="us-west-1"
-       
+   - example Terraform Profile Variables
+   
+     .. code-block:: bash
+      
+        access_key="****acccessKey****"
+        secret_key="********secretKey**********"
+        region="us-west-1"
+
+
 #. Select :guilabel:`SAVE CHANGES` 
 
 Now when provisioning a terraform Instance or App to the Cloud the profile was created in, the tfvars in the profile become available to the tf.
