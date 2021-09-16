@@ -60,13 +60,13 @@ OPTION LIST
 Cascading Option Types
 ^^^^^^^^^^^^^^^^^^^^^^
 
-One powerful facet of |morpheus| Option Types is the ability to present users with different lists of input options based on their selections in other Option Types within the same wizard or modal. One common example, which is fully illustrated in this section, might be to have a user select:
+One powerful facet of |morpheus| Option Types is the ability to present users with different lists of input options based on their selections in other Option Types within the same wizard or modal. One common example, which is fully illustrated in this section, is to have a user select:
 
 - The Group they wish to provision into...
 - Then select the target Cloud from a list limited to Clouds which are in the selected Group...
-- Then select the target network from a list limited to networks which are in the selected Cloud *and* Group
+- Then select the target network from a list limited to networks which are available to the selected Cloud *and* Group
 
-To set this up, we'll first configure our Option Types (custom option fields that can be applied to Instance Types and other |morpheus| constructs) and Option Lists (dynamic lists of possible choices which can be associated with Option Types and presented in a dropdown or typeahead format). Once the custom options are configured, we'll associate them with a new service catalog item and take a look at how the user would ineract with them.
+To set this up, we'll first configure our Option Types (custom option fields that can be applied to Instance Types and other |morpheus| constructs) and Option Lists (dynamic lists of possible choices which can be associated with Option Types and presented in a dropdown or typeahead format). Once the custom options are configured, we'll associate them with a new service catalog item and take a look at how the user would interact with them.
 
 Group Custom Option
 ```````````````````
@@ -81,19 +81,89 @@ I've called my Option List "Groups" and selected "Groups" from the OPTION LIST m
     results.push({name: data[x].name, value:data[x].id});
   }
 
-After saving the Option List, create the Option Type that presents the list we just created. I gave my Option Type the name of "Selected Group", field name of "selectedGroup", and label of "Group". For type, choose "Select List" and a new field will appear at the bottom of the modal where we can select the Option List we just created.
+After saving the Option List, create the Option Type that presents the list we just created. I gave my Option Type the name of "Selected Group", field name of "selectedGroup", and label of "Group". For type, choose "Select List" and a new field will appear at the bottom of the modal where we can select the Option List we just created. With this configuration, the Option Type will present as a dropdown list containing the options called from our Option List.
 
 Cloud Custom Option
 ```````````````````
 
+Adding the Option List and Option Type for Clouds will be similar to the prior step with the exception that we will be including a request script which effectively filters the list of available Clouds to only those associated with the selected group. Follow the same process to start a new Option List, I've configured mine as follows:
 
+- **NAME:** Parsed Clouds
+- **TYPE:** Morpheus Api
+- **OPTION LIST:** Clouds
+
+We also need a request script that loads the ``siteId`` attribute of the ``results`` variable with the Group ID if the user has made a group selection. Essentially it appends this input as a query parameter to the API call, calling (for example) ``.../api/clouds?siteId=1`` rather than ``.../api/clouds``. It should be similar to the script below. Note that we are referencing the ``selectedGroup`` field name we created previously and that a "site" is the term for Groups in the |morpheus| database.
+
+.. code-block:: bash
+
+  if (input.selectedGroup) {
+    results.siteId = input.selectedGroup
+  }
+
+We also need a translation script which will be identical to the one used previously with the exception that if there is no input on the ``selectedGroups`` field, nothing will be displayed for the Clouds option.
+
+.. code-block:: bash
+
+  if (input.selectedGroup) {
+  for (var x = 0; x < data.length; x++) {
+      results.push({name:data[x].name, value:data[x].id});
+    }
+  }
+
+We also need to create an Option Type to house this Option List. This process will be very similar to creating the previous Option Type except that we need to set selectedGroup as the Dependent Field. Setting a dependent field on an Option Type will trigger it to reload each time a selection is made in the indicated option. My configuration is as follows:
+
+- **NAME:** Parsed Cloud
+- **FIELD NAME:** parsedCloud
+- **DEPENDENT FIELD:** selectedGroup
+- **TYPE:** Select List
+- **LABEL:** Cloud
+- **OPTION LIST:** Parsed Clouds
+
+Save your changes once done.
 
 Network Custom Option
 `````````````````````
 
+Finally, we'll create and Option List/Option Type pair for network selection. In this case, it will be dependent on both the Group and Cloud selection. My Option List configuration is below:
+
+- **NAME:** Parsed Networks
+- **TYPE:** Morpheus Api
+- **OPTION LIST:** Networks
+
+**Request Script:**
+
+.. code-block:: bash
+
+  if (input.parsedCloud && input.selectedGroup) {
+    results.cloudId = input.parsedCloud
+    results.groupId = input.selectedGroup
+  }
+
+**Translation Script:**
+
+.. code-block:: bash
+
+  if (input.parsedCloud && input.selectedGroup) {
+  for (var x = 0; x < data.length; x++) {
+      results.push({name:data[x].name, value:data[x].id});
+    }
+  }
+
+The Option Type is configured as follows:
+
+- **NAME:** Parsed Networks
+- **FIELD NAME:** parsedNetwork
+- **DEPENDENT FIELD:** parsedCloud
+- **TYPE:** Select List
+- **LABEL:** Network
+- **OPTION LIST:** Parsed Networks
+
 Setting Custom Options at Provision Time
 ````````````````````````````````````````
 
+At this point, our dependent options are ready to be applied to custom Instance Types, Workflows or Service Catalog items as needed. When creating them, we can select an unlimited number of Option Types from a typeahead field on the create modal and they will be presented when a user goes to provision that element or run that Workflow. As an example, I've created a Service Catalog item that incorporates the three Option Types we've created. You can see how the dependent fields reload and present different options based on my selections.
+
+.. image:: /images/provisioning/library/cascadingOptionList.gif
 
 Visibility Field
 ^^^^^^^^^^^^^^^^
