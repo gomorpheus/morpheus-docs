@@ -5,6 +5,9 @@ Provisions a new Elastic Kubernetes Service (EKS) Cluster in target AWS Cloud.
 
 .. note:: EKS Cluster provisioning is different than creating a Kubernetes Cluster type in AWS EC2, which creates EC2 instances and configures Kubernetes, outside of EKS.
 
+|morpheus| currently supports EKS in the following regions: ``us-east-1``, ``us-east-2``, ``us-west-2``, ``ap-south-1``, ``ap-northeast-2``, ``ap-southeast-1``, ``ap-southeast-2``,
+		``ap-northeast-1``, ``eu-central-1``, ``eu-west-1``, ``eu-west-2``, ``eu-west-3``, ``eu-north-1``
+
 Create an EKS Cluster
 ^^^^^^^^^^^^^^^^^^^^^
 
