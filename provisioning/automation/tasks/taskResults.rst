@@ -3,13 +3,9 @@ Task Results
 
 Overview
 `````````
-Task Results allow Tasks to use the output from preceding Tasks in the same Workflow phase via results variables.
+Using Task results, the output from any preceding Tasks within the same Workflow phase is available to be called into additional Tasks. The results are stored on the ``results`` variable. Since results are available to all Tasks, we can use results from any or all prior Tasks so long as they are executed within the same provision phase.
 
-Results are available for all tasks executed in the same phase in a workflow. For example, instead of using just one Tasks results in another Task, we can use all of the Task Results from the tasks in the same provision phase in a single task inside a workflow.
-
-Configure Tasks
-```````````````
-In script type tasks, if ``RESULT TYPE`` is set, |morpheus| will store the Task's output as a variable.
+In script type tasks, if a RESULT TYPE is set, |morpheus| will store the output on the ``results`` variable. It's important to understand that the result type indicates the format of the Task output |morpheus| should expect. |morpheus| will parse that output into a Groovy map which can be retrieved and further parsed by resolving the ``results`` variable. If the RESULT TYPE is incorrectly set, |morpheus| may not be able to store the Task results correctly. Jump to the section on `Script Config Examples <https://docs.morpheusdata.com/en/latest/provisioning/automation/automation.html#script-config-examples>`_ to see how script results are processed in various example cases.
 
 Results Types
 `````````````
@@ -36,13 +32,13 @@ Script Config Examples
      - SCRIPT: ``echo "string value"``
 
   Source Task Output: ``string value``
-  
+
   Results Task Config (using task code in variable)
    - NAME: N/A
    - CODE: N/A
    - RESULT TYPE: N/A
    - SCRIPT: ``echo "single: <%=results.singleExample%>"``
-    
+
   Results Task Output: ``single: string value``
 
 :Single Value using Task Name:
