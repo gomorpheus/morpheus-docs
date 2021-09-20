@@ -29,7 +29,7 @@ Cluster Types
 | GKE Cluster        | Google Cloud GKE (Google Kubernetes Engine) Clusters                                                                                                                                                                             | Kubernetes             |
 +--------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------+
 
-.. note:: Refer to :ref:`System Cluster Layouts` for supported Clouds per Cluster Type.
+.. note:: Refer to :ref:`clusterLayouts` for supported Clouds per Cluster Type.
 
 Requirements
 ------------
@@ -44,6 +44,8 @@ Cluster Permissions
     Each Cluster has Group, Tenant and Service Plan access permissions settings ("MORE" > Permissions on the Clusters list page).
 - Namespace Permissions
     Individual Namespaces also have Group, Tenant and Service Plan access permissions settings
+
+.. _clusterLayouts:
 
 System Cluster Layouts
 ----------------------
