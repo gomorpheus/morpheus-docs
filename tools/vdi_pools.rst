@@ -92,6 +92,7 @@ Create a VDI pool by selecting :guilabel:`+ ADD` from the VDI Pools tab or edit 
 - **MAX SIZE:** The total number of virtual desktops this pool can have. Additional users will not be able to access machines once this number is reached
 - **LEASE TIMEOUT (MINUTES):** The user lease time on a virtual desktop they've reserved. The lease will continue to auto-renew itself as long as the user is logged into |morpheus|. Once the user has logged out and the lease timeout period has expired, the machine will be released as appropriate based on your configuration
 - **PERSISTENT:** Pools with persistent virtual desktops will reserve a machine for each user in order to preserve settings, installed applications, work files and more. Machines in persistent pools will be shut down rather than destroyed when they are no longer in use
+- **RECYCLABLE:** When enabled, the VDI Instance will revert back to a snapshot and become available once again after the user has logged out and the VDI session has expired. This behavior will not apply to VDI pools which are also configured to be persistent because in that configuration the Instance is merely stopped and saved for the user's next session. This feature is currently only available for Cloud types which support snapshot management (VMware, Nutanix, and vCD)
 - **ALLOW COPY** Enables or disables the ability for the VDI user to copy contents from the VDI instance to the local clipboard
 - **ALLOW PRINTER** When enabled, users local system printers can be targeted from the VDI Instance
 - **ALLOW HYPERVISOR CONSOLE:** When checked, native cloud console will be enabled (if available) rather than using |morpheus|-native RDP/SSH capability
@@ -100,7 +101,7 @@ Create a VDI pool by selecting :guilabel:`+ ADD` from the VDI Pools tab or edit 
 - **CONFIGURE:** Click this button to configure the deployment configuration each system will use. The wizard is identical to the Instance provisioning wizard meaning all available Instance Types, Workflows, and more are available to virtual desktop machine creation. Consult the steps above to see an example VDI image prep walkthrough
 - **LOGO:** Upload or select a logo to represent the virtual desktop type to users
 - **VDI APPS:** Optionally select one or more frequently-used applications the user can launch directly. Users will also have the option to launch into the desktop
-- **EVDI GATEWAY** Select a configure VDI Gateway for VDI sessions to be redirected to. VDI sessions will be redirected to the gateway when a gateway is specified.
+- **VDI GATEWAY** Select a configure VDI Gateway for VDI sessions to be redirected to. VDI sessions will be redirected to the gateway when a gateway is specified.
 
 **Guest Console SSH Tunnel** (optional)
   A Jump Host can be configured for VDI session connections. |morpheus| will tunnel through the Jump Host when connecting Guest Console sessions for VDI. This is not applicable for Hypervisor Console connections.

@@ -1,5 +1,5 @@
 Elasticsearch
-`````````````
+^^^^^^^^^^^^^
 
 Sample Install of 3 node Elasticsearch Cluster on CentOS 7
 
@@ -8,7 +8,7 @@ Sample Install of 3 node Elasticsearch Cluster on CentOS 7
 .. IMPORTANT:: |morpheus| v4.1.2+ requires Elasticsearch v7.x. 
 
 Requirements
-............
+````````````
 
 #. Three Existing CentOS 7+ nodes accessible to the Morpheus Appliance
 
@@ -36,7 +36,7 @@ Requirements
       OpenJDK 64-Bit Server VM (build 25.65-b01, mixed mode)
 
 Install Elasticsearch 7.x
-.........................
+`````````````````````````
 .. important:: This is an example Elasticsearch Upgrade for reference only, and is not indicative of the upgrade procedure for every environment/user/customer/configuration. 
 
 #. On each ES node run the following to install Elasticsearch.

@@ -20,7 +20,7 @@ Report Types
   - Cloud Usage
   - Cloud Usage App Summary
   - Cloud Usage Instance Type Summary
-  - Tenant Usage
+  - `Tenant Usage <https://docs.morpheusdata.com/en/latest/operations/report_types/tenant_usage.html>`_
 
 **CLOUD COST**
 
