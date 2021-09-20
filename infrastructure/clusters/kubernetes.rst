@@ -26,7 +26,7 @@ Creating Kubernetes Clusters
 
 Provisions a new Kubernetes Cluster in selected target Cloud using selected Layout.
 
-System (|morpheus| provided) Kubernetes Layouts at time of |morphver| release. Note: AKS k8s versions will dynamically update as Azure updates supported versions.
+System (|morpheus| provided) Kubernetes Layouts at time of |morphver| release. Note: AKS & GKE Kubernetes versions will dynamically update to the providers supported versions.
 
 
 +--------------------------------------------------+----------------------------------------------------------------------------------------+-----------------------------------------------------------+
