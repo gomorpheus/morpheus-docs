@@ -29,11 +29,6 @@ DNS
 * PowerDNS
 * Route 53
 
-Service Registry
-
-* Consul
-
-
 
 Scoping Services
 ^^^^^^^^^^^^^^^^

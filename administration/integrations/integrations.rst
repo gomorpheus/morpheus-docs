@@ -20,7 +20,6 @@ To add an integration select :guilabel:`+ ADD` and choose your integration. Many
 - Git
 - Github
 - Docker Repositories
-- Consul
 - Jenkins
 - ServiceNow
 - Cherwell

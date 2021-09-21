@@ -733,12 +733,6 @@ The following table contains communication information, including frequency and 
     - Data synchronization
     - 10 Minutes
     - No
-  * - Service Discovery Integration
-    -
-    - Consul
-    - On-demand
-    - N/A
-    - No
   * - Storage Integration
     - Server Pull
     - 3Par
