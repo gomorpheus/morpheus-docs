@@ -4,7 +4,7 @@
 |morphver| Release Notes
 *************************
 
-.. WARNING:: OpenStack v2 Identity API has been removed in v5.3.3
+.. WARNING:: Support for OpenStack v2 Identity API has been removed in v5.3.3
 
 .. NOTE:: Items appended with :superscript:`5.x.x` are also included in that version
 

@@ -58,7 +58,7 @@ Add/Edit Huawei Cloud Modal Fields
 Details
 ```````
 IDENTITY API URL
-  The v2 or v3 identity endpoint. See the integration steps above for more detail
+  The v3 identity endpoint. See the integration steps above for more detail
 DOMAIN ID
   The DOMAIN ID field takes the "Account Name" as shown on the `Basic Information page <https://account-intl.huaweicloud.com/usercenter/?locale=en-us#/userindex/accountInfo>`_ of the account. See the integration steps above for more detail
 PROJECT

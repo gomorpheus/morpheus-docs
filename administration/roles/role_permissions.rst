@@ -128,7 +128,7 @@ Role Mappings
   * - Admin: Integrations
     - None, Read, Full
     - This allows or disallows full or read access to the Administration > Integrations.
-    - The Administration Integrations tab is where many new or existing integration types can be configured. These include Chef, Puppet, Ansible, Salt Master, Ansible Tower, vRealize Orchestrator, Microsoft DNS, PowerDNS, Route 53, Git, GitHub, Docker, Consul, Jenkins, ServiceNow, Cherwell, Remedy, ACI, and Venafi.
+    - The Administration Integrations tab is where many new or existing integration types can be configured. These include Chef, Puppet, Ansible, Salt Master, Ansible Tower, vRealize Orchestrator, Microsoft DNS, PowerDNS, Route 53, Git, GitHub, Docker, Jenkins, ServiceNow, Cherwell, Remedy, ACI, and Venafi.
     - This permission is recommended for those responsible for the integration between |morpheus| and integrated technologies.
     -
   * - Admin: License Settings
@@ -178,7 +178,7 @@ Role Mappings
     - Allows or disallows access to Profiles (|profileObjects|)
     - Profiles are where |profileTypes| profiles are created and managed.
     - This permission is recommended for those responsible for managing secrets and other metadata that needs to be accessed by provisioning and automation processes.
-    - 
+    -
   * - Admin: Provisioning Settings
     - None, Full
     - Allows or disallows access to the Settings tab of the Administration > Provisioning page.
@@ -368,7 +368,7 @@ Role Mappings
   * - Infrastructure: Networks
     - None, Read, Group, Full
     - Determines access to the Infrastructure > Networks page, including the Networks, network groups, and integrations tabs. The "Group" permission setting allows access to objects shared to Groups associated with the user.
-    - The Networks page is where networks are configured for DHCP or static IP assignment and existing networks are displayed. The Network Groups page is where networks are grouped to allow round robin provisioning among the group. The Integrations page is where IPAM, DNS, security, service registry, and virtual network tools are integrated. These include Cisco ACI, VMware NSX T and V, Infoblox, Bluecat, phpIPAM, SolarWinds, Stealth, Microsoft DNS, PowerDNS, Route 53, and Consul.
+    - The Networks page is where networks are configured for DHCP or static IP assignment and existing networks are displayed. The Network Groups page is where networks are grouped to allow round robin provisioning among the group. The Integrations page is where IPAM, DNS, security, service registry, and virtual network tools are integrated. These include Cisco ACI, VMware NSX T and V, Infoblox, Bluecat, phpIPAM, SolarWinds, Stealth, Microsoft DNS, PowerDNS, and Route 53.
     - This permission is recommended for those responsible for integration with network technologies and the configuration and management of networks to be used during provisioning.
     -
   * - Infrastructure: Policies

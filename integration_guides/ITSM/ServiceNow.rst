@@ -22,12 +22,12 @@ Add ServiceNow Integration
     A friendly name to describe the ServiceNow integration in |morpheus|.
    ENABLED
     Check "Enabled" to allow consumption of this ServiceNow integration in |morpheus|.
-   HOST
+   SERVICENOW HOST
     URL of the ServiceNow instance (ex: https://your.instance.service-now.com), keep in mind you can create multiple ServiceNow integrations in |morpheus| if needed.
    USER/PASSWORD
     A user in ServiceNow that is able to access the REST interface and create/update/delete incidents, requests, requested items, item options, catalog items, workflows, etc. The list of necessary roles includes ``x_moda_morpheus_ca.integration`` (available if the |morpheus| ServiceNow plugin is installed from the ServiceNow Store), ``catalog_admin``, ``itil``, ``rest_service``, and ``import_transformer``.
    CMDB CUSTOM MAPPING
-    If needed, administrators can opt to populate a specific field in the ServiceNow table and such mapping is identified here with a JSON code snippet. Below is an example that populates the ``object_id`` field in the CM database with the |morpheus| instance name:
+    If needed, administrators can opt to populate a specific field in the ServiceNow table and such mapping is identified here with a JSON code snippet. Below is an example that populates the ``object_id`` field in the CM database with the |morpheus| instance name and two other field examples:
 
     .. code-block:: bash
 
@@ -37,10 +37,14 @@ Add ServiceNow Integration
       "SN_field_id3":"<%=morph.varname3%>"
       }
 
+   CMDB CLASS MAPPING
+    Define the mapping between |morpheus| server types and ServiceNow CI classes. Select a |morpheus| server type from the dropdown menu and a new field will appear in the list. Enter a ServiceNow CI class into the text field to create the association
    CMDB BUSINESS OBJECT
     Allows the user to define the table CMDB records are written to if they prefer this over |morpheus| default. By default, |morpheus| writes to the ``cmdb_ci_vm_instance`` table.
 
 #. Save Changes
+
+.. important:: |morpheus| supports integration with single-domain and multi-domain ServiceNow appliances. In multi-domain installations, a selected ServiceNow company can be mapped to a selected |morpheus| Tenant for purposes of exposing |morpheus| Library items only to users within a certain company. In this configuration, ServiceNow integrations should be added in each relevant |morpheus| Tenant. Further setup steps for exposing |morpheus| library items to ServiceNow are included in a later section below.
 
 ServiceNow Configuration Management Database (CMDB)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -188,12 +192,16 @@ Once finished working with configuration, click :guilabel:`APPLY`
 ServiceNow Service Catalog Integration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-In addition to integrating with key ServiceNow features, |morpheus| offers a free plugin directly from the ServiceNow Store. At the time of this writing, the plugin supports ServiceNow releases New York, Orlando, and Paris. Once the plugin is installed, |morpheus| Instance Types, Blueprints, and Self-Service Catalog Items can be presented as provisioning options in the ServiceNow catalog for ordering. The following is a guide to installing the Morpheus ServiceNow application.
+In addition to integrating with key ServiceNow features, |morpheus| offers a free plugin directly from the ServiceNow Store. Once the plugin is installed, |morpheus| Instance Types, Blueprints, and Self-Service Catalog Items can be presented as provisioning options in the ServiceNow catalog for ordering.
+
+The |morpheus| plugin supports integration with ServiceNow whether it’s configured for a single tenant or for multiple domains. When both |morpheus| and ServiceNow are configured for multiple Tenants, we can create ServiceNow integrations in any relevant |morpheus| Tenant and map those to specific companies in ServiceNow. Any exposed library items would only be shared with users in the relevant ServiceNow company. The |morpheus| plugin will automatically detect whether the *ServiceNow Domain Support–Domain Extensions Installer plugin* has been installed and respond accordingly. Additionally, the *User Criteria Scoped API plugin* must also be enabled on the ServiceNow instance for multi-tenant use.
+
+Depending on the scenario, setup steps for the |morpheus| plugin will be slightly different. Setup steps for both single and domain-separated ServiceNow environments are included below.
 
 .. IMPORTANT:: A valid SSL Certificate is required on the |morpheus| Appliance for the ServiceNow plugin to be able to communicate with the appliance.
 
-ServiceNow Configuration
-````````````````````````
+Single-Domain ServiceNow Configuration
+``````````````````````````````````````
 
 #. Install the |morpheus| plugin from the ServiceNow store.
 
@@ -202,15 +210,14 @@ ServiceNow Configuration
 #. Navigate to |morpheus| Catalog > Properties
 #. Set the following properties:
 
+   MID Server
+    If desired, specify the name of an existing MID server
    |morpheus| Appliance Endpoint
     The full URL to your |morpheus| appliance
    Username
-    Username of the user in |morpheus| that the plugin will connect to the |morpheus| API with.
-
+    |morpheus| user that the plugin will connect as to the |morpheus| API
    Password
-    Password of the user in |morpheus| that the plugin will connect to the |morpheus| API with.
-   MID Server
-    If desired, specify the name of a configured MID server to use
+    Password to the above |morpheus| account
 
   .. important:: The |morpheus| service account integrated with the plugin interacts with the |morpheus| appliance through |morpheus| API and must have the appropriate Role permissions to complete all provisioning requests from the ServiceNow plugin. Often it's easiest to make a service account with full administrator rights to avoid failed provisioning. If you'd prefer to create a minimal service account for security reasons, ensure the Role for the service account User has the following permissions:
 
@@ -227,6 +234,42 @@ ServiceNow Configuration
 
 .. image:: /images/integration_guides/itsm/servicenow/4servicenowProperties.png
   :width: 50%
+
+Multi-Domain ServiceNow Configuration
+`````````````````````````````````````
+
+#. Install the |morpheus| plugin from the ServiceNow store.
+
+     - Refer to the `MORPHEUS DATA APPLICATION PLUG-IN FOR SERVICENOW <https://store.servicenow.com/appStoreAttachments.do?sys_id=73029271dbbd6450087656a8dc961995>`_ Installation Instructions for plugin installation.
+
+#. Navigate to |morpheus| Catalog > Multi-Tenant Credentials
+#. Set the following properties:
+
+   |morpheus| Appliance Endpoint
+    The full URL to your |morpheus| appliance
+   |morpheus| Tenant ID
+    The integer database ID for the selected Tenant
+   Username
+    |morpheus| user that the plugin will connect as to the |morpheus| API. This user must exist within the |morpheus| Tenant being linked to the chosen ServiceNow company
+   Password
+    The password for the above user
+   ServiceNow Company
+    Select a company from the list to link with the Tenant whose ID was entered above
+   MID Server
+    If desired, specify the name of an existing MID server
+
+  .. important:: The |morpheus| service account integrated with the plugin interacts with the |morpheus| appliance through |morpheus| API and must have the appropriate Role permissions to complete all provisioning requests from the ServiceNow plugin. Often it's easiest to make a service account with full administrator rights to avoid failed provisioning. If you'd prefer to create a minimal service account for security reasons, ensure the Role for the service account User has the following permissions:
+
+    - Personas: Standard: Full
+    - Personas: Service Catalog: Full
+    - Features: Provisioning: Instances: Full
+    - Features: Provisioning: Apps: Full
+    - Groups: Full rights to all Groups containing Clouds you will expose to ServiceNow
+    - Instance Types: Full rights to all Instance Types you will expose to ServiceNow
+    - Blueprints: Full rights to all Blueprints you will expose to ServiceNow
+    - Catalog Item Types: Full rights to all Catalog Item Types you will expose to ServiceNow
+
+    Users created from SAML Identity Sources cannot authenticate with the |morpheus| API and cannot be used for the ServiceNow plugin.
 
 Adding to ServiceNow Catalog
 ````````````````````````````
