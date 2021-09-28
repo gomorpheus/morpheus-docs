@@ -19,8 +19,8 @@ DESCRIPTION
 FIELD NAME
  This is the input fieldName property that the value gets assigned to
 
- .. note:: Field names should only contain letters and numbers or '-', '_', or '.' for separation.
- 
+.. note:: Field names should only contain letters and numbers or '-', '_', or '.' for separation.
+
 EXPORT AS TAG
  Creates Tags for fieldName/value (key/value) on Instances
 DEPENDENT FIELD
