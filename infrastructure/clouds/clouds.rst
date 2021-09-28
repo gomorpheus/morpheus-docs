@@ -95,6 +95,8 @@ Resources
   Displays Resource Pools synced from the Cloud, including their name, description, and targeted Tenant.
 Policies
   Manages Policies enforced on the Cloud. Setting a policy on this tab is equal to creating a policy in Administration > Policies and scoping it to the selected Cloud.
+Profiles
+- Manages |profileTypes| Profiles that create custom object associated secrets and metadata that will automatically be mapped per Cloud selection during provisioning and automation.
 
 Deleting Clouds
 ---------------
@@ -106,3 +108,8 @@ To delete a cloud:
 #. Click the Delete icon of the cloud to delete.
 
 .. IMPORTANT:: All Instances, managed Hosts and VMs must be removed prior to deleting a Cloud. To remove Instances, hosts and VMs from |morpheus| without deleting the Cloud resources they represent, select Delete on the host or VM, unselect "Remove Infrastructure", and select "Remove Associated Instances" if Instance are associated with the selected Hosts or VMs.
+
+|
+
+.. include:: /infrastructure/clouds/profiles.rst
+

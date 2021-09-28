@@ -482,616 +482,916 @@ ex: ``<%= morpheus.user.id %>``
 			   },
 			}
 
-Instance Map Example
---------------------
+User 
+----
+
+.. code-block:: bash 
+
+    'user': {'accountId': int,
+            'attributes': {samlAttributes},
+            'displayName': 'string',
+            'email': 'string',
+            'firstName': 'string',
+            'id': int,
+            'lastName': 'string',
+            'linuxUsername': 'string',
+            'username': 'string',
+            'windowsUsername': 'string',
+            
+        
+Script Variables Example
+------------------------
+
+Below is an example of the variables available to a script running against an Instance context. 
+
+.. note:: Variable maps are determined by context, configurations and permissions, actual maps may contain additional or fewer options.
 
 .. code-block:: bash
 
-		"instance":{
-		   "poolProviderType":value,
-		   "isVpcSelectable":true/false,
-		   "smbiosAssetTag":value,
-		   "isEC2":true/false,
-		   "resourcePoolId":value,
-		   "hostId":value,
-		   "createUser":true/false,
-		   "nestedVirtualization":value,
-		   "vmwareFolderId":value,
-		   "expose":[
+      'account': 'string',
+      'accountId': int,
+      'accountType': 'string',
+      'allowExisting': boolean,
+      'apps': [{'appContext': 'string',
+                'description': 'string',
+                'id': int,
+                'name': 'string',
+      'cloud': 'string',
+      'cloudCode': 'string',
+      'cloudName': 'string',
+      'container': {'allowExisting': boolean,
+                    'certificatePath': string,
+                    'certificateStyle': string,
+                    'changeManagementExtId': int,
+                    'changeManagementServiceId': int,
+                    'cloud': 'string',
+                    'cloudConfig': {'agentInstall': agentInstallScript,
+                                    'finalizeServer': finalizeServerScript,
+                                    'meta': metaData,
+                                    'user': userData},
+                    'configGroup': int,
+                    'configId': int,
+                    'configPath': 'string',
+                    'configRole': int,
+                    'containerTypeCategory': 'string',
+                    'containerTypeCode': 'string',
+                    'containerTypeName': 'string',
+                    'containerTypeShortName': 'string',
+                    'cores': int,
+                    'coresPerSocket': int,
+                    'createUser': boolean,
+                    'customOptions': {'morph_ver': 'string',
+                    'dataPath': 'string',
+                    'dateCreated': 'string',
+                    'domainName': 'string',
+                    'environmentPrefix': 'string',
+                    'evars': {},
+                    'expireDays': 'string',
+                    'expose': ['string'],
+                    'exposedPorts': [{'loadBalanceProtocol': 'string',
+                                      'name': 'string',
+                                      'port': int}],
+                    'externalIp': 'string',
+                    'externalPort': int,
+                    'hostMountPoint': 'string',
+                    'hostName': 'string',
+                    'hostname': 'string',
+                    'hosts': {'containerName': 'string',
+                              'containerName': 'string',
+                              'containerName': 'string',
+                    'id': int,
+                    'image': 'string',
+                    'instanceContext': 'string',
+                    'instanceType': {'code': 'string',
+                    'internalHostname': 'string',
+                    'internalIp': 'string',
+                    'internalPort': int,
+                    'layout': {'code': 'string',
+                              'id': int},
+                    'logsPath': 'string',
+                    'maxCores': int,
+                    'maxCpu': int,
+                    'maxMemory': int,
+                    'maxStorage': int,
+                    'memory': int,
+                    'memoryDisplay': 'string',
+                    'mounts': [],
+                    'name': 'string',
+                    'networkId': int,
+                    'networkInterfaces': [{'id': 'string',
+                                          'ipAddress': 'string',
+                                          'ipMode': 'string',
+                                          'network': {'dhcpServer': int,
+                                                      'group': int,
+                                                      'id': int,
+                                                      'name': 'string',
+                                                      'pool': int},
+                                          'networkInterfaceTypeId': int}],
+                    'noAgent': boolean,
+                    'planCode': 'string',
+                    'portMap': {},
+                    'ports': [{'displayName': 'string',
+                              'export': boolean,
+                              'exportName': 'string',
+                              'external': int,
+                              'index': int,
+                              'internal': int,
+                              'link': boolean,
+                              'loadBalance': boolean,
+                              'loadBalanceProtocol': 'string',
+                              'name': 'string',
+                              'primaryPort': boolean,
+                              'protocol': 'string',
+                              'visible': boolean},
+                              {'displayName': 'string',
+                              'export': boolean,
+                              'exportName': 'string',
+                              'external': int,
+                              'index': int,
+                              'internal': int,
+                              'link': boolean,
+                              'loadBalance': boolean,
+                              'loadBalanceProtocol': 'string',
+                              'name': 'string',
+                              'primaryPort': boolean,
+                              'protocol': 'string',
+                              'visible': boolean}],
+                    'provisionType': 'string',
+                    'publicKeyId': int,
+                    'server': {}
+                    'serverId': int,
+                    'shutdownDays': 'string',
+                    'site': {'accountId': int,
+                            'active': boolean,
+                            'id': int,
+                            'integrations': [],
+                            'location': 'string',
+                            'name': 'string',
+                            'visibility': 'string',
+                            'zones': [{}],
+                    'sshHost': 'string',
+                    'status': 'string',
+                    'storage': int,
+                    'storageController': int,
+                    'type': 'string',
+                    'userGroup': {'id': '',
+                    'version': 'string',
+                    'vm': boolean,
+                    'volumes': [{'datastoreId': int,
+                                'id': int,
+                                'maxIOPS': int,
+                                'maxStorage': int,
+                                'name': 'string',
+                                'rootVolume': boolean,
+                                'size': int,
+                                'storageType': int,
+                                'vId': int}]},
+      'containerName': 'string',
+      'coresPerSocket': int,
+      'createUser': boolean,
+      'customOptions': {'morph_ver': 'string',
+      'deployOptions': {},
+      'evars': {},
+      'expireDays': 'string',
+      'expose': ['string'],
+      'exposedPorts': [{'loadBalanceProtocol': 'string',
+                        'name': 'string',
+                        'port': int}],
+      'externalIp': 'string',
+      'group': {'code': 'string',
+                'configCmdbId': 'string',
+                'configManagementId': 'string',
+                'datacenterId': int,
+                'dnsIntegrationId': 'string',
+                'location': 'string',
+                'name': 'string',
+                'serviceRegistryId': 'string',
+      'groupCode': 'string',
+      'groupName': 'string',
+      'host': ,
+      'hostMountPoint': 'string',
+      'hostName': 'string',
+      'hosts': {},
+      'input': {'backup': ,
+                'cloud': {},
+                'computedHostName': 'string',
+                'computedName': 'string',
+                'copies': int,
+                'domainOptions': {}},
+                'environmentVariables': {},
+                'executionId': int,
+                'expireDays': int,
+                'group': {},
+                'hostName': 'string',
+                'instanceContext': 'string',
+                'layout': {},
+                'metadata': {}},
+                'name': 'string',
+                'plan': {},
+                'powerScheduleType': int,
+                'securityGroups': {},
+                'shutdownDays': int,
+                'type': 'string',
+                'version': 'string'},
+      'instance': {'adminPassword': 'maskedString',
+                  'adminUsername': 'string',
+                  'allowExisting': boolean,
+                  'apps': [{}],
+                  'assignedDomainName': 'string',
+                  'autoScale': boolean,
+                  'backup': {'backupRepository': int,
+                              'createBackup': boolean,
+                              'enabled': boolean,
+                              'jobAction': 'string',
+                              'jobRetentionCount': 'string',
+                              'providerBackupType': int,
+                              'showScheduledBackupWarning': boolean},
+                  'cloud': 'string',
+                  'cloudConfig': {'agentInstall': agentInstallScript,
+                                  'finalizeServer': finalizeServerScript,
+                                  'meta': metaData,
+                                  'user': userData
+                                          },
+                  'configGroup': int,
+                  'configId': int,
+                  'configRole': int,
+                  'container': {},
+                  'containers': [{}],
+                  'cores': int,
+                  'createBackup': boolean,
+                  'createUser': boolean,
+                  'createdByEmail': 'string',
+                  'createdByFirstName': 'string',
+                  'createdById': int,
+                  'createdByLastName': 'string',
+                  'createdByUser': {'accountId': int,
+                                    'displayName': 'string',
+                                    'email': 'string',
+                                    'firstName': 'string',
+                                    'id': int,
+                                    'lastName': 'string',
+                                    'linuxUsername': 'string',
+                                    'username': 'string',
+                                    'windowsUsername': 'string',
+                  'createdByUsername': 'string',
+                  'customOptions': {'morph_ver': 'string',
+                  'deployGroup': ,
+                  'description': 'string',
+                  'displayName': 'string',
+                  'domainName': 'string',
+                  'environmentPrefix': 'string',
+                  'evars': {
+                  'expireDate': date,
+                  'expireDays': 'string',
+                  'expose': ['string'],
+                  'firewallEnabled': boolean,
+                  'hostName': 'string',
+                  'hostname': 'string',
+                  'id': int,
+                  'instanceContext': 'string',
+                  'instanceLevel': 'string',
+                  'instanceType': {'code': 'string',
+                  'instanceTypeCode': 'string',
+                  'instanceTypeName': 'string',
+                  'instanceVersion': 'string',
+                  'layout': {'code': 'string',
+                              'id': int},
+                  'layoutCode': 'string',
+                  'layoutId': int,
+                  'layoutName': 'string',
+                  'lbInstances': [{'balanceMode': 'string',
+                                    'enabled': boolean,
+                                    'externalAddress': 'string',
+                                    'id': int,
+                                    'instanceId': int,
+                                    'loadBalancer': {'id': int},
+                                    'loadBalancerId': int,
+                                    'name': 'string',
+                                    'port': int,
+                                    'protocol': 'string',
+                                    'sslCert': 'string',
+                                    'sslRedirectMode': 'string',
+                                    'stickyMode': 'string',
+                                    'vipAddress': 'string',
+                                    'vipDirectAddress': 'string',
+                                    'vipHostname': 'string',
+                                    'vipName': 'string',
+                                    'vipPort': int,
+                                    'vipProtocol': 'string',
+                                    'vipScheme': 'string',
+                                    'vipShared': 'string',
+                  'loadBalancerId': int,
+                  'memory': int,
+                  'memoryDisplay': 'string',
+                  'metadata': {'ver': 'string',
+                  'name': 'string',
+                  'networkLevel': 'string',
+                  'plan': 'string',
+                  'ports': {},
+                  'powerScheduleType': ,
+                  'provisionType': 'string',
+                  'scheduleStatus': 'string',
+                  'servicePassword': 'maskedString',
+                  'serviceUsername': 'string',
+                  'shutdownDays': 'string',
+                  'site': {'accountId': int,
+                            'active': boolean,
+                            'id': int,
+                            'integrations': [],
+                            'location': 'string',
+                            'name': 'string',
+                            'visibility': 'string',
+                            'zones': [{}]
+                  'sslCertId': int,
+                  'sslEnabled': boolean,
+                  'status': 'string',
+                  'statusMessage': 'string',
+                  'storage': int,
+                  'tags': 'string',
+                  'type': ,
+                  'userGroup': {'id': 'string',
+                  'userStatus': 'string',
+      'instanceContext': 'string',
+      'instanceType': {'code': 'string',
+      'internalIp': 'string',
+      'isDocker': boolean,
+      'layout': {'code': 'string',
+      'localScriptGitId': int,
+      'localScriptGitRef': 'string',
+      'logTag': 'string',
+      'maxCores': int,
+      'maxCpu': int,
+      'maxMemory': int,
+      'maxStorage': int,
+      'memoryDisplay': 'string',
+      'morpheus': {'apiAccessToken': 'string',
+                  'applianceHost': 'string',
+                  'appliancePort': 'string',
+                  'applianceScheme': 'string',
+                  'applianceSsl': boolean,
+                  'applianceUrl': 'string',
+      'morpheusUser': 'string',
+      'mounts': [],
+      'name': 'string',
+      'networkId': int,
+      'networkInterfaces': [{'id': 'string',
+                            'ipAddress': 'string',
+                            'ipMode': 'string',
+                            'network': {'dhcpServer': ,
+                                        'group': int,
+                                        'Id': int,
+                                        'name': 'string',
+                                        'pool': int},
+                            'networkInterfaceTypeId': int}],
+      'noAgent': boolean,
+      'platform': 'string',
+      'port': int,
+      'ports': [{'code': 'string',
+                'displayName': 'string',
+                'export': boolean,
+                'exportName': 'string',
+                'external': int,
+                'index': int,
+                'internal': int,
+                'link': boolean,
+                'loadBalance': boolean,
+                'primaryPort': boolean,
+                'protocol': 'string',
+                'visible': boolean}],
+      'provisionType': 'string',
+      'publicKeyId': int,
+      'pythonAdditionalPackages': ,
+      'pythonArgs': ,
+      'pythonBinary': 'string',
+      'pythonScript': ,
+      'results': {},
+      'sequence': int,
+      'server': {'agentInstalled': boolean,
+                'agentVersion': 'string',
+                'apiKey': 'string',
+                'category': ,
+                'cloudConfig': {'agentInstall': agentInstallScript,
+                                'finalizeServer': finalizeServerScript,
+                                'meta': metaData,
+                                'user': userData
+                                        },
+                'commType': 'string',
+                'computeTypeCode': 'string',
+                'computeTypeName': 'string',
+                'configGroup': int,
+                'configId': int,
+                'configRole': 'string',
+                'consoleHost': 'string',
+                'consolePort': int,
+                'consoleType': 'string',
+                'consoleUsername': 'string',
+                'createdByUser': {'accountId': int,
+                                  'displayName': 'string',
+                                  'email': 'string',
+                                  'firstName': 'string',
+                                  'id': int,
+                                  'lastName': 'string',
+                                  'linuxUsername': 'string',
+                                  'username': 'string',
+                                  'windowsUsername': 'string',
+                'dataDevice': 'string',
+                'dateCreated': 'string',
+                'description': 'string',
+                'displayName': 'string',
+                'domainName': 'string',
+                'externalId': 'string',
+                'externalIp': 'string',
+                'fqdn': 'string',
+                'hostname': 'string',
+                'id': int,
+                'interfaces': [{'dhcp': boolean,
+                                'domain': {'fqdn': 'string',
+                                            'name': 'string',
+                                            'ouPath': 'string'},
+                                'interfaceId': int,
+                                'ipAddress': 'string',
+                                'ipMode': 'string',
+                                'ipSubnet': 'string',
+                                'ipv6Address': 'string',
+                                'ipv6Subnet': 'string',
+                                'macAddress': 'string',
+                                'network': {'cidr': 'string',
+                                            'cidrMask': 'string',
+                                            'gateway': 'string',
+                                            'name': 'string',
+                                            'netmask': 'string',
+                                            'vlanId': int},
+                                'networkPosition': 'string',
+                                'vlanId': int}],
+                'internalId': int,
+                'internalIp': 'string',
+                'internalName': 'string',
+                'internalSshUsername': 'string',
+                'lastAgentUpdate': 'string',
+                'lvmEnabled': boolean,
+                'macAddress': 'string',
+                'managed': boolean,
+                'maxCores': int,
+                'maxMemory': int,
+                'maxStorage': int,
+                'name': 'string',
+                'nodePackageVersion': 'string',
+                'osDevice': 'string',
+                'osPassword': 'maskedString',
+                'osType': 'string',
+                'osTypeCode': 'string',
+                'osUsername': 'string',
+                'parentServerId': int,
+                'plan': 'string',
+                'platform': 'string',
+                'platformVersion': 'string',
+                'powerScheduleType': ,
+                'powerState': 'string',
+                'publicKeyId': int,
+                'serialNumber': 'string',
+                'serverModel': 'string',
+                'serverType': 'string',
+                'serverTypeCode': 'string',
+                'serverTypeName': 'string',
+                'serverVendor': 'string',
+                'softwareRaid': boolean,
+                'sourceImageId': int,
+                'sshHost': 'string',
+                'sshPort': int,
+                'sshUsername': 'string',
+                'status': 'string',
+                'statusMessage': 'string',
+                'tags': {},
+                'toolsInstalled': boolean,
+                'uniqueId': int,
+                'uuid': 'string',
+                'visibility': 'string',
+                'volumes': [{'deviceName': 'string',
+                              'displayOrder': int,
+                              'id': int,
+                              'maxStorage': int,
+                              'name': 'string',
+                              'rootVolume': boolean,
+                              'unitNumber': 'string',
+      'serverId': 'string',
+      'serverName': 'string',
+      'shutdownDays': 'string',
+      'site': {'accountId': int,
+              'active': boolean,
+              'id': int,
+              'integrations': [],
+              'location': 'string',
+              'name': 'string',
+              'visibility': 'string',
+              'zones': [{}],
+      'sshKey': 'string',
+      'state': {},
+      'storageController': int,
+      'tenant': 'string',
+      'tenantId': int,
+      'tenantSubdomain': 'string',
+      'type': 'string',
+      'user': {'accountId': int,
+              'attributes': {samlAttributes},
+              'displayName': 'string',
+              'email': 'string',
+              'firstName': 'string',
+              'id': int,
+              'lastName': 'string',
+              'linuxUsername': 'string',
+              'username': 'string',
+              'windowsUsername': 'string',
+      'userGroup': {'id': 'string',
+      'userId': int,
+      'userInitials': 'string',
+      'username': 'string',
+      'vm': boolean,
+      'volumes': [{'datastoreId': int,
+                  'id': int,
+                  'maxIOPS': int,
+                  'maxStorage': int,
+                  'name': 'string',
+                  'rootVolume': boolean,
+                  'size': int,
+                  'storageType': int,
+                  'vId': int}],
+      'zone': {'agentMode': 'string',
+              'cloudTypeCode': 'string',
+              'cloudTypeName': 'string',
+              'code': 'string',
+              'datacenterId': int,
+              'domainName': 'string',
+              'firewallEnabled': boolean,
+              'location': 'string',
+              'name': 'string',
+              'regionCode': 'string',
+              'scalePriority': int}}
 
-		   ],
-		   "noAgent":value,
-		   "customOptions":value,
-		   "createBackup":true/false,
-		   "memoryDisplay":"MB/GB",
-		   "backup":{
-		      "veeamManagedServer":,
-		      "createBackup":true/false,
-		      "jobAction":"value",
-		      "jobRetentionCount":value
-		   },
-		   "expireDays":value,
-		   "layoutSize":value,
-		   "lbInstances":[
 
-		   ],
-		   "evars":{
-		      "evar1":{
-		         "value":value,
-		         "export":true/false,
-		         "masked":true/false,
-		         "name":"value"
-		      },
-		      "evar2":{
-		         "value":value,
-		         "export":true/false,
-		         "masked":true/false,
-		         "name":"value"
-		      }
-		   },
-		   "id":value,
-		   "instanceTypeName":"value",
-		   "instanceTypeCode":"value",
-		   "provisionType":"value",
-		   "layoutId":value,
-		   "layoutCode":value,
-		   "layoutName":"value",
-		   "instanceVersion":"value",
-		   "plan":value,
-		   "name":value,
-		   "displayName":value,
-		   "description":value,
-		   "environmentPrefix":value,
-		   "hostname":value,
-		   "domainName":"value",
-		   "assignedDomainName":,
-		   "firewallEnabled":true/false,
-		   "status":"value",
-		   "userStatus":"value",
-		   "scheduleStatus":"value",
-		   "networkLevel":"value",
-		   "instanceLevel":"value",
-		   "deployGroup":value,
-		   "instanceContext":value,
-		   "autoScale":true/false,
-		   "statusMessage":value,
-		   "expireDate":0000-00-00T00:00:00Z,
-		   "tags":"value",
-		   "storage":value(bytes),
-		   "memory":value(bytes),
-		   "cores":1,
-		   "configId":value,
-		   "configGroup":value,
-		   "configRole":value,
-		   "ports":value,
-		   "sslEnabled":true/false,
-		   "sslCertId":value,
-		   "serviceUsername":value,
-		   "servicePassword":value,
-		   "adminUsername":value,
-		   "adminPassword":value,
-		   "createdByUsername":"value",
-		   "createdByEmail":"value",
-		   "createdByFirstName":"value",
-		   "createdByLastName":"value",
-		   "createdById":value,
-		   "metadata":{
+.. note:: Variable maps are determined by context, configurations and permissions, actual maps may contain additional or fewer options.
 
-		   },
-		   "createdByUser":{
-		      "username":"value",
-		      "displayName":"value",
-		      "firstName":"value",
-		      "lastName":"value",
-		      "email":"value",
-		      "linuxUsername":"value",
-		      "windowsUsername":"value"
-		   },
-		   "containers":[
-		      {
-		         "maxMemory":value(bytes),
-		         "maxStorage":value(bytes),
-		         "maxCpu":value,
-		         "maxCores":value,
-		         "coresPerSocket":value,
-		         "poolProviderType":value,
-		         "isVpcSelectable":true/false,
-		         "smbiosAssetTag":value,
-		         isEC2:true/false,
-		         "resourcePoolId":value,
-		         "hostId":value,
-		         "createUser":true/false,
-		         "nestedVirtualization":value,
-		         "vmwareFolderId":value,
-		         "expose":[
+Spec Template Variables
+-----------------------
 
-		         ],
-		         "noAgent":true/false,
-		         "vm":true/false,
-		         "networkInterfaces":[
-		            {
-		               "id":value,
-		               "network":{
-		                  "id":value,
-		                  "group":value,
-		                  "subnet":value,
-		                  "dhcpServer":true/false,
-		                  "name":value,
-		                  "pool":{
-		                     "id":value,
-		                     "name":value
-		                  }
-		               },
-		               "ipAddress":value,
-		               "networkInterfaceTypeId":value,
-		               "ipMode":
-		            }
-		         ],
-		         "volumes":[
-		            {
-		               "volumeCustomizable":true/false,
-		               "readonlyName":true/false,
-		               "controllerId":value,
-		               "maxIOPS":value,
-		               "displayOrder":value,
-		               "unitNumber":value,
-		               "minStorage":value(bytes),
-		               "configurableIOPS":true/false,
-		               "controllerMountPoint":0000:0:00:0,
-		               "vId":value,
-		               "size":value,
-		               "name":"root",
-		               "rootVolume":true/false,
-		               "storageType":value,
-		               "typeId":value,
-		               "id":value,
-		               "resizeable":true/false,
-		               "datastoreId":"value",
-		               "maxStorage":value(bytes)
-		            }
-		         ],
-		         "storageController":value,
-		         "datastoreId":value,
-		         "networkId":value,
-		         "cpuCount":value,
-		         "memorySize":value,
-		         "osDiskSize":value,
-		         "publicKeyId":value,
-		         "storagePodId":value,
-		         "vmwareUsr":value,
-		         "vmwarePwd":value,
-		         "domainName":"value",
-		         "hostname":value,
-		         "networkType":value,
-		         "ipAddress":value,
-		         "netmask":value,
-		         "gateway":value,
-		         "dnsServers":value,
-		         "resourcePool":value,
-		         "folder":value,
-		         "vmwareCustomSpec":value,
-		         "hosts":{
-		            value
-		         },
-		         "evars":{
+.. raw:: html
 
-		         },
-		         "id":value,
-		         "name":value,
-		         "containerTypeName":value,
-		         "containerTypeCode":value,
-		         "containerTypeShortName":"value",
-		         "containerTypeCategory":"value",
-		         "provisionType":"value",
-		         "dataPath":"value",
-		         "logsPath":"value",
-		         "configPath":"value",
-		         "planCode":value,
-		         "dateCreated":0000-00-00T00:00:00Z,
-		         "status":"running",
-		         "environmentPrefix":"value",
-		         "version":"value",
-		         "image":"value",
-		         "internalHostname":value,
-		         "storage":value(bytes),
-		         "memory":value(bytes),
-		         "cores":value,
-		         "internalIp":value,
-		         "externalIp":value,
-		         "sshHost":value,
-		         "hostMountPoint":value,
-		         "configId":value,
-		         "configGroup":value,
-		         "configRole":value,
-		         "certificatePath":value,
-		         "certificateStyle":value,
-		         "changeManagementExtId":value,
-		         "changeManagementServiceId":value,
-		         "serverId":value,
-		         "server":{
-		            "poolProviderType":value,
-		            "isVpcSelectable":true/false,
-		            "smbiosAssetTag":value,
-		            isEC2:true/false,
-		            "resourcePoolId":value,
-		            "hostId":value,
-		            "createUser":true/false,
-		            "nestedVirtualization":value,
-		            "vmwareFolderId":value,
-		            "noAgent":value,
-		            "id":value,
-		            "uuid":value,
-		            "serverTypeName":"value",
-		            "serverTypeCode":"value",
-		            "computeTypeName":"value",
-		            "computeTypeCode":"value",
-		            "parentServerId":value,
-		            "plan":value,
-		            "visibility":"value",
-		            "osTypeCode":value,
-		            "sourceImageId":value,
-		            "name":value,
-		            "displayName":value,
-		            "internalName":value,
-		            "category":value,
-		            "description":value,
-		            "internalId":value,
-		            "externalId":value,
-		            "platform":"value",
-		            "platformVersion":value,
-		            "agentVersion":value,
-		            "nodePackageVersion":value,
-		            "sshHost":value,
-		            "sshPort":value,
-		            "sshUsername":"value",
-		            "consoleType":value,
-		            "consoleHost":value,
-		            "consolePort":value,
-		            "consoleUsername":value,
-		            "internalSshUsername":"value",
-		            "internalIp":value,
-		            "externalIp":value,
-		            "osDevice":"value",
-		            "dataDevice":"value",
-		            "lvmEnabled":true/false,
-		            "apiKey":value,
-		            "softwareRaid":true/false,
-		            "status":"value",
-		            "powerState":"value",
-		            "dateCreated":0000-00-00T00:00:00Z,
-		            "lastAgentUpdate":0000-00-00T00:00:00Z,
-		            "serverType":"value",
-		            "osType":"value",
-		            "commType":"value",
-		            "managed":true/false,
-		            "agentInstalled":true/false,
-		            "toolsInstalled":true/false,
-		            "hostname":value,
-		            "domainName":value,
-		            "fqdn":value,
-		            "statusMessage":value,
-		            "maxStorage":value(bytes),
-		            "maxMemory":value(bytes),
-		            "maxCores":value,
-		            "macAddress":value,
-		            "serverVendor":value,
-		            "serverModel":value,
-		            "serialNumber":value,
-		            "tags":value,
-		            "configId":value,
-		            "configGroup":value,
-		            "configRole":value,
-		            "createdByUser":{
-		               "username":"value",
-		               "displayName":"value",
-		               "firstName":"value",
-		               "lastName":"value",
-		               "email":"value",
-		               "linuxUsername":"value",
-		               "windowsUsername":"value"
-		            },
-		            "volumes":[
-		               {
-		                  "id":value,
-		                  "name":"value",
-		                  "deviceName":"value",
-		                  "maxStorage":value(bytes),
-		                  "unitNumber":value,
-		                  "displayOrder":value,
-		                  "rootVolume":true/false
-		               }
-		            ]
-		         },
-		         "ports":[
-		            {
-		               "index":value,
-		               "external":value,
-		               "internal":value,
-		               "link":true/false,
-		               "loadBalance":true/false,
-		               "loadBalanceProtocol":value,
-		               "export":true/false,
-		               "exportName":value,
-		               "displayName":"value",
-		               "visible":true/false,
-		               "primaryPort":true/false,
-		               "protocol":value,
-		               "name":"value"
-		            }
-		         ],
-		         "portMap":{
-		            "rpc":{
-		               "index":value,
-		               "external":value,
-		               "internal":value,
-		               "link":true/false,
-		               "loadBalance":true/false,
-		               "loadBalanceProtocol":value,
-		               "export":true/false,
-		               "exportName":value,
-		               "displayName":"value",
-		               "visible":true/false,
-		               "primaryPort":true/false,
-		               "protocol":value,
-		               "name":"value"
-		            }
-		         },
-		         "internalPort":value,
-		         "externalPort":value
-		      }
-		   ],
-		   "container":{
-		      "maxMemory":value(bytes),
-		      "maxStorage":value,
-		      "maxCpu":value,
-		      "maxCores":value,
-		      "coresPerSocket":value,
-		      "poolProviderType":value,
-		      "isVpcSelectable":true/false,
-		      "smbiosAssetTag":value,
-		      isEC2:true/false,
-		      "resourcePoolId":value,
-		      "hostId":value,
-		      "createUser":true/false,
-		      "nestedVirtualization":value,
-		      "vmwareFolderId":value,
-		      "expose":[
-
-		      ],
-		      "noAgent":true/false,
-		      "vm":true/false,
-		      "networkInterfaces":[
-		         {
-		            "id":value,
-		            "network":{
-		               "id":value,
-		               "group":value,
-		               "subnet":value,
-		               "dhcpServer":true/false,
-		               "name":value,
-		               "pool":{
-		                  "id":value,
-		                  "name":value
-		               }
-		            },
-		            "ipAddress":value,
-		            "networkInterfaceTypeId":value,
-		            "ipMode":
-		         }
-		      ],
-		      "volumes":[
-		         {
-		            "volumeCustomizable":true/false,
-		            "readonlyName":true/false,
-		            "controllerId":value,
-		            "maxIOPS":value,
-		            "displayOrder":value,
-		            "unitNumber":value,
-		            "minStorage":value,
-		            "configurableIOPS":true/false,
-		            "controllerMountPoint":value,
-		            "vId":value,
-		            "size":value,
-		            "name":"root",
-		            "rootVolume":true/false,
-		            "storageType":value,
-		            "typeId":value,
-		            "id":value,
-		            "resizeable":true/false,
-		            "datastoreId":"autoCluster",
-		            "maxStorage":value(bytes)
-		         }
-		      ],
-		      "storageController":value,
-		      "datastoreId":value,
-		      "networkId":value,
-		      "cpuCount":value,
-		      "memorySize":value,
-		      "osDiskSize":value,
-		      "publicKeyId":value,
-		      "storagePodId":value,
-		      "vmwareUsr":value,
-		      "vmwarePwd":value,
-		      "domainName":"value",
-		      "hostname":value,
-		      "networkType":value,
-		      "ipAddress":value,
-		      "netmask":value,
-		      "gateway":value,
-		      "dnsServers":value,
-		      "resourcePool":value,
-		      "folder":value,
-		      "vmwareCustomSpec":value,
-		      "hosts":{
-		         value
-		      },
-		      "evars":{
-
-		      },
-		      "id":value,
-		      "name":value,
-		      "containerTypeName":value,
-		      "containerTypeCode":value,
-		      "containerTypeShortName":"value",
-		      "containerTypeCategory":"value",
-		      "provisionType":"vmware",
-		      "dataPath":"value",
-		      "logsPath":"value",
-		      "configPath":"value",
-		      "planCode":value,
-		      "dateCreated":0000-00-00T00:00:00Z,
-		      "status":"value",
-		      "environmentPrefix":"value",
-		      "version":"value",
-		      "image":"value",
-		      "internalHostname":value,
-		      "storage":value(bytes),
-		      "memory":value(bytes),
-		      "cores":value,
-		      "internalIp":value,
-		      "externalIp":value,
-		      "sshHost":value,
-		      "hostMountPoint":value,
-		      "configId":value,
-		      "configGroup":value,
-		      "configRole":value,
-		      "certificatePath":value,
-		      "certificateStyle":value,
-		      "changeManagementExtId":value,
-		      "changeManagementServiceId":value,
-		      "serverId":value,
-		      "server":{
-		         "poolProviderType":value,
-		         "isVpcSelectable":true/false,
-		         "smbiosAssetTag":value,
-		         isEC2:true/false,
-		         "resourcePoolId":value,
-		         "hostId":value,
-		         "createUser":true/false,
-		         "nestedVirtualization":value,
-		         "vmwareFolderId":value,
-		         "noAgent":value,
-		         "id":value,
-		         "uuid":value,
-		         "serverTypeName":"value",
-		         "serverTypeCode":"value",
-		         "computeTypeName":"value",
-		         "computeTypeCode":"value",
-		         "parentServerId":value,
-		         "plan":value,
-		         "visibility":"value",
-		         "osTypeCode":value,
-		         "sourceImageId":value,
-		         "name":value,
-		         "displayName":value,
-		         "internalName":value,
-		         "category":value,
-		         "description":value,
-		         "internalId":value,
-		         "externalId":value,
-		         "platform":"value",
-		         "platformVersion":value,
-		         "agentVersion":value,
-		         "nodePackageVersion":value,
-		         "sshHost":value,
-		         "sshPort":value,
-		         "sshUsername":"value",
-		         "consoleType":value,
-		         "consoleHost":value,
-		         "consolePort":value,
-		         "consoleUsername":value,
-		         "internalSshUsername":"value",
-		         "internalIp":value,
-		         "externalIp":value,
-		         "osDevice":"value",
-		         "dataDevice":"value",
-		         "lvmEnabled":true/false,
-		         "apiKey":value,
-		         "softwareRaid":true/false,
-		         "status":"provisioned",
-		         "powerState":"on",
-		         "dateCreated":0000-00-00T00:00:00Z,
-		         "lastAgentUpdate":0000-00-00T00:00:00Z,
-		         "serverType":"value",
-		         "osType":"value",
-		         "commType":"value",
-		         "managed":true/false,
-		         "agentInstalled":true/false,
-		         "toolsInstalled":true/false,
-		         "hostname":value,
-		         "domainName":value,
-		         "fqdn":value,
-		         "statusMessage":value,
-		         "maxStorage":value,
-		         "maxMemory":value,
-		         "maxCores":value,
-		         "macAddress":value,
-		         "serverVendor":value,
-		         "serverModel":value,
-		         "serialNumber":value,
-		         "tags":value,
-		         "configId":value,
-		         "configGroup":value,
-		         "configRole":value,
-		         "createdByUser":{
-		            "username":"value",
-		            "displayName":"value",
-		            "firstName":"value",
-		            "lastName":"value",
-		            "email":"value",
-		            "linuxUsername":"value",
-		            "windowsUsername":"value"
-		         },
-		         "volumes":[
-		            {
-		               "id":value
-		               "name":"root",
-		               "deviceName":"value",
-		               "maxStorage":value(bytes),
-		               "unitNumber":value,
-		               "displayOrder":value,
-		               "rootVolume":true/false
-		            }
-		         ]
-		      },
-		      "ports":[
-		         {
-		            "index":0,
-		            "external":value,
-		            "internal":value,
-		            "link":true/false,
-		            "loadBalance":true/false,
-		            "loadBalanceProtocol":value,
-		            "export":true/false,
-		            "exportName":value,
-		            "displayName":"value",
-		            "visible":true/false,
-		            "primaryPort":true/false,
-		            "protocol":value,
-		            "name":"value"
-		         }
-		      ],
-		      "portMap":{
-		         "rpc":{
-		            "index":0,
-		            "external":value,
-		            "internal":value,
-		            "link":true/false,
-		            "loadBalance":true/false,
-		            "loadBalanceProtocol":value,
-		            "export":true/false,
-		            "exportName":value,
-		            "displayName":"value",
-		            "visible":true/false,
-		            "primaryPort":true/false,
-		            "protocol":value,
-		            "name":"value"
-		         }
-		      },
-		      "internalPort":value,
-		      "externalPort":value
-		   },
-		   "apps":[
-
-		   ]
-		}
+    <div class="info-modal">
+    <h3 class="info-title">Spec Template Variables</h3>
+    <div class="row break-container-sm">
+    </div>
+    <div class="row type-instance">
+    <!--iterate the key set-->
+    <ul class="resource-detail-list info-detail-list drag-list">
+      <!--get morpheus, cypher, and archives-->       
+        <li>
+          <strong>morpheus</strong>
+          <ul class="modal-view-list">
+            <li data-value="morpheus.getApiAccessToken()">getApiAccessToken()</li>
+            <li data-value="morpheus.formatMemory(0, '')">formatMemory(size, unit)</li>
+            <li data-value="morpheus.applianceUrl">applianceUrl</li>
+            <li data-value="morpheus.applianceHost">applianceHost</li>
+            <li data-value="morpheus.appliancePort">appliancePort</li>
+            <li data-value="morpheus.applianceScheme">applianceScheme</li>
+            <li data-value="morpheus.applianceSsl">applianceSsl</li>
+            <li data-value="morpheus.morpheusHome">morpheusHome</li>
+            <li data-value="morpheus.morpheusUser">morpheusUser</li>
+            <li data-value="morpheus.publicKey">publicKey</li>
+            <li data-value="morpheus.privateKey">privateKey</li>
+            <li data-value="morpheus.cloudConfig">cloudConfig</li>
+          </ul>
+        </li>              
+        <li>
+          <strong>cypher</strong>
+          <ul class="modal-view-list">
+            <li data-value="cypher.read('')">read(key)</li>
+            <li data-value="cypher.write('', '')">write(key, value)</li>
+            <li data-value="cypher.delete('')">delete(key)</li>
+            <li data-value="cypher.readUuid('')">readUuid(key)</li>
+            <li data-value="cypher.readEncyptionKey('')">readEncyptionKey(key)</li>
+            <li data-value="cypher.readPassword('')">readPassword(key)</li>
+          </ul>
+        </li>              
+        <li>
+          <strong>archives</strong>
+          <ul class="modal-view-list">
+            <li data-value="archives.link('', '')">link(bucketName, filePath)</li>
+          </ul>
+        </li>       
+      <!--add other keys-->                                      
+            <li data-value="account">account</li>                                                          
+            <li data-value="accountId">accountId</li>                                                          
+            <li data-value="accountType">accountType</li>                                                          
+            <li data-value="apps[0]">
+              <strong>apps - []</strong>                                
+                  <ul class="modal-view-list">                     
+                      <li data-value="apps[0].appContext">appContext</li>                     
+                      <li data-value="apps[0].description">description</li>                     
+                      <li data-value="apps[0].id">id</li>                     
+                      <li data-value="apps[0].name">name</li>                     
+                  </ul>                                
+            </li>                                                                          
+            <li data-value="cloudConfig.">
+              <strong>cloudConfig</strong>
+              <ul class="modal-view-list">                                                         
+                    <li data-value="cloudConfig.agentInstall">agentInstall</li>                                                                            
+                    <li data-value="cloudConfig.finalizeServer">finalizeServer</li>                                    
+              </ul>
+            </li>                                                          
+            <li data-value="customOptions.">
+              <strong>customOptions</strong>
+              <ul class="modal-view-list">                                                         
+                    <li data-value="customOptions.key">key</li>                                    
+              </ul>
+            </li>                                                                          
+            <li data-value="deployOptions.">
+              <strong>deployOptions</strong>
+              <ul class="modal-view-list">                                                         
+                    <li data-value="deployOptions.key">key</li>                                    
+              </ul>
+            </li>                                                          
+            <li data-value="evars.">
+              <strong>evars</strong>
+              <ul class="modal-view-list">                                                         
+                    <li data-value="evars."></li>                                                                            
+                    <li data-value="evars.key">key</li>                                    
+              </ul>
+            </li>                                                          
+            <li data-value="group.">
+              <strong>group</strong>
+              <ul class="modal-view-list">                                                         
+                    <li data-value="group.code">code</li>                                                                            
+                    <li data-value="group.datacenterId">datacenterId</li>                                                                            
+                    <li data-value="group.location">location</li>                                                                            
+                    <li data-value="group.name">name</li>                                    
+              </ul>
+            </li>                                                          
+            <li data-value="groupCode">groupCode</li>                                                          
+            <li data-value="groupName">groupName</li>                                                          
+            <li data-value="input.">
+              <strong>input</strong>
+              <ul class="modal-view-list">                                                         
+                    <li data-value="input.backup">backup</li>                                                                            
+                    <li data-value="input.cloud.">cloud
+                      <ul class="modal-view-list">                         
+                      </ul>
+                    </li>                                                                            
+                    <li data-value="input.computedHostName">computedHostName</li>                                                                            
+                    <li data-value="input.computedName">computedName</li>                                                                            
+                    <li data-value="input.copies">copies</li>                                                                            
+                    <li data-value="input.domainOptions">domainOptions</li>                                                                            
+                    <li data-value="input.environmentVariables">environmentVariables</li>                                                                            
+                    <li data-value="input.executionId">executionId</li>                                                                            
+                    <li data-value="input.expireDays">expireDays</li>                                                                            
+                    <li data-value="input.group.">group
+                      <ul class="modal-view-list">                         
+                      </ul>
+                    </li>                                                                            
+                    <li data-value="input.hostName">hostName</li>                                                                            
+                    <li data-value="input.instanceContext">instanceContext</li>                                                                            
+                    <li data-value="input.layout.">layout
+                      <ul class="modal-view-list">                         
+                      </ul>
+                    </li>                                                                            
+                    <li data-value="input.metadata">metadata</li>                                                                            
+                    <li data-value="input.name">name</li>                                                                            
+                    <li data-value="input.plan.">plan
+                      <ul class="modal-view-list">                         
+                      </ul>
+                    </li>                                                                            
+                    <li data-value="input.powerScheduleType">powerScheduleType</li>                                                                            
+                    <li data-value="input.securityGroups">securityGroups</li>                                                                            
+                    <li data-value="input.shutdownDays">shutdownDays</li>                                                                            
+                    <li data-value="input.type">type</li>                                                                            
+                    <li data-value="input.version">version</li>                                    
+              </ul>
+            </li>                                                          
+            <li data-value="instance.">
+              <strong>instance</strong>
+              <ul class="modal-view-list">                                                         
+                    <li data-value="instance.adminPassword">adminPassword</li>                                                                            
+                    <li data-value="instance.adminUsername">adminUsername</li>                                                                                                 
+                      <li data-value="instance.apps[0]">apps - []</li>                       
+                        <ul class="modal-view-list">                           
+                            <li data-value="instance.apps.appContext">appContext</li>                           
+                            <li data-value="instance.apps.description">description</li>                           
+                            <li data-value="instance.apps.id">id</li>                           
+                            <li data-value="instance.apps.instances">instances</li>                           
+                            <li data-value="instance.apps.name">name</li>                           
+                        </ul>                                                                                                                        
+                    <li data-value="instance.assignedDomainName">assignedDomainName</li>                                                                            
+                    <li data-value="instance.autoScale">autoScale</li>                                                                            
+                    <li data-value="instance.cloudConfig.">cloudConfig
+                      <ul class="modal-view-list">                         
+                          <li data-value="instance.cloudConfig.agentInstall">agentInstall</li>                         
+                          <li data-value="instance.cloudConfig.finalizeServer">finalizeServer</li>                         
+                      </ul>
+                    </li>                                                                            
+                    <li data-value="instance.configGroup">configGroup</li>                                                                            
+                    <li data-value="instance.configId">configId</li>                                                                            
+                    <li data-value="instance.configRole">configRole</li>                                                                            
+                    <li data-value="instance.container.">container
+                      <ul class="modal-view-list">                         
+                          <li data-value="instance.container.certificatePath">certificatePath</li>                         
+                          <li data-value="instance.container.certificateStyle">certificateStyle</li>                         
+                          <li data-value="instance.container.changeManagementExtId">changeManagementExtId</li>                         
+                          <li data-value="instance.container.changeManagementServiceId">changeManagementServiceId</li>                         
+                          <li data-value="instance.container.cloudConfig">cloudConfig</li>                         
+                          <li data-value="instance.container.configGroup">configGroup</li>                         
+                          <li data-value="instance.container.configId">configId</li>                         
+                          <li data-value="instance.container.configPath">configPath</li>                         
+                          <li data-value="instance.container.configRole">configRole</li>                         
+                          <li data-value="instance.container.containerTypeCategory">containerTypeCategory</li>                         
+                          <li data-value="instance.container.containerTypeCode">containerTypeCode</li>                         
+                          <li data-value="instance.container.containerTypeName">containerTypeName</li>                         
+                          <li data-value="instance.container.containerTypeShortName">containerTypeShortName</li>                         
+                          <li data-value="instance.container.cores">cores</li>                         
+                          <li data-value="instance.container.dataPath">dataPath</li>                         
+                          <li data-value="instance.container.dateCreated">dateCreated</li>                         
+                          <li data-value="instance.container.domainName">domainName</li>                         
+                          <li data-value="instance.container.environmentPrefix">environmentPrefix</li>                         
+                          <li data-value="instance.container.externalIp">externalIp</li>                         
+                          <li data-value="instance.container.hostMountPoint">hostMountPoint</li>                         
+                          <li data-value="instance.container.hostname">hostname</li>                         
+                          <li data-value="instance.container.id">id</li>                         
+                          <li data-value="instance.container.image">image</li>                         
+                          <li data-value="instance.container.internalHostname">internalHostname</li>                         
+                          <li data-value="instance.container.internalIp">internalIp</li>                         
+                          <li data-value="instance.container.logsPath">logsPath</li>                         
+                          <li data-value="instance.container.memory">memory</li>                         
+                          <li data-value="instance.container.name">name</li>                         
+                          <li data-value="instance.container.planCode">planCode</li>                         
+                          <li data-value="instance.container.portMap">portMap</li>                         
+                          <li data-value="instance.container.ports">ports</li>                         
+                          <li data-value="instance.container.provisionType">provisionType</li>                         
+                          <li data-value="instance.container.server">server</li>                         
+                          <li data-value="instance.container.serverId">serverId</li>                         
+                          <li data-value="instance.container.sshHost">sshHost</li>                         
+                          <li data-value="instance.container.status">status</li>                         
+                          <li data-value="instance.container.storage">storage</li>                         
+                          <li data-value="instance.container.version">version</li>                         
+                      </ul>
+                    </li>                                                                                                 
+                      <li data-value="instance.containers[0]">containers - []</li>                       
+                        <ul class="modal-view-list">                           
+                            <li data-value="instance.containers.certificatePath">certificatePath</li>                           
+                            <li data-value="instance.containers.certificateStyle">certificateStyle</li>                           
+                            <li data-value="instance.containers.changeManagementExtId">changeManagementExtId</li>                           
+                            <li data-value="instance.containers.changeManagementServiceId">changeManagementServiceId</li>                           
+                            <li data-value="instance.containers.cloudConfig">cloudConfig</li>                           
+                            <li data-value="instance.containers.configGroup">configGroup</li>                           
+                            <li data-value="instance.containers.configId">configId</li>                           
+                            <li data-value="instance.containers.configPath">configPath</li>                           
+                            <li data-value="instance.containers.configRole">configRole</li>                           
+                            <li data-value="instance.containers.containerTypeCategory">containerTypeCategory</li>                           
+                            <li data-value="instance.containers.containerTypeCode">containerTypeCode</li>                           
+                            <li data-value="instance.containers.containerTypeName">containerTypeName</li>                           
+                            <li data-value="instance.containers.containerTypeShortName">containerTypeShortName</li>                           
+                            <li data-value="instance.containers.cores">cores</li>                           
+                            <li data-value="instance.containers.dataPath">dataPath</li>                           
+                            <li data-value="instance.containers.dateCreated">dateCreated</li>                           
+                            <li data-value="instance.containers.domainName">domainName</li>                           
+                            <li data-value="instance.containers.environmentPrefix">environmentPrefix</li>                           
+                            <li data-value="instance.containers.externalIp">externalIp</li>                           
+                            <li data-value="instance.containers.hostMountPoint">hostMountPoint</li>                           
+                            <li data-value="instance.containers.hostname">hostname</li>                           
+                            <li data-value="instance.containers.id">id</li>                           
+                            <li data-value="instance.containers.image">image</li>                           
+                            <li data-value="instance.containers.internalHostname">internalHostname</li>                           
+                            <li data-value="instance.containers.internalIp">internalIp</li>                           
+                            <li data-value="instance.containers.logsPath">logsPath</li>                           
+                            <li data-value="instance.containers.memory">memory</li>                           
+                            <li data-value="instance.containers.name">name</li>                           
+                            <li data-value="instance.containers.planCode">planCode</li>                           
+                            <li data-value="instance.containers.portMap">portMap</li>                           
+                            <li data-value="instance.containers.ports">ports</li>                           
+                            <li data-value="instance.containers.provisionType">provisionType</li>                           
+                            <li data-value="instance.containers.server">server</li>                           
+                            <li data-value="instance.containers.serverId">serverId</li>                           
+                            <li data-value="instance.containers.sshHost">sshHost</li>                           
+                            <li data-value="instance.containers.status">status</li>                           
+                            <li data-value="instance.containers.storage">storage</li>                           
+                            <li data-value="instance.containers.version">version</li>                           
+                        </ul>                                                                                                                        
+                    <li data-value="instance.cores">cores</li>                                                                            
+                    <li data-value="instance.createdByEmail">createdByEmail</li>                                                                            
+                    <li data-value="instance.createdByFirstName">createdByFirstName</li>                                                                            
+                    <li data-value="instance.createdById">createdById</li>                                                                            
+                    <li data-value="instance.createdByLastName">createdByLastName</li>                                                                            
+                    <li data-value="instance.createdByUser.">createdByUser
+                      <ul class="modal-view-list">                         
+                          <li data-value="instance.createdByUser.accountId">accountId</li>                         
+                          <li data-value="instance.createdByUser.attributes">attributes</li>                         
+                          <li data-value="instance.createdByUser.displayName">displayName</li>                         
+                          <li data-value="instance.createdByUser.email">email</li>                         
+                          <li data-value="instance.createdByUser.firstName">firstName</li>                         
+                          <li data-value="instance.createdByUser.id">id</li>                         
+                          <li data-value="instance.createdByUser.lastName">lastName</li>                         
+                          <li data-value="instance.createdByUser.linuxUsername">linuxUsername</li>                         
+                          <li data-value="instance.createdByUser.username">username</li>                         
+                          <li data-value="instance.createdByUser.windowsUsername">windowsUsername</li>                         
+                      </ul>
+                    </li>                                                                            
+                    <li data-value="instance.createdByUsername">createdByUsername</li>                                                                            
+                    <li data-value="instance.customOptions.">customOptions
+                      <ul class="modal-view-list">                         
+                          <li data-value="instance.customOptions.key">key</li>                         
+                      </ul>
+                    </li>                                                                            
+                    <li data-value="instance.deployGroup">deployGroup</li>                                                                            
+                    <li data-value="instance.description">description</li>                                                                            
+                    <li data-value="instance.displayName">displayName</li>                                                                            
+                    <li data-value="instance.domainName">domainName</li>                                                                            
+                    <li data-value="instance.environmentPrefix">environmentPrefix</li>                                                                            
+                    <li data-value="instance.evars.">evars
+                      <ul class="modal-view-list">                         
+                          <li data-value="instance.evars.key">key</li>                         
+                      </ul>
+                    </li>                                                                            
+                    <li data-value="instance.expireDate">expireDate</li>                                                                            
+                    <li data-value="instance.firewallEnabled">firewallEnabled</li>                                                                            
+                    <li data-value="instance.hostname">hostname</li>                                                                            
+                    <li data-value="instance.id">id</li>                                                                            
+                    <li data-value="instance.instanceContext">instanceContext</li>                                                                            
+                    <li data-value="instance.instanceLevel">instanceLevel</li>                                                                            
+                    <li data-value="instance.instanceTypeCode">instanceTypeCode</li>                                                                            
+                    <li data-value="instance.instanceTypeName">instanceTypeName</li>                                                                            
+                    <li data-value="instance.instanceVersion">instanceVersion</li>                                                                            
+                    <li data-value="instance.layoutCode">layoutCode</li>                                                                            
+                    <li data-value="instance.layoutId">layoutId</li>                                                                            
+                    <li data-value="instance.layoutName">layoutName</li>                                                                            
+                    <li data-value="instance.memory">memory</li>                                                                            
+                    <li data-value="instance.metadata.">metadata
+                      <ul class="modal-view-list">                         
+                      </ul>
+                    </li>                                                                            
+                    <li data-value="instance.name">name</li>                                                                            
+                    <li data-value="instance.networkLevel">networkLevel</li>                                                                            
+                    <li data-value="instance.plan">plan</li>                                                                            
+                    <li data-value="instance.ports">ports</li>                                                                            
+                    <li data-value="instance.provisionType">provisionType</li>                                                                            
+                    <li data-value="instance.scheduleStatus">scheduleStatus</li>                                                                            
+                    <li data-value="instance.servicePassword">servicePassword</li>                                                                            
+                    <li data-value="instance.serviceUsername">serviceUsername</li>                                                                            
+                    <li data-value="instance.sslCertId">sslCertId</li>                                                                            
+                    <li data-value="instance.sslEnabled">sslEnabled</li>                                                                            
+                    <li data-value="instance.status">status</li>                                                                            
+                    <li data-value="instance.statusMessage">statusMessage</li>                                                                            
+                    <li data-value="instance.storage">storage</li>                                                                            
+                    <li data-value="instance.tags">tags</li>                                                                            
+                    <li data-value="instance.templateOutput.">templateOutput
+                      <ul class="modal-view-list">                         
+                          <li data-value="instance.templateOutput."></li>                         
+                      </ul>
+                    </li>                                                                            
+                    <li data-value="instance.userStatus">userStatus</li>                                    
+              </ul>
+            </li>                                                                          
+            <li data-value="platform">platform</li>                                                          
+            <li data-value="provisionType">provisionType</li>                                                          
+            <li data-value="results.">
+              <strong>results</strong>
+              <ul class="modal-view-list">                 
+              </ul>
+            </li>                                                          
+            <li data-value="sequence">sequence</li>                                                          
+            <li data-value="state.">
+              <strong>state</strong>
+              <ul class="modal-view-list">                                                         
+                    <li data-value="state.iacDrift">iacDrift</li>                                                                            
+                    <li data-value="state.stateDate">stateDate</li>                                                                                                 
+                      <li data-value="state.stateList[0]">stateList - []</li>                       
+                        <ul class="modal-view-list">                           
+                            <li data-value="state.stateList.category">category</li>                           
+                            <li data-value="state.stateList.code">code</li>                           
+                            <li data-value="state.stateList.contentPath">contentPath</li>                           
+                            <li data-value="state.stateList.errorMessage">errorMessage</li>                           
+                            <li data-value="state.stateList.iacDrift">iacDrift</li>                           
+                            <li data-value="state.stateList.id">id</li>                           
+                            <li data-value="state.stateList.input">input</li>                           
+                            <li data-value="state.stateList.name">name</li>                           
+                            <li data-value="state.stateList.output">output</li>                           
+                            <li data-value="state.stateList.planPath">planPath</li>                           
+                            <li data-value="state.stateList.resourceVersion">resourceVersion</li>                           
+                            <li data-value="state.stateList.stateContext">stateContext</li>                           
+                            <li data-value="state.stateList.stateDate">stateDate</li>                           
+                            <li data-value="state.stateList.stateId">stateId</li>                           
+                            <li data-value="state.stateList.statePath">statePath</li>                           
+                            <li data-value="state.stateList.stateType">stateType</li>                           
+                            <li data-value="state.stateList.status">status</li>                           
+                            <li data-value="state.stateList.statusMessage">statusMessage</li>                           
+                            <li data-value="state.stateList.tags">tags</li>                           
+                            <li data-value="state.stateList.workingPath">workingPath</li>                           
+                        </ul>                                                                                                                        
+                    <li data-value="state.stateType">stateType</li>                                    
+              </ul>
+            </li>                                                          
+            <li data-value="tenant">tenant</li>                                                          
+            <li data-value="tenantId">tenantId</li>                                                          
+            <li data-value="tenantSubdomain">tenantSubdomain</li>                                                          
+            <li data-value="type">type</li>                                                          
+            <li data-value="userId">userId</li>                                                          
+            <li data-value="userInitials">userInitials</li>                                                          
+            <li data-value="username">username</li>                           
+    </ul>
+    </div>
+    </

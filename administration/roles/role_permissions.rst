@@ -140,7 +140,7 @@ Role Mappings
   * - Admin: Log Settings
     - None, Full
     - Allows or disallows access to the Administration > Logs.
-    - The Logs page is where logs are enabled. Syslog forwarding rules, Splunk integrations and LogRhythm integrations are also configured here.
+    - The Logs page is where logs are enabled. Syslog forwarding rules are also configured here.
     - This permission is recommended for those responsible for configuring |morpheus| log settings and integrations.
     - This permission is recommended to be set to None in the Tenant Role to restrict this access to Subtenant Users.
   * - Admin: Message of the day
@@ -155,6 +155,12 @@ Role Mappings
     - The monitoring settings page is where |morpheus| monitoring and monitoring integrations are configured.  Available integrations are AppDynamics, ServiceNow, and New Relic. Monitoring checks can be turned on or off, and availability time frame, check interval period, and reported availability precision are also configured on this page.
     - This permission is recommended for those responsible for configuring |morpheus| monitoring settings and integrations.
     - This permission is recommended to be set to None in the Tenant Role to restrict this access from Subtenant Users.
+  * - Admin: Packages
+    - None, Full
+    - Allows or disallows access to the Packages tab on the Integrations page (Administration > Integrations)
+    - The Plugins tab is where custom library packages (mpg) are added.
+    - This permission is recommended for those responsible for managing the Library.
+    - This permission is recommended to be set to None in the Tenant Role to restrict this access from Subtenant Users.
   * - Admin: Plugins
     - None, Full
     - Allows or disallows access to the Plugins tab on the Integrations page (Administration > Integrations)
@@ -167,6 +173,12 @@ Role Mappings
     - The Policies page is where policies are defined. On create, the type of policy is selected, a name, description, and scope are defined.
     - This permission is recommended for those responsible for configuring and managing policies either at the Master Tenant or Subtenant.
     -
+  * - Admin: Profiles
+    - none,read,full
+    - Allows or disallows access to Profiles (|profileObjects|)
+    - Profiles are where |profileTypes| profiles are created and managed.
+    - This permission is recommended for those responsible for managing secrets and other metadata that needs to be accessed by provisioning and automation processes.
+    - 
   * - Admin: Provisioning Settings
     - None, Full
     - Allows or disallows access to the Settings tab of the Administration > Provisioning page.
@@ -562,7 +574,7 @@ Role Mappings
     - Determines access to the Integrations tab on the Provisioning > Code page.
     - From this page code integrations may be created, edited, or deleted. Integrations available include Git, Github, and Jenkins.
     - This permission is recommended for those responsible for the integration between |morpheus| and code repositories and services.
-    - 
+    -
   * - Provisioning: Code Deployments
     - None, Read, Full
     - Determines access to the Deployments tab on the Provisioning > Code page.
@@ -572,7 +584,7 @@ Role Mappings
   * - Provisioning: Code Repositories
     - None, List Files, Read, Full
     - Determines access to the Deployments tab on the Provisioning > Code page.
-    - The Code Repositories contains the repositories integrated with |morpheus| allowing users to browse repositories folders and files and view file contents from any branch, trigger a refresh, and create tasks, scripts and templates directly from the repos. 
+    - The Code Repositories contains the repositories integrated with |morpheus| allowing users to browse repositories folders and files and view file contents from any branch, trigger a refresh, and create tasks, scripts and templates directly from the repos.
     - This permission is recommended for those responsible for providing and managing software.
     -
   * - Provisioning: Execute Script

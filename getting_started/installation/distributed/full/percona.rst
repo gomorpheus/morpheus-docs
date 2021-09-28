@@ -1,12 +1,12 @@
 Percona XtraDB Cluster
-``````````````````````
+^^^^^^^^^^^^^^^^^^^^^^
 
 Out of the box Morpheus uses MySQL but Morpheus supports any mySQL compliant database.  There are many ways to set up a highly available, MySQL dialect based database.  One which has found favor with many of our customers is Percona's XtraDB Cluster.  Percona's product is based off of Galera's WSREP Clustering, which is also supported.
 
 .. important:: Currently, you must use a v5.7-compatible version of MySQL/Percona. Complete compatibility information is available in the `Compatibility and Breaking Changes <https://docs.morpheusdata.com/en/latest/release_notes/compatibility.html>`_ page. Additional configuration for Percona Clusters with TLS enabled is required. Refer to :ref:`Percona TLS` Configuration in our full HA docs for details.
 
 Requirements
-............
+````````````
 
 .. NOTE:: Morpheus idiomatically connects to database nodes over 3306
 

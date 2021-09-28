@@ -103,6 +103,9 @@ COSTING SECRET
 
 .. include:: /integration_guides/Clouds/advanced_options.rst
 
+KMS KEY ID
+  For specify an AWS KMS key for encrypting EBS Volumes when volume encryption is enabled
+
 Enhanced Invoice Costing Configuration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 

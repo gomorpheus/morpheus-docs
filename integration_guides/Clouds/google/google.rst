@@ -17,11 +17,14 @@ Integration Features
 Requirements for Integration with |morpheus|
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-To integrate |morpheus| with Google Cloud Platform, you will need the following:
+To integrate |morpheus| with Google Cloud Platform, you will need the following. APIs are enabled in "APIs & Services" and must be enabled for all projects or the selected project (depending on your GCP Cloud integration settings):
 
-* The Compute Engine API enabled in GCP "APIs & Services"
-* The Cloud Resource Manager API enabled in GCP "APIs & Services"
-* The Cloud Billing API enabled in GCP "APIs & Services"
+* The Compute Engine API enabled
+* The Cloud Resource Manager API enabled
+* The Cloud Billing API
+* The Identity and Access Management (IAM) API enabled
+* The BigQuery API enabled
+* The BigQuery Data Transfer API enabled
 * Credentials for an IAM service account with Owner or Compute Admin role permissions
 * The private key and client email for the service account
 
@@ -128,6 +131,22 @@ To create a new GCP Project:
 #. Click :guilabel:`SAVE CHANGES`
 
 After a few minutes, the new Project will be ready on the GCP side and |morpheus| will be ready to provision new resources into it.
+
+Enabling Live Costing for GCP
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+GCP costing is done at the Billing Account level. Each Billing Account can be linked to one or more GCP Projects. All projects which are linked to the Billing Account will have their costing data available to |morpheus| but if the GCP Cloud has been scoped to only one Project, |morpheus| will ingest costing data only for that Project. Users can view the Billing Account linked to a particular project by clicking on the hamburger menu (main menu button in the far upper-left of the console window) and selecting billing. A pop-up window will give users the option to navigate to the Billing Account which is linked to the currently-selected Project.
+
+.. image:: /images/integration_guides/clouds/gcp/costing1.png
+
+Within the Billing Account, Standard Usage Cost must be enabled for |morpheus| to access costing data. From the page for the appropriate Billing Account, click on Billing Export and then click "Edit Settings" under the "Standard usage cost heading". Specify a project and create a dataset or specify an existing one. In doing this, you're specifying a location for the dataset *which will be for the entire billing account and not just for the Project the dataset resides in.*
+
+.. image:: /images/integration_guides/clouds/gcp/costing2.png
+
+With configuration in the GCP console completed, we can now enable cost onboarding from the |morpheus| side. Add or edit an existing GCP Cloud (Infrastructure > Clouds). Within the Advanced Options section, note the COSTING PROJECT and COSTING DATASET fields. When selecting a Project, associated datasets (if any) will automatically be loaded into the dropdown in the next field for selection. Additionally, the COSTING field should be set to "Sync Costing" rather than "Off". Recall from the previous paragraph that this is merely pointing to the Project that houses the appropriate dataset. If your GCP Cloud in |morpheus| is configured for all Projects, all costing data will be consumed for the Projects linked to the associated Billing Account (assuming those Projects have billing enabled). If the GCP Cloud in |morpheus| is scoped to just one Project, only billing data for that Project will be onboarded. For this reason, the selected Costing Project can be (but is not necessarily) the Project to which the |morpheus| Cloud is scoped.
+
+.. image:: /images/integration_guides/clouds/gcp/costing3.png
+  :width: 50%
 
 Windows Images
 ^^^^^^^^^^^^^^

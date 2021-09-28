@@ -64,7 +64,7 @@ If needed, update the following service endpoints. A complete listing of OTC API
 * OBJECT STORAGE SERVICE
 * SHARED FILE SYSTEM SERVICE
 
-.. include:: /integration_guides/Clouds/openstack/advanced_options.rst
+.. include:: /integration_guides/Clouds/advanced_options.rst
 
 Network and Router Creation
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^

@@ -12,7 +12,7 @@ Blueprint Types
 - |morpheus|
 - Terraform
 - ARM (Azure)
-- Cloud Formation (AWS)
+- CloudFormation (AWS)
 - Kubernetes
 - Helm
 

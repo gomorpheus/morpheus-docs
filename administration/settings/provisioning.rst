@@ -53,7 +53,7 @@ Determines the Default Blueprint Type selected in new App Wizard
 
  - Morpheus
  - ARM Template
- - Cloud Formation
+ - CloudFormation
  - Terraform
  - Kubernetes Spec
  - Helm Chart

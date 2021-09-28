@@ -35,6 +35,5 @@ Guides
    Logs/Logs.rst
    Monitoring/Monitoring.rst
    Networking/networking.rst
-   serviceDiscovery/serviceDiscovery.rst
    storage/storage.rst
    supportedVersions/supportedVersions.rst
