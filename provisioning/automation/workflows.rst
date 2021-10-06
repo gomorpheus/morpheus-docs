@@ -21,11 +21,11 @@ Provisioning Workflow Execution Phases
     - Call to an external platform to dynamically generate a hostname prior to kicking off provisioning
     -
   * - Pre Provision
-    - Tasks are run after the VM is running. For containers, Tasks in this phase are run on the Docker host
+    - For VMs, Tasks are run after the VM is running and prior to any Tasks in the Provision phase. For containers, Tasks in this phase are run on the Docker host and prior to ``docker run``
     -
     - Pre Provision can be used for a Blueprint so it is added before a script which is set at the Provision phase executes. Pre Provision for scripts is mainly for Docker as you can execute on the host before the container is running.
   * - Provision
-    - Like pre-provision, Tasks are run after the VM is running. For many users, this is the most commonly-used phase.
+    - Like pre-provision, Tasks for VMs are run after the VM is running. For containers, these Tasks are run after the containers are running on the host. For many users, this is the most commonly-used phase.
     -
     -
   * - Post Provision
