@@ -63,7 +63,7 @@ New Features
            - Key/Value Profiles expand provisioning, automation, billing and reporting capabilities by allowing dynamic custom object specific metadata in provisioning and automation mappings using ``<%=cloud.profile.key%>``
 
 :ServiceNow: - Optimized CMDB sync performance to significantly reduce sync times for large cmdb record sets.
-             - ServiceNow Multi-Domain (domain separation) Support added. Note: Requires upcoming plugin version
+             - ServiceNow Multi-Domain (domain separation) Support added. **NOTE:** Requires plugin version 3.4.10
 
 :Terraform: - Added UI feedback and status indication when refreshing Terraform Instance state (:guilabel:`REFRESH STATE` button or "Refresh State" selection from Instance Actions menu)
             - Added support for ``count`` and ``for_each`` loops
@@ -149,9 +149,9 @@ Fixes
             - Deleting a VM associated with an Instance in Terraform App with ``Remove associated Instances`` enabled, and the associated Instance is the only Instance in the App, no longer deletes the associated App.
             - Added validation for deleting a Terraform app when ``deletion_protection=true`` in Terraform.
             - Fixed ``for_each`` loop value nulled when using tfvars within cypher
-            - Fixed issue with resource -> image mapping that caused vm's associated with resources to remain as ``discovered`` server types 
+            - Fixed issue with resource -> image mapping that caused vm's associated with resources to remain as ``discovered`` server types
 :User Settings: - Success Message added on save when updating Linux/Windows passwords in user settings (Displays for 5s then fades) :superscript:`5.2.9`
-:UI: - Execution and history tabs: Execution output is now limited on initial load to 10k characters per event with an option to load the full output for each event to address loading of large execution history datasets 
+:UI: - Execution and history tabs: Execution output is now limited on initial load to 10k characters per event with an option to load the full output for each event to address loading of large execution history datasets
 :vCloud Director: - Fixed issue with user-data iso attachment when provisioning cloudbase-init enabled Windows images :superscript:`5.2.10`
                   - Fixed ``safeComputerName`` issue during Windows Guest Customizations :superscript:`5.2.9`
 :VMware: - Fixed duplicate filename issue when adding multiple disks during reconfigure :superscript:`5.2.10`
@@ -192,6 +192,6 @@ Appliance & Agent Updates
 :Appliance: - Agent installation: Reconfigure process updated to add ``/var/opt/morpheus/package-repos/yum/el/8.2 -> /var/opt/morpheus/package-repos/yum/el/8`` symlink to handle agent installation requests for centOS/rhel configurations version pinned to ``8.2`` :superscript:`5.2.10`
             - Java Updated to 8u302-b08 :superscript:`5.2.9`
             - Tomcat version update to v9.0.50 :superscript:`5.2.9`
-            
+
 :Agent Packages: - Java Updated to 8u302-b08 :superscript:`5.2.9`
                  - |morpheus| Node and VM Node Packages version update to 3.2.1 :superscript:`5.2.9`
