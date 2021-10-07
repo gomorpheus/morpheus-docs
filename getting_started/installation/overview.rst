@@ -20,7 +20,7 @@ Configuration Options
 - Single Host (All-In-One/default)
    All tiers a single host. The reconfigure process installs all required services. This is the default configuration.
 - Single Hosts with Distributed Service(s)
-   Transactional Database, Non-Transactional Database, and/or Message tiers are externalized, with the remaining services on a single host. The reconfigure process installs all services not set to false in ``/etc/morpheus.morpheus.rb``
+   Transactional Database, Non-Transactional Database, and/or Message tiers are externalized, with the remaining services on a single host. The reconfigure process installs all services not set to false in ``/etc/morpheus/morpheus.rb``
 - Clustered Hosts with Distributed Transactional Database (3-Node HA)
    Application, Message and Non-Transactional tiers are installed and clustered on three or more hosts, with all three hosts pointing to externalized database tier. The reconfigure process installs all services except mySQL.
 - App Host(s) with Distributed Services (Full HA)
