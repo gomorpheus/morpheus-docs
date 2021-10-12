@@ -46,7 +46,7 @@ Breaking Changes
      - 7.x, 8.x
      - If CentOS 8.2 is pinned to 8.2.2004 vault, the PowerTools repository will need to be pinned to 8.2.2004 to access freerdp-libs 2.0.0
    * - Debian
-     - 9, 10
+     - |debianVersion|
      - FreeRDP 2.0 is not compatible with Debian 9. guacd will remain at 1.0.0 for Appliances running on Debian 9.
    * - RHEL
      - 7.x, 8.x
