@@ -24,7 +24,7 @@ Base Requirements
      - 7.x, 8.x
      -
    * - Debian
-     - 9, 10, 11
+     - |debianVersion|
      - FreeRDP 2.0 is not compatible with Debian 9. Guacd will remain at 1.0.0 for Appliances running on 9.
    * - RHEL
      - 7.x, 8.x

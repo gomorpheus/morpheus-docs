@@ -35,6 +35,9 @@ rst_prolog = """
 
 .. role:: redguilabel
 
+.. |debianVersion| replace:: 9,10,11
+
+
 """
 
 
