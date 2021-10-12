@@ -1,3 +1,5 @@
+|
+
 Twilio SMS Settings
 ^^^^^^^^^^^^^^^^^^^
 
@@ -6,3 +8,5 @@ Configure SMS text message delivery for |morpheus| alerts. Previously, customers
 - **Account SID:** Twilio account SID
 - **SMS From #:** The "From" number to receive text messages from
 - **Auth Token:** The Twilio API authentication token for your account
+
+|
