@@ -10,7 +10,7 @@ rst_prolog = """
 .. |morphdat| replace:: Morpheus Data, LLC
 .. |repo_host_url| replace:: https://downloads.morpheusdata.com
 .. |morphbranch| replace:: v5.2
-.. |morphver| replace:: v5.2.10
+.. |morphver| replace:: v5.2.11
 .. |previousMorphVer| replace:: v5.2.9
 .. |minUpgradeVer| replace:: v4.2.0
 .. |rmqbranch| replace:: v3.5-3.8
