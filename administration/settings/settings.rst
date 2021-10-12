@@ -14,6 +14,8 @@ Appliance
 
 .. include:: email.rst
 
+.. include:: twilio.rst
+
 .. include:: proxy.rst
 
 .. include:: currency.rst
