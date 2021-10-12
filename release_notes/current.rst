@@ -7,8 +7,6 @@
 .. No highlights this time, small update
   .. include:: highlights.rst
 
-.. NOTE:: Items appended with :superscript:`x.x.x` are also included in that version
-
 New Features
 ============
 
@@ -81,3 +79,5 @@ Appliance & Agent Updates
 =========================
 
 :Appliance: - Optimizations added to improve page load times
+
+|
