@@ -1,5 +1,5 @@
-Option Types
-------------
+Inputs
+------
 
 Option Types are custom input fields that can be added to Instance Types and Layouts, then presented in Instance, App, and Cloning wizards. The resulting value is available in the Instance config map as <%=customOptions.fieldName%>. The fieldName and value can also be exported as Tags.
 

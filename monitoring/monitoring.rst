@@ -12,6 +12,7 @@ There are also several integrations built into the monitoring subsystem of |morp
 .. toctree::
   :maxdepth: 2
 
+  logs/logs.rst
   apps.rst
   checks.rst
   groups.rst

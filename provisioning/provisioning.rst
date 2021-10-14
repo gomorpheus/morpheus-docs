@@ -10,11 +10,9 @@ Take advantage of custom tasks and workflows within any environment by building 
 
   requirements.rst
   concepts/concepts.rst
+  catalog/catalog.rst
   instances/instances.rst
   apps/apps.rst
-  blueprints/blueprints.rst
   jobs/jobs.rst
-  automation/automation.rst
-  virtual_images/virtual_images.rst
-  library/library.rst
+  executions/executions.rst
   code/code.rst

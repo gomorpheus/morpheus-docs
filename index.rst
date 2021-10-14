@@ -9,6 +9,7 @@
 
    getting_started/getting_started
    provisioning/provisioning
+   libary/library.rst
    infrastructure/infrastructure
    administration/administration
    monitoring/monitoring

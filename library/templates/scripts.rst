@@ -1,5 +1,5 @@
-Scripts
--------
+Script Templates
+----------------
 
 Scripts are bash and Powershell scripts that can be attached to Node Types to always execute at the selected phase when that Node Type is provisioned, added to Workflows as Library Script Tasks, and/or executed ad-hoc on Instances.
 

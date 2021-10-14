@@ -5,21 +5,10 @@ Security Scan Jobs allow users to create and schedule SCAP program (Security Con
 
 .. NOTE:: Creating and editing Security Scan Jobs requires the "Security: Scanning" Role permission set to Full. Viewing Security Scan Jobs and seeing the results for scanned servers requires at least a Read-level permission.
 
-Add a new Security Package
-``````````````````````````
-
-#. Navigate to Provisioning > Jobs > Security Packages Tab
-#. Click :guilabel:`+ADD` > SCAP Package
-#. Provide a name in addition to a URL to source the package
-#. Click :guilabel:`SAVE CHANGES`
-
-.. NOTE:: Currently URL is the only source option for security packages
-
-.. image:: /images/provisioning/jobs/security/1add_package.png
-  :width: 50%
-
 Add a new Security Scan Job
 ```````````````````````````
+
+.. NOTE:: New security scan packages are added in |morpheus| Library rather than here in the Jobs section. Ensure you have uploaded the desired security package in Library > Templates > Security Packages before proceeding with new security Job creation.
 
 #. Navigate to Provisioning > Jobs > Jobs Tab
 #. Click :guilabel:`+ADD`
