@@ -98,9 +98,9 @@ rst_prolog = """
 .. |InfComBar| replace:: Infrastructure > Compute > Bare Metal
 .. |InfNet| replace:: Infrastructure > Network
 .. |InfNetNet| replace:: Infrastructure > Network > Networks
-.. |InfNetNet| replace:: Infrastructure > Network > Network Groups
+.. |InfNetNetG| replace:: Infrastructure > Network > Network Groups
 .. |InfNetRou| replace:: Infrastructure > Network > Routers
-.. |InfNetIP | replace:: Infrastructure > Network > IP Pools
+.. |InfNetIP| replace:: Infrastructure > Network > IP Pools
 .. |InfNetDom| replace:: Infrastructure > Network > Domains
 .. |InfNetPro| replace:: Infrastructure > Network > Proxies
 .. |InfNetSec| replace:: Infrastructure > Network > Security Groups
