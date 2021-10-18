@@ -172,36 +172,36 @@ Add [mysqld] to my.cnf in /etc/
    .. content-tabs::
 
       .. tab-container:: tab1
-         :title: DB Node 2
+         :title: DB Node 1
 
-          .. code-block:: bash
+         .. code-block:: bash
 
-             [root]# vi /etc/my.cnf
+            [root]# vi /etc/my.cnf
 
-             [mysqld]
-             pxc_encrypt_cluster_traffic=ON
-             max_connections = 300
-             max_allowed_packet = 67108864
-             wsrep_provider=/usr/lib64/galera3/libgalera_smm.so
-             wsrep_provider_options="cert.optimistic_pa=NO"
-             wsrep_certification_rules='OPTIMIZED'
+            [mysqld]
+            pxc_encrypt_cluster_traffic=ON
+            max_connections = 300
+            max_allowed_packet = 67108864
+            wsrep_provider=/usr/lib64/galera3/libgalera_smm.so
+            wsrep_provider_options="cert.optimistic_pa=NO"
+            wsrep_certification_rules='OPTIMIZED'
 
-             wsrep_cluster_name=morpheusdb-cluster
-             wsrep_cluster_address=gcomm://10.30.20.10,10.30.20.11,10.30.20.12
+            wsrep_cluster_name=morpheusdb-cluster
+            wsrep_cluster_address=gcomm://10.30.20.10,10.30.20.11,10.30.20.12
 
-             wsrep_node_name=morpheus-node01
-             wsrep_node_address=10.30.20.10
+            wsrep_node_name=morpheus-node01
+            wsrep_node_address=10.30.20.10
 
-             wsrep_sst_method=xtrabackup-v2
-             wsrep_sst_auth=sstuser:sstUserPassword
-             pxc_strict_mode=PERMISSIVE
-             wsrep_sync_wait=2
+            wsrep_sst_method=xtrabackup-v2
+            wsrep_sst_auth=sstuser:sstUserPassword
+            pxc_strict_mode=PERMISSIVE
+            wsrep_sync_wait=2
 
-             skip-log-bin
-             default_storage_engine=InnoDB
-             innodb_autoinc_lock_mode=2
-             default-character-set = utf8
-             default_time_zone = "+00:00"
+            skip-log-bin
+            default_storage_engine=InnoDB
+            innodb_autoinc_lock_mode=2
+            default-character-set = utf8
+            default_time_zone = "+00:00"
 
       .. tab-container:: tab2
          :title: DB Node 2
