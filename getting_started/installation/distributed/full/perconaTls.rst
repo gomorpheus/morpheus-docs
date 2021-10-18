@@ -178,6 +178,7 @@ Add [mysqld] to my.cnf in /etc/
          [mysqld]
          pxc_encrypt_cluster_traffic=ON
          max_connections = 300
+         max_allowed_packet = 67108864
          wsrep_provider=/usr/lib64/galera3/libgalera_smm.so
 
          wsrep_cluster_name=morpheusdb-cluster
@@ -209,6 +210,7 @@ Add [mysqld] to my.cnf in /etc/
          [mysqld]
          pxc_encrypt_cluster_traffic=ON
          max_connections = 300
+         max_allowed_packet = 67108864
          wsrep_provider=/usr/lib64/galera3/libgalera_smm.so
 
          wsrep_cluster_name=morpheusdb-cluster
@@ -239,6 +241,7 @@ Add [mysqld] to my.cnf in /etc/
          [mysqld]
          pxc_encrypt_cluster_traffic=ON
          max_connections = 300
+         max_allowed_packet = 67108864
          wsrep_provider=/usr/lib64/galera3/libgalera_smm.so
 
          wsrep_cluster_name=morpheusdb-cluster

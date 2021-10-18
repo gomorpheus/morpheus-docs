@@ -13,7 +13,7 @@ Requirements
 Once you have your database installed and configured:
 
 
-#. The |morpheus| appliance uses the utf8 character set and the UTC+0 timezone. Set the variables below on your external database clusters to prevent timestamp errors from being thrown later in |morpheus| UI. For all distributions, the configuration is set in /etc/my.cnf for each database node.
+#. The |morpheus| appliance requires a few configuration options in MySQL. |morpheus| uses the utf8 character set and the UTC+0 timezone. Set the variables below on your external database clusters to prevent timestamp errors from being thrown later in |morpheus| UI. |morpheus| also requires a 64M packet size for larger job results.  For all distributions, the configuration is set in /etc/my.cnf for each database node.
 
    .. code-block:: bash
 
@@ -22,6 +22,7 @@ Once you have your database installed and configured:
 
     [mysqld]
     default_time_zone = "+00:00"
+    max_allowed_packet = 67108864
 
 #. Create the Database you will be using with morpheus.
 
