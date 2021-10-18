@@ -180,7 +180,7 @@ Add [mysqld] to my.cnf in /etc/
 
             [mysqld]
             pxc_encrypt_cluster_traffic=ON
-            max_connections = 300
+            max_connections = 451
             max_allowed_packet = 67108864
             wsrep_provider=/usr/lib64/galera3/libgalera_smm.so
             wsrep_provider_options="cert.optimistic_pa=NO"
@@ -212,7 +212,7 @@ Add [mysqld] to my.cnf in /etc/
 
             [mysqld]
             pxc_encrypt_cluster_traffic=ON
-            max_connections = 300
+            max_connections = 451
             wsrep_provider=/usr/lib64/galera3/libgalera_smm.so
             wsrep_provider_options="cert.optimistic_pa=NO"
             wsrep_certification_rules='OPTIMIZED'
