@@ -74,6 +74,6 @@ As of Morpheus version 4.1.0, tagging support is included for vCenter in additio
 
 Tags can be created on-demand when provisioning from the 'CONFIGURE' tab of the 'CREATE INSTANCE' wizard (Provisioning > Instances). Within the 'Metadata' drawer, you will see sets of fields to enter key/value pairs. On creation of the instance, this metadata will be synced into vCenter.
 
-'Option Types' from your library can also be exported as metadata for use with vCenter. When adding or editing a new Option Type (Provisioning > Library > OPTION TYPES), simply mark the box labeled 'EXPORT AS METADATA'. The 'FIELD NAME' becomes the tag category in VMWare.
+'Inputs' from your library can also be exported as metadata for use with vCenter. When adding or editing a new Input (Provisioning > Library > InputS), simply mark the box labeled 'EXPORT AS METADATA'. The 'FIELD NAME' becomes the tag category in VMWare.
 
 .. image:: /images/integration_guides/clouds/tagging_at_provisioning.png

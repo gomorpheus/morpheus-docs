@@ -135,7 +135,7 @@ Use Case:
                   state: present
     .. NOTE:: ``{{ morpheus['instance']['hostname'] }}`` is the format of using |morpheus| Variables
    Create a user with a name which you enter during provisioning using a custom Instance type.
-    This instance type has a `Text` Option type that provides a text box to enter a username. The fieldName of the option type in this case would be `username`. Below is the playbook.
+    This instance type has a `Text` Input that provides a text box to enter a username. The fieldName of the Input in this case would be `username`. Below is the playbook.
      .. code-block:: bash
 
       ---

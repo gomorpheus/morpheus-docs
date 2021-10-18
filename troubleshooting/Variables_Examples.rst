@@ -59,7 +59,7 @@ HTTP Body Example: ``{"name": "<%= instance.createdByUsername %>"}``
 
 .. image:: /images/troubleshooting/Tags-Variable-Spot
 
-.. NOTE:: customOptions values are defined from custom Option Types.
+.. NOTE:: customOptions values are defined from custom Inputs.
 
 Common Examples
 ---------------
@@ -438,7 +438,7 @@ Group (Site)
 		name
 	}
 
-Custom Options (Option Types)
+Custom Options (Inputs)
 -----------------------------
 
 .. code-block:: bash

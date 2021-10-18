@@ -65,7 +65,7 @@ Enable Scaling (Horizontal)
   Enables Instances with this layout to use scaling features
 Environment Variables
   Custom environment variables to be added to the Instance when provisioned
-Option Types
-  Search for and select one or multiple Option Types to add to the Layout. Option Type input fields (except for Hidden Option Types) will appear in Provisioning, App, Blueprint, and Cloning wizards when this layout is selected
+Inputs
+  Search for and select one or multiple Inputs to add to the Layout. Inputs (except for Hidden Inputs) will appear in Provisioning, App, Blueprint, and Cloning wizards when this layout is selected
 Nodes
   Single or multiple nodes can be added to a Layout by searching for and selecting the Node(s)

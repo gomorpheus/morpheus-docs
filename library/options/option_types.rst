@@ -1,21 +1,21 @@
 Inputs
 ------
 
-Option Types are custom input fields that can be added to Instance Types and Layouts, then presented in Instance, App, and Cloning wizards. The resulting value is available in the Instance config map as <%=customOptions.fieldName%>. The fieldName and value can also be exported as Tags.
+Inputs are custom input fields that can be added to Instance Types and Layouts, then presented in Instance, App, and Cloning wizards. The resulting value is available in the Instance config map as <%=customOptions.fieldName%>. The fieldName and value can also be exported as Tags.
 
 .. image:: /images/provisioning/library/new_option_type.png
    :align: center
    :scale: 40%
 
-Create Option Type
+Create Input
 ^^^^^^^^^^^^^^^^^^
 
 .. note:: All possible fields listed. Displayed fields depend on ``TYPE`` selection
 
 NAME
- Name of the Option Type
+ Name of the Input
 DESCRIPTION
- Description for reference in Option Type list view
+ Description for reference in Input list view
 FIELD NAME
  This is the input fieldName property that the value gets assigned to
 
@@ -24,11 +24,11 @@ FIELD NAME
 EXPORT AS TAG
  Creates Tags for fieldName/value (key/value) on Instances
 DEPENDENT FIELD
- The Field Name value for a field that will reload this Option List to present a different set of selections. Take a look at the section below on Cascading Option Types as well as the `associated article <https://support.morpheusdata.com/s/article/How-to-create-option-lists?language=en_US>`_ in our KnowledgeBase for documented examples of this feature
+ The Field Name value for a field that will reload this Option List to present a different set of selections. Take a look at the section below on Cascading Inputs as well as the `associated article <https://support.morpheusdata.com/s/article/How-to-create-option-lists?language=en_US>`_ in our KnowledgeBase for documented examples of this feature
 VISIBILITY FIELD
- A Field Name and selection value that will trigger this field to become visible. Currently, this only works when the Option Type is associated with a Service Catalog Item and viewed from the Service Catalog Persona perspective. See the section below on the Visibility Field for instructions on configuring this value
+ A Field Name and selection value that will trigger this field to become visible. Currently, this only works when the Input is associated with a Service Catalog Item and viewed from the Service Catalog Persona perspective. See the section below on the Visibility Field for instructions on configuring this value
 DISPLAY VALUE ON DETAILS
- When selected, the Option Type label and value (label: value) will be visible in a list of custom options on the Instance detail page
+ When selected, the Input label and value (label: value) will be visible in a list of custom options on the Instance detail page
 TYPE
   - **Text:** Text Input Field
 
@@ -52,7 +52,7 @@ PLACEHOLDER
 DEFAULT VALUE
  Pre-populates field with a default value
 HELP BLOCK
- Helpful text that will appear under your Option Type field to inform users about their selection
+ Helpful text that will appear under your Input field to inform users about their selection
 REQUIRED
  Prevents User from proceeding without setting value
 DEFAULT CHECKED
@@ -60,18 +60,18 @@ DEFAULT CHECKED
 OPTION LIST
  For ``Select List`` types, select a pre-existing Option List to set dropdown values
 
- .. NOTE:: ``Select List`` and ``Typeahead`` Option Types require creation and association of an Option List
+ .. NOTE:: ``Select List`` and ``Typeahead`` Inputs require creation and association of an Option List
 
-Cascading Option Types
+Cascading Inputs
 ^^^^^^^^^^^^^^^^^^^^^^
 
-One powerful facet of |morpheus| Option Types is the ability to present users with different lists of input options based on their selections in other Option Types within the same wizard or modal. One common example, which is fully illustrated in this section, is to have a user select:
+One powerful facet of |morpheus| Inputs is the ability to present users with different lists of input options based on their selections in other Inputs within the same wizard or modal. One common example, which is fully illustrated in this section, is to have a user select:
 
 - The Group they wish to provision into...
 - Then select the target Cloud from a list limited to Clouds which are in the selected Group...
 - Then select the target network from a list limited to networks which are available to the selected Cloud *and* Group
 
-To set this up, we'll first configure our Option Types (custom option fields that can be applied to Instance Types and other |morpheus| constructs) and Option Lists (dynamic lists of possible choices which can be associated with Option Types and presented in a dropdown or typeahead format). Once the custom options are configured, we'll associate them with a new service catalog item and take a look at how the user would interact with them.
+To set this up, we'll first configure our Inputs (custom option fields that can be applied to Instance Types and other |morpheus| constructs) and Option Lists (dynamic lists of possible choices which can be associated with Inputs and presented in a dropdown or typeahead format). Once the custom options are configured, we'll associate them with a new service catalog item and take a look at how the user would interact with them.
 
 Group Custom Option
 ```````````````````
@@ -86,12 +86,12 @@ I've called my Option List "Groups" and selected "Groups" from the OPTION LIST m
     results.push({name: data[x].name, value:data[x].id});
   }
 
-After saving the Option List, create the Option Type that presents the list we just created. I gave my Option Type the name of "Selected Group", field name of "selectedGroup", and label of "Group". For type, choose "Select List" and a new field will appear at the bottom of the modal where we can select the Option List we just created. With this configuration, the Option Type will present as a dropdown list containing the options called from our Option List.
+After saving the Option List, create the Input that presents the list we just created. I gave my Input the name of "Selected Group", field name of "selectedGroup", and label of "Group". For type, choose "Select List" and a new field will appear at the bottom of the modal where we can select the Option List we just created. With this configuration, the Input will present as a dropdown list containing the options called from our Option List.
 
 Cloud Custom Option
 ```````````````````
 
-Adding the Option List and Option Type for Clouds will be similar to the prior step with the exception that we will be including a request script which effectively filters the list of available Clouds to only those associated with the selected group. Follow the same process to start a new Option List, I've configured mine as follows:
+Adding the Option List and Input for Clouds will be similar to the prior step with the exception that we will be including a request script which effectively filters the list of available Clouds to only those associated with the selected group. Follow the same process to start a new Option List, I've configured mine as follows:
 
 - **NAME:** Parsed Clouds
 - **TYPE:** Morpheus Api
@@ -115,7 +115,7 @@ We also need a translation script which will be identical to the one used previo
     }
   }
 
-We also need to create an Option Type to house this Option List. This process will be very similar to creating the previous Option Type except that we need to set selectedGroup as the Dependent Field. Setting a dependent field on an Option Type will trigger it to reload each time a selection is made in the indicated option. My configuration is as follows:
+We also need to create an Input to house this Option List. This process will be very similar to creating the previous Input except that we need to set selectedGroup as the Dependent Field. Setting a dependent field on an Input will trigger it to reload each time a selection is made in the indicated option. My configuration is as follows:
 
 - **NAME:** Parsed Cloud
 - **FIELD NAME:** parsedCloud
@@ -129,7 +129,7 @@ Save your changes once done.
 Network Custom Option
 `````````````````````
 
-Finally, we'll create and Option List/Option Type pair for network selection. In this case, it will be dependent on both the Group and Cloud selection. My Option List configuration is below:
+Finally, we'll create and Option List/Input pair for network selection. In this case, it will be dependent on both the Group and Cloud selection. My Option List configuration is below:
 
 - **NAME:** Parsed Networks
 - **TYPE:** Morpheus Api
@@ -154,7 +154,7 @@ Finally, we'll create and Option List/Option Type pair for network selection. In
     }
   }
 
-The Option Type is configured as follows:
+The Input is configured as follows:
 
 - **NAME:** Parsed Networks
 - **FIELD NAME:** parsedNetwork
@@ -166,26 +166,26 @@ The Option Type is configured as follows:
 Setting Custom Options at Provision Time
 ````````````````````````````````````````
 
-At this point, our dependent options are ready to be applied to custom Instance Types, Workflows or Service Catalog items as needed. When creating them, we can select an unlimited number of Option Types from a typeahead field on the create modal and they will be presented when a user goes to provision that element or run that Workflow. As an example, I've created a Service Catalog item that incorporates the three Option Types we've created. You can see how the dependent fields reload and present different options based on my selections.
+At this point, our dependent options are ready to be applied to custom Instance Types, Workflows or Service Catalog items as needed. When creating them, we can select an unlimited number of Inputs from a typeahead field on the create modal and they will be presented when a user goes to provision that element or run that Workflow. As an example, I've created a Service Catalog item that incorporates the three Inputs we've created. You can see how the dependent fields reload and present different options based on my selections.
 
 .. image:: /images/provisioning/library/cascadingOptionList.gif
 
 Visibility Field
 ^^^^^^^^^^^^^^^^
 
-The Visibility field for Option Types allows users to set conditions under which the Option Type being created or edited is displayed. A very simple visibility configuration would look like the following: ``config.customOptions.color:(red)`` where "color" represents the ``fieldName`` for any other Option Type which will determine the visibility of the current one and "red" represents any JavaScript regular expression that matches to the values that meet your desired conditions.
+The Visibility field for Inputs allows users to set conditions under which the Input being created or edited is displayed. A very simple visibility configuration would look like the following: ``config.customOptions.color:(red)`` where "color" represents the ``fieldName`` for any other Input which will determine the visibility of the current one and "red" represents any JavaScript regular expression that matches to the values that meet your desired conditions.
 
-Expanding on the simplified example above, we could trigger visibility based on any one of multiple selections from the same Option Type by using a different regular expression, such as ``config.customOptions.color:(red|blue|yellow)``. Additionally, we aren't restricted to the conditions of just one Option Type to determine visibility as the following would also be valid: ``config.customOptions.color:(red|blue|yellow),config.customOptions.shape:(square)``. In the previous example, the Option Type "Color" would have to be set to red, blue, or yellow `OR` the Option Type "Shape" would have to be set to square in order to trigger visibility of the Option Type currently being configured. Prepend the previous example with ``matchAll::`` in order to require both conditions to be met rather than one or the other (ex. ``matchAll::config.customOptions.color:(red|blue|yellow),config.customOptions.shape:(square)``).
+Expanding on the simplified example above, we could trigger visibility based on any one of multiple selections from the same Input by using a different regular expression, such as ``config.customOptions.color:(red|blue|yellow)``. Additionally, we aren't restricted to the conditions of just one Input to determine visibility as the following would also be valid: ``config.customOptions.color:(red|blue|yellow),config.customOptions.shape:(square)``. In the previous example, the Input "Color" would have to be set to red, blue, or yellow `OR` the Input "Shape" would have to be set to square in order to trigger visibility of the Input currently being configured. Prepend the previous example with ``matchAll::`` in order to require both conditions to be met rather than one or the other (ex. ``matchAll::config.customOptions.color:(red|blue|yellow),config.customOptions.shape:(square)``).
 
-Putting it all together, you'll first configure visibility for your selected Option Types as described above. You can see in the screenshot below I've set the Option Type being edited to have a visibility dependent on another Option Type which you can see in the background.
+Putting it all together, you'll first configure visibility for your selected Inputs as described above. You can see in the screenshot below I've set the Input being edited to have a visibility dependent on another Input which you can see in the background.
 
 .. image:: /images/provisioning/optionTypes/1optionType.png
 
-Next, ensure the relevant Option Types are associated with the Service Catalog Item (Tools > Self Service).
+Next, ensure the relevant Inputs are associated with the Service Catalog Item (Tools > Self Service).
 
 .. image:: /images/provisioning/optionTypes/2configCatalogItem.png
   :width: 50%
 
-Finally, when Service Catalog Persona users interact with my Catalog Item, they will be able to toggle additional Option Types to be visible based on their selections.
+Finally, when Service Catalog Persona users interact with my Catalog Item, they will be able to toggle additional Inputs to be visible based on their selections.
 
 .. image:: /images/provisioning/optionTypes/3toggleOption.gif

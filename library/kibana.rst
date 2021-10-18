@@ -4,12 +4,12 @@ Library Example: Kibana
 Overview
 ^^^^^^^^
 
-In this example we will build out a new Kibana Library item to automate the installation and configuration of Kibana. This simple example utilizes all sections of the Library including Option Types, File Templates and Scripts.
+In this example we will build out a new Kibana Library item to automate the installation and configuration of Kibana. This simple example utilizes all sections of the Library including Inputs, File Templates and Scripts.
 
 #. Configure Virtual Image
 #. Add Kibana Instance Type
-#. Add Option Type for ElasticSearch URL
-#. Add Option Type for Kibana Version
+#. Add Input for ElasticSearch URL
+#. Add Input for Kibana Version
 #. Add File Template for kibana.yml
 #. Add Script for Kibana installation
 #. Add Kibana Node Type(s)
@@ -42,8 +42,8 @@ ICON
   Kibana-Logo-Color-H.png
 VISIBILITY
   Private, as at this time we will only offer this Instance Type for the master Tenant. If we wanted to offer it to all Tenants, Visibility should be set to Public and then exposed on the Tenant Roles for access.
-Option Types
-  We could set the ``ElasticSearch URL`` and ``Kibana Version`` Option Types on this Instance Type, but we will set them on the layout instead in case we want to define the version and/or leave the Elasticsearch URL unconfigured with different layout options.
+Inputs
+  We could set the ``ElasticSearch URL`` and ``Kibana Version`` Inputs on this Instance Type, but we will set them on the layout instead in case we want to define the version and/or leave the Elasticsearch URL unconfigured with different layout options.
 ENVIRONMENT PREFIX
   We will add a ``kibana`` Environment Prefix to identify evars
 ENVIRONMENT VARIABLES
@@ -57,10 +57,10 @@ Support Deployments
 
 .. image:: /images/provisioning/library/kibana_instance_type.png
 
-Add Option Type for ElasticSearch URL
+Add Input for ElasticSearch URL
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-When provisioning Kibana, we want to define the Elasticsearch url in the ``kibana.yml``. To allow the user to define which Elasticsearch instance Kibana will connect with, we will define an Option Type that will be a variable in the ``kibana.yml``, which we will be defining with a File Template.
+When provisioning Kibana, we want to define the Elasticsearch url in the ``kibana.yml``. To allow the user to define which Elasticsearch instance Kibana will connect with, we will define an Input that will be a variable in the ``kibana.yml``, which we will be defining with a File Template.
 
 NAME
   kibana es host
@@ -83,10 +83,10 @@ Required
 
 .. image:: /images/provisioning/library/kibana_eshost_option.png
 
-Add Option Type for Kibana Version
+Add Input for Kibana Version
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-For this example we will be offering version selection at provision time through an Option Type. While we could add version selection by adding Node Types and/or Layouts for each version, because we will be installing Kibana with a script, we can grab the version though an Option Type and inject the associated url into the script using an Option type variable.
+For this example we will be offering version selection at provision time through an Input. While we could add version selection by adding Node Types and/or Layouts for each version, because we will be installing Kibana with a script, we can grab the version though an Input and inject the associated url into the script using an Input variable.
 
 NAME
   kibana version

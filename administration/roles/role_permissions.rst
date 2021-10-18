@@ -631,8 +631,8 @@ Role Mappings
     -
   * - Provisioning: Library
     - None, Read, Full
-    - Determines access to the Provisioning > Library page, including the Instance Types, Layouts, Node Types, Option Types, Option Lists, File Templates, Scripts, Spec Templates, and Cluster Layouts tabs.
-    - The Provisioning Library pages is where the various library elements are created and maintained. These include: Instance Types, Layouts, Node Types, Option Types, Option Lists, File Templates, Scripts, Spec Templates, and  Cluster Layouts.
+    - Determines access to the Provisioning > Library page, including the Instance Types, Layouts, Node Types, Inputs, Option Lists, File Templates, Scripts, Spec Templates, and Cluster Layouts tabs.
+    - The Provisioning Library pages is where the various library elements are created and maintained. These include: Instance Types, Layouts, Node Types, Inputs, Option Lists, File Templates, Scripts, Spec Templates, and  Cluster Layouts.
     - This permission is recommended for those responsible for managing the library.
     -
   * - Provisioning: Scheduling - Execute

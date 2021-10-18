@@ -1,7 +1,7 @@
 Self Service
 ============
 
-The Self Service catalog (Tools > Self Service) is where administrators can create easily-deployable items for consumption by users operating under the "Service Catalog" Persona in |morpheus|. Catalog items can be fully-configured |morpheus| Instances or Blueprints, complete with user input through |morpheus| Option Types, automation Workflows, and more. The catalog items are presented in a simplified interface for ease of deployment without sacrificing configurability for administrators. All available catalog items are built in the Self Service area and users will see relevant items in their catalogs based on Role permissions.
+The Self Service catalog (Tools > Self Service) is where administrators can create easily-deployable items for consumption by users operating under the "Service Catalog" Persona in |morpheus|. Catalog items can be fully-configured |morpheus| Instances or Blueprints, complete with user input through |morpheus| Inputs, automation Workflows, and more. The catalog items are presented in a simplified interface for ease of deployment without sacrificing configurability for administrators. All available catalog items are built in the Self Service area and users will see relevant items in their catalogs based on Role permissions.
 
 .. NOTE:: For more on Personas and using the Service Catalog persona, see the Personas sections of our documentation.
 
@@ -35,7 +35,7 @@ Configure the following:
 - **LOGO:** Select or upload a logo to be associated with this catalog item
 - **CONFIG:** Enter, view, or edit Instance config here. Click :guilabel:`CONFIGURATION WIZARD` to build this catalog item through the |morpheus| Add Instance wizard
 - **CONTENT:** Optionally include documentation content for this Catalog Item. Markdown-formatted text is accepted and displayed appropriately when the item is ordered from the Service Catalog. A new Catalog Item-type Wiki entry will also be added containing this information.
-- **OPTION TYPES:** If desired, select Option Types to present users with mandatory or optional selections prior to provisioning
+- **INPUTS:** If desired, select Inputs to present users with mandatory or optional selections prior to provisioning
 
 Once done, click :guilabel:`SAVE CHANGES`
 
@@ -80,7 +80,7 @@ Configure the following:
                 cloud: Dev AWS
 
 - **CONTENT:** Optionally include documentation content for this Catalog Item. Markdown-formatted text is accepted and displayed appropriately when the item is ordered from the Service Catalog. A new Catalog Item-type Wiki entry will also be added containing this information.
-- **OPTION TYPES:** If desired, select Option Types to present users with mandatory or optional selections prior to provisioning
+- **INPUTS:** If desired, select Inputs to present users with mandatory or optional selections prior to provisioning
 
   .. note:: App spec custom option variables should be single quoted in YAML: ``cloud: '<%= customOption.cloud %>'``
 

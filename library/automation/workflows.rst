@@ -74,7 +74,7 @@ Add Workflow
 #. Click the :guilabel:`+ Add` dropdown and select a Workflow type (Operational or Provisioning, see the section above for more on Workflow type differences)
 #. From the New Workflow Wizard input a name for the workflow
 #. Optionally input a description and a target platform
-#. Add Tasks and Option Types using the typeahead fields, Tasks must be added to the appropriate phases for Provisioning Workflows
+#. Add Tasks and Inputs using the typeahead fields, Tasks must be added to the appropriate phases for Provisioning Workflows
 #. If multiple tasks are added to the same execution phase, their execution order can be changed by selecting the grip icon and dragging the task to the desired execution order
 #. For multi-Tenant environments, select Public or Private visibility for the Workflow
 #. For Operational Workflows, optionally mark "Allow Custom Config" from the Advanced Options section if needed. See the next section for more on this selection

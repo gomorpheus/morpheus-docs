@@ -390,14 +390,14 @@ LDAP Option List Fields
   TRANSLATION SCRIPT
     Create a JS script to translate the result data object into an array containing objects with properties 'name' and 'value'. The input data is provided as 'data' and the result should be put on the global variable 'results'.
 
-.. NOTE:: Option Lists are set on one or multiple ``Select List`` or ``Typeahead`` Option Types. The Option Type is then set on an Instance Type, Layout, Cluster Layout, and/or Operational Workflow for input during provisioning or execution.
+.. NOTE:: Option Lists are set on one or multiple ``Select List`` or ``Typeahead`` Inputs. The Input is then set on an Instance Type, Layout, Cluster Layout, and/or Operational Workflow for input during provisioning or execution.
 
 Creating an Option List Based on an LDAP Query
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 In Morpheus version 4.2.1 and higher, Option Lists can be populated from LDAP queries. This gives users the ability to search Active Directory, capture objects, and present them as custom options where needed.
 
-It's recommended that you connect LDAP-type Option Lists to Typeahead-type Option Types as the list of returned selections can be very large. This also allows you to select multiple options from the list, presuming you've allowed for that when creating the Option Type.
+It's recommended that you connect LDAP-type Option Lists to Typeahead-type Inputs as the list of returned selections can be very large. This also allows you to select multiple options from the list, presuming you've allowed for that when creating the Input.
 
 Populating LDAP-type Option Lists requires knowledge of LDAP query syntax. This guide provides one example and there are many publicly-available resources for help writing additional queries.
 

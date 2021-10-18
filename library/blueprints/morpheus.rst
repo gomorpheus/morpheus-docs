@@ -111,7 +111,7 @@ To get started, it may be best to look at a simple App Blueprint configuration. 
                   lb: HTTP
 
 
-Theres some useful things to look at in the above docker example. One is there are different objects based on the different available configuration options for the target provision type. These options are actually data driven and can be extracted from the option types api in the morpheus api doc. That is a useful resource to look at while building morpheus blueprints or by using the `morpheus-cli` which provides prompts for helping build custom morpheus app blueprints.
+Theres some useful things to look at in the above docker example. One is there are different objects based on the different available configuration options for the target provision type. These options are actually data driven and can be extracted from the Inputs api in the morpheus api doc. That is a useful resource to look at while building morpheus blueprints or by using the `morpheus-cli` which provides prompts for helping build custom morpheus app blueprints.
 
 
 .. image:: /images/provisioning/templates_301_1.png

@@ -30,8 +30,8 @@ Icon
 Visibility
   * Private: Only accessible by assigned Accounts/Tenants
   * Public: Accessible by all Accounts/Tenants
-Option Types
-  Custom options presented to the user at provision time, Option Types are also created and stored in Morpheus Library
+Inputs
+  Custom options presented to the user at provision time, Inputs are also created and stored in Morpheus Library
 Environment Prefix
   Used for exportable environment variables when tying Instance Types together in App contexts. If not specified, a name will be generated
 Environment Variables
