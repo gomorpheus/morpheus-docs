@@ -181,7 +181,7 @@ Add [mysqld] to my.cnf in /etc/
             [mysqld]
             pxc_encrypt_cluster_traffic=ON
             max_connections = 451
-            max_allowed_packet = 67108864
+            max_allowed_packet = 256M
             wsrep_provider=/usr/lib64/galera3/libgalera_smm.so
             wsrep_provider_options="cert.optimistic_pa=NO"
             wsrep_certification_rules='OPTIMIZED'
@@ -189,7 +189,7 @@ Add [mysqld] to my.cnf in /etc/
             wsrep_cluster_name=morpheusdb-cluster
             wsrep_cluster_address=gcomm://10.30.20.10,10.30.20.11,10.30.20.12
 
-            wsrep_node_name=morpheus-node01
+            wsrep_node_name=morpheus-db-node01
             wsrep_node_address=10.30.20.10
 
             wsrep_sst_method=xtrabackup-v2
@@ -213,6 +213,7 @@ Add [mysqld] to my.cnf in /etc/
             [mysqld]
             pxc_encrypt_cluster_traffic=ON
             max_connections = 451
+            max_allowed_packet = 256M
             wsrep_provider=/usr/lib64/galera3/libgalera_smm.so
             wsrep_provider_options="cert.optimistic_pa=NO"
             wsrep_certification_rules='OPTIMIZED'
@@ -247,6 +248,7 @@ Add [mysqld] to my.cnf in /etc/
             [mysqld]
             pxc_encrypt_cluster_traffic=ON
             max_connections = 451
+            max_allowed_packet = 256M
             wsrep_provider=/usr/lib64/galera3/libgalera_smm.so
             wsrep_provider_options="cert.optimistic_pa=NO"
             wsrep_certification_rules='OPTIMIZED'
@@ -256,7 +258,7 @@ Add [mysqld] to my.cnf in /etc/
 
             # for wsrep_cluster_address=gcomm://Enter the IP address of the primary node first then remaining nodes. Separating the ip addresses with commas
 
-            wsrep_node_name=morpheus-node03
+            wsrep_node_name=morpheus-db-node03
             wsrep_node_address=10.30.20.12
 
             wsrep_sst_method=xtrabackup-v2
