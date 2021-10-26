@@ -74,7 +74,7 @@ When provisioning an Instance into a Cloud where Commvault is set as the backup 
 Viewing Backups
 ^^^^^^^^^^^^^^^
 
-After provisioning, users can review backup details from the Instance detail page (Provisioning > Instances > Selected Instance > Backups tab). Additionally, backups can be configured here if this was not done during provision time by clicking :guilabel:`ADD BACKUP`. Users can also run one-off backups from this page by opening the ACTIONS menu and clicking Backup. Backups will still continue to run based on the schedule configured in their job but additional runs can be made on-demand this way.
+After provisioning, users can review backup details from the Instance detail page (|ProIns| > Selected Instance > Backups tab). Additionally, backups can be configured here if this was not done during provision time by clicking :guilabel:`ADD BACKUP`. Users can also run one-off backups from this page by opening the ACTIONS menu and clicking Backup. Backups will still continue to run based on the schedule configured in their job but additional runs can be made on-demand this way.
 
 Within the Backups section (Backups > Backups) users can also view all currently-configured backups and whether or not recent backup runs have succeeded.
 
@@ -83,4 +83,4 @@ Within the Backups section (Backups > Backups) users can also view all currently
 Restore an Instance from Commvault
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-For Instances with current backups, the Backup Results section will be populated on the Instance detail page (Provisioning > Instances > Selected Instance > Backup tab). If the Instance needs restored, simply click Actions (within the Backup Results area, not the main actions menu for the Instance itself) and then click Restore. The status icon at the top of the Instance detail page will turn green once this process is finished and the Instance will be fully restored from your selected backup.
+For Instances with current backups, the Backup Results section will be populated on the Instance detail page (|ProIns| > Selected Instance > Backup tab). If the Instance needs restored, simply click Actions (within the Backup Results area, not the main actions menu for the Instance itself) and then click Restore. The status icon at the top of the Instance detail page will turn green once this process is finished and the Instance will be fully restored from your selected backup.

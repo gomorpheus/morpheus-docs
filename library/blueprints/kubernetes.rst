@@ -3,7 +3,7 @@ Kubernetes Blueprints
 
 |morpheus| allows you to store Kubernetes configuration YAML files for easy deployment on-demand. Kubernetes Blueprints can be built by pulling in Kubernetes spec stored as a |morpheus| Spec Template object, those tracked under version control in a Git repository, or you can write them directly in the New Blueprint modal.
 
-To create a new Kubernetes Blueprint, navigate to Provisioning > Blueprints. Click :guilabel:`+ ADD`.
+To create a new Kubernetes Blueprint, navigate to |LibBluApp|. Click :guilabel:`+ ADD`.
 
 On the Name tab of the New Blueprint modal, enter a name for your new Blueprint. In the Type dropdown menu, select Kubernetes. :guilabel:`NEXT`
 
@@ -37,4 +37,4 @@ To consume YAML configuration files tracked in a Git repository:
 
 Once finished, click :guilabel:`COMPLETE`.
 
-Your new Kubernetes Blueprint is now saved and should be visible in the list of Blueprints. Blueprints are deployed in the Provisioning > Apps section of |morpheus|. See the Apps section of |morpheus| docs for more information on that process.
+Your new Kubernetes Blueprint is now saved and should be visible in the list of Blueprints. Blueprints are deployed in the |ProApp| section of |morpheus|. See the Apps section of |morpheus| docs for more information on that process.

@@ -9,7 +9,7 @@ This guide is designed to help you get started and quickly get the most out of M
 Installation & Setup
 --------------------
 
-In the simplest configuration, |morpheus| needs one appliance server which will contain all the components necessary to orchestrate virtual machines and containers. Full requirements, including storage and networking considerations, can be found in |morpheus| documentation `here <https://docs.morpheusdata.com/en/latest/getting_started/requirements/requirements.html>`_. In order to provision any new Instances, hosts, or applications (or convert any discovered resources to managed resources) you will need a valid license. If you don't have one, you can request a community edition license for free at `Morpheus Hub <https://www.morpheushub.com>`_. Once obtained, the license can be applied in Administration > Settings > LICENSE. For more, take a look at our community edition `welcome package <https://www.morpheusdata.com/community-welcome>`_.
+In the simplest configuration, |morpheus| needs one appliance server which will contain all the components necessary to orchestrate virtual machines and containers. Full requirements, including storage and networking considerations, can be found in |morpheus| documentation `here <https://docs.morpheusdata.com/en/latest/getting_started/requirements/requirements.html>`_. In order to provision any new Instances, hosts, or applications (or convert any discovered resources to managed resources) you will need a valid license. If you don't have one, you can request a community edition license for free at `Morpheus Hub <https://www.morpheushub.com>`_. Once obtained, the license can be applied in |AdmSetLic|. For more, take a look at our community edition `welcome package <https://www.morpheusdata.com/community-welcome>`_.
 
 Groups
 ------
@@ -294,7 +294,7 @@ Since this guide is focused on working within an Azure cloud that we integrated 
 
   .. NOTE:: The above command will install some core dependencies for cloud-init and automation later as you work with your provisioned instances. For example, we install Git here as it is used for Ansible automation. If you had no plans to use Ansible, this installation could be skipped. The dracut-modules-growroot is responsible for resizing the root partition upon initial boot which was potentially adjusted during provisioning.
 
-  One key benefit of using cloud-init is that we don't have to lock credentials into the blueprint. We recommend configuring a default cloud-init user that will get created automatically when the VM is booted by cloud-init. We can define that default user in `Administration > Provisioning > Cloud-Init`.
+  One key benefit of using cloud-init is that we don't have to lock credentials into the blueprint. We recommend configuring a default cloud-init user that will get created automatically when the VM is booted by cloud-init. We can define that default user in `|AdmSetPro| > Cloud-Init`.
 
   **Network Interfaces**
 
@@ -369,7 +369,7 @@ Provisioning Your First Instance
 
 At this point, the groundwork is laid and we are ready to attempt our first new provisioning. As a first Instance, we'll provision an Apache web server to our Azure cloud. |morpheus| includes a very robust catalog of pre-configured Instance types. We'll use one of these included catalog items for this guide but you'll likely also need to prep your own custom images and Instance types to make available to your users. Much more on this can be found elsewhere in |morpheus| documentation.
 
-Navigate to `Provisioning > Instances`. If any Instances are currently provisioned, we will see them listed here. To start a new Instance we click :guilabel:`+ ADD` to open the "CREATE INSTANCE" wizard. We'll scroll down to and select the Apache instance type and click "NEXT".
+Navigate to `|ProIns|`. If any Instances are currently provisioned, we will see them listed here. To start a new Instance we click :guilabel:`+ ADD` to open the "CREATE INSTANCE" wizard. We'll scroll down to and select the Apache instance type and click "NEXT".
 
 .. image:: /images/azureguideimages/8createInstance.png
 
@@ -379,7 +379,7 @@ From the "CONFIGURE" tab, we're presented with a number of options. The options 
 
 - **LAYOUT**: Includes options such as the base OS, custom layouts will also be here when available
 
-- **PLAN**: Select the resource plan for your instance. Some plans have minimum resource limits, |morpheus| will only show plans at or above these limits. User-defined plans can also be created in `Administration > Plans & Pricing`.
+- **PLAN**: Select the resource plan for your instance. Some plans have minimum resource limits, |morpheus| will only show plans at or above these limits. User-defined plans can also be created in `|AdmPla|`.
 
 - **VOLUMES**: The minimum disk space is set by the plan, this value may be locked if you've selected a custom plan that defines the volume size
 
@@ -402,11 +402,11 @@ Creating Your First Library Item
 
 In the prior section, we manually provisioned our first Instance. However, |morpheus| allows you to build a catalog of custom provisionable items to simplify and speed provisioning in the future. In this section, we'll build a catalog item and show how that can translate into quick Instance provisioning after configuration.
 
-.. NOTE:: Before starting this process, it's important to decide which virtual image you plan to use. If you're not using a |morpheus|-provided image, you'll want to ensure it's configured. You will not be able to complete this section without selecting an available image. In this example we will use a CentOS image that was previously configured in the |morpheus| library. If you need to configure your own images prior to starting this section, navigate to Provisioning > Virtual Images and click :guilabel:`+ ADD`. A deeper dive into image prep and virtual image configuration goes beyond the scope of this guide.
+.. NOTE:: Before starting this process, it's important to decide which virtual image you plan to use. If you're not using a |morpheus|-provided image, you'll want to ensure it's configured. You will not be able to complete this section without selecting an available image. In this example we will use a CentOS image that was previously configured in the |morpheus| library. If you need to configure your own images prior to starting this section, navigate to |LibVir| and click :guilabel:`+ ADD`. A deeper dive into image prep and virtual image configuration goes beyond the scope of this guide.
 
 Provisionable elements in |morpheus| combine a Node Type(s), Layout(s), and an Instance Type. The `Overview section <https://docs.morpheusdata.com/en/latest/provisioning/library/library.html#overview>`_ of |morpheus| docs discusses these objects and how they work together in greater detail. Our first step here will be to create a Node Type which wrap the image itself with additional configuration, templates, and scripts. While not strictly required, creating the Node Type, Instance Type, and then the Layout is often a good workflow for creating Library items. That is the order we will follow in this guide.
 
-Navigate to `Provisioning > Library > NODE TYPES` and click :guilabel:`+ ADD`
+Navigate to |LibBluNod| and click :guilabel:`+ ADD`
 
 In this example, I am going to set the following options in the "NEW NODE TYPE" wizard:
 
@@ -446,7 +446,7 @@ Click :guilabel:`SAVE CHANGES`.
 
 .. image:: /images/azureguideimages/12addLayout.png
 
-At this point we've completed the setup work and can now provision the Instance we've created to our specifications. Navigate to `Provisioning > Instances` and click :guilabel:`+ ADD`. From the search bar we can search for the new Instance type we've created.
+At this point we've completed the setup work and can now provision the Instance we've created to our specifications. Navigate to `|ProIns|` and click :guilabel:`+ ADD`. From the search bar we can search for the new Instance type we've created.
 
 .. image:: /images/azureguideimages/13createCustomInstance.png
 
@@ -463,7 +463,7 @@ Automation and Configuration Management
 
 In this guide we will set up an Ansible integration, create a Task, add the Task to a Workflow, and run the Workflow against a new and existing Instance. If you've worked through this guide to this point, you should already have an Apache instance running. If you don't yet have that, provision one before continuing with this guide and ensure it's reachable on port 80.
 
-We'll first set up the Ansible integration, you can integrate with the sample repository referenced here or integrate with your own. Go to 'Administration > Integrations'. Click :guilabel:`+NEW INTEGRATION` and select Ansible from the dropdown menu. Fill in the following details:
+We'll first set up the Ansible integration, you can integrate with the sample repository referenced here or integrate with your own. Go to '|AdmInt|'. Click :guilabel:`+NEW INTEGRATION` and select Ansible from the dropdown menu. Fill in the following details:
 
 - **NAME**
 
@@ -479,7 +479,7 @@ We'll first set up the Ansible integration, you can integrate with the sample re
 
 Click :guilabel:`SAVE CHANGES`. You'll now see our new Ansible integration listed among any other configured integrations. If we click on this new integration to view detail, a green checkmark icon indicates the git repository has been fully synced.
 
-With the Ansible integration set up, we can now create a task that includes our playbook. Go to `Provisioning > Automation`, click :guilabel:`+ ADD`. We'll first set our "TYPE" value to Ansible Playbook so that the correct set of fields appear in the "NEW TASK" wizard. Set the following options:
+With the Ansible integration set up, we can now create a task that includes our playbook. Go to `|LibAut|`, click :guilabel:`+ ADD`. We'll first set our "TYPE" value to Ansible Playbook so that the correct set of fields appear in the "NEW TASK" wizard. Set the following options:
 
 - **NAME**
 
@@ -487,13 +487,13 @@ With the Ansible integration set up, we can now create a task that includes our 
 
 - **PLAYBOOK**: In our example case, enter 'playbook.yml'
 
-Click "SAVE CHANGES" to save our new task. We can test the new task on our Apache VM now by going to `Provisioning > Instances` and clicking into our VM. From the "ACTIONS" menu select "Run Task". From the "TASK" dropdown menu, select the task we just added and click "EXECUTE".
+Click "SAVE CHANGES" to save our new task. We can test the new task on our Apache VM now by going to `|ProIns|` and clicking into our VM. From the "ACTIONS" menu select "Run Task". From the "TASK" dropdown menu, select the task we just added and click "EXECUTE".
 
 To see the progress of the task, click on the "HISTORY" tab and click on the (i) button to the right of each entry in the list. In this case, we can also see the results of the task by clicking on the link in the "LOCATION" column of the "VMS" section.
 
-Now that our task is created, we can put it into a workflow. Back in `Provisioning > Automation` we will click on the "WORKFLOWS" tab. Click "+ADD" and select Provisioning Workflow. We'll give the new workflow a name and expand the Post Provision section. As we begin to type in the name of the task we've created, it should appear as a selection. Click "SAVE CHANGES".
+Now that our task is created, we can put it into a workflow. Back in `|LibAut|` we will click on the "WORKFLOWS" tab. Click "+ADD" and select Provisioning Workflow. We'll give the new workflow a name and expand the Post Provision section. As we begin to type in the name of the task we've created, it should appear as a selection. Click "SAVE CHANGES".
 
-Now that we have a Workflow, return to `Provisioning > Instances` and begin to provision another Apache instance. More detailed instructions on provisioning a new Apache instance are included earlier in this guide if needed. Now, when you reach the "AUTOMATION" section of the "CREATE INSTANCE" wizard, we have a workflow to select. From the "WORKFLOW" dropdown menu, select the workflow we just created and complete provisioning of the new instance.
+Now that we have a Workflow, return to `|ProIns|` and begin to provision another Apache instance. More detailed instructions on provisioning a new Apache instance are included earlier in this guide if needed. Now, when you reach the "AUTOMATION" section of the "CREATE INSTANCE" wizard, we have a workflow to select. From the "WORKFLOW" dropdown menu, select the workflow we just created and complete provisioning of the new instance.
 
 As the instance is provisioning, we can go to the "HISTORY" tab and see |morpheus| executing the tasks that were contained in our workflow.
 

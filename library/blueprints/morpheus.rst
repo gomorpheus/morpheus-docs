@@ -169,7 +169,7 @@ Blueprints can be create, edited or Exported in the RAW section when creating or
 
 To Export a Blueprint as JSON or YAML:
 
-#. Navigate to  ``Provisioning > Blueprints``
+#. Navigate to  ``|LibBluApp|``
 #. Edit an existing App by clicking on the pencil icon
 #. On the Edit Blueprint modal, select the Raw tab
 #. Select YAML or JSON from the dropdown in the top right

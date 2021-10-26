@@ -79,7 +79,7 @@ The process of scheduling a report is nearly identical to running on on-demand. 
 
 In this case, we can choose to scope the report by start and end dates, Groups, Clouds, Tenants, and can specific include or omit Instances based on tags. Additionally, we select the time schedule on which this report should automatically run.
 
-.. NOTE:: |morpheus| includes three schedules by default: Date and Time (run once at the specified time), Daily at Midnight, and Weekly on Sunday at Midnight. Any other listed scheduling periods are user-configured execution schedules (Provisioning > Automation > Execute Scheduling). Create a new execution schedule if none of the existing schedules work for your reporting needs.
+.. NOTE:: |morpheus| includes three schedules by default: Date and Time (run once at the specified time), Daily at Midnight, and Weekly on Sunday at Midnight. Any other listed scheduling periods are user-configured execution schedules (|LibAutExe|). Create a new execution schedule if none of the existing schedules work for your reporting needs.
 
 Viewing Results
 ---------------

@@ -60,6 +60,7 @@ rst_prolog = """
 .. |LibTemFil| replace:: Library > Templates > File Templates
 .. |LibTemScr| replace:: Library > Templates > Script Templates
 .. |LibTemSec| replace:: Library > Templates > Security Packages
+.. |LibInt| replace:: Library > Integrations
 .. |Pro| replace:: Provisioning
 .. |ProCat| replace:: Provisioning > Catalog
 .. |ProCatInv| replace:: Provisioning > Catalog > Inventory
@@ -67,7 +68,6 @@ rst_prolog = """
 .. |ProApp| replace:: Provisioning > Apps
 .. |ProJob| replace:: Provisioning > Jobs
 .. |ProJobJob| replace:: Provisioning > Jobs > Job Executions
-.. |ProJobSec| replace:: Provisioning > Jobs > Security Packages
 .. |ProCod| replace:: Provisioning > Code
 .. |ProCodRep| replace:: Provisioning > Code > Repositories
 .. |ProCodDep| replace:: Provisioning > Code > Deployments
@@ -150,19 +150,19 @@ rst_prolog = """
 .. |TooImaBoo| replace:: Tools > Image Builder > Boot Scripts
 .. |TooImaPre| replace:: Tools > Image Builder > Preseed Scripts
 .. |TooVDI| replace:: Tools > VDI Pools
-.. |TooVDIVDI| replace:: Tools > VDI Pools > VDI Pools
-.. |TooVDIVDI| replace:: Tools > VDI Pools > VDI Apps
-.. |TooVDIVDI| replace:: Tools > VDI Pools > VDI Gateways
+.. |TooVDIPoo| replace:: Tools > VDI Pools > VDI Pools
+.. |TooVDIApp| replace:: Tools > VDI Pools > VDI Apps
+.. |TooVDIGat| replace:: Tools > VDI Pools > VDI Gateways
 .. |Adm| replace:: Administration
 .. |AdmTen| replace:: Administration > Tenants
 .. |AdmPla| replace:: Administration > Plans & Pricing
 .. |AdmPlaPla| replace:: Administration > Plans & Pricing > Plans
-.. |AdmPlaPri| replace:: Administration > Plans & Pricing > Price Sets
+.. |AdmPlaSet| replace:: Administration > Plans & Pricing > Price Sets
 .. |AdmPlaPri| replace:: Administration > Plans & Pricing > Prices
 .. |AdmRol| replace:: Administration > Roles
 .. |AdmUse| replace:: Administration > Users
 .. |AdmUseUse| replace:: Administration > Users > Users
-.. |AdmUseUse| replace:: Administration > Users > User Groups
+.. |AdmUseUGp| replace:: Administration > Users > User Groups
 .. |AdmInt| replace:: Administration > Integrations
 .. |AdmIntInt| replace:: Administration > Integrations > Integrations
 .. |AdmIntPac| replace:: Administration > Integrations > Packages

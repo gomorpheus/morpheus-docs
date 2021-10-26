@@ -20,7 +20,7 @@ Spec Templates allow |morpheus| users to leverage several major Infrastructure-a
 Creating a Spec Template
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-#. Navigate to `Provisioning > Library > SPEC TEMPLATES`
+#. Navigate to |LibTemSpe|
 #. Click :guilabel:`+ ADD`
 #. Complete the following fields, then click :guilabel:`SAVE CHANGES`:
 
@@ -28,4 +28,4 @@ Creating a Spec Template
   - **TYPE:** See the previous section for a complete list of Spec Template types
   - **SOURCE:** Local, Repository, or URL
   - **CONTENT:** If this is a local Spec Template, supply the template in this field. If the template is supplied through a URL or online repository, the CONTENT field will change to allow the user to point |morpheus| to that resource
-  - **VERSION:** (Only displayed on Terraform Spec Templates) Enter a Terraform version number to force a specific version when provisioning your Terraform Instance Type or App, assuming your Terraform Runtime setting (Administration > Settings > Provisioning Tab) is "auto". If Terraform Runtime is set to "manual", |morpheus| will use the version of Terraform installed on the appliance box
+  - **VERSION:** (Only displayed on Terraform Spec Templates) Enter a Terraform version number to force a specific version when provisioning your Terraform Instance Type or App, assuming your Terraform Runtime setting (|AdmSetPro| Tab) is "auto". If Terraform Runtime is set to "manual", |morpheus| will use the version of Terraform installed on the appliance box

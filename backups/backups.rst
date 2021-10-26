@@ -33,7 +33,7 @@ Backup Retention Count
 Backup Schedules
 ----------------
 
-Backup Execution Schedules can be configured and managed in `Provisioning > Automation > EXECUTE SCHEDULING`. An execution schedule stores only the interval at which some execution should be run. To create a new backup job with this schedule, navigate to `Backups > Backups` and click "+ADD". In the final step of creating the backup job we are able to select any of our created execution schedules. The Default Backup Schedule set in `Administration -> Backups` will be selected when creating a backup job and not specifying an execution schedule.
+Backup Execution Schedules can be configured and managed in |LibAutExe|. An execution schedule stores only the interval at which some execution should be run. To create a new backup job with this schedule, navigate to `Backups > Backups` and click "+ADD". In the final step of creating the backup job we are able to select any of our created execution schedules. The Default Backup Schedule set in `Administration -> Backups` will be selected when creating a backup job and not specifying an execution schedule.
 
 
 Configuring Backups during Provisioning

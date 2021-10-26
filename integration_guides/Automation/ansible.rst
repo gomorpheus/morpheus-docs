@@ -23,7 +23,7 @@ Requirements
 Add Ansible Integration
 ^^^^^^^^^^^^^^^^^^^^^^^
 
-#. Navigate to `Provisioning > Automation > Integrations` and select `+ New Integration`
+#. Navigate to |LibInt| and select `+ New Integration`
 #. Select Integration Type "Ansible"
 #. Populate the following fields:
 
@@ -179,7 +179,7 @@ Cypher is very powerful for storing these temporary or permanent secrets that on
 Custom Inventory Entries
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-With Morpheus it is possible to add custom inventory entries that exist outside of morpheus host/server entry. This is global across cloud or group and is done on the integration details page of the Ansible integration. To add a custom inventory entry navigate to ``Provisioning > Automation > Integrations > (Your specific Ansible integration)``. Click on the ``ACTIONS`` button, then click ``EDIT INVENTORY``. Inventory should be in the default Ansible ini format.
+With Morpheus it is possible to add custom inventory entries that exist outside of morpheus host/server entry. This is global across cloud or group and is done on the integration details page of the Ansible integration. To add a custom inventory entry navigate to ``|LibInt| > (Your specific Ansible integration)``. Click on the ``ACTIONS`` button, then click ``EDIT INVENTORY``. Inventory should be in the default Ansible ini format.
 
 .. image:: /images/integration_guides/automation/ansible_inventory.png
 
@@ -227,7 +227,7 @@ Troubleshooting Ansible
 
 * Verify Ansible is installed on the |morpheus| Appliance.
 
-  Ansible should be automatically installed but certain OS or network conditions can prevent the automated install. You can confirm installation by running ``ansible --version`` in the |morpheus| appliance, or by viewing the Ansible integration details page (``Administration > Integrations > Select Ansible Integration``). We also see it in the Ansible tab of a Group or Cloud scoped to Ansible, just run ``--version`` as ansible is already included in the command.
+  Ansible should be automatically installed but certain OS or network conditions can prevent the automated install. You can confirm installation by running ``ansible --version`` in the |morpheus| appliance, or by viewing the Ansible integration details page (``|AdmInt| > Select Ansible Integration``). We also see it in the Ansible tab of a Group or Cloud scoped to Ansible, just run ``--version`` as ansible is already included in the command.
 
   If Ansible is not installed, follow these instructions to install, or use your preferred installation method:
 

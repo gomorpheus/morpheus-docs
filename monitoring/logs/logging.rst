@@ -9,7 +9,7 @@ The logging architecture backing |morpheus| uses the latest and greatest technol
 Configuration
 ^^^^^^^^^^^^^
 
-Logging configuration can be setup in the Administration > Settings > Logs section. There are useful settings here, including customizing the retainment policy (7 days by default). This could be expanded to years for PCI compliance purposes or other requirements an organization might have.
+Logging configuration can be setup in the |AdmSetLog| section. There are useful settings here, including customizing the retainment policy (7 days by default). This could be expanded to years for PCI compliance purposes or other requirements an organization might have.
 
 .. NOTE:: When increasing the retainment policy of the logging system, it may be necessary to scale out the elasticsearch cluster. Please refer to the relevant information with regards to scaling elasticsearch and advanced installation options for externalizing the elasticsearch cluster.
 

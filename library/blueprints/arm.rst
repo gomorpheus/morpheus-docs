@@ -1,9 +1,9 @@
 ARM Blueprints
 --------------
 
-ARM Blueprints provide a simple and repeatable way of deploying infrastructure-as-code to Azure Clouds. Objects and properties are defined in a JSON file and are provisionable on-demand in *Provisioning > Apps*
+ARM Blueprints provide a simple and repeatable way of deploying infrastructure-as-code to Azure Clouds. Objects and properties are defined in a JSON file and are provisionable on-demand in *|ProApp|*
 
-To create a new ARM Blueprint, navigate to Provisioning > Blueprints. Click :guilabel:`+ ADD`.
+To create a new ARM Blueprint, navigate to |LibBluApp|. Click :guilabel:`+ ADD`.
 
 On the Name tab of the New Blueprint modal, enter a name for your new Blueprint. In the Type dropdown menu, select ARM. :guilabel:`NEXT`
 
@@ -39,4 +39,4 @@ If bringing in a template from a Git repository, fill out the following fields:
 
 Once finished, click :guilabel:`COMPLETE`.
 
-Your new ARM Blueprint is now saved and should be visible in the list of Blueprints. Blueprints are deployed in the Provisioning > Apps section of |morpheus|. See the Apps section of |morpheus| docs for more information on that process.
+Your new ARM Blueprint is now saved and should be visible in the list of Blueprints. Blueprints are deployed in the |ProApp| section of |morpheus|. See the Apps section of |morpheus| docs for more information on that process.

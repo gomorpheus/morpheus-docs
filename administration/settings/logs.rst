@@ -10,8 +10,8 @@ The logs displayed in the Instance, App, Host and overall Logs sections are only
 
 .. NOTE:: The `Logs` section does not contain |morpheus| appliance logs, which can be found in `/var/log/morpheus/` and in `Administration - Health`.
 
-Logs are stored in ElasticSearch and retention can be set by adjusting the Availability Time Frame in the `Administration > Settings > Logs` section.
+Logs are stored in ElasticSearch and retention can be set by adjusting the Availability Time Frame in the |AdmSetLog| section.
 
-Logging Settings for the built-in logging and syslog forwards are also configurable in the `Administration > Settings > Logs` section.
+Logging Settings for the built-in logging and syslog forwards are also configurable in the |AdmSetLog| section.
 
 .. image:: /images/administration/settings/logs.png

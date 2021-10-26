@@ -53,7 +53,7 @@ Exporting Configuration JSON
 
 To export a Blueprint as JSON:
 
-#. Navigate to  ``Provisioning > Apps``
+#. Navigate to  ``|ProApp|``
 #. Select an App from the list to view the App detail page
 #. Click the Actions button and select Export
 #. The App export file will be downloaded to your computer as ``{app_name}.json``

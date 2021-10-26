@@ -401,7 +401,7 @@ It's recommended that you connect LDAP-type Option Lists to Typeahead-type Input
 
 Populating LDAP-type Option Lists requires knowledge of LDAP query syntax. This guide provides one example and there are many publicly-available resources for help writing additional queries.
 
-1. Create a new Option List (Provisioning > Library > Option Lists > ADD)
+1. Create a new Option List (|LibOptOpt| > ADD)
 
 2. Enter a name for the new LDAP Option List
 

@@ -169,7 +169,7 @@ Provisioning to a Stealth-enabled Cloud
 
 Once we have selected our Stealth integration as the security server for at least one Cloud in |morpheus|, new Instances (endpoints) can be provisioned and managed by Stealth.
 
-#. Navigate to Provisioning > Instances
+#. Navigate to |ProIns|
 #. Click :guilabel:`+ ADD`
 #. Select the Instance Type, Cloud, and Group making sure to choose a Cloud that has been set up for an existing Stealth integration
 #. On the Configure tab of the provisioning wizard, choose a Stealth Configuration and a Stealth Role according to the needs of the machine(s) being provisioning

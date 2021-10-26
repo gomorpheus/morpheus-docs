@@ -6,7 +6,7 @@ When a workflow is executed manually, the Ansible run output is available in the
 Verify Ansible is installed on the |morpheus| Appliance
 -------------------------------------------------------
 
-Ansible should be automatically installed but certain OS or network conditions can prevent the automated install. You can confirm installation by running ``ansible --version`` in the |morpheus| appliance, or by viewing the Ansible integration details page (``Administration > Integrations > Select Ansible Integration``). We also see it in the Ansible tab of a Group or Cloud scoped to Ansible, just run ``--version`` as ansible is already included in the command.
+Ansible should be automatically installed but certain OS or network conditions can prevent the automated install. You can confirm installation by running ``ansible --version`` in the |morpheus| appliance, or by viewing the Ansible integration details page (``|AdmInt| > Select Ansible Integration``). We also see it in the Ansible tab of a Group or Cloud scoped to Ansible, just run ``--version`` as ansible is already included in the command.
 
 If Ansible is not installed
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^

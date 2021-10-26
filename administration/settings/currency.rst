@@ -6,7 +6,7 @@ In |morpheus|, Tenants are separate environments which can be defined as using c
 Integrating With a Currency Exchange Provider
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-#. Navigate to ``Administration > Settings > APPLIANCE``
+#. Navigate to |AdmSetApp|
 #. Under the Currency Settings heading, make a "Currency Provider" selection
 #. Enter your "Provider API Key"
 

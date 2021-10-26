@@ -1,7 +1,7 @@
 Security Packages
 -----------------
 
-The Security Packages Section is for uploading SCAP packages which can then be consumed in Security Scan Jobs (Provisioning > Jobs).
+The Security Packages Section is for uploading SCAP packages which can then be consumed in Security Scan Jobs (|ProJob|).
 
 Add a new Security Package
 ``````````````````````````

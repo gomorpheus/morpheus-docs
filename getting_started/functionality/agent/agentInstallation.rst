@@ -3,7 +3,7 @@ Agent Installation
 
 There are many methods to install the |morpheus| Agent on supported targets. All Agent installation methods are executing a script on the target that calls back to the |morpheus| appliance over port 443.
 
-.. important:: All Agent installation methods require the Target (VM or Host) to resolve and reach the appliance URL over port 443. In addition to the main Appliance URL (in Administration > Settings), additional Appliance URLs can be set per cloud in the Advanced Options section of the Create/Edit Cloud modal. When this field is populated, it will override the main Appliance URL for anything provisioned into that Cloud.
+.. important:: All Agent installation methods require the Target (VM or Host) to resolve and reach the appliance URL over port 443. In addition to the main Appliance URL (in |AdmSet|), additional Appliance URLs can be set per cloud in the Advanced Options section of the Create/Edit Cloud modal. When this field is populated, it will override the main Appliance URL for anything provisioned into that Cloud.
 
 Basic Installation Steps
 ^^^^^^^^^^^^^^^^^^^^^^^^
@@ -69,7 +69,7 @@ Requirements
 ............
 
 * Port 22 is open for Linux images, and SSH is enabled
-* Credentials have been entered on the image if using a custom or synced image. Credentials can be entered on images in the Provisioning > Virtual Images section
+* Credentials have been entered on the image if using a custom or synced image. Credentials can be entered on images in the |LibVir| section
 
 WinRM
 `````
@@ -83,7 +83,7 @@ Requirements
 ............
 
 * Port 5985 must be open and winRM enabled for Windows images
-* Credentials have been entered on the image if using a custom or synced image. Credentials can be entered on images in the Provisioning > Virtual Images section
+* Credentials have been entered on the image if using a custom or synced image. Credentials can be entered on images in the |LibVir| section
 * Administrator User (SID 500) is required for Windows Agent install
 
 VMware Tools
@@ -98,7 +98,7 @@ Requirements
 ............
 
 * VMware Tools is installed on the template(s)
-* Credentials have been entered on the Image if using an uploaded or synced image when Cloud-init, Guest Customizations, or Sysprep for Windows are not used. Credentials can be entered on Images in the Provisioning > Virtual Images section
+* Credentials have been entered on the Image if using an uploaded or synced image when Cloud-init, Guest Customizations, or Sysprep for Windows are not used. Credentials can be entered on Images in the |LibVir| section
 * Administrator User (SID 500) is required for Windows Agent install.
 
 Cloud-Init
@@ -142,12 +142,12 @@ Requirements
 ............
 
 VMware
-  - Windows Administrator password defined in the Administration > Provisioning section OR Administrator User (SID 500) and valid Windows password are defined on the |morpheus| Virtual Image record
+  - Windows Administrator password defined in the |AdmSetPro| section OR Administrator User (SID 500) and valid Windows password are defined on the |morpheus| Virtual Image record
   - "FORCE GUEST CUSTOMIZATION?" is checked (true) on the |morpheus| Virtual Image record when using DHCP
   - "IS CLOUD INIT ENABLED?" is unchecked (false) on the |morpheus| Virtual Image record
 
 Nutainx/SCVMM/Openstack
-  - Windows Administrator password defined in the Administration > Provisioning section OR Administrator User (SID 500) and valid Windows password are defined on the |morpheus| Virtual Image record
+  - Windows Administrator password defined in the |AdmSetPro| section OR Administrator User (SID 500) and valid Windows password are defined on the |morpheus| Virtual Image record
   - "ENABLED SYSPREP?" is checked (true) on the |morpheus| Virtual Image record
   - "IS CLOUD INIT ENABLED?" is unchecked (false) on the |morpheus| Virtual Image record
 

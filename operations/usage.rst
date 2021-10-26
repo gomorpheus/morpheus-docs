@@ -3,7 +3,7 @@ Usage
 
 The `Operations > Costing > Usage` section shows billing information for Instances and hosts that have pricing configured on their Service Plan.
 
-.. IMPORTANT:: Pricing must be enabled in `Administration > Settings > Provisioning` and Service Plans configured with price sets in `Administration > Plans & Pricing` for pricing to show in the Usage section.
+.. IMPORTANT:: Pricing must be enabled in |AdmSetPro| and Service Plans configured with price sets in `|AdmPla|` for pricing to show in the Usage section.
 
 View Usage
 ^^^^^^^^^^

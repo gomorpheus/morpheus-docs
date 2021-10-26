@@ -44,7 +44,7 @@ Roles and Identity Sources
 --------------------------
 
 It is very common for large Enterprises to have an existing identity source that they would like to plug in to |morpheus| for authentication. This includes services like LDAP, Active Directory, OKTA, Jump Cloud, One Login, and SAML. When using these services it becomes important to configure a role mapping between the |morpheus| role assignments to the equivalent identity source groups/roles the user belongs to. This is configurable within the identity source management UI. Sections are
-provided allowing things like LDAP groups to be directly mapped to specific roles within |morpheus|. If a user matches more than one LDAP/role group then both sets of roles are applied to the user automatically. Configuring Identity Sources is done in Tenant management or user management in Administration > Tenants or Administration > Users, and has to be configured on a per-tenant basis. Additionally, administrators may opt to lock users to their mapped role in |morpheus| or keep the roles unlocked to manually administer roles in one-off scenarios.
+provided allowing things like LDAP groups to be directly mapped to specific roles within |morpheus|. If a user matches more than one LDAP/role group then both sets of roles are applied to the user automatically. Configuring Identity Sources is done in Tenant management or user management in |AdmTen| or |AdmUse|, and has to be configured on a per-tenant basis. Additionally, administrators may opt to lock users to their mapped role in |morpheus| or keep the roles unlocked to manually administer roles in one-off scenarios.
 
 .. include:: role_permissions.rst
 .. include:: roles_adding.rst

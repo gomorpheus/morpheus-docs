@@ -4,7 +4,7 @@ Integrations
 Integrations
 ------------
 
-``Administration > Integrations``
+``|AdmInt|``
 
 To add an integration select :guilabel:`+ ADD` and choose your integration. Many |morpheus|-supported inegrations can be configured in this section, though not all. Some integrations, such as networking integrations, must be configured within their own areas of the application. The following integrations can be configured in this section:
 

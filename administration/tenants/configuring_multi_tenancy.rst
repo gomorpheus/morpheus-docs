@@ -35,7 +35,7 @@ To create a new sub-Tenant
 
 The Base Role defines a role set from which all roles created within the Tenant will inherit.
 
-.. NOTE:: In prior versions, we could set Limits when creating a Subtenant. These could restrict the amount of storage, memory, and CPUs that can be collectively provisioned by all users in the Tenant. In more recent versions, this functionality has been rolled into Policies (Administration > Policies). When creating a Policy, we are able to specify a Tenant to which the Policy should apply.
+.. NOTE:: In prior versions, we could set Limits when creating a Subtenant. These could restrict the amount of storage, memory, and CPUs that can be collectively provisioned by all users in the Tenant. In more recent versions, this functionality has been rolled into Policies (|AdmPol|). When creating a Policy, we are able to specify a Tenant to which the Policy should apply.
 
 Click the :guilabel:`Save Changes` button.
 

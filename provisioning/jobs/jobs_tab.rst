@@ -7,14 +7,14 @@ Jobs
 
     Provisioning: Jobs
 
-    - **None:** Cannot access ``Provisioning > Jobs > Jobs tab``
-    - **Read:** Can access ``Provisioning > Jobs > Jobs tab`` but cannot create, edit, or delete Jobs
+    - **None:** Cannot access ``|ProJob| > Jobs tab``
+    - **Read:** Can access ``|ProJob| > Jobs tab`` but cannot create, edit, or delete Jobs
     - **Full:** Full permissions to create, view, edit, and delete Jobs
 
     Provisioning: Job Executions
 
-    - **None:** Cannot access ``Provisioning > Jobs > Job Executions tab``
-    - **Read:** Can access and view ``Provisioning > Jobs > Job Executions tab`` including job execution history, status, and Job output
+    - **None:** Cannot access ``|ProJob| > Job Executions tab``
+    - **Read:** Can access and view ``|ProJob| > Job Executions tab`` including job execution history, status, and Job output
 |
 
 Creating Jobs
@@ -24,7 +24,7 @@ Creating Jobs
 
 To create a new job:
 
-#. Navigate to ``Provisioning > Jobs``
+#. Navigate to ``|ProJob|``
 #. Select :guilabel:`+ ADD`
 #. Enter the following
 
@@ -40,13 +40,13 @@ To create a new job:
      **TASK:** Select target Task. If relevant to the Task, Input fields will be presented
 
      **SCHEDULE:**
-         Manual: Job is not scheduled but can be executed from ``Provisioning > Jobs`` and selecting ``Actions > Execute``
+         Manual: Job is not scheduled but can be executed from ``|ProJob|`` and selecting ``Actions > Execute``
 
          Date And Time: Job will be executed at one specific point in time and not again (unless rescheduled or executed manually)
 
-         Schedule: Select a configured Execution Schedule. Execution Schedules are created in ``Provisioning > Automation > EXECUTE SCHEDULING``
+         Schedule: Select a configured Execution Schedule. Execution Schedules are created in ``|LibAutExe|``
 
-         .. note:: |morpheus| provides two default execution schedules, ``Daily at Midnight`` and ``Weekly on Sunday at Midnight``. Any additional schedules were created by a User. Additional schedules can be added in ``Provisioning > Automation > EXECUTE SCHEDULING``
+         .. note:: |morpheus| provides two default execution schedules, ``Daily at Midnight`` and ``Weekly on Sunday at Midnight``. Any additional schedules were created by a User. Additional schedules can be added in ``|LibAutExe|``
 
       **CONTEXT TYPE:** Server or Instance
 
@@ -58,13 +58,13 @@ To create a new job:
       **WORKFLOW:** Select target Workflow. If relevant to the Workflow, Input fields will be presented
 
       **SCHEDULE:**
-          Manual: Job is not scheduled but can be executed from ``Provisioning > Jobs`` and selecting ``Actions > Execute``
+          Manual: Job is not scheduled but can be executed from ``|ProJob|`` and selecting ``Actions > Execute``
 
           Date And Time: Job will be executed at one specific point in time and not again (unless rescheduled or executed manually)
 
-          Schedule: Select a configured Execution Schedule. Execution Schedules are created in ``Provisioning > Automation > EXECUTE SCHEDULING``
+          Schedule: Select a configured Execution Schedule. Execution Schedules are created in ``|LibAutExe|``
 
-          .. note:: |morpheus| provides two default execution schedules, ``Daily at Midnight`` and ``Weekly on Sunday at Midnight``. Any additional schedules were created by a User. Additional schedules can be added in ``Provisioning > Automation > EXECUTE SCHEDULING``
+          .. note:: |morpheus| provides two default execution schedules, ``Daily at Midnight`` and ``Weekly on Sunday at Midnight``. Any additional schedules were created by a User. Additional schedules can be added in ``|LibAutExe|``
 
       **CONTEXT TYPE:** Server or Instance
 

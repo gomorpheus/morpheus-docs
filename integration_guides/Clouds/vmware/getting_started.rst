@@ -28,11 +28,11 @@ When following this add cloud wizard an option will be presented to create a gro
 Windows Provisioning Tips
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
-By default when provisioning windows templates, |morpheus| performs guest customizations which initiates a sysprep. This resets the Administrator user and password. |morpheus| will set the Administrator password from ``Administration > Provisioning > Windows Settings > Password``.
+By default when provisioning windows templates, |morpheus| performs guest customizations which initiates a sysprep. This resets the Administrator user and password. |morpheus| will set the Administrator password from ``|AdmSetPro| > Windows Settings > Password``.
 
 Users can also set the username on an image as Administrator and enter a different password if unique passwords are required per image.
 
-Guest customizations are required when assigning static IP's manually or using IP pools. They can be disabled per virtual image advanced settings under ``Provisioning > Virtual Images > Edit Image > Advanced > Uncheck "Force Guest Customization"`` if using DHCP. However the SID will not be changed from the source template. In addition, new VM's will not be able to join a domain that had already been joined by the source template or any other VM's with that SID.
+Guest customizations are required when assigning static IP's manually or using IP pools. They can be disabled per virtual image advanced settings under ``|LibVir| > Edit Image > Advanced > Uncheck "Force Guest Customization"`` if using DHCP. However the SID will not be changed from the source template. In addition, new VM's will not be able to join a domain that had already been joined by the source template or any other VM's with that SID.
 
 Existing Instances
 ^^^^^^^^^^^^^^^^^^
@@ -63,7 +63,7 @@ Snapshots
 
 |morpheus| allows the ability to create a snapshot of a VM in VMware vCenter.  From the instance detail page, simply select ``Actions -> Create Snapshot`` to begin creation of a new Snapshot.  Existing snapshots can be viewed in the ``BACKUPS`` tab on the instance detail page.  Snapshots taken in vCenter will sync into |morpheus| every five minutes.  To revert to a previous snapshot, click on the revert icon located on the right side of the Snapshot. Snapshots can be deleted by clicking on the trash can icon.
 
-.. Note:: Access to Snapshots can be limited or removed entirely for specific user roles as needed. To edit a role's Snapshots permissions, go to ``Administration > Roles > (Your selected role) > Snapshots``. Users can be given Full, Read-only, or No access.
+.. Note:: Access to Snapshots can be limited or removed entirely for specific user roles as needed. To edit a role's Snapshots permissions, go to ``|AdmRol| > (Your selected role) > Snapshots``. Users can be given Full, Read-only, or No access.
 
 Tagging and Metadata
 ^^^^^^^^^^^^^^^^^^^^
@@ -72,8 +72,8 @@ As of Morpheus version 4.1.0, tagging support is included for vCenter in additio
 
 .. NOTE:: This feature requires a minimum API version of vCenter 6.5. The API version can be edited by navigating to 'Infrastructure > Clouds' and clicking the edit (pencil) button in the row for the relevant cloud. The field is labeled 'VERSION'.
 
-Tags can be created on-demand when provisioning from the 'CONFIGURE' tab of the 'CREATE INSTANCE' wizard (Provisioning > Instances). Within the 'Metadata' drawer, you will see sets of fields to enter key/value pairs. On creation of the instance, this metadata will be synced into vCenter.
+Tags can be created on-demand when provisioning from the 'CONFIGURE' tab of the 'CREATE INSTANCE' wizard (|ProIns|). Within the 'Metadata' drawer, you will see sets of fields to enter key/value pairs. On creation of the instance, this metadata will be synced into vCenter.
 
-'Inputs' from your library can also be exported as metadata for use with vCenter. When adding or editing a new Input (Provisioning > Library > InputS), simply mark the box labeled 'EXPORT AS METADATA'. The 'FIELD NAME' becomes the tag category in VMWare.
+'Inputs' from your library can also be exported as metadata for use with vCenter. When adding or editing a new Input (|LibOptInp|), simply mark the box labeled 'EXPORT AS METADATA'. The 'FIELD NAME' becomes the tag category in VMWare.
 
 .. image:: /images/integration_guides/clouds/tagging_at_provisioning.png

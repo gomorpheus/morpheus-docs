@@ -5,7 +5,7 @@ CloudFormation Blueprints consume new or existing CloudFormation templates to cr
 
 If needed, Amazon has educational resources available for getting started with CloudFormation. They can be found in the `AWS CloudFormation documentation <https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/Welcome.html>`_.
 
-To create a new CloudFormation Blueprint, navigate to Provisioning > Blueprints. Click :guilabel:`+ ADD`.
+To create a new CloudFormation Blueprint, navigate to |LibBluApp|. Click :guilabel:`+ ADD`.
 
 On the Name tab of the New Blueprint modal, enter a name for your new Blueprint. In the Type dropdown menu, select CloudFormation. Click :guilabel:`NEXT`
 
@@ -44,4 +44,4 @@ In the CloudFormation Configuration section, complete the following fields as ne
 
 Once finished, click :guilabel:`COMPLETE`.
 
-Your new CloudFormation Blueprint is now saved and should be visible in the list of Blueprints. Blueprints are deployed in the Provisioning > Apps section of |morpheus|. See the Apps section of |morpheus| docs for more information on that process.
+Your new CloudFormation Blueprint is now saved and should be visible in the list of Blueprints. Blueprints are deployed in the |ProApp| section of |morpheus|. See the Apps section of |morpheus| docs for more information on that process.

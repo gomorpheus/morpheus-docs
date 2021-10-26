@@ -19,9 +19,9 @@ Spec Templates
 
 Terraform configuration is stored as a Spec Template in |morpheus|. You can store your configuration as one monolithic file for each Instance Type you intend to create or you can create individual Spec Templates for modular pieces which can be reused across multiple Instance Types. When added to the Layout later, we'll be able to include as many Spec Templates as we wish which enables us to reuse smaller modular pieces if desired.
 
-Spec Templates are added in the |morpheus| Library (Provisioning > Library > Spec Templates tab). We can pull in the template from some type of repository, such as through a Github integration, or write new spec directly into the New Spec Template modal. In most cases, the spec will be pre-existing and pulled in from a version-controlled repository but here I have my Terraform spec entered locally. Click :guilabel:`+ ADD`, complete the fields as I've done in the example below and click :guilabel:`SAVE CHANGES`.
+Spec Templates are added in the |morpheus| Library (|LibTemSpe| tab). We can pull in the template from some type of repository, such as through a Github integration, or write new spec directly into the New Spec Template modal. In most cases, the spec will be pre-existing and pulled in from a version-controlled repository but here I have my Terraform spec entered locally. Click :guilabel:`+ ADD`, complete the fields as I've done in the example below and click :guilabel:`SAVE CHANGES`.
 
-In the VERSION field at the bottom of the TF Spec Template modal, enter a Terraform version number to force that version to be used. This version is only honored if the Terraform Runtime setting (Administration > Settings > Provisioning Tab) is set to "auto". When "manual" is selected as the Terraform Runtime setting, |morpheus| will simply use the version installed on the appliance box.
+In the VERSION field at the bottom of the TF Spec Template modal, enter a Terraform version number to force that version to be used. This version is only honored if the Terraform Runtime setting (|AdmSetPro|) is set to "auto". When "manual" is selected as the Terraform Runtime setting, |morpheus| will simply use the version installed on the appliance box.
 
 .. image:: /images/integration_guides/terr_inst_guide/1newSpec.png
 
@@ -160,7 +160,7 @@ Inputs and Option Lists
 
 In order to create the Layout later in the guide, I need to create four Inputs so the user can make certain selections at provision time. I wrote my Terraform Configuration with this flexibility in mind so that the same Instance Type can be reused in different scenarios. In this particular case, I'm populating the Inputs with manual Option Lists but they can also be populated through REST calls or calls to the |morpheus| API when needed.
 
-Option Lists are created in the Library (Provisioning > Library) under the Option Lists tab. These are lists of items which will be used to create dropdown selections at provision time. Click :guilabel:`+ ADD`, complete the fields as I've done in the example below and click :guilabel:`SAVE CHANGES`. I've created one each for the AWS account selection, region selection, and CIDR mask input.
+Option Lists are created in the Library (|Lib|) under the Option Lists tab. These are lists of items which will be used to create dropdown selections at provision time. Click :guilabel:`+ ADD`, complete the fields as I've done in the example below and click :guilabel:`SAVE CHANGES`. I've created one each for the AWS account selection, region selection, and CIDR mask input.
 
 .. image:: /images/integration_guides/terr_inst_guide/7optionList.png
   :width: 50%
@@ -173,7 +173,7 @@ Inputs are also created in the Library under the Inputs tab. In this case, I'm c
 Instance Type
 ^^^^^^^^^^^^^
 
-At this point we're ready to create a new Instance Type. We'll give the Instance Type a name, which users will use to identify the Instance Type from the list in the provisioning wizard. We don't need to set much else in this case, most of the pieces we've created in previous steps will be associated with the Layout that we create next. The Layout will also be tied to the Instance Type we're creating now. Instance Types are also created in the Library (Provisioning > Library) under the Instance Types tab. Click :guilabel:`+ ADD`, complete the fields as I've done in the example below and click :guilabel:`SAVE CHANGES`.
+At this point we're ready to create a new Instance Type. We'll give the Instance Type a name, which users will use to identify the Instance Type from the list in the provisioning wizard. We don't need to set much else in this case, most of the pieces we've created in previous steps will be associated with the Layout that we create next. The Layout will also be tied to the Instance Type we're creating now. Instance Types are also created in the Library (|Lib|) under the Instance Types tab. Click :guilabel:`+ ADD`, complete the fields as I've done in the example below and click :guilabel:`SAVE CHANGES`.
 
 .. image:: /images/integration_guides/terr_inst_guide/9instanceType.png
   :width: 50%
@@ -181,7 +181,7 @@ At this point we're ready to create a new Instance Type. We'll give the Instance
 Layout
 ^^^^^^
 
-The Layout will bring together everything we've made to this point, the Spec Templates, Inputs and the Instance Type. We can add a new one from the Instance Type detail page (Provisioning > Library > Instance Types > Selected Instance Type) by clicking :guilabel:`+ ADD LAYOUT`. We can also create one from the Layouts section (Provisioning > Library > Layouts tab) by clicking :guilabel:`+ ADD`.
+The Layout will bring together everything we've made to this point, the Spec Templates, Inputs and the Instance Type. We can add a new one from the Instance Type detail page (|LibBluIns| > Selected Instance Type) by clicking :guilabel:`+ ADD LAYOUT`. We can also create one from the Layouts section (|LibBluLay|) by clicking :guilabel:`+ ADD`.
 
 First, change the TECHNOLOGY value to Terraform and the fields will change to allow proper configuration. Next, provide a name for your Layout. If you're creating the Layout through the Layout tab rather than from the Instance Type detail page, you'll need to identify the Instance Type the Layout goes with. Using the typeahead fields at bottom of the modal window, add our four Inputs and our five Spec Templates to the Layout. Finally, point the layout to a TFVAR SECRET from |morpheus| Cypher if needed. You can see a screenshot of my Layout configuration below
 
@@ -191,7 +191,7 @@ First, change the TECHNOLOGY value to Terraform and the fields will change to al
 Provisioning
 ^^^^^^^^^^^^
 
-Now, we're ready to provision new infrastructure into AWS using |morpheus| and Terraform. Just like any other Instance Type, we begin from the Instances list page (Provisioning > Instances) and click :guilabel:`+ ADD`. Select the Instance Type we've just created and move on to the GROUP tab of the wizard. Here you'll give the new instance a name and select your Group and Cloud. Once finished, you'll move on to the CONFIGURE tab where we'll see the Inputs we created and associated with the Layout. Once finished with this tab, step through the rest of the wizard to complete the process. You can see the options I've selected for this configuration in the image below.
+Now, we're ready to provision new infrastructure into AWS using |morpheus| and Terraform. Just like any other Instance Type, we begin from the Instances list page (|ProIns|) and click :guilabel:`+ ADD`. Select the Instance Type we've just created and move on to the GROUP tab of the wizard. Here you'll give the new instance a name and select your Group and Cloud. Once finished, you'll move on to the CONFIGURE tab where we'll see the Inputs we created and associated with the Layout. Once finished with this tab, step through the rest of the wizard to complete the process. You can see the options I've selected for this configuration in the image below.
 
 .. image:: /images/integration_guides/terr_inst_guide/11configureTab.png
 

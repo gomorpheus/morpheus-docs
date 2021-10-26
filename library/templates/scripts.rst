@@ -6,7 +6,7 @@ Scripts are bash and Powershell scripts that can be attached to Node Types to al
 Creating Scripts
 ^^^^^^^^^^^^^^^^
 
-#. Navigate to ``Provisioning > Library > Scripts``
+#. Navigate to |LibTemScr|
 #. Select :guilabel:`+ ADD`
 #. Enter the Following:
 

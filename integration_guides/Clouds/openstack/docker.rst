@@ -7,4 +7,4 @@ To provision a Docker Host, navigate to Infrastructure > Clusters and click :gui
 
 Once a Docker Host is successfully provisioned, a green checkmark will appear to the right of the host marking it as available for use. In the event of a failure, click into the relevant host that failed and an error explaining the failure will be displayed in red at the top.
 
-Some common error scenarios include network connectivity. For a Docker Host to function properly, it must be able to resolve the |morpheus| appliance URL which can be configured in ``Administration > Settings``. If it is unable to resolve and negotiate with the appliance, the |morpheus| Agent installation will fail and provisioning instructions will not be able to be issued to the host.
+Some common error scenarios include network connectivity. For a Docker Host to function properly, it must be able to resolve the |morpheus| appliance URL which can be configured in ``|AdmSet|``. If it is unable to resolve and negotiate with the appliance, the |morpheus| Agent installation will fail and provisioning instructions will not be able to be issued to the host.

@@ -27,11 +27,11 @@ Custom Instance Types and Tagging
 Manually tagging resources as described in the previous section will work in some cases but many administrators will likely need to pre-seed the provisioning wizards with tagging prompts or build dropdown lists for tag values. This is accomplished in Morpheus through the use of custom Instance Types, Inputs, and Option Lists.
 
 To get started, first create an Option List to hold dropdown or typeahead sets of available key values if needed based on organizational tagging policy. If the tag value field should be manually entered at provision time or if the value field is to be left blank, this step can be skipped.
-Option Lists are created and stored in the Morpheus Library (Provisioning > Library). They can be populated manually by entering CSV or JSON datasets as shown in the example below. They can also be dynamically populated through Morpheus API or REST calls.
+Option Lists are created and stored in the Morpheus Library (|Lib|). They can be populated manually by entering CSV or JSON datasets as shown in the example below. They can also be dynamically populated through Morpheus API or REST calls.
 
 .. image:: /images/integration_guides/tagging_guide/2_option_list.png
 
-With the set of possible values defined (if needed), we next create an Input to prompt the user for tag input when provisioning relevant Instance types. Inputs are also housed in the Morpheus Library (Provisioning > Library).
+With the set of possible values defined (if needed), we next create an Input to prompt the user for tag input when provisioning relevant Instance types. Inputs are also housed in the Morpheus Library (|Lib|).
 
 It’s important to note the value entered for the FIELD NAME on the new Input will be set as the tag key. The EXPORT AS TAG box should also be marked. By default, the TYPE value is Text. This is appropriate when the user should be prompted with a free text field at provision time to enter a tag value. To tie this Input to the Option List that was just created (if needed), change the TYPE value to Select List or Typeahead. Typeahead works best for very long lists while Select List is often a better user experience for lists of a more manageable size. Set the Option List we created in the previous step in the OPTION LIST value (if needed).
 
@@ -39,7 +39,7 @@ It’s important to note the value entered for the FIELD NAME on the new Input w
 
 At this point, we are ready to add this Input to any custom Instance Types or Layouts. When those Instance Types or Layouts are provisioned, the values input by the user become tags associated with the created cloud resources. By setting the Input on an Instance Type, the tag selection appears when provisioning all associated Layouts. Alternatively, if the Input is set on individual Layouts, it will only appear when those Layouts are provisioned.
 
-Instance Types and Layouts are also stored in the Morpheus Library (Provisioning > Library). By opening up any custom Instance Type, we can add the Input we just created when editing the Instance Type. Additionally, we can drill into associated Layouts and apply the Input to selected Layouts if that’s more appropriate.
+Instance Types and Layouts are also stored in the Morpheus Library (|Lib|). By opening up any custom Instance Type, we can add the Input we just created when editing the Instance Type. Additionally, we can drill into associated Layouts and apply the Input to selected Layouts if that’s more appropriate.
 
 .. image:: /images/integration_guides/tagging_guide/4_instance_type.png
 
@@ -48,7 +48,7 @@ Going forward, each time the chosen Instance Type or Layout is provisioned, the 
 Instituting Tagging Policies
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-If needed, Morpheus allows cloud resource tagging to be governed through its native policy engine. Like other policies, tag policies are added from Administration > Policies. By creating a new policy and setting the TYPE to Tags, the relevant fields are revealed.
+If needed, Morpheus allows cloud resource tagging to be governed through its native policy engine. Like other policies, tag policies are added from |AdmPol|. By creating a new policy and setting the TYPE to Tags, the relevant fields are revealed.
 
 .. NOTE:: At the time of this writing (Morpheus 4.2.1), tag policy scanning and enforcement is only functional in Azure, Amazon AWS, VMware, and Google Cloud Platform clouds.
 

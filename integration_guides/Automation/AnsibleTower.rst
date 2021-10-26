@@ -13,7 +13,7 @@ Overview
 Add Ansible Tower Integration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-#. Navigate to `Administration > Integrations` and select :guilabel:`+ New Integration`
+#. Navigate to `|AdmInt|` and select :guilabel:`+ New Integration`
 #. Select Integration Type "Ansible Tower"
 #. Populate the following fields:
 

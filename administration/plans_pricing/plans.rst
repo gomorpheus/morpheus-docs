@@ -54,7 +54,7 @@ Create Service Plan
 
 |morpheus| offers a few distinct types of service plans, each with different data fields to track and valid price types which can be associated. Price Sets can be added to the plan at the time it's created so often it makes sense to create the Prices and associate them with Price Sets before creating the plan. Additional instructions for creating Prices and Price Sets are in the next section. With the Price Sets ready, continue with the instructions below to create Price Plans of various types.
 
-#. Navigate to `Administration > Plans & Pricing` (``/admin/service-plans``)
+#. Navigate to `|AdmPla|` (``/admin/service-plans``)
 #. Click the :guilabel:`+ ADD` dropdown and select a Price Plan type
 #. Configure details on the Service Plan on the General tab, the data tracked will depend on the Plan type selected.
 #. On the Price Sets tab, associate all relevant Price Sets with the Plan. See :ref:`Service Plan Configuration Options`

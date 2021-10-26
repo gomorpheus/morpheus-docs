@@ -94,7 +94,7 @@ Data Stores
 Resources
   Displays Resource Pools synced from the Cloud, including their name, description, and targeted Tenant.
 Policies
-  Manages Policies enforced on the Cloud. Setting a policy on this tab is equal to creating a policy in Administration > Policies and scoping it to the selected Cloud.
+  Manages Policies enforced on the Cloud. Setting a policy on this tab is equal to creating a policy in |AdmPol| and scoping it to the selected Cloud.
 Profiles
 - Manages |profileTypes| Profiles that create custom object associated secrets and metadata that will automatically be mapped per Cloud selection during provisioning and automation.
 

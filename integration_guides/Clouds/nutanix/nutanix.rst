@@ -81,4 +81,4 @@ Snapshots
 
 |morpheus| allows the ability to create a snapshot of a Nutanix instance.  From the instance detail page, simply select ``Actions -> Create Snapshot`` to begin creation of a new Snapshot.  Existing snapshots can be viewed in the ``BACKUPS`` tab on the instance detail page.  Snapshots taken outside |morpheus| will be synced every five minutes.  To revert to a previous snapshot, click on the revert icon located on the right side of the Snapshot. Snapshots can be deleted by clicking on the trash can icon.
 
-.. Note:: Access to Snapshots can be limited or removed entirely for specific user roles as needed. To edit a role's Snapshots permissions, go to ``Administration > Roles > (Your selected role) > Snapshots``. Users can be given Full, Read-only, or No access.
+.. Note:: Access to Snapshots can be limited or removed entirely for specific user roles as needed. To edit a role's Snapshots permissions, go to ``|AdmRol| > (Your selected role) > Snapshots``. Users can be given Full, Read-only, or No access.

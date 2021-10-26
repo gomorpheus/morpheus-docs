@@ -99,7 +99,7 @@ Configure the following:
 - **FEATURED:** When checked, this catalog item will be given special visibility in the Service Catalog Persona view
 - **VISIBILITY:** Set to private to keep the catalog item available only to users in the current Tenant. Master Tenant administrators may set catalog items to public to make them viewable and usable by Subtenant users
 - **LOGO:** Select or upload a logo to be associated with this catalog item
-- **WORKFLOW:** Select an existing Workflow to be associated with this Catalog Item, new Workflows are created in Provisioning > Automation
+- **WORKFLOW:** Select an existing Workflow to be associated with this Catalog Item, new Workflows are created in |LibAut|
 - **CONTEXT TYPE:** Optionally restrict users to a specific target context, Instance, Server, or None
 - **CONTENT:** Optionally include documentation content for this Catalog Item. Markdown-formatted text is accepted and displayed appropriately when the item is ordered from the Service Catalog. A new Catalog Item-type Wiki entry will also be added containing this information.
 
