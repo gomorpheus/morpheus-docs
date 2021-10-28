@@ -14,6 +14,8 @@ Appliance
 
 .. include:: email.rst
 
+.. include:: sms.rst
+
 .. include:: proxy.rst
 
 .. include:: currency.rst

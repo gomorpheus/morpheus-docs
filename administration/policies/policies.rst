@@ -11,20 +11,26 @@ Policies add governance, ease of use, cost-savings, and auditing features to |mo
 Policy Types
 ------------
 
+Approve Delete
+  Sets an approval requirement for deleting Instances or Apps within the Policy scope. When setting the Policy, users have the option of using Morpheus Approvals or an Approval Integration such a ServiceNow.
+Approve Provision
+  Sets an approval requirement for provisioning Instances or Apps within the Policy scope. When setting the Policy, users have the option of using Morpheus Approvals or an Approval Integration such a ServiceNow.
+Approve Reconfigure
+  Sets an approval requirement for reconfiguring Instances and servers within the Policy scope. When setting the Policy, users have the option of using Morpheus Approvals or an Approval Integration such a ServiceNow.
 Backup Creation
   Disable or enable the ability to create a backup when provisioning an instance.
-Backup Target
+Backup Targets
   A master account can determine storage provider options for backups with Backup Targets policies.
 Budget
   Sets a maximum total combined price for all instances in the Group, Cloud, Tenant or owned by the User this policy is applied to.
-Delayed Removal
-  Delayed Removals allow for soft deletion of Instances and Apps. Instead of deleting immediately, Instances and Apps with a Delayed Removal policy applied will be shutdown upon deletion request and hidden by default from the ui. The Instance/App will then be in ``Pending Removal`` status.
+Cluster Resource Name
+  The name of Cluster hosts (master and workers) when creating Kubernetes, Docker and KVM Clusters. Pre-populates a fixed or editable Resource Name value for the cluster using ${variable} naming patterns and/or text, including ${sequence} numbering. Toggle whether sequence numbers are reusable (after the resource using them is destroyed) by enabling `Reuse Naming Sequence Numbers <https://docs.morpheusdata.com/en/latest/administration/settings/settings.html#provisioning>`_ in |AdmSet|
+Delayed Delete
+  Delayed Delete Policies allow for soft deletion of Instances and Apps. Instead of deleting immediately, Instances and Apps with a Delayed Removal policy applied will be shutdown upon deletion request and hidden by default from the UI. The Instance/App will then be in ``Pending Removal`` status.
 Expiration
   Sets an expiration timeframe in days after which the Instance will be deleted. Extensions can be auto-approved or require approval immediately or after x amount of auto-extensions using Morpheus Approvals or an Approval Integration.
 File Share Storage Quota
   Sets a Storage Quota for File Share usage (in GB) to scoped User, Role, Tenant or Global.
-Cluster Resource Name
-  The name of Cluster hosts (master and workers) when creating Kubernetes, Docker and KVM Clusters. Pre-populates a fixed or editable name for Hosts and Virtual Machines using ${variable} naming patterns and/or text, including ${sequence} numbering. Toggle whether sequence numbers are reusable (after the resource using them is destroyed) by enabling `Reuse Naming Sequence Numbers <https://docs.morpheusdata.com/en/latest/administration/settings/settings.html#provisioning>`_ in |AdmSet|
 Hostname
   The ``hostname`` or ``computer name`` which is set in the OS and DNS. On some platforms, hostnames are restricted by length, spaces, and/or special characters. Pre-populates a fixed or editable name for hostnames/machine names using ${variable} naming patterns and/or text, including ${sequence} numbering. Toggle whether sequence numbers are reusable (after the resource using them is destroyed) by enabling `Reuse Naming Sequence Numbers <https://docs.morpheusdata.com/en/latest/administration/settings/settings.html#provisioning>`_ in |AdmSet|
 Instance Name
@@ -52,8 +58,6 @@ Object Storage Quota
   Sets a Storage Quota for Object Storage usage (in GB) to scoped User, Role, Tenant or Global.
 Power Scheduling
   Adds a Power Schedule for the Instances in a Group or Cloud. Power Schedules can be created in ``Provisioning -> Automation -> Power Scheduling``
-Provision Approval
-  Sets an Approval requirement for Provisioning into a Group or Cloud using Morpheus Approvals or an Approval Integration such a Service Now.
 Router Quota
   Limits the number of routers that can be created within the policy's scope
 Shutdown

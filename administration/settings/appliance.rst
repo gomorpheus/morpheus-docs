@@ -16,8 +16,6 @@ Denied Hosts
   A comma-delimited list of IP addresses and/or hostnames which should not be allowed sources for HTTP Tasks or REST-populated Option Lists.
 Approved Hosts
   A comma-delimited list of IP addresses and/or hostnames which are the only approved sources for HTTP Tasks or REST-populated Option Lists. By entering any values here, all others are automatically denied.
-Blacklisted Hosts
-  Provide a comma-separated list of IP addresses or hostnames which should be blocked when using HTTP Task types and/or REST-sourced Option Lists
 Enable SSL Verification of Agent (Communications)
   Enabling SSL Verification of Agent Communications requires a valid Certificate be installed on the Appliance.
 Disable SSH Password Authentication

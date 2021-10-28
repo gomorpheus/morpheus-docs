@@ -52,6 +52,7 @@ Report Types
   - Instance Inventory Summary
   - Software Inventory
   - Software Inventory By Server
+  - Tag Compliance
   - Virtual Machine Inventory Summary
   - Workload Summary
 
