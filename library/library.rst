@@ -36,7 +36,7 @@ Something here to introduce templates
 .. include:: /library/templates/scripts.rst
 .. include:: /library/templates/security_packages.rst
 
-Integrations
-------------
+Library Integrations
+--------------------
 
 .. include:: /library/integrations/library_integrations.rst

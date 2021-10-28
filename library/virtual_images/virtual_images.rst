@@ -1,8 +1,6 @@
 Virtual Images
 ==============
 
-`|LibVir|`
-
 Overview
 --------
 
