@@ -1,3 +1,5 @@
+.. _perconainstall:
+
 Percona XtraDB Cluster
 ^^^^^^^^^^^^^^^^^^^^^^
 
@@ -5,8 +7,33 @@ Out of the box Morpheus uses MySQL but Morpheus supports any MySQL compliant dat
 
 .. important:: Currently, you must use a v5.7-compatible version of MySQL/Percona. Complete compatibility information is available in the `Compatibility and Breaking Changes <https://docs.morpheusdata.com/en/latest/release_notes/compatibility.html>`_ page. 
 
-Requirements
-````````````
+Storage Requirements
+````````````````````
+
+- 30 GB storage minimum for each database node. This should be monitored and increased if the Morpheus database requires more space.
+
+After database installation ensure that the minimum storage requirement is available for the mysql tmpdir. By default mysql will write temporary files in "/tmp". 
+The mysql tmpdir configuration can be modified using the following steps for each database node:
+
+#.  Create the new directory.
+
+   .. code-block:: bash
+
+    mkdir /path/to/mysql/tmp/directory
+    chown -R mysql:mysql /path/to/mysql/tmp/directory
+
+#. Edit /etc/my.cnf.
+
+   .. code-block:: bash
+
+    [mysqld]
+    tmpdir=/path/to/mysql/tmp/directory
+
+
+.. important:: Failing to provide sufficient storage to the mysql tmpdir can result in failed database migrations and Morpheus upgrades.
+
+Permission Requirements
+```````````````````````
 
 Percona requires the following ports for the cluster nodes. Please create the appropriate firewall rules on your
 Percona nodes.
