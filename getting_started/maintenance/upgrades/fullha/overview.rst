@@ -21,3 +21,5 @@ Upgrade Instructions
 
    deb.rst
    rpm.rst
+
+.. WARNING:: Upgrades can add additional storage load on database nodes. Please refer to database storage requirements within :ref:`perconainstall` before upgrading.
