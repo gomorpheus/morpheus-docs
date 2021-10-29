@@ -44,8 +44,35 @@ Out of the box Morpheus uses MySQL but Morpheus supports any mySQL-compliant dat
 
 .. important:: Currently, you must use a v5.7-compatible version of MySQL/Percona. Complete compatibility information is available in the `Compatibility and Breaking Changes <https://docs.morpheusdata.com/en/latest/release_notes/compatibility.html>`_ page. Additional configuration for Percona Clusters with TLS enabled is required. Refer to :ref:`Percona TLS` Configuration in our full HA docs for details.
 
-Requirements
-````````````
+
+Storage Requirements
+````````````````````
+
+- 30 GB storage minimum for each database node. This should be monitored and increased if the Morpheus database requires more space.
+
+After database installation ensure that the minimum storage requirement is available for the mysql tmpdir. By default mysql will write temporary files in "/tmp". 
+The mysql tmpdir configuration can be modified using the following steps for each database node:
+
+#.  Create the new directory.
+
+   .. code-block:: bash
+
+    mkdir /path/to/mysql/tmp/directory
+    chown -R mysql:mysql /path/to/mysql/tmp/directory
+
+#. Edit /etc/my.cnf.
+
+   .. code-block:: bash
+
+    [mysqld]
+    tmpdir=/path/to/mysql/tmp/directory
+
+
+.. important:: Failing to provide sufficient storage to the mysql tmpdir can result in failed database migrations and Morpheus upgrades.
+
+
+Permission Requirements
+```````````````````````
 
 Once you have your database installed and configured:
 
