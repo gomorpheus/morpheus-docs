@@ -4,6 +4,8 @@
 |morphver| Release Notes
 *************************
 
+.. important:: |morpheus| v5.3.3-2 contains important security updates. v5.3.3-1 is no longer available and it is recommended to update from v5.3.3-1 to v5.3.3-2
+
 .. WARNING:: Support for OpenStack v2 Identity API has been removed in v5.3.3
 
 .. NOTE:: Items appended with :superscript:`5.x.x` are also included in that version
@@ -140,7 +142,8 @@ Fixes
 :Reports: - Fix for display of utilization statistics in some Cloud Usage Reports :superscript:`5.2.9`
 :Roles: - Activity: Fixed viewing ``Operations -> Activity`` activity logs requiring ``Operations: Reports`` permissions :superscript:`5.2.9`
         - Datastores: Edit option no longer displayed for Role Permission ``Infrastructure -> Datastores: Read`` :superscript:`5.2.9`
-:Security: - Reconfigure and Library XSS vulnerabilities remediated :superscript:`5.2.10`
+:Security: - |morpheus| v5.3.3-2 contains important security updates not included in v5.3.3-1
+           - Reconfigure and Library XSS vulnerabilities remediated :superscript:`5.2.10`
            - Updated request handling of user scoped policy creation during policy creation :superscript:`5.2.10`
 :Tasks: - Chef Bootstrap: Fixed issues where Chef Bootstrap execution would fail with reason "Chef Infra Client cannot execute without accepting the license" :superscript:`5.2.9`
        - Variables: Fixed evaluation of <%=user.username%> variable in task executions :superscript:`5.2.9`
