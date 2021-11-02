@@ -32,6 +32,8 @@ DISPLAY VALUE ON DETAILS
 TYPE
   - **Text:** Text Input Field
 
+  - **Text Area:** A text area input, when selected an additional option appears to allow the user to configure the default number of visible rows in the text area
+
   - **Select List:** Populated by Option Lists, presents a manual or REST-populated dropdown list
 
   - **Checkbox:** Checkbox for ``on`` or ``off`` values
@@ -47,6 +49,8 @@ TYPE
   - **Radio List:** Populated by Option Lists, presents a selection of radio buttons for the provisioning user
 LABEL
  This is the input label that typically shows to the left of a custom option
+ROWS
+ For ``Textarea`` type Option Lists, determines how many text rows will be given when the Input is presented
 PLACEHOLDER
  Background text that populates inside a field for adding example values, does not set a value
 DEFAULT VALUE

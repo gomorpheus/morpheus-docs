@@ -3,18 +3,9 @@ Library
 
 An overview of library goes here.
 
-Automation
-----------
-
 .. include:: /library/automation/automation.rst
 
-Blueprints
-----------
-
 .. include:: /library/blueprints/blueprints.rst
-
-Virtual Images
---------------
 
 .. include:: /library/virtual_images/virtual_images.rst
 
