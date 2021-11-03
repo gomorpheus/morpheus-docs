@@ -1,5 +1,7 @@
-Networking
-==========
+.. _my-reference-label:
+
+Networking Integrations
+=======================
 
 .. toctree::
 
