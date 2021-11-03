@@ -4,6 +4,8 @@
 |morphver| Release Notes
 ************************
 
+.. important:: |morpheus| v5.2.11-2 contains important security updates. v5.2.11-1 is no longer available and it is recommended to update from v5.2.11-1 to v5.2.11-2
+
 .. No highlights this time, small update
   .. include:: highlights.rst
 
@@ -53,7 +55,8 @@ Fixes
 :Provisioning: - Fixed issue with $sequence variable reiteration on 35 when using copies and "Reuse Naming Sequence Numbers" is enabled.
 :Proxies: - Fixed an issue preventing proxies from being set correctly on SLES and OpenSUSE
 :Reports: - Fixed an issue where Reports or Analytics dashboards could show clouds as having more discovered VMs than they would actually show from the Cloud detail page
-:Security: - Hid passwords to some Morpheus-owned service accounts (Twilio, Postmark, etc.) which were shared previously in ``application.groovy`` but are no longer needed by customers
+:Security: - v5.2.11-2 contains important security updates. v5.2.11-1 is no longer available and it is recommended to update from v5.2.11-1 to v5.2.11-2
+           - Hid passwords to some Morpheus-owned service accounts (Twilio, Postmark, etc.) which were shared previously in ``application.groovy`` but are no longer needed by customers
            - The Tenant name and database ID are no longer shown in the return payload when sending a POST request to initiate a new user session
 :ServiceNow: - Fixed an issue where the workflow indicated on a ServiceNow approval policy would not be honored during App provisioning
              - When exposing a Cloud to a new ServiceNow integration for provisioning which already has a CMDB server association, this association is no longer overwritten to set the new ServiceNow appliance as the Cloud's associated CMDB
