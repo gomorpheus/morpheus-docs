@@ -26,12 +26,12 @@ IMAGE FORMAT
   Select QCOW2, RAW or VMDK Image Type
 LB TYPE
   Select LB Type for Openstack LB syncing and creation
- Inventory Existing Instances
+Inventory Existing Instances
   Select for |morpheus| to discover and sync existing VM's
- Enable Hypervisor Console
+Enable Hypervisor Console
   Hypervisor console support for openstack currently only supports novnc. Be sure the novnc proxy is configured properly in your openstack environment. When disabled |morpheus| will use ssh and rdp for console conneciton (vm/host credentials required)
 
-.. include:: /integration_guides/Clouds/openstack/advanced_options.rst
+.. include:: /integration_guides/Clouds/advanced_options.rst
 
 .. NOTE:: v5.3.3 adds openstack project management which requires additional permissions in openstack:
 

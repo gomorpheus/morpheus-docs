@@ -51,7 +51,7 @@ DNS Integrations are available in the `DNS Integration` dropdown in Cloud and Gr
 To take full advantage of the |morpheus| Microsoft DNS integration, a service account in the Admins group is not required. However, an account must have the following minimum access to use all features:
 
 - Read, Create, and Delete rights on objects
-- Belongs to the local group "WinRMRemoteWMIUsers__"
+- Belongs to the local group ``WinRMRemoteWMIUsers__``
 - WinRM Quickconfig must be run on the DNS server
 - CIMv2 needs access according to instructions in our `KnowledgeBase <https://support.morpheusdata.com/s/article/How-to-give-C?language=en_US>`_
 
