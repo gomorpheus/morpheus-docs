@@ -20,3 +20,5 @@ Enable SSL Verification of Agent (Communications)
   Enabling SSL Verification of Agent Communications requires a valid Certificate be installed on the Appliance.
 Disable SSH Password Authentication
   Only allow ssh login using SSH keys. When true, SSH Password Authentication will not be enabled for VM's and Hosts provisioned after the setting is enabled.
+Default Appliance Locale
+  Sets the default language and region for all users on the |morpheus| appliance. Users with individual language preferences may also override this selection on their User Settings page

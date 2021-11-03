@@ -4,7 +4,7 @@ Distributed Workers
 Overview
 ^^^^^^^^
 
-The |morpheus| distributed worker is installed using the same package as the VDI Gateway worker. Organizations which have already deployed VDI Gateway(s) can use the same worker for both purposes if desired, you'd simply need to update configuration in ``/etc/morpheus/morpheus-worker.rb`` and run a reconfigure.
+The |morpheus| distributed worker is installed using the same package as the VDI Gateway worker. Organizations which have already deployed VDI Gateway(s) can use the same worker for both purposes if desired, you'd simply need to update configuration in ``/etc/morpheus/morpheus-worker.rb`` and run a reconfigure. When creating a distributed worker or VDI Gateway object in |morpheus| UI, an API key is generated. Adding one or both types of API keys to the worker configuration file determines if the worker is running in VDI gateway and/or distributed worker mode.
 
 Installation
 ^^^^^^^^^^^^
@@ -38,7 +38,7 @@ A distributed worker VM is installed and configured similarly to a |morpheus| ap
 - **Storage:** 10 GB storage minimum recommended. Storage is required for installation packages and log files
 - **CPU:** 4-core minimum recommended
 - Network connectivity *to* the |morpheus| appliance over TCP 443 (HTTPS)
-- Superuser privileges via the ``sudo`` command for the user installing the |morpheus| VDI Gateway package
+- Superuser privileges via the ``sudo`` command for the user installing the |morpheus| worker package
 - Access to base ``yum`` or ``apt`` repos. Access to Optional RPM repos may be required for RPM distros
 
 Download the appropriate package from |morpheus| Hub based on your target Linux distribution and version for installation in a directory of your choosing. The package can be removed after successful installation.
@@ -63,7 +63,7 @@ Next, install the package using your selected distribution's package installatio
 
       Preparing...                          ################################# [100%]
       Updating / installing...
-         1:morpheus-worker-5.3.1-1.$distro    ################################# [100%]
+         1:morpheus-worker-x.x.x-1.$distro    ################################# [100%]
       Thank you for installing Morpheus Worker!
       Configure and start the Worker by running the following command:
 
@@ -83,7 +83,7 @@ After clicking :guilabel:`SAVE CHANGES`, an API key is generated and displayed. 
 
 .. image:: /images/worker/createWorker.png
 
-With the worker configured in |morpheus|, the next step is to update any Cloud integrations which should be proxied through the worker. Select the desired Cloud from the Clouds List Page (|intclo|) and click :guilabel:`EDIT` from the chosen Cloud's Detail Page. Within the Advanced Options section, choose a configured worker from the DISTRIBUTED WORKER dropdown menu. Click :guilabel:`SAVE CHANGES`.
+With the worker configured in |morpheus|, the next step is to update any Cloud integrations which should be proxied through the worker. Select the desired Cloud from the Clouds List Page (|IntClo|) and click :guilabel:`EDIT` from the chosen Cloud's Detail Page. Within the Advanced Options section, choose a configured worker from the DISTRIBUTED WORKER dropdown menu. Click :guilabel:`SAVE CHANGES`.
 
 .. image:: /images/worker/updateCloud.png
   :width: 50%
