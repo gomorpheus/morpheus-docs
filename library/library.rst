@@ -5,7 +5,7 @@ Library
 An overview of library goes here.
 
 .. toctree::
-  :maxdepth: 2
+    :maxdepth: 2
 
    automation/automation.rst
    blueprints/blueprints.rst
