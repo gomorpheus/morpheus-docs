@@ -1,3 +1,5 @@
+.. _vmware-templates:
+
 Creating a |morpheus| VMware Image
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
