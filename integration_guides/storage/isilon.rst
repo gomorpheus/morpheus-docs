@@ -28,7 +28,7 @@ Add Dell EMC Isilon Storage Server
     Select Provision Group
    ROOT PATH
     Enter Root Path
-      Example : `\`
+      Example : ``\``
 
 #. Select :guilabel:`SAVE CHANGES`
 

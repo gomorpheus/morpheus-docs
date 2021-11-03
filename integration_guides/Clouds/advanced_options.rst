@@ -1,5 +1,4 @@
-Advanced Options
-````````````````
+**Advanced Options**
 
 DOMAIN
   Specify a default domain for instances provisioned to this Cloud.
