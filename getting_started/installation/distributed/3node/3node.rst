@@ -120,7 +120,7 @@ Once you have your database installed and configured:
 App Node Installation
 ^^^^^^^^^^^^^^^^^^^^^
 
-#. First begin by downloading and installing the requisite |morpheus| packages to the |morphues| nodes.
+#. First begin by downloading and installing the requisite |morpheus| packages to the |morpheus| nodes.
 
    .. note:: For offline or nodes that cannot reach |repo_host_url|, both the standard and supplemental packages will need to be transferred and then installed on the |morpheus| nodes.
 	
