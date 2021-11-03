@@ -1,33 +1,15 @@
+*******
 Library
-=======
+*******
 
 An overview of library goes here.
 
-.. include:: /library/automation/automation.rst
+.. toctree::
+  :maxdepth: 2
 
-.. include:: /library/blueprints/blueprints.rst
-
-.. include:: /library/virtual_images/virtual_images.rst
-
-Options
--------
-
-Something here to introduce options
-
-.. include:: /library/options/option_types.rst
-.. include:: /library/options/option_lists.rst
-
-Templates
----------
-
-Something here to introduce templates
-
-.. include:: /library/templates/specTemplates.rst
-.. include:: /library/templates/file_templates.rst
-.. include:: /library/templates/scripts.rst
-.. include:: /library/templates/security_packages.rst
-
-Library Integrations
---------------------
-
-.. include:: /library/integrations/library_integrations.rst
+   automation/automation.rst
+   blueprints/blueprints.rst
+   virtual_images/virtual_images.rst
+   options/options.rst
+   templates/templates.rst
+   integrations/library_integrations.rst
