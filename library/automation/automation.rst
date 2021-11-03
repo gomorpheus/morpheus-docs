@@ -12,4 +12,4 @@ The Automation section is composed of Tasks and Workflows. Tasks can be scripts 
 .. include:: /library/automation/integrations.rst
 .. include:: /library/automation/power_scheduling.rst
 .. include:: /library/automation/execute_scheduling.rst
-.. include:: /troubleshooting/Variables_Examples.rst
+

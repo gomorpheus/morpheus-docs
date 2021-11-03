@@ -4,19 +4,18 @@
 :ref:`Release Notes`
 
 .. toctree::
-   :maxdepth: 3
+   :maxdepth: 2
    :caption: Morpheus UI
 
-   getting_started/getting_started
+   getting_started/getting_started   
+   operations/operations
    provisioning/provisioning
    library/library.rst
    infrastructure/infrastructure
-   administration/administration
-   monitoring/monitoring
-   logs/logs
    backups/backups
-   operations/operations
+   monitoring/monitoring
    tools/tools
+   administration/administration
    personas/personas.rst
    troubleshooting/troubleshooting
 
