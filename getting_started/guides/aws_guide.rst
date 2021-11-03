@@ -228,7 +228,7 @@ Now that we have a workflow, return to `|ProIns|` and begin to provision another
 
 As the instance is provisioning, we can go to the "HISTORY" tab and see Morpheus executing the tasks that were contained in our workflow.
 
-This is just one example of using Morpheus to automate the process of configuring and instance to your needs. There are a number of other automation types that can be built into your workflows as well. For further information, take a look at the :ref:`automationintegrations` guide in Morpheus docs.
+This is just one example of using Morpheus to automate the process of configuring and instance to your needs. There are a number of other automation types that can be built into your workflows as well. For further information, take a look at the :ref:`Automation Integrations` guide in Morpheus docs.
 
 Conclusion
 ^^^^^^^^^^
