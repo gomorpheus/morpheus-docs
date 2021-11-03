@@ -118,7 +118,6 @@ rst_prolog = """
 .. |InfKeyKey| replace:: Infrastructure > Keys & Certs > Key Pairs
 .. |InfKeySSL| replace:: Infrastructure > Keys & Certs > SSL Certificates
 .. |InfKeyInt| replace:: Infrastructure > Keys & Certs > Integrations
-.. |InfBoo| replace:: Infrastructure > Boot
 .. |InfBooMap| replace:: Infrastructure > Boot > Mapping
 .. |InfBooBoo| replace:: Infrastructure > Boot > Boot Menus
 .. |InfBooAns| replace:: Infrastructure > Boot > Answer Files
@@ -170,8 +169,8 @@ rst_prolog = """
 .. |AdmIntDis| replace:: Administration > Integrations > Distributed Workers
 .. |AdmPol| replace:: Administration > Policies
 .. |AdmHea| replace:: Administration > Health
-.. |AdmHeaMor| replace:: Administration > Health > Morpheus Health
-.. |AdmHeaMor| replace:: Administration > Health > Morpheus Logs
+.. |AdmHeaMorHea| replace:: Administration > Health > Morpheus Health
+.. |AdmHeaMorLog| replace:: Administration > Health > Morpheus Logs
 .. |AdmSet| replace:: Administration > Settings
 .. |AdmSetApp| replace:: Administration > Settings > Appliance
 .. |AdmSetWhi| replace:: Administration > Settings > Whitelabel
