@@ -11,7 +11,7 @@ See http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies.html for 
 Morpheus Sample AWS IAM Policy
 ``````````````````````````````
 
-.. code-block:: bash
+.. code-block:: json
 
   {
       "Version": "2012-10-17",

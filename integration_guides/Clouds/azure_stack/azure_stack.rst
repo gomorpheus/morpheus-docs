@@ -114,8 +114,8 @@ Configure
 
    .. include:: /integration_guides/Clouds/base_options.rst
 
-   Details
-   ```````   
+   **Details**   
+   
    IDENTITY URL
     https://login.microsoftonline.com
    MANAGEMENT URL*

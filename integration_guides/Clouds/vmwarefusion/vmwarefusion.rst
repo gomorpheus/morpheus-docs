@@ -10,8 +10,7 @@ Add a VMware Fusion Cloud
 
    .. include:: /integration_guides/Clouds/base_options.rst
 
-   Details
-   ```````
+   **Details**
 
    VMWARE FUSION HOST
       IP or URL of VMware Fusion Host

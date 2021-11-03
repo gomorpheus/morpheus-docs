@@ -1,5 +1,5 @@
 Usage
-----
+-----
 
 The `Operations > Costing > Usage` section shows billing information for Instances and hosts that have pricing configured on their Service Plan.
 
