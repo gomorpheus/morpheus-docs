@@ -150,11 +150,8 @@ Configure
 
 #. Once all options are configured, select NEXT to add the cloud to a Group.
 
-   Group
-   `````
-
-   A Group must be specified or created for the new Cloud to be added to. Clouds can be added to additional Groups or removed from Groups after being created.
-
+   GROUP
+     A Group must be specified or created for the new Cloud to be added to. Clouds can be added to additional Groups or removed from Groups after being created.
    USE EXISTING
      Add the new Cloud to an exiting Group in |morpheus| .
    CREATE NEW

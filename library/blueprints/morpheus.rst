@@ -185,7 +185,7 @@ In the APP BLUEPRINT modal, select the Preview section to display a graphical re
 
 .. image:: /images/provisioning/templates_301_3.png
 
-.. IMPORTANT:: When Tiers are connected, the Instances in a Tier will import the evars from Instances in connected Tiers, and if |morpheus] is managing the Instance Firewalls, communication between the Instances will be facilitated based on the Instances port configurations.
+.. IMPORTANT:: When Tiers are connected, the Instances in a Tier will import the evars from Instances in connected Tiers, and if |morpheus| is managing the Instance Firewalls, communication between the Instances will be facilitated based on the Instances port configurations.
 
 Provisioning
 ^^^^^^^^^^^^

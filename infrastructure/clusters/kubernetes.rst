@@ -6,7 +6,7 @@ Kubernetes Clusters
 Requirements
 ^^^^^^^^^^^^
 
-- Agent installation is required for Master and Worker Nodes. Refer to `Morpheus Agent`_ section for additional information.
+- Agent installation is required for Master and Worker Nodes. Refer to :ref:`Morpheus Agent` section for additional information.
 - Access to Cloud Front, Image copy access and permissions for System and Uploaded Images used in Cluster Layouts
    Image(s) used in Cluster Layouts must either exist in destination cloud/resource or be able to be copied to destination by Morpheus, typically applicable for non-public clouds. For the initial provision, Morpheus System Images are streamed from Cloud Front through Morpheus to target destination. Subsequent provisions clone the local Image.
 - System Kubernetes Layouts require Master and Worker nodes to access to the following over 443 during K8s install and configuration:
@@ -168,7 +168,7 @@ To create a new Kubernetes Cluster:
 
    - The Master Node(s) will provision first.
    - Upon successful completion of VM provision, Kubernetes scripts will be executed to install and configure Kubernetes on the Masters.
-       .. note:: Access to the sites listed in the `Requirements`_ section is required from Master and Worker nodes over 443
+       .. note:: Access to the sites listed in the :ref:`Requirements` section is required from Master and Worker nodes over 443
    - After Master or Masters are successfully provisioned and Kubernetes is successfully installed and configured, the Worker Nodes will provision in parallel.
    - Provision status can be viewed:
       - From the Status next to the Cluster in ``Infrastructure -> Clusters``

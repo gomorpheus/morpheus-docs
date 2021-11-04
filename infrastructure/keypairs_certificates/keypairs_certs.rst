@@ -24,12 +24,13 @@ To Add Key Pair:
 #. Navigate to Infrastructure > Keys & Certs
 #. On the Key Pairs tab, click :guilabel:`+ ADD`
 #. From the Add Key Pair wizard input the following as needed:
-  * Name
-  * Public Key
-  * Private Key
-  * Passphrase
 
-.. NOTE:: Certain features do not require storage of the private key.
+   * Name
+   * Public Key
+   * Private Key
+   * Passphrase
+
+   .. NOTE:: Certain features do not require storage of the private key.
 
 Delete Key Pair
 ---------------
@@ -51,11 +52,12 @@ Add SSL Certificate
 #. Navigate to Infrastructure > Keys & Certs
 #. On the SSL Certificates tab, click :guilabel:`+ ADD`
 #. From the Add SSL Certificate wizard input the following as needed:
-  * Name
-  * Domain Name
-  * Key File
-  * Cert File
-  * Root Cert
+
+   * Name
+   * Domain Name
+   * Key File
+   * Cert File
+   * Root Cert
 
 Delete SSL Certificate
 ----------------------

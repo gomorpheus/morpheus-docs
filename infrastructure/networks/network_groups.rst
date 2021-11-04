@@ -1,8 +1,5 @@
 Network Groups
 --------------
-.. finish
-Overview
-^^^^^^^^
 
 Network Groups are useful for grouping networks during provisioning and scaling or grouping availability subnets together such that during provisioning vm’s within an instance can be round robin provisioned across availability zones.
 

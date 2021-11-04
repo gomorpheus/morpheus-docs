@@ -159,7 +159,6 @@ Add Images
     Name of the Image.
    Operating System
     List of available operating systems.
-   .. Menu
    Storage Provider
     List of available storage providers.
    Image Path

@@ -10,8 +10,7 @@ Add a Xen Server Cloud
 
    .. include:: /integration_guides/Clouds/base_options.rst
 
-   Details
-   ```````
+   **Details**
 
    API URL
       IP or URL of Xen Host. ex: `xenserver.domain.com`

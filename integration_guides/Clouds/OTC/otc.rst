@@ -37,7 +37,7 @@ DOMAIN ID
 PROJECT
   OTC projects are groupings of resources and can include compute resources, storage or networking. Multiple projects may be nested under your account. Select the project to which |morpheus| should onboard from (if desired) and provision
 REGION
-
+ OTC Region
 USERNAME
   The username for the OTC service account that |morpheus| will use. Ensure this account has sufficient cloud privileges to avoid interruption of work in |morpheus|
 PASSWORD

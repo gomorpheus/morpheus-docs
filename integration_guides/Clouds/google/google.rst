@@ -94,8 +94,8 @@ Add a GCP Cloud
 
    .. include:: /integration_guides/Clouds/base_options.rst
 
-   Details
-   ```````
+   **Details**
+
    PRIVATE KEY
     The service account private key. Paste in the entire value between (but not including) the quotation marks in your downloaded JSON document, formatted like the following example: ``-----BEGIN PRIVATE KEY-----(your_key)-----END PRIVATE KEY-----``
    CLIENT EMAIL

@@ -16,8 +16,8 @@ Adding UCS Manager Cloud
 
    .. include:: /integration_guides/Clouds/base_options.rst
 
-   Details
-   ```````
+   **Details**
+
     
    UCS MANAGER
       IP or hostname of UCS Manager

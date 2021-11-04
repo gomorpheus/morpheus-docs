@@ -14,8 +14,8 @@ To get started with VMware ESXi, simply add a VMware ESXi Cloud in either the ``
 
    .. include:: /integration_guides/Clouds/base_options.rst
 
-   Details
-   ```````
+   **Details**
+
    * ESXi Host name or IP address
    * Username ( This is normally root )
    * Password

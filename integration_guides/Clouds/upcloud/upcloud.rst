@@ -60,9 +60,8 @@ Configure
 
    .. include:: /integration_guides/Clouds/base_options.rst
 
-   Details
-   ```````
-   
+   **Details**
+
    USERNAME
     UpCloud User Account Username
    PASSWORD

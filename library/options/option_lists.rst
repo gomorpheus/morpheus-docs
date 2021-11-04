@@ -369,13 +369,15 @@ REQUEST SCRIPT
   
     **Example:** ``results = {max: 50, siteZoneId : 3}``
 
-  **instance-wiki:**
+  **instance-wiki**
+  
   Contains same options for Instances Morpheus API type.
-    - ``phrase : <string>`` // Fuzzy matches phrase on wiki name, urlName and content
+   - ``phrase : <string>`` // Fuzzy matches phrase on wiki name, urlName and content
 
-  **server-wiki:**
+  **server-wiki**
+  
   Contains same options for Servers Morpheus API type.
-    - ``phrase : <string>`` // Fuzzy matches phrase on wiki name, urlName and content
+   - ``phrase : <string>`` // Fuzzy matches phrase on wiki name, urlName and content
 
 LDAP Option List Fields
 ^^^^^^^^^^^^^^^^^^^^^^^
@@ -447,7 +449,7 @@ Populating LDAP-type Option Lists requires knowledge of LDAP query syntax. This 
 
      }
 
-9. Click SAVE CHANGES
+9. Click :guilabel:`SAVE CHANGES`
 
    .. image:: /images/provisioning/library/ldap_option_list.png
      :scale: 40%

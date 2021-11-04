@@ -28,8 +28,8 @@ Add a SCVMM Cloud
 
    .. include:: /integration_guides/Clouds/base_options.rst
 
-   Details
-   ```````
+   **Details**
+
 
    SCVMM HOST
      IP address or URL of SCVMM host server

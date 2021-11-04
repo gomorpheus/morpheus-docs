@@ -15,8 +15,8 @@ Adding PCF Cloud From `Infrastructure -> Clouds`
 
    .. include:: /integration_guides/Clouds/base_options.rst
 
-   Details
-   ```````
+   **Details**
+
    API URL
      Cloud Foundry API Url
    CLIENT ID

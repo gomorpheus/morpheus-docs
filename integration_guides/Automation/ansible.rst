@@ -133,7 +133,9 @@ Use Case:
                   name: "{{ morpheus['instance']['hostname'] }}"
                   password: "xxxxxxx"
                   state: present
+                  
     .. NOTE:: ``{{ morpheus['instance']['hostname'] }}`` is the format of using |morpheus| Variables
+    
    Create a user with a name which you enter during provisioning using a custom Instance type.
     This instance type has a `Text` Input that provides a text box to enter a username. The fieldName of the Input in this case would be `username`. Below is the playbook.
      .. code-block:: bash
@@ -148,6 +150,7 @@ Use Case:
                 name: "{{ morpheus['customOptions']['username'] }}"
                 password: "xxxxxxx"
                 state: present
+                
     .. NOTE:: ``{{ morpheus['customOptions']['username'] }}`` will be the format.
 
 Using Secrets
