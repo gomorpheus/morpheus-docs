@@ -1,12 +1,12 @@
 |morpheus| Blueprints
----------------------
+^^^^^^^^^^^^^^^^^^^^^
 
-|morpheus| App Blueprints allow pre-configured full multi-tier application deployments for multiple environments. Blueprints can be provisioned from the ``Provisioning -> Apps`` section and can be fully configured for one click provisioning. Blueprints can be built within the ``Builder`` section or by code in the ``Raw`` section. Blueprints can also be exported as YAML or JSON and created with the |morpheus| API and CLI.
+|morpheus| App Blueprints allow pre-configured full multi-tier application deployments for multiple environments. Blueprints can be provisioned from the ``|ProApp|`` section and can be fully configured for one click provisioning. Blueprints can be built within the ``Builder`` section or by code in the ``Raw`` section. Blueprints can also be exported as YAML or JSON and created with the |morpheus| API and CLI.
 
 A unique capability of the YAML/JSON based Morpheus blueprint structure is the ability to have multiple configurations per instance being provisioned within the app blueprint. This can be a scoped configuration that acts as overrides based on selected cloud, group, and/or environment the app is being provisioned in as a target. For example. maybe the "development" environment doesn't need as many horizontally scaled nodes as the "production" environment. Another great aspect of this configuration markup is a blueprint can be defined as a hybrid cloud blueprint. This makes the app blueprint structure very powerful and in some ways better than alternative infrastructure as code orchestrators. For Example, ARM is locked into Azure, while CloudFormation is locked into AWS. Even Terraform does not allow a tf file to expand its bounds beyond a specific provider type.
 
 Basic Blueprint Structure
-^^^^^^^^^^^^^^^^^^^^^^^^^
+`````````````````````````
 
 In a Morpheus App Blueprint there are a few structural concepts to be aware of. Firstly there is a concept of a `Tier`. A `Tier` is a grouping of instances within an app blueprint. Tiers can be used for a variety of things including sequenced booting of instances or even properly creating endpoint groups and security group contexts in network security tools like Cisco ACI. An example of a Tier structure might be a ``Web`` tier and a ``Database`` tier. These tiers can also be marked as connected such that network communication rules can appropriately be defined. A basic 2 Tier blueprint skeleton might look something like this:
 
@@ -30,7 +30,7 @@ In a Morpheus App Blueprint there are a few structural concepts to be aware of. 
 This example has defined 2 tiers as yaml properties under the `tiers` object. They are called `Web` and `Database`. A Tier can optionally define its connected tiers which are bi-directional even though only one tier has to define them. This is the `linkedTiers` array and simply lists the connected tiers by tier name. A Boot Order can also optionally be defined under a nested ``{"tier": {"bootOrder": 1}}`` object structure.
 
 Configuration Scopes
-^^^^^^^^^^^^^^^^^^^^
+````````````````````
 
 Another capability of Morpheus App Blueprint structure is its configuration scoping. This allows properties to be overridden based on the apps target environment or even target group and cloud. For example. Maybe we want to use a larger plan size in production vs. development
 
@@ -71,7 +71,7 @@ Note the new environments object. The object graph of the morpheus blueprint str
 
 
 Getting Started
-^^^^^^^^^^^^^^^
+```````````````
 
 To get started, it may be best to look at a simple App Blueprint configuration. Docker templates are less complex than virtual machine based templates so lets look at a Blueprint that deploys a single Nginx container to a target cloud:
 
@@ -116,23 +116,23 @@ Theres some useful things to look at in the above docker example. One is there a
 
 .. image:: /images/provisioning/templates_301_1.png
 
-Creating App Blueprints
------------------------
+Creating Morpheus App Blueprints
+````````````````````````````````
 
-#. Navigate to ``Provisioning -> Blueprints``
+#. Navigate to |LibBluApp|
 #. Select :guilabel:`+ ADD`
 #. Enter a NAME for the Blueprint and select :guilabel:`NEXT`
 #. Optionally add a Description, Category, and Image for the Blueprint.
 
 Add Tiers
-^^^^^^^^^
+.........
 
 #. In the STRUCTURE section, select + to add a Tier
 #. Select or enter a Tier Name.
 #. Select the Tier to set Boot Order, rename, or once multiple Tiers are added, connect the Tier to other Tiers.
 
 Add Instances to Tiers
-^^^^^^^^^^^^^^^^^^^^^^
+......................
 
 #. In the STRUCTURE section, select + in a Tier to add an Instance
 #. Select an Instance Type
@@ -142,7 +142,7 @@ Add Instances to Tiers
 
 
 Add Configurations to Instances
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+...............................
 
 #. In the STRUCTURE section, select + in an Instance to add a Configuration
 #. Select at least one option from Group, Cloud or Environment.
@@ -154,14 +154,14 @@ Add Configurations to Instances
    * ALLOW EXISTING INSTANCE will allow users to add existing Instances to the App when using the blueprint
 
 Save
-^^^^
+....
 
 Once all desired Tiers, Instances and Configurations are added, select Save. The Blueprint will be created, can be edited after saving, and will available in the Apps section for provisioning.
 
-.. NOTE:: Blueprints are not provisioned when created. To provision a Blueprint, use ``Provisioning -> Apps``.
+.. NOTE:: Blueprints are not provisioned when created. To provision a Blueprint, use |ProApp|.
 
 RAW
-^^^
+...
 
 Blueprints can be create, edited or Exported in the RAW section when creating or editing a blueprint.
 
@@ -179,7 +179,7 @@ To Export a Blueprint as JSON or YAML:
 #. The Blueprint export file will be downloaded to your computer as ``{app_name}-config.json or {app_name}-config.yaml``
 
 Preview
-^^^^^^^
+```````
 
 In the APP BLUEPRINT modal, select the Preview section to display a graphical representation of your Blueprint Tiers, Instances and Tier Connections.
 
@@ -188,6 +188,6 @@ In the APP BLUEPRINT modal, select the Preview section to display a graphical re
 .. IMPORTANT:: When Tiers are connected, the Instances in a Tier will import the evars from Instances in connected Tiers, and if |morpheus| is managing the Instance Firewalls, communication between the Instances will be facilitated based on the Instances port configurations.
 
 Provisioning
-^^^^^^^^^^^^
+````````````
 
-To provision a Blueprint, navigate to ``Provisioning -> Apps`` and select the Blueprint when creating an App. See the `App section <https://docs.morpheusdata.com/en/latest/provisioning/apps/apps.html>`_ of |morpheus| docs for more on provisioning Apps.
+To provision a Blueprint, navigate to |ProApp| and select the Blueprint when creating an App. See the `App section <https://docs.morpheusdata.com/en/latest/provisioning/apps/apps.html>`_ of |morpheus| docs for more on provisioning Apps.

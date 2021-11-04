@@ -1,5 +1,5 @@
 ARM Blueprints
---------------
+^^^^^^^^^^^^^^
 
 ARM Blueprints provide a simple and repeatable way of deploying infrastructure-as-code to Azure Clouds. Objects and properties are defined in a JSON file and are provisionable on-demand in *|ProApp|*
 

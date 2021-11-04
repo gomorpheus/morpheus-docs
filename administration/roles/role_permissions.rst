@@ -295,7 +295,7 @@ Role Mappings
     -
   * - Infrastructure: Network Domains
     - None, Read, Full
-    - Determines access to the Domains tab on the Infrastructure > Network page.
+    - Determines access to the Domains tab on the |InfNet| page.
     - The Domains page is where network domains are managed. Domains are used for setting FQDNs, joining Windows Instances to domains, and creating A-Records with DNS integrations. On create the domain controller and credentials for domain join must be provided.
     - This permission is recommended for those responsible for |morpheus| DNS and domain-join integrations.
     -
@@ -331,31 +331,31 @@ Role Mappings
     -
   * - Infrastructure: Network Router Firewalls
     - None, Read, Full
-    - Determines access to Firewall tabs on Router Detail pages (Infrastructure > Network > Routers tab > Selected Router)
+    - Determines access to Firewall tabs on Router Detail pages (|InfNetRou| tab > Selected Router)
     - The Firewall tab is where firewall rules are viewed, created, and managed
     - This permission is recommended for those responsible for managing firewall rules
     -
   * - Infrastructure: Network Router Interfaces
     - None, Read, Full
-    - Determines access to Interfaces tabs on Router Detail pages (Infrastructure > Network > Routers tab > Selected Router)
+    - Determines access to Interfaces tabs on Router Detail pages (|InfNetRou| tab > Selected Router)
     - The Interface tab is where router interfaces can be viewed, created and managed
     - This permission is recommended for those responsible for network traffic flow
     -
   * - Infrastructure: Network Router NAT
     - None, Read, Full
-    - Determines access to the NAT tab on Router Detail pages (Infrastructure > Network > Routers tab > Selected Router)
+    - Determines access to the NAT tab on Router Detail pages (|InfNetRou| tab > Selected Router)
     - The NAT tab is where NAT rules are viewed, created, and managed
     - This permission is recommended for those responsible for network traffic flow
     -
   * - Infrastructure: Network Router Redistribution
     - None, Read, Full
-    - Determines access to Route Redistribution tabs on Router Detail pages (Infrastructure > Network > Routers tab > Selected Router)
+    - Determines access to Route Redistribution tabs on Router Detail pages (|InfNetRou| tab > Selected Router)
     - The Route Redistribution tab is where redistribution rules are viewed, created, and managed
     - This permission is recommended for those responsible for redistribution rules
     -
   * - Infrastructure: Network Router Routes
     - None, Read, Full
-    - Determines access to Routing tabs on Router Detail pages (Infrastructure > Network > Routers tab > Selected Router)
+    - Determines access to Routing tabs on Router Detail pages (|InfNetRou| tab > Selected Router)
     - The Routing tab is where routes are viewed, created, and managed
     - This permission is recommended for those responsible for network route management
     -

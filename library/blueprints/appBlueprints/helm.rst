@@ -1,5 +1,5 @@
 Helm Blueprints
----------------
+^^^^^^^^^^^^^^^
 
 If you're using Helm Charts to manage Kubernetes applications, |morpheus| allows you to bring them in from a Git repository as a Blueprint. The selected repository must be integrated with |morpheus| before creating the Blueprint.
 

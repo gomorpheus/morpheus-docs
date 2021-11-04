@@ -1,5 +1,5 @@
 Kubernetes Blueprints
----------------------
+^^^^^^^^^^^^^^^^^^^^^
 
 |morpheus| allows you to store Kubernetes configuration YAML files for easy deployment on-demand. Kubernetes Blueprints can be built by pulling in Kubernetes spec stored as a |morpheus| Spec Template object, those tracked under version control in a Git repository, or you can write them directly in the New Blueprint modal.
 

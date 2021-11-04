@@ -4,7 +4,7 @@ Blueprints
 Overview
 --------
 
-The Blueprints section is used to add Virtual Images as custom Instance Types to the provisioning catalog. The Library section is composed of:
+The Blueprints section is used to compose provisioning catalogs. The Blueprints section is composed of:
 
 * Instance Types
 * Layouts

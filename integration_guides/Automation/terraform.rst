@@ -100,16 +100,16 @@ In order to provision Terraform apps, Terraform App Blueprints must be created f
 
 #. Select :guilabel:`SAVE`
 
-Your Terraform App is ready to be provisioned from `Provisioning -> Apps`.
+Your Terraform App is ready to be provisioned from `|ProApp|`.
 
 Provisioning Terraform Apps
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. NOTE:: An existing Terraform App Blueprints must be added to `Provisioning -> Blueprints` before it can be provisioned.
 
-.. NOTE:: In order to provision Terraform Apps in `Provisioning -> Apps`, the Morpheus user must have Role permissions for `Provisioning: Blueprints - Terraform` set to `Provision` or `Full`.
+.. NOTE:: In order to provision Terraform Apps in `|ProApp|`, the Morpheus user must have Role permissions for `Provisioning: Blueprints - Terraform` set to `Provision` or `Full`.
 
-#. Navigate to `Provisioning -> Apps`
+#. Navigate to `|ProApp|`
 #. Select :guilabel:`+ ADD`
 #. Choose and existing Terraform App Blueprint
 #. Select :guilabel:`NEXT`
@@ -121,6 +121,6 @@ Provisioning Terraform Apps
 
 The Terraform App will begin to provision.
 
-Once provisioning is completed, note the TERRAFORM tab in the App details page (`Provisioning -> Apps` -> select the App). This section contains State and Plan output:
+Once provisioning is completed, note the TERRAFORM tab in the App details page (`|ProApp|` -> select the App). This section contains State and Plan output:
 
 .. image:: /images/apps/terraform/terraform_sample.png
