@@ -14,8 +14,7 @@ New
   |morpheus| will create a snapshot of an existing VM, convert from source format to required destination format, and then provision the VM into the target environment.
 
 Source
-  VMWare, Openstack, Xen, Nutanix* Azure* Hyper-V* (
-  *in-development)
+  VMWare, Openstack, Xen, Nutanix* Azure* Hyper-V* (* in-development)
 Destination
   Softlayer, Openstack, Metapod, Xen, Amazon, VMWare, ESXi, Nutanix, Hyper-V Supported OS Type: Windows or Linux
 Service Impact

@@ -4,8 +4,8 @@ vCloud Director
 Configuration
 ^^^^^^^^^^^^^
 
-Add vCD Cloud From ``Infrastructure > Clouds``
-`````````````````````````````````````````````
+Add vCD Cloud From `Infrastructure > Clouds`
+````````````````````````````````````````````
 
 #. Navigate to ``Infrastructure -> Clouds``
 #. Select :guilabel:`+ ADD`
@@ -15,8 +15,8 @@ Add vCD Cloud From ``Infrastructure > Clouds``
 
    .. include:: /integration_guides/Clouds/base_options.rst
 
-   Details
-   ```````
+   **Details**
+
    API URL
      vCloud Director API Url
       Example: ``https://org.vcd.company.com``

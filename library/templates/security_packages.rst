@@ -4,7 +4,7 @@ Security Packages
 The Security Packages Section is for uploading SCAP packages which can then be consumed in Security Scan Jobs (|ProJob|).
 
 Add a new Security Package
-``````````````````````````
+^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 #. Navigate to Library > Templates > Security Packages
 #. Click :guilabel:`+ADD` > SCAP Package

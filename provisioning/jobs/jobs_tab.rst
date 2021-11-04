@@ -15,6 +15,7 @@ Jobs
 
     - **None:** Cannot access ``|ProJob| > Job Executions tab``
     - **Read:** Can access and view ``|ProJob| > Job Executions tab`` including job execution history, status, and Job output
+
 |
 
 Creating Jobs

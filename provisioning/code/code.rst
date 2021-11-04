@@ -29,6 +29,7 @@ Code
       - None: Cannot access Provisioning: Code Integrations.
       - Read: Can view Code Integrations. Cannot create, delete or edit Code Integrations.
       - Full: Can create, delete and edit Code Integrations
+      
 |
 
 .. duplicated

@@ -10,5 +10,3 @@ To create a list view:
 #. If desired, mark the box to set the new view as your default view so it appears automatically each time the invoices list page is accessed
 #. Click :guilabel:`SAVE`
 
-
-|br|
