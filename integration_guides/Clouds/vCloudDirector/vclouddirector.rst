@@ -40,7 +40,7 @@ Add vCD Cloud From ``Infrastructure > Clouds``
    Inventory Existing Instances
     If enabled, existing Virtual Machines will be inventoried and appear as unmanaged Virtual Machines in |morpheus| .
 
-   NOTE: Multiple Organizations/VDC's can be added by creating additional Clouds in |morpheus|.
+   NOTE: Multiple Organizations/VDC's can be added by creating additional Clouds in |morpheus|. Additionally, websockets need to be enabled on your load balancer when vCD has been deployed in a highly available configuration. The hypervisor console services use websockets. To enable websockets on your load balancer, please consult your load balancer documentation.
 
    .. include:: /integration_guides/Clouds/advanced_options.rst
 
@@ -48,47 +48,4 @@ Add vCD Cloud From ``Infrastructure > Clouds``
 #. Select an existing or create a new Group to add the Cloud to. The Cloud can be added to additional Groups in a Groups `Clouds` tab.
 #. Select :guilabel:`NEXT`
 #. Review and then Select :guilabel:`COMPLETE`
-
-
-Add vCD Cloud From `Infrastructure -> Groups`
-`````````````````````````````````````````````
-
-#. Navigate to ``Infrastructure -> Groups``
-#. Select a Group
-#. Select the `CLOUDS` tab
-#. Scroll down to **VCLOUD DIRECTOR** and select :guilabel:`+ ADD`
-#. Populate the following:
-
-   Name
-    Name of the Cloud in |morpheus|
-   Location
-    Description field for adding notes on the cloud, such as location.
-   Visibility
-    For setting cloud permissions in a multi-tenant environment. Not applicable in single tenant environments.
-   API URL
-    vCloud Director API Url
-     Example: ``https://org.vcd.company.com``
-   USERNAME
-    vCD Organization Administrator User
-
-    NOTE:: User must have an Organizational Administrator Role in the selected Origination for successful provisioning
-
-   PASSWORD
-    vCD Organization Administrator User password
-   ORGANIZATION
-    Select Organization. Dropdown populates upon successful authorization.
-   VDC
-    Select VDC. Dropdown populates upon successful authorization.
-   Inventory Existing Instances
-    If enabled, existing Virtual Machines will be inventoried and appear as unmanaged Virtual Machines in |morpheus| .
-
-    NOTE: Multiple Organizations/VDC's can be added by creating additional Clouds in |morpheus|.
-
-    .. include:: /integration_guides/Clouds/advanced_options.rst
-
-
-#. Select :guilabel:`NEXT`
-#. Review and then Select :guilabel:`COMPLETE`
-
-.. include:: /integration_guides/Clouds/vCloudDirector/creatingvcloud.rst
 ​
