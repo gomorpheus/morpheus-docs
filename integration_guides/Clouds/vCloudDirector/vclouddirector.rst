@@ -48,4 +48,6 @@ Add vCD Cloud From ``Infrastructure > Clouds``
 #. Select an existing or create a new Group to add the Cloud to. The Cloud can be added to additional Groups in a Groups `Clouds` tab.
 #. Select :guilabel:`NEXT`
 #. Review and then Select :guilabel:`COMPLETE`
+
+.. include:: creatingvcloud.rst
 ​
