@@ -22,6 +22,7 @@ Breaking Changes
 - 5.2.9: OpenStack v2 Identity API will be deprecated in v5.2.9 and will be removed in v5.3.3
 - 5.2.9: The following System Instance Types and associated layouts were disabled and no longer appear in the system provided library: Cassandra, Confluence, Devstack, Hadoop, Jboss, Jenkins, Magento, Mongo, Moogsoft, Nexus, Percona, Puppet, RethinkDb, Riak, RiakCs, Stash, Solr, Wordpress, Zookeeper. Note this only disables the Instance type from the system seeded library and does not affect user created Insatnce Types or Layouts.
 - 5.2.11: Veeam 9.5u3a and 9.5u4 integration support has been deprecated as they near end of support
+- 5.2.11-2 contains important security updates. v5.2.11-1 is no longer available and it is recommended to update from v5.2.11-1 to v5.2.11-2
 
 |morpheus| Application OS
 =========================
