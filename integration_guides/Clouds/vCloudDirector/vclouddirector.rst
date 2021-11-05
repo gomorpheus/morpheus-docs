@@ -49,5 +49,5 @@ Add vCD Cloud From ``Infrastructure > Clouds``
 #. Select :guilabel:`NEXT`
 #. Review and then Select :guilabel:`COMPLETE`
 
-.. include:: creatingvcloud.rst
+.. include:: /integration_guides/Clouds/vCloudDirector/creatingvcloud.rst
 ​
