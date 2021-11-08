@@ -26,7 +26,7 @@ Fixes
 
 :Amazon: - Disks added to VMs after provisioning are now deleted along with the VM at teardown time. Previously disks added later would remain :superscript:`5.3.4`
 :Ansible: - Fixed an issue which caused Ansible integrations not to inherit the "No Proxy" configuration in global Appliance Settings (Administration > Settings > Appliance) :superscript:`5.3.4`
-:API/CLI: - Added additional prompts to the ``network-routers add`` CLI workflow to enable selection of Edge Clusters and/or Tier-0 Gateways for NSX-T Tier-1 and Tier-0 Gateways :superscript:`5.3.4`
+:API & CLI: - Added additional prompts to the ``network-routers add`` CLI workflow to enable selection of Edge Clusters and/or Tier-0 Gateways for NSX-T Tier-1 and Tier-0 Gateways :superscript:`5.3.4`
             - Fixed an issue that caused GET calls for specific networks, network proxies, and network routers not to work properly for Subtenant users :superscript:`5.3.4`
             - Fixed an issue that prevented custom networks from being created through |morpheus| API :superscript:`5.3.4`
             - Resizing network interface counts via |morpheus| API no longer causes VMs to reboot under certain conditions :superscript:`5.3.4`
@@ -113,7 +113,7 @@ Appliance & Agent Updates
 =========================
 
 :Appliance: - `morpheus-playbooks` configuration updated to use Cloudfront instead of s3 bucket url :superscript:`5.3.4`
-            - Fixed upgrade issue with SLES 12/15 where morpheus-ctl command was removed during rpm post removal. Note this does not fix previous rpm post removal scripts and rpm -U ... --force will still need to be ran when upgrading to 5.2.12 on SLES 12/15. :superscript:`5.3.4`
+            - Fixed upgrade issue with SLES 12/15 where morpheus-ctl command was removed during rpm post removal. Note this does not fix previous rpm post removal scripts and ``rpm -U ... --force`` will still need to be ran when upgrading to 5.2.12 on SLES 12/15. :superscript:`5.3.4`
             - Java upgraded to 8u312-b07 :superscript:`5.3.4`
             - MySQL upgraded to 5.7.35 :superscript:`5.3.4`
             - Nginx upgraded to 1.20.1 :superscript:`5.3.4`
