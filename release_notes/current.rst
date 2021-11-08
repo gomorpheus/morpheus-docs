@@ -119,7 +119,8 @@ Appliance & Agent Updates
             - Nginx upgraded to 1.20.1 :superscript:`5.3.4`
             - RabbitMQ upgraded to 3.9.8 :superscript:`5.3.4`
             - Tomcat upgraded to 9.0.54 :superscript:`5.3.4`
-            
+:Agent Packages: - Node & VM Node package verison updated to |nodePackageVer|
+                 - |nodePackageVer| java updated to 8u312-b07
             
             
             

@@ -65,7 +65,12 @@ Services
 |morphver| Service Version Changes
 ----------------------------------
 
-- No service version changes with this release
+- Java upgraded to 8u312-b07 :superscript:`5.3.4`
+- MySQL upgraded to 5.7.35 :superscript:`5.3.4`
+- Nginx upgraded to 1.20.1 :superscript:`5.3.4`
+- RabbitMQ upgraded to 3.9.8 :superscript:`5.3.4`
+- Tomcat upgraded to 9.0.54 :superscript:`5.3.4`
+
 |
 
 |morphver| Service Version Compatibility
@@ -92,6 +97,10 @@ When externalizing MySQL, Elasticsearch and/or RabbitMQ services, the following 
 +---------------------------------------+-----------------------+-------------------------------------+
 | OpenSSL                               |                       | |openssl|, |openssl_fips| (FIPS)    |
 +---------------------------------------+-----------------------+-------------------------------------+
+| Java                                  |                       | |java|                              |
++---------------------------------------+-----------------------+-------------------------------------+
+| Java (macOS agent)                    |                       | |java-mac|                          |
++---------------------------------------+-----------------------+-------------------------------------+
 
 
 Security
@@ -100,7 +109,7 @@ Security
 CVEs Addressed
 --------------
 
-- CVE-2021-30129
+- CVE-2021-23369
 
 Upgrade Support Matrix
 ======================
