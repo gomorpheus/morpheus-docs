@@ -40,7 +40,7 @@ Add vCD Cloud From ``Infrastructure > Clouds``
    Inventory Existing Instances
     If enabled, existing Virtual Machines will be inventoried and appear as unmanaged Virtual Machines in |morpheus| .
 
-   NOTE: Multiple Organizations/VDC's can be added by creating additional Clouds in |morpheus|. Additionally, websockets need to be enabled on your load balancer when vCD has been deployed in a highly available configuration. The hypervisor console services use websockets. To enable websockets on your load balancer, please consult your load balancer documentation.
+   .. NOTE: Multiple Organizations/VDC's can be added by creating additional Clouds in |morpheus|. Additionally, websockets need to be enabled on your load balancer when vCD has been deployed in a highly available configuration. The hypervisor console services use websockets. To enable websockets on your load balancer, please consult your load balancer documentation.
 
    .. include:: /integration_guides/Clouds/advanced_options.rst
 
