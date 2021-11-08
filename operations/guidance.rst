@@ -44,7 +44,7 @@ Other types of Guidance recommendations, such as reserve compute recommendations
 Recommendations
 ^^^^^^^^^^^^^^^^^^
 
-To view and act on Guidance recommendations, navigate to `Operations -> Guidance`.
+To view and act on Guidance recommendations, navigate to `Operations > Guidance`.
 
 The Guidance list contains the following details:
 

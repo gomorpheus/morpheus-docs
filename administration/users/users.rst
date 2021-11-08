@@ -26,13 +26,13 @@ In |morpheus| 4.2.1 and higher, click on the hyperlinked Display Name of the Use
 Create User
 ^^^^^^^^^^^
 
-Users can be created from `Administration -> Users` or `Administration -> Tenants -> (selected Tenant) -> Users tab`.
+Users can be created from |AdmUse| or |AdmTen| > (selected Tenant) > Users tab`.
 
 .. NOTE:: Authorized Identity Source Users will be automatically created upon first sign in.
 
 To create a User:
 
-#. Navigate to either ``Administration -> Users`` or ``Administration -> Tenants -> Select a Tenant``.
+#. Navigate to either |AdmUse| or |AdmTen| > Select a Tenant``.
 #. Select :guilabel:`+ CREATE USER`.
 #. From the New User Wizard input:
 
@@ -68,11 +68,11 @@ To create a User:
 Edit User
 ^^^^^^^^^
 
-User settings can be edited from `Administration -> Users`, `Administration -> Tenants -> Select a Tenant -> Users tab`, or from `User Settings`.
+User settings can be edited from |AdmUse|, |AdmTen| > Select a Tenant > Users tab`, or from `User Settings`.
 
 .. NOTE:: Some User data from Users created via an Identity Source Integration such as Active Directory is not editable in |morpheus|, as it is synced with the Identity Source.
 
-To edit a User from the `Administration -> Users` Section:
+To edit a User from the |AdmUse| Section:
 
 #. Select the Administration link in the navigation bar.
 #. Select the Users link in the sub navigation bar.
@@ -81,7 +81,7 @@ To edit a User from the `Administration -> Users` Section:
 #. Make changes.
 #. Select :guilabel:`SAVE CHANGES`.
 
-To edit a User from the `Administration -> Tenants -> Select a Tenant -> Users tab`:
+To edit a User from the |AdmTen| > Select a Tenant > Users tab`:
 
 #. Select the Administration link in the navigation bar.
 #. Select the Tenants link in the sub navigation bar.
@@ -134,7 +134,7 @@ To regenerate a CLI or API Access Token:
 Delete User
 ^^^^^^^^^^^
 
-To delete a User from the `Administration -> Users` Section::
+To delete a User from the |AdmUse| Section::
 
 #. Select the Administration link in the navigation bar.
 #. Select the Users link in the sub navigation bar.
@@ -142,7 +142,7 @@ To delete a User from the `Administration -> Users` Section::
 #. Select **REMOVE** in the ACTIONS dropdown.
 #. Confirm
 
-To delete a User from the `Administration -> Tenants -> Select a Tenant -> Users tab`:
+To delete a User from the |AdmTen| > Select a Tenant > Users tab`:
 
 #. Select the Administration link in the navigation bar.
 #. Select the Tenants link in the sub navigation bar.

@@ -58,7 +58,7 @@ Network(s)
 Adding an AWS Cloud
 ^^^^^^^^^^^^^^^^^^^
 
-1. Navigate to `Infrastructure -> Clouds`
+1. Navigate to `Infrastructure > Clouds`
 2. Select `+ Create Cloud`
 3. Select AWS
 4. Enter the following:

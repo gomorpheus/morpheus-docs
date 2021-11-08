@@ -11,7 +11,7 @@ Active Directory is Microsoft’s primary authentication service widely used in 
 Adding an Active Directory Integration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-#. Navigate to `Administration -> Tenants`
+#. Navigate to |AdmTen|
 #. Select a Tenant
 #. Select :guilabel:`IDENTITY SOURCES`
 #. Select :guilabel:`+ IDENTITY SOURCE`

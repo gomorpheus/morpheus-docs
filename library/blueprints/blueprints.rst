@@ -48,12 +48,12 @@ App Blueprint Types
 - Kubernetes
 - Helm
 
-.. include:: /library/blueprints/morpheus.rst
-.. include:: /library/blueprints/terraform.rst
-.. include:: /library/blueprints/arm.rst
-.. include:: /library/blueprints/cloudFormation.rst
-.. include:: /library/blueprints/kubernetes.rst
-.. include:: /library/blueprints/helm.rst
+.. include:: /library/blueprints/appBlueprints/morpheus.rst
+.. include:: /library/blueprints/appBlueprints/terraform.rst
+.. include:: /library/blueprints/appBlueprints/arm.rst
+.. include:: /library/blueprints/appBlueprints/cloudFormation.rst
+.. include:: /library/blueprints/appBlueprints/kubernetes.rst
+.. include:: /library/blueprints/appBlueprints/helm.rst
 
 ..
   CATALOG BUILDER SECTION

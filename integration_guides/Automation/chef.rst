@@ -10,7 +10,7 @@ Overview
 Add Chef Integration
 ^^^^^^^^^^^^^^^^^^^^
 
-#. Navigate to `Administration -> Integrations` and select `+ New Integration`
+#. Navigate to |AdmInt| and select `+ New Integration`
 #. Select Integration Type "Chef"
 #. Populate the following fields:
 
@@ -31,7 +31,7 @@ The added Chef Integration is now available for use in |morpheus|. The Chef Inte
 Scope Chef Integration to a Cloud
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-#. Navigate to `Infrastructure -> Clouds`
+#. Navigate to `Infrastructure > Clouds`
 #. Edit the target Cloud
 #. Expand the `Advanced Options` section
 #. In the `Config Management` dropdown, select the Chef Integration.
@@ -40,7 +40,7 @@ Scope Chef Integration to a Cloud
 Scope Chef Integration to a Group
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-#. Navigate to `Infrastructure -> Groups`
+#. Navigate to `Infrastructure > Groups`
 #. Edit the target Group
 #. Expand the `Advanced Options` section
 #. In the `Config Management` dropdown, select the Chef Integration.

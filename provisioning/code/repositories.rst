@@ -56,7 +56,7 @@ Refresh Repository
 #. Select the ``Provisioning`` link in the navigation bar
 #. Select the ``Code`` link in the sub-navigation bar
 #. Select name of target repository
-#. Select :guilabel:`ACTIONS ▿` -> ``Refresh``
+#. Select :guilabel:`ACTIONS ▿` > ``Refresh``
 
 Browse Repositories
 ^^^^^^^^^^^^^^^^^^^

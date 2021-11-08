@@ -6,7 +6,7 @@ Scale Thresholds are pre-configured settings for auto-scaling Instances. When ad
 Creating Scale Thresholds
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
-#. Navigate to ``Provisioning -> Automation -> Scale Thresholds``
+#. Navigate to |LibAutSca|
 #. Select :guilabel:`+ ADD`
 #. Populate the following:
 

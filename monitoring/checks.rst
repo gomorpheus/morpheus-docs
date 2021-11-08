@@ -13,7 +13,7 @@ A check can have 3 health states. They are Failed, Warning (Recovering), and Hea
 Options
 -------
 
-All check types have several core options and some of these default options can be configured in `Admin -> Monitoring`. This includes the default check interval time. By default a check is run every 5 minutes. This can however be changed to run as frequently as once every minute.
+All check types have several core options and some of these default options can be configured in `Admin > Monitoring`. This includes the default check interval time. By default a check is run every 5 minutes. This can however be changed to run as frequently as once every minute.
 
 * *Max Severity*: The maximum severity level impact for a created incident that can occur if the check fails (defaults to Critical).
 * *Check Interval*: The frequency with which a check is run (default 5 minutes).

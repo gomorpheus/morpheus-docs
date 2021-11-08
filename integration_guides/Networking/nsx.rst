@@ -16,7 +16,7 @@ Add NSX-V Integration
 ^^^^^^^^^^^^^^^^^^^^^
 
 #. Navigate to ``Infrastructure > Network > Integrations``
-#. Select Select :guilabel:`+ ADD` -> VMWare NSX-V
+#. Select Select :guilabel:`+ ADD` > VMWare NSX-V
 #. Enter the following:
 
    NAME
@@ -44,7 +44,7 @@ When accessing an NSX-V integration (``Infrastructure > Network > Integrations``
 Create NSX Transport Zone
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
-#. Navigate to `Infrastructure -> Network`
+#. Navigate to `Infrastructure > Network`
 #. Select the  `Integrations` tab
 #. Select the name of NSX-V integration
 #. Select the `Transport Zones` tab
@@ -75,9 +75,9 @@ Morpheus version 4.1.2 adds SWITCHES tab to view switches associated with the se
 Create NSX Logical Switch and Edge Gateway
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. IMPORTANT:: Prior to creating a Logical Switch and Edge Gateway, associated External VMware Networks must be configured in |morpheus|. Navigate to `INFRASTRUCTURE -> NETWORK` and edit any Distributed Switch Groups that will be used and populate the Gateway, DNS and CIDR
+.. IMPORTANT:: Prior to creating a Logical Switch and Edge Gateway, associated External VMware Networks must be configured in |morpheus|. Navigate to `INFRASTRUCTURE > NETWORK` and edit any Distributed Switch Groups that will be used and populate the Gateway, DNS and CIDR
 
-#. Navigate to `INFRASTRUCTURE -> NETWORK`
+#. Navigate to `INFRASTRUCTURE > NETWORK`
 #. Select the  `SERVICES` tab
 #. Select the name of NSX Integration
 #. Select the `LOGICAL SWITCHES` tab

@@ -10,10 +10,10 @@ The following covers upgrading the |morpheus| App nodes in 3 Node HA configurati
 ...................
 |morpheus| Release Package urls can be obtained from `https://morpheushub.com <https://morpheushub.com>`_ 
 
-4.2.0+ -> |morphver| Upgrade
+4.2.0+ > |morphver| Upgrade
 ............................
 
-.. warning:: Rolling upgrades are not supported for 4.2.x -> 5.x upgrades
+.. warning:: Rolling upgrades are not supported for 4.2.x > 5.x upgrades
 
 .. important:: Due to Database schema changes in |morphver| it is important to stop the morpheus-ui service on all app nodes prior to upgrade. Failure to do so may result in errors or database corruption.
 
@@ -65,10 +65,10 @@ The following covers upgrading the |morpheus| App nodes in 3 Node HA configurati
 
 |
 
-5.0.0+ -> |morphver| Upgrade
+5.0.0+ > |morphver| Upgrade
 ............................
 
-.. note:: Rolling upgrades are supported for 5.x -> |morphver| upgrades
+.. note:: Rolling upgrades are supported for 5.x > |morphver| upgrades
 
 .. warning:: |morpheus| |morphver| contain new node and vm node packages that require 3.5GB of storage. It is safe to run ``sudo rm -Rf /var/opt/morpheus/package-repos/*`` after |morphver| package installation and before reconfigure to clean old node and vm node packages from the package-repo when room is needed. 
 

@@ -3,7 +3,7 @@ OneLogin
 
 Adding OneLogin Identity Source Integration
 
-#. Navigate to Administration -> Tenants
+#. Navigate to |AdmTen|
 #. Select the Tenant to add the Identity Source Integration
 #. Select :guilabel:`IDENTITY SOURCES`
 #. Select :guilabel:`+ IDENTITY SOURCE`

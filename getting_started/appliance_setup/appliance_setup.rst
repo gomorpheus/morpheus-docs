@@ -34,7 +34,7 @@ After installation, log into the appliance at the URL presented upon completion.
     .. NOTE:: The Master User is the system super user and will have full access privileges.
 
 
-Upon completing of the initial appliance setup, you will be taken to the Admin -> Settings page, where you will add your License Key.
+Upon completing of the initial appliance setup, you will be taken to the Admin > Settings page, where you will add your License Key.
 
 Login Methods
 -------------
@@ -69,7 +69,7 @@ In order to provision anything in |morpheus| , a |morpheus| License Key must be 
 
 If you do not already have a license key, one may be requested from https://www.morpheushub.com or from your |morpheus| representative.
 
-In the Administration -> Settings section, select the LICENSE tab, paste your License Key and click :guilabel:`UPDATE`
+In the |AdmSet| section, select the LICENSE tab, paste your License Key and click :guilabel:`UPDATE`
 
 .. image:: /images/getting_started/license_key.png
 

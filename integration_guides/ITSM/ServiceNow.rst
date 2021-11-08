@@ -13,7 +13,7 @@ IT Service Management (ITSM) is an important area of focus for many organization
 Add ServiceNow Integration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-#. Navigate to ``|AdmInt|``
+#. Navigate to |AdmInt|
 #. Select :guilabel:`+ NEW INTEGRATION`
 #. Select "ServiceNow" from the dropdown list
 #. Add the following:
@@ -107,7 +107,7 @@ To add a ServiceNow Approval policy to a Cloud:
 #. Configure the following:
 
    APPROVAL INTEGRATION
-    Select the ServiceNow Integration already configured in ``|AdmInt|`` to use for the approval policy.
+    Select the ServiceNow Integration already configured in |AdmInt| to use for the approval policy.
 
    WORKFLOW
     Select the ServiceNow workflow for the approval in ServiceNow (if desired). These workflows are configured and synced in from the ServiceNow Integration.
@@ -133,7 +133,7 @@ To add a ServiceNow Approval policy to a Group:
 #. Configure the following:
 
    APPROVAL INTEGRATION
-    Select the ServiceNow Integration already configured in ``|AdmInt|`` to use for the approval policy.
+    Select the ServiceNow Integration already configured in |AdmInt| to use for the approval policy.
 
    WORKFLOW
     Select the ServiceNow workflow for the approval in ServiceNow (if desired). These workflows are configured and synced in from the ServiceNow Integration.
@@ -159,7 +159,7 @@ Once a pending ServiceNow approval request is approved in ServiceNow, the Instan
 ServiceNow Monitoring Integration Settings
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. NOTE:: A ServiceNow integration must be already configured in ``|AdmInt|`` to enable ServiceNow monitoring.
+.. NOTE:: A ServiceNow integration must be already configured in |AdmInt| to enable ServiceNow monitoring.
 
 The ServiceNow monitoring integration is enabled and configured in |AdmSetMon|. As long as the "Enabled" switch is activated, |morpheus| will report monitoring data to ServiceNow. Configuration selections are described below:
 

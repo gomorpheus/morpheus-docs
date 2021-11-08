@@ -11,7 +11,7 @@ However, many organizations maintain private Docker registries for security meas
 Adding a Docker Registry Integration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-#. Navigate to `Administration -> Integrations`
+#. Navigate to |AdmInt|
 #. Click "New Integration"
 #. Select the `Docker Repository` Type
 #. Add the following:

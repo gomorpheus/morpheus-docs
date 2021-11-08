@@ -128,7 +128,7 @@ Requirements
 
 * Cloudbase-Init is installed on the Virtual Image
 * "IS CLOUD INIT ENABLED?" is checked (true) on the |morpheus| Virtual Image record
-* Windows Administrator password defined in the Administration -> Provisioning section
+* Windows Administrator password defined in the |AdmSetPro| section
 
 Windows Unattend
 ````````````````
@@ -157,7 +157,7 @@ Manual
 Process
 .......
 
-- From the VM or Host record page (``/infrastructure/servers/${id}``) run :guilabel:`ACTIONS` -> ``Download Agent Script``
+- From the VM or Host record page (``/infrastructure/servers/${id}``) run :guilabel:`ACTIONS` > ``Download Agent Script``
 - This is will generate an Agent install script based off the target OS and platform, Appliance URL, and API key
 - Manually execute the downloaded script on the Target VM or Host
 

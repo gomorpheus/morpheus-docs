@@ -9,14 +9,14 @@ Role Access
 
 * In order to see the Terraform Blueprint type option and create Terraform App Blueprints in `|LibBluApp|`, the Morpheus user must have Role permissions for `Provisioning: Blueprints - Terraform` set to `Full`.
 
-* In order to provision Terraform Apps in ``|ProApp|``, the Morpheus user must have Role permissions for `Provisioning: Blueprints > Terraform` set to `Provision` or `Full`.
+* In order to provision Terraform Apps in |ProApp|, the Morpheus user must have Role permissions for `Provisioning: Blueprints > Terraform` set to `Provision` or `Full`.
 
 * Existing Terraform Blueprints must be added before they can be provisioned from `|ProApp|`.
 
 Github/Git Repo
 ^^^^^^^^^^^^^^^
 
-* To use .tf files from a Git repo a Git or Github integration needs to be configured in ```|AdmInt|``. If one is not configured .tf or .tf.json files can be manually added to Terraform App Blueprints.
+* To use .tf files from a Git repo a Git or Github integration needs to be configured in |AdmInt|. If one is not configured .tf or .tf.json files can be manually added to Terraform App Blueprints.
 
 Supported App Provisioning Targets
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -57,7 +57,7 @@ In order to provision Terraform apps, Terraform App Blueprints must be created f
 
 .. IMPORTANT:: In |morpheus| version 4.2.0, VMware and AWS Cloud types are supported for Terraform App provisioning targets. Additional clouds will be available in later releases.
 
-#. Navigate to `Provisioning -> Blueprints`
+#. Navigate to |LibBluApp|
 #. Select :guilabel:`+ ADD`
 #. Name the Blueprint and select `Terraform` type.
 
@@ -94,7 +94,7 @@ In order to provision Terraform apps, Terraform App Blueprints must be created f
 
         .. NOTE:: If no files are found please ensure your Github or Git integration is configured properly (Private repos need to have a key pair added to |morpheus|, the keypair selected on the integration in |morpheus|, and the keypair's public key added to the GitHub users SSH keys in github or to the git repo).
    TFVAR SECRET
-    Select a tfvars secret for .tf variables. Tfvars secrets can be added in `Services -> Cypher` using the tfvars/name mountpoint. This allows sensitive data and passwords to be encrypted and securely used with Terraform Blueprints.
+    Select a tfvars secret for .tf variables. Tfvars secrets can be added in `Services > Cypher` using the tfvars/name mountpoint. This allows sensitive data and passwords to be encrypted and securely used with Terraform Blueprints.
    OPTIONS
     example ``-var 'instanceName=sampleTfApp'``
 
@@ -105,7 +105,7 @@ Your Terraform App is ready to be provisioned from `|ProApp|`.
 Provisioning Terraform Apps
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. NOTE:: An existing Terraform App Blueprints must be added to `Provisioning -> Blueprints` before it can be provisioned.
+.. NOTE:: An existing Terraform App Blueprints must be added to |LibBluApp| before it can be provisioned.
 
 .. NOTE:: In order to provision Terraform Apps in `|ProApp|`, the Morpheus user must have Role permissions for `Provisioning: Blueprints - Terraform` set to `Provision` or `Full`.
 
@@ -121,6 +121,6 @@ Provisioning Terraform Apps
 
 The Terraform App will begin to provision.
 
-Once provisioning is completed, note the TERRAFORM tab in the App details page (`|ProApp|` -> select the App). This section contains State and Plan output:
+Once provisioning is completed, note the TERRAFORM tab in the App details page (`|ProApp|` > select the App). This section contains State and Plan output:
 
 .. image:: /images/apps/terraform/terraform_sample.png

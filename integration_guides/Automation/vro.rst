@@ -21,11 +21,11 @@ vRA auth uses vRA identity Bearer tokens for API consumption. The only real diff
 Using vRealize Orchestrator
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-One of the first things |morpheus| does when it is tied into a vRO integration is sync all available workflows by category. These workflows become available when creating a new |morpheus| task in `Provisioning -> Automation`. |morpheus| allows a user to map these vRO workflows into the task engine. The task engine allows users to design workflows that chain tasks in order or operate at different phases of a provisioning request. For more information on tasks, please read the Automation documentation.
+One of the first things |morpheus| does when it is tied into a vRO integration is sync all available workflows by category. These workflows become available when creating a new |morpheus| task in |LibAut|. |morpheus| allows a user to map these vRO workflows into the task engine. The task engine allows users to design workflows that chain tasks in order or operate at different phases of a provisioning request. For more information on tasks, please read the Automation documentation.
 
 Creating a task for VRO is simple.
 
-First, go to `Provisioning -> Automation` and create a new task. Choose a task type of `vRealize Orchestrator Workflow`. A dropdown will appear allowing one to first select the active vRO Integration you would like to use. Once that is selected, a list of workflows becomes available.
+First, go to |LibAut| and create a new task. Choose a task type of `vRealize Orchestrator Workflow`. A dropdown will appear allowing one to first select the active vRO Integration you would like to use. Once that is selected, a list of workflows becomes available.
 
 .. NOTE:: The next part is where things can get a bit tricky. The parameter body (expected in JSON) format can be a bit difficult to track down. One way is to use the Network Chrome inspector when kicking off a sample workflow from the vRO HTML5 client and grabbing the parameter JSON. Another is to query the API yourself and look at the samples from historical run history.
 

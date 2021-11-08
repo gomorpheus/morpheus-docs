@@ -1,7 +1,7 @@
 |morpheus| Blueprints
 ^^^^^^^^^^^^^^^^^^^^^
 
-|morpheus| App Blueprints allow pre-configured full multi-tier application deployments for multiple environments. Blueprints can be provisioned from the ``|ProApp|`` section and can be fully configured for one click provisioning. Blueprints can be built within the ``Builder`` section or by code in the ``Raw`` section. Blueprints can also be exported as YAML or JSON and created with the |morpheus| API and CLI.
+|morpheus| App Blueprints allow pre-configured full multi-tier application deployments for multiple environments. Blueprints can be provisioned from the |ProApp| section and can be fully configured for one click provisioning. Blueprints can be built within the ``Builder`` section or by code in the ``Raw`` section. Blueprints can also be exported as YAML or JSON and created with the |morpheus| API and CLI.
 
 A unique capability of the YAML/JSON based Morpheus blueprint structure is the ability to have multiple configurations per instance being provisioned within the app blueprint. This can be a scoped configuration that acts as overrides based on selected cloud, group, and/or environment the app is being provisioned in as a target. For example. maybe the "development" environment doesn't need as many horizontally scaled nodes as the "production" environment. Another great aspect of this configuration markup is a blueprint can be defined as a hybrid cloud blueprint. This makes the app blueprint structure very powerful and in some ways better than alternative infrastructure as code orchestrators. For Example, ARM is locked into Azure, while CloudFormation is locked into AWS. Even Terraform does not allow a tf file to expand its bounds beyond a specific provider type.
 
@@ -169,7 +169,7 @@ Blueprints can be create, edited or Exported in the RAW section when creating or
 
 To Export a Blueprint as JSON or YAML:
 
-#. Navigate to  ``|LibBluApp|``
+#. Navigate to  |LibBluApp|
 #. Edit an existing App by clicking on the pencil icon
 #. On the Edit Blueprint modal, select the Raw tab
 #. Select YAML or JSON from the dropdown in the top right

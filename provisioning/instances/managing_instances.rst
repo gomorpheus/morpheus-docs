@@ -36,11 +36,11 @@ Clone
 Backup
   Immediately executes a backup of the Instance. Only available for Instances with backups enabled.
 Run Workflow
-  Presents workflow options and then immediately runs selected Workflow on the Instance. Workflows can be created in the ``Provisioning -> Automation`` section.
+  Presents workflow options and then immediately runs selected Workflow on the Instance. Workflows can be created in the |LibAut| section.
 Run Script
-  Presents Script options and immediately executes selected Script on the Instance. Scripts can be created in the ``Provisioning -> Library`` section.
+  Presents Script options and immediately executes selected Script on the Instance. Scripts can be created in the |Lib| section.
 Apply Template
-  Presents Template options and immediately applies selected Template to the Instance. Templates can be created in the ``Provisioning -> Library`` section.
+  Presents Template options and immediately applies selected Template to the Instance. Templates can be created in the |Lib| section.
 Add Node
   Adds an additional node to the configuration. Additional options and configurations are required in the add node wizard depending on instance configuration and type.
 Eject Disk

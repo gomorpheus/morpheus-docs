@@ -9,7 +9,7 @@ A managed VM (and associated Instance) needs to be unmanaged and returned to Dis
 Solution
 --------
 
-Delete the record from the ``Infrastructure -> Compute`` (! not from Provisioning - Instances) selection with the following configuration in the Delete modal:
+Delete the record from the ``Infrastructure > Compute`` (! not from Provisioning - Instances) selection with the following configuration in the Delete modal:
 
 - ``Remove Infrastructure`` UNCHECKED
 - ``Remove Associated Instances`` Must be checked if the server has an associated Instance, as deleting the VM but not the Instance would result in an abandoned Instance thus not allowed.
@@ -33,7 +33,7 @@ Process
 
 Steps to delete a managed VM from |morpheus| and, when necessary, remove the associated Instance:
 
-#. Navigate to the VM (not Instance) detail page at ``Infrastructure -> Compute - VMs``
+#. Navigate to the VM (not Instance) detail page at ``Infrastructure > Compute - VMs``
 
    .. NOTE:: VM's inside an Instance can be navigated to inside the Instance Details page by selecting the VM in the ``VM's`` seciton on the Instance Details page.
 

@@ -4,7 +4,7 @@ Hosts
 Overview
 --------
 
-The `Infrastructure -> Compute` section provides a universal stage for viewing and managing Hosts and Virtual Machines from all of your Clouds.
+The `Infrastructure > Compute` section provides a universal stage for viewing and managing Hosts and Virtual Machines from all of your Clouds.
 
 In this section you can:
 

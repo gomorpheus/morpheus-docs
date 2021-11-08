@@ -6,7 +6,7 @@ Set weekly schedules for shutdown and startup times for Instances and VM's, appl
 Create Power schedules
 ^^^^^^^^^^^^^^^^^^^^^^
 
-#. Navigate to ``Provisioning -> Automation -> Power Scheduling``
+#. Navigate to |LibAutPow|
 #. Select :guilabel:`+ ADD`
 #. Configure the following options:
 
@@ -35,7 +35,7 @@ Create Power schedules
 Add Power Schedule to Instance
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-#. Navigate to ``Provisioning -> Instances``
+#. Navigate to |ProIns|
 #. Select an Instance
 #. Select :guilabel:`EDIT`
 #. In the POWER SCHEDULE dropdown, select a Power Schedule.
@@ -44,7 +44,7 @@ Add Power Schedule to Instance
 Add Power Schedule to Virtual Machine
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-#. Navigate to ``Infrastructure -> Compute -> Virtual Machines``
+#. Navigate to ``Infrastructure > Compute > Virtual Machines``
 #. Select a Virtual Machine
 #. Select :guilabel:`EDIT`
 #. Expand the Advanced Options section
@@ -56,7 +56,7 @@ Add Power Schedule Policy
 
 .. NOTE:: Power Schedule Policies apply to Instances created after the Policy is enabled.
 
-#. Navigate to ``Administration -> Policies``
+#. Navigate to |AdmPol|
 #. Select :guilabel:`+ ADD`
 #. Select TYPE `Power Schedule`
 #. Configure the Power Schedule Policy:
@@ -72,7 +72,7 @@ Add Power Schedule Policy
     * Fixed Schedule: User cannot change Power Schedule setting during provisioning.
 
    POWER SCHEDULE
-    Select Power Schedule to use in the Policy. Power schedule can be added in ``Provisioning -> Automation -> Power Scheduling``
+    Select Power Schedule to use in the Policy. Power schedule can be added in |LibAutPow|
    SCOPE
     Global
       Applies to all Instances created while the Policy is enabled

@@ -7,7 +7,7 @@ Configuration
 Add vCD Cloud From `Infrastructure > Clouds`
 ````````````````````````````````````````````
 
-#. Navigate to ``Infrastructure -> Clouds``
+#. Navigate to ``Infrastructure > Clouds``
 #. Select :guilabel:`+ ADD`
 #. Select **VCLOUD DIRECTOR** from the Clouds list
 #. Select :guilabel:`NEXT`
@@ -50,10 +50,10 @@ Add vCD Cloud From `Infrastructure > Clouds`
 #. Review and then Select :guilabel:`COMPLETE`
 
 
-Add vCD Cloud From `Infrastructure -> Groups`
+Add vCD Cloud From `Infrastructure > Groups`
 `````````````````````````````````````````````
 
-#. Navigate to ``Infrastructure -> Groups``
+#. Navigate to ``Infrastructure > Groups``
 #. Select a Group
 #. Select the `CLOUDS` tab
 #. Scroll down to **VCLOUD DIRECTOR** and select :guilabel:`+ ADD`

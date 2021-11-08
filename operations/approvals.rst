@@ -28,7 +28,7 @@ To configure |morpheus| for approvals:
 Configure Roles
 ^^^^^^^^^^^^^^^
 
-Configure User Role access settings in Administration -> Roles -> (Role) -> Operations: Approvals.
+Configure User Role access settings in |AdmRol| > (Role) > Operations: Approvals.
 
 * All Users with a Role applied containing Operations: Approvals set to Full will have approval authority, and be able to Approve, Deny or Cancel approval requests.
 * All Users with a Role applied that has Operations: Approvals set to Read will be able to view Approval requests and history, but will not be able to Approve, Deny or Cancel approval requests.
@@ -41,7 +41,7 @@ ServiceNow Approvals
 
 Configure ServiceNow integration for SNOW Approvals
 
-#. Navigate to Admin -> Integrations
+#. Navigate to Admin > Integrations
 #. Select **+ NEW INTEGRATION**
 #. Select **ServiceNow** from the Type dropdown in the Integration modal and enter:
 
@@ -63,8 +63,8 @@ Configure ServiceNow integration for SNOW Approvals
 Create Approval Policies
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-* Policies applied to a Group are created in Infrastructure -> Groups -> (group) -> Policies tab.
-* Policies applied to a Cloud are created in Infrastructure -> Clouds -> (cloud) -> Policies tab.
+* Policies applied to a Group are created in Infrastructure > Groups > (group) > Policies tab.
+* Policies applied to a Cloud are created in Infrastructure > Clouds > (cloud) > Policies tab.
 
 **To create an Approval policy:**
 
@@ -93,9 +93,9 @@ Upon saving, a new policy is created in the Group or Cloud Policies tab.
 Managing Approval Requests
 --------------------------
 
-Once Instance approval policies are added to a Group or Cloud, any Instance or App provisioned into that Group or Cloud will create an approval request entry in the `Operations -> Approvals` section.
+Once Instance approval policies are added to a Group or Cloud, any Instance or App provisioned into that Group or Cloud will create an approval request entry in the `Operations > Approvals` section.
 
-.. NOTE:: User Role permission `Operations: Approvals -> FULL` is required to manage Approvals.
+.. NOTE:: User Role permission `Operations: Approvals > FULL` is required to manage Approvals.
 
 * To Approve, Deny, or Cancel an internal approval request, select the request and use the Actions dropdown.
 * To Cancel a ServiceNow Approval request, select the request and use the Actions dropdown. ServiceNow approvals are managed in ServiceNow.
@@ -126,7 +126,7 @@ Internal approval requests
 
 To Approve, Deny or Cancel an Internal approval request:
 
-#. Navigate to `Operations -> Approvals`
+#. Navigate to `Operations > Approvals`
 #. Select the Name of the Approval request
 #. Select Actions on the far right of the request
 #. Select Approve, Deny, or Cancel from the Actions dropdown

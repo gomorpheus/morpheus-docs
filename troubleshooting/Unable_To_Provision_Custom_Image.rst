@@ -1,7 +1,7 @@
 Unable to Provision a Custom Image
 ==================================
 
-Prior to provisioning an custom image, the image must be configured in the Provisioning -> Virtual Images section by selecting Edit on the Actions dropdown of the Virtual Image.
+Prior to provisioning an custom image, the image must be configured in the |LibVir| section by selecting Edit on the Actions dropdown of the Virtual Image.
 
 In the Edit Virtual Image pane:
 

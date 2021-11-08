@@ -4,7 +4,7 @@ Appliance Settings
 Appliance URL
   The default URL used for Agent install and Agent functionality. All Instances and Hosts must be able to resolve and reach this URL over 443 for successful agent install and communication.
 
-.. NOTE:: Alternate Appliance URLs can be configured per Cloud in the `Edit Cloud -> Advanced Options` section.
+.. NOTE:: Alternate Appliance URLs can be configured per Cloud in the `Edit Cloud > Advanced Options` section.
 
 Internal Appliance URL (PXE)
   For PXE-Boot your appliance needs to be routable directly with minimal NAT masquerading. This allows one to override the default appliance url endpoint for use by the PXE Server. If this is unset, the default appliance url will be used instead.

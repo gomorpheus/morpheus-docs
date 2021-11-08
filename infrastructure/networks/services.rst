@@ -4,7 +4,7 @@ Integrations
 Overview
 ^^^^^^^^
 
-The Network Integrations section allows you to add and manage IPAM, DNS, and Service Registry integrations. These services can also be added in the `Administration -> Integrations` section.
+The Network Integrations section allows you to add and manage IPAM, DNS, and Service Registry integrations. These services can also be added in the |AdmInt| section.
 
 The following integrations are currently supported:
 
@@ -39,7 +39,7 @@ IPAM
 SECURITY
   Security integrations are available in the `SECURITY SERVER` dropdown located under the `Advanced Options` section in Cloud configurations.
 DNS
-  DNS integrations will populate domains in the `Infrastructure -> Network -> Domains` section, and are available in the `DOMAIN` dropdown located under the `Advanced Options` section in Cloud, Group, and Network configurations, as well as in the `Configure` section of the Create Instance wizard.  DNS integrations are also available in the `DNS SERVICE` dropdown located under the `Advanced Options` section in Cloud and Group configurations.
+  DNS integrations will populate domains in the `Infrastructure > Network > Domains` section, and are available in the `DOMAIN` dropdown located under the `Advanced Options` section in Cloud, Group, and Network configurations, as well as in the `Configure` section of the Create Instance wizard.  DNS integrations are also available in the `DNS SERVICE` dropdown located under the `Advanced Options` section in Cloud and Group configurations.
 Service Registry
   Service Registry integrations are available in the `SERVICE REGISTRY` dropdown located under the `Advanced Options` section in Cloud and Group configurations.
 

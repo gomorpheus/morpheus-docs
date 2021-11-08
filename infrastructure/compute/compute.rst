@@ -5,7 +5,7 @@ Compute
 
 .. note:: The Infrastructure ``Hosts`` page from previous versions has been renamed to ``Compute`` and updated with ``Container`` and ``Resource`` sections.
 
-The `Infrastructure -> Compute` section provides a universal stage for viewing and managing Hosts, Virtual Machines, Containers, Resources, and Bare Metal across Clouds.
+The `Infrastructure > Compute` section provides a universal stage for viewing and managing Hosts, Virtual Machines, Containers, Resources, and Bare Metal across Clouds.
 
 In this section you can:
 

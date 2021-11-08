@@ -9,7 +9,7 @@ Overview
 Adding an Okta Integration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-#. Navigate to ``Administration -> Tenants``
+#. Navigate to |AdmTen|
 #. Select a Tenant
 #. Select :guilabel:`IDENTITY SOURCES`
 #. Select :guilabel:`+ IDENTITY SOURCE`

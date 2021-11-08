@@ -14,7 +14,7 @@ Details
 Username
   DigitalOcean Username
 API Key
-  Personal access tokens/Key from the DigitalOcean `API -> Tokens/Keys` section.
+  Personal access tokens/Key from the DigitalOcean `API > Tokens/Keys` section.
 Data Center
   Select DigitalOcean DataCenter Region
 

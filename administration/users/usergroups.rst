@@ -9,7 +9,7 @@ User Groups can be selected during provisioning to add each group members creden
 Creating User Groups
 ^^^^^^^^^^^^^^^^^^^^
 
-#. Navigate to `Administration -> Users`
+#. Navigate to |AdmUse|
 #. Select the USER GROUPS tab.
 #. Select :guilabel:`+ CREATE USER GROUP`.
 #. Enter the following:
@@ -30,7 +30,7 @@ Creating User Groups
 Editing User Groups
 ^^^^^^^^^^^^^^^^^^^^
 
-#. Navigate to `Administration -> Users`
+#. Navigate to |AdmUse|
 #. Select the USER GROUPS tab.
 #. Select the **ACTIONS** dropdown next to the target User Group.
 #. Select **EDIT**

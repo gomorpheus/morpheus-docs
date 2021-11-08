@@ -13,7 +13,7 @@ Adding a SAML Integration
 
 To add a SAML integration:
 
-#. Navigate to ``Administration -> Tenants``
+#. Navigate to |AdmTen|
 #. Select a tenant.
 #. Select IDENTITY SOURCES in the Tenant detail page
 #. Select :guilabel:`+ ADD IDENTITY SOURCE`.

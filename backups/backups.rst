@@ -15,7 +15,7 @@ Global Backup settings, Storage Providers and Execution Schedules should be conf
 Global Backups Settings
 -----------------------
 
-|morpheus| Backups can be enabled under `Administration -> Backups`.
+|morpheus| Backups can be enabled under |AdmSetBac|.
 
 Scheduled Backups
   When enabled, configured Backups will automatically run on the set Schedule. If disabled, backups need to be manually ran.
@@ -24,16 +24,16 @@ Create Backups
 Backup Appliance
   When enabled, a Backup will be created to backup the |morpheus| appliance database. Select the ``Backup`` text link to edit Appliance Backup Settings and view existing Appliance Backups.
 Default Backup Storage Provider
-  Storage Providers can be configured and managed in the `Infrastructure -> Storage` section.
+  Storage Providers can be configured and managed in the `Infrastructure > Storage` section.
 Default Backup Schedule
-  Schedules can be configured and managed in the `Provisioning -> Automation  -> Execution Schedules`
+  Schedules can be configured and managed in the |LibAutPow|
 Backup Retention Count
   Default maximum number of successful backups to retain.
 
 Backup Schedules
 ----------------
 
-Backup Execution Schedules can be configured and managed in |LibAutExe|. An execution schedule stores only the interval at which some execution should be run. To create a new backup job with this schedule, navigate to `Backups > Backups` and click "+ADD". In the final step of creating the backup job we are able to select any of our created execution schedules. The Default Backup Schedule set in `Administration -> Backups` will be selected when creating a backup job and not specifying an execution schedule.
+Backup Execution Schedules can be configured and managed in |LibAutExe|. An execution schedule stores only the interval at which some execution should be run. To create a new backup job with this schedule, navigate to `Backups > Backups` and click "+ADD". In the final step of creating the backup job we are able to select any of our created execution schedules. The Default Backup Schedule set in |AdmSetBac| will be selected when creating a backup job and not specifying an execution schedule.
 
 
 Configuring Backups during Provisioning

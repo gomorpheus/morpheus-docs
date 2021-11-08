@@ -10,7 +10,7 @@
   Groups
   ------
 
-  It is also possible to organize custom checks in this hierarchical structure by manually adding or editing a Group or App. Groups can only contain checks and can be edited or created in `Monitoring -> Groups`. Besides simply adding and removing checks to a group there are a few other useful options that can be customized in a group.
+  It is also possible to organize custom checks in this hierarchical structure by manually adding or editing a Group or App. Groups can only contain checks and can be edited or created in `Monitoring > Groups`. Besides simply adding and removing checks to a group there are a few other useful options that can be customized in a group.
 
   Min Checks
     This specifies the minimum number of checks within the group that must be happy to keep the group from becoming unhealthy.

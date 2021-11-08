@@ -4,7 +4,7 @@ Cherwell
 Add Cherwell Integration
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
-#. Navigate to ``Administration -> Integrations``
+#. Navigate to |AdmInt|
 #. Select ``+ NEW INTEGRATION``
 #. Select ``Cherwell`` from the dropdown.
 #. Add the following:

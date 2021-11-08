@@ -108,7 +108,7 @@ Adding an Azure Stack Cloud
 Configure
 `````````
 
-#. In the |morpheus| UI, navigate to ``Infrastructure -> Clouds`` and Select :guilabel:`+ CREATE CLOUD`
+#. In the |morpheus| UI, navigate to ``Infrastructure > Clouds`` and Select :guilabel:`+ CREATE CLOUD`
 #. Select *AZURE STACK (PRIVATE)* from the Clouds list and select :guilabel:`NEXT`
 #. In the Configure section, enter:
 
@@ -167,4 +167,4 @@ Configure
    * Marketplace Catalog
    * Availability Sets
 
-   .. TIP:: Synced Networks can be configured or deactivated from the Networks section in this Clouds detail page, or in the `Infrastructure -> Networks` section.
+   .. TIP:: Synced Networks can be configured or deactivated from the Networks section in this Clouds detail page, or in the `Infrastructure > Networks` section.

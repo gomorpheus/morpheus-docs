@@ -50,7 +50,7 @@ Information on each cloud type can be found in the :ref:`integration-guide` sect
 Creating Clouds
 ---------------
 
-Clouds can be added from `Infrastructure > Clouds` or in `Infrastructure -> Groups -> (select Group) -> Clouds`. Individual Guides for adding specific Cloud Types can be found in the :ref:`integration-guide` section.
+Clouds can be added from `Infrastructure > Clouds` or in `Infrastructure > Groups > (select Group) > Clouds`. Individual Guides for adding specific Cloud Types can be found in the :ref:`integration-guide` section.
 
 Cloud Detail View
 -----------------

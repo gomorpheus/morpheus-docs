@@ -6,7 +6,7 @@ Network Groups are useful for grouping networks during provisioning and scaling 
 Adding Network Groups
 ^^^^^^^^^^^^^^^^^^^^^
 
-1. Navigate to `Infrastructure -> Network -> Networks Groups`
+1. Navigate to `Infrastructure > Network > Networks Groups`
 2. Select :guilabel:`ADD`
 3. Enter the following:
 

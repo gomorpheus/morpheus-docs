@@ -1,7 +1,7 @@
 Networks
 --------
 
-`Infrastructure -> Network -> Networks`
+`Infrastructure > Network > Networks`
 
 Overview
 ^^^^^^^^
@@ -18,11 +18,11 @@ DHCP
 
 To configure a network for DHCP:
 
-1. Navigate to `Infrastructure -> Network -> Networks`
+1. Navigate to `Infrastructure > Network > Networks`
 2. Search for the target network
 3. Edit the Network by either:
 
-   * Select `Actions -> Edit`
+   * Select `Actions > Edit`
    * Select the Network, then select `Edit`
 
 4. In the Network Config modal, set the DHCP flag as Active (default)
@@ -37,11 +37,11 @@ Static and IP Pools
 
 To configure a network for Static IP Assignment:
 
-1. Navigate to `Infrastructure -> Network -> Networks`
+1. Navigate to `Infrastructure > Network > Networks`
 2. Search for the target network
 3. Edit the Network by either:
 
-   * Select `Actions -> Edit`
+   * Select `Actions > Edit`
    * Select the Network, then select `Edit`
 
 4. In the Network Config modal, add the following:

@@ -67,7 +67,7 @@ Editing and Removing Domains
 Setting the default domain on a Cloud
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-#. Navigate to `Infrastructure -> Clouds`.
+#. Navigate to `Infrastructure > Clouds`.
 #. Edit the target Cloud.
 #. Expand `Advanced Options` section.
 #. In the *Domain* dropdown, select the Domain.
@@ -76,7 +76,7 @@ Setting the default domain on a Cloud
 Setting the default domain on a Network
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-#. Navigate to `Infrastructure -> Network`.
+#. Navigate to `Infrastructure > Network`.
 #. Edit the target Network.
 #. Expand `Advanced Options` section.
 #. In the *Domain* dropdown, select the Domain.

@@ -75,7 +75,7 @@ Cloud-Init
 Cloudbase-Init
 ^^^^^^^^^^^^^^
 
-* Windows Administrator Password defined in ``|AdmSetPro|`` section
+* Windows Administrator Password defined in |AdmSetPro| section
 * Cloudbase-Init installed on Virtual Image
 * ``Cloud-Init`` enabled on Virtual Image config
 
@@ -84,7 +84,7 @@ Cloudbase-Init
 Windows Unattended
 ^^^^^^^^^^^^^^^^^^
 
-* Windows Administrator Password defined in ``|AdmSetPro|`` section
+* Windows Administrator Password defined in |AdmSetPro| section
 * VMware: ``Force Guest Customizations`` set to forced on Virtual Image config when using DHCP (Static Assignment will already force Guest Customizations)
 * Nutanix & SCVMM: Virtual Image is sysprepped and shutdown, ``Sysprep Enabled`` flagged on Virtual Image config
 
@@ -127,7 +127,7 @@ On the target host, run ``sudo morpheus-node-ctl restart morphd`` and the |morph
 Windows
 ^^^^^^^
 
-The |morpheus| Windows Agent service can be restarted in Administrative Tools -> Services.
+The |morpheus| Windows Agent service can be restarted in Administrative Tools > Services.
 
 .. TIP:: The |morpheus| Remote Console is not dependent on Agent communication and can be used to install or restart the |morpheus| agent on an Instance.
 

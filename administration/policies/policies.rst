@@ -57,7 +57,7 @@ Network Quota
 Object Storage Quota
   Sets a Storage Quota for Object Storage usage (in GB) to scoped User, Role, Tenant or Global.
 Power Scheduling
-  Adds a Power Schedule for the Instances in a Group or Cloud. Power Schedules can be created in ``Provisioning -> Automation -> Power Scheduling``
+  Adds a Power Schedule for the Instances in a Group or Cloud. Power Schedules can be created in |LibAutPow|
 Router Quota
   Limits the number of routers that can be created within the policy's scope
 Shutdown
@@ -82,9 +82,9 @@ Creating Policies
 
 Policies can be created in three different locations.
 
-* ``Administration -> Policies``
-* ``Infrastructure -> Groups -> Group -> Policies``
-* ``Infrastructure -> Clouds -> Cloud -> Policies``
+* |AdmPol|
+* ``Infrastructure > Groups > Group > Policies``
+* ``Infrastructure > Clouds > Cloud > Policies``
 
 Policies can be disabled and re-enabled at anytime.
 
@@ -93,7 +93,7 @@ Policies can be disabled and re-enabled at anytime.
 To create a Global Policy:
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-#. Navigate to ``Administration -> Policies``
+#. Navigate to |AdmPol|
 #. Select :guilabel:`+ ADD Policy` and choose from the available policy types.
 #. Refer to Policy Type sections below for Configuration options.
 #. Under Filter next to scope select :guilabel:`Global`
@@ -103,7 +103,7 @@ To create a Global Policy:
 To create a Policy for a User:
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-#. Navigate to ``Administration -> Policies``
+#. Navigate to |AdmPol|
 #. Select :guilabel:`+ ADD Policy` and choose from the available policy types.
 #. Refer to Policy Type sections below for Configuration options.
 #. Under filter next to scope select :guilabel:`User` a drop down menu will appear below allowing you to select a user
@@ -112,7 +112,7 @@ To create a Policy for a User:
 To create a Policy for a Role:
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-#. Navigate to ``Administration -> Policies``
+#. Navigate to |AdmPol|
 #. Select :guilabel:`+ ADD Policy` and choose from the available policy types.
 #. Refer to Policy Type sections below for Configuration options.
 #. Under filter next to scope select :guilabel:`Role` a drop down menu will appear below allowing you to select a Role
@@ -126,7 +126,7 @@ To create a Policy for a Cloud:
 
 .. NOTE:: Resource Limitation Policies apply to all Instances in the Cloud the Policy is added to. Approval, Naming, Power, Shutdown and Expiration Policies apply to Instances created or moved into the Group after the Policy is enabled.
 
-#. Navigate to ``Infrastructure -> Clouds``
+#. Navigate to ``Infrastructure > Clouds``
 #. Select a Cloud by clicking on the name of the Cloud to go to the Cloud Detail page.
 #. Select the ``POLICIES`` tab in the Cloud Detail page.
 #. Select :guilabel:`+ ADD` and choose from the available policy types.
@@ -138,7 +138,7 @@ To create a Policy for a Group:
 
 .. NOTE:: Resource Limitation Policies apply to all Instances in the Group the Policy is added to. Approval, Naming, Power, Shutdown and Expiration Policies apply to Instances created after the Policy is enabled.
 
-#. Navigate to ``Infrastructure -> Groups``
+#. Navigate to ``Infrastructure > Groups``
 #. Select a Group by clicking on the name of the Group to go to the Group Detail page.
 #. Select the ``POLICIES`` tab in the Group Detail page.
 #. Select :guilabel:`+ ADD` and choose from the available policy types.
@@ -255,7 +255,7 @@ This ServiceNow approval integration enables users to use the |morpheus| Self-Se
 Power Schedules
 ^^^^^^^^^^^^^^^
 
-Power Schedules set daily times to shutdown and startup instances. Power schedule can be created and managed in ``Provisioning -> Automation -> Power Scheduling``
+Power Schedules set daily times to shutdown and startup instances. Power schedule can be created and managed in |LibAutPow|
 
 .. NOTE:: Power Schedule Policies will apply to Instances created in a Group or Cloud after the Policy is enabled, and will not apply to pre-existing Instances.
 
@@ -269,7 +269,7 @@ ENFORCEMENT TYPE
   * User Configurable: Power Schedule choice is editable by User during provisioning.
   * Fixed Schedule: User cannot change Power Schedule setting during provisioning.
 POWER SCHEDULE
-  Select Power Schedule to use in the Policy. Power schedule can be added in ``Provisioning -> Automation -> Power Scheduling``
+  Select Power Schedule to use in the Policy. Power schedule can be added in |LibAutPow|
 TENANTS
   Leave blank for the Policy to apply to all Tenants, or search for and select Tenants to enforce the Policy on specific Tenants.
 

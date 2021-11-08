@@ -14,7 +14,7 @@ User Roles can be single or multitenant. A Multitenant User Role is automaticall
 Create a Single Tenant User Role
 ````````````````````````````````
 
-#. In the Master Account, navigate to Administration -> Roles
+#. In the Master Account, navigate to |AdmRol|
 #. Select :guilabel:`+ CREATE ROLE`
 #. Enter a name for the Role and optional Description
 #. For TYPE, select "User Role"
@@ -30,7 +30,7 @@ Create a MultiTenant User Role
 
 A Multitenant User Role is automatically copied into all existing subtenants as well as placed into a subtenant when created. Useful for providing a set of predefined roles a Customer can use. The Multitenant Locked option prevent subtenant from modifying FEATURE ACCESS settings in the Role. Note Group, Instance Type and Blueprint Access settings will still be editable as Groups are unique per Tenant, and Instance and Blueprints can be a mix of unique and shared items.
 
-#. In the Master Account, navigate to Administration -> Roles
+#. In the Master Account, navigate to |AdmRol|
 #. Select :guilabel:`+ CREATE ROLE`
 #. Enter a name for the Role and optional Description
 #. For TYPE, select "User Role"
@@ -55,7 +55,7 @@ A Tenant Role sets the highest possible permissions for a Tenant. User Roles wit
 To create a Tenant Role:
 ````````````````````````
 
-#. In the Master Account, navigate to Administration -> Roles
+#. In the Master Account, navigate to |AdmRol|
 #. Select :guilabel:`+ CREATE ROLE`
 #. Enter a name for the Role and optional Description
 #. For TYPE, select "Tenant Role"

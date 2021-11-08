@@ -1,7 +1,7 @@
 Identity Sources
 ================
-``|AdmTen| > (Selected Tenant) > Identity Sources``
-``|AdmUse| > Identity Sources``
+|AdmTen| > (Selected Tenant) > Identity Sources
+|AdmUse| > Identity Sources
 
 Overview
 --------

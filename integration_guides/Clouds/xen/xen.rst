@@ -4,7 +4,7 @@ Xen Server
 Add a Xen Server Cloud
 ^^^^^^^^^^^^^^^^^^^^^^
 
-#. Navigate to ``Infrastructure -> Clouds``
+#. Navigate to ``Infrastructure > Clouds``
 #. Select :guilabel:`+ CREATE CLOUD`, select Xen, and then click :guilabel:`Next`.
 #. Enter the following into the Create Cloud modal:
 

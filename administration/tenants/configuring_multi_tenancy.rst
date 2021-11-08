@@ -16,7 +16,7 @@ During the initial setup of a |morpheus| Appliance, the Master Tenant is created
 Creating Tenants
 ````````````````
 
-The Master Tenant is created during the initial appliance setup. Additional sub-Tenants can be created in the `Administration -> Tenants` section.
+The Master Tenant is created during the initial appliance setup. Additional sub-Tenants can be created in the |AdmTen| section.
 
 The Tenants page displays a list of all Tenants. This page enables users to: Create, Edit, and Delete Tenants. The list of Tenants displays the Tenant Name, Role, Total Instances, Total Users, Status (active or inactive) and the Created Date. Click the Tenant Name to drill into the Tenant View where you can edit or delete the Tenant, as well as create, edit and delete users belonging to the Tenant.
 

@@ -9,7 +9,7 @@ Overview
 Add Salt Integration
 ^^^^^^^^^^^^^^^^^^^^
 
-To get started browse to Admin -> Integrations from within |morpheus| .
+To get started browse to Admin > Integrations from within |morpheus| .
 
 Once there simply add a New Integration
 
@@ -24,7 +24,7 @@ And then scope the integration to your existing Salt Master by ip address.  Make
 Scope Salt Integration to Group Or Cloud
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Configuration Management integrations like Saltstack apply to the Infrastructure Group abstraction in |morpheus| .  To ties yours in, browse to ``Infrastructure -> Groups`` in |morpheus| and select the group that you would like to tie to your Salt Master.
+Configuration Management integrations like Saltstack apply to the Infrastructure Group abstraction in |morpheus| .  To ties yours in, browse to ``Infrastructure > Groups`` in |morpheus| and select the group that you would like to tie to your Salt Master.
 
 From here select `Edit`
 

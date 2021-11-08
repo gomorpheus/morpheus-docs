@@ -174,7 +174,7 @@ Add an Azure Cloud Integration
 
 To add a new Azure Cloud integration into |morpheus| using the credentials created/collected from the previous section, perform the following:
 
-#. In |morpheus|, navigate to ``Infrastructure -> Clouds`` and select :guilabel:`+ ADD`
+#. In |morpheus|, navigate to ``Infrastructure > Clouds`` and select :guilabel:`+ ADD`
 
    .. image:: /images/clouds/azure/Clouds_Morpheus_Add.png
 

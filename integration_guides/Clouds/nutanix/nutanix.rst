@@ -36,7 +36,7 @@ The Nutanix cluster should be available and responding to the https://fqdn:9440 
 
 NAME
   Name of the Cloud in |morpheus|
-CODE 
+CODE
   Unique code used for api/cli, automation and policies.
 LOCATION
   Description field for adding notes on the cloud, such as location.
@@ -45,10 +45,10 @@ VISIBILITY
 TENANT
   If Visibility is set to Private, select the Tenant the Cloud resources will assigned to.
 ENABLED
-  When disabled, automatic Cloud sync is paused and the Cloud will not be selectable for provisioning. 
+  When disabled, automatic Cloud sync is paused and the Cloud will not be selectable for provisioning.
 AUTOMATICALLY POWER ON VMS
-  When enabled, Morpheus will maintain the expected powered on state of managed VM's and power on any managed VM's in the cloud that have been shut down for unknown reasons (not powered off by |morpheus|) to ensure availability of services. 
-  
+  When enabled, Morpheus will maintain the expected powered on state of managed VM's and power on any managed VM's in the cloud that have been shut down for unknown reasons (not powered off by |morpheus|) to ensure availability of services.
+
   .. note:: When "AUTOMATICALLY POWER ON VMS" is enabled, the power state of managed VM's should be maintained in |morpheus|. This setting is not applicable to discovered/unmanaged resources.
 
 API URL
@@ -79,6 +79,6 @@ Some common error scenarios include network connectivity. For a Docker Host to f
 Snapshots
 ^^^^^^^^^
 
-|morpheus| allows the ability to create a snapshot of a Nutanix instance.  From the instance detail page, simply select ``Actions -> Create Snapshot`` to begin creation of a new Snapshot.  Existing snapshots can be viewed in the ``BACKUPS`` tab on the instance detail page.  Snapshots taken outside |morpheus| will be synced every five minutes.  To revert to a previous snapshot, click on the revert icon located on the right side of the Snapshot. Snapshots can be deleted by clicking on the trash can icon.
+|morpheus| allows the ability to create a snapshot of a Nutanix instance.  From the instance detail page, simply select ``Actions > Create Snapshot`` to begin creation of a new Snapshot.  Existing snapshots can be viewed in the ``BACKUPS`` tab on the instance detail page.  Snapshots taken outside |morpheus| will be synced every five minutes.  To revert to a previous snapshot, click on the revert icon located on the right side of the Snapshot. Snapshots can be deleted by clicking on the trash can icon.
 
-.. Note:: Access to Snapshots can be limited or removed entirely for specific user roles as needed. To edit a role's Snapshots permissions, go to ``|AdmRol| > (Your selected role) > Snapshots``. Users can be given Full, Read-only, or No access.
+.. Note:: Access to Snapshots can be limited or removed entirely for specific user roles as needed. To edit a role's Snapshots permissions, go to |AdmRol| > (Your selected role) > Snapshots. Users can be given Full, Read-only, or No access.

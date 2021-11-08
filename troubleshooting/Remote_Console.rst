@@ -67,7 +67,7 @@ Default Requirements for RDP Connectivity
 - Valid credentials defined on the VM or Host record in the RPC host field.
 - `Remote Console` Role Permissions set to `Provisioned` or `Full` if the User provisioned the instance, or `Full` if the user did not provision the instance.
 
-.. NOTE:: If `Remote Console: Auto Login` is set to `No` in a users Role permissions, `Allow connections only from computers running Remote Desktop with Network Level Authentication` in the `Windows System Properties -> Remote` settings must be DISABLED for Remote Console to connect.
+.. NOTE:: If `Remote Console: Auto Login` is set to `No` in a users Role permissions, `Allow connections only from computers running Remote Desktop with Network Level Authentication` in the `Windows System Properties > Remote` settings must be DISABLED for Remote Console to connect.
 
 
 VNC (VMware Hypervisor Console)

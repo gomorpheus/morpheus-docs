@@ -66,7 +66,7 @@ When executing Ansible playbooks on Windows platforms, a few requirements must b
 Scope Ansible Integration to a Cloud
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-#. Navigate to `Infrastructure -> Clouds`
+#. Navigate to `Infrastructure > Clouds`
 #. Edit the target Cloud
 #. Expand the `Advanced Options` section
 #. In the `Config Management` dropdown, select the Ansible Integration.
@@ -77,7 +77,7 @@ Once an Ansible integration is added to a Cloud, a new "ANSIBLE" tab will appear
 Scope Ansible Integration to a Group
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-#. Navigate to `Infrastructure -> Groups`
+#. Navigate to `Infrastructure > Groups`
 #. Edit the target Group
 #. Expand the `Advanced Options` section
 #. In the `Config Management` dropdown, select the Ansible Integration.
@@ -111,7 +111,7 @@ To run Ansible on all or a single inventory group, in the Ansible tab of the |mo
 
 In the `Run Ansible` modal, you can then select all or an individual group, and then all or a single Playbook, as well as add custom tags.
 
-Playbook's can also be added as tasks to workflows in the `Provisioning -> Automation` section, and then selected in the Automation pane during provisioning of new instances, when creating app blueprints, or ran on existing instances using the `Actions -> Run Workflow` on the Instance or Host pages.
+Playbook's can also be added as tasks to workflows in the |LibAut| section, and then selected in the Automation pane during provisioning of new instances, when creating app blueprints, or ran on existing instances using the `Actions > Run Workflow` on the Instance or Host pages.
 
 Using variables
 ^^^^^^^^^^^^^^^
@@ -133,9 +133,9 @@ Use Case:
                   name: "{{ morpheus['instance']['hostname'] }}"
                   password: "xxxxxxx"
                   state: present
-                  
+
     .. NOTE:: ``{{ morpheus['instance']['hostname'] }}`` is the format of using |morpheus| Variables
-    
+
    Create a user with a name which you enter during provisioning using a custom Instance type.
     This instance type has a `Text` Input that provides a text box to enter a username. The fieldName of the Input in this case would be `username`. Below is the playbook.
      .. code-block:: bash
@@ -150,7 +150,7 @@ Use Case:
                 name: "{{ morpheus['customOptions']['username'] }}"
                 password: "xxxxxxx"
                 state: present
-                
+
     .. NOTE:: ``{{ morpheus['customOptions']['username'] }}`` will be the format.
 
 Using Secrets
@@ -182,7 +182,7 @@ Cypher is very powerful for storing these temporary or permanent secrets that on
 Custom Inventory Entries
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-With Morpheus it is possible to add custom inventory entries that exist outside of morpheus host/server entry. This is global across cloud or group and is done on the integration details page of the Ansible integration. To add a custom inventory entry navigate to ``|LibInt| > (Your specific Ansible integration)``. Click on the ``ACTIONS`` button, then click ``EDIT INVENTORY``. Inventory should be in the default Ansible ini format.
+With Morpheus it is possible to add custom inventory entries that exist outside of morpheus host/server entry. This is global across cloud or group and is done on the integration details page of the Ansible integration. To add a custom inventory entry navigate to |LibInt| > (Your specific Ansible integration). Click on the ``ACTIONS`` button, then click ``EDIT INVENTORY``. Inventory should be in the default Ansible ini format.
 
 .. image:: /images/integration_guides/automation/ansible_inventory.png
 
@@ -230,7 +230,7 @@ Troubleshooting Ansible
 
 * Verify Ansible is installed on the |morpheus| Appliance.
 
-  Ansible should be automatically installed but certain OS or network conditions can prevent the automated install. You can confirm installation by running ``ansible --version`` in the |morpheus| appliance, or by viewing the Ansible integration details page (``|AdmInt| > Select Ansible Integration``). We also see it in the Ansible tab of a Group or Cloud scoped to Ansible, just run ``--version`` as ansible is already included in the command.
+  Ansible should be automatically installed but certain OS or network conditions can prevent the automated install. You can confirm installation by running ``ansible --version`` in the |morpheus| appliance, or by viewing the Ansible integration details page (|AdmInt| > Select Ansible Integration). We also see it in the Ansible tab of a Group or Cloud scoped to Ansible, just run ``--version`` as ansible is already included in the command.
 
   If Ansible is not installed, follow these instructions to install, or use your preferred installation method:
 
@@ -260,10 +260,10 @@ Troubleshooting Ansible
 
 * Validate the git repo is authorizing and the paths are configured correctly.
 
-  The public and private ssh keys need to be added to the |morpheus| appliance via "Infrastructure -> Keys & Certs" and the public key needs to be added to the git repo via user settings. If both are set up right, you will see the playbooks and roles populate in the Ansible Integration details page.
+  The public and private ssh keys need to be added to the |morpheus| appliance via "Infrastructure > Keys & Certs" and the public key needs to be added to the git repo via user settings. If both are set up right, you will see the playbooks and roles populate in the Ansible Integration details page.
 
 * The Git Ref field on playbook tasks is to specify a different git branch than default. It can be left to use the default branch. If your playbooks are in a different branch you can add the brach name in the Git Ref field.
 
 * When running a playbook that is in a workflow, the additional playbooks fields do not need to be populated, they are for running a different playbook than the one set in the Ansible task in the Workflow, or using a different Git Ref.
 
-* If you are manually running Workflows with Ansible tasks on existing Instances through `Actions -> Run Workflow​` and not seeing results, set the Provision Phase on the Ansible task to Provision​ as there may be issues with executing tasks on other phases when executing manually.
+* If you are manually running Workflows with Ansible tasks on existing Instances through `Actions > Run Workflow​` and not seeing results, set the Provision Phase on the Ansible task to Provision​ as there may be issues with executing tasks on other phases when executing manually.

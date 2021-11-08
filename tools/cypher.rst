@@ -61,7 +61,7 @@ Save changes and the password will be generated and available for use.
 
 If your user role has Cypher: Decrypt permissions, a "DECRYPT" button will be available in the Cypher section to view the generated password.
 
-To delete the password key, select `Actions -> Remove` and confirm.
+To delete the password key, select `Actions > Remove` and confirm.
 
 Secret
 ------
@@ -83,7 +83,7 @@ Save changes and the secret will be encrypted and available for use.
 
 If your |morpheus| user role has Cypher: Decrypt permissions, a "DECRYPT" button will be available in the Cypher section to view the secret.
 
-To delete the secret, select `Actions -> Remove` and confirm.
+To delete the secret, select `Actions > Remove` and confirm.
 
 UUID
 ----
@@ -105,7 +105,7 @@ Save changes and the UUID will be generate and available for use.
 
 If your user role has Cypher: Decrypt permissions, a "DECRYPT" button will be available in the Cypher section to view the generate UUID.
 
-To delete the UUID, select `Actions -> Remove` and confirm.
+To delete the UUID, select `Actions > Remove` and confirm.
 
 Key
 ---
@@ -127,7 +127,7 @@ Save changes and the AES Key will be generate and available for use.
 
 If your user role has Cypher: Decrypt permissions, a "DECRYPT" button will be available in the Cypher section to view the generate AES Key.
 
-To delete the UUID, select `Actions -> Remove` and confirm.
+To delete the UUID, select `Actions > Remove` and confirm.
 
 Using Cypher Keys in Scripts
 ----------------------------
