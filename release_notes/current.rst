@@ -81,7 +81,7 @@ Fixes
                - Corrected an issue that caused Inputs (Option Types) not to appear correctly when provisioning from an ARM-based Spec Template which was sourced from an integrated repository :superscript:`5.3.4`
 :Reports: - Corrected an issue that could cause inaccurate cost values to be shown on the Tenant Cost Report :superscript:`5.3.4`
 :Reports: - Fixed an issue that caused mismatched columns when opting for CSV output of the Cloud Migration Report :superscript:`5.3.4`
-:Security: - Added important security fixes which were first corrected in a post-release patch for |morpheus| 5.3.3 (v5.3.3-2) :superscript:`5.3.4`
+:Security: - Includes important security fixes which were first corrected in patch releases for 5.2.11 (v5.2.11-2) and 5.3.3 (v5.3.3-2) :superscript:`5.3.4`
            - Percent symbols (%) are now escaped correctly in usernames when logging in :superscript:`5.3.4`
            - Users can no longer view Instance Types owned by other Tenants by adding arbitrary Instance Type ID values to request URLs :superscript:`5.3.4`
            - Users with "Infrastructure: Network Integrations" permissions set to "None" no longer see the Integrations tab in Infrastructure > Networks :superscript:`5.3.4`
