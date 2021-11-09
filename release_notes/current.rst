@@ -10,9 +10,9 @@
 Navigation Updates
 ==================
 
-|morphver| contains major changes to the ui navigation structure. The following table lists updated paths for affected sections.
+|morphver| contains major changes to the UI navigation structure. The following table lists updated paths for affected sections.
 
-.. note:: API endpoints are not affected by the ui navigation changes   
+.. note:: API endpoints are not affected by the ui navigation changes
 
 +-------------------------+------------------------------------------------+--------------------------------------------------+
 | Target                  | Old Path                                       | New Path                                         |
@@ -66,7 +66,7 @@ Navigation Updates
 | Logs                    | logs                                           | monitoring > logs                                |
 +-------------------------+------------------------------------------------+--------------------------------------------------+
 
-| 
+|
 
 New Features
 ============
