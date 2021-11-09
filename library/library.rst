@@ -2,8 +2,6 @@
 Library
 *******
 
-An overview of library goes here.
-
 .. toctree::
    :maxdepth: 2
 
