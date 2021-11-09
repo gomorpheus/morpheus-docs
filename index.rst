@@ -1,6 +1,8 @@
 |morpheus| |morphver| Documentation
 ===================================
 
+.. important:: 5.3.4 contains major UI navigation structure changes. Please refer to the :ref:`Release Notes` and :ref:`Navigation Updates` refrence table before upgrading.
+
 :ref:`Release Notes`
 
 .. toctree::
