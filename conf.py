@@ -214,7 +214,7 @@ rst_prolog = """
 # ...............
 
 
-extensions = ['recommonmark','sphinx_markdown_tables','sphinxcontrib.contentui','sphinx_tabs.tabs','sphinxcontrib.images','sphinx_search.extension','notfound.extension'] #sphinx_tabs
+extensions = ['recommonmark','sphinx_markdown_tables','sphinxcontrib.contentui','sphinx_tabs.tabs','sphinxcontrib.images','sphinx_search.extension','notfound.extension','sphinx.ext.autosectionlabel'] #sphinx_tabs
 templates_path = ['_templates']
 source_suffix = ['.rst', '.md']
 project = u'Morpheus Docs'
