@@ -28,6 +28,9 @@ Adding Commvault Integration
       IP or Hostname of the Commvault server.
    Port
       Port number configured to access the Commvault server
+
+      .. TIP:: Enter the port to connect with the Commvault web server, by default this is port 81. For more, see `Commvault port requirement documentation <https://documentation.commvault.com/11.24/essential/7102_port_requirements_for_commvault.html>`_.
+
    Username
       Admin Username for Commvault
    Password
