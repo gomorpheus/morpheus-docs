@@ -43,8 +43,8 @@ Percona nodes.
 - 4567
 - 4568
 
-Configure SElinux
-`````````````````
+Configure SElinux (optional)
+````````````````````````````
 
 When SELinux is set to ``Enforcing``, by default it will block Percona Cluster communication.
 
@@ -206,7 +206,7 @@ Add [mysqld] to my.cnf in /etc/
             [root]# vi /etc/my.cnf
 
             [mysqld]
-            pxc_encrypt_cluster_traffic=ON
+            # pxc_encrypt_cluster_traffic=ON (optional, for TLS only)
             max_connections = 451
             max_allowed_packet = 256M
             wsrep_provider=/usr/lib64/galera3/libgalera_smm.so
@@ -238,7 +238,7 @@ Add [mysqld] to my.cnf in /etc/
             [root]# vi /etc/my.cnf
 
             [mysqld]
-            pxc_encrypt_cluster_traffic=ON
+            # pxc_encrypt_cluster_traffic=ON (optional, for TLS only)
             max_connections = 451
             max_allowed_packet = 256M
             wsrep_provider=/usr/lib64/galera3/libgalera_smm.so
@@ -273,7 +273,7 @@ Add [mysqld] to my.cnf in /etc/
             [root]# vi /etc/my.cnf
 
             [mysqld]
-            pxc_encrypt_cluster_traffic=ON
+            # pxc_encrypt_cluster_traffic=ON (optional, for TLS only)
             max_connections = 451
             max_allowed_packet = 256M
             wsrep_provider=/usr/lib64/galera3/libgalera_smm.so
@@ -350,12 +350,12 @@ Configure Morpheus Database and User
 
     mysql> FLUSH PRIVILEGES;
 
-   .. important:: If you grant privileges to the morpheusDbUser to only the morpheusdb database, you will also need to GRANT SELECT, PROCESS, SHOW DATABASES, SUPER ON PRIVILEGES to the morpheusDbUser on *.* for the Appliance Health service.
+   .. important:: If you grant privileges to the morpheusDbUser to only the morpheusdb database, you will also need to ``GRANT SELECT, PROCESS, SHOW DATABASES, SUPER ON PRIVILEGES to the morpheusDbUser on *.*`` for the Appliance Health service.
 
     mysql> exit
 
 Copy SSL Files to other nodes (optional, for TLS only)
-````````````````````````````````````````````````````````````
+``````````````````````````````````````````````````````
 
 During initialization of Node 01 the required ``pem`` files will be generated in ``/var/lib/mysql``. The ``ca.pem``, ``server-cert.pem`` and ``server-key.pem`` files need to match on all nodes in the cluster.
 
