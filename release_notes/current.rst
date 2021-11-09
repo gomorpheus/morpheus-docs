@@ -24,7 +24,7 @@ New Features
 :Clusters: - Add Cluster and Add Host Wizards now show pricing information on the confirmation page of the wizard, as the Add Instance Wizard does
 :Dashboard: - Added performance improvements for |morpheus| Dashboard (UI and calls to the Dashboard API) in specific scenarios where |morpheus| is managing a very high number of workloads :superscript:`5.2.11`
 :Inputs: - Added new Text Area Input-type. Users can determine the size of the text area by specifying the number of rows
-:Morpheus Worker: - The |morpheus| worker can now also be used as a proxy server between the |morpheus| appliance and on-prem Cloud hosts. See the `install guide <>`_ for more details
+:Morpheus Worker: - The |morpheus| worker can now also be used as a proxy server between the |morpheus| appliance and on-prem Cloud hosts. See the `install guide <https://docs.morpheusdata.com/en/latest/administration/integrations/integrations.html#distributed-workers>`_ for more details
 :NSX: - Added UI tab for NSX-T DHCP management (Infrastructure > Networks > Integrations > Selected NSX-T integration > DHCP tab) :superscript:`5.2.11`
        - Added ability to specify a member group to be associated with NSX-T load balancer server pools :superscript:`5.2.12`
        - Added capability to create and manage BGP neighbors for NSX-T routers :superscript:`5.2.12`
