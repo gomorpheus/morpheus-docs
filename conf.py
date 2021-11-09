@@ -5,7 +5,7 @@ rst_prolog = """
 .. |morphbranch| replace:: v5.3
 .. |morphver| replace:: v5.3.4
 .. |minUpgradeVer| replace:: v4.2.0
-.. |previousMorphVer| replace:: v5.3.2
+.. |previousMorphVer| replace:: v5.3.3
 .. |rmqbranch| replace:: v3.5-3.8
 .. |rmqver| replace:: v3.8.9
 .. |mysqlbranch| replace:: v5.7
