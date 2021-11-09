@@ -6,25 +6,31 @@ rst_prolog = """
 .. |morphver| replace:: v5.3.4
 .. |minUpgradeVer| replace:: v4.2.0
 .. |previousMorphVer| replace:: v5.3.3
-.. |rmqbranch| replace:: v3.5-3.8
-.. |rmqver| replace:: v3.8.9
+.. |rmqbranch| replace:: v3.5-3.9
+.. |rmqver| replace:: v3.9.8
 .. |mysqlbranch| replace:: v5.7
-.. |mysqlver| replace:: v5.7.32
-.. |mysqlverfips| replace:: v.5.7.29
+.. |mysqlver| replace:: v5.7.35
+.. |mysqlverfips| replace:: v.5.7.35
 .. |esbranch| replace:: v7.x
 .. |esver| replace:: v7.8.1
-.. |tcver| replace:: v9.0.50
-.. |morphdat| replace:: Morpheus Data, LLC
-.. |nginxver| replace:: v1.19.9
-.. |nodePackageVer| replace:: 3.2.0
-.. |java| replace:: v8u302-b08
-.. |openjdk-jre| replace:: v8u302
+.. |tcver| replace:: v9.0.54
+.. |nginxver| replace:: v1.20.1
+.. |linuxagentver| replace:: v2.1.1
+.. |winagentver| replace:: v1.7.0.0
+.. |nodePackageVer| replace:: 3.2.2
+.. |java| replace:: v8u312-b07
+.. |java-mac| replace:: v8u302-b08
+.. |openjdk-jre| replace:: v8u312
 .. |openjdk-elasticsearch| replace:: 14.0.2+12
-.. |erlang| replace:: 22.3
+.. |openssl| replace:: 1.1.1k
+.. |openssl_fips| replace:: 1.0.2u
+.. |erlang| replace:: 23.2
 .. |repo_host_url| replace:: https://downloads.morpheusdata.com
 .. |master tenant| replace:: Master Tenant
 .. |profileObjects| replace:: Clouds
 .. |profileTypes| replace:: Terraform, Key/Value
+
+
 
 .. |trash| unicode:: 0x0001F5D1 .. TRASH ICON
 .. |gear| unicode:: U+02699 .. GEAR ICON
