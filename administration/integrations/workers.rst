@@ -92,9 +92,9 @@ With the API key in hand and configuration complete in |morpheus| UI, head back 
 
    .. code-block:: bash
 
-       worker_url 'https://gateway_worker_url' # This is the gateway URL the |morpheus| appliance can resolve and reach on 443
-       worker['appliance_url'] = 'https://morpheus_appliance_url' # The resolvable URL or IP address of |morpheus| appliance which the gateway can reach on port 443
-       worker['apikey'] = 'API KEY FOR THIS GATEWAY' # VDI Gateway API Key generated from |morpheus| Appliance VDI Pools > VDI Gateways configuraiton
+       worker_url 'https://gateway_worker_url' # This is the wotker URL the |morpheus| appliance can resolve and reach on 443
+       worker['appliance_url'] = 'https://morpheus_appliance_url' # The resolvable URL or IP address of |morpheus| appliance which the worker can reach on port 443
+       worker['worker_key'] = 'DISTRIBUTED WORKER KEY' # Distributed Worker API Key from |AdmIntDis| configuration
 
 .. NOTE:: By default the worker_url uses the machine's hostname, ie ``https://your_machine_name``. The default ``worker_url`` value can be changed by editing ``/etc/morpheus/morpheus-worker.rb`` and changing the value of ``worker_url``. Additional appliance configuration options are available below.
 
