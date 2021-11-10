@@ -3,6 +3,9 @@
 
 .. important:: 5.3.4 contains major UI navigation structure changes. Please refer to the :ref:`Release Notes` and :ref:`Navigation Updates` reference table before upgrading.
 
+.. raw:: html
+   <iframe width="560" height="315" src="https://www.youtube.com/embed/B46qgEwoblY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 :ref:`Release Notes`
 
 .. toctree::
