@@ -49,7 +49,7 @@ New Features
       - Errors are now surfaced into the History tab of the Instance detail page if issues occur when taking Snapshots in supported Clouds :superscript:`5.2.11`
       - Localization features added, including a global language settings and override capabilities for individual users
       - Reorganized main application menu. The Library, which was previously under Provisioning, is now a top-level section. Service Catalog provisioning can now be done in the Standard Persona in addition to the Service Catalog Persona. Many more smaller changes
-:VMware: - Folder selection is now mandatory during provisioning. Previously this was optional but could cause issues if a folder was not selected and users were provisioning outside their intended folders :superscript:`5.2.12`
+:VMware: - The root Folder (``/``) is now exposed in VMware Cloud Resources sections, allowing the same configuration and access control as sub-folders. Previously configuration and access settings were only exposed for sub-folders :superscript:`5.2.12`
 
 
 Fixes
