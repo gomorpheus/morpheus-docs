@@ -76,6 +76,8 @@ Typically |morpheus| does not have sufficient metatdata to successfully provisio
    Enabled Sysprep?
     Applicable to Nutanix Only. Enable if the Windows Image has been sysprepped. If enabled, |morpheus| will inject ``unattend.xml`` through the Nutanix API (v3+ only)
 
+   .. note:: When searching for Azure Marketplace offers, please be aware as of 2.04/focal, Canonical now has separate offers for each major version sku, vs listing all version skus under the ``UbuntuServer`` offer. Searching for the ubuntu version name, such as ``focal`` in the IMAGE field will list that versions offers, as 20.x+ sku will not be found under the traditional ``UbuntuServer`` offer.
+
 3. Click :guilabel:`Save Changes`
 
 .. NOTE:: Cloud-Init is enabled by default on all images. Images without Cloud-Init or Cloudbase-Init installed must have the ``cloud-init`` flag disabled on the Virtual Image setting or Provisioning may fail.

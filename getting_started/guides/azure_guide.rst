@@ -404,6 +404,9 @@ In the prior section, we manually provisioned our first Instance. However, |morp
 
 .. NOTE:: Before starting this process, it's important to decide which virtual image you plan to use. If you're not using a |morpheus|-provided image, you'll want to ensure it's configured. You will not be able to complete this section without selecting an available image. In this example we will use a CentOS image that was previously configured in the |morpheus| library. If you need to configure your own images prior to starting this section, navigate to Provisioning > Virtual Images and click :guilabel:`+ ADD`. A deeper dive into image prep and virtual image configuration goes beyond the scope of this guide.
 
+.. note:: When searching for Azure Marketplace offers, please be aware as of 2.04/focal, Canonical now has separate offers for each major version sku, vs listing all version skus under the ``UbuntuServer`` offer. Searching for the ubuntu version name, such as ``focal`` in the IMAGE field will list that versions offers, as 20.x+ sku will not be found under the traditional ``UbuntuServer`` offer.
+
+
 Provisionable elements in |morpheus| combine a Node Type(s), Layout(s), and an Instance Type. The `Overview section <https://docs.morpheusdata.com/en/latest/provisioning/library/library.html#overview>`_ of |morpheus| docs discusses these objects and how they work together in greater detail. Our first step here will be to create a Node Type which wrap the image itself with additional configuration, templates, and scripts. While not strictly required, creating the Node Type, Instance Type, and then the Layout is often a good workflow for creating Library items. That is the order we will follow in this guide.
 
 Navigate to `Provisioning > Library > NODE TYPES` and click :guilabel:`+ ADD`
