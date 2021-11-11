@@ -5,7 +5,7 @@ Sample Install of 3 node Elasticsearch Cluster on CentOS 7
 
 .. IMPORTANT:: This is a sample configuration only. Customer configurations and requirements will vary.
 
-.. IMPORTANT:: |morpheus| v4.1.2+ requires Elasticsearch v7.x. 
+.. IMPORTANT:: |morpheus| v4.1.2+ requires Elasticsearch v7.x.
 
 Requirements
 ````````````
@@ -37,7 +37,7 @@ Requirements
 
 Install Elasticsearch 7.x
 `````````````````````````
-.. important:: This is an example Elasticsearch Upgrade for reference only, and is not indicative of the upgrade procedure for every environment/user/customer/configuration. 
+.. important:: This is an example Elasticsearch Upgrade for reference only, and is not indicative of the upgrade procedure for every environment/user/customer/configuration.
 
 #. On each ES node run the following to install Elasticsearch.
 
@@ -60,12 +60,12 @@ Install Elasticsearch 7.x
     sudo chown -R elasticsearch:elasticsearch /var/log/elasticsearch/
     sudo chown -R elasticsearch:elasticsearch /usr/share/elasticsearch/
 
-#. Edit ``/etc/elasticsearch/elasticsearch.yml`` and update each nodes configurations accordingly. Please note several attributes differ in 7.x from 5.x.
+#. Edit ``/etc/elasticsearch/elasticsearch.yml`` and update each node configuration accordingly. Please note several attributes differ in 7.x from 5.x.
 
    Node 1 Example (customer configurations will vary)
-   
+
    .. code-block:: bash
-   
+
     sudo vi /etc/elasticsearch/elasticsearch.yml
 
           #Sample elasticsearch.yml config. Adjusting values in elasticsearch.yml for each node in the cluster.
@@ -76,14 +76,14 @@ Install Elasticsearch 7.x
           http.port: 9200
           discovery.seed_hosts: ["10.30.22.152","10.30.22.153","10.30.22.154"] ## add all cluster node ip's
           cluster.initial_master_nodes: ["10.30.22.152","10.30.22.153","10.30.22.154"] ## add all cluster node ip's
-          path.logs: /var/log/elasticsearch ## Or your preferred location. 
+          path.logs: /var/log/elasticsearch ## Or your preferred location.
           path.data: /usr/share/elasticsearch/ ## Or your preferred location.
-          discovery.zen.minimum_master_nodes: 2 
-          
+          discovery.zen.minimum_master_nodes: 2
+
    Node 2 Example (customer configurations will vary)
-   
+
    .. code-block:: bash
-   
+
     sudo vi /etc/elasticsearch/elasticsearch.yml
 
           #Sample elasticsearch.yml config. Adjusting values in elasticsearch.yml for each node in the cluster.
@@ -94,14 +94,14 @@ Install Elasticsearch 7.x
           http.port: 9200
           discovery.seed_hosts: ["10.30.22.152","10.30.22.153","10.30.22.154"] ## add all cluster node ip's
           cluster.initial_master_nodes: ["10.30.22.152","10.30.22.153","10.30.22.154"] ## add all cluster node ip's
-          path.logs: /var/log/elasticsearch ## Or your preferred location. 
+          path.logs: /var/log/elasticsearch ## Or your preferred location.
           path.data: /usr/share/elasticsearch/ ## Or your preferred location.
-          discovery.zen.minimum_master_nodes: 2 
+          discovery.zen.minimum_master_nodes: 2
 
    Node 3 Example (customer configurations will vary)
-   
+
    .. code-block:: bash
-   
+
     sudo vi /etc/elasticsearch/elasticsearch.yml
 
           #Sample elasticsearch.yml config. Adjusting values in elasticsearch.yml for each node in the cluster.
@@ -112,10 +112,10 @@ Install Elasticsearch 7.x
           http.port: 9200
           discovery.seed_hosts: ["10.30.22.152","10.30.22.153","10.30.22.154"] ## add all cluster node ip's
           cluster.initial_master_nodes: ["10.30.22.152","10.30.22.153","10.30.22.154"] ## add all cluster node ip's
-          path.logs: /var/log/elasticsearch ## Or your preferred location. 
+          path.logs: /var/log/elasticsearch ## Or your preferred location.
           path.data: /usr/share/elasticsearch/ ## Or your preferred location.
-          discovery.zen.minimum_master_nodes: 2 
-                    
+          discovery.zen.minimum_master_nodes: 2
+
 #. Save elasticsearch.yml
 
 #. Start Elasticsearch on each node.

@@ -53,4 +53,4 @@ A custom Encryption Key Suffix can be set in the morpheus.rb configuration file.
 
 #. Run ``morpheus-ctl reconfigure``
 
-   - Reconfigure will generate a new encryption key using the suffix and set (ENC) values for service password in application.yml
+   - Reconfigure will generate a new encryption key using the suffix and set (ENC) values for the service password in application.yml

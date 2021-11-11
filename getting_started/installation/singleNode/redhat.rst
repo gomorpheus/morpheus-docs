@@ -5,7 +5,7 @@ To get started installing |morpheus| on RHEL/RedHat a few prerequisite items are
 
 #. Configure firewalld to allow access from users on 443 (Or remove firewall if not required).
 #. Make sure the machine is self resolvable to its own hostname.
-#. For RHEL 7.x, the Optional RPMS repo needs to be added for Reconfigure to succeed. Its does not need to be added For RHEL 8.x, as the Optional RPMs repo is now part of the appstream repo that is enabled by default in RHEL 8.x.
+#. For RHEL 7.x, the Optional RPMs repo needs to be added for Reconfigure to succeed. It does not need to be added For RHEL 8.x, as the Optional RPMs repo is now part of the appstream repo that is enabled by default in RHEL 8.x.
 
    *  **RHEL 7.x Amazon:** ``yum-config-manager --enable rhel-7-server-rhui-optional-rpms``
    *  **RHEL 7.x:** ``yum-config-manager --enable rhel-7-server-optional-rpms``

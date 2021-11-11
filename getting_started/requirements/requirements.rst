@@ -145,18 +145,18 @@ The following chart is useful for troubleshooting Agent install, Static IP assig
    | Virtual Images configured
    | WinRM Enabled on Virtual Image(`winrm quickconfig`)"
    " ",Cloud-init,Linux, , , ,"| Cloud-init installed on template/image
-   | Cloud-init settings populated in User Settings or in `Admin –> Provisioning`
+   | Cloud-init settings populated in User Settings or in `Administration > Settings > Provisioning`
    | Agent install mode set to Cloud-Init in Cloud Settings"
    " ",Cloudbase-init,Windows, , , ,"| Cloudbase-init installed on template/image
-   | Cloud-init settings populated in User Settings or in `Admin –> Provisioning`
+   | Cloud-init settings populated in User Settings or in `Administration > Settings > Provisioning`
    | Agent install mode set to Cloud-Init in Cloud Settings"
    " ",VMtools,All, , , ,"| VMtools installed on template
-   | Cloud-init settings populated in Morpheus user settings or in `Administration –> Provisioning` when using Static IP’s
+   | Cloud-init settings populated in Morpheus user settings or in `Administration > Settings > Provisioning` when using Static IP’s
    | Existing User credentials entered on Virtual Image when using DHCP
    | RPC mode set to VMtools in VMware cloud settings."
    "Static IP Assignment & IP Pools",Cloud-Init,All, , , ,"| Network configured in Morpheus (Gateway, Primary and Secondary DNS, CIDR populated, DHCP disabled)
    | Cloud-init/Cloudbase-init installed on template/image
-   | Cloud-init settings populated in Morpheus user settings or in `Administration –> Provisioning`"
+   | Cloud-init settings populated in Morpheus user settings or in `Administration > Settings > Provisioning`"
    " ", "VMware Tools",All, , , ,"| Network configured in Morpheus (Gateway, Primary and Secondary DNS, CIDR populated, DHCP disabled)
    | VMtools installed on Template/Virtual Image"
    Remote Console,SSH,Linux,Appliance,Node,22,"| ssh enabled on node

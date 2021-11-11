@@ -3,9 +3,9 @@ Single Node Install on CentOS
 
 .. note:: Appliance Package links are available at https://morpheushub.com in the downloads section.
 
-Quick Install 
+Quick Install
 `````````````
-#. Install the Appliance package and run ``sudo morpheus-ctl reconfigure``. 
+#. Install the Appliance package and run ``sudo morpheus-ctl reconfigure``.
 
 That is it. After the reconfigure completes, |morpheus| will start and be available at ``https://your_machine_name`` in a minute or few.
 
@@ -31,26 +31,26 @@ Step-by-step Install Instructions
    .. code-block:: bash
 
     sudo rpm -ihv morpheus-appliance-x.x.x-1.x86_64.rpm
-    
+
 #. By default the appliance_url uses the machines hostname, ie ``https://your_machine_name``. The default url can be changed by editing ``/etc/morpheus/morpheus.rb`` and changing the value of ``appliance_url``. Additional Appliance configuration options are available below.
 
    .. toggle-header::
         :header: Appliance Configuration Options **Click to Expand/Hide**
-        
+
               .. include:: /getting_started/additional/morpheusRb.rst
 
 #. After all configuration options have been set, run:
-    
-   .. code-block:: bash              
-    
+
+   .. code-block:: bash
+
      sudo morpheus-ctl reconfigure
-        
+
    .. note:: Configuration options can be updated after the initial reconfigure by editing ``/etc/morpheus/morpheus.rb`` and running ``sudo morpheus-ctl reconfigure`` again. Appliance and other services may need to be restarted depending on configuration changes.
 
-#. Once the installation is complete the morpheus-ui service will automatically start up and be available shortly. To mointor the ui startup process, run ``morpheus-ctl tail morpheus-ui`` and look for the ascii logo accompanied by the install version and start time: 
+#. Once the installation is complete the morpheus-ui service will automatically start up and be available shortly. To monitor the UI startup process, run ``morpheus-ctl tail morpheus-ui`` and look for the ascii logo accompanied by the install version and start time: 
 
    .. code-block:: console
-  
+
       timestamp:    __  ___              __
       timestamp:   /  |/  /__  _______  / /  ___ __ _____
       timestamp:  / /|_/ / _ \/ __/ _ \/ _ \/ -_) // (_-<
@@ -69,4 +69,3 @@ More details on setting up infrastructure can be found throughout this guide.
 .. TIP:: If any issues occur it may be prudent to check the morpheus log for details at ``/var/log/morpheus/morpheus-ui/current``.
 
 ..   todo: add detailed reconfigure process steps link
-

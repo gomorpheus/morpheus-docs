@@ -34,7 +34,7 @@ When an Instance is provisioned and the Agent does not install, verify the follo
 
 * Inbound connectivity access to the |morpheus| appliance from provisioned VMs and container hosts on port 443 (needed for Agent communication)
 
-* Private (non-|morpheus| provided) VM images and templates must have their credentials stored. These can be entered or edited in the |LibVir| section by clicking the Actions dropdown on an imaged detail page and selecting Edit.
+* Private (non-|morpheus| provided) VM images and templates must have their credentials stored. These can be entered or edited in the |LibVir| section by clicking the Actions dropdown on an image detail page and selecting Edit.
 
 .. NOTE:: Administrator user is required for Windows Agent install.
 
@@ -62,7 +62,7 @@ VMware Tools (vmtools)
 
 * VMware Tools is installed on the template(s)
 * Credentials have been entered on the image if using custom or synced image. Credentials can be entered on images in the |LibVir| section
-* Sudo priveleges required for Linux
+* Sudo privileges required for Linux
 * Administrator User required for Windows (SID 500)
 
 Cloud-Init

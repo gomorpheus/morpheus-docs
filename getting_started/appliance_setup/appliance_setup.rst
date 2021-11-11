@@ -17,13 +17,13 @@ After installation, log into the appliance at the URL presented upon completion.
    * Username
    * Email Address
    * Password
-     * Must be at least 8 characters longs and contain one each of the following: Uppercase letter, lowercase letter, Number, Special Character
+     * Must be at least 8 characters long and contain one each of the following: Uppercase letter, lowercase letter, Number, Special Character
 
 #. Enter Appliance Name & Appliance URL
 
    * The Appliance Name is used for white labeling and as a reference for multi-appliance installations.
 
-   * The Appliance URL is the URL all provisioned instances will report back to. Example: https://example.morpheusdata.com. The Appliance URL can be changed later, and also set to different url per cloud integration.
+   * The Appliance URL is the URL all provisioned instances will report back to. Example: https://example.morpheusdata.com. The Appliance URL can be changed later, and also set to a different URL per cloud integration.
 
 #. Optionally Enable or Disable Backups, Monitoring, or Logs from this screen.
 
@@ -34,14 +34,14 @@ After installation, log into the appliance at the URL presented upon completion.
     .. NOTE:: The Master User is the system super user and will have full access privileges.
 
 
-Upon completing of the initial appliance setup, you will be taken to the Admin > Settings page, where you will add your License Key.
+Upon completing of the initial appliance setup, you will be taken to the |AdmSet| page, where you will add your License Key.
 
 Login Methods
 -------------
 
 Master Tenant
 
-- Enter username or email. and password
+- Enter username (or email address) and password
 
 Subtenant
 
@@ -60,12 +60,12 @@ Or use the tenant specific URL which can be found and configured under |AdmTen| 
 Configure Cloud-init Global Settings
 ------------------------------------
 
-When using cloud-init, cloudbase-init, VMware Tools customizations, or Nutanix Sysprep, Global Linux User and Windows Administrator credentials can be set using the settings in `Administraiton - Provisioning`. Its is recommended to define these settings after installation unless credentials are defined per Virtual Image for Provisioning.
+When using cloud-init, cloudbase-init, VMware Tools customizations, or Nutanix Sysprep, Global Linux User and Windows Administrator credentials can be set using the settings in |AdmSetPro|. It is recommended to define these settings after installation unless credentials are defined per Virtual Image for Provisioning.
 
 Add a License Key
 -----------------
 
-In order to provision anything in |morpheus| , a |morpheus| License Key must be applied.
+In order to provision anything in |morpheus|, a |morpheus| License Key must be applied.
 
 If you do not already have a license key, one may be requested from https://www.morpheushub.com or from your |morpheus| representative.
 

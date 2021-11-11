@@ -184,7 +184,7 @@ Linux Agent
 Windows Agent
 `````````````
 
-* Port 5985 must be open and winRM enabled for Windows images.
+* Port 5985 must be open and WinRM enabled for Windows images.
 * Credentials have been entered on the image if using custom or synced image. Credentials can be entered on images in the |LibVir| section.
 
 .. NOTE:: Administrator user is required for Windows agent install.

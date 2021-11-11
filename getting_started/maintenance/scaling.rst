@@ -6,11 +6,9 @@ Morpheus App nodes can be scaled to accommodate additional load. Appliance nodes
 Vertical Scaling
 ^^^^^^^^^^^^^^^^
 
-In all Appliance Architectures, Application nodes can be vertically scaled at any time, however a reconfigure must be performed for additional resources to be utilized bu Morpheus on a node, which will result in the ``morpheus-ui`` restarting on the reconfiguring node.
+In all Appliance Architectures, Application nodes can be vertically scaled at any time, however a reconfigure must be performed for additional resources to be utilized by |morpheus| on a node, which will result in the ``morpheus-ui`` restarting on the reconfiguring node.
 
 Morpheus configures memory/ram utilization for services during the ``reconfigure`` process. If additional memory/ram is added to a Host or VM running the Morpheus App, the additional memory/ram will not be utilized by the Morpheus Application until a ``morpheus-ctl reconfigure`` command is ran and the additional memory/ram is recognized.
-
-When the ``morpheus-ctl reconfigure`` command detects changes on available memory/ram, it will trigger a ``morpheus-ui`` service restart.
 
 .. important:: When the ``morpheus-ctl reconfigure`` command detects changes on available memory/ram, it will restart the ``morpheus-ui`` service.
 
@@ -31,7 +29,7 @@ Additional Morpheus App Nodes can be added at any time to Fully Distributed Arch
 - Copy the ``morpheus.rb`` from an existing App Node to the new App Node(s)
 - Ensure permissions and network configuration for the new App Node(s) to access all MySQL and Elasticsearch nodes, and the RabbitMQ VIP.
 - Ensure permissions and network configuration for all required UI services and Integrations, such as network access to ESXi hosts over 443 for Hypervisor console and/or image transfers.
-- Add associated SSL files and configuration, of not on shared storage.
+- Add associated SSL files and configuration which is not on shared storage.
 - Reconfigure the new App Node(s) via ``morpheus-ctl reconfigure``
 - Verify UI startup succeeded
 - Add New App Node(s) to Front End Morpheus UI Load Balancer pool.

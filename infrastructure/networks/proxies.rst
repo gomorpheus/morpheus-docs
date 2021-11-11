@@ -5,9 +5,9 @@ Proxies
 Overview
 ^^^^^^^^
 
-In many situations , companies deploy virtual machines in proxy restricted environments for things such as PCI Compliance, or just general security. As a result of this |morpheus| provides out of the box support for proxy connectivity. Proxy authentication support is also provided with both Basic Authentication capabilities as well as NTLM for Windows Proxy environments. |morpheus| is even able to configure virtual machines it provisions to utilize these proxies by setting up the operating systems proxy settings directly (restricted to cloud-init based Linux platforms for now, but can also be done on windows based platforms in a different manner).
+In many situations,companies deploy virtual machines in proxy restricted environments for things such as PCI Compliance, or just general security. As a result of this |morpheus| provides out of the box support for proxy connectivity. Proxy authentication support is also provided with both Basic Authentication capabilities as well as NTLM for Windows Proxy environments. |morpheus| is even able to configure virtual machines it provisions to utilize these proxies by setting up the operating systems proxy settings directly (restricted to cloud-init based Linux platforms for now, but can also be done on windows based platforms in a different manner).
 
-To get started with Proxies, it may first be important to configure the |morpheus| appliance itself to have access to proxy communication for downloading service catalog images. To configure this, visit the Admin > Settings page where a section labeled "Proxy Settings" is located. Fill in the relevant connection info needed to utilize the proxy. It may also be advised to ensure that the Linux environment's `http_proxy`, `https_proxy`, and `no_proxy` are set appropriately.
+To get started with Proxies, it may first be important to configure the |morpheus| appliance itself to have access to proxy communication for downloading service catalog images. To configure this, visit the |AdmSet| page where a section labeled "Proxy Settings" is located. Fill in the relevant connection info needed to utilize the proxy. It may also be advised to ensure that the Linux environment's `http_proxy`, `https_proxy`, and `no_proxy` are set appropriately.
 
 Defining Proxies
 ^^^^^^^^^^^^^^^^
@@ -29,6 +29,6 @@ Overriding proxy settings can also be done on the Network record. Networks (or s
 Docker
 ^^^^^^
 
-When provisioning Docker based hosts within a Proxy environment it is up to the user to configure the docker hosts proxy configuration manually. There are workflows that can be configured via the Automation engine to make this automatic when creating docker based hosts. Please see documentation on Docker and proxies for specific information.
+When provisioning Docker based hosts within a Proxy environment it is up to the user to configure the docker host proxy configuration manually. There are workflows that can be configured via the Automation engine to make this automatic when creating docker based hosts. Please see documentation on Docker and proxies for specific information.
 
 Proxy setups can vary widely from company to company, and it may be advised to contact support for help configuring morpheus to work in the proxy environment.
