@@ -18,7 +18,7 @@ New Features
       - Added capability to create and manage BGP neighbors for NSX-T routers :superscript:`5.3.4`
       - Fixed NSX-T distributed firewall missing source and destination types in Morpheus UI :superscript:`5.3.4`
 :Security: - jknack/handlebars.java updated to 4.3.0 (CVE-2021-23369) :superscript:`5.3.4`
-:VMware: - Folder selection is now mandatory during provisioning. Previously this was optional but could cause issues if a folder was not selected and users were provisioning outside their intended folders :superscript:`5.3.4`
+:VMware: - The root Folder (``/``) is now exposed in VMware Cloud Resources sections, allowing the same configuration and access control as sub-folders. Previously configuration and access settings were only exposed for sub-folders :superscript:`5.3.4`
 
 
 Fixes
