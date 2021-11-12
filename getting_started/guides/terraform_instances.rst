@@ -23,6 +23,8 @@ Spec Templates are added in the |morpheus| Library (|LibTemSpe| tab). We can pul
 
 In the VERSION field at the bottom of the TF Spec Template modal, enter a Terraform version number to force that version to be used. This version is only honored if the Terraform Runtime setting (|AdmSetPro|) is set to "auto". When "manual" is selected as the Terraform Runtime setting, |morpheus| will simply use the version installed on the appliance box.
 
+.. TIP:: When declaring variables, keep in mind that |morpheus| expects users to follow Terraform best practices. For example, when a variable type is not defined, it defaults to string. See `Terraform Documentation <https://www.terraform.io/docs/language/values/variables.html>`_ for additional resources on variable declaration.
+
 .. image:: /images/integration_guides/terr_inst_guide/1newSpec.png
 
 - .. toggle-header:: :header: **AWS Subnet by Count**

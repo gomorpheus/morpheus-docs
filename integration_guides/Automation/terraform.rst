@@ -7,11 +7,11 @@ Requirements
 Role Access
 ^^^^^^^^^^^
 
-* In order to see the Terraform Blueprint type option and create Terraform App Blueprints in `|LibBluApp|`, the Morpheus user must have Role permissions for `Provisioning: Blueprints - Terraform` set to `Full`.
+* In order to see the Terraform Blueprint type option and create Terraform App Blueprints in |LibBluApp|, the |morpheus| user must have Role permissions for `Provisioning: Blueprints - Terraform` set to `Full`.
 
 * In order to provision Terraform Apps in |ProApp|, the Morpheus user must have Role permissions for `Provisioning: Blueprints > Terraform` set to `Provision` or `Full`.
 
-* Existing Terraform Blueprints must be added before they can be provisioned from `|ProApp|`.
+* Existing Terraform Blueprints must be added before they can be provisioned from |ProApp|.
 
 Github/Git Repo
 ^^^^^^^^^^^^^^^
