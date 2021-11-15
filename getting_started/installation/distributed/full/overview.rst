@@ -40,23 +40,66 @@ Shared Assets
 Port Requirements
 `````````````````
 
-+---------------+------------------+---------------+----------------------------------------+
-| Service       | Source           | Destination   | Port(s)                                |
-+---------------+------------------+---------------+----------------------------------------+
-| Morpheus      | Application Node | mySQL         | 3306                                   |
-+---------------+------------------+---------------+----------------------------------------+
-| Morpheus      | Application Node | Elasticsearch | 9200; 9300                             |
-+---------------+------------------+---------------+----------------------------------------+
-| Morpheus      | Application Node | RabbitMQ      | 5672; 61613                            |
-+---------------+------------------+---------------+----------------------------------------+
-| Morpheus      | Application Node | YUM or APT    | 443                                    |
-+---------------+------------------+---------------+----------------------------------------+
-| Elasticsearch | Elasticsearch    | Elasticsearch | 9200; 9300                             |
-+---------------+------------------+---------------+----------------------------------------+
-| mySQL         | mySQL            | mySQL         | 3306;4444;4567;4560                    |
-+---------------+------------------+---------------+----------------------------------------+
-| RabbitMQ      | RabbitMQ         | RabbitMQ      | 5672 or 5671(SSL); 61613 or 61614(SSL) |
-+---------------+------------------+---------------+----------------------------------------+
++---------------+------------------+---------------+--------------------------------------------------+
+| Service       | Source           | Destination   | Port(s)                                          |
++---------------+------------------+---------------+--------------------------------------------------+
+| Morpheus      | Application Node | mySQL         | 3306                                             |
++---------------+------------------+---------------+--------------------------------------------------+
+| Morpheus      | Application Node | Elasticsearch | 9200; 9300                                       |
++---------------+------------------+---------------+--------------------------------------------------+
+| Morpheus      | Application Node | RabbitMQ      | 5672; 61613                                      |
++---------------+------------------+---------------+--------------------------------------------------+
+| Morpheus      | Application Node | YUM or APT    | 443                                              |
++---------------+------------------+---------------+--------------------------------------------------+
+| Elasticsearch | Elasticsearch    | Elasticsearch | 9200; 9300                                       |
++---------------+------------------+---------------+--------------------------------------------------+
+| mySQL         | mySQL            | mySQL         | 3306;4444;4567;4560                              |
++---------------+------------------+---------------+--------------------------------------------------+
+| RabbitMQ      | RabbitMQ         | RabbitMQ      | 4369,5672/5671(SSL),61613/61614,25672/25671(SSL) |
++---------------+------------------+---------------+--------------------------------------------------+
+
+* - Application Tier
+  - Messaging Tier
+  - 5672
+  - TCP
+  - AMQP non-TLS connections
+* - Application Tier
+  - Messaging Tier
+  - 5671
+  - TCP
+  - AMQPS TLS enabled connections
+* - Application Tier
+  - Messaging Tier
+  - 61613
+  - TCP
+  - STOMP Plugin connections (Required only for Morpheus versions 4.2.1 or prior)
+* - Application Tier
+  - Messaging Tier
+  - 61614
+  - TCP
+  - STOMP Plugin TLS enabled connections (Required only for Morpheus versions 4.2.1 or prior)
+* - Messaging Tier
+  - Messaging Tier
+  - 25672
+  - TCP
+  - Inter-node and CLI tool communication
+* - Administrator Web Browser
+  - RabbitMQ Server Management
+  - 15672
+  - TCP
+  - Management plugin
+* - Administrator Web Browser
+  - RabbitMQ Server Management
+  - 15671
+  - TCP
+  - Management plugin SSL
+* - Messaging Tier Cluster Node
+  - Messaging Tier Cluster Node
+  - 4369
+  - TCP
+  - erlang (epmd) peer discovery service used by RabbitMQ nodes and CLI tools
+
+
 
 Default Locations
 `````````````````
