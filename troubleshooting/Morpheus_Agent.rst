@@ -78,6 +78,7 @@ Cloudbase-Init
 * Windows Administrator Password defined in |AdmSetPro| section
 * Cloudbase-Init installed on Virtual Image
 * ``Cloud-Init`` enabled on Virtual Image config
+* Cloudbase-Init is only required for OpenStack Cloud types
 
 .. note:: Unattend Agent Installation and customizations are recommended over Cloudbase-Init
 
