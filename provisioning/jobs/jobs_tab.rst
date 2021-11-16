@@ -29,9 +29,9 @@ To create a new job:
 #. Select :guilabel:`+ ADD`
 #. Enter the following
 
-   **NAME:** Name of the Job in |morpheus|
-   **JOB TYPE:** A Task Job will execute a selected Task, a Workflow Job will execute a selected Workflow
-   **ENABLED:** When checked, the Job will run as scheduled
+   - **NAME:** Name of the Job in |morpheus|
+   - **JOB TYPE:** A Task Job will execute a selected Task, a Workflow Job will execute a selected Workflow
+   - **ENABLED:** When checked, the Job will run as scheduled
 
 #. Select :guilabel:`NEXT`
 

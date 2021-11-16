@@ -13,7 +13,7 @@ Container
 Virtual Machine
   A virtualized compute server provisioned onto various hypervisor hosts.
 
-The top of the main Instances page shows overall statistic for the listed Instances, including count, status, and resource utilization. You can search for instances by name, or filter by group, instance type, or category.
+The top of the main Instances page shows overall statistics for the listed Instances, including count, status, and resource utilization. You can search for instances by name, or filter by group, instance type, or category.
 
 .. NOTE:: Instances listed are determined by group access and role permissions.
 
