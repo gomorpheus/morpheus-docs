@@ -3,9 +3,9 @@
    <style type="text/css">
    .tg  {border-collapse:collapse;border-spacing:0;}
    .tg td{border-color:white;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
-     overflow:hidden;padding:10px 13px;word-break:normal;}
+     overflow:scroll;padding:10px 13px;word-break:normal;}
    .tg th{border-color:white;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
-     font-weight:normal;overflow:auto;padding:10px 13px;word-break:normal;}
+     font-weight:normal;overflow:scroll;padding:10px 13px;word-break:normal;}
    .tg .tg-fr0y{background-color:#656565;border-color:inherit;color:#ffffff;text-align:left;vertical-align:top}
    .tg .orange{background-color:#ff8c00;border-color:inherit;color:#ffffff;text-align:center;vertical-align:top}
    .tg .tg-8fch{background-color:#1a8c2a;border-color:inherit;color:#ffffff;text-align:center;vertical-align:top}

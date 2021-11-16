@@ -340,7 +340,7 @@ Next, reboot the system and confirm the network interface is labeled ``eth0`` on
 
 Shutdown the system:
 
-.. code-block: bash
+.. code-block:: bash
 
   shutdown -h now
 
