@@ -289,7 +289,11 @@ Complete the installation process and reboot the machine. Update the package lis
   apt-get update
   apt-get upgrade
 
-Change the network interface to ``eth0`` by editing ``/etc/default/grub``. The line ``GRUB_CMDLINE_LINUX=""`` should be edited to ``GRUB_CMDLINE_LINUX="net.ifnames=0 biosdevname=0"``.
+Disable assignment of new styled names for network interfaces (instead of ``ens###`` they will be ``eth#``):
+
+.. code-block:: bash
+
+  sudo sed -i -e 's/GRUB_CMDLINE_LINUX=""/GRUB_CMDLINE_LINUX="net.ifnames=0 biosdevname=0"/' /etc/default/grub
 
 Update GRUB:
 
