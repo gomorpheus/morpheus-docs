@@ -5,7 +5,7 @@
    .tg td{border-color:white;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
      overflow:hidden;padding:10px 13px;word-break:normal;}
    .tg th{border-color:white;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
-     font-weight:normal;overflow:hidden;padding:10px 13px;word-break:normal;}
+     font-weight:normal;overflow:auto;padding:10px 13px;word-break:normal;}
    .tg .tg-fr0y{background-color:#656565;border-color:inherit;color:#ffffff;text-align:left;vertical-align:top}
    .tg .orange{background-color:#ff8c00;border-color:inherit;color:#ffffff;text-align:center;vertical-align:top}
    .tg .tg-8fch{background-color:#1a8c2a;border-color:inherit;color:#ffffff;text-align:center;vertical-align:top}
@@ -786,7 +786,7 @@
        <td class="tg-0qf3">5.3.2</td>
        <td class="tg-0qf3">5.3.3</td>
        <td class="tg-0qf3">5.3.4</td>
-     </tr>  
+     </tr>
      <tr>
        <td class="tg-epna">5.2.10 →</td>
        <td class="tg-fr0y"></td>
@@ -984,7 +984,7 @@
        <td class="tg-kw6a"></td>
        <td class="tg-0qf3">5.3.3</td>
        <td class="tg-0qf3">5.3.4</td>
-     </tr> 
+     </tr>
      <tr>
        <td class="tg-epna">5.3.3 →</td>
        <td class="tg-fr0y"></td>
@@ -1017,7 +1017,7 @@
        <td class="tg-fr0y"></td>
        <td class="tg-kw6a"></td>
        <td class="tg-0qf3">5.3.4</td>
-     </tr> 
+     </tr>
      <tr>
        <td class="tg-8fch" colspan="31">Rolling Upgrade Supported</td>
      </tr>
