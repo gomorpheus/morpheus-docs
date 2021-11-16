@@ -1,5 +1,5 @@
 .. raw:: html
-
+   <div style="overflow-x:scroll;">
    <style type="text/css">
    .tg  {border-collapse:collapse;border-spacing:0;}
    .tg td{border-color:white;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
@@ -1035,6 +1035,7 @@
      </tr>
    </tbody>
    </table>
+   </div>
 
 
 * Some Features and Fixes in the ``From`` version may not be included in the ``To`` version due to ``From`` version being released after the ``To`` version.
