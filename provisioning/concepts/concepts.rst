@@ -8,7 +8,7 @@ Provisioning Concepts
 Instances
 ---------
 
-|morpheus| starts with provisioning Instances. In some platforms an Instance is representative of a singular object like a "Virtual Machine" in Amazon. In |morpheus| , this concept was rethought. An Instance is more of a representation of a Resource or Service. This service may involve several virtual machines or even several docker containers.
+|morpheus| starts with provisioning Instances. In some platforms an Instance is representative of a singular object like a "Virtual Machine" in Amazon. In |morpheus|, this concept was rethought. An Instance is more of a representation of a Resource or Service. This service may involve several virtual machines or even several docker containers.
 
 For example, in the morpheus Instance wizard Mongo is an option and contains several "Instance Configurations". One of these configurations is a full Mongo cluster consisting of either seven virtual machines or seven docker containers. Rather than representing these directly as seven individual "instances", |morpheus| groups them together into a singular instance of a service that contains multiple containers or virtual machines. This even allows for instance actions that can be performed to expand capacity on an instance (either horizontally or vertically). In the past, a database server may have been representative of a singular server, but this model has drastically changed in a big data world. This same concept also can apply to something like a simple Apache web server where there are 10 copies of a web server horizontally scaled out to handle traffic.
 
@@ -17,7 +17,7 @@ When viewing an instance detail page, one is able to look at details/statistics 
 Containers / Nodes / Virtual Machines
 -------------------------------------
 
-In relation to ``Instances``, an instance can have many nodes. A node is a generic representation of a container or a virtual machine. In most cases, |morpheus| will represent a node as a Container or Virtual Machine depending on the provisioning engine used for the instance. Node is just a generic naming representation when referring to these types of items. The public developer API, however, often refers to both virtual machines and docker containers as ``Containers``. The UI was since updated to better delineate this concept for easier understanding but In essence the name is valid for both concepts of containerized environments as well as Virtual Machines. In fact, one can even think of a Docker Host as a Hypervisor (which we do).
+In relation to ``Instances``, an instance can have many nodes. A node is a generic representation of a container or a virtual machine. In most cases, |morpheus| will represent a node as a Container or Virtual Machine depending on the provisioning engine used for the instance. Node is just a generic naming representation when referring to these types of items. The public developer API, however, often refers to both virtual machines and docker containers as ``Containers``. The UI was since updated to better delineate this concept for easier understanding but in essence the name is valid for both concepts of containerized environments as well as Virtual Machines. In fact, one can even think of a Docker Host as a Hypervisor (which we do).
 
 Hosts / Servers
 ---------------
@@ -29,7 +29,7 @@ When a user provisions a vm based instance, a corresponding server record is cre
 Apps
 ----
 
-On top of all the previous concept, |morpheus| provides an Apps layer. An App is a collection of Instances linked together via application tiers. Tiers allow the user to define segregated sections of connectivity between the various elements / instances within an application. Once these instances are all linked together in an application concept, this may affect Instance environments and provide service discovery capabilities for them to cross connect. There are several service discovery aspects within morpheus as well as integrations with services.
+On top of all the previous concepts, |morpheus| provides an Apps layer. An App is a collection of Instances linked together via application tiers. Tiers allow the user to define segregated sections of connectivity between the various elements / instances within an application. Once these instances are all linked together in an application concept, this may affect Instance environments and provide service discovery capabilities for them to cross connect. There are several service discovery aspects within morpheus as well as integrations with services.
 
 Blueprints
 ----------

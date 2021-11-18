@@ -19,6 +19,7 @@ New Features
              - Improved NSX-T Tier-0 and Tier-1 Gateway consiguration via |morpheus| API :superscript:`5.2.12`
              - Snapshot support added to billing API
              - Virtual Image support added to billing API
+:Amazon: - EKS now supported for all regions with AWS EKS services. Added ``us-west-1``,``ap-east-1``,``ap-south-1``,``ap-northeast-3``,``ca-central-1``,``eu-south-1``,``me-south-1``,``sa-east-1``,``us-gov-east-1``&``us-gov-west-1``
 :Azure: - Updated Azure costing sync to account for Azure CSP customers using Azure Plan :superscript:`5.2.12`
          - When using Azure global clouds, available storage accounts are now filtered by the location of the resource group. Previously this list was unfiltered and provisioning could fail if the resource group and storage account were in different locations
 :Clusters: - Add Cluster and Add Host Wizards now show pricing information on the confirmation page of the wizard, as the Add Instance Wizard does

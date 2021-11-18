@@ -11,7 +11,7 @@ Creating Apps from Blueprints
 #. Click :guilabel:`+ADD` on the right side of the main Apps section in Provisioning.
 #. Select an existing App Blueprint and click :guilabel:`NEXT`.
 
-   .. Note:: Blueprints must be created in in |LibBluApp|. to appear as options when creating an App.
+   .. Note:: App Blueprints must be created in |LibBluApp| to appear as options when provisioning an App.
 
 #. Enter a Name for the App and select a Group. Default Cloud and Env can also be selected.
 #. Click :guilabel:`NEXT`. Blueprint configurations matching the Group, Cloud and Environment selections will auto-populate the configurations of the Instances in the App.  If no Blueprint Configuration matched the Group, Cloud or Env selections, the Instances will have default configurations.
@@ -51,7 +51,7 @@ Creating Apps from Existing Instances
 Exporting Configuration JSON
 ----------------------------
 
-To export a Blueprint as JSON:
+To export an App Blueprint as JSON:
 
 #. Navigate to  |ProApp|
 #. Select an App from the list to view the App detail page
@@ -61,4 +61,4 @@ To export a Blueprint as JSON:
 Provisioning Apps via API
 -------------------------
 
-A quick example of how this work: https://d.pr/i/yxsW7t
+Apps can also be provisioned via |morpheus| API and CLI. Links to documentation sites for |morpheus| API and CLI are in the main side navigation bar.
