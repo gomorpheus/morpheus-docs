@@ -151,21 +151,84 @@ Final VMWare Tasks
 #. Convert the VM to template on the |morpheus| side
 #. Refresh the |morpheus| Cloud to allow the new template to sync
 
-Creating an Ubuntu Image
-^^^^^^^^^^^^^^^^^^^^^^^^
+Creating an Ubuntu 20.04 Image
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Create a new machine in VMware vCenter and install a base version of your preferred Linux distro build. If you are using cloud init as part of your image you will need to ensure your virtual machine has a cdrom.
+Download the Ubuntu 20.04 ISO from Canonical, and upload the base image to vCetner. Then, create a new virtual machine in vCenter.
 
-#.	Before installing the operating system setup a single ``ext`` partition without a swap disk (This is so that growpart can extend the disk. growpart currently does not support lvm)
-#.	Install the distro and apply any updates to the operating system and security updates
-#.	Ensure you have set a root password
-#.	Install cloud-init by running ``sudo apt install cloud-init``
-#.	Install cloud-utils-growpart ``sudo apt install cloud-utils``
-#.	Install desired hypervisor drivers (Virto, Open-VM Tools)
-#.	Install git by running ``sudo apt install git``
-#.	As Debian 9 includes network manager ensure this is disabled, set ```/etc/NetworkManager/NetworkManager.conf`` to ``managed=false``
+.. NOTE:: Since we'll include cloud-init with our image, we will need to ensure the virtual machine has a cdrom. Select the Ubuntu 20.04 ISO we just downloaded from the CD/DVD drive dropdown menu when creating the new virtual machine.
 
-We also recommend disabling network manager and setting the network adapter to eth0 rather than the automatically assigned name as described in the CentOS/RHEL section above.
+Before installing the operating system, set up a single ext partition without a swap disk. Then, continue on installing Ubuntu making the following selections during the setup process:
+
+- Update to the latest installer if a later version is available
+- Use the entire disk and deselect the option to set up the disk as an LVM group
+- Configure an account and set a password
+- Opt to install OpenSSH Server
+- Other optional packages aren't needed for this basic Ubuntu image
+
+Complete the installation process and reboot the machine. Update the package list and apply any upgrades:
+
+.. code-block:: bash
+
+  apt-get update
+  apt-get upgrade
+
+Change the network interface to ``eth0`` by editing ``/etc/default/grub``. The line ``GRUB_CMDLINE_LINUX=""`` should be edited to ``GRUB_CMDLINE_LINUX="net.ifnames=0 biosdevname=0"``.
+
+Update GRUB:
+
+.. code-block:: bash
+
+  update-grub
+
+Update the ``70-persistent-net.rules`` file:
+
+.. code-block:: bash
+
+  cat << EOF > /etc/udev/rules.d/70-persistent-net.rules
+  SUBSYSTEM=="net", ACTION=="add", DRIVERS=="?*", ATTR{dev_id}=="0x0", ATTR{type}=="1", NAME="eth0"
+  EOF
+
+Remove ``subiquity-disable-cloudinit-networking.cfg`` as cloud-init will skip network configuration if it's present:
+
+.. code-block:: bash
+
+  rm -f /etc/cloud/cloud.cfg.d/subiquity-disable-cloudinit-networking.cfg
+
+Update ``99-pve.cfg``:
+
+.. code-block:: bash
+
+  cat << EOF > /etc/cloud/cloud.cfg.d/99-pve.cfg
+  datasource_list: [ConfigDrive, NoCloud]
+  EOF
+
+Remove Netplan files, they will not be regenerated if they exist:
+
+.. code-block:: bash
+
+  rm -f /etc/netplan/00-installer-config.yaml
+  rm -f /etc/netplan/50-cloud-init.yaml
+
+Run cloud-init clean:
+
+.. code-block:: bash
+
+  cloud-init clean
+
+Next, reboot the system and confirm the network interface is labeled ``eth0`` once the machine comes back up. Then, clear BASH history for root. The history entry has a copy in the memory and it will flush back to the file when you log out. You can avoid this with the following command:
+
+.. code-block:: bash
+
+  cat /dev/null > ~/.bash_history && history -c && exit
+
+Shutdown the system:
+
+.. code-block:: bash
+
+  shutdown -h now
+
+Convert the VM to a template in vCenter before moving back to |morpheus| to onboard the image and use it to begin building your provisioning library.
 
 Gotyas
 ^^^^^^
