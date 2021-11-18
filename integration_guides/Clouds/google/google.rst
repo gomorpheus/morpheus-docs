@@ -25,6 +25,7 @@ To integrate |morpheus| with Google Cloud Platform, you will need the following.
 * The Identity and Access Management (IAM) API enabled
 * The BigQuery API enabled
 * The BigQuery Data Transfer API enabled
+* The Kubernetes Engine API enabled
 * Credentials for an IAM service account with Owner or Compute Admin role permissions
 * The private key and client email for the service account
 
