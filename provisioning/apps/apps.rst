@@ -67,40 +67,50 @@ App Status is determined by the status of the Instances within the App or by the
 
 
 .. list-table:: **App Statuses**
-   :widths: auto
-   :header-rows: 1
+  :widths: auto
+  :header-rows: 1
 
    * - Status Icon
      - App Status
      - Status Reason 
+     
    * - .. image:: /images/provisioning/instances/status/running_icon.svg  
-          :width: 25
+          :width: 30px
      - Running 
      - All Instance Statuses = Running      
+
    * - .. image:: /images/provisioning/instances/status/failed_icon.svg
-          :width: 25
+          :width: 30px
      - Failed 
      - Any Instance Status = Failed 
+         
    * - .. image:: /images/provisioning/instances/status/pending_icon.svg
-          :width: 25
+          :width: 30px
      - Pending 
      - Any Instance Status = Pending 
+          
    * - .. image:: /images/provisioning/instances/status/pendingRemoval_icon.svg
-          :width: 25
+          :width: 30px
      - Pending Removal 
      - Any Instance Status = Pending Removal 
+     
    * - .. image:: /images/provisioning/instances/status/deploying_icon.svg
-          :width: 25
+          :width: 30px
      - Provisioning 
      - Any Instance Status = Provisioning 
+
    * - .. image:: /images/provisioning/instances/status/removing_icon.svg
-          :width: 25
+          :width: 30px
      - Removing 
-     - The DELETE action was trigger on the App 
+     - The :redguilabel:`DELETE` action was trigger on the App 
+               
    * - .. image:: /images/provisioning/instances/status/unknown_icon.svg
-          :width: 25
+          :width: 30px
      - Unknown 
      - Any Instance Status = Unknown, or the App is empty      
+
+An App will be in "Removing Status" when the :redguilabel:`DELETE` action is trigger on the App and no Delayed Removal Policies are enforced
+
 
 Editing an App
 ^^^^^^^^^^^^^^
