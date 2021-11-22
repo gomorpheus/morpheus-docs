@@ -73,39 +73,32 @@ App Status is determined by the status of the Instances within the App or by the
    * - Status Icon
      - App Status
      - Status Reason 
-     
    * - .. image:: /images/provisioning/instances/status/running_icon.svg  
-          :width: 30px
+          :width: 25px
      - Running 
      - All Instance Statuses = Running      
-
    * - .. image:: /images/provisioning/instances/status/failed_icon.svg
-          :width: 30px
+          :width: 25px
      - Failed 
      - Any Instance Status = Failed 
-         
    * - .. image:: /images/provisioning/instances/status/pending_icon.svg
-          :width: 30px
+          :width: 25px
      - Pending 
      - Any Instance Status = Pending 
-          
    * - .. image:: /images/provisioning/instances/status/pendingRemoval_icon.svg
-          :width: 30px
+          :width: 25px
      - Pending Removal 
      - Any Instance Status = Pending Removal 
-     
    * - .. image:: /images/provisioning/instances/status/deploying_icon.svg
-          :width: 30px
+          :width: 25px
      - Provisioning 
      - Any Instance Status = Provisioning 
-
    * - .. image:: /images/provisioning/instances/status/removing_icon.svg
-          :width: 30px
+          :width: 25px
      - Removing 
      - The :redguilabel:`DELETE` action was trigger on the App 
-               
    * - .. image:: /images/provisioning/instances/status/unknown_icon.svg
-          :width: 30px
+          :width: 25px
      - Unknown 
      - Any Instance Status = Unknown, or the App is empty      
 
