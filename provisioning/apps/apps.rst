@@ -96,15 +96,11 @@ App Status is determined by the status of the Instances within the App or by the
    * - .. image:: /images/provisioning/instances/status/removing_icon.svg
           :width: 25
      - Removing 
-     - The :redguilabel:`DELETE` action was trigger on the App 
+     - The DELETE action was trigger on the App 
    * - .. image:: /images/provisioning/instances/status/unknown_icon.svg
           :width: 25
      - Unknown 
      - Any Instance Status = Unknown, or the App is empty      
-
-
-An App will be in "Removing Status" when the :redguilabel:`DELETE` action is trigger on the App and no Delayed Removal Policies are enforced
-
 
 Editing an App
 ^^^^^^^^^^^^^^
