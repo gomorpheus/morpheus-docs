@@ -144,7 +144,7 @@ Task Types
      - PowerShell Script
      - Execute PowerShell Script on the Target Resource
      - Local, Repository, Url
-     - Remote, Resource
+     - Remote, Resource, Local
      - None
      - Provisioning: Tasks
    * - |puppet|
@@ -309,6 +309,8 @@ Task Configuration
     - **PASSWORD:** Password for PowerShell Task target
     - **Content:**  Enter script to execute if not calling the script in from an outside source
 
+    
+
 - .. toggle-header:: :header: **Puppet Agent Install**
 
     |puppet|
@@ -335,53 +337,53 @@ Task Configuration
 
     :raw-html:`<br />`
 
-Python and |morpheus|
-`````````````````````
+    Python and |morpheus|
+    `````````````````````
 
-**Enterprise Proxy Considerations**
+    **Enterprise Proxy Considerations**
 
-Additional considerations must be made in enterprise proxy environments where Python Tasks are run with additional package download requirements. These additional packages are downloaded using ``pip`` and may not obey global |morpheus| proxy rules. To deal with this, create or edit the pip configuration file at ``/etc/pip.conf``. Your configuration should include something like the following:
+    Additional considerations must be made in enterprise proxy environments where Python Tasks are run with additional package download requirements. These additional packages are downloaded using ``pip`` and may not obey global |morpheus| proxy rules. To deal with this, create or edit the pip configuration file at ``/etc/pip.conf``. Your configuration should include something like the following:
 
-.. code-block:: bash
+    .. code-block:: bash
 
-  [global]
-  proxy = http://some-proxy-ip.com:8087
+      [global]
+      proxy = http://some-proxy-ip.com:8087
 
-For more information, review the Pip documentation on using proxy servers `here <https://pip.pypa.io/en/stable/user_guide/#using-a-proxy-server>`_.
+    For more information, review the Pip documentation on using proxy servers `here <https://pip.pypa.io/en/stable/user_guide/#using-a-proxy-server>`_.
 
-**CentOS 7 / Python 2.7 (RHEL system Python)**
+    **CentOS 7 / Python 2.7 (RHEL system Python)**
 
-With a fresh install of |morpheus| on a default build of CentOS 7, Python Tasks will not function due to the missing requirement of ``virtualenv``.
+    With a fresh install of |morpheus| on a default build of CentOS 7, Python Tasks will not function due to the missing requirement of ``virtualenv``.
 
-If you attempt to run a python task, you will get an error similar to the following:
+    If you attempt to run a python task, you will get an error similar to the following:
 
-.. code-block:: bash
+    .. code-block:: bash
 
-  Task Execution Failed on Attempt 1
-  sudo: /tmp/py-8ae51ebf-749c-4354-b6e4-11ce541afad5/bin/python: command not found
+      Task Execution Failed on Attempt 1
+      sudo: /tmp/py-8ae51ebf-749c-4354-b6e4-11ce541afad5/bin/python: command not found
 
-In order to run |morpheus| Python Tasks in CentOS 7, install ``virtualenv``: ``yum install python-virtualenv``
+    In order to run |morpheus| Python Tasks in CentOS 7, install ``virtualenv``: ``yum install python-virtualenv``
 
-If you require ``python3``, you can specify the binary to be used while building the virtual environment. In a default install, do the following: ``yum install python3``. Then, in your |morpheus| Python Task, specify the binary in the PYTHON BINARY field as "/bin/python3". This will build a virtual environment in ``/tmp`` using the ``python3`` binary, which is equivalent to making a virtual environment like so: ``virtualenv ~/venv -p /bin/python3``.
+    If you require ``python3``, you can specify the binary to be used while building the virtual environment. In a default install, do the following: ``yum install python3``. Then, in your |morpheus| Python Task, specify the binary in the PYTHON BINARY field as "/bin/python3". This will build a virtual environment in ``/tmp`` using the ``python3`` binary, which is equivalent to making a virtual environment like so: ``virtualenv ~/venv -p /bin/python3``.
 
-If you wish to install additional Python packages into the virtual environment, put them in ``pip`` format and space-separated into the ADDITIONAL PACKAGES field on the Python Task. Use the help text below the field to ensure correct formatting.
+    If you wish to install additional Python packages into the virtual environment, put them in ``pip`` format and space-separated into the ADDITIONAL PACKAGES field on the Python Task. Use the help text below the field to ensure correct formatting.
 
-**CentOS 8 and Python**
+    **CentOS 8 and Python**
 
-In CentOS 8, Python is not installed by default. There is a ``platform-python`` but that should not be used for anything in userland. The error message with a default install of CentOS 8 will be similar to this:
+    In CentOS 8, Python is not installed by default. There is a ``platform-python`` but that should not be used for anything in userland. The error message with a default install of CentOS 8 will be similar to this:
 
-.. code-block:: bash
+    .. code-block:: bash
 
-  Task Execution Failed on Attempt 1
-  sudo: /tmp/py-cffc9a8f-c40d-451d-956e-d6e9185ade33/bin/python: command not found
+      Task Execution Failed on Attempt 1
+      sudo: /tmp/py-cffc9a8f-c40d-451d-956e-d6e9185ade33/bin/python: command not found
 
-The default ``virtualenv`` for CentOS 8 is the python3 variety, for |morpheus| to use Python Tasks, do the following: ``yum install python3-virtualenv``
+    The default ``virtualenv`` for CentOS 8 is the python3 variety, for |morpheus| to use Python Tasks, do the following: ``yum install python3-virtualenv``
 
-If Python2 is required, do the following: ``yum install python2`` and specify ``/bin/python2`` as the PYTHON BINARY in your |morpheus| Task.
+    If Python2 is required, do the following: ``yum install python2`` and specify ``/bin/python2`` as the PYTHON BINARY in your |morpheus| Task.
 
-This will build a ``virtualenv`` in ``/tmp`` using the ``python2`` binary, which is equivalent to making a ``virtualenv`` like so: ``virtualenv ~/venv -p /bin/python2``
+    This will build a ``virtualenv`` in ``/tmp`` using the ``python2`` binary, which is equivalent to making a ``virtualenv`` like so: ``virtualenv ~/venv -p /bin/python2``
 
-If you wish to install additional Python packages into the virtual environment, put them in ``pip`` format and space-separated into the ADDITIONAL PACKAGES field on the Python Task. Use the help text below the field to ensure correct formatting.
+    If you wish to install additional Python packages into the virtual environment, put them in ``pip`` format and space-separated into the ADDITIONAL PACKAGES field on the Python Task. Use the help text below the field to ensure correct formatting.
 
 - .. toggle-header:: :header: **Restart**
 

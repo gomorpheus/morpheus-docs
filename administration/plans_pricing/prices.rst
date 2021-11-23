@@ -68,6 +68,7 @@ Price Units
   -  Five Year
 
 Currency
+  -  AED
   -  AUD
   -  BRL
   -  CAD
@@ -79,11 +80,13 @@ Currency
   -  GBP
   -  IDR
   -  ILS
+  -  JD
   -  MAD
   -  MXN
   -  NOK
   -  NZD
   -  ROL
+  -  SAR
   -  SEK
   -  TRL
   -  USD

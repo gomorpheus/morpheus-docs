@@ -7,6 +7,7 @@ Health
 .. image:: /images/administration/health/morpheusHealth500.png
 
 The |Morpheus| Health section provides an overview of the health of your |Morpheus| appliance. It includes data on the following:
+
   - Health Levels
   - CPU
   - Memory
@@ -127,3 +128,10 @@ QUEUES INCLUDE
   - Queue Count
   - Busy Queues
   - Error Queues
+
+|Morpheus| Logs
+---------------
+
+The |morpheus| logs section aggregates appliance-specific logs into one list. If needed, users can export the logs by clicking :guilabel:`EXPORT`. This action triggers a download containing the last 10,000 log entries as a ``.log`` file.
+
+.. image:: /images/administration/healthlogs.png
