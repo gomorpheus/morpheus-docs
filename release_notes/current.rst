@@ -5,7 +5,10 @@
 *************************
 
 .. NOTE:: Items appended with :superscript:`5.x.x` are also included in that version
-.. .. include:: highlights.rst
+
+.. warning:: SERVICE NOW DEPRECATION NOTICE: In v5.4.1, Instance and Blueprint specific exposures will be removed from ServiceNow plugin support. More advanced configurations of Instances and Blueprints, in addition to Workflows, can be exposed utilizing Catalog Items
+
+.. warning:: VCLOUD DIRECTOR DEPRECATION NOTICE: Beginning in v5.4.1, VCD 9.x will no longer be supported by Morpheus
 
 New Features
 ============
@@ -83,7 +86,8 @@ Appliance & Agent Updates
 =========================
 
 :Appliance: - Cleaned up some minor ``seedService`` warnings that could present on startup
-
+            - Fixed issue with rolling upgrades for 3-Node HA clusters utilizing Morpheus embedded RabbitMQ where the first time an Applaince is upgraded the RabbitMQ cluster data was not retained and the cluster had to be manually re-established.
+            - MacOS Node package jre version updated to 8u312-b07
 
 
 .. ..

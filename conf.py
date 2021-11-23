@@ -4,8 +4,8 @@ rst_prolog = """
 .. |morpheus| replace:: Morpheus
 .. |morphbranch| replace:: v5.3
 .. |morphver| replace:: v5.4.0
-.. |minUpgradeVer| replace:: v4.2.0
-.. |previousMorphVer| replace:: v5.3.3
+.. |minUpgradeVer| replace:: v5.2.11
+.. |previousMorphVer| replace:: v5.3.4
 .. |rmqbranch| replace:: v3.5-3.9
 .. |rmqver| replace:: v3.9.8
 .. |mysqlbranch| replace:: v5.7
@@ -19,7 +19,7 @@ rst_prolog = """
 .. |winagentver| replace:: v1.7.0.0
 .. |nodePackageVer| replace:: 3.2.2
 .. |java| replace:: v8u312-b07
-.. |java-mac| replace:: v8u302-b08
+.. |java-mac| replace:: v8u312-b07
 .. |openjdk-jre| replace:: v8u312
 .. |openjdk-elasticsearch| replace:: 14.0.2+12
 .. |openssl| replace:: 1.1.1k
