@@ -1,5 +1,3 @@
-.. note:: 4.x versions have been removed from this matrix. 4.2.x Appliances require upgrade to 5.2.x prior to upgrading to |morphver|
-
 .. raw:: html
    
    <div style="overflow-x:scroll;">
@@ -32,8 +30,31 @@
      </tr>
    </thead>
      <tbody>
+      <tr>
+       <td class="tg-epna">4.2.0 - 5.0.0 →</td>
+       <td class="tg-0qf3">5.2.0</td>
+       <td class="tg-0qf3">5.2.1</td>
+       <td class="tg-0qf3">5.2.2</td>
+       <td class="tg-0qf3">5.2.3</td>
+       <td class="tg-0qf3">5.2.4</td>
+       <td class="tg-0qf3">5.2.5</td>
+       <td class="tg-0qf3">5.2.6</td>
+       <td class="tg-0qf3">5.2.7</td>
+       <td class="tg-0qf3">5.2.8</td>
+       <td class="tg-0qf3">5.2.9</td>
+       <td class="tg-0qf3">5.2.10</td>
+       <td class="tg-0qf3">5.2.11</td>
+       <td class="tg-0qf3">5.2.12</td>
+       <td class="tg-0qf3">5.3.0</td>
+       <td class="tg-0qf3">5.3.1</td>
+       <td class="tg-0qf3">5.3.2</td>
+       <td class="tg-0qf3">5.3.3</td>
+       <td class="tg-0qf3">5.3.4</td>
+       <td class="tg-xy3e">5.4.0</td>
+     </tr>
      <tr>
        <td class="tg-epna">5.2.0 →</td>
+       <td class="tg-kw6a"></td>
        <td class="tg-0qf3">5.2.1</td>
        <td class="tg-0qf3">5.2.2</td>
        <td class="tg-0qf3">5.2.3</td>
@@ -55,6 +76,7 @@
      </tr>
      <tr>
        <td class="tg-epna">5.2.1 →</td>
+       <td class="tg-fr0y"></td>
        <td class="tg-kw6a"></td>
        <td class="tg-0qf3">5.2.2</td>
        <td class="tg-0qf3">5.2.3</td>
@@ -77,6 +99,7 @@
      <tr>
        <td class="tg-epna">5.2.2 →</td>
        <td class="tg-fr0y"></td>
+       <td class="tg-fr0y"></td>
        <td class="tg-kw6a"></td>
        <td class="tg-0qf3">5.2.3</td>
        <td class="tg-0qf3">5.2.4</td>
@@ -97,6 +120,7 @@
      </tr>
      <tr>
        <td class="tg-epna">5.2.3 →</td>
+       <td class="tg-fr0y"></td>
        <td class="tg-fr0y"></td>
        <td class="tg-fr0y"></td>
        <td class="tg-kw6a"></td>
@@ -121,6 +145,7 @@
        <td class="tg-fr0y"></td>
        <td class="tg-fr0y"></td>
        <td class="tg-fr0y"></td>
+       <td class="tg-fr0y"></td>
        <td class="tg-kw6a"></td>
        <td class="tg-0qf3">5.2.5</td>
        <td class="tg-0qf3">5.2.6</td>
@@ -139,6 +164,7 @@
      </tr>
      <tr>
        <td class="tg-epna">5.2.5 →</td>
+       <td class="tg-fr0y"></td>
        <td class="tg-fr0y"></td>
        <td class="tg-fr0y"></td>
        <td class="tg-fr0y"></td>
@@ -165,6 +191,7 @@
        <td class="tg-fr0y"></td>
        <td class="tg-fr0y"></td>
        <td class="tg-fr0y"></td>
+       <td class="tg-fr0y"></td>
        <td class="tg-kw6a"></td>
        <td class="tg-0qf3">5.2.7</td>
        <td class="tg-0qf3">5.2.8</td>
@@ -181,6 +208,7 @@
      </tr>
      <tr>
        <td class="tg-epna">5.2.7 →</td>
+       <td class="tg-fr0y"></td>
        <td class="tg-fr0y"></td>
        <td class="tg-fr0y"></td>
        <td class="tg-fr0y"></td>
@@ -209,6 +237,7 @@
        <td class="tg-fr0y"></td>
        <td class="tg-fr0y"></td>
        <td class="tg-fr0y"></td>
+       <td class="tg-fr0y"></td>
        <td class="tg-kw6a"></td>
        <td class="tg-0qf3">5.2.9</td>
        <td class="tg-0qf3">5.2.10</td>
@@ -223,6 +252,7 @@
      </tr>
      <tr>
        <td class="tg-epna">5.2.9 →</td>
+       <td class="tg-fr0y"></td>
        <td class="tg-fr0y"></td>
        <td class="tg-fr0y"></td>
        <td class="tg-fr0y"></td>
@@ -253,6 +283,7 @@
        <td class="tg-fr0y"></td>
        <td class="tg-fr0y"></td>
        <td class="tg-fr0y"></td>
+       <td class="tg-fr0y"></td>
        <td class="tg-kw6a"></td>
        <td class="tg-0qf3">5.2.11</td>
        <td class="tg-0qf3">5.2.12</td>
@@ -265,6 +296,7 @@
      </tr>
      <tr>
        <td class="tg-epna">5.2.11 →</td>
+       <td class="tg-fr0y"></td>
        <td class="tg-fr0y"></td>
        <td class="tg-fr0y"></td>
        <td class="tg-fr0y"></td>
@@ -297,6 +329,7 @@
        <td class="tg-fr0y"></td>
        <td class="tg-fr0y"></td>
        <td class="tg-fr0y"></td>
+       <td class="tg-fr0y"></td>
        <td class="tg-kw6a"></td>
        <td class="tg-xy3e">5.3.0</td>
        <td class="tg-xy3e">5.3.1</td>
@@ -307,6 +340,7 @@
      </tr>
      <tr>
        <td class="tg-epna">5.3.0 →</td>
+       <td class="tg-fr0y"></td>
        <td class="tg-fr0y"></td>
        <td class="tg-fr0y"></td>
        <td class="tg-fr0y"></td>
@@ -341,6 +375,7 @@
        <td class="tg-fr0y"></td>
        <td class="tg-fr0y"></td>
        <td class="tg-fr0y"></td>
+       <td class="tg-fr0y"></td>
        <td class="tg-kw6a"></td>
        <td class="tg-0qf3">5.3.2</td>
        <td class="tg-0qf3">5.3.3</td>
@@ -349,6 +384,7 @@
      </tr>
      <tr>
        <td class="tg-epna">5.3.2 →</td>
+       <td class="tg-fr0y"></td>
        <td class="tg-fr0y"></td>
        <td class="tg-fr0y"></td>
        <td class="tg-fr0y"></td>
@@ -385,12 +421,14 @@
        <td class="tg-fr0y"></td>
        <td class="tg-fr0y"></td>
        <td class="tg-fr0y"></td>
+       <td class="tg-fr0y"></td>
        <td class="tg-kw6a"></td>
        <td class="tg-0qf3">5.3.4</td>
        <td class="tg-0qf3">5.4.0</td>
      </tr>
      <tr>
        <td class="tg-epna">5.3.4 →</td>
+       <td class="tg-fr0y"></td>
        <td class="tg-fr0y"></td>
        <td class="tg-fr0y"></td>
        <td class="tg-fr0y"></td>
@@ -430,6 +468,8 @@
    </div>
 
 * Some Features and Fixes in the ``From`` version may not be included in the ``To`` version due to ``From`` version being released after the ``To`` version.
+
+.. note:: 4.2.0 to 5.0.0 Appliances require upgrade to 5.2.x prior to upgrading to |morphver|
 
 
 |
