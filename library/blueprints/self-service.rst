@@ -1,7 +1,7 @@
 Self Service
 ------------
 
-The Self Service catalog (Tools > Self Service) is where administrators can create easily-deployable items for consumption by users operating under the "Service Catalog" Persona in |morpheus|. Catalog items can be fully-configured |morpheus| Instances or Blueprints, complete with user input through |morpheus| Inputs, automation Workflows, and more. The catalog items are presented in a simplified interface for ease of deployment without sacrificing configurability for administrators. All available catalog items are built in the Self Service area and users will see relevant items in their catalogs based on Role permissions.
+The Self Service catalog (|LibBluCat|) is where administrators can create easily-deployable items for consumption by users operating under the "Service Catalog" Persona in |morpheus|. Catalog items can be fully-configured |morpheus| Instances or Blueprints, complete with user input through |morpheus| Inputs, automation Workflows, and more. The catalog items are presented in a simplified interface for ease of deployment without sacrificing configurability for administrators. All available catalog items are built in the Self Service area and users will see relevant items in their catalogs based on Role permissions.
 
 .. NOTE:: For more on Personas and using the Service Catalog persona, see the Personas sections of our documentation.
 
@@ -21,7 +21,7 @@ Building Catalog Instances
 
 An Instance in |morpheus| is a set of one or more containers or virutal machines that correlate to a single, horizontally-scalable entity or service suite. From the Self Service section, we can pre-configure |morpheus| Instances and present them to users viewing the Service Catalog Persona for one-click deployment.
 
-From the Catalog Items List Page (Tools > Self Service), click :guilabel:`ADD`. From the dropdown menu, select Instance. The modal window will appear to configure and add a new catalog Instance.
+From the Catalog Items List Page (|LibBluCat|), click :guilabel:`ADD`. From the dropdown menu, select Instance. The modal window will appear to configure and add a new catalog Instance.
 
 .. image:: /images/tools/self_service/createInstance.png
 
@@ -46,7 +46,7 @@ Building Catalog Blueprints
 
 |morpheus| Blueprints allow for full multi-tier application deployment. In the Self Service catalog, user can create catalog items based on pre-existing App Blueprints. If new Blueprints need to be created for the Service Catalog, see other sections of |morpheus| docs on building App Blueprints of various supported types. Just like with catalog Instances, we can pre-configure Blueprints and present them to users viewing the Service Catalog Persona view for easy, one-click deployment.
 
-From the Catalog Items List Page (Tools > Self Service), click :guilabel:`ADD`. From the dropdown menu, select Blueprint. The modal window will appear to configure and add a new catalog Blueprint.
+From the Catalog Items List Page (|LibBluCat|), click :guilabel:`ADD`. From the dropdown menu, select Blueprint. The modal window will appear to configure and add a new catalog Blueprint.
 
 Configure the following:
 
@@ -89,7 +89,7 @@ Once done, click :guilabel:`SAVE CHANGES`
 Building Catalog Workflows
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-From the Catalog Items List Page (Tools > Self Service), click :guilabel:`ADD`. From the dropdown menu, select Workflow. The modal window will appear to configure and add a new catalog Workflow.
+From the Catalog Items List Page (|LibBluCat|), click :guilabel:`ADD`. From the dropdown menu, select Workflow. The modal window will appear to configure and add a new catalog Workflow.
 
 Configure the following:
 
@@ -108,4 +108,4 @@ Once done, click :guilabel:`SAVE CHANGES`
 Editing and Deleting from the Self Service Catalog
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Once created, Service Catalog items can be edited or deleted from the Catalog Items list view (Tools > Self Service). Click the pencil icon in the relevant row to edit the Service Catalog item or the trash can icon to delete it. Alternatively, Service Catalog items can be made inactive to remove them as provisioning options rather than deleting them.
+Once created, Service Catalog items can be edited or deleted from the Catalog Items list view (|LibBluCat|). Click the pencil icon in the relevant row to edit the Service Catalog item or the trash can icon to delete it. Alternatively, Service Catalog items can be made inactive to remove them as provisioning options rather than deleting them.
