@@ -6,9 +6,9 @@
 
 .. NOTE:: Items appended with :superscript:`5.x.x` are also included in that version
 
-.. warning:: SERVICE NOW DEPRECATION NOTICE: In v5.4.1, Instance and Blueprint specific exposures will be removed from ServiceNow plugin support. More advanced configurations of Instances and Blueprints, in addition to Workflows, can be exposed utilizing Catalog Items
+.. warning:: SERVICE NOW DEPRECATION NOTICE: In v5.4.2, Instance and Blueprint specific exposures will be removed from ServiceNow plugin support. More advanced configurations of Instances and Blueprints, in addition to Workflows, can be exposed utilizing Catalog Items
 
-.. warning:: VCLOUD DIRECTOR DEPRECATION NOTICE: Beginning in v5.4.1, VCD 9.x will no longer be supported by Morpheus
+.. warning:: VCLOUD DIRECTOR DEPRECATION NOTICE: Beginning in v5.4.2, VCD 9.x will no longer be supported by Morpheus
 
 New Features
 ============
@@ -17,18 +17,23 @@ New Features
              - Individual Report Type access levels can now be set on Roles from |morpheus| API and CLI
              - Refresh and Apply state functions for Apps, such as Terraform Apps, can now be executed from |morpheus| API and CLI
 :Amazon: - Added support for additional regions: ``eu-south-1`` Europe (Milan), ``eu-west-3`` Europe (Paris), and ``me-south-1`` Middle East (Bahrain) :superscript:`5.2.13`
+:Automation: - Execute Action added to Workflow & Task Detail pages. Delete Action added to Workflow detail pages
+              - Tasks: Powershell: Local Execution target option added for PowerShell tasks. NOTE: ``pwsh`` must be installed on the appliance for this to work.
+              - Workflows: Executions tab added for Workflows to list the executions for that specific Workflow. This feature was added for Tasks in a prior release
 :Costing: - Usage records (Operations > Costing > Usage) can now be expanded in the UI to show more granular usage and cost breakdowns
 :Currency: - Added support for new currencies: Jordan Dinar (JD), Saudi Arabia Riyal (SAR), and United Arab Emirates Dirham (AED) :superscript:`5.2.13`
 :Kubernetes: - Amazon EKS: Added ability to scale EKS clusters
               - Azure AKS: NODE PLAN field updated to Option List
+              - EKS: Support for v1.21 EKS Clusters added
 :Option Lists: - Added new Option List type: Instance Networks. When tied to an Input, the list will contain networks filtered by the selected resource pool and region
 :Oracle Cloud: - Added support for Oracle Public Cloud Dubai region :superscript:`5.2.13`
 :Policies: - Tag Policies can now automatically apply tags in addition to enforcement. Select lists added for value selection for Tag Policies utilizing option lists.
 :Reports: - The CSV-formatted export for the Time Series Cost report is now updated for complete parity with the data revealed in the UI report
-:Tasks: - Powershell: Local Execution target option added for PowerShell tasks. NOTE: ``pwsh`` must be installed on the appliance for this to work.
+:ServiceNow: - DEPRECATION NOTICE: In v5.4.2, Instance and Blueprint specific exposures will be removed from ServiceNow plugin support. More advanced configurations of Instances and Blueprints, in addition to Workflows, can be exposed utilizing Catalog Items
 :UI: - An export button has been added to the |morpheus| Logs tab in the Health section (Administration > Health > |morpheus| Logs tab). This will export the last 10,000 entries as a log file. |Morpheus| CLI and API adds this health log export feature as well
 :VDI: - Added a new VDI pool type to support RDS servers where multiple RDP sessions can run on a single server
-:Workflows: - Executions tab added for Workflows to list the executions for that specific Workflow. This feature was added for Tasks in a prior release
+:Virtual Images: - Added Debian 11 to Virtual Image Operating Systems list
+:vCloud Director: - DEPRECATION NOTICE: Beginning in v5.4.2, VCD 9.x will no longer be supported by Morpheus
 
 
 Fixes
@@ -44,7 +49,7 @@ Fixes
             - Added validation for required API URL and API Token fields when onboarding external Kubernetes clusters through the Create Cluster wizard
             - Docker Cluster provisioning now respects custom ranges on Plans when CUSTOMIZE EXTRA VOLUMES and ADD VOLUMES is enabled on the plan :superscript:`5.2.13`
             - Teardown and Reconfigure-phase Workflow Tasks now are applied to Kubernetes Cluster nodes
-:Executions: - Fix execution request issue that could prevent communication through load balancers
+:Executions: - Updated execution request paths to account for environments that block API comms
 :F5: - Fixed an issue that could cause F5 load balancers for Apache HTTPS backends to fail on creation
 :Google Cloud Platform: - Fixed an issue that could result in timeouts and failed provisions when provisioning a GCP Library item that required uploading the RAW image
 :Guidance: - Users with ``Guidance -> Full`` but ``Read`` Group permissions are no longer able to perform full actions in Guidance against resources in that Group :superscript:`5.2.13`
@@ -86,8 +91,8 @@ Appliance & Agent Updates
 =========================
 
 :Appliance: - Cleaned up some minor ``seedService`` warnings that could present on startup
-            - Fixed issue with rolling upgrades for 3-Node HA clusters utilizing Morpheus embedded RabbitMQ where the first time an Applaince is upgraded the RabbitMQ cluster data was not retained and the cluster had to be manually re-established.
-            - MacOS Node package jre version updated to 8u312-b07
+             - Fixed issue with rolling upgrades for 3-Node HA clusters utilizing Morpheus embedded RabbitMQ where the first time an Appliance is upgraded the RabbitMQ cluster data was not retained and the cluster had to be manually re-established. :superscript:`5.2.13`
+             - MacOS Node package jre version updated to 8u312-b07 :superscript:`5.2.13`
 
 
 .. ..
