@@ -309,6 +309,8 @@ Task Configuration
     - **PASSWORD:** Password for PowerShell Task target
     - **Content:**  Enter script to execute if not calling the script in from an outside source
 
+    .. NOTE:: Setting the execution target to local requires Powershell to be installed on the |morpheus| appliance box(es). `Microsoft Documentation <https://docs.microsoft.com/en-us/powershell/scripting/install/installing-powershell-on-linux?view=powershell-7.2>`_ contains installation instructions for all major Linux distributions and versions.
+
     
 
 - .. toggle-header:: :header: **Puppet Agent Install**

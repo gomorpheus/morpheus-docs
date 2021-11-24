@@ -22,47 +22,47 @@ Provisioning Workflow Execution Phases
     -
   * - Pre Provision
     - For VMs, Tasks are run after the VM is running and prior to any Tasks in the Provision phase. For containers, Tasks in this phase are run on the Docker host and prior to ``docker run``
-    -
+    - Prepare a Docker host to run containers
     - Pre Provision can be used for a Blueprint so it is added before a script which is set at the Provision phase executes. Pre Provision for scripts is mainly for Docker as you can execute on the host before the container is running.
   * - Provision
-    - Like pre-provision, Tasks for VMs are run after the VM is running. For containers, these Tasks are run after the containers are running on the host. For many users, this is the most commonly-used phase.
-    -
-    -
+    - Like pre-provision, Tasks for VMs are run after the VM is running. For containers, these Tasks are run on the containers once they are running on the host. For many users, this is the most commonly-used phase.
+    - Join the server to a domain
+    - Tasks included with in the Provision phase are considered to be vital to the health of the Instance. If a Task in the Provision phase fails, the Workflow will fail and the Instance provisioning will also fail. Tasks not considered to be vital to the existence of the Instance should go in the Post Provision phase where their failure will not constitute failure of the Instance.
   * - Post Provision
     - Tasks are run after the entire provisioning process has completed
-    -
+    - Disable UAC or Windows Firewall on a Windows box or join Active Directory
     - When adding a node to an Instance, Tasks in this phase will be run on all nodes in the Instance after the new node is provisioned. This is because Post Provision operations may need to affect all nodes, such as when joining a new node to a cluster. Tasks in Pre Provision and Provision phases would only be run on the new node in this scenario.
   * - Start Service
-    - Tasks in this phase are run when choosing start service from an Instance detail page. This action starts the service associated with the Instance type
-    -
-    -
+    - Tasks in this phase are intended to start the service associated with the Instance type.
+    - Include a script to start the service associated with the Instance (such as MySQL) which will execute when the Start Service action is selected from the Instance detail page
+    - Start services is manually run from the Instance detail page and is designed to refer to the service the Instance provides.
   * - Stop Service
-    - Tasks in this phase are run when choosing stop service from an Instance detail page. This action stops the service associated with the Instance type
-    -
-    -
+    - Tasks in this phase intended to stop the service associated with the Instance type.
+    - Include a script to stop the service associated with the Instance (such as MySQL) which will execute when the Stop Service action is selected from the Instance detail page
+    - Stop services is manually run from the Instance detail page and is designed to refer to the service the Instance provides.
   * - Pre Deploy
-    - Tasks in this phase are run when a new deploy is triggered from the Deploy tab of the Instance detail page, prior to the deploy taking place
-    -
-    -
+    - Tasks in this phase are run when a new deploy is triggered from the Deploy tab of the Instance detail page, prior to the deploy taking place.
+    - Extract files from a deploy folder and move them to their final positions prior to deploy
+    - Deployments are manually triggered from the Instance detail page and are designed to refer to deployment of services, like a website or database.
   * - Deploy
     - Tasks in this phase are run when a new deploy is triggered from the Deploy tab of the Instance detail page, after the deploy has completed
-    -
-    -
+    - Update configuration files or inject connection details from the environment at completion of the deploy process
+    - Deployments are manually triggered from the Instance detail page and are designed to refer to deployment of services, like a website or database.
   * - Reconfigure
     - Tasks in this phase are run when the reconfigure action is made against an Instance or host
-    -
+    - Rescan or restart the Instance after a disk is added
     -
   * - Teardown
     - Tasks are run during VM or container destroy
-    -
+    - Remove Active Directory objects prior to tearing down the Instance
     -
   * - Shutdown
     - Tasks are run immediately before the target is shutdown
-    -
+    - Send an update on Instance power state to a CMDB
     -
   * - Startup
     - Tasks are run immediately before the target is started
-    -
+    - Send an update on Instance power state to a CMDB
     -
 
 Add Workflow
