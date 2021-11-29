@@ -46,9 +46,9 @@ Morpheus allows for additional advanced customizations for system managed servic
   ↓ Valid for Internal/System mysql service only
   mysql['tmp_dir'] = '/tmp/mysql'
   mysql['log_dir'] = '/var/log/morpheus/mysql'
-  mysql['max_active'] = 100 # The combined value off all app node max_active values must be lower than max_connections setting in mysql
+  mysql['max_active'] = 150 # The combined value off all app node max_active values must be lower than max_connections setting in mysql
   mysql['max_allowed_packet'] = 67108864
-  mysql['max_connections'] = 151
+  mysql['max_connections'] = 150
 
   nginx['cache_max_size'] = '5000m'
   nginx['enable'] = true
