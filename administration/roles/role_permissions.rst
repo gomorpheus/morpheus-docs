@@ -490,6 +490,7 @@ Role Mappings
     - Determines access to Terraform-type Blueprints on the |LibBluApp| page. The "Provision" permission allows for provisioning Apps from Terraform Blueprints without the ability to create or edit them.
     - The Blueprints page allows for the creation of pre-configured, multi-tier application definitions which can be deployed via the Apps page. With this permission the blueprint type of Terraform is available.
     - This permission is recommended for those responsible for defining Terraform blueprints.
+    -
   * - Library: Catalog Items (Formerly Tools: Self Service)
     - None, Read, Full
     - Determines access to |LibBluCat|
