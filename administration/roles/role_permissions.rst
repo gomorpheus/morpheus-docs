@@ -101,6 +101,12 @@ Role Mappings
     - The Backup Settings page is where users define the default |morpheus| backup bucket, backup schedule, and retention count. Additionally, if given to a Master Tenant user they will have the ability to enable scheduled backups, create backups, and backup appliance.
     - This permission is recommended for those responsible for enabling backups and setting default backup buckets within |morpheus|.
     -
+  * - Admin: Distributed Workers	
+    - None, Full
+    - Allows or disallows access to |AdmInt| Distributed Workers	Tab. 
+    - 
+    -
+    -
   * - Admin: Environment Settings
     - None, Full
     - Allows or disallows access to the Environments tab in |AdmSetPro|. When given to a Master Tenant user they may define the visibility of the environment to either private or public.  When given to a Subtenant user the environments are only visible to the subtenant (private).
@@ -245,6 +251,24 @@ Role Mappings
     - From this page, backup integrations may be created, edited, or deleted. The page also provides the status of existing integrations. On create the integration product is selected and all associated connection and authentication information must be provided. Additionally, visibility is set to either public or private. Integrations available include Avamar, Commvault, Rubrik, Veeam, and Zerto.
     - This permission is recommended for those responsible for the integration between |morpheus| and backup technologies.
     - It is recommended this setting be set to None on the Tenant Role to restrict access for Subtenant users.
+  * - Catalog (Formerly Service Catalog: Catalog)
+    - None, Full
+    - Determines access to |ProCat| and Catalog in the Service Catalog Persona view
+    - The Catalog page displays the complete list of Catalog Items that can be ordered from the Service Catalog
+    - This permission is recommended for users who will order items from the Service Catalog
+    - 
+  * - Catalog: Dashboard (Formerly Service Catalog: Dashboard)
+    - None, Read
+    - Determines access to |ProCatDas| and Dashboard in Service Catalog Persona view
+    - The Catalog Dashboard contains featured Catalog Items, recently-ordered Catalog items and Inventory items. The Catalog Dashboard is the default landing page for the Service Catalog Persona view
+    - This permission is recommended for users who will use the Service Catalog
+    -
+  * - Catalog: Inventory (Formerly Service Catalog: Inventory)
+    - None, Read
+    - Determines access to |ProCatDas| and Dashboard in Service Catalog Persona view
+    - The Inventory is the complete list of user-owned items provisioned from the Service Catalog
+    - This permission is recommended for users who will use the Service Catalog and need to be able to view details on the items they've provisioned from the Catalog
+    -
   * - Infrastructure: Boot
     - None, Read, Full
     - Determines access to the Integrations > Boot page, including the Mapping, Boot Menus, Answer Files, Images, and Discovered MAC Addresses tabs.
@@ -275,12 +299,24 @@ Role Mappings
     - The Groups page is where |morpheus| Groups are created and given a code for use within the API. Additionally, the DNS service, CMDB, service registry, and config management may be selected. Existing Clouds/Hosts or new Clouds/Hosts are added to the Group and virtual or bare metal machines may be viewed.
     - This permission is recommended for those responsible for configuring Role Based Access Control (RBAC).
     -
-  * - Infrastructure: Hosts
+  * - Infrastructure: Compute
     - None, Read, Full
     - Determines access to the Infrastructure > Hosts page, including the Hosts, Virtual Machines, and Bare Metal tabs.
     - The Hosts page provides for viewing and managing hosts, virtual machines, and bare metal hosts. On the bare metal hosts page, hosts may come from PXE boot or may be manually added. On the Hosts page hypervisors and Docker hosts are displayed. The Virtual Machines page lists all VMs. On all three pages actions may be performed against machines. Additionally, views may be refined by altering the columns displayed and CSV/JSON exporting of lists is available.
     - This permission is recommend for those whom need to take action on machines and those responsible for bare metal provisioning.
     -
+  * - Infrastructure: DHCP Relays 
+    - None, Read, Full
+    - Determines access to the DHCP Relays in applicable network integrations
+    - Allows DHCP Relays to be viewed, created and managed
+    - This permission is recommended for those tasked with network management
+    - 
+  * - Infrastructure: DHCP Servers	
+    - None, Read, Full
+    - Determines access to the DHCP Servers in applicable network integrations
+    - Allows DHCP Servers to be viewed, created and managed
+    - This permission is recommended for those tasked with network management
+    - 
   * - Infrastructure: Keypairs
     - None, Read, Full
     - Determines access to the Key Pairs tab on the Infrastructure > Keys & Certs page.
@@ -365,6 +401,12 @@ Role Mappings
     - The Routers page is where virtual routers are created and managed from Cloud and Network integrations.
     - This permission is recommended for those responsible for network management.
     -
+  * - Infrastructure: Network Server Groups	
+    - None, Read, Full
+    - Determines access to
+    - 
+    -
+    - 
   * - Infrastructure: Networks
     - None, Read, Group, Full
     - Determines access to the Infrastructure > Networks page, including the Networks, network groups, and integrations tabs. The "Group" permission setting allows access to objects shared to Groups associated with the user.
@@ -413,17 +455,118 @@ Role Mappings
     - The Integrations tab is where existing integrations are displayed and new integrations may be created. This permission applies only to existing Ansible integrations. It allows or disallows the ability to edit existing Ansible integrations.
     - This permission is recommended for those responsible for integrations between |morpheus| and Ansible.
     - This permission is recommended to be set to None on the Tenant Role to restrict access to Subtentant users.
-  * - Logs
-    - None, Read, User, Full
-    - Determines level of access to the Logs section of |morpheus| UI. The "User" permission will allow access only to objects the user owns.
-    - The Logs page is where logs may be viewed.
-    - This permission is recommended for those responsible for troubleshooting.
+  * - Library: App Blueprints (Formerly Provisioning: Blueprints)
+    - None, Read, Full
+    - Determines access to the |LibBluApp| page.
+    - The Blueprints page allows for the creation of pre-configured, multi-tier application definitions which can be deployed via the Apps page. With this permission the blueprint type of |morpheus| is available.
+    - This permission is recommended for those responsible for defining |morpheus|-type Blueprints.
+    -
+  * - Library: Blueprints - ARM (Formerly Provisioning: Blueprints - ARM)
+    - None, Provision, Full
+    - Determines access to ARM-type Blueprints on the |LibBluApp| page. The "Provision" permission allows for provisioning Apps from ARM Blueprints without the ability to create or edit them.
+    - The Blueprints page allows for the creation of pre-configured, multi-tier application definitions which can be deployed via the Apps page. With this permission the blueprint type of ARM is available.
+    - This permission is recommended for those responsible for defining ARM blueprints.
+    -
+  * - Library: Blueprints - CloudFormation (Formerly Provisioning: Blueprints - CloudFormation)
+    - None, Provision, Full
+    - Determines access to CloudFormation-type Blueprints on the |LibBluApp| page. The "Provision" permission allows for provisioning Apps from CloudFormation Blueprints without the ability to create or edit them.
+    - The Blueprints page allows for the creation of pre-configured, multi-tier application definitions which can be deployed via the Apps page. With this permission the blueprint type of CloudFormation is available.
+    - This permission is recommended for those responsible for defining CloudFormation blueprints.
+    -
+  * - Library: Blueprints - Helm (Formerly Provisioning: Blueprints - Helm)
+    - None, Provision, Full
+    - Determines access to Helm-type Blueprints on the |LibBluApp| page. The "Provision" permission allows for provisioning Apps from Helm Blueprints without the ability to create or edit them.
+    - The Blueprints page allows for the creation of pre-configured, multi-tier application definitions which can be deployed via the Apps page. With this permission the blueprint type of Helm is available.
+    - This permission is recommended for those responsible for defining Helm blueprints.
+    -
+  * - Library: Blueprints - Kubernetes (Formerly Provisioning: Blueprints - Kubernetes)
+    - None, Provision, Full
+    - Determines access to Kubernetes-type Blueprints on the |LibBluApp| page. The "Provision" permission allows for provisioning Apps from Kubernetes Blueprints without the ability to create or edit them.
+    - The Blueprints page allows for the creation of pre-configured, multi-tier application definitions which can be deployed via the Apps page. With this permission the blueprint type of Kubernetes is available.
+    - This permission is recommended for those responsible for defining Kubernetes blueprints.
+    -
+  * - Library: Blueprint - Terraform (Formerly Provisioning: Blueprints - Terraform)
+    - None, Provision, Full
+    - Determines access to Terraform-type Blueprints on the |LibBluApp| page. The "Provision" permission allows for provisioning Apps from Terraform Blueprints without the ability to create or edit them.
+    - The Blueprints page allows for the creation of pre-configured, multi-tier application definitions which can be deployed via the Apps page. With this permission the blueprint type of Terraform is available.
+    - This permission is recommended for those responsible for defining Terraform blueprints.
+  * - Library: Catalog Items (Formerly Tools: Self Service)
+    - None, Read, Full
+    - Determines access to |LibBluCat|
+    - |LibBluCat| allows administrators to configure Catalog Items for the Library Catalog and Self Service Persona users
+    - This permission is recommended for those responsible for creating and managing Library Catalog Items.
+    -
+  * - Library: Instance Types (Formerly Provisioning: Library)
+    - None, Read, Full
+    - Determines access to the |LibBluIns|
+    - |LibBluIns| is where Instance Types are created and maintained. 
+    - This permission is recommended for those responsible for managing the Instance Types.
+    -
+  * - Library: Integrations (Formerly Provisioning: Automation Integrations)
+    - None, Read, Full
+    - Determines access to |LibInt|.
+    - |LibInt| is where Library Automation created and maintained.. These include Chef, Puppet, Ansible, Salt, Ansible Tower and vRealize Orchestrator.
+    - This permission is recommended for those responsible for the integration between |morpheus| and integrated automation technologies.
+    -
+  * - Library: Options
+    - None, Read, Full
+    - Determines access to |LibOpt| - Inputs (Option Types) and Option Lists.
+    - 
+    - This permission is recommended for those responsible for creating and managing Library Inputs (Option Types) and Option Lists.
+    -
+  * - Library: Scheduling - Execute (Formerly Provisioning: Scheduling - Execute)
+    - None, Read, Full
+    - Determines access to |LibAutExe|.
+    - The Execute Scheduling is where time schedules for Jobs, including Task, Workflow, and Backup Jobs are created and managed.
+    - This permission is recommended for those responsible to create and manage schedules to be selected when scheduling jobs.
+    -
+  * - Library: Scheduling - Power (Formerly Provisioning: Scheduling - Power)
+    - None, Read, Full
+    - Determines access to |LibAutPow|.
+    - Power Scheduling is where startup and shutdown times are created, these schedules can be applied via policy or manaully.
+    - This permission is recommended for those responsible to create and manage power schedules.
+    -
+  * - Library: Tasks (Formerly Provisioning: Tasks)
+    - None, Read, Full
+    - Determines access to |LibAutTas| and |LibAutWor|.
+    - |LibAutTas| is where Tasks are created and managed. |LibAutWor| is where Workflows are created and managed. Workflows are used to execute one or many tasks during specified phases.
+    - This permission is recommended for those responsible for creating provisioning and operational scripts.
+    -
+  * - Library: Tasks - Script Engines (Formerly Provisioning: Tasks - Script Engines)
+    - None, Full
+    - Determines access to advanced Task types include Groovy Script, Javascript, jRuby Script, and Python Script.
+    - This permission adds the ability to create and managed Groovy, Javascript, jRuby and Python Task Types.
+    - This permission is recommended for those responsible for Tasks containing advanced script capabilities.
+    -
+  * - Library: Templates
+    - None, Read, Full
+    - Determines access to |LibTem|
+    - |LibTem| is where Spec Templates, File Templates, Script Templates and Security Packages are created and managed.
+    - This permission is recommended for those responsible for creating and managing Spec Templates, File Templates, Script Templates and Security Packages.
+    -    
+  * - Library: Thresholds (Formerly Provisioning: Thresholds)
+    - None, Read, Full
+    - Determines access to |LibAutSca|.
+    - Scale Thresholds is where preconfigured settings for auto-scaling Instances is configured. When adding auto-scaling to an Instance, existing Scale Thresholds can be selected to define auto-scaling rules.
+    - This permission is recommended for those responsible for defining auto-scaling for Instances.
+    - This permission is recommended to be set to None or Read on the Tenant Role to restrict access for Subtenant users.
+  * - Library: Virtual Images (Formerly Provisioning: Virtual Images)
+    - None, Read, Full
+    - Determines access to the |LibVir| page.
+    - |LibVir| is where user and system Virtual Images are managed.
+    - This permission is recommended for those who are responsible for image management.
     -
   * - Monitoring
     - None, Read, User, Full
     - Determines level of access to the Monitoring section of |morpheus| UI, including the Status, Apps, Checks, Groups, Incidents, Contacts, and Alert Rules subpages. The "User" permission will allow access only to objects the user owns.
     - The Checks page is where automatically-created checks are customized or new checks are created. The Groups and Apps pages are where checks may be grouped. The Incidents page is where incidents are created upon Check failure. The Contacts page is where contacts may be added for notifications. Then Alert Rules page is where notification are configured.
     - This permission is recommended for those responsible for monitoring applications, incidents, or configuring notifications.
+    -
+  * - Monitoring: Logs (Formerly Logs)
+    - None, Read, User, Full
+    - Determines level of access to the Logs section of |morpheus| UI. The "User" permission will allow access only to objects the user owns.
+    - |MonLog| is where Insatnce and Server logs may be viewed (does not included |morpheus| Applaince logs from |AdmHeaMorLog|).
+    - This permission is recommended for those who should have access to Instance and Server logs.
     -
   * - Operations: Activity
     - None, Read
@@ -521,48 +664,6 @@ Role Mappings
     - The Apps page allows Instances to be grouped and tiered logically into Apps. From this page, Apps can be deployed from existing Blueprints and Instances can be added to existing Apps. Security groups and environmental variables (Linux Only) may be added and edited. The App log, history, and monitoring tabs may be viewed.
     - This permission is recommended for those responsible for provisioning.
     -
-  * - Provisioning: Automation Integrations
-    - None, Read, Full
-    - Determines access to the Integrations tab on the |LibAut| page.
-    - The Integrations tab is where new integrations can be configured. These include Chef, Puppet, Ansible, Salt Master, Ansible Tower, vRealize Orchestrator.
-    - This permission is recommended for those responsible for the integration between |morpheus| and integrated automation technologies.
-    - This permission is recommended to be set to None on the Tenant Role to restrict access for Subtenant users.
-  * - Provisioning: Blueprints
-    - None, Read, Full
-    - Determines access to the |LibBluApp| page.
-    - The Blueprints page allows for the creation of pre-configured, multi-tier application definitions which can be deployed via the Apps page. With this permission the blueprint type of |morpheus| is available.
-    - This permission is recommended for those responsible for defining |morpheus|-type Blueprints.
-    -
-  * - Provisioning: Blueprints - ARM
-    - None, Provision, Full
-    - Determines access to ARM-type Blueprints on the |LibBluApp| page. The "Provision" permission allows for provisioning Apps from ARM Blueprints without the ability to create or edit them.
-    - The Blueprints page allows for the creation of pre-configured, multi-tier application definitions which can be deployed via the Apps page. With this permission the blueprint type of ARM is available.
-    - This permission is recommended for those responsible for defining ARM blueprints.
-    -
-  * - Provisioning: Blueprints - CloudFormation
-    - None, Provision, Full
-    - Determines access to CloudFormation-type Blueprints on the |LibBluApp| page. The "Provision" permission allows for provisioning Apps from CloudFormation Blueprints without the ability to create or edit them.
-    - The Blueprints page allows for the creation of pre-configured, multi-tier application definitions which can be deployed via the Apps page. With this permission the blueprint type of CloudFormation is available.
-    - This permission is recommended for those responsible for defining CloudFormation blueprints.
-    -
-  * - Provisioning: Blueprints - Helm
-    - None, Provision, Full
-    - Determines access to Helm-type Blueprints on the |LibBluApp| page. The "Provision" permission allows for provisioning Apps from Helm Blueprints without the ability to create or edit them.
-    - The Blueprints page allows for the creation of pre-configured, multi-tier application definitions which can be deployed via the Apps page. With this permission the blueprint type of Helm is available.
-    - This permission is recommended for those responsible for defining Helm blueprints.
-    -
-  * - Provisioning: Blueprints - Kubernetes
-    - None, Provision, Full
-    - Determines access to Kubernetes-type Blueprints on the |LibBluApp| page. The "Provision" permission allows for provisioning Apps from Kubernetes Blueprints without the ability to create or edit them.
-    - The Blueprints page allows for the creation of pre-configured, multi-tier application definitions which can be deployed via the Apps page. With this permission the blueprint type of Kubernetes is available.
-    - This permission is recommended for those responsible for defining Kubernetes blueprints.
-    -
-  * - Provisioning: Blueprint - Terraform
-    - None, Provision, Full
-    - Determines access to Terraform-type Blueprints on the |LibBluApp| page. The "Provision" permission allows for provisioning Apps from Terraform Blueprints without the ability to create or edit them.
-    - The Blueprints page allows for the creation of pre-configured, multi-tier application definitions which can be deployed via the Apps page. With this permission the blueprint type of Terraform is available.
-    - This permission is recommended for those responsible for defining Terraform blueprints.
-    -
   * - Provisioning: Clone Instance
     - None, Full
     - Determines access to the Clone Instance selection from the Actions menu on an Instance detail page
@@ -605,6 +706,12 @@ Role Mappings
     - This selection brings up a menu allowing the user to select a Workflow and run it against the viewed Instance
     - This permission is recommended for those running day two automations against existing Instances
     -
+  * - Provisioning: Executions
+    - None, Read
+    - Determines access |ProExe|
+    - |ProExe| is where Task, Workflow, and Security Scan execution output can be viewed
+    - This permission is recommended for those who are responsible for managing or troubleshooting Task, Workflow, and Security Scan executions.
+    -
   * - Provisioning: Import Image
     - None, Full
     - Determines access to the Import as Image and Clone to Image selections from the Actions menu on an Instance detail page
@@ -629,53 +736,11 @@ Role Mappings
     - The Jobs page is where jobs are scheduled for the execution of automation Tasks and Workflows against Instances or servers.
     - This permission is recommended for those responsible to schedule the exectution of Tasks or Workflows.
     -
-  * - Provisioning: Library
-    - None, Read, Full
-    - Determines access to the |Lib| page, including the Instance Types, Layouts, Node Types, Inputs, Option Lists, File Templates, Scripts, Spec Templates, and Cluster Layouts tabs.
-    - The Provisioning Library pages is where the various library elements are created and maintained. These include: Instance Types, Layouts, Node Types, Inputs, Option Lists, File Templates, Scripts, Spec Templates, and  Cluster Layouts.
-    - This permission is recommended for those responsible for managing the library.
-    -
-  * - Provisioning: Scheduling - Execute
-    - None, Read, Full
-    - Determines access to the Execute Scheduling tab of the |LibAut| page.
-    - The Execute Scheduling page is where time schedules for Jobs, including Task, Workflow, and Backup Jobs are created.
-    - This permission is recommended for those responsible to create and manage schedules to be selected when scheduling jobs.
-    -
-  * - Provisioning: Scheduling - Power
-    - None, Read, Full
-    - Determines access to the Power Scheduling tab of the |LibAut| page.
-    - The Power Scheduling page is where startup and shutdown times are created, these schedules can be applied via policy to Groups or Clouds.
-    - This permission is recommended for those responsible to create and manage schedules for startup and shutdown.
-    -
   * - Provisioning: Service Mesh
     - None, Read, User, Full
     - Determines access to the Provisioning > Service Mesh page, including the Services and DNS tabs. The "User" permission will allow access only to objects the user owns.
     - The Service Mesh page displays container services and DNS information. A service mesh ensures fast and reliable communication between containerized application services.
     - This permission is recommended for those responsible for container management.
-    -
-  * - Provisioning: Tasks
-    - None, Read, Full
-    - Determines access to the Tasks, Workflows, and Executions tabs on the |LibAut| page.
-    - The Tasks page is where Tasks are created and managed. Task types include: scripts added directly, scripts and templates from the Library section, recipes, playbooks, salt states, puppet agent installs, and HTTP (API) calls. The Workflows page offer both Provisioning and Operational Workflows. Workflows are used to execute one or many tasks during specified phases. The Executions page shows the status of executed Tasks and Workflows.
-    - This permission is recommended for those responsible for creating provisioning and operational scripts.
-    -
-  * - Provisioning: Tasks - Script Engines
-    - None, Full
-    - Determines access to the Tasks tab of the |LibAut| page. When full permission is given, advanced Task types will be available in the TYPE dropdown menu when new Tasks are created. Advanced Task types include Groovy Script, Javascript, jRuby Script, and Python Script.
-    - Tasks page is where tasks are created and managed. This permission adds the ability to select Groovy Script, Javascript, jRuby Script, and Python Script from the Task Types dropdown menu.
-    - This permission is recommended for those responsible for Tasks containing advanced script capabilities.
-    -
-  * - Provisioning: Thresholds
-    - None, Read, Full
-    - Determines access to the Scale Thresholds tab of the |LibAut| page.
-    - The Scale Thresholds page is where preconfigured settings for auto-scaling Instances is configured. When adding auto-scaling to an Instance, existing Scale Thresholds can be selected to define auto-scaling rules.
-    - This permission is recommended for those responsible for defining auto-scaling for Instances.
-    - This permission is recommended to be set to None or Read on the Tenant Role to restrict access for Subtenant users.
-  * - Provisioning: Virtual Images
-    - None, Read, Full
-    - Determines access to the |LibVir| page.
-    - The Virtual Images page displays a list of all images, local and synced, that are available to deploy. Available images include those that are shipped with |morpheus|, synced from integrated clouds, and uploaded directly into |morpheus| by the user.
-    - This permission is recommended for those who are responsible for image management.
     -
   * - Remote Console
     - None, Provisioned, Full
@@ -694,24 +759,6 @@ Role Mappings
     - Determines access to the Security Packages tab on the Jobs list page (|ProJob|), Security Scanning type Jobs, and Security Subtab inside the Software tab on a server detail page where the results of security scans are viewed
     - Allows access to view, create, and run security scans on existing systems, as well as view the results of previously-run scans
     - This permission is recommended for those responsible for security compliance of existing systems
-    -
-  * - Service Catalog: Catalog
-    - None, Full
-    - Determines access to the Catalog page of the Service Catalog Persona view
-    - The Catalog page displays the complete list of Instance and App configurations (as determined by Catalog Item types allowed in the user's Role) that can be provisioned from the Service Catalog Persona view
-    - This permission is recommended for users who will use the Service Catalog Persona to select items for provisioning
-    -
-  * - Service Catalog: Dashboard
-    - None, Read
-    - Determines access to the Dashboard page of the Service Catalog Persona view
-    - The Dashboard is the default landing page for the Service Catalog Persona view. It displays featured Catalog Items, recently-ordered Catalog items, and an abbreviated list of Inventory items
-    - This permission is recommended for users who will use the Service Catalog Persona for quick access to new Inventory items and featured Catalog items
-    -
-  * - Service Catalog: Inventory
-    - None, Full
-    - Determines access to the Inventory page of the Service Catalog Persona view
-    - The Inventory is the complete list of user-owned items provisioned from the Service Catalog
-    - This permission is recommended for users who will use the Service Catalog Persona and need to be able to view details on the items they've provisioned from the Catalog
     -
   * - Snapshots
     - None, Read, Full
@@ -749,12 +796,6 @@ Role Mappings
     - The Migration tool creates a snapshot of an existing VM, converts it to the destination format and provisions the machine on the target.
     - Recommend only for those responsible for lifting and shifting VMs.
     - It is recommended this permission is set to None on the Tenant Role to restrict access for Subtenant users.
-  * - Tools: Self Service
-    - None, Read, Full
-    - Determines access to the Tools > Self Service page
-    - The Self Service pages allows administrators to configure easily-deployable catalog items for Service Catalog Persona users
-    - Recommended for those tasked with creating and curating items for the self service catalog
-    -
   * - None - No Permissions
     - None
     - When all permissions are set to None, the following behavior can be expected: This allows only access to the User Setting page displayed, which is accessed by clicking on the user's name in the upper-right corner of the application window.
