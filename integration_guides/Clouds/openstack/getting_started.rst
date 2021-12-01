@@ -38,6 +38,7 @@ Enable Hypervisor Console
    .. code-block::
 
       identity:list_domain_roles
+      identity:list_roles
       identity:list_projects
       identity:create_project
       identity:update_project
