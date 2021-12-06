@@ -1,15 +1,10 @@
 Adding VLANs to Morpheus KVM Hosts (CentOS)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Overview
-````````
-
-Morpheus KVM is a powerful, cheaper alternative to virtualization when it comes to other hypervisor offerings. It is also very capable of setting up complex shared storage and multiple networks across many hosts. Currently this process is a manual process but will become automated in the coming months. This guide will go over how to configure VLANs on a Morpheus KVM Host.
-
 Getting Started
 ```````````````
 
-To get started, the first step is to go ahead and add the KVM host to morpheus and allow morpheus to configure it just like any other kvm host. When provisioning a manual kvm host be sure to enter the proper network interface name for the management network (not the trunk port). For example ``eno2`` could be a management network while ``eno1`` could be the trunk port network that the VLAN's are going to be on as in this example.
+This guide will go over how to configure VLANs on a |morpheus| KVM Host. To get started, the first step is to go ahead and add the KVM host to morpheus and allow morpheus to configure it just like any other kvm host. When provisioning a manual kvm host be sure to enter the proper network interface name for the management network (not the trunk port). For example ``eno2`` could be a management network while ``eno1`` could be the trunk port network that the VLAN's are going to be on as in this example.
 
 Setting up a VLAN Interface
 ```````````````````````````
