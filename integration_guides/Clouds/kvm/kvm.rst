@@ -32,7 +32,13 @@ A |morpheus|-type cloud is a generic Cloud construct that isn't designed to hook
 #. Navigate to |InfClo|
 #. Click :guilabel:`+ ADD`
 #. Select the |morpheus| Cloud type and click :guilabel:`NEXT`
-#. On the Configure tab, provide: A name, Tenant visibility settings, and select "Automatically Power On VMs" if you want |morpheus| to handle the power state of your VMs. Additionally, select "Inventory Existing Instances" if |morpheus| should automatically discover existing VMs on your KVM hosts
+#. On the Configure tab, provide:
+
+    - **NAME:** A name for the new Cloud
+    - **VISIBILITY:** Clouds with Public visibility will be accessible in other Tenants (if your appliance is configured for multitenancy)
+    - **Automatically Power On VMs:** Mark this box for |morpheus| to handle the power state of VMs
+    - **Inventory Existing Instances:** If marked, |morpheus| will automatically onboard VMs from any KVM hosts associated with this Cloud
+
 #. On the Group tab, create a new Group or associate this Cloud with an existing Group. Click :guilabel:`NEXT`
 #. After reviewing your configuration, click :guilabel:`COMPLETE`
 
