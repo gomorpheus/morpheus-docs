@@ -36,7 +36,7 @@ A |morpheus|-type cloud is a generic Cloud construct that isn't designed to hook
 #. On the Group tab, create a new Group or associate this Cloud with an existing Group. Click :guilabel:`NEXT`
 #. After reviewing your configuration, click :guilabel:`COMPLETE`
 
-.. image:: /images/integrations_guides/clouds/kvm/createCloud.png
+.. image:: /images/integration_guides/clouds/kvm/createCloud.png
   :width: 50%
 
 Onboard an Existing KVM Cluster
