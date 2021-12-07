@@ -10,6 +10,8 @@
 
 .. warning:: VCLOUD DIRECTOR DEPRECATION NOTICE: Beginning in v5.4.2, VCD 9.x will no longer be supported by Morpheus
 
+.. include:: /release_notes/navChanges.rst
+
 New Features
 ============
 
