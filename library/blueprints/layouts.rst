@@ -58,7 +58,7 @@ Technology
 Minimum Memory
   Defines the minimum amount of memory required for this Layout. Only Service Plans that meet the defined memory minimum will be available during provisioning when this Layout is selected. Custom memory values must also meet this minimum. Entering a minimum memory value of zero (the default value) indicates no minimum. This minimum memory value will override any Virtual Image minimum memory requirements
 Workflow
-  Select a Workflow to automatically run and be attached to associated Instances using this Layout. If a Workflow is defined, it is not presented in the provisioning wizard and is not user configurable
+  Select a Workflow which will be associated as the Provisioning Workflow for Instances provisioned using this Layout. If a Workflow is defined, it is not shown to the user at provision time and will be run in addition to any Workflows set on the Instance Type, in Workflows Policies, defined in App Blueprints, or selected manually at provision time.
 Supports Convert to Managed
   Enabled to allow users to select this layout when converting a Discovered workload to Managed
 Enable Scaling (Horizontal)
