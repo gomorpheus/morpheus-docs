@@ -14,6 +14,8 @@ Integration Features
 * Right-sizing
 * Shared Network Support
 
+.. gcp_guide_start_point
+
 Requirements for Integration with |morpheus|
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -148,6 +150,8 @@ With configuration in the GCP console completed, we can now enable cost onboardi
 
 .. image:: /images/integration_guides/clouds/gcp/costing3.png
   :width: 50%
+
+.. gcp_guide_stop_point
 
 Windows Images
 ^^^^^^^^^^^^^^
