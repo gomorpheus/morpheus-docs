@@ -23,6 +23,9 @@ Datastore/Datastore Cluster
 Privileges
 ``````````
 
+Content Library
+  * All Content Library privileges
+
 Datastore/Datastore Cluster
   * Allocate Space
   * Browse Datastore
