@@ -1,11 +1,11 @@
 |morpheus| |morphver| Documentation
 ===================================
 
-.. important:: 5.3.4 contains major UI navigation structure changes. Please refer to the :ref:`Release Notes` and :ref:`Navigation Updates` reference table before upgrading.
+.. important:: |morpheus| introduced major UI navigation structure changes in v5.3.4. Please refer to the :ref:`Navigation Updates` reference table before upgrading from versions prior to v5.3.4.
 
 .. raw:: html
    
-   <iframe width="560" height="315" src="https://www.youtube.com/embed/B46qgEwoblY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+   <div class="youtube-video-container"><iframe width="560" height="315" src="https://www.youtube.com/embed/B46qgEwoblY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
 
 :ref:`Release Notes`
 
