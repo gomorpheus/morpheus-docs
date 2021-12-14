@@ -5,7 +5,7 @@
 
 .. raw:: html
    
-   <iframe width="560" height="315" src="https://www.youtube.com/embed/B46qgEwoblY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+   <div class="youtube-video-container"><iframe width="560" height="315" src="https://www.youtube.com/embed/B46qgEwoblY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div><br><br>
 
 :ref:`Release Notes`
 
