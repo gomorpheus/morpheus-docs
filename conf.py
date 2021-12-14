@@ -2,10 +2,10 @@ master_doc = 'index'
 
 rst_prolog = """
 .. |morpheus| replace:: Morpheus
-.. |morphbranch| replace:: v5.3
-.. |morphver| replace:: v5.4.0
+.. |morphbranch| replace:: v5.4
+.. |morphver| replace:: v5.4.1
 .. |minUpgradeVer| replace:: v5.2.11
-.. |previousMorphVer| replace:: v5.3.4
+.. |previousMorphVer| replace:: v5.4.0
 .. |rmqbranch| replace:: v3.5-3.9
 .. |rmqver| replace:: v3.9.8
 .. |mysqlbranch| replace:: v5.7
@@ -17,7 +17,7 @@ rst_prolog = """
 .. |nginxver| replace:: v1.20.1
 .. |linuxagentver| replace:: v2.1.1
 .. |winagentver| replace:: v1.7.0.0
-.. |nodePackageVer| replace:: 3.2.2
+.. |nodePackageVer| replace:: 3.2.3
 .. |java| replace:: v8u312-b07
 .. |java-mac| replace:: v8u312-b07
 .. |openjdk-jre| replace:: v8u312
@@ -29,8 +29,6 @@ rst_prolog = """
 .. |master tenant| replace:: Master Tenant
 .. |profileObjects| replace:: Clouds
 .. |profileTypes| replace:: Terraform, Key/Value
-
-
 
 .. |trash| unicode:: 0x0001F5D1 .. TRASH ICON
 .. |gear| unicode:: U+02699 .. GEAR ICON
