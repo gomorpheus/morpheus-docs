@@ -23,8 +23,8 @@ Breaking Changes
 - 5.3.2+: The local code repository path moved from ``/var/opt/morpheus/morpheus-ui/repo`` to ``/var/opt/morpheus/morpheus-local/repo`` to reduce potential shared storage issues and performance restrictions. The reconfigure process creates the folders and sets the paths in application.yml, no manual intervention is needed unless symlinks exisit on ``/var/opt/morpheus/morpheus-ui/repo/git`` which will need to be removed prior to reconfiguring 5.3.2. The old ``/var/opt/morpheus/morpheus-ui/repo`` path will be automatically deleted in a fulture release but can be manually recursively deleted at any time for storage reclamation.
 - 5.3.3: Support for OpenStack v2 Identity API is removed
 - 5.3.4: Major UI navigation structure changes. Refer to the :ref:`Navigation Updates` reference table
-- 5.4.2 (Advanded Notice): ServiceNow: Instance and Blueprint specific exposures will be removed from ServiceNow plugin support. More advanced configurations of Instances and Blueprints, in addition to Workflows, can be exposed utilizing Catalog Items
-- 5.4.2 (Advanded Notice): vCloud Director: vCD 9.x will no longer be supported by Morpheus
+- 5.4.2 (Advanced Notice): ServiceNow: Instance and Blueprint specific exposures will be removed from ServiceNow plugin support. More advanced configurations of Instances and Blueprints, in addition to Workflows, can be exposed utilizing Catalog Items
+- 5.4.2 (Advanced Notice): vCloud Director: vCD 9.x will no longer be supported by Morpheus
 
 |morpheus| Application OS
 =========================

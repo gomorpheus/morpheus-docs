@@ -50,8 +50,8 @@ Price Types
   - Memory Only (per MB)
   - Cores Only (per core)
   - Disk Only (per GB)
-  - Platform
-  - Software
+  - Platform: Select from Windows, Linux (generic), or one of several specific Linux distributions
+  - Software: Add prices for software licenses which may be included with your price sets
   - Datastore (per GB)
   - Load Balancer
   - Load Balancer Virtual Server

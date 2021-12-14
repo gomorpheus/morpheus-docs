@@ -101,10 +101,10 @@ Role Mappings
     - The Backup Settings page is where users define the default |morpheus| backup bucket, backup schedule, and retention count. Additionally, if given to a Master Tenant user they will have the ability to enable scheduled backups, create backups, and backup appliance.
     - This permission is recommended for those responsible for enabling backups and setting default backup buckets within |morpheus|.
     -
-  * - Admin: Distributed Workers	
+  * - Admin: Distributed Workers
     - None, Full
-    - Allows or disallows access to |AdmInt| Distributed Workers	Tab. 
-    - 
+    - Allows or disallows access to |AdmInt| Distributed Workers	Tab.
+    -
     -
     -
   * - Admin: Environment Settings
@@ -256,7 +256,7 @@ Role Mappings
     - Determines access to |ProCat| and Catalog in the Service Catalog Persona view
     - The Catalog page displays the complete list of Catalog Items that can be ordered from the Service Catalog
     - This permission is recommended for users who will order items from the Service Catalog
-    - 
+    -
   * - Catalog: Dashboard (Formerly Service Catalog: Dashboard)
     - None, Read
     - Determines access to |ProCatDas| and Dashboard in Service Catalog Persona view
@@ -305,23 +305,29 @@ Role Mappings
     - The Hosts page provides for viewing and managing hosts, virtual machines, and bare metal hosts. On the bare metal hosts page, hosts may come from PXE boot or may be manually added. On the Hosts page hypervisors and Docker hosts are displayed. The Virtual Machines page lists all VMs. On all three pages actions may be performed against machines. Additionally, views may be refined by altering the columns displayed and CSV/JSON exporting of lists is available.
     - This permission is recommend for those whom need to take action on machines and those responsible for bare metal provisioning.
     -
-  * - Infrastructure: DHCP Relays 
+  * - Infrastructure: DHCP Relays
     - None, Read, Full
     - Determines access to the DHCP Relays in applicable network integrations
     - Allows DHCP Relays to be viewed, created and managed
     - This permission is recommended for those tasked with network management
-    - 
-  * - Infrastructure: DHCP Servers	
+    -
+  * - Infrastructure: DHCP Servers
     - None, Read, Full
     - Determines access to the DHCP Servers in applicable network integrations
     - Allows DHCP Servers to be viewed, created and managed
     - This permission is recommended for those tasked with network management
-    - 
+    -
   * - Infrastructure: Keypairs
     - None, Read, Full
     - Determines access to the Key Pairs tab on the Infrastructure > Keys & Certs page.
     - The Keypairs page allows for ease in accessing instances via SSH. On create a name, public key, private key, and passphrase are entered.
     - This permission is recommended for those whom utilize |morpheus| deployment and management of Linux Instances.
+    -
+  * - Infrastructure: Kubernetes Control
+    - None, Full
+    - Determines access to the Control tab on Kubernetes Cluster detail pages (Infrastructure > Clusters > Selected Kubernetes Cluster > Control Tab)
+    - Run ``kubectl`` commands, apply templates, and run workloads on the Kubernetes Cluster
+    - This permission is recommended for Kubernetes Cluster administrators
     -
   * - Infrastructure: Load Balancers
     - None, Read, Full
@@ -401,12 +407,12 @@ Role Mappings
     - The Routers page is where virtual routers are created and managed from Cloud and Network integrations.
     - This permission is recommended for those responsible for network management.
     -
-  * - Infrastructure: Network Server Groups	
+  * - Infrastructure: Network Server Groups
     - None, Read, Full
     - Determines access to
-    - 
     -
-    - 
+    -
+    -
   * - Infrastructure: Networks
     - None, Read, Group, Full
     - Determines access to the Infrastructure > Networks page, including the Networks, network groups, and integrations tabs. The "Group" permission setting allows access to objects shared to Groups associated with the user.
@@ -500,7 +506,7 @@ Role Mappings
   * - Library: Instance Types (Formerly Provisioning: Library)
     - None, Read, Full
     - Determines access to the |LibBluIns|
-    - |LibBluIns| is where Instance Types are created and maintained. 
+    - |LibBluIns| is where Instance Types are created and maintained.
     - This permission is recommended for those responsible for managing the Instance Types.
     -
   * - Library: Integrations (Formerly Provisioning: Automation Integrations)
@@ -512,7 +518,7 @@ Role Mappings
   * - Library: Options
     - None, Read, Full
     - Determines access to |LibOpt| - Inputs (Option Types) and Option Lists.
-    - 
+    -
     - This permission is recommended for those responsible for creating and managing Library Inputs (Option Types) and Option Lists.
     -
   * - Library: Scheduling - Execute (Formerly Provisioning: Scheduling - Execute)
@@ -544,7 +550,7 @@ Role Mappings
     - Determines access to |LibTem|
     - |LibTem| is where Spec Templates, File Templates, Script Templates and Security Packages are created and managed.
     - This permission is recommended for those responsible for creating and managing Spec Templates, File Templates, Script Templates and Security Packages.
-    -    
+    -
   * - Library: Thresholds (Formerly Provisioning: Thresholds)
     - None, Read, Full
     - Determines access to |LibAutSca|.
