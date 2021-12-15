@@ -28,7 +28,7 @@ Cluster Resource Name
 Delayed Delete
   Delayed Delete Policies allow for soft deletion of Instances and Apps. Instead of deleting immediately, Instances and Apps with a Delayed Removal policy applied will be shutdown upon deletion request and hidden by default from the UI. The Instance/App will then be in ``Pending Removal`` status.
 Expiration
-  Sets an expiration timeframe in days after which the Instance will be deleted. Extensions can be auto-approved or require approval immediately or after x amount of auto-extensions using Morpheus Approvals or an Approval Integration.
+  Sets an expiration timeframe in days after which the Instance will be deleted. Extensions can be auto-approved or require approval immediately or after x amount of auto-extensions using Morpheus Approvals or an Approval Integration. See |morpheus| `Knowledge Base <https://support.morpheusdata.com/s/article/How-to-create-an-extensions>`_ for more information about Expiration policies
 File Share Storage Quota
   Sets a Storage Quota for File Share usage (in GB) to scoped User, Role, Tenant or Global.
 Hostname
