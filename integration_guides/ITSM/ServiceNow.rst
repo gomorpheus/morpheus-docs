@@ -25,7 +25,7 @@ Add ServiceNow Integration
    SERVICENOW HOST
     URL of the ServiceNow instance (ex: https://your.instance.service-now.com), keep in mind you can create multiple ServiceNow integrations in |morpheus| if needed.
    USER/PASSWORD
-    A user in ServiceNow that is able to access the REST interface and create/update/delete incidents, requests, requested items, item options, catalog items, workflows, etc. The list of necessary roles includes ``x_moda_morpheus_ca.integration`` (available if the |morpheus| ServiceNow plugin is installed from the ServiceNow Store), ``catalog_admin``, ``itil``, ``rest_service``, and ``import_transformer``.
+    A user in ServiceNow that is able to access the REST interface and create/update/delete incidents, requests, requested items, item options, catalog items, workflows, etc. The list of necessary roles includes ``x_moda_morpheus_ca.integration`` (available if the |morpheus| ServiceNow plugin is installed from the ServiceNow Store), ``catalog_admin``, ``itil``, ``rest_service``, ``web_service_admin`` and ``import_transformer``.
    CMDB CUSTOM MAPPING
     If needed, administrators can opt to populate a specific field in the ServiceNow table and such mapping is identified here with a JSON code snippet. Below is an example that populates the ``object_id`` field in the CM database with the |morpheus| instance name and two other field examples:
 
