@@ -57,7 +57,7 @@ If you wish to export these to an external syslog platform, do the following:
 
 #. Once you have configured your syslog destination (edit rsyslog.conf), create a morpheus-syslog.conf file in the ``/etc/rsyslog.d`` directory and add the following entries
 
-   .. code-block:: bash
+   .. code-block:: C
 
      module(load="imfile" PollingInterval="10")
      input(type="imfile" File="/var/log/morpheus/morpheus-ui/current" Tag="morpheus-ui" ReadMode="2" Severity="info" StateFile="morpheus-ui")
@@ -70,7 +70,7 @@ If you wish to export these to an external syslog platform, do the following:
 
 #. Restart rsyslog
 
-The logfiles will now be forwarded to the destination you have defined.
+The log files will now be forwarded to the destination you have defined.
 
 This configuration is valid for an ‘all-in-one’ |morpheus| server. If the infrastructure components are running on separate servers /clusters, you will need to create the relevant redirects for the logs on those boxes.
 
@@ -83,7 +83,7 @@ The final log type that may require export is the |morpheus| Activity log. This 
 
 #. Copy the below configuration to the bottom of the logback.groovy configuration file, save and then exit.
 
-   .. code-block:: javascript
+   .. code-block:: groovy
 
      appender("AUDIT", RollingFileAppender) {
        file = "/var/log/morpheus/morpheus-ui/audit.log"
@@ -138,17 +138,17 @@ Implementation of a log rotate is left up to up to end users for files outside o
 
 Below is what a suggested configuration looks like for the file ``/etc/logrotate.d/morpheus-nginx``:
 
-     .. code-block:: bash
+.. code-block::
 
-       /var/log/morpheus/nginx/morpheus*access.log {
-               daily
-               rotate 14
-               compress
-               delaycompress
-               missingok
-               notifempty
-               create 644 morpheus-app morpheus-app
-               postrotate
-                       [ ! -f /var/run/morpheus/nginx/nginx.pid ] || kill -USR1 `cat /var/run/morpheus/nginx/nginx.pid`
-               endscript
-       }
+    /var/log/morpheus/nginx/morpheus*access.log {
+            daily
+            rotate 14
+            compress
+            delaycompress
+            missingok
+            notifempty
+            create 644 morpheus-app morpheus-app
+            postrotate
+                    [ ! -f /var/run/morpheus/nginx/nginx.pid ] || kill -USR1 `cat /var/run/morpheus/nginx/nginx.pid`
+            endscript
+    }

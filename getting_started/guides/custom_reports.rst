@@ -104,54 +104,54 @@ Gradle is the build tool used to compile |morpheus| plugins so ``build.gradle`` 
 - **Version:** The version number for your plugin. This will be displayed in the Plugins section of |morpheus| UI for reference when later versions of your plugin are developed
 - **Plugin-class:** This will vary based on the plugin type being developed but for a custom report, use ``com.morpheusdata.reports.ReportsPlugin``
 
-.. code-block:: bash
+.. code-block:: gradle
 
-  plugins {
-      id "com.bertramlabs.asset-pipeline" version "3.3.2"
-      id "com.github.johnrengelman.plugin-shadow" version "2.0.3"
-  }
+   plugins {
+       id "com.bertramlabs.asset-pipeline" version "3.3.2"
+       id "com.github.johnrengelman.plugin-shadow" version "2.0.3"
+   }
 
-  apply plugin: 'java'
-  apply plugin: 'groovy'
-  apply plugin: 'maven-publish'
+   apply plugin: 'java'
+   apply plugin: 'groovy'
+   apply plugin: 'maven-publish'
 
-  group = ${'com.example'}
-  version = ${'1.2.2'}
+   group = ${'com.example'}
+   version = ${'1.2.2'}
 
-  sourceCompatibility = '1.8'
-  targetCompatibility = '1.8'
+   sourceCompatibility = '1.8'
+   targetCompatibility = '1.8'
 
-  ext.isReleaseVersion = !version.endsWith("SNAPSHOT")
+   ext.isReleaseVersion = !version.endsWith("SNAPSHOT")
 
-  repositories {
-      mavenCentral()
-  }
+   repositories {
+       mavenCentral()
+   }
 
-  dependencies {
-      compileOnly 'com.morpheusdata:morpheus-plugin-api:0.8.0'
-      compileOnly 'org.codehaus.groovy:groovy-all:2.5.6'
-      compileOnly 'io.reactivex.rxjava2:rxjava:2.2.0'
-      compileOnly "org.slf4j:slf4j-api:1.7.26"
-      compileOnly "org.slf4j:slf4j-parent:1.7.26"
-  }
+   dependencies {
+       compileOnly 'com.morpheusdata:morpheus-plugin-api:0.8.0'
+       compileOnly 'org.codehaus.groovy:groovy-all:2.5.6'
+       compileOnly 'io.reactivex.rxjava2:rxjava:2.2.0'
+       compileOnly "org.slf4j:slf4j-api:1.7.26"
+       compileOnly "org.slf4j:slf4j-parent:1.7.26"
+   }
 
-  jar {
-      manifest {
-          attributes(
-              'Plugin-Class': 'com.morpheusdata.reports.ReportsPlugin', //Reference to Plugin class
-              'Plugin-Version': archiveVersion.get() // Get version defined in gradle
-          )
-      }
-  }
+   jar {
+       manifest {
+           attributes(
+               'Plugin-Class': 'com.morpheusdata.reports.ReportsPlugin', //Reference to Plugin class
+               'Plugin-Version': archiveVersion.get() // Get version defined in gradle
+           )
+       }
+   }
 
-  tasks.assemble.dependsOn tasks.shadowJar
+   tasks.assemble.dependsOn tasks.shadowJar
 
 Creating the Plugin Class
 `````````````````````````
 
 Next, create a plugin class which handles registration of the new report, sets a name and description, and targets the appropriate report provider class which we'll go over in the next section.
 
-.. code-block:: bash
+.. code-block:: groovy
 
   package com.morpheusdata.reports
 
@@ -177,7 +177,7 @@ Creating the Report Provider Class
 
 The report provider class contains the code which will fetch and compile the targeted data so it can be rendered in the report view. An example report provider is reproduced below with comments to increase readability of the code.
 
-.. code-block:: bash
+.. code-block:: groovy
 
   package com.morpheusdata.reports
 
@@ -345,7 +345,7 @@ Create the Custom Report View
 
 By default, custom plugin views are handled by a Handlebars template provider to populate HTML sections with your own content. Though it can be overridden, we'll use the default template provider for this example. There is more information on view rendering in the |morpheus| `Developer Portal <https://developer.morpheusdata.com/docs#views>`_.
 
-.. code-block:: bash
+.. code-block:: html
 
   <div id="hypervisor-inventory-report">
      <div class="intro-stats">
