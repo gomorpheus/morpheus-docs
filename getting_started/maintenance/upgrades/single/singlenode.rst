@@ -10,7 +10,7 @@ The following covers upgrading Single Node or AIO (All-In-One) Appliance configu
 Debian / Ubuntu
 ...............
 
-.. warning:: |morpheus| |morphver| contain new node and vm node packages that require 3.5GB of storage. It is safe to run ``sudo rm -Rf /var/opt/morpheus/package-repos/*`` after |morphver| package installation and before reconfigure to clean old node and vm node packages from the package-repo when room is needed. 
+.. warning:: |morpheus| |morphver| contains new node and VM node packages that require 3.5GB of storage. It is safe to run ``sudo rm -Rf /var/opt/morpheus/package-repos/*`` after |morphver| package installation and before reconfigure to clean old node and vm node packages from the package-repo when room is needed. 
 
 To upgrade Morpheus running on Ubuntu/Debian, download new deb package, stop the morpheus-ui, install the new deb package, then reconfigure.
 
@@ -32,7 +32,7 @@ After the morpheus-ui service finishes loading, the upgrade is complete.
 CentOS / RHEL / Amazon / SLES
 .............................
 
-.. warning:: |morpheus| |morphver| contain new node and vm node packages that require 3.5GB of storage. It is safe to run ``sudo rm -Rf /var/opt/morpheus/package-repos/*`` after |morphver| package installation and before reconfigure to clean old node and vm node packages from the package-repo when room is needed. 
+.. warning:: |morpheus| |morphver| contains new node and VM node packages that require 3.5GB of storage. It is safe to run ``sudo rm -Rf /var/opt/morpheus/package-repos/*`` after |morphver| package installation and before reconfigure to clean old node and vm node packages from the package-repo when room is needed. 
 
 To upgrade Morpheus running on CentOS, RHEL, Amazon or SLES, download and install the new rpm package, stop the morpheus-ui, reconfigure and then start the morpheus-ui:
 

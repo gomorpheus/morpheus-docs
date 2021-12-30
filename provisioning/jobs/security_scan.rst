@@ -5,23 +5,12 @@ Security Scan Jobs allow users to create and schedule SCAP program (Security Con
 
 .. NOTE:: Creating and editing Security Scan Jobs requires the "Security: Scanning" Role permission set to Full. Viewing Security Scan Jobs and seeing the results for scanned servers requires at least a Read-level permission.
 
-Add a new Security Package
-``````````````````````````
-
-#. Navigate to Provisioning > Jobs > Security Packages Tab
-#. Click :guilabel:`+ADD` > SCAP Package
-#. Provide a name in addition to a URL to source the package
-#. Click :guilabel:`SAVE CHANGES`
-
-.. NOTE:: Currently URL is the only source option for security packages
-
-.. image:: /images/provisioning/jobs/security/1add_package.png
-  :width: 50%
-
 Add a new Security Scan Job
 ```````````````````````````
 
-#. Navigate to Provisioning > Jobs > Jobs Tab
+.. NOTE:: New security scan packages are added in |morpheus| Library rather than here in the Jobs section. Ensure you have uploaded the desired security package in Library > Templates > Security Packages before proceeding with new security Job creation.
+
+#. Navigate to |ProJob| > Jobs Tab
 #. Click :guilabel:`+ADD`
 #. Set the Job type to "Security Scan Job" and provide a friendly name for the Job
 #. Click :guilabel:`NEXT`
@@ -31,7 +20,7 @@ Add a new Security Scan Job
 
 #. Select a security package, see the previous section to add a new one
 #. Enter your Scan Checklist (XML document) and Security Profile (XCCDF document), more information on these can be found in the SCAP documentation linked above
-#. Set a schedule or leave as Manual to only run this scan on-demand (new execution schedules can be created in Provisioning > Automation if needed)
+#. Set a schedule or leave as Manual to only run this scan on-demand (new execution schedules can be created in |LibAut| if needed)
 #. Set the context, can be Instance or Server. Select as many Instances or Servers as needed for this scanning run
 #. Click :guilabel:`NEXT`
 #. After final review, click :guilabel:`COMPLETE`
@@ -44,7 +33,7 @@ Running Security Scan Jobs
 
 Once created, Security Scan Jobs will run based on the configured schedule. They can also be run on-demand when needed:
 
-#. Navigate to Provisioning > Jobs > Jobs Tab
+#. Navigate to |ProJob| > Jobs Tab
 #. Click :guilabel:`MORE`
 #. Click "Execute"
 
@@ -55,7 +44,7 @@ Viewing Completed Security Scan Jobs
 
 To view a list of completed Security Scan Jobs (and Jobs of other types):
 
-#. Navigate to Provisioning > Jobs > Job Executions Tab
+#. Navigate to |ProJob| > Job Executions Tab
 #. Additional details can be viewed by clicking :guilabel:`(i)`
 
     .. image:: /images/provisioning/jobs/security/5execution_list.png

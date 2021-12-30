@@ -27,7 +27,7 @@ Creating Licenses
       License description displayed in the Licenses list in |morpheus|, helpful for identifying the License after creation
    * Virtual Images
       Search for existing Virtual Images by name and select to attach the image to the license.
-          .. NOTE:: Virtual Images are synced from Clouds or added in the `Provisioning -> Virtual Images` section.
+          .. NOTE:: Virtual Images are synced from Clouds or added in the |LibVir| section.
    * Tenant Permissions
       Search for and select the Tenant(s) the License will be available for. Multiple Tenants can be added.
 

@@ -7,7 +7,7 @@ Add NetScaler Integration
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 To add a NetScaler Load Balancer Integration:
 
-#. Navigate to `Infrastructure -> Load Balancers`
+#. Navigate to `Infrastructure > Load Balancers`
 #. Select :guilabel:`+ ADD`
 #. Select `Citrix NetScaler`
 #. Fill in the following:
@@ -54,9 +54,9 @@ Load Balancers can be added to Instances during Provisioning or to existing Inst
 
 Add Load Balancer during Provisioning
 `````````````````````````````````````
-In the Instance Provisioning wizard, Load Balancers can be configured in the Automation -> Load Balancer section.
+In the Instance Provisioning wizard, Load Balancers can be configured in the Automation > Load Balancer section.
 
-#. Navigate to `Provisioning -> Instances`.
+#. Navigate to |ProIns|.
 #. Select :guilabel:`+ ADD`.
 #. Select an Instance Type that supports scaling. (ENABLE SCALING (HORIZONTAL) flagged on Instance Type configuration)
 #. Proceed with Instance configuration to the Automation section.
@@ -86,7 +86,7 @@ In the Instance Provisioning wizard, Load Balancers can be configured in the Aut
    SSL CERT
     SSL Certificate that will be applied to the VIP.
      - No SSL
-     - Select existing Certificate from ``Infrastructure -> Keys & Certs`` or from a Trust Provider Integration.
+     - Select existing Certificate from ``Infrastructure > Keys & Certs`` or from a Trust Provider Integration.
     USE EXTERNAL ADDRESS FOR BACKEND NODES
      - Select if traffic from LB to Backend Nodes needs to be sent to the External Addresses, or leave deselected to use Internal Addresses for Backed Nodes.
 

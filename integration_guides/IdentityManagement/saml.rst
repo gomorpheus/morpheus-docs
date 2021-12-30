@@ -13,7 +13,7 @@ Adding a SAML Integration
 
 To add a SAML integration:
 
-#. Navigate to ``Administration -> Tenants``
+#. Navigate to |AdmTen|
 #. Select a tenant.
 #. Select IDENTITY SOURCES in the Tenant detail page
 #. Select :guilabel:`+ ADD IDENTITY SOURCE`.
@@ -50,7 +50,7 @@ REQUIRED ROLE ATTRIBUTE VALUE
 ENABLE ROLE MAPPING PERMISSION
   When selected, Tenant users with appropriate rights to view and edit Roles will have the ability to set role mapping for the Identity Source integration. This allows the Tenant user to edit only the role mappings without viewing or potentially editing the Identity Source configuration.
 MANUAL ROLE ASSIGNMENT
-  When selected, administrators can manually edit Roles for users created through this identity source integration from the user detail page (Administration > Users > Selected user).
+  When selected, administrators can manually edit Roles for users created through this identity source integration from the user detail page (|AdmUse| > Selected user).
 
 .. NOTE:: For more on Identity Source role mapping permissions, see the `associated guide <https://support.morpheusdata.com/s/article/How-to-enable-Subtenant-admins-to-edit-Identity-Source-role-mapping?language=en_US>`_ in our KnowledgeBase.
 

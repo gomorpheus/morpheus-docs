@@ -7,7 +7,7 @@ If you see the following error in the |morpheus| UI logs:
 
    SqlExceptionHelper - Data source rejected establishment of connection,  message from server: "Too many connections"
 
-it means the number connections between |morpheus| application and mysql have reached the `max_connections` limit set in mysql (default is 151), or the `max_active` setting, which limits the number of connections on the |morpheus| end (default is 100), and the limit needs to be raised, either in |morpheus| or mysql, or both depending on the number of connections and configuration.
+it means the number connections between |morpheus| application and mysql have reached the `max_connections` limit set in mysql (default is 151), or the `max_active` setting, which limits the number of connections on the |morpheus| end (default is 150), and the limit needs to be raised, either in |morpheus| or mysql, or both depending on the number of connections and configuration.
 
 .. note:: The `max_connections` setting in mysql and the maximum used connections between an app node and mysql can be viewed in the |morpheus| ui in the `Administration - Health` section under Database.
 
@@ -26,7 +26,7 @@ Edit ``/etc/morpheus/morpheus.rb`` and add ``mysql[‘max_active’] = $value`` 
 
 Replacing 100 with the desired number of maximum connections allowed by |morpheus| to mysql.
 
-Run ``morpheus-ctl reconfigure`` for the setting to be applied. Reconfigure will not restart the ui unless additional ram has been added to the appliance host since the previous reconfigure. To edit the max_active without a reconfigure, update the ``max_active`` setting in ``/opt/morpheus/conf/application.yml``. Please note the default setting of 100 will be applied upon the next reconfigure unless ``max_active`` is defined as instructed above in the ``morpheus.rb`` file.
+Run ``morpheus-ctl reconfigure`` for the setting to be applied. Reconfigure will not restart the ui unless additional ram has been added to the appliance host since the previous reconfigure. To edit the max_active without a reconfigure, update the ``max_active`` setting in ``/opt/morpheus/conf/application.yml``. Please note the default setting of 150 will be applied upon the next reconfigure unless ``max_active`` is defined as instructed above in the ``morpheus.rb`` file.
 
 mysql ``max_connections`` setting
 ---------------------------------

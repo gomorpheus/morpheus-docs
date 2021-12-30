@@ -16,7 +16,7 @@ During the initial setup of a |morpheus| Appliance, the Master Tenant is created
 Creating Tenants
 ````````````````
 
-The Master Tenant is created during the initial appliance setup. Additional sub-Tenants can be created in the `Administration -> Tenants` section.
+The Master Tenant is created during the initial appliance setup. Additional sub-Tenants can be created in the |AdmTen| section.
 
 The Tenants page displays a list of all Tenants. This page enables users to: Create, Edit, and Delete Tenants. The list of Tenants displays the Tenant Name, Role, Total Instances, Total Users, Status (active or inactive) and the Created Date. Click the Tenant Name to drill into the Tenant View where you can edit or delete the Tenant, as well as create, edit and delete users belonging to the Tenant.
 
@@ -35,7 +35,7 @@ To create a new sub-Tenant
 
 The Base Role defines a role set from which all roles created within the Tenant will inherit.
 
-.. NOTE:: In prior versions, we could set Limits when creating a Subtenant. These could restrict the amount of storage, memory, and CPUs that can be collectively provisioned by all users in the Tenant. In more recent versions, this functionality has been rolled into Policies (Administration > Policies). When creating a Policy, we are able to specify a Tenant to which the Policy should apply.
+.. NOTE:: In prior versions, we could set Limits when creating a Subtenant. These could restrict the amount of storage, memory, and CPUs that can be collectively provisioned by all users in the Tenant. In more recent versions, this functionality has been rolled into Policies (|AdmPol|). When creating a Policy, we are able to specify a Tenant to which the Policy should apply.
 
 Click the :guilabel:`Save Changes` button.
 

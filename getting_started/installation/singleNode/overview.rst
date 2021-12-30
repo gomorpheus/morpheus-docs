@@ -10,7 +10,7 @@ Appliance Host
  - Application
     - Morpheus App
  - Web Server/Proxy
-    - Nginix
+    - NGINX
  - Database
     - MySQL
  - Messaging

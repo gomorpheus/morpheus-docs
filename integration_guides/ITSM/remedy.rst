@@ -91,7 +91,7 @@ The user used for this integration need to be an Administrator in Remedy or have
 Add Remedy Integration
 ^^^^^^^^^^^^^^^^^^^^^^
 
-#. Navigate to ``Administration -> Integrations``
+#. Navigate to |AdmInt|
 #. Select ``+ NEW INTEGRATION``
 #. Select ``Remedy`` from the dropdown.
 #. Add the following:

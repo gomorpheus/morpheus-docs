@@ -11,11 +11,11 @@ Integration
 ...........
 A new Integration Type will be created when this plugin is installed.
 You are able to customize the ``OptionType`` for the new Integration using the ``ApprovalProvider.integrationOptionTypes`` method.
-These ``OptionType`` will be visible when creating the new Integration in the Morpheus UI (Administration -> Integrations).
+These ``OptionType`` will be visible when creating the new Integration in the Morpheus UI (|AdmInt|).
 
 Policies
 ........
-Policies (Administration -> Policies in the Morpheus UI) define the conditions in which approval is required for provisioning.
+Policies (|AdmPol| in the Morpheus UI) define the conditions in which approval is required for provisioning.
 Custom ``OptionType`` can be defined for Policy creation by implementing the ``ApprovalProvider.policyOptionTypes`` method.
 
 Create Approval

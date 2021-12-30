@@ -9,15 +9,15 @@ The |morpheus| UCS Manager Integration enables UCS M B and C Chassis Inventory, 
 Adding UCS Manager Cloud
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-#. Navigate to ``Infrastructure -> Clouds``
+#. Navigate to ``Infrastructure > Clouds``
 #. Select :guilabel:`+ ADD`
 #. Select **UCS MANAGER** from the Clouds list
 #. Populate the following:
 
    .. include:: /integration_guides/Clouds/base_options.rst
 
-   Details
-   ```````
+   **Details**
+
     
    UCS MANAGER
       IP or hostname of UCS Manager

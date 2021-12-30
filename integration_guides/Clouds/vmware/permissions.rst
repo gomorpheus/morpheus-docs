@@ -6,16 +6,19 @@ When integrating VMware vCenter with |morpheus|, users must supply credentials f
 Create vCenter Users and Roles
 ``````````````````````````````
 
-For this example, I've added a new local user to be my |morpheus| integration user (Menu > Administration > Users and Groups) but any existing user, whether locally-created or sourced from an identity integration (like Active Directory), works fine.
+For this example, I've added a new local user to be my |morpheus| integration user (Menu > |AdmUse| and Groups) but any existing user, whether locally-created or sourced from an identity integration (like Active Directory), works fine.
 
 .. image:: /images/integration_guides/clouds/vmware/addUsers.png
 
-The next step is to create a Role (Menu > Administration > Roles). You can edit an existing Role to be sure it has the correct privileges, I've opted to create a new role and assign the correct privileges. Below the screenshot, take note of the complete set of required privileges. Once all privileges are set, name the Role (if it's a new one) and click Finish.
+The next step is to create a Role (Menu > |AdmRol|). You can edit an existing Role to be sure it has the correct privileges, I've opted to create a new role and assign the correct privileges. Below the screenshot, take note of the complete set of required privileges. Once all privileges are set, name the Role (if it's a new one) and click Finish.
 
 .. image:: /images/integration_guides/clouds/vmware/addRoles.png
 
 Privileges
 ``````````
+
+Content Library
+  * All Content Library privileges
 
 Datastore/Datastore Cluster
   * Allocate Space

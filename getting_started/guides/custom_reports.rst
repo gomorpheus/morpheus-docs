@@ -422,6 +422,6 @@ Once the build process has completed, locate the JAR in the ``build/libs`` direc
 Upload the Custom Report Plugin to Morpheus UI
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Custom plugins are added to |morpheus| through the Plugins tab in the Integrations section (Administration > Integrations > Plugins). Navigate to this section and click :guilabel:`Choose File`. Browse for your JAR file and upload it to |morpheus|. The new plugin will be added next to any other custom plugins that may have been developed for your appliance.
+Custom plugins are added to |morpheus| through the Plugins tab in the Integrations section (|AdmInt| > Plugins). Navigate to this section and click :guilabel:`Choose File`. Browse for your JAR file and upload it to |morpheus|. The new plugin will be added next to any other custom plugins that may have been developed for your appliance.
 
 Once uploaded, navigate to the Reports section (Operations > Reports). You new report will appear correctly categorized, labeled, and described according to your code. Just like any other report, it can be run now or scheduled for future runs.

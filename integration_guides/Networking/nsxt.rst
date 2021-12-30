@@ -52,7 +52,7 @@ Access Transport Zones by navigating to Infrastructure > Networks > Integrations
 Creating NSX-T Transport Zones
 ``````````````````````````````
 
-#. Navigate to `Infrastructure -> Network`
+#. Navigate to `Infrastructure > Network`
 #. Select the  `Integrations` tab
 #. Select the name of NSX-T integration
 #. Select the `Transport Zones` tab
@@ -74,7 +74,7 @@ Access Segments by navigating to Infrastructure > Networks > Integrations > (You
 Creating NSX-T Segments
 ```````````````````````
 
-#. Navigate to `Infrastructure -> Network`
+#. Navigate to `Infrastructure > Network`
 #. Select the  `Integrations` tab
 #. Select the name of NSX-T integration
 #. Select the `Segments` tab
@@ -101,7 +101,7 @@ Access firewalls by navigating to Infrastructure > Networks > Integrations > (Yo
 Creating NSX-T Firewall Groups
 ``````````````````````````````
 
-#. Navigate to `Infrastructure -> Network`
+#. Navigate to `Infrastructure > Network`
 #. Select the  `Integrations` tab
 #. Select the name of NSX-T integration
 #. Select the `Firewall` tab
@@ -118,7 +118,7 @@ Creating NSX-T Firewall Groups
 Creating NSX-T Firewall Rules
 `````````````````````````````
 
-#. Navigate to `Infrastructure -> Network`
+#. Navigate to `Infrastructure > Network`
 #. Select the  `Integrations` tab
 #. Select the name of NSX-T integration
 #. Select the `Firewall` tab
@@ -151,7 +151,7 @@ Access Tier-1 Gateways by navigating to Infrastructure > Networks > Integrations
 Creating Tier-1 Gateways
 ````````````````````````
 
-#. Navigate to `Infrastructure -> Network`
+#. Navigate to `Infrastructure > Network`
 #. Select the  `Integrations` tab
 #. Select the name of NSX-T integration
 #. Select the `Tier-1 Gateways` tab
@@ -179,7 +179,7 @@ Access Tier-0 Gateways by navigating to Infrastructure > Networks > Integrations
 Creating Tier-0 Gateways
 ````````````````````````
 
-#. Navigate to `Infrastructure -> Network`
+#. Navigate to `Infrastructure > Network`
 #. Select the  `Integrations` tab
 #. Select the name of NSX-T integration
 #. Select the `Tier-0 Gateways` tab

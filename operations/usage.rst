@@ -1,21 +1,23 @@
 Usage
-----
+-----
 
 The `Operations > Costing > Usage` section shows billing information for Instances and hosts that have pricing configured on their Service Plan.
 
-.. IMPORTANT:: Pricing must be enabled in `Administration > Settings > Provisioning` and Service Plans configured with price sets in `Administration > Plans & Pricing` for pricing to show in the Usage section.
+.. IMPORTANT:: Pricing must be enabled in |AdmSetPro| and Service Plans configured with price sets in `|AdmPla|` for pricing to show in the Usage section.
 
 View Usage
 ^^^^^^^^^^
 
-All Instances are listed by default, with the most recent usage information showing first.
+All Instances, discovered resources, virtual images, snapshots are listed by default, with the most recent usage information showing first. When additional details are available, usage records will display a small arrow on the left side of the row. Click this arrow to expand the details for that usage record. Details can include more granular cost breakdowns, such as specific CPU, memory, and/or storage costs for containers (Instances).
 
-Usage details can be filtered by Cloud and date:
+Usage records can be filtered by Cloud, type and date:
 
 Cloud
-  Default view is for all Clouds. Select a Cloud to show Instance and host usage for only one Cloud.
+  Default view is for all Clouds. Select a Cloud to show Instance, host and other usage for only one Cloud.
 Date
   Default view shows most current Usage. Select the Date filter to scope to a different date range.
+Type
+  All usage record types are shown by default, select a specific type to filter the list to just one
 
 API & CLI
 ^^^^^^^^^

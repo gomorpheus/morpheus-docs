@@ -25,7 +25,7 @@ Prerequisites
 .. NOTE:: Replace ``morpheus-appliance-ip`` in the dhcpd.conf file with your |morpheus| appliance IP address.
 
 * ``Internal Appliance URL (PXE)`` set in `Administration - Settings`. For PXE-Boot your appliance needs to be routable directly with minimal NAT masquerading. This allows one to override the default appliance url endpoint for use by the PXE Server. If this is unset, the default appliance url will be used instead.
-* Mac or IP addresses of PXE target mapped in {morpheus} `Infrastructure -> Boot - Mapping`
+* Mac or IP addresses of PXE target mapped in {morpheus} `Infrastructure > Boot - Mapping`
 * Target host configured for Network boot in BIOS
 
 .. NOTE:: On the |Morpheus| Appliance, PXE is enabled by default and port 69 is forwarded to the Internal PXE port 6969. These settings are configurable in in the ``pxe:`` section of ``/opt/morpheus/conf/application.yml``.
@@ -159,7 +159,6 @@ Add Images
     Name of the Image.
    Operating System
     List of available operating systems.
-   .. Menu
    Storage Provider
     List of available storage providers.
    Image Path

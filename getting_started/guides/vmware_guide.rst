@@ -9,7 +9,7 @@ This guide is designed to help you get started and quickly get the most out of M
 Installation & Setup
 ^^^^^^^^^^^^^^^^^^^^
 
-In the simplest configuration, Morpheus needs one appliance server which will contain all the components necessary to orchestrate virtual machines and containers. Full requirements, including storage and networking considerations, can be found in Morpheus documentation `here <https://docs.morpheusdata.com/en/4.1.0/getting_started/requirements/requirements.html#requirements>`_. In order to provision any new instances, hosts, or applications, (or convert any discovered resources to managed resources) you will need a valid license. If you don't have one, you can request a lab license for free at `Morpheus Hub <https://www.morpheushub.com>`_. Once obtained, the license can be applied in Administration > Settings > LICENSE.
+In the simplest configuration, Morpheus needs one appliance server which will contain all the components necessary to orchestrate virtual machines and containers. Full requirements, including storage and networking considerations, can be found in Morpheus documentation `here <https://docs.morpheusdata.com/en/4.1.0/getting_started/requirements/requirements.html#requirements>`_. In order to provision any new instances, hosts, or applications, (or convert any discovered resources to managed resources) you will need a valid license. If you don't have one, you can request a lab license for free at `Morpheus Hub <https://www.morpheushub.com>`_. Once obtained, the license can be applied in |AdmSetLic|.
 
 Groups
 ^^^^^^
@@ -229,7 +229,7 @@ We'll get started by installing cloud-init using the following command:
 
 .. NOTE:: The above command will install some core dependencies for cloud-init and automation later as you work with your provisioned instances. For example, we install Git here as it is used for Ansible automation. If you had no plans to use Ansible, this installation could be skipped. The dracut-modules-growroot is responsible for resizing the root partition upon initial boot which was potentially adjusted during provisioning.
 
-One key benefit of using cloud-init is that we don't have to lock credentials into the blueprint. We recommend configuring a default cloud-init user that will get created automatically when the VM is booted by cloud-init. We can define that default user in `Administration > Provisioning > Cloud-Init`.
+One key benefit of using cloud-init is that we don't have to lock credentials into the blueprint. We recommend configuring a default cloud-init user that will get created automatically when the VM is booted by cloud-init. We can define that default user in `|AdmSetPro| > Cloud-Init`.
 
 **Network Interfaces**
 
@@ -268,43 +268,94 @@ This script tries to confirm there is a new `ifcfg-eth0` config created to repla
 
 For more on CentOS/RHEL image prep, including additional configurations for specific scenarios, take a look at the `VMware image prep <https://docs.morpheusdata.com/en/4.1.1/integration_guides/Clouds/vmware/vmware_templates.html#gotyas>`_ page in Morpheus Docs.
 
-**Creating an Ubuntu Image**
+**Creating an Ubuntu 20.04 Image**
 
-Create a new machine in vCenter and install a base version of your preferred Linux distro.
+Download the Ubuntu 20.04 ISO from Canonical, and upload the base image to vCetner. Then, create a new virtual machine in vCenter.
 
-.. NOTE:: If you are using cloud-init as part of your image, you will need to ensure your virtual machine has a cdrom.
+.. NOTE:: Since we'll include cloud-init with our image, we will need to ensure the virtual machine has a cdrom. Select the Ubuntu 20.04 ISO we just downloaded from the CD/DVD drive dropdown menu when creating the new virtual machine.
 
-Before installing the operating system, set up a single ext partition without a swap disk. Install the distro and apply any operating system and security updates. Ensure you've set a root password.
+Before installing the operating system, set up a single ext partition without a swap disk. Then, continue on installing Ubuntu making the following selections during the setup process:
 
-Install cloud-init and cloud-utils-growpart:
+- Update to the latest installer if a later version is available
+- Use the entire disk and deselect the option to set up the disk as an LVM group
+- Configure an account and set a password
+- Opt to install OpenSSH Server
+- Other optional packages aren't needed for this basic Ubuntu image
 
-.. code-block:: bash
-
-	sudo apt install cloud-init
-	sudo apt install cloud-utils
-
-Install desired hypervisor drivers, such as Virto or Open-VM Tools
-
-Install Git:
+Complete the installation process and reboot the machine. Update the package list and apply any upgrades:
 
 .. code-block:: bash
 
-	sudo apt install git
+  apt-get update
+  apt-get upgrade
 
-Since Debian 9 includes network manager, ensure this is disabled. You can do this by editing the configuration file at `/etc/NetworkManager/NetworkManager.conf`. Within that file, update the "managed" flag to false:
+Disable assignment of new styled names for network interfaces (instead of ``ens###`` they will be ``eth#``):
 
 .. code-block:: bash
 
-	managed=false
+  sudo sed -i -e 's/GRUB_CMDLINE_LINUX=""/GRUB_CMDLINE_LINUX="net.ifnames=0 biosdevname=0"/' /etc/default/grub
 
-We also recommend setting the network adapter to "eth0". This process is described above in the "Network Interfaces" section of the CentOS image prep guide above.
+Update GRUB:
+
+.. code-block:: bash
+
+  update-grub
+
+Update the ``70-persistent-net.rules`` file:
+
+.. code-block:: bash
+
+  cat << EOF > /etc/udev/rules.d/70-persistent-net.rules
+  SUBSYSTEM=="net", ACTION=="add", DRIVERS=="?*", ATTR{dev_id}=="0x0", ATTR{type}=="1", NAME="eth0"
+  EOF
+
+Remove ``subiquity-disable-cloudinit-networking.cfg`` as cloud-init will skip network configuration if it's present:
+
+.. code-block:: bash
+
+  rm -f /etc/cloud/cloud.cfg.d/subiquity-disable-cloudinit-networking.cfg
+
+Update ``99-pve.cfg``:
+
+.. code-block:: bash
+
+  cat << EOF > /etc/cloud/cloud.cfg.d/99-pve.cfg
+  datasource_list: [ConfigDrive, NoCloud]
+  EOF
+
+Remove Netplan files, they will not be regenerated if they exist:
+
+.. code-block:: bash
+
+  rm -f /etc/netplan/00-installer-config.yaml
+  rm -f /etc/netplan/50-cloud-init.yaml
+
+Run cloud-init clean:
+
+.. code-block:: bash
+
+  cloud-init clean
+
+Next, reboot the system and confirm the network interface is labeled ``eth0`` once the machine comes back up. Then, clear BASH history for root. The history entry has a copy in the memory and it will flush back to the file when you log out. You can avoid this with the following command:
+
+.. code-block:: bash
+
+  cat /dev/null > ~/.bash_history && history -c && exit
+
+Shutdown the system:
+
+.. code-block:: bash
+
+  shutdown -h now
+
+Convert the VM to a template in vCenter before moving back to |morpheus| to onboard the image and use it to begin building your provisioning library.
 
 Provisioning Your First Instance
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 At this point, we are ready to provision our first image. As a first instance, we'll provision an Apache web server to our vCenter cloud.
 
-Navigate to `Provisioning > Instances`. If any instances are currently provisioned, we will see them listed here. To start a new instance we click the "+ADD" button to pop the "CREATE INSTANCE" wizard. We'll scroll down to and select the Apache instance type and click "NEXT".
+Navigate to `|ProIns|`. If any instances are currently provisioned, we will see them listed here. To start a new instance we click the "+ADD" button to pop the "CREATE INSTANCE" wizard. We'll scroll down to and select the Apache instance type and click "NEXT".
 
 .. image:: /images/vCenterGuideImages/FirstInstance/1createInstance.png
   :width: 80%
@@ -317,7 +368,7 @@ From the "CONFIGURE" tab, we're presented with a number of options. The options 
 
 - **LAYOUT**: Includes options such as the base OS, custom layouts will also be here when available
 
-- **PLAN**: Select the resource plan for your instance. Some plans have minimum resource limits, Morpheus will only show plans at or above these limits. User-defined plans can also be created in `Administration > Plans & Pricing`.
+- **PLAN**: Select the resource plan for your instance. Some plans have minimum resource limits, Morpheus will only show plans at or above these limits. User-defined plans can also be created in `|AdmPla|`.
 
 - **VOLUMES and DATASTORES**: The minimum disk space is set by the plan, this value may be locked if you've selected a custom plan that defines the volume size
 
@@ -355,7 +406,7 @@ In the prior section, we manually provisioned our first instance. However, Morph
 
 .. NOTE:: Before starting this process, it's important to decide which virtual image you plan to use. If you're not using a Morpheus-provided image, you'll want to ensure it's uploaded. You will not be able to complete this section without selecting an available image. In this example we will use Morpheus Redis 3.0 on Ubuntu 14.04.3 v2.
 
-Navigate to `Provisioning > Library > NODE TYPES` and click "+ADD".
+Navigate to |LibBluNod| and click "+ADD".
 
 .. image:: /images/vCenterGuideImages/NewCatalogItem/1addNode.png
   :width: 80%
@@ -421,7 +472,7 @@ Click "SAVE CHANGES".
   :alt: Configuring the new layout
   :align: center
 
-At this point we've completed the setup work and can now provision the instance we've created to our specifications. Navigate to `Provisioning > Instances` and click "+ADD". From the search bar we can search for the new instance type we've created. In the example case, we called it "newinstancetype". Click "NEXT".
+At this point we've completed the setup work and can now provision the instance we've created to our specifications. Navigate to `|ProIns|` and click "+ADD". From the search bar we can search for the new instance type we've created. In the example case, we called it "newinstancetype". Click "NEXT".
 
 .. image:: /images/vCenterGuideImages/NewCatalogItem/7newInstanceSearch.png
   :width: 80%
@@ -457,7 +508,7 @@ In this guide we will set up an Ansible integration, create a task, add the task
   :alt: Adding a new automation integration
   :align: center
 
-We'll first set up the Ansible integration, you can integrate with the sample repository referenced here or integrate with your own. Go to 'Administration > Integrations'. Click "+NEW INTEGRATION" and select Ansible from the dropdown menu. Fill in the following details:
+We'll first set up the Ansible integration, you can integrate with the sample repository referenced here or integrate with your own. Go to '|AdmInt|'. Click "+NEW INTEGRATION" and select Ansible from the dropdown menu. Fill in the following details:
 
 - **NAME**
 
@@ -478,7 +529,7 @@ We'll first set up the Ansible integration, you can integrate with the sample re
 
 Click "SAVE CHANGES". You'll now see our new Ansible integration listed among any other configured inetegrations. If we click on this new integration to view detail, a green checkmark icon indicates the git repository has been fully synced.
 
-With the Ansible integration set up, we can now create a task that includes our playbook. Go to `Provisioning > Automation`, click "+ADD". We'll first set our "TYPE" value to Ansible Playbook so that the correct set of fields appear in the "NEW TASK" wizard. Set the following options:
+With the Ansible integration set up, we can now create a task that includes our playbook. Go to `|LibAut|`, click "+ADD". We'll first set our "TYPE" value to Ansible Playbook so that the correct set of fields appear in the "NEW TASK" wizard. Set the following options:
 
 - **NAME**
 
@@ -491,7 +542,7 @@ With the Ansible integration set up, we can now create a task that includes our 
   :alt: Configuring the new task
   :align: center
 
-Click "SAVE CHANGES" to save our new task. We can test the new task on our Apache VM now by going to `Provisioning > Instances` and clicking into our VM. From the "ACTIONS" menu select "Run Task". From the "TASK" dropdown menu, select the task we just added and click "EXECUTE".
+Click "SAVE CHANGES" to save our new task. We can test the new task on our Apache VM now by going to `|ProIns|` and clicking into our VM. From the "ACTIONS" menu select "Run Task". From the "TASK" dropdown menu, select the task we just added and click "EXECUTE".
 
 .. image:: /images/vCenterGuideImages/Automation/4executeTask.png
   :width: 80%
@@ -500,14 +551,14 @@ Click "SAVE CHANGES" to save our new task. We can test the new task on our Apach
 
 To see the progress of the task, click on the "HISTORY" tab and click on the (i) button to the right of each entry in the list. In this case, we can also see the results of the task by clicking on the link in the "LOCATION" column of the "VMS" section.
 
-Now that our task is created, we can put it into a workflow. Back in `Provisioning > Automation` we will click on the "WORKFLOWS" tab. Click "+ADD" and select Provisioning Workflow. We'll give the new workflow a name and expand the Post Provision section. As we begin to type in the name of the task we've created, it should appear as a selection. Click "SAVE CHANGES".
+Now that our task is created, we can put it into a workflow. Back in `|LibAut|` we will click on the "WORKFLOWS" tab. Click "+ADD" and select Provisioning Workflow. We'll give the new workflow a name and expand the Post Provision section. As we begin to type in the name of the task we've created, it should appear as a selection. Click "SAVE CHANGES".
 
 .. image:: /images/vCenterGuideImages/Automation/5newWorkflow.png
   :width: 80%
   :alt: Creating a workflow for our task
   :align: center
 
-Now that we have a workflow, return to `Provisioning > Instances` and begin to provision another Apache instance. More detailed instructions on provisioning a new Apache instance are included earlier in this guide if needed. Now, when you reach the "AUTOMATION" section of the "CREATE INSTANCE" wizard, we have a workflow to select. From the "WORKFLOW" dropdown menu, select the workflow we just created and complete provisioning of the new instance.
+Now that we have a workflow, return to `|ProIns|` and begin to provision another Apache instance. More detailed instructions on provisioning a new Apache instance are included earlier in this guide if needed. Now, when you reach the "AUTOMATION" section of the "CREATE INSTANCE" wizard, we have a workflow to select. From the "WORKFLOW" dropdown menu, select the workflow we just created and complete provisioning of the new instance.
 
 .. image:: /images/vCenterGuideImages/Automation/6automationInProvisioning.png
   :width: 80%

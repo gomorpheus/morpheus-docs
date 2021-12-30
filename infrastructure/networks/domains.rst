@@ -13,7 +13,7 @@ The Domains section is for creating and managing domains for use in |morpheus|. 
 * Domains are synced in from Cloud, DNS and Network Integrations. Domains can also be user created.
 * Active Domains are available for selection in the Domain dropdown when provisioning an Instance
 * Default Domains can be set for Clouds and Networks in their Advanced Options sections.
-* Images can be flagged to Auto-Join Domains in the `Provisioning > Virtual Images` section
+* Images can be flagged to Auto-Join Domains in the `|LibVir|` section
 
 .. IMPORTANT:: For an Instance to auto-join a Domain, a Domain must set in the Advanced Options section of the Cloud or Network used when provisioning
 
@@ -67,7 +67,7 @@ Editing and Removing Domains
 Setting the default domain on a Cloud
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-#. Navigate to `Infrastructure -> Clouds`.
+#. Navigate to `Infrastructure > Clouds`.
 #. Edit the target Cloud.
 #. Expand `Advanced Options` section.
 #. In the *Domain* dropdown, select the Domain.
@@ -76,7 +76,7 @@ Setting the default domain on a Cloud
 Setting the default domain on a Network
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-#. Navigate to `Infrastructure -> Network`.
+#. Navigate to `Infrastructure > Network`.
 #. Edit the target Network.
 #. Expand `Advanced Options` section.
 #. In the *Domain* dropdown, select the Domain.

@@ -53,9 +53,10 @@ If a user loses the device they've configured for authentication or if they cann
 
 Preferences
 -----------
-- **Default Group:** Sets the default Group selection when provisioning.
-- **Default Cloud:** Sets the default Cloud selection when provisioning.
-- **Default Persona:** Sets the default Persona used when logging in.
+- **Default Group:** Sets the default Group selection when provisioning
+- **Default Cloud:** Sets the default Cloud selection when provisioning
+- **Default Persona:** Sets the default Persona used when logging in
+- **Default Locale:** Sets the user's preferred language and region, this setting will override the global locale for the individual user
 
 .. image:: /images/administration/settings/user_settings_preferences_500.png
 

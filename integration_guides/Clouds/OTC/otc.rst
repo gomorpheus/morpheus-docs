@@ -31,13 +31,13 @@ Details
 ```````
 
 IDENTITY API URL
-  The v2 or v3 identity API URL, such as ``https://iam.eu-de.otc.t-systems.com/v3``
+  The v3 identity API URL, such as ``https://iam.eu-de.otc.t-systems.com/v3``
 DOMAIN ID
-  This pertains to the Openstack v3 API and should be ignored when using v2. Note that this is the Domain ID and not the Domain Name. The Domain ID can be found via the CLI by typing ``openstack domain list``. For default domains, "Default" can be used
+  Note that this is the Domain ID and not the Domain Name. The Domain ID can be found via the CLI by typing ``openstack domain list``. For default domains, "Default" can be used
 PROJECT
   OTC projects are groupings of resources and can include compute resources, storage or networking. Multiple projects may be nested under your account. Select the project to which |morpheus| should onboard from (if desired) and provision
 REGION
-
+ OTC Region
 USERNAME
   The username for the OTC service account that |morpheus| will use. Ensure this account has sufficient cloud privileges to avoid interruption of work in |morpheus|
 PASSWORD

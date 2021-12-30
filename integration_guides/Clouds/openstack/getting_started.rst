@@ -3,13 +3,15 @@ Getting Started
 
 OpenStack Clouds are very easy to integrate with |morpheus|. First, go to the ``Infrastructure > Clouds`` section and click :guilabel:`+ ADD`. Select OpenStack to begin the integration process, most branded flavors of OpenStack will work with this Cloud selection as well.
 
+.. WARNING:: Support for OpenStack v2 Identity API has been removed in v5.3.3
+
 .. include:: /integration_guides/Clouds/base_options.rst
 
 Details
 ```````
 
 IDENTITY API URL
-  v2.0 or v3 Identity endpoint.
+  v3 Identity endpoint.
 DOMAIN ID
   For `Default` domains, Default can be used. For other domain the Domain ID must be entered, not the Domain Name.
 PROJECT
@@ -24,14 +26,25 @@ IMAGE FORMAT
   Select QCOW2, RAW or VMDK Image Type
 LB TYPE
   Select LB Type for Openstack LB syncing and creation
- Inventory Existing Instances
+Inventory Existing Instances
   Select for |morpheus| to discover and sync existing VM's
- Enable Hypervisor Console
+Enable Hypervisor Console
   Hypervisor console support for openstack currently only supports novnc. Be sure the novnc proxy is configured properly in your openstack environment. When disabled |morpheus| will use ssh and rdp for console conneciton (vm/host credentials required)
 
-.. include:: /integration_guides/Clouds/openstack/advanced_options.rst
+.. include:: /integration_guides/Clouds/advanced_options.rst
 
-.. NOTE:: The user which is used connect to a project only needs to be a member ('_member_') of the project rather than an admin. Admin will work but it exposes some additional items to the project that an Openstack Admin typically does not want portal users to see.
+.. NOTE:: v5.3.3 adds openstack project management which requires additional permissions in openstack:
+
+   .. code-block::
+
+      identity:list_domain_roles
+      identity:list_roles
+      identity:list_projects
+      identity:create_project
+      identity:update_project
+      identity:delete_project
+      identity:create_grant
+      identity:revoke_grant
 
 Most of the information in the dialog can be acquired from the Openstack dashboard. under ``Project > Access & Security > API Access``. The API URL that is needed is the one tied to `Identity`. The Domain and Project inputs typically correlate to the multitenant domain setup within Openstack (sometimes just left at default) as well as the project name given to instances. |morpheus| allows multiple integrations to the same Openstack cluster to be scoped to various domains and projects as needed.
 
@@ -46,7 +59,7 @@ Existing Instances
 
 |morpheus| provides several features regarding pulling in existing virtual machines and servers in an environment. Most cloud options contain a checkbox titled '*Inventory Existing Instances*'. When this option is selected, all VMs found within the specified scope of the cloud integration will be scanned periodically and Virtual Machines will be synced into |morpheus|.
 
-By default these virtual machines are considered 'unmanaged' and do not appear in the ``Provisioning -> Instances`` area but rather ``Infrastructure -> Compute -> Virtual Machines``. However, a few features are provided with regards to unmanaged instances. They can be assigned to various accounts if using a multitenant master account, however it may be best suited to instead assign the 'Resource Pool' to an account and optionally move all servers with regards to that pool (more on this later).
+By default these virtual machines are considered 'unmanaged' and do not appear in the |ProIns| area but rather |InfComVir|. However, a few features are provided with regards to unmanaged instances. They can be assigned to various accounts if using a multitenant master account, however it may be best suited to instead assign the 'Resource Pool' to an account and optionally move all servers with regards to that pool (more on this later).
 
 A server can also be made into a managed server. During this process remote access is requested and an agent install is performed on the guest operating system. This allows for guest operations regarding log acquisition and stats. If the agent install fails, a server will still be marked as managed and an Instance will be created in `Provisioning`, however certain features will not function. This includes stats collection and logs.
 
@@ -63,11 +76,9 @@ Default Service Ports
 
 * Identity: 5000
 * Compute: 8774
-* Compute_Legacy: 8774 v2
 * Image: 9292
 * Key Manager: 9311
 * Network: 9696
-* Volume API v2: 8776 v2
 * Volume API v3: 8776 v3
 * Manila: 8786
 

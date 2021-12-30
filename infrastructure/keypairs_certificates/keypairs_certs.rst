@@ -24,12 +24,13 @@ To Add Key Pair:
 #. Navigate to Infrastructure > Keys & Certs
 #. On the Key Pairs tab, click :guilabel:`+ ADD`
 #. From the Add Key Pair wizard input the following as needed:
-  * Name
-  * Public Key
-  * Private Key
-  * Passphrase
 
-.. NOTE:: Certain features do not require storage of the private key.
+   * Name
+   * Public Key
+   * Private Key
+   * Passphrase
+
+   .. NOTE:: Certain features do not require storage of the private key.
 
 Delete Key Pair
 ---------------
@@ -51,11 +52,12 @@ Add SSL Certificate
 #. Navigate to Infrastructure > Keys & Certs
 #. On the SSL Certificates tab, click :guilabel:`+ ADD`
 #. From the Add SSL Certificate wizard input the following as needed:
-  * Name
-  * Domain Name
-  * Key File
-  * Cert File
-  * Root Cert
+
+   * Name
+   * Domain Name
+   * Key File
+   * Cert File
+   * Root Cert
 
 Delete SSL Certificate
 ----------------------
@@ -69,6 +71,6 @@ To Delete SSL Certificate:
 Trust Integrations
 ------------------
 
-Some organizations may use outside technologies to manage their key and certificates. |morpheus| allows users to integrate with Venafi for trust management. Trust management integrations can be managed from the Integrations tab on the Infrastructure > Keys & Certs page. Additionally, they can be managed in Administration > Integrations.
+Some organizations may use outside technologies to manage their key and certificates. |morpheus| allows users to integrate with Venafi for trust management. Trust management integrations can be managed from the Integrations tab on the Infrastructure > Keys & Certs page. Additionally, they can be managed in |AdmInt|.
 
 Currently, |morpheus| supports trust integration Venafi. For more detailed information on integrating Venafi with |morpheus|, take a look at our `integration guide <https://docs.morpheusdata.com/en/latest/integration_guides/KeysCertificates/keysandcerts.html>`_.

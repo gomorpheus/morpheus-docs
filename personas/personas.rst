@@ -19,7 +19,7 @@ Access to Personas is controlled by a user's Role. Additionally, Persona access 
 
 Edit Persona access on a Role with the following steps:
 
-#. Navigate to ``Administration > Roles``
+#. Navigate to |AdmRol|
 #. Select the desired Role to edit
 #. Go to the Personas tab
 #. Allow access to one or both Personas as needed, changes are saved automatically

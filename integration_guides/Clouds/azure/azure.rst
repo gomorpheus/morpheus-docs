@@ -138,7 +138,7 @@ To get the Azure Subscription ID:
 
 #. Navigate to the main Subscriptions section. One way is to search for "Subscriptions" and select Subscriptions in the search results
 
-   .. thumbnail:: /images/clouds/azure/azure subscriptions search.png
+   .. thumbnail:: /images/clouds/azure/azuresubscriptionssearch.png
 
 #. In the main "Subscriptions" section, copy the Subscription ID
 
@@ -174,7 +174,7 @@ Add an Azure Cloud Integration
 
 To add a new Azure Cloud integration into |morpheus| using the credentials created/collected from the previous section, perform the following:
 
-#. In |morpheus|, navigate to ``Infrastructure -> Clouds`` and select :guilabel:`+ ADD`
+#. In |morpheus|, navigate to ``Infrastructure > Clouds`` and select :guilabel:`+ ADD`
 
    .. image:: /images/clouds/azure/Clouds_Morpheus_Add.png
 
@@ -188,8 +188,6 @@ To add a new Azure Cloud integration into |morpheus| using the credentials creat
    .. include:: /integration_guides/Clouds/base_options.rst
 
    **Details**
-
-   ------
 
    CLOUD TYPE
      - Standard (Azure Cloud)
@@ -223,7 +221,7 @@ To add a new Azure Cloud integration into |morpheus| using the credentials creat
 
      .. note:: For CSP Accounts, also enter CSP TENANT ID, CSP CLIENT ID and CSP CLIENT SECRET in the Advanced Options section. In order to enable cost sync for CSP accounts, the "CSP CUSTOMER" checkbox must be marked and "COSTING" should be set to "Costing" rather than "Costing and Reservations".
 
-     .. image:: /images/clouds/azure/addAzureCloudmorpheusS1.png
+     .. image:: /images/clouds/azure/addAzureCloudMorpheusS1.png
 
    .. include:: /integration_guides/Clouds/advanced_options.rst
 

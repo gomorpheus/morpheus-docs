@@ -1,9 +1,9 @@
 Morpheus Discovery
 ===================
 
-Morpheus has the ability to ingest existing environments.  Existing running workloads will be inventoried into Morpheus and displayed in the UI.  In 5-7 days Morpheus will start making recommendations based off of usage and pricing
+Morpheus has the ability to ingest existing environments.  Existing running workloads will be inventoried into Morpheus and displayed in the UI.  In 5-7 days Morpheus will start making recommendations based off of usage and pricing.
 
-.. NOTE::  Work loads that are inventoried do not have to be converted to managed.
+.. NOTE::  Workloads that are inventoried do not have to be converted to managed.
 
 Once inventoried, Morpheus can provide valuable data for that instance:
 

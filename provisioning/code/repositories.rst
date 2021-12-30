@@ -56,7 +56,7 @@ Refresh Repository
 #. Select the ``Provisioning`` link in the navigation bar
 #. Select the ``Code`` link in the sub-navigation bar
 #. Select name of target repository
-#. Select :guilabel:`ACTIONS ▿` -> ``Refresh``
+#. Select :guilabel:`ACTIONS ▿` > ``Refresh``
 
 Browse Repositories
 ^^^^^^^^^^^^^^^^^^^
@@ -89,7 +89,7 @@ Create Task from Repository File
 
 .. note:: Shell and Powershell Tasks types can be created from the code repo browser in |morphver|. Ensure file compatibility with target Task type.
 
-.. note:: Users can create tasks from Repositories only with Read or Full level permission on ``Provisioning: Tasks``.
+.. note:: Users can create tasks from Repositories only with Read or Full level permission on ``Library: Tasks``.
 
 Create Spec Template from Repository File
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -103,4 +103,4 @@ Create Spec Template from Repository File
 
 .. note:: Terraform spec template types can be created from the code repo browser in |morphver|. Other spec template types can be created from repo files by changing the TYPE field in the NEW SPEC TEMPLATE wizard.
 
-.. note:: Users can create tasks from Repositories only with Read or Full level permission on ``Provisioning: Library``.
+.. note:: Users can create tasks from Repositories only with Read or Full level permission on ``Library: Templates``.

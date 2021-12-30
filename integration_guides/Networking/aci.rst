@@ -26,8 +26,8 @@ From Morpheus below can be created:
 Add Network Integration
 ^^^^^^^^^^^^^^^^^^^^^^^
 
-#. Navigate to ``Infrastructure -> Networks -> Integrations``
-#. Select :guilabel:`+ADD` -> `Networking` -> ``Cisco ACI``
+#. Navigate to ``Infrastructure > Networks > Integrations``
+#. Select :guilabel:`+ADD` > `Networking` > ``Cisco ACI``
 #. Populate the following:
 
    NAME

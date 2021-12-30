@@ -35,7 +35,7 @@ Adding SolarWinds to |morpheus|
 .. NOTE:: At minimum you will need credentials for a user with API and root-level propagating read access, as well as read/write access for target networks and domains. For a quicker solution, you can also use an account with the Power User role in situations where you aren't concerned with providing only the minimum required access.
 
 Consuming SolarWinds in |morpheus|
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 On saving your new integration, SolarWinds networks will be synced and can be viewed by navigating to ``Infrastructure > Network > IP POOLS``. They're also viewable from the detail section of the SolarWinds integration at ``Infrastructure > Network > INTEGRATIONS > (your SolarWinds integration) > NETWORK POOLS``.
 
@@ -65,7 +65,7 @@ Adding IP Pools to Networks
 #. Select :guilabel:`SAVE CHANGES`
 
 Creating Host Records
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^
 
 #. Select a Network Pool from ``Infrastructure > Network > IP POOLS``
 #. Click :guilabel:`+ ADD`

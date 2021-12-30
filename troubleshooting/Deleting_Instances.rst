@@ -44,7 +44,7 @@ Deleting a managed resource outside of |morpheus| is not recommended as it will 
 
 To select an Instance and/or VM record in |morpheus| for a Virtual Machine that no longer exists:
 
-1. Navigate to the Virtual Machine record by clicking on the VM's name in the Virtual Machines section in the Instances details section, or by navigating to `Infrastructure -> Compute - Virtual Machines` and selecting the VM.
+1. Navigate to the Virtual Machine record by clicking on the VM's name in the Virtual Machines section in the Instances details section, or by navigating to `Infrastructure > Compute - Virtual Machines` and selecting the VM.
 
 .. TIP: Global Search makes it easy to find resources in any section.
 

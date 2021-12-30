@@ -50,8 +50,8 @@ Price Types
   - Memory Only (per MB)
   - Cores Only (per core)
   - Disk Only (per GB)
-  - Platform
-  - Software
+  - Platform: Select from Windows, Linux (generic), or one of several specific Linux distributions
+  - Software: Add prices for software licenses which may be included with your price sets
   - Datastore (per GB)
   - Load Balancer
   - Load Balancer Virtual Server
@@ -68,6 +68,7 @@ Price Units
   -  Five Year
 
 Currency
+  -  AED
   -  AUD
   -  BRL
   -  CAD
@@ -79,11 +80,13 @@ Currency
   -  GBP
   -  IDR
   -  ILS
+  -  JD
   -  MAD
   -  MXN
   -  NOK
   -  NZD
   -  ROL
+  -  SAR
   -  SEK
   -  TRL
   -  USD

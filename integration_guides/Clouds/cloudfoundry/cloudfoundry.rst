@@ -4,10 +4,10 @@ Cloud Foundry
 Configuration
 ^^^^^^^^^^^^^
 
-Adding PCF Cloud From `Infrastructure -> Clouds`
+Adding PCF Cloud From `Infrastructure > Clouds`
 ````````````````````````````````````````````````
 
-#. Navigate to ``Infrastructure -> Clouds``
+#. Navigate to ``Infrastructure > Clouds``
 #. Select :guilabel:`+ ADD`
 #. Select **CLOUD FOUNDRY** from the Clouds list
 #. Select :guilabel:`NEXT`
@@ -15,8 +15,8 @@ Adding PCF Cloud From `Infrastructure -> Clouds`
 
    .. include:: /integration_guides/Clouds/base_options.rst
 
-   Details
-   ```````
+   **Details**
+
    API URL
      Cloud Foundry API Url
    CLIENT ID
@@ -38,10 +38,10 @@ Adding PCF Cloud From `Infrastructure -> Clouds`
 #. Review and then Select :guilabel:`COMPLETE`
 
 
-Adding PCF Cloud From `Infrastructure -> Groups`
+Adding PCF Cloud From `Infrastructure > Groups`
 ````````````````````````````````````````````````
 
-#. Navigate to ``Infrastructure -> Groups``
+#. Navigate to ``Infrastructure > Groups``
 #. Select a Group
 #. Select the `CLOUDS` tab
 #. Scroll down to CLOUD FOUNDRY and select :guilabel:`+ ADD`
@@ -131,7 +131,7 @@ Using the Cloud Foundry docs (https://docs.cloudfoundry.org/devguide/deploy-apps
 Adding Marketplace Items
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-#. Navigate to ``Infrastructure -> Clouds`` and select your Cloud Foundry Cloud
+#. Navigate to ``Infrastructure > Clouds`` and select your Cloud Foundry Cloud
 #. Select the MARKETPLACE tab
 #. Select :guilabel:`+ ADD MARKETPLACE ITEM`
 #. Select the |morpheus| Instance Type to add the Marketplace Item to.
@@ -139,7 +139,7 @@ Adding Marketplace Items
 #. Search for and select Marketplace Item
 #. Select :guilabel:`SAVE CHANGES`
 
-A Node Type and layout will be created in the ``Provisioning -> Library`` section and the layout will be automatically added to the Instance Type selected when adding the Marketplace Item.
+A Node Type and layout will be created in the |Lib| section and the layout will be automatically added to the Instance Type selected when adding the Marketplace Item.
 
 Provisioning Instances
 ^^^^^^^^^^^^^^^^^^^^^^
@@ -149,7 +149,7 @@ Seeded and Marketplace Items
 
 |morpheus| automatically seeds MySQL, Redis and RabbitMQ PCF Instance Types, and PCF Marketplace items can also be easily added to the Provisioning Library in the Cloud detail view Marketplace tab. The Marketplace item will be added to the selected Instance Type and available when selecting the Cloud Foundry Cloud during Instance or App Template creation.
 
-#. Navigate to ```Provisioning -> Instances`` and select an Instance Type with a Cloud Foundry layout (MySQL, Redis and RabbitMQ plus Marketplace additions)
+#. Navigate to |ProIns| and select an Instance Type with a Cloud Foundry layout (MySQL, Redis and RabbitMQ plus Marketplace additions)
 #. Select :guilabel:`NEXT`
 #. Select a Group and PCF Cloud
 #. Add an Instance Name
@@ -169,11 +169,11 @@ Seeded and Marketplace Items
 Cloud Foundry App Instance Type
 ```````````````````````````````
 
-.. IMPORTANT:: Add Deployments in ``Provisioning -> Deployments`` to be used when provisioning a Cloud Foundry App Instance Type.
+.. IMPORTANT:: Add Deployments in |ProCodDep| to be used when provisioning a Cloud Foundry App Instance Type.
 
 .. NOTE:: Minimal options are outlined below.
 
-#. Navigate to ```Provisioning -> Instances`` and select the `Cloud Foundry App` Instance Type
+#. Navigate to |ProIns| and select the `Cloud Foundry App` Instance Type
 #. Select :guilabel:`NEXT`
 #. Select a Group and PCF Cloud
 #. Add an Instance Name
@@ -182,7 +182,7 @@ Cloud Foundry App Instance Type
 #. Select a Plan and available options for the Plan, or use the custom Plan
 #. Select a Space to add the Instance to
 #. Select :guilabel:`NEXT`
-#. In the Deployments section, select a Deployment and Version to be deployed. These can be git repos or files added in ``Provisioning -> Deployments``
+#. In the Deployments section, select a Deployment and Version to be deployed. These can be git repos or files added in |ProCodDep|
 
    .. IMPORTANT:: If services are specified in a git repo manifest, |morpheus| assumes they are already exist in the PCF cloud with matching names.
 

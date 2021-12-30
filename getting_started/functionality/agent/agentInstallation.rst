@@ -3,7 +3,7 @@ Agent Installation
 
 There are many methods to install the |morpheus| Agent on supported targets. All Agent installation methods are executing a script on the target that calls back to the |morpheus| appliance over port 443.
 
-.. important:: All Agent installation methods require the Target (VM or Host) to resolve and reach the appliance URL over port 443. In addition to the main Appliance URL (in Administration > Settings), additional Appliance URLs can be set per cloud in the Advanced Options section of the Create/Edit Cloud modal. When this field is populated, it will override the main Appliance URL for anything provisioned into that Cloud.
+.. important:: All Agent installation methods require the Target (VM or Host) to resolve and reach the appliance URL over port 443. In addition to the main Appliance URL (in |AdmSet|), additional Appliance URLs can be set per cloud in the Advanced Options section of the Create/Edit Cloud modal. When this field is populated, it will override the main Appliance URL for anything provisioned into that Cloud.
 
 Basic Installation Steps
 ^^^^^^^^^^^^^^^^^^^^^^^^
@@ -69,7 +69,7 @@ Requirements
 ............
 
 * Port 22 is open for Linux images, and SSH is enabled
-* Credentials have been entered on the image if using a custom or synced image. Credentials can be entered on images in the Provisioning > Virtual Images section
+* Credentials have been entered on the image if using a custom or synced image. Credentials can be entered on images in the |LibVir| section
 
 WinRM
 `````
@@ -82,8 +82,8 @@ Process
 Requirements
 ............
 
-* Port 5985 must be open and winRM enabled for Windows images
-* Credentials have been entered on the image if using a custom or synced image. Credentials can be entered on images in the Provisioning > Virtual Images section
+* Port 5985 must be open and WinRM enabled for Windows images
+* Credentials have been entered on the image if using a custom or synced image. Credentials can be entered on images in the |LibVir| section
 * Administrator User (SID 500) is required for Windows Agent install
 
 VMware Tools
@@ -98,7 +98,7 @@ Requirements
 ............
 
 * VMware Tools is installed on the template(s)
-* Credentials have been entered on the Image if using an uploaded or synced image when Cloud-init, Guest Customizations, or Sysprep for Windows are not used. Credentials can be entered on Images in the Provisioning > Virtual Images section
+* Credentials have been entered on the Image if using an uploaded or synced image when Cloud-init, Guest Customizations, or Sysprep for Windows are not used. Credentials can be entered on Images in the |LibVir| section
 * Administrator User (SID 500) is required for Windows Agent install.
 
 Cloud-Init
@@ -114,7 +114,7 @@ Requirements
 
 * Cloud-Init is installed on Virtual Image
 * "IS CLOUD INIT ENABLED?" is checked (true) on the |morpheus| Virtual Image record
-* Cloud-Init User is configured in the Admin > Provisioning section
+* Cloud-Init User is configured in the |AdmSetPro| section
 
 Cloudbase-init
 ``````````````
@@ -128,7 +128,7 @@ Requirements
 
 * Cloudbase-Init is installed on the Virtual Image
 * "IS CLOUD INIT ENABLED?" is checked (true) on the |morpheus| Virtual Image record
-* Windows Administrator password defined in the Administration -> Provisioning section
+* Windows Administrator password defined in the |AdmSetPro| section
 
 Windows Unattend
 ````````````````
@@ -142,12 +142,12 @@ Requirements
 ............
 
 VMware
-  - Windows Administrator password defined in the Administration > Provisioning section OR Administrator User (SID 500) and valid Windows password are defined on the |morpheus| Virtual Image record
+  - Windows Administrator password defined in the |AdmSetPro| section OR Administrator User (SID 500) and valid Windows password are defined on the |morpheus| Virtual Image record
   - "FORCE GUEST CUSTOMIZATION?" is checked (true) on the |morpheus| Virtual Image record when using DHCP
   - "IS CLOUD INIT ENABLED?" is unchecked (false) on the |morpheus| Virtual Image record
 
 Nutainx/SCVMM/Openstack
-  - Windows Administrator password defined in the Administration > Provisioning section OR Administrator User (SID 500) and valid Windows password are defined on the |morpheus| Virtual Image record
+  - Windows Administrator password defined in the |AdmSetPro| section OR Administrator User (SID 500) and valid Windows password are defined on the |morpheus| Virtual Image record
   - "ENABLED SYSPREP?" is checked (true) on the |morpheus| Virtual Image record
   - "IS CLOUD INIT ENABLED?" is unchecked (false) on the |morpheus| Virtual Image record
 
@@ -157,7 +157,7 @@ Manual
 Process
 .......
 
-- From the VM or Host record page (``/infrastructure/servers/${id}``) run :guilabel:`ACTIONS` -> ``Download Agent Script``
+- From the VM or Host record page (``/infrastructure/servers/${id}``) run :guilabel:`ACTIONS` > ``Download Agent Script``
 - This is will generate an Agent install script based off the target OS and platform, Appliance URL, and API key
 - Manually execute the downloaded script on the Target VM or Host
 
@@ -186,13 +186,13 @@ Agent Install Requirements
 +------------------------------------------------------------------------------------------+------------------------------------------+-------+------------------------------------------+------------------------------------------+----------------+----------+------------------------------------------+
 | Syspreped Image and Sysprep Enabled flagged on Virtual Image (Nutanix, Openstack, SCVMM) | NO                                       | NO    | NO                                       | NO                                       | NO             | YES      | NO                                       |
 +------------------------------------------------------------------------------------------+------------------------------------------+-------+------------------------------------------+------------------------------------------+----------------+----------+------------------------------------------+
-| Force Guest Customizaitons flagged on Virtual Image                                      | NO                                       | NO    | DHCP                                     | NO                                       | NO             | DHCP     | NO                                       |
+| Force Guest Customizations flagged on Virtual Image                                      | NO                                       | NO    | DHCP                                     | NO                                       | NO             | DHCP     | NO                                       |
 +------------------------------------------------------------------------------------------+------------------------------------------+-------+------------------------------------------+------------------------------------------+----------------+----------+------------------------------------------+
 | Cloud-Init installed and flagged on Virtual Image                                        | NO                                       | NO    | NO                                       | YES                                      | YES            | NO       | NO                                       |
 +------------------------------------------------------------------------------------------+------------------------------------------+-------+------------------------------------------+------------------------------------------+----------------+----------+------------------------------------------+
-| Global Cloud-Init user populated in /admin/provisioning                                  | NO                                       | NO    | NO                                       | YES                                      | NO             | NO       | NO                                       |
+| Global Cloud-Init user populated in |AdmSetPro|                                          | NO                                       | NO    | NO                                       | YES                                      | NO             | NO       | NO                                       |
 +------------------------------------------------------------------------------------------+------------------------------------------+-------+------------------------------------------+------------------------------------------+----------------+----------+------------------------------------------+
-| Windows Administrator Password populated in /admin/provisioning                          | NO                                       | NO    | NO                                       | NO                                       | YES            | YES      | NO                                       |
+| Windows Administrator Password populated in |AdmSetPro|                                  | NO                                       | NO    | NO                                       | NO                                       | YES            | YES      | NO                                       |
 +------------------------------------------------------------------------------------------+------------------------------------------+-------+------------------------------------------+------------------------------------------+----------------+----------+------------------------------------------+
 | Access to configured YUM or APT repos                                                    | NO but will cause delay in Agent Install | N/A   | NO but will cause delay in Agent Install | NO but will cause delay in Agent Install | N/A            | N/A      | NO but will cause delay in Agent Install |
 +------------------------------------------------------------------------------------------+------------------------------------------+-------+------------------------------------------+------------------------------------------+----------------+----------+------------------------------------------+
@@ -200,11 +200,11 @@ Agent Install Requirements
 +------------------------------------------------------------------------------------------+------------------------------------------+-------+------------------------------------------+------------------------------------------+----------------+----------+------------------------------------------+
 | User with Sudo Access set on Virtual Image (Greenfield)                                  | YES                                      | N/A   | YES                                      | NO                                       | N/A            | N/A      | N/A                                      |
 +------------------------------------------------------------------------------------------+------------------------------------------+-------+------------------------------------------+------------------------------------------+----------------+----------+------------------------------------------+
-| Adminsitrator User (SID 500) set on Virtual Image  (Greenfield)                          | N/A                                      | YES   | YES                                      | N/A                                      | NO             | N/A      | N/A                                      |
+| Administrator User (SID 500) set on Virtual Image  (Greenfield)                          | N/A                                      | YES   | YES                                      | N/A                                      | NO             | N/A      | N/A                                      |
 +------------------------------------------------------------------------------------------+------------------------------------------+-------+------------------------------------------+------------------------------------------+----------------+----------+------------------------------------------+
 | User with Sudo Access set on VM/Host Record (Brownfield)                                 | YES                                      | N/A   | YES                                      | N/A                                      | N/A            | N/A      | N/A                                      |
 +------------------------------------------------------------------------------------------+------------------------------------------+-------+------------------------------------------+------------------------------------------+----------------+----------+------------------------------------------+
-| Adminsitrator User (SID 500) set on VM/Host Record (Brownfield)                          | N/A                                      | YES   | YES                                      | N/A                                      | N/A            | N/A      | N/A                                      |
+| Administrator User (SID 500) set on VM/Host Record (Brownfield)                          | N/A                                      | YES   | YES                                      | N/A                                      | N/A            | N/A      | N/A                                      |
 +------------------------------------------------------------------------------------------+------------------------------------------+-------+------------------------------------------+------------------------------------------+----------------+----------+------------------------------------------+
 
 

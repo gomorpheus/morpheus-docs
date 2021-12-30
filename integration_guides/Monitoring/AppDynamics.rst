@@ -6,7 +6,7 @@ AppDynamics is a very powerful performance and application monitoring tool. It f
 Configuring The AppDynamics Integration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-  #. Navigate to Administration > Monitoring
+  #. Navigate to |AdmSetMon|
   #. Expand the AppDynamics section
   #. Toggle the Enable slider
   #. Fill out desired fields

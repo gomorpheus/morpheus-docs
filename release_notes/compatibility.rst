@@ -20,8 +20,11 @@ Breaking Changes
 - 5.2.6, 5.3.1: Appliance & Agent java version updated to ``8u292-b10``. jdk8u292 disables TLS 1.0 and 1.1 by default
 - 5.2.9: OpenStack v2 Identity API is deprecated as of v5.2.9 (and is removed as of v5.3.3)
 - 5.3.2+: :menuselection:`Provisioning --> Deployments` has been moved to :menuselection:`Provisioning --> Code --> Deployments`
-- 5.3.2+: The local code repository path moved from ``/var/opt/morpheus/morpheus-ui/repo`` to ``/var/opt/morpheus/morpheus-local/repo`` to reduce potential shared storage issues and perfomace restrictions. The reconfigure process creates the folders and sets the paths in application.yml, no manual intervention is needed unless symlinks exisit on ``/var/opt/morpheus/morpheus-ui/repo/git`` which will need to be removed prior to reconfiguring 5.3.2. The old ``/var/opt/morpheus/morpheus-ui/repo`` path will be automatically deleted in a fulture release but can be manually recursivly deleted at any time for storage reclaimation.
-- 5.3.3: OpenStack v2 Identity API is removed
+- 5.3.2+: The local code repository path moved from ``/var/opt/morpheus/morpheus-ui/repo`` to ``/var/opt/morpheus/morpheus-local/repo`` to reduce potential shared storage issues and performance restrictions. The reconfigure process creates the folders and sets the paths in application.yml, no manual intervention is needed unless symlinks exisit on ``/var/opt/morpheus/morpheus-ui/repo/git`` which will need to be removed prior to reconfiguring 5.3.2. The old ``/var/opt/morpheus/morpheus-ui/repo`` path will be automatically deleted in a fulture release but can be manually recursively deleted at any time for storage reclamation.
+- 5.3.3: Support for OpenStack v2 Identity API is removed
+- 5.3.4: Major UI navigation structure changes. Refer to the :ref:`Navigation Updates` reference table
+- 5.4.2 (Advanced Notice): ServiceNow: Instance and Blueprint specific exposures will be removed from ServiceNow plugin support. More advanced configurations of Instances and Blueprints, in addition to Workflows, can be exposed utilizing Catalog Items
+- 5.4.2 (Advanced Notice): vCloud Director: vCD 9.x will no longer be supported by Morpheus
 
 |morpheus| Application OS
 =========================
@@ -46,8 +49,8 @@ Breaking Changes
      - 7.x, 8.x
      - If CentOS 8.2 is pinned to 8.2.2004 vault, the PowerTools repository will need to be pinned to 8.2.2004 to access freerdp-libs 2.0.0
    * - Debian
-     - 9, 10, 11
-     - FreeRDP 2.0 is not compatible with Debian 9. Guacd will remain at 1.0.0 for Appliances running on Debian 9.
+     - |debianVersion|
+     - FreeRDP 2.0 is not compatible with Debian 9. guacd will remain at 1.0.0 for Appliances running on Debian 9.
    * - RHEL
      - 7.x, 8.x
      -
@@ -64,7 +67,13 @@ Services
 |morphver| Service Version Changes
 ----------------------------------
 
-- No service version changes from |previousMorphVer|
+- Java upgraded to 8u312-b07 :superscript:`5.2.12`
+- MySQL upgraded to 5.7.35 :superscript:`5.2.12`
+- Nginx upgraded to 1.20.1 :superscript:`5.2.12`
+- RabbitMQ upgraded to 3.9.8 :superscript:`5.2.12`
+- Tomcat upgraded to 9.0.54 :superscript:`5.2.12`
+
+|
 
 |morphver| Service Version Compatibility
 ----------------------------------------
@@ -88,20 +97,30 @@ When externalizing MySQL, Elasticsearch and/or RabbitMQ services, the following 
 +---------------------------------------+-----------------------+-------------------------------------+
 | Nginx                                 |                       | |nginxver|                          |
 +---------------------------------------+-----------------------+-------------------------------------+
+| OpenSSL                               |                       | |openssl|, |openssl_fips| (FIPS)    |
++---------------------------------------+-----------------------+-------------------------------------+
+| Java                                  |                       | |java|                              |
++---------------------------------------+-----------------------+-------------------------------------+
+| Java (macOS agent)                    |                       | |java-mac|                          |
++---------------------------------------+-----------------------+-------------------------------------+
+
 
 Security
 ========
 
-**CVEs Addressed**
+CVEs Addressed
+--------------
 
-- CVE-2021-30129
+No CVE's mitigated from v5.3.4
+
+|
 
 Upgrade Paths & Methods
 =======================
 
 The following table shows supported version upgrade paths and methods.
 
-.. include:: upgrade_table.rst
+.. include:: /release_notes/upgrade_table.rst
 
 |
 
@@ -110,4 +129,4 @@ Integrations
 
 .. note:: Current iterations of Amazon AWS, Microsoft Azure, Google Cloud Platform, Digital Ocean, HPE OneView, OpenTelekom Cloud, IBM Bluemix, Softlayer and UpCloud are all supported.
 
-.. include:: compatibility_table.rst
+.. include:: /release_notes/compatibility_table.rst

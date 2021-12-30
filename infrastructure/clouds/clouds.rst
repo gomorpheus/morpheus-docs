@@ -50,7 +50,7 @@ Information on each cloud type can be found in the :ref:`integration-guide` sect
 Creating Clouds
 ---------------
 
-Clouds can be added from `Infrastructure > Clouds` or in `Infrastructure -> Groups -> (select Group) -> Clouds`. Individual Guides for adding specific Cloud Types can be found in the :ref:`integration-guide` section.
+Clouds can be added from `Infrastructure > Clouds` or in `Infrastructure > Groups > (select Group) > Clouds`. Individual Guides for adding specific Cloud Types can be found in the :ref:`integration-guide` section.
 
 Cloud Detail View
 -----------------
@@ -79,7 +79,7 @@ Clusters
   The Clusters tab displays clusters provisioned into the Cloud being viewed, including their status, type, name, layout, workers, and compute, memory, and storage stats. You can add a cluster by clicking :guilabel:`ADD CLUSTER`.
 Hosts
   The Hosts tab displays available hosts in the Cloud and displays power, OS, name, type, cloud, IP address, nodes, disk space, memory, and status. You can add a resource by clicking :guilabel:`ADD RESOURCE`, add a hypervisor host by clicking :guilabel:`ADD HYPERVISOR`, or perform action an action by selecting one or more Hosts and clicking :guilabel:`ACTIONS`.
- VMs (Virtual Machines)
+ VMs
   Displays an inventory of existing Instances in your Cloud configuration and provides details such as power, OS, name, type, cloud, IP address, nodes, disk space, memory, and status.
 Bare Metal
   Setup PXE Boot in the Boot section to add bare metal servers. Once set up you can view information such as power, OS, name, type, cloud, IP address, nodes, disk space, memory, and status.
@@ -94,9 +94,9 @@ Data Stores
 Resources
   Displays Resource Pools synced from the Cloud, including their name, description, and targeted Tenant.
 Policies
-  Manages Policies enforced on the Cloud. Setting a policy on this tab is equal to creating a policy in Administration > Policies and scoping it to the selected Cloud.
+  Manages Policies enforced on the Cloud. Setting a policy on this tab is equal to creating a policy in |AdmPol| and scoping it to the selected Cloud.
 Profiles
-- Manages |profileTypes| Profiles that create custom object associated secrets and metadata that will automatically be mapped per Cloud selection during provisioning and automation.
+  Manages |profileTypes| Profiles that create custom object associated secrets and metadata that will automatically be mapped per Cloud selection during provisioning and automation.
 
 Deleting Clouds
 ---------------

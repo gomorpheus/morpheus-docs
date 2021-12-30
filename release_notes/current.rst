@@ -4,194 +4,109 @@
 |morphver| Release Notes
 *************************
 
-.. WARNING:: OpenStack v2 Identity API has been removed in v5.3.3
-
 .. NOTE:: Items appended with :superscript:`5.x.x` are also included in that version
-
 .. .. include:: highlights.rst
 
 New Features
 ============
 
-:Amazon: - Added KMS KEY ID field in provisioning Advanced Options sections for specify an AWS KMS key for encrypting EBS Volumes during provisioning when volume encryption is enabled
-         - Asia Pacific (Seoul) ap-northeast-2 region added
-
-:Azure: - Select Availability Zones during Instance, App, and Cluster provisioning. Select "Availability Zone" from the "Availability Options" menu and then specify the appropriate Availability Zone from the additional field that appears in the wizard
-
-:Clusters: - Added "Install Docker" checkbox to the Add Cluster Layout modal. When checked, Docker is installed and when left unchecked, |morpheus| assumes Docker is already installed or will be installed via Workflows or some other means
-           - :ref:`New 20.1 & 20.2 Cluster Layouts seeded<k8s>`
-
-:Google: - Added sync for Service Accounts and the ability to select a service account when provisioning Instances, Blueprints and Apps, Clusters and Hosts to Google Clouds. Once the Resource Pool is selected, the available service accounts are synced and the dropdown menu to select them appears
-         - When provisioning to the default service account for the selected resource pool, an additional Access Scope option is presented. Users can opt to allow default access or to allow full access to all cloud APIs
-         - |morpheus| will now onboard live cost data from GCP, see `GCP integration guide <https://docs.morpheusdata.com/en/5.3.3/integration_guides/Clouds/google/google.html#enabling-live-costing-for-gcp>`_ for configuration details
-         - Google Kubernetes Engine (GKE) support added for creating, managing, discovering and provisioning to GKE Kubernetes Clusters.
-         - Seoul Region Added
-
-:Hosts: - Deleting a Host or VM (Infrastructure > Hosts) with “Remove Associated Instances” marked and “Remove Infrastructure” unmarked is now handled differently. Host records and A records are no longer removed and teardown-phase Tasks are not run. If the Cloud is configured to inventory existing resources, the host or VM will be synced back in as a unmanaged resource on the next cloud sync :superscript:`5.2.9`
-
-:Huawei Cloud: - EIP billing mode changed to bill by traffic rather than bandwidth. Note that this change does not affect OTC Clouds which only bill by traffic :superscript:`5.2.9`
-
-:Kubernetes: - Deactivated all 1.17 Cluster Layouts (no longer supported by k8s)
-             - Google Kubernetes Engine (GKE) support added for creating, managing, discovering and provisioning to GKE Kubernetes Clusters.
-             - :ref:`New 20.1 & 20.2 Cluster Layouts seeded<k8s>`
-             - Added support for either or both token and kubceconfig on external kube clusters
-
-:Library: - Added Ubuntu 20 Layouts for nearly all supported Clouds :superscript:`5.2.9`
-          - Added Debian 9 and 10 Layouts for VMware Clouds to the standard Morpheus Library :superscript:`5.2.9`
-          - Added CentOS 8 (7.9, 8.3, 8.4) images for nearly all Cloud types
-          - Added Rocky 8 images for VMware, Amazon, Google, Nutanix, OpenStack, DigitalOcean (and more) Cloud types
-          - Added OpenSUSE 15 images for all compatible Clouds
-          - Added Windows Server 2016 and 2019 images for Azure and Google Clouds
-          - Disabled several deprecated System Instance Types and associated Layouts that are no longer maintained: **Cassandra, Confluence, Devstack, Hadoop, Jboss, Jenkins, Magento, Mongo, Moogsoft, Nexus, Percona, Puppet, RethinkDb, Riak, RiakCs, Stash, Solr, Wordpress, and Zookeeper**. NOTE: this only disables the Instance type from the system seeded library and does not affect user created Insatnce Types or Layouts. :superscript:`5.2.9`
-
-:Logs: - Splunk and LogRhythm integrations removed from Administration > Settings > Logs
-
-:Migrations: - Migrations UI (under the Tools menu) is deprecated and removed
-
-:Network: - Added a Display Name field for networks, this value appears as the network name on the network display page (Infrastructure > Network). For synced networks, the name and display name will initially be identical but users can edit the display name if it makes sense to present a friendlier name to users :superscript:`5.2.9`
-          - Added ability to change network during an Instance reconfigure (Select Reconfigure from the Instance Actions menu) for Instances in VMware and OpenStack Clouds. In other Clouds, network is still a read-only field during Instance reconfigure :superscript:`5.2.9`
-
-:OpenStack: - Create, modify, and delete OpenStack Projects (Resource Pools) from Cloud detail pages
-            - Added option to specify an OpenStack project at provision time through the Resource Pool dropdown menu. This option is available when provisioning Instances, Apps, and Clusters
-            - Support for v2 Identity API was deprecated in 5.2.9 and has been dropped for this release
-
-:Packages: - New ``/administration/packages`` component added targeted for uploading future |morpheus| provided mpg's, however users will be able to create, distribute and/or import custom |morpheus| packages. Additional information on creating custom packages will be provided.
-           - New Role permission ``Admin: Packages`` (None, Full) added. Allows or disallows access to the Packages tab on the Integrations page (Administration > Integrations)
-
-:Profiles: - New ``Profiles`` component added to Clouds with ``Terraform Profile`` and ``Key/Value Profile`` types. Profiles give users the ability to create custom object associated secrets and metadata that will automatically be mapped during provisioning and automation.
-           - Terraform Profiles allow created cloud associated tfvars secrets, allowing tf apps and specs to be provisioned across multiple clouds that required different tfvars.
-           - Key/Value Profiles expand provisioning, automation, billing and reporting capabilities by allowing dynamic custom object specific metadata in provisioning and automation mappings using ``<%=cloud.profile.key%>``
-
-:ServiceNow: - Optimized CMDB sync performance to significantly reduce sync times for large cmdb record sets.
-             - ServiceNow Multi-Domain (domain separation) Support added. Note: Requires upcoming plugin version
-
-:Terraform: - Added UI feedback and status indication when refreshing Terraform Instance state (:guilabel:`REFRESH STATE` button or "Refresh State" selection from Instance Actions menu)
-            - Added support for ``count`` and ``for_each`` loops
-            - ``terraform`` command line added to State tabs for executing tf cli commands with execution output
-            - Added cloudConfig.agentInstall variable for adding agent install script to tf. Example: ``<%=instance?.cloudConfig?.agentInstall%>`` can be used in userdata section of an aws_instance
-            - Custom Options can now be used in tf library configs. For example, option types  can be set on tf layouts or associated Instance Types and <%=customOptions.key%> used tf.
-
-:UI: - Added more detailed help block text for the Private Key field when storing a new key pair in Morpheus (Infrastructure > Keys & Certs > Key Pairs) :superscript:`5.2.9`
-     - Execution and history tabs: Execution output is now limited on initial load to 10k characters per event with an option to load the full output for each event
-     - Help text added to Add Integration modals warning that HTTP URLs are insecure and not recommended
-
-:vCloud Director: - System administrator account credentials can now be provided to authenticate vCD Cloud integrations in |morpheus|. Previously, only organization administrator credentials could be used. Keep in mind that you will need to set the system administrator account credentials appropriately, for example, to be able to see entities created by the organization administrator
-                  - Added the option to specify a catalog to store |morpheus|-provisioned artifacts, previously |morpheus| would always create and use a "morpheus_auto" catalog
-
-:VDI: - VDI pools can now be configured to be "Recyclable". When enabled, the VDI Instance will revert back to a snapshot and become available once again after the user has logged out and the VDI session has expired. This behavior will not apply to VDI pools which are also configured to be persistent because in that configuration the Instance is merely stopped and saved for the user's next session. This feature is currently only available for Cloud types which support snapshot management (VMware, Nutanix, and vCD)
-      - Improved image streaming in low bandwidth situations
-
-
-:VMware vCenter: - Added support for VMware Content Library. |morpheus| automatically on-boards items from your content library and re-syncs them regularly to keep them up to date. Add images from the |morpheus| library to Node Types for use in Layouts and Instance Types
-                 - The UUID for hypervisor hosts synced into vCenter Clouds is now stored to the ``unique_id`` field on hypervisor host ``compute_server`` records :superscript:`5.2.9`
-                 - Improved sync performance for VMware Resource Pools and Folders :superscript:`5.2.9`
+:API & CLI: - Added API and CLI coverage for configuring DHCP on NSX-T network segments :superscript:`5.2.13`
+             - Added API and CLI coverage for configuring DHCP on NSX-T routers :superscript:`5.2.13`
+             - Added API coverage for working with NSX-T DHCP static routes :superscript:`5.2.13`
+             - Added API endpoints for gathering NSX-T transport zone and edge cluster details :superscript:`5.2.13`
+             - Added API endpoints to create and manage NSX-T transport zones :superscript:`5.2.13`
+             - Create and manage NSX-T DHCP relays from |morpheus| API and CLI :superscript:`5.2.13`
+             - Create and manage NSX-T DHCP servers from |morpheus| API and CLI :superscript:`5.2.13`
+             - NSX-T distributed firewall groups and rules can now be created and managed from |morpheus| API and CLI :superscript:`5.2.13`
+:Clouds: - Scale Priority field removed from the Add/Edit Cloud modal. For Docker provisioning, this field could be used to determine which Cloud would take scale precedence in the Group. This is no longer needed since |morpheus| works with cluster constructs :superscript:`5.2.13`
+:Kubernetes: - AKS: Cluster Scaling functionality added
+              - GKE: Cluster Scaling functionality added
+:Logs: - New universal React log view component for Instance, App, Server, Cluster, Monitoring > Logs, and Administration > Health > |morpheus| Logs sections.
+:NSX: - Added the ability to configure DHCP static routes for NSX-T :superscript:`5.2.13`
+       - Added the capability to monitor health status of load balancer server pool members :superscript:`5.2.13`
+       - Distributed firewalls for NSX-T are now accessible to Subtenants when an NSX-T integration and distributed firewall has been shared from the primary Tenant :superscript:`5.2.13`
+       - When creating or editing NSX-V router interfaces (distributed routers or edge gateways), users can now add a secondary IP address, if desired, rather than just a primary :superscript:`5.2.13`
+:OpenStack: - Cinder Volume type selection support for Openstack added
+:Plans & Pricing: - Platform Pricing: Distro specific Platform options added to Platform price types: ``Linux Canonical``, ``Linux Centos``, ``Linux Debian``, ``Linux Fedora``, ``Linux OpenSuse``, ``Linux RedHat``, ``Linux Suse``, and ``Linux Xen``
+:Plugins: - Invalid jars are now displayed as Invalid in the Plugins directory.
+           - Settings added: Ability to edit Plugins and configure standard and custom settings added
+:Roles: - Kubernetes: Added new role permission ``Infrastructure: Kubernetes Control`` with ``full`` and ``none`` options to enable more fine grained access to kubernetes control
+:Security: - Re-authentication now required when updating user password from User Settings in the UI. The logged in user or impersonated user must now enter the Current Password and then a matching Password/Confirm value to change the password.
+:UI: - For security purposes, the |morpheus| version number has been removed from the login screen. The version number is still viewable from the footer once the user is logged in :superscript:`5.2.13`
+:VMware: - |morpheus| now extracts ovf details of uploaded virtual images
+:vCloud Director: - VCD NSX Integration added (Phase 1)
+                  - VCD NSX: Application Port Profiles CRUD added
+                  - VCD NSX: Configure DNS on a network: DNS Primary and DNS Secondary values can be specified on a VCD network now
+                  - VCD NSX: IP Sets CRUD: Ability to create and managed VCD NSX IP Sets
+                  - VCD NSX: NAT Rules: NAT functionality for VCD NSX routers added
+                  - VCD NSX: Network CRUD added with ability to create and managed ``VCD Isolated`` and ``VCD Routed`` Networks.
+                  - VCD NSX: Security Groups CRUD: Added ability to create and manage VCD NSX Router Firewall Group Security Groups.
 
 
 Fixes
 =====
 
-:Amazon: - Fixed issue with creating S3 Buckets when using STS Assume Role
-:Analytics: - Cloud Costs: Fixed selecting a tag name and value combination in the "more" filters in Cloud Cost Analysis :superscript:`5.2.9`
-:Ansible: - Ansible Galaxy: New ``roles`` working folder added, resolves intermittent "galaxy dependent roles can not be found" issue when using git integration source :superscript:`5.2.9`
-          - Fixed display of checkbox values for ``USE ANSIBLE GALAXY``, ``ENABLE VERBOSE LOGGING`` and ``USE MORPHEUS AGENT COMMAND BUS`` options in UI.  :superscript:`5.2.9`
-          - Fixed Ansible task execution issue caused by special characters in user name :superscript:`5.2.9`
-:API: - Currencies: Fixed creating Prices with USN currency via API :superscript:`5.2.9`
-      - Tenants: Fixed deletion of Tenants with existing Instances when ``removeResources=on`` :superscript:`5.2.9`
-      - Tenants: Fixed deletion of Tenants with existing users via API/CLI :superscript:`5.2.9`
-      - Updated response for ``GET ... /api/zones`` when no clouds exist. :superscript:`5.2.10`
-:Appliance: - Agent installation: Reconfigure process updated to add ``/var/opt/morpheus/package-repos/yum/el/8.2 -> /var/opt/morpheus/package-repos/yum/el/8`` symlink to handle agent installation requests for centos/rhel configurations version pinned to ``8.2`` :superscript:`5.2.10`
-:Automation: - Updated cron syntax validation for schedules & human readable cron string now updates before save
-:Azure: - ARM Spec Templates: Fixed repo path issue with ARM spec templates stored in a Git repository :superscript:`5.2.9`
-        - Costing: |morpheus| now stores the actual currency and conversion rates during cost syncs to address reporting, budget and analytic values of non-usd actuals when the tenants defined currency does not match actual cost currency :superscript:`5.2.10`
-        - Fixed issue with record being association with the deleted record of a re-synced service plan :superscript:`5.2.10`
-        - Fixed ``Actions -> Start/Stop`` for discovered VMs that were converted to managed :superscript:`5.2.9`
-        - Fixed syncing of private images that do not belong to the scoped region of the cloud (not applicable when cloud is scoped to all regions).
-        - Network selection now scoped by region
-:Blueprints: - Rapidly activating different Builder, Raw, and Preview tabs in the blueprint wizard no longer causes the active tab content to get stuck. :superscript:`5.2.9`
-:Cloning: - Agent Installation: Fixed agent installation issue when Cloning a Windows Instance caused by existing ``C:\installAgent.ps1`` file. :superscript:`5.2.9`
-:Clusters: - Docker Clusters: Fixed custom option type issues required flag enforcement and type ahead option type issue when provisioning Docker Clusters :superscript:`5.2.9`
-           .. - Fixed 500 error when selecting existing K8s cluster that is associated with a disabled cluster layout
-:Code: - Git: Fixed pull issue with some git integrations (ADO) using https basic auth cause by appending ``.git`` to repo url
-:Costing: - Fixed inaccuracies on the MTD costing and pricing information getting calculated on server invoice records when ``Sync Costing`` is enabled on Cloud Types that do not have costing integrations
-:Google: - Fix duplicate subnet record creation for Shared Networks when cloud scoping is changed between a single region and all regions
-:Groups: - ``Infrastructure -> Groups`` Fixed Cloud count hiding after 30 seconds :superscript:`5.2.9`
-:Guidance: - CPU Recomendations: Fixed guidance execution defaulting the CPU back to 1 :superscript:`5.2.9`
-:Health: - Fixed issue with |morpheus| Appliance logs not displaying in ``Administration -> Health: Logs`` when ``appliance_instance`` id not equal to ``1`` :superscript:`5.2.9`
-:Keys & Certs: - Synced keypairs are now filtered from Key Pairs selection list in user settings and admin provisioning settings. Synced Key Pair records do not contain any key data and are not usable for user and global keypairs. :superscript:`5.2.9`
-:Image Builder: - Fixed issue with delayed boot command execution during image builds :superscript:`5.2.9`
-:Instance: - Tags: Fixed issue with tag sync where adding a new tag post-provision could remove existing tags
-:KVM: - Fixed infrastructure deletion of discovered VMs on brownfield KVM clusters :superscript:`5.2.10`
-:Library: - Fixed display of sub-tab selection in ``Provisioning -> Library`` UI mobile views :superscript:`5.2.9`
-          - Removed some old and unused catalog items from the |morpheus| standard Library :superscript:`5.2.9`
-:Localization: - Portuguese: The strings displayed in the Create Cloud dialog are now being displayed properly when selecting Portuguese as the language. Pass in ``?lang=pt_BR`` or ``?lang=pt_PT`` in the url to force the UI to Portuguese Brazil and Portugal, respectively :superscript:`5.2.9`
-:Networks:  - Removed deprecated delete option for networks interfaces in Network tab on Instance and Host detail pages. Network interfaces are managed via reconfigure. :superscript:`5.2.9`
-:NSX: - Fixed ability to select SERVICE TYPE at the time of NSX-T SSL certificate creation in a Tenant. :superscript:`5.2.9`
-      - Fixed members being added to LB pools when adding nodes to an Instance via ``Actions -> Add Node`` :superscript:`5.2.9`
-      - Fixed NSX-V VMs added as a part of an app with a load balancer on 1 or more instances being added to pools :superscript:`5.2.10`
-      - Fixed ui display issue updating NSX-V Firewall rule priority order after editing rule priority orders :superscript:`5.2.10`
-      - Fix visibility of NSX-T Pools created in subtenants on master tenant NSX-T public integrations :superscript:`5.2.10`
-:Option Types: Fixed Rest Option Lists Posts filtering out dependent Variables
-:Provisioning: - ``Copies`` field now hidden when when a Load Balancer is configured :superscript:`5.2.10`
-               - Fixed ``Copies`` field value not applying when using scroll up/down :superscript:`5.2.9`
-:Policies: - Delayed Removal: Fixed deleting an unmanaged vm within a Delayed Removal Policy Scope and with "Remove Associated Instances" check causing VM to shut down :superscript:`5.2.9`
-           - Fixed Boot order for App tiers not being honored when a provision approval policy is enforced :superscript:`5.2.9`
-           - Tag Enforcement: Fixed Tagging Policy not accepting Morpheus Variables as valid input when used in exported option types
-:Rubrik: - Backup size now displayed as ``-`` instead of ``0`` when backup size is not available :superscript:`5.2.9`
-:Reports: - Fix for display of utilization statistics in some Cloud Usage Reports :superscript:`5.2.9`
-:Roles: - Activity: Fixed viewing ``Operations -> Activity`` activity logs requiring ``Operations: Reports`` permissions :superscript:`5.2.9`
-        - Datastores: Edit option no longer displayed for Role Permission ``Infrastructure -> Datastores: Read`` :superscript:`5.2.9`
-:Security: - Reconfigure and Library XSS vulnerabilities remediated :superscript:`5.2.10`
-           - Updated request handling of user scoped policy creation during policy creation :superscript:`5.2.10`
-:Tasks: - Chef Bootstrap: Fixed issues where Chef Bootstrap execution would fail with reason "Chef Infra Client cannot execute without accepting the license" :superscript:`5.2.9`
-       - Variables: Fixed evaluation of <%=user.username%> variable in task executions :superscript:`5.2.9`
-:Terraform: - Fixed UI issue with ``NEXT`` and ``COMPLETE`` buttons becoming active before validation had completed :superscript:`5.2.10`
-            - Fixed ``null`` tf variable values rendering as ``[object object]`` in UI  :superscript:`5.2.9`
-            - Deleting a VM associated with an Instance in Terraform App with ``Remove associated Instances`` enabled, and the associated Instance is the only Instance in the App, no longer deletes the associated App.
-            - Added validation for deleting a Terraform app when ``deletion_protection=true`` in Terraform.
-            - Fixed ``for_each`` loop value nulled when using tfvars within cypher
-            - Fixed issue with resource -> image mapping that caused vm's associated with resources to remain as ``discovered`` server types 
-:User Settings: - Success Message added on save when updating Linux/Windows passwords in user settings (Displays for 5s then fades) :superscript:`5.2.9`
-:UI: - Execution and history tabs: Execution output is now limited on initial load to 10k characters per event with an option to load the full output for each event to address loading of large execution history datasets 
-:vCloud Director: - Fixed issue with user-data iso attachment when provisioning cloudbase-init enabled Windows images :superscript:`5.2.10`
-                  - Fixed ``safeComputerName`` issue during Windows Guest Customizations :superscript:`5.2.9`
-:VMware: - Fixed duplicate filename issue when adding multiple disks during reconfigure :superscript:`5.2.10`
-         - Fixed storage volume values not updating on sync when volumes were removed in vCenter but the total number of volumes matches |morpheus| records. :superscript:`5.2.10`
-         - Optimizations added for Resource Pool and Folder sync. Resolves issue with loading Resource Pools in add cloud wizard in environments with 500+ Resource Pools. :superscript:`5.2.9`
-         - Volumes now update properly when changing Image selection when provisioning the VMWARE Instance Type :superscript:`5.2.9`
-         - |morpheus| will no longer append ``localdomain`` to DNS suffix information in unattend customization XML when no domain or default domain are specified.
+:API & CLI: - AKS clusters can now be provisioned from |morpheus| CLI
+             - API calls to GET all Layouts no longer return Layouts to which the user doesn't have access :superscript:`5.2.13`
+             - Fixed an intermittent issue that could cause returned Instance lists not to be filtered properly in |morpheus| API :superscript:`5.2.13`
+             - Fixed an issue causing NSX-T network router firewall groups and rules creation from Subtenants to fail from |morpheus| API and CLI :superscript:`5.2.13`
+             - |morpheus| API access tokens now update with permissions changes in real time. When permissions are updated in |morpheus| UI, the changes will be effective immediately for future calls using the existing token :superscript:`5.2.13`
+:Alibaba Cloud: - Alibaba Cloud integrations are updated to honor proxy settings which prevented the ability to create these Clouds in certain environments :superscript:`5.2.13`
+:Amazon: - |morpheus| now honors VPC-scoping when displaying Security Groups :superscript:`5.2.13`
+:Ansible Galaxy: - Playbooks will no longer continue to run after an Ansible Galaxy command failure
+:Azure Stack: - Fixed an issue that caused the Resources Tab on Azure Stack Clouds to get stuck in a loading state leaving the user unable to view the data or work with those constructs :superscript:`5.2.13`
+:Azure: - Fixed an issue that caused the personal Windows user account (as stored in |morpheus| user settings) not to be added, even when marking the box to "Create My User" during provisioning
+:Backups: - Fixed an issue that could cause the appliance backup time to be set incorrectly when editing an existing appliance backup job :superscript:`5.2.13`
+:Domains: - Fixed issue with ``Local Domain`` domain option being selectable when Group Visibility is disabled for that domain.
+:ESXi: - Fixed an issue causing connection issues to ESXi hosts when the host contained notes which had double quotes (") in them :superscript:`5.2.13`
+:Elasticsearch: - Fixed an issue that could cause |morpheus| not to clean up all ElasticSearch logs which could eventually lead to log sizes becoming very large :superscript:`5.2.13`
+:Hosts: - Fixed an issue that could cause server names to become out of sync between |morpheus| and the cloud when the VM/server name was edited in both places at approximately the same time :superscript:`5.2.13`
+         - Removed the 'Retry' link from the Hosts and VMs list page (Infrastructure > Compute > Hosts or Virtual Machines) next to red status entries :superscript:`5.2.13`
+:Inputs: - Corrected an issue that could cause Typeahead Inputs not to search values correctly when associated with Operational Workflows :superscript:`5.2.13`
+          - Custom options (Inputs) always appear in the correct order on Instance Types, previously they could appear out of order if Inputs were added to the Instance Type after it was initially saved :superscript:`5.2.13`
+          - Option types containing quotes (") can now be passed into Service Catalog orders without creating errors
+:Instances: - Fixed an issue which would cause auto-scaling to attempt to add VMs to Clouds other than the one existing VMs were in, which often would fail :superscript:`5.2.13`
+:NSX-T: - Fixed an issue that caused NSX-T network server groups created in a Subtenant not to be visible to Subtenant users :superscript:`5.2.13`
+         - Gateway DHCP can now be configured on NSX-T network segments :superscript:`5.2.13`
+         - The Subnet DHCP section now expands properly when editing the network from an NSX-T detail page. Previously this section would not expand when clicked on :superscript:`5.2.13`
+:NSX: - Creating a NSX-T router group in a Subtenant and referencing it or a group shared from the primary tenant now works properly when creating a load balancer pool :superscript:`5.2.13`
+       - Firewall groups in NSX-T routers are now able to reference router groups created in the Subtenant or shared from the primary tenant :superscript:`5.2.13`
+       - The modal for editing Edge or DLR routers no longer hangs in a loading state under certain conditions
+:Open Telekom Cloud: - Changed the default "Bandwidth" field value to 300 mbps when provisioning to OTC on-prem Clouds and selecting a floating IP. The previous default of 1000 could cause problems if not specifically edited by the user :superscript:`5.2.13`
+:OpenStack: - Fixed an issue that could cause Plans not to appear in the provisioning wizard for OpenStack Instances after upgrading |morpheus|
+             - Restoring an Instance backup to a new Instance no longer attempts to use the same public IP address which could cause failures when the original IP address was still taken
+             - When an OpenStack Cloud is created in the primary Tenant and shared with a Subtenant, Subtenant users can now see the Roles list on the Resource Pools tab
+:Option Lists: - Fixed an issue that caused Option Lists from the |morpheus| Plans API not to populate correctly when associated with Service Catalog Blueprints or Workflows (Catalog Instances worked fine) :superscript:`5.2.13`
+:Plans & Pricing: - Setting vCPUs to custom and max storage to 0 no longer zeroes out other values on the plan (such as disk sizes and memory amounts) :superscript:`5.2.13`
+:Plugins: - Fixed errors that could surface when provisioning from custom Clouds developed using |morpheus| plugin architecture
+:Power Schedules: - Fixed an issue that caused Power Schedules not to appear on VMs assigned to Subtenants if the Power Schedule did not also exist in the Subtenant
+:PowerShell: - Fixed an issue that could cause PowerShell Tasks executed locally not to return the entire standard output
+:Provisioning: - When provisioning a plan that allows for custom root volume sizes, |morpheus| will no longer allow the user to set a root volume smaller than the template. Previously there was a UI warning but the user could still bypass it and the provision would fail
+                - When provisioning using stored software licenses (Administration > Settings > Software Licenses), licenses can now be added to unattend.xml even when Sysprep is not enabled on the image.
+:Roles: - Fixed an issue causing changes to Group Access permissions (which are saved automatically after each change) not to be retained under certain specific scenarios :superscript:`5.2.13`
+:Security: - The username cookie is now cleared on logout :superscript:`5.2.13`
+            - When logging out as a Subtenant user, the URL which redirects the user back to the login page no longer includes the Subtenant name and username :superscript:`5.2.13`
+:Service Catalog: - Fixed an issue that, in certain scenarios, could cause failed provisioning when lines of Blueprint app spec wrapped onto the next line :superscript:`5.2.13`
+:Storage: - Fixed a few minor issues that could cause problems with various CRUD actions related to storage servers :superscript:`5.2.13`
+:Tasks: - Fixed an issue that could prevent Python Tasks from retrieving Cypher secrets when more than ten Python Tasks happened to be running simultaneously :superscript:`5.2.13`
+:Terraform: - Fixed issue with reading Terraform variables from submodules instead of variables from the working folder's vars. (5.4.0)
+             - Multiline string variables are now supported which makes recalling GCP service account credentials from |morpheus| cypher much easier. See |morpheus| Knowledge Base for an example.
+             - Removed non-functional state file copy button.
+             - Type errors are no longer surfaced when calling Map of List of String type variable
+:UI: - Fixed issues related to form rendering and display when editing EKS clusters
+      - Puppet Master hostname now appears on the detail page for the Puppet integration. Previously there was a UI space blocked out for the hostname but it was never rendered into the UI :superscript:`5.2.13`
+      - The Options dropdown menu on many list pages (such as the Instances list page) no longer clips over other menus and headers when the menu is left open and scrolled up and out of the view window :superscript:`5.2.13`
+:Usage: - Fixed an issue that caused component prices not to be displayed in certain scenarios on the Usage tab (Operations > Costing > Usage)
+:VMware: - Users can no longer provision a Kubernetes cluster without an IP Pool. This would cause a provisioning failure because no IP addresses would be available for the worker nodes
+:vCloud Director: - Fixed issues that could cause power state mismatch between |morpheus| and vCD which could cause inaccuracies in usage stats and billing in |morpheus|
+                  - Instance provisioning no longer fails when attempting to provision with hostnames containing trailing hyphens (-). Instead, UI error messages are surfaced and the user can correct the problem before provisioning :superscript:`5.2.13`
 
-
-|morpheus| API & CLI Improvements
-=================================
-
-:Instances: - Calls to the ``instances`` API to GET a specific Instance (at multiple levels including Instance, container details, and server) now include the ``uuid`` property :superscript:`5.2.9`
-            - Added options to remove expiration, extend expiration, cancel shutdown, extend shutdown, and cancel removal for Instances from API and CLI
-
-:Checks: - The ``apiKey`` is now returned in GET calls for Push API-Type Monitoring Checks
-
-:Cluster Layouts: - Added flag to install Docker when creating Cluster Layouts from API and CLI. When disabled, |morpheus| assumes Docker is already installed or will be installed via Workflows or some other means
-
-:Logs: - Support removed for Splunk and LogRhythm integrations (as has been done in |morpheus| UI)
-
-:NSX-T: - Create, manage, and delete NSX-T segments :superscript:`5.2.9`
-        - Manage Group visibility for NSX-T segments :superscript:`5.2.9`
-        - Create, manage, and delete Tier 0 and Tier 1 routers :superscript:`5.2.9`
-        - Attach and detach Tier 1 routers to Tier 0 routers :superscript:`5.2.9`
-        - Retrieve any NSX-T objects which are associated with Tier 0 or Tier 1 routers :superscript:`5.2.9`
-        - Create, manage, and delete DNAT and SNAT rules :superscript:`5.2.9`
-
-:Reports: - Fix for display of utilization statistics in some Cloud Usage Reports :superscript:`5.2.9`
-
-:vCD: - Added ability to set the Recyclable attribute on VDI Pools through API and CLI
-
-:Virtual Images: - Added option to remove the virtual image from the cloud (or not) when the image is deleted from |morpheus| through API and CLI
 
 Appliance & Agent Updates
 =========================
 
-:Appliance: - Agent installation: Reconfigure process updated to add ``/var/opt/morpheus/package-repos/yum/el/8.2 -> /var/opt/morpheus/package-repos/yum/el/8`` symlink to handle agent installation requests for centOS/rhel configurations version pinned to ``8.2`` :superscript:`5.2.10`
-            - Java Updated to 8u302-b08 :superscript:`5.2.9`
-            - Tomcat version update to v9.0.50 :superscript:`5.2.9`
-            
-:Agent Packages: - Java Updated to 8u302-b08 :superscript:`5.2.9`
-                 - |morpheus| Node and VM Node Packages version update to 3.2.1 :superscript:`5.2.9`
+:Appliance: - lvm-attrib-gem updated to to 0.3.9 :superscript:`5.2.13`
+
+
+
+.. ..

@@ -19,7 +19,7 @@ Default Backup Bucket
   Select an existing bucket as the default for future backup runs. Click the ``Infrastructure Storage`` text link to add a new storage bucket to |morpheus| if needed
 
 Default Backup Schedule
-  Choose a default schedule interval for automated backups. The available selections in this dropdown menu are Execution Schedules defined in ``Provisioning > Automation > Execute Scheduling``
+  Choose a default schedule interval for automated backups. The available selections in this dropdown menu are Execution Schedules defined in |LibAutExe|
 
 Default Backup Retention
   Choose the default number of backups to be retained for automated Instance and appliance backup jobs

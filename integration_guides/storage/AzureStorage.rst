@@ -4,7 +4,7 @@ AzureStorage
 To Add Azure Storage
 ^^^^^^^^^^^^^^^^^^^^
 
-#. Navigate to `Infrastructure -> Storage`
+#. Navigate to `Infrastructure > Storage`
 #. Select :guilabel:`+ ADD`
 #. From the New Storage Provider Wizard input the following:
 

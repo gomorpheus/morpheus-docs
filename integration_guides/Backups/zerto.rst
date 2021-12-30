@@ -4,7 +4,7 @@ Zerto
 Adding Zerto Integration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-#. Navigate to `Backups -> Integrations`
+#. Navigate to `Backups > Integrations`
 #. Select :guilabel:`+ ADD`
 #. Select Zerto
 #. Fill in the following:

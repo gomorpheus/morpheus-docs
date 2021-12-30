@@ -1,7 +1,7 @@
 Backups
 =======
 
-In the `Backups -> Backups` section, currently configured Backups can be viewed and managed, and new Instance, Host and Provider backups be configured.
+In the `Backups > Backups` section, currently configured Backups can be viewed and managed, and new Instance, Host and Provider backups be configured.
 
 .. NOTE:: Role permissions for Backups determine which backups will be accessible per user.
 

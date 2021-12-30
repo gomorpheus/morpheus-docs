@@ -12,7 +12,7 @@ Create A Backup Job
 
 A Backup Job in |morpheus| holds the schedule timing and retention count for automated backups. If you already have a Job configured, you can move on to the next section. By default, |morpheus| includes two execution schedules: Daily at Midnight and Weekly on Sunday at Midnight. If currently-existing options do not make sense for your backup needs, create a new execution schedule:
 
-#. Navigate to Provisioning > Automation
+#. Navigate to |LibAut|
 #. Click on the "Execute Scheduling" tab
 #. Click :guilabel:`+ ADD`
 #. Enter schedule timing using ``cron`` notation
@@ -43,7 +43,7 @@ Configuring |morpheus| Appliance Backup
 
 With the groundwork laid in the previous sections, we're ready to enable and configure |morpheus| appliance backup.
 
-#. Navigate to Administration > Backups
+#. Navigate to |AdmSetBac|
 #. Slide the switch labeled "Backup Appliance"
 #. Click :guilabel:`SAVE`
 
@@ -83,7 +83,7 @@ Copy the SQL database backup from the backup bucket or file share to an applianc
   [root@app-server-new ~] /opt/morpheus/embedded/mysql/bin/mysql -u morpheus -h 10.1.2.2 morpheus -p < /tmp/morpheus_backup.sql
   Enter password:
 
-The data form the old appliance is now replicated on the new appliance. Simply start the UI to complete the process:
+The data from the old appliance is now replicated on the new appliance. Simply start the UI to complete the process:
 
 .. code-block:: bash
 

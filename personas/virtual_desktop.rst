@@ -30,7 +30,7 @@ Configuring Access to the Virtual Desktop Persona
 
 Access to the Virtual Desktop Persona and individual VDI pools is handled through the user Role and, where applicable, Tenant Role. When creating a new Role, access is restricted to the Virtual Desktop Persona and all VDI pools by default. To grant access:
 
-#. Navigate to the Role (Administration > Roles > Selected Role)
+#. Navigate to the Role (|AdmRol| > Selected Role)
 #. Access the Personas tab
 #. Toggle the Virtual Desktop permission to "Full" or "None"
 #. Access the VDI Pool Access tab

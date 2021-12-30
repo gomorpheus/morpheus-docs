@@ -24,7 +24,7 @@ Base Requirements
      - 7.x, 8.x
      -
    * - Debian
-     - 9, 10, 11
+     - |debianVersion|
      - FreeRDP 2.0 is not compatible with Debian 9. Guacd will remain at 1.0.0 for Appliances running on 9.
    * - RHEL
      - 7.x, 8.x
@@ -46,23 +46,23 @@ Base Requirements
 - Current major web browsers supporting modern standards, such as Google Chrome, Mozilla Firefox, Apple Safari, and Microsoft Edge are supported
 - Internet Connectivity (optional)
    - To download from |morpheus|' public docker repositories and system Virtual Image catalog
-   - Offline installation require installing the supplemental package in addition to the regular installation package. Local yum/apt repo access still required for offline installations.
+   - Offline installation requires installing the supplemental package in addition to the regular installation package. Local yum/apt repo access still required for offline installations.
 
 .. NOTE:: Access to ``yum`` and ``apt`` repos is still required for offline installations.
 
 -  VM and Host Agent Install (optional)
-    - Inbound connectivity access from provisioned vm's and container hosts on ports 443 (Agent install and communication). Port 80 may be required for older apt distros.
+    - Inbound connectivity access from provisioned VMs and container hosts on port 443 (Agent install and communication). Port 80 may be required for older ``apt`` distros.
 
-    - An Appliance URL that is accessible/resolvable to all managed hosts. It is necessary for all hosts that are managed by |morpheus| to be able to communicate with the appliance server ip on port 443. This URL is configured under Admin->Settings.
+    - An Appliance URL that is accessible/resolvable to all managed hosts. It is necessary for all hosts that are managed by |morpheus| to be able to communicate with the appliance server ip on port 443. This URL is configured under |AdmSet|.
 
 .. NOTE:: Ubuntu 16.10 is not currently supported.
 
 Storage Considerations
 ----------------------
 
-Upon initial installation |morpheus| takes up less than 10 GB of space, however Morpheus Services, Virtual Images, Backups, Logs and stats and user uploaded and imported data require adequate space on the Morpheus Appliance(s) per Appliance Configuration and activity. |morpheus| recommends at least 200 GB as a general figure to start from but storage needs will vary dramatically based on each specific use case. In some cases, significantly more space will be needed.
+Upon initial installation |morpheus| takes up less than 10 GB of space, however |morpheus| Services, Virtual Images, Backups, Logs, stats, and user-uploaded and imported data require adequate space on the |morpheus| Appliance(s) based on appliance configuration and activity. |morpheus| recommends at least 200 GB as a general figure to start from but storage needs will vary dramatically based on each specific use case. In some cases, significantly more space will be needed.
 
-.. IMPORTANT:: It is the customers responsibility to ensure adequate storage space per configuration and use case. The appliance should be properly monitored to ensure it does not run low on disk space.
+.. IMPORTANT:: It is the customer's responsibility to ensure adequate storage space per configuration and use case. The appliance should be properly monitored to ensure it does not run low on disk space.
 
 Default Paths
 ^^^^^^^^^^^^^
@@ -94,7 +94,7 @@ When performing a Hypervisor to Hypervisor migration, such as VMware to AWS, Vir
 VM Logs and Stats
 ^^^^^^^^^^^^^^^^^
 
-When using a |morpheus| with a locally-installed Elasticsearch configuration; VM, Container, Host and Appliance logs and stats are are stored in Elasticsearch. Please ensure adequate space in ``/var``, specifically ``/var/opt/morpheus/elasticsearch`` in relation to the number or Instances reporting logs, log frequency, and log retention count. With partition space at 85% filled or higher (by default), Elasticsearch will enter an unhealthy state and the |morpheus| appliance will not function properly.
+When using |morpheus| with a locally-installed Elasticsearch configuration, VM, Container, Host and Appliance logs and stats are are stored in Elasticsearch. Please ensure adequate space in ``/var``, specifically ``/var/opt/morpheus/elasticsearch`` in relation to the number of Instances reporting logs, log frequency, and log retention count. With partition space at 85% filled or higher (by default), Elasticsearch will enter an unhealthy state and the |morpheus| appliance will not function properly.
 
 |morpheus| Services Logs
 ^^^^^^^^^^^^^^^^^^^^^^^^
@@ -104,16 +104,12 @@ Logs for services local to the |morpheus| Appliance, such as the Morpheus UI, el
 Network Connectivity
 --------------------
 
-|morpheus| primarily operates via communication with its agent that is installed on all managed vm's or docker hosts. This is a lightweight
-agent responsible for aggregating logs and stats and sending them back to the client with minimal network traffic overhead. It also is capable
-of processing instructions related to provisioning and deployments instigated by the appliance server.
+|morpheus| primarily operates via communication with its Agent that is installed on all managed VMs or docker hosts. This is a lightweight agent responsible for aggregating logs and stats and sending them back to the client with minimal network traffic overhead. It also is capable of processing instructions related to provisioning and deployments instigated by the appliance server.
 
-The |morpheus| Agent exists for both linux and windows based platforms and opens NO ports on the guest operating system. Instead it makes an
-outbound SSL (https/wss) connection to the appliance server. This is what is known as the ``appliance url`` during configuration (in
-Admin->Settings). When the agent is started it automatically makes this connection and securely authenticates. Therefore, it is necessary for
-all vm's and docker based hosts that are managed by morpheus to be able to reach the appliance server ip on port 443.
+The |morpheus| Agent exists for both Linux and Windows-based platforms and opens NO ports on the guest operating system. Instead it makes an outbound SSL (HTTPS/WSS) connection to the appliance server. This is what is known as the ``appliance url`` during configuration (in |AdmSet|). When the Agent is started it automatically makes this connection and securely authenticates. Therefore, it is necessary for
+all VMs and docker based hosts that are managed by |morpheus| to be able to reach the appliance server IP on port 443.
 
-|morpheus| has numerous methods to execute agent installation, including zero open port methods.
+|morpheus| has numerous methods to execute Agent installation, including zero open port methods.
 
 Components
 ----------
@@ -140,8 +136,8 @@ The following chart is useful for troubleshooting Agent install, Static IP assig
    :header: "Feature", "Method",  "OS", "Source", "Destination", "Port", "Requirement"
    :widths: 35, 25, 15, 15, 15, 10, 100
 
-   "Agent Communication", "All", "All", "Node", "Appliance", 443, "DNS Resolution from node to appliance url"
-   "Agent Install", "All", "Linux", "Node", "Appliance", 80, "Used for appliance yum and apt repos"
+   "Agent Communication", "All", "All", "Node", "Appliance", 443, "| DNS Resolution from node to appliance url"
+   "Agent Install", "All", "Linux", "Node", "Appliance", 80, "| Used for appliance yum and apt repos"
    " ", "SSH", "Linux", "Appliance", "Node", 22, "| DNS Resolution from node to appliance url
    | Virtual Images configured
    | SSH Enabled on Virtual Image"
@@ -149,28 +145,27 @@ The following chart is useful for troubleshooting Agent install, Static IP assig
    | Virtual Images configured
    | WinRM Enabled on Virtual Image(`winrm quickconfig`)"
    " ",Cloud-init,Linux, , , ,"| Cloud-init installed on template/image
-   | Cloud-init settings populated in User Settings or in `Admin –> Provisioning`
+   | Cloud-init settings populated in User Settings or in `Administration > Settings > Provisioning`
    | Agent install mode set to Cloud-Init in Cloud Settings"
    " ",Cloudbase-init,Windows, , , ,"| Cloudbase-init installed on template/image
-   | Cloud-init settings populated in User Settings or in `Admin –> Provisioning`
+   | Cloud-init settings populated in User Settings or in `Administration > Settings > Provisioning`
    | Agent install mode set to Cloud-Init in Cloud Settings"
    " ",VMtools,All, , , ,"| VMtools installed on template
-   | Cloud-init settings populated in Morpheus user settings or in `Administration –> Provisioning` when using Static IP’s
+   | Cloud-init settings populated in Morpheus user settings or in `Administration > Settings > Provisioning` when using Static IP’s
    | Existing User credentials entered on Virtual Image when using DHCP
    | RPC mode set to VMtools in VMware cloud settings."
    "Static IP Assignment & IP Pools",Cloud-Init,All, , , ,"| Network configured in Morpheus (Gateway, Primary and Secondary DNS, CIDR populated, DHCP disabled)
    | Cloud-init/Cloudbase-init installed on template/image
-   | Cloud-init settings populated in Morpheus user settings or in `Administration –> Provisioning`"
+   | Cloud-init settings populated in Morpheus user settings or in `Administration > Settings > Provisioning`"
    " ", "VMware Tools",All, , , ,"| Network configured in Morpheus (Gateway, Primary and Secondary DNS, CIDR populated, DHCP disabled)
    | VMtools installed on Template/Virtual Image"
-   Remote Console,SSH,Linux,Appliance,Node,22,"ssh enabled on node
+   Remote Console,SSH,Linux,Appliance,Node,22,"| ssh enabled on node
    | user/password set on VM or Host in Morpheus "
-   " ",RDP,Windows,Appliance,Node,3389,"RDP Enabled on node
+   " ",RDP,Windows,Appliance,Node,3389,"| RDP Enabled on node
    | user/password set on VM or Host in Morpheus"
-   " ",Hypervisor Console,All,Appliance,Hypervisor Hosts,443,"
-   |  Hypervisor host names resolvable by morpheus appliance"
-   "Morpheus Catalog Image Download", ,All,Appliance,AWS S3,443,"Available space at ``/var/opt/morpheus/``"
-   "Image Transfer",Stream,All,Appliance,Datastore,443,"Hypervisor Host Names resolvable by Morpheus Appliance"
+   " ",Hypervisor Console,All,Appliance,Hypervisor Hosts,443,"|  Hypervisor host names resolvable by morpheus appliance"
+   "Morpheus Catalog Image Download", ,All,Appliance,AWS S3,443,"| Available space at ``/var/opt/morpheus/``"
+   "Image Transfer",Stream,All,Appliance,Datastore,443,"| Hypervisor Host Names resolvable by Morpheus Appliance"
 
 Communication Data
 ------------------
@@ -733,12 +728,6 @@ The following table contains communication information, including frequency and 
     - Data synchronization
     - 10 Minutes
     - No
-  * - Service Discovery Integration
-    -
-    - Consul
-    - On-demand
-    - N/A
-    - No
   * - Storage Integration
     - Server Pull
     - 3Par
@@ -777,10 +766,10 @@ If not required by organizational policy, we recommend setting SELinux to "Permi
 
 .. IMPORTANT:: Setting SELinux to "Enforcing" mode requires policies to be configured correctly in order for the |morpheus| appliance to function correctly.
 
-Supported Languages
+Supported Locales
 -------------------
 
-Morpheus supports a number of different UI languages, including:
+Morpheus supports a number of different UI locales, including:
 
   - English
   - French
@@ -788,7 +777,23 @@ Morpheus supports a number of different UI languages, including:
   - Spanish
   - Chinese (Simplified)
   - Portuguese (Brazil)
+  - Korean
+  - Italian
 
-Currently, UI language is not configurable from within Morpheus itself. Changing the language within the application will involve some combination of operating system and web browser language setting changes. Morpheus must also have a translation set for your chosen language to see a change. Depending on the browser and the operating system, you may need to fully close and reopen the web browser or restart the machine completely.
+The full list of supported locales can be viewed within the Morpheus UI via the "Default Appliance Locale" select list within Administration Settings.
 
-.. NOTE:: Many of Morpheus' language packs are generated by our clients. For that reason, we cannot guarantee accuracy and completeness of the translation. As new UI elements are added, existing language sets may not have immediate updates to keep pace with application changes. If you would like to contribute to a new or existing language pack, contact your account team or Morpheus support. Contributed content would be included with the next application update.
+Switching Locales
+^^^^^^^^^^^^^^^^^
+
+The language of text in the Morpheus UI can be changed by telling the Morpheus server which locale to use. A Locale is made up of a language code and a country code. For example "en_US" is the code for US English, whilst "en_GB" is the code for British English. When using the Morpheus UI software through a client, the Morpheus UI software server will send the UI text back to the client using the appropriate static Language Pack. All translations returned via Morpheus Internationalization have been made and approved prior to the Morpheus UI version release.
+
+**Via Locale Settings in the Morpheus UI:**
+An application wide default locale can be configured within the Master Tenant under Administration -> Settings -> Default Appliance Locale. An individual Morpheus user can configure a preferred locale within their user settings. Using a locale setting is the preferred method for switching the Morpheus UI language.
+
+**Via the Accept-Language HTTP header:**
+The Accept-Language request HTTP header advertises which languages the client is able to understand, and which locale variant is preferred. Most browsers will by default send a “Accept-Language” HTTP header when visiting websites. The value of Accept-Language will match the configured preference of the browser’s user language/locale settings. The Morpheus UI will automatically detect the Accept-Language header and return the UI text from the corresponding Language Pack where possible. If there is no matching Language Pack the English US language pack is displayed in the UI. If an application locale or user locale setting has been configured in the Morpheus UI, then this will override the user’s browser preferences.
+
+**Via the “lang” query parameter:**
+Morpheus has the capability to switch locales by passing a parameter called “lang” to the Morpheus UI request. For example, “operations/dashboard?lang=de” will switch the locale preference to German. Morpheus will automatically switch the user’s locale and store it in a cookie so subsequent requests will have the new header. If a user is unauthenticated then the user’s locale will be reset. To switch a locale back to English pass “?lang=en” as a query parameterin the Morpheus UI request.
+
+.. NOTE:: Many of Morpheus' language packs are generated by our clients. For that reason, we cannot guarantee accuracy and completeness of the translation. As new UI elements are added, existing language sets may not have immediate updates to keep pace with application changes. If you would like to contribute to a new or existing language pack, contact your account team or Morpheus support. Contributed content will be included within the next application version.

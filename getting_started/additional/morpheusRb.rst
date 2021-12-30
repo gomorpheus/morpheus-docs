@@ -7,7 +7,7 @@ Morpheus allows for additional advanced customizations for system managed servic
 
 .. note:: Service configuration settings are not applicable for externalized services such as external mysql/percona, elasticsearch or rabbitmq clusters. Only connection settings are applicable for external services. Additionally, to configure |morpheus| to utilize alternate ports for SSL, you may have to take additional configuration steps. If simply appending a port to your ``appliance_url`` value doesn't work, consult the related article in our `KnowledgeBase <https://support.morpheusdata.com/s/article/Configure-Morpheus-to-utilize-and-alternate-port-for-SSL?language=en_US>`_.
 
-.. code-block:: bash
+.. code-block:: ruby
 
   app['encrypted_key_suffix'] = 'suffix'
   appliance_url 'https://morpheus.appliance-url.com'
@@ -39,15 +39,16 @@ Morpheus allows for additional advanced customizations for system managed servic
 
   mysql['enable'] = true
   mysql['host'] = {'127.0.0.1' => 3306}
+  mysql['use_tls'] = false
   mysql['morpheus_db_user'] = 'morpheus-db-user'
   mysql['morpheus_db'] = 'xxxxxxxxxxxxxxxx'
   mysql['mysql_url_overide'] = 'jdbc:mysql://10.30.20.10:3306,10.30.20.11:3306,10.30.20.12:3306/morpheusdb?autoReconnect=true&useUnicode=true&characterEncoding=utf8&failOverReadOnly=false&useSSL=false'
   ↓ Valid for Internal/System mysql service only
   mysql['tmp_dir'] = '/tmp/mysql'
   mysql['log_dir'] = '/var/log/morpheus/mysql'
-  mysql['max_active'] = 100 # The combined value off all app node max_active values must be lower than max_connections setting in mysql
+  mysql['max_active'] = 150 # The combined value off all app node max_active values must be lower than max_connections setting in mysql
   mysql['max_allowed_packet'] = 67108864
-  mysql['max_connections'] = 151
+  mysql['max_connections'] = 150
 
   nginx['cache_max_size'] = '5000m'
   nginx['enable'] = true

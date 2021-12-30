@@ -8,7 +8,7 @@ Adding Jenkins Integration
 
 .. image:: /images/integration_guides/build-integrations/Jenkins-add-modal.png
 
-#. Navigate to ``Administration -> Integrations``
+#. Navigate to |AdmInt|
 #. Select :guilabel:`+ NEW INTEGRATION`
 #. Select Jenkins
 #. Fill in the following:

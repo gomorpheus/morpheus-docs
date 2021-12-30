@@ -13,7 +13,7 @@ Overview
 Add Ansible Tower Integration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-#. Navigate to `Administration > Integrations` and select :guilabel:`+ New Integration`
+#. Navigate to `|AdmInt|` and select :guilabel:`+ New Integration`
 #. Select Integration Type "Ansible Tower"
 #. Populate the following fields:
 
@@ -32,7 +32,7 @@ Scope Ansible Tower Integration to a Cloud
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 All instances provisioned in this cloud will have the Ansible Tower config option during provisioning. See below the Provisioning Options for more details about the options.
 
-#. Navigate to `Infrastructure -> Clouds`
+#. Navigate to `Infrastructure > Clouds`
 #. Edit the target Cloud
 #. Expand the `Advanced Options` section
 #. In the `Config Management` dropdown, select the Ansible Tower Integration.
@@ -43,7 +43,7 @@ Scope Ansible Tower Integration to a Group
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 All instances provisioned in this Group will have the Ansible Tower config option during provisioning in any cloud part of the Group. See below the Provisioning Options for more details about the options.
 
-#. Navigate to `Infrastructure -> Groups`
+#. Navigate to `Infrastructure > Groups`
 #. Edit the target Group
 #. Expand the `Advanced Options` section
 #. In the `Config Management` dropdown, select the Ansible Tower Integration.

@@ -1,5 +1,5 @@
-Automation
-===========
+Automation Integrations
+=======================
 
 .. toctree::
 

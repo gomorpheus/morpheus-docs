@@ -1,12 +1,11 @@
-Advanced Options
-````````````````
+**Advanced Options**
 
 DOMAIN
   Specify a default domain for instances provisioned to this Cloud.
 SCALE PRIORITY
   Only affects Docker Provisioning. Specifies the priority with which an instance will scale into the cloud. A lower priority number means this cloud integration will take scale precedence over other cloud integrations in the group.
 APPLIANCE URL
-  Alternate Appliance url for scenarios when the default Appliance URL (configured in `admin -> settings`) is not reachable or resolvable for Instances provisioned in this cloud. The Appliance URL is used for Agent install and reporting.
+  Alternate Appliance url for scenarios when the default Appliance URL (configured in `admin > settings`) is not reachable or resolvable for Instances provisioned in this cloud. The Appliance URL is used for Agent install and reporting.
 TIME ZONE
   Configures the time zone on provisioned VM's if necessary.
 DATACENTER ID
@@ -45,15 +44,14 @@ AGENT INSTALL MODE
   * SSH / WINRM: |morpheus| will use SSH or WINRM for Agent install.
   * Cloud Init / Unattend (when available): (DEFAULT) |morpheus| will utilize Cloud-Init or Cloudbase-Init for agent install when provisioning images with Cloud-Init/Cloudbase-Init installed. |morpheus| will fall back on SSH or WINRM if cloud-init is not installed on the provisioned image. Morpheus will also add Agent installation to Windows unattend.xml data when performing Guest Customizations or utilizing syspreped images.
 API PROXY
-  Set a proxy for outbound communication from the |morpheus| Appliance to the Cloud endpoints. Proxies can be added in the `Infrastructure -> Networks -> Proxies` tab.
+  Set a proxy for outbound communication from the |morpheus| Appliance to the Cloud endpoints. Proxies can be added in the `Infrastructure > Networks > Proxies` tab.
 INSTALL AGENT
   Enable to have Agent Installation on by default for all provisioning into this Cloud. Disable for Agent Installation to be off by default for all provisioning into this Cloud.
 
-Provisioning Options
-````````````````````
+**Provisioning Options**
 
 PROXY
-  Set a proxy for inbound communication from Instances to the |morpheus| Appliance. Proxies can be added in the `Infrastructure -> Networks -> Proxies` tab.
+  Set a proxy for inbound communication from Instances to the |morpheus| Appliance. Proxies can be added in the `Infrastructure > Networks > Proxies` tab.
 Bypass Proxy for Appliance URL
   Enable to bypass proxy settings (if added) for |morpheus| Agent communication to the Appliance URL.
 NO PROXY

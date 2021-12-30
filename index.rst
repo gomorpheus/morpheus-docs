@@ -1,21 +1,23 @@
 |morpheus| |morphver| Documentation
 ===================================
 
+.. important:: |morpheus| introduced major UI navigation structure changes in v5.3.4. Please refer to the :ref:`Navigation Updates` reference table before upgrading from versions prior to v5.3.4 to |morphver|.
+
 :ref:`Release Notes`
 
 .. toctree::
-   :maxdepth: 3
+   :maxdepth: 2
    :caption: Morpheus UI
 
-   getting_started/getting_started
-   provisioning/provisioning
-   infrastructure/infrastructure
-   administration/administration
-   monitoring/monitoring
-   logs/logs
-   backups/backups
+   getting_started/getting_started   
    operations/operations
+   provisioning/provisioning
+   library/library.rst
+   infrastructure/infrastructure
+   backups/backups
+   monitoring/monitoring
    tools/tools
+   administration/administration
    personas/personas.rst
    troubleshooting/troubleshooting
 

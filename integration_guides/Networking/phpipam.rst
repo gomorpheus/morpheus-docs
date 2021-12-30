@@ -14,7 +14,7 @@ Add phpIPAM integration to |morpheus|
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 #. Navigate to ``Infrastructure > Network > Integrations``
-#. Select :guilabel:`+ ADD` -> IPAM -> phpIPAM
+#. Select :guilabel:`+ ADD` > IPAM > phpIPAM
 #. Enter the following:
 
    * Name

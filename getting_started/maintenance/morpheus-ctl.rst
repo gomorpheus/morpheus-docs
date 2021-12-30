@@ -6,7 +6,7 @@ morpheus-ctl tips
 Some common commands include:
 
 morpheus-ctl status
-  This list all the installed services and their current Status
+  Lists all the installed services and their current status
 morpheus-ctl start (service)
   This starts all services if no service is specified, or starts the specified service. For example,
 

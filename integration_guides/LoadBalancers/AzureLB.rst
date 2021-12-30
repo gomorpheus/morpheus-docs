@@ -4,7 +4,7 @@ AzureLB
 Add Azure Load Balancer
 ^^^^^^^^^^^^^^^^^^^^^^^
 
-#. Navigate to ``Infrastructure -> Load Balancers``
+#. Navigate to ``Infrastructure > Load Balancers``
 #. Select :guilabel:`+ ADD`
 #. Select `Azure Load Balancer`
 #. Fill in the following:

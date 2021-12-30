@@ -4,7 +4,7 @@ Clusters
 Overview
 --------
 
-``Infrastructure -> Clusters`` is for creating and managing Kubernetes Clusters, |morpheus| manager Docker Clusters, KVM Clusters, or Cloud specific Kubernetes services such as EKS, AKS and GKE. The Combo Cluster is a combination Docker and KVM Cluster.
+``Infrastructure > Clusters`` is for creating and managing Kubernetes Clusters, |morpheus| manager Docker Clusters, KVM Clusters, or Cloud specific Kubernetes services such as EKS, AKS and GKE. The Combo Cluster is a combination Docker and KVM Cluster.
 
 Cluster Types
 ^^^^^^^^^^^^^
@@ -34,8 +34,8 @@ Cluster Types
 Requirements
 ------------
 
-- Morpheus Role permission ``Infrastructure: Clusters -> Full`` required for Viewing, Creating, Editing and Deleting Clusters.
-- Morpheus Role permission ``Infrastructure: Clusters -> Read`` required for Viewing Cluster list and detail pages.
+- Morpheus Role permission ``Infrastructure: Clusters > Full`` required for Viewing, Creating, Editing and Deleting Clusters.
+- Morpheus Role permission ``Infrastructure: Clusters > Read`` required for Viewing Cluster list and detail pages.
 
 Cluster Permissions
 -------------------

@@ -5,7 +5,7 @@ Code
 
 .. note:: In v5.3.2+, ``provisioning/deployments`` is moved to ``provisioning/code``.
 
-**Provisioning -> Code** contains the Repositories, Deployments and Code Integrations sections.
+|ProCod| contains the Repositories, Deployments and Code Integrations sections.
 
 .. toggle-header:: :header: Required Role Permissions **Click to Expand/Hide**
 
@@ -29,6 +29,7 @@ Code
       - None: Cannot access Provisioning: Code Integrations.
       - Read: Can view Code Integrations. Cannot create, delete or edit Code Integrations.
       - Full: Can create, delete and edit Code Integrations
+
 |
 
 .. duplicated

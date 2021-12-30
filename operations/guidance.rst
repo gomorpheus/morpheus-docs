@@ -4,7 +4,7 @@ Guidance
 Overview
 --------
 
-The ``Operations > Guidance`` section shows recommendations for resource and cost optimization. By analyzing the CPU, RAM, and Storage activity of Instances and Hosts, |morpheus| can recommend actions for sizing and power state. Guidance is customizable to show recommendations based on 30, 60, or 90 day periods, this dropdown toggle is visible on the Guidance list page (Operations > Guideance). Guidance thresholds are also customizable, they can be edited in Administration > Settings > `Guidance <https://docs.morpheusdata.com/en/latest/administration/settings/settings.html#guidance>`_.
+The ``Operations > Guidance`` section shows recommendations for resource and cost optimization. By analyzing the CPU, RAM, and Storage activity of Instances and Hosts, |morpheus| can recommend actions for sizing and power state. Guidance is customizable to show recommendations based on 30, 60, or 90 day periods, this dropdown toggle is visible on the Guidance list page (Operations > Guideance). Guidance thresholds are also customizable, they can be edited in `|AdmSetGui| <https://docs.morpheusdata.com/en/latest/administration/settings/settings.html#guidance>`_.
 
 Configuration
 ^^^^^^^^^^^^^^
@@ -44,7 +44,7 @@ Other types of Guidance recommendations, such as reserve compute recommendations
 Recommendations
 ^^^^^^^^^^^^^^^^^^
 
-To view and act on Guidance recommendations, navigate to `Operations -> Guidance`.
+To view and act on Guidance recommendations, navigate to `Operations > Guidance`.
 
 The Guidance list contains the following details:
 

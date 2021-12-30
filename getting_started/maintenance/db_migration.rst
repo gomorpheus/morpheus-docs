@@ -40,7 +40,7 @@ Then you can import the MySQL dump into the target database using the embedded M
   [root@app-server-new ~] /opt/morpheus/embedded/mysql/bin/mysql -u morpheus -h 10.1.2.2 morpheus -p < /tmp/morpheus_backup.sql
   Enter password:
 
-The data form the old appliance is now replicated on the new appliance. Simply start the UI to complete the process:
+The data from the old appliance is now replicated on the new appliance. Simply start the UI to complete the process:
 
 .. code-block:: bash
 

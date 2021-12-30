@@ -108,14 +108,14 @@ Adding an Azure Stack Cloud
 Configure
 `````````
 
-#. In the |morpheus| UI, navigate to ``Infrastructure -> Clouds`` and Select :guilabel:`+ CREATE CLOUD`
+#. In the |morpheus| UI, navigate to ``Infrastructure > Clouds`` and Select :guilabel:`+ CREATE CLOUD`
 #. Select *AZURE STACK (PRIVATE)* from the Clouds list and select :guilabel:`NEXT`
 #. In the Configure section, enter:
 
    .. include:: /integration_guides/Clouds/base_options.rst
 
-   Details
-   ```````   
+   **Details**   
+   
    IDENTITY URL
     https://login.microsoftonline.com
    MANAGEMENT URL*
@@ -150,11 +150,8 @@ Configure
 
 #. Once all options are configured, select NEXT to add the cloud to a Group.
 
-   Group
-   `````
-
-   A Group must be specified or created for the new Cloud to be added to. Clouds can be added to additional Groups or removed from Groups after being created.
-
+   GROUP
+     A Group must be specified or created for the new Cloud to be added to. Clouds can be added to additional Groups or removed from Groups after being created.
    USE EXISTING
      Add the new Cloud to an exiting Group in |morpheus| .
    CREATE NEW
@@ -170,4 +167,4 @@ Configure
    * Marketplace Catalog
    * Availability Sets
 
-   .. TIP:: Synced Networks can be configured or deactivated from the Networks section in this Clouds detail page, or in the `Infrastructure -> Networks` section.
+   .. TIP:: Synced Networks can be configured or deactivated from the Networks section in this Clouds detail page, or in the `Infrastructure > Networks` section.

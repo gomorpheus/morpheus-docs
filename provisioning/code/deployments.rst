@@ -14,7 +14,7 @@ Role Permissions
 
 Access and capabilities for the **Deployments** section is determined by the following role permissions:
 
-Role: Feature Access: ``Infrastructure: Groups`` 
+Role: Feature Access: ``Infrastructure: Groups``
   - None: Cannot access Provisioning: Code section
   - Read or Full: Can access Provisioning: Code section
 
@@ -22,7 +22,7 @@ Role: Feature Access: ``Provisioning: Code Deployments``
   - None: Cannot access Provisioning: Code Deployments.
   - Read: Can view Code Deployments. Cannot create, delete or edit Code Deployments.
   - Full: Can create, delete and edit Code Deployments.
-  
+
 Getting Started
 ^^^^^^^^^^^^^^^
 
@@ -45,19 +45,19 @@ Fetch based deployments are pretty straightforward. Simply enter a url to a file
 Deploying to an Instance
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-Now that a version has been added to a deployment, it is easy to push that deployment out to any instance provisioned within |morpheus| by navigating to the specific Instance that it needs deployed to. On the Instance detail page there is a tab called `Deploy`. From here simply add a deploy. The dialog will ask firstly from which deployment the deploy is from (or allow you to create a new one on the spot) , and secondly which version to deploy (also with the option to add one on the fly). The next step of the wizard will display any configuration options that might be specific to the instance type being deployed to (i.e. `CATALINA_OPTS` for Tomcat or `Java Command` for java) as well as the file explorer and deployment type selections for review (or use when creating a new version on the fly). Fill in the required items then simply hit complete. The deploy will now be asynchronously sent off to all of the virtual machines or containers within the instance in a rolling restart and the deployment status will be represented.
+Now that a version has been added to a deployment, it is easy to push that deployment out to any instance provisioned within |morpheus| by navigating to the specific Instance that it needs deployed to. On the Instance detail page there is a tab called `Deploy`. From here simply add a deploy. The dialog will ask firstly from which deployment the deploy is from (or allow you to create a new one on the spot), and secondly which version to deploy (also with the option to add one on the fly). The next step of the wizard will display any configuration options that might be specific to the instance type being deployed to (i.e. `CATALINA_OPTS` for Tomcat or `Java Command` for java) as well as the file explorer and deployment type selections for review (or use when creating a new version on the fly). Fill in the required items then simply hit complete. The deploy will now be asynchronously sent off to all of the virtual machines or containers within the instance in a rolling restart and the deployment status will be represented.
 
 .. TIP:: When deploying to an instance, the custom configuration options that were entered during the previous deployment are automatically carried forward allowing one to edit them or leave them as is.
 
 Rolling Backwards and Forwards
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Because of the tracked history of deployments kept within |morpheus| , the deploy tab of instance detail makes it easy to choose a previously run deployment and jump back to it in the event of a failed deployment. The history will automatically be updated and the configuration, as well as data from the previous deployment state of the instance will be restored.
+Because of the tracked history of deployments kept within |morpheus|, the deploy tab of instance detail makes it easy to choose a previously run deployment and jump back to it in the event of a failed deployment. The history will automatically be updated and the configuration, as well as data from the previous deployment state of the instance will be restored.
 
 Offloading Storage
 ^^^^^^^^^^^^^^^^^^
 
-Since a full history of the backup builds are kept in |morpheus| , as the appliance grows it becomes necessary to change where these are stored. On a fresh install these are stored on the local appliance in ``/var/opt/morpheus`` or wherever the master account may have changed the configuration to point to. It is also possible to adjust the deployment archive store by creating a `Storage Provider` tied to an S3 compatible object store, Openstack Swift object store, or any other type of mountpoint provided. This option can be adjusted in :menuselection:`Administration --> Settings --> Provisioning` once a storage provider is created within the account.
+Since a full history of the backup builds are kept in |morpheus|, as the appliance grows it becomes necessary to change where these are stored. On a fresh install these are stored on the local appliance in ``/var/opt/morpheus`` or wherever the master account may have changed the configuration to point to. It is also possible to adjust the deployment archive store by creating a `Storage Provider` tied to an S3 compatible object store, Openstack Swift object store, or any other type of mountpoint provided. This option can be adjusted in :menuselection:`Administration --> Settings --> Provisioning` once a storage provider is created within the account.
 
 Add Deployment
 ^^^^^^^^^^^^^^

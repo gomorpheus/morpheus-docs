@@ -4,13 +4,13 @@ Chef
 Overview
 ^^^^^^^^
 
-|morpheus| integrates with one or multiple Chef servers to be used for bootstrapping while provisioning or as tasks in workflows in the Automation section. These workflows can then be run during provisioning in the provisioning wizard Automation pane, or on an existing instance by selecting Actions->Run Workflow. Workflows can also be added to instances in the blueprint and app sections.
- 
+|morpheus| integrates with one or multiple Chef servers to be used for bootstrapping while provisioning or as tasks in workflows in the Automation section. These workflows can then be run during provisioning in the provisioning wizard Automation pane, or on an existing Instance by selecting Run Workflows from the Actions menu on the Instance detail page. Workflows can also be added to Instances in the blueprint and app sections.
+
 
 Add Chef Integration
 ^^^^^^^^^^^^^^^^^^^^
 
-#. Navigate to `Administration -> Integrations` and select `+ New Integration`
+#. Navigate to |AdmInt| and select `+ New Integration`
 #. Select Integration Type "Chef"
 #. Populate the following fields:
 
@@ -24,12 +24,14 @@ Add Chef Integration
 
 #. Save Changes
 
-The added Chef Integration is now available for use in |morpheus| . The Chef Integration can be added to Clouds or Groups to auto-bootstrap nodes and specify Environment, Node ID, Runlist, Attributes and Tags when creating instances. The Chef integration can also be selected in the Chef Server dropdown when creating a Chef Bootstrap type task.
+The added Chef Integration is now available for use in |morpheus|. The Chef Integration can be added to Clouds or Groups to auto-bootstrap nodes and specify Environment, Node ID, Runlist, Attributes and Tags when creating instances. The Chef integration can also be selected in the Chef Server dropdown when creating a Chef Bootstrap-type Task.
+
+.. NOTE:: Integrating Chef with |morpheus| enables a user to bootstrap a node using Chef Bootstrap-type Tasks or Chef associations with Clouds or infrastructure Groups. It does not enable users to update run-lists on the Chef server for nodes which have already been bootstrapped.
 
 Scope Chef Integration to a Cloud
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-#. Navigate to `Infrastructure -> Clouds`
+#. Navigate to `Infrastructure > Clouds`
 #. Edit the target Cloud
 #. Expand the `Advanced Options` section
 #. In the `Config Management` dropdown, select the Chef Integration.
@@ -38,7 +40,7 @@ Scope Chef Integration to a Cloud
 Scope Chef Integration to a Group
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-#. Navigate to `Infrastructure -> Groups`
+#. Navigate to `Infrastructure > Groups`
 #. Edit the target Group
 #. Expand the `Advanced Options` section
 #. In the `Config Management` dropdown, select the Chef Integration.

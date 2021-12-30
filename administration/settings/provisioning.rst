@@ -18,7 +18,7 @@ Reuse Naming Sequence Numbers
 Deployment Archive Store
   Default Storage Provider for storing Deployment Archives.
 
-  .. NOTE:: Storage Providers can be configured and managed in the `Infrastructure -> Storage` section.
+  .. NOTE:: Storage Providers can be configured and managed in the `Infrastructure > Storage` section.
 
 Cloud-Init Settings
 ^^^^^^^^^^^^^^^^^^^

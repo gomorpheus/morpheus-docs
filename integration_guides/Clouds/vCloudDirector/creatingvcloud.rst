@@ -83,7 +83,7 @@ From within the organisation click on ``Catalogues`` > select an existing catalo
 
 Open the catalogue and select the import template from vCenter and then browse the data stores for your templates. Select your template and the type in a new name and description then check the copy template into vCloud director.
 
-Once you click ok the import process will begin. When the import has completed the template will appear in |morpheus| within ``Provisioning > Virtual Images``
+Once you click ok the import process will begin. When the import has completed the template will appear in |morpheus| within |LibVir|
 
 If the image does not appear within the virtual images you may need to use the filters to filter the virtual images by the vmware ( vmdk / ovf / ova) type.
 

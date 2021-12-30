@@ -1,7 +1,7 @@
 Load Balancers
 ==============
 
-``Infrastructure -> Load Balancers``
+``Infrastructure > Load Balancers``
 
 Overview
 --------
@@ -151,7 +151,7 @@ Setting up an Instance for Load Balancer Consumption
 
 Several of the provided Morpheus instance types are ready to go with load balancer orchestration out of the box (Apache, Nginx, Tomcat, Node.js, etc). It is also fairly easy to extend existing generic instance types during provisioning to be tied to load balancers or to set up said catalog items in advanced for such functionality.
 
-When creating a custom Instance Type (in Provisioning -> Library), one can define a list of exposed ports that the node type within the instance exposes.  When defining these exposed ports it prompts for a Name, Port Number, and LB Type. The LB Type is what enables load-balancer functionality. This can either be HTTP,HTTPS, or TCP. This specification helps build the correct profile for the VIP as well as setup the appropriate types of Health Monitors within the target load balancer integration.
+When creating a custom Instance Type (in |Lib|), one can define a list of exposed ports that the node type within the instance exposes.  When defining these exposed ports it prompts for a Name, Port Number, and LB Type. The LB Type is what enables load-balancer functionality. This can either be HTTP,HTTPS, or TCP. This specification helps build the correct profile for the VIP as well as setup the appropriate types of Health Monitors within the target load balancer integration.
 
 Now, when a user consumes this custom instance type (either through single instance provisioning or full application blueprint provisioning), a section appears in the Automation phase of provisioning. Each port that is defined that exposes a load-balancer gets a dropdown to choose which load balancer integration attach to the exposed port and various prompts become available.
 

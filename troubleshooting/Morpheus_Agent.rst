@@ -3,11 +3,11 @@
 
 When provisioning an Instance, there are network and configuration requirements to consider in order to successfully install the |morpheus| Agent. Typically, when a VM Instance is still in the provisioning phase long after the VM is up, the Instance is unable to reach |morpheus|. Depending on the Agent install mode, it could also mean |morpheus| is unable to reach the Instance.
 
-The most common reason an Agent install fails is the provisioned Instance cannot reach the |morpheus| Appliance via the Appliance URL set in Administration > Settings over port 443. When an Instance is provisioned from |morpheus|, it must be able to reach the |morpheus| appliance via the Appliance URL or the Agent will not be installed.
+The most common reason an Agent install fails is the provisioned Instance cannot reach the |morpheus| Appliance via the Appliance URL set in |AdmSet| over port 443. When an Instance is provisioned from |morpheus|, it must be able to reach the |morpheus| appliance via the Appliance URL or the Agent will not be installed.
 
 .. image:: /images/agent-7c9a2.png
 
-In addition to the main Appliance URL in Administration > Settings, additional Appliance URLs can be set per Cloud in the Advanced Options section of the Cloud configuration modal when creating or editing a Cloud. When this field is populated, it will override the main Appliance URL for anything provisioned into that Cloud.
+In addition to the main Appliance URL in |AdmSet|, additional Appliance URLs can be set per Cloud in the Advanced Options section of the Cloud configuration modal when creating or editing a Cloud. When this field is populated, it will override the main Appliance URL for anything provisioned into that Cloud.
 
 .. TIP:: The |morpheus| UI current log, located at /var/log/morpheus/morpheus-ui/current, is very helpful when troubleshooting Agent installations.
 
@@ -27,14 +27,14 @@ For All Agent Install Methods
 
 When an Instance is provisioned and the Agent does not install, verify the following for any Agent install mode:
 
-* The |morpheus| Appliance URL (Administration > Settings) is both reachable and resolvable from the provisioned node
+* The |morpheus| Appliance URL (|AdmSet|) is both reachable and resolvable from the provisioned node
 * The Appliance URL begins with https://, not http://
 
 .. NOTE:: Be sure to use https:// even when using an IP address for the appliance.
 
 * Inbound connectivity access to the |morpheus| appliance from provisioned VMs and container hosts on port 443 (needed for Agent communication)
 
-* Private (non-|morpheus| provided) VM images and templates must have their credentials stored. These can be entered or edited in the Provisioning > Virtual Images section by clicking the Actions dropdown on an imaged detail page and selecting Edit.
+* Private (non-|morpheus| provided) VM images and templates must have their credentials stored. These can be entered or edited in the |LibVir| section by clicking the Actions dropdown on an image detail page and selecting Edit.
 
 .. NOTE:: Administrator user is required for Windows Agent install.
 
@@ -47,13 +47,13 @@ SSH
 
 * Port 22 is open for Linux images, and SSH is enabled
 
-* Credentials set on the image if using a custom or synced image. Credentials can be entered on images in the Provisioning > Virtual Images section
+* Credentials set on the image if using a custom or synced image. Credentials can be entered on images in the |LibVir| section
 
 WinRM
 ^^^^^
 
 * Port 5985 must be open and WinRM enabled for Windows images
-* Credentials have been entered on the image if using a custom or synced image. Credentials can be entered on images in the Provisioning > Virtual Images section
+* Credentials have been entered on the image if using a custom or synced image. Credentials can be entered on images in the |LibVir| section
 
 .. NOTE:: Administrator user is required for Windows Agent install.
 
@@ -61,30 +61,31 @@ VMware Tools (vmtools)
 ^^^^^^^^^^^^^^^^^^^^^^
 
 * VMware Tools is installed on the template(s)
-* Credentials have been entered on the image if using custom or synced image. Credentials can be entered on images in the Provisioning > Virtual Images section
-* Sudo priveleges required for Linux
+* Credentials have been entered on the image if using custom or synced image. Credentials can be entered on images in the |LibVir| section
+* Sudo privileges required for Linux
 * Administrator User required for Windows (SID 500)
 
 Cloud-Init
 ^^^^^^^^^^
 
-* Cloud-Init settings configured in Administration > Provisioning section
+* Cloud-Init settings configured in |AdmSetPro| section
 * Cloud-Init installed on Virtual Image
 * ``Cloud-Init`` enabled on Virtual Image config
 
 Cloudbase-Init
 ^^^^^^^^^^^^^^
 
-* Windows Administrator Password defined in ``Administration > Provisioning`` section
+* Windows Administrator Password defined in |AdmSetPro| section
 * Cloudbase-Init installed on Virtual Image
 * ``Cloud-Init`` enabled on Virtual Image config
+* Cloudbase-Init is only required for OpenStack Cloud types
 
 .. note:: Unattend Agent Installation and customizations are recommended over Cloudbase-Init
 
 Windows Unattended
 ^^^^^^^^^^^^^^^^^^
 
-* Windows Administrator Password defined in ``Administration > Provisioning`` section
+* Windows Administrator Password defined in |AdmSetPro| section
 * VMware: ``Force Guest Customizations`` set to forced on Virtual Image config when using DHCP (Static Assignment will already force Guest Customizations)
 * Nutanix & SCVMM: Virtual Image is sysprepped and shutdown, ``Sysprep Enabled`` flagged on Virtual Image config
 
@@ -127,7 +128,7 @@ On the target host, run ``sudo morpheus-node-ctl restart morphd`` and the |morph
 Windows
 ^^^^^^^
 
-The |morpheus| Windows Agent service can be restarted in Administrative Tools -> Services.
+The |morpheus| Windows Agent service can be restarted in Administrative Tools > Services.
 
 .. TIP:: The |morpheus| Remote Console is not dependent on Agent communication and can be used to install or restart the |morpheus| agent on an Instance.
 

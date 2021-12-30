@@ -1,7 +1,7 @@
 Settings
 ========
 
-The `Administration > Settings` section sets global configuration parameters for the |morpheus| appliance, whitelabeling, provisioning, monitoring, backups, logs, software licenses, and the license for |morpheus| itself.
+The |AdmSet| section sets global configuration parameters for the |morpheus| appliance, whitelabeling, provisioning, monitoring, backups, logs, software licenses, and the license for |morpheus| itself.
 
 Appliance
 ---------
@@ -13,6 +13,8 @@ Appliance
 .. include:: user_management.rst
 
 .. include:: email.rst
+
+.. include:: sms.rst
 
 .. include:: proxy.rst
 
