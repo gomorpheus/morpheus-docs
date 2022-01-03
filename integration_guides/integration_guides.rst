@@ -11,6 +11,7 @@ Guides
    /getting_started/guides/aws_guide.rst
    /getting_started/guides/vmware_guide.rst
    /getting_started/guides/azure_guide.rst
+   /getting_started/guides/autoinstall_instance.rst
    /getting_started/guides/vdi_guide.rst
    /getting_started/guides/terraform_instances.rst
    /getting_started/guides/backup_restore.rst
