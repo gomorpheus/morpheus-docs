@@ -29,6 +29,8 @@ There are a number of different types of Cypher keys, which are useful in differ
 
 Click :guilabel:`SAVE CHANGES`
 
+.. image:: /images/suitecrmsinglenode/cypher.png
+
 Create Inputs
 ^^^^^^^^^^^^^
 
@@ -41,6 +43,11 @@ In |morpheus| UI, navigate to |LibOptInp|. Click :guilabel:`+ ADD`. Complete the
 - **TYPE:** Text (The input type, in this case an open text field for the user)
 - **LABEL:** SuiteCRM DB Name (The label the user sees next to the input field)
 
+- .. toggle-header:: :header: **Database Name Input**
+
+    .. image:: /images/suitecrmsinglenode/db_name_input.png
+      :width: 50%
+
 Click :guilabel:`SAVE CHANGES`. Then, create two additional Inputs:
 
 - **NAME:** SuiteCRM DB User
@@ -48,10 +55,20 @@ Click :guilabel:`SAVE CHANGES`. Then, create two additional Inputs:
 - **TYPE:** Text
 - **LABEL:** SuiteCRM DB User
 
+- .. toggle-header:: :header: **Database Username Input**
+
+    .. image:: /images/suitecrmsinglenode/db_user_input.png
+      :width: 50%
+
 - **NAME:** SuiteCRM DB Password
 - **FIELD NAME:** databasePassSCRM
 - **TYPE:** Password (Entries in a password field are not shown in plaintext on screen when entered and internally are passed securely as well)
 - **LABEL:** SuiteCRM DB Password
+
+- .. toggle-header:: :header: **Database Password Input**
+
+    .. image:: /images/suitecrmsinglenode/db_pass_input.png
+      :width: 50%
 
 Create File Templates
 ^^^^^^^^^^^^^^^^^^^^^
@@ -67,7 +84,7 @@ For our SuiteCRM application, we'll need to create an Apache config file. We can
 - **SETTING NAME:** suitecrm
 - **SETTING CATEGORY:** App
 
-..code-block:: bash
+.. code-block:: bash
 
   <VirtualHost *:80>
      ServerAdmin admin@localhost
@@ -91,6 +108,8 @@ For our SuiteCRM application, we'll need to create an Apache config file. We can
     </Directory>
   </VirtualHost>
 
+.. image:: /images/suitecrmsinglenode/filetemplate.png
+
 Create Tasks
 ^^^^^^^^^^^^
 
@@ -104,6 +123,8 @@ To create a Library Template Task, navigate to |LibAutTas|. Click :guilabel:`+ A
 - **TEMPLATE:** suitecrm - conf (Select the File Template we already created from this dropdown menu)
 - **EXECUTE TARGET:** Resource
 
+.. image:: /images/suitecrmsinglenode/libtemtask.png
+
 Now create the first Bash Task which will install and configure SuiteCRM on a newly-provisioned box:
 
 - **NAME:** suitecrm - single node
@@ -116,7 +137,7 @@ Now create the first Bash Task which will install and configure SuiteCRM on a ne
 
 .. toggle-header:: :header: **Install Task Content**
 
-    ..code-block:: bash
+    .. code-block:: bash
 
       RPass="<%=cypher.read('secret/mysql_root')%>"
       SCRMDb="<%=customOptions.databaseNameSCRM%>"
@@ -191,6 +212,8 @@ Now create the first Bash Task which will install and configure SuiteCRM on a ne
       chown -R www-data:www-data /var/www/html/suitecrm/
       chmod -R 755 /var/www/html/suitecrm/
 
+.. image:: /images/suitecrmsinglenode/installtask.png
+
 Finally, we'll add the Apache restart Task. Configure a new Task as shown below:
 
 - **NAME:** suitecrm apache restart
@@ -203,11 +226,13 @@ Finally, we'll add the Apache restart Task. Configure a new Task as shown below:
 
 .. toggle-header:: :header: **Install Task Content**
 
-    ..code-block:: bash
+    .. code-block:: bash
 
       a2ensite suitecrm.conf
       a2enmod rewrite
       systemctl restart apache2.service
+
+.. image:: /images/suitecrmsinglenode/restarttask.png
 
 Create the Provisioning Workflow
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -222,6 +247,8 @@ Navigate to |LibAutWor| and click :guilabel:`+ ADD`. Set the following configura
 
 Click :guilabel:`SAVE CHANGES`
 
+.. image:: /images/suitecrmsinglenode/provworkflow.png
+
 Create a Custom Library Item
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -235,6 +262,9 @@ Navigate to |LibBluIns| and click :guilabel:`+ ADD`. Enter the following configu
 - **ICON:** If desired, search the file system on your local computer for a SuiteCRM logo icon for easier identification of this Instance Type at provision time
 - **ENVIRONMENT PREFIX:** SUITE_CRM
 
+.. image:: /images/suitecrmsinglenode/instype.png
+  :width: 50%
+
 Click :guilabel:`SAVE CHANGES`. After creating the Instance Type, click into it and then click :guilabel:`+ ADD LAYOUT` from the Instance Type Detail Page. A Layout specifies the technology the Instance will run on, in this case VMware. It's possible to have multiple Layouts associated with an Instance Type which can be selected depending on the chosen Cloud the user might be provisioning on. Configure the Layout as follows:
 
 - **NAME:** Single Node SuiteCRM
@@ -244,6 +274,9 @@ Click :guilabel:`SAVE CHANGES`. After creating the Instance Type, click into it 
 - **MINIMUM MEMORY:** 2 GB (If entered, this value will override any memory requirement set on the virtual image to ensure your Instance service will run properly)
 - **WORKFLOW:** Select the Workflow we've already created
 - **INPUTS:** Search and find the three custom Inputs we created earlier
+
+.. image:: /images/suitecrmsinglenode/layout.png
+  :width: 50%
 
 Once the configurations are entered, click :guilabel:`SAVE CHANGES`. After creating the Layout, we need to associate a Node Type. From the Layout Detail Page, click :guilabel:`+ ADD` within the "VM Types" section. The term VM Types is sometimes used in place of Node Types in |morpheus| but they refer to the same thing and are fully interchangeable. In this case, we're simply going to point to a default Ubuntu image which is supplied by |morpheus| though you can associate Node Types with your own custom virtual images when needed. Set the following configurations on the new Node Type:
 
@@ -255,6 +288,9 @@ Once the configurations are entered, click :guilabel:`SAVE CHANGES`. After creat
 
 Click :guilabel:`SAVE CHANGES`
 
+.. image:: /images/suitecrmsinglenode/nodetype.png
+  :width: 50%
+
 Provision the SuiteCRM Instance Type
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -262,7 +298,12 @@ At this point, the setup is finished and SuiteCRM will be available as an Instan
 
 To begin provisioning, navigate to |ProIns| and click :guilabel:`+ ADD`. From the list of Instance Types, select the "SUITE_CRM" Instance Type we just created, click :guilabel:`NEXT`. From the Group tab, select a Group which contains a VMware Cloud and then select the VMware Cloud you'd like to provision the app onto. Click :guilabel:`NEXT`. From the Configuration Tab, select the Layout we created and configure a plan, Resource Pool, and network which makes sense for your specific vCenter. You'll then notice the Input fields we created where you'll need to enter a SuiteCRM database name, Username, and Password. Click :guilabel:`NEXT`. On the Automation tab, we do not need to select a Workflow as our Workflow is already set on the Layout. Click :guilabel:`NEXT` and click :guilabel:`COMPLETE`.
 
+.. image:: /images/suitecrmsinglenode/provision.png
+  :width: 50%
+
 Configure SuiteCRM
 ^^^^^^^^^^^^^^^^^^
 
 SuiteCRM is now ready for its initial setup. In a web browser, go to `http://<YOUR_INSTANCE_IP>/install.php`. You should see the license agreement page and can proceed with the setup steps. SuiteCRM is now up and running. Additional instances of SuiteCRM can be stood up in the future with just a few clicks!
+
+.. image:: /images/suitecrmsinglenode/eula.png
