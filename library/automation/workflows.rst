@@ -68,7 +68,7 @@ Provisioning Workflow Execution Phases
 Add Workflow
 ^^^^^^^^^^^^
 
-#. Select the Provisioning link in the navigation bar
+#. Select the Library link in the navigation bar
 #. Select Automation from the sub-navigation menu
 #. Click the Workflows tab to show the Workflows tab panel
 #. Click the :guilabel:`+ Add` dropdown and select a Workflow type (Operational or Provisioning, see the section above for more on Workflow type differences)
@@ -90,7 +90,7 @@ When marked on Operational Workflows, the user is shown a text area for custom c
 Edit Workflow
 ^^^^^^^^^^^^^
 
-#. Select the Provisioning link in the navigation bar.
+#. Select the Library link in the navigation bar.
 #. Select Automation from the sub-navigation menu.
 #. Click the Workflows tab to show the workflows tab panel.
 #. Click the Edit icon on the row of the workflow you wish to edit.
@@ -100,7 +100,7 @@ Edit Workflow
 Delete Workflow
 ^^^^^^^^^^^^^^^
 
-#. Select the Provisioning link in the navigation bar.
+#. Select the Library link in the navigation bar.
 #. Select Automation from the sub-navigation menu.
 #. Click the Workflows tab to show the workflows tab panel.
 #. Click the Delete icon on the row of the workflow you wish to delete.
