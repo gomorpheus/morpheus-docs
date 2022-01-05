@@ -27,6 +27,8 @@ DEPENDENT FIELD
  The Field Name value for a field that will reload this Option List to present a different set of selections. Take a look at the section below on Cascading Inputs as well as the `associated article <https://support.morpheusdata.com/s/article/How-to-create-option-lists?language=en_US>`_ in our KnowledgeBase for documented examples of this feature
 VISIBILITY FIELD
  A Field Name and selection value that will trigger this field to become visible. Currently, this only works when the Input is associated with a Service Catalog Item and viewed from the Service Catalog Persona perspective. See the section below on the Visibility Field for instructions on configuring this value
+REQUIRED FIELD
+ Enter the field name for another Input and, when that field is populated with a value, the current Input will become required. See the section below on the Required Field for instructions and an example.
 DISPLAY VALUE ON DETAILS
  When selected, the Input label and value (label: value) will be visible in a list of custom options on the Instance detail page
 TYPE
@@ -193,3 +195,10 @@ Next, ensure the relevant Inputs are associated with the Service Catalog Item (T
 Finally, when Service Catalog Persona users interact with my Catalog Item, they will be able to toggle additional Inputs to be visible based on their selections.
 
 .. image:: /images/provisioning/optionTypes/3toggleOption.gif
+
+Required Field
+^^^^^^^^^^^^^^
+
+The Required field allows for Inputs to be conditionally required. In this field, enter the Field Name value for another Input and, if that Input is filled by the user, the current Input will become required. This feature could also be used in conjunction with the Visibility field described above in that you may want a field to be required when visible but not required when hidden. Below is a simple abstract example showing how the second displayed Input becomes required when the first displayed Input is filled.
+
+.. image:: /images/provisioning/library/required.gif
