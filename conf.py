@@ -1,3 +1,5 @@
+import datetime
+
 master_doc = 'index'
 
 rst_prolog = """
@@ -216,7 +218,7 @@ extensions = ['recommonmark','sphinx_markdown_tables','sphinxcontrib.contentui',
 templates_path = ['_templates']
 source_suffix = ['.rst', '.md']
 project = u'Morpheus Docs'
-copyright = u'2021, Morpheus Data'
+copyright = f"{datetime.datetime.now().date().strftime("%Y")}, Morpheus Data"
 author = u'Morpheus'
 language = 'en'
 exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store','z_in_progress']
