@@ -111,7 +111,9 @@ Security
 CVEs Addressed
 --------------
 
-No CVE's mitigated from v5.3.4
+- CVE-2020-25649
+- CVE-2021-45105
+- CVE-2020-28491
 
 |
 

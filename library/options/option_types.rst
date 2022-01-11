@@ -32,7 +32,7 @@ REQUIRE FIELD
 SHOW ON EDIT
  Display the Input name and value when editing an Instance
 EDITABLE
- Allow the Input value to be edited/changed when editing an Instance
+ Allow the Input value to be updated when editing an Instance (This attribute is hidden if SHOW ON EDIT is not selected)
 DISPLAY VALUE ON DETAILS
  When selected, the Input label and value (label: value) will be visible in a list of custom options on the Instance detail page
 TYPE
@@ -183,7 +183,7 @@ At this point, our dependent options are ready to be applied to custom Instance 
 Visibility Field
 ^^^^^^^^^^^^^^^^
 
-.. updates in progress 
+.. updates in progress
 
 The Inputs Visibility field  allows users to set conditions under which the Input field is displayed. Visibility field accepts ``fieldName:value`` or ``fieldName:(regex)``, where "fieldName" equals the fieldName of another Input which will determine the visibility of this Input, and "value" equals the value of the other Input, or "(regex)" equals the regular expression that matches to the values that meet your desired conditions. When the value of the fieldName matches the "value" or "(regex)" set in the Visibility field, this Input will be displayed. When the value of the other fieldName does not match "value" or satisfy the "(regex)" set in the Visibility field, this Input will not be displayed.
 
@@ -201,6 +201,3 @@ Next, ensure the relevant Inputs are associated with the Service Catalog Item (T
 Finally, when Service Catalog Persona users interact with my Catalog Item, they will be able to toggle additional Inputs to be visible based on their selections.
 
 .. image:: /images/provisioning/optionTypes/3toggleOption.gif
-
-
-
