@@ -201,3 +201,10 @@ Next, ensure the relevant Inputs are associated with the Service Catalog Item (T
 Finally, when Service Catalog Persona users interact with my Catalog Item, they will be able to toggle additional Inputs to be visible based on their selections.
 
 .. image:: /images/provisioning/optionTypes/3toggleOption.gif
+
+Required Field
+^^^^^^^^^^^^^^
+
+The Required field allows for Inputs to be conditionally required. In this field, enter the Field Name value for another Input and, if that Input is filled by the user, the current Input will become required. This feature could also be used in conjunction with the Visibility field described above in that you may want a field to be required when visible but not required when hidden. Below is a simple abstract example showing how the second displayed Input becomes required when the first displayed Input is filled.
+
+.. image:: /images/provisioning/library/required.gif

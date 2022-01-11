@@ -224,7 +224,7 @@ Finally, we'll add the Apache restart Task. Configure a new Task as shown below:
 - **CONTENT:** Expand the section below to see the script content
 - **EXECUTE TARGET:** Resource
 
-.. toggle-header:: :header: **Install Task Content**
+.. toggle-header:: :header: **Restart Task Content**
 
     .. code-block:: bash
 

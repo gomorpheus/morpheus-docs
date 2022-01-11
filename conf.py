@@ -1,3 +1,5 @@
+import datetime
+
 master_doc = 'index'
 
 rst_prolog = """
@@ -213,11 +215,12 @@ rst_prolog = """
 # ...............
 
 
+year = datetime.datetime.now().date().strftime("%Y")
 extensions = ['recommonmark','sphinx_markdown_tables','sphinxcontrib.contentui','sphinx_tabs.tabs','sphinxcontrib.images','sphinx_search.extension','notfound.extension','sphinx.ext.autosectionlabel'] #sphinx_tabs
 templates_path = ['_templates']
 source_suffix = ['.rst', '.md']
 project = u'Morpheus Docs'
-copyright = u'2021, Morpheus Data'
+copyright = f"{year}, Morpheus Data"
 author = u'Morpheus'
 language = 'en'
 exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store','z_in_progress']
