@@ -24,10 +24,12 @@ Fixes
 Appliance & Agent Updates
 =========================
 
-:Appliance: - Embedded Elasticsearch Log4j upgraded to 2.17 (CVE-2021-45105) :superscript:`5.4.2`
-             - Embedded Elasticsearch jackson-databind upgraded to 2.13.1 (CVE-2020-25649) :superscript:`5.4.2`
-             - Embedded Elasticsearch jackson-dataformat-cbor upgraded to 2.13.1 (CVE-2020-28491) :superscript:`5.4.2`
-
-
+:Appliance: - Embedded Elasticsearch Log4j updated to v2.17 (CVE-2021-45105).  :superscript:`5.4.2`
+             - Embedded Elasticsearch jackson-databind updated to 2.13.1 (CVE-2020-25649) :superscript:`5.4.2`
+             - Embedded Elasticsearch jackson-dataformat-cbor updated to 2.13.1 (CVE-2020-28491) :superscript:`5.4.2`
+:Agent: - Linux Agent version updated to v2.2.2 :superscript:`5.4.2`
+        - Log4j removed from Linux Agent, replaced with Slf4j :superscript:`5.4.2`
+:Node Packages: - Node and VM Node Package versions updated to v3.2.4 :superscript:`5.4.2`
+                - Java jdk & jre updated to 11.0.13+8 :superscript:`5.4.2`
 
 .. ..
