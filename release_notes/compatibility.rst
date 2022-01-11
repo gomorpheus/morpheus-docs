@@ -31,8 +31,6 @@ Breaking Changes
 
 |morpheus| can be installed on the following platforms. Please note the table below is for |morpheus| Application OS support, not |morpheus| Agent OS Support.
 
-.. important:: Existing |morpheus| Appliances on 14.04 must upgrade to 16.04, 18.04 or 20.04 PRIOR to upgrading to v4.2+.
-
 .. note:: If CentOS 8.2 is pinned to 8.2.2004 vault, the PowerTools repository will need to be pinned to 8.2.2004 to access freerdp-libs 2.0.0
 
 .. list-table:: **Supported Appliance Operating Systems**
@@ -67,11 +65,15 @@ Services
 |morphver| Service Version Changes
 ----------------------------------
 
-- Java upgraded to 8u312-b07 :superscript:`5.2.12`
-- MySQL upgraded to 5.7.35 :superscript:`5.2.12`
-- Nginx upgraded to 1.20.1 :superscript:`5.2.12`
-- RabbitMQ upgraded to 3.9.8 :superscript:`5.2.12`
-- Tomcat upgraded to 9.0.54 :superscript:`5.2.12`
+:Appliance: - Embedded Elasticsearch Log4j updated to v2.17 (CVE-2021-45105).  :superscript:`5.2.14`
+             - Embedded Elasticsearch jackson-databind updated to 2.13.1 (CVE-2020-25649) :superscript:`5.2.14`
+             - Embedded Elasticsearch jackson-dataformat-cbor updated to 2.13.1 (CVE-2020-28491) :superscript:`5.2.14`
+
+:Agent: - Linux Agent version updated to v2.2.2 :superscript:`5.2.14`
+        - Log4j removed from Linux Agent, replaced with Slf4j :superscript:`5.2.14`
+
+:Node Packages: - Node and VM Node Package versions updated to v3.2.4 :superscript:`5.2.14`
+                - Java jdk & jre updated to 11.0.13+8 :superscript:`5.2.14`
 
 |
 
@@ -104,6 +106,35 @@ When externalizing MySQL, Elasticsearch and/or RabbitMQ services, the following 
 | Java (macOS agent)                    |                       | |java-mac|                          |
 +---------------------------------------+-----------------------+-------------------------------------+
 
+|
+
+|morpheus| Agent & Node Package Versions
+----------------------------------------
+
+.. list-table:: |morphver| Agent & Node Package Versions
+   :widths: auto
+   :header-rows: 1
+
+   * - Package
+     - Version
+     - |morphver| Changes
+   * - Morpheus Node and VM Node Packages
+     - |nodePackageVer|
+     - - Node and VM Node Package versions updated to v3.2.4 :superscript:`5.2.14`
+       - Java jdk & jre updated to 11.0.13+8 :superscript:`5.2.14`
+   * - Morpheus Linux Agent
+     - |linuxagentver|
+     - - Linux Agent version updated to v2.2.2 :superscript:`5.2.14`
+       - Log4j removed from Linux Agent, replaced with Slf4j :superscript:`5.2.14`
+   * - Morpheus Windows Agent
+     - |winagentver|
+     - No changes
+   * - Morpheus macOS Agent
+     - |macagentver|
+     - No changes
+
+
+|
 
 Security
 ========
@@ -111,9 +142,9 @@ Security
 CVEs Addressed
 --------------
 
-- CVE-2020-25649
 - CVE-2021-45105
-- CVE-2020-28491
+- CVE-2020-25649
+- CVE-2020-28491 
 
 |
 
