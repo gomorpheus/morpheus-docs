@@ -64,11 +64,15 @@ Services
 |morphver| Service Version Changes
 ----------------------------------
 
-- Java upgraded to 8u312-b07 :superscript:`5.3.4`
-- MySQL upgraded to 5.7.35 :superscript:`5.3.4`
-- Nginx upgraded to 1.20.1 :superscript:`5.3.4`
-- RabbitMQ upgraded to 3.9.8 :superscript:`5.3.4`
-- Tomcat upgraded to 9.0.54 :superscript:`5.3.4`
+:Appliance: - Embedded Elasticsearch Log4j updated to v2.17 (CVE-2021-45105).  :superscript:`5.4.2`
+             - Embedded Elasticsearch jackson-databind updated to 2.13.1 (CVE-2020-25649) :superscript:`5.4.2`
+             - Embedded Elasticsearch jackson-dataformat-cbor updated to 2.13.1 (CVE-2020-28491) :superscript:`5.4.2`
+
+:Agent: - Linux Agent version updated to v2.2.2 :superscript:`5.4.2`
+        - Log4j removed from Linux Agent, replaced with Slf4j :superscript:`5.4.2`
+
+:Node Packages: - Node and VM Node Package versions updated to v3.2.4 :superscript:`5.4.2`
+                - Java jdk & jre updated to 11.0.13+8 :superscript:`5.4.2`
 
 |
 
@@ -102,13 +106,43 @@ When externalizing MySQL, Elasticsearch and/or RabbitMQ services, the following 
 +---------------------------------------+-----------------------+-------------------------------------+
 
 
+|morpheus| Agent & Node Package Versions
+----------------------------------------
+
+.. list-table:: |morphver| Agent & Node Package Versions
+   :widths: auto
+   :header-rows: 1
+
+   * - Package
+     - Version
+     - |morphver| Changes
+   * - Morpheus Node and VM Node Packages
+     - |nodePackageVer|
+     - - Node and VM Node Package versions updated to v3.2.4 :superscript:`5.4.2`
+       - Java jdk & jre updated to 11.0.13+8 :superscript:`5.4.2`
+   * - Morpheus Linux Agent
+     - |linuxagentver|
+     - - Linux Agent version updated to v2.2.2 :superscript:`5.4.2`
+       - Log4j removed from Linux Agent, replaced with Slf4j :superscript:`5.4.2`
+   * - Morpheus Windows Agent
+     - |winagentver|
+     - No changes
+   * - Morpheus macOS Agent
+     - |macagentver|
+     - No changes
+
+
+|
+
 Security
 ========
 
 CVEs Addressed
 --------------
 
-- CVE-2021-23369
+- CVE-2021-45105
+- CVE-2020-25649
+- CVE-2020-28491 
 
 Upgrade Support Matrix
 ======================
