@@ -1,7 +1,7 @@
 master_doc = 'index'
 
 latex_documents = [
-    (master_doc, 'morpheus5.2.12-1.tex', u'Morpheus Documentation',
+    (master_doc, 'morpheus5.2.14-1.tex', u'Morpheus Documentation',
      u'Morpheus', 'manual'),
 ]
 
@@ -11,7 +11,7 @@ rst_prolog = """
 .. |repo_host_url| replace:: https://downloads.morpheusdata.com
 .. |morphbranch| replace:: v5.2
 .. |morphver| replace:: v5.2.14
-.. |previousMorphVer| replace:: v5.2.12
+.. |previousMorphVer| replace:: v5.2.13
 .. |minUpgradeVer| replace:: v4.2.0
 .. |rmqbranch| replace:: v3.5-3.9
 .. |rmqver| replace:: v3.9.8
@@ -22,12 +22,13 @@ rst_prolog = """
 .. |esver| replace:: v7.8.1
 .. |tcver| replace:: v9.0.54
 .. |nginxver| replace:: v1.20.1
-.. |linuxagentver| replace:: v2.1.1
+.. |linuxagentver| replace:: v2.2.2
 .. |winagentver| replace:: v1.7.0.0
-.. |nodePackageVer| replace:: 3.2.3
-.. |java| replace:: v8u312-b07
+.. |macagentver| replace:: v2.1.1
+.. |nodePackageVer| replace:: 3.2.4
+.. |java| replace:: jdk-11.0.13+8
 .. |java-mac| replace:: v8u312-b07
-.. |openjdk-jre| replace:: v8u312
+.. |openjdk-jre| replace:: jdk-11.0.13+8-jre
 .. |openjdk-elasticsearch| replace:: 14.0.2+12
 .. |openssl| replace:: 1.1.1k
 .. |openssl_fips| replace:: 1.0.2u
@@ -65,7 +66,7 @@ extensions = ['recommonmark','sphinx_markdown_tables','sphinx_tabs.tabs','sphinx
 templates_path = ['_templates']
 source_suffix = ['.rst', '.md']
 project = u'Morpheus Docs'
-copyright = u'2021, Morpheus Data'
+copyright = u'2022, Morpheus Data'
 author = u'Morpheus'
 language = 'en'
 exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store','z_in_progress']
