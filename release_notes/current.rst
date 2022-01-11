@@ -6,6 +6,8 @@
 
 .. IMPORTANT:: This release includes improvements to Amazon AWS price sync. After upgrading, it's recommended that you manually perform one "Daily" refresh of one of your Amazon Clouds to ensure availability of Amazon pricing data. To manually refresh a Cloud, navigate to Infrastructure > Clouds > (Selected Amazon Cloud) and select "Daily" from the REFRESH dropdown menu. If this is not done, |morpheus| may not show Amazon pricing information in the provisioning wizard until the following day after an automatic Daily refresh would have taken place.
 
+.. IMPORTANT:: Support has been removed for exposing Instance Types and App Blueprints to the ServiceNow catalog via |morpheus| integration. This is because more advanced configurations of Instances and App Blueprints, in addition to Workflows, can be exposed utilizing Catalog Items. Following upgrade, Instance Types and App Blueprints which were previously exposed will be disabled from the ServiceNow catalog. Any important configurations will need to be replaced with Service Catalog Items. See our `ServiceNow integration guide <https://docs.morpheusdata.com/en/5.4.2/integration_guides/ITSM/ServiceNow.html#adding-to-servicenow-catalog>`_ for instructions on how to expose |morpheus| Catalog Items to ServiceNow.
+
 .. NOTE:: Items appended with :superscript:`5.x.x` are also included in that version
 .. .. include:: highlights.rst
 
