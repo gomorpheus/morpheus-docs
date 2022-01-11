@@ -5,7 +5,7 @@ rst_prolog = """
 .. |morphbranch| replace:: v5.4
 .. |morphver| replace:: v5.4.2
 .. |minUpgradeVer| replace:: v5.2.11
-.. |previousMorphVer| replace:: v5.4.0
+.. |previousMorphVer| replace:: v5.4.1
 .. |rmqbranch| replace:: v3.5-3.9
 .. |rmqver| replace:: v3.9.8
 .. |mysqlbranch| replace:: v5.7
@@ -15,12 +15,13 @@ rst_prolog = """
 .. |esver| replace:: v7.8.1
 .. |tcver| replace:: v9.0.54
 .. |nginxver| replace:: v1.20.1
-.. |linuxagentver| replace:: v2.1.1
+.. |linuxagentver| replace:: v2.2.2
 .. |winagentver| replace:: v1.7.0.0
-.. |nodePackageVer| replace:: 3.2.3
-.. |java| replace:: v8u312-b07
+.. |macagentver| replace:: v2.1.1
+.. |nodePackageVer| replace:: 3.2.4
+.. |java| replace:: jdk-11.0.13+8
 .. |java-mac| replace:: v8u312-b07
-.. |openjdk-jre| replace:: v8u312
+.. |openjdk-jre| replace:: jdk-11.0.13+8-jre
 .. |openjdk-elasticsearch| replace:: 14.0.2+12
 .. |openssl| replace:: 1.1.1k
 .. |openssl_fips| replace:: 1.0.2u
