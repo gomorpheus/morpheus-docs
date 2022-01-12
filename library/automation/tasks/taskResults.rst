@@ -5,7 +5,7 @@ Overview
 `````````
 Using Task results, the output from any preceding Tasks within the same Workflow phase is available to be called into additional Tasks. The results are stored on the ``results`` variable. Since results are available to all Tasks, we can use results from any or all prior Tasks so long as they are executed within the same provision phase.
 
-In script type tasks, if a RESULT TYPE is set, |morpheus| will store the output on the ``results`` variable. It's important to understand that the result type indicates the format of the Task output |morpheus| should expect. |morpheus| will parse that output into a Groovy map which can be retrieved and further parsed by resolving the ``results`` variable. If the RESULT TYPE is incorrectly set, |morpheus| may not be able to store the Task results correctly. Jump to the section on `Script Config Examples <https://docs.morpheusdata.com/en/latest/provisioning/automation/automation.html#script-config-examples>`_ to see how script results are processed in various example cases.
+In script type tasks, if a RESULT TYPE is set, |morpheus| will store the output on the ``results`` variable. It's important to understand that the result type indicates the format of the Task output |morpheus| should expect. |morpheus| will parse that output into a Groovy map which can be retrieved and further parsed by resolving the ``results`` variable. If the RESULT TYPE is incorrectly set, |morpheus| may not be able to store the Task results correctly. Jump to the section on `Script Config Examples <https://docs.morpheusdata.com/en/latest/library/automation/tasks/taskResults.html#results-types>`_ to see how script results are processed in various example cases.
 
 Results Types
 `````````````
