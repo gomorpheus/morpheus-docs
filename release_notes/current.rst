@@ -59,7 +59,7 @@ Fixes
 :Security: - MySQL usernames and passwords are no longer exposed in the History output when provisioning MySQL Instances or Apps
 :Terraform: - Fixed an issue that could cause Terraform Plan to run a different version of Terraform than that which is specified in the Blueprint
 :UI: - Fixed an issue related to integrated backup server pagination
-     - Fixed js event target issue with instance lists and modals that caused some areas in instance list and modals to not be clickable (Found in 5.4.2-1, Fixed in 5.4.2-2)
+     - Fixed js event target issue with instance lists and modals that caused some areas in instance list and modals to not be clickable (Found in 5.4.2-1, fixed in 5.4.2-2)
       - On the Groups List page (Infrastructure > Groups), the Instances field now shows "0" when there are no Instances associated with a Group rather than an empty space
       - Tags set via Inputs are now shown on the Instance detail page for Instances provisioned through Service Catalog as they are for Instances provisioned through the provisioning wizard
 :VMware: - Fixed an issue causing networks to no longer be visible if VMware clusters were renamed

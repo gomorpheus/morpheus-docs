@@ -26,7 +26,7 @@
    <thead>
      <tr>
        <th class="tg-j8c8">From Version</th>
-       <th class="tg-af47" colspan="23">To Verison</th>
+       <th class="tg-af47" colspan="23">To Version</th>
      </tr>
    </thead>
      <tbody>
