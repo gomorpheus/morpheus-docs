@@ -18,6 +18,7 @@ New Features
              - Create and manage NSX-T DHCP relays from |morpheus| API and CLI :superscript:`5.2.13`
              - Create and manage NSX-T DHCP servers from |morpheus| API and CLI :superscript:`5.2.13`
              - NSX-T distributed firewall groups and rules can now be created and managed from |morpheus| API and CLI :superscript:`5.2.13`
+             - Storage: ``storage-servers`` ``storage-server-types`` & ``storage-volumes`` endpoints added
 :Clouds: - Scale Priority field removed from the Add/Edit Cloud modal. For Docker provisioning, this field could be used to determine which Cloud would take scale precedence in the Group. This is no longer needed since |morpheus| works with cluster constructs :superscript:`5.2.13`
 :Kubernetes: - AKS: Cluster Scaling functionality added
               - GKE: Cluster Scaling functionality added
