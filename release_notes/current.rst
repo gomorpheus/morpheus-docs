@@ -18,7 +18,8 @@ New Features
              - Create and manage NSX-T DHCP relays from |morpheus| API and CLI :superscript:`5.4.1`
              - Create and manage NSX-T DHCP servers from |morpheus| API and CLI :superscript:`5.4.1`
              - Get NSX-T Edge Cluster details from |morpheus| API and CLI :superscript:`5.4.0`
-             - NSX-T distributed firewall groups and rules can now be created and managed from |morpheus| API and CLI :superscript:`5.4.1`
+             - NSX-T distributed firewall groups and rules can now be created and managed from |morpheus| API and CLI :superscript:`5.2.13`
+             - Storage: ``storage-servers`` ``storage-server-types`` & ``storage-volumes`` endpoints added :superscript:`5.2.13`
 :Amazon: - Added support for additional regions: ``eu-south-1`` Europe (Milan), ``eu-west-3`` Europe (Paris), and ``me-south-1`` Middle East (Bahrain) :superscript:`5.4.0`
 :Clouds: - Scale Priority field removed from the Add/Edit Cloud modal. For Docker provisioning, this field could be used to determine which Cloud would take scale precedence in the Group. This is no longer needed since |morpheus| works with cluster constructs :superscript:`5.4.1`
 :Currency: - Added support for new currencies: Jordan Dinar (JD), Saudi Arabia Riyal (SAR), and United Arab Emirates Dirham (AED) :superscript:`5.4.0`
