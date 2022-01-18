@@ -55,7 +55,35 @@ Execute Options
 - **Retryable:** When marked, this Task can be configured to be retried in the event of failure
 - **Retry Count:** The maximum number of times the Task will be retried when there is a failure
 - **Retry Delay:** The length of time (in seconds) |morpheus| will wait to retry the Task
-- **Allow Custom Config:** When marked, a text area is provided at Task execution time to allow the user to pass extra variables or specify extra configuration
+- **Allow Custom Config:** When marked, a text area is provided at Task execution time to allow the user to pass extra variables or specify extra configuration. See the next section for an example.
+
+Allow Custom Config
+```````````````````
+
+When "Allow Custom Config" is marked on a Task, the user is shown a text area for custom configuration when the Task is executed manually from the Tasks List Page. If the Task is to be part of an Operational Workflow, mark the same box on the Workflow rather than on the Task to see the text area at execution time. This text area is inside the "Advanced Options" section, which must be expanded in order to reveal the text area. Within the text area, add a JSON map of key-value pairs which can be resolved within your automation scripts. This could be used to pass extra variables that aren't always needed in the script or for specifying extra configuration.
+
+**Example JSON Map:**
+
+.. code-block::
+
+  {"key1": "value1",
+  "key2": "value2",
+  "os": "linux",
+  "foo": "bar"}
+
+When the Task is executed, these extra variables would be resolved where called into the script such as in the following simple BASH script example:
+
+.. code-block:: bash
+
+  echo "<%=customOptions.os%>"
+  echo "<%=customOptions.foo%>"
+
+The above example would result in the following output:
+
+.. code-block::
+
+  linux
+  bar
 
 Task Types
 ^^^^^^^^^^
@@ -311,7 +339,7 @@ Task Configuration
 
     .. NOTE:: Setting the execution target to local requires Powershell to be installed on the |morpheus| appliance box(es). `Microsoft Documentation <https://docs.microsoft.com/en-us/powershell/scripting/install/installing-powershell-on-linux?view=powershell-7.2>`_ contains installation instructions for all major Linux distributions and versions.
 
-    
+
 
 - .. toggle-header:: :header: **Puppet Agent Install**
 

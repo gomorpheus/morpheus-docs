@@ -85,7 +85,30 @@ Add Workflow
 Allow Custom Config
 ^^^^^^^^^^^^^^^^^^^
 
-When marked on Operational Workflows, the user is shown a text area for custom configuration at execution time. This could be used to pass extra variables that wouldn't normally be in the script or for specifying extra configuration.
+When "Allow Custom Config" is marked on Operational Workflows, the user is shown a text area for custom configuration at execution time. This text area is inside the "Advanced Options" section, which must be expanded in order to reveal the text area. Within the text area, add a JSON map of key-value pairs which can be resolved within your automation scripts. This could be used to pass extra variables that aren't always needed in the script or for specifying extra configuration.
+
+**Example JSON Map:**
+
+.. code-block::
+
+  {"key1": "value1",
+  "key2": "value2",
+  "os": "linux",
+  "foo": "bar"}
+
+When the Workflow is executed, these extra variables would be resolved where called into the script such as in the following simple BASH script example:
+
+.. code-block:: bash
+
+  echo "<%=customOptions.os%>"
+  echo "<%=customOptions.foo%>"
+
+The above example would result in the following output:
+
+.. code-block::
+
+  linux
+  bar
 
 Edit Workflow
 ^^^^^^^^^^^^^
