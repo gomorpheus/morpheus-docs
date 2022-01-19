@@ -111,7 +111,7 @@ Common Examples
 			instance.createdByFirstName: <%=instance.createdByFirstName%>
 			instance.createdById: <%=instance.createdById%>
 			instance.createdByLastName: <%=instance.createdByLastName%>
-			instance.createdBYUsername: <%=instance.createdByUsername%>
+			instance.createdByUsername: <%=instance.createdByUsername%>
 			instance.deployGroup: <%=instance.deployGroup%>
 			instance.description: <%=instance.description%>
 			instance.displayName: <%=instance.displayName%>
