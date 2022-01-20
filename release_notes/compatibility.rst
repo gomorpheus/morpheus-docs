@@ -25,6 +25,7 @@ Breaking Changes
 - 5.3.4: Major UI navigation structure changes. Refer to the :ref:`Navigation Updates` reference table
 - 5.4.2: ServiceNow: Instance and Blueprint specific exposures will be removed from ServiceNow plugin support. More advanced configurations of Instances and Blueprints, in addition to Workflows, can be exposed utilizing Catalog Items
 - 5.4.2: vCloud Director: vCD 9.x will no longer be supported by Morpheus
+- 5.4.2: After upgrading, it is recommended that you manually perform one "Daily" refresh Amazon Clouds to ensure availability of Amazon Service Plans for each region. To manually refresh a Cloud, navigate to Infrastructure > Clouds > (Selected Amazon Cloud) and select "Daily" from the REFRESH dropdown menu. If this is not done, |morpheus| may not show Amazon Service Plans in the provisioning wizard until after Midnight UTC following the upgrade when the next automatic Daily sync would run.
 
 |morpheus| Application OS
 =========================
