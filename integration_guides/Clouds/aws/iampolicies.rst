@@ -75,6 +75,7 @@ Morpheus Sample AWS IAM Policy
                   "ec2:DescribeInstances",
                   "ec2:DescribeInstanceStatus",
                   "ec2:DescribeInternetGateways",
+                  "ec2:DescribeInstanceTypes",
                   "ec2:DescribeKeyPairs",
                   "ec2:DescribeNatGateways",
                   "ec2:DescribeNetworkAcls",
