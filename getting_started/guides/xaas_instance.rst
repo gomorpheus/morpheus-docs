@@ -135,7 +135,7 @@ Navigate to |LibAutWor| and click :guilabel:`+ ADD`. Set the following configura
 
 Once done, click :guilabel:`SAVE CHANGES`
 
-.. image:: /images/xaas_instance/workflow.png
+.. image:: /images/xaas_instance/9workflow.png
   :width: 50%
 
 Create Instance Type
