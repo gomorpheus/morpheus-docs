@@ -4,6 +4,8 @@
 |morphver| Release Notes
 ************************
 
+Release Date: |releasedate|
+
 .. important:: |morpheus| v5.2.11-2 contains important security updates. v5.2.11-1 is no longer available and it is recommended to update from v5.2.11-1 to v5.2.11-2
 
 .. No highlights this time, small update
