@@ -3,6 +3,8 @@ import datetime
 master_doc = 'index'
 
 rst_prolog = """
+
+.. |releasedate| replace:: Dec 14 2021
 .. |morpheus| replace:: Morpheus
 .. |morphbranch| replace:: v5.4
 .. |morphver| replace:: v5.4.1
