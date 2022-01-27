@@ -1,11 +1,12 @@
 master_doc = 'index'
 
 latex_documents = [
-    (master_doc, 'morpheus5.2.14-1.tex', u'Morpheus Documentation',
+    (master_doc, 'morpheus5.2.15-1.tex', u'Morpheus Documentation',
      u'Morpheus', 'manual'),
 ]
 
 rst_prolog = """
+.. |releasedate| replace:: Jan 27 2022
 .. |morpheus| replace:: Morpheus
 .. |morphdat| replace:: Morpheus Data, LLC
 .. |repo_host_url| replace:: https://downloads.morpheusdata.com
