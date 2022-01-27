@@ -2,25 +2,30 @@ import datetime
 
 master_doc = 'index'
 
+latex_documents = [
+    (master_doc, 'morpheus5.4.3-1.tex', u'Morpheus Documentation',
+     u'Morpheus', 'manual'),
+]
+
 rst_prolog = """
 
-.. |releasedate| replace:: Jan 11 2022
+.. |releasedate| replace:: 
 .. |morpheus| replace:: Morpheus
 .. |morphbranch| replace:: v5.4
-.. |morphver| replace:: v5.4.2
-.. |minUpgradeVer| replace:: v5.2.11
-.. |previousMorphVer| replace:: v5.4.1
+.. |morphver| replace:: v5.4.3
+.. |minUpgradeVer| replace:: 
+.. |previousMorphVer| replace:: v5.4.2
 .. |rmqbranch| replace:: v3.5-3.9
 .. |rmqver| replace:: v3.9.8
 .. |mysqlbranch| replace:: v5.7
-.. |mysqlver| replace:: v5.7.35
+.. |mysqlver| replace:: v5.7.37
 .. |mysqlverfips| replace:: v.5.7.35
 .. |esbranch| replace:: v7.x
 .. |esver| replace:: v7.8.1
 .. |tcver| replace:: v9.0.54
 .. |nginxver| replace:: v1.20.1
 .. |linuxagentver| replace:: v2.2.2
-.. |winagentver| replace:: v1.7.0.0
+.. |winagentver| replace:: v1.8.0.0
 .. |macagentver| replace:: v2.1.1
 .. |nodePackageVer| replace:: 3.2.4
 .. |java| replace:: jdk-11.0.13+8
@@ -218,7 +223,7 @@ rst_prolog = """
 
 
 year = datetime.datetime.now().date().strftime("%Y")
-extensions = ['recommonmark','sphinx_markdown_tables','sphinxcontrib.contentui','sphinx_tabs.tabs','sphinxcontrib.images','sphinx_search.extension','notfound.extension','sphinx.ext.autosectionlabel'] #sphinx_tabs
+extensions = ['recommonmark','sphinx_markdown_tables','sphinxcontrib.contentui','sphinx_tabs.tabs','sphinxcontrib.images','sphinx_search.extension','notfound.extension','sphinx.ext.autosectionlabel','sphinx_rtd_dark_mode'] #sphinx_tabs
 templates_path = ['_templates']
 source_suffix = ['.rst', '.md']
 project = u'Morpheus Docs'
