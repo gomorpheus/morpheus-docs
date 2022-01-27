@@ -1,6 +1,7 @@
 master_doc = 'index'
 
 rst_prolog = """
+.. |releasedate| replace:: Nov 23 2021
 .. |morpheus| replace:: Morpheus
 .. |morphbranch| replace:: v5.3
 .. |morphver| replace:: v5.4.0
