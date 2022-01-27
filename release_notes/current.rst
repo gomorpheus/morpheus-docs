@@ -4,6 +4,8 @@
 |morphver| Release Notes
 ************************
 
+Release Date: |releasedate|
+
 .. No highlights this time, small update
   .. include:: highlights.rst
 
