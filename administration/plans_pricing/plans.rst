@@ -6,9 +6,6 @@ Plans & Pricing
 Overview
 --------
 
-<<<<<<< HEAD
-The Plans & Pricing page displays a list of all of your available service plans. From the service plans page you will be able to Create, Edit, and Delete service plans, as well as review basic plan details. The list of plans displayed on this page displays the plan name, description, Instances layout, memory, storage, and cost, as well as an action column to edit and delete. A default set of Service Plans are created in |morpheus|. They provide a means to set predefined tiers on memory, storage, cores, and cpu. Price tables can also be applied to these so estimated cost per virtual machine can be tracked as well as pricing for customers.
-=======
 Service Plans determine the amount of compute resources available to each Instance. When provisioning new Instances from |morpheus|, a plan is selected which determines the number of CPU cores, amount of memory and the amount of storage available to the associated machines. Additionally, when converting discovered instances in integrated clouds to |morpheus|-managed Instances, the user selects a plan which best fits the instance as it is currently configured. When Instances are reconfigured, a new plan may be selected which redefines the compute resources which should be available to the Instance.
 
 Plans can be as specific or open-ended as the user would like, restricting the user to the resources defined in the plan or allowing the user to increase those amounts at provision time. Price sets are associated with plans, which is how |morpheus| can compute cost values even for Instances running in private, on-prem Clouds.
@@ -21,10 +18,6 @@ Plans
 -----
 
 Plans types include Service Plans and Price Plans. Service Plans determine the memory, storage and cores configuration during provisioning and reconfigure.
->>>>>>> 4cca5b2b... add more detail around plans and plan filtering
-
-Service Plans
--------------
 
 Create Service Plan
 ^^^^^^^^^^^^^^^^^^^
