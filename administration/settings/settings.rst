@@ -1,11 +1,7 @@
 Settings
 ========
 
-<<<<<<< HEAD
-The `Administration > Settings` section sets global configuration parameters for the |morpheus| appliance, whitelabeling, provisioning, monitoring, backups, logs, software licenses, and the license for |morpheus| itself.
-=======
 The |AdmSet| section sets global configuration parameters for the |morpheus| appliance, whitelabeling, provisioning, monitoring, backups, logs, software licenses, and the license for |morpheus| itself.
->>>>>>> 4cca5b2b... add more detail around plans and plan filtering
 
 Appliance
 ---------
