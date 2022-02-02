@@ -9,11 +9,11 @@ latex_documents = [
 
 rst_prolog = """
 
-.. |releasedate| replace:: 
+.. |releasedate| replace::
 .. |morpheus| replace:: Morpheus
 .. |morphbranch| replace:: v5.4
 .. |morphver| replace:: v5.4.3
-.. |minUpgradeVer| replace:: 
+.. |minUpgradeVer| replace::
 .. |previousMorphVer| replace:: v5.4.2
 .. |rmqbranch| replace:: v3.5-3.9
 .. |rmqver| replace:: v3.9.8
@@ -128,10 +128,13 @@ rst_prolog = """
 .. |InfStoVol| replace:: Infrastructure > Storage > Volumes
 .. |InfStoDat| replace:: Infrastructure > Storage > Data Stores
 .. |InfStoSer| replace:: Infrastructure > Storage > Servers
-.. |InfKey| replace:: Infrastructure > Keys & Certs
-.. |InfKeyKey| replace:: Infrastructure > Keys & Certs > Key Pairs
-.. |InfKeySSL| replace:: Infrastructure > Keys & Certs > SSL Certificates
-.. |InfKeyInt| replace:: Infrastructure > Keys & Certs > Integrations
+.. |InfTru| replace:: Infrastructure > Trust
+.. |InfTruInt| replace:: Infrastructure > Trust > Integrations
+.. |InfTruCre| replace:: Infrastructure > Trust > Credentials
+.. |InfKey| replace:: Infrastructure > Trust
+.. |InfKeyKey| replace:: Infrastructure > Trust > Key Pairs
+.. |InfKeySSL| replace:: Infrastructure > Trust > SSL Certificates
+.. |InfKeyInt| replace:: Infrastructure > Trust > Integrations
 .. |InfBooMap| replace:: Infrastructure > Boot > Mapping
 .. |InfBooBoo| replace:: Infrastructure > Boot > Boot Menus
 .. |InfBooAns| replace:: Infrastructure > Boot > Answer Files
