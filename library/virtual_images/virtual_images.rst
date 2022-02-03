@@ -98,6 +98,8 @@ Virtual Images can be upload to |morpheus| from local files or URL's. Amazon and
 
 .. WARNING:: Be conscious of your Storage Provider selection. The default Storage Provider is the |morpheus| Appliance at ``/var/opt/morpheus/morpheus-ui/vms``. Uploading large images to the |morpheus| Appliance when there is inadequate space will cause upload failures and impact Appliance functionality. Ensure there is adequate space on your selected Storage Provider. Additional Storage Provider can be added at `Infrastructure > Storage`, which can be configured as the default Virtual Image Store or selected when uploading Images.
 
+.. NOTE:: VMware-type OVF Virtual Images do not support mounted ISO uploads
+
 To Add Virtual Image:
 
 1. Select :guilabel:`+ Add` in the Virtual Images page.
