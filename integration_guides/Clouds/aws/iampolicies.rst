@@ -22,6 +22,12 @@ Morpheus Sample AWS IAM Policy
               "Action": [
                   "autoscaling:DescribeAutoScalingGroups",
                   "ce:*",
+                  "cloudformation:Validatetemplate",
+                  "cloudformation:DescribeStacks",
+                  "cloudformation:DescribeStackResources",
+                  "cloudformation:CreateStack",
+                  "cloudformation:UpdateStack",
+                  "cloudformation:DeleteStack",
                   "cloudwatch:DescribeAlarms",
                   "cloudwatch:GetMetricStatistics",
                   "ec2:AllocateAddress",
