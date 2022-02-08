@@ -8,7 +8,7 @@ Checks can be customized to run custom queries, check queue sizes, or even adjus
 Health
 ------
 
-A check can have 3 health states. They are Failed, Warning (Recovering), and Healthy. When a check test fails the system automatically reattempts the check after 30 seconds to eliminate false positives. This will convert the check into a `Failed` state and raise the appropriate severity incident depending on the grouping of the check. When a check recovers it automatically goes into a Warning state. This will remain in the warning state until 10 successful check runs have completed.
+A check can have 4 health states. They are Healthy, Error, Warning, and Unknown. When a check test fails the system automatically reattempts the check after 30 seconds to eliminate false positives. This will convert the check into a `Error` state and raise the appropriate severity incident depending on the grouping of the check. When a check recovers it automatically goes into a Warning state. This will remain in the warning state until 10 successful check runs have completed.
 
 Options
 -------
