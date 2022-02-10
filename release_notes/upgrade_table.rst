@@ -7,26 +7,19 @@
      overflow:hidden;padding:10px 13px;word-break:normal;}
    .tg th{border-color:white;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
      font-weight:normal;overflow:hidden;padding:10px 13px;word-break:normal;}
-   .tg .lightGrey{background-color:#656565;border-color:inherit;color:#ffffff;text-align:left;vertical-align:top}
+   .tg .lightGrey{background-color:#656565;border-color:inherit;color:#ffffff;text-align:center;vertical-align:top}
    .tg .orange{background-color:#ff8c00;border-color:inherit;color:#ffffff;text-align:center;vertical-align:top}
-   .tg .tg-8fch{background-color:#1a8c2a;border-color:inherit;color:#ffffff;text-align:center;vertical-align:top}
-   .tg .tg-af47{background-color:#ffffff;border-color:inherit;color:#000000;text-align:center;vertical-align:top}
-   .tg .tg-orxw{background-color:#cb0000;border-color:inherit;color:#ffffff;text-align:left;vertical-align:top}
+   .tg .green{background-color:#1a8c2a;border-color:inherit;color:#ffffff;text-align:center;vertical-align:top}
    .tg .white{border-color:inherit;color:#;text-align:left;vertical-align:top}
-   .tg .green{background-color:#1a8c2a;border-color:inherit;color:#ffffff;text-align:left;vertical-align:top}
-   .tg .tg-j8c8{background-color:#343434;border-color:inherit;color:#ffffff;text-align:left;vertical-align:top}
    .tg .darkGrey{background-color:#343434;border-color:inherit;color:#ffffff;text-align:center;vertical-align:top}
-   .tg .tg-vkyz{background-color:#185a7d;border-color:inherit;color:#ffffff;text-align:left;vertical-align:top}
    .tg .red{background-color:#cb0000;border-color:inherit;color:#ffffff;text-align:center;vertical-align:top}
-   .tg .tg-lent{background-color:#185a7d;border-color:inherit;color:#ffffff;text-align:center;vertical-align:top}
-   .tg .tg-q1q4{background-color:#656565;border-color:inherit;color:#ffffff;text-align:center;vertical-align:top}
-   .tg .tg-q1q4{background-color:#656565;border-color:inherit;color:#ffffff;text-align:center;vertical-align:top}
+   .tg .blue{background-color:#185a7d;border-color:inherit;color:#ffffff;text-align:center;vertical-align:top}
    </style>
    <table class="tg">
    <thead>
      <tr>
-       <th class="tg-j8c8">From Version</th>
-       <th class="tg-af47" colspan="23">To Version</th>
+       <th class="darkGrey">From Version</th>
+       <th class="darkGrey" colspan="25">To Version</th>
      </tr>
    </thead>
      <tbody>
@@ -730,23 +723,23 @@
        <td class="green">5.4.3</td>
      </tr>
      <tr>
-       <td class="tg-8fch" colspan="31">Rolling Upgrade Supported</td>
+       <td class="green" colspan="26">Rolling Upgrade Supported</td>
      </tr>
      <tr>
-       <td class="tg-lent" colspan="31">Non-Rolling Upgrade Supported</td>
+       <td class="blue" colspan="26">Non-Rolling Upgrade Supported</td>
      </tr>
      <tr>
-       <td class="orange" colspan="31">Upgrade Not Recommended*</td>
+       <td class="orange" colspan="26">Upgrade Not Recommended*</td>
      </tr>
      <tr>
-       <td class="red" colspan="31">Upgrade Not Supported</td>
+       <td class="red" colspan="26">Upgrade Not Supported</td>
      </tr>
      <tr>
-       <td class="tg-q1q4" colspan="31">Downgrade Not Supported</td>
+       <td class="lightGrey" colspan="26">Downgrade Not Supported</td>
      </tr>
    </tbody>
-   </table>
-   </div>
+  </table>
+ </div>
 
 \* Some Features and Fixes in the ``From`` version may not be included in the ``To`` version due to ``From`` version being released after the ``To`` version.
 
