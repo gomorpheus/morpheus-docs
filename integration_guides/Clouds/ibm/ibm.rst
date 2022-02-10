@@ -6,19 +6,22 @@ IBM Cloud offers a wide set of cloud computing services including compute, stora
 Integrating IBM Cloud with |morpheus|
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Connecting an IBM Cloud account with |morpheus| is a simple process requiring only an API key. You can create an API key from the IBM Cloud web console if you don't currently have access to one.
+Connecting an IBM Cloud account with |morpheus| is a simple process requiring only an API key. You can create an API key from the IBM Cloud web console if you don't currently have access to one. Integrating with |morpheus| requires a user API key. If needed, create one by clicking "Manage" in the upper menu bar of the IBM Cloud web console and clicking "Access (IAM)". Select "Users" from the left navigation menu and click on the desired user. Create a new API Key from within the API Keys section and store the API Key in a secure place to retrieve in the next step. It's recommended that you integrate |morpheus| using an IBM Cloud admin account to ensure you won't run into any blockers while working in |morpheus|. Using |morpheus| role-based access you can limit which IBM Cloud constructs and capabilities are accessible to your users.
+
+With the API key created, head back to |morpheus| and continue with the following steps:
 
 #. Navigate to Infrastructure > Clouds
 #. Click :guilabel:`+ ADD`
 #. Complete the following required fields:
 
   - **NAME:** A friendly name for the cloud inegration in |morpheus|
-  - **USERNAME:** The name given to the API key you're using the authenticate the connection
+  - **USERNAME:** Enter "apikey" (Do not enter your IBM Cloud username or anything other than "apikey")
   - **API Key:** The API key value
   - **DATACENTER:** Select the IBM Cloud data center
+  - **OBJECT STORE:** If desired and if any are found, select an object store
 
 #. Click :guilabel:`NEXT`
-#. Select a Group for this Cloud
+#. Select a Group for this Cloud or create a new one if desired
 #. Complete the wizard to save the new integration
 
 .. image:: /images/integration_guides/clouds/ibm/1createCloud.png
