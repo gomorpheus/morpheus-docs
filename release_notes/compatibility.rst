@@ -26,6 +26,8 @@ Breaking Changes
 - 5.4.2: ServiceNow: Instance and Blueprint specific exposures will be removed from ServiceNow plugin support. More advanced configurations of Instances and Blueprints, in addition to Workflows, can be exposed utilizing Catalog Items
 - 5.4.2: vCloud Director: vCD 9.x will no longer be supported by Morpheus
 - 5.4.2: After upgrading, it is recommended that you manually perform one "Daily" refresh Amazon Clouds to ensure availability of Amazon Service Plans for each region. To manually refresh a Cloud, navigate to Infrastructure > Clouds > (Selected Amazon Cloud) and select "Daily" from the REFRESH dropdown menu. If this is not done, |morpheus| may not show Amazon Service Plans in the provisioning wizard until after Midnight UTC following the upgrade when the next automatic Daily sync would run.
+- 5.4.3: |morpheus| Worker/Gateway v5.4.3 packages are now available. Existing Worker & Gateway nodes must be upgraded to v5.4.3 for compatibility with |morpheus| v5.4.3 Appliances.
+- 5.4.3: vCloud Director: Support for integrations with vCD 9 ended
 
 |morpheus| Application OS
 =========================
@@ -66,15 +68,12 @@ Services
 |morphver| Service Version Changes
 ----------------------------------
 
-:Appliance: - Embedded Elasticsearch Log4j updated to v2.17 (CVE-2021-45105).  :superscript:`5.2.14`
-             - Embedded Elasticsearch jackson-databind updated to 2.13.1 (CVE-2020-25649) :superscript:`5.2.14`
-             - Embedded Elasticsearch jackson-dataformat-cbor updated to 2.13.1 (CVE-2020-28491) :superscript:`5.2.14`
-
-:Agent: - Linux Agent version updated to v2.2.2 :superscript:`5.2.14`
-        - Log4j removed from Linux Agent, replaced with Slf4j :superscript:`5.2.14`
-
-:Node Packages: - Node and VM Node Package versions updated to v3.2.4 :superscript:`5.2.14`
-                - Java jdk & jre updated to 11.0.13+8 :superscript:`5.2.14`
+:Appliance: - Java: Updated jdk to v11.0.14
+            - MySQL: Embedded MySQL updated to v5.7.37 :superscript:`5.2.15`
+            - Tomcat: Updated to v9.0.58
+:Agent: - Added FIPS compliant el8 |morpheus| Agent node & vm-node packages. Compatible with RHEL 8, CentOS 8, and Oracle Linux 8
+        - Agent Node & VM Node Packages: Java: Updated jdk to v11.0.14
+        - |morpheus| Windows Agents updated to v1.8.0, fixes Windows Bare-Metal Servers displaying incorrect core count :superscript:`5.2.15`
 
 |
 
@@ -121,31 +120,27 @@ When externalizing MySQL, Elasticsearch and/or RabbitMQ services, the following 
      - |morphver| Changes
    * - Morpheus Node and VM Node Packages
      - |nodePackageVer|
-     - - Node and VM Node Package versions updated to v3.2.4 :superscript:`5.2.14`
-       - Java jdk & jre updated to 11.0.13+8 :superscript:`5.2.14`
+     - - Node and VM Node Package versions updated to v3.2.5
+       - Java jdk & jre updated to 11.0.14+9
    * - Morpheus Linux Agent
      - |linuxagentver|
-     - - Linux Agent version updated to v2.2.2 :superscript:`5.2.14`
-       - Log4j removed from Linux Agent, replaced with Slf4j :superscript:`5.2.14`
+     - No changes
    * - Morpheus Windows Agent
      - |winagentver|
-     - No changes
+     - |morpheus| Windows Agents updated to v1.8.0, fixes Windows Bare-Metal Servers displaying incorrect core count :superscript:`5.2.15`
    * - Morpheus macOS Agent
      - |macagentver|
-     - No changes
+     - |morpheus| macOS agent updated to |macagentver|
+     - Java jdk & jre updated to 11.0.14+9
 
 
 |
 
-Security
-========
+.. Security
+.. ========
 
-CVEs Addressed
---------------
-
-- CVE-2021-45105
-- CVE-2020-25649
-- CVE-2020-28491 
+.. CVEs Addressed
+.. --------------
 
 |
 
