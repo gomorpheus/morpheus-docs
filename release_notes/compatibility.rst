@@ -120,8 +120,7 @@ When externalizing MySQL, Elasticsearch and/or RabbitMQ services, the following 
      - |morphver| Changes
    * - Morpheus Node and VM Node Packages
      - |nodePackageVer|
-     - - Node and VM Node Package versions updated to v3.2.5
-       - Java jdk & jre updated to 11.0.14+9
+     - Node and VM Node Package versions updated to v3.2.5, Java jdk & jre updated to 11.0.14+9
    * - Morpheus Linux Agent
      - |linuxagentver|
      - No changes
@@ -130,9 +129,7 @@ When externalizing MySQL, Elasticsearch and/or RabbitMQ services, the following 
      - |morpheus| Windows Agents updated to v1.8.0, fixes Windows Bare-Metal Servers displaying incorrect core count :superscript:`5.2.15`
    * - Morpheus macOS Agent
      - |macagentver|
-     - |morpheus| macOS agent updated to |macagentver|
-     - Java jdk & jre updated to 11.0.14+9
-
+     - |morpheus| macOS agent updated to |macagentver|, Java jdk & jre updated to 11.0.14+9
 
 |
 
