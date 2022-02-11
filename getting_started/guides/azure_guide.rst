@@ -331,7 +331,7 @@ Since this guide is focused on working within an Azure cloud that we integrated 
   	BOOTPROTO="dhcp"
   	DEFROUTE=yes
 
-  For more on CentOS/RHEL image prep, including additional configurations for specific scenarios, take a look at the `VMware image prep <https://docs.morpheusdata.com/en/latest/integration_guides/Clouds/vmware/vmware_templates.html#gotyas>`_ page in |morpheus| Docs.
+  For more on CentOS/RHEL image prep, including additional configurations for specific scenarios, take a look at the `VMware image prep <https://docs.morpheusdata.com/en/latest/integration_guides/Clouds/vmware/vmware_templates.html#gotchas>`_ page in |morpheus| Docs.
 
   **Creating an Ubuntu Image**
 
