@@ -36,7 +36,7 @@ Finally, click :guilabel:`ADD CREDENTIALS`. Once saved, the credential set will 
 Installing and Integrating an External Cypher Appliance
 -------------------------------------------------------
 
-The external Cypher appliance runs on a small separate VM and supports a variety of base OS distributions. Credentials are securely passed to the external appliance and can be retrieved by any |morpheus| appliance which is integrated with it. The download URL for the installer can be retrieved from |morpheus| `Hub <https://morpheushub.com/>`_, replace the placeholder URL in the instructions below with the correct URL for the latest version of the Cypher appliance.
+The external Cypher appliance runs on a small separate VM and supports a variety of base OS distributions. Credentials are securely passed to the external appliance and can be retrieved and consumed in specific places within |morpheus| UI. The download URL for the installer can be retrieved from |morpheus| `Hub <https://morpheushub.com/>`_, replace the placeholder URL in the instructions below with the correct URL for the latest version of the Cypher appliance.
 
 Begin by provisioning and updating the VM for the Cypher appliance. Then, download the installer. The following steps go through the installation process on Ubuntu but, as mentioned in the previous paragraph, many popular distributions are supported.
 
