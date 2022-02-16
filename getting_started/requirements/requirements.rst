@@ -20,8 +20,8 @@ Base Requirements
    * - Amazon Linux
      - 2
      -
-   * - CentOS
-     - 7.x, 8.x
+   * - CentOS Stream
+     - 8.x, 9.x
      -
    * - Debian
      - |debianVersion|
