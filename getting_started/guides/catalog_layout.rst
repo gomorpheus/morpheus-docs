@@ -119,23 +119,24 @@ Next, create a plugin class which handles registration of the new catalog layout
   }
 
 Creating the Report Provider Class
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 The catalog layout provider class contains the code which will fetch and compile the targeted data so it can be rendered in the report view. An example report provider is reproduced below with comments to increase readability of the code.
 
 .. code-block::
 
-package com.morpheusdata.cataloglayout
+  package com.morpheusdata.cataloglayout
 
-import com.morpheusdata.core.AbstractCatalogItemLayoutProvider
-import com.morpheusdata.core.MorpheusContext
-import com.morpheusdata.core.Plugin
-import com.morpheusdata.model.Account
-import com.morpheusdata.model.CatalogItemType
-import com.morpheusdata.model.TaskConfig
-import com.morpheusdata.model.ContentSecurityPolicy
-import com.morpheusdata.model.User
-import com.morpheusdata.views.HTMLResponse
-import com.morpheusdata.views.ViewModel
+  import com.morpheusdata.core.AbstractCatalogItemLayoutProvider
+  import com.morpheusdata.core.MorpheusContext
+  import com.morpheusdata.core.Plugin
+  import com.morpheusdata.model.Account
+  import com.morpheusdata.model.CatalogItemType
+  import com.morpheusdata.model.TaskConfig
+  import com.morpheusdata.model.ContentSecurityPolicy
+  import com.morpheusdata.model.User
+  import com.morpheusdata.views.HTMLResponse
+  import com.morpheusdata.views.ViewModel
 
   class BasicCatalogLayoutProvider extends AbstractCatalogItemLayoutProvider {
     Plugin plugin
