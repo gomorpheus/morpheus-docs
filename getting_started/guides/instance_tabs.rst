@@ -91,6 +91,7 @@ The build.gradle file contains information used during the build of the plugin. 
 
     tasks.assemble.dependsOn tasks.shadowJar
 
+|
 
 .. list-table::
    :widths: auto
