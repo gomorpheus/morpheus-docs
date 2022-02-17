@@ -21,7 +21,7 @@ Base Requirements
      - 2
      -
    * - CentOS Stream
-     - 8.x, 9.x
+     - 8.x
      -
    * - Debian
      - |debianVersion|
