@@ -48,7 +48,6 @@ Fixes
              - Creating ``containerTemplate`` type Tasks through |morpheus| CLI now works properly
              - Fixed an issue that could prevent provisioning of Apps from App Blueprints in a Tenant account from |morpheus| API or CLI
              - Fixed an issue that prevented creation or configuration of Expiration with internal approval configuration through |morpheus| API and CLI
-             - Fixed an issue that prevented provisioning using Azure Marketplace images via |morpheus| API if the ``marketplaceOffer`` value in the config map contained hyphens or no spaces in the offer name
              - Fixed an issue with Cloud filtering when provisioning Kubernetes clusters through |morpheus| CLI. Previously unsupported Clouds could be selected and provisioning would fail
              - Folder selection is now mandatory when "cloning to image" through |morpheus| API and CLI. Previously if a folder was not selected, the process could fail if the user did not have correct permissions on the root folder
              - Improvements made to Instance Type filtering when adding Instances via |morpheus| CLI. Previously Instance Types could potentially appear which were improper for the Group and Cloud selection which would cause failures
@@ -141,5 +140,5 @@ Appliance & Agent Updates
 :Agent: - Added FIPS compliant el8 |morpheus| Agent node & vm-node packages. Compatible with RHEL 8, CentOS 8, and Oracle Linux 8
         - Agent Node & VM Node Packages: Java: Updated jdk to v11.0.14
         - |morpheus| Windows Agents updated to v1.8.0, fixes Windows Bare-Metal Servers displaying incorrect core count :superscript:`5.2.15`
-  
+
 .. ..
