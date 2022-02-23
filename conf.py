@@ -1,7 +1,7 @@
 master_doc = 'index'
 
 latex_documents = [
-    (master_doc, 'morpheus5.2.15-1.tex', u'Morpheus Documentation',
+    (master_doc, 'morpheus5.2.15-2.tex', u'Morpheus Documentation',
      u'Morpheus', 'manual'),
 ]
 
@@ -21,15 +21,15 @@ rst_prolog = """
 .. |mysqlverfips| replace:: v.5.7.29
 .. |esbranch| replace:: v7.x
 .. |esver| replace:: v7.8.1
-.. |tcver| replace:: v9.0.54
+.. |tcver| replace:: v9.0.58
 .. |nginxver| replace:: v1.20.1
 .. |linuxagentver| replace:: v2.2.2
-.. |winagentver| replace:: v1.7.0.0
-.. |macagentver| replace:: v2.1.1
-.. |nodePackageVer| replace:: 3.2.4
-.. |java| replace:: jdk-11.0.13+8
-.. |java-mac| replace:: v8u312-b07
-.. |openjdk-jre| replace:: jdk-11.0.13+8-jre
+.. |winagentver| replace:: v1.8.0.0
+.. |macagentver| replace:: v2.2.2
+.. |nodePackageVer| replace:: 3.2.5
+.. |java| replace:: v11.0.14
+.. |java-mac| replace:: v11.0.14
+.. |openjdk-jre| replace:: v11.0.14
 .. |openjdk-elasticsearch| replace:: 14.0.2+12
 .. |openssl| replace:: 1.1.1k
 .. |openssl_fips| replace:: 1.0.2u
