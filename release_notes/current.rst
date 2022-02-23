@@ -4,7 +4,7 @@
 |morphver| Release Notes
 *************************
 
-Release Date: |releasedate|
+Release Date: |releasedate| v5.2.15-2 Feb 23 2022
 
 .. NOTE:: v5.2.15-2 fixes critical ip addresses issue with jdk11, NSX-V DHCP relay validation error, adds FIPS EL8 Agent Node & VM Node Packages and security updates for embedded Java and Tomcat versions.
 
