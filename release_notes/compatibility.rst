@@ -118,8 +118,8 @@ When externalizing MySQL, Elasticsearch and/or RabbitMQ services, the following 
      - |morphver| Changes
    * - Morpheus Node and VM Node Packages
      - |nodePackageVer|
-     - - Node and VM Node Package versions updated to v3.2.4 :superscript:`5.4.2`
-       - Java jdk & jre updated to 11.0.13+8 :superscript:`5.4.2`
+     - - Node and VM Node Package versions updated to v3.2.5 :superscript:`5.4.3`
+       - Java jdk & jre updated to 11.0.14+8 :superscript:`5.4.3`
    * - Morpheus Linux Agent
      - |linuxagentver|
      - - Linux Agent version updated to v2.2.2 :superscript:`5.4.2`
@@ -129,7 +129,7 @@ When externalizing MySQL, Elasticsearch and/or RabbitMQ services, the following 
      - No changes
    * - Morpheus macOS Agent
      - |macagentver|
-     - No changes
+     - MacOS Agent version updated to v2.2.2 :superscript:`5.4.2`
 
 
 |
