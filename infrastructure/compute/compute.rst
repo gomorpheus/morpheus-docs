@@ -1,7 +1,7 @@
 Compute
 =======
 
-.. image:: /images/infrastructure/compute/infra_compute_header_5.3.1.png
+.. image:: /images/infrastructure/compute/infra_compute_header_5.4.3.png
 
 .. note:: The Infrastructure ``Hosts`` page from previous versions has been renamed to ``Compute`` and updated with ``Container`` and ``Resource`` sections.
 
