@@ -56,12 +56,16 @@ Once done, click :guilabel:`SAVE CHANGES`.
 
 Create two more Inputs in a similar fashion with the following configuration:
 
+**Code Input**
+
 - **NAME:** Subtenant Group Code
 - **FIELD NAME:** subgroupcode
 - **TYPE:** Text
 - **LABEL:** Subtenant Group Code
 - **HELP BLOCK:** Optional Code Value (I opted to enter help block text to make it clearer to the user that this is an optional input)
 - **REQUIRED:** Unchecked
+
+**Location Input**
 
 - **NAME:** Subtenant Group Location
 - **FIELD NAME:** subgrouplocation
@@ -116,4 +120,4 @@ After saving the new Operational Workflow, you'll be left on the Workflows list 
 
 Once again login in as or impersonate your service account user within the Subtenant. Navigate to |InfGro| and inspect the list. You should now see that our Group has been created here.
 
-.. image /images/opworkguide/grouplist.png
+.. image:: /images/opworkguide/grouplist.png
