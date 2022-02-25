@@ -13,6 +13,7 @@ Guides
    /getting_started/guides/azure_guide.rst
    /getting_started/guides/autoinstall_instance.rst
    /getting_started/guides/autoinstall_app.rst
+   /getting_started/guides/op_workflows.rst
    /getting_started/guides/xaas_instance.rst
    /getting_started/guides/custom_reports.rst
    /getting_started/guides/instance_tabs.rst
