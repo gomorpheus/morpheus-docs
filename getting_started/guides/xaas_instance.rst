@@ -21,7 +21,7 @@ Create Cypher
 
 Cypher is a secure key/value store in |morpheus|. Using Cypher, we can securely store passwords and other secret values (such as API keys) which can then be called into automation Tasks and templates. Here we will store the Dropbox API token as a Cypher entry. Creating Dropbox developer accounts and obtaining API keys goes beyond the scope of this guide but Dropbox developer tools are well-documented if you want to try this out for yourself. In the |morpheus| UI, go to |TooCyp| and click :guilabel:`+ ADD`.
 
-There are a number of different types of Cypher keys, which are useful in different contexts. Here's we'll use the "secret" type which allows us to enter some known value which can be securely accessed later. Enter the following:
+There are a number of different types of Cypher keys, which are useful in different contexts. Here we'll use the "secret" type which allows us to enter some known value which can be securely accessed later. Enter the following:
 
 - **KEY:** secret/dropboxtoken
 - **VALUE:** Enter Dropbox API token here
