@@ -119,7 +119,7 @@ The process for creating the remaining three Tasks is very similar, expand the s
 Create Provisioning Workflow
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-|morpheus| Workflows pull multiple Tasks together into a logical group. There are two types of Workflows: Operational and Provisioning. We won't use any Operational Workflows here but these Workflows can be run on-demand as needed or set to run on a recurring time schedule (like a cronjob). Provisioning Workflows are associated with an Instance at provision time and will automatically run the appropriate Tasks when the Instance reaches certain phases of its lifecycle, such as during provisioning, teardown, startup, or shutdown. In our case, we need the following to occuring during the Instance lifecycle:
+|morpheus| Workflows pull multiple Tasks together into a logical group. There are two types of Workflows: Operational and Provisioning. We won't use any Operational Workflows here but these Workflows can be run on-demand as needed or set to run on a recurring time schedule (like a cronjob). Provisioning Workflows are associated with an Instance at provision time and will automatically run the appropriate Tasks when the Instance reaches certain phases of its lifecycle, such as during provisioning, teardown, startup, or shutdown. In our case, we need the following to occurring during the Instance lifecycle:
 
 - At the provisioning phase, we want a folder to be created
 - At the reconfigure phase (when the Instance is edited), we want the folder to be renamed and the Instance name to be updated
