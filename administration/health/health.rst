@@ -15,7 +15,7 @@ The |Morpheus| Health section provides an overview of the health of your |Morphe
   - Elastic
   - Queues
 
-.. note:: An Elasticsearch warning status is typical for single node Appliances due to a single elasticsearch node and default replica count exceeding available nodes.
+.. NOTE:: An Elasticsearch warning status is typical for single node Appliances due to a single elasticsearch node and default replica count exceeding available nodes.
 
 HEALTH LEVELS include
   - |Morpheus| CPU
