@@ -5,19 +5,10 @@ Apps allow instances having general relationships to be grouped in a clean and o
 
 Apps can be created from Blueprints, which are made in |LibBluApp| or from Existing Apps.
 
-
 Creating Apps
 -------------
 
 New Apps can be created from Blueprints or using existing Instances. 
-
-
-
-Creating Apps
--------------
-
-New Apps can be created from Blueprints or using existing Instances. 
-
 
 Creating Apps from Blueprints
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -79,48 +70,48 @@ App Status is determined by the status of the Instances within the App or by the
 
    * - Status Icon
      - App Status
-     - Status Reason 
-   * - .. image:: /images/provisioning/instances/status/running_icon.svg  
+     - Status Reason
+   * - .. image:: /images/provisioning/instances/status/running_icon.svg
           :width: 25
-     - Running 
-     - All Instance Statuses = Running      
+     - Running
+     - All Instance Statuses = Running
    * - .. image:: /images/provisioning/instances/status/failed_icon.svg
           :width: 25
-     - Failed 
-     - Any Instance Status = Failed 
+     - Failed
+     - Any Instance Status = Failed
    * - .. image:: /images/provisioning/instances/status/pending_icon.svg
           :width: 25
-     - Pending 
-     - Any Instance Status = Pending 
+     - Pending
+     - Any Instance Status = Pending
    * - .. image:: /images/provisioning/instances/status/pendingRemoval_icon.svg
           :width: 25
-     - Pending Removal 
-     - Any Instance Status = Pending Removal 
+     - Pending Removal
+     - Any Instance Status = Pending Removal
    * - .. image:: /images/provisioning/instances/status/deploying_icon.svg
           :width: 25
-     - Provisioning 
-     - Any Instance Status = Provisioning 
+     - Provisioning
+     - Any Instance Status = Provisioning
    * - .. image:: /images/provisioning/instances/status/removing_icon.svg
           :width: 25
-     - Removing 
-     - The DELETE action was trigger on the App 
+     - Removing
+     - The DELETE action was trigger on the App
    * - .. image:: /images/provisioning/instances/status/unknown_icon.svg
           :width: 25
-     - Unknown 
-     - Any Instance Status = Unknown, or the App is empty      
+     - Unknown
+     - Any Instance Status = Unknown, or the App is empty
 
 Editing an App
 ^^^^^^^^^^^^^^
 
-The :guilabel:`EDIT` action allows permissioned users to update an Apps metadata, Environment, Group and Owner. 
+The :guilabel:`EDIT` action allows permissioned users to update an Apps metadata, Environment, Group and Owner.
 
 #. Navigate to |ProApp|
 #. Select an App from the list to view the App detail page
 #. Select :guilabel:`EDIT`
-#. Update the following 
+#. Update the following
 
-   :NAME: App Name 
-   :DESCRIPTION: App Description 
+   :NAME: App Name
+   :DESCRIPTION: App Description
    :ENVIRONMENT: App Environment
    :GROUP: App Group assignment
    :OWNER: User assigned as Owner of the App
@@ -130,12 +121,12 @@ The :guilabel:`EDIT` action allows permissioned users to update an Apps metadata
 Deleting an App
 ^^^^^^^^^^^^^^^
 
-The :guilabel:`DELETE` action allows permissioned users to delete an App and, by default, all Instances within the App. 
+The :guilabel:`DELETE` action allows permissioned users to delete an App and, by default, all Instances within the App.
 
 #. Navigate to |ProApp|
 #. Select an App from the list to view the App detail page
 #. Select :redguilabel:`DELETE`
-#. The DELETE APP? confirmation modal will be displayed: 
+#. The DELETE APP? confirmation modal will be displayed:
 
    :Remove Instances: Deletes all Instances associated with the App
                       - Enabled by Default
@@ -161,4 +152,3 @@ To export an App Blueprint as JSON:
 #. Select an App from the list to view the App detail page
 #. Select :guilabel:`ACTIONS` > Export
 #. The App export file will be downloaded to your computer as ``{app_name}.json``
-
