@@ -103,8 +103,8 @@ Role Mappings
     -
   * - Admin: Distributed Workers
     - None, Full
-    - Allows or disallows access to |AdmInt| Distributed Workers	Tab.
-    -
+    - Allows or disallows access to |AdmInt| > Distributed Workers tab
+    - This tab allows users to integrate existing distributed workers into |morpheus|
     -
     -
   * - Admin: Environment Settings
@@ -307,9 +307,9 @@ Role Mappings
     -
   * - Infrastructure: Credentials
     - None, Read, Full
-    - 
-    - 
-    - 
+    - Determines access to the Credentials tab in |InfTru|
+    - The Credentials tab allows users to securely store credential sets, either internally or to an integrated external credential store, for later retrieval within |morpheus| UI
+    -
     -
   * - Infrastructure: DHCP Relays
     - None, Read, Full
@@ -367,15 +367,15 @@ Role Mappings
     -
   * - Infrastructure: Network Proxies
     - None, Read, Full
-    - Determines access to the Proxies tab on the Infrastructure > Networks page.
+    - Determines access to the Proxies tab on the |InfNet| page.
     - The Infrastructure Networks Proxies page is where Proxy configurations are stored, which are available for use by the provisioning engines.
     - This permission is recommended for those responsible for configuring proxies to be used when provisioning.
     -
   * - Infrastructure: Network Router DHCP Binding
     - None, Read, Full
-    - 
-    - 
-    - 
+    - Determines access to DHCP binding settings on certain network router types
+    -
+    -
     -
   * - Infrastructure: Network Router DHCP Pool
     - None, Read, Full
@@ -385,9 +385,9 @@ Role Mappings
     -
   * - Infrastructure: Network Router DHCP Relay
     - None, Read, Full
-    - 
-    - 
-    - 
+    - Determines access to DHCP relay settings on certain network router types
+    -
+    -
     -
   * - Infrastructure: Network Router Firewalls
     - None, Read, Full
@@ -427,7 +427,7 @@ Role Mappings
     -
   * - Infrastructure: Network Server Groups
     - None, Read, Full
-    - Determines access to
+    -
     -
     -
     -
@@ -536,7 +536,7 @@ Role Mappings
   * - Library: Options
     - None, Read, Full
     - Determines access to |LibOpt| - Inputs (Option Types) and Option Lists.
-    -
+    - The Options tab is where Inputs and Option Lists are created. These are important for building Instance types, Blueprints, Catalog Items, and Workflows which accept user input for custom setttings
     - This permission is recommended for those responsible for creating and managing Library Inputs (Option Types) and Option Lists.
     -
   * - Library: Scheduling - Execute (Formerly Provisioning: Scheduling - Execute)
@@ -769,9 +769,9 @@ Role Mappings
     -
   * - Reconfigure Servers
     - None, Full
-    - 
-    - 
-    - 
+    - Determines access to the reconfigure action for provisioned servers
+    - Reconfigure allows server configuration (such as CPU, memory, storage, and networking) to be updated post-provisioning
+    -
     -
   * - Remote Console
     - None, Provisioned, Full
@@ -823,22 +823,28 @@ Role Mappings
     - It is recommended this permission is set to None on the Tenant Role to restrict access for Subtenant users.
   * - Tools: VDI Pools
     - None, Read, Full
-    - Controls User access to VDI Pools which are currently configured (Tools > VDI Pools) via the Virtual Desktops Persona view
-    - 
-    - 
-    - 
+    - Controls create and view access to VDI Pools which are currently configured (Tools > VDI Pools)
+    - Created VDI pools can be consumed from the Virtual Desktop persona view
+    -
+    -
   * - VDI: Copy/Paste
     - None, Full
-    - Controls the ability for the VDI user to copy/paste contents from/to the VDI instance.
-    - 
-    - 
-    - 
+    - Controls the ability for the VDI user to copy/paste contents from/to the VDI instance
+    -
+    -
+    -
   * - VDI: Local Printer
     - None, Full
-    - 
-    - 
-    - 
-    - 
+    - Controls printer access for VDI users
+    -
+    -
+    -
+  * - Custom Plugins
+    - None, Full
+    - Controls access to custom plugins that are integrated with the |morpheus| appliance
+    - When custom plugins are integrated, a new permission will be added to this list which is named for that plugin. Administrators can individually control access to their custom plugins by setting permission for each role and for each individual plugin
+    -
+    -
   * - None - No Permissions
     - None
     - When all permissions are set to None, the following behavior can be expected: This allows only access to the User Setting page displayed, which is accessed by clicking on the user's name in the upper-right corner of the application window.
