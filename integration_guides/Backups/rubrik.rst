@@ -6,7 +6,7 @@ Adding Rubrik Integration
 
 .. NOTE:: The Rubrik backup service is currently only supported on the VMware cloud type.
 
-#. Navigate to `Backups > Services`
+#. Navigate to `Backups > Integrations`
 #. Select :guilabel:`+ ADD`
 #. Select Rubrik
 #. Fill in the following:

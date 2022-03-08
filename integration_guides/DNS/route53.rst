@@ -12,7 +12,7 @@ Add Route 53 Integration
 Route 53 can be added in the `Administration` or `Infrastructure` sections:
 
 #. In |AdmInt|, select :guilabel:`+ New Integration`
-#. In ``Infrastructure > Networks > Services``, select :guilabel:`Add Service`
+#. In ``Infrastructure > Networks > Integrations``, select :guilabel:`+ Add`
 #. Provide the following:
 
    TYPE
@@ -26,7 +26,7 @@ Route 53 can be added in the `Administration` or `Infrastructure` sections:
    SECRET KEY
     AWS User IAM Secret Key
 
-#. Once saved the Integration will be added and visible in both |AdmInt| and ``Infrastructure > Networks > Services``
+#. Once saved the Integration will be added and visible in both |AdmInt| and ``Infrastructure > Networks > Integrations``
 
 .. NOTE:: All fields can be edited after saving.
 

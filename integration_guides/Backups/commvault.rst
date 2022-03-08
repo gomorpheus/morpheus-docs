@@ -15,7 +15,7 @@ Features
 Adding Commvault Integration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-#. Navigate to `Backups > Services`
+#. Navigate to `Backups > Integrations`
 #. Select :guilabel:`+ ADD`
 #. Select Commvault
 #. Fill in the following:

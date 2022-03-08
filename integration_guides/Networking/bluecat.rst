@@ -29,7 +29,7 @@ Adding Bluecat to |morpheus|
 
 #. Click :guilabel:`SAVE CHANGES`
 
-The Bluecat Integration will be saved, IP pools will sync in and populate under ``Infrastructure > Network > IP Pools``, and Domain will populate in ``Infrastructure > Network > Domains``. Pools and Domains can also be found in the Bluecat Integration details page, which can be accessed by clicking on the name of the added Bluecat Integration in ``Infrastructure > Network > Services``.
+The Bluecat Integration will be saved, IP pools will sync in and populate under ``Infrastructure > Network > IP Pools``, and Domain will populate in ``Infrastructure > Network > Domains``. Pools and Domains can also be found in the Bluecat Integration details page, which can be accessed by clicking on the name of the added Bluecat Integration in ``Infrastructure > Network > Integrations``.
 
 .. IMPORTANT:: `Quick Deployments` must be enabled in Bluecat for |morpheus| to create instantly available DNS records when using Bluecat DNS.
 

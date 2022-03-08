@@ -6,7 +6,7 @@ IMPORTANT: Avamar API must be installed on Avamar server (not installed by defau
 Adding Avamar Integration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-#. Navigate to `Backups > Services`
+#. Navigate to `Backups > Integrations`
 #. Select :guilabel:`+ ADD`
 #. Select Avamar
 #. Fill in the following:

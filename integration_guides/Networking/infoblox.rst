@@ -84,7 +84,7 @@ Adding IP Pools to Networks
 Creating Host Records
 ^^^^^^^^^^^^^^^^^^^^^
 
-#. Select a Network Pool from `Infrastructure > Network > IP Pools` or `Infrastructure > Network > Services > Infoblox`
+#. Select a Network Pool from `Infrastructure > Network > IP Pools` or `Infrastructure > Network > Integrations > Infoblox Integration`
 #. Select :guilabel:`+ ADD`
 #. Enter the following
 
@@ -104,7 +104,7 @@ Creating Host Records
 Creating Zone Records
 ^^^^^^^^^^^^^^^^^^^^^
 
-#. Select a Domain from `Infrastructure > Network > Domains` or `Infrastructure > Network > Services > Infoblox > Zones`
+#. Select a Domain from `Infrastructure > Network > Domains` or `Infrastructure > Network > Integrations > Infoblox integration > Zones`
 #. Select :guilabel:`+ ADD`
 #. Enter the following
 

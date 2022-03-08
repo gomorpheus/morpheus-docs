@@ -14,7 +14,7 @@ Add Microsoft DNS Integration
 Microsoft DNS can be added in the `Administration` or `Infrastructure` sections:
 
 #. In |AdmInt|, select :guilabel:`+ New Integration`
-#. In ``Infrastructure > Networks > Services``, select :guilabel:`Add Service`
+#. In ``Infrastructure > Networks > Integrations``, select :guilabel:`+ ADD`
 #. Provide the following:
 
    TYPE
@@ -32,7 +32,7 @@ Microsoft DNS can be added in the `Administration` or `Infrastructure` sections:
    CREATE POINTERS
     Enabled to create A records during provisioning
 
-#. Once saved the Integration will be added and visible in both |AdmInt| and ``Infrastructure > Networks > Services``
+#. Once saved the Integration will be added and visible in both |AdmInt| and ``Infrastructure > Networks > Integrations``
 
 .. NOTE:: All fields can be edited after saving.
 
