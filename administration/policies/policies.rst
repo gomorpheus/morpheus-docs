@@ -41,6 +41,8 @@ Max Cores
   Sets the max number of total of Cores combined for Instances in the Group or Cloud the Policy is added to.
 Max Hosts
   Sets the max number of total Hosts in the Group or Cloud the Policy is added to.
+Max Load Balancer Pools
+  Sets the max number of load balancer pools within the policy scope
 Max Memory
   Sets the max number of total of RAM combined for Instances in the Group or Cloud the Policy is added to.
 Max Storage
