@@ -19,7 +19,7 @@
    <thead>
      <tr>
        <th class="darkGrey">From Version</th>
-       <th class="darkGrey" colspan="25">To Version</th>
+       <th class="darkGrey" colspan="26">To Version</th>
      </tr>
    </thead>
      <tbody>
@@ -777,19 +777,19 @@
        <td class="green">5.4.4</td>
      </tr>
      <tr>
-       <td class="green" colspan="26">Rolling Upgrade Supported</td>
+       <td class="green" colspan="27">Rolling Upgrade Supported</td>
      </tr>
      <tr>
-       <td class="blue" colspan="26">Non-Rolling Upgrade Supported</td>
+       <td class="blue" colspan="27">Non-Rolling Upgrade Supported</td>
      </tr>
      <tr>
-       <td class="orange" colspan="26">Upgrade Not Recommended*</td>
+       <td class="orange" colspan="27">Upgrade Not Recommended*</td>
      </tr>
      <tr>
-       <td class="red" colspan="26">Upgrade Not Supported</td>
+       <td class="red" colspan="27">Upgrade Not Supported</td>
      </tr>
      <tr>
-       <td class="lightGrey" colspan="26">Downgrade Not Supported</td>
+       <td class="lightGrey" colspan="27">Downgrade Not Supported</td>
      </tr>
    </tbody>
   </table>
