@@ -28,6 +28,8 @@ Breaking Changes
 - 5.4.2: After upgrading, it is recommended that you manually perform one "Daily" refresh Amazon Clouds to ensure availability of Amazon Service Plans for each region. To manually refresh a Cloud, navigate to Infrastructure > Clouds > (Selected Amazon Cloud) and select "Daily" from the REFRESH dropdown menu. If this is not done, |morpheus| may not show Amazon Service Plans in the provisioning wizard until after Midnight UTC following the upgrade when the next automatic Daily sync would run.
 - 5.4.3: |morpheus| Worker/Gateway v5.4.3 packages are now available. Existing Worker & Gateway nodes must be upgraded to v5.4.3 for compatibility with |morpheus| v5.4.3 Appliances.
 - 5.4.3: vCloud Director: Support for integrations with vCD 9 ended
+- 5.4.4 The morpheus-ui logging configuration file has changed from logback.groovy to logback.xml in v5.4.4 (/opt/morpheus/conf/logback.xml). The logback.groovy file from previous versions can be removed, and any updates to logback.groovy will not result in any logging configuration changes.
+- 5.4.4 The Venafi and AppDynamics integrations are deprecated in v5.4.4 and will be removed in v5.4.5. AppDynamic will return as a plugin at a later date.
 
 |morpheus| Application OS
 =========================
