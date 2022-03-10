@@ -79,29 +79,36 @@ Activity Log
 
 The final log type that may require export is the |morpheus| Activity log. This tracks system changes made by users, for example create and delete instances etc.
 
-#. To set up CEF/SIEM auditing export, you should edit the following file: ``logback.groovy`` located at ``/opt/morpheus/conf/logback.groovy``.
+#. To set up CEF/SIEM auditing export, you should edit the following file: ``logback.xml`` located at ``/opt/morpheus/conf/logback.xml``.
 
-#. Copy the below configuration to the bottom of the logback.groovy configuration file, save and then exit.
+#. Add the below appender above or below the other appenders in the logback.xml configuration file:
 
-   .. code-block:: groovy
+   .. code-block:: xml
 
-     appender("AUDIT", RollingFileAppender) {
-       file = "/var/log/morpheus/morpheus-ui/audit.log"
-        rollingPolicy(TimeBasedRollingPolicy) {
-          fileNamePattern = "/var/log/morpheus/morpheus-ui/audit_%d{yyyy-MM-dd}.%i.log"
-          timeBasedFileNamingAndTriggeringPolicy(SizeAndTimeBasedFNATP) {
-            maxFileSize = "50MB"
-          }
-          maxHistory = 30
-        }
-        encoder(PatternLayoutEncoder) {
-          pattern = "[%d] [%thread] %-5level %logger{15} - %maskedMsg %n"
-        }
-      }
+      <appender name="AUDIT" class="ch.qos.logback.core.rolling.RollingFileAppender">
+          <file>/var/log/morpheus/morpheus-ui/audit.log</file>
+          <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+              <fileNamePattern>audit_%d{yyyy-MM-dd}.%i.log</fileNamePattern>
+                <maxFileSize>50MB</maxFileSize>
+                <maxHistory>30</maxHistory>
+          </rollingPolicy>
+          <encoder>
+              <pattern>[%d] [%thread] %-5level %logger{15} - %maskedMsg %n</pattern>
+          </encoder>
+      </appender>
 
-      logger("com.morpheus.AuditLogService", INFO, ['AUDIT'], false)
 
-#. Once you have done this, you need to restart the |morpheus| Application server. To do this, do the following:
+    .. note:: ``maxFileSize`` and ``maxHistory`` values can be updated as needed.
+
+#. Add the below logger above or below the other loggers in the logback.xml configuration file (make sure it is below, not above, the appender from the previous step or an error will occur):
+
+   .. code-block:: xml
+
+      <logger name="com.morpheus.AuditLogService" level="INFO" additivity="false">
+          <appender-ref ref="AUDIT" />
+      </logger>
+
+#. Once you have done this, you need to restart the |morpheus| Application server:
 
    .. code-block:: bash
 
@@ -121,9 +128,9 @@ The final log type that may require export is the |morpheus| Activity log. This 
 
       morpheus-ctl tail morpheus-ui
 
-Once you see the ASCI art show up you will be able to log back into the User Interface. A new audit file will have been created called audit.log and will found in the default |morpheus| log path which is ``/var/log/morpheus/morpheus-ui/``
+   Once you see the ASCI art show up you will be able to log back into the User Interface. A new audit file will have been created called audit.log and will found in the default |morpheus| log path which is ``/var/log/morpheus/morpheus-ui/``
 
-Instead of writing the output to a log file, you could create an Appender definition for your SIEM audit database product
+This is only an example and other configurations are possible, sucha as creating an appender definition for your SIEM audit database product.
 
 
 morpheus-ssl nginx logs
