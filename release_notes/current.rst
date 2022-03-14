@@ -33,7 +33,6 @@ New Features
               - MKS Kubernetes v1.22 layouts added for Digital Ocean, Google, SCVMM, vCloud Director and Xen Cloud types.
               - Users can scale down MKS (|morpheus| Kubernetes Service) clusters by deleting worker nodes when needed
 :Morpheus: - Grails framework updated to Grails 5
-:NSX: - Distributed firewalls for NSX-T are now accessible to Subtenants when an NSX-T integration and distributed firewall has been shared from the primary Tenant
 :Nutanix: - Added support for UEFI boot option
 :Plugins: - Improvements made to IPAM custom plugin development tools
 :Policies: - Added "Network" scope to Max VM policies which will limit the number of VMs which can be connected to a specific network
