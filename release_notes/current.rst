@@ -6,6 +6,8 @@
 
 Release Date: |releasedate|
 
+**5.4.4-2 fixes windows domain join automation regression from 5.4.4-1**
+
 .. IMPORTANT:: The morpheus-ui logging configuration file has changed from logback.groovy to logback.xml in v5.4.4 (/opt/morpheus/conf/logback.xml). The logback.groovy file from previous versions can be removed, and any updates to logback.groovy will not result in any logging configuration changes.
 :Deprecation Notice: The Venafi and AppDynamics integrations are deprecated in v5.4.4 and will be removed in v5.4.5. AppDynamic will return as a plugin at a later date.
 
