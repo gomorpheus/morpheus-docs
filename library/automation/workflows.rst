@@ -18,7 +18,7 @@ Provisioning Workflow Execution Phases
     - Notes
   * - Configuration
     - Tasks are run prior to initial calls to the specified cloud API to initiate provisioning
-    - Call to an external platform to dynamically generate a hostname prior to kicking off provisioning
+    - Call to an external platform to dynamically generate a hostname prior to kicking off provisioning or dynamically altering configuration of a Catalog Item prior to provisioning
     -
   * - Pre Provision
     - For VMs, Tasks are run after the VM is running and prior to any Tasks in the Provision phase. For containers, Tasks in this phase are run on the Docker host and prior to ``docker run``
