@@ -6,7 +6,7 @@
 
 Release Date: |releasedate|
 
-**5.4.4-2 fixes windows domain join automation regression from 5.4.4-1**
+**5.4.4-3 contains a critical SAML security fix as well as NSX-T, provisioning wizard and windows domain join automation updates.**
 
 .. IMPORTANT:: The morpheus-ui logging configuration file has changed from logback.groovy to logback.xml in v5.4.4 (/opt/morpheus/conf/logback.xml). The logback.groovy file from previous versions can be removed, and any updates to logback.groovy will not result in any logging configuration changes.
 :Deprecation Notice: The Venafi and AppDynamics integrations are deprecated in v5.4.4 and will be removed in v5.4.5. AppDynamic will return as a plugin at a later date.
@@ -78,6 +78,7 @@ Fixes
 :Clusters: - Clouds with "private" visibility and assigned to a Subtenant are now selectable as provisioning targets in the Cluster wizard from the Primary Tenant matching the behavior in Instance and App wizards
             - Improved validation in the Add Cluster wizard to ensure an IP address is entered when a network with static IP is selected
 :Datastores: - Fixed an issue that could cause default datastores not to be honored for certain networks or clouds
+:Domains: Fixed issue with automated Windows Domain joins :superscript:`5.4.4-2 5.4.4-3`
 :Huawei Cloud: - Fixed an issue that could prevent existing projects from being selected when integrating a new Huawei Cloud
 :Kubernetes: - Fixed issue with adding External Kubernetes Cluster in AWS requiring plan selection
               - Improved static IP address handling for Kubernetes clusters in the Add Cluster wizard
@@ -85,6 +86,11 @@ Fixes
 :MaaS: - Fixed an issue that could prevent proper stopping and starting of MaaS machines from the Infrastructure menu
 :MicrosoftDNS: - MicrosoftDNS entries are now synced correctly when using an intermediate jump server
 :Morpheus Worker: - Fixed issue with image uploads using morpheus worker hitting Socket Buffer limit
+:NSX: - Fixed enabling dhcp on existing NSX-T segments :superscript:`5.4.4-3`
+      - Fixed NSX-T distributed firewall rule source and destination loading issue :superscript:`5.4.4-3`
+      - Fixed NSX-T LB pool creation error :superscript:`5.4.4-3`
+      - Fixed dchp range validation on NSX-T segment creation :superscript:`5.4.4-3`
+      - Fixed subtenant NSX-T Network selection issue :superscript:`5.4.4-3`
 :OpenStack: - Errors are no longer thrown when restoring from an OpenStack backup which has moved from its original storage space
              - Improved OpenStack API detection for scenarios when an OpenStack environment has services on multiple domains and subdomains
 :Option Lists: - Fixed an issue that caused keys rather than values to be returned when Option Lists were presented as Typeahead fields in Inputs
@@ -92,12 +98,16 @@ Fixes
 :Policies: - Subtenant administrators can now set Policies which are scoped to Clouds shared with the Tenant from the Primary Tenant
             - When a Policy is scoped to multiple Tenants, the full list of Tenants can be viewed from the Policies list page by clicking on the info (i) button
             - When scoping a Policy to a Tenant, previously-selected Clouds or Networks on the Policy are no longer cleared after the Tenant is set unless the Tenant does not have access to the Cloud or Network
+:Provisioning: - Fixed permission issue with disk when used does not have access to associated Virtual Image record :superscript:`5.4.4-3`
+               - Fixed networks being reloaded when layout is changed in wizard :superscript:`5.4.4-3`
 :Reports: - OpenStack Instance now show the correct CPU counts on Instance Inventory Summary Reports
 :Roles: - Access to create and manage Snapshots no longer requires "Full" access to Infrastructure: Compute and "Read" access to Backups. Users with "Read" access to Infrastructure: Compute and "None" access to Backups are now able to manage Snapshots
          - Removing Roles from users with API tokens generated no longer throws errors
 :Rubrik: - Fixed an issue that could cause 500 errors to be thrown when Rubrik backups were selected from an Instance backup tab
 :SCVMM: - Fixed an issue that could cause Linux consoles not to work properly for SCVMM Instances
 :Security: - Changes made to login session handling to improve application security
+           - SAML: Critical SAML security fix :superscript:`5.4.4-3`
+:Security Scans: Fixed permission issue perventing users with security scan role permission from accessing security scans :superscript:`5.4.4-3`
 :ServiceNow: - Fixed an issue that could cause provisioning from a ServiceNow integration to fail when naming Policies were in effect
 :Terraform: - Fixed an issue caused by applying Terraform state changes when |morpheus| naming policies were in place
              - Fixed data loading issue when clicking "i" button on tf resources
