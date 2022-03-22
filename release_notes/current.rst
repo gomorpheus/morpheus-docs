@@ -6,7 +6,9 @@
 
 Release Date: |releasedate|
 
-**5.4.4-3 contains a critical SAML security fix as well as NSX-T, provisioning wizard and windows domain join automation updates.**
+.. IMPORTANT:: 5.4.4-3 contains a critical SAML security update
+
+**5.4.4-3 contains a critical SAML security update as well as NSX-T, provisioning wizard and windows domain join automation updates.**
 
 .. IMPORTANT:: The morpheus-ui logging configuration file has changed from logback.groovy to logback.xml in v5.4.4 (/opt/morpheus/conf/logback.xml). The logback.groovy file from previous versions can be removed, and any updates to logback.groovy will not result in any logging configuration changes.
 :Deprecation Notice: The Venafi and AppDynamics integrations are deprecated in v5.4.4 and will be removed in v5.4.5. AppDynamic will return as a plugin at a later date.
@@ -54,6 +56,7 @@ New Features
             - CVE-2021-42550 Upgrade logback-classic to 1.2.8
             - CVE-2022-21700 Upgrade micronaut-core to 1.4.0
             - Upgrade spring-security-web-5.1.13.RELEASE.jar to version 1.26
+            - SAML: Critical SAML security update :superscript:`5.4.4-3`
 :UI: - Adding the ``forceAccountId`` parameter to a URL, along with the appropriate Tenant ID, will now redirect the user to the login page for the correct Tenant if they don't currently have a login session
       - Further tweaks made to dark mode theme to improve visibility and overall look of some elements
 :VMware: - VMware Clouds can now be configured to inventory existing instances from a specific resource pool scope
@@ -106,7 +109,7 @@ Fixes
 :Rubrik: - Fixed an issue that could cause 500 errors to be thrown when Rubrik backups were selected from an Instance backup tab
 :SCVMM: - Fixed an issue that could cause Linux consoles not to work properly for SCVMM Instances
 :Security: - Changes made to login session handling to improve application security
-           - SAML: Critical SAML security fix :superscript:`5.4.4-3`
+           - SAML: Critical SAML security update :superscript:`5.4.4-3`
 :Security Scans: Fixed permission issue perventing users with security scan role permission from accessing security scans :superscript:`5.4.4-3`
 :ServiceNow: - Fixed an issue that could cause provisioning from a ServiceNow integration to fail when naming Policies were in effect
 :Terraform: - Fixed an issue caused by applying Terraform state changes when |morpheus| naming policies were in place
