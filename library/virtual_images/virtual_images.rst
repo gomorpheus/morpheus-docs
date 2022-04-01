@@ -70,7 +70,7 @@ Typically |morpheus| does not have sufficient metatdata to successfully provisio
    VM Tools Installed?
     On by default, uncheck if VMware Tools (including OpenVMTools) are not installed on the Virtual Image. |morpheus| will skip network wait during provisioning when deselected
    Force Guest Customization?
-    VMware only, forces guest customizations to run during provisioning, typically when provisioning to a DHCP network where guest customizations would not run by default
+    VMware only, forces guest customizations to run during provisioning, typically when provisioning to a DHCP network where guest customizations would not run by default.  This options requires that VMware Tools is installed on the image.
    Trial Version
     Enable to automatically re-arm the expiration on Windows Trial Images during provisioning
    Enabled Sysprep?
@@ -149,7 +149,7 @@ To Add Virtual Image:
   VM Tools Installed?
    On by default, uncheck if VMware Tools (including OpenVMTools) are not installed on the Virtual Image. |morpheus| will skip network wait during provisioning when deselected
   Force Guest Customization?
-   VMware only, forces guest customizations to run during provisioning, typically when provisioning to a DHCP network where guest customizations would not run by default
+   VMware only, forces guest customizations to run during provisioning, typically when provisioning to a DHCP network where guest customizations would not run by default.  This options requires that VMware Tools is installed on the image.
   Trial Version
    Enable to automatically re-arm the expiration on Windows Trial Images during provisioning
   Enabled Sysprep?
