@@ -239,7 +239,7 @@ Task Configuration
     - **GROUP:** Enter a group name, when bootstrapping an Instance, |morpheus| will add the Instance to the Group if it exists. If it does not exist, |morpheus| will create the Group
     - **JOB TEMPLATE:** Select an existing job template to associate with the Task
     - **SCM OVERRIDE:** If needed, specify an SCM branch other than that specified on the template
-    - *EXECUTE MODE:** Select Limit to Instance (template is executed only on Instance provisioned), Limit to Group (template is executed on all hosts in the Group), Run for all (template is executed on all hosts in the Inventory), or Skip Execution (to skip execution of the template on the Instance provisioned)
+    - **EXECUTE MODE:** Select Limit to Instance (template is executed only on Instance provisioned), Limit to Group (template is executed on all hosts in the Group), Run for all (template is executed on all hosts in the Inventory), or Skip Execution (to skip execution of the template on the Instance provisioned)
 
 - .. toggle-header:: :header: **Chef bootstrap**
 
