@@ -51,7 +51,7 @@ In my example organization, I have one department that needs access to AWS-relat
 
 For the first department, I've set up a Policy that allows them to list and read (including use and decryption rights) AWS secrets. A second Policy specifically excludes them from seeing one specific entry. The Policy with the more specific path will supersede the more generic Policy that includes a wildcard.
 
-.. image:: /images/administration/policies/cypherlist.png
+.. image:: /images/administration/policies/pollist.png
 
 By impersonating the user, we see they indeed have access to just the two desired Cypher entries.
 
