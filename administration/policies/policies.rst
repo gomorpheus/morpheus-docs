@@ -25,6 +25,8 @@ Budget
   Sets a maximum total combined price for all instances in the Group, Cloud, Tenant or owned by the User this policy is applied to.
 Cluster Resource Name
   The name of Cluster hosts (master and workers) when creating Kubernetes, Docker and KVM Clusters. Pre-populates a fixed or editable Resource Name value for the cluster using ${variable} naming patterns and/or text, including ${sequence} numbering. Toggle whether sequence numbers are reusable (after the resource using them is destroyed) by enabling `Reuse Naming Sequence Numbers <https://docs.morpheusdata.com/en/latest/administration/settings/settings.html#provisioning>`_ in |AdmSet|
+Cypher Access
+  See the section below for a guide to establishing a Cypher access policy
 Delayed Delete
   Delayed Delete Policies allow for soft deletion of Instances and Apps. Instead of deleting immediately, Instances and Apps with a Delayed Removal policy applied will be shutdown upon deletion request and hidden by default from the UI. The Instance/App will then be in ``Pending Removal`` status.
 Expiration
@@ -45,8 +47,12 @@ Max Load Balancer Pools
   Sets the max number of load balancer pools within the policy scope
 Max Memory
   Sets the max number of total of RAM combined for Instances in the Group or Cloud the Policy is added to.
+Max Pool Members
+  Sets the maximum number of members in a load balancer pool
 Max Storage
   Sets the max number of total of Storage combined for Instances in the Group or Cloud the Policy is added to.
+Max Virtual Servers
+  Sets the maximum number of virtual servers within the policy scope
 Max VMs
   Sets the max number of Virtual Machines for the Group or Cloud the Policy is added to.
 Message of the Day (MOTD)
