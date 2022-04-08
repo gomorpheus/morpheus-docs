@@ -293,6 +293,12 @@ Role Mappings
     - The Clusters page allows you to create and manage Kubernetes, Docker, and KVM Clusters, as well as Cloud-specific Kubernetes services such as EKS.
     - This permission is recommend for those creating and managing containers or container services.
     -
+  * - Infrastructure: Credentials
+    - None, Read, Full
+    - Determines access to the Credentials tab in |InfTru|
+    - The credentials tab allows you to create and manage credential sets stored internally and in external Cypher server integrations
+    - This permission is recommended for those responsible for maintaining credentials
+    -
   * - Infrastructure: Groups
     - None, Read, Full
     - Determines access to the Infrastructure > Groups page.
@@ -412,6 +418,12 @@ Role Mappings
     - Determines access to
     -
     -
+    -
+  * - Infrastructure: Network Static Routes
+    - None, Read, Full
+    - Determines access to the routing tab on a router detail page (/infrastructure/networks/routes)
+    - The routers tab is where routes are created and managed
+    - This permission is recommended for those responsible for network management
     -
   * - Infrastructure: Networks
     - None, Read, Group, Full
