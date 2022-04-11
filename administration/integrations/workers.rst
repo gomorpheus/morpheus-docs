@@ -43,31 +43,31 @@ A distributed worker VM is installed and configured similarly to a |morpheus| ap
 
 Download the appropriate package from |morpheus| Hub based on your target Linux distribution and version for installation in a directory of your choosing. The package can be removed after successful installation.
 
-   .. code-block:: bash
+.. code-block:: bash
 
-    wget https://downloads.morpheusdata.com/path/to/morpheus-worker-$version.distro
+   wget https://downloads.morpheusdata.com/path/to/morpheus-worker-$version.distro
 
 Validate the package checksum as compared with the values indicated on Hub. For example:
 
-   .. code-block:: bash
+.. code-block:: bash
 
-     sha256sum morpheus-worker-$version.distro
+   sha256sum morpheus-worker-$version.distro
 
 Next, install the package using your selected distribution's package installation command and your preferred options. Example, for RPM:
 
-   rpm:
+rpm:
 
-   .. code-block:: bash
+.. code-block:: bash
 
-      sudo rpm -ihv morpheus-worker-$version.$distro
+   $ sudo rpm -ihv morpheus-worker-$version.$distro
 
-      Preparing...                          ################################# [100%]
-      Updating / installing...
-         1:morpheus-worker-x.x.x-1.$distro    ################################# [100%]
-      Thank you for installing Morpheus Worker!
-      Configure and start the Worker by running the following command:
+   Preparing...                          ################################# [100%]
+   Updating / installing...
+      1:morpheus-worker-x.x.x-1.$distro    ################################# [100%]
+   Thank you for installing Morpheus Worker!
+   Configure and start the Worker by running the following command:
 
-      sudo morpheus-worker-ctl reconfigure
+   sudo morpheus-worker-ctl reconfigure
 
 Configuration
 ^^^^^^^^^^^^^
@@ -90,7 +90,7 @@ With the worker configured in |morpheus|, the next step is to update any Cloud i
 
 With the API key in hand and configuration complete in |morpheus| UI, head back to the worker box. Configure the gateway by editing ``/etc/morpheus/morpheus-worker.rb`` and updating the following:
 
-   .. code-block:: bash
+   .. code-block:: rb
 
        worker_url 'https://gateway_worker_url' # This is the wotker URL the |morpheus| appliance can resolve and reach on 443
        worker['appliance_url'] = 'https://morpheus_appliance_url' # The resolvable URL or IP address of |morpheus| appliance which the worker can reach on port 443

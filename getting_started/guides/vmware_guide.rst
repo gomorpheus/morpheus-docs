@@ -266,7 +266,7 @@ This script tries to confirm there is a new `ifcfg-eth0` config created to repla
 	BOOTPROTO="dhcp"
 	DEFROUTE=yes
 
-For more on CentOS/RHEL image prep, including additional configurations for specific scenarios, take a look at the `VMware image prep <https://docs.morpheusdata.com/en/4.1.1/integration_guides/Clouds/vmware/vmware_templates.html#gotyas>`_ page in Morpheus Docs.
+For more on CentOS/RHEL image prep, including additional configurations for specific scenarios, take a look at the `VMware image prep <https://docs.morpheusdata.com/en/4.1.1/integration_guides/Clouds/vmware/vmware_templates.html#gotchas>`_ page in Morpheus Docs.
 
 **Creating an Ubuntu 20.04 Image**
 

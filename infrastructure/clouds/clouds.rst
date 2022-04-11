@@ -13,6 +13,7 @@ Supported Cloud Types
 * Amazon
 * Azure (Public)
 * Azure Stack (Private)
+* Canonical MaaS
 * Cloud Foundry
 * Dell (Cloud type for PXE and manually added Dell EMC Hosts)
 * DigitalOcean
@@ -33,15 +34,14 @@ Supported Cloud Types
 * Oracle VM
 * Platform 9
 * SCVMM
-* SoftLayer
 * Supermicro (Cloud type for PXE and manually added Supermicro Hosts)
 * UCS
 * UpCloud
+* vCloud Air (OVH)
 * VMWare ESXi
 * VMware Fusion
 * VMWare on AWS
 * VMware vCenter
-* VMware vCloud Air
 * VMware vCloud Director
 * XenServer
 
@@ -112,4 +112,3 @@ To delete a cloud:
 |
 
 .. include:: /infrastructure/clouds/profiles.rst
-

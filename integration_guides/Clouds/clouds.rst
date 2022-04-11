@@ -30,5 +30,7 @@ Clouds
   vmware/vmware.rst
   vmwarefusion/vmwarefusion.rst
   xen/xen.rst
-  centos7template.rst
-  cloudCoverage/cloudCoverage.rst
+
+
+  .. cloudCoverage/cloudCoverage.rst
+  .. centos7template.rst

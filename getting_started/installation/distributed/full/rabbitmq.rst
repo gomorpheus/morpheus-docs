@@ -24,7 +24,7 @@ RabbitMQ requires Erlang to be installed, the exact version will depend on which
        * - RabbitMQ Version
          - Minimum Required Erlang/OTP
          - Maximum Supported Erlang/OTP
-       * - 3.9.0
+       * - 3.9.x
          - 23.2
          - 24.x
        * - 3.8.16 - 3.8.19

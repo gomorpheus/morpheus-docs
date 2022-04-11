@@ -1,6 +1,8 @@
 Zerto
 -----
 
+.. thumbnail:: /images/integration_guides/backups/morpehus_zerto_chart.png
+
 Adding Zerto Integration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 

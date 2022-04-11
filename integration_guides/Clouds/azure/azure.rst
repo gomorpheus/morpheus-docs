@@ -55,7 +55,7 @@ CSP Accounts require the additional following input:
 
 * CSP Directory (tenant) ID
 * CSP Application (client) ID
-* CSP Application (client) SECRET
+* CSP Application (client) SECRET (Web App Key)
 
 Credentials & Permissions
 ^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -220,6 +220,8 @@ To add a new Azure Cloud integration into |morpheus| using the credentials creat
      Standard, EA or CSP
 
      .. note:: For CSP Accounts, also enter CSP TENANT ID, CSP CLIENT ID and CSP CLIENT SECRET in the Advanced Options section. In order to enable cost sync for CSP accounts, the "CSP CUSTOMER" checkbox must be marked and "COSTING" should be set to "Costing" rather than "Costing and Reservations".
+
+     For the CSP Client Secret, enter the Web App Key rather than the Native App Key. This should be accessed from the Microsoft Partner Center rather than the Azure web console. If this is not, Plans may sync but Price Sets and Prices would not.
 
      .. image:: /images/clouds/azure/addAzureCloudMorpheusS1.png
 

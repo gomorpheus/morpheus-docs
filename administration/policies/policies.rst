@@ -34,13 +34,15 @@ File Share Storage Quota
 Hostname
   The ``hostname`` or ``computer name`` which is set in the OS and DNS. On some platforms, hostnames are restricted by length, spaces, and/or special characters. Pre-populates a fixed or editable name for hostnames/machine names using ${variable} naming patterns and/or text, including ${sequence} numbering. Toggle whether sequence numbers are reusable (after the resource using them is destroyed) by enabling `Reuse Naming Sequence Numbers <https://docs.morpheusdata.com/en/latest/administration/settings/settings.html#provisioning>`_ in |AdmSet|
 Instance Name
-  Pre-populates a fixed or editable name for Instance Names using ${variable} naming patterns and/or text, including ${sequence} numbering. Toggle whether sequence numbers are reusable (after the resource using them is destroyed) by enabling `Reuse Naming Sequence Numbers <https://docs.morpheusdata.com/en/latest/administration/settings/settings.html#provisioning>`_ in |AdmSet|
+  Pre-populates a fixed or editable name for Instance Names using ${variable} naming patterns and/or text, including ${sequence} numbering. Toggle whether sequence numbers are reusable (after the resource using them is destroyed) by enabling `Reuse Naming Sequence Numbers <https://docs.morpheusdata.com/en/latest/administration/settings/settings.html#provisioning>`_ in |AdmSet|. Note that it's not recommended administrators include ">", "<", "%", "$", or "=" in naming policies
 Max Containers
   Sets the max number of Containers for the Group or Cloud the Policy is added to.
 Max Cores
   Sets the max number of total of Cores combined for Instances in the Group or Cloud the Policy is added to.
 Max Hosts
   Sets the max number of total Hosts in the Group or Cloud the Policy is added to.
+Max Load Balancer Pools
+  Sets the max number of load balancer pools within the policy scope
 Max Memory
   Sets the max number of total of RAM combined for Instances in the Group or Cloud the Policy is added to.
 Max Storage

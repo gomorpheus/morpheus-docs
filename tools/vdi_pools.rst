@@ -178,13 +178,13 @@ A VDI Gateway VM is installed and configured similarly to a |morpheus| appliance
    * - CentOS
      - 7.x, 8.x
    * - Debian
-     - 10
+     - 9, 10, 11
    * - RHEL
      - 7.x, 8.x
-   * - SUSE SLES
+   * - SUSE, SLES
      - 12
    * - Ubuntu
-     - 18.04, 20.04
+     - 16.04, 18.04, 20.04
 
 - **Memory:** 4 GB RAM minimum recommended for default installations supporting up to 20 concurrent sessions. Add 50 MB RAM per additional concurrent session
 - **Storage:** 10 GB storage minimum recommended. Storage is required for VDI Gateway Packages and log files
