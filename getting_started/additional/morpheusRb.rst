@@ -95,6 +95,7 @@ Morpheus allows for additional advanced customizations for system managed servic
 
   ui['http_client_connect_timeout'] = 10000  #in seconds
   ui['http_client_connect_timeout'] = 600000 #in seconds
+  ui['jobs_enabled'] = true # This option disables the appliance jobs service on the appliance node when set to false. This should only ever be disabled when configuring jobs to run only on specific app nodes. 
   ui['kerberos_config'] = nil
   ui['kerberos_login_config'] = nil
   ui['log_dir'] = '/var/log/morpheus/morpheus-ui'
@@ -104,6 +105,5 @@ Morpheus allows for additional advanced customizations for system managed servic
   ui['memory_map_threshold'] = 131072
   ui['memory_top_pad'] = 131072
   ui['memory_trim_threshold'] = 131072
-  ui['pxe_boot_enabled'] = false
-    # This option disables the PXE service within the app
+  ui['pxe_boot_enabled'] = false # This option disables the PXE service within the app
   ui['vm_images_cdn_url'] = 'https://morpheus-images.morpheusdata.com'
