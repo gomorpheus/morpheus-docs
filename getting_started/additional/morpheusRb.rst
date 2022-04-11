@@ -21,7 +21,7 @@ Morpheus allows for additional advanced customizations for system managed servic
   elasticsearch['use_tls'] = false
   elasticsearch['auth_user'] = 'morpheus-es-user'
   elasticsearch['auth_password'] = 'xxxxxxxxxxxxxxxx'
-  ↓ Valid for Internal/System elasticsearch service only
+    ↓↓↓↓↓↓↓ The elasticsearch settings below are only valid for Internal/System elasticsearch services ↓↓↓↓↓↓↓ 
   elasticsearch['log_dir'] = '/var/log/morpheus/elasticsearch'
   elasticsearch['memory_alloc_arena_max'] = 2
   elasticsearch['memory_map_max'] = 65536
@@ -31,11 +31,10 @@ Morpheus allows for additional advanced customizations for system managed servic
   elasticsearch['open_files'] = 204800
 
   guacd['guacamole_enabled'] = false
-  guacd['guacamole_enabled'] = false
 
-  logging['svlogd_num'] = 30 # keep 30 rotated log files
-  logging['svlogd_size'] = 209715200 # 200 MB in bytes
-  logging['svlogd_timeout'] = 86400 # rotate after 24 hours in seconds
+  logging['svlogd_num'] = 30 #### keep 30 rotated log files
+  logging['svlogd_size'] = 209715200 #### 200 MB in bytes
+  logging['svlogd_timeout'] = 86400 #### rotate after 24 hours in seconds
 
   mysql['enable'] = true
   mysql['host'] = {'127.0.0.1' => 3306}
@@ -43,7 +42,7 @@ Morpheus allows for additional advanced customizations for system managed servic
   mysql['morpheus_db_user'] = 'morpheus-db-user'
   mysql['morpheus_db'] = 'xxxxxxxxxxxxxxxx'
   mysql['mysql_url_overide'] = 'jdbc:mysql://10.30.20.10:3306,10.30.20.11:3306,10.30.20.12:3306/morpheusdb?autoReconnect=true&useUnicode=true&characterEncoding=utf8&failOverReadOnly=false&useSSL=false'
-  ↓ Valid for Internal/System mysql service only
+    ↓↓↓↓↓↓↓ The mysql settings below are only valid for Internal/System mysql services ↓↓↓↓↓↓↓
   mysql['tmp_dir'] = '/tmp/mysql'
   mysql['log_dir'] = '/var/log/morpheus/mysql'
   mysql['max_active'] = 150 # The combined value off all app node max_active values must be lower than max_connections setting in mysql
@@ -84,7 +83,7 @@ Morpheus allows for additional advanced customizations for system managed servic
   rabbitmq['queue_user'] = 'morpheus-rmq-user'
   rabbitmq['queue_user_password'] = 'xxxxxxxxxxxxxxxx'
   rabbitmq['vhost'] = 'morpheus'
-  ↓ Valid for Internal/System rabbitmq service only
+    ↓↓↓↓↓↓↓ The rabbitmq settings below are only valid for Internal/System rabbitmq services ↓↓↓↓↓↓↓
   rabbitmq['heartbeat'] = nil
   rabbitmq['log_dir'] = '/var/log/morpheus/rabbitmq'
   rabbitmq['nodename'] = 'rabbit@localhost'
@@ -93,9 +92,8 @@ Morpheus allows for additional advanced customizations for system managed servic
 
   repo['repo_host_url'] = 'https://downloads.morpheusdata.com'
 
-  ui['http_client_connect_timeout'] = 10000  #in seconds
-  ui['http_client_connect_timeout'] = 600000 #in seconds
-  ui['jobs_enabled'] = true # This option disables the appliance jobs service on the appliance node when set to false. This should only ever be disabled when configuring jobs to run only on specific app nodes. 
+  ui['http_client_connect_timeout'] = 10000  #### milliseconds
+  ui['jobs_enabled'] = true #### This option disables the appliance jobs service on the appliance node when set to false. This should only ever be disabled when configuring jobs to run only on specific app nodes. 
   ui['kerberos_config'] = nil
   ui['kerberos_login_config'] = nil
   ui['log_dir'] = '/var/log/morpheus/morpheus-ui'
@@ -105,5 +103,5 @@ Morpheus allows for additional advanced customizations for system managed servic
   ui['memory_map_threshold'] = 131072
   ui['memory_top_pad'] = 131072
   ui['memory_trim_threshold'] = 131072
-  ui['pxe_boot_enabled'] = false # This option disables the PXE service within the app
+  ui['pxe_boot_enabled'] = false #### This option disables the PXE service within the app
   ui['vm_images_cdn_url'] = 'https://morpheus-images.morpheusdata.com'
