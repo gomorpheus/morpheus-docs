@@ -44,6 +44,8 @@ Available variables for Naming Policy naming patterns include:
 
 An example Instance Name Policy using a naming pattern with User Initials, Cloud Code, Instance Type, and a sequential number starting at 3000 is ``${userInitials}-${cloudCode}-${type}-${sequence+3000}``, resulting in an Instance Name of **md-vmwd3-centos-3001** for the first instance, followed by **md-vmwd3-centos-3002** and so on.
 
+.. NOTE:: It's not recommended that users include ">", "<", "%", "$", or "=" in naming policies.
+
 Syntax Examples
 ---------------
 
@@ -482,10 +484,10 @@ ex: ``<%= morpheus.user.id %>``
 			   },
 			}
 
-User 
+User
 ----
 
-.. code-block:: bash 
+.. code-block:: bash
 
     'user': {'accountId': int,
             'attributes': {samlAttributes},
@@ -497,12 +499,12 @@ User
             'linuxUsername': 'string',
             'username': 'string',
             'windowsUsername': 'string',
-            
-        
+
+
 Script Variables Example
 ------------------------
 
-Below is an example of the variables available to a script running against an Instance context. 
+Below is an example of the variables available to a script running against an Instance context.
 
 .. note:: Variable maps are determined by context, configurations and permissions, actual maps may contain additional or fewer options.
 
@@ -1042,7 +1044,7 @@ Spec Template Variables
     <div class="row type-instance">
     <!--iterate the key set-->
     <ul class="resource-detail-list info-detail-list drag-list">
-      <!--get morpheus, cypher, and archives-->       
+      <!--get morpheus, cypher, and archives-->
         <li>
           <strong>morpheus</strong>
           <ul class="modal-view-list">
@@ -1059,7 +1061,7 @@ Spec Template Variables
             <li data-value="morpheus.privateKey">privateKey</li>
             <li data-value="morpheus.cloudConfig">cloudConfig</li>
           </ul>
-        </li>              
+        </li>
         <li>
           <strong>cypher</strong>
           <ul class="modal-view-list">
@@ -1070,328 +1072,328 @@ Spec Template Variables
             <li data-value="cypher.readEncyptionKey('')">readEncyptionKey(key)</li>
             <li data-value="cypher.readPassword('')">readPassword(key)</li>
           </ul>
-        </li>              
+        </li>
         <li>
           <strong>archives</strong>
           <ul class="modal-view-list">
             <li data-value="archives.link('', '')">link(bucketName, filePath)</li>
           </ul>
-        </li>       
-      <!--add other keys-->                                      
-            <li data-value="account">account</li>                                                          
-            <li data-value="accountId">accountId</li>                                                          
-            <li data-value="accountType">accountType</li>                                                          
+        </li>
+      <!--add other keys-->
+            <li data-value="account">account</li>
+            <li data-value="accountId">accountId</li>
+            <li data-value="accountType">accountType</li>
             <li data-value="apps[0]">
-              <strong>apps - []</strong>                                
-                  <ul class="modal-view-list">                     
-                      <li data-value="apps[0].appContext">appContext</li>                     
-                      <li data-value="apps[0].description">description</li>                     
-                      <li data-value="apps[0].id">id</li>                     
-                      <li data-value="apps[0].name">name</li>                     
-                  </ul>                                
-            </li>                                                                          
+              <strong>apps - []</strong>
+                  <ul class="modal-view-list">
+                      <li data-value="apps[0].appContext">appContext</li>
+                      <li data-value="apps[0].description">description</li>
+                      <li data-value="apps[0].id">id</li>
+                      <li data-value="apps[0].name">name</li>
+                  </ul>
+            </li>
             <li data-value="cloudConfig.">
               <strong>cloudConfig</strong>
-              <ul class="modal-view-list">                                                         
-                    <li data-value="cloudConfig.agentInstall">agentInstall</li>                                                                            
-                    <li data-value="cloudConfig.finalizeServer">finalizeServer</li>                                    
+              <ul class="modal-view-list">
+                    <li data-value="cloudConfig.agentInstall">agentInstall</li>
+                    <li data-value="cloudConfig.finalizeServer">finalizeServer</li>
               </ul>
-            </li>                                                          
+            </li>
             <li data-value="customOptions.">
               <strong>customOptions</strong>
-              <ul class="modal-view-list">                                                         
-                    <li data-value="customOptions.key">key</li>                                    
+              <ul class="modal-view-list">
+                    <li data-value="customOptions.key">key</li>
               </ul>
-            </li>                                                                          
+            </li>
             <li data-value="deployOptions.">
               <strong>deployOptions</strong>
-              <ul class="modal-view-list">                                                         
-                    <li data-value="deployOptions.key">key</li>                                    
+              <ul class="modal-view-list">
+                    <li data-value="deployOptions.key">key</li>
               </ul>
-            </li>                                                          
+            </li>
             <li data-value="evars.">
               <strong>evars</strong>
-              <ul class="modal-view-list">                                                         
-                    <li data-value="evars."></li>                                                                            
-                    <li data-value="evars.key">key</li>                                    
+              <ul class="modal-view-list">
+                    <li data-value="evars."></li>
+                    <li data-value="evars.key">key</li>
               </ul>
-            </li>                                                          
+            </li>
             <li data-value="group.">
               <strong>group</strong>
-              <ul class="modal-view-list">                                                         
-                    <li data-value="group.code">code</li>                                                                            
-                    <li data-value="group.datacenterId">datacenterId</li>                                                                            
-                    <li data-value="group.location">location</li>                                                                            
-                    <li data-value="group.name">name</li>                                    
+              <ul class="modal-view-list">
+                    <li data-value="group.code">code</li>
+                    <li data-value="group.datacenterId">datacenterId</li>
+                    <li data-value="group.location">location</li>
+                    <li data-value="group.name">name</li>
               </ul>
-            </li>                                                          
-            <li data-value="groupCode">groupCode</li>                                                          
-            <li data-value="groupName">groupName</li>                                                          
+            </li>
+            <li data-value="groupCode">groupCode</li>
+            <li data-value="groupName">groupName</li>
             <li data-value="input.">
               <strong>input</strong>
-              <ul class="modal-view-list">                                                         
-                    <li data-value="input.backup">backup</li>                                                                            
+              <ul class="modal-view-list">
+                    <li data-value="input.backup">backup</li>
                     <li data-value="input.cloud.">cloud
-                      <ul class="modal-view-list">                         
+                      <ul class="modal-view-list">
                       </ul>
-                    </li>                                                                            
-                    <li data-value="input.computedHostName">computedHostName</li>                                                                            
-                    <li data-value="input.computedName">computedName</li>                                                                            
-                    <li data-value="input.copies">copies</li>                                                                            
-                    <li data-value="input.domainOptions">domainOptions</li>                                                                            
-                    <li data-value="input.environmentVariables">environmentVariables</li>                                                                            
-                    <li data-value="input.executionId">executionId</li>                                                                            
-                    <li data-value="input.expireDays">expireDays</li>                                                                            
+                    </li>
+                    <li data-value="input.computedHostName">computedHostName</li>
+                    <li data-value="input.computedName">computedName</li>
+                    <li data-value="input.copies">copies</li>
+                    <li data-value="input.domainOptions">domainOptions</li>
+                    <li data-value="input.environmentVariables">environmentVariables</li>
+                    <li data-value="input.executionId">executionId</li>
+                    <li data-value="input.expireDays">expireDays</li>
                     <li data-value="input.group.">group
-                      <ul class="modal-view-list">                         
+                      <ul class="modal-view-list">
                       </ul>
-                    </li>                                                                            
-                    <li data-value="input.hostName">hostName</li>                                                                            
-                    <li data-value="input.instanceContext">instanceContext</li>                                                                            
+                    </li>
+                    <li data-value="input.hostName">hostName</li>
+                    <li data-value="input.instanceContext">instanceContext</li>
                     <li data-value="input.layout.">layout
-                      <ul class="modal-view-list">                         
+                      <ul class="modal-view-list">
                       </ul>
-                    </li>                                                                            
-                    <li data-value="input.metadata">metadata</li>                                                                            
-                    <li data-value="input.name">name</li>                                                                            
+                    </li>
+                    <li data-value="input.metadata">metadata</li>
+                    <li data-value="input.name">name</li>
                     <li data-value="input.plan.">plan
-                      <ul class="modal-view-list">                         
+                      <ul class="modal-view-list">
                       </ul>
-                    </li>                                                                            
-                    <li data-value="input.powerScheduleType">powerScheduleType</li>                                                                            
-                    <li data-value="input.securityGroups">securityGroups</li>                                                                            
-                    <li data-value="input.shutdownDays">shutdownDays</li>                                                                            
-                    <li data-value="input.type">type</li>                                                                            
-                    <li data-value="input.version">version</li>                                    
+                    </li>
+                    <li data-value="input.powerScheduleType">powerScheduleType</li>
+                    <li data-value="input.securityGroups">securityGroups</li>
+                    <li data-value="input.shutdownDays">shutdownDays</li>
+                    <li data-value="input.type">type</li>
+                    <li data-value="input.version">version</li>
               </ul>
-            </li>                                                          
+            </li>
             <li data-value="instance.">
               <strong>instance</strong>
-              <ul class="modal-view-list">                                                         
-                    <li data-value="instance.adminPassword">adminPassword</li>                                                                            
-                    <li data-value="instance.adminUsername">adminUsername</li>                                                                                                 
-                      <li data-value="instance.apps[0]">apps - []</li>                       
-                        <ul class="modal-view-list">                           
-                            <li data-value="instance.apps.appContext">appContext</li>                           
-                            <li data-value="instance.apps.description">description</li>                           
-                            <li data-value="instance.apps.id">id</li>                           
-                            <li data-value="instance.apps.instances">instances</li>                           
-                            <li data-value="instance.apps.name">name</li>                           
-                        </ul>                                                                                                                        
-                    <li data-value="instance.assignedDomainName">assignedDomainName</li>                                                                            
-                    <li data-value="instance.autoScale">autoScale</li>                                                                            
+              <ul class="modal-view-list">
+                    <li data-value="instance.adminPassword">adminPassword</li>
+                    <li data-value="instance.adminUsername">adminUsername</li>
+                      <li data-value="instance.apps[0]">apps - []</li>
+                        <ul class="modal-view-list">
+                            <li data-value="instance.apps.appContext">appContext</li>
+                            <li data-value="instance.apps.description">description</li>
+                            <li data-value="instance.apps.id">id</li>
+                            <li data-value="instance.apps.instances">instances</li>
+                            <li data-value="instance.apps.name">name</li>
+                        </ul>
+                    <li data-value="instance.assignedDomainName">assignedDomainName</li>
+                    <li data-value="instance.autoScale">autoScale</li>
                     <li data-value="instance.cloudConfig.">cloudConfig
-                      <ul class="modal-view-list">                         
-                          <li data-value="instance.cloudConfig.agentInstall">agentInstall</li>                         
-                          <li data-value="instance.cloudConfig.finalizeServer">finalizeServer</li>                         
+                      <ul class="modal-view-list">
+                          <li data-value="instance.cloudConfig.agentInstall">agentInstall</li>
+                          <li data-value="instance.cloudConfig.finalizeServer">finalizeServer</li>
                       </ul>
-                    </li>                                                                            
-                    <li data-value="instance.configGroup">configGroup</li>                                                                            
-                    <li data-value="instance.configId">configId</li>                                                                            
-                    <li data-value="instance.configRole">configRole</li>                                                                            
+                    </li>
+                    <li data-value="instance.configGroup">configGroup</li>
+                    <li data-value="instance.configId">configId</li>
+                    <li data-value="instance.configRole">configRole</li>
                     <li data-value="instance.container.">container
-                      <ul class="modal-view-list">                         
-                          <li data-value="instance.container.certificatePath">certificatePath</li>                         
-                          <li data-value="instance.container.certificateStyle">certificateStyle</li>                         
-                          <li data-value="instance.container.changeManagementExtId">changeManagementExtId</li>                         
-                          <li data-value="instance.container.changeManagementServiceId">changeManagementServiceId</li>                         
-                          <li data-value="instance.container.cloudConfig">cloudConfig</li>                         
-                          <li data-value="instance.container.configGroup">configGroup</li>                         
-                          <li data-value="instance.container.configId">configId</li>                         
-                          <li data-value="instance.container.configPath">configPath</li>                         
-                          <li data-value="instance.container.configRole">configRole</li>                         
-                          <li data-value="instance.container.containerTypeCategory">containerTypeCategory</li>                         
-                          <li data-value="instance.container.containerTypeCode">containerTypeCode</li>                         
-                          <li data-value="instance.container.containerTypeName">containerTypeName</li>                         
-                          <li data-value="instance.container.containerTypeShortName">containerTypeShortName</li>                         
-                          <li data-value="instance.container.cores">cores</li>                         
-                          <li data-value="instance.container.dataPath">dataPath</li>                         
-                          <li data-value="instance.container.dateCreated">dateCreated</li>                         
-                          <li data-value="instance.container.domainName">domainName</li>                         
-                          <li data-value="instance.container.environmentPrefix">environmentPrefix</li>                         
-                          <li data-value="instance.container.externalIp">externalIp</li>                         
-                          <li data-value="instance.container.hostMountPoint">hostMountPoint</li>                         
-                          <li data-value="instance.container.hostname">hostname</li>                         
-                          <li data-value="instance.container.id">id</li>                         
-                          <li data-value="instance.container.image">image</li>                         
-                          <li data-value="instance.container.internalHostname">internalHostname</li>                         
-                          <li data-value="instance.container.internalIp">internalIp</li>                         
-                          <li data-value="instance.container.logsPath">logsPath</li>                         
-                          <li data-value="instance.container.memory">memory</li>                         
-                          <li data-value="instance.container.name">name</li>                         
-                          <li data-value="instance.container.planCode">planCode</li>                         
-                          <li data-value="instance.container.portMap">portMap</li>                         
-                          <li data-value="instance.container.ports">ports</li>                         
-                          <li data-value="instance.container.provisionType">provisionType</li>                         
-                          <li data-value="instance.container.server">server</li>                         
-                          <li data-value="instance.container.serverId">serverId</li>                         
-                          <li data-value="instance.container.sshHost">sshHost</li>                         
-                          <li data-value="instance.container.status">status</li>                         
-                          <li data-value="instance.container.storage">storage</li>                         
-                          <li data-value="instance.container.version">version</li>                         
+                      <ul class="modal-view-list">
+                          <li data-value="instance.container.certificatePath">certificatePath</li>
+                          <li data-value="instance.container.certificateStyle">certificateStyle</li>
+                          <li data-value="instance.container.changeManagementExtId">changeManagementExtId</li>
+                          <li data-value="instance.container.changeManagementServiceId">changeManagementServiceId</li>
+                          <li data-value="instance.container.cloudConfig">cloudConfig</li>
+                          <li data-value="instance.container.configGroup">configGroup</li>
+                          <li data-value="instance.container.configId">configId</li>
+                          <li data-value="instance.container.configPath">configPath</li>
+                          <li data-value="instance.container.configRole">configRole</li>
+                          <li data-value="instance.container.containerTypeCategory">containerTypeCategory</li>
+                          <li data-value="instance.container.containerTypeCode">containerTypeCode</li>
+                          <li data-value="instance.container.containerTypeName">containerTypeName</li>
+                          <li data-value="instance.container.containerTypeShortName">containerTypeShortName</li>
+                          <li data-value="instance.container.cores">cores</li>
+                          <li data-value="instance.container.dataPath">dataPath</li>
+                          <li data-value="instance.container.dateCreated">dateCreated</li>
+                          <li data-value="instance.container.domainName">domainName</li>
+                          <li data-value="instance.container.environmentPrefix">environmentPrefix</li>
+                          <li data-value="instance.container.externalIp">externalIp</li>
+                          <li data-value="instance.container.hostMountPoint">hostMountPoint</li>
+                          <li data-value="instance.container.hostname">hostname</li>
+                          <li data-value="instance.container.id">id</li>
+                          <li data-value="instance.container.image">image</li>
+                          <li data-value="instance.container.internalHostname">internalHostname</li>
+                          <li data-value="instance.container.internalIp">internalIp</li>
+                          <li data-value="instance.container.logsPath">logsPath</li>
+                          <li data-value="instance.container.memory">memory</li>
+                          <li data-value="instance.container.name">name</li>
+                          <li data-value="instance.container.planCode">planCode</li>
+                          <li data-value="instance.container.portMap">portMap</li>
+                          <li data-value="instance.container.ports">ports</li>
+                          <li data-value="instance.container.provisionType">provisionType</li>
+                          <li data-value="instance.container.server">server</li>
+                          <li data-value="instance.container.serverId">serverId</li>
+                          <li data-value="instance.container.sshHost">sshHost</li>
+                          <li data-value="instance.container.status">status</li>
+                          <li data-value="instance.container.storage">storage</li>
+                          <li data-value="instance.container.version">version</li>
                       </ul>
-                    </li>                                                                                                 
-                      <li data-value="instance.containers[0]">containers - []</li>                       
-                        <ul class="modal-view-list">                           
-                            <li data-value="instance.containers.certificatePath">certificatePath</li>                           
-                            <li data-value="instance.containers.certificateStyle">certificateStyle</li>                           
-                            <li data-value="instance.containers.changeManagementExtId">changeManagementExtId</li>                           
-                            <li data-value="instance.containers.changeManagementServiceId">changeManagementServiceId</li>                           
-                            <li data-value="instance.containers.cloudConfig">cloudConfig</li>                           
-                            <li data-value="instance.containers.configGroup">configGroup</li>                           
-                            <li data-value="instance.containers.configId">configId</li>                           
-                            <li data-value="instance.containers.configPath">configPath</li>                           
-                            <li data-value="instance.containers.configRole">configRole</li>                           
-                            <li data-value="instance.containers.containerTypeCategory">containerTypeCategory</li>                           
-                            <li data-value="instance.containers.containerTypeCode">containerTypeCode</li>                           
-                            <li data-value="instance.containers.containerTypeName">containerTypeName</li>                           
-                            <li data-value="instance.containers.containerTypeShortName">containerTypeShortName</li>                           
-                            <li data-value="instance.containers.cores">cores</li>                           
-                            <li data-value="instance.containers.dataPath">dataPath</li>                           
-                            <li data-value="instance.containers.dateCreated">dateCreated</li>                           
-                            <li data-value="instance.containers.domainName">domainName</li>                           
-                            <li data-value="instance.containers.environmentPrefix">environmentPrefix</li>                           
-                            <li data-value="instance.containers.externalIp">externalIp</li>                           
-                            <li data-value="instance.containers.hostMountPoint">hostMountPoint</li>                           
-                            <li data-value="instance.containers.hostname">hostname</li>                           
-                            <li data-value="instance.containers.id">id</li>                           
-                            <li data-value="instance.containers.image">image</li>                           
-                            <li data-value="instance.containers.internalHostname">internalHostname</li>                           
-                            <li data-value="instance.containers.internalIp">internalIp</li>                           
-                            <li data-value="instance.containers.logsPath">logsPath</li>                           
-                            <li data-value="instance.containers.memory">memory</li>                           
-                            <li data-value="instance.containers.name">name</li>                           
-                            <li data-value="instance.containers.planCode">planCode</li>                           
-                            <li data-value="instance.containers.portMap">portMap</li>                           
-                            <li data-value="instance.containers.ports">ports</li>                           
-                            <li data-value="instance.containers.provisionType">provisionType</li>                           
-                            <li data-value="instance.containers.server">server</li>                           
-                            <li data-value="instance.containers.serverId">serverId</li>                           
-                            <li data-value="instance.containers.sshHost">sshHost</li>                           
-                            <li data-value="instance.containers.status">status</li>                           
-                            <li data-value="instance.containers.storage">storage</li>                           
-                            <li data-value="instance.containers.version">version</li>                           
-                        </ul>                                                                                                                        
-                    <li data-value="instance.cores">cores</li>                                                                            
-                    <li data-value="instance.createdByEmail">createdByEmail</li>                                                                            
-                    <li data-value="instance.createdByFirstName">createdByFirstName</li>                                                                            
-                    <li data-value="instance.createdById">createdById</li>                                                                            
-                    <li data-value="instance.createdByLastName">createdByLastName</li>                                                                            
+                    </li>
+                      <li data-value="instance.containers[0]">containers - []</li>
+                        <ul class="modal-view-list">
+                            <li data-value="instance.containers.certificatePath">certificatePath</li>
+                            <li data-value="instance.containers.certificateStyle">certificateStyle</li>
+                            <li data-value="instance.containers.changeManagementExtId">changeManagementExtId</li>
+                            <li data-value="instance.containers.changeManagementServiceId">changeManagementServiceId</li>
+                            <li data-value="instance.containers.cloudConfig">cloudConfig</li>
+                            <li data-value="instance.containers.configGroup">configGroup</li>
+                            <li data-value="instance.containers.configId">configId</li>
+                            <li data-value="instance.containers.configPath">configPath</li>
+                            <li data-value="instance.containers.configRole">configRole</li>
+                            <li data-value="instance.containers.containerTypeCategory">containerTypeCategory</li>
+                            <li data-value="instance.containers.containerTypeCode">containerTypeCode</li>
+                            <li data-value="instance.containers.containerTypeName">containerTypeName</li>
+                            <li data-value="instance.containers.containerTypeShortName">containerTypeShortName</li>
+                            <li data-value="instance.containers.cores">cores</li>
+                            <li data-value="instance.containers.dataPath">dataPath</li>
+                            <li data-value="instance.containers.dateCreated">dateCreated</li>
+                            <li data-value="instance.containers.domainName">domainName</li>
+                            <li data-value="instance.containers.environmentPrefix">environmentPrefix</li>
+                            <li data-value="instance.containers.externalIp">externalIp</li>
+                            <li data-value="instance.containers.hostMountPoint">hostMountPoint</li>
+                            <li data-value="instance.containers.hostname">hostname</li>
+                            <li data-value="instance.containers.id">id</li>
+                            <li data-value="instance.containers.image">image</li>
+                            <li data-value="instance.containers.internalHostname">internalHostname</li>
+                            <li data-value="instance.containers.internalIp">internalIp</li>
+                            <li data-value="instance.containers.logsPath">logsPath</li>
+                            <li data-value="instance.containers.memory">memory</li>
+                            <li data-value="instance.containers.name">name</li>
+                            <li data-value="instance.containers.planCode">planCode</li>
+                            <li data-value="instance.containers.portMap">portMap</li>
+                            <li data-value="instance.containers.ports">ports</li>
+                            <li data-value="instance.containers.provisionType">provisionType</li>
+                            <li data-value="instance.containers.server">server</li>
+                            <li data-value="instance.containers.serverId">serverId</li>
+                            <li data-value="instance.containers.sshHost">sshHost</li>
+                            <li data-value="instance.containers.status">status</li>
+                            <li data-value="instance.containers.storage">storage</li>
+                            <li data-value="instance.containers.version">version</li>
+                        </ul>
+                    <li data-value="instance.cores">cores</li>
+                    <li data-value="instance.createdByEmail">createdByEmail</li>
+                    <li data-value="instance.createdByFirstName">createdByFirstName</li>
+                    <li data-value="instance.createdById">createdById</li>
+                    <li data-value="instance.createdByLastName">createdByLastName</li>
                     <li data-value="instance.createdByUser.">createdByUser
-                      <ul class="modal-view-list">                         
-                          <li data-value="instance.createdByUser.accountId">accountId</li>                         
-                          <li data-value="instance.createdByUser.attributes">attributes</li>                         
-                          <li data-value="instance.createdByUser.displayName">displayName</li>                         
-                          <li data-value="instance.createdByUser.email">email</li>                         
-                          <li data-value="instance.createdByUser.firstName">firstName</li>                         
-                          <li data-value="instance.createdByUser.id">id</li>                         
-                          <li data-value="instance.createdByUser.lastName">lastName</li>                         
-                          <li data-value="instance.createdByUser.linuxUsername">linuxUsername</li>                         
-                          <li data-value="instance.createdByUser.username">username</li>                         
-                          <li data-value="instance.createdByUser.windowsUsername">windowsUsername</li>                         
+                      <ul class="modal-view-list">
+                          <li data-value="instance.createdByUser.accountId">accountId</li>
+                          <li data-value="instance.createdByUser.attributes">attributes</li>
+                          <li data-value="instance.createdByUser.displayName">displayName</li>
+                          <li data-value="instance.createdByUser.email">email</li>
+                          <li data-value="instance.createdByUser.firstName">firstName</li>
+                          <li data-value="instance.createdByUser.id">id</li>
+                          <li data-value="instance.createdByUser.lastName">lastName</li>
+                          <li data-value="instance.createdByUser.linuxUsername">linuxUsername</li>
+                          <li data-value="instance.createdByUser.username">username</li>
+                          <li data-value="instance.createdByUser.windowsUsername">windowsUsername</li>
                       </ul>
-                    </li>                                                                            
-                    <li data-value="instance.createdByUsername">createdByUsername</li>                                                                            
+                    </li>
+                    <li data-value="instance.createdByUsername">createdByUsername</li>
                     <li data-value="instance.customOptions.">customOptions
-                      <ul class="modal-view-list">                         
-                          <li data-value="instance.customOptions.key">key</li>                         
+                      <ul class="modal-view-list">
+                          <li data-value="instance.customOptions.key">key</li>
                       </ul>
-                    </li>                                                                            
-                    <li data-value="instance.deployGroup">deployGroup</li>                                                                            
-                    <li data-value="instance.description">description</li>                                                                            
-                    <li data-value="instance.displayName">displayName</li>                                                                            
-                    <li data-value="instance.domainName">domainName</li>                                                                            
-                    <li data-value="instance.environmentPrefix">environmentPrefix</li>                                                                            
+                    </li>
+                    <li data-value="instance.deployGroup">deployGroup</li>
+                    <li data-value="instance.description">description</li>
+                    <li data-value="instance.displayName">displayName</li>
+                    <li data-value="instance.domainName">domainName</li>
+                    <li data-value="instance.environmentPrefix">environmentPrefix</li>
                     <li data-value="instance.evars.">evars
-                      <ul class="modal-view-list">                         
-                          <li data-value="instance.evars.key">key</li>                         
+                      <ul class="modal-view-list">
+                          <li data-value="instance.evars.key">key</li>
                       </ul>
-                    </li>                                                                            
-                    <li data-value="instance.expireDate">expireDate</li>                                                                            
-                    <li data-value="instance.firewallEnabled">firewallEnabled</li>                                                                            
-                    <li data-value="instance.hostname">hostname</li>                                                                            
-                    <li data-value="instance.id">id</li>                                                                            
-                    <li data-value="instance.instanceContext">instanceContext</li>                                                                            
-                    <li data-value="instance.instanceLevel">instanceLevel</li>                                                                            
-                    <li data-value="instance.instanceTypeCode">instanceTypeCode</li>                                                                            
-                    <li data-value="instance.instanceTypeName">instanceTypeName</li>                                                                            
-                    <li data-value="instance.instanceVersion">instanceVersion</li>                                                                            
-                    <li data-value="instance.layoutCode">layoutCode</li>                                                                            
-                    <li data-value="instance.layoutId">layoutId</li>                                                                            
-                    <li data-value="instance.layoutName">layoutName</li>                                                                            
-                    <li data-value="instance.memory">memory</li>                                                                            
+                    </li>
+                    <li data-value="instance.expireDate">expireDate</li>
+                    <li data-value="instance.firewallEnabled">firewallEnabled</li>
+                    <li data-value="instance.hostname">hostname</li>
+                    <li data-value="instance.id">id</li>
+                    <li data-value="instance.instanceContext">instanceContext</li>
+                    <li data-value="instance.instanceLevel">instanceLevel</li>
+                    <li data-value="instance.instanceTypeCode">instanceTypeCode</li>
+                    <li data-value="instance.instanceTypeName">instanceTypeName</li>
+                    <li data-value="instance.instanceVersion">instanceVersion</li>
+                    <li data-value="instance.layoutCode">layoutCode</li>
+                    <li data-value="instance.layoutId">layoutId</li>
+                    <li data-value="instance.layoutName">layoutName</li>
+                    <li data-value="instance.memory">memory</li>
                     <li data-value="instance.metadata.">metadata
-                      <ul class="modal-view-list">                         
+                      <ul class="modal-view-list">
                       </ul>
-                    </li>                                                                            
-                    <li data-value="instance.name">name</li>                                                                            
-                    <li data-value="instance.networkLevel">networkLevel</li>                                                                            
-                    <li data-value="instance.plan">plan</li>                                                                            
-                    <li data-value="instance.ports">ports</li>                                                                            
-                    <li data-value="instance.provisionType">provisionType</li>                                                                            
-                    <li data-value="instance.scheduleStatus">scheduleStatus</li>                                                                            
-                    <li data-value="instance.servicePassword">servicePassword</li>                                                                            
-                    <li data-value="instance.serviceUsername">serviceUsername</li>                                                                            
-                    <li data-value="instance.sslCertId">sslCertId</li>                                                                            
-                    <li data-value="instance.sslEnabled">sslEnabled</li>                                                                            
-                    <li data-value="instance.status">status</li>                                                                            
-                    <li data-value="instance.statusMessage">statusMessage</li>                                                                            
-                    <li data-value="instance.storage">storage</li>                                                                            
-                    <li data-value="instance.tags">tags</li>                                                                            
+                    </li>
+                    <li data-value="instance.name">name</li>
+                    <li data-value="instance.networkLevel">networkLevel</li>
+                    <li data-value="instance.plan">plan</li>
+                    <li data-value="instance.ports">ports</li>
+                    <li data-value="instance.provisionType">provisionType</li>
+                    <li data-value="instance.scheduleStatus">scheduleStatus</li>
+                    <li data-value="instance.servicePassword">servicePassword</li>
+                    <li data-value="instance.serviceUsername">serviceUsername</li>
+                    <li data-value="instance.sslCertId">sslCertId</li>
+                    <li data-value="instance.sslEnabled">sslEnabled</li>
+                    <li data-value="instance.status">status</li>
+                    <li data-value="instance.statusMessage">statusMessage</li>
+                    <li data-value="instance.storage">storage</li>
+                    <li data-value="instance.tags">tags</li>
                     <li data-value="instance.templateOutput.">templateOutput
-                      <ul class="modal-view-list">                         
-                          <li data-value="instance.templateOutput."></li>                         
+                      <ul class="modal-view-list">
+                          <li data-value="instance.templateOutput."></li>
                       </ul>
-                    </li>                                                                            
-                    <li data-value="instance.userStatus">userStatus</li>                                    
+                    </li>
+                    <li data-value="instance.userStatus">userStatus</li>
               </ul>
-            </li>                                                                          
-            <li data-value="platform">platform</li>                                                          
-            <li data-value="provisionType">provisionType</li>                                                          
+            </li>
+            <li data-value="platform">platform</li>
+            <li data-value="provisionType">provisionType</li>
             <li data-value="results.">
               <strong>results</strong>
-              <ul class="modal-view-list">                 
+              <ul class="modal-view-list">
               </ul>
-            </li>                                                          
-            <li data-value="sequence">sequence</li>                                                          
+            </li>
+            <li data-value="sequence">sequence</li>
             <li data-value="state.">
               <strong>state</strong>
-              <ul class="modal-view-list">                                                         
-                    <li data-value="state.iacDrift">iacDrift</li>                                                                            
-                    <li data-value="state.stateDate">stateDate</li>                                                                                                 
-                      <li data-value="state.stateList[0]">stateList - []</li>                       
-                        <ul class="modal-view-list">                           
-                            <li data-value="state.stateList.category">category</li>                           
-                            <li data-value="state.stateList.code">code</li>                           
-                            <li data-value="state.stateList.contentPath">contentPath</li>                           
-                            <li data-value="state.stateList.errorMessage">errorMessage</li>                           
-                            <li data-value="state.stateList.iacDrift">iacDrift</li>                           
-                            <li data-value="state.stateList.id">id</li>                           
-                            <li data-value="state.stateList.input">input</li>                           
-                            <li data-value="state.stateList.name">name</li>                           
-                            <li data-value="state.stateList.output">output</li>                           
-                            <li data-value="state.stateList.planPath">planPath</li>                           
-                            <li data-value="state.stateList.resourceVersion">resourceVersion</li>                           
-                            <li data-value="state.stateList.stateContext">stateContext</li>                           
-                            <li data-value="state.stateList.stateDate">stateDate</li>                           
-                            <li data-value="state.stateList.stateId">stateId</li>                           
-                            <li data-value="state.stateList.statePath">statePath</li>                           
-                            <li data-value="state.stateList.stateType">stateType</li>                           
-                            <li data-value="state.stateList.status">status</li>                           
-                            <li data-value="state.stateList.statusMessage">statusMessage</li>                           
-                            <li data-value="state.stateList.tags">tags</li>                           
-                            <li data-value="state.stateList.workingPath">workingPath</li>                           
-                        </ul>                                                                                                                        
-                    <li data-value="state.stateType">stateType</li>                                    
+              <ul class="modal-view-list">
+                    <li data-value="state.iacDrift">iacDrift</li>
+                    <li data-value="state.stateDate">stateDate</li>
+                      <li data-value="state.stateList[0]">stateList - []</li>
+                        <ul class="modal-view-list">
+                            <li data-value="state.stateList.category">category</li>
+                            <li data-value="state.stateList.code">code</li>
+                            <li data-value="state.stateList.contentPath">contentPath</li>
+                            <li data-value="state.stateList.errorMessage">errorMessage</li>
+                            <li data-value="state.stateList.iacDrift">iacDrift</li>
+                            <li data-value="state.stateList.id">id</li>
+                            <li data-value="state.stateList.input">input</li>
+                            <li data-value="state.stateList.name">name</li>
+                            <li data-value="state.stateList.output">output</li>
+                            <li data-value="state.stateList.planPath">planPath</li>
+                            <li data-value="state.stateList.resourceVersion">resourceVersion</li>
+                            <li data-value="state.stateList.stateContext">stateContext</li>
+                            <li data-value="state.stateList.stateDate">stateDate</li>
+                            <li data-value="state.stateList.stateId">stateId</li>
+                            <li data-value="state.stateList.statePath">statePath</li>
+                            <li data-value="state.stateList.stateType">stateType</li>
+                            <li data-value="state.stateList.status">status</li>
+                            <li data-value="state.stateList.statusMessage">statusMessage</li>
+                            <li data-value="state.stateList.tags">tags</li>
+                            <li data-value="state.stateList.workingPath">workingPath</li>
+                        </ul>
+                    <li data-value="state.stateType">stateType</li>
               </ul>
-            </li>                                                          
-            <li data-value="tenant">tenant</li>                                                          
-            <li data-value="tenantId">tenantId</li>                                                          
-            <li data-value="tenantSubdomain">tenantSubdomain</li>                                                          
-            <li data-value="type">type</li>                                                          
-            <li data-value="userId">userId</li>                                                          
-            <li data-value="userInitials">userInitials</li>                                                          
-            <li data-value="username">username</li>                           
+            </li>
+            <li data-value="tenant">tenant</li>
+            <li data-value="tenantId">tenantId</li>
+            <li data-value="tenantSubdomain">tenantSubdomain</li>
+            <li data-value="type">type</li>
+            <li data-value="userId">userId</li>
+            <li data-value="userInitials">userInitials</li>
+            <li data-value="username">username</li>
     </ul>
     </div>
     </

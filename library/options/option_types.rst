@@ -8,7 +8,7 @@ Inputs are custom input fields that can be added to Instance Types and Layouts, 
    :scale: 40%
 
 Create Input
-^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^
 
 .. note:: All possible fields listed. Displayed fields depend on ``TYPE`` selection
 
@@ -27,6 +27,12 @@ DEPENDENT FIELD
  The Field Name value for a field that will reload this Option List to present a different set of selections. Take a look at the section below on Cascading Inputs as well as the `associated article <https://support.morpheusdata.com/s/article/How-to-create-option-lists?language=en_US>`_ in our KnowledgeBase for documented examples of this feature
 VISIBILITY FIELD
  A Field Name and selection value that will trigger this field to become visible. Currently, this only works when the Input is associated with a Service Catalog Item and viewed from the Service Catalog Persona perspective. See the section below on the Visibility Field for instructions on configuring this value
+REQUIRE FIELD
+ A fieldName that will trigger required attribute of this option
+SHOW ON EDIT
+ Display the Input name and value when editing an Instance
+EDITABLE
+ Allow the Input value to be updated when editing an Instance (This attribute is hidden if SHOW ON EDIT is not selected)
 DISPLAY VALUE ON DETAILS
  When selected, the Input label and value (label: value) will be visible in a list of custom options on the Instance detail page
 TYPE
@@ -77,14 +83,14 @@ One powerful facet of |morpheus| Inputs is the ability to present users with dif
 
 To set this up, we will first configure our Inputs (custom option fields that can be applied to Instance Types and other |morpheus| constructs) and Option Lists (dynamic lists of possible choices which can be associated with Inputs and presented in a dropdown or typeahead format). Once the custom options are configured, we will associate them with a new service catalog item and take a look at how the user would interact with them.
 
-Group Custom Option
-```````````````````
+Group Custom Options
+````````````````````
 
-To begin, we will create a new `Option List <https://docs.morpheusdata.com/en/latest/provisioning/library/library.html#option-lists>`_. In this case, we will select type of "Morpheus Api" which will populate the list based on a call to the internal |morpheus| API. Option Lists can also be populated by calls to external REST APIs or even from static lists that you enter manually. When dynamically populating Option Lists, whether via |morpheus| API or an external API, translation and/or request scripts may be needed to prepare the request or translate the results. More on that as we build out the example.
+To begin, we will create a new `Option List <https://docs.morpheusdata.com/en/latest/provisioning/library/library.html#option-lists>`_ In this case, we will select type of "Morpheus Api" which will populate the list based on a call to the internal |morpheus| API. Option Lists can also be populated by calls to external REST APIs or even from static lists that you enter manually. When dynamically populating Option Lists, whether via |morpheus| API or an external API, translation and/or request scripts may be needed to prepare the request or translate the results. More on that as we build out the example.
 
 I have called my Option List "Groups" and selected "Groups" from the OPTION LIST menu. This simply indicates that Groups are the construct we want to call into our list from |morpheus| API. In this case, we want to present a list of all Groups to the user by their name and pass the Group database ID in the background. Since it is common to create Option Lists from |morpheus| API where the construct name is displayed to the user and the ID is passed, we actually do not need to input any translation scripts in this case. However, I will include a translation script here which does the same thing simply to provide more clarity to the example. |morpheus| `Option List documentation <https://docs.morpheusdata.com/en/latest/provisioning/library/library.html#morpheus-api-option-list-fields>`_ includes additional details on available translation script inputs and which are available without translation as a convenience feature.
 
-.. code-block:: bash
+.. code-block:: javascript
 
    for (var x = 0; x < data.length; x++) {
      results.push({name: data[x].name, value:data[x].id});
@@ -92,7 +98,7 @@ I have called my Option List "Groups" and selected "Groups" from the OPTION LIST
 
 After saving the Option List, create the Input that presents the list we just created. I gave my Input the name of "Selected Group", field name of "selectedGroup", and label of "Group". For type, choose "Select List" and a new field will appear at the bottom of the modal where we can select the Option List we just created. With this configuration, the Input will present as a dropdown list containing the options called from our Option List.
 
-Cloud Custom Option
+Cloud Custom Options
 ````````````````````
 
 Adding the Option List and Input for Clouds will be similar to the prior step with the exception that we will be including a request script which effectively filters the list of available Clouds to only those associated with the selected group. Follow the same process to start a new Option List, I have configured mine as follows:
@@ -101,17 +107,17 @@ Adding the Option List and Input for Clouds will be similar to the prior step wi
 - **TYPE:** Morpheus Api
 - **OPTION LIST:** Clouds
 
-We also need a request script that loads the ``siteId`` attribute of the ``results`` variable with the Group ID if the user has made a group selection. Essentially it appends this input as a query parameter to the API call, calling (for example) ``.../api/clouds?siteId=1`` rather than ``.../api/clouds``. It should be similar to the script below. Note that we are referencing the ``selectedGroup`` field name we created previously and that a "site" is the term for Groups in the |morpheus| database.
+We also need a request script that loads the ``siteId`` attribute of the ``results`` variable with the Group ID if the user has made a group selection. Essentially it appends this input as a query parameter to the API call, calling (for example) ``./api/clouds?siteId=1`` rather than ``.../api/clouds``. It should be similar to the script below. Note that we are referencing the ``selectedGroup`` field name we created previously and that a "site" is the term for Groups in the |morpheus| database.
 
-.. code-block:: bash
+.. code-block:: javascript
 
-   if (input.selectedGroup) {
-     results.siteId = input.selectedGroup
-   }
+    if (input.selectedGroup) {
+      results.siteId = input.selectedGroup
+    }
 
 We also need a translation script which will be identical to the one used previously with the exception that if there is no input on the ``selectedGroups`` field, nothing will be displayed for the Clouds option.
 
-.. code-block:: bash
+.. code-block:: javascript
 
    if (input.selectedGroup) {
    for (var x = 0; x < data.length; x++) {
@@ -141,7 +147,7 @@ Finally, we will create an Option List/Input pair for network selection. In this
 
 **Request Script:**
 
-.. code-block:: bash
+.. code-block:: javascript
 
   if (input.parsedCloud && input.selectedGroup) {
     results.cloudId = input.parsedCloud
@@ -150,7 +156,7 @@ Finally, we will create an Option List/Input pair for network selection. In this
 
 **Translation Script:**
 
-.. code-block:: bash
+.. code-block:: javascript
 
   if (input.parsedCloud && input.selectedGroup) {
   for (var x = 0; x < data.length; x++) {
@@ -177,9 +183,11 @@ At this point, our dependent options are ready to be applied to custom Instance 
 Visibility Field
 ^^^^^^^^^^^^^^^^
 
-The Visibility field for Inputs allows users to set conditions under which the Input being created or edited is displayed. A very simple visibility configuration would look like the following: ``config.customOptions.color:(red)`` where "color" represents the ``fieldName`` for any other Input which will determine the visibility of the current one and "red" represents any JavaScript regular expression that matches to the values that meet your desired conditions.
+.. updates in progress
 
-Expanding on the simplified example above, we could trigger visibility based on any one of multiple selections from the same Input by using a different regular expression, such as ``config.customOptions.color:(red|blue|yellow)``. Additionally, we aren not restricted to the conditions of just one Input to determine visibility as the following would also be valid: ``config.customOptions.color:(red|blue|yellow),config.customOptions.shape:(square)``. In the previous example, the Input "Color" would have to be set to red, blue, or yellow `OR` the Input "Shape" would have to be set to square in order to trigger visibility of the Input currently being configured. Prepend the previous example with ``matchAll::`` in order to require both conditions to be met rather than one or the other (ex. ``matchAll::config.customOptions.color:(red|blue|yellow),config.customOptions.shape:(square)``).
+The Inputs Visibility field  allows users to set conditions under which the Input field is displayed. Visibility field accepts ``fieldName:value`` or ``fieldName:(regex)``, where "fieldName" equals the fieldName of another Input which will determine the visibility of this Input, and "value" equals the value of the other Input, or "(regex)" equals the regular expression that matches to the values that meet your desired conditions. When the value of the fieldName matches the "value" or "(regex)" set in the Visibility field, this Input will be displayed. When the value of the other fieldName does not match "value" or satisfy the "(regex)" set in the Visibility field, this Input will not be displayed.
+
+Expanding on the simplified example above, we could trigger visibility based on any one of multiple selections from the same Input by using a different regular expression, such as ``color:(red|blue|yellow)``. Additionally, we are not restricted to the conditions of just one Input to determine visibility as the following would also be valid: ``color:(red|blue|yellow),shape:(square)``. In the previous example, the Input "Color" would have to be set to red, blue, or yellow `OR` the Input "Shape" would have to be set to square in order to trigger visibility of the Input currently being configured. Prepend the previous example with ``matchAll::`` in order to require both conditions to be met rather than one or the other (ex. ``matchAll::config.customOptions.color:(red|blue|yellow),config.customOptions.shape:(square)``).
 
 Putting it all together, you will first configure visibility for your selected Inputs as described above. You can see in the screenshot below I have set the Input being edited to have a visibility dependent on another Input which you can see in the background.
 
@@ -193,3 +201,10 @@ Next, ensure the relevant Inputs are associated with the Service Catalog Item (T
 Finally, when Service Catalog Persona users interact with my Catalog Item, they will be able to toggle additional Inputs to be visible based on their selections.
 
 .. image:: /images/provisioning/optionTypes/3toggleOption.gif
+
+Required Field
+^^^^^^^^^^^^^^
+
+The Required field allows for Inputs to be conditionally required. In this field, enter the Field Name value for another Input and, if that Input is filled by the user, the current Input will become required. This feature could also be used in conjunction with the Visibility field described above in that you may want a field to be required when visible but not required when hidden. Below is a simple abstract example showing how the second displayed Input becomes required when the first displayed Input is filled.
+
+.. image:: /images/provisioning/library/required.gif

@@ -274,14 +274,14 @@ Multi-Domain ServiceNow Configuration
 Adding to ServiceNow Catalog
 ````````````````````````````
 
-Once the ServiceNow plugin is installed and configured, items can be added to the ServiceNow catalog from back in |morpheus|. Follow the guide below to expose |morpheus| Clouds, Library Items, and Blueprints to users in the ServiceNow catalog.
+Once the ServiceNow plugin is installed and configured, Service Catalog items can be exposed to the ServiceNow catalog from |morpheus|. Follow the guide below to expose |morpheus| Clouds, Library Items, and Blueprints to users in the ServiceNow catalog.
 
-#. Navigate to `|AdmInt|`
+#. Navigate to |AdmInt|
 #. Select the relevant ServiceNow integration
-#. From the Instances tab we can :guilabel:`+ ADD CLOUD` or :guilabel:`+ ADD LIBRARY ITEM`
-#. From the Blueprints tab we can :guilabel:`+ ADD BLUEPRINT`
-#. From the Catalog Items tab, we can :guilabel:`+ ADD CATALOG ITEM`
+#. Within the "EXPOSED CATALOG ITEMS" section is a list of currently-exposed Service Catalog items
+#. To expose a new item, click :guilabel:`+ ADD CATALOG ITEM`
+#. Select an available item from the dropdown menu and click :guilabel:`SAVE CHANGES`
 #. Back in ServiceNow, access the |morpheus| plugin from the Service Catalog
-#. Exposed |morpheus| Library Items, Catalog Items, and Blueprints are visible here for ServiceNow users with sufficient role permissions
+#. Exposed |morpheus| Service Catalog items are visible here for ServiceNow users with sufficient role permissions
 
-.. image:: /images/integration_guides/itsm/servicenow/5addCatalogItem.png
+.. image:: /images/integration_guides/itsm/servicenow/addCatalogItemNew.png

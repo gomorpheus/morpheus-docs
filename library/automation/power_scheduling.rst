@@ -24,7 +24,7 @@ Create Power schedules
     Enabled
       Check for Power Schedule to be Active. Uncheck to disable Power Schedule.
     DAYS
-      Slide the start and end time controls for each day to configure each days Schedule. Green sections indicate Power on, red sections indicate Power Off. Time indicated applies to selected Time Zone.
+      Slide the start and end time controls for each day to configure each days Schedule. Green sections indicate Power on, red sections indicate Power Off. Time indicated applies to selected Time Zone. The sliders can be used to set time in 15-minute steps, for single-minute granularity click the pencil icon and enter a specific time down to the minute.
 
    .. image:: /images/operations/powerSchedule.png
 

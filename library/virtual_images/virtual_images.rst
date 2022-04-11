@@ -50,19 +50,19 @@ Typically |morpheus| does not have sufficient metatdata to successfully provisio
    Install Agent?
      On by default, uncheck to skip Agent install. Note this will result in the loss of utilization statistics, logs, script execution, and monitoring. (Some utilization stats are still collected for Agent-less hosts and VMs depending on the cloud)
    Username
-     Existing username on the image. This is required for authentication, unless |morpheus| is able to add user data, Cloud-Init, Cloudbase-Init or Guest Customizations. If Cloud-Init, Cloudbase-Init or Guest Customizations are used, credentials are defined in |AdmSetPro| and User Settings. If credentials are defined on the image and Cloud-Init is enabled, |morpheus| will add that user during provisioning, so ensure that user does not already exist on the image (such as ``root``). For Windows Guest Customizations, |morpheus| will set the Administrator password to what is defined on the image if Administrator user is defined. Do not define any other user than Administrator for Windows Images unless using Cloudbase-init. |morpheus| recommends running Guest Customizations for all Windows Images, which is required when joining Domains as the SID will change.
+     Existing username on the image. This is required for authentication, unless |morpheus| is able to add user data, Cloud-Init, Cloudbase-Init or Guest Customizations. If Cloud-Init, Cloudbase-Init or Guest Customizations are used, credentials are defined in |AdmSetPro| and User Settings. If credentials are defined on the image and Cloud-Init is enabled, |morpheus| will add that user during provisioning, so ensure that user does not already exist on the image (such as ``root``). For Windows Guest Customizations, |morpheus| will set the Administrator password to what is defined on the image if Administrator user is defined. Do not define any other user than Administrator for Windows Images unless using Cloudbase-init. |morpheus| recommends running Guest Customizations for all Windows Images, which is required when joining Domains as the SID will change
    Password
      Password for the user on the image if username is populated
    Bucket
-    Location where the Virtual Image will be stored. Default Virtual Image Storage location is ``/var/opt/morpheus/morpheus-ui/vms``. Additional Storage Providers can be configured in ``Infrastructure > Storage``.
+    Location where the Virtual Image will be stored. Default Virtual Image Storage location is ``/var/opt/morpheus/morpheus-ui/vms``. Additional Storage Providers can be configured in ``Infrastructure > Storage``
    Cloud-Init User Data
      Accepts what would go in ``runcmd`` and can assume Bash syntax. Example use: Script to configure satellite registration at provision time
    Create Image ID
-    Select FILE to browse locally for an image or drop an image file into the dropzone. Alternatively, select URL to download the image from an accessible URL. It is recommend to configure the rest of the settings below prior to uploading the source Image File(s).
+    Select FILE to browse locally for an image or drop an image file into the dropzone. Alternatively, select URL to download the image from an accessible URL. It is recommend to configure the rest of the settings below prior to uploading the source Image File(s)
    Permissions
     Set Tenant permissions in a multi-tenant |morpheus| environment. Select private visibility and select specific Tenants to which the Virtual Image will be made available. Select public visibility to share the Virtual Image with all Tenants
    Auto Join Domain?
-    Enable to have Instances provisioned with this image auto-join configured domains (Windows only, domain controller must be configured in ``Infrastructure > Network`` and the configured domain set on the provisioned to Cloud or Network).
+    Enable to have Instances provisioned with this image auto-join configured domains (Windows only, domain controller must be configured in ``Infrastructure > Network`` and the configured domain set on the provisioned to Cloud or Network)
    VirtIO Drivers Loaded?
     Enable if VirtIO Drivers are installed on the image for provisioning to KVM-based hypervisors
    FIPS Compliant Image?
@@ -70,7 +70,7 @@ Typically |morpheus| does not have sufficient metatdata to successfully provisio
    VM Tools Installed?
     On by default, uncheck if VMware Tools (including OpenVMTools) are not installed on the Virtual Image. |morpheus| will skip network wait during provisioning when deselected
    Force Guest Customization?
-    VMware only, forces guest customizations to run during provisioning, typically when provisioning to a DHCP network where guest customizations would not run by default
+    VMware only, forces guest customizations to run during provisioning, typically when provisioning to a DHCP network where guest customizations would not run by default.  This options requires that VMware Tools is installed on the image
    Trial Version
     Enable to automatically re-arm the expiration on Windows Trial Images during provisioning
    Enabled Sysprep?
@@ -97,6 +97,8 @@ Add Virtual Image
 Virtual Images can be upload to |morpheus| from local files or URL's. Amazon and Azure Marketplace metadata can also be added to the Virtual Images library, enabling the creation of custom catalog Instance Type from Marketplace images (no image is transferred to |morpheus| when adding Marketplace images).
 
 .. WARNING:: Be conscious of your Storage Provider selection. The default Storage Provider is the |morpheus| Appliance at ``/var/opt/morpheus/morpheus-ui/vms``. Uploading large images to the |morpheus| Appliance when there is inadequate space will cause upload failures and impact Appliance functionality. Ensure there is adequate space on your selected Storage Provider. Additional Storage Provider can be added at `Infrastructure > Storage`, which can be configured as the default Virtual Image Store or selected when uploading Images.
+
+.. NOTE:: VMware-type OVF Virtual Images do not support mounted ISO uploads
 
 To Add Virtual Image:
 
@@ -127,19 +129,19 @@ To Add Virtual Image:
   Install Agent?
     On by default, uncheck to skip Agent install. Note this will result in the loss of utilization statistics, logs, script execution, and monitoring. (Some utilization stats are still collected for Agent-less hosts and VMs depending on the cloud)
   Username
-    Existing username on the image. This is required for authentication, unless |morpheus| is able to add user data, Cloud-Init, Cloudbase-Init or Guest Customizations. If Cloud-Init, Cloudbase-Init or Guest Customizations are used, credentials are defined in |AdmSetPro| and User Settings. If credentials are defined on the image and Cloud-Init is enabled, |morpheus| will add that user during provisioning, so ensure that user does not already exist on the image (such as ``root``). For Windows Guest Customizations, |morpheus| will set the Administrator password to what is defined on the image if Administrator user is defined. Do not define any other user than Administrator for Windows Images unless using Cloudbase-init. |morpheus| recommends running Guest Customizations for all Windows Images, which is required when joining Domains as the SID will change.
+    Existing username on the image. This is required for authentication, unless |morpheus| is able to add user data, Cloud-Init, Cloudbase-Init or Guest Customizations. If Cloud-Init, Cloudbase-Init or Guest Customizations are used, credentials are defined in |AdmSetPro| and User Settings. If credentials are defined on the image and Cloud-Init is enabled, |morpheus| will add that user during provisioning, so ensure that user does not already exist on the image (such as ``root``). For Windows Guest Customizations, |morpheus| will set the Administrator password to what is defined on the image if Administrator user is defined. Do not define any other user than Administrator for Windows Images unless using Cloudbase-init. |morpheus| recommends running Guest Customizations for all Windows Images, which is required when joining Domains as the SID will change
   Password
     Password for the user on the image if username is populated
   Bucket
-   Location where the Virtual Image will be stored. Default Virtual Image Storage location is ``/var/opt/morpheus/morpheus-ui/vms``. Additional Storage Providers can be configured in ``Infrastructure > Storage``.
+   Location where the Virtual Image will be stored. Default Virtual Image Storage location is ``/var/opt/morpheus/morpheus-ui/vms``. Additional Storage Providers can be configured in ``Infrastructure > Storage``
   Cloud-Init User Data
     Accepts what would go in ``runcmd`` and can assume Bash syntax. Example use: Script to configure satellite registration at provision time
   Create Image ID
-   Select FILE to browse locally for an image or drop an image file into the dropzone. Alternatively, select URL to download the image from an accessible URL. It is recommend to configure the rest of the settings below prior to uploading the source Image File(s).
+   Select FILE to browse locally for an image or drop an image file into the dropzone. Alternatively, select URL to download the image from an accessible URL. It is recommend to configure the rest of the settings below prior to uploading the source Image File(s)
   Permissions
    Set Tenant permissions in a multi-tenant |morpheus| environment. Select private visibility and select specific Tenants to which the Virtual Image will be made available. Select public visibility to share the Virtual Image with all Tenants
   Auto Join Domain?
-   Enable to have Instances provisioned with this image auto-join configured domains (Windows only, domain controller must be configured in ``Infrastructure > Network`` and the configured domain set on the provisioned to Cloud or Network).
+   Enable to have Instances provisioned with this image auto-join configured domains (Windows only, domain controller must be configured in ``Infrastructure > Network`` and the configured domain set on the provisioned to Cloud or Network)
   VirtIO Drivers Loaded?
    Enable if VirtIO Drivers are installed on the image for provisioning to KVM-based hypervisors
   FIPS Compliant Image?
@@ -147,7 +149,7 @@ To Add Virtual Image:
   VM Tools Installed?
    On by default, uncheck if VMware Tools (including OpenVMTools) are not installed on the Virtual Image. |morpheus| will skip network wait during provisioning when deselected
   Force Guest Customization?
-   VMware only, forces guest customizations to run during provisioning, typically when provisioning to a DHCP network where guest customizations would not run by default
+   VMware only, forces guest customizations to run during provisioning, typically when provisioning to a DHCP network where guest customizations would not run by default.  This options requires that VMware Tools is installed on the image
   Trial Version
    Enable to automatically re-arm the expiration on Windows Trial Images during provisioning
   Enabled Sysprep?

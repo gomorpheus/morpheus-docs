@@ -104,4 +104,6 @@ Morpheus allows for additional advanced customizations for system managed servic
   ui['memory_map_threshold'] = 131072
   ui['memory_top_pad'] = 131072
   ui['memory_trim_threshold'] = 131072
+  ui['pxe_boot_enabled'] = false
+    # This option disables the PXE service within the app
   ui['vm_images_cdn_url'] = 'https://morpheus-images.morpheusdata.com'

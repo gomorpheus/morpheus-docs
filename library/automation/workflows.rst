@@ -18,7 +18,7 @@ Provisioning Workflow Execution Phases
     - Notes
   * - Configuration
     - Tasks are run prior to initial calls to the specified cloud API to initiate provisioning
-    - Call to an external platform to dynamically generate a hostname prior to kicking off provisioning
+    - Call to an external platform to dynamically generate a hostname prior to kicking off provisioning or dynamically altering configuration of a Catalog Item prior to provisioning
     -
   * - Pre Provision
     - For VMs, Tasks are run after the VM is running and prior to any Tasks in the Provision phase. For containers, Tasks in this phase are run on the Docker host and prior to ``docker run``
@@ -68,7 +68,7 @@ Provisioning Workflow Execution Phases
 Add Workflow
 ^^^^^^^^^^^^
 
-#. Select the Provisioning link in the navigation bar
+#. Select the Library link in the navigation bar
 #. Select Automation from the sub-navigation menu
 #. Click the Workflows tab to show the Workflows tab panel
 #. Click the :guilabel:`+ Add` dropdown and select a Workflow type (Operational or Provisioning, see the section above for more on Workflow type differences)
@@ -85,12 +85,35 @@ Add Workflow
 Allow Custom Config
 ^^^^^^^^^^^^^^^^^^^
 
-When marked on Operational Workflows, the user is shown a text area for custom configuration at execution time. This could be used to pass extra variables that wouldn't normally be in the script or for specifying extra configuration.
+When "Allow Custom Config" is marked on Operational Workflows, the user is shown a text area for custom configuration at execution time. This text area is inside the "Advanced Options" section, which must be expanded in order to reveal the text area. Within the text area, add a JSON map of key-value pairs which can be resolved within your automation scripts. This could be used to pass extra variables that aren't always needed in the script or for specifying extra configuration.
+
+**Example JSON Map:**
+
+.. code-block::
+
+  {"key1": "value1",
+  "key2": "value2",
+  "os": "linux",
+  "foo": "bar"}
+
+When the Workflow is executed, these extra variables would be resolved where called into the script such as in the following simple BASH script example:
+
+.. code-block:: bash
+
+  echo "<%=customOptions.os%>"
+  echo "<%=customOptions.foo%>"
+
+The above example would result in the following output:
+
+.. code-block::
+
+  linux
+  bar
 
 Edit Workflow
 ^^^^^^^^^^^^^
 
-#. Select the Provisioning link in the navigation bar.
+#. Select the Library link in the navigation bar.
 #. Select Automation from the sub-navigation menu.
 #. Click the Workflows tab to show the workflows tab panel.
 #. Click the Edit icon on the row of the workflow you wish to edit.
@@ -100,7 +123,7 @@ Edit Workflow
 Delete Workflow
 ^^^^^^^^^^^^^^^
 
-#. Select the Provisioning link in the navigation bar.
+#. Select the Library link in the navigation bar.
 #. Select Automation from the sub-navigation menu.
 #. Click the Workflows tab to show the workflows tab panel.
 #. Click the Delete icon on the row of the workflow you wish to delete.

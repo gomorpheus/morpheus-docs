@@ -15,7 +15,7 @@ IDENTITY API URL
 DOMAIN ID
   For `Default` domains, Default can be used. For other domain the Domain ID must be entered, not the Domain Name.
 PROJECT
-  Target project
+  Enter the target project or leave this field blank to integrate all projects
 USERNAME
   Service Username
 PASSWORD

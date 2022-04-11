@@ -1,26 +1,38 @@
+import datetime
+
 master_doc = 'index'
 
+latex_documents = [
+    (master_doc, 'morpheus_5.4.4-1.tex', u'Morpheus Documentation',
+     u'Morpheus', 'manual'),
+]
+
 rst_prolog = """
+
+.. |releasedate| replace:: Mar 9 2022
 .. |morpheus| replace:: Morpheus
+.. |morphues| replace:: Morpheus
+.. |morphdat| replace:: Morpheus Data
 .. |morphbranch| replace:: v5.4
-.. |morphver| replace:: v5.4.1
-.. |minUpgradeVer| replace:: v5.2.11
-.. |previousMorphVer| replace:: v5.4.0
+.. |morphver| replace:: v5.4.4
+.. |minUpgradeVer| replace::
+.. |previousMorphVer| replace:: v5.4.3
 .. |rmqbranch| replace:: v3.5-3.9
 .. |rmqver| replace:: v3.9.8
 .. |mysqlbranch| replace:: v5.7
-.. |mysqlver| replace:: v5.7.35
+.. |mysqlver| replace:: v5.7.37
 .. |mysqlverfips| replace:: v.5.7.35
 .. |esbranch| replace:: v7.x
 .. |esver| replace:: v7.8.1
-.. |tcver| replace:: v9.0.54
+.. |tcver| replace:: v9.0.58
 .. |nginxver| replace:: v1.20.1
-.. |linuxagentver| replace:: v2.1.1
-.. |winagentver| replace:: v1.7.0.0
-.. |nodePackageVer| replace:: 3.2.3
-.. |java| replace:: v8u312-b07
-.. |java-mac| replace:: v8u312-b07
-.. |openjdk-jre| replace:: v8u312
+.. |linuxagentver| replace:: v2.2.2
+.. |winagentver| replace:: v1.8.0.0
+.. |macagentver| replace:: v2.2.2
+.. |nodePackageVer| replace:: 3.2.5
+.. |java| replace:: 11.0.14
+.. |java-mac| replace:: 11.0.14
+.. |openjdk-jre| replace:: 11.0.14
 .. |openjdk-elasticsearch| replace:: 14.0.2+12
 .. |openssl| replace:: 1.1.1k
 .. |openssl_fips| replace:: 1.0.2u
@@ -118,10 +130,13 @@ rst_prolog = """
 .. |InfStoVol| replace:: Infrastructure > Storage > Volumes
 .. |InfStoDat| replace:: Infrastructure > Storage > Data Stores
 .. |InfStoSer| replace:: Infrastructure > Storage > Servers
-.. |InfKey| replace:: Infrastructure > Keys & Certs
-.. |InfKeyKey| replace:: Infrastructure > Keys & Certs > Key Pairs
-.. |InfKeySSL| replace:: Infrastructure > Keys & Certs > SSL Certificates
-.. |InfKeyInt| replace:: Infrastructure > Keys & Certs > Integrations
+.. |InfTru| replace:: Infrastructure > Trust
+.. |InfTruInt| replace:: Infrastructure > Trust > Integrations
+.. |InfTruCre| replace:: Infrastructure > Trust > Credentials
+.. |InfKey| replace:: Infrastructure > Trust
+.. |InfKeyKey| replace:: Infrastructure > Trust > Key Pairs
+.. |InfKeySSL| replace:: Infrastructure > Trust > SSL Certificates
+.. |InfKeyInt| replace:: Infrastructure > Trust > Integrations
 .. |InfBooMap| replace:: Infrastructure > Boot > Mapping
 .. |InfBooBoo| replace:: Infrastructure > Boot > Boot Menus
 .. |InfBooAns| replace:: Infrastructure > Boot > Answer Files
@@ -212,11 +227,13 @@ rst_prolog = """
 # ...............
 
 
-extensions = ['recommonmark','sphinx_markdown_tables','sphinxcontrib.contentui','sphinx_tabs.tabs','sphinxcontrib.images','sphinx_search.extension','notfound.extension','sphinx.ext.autosectionlabel'] #sphinx_tabs
+year = datetime.datetime.now().date().strftime("%Y")
+extensions = ['recommonmark','sphinx_markdown_tables','sphinxcontrib.contentui','sphinx_tabs.tabs','sphinxcontrib.images','sphinx_search.extension','notfound.extension','sphinx.ext.autosectionlabel','sphinx_rtd_dark_mode'] #sphinx_tabs
 templates_path = ['_templates']
+default_dark_mode = False
 source_suffix = ['.rst', '.md']
 project = u'Morpheus Docs'
-copyright = u'2021, Morpheus Data'
+copyright = f"{year}, Morpheus Data"
 author = u'Morpheus'
 language = 'en'
 exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store','z_in_progress']

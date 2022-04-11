@@ -72,8 +72,8 @@ This script tries to ensure there is a new ifcfg-eth0 config created to replace 
   DEFROUTE=yes
 
 
-Gotyas
-^^^^^^
+Gotchas
+^^^^^^^
 
 SELinux can cause issues with cloud-init when in enforced mode. It may be advisable to set this to permissive unless it is mandatory within your organization to use an enforced SELinux configuration. If that is the case please see the documentation for the cloud_init_t security policies.
 

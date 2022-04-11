@@ -230,8 +230,8 @@ Shutdown the system:
 
 Convert the VM to a template in vCenter before moving back to |morpheus| to onboard the image and use it to begin building your provisioning library.
 
-Gotyas
-^^^^^^
+Gotchas
+^^^^^^^
 
 SELinux can cause issues with cloud-init when in enforced mode. It may be advisable to set this to permissive unless it is mandatory within your organization to use an enforced SELinux configuration. If that is the case please see the documentation for the cloud_init_t security policies.
 

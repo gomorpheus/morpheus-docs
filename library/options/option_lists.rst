@@ -287,14 +287,14 @@ REQUEST SCRIPT
   The request script is used differently for Morpheus API Option List types. A Morpheus API option list type will use an internal API to return a list of objects instead of performing HTTP(S) requests to the Morpheus API. Due to this approach, the results object will not be used to generate query parameters or a JSON body. The results object will instead be used to contain a map of accepted key:value pairs that can be used to filter, sort and order the list of objects that get returned.
 
   Below is a list of accepted ``key:value`` pairs for each object type:
-  
+
   **Generic options available for all object types**
 
   - ``max: <integer>`` // Maximum number of results to return. Default: 25
   - ``offset: <integer>`` // Offset for returned results. Default: 0
   - ``sort: <string>`` // Field to sort on. Default: 'name'
   - ``order: <string>`` // Order of returned values. Accepted values: 'asc', 'desc'. Default: 'asc'
-   
+
     **Example:** ``results = {max: 5, order : 'desc'}``
 
   **Networks**
@@ -305,6 +305,11 @@ REQUEST SCRIPT
   - ``provisionTypeId: <Number>`` // Id of the provision type (technology), filters to only networks associated with this provision type
   - ``layoutId: <Number>`` // Id of an Instance Layout, ignored if provisionTypeId is supplied, otherwise used to look up the provision type
   - ``poolId: <Number>`` // Id of a network pool, filters to only networks within the specified network pool
+
+  **Instance Networks**
+
+  Contains same options for Networks Morpheus API but pre-filtered for Networks applicable to a selected Instance Type.
+   - ``phrase : <string>`` // Fuzzy matches phrase on wiki name, urlName and content
 
   **Plans**
 
@@ -334,8 +339,13 @@ REQUEST SCRIPT
   - ``tagName : <string>`` // Filters to clouds with servers with tags containing the tagName
   - ``tagValue : <mixed>`` // Requires tagName. Filters to clouds with servers that have tags containing the tagName and specified tagValue
   - ``phrase : <string>`` // Fuzzy matches phrase on cloud name and description
-  
+
     **Example:** ``results = {tenantId: 1, siteId: 1, tagName: "morpheus"}``
+
+  **Instance Types Clouds**
+
+  Contains same options for Clouds Morpheus API type but pre-filtered for Clouds applicable to a selected Instance Type.
+   - ``phrase : <string>`` // Fuzzy matches phrase on wiki name, urlName and content
 
   **Instances**
 
@@ -345,7 +355,7 @@ REQUEST SCRIPT
   - ``tagName : <string>`` // Filters to instances with tags containing the tagName
   - ``tagValue : <mixed>`` // Requires tagName. Filters to instances with tags containing the tagName and specified tagValue
   - ``phrase : <string>`` // Fuzzy matches phrase on instance name and description
-  
+
     **Example:** ``results = {tenantId:1, phrase: "ha"}``
 
   **Groups**
@@ -366,16 +376,16 @@ REQUEST SCRIPT
   - ``tagName : <string>`` // Filters to servers with tags containing the tagName
   - ``tagValue : <mixed>`` // Requires tagName. Filters to servers with tags containing the tagName and specified tagValue
   - ``phrase : <string>`` // Fuzzy matches phrase on server name and description.
-  
+
     **Example:** ``results = {max: 50, siteZoneId : 3}``
 
-  **instance-wiki**
-  
+  **Instances Wiki**
+
   Contains same options for Instances Morpheus API type.
    - ``phrase : <string>`` // Fuzzy matches phrase on wiki name, urlName and content
 
-  **server-wiki**
-  
+  **Servers Wiki**
+
   Contains same options for Servers Morpheus API type.
    - ``phrase : <string>`` // Fuzzy matches phrase on wiki name, urlName and content
 
