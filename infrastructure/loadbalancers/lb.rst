@@ -133,7 +133,7 @@ Not only does Morpheus have an ability to provision HAProxy based load balancer 
 * F5 BigIP
 * A10
 * Netscaler
-* AVI
+* NSX Advanced Load Balancer
 * Amazon ELB
 * Amazon ALB
 * Azure Load Balancer
@@ -142,7 +142,7 @@ Not only does Morpheus have an ability to provision HAProxy based load balancer 
 * HA Proxy
 * NSX-T
 
-Morpheus exposes configuration options during provisioning of an Instance relevant and common to each supported LB Integration. In some cases, Morpheus also provides direct management and sync support for VIP configurations on the various Load Balancers (such as F5, and AVI), However in a day to day orchestrated workflow this would not be the ideal means by which a user should consume load balancer services.
+Morpheus exposes configuration options during provisioning of an Instance relevant and common to each supported LB Integration. In some cases, Morpheus also provides direct management and sync support for VIP configurations on the various Load Balancers (such as F5, and NSX Advanced Load Balancer), However in a day to day orchestrated workflow this would not be the ideal means by which a user should consume load balancer services.
 
 By tying the Load Balancer associations into the provisioning of instances and the definition of the instance catalog item, the lifecycle of the VIP can more easily be maintained throughout the lifecycle of whatever application may be deployed.
 

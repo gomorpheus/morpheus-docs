@@ -37,7 +37,6 @@ Guides
    DNS/DNS.rst
    IdentityManagement/IdentityManagement.rst
    ITSM/ITSM.rst
-   KeysCertificates/keysandcerts.rst
    LoadBalancers/LoadBalancers.rst
    Logs/Logs.rst
    Monitoring/Monitoring.rst
