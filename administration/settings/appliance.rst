@@ -12,6 +12,8 @@ API Allowed Origins
   Specifies which origins are allowed to access the |morpheus| API.
 Cloud Sync Interval
   Data is refreshed through cloud integrations at the interval specified here in seconds, the default value is 300 seconds (five minutes). Appliances managing a very large number of clouds may be adversely affected by setting this value too low.
+Usage Retainment
+ Determines how many days to keep account usage (metered costing data) records. Retainment period is not set by default. Usage records will remain indefinitely if Usage Retainment is not set. Note this does not affect generated Invoice records. 
 Denied Hosts
   A comma-delimited list of IP addresses and/or hostnames which should not be allowed sources for HTTP Tasks or REST-populated Option Lists.
 Approved Hosts
