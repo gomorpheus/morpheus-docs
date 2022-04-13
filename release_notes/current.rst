@@ -13,12 +13,9 @@ Release Date: |releasedate|
 New Features
 ============
 
-:A10: - The A10 Load Balancer type has been disabled, and will no longer be an option when adding new Load Balancers. Contact |morpheus| if you need to re-enable A10 Load Balancer option. This does not affect existing Load Balancers.
 :API & CLI: - Instances endpoint now has Terraform Apply and Terraform Refresh as the Apps endpoint already did
              - Software license functionality (Administration > Settings > Software Licenses) is viewable from |morpheus| API and CLI
-:AppDynamics: - The AppDynamics integration, which was previously deprecated, has been removed from the product
 :Clouds: - Improvements made to Cloud details pages seen for users given read-only access to a particular Cloud
-          - **Dell**, **HPE** (NOT HPE Oneview), **Supermicro** and **Cloud Foundry** Cloud Types are now disabled by default. They can still be re-enable in Appliance Settings. Does not affect existing Clouds.
 :Clusters: - Add tags when provisioning a cluster or adding a host :superscript:`5.5.0`
             - |morpheus| Cluster type **Combo Cluster** renamed to **KVM/Docker Cluster**
 :Credentials: - Stored Credential sets (Infrastructure > Trust) can now be used with some Option List configurations, just as authenticating against a REST API for REST-sourced lists
@@ -139,3 +136,11 @@ Appliance & Agent Updates
 =========================
 
 :Appliance: - ``ui['jobs_enabled'] = true/false`` config setting added to morpheus. This option disables the appliance jobs service on the appliance node when set to false. This should be disabled only when configuring jobs to run on specific app nodes in HA environments.
+
+Deprecations
+============
+
+:A10: - The A10 Load Balancer type has been disabled, and will no longer be an option when adding new Load Balancers. Contact |morpheus| if you need to re-enable A10 Load Balancer option. This does not affect existing Load Balancers.
+:AppDynamics: - The AppDynamics integration, which was previously deprecated, has been removed from the product
+:Clouds: - Improvements made to Cloud details pages seen for users given read-only access to a particular Cloud
+          - **Dell**, **HPE** (NOT HPE Oneview), **Supermicro** and **Cloud Foundry** Cloud Types are now disabled by default. They can still be re-enable in Appliance Settings. Does not affect existing Clouds.
