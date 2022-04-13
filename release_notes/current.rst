@@ -6,10 +6,9 @@
 
 Release Date: |releasedate|
 
-.. important:: Database indexes added for account_usage and metadata_tag tables. Customers with very large account_usage and/or metadata_tag tables (10 million+) **may experience slower initial morpheus-ui loading times and additional database load after upgrading to 5.4.5** while the indexes are being added. 
+.. important:: Database indexes added for ``account_usage`` and ``metadata_tag`` tables. Customers with very large account_usage and/or metadata_tag tables (10 million+) **may experience slower initial morpheus-ui loading times and additional database load after upgrading to 5.4.5** while the indexes are being added. 
 
 .. NOTE:: Items appended with :superscript:`5.x.x` are also included in that version
-.. .. include:: highlights.rst
 
 New Features
 ============
@@ -44,7 +43,7 @@ New Features
 :Policies: - Added Policy type to limit number of virtual servers on a network
             - Added Policy type to limit the number of members in each load balancer pool within the policy scope
             - Additional scopes added for max load balancer pool policies. Global, Cloud, and User-scoped Policies can now be created
-:Python: - Added local workspace path for Python task execution to resolve slow venv execution when /var/opt/morpheus/morpheus-ui is on nfs
+:Python: - Added local workspace path for Python task execution to resolve slow venv execution when ``/var/opt/morpheus/morpheus-ui`` is on nfs
 :Security: - CVE-2021-30129 Upgrade sshd-core to version 2.7.0
             - Embedded Elasticsearch jackson-databind upgraded to 2.13.2.1. (CVE-2020-36518)
 :ServiceNow: - After exposing a |morpheus| Catalog Item to ServiceNow, the default workflow can be set and edited without resetting to the default after the nightly sync
@@ -61,8 +60,8 @@ New Features
 Fixes
 =====
 
-:API & CLI: - "api/apps/:id/prepare-apply" endpoint has been restored to |morpheus| API. It was removed in a previous release
-             - A generic warning is now returned when attempting to POST to "/provisioning/apps" using a Blueprint ID the user cannot access
+:API & CLI: - ``api/apps/:id/prepare-apply`` endpoint has been restored to |morpheus| API. It was removed in a previous release
+             - A generic warning is now returned when attempting to POST to ``/provisioning/apps`` using a Blueprint ID the user cannot access
              - Fixed an issue that caused VMs to go into an unknown state when activating or deactivating clusters via |morpheus| API
              - Fixed an issue that caused errors to be thrown when applying |morpheus| IP Pools to GCP networks via API
              - Fixed issue with "incomplete configuration" error when updating catalog items via API
@@ -74,7 +73,7 @@ Fixes
 :Ansible Tower: - Fixed an issue that caused the option to disable Ansible Tower at provision time not to work properly
                  - Fixed an issue that prevented changes made on the Ansible Tower side not to be synced back to |morpheus|
 :Ansible: - Fixed an issue that could cause Ansible Tasks in the Provisioning Phase of a Workflow to fail
-:Apps: - Resolved issue with ${instance.name} variable not evaluating for VIP Hostname
+:Apps: - Resolved issue with ``${instance.name}`` variable not evaluating for VIP Hostname
 :Bluecat: - Fixed an issue that prevented removal of Bluecat integrations
 :Blueprints: - Editing App Blueprints and provisioning Apps to target Clouds named with their FQDN now works properly
 :Budgets: - Fixed an issue that prevented Subtenant users from creating Cloud budgets
@@ -115,8 +114,8 @@ Fixes
 :Provisioning: - Fixed an issue that caused the provisioning wizard not to work properly when only one Instance Type and Layout was exposed to a Subtenant user
 :Roles: - The Tools menu will now be shown for users whose Role only gives access to VDI Pools and nothing else under Tools
          - Users with no permissions to "Library: Virtual Images" can now see and add additional disks on cloned Instances
-:Security: - Fixed permission issue with /library/services api endpoint
-            - Fixed permission issue with /settings/software-licenses api endpoint
+:Security: - Fixed permission issue with ``/library/services`` api endpoint
+            - Fixed permission issue with ``/settings/software-licenses`` api endpoint
             - Layout descriptions are now limited to 1,000 characters for security and performance reasons
             - Password reset email links are now active for 30 minutes for security reasons. Previously they were active for seven days
             - Security enhancements added to close potential XSS and CSRF attack vectors
@@ -139,4 +138,4 @@ Fixes
 Appliance & Agent Updates
 =========================
 
-:Appliance: - ```ui['jobs_enabled'] = true``` config setting added to morpheus. This option disables the appliance jobs service on the appliance node when set to false. This should be disabled only when configuring jobs to run on specific app nodes in HA environments.
+:Appliance: - ``ui['jobs_enabled'] = true/false`` config setting added to morpheus. This option disables the appliance jobs service on the appliance node when set to false. This should be disabled only when configuring jobs to run on specific app nodes in HA environments.
