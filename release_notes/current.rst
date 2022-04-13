@@ -7,10 +7,6 @@
 Release Date: |releasedate|
 
 .. important:: Database indexes added for account_usage and metadata_tag tables. Customers with very large account_usage and/or metadata_tag tables (10 million+) **may experience slower initial morpheus-ui loading times and additional database load after upgrading to 5.4.5** while the indexes are being added. 
-.. warning:: **AVI Load Balancer** renamed to **NSX Advanced Load Balancer**
-.. warning:: Cloud Types disabled by default: **Dell**, **HPE** (NOT HPE Oneview), **Supermicro** and **Cloud Foundry**. Users would still be able to re-enable this clouds in the appliance settings. Does not affect existing Clouds.
-.. warning:: **A10 Load Balancer** type has been disabled, and will no longer be an option when adding new Load Balancers. Contact |morpheus| if you need to re-enable A10 Load Balancer option. This does not affect existing Load Balancers.
-.. warning:: |morpheus| Cluster type **Combo Cluster** renamed to **KVM/Docker Cluster**
 
 .. NOTE:: Items appended with :superscript:`5.x.x` are also included in that version
 .. .. include:: highlights.rst
@@ -18,14 +14,14 @@ Release Date: |releasedate|
 New Features
 ============
 
-:A10: - Ability to add A10 Load Balancers has been disabed
+:A10: - The A10 Load Balancer type has been disabled, and will no longer be an option when adding new Load Balancers. Contact |morpheus| if you need to re-enable A10 Load Balancer option. This does not affect existing Load Balancers.
 :API & CLI: - Instances endpoint now has Terraform Apply and Terraform Refresh as the Apps endpoint already did
              - Software license functionality (Administration > Settings > Software Licenses) is viewable from |morpheus| API and CLI
 :AppDynamics: - The AppDynamics integration, which was previously deprecated, has been removed from the product
 :Clouds: - Improvements made to Cloud details pages seen for users given read-only access to a particular Cloud
-          - Some seldom-used Cloud integration types have been disabled by default, these include Dell, HPE, Supermicro, and CloudFoundry. Users can still enable them in Administration > Settings if needed
+          - **Dell**, **HPE** (NOT HPE Oneview), **Supermicro** and **Cloud Foundry** Cloud Types are now disabled by default. They can still be re-enable in Appliance Settings. Does not affect existing Clouds.
 :Clusters: - Add tags when provisioning a cluster or adding a host :superscript:`5.5.0`
-            - Combo Clusters have been renamed KVM/Docker clusters
+            - |morpheus| Cluster type **Combo Cluster** renamed to **KVM/Docker Cluster**
 :Credentials: - Stored Credential sets (Infrastructure > Trust) can now be used with some Option List configurations, just as authenticating against a REST API for REST-sourced lists
                - Stored credentials can now be used with HTTP-type Tasks and for access to remote execution for other Task types
                - Users can now integrate all Cloud types using stored credentials (Infrastructure > Trust) and |morpheus| will filter the list of selectable credentials to only types supported by the target cloud
