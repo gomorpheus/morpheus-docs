@@ -4,7 +4,7 @@ Clusters
 Overview
 --------
 
-``Infrastructure > Clusters`` is for creating and managing Kubernetes Clusters, |morpheus| manager Docker Clusters, KVM Clusters, or Cloud specific Kubernetes services such as EKS, AKS and GKE. The Combo Cluster is a combination Docker and KVM Cluster.
+``Infrastructure > Clusters`` is for creating and managing Kubernetes Clusters, |morpheus| manager Docker Clusters, KVM Clusters, or Cloud specific Kubernetes services such as EKS, AKS and GKE.
 
 Cluster Types
 ^^^^^^^^^^^^^
@@ -22,7 +22,7 @@ Cluster Types
 +--------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------+
 | KVM Cluster        | Provisions by default a Morpheus controlled KVM Cluster with 1 host. Additional hosts can be added. Custom layouts can be created. Existing Morpheus KVM Hosts are automatically converted to Clusters upon 4.0.0 upgrade.       | KVM                    |
 +--------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------+
-| Combo Cluster      | Provisions by default a Morpheus controlled Docker, VM and Functions* Cluster with 1 host. Additional hosts can be added.                                                                                                        | Docker & KVM           |
+| KVM/Docker Cluster | Provisions by default a Morpheus controlled Docker, VM and Functions* Cluster with 1 host. Additional hosts can be added.                                                                                                        | Docker & KVM           |
 +--------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------+
 | Ext Kubernetes     | Brings an existing (brownfield) Kubernetes cluster into Morpheus                                                                                                                                                                 | Kubernetes             |
 +--------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------+
@@ -189,4 +189,3 @@ System (|morpheus| provided) Cluster Layouts at time of |morphver| release. Note
 .. include:: /infrastructure/clusters/docker.rst
 .. include:: /infrastructure/clusters/eks.rst
 .. include:: /infrastructure/clusters/gke.rst
-
