@@ -6,11 +6,11 @@
 
 Release Date: |releasedate|
 
-.. important:: Database indexes added for account_usage and metadata_tag tables. Customers with very large account_usage and/or metadata_tag tables (10 million+) may experience slower initial morpheus-ui loading time after upgrading to 5.4.5, as well as additional database load.
-.. warning:: 'AVI Load Balancer' renamed to 'NSX Advanced Load Balancer'
-.. warning:: Cloud Types disabled by default: Dell, HPE (NOT HPE Oneview), Supermicro and Cloud Foundry. Users would still be able to re-enable this clouds in the appliance settings. Does not affect existing Clouds.
-.. warning:: A10 Load Balancer type has been disabled, and will no longer be an option when adding new Load Balancers. Contact |morpheus| if you need to re-enable A10 Load Balancer option. This does not affect existing Load Balancers.
-.. warning:: |morpheus| Cluster type "Combo Cluster" renamed to "KVM/Docker Cluster"
+.. important:: Database indexes added for account_usage and metadata_tag tables. Customers with very large account_usage and/or metadata_tag tables (10 million+) **may experience slower initial morpheus-ui loading times and additional database load after upgrading to 5.4.5** while the indexes are being added. 
+.. warning:: **AVI Load Balancer** renamed to **NSX Advanced Load Balancer**
+.. warning:: Cloud Types disabled by default: **Dell**, **HPE** (NOT HPE Oneview), **Supermicro** and **Cloud Foundry**. Users would still be able to re-enable this clouds in the appliance settings. Does not affect existing Clouds.
+.. warning:: **A10 Load Balancer** type has been disabled, and will no longer be an option when adding new Load Balancers. Contact |morpheus| if you need to re-enable A10 Load Balancer option. This does not affect existing Load Balancers.
+.. warning:: |morpheus| Cluster type **Combo Cluster** renamed to **KVM/Docker Cluster**
 
 .. NOTE:: Items appended with :superscript:`5.x.x` are also included in that version
 .. .. include:: highlights.rst
