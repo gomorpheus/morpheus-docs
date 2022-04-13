@@ -3,20 +3,20 @@ import datetime
 master_doc = 'index'
 
 latex_documents = [
-    (master_doc, 'morpheus_5.4.4-1.tex', u'Morpheus Documentation',
+    (master_doc, 'morpheus_5.4.5-1.tex', u'Morpheus Documentation',
      u'Morpheus', 'manual'),
 ]
 
 rst_prolog = """
 
-.. |releasedate| replace:: Mar 12 2022
+.. |releasedate| replace:: 
 .. |morpheus| replace:: Morpheus
 .. |morphues| replace:: Morpheus
 .. |morphdat| replace:: Morpheus Data
 .. |morphbranch| replace:: v5.4
 .. |morphver| replace:: v5.4.5
 .. |minUpgradeVer| replace::
-.. |previousMorphVer| replace:: v5.4.3
+.. |previousMorphVer| replace:: v5.4.4
 .. |rmqbranch| replace:: v3.5-3.9
 .. |rmqver| replace:: v3.9.8
 .. |mysqlbranch| replace:: v5.7
@@ -26,10 +26,10 @@ rst_prolog = """
 .. |esver| replace:: v7.8.1
 .. |tcver| replace:: v9.0.58
 .. |nginxver| replace:: v1.20.1
-.. |linuxagentver| replace:: v2.2.2
+.. |linuxagentver| replace:: v2.3.2
 .. |winagentver| replace:: v1.8.0.0
-.. |macagentver| replace:: v2.2.2
-.. |nodePackageVer| replace:: 3.2.5
+.. |macagentver| replace:: v2.3.2
+.. |nodePackageVer| replace:: 3.2.6
 .. |java| replace:: 11.0.14
 .. |java-mac| replace:: 11.0.14
 .. |openjdk-jre| replace:: 11.0.14
@@ -283,10 +283,7 @@ latex_elements = {
 
 }
 
-latex_documents = [
-    (master_doc, 'morpheus5.3.3-1.tex', u'Morpheus Documentation',
-     u'Morpheus', 'manual'),
-]
+
 
 man_pages = [
     (master_doc, 'morpheusdocs', u'Morpheus Documentation',
