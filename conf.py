@@ -10,12 +10,9 @@ latex_documents = [
 rst_prolog = """
 
 .. |releasedate| replace:: Apr 13 2022
-.. |morpheus| replace:: Morpheus
-.. |morphues| replace:: Morpheus
-.. |morphdat| replace:: Morpheus Data
 .. |morphbranch| replace:: v5.4
 .. |morphver| replace:: v5.4.5
-.. |minUpgradeVer| replace::
+.. |minUpgradeVer| replace:: v5.2.0
 .. |previousMorphVer| replace:: v5.4.4
 .. |rmqbranch| replace:: v3.5-3.9
 .. |rmqver| replace:: v3.9.8
@@ -26,10 +23,10 @@ rst_prolog = """
 .. |esver| replace:: v7.8.1
 .. |tcver| replace:: v9.0.58
 .. |nginxver| replace:: v1.20.1
-.. |linuxagentver| replace:: v2.3.2
-.. |winagentver| replace:: v1.8.0.0
-.. |macagentver| replace:: v2.3.2
 .. |nodePackageVer| replace:: 3.2.6
+.. |linuxagentver| replace:: v2.3.2
+.. |macagentver| replace:: v2.3.2
+.. |winagentver| replace:: v1.8.0.0
 .. |java| replace:: 11.0.14
 .. |java-mac| replace:: 11.0.14
 .. |openjdk-jre| replace:: 11.0.14
@@ -37,6 +34,10 @@ rst_prolog = """
 .. |openssl| replace:: 1.1.1k
 .. |openssl_fips| replace:: 1.0.2u
 .. |erlang| replace:: 23.2
+
+.. |morpheus| replace:: Morpheus
+.. |morphues| replace:: Morpheus
+.. |morphdat| replace:: Morpheus Data
 .. |repo_host_url| replace:: https://downloads.morpheusdata.com
 .. |master tenant| replace:: Master Tenant
 .. |profileObjects| replace:: Clouds
