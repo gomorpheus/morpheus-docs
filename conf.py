@@ -9,7 +9,7 @@ latex_documents = [
 
 rst_prolog = """
 
-.. |releasedate| replace:: 
+.. |releasedate| replace:: Apr 13 2022
 .. |morpheus| replace:: Morpheus
 .. |morphues| replace:: Morpheus
 .. |morphdat| replace:: Morpheus Data
