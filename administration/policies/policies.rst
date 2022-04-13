@@ -26,7 +26,7 @@ Budget
 Cluster Resource Name
   The name of Cluster hosts (master and workers) when creating Kubernetes, Docker and KVM Clusters. Pre-populates a fixed or editable Resource Name value for the cluster using ${variable} naming patterns and/or text, including ${sequence} numbering. Toggle whether sequence numbers are reusable (after the resource using them is destroyed) by enabling `Reuse Naming Sequence Numbers <https://docs.morpheusdata.com/en/latest/administration/settings/settings.html#provisioning>`_ in |AdmSet|
 Cypher Access
-  See the section below for a guide to establishing a Cypher access policy
+  Granularly set LIST, READ, WRITE, and DELETE access to arbitrary Cypher secret paths scoped globally or to specific Roles and Users. See the section below for a guide to establishing a Cypher access policy.
 Delayed Delete
   Delayed Delete Policies allow for soft deletion of Instances and Apps. Instead of deleting immediately, Instances and Apps with a Delayed Removal policy applied will be shutdown upon deletion request and hidden by default from the UI. The Instance/App will then be in ``Pending Removal`` status.
 Expiration
