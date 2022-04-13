@@ -21,7 +21,7 @@ Morpheus allows for additional advanced customizations for system managed servic
   elasticsearch['use_tls'] = false
   elasticsearch['auth_user'] = 'morpheus-es-user'
   elasticsearch['auth_password'] = 'xxxxxxxxxxxxxxxx'
-    ↓↓↓↓↓↓↓ The elasticsearch settings below are only valid for Internal/System elasticsearch services ↓↓↓↓↓↓↓ 
+    ↓↓↓↓↓↓↓ The elasticsearch settings below are only valid for Internal/Embedded elasticsearch services ↓↓↓↓↓↓↓ 
   elasticsearch['log_dir'] = '/var/log/morpheus/elasticsearch'
   elasticsearch['memory_alloc_arena_max'] = 2
   elasticsearch['memory_map_max'] = 65536
@@ -42,12 +42,13 @@ Morpheus allows for additional advanced customizations for system managed servic
   mysql['morpheus_db_user'] = 'morpheus-db-user'
   mysql['morpheus_db'] = 'xxxxxxxxxxxxxxxx'
   mysql['mysql_url_overide'] = 'jdbc:mysql://10.30.20.10:3306,10.30.20.11:3306,10.30.20.12:3306/morpheusdb?autoReconnect=true&useUnicode=true&characterEncoding=utf8&failOverReadOnly=false&useSSL=false'
-    ↓↓↓↓↓↓↓ The mysql settings below are only valid for Internal/System mysql services ↓↓↓↓↓↓↓
+    ↓↓↓↓↓↓↓ The mysql settings below are only valid for Internal/Embedded mysql services ↓↓↓↓↓↓↓
   mysql['tmp_dir'] = '/tmp/mysql'
   mysql['log_dir'] = '/var/log/morpheus/mysql'
   mysql['max_active'] = 150 # The combined value off all app node max_active values must be lower than max_connections setting in mysql
+  mysql['max_connections'] = 151
   mysql['max_allowed_packet'] = 67108864
-  mysql['max_connections'] = 150
+
 
   nginx['cache_max_size'] = '5000m'
   nginx['enable'] = true
@@ -83,7 +84,7 @@ Morpheus allows for additional advanced customizations for system managed servic
   rabbitmq['queue_user'] = 'morpheus-rmq-user'
   rabbitmq['queue_user_password'] = 'xxxxxxxxxxxxxxxx'
   rabbitmq['vhost'] = 'morpheus'
-    ↓↓↓↓↓↓↓ The rabbitmq settings below are only valid for Internal/System rabbitmq services ↓↓↓↓↓↓↓
+    ↓↓↓↓↓↓↓ The rabbitmq settings below are only valid for Internal/Embedded rabbitmq services ↓↓↓↓↓↓↓
   rabbitmq['heartbeat'] = nil
   rabbitmq['log_dir'] = '/var/log/morpheus/rabbitmq'
   rabbitmq['nodename'] = 'rabbit@localhost'
@@ -93,7 +94,7 @@ Morpheus allows for additional advanced customizations for system managed servic
   repo['repo_host_url'] = 'https://downloads.morpheusdata.com'
 
   ui['http_client_connect_timeout'] = 10000  #### milliseconds
-  ui['jobs_enabled'] = true #### This option disables the appliance jobs service on the appliance node when set to false. This should only ever be disabled when configuring jobs to run only on specific app nodes. 
+  ui['jobs_enabled'] = true #### This option disables the appliance jobs service on the appliance node when set to false. This should be disabled only when configuring jobs to run on specific app nodes in HA environments. 
   ui['kerberos_config'] = nil
   ui['kerberos_login_config'] = nil
   ui['log_dir'] = '/var/log/morpheus/morpheus-ui'
