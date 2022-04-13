@@ -45,7 +45,7 @@ Target Options
 
 When creating a Task, users can select a target to perform the execution. Some Task types allow for any of the three execution targets listed below and some will limit the user to two or just one. The table in the next section lists the available execution targets for each Task type.
 
-- **Resource:** An |morpheus|-managed Instance or server is selected to execute the Task
+- **Resource:** A |morpheus|-managed Instance or server is selected to execute the Task
 - **Local:** The Task is executed by the |morpheus| appliance node
 - **Remote:** The user specifies a remote box which will execute the Task
 

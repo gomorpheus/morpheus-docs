@@ -45,7 +45,7 @@ Finally, set the scope for the Policy. Cypher Access Policies support Global, Ro
 Cloud Profiles
 ``````````````
 
-
+Terraform Cloud Profiles are created on each Cloud detail page (|InfClo| > Selected Cloud > Profiles Tab), encrypted in Cypher, and create a Cypher entry that is visible both on the Profile tab of the Cloud detail page and in Cypher. When added to a Cloud they create a Cypher entry at path tfvars/profile/cloud/$cloudCode/variables. If a Cloud profile Cypher entry is restricted by a Cypher Access policy, it will be (or will not be) listable/readable/deletable as dictated by the Policy but still will be viewable from the Cloud detail page if the user has sufficient permissions. Restricting or granting access to Cloud profiles via Policy does not affect access on the Cloud. Other Role permissions, such as "Admin: Profiles", "Infrastructure: Clouds", and Cloud/Group access must be used to restrict access via Cloud detail pages.
 
 Example Policy
 ``````````````

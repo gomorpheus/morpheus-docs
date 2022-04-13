@@ -18,9 +18,11 @@ At this time, |morpheus| primarily supports CentOS 7 and Ubuntu-based KVM cluste
 - qemu-kvm-rhev
 - genisoimage
 
-Additionally, |morpheus| will attempt to add a new network switch called 'morpheus' and storage pool when onboarding a brownfield KVM host.
+Additionally, |morpheus| will attempt to add a new network switch called 'morpheus' and storage pool when onboarding a brownfield KVM cluster.
 
 When creating new clusters from |morpheus|, users simply provide a basic Ubuntu or CentOS box. |morpheus| takes care of installing the packages listed above as well as |morpheus| Agent if desired.
+
+.. NOTE:: |morpheus| creates a morpheus-images pool which is separate from the main datastore. This is a host-local image cache which facilitates faster clone operations. The cache will automatically purge images once the allocation reaches 80% to avoid filling completely. Once it is 80% full, the oldest accessed volumes in the cache will be deleted first until the cache is under 50% full once again.
 
 Creating the Cloud
 ^^^^^^^^^^^^^^^^^^

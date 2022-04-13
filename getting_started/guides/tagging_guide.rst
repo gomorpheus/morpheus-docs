@@ -50,7 +50,7 @@ Instituting Tagging Policies
 
 If needed, Morpheus allows cloud resource tagging to be governed through its native policy engine. Like other policies, tag policies are added from |AdmPol|. By creating a new policy and setting the TYPE to Tags, the relevant fields are revealed.
 
-.. NOTE:: At the time of this writing (Morpheus 4.2.1), tag policy scanning and enforcement is only functional in Azure, Amazon AWS, VMware, and Google Cloud Platform clouds.
+.. NOTE:: Tag policy scanning and enforcement is only currently supported for Azure, Amazon AWS, VMware, and Google Cloud Platform clouds. Additional Clouds may be supported in the future.
 
 With a tag policy, we can choose to enforce the policy on a strict or passive basis by marking or unmarking the STRICT ENFORCEMENT box. Strictly enforced tagging policies will not allow provisioning to proceed in supported clouds if the policy requirements are not met. If we opt to enforce the policy passively, a warning banner will appear on the detail page of any server that does not meet policy requirements. Additionally, existing servers in supported clouds will be scanned and those which do not meet policy requirements will also receive the warning banner.
 

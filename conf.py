@@ -9,12 +9,12 @@ latex_documents = [
 
 rst_prolog = """
 
-.. |releasedate| replace:: Mar 9 2022
+.. |releasedate| replace:: Mar 12 2022
 .. |morpheus| replace:: Morpheus
 .. |morphues| replace:: Morpheus
 .. |morphdat| replace:: Morpheus Data
 .. |morphbranch| replace:: v5.4
-.. |morphver| replace:: v5.4.4
+.. |morphver| replace:: v5.4.5
 .. |minUpgradeVer| replace::
 .. |previousMorphVer| replace:: v5.4.3
 .. |rmqbranch| replace:: v3.5-3.9

@@ -6,7 +6,7 @@ The Trust section is where credentials, SSH keypairs, and SSL certificates are s
 Credentials
 -----------
 
-The credentials section allows for various credential types to be securely stored and called back when necessary, such as when creating new integrations with Cloud accounts or other outside technologies. Credentials can be securely stored internally on the appliance or stored in an external Cypher integration, more information about setting up and integrating with an external Cypher store are in the next section. The following credential pair types are currently supported:
+The credentials section allows for various credential types to be securely stored and called back when necessary, such as when creating new integrations with Cloud accounts or other outside technologies. Credentials can also be used to populate REST-based Option Lists sourced from data behind an authentication wall, as well as to run automation Tasks on remote targets that require authentication. Credentials can be securely stored internally on the appliance or stored in an external Cypher integration, more information about setting up and integrating with an external Cypher store are in the next section. The following credential pair types are currently supported:
 
 - Access Key and Secret Key
 - Client ID and Secret

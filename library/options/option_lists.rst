@@ -46,6 +46,8 @@ SOURCE METHOD
   GET or POST
 SOURCE HEADERS
   Custom HTTP Headers to include in the source request
+CREDENTIALS
+  Use a stored credential set or manually enter credentials to access data requiring authentication. Currently, only basic auth is supported
 INITIAL DATASET
   Create an initial JSON or CSV dataset to be used as the collection for this option list. It should be a list containing objects with properties 'name' and 'value'
 TRANSLATION SCRIPT
