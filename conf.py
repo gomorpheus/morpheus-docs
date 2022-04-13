@@ -6,13 +6,13 @@ latex_documents = [
 ]
 
 rst_prolog = """
-.. |releasedate| replace:: Feb 1 2022
+.. |releasedate| replace:: Apr 13 2022
 .. |morpheus| replace:: Morpheus
 .. |morphdat| replace:: Morpheus Data, LLC
 .. |repo_host_url| replace:: https://downloads.morpheusdata.com
 .. |morphbranch| replace:: v5.2
-.. |morphver| replace:: v5.2.15
-.. |previousMorphVer| replace:: v5.2.14
+.. |morphver| replace:: v5.2.16
+.. |previousMorphVer| replace:: v5.2.15
 .. |minUpgradeVer| replace:: v4.2.0
 .. |rmqbranch| replace:: v3.5-3.9
 .. |rmqver| replace:: v3.9.8
