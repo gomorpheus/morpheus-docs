@@ -24,7 +24,7 @@
    <thead>
      <tr>
        <th class="tg-j8c8">From Version</th>
-       <th class="tg-af47" colspan="26">To Verison</th>
+       <th class="tg-af47" colspan="28">To Verison</th>
      </tr>
    </thead>
    <tbody>
@@ -40,6 +40,8 @@
        <td class="blue">4.2.4</td>
        <td class="blue">4.2.5</td>
        <td class="blue">4.2.6</td>
+       <td class="red"></td>
+       <td class="red"></td>
        <td class="red"></td>
        <td class="red"></td>
        <td class="red"></td>
@@ -85,6 +87,8 @@
        <td class="red"></td>
        <td class="red"></td>
        <td class="red"></td>
+       <td class="red"></td>
+       <td class="red"></td>
      </tr>
      <tr>
        <td class="tg-epna">4.1.1 →</td>
@@ -98,6 +102,8 @@
        <td class="blue">4.2.4</td>
        <td class="blue">4.2.5</td>
        <td class="blue">4.2.6</td>
+       <td class="red"></td>
+       <td class="red"></td>
        <td class="red"></td>
        <td class="red"></td>
        <td class="red"></td>
@@ -143,6 +149,8 @@
        <td class="red"></td>
        <td class="red"></td>
        <td class="red"></td>
+       <td class="red"></td>
+       <td class="red"></td>
      </tr>
      <tr>
        <td class="tg-epna">4.2.0 →</td>
@@ -172,6 +180,8 @@
        <td class="blue">5.2.12</td>
        <td class="blue">5.2.13</td>
        <td class="blue">5.2.14</td>
+       <td class="blue">5.2.15</td>
+       <td class="blue">5.2.16</td>
      </tr>
      <tr>
        <td class="tg-epna">4.2.1 →</td>
@@ -201,6 +211,8 @@
        <td class="blue">5.2.12</td>
        <td class="blue">5.2.13</td>
        <td class="blue">5.2.14</td>
+       <td class="blue">5.2.15</td>
+       <td class="blue">5.2.16</td>
      </tr>
      <tr>
        <td class="tg-epna">4.2.2 →</td>
@@ -230,6 +242,8 @@
        <td class="blue">5.2.12</td>
        <td class="blue">5.2.13</td>
        <td class="blue">5.2.14</td>
+       <td class="blue">5.2.15</td>
+       <td class="blue">5.2.16</td>
      </tr>
      <tr>
        <td class="tg-epna">4.2.3 →</td>
@@ -259,6 +273,8 @@
        <td class="blue">5.2.12</td>
        <td class="blue">5.2.13</td>
        <td class="blue">5.2.14</td>
+       <td class="blue">5.2.15</td>
+       <td class="blue">5.2.16</td>
      </tr>
      <tr>
        <td class="tg-epna">4.2.4 →</td>
@@ -288,6 +304,8 @@
        <td class="blue">5.2.12</td>
        <td class="blue">5.2.13</td>
        <td class="blue">5.2.14</td>
+       <td class="blue">5.2.15</td>
+       <td class="blue">5.2.16</td>
      </tr>
      <tr>
        <td class="tg-epna">4.2.5 →</td>
@@ -317,6 +335,8 @@
        <td class="blue">5.2.12</td>
        <td class="blue">5.2.13</td>
        <td class="blue">5.2.14</td>
+       <td class="blue">5.2.15</td>
+       <td class="blue">5.2.16</td>
      </tr>
      <tr>
        <td class="tg-epna">4.2.6 →</td>
@@ -346,6 +366,8 @@
        <td class="blue">5.2.12</td>
        <td class="blue">5.2.13</td>
        <td class="blue">5.2.14</td>
+       <td class="blue">5.2.15</td>
+       <td class="blue">5.2.16</td>
      </tr>
      <tr>
        <td class="tg-epna">5.0.0 →</td>
@@ -375,6 +397,8 @@
        <td class="green">5.2.12</td>
        <td class="green">5.2.13</td>
        <td class="green">5.2.14</td>
+       <td class="green">5.2.15</td>
+       <td class="green">5.2.16</td>
      </tr>
      <tr>
        <td class="tg-epna">5.2.0 →</td>
@@ -404,6 +428,8 @@
        <td class="green">5.2.12</td>
        <td class="green">5.2.13</td>
        <td class="green">5.2.14</td>
+       <td class="green">5.2.15</td>
+       <td class="green">5.2.16</td>
      </tr>
      <tr>
        <td class="tg-epna">5.2.1 →</td>
@@ -433,6 +459,8 @@
        <td class="green">5.2.12</td>
        <td class="green">5.2.13</td>
        <td class="green">5.2.14</td>
+       <td class="green">5.2.15</td>
+       <td class="green">5.2.16</td>
      </tr>
      <tr>
        <td class="tg-epna">5.2.2 →</td>
@@ -462,6 +490,8 @@
        <td class="green">5.2.12</td>
        <td class="green">5.2.13</td>
        <td class="green">5.2.14</td>
+       <td class="green">5.2.15</td>
+       <td class="green">5.2.16</td>
      </tr>
      <tr>
        <td class="tg-epna">5.2.3 →</td>
@@ -491,6 +521,8 @@
        <td class="green">5.2.12</td>
        <td class="green">5.2.13</td>
        <td class="green">5.2.14</td>
+       <td class="green">5.2.15</td>
+       <td class="green">5.2.16</td>
      </tr>
      <tr>
        <td class="tg-epna">5.2.4 →</td>
@@ -520,6 +552,8 @@
        <td class="green">5.2.12</td>
        <td class="green">5.2.13</td>
        <td class="green">5.2.14</td>
+       <td class="green">5.2.15</td>
+       <td class="green">5.2.16</td>
      </tr>
      <tr>
        <td class="tg-epna">5.2.5 →</td>
@@ -549,6 +583,8 @@
        <td class="green">5.2.12</td>
        <td class="green">5.2.13</td>
        <td class="green">5.2.14</td>
+       <td class="green">5.2.15</td>
+       <td class="green">5.2.16</td>
      </tr>
      <tr>
        <td class="tg-epna">5.2.6 →</td>
@@ -578,6 +614,8 @@
        <td class="green">5.2.12</td>
        <td class="green">5.2.13</td>
        <td class="green">5.2.14</td>
+       <td class="green">5.2.15</td>
+       <td class="green">5.2.16</td>
      </tr>
      <tr>
        <td class="tg-epna">5.2.7 →</td>
@@ -607,6 +645,8 @@
        <td class="green">5.2.12</td>
        <td class="green">5.2.13</td>
        <td class="green">5.2.14</td>
+       <td class="green">5.2.15</td>
+       <td class="green">5.2.16</td>
      </tr>
      <tr>
        <td class="tg-epna">5.2.8 →</td>
@@ -636,6 +676,8 @@
        <td class="green">5.2.12</td>
        <td class="green">5.2.13</td>
        <td class="green">5.2.14</td>
+       <td class="green">5.2.15</td>
+       <td class="green">5.2.16</td>
      </tr>
      <tr>
        <td class="tg-epna">5.2.9 →</td>
@@ -665,6 +707,8 @@
        <td class="green">5.2.12</td>
        <td class="green">5.2.13</td>
        <td class="green">5.2.14</td>
+       <td class="green">5.2.15</td>
+       <td class="green">5.2.16</td>
      </tr>
      <tr>
        <td class="tg-epna">5.2.10 →</td>
@@ -694,6 +738,8 @@
        <td class="green">5.2.12</td>
        <td class="green">5.2.13</td>
        <td class="green">5.2.14</td>
+       <td class="green">5.2.15</td>
+       <td class="green">5.2.16</td>
      </tr>
      <tr>
        <td class="tg-epna">5.2.11 →</td>
@@ -723,6 +769,8 @@
        <td class="green">5.2.12</td>
        <td class="green">5.2.13</td>
        <td class="green">5.2.14</td>
+       <td class="green">5.2.15</td>
+       <td class="green">5.2.16</td>
      </tr>
      <tr>
        <td class="tg-epna">5.2.12 →</td>
@@ -752,6 +800,8 @@
        <td class="white"></td>
        <td class="green">5.2.13</td>
        <td class="green">5.2.14</td>
+       <td class="green">5.2.15</td>
+       <td class="green">5.2.16</td>
      </tr>
      <tr>
        <td class="tg-epna">5.2.13 →</td>
@@ -781,18 +831,82 @@
        <td class="grey"></td>
        <td class="white"></td>
        <td class="green">5.2.14</td>
+       <td class="green">5.2.15</td>
+       <td class="green">5.2.16</td>
      </tr>
      <tr>
-       <td class="tg-8fch" colspan="27">Rolling Upgrade Supported</td>
+       <td class="tg-epna">5.2.14 →</td>
+       <td class="grey"></td>
+       <td class="grey"></td>
+       <td class="grey"></td>
+       <td class="grey"></td>
+       <td class="grey"></td>
+       <td class="grey"></td>
+       <td class="grey"></td>
+       <td class="grey"></td>
+       <td class="grey"></td>
+       <td class="grey"></td>
+       <td class="grey"></td>
+       <td class="grey"></td>
+       <td class="grey"></td>
+       <td class="grey"></td>
+       <td class="grey"></td>
+       <td class="grey"></td>
+       <td class="grey"></td>
+       <td class="grey"></td>
+       <td class="grey"></td>
+       <td class="grey"></td>
+       <td class="grey"></td>
+       <td class="grey"></td>
+       <td class="grey"></td>
+       <td class="grey"></td>
+       <td class="grey"></td>
+       <td class="white"></td>
+       <td class="green">5.2.15</td>
+       <td class="green">5.2.16</td>
      </tr>
      <tr>
-       <td class="tg-lent" colspan="27">Non-Rolling Upgrade Supported</td>
+       <td class="tg-epna">5.2.15 →</td>
+       <td class="grey"></td>
+       <td class="grey"></td>
+       <td class="grey"></td>
+       <td class="grey"></td>
+       <td class="grey"></td>
+       <td class="grey"></td>
+       <td class="grey"></td>
+       <td class="grey"></td>
+       <td class="grey"></td>
+       <td class="grey"></td>
+       <td class="grey"></td>
+       <td class="grey"></td>
+       <td class="grey"></td>
+       <td class="grey"></td>
+       <td class="grey"></td>
+       <td class="grey"></td>
+       <td class="grey"></td>
+       <td class="grey"></td>
+       <td class="grey"></td>
+       <td class="grey"></td>
+       <td class="grey"></td>
+       <td class="grey"></td>
+       <td class="grey"></td>
+       <td class="grey"></td>
+       <td class="grey"></td>
+       <td class="grey"></td>
+       <td class="white"></td>
+       <td class="green">5.2.16</td>
      </tr>
      <tr>
-       <td class="tg-xy3e" colspan="27">Upgrade Not Supported</td>
+       <td class="tg-8fch" colspan="29">Rolling Upgrade Supported</td>
      </tr>
      <tr>
-       <td class="tg-q1q4" colspan="27">Downgrade Not Supported</td>
+       <td class="tg-lent" colspan="29">Non-Rolling Upgrade Supported</td>
+     </tr>
+     <tr>
+       <td class="tg-xy3e" colspan="29">Upgrade Not Supported</td>
+     </tr>
+     <tr>
+       <td class="tg-q1q4" colspan="29">Downgrade Not Supported</td>
      </tr>
    </tbody>
    </table>
