@@ -6,7 +6,7 @@
 
 When installing and upgrading to |morpheus| |morphver|, refer to the following to ensure compatibility.
 
-Breaking & Changes
+Breaking Changes
 ================
 
 - 5.4.5: Warning: Database indexes added for account_usage and metadata_tag tables. Customers with very large account_usage and/or metadata_tag tables (10 million+) may experience slower initial morpheus-ui loading time after upgrading to 5.4.5, as well as additional database load. 
@@ -128,24 +128,27 @@ When externalizing MySQL, Elasticsearch and/or RabbitMQ services, the following 
      - |morphver| Changes
    * - Morpheus Node and VM Node Packages
      - |nodePackageVer|
-     - Node and VM Node Package versions updated to v3.2.5, Java jdk & jre updated to 11.0.14+9
+     - Node and VM Node Package versions updated to |nodePackageVer| for updated linux agent
    * - Morpheus Linux Agent
      - |linuxagentver|
-     - No changes
+     - Updates for Kubernetes stat aggregation
    * - Morpheus Windows Agent
      - |winagentver|
-     - |morpheus| Windows Agents updated to v1.8.0, fixes Windows Bare-Metal Servers displaying incorrect core count :superscript:`5.2.15`
+     - No changes
    * - Morpheus macOS Agent
      - |macagentver|
-     - |morpheus| macOS agent updated to |macagentver|, Java jdk & jre updated to 11.0.14+9
+     - |morpheus| macOS agent updated to |macagentver|
 
 |
 
-.. Security
-.. ========
+Security
+========
 
-.. CVEs Addressed
-.. --------------
+CVEs Addressed
+--------------
+
+- CVE-2021-30129
+- CVE-2020-36518
 
 |
 
