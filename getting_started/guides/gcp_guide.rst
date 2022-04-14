@@ -12,7 +12,7 @@ Creating Infrastructure Groups
 
 GROUPS CONTENT HERE -- Cloud created in next section will be added to this group on cloud creation
 
-.. include:: ../../integration_guides/clouds/google/gcp.rst
+.. include:: /integration_guides/Clouds/google/google.rst
   :start-after: .. gcp_guide_start_point
   :end-before: .. gcp_guide_stop_point
 

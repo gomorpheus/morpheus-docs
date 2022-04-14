@@ -79,7 +79,7 @@ This completes the installation process, move to |morpheus| UI to integrate the 
 - **API HOST:** The URL where your Cypher appliance can be reached (ex. https://x.x.x.x/)
 - **API KEY:** The API Key we retrieved and saved in the previous step
 
-.. images:: /images/infrastructure/trust/addCypherInt.png
+.. image:: /images/infrastructure/trust/addCypherInt.png
   :width: 50%
 
 Click :guilabel:`SAVE CHANGES` to save the new integration. Refer to the "Credentials" section above for details on storing new credential sets using the external appliance and how they can be called back in various places throughout the UI.
