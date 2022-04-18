@@ -41,140 +41,141 @@ As an example, see the configuration for an Apache server on AWS which lets user
 
 - .. toggle-header:: :header: **Example Catalog Item Config**
 
-    {
-      "group": {
-        "id": "<%= customOptions.fgroups %>"
-      },
-      "cloud": {
-        "id": 12,
-        "name": "AWS"
-      },
-      "type": "apache",
-      "instance": {
-        "userGroup": {
-          "id": ""
+    .. code-block::
+      {
+        "group": {
+          "id": "<%= customOptions.fgroups %>"
         },
-        "expireDays": "2",
-        "shutdownDays": "1"
-      },
-      "name": "${userInitials.toUpperCase()}DM${type.take(3).toUpperCase()}${sequence+1000}",
-      "config": {
-        "createUser": false,
-        "isEC2": false,
-        "isVpcSelectable": false,
-        "resourcePoolId": 129,
-        "provisionServerId": null,
-        "customOptions": {
-          "code": "cloud.code"
+        "cloud": {
+          "id": 12,
+          "name": "AWS"
         },
-        "poolProviderType": null,
-        "noAgent": false,
-        "availabilityId": null,
-        "securityId": null,
-        "publicIpType": "subnet",
-        "instanceProfile": null
-      },
-      "volumes": [
-        {
-          "index": 0,
-          "rootVolume": true,
-          "name": "data",
-          "maxStorage": 10737418240,
-          "volumeCustomizable": true,
-          "hasDatastore": false,
-          "readonlyName": false,
-          "customMaxStorage": false,
-          "size": 10,
-          "vId": 45,
-          "storageType": 6,
-          "maxIOPS": null
-        }
-      ],
-      "hostName": "${userInitials.toUpperCase()}DM${type.take(3).toUpperCase()}${sequence+1000}",
-      "configEnabled": true,
-      "layout": {
-        "id": 49,
-        "code": "apache-amazon-2.4-single"
-      },
-      "plan": {
-         "id": "<%= customOptions.fplans %>"
-      },
-      "version": "2.4",
-      "networkInterfaces": [
-        {
-          "primaryInterface": true,
-          "network": {
-            "id": "networkGroup-2",
-            "idName": "Demo Preferred"
+        "type": "apache",
+        "instance": {
+          "userGroup": {
+            "id": ""
           },
-          "showNetworkPoolLabel": true,
-          "showNetworkDhcpLabel": false
-        }
-      ],
-      "templateParameter": null,
-      "securityGroups": [
-        {
-          "id": "sg-f38fb296"
-        }
-      ],
-      "backup": {
-        "createBackup": true,
-        "jobAction": "new",
-        "jobRetentionCount": "1",
-        "providerBackupType": -1
-      },
-      "loadBalancer": [
-        {
-          "internalPort": 80,
-          "externalPort": 80,
-          "loadBalancePort": null,
-          "loadBalanceProtocol": "http",
-          "externalAddressCheck": false,
-          "protocol": "http",
-          "balanceMode": "leastconnections",
-          "vipPort": 80,
-          "vipHostname": "bpdmapa1008.localdomain",
-          "name": "${userInitials.toUpperCase()}DM${type.take(3).toUpperCase()}${sequence+1000}",
-          "vipName": "${userInitials.toUpperCase()}DM${type.take(3).toUpperCase()}${sequence+1000}-load-balancer",
-          "id": ""
+          "expireDays": "2",
+          "shutdownDays": "1"
         },
-        {
-          "internalPort": 443,
-          "externalPort": 443,
-          "loadBalancePort": null,
-          "loadBalanceProtocol": "https",
-          "externalAddressCheck": false,
-          "protocol": "https",
-          "balanceMode": "leastconnections",
-          "vipPort": 443,
-          "vipHostname": "bpdmapa1008.localdomain",
-          "name": "${userInitials.toUpperCase()}DM${type.take(3).toUpperCase()}${sequence+1000}",
-          "vipName": "${userInitials.toUpperCase()}DM${type.take(3).toUpperCase()}${sequence+1000}-load-balancer",
-          "id": ""
-        }
-      ],
-      "hideLock": true,
-      "hasNetworks": true,
-      "displayNetworks": [
-        {
-          "groupName": "Demo Preferred",
-          "ipMode": "Network Default"
-        }
-      ],
-      "copies": 1,
-      "showScale": false,
-      "volumesDisplay": [
-        {
-          "storage": "gp2",
-          "name": "data",
-          "controller": null,
-          "datastore": null,
-          "displayOrder": null,
-          "size": 10,
-          "mountPoint": null
-        }
-      ]
-    }
+        "name": "${userInitials.toUpperCase()}DM${type.take(3).toUpperCase()}${sequence+1000}",
+        "config": {
+          "createUser": false,
+          "isEC2": false,
+          "isVpcSelectable": false,
+          "resourcePoolId": 129,
+          "provisionServerId": null,
+          "customOptions": {
+            "code": "cloud.code"
+          },
+          "poolProviderType": null,
+          "noAgent": false,
+          "availabilityId": null,
+          "securityId": null,
+          "publicIpType": "subnet",
+          "instanceProfile": null
+        },
+        "volumes": [
+          {
+            "index": 0,
+            "rootVolume": true,
+            "name": "data",
+            "maxStorage": 10737418240,
+            "volumeCustomizable": true,
+            "hasDatastore": false,
+            "readonlyName": false,
+            "customMaxStorage": false,
+            "size": 10,
+            "vId": 45,
+            "storageType": 6,
+            "maxIOPS": null
+          }
+        ],
+        "hostName": "${userInitials.toUpperCase()}DM${type.take(3).toUpperCase()}${sequence+1000}",
+        "configEnabled": true,
+        "layout": {
+          "id": 49,
+          "code": "apache-amazon-2.4-single"
+        },
+        "plan": {
+           "id": "<%= customOptions.fplans %>"
+        },
+        "version": "2.4",
+        "networkInterfaces": [
+          {
+            "primaryInterface": true,
+            "network": {
+              "id": "networkGroup-2",
+              "idName": "Demo Preferred"
+            },
+            "showNetworkPoolLabel": true,
+            "showNetworkDhcpLabel": false
+          }
+        ],
+        "templateParameter": null,
+        "securityGroups": [
+          {
+            "id": "sg-f38fb296"
+          }
+        ],
+        "backup": {
+          "createBackup": true,
+          "jobAction": "new",
+          "jobRetentionCount": "1",
+          "providerBackupType": -1
+        },
+        "loadBalancer": [
+          {
+            "internalPort": 80,
+            "externalPort": 80,
+            "loadBalancePort": null,
+            "loadBalanceProtocol": "http",
+            "externalAddressCheck": false,
+            "protocol": "http",
+            "balanceMode": "leastconnections",
+            "vipPort": 80,
+            "vipHostname": "bpdmapa1008.localdomain",
+            "name": "${userInitials.toUpperCase()}DM${type.take(3).toUpperCase()}${sequence+1000}",
+            "vipName": "${userInitials.toUpperCase()}DM${type.take(3).toUpperCase()}${sequence+1000}-load-balancer",
+            "id": ""
+          },
+          {
+            "internalPort": 443,
+            "externalPort": 443,
+            "loadBalancePort": null,
+            "loadBalanceProtocol": "https",
+            "externalAddressCheck": false,
+            "protocol": "https",
+            "balanceMode": "leastconnections",
+            "vipPort": 443,
+            "vipHostname": "bpdmapa1008.localdomain",
+            "name": "${userInitials.toUpperCase()}DM${type.take(3).toUpperCase()}${sequence+1000}",
+            "vipName": "${userInitials.toUpperCase()}DM${type.take(3).toUpperCase()}${sequence+1000}-load-balancer",
+            "id": ""
+          }
+        ],
+        "hideLock": true,
+        "hasNetworks": true,
+        "displayNetworks": [
+          {
+            "groupName": "Demo Preferred",
+            "ipMode": "Network Default"
+          }
+        ],
+        "copies": 1,
+        "showScale": false,
+        "volumesDisplay": [
+          {
+            "storage": "gp2",
+            "name": "data",
+            "controller": null,
+            "datastore": null,
+            "displayOrder": null,
+            "size": 10,
+            "mountPoint": null
+          }
+        ]
+      }
 
 Once done, click :guilabel:`SAVE CHANGES`
 
