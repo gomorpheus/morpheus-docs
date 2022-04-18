@@ -41,7 +41,8 @@ As an example, see the configuration for an Apache server on AWS which lets user
 
 - .. toggle-header:: :header: **Example Catalog Item Config**
 
-    .. code-block::
+    .. code-block:: json
+
       {
         "group": {
           "id": "<%= customOptions.fgroups %>"
