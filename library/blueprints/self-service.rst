@@ -1,5 +1,5 @@
-Self Service
-------------
+Catalog Items
+-------------
 
 The Self Service catalog (|LibBluCat|) is where administrators can create easily-deployable items for consumption by users operating under the "Service Catalog" Persona in |morpheus|. Catalog items can be fully-configured |morpheus| Instances or Blueprints, complete with user input through |morpheus| Inputs, automation Workflows, and more. The catalog items are presented in a simplified interface for ease of deployment without sacrificing configurability for administrators. All available catalog items are built in the Self Service area and users will see relevant items in their catalogs based on Role permissions.
 
@@ -33,9 +33,148 @@ Configure the following:
 - **FEATURED:** When checked, this catalog item will be given special visibility in the Service Catalog Persona view
 - **VISIBILITY:** Set to private to keep the catalog item available only to users in the current Tenant. Master Tenant administrators may set catalog items to public to make them viewable and usable by Subtenant users
 - **LOGO:** Select or upload a logo to be associated with this catalog item
-- **CONFIG:** Enter, view, or edit Instance config here. Click :guilabel:`CONFIGURATION WIZARD` to build this catalog item through the |morpheus| Add Instance wizard
-- **CONTENT:** Optionally include documentation content for this Catalog Item. Markdown-formatted text is accepted and displayed appropriately when the item is ordered from the Service Catalog. A new Catalog Item-type Wiki entry will also be added containing this information.
+- **CONFIG:** Enter, view, or edit Instance config here. Click :guilabel:`CONFIGURATION WIZARD` to build a base configuration through the |morpheus| Instance wizard. Following configuration through the Instance wizard, you may need to overwrite some static values in the configuration with calls to custom Input values. This allows your users to easily set the Instance Plan, Group, name, tags, or anything else they may need to control. Dynamic inputs are passed with the following syntax: "<%= customOptions.fieldName %>" where fieldName is the Field Name value set on the Input
+- **CONTENT:** Optionally include documentation content for this Catalog Item. Markdown-formatted text is accepted and displayed appropriately when the item is ordered from the Service Catalog. A new Catalog Item-type Wiki entry will also be added containing this information
 - **INPUTS:** If desired, select Inputs to present users with mandatory or optional selections prior to provisioning
+
+As an example, see the configuration for an Apache server on AWS which lets users set the |morpheus| infrastructure Group and plan size for the VM:
+
+- .. toggle-header:: :header: **Example Catalog Item Config**
+
+    {
+      "group": {
+        "id": "<%= customOptions.fgroups %>"
+      },
+      "cloud": {
+        "id": 12,
+        "name": "AWS"
+      },
+      "type": "apache",
+      "instance": {
+        "userGroup": {
+          "id": ""
+        },
+        "expireDays": "2",
+        "shutdownDays": "1"
+      },
+      "name": "${userInitials.toUpperCase()}DM${type.take(3).toUpperCase()}${sequence+1000}",
+      "config": {
+        "createUser": false,
+        "isEC2": false,
+        "isVpcSelectable": false,
+        "resourcePoolId": 129,
+        "provisionServerId": null,
+        "customOptions": {
+          "code": "cloud.code"
+        },
+        "poolProviderType": null,
+        "noAgent": false,
+        "availabilityId": null,
+        "securityId": null,
+        "publicIpType": "subnet",
+        "instanceProfile": null
+      },
+      "volumes": [
+        {
+          "index": 0,
+          "rootVolume": true,
+          "name": "data",
+          "maxStorage": 10737418240,
+          "volumeCustomizable": true,
+          "hasDatastore": false,
+          "readonlyName": false,
+          "customMaxStorage": false,
+          "size": 10,
+          "vId": 45,
+          "storageType": 6,
+          "maxIOPS": null
+        }
+      ],
+      "hostName": "${userInitials.toUpperCase()}DM${type.take(3).toUpperCase()}${sequence+1000}",
+      "configEnabled": true,
+      "layout": {
+        "id": 49,
+        "code": "apache-amazon-2.4-single"
+      },
+      "plan": {
+         "id": "<%= customOptions.fplans %>"
+      },
+      "version": "2.4",
+      "networkInterfaces": [
+        {
+          "primaryInterface": true,
+          "network": {
+            "id": "networkGroup-2",
+            "idName": "Demo Preferred"
+          },
+          "showNetworkPoolLabel": true,
+          "showNetworkDhcpLabel": false
+        }
+      ],
+      "templateParameter": null,
+      "securityGroups": [
+        {
+          "id": "sg-f38fb296"
+        }
+      ],
+      "backup": {
+        "createBackup": true,
+        "jobAction": "new",
+        "jobRetentionCount": "1",
+        "providerBackupType": -1
+      },
+      "loadBalancer": [
+        {
+          "internalPort": 80,
+          "externalPort": 80,
+          "loadBalancePort": null,
+          "loadBalanceProtocol": "http",
+          "externalAddressCheck": false,
+          "protocol": "http",
+          "balanceMode": "leastconnections",
+          "vipPort": 80,
+          "vipHostname": "bpdmapa1008.localdomain",
+          "name": "${userInitials.toUpperCase()}DM${type.take(3).toUpperCase()}${sequence+1000}",
+          "vipName": "${userInitials.toUpperCase()}DM${type.take(3).toUpperCase()}${sequence+1000}-load-balancer",
+          "id": ""
+        },
+        {
+          "internalPort": 443,
+          "externalPort": 443,
+          "loadBalancePort": null,
+          "loadBalanceProtocol": "https",
+          "externalAddressCheck": false,
+          "protocol": "https",
+          "balanceMode": "leastconnections",
+          "vipPort": 443,
+          "vipHostname": "bpdmapa1008.localdomain",
+          "name": "${userInitials.toUpperCase()}DM${type.take(3).toUpperCase()}${sequence+1000}",
+          "vipName": "${userInitials.toUpperCase()}DM${type.take(3).toUpperCase()}${sequence+1000}-load-balancer",
+          "id": ""
+        }
+      ],
+      "hideLock": true,
+      "hasNetworks": true,
+      "displayNetworks": [
+        {
+          "groupName": "Demo Preferred",
+          "ipMode": "Network Default"
+        }
+      ],
+      "copies": 1,
+      "showScale": false,
+      "volumesDisplay": [
+        {
+          "storage": "gp2",
+          "name": "data",
+          "controller": null,
+          "datastore": null,
+          "displayOrder": null,
+          "size": 10,
+          "mountPoint": null
+        }
+      ]
+    }
 
 Once done, click :guilabel:`SAVE CHANGES`
 
