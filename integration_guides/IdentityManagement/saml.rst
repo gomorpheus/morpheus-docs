@@ -15,9 +15,9 @@ To add a SAML integration:
 
 #. Navigate to |AdmTen|
 #. Select a tenant.
-#. Select :guilabel:`IDENTITY SOURCES`` in the Tenant detail page
+#. Select :guilabel:`IDENTITY SOURCES` in the Tenant detail page
 #. Select :guilabel:`+ ADD IDENTITY SOURCE`.
-#. Select `SAML SSO` from the `TYPE`` field
+#. Select `SAML SSO` from the `TYPE` field
 #. Add a Name and optional Description for the SAML integration
 
 .. image:: /images/integration_guides/identity_sources/saml_sso/saml.png
