@@ -8,7 +8,19 @@ Release Date: |releasedate|
 
 .. important:: Database indexes added for ``account_usage`` and ``metadata_tag`` tables. Customers with very large account_usage and/or metadata_tag tables (10 million+) **may experience slower initial morpheus-ui loading times and additional database load after upgrading to 5.4.5** while the indexes are being added. 
 
-.. NOTE:: Items appended with :superscript:`5.x.x` are also included in that version
+.. toggle-header:: 
+    :header: 5.4.5-2 Updates **Click to Expand/Hide**
+
+      - 5.4.5-2 contains the following updates:
+
+        :Agent Stats: - :superscript:`5.4.5-2` Fixed 5.4.5-1 Agent stat regression with Memory and Compute statistics when using custom/non-system Instance Type Layouts.
+        :Hosts: - :superscript:`5.4.5-2` Convert to managed: Fixed Instance Link not displaying on Host detail page after being converted to managed for some Windows server types.
+        :Kubernetes: - :superscript:`5.4.5-2` Fixed EKS and GKE sync issue where |morpheus| attempts to delete a Cluster after it has been deleted in the Cloud
+        - :superscript:`5.4.5-2` Fixed IP address assignment when provisioning Morpheus Kubernetes Clusters (MKS) using IP Pools
+        :NSX-T: - :superscript:`5.4.5-2` Fixed 5.4.5-1 regression preventing API NSX-T segment creation
+        :Tasks: - :superscript:`5.4.5-2` Fixed cypher lookup for Ansible and Python tasks
+
+.. NOTE:: Items prepended with :superscript:`5.4.5-2` are added in 5.4.5-2. Items appended with :superscript:`5.x.x` are also included in that version.
 
 New Features
 ============
@@ -57,6 +69,7 @@ New Features
 Fixes
 =====
 
+:Agent Stats: - :superscript:`5.4.5-2` Fixed 5.4.5-1 Agent stat regression with Memory and Compute statistics when using custom/non-system Instance Type Layouts. 
 :API & CLI: - ``api/apps/:id/prepare-apply`` endpoint has been restored to |morpheus| API. It was removed in a previous release
              - A generic warning is now returned when attempting to POST to ``/provisioning/apps`` using a Blueprint ID the user cannot access
              - Fixed an issue that caused VMs to go into an unknown state when activating or deactivating clusters via |morpheus| API
@@ -83,6 +96,7 @@ Fixes
 :Distributed Worker: - Fixed an issue that prevented deletion of distributed workers via |morpheus| UI
 :F5: - Fixed an issue that caused Instances to become inaccessible when provisioned with F5 load balancer and floating IP address
 :Google Cloud (GCP): - Fixed an issue that caused the console to become inaccessible for GCP Instances using private IP addresses
+:Hosts: - :superscript:`5.4.5-2` Convert to managed: Fixed Instance Link not displaying on Host detail page after being converted to managed for some Windows server types.
 :Identity Sources: - Fix db lock issue causing user creation failure when using Custom External SSO Identity source
 :Infoblox: - Infoblox host records are no longer created with the zone name in the "name" field
 :Inputs: - "No Options Found" message on empty Select List Inputs is no longer selectable to prevent confusion and satisfying required Inputs
@@ -92,10 +106,13 @@ Fixes
 :KVM: - Fixed an issue that could cause failures when reconfiguring KVM Instances to add or remove secondary network interfaces
 :Kubernetes: - Fixed an issue that could cause failures when adding container nodes to a Kubernetes cluster
               - Fixed an issue that could cause failures when provisioning MKS clusters using Plans with a custom storage range
+              - :superscript:`5.4.5-2` Fixed EKS and GKE sync issue where |morpheus| attempts to delete a Cluster after it has been deleted in the Cloud
+              - :superscript:`5.4.5-2` Fixed IP address assignmnet when provisioning Morpheus Kubernetes Clusters (MKS) using IP Pools
               - Health checks for container services provisioned to Kubernetes Clusters now work as intended
 :Layouts: - "Enable Scaling (Horizontal)" option now works on individual Layouts even when the Instance Type is configured to disable it
 :Monitoring: - The breadcrumb link from a Monitoring Group detail page back to the Monitoring Groups list page now works correctly
-:NSX-T: - Fixed an issue causing member groups on NSX-T load balancer pools not to be saved and persisted properly
+:NSX-T:  - :superscript:`5.4.5-2` Fixed 5.4.5-1 regression preventing API NSX-T segemnet creation
+         - Fixed an issue causing member groups on NSX-T load balancer pools not to be saved and persisted properly
          - Fixed an issue that could prevent editing and resaving NSX-T segments with errors
          - Fixed an issue that prevented selection of NSX-T load balancer SSL profiles in App Blueprint and App wizards
          - Subtenant users with sufficient Role permissions can now drill into NSX-T routers shared from the Primary Tenant
@@ -119,6 +136,7 @@ Fixes
 :ServiceNow: - Fixed an issue with custom ServiceNow CMDB class mapping
               - Removed the "enabled" flag displayed for exposed Catalog Items on the ServiceNow integration detail page as there is currently no concept of enabling or disabling exposed Catalog Items
 :Storage: - Fixed an issue provisioning uploaded images with many disks
+:Tasks: - :superscript:`5.4.5-2` Fixed cypher lookup for Ansible and Python tasks
 :Terraform: - Added capability to add tfvar secret to Terraform Layouts using |morpheus| API and CLI
 :UI: - Fixed a display issue that caused App Blueprint configuration windows to be compressed when the App Blueprint was given a very long name
 :Usage: - Fixed usage issues associated with Snapshot, Virtual Image and Load Balancer price types. Datastore ID property added to disk price types API queries
