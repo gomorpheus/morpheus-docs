@@ -16,7 +16,7 @@ Release Date: |releasedate|
         :Agent Stats: - :superscript:`5.4.5-2` Fixed 5.4.5-1 Agent stat regression with Memory and Compute statistics when using custom/non-system Instance Type Layouts.
         :Hosts: - :superscript:`5.4.5-2` Convert to managed: Fixed Instance Link not displaying on Host detail page after being converted to managed for some Windows server types.
         :Kubernetes: - :superscript:`5.4.5-2` Fixed EKS and GKE sync issue where |morpheus| attempts to delete a Cluster after it has been deleted in the Cloud
-        - :superscript:`5.4.5-2` Fixed IP address assignment when provisioning Morpheus Kubernetes Clusters (MKS) using IP Pools
+                     - :superscript:`5.4.5-2` Fixed IP address assignment when provisioning Morpheus Kubernetes Clusters (MKS) using IP Pools
         :NSX-T: - :superscript:`5.4.5-2` Fixed 5.4.5-1 regression preventing API NSX-T segment creation
         :Tasks: - :superscript:`5.4.5-2` Fixed cypher lookup for Ansible and Python tasks
 
