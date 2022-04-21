@@ -4,21 +4,25 @@
 |morphver| Release Notes
 *************************
 
-Release Date: |releasedate|
-
-.. important:: Database indexes added for ``account_usage`` and ``metadata_tag`` tables. Customers with very large account_usage and/or metadata_tag tables (10 million+) **may experience slower initial morpheus-ui loading times and additional database load after upgrading to 5.4.5** while the indexes are being added. 
+Release Dates
+  - 5.4.5-1 |releasedate|
+  - 5.4.5-2 Apr 21 2022
 
 .. toggle-header:: 
     :header: 5.4.5-2 Updates **Click to Expand/Hide**
 
-      - 5.4.5-2 contains the following updates:
+      5.4.5-2 contains the following updates not included in 5.4.5-1:
 
-        :Agent Stats: - :superscript:`5.4.5-2` Fixed 5.4.5-1 Agent stat regression with Memory and Compute statistics when using custom/non-system Instance Type Layouts.
-        :Hosts: - :superscript:`5.4.5-2` Convert to managed: Fixed Instance Link not displaying on Host detail page after being converted to managed for some Windows server types.
-        :Kubernetes: - :superscript:`5.4.5-2` Fixed EKS and GKE sync issue where |morpheus| attempts to delete a Cluster after it has been deleted in the Cloud
-                     - :superscript:`5.4.5-2` Fixed IP address assignment when provisioning Morpheus Kubernetes Clusters (MKS) using IP Pools
-        :NSX-T: - :superscript:`5.4.5-2` Fixed 5.4.5-1 regression preventing API NSX-T segment creation
-        :Tasks: - :superscript:`5.4.5-2` Fixed cypher lookup for Ansible and Python tasks
+      :Agent Stats: - :superscript:`5.4.5-2` Fixed 5.4.5-1 Agent stat regression with Memory and Compute statistics when using custom/non-system Instance Type Layouts.
+      :Hosts: - :superscript:`5.4.5-2` Convert to managed: Fixed Instance Link not displaying on Host detail page after being converted to managed for some Windows server types.
+      :Kubernetes: - :superscript:`5.4.5-2` Fixed EKS and GKE sync issue where |morpheus| attempts to delete a Cluster after it has been deleted in the Cloud
+                   - :superscript:`5.4.5-2` Fixed IP address assignment when provisioning Morpheus Kubernetes Clusters (MKS) using IP Pools
+      :NSX-T: - :superscript:`5.4.5-2` Fixed 5.4.5-1 regression preventing API NSX-T segment creation
+      :Tasks: - :superscript:`5.4.5-2` Fixed cypher lookup for Ansible and Python tasks
+
+|
+
+.. important:: Database indexes added for ``account_usage`` and ``metadata_tag`` tables. Customers with very large account_usage and/or metadata_tag tables (10 million+) **may experience slower initial morpheus-ui loading times and additional database load after upgrading to 5.4.5** while the indexes are being added. 
 
 .. NOTE:: Items prepended with :superscript:`5.4.5-2` are added in 5.4.5-2. Items appended with :superscript:`5.x.x` are also included in that version.
 
