@@ -27,11 +27,11 @@ The EfficientIP SOLIDserver integration type is a plugin that must be added to |
     - **PASSWORD:** The password for the above named account
     - **THROTTLE RATE:** In larger environments, it may be necessary to introduce a rate limit on calls to the EfficientIP API from |morpheus|. If the EfficientIP console UI becomes less responsive than it was prior to integration with |morpheus|, it may be due to a high number of API calls in the background from |morpheus|. In such a case, start with a 50ms throttle rate and adjust accordingly depending on performance
     - **DISABLE SSL SNI VERIFICATION:** If necessary, disable the check for a valid SSL certificate on the EfficientIP server
-    - **INVENTORY EXISTING:** When checked, existing network pools will be synced from EfficientIP
+    - **INVENTORY EXISTING:** When checked, used IP space will be continually synced between |morpheus| and EfficientIP. If left unchecked, only IP space claimed (and freed) from |morpheus| is shown on the detail page for the EfficientIP pool
 
 #. Click :guilabel:`SAVE CHANGES`
 
-Once saved, if existing constructs are being inventoried, |morpheus| will begin to onboard them. EfficientIP networks are viewable in |InfNetIP| under the IP Pools tab. Depending on EfficientIP configuration, you may see up to two "types" of Network Pools sync from EfficientIP, SOLIDserver Subnet and SOLIDserver Pool. In EfficientIP, "pools" are an optional construct that subdivides subnets. In |morpheus|, both constructs are synced which gives an additional layer of organization when linking Network Pools with Networks (described in the next section) for organizations that use the pools construct. Within a selected IP Pool, host records will also sync and can be viewed in a grid or list layout. DNS Zones are synced under |InfNetDom|. By clicking into the domain, DNS Zone records can be viewed.
+Once saved, |morpheus| will begin to onboard data from EfficientIP. EfficientIP networks are viewable in |InfNetIP| under the IP Pools tab. Depending on EfficientIP configuration, you may see up to two "types" of Network Pools sync from EfficientIP, SOLIDserver Subnet and SOLIDserver Pool. In EfficientIP, "pools" are an optional construct that subdivides subnets. In |morpheus|, both constructs are synced which gives an additional layer of organization when linking Network Pools with Networks (described in the next section) for organizations that use the pools construct. Within a selected IP Pool, host records will also sync and can be viewed in a grid or list layout. DNS Zones are synced under |InfNetDom|. By clicking into the domain, DNS Zone records can be viewed.
 
 .. image:: /images/integration_guides/networking/efficientip/pool.png
 
