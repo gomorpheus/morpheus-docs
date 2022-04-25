@@ -11,6 +11,4 @@ Networking Integrations
    bluecat.rst
    solarwinds.rst
    stealth.rst
-
-..
-  efficientip.rst
+   efficientip.rst
