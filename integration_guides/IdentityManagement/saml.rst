@@ -22,7 +22,7 @@ To add a SAML integration:
 
 .. image:: /images/integration_guides/identity_sources/saml_sso/saml.png
 
-There are 3 sections with fields that need to be populated depending on the desired configuration:
+There are 4 sections with fields that need to be populated depending on the desired configuration:
 
 - SAML Configuration
 - Role Mappings
@@ -38,14 +38,18 @@ SAML LOGOUT REDIRECT URL
   The url morpheus will post to when a SAML user log out of |morpheus| to log out of the SAML provider as well.
 INCLUDES SAML REQUEST PARAMETER
   **Yes** (recommended) - the AuthN request will be sent via the ?SAMLRequest= parameter in the URL (GET)
+  
   **No** - the the AuthN request will be submitted in the body of the request (POST)
   .. NOTE:: The SAML SP documentation should mention which binding to use but GET is most common
 SAML REQUEST
   **No Signature** - No signature is used on the SAML request
+  
   **Self Signed** - A self-signed X.509 Certificate is gentered after clicking :guilabel:`SAVE CHANGES`. This signature value can be used by the SAML SP to verify the authenticity of the request
+  
   **Custom RSA Signature** - Import a custom RSA Private Key and respective X.509 Certificate. This signature value can be used by the SAML SP to verify the authenticity of the request
 SAML RESPONSE
   **Do Not Validate Assertion Signature** - The SAML response signature from the SAML SP will not be validated
+
   **Validate Assertion Signature** - The SAML reponse signature from the SAML SP will be validated.  Enter the SAML SP X.509 certificate in the **Public Key** field
 
 Role Mappings
@@ -84,9 +88,9 @@ EMAIL ATTRIBUTE
 
 Once populated, select :guilabel:`SAVE CHANGES` and the SAML identity source integration will be added.
 
-In the Identity Sources section, important information for configuration of the SAML integration is provided. Use the SP ENTITY ID and SP ACS URL for configuration on the external login SAML provider side.
+In the :guilabel:`Identity Sources` section, important information for configuration of the SAML integration is provided. Use the SP ENTITY ID and SP ACS URL for configuration on the external login SAML provider side.
 
-.. NOTE:: In come cases, the SAML provider may need these values before providing the LOGIN REDIRECT URL and other values.  When creating the integration, the NAME and LOGIN REDIRECT URL can contain any values, then selecting SAVE CHANGES will generate the above values.  The NAME and LOGIN REDIRECT URL can be edited later, once the SAML configuration is created in the SAML provider.
+.. NOTE:: In some cases, the SAML provider may need these values before providing the LOGIN REDIRECT URL and other values.  When creating the integration, the NAME and LOGIN REDIRECT URL can contain any values, then selecting SAVE CHANGES will generate the above values.  The NAME and LOGIN REDIRECT URL can be edited later, once the SAML configuration is created in the SAML provider.
 
 * ENTITY ID
 * SP ACS URL
@@ -98,9 +102,10 @@ In the Identity Sources section, important information for configuration of the 
 Sample Metadata code output:
 
 .. code-block:: bash
+
     <?xml version="1.0" encoding="UTF-8" standalone="yes"?><EntityDescriptor entityID="https://someip.com/saml/eDKL60P25" xmlns="urn:oasis:names:tc:SAML:2.0:metadata"><SPSSODescriptor AuthnRequestsSigned="false" WantAssertionsSigned="true" protocolSupportEnumeration="urn:oasis:names:tc:SAML:2.0:protocol"><NameIDFormat>urn:oasis:names:tc:SAML:1.1:nameid-format:unspecified</NameIDFormat><AssertionConsumerService index="0" isDefault="true" Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST" Location="https://someip.com/externalLogin/callback/eDKL60P25"/></SPSSODescriptor></EntityDescriptor>
 
-.. NOTE:: Different SAML providers will have different field names and requirements. An Okta SAML Dev environment was used for the example integration this article.
+.. NOTE:: Different SAML providers will have different field names and requirements. An Okta SAML Dev environment was used for the example integration in this article.
 
 Okta SAML SSO
 ^^^^^^^^^^^^^^^^^
