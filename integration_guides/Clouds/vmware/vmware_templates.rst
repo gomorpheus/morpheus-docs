@@ -11,22 +11,22 @@ Creating a Windows Image
 Supported Versions
 ``````````````````
 
-2008R2,2012,2012R2,2016,2019
+2008R2, 2012, 2012R2, 2016, 2019, 2022
 
 Image Preparation
 `````````````````
 
 Create a new machine in VMware vCenter and install a base version of your preferred Windows build.  The smaller the VMDK drive, typically the faster you can clone and deploy.  Utilizing |morpheus|, provisioning and post deploy scripts can expand drives to desired sizing.
 
-1.  Ensure VMtools is installed on the operating system.
+1.  Ensure VMware Tools is installed on the operating system.
 2.  Apply any service packs / updates to the operating system.
-3.  Configure WinRM to allow remote management and open the firewall. This is optional if using VMtools RPC mode for agent install and Morpheus Agent for guest exec.  To enable this, under local computer Administrator, open a command prompt and run
+3.  Configure WinRM to allow remote management and open the firewall. This is optional if using VMware Tools RPC mode for agent install and |morpheus| Agent for guest exec.  To enable this, under local computer Administrator, open a command prompt and run
 
     .. code-block:: PowerShell
 
       winrm quickconfig
 
-4.	Install .Net at least 4.5
+4.	Install .Net at least 4.5.2
 5.	Ensure Windows Firewall will allow WinRM connections.
 6.  Shutdown the virtual machine and convert to a template.
 
