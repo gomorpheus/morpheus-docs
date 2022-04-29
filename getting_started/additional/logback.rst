@@ -1,7 +1,7 @@
 logback config
 --------------
 
-.. note:: This doc is for 5.4.4+ versions that use logback.xml. 5.4.3 and earlier versions use logback.groovy with a different syntax that is not compatible with this doc. Please refer to 5.4.3 and earlier documentation for logback.groovy configuration details.
+.. note:: This doc is for 5.4.4+ versions that use ``logback.xml``. 5.4.3 and earlier versions use ``logback.groovy`` with a different syntax that is not compatible with this doc. Please refer to 5.4.3 and earlier documentation for ``logback.groovy`` configuration details.
 
 The log output for the morpheus-ui service is configured in the logback.xml file. Log output levels can be updated when more or less log output is desired.
 
@@ -10,12 +10,12 @@ Setting log levels
 To change a log level, edit the logback configuration file in /opt/morpheus/conf/logback.xml and save. The changes will be reflected within the configured ``scanPeriod``, 30 seconds by default.
 
 Levels:
- - OFF (no log output)
- - ERROR (includes error logs)
- - WARN (includes warn and error logs)
- - INFO (includes info, warn and error logs)
- - DEBUG (includes info, warn, error and debug logs)
- - TRACE (includes info, warn, error, debug and trace logs)
+ - **OFF** (no log output)
+ - **ERROR** (includes error logs)
+ - **WARN** (includes warn and error logs)
+ - **INFO** (includes info, warn and error logs)
+ - **DEBUG** (includes info, warn, error and debug logs)
+ - **TRACE** (includes info, warn, error, debug and trace logs)
 
 .. warning:: Use DEBUG and/or TRACE levels with caution. DEBUG & TRACE levels can produce many logs that can consume disk space quickly. Only use DEBUG and/or TRACE levels when needed and target them for specific services.
 
