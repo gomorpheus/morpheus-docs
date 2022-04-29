@@ -5,8 +5,8 @@ logback config
 
 The log output for the morpheus-ui service is configured in the logback.xml file. Log output levels can be updated when more or less log output is desired.
 
-Setting log levels
-``````````````````
+Setting Log Levels
+^^^^^^^^^^^^^^^^^^
 To change a log level, edit the logback configuration file in /opt/morpheus/conf/logback.xml and save. The changes will be reflected within the configured ``scanPeriod``, 30 seconds by default.
 
 Levels:
@@ -19,8 +19,8 @@ Levels:
 
 .. warning:: Use DEBUG and/or TRACE levels with caution. DEBUG & TRACE levels can produce many logs that can consume disk space quickly. Only use DEBUG and/or TRACE levels when needed and target them for specific services.
 
-Example logback settings
-````````````````````````
+Example Logback Settings
+^^^^^^^^^^^^^^^^^^^^^^^^
 Below are sample log configuration settings. This is not a complete list. Additional log names/paths can typically be determined from the standard INFO, WARN and ERROR logs.
 
 :ACI:
@@ -173,7 +173,7 @@ Below are sample log configuration settings. This is not a complete list. Additi
      <logger name="com.morpheus.automation.VroService" level="DEBUG"/>
 
 Audit logs
-----------
+^^^^^^^^^^
 
 #. To set up CEF/SIEM auditing export, add the below appender above or below the other appenders in the logback.xml configuration file:
 
