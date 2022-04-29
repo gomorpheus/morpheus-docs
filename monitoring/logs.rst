@@ -16,7 +16,7 @@ Logging configuration can be setup in the |AdmSetLog| section. There are useful 
 The Log administration section also provides options for setting custom syslog forward rules. These rules are applied on each individual host therefore keeping the |morpheus| appliance itself out of the data plane. For information on different syslog formatting rules please refer to the http://www.rsyslog.com/sending-messages-to-a-remote-syslog-server/[rsyslog] documentation.
 
 Usage
-^^^^^^^^
+^^^^^
 
 |morpheus| automatically sets up and configures logging for all of the standard catalog items provisioned through morpheus. This includes both Docker containers as well as virtual machines. Simply view instance-specific logs in instance detail via the "Logs" tab.
 
@@ -51,7 +51,7 @@ In most cases, the built-in |morpheus| logging features are sufficient for track
 |morpheus| Server Logs
 ----------------------
 
-The main |morpheus| server log is in ``/var/log/morpheus/morpheus-ui`` and the latest log file is named current. This log is archived every 24hrs. There are a number of other log files for the individual infrastructure components as well.
+The main |morpheus| application log is in ``/var/log/morpheus/morpheus-ui`` and the latest log file is named current. This log is archived every 24hrs. There are a number of other log files for the individual infrastructure components as well.
 
 If you wish to export these to an external syslog platform, do the following:
 
