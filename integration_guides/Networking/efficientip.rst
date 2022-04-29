@@ -11,6 +11,26 @@ Features
 * Network Grid and List view with IP Status and records, date and user tracking
 * Automatic and manual IP Reservations, DNS A/PTR record creation and deletion
 
+Required Role Permissions
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
+**Add, edit and remove EfficientIP SOLIDserver integrations**
+
+- Infrastructure: Network Integration: Full
+
+**View and edit synced IP pools**
+
+- Infrastructure: Network IP Pools: Full
+
+**View networks and add synced IP pools to networks**
+
+- Infrastructure: Networks: Full or Group
+
+**View and edit synced DNS zones, including creation of zone records**
+
+- Infrastructure: Network Domains: Full
+
+
 Adding EfficientIP SOLIDserver Integration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
