@@ -1,5 +1,5 @@
-logback.xml config
-------------------
+logback config
+--------------
 
 .. note:: This doc is for 5.4.4+ versions that use logback.xml. 5.4.3 and earlier versions use logback.groovy with a different syntax that is not compatible with this doc. Please refer to 5.4.3 and earlier documentation for logback.groovy configuration details.
 
