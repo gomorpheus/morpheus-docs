@@ -9,7 +9,7 @@ When installing and upgrading to |morpheus| |morphver|, refer to the following t
 Breaking Changes
 ================
 
-- 5.4.5: Warning: Database indexes added for account_usage and metadata_tag tables. Customers with very large account_usage and/or metadata_tag tables (10 million+) may experience slower initial morpheus-ui loading time after upgrading to 5.4.5, as well as additional database load. 
+- 5.4.5: Warning: Database indexes added for account_usage and metadata_tag tables. Customers with very large account_usage and/or metadata_tag tables (10 million+) may experience slower initial morpheus-ui loading time after upgrading to 5.4.5, as well as additional database load.
 - 5.4.5: 'AVI Load Balancer' renamed to 'NSX Advanced Load Balancer'
 - 5.4.5: Cloud Types disabled by default: Dell, HPE (NOT HPE Oneview), Supermicro and Cloud Foundry. Users would still be able to re-enable this clouds in the appliance settings. Does not affect existing Clouds.
 - 5.4.5: A10 Load Balancer type has been disabled, and will no longer be an option when adding new Load Balancers. Contact |morpheus| if you need to re-enable A10 Load Balancer option. This does not affect existing Load Balancers.
@@ -44,31 +44,7 @@ Breaking Changes
 
 .. note:: If CentOS 8.2 is pinned to 8.2.2004 vault, the PowerTools repository will need to be pinned to 8.2.2004 to access freerdp-libs 2.0.0
 
-.. list-table:: **Supported Appliance Operating Systems**
-   :widths: auto
-   :header-rows: 1
-
-   * - OS
-     - Version(s)
-     - Notes
-   * - Amazon Linux
-     - 2
-     -
-   * - CentOS
-     - 7.x, 8.x
-     - If CentOS 8.2 is pinned to 8.2.2004 vault, the PowerTools repository will need to be pinned to 8.2.2004 to access freerdp-libs 2.0.0
-   * - Debian
-     - |debianVersion|
-     - FreeRDP 2.0 is not compatible with Debian 9. guacd will remain at 1.0.0 for Appliances running on Debian 9.
-   * - RHEL
-     - 7.x, 8.x
-     -
-   * - SUSE Linux Enterprise Server (SLES)
-     - 12, 15
-     -
-   * - Ubuntu
-     - 16.04, 18.04, 20.04
-     - 14.04 is no longer supported for Appliance OS. Existing Appliances on 14.04 must upgrade to 16.04, 18.04 or 20.04 PRIOR to upgrading to v4.2.1+. Note: 14.04 is still supported by the |morpheus| Agent.
+.. include:: /getting_started/requirements/applianceOsTable.rst
 
 Services
 ========
