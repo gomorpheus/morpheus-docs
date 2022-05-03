@@ -29,6 +29,9 @@ Base Requirements
    * - RHEL
      - 7.x, 8.x
      -
+   * - Oracle Enterprise Linux (OEL)
+     - |oelVersion|
+     -
    * - SUSE SLES
      - 12, 15
      -
