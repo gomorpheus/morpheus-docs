@@ -82,6 +82,7 @@ Currency
   -  IDR
   -  ILS
   -  JD
+  -  JPY
   -  MAD
   -  MXN
   -  NOK
@@ -89,6 +90,7 @@ Currency
   -  ROL
   -  SAR
   -  SEK
+  -  THB
   -  TRL
   -  USD
   -  USN

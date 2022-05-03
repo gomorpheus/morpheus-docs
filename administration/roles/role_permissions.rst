@@ -103,7 +103,7 @@ Role Mappings
     -
   * - Admin: Distributed Workers
     - None, Full
-    - Allows or disallows access to |AdmInt| Distributed Workers	Tab.
+    - Allows or disallows access to |AdmInt| > Distributed Workers Tab
     -
     -
     -
@@ -348,8 +348,8 @@ Role Mappings
     - This permission is recommended for those responsible for |morpheus| DNS and domain-join integrations.
     -
   * - Infrastructure: Network Firewalls
-    - None, Read, Full
-    - Determines access to the Firewall tab on applicable network integrations detail pages
+    - None, Read, Manage Rules, Full
+    - Determines access to the Firewall tab on applicable network integrations detail pages. When the "Manage Rules" permission is given, users have read-only access to firewall groups and the ability to create and manage firewall rules on those groups
     - The Firewall tab is where network firewall groups and rules are viewed, created and managed
     - This permission is recommended for those tasked with network security management
     -
