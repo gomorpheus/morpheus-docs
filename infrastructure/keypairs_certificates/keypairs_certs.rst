@@ -11,6 +11,7 @@ The credentials section allows for various credential types to be securely store
 - Access Key and Secret Key
 - Client ID and Secret
 - Email and Private Key
+- OAuth 2.0
 - Tenant, Username, and Keypair
 - Username and API Key
 - Username and Keypair
@@ -19,11 +20,11 @@ The credentials section allows for various credential types to be securely store
 
 To create a new credential set, click :guilabel:`+ ADD` and then select the type of credential set you'd like to store. Complete the following:
 
-- **CREDENTIAL STORE:** Select "Internal" or an integrated external Cypher store (if any). See the next section for instructions on standing up and integrating with an external Cypher store
+- **CREDENTIAL STORE:** Select "Internal" or an integrated external Cypher store (if any). See the section below for instructions on standing up and integrating with an external Cypher store
 - **NAME:** A name for the credential set in |morpheus|
 - **DESCRIPTION:** An optional description for the credential set
 - **ENABLED:** If checked, the credential set will be available for use
-- **CREDENTIAL VALUES:** Depending on the credential pair type selected (listed above), the remaining fields will be specific to the chosen type
+- **CREDENTIAL VALUES:** Depending on the credential pair type selected (listed above), the remaining fields will be specific to the chosen type. See the next section for a more complete walkthrough on storing and using OAuth 2.0 credentials
 
 .. image:: /images/infrastructure/trust/addCredentials.png
   :width: 50%
@@ -32,6 +33,30 @@ Finally, click :guilabel:`ADD CREDENTIALS`. Once saved, the credential set will 
 
 .. image:: /images/infrastructure/trust/useCredentials.png
   :width: 50%
+
+OAuth 2.0 Credentials
+---------------------
+
+|morpheus| supports storage of credential sets for retrieving temporary access tokens, through OAuth 2.0, and using the tokens to access some resource. These credential sets can be used with REST-type Option Lists to retrieve information behind this type of authentication wall. Once stored, the credential can be used with as many Option Lists as needed and potentially in other areas of the product in the future.
+
+To create a new credential set, click :guilabel:`+ ADD` and then select "OAuth 2.0". Complete the following, not all fields are present or required in every context:
+
+- **CREDENTIAL STORE:** Select "Internal" or an integrated external Cypher store (if any). See the next section for instructions on standing up and integrating with an external Cypher store
+- **NAME:** A name for the credential set in |morpheus|
+- **DESCRIPTION:** An optional description for the credential set
+- **ENABLED:** If checked, the credential set will be available for use
+- **GRANT TYPE:** Client Credentials or Password Credentials
+- **ACCESS TOKEN URL:** The authorization server's token endpoint
+- **CLIENT ID:** The client ID for an app registered with the target service
+- **CLIENT SECRET:** The client secret, often needed when requesting access outside the context of a specific user
+- **USERNAME:** (Only present with "Password Credentials" Grant Type) The username for a user with target data access
+- **PASSWORD:** (Only present with "Password Credentials" Grant Type) The password for the user indicated above
+- **SCOPE:** The scope of access requested to the target resource
+- **CLIENT AUTHENTICATION:** "Send as basic auth header" or "Send client credentials in body" - Indicates how |morpheus| should issue the token received in requests to the target resource
+
+Once done, click :guilabel:`ADD CREDENTIALS`.
+
+With the OAuth 2.0 credential set stored, they can be set on REST-type Option Lists to source data from behind a compatible authentication wall. With a REST-type Option List open (|LibOptOpt|), click the CREDENTIALS dropdown and select the credential set you've created. Alternatively, you can add a credential set directly in the add/edit Option List modal if needed. Option Lists can be associated with Select List or Typeahead-type Inputs and applied to Layouts, Instance Types, Workflows, and more to allow for customization at provision or Workflow execution time. Additional details on creating Option Lists can be found in the Library section of |morpheus| docs.
 
 Installing and Integrating an External Cypher Appliance
 -------------------------------------------------------
