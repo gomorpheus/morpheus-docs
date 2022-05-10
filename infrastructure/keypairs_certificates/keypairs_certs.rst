@@ -1,7 +1,7 @@
 Trust
 =====
 
-The Trust section is where credentials, SSH keypairs, and SSL certificates are stored. In addition, related integrations to outside technologies can be made in this section as well. Integration types include Venafi for SSL certificates and |morpheus| Cypher for externalized credential storage. Continue onto the next section for more on standing up an external Cypher credential store.
+The Trust section is where credentials, SSH keypairs, and SSL certificates are stored. In addition, related integrations to outside technologies can be made in this section as well. Integration types include |morpheus| Cypher and Hashicorp Vault for externalized credential storage. Continue onto the next section for more on standing up an external Cypher credential store.
 
 Credentials
 -----------
@@ -20,7 +20,7 @@ The credentials section allows for various credential types to be securely store
 
 To create a new credential set, click :guilabel:`+ ADD` and then select the type of credential set you'd like to store. Complete the following:
 
-- **CREDENTIAL STORE:** Select "Internal" or an integrated external Cypher store (if any). See the section below for instructions on standing up and integrating with an external Cypher store
+- **CREDENTIAL STORE:** Select "Internal", an integrated external Cypher store (if any), or an integrated Hashicorp Vault server (if any). See the section below for instructions on integrating with Vault or standing up and integrating with an external Cypher store.
 - **NAME:** A name for the credential set in |morpheus|
 - **DESCRIPTION:** An optional description for the credential set
 - **ENABLED:** If checked, the credential set will be available for use
@@ -57,6 +57,27 @@ To create a new credential set, click :guilabel:`+ ADD` and then select "OAuth 2
 Once done, click :guilabel:`ADD CREDENTIALS`.
 
 With the OAuth 2.0 credential set stored, they can be set on REST-type Option Lists to source data from behind a compatible authentication wall. With a REST-type Option List open (|LibOptOpt|), click the CREDENTIALS dropdown and select the credential set you've created. Alternatively, you can add a credential set directly in the add/edit Option List modal if needed. Option Lists can be associated with Select List or Typeahead-type Inputs and applied to Layouts, Instance Types, Workflows, and more to allow for customization at provision or Workflow execution time. Additional details on creating Option Lists can be found in the Library section of |morpheus| docs.
+
+Integrating Hashicorp Vault
+---------------------------
+
+The Hashicorp Vault integration is not included with |morpheus| by default. Download the plugin from |morpheus| `Exchange <https://share.morpheusdata.com/>`_ and add the plugin to |morpheus| through the `Plugins <https://docs.morpheusdata.com/en/latest/administration/integrations/integrations.html#plugins>`_ section. This allows users to store credential sets completely outside of |morpheus| and in Hashicorp Vault, which may be required by your organization's IT policies.
+
+.. NOTE:: The plugin space is universal and not specific to Tenants. If Subtenant users have access to |AdmIntPlu|, any integrated plugins will be available in all Tenants across the appliance. In most cases, it makes sense to restrict access to this section from Subtenant users through the associated Tenant Role. Instead integrate plugins from the Primary Tenant and expose them to various Subtenants as needed.
+
+With the plugin added, a new "Vault" integration type will appear in |InfTruInt|. Click :guilabel:`+ ADD`, then "Vault" to get started. Enter the following:
+
+- **NAME:** A friendly name for the Vault integration in |morpheus|
+- **ENABLED:** When marked, this Vault integration will be available to have credentials written to it
+- **API URL:** The URL for the Vault server (ex. http://xx.xx.xx.xx:8200)
+- **TOKEN:** A valid API token for the server (see note below)
+- **SECRET PATH:** If desired, enter a custom path and |morpheus| will write new credential sets to that path. By default, new credentials are written to "secret/morpheus-credentials/"
+
+When done, click :guilabel:`SAVE CHANGES`.
+
+.. NOTE:: When creating a Vault integration, it's recommended that you use a long-lived token. If the token suddenly becomes invalid, |morpheus| will be unable to write new credential sets to Vault and will be unable to edit or delete any existing ones. Additionally, you won't be able to use Vault-stored credential sets elsewhere in |morpheus|, such as when creating new Cloud integrations or populating REST-based Option Lists which require authentication. Should this happen, simply obtain a new token, edit the Vault integration, update the token, and save your changes.
+
+With the above process finished, this Vault integration will be available as a storage target when creating new credential sets. In |InfTruCre|, after clicking :guilabel:`+ ADD` and selecting the type of credential set to add, select the new Vault integration in the CREDENTIAL STORE field (default selection is "Internal").
 
 Installing and Integrating an External Cypher Appliance
 -------------------------------------------------------
