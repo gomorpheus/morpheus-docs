@@ -100,16 +100,16 @@ When externalizing MySQL, Elasticsearch and/or RabbitMQ services, the following 
      - |morphver| Changes
    * - Morpheus Node and VM Node Packages
      - |nodePackageVer|
-     - Node and VM Node Package versions updated to |nodePackageVer| for updated linux agent
+     - Node & VM Node Packages: Java: Updated jdk to v11.0.15+10
    * - Morpheus Linux Agent
      - |linuxagentver|
-     - Updates for Kubernetes stat aggregation
+     - No changes
    * - Morpheus Windows Agent
      - |winagentver|
      - No changes
    * - Morpheus macOS Agent
      - |macagentver|
-     - |morpheus| macOS agent updated to |macagentver|
+     - No changes
 
 |
 
