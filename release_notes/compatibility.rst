@@ -123,9 +123,7 @@ Security
 CVEs Addressed
 --------------
 
-- CVE-2021-30129
-- CVE-2020-36518
-
+No CVEs mitigated since |previousMorphVer|
 |
 
 Upgrade Paths & Methods
