@@ -9,11 +9,11 @@ latex_documents = [
 
 rst_prolog = """
 
-.. |releasedate| replace:: Apr 13 2022
+.. |releasedate| replace:: May 12 2022
 .. |morphbranch| replace:: v5.4
 .. |morphver| replace:: v5.4.6
 .. |minUpgradeVer| replace:: v5.2.0
-.. |previousMorphVer| replace:: v5.4.4
+.. |previousMorphVer| replace:: v5.4.5
 .. |rmqbranch| replace:: v3.5-3.9
 .. |rmqver| replace:: v3.9.8
 .. |mysqlbranch| replace:: v5.7
@@ -23,15 +23,15 @@ rst_prolog = """
 .. |esver| replace:: v7.8.1
 .. |tcver| replace:: v9.0.58
 .. |nginxver| replace:: v1.20.1
-.. |nodePackageVer| replace:: 3.2.6
+.. |nodePackageVer| replace:: 3.2.7
 .. |linuxagentver| replace:: v2.3.2
 .. |macagentver| replace:: v2.3.2
 .. |winagentver| replace:: v1.8.0.0
-.. |java| replace:: 11.0.14
-.. |java-mac| replace:: 11.0.14
-.. |openjdk-jre| replace:: 11.0.14
+.. |java| replace:: 11.0.15+10
+.. |java-mac| replace:: 11.0.14+9
+.. |openjdk-jre| replace:: 11.0.15+10
 .. |openjdk-elasticsearch| replace:: 14.0.2+12
-.. |openssl| replace:: 1.1.1k
+.. |openssl| replace:: 1.1.1l
 .. |openssl_fips| replace:: 1.0.2u
 .. |erlang| replace:: 23.2
 
