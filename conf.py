@@ -3,17 +3,17 @@ import datetime
 master_doc = 'index'
 
 latex_documents = [
-    (master_doc, 'morpheus_5.4.5-1.tex', u'Morpheus Documentation',
+    (master_doc, 'morpheus_5.5.0-1.tex', u'Morpheus Documentation',
      u'Morpheus', 'manual'),
 ]
 
 rst_prolog = """
 
-.. |releasedate| replace:: Apr 13 2022
+.. |releasedate| replace:: Mat 12 2022
 .. |morphbranch| replace:: v5.5
 .. |morphver| replace:: v5.5.0
 .. |minUpgradeVer| replace:: v5.2.0
-.. |previousMorphVer| replace:: v5.4.4
+.. |previousMorphVer| replace:: N/A
 .. |rmqbranch| replace:: v3.5-3.9
 .. |rmqver| replace:: v3.9.8
 .. |mysqlbranch| replace:: v5.7
@@ -23,15 +23,15 @@ rst_prolog = """
 .. |esver| replace:: v7.8.1
 .. |tcver| replace:: v9.0.58
 .. |nginxver| replace:: v1.20.1
-.. |nodePackageVer| replace:: 3.2.6
+.. |nodePackageVer| replace:: 3.2.7
 .. |linuxagentver| replace:: v2.3.2
 .. |macagentver| replace:: v2.3.2
 .. |winagentver| replace:: v1.8.0.0
-.. |java| replace:: 11.0.14
-.. |java-mac| replace:: 11.0.14
-.. |openjdk-jre| replace:: 11.0.14
+.. |java| replace:: 11.0.15+10
+.. |java-mac| replace:: 11.0.14+9
+.. |openjdk-jre| replace:: 11.0.15+10
 .. |openjdk-elasticsearch| replace:: 14.0.2+12
-.. |openssl| replace:: 1.1.1k
+.. |openssl| replace:: 1.1.1l
 .. |openssl_fips| replace:: 1.0.2u
 .. |erlang| replace:: 23.2
 

@@ -55,8 +55,8 @@ Breaking Changes
      - 2
      -
    * - CentOS
-     - 7.x, 8.x
-     - If CentOS 8.2 is pinned to 8.2.2004 vault, the PowerTools repository will need to be pinned to 8.2.2004 to access freerdp-libs 2.0.0
+     - 7.x, 8.x (stream)
+     - 
    * - Debian
      - |debianVersion|
      - FreeRDP 2.0 is not compatible with Debian 9. guacd will remain at 1.0.0 for Appliances running on Debian 9.
@@ -67,7 +67,7 @@ Breaking Changes
      - 12, 15
      -
    * - Ubuntu
-     - 16.04, 18.04, 20.04
+     - 16.04, 18.04, 20.04, 22.04
      - 14.04 is no longer supported for Appliance OS. Existing Appliances on 14.04 must upgrade to 16.04, 18.04 or 20.04 PRIOR to upgrading to v4.2.1+. Note: 14.04 is still supported by the |morpheus| Agent.
 
 Services
@@ -76,12 +76,11 @@ Services
 |morphver| Service Version Changes
 ----------------------------------
 
-:Appliance: - Java: Updated jdk to v11.0.14
-            - MySQL: Embedded MySQL updated to v5.7.37 :superscript:`5.2.15`
-            - Tomcat: Updated to v9.0.58
-:Agent: - Added FIPS compliant el8 |morpheus| Agent node & vm-node packages. Compatible with RHEL 8, CentOS 8, and Oracle Linux 8
-        - Agent Node & VM Node Packages: Java: Updated jdk to v11.0.14
-        - |morpheus| Windows Agents updated to v1.8.0, fixes Windows Bare-Metal Servers displaying incorrect core count :superscript:`5.2.15`
+:Appliance: - Java: Updated jdk to v11.0.15-10
+
+:Agent Packages: - Added FIPS compliant el8 |morpheus| Agent node & vm-node packages. Compatible with RHEL 8, CentOS 8, and Oracle Linux 8
+                 - Node & VM Node Packages: Java: Updated jdk to v11.0.15+10
+
 
 |
 
@@ -128,16 +127,16 @@ When externalizing MySQL, Elasticsearch and/or RabbitMQ services, the following 
      - |morphver| Changes
    * - Morpheus Node and VM Node Packages
      - |nodePackageVer|
-     - Node and VM Node Package versions updated to |nodePackageVer| for updated linux agent
+     - Node & VM Node Packages: Java: Updated jdk to v11.0.15+10
    * - Morpheus Linux Agent
      - |linuxagentver|
-     - Updates for Kubernetes stat aggregation
+     - No changes
    * - Morpheus Windows Agent
      - |winagentver|
      - No changes
    * - Morpheus macOS Agent
      - |macagentver|
-     - |morpheus| macOS agent updated to |macagentver|
+     - No changes
 
 |
 
@@ -146,9 +145,6 @@ Security
 
 CVEs Addressed
 --------------
-
-- CVE-2021-30129
-- CVE-2020-36518
 
 |
 
