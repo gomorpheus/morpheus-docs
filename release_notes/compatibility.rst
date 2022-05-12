@@ -52,12 +52,8 @@ Services
 |morphver| Service Version Changes
 ----------------------------------
 
-:Appliance: - Java: Updated jdk to v11.0.14
-            - MySQL: Embedded MySQL updated to v5.7.37 :superscript:`5.2.15`
-            - Tomcat: Updated to v9.0.58
-:Agent: - Added FIPS compliant el8 |morpheus| Agent node & vm-node packages. Compatible with RHEL 8, CentOS 8, and Oracle Linux 8
-        - Agent Node & VM Node Packages: Java: Updated jdk to v11.0.14
-        - |morpheus| Windows Agents updated to v1.8.0, fixes Windows Bare-Metal Servers displaying incorrect core count :superscript:`5.2.15`
+:Appliance: - Java: Updated jdk to v11.0.15+10
+:Agent Packages: - Agent Node & VM Node Packages: Java: Updated jdk to v11.0.15+10
 
 |
 
