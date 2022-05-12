@@ -16,13 +16,11 @@ New Features
              - Use credential sets (Infrastructure > Trust) to authenticate calls to populate REST-based Option Lists when creating the Option List via |morpheus| API and CLI :superscript:`5.5.0`
              - Use stored credentials to authenticate HTTP Tasks or Tasks executed on remote servers when creating Tasks via |morpheus| API and CLI :superscript:`5.5.0`
              - VMware Cloud integrations can be created from |morpheus| API and CLI using stored credentials as they already can from |morpheus| UI :superscript:`5.5.0`
-:Agent: - Windows Agent msi packages certificate updated. Note the Morpheus Windows Agent version has not changed, this update only applies to the installer packages, no need to update existing 1.8.0 agents. :superscript:`5.5.0`
 :Amazon: - Amazon RDS instance types updated to reflect those currently available in the Milan region. |morpheus| Plans also updated to reflect the change :superscript:`5.5.0`
 :Clouds: - Manual Cloud refresh (Refresh > Costing from the Cloud detail page) now allows the user to specify a costing period to refresh and whether costing data should be rebuilt entirely :superscript:`5.5.0`
 :Credentials: - OAuth2 credential types are now supported for populating REST-based Option Lists :superscript:`5.5.0`
 :Currency: - Support added for Japanese Yen currency (JPY) :superscript:`5.5.0`
             - Support added for Thai Baht currency (THB) :superscript:`5.5.0`
-:Docker: - Ubuntu 22.04 (Jammy) is now supported for provisioning Morpheus Docker Hosts & Morpheus KVM/Docker Hosts :superscript:`5.5.0`
 :Kubernetes: - Cluster Events added. K8s Cluster Detail page ``Logs`` tab renamed to monitoring with ``Logs`` and ``Events`` sub tabs :superscript:`5.5.0`
               - Console access added for MKS (Morpheus Kubernetes) POD Instances. Note: Support for External, AKS, EKS, and GKE POD Consoles planned for a later release. :superscript:`5.5.0`
               - Improved Kubernetes Cluster sync performance for reduced overhead and sync times :superscript:`5.5.0`
@@ -93,5 +91,10 @@ Fixes
 Appliance & Agent Updates
 =========================
 
-:Appliance: - Appliance, Node, VM Node Package Java updated to 11.0.15+10 :superscript:`5.5.0`
+:Appliance: - Appliance Java version updated to 11.0.15+10 :superscript:`5.5.0`
              - Ubuntu 22.04 (Jammy) is now supported for Morpheus Appliance hosts :superscript:`5.5.0`
+
+:Agent Packages:  - Linux Node & VM Node Package Java version updated to 11.0.15+10 :superscript:`5.5.0`. MacOS agent java remains at 11.0.14+9 due to 11.0.15+10 jre macos pkg issue.
+                  - Linux Node & VM Node Package verison update to 3.2.7                 
+                  - Linux Node Packages now support installing Dokcer on Ubuntu 22.04 (Jammy) :superscript:`5.5.0`
+                  - Windows Agent msi packages updated to 1.8.0-2 with updated certificate. Note the Morpheus Windows Agent version (1.8.0) has not changed, this update only applies to the .msi installer packages & there is no need to update existing 1.8.0 agents. :superscript:`5.5.0`
