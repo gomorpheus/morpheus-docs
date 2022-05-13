@@ -35,8 +35,7 @@ New Features
               - Pod Events added. ``Events`` tab added to POD information modal with event TYPE, REASON, NAMESPACE, DATE, OBJECT & MESSAGE details :superscript:`5.4.6`
 :Monitoring: - The Monitoring Checks detail page now paginates large lists of Checks results and Check Groups :superscript:`5.4.6`
 :NSX-T: - Primary Tenant administrators can now create groups within distributed firewalls and expose them to Subtenant users. The Subtenant can create and modify rules within their allocated groups but cannot create or modify the groups themselves :superscript:`5.4.6`
-:OpenStack: - Provision Type setting added to Openstack cloud settings. Image: Relies on the openstack server API to create a volume from the specified image.
-Volume: Creates a volume which is then fed to the server api to launch a new server from the volume. :superscript:`5.4.6`
+:OpenStack: - Provision Type setting added to Openstack cloud settings. Image: Relies on the openstack server API to create a volume from the specified image. Volume: Creates a volume which is then fed to the server api to launch a new server from the volume. :superscript:`5.4.6`
 :Plans & Pricing: - Update to database schema handling pricing data to improve efficiency and performance :superscript:`5.4.6`
 :SCVMM: - Updated handling of SCVMM workloads with dynamic memory plans :superscript:`5.4.6`
 :Virtual Images: - System Ubuntu 22.04 images seeded for Amazon, Azure, DigitalOcean, ESXi, Google, Huawei, HyperV, KVM, Nutanix, Openstack, OTC, SCVMM & VMware :superscript:`5.4.6`
