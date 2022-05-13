@@ -52,8 +52,12 @@ rst_prolog = """
 
 .. role:: redguilabel
 
-.. |debianVersion| replace:: 9,10,11
-.. |oelVersion| replace:: 7.x, 8.x
+.. |debianVersions| replace:: 9,10,11
+.. |oelVersions| replace:: 7.x, 8.x
+.. |ubuntuVersions| replace:: 16.04, 18.04, 20.04, 22.04
+.. |centosVersions| replace:: 7.x. 8.x (stream)
+.. |rhelVersions| replace:: 7.x. 8.x
+.. |suseVersions| replace:: 12, 15
 
 .. |Lib| replace:: Library
 .. |LibAut| replace:: Library > Automation
