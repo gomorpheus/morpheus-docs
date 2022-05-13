@@ -21,7 +21,7 @@
      - |oelVersions|
      -
    * - SUSE SLES
-     - |suseVersions| replace:: 12, 15
+     - |suseVersions|
      -
    * - Ubuntu
      - |ubuntuVersions|
