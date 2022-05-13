@@ -10,7 +10,7 @@ Release Date: |releasedate|
 .. .. include:: highlights.rst
 
 
-|morpheus| v5.5.0 is the first version of the v5.5 Feature Branch. In addition to the features listed below not included in v5.4.6, v5.5.0 contains "under the hood" updates in support of upcoming features and capabilities.
+|morpheus| v5.5.0 is the first version of the v5.5 Standard branch of releases. In addition to the features listed below not included in v5.4.6, v5.5.0 contains "under the hood" updates in support of upcoming features and capabilities.
 
 New Features
 ============
@@ -102,6 +102,6 @@ Appliance & Agent Updates
              - Ubuntu 22.04 (Jammy) is now supported for Morpheus Appliance hosts :superscript:`5.4.6`
 
 :Agent Packages:  - Linux Node & VM Node Package Java version updated to 11.0.15+10 :superscript:`5.4.6`. MacOS agent java remains at 11.0.14+9 due to 11.0.15+10 jre macos pkg issue.
-                  - Linux Node & VM Node Package verison update to 3.2.7                 
+                  - Linux Node & VM Node Package verison update to 3.2.7
                   - Linux Node Packages now support installing Dokcer on Ubuntu 22.04 (Jammy) :superscript:`5.4.6`
                   - Windows Agent msi packages updated to 1.8.0-2 with updated certificate. Note the Morpheus Windows Agent version (1.8.0) has not changed, this update only applies to the .msi installer packages & there is no need to update existing 1.8.0 agents. :superscript:`5.4.6`
