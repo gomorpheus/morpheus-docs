@@ -8,15 +8,23 @@ Integrating Oracle Public Cloud with |morpheus| requires access to a service acc
 
 - .. toggle-header:: :header: **Oracle Cloud Policy Requirements**
 
-    - Allow group <GROUP CONTAINING SERVICE USER> to manage cluster-family in compartment <CHOSEN COMPARTMENT OR ROOT COMPARTMENT>
-    - Allow group <GROUP CONTAINING SERVICE USER> to manage compute-management-family in compartment <CHOSEN COMPARTMENT OR ROOT COMPARTMENT>
-    - Allow group <GROUP CONTAINING SERVICE USER> to manage data-catalog-family in compartment <CHOSEN COMPARTMENT OR ROOT COMPARTMENT>
-    - Allow group <GROUP CONTAINING SERVICE USER> to manage dns in compartment <CHOSEN COMPARTMENT OR ROOT COMPARTMENT>
-    - Allow group <GROUP CONTAINING SERVICE USER> to manage file-family in compartment <CHOSEN COMPARTMENT OR ROOT COMPARTMENT>
-    - Allow group <GROUP CONTAINING SERVICE USER> to manage instance-family in compartment <CHOSEN COMPARTMENT OR ROOT COMPARTMENT>
-    - Allow group <GROUP CONTAINING SERVICE USER> to manage object-family in compartment <CHOSEN COMPARTMENT OR ROOT COMPARTMENT>
-    - Allow group <GROUP CONTAINING SERVICE USER> to manage virtual-network-family in compartment <CHOSEN COMPARTMENT OR ROOT COMPARTMENT>
-    - Allow group <GROUP CONTAINING SERVICE USER> to manage volume-family in compartment <CHOSEN COMPARTMENT OR ROOT COMPARTMENT>
+    Allow group <GROUP CONTAINING SERVICE USER> to manage cluster-family in compartment <CHOSEN COMPARTMENT OR ROOT COMPARTMENT>
+
+    Allow group <GROUP CONTAINING SERVICE USER> to manage compute-management-family in compartment <CHOSEN COMPARTMENT OR ROOT COMPARTMENT>
+
+    Allow group <GROUP CONTAINING SERVICE USER> to manage data-catalog-family in compartment <CHOSEN COMPARTMENT OR ROOT COMPARTMENT>
+
+    Allow group <GROUP CONTAINING SERVICE USER> to manage dns in compartment <CHOSEN COMPARTMENT OR ROOT COMPARTMENT>
+
+    Allow group <GROUP CONTAINING SERVICE USER> to manage file-family in compartment <CHOSEN COMPARTMENT OR ROOT COMPARTMENT>
+
+    Allow group <GROUP CONTAINING SERVICE USER> to manage instance-family in compartment <CHOSEN COMPARTMENT OR ROOT COMPARTMENT>
+
+    Allow group <GROUP CONTAINING SERVICE USER> to manage object-family in compartment <CHOSEN COMPARTMENT OR ROOT COMPARTMENT>
+
+    Allow group <GROUP CONTAINING SERVICE USER> to manage virtual-network-family in compartment <CHOSEN COMPARTMENT OR ROOT COMPARTMENT>
+
+    Allow group <GROUP CONTAINING SERVICE USER> to manage volume-family in compartment <CHOSEN COMPARTMENT OR ROOT COMPARTMENT>
 
 Add Oracle Public Cloud
 ^^^^^^^^^^^^^^^^^^^^^^^
