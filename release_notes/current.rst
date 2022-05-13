@@ -30,7 +30,7 @@ New Features
 :Monitoring: - The Monitoring Checks detail page now paginates large lists of Checks results and Check Groups :superscript:`5.5.0`
 :NSX-T: - Primary Tenant administrators can now create groups within distributed firewalls and expose them to Subtenant users. The Subtenant can create and modify rules within their allocated groups but cannot create or modify the groups themselves :superscript:`5.5.0`
 :OpenStack: - Provision Type setting added to Openstack cloud settings. Image: Relies on the openstack server API to create a volume from the specified image.
-Volume: Creates a volume which is then fed to the server api to launch a new server from the volume. :superscript:`5.5.0`
+:Volume: Creates a volume which is then fed to the server api to launch a new server from the volume. :superscript:`5.5.0`
 :Plans & Pricing: - Update to database schema handling pricing data to improve efficiency and performance :superscript:`5.5.0`
 :SCVMM: - Updated handling of SCVMM workloads with dynamic memory plans :superscript:`5.5.0`
 :Virtual Images: - System Ubuntu 22.04 images seeded for Amazon, Azure, DigitalOcean, ESXi, Google, Huawei, HyperV, KVM, Nutanix, Openstack, OTC, SCVMM & VMware :superscript:`5.5.0`
@@ -95,6 +95,6 @@ Appliance & Agent Updates
              - Ubuntu 22.04 (Jammy) is now supported for Morpheus Appliance hosts :superscript:`5.5.0`
 
 :Agent Packages:  - Linux Node & VM Node Package Java version updated to 11.0.15+10 :superscript:`5.5.0`. MacOS agent java remains at 11.0.14+9 due to 11.0.15+10 jre macos pkg issue.
-                  - Linux Node & VM Node Package verison update to 3.2.7                 
+                  - Linux Node & VM Node Package verison update to 3.2.7
                   - Linux Node Packages now support installing Dokcer on Ubuntu 22.04 (Jammy) :superscript:`5.5.0`
                   - Windows Agent msi packages updated to 1.8.0-2 with updated certificate. Note the Morpheus Windows Agent version (1.8.0) has not changed, this update only applies to the .msi installer packages & there is no need to update existing 1.8.0 agents. :superscript:`5.5.0`
