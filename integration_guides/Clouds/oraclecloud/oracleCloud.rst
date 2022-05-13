@@ -1,6 +1,21 @@
 Oracle Cloud
 ------------
 
+Required Permissions
+^^^^^^^^^^^^^^^^^^^^
+
+Integrating Oracle Public Cloud with |morpheus| requires access to a service account with at least the permission set listed below. When creating an Oracle Cloud integration scoped to a specific compartment, the service account needs access only to the listed resource families within the chosen compartment. If the Cloud will be scoped to all compartments, the service account will need access to the listed resource families at the root compartment.
+
+- Allow group <GROUP CONTAINING SERVICE USER> to manage cluster-family in compartment <CHOSEN COMPARTMENT OR ROOT COMPARTMENT>
+- Allow group <GROUP CONTAINING SERVICE USER> to manage compute-management-family in compartment <CHOSEN COMPARTMENT OR ROOT COMPARTMENT>
+- Allow group <GROUP CONTAINING SERVICE USER> to manage data-catalog-family in compartment <CHOSEN COMPARTMENT OR ROOT COMPARTMENT>
+- Allow group <GROUP CONTAINING SERVICE USER> to manage dns in compartment <CHOSEN COMPARTMENT OR ROOT COMPARTMENT>
+- Allow group <GROUP CONTAINING SERVICE USER> to manage file-family in compartment <CHOSEN COMPARTMENT OR ROOT COMPARTMENT>
+- Allow group <GROUP CONTAINING SERVICE USER> to manage instance-family in compartment <CHOSEN COMPARTMENT OR ROOT COMPARTMENT>
+- Allow group <GROUP CONTAINING SERVICE USER> to manage object-family in compartment <CHOSEN COMPARTMENT OR ROOT COMPARTMENT>
+- Allow group <GROUP CONTAINING SERVICE USER> to manage virtual-network-family in compartment <CHOSEN COMPARTMENT OR ROOT COMPARTMENT>
+- Allow group <GROUP CONTAINING SERVICE USER> to manage volume-family in compartment <CHOSEN COMPARTMENT OR ROOT COMPARTMENT>
+
 Add Oracle Public Cloud
 ^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -8,11 +23,13 @@ Add Oracle Public Cloud
 
 .. note:: Information on uploading the Public Key and generating Tenancy's OCID and User's OCID can be found at https://docs.cloud.oracle.com/iaas/Content/API/Concepts/apisigningkey.htm
 
+To get started, navigate to |InfClo|. Click :guilabel:`+ ADD` and select Oracle Public Cloud to begin a new one. Configure the following options for the new Cloud:
+
 .. include:: /integration_guides/Clouds/base_options.rst
 
 Details
 ```````
-           
+
 TENANCY OCID
   The OCID string from `Tenancy Information` section in Oracle Cloud
 USER OCID
@@ -22,7 +39,7 @@ SELECT KEY PAIR
 REGION
   Select the OPC region (populates after successful account authentication)
 COMPARTMENT
-  Select Compartment (populates after successful account authentication)
+  Choose to scope the Cloud to all compartments or to one specific compartment (populates after successful account authentication)
 INVENTORY
   Turn on for |morpheus| to discover and sync existing VMs
 
