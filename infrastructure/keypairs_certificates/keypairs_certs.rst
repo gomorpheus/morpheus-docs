@@ -58,6 +58,14 @@ Once done, click :guilabel:`ADD CREDENTIALS`.
 
 With the OAuth 2.0 credential set stored, they can be set on REST-type Option Lists to source data from behind a compatible authentication wall. With a REST-type Option List open (|LibOptOpt|), click the CREDENTIALS dropdown and select the credential set you've created. Alternatively, you can add a credential set directly in the add/edit Option List modal if needed. Option Lists can be associated with Select List or Typeahead-type Inputs and applied to Layouts, Instance Types, Workflows, and more to allow for customization at provision or Workflow execution time. Additional details on creating Option Lists can be found in the Library section of |morpheus| docs.
 
+.. raw:: html
+
+    <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; height: auto;">
+        <iframe src="//www.youtube.com/embed/tB2XbXjuJGQ" frameborder="0" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
+    </div>
+
+|
+
 Installing and Integrating an External Cypher Appliance
 -------------------------------------------------------
 
