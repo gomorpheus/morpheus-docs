@@ -58,6 +58,14 @@ Once done, click :guilabel:`ADD CREDENTIALS`.
 
 With the OAuth 2.0 credential set stored, they can be set on REST-type Option Lists to source data from behind a compatible authentication wall. With a REST-type Option List open (|LibOptOpt|), click the CREDENTIALS dropdown and select the credential set you've created. Alternatively, you can add a credential set directly in the add/edit Option List modal if needed. Option Lists can be associated with Select List or Typeahead-type Inputs and applied to Layouts, Instance Types, Workflows, and more to allow for customization at provision or Workflow execution time. Additional details on creating Option Lists can be found in the Library section of |morpheus| docs.
 
+.. raw:: html
+
+    <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; height: auto;">
+        <iframe src="//www.youtube.com/embed/tB2XbXjuJGQ" frameborder="0" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
+    </div>
+
+|
+
 Integrating Hashicorp Vault
 ---------------------------
 
@@ -78,6 +86,14 @@ When done, click :guilabel:`SAVE CHANGES`.
 .. NOTE:: When creating a Vault integration, it's recommended that you use a long-lived token. If the token suddenly becomes invalid, |morpheus| will be unable to write new credential sets to Vault and will be unable to edit or delete any existing ones. Additionally, you won't be able to use Vault-stored credential sets elsewhere in |morpheus|, such as when creating new Cloud integrations or populating REST-based Option Lists which require authentication. Should this happen, simply obtain a new token, edit the Vault integration, update the token, and save your changes.
 
 With the above process finished, this Vault integration will be available as a storage target when creating new credential sets. In |InfTruCre|, after clicking :guilabel:`+ ADD` and selecting the type of credential set to add, select the new Vault integration in the CREDENTIAL STORE field (default selection is "Internal").
+
+.. raw:: html
+
+    <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; height: auto;">
+        <iframe src="//www.youtube.com/embed/VCLixoIiPKk" frameborder="0" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
+    </div>
+
+|
 
 Installing and Integrating an External Cypher Appliance
 -------------------------------------------------------
