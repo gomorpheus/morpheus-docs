@@ -79,6 +79,12 @@ When adding or editing a network there is an option to scan network.  If checked
 
 .. IMPORTANT:: Network scanning may cause network monitoring or other alerts
 
+Advanced Options (Search Domains)
+```````````````````````````````
+
+Search domains are appended to DNS searches when a **non** fully qualified domain name (short name) is queried.  Search domains can be entered as comma separated values, which will be added to DNS configurations, such as `/etc/resolv.conf`
+These domains are injected via cloud-init or other method chosen for the virtual image.
+
 Guest Console SSH Tunnel
 ````````````````````````
 
