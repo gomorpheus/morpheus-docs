@@ -584,7 +584,7 @@ Role Mappings
   * - Monitoring: Logs (Formerly Logs)
     - None, Read, User, Full
     - Determines level of access to the Logs section of |morpheus| UI. The "User" permission will allow access only to objects the user owns.
-    - |MonLog| is where Insatnce and Server logs may be viewed (does not included |morpheus| Applaince logs from |AdmHeaMorLog|).
+    - |MonLog| is where Instance and Server logs may be viewed (does not included |morpheus| Appliance logs from |AdmHeaMorLog|).
     - This permission is recommended for those who should have access to Instance and Server logs.
     -
   * - Operations: Activity
