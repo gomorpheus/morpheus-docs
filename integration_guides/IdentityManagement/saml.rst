@@ -33,13 +33,14 @@ SAML Configuration
 ^^^^^^^^^^^^^^^^^^
 
 LOGIN REDIRECT URL
-  This is the SAML endpoint |morpheus| will redirect to when a user signs into |morpheus| via SAML.
+  This is the SAML endpoint |morpheus| will redirect to when a user signs into |morpheus| via SAML
 SAML LOGOUT REDIRECT URL
-  The url morpheus will post to when a SAML user log out of |morpheus| to log out of the SAML provider as well.
+  The URL |morpheus| will POST to when a SAML user logs out of |morpheus|
 INCLUDES SAML REQUEST PARAMETER
   **Yes** (recommended) - the AuthN request will be sent via the ?SAMLRequest= parameter in the URL (GET)
   
-  **No** - the the AuthN request will be submitted in the body of the request (POST)
+  **No** - the AuthN request will be submitted in the body of the request (POST)
+
   .. NOTE:: The SAML SP documentation should mention which binding to use but GET is most common
 SAML REQUEST
   **No Signature** - No signature is used on the SAML request

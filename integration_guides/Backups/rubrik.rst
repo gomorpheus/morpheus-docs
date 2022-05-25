@@ -1,6 +1,17 @@
 Rubrik
 -------
 
+The embedded |morpheus| Rubrik Backup integraiton allow syncing, creation and managemnet of Rubrik Backups for vCenter clouds. 
+
+Features
+^^^^^^^^
+
+- Backup sync & associaiton
+- Sla Domain sync & selection
+- Backup creation, deletion & restore 
+- Restore Backups over existing vm's
+- Restore Backup as new
+
 Adding Rubrik Integration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -29,3 +40,5 @@ Adding Rubrik Integration
           Available to Sub-Tenants (master tenant option only)
 
 #. :guilabel:`SAVE`
+
+

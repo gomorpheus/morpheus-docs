@@ -35,7 +35,7 @@ Breaking Changes
 - 4.2.1+: Tasks: Python: Virtual environment are now used for Python Tasks. **Note:** ``virtualenv`` is required on all Appliance App nodes
 - 4.2.1+: Puppet: |morpheus| integration now supports version 6+. Puppet versions prior to 6 are no longer supported
 - 4.2.1+: Clouds: VirtualBox, VirtuSteam, and MetaCloud Cloud Types are no longer supported or available
-- 4.2.1+: Appliance: OS: Ubuntu 14.04 has reached its end of life (EOL) and is no longer supported as a Morpheus Appliance Host Operating System. Any |morpheus| Appliance running on 14.04 must be upgraded to 16.04, 18.04 or 20.04 BEFORE upgrading to 4.2.1+. Upgrades on 14.04 will not succeed
+- 4.2.1+: Appliance: OS: Ubuntu 14.04 has reached its end of life (EOL) and is no longer supported as a Morpheus Appliance Host Operating System. Any |morpheus| Appliance running on 14.04 must be upgraded to 16.04, 18.04, 20.04 or 22.04 BEFORE upgrading to 4.2.1+. Upgrades on 14.04 will not succeed
 
 |morpheus| Application OS
 =========================
@@ -52,11 +52,8 @@ Services
 |morphver| Service Version Changes
 ----------------------------------
 
-:Appliance: - Java: Updated jdk to v11.0.15-10
-
-:Agent Packages: - Added FIPS compliant el8 |morpheus| Agent node & vm-node packages. Compatible with RHEL 8, CentOS 8, and Oracle Linux 8
-                 - Node & VM Node Packages: Java: Updated jdk to v11.0.15+10
-
+:Appliance: - Java: Updated jdk to v11.0.15+10
+:Agent Packages: - Agent Node & VM Node Packages: Java: Updated jdk to v11.0.15+10
 
 |
 
@@ -122,6 +119,7 @@ Security
 CVEs Addressed
 --------------
 
+No CVEs mitigated since |previousMorphVer|
 |
 
 Upgrade Paths & Methods
