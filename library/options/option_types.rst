@@ -183,24 +183,9 @@ At this point, our dependent options are ready to be applied to custom Instance 
 Visibility Field
 ^^^^^^^^^^^^^^^^
 
-.. updates in progress
+The Input Visibility field allows users to set conditions under which the Input field is displayed. Visibility field accepts ``fieldName:value`` or ``fieldName:(regex)``, where "fieldName" equals the fieldName of another Input which will determine the visibility of this Input, and "value" equals the target value of the other Input (or a regex pattern that matches to the values that meet your desired conditions). You can simply enter "fieldName" when visibility should be triggered when any value is entered. When the value of the target Input matches the "value" or "(regex)" set in the Visibility field, this Input will be displayed. When the value of the target Input does not match "value" or satisfy the "(regex)" set in the Visibility field, this Input will not be displayed.
 
-The Inputs Visibility field  allows users to set conditions under which the Input field is displayed. Visibility field accepts ``fieldName:value`` or ``fieldName:(regex)``, where "fieldName" equals the fieldName of another Input which will determine the visibility of this Input, and "value" equals the value of the other Input, or "(regex)" equals the regular expression that matches to the values that meet your desired conditions. When the value of the fieldName matches the "value" or "(regex)" set in the Visibility field, this Input will be displayed. When the value of the other fieldName does not match "value" or satisfy the "(regex)" set in the Visibility field, this Input will not be displayed.
-
-Expanding on the simplified example above, we could trigger visibility based on any one of multiple selections from the same Input by using a different regular expression, such as ``color:(red|blue|yellow)``. Additionally, we are not restricted to the conditions of just one Input to determine visibility as the following would also be valid: ``color:(red|blue|yellow),shape:(square)``. In the previous example, the Input "Color" would have to be set to red, blue, or yellow `OR` the Input "Shape" would have to be set to square in order to trigger visibility of the Input currently being configured. Prepend the previous example with ``matchAll::`` in order to require both conditions to be met rather than one or the other (ex. ``matchAll::config.customOptions.color:(red|blue|yellow),config.customOptions.shape:(square)``).
-
-Putting it all together, you will first configure visibility for your selected Inputs as described above. You can see in the screenshot below I have set the Input being edited to have a visibility dependent on another Input which you can see in the background.
-
-.. image:: /images/provisioning/optionTypes/1optionType.png
-
-Next, ensure the relevant Inputs are associated with the Service Catalog Item (Tools > Self Service).
-
-.. image:: /images/provisioning/optionTypes/2configCatalogItem.png
-  :width: 50%
-
-Finally, when Service Catalog Persona users interact with my Catalog Item, they will be able to toggle additional Inputs to be visible based on their selections.
-
-.. image:: /images/provisioning/optionTypes/3toggleOption.gif
+Expanding on the simplified example above, we could trigger visibility based on any one of multiple selections from the same Input by using a different regular expression, such as ``color:(red|blue|yellow)``. Additionally, we are not restricted to the conditions of just one Input to determine visibility as the following would also be valid: ``color:(red|blue|yellow),shape:(square)``. In the previous example, the Input "Color" would have to be set to red, blue, or yellow `OR` the Input "Shape" would have to be set to square in order to trigger visibility of the Input currently being configured. Prepend the previous example with ``matchAll::`` in order to require both conditions to be met rather than one or the other (ex. ``matchAll::color:(red|blue|yellow),shape:(square)``).
 
 Required Field
 ^^^^^^^^^^^^^^
