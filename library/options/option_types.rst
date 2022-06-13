@@ -88,7 +88,7 @@ Group Custom Options
 
 To begin, we will create a new `Option List <https://docs.morpheusdata.com/en/latest/provisioning/library/library.html#option-lists>`_ In this case, we will select type of "Morpheus Api" which will populate the list based on a call to the internal |morpheus| API. Option Lists can also be populated by calls to external REST APIs or even from static lists that you enter manually. When dynamically populating Option Lists, whether via |morpheus| API or an external API, translation and/or request scripts may be needed to prepare the request or translate the results. More on that as we build out the example.
 
-I have called my Option List "Groups" and selected "Groups" from the OPTION LIST menu. This simply indicates that Groups are the construct we want to call into our list from |morpheus| API. In this case, we want to present a list of all Groups to the user by their name and pass the Group database ID in the background. Since it is common to create Option Lists from |morpheus| API where the construct name is displayed to the user and the ID is passed, we actually do not need to input any translation scripts in this case. However, I will include a translation script here which does the same thing simply to provide more clarity to the example. |morpheus| `Option List documentation <https://docs.morpheusdata.com/en/latest/provisioning/library/library.html#morpheus-api-option-list-fields>`_ includes additional details on available translation script inputs and which are available without translation as a convenience feature.
+I have called my Option List "Groups" and selected "Groups" from the OPTION LIST menu. This simply indicates that Groups are the construct we want to call into our list from |morpheus| API. In this case, we want to present a list of all Groups to the user by their name and pass the Group database ID in the background. Since it is common to create Option Lists from |morpheus| API where the construct name is displayed to the user and the ID is passed, we actually do not need to input any translation scripts in this case. However, I will include a translation script here which does the same thing simply to provide more clarity to the example. |morpheus| `Option List documentation <https://docs.morpheusdata.com/en/latest/library/options/option_lists.html>`_ includes additional details on available translation script inputs and which are available without translation as a convenience feature.
 
 .. code-block:: javascript
 
@@ -183,24 +183,9 @@ At this point, our dependent options are ready to be applied to custom Instance 
 Visibility Field
 ^^^^^^^^^^^^^^^^
 
-.. updates in progress
+The Input Visibility field allows users to set conditions under which the Input field is displayed. Visibility field accepts ``fieldName:value`` or ``fieldName:(regex)``, where "fieldName" equals the fieldName of another Input which will determine the visibility of this Input, and "value" equals the target value of the other Input (or a regex pattern that matches to the values that meet your desired conditions). You can simply enter "fieldName" when visibility should be triggered when any value is entered. When the value of the target Input matches the "value" or "(regex)" set in the Visibility field, this Input will be displayed. When the value of the target Input does not match "value" or satisfy the "(regex)" set in the Visibility field, this Input will not be displayed.
 
-The Inputs Visibility field  allows users to set conditions under which the Input field is displayed. Visibility field accepts ``fieldName:value`` or ``fieldName:(regex)``, where "fieldName" equals the fieldName of another Input which will determine the visibility of this Input, and "value" equals the value of the other Input, or "(regex)" equals the regular expression that matches to the values that meet your desired conditions. When the value of the fieldName matches the "value" or "(regex)" set in the Visibility field, this Input will be displayed. When the value of the other fieldName does not match "value" or satisfy the "(regex)" set in the Visibility field, this Input will not be displayed.
-
-Expanding on the simplified example above, we could trigger visibility based on any one of multiple selections from the same Input by using a different regular expression, such as ``color:(red|blue|yellow)``. Additionally, we are not restricted to the conditions of just one Input to determine visibility as the following would also be valid: ``color:(red|blue|yellow),shape:(square)``. In the previous example, the Input "Color" would have to be set to red, blue, or yellow `OR` the Input "Shape" would have to be set to square in order to trigger visibility of the Input currently being configured. Prepend the previous example with ``matchAll::`` in order to require both conditions to be met rather than one or the other (ex. ``matchAll::config.customOptions.color:(red|blue|yellow),config.customOptions.shape:(square)``).
-
-Putting it all together, you will first configure visibility for your selected Inputs as described above. You can see in the screenshot below I have set the Input being edited to have a visibility dependent on another Input which you can see in the background.
-
-.. image:: /images/provisioning/optionTypes/1optionType.png
-
-Next, ensure the relevant Inputs are associated with the Service Catalog Item (Tools > Self Service).
-
-.. image:: /images/provisioning/optionTypes/2configCatalogItem.png
-  :width: 50%
-
-Finally, when Service Catalog Persona users interact with my Catalog Item, they will be able to toggle additional Inputs to be visible based on their selections.
-
-.. image:: /images/provisioning/optionTypes/3toggleOption.gif
+Expanding on the simplified example above, we could trigger visibility based on any one of multiple selections from the same Input by using a different regular expression, such as ``color:(red|blue|yellow)``. Additionally, we are not restricted to the conditions of just one Input to determine visibility as the following would also be valid: ``color:(red|blue|yellow),shape:(square)``. In the previous example, the Input "Color" would have to be set to red, blue, or yellow `OR` the Input "Shape" would have to be set to square in order to trigger visibility of the Input currently being configured. Prepend the previous example with ``matchAll::`` in order to require both conditions to be met rather than one or the other (ex. ``matchAll::color:(red|blue|yellow),shape:(square)``).
 
 Required Field
 ^^^^^^^^^^^^^^
