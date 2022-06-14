@@ -119,7 +119,15 @@ Security
 CVEs Addressed
 --------------
 
-No CVEs mitigated since |previousMorphVer|
+CVEs mitigated in |morphver|
+- CVE-2016-7954 :superscript:`5.5.1`
+- CVE-2020-10663 :superscript:`5.5.1`
+- CVE-2020-8184 :superscript:`5.5.1`
+- CVE-2021-32740 :superscript:`5.5.1`
+- CVE-2021-43809 :superscript:`5.5.1`
+- CVE-2021-22573 :superscript:`5.5.1`
+- CVE-2022-2988 :superscript:`5.5.1`
+
 |
 
 Upgrade Paths & Methods
