@@ -14,7 +14,7 @@ New Features
 ============
 
 :API & CLI: - Refresh Clouds (Daily, Short, and Costing refresh) manually through |morpheus| API and CLI as you can currently in |morpheus| UI. :superscript:`5.5.1`
-:Kubernetes: - Pod detail pages added with stats, statuses and tags plus tabs with metadata, spec, status, config, raw, events and logs.. :superscript:`5.5.1`
+:Kubernetes: - Pod detail pages added with stats, statuses and tags plus tabs with metadata, spec, status, config, raw, events and logs. :superscript:`5.5.1`
 
 Fixes
 =====
