@@ -120,6 +120,7 @@ CVEs Addressed
 --------------
 
 CVEs mitigated in |morphver|
+
 - CVE-2016-7954 :superscript:`5.5.1`
 - CVE-2020-10663 :superscript:`5.5.1`
 - CVE-2020-8184 :superscript:`5.5.1`
