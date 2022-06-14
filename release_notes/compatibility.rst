@@ -100,7 +100,7 @@ When externalizing MySQL, Elasticsearch and/or RabbitMQ services, the following 
      - |morphver| Changes
    * - Morpheus Node and VM Node Packages
      - |nodePackageVer|
-     - Node & VM Node Packages: Java: Updated jdk to v11.0.15+10
+     - Node & VM Node Packages: Node & VM Package version now |nodePackageVer|
    * - Morpheus Linux Agent
      - |linuxagentver|
      - No changes
@@ -128,6 +128,13 @@ CVEs mitigated in |morphver|
 - CVE-2021-43809 :superscript:`5.5.1`
 - CVE-2021-22573 :superscript:`5.5.1`
 - CVE-2022-2988 :superscript:`5.5.1`
+
+|
+
+Plugin API Compatibility
+========================
+
+Compatible Plugin API version: |pluginVer|
 
 |
 
