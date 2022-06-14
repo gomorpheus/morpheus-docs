@@ -18,7 +18,7 @@ Base Requirements
 - Network connectivity from your users to the appliance over TCP 443 (HTTPS)
 - Superuser privileges via the ``sudo`` command for the user installing the |morpheus| appliance package
 - Required repository access:
-    - Prior to installing the |morpheus| Appliance you will need to ensure that the target server or virtual machine has access to the base YUM or APT repositories
+    - Prior to installing the |morpheus| Appliance you will need to ensure that the target server or virtual machine has access to the base YUM/DNF or APT repositories
     - A RHEL 8 server requires the ``codeready`` (codeready-builder-for-rhel-8-x86_64-rpms) repository be enabled and accessible
     - A RHEL 7 server requires access to Optional RPMs repo. The repository need to be enabled and accessible
 - An appliance license is required for any operations involving provisioning
