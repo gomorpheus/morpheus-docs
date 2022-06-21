@@ -24,14 +24,15 @@ Fixes
              - Fixed an issue causing errors when attempting to create Option Lists via |morpheus| API. :superscript:`5.5.1`
              - Fixed an issue that would clear pools if NSX-T networks were updated over |morpheus| API without a pool config in the payload. :superscript:`5.5.1`
              - The securityMode property for clouds is now an input and output parameter for surfacing the Local Firewall setting through |morpheus| API. :superscript:`5.5.1`
-             - When creating users in a Tenant via |morpheus| API and passing an invalid Role ID, a warning is presented to the user rather than creating a user with the first Role in the list. :superscript:`5.5.1`
+             - When creating users in a Tenant via |morpheus| API and passing an invalid Role ID, a warning is presented to the user rather than creating a user with the first Role in the list :superscript:`5.5.1`
              - When you pass in an offset property for a GET call to return all networks, the offset is returned as an integer in the meta block rather than a string. :superscript:`5.5.1`
 :Amazon: - Fixed an issue that could prevent AWS Clouds using Assume Role from working with Security Groups under certain configurations. :superscript:`5.5.1`
 :Ansible Tower: - Fixed an issue that could cause Ansible Tower integrations not to sync in all available templates. :superscript:`5.5.1`
 :Ansible: - Accessing an Instance Layout version from an Ansible Task now returns the correct version value rather than "unknown". :superscript:`5.5.1`
-:Apps: - Fixed an issue that could cause costs to be revealed in the provisioning wizard even when "Show Pricing" was switched off (Administration > Settings > Provisioning). :superscript:`5.5.1`
+:Apps: - Fixed an issue that could cause costs to be revealed in the provisioning wizard even when "Show Pricing" was switched off (Administration > Settings > Provisioning) :superscript:`5.5.1`
 :Azure: - Added improvements to Azure Instance cost computations. :superscript:`5.5.1`
          - Fixed an issue that caused the "Assign Public IP DNS" checkbox present in Azure and Azure Stack provisioning not to work properly. :superscript:`5.5.1`
+         - Improved Azure costing calculations including a fix for an issue that could duplicate line items and create incorrectly high cost figures, a fix for an issue related to computing price from cost, and a workaround for issues stemming from costs syncs that take longer than an hour and the token expires :superscript:`5.5.1`
 :BIND DNS: - BIND DNS integrations can now be deleted properly when no longer needed. :superscript:`5.5.1`
             - BIND integrations can now be removed from |morpheus|. :superscript:`5.5.1`
 :Backups: - Fixed an issue that caused Veeam backups to fail when backups or VMs with identical names existed in multiple Tenants. :superscript:`5.5.1`

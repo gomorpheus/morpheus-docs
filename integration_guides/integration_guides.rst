@@ -15,15 +15,16 @@ Guides
    /getting_started/guides/autoinstall_app.rst
    /getting_started/guides/op_workflows.rst
    /getting_started/guides/xaas_instance.rst
-   /getting_started/guides/custom_reports.rst
-   /getting_started/guides/instance_tabs.rst
-   /getting_started/guides/catalog_layout.rst
    /getting_started/guides/vdi_guide.rst
    /getting_started/guides/terraform_instances.rst
    /getting_started/guides/backup_restore.rst
    /getting_started/guides/tagging_guide.rst
    /getting_started/guides/cypher_policies.rst
    /getting_started/guides/groups_roles_perms.rst
+   ..
+     /getting_started/guides/custom_reports.rst
+     /getting_started/guides/instance_tabs.rst
+     /getting_started/guides/catalog_layout.rst
 
 .. toctree::
    :maxdepth: 1
