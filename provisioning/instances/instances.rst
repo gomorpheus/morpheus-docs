@@ -15,7 +15,7 @@ Virtual Machine
 
 The top of the main Instances page shows overall statistics for the listed Instances, including count, status, and resource utilization. You can search for Instances by name, or filter by group, instance type, or category.
 
-.. NOTE:: Instances listed are determined by group access and role permissions.
+.. NOTE:: Instances listed are determined by group access and role permissions. When filtered to show Instances of "All Statuses", any Instances which are in a state of pending removal due to a delayed delete policy in place are not shown under this filter. Instead you must filter for "Pending Removal" to see these Instances and prevent deletion, if desired.
 
 The Instance list contains important information about each instance, including the instance name, environment tag, instance type icon, IP address and port info, Instance version, the number of virtual machines or containers in the instance, the group the instance is in, and the cloud or clouds the instance is in.
 
