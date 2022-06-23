@@ -28,7 +28,7 @@ Cluster Resource Name
 Cypher Access
   Granularly set LIST, READ, WRITE, and DELETE access to arbitrary Cypher secret paths scoped globally or to specific Roles and Users. See the section below for a guide to establishing a Cypher access policy.
 Delayed Delete
-  Delayed Delete Policies allow for soft deletion of Instances and Apps. Instead of deleting immediately, Instances and Apps with a Delayed Removal policy applied will be shutdown upon deletion request and hidden by default from the UI. The Instance/App will then be in ``Pending Removal`` status.
+  Delayed Delete Policies allow for soft deletion of Instances and Apps. Instead of deleting immediately, Instances and Apps with a Delayed Delete policy applied will be shutdown upon deletion request and hidden by default from the UI. The Instance/App will then be in ``Pending Removal`` status. In order to see Instances pending deletion on the Instances list page (|ProIns|), you must filter for "Pending Removal" status. These Instances will not show when filtered for "All Statuses"
 Expiration
   Sets an expiration timeframe in days after which the Instance will be deleted. Extensions can be auto-approved or require approval immediately or after x amount of auto-extensions using Morpheus Approvals or an Approval Integration. See |morpheus| `Knowledge Base <https://support.morpheusdata.com/s/article/How-to-create-an-extensions>`_ for more information about Expiration policies
 File Share Storage Quota
