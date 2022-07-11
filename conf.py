@@ -209,7 +209,10 @@ rst_prolog = """
 .. |AdmSetLic| replace:: Administration > Settings > License
 .. |AdmSetUti| replace:: Administration > Settings > Utilities
 
-
+.. |advSevCrit| replace:: Critical ⬛️
+.. |advSevHigh| replace:: High 🟥
+.. |advSevMed| replace:: Medium 🟨
+.. |advSevLow| replace:: Low 🟩
 """
 
 
