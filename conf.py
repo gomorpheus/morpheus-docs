@@ -208,6 +208,8 @@ rst_prolog = """
 .. |AdmSetSof| replace:: Administration > Settings > Software Licenses
 .. |AdmSetLic| replace:: Administration > Settings > License
 .. |AdmSetUti| replace:: Administration > Settings > Utilities
+
+
 """
 
 

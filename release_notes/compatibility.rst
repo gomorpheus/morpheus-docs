@@ -133,10 +133,15 @@ Security Advisories
     - Severity
     - Description
     - Updated On
-  * - `MOR20220611-01 <https://nvd.nist.gov/vuln/detail/CVE-2022-31261>`_
+  * - `MOR20220611-01 <https://docs.morpheusdata.com/en/latest/security/mor22060801.html>`_
     - High
     - An XXE issue was discovered in |morpheus| through 5.2.16 and 5.4.x through 5.4.4
     - 06-08-2022
+  * - `MOR20220611-02 <https://nvd.nist.gov/vuln/detail/CVE-2022-31261>`_
+    - High
+    - An XXE issue was discovered in |morpheus| through 5.2.16 and 5.4.x through 5.4.4
+    - 06-08-2022
+
 
 Upgrade Paths & Methods
 =======================
