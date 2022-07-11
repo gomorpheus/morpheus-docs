@@ -125,7 +125,7 @@ No CVEs mitigated since |previousMorphVer|
 Security Advisories
 -------------------
 
-.. list-table:: |morpheus| Security Advisories
+.. list-table::
   :widths: auto
   :header-rows: 1
 
@@ -133,7 +133,7 @@ Security Advisories
     - Severity
     - Description
     - Updated On
-  * - `MOR20220611-01 <https://docs.morpheusdata.com/en/latest/security/mor22060801.html>`_
+  * - `MOR20220611-01 <https://docs.morpheusdata.com/en/advisory-page/security/mor22060801.html>`_
     - High
     - An XXE issue was discovered in |morpheus| through 5.2.16 and 5.4.x through 5.4.4
     - 06-08-2022
