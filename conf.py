@@ -15,6 +15,7 @@ rst_prolog = """
 .. |minUpgradeVer| replace:: v5.2.0
 .. |previousMorphVer| replace:: v5.4.7
 .. |pluginVer| replace:: 0.12.5
+.. |workerVer| replace:: 5.4.8
 .. |rmqbranch| replace:: v3.5-3.9
 .. |rmqver| replace:: v3.9.20
 .. |mysqlbranch| replace:: v5.7
@@ -207,6 +208,7 @@ rst_prolog = """
 .. |triangledown| unicode:: U+25BD .. TRIANGLE DOWN ICON
 .. |rightarrow| unicode:: U+2192 .. RIGHT ARROW ICON
 .. |pencil| unicode:: U+270E .. EDIT ICON
+.. |checkmark| unicode:: U+2713 .. CHECK MARK
 
 .. role:: redguilabel
 """
