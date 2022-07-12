@@ -149,15 +149,16 @@ Services
 
 |
 
-Security
-========
+.. 
+  Security
+  ========
 
-CVEs Addressed
---------------
+  CVEs Addressed
+  --------------
 
-CVEs mitigated in |morphver|
+  CVEs mitigated in |morphver|
 
-|
+  |
 
 Plugin API Compatibility
 ========================

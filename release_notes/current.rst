@@ -50,12 +50,13 @@ Fixes
 Appliance & Agent Updates
 =========================
 
-:Appliance: - Elasticsearch upgraded to 7.17.5. :superscript:`5.5.1`
-            - Embedded Elasticsearch TLS & Basic Authentication support added. :superscript:`5.5.1`
-            - Improved Elasticsearch cleanup job to handle non-system or morpheus created indices.. :superscript:`5.5.1`
+:Appliance: - Curl updated to 7.84.0 :superscript:`5.5.1`
+            - Elasticsearch upgraded to 7.17.5. :superscript:`5.5.1`
+            - Embedded Elasticsearch 'secure_mode' added with TLS & Basic Authentication support. :superscript:`5.5.1`
+            - Improved Elasticsearch cleanup job to handle plugin indices.. :superscript:`5.5.1`
             - OpenSSL upgraded to 1.1.1p. :superscript:`5.5.1`
+            - Nginx updated to v1.22.0 :superscript:`5.5.1`
             - RabbitMQ and Erlang upgraded to 3.9.20 and 23.3.4.2, respectively. :superscript:`5.5.1`
             - Tomcat upgraded to 9.0.64. :superscript:`5.5.1`
             - Added `bitcan['backup_directory']` and `bitcan['working_directory']` morpheus.rb config options to override default working paths for backups
 
-.. ..
