@@ -27,7 +27,7 @@ Fixes
 :Buckets: - There is no longer a pipe character ("|") superimposed over the bucket name on a bucket detail page. :superscript:`5.5.1`
 :Costing: - Additional work has been done on Azure costing to add further reduction in duplicated invoice line items. :superscript:`5.5.1`
 :Distributed Worker: - Fixed issue with image uploads using morpheus worker hitting Socket Buffer limit.
-:Google Cloud (GCP): - Improved plan matching for GCP workloads. previously |morpheus| would not set the plan and stats for dicovered vm's for a subset of gcp service plans. :superscript:`5.5.1`
+:Google Cloud (GCP): - Improved plan matching for GCP workloads. Previously, |morpheus| would not set the plan and stats for discovered VMs for a subset of GCP service plans. :superscript:`5.5.1`
 :Inputs: - Dependent Inputs are now populated correctly when displayed in App Blueprint deployments. :superscript:`5.5.1`
          - Inputs dependent on other Inputs are now populated correctly when displayed on an Edit Instance dialog. :superscript:`5.5.1`
 :Instances: - Fixed an issue that could cause Windows Server 2022 Instances to hang on reconfigure. :superscript:`5.5.1`
@@ -59,4 +59,3 @@ Appliance & Agent Updates
             - Added `bitcan['backup_directory']` and `bitcan['working_directory']` morpheus.rb config options to override default working paths for backups
 
 .. ..
-
