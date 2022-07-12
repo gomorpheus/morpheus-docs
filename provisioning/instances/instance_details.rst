@@ -23,6 +23,6 @@ Logs
 Environment
   View the environment variables presented to the instances or exported by the instances via Apps (more on this in the Apps section). Even see Imported environment variables that may be referenced by the running instance.
 Scale
-  For instances that support load balancing and auto scaling. Easily configure auto scaling thresholds and load balancer settings that pertain to a particular instance. When creating a scale schedule for already-provisioned Instances, a timezone selection is not shown because |morpheus| automatically detects the timezone configuration of the web browser.
+  For instances that support load balancing and auto scaling. Easily configure auto scaling thresholds and load balancer settings that pertain to a particular instance. When creating a scale schedule for already-provisioned Instances, a timezone selection is not shown because |morpheus| automatically detects the timezone configuration of the web browser. "Library: Threshold" Role permission is required on the Tenant and User Role to see the Scale section of the Instance detail.
 Console
   Access the instance or container via a client-less Console supporting SSH, RDP, VNC, and even hypervisor level remote consoles.
