@@ -65,6 +65,8 @@ Backups
 
 |morpheus| can offload snapshots when performing backups to local or other Storage Providers. By default when no Storage Provider has been added, backups will write to ``/var/opt/morpheus/bitcan/backups/``. When using none NFS Storage providers, the backup file(s) must be written to ``/var/opt/morpheus/bitcan/working/`` before they can be zipped, sent to the destination Storage provider such as S3, and removed from ``/var/opt/morpheus/bitcan/working/``. Please ensure adequate space in ``/var/opt/morpheus/bitcan/`` when offloading Backups.
 
+.. note:: The backup /working and /backups paths are configurable in morpheus.rb with `bitcan['working_directory'] = '$path'` and `bitcan['backup_directory'] = '/tmp'`
+
 Migrations
 ^^^^^^^^^^
 
