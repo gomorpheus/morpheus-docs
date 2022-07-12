@@ -52,7 +52,7 @@ Default Paths
   User, Application and Services Data, including default config Elasticsearch, RabbitMQ and Database data, and default Virtual Image path.
 ``/var/log``
   Morpheus Service logs
-``/tmp/morpheus``
+``/var/opt/morpheus/bitcan/``
   Working directory for Backups
 
 Images
@@ -63,7 +63,7 @@ Virtual Images can be uploaded to |morpheus| Storage Providers for use across Cl
 Backups
 ^^^^^^^
 
-|morpheus| can offload snapshots when performing backups to local or other Storage Providers. By default when no Storage Provider has been added, backups will write to ``/tmp/morpheus/backups/``. When using none NFS Storage providers, the backup file(s) must be written to ``/tmp/morpheus/working/`` before they can be zipped, sent to the destination Storage provider such as S3, and removed from ``/tmp/morpheus/working/``. Please ensure adequate space in ``/tmp/morpheus/`` when offloading Backups.
+|morpheus| can offload snapshots when performing backups to local or other Storage Providers. By default when no Storage Provider has been added, backups will write to ``/var/opt/morpheus/bitcan/backups/``. When using none NFS Storage providers, the backup file(s) must be written to ``/var/opt/morpheus/bitcan/working/`` before they can be zipped, sent to the destination Storage provider such as S3, and removed from ``/var/opt/morpheus/bitcan/working/``. Please ensure adequate space in ``/var/opt/morpheus/bitcan/`` when offloading Backups.
 
 Migrations
 ^^^^^^^^^^
