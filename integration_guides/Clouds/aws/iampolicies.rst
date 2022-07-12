@@ -1,42 +1,60 @@
 .. _MinimumIAMPolicies:
 
-Minimum AWS IAM Policies
+AWS IAM Permissions
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-Below are the AWS IAM Permissions covering the minimum access for |morpheus| applying to all resources and services.
+Below are the AWS IAM Permissions required for |morpheus| services.
 
-See http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies.html for more information.
+autoscaling
+```````````
 
+.. code-block::
 
-Morpheus Sample AWS IAM Policy
-``````````````````````````````
-
-.. code-block:: json
-
-  {
-      "Version": "2012-10-17",
-      "Statement": [
-          {
-              "Sid": "VisualEditor0",
-              "Effect": "Allow",
-              "Action": [
-                  "autoscaling:DescribeAutoScalingGroups",
-                  "autoscaling:CreateAutoScalingGroup",
-                  "autoscaling:UpdateAutoScalingGroup",
-                  "autoscaling:DeleteAutoScalingGroup",
-                  "autoscaling:DeleteLaunchConfiguration",
-                  "autoscaling:DescribePolicies",
-                  "autoscaling:DetachInstances",
                   "autoscaling:AttachInstances",
                   "autoscaling:AttachLoadBalancerTargetGroups",
-                  "autoscaling:DescribeLoadBalancers",
+                  "autoscaling:CreateAutoScalingGroup",
+                  "autoscaling:DeleteAutoScalingGroup",
+                  "autoscaling:DeleteLaunchConfiguration",
+                  "autoscaling:DeletePolicy",
                   "autoscaling:DescribeAutoScalingGroups",
                   "autoscaling:DescribeLaunchConfigurations",
+                  "autoscaling:DescribeLoadBalancers",
+                  "autoscaling:DescribePolicies",
+                  "autoscaling:DetachInstances",
                   "autoscaling:PutScalingPolicy",
-                  "autoscaling:DeletePolicy",
+                  "autoscaling:UpdateAutoScalingGroup",
+
+costexplorer
+````````````
+.. code-block::
+
                   "ce:*",
+
+cloudformation
+``````````````
+.. code-block::
+
+                  "cloudformation:CreateStack",
+                  "cloudformation:DeleteStack",
+                  "cloudformation:DescribeStackEvents",
+                  "cloudformation:DescribeStackResources",
+                  "cloudformation:DescribeStacks",
+                  "cloudformation:GetTemplate",
+                  "cloudformation:UpdateStack",
+                  "cloudformation:ValidateTemplate",
+cloudwatch
+```````````
+.. code-block::
+
+                  "cloudwatch:DeleteAlarms",
                   "cloudwatch:DescribeAlarms",
                   "cloudwatch:GetMetricStatistics",
+                  "cloudwatch:PutMetricAlarm",
+
+ec2
+```````````
+.. code-block::
+
                   "ec2:AllocateAddress",
                   "ec2:AssignPrivateIpAddresses",
                   "ec2:AssociateAddress",
@@ -58,10 +76,13 @@ Morpheus Sample AWS IAM Policy
                   "ec2:CreateNetworkAcl",
                   "ec2:CreateNetworkAclEntry",
                   "ec2:CreateNetworkInterface",
+                  "ec2:CreateRoute",
                   "ec2:CreateSecurityGroup",
                   "ec2:CreateSnapshot",
+                  "ec2:CreateSubnet",
                   "ec2:CreateTags",
                   "ec2:CreateVolume",
+                  "ec2:CreateVpc",
                   "ec2:DeleteEgressOnlyInternetGateway",
                   "ec2:DeleteInternetGateway",
                   "ec2:DeleteKeyPair",
@@ -69,15 +90,20 @@ Morpheus Sample AWS IAM Policy
                   "ec2:DeleteNetworkAcl",
                   "ec2:DeleteNetworkAclEntry",
                   "ec2:DeleteNetworkInterface",
+                  "ec2:DeleteRoute",
                   "ec2:DeleteSecurityGroup",
                   "ec2:DeleteSnapshot",
+                  "ec2:DeleteSubnet",
                   "ec2:DeleteTags",
                   "ec2:DeleteVolume",
+                  "ec2:DeleteVpc",
                   "ec2:DeregisterImage",
                   "ec2:DescribeAccountAttributes",
                   "ec2:DescribeAddresses",
                   "ec2:DescribeAvailabilityZones",
                   "ec2:DescribeClassicLinkInstances",
+                  "ec2:DescribeClientVpnConnections",
+                  "ec2:DescribeClientVpnEndpoints",
                   "ec2:DescribeConversionTasks",
                   "ec2:DescribeEgressOnlyInternetGateways",
                   "ec2:DescribeExportTasks",
@@ -95,6 +121,7 @@ Morpheus Sample AWS IAM Policy
                   "ec2:DescribeNetworkInterfaceAttribute",
                   "ec2:DescribeNetworkInterfaces",
                   "ec2:DescribeRegions",
+                  "ec2:DescribeRouteTables",
                   "ec2:DescribeSecurityGroupReferences",
                   "ec2:DescribeSecurityGroups",
                   "ec2:DescribeSnapshotAttribute",
@@ -129,6 +156,7 @@ Morpheus Sample AWS IAM Policy
                   "ec2:ModifyInstanceAttribute",
                   "ec2:ModifyNetworkInterfaceAttribute",
                   "ec2:ModifySnapshotAttribute",
+                  "ec2:ModifySubnetAttribute",
                   "ec2:ModifyVolumeAttribute",
                   "ec2:RebootInstances",
                   "ec2:RegisterImage",
@@ -147,11 +175,56 @@ Morpheus Sample AWS IAM Policy
                   "ec2:TerminateInstances",
                   "ec2:UnassignPrivateIpAddresses",
                   "ec2:UpdateSecurityGroupRuleDescriptionsEgress",
+
+eks
+```````````
+.. code-block::
+
                   "eks:*",
+
+elasticloadbalancing
+````````````````````
+.. code-block::
+
+                  "elasticloadbalancing:AddTags",
+                  "elasticloadbalancing:ApplySecurityGroupsToLoadBalancer",
+                  "elasticloadbalancing:AttachLoadBalancerToSubnets",
+                  "elasticloadbalancing:CreateListener",
+                  "elasticloadbalancing:CreateLoadBalancer", 
+                  "elasticloadbalancing:CreateRule",
+                  "elasticloadbalancing:CreateTargetGroup",
+                  "elasticloadbalancing:DeleteListener",
+                  "elasticloadbalancing:DeleteLoadBalancer",
+                  "elasticloadbalancing:DeleteRule",
+                  "elasticloadbalancing:DeleteTargetGroup",
                   "elasticloadbalancing:DescribeLoadBalancers",
+                  "elasticloadbalancing:DescribeRules",
+                  "elasticloadbalancing:DescribeTargetGroups",
+                  "elasticloadbalancing:ModifyListener",
+                  "elasticloadbalancing:ModifyTargetGroupAttributes",
+                  "elasticloadbalancing:RegisterTargets",
+                  "elasticloadbalancing:SetSecurityGroups",
+                  "elasticloadbalancing:SetSubnets",
+
+elasticsearch
+`````````````
+.. code-block::
+
+                  "es:DescribeElasticsearchDomains",
+                  "es:ListDomainNames",
+
+iam
+```````````
+.. code-block::
+
                   "iam:ListGroups",
                   "iam:ListInstanceProfiles",
                   "iam:ListRoles",
+
+rds
+```````````
+.. code-block::
+
                   "rds:AddRoleToDBCluster",
                   "rds:AddTagsToResource",
                   "rds:ApplyPendingMaintenanceAction",
@@ -207,9 +280,22 @@ Morpheus Sample AWS IAM Policy
                   "rds:RestoreDBInstanceFromDBSnapshot",
                   "rds:RestoreDBInstanceToPointInTime",
                   "rds:RevokeDBSecurityGroupIngress",
+                  "rds:StartDBInstance",
+                  "rds:StopDBInstance",
+
+route53
+```````````
+.. code-block::
+
+                  "route53:ChangeResourceRecordSets",
                   "route53:GetHostedZone",
                   "route53:ListHostedZones",
                   "route53:ListResourceRecordSets",
+
+s3
+```````````
+.. code-block::
+
                   "s3:AbortMultipartUpload",
                   "s3:CreateBucket",
                   "s3:DeleteBucket",
@@ -223,39 +309,12 @@ Morpheus Sample AWS IAM Policy
                   "s3:ListBucketMultipartUploads",
                   "s3:ListBucketVersions",
                   "s3:ListMultipartUploadParts",
-                  "s3:PutObject"
-              ],
-              "Resource": "*"
-          }
-      ]
-  }
+                  "s3:PutObject",
 
-Resource Filter
+Systems Manager
 ```````````````
+.. code-block::
 
-If you need to limit actions based on filters you have to pull out the action and put it in a resource based policy since not all the actions support resource filters.
+                  "ssm:GetParameters"
 
-See http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-iam-actions-resources.html for more info on limiting resources by filter.
 
-Resource filter example:
-
-.. code-block:: json
-
- {
-   "Effect": "Allow",
-   "Action": [
-    "ec2:StopInstances",
-    "ec2:StartInstances"
-   ],
-   "Resource": *
-  },
-  {
-   "Effect": "Allow",
-   "Action": "ec2:TerminateInstances",
-   "Resource": "arn:aws:ec2:us-east-1:123456789012:instance/*",
-   "Condition": {
-     "StringEquals": {
-        "ec2:ResourceTag/purpose": "test"
-      }
-    }
-  }
