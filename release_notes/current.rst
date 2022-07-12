@@ -61,6 +61,7 @@ Fixes
 :Invoices: - Fixed an issue that could cause the Cloud filter on the Invoice list page to show invoices for Clouds outside the filter parameter :superscript:`5.5.0`
 :Kubernetes: - Fixed an issue that could cause "Add Job" to fail for Kubernetes clusters in some scenarios :superscript:`5.5.0`
               - Fixed an issue that would leave external Kubernetes clusters in a "warning" status due to an inability to render cronjobs on the cluster :superscript:`5.5.0`
+              - Fixed an issue with removing cluster records internally caused by associated storage volume references.
 :Library: - Fixed issues with some standard catalog Debian Layouts which had issues provisioning to certain Clouds
            - The Library menu in |morpheus| UI is now visible when the user's role permissions give them access only to the Power Schedule section :superscript:`5.5.0`
 :Network: - Fixed an issue that caused 500 errors to be thrown when editing a security group scoped to all Clouds to add a location :superscript:`5.5.0`
