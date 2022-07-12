@@ -3,27 +3,27 @@ import datetime
 master_doc = 'index'
 
 latex_documents = [
-    (master_doc, 'morpheus_5.4.7-1.tex', u'Morpheus Documentation',
+    (master_doc, 'morpheus_5.4.8-1.tex', u'Morpheus Documentation',
      u'Morpheus', 'manual'),
 ]
 
 rst_prolog = """
 
-.. |releasedate| replace:: June 14 2022
+.. |releasedate| replace:: July 12 2022
 .. |morphbranch| replace:: v5.4
-.. |morphver| replace:: v5.4.7
+.. |morphver| replace:: v5.4.8
 .. |minUpgradeVer| replace:: v5.2.0
-.. |previousMorphVer| replace:: v5.4.6
+.. |previousMorphVer| replace:: v5.4.7
 .. |pluginVer| replace:: 0.12.5
 .. |rmqbranch| replace:: v3.5-3.9
-.. |rmqver| replace:: v3.9.8
+.. |rmqver| replace:: v3.9.20
 .. |mysqlbranch| replace:: v5.7
 .. |mysqlver| replace:: v5.7.37
-.. |mysqlverfips| replace:: v.5.7.35
+.. |mysqlverfips| replace:: v5.7.37
 .. |esbranch| replace:: v7.x
-.. |esver| replace:: v7.8.1
-.. |tcver| replace:: v9.0.63
-.. |nginxver| replace:: v1.20.1
+.. |esver| replace:: v7.17.5
+.. |tcver| replace:: v9.0.64
+.. |nginxver| replace:: v1.22.1
 .. |nodePackageVer| replace:: 3.2.8
 .. |linuxagentver| replace:: v2.3.2
 .. |macagentver| replace:: v2.3.2
@@ -32,9 +32,9 @@ rst_prolog = """
 .. |java-mac| replace:: 11.0.14+9
 .. |openjdk-jre| replace:: 11.0.15+10
 .. |openjdk-elasticsearch| replace:: 14.0.2+12
-.. |openssl| replace:: 1.1.1l
+.. |openssl| replace:: 1.1.1g
 .. |openssl_fips| replace:: 1.0.2u
-.. |erlang| replace:: 23.2
+.. |erlang| replace:: 24.3
 
 .. |morpheus| replace:: Morpheus
 .. |morphues| replace:: Morpheus
@@ -43,15 +43,6 @@ rst_prolog = """
 .. |master tenant| replace:: Master Tenant
 .. |profileObjects| replace:: Clouds
 .. |profileTypes| replace:: Terraform, Key/Value
-
-.. |trash| unicode:: 0x0001F5D1 .. TRASH ICON
-.. |gear| unicode:: U+02699 .. GEAR ICON
-.. |info| unicode:: U+2139 .. INFO ICON
-.. |triangledown| unicode:: U+25BD .. TRIANGLE DOWN ICON
-.. |rightarrow| unicode:: U+2192 .. RIGHT ARROW ICON
-.. |pencil| unicode:: U+270E .. EDIT ICON
-
-.. role:: redguilabel
 
 .. |debianVersions| replace:: 9,10,11
 .. |oelVersions| replace:: 7.x, 8.x
@@ -209,6 +200,15 @@ rst_prolog = """
 .. |AdmSetSof| replace:: Administration > Settings > Software Licenses
 .. |AdmSetLic| replace:: Administration > Settings > License
 .. |AdmSetUti| replace:: Administration > Settings > Utilities
+
+.. |trash| unicode:: 0x0001F5D1 .. TRASH ICON
+.. |gear| unicode:: U+02699 .. GEAR ICON
+.. |info| unicode:: U+2139 .. INFO ICON
+.. |triangledown| unicode:: U+25BD .. TRIANGLE DOWN ICON
+.. |rightarrow| unicode:: U+2192 .. RIGHT ARROW ICON
+.. |pencil| unicode:: U+270E .. EDIT ICON
+
+.. role:: redguilabel
 """
 
 

@@ -52,8 +52,13 @@ Services
 |morphver| Service Version Changes
 ----------------------------------
 
-:Appliance: - Java: Updated jdk to v11.0.15+10
-:Agent Packages: - Agent Node & VM Node Packages: Java: Updated jdk to v11.0.15+10
+:Appliance: - curl updated to 7.84.0
+            - Elasticsearch updated to 7.17.5
+            - erlang updated to v24.3, patch 24.3.4.2
+            - Nginx updated to v1.22.0
+            - Openssl updated to v1.1.1p
+            - RabbitMQ updated to 3.9.20
+            - Tomcat Updated to v9.0.64
 
 |
 
@@ -100,7 +105,7 @@ When externalizing MySQL, Elasticsearch and/or RabbitMQ services, the following 
      - |morphver| Changes
    * - Morpheus Node and VM Node Packages
      - |nodePackageVer|
-     - Node & VM Node Packages: Node & VM Package version now |nodePackageVer|
+     - No changes
    * - Morpheus Linux Agent
      - |linuxagentver|
      - No changes
@@ -121,13 +126,6 @@ CVEs Addressed
 
 CVEs mitigated in |morphver|
 
-- CVE-2016-7954 :superscript:`5.5.1`
-- CVE-2020-10663 :superscript:`5.5.1`
-- CVE-2020-8184 :superscript:`5.5.1`
-- CVE-2021-32740 :superscript:`5.5.1`
-- CVE-2021-43809 :superscript:`5.5.1`
-- CVE-2021-22573 :superscript:`5.5.1`
-- CVE-2022-2988 :superscript:`5.5.1`
 
 |
 
