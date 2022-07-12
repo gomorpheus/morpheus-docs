@@ -76,7 +76,7 @@ Services
    * - Plugin API
      - 
      - |pluginVer|
-     - |checkmark|
+     - 
    * - Morpheus Worker
      - 
      - |workerVer|
