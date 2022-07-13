@@ -4,10 +4,13 @@
 |morphver| Release Notes
 *************************
 
-Compatible Plugin API version: |pluginVer|
-Compatible Morpheus Worker version: |workerVer|
+- Compatible Plugin API version: |pluginVer|
+- Compatible Morpheus Worker version: |workerVer|
+
+.. .. important:: Morpheus Worker v5.4.8 also released. Morpheus v5.4.8 requires Morpheus Worker v5.4.8. Please upgrade any existing Morpheus Workers to the v5.4.8 package.
 
 .. NOTE:: Items appended with :superscript:`5.x.x` are also included in that version
+
 .. .. include:: highlights.rst
 
 New Features
@@ -15,7 +18,7 @@ New Features
 
 :Blueprints: - Fixed an issue that prevented provisioning some App Blueprints from CloudFormation templates with certain AMI ID parameter formats. :superscript:`5.5.1`
 :Clouds: - Updated Cloud logos which were out of date. :superscript:`5.5.1`
-:Worker: - Morpheus Worker v5.4.8 release. Note: Morpheus v5.4.8 requires Morpheus Worker v5.4.8. Please upgrade any existing Morpheus Workers to the v5.4.8 package.
+:Worker: - Morpheus Worker v5.4.8 release. Note: v5.4.8 Gateway/Worker is the compatible version for Morpheus v5.4.8 Appliances. Previous Gateway/Worker versions must be upgraded to v5.4.8 for compatibility with Morpheus v5.4.8 Appliances.
          - Added support for installing |morpheus| distributed worker on Ubuntu 22.04. :superscript:`5.5.1`
 :Plans and Pricing: - Updated Plans list page (Administration > Plans & Pricing > Plans) to include custom view builds (gear icon) to add and remove data fields or sort by custom fields. :superscript:`5.5.1`
 
@@ -65,4 +68,4 @@ Appliance & Agent Updates
 Morpheus Worker Updates
 =======================
 
-:Worker: - Morpheus Worker v5.4.8 release. Note: Morpheus v5.4.8 requires Morpheus Worker v5.4.8. Please upgrade any existing Morpheus Workers to the v5.4.8 package.
+:Worker: - Morpheus Worker v5.4.8 released. Morpheus v5.4.8 requires Morpheus Worker v5.4.8. Please upgrade any existing Morpheus Workers to the v5.4.8 package.
