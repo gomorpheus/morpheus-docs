@@ -74,12 +74,12 @@ Services
      - Morpheus Installer Version
      - Updated in |morphver|
    * - Plugin API
-     - 
      - |pluginVer|
      - 
-   * - Morpheus Worker
      - 
+   * - Morpheus Worker
      - |workerVer|
+     - 
      - |checkmark|
    * - MySQL
      - |mysqlbranch|

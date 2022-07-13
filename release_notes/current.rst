@@ -5,6 +5,7 @@
 *************************
 
 Compatible Plugin API version: |pluginVer|
+Compatible Morpheus Worker version: |workerVer|
 
 .. NOTE:: Items appended with :superscript:`5.x.x` are also included in that version
 .. .. include:: highlights.rst
@@ -14,7 +15,8 @@ New Features
 
 :Blueprints: - Fixed an issue that prevented provisioning some App Blueprints from CloudFormation templates with certain AMI ID parameter formats. :superscript:`5.5.1`
 :Clouds: - Updated Cloud logos which were out of date. :superscript:`5.5.1`
-:Installer: - Added support for installing |morpheus| distributed worker on Ubuntu 22.04. :superscript:`5.5.1`
+:Worker: - Morpheus Worker v5.4.8 release. Note: Morpheus v5.4.8 requires Morpheus Worker v5.4.8. Please upgrade any existing Morpheus Workers to the v5.4.8 package.
+         - Added support for installing |morpheus| distributed worker on Ubuntu 22.04. :superscript:`5.5.1`
 :Plans and Pricing: - Updated Plans list page (Administration > Plans & Pricing > Plans) to include custom view builds (gear icon) to add and remove data fields or sort by custom fields. :superscript:`5.5.1`
 
 Fixes
@@ -60,3 +62,7 @@ Appliance & Agent Updates
             - Tomcat upgraded to 9.0.64. :superscript:`5.5.1`
             - Added `bitcan['backup_directory']` and `bitcan['working_directory']` morpheus.rb config options to override default working paths for backups
 
+Morpheus Worker Updates
+=======================
+
+:Worker: - Morpheus Worker v5.4.8 release. Note: Morpheus v5.4.8 requires Morpheus Worker v5.4.8. Please upgrade any existing Morpheus Workers to the v5.4.8 package.
