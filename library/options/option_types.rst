@@ -65,6 +65,8 @@ HELP BLOCK
  Helpful text that will appear under your Input field to inform users about their selection
 REQUIRED
  Prevents User from proceeding without setting value
+VERIFY PATTERN
+ For Text and Text Area-type Inputs. If desired, enter a regex pattern string and user entries must match the string to be accepted
 DEFAULT CHECKED
  For ``Checkbox`` types, when marked the Checkbox will be checked by default
 OPTION LIST

@@ -49,13 +49,12 @@ Breaking Changes
 Services
 ========
 
-|morphver| Service Version Changes
-----------------------------------
+..
+  |morphver| Service Version Changes
+  ----------------------------------
 
-:Appliance: - Java: Updated jdk to v11.0.15+10
-:Agent Packages: - Agent Node & VM Node Packages: Java: Updated jdk to v11.0.15+10
 
-|
+  |
 
 |morphver| Service Version Compatibility
 ----------------------------------------
