@@ -1,18 +1,18 @@
-.. _Percona TLS:
+.. _Percona-TLS-ubuntu:
 
-CentOS/RHEL Percona XtraDB Cluster with TLS
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Debian/Ubuntu Percona XtraDB Cluster with TLS
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Out of the box |morpheus| uses MySQL but |morpheus| supports any mySQL-compliant database. There are many ways to set up a highly available, MySQL dialect-based database. One which has found favor with many of our customers is Percona's XtraDB Cluster.  Percona's product is based off of Galera's WSREP Clustering, which is also supported.
 
 .. important:: Currently, you must use a v5.7-compatible version of MySQL/Percona. Complete compatibility information is available in the `Compatibility and Breaking Changes <https://docs.morpheusdata.com/en/latest/release_notes/compatibility.html>`_ page. Additional configuration for Percona Clusters with TLS enabled is required. Refer to :ref:`Percona TLS` Configuration in our full HA docs for details.
 
-Installation and configuration of Percona XtraDB Cluster on **CentOS/RHEL 8** with TLS enabled for all communication.  Refer to :ref:`Percona-TLS-ubuntu` for Debian/Ubuntu.
+Installation and configuration of Percona XtraDB Cluster on Debian 11/Ubuntu 20.04 with TLS enabled for all communication.  Refer to :ref:`Percona TLS` for CentOS/RHEL.
 
 .. IMPORTANT:: This is a sample configuration only. Customer configurations and requirements will vary.
 
 Additional information can be found below:
-[XtraDB 5.7 Installation](https://www.percona.com/doc/percona-xtradb-cluster/5.7/install/yum.html)
+[XtraDB 5.7 Installation](https://www.percona.com/doc/percona-xtradb-cluster/5.7/install/apt.html)
 
 Requirements
 ````````````
@@ -54,75 +54,18 @@ Percona nodes.
 
   .. code-block:: bash
 
-    [root]# firewall-cmd --add-port={3306/tcp,4444/tcp,4567/tcp,4568/tcp}
+    [root]# ufw allow 3306,4444,4567,4568/tcp
 
 The following OS repositories are required, in addition to the Percona repositories:
-  - rhel-8-for-x86_64-baseos-rpms
-  - rhel-8-for-x86_64-appstream-rpms
+  - universe
 
-Configure SElinux
+Configure AppArmor
 `````````````````
 
-Percona recommends setting SELinux from `enforcing` to `permissive` to eliminate interference.  Run the following to set SELinux to permissive on each database node:
+Percona recommends completely removing AppArmor, in case a previous AppArmor profile exists.  See the XtraDB documentation at the top of the page for more information.
   .. code-block:: bash
 
-    [root]# setenforce 0
-    [root]# sed -i 's/SELINUX=enforcing/SELINUX=permissive/g' /etc/selinux/config
-
-If enforcing is required by the organization, SELinux rules can be added to ensure interference is eliminated.  To allow Percona XtraDB Cluster functionality when SELinux is `Enforcing`, run the following on each database Node:
-
-#. Install SELinux utilities
-
-   .. code-block:: bash
-
-    [root]# yum install -y policycoreutils-python.x86_64
-
-#. Configure Percona ports for SELinux:
-
-   .. code-block:: bash
-
-    [root]# semanage port -m -t mysqld_port_t -p tcp 4444
-    [root]# semanage port -m -t mysqld_port_t -p tcp 4567
-    [root]# semanage port -a -t mysqld_port_t -p tcp 4568
-
-#. Create the policy file PXC.te
-
-   .. code-block:: bash
-
-    [root]# vi PXC.te
-    module PXC 1.0;
-    require {
-            type unconfined_t;
-            type mysqld_t;
-            type unconfined_service_t;
-            type tmp_t;
-            type sysctl_net_t;
-            type kernel_t;
-            type mysqld_safe_t;
-            class process { getattr setpgid };
-            class unix_stream_socket connectto;
-            class system module_request;
-            class file { getattr open read write };
-            class dir search;
-      }
-
-      #============= mysqld_t ==============
-
-     allow mysqld_t kernel_t:system module_request;
-     allow mysqld_t self:process { getattr setpgid };
-     allow mysqld_t self:unix_stream_socket connectto;
-     allow mysqld_t sysctl_net_t:dir search;
-     allow mysqld_t sysctl_net_t:file { getattr open read };
-     allow mysqld_t tmp_t:file write;
-
-#. Compile and load the SELinux policy
-
-   .. code-block:: bash
-
-    [root]# checkmodule -M -m -o PXC.mod PXC.te
-    [root]# semodule_package -o PXC.pp -m PXC.mod
-    [root]# semodule -i PXC.pp
-
+    [root]# apt remove apparmor
 
 Add Percona Repo
 ````````````````
@@ -136,15 +79,12 @@ Additional information can be found below:
 
    .. code-block:: bash
 
-    [root]# yum install -y https://repo.percona.com/yum/percona-release-latest.noarch.rpm 
+    [root]# apt update -y
+    [root]# apt install curl -y
+    [root]# curl -O https://repo.percona.com/apt/percona-release_latest.generic_all.deb
+    [root]# apt install gnupg2 lsb-release ./percona-release_latest.generic_all.deb -y
+    [root]# apt update
     [root]# percona-release setup pxc-57
-
-#. The below commands will clean the repos and update the server.
-
-   .. code-block:: bash
-
-    [root]# yum clean all
-    [root]# yum update -y --skip-broken
 
 Installing Percona XtraDB Cluster
 ``````````````````````````````````
@@ -153,7 +93,8 @@ Installing Percona XtraDB Cluster
 
    .. code-block:: bash
 
-    [root]# yum install -y Percona-XtraDB-Cluster-57
+    [root]# apt install percona-xtradb-cluster-57
+       set root password during install
 
 #. Enable the mysql service so that the service starts at boot on each database node.
 
@@ -167,15 +108,14 @@ Installing Percona XtraDB Cluster
 
     [root]# systemctl start mysql
 
-#. From **Node 01**, log into the mysql server and set a new root password. To get the temporary root mysql password you will need to run the below command.  The command will print the password to the screen. Copy the password and use it when logging in.
+#. From **Node 01**, log into the mysql server using the password set during installation
 
    .. code-block:: bash
 
-    [root]# grep 'temporary password' /var/log/mysqld.log
     [root]# mysql -u root -p
-       password: `enter password copied above`
+       password: `enter password from installation`
 
-#. Change the root user password to the mysql DB.  Note that the database from Node 1 will be replicated to all other nodes, changing the password on the additional nodes is not required.
+#. **(Optional)** Change the root user password to the mysql DB.  Note that the database from Node 01 will be replicated to all other nodes, changing the password on the additional nodes is not required.
 
    .. code-block:: bash
 
@@ -211,10 +151,10 @@ Installing Percona XtraDB Cluster
 
 Once the service is stopped on all nodes move onto the next step.
 
-Add [mysqld] to my.cnf in /etc/
+Add [mysqld] to my.cnf in /etc/mysql/
 ```````````````````````````````
 
-#. Add the following to ``/etc/my.cnf``.  The `wsrep_node_name` and `wsrep_node_address` fields must to be unique on each of the nodes.  The `wsrep_sst_auth` field should match the SST username and password created previously.
+#. Add the following to ``/etc/mysql/my.cnf``.  The `wsrep_node_name` and `wsrep_node_address` fields must to be unique on each of the nodes.  The `wsrep_sst_auth` field should match the SST username and password created previously.
 
    .. content-tabs::
 
@@ -230,7 +170,7 @@ Add [mysqld] to my.cnf in /etc/
             max_connections = 451
             max_allowed_packet = 256M
             
-            wsrep_provider=/usr/lib64/galera3/libgalera_smm.so
+            wsrep_provider=/usr/lib/galera3/libgalera_smm.so
             wsrep_provider_options="cert.optimistic_pa=NO"
             wsrep_certification_rules='OPTIMIZED'
             
@@ -263,7 +203,7 @@ Add [mysqld] to my.cnf in /etc/
             max_connections = 451
             max_allowed_packet = 256M
             
-            wsrep_provider=/usr/lib64/galera3/libgalera_smm.so
+            wsrep_provider=/usr/lib/galera3/libgalera_smm.so
             wsrep_provider_options="cert.optimistic_pa=NO"
             wsrep_certification_rules='OPTIMIZED'
             
@@ -297,7 +237,7 @@ Add [mysqld] to my.cnf in /etc/
             max_connections = 451
             max_allowed_packet = 256M
             
-            wsrep_provider=/usr/lib64/galera3/libgalera_smm.so
+            wsrep_provider=/usr/lib/galera3/libgalera_smm.so
             wsrep_provider_options="cert.optimistic_pa=NO"
             wsrep_certification_rules='OPTIMIZED'
             
@@ -331,7 +271,7 @@ Bootstrap Node 01
 
    .. code-block:: bash
 
-    systemctl start mysql@bootstrap.service
+    [root]# /etc/init.d/mysql bootstrap-pxc
 
    .. NOTE:: The mysql service will start during the bootstrap.
 
@@ -378,7 +318,7 @@ During initialization of Node 01 the required `pem` files will be generated in `
 #. Copy the following files from Node 01 to the same path (default is /var/lib/mysql) on Node 02 and Node 03:
 
    From Node 01
-   
+
    .. code-block:: bash
 
     [root]# scp /var/lib/mysql/ca.pem root@192.168.101.02:/root
