@@ -28,7 +28,7 @@ New Features
 :Clouds: - Updated Cloud logos which were out of date. :superscript:`5.4.8`
 :Credentials: - Credentials have been expanded to integrations. Create new integrations with third party technologies and authenticate them with stored credential sets.
 :Hashicorp Vault: - Hashicorp Vault plugin updated to include support for the Vault KV1 engine.
-:Identity Sources: - .. (waiting on validation) SAML Identity Source Integrations now support "Relay State" parameters. :superscript:`5.4.7`
+.. :Identity Sources: - .. (waiting on validation) SAML Identity Source Integrations now support "Relay State" parameters. :superscript:`5.4.7`
 :Inputs: - Entries in text-based Inputs (Text-type and Text Area-type) can now be validated against a regex pattern. A UI warning is presented to the user if their input does not fit the given pattern.
 :Installer: - Added support for installing |morpheus| distributed worker on Ubuntu 22.04. :superscript:`5.4.8`
 :Kubernetes: - MKS Kubernetes clusters can now be easily upgraded to higher versions (ex. Kubernetes 1.20 to 1.23). The upgrade flow includes a UI warning encouraging the user to read the Kubernetes release notes and be aware of potential breaking changes.
@@ -94,8 +94,7 @@ Fixes
 :Inputs: - Dependent Inputs are now populated correctly when displayed in App Blueprint deployments. :superscript:`5.4.8`
           - Inputs dependent on other Inputs are now populated correctly when displayed on an Edit Instance dialog. :superscript:`5.4.8`
           - Validation is now working properly when the visibility and required status of an Input is dependent on a specific response in another Input. :superscript:`5.4.7`
-:Instances: - . :superscript:`5.4.8`
-             - Fixed an issue that could cause Windows Server 2022 Instances to hang on reconfigure. :superscript:`5.4.8`
+:Instances: - Fixed an issue that could cause Windows Server 2022 Instances to hang on reconfigure. :superscript:`5.4.8`
 :Invoices: - Fixed Invoice line items showing values in USD when other costing for the Instance is given in another currency. :superscript:`5.4.7`
 :Jobs: - Execution history for Jobs has been improved, previously some executions weren't shown under specific conditions. :superscript:`5.4.8`
         - Fixed an issue that caused duplicate jobs to be created when using the New Job wizard. :superscript:`5.4.7`
