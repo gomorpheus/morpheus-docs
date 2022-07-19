@@ -7,7 +7,7 @@ Out of the box |morpheus| uses MySQL but |morpheus| supports any mySQL-compliant
 
 .. important:: Currently, you must use a v5.7-compatible version of MySQL/Percona. Complete compatibility information is available in the `Compatibility and Breaking Changes <https://docs.morpheusdata.com/en/latest/release_notes/compatibility.html>`_ page. Additional configuration for Percona Clusters with TLS enabled is required. Refer to :ref:`Percona TLS` Configuration in our full HA docs for details.
 
-Installation and configuration of Percona XtraDB Cluster on Debian 11/Ubuntu 20.04 with TLS enabled for all communication.  Refer to :ref:`Percona TLS` for CentOS/RHEL.
+Installation and configuration of Percona XtraDB Cluster on **Debian 11/Ubuntu 20.04** with TLS enabled for all communication.  Refer to :ref:`Percona TLS` for CentOS/RHEL.
 
 .. IMPORTANT:: This is a sample configuration only. Customer configurations and requirements will vary.
 
@@ -154,7 +154,7 @@ Once the service is stopped on all nodes move onto the next step.
 Add [mysqld] to my.cnf in /etc/mysql/
 ```````````````````````````````
 
-#. Add the following to ``/etc/mysql/my.cnf``.  The `wsrep_node_name` and `wsrep_node_address` fields must to be unique on each of the nodes.  The `wsrep_sst_auth` field should match the SST username and password created previously.
+#. Add the following to ``/etc/mysql/my.cnf``.  The ``wsrep_node_name`` and ``wsrep_node_address`` fields must to be unique on each of the nodes.  The ``wsrep_sst_auth`` field should match the SST username and password created previously.
 
    .. content-tabs::
 
@@ -332,6 +332,7 @@ During initialization of Node 01 the required `pem` files will be generated in `
    From Node 02 and Node 03
    
    .. code-block:: bash
+   
     [root]# cp /root/ca.pem /var/lib/mysql/
     [root]# cp /root/server-cert.pem /var/lib/mysql/
     [root]# cp /root/server-key.pem /var/lib/mysql/
