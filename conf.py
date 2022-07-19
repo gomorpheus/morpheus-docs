@@ -3,27 +3,29 @@ import datetime
 master_doc = 'index'
 
 latex_documents = [
-    (master_doc, 'morpheus_5.5.0-1.tex', u'Morpheus Documentation',
+    (master_doc, 'morpheus_5.5.1-1.tex', u'Morpheus Documentation',
      u'Morpheus', 'manual'),
 ]
 
 rst_prolog = """
 
-.. |releasedate| replace:: July 14 2022
-.. |morphbranch| replace:: v5.5
-.. |morphver| replace:: v5.5.1
+.. |releasedate| replace:: July 19 2022
+.. |morphbranch| replace:: v5.4
+.. |morphver| replace:: v5.4.8
 .. |minUpgradeVer| replace:: v5.2.0
-.. |previousMorphVer| replace:: 5.5.0
+.. |previousMorphVer| replace:: v5.4.7
+.. |pluginVer| replace:: 0.12.5
+.. |workerVer| replace:: 5.4.8
 .. |rmqbranch| replace:: v3.5-3.9
 .. |rmqver| replace:: v3.9.20
 .. |mysqlbranch| replace:: v5.7
 .. |mysqlver| replace:: v5.7.37
-.. |mysqlverfips| replace:: v.5.7.35
+.. |mysqlverfips| replace:: v5.7.37
 .. |esbranch| replace:: v7.x
-.. |esver| replace:: v7.8.1
+.. |esver| replace:: v7.17.5
 .. |tcver| replace:: v9.0.64
-.. |nginxver| replace:: v1.20.1
-.. |nodePackageVer| replace:: 3.2.7
+.. |nginxver| replace:: v1.22.1
+.. |nodePackageVer| replace:: 3.2.8
 .. |linuxagentver| replace:: v2.3.2
 .. |macagentver| replace:: v2.3.2
 .. |winagentver| replace:: v1.8.0.0
@@ -42,15 +44,6 @@ rst_prolog = """
 .. |master tenant| replace:: Master Tenant
 .. |profileObjects| replace:: Clouds
 .. |profileTypes| replace:: Terraform, Key/Value
-
-.. |trash| unicode:: 0x0001F5D1 .. TRASH ICON
-.. |gear| unicode:: U+02699 .. GEAR ICON
-.. |info| unicode:: U+2139 .. INFO ICON
-.. |triangledown| unicode:: U+25BD .. TRIANGLE DOWN ICON
-.. |rightarrow| unicode:: U+2192 .. RIGHT ARROW ICON
-.. |pencil| unicode:: U+270E .. EDIT ICON
-
-.. role:: redguilabel
 
 .. |debianVersions| replace:: 9,10,11
 .. |oelVersions| replace:: 7.x, 8.x
@@ -208,6 +201,16 @@ rst_prolog = """
 .. |AdmSetSof| replace:: Administration > Settings > Software Licenses
 .. |AdmSetLic| replace:: Administration > Settings > License
 .. |AdmSetUti| replace:: Administration > Settings > Utilities
+
+.. |trash| unicode:: 0x0001F5D1 .. TRASH ICON
+.. |gear| unicode:: U+02699 .. GEAR ICON
+.. |info| unicode:: U+2139 .. INFO ICON
+.. |triangledown| unicode:: U+25BD .. TRIANGLE DOWN ICON
+.. |rightarrow| unicode:: U+2192 .. RIGHT ARROW ICON
+.. |pencil| unicode:: U+270E .. EDIT ICON
+.. |checkmark| unicode:: U+2713 .. CHECK MARK
+
+.. role:: redguilabel
 """
 
 

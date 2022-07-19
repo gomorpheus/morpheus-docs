@@ -53,37 +53,75 @@ Services
   |morphver| Service Version Changes
   ----------------------------------
 
+:Appliance: - curl updated to 7.84.0
+            - Elasticsearch updated to 7.17.5
+            - erlang updated to v24.3, patch 24.3.4.2
+            - Nginx updated to v1.22.0
+            - Openssl updated to v1.1.1p
+            - RabbitMQ updated to 3.9.20
+            - Tomcat Updated to v9.0.64
 
   |
 
-|morphver| Service Version Compatibility
-----------------------------------------
+|morphver| Service Versions & Compatibility
+-------------------------------------------
 
-When externalizing MySQL, Elasticsearch and/or RabbitMQ services, the following versions are compatible with version |morpheus| |morphver|
+.. list-table:: |morphver| Service Versions & Compatibility
+   :widths: auto
+   :header-rows: 1
 
-+---------------------------------------+-----------------------+-------------------------------------+
-| **Service**                           | **Compatible Branch** | **Morpheus Installer Version**      |
-+---------------------------------------+-----------------------+-------------------------------------+
-| MySQL                                 | |mysqlbranch|         | |mysqlver|                          |
-+---------------------------------------+-----------------------+-------------------------------------+
-| MySQL (FIPS)                          | |mysqlbranch|         | |mysqlverfips|                      |
-+---------------------------------------+-----------------------+-------------------------------------+
-| Percona                               | 5.7, WSREP 31         | n/a                                 |
-+---------------------------------------+-----------------------+-------------------------------------+
-| Elasticsearch                         | |esbranch|            | |esver|                             |
-+---------------------------------------+-----------------------+-------------------------------------+
-| RabbitMQ                              | |rmqbranch|           | |rmqver|                            |
-+---------------------------------------+-----------------------+-------------------------------------+
-| Tomcat                                |                       | |tcver|                             |
-+---------------------------------------+-----------------------+-------------------------------------+
-| Nginx                                 |                       | |nginxver|                          |
-+---------------------------------------+-----------------------+-------------------------------------+
-| OpenSSL                               |                       | |openssl|, |openssl_fips| (FIPS)    |
-+---------------------------------------+-----------------------+-------------------------------------+
-| Java                                  |                       | |java|                              |
-+---------------------------------------+-----------------------+-------------------------------------+
-| Java (macOS agent)                    |                       | |java-mac|                          |
-+---------------------------------------+-----------------------+-------------------------------------+
+   * - Service
+     - Compatible Branch
+     - Morpheus Installer Version
+     - Updated in |morphver|
+   * - Plugin API
+     - |pluginVer|
+     - 
+     - 
+   * - Morpheus Worker
+     - |workerVer|
+     - 
+     - |checkmark|
+   * - MySQL
+     - |mysqlbranch|
+     - |mysqlver|
+     - 
+   * - MySQL (FIPS)
+     - |mysqlbranch|
+     - |mysqlverfips|
+     -
+   * - Percona
+     - 5.7, WSREP 31
+     - n/a
+     -
+   * - Elasticsearch
+     - |esbranch| 
+     - |esver|
+     - |checkmark|
+   * - RabbitMQ
+     - |rmqbranch|
+     - |rmqver|
+     - |checkmark|
+   * - Tomcat
+     - 
+     - |tcver|
+     - |checkmark|
+   * - Nginx
+     - 
+     - |nginxver|
+     - |checkmark|
+   * - OpenSSL
+     - 
+     - |openssl|, |openssl_fips| (FIPS) 
+     - |checkmark|
+   * - Java
+     - 
+     - |java|
+     -
+   * - Java (macOS agent)
+     - 
+     - |java-mac|
+     -
 
 |
 
@@ -99,7 +137,7 @@ When externalizing MySQL, Elasticsearch and/or RabbitMQ services, the following 
      - |morphver| Changes
    * - Morpheus Node and VM Node Packages
      - |nodePackageVer|
-     - Node & VM Node Packages: Java: Updated jdk to v11.0.15+10
+     - No changes
    * - Morpheus Linux Agent
      - |linuxagentver|
      - No changes
@@ -112,13 +150,22 @@ When externalizing MySQL, Elasticsearch and/or RabbitMQ services, the following 
 
 |
 
-Security
-========
+.. 
+  Security
+  ========
 
-CVEs Addressed
---------------
+  CVEs Addressed
+  --------------
 
-No CVEs mitigated since |previousMorphVer|
+  CVEs mitigated in |morphver|
+
+  |
+
+Plugin API Compatibility
+========================
+
+|morphver| requires Plugin API version |pluginVer|
+
 |
 
 Upgrade Paths & Methods
