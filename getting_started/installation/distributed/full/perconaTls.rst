@@ -214,7 +214,7 @@ Once the service is stopped on all nodes move onto the next step.
 Add [mysqld] to my.cnf in /etc/
 ```````````````````````````````
 
-#. Add the following to ``/etc/my.cnf``.  The `wsrep_node_name` and `wsrep_node_address` fields must to be unique on each of the nodes.  The `wsrep_sst_auth` field should match the SST username and password created previously.
+#. Add the following to ``/etc/my.cnf``.  The ``wsrep_node_name`` and ``wsrep_node_address`` fields must to be unique on each of the nodes.  The ``wsrep_sst_auth`` field should match the SST username and password created previously.
 
    .. content-tabs::
 
@@ -392,6 +392,7 @@ During initialization of Node 01 the required `pem` files will be generated in `
    From Node 02 and Node 03
    
    .. code-block:: bash
+   
     [root]# cp /root/ca.pem /var/lib/mysql/
     [root]# cp /root/server-cert.pem /var/lib/mysql/
     [root]# cp /root/server-key.pem /var/lib/mysql/
@@ -448,10 +449,10 @@ Verify Configuration
 
    .. code-block:: bash
 
-    [root@allAppNodes] cd
-    [root@appNode01]# ./mysql -u morpheusDbUser -p  -h 192.168.101.01
-    [root@appNode02]# ./mysql -u morpheusDbUser -p  -h 192.168.101.02
-    [root@appNode03]# ./mysql -u morpheusDbUser -p  -h 192.168.101.03
+    [root@allAppNodes] cd /opt/morpheus/embedded/bin/
+    [root@appNode01]# ./mysql -h 192.168.101.01 -u morpheusDbUser -p
+    [root@appNode02]# ./mysql -h 192.168.101.02 -u morpheusDbUser -p
+    [root@appNode03]# ./mysql -h 192.168.101.03 -u morpheusDbUser -p
 
 If you are unable to login to mysql from an app node, ensure credentials are correct, privileges have been granted, mysql is running, and ports are open.
 
