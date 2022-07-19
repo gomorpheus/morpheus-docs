@@ -1233,7 +1233,7 @@
 
 .. .. important::
 
-- 4.2.0 to 5.0.0 Appliances require upgrade to 5.2.x or 5.3.x prior to upgrading to |morphver|
+- 4.2.0 to 5.0.0 Appliances require upgrade to 5.2.x or 5.3.x prior to upgrading to 5.4.x+
 
 
 |
