@@ -52,3 +52,13 @@ With the migration complete, you will also need to update the stored password fo
 
   select * from backup where `name` ='Morpheus Appliance';
   UPDATE `morpheus`.`backup` SET `ssh_host` = '127.0.0.1', `target_password` = 'its-a-secret' WHERE `id` = '1';
+
+.. important:: After the migration it is important to reset the unique ID of the Morpheus Appliance. This will ensure your new installation will communicate correctly with the Morpheus Hub.
+
+The final step is to generate a new unique ID for the Morpheus Appliance. Firstly run the following SQL command on the database for the new installation:
+
+.. code-block:: bash
+
+  UPDATE appliance_instance SET hub_unique_id = NULL;
+
+Secondly, re-apply your Morpheus license key within the Morpheus UI via the "Upgrade A License" action within Administration -> Settings -> License
