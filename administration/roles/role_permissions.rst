@@ -103,7 +103,7 @@ Role Mappings
     -
   * - Admin: Distributed Workers
     - None, Full
-    - Allows or disallows access to |AdmInt| Distributed Workers	Tab.
+    - Allows or disallows access to |AdmInt| > Distributed Workers Tab
     -
     -
     -
@@ -293,6 +293,12 @@ Role Mappings
     - The Clusters page allows you to create and manage Kubernetes, Docker, and KVM Clusters, as well as Cloud-specific Kubernetes services such as EKS.
     - This permission is recommend for those creating and managing containers or container services.
     -
+  * - Infrastructure: Credentials
+    - None, Read, Full
+    - Determines access to the Credentials tab in |InfTru|
+    - The credentials tab allows you to create and manage credential sets stored internally and in external Cypher server integrations
+    - This permission is recommended for those responsible for maintaining credentials
+    -
   * - Infrastructure: Groups
     - None, Read, Full
     - Determines access to the Infrastructure > Groups page.
@@ -348,8 +354,8 @@ Role Mappings
     - This permission is recommended for those responsible for |morpheus| DNS and domain-join integrations.
     -
   * - Infrastructure: Network Firewalls
-    - None, Read, Full
-    - Determines access to the Firewall tab on applicable network integrations detail pages
+    - None, Read, Manage Rules, Full
+    - Determines access to the Firewall tab on applicable network integrations detail pages. When the "Manage Rules" permission is given, users have read-only access to firewall groups and the ability to create and manage firewall rules on those groups
     - The Firewall tab is where network firewall groups and rules are viewed, created and managed
     - This permission is recommended for those tasked with network security management
     -
@@ -430,6 +436,12 @@ Role Mappings
     - Determines access to
     -
     -
+    -
+  * - Infrastructure: Network Static Routes
+    - None, Read, Full
+    - Determines access to the routing tab on a router detail page (/infrastructure/networks/routes)
+    - The routers tab is where routes are created and managed
+    - This permission is recommended for those responsible for network management
     -
   * - Infrastructure: Networks
     - None, Read, Group, Full
@@ -590,7 +602,7 @@ Role Mappings
   * - Monitoring: Logs (Formerly Logs)
     - None, Read, User, Full
     - Determines level of access to the Logs section of |morpheus| UI. The "User" permission will allow access only to objects the user owns.
-    - |MonLog| is where Insatnce and Server logs may be viewed (does not included |morpheus| Applaince logs from |AdmHeaMorLog|).
+    - |MonLog| is where Instance and Server logs may be viewed (does not included |morpheus| Appliance logs from |AdmHeaMorLog|).
     - This permission is recommended for those who should have access to Instance and Server logs.
     -
   * - Operations: Activity

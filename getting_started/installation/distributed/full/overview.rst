@@ -63,44 +63,44 @@ Port Requirements
 +---------------+-------------------+------------------+----------------------------------------------+
 
 .. list-table:: **RabbitMQ Port Requirement Details**
-  :widths: auto
-  :header-rows: 1
+   :widths: auto
+   :header-rows: 1
 
-    * - Source 
-      - Destination
-      - Port
-      - Protocol 
-      - 
-    * - Application Tier
-      - Messaging Tier
-      - 5672
-      - TCP
-      - AMQP non-TLS connections
-    * - Application Tier
-      - Messaging Tier
-      - 5671
-      - TCP
-      - AMQPS TLS enabled connections
-    * - Messaging Tier
-      - Messaging Tier
-      - 25672
-      - TCP
-      - Inter-node and CLI tool communication
-    * - Administrator Web Browser
-      - RabbitMQ Server Management
-      - 15672
-      - TCP
-      - Management plugin
-    * - Administrator Web Browser
-      - RabbitMQ Server Management
-      - 15671
-      - TCP
-      - Management plugin SSL
-    * - Messaging Tier Cluster Node
-      - Messaging Tier Cluster Nodes
-      - 4369
-      - TCP
-      - erlang (epmd) peer discovery service used by RabbitMQ nodes and CLI tools
+   * - Source 
+     - Destination
+     - Port
+     - Protocol
+     - For
+   * - Application Tier
+     - Messaging Tier
+     - 5672
+     - TCP
+     - AMQP non-TLS connections
+   * - Application Tier
+     - Messaging Tier
+     - 5671
+     - TCP
+     - AMQPS TLS enabled connections
+   * - Messaging Tier
+     - Messaging Tier
+     - 25672
+     - TCP
+     - Inter-node and CLI tool communication
+   * - Administrator Web Browser
+     - RabbitMQ Server Management
+     - 15672
+     - TCP
+     - Management plugin
+   * - Administrator Web Browser
+     - RabbitMQ Server Management
+     - 15671
+     - TCP
+     - Management plugin SSL
+   * - Messaging Tier Cluster Node
+     - Messaging Tier Cluster Nodes
+     - 4369
+     - TCP
+     - erlang epmd peer discovery service used by RabbitMQ nodes and CLI tools
 
 
 

@@ -1,6 +1,14 @@
 Cloud Resource Tagging with Morpheus
 ------------------------------------
 
+.. raw:: html
+
+    <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; height: auto;">
+        <iframe src="//www.youtube.com/embed/_Yx6Oj7x-24" frameborder="0" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
+    </div>
+
+|
+
 Introduction
 ^^^^^^^^^^^^
 
@@ -50,15 +58,16 @@ Instituting Tagging Policies
 
 If needed, Morpheus allows cloud resource tagging to be governed through its native policy engine. Like other policies, tag policies are added from |AdmPol|. By creating a new policy and setting the TYPE to Tags, the relevant fields are revealed.
 
-.. NOTE:: At the time of this writing (Morpheus 4.2.1), tag policy scanning and enforcement is only functional in Azure, Amazon AWS, VMware, and Google Cloud Platform clouds.
+.. NOTE:: Tag policy scanning and enforcement is only currently supported for Azure, Amazon AWS, VMware, and Google Cloud Platform clouds. Additional Clouds may be supported in the future.
 
 With a tag policy, we can choose to enforce the policy on a strict or passive basis by marking or unmarking the STRICT ENFORCEMENT box. Strictly enforced tagging policies will not allow provisioning to proceed in supported clouds if the policy requirements are not met. If we opt to enforce the policy passively, a warning banner will appear on the detail page of any server that does not meet policy requirements. Additionally, existing servers in supported clouds will be scanned and those which do not meet policy requirements will also receive the warning banner.
 
-A tag policy must be given a KEY value. If we define only a KEY value, the policy will look for a tag with that key and any (or no) value. Alternatively, we can select any pre-existing Option List as the VALUE LIST to require the tag contain a value that exists in that list.
+A tag policy must be given a KEY value. If we define only a KEY value, the policy will look for a tag with that key and any (or no) value. Alternatively, we can select any pre-existing Option List as the VALUE LIST to require the tag contain a value that exists in that list or even enter a specific VALUE.
 
-Finally, like other Morpheus policies, we can choose to scope it globally, by group, by cloud, or by user. Master Tenant administrators can also choose to scope the policy to one or more Subtenants.
+Finally, like other |morpheus| policies, we can choose to scope it globally, by group, by cloud, or by user. Primary Tenant administrators can also choose to scope the policy to one or more Subtenants.
 
-.. image:: /images/integration_guides/tagging_guide/5_tag_policy.png
+.. image:: /images/integration_guides/tagging_guide/5_tag_policy_new.png
+  :width: 50%
 
 Tagging in Action
 ^^^^^^^^^^^^^^^^^

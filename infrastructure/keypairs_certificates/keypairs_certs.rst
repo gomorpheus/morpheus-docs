@@ -1,16 +1,17 @@
 Trust
 =====
 
-The Trust section is where credentials, SSH keypairs, and SSL certificates are stored. In addition, related integrations to outside technologies can be made in this section as well. Integration types include Venafi for SSL certificates and |morpheus| Cypher for externalized credential storage. Continue onto the next section for more on standing up an external Cypher credential store.
+The Trust section is where credentials, SSH keypairs, and SSL certificates are stored. In addition, related integrations to outside technologies can be made in this section as well. Integration types include |morpheus| Cypher and Hashicorp Vault for externalized credential storage. Continue onto the next section for more on standing up an external Cypher credential store.
 
 Credentials
 -----------
 
-The credentials section allows for various credential types to be securely stored and called back when necessary, such as when creating new integrations with Cloud accounts or other outside technologies. Credentials can be securely stored internally on the appliance or stored in an external Cypher integration, more information about setting up and integrating with an external Cypher store are in the next section. The following credential pair types are currently supported:
+The credentials section allows for various credential types to be securely stored and called back when necessary, such as when creating new integrations with Cloud accounts or other outside technologies. Credentials can also be used to populate REST-based Option Lists sourced from data behind an authentication wall, as well as to run automation Tasks on remote targets that require authentication. Credentials can be securely stored internally on the appliance or stored in an external Cypher integration, more information about setting up and integrating with an external Cypher store are in the next section. The following credential pair types are currently supported:
 
 - Access Key and Secret Key
 - Client ID and Secret
 - Email and Private Key
+- OAuth 2.0
 - Tenant, Username, and Keypair
 - Username and API Key
 - Username and Keypair
@@ -19,11 +20,11 @@ The credentials section allows for various credential types to be securely store
 
 To create a new credential set, click :guilabel:`+ ADD` and then select the type of credential set you'd like to store. Complete the following:
 
-- **CREDENTIAL STORE:** Select "Internal" or an integrated external Cypher store (if any). See the next section for instructions on standing up and integrating with an external Cypher store
+- **CREDENTIAL STORE:** Select "Internal", an integrated external Cypher store (if any), or an integrated Hashicorp Vault server (if any). See the section below for instructions on integrating with Vault or standing up and integrating with an external Cypher store.
 - **NAME:** A name for the credential set in |morpheus|
 - **DESCRIPTION:** An optional description for the credential set
 - **ENABLED:** If checked, the credential set will be available for use
-- **CREDENTIAL VALUES:** Depending on the credential pair type selected (listed above), the remaining fields will be specific to the chosen type
+- **CREDENTIAL VALUES:** Depending on the credential pair type selected (listed above), the remaining fields will be specific to the chosen type. See the next section for a more complete walkthrough on storing and using OAuth 2.0 credentials
 
 .. image:: /images/infrastructure/trust/addCredentials.png
   :width: 50%
@@ -32,6 +33,67 @@ Finally, click :guilabel:`ADD CREDENTIALS`. Once saved, the credential set will 
 
 .. image:: /images/infrastructure/trust/useCredentials.png
   :width: 50%
+
+OAuth 2.0 Credentials
+---------------------
+
+|morpheus| supports storage of credential sets for retrieving temporary access tokens, through OAuth 2.0, and using the tokens to access some resource. These credential sets can be used with REST-type Option Lists to retrieve information behind this type of authentication wall. Once stored, the credential can be used with as many Option Lists as needed and potentially in other areas of the product in the future.
+
+To create a new credential set, click :guilabel:`+ ADD` and then select "OAuth 2.0". Complete the following, not all fields are present or required in every context:
+
+- **CREDENTIAL STORE:** Select "Internal" or an integrated external Cypher store (if any). See the next section for instructions on standing up and integrating with an external Cypher store
+- **NAME:** A name for the credential set in |morpheus|
+- **DESCRIPTION:** An optional description for the credential set
+- **ENABLED:** If checked, the credential set will be available for use
+- **GRANT TYPE:** Client Credentials or Password Credentials
+- **ACCESS TOKEN URL:** The authorization server's token endpoint
+- **CLIENT ID:** The client ID for an app registered with the target service
+- **CLIENT SECRET:** The client secret, often needed when requesting access outside the context of a specific user
+- **USERNAME:** (Only present with "Password Credentials" Grant Type) The username for a user with target data access
+- **PASSWORD:** (Only present with "Password Credentials" Grant Type) The password for the user indicated above
+- **SCOPE:** The scope of access requested to the target resource
+- **CLIENT AUTHENTICATION:** "Send as basic auth header" or "Send client credentials in body" - Indicates how |morpheus| should issue the token received in requests to the target resource
+
+Once done, click :guilabel:`ADD CREDENTIALS`.
+
+With the OAuth 2.0 credential set stored, they can be set on REST-type Option Lists to source data from behind a compatible authentication wall. With a REST-type Option List open (|LibOptOpt|), click the CREDENTIALS dropdown and select the credential set you've created. Alternatively, you can add a credential set directly in the add/edit Option List modal if needed. Option Lists can be associated with Select List or Typeahead-type Inputs and applied to Layouts, Instance Types, Workflows, and more to allow for customization at provision or Workflow execution time. Additional details on creating Option Lists can be found in the Library section of |morpheus| docs.
+
+.. raw:: html
+
+    <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; height: auto;">
+        <iframe src="//www.youtube.com/embed/tB2XbXjuJGQ" frameborder="0" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
+    </div>
+
+|
+
+Integrating Hashicorp Vault
+---------------------------
+
+The Hashicorp Vault integration is not included with |morpheus| by default. Download the plugin from |morpheus| `Exchange <https://share.morpheusdata.com/>`_ and add the plugin to |morpheus| through the `Plugins <https://docs.morpheusdata.com/en/latest/administration/integrations/integrations.html#plugins>`_ section. This allows users to store credential sets completely outside of |morpheus| and in Hashicorp Vault, which may be required by your organization's IT policies.
+
+.. NOTE:: The plugin space is universal and not specific to Tenants. If Subtenant users have access to |AdmIntPlu|, any integrated plugins will be available in all Tenants across the appliance. In most cases, it makes sense to restrict access to this section from Subtenant users through the associated Tenant Role. Instead integrate plugins from the Primary Tenant and expose them to various Subtenants as needed.
+
+With the plugin added, a new "Vault" integration type will appear in |InfTruInt|. Click :guilabel:`+ ADD`, then "Vault" to get started. Enter the following:
+
+- **NAME:** A friendly name for the Vault integration in |morpheus|
+- **ENABLED:** When marked, this Vault integration will be available to have credentials written to it
+- **API URL:** The URL for the Vault server (ex. http://xx.xx.xx.xx:8200)
+- **TOKEN:** A valid API token for the server (see note below)
+- **SECRET PATH:** If desired, enter a custom path and |morpheus| will write new credential sets to that path. By default, new credentials are written to "secret/morpheus-credentials/"
+
+When done, click :guilabel:`SAVE CHANGES`.
+
+.. NOTE:: When creating a Vault integration, it's recommended that you use a long-lived token. If the token suddenly becomes invalid, |morpheus| will be unable to write new credential sets to Vault and will be unable to edit or delete any existing ones. Additionally, you won't be able to use Vault-stored credential sets elsewhere in |morpheus|, such as when creating new Cloud integrations or populating REST-based Option Lists which require authentication. Should this happen, simply obtain a new token, edit the Vault integration, update the token, and save your changes.
+
+With the above process finished, this Vault integration will be available as a storage target when creating new credential sets. In |InfTruCre|, after clicking :guilabel:`+ ADD` and selecting the type of credential set to add, select the new Vault integration in the CREDENTIAL STORE field (default selection is "Internal").
+
+.. raw:: html
+
+    <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; height: auto;">
+        <iframe src="//www.youtube.com/embed/VCLixoIiPKk" frameborder="0" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
+    </div>
+
+|
 
 Installing and Integrating an External Cypher Appliance
 -------------------------------------------------------
@@ -79,7 +141,7 @@ This completes the installation process, move to |morpheus| UI to integrate the 
 - **API HOST:** The URL where your Cypher appliance can be reached (ex. https://x.x.x.x/)
 - **API KEY:** The API Key we retrieved and saved in the previous step
 
-.. images:: /images/infrastructure/trust/addCypherInt.png
+.. image:: /images/infrastructure/trust/addCypherInt.png
   :width: 50%
 
 Click :guilabel:`SAVE CHANGES` to save the new integration. Refer to the "Credentials" section above for details on storing new credential sets using the external appliance and how they can be called back in various places throughout the UI.

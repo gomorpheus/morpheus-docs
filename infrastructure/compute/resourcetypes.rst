@@ -1,4 +1,4 @@
-Resource Types 
+Resource Types
 ^^^^^^^^^^^^^^
 
 The following Resource Types are mapped when provisioning IAC templates including Terraform and CloudFormation templates.  

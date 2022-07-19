@@ -192,7 +192,7 @@ Once finished working with configuration, click :guilabel:`APPLY`
 ServiceNow Service Catalog Integration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-In addition to integrating with key ServiceNow features, |morpheus| offers a free plugin directly from the ServiceNow Store. Once the plugin is installed, |morpheus| Instance Types, Blueprints, and Self-Service Catalog Items can be presented as provisioning options in the ServiceNow catalog for ordering.
+In addition to integrating with key ServiceNow features, |morpheus| offers a free plugin directly from the ServiceNow Store. Once the plugin is installed, |morpheus| Self-Service Catalog Items can be presented as provisioning options in the ServiceNow catalog for ordering.
 
 The |morpheus| plugin supports integration with ServiceNow whether it’s configured for a single tenant or for multiple domains. When both |morpheus| and ServiceNow are configured for multiple Tenants, we can create ServiceNow integrations in any relevant |morpheus| Tenant and map those to specific companies in ServiceNow. Any exposed library items would only be shared with users in the relevant ServiceNow company. The |morpheus| plugin will automatically detect whether the *ServiceNow Domain Support–Domain Extensions Installer plugin* has been installed and respond accordingly. Additionally, the *User Criteria Scoped API plugin* must also be enabled on the ServiceNow instance for multi-tenant use.
 
@@ -203,10 +203,7 @@ Depending on the scenario, setup steps for the |morpheus| plugin will be slightl
 Single-Domain ServiceNow Configuration
 ``````````````````````````````````````
 
-#. Install the |morpheus| plugin from the ServiceNow store.
-
-     - Refer to the `MORPHEUS DATA APPLICATION PLUG-IN FOR SERVICENOW <https://store.servicenow.com/appStoreAttachments.do?sys_id=73029271dbbd6450087656a8dc961995>`_ Installation Instructions for plugin installation.
-
+#. Install the |morpheus| plugin from the ServiceNow store, refer to the `Morpheus Data plugin for ServiceNow <https://store.servicenow.com/appStoreAttachments.do?sys_id=73029271dbbd6450087656a8dc961995>`_ installation instructions for additional help with the installation steps
 #. Navigate to |morpheus| Catalog > Properties
 #. Set the following properties:
 
@@ -218,6 +215,8 @@ Single-Domain ServiceNow Configuration
     |morpheus| user that the plugin will connect as to the |morpheus| API
    Password
     Password to the above |morpheus| account
+   |morpheus| Manage Workflows?
+    Indicate whether |morpheus| should manage workflows. If this option is checked, |morpheus| will overwrite the workflow and set it to "Morpheus (Internal) Catalog Item Provision Instance" on sync
 
   .. important:: The |morpheus| service account integrated with the plugin interacts with the |morpheus| appliance through |morpheus| API and must have the appropriate Role permissions to complete all provisioning requests from the ServiceNow plugin. Often it's easiest to make a service account with full administrator rights to avoid failed provisioning. If you'd prefer to create a minimal service account for security reasons, ensure the Role for the service account User has the following permissions:
 
@@ -238,10 +237,7 @@ Single-Domain ServiceNow Configuration
 Multi-Domain ServiceNow Configuration
 `````````````````````````````````````
 
-#. Install the |morpheus| plugin from the ServiceNow store.
-
-     - Refer to the `MORPHEUS DATA APPLICATION PLUG-IN FOR SERVICENOW <https://store.servicenow.com/appStoreAttachments.do?sys_id=73029271dbbd6450087656a8dc961995>`_ Installation Instructions for plugin installation.
-
+#. Install the |morpheus| plugin from the ServiceNow store, refer to the `Morpheus Data plugin for ServiceNow <https://store.servicenow.com/appStoreAttachments.do?sys_id=73029271dbbd6450087656a8dc961995>`_ installation instructions for additional help with the installation steps
 #. Navigate to |morpheus| Catalog > Multi-Tenant Credentials
 #. Set the following properties:
 
@@ -257,6 +253,8 @@ Multi-Domain ServiceNow Configuration
     Select a company from the list to link with the Tenant whose ID was entered above
    MID Server
     If desired, specify the name of an existing MID server
+   |morpheus| Manage Workflows?
+    Indicate whether |morpheus| should manage workflows. If this option is checked, |morpheus| will overwrite the workflow and set it to "Morpheus (Internal) Catalog Item Provision Instance" on sync
 
   .. important:: The |morpheus| service account integrated with the plugin interacts with the |morpheus| appliance through |morpheus| API and must have the appropriate Role permissions to complete all provisioning requests from the ServiceNow plugin. Often it's easiest to make a service account with full administrator rights to avoid failed provisioning. If you'd prefer to create a minimal service account for security reasons, ensure the Role for the service account User has the following permissions:
 

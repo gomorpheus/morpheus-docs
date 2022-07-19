@@ -51,7 +51,15 @@ Adding Infoblox Integration
    IP MODE
     Static IPs or DHCP Reservations
    EXTRA ATTRIBUTES
-    Accepts a JSON input of custom attributes that can be saved on host records in Infoblox
+    Accepts a JSON input of custom attributes that can be saved on host records in Infoblox. These Must be first defined as extra attributes in Infoblox and values can be injected for the user creating the record and the date of assignment. The available injectable attributes are: `userId`, `username`, and `dateCreated`.
+
+    .. code-block:: json
+
+      {
+        "Date Assigned":"<%=dateCreated%>",
+        "Requestor":"<%=username%>",
+        "Request Number":"<%=userId%>"
+      }
 
 #. Select :guilabel:`SAVE CHANGES`
 

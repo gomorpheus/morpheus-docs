@@ -79,6 +79,35 @@ When adding or editing a network there is an option to scan network.  If checked
 
 .. IMPORTANT:: Network scanning may cause network monitoring or other alerts
 
+Advanced Options (Search Domains)
+```````````````````````````````
+
+Search domains are appended to DNS searches when a **non** fully qualified domain name (short name) is queried.  Search domains can be entered as comma separated values, which will be added to DNS configurations, such as `/etc/resolv.conf`
+These domains are injected via cloud-init or other method chosen for the virtual image.
+
+Guest Console SSH Tunnel
+````````````````````````
+
+In some scenarios, instances that are segregated from the |morpheus| appliance by port restrictions, or other mechanisms, can cause difficulties to access the guest console via the |morpheus| web UI.
+Guest Console SSH Tunnel settings allow the administrator to configure a jump host's settings that is dual-homed, accessible by |morpheus| but also resides on the segregated network.
+When the guest console is configured with the SSH protocol, the traffic will be routed to the jump host, which will then relay to the target instance.
+
+GUEST CONSOLE JUMP HOST
+  DNS hostname or IP of the jump host to relay the traffic
+
+GUEST CONSOLE JUMP PORT
+  Port override, if different than 22 for SSH
+
+GUEST CONSOLE JUMP USERNAME
+  Username used to authenticate to the jump host
+
+GUEST CONSOLE JUMP PASSWORD
+  Password that is used with the username to autenticate to the jump host
+
+GUEST CONSOLE KEYPAIR
+  Keypair saved in |morpheus| to be used in lieu of, or in addition to, the password to the jump host, which is associated with the configured username
+  Keypairs can be imported at: |InfKeyKey|
+
 Subnets
 ```````
 

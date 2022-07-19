@@ -17,10 +17,10 @@ Disable Support Menu
 Support Menu Links
 	Customize support links. Label Code can be used for translations and is optional. Be sure to specify fully qualified url if linking to external sites.
 Security Banner
-	The Security Banner section in /admin/settings#!whitelabel displays content on the login screen for Security and Consent messaging and warnings.
+	The Security Banner section in ``/admin/settings#!whitelabel`` displays content on the login screen for Security and Consent messaging and warnings.
 		- Applicable at Global and Tenant levels
 		- Security Banner input field accepts plain text and markdown
-		- Content is displayed below login section in scoped /login/auth pages.
+		- Content is displayed below login section in scoped ``/login/auth`` pages.
 Footer Logo
 	Footer Logo in bottom left. Uploaded image is resized to 27 pixels high with a proportional width at that height.
 Login Logo
@@ -79,15 +79,15 @@ Available Copy fields
 		.. NOTE:: Terms of Use and Privacy Policy Footer links will load internal pages at ``https://applaince_url/privacy-policy`` and ``https://applaince_url/terms-of-use`` displaying the entered info as plain text. The Terms and Privacy String will update the legal text displayed on the |morpheus| login page. This field takes any custom HTML markup allowing you to link to the internal legal pages or to your own outside legal pages if you prefer.
 
 ​UI Loading Page
-```````````````
+````````````````
 
-When the |morpheus| UI is restarted or loading, a default "Morpheus is Loading" page is displayed. This page can be changed by adding the following to `/etc/morpheus/morpheus.rb` and adjusting the values.
+When the |morpheus| UI is restarted or loading, a default "Morpheus is Loading" page is displayed. This page can be changed by adding the following to ``/etc/morpheus/morpheus.rb`` and adjusting the values.
 
-.. NOTE:: `morpheus-ctl reconfigure` must be ran for any chnages to `/etc/morpheus/morpheus.rb` to take effect.
+.. NOTE:: ``morpheus-ctl reconfigure`` must be ran for any chnages to ``/etc/morpheus/morpheus.rb`` to take effect.
 
 .. code-block:: bash
 
-		nginx['web_root_internal'] = “/opt/morpheus/embedded/nginx/html"
+		nginx['web_root_internal'] = "/opt/morpheus/embedded/nginx/html"
 		nginx['loading_pages']['max_loops'] = 6 * 10 # 10 secs per loop x 6 times to get 60 seconds * 10 to get to 10 minutes
 		nginx['loading_pages']['timeout_page'] = '/timeout.html'
 		nginx['loading_pages']['iteration_time'] = 10_000

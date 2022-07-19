@@ -10,38 +10,17 @@ In the simplest configuration |morpheus| needs one Appliance Server. The Applian
 Base Requirements
 -----------------
 
-.. list-table:: **Supported Appliance Operating Systems**
-   :widths: auto
-   :header-rows: 1
-
-   * - OS
-     - Version(s)
-     - Notes
-   * - Amazon Linux
-     - 2
-     -
-   * - CentOS Stream
-     - 8.x
-     -
-   * - Debian
-     - |debianVersion|
-     - FreeRDP 2.0 is not compatible with Debian 9. Guacd will remain at 1.0.0 for Appliances running on 9.
-   * - RHEL
-     - 7.x, 8.x
-     -
-   * - SUSE SLES
-     - 12, 15
-     -
-   * - Ubuntu
-     - 16.04, 18.04, 20.04
-     - 14.04 is no longer supported for Appliance OS. Existing Appliances on 14.04 must upgrade to 16.04 or 18.04 PRIOR to upgrading to v4.2.1. Note: 14.04 is still supported by the |morpheus| Agent.
+.. include:: applianceOsTable.rst
 
 - **Memory:** `16 GB recommended <https://support.morpheusdata.com/s/article/How-does-Morpheus-manage-the-memory-it-uses?language=en_US>`_ for default installations. 8 GB minimum required with 4 GB+ available storage swap space
 - **Storage:** 200 GB storage minimum (see Storage Considerations below)
 - **CPU:** 4-core, 1.4 GHz (or better), 64-bit CPU recommended for all-in-one systems. For a distributed-tier installation, it's recommended each tier have 2-core, 1.4 GHz (or better), 64-bit CPU
 - Network connectivity from your users to the appliance over TCP 443 (HTTPS)
 - Superuser privileges via the ``sudo`` command for the user installing the |morpheus| appliance package
-- Access to base ``yum`` or ``apt`` repositories. ``codeready`` (codeready-builder-for-rhel-8-x86_64-rpms) repo access is required for RHEL 8+ appliances and access to the Optional RPMs repo is required for RHEL 7.x
+- Required repository access:
+    - Prior to installing the |morpheus| Appliance you will need to ensure that the target server or virtual machine has access to the base YUM/DNF or APT repositories
+    - A RHEL 8 server requires the ``codeready`` (codeready-builder-for-rhel-8-x86_64-rpms) repository be enabled and accessible
+    - A RHEL 7 server requires access to Optional RPMs repo. The repository need to be enabled and accessible
 - An appliance license is required for any operations involving provisioning
 - Current major web browsers supporting modern standards, such as Google Chrome, Mozilla Firefox, Apple Safari, and Microsoft Edge are supported
 - Internet Connectivity (optional)
@@ -73,7 +52,7 @@ Default Paths
   User, Application and Services Data, including default config Elasticsearch, RabbitMQ and Database data, and default Virtual Image path.
 ``/var/log``
   Morpheus Service logs
-``/tmp/morpheus``
+``/var/opt/morpheus/bitcan/``
   Working directory for Backups
 
 Images
@@ -84,7 +63,9 @@ Virtual Images can be uploaded to |morpheus| Storage Providers for use across Cl
 Backups
 ^^^^^^^
 
-|morpheus| can offload snapshots when performing backups to local or other Storage Providers. By default when no Storage Provider has been added, backups will write to ``/tmp/morpheus/backups/``. When using none NFS Storage providers, the backup file(s) must be written to ``/tmp/morpheus/working/`` before they can be zipped, sent to the destination Storage provider such as S3, and removed from ``/tmp/morpheus/working/``. Please ensure adequate space in ``/tmp/morpheus/`` when offloading Backups.
+|morpheus| can offload snapshots when performing backups to local or other Storage Providers. By default when no Storage Provider has been added, backups will write to ``/var/opt/morpheus/bitcan/backups/``. When using none NFS Storage providers, the backup file(s) must be written to ``/var/opt/morpheus/bitcan/working/`` before they can be zipped, sent to the destination Storage provider such as S3, and removed from ``/var/opt/morpheus/bitcan/working/``. Please ensure adequate space in ``/var/opt/morpheus/bitcan/`` when offloading Backups.
+
+.. note:: The backup /working and /backups paths are configurable in morpheus.rb with `bitcan['working_directory'] = '$path'` and `bitcan['backup_directory'] = '/tmp'`
 
 Migrations
 ^^^^^^^^^^

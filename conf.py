@@ -3,55 +3,54 @@ import datetime
 master_doc = 'index'
 
 latex_documents = [
-    (master_doc, 'morpheus_5.4.4-1.tex', u'Morpheus Documentation',
+    (master_doc, 'morpheus_5.5.1-1.tex', u'Morpheus Documentation',
      u'Morpheus', 'manual'),
 ]
 
 rst_prolog = """
 
-.. |releasedate| replace:: Mar 9 2022
+.. |releasedate| replace:: July 19 2022
+.. |morphbranch| replace:: v5.5
+.. |morphver| replace:: v5.5.1
+.. |minUpgradeVer| replace:: v5.2.0
+.. |previousMorphVer| replace:: v5.5.0
+.. |pluginVer| replace:: 0.12.5
+.. |workerVer| replace:: 5.4.8
+.. |rmqbranch| replace:: v3.5-3.9
+.. |rmqver| replace:: v3.9.20
+.. |mysqlbranch| replace:: v5.7
+.. |mysqlver| replace:: v5.7.37
+.. |mysqlverfips| replace:: v5.7.37
+.. |esbranch| replace:: v7.x
+.. |esver| replace:: v7.17.5
+.. |tcver| replace:: v9.0.64
+.. |nginxver| replace:: v1.22.1
+.. |nodePackageVer| replace:: 3.2.8
+.. |linuxagentver| replace:: v2.3.2
+.. |macagentver| replace:: v2.3.2
+.. |winagentver| replace:: v1.8.0.0
+.. |java| replace:: 11.0.15+10
+.. |java-mac| replace:: 11.0.14+9
+.. |openjdk-jre| replace:: 11.0.15+10
+.. |openjdk-elasticsearch| replace:: 14.0.2+12
+.. |openssl| replace:: 1.1.1p
+.. |openssl_fips| replace:: 1.0.2u
+.. |erlang| replace:: 23.3.4.2
+
 .. |morpheus| replace:: Morpheus
 .. |morphues| replace:: Morpheus
 .. |morphdat| replace:: Morpheus Data
-.. |morphbranch| replace:: v5.4
-.. |morphver| replace:: v5.4.4
-.. |minUpgradeVer| replace::
-.. |previousMorphVer| replace:: v5.4.3
-.. |rmqbranch| replace:: v3.5-3.9
-.. |rmqver| replace:: v3.9.8
-.. |mysqlbranch| replace:: v5.7
-.. |mysqlver| replace:: v5.7.37
-.. |mysqlverfips| replace:: v.5.7.35
-.. |esbranch| replace:: v7.x
-.. |esver| replace:: v7.8.1
-.. |tcver| replace:: v9.0.58
-.. |nginxver| replace:: v1.20.1
-.. |linuxagentver| replace:: v2.2.2
-.. |winagentver| replace:: v1.8.0.0
-.. |macagentver| replace:: v2.2.2
-.. |nodePackageVer| replace:: 3.2.5
-.. |java| replace:: 11.0.14
-.. |java-mac| replace:: 11.0.14
-.. |openjdk-jre| replace:: 11.0.14
-.. |openjdk-elasticsearch| replace:: 14.0.2+12
-.. |openssl| replace:: 1.1.1k
-.. |openssl_fips| replace:: 1.0.2u
-.. |erlang| replace:: 23.2
 .. |repo_host_url| replace:: https://downloads.morpheusdata.com
 .. |master tenant| replace:: Master Tenant
 .. |profileObjects| replace:: Clouds
 .. |profileTypes| replace:: Terraform, Key/Value
 
-.. |trash| unicode:: 0x0001F5D1 .. TRASH ICON
-.. |gear| unicode:: U+02699 .. GEAR ICON
-.. |info| unicode:: U+2139 .. INFO ICON
-.. |triangledown| unicode:: U+25BD .. TRIANGLE DOWN ICON
-.. |rightarrow| unicode:: U+2192 .. RIGHT ARROW ICON
-.. |pencil| unicode:: U+270E .. EDIT ICON
-
-.. role:: redguilabel
-
-.. |debianVersion| replace:: 9,10,11
+.. |debianVersions| replace:: 9,10,11
+.. |oelVersions| replace:: 7.x, 8.x
+.. |ubuntuVersions| replace:: 16.04, 18.04, 20.04, 22.04
+.. |centosVersions| replace:: 7.x. 8.x (stream)
+.. |rhelVersions| replace:: 7.x. 8.x
+.. |suseVersions| replace:: 12, 15
 
 .. |Lib| replace:: Library
 .. |LibAut| replace:: Library > Automation
@@ -202,6 +201,16 @@ rst_prolog = """
 .. |AdmSetSof| replace:: Administration > Settings > Software Licenses
 .. |AdmSetLic| replace:: Administration > Settings > License
 .. |AdmSetUti| replace:: Administration > Settings > Utilities
+
+.. |trash| unicode:: 0x0001F5D1 .. TRASH ICON
+.. |gear| unicode:: U+02699 .. GEAR ICON
+.. |info| unicode:: U+2139 .. INFO ICON
+.. |triangledown| unicode:: U+25BD .. TRIANGLE DOWN ICON
+.. |rightarrow| unicode:: U+2192 .. RIGHT ARROW ICON
+.. |pencil| unicode:: U+270E .. EDIT ICON
+.. |checkmark| unicode:: U+2713 .. CHECK MARK
+
+.. role:: redguilabel
 """
 
 
@@ -228,7 +237,7 @@ rst_prolog = """
 
 
 year = datetime.datetime.now().date().strftime("%Y")
-extensions = ['recommonmark','sphinx_markdown_tables','sphinxcontrib.contentui','sphinx_tabs.tabs','sphinxcontrib.images','sphinx_search.extension','notfound.extension','sphinx.ext.autosectionlabel','sphinx_rtd_dark_mode'] #sphinx_tabs
+extensions = ['recommonmark','sphinxcontrib.contentui','sphinx_tabs.tabs','sphinxcontrib.images','sphinx_search.extension','notfound.extension','sphinx.ext.autosectionlabel','sphinx_rtd_dark_mode'] #sphinx_tabs
 templates_path = ['_templates']
 default_dark_mode = False
 source_suffix = ['.rst', '.md']
@@ -283,10 +292,7 @@ latex_elements = {
 
 }
 
-latex_documents = [
-    (master_doc, 'morpheus5.3.3-1.tex', u'Morpheus Documentation',
-     u'Morpheus', 'manual'),
-]
+
 
 man_pages = [
     (master_doc, 'morpheusdocs', u'Morpheus Documentation',

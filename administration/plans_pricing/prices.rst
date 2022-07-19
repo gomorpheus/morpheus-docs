@@ -30,7 +30,7 @@ Type
   - **Component:** 'Component' price sets require at least one of each 'Memory', 'Cores', 'CPU', and 'Storage' price types and may include 'Platform' or 'Software' price types
   - **Load Balancer:** 'Load Balancer' price sets require at least one 'Load Balancer' price type and may include 'Load Balancer Virtual Server' price types. Load Balancer price sets are the only type which can be associated with Load Balancer Price Plans
   - **Virtual Image:** 'Virtual Image' price sets require at least one 'Storage' price type. Virtual Image price sets are the only type which can be associated with Virtual Image Price plans
-  - **Snapshot:** 'Snapshot' price sets require at least one 'Storage' price type and may only include 'Storage' price types. Snapshot price sets are the only type which can be associated with Snapshot Price plans
+  - **Snapshot:** 'Snapshot' price sets require at least one 'Storage' price type and may also include 'Datastore' price types. Snapshot price sets are the only type which can be associated with Snapshot Price plans
 
 Apply Price Changes to Usage
   If marked, when saving a Price Set (new Price Set or saving changes to an existing one), usage records will be restarted for servers affected by the pricing change.
@@ -51,7 +51,7 @@ Price Types
   - Cores Only (per core)
   - Disk Only (per GB)
   - Platform: Select from Windows, Linux (generic), or one of several specific Linux distributions
-  - Software: Add prices for software licenses which may be included with your price sets
+  - Software/Service: Add prices for software licenses which may be included with your price sets
   - Datastore (per GB)
   - Load Balancer
   - Load Balancer Virtual Server
@@ -69,6 +69,7 @@ Price Units
 
 Currency
   -  AED
+  -  ARS
   -  AUD
   -  BRL
   -  CAD
@@ -81,6 +82,7 @@ Currency
   -  IDR
   -  ILS
   -  JD
+  -  JPY
   -  MAD
   -  MXN
   -  NOK
@@ -88,6 +90,7 @@ Currency
   -  ROL
   -  SAR
   -  SEK
+  -  THB
   -  TRL
   -  USD
   -  USN

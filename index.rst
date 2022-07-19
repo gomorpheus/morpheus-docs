@@ -9,7 +9,7 @@
    :maxdepth: 2
    :caption: Morpheus UI
 
-   getting_started/getting_started   
+   getting_started/getting_started
    operations/operations
    provisioning/provisioning
    library/library.rst
@@ -47,13 +47,6 @@
 
    API Documentation <https://apidocs.morpheusdata.com>
    CLI Documentation <https://clidocs.morpheusdata.com>
-
-..
-  .. toctree::
-     :maxdepth: 1
-     :caption: Morpheus Developer Portal
-
-     Developer Zone <https://developer.morpheusdata.com/>
 
 .. toctree::
    :maxdepth: 1

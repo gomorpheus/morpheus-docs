@@ -4,8 +4,6 @@ F5 Load Balancers
 Add F5 Load Balancer
 ^^^^^^^^^^^^^^^^^^^^
 
-.. image:: /images/infrastructure/lbs/F5_addf5lb.gif
-
 To add a F5 Load Balancer Integration:
 
 #. Navigate to `Infrastructure > Load Balancers`
@@ -40,6 +38,8 @@ To add a F5 Load Balancer Integration:
     * SERVER NAME
 
 #. Save Changes
+
+.. IMPORTANT:: The F5 API handles SSL certificate installation by downloading the certificate from a URL the user provides. |morpheus| provides the "Appliance URL" configured in global settings (|AdmSetApp|) to satisfy that requirement. Make sure you have configured a valid URL in this field and that F5 can reach it.
 
 Virtual Servers
 ^^^^^^^^^^^^^^^

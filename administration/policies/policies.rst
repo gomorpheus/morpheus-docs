@@ -25,8 +25,10 @@ Budget
   Sets a maximum total combined price for all instances in the Group, Cloud, Tenant or owned by the User this policy is applied to.
 Cluster Resource Name
   The name of Cluster hosts (master and workers) when creating Kubernetes, Docker and KVM Clusters. Pre-populates a fixed or editable Resource Name value for the cluster using ${variable} naming patterns and/or text, including ${sequence} numbering. Toggle whether sequence numbers are reusable (after the resource using them is destroyed) by enabling `Reuse Naming Sequence Numbers <https://docs.morpheusdata.com/en/latest/administration/settings/settings.html#provisioning>`_ in |AdmSet|
+Cypher Access
+  Granularly set LIST, READ, WRITE, and DELETE access to arbitrary Cypher secret paths scoped globally or to specific Roles and Users. See the section below for a guide to establishing a Cypher access policy.
 Delayed Delete
-  Delayed Delete Policies allow for soft deletion of Instances and Apps. Instead of deleting immediately, Instances and Apps with a Delayed Removal policy applied will be shutdown upon deletion request and hidden by default from the UI. The Instance/App will then be in ``Pending Removal`` status.
+  Delayed Delete Policies allow for soft deletion of Instances and Apps. Instead of deleting immediately, Instances and Apps with a Delayed Delete policy applied will be shutdown upon deletion request and hidden by default from the UI. The Instance/App will then be in ``Pending Removal`` status. In order to see Instances pending deletion on the Instances list page (|ProIns|), you must filter for "Pending Removal" status. These Instances will not show when filtered for "All Statuses"
 Expiration
   Sets an expiration timeframe in days after which the Instance will be deleted. Extensions can be auto-approved or require approval immediately or after x amount of auto-extensions using Morpheus Approvals or an Approval Integration. See |morpheus| `Knowledge Base <https://support.morpheusdata.com/s/article/How-to-create-an-extensions>`_ for more information about Expiration policies
 File Share Storage Quota
@@ -45,8 +47,12 @@ Max Load Balancer Pools
   Sets the max number of load balancer pools within the policy scope
 Max Memory
   Sets the max number of total of RAM combined for Instances in the Group or Cloud the Policy is added to.
+Max Pool Members
+  Sets the maximum number of members in a load balancer pool
 Max Storage
   Sets the max number of total of Storage combined for Instances in the Group or Cloud the Policy is added to.
+Max Virtual Servers
+  Sets the maximum number of virtual servers within the policy scope
 Max VMs
   Sets the max number of Virtual Machines for the Group or Cloud the Policy is added to.
 Message of the Day (MOTD)
@@ -149,6 +155,8 @@ To create a Policy for a Group:
 
 Policy Types
 ------------
+
+.. include:: cypherpolicies.rst
 
 Expiration Policies
 ^^^^^^^^^^^^^^^^^^^

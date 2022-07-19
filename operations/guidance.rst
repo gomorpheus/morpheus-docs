@@ -21,6 +21,8 @@ To turn on |morpheus| Guidance for a Cloud:
 
 Guidance recommendations will begin to appear in the guidance section when generated.
 
+.. NOTE:: It will take approximately seven days before |morpheus| gathers sufficient data to make guidance recommendations.|morpheus| Guidance is significantly improved when the Agent is installed on provisioned workloads. When the Agent is not installed, |morpheus| still makes a best effort to provide relevant guidance recommendations. For some public Cloud types, such as Microsoft Azure, |morpheus| will not generate guidance recommendations at all if the Agent is not installed.
+
 Once Guidance has been turned on for a Cloud, |morpheus| will determine if a guidance recommendation should be made once every 30 minutes. In the event that no recommendations can be made, no entry will be added to the list of suggested guidances. As the guidance list continues to grow, sorting and filtering may become necessary to focus on the recommendations that are relevant to the user at the time.
 
 It's important to note that acting on recommendations is entirely manual at this time. In many cases, Morpheus provides one-click action to take the recommended steps but Guidance recommendations cannot be taken automatically. This is a feature that is being explored for a future update but has not been tagged for any specific release version at this time. In addition, it's recommended that |morpheus| Agent be installed to maximize the benefits of Guidance. While Guidance will still work without installing the Agent, the greatly-enhanced statistics provided by the Agent will significantly improve Guidance recommendations.

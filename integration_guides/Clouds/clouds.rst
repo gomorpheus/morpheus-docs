@@ -4,6 +4,7 @@ Clouds
 .. toctree::
   :maxdepth: 2
 
+  alibaba/alibaba.rst
   aws/amazon.rst
   azure/azure.rst
   azure_stack/azure_stack.rst

@@ -18,9 +18,15 @@ At this time, |morpheus| primarily supports CentOS 7 and Ubuntu-based KVM cluste
 - qemu-kvm-rhev
 - genisoimage
 
-Additionally, |morpheus| will attempt to add a new network switch called 'morpheus' and storage pool when onboarding a brownfield KVM host.
+Additionally, |morpheus| will attempt to add a new network switch called 'morpheus' and storage pool when onboarding a brownfield KVM cluster.
 
-When creating new clusters from |morpheus|, users simply provide a basic Ubuntu or CentOS box. |morpheus| takes care of installing the packages listed above as well as |morpheus| Agent if desired.
+When creating new clusters from |morpheus|, users simply provide a basic Ubuntu or CentOS box. |morpheus| takes care of installing the packages listed above as well as |morpheus| Agent, if desired. The same can be said for adding a new host to an existing KVM cluster. Users need only provide access to an Ubuntu or CentOS box and |morpheus| will install the required packages along with making sensible default configurations. Users can also add existing KVM hosts to a cluster. After providing SSH access into the host, if |morpheus| detects that virsh is installed, it will treat it as a brownfield KVM host. Brownfield KVM hosts must have:
+
+- libvirt and virsh installed
+- A pool called morpheus-images defined as an image cache and ideally separate from the main datastore
+- A pool called morpheus-cloud-init defined which stores small disk images for bootup (this pool can be small)
+
+.. NOTE:: |morpheus| creates (or uses in the case of brownfield hosts) a morpheus-images pool which is separate from the main datastore. This is a host-local image cache which facilitates faster clone operations. The cache will automatically purge images once the allocation reaches 80% to avoid filling completely. Once it is 80% full, the oldest accessed volumes in the cache will be deleted first until the cache is under 50% full once again.
 
 Creating the Cloud
 ^^^^^^^^^^^^^^^^^^

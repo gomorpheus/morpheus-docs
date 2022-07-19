@@ -25,6 +25,8 @@ uuid
   Returns a new UUID by key name when requested and stores the generated UUID by key name for a given lease timeout period.
 key
   Generates a Base 64 encoded AES Key of specified bit length in the key pattern (i.e. key/128/mykey generates a 128-bit key)
+vault
+  Configures an integration between |morpheus| and a Hashicorp Vault server. See below for additional configuration instructions.
 
   * Key lease times are entered in seconds and default to 32 days (2764800 s).
 
@@ -62,6 +64,26 @@ Save changes and the password will be generated and available for use.
 If your user role has Cypher: Decrypt permissions, a "DECRYPT" button will be available in the Cypher section to view the generated password.
 
 To delete the password key, select `Actions > Remove` and confirm.
+
+tfvars
+------
+
+A mountpoint to store tfvars files for Terraform App Blueprints.
+
+Key
+  Pattern "tfvars/key"
+
+  Example: tfvars/my-aws-account
+
+Value
+  The values for your tfvars file to be encrypted
+
+Lease
+  Enter lease time in seconds (ex. 604800 for one week)
+
+Click :guilabel:`SAVE CHANGES` and the stored values will be available for use.
+
+.. NOTE:: You may also see Cloud profiles stored at the tfvars mountpoint. They will have a key pattern like: "tfvars/profile/cloud/$cloudCode/variables". Terraform Cloud profiles are created on the Cloud detail page (|InfClo| > selected Cloud) under the Profiles tab. They allow Terraform apps and specs to be provisioned across multiple Clouds that require differed tfvars. See the `Cloud profiles <https://docs.morpheusdata.com/en/latest/infrastructure/clouds/profiles.html>`_ page for more.
 
 Secret
 ------
@@ -128,6 +150,38 @@ Save changes and the AES Key will be generate and available for use.
 If your user role has Cypher: Decrypt permissions, a "DECRYPT" button will be available in the Cypher section to view the generate AES Key.
 
 To delete the UUID, select `Actions > Remove` and confirm.
+
+Vault
+-----
+
+Use this mountpoint to configure an integration with a Hashicorp Vault server and then later call Vault-stored values into Tasks (|LibAutTas|). Store the Vault server URL and a token at the mountpoints indicated below.
+
+.. NOTE:: It's recommended that you use a long-lived token as attempts to call Vault-stored values into Tasks will stop working if the token is no longer good. In such a case you'd have to obtain a new token, delete the Cypher entry with the old token, and create a new one to restore functionality once again. Using a long-lived token will prevent the need to do this often.
+
+Key
+  Pattern "vault/config/url" and "vault/config/token"
+
+Value
+  Example: "http://xx.xx.xx.xx:8200" at vault/config/url and "hvs.b519c6aa..." at vault/config/token
+
+Lease
+  Enter lease time in seconds (ex. 604800 for one week)
+
+Click :guilabel:`SAVE CHANGES`. Once the two Cypher entries discussed above are created, users can call Vault stored values into automation as needed. The example BASH script below onboards the value stored in Vault from the secret/morpheus-credentials/my-vmware-admin-creds mountpoint:
+
+.. code-block:: bash
+
+  from_vault="<%= cypher.read('vault/secret/data/morpheus-credentials/my-vmware-admin-creds') %>"
+
+  echo $from_vault
+
+.. raw:: html
+
+    <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; height: auto;">
+        <iframe src="//www.youtube.com/embed/kkH7Y12LGhU" frameborder="0" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
+    </div>
+
+|
 
 Using Cypher Keys in Scripts
 ----------------------------

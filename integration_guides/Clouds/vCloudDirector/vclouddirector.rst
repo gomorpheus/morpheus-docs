@@ -25,7 +25,8 @@ Add vCD Cloud From `Infrastructure > Clouds`
 
      - User must have an Organizational Administrator or System Administrator Role
      - Username must be in the format of <name>@<org>
-     - When using a user with the System Administrator role, ensure this user has permission set correctly, such as to view objects created by the organization administrator if needed. Otherwise, things like catalogs and vApps created by the Organization Administrator might not be visible to |morpheus|
+     - When using a user with the System Administrator role, give the username in the format of <username>@system. Additionally, ensure this user has permission set correctly, such as to view objects created by the organization administrator if needed. Otherwise, things like catalogs and vApps created by the Organization Administrator might not be visible to |morpheus|
+     - In some cases, it may not be advisable to use the system administrator user. This is because some environments will have API access turned off for the system administrator for security reasons as the user would be able to remove key pieces of infrastructure. If your system administrator user does have API access and you understand the risks, you can authenticate |morpheus| with this user
 
    PASSWORD
     Password for the user indicated above

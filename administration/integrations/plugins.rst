@@ -4,7 +4,9 @@ Plugins
 Overview
 ^^^^^^^^
 
-|morpheus| is extendable with custom plugins for Task types, UI tabs, approvals, cypher, and more. Plugins are added from the Plugins tab of the Integration page under Administration (|AdmIntPlu|). Simply browse for a local plugin file (.jar) to add it to the UI. Custom plugins can also be edited or deleted by clicking on the pencil or trash can icons in the corresponding row.
+|morpheus| is extendable with custom plugins for Task types, UI tabs, reports, approvals, cypher, and more. Plugins are added from the Plugins tab of the Integration page under Administration (|AdmIntPlu|). Simply browse for a local plugin file (.jar) to add it to the UI. Custom plugins can also be edited or deleted by clicking on the pencil or trash can icons in the corresponding row.
+
+|morpheus| maintains a repository of internally-developed and vetted plugins at |morpheus| `Exchange <https://share.morpheusdata.com/>`_. These plugins can be downloaded and added to |morpheus| using the instructions in the prior paragraph. Alongside the download link, you can also find helpful readme information that discusses how the plugin can be used and which versions of |morpheus| it's compatible with.
 
 With at least one plugin integrated, |morpheus| will show details on each plugin from the Plugins List View. The following information is displayed:
 
