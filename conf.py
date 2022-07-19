@@ -33,7 +33,7 @@ rst_prolog = """
 .. |java-mac| replace:: 11.0.14+9
 .. |openjdk-jre| replace:: 11.0.15+10
 .. |openjdk-elasticsearch| replace:: 14.0.2+12
-.. |openssl| replace:: 1.1.1g
+.. |openssl| replace:: 1.1.1p
 .. |openssl_fips| replace:: 1.0.2u
 .. |erlang| replace:: 24.3
 
