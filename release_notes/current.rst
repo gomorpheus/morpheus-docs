@@ -22,15 +22,14 @@ Release Dates
 
       5.5.1-2 contains the following updates not included in 5.5.1-1:
 
-     :Security: - CVE-2022-35912 - Grails updated to v5.1.9. Morpheus 5.4.3+ versions are not vulnerable to CVE-2022-35912. The vulnerability applies systems using java 9 and morpheus-ui 5.4.3+ uses java 11. Out of an abundance of caution we upgraded grails to v5.1.9. Customers on morpheus v5.4.2 or earlier are advised to upgrade to morpheus v5.4.3+.
-     :Azure: - Costing: Fixed Azure costing failing when 429 too many attempts api error is encountered
-             - Costing: Fixed Azure costing issues related to currency conversion
-     :Inputs: - Options Types: Fixed export as tag and display value on details not working for catalog items
-              - Options Types: Improved handling of api option list loading. "No options found" no longer displayed prior to api response, "Failed to load options" now displayed on empty response.
-     :Openstack: - Reverted 5.4.8-1 update that tied Openstack IP Pool visibility to network visibility
-     :Plugins: - Update the plugin core to handle the "show on detail" flag in seed. morpheus-plugin-api:0.12.6
-
-     :Security Groups: - Fixed maxSize constraint on security group rule destination causing sync error when destination block contains > 1000 chars
+     :Security: - CVE-2022-35912 - Grails updated to v5.1.9. Morpheus 5.4.3+ versions are not vulnerable to CVE-2022-35912. The vulnerability applies systems using java 9 and morpheus-ui 5.4.3+ uses java 11. Out of an abundance of caution we upgraded grails to v5.1.9. Customers on morpheus v5.4.2 or earlier are advised to upgrade to morpheus v5.4.3+. :superscript:`5.4.8`
+     :Azure: - Costing: Fixed Azure costing failing when 429 too many attempts api error is encountered :superscript:`5.4.8`
+             - Costing: Fixed Azure costing issues related to currency conversion :superscript:`5.4.8`
+     :Inputs: - Options Types: Fixed export as tag and display value on details not working for catalog items :superscript:`5.4.8`
+              - Options Types: Improved handling of api option list loading. "No options found" no longer displayed prior to api response, "Failed to load options" now displayed on empty response. :superscript:`5.4.8`
+     :Openstack: - Reverted 5.4.8-1 update that tied Openstack IP Pool visibility to network visibility :superscript:`5.4.8`
+     :Plugins: - Update the plugin core to handle the "show on detail" flag in seed. morpheus-plugin-api:0.12.6 :superscript:`5.4.8`
+     :Security Groups: - Fixed maxSize constraint on security group rule destination causing sync error when destination block contains > 1000 chars :superscript:`5.4.8`
 
 |
 
