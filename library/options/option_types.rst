@@ -67,6 +67,16 @@ REQUIRED
  Prevents User from proceeding without setting value
 VERIFY PATTERN
  For Text and Text Area-type Inputs. If desired, enter a regex pattern string and user entries must match the string to be accepted
+
+ .. toggle-header:: :header: **Verify Pattern Demo**
+
+     .. raw:: html
+
+         <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; height: auto;">
+             <iframe src="//www.youtube.com/embed/-a46JLKJYHQ" frameborder="0" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
+         </div>
+
+     |
 DEFAULT CHECKED
  For ``Checkbox`` types, when marked the Checkbox will be checked by default
 OPTION LIST
