@@ -12,6 +12,13 @@ Creating Apps
 New Apps can be created from Blueprints or using existing Instances. 
 
 
+
+Creating Apps
+-------------
+
+New Apps can be created from Blueprints or using existing Instances. 
+
+
 Creating Apps from Blueprints
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 

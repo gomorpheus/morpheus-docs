@@ -305,6 +305,12 @@ Role Mappings
     - The Hosts page provides for viewing and managing hosts, virtual machines, and bare metal hosts. On the bare metal hosts page, hosts may come from PXE boot or may be manually added. On the Hosts page hypervisors and Docker hosts are displayed. The Virtual Machines page lists all VMs. On all three pages actions may be performed against machines. Additionally, views may be refined by altering the columns displayed and CSV/JSON exporting of lists is available.
     - This permission is recommend for those whom need to take action on machines and those responsible for bare metal provisioning.
     -
+  * - Infrastructure: Credentials
+    - None, Read, Full
+    - 
+    - 
+    - 
+    -
   * - Infrastructure: DHCP Relays
     - None, Read, Full
     - Determines access to the DHCP Relays in applicable network integrations
@@ -365,11 +371,23 @@ Role Mappings
     - The Infrastructure Networks Proxies page is where Proxy configurations are stored, which are available for use by the provisioning engines.
     - This permission is recommended for those responsible for configuring proxies to be used when provisioning.
     -
+  * - Infrastructure: Network Router DHCP Binding
+    - None, Read, Full
+    - 
+    - 
+    - 
+    -
   * - Infrastructure: Network Router DHCP Pool
     - None, Read, Full
     - Determines access to the DHCP tab on the detail page for a Router associated with certain network integrations (Example: Infrastructure > Network > Integrations > Routers tab > selected router > DHCP tab)
     - The DHCP tab is where DHCP pools are viewed, created and managed
     - This permission is recommended for those responsible for DHCP pool management
+    -
+  * - Infrastructure: Network Router DHCP Relay
+    - None, Read, Full
+    - 
+    - 
+    - 
     -
   * - Infrastructure: Network Router Firewalls
     - None, Read, Full
@@ -749,6 +767,12 @@ Role Mappings
     - The Service Mesh page displays container services and DNS information. A service mesh ensures fast and reliable communication between containerized application services.
     - This permission is recommended for those responsible for container management.
     -
+  * - Reconfigure Servers
+    - None, Full
+    - 
+    - 
+    - 
+    -
   * - Remote Console
     - None, Provisioned, Full
     - Determines access to the console on a Host detail page (Infrastructure > Hosts > selected Host, VM, or Bare Metal resource > Console tab). The "Provisioned" permission gives access to the console only for resources the logged in user has provisioned.
@@ -797,12 +821,24 @@ Role Mappings
     - Allows for the management of Kubernetes clusters via the API
     - This permission is recommended for those who need to manage Kubernetes clusters via the API.
     - It is recommended this permission is set to None on the Tenant Role to restrict access for Subtenant users.
-  * - Tools: Migrations
+  * - Tools: VDI Pools
     - None, Read, Full
-    - Determines access to the Tools > Migrations page
-    - The Migration tool creates a snapshot of an existing VM, converts it to the destination format and provisions the machine on the target.
-    - Recommend only for those responsible for lifting and shifting VMs.
-    - It is recommended this permission is set to None on the Tenant Role to restrict access for Subtenant users.
+    - Controls User access to VDI Pools which are currently configured (Tools > VDI Pools) via the Virtual Desktops Persona view
+    - 
+    - 
+    - 
+  * - VDI: Copy/Paste
+    - None, Full
+    - Controls the ability for the VDI user to copy/paste contents from/to the VDI instance.
+    - 
+    - 
+    - 
+  * - VDI: Local Printer
+    - None, Full
+    - 
+    - 
+    - 
+    - 
   * - None - No Permissions
     - None
     - When all permissions are set to None, the following behavior can be expected: This allows only access to the User Setting page displayed, which is accessed by clicking on the user's name in the upper-right corner of the application window.
