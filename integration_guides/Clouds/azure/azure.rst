@@ -57,6 +57,28 @@ CSP Accounts require the additional following input:
 * CSP Application (client) ID
 * CSP Application (client) SECRET (Web App Key)
 
+The |morpheus| appliance requires outbound HTTPS (443) access to the Azure endpoints. Depending on the type of cloud you choose when adding Azure, ensure the proper endpoints are allowed:
+
+  **Global Azure Cloud**
+    * https://management.core.windows.net (ServiceManagementUrl)
+    * https://management.azure.com (ResourceManagerUrl)
+    * https://login.microsoftonline.com (ActiveDirectoryAuthority)
+  
+  **US Gov Cloud**
+    * https://management.core.usgovcloudapi.net (ServiceManagementUrl)
+    * https://management.usgovcloudapi.net (ResourceManagerUrl)
+    * https://login.microsoftonline.us (ActiveDirectoryAuthority)
+
+  **Germany Cloud**
+    * https://management.core.cloudapi.de (ServiceManagementUrl)
+    * https://management.microsoftazure.de (ResourceManagerUrl)
+    * https://login.microsoftonline.de (ActiveDirectoryAuthority)
+
+  **China Cloud**
+    * https://management.core.chinacloudapi.cn (ServiceManagementUrl)
+    * https://management.chinacloudapi.cn (ResourceManagerUrl)
+    * https://login.chinacloudapi.cn (ActiveDirectoryAuthority)
+
 Credentials & Permissions
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
