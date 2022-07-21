@@ -7,7 +7,9 @@
 - Compatible Plugin API version: |pluginVer|
 - Compatible Morpheus Worker version: |workerVer|
 
-.. important:: Morpheus |morphver| requires Morpheus Worker |workerVer|. Please upgrade any existing Morpheus Workers to the |workerVer| Worker package to ensure compatibility with Morpheus |morphver|.
+.. important::  Security: CVE-2022-35912: Morpheus v5.5.1-2 and v5.4.8-2 are now available in response to CVE-2022-35912, a Grails Framework remote code execution vulnerability. v5.5.1-2 and v5.4.8-2 include the Grails v5.1.9 update that mitigates the vulnerability. At this time, the Grails vulnerability is only confirmed for grails frameworks running on Java 8. Morpheus versions v5.4.4 and higher are on Java 11. Customers on morpheus v5.4.3 or earlier are highly advised to upgrade to at minimum v5.4.4 or higher, and out of an abundance of caution we recommend all customers upgrade to v5.5.1-2 or v5.4.8-2 in the event the vulnerability is found to be exploitable on Java 11.
+
+.. warning:: Morpheus |morphver| requires Morpheus Worker |workerVer|. Please upgrade any existing Morpheus Workers to the |workerVer| Worker package to ensure compatibility with Morpheus |morphver|.
 
 .. NOTE:: Items appended with :superscript:`5.x.x` are also included in that version
 
@@ -22,7 +24,7 @@ Release Dates
 
      5.4.8-2 contains the following updates not included in 5.4.8-1:
 
-     :Security: - CVE-2022-35912 - Grails updated to v5.1.9. Morpheus 5.4.3+ versions are not vulnerable to CVE-2022-35912. The vulnerability applies systems using java 9 and morpheus-ui 5.4.3+ uses java 11. Out of an abundance of caution we upgraded grails to v5.1.9. Customers on morpheus v5.4.2 or earlier are advised to upgrade to morpheus v5.4.3+. :superscript:`5.5.1-2`
+     :Security: - CVE-2022-35912 - Morpheus v5.5.1-2 and v5.4.8-2 include the Grails v5.1.9 update that mitigates the CVE-2022-35912 Grails Framework remote code execution vulnerability. At this time, the  vulnerability is only confirmed for grails frameworks running on Java 8. Morpheus versions v5.4.4 and higher are on Java 11. Customers on morpheus v5.4.3 or earlier are highly advised to upgrade to at minimum v5.4.4 or higher, and out of an abundance of caution we recommend all customers upgrade to v5.5.1-2 or v5.4.8-2 in the event the vulnerability is found to be exploitable on Java 11. :superscript:`5.4.8-2`
      :Azure: - Costing: Fixed Azure costing failing when 429 too many attempts api error is encountered :superscript:`5.5.1-2`
              - Costing: Fixed Azure costing issues related to currency conversion :superscript:`5.5.1-2`
      :Inputs: - Options Types: Fixed export as tag and display value on details not working for catalog items :superscript:`5.5.1-2`
