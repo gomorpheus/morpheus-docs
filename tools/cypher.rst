@@ -154,31 +154,31 @@ To delete the UUID, select `Actions > Remove` and confirm.
 Vault
 -----
 
-Use this mountpoint to configure an integration with a Hashicorp Vault server and then later call Vault-stored values into Tasks (|LibAutTas|). Store the Vault server URL and a token at the mountpoints indicated below.
+Use this mountpoint to store Cypher secrets in a Hashicorp Vault server backend rather than |morpheus|. Additionally, you can call secrets stored in Vault from this Cypher mountpoint even if they are only saved there and not listed in the |morpheus| Cypher UI. This requires installation and configuration of the Hashicorp Vault plugin. See the YouTube video embedded in this section for more information on adding the plugin, configuration, and a demonstration of its capabilities.
 
 .. NOTE:: It's recommended that you use a long-lived token as attempts to call Vault-stored values into Tasks will stop working if the token is no longer good. In such a case you'd have to obtain a new token, delete the Cypher entry with the old token, and create a new one to restore functionality once again. Using a long-lived token will prevent the need to do this often.
 
 Key
-  Pattern "vault/config/url" and "vault/config/token"
+  Pattern "vault/<engineMount>/<secretPath>/data/<key>" (ex. vault/KV2/secret/data/morpheus/lab)
 
 Value
-  Example: "http://xx.xx.xx.xx:8200" at vault/config/url and "hvs.b519c6aa..." at vault/config/token
+  Enter your key/value pair here in valid JSON (ex. {"hello": "world"} )
 
 Lease
   Enter lease time in seconds (ex. 604800 for one week)
 
-Click :guilabel:`SAVE CHANGES`. Once the two Cypher entries discussed above are created, users can call Vault stored values into automation as needed. The example BASH script below onboards the value stored in Vault from the secret/morpheus-credentials/my-vmware-admin-creds mountpoint:
+Click :guilabel:`SAVE CHANGES`. The example BASH script below onboards the value stored in Vault from the secret/data/morpheus/lab mountpoint:
 
 .. code-block:: bash
 
-  from_vault="<%= cypher.read('vault/secret/data/morpheus-credentials/my-vmware-admin-creds') %>"
+  from_vault="<%= cypher.read('vault/KV2/secret/data/morpheus/lab') %>"
 
   echo $from_vault
 
 .. raw:: html
 
     <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; height: auto;">
-        <iframe src="//www.youtube.com/embed/kkH7Y12LGhU" frameborder="0" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
+        <iframe src="//www.youtube.com/embed/9OSXXJi15Rw" frameborder="0" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
     </div>
 
 |

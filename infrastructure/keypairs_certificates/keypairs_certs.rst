@@ -73,24 +73,28 @@ The Hashicorp Vault integration is not included with |morpheus| by default. Down
 
 .. NOTE:: The plugin space is universal and not specific to Tenants. If Subtenant users have access to |AdmIntPlu|, any integrated plugins will be available in all Tenants across the appliance. In most cases, it makes sense to restrict access to this section from Subtenant users through the associated Tenant Role. Instead integrate plugins from the Primary Tenant and expose them to various Subtenants as needed.
 
-With the plugin added, a new "Vault" integration type will appear in |InfTruInt|. Click :guilabel:`+ ADD`, then "Vault" to get started. Enter the following:
+Once downloaded, plugins are added to |morpheus| in |AdmIntPlu|. Simply browse your local filesystem for the JAR file downloaded from |morpheus| Exchange and its capabilities will immediately be added to the appliance. After adding the plugin, configure access for the plugin to your Vault server. Do this by clicking the Edit (pencil) button in the row for the Vault plugin. Supply a URL for your Vault server and an access token, then save your changes.
+
+.. NOTE:: When creating a Vault integration, it's recommended that you use a long-lived token. If the token suddenly becomes invalid, |morpheus| will be unable to write new credential sets to Vault and will be unable to edit or delete any existing ones. Additionally, you won't be able to use Vault-stored credential sets elsewhere in |morpheus|, such as when creating new Cloud integrations or populating REST-based Option Lists which require authentication. Should this happen, simply obtain a new token, edit the Vault integration, update the token, and save your changes.
+
+With the plugin added, a new integration type will appear in |InfTruInt|. Click :guilabel:`+ ADD`, then "Hashicorp Vault Credentials" to get started. The fields in the list below are available for configuration but it's possible that no configuration will be necessary. If you do not enter a new API URL and TOKEN value, these are taken from the plugin configuration set a moment ago. Similarly, The Vault Secret Engine and Secret Path can be left at default values (or empty) if those values are acceptable. If you need to override the defaults or the URL/token set on the plugin, you may do so here.
 
 - **NAME:** A friendly name for the Vault integration in |morpheus|
 - **ENABLED:** When marked, this Vault integration will be available to have credentials written to it
 - **API URL:** The URL for the Vault server (ex. http://xx.xx.xx.xx:8200)
 - **TOKEN:** A valid API token for the server (see note below)
-- **SECRET PATH:** If desired, enter a custom path and |morpheus| will write new credential sets to that path. By default, new credentials are written to "secret/morpheus-credentials/"
+- **HASHICORP VAULT SECRET ENGINE:** Select KV Engine version 1 or 2, additional engines may be available in the future
+- **ENGINE MOUNT:** If desired, enter a custom engine mount. By default, if left empty, credentials are written to the "secret/" engine mount
+- **SECRET PATH:** If desired, enter a custom path and |morpheus| will write new credential sets to that path. By default, if left empty, new credentials are written to "morpheus-credentials/"
 
 When done, click :guilabel:`SAVE CHANGES`.
-
-.. NOTE:: When creating a Vault integration, it's recommended that you use a long-lived token. If the token suddenly becomes invalid, |morpheus| will be unable to write new credential sets to Vault and will be unable to edit or delete any existing ones. Additionally, you won't be able to use Vault-stored credential sets elsewhere in |morpheus|, such as when creating new Cloud integrations or populating REST-based Option Lists which require authentication. Should this happen, simply obtain a new token, edit the Vault integration, update the token, and save your changes.
 
 With the above process finished, this Vault integration will be available as a storage target when creating new credential sets. In |InfTruCre|, after clicking :guilabel:`+ ADD` and selecting the type of credential set to add, select the new Vault integration in the CREDENTIAL STORE field (default selection is "Internal").
 
 .. raw:: html
 
     <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; height: auto;">
-        <iframe src="//www.youtube.com/embed/VCLixoIiPKk" frameborder="0" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
+        <iframe src="//www.youtube.com/embed/9OSXXJi15Rw" frameborder="0" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
     </div>
 
 |
