@@ -8,7 +8,7 @@
 - Compatible Morpheus Worker version: |workerVer|
 
 
-.. important::  Security: CVE-2022-35912: Morpheus v5.5.1-2 and v5.4.8-2 are now available in response to CVE-2022-35912, a Grails Framework remote code execution vulnerability. v5.5.1-2 and v5.4.8-2 include the Grails v5.1.9 update that mitigates the vulnerability. At this time, the Grails vulnerability is only confirmed for grails frameworks running on Java 8. Morpheus versions v5.4.4 and higher are on Java 11. Customers on morpheus v5.4.3 or earlier are highly advised to upgrade to at minimum v5.4.4 or higher, and out of an abundance of caution we recommend all customers upgrade to v5.5.1-2 or v5.4.8-2 in the event the vulnerability is found to be exploitable on Java 11.
+.. important::  Security: CVE-2022-35912: Morpheus v5.5.1-3 and v5.4.8-2 are now available in response to CVE-2022-35912, a Grails Framework remote code execution vulnerability. v5.5.1-2, v5.5.1-3 and v5.4.8-2 include the Grails v5.1.9 update that mitigates the vulnerability. At this time, the Grails vulnerability is only confirmed for grails frameworks running on Java 8. Morpheus versions v5.4.4 and higher are on Java 11. Customers on morpheus v5.4.3 or earlier are highly advised to upgrade to at minimum v5.4.4 or higher, and out of an abundance of caution we recommend all customers upgrade to v5.5.1-3 or v5.4.8-2 in the event the vulnerability is found to be exploitable on Java 11.
 
 .. important:: Morpheus |morphver| requires Morpheus Worker |workerVer|. Please upgrade any existing Morpheus Workers to the |workerVer| Worker package to ensure compatibility with Morpheus |morphver|.
 
@@ -19,6 +19,21 @@
 Release Dates
   - 5.5.1-1 |releasedate|
   - 5.5.1-2 Jul 20 2022
+  - 5.5.1-3 Jul 27 2022
+
+
+          <h4>5.5.1-3 contains the following updates from 5.5.1-1 & 5.5.1-2:</h4>
+          <dl>
+             <dt>Provisioning</dt>  
+                 <dd>5.5.1-3 fixes Instance Type Layout Group Access permission issue where selective group access permissions on layouts could cause provisioning wizard to hang when loading accessible layouts</dd>
+          </dl>
+
+.. toggle-header:: 
+    :header: 5.5.1-3 Updates **Click to Expand/Hide**
+
+     5.5.1-3 contains the following updates not included in 5.5.1-1 & 5.5.1-2:
+
+     :Provisioning: - 5.5.1-3 fixes Instance Type Layout Group Access permission issue where selective group access permissions on layouts could cause provisioning wizard to hang when loading accessible layouts
 
 .. toggle-header:: 
     :header: 5.5.1-2 Updates **Click to Expand/Hide**
@@ -140,7 +155,8 @@ Fixes
 :Policies: - Fixed an issue that caused issues extending the expiry date for workloads which were held in a delayed removal state by policy. :superscript:`5.4.7`
             - Fixed an issue that could cause Windows-based Workflows not to execute properly as part of a Workflows Policy. :superscript:`5.4.7`
 :Power Scheduling: - Fixed an issue that caused problems provisioning Instances with Power Schedules during a time when the Instance was scheduled to be off. :superscript:`5.4.8`
-:Provisioning: - Fixed an issue that caused the provisioning wizard to hang when deploying Instances based on ARM templates to Azure Clouds scoped to "All" resource groups. :superscript:`5.4.7`
+:Provisioning: - 5.5.1-3 Fixes Instance Type Layout Group Access permission issue where selective group access permissions on layouts could cause provisioning wizard to hang when loading accessible layouts
+               - Fixed an issue that caused the provisioning wizard to hang when deploying Instances based on ARM templates to Azure Clouds scoped to "All" resource groups. :superscript:`5.4.7`
 :Reports: - Date ranges for cost reports can now be specified with a month selector rather than allowing freely entered date ranges as the available data only supported individual month blocks anyway. :superscript:`5.4.7`
            - Fixed issue with nginx timeouts during massive report exports. :superscript:`5.4.7`
 :Roles: - The Tools menu is no longer hidden from view when the user's Role grants only access to the VDI Pools section. :superscript:`5.4.7`
