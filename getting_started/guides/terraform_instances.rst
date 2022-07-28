@@ -157,6 +157,8 @@ In the VERSION field at the bottom of the TF Spec Template modal, enter a Terraf
         sensitive = true
       }
 
+.. NOTE:: In the AWS Terraform Locals example Spec Template above, pre-provision variables are used. Note the use of `pre-provision <https://docs.morpheusdata.com/en/latest/troubleshooting/Variables_Examples.html?highlight=variables#pre-provision-vars>`_ variables to store the value for Owner and Group, among other things. See the variables section of |morpheus| documentation (linked in the prior sentence) for a listing of other possible pre-provision variables and a complete map of variables which can be resolved after provisioning has completed.
+
 Inputs and Option Lists
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 

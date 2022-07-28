@@ -223,7 +223,7 @@ Configure the following:
 - **CONTENT:** Optionally include documentation content for this Catalog Item. Markdown-formatted text is accepted and displayed appropriately when the item is ordered from the Service Catalog. A new Catalog Item-type Wiki entry will also be added containing this information.
 - **INPUTS:** If desired, select Inputs to present users with mandatory or optional selections prior to provisioning
 
-  .. note:: App spec custom option variables should be single quoted in YAML: ``cloud: '<%= customOption.cloud %>'``
+  .. note:: App spec custom option variables should be single quoted in YAML: ``cloud: '<%= customOption.cloud %>'``. Additionally, not all variables are available here as many are unknown until provisioning. Users may use any custom Input values (customOption) as well as name or hostname values which are resolved as part of naming policy evaluation.
 
 Once done, click :guilabel:`SAVE CHANGES`
 
