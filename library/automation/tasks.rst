@@ -472,6 +472,8 @@ Task Configuration
     - **CODE:** Unique code name for API, CLI, and variable references
     - **ATTRIBUTES:** A JSON map of arbitrary values to write to the attributes property of the target resource
 
+    |
+
     .. TIP:: This is often useful for storing values from one phase of a Provisioning Workflow for access in another phase. See the video demo below for a complete example.
 
     .. raw:: html
