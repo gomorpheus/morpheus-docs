@@ -22,6 +22,7 @@ Tasks
 .. |puppet| image:: /images/automation/tasks/puppet-d39e3a20a47d04a44d6d2a854b2acd65.png
 .. |localscript| image:: /images/automation/tasks/localScript-bfbe0063e4e6c35ed1c4e5898c88e007.png
 .. |vro| image:: /images/automation/tasks/vro_logo.png
+.. |wa| image:: /images/automation/tasks/writeAttributes.png
 
 Overview
 ^^^^^^^^
@@ -206,9 +207,16 @@ Task Types
    * - |vro|
      - vRealize Orchestrator Workflow
      - Executes vRO Workflow on the Target Resource
-     - vRO Integraiton
+     - vRO Integration
      - Local, Resource
      - Existing vRO Integration
+     - Provisioning: Tasks
+   * - |wa|
+     - Write Attributes
+     - Add arbitrary values to the Attributes map of the target resource
+     - N/A
+     - Local
+     - Provide map of values as valid JSON
      - Provisioning: Tasks
 
 Task Configuration
@@ -455,6 +463,24 @@ Task Configuration
     - **vRO INTEGRATION:** Select an existing vRO integration
     - **WORKFLOW:** Select a vRO workflow from the list synced from the selected integration
     - **PARAMETER BODY (JSON):**
+
+- .. toggle-header:: :header: **Write Attributes**
+
+    |wa|
+
+    - **NAME:** Name of the Task
+    - **CODE:** Unique code name for API, CLI, and variable references
+    - **ATTRIBUTES:** A JSON map of arbitrary values to write to the attributes property of the target resource
+
+    .. TIP:: This is often useful for storing values from one phase of a Provisioning Workflow for access in another phase. See the video demo below for a complete example.
+
+    .. raw:: html
+
+        <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; height: auto;">
+            <iframe src="//www.youtube.com/embed/7b_HQTRMR2Y" frameborder="0" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
+        </div>
+
+    |
 
 Task Management
 ^^^^^^^^^^^^^^^
