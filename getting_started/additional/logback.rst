@@ -183,6 +183,7 @@ Below are sample log configuration settings. This is not a complete list. Additi
 
      <logger name="com.morpheus.automation.VroService" level="DEBUG"/>
 
+
 All core logger paths
 ^^^^^^^^^^^^^^^^^^^^^
 
@@ -752,6 +753,8 @@ Expand below to see all core |morpheus| logger paths set to INFO level.
         <logger name="com.morpheus.ZonePoolService" level="INFO"/>
         <logger name="com.morpheus.ZoneRegionService" level="INFO"/>
         <logger name="com.morpheus.ZoneService" level="INFO"/>
+
+|
 
 Audit logs
 ^^^^^^^^^^
