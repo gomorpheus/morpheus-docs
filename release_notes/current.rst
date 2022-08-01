@@ -22,12 +22,6 @@ Release Dates
   - 5.5.1-3 Jul 27 2022
 
 
-          <h4>5.5.1-3 contains the following updates from 5.5.1-1 & 5.5.1-2:</h4>
-          <dl>
-             <dt>Provisioning</dt>  
-                 <dd>5.5.1-3 fixes Instance Type Layout Group Access permission issue where selective group access permissions on layouts could cause provisioning wizard to hang when loading accessible layouts</dd>
-          </dl>
-
 .. toggle-header:: 
     :header: 5.5.1-3 Updates **Click to Expand/Hide**
 
@@ -35,7 +29,7 @@ Release Dates
 
      :Provisioning: - 5.5.1-3 fixes Instance Type Layout Group Access permission issue where selective group access permissions on layouts could cause provisioning wizard to hang when loading accessible layouts
 
-.. toggle-header:: 
+.. toggle-header::
     :header: 5.5.1-2 Updates **Click to Expand/Hide**
 
       5.5.1-2 contains the following updates not included in 5.5.1-1:
@@ -201,4 +195,3 @@ Appliance & Agent Updates
              - OpenSSL upgraded to 1.1.1p. :superscript:`5.4.8`
              - RabbitMQ and Erlang upgraded to 3.9.20 and 23.3.4.2, respectively. :superscript:`5.4.8`
              - Tomcat upgraded to 9.0.64. :superscript:`5.4.8`
-
