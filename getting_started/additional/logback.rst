@@ -718,6 +718,7 @@ Expand below to see all core |morpheus| logger paths set to INFO level.
         <logger name="com.morpheus.task.ContainerTemplateTaskService" level="INFO"/>
         <logger name="com.morpheus.task.EmailTaskService" level="INFO"/>
         <logger name="com.morpheus.task.ExecutableTaskInterface" level="INFO"/>
+        <logger name="com.morpheus.task.GroovyTaskService" level="INFO"/>
         <logger name="com.morpheus.task.HttpTaskService" level="INFO"/>
         <logger name="com.morpheus.task.JavascriptTaskService" level="INFO"/>
         <logger name="com.morpheus.task.JRubyTaskService" level="INFO"/>
@@ -731,7 +732,6 @@ Expand below to see all core |morpheus| logger paths set to INFO level.
         <logger name="com.morpheus.task.VroTaskService" level="INFO"/>
         <logger name="com.morpheus.task.WinrmTaskService" level="INFO"/>
         <logger name="com.morpheus.task.WriteAttributesTaskService" level="INFO"/>
-        <logger name="com.morpheus.task" level="INFO"/>TaskService" level="INFO"/>
         <logger name="com.morpheus.trust.AbstractCredentialService" level="INFO"/>
         <logger name="com.morpheus.trust.CredentialProvider" level="INFO"/>
         <logger name="com.morpheus.trust.CredentialService" level="INFO"/>
