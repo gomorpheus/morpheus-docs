@@ -6,6 +6,17 @@ Overview
 
 The |morpheus| distributed worker is installed using the same package as the VDI Gateway worker. Organizations which have already deployed VDI Gateway(s) can use the same worker for both purposes if desired, you'd simply need to update configuration in ``/etc/morpheus/morpheus-worker.rb`` and run a reconfigure. When creating a distributed worker or VDI Gateway object in |morpheus| UI, an API key is generated. Adding one or both types of API keys to the worker configuration file determines if the worker is running in VDI gateway and/or distributed worker mode.
 
+**Supported Cloud Types**
+
+The following Cloud/Zone types support Distributed Workers
+
+- vmware
+- vmwareCloudAws
+- nutanix
+- openstack
+- xenserver
+- macstadium
+
 Installation
 ^^^^^^^^^^^^
 
@@ -83,7 +94,7 @@ After clicking :guilabel:`SAVE CHANGES`, an API key is generated and displayed. 
 
 .. image:: /images/worker/createWorker.png
 
-With the worker configured in |morpheus|, the next step is to update any Cloud integrations which should be proxied through the worker. Select the desired Cloud from the Clouds List Page (|InfClo|) and click :guilabel:`EDIT` from the chosen Cloud's Detail Page. Within the Advanced Options section, choose a configured worker from the DISTRIBUTED WORKER dropdown menu. Click :guilabel:`SAVE CHANGES`.
+With the worker configured in |morpheus|, the next step is to update supported Cloud integrations which should be proxied through the worker. Select the desired Cloud from the Clouds List Page (|InfClo|) and click :guilabel:`EDIT` from the chosen Cloud's Detail Page. Within the Advanced Options section, choose a configured worker from the DISTRIBUTED WORKER dropdown menu. Click :guilabel:`SAVE CHANGES`.
 
 .. image:: /images/worker/updateCloud.png
   :width: 50%
