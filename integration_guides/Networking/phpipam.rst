@@ -8,7 +8,7 @@ Configuration
 #. Go to Admin > API > create API key.
 #. Create unique App ID.
 #. Enable ``read/write/admin`` access under **App Permissions**.
-#.  Under **App Security** select ``none``.
+#.  Under **App Security** select ``SSL with User Token``.
 
 Add phpIPAM integration to |morpheus|
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
