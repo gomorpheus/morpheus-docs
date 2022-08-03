@@ -116,11 +116,12 @@ When externalizing MySQL, Elasticsearch and/or RabbitMQ services, the following 
 Security
 ========
 
-CVEs Addressed
---------------
+..
+  CVEs Addressed
+  --------------
 
-No CVEs mitigated since |previousMorphVer|
-|
+  No CVEs mitigated since |previousMorphVer|
+  |
 
 Security Advisories
 -------------------
