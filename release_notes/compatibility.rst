@@ -150,10 +150,10 @@ Services
 
 |
 
-..
-  Security
-  ========
+Security
+========
 
+..
   CVEs Addressed
   --------------
 
@@ -161,15 +161,8 @@ Services
 
   |
 
-Plugin API Compatibility
-========================
-
-..
-  CVEs Addressed
-  --------------
-
-  No CVEs mitigated since |previousMorphVer|
-  |
+  Plugin API Compatibility
+  ========================
 
 Security Advisories
 -------------------
