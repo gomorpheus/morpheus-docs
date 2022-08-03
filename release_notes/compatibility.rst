@@ -76,16 +76,16 @@ Services
      - Updated in |morphver|
    * - Plugin API
      - |pluginVer|
-     - 
-     - 
+     -
+     -
    * - Morpheus Worker
      - |workerVer|
-     - 
+     -
      - |checkmark|
    * - MySQL
      - |mysqlbranch|
      - |mysqlver|
-     - 
+     -
    * - MySQL (FIPS)
      - |mysqlbranch|
      - |mysqlverfips|
@@ -95,7 +95,7 @@ Services
      - n/a
      -
    * - Elasticsearch
-     - |esbranch| 
+     - |esbranch|
      - |esver|
      - |checkmark|
    * - RabbitMQ
@@ -103,23 +103,23 @@ Services
      - |rmqver|
      - |checkmark|
    * - Tomcat
-     - 
+     -
      - |tcver|
      - |checkmark|
    * - Nginx
-     - 
+     -
      - |nginxver|
      - |checkmark|
    * - OpenSSL
-     - 
-     - |openssl|, |openssl_fips| (FIPS) 
+     -
+     - |openssl|, |openssl_fips| (FIPS)
      - |checkmark|
    * - Java
-     - 
+     -
      - |java|
      -
    * - Java (macOS agent)
-     - 
+     -
      - |java-mac|
      -
 
@@ -150,7 +150,7 @@ Services
 
 |
 
-.. 
+..
   Security
   ========
 
@@ -164,9 +164,32 @@ Services
 Plugin API Compatibility
 ========================
 
-|morphver| requires Plugin API version |pluginVer|
+..
+  CVEs Addressed
+  --------------
 
-|
+  No CVEs mitigated since |previousMorphVer|
+  |
+
+Security Advisories
+-------------------
+
+.. list-table::
+  :widths: 15 15 55 15
+  :header-rows: 1
+
+  * - Advisory ID
+    - Severity
+    - Description
+    - Updated On
+  * - :ref:`MOR20220721-01`
+    - |advSevCrit|
+    - |morpheus| through 5.4.3 (which run Java 8) are confirmed to be impacted, |morpheus| through 5.5.1-1 (for customers on 5.5.x Standard installations) and 5.4.8-2 (for customers on 5.4.x LTS installations) are potentially impacted if the vulnerability is found on Java 11.
+    - 07-21-2022
+  * - :ref:`MOR20220524-01`
+    - |advSevHigh|
+    - An XXE issue was discovered in |morpheus| through 5.2.16 and 5.4.x through 5.4.4. A successful attack requires a SAML identity provider to be configured.
+    - 06-08-2022
 
 Upgrade Paths & Methods
 =======================
