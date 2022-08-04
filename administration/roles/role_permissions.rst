@@ -586,7 +586,7 @@ Role Mappings
     - Determines level of access to the Logs section of |morpheus| UI. The "User" permission will allow access only to objects the user owns.
     - |MonLog| is where Instance and Server logs may be viewed (does not included |morpheus| Appliance logs from |AdmHeaMorLog|).
     - This permission is recommended for those who should have access to Instance and Server logs.
-    -
+    - Setting permission to Full on the Tenant Role will give Subtenant users full access to all logs appliance-wide, including to workloads living in other Tenants, for any Subtenant users who also have Full permission on their User Role. It's recommended that you set this permission to User on the Tenant Role so that Subtenant users are not able to see logs for workloads other than their own.
   * - Operations: Activity
     - None, Read
     - Determines access to the Activity and History tabs on the Operations > Activity page.
