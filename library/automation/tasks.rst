@@ -445,6 +445,8 @@ Task Configuration
     - **SUDO:** Mark the box to run the script as ``sudo``
     - **CONTENT:** Script to execute is entered here if not pulled in from an outside repository
 
+    .. TIP:: When the EXECUTE TARGET option is set to "Local" (in other words, the Task is run on the appliance itself), two additional fields are revealed: GIT REPO and GIT REF. Use GIT REPO to set the PWD shell variable (identifies the current working directory) to the locally cached repository (ex. /var/opt/morpheus-node/morpheus-local/repo/git/76fecffdf1fe96516e90becdab9de) and GIT REF to identify the Git branch the Task should be run from if the default (typically main or master) shouldn't be used. If these options are not set, the working folder will be /opt/morpheus/lib/tomcat/temp which would not allow scripts to reference file paths relative to the repository (if needed).
+
 - .. toggle-header:: :header: **vRealize Orchestrator Workflow**
 
     |vro|
