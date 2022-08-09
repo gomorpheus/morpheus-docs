@@ -211,6 +211,11 @@ rst_prolog = """
 .. |checkmark| unicode:: U+2713 .. CHECK MARK
 
 .. role:: redguilabel
+
+.. |advSevCrit| replace:: Critical ⬛️
+.. |advSevHigh| replace:: High 🟥
+.. |advSevMed| replace:: Medium 🟨
+.. |advSevLow| replace:: Low 🟩
 """
 
 
