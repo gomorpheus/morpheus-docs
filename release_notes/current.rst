@@ -58,8 +58,9 @@ Fixes
 :Azure: - Azure Clouds no longer lose their scope (Resource Group and Region) when updating the Client Secret used to authenticate the Cloud. :superscript:`5.5.2`
          - Fixed an issue that caused a Cloud costing refresh for a previous month to raise invoice amounts, which required costing to be rebuilt to be accurate once again. :superscript:`5.5.2`
          - Fixed an issue that prevented creating a new Azure Load Balancer to associate with an Instance if one was created at provision time and later removed via the Instance detail page. :superscript:`5.5.2`
+         - Fixed an issue that prevented setting destination ports on Azure Security Groups (NSGs). :superscript:`5.5.2`
          - Fixed an issue that preventing costing sync from ever completing for very large Azure Clouds. :superscript:`5.5.2`
-:Backups:    - Added a cleanup job to eventually expire out stuck or failed "in progress" backup jobs. This prevents a situation where a backup job can be stuck with no way to delete it. :superscript:`5.5.2`
+:Backups: - Added a cleanup job to eventually expire out stuck or failed "in progress" backup jobs. This prevents a situation where a backup job can be stuck with no way to delete it. :superscript:`5.5.2`
 :Blueprints: - App Blueprints can no longer be saved with identical names to other App Blueprints by pre-pending them with leading whitespace characters (which would be automatically removed after the validation step). :superscript:`5.5.2`
               - App Blueprints which currently have Apps deployed from them can no longer be deleted. UI messages are surfaced to inform the user why the App Blueprint cannot be deleted. :superscript:`5.5.2`
 :Buckets: - Fixed an issue that could cause "inactive" AWS S3 Buckets to still be visible in the UI. :superscript:`5.5.2`
@@ -70,9 +71,14 @@ Fixes
            - The "More" button near the bottom of the Executions tab on the Catalog Inventory page now expands as expected. :superscript:`5.5.2`
            - When editing an existing Service Catalog item that uses a |morpheus|-included logo, the saved logo no longer disappears from the Edit Catalog Item modal. :superscript:`5.5.2`
            - Workflow-based Service Catalog items no longer have potential to hang when multiple typeahead Input values are selected. :superscript:`5.5.2`
+:Clone: - Fixed an issue that prevented the clone function from working properly if a Deploy Folder value was set on the Node Type. :superscript:`5.5.2`
+:Compute: - Improved reporting of server OS in situations where |morpheus| is unaware of the guest OS platform. :superscript:`5.5.2`
+:Costing: - Fixed issues where invoices could show negative cost amounts under specific conditions. :superscript:`5.5.2`
 :Distributed Worker: - Fixed an issue that caused Distributed Workers to disconnect which interrupted sync with associated Clouds. :superscript:`5.5.2`
 :Identity Sources: - Fixed CSP dev console errors that could appear in logs when viewing the Identity Sources list page. :superscript:`5.5.2`
+                  - Fixed an issue that could display identity source role mappings incorrectly when an existing identity source was edited. :superscript:`5.5.2`
 :Infoblox: - Improved validation on Infoblox integration add/edit modal to only allow a throttle rate up to 5000ms. If a greater time is entered, the value will be set to 5000. :superscript:`5.5.2`
+:Inputs: - When checkbox-type Inputs are left unchecked, their values are no longer missing from the Python "morpheus['customOptions']". :superscript:`5.5.2`
 :Jobs: - Fixed an issue that could prevent a Job from executing properly if done from the Job detail page (Provisioning > Jobs > Selected Job > Execute). :superscript:`5.5.2`
 :Kubernetes:  - Fixed an issue that caused Kubernetes Clusters provisioned to OpenStack Clouds with floating IP addresses to be unreachable from outside the cluster due to certificates being registered to private addresses rather than public. :superscript:`5.5.2`
               - Fixed an issue that could cause External Kubernetes clusters to become stuck in the deprovisioning state during deletion and never leave the UI. :superscript:`5.5.2`
@@ -91,6 +97,7 @@ Fixes
 :Plans and Pricing: - When adding Price Sets to plans, it's no longer possible for very long Price Set text to overset the Edit Price Plan modal. :superscript:`5.5.2`
                   - When deleting a Service Plan, Instances associated with that Plan will have their Plans automatically updated to a new one. Previously, under certain scenarios, the Plan association could remain tied to the now-deleted Plan. :superscript:`5.5.2`
 :Plugins: - Custom Catalog Plugins now have access to the "Dark Mode" themed versions of icon images. :superscript:`5.5.2`
+           - The search bar on the plugins list page now works correctly. :superscript:`5.5.2`
 :Policies: - Cloud-scoped Delayed Delete and Delete Approval Policies now apply as expected to XaaS (Workflow-based) Instance Types. :superscript:`5.5.2`
             - Fixed an issue that could cause Tagging Policies not to be applied if a Naming Policy did not also apply to the workload being provisioned. :superscript:`5.5.2`
             - Fixed an issue that would rename hosts in clusters which were under a cluster naming policy if the host was later edited. :superscript:`5.5.2`
@@ -103,6 +110,7 @@ Fixes
 :Security: - Fixed an issue that allowed Primary Tenant users to view Subtenant Group information via |morpheus| API by modifying the request in a specific way. :superscript:`5.5.2`
 :ServiceNow: - Fixed an issue that caused Naming Policy errors when provisioning Service Catalog items via ServiceNow integration. :superscript:`5.5.2`
 :Settings: - Removed the "Default Appliance Locale" setting from the global settings (Administration > Settings) panel for Subtenants. This option was not meant to be exposed to Subtenants and only the Primary Tenant's setting applied to the appliance anyway. :superscript:`5.5.2`
+:Storage: - Fixed an issue that prevented display of IOPs metrics on some server detail pages. :superscript:`5.5.2`
 :Tenants: - Fixed an issue that prevented deletion of Tenants if they had Archive buckets associated with them. :superscript:`5.5.2`
            - Improvements added to the Tenant delete process which, under certain conditions, could become stuck due to SQL constraint issues. :superscript:`5.5.2`
 :Terraform: - Fixed a display issue that could cause individual VM components of a Terraform App (such as an EC2 Instance) to be labeled as a container rather than a VM. :superscript:`5.5.2`
@@ -114,11 +122,13 @@ Fixes
       - Fixed an issue that caused Input name labels to overlap each other on Service Catalog item pages if the label was very long. :superscript:`5.5.2`
       - Fixed an issue that could cause text on the Instance Provisioning wizard Review tab to overset the menu window. :superscript:`5.5.2`
       - Fixed an issue that hid the IP addresses from the Instance detail page when viewed at narrow (mobile) widths. :superscript:`5.5.2`
+      - Minor spelling and spacing cleanup on title bars of some integration types. :superscript:`5.5.2`
       - Search bars in |morpheus| (Instance list, server list, etc.) will now search properly on numerals entered as search terms. :superscript:`5.5.2`
       - Updated help block text for Tenant Visibility settings to more accurately reflect the current functionality of Visibility settings. :superscript:`5.5.2`
 :Users: - Fixed an issue that prevented deleting a user which had created a credential (Infrastructure > Trust). :superscript:`5.5.2`
 :VMware: - Fixed an issue that could cause VMware VMs to fail to boot when using multiple disks and Cloud-init. :superscript:`5.5.2`
           - Fixed an issue that could cause snapshots not to be cleaned up after execution of clone process on VMware Clouds. :superscript:`5.5.2`
+          - When deleting VMs in a disconnected or not responding state, |morpheus| no longer reports them deleted until the deleted state can be confirmed on the Cloud backend. :superscript:`5.5.2`
 :Virtual Images: - Fixed an issue that cleared manual configurations set in |morpheus| on Virtual Images synced from VMware Content Library after the next Cloud sync. :superscript:`5.5.2`
                   - Fixed an issue that could cause failures when uploading Virtual Images via |morpheus| CLI when the same image could be uploaded fine via |morpheus| UI. :superscript:`5.5.2`
 :vCloud Director: - Datastores now sync in correctly when vCD Clouds are integrated using the System Admin user. :superscript:`5.5.2`
@@ -134,3 +144,4 @@ Appliance, Node & Agent Updates
 :Node packages: - Cleanup: Legacy code remeoved that could have caused path conflictes when install morpheus-agent on morpheus-applaince hosts. :superscript:`5.5.2`
                 - Java: morpheus-node & morpheus-vm-node embedded Java updated to |java| :superscript:`5.5.2`
                 - morpheus-node & morpheus-vm-node packages updated to v3.2.9 :superscript:`5.5.2`
+
