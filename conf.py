@@ -3,35 +3,35 @@ import datetime
 master_doc = 'index'
 
 latex_documents = [
-    (master_doc, 'morpheus_5.4.8-1.tex', u'Morpheus Documentation',
+    (master_doc, 'morpheus_5.4.9-1.tex', u'Morpheus Documentation',
      u'Morpheus', 'manual'),
 ]
 
 rst_prolog = """
 
-.. |releasedate| replace:: July 12 2022
+.. |releasedate| replace:: Aug 9 2022
 .. |morphbranch| replace:: v5.4
-.. |morphver| replace:: v5.4.8
+.. |morphver| replace:: v5.4.9
 .. |minUpgradeVer| replace:: v5.2.0
-.. |previousMorphVer| replace:: v5.4.7
-.. |pluginVer| replace:: 0.12.5
+.. |previousMorphVer| replace:: v5.4.8
+.. |pluginVer| replace:: 0.12.6
 .. |workerVer| replace:: 5.4.8
 .. |rmqbranch| replace:: v3.5-3.9
 .. |rmqver| replace:: v3.9.20
 .. |mysqlbranch| replace:: v5.7
-.. |mysqlver| replace:: v5.7.37
-.. |mysqlverfips| replace:: v5.7.37
+.. |mysqlver| replace:: v5.7.39
+.. |mysqlverfips| replace:: v5.7.39
 .. |esbranch| replace:: v7.x
 .. |esver| replace:: v7.17.5
-.. |tcver| replace:: v9.0.64
+.. |tcver| replace:: v9.0.65
 .. |nginxver| replace:: v1.22.1
-.. |nodePackageVer| replace:: 3.2.8
+.. |nodePackageVer| replace:: 3.2.9
 .. |linuxagentver| replace:: v2.3.2
 .. |macagentver| replace:: v2.3.2
 .. |winagentver| replace:: v1.8.0.0
-.. |java| replace:: 11.0.15+10
+.. |java| replace:: 11.0.16+8
 .. |java-mac| replace:: 11.0.14+9
-.. |openjdk-jre| replace:: 11.0.15+10
+.. |openjdk-jre| replace:: 11.0.16+8
 .. |openjdk-elasticsearch| replace:: 14.0.2+12
 .. |openssl| replace:: 1.1.1p
 .. |openssl_fips| replace:: 1.0.2u
