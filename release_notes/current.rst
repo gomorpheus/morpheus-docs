@@ -125,12 +125,12 @@ Fixes
 Appliance, Node & Agent Updates
 ===============================
 
-:Appliance: - Elasticsearch: Embedded elasticsearch default tmp_dir changed to /var/tmp/elasticsearch. Resolves issue when /var/run is noexec. Note: elasticsearch tmp_dir can be modified with ``default['morpheus_solo']['elasticsearch']['tmp_dir']`` in morpheus.rb (applies to previous versions too)
-            - Java: morpheus-appliance embedded Java updated to |java|
-            - MySQL: Embedded MySQL upgraded to |mysqlver|. :superscript:`5.5.1`
+:Appliance: - Elasticsearch: Embedded elasticsearch default tmp_dir changed to /var/tmp/elasticsearch. Resolves issue when /var/run is noexec. Note: elasticsearch tmp_dir can be modified with ``default['morpheus_solo']['elasticsearch']['tmp_dir']`` in morpheus.rb (applies to previous versions too) :superscript:`5.5.2`
+            - Java: morpheus-appliance embedded Java updated to |java| :superscript:`5.5.2`
+            - MySQL: Embedded MySQL upgraded to |mysqlver|. :superscript:`5.5.2`
             - Tomcat: Embedded Tomcat upgraded to |tcver|. :superscript:`5.5.2` :superscript:`CVE-2022-23181`
-:Node packages: - Cleanup: Legacy code remeoved that could have caused path conflictes when install morpheus-agent on morpheus-applaince hosts. 
-                - Java: morpheus-node & morpheus-vm-node embedded Java updated to |java|
-                - morpheus-node & morpheus-vm-node packages updated to v3.2.9
+:Node packages: - Cleanup: Legacy code remeoved that could have caused path conflictes when install morpheus-agent on morpheus-applaince hosts. :superscript:`5.5.2`
+                - Java: morpheus-node & morpheus-vm-node embedded Java updated to |java| :superscript:`5.5.2`
+                - morpheus-node & morpheus-vm-node packages updated to v3.2.9 :superscript:`5.5.2`
 
 
