@@ -9,6 +9,7 @@ When installing and upgrading to |morpheus| |morphver|, refer to the following t
 Breaking Changes
 ================
 
+- 5.4.9: |morpheus| 5.4.9 adds the "Provisioning: State" Role permission. This permission determines access to the State tab for Terraform-backed Instances and is set to "None" by default. On upgrade, only System Admin users will be able to see the State tab for these Instances. For other users who should have this access, edit their Roles to include "Provisioning: State" permissions.
 - 5.4.5: Warning: Database indexes added for account_usage and metadata_tag tables. Customers with very large account_usage and/or metadata_tag tables (10 million+) may experience slower initial morpheus-ui loading time after upgrading to 5.4.5, as well as additional database load.
 - 5.4.5: 'AVI Load Balancer' renamed to 'NSX Advanced Load Balancer'
 - 5.4.5: Cloud Types disabled by default: Dell, HPE (NOT HPE Oneview), Supermicro and Cloud Foundry. Users would still be able to re-enable this clouds in the appliance settings. Does not affect existing Clouds.
@@ -75,16 +76,16 @@ Services
      - Updated in |morphver|
    * - Plugin API
      - |pluginVer|
-     - 
-     - 
+     -
+     -
    * - Morpheus Worker
      - |workerVer|
-     - 
+     -
      - |checkmark|
    * - MySQL
      - |mysqlbranch|
      - |mysqlver|
-     - 
+     -
    * - MySQL (FIPS)
      - |mysqlbranch|
      - |mysqlverfips|
@@ -94,7 +95,7 @@ Services
      - n/a
      -
    * - Elasticsearch
-     - |esbranch| 
+     - |esbranch|
      - |esver|
      - |checkmark|
    * - RabbitMQ
@@ -102,23 +103,23 @@ Services
      - |rmqver|
      - |checkmark|
    * - Tomcat
-     - 
+     -
      - |tcver|
      - |checkmark|
    * - Nginx
-     - 
+     -
      - |nginxver|
      - |checkmark|
    * - OpenSSL
-     - 
-     - |openssl|, |openssl_fips| (FIPS) 
+     -
+     - |openssl|, |openssl_fips| (FIPS)
      - |checkmark|
    * - Java
-     - 
+     -
      - |java|
      -
    * - Java (macOS agent)
-     - 
+     -
      - |java-mac|
      -
 
@@ -149,7 +150,7 @@ Services
 
 |
 
-.. 
+..
   Security
   ========
 

@@ -761,6 +761,12 @@ Role Mappings
     - The Service Mesh page displays container services and DNS information. A service mesh ensures fast and reliable communication between containerized application services.
     - This permission is recommended for those responsible for container management.
     -
+  * - Provisioning: State
+    - None, Read
+    - Determines access to the State tab for Terraform-backed Instances. Give Read access to users who should be able to see and use the State tab
+    - State tab access for Terraform-backed Instances
+    - This permission is recommended for those who administer Terraform-backed Instances
+    -
   * - Remote Console
     - None, Provisioned, Full
     - Determines access to the console on a Host detail page (Infrastructure > Hosts > selected Host, VM, or Bare Metal resource > Console tab). The "Provisioned" permission gives access to the console only for resources the logged in user has provisioned.

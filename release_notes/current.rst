@@ -7,6 +7,8 @@
 - Compatible Plugin API version: |pluginVer|
 - Compatible Morpheus Worker version: |workerVer|
 
+.. IMPORTANT:: |morpheus| 5.4.9 adds the "Provisioning: State" Role permission. This permission determines access to the State tab for Terraform-backed Instances and is set to "None" by default. On upgrade, only System Admin users will be able to see the State tab for these Instances. For other users who should have this access, edit their Roles to include "Provisioning: State" permissions.
+
 .. warning:: Morpheus |morphver| requires Morpheus Worker |workerVer|. Please upgrade any existing Morpheus Workers to the |workerVer| Worker package to ensure compatibility with Morpheus |morphver|.
 
 .. NOTE:: Items appended with :superscript:`5.x.x` are also included in that version
@@ -14,7 +16,7 @@
 .. .. include:: highlights.rst
 
 Release Dates
-  - 5.4.8-1 |releasedate|
+  - |morphVer|-1 |releasedate|
 
 New Features
 ============
@@ -132,5 +134,3 @@ Appliance, Node & Agent Updates
 :Node packages: - Cleanup: Legacy code remeoved that could have caused path conflictes when install morpheus-agent on morpheus-applaince hosts. :superscript:`5.5.2`
                 - Java: morpheus-node & morpheus-vm-node embedded Java updated to |java| :superscript:`5.5.2`
                 - morpheus-node & morpheus-vm-node packages updated to v3.2.9 :superscript:`5.5.2`
-
-
