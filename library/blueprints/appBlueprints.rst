@@ -16,11 +16,3 @@ App Blueprint Types
 
       /library/blueprints/appBlueprints/*
 
-
-
-.. include:: /library/blueprints/appBlueprints/morpheus.rst
-.. include:: /library/blueprints/appBlueprints/terraform.rst
-.. include:: /library/blueprints/appBlueprints/arm.rst
-.. include:: /library/blueprints/appBlueprints/cloudFormation.rst
-.. include:: /library/blueprints/appBlueprints/kubernetes.rst
-.. include:: /librar/blueprints/appBlueprints/helm.rst
