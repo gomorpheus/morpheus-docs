@@ -36,9 +36,9 @@ Service Plan Configuration
 :PROVISION TYPE: Determines the resource Provision Type the Service Plan is available for when provisioning, reconfigures and discovery association.
 :REGION CODE: (optional) Limits availability of the Service Plan to Clouds with the specified Region Code
 :STORAGE: The default value of the Root volume (in MB or GB)
-- :CUSTOMIZE ROOT VOLUME: Allows the Root Volume size value to be customized during provisioning or reconfigure. Custom Range limits apply.
-- :CUSTOMIZE EXTRA VOLUMES: Allows the size of additional Volumes to be customized during provisioning or reconfigure. Custom Range limits apply.
-- :ADD VOLUMES: Allows additional volumes to be added during provisioning or reconfigure.
+  - :CUSTOMIZE ROOT VOLUME: Allows the Root Volume size value to be customized during provisioning or reconfigure. Custom Range limits apply.
+  - :CUSTOMIZE EXTRA VOLUMES: Allows the size of additional Volumes to be customized during provisioning or reconfigure. Custom Range limits apply.
+  - :ADD VOLUMES: Allows additional volumes to be added during provisioning or reconfigure.
 
 :MEMORY: The amount of memory included with the plan (in MB or GB), when the CUSTOM MEMORY box is marked users can select a memory amount within the custom range configured below
    - :CUSTOM MEMORY: Allows the Memory value to be customized during provisioning or reconfigure. Custom Range limits apply.
@@ -46,9 +46,9 @@ Service Plan Configuration
    - :CUSTOM CORES: Allows the CORE COUNT value to be customized during provisioning or reconfigure. Custom Range limits apply.
 :CORES PER SOCKET: Determines core distribution across sockets. CORES PER SOCKET cannot be larger than CORE COUNT, and CORE COUNT must be divisible by CORES PER SOCKET. For example 4 CORES with 2 CORES PER SOCKET means 2 sockets would have 2 cores each assigned. 4 CORES with 1 CORE PER SOCKET would have 4 sockets with 1 core each assigned, and 4 CORES with 4 CORES PER SOCKET would have 1 socket with 4 cores assigned.
 :CUSTOM RANGES:
-- :STORAGE: Min and Max allowed values allowed when **CUSTOMIZE ROOT VOLUME** or **CUSTOMIZE EXTRA VOLUMES** is enabled. Units inherited from the Plans **STORAGE: GB/MB** setting.
-- :MEMORY: Min and Max allowed values allowed when **CUSTOM MEMORY** is enabled. Units inherited from the Plans **MEMORY GB/MB** setting.
-- :CORES: Min and Max allowed values allowed when **CUSTOM CORES** is enabled.
+  - :STORAGE: Min and Max allowed values allowed when **CUSTOMIZE ROOT VOLUME** or **CUSTOMIZE EXTRA VOLUMES** is enabled. Units inherited from the Plans **STORAGE: GB/MB** setting.
+  - :MEMORY: Min and Max allowed values allowed when **CUSTOM MEMORY** is enabled. Units inherited from the Plans **MEMORY GB/MB** setting.
+  - :CORES: Min and Max allowed values allowed when **CUSTOM CORES** is enabled.
 
 :PRICE SETS: In the Price Sets tab, associate Price Sets with the Plan. See :ref:`Adding Price Sets to Plans`
 

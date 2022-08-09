@@ -42,6 +42,7 @@ cloudformation
                   "cloudformation:GetTemplate",
                   "cloudformation:UpdateStack",
                   "cloudformation:ValidateTemplate",
+
 cloudwatch
 ```````````
 .. code-block::

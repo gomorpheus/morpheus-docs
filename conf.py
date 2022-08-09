@@ -79,10 +79,12 @@ rst_prolog = """
 .. |Pro| replace:: Provisioning
 .. |ProCat| replace:: Provisioning > Catalog
 .. |ProCatInv| replace:: Provisioning > Catalog > Inventory
+.. |ProCatDas| replace:: Provisioning > Catalog > Dashboard
 .. |ProIns| replace:: Provisioning > Instances
 .. |ProApp| replace:: Provisioning > Apps
 .. |ProJob| replace:: Provisioning > Jobs
 .. |ProJobJob| replace:: Provisioning > Jobs > Job Executions
+.. |ProExe| replace:: Provisioning > Executions
 .. |ProCod| replace:: Provisioning > Code
 .. |ProCodRep| replace:: Provisioning > Code > Repositories
 .. |ProCodDep| replace:: Provisioning > Code > Deployments
@@ -252,7 +254,7 @@ author = u'Morpheus'
 language = 'en'
 exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store','z_in_progress']
 highlight_language = 'bash'
-pygments_style = 'default'
+pygments_style = 'github-dark'
 todo_include_todos = False
 html_theme = 'sphinx_rtd_theme'
 html_use_opensearch = 'https://docs.morpheusdata.com/en/latest'
