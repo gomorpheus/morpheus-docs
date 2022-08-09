@@ -9,7 +9,6 @@ When installing and upgrading to |morpheus| |morphver|, refer to the following t
 Breaking Changes
 ================
 
-- 5.4.9: |morpheus| 5.4.9 adds the "Provisioning: State" Role permission. This permission determines access to the State tab for Terraform-backed Instances and is set to "None" by default. On upgrade, only System Admin users will be able to see the State tab for these Instances. For other users who should have this access, edit their Roles to include "Provisioning: State" permissions.
 - 5.4.5: Warning: Database indexes added for account_usage and metadata_tag tables. Customers with very large account_usage and/or metadata_tag tables (10 million+) may experience slower initial morpheus-ui loading time after upgrading to 5.4.5, as well as additional database load.
 - 5.4.5: 'AVI Load Balancer' renamed to 'NSX Advanced Load Balancer'
 - 5.4.5: Cloud Types disabled by default: Dell, HPE (NOT HPE Oneview), Supermicro and Cloud Foundry. Users would still be able to re-enable this clouds in the appliance settings. Does not affect existing Clouds.
@@ -53,75 +52,39 @@ Services
 |morphver| Service Version Changes
 ----------------------------------
 
-:Appliance: - curl updated to 7.84.0
-            - Elasticsearch updated to 7.17.5
-            - erlang updated to v24.3, patch 24.3.4.2
-            - Nginx updated to v1.22.0
-            - Openssl updated to v1.1.1p
-            - RabbitMQ updated to 3.9.20
-            - Tomcat Updated to v9.0.64
+:Appliance: - Java: Updated jdk to v11.0.15+10
+:Agent Packages: - Agent Node & VM Node Packages: Java: Updated jdk to v11.0.15+10
 
 |
 
-|morphver| Service Versions & Compatibility
--------------------------------------------
+|morphver| Service Version Compatibility
+----------------------------------------
 
-.. list-table:: |morphver| Service Versions & Compatibility
-   :widths: auto
-   :header-rows: 1
+When externalizing MySQL, Elasticsearch and/or RabbitMQ services, the following versions are compatible with version |morpheus| |morphver|
 
-   * - Service
-     - Compatible Branch
-     - Morpheus Installer Version
-     - Updated in |morphver|
-   * - Plugin API
-     - |pluginVer|
-     -
-     -
-   * - Morpheus Worker
-     - |workerVer|
-     -
-     - |checkmark|
-   * - MySQL
-     - |mysqlbranch|
-     - |mysqlver|
-     -
-   * - MySQL (FIPS)
-     - |mysqlbranch|
-     - |mysqlverfips|
-     -
-   * - Percona
-     - 5.7, WSREP 31
-     - n/a
-     -
-   * - Elasticsearch
-     - |esbranch|
-     - |esver|
-     - |checkmark|
-   * - RabbitMQ
-     - |rmqbranch|
-     - |rmqver|
-     - |checkmark|
-   * - Tomcat
-     -
-     - |tcver|
-     - |checkmark|
-   * - Nginx
-     -
-     - |nginxver|
-     - |checkmark|
-   * - OpenSSL
-     -
-     - |openssl|, |openssl_fips| (FIPS)
-     - |checkmark|
-   * - Java
-     -
-     - |java|
-     -
-   * - Java (macOS agent)
-     -
-     - |java-mac|
-     -
++---------------------------------------+-----------------------+-------------------------------------+
+| **Service**                           | **Compatible Branch** | **Morpheus Installer Version**      |
++---------------------------------------+-----------------------+-------------------------------------+
+| MySQL                                 | |mysqlbranch|         | |mysqlver|                          |
++---------------------------------------+-----------------------+-------------------------------------+
+| MySQL (FIPS)                          | |mysqlbranch|         | |mysqlverfips|                      |
++---------------------------------------+-----------------------+-------------------------------------+
+| Percona                               | 5.7, WSREP 31         | n/a                                 |
++---------------------------------------+-----------------------+-------------------------------------+
+| Elasticsearch                         | |esbranch|            | |esver|                             |
++---------------------------------------+-----------------------+-------------------------------------+
+| RabbitMQ                              | |rmqbranch|           | |rmqver|                            |
++---------------------------------------+-----------------------+-------------------------------------+
+| Tomcat                                |                       | |tcver|                             |
++---------------------------------------+-----------------------+-------------------------------------+
+| Nginx                                 |                       | |nginxver|                          |
++---------------------------------------+-----------------------+-------------------------------------+
+| OpenSSL                               |                       | |openssl|, |openssl_fips| (FIPS)    |
++---------------------------------------+-----------------------+-------------------------------------+
+| Java                                  |                       | |java|                              |
++---------------------------------------+-----------------------+-------------------------------------+
+| Java (macOS agent)                    |                       | |java-mac|                          |
++---------------------------------------+-----------------------+-------------------------------------+
 
 |
 
@@ -137,7 +100,7 @@ Services
      - |morphver| Changes
    * - Morpheus Node and VM Node Packages
      - |nodePackageVer|
-     - No changes
+     - Node & VM Node Packages: Java: Updated jdk to v11.0.15+10
    * - Morpheus Linux Agent
      - |linuxagentver|
      - No changes
@@ -150,23 +113,35 @@ Services
 
 |
 
-..
-  Security
-  ========
+Security
+========
 
+..
   CVEs Addressed
   --------------
 
-  CVEs mitigated in |morphver|
-
+  No CVEs mitigated since |previousMorphVer|
   |
 
-Plugin API Compatibility
-========================
+Security Advisories
+-------------------
 
-|morphver| requires Plugin API version |pluginVer|
+.. list-table::
+  :widths: 15 15 55 15
+  :header-rows: 1
 
-|
+  * - Advisory ID
+    - Severity
+    - Description
+    - Updated On
+  * - :ref:`MOR20220721-01`
+    - |advSevCrit|
+    - |morpheus| through 5.4.3 (which run Java 8) are confirmed to be impacted, |morpheus| through 5.5.1-1 (for customers on 5.5.x Standard installations) and 5.4.8-2 (for customers on 5.4.x LTS installations) are potentially impacted if the vulnerability is found on Java 11.
+    - 07-21-2022
+  * - :ref:`MOR20220524-01`
+    - |advSevHigh|
+    - An XXE issue was discovered in |morpheus| through 5.2.16 and 5.4.x through 5.4.4. A successful attack requires a SAML identity provider to be configured.
+    - 06-08-2022
 
 Upgrade Paths & Methods
 =======================
