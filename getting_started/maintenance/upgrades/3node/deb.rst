@@ -90,9 +90,9 @@ The following covers upgrading the |morpheus| App nodes in 3 Node HA configurati
 
     [root@app-server-2 ~]# sudo wget https://packageUrl.morpheus-appliance_x.x.x-x_amd64.deb
     [root@app-server-2 ~]# sudo dpkg -i morpheus-appliance_x.x.x-1_amd64.deb
-    [root@app-server-1 ~]# sudo morpheus-ctl stop morpheus-ui
-    [root@app-server-1 ~]# sudo morpheus-ctl reconfigure
-    [root@app-server-1 ~]# sudo morpheus-ctl start morpheus-ui
+    [root@app-server-2 ~]# sudo morpheus-ctl stop morpheus-ui
+    [root@app-server-2 ~]# sudo morpheus-ctl reconfigure
+    [root@app-server-2 ~]# sudo morpheus-ctl start morpheus-ui
     
    After the reconfigure has succeeded, tail the ui service to watch ui startup logs with ``morpheus-ctl tail morpheus-ui``. Once morpheus-ui is started, proceed to the next node.
 
@@ -102,9 +102,9 @@ The following covers upgrading the |morpheus| App nodes in 3 Node HA configurati
 
     [root@app-server-3 ~]# sudo wget https://packageUrl.morpheus-appliance_x.x.x-x_amd64.deb
     [root@app-server-3 ~]# sudo dpkg -i morpheus-appliance_x.x.x-1_amd64.deb
-    [root@app-server-1 ~]# sudo morpheus-ctl stop morpheus-ui
-    [root@app-server-1 ~]# sudo morpheus-ctl reconfigure
-    [root@app-server-1 ~]# sudo morpheus-ctl start morpheus-ui
+    [root@app-server-3 ~]# sudo morpheus-ctl stop morpheus-ui
+    [root@app-server-3 ~]# sudo morpheus-ctl reconfigure
+    [root@app-server-3 ~]# sudo morpheus-ctl start morpheus-ui
 
 
    After the reconfigure has succeeded, tail the ui service to watch ui startup logs with ``morpheus-ctl tail morpheus-ui``.
