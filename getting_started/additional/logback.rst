@@ -47,8 +47,8 @@ Below are sample log configuration settings. This is not a complete list. Additi
 :Ansible Tower:
   .. code-block:: xml
 
-    <logger name="com/morpheus/task/AnsibleTowerTaskService" level="DEBUG"/>
-    <logger name="com/morpheus/automation/AnsibleTowerService" level="DEBUG"/>
+    <logger name="com.morpheus.task.AnsibleTowerTaskService" level="DEBUG"/>
+    <logger name="com.morpheus.automation.AnsibleTowerService" level="DEBUG"/>
 
 :Azure:
   .. code-block:: xml
