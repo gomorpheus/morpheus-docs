@@ -70,7 +70,6 @@ Fixes
            - Fixed some odd behavior that could arise for Inputs in Service Catalog items depending on the interaction between dependent, visibility, and required settings related to other Input values. :superscript:`5.5.2`
            - The "More" button near the bottom of the Executions tab on the Catalog Inventory page now expands as expected. :superscript:`5.5.2`
            - When editing an existing Service Catalog item that uses a |morpheus|-included logo, the saved logo no longer disappears from the Edit Catalog Item modal. :superscript:`5.5.2`
-           - Workflow-based Service Catalog items no longer have potential to hang when multiple typeahead Input values are selected. :superscript:`5.5.2`
 :Clone: - Fixed an issue that prevented the clone function from working properly if a Deploy Folder value was set on the Node Type. :superscript:`5.5.2`
 :Compute: - Improved reporting of server OS in situations where |morpheus| is unaware of the guest OS platform. :superscript:`5.5.2`
 :Costing: - Fixed issues where invoices could show negative cost amounts under specific conditions. :superscript:`5.5.2`
@@ -144,4 +143,3 @@ Appliance, Node & Agent Updates
 :Node packages: - Cleanup: Legacy code remeoved that could have caused path conflictes when install morpheus-agent on morpheus-applaince hosts. :superscript:`5.5.2`
                 - Java: morpheus-node & morpheus-vm-node embedded Java updated to |java| :superscript:`5.5.2`
                 - morpheus-node & morpheus-vm-node packages updated to v3.2.9 :superscript:`5.5.2`
-
