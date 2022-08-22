@@ -212,7 +212,7 @@ Role Mappings
   * - Admin: Tenant - Impersonate Users
     - None, Full
     - This setting allows or disallows access to impersonate users. This selection is located on the |AdmUse| page in the Actions menu. When set to Full, Impersonate selection is available.
-    - This permissions allows for users in the Master Tenant to impersonate users of the Master Tenant and Subtenants.
+    - This permission allows for users in the Master Tenant to impersonate users of the Master Tenant and Subtenants.
     - This permission is recommended to be assigned only to Roles utilized within the Master Tenant who are responsible for configuring RBAC or for supporting users.
     - It is recommended this setting be set to None on the Tenant Role to restrict access for Subtenant users.
   * - Admin: Users
@@ -242,7 +242,7 @@ Role Mappings
   * - Backups
     - None, View, Read, User, Full
     - Determines access to the Backups secton of |morpheus| UI, including the Summary, Jobs, Backups, and History subpages. The "User" permission allows access only to backup objects the user owns.
-    - The Summary subpage allows the user to see the number of configured backups, the success rate, recent failures, and the size of the backups, as well as, the upcoming and in-progress backups. The Jobs subpage is where backup jobs may be created, cloned, edited or deleted. On create, a name, code (for use within the API), retention count, and schedule are selected (Note: Selectable schedules are defined Execution Schedules which are created in the |LibAut|). On the backups subpage, a list of configured backups is provided and new backups maybe created or on-demand backups may be executed. On create, the place where the target exists is selected (Instance, Host, or Provider), the source is selected and a name is defined as well as the selected execution schedule. On the History subpage both the backups and restores tabs are available. Names, statuses, start times, durations and size may be viewed.
+    - The Summary subpage allows the user to see the number of configured backups, the success rate, recent failures, and the size of the backups, as well as, the upcoming and in-progress backups. The Jobs subpage is where backup jobs may be created, cloned, edited or deleted. On create, a name, code (for use within the API), retention count, and schedule are selected (Note: Selectable schedules are defined Execution Schedules which are created in the |LibAut|). On the backups subpage, a list of configured backups is provided and new backups may be created or on-demand backups may be executed. On create, the place where the target exists is selected (Instance, Host, or Provider), the source is selected and a name is defined as well as the selected execution schedule. On the History subpage both the backups and restores tabs are available. Names, statuses, start times, durations and size may be viewed.
     - This permission is recommended for those responsible for performing the backup and restoration of workloads.
     -
   * - Backups: Integrations
@@ -554,7 +554,7 @@ Role Mappings
   * - Library: Tasks - Script Engines (Formerly Provisioning: Tasks - Script Engines)
     - None, Full
     - Determines access to advanced Task types include Groovy Script, Javascript, jRuby Script, and Python Script.
-    - This permission adds the ability to create and managed Groovy, Javascript, jRuby and Python Task Types.
+    - This permission adds the ability to create and manage Groovy, Javascript, jRuby and Python Task Types.
     - This permission is recommended for those responsible for Tasks containing advanced script capabilities.
     -
   * - Library: Templates
@@ -566,7 +566,7 @@ Role Mappings
   * - Library: Thresholds (Formerly Provisioning: Thresholds)
     - None, Read, Full
     - Determines access to |LibAutSca|.
-    - Scale Thresholds is where preconfigured settings for auto-scaling Instances is configured. When adding auto-scaling to an Instance, existing Scale Thresholds can be selected to define auto-scaling rules.
+    - Scale Thresholds is where preconfigured settings for auto-scaling Instances are configured. When adding auto-scaling to an Instance, existing Scale Thresholds can be selected to define auto-scaling rules.
     - This permission is recommended for those responsible for defining auto-scaling for Instances.
     - This permission is recommended to be set to None or Read on the Tenant Role to restrict access for Subtenant users.
   * - Library: Virtual Images (Formerly Provisioning: Virtual Images)
@@ -578,13 +578,13 @@ Role Mappings
   * - Monitoring
     - None, Read, User, Full
     - Determines level of access to the Monitoring section of |morpheus| UI, including the Status, Apps, Checks, Groups, Incidents, Contacts, and Alert Rules subpages. The "User" permission will allow access only to objects the user owns.
-    - The Checks page is where automatically-created checks are customized or new checks are created. The Groups and Apps pages are where checks may be grouped. The Incidents page is where incidents are created upon Check failure. The Contacts page is where contacts may be added for notifications. Then Alert Rules page is where notification are configured.
+    - The Checks page is where automatically-created checks are customized or new checks are created. The Groups and Apps pages are where checks may be grouped. The Incidents page is where incidents are created upon Check failure. The Contacts page is where contacts may be added for notifications. The Alert Rules page is where notification are configured.
     - This permission is recommended for those responsible for monitoring applications, incidents, or configuring notifications.
     -
   * - Monitoring: Logs (Formerly Logs)
     - None, Read, User, Full
     - Determines level of access to the Logs section of |morpheus| UI. The "User" permission will allow access only to objects the user owns.
-    - |MonLog| is where Instance and Server logs may be viewed (does not included |morpheus| Appliance logs from |AdmHeaMorLog|).
+    - |MonLog| is where Instance and Server logs may be viewed (does not include |morpheus| Appliance logs from |AdmHeaMorLog|).
     - This permission is recommended for those who should have access to Instance and Server logs.
     - Setting permission to Full on the Tenant Role will give Subtenant users full access to all logs appliance-wide, including to workloads living in other Tenants, for any Subtenant users who also have Full permission on their User Role. It's recommended that you set this permission to User on the Tenant Role so that Subtenant users are not able to see logs for workloads other than their own.
   * - Operations: Activity
