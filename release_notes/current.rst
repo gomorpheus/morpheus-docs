@@ -26,7 +26,7 @@ Release Dates
 
      :Appliance: - Elasticsearch: 5.4.9-2 fixes external elasticsearch auth issue introduced in 5.4.8 and 5.4.9-1 when using external elasticsearch without username and password. The basic auth support added for embedded elasticsearch in 5.4.8 was improperly adding generated elasticsearch credentials to application.yml when the embedded elasticsearch was disabled and elasticsearch['auth_user'] was not defined in morpheus.rb :superscript:`5.5.2`
      :Catalog: - ARM Blueprints: 5.4.9-2 fixes null pointer exception related to password inputs when provisioning ARM Blueprints as Service Catalog items :superscript:`5.5.2`
-     :Tasks: - Python: 5.4.9-2 fixes issue with reading morpheus cypher values in Python tasks :superscript:`5.5.2`
+     :Tasks: - Python: 5.4.9-2 fixes issue with morpheus access token lookups in Python tasks, including cypher and apiAccessToken :superscript:`5.5.2`
 
 |
 
@@ -123,7 +123,7 @@ Fixes
 :ServiceNow: - Fixed an issue that caused Naming Policy errors when provisioning Service Catalog items via ServiceNow integration. :superscript:`5.5.2`
 :Settings: - Removed the "Default Appliance Locale" setting from the global settings (Administration > Settings) panel for Subtenants. This option was not meant to be exposed to Subtenants and only the Primary Tenant's setting applied to the appliance anyway. :superscript:`5.5.2`
 :Storage: - Fixed an issue that prevented display of IOPs metrics on some server detail pages. :superscript:`5.5.2`
-:Tasks: - Python: 5.4.9-2 fixes issue with reading morpheus cypher values in Python tasks :superscript:`5.5.2`
+:Tasks: - Python: 5.4.9-2 fixes issue with morpheus access token lookups in Python tasks, including cypher and apiAccessToken
 :Tenants: - Fixed an issue that prevented deletion of Tenants if they had Archive buckets associated with them. :superscript:`5.5.2`
            - Improvements added to the Tenant delete process which, under certain conditions, could become stuck due to SQL constraint issues. :superscript:`5.5.2`
 :Terraform: - Fixed a display issue that could cause individual VM components of a Terraform App (such as an EC2 Instance) to be labeled as a container rather than a VM. :superscript:`5.5.2`
