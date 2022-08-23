@@ -17,9 +17,9 @@
 
 Release Dates
   - |morphVer|-1 |releasedate|
-  - 5.4.9-2 Aug 22 2022
+  - v5.4.9-2 Aug 22 2022
 
-.. toggle-header:: 
+.. toggle-header::
     :header: 5.4.9-2 Updates **Click to Expand/Hide**
 
      5.4.9-2 contains the following updates not included in 5.4.9-1:
