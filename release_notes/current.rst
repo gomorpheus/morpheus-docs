@@ -17,6 +17,16 @@
 
 Release Dates
   - |morphVer|-1 |releasedate|
+  - 5.4.9-2 Aug 22 2022
+
+.. toggle-header:: 
+    :header: 5.4.9-2 Updates **Click to Expand/Hide**
+
+     5.4.9-2 contains the following updates not included in 5.4.9-1:
+
+     :Appliance: - Elasticsearch: 5.4.9-2 fixes external elasticsearch auth issue introduced in 5.4.8 and 5.4.9-1 when using external elasticsearch without username and password. The basic auth support added for embedded elasticsearch in 5.4.8 was improperly adding generated elasticsearch credentials to application.yml when the embedded elastcisearch was disabled and elasticsearch['auth_user'] was not defined in morpheus.rb :superscript:`5.5.2`
+     :Catalog: - ARM Blueprints: 5.4.9-2 fixes null pointer exception related to password inputs when provisioning ARM Blueprints as Service Catalog items :superscript:`5.5.2`
+     :Tasks: - Python: 5.4.9-2 fixes issue with reading morpheus cypher values in Python tasks :superscript:`5.5.2`
 
 New Features
 ============
@@ -64,7 +74,8 @@ Fixes
 :Blueprints: - App Blueprints can no longer be saved with identical names to other App Blueprints by pre-pending them with leading whitespace characters (which would be automatically removed after the validation step). :superscript:`5.5.2`
               - App Blueprints which currently have Apps deployed from them can no longer be deleted. UI messages are surfaced to inform the user why the App Blueprint cannot be deleted. :superscript:`5.5.2`
 :Buckets: - Fixed an issue that could cause "inactive" AWS S3 Buckets to still be visible in the UI. :superscript:`5.5.2`
-:Catalog: - Fixed a display issue that caused very long Input help blocks to overset the Catalog Item order window. :superscript:`5.5.2`
+:Catalog: - ARM Blueprints: 5.4.9-2 fixes null pointer exception related to password inputs when provisioning ARM Blueprints as Service Catalog items :superscript:`5.5.2`
+           - Fixed a display issue that caused very long Input help blocks to overset the Catalog Item order window. :superscript:`5.5.2`
            - Fixed an issue that caused very long Input labels to wrap incorrectly and end up behind the field itself. :superscript:`5.5.2`
            - Fixed an issue that could cause areas of the Service Catalog Cart page to be formatted incorrectly if Input labels, Input values, or Catalog Item names/descriptions were very large. :superscript:`5.5.2`
            - Fixed some odd behavior that could arise for Inputs in Service Catalog items depending on the interaction between dependent, visibility, and required settings related to other Input values. :superscript:`5.5.2`
@@ -110,6 +121,7 @@ Fixes
 :ServiceNow: - Fixed an issue that caused Naming Policy errors when provisioning Service Catalog items via ServiceNow integration. :superscript:`5.5.2`
 :Settings: - Removed the "Default Appliance Locale" setting from the global settings (Administration > Settings) panel for Subtenants. This option was not meant to be exposed to Subtenants and only the Primary Tenant's setting applied to the appliance anyway. :superscript:`5.5.2`
 :Storage: - Fixed an issue that prevented display of IOPs metrics on some server detail pages. :superscript:`5.5.2`
+:Tasks: - Python: 5.4.9-2 fixes issue with reading morpheus cypher values in Python tasks :superscript:`5.5.2`
 :Tenants: - Fixed an issue that prevented deletion of Tenants if they had Archive buckets associated with them. :superscript:`5.5.2`
            - Improvements added to the Tenant delete process which, under certain conditions, could become stuck due to SQL constraint issues. :superscript:`5.5.2`
 :Terraform: - Fixed a display issue that could cause individual VM components of a Terraform App (such as an EC2 Instance) to be labeled as a container rather than a VM. :superscript:`5.5.2`
@@ -136,7 +148,8 @@ Fixes
 Appliance, Node & Agent Updates
 ===============================
 
-:Appliance: - Elasticsearch: Embedded elasticsearch default tmp_dir changed to /var/tmp/elasticsearch. Resolves issue when /var/run is noexec. Note: elasticsearch tmp_dir can be modified with ``default['morpheus_solo']['elasticsearch']['tmp_dir']`` in morpheus.rb (applies to previous versions too) :superscript:`5.5.2`
+:Appliance: - Elasticsearch: 5.4.9-2 fixes external elasticsearch auth issue introduced in 5.4.8 and 5.4.9-1 when using external elasticsearch without username and password. The basic auth support added for embedded elasticsearch in 5.4.8 was improperly adding generated elasticsearch credentials to application.yml when the embedded elastcisearch was disabled and elasticsearch['auth_user'] was not defined in morpheus.rb :superscript:`5.5.2`
+            - Elasticsearch: Embedded elasticsearch default tmp_dir changed to /var/tmp/elasticsearch. Resolves issue when /var/run is noexec. Note: elasticsearch tmp_dir can be modified with ``default['morpheus_solo']['elasticsearch']['tmp_dir']`` in morpheus.rb (applies to previous versions too) :superscript:`5.5.2`
             - Java: morpheus-appliance embedded Java updated to |java| :superscript:`5.5.2`
             - MySQL: Embedded MySQL upgraded to |mysqlver|. :superscript:`5.5.2`
             - Tomcat: Embedded Tomcat upgraded to |tcver|. :superscript:`5.5.2` :superscript:`CVE-2022-23181`
