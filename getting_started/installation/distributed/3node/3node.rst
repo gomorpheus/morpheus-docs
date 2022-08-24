@@ -53,7 +53,7 @@ App Node Installation
 
          .. code-block:: bash
 
-            [root@node-(1/2/3) ~]# wget https://example/path/morpheus-appliance-ver-1.el7.x86_64.rpm
+            [root@node-(1/2/3) ~]# wget https://example/path/morpheus-appliance-ver-1.el8.x86_64.rpm
             [root@node-(1/2/3) ~]# rpm -i morpheus-appliance-offline-ver-1.noarch.rpm
 
 #. Do NOT run reconfigure yet. The |morpheus| configuration file must be edited prior to the initial reconfigure.
@@ -186,11 +186,11 @@ Clustering RabbitMQ
 
            [root@node-2 ~] vi /etc/morpheus/morpheus-secrets.json
 
-             "rabbitmq": {
-               "morpheus_password": "***node-1_morpheus_password***",
-               "queue_user_password": "***node-1_queue_user_password***",
-               "cookie": "***node-1_cookie***"
-             },
+            "rabbitmq": {
+              "morpheus_password": "***node-1_morpheus_password***",
+              "queue_user_password": "***node-1_queue_user_password***",
+              "cookie": "***node-1_cookie***"
+            },
 
      .. tab-container:: tab3
         :title: Node 3
@@ -200,10 +200,10 @@ Clustering RabbitMQ
            [root@node-3 ~] vi /etc/morpheus/morpheus-secrets.json
 
            "rabbitmq": {
-             "morpheus_password": "***node-1_morpheus_password***",
-             "queue_user_password": "***node-1_queue_user_password***",
-             "cookie": "***node-1_cookie***"
-           },
+              "morpheus_password": "***node-1_morpheus_password***",
+              "queue_user_password": "***node-1_queue_user_password***",
+              "cookie": "***node-1_cookie***"
+            },
 
 #. Then copy the erlang.cookie from the SOT node to the other nodes
 
