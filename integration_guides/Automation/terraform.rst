@@ -30,25 +30,27 @@ Supported App Provisioning Targets
 Terraform Installation
 ^^^^^^^^^^^^^^^^^^^^^^
 
-|morpheus| will automatically install Terraform locally upon the first Terraform App provision. It is possible on some operating system configurations for the automated terraform installation to fail, in which case it can be manually installed (run ``terraform --version`` to verify).
+The first time you attempt to provision a Terraform App, you may come across an error indicating that Terraform is not installed:
 
-To manually install and configure terraform on the Morpheus Appliance:
+.. code-block:: bash
 
-#. Run the following cURL on the |morpheus| Appliance to install Terraform:
+  bash: line 1: terraform: command not found
 
-   .. code-block:: bash
+- .. toggle-header:: :header: **Command Not Found Error Screenshot**
 
-    curl -k -s "https://applianceServerUrl/api/server-script/terraform-install?local=true" | bash
+  .. image:: /images/integration_guides/automation/terraform/1commandNotFound.png
 
-   .. NOTE:: Replace applianceServerUrl with your |morpheus| appliance URL or IP address.
+  |
 
-#. Copy the Terraform directory at ``/usr/local/bin/terraform`` to ``/usr/sbin/terraform``
+This likely means you've not yet configured Terraform Settings within |morpheus| global settings. Navigate to |AdmSetPro| and scroll down to the Terraform Settings section. By default, the Terraform Runtime field is set to "Manual". When set this way, |morpheus| will attempt to use Terraform as installed on the appliance box and it may not be currently installed. To have |morpheus| manage the Terraform installation process for you and manage Terraform versioning on a per-App basis, set the Terraform Runtime to "Auto". You should also set the Default Terraform Version field as well. When a version is set on a Terraform Spec Template or Terraform App Blueprint, that version will supersede the default version indicated in global settings.
 
-   .. code-block:: bash
+- .. toggle-header:: :header: **Configured Terraform Runtime Screenshot**
 
-    cp /usr/local/bin/terraform /usr/sbin/terraform
+  .. image:: /images/integration_guides/automation/terraform/2configuredTfRuntime.png
 
-Terraform is now installed and configured, and Terraform apps can be provisioned from |morpheus|.
+  |
+
+.. IMPORTANT:: |morpheus| appliances which do not have access to the Internet will need to leave Terraform Runtime settings on "Manual" and ensure Terraform is installed appropriately on the appliance.
 
 Creating Terraform App Blueprints
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
