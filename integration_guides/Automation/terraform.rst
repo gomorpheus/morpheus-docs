@@ -38,17 +38,17 @@ The first time you attempt to provision a Terraform App, you may come across an 
 
 - .. toggle-header:: :header: **Command Not Found Error Screenshot**
 
-  .. image:: /images/integration_guides/automation/terraform/1commandNotFound.png
+    .. image:: /images/integration_guides/automation/terraform/1commandNotFound.png
 
-  |
+    |
 
 This likely means you've not yet configured Terraform Settings within |morpheus| global settings. Navigate to |AdmSetPro| and scroll down to the Terraform Settings section. By default, the Terraform Runtime field is set to "Manual". When set this way, |morpheus| will attempt to use Terraform as installed on the appliance box and it may not be currently installed. To have |morpheus| manage the Terraform installation process for you and manage Terraform versioning on a per-App basis, set the Terraform Runtime to "Auto". You should also set the Default Terraform Version field as well. When a version is set on a Terraform Spec Template or Terraform App Blueprint, that version will supersede the default version indicated in global settings.
 
 - .. toggle-header:: :header: **Configured Terraform Runtime Screenshot**
 
-  .. image:: /images/integration_guides/automation/terraform/2configuredTfRuntime.png
+    .. image:: /images/integration_guides/automation/terraform/2configuredTfRuntime.png
 
-  |
+    |
 
 .. IMPORTANT:: |morpheus| appliances which do not have access to the Internet will need to leave Terraform Runtime settings on "Manual" and ensure Terraform is installed appropriately on the appliance.
 
