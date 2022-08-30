@@ -10,7 +10,7 @@ Release Date: |releasedate|
 
 .. IMPORTANT:: Support has been removed for exposing Instance Types and App Blueprints to the ServiceNow catalog via |morpheus| integration. This is because more advanced configurations of Instances and App Blueprints, in addition to Workflows, can be exposed utilizing Catalog Items. Following upgrade, Instance Types and App Blueprints which were previously exposed will be disabled from the ServiceNow catalog. Any important configurations will need to be replaced with Service Catalog Items. See our `ServiceNow integration guide <https://docs.morpheusdata.com/en/5.4.2/integration_guides/ITSM/ServiceNow.html#adding-to-servicenow-catalog>`_ for instructions on how to expose |morpheus| Catalog Items to ServiceNow.
 
-.. NOTE:: v5.4.2-2 fixes 5.4.2-1 js event target issue with instance lists and modals. 
+.. NOTE:: v5.4.2-2 fixes 5.4.2-1 js event target issue with instance lists and modals.
 
 .. NOTE:: Items appended with :superscript:`5.x.x` are also included in that version.
 
@@ -56,7 +56,6 @@ Fixes
          - Improvements made to smooth the process of creating Tier-0 routers for NSX-T :superscript:`5.2.14`
          - Setting NSX-T distributed firewall rules by IP address now works correctly :superscript:`5.2.14`
 :OpenStack: - Project and Cloud visibility is now aligned for Project-scoped OpenStack Clouds to prevent confusion in certain cases
-:Oracle Cloud: - Fixed an issue that caused the "Install Agent?" option to become unchecked at times on Virtual Images added for Oracle Cloud
 :Plans & Pricing: - Fixed an issue that caused pricing information not to appear in Service Catalog when a Price Set was scoped to a specific Resource Pool
 :Security: - MySQL usernames and passwords are no longer exposed in the History output when provisioning MySQL Instances or Apps
 :Terraform: - Fixed an issue that could cause Terraform Plan to run a different version of Terraform than that which is specified in the Blueprint
