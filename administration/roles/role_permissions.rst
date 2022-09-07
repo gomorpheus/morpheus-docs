@@ -341,6 +341,12 @@ Role Mappings
     - The Load Balancers page is where new load balancer integrations may be configured. Additionally, existing integrations may be managed. The Virtual Servers page is where virtual servers are managed to include policies, pools, profiles, monitors, nodes, and rule scripts may be managed.
     - This permission is recommended for those responsible for integrating |morpheus| with load balancers as well as those responsible for managing virtual servers.
     -
+  * - Infrastructure: Move Servers
+    - None, Full
+    - Determines access to the Change Cloud selection under the ACTIONS menu on server detail pages (|InfComVir)
+    - This selection allows users to associate existing servers with new Clouds (that is, for |morpheus| tracking purposes, this is not a migration tool) and merge together server records which represent the same workload. See `video demo <https://www.youtube.com/watch?v=mzzNv2QRS3U>`_ for a more detailed walkthrough of this functionality.
+    - This permission is recommended for administrators. Changing Clouds should only be done with a full understanding of the ramifications and under specific conditions when this tool can be useful for record correction.
+    -
   * - Infrastructure: Network Domains
     - None, Read, Full
     - Determines access to the Domains tab on the |InfNet| page.
