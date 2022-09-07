@@ -7,7 +7,7 @@ Morpheus allows for additional advanced customizations for system managed servic
 
 .. note:: Service configuration settings are not applicable for externalized services such as external mysql/percona, elasticsearch or rabbitmq clusters. Only connection settings are applicable for external services. Additionally, to configure |morpheus| to utilize alternate ports for SSL, you may have to take additional configuration steps. If simply appending a port to your ``appliance_url`` value doesn't work, consult the related article in our `KnowledgeBase <https://support.morpheusdata.com/s/article/Configure-Morpheus-to-utilize-and-alternate-port-for-SSL?language=en_US>`_.
 
-.. code-block:: rb
+.. code-block:: ruby
 
   app['encrypted_key_suffix'] = 'suffix'
   appliance_url 'https://morpheus.appliance-url.com'
@@ -24,6 +24,7 @@ Morpheus allows for additional advanced customizations for system managed servic
   elasticsearch['es_hosts'] = {'127.0.0.1' => 9200}
   elasticsearch['host'] = "127.0.0.1"
   elasticsearch['port'] = "9200"
+  elasticsearch['tmp_dir'] = '/var/tmp/elasticsearch'
   elasticsearch['use_tls'] = false
   ↓ The following elasticsearch settings are only valid for Internal/Embedded elasticsearch services
   elasticsearch['log_dir'] = '/var/log/morpheus/elasticsearch'
