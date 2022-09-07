@@ -78,7 +78,7 @@ In order to provision Terraform apps, Terraform App Blueprints must be created f
        A category for your App (optional)
    IMAGE
        Add reference icon for your App Blueprint to make it more identifiable at provision time (optional)
-   CONFIG TYPE (select Terraform Specs, Terraform (.tf), Terraform.json, or Git Repository)
+   **CONFIG TYPE** (select Terraform Specs, Terraform (.tf), Terraform.json, or Git Repository)
 
        - .. toggle-header:: :header: **Terraform (.tf)**
 
