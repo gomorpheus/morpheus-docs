@@ -24,6 +24,7 @@ Morpheus allows for additional advanced customizations for system managed servic
   elasticsearch['es_hosts'] = {'127.0.0.1' => 9200}
   elasticsearch['host'] = "127.0.0.1"
   elasticsearch['port'] = "9200"
+  elasticsearch['tmp_dir'] = '/var/tmp/elasticsearch'
   elasticsearch['use_tls'] = false
   ↓ The following elasticsearch settings are only valid for Internal/Embedded elasticsearch services
   elasticsearch['log_dir'] = '/var/log/morpheus/elasticsearch'

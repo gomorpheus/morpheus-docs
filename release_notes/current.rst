@@ -151,7 +151,7 @@ Appliance, Node & Agent Updates
 ===============================
 
 :Appliance: - Elasticsearch: 5.4.9-2 fixes external elasticsearch auth issue introduced in 5.4.8 and 5.4.9-1 when using external elasticsearch without username and password. The basic auth support added for embedded elasticsearch in 5.4.8 was improperly adding generated elasticsearch credentials to application.yml when the embedded elasticsearch was disabled and elasticsearch['auth_user'] was not defined in morpheus.rb :superscript:`5.5.2`
-            - Elasticsearch: Embedded elasticsearch default tmp_dir changed to /var/tmp/elasticsearch. Resolves issue when /var/run is noexec. Note: elasticsearch tmp_dir can be modified with ``default['morpheus_solo']['elasticsearch']['tmp_dir']`` in morpheus.rb (applies to previous versions too) :superscript:`5.5.2`
+            - Elasticsearch: Embedded elasticsearch default tmp_dir changed to /var/tmp/elasticsearch. Resolves issue when /var/run is noexec. Note: elasticsearch tmp_dir can be modified with ``elasticsearch['tmp_dir']`` in morpheus.rb (applies to previous versions too) :superscript:`5.5.2`
             - Java: morpheus-appliance embedded Java updated to |java| :superscript:`5.5.2`
             - MySQL: Embedded MySQL upgraded to |mysqlver|. :superscript:`5.5.2`
             - Tomcat: Embedded Tomcat upgraded to |tcver|. :superscript:`5.5.2` :superscript:`CVE-2022-23181`
