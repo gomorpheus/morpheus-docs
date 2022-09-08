@@ -22,15 +22,15 @@ The |Morpheus| Health section provides an overview of the health of your |Morphe
 Health Levels
 ^^^^^^^^^^^^^
 
-Health levels provide a live representation of the current memory and CPU load on the appliance. Bear in mind that in an HA appliance, this data will be specific to the appliance node you happen to be using. By default, |morpheus| does not include any endpoint or UI tool which can show you the currently used app node. However, a plugin has been developed which can surface this information if needed. See `this thread <https://discuss.morpheusdata.com/t/custom-ping-endpoint-via-morpheus-plugin/389>_` in the |morpheus| official forums for additional details about accessing and using the plugin.
+Health levels provide a live representation of the current memory and CPU load on the appliance. Bear in mind that in an HA appliance, this data will be specific to the appliance node you happen to be using. By default, |morpheus| does not include any endpoint or UI tool which can show you the currently used app node. However, a plugin has been developed which can surface this information if needed. See `this thread <https://discuss.morpheusdata.com/t/custom-ping-endpoint-via-morpheus-plugin/389>`_ in the |morpheus| official forums for additional details about accessing and using the plugin.
 
-  - **|Morpheus| CPU:** Instantaneous amount of CPU capacity in use by |morpheus| processes
+  - **|morpheus| CPU:** Instantaneous amount of CPU capacity in use by |morpheus| processes
   - **System CPU:** Instantaneous amount of CPU capacity in use by all processes
-  - **|Morpheus| Memory:** Instantaneous amount of system memory currently in use by |morpheus| processes (see the Knowledge Base article linked in the TIP box below for more information on how |morpheus| claims and manages available memory)
+  - **|morpheus| Memory:** Instantaneous amount of system memory currently in use by |morpheus| processes (see the Knowledge Base article linked in the TIP box below for more information on how |morpheus| claims and manages available memory)
   - **System Memory:** Instantaneous amount of total system memory currently claimed (this is commonly a high percentage, see the TIP box below)
   - **Used Swap:** Instantaneous amount of total available system swap in use
 
-.. TIP:: It's common to see a high percentage of system memory being used `due to the way |morpheus| allocates and manages memory <https://support.morpheusdata.com/s/article/How-does-Morpheus-manage-the-memory-it-uses?language=en_US>_`. If |morpheus| is performing well, high system memory use is not necessarily an indicator that any action needs to be taken.
+.. TIP:: It's common to see a high percentage of system memory being used `due to the way |morpheus| allocates and manages memory <https://support.morpheusdata.com/s/article/How-does-Morpheus-manage-the-memory-it-uses?language=en_US>`_. If |morpheus| is performing well, high system memory use is not necessarily an indicator that any action needs to be taken.
 
 Additional System Health Indices
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
