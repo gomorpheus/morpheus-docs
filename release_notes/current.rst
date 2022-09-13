@@ -7,6 +7,28 @@
 - Compatible Plugin API version: |pluginVer|
 - Compatible Morpheus Worker version: |workerVer|
 
+.. important::
+
+   Known issue with embedded Elasticsearch upgrade: When upgrading to v5.4.8, v5.4.9 or v5.5.1, there is a potential issue with embedded Elasticsearch clustering on rolling upgrades and existing data migration for all embedded Elasticsearch architechtures. Release versions with a fix will be posted soon. The issue can be mitigated by running the following after installing/upgrading the v5.4.8, 5.4.9 or 5.5.1 package and PRIOR to running reconfigure. 
+
+   As root, after installing/upgrading the v5.4.8, 5.4.9 or 5.5.1 package and PRIOR to running reconfigure, run the following:
+
+   .. code-block:: bash
+
+     	rm -f /var/opt/morpheus/elasticsearch   
+     	mv /var/opt/morpheus/elasticsearch-7.8.1 /var/opt/morpheus/elasticsearch-7.17.5
+     	morpheus-ctl reconfigure
+
+   If you have installed/upgraded v5.4.8, 5.4.9 or 5.5.1 and are having issues on ui startup due to elasticsearch, you can run the following to resolve. 
+   Please note this should only be ran during the upgrade process and not after a successful upgrade where existing data exists in /var/opt/morpheus/elasticsearch-7.17.5, as this will remove that data. 
+
+   .. code-block:: bash
+
+     	rm -f /var/opt/morpheus/elasticsearch
+     	rm -rf /var/opt/morpheus/elasticsearch-7.17.5 	
+     	mv /var/opt/morpheus/elasticsearch-7.8.1 /var/opt/morpheus/elasticsearch-7.17.5
+     	morpheus-ctl reconfigure
+
 .. IMPORTANT:: |morpheus| 5.4.9 adds the "Provisioning: State" Role permission. This permission determines access to the State tab for Terraform-backed Instances and is set to "None" by default. On upgrade, only System Admin users will be able to see the State tab for these Instances. For other users who should have this access, edit their Roles to include "Provisioning: State" permissions.
 
 .. warning:: Morpheus |morphver| requires Morpheus Worker |workerVer|. Please upgrade any existing Morpheus Workers to the |workerVer| Worker package to ensure compatibility with Morpheus |morphver|.
