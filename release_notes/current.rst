@@ -19,17 +19,6 @@
      	mv /var/opt/morpheus/elasticsearch-7.8.1 /var/opt/morpheus/elasticsearch-7.17.5
      	morpheus-ctl reconfigure
 
-   If you have installed/upgraded v5.4.8, 5.4.9 or 5.5.1 and are having issues on ui startup due to elasticsearch, you can run the following to resolve. 
-   Please note this should only be ran during the upgrade process and not after a successful upgrade where existing data exists in /var/opt/morpheus/elasticsearch-7.17.5, as this will remove that data. 
-
-   .. code-block:: bash
-
-     	rm -f /var/opt/morpheus/elasticsearch
-     	rm -rf /var/opt/morpheus/elasticsearch-7.17.5 	
-     	mv /var/opt/morpheus/elasticsearch-7.8.1 /var/opt/morpheus/elasticsearch-7.17.5
-     	morpheus-ctl reconfigure
-
-
 .. important::  Security: CVE-2022-35912: Morpheus v5.5.1-3 and v5.4.8-2 are now available in response to CVE-2022-35912, a Grails Framework remote code execution vulnerability. v5.5.1-2, v5.5.1-3 and v5.4.8-2 include the Grails v5.1.9 update that mitigates the vulnerability. At this time, the Grails vulnerability is only confirmed for grails frameworks running on Java 8. Morpheus versions v5.4.4 and higher are on Java 11. Customers on morpheus v5.4.3 or earlier are highly advised to upgrade to at minimum v5.4.4 or higher, and out of an abundance of caution we recommend all customers upgrade to v5.5.1-3 or v5.4.8-2 in the event the vulnerability is found to be exploitable on Java 11.
 
 .. important:: Morpheus |morphver| requires Morpheus Worker |workerVer|. Please upgrade any existing Morpheus Workers to the |workerVer| Worker package to ensure compatibility with Morpheus |morphver|.
