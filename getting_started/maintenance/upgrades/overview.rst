@@ -1,6 +1,10 @@
 Upgrading Overview
 ^^^^^^^^^^^^^^^^^^
 
+.. important::
+
+   Known issue with embedded Elasticsearch upgrade: When upgrading to v5.4.8, v5.4.9 or v5.5.1, there is a potential issue with embedded Elasticsearch clustering on rolling upgrades and existing data migration for all embedded Elasticsearch architechtures. Refer to the :ref:`Release Notes` for additional informaiton.
+
 |morpheus| Packages
 ...................
 
