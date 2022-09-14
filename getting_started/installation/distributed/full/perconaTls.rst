@@ -11,8 +11,9 @@ Installation and configuration of Percona XtraDB Cluster on **CentOS/RHEL 8** wi
 
 .. IMPORTANT:: This is a sample configuration only. Customer configurations and requirements will vary.
 
-Additional information can be found below:
-[XtraDB 5.7 Installation](https://www.percona.com/doc/percona-xtradb-cluster/5.7/install/yum.html)
+Additional information can be found here:
+
+`XtraDB 5.7 Installation <https://www.percona.com/doc/percona-xtradb-cluster/5.7/install/yum.html>`_
 
 Requirements
 ````````````
@@ -42,7 +43,8 @@ Requirements
    .. important:: Failing to provide sufficient storage to the mysql tmpdir can result in failed database migrations and |morpheus| upgrades.
 
 Current Operating System (OS) support can be found here:
-[XtraDB 5.7 Support](https://www.percona.com/services/policies/percona-software-support-lifecycle#mysql)
+
+`XtraDB 5.7 Support <https://www.percona.com/services/policies/percona-software-support-lifecycle#mysql>`_
 
 Percona requires the following TCP ports for the cluster nodes. Please create the appropriate firewall rules on your
 Percona nodes.
@@ -57,19 +59,21 @@ Percona nodes.
     [root]# firewall-cmd --add-port={3306/tcp,4444/tcp,4567/tcp,4568/tcp}
 
 The following OS repositories are required, in addition to the Percona repositories:
+  
   - rhel-8-for-x86_64-baseos-rpms
   - rhel-8-for-x86_64-appstream-rpms
 
 Configure SElinux
 `````````````````
 
-Percona recommends setting SELinux from `enforcing` to `permissive` to eliminate interference.  Run the following to set SELinux to permissive on each database node:
+Percona recommends setting SELinux from ``enforcing`` to ``permissive`` to eliminate interference.  Run the following to set SELinux to permissive on each database node:
+  
   .. code-block:: bash
 
     [root]# setenforce 0
     [root]# sed -i 's/SELINUX=enforcing/SELINUX=permissive/g' /etc/selinux/config
 
-If enforcing is required by the organization, SELinux rules can be added to ensure interference is eliminated.  To allow Percona XtraDB Cluster functionality when SELinux is `Enforcing`, run the following on each database Node:
+If enforcing is required by the organization, SELinux rules can be added to ensure interference is eliminated.  To allow Percona XtraDB Cluster functionality when SELinux is ``Enforcing``, run the following on each database Node:
 
 #. Install SELinux utilities
 
@@ -127,10 +131,13 @@ If enforcing is required by the organization, SELinux rules can be added to ensu
 Add Percona Repo
 ````````````````
 
-Additional information can be found below:
-[Using percona-release](https://docs.percona.com/percona-software-repositories/installing.html)
-[percona-release Documentation](https://docs.percona.com/percona-software-repositories/percona-release.html)
-[percona-release Repository Locations](https://docs.percona.com/percona-software-repositories/repository-location.html)
+Additional information can be found here:
+
+`Using percona-release <https://docs.percona.com/percona-software-repositories/installing.html>`_
+
+`percona-release Documentation <https://docs.percona.com/percona-software-repositories/percona-release.html>`_
+
+`percona-release Repository Locations <https://docs.percona.com/percona-software-repositories/repository-location.html>`_
 
 #. Add the Percona repo to your Linux Distro.
 
@@ -181,7 +188,7 @@ Installing Percona XtraDB Cluster
 
     mysql> ALTER USER 'root'@'localhost' IDENTIFIED BY 'rootPassword';
 
-#. Create the sstuser user and grant the permissions.
+#. Create the sstuser user, grant the permissions, and exit mysql.
 
    .. code-block:: bash
 
@@ -195,19 +202,14 @@ Installing Percona XtraDB Cluster
 
     mysql> FLUSH PRIVILEGES;
 
-#. Exit mysql then stop the mysql services:
-
-   .. code-block:: bash
-
     mysql> exit
     Bye
-    [root]# systemctl stop mysql.service
 
 #. Stop the mysql service on **all nodes**
    
    .. code-block:: bash
 
-    [root]# service mysql stop
+    [root]# systemctl stop mysql
 
 Once the service is stopped on all nodes move onto the next step.
 
@@ -340,7 +342,7 @@ Bootstrap Node 01
 Configure Morpheus Database and User
 ````````````````````````````````````
 
-#. Create the Database you will be using with |morpheus|.  Login to mysql on Node 01:
+#. Create the Database you will be using with |morpheus|.  Login to mysql on **Node 01**:
 
    .. code-block:: bash
 
@@ -366,18 +368,18 @@ Configure Morpheus Database and User
 
     mysql> FLUSH PRIVILEGES;
 
-    .. important:: If you grant privileges to the morpheusDbUser to only the morpheusdb database, you will also need to GRANT SELECT, PROCESS, SHOW DATABASES, SUPER ON PRIVILEGES to the morpheusDbUser on *.* for the Appliance Health service.
+   .. important:: If you grant privileges to the morpheusDbUser to only the morpheusdb database, you will also need to GRANT SELECT, PROCESS, SHOW DATABASES, SUPER ON PRIVILEGES to the morpheusDbUser on *.* for the Appliance Health service.
 
     mysql> exit
 
 Copy SSL Files to other nodes
 `````````````````````````````
 
-During initialization of Node 01 the required `pem` files will be generated in ``/var/lib/mysql``. The ``ca.pem``, ``server-cert.pem`` and ``server-key.pem`` files need to match on all nodes in the cluster.
+During initialization of **Node 01** the required `pem` files will be generated in ``/var/lib/mysql``. The ``ca.pem``, ``server-cert.pem`` and ``server-key.pem`` files need to match on all nodes in the cluster.
 
-#. Copy the following files from Node 01 to the same path (default is /var/lib/mysql) on Node 02 and Node 03:
+#. Copy the following files from **Node 01** to the same path (default is /var/lib/mysql) on **Node 02** and **Node 03**:
 
-   From Node 01
+   From **Node 01**
    
    .. code-block:: bash
 
@@ -389,7 +391,7 @@ During initialization of Node 01 the required `pem` files will be generated in `
     [root]# scp /var/lib/mysql/server-cert.pem root@192.168.101.03:/root
     [root]# scp /var/lib/mysql/server-key.pem root@192.168.101.03:/root
 
-   From Node 02 and Node 03
+   From **Node 02** and **Node 03**
    
    .. code-block:: bash
    
@@ -397,18 +399,18 @@ During initialization of Node 01 the required `pem` files will be generated in `
     [root]# cp /root/server-cert.pem /var/lib/mysql/
     [root]# cp /root/server-key.pem /var/lib/mysql/
 
-    .. important:: Ensure all 3 files match on all 3 nodes, including path, owner and permissions.
+   .. important:: Ensure all 3 files match on all 3 nodes, including path, owner and permissions.
 
-    .. note:: The generated certificate is self-signed. Consult Percona documentation for [mysqld] and SSL file configuration when providing your own.
+   .. note:: The generated certificate is self-signed. Consult Percona documentation for [mysqld] and SSL file configuration when providing your own.
 
 Start the Remaining Nodes
 `````````````````````````
 
-#. Start mysql on Node 02 and Node 03
+#. Start mysql on **Node 02** and **Node 03**
 
    .. code-block:: bash
 
-    [root]# systemctl start mysql.service
+    [root]# systemctl start mysql
 
    The services will automatically join the cluster using the sstuser we created earlier.
 
