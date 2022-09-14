@@ -25,51 +25,46 @@ However, the certificates on the |morpheus| application nodes are not required t
 
 - .. toggle-header:: :header: **F5 BIG-IP**
 
-  Monitor
-  ```````
+    **Monitor**
 
-    - **Type:** HTTPS
-    - **Send String:** GET /ping
-    - **Receive String:** MORPHEUS PING
+      - **Type:** HTTPS
+      - **Send String:** GET /ping
+      - **Receive String:** MORPHEUS PING
 
-  Pool
-  ````
+    **Pool**
 
-    - **Health Monitor:** Select monitor created in the ``Monitor`` section
-    - **Load Balancing Method:** Least Connections (member) is recommended (alternatively Round Robin)
-    - **Node Service Port:** 443/HTTPS
+      - **Health Monitor:** Select monitor created in the **Monitor** section
+      - **Load Balancing Method:** Least Connections (member) is recommended (alternatively Round Robin)
+      - **Node Service Port:** 443/HTTPS
       
-  Virtual Server
-  ``````````````
+    **Virtual Server**
 
-    - **Type:** Standard
-    - **Service Port:** 443/HTTPS
-    - **Protocol:** TCP
-    - **Protocol Profile (Client):** tcp
-    - **Protocol Profile (Server):** tcp
-    - **HTTP Profile (Client):** http
-    - **HTTP Profile (Server):** http
-    - **SSL Profile (Client):** clientssl (or preferred profile with a trusted certificate)
-    - **SSL Profile (Server):** serverssl
-    - **Source Address Translation:** Auto Map
-    - **Default Persistence Profile:** <Organization's preference> (hash, source_addr, and cookie are popular)
+      - **Type:** Standard
+      - **Service Port:** 443/HTTPS
+      - **Protocol:** TCP
+      - **Protocol Profile (Client):** tcp
+      - **Protocol Profile (Server):** tcp
+      - **HTTP Profile (Client):** http
+      - **HTTP Profile (Server):** http
+      - **SSL Profile (Client):** clientssl (or preferred profile with a trusted certificate)
+      - **SSL Profile (Server):** serverssl
+      - **Source Address Translation:** Auto Map
+      - **Default Persistence Profile:** <Organization's preference> (hash, source_addr, and cookie are popular)
 
 - .. toggle-header:: :header: **AWS Application Load Balancer (ALB)**
 
-  Target Group
-  ````````````
+    **Target Group**
 
-    - **Target Type:** Instances
-    - **Protocol/Port:** HTTPS/443
-    - **Health Check Protocol:** HTTPS
-    - **Health check path:** /ping
-    - **Load balancing algorithm:** Least Outstanding Requests is recommended (alternatively Round Robin)
-    - **Stickiness Type:** Load balancer generated cookie
+      - **Target Type:** Instances
+      - **Protocol/Port:** HTTPS/443
+      - **Health Check Protocol:** HTTPS
+      - **Health check path:** /ping
+      - **Load balancing algorithm:** Least Outstanding Requests is recommended (alternatively Round Robin)
+      - **Stickiness Type:** Load balancer generated cookie
 
-  Load Balancer
-  `````````````
+    **Load Balancer**
 
-    - **Network Mappings:** It is recommended to sele
-    - **Security Group:** Allow HTTPS/443 Inbound and Outbound
-    - **Listener:** HTTPS:443 to the target group created in the ``Target Group`` section
-    - **Security Policy:** ELBSecurityPolicy-2016-08
+      - **Network Mappings:** It is recommended to sele
+      - **Security Group:** Allow HTTPS/443 Inbound and Outbound
+      - **Listener:** HTTPS:443 to the target group created in the **Target Group** section
+      - **Security Policy:** ELBSecurityPolicy-2016-08
