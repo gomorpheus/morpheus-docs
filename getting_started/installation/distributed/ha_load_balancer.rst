@@ -7,8 +7,8 @@ Requirements
 ````````````
 
 * WebSockets enabled
-* Load Balance 443 (optionally redirect 80 to 443)
-   * SSL Termination (Offload), Bridging, and Passthrough are supported
+* Load Balance 443 (optionally redirect 80 to 443)  
+  * SSL Termination (Offload), Bridging, and Passthrough are supported
 * Round-Robin or least connection distribution
 * Persistence/sticky sessions configured
 * HTTPS monitor ``https://ip_address/ping`` body for ``MORPHEUS PING`` or status of 200, for node operational health
