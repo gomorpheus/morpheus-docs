@@ -218,7 +218,8 @@ Terraform Instance Type Example
 
 Terraform Spec can also be used within the |morpheus| Instance Type construct in addition to App Blueprints and Apps. Expand the section below to see a complete end-to-end example of a Terraform Instance Type from drafting new Spec Templates through to provisioning.
 
-.. toggle-header:: :header: **Terraform Instance Type Example**
+- .. toggle-header:: :header: **Terraform Instance Type Example**
+
     .. include:: ../../getting_started/guides/terraform_instances.rst
       :start-after: .. begin_tf_instance
       :end-before: .. end_tf_instance
