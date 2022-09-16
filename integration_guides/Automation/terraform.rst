@@ -85,7 +85,7 @@ In order to provision Terraform apps, Terraform App Blueprints must be created f
             CONFIG
              Draft or paste in .tf content in the config text area. Variables will be presented as input fields during App provisioning, or auto-populated with matching values if contained in a selected TFVAR Secret file added to the Cypher service.
             TFVAR SECRET
-             Select an existing tfvar secret file stored in |morpheus| Cypher service. This list is automatically filtered to show all Cypher entries which are currently stored at the "tfvar/*" Cypher mount point.
+             Select an existing tfvar secret file stored in |morpheus| Cypher service. This list is automatically filtered to show all Cypher entries which are currently stored at the "tfvar/*" Cypher mount point. Note that tfvars already set in any existing Terraform Cloud Profiles will already be available to your App and wouldn't need to be set here.
             VERSION
              Specify a version required by your Terraform App (optional). If specified, the given version will supersede the global Terraform version specified in |morpheus| global settings (|AdmSetPro|). "Terraform Runtime" must also be set to "auto" in global settings for |morpheus| to manage the Terraform version for you. When set to "manual", |morpheus| will use the Terraform version installed on the appliance box.
             OPTIONS
@@ -96,7 +96,7 @@ In order to provision Terraform apps, Terraform App Blueprints must be created f
             CONFIG
              Draft or paste in .tf.json content in the config text area. Variables will be presented as input fields during App provisioning, or auto-populated with matching values if contained in a selected TFVAR Secret file added to the Cypher service.
             TFVAR SECRET
-             Select an existing tfvar secret file stored in |morpheus| Cypher service. This list is automatically filtered to show all Cypher entries which are currently stored at the "tfvar/*" Cypher mount point.
+             Select an existing tfvar secret file stored in |morpheus| Cypher service. This list is automatically filtered to show all Cypher entries which are currently stored at the "tfvar/*" Cypher mount point. Note that tfvars already set in any existing Terraform Cloud Profiles will already be available to your App and wouldn't need to be set here.
             VERSION
              Specify a version required by your Terraform App (optional). If specified, the given version will supersede the global Terraform version specified in |morpheus| global settings (|AdmSetPro|). "Terraform Runtime" must also be set to "auto" in global settings for |morpheus| to manage the Terraform version for you. When set to "manual", |morpheus| will use the Terraform version installed on the appliance box.
             OPTIONS
@@ -107,7 +107,7 @@ In order to provision Terraform apps, Terraform App Blueprints must be created f
             SPEC TEMPLATE
              Using the typeahead field, select all Terraform-type Spec Templates which make up your App. Variables will be presented as input fields during App provisioning, or auto-populated with matching values if contained in a selected TFVAR Secret file added to the Cypher service.
             TFVAR SECRET
-             Select an existing tfvar secret file stored in |morpheus| Cypher service. This list is automatically filtered to show all Cypher entries which are currently stored at the "tfvar/*" Cypher mount point.
+             Select an existing tfvar secret file stored in |morpheus| Cypher service. This list is automatically filtered to show all Cypher entries which are currently stored at the "tfvar/*" Cypher mount point. Note that tfvars already set in any existing Terraform Cloud Profiles will already be available to your App and wouldn't need to be set here.
             VERSION
              Specify a version required by your Terraform App (optional). If specified, the given version will supersede the global Terraform version specified in |morpheus| global settings (|AdmSetPro|). "Terraform Runtime" must also be set to "auto" in global settings for |morpheus| to manage the Terraform version for you. When set to "manual", |morpheus| will use the Terraform version installed on the appliance box.
             OPTIONS
@@ -124,7 +124,7 @@ In order to provision Terraform apps, Terraform App Blueprints must be created f
             WORKING PATH
               Enter the repo path for the .tf file(s). ``./`` is default if no value is entered.
             TFVAR SECRET
-             Select an existing tfvar secret file stored in |morpheus| Cypher service. This list is automatically filtered to show all Cypher entries which are currently stored at the "tfvar/*" Cypher mount point.
+             Select an existing tfvar secret file stored in |morpheus| Cypher service. This list is automatically filtered to show all Cypher entries which are currently stored at the "tfvar/*" Cypher mount point. Note that tfvars already set in any existing Terraform Cloud Profiles will already be available to your App and wouldn't need to be set here.
             VERSION
              Specify a version required by your Terraform App (optional). If specified, the given version will supersede the global Terraform version specified in |morpheus| global settings (|AdmSetPro|). "Terraform Runtime" must also be set to "auto" in global settings for |morpheus| to manage the Terraform version for you. When set to "manual", |morpheus| will use the Terraform version installed on the appliance box.
             OPTIONS
