@@ -1,10 +1,10 @@
 Cloud Profiles
 --------------
 
-.. begin_cloud_profiles
-
 Role Permissions
 ^^^^^^^^^^^^^^^^
+
+.. begin_cloud_profiles
 
 Access to **Profiles** tab of Cloud Detail Pages is determined by the following role permissions:
 
