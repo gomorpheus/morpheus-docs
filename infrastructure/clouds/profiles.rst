@@ -1,30 +1,32 @@
 Cloud Profiles
 --------------
 
+.. begin_cloud_profiles
+
 Role Permissions
 ^^^^^^^^^^^^^^^^
 
-Access to **Profiles** tab is determined by the following role permissions:
+Access to **Profiles** tab of Cloud Detail Pages is determined by the following role permissions:
 
 Role: Feature Access: ``Admin: Profiles``
-  - None: Cannot access Profiles tab or create/view//edit/delete profiles
+  - None: Cannot access Profiles tab or create/view/edit/delete profiles
   - Read: Can access Profiles tab, can view profiles, cannot create/edit/delete profiles
   - Full: Can access Profiles tab, can create/view/edit/delete profiles
 
 Terraform Profiles
 ^^^^^^^^^^^^^^^^^^
 
-- Terraform Profiles allow created cloud associated tfvars secrets, allowing tf apps and specs to be provisioned across multiple clouds that required different tfvars.
-- Target Cloud Terraform Profiles are automatically mapped to tf apps/specs during provisioning, no scoping is required.
-- Terraform Profiles are encrypted in Cypher and creating a profile creates a Cypher with key `tfvars/profile/cloud/$cloudCode/variables``
+- Terraform Profiles allow creation of Cloud-associated tfvars secrets, allowing tf apps and specs to be provisioned across multiple clouds that required different tfvars.
+- Target Cloud Terraform Profiles are automatically mapped to tf apps/specs during provisioning, no manual scoping is required.
+- Terraform Profiles are encrypted in Cypher and creating a profile creates a Cypher entry with key `tfvars/profile/cloud/$cloudCode/variables``
 - Terraform Profiles can be edited after creation
-- Terraform Profiles are limited to one per Cloud
+- Terraform Profiles are limited to one per Cloud, once one is created for the Cloud the option to create a Terraform Profile is no longer present. Edit the existing Terraform Profile to make changes at that point
 
 Create a Terraform Profile
 ``````````````````````````
 
-#. Navigate to ``/infrastructure/clouds/`` and select a Cloud
-#. Select the ``Profiles`` tab
+#. Navigate to |InfClo| and select a Cloud
+#. Select the "Profiles" tab
 #. Select :guilabel:`+ ADD PROFILE`
 #. Select Terraform Profile Type
 #. Enter tfvars in the `Terraform Profile Variables` field
@@ -40,7 +42,9 @@ Create a Terraform Profile
 
 #. Select :guilabel:`SAVE CHANGES`
 
-Now when provisioning a terraform Instance or App to the Cloud the profile was created in, the tfvars in the profile become available to the tf.
+Now, when provisioning a Terraform Instance or App to the Cloud the profile was created in, the tfvars in the profile become available to Terraform. It is not necessary to manually tie this tfvars files to your App Blueprint, these tfvars will automatically be available to Terraform whenever you provision an App to this cloud.
+
+.. end_cloud_profiles
 
 Key/Value Store Profiles
 ^^^^^^^^^^^^^^^^^^^^^^^^

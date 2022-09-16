@@ -102,6 +102,13 @@ In order to provision Terraform apps, Terraform App Blueprints must be created f
 
 Your Terraform App is ready to be provisioned from |ProApp|.
 
+Cloud Profiles
+^^^^^^^^^^^^^^
+
+.. include:: ../../infrastructure/clouds/profiles.rst
+  :start-after: .. begin_cloud_profiles
+  :end-before: .. end_cloud_profiles
+
 Provisioning Terraform Apps
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
