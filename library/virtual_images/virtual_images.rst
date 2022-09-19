@@ -8,6 +8,8 @@ The Virtual Image section displays a list of all images, local and synced, that 
 
 Understanding the process of prepping images for consumption in |morpheus| is a very important step toward building an effective |morpheus| environment. In addition to the information contained in this section on Virtual Images, it may be helpful to see a complete image prep example walkthrough. Our getting started guide for |morpheus| and VMware includes `a section on preparing images <https://docs.morpheusdata.com/en/latest/getting_started/guides/vmware_guide.html#prepping-an-image>`_ that may provide a helpful example.
 
+.. TIP:: |morpheus| includes a wide catalog of system image types as examples to show how the product can be used and to give users a starting point for implementing their own library. The included images are not intended to be production-ready images. |morpheus| always recommends its users create their own gold images which meet their required specifications.
+
 .. IMPORTANT:: Invalid Image Settings cause provisioning failures. |morpheus| syncs in as much meta-data as possible for synced images, but additional configuration may be needed to ensure successful provisioning.
 
 .. WARNING:: Cloud-init is enabled by default for all Linux images. If your Linux image does not have Cloud-init installed, `Cloud-init Enabled` must be unchecked before provisioning the image or it will fail immediately.
