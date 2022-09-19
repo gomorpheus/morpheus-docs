@@ -50,6 +50,13 @@ Below are sample log configuration settings. This is not a complete list. Additi
     <logger name="com.morpheus.task.AnsibleTowerTaskService" level="DEBUG"/>
     <logger name="com.morpheus.automation.AnsibleTowerService" level="DEBUG"/>
 
+:Apache:
+  .. code-block:: xml
+
+    <logger name="org.apache.http.headers" level="DEBUG"/>
+    <logger name="org.apache.http.impl.client" level="DEBUG"/>
+    <logger name="org.apache.http.wire" level="DEBUG"/>
+
 :Azure:
   .. code-block:: xml
           
@@ -73,7 +80,6 @@ Below are sample log configuration settings. This is not a complete list. Additi
      <logger name="com.morpheus.AppService" level="DEBUG"/>
      <logger name="com.morpheus.MorpheusComputeService" level="DEBUG"/>
      <logger name="com.morpheus.RpcService" level="DEBUG"/>
-     <logger name="com.morpheus.network.NetworkService " level="DEBUG"/>
      <logger name="com.morpheus.provision.AbstractProvisionService" level="DEBUG"/>
      <logger name="com.morpheus.provision.AbstractBoxProvisionService" level="DEBUG"/>
 
@@ -100,6 +106,12 @@ Below are sample log configuration settings. This is not a complete list. Additi
      <logger name="com.morpheus.host.KubernetesHostService" level="DEBUG"/>
      <logger name="com.morpheus.provision.KubernetesProvisionService" level="DEBUG"/>
      <logger name="com.morpheus.storage.KubernetesStorageService" level="DEBUG"/>
+
+:Network:
+  .. code-block:: xml
+          
+     <logger name="com.morpheus.network.NetworkService " level="DEBUG"/>
+     <logger name="com.morpheus.network.InfobloxNetworkPoolService" level="DEBUG"/>
 
 :Nutanix:
   .. code-block:: xml
