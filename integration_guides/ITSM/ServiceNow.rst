@@ -252,7 +252,7 @@ Multi-Domain ServiceNow Configuration
    ServiceNow Company
     Select a company from the list to link with the Tenant whose ID was entered above
    MID Server
-    If desired, specify the name of an existing MID server
+    If desired, specify the name of an existing MID server. Note that configuring a multi-domain MID server requires the ``glide.ecc.enable_multidomain_mid`` property in ``sys_properties.list`` be set to ``true`` prior to creating the MID server in the global domain. This allows the MID server to explore any domain for which it has the credentials. The ServiceNow user (which the MID server authenticates with) must be in the global domain as well. For more, see `this section of ServiceNow documentation <https://docs.servicenow.com/bundle/rome-servicenow-platform/page/product/mid-server/concept/c_MIDServerDomainSeparation.html>`_.
    |morpheus| Manage Workflows?
     Indicate whether |morpheus| should manage workflows. If this option is checked, |morpheus| will overwrite the workflow and set it to "Morpheus (Internal) Catalog Item Provision Instance" on sync
 
