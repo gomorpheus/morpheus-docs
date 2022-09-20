@@ -70,6 +70,26 @@ REQUEST SCRIPT
 
     results.push({name: 'userId', value : data.users})
 
+  In a GET request (SOURCE METHOD = GET), the value of the results variable is used to build out the request parameters. Thus, in the example ``results`` value:
+
+  .. code-block:: javascript
+
+    results=[{name:"name1",value: "value1"}]
+
+  The request would be made to: ``https://<someURL>?name1=value1``.
+
+  In a POST request (SOURCE METHOD = POST), the value of the results variable is used to build the body of the POST request. Thus, in the example ``results`` value:
+
+  .. code-block:: javascript
+
+    results=[{name:"name1", value:"value1"}, {name:"name2", value:"value2"}]
+
+  The following JSON body would be posted to the target URL:
+
+  .. code-block:: javascript
+
+    {name:"name1", value:"value1"}, {name:"name2", value:"value2"}
+
 Morpheus API Option List Fields
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 OPTION LIST
