@@ -1,28 +1,25 @@
 Git
 ---
 
-Authentication
-^^^^^^^^^^^^^^
+Git Repository integrations allow integration of public or private Git repositories in Github, GitLab or other services. Use your existing code and any future code to build automation Tasks and Workflows, onboard Spec Templates for Terraform and Kubernetes to build App configurations, and more. Each time code from your repositories is invoked, |morpheus| will pull the current live version (depending on configuration) so any recent changes to the code are used.
 
-Add a private Github or Git repository. Authentication can be handled by supplying any one of the following:
+Creating an Integration
+^^^^^^^^^^^^^^^^^^^^^^^
 
-- Username and password
+New Git integrations are created either in the global integrations section (|AdmInt|) or in the code integrations section (|ProCodInt|). You will need an access code for authentication with private repositories, public repositories can be integrated simply with a URL.
 
-- Access token
+#. Navigate to the global integrations section (|AdmInt|) or the code integrations section (|ProCodInt|)
+#. Click :guilabel:`+ADD`
+#. Click Git repository
+#. Configure the following:
 
-- Key pair
+    - **NAME:** A friendly name for the Git repository integration in |morpheus|
+    - **ENABLED:** When marked, code in this repository will be available for creating automation or other |morpheus| constructs
+    - **DEFAULT BRANCH:** The default repository branch from which code should be sourced
+    - **USERNAME:** For private repositories, enter an account name (such as a Github username)
+    - **PASSWORD:** For Github and GitLab, password authentication is no longer supported **but access tokens should go in this field.**
+    - **ACCESS TOKEN:** Currently an unused field, access tokens should go in the Password field
+    - **KEY PAIR:**  (Optional) Select a stored SSH keypair for Github SSH authentication
+    - **ENABLE GIT REPOSITORY CACHING:** When unmarked, |morpheus| retrives code fresh from the repository each time it's invoked. When marked, |morpheus| will use a cached version of the code if it's less than five minutes old. In general, this should be left unmarked unless you are experiencing performance issues related to very large amounts of code being invoked many times during a deployment
 
-.. image:: /images/integration_guides/deployments/addgitintegration.png
-  :width: 80%
-  :alt: The add github integration modal
-  :align: center
-
-.. NOTE:: Git and Github integrations can be authenticated over HTTPS with a username and password or with an access token. They are authenticated over SSH by providing a key pair. In previous versions of |morpheus|, Git (not Github) integrations could only be authenticated over SSH.
-
-Key pairs are stored in Morpheus and selected from a dropdown menu when needed. To add a key pair to Morpheus:
-
-#. Generate an SSH key pair, or use an existing SSH key pair.
-#. Navigate to ``Infrastructure > Keys & Certs``
-#. Select :guilabel:`+ ADD`
-#. Enter both the Public and Private keys
 #. Click :guilabel:`SAVE CHANGES`
