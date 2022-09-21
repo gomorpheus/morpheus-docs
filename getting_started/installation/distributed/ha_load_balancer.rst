@@ -19,7 +19,7 @@ Example configurations
 ``````````````````````
 
 Below are a few examples of configuring load balancers to meet the needs of a HA configuration.  The examples assume SSL bridging will be used, which means an SSL (TLS) certificate is presented by the load balancer to clients and the load balancer will communicate with the backend nodes via a different (possibly same) certificate.
-This configuration is recommended because the |morpheus| application nodes will create self-signed certificates and the load balancer will present a valid certificate to end users.  Aditionally, all communication will eb encrypted.
+This configuration is recommended because the |morpheus| application nodes will create self-signed certificates and the load balancer will present a valid certificate to end users.  Additionally, all communication will be encrypted.
 This reduces the overhead of maintaining the certificates on the |morpheus| application nodes, as the load balancer can ignore invaild certs on the application nodes.
 However, the certificates on the |morpheus| application nodes are not required to be self-signed, they can be replaced with other trusted certificates following the `SSL Certificates <https://docs.morpheusdata.com/en/latest/getting_started/additional/morpheusSslCerts.html>`_ documentation.
 
