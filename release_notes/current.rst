@@ -9,13 +9,13 @@
 
 .. important::
 
-   Known issue with embedded Elasticsearch upgrade: When upgrading to v5.4.8, v5.4.9 or v5.5.1, there is a potential issue with embedded Elasticsearch clustering on rolling upgrades and existing data migration for all embedded Elasticsearch architechtures. Release versions with a fix will be posted soon. The issue can be mitigated by running the following after installing/upgrading the v5.4.8, 5.4.9 or 5.5.1 package and PRIOR to running reconfigure. 
+   Known issue with embedded Elasticsearch upgrade: When upgrading to v5.4.8, v5.4.9 or v5.5.1, there is a potential issue with embedded Elasticsearch clustering on rolling upgrades and existing data migration for all embedded Elasticsearch architechtures. Release versions with a fix will be posted soon. The issue can be mitigated by running the following after installing/upgrading the v5.4.8, 5.4.9 or 5.5.1 package and PRIOR to running reconfigure.
 
    As root, after installing/upgrading the v5.4.8, 5.4.9 or 5.5.1 package and PRIOR to running reconfigure, run the following:
 
    .. code-block:: bash
 
-     	rm -f /var/opt/morpheus/elasticsearch   
+     	rm -f /var/opt/morpheus/elasticsearch
      	mv /var/opt/morpheus/elasticsearch-7.8.1 /var/opt/morpheus/elasticsearch-7.17.5
      	morpheus-ctl reconfigure
 
@@ -33,7 +33,7 @@ Release Dates
   - 5.5.1-3 Jul 27 2022
 
 
-.. toggle-header:: 
+.. toggle-header::
     :header: 5.5.1-3 Updates **Click to Expand/Hide**
 
      5.5.1-3 contains the following updates not included in 5.5.1-1 & 5.5.1-2:
@@ -111,7 +111,6 @@ Fixes
 :Automation Execute Schedules: - Improved validation on cron expressions when saving execute schedules to prevent saving invalid schedules. :superscript:`5.4.7`
 :Azure: - Added improvements to Azure Instance cost computations. :superscript:`5.4.7`
          - Fixed an issue that caused the "Assign Public IP DNS" checkbox present in Azure and Azure Stack provisioning not to work properly. :superscript:`5.4.7`
-         - Fixed an issue that could prevent Azure provisioning under specific scenarios if a stored credential set was used to authenticate the Cloud integration. :superscript:`5.4.8`
          - Improvements made to Azure CSP costing to ensure more accurate figures. Improved Azure costing calculations including a fix for an issue that could duplicate line items and create incorrectly high cost figures, a fix for an issue related to computing price from cost, and a workaround for issues stemming from costs syncs that take longer than an hour and the token expires :superscript:`5.4.7`
 :BIND DNS: - BIND DNS integrations can now be deleted properly when no longer needed. :superscript:`5.4.7`
             - BIND integrations can now be removed from |morpheus|. :superscript:`5.4.7`
