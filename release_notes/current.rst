@@ -9,13 +9,13 @@
 
 .. important::
 
-   Known issue with embedded Elasticsearch upgrade: When upgrading to v5.4.8, v5.4.9 or v5.5.1, there is a potential issue with embedded Elasticsearch clustering on rolling upgrades and existing data migration for all embedded Elasticsearch architechtures. Release versions with a fix will be posted soon. The issue can be mitigated by running the following after installing/upgrading the v5.4.8, 5.4.9 or 5.5.1 package and PRIOR to running reconfigure. 
+   Known issue with embedded Elasticsearch upgrade: When upgrading to v5.4.8, v5.4.9 or v5.5.1, there is a potential issue with embedded Elasticsearch clustering on rolling upgrades and existing data migration for all embedded Elasticsearch architechtures. Release versions with a fix will be posted soon. The issue can be mitigated by running the following after installing/upgrading the v5.4.8, 5.4.9 or 5.5.1 package and PRIOR to running reconfigure.
 
    As root, after installing/upgrading the v5.4.8, 5.4.9 or 5.5.1 package and PRIOR to running reconfigure, run the following:
 
    .. code-block:: bash
 
-     	rm -f /var/opt/morpheus/elasticsearch   
+     	rm -f /var/opt/morpheus/elasticsearch
      	mv /var/opt/morpheus/elasticsearch-7.8.1 /var/opt/morpheus/elasticsearch-7.17.5
      	morpheus-ctl reconfigure
 
@@ -31,7 +31,7 @@ Release Dates
   - 5.4.8-1 |releasedate|
   - 5.4.8-2 Jul 20 2022
 
-.. toggle-header:: 
+.. toggle-header::
     :header: 5.4.8-2 Updates **Click to Expand/Hide**
 
      5.4.8-2 contains the following updates not included in 5.4.8-1:
@@ -62,7 +62,6 @@ Fixes
 :API & CLI: - Fixed an issue that could cause port parameters not to be set when specified for Docker-based Node Types in |morpheus| API and CLI. :superscript:`5.5.1`
 :Ansible: - Improved handling of validation when Ansible Tasks or Jobs are run against Instances that can no longer be found. :superscript:`5.5.1`
 :Archives: - Fixed an issue that could arise when uploading a second file to an Azure backed Archive with the same name as an existing file. :superscript:`5.5.1`
-:Azure: - Fixed an issue that could prevent Azure provisioning under specific scenarios if a stored credential set was used to authenticate the Cloud integration. :superscript:`5.5.1`
 :Buckets: - There is no longer a pipe character ("|") superimposed over the bucket name on a bucket detail page. :superscript:`5.5.1`
 :Costing: - Additional work has been done on Azure costing to add further reduction in duplicated invoice line items. :superscript:`5.5.1`
 :Distributed Worker: - Fixed issue with image uploads using morpheus worker hitting Socket Buffer limit.
