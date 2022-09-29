@@ -155,9 +155,34 @@ Provisioning Terraform Apps
 #. Select :guilabel:`NEXT`
 #. Enter a NAME for the App and select the Group, Default Cloud and Environment (optional)
 #. Select :guilabel:`NEXT`
-#. Populate any required variables in the Terraform Variables section. Variables whose values are stored in a tfvars file sourced from |morpheus| Cypher and associated with the App Blueprint at creation will automatically be loaded and aren't shown to the user here. Other variables will be presented in the Terraform Variables section and any configured default values will be pre-loaded.
+#. Configure the following sections:
+
+    - .. toggle-header:: :header: **App Settings**
+
+        BACKEND TYPE
+         Internal is the default selection and the most secure choice. This sends the Terraform state back to the appliance via HTTP loopback to be stored in the appliance database. Users may also select Local which will write Terraform state to the local filesystem first before being stored in the database and removed from the local filesystem. If unsure, use the default Internal value. **Backend Type selection is currently only available for Terraform Apps. Selecting Backend Type for Terraform Instance Types is a planned future feature addition.**
+        VALIDATE PLAN
+         Marked by default. When unmarked, |morpheus| will not perform its typical validation to ensure the Terraform spec is valid. Typically users would only unmark this box if onboarding an existing App with Initial State (see Advanced Options configuration below).
+        RUN APPLY
+         Marked by default. When unmarked, |morpheus| will not apply the plan at completion of the App wizard. Typically users would only unmark this box if onboarding an existing App with Initial State (see Advanced Options configuration below).
+
+    - .. toggle-header:: :header: **Terraform Variables**
+
+        Populate any required or optional variables here. Variables whose values are stored in an associated tfvars file sourced from |morpheus| Cypher are masked from the user. Variables stored in any Terraform Cloud Profile associated with the selected Cloud also are automatically masked. Other variables will be presented in the Terraform Variables section for user entry and any configured default values on the Terraform spec will be pre-loaded.
+
+    - .. toggle-header:: :header: **Advanced Options**
+
+        REFRESH MODE
+         Set an interval at which |morpheus| should automatically check the App for drift from the Terraform spec. If set to Manual, |morpheus| will never perform automatic checks and the user must do so when desired. The results of drift checks are reported on the App detail page and users may apply the plan at any time to bring the App back into alignment with the Terraform spec.
+        INITIAL STATE
+         Paste in existing Terraform state to onboard an existing Terraform App for |morpheus| management. Though the field is small, it will accept large, multiline Terraform state. When creating an App from existing state, users may want to skip plan validation or may not want to apply right away. Opt out of these functions by unmarking the corresponding box in the App Settings section.
+
+    - .. toggle-header:: :header: **Terraform Preview**
+
+        Review the Terraform App components here, including any providers invoked, variables surfaced from the App spec, resources to be created, and .tf files utilized. There is no user input to be entered into this section.
+
 #. Select :guilabel:`NEXT`
-#. |morpheus| will now validate the App and surface any errors which would cause provisioning issues. If all is well, click :guilabel:`COMPLETE`
+#. |morpheus| will now validate the App (unless the user has opted out of this check) and surface any errors which would cause provisioning issues. If all is well, click :guilabel:`COMPLETE`
 
 .. TIP:: Review the App in the Terraform Preview section. If any config data needs to be edited, select the `RAW` tab, edit the config, and then select the `BUILDER` tab once again. The config changes from the RAW edit will be updated in the preview section for further review. Permanent edits can be made by editing the App Blueprint, pushing .tf changes to your code repository, or Terraform Spec Templates (depending on how the .tf files are sourced for your App Blueprint).
 
