@@ -177,6 +177,8 @@ Provisioning Terraform Apps
         INITIAL STATE
          Paste in existing Terraform state to onboard an existing Terraform App for |morpheus| management. Though the field is small, it will accept large, multiline Terraform state. When creating an App from existing state, users may want to skip plan validation or may not want to apply right away. Opt out of these functions by unmarking the corresponding box in the App Settings section.
 
+        .. NOTE:: Terraform state import is a new feature. At this time, some state file components may break the import process. This feature is being iterated on rapidly to increase coverage to as many application types and conditions as possible.
+
     - .. toggle-header:: :header: **Terraform Preview**
 
         Review the Terraform App components here, including any providers invoked, variables surfaced from the App spec, resources to be created, and .tf files utilized. There is no user input to be entered into this section.
