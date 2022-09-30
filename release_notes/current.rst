@@ -103,3 +103,7 @@ Fixes
 
 Appliance & Agent Updates
 =========================
+
+:Appliance: - Installer: Added ``/opt/morpheus/.config`` folder
+            - Installer: Fixed issue with Elasticsearch passwords with special charachters
+            - Installer: Removed ``-cacerts`` from keytool commandd
