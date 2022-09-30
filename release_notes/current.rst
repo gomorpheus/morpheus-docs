@@ -36,6 +36,8 @@ New Features
              - Support added for Terraform 1.2.x Apps and Instances. :superscript:`5.5.2`
              - Terraform Spec Templates can now reference directories of a Git repository and automatically onboard all files (including those in subdirectories) into the Spec Template similar to the way Terraform App Blueprints can already reference directories. Previously, Terraform Spec Templates needed to reference individual .tf files :superscript:`5.5.25.4.1`
              - Terraform variables flagged as "sensitive" are now masked from all areas of |morpheus| UI. Previously they were masked in provisioning wizards but could be revealed in some other places. :superscript:`5.5.2`
+             - Import pre-existing Terraform-backed infrastructure for management in |morpheus|. This is accomplished by pasting current state contents into the "Initial State" field at App provision time. :superscript:`5.5.2`
+             - Terraform Apps can now be set to auto-refresh at selectable intervals and |morpheus| will automatically apply the Refresh State action on that interval. Any detected drift can be viewed on the App detail page and the plan can be reapplied if desired. :superscript:`5.5.2`
 :Usage: - Calls to the billing API now includes a ``usages`` block in the return payload which includes resource information (CPU cores, memory, disk sizes, etc.) for the Instance/VM. This ensures users can access this information for accurate billing even in situations where the associated price types are resource-agnostic (such as "Everything" price types) :superscript:`5.4.15.5.2`
 
 
@@ -89,6 +91,8 @@ Fixes
 :Settings: - |morpheus| will now generate email successfully when global SMTP settings are configured for an SMTP server that requires no authentication credentials. :superscript:`5.5.2`
 :Terraform:  - Fixed an issue that appeared to show Terraform Apply State functionality would make unwanted changes (such as to an Instance name) though the change would not actually be made. :superscript:`5.5.2`
              - Fixed an issue that prevented saving edits to Terraform Spec Templates directly from the Spec Tab of a Terraform App Detail Page. :superscript:`5.5.2`
+             - Fixed an issue that caused var files indicated with the "-var-file" option not to be interpolated correctly. :superscript:`5.5.2`
+:Users: - Fixed an issue that stopped CSV exports of Users and User Group lists from executing correctly
 :UI: - An error is now surfaced when the user attempts to create a new Amazon Node Type without specifying an AMI. :superscript:`5.5.2`
       - Filters set on the Backups List Page now hold when navigating to the next page of results. :superscript:`5.5.2`
       - Fixed an issue that allowed the volumes information to overset the wizard window on the review tab of the New App Wizard. :superscript:`5.4.15.5.2`
@@ -99,4 +103,3 @@ Fixes
 
 Appliance & Agent Updates
 =========================
-
