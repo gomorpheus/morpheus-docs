@@ -21,9 +21,8 @@
      - |oelVersions|
      -
    * - SUSE SLES
-     - |suseVersions| replace:: 12, 15
+     - |suseVersions|
      -
    * - Ubuntu
      - |ubuntuVersions|
      - 14.04 is no longer supported for Appliance OS.  Note: 14.04 is still supported by the |morpheus| Agent.
-
