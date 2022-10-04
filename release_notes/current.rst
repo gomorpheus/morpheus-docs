@@ -31,7 +31,15 @@ Release Dates
   - 5.5.1-1 |releasedate|
   - 5.5.1-2 Jul 20 2022
   - 5.5.1-3 Jul 27 2022
+  - 5.5.1-4 Sep 30 2022
 
+
+.. toggle-header::
+    :header: 5.5.1-4 Updates **Click to Expand/Hide**
+
+     5.5.1-4 contains the following updates not included in 5.5.1-1 - 5.5.1-3:
+
+     :Appliance: Fixed embedded Elasticsearch clustering and data path issue encountered during upgrade from 5.4.7 or earlier, or from 5.5.0. If you have already upgraded to 5.5.1-3, there is no need to upgrade to 5.5.1-4
 
 .. toggle-header::
     :header: 5.5.1-3 Updates **Click to Expand/Hide**
