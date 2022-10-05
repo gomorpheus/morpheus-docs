@@ -36,7 +36,7 @@ New Github integrations are created either in the global integrations section (|
     - **PASSWORD:** This is a legacy field, new integrations do not need to use this field
     - **ACCESS TOKEN:** Enter a valid Github access token, see the prior section for instructions on obtaining an access token
     - **KEY PAIR:** (Optional) Select a stored SSH keypair for Github SSH authentication
-    - **ENABLE GIT REPOSITORY CACHING:** When unmarked, |morpheus| retrives code fresh from the repository each time it's invoked. When marked, |morpheus| will use a cached version of the code if it's less than five minutes old. In general, this should be left unmarked unless you are experiencing performance issues related to very large amounts of code being invoked many times during a deployment
+    - **ENABLE GIT REPOSITORY CACHING:** When unmarked, |morpheus| retrieves code fresh from the repository each time it's invoked. When marked, |morpheus| will use a cached version of the code if it's less than five minutes old. In general, this should be left unmarked unless you are experiencing performance issues related to very large amounts of code being invoked many times during a deployment
 
 #. Click :guilabel:`SAVE CHANGES`
 
