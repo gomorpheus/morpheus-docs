@@ -47,7 +47,6 @@ Fixes
 :API & CLI: - Fixed an issue that caused the ``price-sets list`` command in |morpheus| CLI to fail with an Unexpected Error. :superscript:`5.5.2`
              - Fixed an issue with the |morpheus| CLI ``clouds-add`` command not prompting for stored credential sets to authenticate the cloud integration. :superscript:`5.5.2`
 :Amazon: - Fixed an issue related to |morpheus| Agent install when cloning Amazon Windows Instances. :superscript:`5.5.2`
-          - Fixed an issue that caused duplicate backups to occur for AWS Instances when scheduled backups were run. :superscript:`5.5.2`
           - Fixed an issue that caused failed provisioning with AWS Aurora MySQL Instances. :superscript:`5.5.2`
           - Fixed an issue that caused the server.hostName property to be dropped after provisioning AWS Windows Instances. This could lead to configuration failures following provisioning. :superscript:`5.5.2`
 :Automation Execute Schedules: - Fixed an issue that caused the Edit Execution Schedule modal window to hang if certain special cron expressions were used. :superscript:`5.5.2`
