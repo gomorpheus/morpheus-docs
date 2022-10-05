@@ -20,6 +20,6 @@ New Git integrations are created either in the global integrations section (|Adm
     - **PASSWORD:** For Github and GitLab, password authentication is no longer supported **but access tokens should go in this field.**
     - **ACCESS TOKEN:** Currently an unused field, access tokens should go in the Password field
     - **KEY PAIR:**  (Optional) Select a stored SSH keypair for Github SSH authentication
-    - **ENABLE GIT REPOSITORY CACHING:** When unmarked, |morpheus| retrives code fresh from the repository each time it's invoked. When marked, |morpheus| will use a cached version of the code if it's less than five minutes old. In general, this should be left unmarked unless you are experiencing performance issues related to very large amounts of code being invoked many times during a deployment
+    - **ENABLE GIT REPOSITORY CACHING:** When unmarked, |morpheus| retrieves code fresh from the repository each time it's invoked. When marked, |morpheus| will use a cached version of the code if it's less than five minutes old. In general, this should be left unmarked unless you are experiencing performance issues related to very large amounts of code being invoked many times during a deployment
 
 #. Click :guilabel:`SAVE CHANGES`
