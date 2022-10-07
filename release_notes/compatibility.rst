@@ -164,10 +164,10 @@ Security Advisories
     - Severity
     - Description
     - Updated On
-  * - :ref:`MOR20220721-01`
-    - |advSevCrit|
-    - |morpheus| through 5.4.3 (which run Java 8) are confirmed to be impacted, |morpheus| through 5.5.1-1 (for customers on 5.5.x Standard installations) and 5.4.8-2 (for customers on 5.4.x LTS installations) are potentially impacted if the vulnerability is found on Java 11.
-    - 07-21-2022
+  * - :ref:`MOR20221006-01`
+    - |advSevHigh|
+    - A potential command injection vulnerability within integrations using command execution utility form has been discovered within |morpheus| 5.4.0-1 through 5.4.9-1 (LTS) and in 5.5.0-1 through 5.5.1-4 (standard) due to an input sanitization failure.
+    - 10-06-2022
   * - :ref:`MOR20220721-01`
     - |advSevCrit|
     - |morpheus| through 5.4.3 (which run Java 8) are confirmed to be impacted, |morpheus| through 5.5.1-1 (for customers on 5.5.x Standard installations) and 5.4.8-2 (for customers on 5.4.x LTS installations) are potentially impacted if the vulnerability is found on Java 11.
