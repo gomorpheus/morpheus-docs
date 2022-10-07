@@ -168,6 +168,10 @@ Security Advisories
     - |advSevCrit|
     - |morpheus| through 5.4.3 (which run Java 8) are confirmed to be impacted, |morpheus| through 5.5.1-1 (for customers on 5.5.x Standard installations) and 5.4.8-2 (for customers on 5.4.x LTS installations) are potentially impacted if the vulnerability is found on Java 11.
     - 07-21-2022
+  * - :ref:`MOR20220721-01`
+    - |advSevCrit|
+    - |morpheus| through 5.4.3 (which run Java 8) are confirmed to be impacted, |morpheus| through 5.5.1-1 (for customers on 5.5.x Standard installations) and 5.4.8-2 (for customers on 5.4.x LTS installations) are potentially impacted if the vulnerability is found on Java 11.
+    - 07-21-2022
   * - :ref:`MOR20220524-01`
     - |advSevHigh|
     - An XXE issue was discovered in |morpheus| through 5.2.16 and 5.4.x through 5.4.4. A successful attack requires a SAML identity provider to be configured.
