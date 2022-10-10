@@ -15,6 +15,14 @@
 
 Release Dates
   - |morphVer|-1 |releasedate|
+  - v5.4.10-2 Oct 5 2022
+
+.. toggle-header::
+    :header: 5.4.10-2 Updates **Click to Expand/Hide**
+
+     5.4.10-2 contains the following updates not included in 5.4.10-1:
+
+     :Policies: - Instance Name: 5.4.10-2 fixes 5.4.10-1 naming policy issue resolving instance.hostname in some scenerios
 
 .. NOTE:: Items appended with :superscript:`5.x.x` are also included in that version
 
