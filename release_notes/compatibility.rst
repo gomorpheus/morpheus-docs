@@ -53,13 +53,7 @@ Services
 |morphver| Service Version Changes
 ----------------------------------
 
-:Appliance: - curl updated to 7.84.0
-            - Elasticsearch updated to 7.17.5
-            - erlang updated to v24.3, patch 24.3.4.2
-            - Nginx updated to v1.22.0
-            - Openssl updated to v1.1.1p
-            - RabbitMQ updated to 3.9.20
-            - Tomcat Updated to v9.0.64
+No Service Version Changes from |previousMorphVer|
 
 |
 
@@ -81,7 +75,7 @@ Services
    * - Morpheus Worker
      - |workerVer|
      -
-     - |checkmark|
+     -
    * - MySQL
      - |mysqlbranch|
      - |mysqlver|
@@ -97,23 +91,23 @@ Services
    * - Elasticsearch
      - |esbranch|
      - |esver|
-     - |checkmark|
+     - 
    * - RabbitMQ
      - |rmqbranch|
      - |rmqver|
-     - |checkmark|
+     - 
    * - Tomcat
      -
      - |tcver|
-     - |checkmark|
+     - 
    * - Nginx
      -
      - |nginxver|
-     - |checkmark|
+     - 
    * - OpenSSL
      -
      - |openssl|, |openssl_fips| (FIPS)
-     - |checkmark|
+     - 
    * - Java
      -
      - |java|
