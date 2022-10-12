@@ -37,15 +37,12 @@ Monitoring
 
 .. include:: monitoring.rst
 
+.. include:: logs.rst
+
 Backups
 -------
 
 .. include:: backup_settings.rst
-
-Logs
-----
-
-.. include:: logs.rst
 
 Guidance
 --------
