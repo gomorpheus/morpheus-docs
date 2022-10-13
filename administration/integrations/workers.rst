@@ -24,6 +24,8 @@ A distributed worker VM is installed and configured similarly to a |morpheus| ap
 
 .. NOTE:: Package URLs for the distributed worker are available at https://morpheushub.com in the downloads section.
 
+.. NOTE:: The distributed worker requires that the |morpheus| appliance has a trusted SSL certificate.  This can be accomplished by configuring a public trusted SSL certificate on the |morpheus| appliance (or load balancer) or ensure the certificate and chain are added to the Java Keystore of the Distributed Worker, to trust the certificate.
+
 **Requirements**
 
 .. list-table:: **Supported Operating Systems**
@@ -48,7 +50,7 @@ A distributed worker VM is installed and configured similarly to a |morpheus| ap
 - **Memory:** 4 GB RAM minimum recommended
 - **Storage:** 10 GB storage minimum recommended. Storage is required for installation packages and log files
 - **CPU:** 4-core minimum recommended
-- Network connectivity *to* the |morpheus| appliance over TCP 443 (HTTPS)
+- Network connectivity **to** the |morpheus| appliance over TCP 443 (HTTPS)
 - Superuser privileges via the ``sudo`` command for the user installing the |morpheus| worker package
 - Access to base ``yum`` or ``apt`` repos. Access to Optional RPM repos may be required for RPM distros
 
@@ -66,7 +68,7 @@ Validate the package checksum as compared with the values indicated on Hub. For 
 
 Next, install the package using your selected distribution's package installation command and your preferred options. Example, for RPM:
 
-rpm:
+**rpm**:
 
 .. code-block:: bash
 
@@ -103,10 +105,10 @@ With the API key in hand and configuration complete in |morpheus| UI, head back 
 
    .. code-block:: rb
 
-       worker_url 'https://gateway_worker_url' # This is the wotker URL the |morpheus| appliance can resolve and reach on 443
-       worker['appliance_url'] = 'https://morpheus_appliance_url' # The resolvable URL or IP address of |morpheus| appliance which the worker can reach on port 443
-       worker['apikey'] = 'API KEY FOR THIS GATEWAY' # VDI Gateway API Key generated from |morpheus| Appliance VDI Pools > VDI Gateways configuraiton. For worker only mode, a value is still required but can be any value, including the 'API KEY FOR THIS GATEWAY' default template value
-       worker['worker_key'] = 'DISTRIBUTED WORKER KEY' # Distributed Worker API Key from |AdmIntDis| configuration
+       worker_url 'https://gateway_worker_url' # This is the wotker URL the Morpheus appliance can resolve and reach on 443
+       worker['appliance_url'] = 'https://morpheus_appliance_url' # The resolvable URL or IP address of Morpheus appliance which the worker can reach on port 443
+       worker['apikey'] = 'API KEY FOR THIS GATEWAY' # VDI Gateway API Key generated from Morpheus Appliance VDI Pools > VDI Gateways configuraiton. For worker only mode, a value is still required but can be any value, including the 'API KEY FOR THIS GATEWAY' default template value
+       worker['worker_key'] = 'DISTRIBUTED WORKER KEY' # Distributed Worker API Key from Administration > Integrations > Distributed Workers configuration
 
 .. NOTE:: By default the worker_url uses the machine's hostname, ie ``https://your_machine_name``. The default ``worker_url`` value can be changed by editing ``/etc/morpheus/morpheus-worker.rb`` and changing the value of ``worker_url``. Additional appliance configuration options are available below.
 
