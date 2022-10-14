@@ -173,3 +173,16 @@ To Add Virtual Image:
     .. NOTE:: The Virtual Image configuration can be saved when using a URL and the upload will finish in the background. When selecting/drag and dropping a file, the image files must upload completely before saving the Virtual Image record or the Image will not be valid.
 
 5. Save Changes.
+
+VMware - VM Templates Copies
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+In a VMware environemnt, you may have a single VM template that you use across different vCenters.  Uploading an image to Morpheus, mentioned in the **Add Virtual Image** section, is one method to solve this.  Alternatively, 
+an organization may decide to create a VM template in one vCenter and then transfer it to other vCenters, which then could be sync'd into Morpheus.  If all of the vCenters are added as clouds into Morpheus and the templates 
+are named the same in each vCenter, they will be aggregated under a single virtual image in Morpheus.  This means that as you deploy to the various vCenter clouds in Morpheus, using a this virtual image, it will choose the 
+correct VM template to use based on the cloud deployed to.
+
+This eliminates the need for creating multiple node types for each virtual image, if the templates were named differently in each vCenter.  This can reduce the overhead of maintaing multiple node types and reduces user selections. 
+As well, this can reduce the cloning time of VMs by avoiding network transfers of images between geographic locations, ensuring the closest VM template is selected.
+
+.. NOTE:: VM templates are a **Data Center** level object.  The same process above applies to a single VMware cloud with multiple logical data centers.  It will not apply to clusters, as a template is not associated with a cluster, only when it is converted to a VM.
