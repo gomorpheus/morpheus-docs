@@ -90,6 +90,29 @@ REQUEST SCRIPT
 
     {name:"name1", value:"value1"}, {name:"name2", value:"value2"}
 
+  An alternative method to building the POST request (SOURCE METHOD = POST), can be seen below.  As well, we can access other **Inputs** that are available on the same form, when provisioning an Instance or Catalog Item.
+  As seen below, the other Inputs can be accessed using the ``data`` variable.  We can access another Input by calling its **Field Name**, which can be configured when editing the Input in |LibOptInp|.  This allows using
+  data from other Inputs to be used in this Input's request.
+  
+  In the example below the Input Field Name we'll access is ``myinputfieldname``, which we can get either the name (visible value for lists) or value from the item:
+
+  Name variable:  ``data.myinputfieldname``  
+  Value variable:  ``data.myinputfieldname_value``
+
+  .. code-block:: javascript
+
+    var postBody = {};
+    postBody["number"] = data.myinputfieldname_value;
+    postBody["env"] = "all";
+    results = postBody;
+
+  The following JSON body would be posted to the target URL:
+
+  .. code-block:: javascript
+
+    { "number": "123456", "env": "all" }
+
+
 Morpheus API Option List Fields
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 OPTION LIST
