@@ -344,7 +344,7 @@ Clustering RabbitMQ
 
    .. code-block:: bash
 
-      root@node-1/2/3 ~]# morpheus-ctl tail morpheus-ui
+      [root@node-1/2/3 ~]# morpheus-ctl tail morpheus-ui
 
 
 ..
@@ -367,11 +367,9 @@ Clustering RabbitMQ
 
   #. Subsequently you can start all |morpheus| services on all three nodes and tail the |morpheus| UI log file to inspect errors.
 
-----
-
 .. include::   /getting_started/installation/distributed/ha_load_balancer.rst
 
------
+.. include::   /getting_started/installation/distributed/HA_Shared_Storage.rst
 
 Database Migration
 ^^^^^^^^^^^^^^^^^^
