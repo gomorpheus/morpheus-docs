@@ -52,7 +52,7 @@ Guidance
 Clients
 -------
 
-.. include clients.rst
+.. include:: clients.rst
 
 Environments
 ------------
