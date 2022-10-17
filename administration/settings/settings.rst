@@ -49,6 +49,11 @@ Guidance
 
 .. include:: guidance.rst
 
+Clients
+-------
+
+.. include clients.rst
+
 Environments
 ------------
 

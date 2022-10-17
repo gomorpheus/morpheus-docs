@@ -87,12 +87,15 @@ When provisioning a Windows-based resource and opting to have your user created 
 
 .. image:: /images/administration/settings/user_settings_windows_500.png
 
+.. _api-access:
 
 API Access
 ----------
 Click the :guilabel:`API Access` button to expand the "API ACCESS" modal. In this modal you can generate or refresh access tokens that can be used with Morpheus API and Morpheus CLI.
 
 If no token yet exists for a particular "CLIENT ID", click :guilabel:`ACTIONS` and then Generate. If a token has expired, we can also regenerate that token by clicking :guilabel:`ACTIONS` and then Regenerate. After regenerating a particular token, you would need to ensure any scripts using those tokens are updated.
+
+If needed, Primary Tenant administrators may configure the expiration periods for existing clients or create new clients from |morpheus| global settings (|AdmSetCli|). See :ref:`client configuration documentation <clients>` for more details.
 
 - **morph-api:** Used for |morpheus| API access and should be the default token-type used
 - **morph-cli:** Used for |morpheus| CLI access

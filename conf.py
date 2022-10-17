@@ -201,6 +201,7 @@ rst_prolog = """
 .. |AdmSetSof| replace:: Administration > Settings > Software Licenses
 .. |AdmSetLic| replace:: Administration > Settings > License
 .. |AdmSetUti| replace:: Administration > Settings > Utilities
+.. |AdmSetCli| replace:: Administration > Settings > Clients
 
 .. |trash| unicode:: 0x0001F5D1 .. TRASH ICON
 .. |gear| unicode:: U+02699 .. GEAR ICON
