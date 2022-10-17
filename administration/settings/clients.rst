@@ -3,7 +3,7 @@
 Overview
 ^^^^^^^^
 
-|morpheus| includes pre-configured OAuth clients and allows the user to create as many additional clients as they'd like. The pre-configured clients are editable but cannot be deleted. Once configured, access tokens may be generated or re-generated from the :ref:`API Access section <api-access>`_. Their expiration times may be viewed as well. Client settings are available only in the Primary Tenant and affect all Tenants.
+|morpheus| includes pre-configured OAuth clients and allows the user to create as many additional clients as they'd like. The pre-configured clients are editable but cannot be deleted. Once configured, access tokens may be generated or re-generated from the :ref:`API Access section <api-access>`. Their expiration times may be viewed as well. Client settings are available only in the Primary Tenant and affect all Tenants.
 
 Creating an OAuth Client
 ^^^^^^^^^^^^^^^^^^^^^^^^
