@@ -40,6 +40,11 @@ As discussed above, multi-tenanted user roles are made available within all subt
 
 .. NOTE:: Multi-tenant role lock applies only to permission sets on the ‘FEATURE ACCESS’ tab. Permissions in the ‘GROUP ACCESS’, ‘INSTANCE TYPE ACCESS’, and ‘BLUEPRINT ACCESS’ tabs are not locked. Similarly, changes made to the role on these tabs in the master tenant are not synced down.
 
+Editing User Roles in other Tenants
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Administrators in the Primary Tenant have the unique ability to edit feature permissions for User Roles that exist within other Tenants (Subtenants). In order to view the Roles within the Tenant, navigate to the Tenant detail page (|AdmTen|) and select the Roles tab. Click the pencil (|pencil|) icon to the right of a Role in the list to edit basic information, such as the name and description of the Role. Click on the name of the Role to view its complete permission set and edit the permissions if desired. This will update the feature access rights of users in the selected Tenant which have the Role.
+
 Roles and Identity Sources
 --------------------------
 
