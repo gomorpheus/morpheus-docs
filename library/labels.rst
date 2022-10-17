@@ -26,5 +26,5 @@ Adding and Removing Labels
 
 Labels can be created when adding or edited any of the supported constructs listed above. When adding or editing the object, enter or edit the comma-separated list of labels you wish to apply.
 
-.. image:: /images/provisioning/library/labels/labels.png
+.. image:: /images/provisioning/library/labels/labeladd.png
   :width: 50%
