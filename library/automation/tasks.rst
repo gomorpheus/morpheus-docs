@@ -494,28 +494,29 @@ Task Management
 Adding Tasks
 ````````````
 
-#. Select the Provisioning link in the navigation bar.
-#. Select Automation from the sub-navigation menu.
-#. Click the :guilabel:`Add` button.
-#. From the New Task Wizard input a name for the task.
-#. Select the type of task from from the type dropdown.
-#. Input the appropriate details dependent on the task type you selected from the dropdown.
-#. Save
+#. Select Automation from within the Library menu
+#. On the Tasks tab, click the :guilabel:`Add` button
+#. From the New Task Wizard input a name for the task
+#. Select the type of task from from the type dropdown
+#. Input the appropriate configuration details. These will vary signficiantly based on the selected Task type. More details on each Task type are contained in the preceding sections.
+#. Once done, click :guilabel:`SAVE CHANGES`
+
+.. TIP:: When writing a Task config, it's often necessary to reference |morpheus| variables which pertain to the specific Instance the Task is being run against. |morpheus| includes a pop-out column along the right side of the Add/Edit Task modal which lists available variables. Click and drag the relevant variable into the config area and |morpheus| will automatically fill in the variable call formatted for the currently chosen Task type. See the screenshot below.
+
+.. image:: /images/automation/tasks/taskvars.png
 
 Editing Tasks
 `````````````
 
-#. Select the Provisioning link in the navigation bar.
-#. Select Automation from the sub-navigation menu.
-#. Click the Edit icon on the row of the task you wish to edit.
-#. Modify information as needed.
-#. Click the Save Changes button to save.
+#. Select Automation from within the Library menu
+#. Click the pencil icon (|pencil|) on the row of the task you wish to edit
+#. Modify Task as needed
+#. Once done, click :guilabel:`SAVE CHANGES`
 
 Deleting Tasks
 ``````````````
 
-#. Select the Provisioning link in the navigation bar.
-#. Select Automation from the sub-navigation menu.
-#. Click the Delete icon on the row of the task you wish to delete.
+#. Select Automation from within the Library menu
+#. Click the trash icon (|trash|) on the row of the Task you wish to delete
 
 .. include:: tasks/taskResults.rst
