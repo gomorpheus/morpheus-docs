@@ -37,7 +37,6 @@ Fixes
 :Ansible Tower: - Fixed an issue that caused Ansible Tower sync to break if templates with certain configurations are deleted via |morpheus|. :superscript:`5.5.2`
 :Ansible: - Ansible scripts now work when applied against the Instance level, previously these would fail but would be successful when run against the server level. :superscript:`5.5.2`
 :Automation Workflows: - Fixed an issue that caused Post Provision-phase to be executed twice on ARM template-based Instances. :superscript:`5.5.2`
-:Azure: - Fixed an issue that could prevent Azure provisioning under specific scenarios if a stored credential set was used to authenticate the Cloud integration. :superscript:`5.5.2`
 :Catalog: - Fixed an issue that could cause a Catalog Item to lose Inputs during ordering if it was built and ordered under specific conditions. :superscript:`5.5.2`
            - Fixed an unintended permissions-related issue that would cause a 500 error when browsing |ProCat| even if the user had required permissions. :superscript:`5.5.2`
            - Hidden-type Inputs are no longer shown on the order review page when checking out selected Service Catalog items. :superscript:`5.5.2`
