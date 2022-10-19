@@ -33,7 +33,7 @@ Below are sample log configuration settings. This is not a complete list. Additi
 
 :Amazon:
   .. code-block:: xml
-          
+
      <logger name="com.morpheus.compute.amazon.AmazonComputeService" level="DEBUG"/>
      <logger name="com.morpheus.compute.AmazonComputeUtility" level="DEBUG"/>
      <logger name="com.morpheus.provision.AmazonProvisionService" level="DEBUG"/>
@@ -59,7 +59,7 @@ Below are sample log configuration settings. This is not a complete list. Additi
 
 :Azure:
   .. code-block:: xml
-          
+
      <logger name="com.morpheus.Azure.ServersController" level="DEBUG"/>
      <logger name="com.morpheus.Azure.ServersController" level="DEBUG"/>
      <logger name="com.morpheus.AzureSqlServerProvisionService" level="DEBUG"/>
@@ -85,7 +85,7 @@ Below are sample log configuration settings. This is not a complete list. Additi
 
 :Google:
   .. code-block:: xml
- 
+
      <logger name="com.morpheus.compute.google.GoogleComputeService" level="DEBUG"/>
      <logger name="com.morpheus.compute.GoogleComputeUtility" level="DEBUG"/>
      <logger name="com.morpheus.provision.GoogleProvisionService" level="DEBUG"/>
@@ -99,7 +99,7 @@ Below are sample log configuration settings. This is not a complete list. Additi
 
 :Kubernetes:
   .. code-block:: xml
- 
+
      <logger name="com.morpheus.app.KubernetesAppTemplateService" level="DEBUG"/>
      <logger name="com.morpheus.app.KubernetesResourceMappingService" level="DEBUG"/>
      <logger name="com.morpheus.compute.KubernetesComputeService" level="DEBUG"/>
@@ -109,20 +109,20 @@ Below are sample log configuration settings. This is not a complete list. Additi
 
 :Network:
   .. code-block:: xml
-          
+
      <logger name="com.morpheus.network.NetworkService " level="DEBUG"/>
      <logger name="com.morpheus.network.InfobloxNetworkPoolService" level="DEBUG"/>
 
 :Nutanix:
   .. code-block:: xml
-          
+
      <logger name="com.morpheus.compute.nutanix.NutanixComputeService" level="DEBUG"/>
      <logger name="com.morpheus.compute.NutanixComputeUtility" level="DEBUG"/>
      <logger name="com.morpheus.provision.NutanixProvisionService" level="DEBUG"/>
 
 :Openstack:
   .. code-block:: xml
-          
+
      <logger name="com.morpheus.compute.AbstractOpenStackComputeService" level="DEBUG"/>
      <logger name="com.morpheus.compute.AbstractOpenStackComputeUtility" level="DEBUG"/>
      <logger name="com.morpheus.provision.OpenStackProvisionService" level="DEBUG"/>
@@ -151,6 +151,7 @@ Below are sample log configuration settings. This is not a complete list. Additi
   .. code-block:: xml
 
      <logger name="com.morpheus.cmdb.ServiceNowCmdbService" level="DEBUG"/>
+     <logger name="com.morpheus.integrations.ServiceNowUtility" level="DEBUG"/>
 
 :Tasks:
   .. code-block:: xml
@@ -174,19 +175,19 @@ Below are sample log configuration settings. This is not a complete list. Additi
 
 :vCloud:
   .. code-block:: xml
- 
+
      <logger name="com.morpheus.compute.vmware.VcloudDirectorComputeService" level="DEBUG"/>
      <logger name="com.morpheus.provision.VcloudDirectorProvisionService" level="DEBUG"/>
      <logger name="com.morpheus.compute.VcdComputeUtility" level="DEBUG"/>
 
 :Veeam:
   .. code-block:: xml
-      
+
      <logger name="com.morpheus.backup.VeeamBackupService" level="DEBUG"/>
 
 :Vmware:
   .. code-block:: xml
-          
+
      <logger name="com.morpheus.compute.VmwareComputeUtility" level="DEBUG"/>
      <logger name="com.morpheus.provision.VmwareProvisionService" level="DEBUG"/>
 
@@ -201,7 +202,7 @@ All core logger paths
 
 Expand below to see all core |morpheus| logger paths set to INFO level.
 
-.. toggle-header:: 
+.. toggle-header::
     :header: All core logger paths **Click to Expand/Hide**
 
      .. code-block:: xml
