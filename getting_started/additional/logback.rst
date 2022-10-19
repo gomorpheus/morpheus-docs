@@ -90,15 +90,12 @@ Below are sample log configuration settings. This is not a complete list. Additi
      <logger name="com.morpheus.provision.KubernetesProvisionService" level="DEBUG"/>
      <logger name="com.morpheus.storage.KubernetesStorageService" level="DEBUG"/>
 
-<<<<<<< HEAD
-=======
 :Network:
   .. code-block:: xml
 
      <logger name="com.morpheus.network.NetworkService " level="DEBUG"/>
      <logger name="com.morpheus.network.InfobloxNetworkPoolService" level="DEBUG"/>
 
->>>>>>> c797dd4d (add to servicenow logback)
 :Nutanix:
   .. code-block:: xml
 
@@ -181,9 +178,6 @@ Below are sample log configuration settings. This is not a complete list. Additi
   .. code-block:: xml
 
      <logger name="com.morpheus.automation.VroService" level="DEBUG"/>
-
-<<<<<<< HEAD
-=======
 
 All core logger paths
 ^^^^^^^^^^^^^^^^^^^^^
@@ -757,7 +751,6 @@ Expand below to see all core |morpheus| logger paths set to INFO level.
 
 |
 
->>>>>>> c797dd4d (add to servicenow logback)
 Audit logs
 ^^^^^^^^^^
 
