@@ -31,8 +31,7 @@ Fixes
 
 :API & CLI: - Fixed an issue that could cause provisioning of Azure Marketplace images through |morpheus| API to fail depending on marketplaceOffer syntax used. :superscript:`5.5.2`
              - Fixed an issue with adding Oracle Cloud Instances via |morpheus| CLI which would fail due to a missing Availability Zone prompt. :superscript:`5.5.2`
-:Amazon: - Fixed an issue that caused duplicate backups to occur for AWS Instances when scheduled backups were run. :superscript:`5.5.2`
-          - Fixed an issue that caused provisioning the |morpheus|-default AWS Ubuntu 22.04 image to fail. :superscript:`5.5.2`
+:Amazon: - Fixed an issue that caused provisioning the |morpheus|-default AWS Ubuntu 22.04 image to fail. :superscript:`5.5.2`
           - When provisioning a Windows Instance to AWS, hostnames longer than 15 characters are now truncated down to 15. This is to resolve an issue preventing backup restoration if the hostname was too long. :superscript:`5.5.2`
 :Ansible Tower: - Fixed an issue that caused Ansible Tower sync to break if templates with certain configurations are deleted via |morpheus|. :superscript:`5.5.2`
 :Ansible: - Ansible scripts now work when applied against the Instance level, previously these would fail but would be successful when run against the server level. :superscript:`5.5.2`
