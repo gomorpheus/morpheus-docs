@@ -33,6 +33,8 @@ down to all subtenants within |morpheus|. These can be viewed as pre-canned role
 Another note about user roles is that when a user role is copied down to a subtenant, the permission scopes cannot supersede the tenants assigned
 tenant role. If they do they are automatically downgraded when propagated to the specific tenant. Any changes made to the tenant role will automatically ensure roles within the tenant are downgraded appropriately.
 
+.. NOTE:: Master Tenant administrators may edit permissions for Roles in other Tenants by viewing the Tenant detail page (|AdmTen| > Selected Tenant) and accessing the Roles tab. From there, select the Role to edit and make changes on the resulting Role detail page.
+
 Multi-Tenant User Role Lock
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
