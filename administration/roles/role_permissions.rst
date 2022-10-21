@@ -242,6 +242,12 @@ Role Mappings
       :widths: auto
       :header-rows: 1
 
+      * - Permission Name
+        - Permission Options
+        - Feature Access
+        - Description
+        - Recommendations
+        - Tenant Role Recommendations
       * - API: Billing
         - None, Read, Full
         - Allows or disallows access to invoices and projects via |morpheus| API/CLI.
@@ -261,6 +267,12 @@ Role Mappings
       :widths: auto
       :header-rows: 1
 
+        * - Permission Name
+          - Permission Options
+          - Feature Access
+          - Description
+          - Recommendations
+          - Tenant Role Recommendations
         * - Backups
           - None, View, Read, User, Full
           - Determines access to the Backups secton of |morpheus| UI, including the Summary, Jobs, Backups, and History subpages. The "User" permission allows access only to backup objects the user owns.
@@ -280,24 +292,30 @@ Role Mappings
       :widths: auto
       :header-rows: 1
 
-        * - Catalog (Formerly Service Catalog: Catalog)
-          - None, Full
-          - Determines access to |ProCat| and Catalog in the Service Catalog Persona view
-          - The Catalog page displays the complete list of Catalog Items that can be ordered from the Service Catalog
-          - This permission is recommended for users who will order items from the Service Catalog
-          -
-        * - Catalog: Dashboard (Formerly Service Catalog: Dashboard)
-          - None, Read
-          - Determines access to |ProCatDas| and Dashboard in Service Catalog Persona view
-          - The Catalog Dashboard contains featured Catalog Items, recently-ordered Catalog items and Inventory items. The Catalog Dashboard is the default landing page for the Service Catalog Persona view
-          - This permission is recommended for users who will use the Service Catalog
-          -
-        * - Catalog: Inventory (Formerly Service Catalog: Inventory)
-          - None, Read
-          - Determines access to |ProCatDas| and Dashboard in Service Catalog Persona view
-          - The Inventory is the complete list of user-owned items provisioned from the Service Catalog
-          - This permission is recommended for users who will use the Service Catalog and need to be able to view details on the items they've provisioned from the Catalog
-          -
+      * - Permission Name
+        - Permission Options
+        - Feature Access
+        - Description
+        - Recommendations
+        - Tenant Role Recommendations
+      * - Catalog (Formerly Service Catalog: Catalog)
+        - None, Full
+        - Determines access to |ProCat| and Catalog in the Service Catalog Persona view
+        - The Catalog page displays the complete list of Catalog Items that can be ordered from the Service Catalog
+        - This permission is recommended for users who will order items from the Service Catalog
+        -
+      * - Catalog: Dashboard (Formerly Service Catalog: Dashboard)
+        - None, Read
+        - Determines access to |ProCatDas| and Dashboard in Service Catalog Persona view
+        - The Catalog Dashboard contains featured Catalog Items, recently-ordered Catalog items and Inventory items. The Catalog Dashboard is the default landing page for the Service Catalog Persona view
+        - This permission is recommended for users who will use the Service Catalog
+        -
+      * - Catalog: Inventory (Formerly Service Catalog: Inventory)
+        - None, Read
+        - Determines access to |ProCatDas| and Dashboard in Service Catalog Persona view
+        - The Inventory is the complete list of user-owned items provisioned from the Service Catalog
+        - This permission is recommended for users who will use the Service Catalog and need to be able to view details on the items they've provisioned from the Catalog
+        -
 
 - .. toggle-header:: :header: **Infrastructure Permission Options**
 
@@ -305,6 +323,12 @@ Role Mappings
       :widths: auto
       :header-rows: 1
 
+      * - Permission Name
+        - Permission Options
+        - Feature Access
+        - Description
+        - Recommendations
+        - Tenant Role Recommendations
       * - Infrastructure: Boot
         - None, Read, Full
         - Determines access to the Integrations > Boot page, including the Mapping, Boot Menus, Answer Files, Images, and Discovered MAC Addresses tabs.
@@ -420,6 +444,12 @@ Role Mappings
       :widths: auto
       :header-rows: 1
 
+      * - Permission Name
+        - Permission Options
+        - Feature Access
+        - Description
+        - Recommendations
+        - Tenant Role Recommendations
       * - Library: App Blueprints (Formerly Provisioning: Blueprints)
         - None, Read, Full
         - Determines access to the |LibBluApp| page.
@@ -529,12 +559,91 @@ Role Mappings
       :widths: auto
       :header-rows: 1
 
+      * - Permission Name
+        - Permission Options
+        - Feature Access
+        - Description
+        - Recommendations
+        - Tenant Role Recommendations
+      * - Environment Variables
+        - None, User, Full
+        - Allows access to the Environments tab of the Instance detail page
+        - Allows Instance environment variables to be edited. If set to "User" level only environment variables of Instances owned by the currently logged in user may be edited.
+        - This permission is recommended for those needing management control over Instances
+        -
+      * - Power Control
+        - None, User, Full
+        - Allows access to power state controls for Instances and servers, including stopping, starting, restarting and suspending.
+        - Allows the user to change the current power state of Instances and servers
+        - This permission is recommended for those needing management control over Instances
+        -
+      * - Reconfigure
+        - None, User, Full
+        - Allows general access to Instance and server reconfigure (resize) feature. See additional reconfigure permissions below for more granular control over specific reconfigure functionality.
+        - Allows general access to reconfigure features for Instances and servers. "User" level permission allows only Instances and servers owned by the currently logged in user to be reconfigured.
+        - This permission is recommended for those needing management control over Instances
+        -
+      * - Reconfigure: Change Plan
+        - None, User, Full
+        - Allows the user to change the Instance service plan
+        - When reconfiguring, the user may change the service plan associated with the Instance. "User" level permission allows only Instances owned by the currently logged in user to have their plans changed.
+        - This permission is recommended for those needing management control over Instances
+        -
+      * - Reconfigure: Disk Add
+        - None, User, Full
+        - Allows the user to add disks to an Instance or server during reconfigure.
+        - When reconfiguring, the user may add disks to the selected Instance or server. "User" level permission allows only Instances owned by the currently logged in user to have their disks changed.
+        - This permission is recommended for those needing management control over Instances
+        -
+      * - Reconfigure: Disk Change Type
+        - None, User, Full
+        - Allows the user to change the datastore or volume type during reconfigure.
+        - When reconfiguring, the user may update datastore or volume types. "User" level permission allows only Instances owned by the currently logged in user to have their disk types changed.
+        - This permission is recommended for those needing management control over Instances
+        -
+      * - Reconfigure: Disk Modify
+        - None, User, Full
+        - Allows the user to modify an attached disk during reconfigure.
+        - When reconfiguring, the user may modify disks attached to the Instance. "User" level permission allows only Instances owned by the currently logged in user to have their disks changed.
+        - This permission is recommended for those needing management control over Instances
+        -
+      * - Reconfigure: Disk Remove
+        - None, User, Full
+        - Allows the user to remove disks or volumes during reconfigure.
+        - When reconfiguring, the user may remove disks attached to the Instance or server. "User" level permission allows only Instances owned by the currently logged in user to have their disks removed.
+        - This permission is recommended for those needing management control over Instances
+        -
+      * - Reconfigure: Network Add
+        - None, User, Full
+        - Allows the user to add a network adapter during reconfigure.
+        - When reconfiguring, the user may add a network interface to the Instance or server. "User" level permission allows only Instances owned by the currently logged in user to have network interfaces added.
+        - This permission is recommended for those needing management control over Instances
+        -
+      * - Reconfigure: Network Modify
+        - None, User, Full
+        - Allows the user to edit network adapters during reconfigure.
+        - When reconfiguring, the user may edit network interfaces on the Instance or server. "User" level permission allows only Instances owned by the currently logged in user to have network interfaces modified.
+        - This permission is recommended for those needing management control over Instances
+        -
+      * - Reconfigure: Network Remove
+        - None, User, Full
+        - Allows the user to remove network adapters during reconfigure.
+        - When reconfiguring, the user may remove network interfaces on the Instance or server. "User" level permission allows only Instances owned by the currently logged in user to have network interfaces removed.
+        - This permission is recommended for those needing management control over Instances
+        -
+
 - .. toggle-header:: :header: **Monitoring Permission Options**
 
     .. list-table::
       :widths: auto
       :header-rows: 1
 
+      * - Permission Name
+        - Permission Options
+        - Feature Access
+        - Description
+        - Recommendations
+        - Tenant Role Recommendations
       * - Monitoring
         - None, Read, User, Full
         - Determines level of access to the Monitoring section of |morpheus| UI, including the Status, Apps, Checks, Groups, Incidents, Contacts, and Alert Rules subpages. The "User" permission will allow access only to objects the user owns.
@@ -554,6 +663,12 @@ Role Mappings
       :widths: auto
       :header-rows: 1
 
+      * - Permission Name
+        - Permission Options
+        - Feature Access
+        - Description
+        - Recommendations
+        - Tenant Role Recommendations
       * - Networks: DHCP Relays
         - None, Read, Full
         - Determines access to the DHCP Relays in applicable network integrations
@@ -669,6 +784,12 @@ Role Mappings
       :widths: auto
       :header-rows: 1
 
+      * - Permission Name
+        - Permission Options
+        - Feature Access
+        - Description
+        - Recommendations
+        - Tenant Role Recommendations
       * - Operations: Activity
         - None, Read
         - Determines access to the Activity and History tabs on the Operations > Activity page.
@@ -742,6 +863,12 @@ Role Mappings
       :widths: auto
       :header-rows: 1
 
+      * - Permission Name
+        - Permission Options
+        - Feature Access
+        - Description
+        - Recommendations
+        - Tenant Role Recommendations
       * - Projects
         - None, Read, Full
         - Determines access to Projects through |morpheus| API
@@ -755,6 +882,12 @@ Role Mappings
       :widths: auto
       :header-rows: 1
 
+      * - Permission Name
+        - Permission Options
+        - Feature Access
+        - Description
+        - Recommendations
+        - Tenant Role Recommendations
       * - Provisioning: Administrator
         - None, Full
         - When editing an Instance (|ProIns| > selected Instance > EDIT button), this permission determines access to changing the owner of an Instance.
@@ -918,6 +1051,12 @@ Role Mappings
       :widths: auto
       :header-rows: 1
 
+      * - Permission Name
+        - Permission Options
+        - Feature Access
+        - Description
+        - Recommendations
+        - Tenant Role Recommendations
       * - Security: Scanning
         - None, Read, Full
         - Determines access to the Security Packages tab on the Jobs list page (|ProJob|), Security Scanning type Jobs, and Security Subtab inside the Software tab on a server detail page where the results of security scans are viewed
@@ -931,6 +1070,12 @@ Role Mappings
       :widths: auto
       :header-rows: 1
 
+      * - Permission Name
+        - Permission Options
+        - Feature Access
+        - Description
+        - Recommendations
+        - Tenant Role Recommendations
       * - Snapshots
         - None, Read, Full
         - Determines access to the "Create Snapshot" function in the Actions menu on an Instance detail page (Provisoning > Instances > selected Instance).
@@ -944,6 +1089,12 @@ Role Mappings
       :widths: auto
       :header-rows: 1
 
+      * - Permission Name
+        - Permission Options
+        - Feature Access
+        - Description
+        - Recommendations
+        - Tenant Role Recommendations
       * - Tools: Archives
         - None, Read, Full
         - Determines access to the Tools > Archives page.
@@ -975,6 +1126,12 @@ Role Mappings
       :widths: auto
       :header-rows: 1
 
+      * - Permission Name
+        - Permission Options
+        - Feature Access
+        - Description
+        - Recommendations
+        - Tenant Role Recommendations
       * - Virtual Desktop: Copy/Paste
         - None, Full
         - Allows copy and paste access from the virtual desktop terminal
@@ -992,4 +1149,4 @@ Role Mappings
         - Allows for the management of virtual desktop (VDI) pools.
         - Enables the user to access the VDI Pools section (TooVDI) and view existing pools (with "read" permission) or create and edit pools (with "full" permission). Related API functions are also granted with this feature permission.
         - This permission is recommended for those needing to manage VDI pools
-        - 
+        -
