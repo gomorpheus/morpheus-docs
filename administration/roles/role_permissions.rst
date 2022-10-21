@@ -267,24 +267,24 @@ Role Mappings
       :widths: auto
       :header-rows: 1
 
-        * - Permission Name
-          - Permission Options
-          - Feature Access
-          - Description
-          - Recommendations
-          - Tenant Role Recommendations
-        * - Backups
-          - None, View, Read, User, Full
-          - Determines access to the Backups secton of |morpheus| UI, including the Summary, Jobs, Backups, and History subpages. The "User" permission allows access only to backup objects the user owns.
-          - The Summary subpage allows the user to see the number of configured backups, the success rate, recent failures, and the size of the backups, as well as, the upcoming and in-progress backups. The Jobs subpage is where backup jobs may be created, cloned, edited or deleted. On create, a name, code (for use within the API), retention count, and schedule are selected (Note: Selectable schedules are defined Execution Schedules which are created in the |LibAut|). On the backups subpage, a list of configured backups is provided and new backups may be created or on-demand backups may be executed. On create, the place where the target exists is selected (Instance, Host, or Provider), the source is selected and a name is defined as well as the selected execution schedule. On the History subpage both the backups and restores tabs are available. Names, statuses, start times, durations and size may be viewed.
-          - This permission is recommended for those responsible for performing the backup and restoration of workloads.
-          -
-        * - Backups: Integrations
-          - None, Read, Full
-          - Determines access to the Backups > Integrations page.
-          - From this page, backup integrations may be created, edited, or deleted. The page also provides the status of existing integrations. On create the integration product is selected and all associated connection and authentication information must be provided. Additionally, visibility is set to either public or private. Integrations available include Avamar, Commvault, Rubrik, Veeam, and Zerto.
-          - This permission is recommended for those responsible for the integration between |morpheus| and backup technologies.
-          - It is recommended this setting be set to None on the Tenant Role to restrict access for Subtenant users.
+      * - Permission Name
+        - Permission Options
+        - Feature Access
+        - Description
+        - Recommendations
+        - Tenant Role Recommendations
+      * - Backups
+        - None, View, Read, User, Full
+        - Determines access to the Backups secton of |morpheus| UI, including the Summary, Jobs, Backups, and History subpages. The "User" permission allows access only to backup objects the user owns.
+        - The Summary subpage allows the user to see the number of configured backups, the success rate, recent failures, and the size of the backups, as well as, the upcoming and in-progress backups. The Jobs subpage is where backup jobs may be created, cloned, edited or deleted. On create, a name, code (for use within the API), retention count, and schedule are selected (Note: Selectable schedules are defined Execution Schedules which are created in the |LibAut|). On the backups subpage, a list of configured backups is provided and new backups may be created or on-demand backups may be executed. On create, the place where the target exists is selected (Instance, Host, or Provider), the source is selected and a name is defined as well as the selected execution schedule. On the History subpage both the backups and restores tabs are available. Names, statuses, start times, durations and size may be viewed.
+        - This permission is recommended for those responsible for performing the backup and restoration of workloads.
+        -
+      * - Backups: Integrations
+        - None, Read, Full
+        - Determines access to the Backups > Integrations page.
+        - From this page, backup integrations may be created, edited, or deleted. The page also provides the status of existing integrations. On create the integration product is selected and all associated connection and authentication information must be provided. Additionally, visibility is set to either public or private. Integrations available include Avamar, Commvault, Rubrik, Veeam, and Zerto.
+        - This permission is recommended for those responsible for the integration between |morpheus| and backup technologies.
+        - It is recommended this setting be set to None on the Tenant Role to restrict access for Subtenant users.
 
 - .. toggle-header:: :header: **Catalog Permission Options**
 
