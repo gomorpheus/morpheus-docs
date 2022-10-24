@@ -44,6 +44,8 @@ To gather the API endpoint URL, take a look at the complete list of `endpoints <
 
 With this information gathered, and presuming you know the credentials for the service account you wish to use, we can move back into |morpheus|-UI.
 
+.. IMPORTANT:: Integrating |morpheus| with Huawei Cloud requires a service account that has programmatic access.
+
 Navigate to Infrastructure > Clouds and click :guilabel:`+ ADD`. Scroll to Huawei Cloud and click :guilabel:`NEXT`. The information we've gathered will be plugged into the CREATE CLOUD modal. The DOMAIN ID field will accept the Account Name field we gathered. Your completed CREATE CLOUD modal will look similar to the one pictured below:
 
 .. image:: /images/integration_guides/clouds/huawei/4add_cloud.png
