@@ -19,6 +19,8 @@ To add a base SAML integration:
     Since we do not have the LOGIN REDIRECT URL from Azure yet, type any text such as ``test`` into the LOGIN REDIRECT URL field so the Identity Source Integration can be saved and the `Identifier (Entity ID)` and `Reply URL (Assertion Consumer Service URL)` generated. We will edit the Integration with the proper LOGIN REDIRECT URL after configuring SSO in Azure.
 #. Select :guilabel:`SAVE CHANGES`.
 
+.. IMPORTANT:: Setting SAML REQUEST to "No Signature" and SAML RESPONSE to "Do Not Validate Assertion Signature" is allowed but not recommended for security reasons.
+
 Upon save, the `Entity ID` (Identifier (Entity ID)) and `SP ACS URL` (Reply URL (Assertion Consumer Service URL)) will be provide in the Identity Source list view. Copy these for use in Azure SSO config.
 
 ..
@@ -45,7 +47,7 @@ This guide assumes an Azure AD Application has already been created in Azure wit
 #. In Azure's `User Attributes & Claims` settings (step 2), select ``Add a group claim`` with value ``user.groups [SecurityGroup]``
 
    **User Attributes & Claims** config
-   
+
    .. list-table:: **Required Claim**
       :widths: auto
       :header-rows: 1
@@ -56,7 +58,7 @@ This guide assumes an Azure AD Application has already been created in Azure wit
         - user.userprincipalname [nameid-format:emailAddress]
 
    |
-    
+
    .. list-table:: **Additional Claims**
       :widths: auto
       :header-rows: 1
@@ -148,7 +150,7 @@ Once populated, select :guilabel:`SAVE CHANGES` and the SAML identity source int
 Azure Group Lookups
 ^^^^^^^^^^^^^^^^^^^
 
-When a user in azure ad has more that 150 group attributes, Azure does not include the group claims in the SAML response, and |morpheus| is required to query Microsoft Graph to obtain the users group attribute values. When there are users that are members of more that 150 groups, populate the ``Azure Group Lookups`` section in order for those users to be able to use the Azure AD SAML SSO integration, otherwise no groups will be obtained and proper role mappings cannot occur. 
+When a user in azure ad has more that 150 group attributes, Azure does not include the group claims in the SAML response, and |morpheus| is required to query Microsoft Graph to obtain the users group attribute values. When there are users that are members of more that 150 groups, populate the ``Azure Group Lookups`` section in order for those users to be able to use the Azure AD SAML SSO integration, otherwise no groups will be obtained and proper role mappings cannot occur.
 
 AZURE TENANT ID
   Add Azure AD Tenant ID if user group membership will exceed 150. See :ref:`azure_ids` for information on obtaining an Azure AD Tenant ID

@@ -38,20 +38,22 @@ SAML LOGOUT REDIRECT URL
   The URL |morpheus| will POST to when a SAML user logs out of |morpheus|
 INCLUDES SAML REQUEST PARAMETER
   **Yes** (recommended) - the AuthN request will be sent via the ?SAMLRequest= parameter in the URL (GET)
-  
+
   **No** - the AuthN request will be submitted in the body of the request (POST)
 
   .. NOTE:: The SAML SP documentation should mention which binding to use but GET is most common
 SAML REQUEST
   **No Signature** - No signature is used on the SAML request
-  
+
   **Self Signed** - A self-signed X.509 Certificate is gentered after clicking :guilabel:`SAVE CHANGES`. This signature value can be used by the SAML SP to verify the authenticity of the request
-  
+
   **Custom RSA Signature** - Import a custom RSA Private Key and respective X.509 Certificate. This signature value can be used by the SAML SP to verify the authenticity of the request
 SAML RESPONSE
   **Do Not Validate Assertion Signature** - The SAML response signature from the SAML SP will not be validated
 
   **Validate Assertion Signature** - The SAML reponse signature from the SAML SP will be validated.  Enter the SAML SP X.509 certificate in the **Public Key** field
+
+.. IMPORTANT:: Setting SAML REQUEST to "No Signature" and SAML RESPONSE to "Do Not Validate Assertion Signature" is allowed but not recommended for security reasons.
 
 Role Mappings
 ^^^^^^^^^^^^^
