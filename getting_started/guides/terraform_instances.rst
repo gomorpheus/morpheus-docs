@@ -1,6 +1,8 @@
 Getting Started with Terraform Instance Types
 ---------------------------------------------
 
+.. begin_tf_instance
+
 `Terraform <https://www.terraform.io/intro/index.html>`_ is a common tool that allows IT administrators to map out infrastructure as code in configuration files and supports all of the popular providers used in the modern datacenter. Once configured, Terraform will plan, deploy, and manage the infrastructure as needed. Configuration files can be brought under version control so teams can easily make changes to environments. Infrastructure can also be monitored for drift and corrective action can easily be taken.
 
 |morpheus| allows users to on-board or even draft Terraform spec directly. With the configuration on-board, we can begin to piece together infrastructure constructs into the |morpheus| Library as Layouts and Instance Types. With the Library items staged, users can deploy new infrastructure directly into the selected providers. Once deployed, infrastructure can be monitored for drift from within |morpheus| UI. When needed, we can plan and take corrective action easily from the detail page of a |morpheus| Terraform Instance.
@@ -213,3 +215,5 @@ By clicking :guilabel:`APPLY STATE`, the user can once again see the Input selec
 .. image:: /images/integration_guides/terr_inst_guide/13stateTab.png
 
 |morpheus| will also regularly check for drift from the Terraform configuration. On the State tab near the top is a "Drift Status" indicator. This will either show Drift or No Drift depending on the situation. |morpheus| will automatically check for drift every few minutes but you can perform a manual check at any time by clicking :guilabel:`REFRESH STATE`. Drift can be corrected when needed by reapplying state (:guilabel:`APPLY STATE` button).
+
+.. end_tf_instance

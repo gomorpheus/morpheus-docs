@@ -4,6 +4,8 @@ Cloud Profiles
 Role Permissions
 ^^^^^^^^^^^^^^^^
 
+.. begin_cloud_profiles
+
 Access to **Profiles** tab is determined by the following role permissions:
 
 Role: Feature Access: ``Admin: Profiles``
@@ -41,6 +43,8 @@ Create a Terraform Profile
 #. Select :guilabel:`SAVE CHANGES`
 
 Now when provisioning a terraform Instance or App to the Cloud the profile was created in, the tfvars in the profile become available to the tf.
+
+.. end_cloud_profiles
 
 Key/Value Store Profiles
 ^^^^^^^^^^^^^^^^^^^^^^^^

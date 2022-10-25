@@ -78,14 +78,14 @@ In order to provision Terraform apps, Terraform App Blueprints must be created f
        A category for your App (optional)
    IMAGE
        Add reference icon for your App Blueprint to make it more identifiable at provision time (optional)
-   **CONFIG TYPE** (select Terraform Specs, Terraform (.tf), Terraform.json, or Git Repository)
+   CONFIG TYPE (select Terraform Specs, Terraform (.tf), Terraform.json, or Git Repository)
 
        - .. toggle-header:: :header: **Terraform (.tf)**
 
             CONFIG
              Draft or paste in .tf content in the config text area. Variables will be presented as input fields during App provisioning, or auto-populated with matching values if contained in a selected TFVAR Secret file added to the Cypher service.
             TFVAR SECRET
-             Select an existing tfvar secret file stored in |morpheus| Cypher service. This list is automatically filtered to show all Cypher entries which are currently stored at the "tfvar/*" Cypher mount point.
+             Select an existing tfvar secret file stored in |morpheus| Cypher service. This list is automatically filtered to show all Cypher entries which are currently stored at the "tfvar/*" Cypher mount point. Note that tfvars already set in any existing Terraform Cloud Profiles will already be available to your App and wouldn't need to be set here.
             VERSION
              Specify a version required by your Terraform App (optional). If specified, the given version will supersede the global Terraform version specified in |morpheus| global settings (|AdmSetPro|). "Terraform Runtime" must also be set to "auto" in global settings for |morpheus| to manage the Terraform version for you. When set to "manual", |morpheus| will use the Terraform version installed on the appliance box.
             OPTIONS
@@ -96,7 +96,7 @@ In order to provision Terraform apps, Terraform App Blueprints must be created f
             CONFIG
              Draft or paste in .tf.json content in the config text area. Variables will be presented as input fields during App provisioning, or auto-populated with matching values if contained in a selected TFVAR Secret file added to the Cypher service.
             TFVAR SECRET
-             Select an existing tfvar secret file stored in |morpheus| Cypher service. This list is automatically filtered to show all Cypher entries which are currently stored at the "tfvar/*" Cypher mount point.
+             Select an existing tfvar secret file stored in |morpheus| Cypher service. This list is automatically filtered to show all Cypher entries which are currently stored at the "tfvar/*" Cypher mount point. Note that tfvars already set in any existing Terraform Cloud Profiles will already be available to your App and wouldn't need to be set here.
             VERSION
              Specify a version required by your Terraform App (optional). If specified, the given version will supersede the global Terraform version specified in |morpheus| global settings (|AdmSetPro|). "Terraform Runtime" must also be set to "auto" in global settings for |morpheus| to manage the Terraform version for you. When set to "manual", |morpheus| will use the Terraform version installed on the appliance box.
             OPTIONS
@@ -107,7 +107,7 @@ In order to provision Terraform apps, Terraform App Blueprints must be created f
             SPEC TEMPLATE
              Using the typeahead field, select all Terraform-type Spec Templates which make up your App. Variables will be presented as input fields during App provisioning, or auto-populated with matching values if contained in a selected TFVAR Secret file added to the Cypher service.
             TFVAR SECRET
-             Select an existing tfvar secret file stored in |morpheus| Cypher service. This list is automatically filtered to show all Cypher entries which are currently stored at the "tfvar/*" Cypher mount point.
+             Select an existing tfvar secret file stored in |morpheus| Cypher service. This list is automatically filtered to show all Cypher entries which are currently stored at the "tfvar/*" Cypher mount point. Note that tfvars already set in any existing Terraform Cloud Profiles will already be available to your App and wouldn't need to be set here.
             VERSION
              Specify a version required by your Terraform App (optional). If specified, the given version will supersede the global Terraform version specified in |morpheus| global settings (|AdmSetPro|). "Terraform Runtime" must also be set to "auto" in global settings for |morpheus| to manage the Terraform version for you. When set to "manual", |morpheus| will use the Terraform version installed on the appliance box.
             OPTIONS
@@ -124,7 +124,7 @@ In order to provision Terraform apps, Terraform App Blueprints must be created f
             WORKING PATH
               Enter the repo path for the .tf file(s). ``./`` is default if no value is entered.
             TFVAR SECRET
-             Select an existing tfvar secret file stored in |morpheus| Cypher service. This list is automatically filtered to show all Cypher entries which are currently stored at the "tfvar/*" Cypher mount point.
+             Select an existing tfvar secret file stored in |morpheus| Cypher service. This list is automatically filtered to show all Cypher entries which are currently stored at the "tfvar/*" Cypher mount point. Note that tfvars already set in any existing Terraform Cloud Profiles will already be available to your App and wouldn't need to be set here.
             VERSION
              Specify a version required by your Terraform App (optional). If specified, the given version will supersede the global Terraform version specified in |morpheus| global settings (|AdmSetPro|). "Terraform Runtime" must also be set to "auto" in global settings for |morpheus| to manage the Terraform version for you. When set to "manual", |morpheus| will use the Terraform version installed on the appliance box.
             OPTIONS
@@ -134,6 +134,13 @@ In order to provision Terraform apps, Terraform App Blueprints must be created f
 #. Select :guilabel:`COMPLETE`
 
 |morpheus| will scan the blueprint to check for validity and will surface any errors which need correcting before the App Blueprint can be saved. Your Terraform App is ready to be provisioned from |ProApp|.
+
+Cloud Profiles
+^^^^^^^^^^^^^^
+
+.. include:: ../../infrastructure/clouds/profiles.rst
+  :start-after: .. begin_cloud_profiles
+  :end-before: .. end_cloud_profiles
 
 Provisioning Terraform Apps
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -148,9 +155,36 @@ Provisioning Terraform Apps
 #. Select :guilabel:`NEXT`
 #. Enter a NAME for the App and select the Group, Default Cloud and Environment (optional)
 #. Select :guilabel:`NEXT`
-#. Populate any required variables in the Terraform Variables section. Variables whose values are stored in a tfvars file sourced from |morpheus| Cypher and associated with the App Blueprint at creation will automatically be loaded and aren't shown to the user here. Other variables will be presented in the Terraform Variables section and any configured default values will be pre-loaded.
+#. Configure the following sections:
+
+    - .. toggle-header:: :header: **App Settings**
+
+        BACKEND TYPE
+         Internal is the default selection and the most secure choice. This sends the Terraform state back to the appliance via HTTP loopback to be stored in the appliance database. Users may also select Local which will write Terraform state to the local filesystem first before being stored in the database and removed from the local filesystem. If unsure, use the default Internal value. **Backend Type selection is currently only available for Terraform Apps. Selecting Backend Type for Terraform Instance Types is a planned future feature addition.**
+        VALIDATE PLAN
+         Marked by default. When unmarked, |morpheus| will not perform its typical validation to ensure the Terraform spec is valid. Typically users would only unmark this box if onboarding an existing App with Initial State (see Advanced Options configuration below).
+        RUN APPLY
+         Marked by default. When unmarked, |morpheus| will not apply the plan at completion of the App wizard. Typically users would only unmark this box if onboarding an existing App with Initial State (see Advanced Options configuration below).
+
+    - .. toggle-header:: :header: **Terraform Variables**
+
+        Populate any required or optional variables here. Variables whose values are stored in an associated tfvars file sourced from |morpheus| Cypher are masked from the user. Variables stored in any Terraform Cloud Profile associated with the selected Cloud also are automatically masked. Other variables will be presented in the Terraform Variables section for user entry and any configured default values on the Terraform spec will be pre-loaded.
+
+    - .. toggle-header:: :header: **Advanced Options**
+
+        REFRESH MODE
+         Set an interval at which |morpheus| should automatically check the App for drift from the Terraform spec. If set to Manual, |morpheus| will never perform automatic checks and the user must do so when desired. The results of drift checks are reported on the App detail page and users may apply the plan at any time to bring the App back into alignment with the Terraform spec.
+        INITIAL STATE
+         Paste in existing Terraform state to onboard an existing Terraform App for |morpheus| management. Though the field is small, it will accept large, multiline Terraform state. When creating an App from existing state, users may want to skip plan validation or may not want to apply right away. Opt out of these functions by unmarking the corresponding box in the App Settings section.
+
+        .. NOTE:: Terraform state import is a new feature. At this time, some state file components may break the import process. This feature is being iterated on rapidly to increase coverage to as many application types and conditions as possible.
+
+    - .. toggle-header:: :header: **Terraform Preview**
+
+        Review the Terraform App components here, including any providers invoked, variables surfaced from the App spec, resources to be created, and .tf files utilized. There is no user input to be entered into this section.
+
 #. Select :guilabel:`NEXT`
-#. |morpheus| will now validate the App and surface any errors which would cause provisioning issues. If all is well, click :guilabel:`COMPLETE`
+#. |morpheus| will now validate the App (unless the user has opted out of this check) and surface any errors which would cause provisioning issues. If all is well, click :guilabel:`COMPLETE`
 
 .. TIP:: Review the App in the Terraform Preview section. If any config data needs to be edited, select the `RAW` tab, edit the config, and then select the `BUILDER` tab once again. The config changes from the RAW edit will be updated in the preview section for further review. Permanent edits can be made by editing the App Blueprint, pushing .tf changes to your code repository, or Terraform Spec Templates (depending on how the .tf files are sourced for your App Blueprint).
 
@@ -169,11 +203,13 @@ State management is handled from the State Tab of the Terraform App detail page 
 
 When Terraform commands are executed against the application, |morpheus| provides progress bars and command output in the UI. Command output is shown underneath the Terraform command field. Users can dismiss individual output windows by clicking the "x" button in the upper-right of each window. All command output can be dismissed by clicking the blue "x" button to the right of the command field itself.
 
-Within the ACTIONS reside two selections: Refresh State and Apply State. Selecting Refresh State is equivalent to using the "terraform plan" command from the command line. This will read the existing state of any existing objects which are part of the App and compare their current configuration against the prior state. Any differences will be noted in the output. If differences are discovered, the App is considered to be in a "drift" state. This drift status is shown in the UI when the user is viewing the "State" subsection (which is described in greater detail in the next section). The output of the Refresh State command, including detailed information about changes Terraform would make to App objects to in order to realign them with the App spec are shown in the UI.
+Within the ACTIONS reside four selections: Refresh State, Apply State, Edit Inputs, and Edit STATE. Selecting Refresh State is equivalent to using the "terraform plan" command from the command line. This will read the existing state of any existing objects which are part of the App and compare their current configuration against the prior state. Any differences will be noted in the output. If differences are discovered, the App is considered to be in a "drift" state. This drift status is shown in the UI when the user is viewing the "State" subsection (which is described in greater detail in the next section). The output of the Refresh State command, including detailed information about changes Terraform would make to App objects to in order to realign them with the App spec are shown in the UI.
 
 .. image:: /images/integration_guides/automation/terraform/planOutput.png
 
 The Apply State selection brings up a modal which allows the user to view the App spec once again. This includes being able to view and edit Terraform variables if needed. After making any needed edits, click :guilabel:`NEXT` and |morpheus| will validate the App once again, just like it did at provision time. On the next tab of the wizard, |morpheus| will show the user and planned changes that would be executed if the user completes the modal. An output will be shown as if "terraform plan" were run from the command line. Make note of any App objects which would be created, altered, or destroyed if the actions are accepted as |morpheus| would immediately take them if desired. When ready, click :guilabel:`COMPLETE`. This will execute all planned changes as if the user had run "terraform apply -auto-approve" from a terminal session.
+
+Edit Inputs allows for editing of Input values without going through the process of applying state. Edit State displays the state in a large text area for direct editing.
 
 State Subsection
 ````````````````
@@ -205,3 +241,14 @@ Output Subsection
 `````````````````
 
 This section lists all configured Terraform output.
+
+Terraform Instance Type Example
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Terraform Spec can also be used within the |morpheus| Instance Type construct in addition to App Blueprints and Apps. Expand the section below to see a complete end-to-end example of a Terraform Instance Type from drafting new Spec Templates through to provisioning.
+
+- .. toggle-header:: :header: **Terraform Instance Type Example**
+
+    .. include:: ../../getting_started/guides/terraform_instances.rst
+      :start-after: .. begin_tf_instance
+      :end-before: .. end_tf_instance
