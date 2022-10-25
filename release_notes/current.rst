@@ -52,6 +52,7 @@ Fixes
              - Improved the handling of adding tags to VMs associated with Terraform Apps as previously the added tags would make the Apps always in a drift state. :superscript:`5.5.2`
              - Removing a Spec Template from a new Terraform App Blueprint draft will no longer close the New App Blueprint modal entirely. :superscript:`5.5.2`
              - 5.4.11-2 fixes 5.4.11-1 issue with existing terraform instances and duplicate files in morpheus-local/repo/local paths after upgrading to 5.4.11-1. :superscript:`5.4.11-2`
+             - Fixed terraform resource sync issue that caused initial state to not set resource status :superscript:`5.4.11-2`
 :Users: - Fixed an issue that stopped CSV exports of Users and User Group lists from executing correctly. :superscript:`5.5.2`
          - When creating new |morpheus| users, a dash (-) is now counted as a symbol for purposes of password complexity. :superscript:`5.5.2`
 :VMware: - VMware Clouds scoped to a specific Resource Pool will now only inventory VMs from that Resource Pool and will only display that Resource Pool in the Resources section. :superscript:`5.5.2`
