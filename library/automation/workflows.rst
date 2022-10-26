@@ -152,7 +152,7 @@ The return payload should be a JSON array of "priceData" objects. priceData obje
     - Number
     - A numerical amount such as "3.00" or "34.23"
 
-Example Groovy Task:
+A number of different Task types could be used in this phase. As long as the Task is returning the required JSON array, the Task will work correctly. Below is an example using a Groovy Task. This is simply outputting a static payload though in a real world scenario you'd likely use Task logic to output a dynamic array based on the Instance configuration.
 
 .. code-block:: groovy
 
