@@ -20,6 +20,10 @@ Provisioning Workflow Execution Phases
     - Tasks are run prior to initial calls to the specified cloud API to initiate provisioning
     - Call to an external platform to dynamically generate a hostname prior to kicking off provisioning or dynamically altering configuration of a Catalog Item prior to provisioning
     -
+  * - Price
+    - Price Phase Tasks are only invoked when the Workflow is tied to a Layout. Like the Configuration Phase, these Tasks are run prior to any calls made to the target Cloud API and allow pricing data to be overridden for the Workload being provisioned. A "spec" variable containing Instance config is passed into the Task and a specific return payload is expected in order to work properly. Any other pricing (such as on the Service Plan) is overridded. See the section below for a detailed example of this Phase being used.
+    - An MSP customer calling out to a custom pricing API to deliver Instance pricing to their own customers.
+    - See the section below on Price Phase implementation for a detailed setup example.
   * - Pre Provision
     - For VMs, Tasks are run after the VM is running and prior to any Tasks in the Provision phase. For containers, Tasks in this phase are run on the Docker host and prior to ``docker run``
     - Prepare a Docker host to run containers
@@ -109,6 +113,75 @@ The above example would result in the following output:
 
   linux
   bar
+
+Price Phase Task Utilization
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Price Phase Tasks allow computed pricing for any workload in any Cloud (even public Clouds) to be overridden based on custom logic designed by the user. They feed a variable "spec" into the Task which represents the Instance configuration. The Task can be designed to use the Instance config data and compute an appropriate price for the Instance. |morpheus| expects a return payload in the format below for the price override to work correctly. If used, pricing computed via Task replaces any other costing data which would have been applied to the workload (such as pricing based on the Service Plan). The user will see price estimates based on the Price Phase Task in the Instance provisioning wizard where the Service Plan pricing would otherwise be shown. Additionally, since Workflows which invoke Price Phase Tasks are tied to the Layout, the user can see different pricing depending on which Instance Type Layout is selected.
+
+.. NOTE:: Price Phase Tasks are only invoked if the Workflow is tied to a Layout.
+
+The return payload should be a JSON array of "priceData" objects. priceData objects should contain values for each of the keys in the table below:
+
+.. list-table::
+  :widths: auto
+  :header-rows: 1
+
+  * - Key
+    - Description
+    - Data Type
+    - Possible Values
+  * - incurCharges
+    - Indicates the Instance state when this charge should be applied
+    - String
+    - **Running:** Charge is incurred while the workload is in a running state, **Stopped:** Charge is incurred while the workload is in a stopped or shutdown state, **Always:** This charge is always applied. Some charges may apply simultaneously, for example, "Always" and "Running" states will apply while the workload is running.
+  * - currency
+    - Indicates the currency in which the charge will be applied
+    - String
+    - Enter any three-letter currency code which |morpheus| supports for its pricing, such as "USD", "CAD", or "GBP"
+  * - unit
+    - Indicates the time interval at which the charge is applied
+    - String
+    - Enter "minute", "hour", "day", "month", or "year"
+  * - cost
+    - Indicates the amount applied as cost for each configured time unit interval that passes. This is the cost to you, not the price with markup which the customer would see.
+    - Number
+    - A numerical amount such as "3.00" or "34.23"
+  * - price
+    - Indicates the amount applied as price for each configured time unit interval that passes. This is the price to the customer with any built-in markup you need to apply.
+    - Number
+    - A numerical amount such as "3.00" or "34.23"
+
+Example Groovy Task:
+
+.. code-block:: groovy
+
+    def rtn = [
+      priceData: [
+        [
+          incurCharges: 'always',
+          currency: 'USD',
+          unit: 'hour',
+          cost: 2.0,
+          price: 2.0
+        ],
+        [
+          incurCharges: 'running',
+          currency: 'USD',
+          unit: 'hour',
+          cost: 3.0,
+          price: 3.0
+        ],
+        [
+          incurCharges: 'stopped',
+          currency: 'USD',
+          unit: 'hour',
+          cost: 1.0,
+          price: 1.0
+        ]
+      ]
+    ]
+    return rtn
 
 Edit Workflow
 ^^^^^^^^^^^^^
