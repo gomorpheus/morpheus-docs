@@ -21,7 +21,7 @@ Provisioning Workflow Execution Phases
     - Call to an external platform to dynamically generate a hostname prior to kicking off provisioning or dynamically altering configuration of a Catalog Item prior to provisioning
     -
   * - Price
-    - Price Phase Tasks are only invoked when the Workflow is tied to a Layout. Like the Configuration Phase, these Tasks are run prior to any calls made to the target Cloud API and allow pricing data to be overridden for the Workload being provisioned. A "spec" variable containing Instance config is passed into the Task and a specific return payload is expected in order to work properly. Any other pricing (such as on the Service Plan) is overridded. See the section below for a detailed example of this Phase being used.
+    - Price Phase Tasks are only invoked when the Workflow is tied to a Layout. Like the Configuration Phase, these Tasks are run prior to any calls made to the target Cloud API and allow pricing data to be overridden for the Workload being provisioned. A "spec" variable containing Instance config is passed into the Task and a specific return payload is expected in order to work properly. Any other pricing (such as on the Service Plan) is overridden. See the section below for a detailed example of this Phase being used.
     - An MSP customer calling out to a custom pricing API to deliver Instance pricing to their own customers.
     - See the section below on Price Phase implementation for a detailed setup example.
   * - Pre Provision
