@@ -282,7 +282,7 @@ Role Mappings
     - This permission is recommended for personnel who will be orchestrating and provisioning load balancers.
     -
   * - Infrastructure: Clouds
-    - None, Read, Full
+    - None, Read, Group, Full
     - Determines access to the Infrastructure > Clouds page. The "Group" permission limits the Cloud list page (Infrastructure > Clouds) to show only Clouds in their assigned Groups.
     - The Cloud page is where new Clouds are integrated with |morpheus| and existing Cloud integrations are managed. This includes creating a code for use within the API, the location, visibility, tenant, whether or not it should be enabled, and if VMs should be automatically powered on. Additionally, Clouds may be integrated from the Clouds tab of a Group detail page.
     - This permission is recommended for those responsible for configuring RBAC as well as those responsible for |morpheus| Cloud Integrations.
