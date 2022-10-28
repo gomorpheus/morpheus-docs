@@ -22,6 +22,8 @@ Terraform Profiles
 - Terraform Profiles can be edited after creation
 - Terraform Profiles are limited to one per Cloud
 
+.. IMPORTANT:: Since |morpheus| mounts Terraform Profiles in Cypher using a mount point which contains the Cloud code value, any Clouds which have the same code will share a Terraform Profile. Create or edit Clouds to have a unique code value if they should have a unique Terraform Profile. It's also important to understand that |morpheus| does not require Clouds have a code at creation time. When Clouds are created without a code, |morpheus| applies a generic non-unique code based on the Cloud type ("amazon" for AWS Clouds, as an example). This sets up a potential situation where all Clouds of the same type have the same generic Cloud code and thus share a Terraform Profile. To avoid this situation, enter a Cloud code value at creation time or edit existing Clouds to have a unique code.
+
 Create a Terraform Profile
 ``````````````````````````
 
