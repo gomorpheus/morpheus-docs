@@ -11,16 +11,16 @@ rst_prolog = """
 
 .. |releasedate| replace:: July 19 2022
 .. |morphbranch| replace:: v5.5
-.. |morphver| replace:: v5.5.1
+.. |morphver| replace:: v5.5.2
 .. |minUpgradeVer| replace:: v5.2.0
-.. |previousMorphVer| replace:: v5.5.0
-.. |pluginVer| replace:: 0.12.5
+.. |previousMorphVer| replace:: v5.5.1
+.. |pluginVer| replace:: 0.13.4
 .. |workerVer| replace:: 5.4.8
 .. |rmqbranch| replace:: v3.5-3.9
 .. |rmqver| replace:: v3.9.20
 .. |mysqlbranch| replace:: v5.7
-.. |mysqlver| replace:: v5.7.37
-.. |mysqlverfips| replace:: v5.7.37
+.. |mysqlver| replace:: v5.7.39
+.. |mysqlverfips| replace:: v5.7.39
 .. |esbranch| replace:: v7.x
 .. |esver| replace:: v7.17.5
 .. |tcver| replace:: v9.0.64
