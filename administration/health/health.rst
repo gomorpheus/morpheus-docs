@@ -6,16 +6,13 @@ Health
 
 .. image:: /images/administration/health/morpheusHealth500.png
 
-The |Morpheus| Health section provides an overview of the health of your |Morpheus| appliance. It includes an appliance health summary in the following areas:
+The |morpheus| Health section provides an overview of the health of your |Morpheus| appliance. It includes an appliance health summary in the following areas:
 
-  - Overall
-  - CPU
-  - Memory
-  - Database
-  - Elastic
-  - Queues
-
-|morpheus| compiles many data points from each area and uses a custom algorithm to compute a health status value. These are represented in the UI with green (OK) or yellow (warning) status icons.
+  - **CPU:** Appliance CPU usage is checked. If usage is greater than 50%, this indicator will be in a yellow or warning state. If |morpheus| is unable to complete the check, it will be in a red or error state. Depending on appliance performance and how frequently this indicator is in a warning state, it may be necessary to upgrade to increase CPU. The **Overall** health indicator will mirror the CPU health indicator
+  - **Memory:** If swap usage is above 60% or |morpheus| memory usage is above 95%, this indicator will be in a yellow or warning state. If |morpheus| is unable to complete the check for any reason, it will be in a red or error state. Depending on appliance performance and how frequently this indicator is in a warning state, it may be necessary to increase swap, upgrade the appliance to add memory, or consider a different appliance architecture for those using single-node appliances
+  - **Database:** The database is checked. If the number of database connections exceeds the configured maximum number of connections or if any test queries are reported as being slow, this indicator will be in a yellow or warning state. If |morpheus| is unable to communicate with the database, it will be in a red or error state. In the database section further down the page, you can check the number of maximum used connections against the number of max connections. In the case of database connections exceeding the maximum, consider increasing the maximum settings connection
+  - **Elastic:** Elasticsearch is polled for the health status of each index. If any indices are not reporting a "green" health status, this indicator will be in a yellow or warning state. Bear in mind that an index will report as yellow when replica shards of that index cannot be allocated to another node. Thus, all indices will report a yellow health status in a single node appliance which will always lead to the appliance Elastic health indicator reporting in a yellow or warning state. Users with single-node appliance architectures can often ignore Elastic displaying a warning status. If |morpheus| fails to connect to Elasticsearch this indicator will be in a red or error state
+  - **Queues:** RabbitMQ queues are checked. Any queues containing more than 1000 messages are considered to be in an error state. Appliance Queue health is given in a yellow or warning status when any queues are in such an error state. In the Queues section further down the page you can see the individual Queues listed and which have messages piling up. When the appliance is unable to complete the check for any reason, this indicator will be in a red or error state
 
 .. NOTE:: An Elasticsearch warning status is typical for single node Appliances due to a single elasticsearch node and default replica count exceeding available nodes.
 
@@ -24,13 +21,13 @@ Health Levels
 
 Health levels provide a live representation of the current memory and CPU load on the appliance. Bear in mind that in an HA appliance, this data will be specific to the appliance node you happen to be using. By default, |morpheus| does not include any endpoint or UI tool which can show you the currently used app node. However, a plugin has been developed which can surface this information if needed. See `this thread <https://discuss.morpheusdata.com/t/custom-ping-endpoint-via-morpheus-plugin/389>`_ in the |morpheus| official forums for additional details about accessing and using the plugin.
 
-  - **|morpheus| CPU:** Instantaneous amount of CPU capacity in use by |morpheus| processes
+  - **Morpheus CPU:** Instantaneous amount of CPU capacity in use by |morpheus| processes
   - **System CPU:** Instantaneous amount of CPU capacity in use by all processes
-  - **|morpheus| Memory:** Instantaneous amount of system memory currently in use by |morpheus| processes (see the Knowledge Base article linked in the TIP box below for more information on how |morpheus| claims and manages available memory)
+  - **Morpheus Memory:** Instantaneous amount of system memory currently in use by |morpheus| processes (see the Knowledge Base article linked in the TIP box below for more information on how |morpheus| claims and manages available memory)
   - **System Memory:** Instantaneous amount of total system memory currently claimed (this is commonly a high percentage, see the TIP box below)
   - **Used Swap:** Instantaneous amount of total available system swap in use
 
-.. TIP:: It's common to see a high percentage of system memory being used `due to the way |morpheus| allocates and manages memory <https://support.morpheusdata.com/s/article/How-does-Morpheus-manage-the-memory-it-uses?language=en_US>`_. If |morpheus| is performing well, high system memory use is not necessarily an indicator that any action needs to be taken.
+.. TIP:: It's common to see a high percentage of system memory being used `due to the way Morpheus allocates and manages memory <https://support.morpheusdata.com/s/article/How-does-Morpheus-manage-the-memory-it-uses?language=en_US>`_. If |morpheus| is performing well, high system memory use is not necessarily an indicator that any action needs to be taken.
 
 Additional System Health Indices
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
