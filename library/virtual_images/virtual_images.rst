@@ -185,4 +185,8 @@ correct VM template to use based on the cloud deployed to.
 This eliminates the need for creating multiple node types for each virtual image, if the templates were named differently in each vCenter.  This can reduce the overhead of maintaing multiple node types and reduces user selections. 
 As well, this can reduce the cloning time of VMs by avoiding network transfers of images between geographic locations, ensuring the closest VM template is selected.
 
+|morpheus| supports VMware Content Libraries to store VM templates and will be sync'd into |morpheus|, the same as a template in a folder.  As well, the Content Library can be used to house the same same template in multiple libraries.
+If named the same, these templates will be aggregated under a single virtual image.  If the Content Library is stored on a datastore that the target host/cluster has access to, it will use that library first, to reduce the cloning time.
+If the Content Library is not stored to a datastore accessible by the cluster/host, a copy of the VM template will be performed to the target host/cluster instead.
+
 .. NOTE:: VM templates are a **Data Center** level object.  The same process above applies to a single VMware cloud with multiple logical data centers.  It will not apply to clusters, as a template is not associated with a cluster, only when it is converted to a VM.

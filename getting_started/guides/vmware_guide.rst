@@ -205,7 +205,7 @@ Finally, choose a method that will be used to customize the operating system:
 
   |morpheus| can inject an unattend file to override the default sysprep process when preparing a virtual machine.  Run the following command from the guest operating system:
   
-  ``C:\\Windows\\System32\\sysprep /oobe /generalize /shutdown``
+  ``C:\Windows\System32\sysprep /oobe /generalize /shutdown``
 
   Turn off the virtual machine and convert it to a template
 
