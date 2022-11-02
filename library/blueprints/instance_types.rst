@@ -32,6 +32,8 @@ Visibility
   * Public: Accessible by all Accounts/Tenants
 Inputs
   Custom options presented to the user at provision time, Inputs are also created and stored in Morpheus Library
+Price Sets
+  Associate a Price Set with the Instance Type, Price sets are created in |AdmPlaSet|. Price Sets which are added to Instance Types become additive with any pricing which may apply on the Service Plan. For example, a "fixed" Price Set of $1000/month has been associated with the Instance Type. If this Instance Type is provisioned to an Amazon AWS Cloud, the additional fixed price would be computed along with any Price which is pre-existing on the AWS Service Plan
 Environment Prefix
   Used for exportable environment variables when tying Instance Types together in App contexts. If not specified, a name will be generated
 Environment Variables

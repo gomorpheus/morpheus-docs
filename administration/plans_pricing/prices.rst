@@ -31,8 +31,7 @@ Type
   - **Load Balancer:** 'Load Balancer' price sets require at least one 'Load Balancer' price type and may include 'Load Balancer Virtual Server' price types. Load Balancer price sets are the only type which can be associated with Load Balancer Price Plans
   - **Virtual Image:** 'Virtual Image' price sets require at least one 'Storage' price type. Virtual Image price sets are the only type which can be associated with Virtual Image Price plans
   - **Snapshot:** 'Snapshot' price sets require at least one 'Storage' price type and may also include 'Datastore' price types. Snapshot price sets are the only type which can be associated with Snapshot Price plans
-  - **Instance Type:** Instance Type Price Sets can include Instance Type Prices. They're associated with Instance Type objects (|LibBluIns|) and the value of the Price Set is added to any other costing amounts which may apply from the selected Service Plan
-  - **Instance Type Layout:** Instance Type Layout Price Sets can include Instance Type Layout Prices. They're associated with Layout objects (|LibBluLay|) and the values of the Price Set is added to any other costing amounts which may apply from the selected Service Plan
+  - **Software/Service:** 'Software/Service' Price Sets require at least one 'Software/Service' Price type
 
 Apply Price Changes to Usage
   If marked, when saving a Price Set (new Price Set or saving changes to an existing one), usage records will be restarted for servers affected by the pricing change.
@@ -57,8 +56,6 @@ Price Types
   - Datastore (per GB)
   - Load Balancer
   - Load Balancer Virtual Server
-  - Instance Type
-  - Instance Type Layout
 
 Price Units
   -  Minute

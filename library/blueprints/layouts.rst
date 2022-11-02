@@ -69,3 +69,5 @@ Inputs
   Search for and select one or multiple Inputs to add to the Layout. Inputs (except for Hidden Inputs) will appear in Provisioning, App, Blueprint, and Cloning wizards when this layout is selected
 Nodes
   Single or multiple nodes can be added to a Layout by searching for and selecting the Node(s)
+Price Sets
+  Associate a Price Set with the Layout, Price Sets are created in |AdmPlaSet|. Price Sets which are added to Layouts become additive with any pricing which may apply on the Service Plan. For example, a "fixed" Price Set of $1000/month has been associated with the Layout. If this Layout is provisioned to an Amazon AWS Cloud, the additional fixed price would be computed along with any Price which is pre-existing on the AWS Service Plan
