@@ -566,7 +566,7 @@ Role Mappings
         - Recommendations
         - Tenant Role Recommendations
       * - Environment Variables
-        - None, User, Full
+        - None, User, Read, Full
         - Allows access to the Environments tab of the Instance detail page
         - Allows Instance environment variables to be edited. If set to "User" level only environment variables of Instances owned by the currently logged in user may be edited.
         - This permission is recommended for those needing management control over Instances
