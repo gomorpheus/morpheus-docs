@@ -91,6 +91,7 @@ Currency
   -  MXN
   -  NOK
   -  NZD
+  -  PLN
   -  ROL
   -  SAR
   -  SEK
