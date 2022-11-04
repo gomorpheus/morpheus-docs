@@ -14,7 +14,7 @@
 Release Dates
   - 5.5.2 |releasedate|
 
-- .. toggle-header:: :header: 5.5.2 RBAC Changes
+- .. toggle-header:: :header: **5.5.2 RBAC Changes**
 
     |morpheus| 5.5.2 includes changes to Role permissions UI, improvements to make permissions more granular, and changes to make Tenant management easier for Primary Tenant administrators. See the embedded video below for a walkthrough of the changes.
 
