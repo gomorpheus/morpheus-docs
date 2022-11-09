@@ -22,6 +22,7 @@ New Features
 :Currency: - Add support for Polish Zloty (PLN) currency. :superscript:`5.5.2`
 :Jenkins: - The Jenkins integration has been deprecated and removed from the product. A Jenkins Task Plugin has been created for triggering Jenkins jobs. See share.morpheusdata.com for more details on that Plugin. :superscript:`5.5.2`
 :Library: - Dark theme versions of Instance Type logos can now be managed via |morpheus| API and CLI. :superscript:`5.5.2`
+:Session Manager: Morpheus features a new session manager that was necessary in order to resolve expiring connections from the agents due to a Spring framework update. This new session manager no longer requires Sticky Sessions and they can now be turned off at the load balancer if so desired. However, keeping them on is totally reasonable as well as it reduces overall system load. Rolling restarts no longer kick you out of your session if sticky sessions are off as it distributes your session data across the morpheus nodes in an HA environment. Additionally, overall system load is reduced as a result of the new session manager.
 :Terraform: - Added data grouping to the Resource tab of the Detail page for Terraform Apps and Instances to make data more consumable in situations with large numbers of resources. :superscript:`5.5.2`
 
 
@@ -55,4 +56,4 @@ Fixes
 Appliance & Agent Updates
 =========================
 
-:Guacd: - libssh2 updated to v1.10.0 to address Ubuntu 22.04 ssh issue
+:Guacd: - libssh2 updated to v1.10.0 to address Ubuntu 22.04 ssh issue. Note: Appliances on SLES15 may need openssl-devel manually installed for guacd to succesfully compile.
