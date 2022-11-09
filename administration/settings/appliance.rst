@@ -9,11 +9,11 @@ Appliance URL
 Internal Appliance URL (PXE)
   For PXE-Boot your appliance needs to be routable directly with minimal NAT masquerading. This allows one to override the default appliance url endpoint for use by the PXE Server. If this is unset, the default appliance url will be used instead.
 API Allowed Origins
-  Specifies which origins are allowed to access the |morpheus| API.
+  A CORS-related field which specifies the origins that are allowed to access the |morpheus| API. For example, if you were designing a web application which needed to make AJAX calls to |morpheus| API. The origins should be specified here. By default, all origins are allowed. When this field is filled, an exclusive whitelist of allowed origins is established.
 Cloud Sync Interval
   Data is refreshed through cloud integrations at the interval specified here in seconds, the default value is 300 seconds (five minutes). Appliances managing a very large number of clouds may be adversely affected by setting this value too low.
 Usage Retainment
- Determines how many days to keep account usage (metered costing data) records. Retainment period is not set by default. Usage records will remain indefinitely if Usage Retainment is not set. Note this does not affect generated Invoice records. 
+ Determines how many days to keep account usage (metered costing data) records. Retainment period is not set by default. Usage records will remain indefinitely if Usage Retainment is not set. Note this does not affect generated Invoice records.
 Denied Hosts
   A comma-delimited list of IP addresses and/or hostnames which should not be allowed sources for HTTP Tasks or REST-populated Option Lists.
 Approved Hosts
