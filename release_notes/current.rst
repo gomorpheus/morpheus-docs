@@ -7,19 +7,52 @@
 - Compatible Plugin API version: |pluginVer|
 - Compatible Morpheus Worker version: |workerVer|
 
-.. IMPORTANT:: |morpheus| 5.4.9+ adds the "Provisioning: State" Role permission. This permission determines access to the State tab for Terraform-backed Instances and is set to "None" by default. On upgrade from a version prior to 5.4.9, only System Admin users will be able to see the State tab for these Instances. For other users who should have this access, edit their Roles to include "Provisioning: State" permissions.
-
-.. .. important::  Security: CVE-2022-35912: Morpheus v5.5.1-2 and v5.4.8-2 are now available in response to CVE-2022-35912, a Grails Framework remote code execution vulnerability. v5.5.1-2 and v5.4.8-2 include the Grails v5.1.9 update that mitigates the vulnerability. At this time, the Grails vulnerability is only confirmed for grails frameworks running on Java 8. Morpheus versions v5.4.4 and higher are on Java 11. Customers on morpheus v5.4.3 or earlier are highly advised to upgrade to at minimum v5.4.4 or higher, and out of an abundance of caution we recommend all customers upgrade to v5.5.1-2 or v5.4.8-2 in the event the vulnerability is found to be exploitable on Java 11.
-
 Release Dates
   - |morphVer|-1 |releasedate|
 
 .. NOTE:: Items appended with :superscript:`5.x.x` are also included in that version
+.. .. include:: highlights.rst
 
 New Features
 ============
 
+:API & CLI: - Added API and CLI coverage for creating and working with Security Scan Jobs which was already possible from |morpheus| UI. :superscript:`5.5.2`
+             - Added API and CLI coverage for creating and working with security package templates for security scans which is already possible via |morpheus| UI. :superscript:`5.5.2`
+             - Added plugin upload capability for |morpheus| API and CLI. :superscript:`5.5.2`
+:Currency: - Add support for Polish Zloty (PLN) currency. :superscript:`5.5.2`
+:Jenkins: - The Jenkins integration has been deprecated and removed from the product. A Jenkins Task Plugin has been created for triggering Jenkins jobs. See share.morpheusdata.com for more details on that Plugin. :superscript:`5.5.2`
+:Library: - Dark theme versions of Instance Type logos can now be managed via |morpheus| API and CLI. :superscript:`5.5.2`
+:Terraform: - Added data grouping to the Resource tab of the Detail page for Terraform Apps and Instances to make data more consumable in situations with large numbers of resources. :superscript:`5.5.2`
 
 
 Fixes
 =====
+
+:API & CLI: - API endpoints for adding power schedules to Instances have been updated for intuitiveness and consistency. :superscript:`5.5.2`
+             - Fixed an issue causing commands to get a Cloud or list Clouds within Subtenants to return incorrect Group IDs. :superscript:`5.5.2`
+             - Fixed an issue that caused "Library Script" and "Library Template" type Tasks created via |morpheus| CLI not to be associated with the script or template resource indicated in the command. :superscript:`5.5.2`
+             - Fixed an issue that caused Azure Instance resizing to fail when triggered via |morpheus| API or CLI. :superscript:`5.5.2`
+             - Fixed an issue that caused the "providerType" query parameter for the Get All Cluster Types API call not to work properly. :superscript:`5.5.2`
+             - The ``networkServer`` property is now being returned at the root of the return payload from calls to the Get All Clouds and Get a Specific Cloud API endpoints. :superscript:`5.5.2`
+             - When sourcing an Option List from the |morpheus| Plans API, memory and storage fields now return data properly rather than null values. :superscript:`5.5.2`
+:Amazon: - Fixed an issue that caused duplicate backups to occur for AWS Instances when scheduled backups were run. :superscript:`5.5.2`
+          - Fixed an issue with Amazon AWS Security Group detail pages that caused the list of Instances associated with the SG to be blank. :superscript:`5.5.2`
+:Apps: - Fixed an issue that caused only one Instance within an App to be displayed on the App detail page if the Instance contained many nodes (~25+). :superscript:`5.5.2`
+:Azure: - Fixed an issue that caused Azure NSG source ports to be overwritten to the destination port value following Cloud sync. This issue affected only the port shown in |morpheus| UI, it did not actually make that change in the Azure backend. :superscript:`5.5.2`
+         - Fixed an issue that could prevent Azure provisioning under specific scenarios if a stored credential set was used to authenticate the Cloud integration. :superscript:`5.5.2`
+:Instances: - After renaming an Instance, the old Instance name no longer appears in the History tab of the Instance detail page. It is updated correctly. :superscript:`5.5.2`
+             - Fixed an issue that could cause the wrong volume to be resized during reconfigure under specific plan settings. :superscript:`5.5.2`
+             - Fixed an issue that prevented Instance detail pages from being opened for brownfield Instances which were converted to managed and in a delayed/pending delete state. :superscript:`5.5.2`
+             - Fixed an issue where the listed size of an Instance disk could be incorrect following reconfigure that did not update disk size (though the disk was not actually resized). :superscript:`5.5.2`
+:NSX-T: - Fixed an issue that caused creation of new NSX-T IP Pools to fail with errors. :superscript:`5.5.2`
+:OpenStack: - Fixed an issue that allowed the root volume to be resized for OpenStack Windows VMs in |morpheus| in some scenarios which shouldn't have been allowed. :superscript:`5.5.2`
+             - Fixed an issue that caused OpenStack Clouds scoped to all Projects to sync duplicate Virtual Images. :superscript:`5.5.2`
+             - Fixed an issue that caused new OpenStack instance names not to be synced back to |morpheus| when updated on the OpenStack side. :superscript:`5.5.2`
+:Terraform: - Fixed an issue that caused Terraform Apps created via imported state not to transition from a "deploying" to "running" state even after they were successfully provisioned. :superscript:`5.5.2`
+             - Fixed an issue that led to large Terraform Apps causing the web browser tab to consume large amounts of memory and crash. :superscript:`5.5.2`
+
+
+Appliance & Agent Updates
+=========================
+
+:Guacd: - libssh2 updated to v1.10.0 to address Ubuntu 22.04 ssh issue
