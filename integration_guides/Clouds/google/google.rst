@@ -19,7 +19,7 @@ Integration Features
 Requirements for Integration with |morpheus|
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-To integrate |morpheus| with Google Cloud Platform, you will need the following. APIs are enabled in "APIs & Services" and must be enabled for all projects or the selected project (depending on your GCP Cloud integration settings):
+To integrate |morpheus| with Google Cloud Platform, you will need the following. APIs are enabled in "APIs & Services" and must be enabled for all projects or the selected project (depending on your GCP Cloud integration settings). The next section contains more detailed steps for enabling API in the GCP web console.
 
 * The Compute Engine API enabled
 * The Cloud Resource Manager API enabled
@@ -31,39 +31,38 @@ To integrate |morpheus| with Google Cloud Platform, you will need the following.
 * Credentials for an IAM service account with Owner or Compute Admin role permissions
 * The private key and client email for the service account
 
-This integration guide goes through the process of configuring your account and obtaining the information necessary to integrate with |morpheus|.
+This integration guide goes through the process of configuring your account and obtaining the information necessary to integrate with |morpheus|. Continue to the next section for a detailed look at enabling the APIs mentioned above.
 
-Enabling the Compute Engine API
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Enabling the Required APIs
+^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-#. Log into the Google Cloud Platform web console
-#. Hover over the "APIs & Services" menu and click on Dashboard
-#. Click :guilabel:`+ ENABLE APIS AND SERVICES`
+In order to take full advantage of the |morpheus| integration with Google Cloud, a number of APIs must be enabled within the GCP web console. It's recommended that you enable all of the APIs listed in the preceding section regardless of the |morpheus| feature set you intend to use. This will ensure you do not run into problems down the road stemming from a lack of access which may take time to diagnose.
 
-  .. image:: /images/integration_guides/clouds/gcp/1enable_apis.png
+Log into the Google Cloud web console and navigate to the APIs and Services page. You may find this in the Quick access area of the welcome page or you can search for it as shown in the screenshot below.
 
-4. In the search bar, search for "Compute Engine API"
+.. image:: /images/integration_guides/clouds/gcp/apis.png
 
-  .. image:: /images/integration_guides/clouds/gcp/2search_apis.png
+From the APIs and Services page, a list of enabled APIs and some details about your usage are shown. To enable new APIs, click :guilabel:`+ ENABLE APIS & SERVICES` near the top of the window. Now on the API library page, search for the API you wish to enable. Here I've searched for the Kubernetes Engine API.
 
-5. Select "Compute Engine API" and click :guilabel:`ENABLE`. It may take a few moments for the API to be fully enabled
+.. image:: /images/integration_guides/clouds/gcp/apisearch.png
 
-  .. NOTE:: If the button is labeled MANAGE rather than ENABLE, the API is already enabled. When enabling Compute Engine API, you may be prompted to also enable Cloud Billin API. It's also required this API is enabled so go ahead and enable it at this point and you won't have to do so later.
+From the search results, click on the API you wish to enable to view its detail page. Click :guilabel:`ENABLE`. Once successfully enabled, the button will change to a :guilabel:`MANAGE` button. It may take a few moments for the API to be fully enabled. You may also be prompted to enable the Cloud Billing API or create an association with a Billing Account when enabling APIs. Go ahead and do so if prompted.
 
-6. Head back to the API library and search for "Cloud Resource Manager API"
-7. Select "Cloud Resource Manager API" and click :guilabel:`ENABLE`. It may take a few moments for the API to be fully enabled
-8. If you haven't already enabled Cloud Billing API, head back to the API library and search for "Cloud Billing API"
-9. Select "Cloud Billing API" and click :guilabel:`ENABLE`. It may take a few moments for the API to be fully enabled
+.. image:: /images/integration_guides/clouds/gcp/apienable.png
+
+Repeat this process until all required APIs (listed in the previous section) are enabled.
 
 Creating a Service Account
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-#. From the landing page of the GCP web console, hover over the "IAM & Admin" menu and click on "Service Accounts"
-#. Click :guilabel:`+ CREATE SERVICE ACCOUNT`
+#. From anywhere in the GCP web console, search for "service accounts" in the global search bar at the top of the window
+#. Click on the Service Accounts page (within the IAM & Admin stack)
+#. A list of existing service accounts within the selected Project is shown (if any)
+#. To create a new one, click :guilabel:`+ CREATE SERVICE ACCOUNT`
 
   .. image:: /images/integration_guides/clouds/gcp/3create_service_acct.png
 
-3. Enter at least a name for your new service and click CREATE
+3. Enter at least a name for your new service and click CREATE AND CONTINUE
 
   .. image:: /images/integration_guides/clouds/gcp/4config_service_acct.png
 
@@ -77,7 +76,7 @@ Creating a Service Account
 Generating Keys and Integrating with |morpheus|
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-#. From the list of service accounts, click the ellipsis button (...)
+#. From the list of service accounts, click the ellipsis button (...) to the right of a selected account
 #. Click "Manage Keys"
 
   .. image:: /images/integration_guides/clouds/gcp/6create_key.png
@@ -91,7 +90,7 @@ Add a GCP Cloud
 
 .. Note:: The JSON-formatted document downloaded when creating a key for your service account contains all of the required values for completing the integration. Consult the above section on generating keys if needed.
 
-#. Navigate to Infrastructure > Clouds
+#. Navigate to |InfClo|
 #. Select :guilabel:`+ CREATE CLOUD`, select Google Cloud, and then click :guilabel:`NEXT`.
 #. Enter the following into the Create Cloud modal:
 
@@ -146,7 +145,7 @@ Within the Billing Account, Standard Usage Cost must be enabled for |morpheus| t
 
 .. image:: /images/integration_guides/clouds/gcp/costing2.png
 
-With configuration in the GCP console completed, we can now enable cost onboarding from the |morpheus| side. Add or edit an existing GCP Cloud (Infrastructure > Clouds). Within the Advanced Options section, note the COSTING PROJECT and COSTING DATASET fields. When selecting a Project, associated datasets (if any) will automatically be loaded into the dropdown in the next field for selection. Additionally, the COSTING field should be set to "Sync Costing" rather than "Off". Recall from the previous paragraph that this is merely pointing to the Project that houses the appropriate dataset. If your GCP Cloud in |morpheus| is configured for all Projects, all costing data will be consumed for the Projects linked to the associated Billing Account (assuming those Projects have billing enabled). If the GCP Cloud in |morpheus| is scoped to just one Project, only billing data for that Project will be onboarded. For this reason, the selected Costing Project can be (but is not necessarily) the Project to which the |morpheus| Cloud is scoped.
+With configuration in the GCP console completed, we can now enable cost onboarding from the |morpheus| side. Add or edit an existing GCP Cloud (|InfClo|). Within the Advanced Options section, note the COSTING PROJECT and COSTING DATASET fields. When selecting a Project, associated datasets (if any) will automatically be loaded into the dropdown in the next field for selection. Additionally, the COSTING field should be set to "Sync Costing" rather than "Off". Recall from the previous paragraph that this is merely pointing to the Project that houses the appropriate dataset. If your GCP Cloud in |morpheus| is configured for all Projects, all costing data will be consumed for the Projects linked to the associated Billing Account (assuming those Projects have billing enabled). If the GCP Cloud in |morpheus| is scoped to just one Project, only billing data for that Project will be onboarded. For this reason, the selected Costing Project can be (but is not necessarily) the Project to which the |morpheus| Cloud is scoped.
 
 .. image:: /images/integration_guides/clouds/gcp/costing3.png
   :width: 50%
