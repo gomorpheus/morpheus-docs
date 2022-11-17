@@ -42,7 +42,6 @@ Fixes
 :Azure: - Fixed an issue that caused Azure NSG source ports to be overwritten to the destination port value following Cloud sync. This issue affected only the port shown in |morpheus| UI, it did not actually make that change in the Azure backend. :superscript:`5.5.2`
          - Fixed an issue that could prevent Azure provisioning under specific scenarios if a stored credential set was used to authenticate the Cloud integration. :superscript:`5.5.2`
 :Instances: - After renaming an Instance, the old Instance name no longer appears in the History tab of the Instance detail page. It is updated correctly. :superscript:`5.5.2`
-             - Fixed an issue that could cause the wrong volume to be resized during reconfigure under specific plan settings. :superscript:`5.5.2`
              - Fixed an issue that prevented Instance detail pages from being opened for brownfield Instances which were converted to managed and in a delayed/pending delete state. :superscript:`5.5.2`
              - Fixed an issue where the listed size of an Instance disk could be incorrect following reconfigure that did not update disk size (though the disk was not actually resized). :superscript:`5.5.2`
 :NSX-T: - Fixed an issue that caused creation of new NSX-T IP Pools to fail with errors. :superscript:`5.5.2`
