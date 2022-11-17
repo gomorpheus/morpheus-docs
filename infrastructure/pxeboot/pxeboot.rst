@@ -6,25 +6,25 @@ Boot
 Overview
 --------
 
-|morpheus| includes a built in PXE Server to enable easy and rapid bare metal provisioning.
+|morpheus| provides a simple-to-use Bare Metal boot capability based on PXE. When a server boots and is redirected to the |morpheus| server for the installation files, they can be configured to be simply passed an OS or Hypervisor (in which case |morpheus| will see them as Bare Metal servers with no further detail) or they can be brought on as Virtual Machines or Docker Hosts. Installation of the |morpheus| Agent can also be done during the initial configuration stage.
 
 Prerequisites
 -------------
 
 * DHCP server with following config added to dhcpd.conf
 
-.. code-block:: bash
+  .. code-block:: bash
 
-    allow booting;
-    allow bootp;
-    option option-128 code 128 = string;
-    option option-129 code 129 = text;
-    next-server morpheus-appliance-ip;
-    filename "pxelinux.0";
+      allow booting;
+      allow bootp;
+      option option-128 code 128 = string;
+      option option-129 code 129 = text;
+      next-server morpheus-appliance-ip;
+      filename "pxelinux.0";
 
-.. NOTE:: Replace ``morpheus-appliance-ip`` in the dhcpd.conf file with your |morpheus| appliance IP address.
+  .. NOTE:: Replace ``morpheus-appliance-ip`` in the dhcpd.conf file with your |morpheus| appliance IP address.
 
-* ``Internal Appliance URL (PXE)`` set in `Administration - Settings`. For PXE-Boot your appliance needs to be routable directly with minimal NAT masquerading. This allows one to override the default appliance url endpoint for use by the PXE Server. If this is unset, the default appliance url will be used instead.
+* ``Internal Appliance URL (PXE)`` set in |AdmSetApp|. For PXE-Boot your appliance needs to be routable directly with minimal NAT masquerading. This allows one to override the default appliance url endpoint for use by the PXE Server. If this is unset, the default appliance url will be used instead.
 * Mac or IP addresses of PXE target mapped in {morpheus} `Infrastructure > Boot - Mapping`
 * Target host configured for Network boot in BIOS
 
