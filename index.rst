@@ -12,15 +12,6 @@
    :caption: Morpheus UI
 
    getting_started/getting_started
-   operations/operations
-   provisioning/provisioning
-   library/library.rst
-   infrastructure/infrastructure
-   backups/backups
-   monitoring/monitoring
-   tools/tools
-   administration/administration
-   personas/personas.rst
    troubleshooting/troubleshooting
 
 .. toctree::
