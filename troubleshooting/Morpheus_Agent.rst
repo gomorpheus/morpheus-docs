@@ -166,8 +166,7 @@ Windows Agents
 
 .. code-block:: bash
 
-  $app = Get-WmiObject -Class Win32_Product
-                -Filter "Name = 'Morpheus Windows Agent'"
+  $app = Get-WmiObject -Class Win32_Product -Filter "Name = 'Morpheus Windows Agent'"
   $app.Uninstall()
 
 

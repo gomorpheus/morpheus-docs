@@ -12,7 +12,7 @@ Policy Types
 ------------
 
 Approve Delete
-  Sets an approval requirement for deleting Instances or Apps within the Policy scope. When setting the Policy, users have the option of using Morpheus Approvals or an Approval Integration such a ServiceNow.
+  Sets an approval requirement for deleting Instances or Apps within the Policy scope. When setting the Policy, users have the option of using Morpheus Approvals or an Approval Integration such a ServiceNow. On delete request, Instances will be shut down and only deleted if approved.
 Approve Provision
   Sets an approval requirement for provisioning Instances or Apps within the Policy scope. When setting the Policy, users have the option of using Morpheus Approvals or an Approval Integration such a ServiceNow.
 Approve Reconfigure
