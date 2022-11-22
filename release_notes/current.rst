@@ -360,11 +360,12 @@ Fixes
 Appliance & Agent Updates
 =========================
 
-:Appliance: - Appliance, Node & VM Node Package Java updated to 11.0.17.8 :superscript:`5.4.13`
+:Appliance: - Appliance, Node & VM Node Package Java updated to 11.0.17.8 :superscript:`5.4.13` 
              - Elasticsearch Java updated to 17.0.5.8 :superscript:`5.4.13`
              - Fixed an issue that caused SeedService errors to appear in the logs on appliance start up
              - Fixed an issue that led to appliance start-up failures when ENC and suffixes were used with an external database :superscript:`5.4.13`
              - Fixed seedService warnings that would appear in logs during startup of a new |morpheus| appliance :superscript:`5.4.9`
+             - |morpheus| Node & VM Node packages updated to v3.2.10. Note: Due to build java requiremnets, the i386.deb and i386.rpm (32-bit) VM Node Packages will can longer be updated, and remain on v3.2.9. 
              - RHEL 9 is now supported for |morpheus| appliance installation
              - Tomcat-embed-core version upgraded to 9.0.58 (CVE-2022-23181) :superscript:`5.4.9`
              - Updated |morpheus| installer for SUSE 15 SP 2 and 3 to automate some manual steps that were previously required, including uuid-devel repo access and a second reconfigure step :superscript:`5.4.13`
