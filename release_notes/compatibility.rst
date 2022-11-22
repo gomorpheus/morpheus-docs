@@ -78,7 +78,7 @@ No Service Version Changes from |previousMorphVer|
    * - Morpheus Worker
      - |workerVer|
      -
-     - |checkmark|
+     - 
    * - MySQL
      - |mysqlbranch|
      - |mysqlver|
@@ -114,7 +114,7 @@ No Service Version Changes from |previousMorphVer|
    * - Java
      -
      - |java|
-     -
+     - |checkmark|
    * - Java (macOS agent)
      -
      - |java-mac|
@@ -134,7 +134,7 @@ No Service Version Changes from |previousMorphVer|
      - |morphver| Changes
    * - Morpheus Node and VM Node Packages
      - |nodePackageVer|
-     - No changes
+     - Node & VM Node Packages updated to |nodePackageVer| for Java update
    * - Morpheus Linux Agent
      - |linuxagentver|
      - No changes
