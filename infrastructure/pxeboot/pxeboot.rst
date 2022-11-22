@@ -6,12 +6,30 @@ Boot
 Overview
 --------
 
-|morpheus| includes a built in PXE Server to enable easy and rapid bare metal provisioning.
+|morpheus| provides a simple-to-use Bare Metal boot capability based on PXE. When a server boots and is redirected to the |morpheus| server for the installation files, they can be configured to be simply passed an OS or Hypervisor (in which case |morpheus| will see them as Bare Metal servers with no further detail) or they can be brought on as Virtual Machines or Docker Hosts. Installation of the |morpheus| Agent can also be done during the initial configuration stage.
 
 Prerequisites
 -------------
 
-* DHCP server with following config added to dhcpd.conf
+In order to work with |morpheus| bare metal PXE boot capabilities, some initial setup configuration is required. First, on the |morpheus| server, if you have a firewall enabled, make sure port 69 is open for TFTP. |morpheus| actually uses port 6969 and during installation a redirect should have been set. To check this, SSH onto the Morpheus server and run the following:
+
+.. code-block:: bash
+
+  iptables -t nat -L -n -v
+
+If the redirect is still properly, the response should include the following:
+
+.. code-block:: bash
+
+  Chain PREROUTING (policy ACCEPT 69 packets, 9767 bytes)
+
+  pkts bytes target   prot opt in out source     destination
+
+  0     0 REDIRECT udp  --  *  *   0.0.0.0/0  0.0.0.0/0        udp dpt:69 redir ports 6969
+
+  0     0 DNAT     tcp  --  *  *   0.0.0.0/0  169.254.169.254  tcp dpt:80 to:192.168.1.156
+
+Next, in |morpheus|, set a default PXE root password. This password is set in |AdmSetPro|. With the default root password set, set up the redirect on the DHCP server. In addition to the DNS and Gateway settings, add Boot Server Host Name which will be the name of the |morpheus| Server and Bootfile Name which should be set to ``pxelinux.0``. If you are using a Linux-based DHCP server, for example on CentOS, the dhcpd.conf configuration will look something like the following:
 
 .. code-block:: bash
 
@@ -19,17 +37,23 @@ Prerequisites
     allow bootp;
     option option-128 code 128 = string;
     option option-129 code 129 = text;
-    next-server morpheus-appliance-ip;
+    next-server xx.xx.xx.xx;
     filename "pxelinux.0";
 
-.. NOTE:: Replace ``morpheus-appliance-ip`` in the dhcpd.conf file with your |morpheus| appliance IP address.
+.. NOTE:: Replace the dummy IP address in the example dhcpd.conf file above with your |morpheus| appliance IP address.
 
-* ``Internal Appliance URL (PXE)`` set in `Administration - Settings`. For PXE-Boot your appliance needs to be routable directly with minimal NAT masquerading. This allows one to override the default appliance url endpoint for use by the PXE Server. If this is unset, the default appliance url will be used instead.
-* Mac or IP addresses of PXE target mapped in {morpheus} `Infrastructure > Boot - Mapping`
-* Target host configured for Network boot in BIOS
+Once you have done this, when you boot a PXE-enabled machine on the network, it will be told to access the |morpheus| server and request the ``pxelinux.0`` file. It will do this on port 69, the default for TFTP and will be redirected to 6969 once it hits the |morpheus| server. If successful you will see the "|morpheus| PXE Server" menu when you boot a server. This is the default menu defined in |morpheus| and supports the shipped PXE images supplied with the product. By selecting any of the choices from the "|morpheus| PXE Server menu", the install files should be downloaded and the server configured as per the supplied kickstart files. At this point, back on the |morpheus| appliance, you should see the MAC address for the new server appear in the "Discovered MAC Addresses" tab of the |InfBoo| page.
 
-.. NOTE:: On the |Morpheus| Appliance, PXE is enabled by default and port 69 is forwarded to the Internal PXE port 6969. These settings are configurable in in the ``pxe:`` section of ``/opt/morpheus/conf/application.yml``.
+Troubleshooting
+---------------
 
+If you do not get the Morpheus boot menu, there are a few things to check:
+
+* First, make sure the filename is correct. It must be ``pxelinux.0``
+* Next, check the TFTP server is responding by using a TFTP client to get the ``pxelinux.0`` file from the |morpheus| server using the same host name as you have configured in the DHCP server configuration. Do this test on a machine on the same network as the machines you are trying to boot using PXE
+* Leave the port number as 69 (the default) as this will also check the redirect is working
+* If a GET call on the default port does not work, and the client allows (most do) try using port 6969. If this works, then the redirect is wrong
+* If it will not work on either, check you can access the |morpheus| server from the network you are on and also check there are no firewalls between the test network and the |morpheus| Server 
 
 Mapping
 -------

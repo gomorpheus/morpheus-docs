@@ -12,7 +12,7 @@ User Settings
 -------------
 The fields included in this section are described below. By entering any new values in these fields and clicking :guilabel:`SAVE`, the existing value will be overwritten.
 
-- **Theme:** Default or Darkmode
+- **Theme:** Default or Dark mode
 - **Username:** Your |morpheus| username
 - **First Name:** Your first name (together with Last Name makes up your display name)
 - **Last Name:** Your last name (together with First Name makes up your display name)
