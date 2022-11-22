@@ -49,7 +49,7 @@ rst_prolog = """
 .. |oelVersions| replace:: 7.x, 8.x
 .. |ubuntuVersions| replace:: 16.04, 18.04, 20.04, 22.04
 .. |centosVersions| replace:: 7.x. 8.x (stream)
-.. |rhelVersions| replace:: 7.x. 8.x
+.. |rhelVersions| replace:: 7.x, 8.x, 9.x
 .. |suseVersions| replace:: 12, 15
 
 .. |Lib| replace:: Library
