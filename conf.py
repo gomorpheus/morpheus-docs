@@ -36,6 +36,7 @@ rst_prolog = """
 .. |openssl| replace:: 1.1.1p
 .. |openssl_fips| replace:: 1.0.2u
 .. |erlang| replace:: 23.3.4.2
+.. |mastertenant| replace:: Master Tenant
 
 .. |morpheus| replace:: Morpheus
 .. |morphues| replace:: Morpheus

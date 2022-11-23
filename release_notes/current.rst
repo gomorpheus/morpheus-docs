@@ -39,22 +39,22 @@ New Features
              - Added ability to associate Instance Type Price Sets to Instance Types via |morpheus| API and CLI. This functionality has also been added to |morpheus| UI
              - Added bulk "remove from control" functionality to |morpheus| API and CLI for removing Instances based on brownfield workloads from |morpheus| control. Greenfield Instances still must be deleted to be removed for licensing reasons
              - Added plugin upload capability for |morpheus| API and CLI :superscript:`5.4.12`
-             - Alert and Contact creation is now handled as expected through |morpheus| API and CLI when "Monitoring" Role permission is set to "User" level :superscript:`5.4.15.4.10`
+             - Alert and Contact creation is now handled as expected through |morpheus| API and CLI when "Monitoring" Role permission is set to "User" level :superscript:`5.4.10`
              - Create and manage Scale Thresholds (Library > Automation > Scale Thresholds) from |morpheus| API and CLI :superscript:`5.4.11`
              - Improved |morpheus| API and CLI response related to networks including the addition of Search Domains when getting Networks and setting/updating Search Domains :superscript:`5.4.11`
-             - IPAM Network Integrations can now be added via API             
+             - IPAM Network Integrations can now be added via API
              - Labels can now be added to Tasks, Workflows, and Jobs through |morpheus| API and CLI
              - New feature permission "Lifecycle: Environment Variables" can be managed through |morpheus| API and CLI
              - Updating Kubernetes Clusters via |morpheus| API or CLI now allows toggling the "Managed" attribute or adding an "API Token" value as you can already through |morpheus| UI :superscript:`5.4.9`
              - When integrating Clouds via |morpheus| API and CLI, associating a custom icon with the new Cloud is now supported
-             - ``library-node-types`` add and update commands in |morpheus| CLI now properly support passing in ``evars`` and ``evars-json`` parameters :superscript:`5.4.15.4.10`
-:Alerts: - Users with "Monitoring" Role permission set to "User" can now only edit and delete contacts they've created and can only set alert rules for Apps/Instances they can access (even when selecting all) :superscript:`5.4.15.4.10`
+             - ``library-node-types`` add and update commands in |morpheus| CLI now properly support passing in ``evars`` and ``evars-json`` parameters :superscript:`5.4.10`
+:Alerts: - Users with "Monitoring" Role permission set to "User" can now only edit and delete contacts they've created and can only set alert rules for Apps/Instances they can access (even when selecting all) :superscript:`5.4.10`
 :Amazon: - Amazon storage pricing is now syncing instead of seeded
           - Jakarta (ap-southeast-3) and UAE (me-central-1) regions added for scoping Amazon AWS Clouds :superscript:`5.4.10`
 :Azure: - Azure workloads can now be provisioned to different regions from the resource group (if desired) as you can from the Azure web console :superscript:`5.4.9`
          - Guidance recommendations can now be surfaced for Azure VMs which don't have the |morpheus| Agent installed
          - The Inventory Level field has been removed from Azure Cloud config. It was previously needed to enable or disable power state sync for Azure workloads but this data can now be gathered from other API payloads we already sync for other purposes
-:Clouds: - Added ability to associate existing VMs (Infrastructure > Compute > Virtual Machines) to different Clouds.**NOTE: This is not a migration tool. Once a workload has been moved to a new Cloud, use this functionality to associate the existing managed VM record to the new Cloud and wipe out the newly discovered unmanaged VM record. This preserves the original VM record and associated historical data while recognizing the new Cloud and continuing monitoring operations from the new VM** :superscript:`5.4.9`
+:Clouds: - Added ability to associate existing VMs (Infrastructure > Compute > Virtual Machines) to different Clouds. **NOTE: This is not a migration tool. Once a workload has been moved to a new Cloud, use this functionality to associate the existing managed VM record to the new Cloud and wipe out the newly discovered unmanaged VM record. This preserves the original VM record and associated historical data while recognizing the new Cloud and continuing monitoring operations from the new VM** :superscript:`5.4.9`
           - Added the ability to set custom icons when integrating new Clouds or editing existing Clouds.
           - The Connection Options section of the Cloud config modal has been moved higher for added visibility. This section only appears when proxies or workers are set up in |morpheus|
           - When first integrating a new Cloud, the Cloud's status will be given as "initializing" to indicate that the Cloud is doing its initial syncs before going into "OK" status to indicate that the Cloud integration is ready
@@ -71,7 +71,7 @@ New Features
 :Labels: - Users can now label many |morpheus| constructs (Tasks, Workflows, Jobs, App Blueprints, Instance Types, Layouts, Node Types, Virtual Images, Inputs, and Option Types) for easier filtering of large list views
 :Library: - Dark theme versions of Instance Type logos can now be managed via |morpheus| API and CLI :superscript:`5.4.12`
 :Morpheus IP Pools: - Added IPv6 pool support for |morpheus| IP Pools
-:Network: - Network labels (display names) are now editable from the Network tab of the Instance detail page :superscript:`5.4.15.4.10`
+:Network: - Network labels (display names) are now editable from the Network tab of the Instance detail page :superscript:`5.4.10`
 :OpenStack: - Added ability to create OpenStack Manila FileShares
 :Oracle Cloud: - Oracle Cloud costing features have migrated from using the Cloud Metered Billing API to using Cost and Usage Report data :superscript:`5.4.11`
 :Plans and Pricing: - Add Instance Type Layout Prices to Instance Type Layout Price Sets and associate them with Layouts. When workloads are provisioned based on the associated Layout, this pricing is added to any which may apply from the Service Plan
@@ -92,7 +92,7 @@ New Features
          - Added new Role permission Provisioning: Power Control. This was split out from the former Provisioning: Instances permission to increase granularity and handles access to power state controls for Instances and VMs
          - Added paging to each tab on Role detail pages, such as the Instance Types tab, Groups tab, and all other tabs which appear on this page. This improves load performance and searchability of very large lists
          - Improved experience of setting Role permissions by adding categories, permissions descriptions, and global permission toggles to the Role detail page
-         - "Provisioning: State" role permission added to control access to the State tab on Terraform Instance detail pages. **IMPORTANT**: This permission is "None" by default for all users other than System Admins. Following upgrade, users which are not System Admins will no longer have access to the State tab. Role permissions will need to be updated for all users which need access to the State tab. :superscript:`5.4.9`         
+         - "Provisioning: State" role permission added to control access to the State tab on Terraform Instance detail pages. **IMPORTANT**: This permission is "None" by default for all users other than System Admins. Following upgrade, users which are not System Admins will no longer have access to the State tab. Role permissions will need to be updated for all users which need access to the State tab. :superscript:`5.4.9`
          - The existing permission Provisioning: Allow Remove From Control has been renamed Provisioning: Remove From Control
          - The existing permission Provisioning: Remote Console can now be set to "User" which gives console access only to workloads provisioned by the current user. The "Provisioned" permission setting is removed
          - Updated the functionality of individual object permission tabs for Roles (Groups, Clouds, Catalog Items, etc.). Set a default access for all objects of that type (Full or None) and then individually apply alternate rights to individual objects if needed
@@ -109,7 +109,7 @@ New Features
             - tomcat upgraded to 9.0.65 (CVE-2022-34305) :superscript:`5.4.9`
             - xmlrpc-common upgraded to version 3.1.3 (CVE-2019-17570) :superscript:`5.4.11`
             - xmlsec upgraded to 2.2.3 (CVE-2021-40690) :superscript:`5.4.9`
-:ServiceNow: - Added support for using a MID server during credential validation (in both single and multi-tenant installations) as well as support for using a MID server when fetching the auth token :superscript:`5.4.15.4.10`
+:ServiceNow: - Added support for using a MID server during credential validation (in both single and multi-tenant installations) as well as support for using a MID server when fetching the auth token :superscript:`5.4.10`
               - Inputs with visibility dependent on other Inputs are now shown/hidden properly on Catalog Items exposed to ServiceNow via the |morpheus| plugin
               - The History tab on Instance detail pages now includes an entry for when provisioning approval from a ServiceNow integration was given
               - When Instances are ordered through a ServiceNow integration, the RITM number is tracked on the Instance (or Inventory) detail page
@@ -120,15 +120,15 @@ New Features
 :Softlayer: - Softlayer cloud type has been removed. Existing softlayer clouds will be migrated automatically to the IBM cloud type.
 :Tasks: - Added pop-out column to the add/edit Tasks modal which allows the user to easily drag and drop |morpheus| variable calls into the Task config
         - Tasks now have a visibility field which allows |mastertenant| users to share Tasks with Subtentants (public visibility) if desired
-:Terraform: - Added data grouping to the Resource tab of the Detail page for Terraform Apps and Instances to make data more consumable in situations with large numbers of resources :superscript:`5.4.125.4.1`
-             - Improved Terraform state file cleanup procedures after Terraform apply and delete actions are taken :superscript:`5.4.15.4.10`
+:Terraform: - Added data grouping to the Resource tab of the Detail page for Terraform Apps and Instances to make data more consumable in situations with large numbers of resources :superscript:`5.4.10`
+             - Improved Terraform state file cleanup procedures after Terraform apply and delete actions are taken :superscript:`5.4.10`
              - Improved Terraform state import (brownfield Terraform management) functionality to support a greater number of Terraform spec configurations :superscript:`5.4.11`
              - Support added for Terraform 1.2.x Apps and Instances :superscript:`5.4.10`
-             - Terraform Spec Templates can now reference directories of a Git repository and automatically onboard all files (including those in subdirectories) into the Spec Template similar to the way Terraform App Blueprints can already reference directoriesPreviously, Terraform Spec Templates needed to reference individual .tf files :superscript:`5.4.15.4.10`
+             - Terraform Spec Templates can now reference directories of a Git repository and automatically onboard all files (including those in subdirectories) into the Spec Template similar to the way Terraform App Blueprints can already reference directoriesPreviously, Terraform Spec Templates needed to reference individual .tf files :superscript:`5.4.10`
              - Terraform variables flagged as "sensitive" are now masked from all areas of |morpheus| UI. Previously they were masked in provisioning wizards but could be revealed in some other places :superscript:`5.4.10`
 :UI: - Execute Tasks and Workflows actions from Instance and server detail pages are now typeahead fields due to the potentially large number of Tasks and Workflows in some environments
       - From the Clouds Tab of the Group Detail Page, users can only add and remove existing Clouds for the Group. Users can no longer integrate new Clouds or edit existing Clouds from this page
-:Usage: - Calls to the billing API now includes a ``usages`` block in the return payload which includes resource information (CPU cores, memory, disk sizes, etc.) for the Instance/VMThis ensures users can access this information for accurate billing even in situations where the associated price types are resource-agnostic (such as "Everything" price types) :superscript:`5.4.15.4.10`
+:Usage: - Calls to the billing API now includes a ``usages`` block in the return payload which includes resource information (CPU cores, memory, disk sizes, etc.) for the Instance/VMThis ensures users can access this information for accurate billing even in situations where the associated price types are resource-agnostic (such as "Everything" price types) :superscript:`5.4.10`
 :Users: - The tabs on the User detail page (for Group Access, Instance Types, etc.) are all now paged to improve performance and searchability when lists are very long
 :vCloud Director: - VMs for multi-node vCD Instances are now created within the same vApp on the vCD side. Previously, a separate vApp was created for each VM :superscript:`5.4.9`
 :Workflows: - Added Price phase to Provisioning Workflows. This phase is invoked when the Workflow is tied to a Layout and allows Task logic to override any other pricing (such as on the Service Plan). See the Workflows section of |morpheus| docs for a demonstration
@@ -146,7 +146,7 @@ Fixes
              - Fixed an issue that caused OpenStack, Huawei, and OTC Clouds created via |morpheus| API and CLI not to work properly :superscript:`5.4.9`
              - Fixed an issue that caused the "providerType" query parameter for the Get All Cluster Types API call not to work properly :superscript:`5.4.12`
              - Fixed an issue that caused the Tenants block not to be returned for some Network objects when calling the Get All Networks endpoint :superscript:`5.4.13`
-             - Fixed an issue that caused the ``price-sets list`` command in |morpheus| CLI to fail with an Unexpected Error :superscript:`5.4.15.4.10`
+             - Fixed an issue that caused the ``price-sets list`` command in |morpheus| CLI to fail with an Unexpected Error :superscript:`5.4.10`
              - Fixed an issue that could cause provisioning of Azure Marketplace images through |morpheus| API to fail depending on marketplaceOffer syntax used :superscript:`5.4.11`
              - Fixed an issue that prevented Service Plans from being created via |morpheus| CLI without a pre-determined disk size (which should be allowed)
              - Fixed an issue that prevented adding deployment versions of type "fetch" using the no prompt approach and specifying the fetch URL option in the command :superscript:`5.4.9`
@@ -154,7 +154,7 @@ Fixes
              - Fixed an issue with adding Oracle Cloud Instances via |morpheus| CLI which would fail due to a missing Availability Zone prompt :superscript:`5.4.11`
              - Fixed an issue with the |morpheus| CLI ``clouds-add`` command not prompting for stored credential sets to authenticate the cloud integration :superscript:`5.4.10`
              - Tags can now be added normally via |morpheus| API and CLI to Instances added by provisioning an App Blueprint. Previously, these needed to be passed via the customOption block in an update JSON block :superscript:`5.4.9`
-             - The ``networkServer`` property is now being returned at the root of the return payload from calls to the Get All Clouds and Get a Specific Cloud API endpoints :superscript:`5.4.125.4.1`
+             - The ``networkServer`` property is now being returned at the root of the return payload from calls to the Get All Clouds and Get a Specific Cloud API endpoints :superscript:`5.4.10`
              - When creating Azure Resource Pools via |morpheus| API, the inventory flag now defaults to true to minimize confusion :superscript:`5.4.9`
              - When sourcing an Option List from the |morpheus| Plans API, memory and storage fields now return data properly rather than null values :superscript:`5.4.12`
 :ARM: - ARM template parameters are now visible in the instance wizard when provisioning a instance type pointing to an ARM template when logged in as a sub-tenant user. :superscript:`5.4.13`
@@ -186,7 +186,7 @@ Fixes
          - Azure Clouds no longer lose their scope (Resource Group and Region) when updating the Client Secret used to authenticate the Cloud :superscript:`5.4.9`
          - Fixed an issue that caused Azure NSG source ports to be overwritten to the destination port value following Cloud sync. This issue affected only the port shown in |morpheus| UI, it did not actually make that change in the Azure backend :superscript:`5.4.12`
          - Fixed an issue that caused a Cloud costing refresh for a previous month to raise invoice amounts, which required costing to be rebuilt to be accurate once again :superscript:`5.4.9`
-         - Fixed an issue that could cause the backup and restore process for Azure workloads to set an incorrect storage type (Premium SSD, etc.) :superscript:`5.4.15.4.10`
+         - Fixed an issue that could cause the backup and restore process for Azure workloads to set an incorrect storage type (Premium SSD, etc.) :superscript:`5.4.10`
          - Fixed an issue that could prevent Azure provisioning under specific scenarios if a stored credential set was used to authenticate the Cloud integration :superscript:`5.4.12`
          - Fixed an issue that prevented creating a new Azure Load Balancer to associate with an Instance if one was created at provision time and later removed via the Instance detail page :superscript:`5.4.9`
          - Fixed an issue that prevented setting destination ports on Azure Security Groups (NSGs) :superscript:`5.4.9`
@@ -207,7 +207,7 @@ Fixes
            - Fixed an issue that caused very long Input labels to wrap incorrectly and end up behind the field itself :superscript:`5.4.9`
            - Fixed an issue that could cause a Catalog Item to lose Inputs during ordering if it was built and ordered under specific conditions :superscript:`5.4.11`
            - Fixed an issue that could cause areas of the Service Catalog Cart page to be formatted incorrectly if Input labels, Input values, or Catalog Item names/descriptions were very large :superscript:`5.4.9`
-           - Fixed an issue that prevented provisioning of ARM template-based App Blueprints from the Service Catalog if the item relied on password values being set as Inputs :superscript:`5.4.15.4.105.4.9`
+           - Fixed an issue that prevented provisioning of ARM template-based App Blueprints from the Service Catalog if the item relied on password values being set as Inputs :superscript:`5.4.105.4.9`
            - Fixed an unintended permissions-related issue that would cause a 500 error when browsing |ProCat| even if the user had required permissions :superscript:`5.4.11`
            - Fixed some odd behavior that could arise for Inputs in Service Catalog items depending on the interaction between dependent, visibility, and required settings related to other Input values :superscript:`5.4.9`
            - Hidden-type Inputs are no longer shown on the order review page when checking out selected Service Catalog items :superscript:`5.4.11`
@@ -216,14 +216,14 @@ Fixes
            - Workflow-based Service Catalog items no longer have potential to hang when multiple typeahead Input values are selected :superscript:`5.4.10`
 :Clone: - Fixed an issue that caused clones to fail for VMs which had been reconfigured :superscript:`5.4.10`
          - Fixed an issue that prevented the clone function from working properly if a Deploy Folder value was set on the Node Type :superscript:`5.4.9`
-:CloudFormation: - Fixed an issue that caused CloudFormation Apps to fail deployment if they contained an EC2 Instance and had a UserData block :superscript:`5.4.15.4.10`
+:CloudFormation: - Fixed an issue that caused CloudFormation Apps to fail deployment if they contained an EC2 Instance and had a UserData block :superscript:`5.4.10`
 :Clouds: - Minor cleanup has been conducted around the Change Cloud functionality to make record presentation more accurate and user-friendly :superscript:`5.4.10`
           - The Cost History chart on Cloud Detail Pages now correctly plots small positive values higher than 0 along the Y axis :superscript:`5.4.10`
 :Clusters: - Removed support for editing tags on clusters which was not working. Tags may still be added at cluster creation time and they are applied to the hosts rather than the cluster. :superscript:`5.4.13`
 :Code: - Fixed an issue that caused failures when creating a Task from a Code Detail Page (|ProCod|) that referred to a specific Git Tag reference :superscript:`5.4.10`
 :Compute: - Improved reporting of server OS in situations where |morpheus| is unaware of the guest OS platform :superscript:`5.4.9`
-:Costing: - Fixed an issue that could cause incorrect currency to be configured for server-type invoices and server invoice line items in specific contexts :superscript:`5.4.15.4.10`
-           - Fixed an issue that prevented configuration of GCP cloud costing using stored credentials (|InfTru|) :superscript:`5.4.15.4.10`
+:Costing: - Fixed an issue that could cause incorrect currency to be configured for server-type invoices and server invoice line items in specific contexts :superscript:`5.4.10`
+           - Fixed an issue that prevented configuration of GCP cloud costing using stored credentials (|InfTru|) :superscript:`5.4.10`
            - Fixed issues where invoices could show negative cost amounts under specific conditions :superscript:`5.4.9`
 :Credentials: - Oauth credential sets can now be added (|InfTru|) even with very long tokens :superscript:`5.4.10`
                - Stored API key credentials (|InfTru|) now support longer inputs up to 1024 characters as API keys from some popular services could overset the previous limit
@@ -246,10 +246,10 @@ Fixes
              - Fixed an issue that caused Instance counts not to be set correctly on the Instances list page when the user has no Group access :superscript:`5.4.11`
              - Fixed an issue that prevented Instance detail pages from being opened for brownfield Instances which were converted to managed and in a delayed/pending delete state :superscript:`5.4.12`
              - Fixed an issue where the listed size of an Instance disk could be incorrect following reconfigure that did not update disk size (though the disk was not actually resized) :superscript:`5.4.12`
-             - The Instance display name (the value you would change when editing an Instance and updating the Name field) is now used to set a console tab's window name and used when searching for an Instance by name :superscript:`5.4.15.4.10`
+             - The Instance display name (the value you would change when editing an Instance and updating the Name field) is now used to set a console tab's window name and used when searching for an Instance by name :superscript:`5.4.10`
 :Jobs: - Fixed an issue that could prevent a Job from executing properly if done from the Job detail page (Provisioning > Jobs > Selected Job > Execute) :superscript:`5.4.9`
 :Kubernetes: - Fixed an issue that caused Kubernetes Clusters provisioned to OpenStack Clouds with floating IP addresses to be unreachable from outside the cluster due to certificates being registered to private addresses rather than public :superscript:`5.4.9`
-              - Fixed an issue that caused cluster stats not to be reported correctly on External (brownfield) Kubernetes clusters :superscript:`5.4.15.4.10`
+              - Fixed an issue that caused cluster stats not to be reported correctly on External (brownfield) Kubernetes clusters :superscript:`5.4.10`
               - Fixed an issue that could cause External Kubernetes clusters to become stuck in the deprovisioning state during deletion and never leave the UI :superscript:`5.4.9`
               - Plan is now hidden as expected when adding an external Kubernetes cluster from a Subtenant :superscript:`5.4.11`
               - Required fields are now respected when adding external Kubernetes clusters :superscript:`5.4.9`
@@ -274,16 +274,16 @@ Fixes
              - Fixed an issue that caused new OpenStack instance names not to be synced back to |morpheus| when updated on the OpenStack side :superscript:`5.4.12`
              - Fixed an issue that could cause additional disks to be shown in |morpheus| UI (not in the Cloud backend) when deploying Windows workloads to OpenStack Clouds :superscript:`5.4.9`
              - Fixed an issue that could cause discrepancy between network interface labels on an OpenStack Instance and that which was being reported on the Instance detail page in |morpheus| :superscript:`5.4.9`
-             - OpenStack load balancer virtual server creation now works properly :superscript:`5.4.15.4.10`
+             - OpenStack load balancer virtual server creation now works properly :superscript:`5.4.10`
              - Price calculations for OpenStack Instances and Apps now correctly account for storage costs :superscript:`5.4.10`
-             - UI errors are now surfaced for situations when OpenStack load balancer creation cannot complete due to a load balancer quota having been reached :superscript:`5.4.15.4.10`
+             - UI errors are now surfaced for situations when OpenStack load balancer creation cannot complete due to a load balancer quota having been reached :superscript:`5.4.10`
 :Oracle Cloud: - Currency and conversion rate are now being handled correctly for non-USD costing for Oracle Cloud workloads :superscript:`5.4.9`
                 - Fixed an issue that prevented |morpheus| Agent install for OCI Windows 2019 Instances unless the VM IP address was added to the WinRM port on the security group outbound rule :superscript:`5.4.9`
                 - Updated the manner in which |morpheus| displays the number of CPU cores for Oracle Cloud workloads to better reflect the specifics of Oracle CPU count :superscript:`5.4.9`
 :Plans and Pricing: - Fixed an issue that caused a random Service Plan to be accessed when users were attempting to edit an existing Virtual Image or VM Snapshot-type Service Plan :superscript:`5.4.10`
                   - Fixed unexpected behavior related to prices (comma vs period-separated decimals) when mixed browser locales were used :superscript:`5.4.10`
                   - When adding Price Sets to plans, it's no longer possible for very long Price Set text to overset the Edit Price Plan modal :superscript:`5.4.9`
-                  - When deleting a Service Plan, Instances associated with that Plan will have their Plans automatically updated to a new one. Previously, under certain scenarios, the Plan association could remain tied to the now-deleted Plan :superscript:`5.4.9` 
+                  - When deleting a Service Plan, Instances associated with that Plan will have their Plans automatically updated to a new one. Previously, under certain scenarios, the Plan association could remain tied to the now-deleted Plan :superscript:`5.4.9`
 :Plugins: - Custom Catalog Plugins now have access to the "Dark Mode" themed versions of icon images :superscript:`5.4.9`
            - The search bar on the plugins list page now works correctly :superscript:`5.4.9`
            - When adding a new Plugin to |morpheus|, an info block tells the required plugin API version for the current version of |morpheus|. In some prior versions, the listed version was incorrect but this has been corrected
@@ -301,7 +301,7 @@ Fixes
           - Improvements made to Puppet integration, including validation added when creating the integration, Puppet Tasks showing in the Instance history tab, Puppet Tasks and Puppet provisioning now include a version picker, and more :superscript:`5.4.10`
 :Reports: - Fixed a memory consumption issue caused when exporting very large reports (Operations > Reports) to CSV. It should now be safe to export very large reports :superscript:`5.4.9`
            - The instance type and layout for instances are now displayed in the instance cost report and export :superscript:`5.4.13`
-           - Updated the UI description for the Virtual Machine Inventory report which was incorrect :superscript:`5.4.15.4.10`
+           - Updated the UI description for the Virtual Machine Inventory report which was incorrect :superscript:`5.4.10`
 :Roles: - When renaming Multitenant User Roles, the new Role name is now reflected in the Roles list on the User detail :superscript:`5.4.9`
 :Security:  - Fixed an issue related to passwords being exposed in a specific log file :superscript:`5.4.10`
             - Fixed a potential command injection vulnerability related to Ansible integrations :superscript:`5.4.10`
@@ -333,7 +333,7 @@ Fixes
       - Fixed a typo in global settings (|AdmSet|) in the help block related to the Exchange URL field
       - Fixed a UI rendering issue on the edit modal for an existing identity source :superscript:`5.4.9`
       - Fixed an issue on the VMs list page (Infrastructure > Compute > Virtual Machines) that could cause the Power On/Off fly-out menu to be partially cut off :superscript:`5.4.9`
-      - Fixed an issue that allowed the volumes information to overset the wizard window on the review tab of the New App Wizard :superscript:`5.4.15.4.10`
+      - Fixed an issue that allowed the volumes information to overset the wizard window on the review tab of the New App Wizard :superscript:`5.4.10`
       - Fixed an issue that caused Input fields to overset the Service Catalog item box when its associated help block was very long :superscript:`5.4.9`
       - Fixed an issue that caused Input name labels to overlap each other on Service Catalog item pages if the label was very long :superscript:`5.4.9`
       - Fixed an issue that caused widgets on the Instances list page to display incorrect Instance counts or incorrect running/stopped Instance counts :superscript:`5.4.10`
@@ -360,12 +360,12 @@ Fixes
 Appliance & Agent Updates
 =========================
 
-:Appliance: - Appliance, Node & VM Node Package Java updated to 11.0.17.8 :superscript:`5.4.13` 
+:Appliance: - Appliance, Node & VM Node Package Java updated to 11.0.17.8 :superscript:`5.4.13`
              - Elasticsearch Java updated to 17.0.5.8 :superscript:`5.4.13`
              - Fixed an issue that caused SeedService errors to appear in the logs on appliance start up
              - Fixed an issue that led to appliance start-up failures when ENC and suffixes were used with an external database :superscript:`5.4.13`
              - Fixed seedService warnings that would appear in logs during startup of a new |morpheus| appliance :superscript:`5.4.9`
-             - |morpheus| Node & VM Node packages updated to v3.2.10. Note: Due to build java requiremnets, the i386.deb and i386.rpm (32-bit) VM Node Packages will can longer be updated, and remain on v3.2.9. 
+             - |morpheus| Node & VM Node packages updated to v3.2.10. Note: Due to build java requiremnets, the i386.deb and i386.rpm (32-bit) VM Node Packages will can longer be updated, and remain on v3.2.9.
              - RHEL 9 is now supported for |morpheus| appliance installation
              - Tomcat-embed-core version upgraded to 9.0.58 (CVE-2022-23181) :superscript:`5.4.9`
              - Updated |morpheus| installer for SUSE 15 SP 2 and 3 to automate some manual steps that were previously required, including uuid-devel repo access and a second reconfigure step :superscript:`5.4.13`
