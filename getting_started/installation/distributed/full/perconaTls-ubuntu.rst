@@ -31,7 +31,7 @@ Requirements
        mkdir /path/to/mysql/tmp/directory
        chown -R mysql:mysql /path/to/mysql/tmp/directory
 
-   #. Edit /etc/my.cnf.
+   #. Edit /etc/mysql/my.cnf
 
       .. code-block:: bash
 
@@ -127,7 +127,7 @@ Installing Percona XtraDB Cluster
 
     mysql> CREATE USER 'sstuser'@'localhost' IDENTIFIED BY 'sstUserPassword';
 
-   .. NOTE:: The sstuser and password will be used in the /etc/my.cnf configuration.
+   .. NOTE:: The sstuser and password will be used in the /etc/mysql/my.cnf configuration.
 
    .. code-block:: bash
 
@@ -163,7 +163,7 @@ Add [mysqld] to my.cnf in /etc/mysql/
 
          .. code-block:: bash
 
-            [root]# vi /etc/my.cnf
+            [root]# nano /etc/mysql/my.cnf
 
             [mysqld]
             pxc_encrypt_cluster_traffic=ON
@@ -196,7 +196,7 @@ Add [mysqld] to my.cnf in /etc/mysql/
 
          .. code-block:: bash
 
-            [root]# vi /etc/my.cnf
+            [root]# nano /etc/mysql/my.cnf
 
             [mysqld]
             pxc_encrypt_cluster_traffic=ON
@@ -230,7 +230,7 @@ Add [mysqld] to my.cnf in /etc/mysql/
 
          .. code-block:: bash
 
-            [root]# vi /etc/my.cnf
+            [root]# nano /etc/mysql/my.cnf
 
             [mysqld]
             pxc_encrypt_cluster_traffic=ON
@@ -260,7 +260,7 @@ Add [mysqld] to my.cnf in /etc/mysql/
             
    .. note:: The default setting on |morpheus| app nodes for ``max_active`` database connections is 150. For this example we are setting ``max_connections = 451`` to account for 3 maximum simultaneous |morpheus| app node connections. If ``max_active`` is configured higher on the app nodes, or the number of app nodes is not 3, adjust accordingly for your configuration.
 
-#. Save ``/etc/my.cnf``
+#. Save ``/etc/mysql/my.cnf``
 
 Bootstrap Node 01
 `````````````````
@@ -275,7 +275,7 @@ Bootstrap Node 01
 
    .. NOTE:: The mysql service will start during the bootstrap.
 
-   .. NOTE:: Startup failures are commonly caused by misconfigured ``/etc/my.cnf`` files. Also verify ``safe_to_bootstrap`` is set to ``1`` on Node 01 in ``/var/lib/mysql/grastate.dat``.
+   .. NOTE:: Startup failures are commonly caused by misconfigured ``/etc/mysql/my.cnf`` files. Also verify ``safe_to_bootstrap`` is set to ``1`` on Node 01 in ``/var/lib/mysql/grastate.dat``.
 
 Configure Morpheus Database and User
 ````````````````````````````````````
@@ -306,9 +306,9 @@ Configure Morpheus Database and User
 
     mysql> FLUSH PRIVILEGES;
 
-    .. important:: If you grant privileges to the morpheusDbUser to only the morpheusdb database, you will also need to GRANT SELECT, PROCESS, SHOW DATABASES, SUPER ON PRIVILEGES to the morpheusDbUser on *.* for the Appliance Health service.
-
     mysql> exit
+
+   .. important:: If you grant privileges to the morpheusDbUser to only the morpheusdb database, you will also need to GRANT SELECT, PROCESS, SHOW DATABASES, SUPER ON PRIVILEGES to the morpheusDbUser on *.* for the Appliance Health service.
 
 Copy SSL Files to other nodes
 `````````````````````````````
@@ -337,9 +337,9 @@ During initialization of Node 01 the required `pem` files will be generated in `
     [root]# cp /root/server-cert.pem /var/lib/mysql/
     [root]# cp /root/server-key.pem /var/lib/mysql/
 
-    .. important:: Ensure all 3 files match on all 3 nodes, including path, owner and permissions.
+   .. important:: Ensure all 3 files match on all 3 nodes, including path, owner and permissions.
 
-    .. note:: The generated certificate is self-signed. Consult Percona documentation for [mysqld] and SSL file configuration when providing your own.
+   .. note:: The generated certificate is self-signed. Consult Percona documentation for [mysqld] and SSL file configuration when providing your own.
 
 Start the Remaining Nodes
 `````````````````````````
@@ -352,7 +352,7 @@ Start the Remaining Nodes
 
    The services will automatically join the cluster using the sstuser we created earlier.
 
-   .. NOTE:: Startup failures are commonly caused by misconfigured /etc/my.cnf files.
+   .. NOTE:: Startup failures are commonly caused by misconfigured /etc/mysql/my.cnf files.
 
 
 Verify Configuration
@@ -389,10 +389,10 @@ Verify Configuration
 
    .. code-block:: bash
 
-    [root@allAppNodes] cd
-    [root@appNode01]# ./mysql -u morpheusDbUser -p  -h 192.168.101.01
-    [root@appNode02]# ./mysql -u morpheusDbUser -p  -h 192.168.101.02
-    [root@appNode03]# ./mysql -u morpheusDbUser -p  -h 192.168.101.03
+    [root@allAppNodes] cd /opt/morpheus/embedded/bin/
+    [root@appNode01]# ./mysql -h 192.168.101.01 -u morpheusDbUser -p
+    [root@appNode02]# ./mysql -h 192.168.101.02 -u morpheusDbUser -p
+    [root@appNode03]# ./mysql -h 192.168.101.03 -u morpheusDbUser -p
 
 If you are unable to login to mysql from an app node, ensure credentials are correct, privileges have been granted, mysql is running, and ports are open.
 
