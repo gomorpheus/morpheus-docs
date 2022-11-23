@@ -3,9 +3,9 @@
 
 .. important::
 
-   Known issue with embedded Elasticsearch upgrade: When upgrading to v5.4.8, v5.4.9 or v5.5.1, there is a potential issue with embedded Elasticsearch clustering on rolling upgrades and existing data migration for all embedded Elasticsearch architechtures. Refer to the :ref:`Release Notes` for additional informaiton.
+   v5.5.2 includes significant updates to RBAC permissions. Make sure to review the :ref:`Release Notes` for additional informaiton prior to installing or upgrading.
 
-:ref:`Release Notes`
+.. include:: /release_notes/current.rst
 
 .. toctree::
    :maxdepth: 2
