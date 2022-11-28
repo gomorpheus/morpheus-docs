@@ -9,7 +9,7 @@ latex_documents = [
 
 rst_prolog = """
 
-.. |releasedate| replace:: July 19 2022
+.. |releasedate| replace:: Nov 23 2022
 .. |morphbranch| replace:: v5.5
 .. |morphver| replace:: v5.5.2
 .. |minUpgradeVer| replace:: v5.2.0
@@ -49,7 +49,7 @@ rst_prolog = """
 .. |debianVersions| replace:: 9,10,11
 .. |oelVersions| replace:: 7.x, 8.x
 .. |ubuntuVersions| replace:: 16.04, 18.04, 20.04, 22.04
-.. |centosVersions| replace:: 7.x. 8.x (stream)
+.. |centosVersions| replace:: 7.x. 8.x (stream) 9.x (stream)
 .. |rhelVersions| replace:: 7.x, 8.x, 9.x
 .. |suseVersions| replace:: 12, 15
 
@@ -84,6 +84,7 @@ rst_prolog = """
 .. |ProApp| replace:: Provisioning > Apps
 .. |ProJob| replace:: Provisioning > Jobs
 .. |ProJobJob| replace:: Provisioning > Jobs > Job Executions
+.. |ProExe| replace:: Provisioning > Executions
 .. |ProCod| replace:: Provisioning > Code
 .. |ProCodRep| replace:: Provisioning > Code > Repositories
 .. |ProCodDep| replace:: Provisioning > Code > Deployments
