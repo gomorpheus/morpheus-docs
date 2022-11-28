@@ -5,16 +5,6 @@
 
    v5.5.2 includes significant updates to RBAC permissions. Make sure to review the :ref:`Release Notes` for additional informaiton prior to installing or upgrading.
 
-- .. toggle-header:: :header: **5.5.2 RBAC Changes**
-
-    |morpheus| 5.5.2 includes changes to Role permissions UI, improvements to make permissions more granular, and changes to make Tenant management easier for Primary Tenant administrators. See the embedded video below for a walkthrough of the changes.
-
-    .. raw:: html
-
-        <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; height: auto;">
-            <iframe src="//www.youtube.com/embed/752-Bnu0f30" frameborder="0" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
-        </div>
-
 .. include:: /release_notes/current.rst
 
 .. toctree::
