@@ -36,8 +36,8 @@ Below are sample log configuration settings. This is not a complete list. Additi
 
      <logger name="com.morpheus.compute.amazon.AmazonComputeService" level="DEBUG"/>
      <logger name="com.morpheus.compute.AmazonComputeUtility" level="DEBUG"/>
+     <logger name="com.morpheus.costing.AmazonCostingService" level="DEBUG"/>
      <logger name="com.morpheus.provision.AmazonProvisionService" level="DEBUG"/>
-
 
 :Azure:
   .. code-block:: xml
@@ -48,6 +48,12 @@ Below are sample log configuration settings. This is not a complete list. Additi
      <logger name="com.morpheus.compute.azure.AzureComputeService" level="DEBUG"/>
      <logger name="com.morpheus.compute.AzureComputeUtility" level="DEBUG"/>
      <logger name="com.morpheus.compute.AzureCostingService" level="DEBUG"/>
+
+:Chef:
+  .. code-block:: xml
+     <logger name="com.morpheus.automation.ChefClientService" level="DEBUG"/>
+     <logger name="com.morpheus.automation.ChefService" level="DEBUG"/>
+     <logger name="com.morpheus.automation.ChefTaskService" level="DEBUG"/>
 
 :DNS:
   .. code-block:: xml
@@ -65,6 +71,7 @@ Below are sample log configuration settings. This is not a complete list. Additi
      <logger name="com.morpheus.network.NetworkService " level="DEBUG"/>
      <logger name="com.morpheus.provision.AbstractProvisionService" level="DEBUG"/>
      <logger name="com.morpheus.provision.AbstractBoxProvisionService" level="DEBUG"/>
+     <logger name="com.morpheus.compute.ProgressUpdater" level="DEBUG"/>
 
 :Google:
   .. code-block:: xml
@@ -90,11 +97,17 @@ Below are sample log configuration settings. This is not a complete list. Additi
      <logger name="com.morpheus.provision.KubernetesProvisionService" level="DEBUG"/>
      <logger name="com.morpheus.storage.KubernetesStorageService" level="DEBUG"/>
 
+:Monitoring:
+  .. code-block:: xml
+     <logger name="com.morpheus.monitoring.MonitorCheckService" level="DEBUG"/>
+
 :Network:
   .. code-block:: xml
 
-     <logger name="com.morpheus.network.NetworkService " level="DEBUG"/>
+     <logger name="com.morpheusdata.infoblox.InfobloxProvider" level="DEBUG"/>
      <logger name="com.morpheus.network.InfobloxNetworkPoolService" level="DEBUG"/>
+     <logger name="com.morpheus.network.NetworkService " level="DEBUG"/>
+     <logger name="com.morpheus.network.PluginNetworkPoolService" level="DEBUG"/>
 
 :Nutanix:
   .. code-block:: xml
@@ -139,8 +152,9 @@ Below are sample log configuration settings. This is not a complete list. Additi
 :Tasks:
   .. code-block:: xml
 
-     <logger name="com.morpheus.task.WinrmTaskService" level="DEBUG"/>
+     <logger name="com.morpheus.task.AnsibleTowerTaskService" level="DEBUG"/>
      <logger name="com.morpheus.task.TaskService" level="DEBUG"/>
+     <logger name="com.morpheus.task.WinrmTaskService" level="DEBUG"/>
 
 :Terraform:
   .. code-block:: xml
