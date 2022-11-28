@@ -225,8 +225,7 @@ Fixes
 :Costing: - Fixed an issue that could cause incorrect currency to be configured for server-type invoices and server invoice line items in specific contexts :superscript:`5.4.10`
            - Fixed an issue that prevented configuration of GCP cloud costing using stored credentials (|InfTru|) :superscript:`5.4.10`
            - Fixed issues where invoices could show negative cost amounts under specific conditions :superscript:`5.4.9`
-:Credentials: - Oauth credential sets can now be added (|InfTru|) even with very long tokens :superscript:`5.4.10`
-               - Stored API key credentials (|InfTru|) now support longer inputs up to 1024 characters as API keys from some popular services could overset the previous limit
+:Credentials: - Stored API key credentials (|InfTru|) now support longer inputs up to 1024 characters as API keys from some popular services could overset the previous limit
 :Currency: - Currency exchange sync now honors any configured proxies :superscript:`5.4.11`
 :Cypher: - When configuring Terraform App Blueprints, Users can no longer select and use tfvars files from Cypher if a Cypher Access Policy (|AdmPol|) restricts it from them :superscript:`5.4.10`
 :DNS: - Fixed an pagination record that prevented zone records from the 26th domain and higher from being available in DNS integrations :superscript:`5.4.10`
