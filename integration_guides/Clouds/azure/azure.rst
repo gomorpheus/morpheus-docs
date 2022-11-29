@@ -254,25 +254,25 @@ To add a new Azure Cloud integration into |morpheus| using the credentials creat
 
      Example configurations but choose what is applicable to the tenant:
 
-       .. list-table:: **Example Azure Costing Configurations**
-         :widths: auto
-         :header-rows: 1
+     .. list-table:: **Example Azure Costing Configurations**
+        :widths: auto
+        :header-rows: 1
 
-         * - Account Type
-         - Azure Costing Mode
-         - Notes
-         * - Standard (Pay as you go)
-         - Standard
-         - 
-         * - EA (Enterprise Agreement)
-         - Standard
-         - 
-         * - CSP (Cloud Solution Provider)
-         - CSP
-         - CSP Tenant, ID, Client ID, and Client Secret required
-         * - CSP (Cloud Solution Provider)
-         - Azure Plan (Microsoft Customer Agreement)
-         - CSP Tenant, ID, Client ID, and Client Secret required on the primary cloud
+        * - Account Type
+          - Azure Costing Mode
+          - Notes
+        * - Standard (Pay as you go)
+          - Standard
+          - 
+        * - EA (Enterprise Agreement)
+          - Standard
+          - 
+        * - CSP (Cloud Solution Provider)
+          - CSP
+          - CSP Tenant, ID, Client ID, and Client Secret required
+        * - CSP (Cloud Solution Provider)
+          - Azure Plan (Microsoft Customer Agreement)
+          - CSP Tenant, ID, Client ID, and Client Secret required on the primary cloud
 
 #. Once done configuring the Cloud, select :guilabel:`NEXT`. NOTE all specified values except the Subscription ID can be changes after the Cloud is created.
 
