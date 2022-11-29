@@ -9,7 +9,7 @@ Morpheus allows for additional advanced customizations for system managed servic
 
 .. code-block:: ruby
 
-  app['encrypted_key_suffix'] = 'suffix'
+  app['encrypted_key_suffix'] = 'key'
   appliance_url 'https://morpheus.appliance-url.com'
     # Appending alternate port to appliance_url is supported. ie 'https://morpheus.appliance-url.com:8443'
     # The appliance_url cannot exceed 64 characters
@@ -100,7 +100,7 @@ Morpheus allows for additional advanced customizations for system managed servic
   repo['repo_host_url'] = 'https://downloads.morpheusdata.com'
 
   ui['http_client_connect_timeout'] = 10000  #### milliseconds
-  ui['jobs_enabled'] = true #### This option disables the appliance jobs service on the appliance node when set to false. This should be disabled only when configuring jobs to run on specific app nodes in HA environments. 
+  ui['jobs_enabled'] = true #### This option disables the appliance jobs service on the appliance node when set to false. This should be disabled only when configuring jobs to run on specific app nodes in HA environments.
   ui['kerberos_config'] = nil
   ui['kerberos_login_config'] = nil
   ui['log_dir'] = '/var/log/morpheus/morpheus-ui'
