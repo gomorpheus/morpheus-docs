@@ -210,7 +210,6 @@ AWS cloud integrations in |morpheus| will sync highly-granular costing data thro
                   ]
                 }
 
-        |
         .. IMPORTANT:: The user configured on the cloud will need access to the objects in the S3 bucket configured on the CUR.  If creating the CUR via the |morpheus| UI, this should be done automatically.  If an existing S3 bucket was selected, ensure the user has permissioned to access the
           objects in the bucket.  Alternatively, the **COSTING KEY** and **COSTING SECRET** can be used to configure a different user that has access to the S3 bucket.
 
