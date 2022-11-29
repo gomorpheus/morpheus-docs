@@ -24,12 +24,6 @@ autoscaling
                   "autoscaling:PutScalingPolicy",
                   "autoscaling:UpdateAutoScalingGroup",
 
-costexplorer
-````````````
-.. code-block::
-
-                  "ce:*",
-
 cloudformation
 ``````````````
 .. code-block::
@@ -51,6 +45,19 @@ cloudwatch
                   "cloudwatch:DescribeAlarms",
                   "cloudwatch:GetMetricStatistics",
                   "cloudwatch:PutMetricAlarm",
+
+costexplorer
+````````````
+.. code-block::
+
+                  "ce:*",
+
+Cost and Usage Reports
+``````````````````````
+.. code-block::
+
+                  "cur:DescribeReportDefinitions",
+                  "cur:PutReportDefinition",
 
 ec2
 ```````````
@@ -303,6 +310,7 @@ s3
                   "s3:DeleteObject",
                   "s3:DeleteObjectVersion",
                   "s3:GetBucketLocation",
+                  "s3:GetBucketPolicy",
                   "s3:GetObject",
                   "s3:GetObjectVersion",
                   "s3:ListAllMyBuckets",
@@ -310,12 +318,13 @@ s3
                   "s3:ListBucketMultipartUploads",
                   "s3:ListBucketVersions",
                   "s3:ListMultipartUploadParts",
+                  "s3:PutBucketPolicy",
                   "s3:PutObject",
 
 Systems Manager
 ```````````````
 .. code-block::
 
-                  "ssm:GetParameters"
+                  "ssm:GetParameters",
 
 
