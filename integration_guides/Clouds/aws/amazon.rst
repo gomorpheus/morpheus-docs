@@ -143,73 +143,74 @@ AWS cloud integrations in |morpheus| will sync highly-granular costing data thro
 
         .. NOTE:: If the AWS cloud account is a GovCloud account, enter the COSTING KEY, COSTING SECRET, and LINKED ACCOUNT ID for the master commercial account your GovCloud account is associated with.
 
-        Using the |morpheus| interface to create a CUR report, and optionally a new S3 bucket, does require permissions in AWS to be successful.  By default, only the root user will have access to billing (inlcuding CUR), but billing can be enabled for IAM users
-        following Amazon's documentation for `Activating IAM Access <https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/control-access-billing.html>`.  Once IAM access is activated, policies need to be assigned to the user being configured on the cloud
+        Using the |morpheus| interface to create a CUR, and optionally a new S3 bucket, the IAM user requires permissions in AWS to be successful.  By default, only the root user will have access to billing (including CUR), but billing can be enabled for IAM users
+        following Amazon's documentation for `Activating IAM Access <https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/control-access-billing.html>`_.  Once IAM access is activated, policies need to be assigned to the user being configured on the cloud
         in |morpheus|.  If the user is an administrator of the AWS account, no additional policies are needed.  Below are some example policies needed for different scenarios:
 
-        .. toggle-header::
-          :header: Creating a new CUR and new S3 bucket **Click to Expand/Hide**
+          .. toggle-header::
+            :header: Creating a new CUR and new S3 bucket **Click to Expand/Hide**
 
-            .. code-block:: json
+              .. code-block:: json
 
-              {
-                "Version": "2012-10-17",
-                "Statement": [
-                    {
-                        "Effect": "Allow",
-                        "Action": [
-                            "s3:PutBucketPolicy",
-                            "s3:CreateBucket",
-                            "s3:ListBucket",
-                            "s3:GetBucketPolicy",
-                            "cur:DescribeReportDefinitions",
-                            "cur:PutReportDefinition"
-                        ],
-                        "Resource": "*"
-                    }
-                ]
-              }
-        
-        .. toggle-header::
-          :header: Creating a new CUR and using an existing S3 bucket **Click to Expand/Hide**
+                {
+                  "Version": "2012-10-17",
+                  "Statement": [
+                      {
+                          "Effect": "Allow",
+                          "Action": [
+                              "s3:PutBucketPolicy",
+                              "s3:CreateBucket",
+                              "s3:ListBucket",
+                              "s3:GetBucketPolicy",
+                              "cur:DescribeReportDefinitions",
+                              "cur:PutReportDefinition"
+                          ],
+                          "Resource": "*"
+                      }
+                  ]
+                }
+          
+          .. toggle-header::
+            :header: Creating a new CUR and using an existing S3 bucket **Click to Expand/Hide**
 
-            .. code-block:: json
+              .. code-block:: json
 
-              {
-                "Version": "2012-10-17",
-                "Statement": [
-                    {
-                        "Effect": "Allow",
-                        "Action": [
-                            "s3:ListBucket",
-                            "s3:GetBucketPolicy",
-                            "cur:DescribeReportDefinitions",
-                            "cur:PutReportDefinition"
-                        ],
-                        "Resource": "*"
-                    }
-                ]
-              }
+                {
+                  "Version": "2012-10-17",
+                  "Statement": [
+                      {
+                          "Effect": "Allow",
+                          "Action": [
+                              "s3:ListBucket",
+                              "s3:GetBucketPolicy",
+                              "cur:DescribeReportDefinitions",
+                              "cur:PutReportDefinition"
+                          ],
+                          "Resource": "*"
+                      }
+                  ]
+                }
 
-        .. toggle-header::
-          :header: Using an existing CUR **Click to Expand/Hide**
+          .. toggle-header::
+            :header: Using an existing CUR **Click to Expand/Hide**
 
-            .. code-block:: json
+              .. code-block:: json
 
-              {
-                "Version": "2012-10-17",
-                "Statement": [
-                    {
-                        "Effect": "Allow",
-                        "Action": [
-                            "cur:DescribeReportDefinitions",
-                            "cur:PutReportDefinition"
-                        ],
-                        "Resource": "*"
-                    }
-                ]
-              }
+                {
+                  "Version": "2012-10-17",
+                  "Statement": [
+                      {
+                          "Effect": "Allow",
+                          "Action": [
+                              "cur:DescribeReportDefinitions",
+                              "cur:PutReportDefinition"
+                          ],
+                          "Resource": "*"
+                      }
+                  ]
+                }
 
+        |
         .. IMPORTANT:: The user configured on the cloud will need access to the objects in the S3 bucket configured on the CUR.  If creating the CUR via the |morpheus| UI, this should be done automatically.  If an existing S3 bucket was selected, ensure the user has permissioned to access the
           objects in the bucket.  Alternatively, the **COSTING KEY** and **COSTING SECRET** can be used to configure a different user that has access to the S3 bucket.
 
