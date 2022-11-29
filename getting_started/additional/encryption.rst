@@ -47,7 +47,7 @@ A custom Encryption Key Suffix can be set in the morpheus.rb configuration file.
 
 .. important:: The Encryption Key Suffix cannot be changed or removed after being set. Changing or removing an existing Encryption Key Suffix will prevent data access. If an existing suffix is altered in the morpheus.rb file, it must be restore to its original value.
 
-#. Add ``app['encrypted_key_suffix'] = '$suffix'`` to ``/etc/morpheus/morpheus.rb``, replacing ``$suffix`` with your suffix.
+#. Add ``app['encrypted_key_suffix'] = 'key'`` to ``/etc/morpheus/morpheus.rb``, replacing ``$suffix`` with your suffix.
 
    .. danger:: Once an Encryption Key Suffix is set and applied via reconfigure, it cannot be altered or removed and data cannot be migrated or recovered without it.
 
