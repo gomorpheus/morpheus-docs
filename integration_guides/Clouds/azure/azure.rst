@@ -254,7 +254,7 @@ To add a new Azure Cloud integration into |morpheus| using the credentials creat
 
      Example configurations but choose what is applicable to the tenant:
 
-      .. list-table:: **Supported Appliance Operating Systems**
+      .. list-table:: **Example Azure Costing Configurations**
             :widths: auto
             :header-rows: 1
 
