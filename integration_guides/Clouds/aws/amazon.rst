@@ -351,4 +351,24 @@ Reserved Instances (RI) provide a discounted hourly rate and optional capacity r
 
 .. image:: /images/integration_guides/clouds/aws/ri.png
 
+To retrieve Reserved Instances and Savings Plans data, the user configured on the cloud will require access to **Cost Explorer**.  Below is an example IAM policy with Cost Explorer access:
+
+  .. toggle-header::
+    :header: Cost Explorer Policy **Click to Expand/Hide**
+
+      .. code-block:: json
+
+        {
+          "Version": "2012-10-17",
+          "Statement": [
+              {
+                  "Effect": "Allow",
+                  "Action": [
+                      "ce:*"
+                  ],
+                  "Resource": "*"
+              }
+          ]
+        }
+
 .. include:: /integration_guides/Clouds/aws/iampolicies.rst
