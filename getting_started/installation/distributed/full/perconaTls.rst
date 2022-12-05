@@ -7,7 +7,7 @@ Out of the box |morpheus| uses MySQL but |morpheus| supports any mySQL-compliant
 
 .. important:: Currently, you must use a v5.7-compatible version of MySQL/Percona. Complete compatibility information is available in the `Compatibility and Breaking Changes <https://docs.morpheusdata.com/en/latest/release_notes/compatibility.html>`_ page. Additional configuration for Percona Clusters with TLS enabled is required. Refer to :ref:`Percona TLS` Configuration in our full HA docs for details.
 
-Installation and configuration of Percona XtraDB Cluster on **CentOS/RHEL 8** with TLS enabled for all communication.  Refer to :ref:`Percona-TLS-ubuntu` for Debian/Ubuntu.
+Installation and configuration of Percona XtraDB Cluster on **CentOS/RHEL 8** with TLS enabled for all communication.  Refer to :ref:`Percona-TLS-ubuntu` for **Debian/Ubuntu**.
 
 .. IMPORTANT:: This is a sample configuration only. Customer configurations and requirements will vary.
 
@@ -368,7 +368,7 @@ Configure Morpheus Database and User
 
     mysql> FLUSH PRIVILEGES;
 
-   .. important:: If you grant privileges to the morpheusDbUser to only the morpheusdb database, you will also need to GRANT SELECT, PROCESS, SHOW DATABASES, SUPER ON PRIVILEGES to the morpheusDbUser on *.* for the Appliance Health service.
+   .. important:: If you grant privileges to the morpheusDbUser to only the morpheus database, you will also need to GRANT SELECT, PROCESS, SHOW DATABASES, SUPER ON PRIVILEGES to the morpheusDbUser on *.* for the Appliance Health service.
 
     mysql> exit
 

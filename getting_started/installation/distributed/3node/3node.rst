@@ -67,7 +67,7 @@ App Node Installation
 
           .. code-block:: bash
 
-             appliance_url 'https://morpheus1.localdomain'
+             appliance_url 'https://morpheus.localdomain'
              elasticsearch['es_hosts'] = {'10.100.10.121' => 9200, '10.100.10.122' => 9200, '10.100.10.123' => 9200}
              elasticsearch['node_name'] = '10.100.10.121'
              elasticsearch['host'] = '0.0.0.0'
@@ -75,7 +75,7 @@ App Node Installation
              rabbitmq['nodename'] = 'rabbit@node01'
              mysql['enable'] = false
              mysql['host'] = '10.100.10.111'
-             mysql['morpheus_db'] = 'morpheusdb'
+             mysql['morpheus_db'] = 'morpheus'
              mysql['morpheus_db_user'] = 'morpheus'
              mysql['morpheus_password'] = 'password'
 
@@ -84,7 +84,7 @@ App Node Installation
 
          .. code-block:: bash
 
-            appliance_url 'https://morpheus2.localdomain'
+            appliance_url 'https://morpheus.localdomain'
             elasticsearch['es_hosts'] = {'10.100.10.121' => 9200, '10.100.10.122' => 9200, '10.100.10.123' => 9200}
             elasticsearch['node_name'] = '10.100.10.122'
             elasticsearch['host'] = '0.0.0.0'
@@ -92,7 +92,7 @@ App Node Installation
             rabbitmq['nodename'] = 'rabbit@node02'
             mysql['enable'] = false
             mysql['host'] = '10.100.10.111'
-            mysql['morpheus_db'] = 'morpheusdb'
+            mysql['morpheus_db'] = 'morpheus'
             mysql['morpheus_db_user'] = 'morpheus'
             mysql['morpheus_password'] = 'password'
 
@@ -101,7 +101,7 @@ App Node Installation
 
         .. code-block:: bash
 
-            appliance_url 'https://morpheus3.localdomain'
+            appliance_url 'https://morpheus.localdomain'
             elasticsearch['es_hosts'] = {'10.100.10.121' => 9200, '10.100.10.122' => 9200, '10.100.10.123' => 9200}
             elasticsearch['node_name'] = '10.100.10.123'
             elasticsearch['host'] = '0.0.0.0'
@@ -109,11 +109,13 @@ App Node Installation
             rabbitmq['nodename'] = 'rabbit@node03'
             mysql['enable'] = false
             mysql['host'] = '10.100.10.111'
-            mysql['morpheus_db'] = 'morpheusdb'
+            mysql['morpheus_db'] = 'morpheus'
             mysql['morpheus_db_user'] = 'morpheus'
             mysql['morpheus_password'] = 'password'
 
 
+   .. note:: The configurations above for ```mysql['host']`` show a single host.  Like other options in the configuration, ``mysql['host']`` can be a list, if the database is highly available:  ``mysql['host'] = {'192.168.101.01' => 3306, '192.168.101.02' => 3306, '192.168.101.03' => 3306}``
+   
    .. important:: The elasticsearch node names set in ``elasticsearch['node_name']`` must match the host entries in elasticsearch['es_hosts']. ``node_name`` is used for ``node.name`` and ``es_hosts`` is used for ``cluster.initial_master_nodes`` in the generated elasticsearch.yml config. Node names that do not match entries in cluster.initial_master_nodes will cause clustering issues.
 
 #. Reconfigure on all nodes

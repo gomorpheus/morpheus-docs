@@ -12,7 +12,8 @@ Installation and configuration of Percona XtraDB Cluster on **Debian 11/Ubuntu 2
 .. IMPORTANT:: This is a sample configuration only. Customer configurations and requirements will vary.
 
 Additional information can be found below:
-[XtraDB 5.7 Installation](https://www.percona.com/doc/percona-xtradb-cluster/5.7/install/apt.html)
+
+`XtraDB 5.7 Installation <https://www.percona.com/doc/percona-xtradb-cluster/5.7/install/apt.html>`_`
 
 Requirements
 ````````````
@@ -308,7 +309,7 @@ Configure Morpheus Database and User
 
     mysql> exit
 
-   .. important:: If you grant privileges to the morpheusDbUser to only the morpheusdb database, you will also need to GRANT SELECT, PROCESS, SHOW DATABASES, SUPER ON PRIVILEGES to the morpheusDbUser on *.* for the Appliance Health service.
+   .. important:: If you grant privileges to the morpheusDbUser to only the morpheus database, you will also need to GRANT SELECT, PROCESS, SHOW DATABASES, SUPER ON PRIVILEGES to the morpheusDbUser on *.* for the Appliance Health service.
 
 Copy SSL Files to other nodes
 `````````````````````````````
