@@ -88,6 +88,7 @@ Currency
   -  NOK
   -  NZD
   -  ROL
+  -  RUB
   -  SAR
   -  SEK
   -  THB
