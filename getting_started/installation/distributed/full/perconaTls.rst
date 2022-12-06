@@ -11,7 +11,7 @@ Installation and configuration of Percona XtraDB Cluster on **CentOS/RHEL 8** wi
 
 .. IMPORTANT:: This is a sample configuration only. Customer configurations and requirements will vary.
 
-Additional information can be found here:
+Additional information can be found below:
 
 `XtraDB 5.7 Installation <https://www.percona.com/doc/percona-xtradb-cluster/5.7/install/yum.html>`_
 
