@@ -64,7 +64,7 @@ To view the Cloud List View, select the name of a Cloud to display the clouds De
 EDIT
   Edit the setup configuration of the Cloud.
 REFRESH
-  Force a sync with the Cloud. Last sync date, time and duration is shown under the Cloud name.
+  Force a sync with the Cloud. Depending on the Cloud, choose to force a standard Cloud sync (occurs every five minutes by default) or a nightly sync. When syncing Costing data, |morpheus| will force a pull of costing data for your specified period. If opting to "rebuild" the costing data, |morpheus| will delete all costing data from the Cloud for that period and attempt to rebuild the data by calling the Cloud API.
 DELETE
   Delete the Cloud from |morpheus|
 
