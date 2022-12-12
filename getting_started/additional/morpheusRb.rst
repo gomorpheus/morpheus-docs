@@ -9,7 +9,7 @@ Morpheus allows for additional advanced customizations for system managed servic
 
 .. code-block:: ruby
 
-  app['encrypted_key_suffix'] = 'key'
+  app['encryption_key_suffix'] = 'key'
   appliance_url 'https://morpheus.appliance-url.com'
     # Appending alternate port to appliance_url is supported. ie 'https://morpheus.appliance-url.com:8443'
     # The appliance_url cannot exceed 64 characters
