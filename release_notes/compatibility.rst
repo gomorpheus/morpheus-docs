@@ -132,10 +132,10 @@ No Service Version Changes from |previousMorphVer|
 
    * - Package
      - Version
-     - |morphver| Changes
+     - |morphver| changes from |previousMorphVer|
    * - Morpheus Node and VM Node Packages
      - |nodePackageVer|
-     - Node & VM Node Packages updated to |nodePackageVer| for Java update
+     - No changes
    * - Morpheus Linux Agent
      - |linuxagentver|
      - No changes
