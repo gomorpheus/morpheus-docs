@@ -320,15 +320,19 @@ Global (Costing Aggregator Only) (v5.5.1+)
 ``````````````````````````````````````````
   
   Costing can be created for specific clouds individually, following the steps previously mentioned.  If the same account is added multiple times, using different regions, the same CUR file is available to be selected (if the configured user has access).  However,
-  this can become a tedious process in needing to configure the CUR on each cloud added to |morpheus|.  However, |morpheus| has a region of `Global (Costing Aggregator Only)`, which can be chosen at the time of adding a cloud.  This region is not designed for 
+  this can become a tedious process in needing to configure the CUR on each cloud added to |morpheus|.  However, |morpheus| has a region of ``Global (Costing Aggregator Only)``, which can be chosen at the time of adding a cloud.  This region is not designed for 
   deploying workloads, it is here primarily for syncing costs.  This means that the AWS account added as a cloud in |morpheus| as a Global region can sync the cost for all the other regions of the same account added as clouds into |morpheus|.
   
-  When using AWS Organizations, if the AWS account added as a gloabal region is the management account (formerly known as master account) and consolidated billing is enabled, costs for **all** accounts can be sync'd using the Global region.  This means when any AWS
+  When using AWS Organizations, if the AWS account added as a global region is the management account (formerly known as master account) and consolidated billing is enabled, costs for **all** accounts can be sync'd using the Global region.  This means when any AWS
   and/or regions in the organization are added as clouds in |morpheus|, the appropriate costs are applied to them automatically.  It does require that **Costing** is enabled on the cloud to see the costs but a Costing Report does not need to be chosen.  
   This enables the use of one cloud added as Global to sync all costs and apply to all AWS clouds added in |morpheus|.
 
-  Additionally, some costs in AWS are not region specific, for example the `Global` and `No Region` regions.  These costs do not apply to the regions of the clouds added in |morpheus|.  With the Global region added as a cloud in |morpheus|, you would be able to see
+  Additionally, some costs in AWS are not region specific, for example the ``Global`` and ``No Region`` regions.  These costs do not apply to the regions of the clouds added in |morpheus|.  With the Global region added as a cloud in |morpheus|, you would be able to see
   these costs that are applicable to your accounts.
+  
+  When creating/editing the ``Global (Costing Aggregator Only)`` cloud, in the **Advanced Options** the ``COSTING`` field should be set to **Costing**.  Choosing **Costing and Reservations** will still provide costing information but there will be no Reserved Instances or Savings Plans recommendations for this cloud type.
+  However, on any child clouds that would receive costing from the Global region, you can either set **Costing** to display the costs or **Costing and Reservations** to also sync Reserved Instances and Savings Plans recommendations.  Setting **Costing and Reservations** on the child account would require the configured child 
+  cloud user to have access to Cost Explorer to sync the recommendations.
 
 Costing and AWS GovCloud
 ^^^^^^^^^^^^^^^^^^^^^^^^
