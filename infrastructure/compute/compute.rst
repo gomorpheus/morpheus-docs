@@ -42,7 +42,11 @@ The Virtual Machines tab lists all managed and unmanaged VMs across |morpheus|. 
 
 - .. toggle-header:: :header: Virtual Machine Change Cloud
 
-    Change Cloud functionality allows a server to be reassociated to a new Cloud, which may be necessary at times for easier record keeping in |morpheus|. In order to use this feature, the user must have "Infrastructure: Move Servers" permission set to "Full." Changing Clouds might be necessary, for example, when moving a VM from one vCenter datacenter to another. We can use this tool to update the Cloud association in |morpheus| as well. Other scenarios may include migrating workloads from private Cloud to public Cloud or even creating a brand new VM in a new Cloud which represents an identical workload to something pre-existing but which will be retired. The important thing to keep in mind is that this tool is for |morpheus| record keeping only. **It is not a tool which does migration work for you.** See the embedded video below for a demonstration of this feature.
+    Change Cloud functionality allows a server to be reassociated to a new Cloud, which may be necessary at times for easier record keeping in |morpheus|. In order to use this feature, the user must have "Infrastructure: Move Servers" permission set to "Full."
+
+    Changing Clouds might be necessary, for example, when moving a VM from one vCenter datacenter to another. We can use this tool to update the Cloud association in |morpheus| as well. Other scenarios may include migrating workloads from private Cloud to public Cloud or even creating a brand new VM in a new Cloud which represents an identical workload to something pre-existing but which will be retired.
+
+    To change Clouds, navigate to the VM detail page (|InfComVir| > selected VM), click on the ACTIONS menu, and click Change Cloud. You can select the new target Cloud here and optionally select a new VM which the current one should be merged into. The important thing to keep in mind is that this tool is for |morpheus| record keeping only. **It is not a tool which does migration work for you.** See the embedded video below for a demonstration of this feature.
 
     .. raw:: html
 
