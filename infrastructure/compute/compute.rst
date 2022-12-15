@@ -40,6 +40,18 @@ Virtual Machines
 
 The Virtual Machines tab lists all managed and unmanaged VMs across |morpheus|. Managed VMs are either provisioned by |morpheus|, or are inventoried/discovered VMs that have been converted to managed. Unmanaged VMs are typically inventoried/discovered VMs from Cloud integrations.
 
+- .. toggle-header:: :header: Virtual Machine Change Cloud
+
+    Change Cloud functionality allows a server to be reassociated to a new Cloud, which may be necessary at times for easier record keeping in |morpheus|. In order to use this feature, the user must have "Infrastructure: Move Servers" permission set to "Full." Changing Clouds might be necessary, for example, when moving a VM from one vCenter datacenter to another. We can use this tool to update the Cloud association in |morpheus| as well. Other scenarios may include migrating workloads from private Cloud to public Cloud or even creating a brand new VM in a new Cloud which represents an identical workload to something pre-existing but which will be retired. The important thing to keep in mind is that this tool is for |morpheus| record keeping only. **It is not a tool which does migration work for you.** See the embedded video below for a demonstration of this feature.
+
+    .. raw:: html
+
+        <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; height: auto;">
+            <iframe src="//www.youtube.com/embed/mzzNv2QRS3U" frameborder="0" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
+        </div>
+
+    |
+
 Containers
 ----------
 .. image:: /images/infrastructure/compute/infra_compute_header_containers_5.3.1.png
@@ -67,7 +79,7 @@ Expand the **Resource Types** table below to see all Resource types that will be
 - .. toggle-header:: :header: Resource Types **Click to Expand/Hide**
 
     .. include:: /infrastructure/compute/resourcetypes.rst
-          
+
 Bare Metal
 ----------
 .. image:: /images/infrastructure/compute/infra_compute_header_bm_5.3.1.png
