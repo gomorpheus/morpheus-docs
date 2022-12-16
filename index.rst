@@ -1,8 +1,6 @@
 |morpheus| |morphver| Documentation
 ===================================
 
-.. important::
-
 .. include:: /release_notes/current.rst
 
 .. toctree::
