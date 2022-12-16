@@ -3,8 +3,6 @@
 
 .. important::
 
-   v5.5.2 includes significant updates to RBAC permissions. Make sure to review the :ref:`Release Notes` for additional informaiton prior to installing or upgrading.
-
 .. include:: /release_notes/current.rst
 
 .. toctree::
