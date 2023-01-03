@@ -1,6 +1,14 @@
 Active Directory
 ----------------
 
+.. raw:: html
+
+    <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; height: auto;">
+        <iframe src="//www.youtube.com/embed/jJ6GYRUJfLk" frameborder="0" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
+    </div>
+
+|
+
 Overview
 ^^^^^^^^
 
@@ -75,3 +83,44 @@ Adding an Active Directory Integration
 Now allowed AD users can login to |morpheus| via their Active Directory credentials and a User will be automatically generated to |morpheus| with matching metadata and mapped Role permissions.
 
 .. NOTE:: Sub-tenant |morpheus| API authentication for Active Directory generated users is not currently supported.
+
+Troubleshooting
+^^^^^^^^^^^^^^^
+
+If you're unable to get the Active Directory integration to work, the following troubleshooting steps may be useful to ensure your appliance can talk to the Active Directory server.
+
+#. Open firewall ports
+
+  Source: |morpheus| appliance
+  Destination: AD server's FQDN or IP address
+
+  Non-SSL AD integration: TCP-389
+  SSL AD integration: TCP-636
+
+#. Checking open LDAP connections from the |morpheus| appliance
+
+  Connect to a |morpheus| appliance box and run the following:
+
+  .. code-block:: bash
+
+    $ sudo lsof i- | grep :ldap
+
+#. Check LDAP connectivity from the |morpheus| appliance
+
+  Connect to a |morpheus| appliance box and run the following. Be sure to replace the placeholder values in the command with the correct values for your environment:
+
+  .. code-block:: bash
+
+    $ ldapsearch   -x -h xx.xx.xx.xx -D "binding-user@acme.com" -W -b "cn=users,dc=acme,dc=com"
+
+#. Run tcpflow from the |morpheus| appliance for non-SSL enabled AD identity Integrations
+
+  Use tcpflow from the |morpheus| appliance and then start the identity source configuration once again. Keep in mind this will only work for AD servers which are not SSL enabled:
+
+  .. code-block:: bash
+
+    $ sudo tcpflow -i any -c -v port 389
+
+#. Check the AD and domain controllers event logs
+
+  Check the event logs for LDAP queries from the |morpheus| appliance to ensure network connectivity.
