@@ -89,7 +89,7 @@ Troubleshooting
 
 If you're unable to get the Active Directory integration to work, the following troubleshooting steps may be useful to ensure your appliance can talk to the Active Directory server.
 
-#. Open firewall ports
+1. Open firewall ports
 
   Source: |morpheus| appliance
   Destination: AD server's FQDN or IP address
@@ -97,7 +97,7 @@ If you're unable to get the Active Directory integration to work, the following 
   Non-SSL AD integration: TCP-389
   SSL AD integration: TCP-636
 
-#. Checking open LDAP connections from the |morpheus| appliance
+2. Checking open LDAP connections from the |morpheus| appliance
 
   Connect to a |morpheus| appliance box and run the following:
 
@@ -105,7 +105,7 @@ If you're unable to get the Active Directory integration to work, the following 
 
     $ sudo lsof i- | grep :ldap
 
-#. Check LDAP connectivity from the |morpheus| appliance
+3. Check LDAP connectivity from the |morpheus| appliance
 
   Connect to a |morpheus| appliance box and run the following. Be sure to replace the placeholder values in the command with the correct values for your environment:
 
@@ -113,7 +113,7 @@ If you're unable to get the Active Directory integration to work, the following 
 
     $ ldapsearch   -x -h xx.xx.xx.xx -D "binding-user@acme.com" -W -b "cn=users,dc=acme,dc=com"
 
-#. Run tcpflow from the |morpheus| appliance for non-SSL enabled AD identity Integrations
+4. Run tcpflow from the |morpheus| appliance for non-SSL enabled AD identity Integrations
 
   Use tcpflow from the |morpheus| appliance and then start the identity source configuration once again. Keep in mind this will only work for AD servers which are not SSL enabled:
 
@@ -121,6 +121,6 @@ If you're unable to get the Active Directory integration to work, the following 
 
     $ sudo tcpflow -i any -c -v port 389
 
-#. Check the AD and domain controllers event logs
+5. Check the AD and domain controllers event logs
 
   Check the event logs for LDAP queries from the |morpheus| appliance to ensure network connectivity.
