@@ -25,9 +25,9 @@ Application Tier
 
       mysql['enable'] = false
       mysql['host'] = {'10.30.20.139' => 3306, '10.30.20.153' => 3306, '10.30.20.196' => 3306}
-      mysql['morpheus_db'] = 'morpheusdb'
-      mysql['morpheus_db_user'] = 'dbuser'
-      mysql['morpheus_password'] = 'dbuserpassword'
+      mysql['morpheus_db'] = 'morpheus'
+      mysql['morpheus_db_user'] = 'morpheusDbUser'
+      mysql['morpheus_password'] = 'morpheusDbUserPassword'
       rabbitmq['enable'] = false
       rabbitmq['vhost'] = 'morpheus'
       rabbitmq['queue_user'] = 'lbuser'
