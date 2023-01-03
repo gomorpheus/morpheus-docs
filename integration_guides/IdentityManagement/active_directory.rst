@@ -95,8 +95,6 @@ If you're unable to get the Active Directory integration to work, the following 
 
   **Destination:** AD server's FQDN or IP address
 
-  |
-
   **Non-SSL AD integration:** TCP-389
 
   **SSL AD integration:** TCP-636
