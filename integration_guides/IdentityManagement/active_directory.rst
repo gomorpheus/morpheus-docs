@@ -91,11 +91,15 @@ If you're unable to get the Active Directory integration to work, the following 
 
 1. Open firewall ports
 
-  Source: |morpheus| appliance
-  Destination: AD server's FQDN or IP address
+  **Source:** |morpheus| appliance
 
-  Non-SSL AD integration: TCP-389
-  SSL AD integration: TCP-636
+  **Destination:** AD server's FQDN or IP address
+
+  |
+
+  **Non-SSL AD integration:** TCP-389
+
+  **SSL AD integration:** TCP-636
 
 2. Checking open LDAP connections from the |morpheus| appliance
 
