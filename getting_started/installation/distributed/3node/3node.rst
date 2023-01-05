@@ -115,7 +115,7 @@ App Node Installation
 
 
    .. note:: The configurations above for ```mysql['host']`` show a single host.  Like other options in the configuration, ``mysql['host']`` can be a list, if the database is highly available:  ``mysql['host'] = {'192.168.101.01' => 3306, '192.168.101.02' => 3306, '192.168.101.03' => 3306}``
-   
+
    .. important:: The elasticsearch node names set in ``elasticsearch['node_name']`` must match the host entries in elasticsearch['es_hosts']. ``node_name`` is used for ``node.name`` and ``es_hosts`` is used for ``cluster.initial_master_nodes`` in the generated elasticsearch.yml config. Node names that do not match entries in cluster.initial_master_nodes will cause clustering issues.
 
 #. Reconfigure on all nodes

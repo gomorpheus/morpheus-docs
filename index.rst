@@ -1,5 +1,5 @@
-|morpheus| Documentation
-===================================
+|morpheus| Partner Documentation
+================================
 ..
    .. important::
 
@@ -9,7 +9,6 @@
 
 .. toctree::
    :maxdepth: 2
-   :caption: Morpheus UI
 
    getting_started/getting_started
 
