@@ -6,4 +6,3 @@ Distributed Installations
 
    overview
    3node/3node.rst
-   full/distributedFull.rst
