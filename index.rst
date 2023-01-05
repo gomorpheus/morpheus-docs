@@ -1,4 +1,4 @@
-|morpheus| |morphver| Documentation
+|morpheus| Documentation
 ===================================
 ..
    .. important::
