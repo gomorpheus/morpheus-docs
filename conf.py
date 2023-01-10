@@ -9,11 +9,11 @@ latex_documents = [
 
 rst_prolog = """
 
-.. |releasedate| replace:: Dec 13 2022
-.. |morphbranch| replace:: v5.5
-.. |morphver| replace:: v5.5.3
+.. |releasedate| replace:: Jan 17 2022
+.. |morphbranch| replace:: v6.0
+.. |morphver| replace:: v6.0.0
 .. |minUpgradeVer| replace:: v5.2.0
-.. |previousMorphVer| replace:: v5.5.2
+.. |previousMorphVer| replace:: v5.5.3
 .. |pluginVer| replace:: 0.13.4
 .. |workerVer| replace:: 5.4.8
 .. |rmqbranch| replace:: v3.5-3.9
@@ -23,7 +23,7 @@ rst_prolog = """
 .. |mysqlverfips| replace:: v5.7.39
 .. |esbranch| replace:: v7.x
 .. |esver| replace:: v7.17.5
-.. |tcver| replace:: v9.0.64
+.. |tcver| replace:: v9.0.70
 .. |nginxver| replace:: v1.22.1
 .. |nodePackageVer| replace:: 3.2.10
 .. |linuxagentver| replace:: v2.3.2

@@ -6,7 +6,7 @@ Policies
 Overview
 --------
 
-Policies add governance, ease of use, cost-savings, and auditing features to |morpheus|.  |morpheus| enables end users to create Policies scoped to Users, Roles, Groups, Clouds, Tenants and Global scoping to give Admins full control and governance over their environments! Policy generation is a role permission.
+Policies add governance, ease of use, cost-savings, and auditing features to |morpheus|. |morpheus| enables end users to create Policies scoped to Users, Roles, Groups, Clouds, Tenants, Networks, Plans, and Global scoping to give Admins full control and governance over their environments. The available scoping will vary from one Policy type to another. See the section below for information on each Policy type and guides for more complex Policy implementation.
 
 Policy Types
 ------------
