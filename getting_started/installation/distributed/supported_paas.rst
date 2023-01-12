@@ -1,10 +1,11 @@
 Supported PaaS Offerings
 ````````````````````````
 
-Morpheus has underlying technologies that support the Application Tier, which can be automatically installed and embedded on the applications nodes.  Alternatively, the services can be provided externally and not be embedded.  Many cloud providers
-have offerings of these underlying technologies but some are not native or don't provide the performanced needed.  Below is a list of PaaS offerings that have been approved to be used for Morpheus
+The Morpheus Application Tier can be deployed to any public or private cloud.  Morpheus has underlying technologies that support the Application Tier, which can be automatically installed and embedded on the applications nodes.
+Alternatively, the services can be provided externally and not be embedded.  Many cloud providers have Platform as a Service (PaaS) offerings of these underlying technologies but some are not native or don't provide the performance required.
+Below is a list of PaaS offerings that are supported to be used for Morpheus:
 
-.. list-table:: PaaS Offering Support
+.. list-table:: **PaaS Offering Support**
    :widths: auto
    :header-rows: 1
 
