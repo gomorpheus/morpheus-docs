@@ -20,7 +20,7 @@ Appliance Architectures
 
 - .. toggle-header:: :header: **Fully Distributed High Availability (HA) Installation**
 
-    .. image:: /images/arch/FullDistributedSingleSite.png.png
+    .. image:: /images/arch/FullDistributedSingleSite.png
 
     |
 
