@@ -23,9 +23,19 @@ Below is a list of PaaS offerings that are supported to be used for Morpheus:
      - N/A
      - N/A
      - mySQL Instance
-     - N/A
+     - Cloud Filestore
    * - Azure
      - N/A
      - N/A
      - N/A
      - Storage Account
+   * - OCI
+     - N/A
+     - N/A
+     - N/A
+     - N/A
+   * - Alibaba
+     - N/A
+     - N/A
+     - N/A
+     - N/A
