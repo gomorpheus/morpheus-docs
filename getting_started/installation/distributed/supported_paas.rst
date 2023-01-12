@@ -5,10 +5,10 @@ Morpheus has underlying technologies that support the Application Tier, which ca
 have offerings of these underlying technologies but some are not native or don't provide the performanced needed.  Below is a list of PaaS offerings that have been approved to be used for Morpheus
 
 .. list-table:: PaaS Offering Support
-   :widths: 20 20 20 20 20
+   :widths: auto
    :header-rows: 1
 
-   * - 
+   * - Cloud
      - Messaging (RabbitMQ)
      - Log (Elasticsearch)
      - Database (mySQL)
