@@ -27,5 +27,4 @@ have offerings of these underlying technologies but some are not native or don't
      - N/A
      - N/A
      - N/A
-     - N/A
      - Storage Account
