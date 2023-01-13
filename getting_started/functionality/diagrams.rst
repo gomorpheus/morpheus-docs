@@ -47,3 +47,9 @@ Third-Party Technology Integration
     .. image:: /images/provisioning/library/library_item_transparent.png
 
     |
+
+- .. toggle-header:: :header: **Zerto**
+
+    .. image:: /images/provisioning/library/MorpheusVeeamIntegration.png
+
+    |
