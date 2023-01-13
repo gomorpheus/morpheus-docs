@@ -44,12 +44,12 @@ Third-Party Technology Integration
 
 - .. toggle-header:: :header: **Zerto**
 
-    .. image:: /images/provisioning/library/library_item_transparent.png
+    .. image:: /images/integration_guides/backups/morpehus_zerto_chart.png
 
     |
 
 - .. toggle-header:: :header: **Zerto**
 
-    .. image:: /images/provisioning/library/MorpheusVeeamIntegration.png
+    .. image:: /images/integration_guides/backups/MorpheusVeeamIntegration.png
 
     |
