@@ -48,7 +48,7 @@ Third-Party Technology Integration
 
     |
 
-- .. toggle-header:: :header: **Zerto**
+- .. toggle-header:: :header: **Veeam**
 
     .. image:: /images/integration_guides/backups/MorpheusVeeamIntegration.png
 
