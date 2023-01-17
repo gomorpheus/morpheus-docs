@@ -31,3 +31,5 @@ HA Installation Architectures
 
 Distributed HA
   In this architecture, the tiers do not need to reside on the same machines, each can be hosted by a supprted cluster or PaaS offering.  This provides flexibility and reuse of already existing technologies such as RabbitMQ or Elasticsearch.  Each tier should be architected to provide HA following the vendor's documentation, to ensure no downtime for the Morpheus Application Tier.
+
+.. include:: supported_paas.rst
