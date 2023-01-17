@@ -1201,7 +1201,7 @@
        <td class="green">5.5.3</td>
      </tr>
      <tr>
-       <td class="darkGrey">5.4.8 →</td>
+       <td class="darkGrey">5.4.8+ →</td>
        <td class="lightGrey"></td>
        <td class="lightGrey"></td>
        <td class="lightGrey"></td>
