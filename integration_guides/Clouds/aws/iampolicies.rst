@@ -191,7 +191,7 @@ elasticloadbalancing
                   "elasticloadbalancing:ApplySecurityGroupsToLoadBalancer",
                   "elasticloadbalancing:AttachLoadBalancerToSubnets",
                   "elasticloadbalancing:CreateListener",
-                  "elasticloadbalancing:CreateLoadBalancer", 
+                  "elasticloadbalancing:CreateLoadBalancer",
                   "elasticloadbalancing:CreateRule",
                   "elasticloadbalancing:CreateTargetGroup",
                   "elasticloadbalancing:DeleteListener",
@@ -221,6 +221,13 @@ iam
                   "iam:ListGroups",
                   "iam:ListInstanceProfiles",
                   "iam:ListRoles",
+
+kms
+```````````
+.. code-block::
+
+                  "kms:Decrypt",
+                  "kms:GenerateDataKey",
 
 rds
 ```````````
@@ -316,6 +323,4 @@ Systems Manager
 ```````````````
 .. code-block::
 
-                  "ssm:GetParameters"
-
-
+                  "ssm:GetParameters",
