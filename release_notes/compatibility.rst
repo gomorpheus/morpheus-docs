@@ -101,7 +101,7 @@ No Service Version Changes from |previousMorphVer|
    * - Tomcat
      -
      - |tcver|
-     -
+     - |tcver|
    * - Nginx
      -
      - |nginxver|
