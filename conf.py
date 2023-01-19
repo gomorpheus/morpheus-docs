@@ -41,6 +41,7 @@ rst_prolog = """
 .. |morpheus| replace:: Morpheus
 .. |morphues| replace:: Morpheus
 .. |morphdat| replace:: Morpheus Data
+.. |mastertenant| replace:: Master Tenant
 .. |repo_host_url| replace:: https://downloads.morpheusdata.com
 .. |master tenant| replace:: Master Tenant
 .. |profileObjects| replace:: Clouds
