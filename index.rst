@@ -9,9 +9,9 @@
 
 .. toctree::
    :maxdepth: 2
-   :caption: Morpheus UI
+   :caption: Installation
 
-   getting_started/getting_started
+   installation/installation
 
 ..
    .. toctree::

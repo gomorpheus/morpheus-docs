@@ -37,7 +37,16 @@ Default Locations
 
 *  User-defined install/config: ``/etc/morpheus/morpheus.rb``
 
-.. include::   /getting_started/installation/distributed/full/perconaTls.rst
+Database Installation
+^^^^^^^^^^^^^^^^^^^^^
+
+If a database is not provided by the customer, use one of the following guides to help install a related database technology.
+
+.. `Database Install Guides </installation/database/database.rst>`_
+
+:ref:`database`
+
+.. .. include::   /getting_started/installation/distributed/full/perconaTls.rst
 
 App Node Installation
 ^^^^^^^^^^^^^^^^^^^^^
