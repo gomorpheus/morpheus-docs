@@ -5,7 +5,7 @@ App
    ..:maxdepth: 4
 
    /installation/overview.rst
-   /installation/3-node-ha/3-node-ha.rst
-   /installation/distributed/distributed.rst
+   /installation/app/3-node-ha/3-node-ha.rst
+   /installation/app/distributed/distributed.rst
    
    
