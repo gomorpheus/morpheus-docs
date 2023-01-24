@@ -9,7 +9,7 @@
 
 .. toctree::
    :maxdepth: 2
-   :caption: Installation
+   :caption: Internal Documentation
 
    installation/installation
 

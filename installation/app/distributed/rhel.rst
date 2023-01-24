@@ -1,7 +1,6 @@
 Full HA Install
 ---------------
 
-.. include::   /installation/overview.rst
 .. include::   /installation/database/perconaTls.rst
 .. include::   /installation/messaging/rabbitmq.rst
 .. include::   /installation/logs/elasticsearch.rst

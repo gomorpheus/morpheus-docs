@@ -12,7 +12,7 @@ Assets
 * Terraform
 * Morpheus backups
 
-.. TIP:: Backups, deployments and virtual image storage locations can be overridden within the |morpheus|-ui.  You can find more information on storage here: :ref:`storage`
+.. TIP:: Backups, deployments and virtual image storage locations can be overridden within the |morpheus|-ui.  You can find more information on storage here: `Storage Documentation <https://docs.morpheusdata.com/en/latest/integration_guides/storage/storage.html#storage>`_
 
 To copy the ``morpheus-ui`` directory to the shared storage follow the below steps:
 

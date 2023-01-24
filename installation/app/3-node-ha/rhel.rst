@@ -40,11 +40,11 @@ Default Locations
 Database Installation
 ^^^^^^^^^^^^^^^^^^^^^
 
-If a database is not provided by the customer, use one of the following guides to help install a related database technology.
+If a database is not provided, use one of the following guides to help install a related database technology:
+
+  :ref:`database`
 
 .. `Database Install Guides </installation/database/database.rst>`_
-
-:ref:`database`
 
 .. .. include::   /getting_started/installation/distributed/full/perconaTls.rst
 
@@ -378,9 +378,9 @@ Clustering RabbitMQ
 
   #. Subsequently you can start all |morpheus| services on all three nodes and tail the |morpheus| UI log file to inspect errors.
 
-.. include::   /getting_started/installation/distributed/ha_load_balancer.rst
+.. .. include::   /getting_started/installation/distributed/ha_load_balancer.rst
 
-.. include::   /getting_started/installation/distributed/HA_Shared_Storage.rst
+.. include::   /installation/storage/HA_Shared_Storage.rst
 
 Database Migration
 ^^^^^^^^^^^^^^^^^^
