@@ -1,7 +1,7 @@
 .. _3nodeinstall:
 
-3-Node HA Install
------------------
+3-Node HA Install (RHEL/CentOS)
+-------------------------------
 
 Distributed App Nodes with Externalized DB
 

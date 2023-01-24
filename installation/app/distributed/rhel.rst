@@ -1,5 +1,5 @@
-Full HA Install
----------------
+Full HA Install (RHEL/CentOS)
+----------------------
 
 .. include::   /installation/database/perconaTls.rst
 .. include::   /installation/messaging/rabbitmq.rst
