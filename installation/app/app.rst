@@ -1,8 +1,8 @@
-Distributed HA
-==============
+App
+===
 
 .. toctree::
-   :maxdepth: 4
+   ..:maxdepth: 4
 
    /installation/overview.rst
    /installation/3-node-ha/3-node-ha.rst

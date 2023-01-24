@@ -8,7 +8,7 @@
 .. :ref:`Release Notes`
 
 .. toctree::
-   :maxdepth: 2
+   ..:maxdepth: 2
    :caption: Internal Documentation
 
    installation/installation
