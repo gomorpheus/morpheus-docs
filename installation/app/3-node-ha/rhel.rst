@@ -378,7 +378,7 @@ Clustering RabbitMQ
 
   #. Subsequently you can start all |morpheus| services on all three nodes and tail the |morpheus| UI log file to inspect errors.
 
-.. .. include::   /getting_started/installation/distributed/ha_load_balancer.rst
+.. include::   /installation/load_balancer/ha_load_balancer.rst
 
 .. include::   /installation/storage/HA_Shared_Storage.rst
 

@@ -6,4 +6,4 @@ Full HA Install
 .. include::   /installation/logs/elasticsearch.rst
 .. include::   /installation/app/appliance_ha.rst
 .. include::   /installation/storage/HA_Shared_Storage.rst
-.. .. include::   /getting_started/installation/distributed/ha_load_balancer.rst
+.. include::   /installation/load_balancer/ha_load_balancer.rst
