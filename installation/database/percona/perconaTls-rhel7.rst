@@ -1,7 +1,7 @@
 .. _Percona TLS:
 
 CentOS/RHEL 7 Percona XtraDB Cluster with TLS
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Out of the box |morpheus| uses MySQL but |morpheus| supports any mySQL-compliant database. There are many ways to set up a highly available, MySQL dialect-based database. One which has found favor with many of our customers is Percona's XtraDB Cluster.  Percona's product is based off of Galera's WSREP Clustering, which is also supported.
 
