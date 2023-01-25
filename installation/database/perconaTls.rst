@@ -56,12 +56,19 @@ Percona nodes.
 
   .. code-block:: bash
 
-    [root]# firewall-cmd --add-port={3306/tcp,4444/tcp,4567/tcp,4568/tcp}
+    [root]# firewall-cmd --zone=public --add-port={3306/tcp,4444/tcp,4567/tcp,4568/tcp}
 
 The following OS repositories are required, in addition to the Percona repositories:
   
-  - rhel-8-for-x86_64-baseos-rpms
-  - rhel-8-for-x86_64-appstream-rpms
+  rhel-7-server-extras-rpms
+
+  .. code-block:: bash
+
+    [root]# subscription-manager repos --enable rhel-7-server-extras-rpms
+
+  .. For RHEL 8:
+  .. - rhel-8-for-x86_64-baseos-rpms
+  .. - rhel-8-for-x86_64-appstream-rpms
 
 Configure SElinux
 `````````````````
@@ -364,13 +371,16 @@ Configure Morpheus Database and User
 
    .. code-block:: bash
 
-    mysql> GRANT ALL PRIVILEGES ON *.* TO 'morpheusDbUser'@'%' IDENTIFIED BY 'morpheusDbUserPassword';
+    mysql> GRANT ALL PRIVILEGES ON morpheus.* TO 'morpheusDbUser'@'%' IDENTIFIED BY 'morpheusDbUserPassword' with grant option;
+
+    mysql> GRANT SELECT, PROCESS, SHOW DATABASES ON *.* TO 'morpheusDbUser'@'%' IDENTIFIED BY 'morpheusDbUserPassword';
 
     mysql> FLUSH PRIVILEGES;
 
+    mysql> exit
+
    .. important:: If you grant privileges to the morpheusDbUser to only the morpheus database, you will also need to GRANT SELECT, PROCESS, SHOW DATABASES, SUPER ON PRIVILEGES to the morpheusDbUser on *.* for the Appliance Health service.
 
-    mysql> exit
 
 Copy SSL Files to other nodes
 `````````````````````````````
@@ -379,25 +389,38 @@ During initialization of **Node 01** the required `pem` files will be generated 
 
 #. Copy the following files from **Node 01** to the same path (default is /var/lib/mysql) on **Node 02** and **Node 03**:
 
-   From **Node 01**
-   
-   .. code-block:: bash
+   .. content-tabs::
 
-    [root]# scp /var/lib/mysql/ca.pem root@192.168.101.02:/root
-    [root]# scp /var/lib/mysql/server-cert.pem root@192.168.101.02:/root
-    [root]# scp /var/lib/mysql/server-key.pem root@192.168.101.02:/root
+      .. tab-container:: tab1
+         :title: DB Node 1
 
-    [root]# scp /var/lib/mysql/ca.pem root@192.168.101.03:/root
-    [root]# scp /var/lib/mysql/server-cert.pem root@192.168.101.03:/root
-    [root]# scp /var/lib/mysql/server-key.pem root@192.168.101.03:/root
+         .. code-block:: bash
 
-   From **Node 02** and **Node 03**
+            [root]# scp /var/lib/mysql/ca.pem root@192.168.101.02:/root
+            [root]# scp /var/lib/mysql/server-cert.pem root@192.168.101.02:/root
+            [root]# scp /var/lib/mysql/server-key.pem root@192.168.101.02:/root
+
+            [root]# scp /var/lib/mysql/ca.pem root@192.168.101.03:/root
+            [root]# scp /var/lib/mysql/server-cert.pem root@192.168.101.03:/root
+            [root]# scp /var/lib/mysql/server-key.pem root@192.168.101.03:/root
+
+      .. tab-container:: tab2
+         :title: DB Node 2
+
+         .. code-block:: bash
    
-   .. code-block:: bash
+            [root]# cp /root/ca.pem /var/lib/mysql/
+            [root]# cp /root/server-cert.pem /var/lib/mysql/
+            [root]# cp /root/server-key.pem /var/lib/mysql/
+      
+      .. tab-container:: tab3
+         :title: DB Node 3
+
+         .. code-block:: bash
    
-    [root]# cp /root/ca.pem /var/lib/mysql/
-    [root]# cp /root/server-cert.pem /var/lib/mysql/
-    [root]# cp /root/server-key.pem /var/lib/mysql/
+            [root]# cp /root/ca.pem /var/lib/mysql/
+            [root]# cp /root/server-cert.pem /var/lib/mysql/
+            [root]# cp /root/server-key.pem /var/lib/mysql/
 
    .. important:: Ensure all 3 files match on all 3 nodes, including path, owner and permissions.
 
@@ -406,11 +429,21 @@ During initialization of **Node 01** the required `pem` files will be generated 
 Start the Remaining Nodes
 `````````````````````````
 
-#. Start mysql on **Node 02** and **Node 03**
+   .. content-tabs::
 
-   .. code-block:: bash
+      .. tab-container:: tab1
+         :title: DB Node 2
 
-    [root]# systemctl start mysql
+         .. code-block:: bash
+
+            [root]# systemctl start mysql
+
+      .. tab-container:: tab2
+         :title: DB Node 3
+
+         .. code-block:: bash
+
+            [root]# systemctl start mysql
 
    The services will automatically join the cluster using the sstuser we created earlier.
 
