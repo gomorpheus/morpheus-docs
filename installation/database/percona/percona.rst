@@ -1,7 +1,7 @@
 .. _perconainstall:
 
-.. Percona XtraDB Cluster with TLS
-.. ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Percona XtraDB Cluster with TLS
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. content-tabs::
 
