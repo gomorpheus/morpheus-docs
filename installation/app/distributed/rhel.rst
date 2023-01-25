@@ -1,7 +1,7 @@
 Full HA Install (RHEL/CentOS)
 -----------------------------
 
-.. include::   /installation/database/perconaTls.rst
+.. include::   /installation/database/percona/perconaTls-rhel7.rst
 .. include::   /installation/messaging/rabbitmq.rst
 .. include::   /installation/logs/elasticsearch.rst
 .. include::   /installation/app/appliance_ha.rst
