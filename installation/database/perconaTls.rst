@@ -73,14 +73,14 @@ The following OS repositories are required, in addition to the Percona repositor
 Configure SElinux
 `````````````````
 
-Percona recommends setting SELinux from ``enforcing`` to ``permissive`` to eliminate interference.  Run the following to set SELinux to permissive on each database node:
+The `Percona Documentation <https://docs.percona.com/percona-xtradb-cluster/5.7/install/yum.html>`_ recommends setting SELinux from ``enforcing`` to ``permissive`` to eliminate interference.  Run the following to set SELinux to permissive on each database node:
   
   .. code-block:: bash
 
     [root]# setenforce 0
     [root]# sed -i 's/SELINUX=enforcing/SELINUX=permissive/g' /etc/selinux/config
 
-If enforcing is required by the organization, SELinux rules can be added to ensure interference is eliminated.  To allow Percona XtraDB Cluster functionality when SELinux is ``Enforcing``, run the following on each database Node:
+**(Optional)** If enforcing is required by the organization, SELinux rules can be added to ensure interference is eliminated.  To allow Percona XtraDB Cluster functionality when SELinux is ``Enforcing``, run the following on each database Node:
 
 #. Install SELinux utilities
 
