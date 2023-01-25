@@ -21,7 +21,7 @@ TRUST PROVIDER
 STORAGE MODE
   Single Disk, LVM or Clustered
 BACKUP PROVIDER
-  Select Internal Backups (Morpheus) or a Backup Integration
+  Select a backup provider. Depending on the Cloud type and any currently-configured backup plugins you may select Internal Backups (Morpheus) or another configured backup solution
 REPLICATION PROVIDER
   Sets the default Replication Provider for the Cloud. Select an existing Replication Provider Integration
 GUIDANCE

@@ -68,11 +68,6 @@ Backups
 
 .. note:: The backup /working and /backups paths are configurable in morpheus.rb with `bitcan['working_directory'] = '$path'` and `bitcan['backup_directory'] = '/tmp'`
 
-Migrations
-^^^^^^^^^^
-
-When performing a Hypervisor to Hypervisor migration, such as VMware to AWS, Virtual Images are written to local storage before conversion and/or upload to the target hypervisor. Please ensure adequate space in ``/var/opt/morpheus/morpheus-ui/vms`` or other configured local Storage Provider paths when performing Migrations.
-
 VM Logs and Stats
 ^^^^^^^^^^^^^^^^^
 
