@@ -41,8 +41,8 @@ Percona nodes.
 
     [root]# ufw allow 3306,4444,4567,4568/tcp
    
-onfigure AppArmor
-`````````````````
+Configure AppArmor
+``````````````````
 
 Percona recommends completely removing AppArmor, in case a previous AppArmor profile exists.  See the XtraDB documentation at the top of the page for more information.
   .. code-block:: bash
