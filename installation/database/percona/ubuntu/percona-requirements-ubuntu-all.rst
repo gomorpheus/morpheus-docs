@@ -27,7 +27,9 @@ Requirements
 
 Current Operating System (OS) support can be found here:
 
-`XtraDB 5.7 Support <https://www.percona.com/services/policies/percona-software-support-lifecycle#mysql>`_
+   `XtraDB 5.7 Support <https://www.percona.com/services/policies/percona-software-support-lifecycle#mysql>`_
+
+   .. note:: At the time of this writing, Ubuntu 22.04 is not supported
 
 Percona requires the following TCP ports for the cluster nodes. Please create the appropriate firewall rules on your
 Percona nodes.

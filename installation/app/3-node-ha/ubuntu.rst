@@ -1,6 +1,6 @@
-.. _3nodeinstall-ubuntu2004:
+.. _3nodeinstall-ubuntu:
 
-3-Node HA Install (Ubuntu 2004)
+3-Node HA Install (Ubuntu 20.04/22.04)
 -------------------------------
 
 Distributed App Nodes with Externalized DB
@@ -9,7 +9,7 @@ Distributed App Nodes with Externalized DB
 
 .. include:: /installation/app/default-locations.rst
 
-.. include:: /installation/database/percona/perconaTls-ubuntu2004.rst
+.. include:: /installation/database/percona/perconaTls-ubuntu.rst
 
 .. include:: /installation/app/3-node-ha/app-node-installation-ubuntu.rst
 
