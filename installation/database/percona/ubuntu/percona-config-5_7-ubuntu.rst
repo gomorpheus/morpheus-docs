@@ -238,7 +238,7 @@ Configure Morpheus Database and User
 
    .. important:: If you grant privileges to the morpheusDbUser to only the morpheus database, you will also need to GRANT SELECT, PROCESS, SHOW DATABASES, SUPER ON PRIVILEGES to the morpheusDbUser on *.* for the Appliance Health service.
 
-CCopy SSL Files to other nodes
+Copy SSL Files to other nodes
 `````````````````````````````
 
 During initialization of **Node 01** the required `pem` files will be generated in ``/var/lib/mysql``. The ``ca.pem``, ``server-cert.pem`` and ``server-key.pem`` files need to match on all nodes in the cluster.

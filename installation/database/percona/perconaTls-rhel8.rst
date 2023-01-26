@@ -9,4 +9,4 @@ CentOS/RHEL 8 Percona XtraDB Cluster with TLS
 
 .. include::  /installation/database/percona/rhel/percona-requirements-rhel8.rst
 
-.. include::  /installation/database/percona/rhel/percona-config-5_7.rst
+.. include::  /installation/database/percona/rhel/percona-config-5_7-rhel.rst
