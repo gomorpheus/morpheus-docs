@@ -28,17 +28,17 @@ App Node Installation
 
           .. code-block:: bash
 
-             appliance_url 'https://morpheus.localdomain'
-             elasticsearch['es_hosts'] = {'10.100.10.121' => 9200, '10.100.10.122' => 9200, '10.100.10.123' => 9200}
-             elasticsearch['node_name'] = '10.100.10.121'
-             elasticsearch['host'] = '0.0.0.0'
-             rabbitmq['host'] = '0.0.0.0'
-             rabbitmq['nodename'] = 'rabbit@node01'
-             mysql['enable'] = false
-             mysql['host'] = {'10.100.10.111' => 3306, '10.100.10.112' => 3306, '10.100.10.113' => 3306}
-             mysql['morpheus_db'] = 'morpheus'
-             mysql['morpheus_db_user'] = 'morpheusDbUser'
-             mysql['morpheus_password'] = 'morpheusDbUserPassword'
+            appliance_url 'https://morpheus.localdomain'
+            elasticsearch['es_hosts'] = {'10.100.10.121' => 9200, '10.100.10.122' => 9200, '10.100.10.123' => 9200}
+            elasticsearch['node_name'] = '10.100.10.121'
+            elasticsearch['host'] = '0.0.0.0'
+            rabbitmq['host'] = '0.0.0.0'
+            rabbitmq['nodename'] = 'rabbit@node01'
+            mysql['enable'] = false
+            mysql['host'] = {'10.100.10.111' => 3306, '10.100.10.112' => 3306, '10.100.10.113' => 3306}
+            mysql['morpheus_db'] = 'morpheus'
+            mysql['morpheus_db_user'] = 'morpheusDbUser'
+            mysql['morpheus_password'] = 'morpheusDbUserPassword'
 
       .. tab-container:: tab2
          :title: Node 2

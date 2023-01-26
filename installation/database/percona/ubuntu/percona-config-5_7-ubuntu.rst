@@ -203,7 +203,7 @@ Bootstrap Node 01
 
    .. NOTE:: Startup failures are commonly caused by misconfigured ``/etc/mysql/my.cnf`` files. Also verify ``safe_to_bootstrap`` is set to ``1`` on Node 01 in ``/var/lib/mysql/grastate.dat``.
 
-.. include:: /installation/database/percona/config-5_7-generic.rst
+.. include:: /installation/database/percona/percona-config-5_7-generic.rst
 
 Verify Configuration
 ````````````````````

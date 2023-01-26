@@ -15,7 +15,7 @@ App Node Installation
           .. code-block:: bash
 
              [root@node-(1/2/3) ~]# wget https://example/path/morpheus-appliance_ver-1.amd64.deb
-             [root@node-(1/2/3) ~]# dpkg -i morpheus-appliance-appliance_ver-1.amd64.rpm
+             [root@node-(1/2/3) ~]# dpkg -i morpheus-appliance-appliance_ver-1.amd64.deb
 
 #. Do NOT run reconfigure yet. The |morpheus| configuration file must be edited prior to the initial reconfigure.
 
@@ -28,17 +28,17 @@ App Node Installation
 
           .. code-block:: bash
 
-             appliance_url 'https://morpheus.localdomain'
-             elasticsearch['es_hosts'] = {'10.100.10.121' => 9200, '10.100.10.122' => 9200, '10.100.10.123' => 9200}
-             elasticsearch['node_name'] = '10.100.10.121'
-             elasticsearch['host'] = '0.0.0.0'
-             rabbitmq['host'] = '0.0.0.0'
-             rabbitmq['nodename'] = 'rabbit@node01'
-             mysql['enable'] = false
-             mysql['host'] = {'10.100.10.111' => 3306, '10.100.10.112' => 3306, '10.100.10.113' => 3306}
-             mysql['morpheus_db'] = 'morpheus'
-             mysql['morpheus_db_user'] = 'morpheusDbUser'
-             mysql['morpheus_password'] = 'morpheusDbUserPassword'
+            appliance_url 'https://morpheus.localdomain'
+            elasticsearch['es_hosts'] = {'10.100.10.121' => 9200, '10.100.10.122' => 9200, '10.100.10.123' => 9200}
+            elasticsearch['node_name'] = '10.100.10.121'
+            elasticsearch['host'] = '0.0.0.0'
+            rabbitmq['host'] = '0.0.0.0'
+            rabbitmq['nodename'] = 'rabbit@node01'
+            mysql['enable'] = false
+            mysql['host'] = {'10.100.10.111' => 3306, '10.100.10.112' => 3306, '10.100.10.113' => 3306}
+            mysql['morpheus_db'] = 'morpheus'
+            mysql['morpheus_db_user'] = 'morpheusDbUser'
+            mysql['morpheus_password'] = 'morpheusDbUserPassword'
 
       .. tab-container:: tab2
          :title: Node 2
@@ -73,7 +73,6 @@ App Node Installation
             mysql['morpheus_db'] = 'morpheus'
             mysql['morpheus_db_user'] = 'morpheusDbUser'
             mysql['morpheus_password'] = 'morpheusDbUserPassword'
-
 
    .. note:: The configurations above for ```mysql['host']`` shows a list pf hosts, if the database has multiple endpoints.  Like other options in the configuration, ``mysql['host']`` can be a single entry, if the database has a single endpoint:  ``mysql['host'] = 'myDbEndpoint.example.com`` or ``mysql['host'] = '10.100.10.111'``
    
