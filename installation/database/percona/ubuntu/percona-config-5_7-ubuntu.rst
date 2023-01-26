@@ -1,92 +1,21 @@
-Configure SElinux
-`````````````````
-
-The `Percona Documentation <https://docs.percona.com/percona-xtradb-cluster/5.7/install/yum.html>`_ recommends setting SELinux from ``enforcing`` to ``permissive`` to eliminate interference.  Run the following to set SELinux to permissive on each database node:
-  
-  .. code-block:: bash
-
-    [root]# setenforce 0
-    [root]# sed -i 's/SELINUX=enforcing/SELINUX=permissive/g' /etc/selinux/config
-
-**(Optional)** If enforcing is required by the organization, SELinux rules can be added to ensure interference is eliminated.  To allow Percona XtraDB Cluster functionality when SELinux is ``Enforcing``, run the following on each database Node:
-
-#. Install SELinux utilities
-
-   .. code-block:: bash
-
-    [root]# yum install -y policycoreutils-python.x86_64
-
-#. Configure Percona ports for SELinux:
-
-   .. code-block:: bash
-
-    [root]# semanage port -m -t mysqld_port_t -p tcp 4444
-    [root]# semanage port -m -t mysqld_port_t -p tcp 4567
-    [root]# semanage port -a -t mysqld_port_t -p tcp 4568
-
-#. Create the policy file PXC.te
-
-   .. code-block:: bash
-
-    [root]# vi PXC.te
-    module PXC 1.0;
-    require {
-            type unconfined_t;
-            type mysqld_t;
-            type unconfined_service_t;
-            type tmp_t;
-            type sysctl_net_t;
-            type kernel_t;
-            type mysqld_safe_t;
-            class process { getattr setpgid };
-            class unix_stream_socket connectto;
-            class system module_request;
-            class file { getattr open read write };
-            class dir search;
-      }
-
-      #============= mysqld_t ==============
-
-     allow mysqld_t kernel_t:system module_request;
-     allow mysqld_t self:process { getattr setpgid };
-     allow mysqld_t self:unix_stream_socket connectto;
-     allow mysqld_t sysctl_net_t:dir search;
-     allow mysqld_t sysctl_net_t:file { getattr open read };
-     allow mysqld_t tmp_t:file write;
-
-#. Compile and load the SELinux policy
-
-   .. code-block:: bash
-
-    [root]# checkmodule -M -m -o PXC.mod PXC.te
-    [root]# semodule_package -o PXC.pp -m PXC.mod
-    [root]# semodule -i PXC.pp
-
-
 Add Percona Repo
 ````````````````
 
-Additional information can be found here:
-
+Additional information can be found below:
 `Using percona-release <https://docs.percona.com/percona-software-repositories/installing.html>`_
-
 `percona-release Documentation <https://docs.percona.com/percona-software-repositories/percona-release.html>`_
-
 `percona-release Repository Locations <https://docs.percona.com/percona-software-repositories/repository-location.html>`_
 
 #. Add the Percona repo to your Linux Distro.
 
    .. code-block:: bash
 
-    [root]# yum install -y https://repo.percona.com/yum/percona-release-latest.noarch.rpm 
+    [root]# apt update -y
+    [root]# apt install curl -y
+    [root]# curl -O https://repo.percona.com/apt/percona-release_latest.generic_all.deb
+    [root]# apt install gnupg2 lsb-release ./percona-release_latest.generic_all.deb -y
+    [root]# apt update
     [root]# percona-release setup pxc-57
-
-#. The below commands will clean the repos and update the server.
-
-   .. code-block:: bash
-
-    [root]# yum clean all
-    [root]# yum update -y --skip-broken
 
 Installing Percona XtraDB Cluster
 ``````````````````````````````````
@@ -95,7 +24,8 @@ Installing Percona XtraDB Cluster
 
    .. code-block:: bash
 
-    [root]# yum install -y Percona-XtraDB-Cluster-57
+    [root]# apt install percona-xtradb-cluster-57
+       set root password during install
 
 #. Enable the mysql service so that the service starts at boot on each database node.
 
@@ -109,27 +39,26 @@ Installing Percona XtraDB Cluster
 
     [root]# systemctl start mysql
 
-#. From **Node 01**, log into the mysql server and set a new root password. To get the temporary root mysql password you will need to run the below command.  The command will print the password to the screen. Copy the password and use it when logging in.
+#. From **Node 01**, log into the mysql server using the password set during installation
 
    .. code-block:: bash
 
-    [root]# grep 'temporary password' /var/log/mysqld.log
     [root]# mysql -u root -p
-       password: `enter password copied above`
+       password: `enter password from installation`
 
-#. Change the root user password to the mysql DB.  Note that the database from Node 1 will be replicated to all other nodes, changing the password on the additional nodes is not required.
+#. **(Optional)** Change the root user password to the mysql DB.  Note that the database from Node 01 will be replicated to all other nodes, changing the password on the additional nodes is not required.
 
    .. code-block:: bash
 
     mysql> ALTER USER 'root'@'localhost' IDENTIFIED BY 'rootPassword';
 
-#. Create the sstuser user, grant the permissions, and exit mysql.
+#. Create the sstuser user and grant the permissions.
 
    .. code-block:: bash
 
     mysql> CREATE USER 'sstuser'@'localhost' IDENTIFIED BY 'sstUserPassword';
 
-   .. NOTE:: The sstuser and password will be used in the /etc/my.cnf configuration.
+   .. NOTE:: The sstuser and password will be used in the /etc/mysql/my.cnf configuration.
 
    .. code-block:: bash
 
@@ -137,21 +66,26 @@ Installing Percona XtraDB Cluster
 
     mysql> FLUSH PRIVILEGES;
 
+#. Exit mysql then stop the mysql services:
+
+   .. code-block:: bash
+
     mysql> exit
     Bye
+    [root]# systemctl stop mysql.service
 
 #. Stop the mysql service on **all nodes**
    
    .. code-block:: bash
 
-    [root]# systemctl stop mysql
+    [root]# service mysql stop
 
 Once the service is stopped on all nodes move onto the next step.
 
-Add [mysqld] to my.cnf in /etc/
+Add [mysqld] to my.cnf in /etc/mysql/
 ```````````````````````````````
 
-#. Add the following to ``/etc/my.cnf``.  The ``wsrep_node_name`` and ``wsrep_node_address`` fields must to be unique on each of the nodes.  The ``wsrep_sst_auth`` field should match the SST username and password created previously.
+#. Add the following to ``/etc/mysql/my.cnf``.  The ``wsrep_node_name`` and ``wsrep_node_address`` fields must to be unique on each of the nodes.  The ``wsrep_sst_auth`` field should match the SST username and password created previously.
 
    .. content-tabs::
 
@@ -160,14 +94,14 @@ Add [mysqld] to my.cnf in /etc/
 
          .. code-block:: bash
 
-            [root]# vi /etc/my.cnf
+            [root]# nano /etc/mysql/my.cnf
 
             [mysqld]
             pxc_encrypt_cluster_traffic=ON
             max_connections = 451
             max_allowed_packet = 256M
             
-            wsrep_provider=/usr/lib64/galera3/libgalera_smm.so
+            wsrep_provider=/usr/lib/galera3/libgalera_smm.so
             wsrep_provider_options="cert.optimistic_pa=NO"
             wsrep_certification_rules='OPTIMIZED'
             
@@ -193,14 +127,14 @@ Add [mysqld] to my.cnf in /etc/
 
          .. code-block:: bash
 
-            [root]# vi /etc/my.cnf
+            [root]# nano /etc/mysql/my.cnf
 
             [mysqld]
             pxc_encrypt_cluster_traffic=ON
             max_connections = 451
             max_allowed_packet = 256M
             
-            wsrep_provider=/usr/lib64/galera3/libgalera_smm.so
+            wsrep_provider=/usr/lib/galera3/libgalera_smm.so
             wsrep_provider_options="cert.optimistic_pa=NO"
             wsrep_certification_rules='OPTIMIZED'
             
@@ -227,14 +161,14 @@ Add [mysqld] to my.cnf in /etc/
 
          .. code-block:: bash
 
-            [root]# vi /etc/my.cnf
+            [root]# nano /etc/mysql/my.cnf
 
             [mysqld]
             pxc_encrypt_cluster_traffic=ON
             max_connections = 451
             max_allowed_packet = 256M
             
-            wsrep_provider=/usr/lib64/galera3/libgalera_smm.so
+            wsrep_provider=/usr/lib/galera3/libgalera_smm.so
             wsrep_provider_options="cert.optimistic_pa=NO"
             wsrep_certification_rules='OPTIMIZED'
             
@@ -257,7 +191,7 @@ Add [mysqld] to my.cnf in /etc/
             
    .. note:: The default setting on |morpheus| app nodes for ``max_active`` database connections is 150. For this example we are setting ``max_connections = 451`` to account for 3 maximum simultaneous |morpheus| app node connections. If ``max_active`` is configured higher on the app nodes, or the number of app nodes is not 3, adjust accordingly for your configuration.
 
-#. Save ``/etc/my.cnf``
+#. Save ``/etc/mysql/my.cnf``
 
 Bootstrap Node 01
 `````````````````
@@ -268,16 +202,16 @@ Bootstrap Node 01
 
    .. code-block:: bash
 
-    systemctl start mysql@bootstrap.service
+    [root]# /etc/init.d/mysql bootstrap-pxc
 
    .. NOTE:: The mysql service will start during the bootstrap.
 
-   .. NOTE:: Startup failures are commonly caused by misconfigured ``/etc/my.cnf`` files. Also verify ``safe_to_bootstrap`` is set to ``1`` on Node 01 in ``/var/lib/mysql/grastate.dat``.
+   .. NOTE:: Startup failures are commonly caused by misconfigured ``/etc/mysql/my.cnf`` files. Also verify ``safe_to_bootstrap`` is set to ``1`` on Node 01 in ``/var/lib/mysql/grastate.dat``.
 
 Configure Morpheus Database and User
 ````````````````````````````````````
 
-#. Create the Database you will be using with |morpheus|.  Login to mysql on **Node 01**:
+#. Create the Database you will be using with |morpheus|.  Login to mysql on Node 01:
 
    .. code-block:: bash
 
@@ -299,9 +233,7 @@ Configure Morpheus Database and User
 
    .. code-block:: bash
 
-    mysql> GRANT ALL PRIVILEGES ON morpheus.* TO 'morpheusDbUser'@'%' IDENTIFIED BY 'morpheusDbUserPassword' with grant option;
-
-    mysql> GRANT SELECT, PROCESS, SHOW DATABASES ON *.* TO 'morpheusDbUser'@'%' IDENTIFIED BY 'morpheusDbUserPassword';
+    mysql> GRANT ALL PRIVILEGES ON *.* TO 'morpheusDbUser'@'%' IDENTIFIED BY 'morpheusDbUserPassword';
 
     mysql> FLUSH PRIVILEGES;
 
@@ -309,42 +241,32 @@ Configure Morpheus Database and User
 
    .. important:: If you grant privileges to the morpheusDbUser to only the morpheus database, you will also need to GRANT SELECT, PROCESS, SHOW DATABASES, SUPER ON PRIVILEGES to the morpheusDbUser on *.* for the Appliance Health service.
 
-
 Copy SSL Files to other nodes
 `````````````````````````````
 
-During initialization of **Node 01** the required `pem` files will be generated in ``/var/lib/mysql``. The ``ca.pem``, ``server-cert.pem`` and ``server-key.pem`` files need to match on all nodes in the cluster.
+During initialization of Node 01 the required `pem` files will be generated in ``/var/lib/mysql``. The ``ca.pem``, ``server-cert.pem`` and ``server-key.pem`` files need to match on all nodes in the cluster.
 
-#. Copy the following files from **Node 01** to the same path (default is /var/lib/mysql) on **Node 02** and **Node 03**:
+#. Copy the following files from Node 01 to the same path (default is /var/lib/mysql) on Node 02 and Node 03:
 
-   - /var/lib/mysql/ca.pem
-   - /var/lib/mysql/server-cert.pem
-   - /var/lib/mysql/server-key.pem
+   From Node 01
 
-   .. content-tabs::
+   .. code-block:: bash
 
-      .. tab-container:: tab1
-         :title: DB Node 1
+    [root]# scp /var/lib/mysql/ca.pem root@192.168.101.02:/root
+    [root]# scp /var/lib/mysql/server-cert.pem root@192.168.101.02:/root
+    [root]# scp /var/lib/mysql/server-key.pem root@192.168.101.02:/root
 
-         .. code-block:: bash
+    [root]# scp /var/lib/mysql/ca.pem root@192.168.101.03:/root
+    [root]# scp /var/lib/mysql/server-cert.pem root@192.168.101.03:/root
+    [root]# scp /var/lib/mysql/server-key.pem root@192.168.101.03:/root
 
-            [root]# scp /var/lib/mysql/ca.pem /var/lib/mysql/server-cert.pem /var/lib/mysql/server-key.pem root@192.168.101.02:/root
-
-            [root]# scp /var/lib/mysql/ca.pem /var/lib/mysql/server-cert.pem /var/lib/mysql/server-key.pem root@192.168.101.03:/root
-
-      .. tab-container:: tab2
-         :title: DB Node 2
-
-         .. code-block:: bash
+   From Node 02 and Node 03
    
-            [root]# cp /root/ca.pem /root/server-cert.pem /root/server-key.pem /var/lib/mysql/
-      
-      .. tab-container:: tab3
-         :title: DB Node 3
-
-         .. code-block:: bash
+   .. code-block:: bash
    
-            [root]# cp /root/ca.pem /root/server-cert.pem /root/server-key.pem /var/lib/mysql/
+    [root]# cp /root/ca.pem /var/lib/mysql/
+    [root]# cp /root/server-cert.pem /var/lib/mysql/
+    [root]# cp /root/server-key.pem /var/lib/mysql/
 
    .. important:: Ensure all 3 files match on all 3 nodes, including path, owner and permissions.
 
@@ -353,46 +275,19 @@ During initialization of **Node 01** the required `pem` files will be generated 
 Start the Remaining Nodes
 `````````````````````````
 
-   .. content-tabs::
+#. Start mysql on Node 02 and Node 03
 
-      .. tab-container:: tab1
-         :title: DB Node 2
+   .. code-block:: bash
 
-         .. code-block:: bash
-
-            [root]# systemctl start mysql
-
-      .. tab-container:: tab2
-         :title: DB Node 3
-
-         .. code-block:: bash
-
-            [root]# systemctl start mysql
+    [root]# systemctl start mysql.service
 
    The services will automatically join the cluster using the sstuser we created earlier.
 
-   .. NOTE:: Startup failures are commonly caused by misconfigured /etc/my.cnf files.
+   .. NOTE:: Startup failures are commonly caused by misconfigured /etc/mysql/my.cnf files.
 
 
 Verify Configuration
 ````````````````````
-
-#. Verify SELinux is not rejecting any db cluster communication by running the below on all db nodes:
-
-   .. code-block:: bash
-
-    [root@allDbNodes]# grep -i denied /var/log/audit/audit.log | grep mysqld_t
-
-   If there are any results, address the source or update the SELinux Policy to resolve.
-
-#. Update SELinux if necessary
-
-   .. code-block:: bash
-
-    [root@allDbNodes]# rm -f PXC.*
-    [root@allDbNodes]# grep -i denied /var/log/audit/audit.log | grep mysqld_t | audit2allow -M PXC
-    [root@allDbNodes]# semodule -i PXC.pp
-
 
 #. To verify all nodes joined the cluster, on any db node login to mysql and run ``show status like 'wsrep%';``
 
