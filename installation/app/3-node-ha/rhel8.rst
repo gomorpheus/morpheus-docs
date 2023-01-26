@@ -7,16 +7,9 @@ Distributed App Nodes with Externalized DB
 
 .. include:: /installation/app/3-node-ha/assumptions.rst
 
-Database Installation
-^^^^^^^^^^^^^^^^^^^^^
-
-Assuming a database has not been provided, this document will include steps from the :ref:`Percona TLS RHEL8` documentation, but other technologies can be chosen from the :ref:`database` documentation.
+.. include:: /installation/app/default-locations.rst
 
 .. include:: /installation/database/percona/perconaTls-rhel8.rst
-
-.. `Database Install Guides </installation/database/database.rst>`_
-
-.. .. include::   /getting_started/installation/distributed/full/perconaTls.rst
 
 .. include:: /installation/app/3-node-ha/app-node-installation-rhel.rst
 

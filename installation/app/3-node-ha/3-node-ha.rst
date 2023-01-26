@@ -4,4 +4,4 @@
 .. toctree::
    ..:maxdepth: 4
 
-   /installation/app/3-node-ha/rhel.rst
+   /installation/app/3-node-ha/rhel8.rst

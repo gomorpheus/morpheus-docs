@@ -5,7 +5,7 @@ App Node Installation
 
    .. note:: For offline or nodes that cannot reach |repo_host_url|, both the standard and supplemental packages will need to be transferred and then installed on the |morpheus| nodes.
 
-   .. note:: |morpheus| packages can be found in the Downloads section of the `Moprheus Hub <https://morpheushub.com/download>`
+   .. note:: |morpheus| packages can be found in the Downloads section of the `Morpheus Hub <https://morpheushub.com/download>`_
 
    .. content-tabs::
 

@@ -12,5 +12,3 @@ This guide assumes the following:
    :alt: Morpheus 3-Node HA Architecture
 
    Morpheus 3-Node HA Architecture
-
-.. include:: /installation/app/default-locations.rst
