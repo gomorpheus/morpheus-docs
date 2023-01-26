@@ -12,6 +12,8 @@ Database Installation
 
 Assuming a database has not been provided, this document will include steps from the :ref:`Percona TLS RHEL8` documentation, but other technologies can be chosen from the :ref:`database` documentation.
 
+.. include:: /installation/database/percona/perconaTls-rhel8.rst
+
 .. `Database Install Guides </installation/database/database.rst>`_
 
 .. .. include::   /getting_started/installation/distributed/full/perconaTls.rst
