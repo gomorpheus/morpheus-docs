@@ -39,4 +39,5 @@ Percona nodes.
 
   .. code-block:: bash
 
-    [root]# firewall-cmd --zone=public --add-port={3306/tcp,4444/tcp,4567/tcp,4568/tcp}
+    [root]# firewall-cmd --zone=public --add-port={3306/tcp,4444/tcp,4567/tcp,4568/tcp} --permanent
+    [root]# firewall-cmd --reload

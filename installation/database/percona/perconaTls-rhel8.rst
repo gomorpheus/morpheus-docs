@@ -1,4 +1,4 @@
-.. _Percona TLS 8:
+.. _Percona TLS RHEL8:
 
 CentOS/RHEL 8 Percona XtraDB Cluster with TLS
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
