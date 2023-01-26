@@ -14,8 +14,8 @@ App Node Installation
 
           .. code-block:: bash
 
-             [root@node-(1/2/3) ~]# wget https://example/path/morpheus-appliance-ver-1.el8.x86_64.rpm
-             [root@node-(1/2/3) ~]# rpm -ihv morpheus-appliance-appliance-ver-1.el8.x86_64.rpm
+             [root@node-(1/2/3) ~]# wget https://example/path/morpheus-appliance_ver-1.amd64.deb
+             [root@node-(1/2/3) ~]# dpkg -i morpheus-appliance-appliance_ver-1.amd64.rpm
 
 #. Do NOT run reconfigure yet. The |morpheus| configuration file must be edited prior to the initial reconfigure.
 
