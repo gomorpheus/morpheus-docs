@@ -52,7 +52,7 @@ Installing Percona XtraDB Cluster
     [root]# mysql -u root -p
        password: `enter password copied above`
 
-#. Change the root user password to the mysql DB.  Note that the database from Node 1 will be replicated to all other nodes, changing the password on the additional nodes is not required.
+#. **(Optional)** Change the root user password to the mysql DB.  Note that the database from Node 1 will be replicated to all other nodes, changing the password on the additional nodes is not required.
 
    .. code-block:: bash
 
@@ -234,9 +234,9 @@ Configure Morpheus Database and User
 
    .. code-block:: bash
 
-    mysql> GRANT ALL PRIVILEGES ON morpheus.* TO 'morpheusDbUser'@'%' IDENTIFIED BY 'morpheusDbUserPassword' with grant option;
+    mysql> GRANT ALL PRIVILEGES ON morpheus.* TO 'morpheusDbUser'@'%' with grant option;
 
-    mysql> GRANT SELECT, PROCESS, SHOW DATABASES ON *.* TO 'morpheusDbUser'@'%' IDENTIFIED BY 'morpheusDbUserPassword';
+    mysql> GRANT SELECT, PROCESS, SHOW DATABASES ON *.* TO 'morpheusDbUser'@'%';
 
     mysql> FLUSH PRIVILEGES;
 
@@ -307,7 +307,6 @@ Start the Remaining Nodes
    The services will automatically join the cluster using the sstuser we created earlier.
 
    .. NOTE:: Startup failures are commonly caused by misconfigured /etc/my.cnf files.
-
 
 Verify Configuration
 ````````````````````

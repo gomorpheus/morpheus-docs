@@ -105,3 +105,4 @@ The `Percona Documentation <https://docs.percona.com/percona-xtradb-cluster/5.7/
     [root]# checkmodule -M -m -o PXC.mod PXC.te
     [root]# semodule_package -o PXC.pp -m PXC.mod
     [root]# semodule -i PXC.pp
+

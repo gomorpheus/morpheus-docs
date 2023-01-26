@@ -45,10 +45,12 @@ Configure AppArmor
 ``````````````````
 
 Percona recommends completely removing AppArmor, in case a previous AppArmor profile exists.  See the XtraDB documentation at the top of the page for more information.
+  
   .. code-block:: bash
 
-    [root]# apt remove apparmor
+    [root]# apt remove apparmor -y
 
 **(Optional)** If AppArmor is required by the organization, profiles can be added to ensure interference is eliminated.  To allow Percona XtraDB Cluster functionality when AppArmor is installed, follow the documentation here:
 
    `Enabing AppArmor <https://docs.percona.com/percona-xtradb-cluster/8.0/security/apparmor.html#apparmor>`_
+

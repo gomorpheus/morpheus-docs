@@ -14,7 +14,7 @@ Additional information can be found below:
     [root]# apt install curl -y
     [root]# curl -O https://repo.percona.com/apt/percona-release_latest.generic_all.deb
     [root]# apt install gnupg2 lsb-release ./percona-release_latest.generic_all.deb -y
-    [root]# apt update
+    [root]# apt update -y
     [root]# percona-release setup pxc-57
 
 Installing Percona XtraDB Cluster
@@ -24,7 +24,7 @@ Installing Percona XtraDB Cluster
 
    .. code-block:: bash
 
-    [root]# apt install percona-xtradb-cluster-57
+    [root]# apt install percona-xtradb-cluster-57 -y
        set root password during install
 
 #. Enable the mysql service so that the service starts at boot on each database node.
@@ -52,13 +52,13 @@ Installing Percona XtraDB Cluster
 
     mysql> ALTER USER 'root'@'localhost' IDENTIFIED BY 'rootPassword';
 
-#. Create the sstuser user and grant the permissions.
+#. Create the sstuser user, grant the permissions, and exit mysql.
 
    .. code-block:: bash
 
     mysql> CREATE USER 'sstuser'@'localhost' IDENTIFIED BY 'sstUserPassword';
 
-   .. NOTE:: The sstuser and password will be used in the /etc/mysql/my.cnf configuration.
+   .. NOTE:: The sstuser and password will be used in the /etc/my.cnf configuration.
 
    .. code-block:: bash
 
@@ -66,19 +66,14 @@ Installing Percona XtraDB Cluster
 
     mysql> FLUSH PRIVILEGES;
 
-#. Exit mysql then stop the mysql services:
-
-   .. code-block:: bash
-
     mysql> exit
     Bye
-    [root]# systemctl stop mysql.service
 
 #. Stop the mysql service on **all nodes**
    
    .. code-block:: bash
 
-    [root]# service mysql stop
+    [root]# systemctl stop mysql
 
 Once the service is stopped on all nodes move onto the next step.
 
@@ -233,7 +228,9 @@ Configure Morpheus Database and User
 
    .. code-block:: bash
 
-    mysql> GRANT ALL PRIVILEGES ON *.* TO 'morpheusDbUser'@'%' IDENTIFIED BY 'morpheusDbUserPassword';
+    mysql> GRANT ALL PRIVILEGES ON morpheus.* TO 'morpheusDbUser'@'%' with grant option;
+
+    mysql> GRANT SELECT, PROCESS, SHOW DATABASES ON *.* TO 'morpheusDbUser'@'%';
 
     mysql> FLUSH PRIVILEGES;
 
@@ -241,32 +238,41 @@ Configure Morpheus Database and User
 
    .. important:: If you grant privileges to the morpheusDbUser to only the morpheus database, you will also need to GRANT SELECT, PROCESS, SHOW DATABASES, SUPER ON PRIVILEGES to the morpheusDbUser on *.* for the Appliance Health service.
 
-Copy SSL Files to other nodes
+CCopy SSL Files to other nodes
 `````````````````````````````
 
-During initialization of Node 01 the required `pem` files will be generated in ``/var/lib/mysql``. The ``ca.pem``, ``server-cert.pem`` and ``server-key.pem`` files need to match on all nodes in the cluster.
+During initialization of **Node 01** the required `pem` files will be generated in ``/var/lib/mysql``. The ``ca.pem``, ``server-cert.pem`` and ``server-key.pem`` files need to match on all nodes in the cluster.
 
-#. Copy the following files from Node 01 to the same path (default is /var/lib/mysql) on Node 02 and Node 03:
+#. Copy the following files from **Node 01** to the same path (default is /var/lib/mysql) on **Node 02** and **Node 03**:
 
-   From Node 01
+   - /var/lib/mysql/ca.pem
+   - /var/lib/mysql/server-cert.pem
+   - /var/lib/mysql/server-key.pem
 
-   .. code-block:: bash
+   .. content-tabs::
 
-    [root]# scp /var/lib/mysql/ca.pem root@192.168.101.02:/root
-    [root]# scp /var/lib/mysql/server-cert.pem root@192.168.101.02:/root
-    [root]# scp /var/lib/mysql/server-key.pem root@192.168.101.02:/root
+      .. tab-container:: tab1
+         :title: DB Node 1
 
-    [root]# scp /var/lib/mysql/ca.pem root@192.168.101.03:/root
-    [root]# scp /var/lib/mysql/server-cert.pem root@192.168.101.03:/root
-    [root]# scp /var/lib/mysql/server-key.pem root@192.168.101.03:/root
+         .. code-block:: bash
 
-   From Node 02 and Node 03
+            [root]# scp /var/lib/mysql/ca.pem /var/lib/mysql/server-cert.pem /var/lib/mysql/server-key.pem root@192.168.101.02:/root
+
+            [root]# scp /var/lib/mysql/ca.pem /var/lib/mysql/server-cert.pem /var/lib/mysql/server-key.pem root@192.168.101.03:/root
+
+      .. tab-container:: tab2
+         :title: DB Node 2
+
+         .. code-block:: bash
    
-   .. code-block:: bash
+            [root]# cp /root/ca.pem /root/server-cert.pem /root/server-key.pem /var/lib/mysql/
+      
+      .. tab-container:: tab3
+         :title: DB Node 3
+
+         .. code-block:: bash
    
-    [root]# cp /root/ca.pem /var/lib/mysql/
-    [root]# cp /root/server-cert.pem /var/lib/mysql/
-    [root]# cp /root/server-key.pem /var/lib/mysql/
+            [root]# cp /root/ca.pem /root/server-cert.pem /root/server-key.pem /var/lib/mysql/
 
    .. important:: Ensure all 3 files match on all 3 nodes, including path, owner and permissions.
 
@@ -275,16 +281,25 @@ During initialization of Node 01 the required `pem` files will be generated in `
 Start the Remaining Nodes
 `````````````````````````
 
-#. Start mysql on Node 02 and Node 03
+   .. content-tabs::
 
-   .. code-block:: bash
+      .. tab-container:: tab1
+         :title: DB Node 2
 
-    [root]# systemctl start mysql.service
+         .. code-block:: bash
+
+            [root]# systemctl start mysql
+
+      .. tab-container:: tab2
+         :title: DB Node 3
+
+         .. code-block:: bash
+
+            [root]# systemctl start mysql
 
    The services will automatically join the cluster using the sstuser we created earlier.
 
-   .. NOTE:: Startup failures are commonly caused by misconfigured /etc/mysql/my.cnf files.
-
+   .. NOTE:: Startup failures are commonly caused by misconfigured /etc/my.cnf files.
 
 Verify Configuration
 ````````````````````

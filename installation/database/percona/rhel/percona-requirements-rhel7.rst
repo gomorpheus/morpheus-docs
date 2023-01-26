@@ -5,3 +5,4 @@ The following OS repositories are required to be enabled, in addition to the Per
   .. code-block:: bash
 
     [root]# subscription-manager repos --enable rhel-7-server-extras-rpms
+
