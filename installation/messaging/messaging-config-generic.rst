@@ -7,7 +7,6 @@
         systemctl stop rabbitmq-server
         systemctl enable rabbitmq-server
 
-|
    By default, RabbitMQ will set the nodename to the following format:  rabbit@HOSTNAME  Example:  rabbit@prdrabbit01
    In this case, the HOSTNAME is determined from the system RabbitMQ is being deployed to.  This hostname MUST be resolvable, either by ``/etc/hosts`` or DNS.
    Alternatively, if a different nodename needs to be specified, ``/etc/rabbitmq/rabbitmq-env.conf`` can be created and populated with environment variable overrides.
@@ -20,7 +19,6 @@
          # Input the following line:
          NODENAME=rabbit@rabbit-1
 
-|
    To verify the name that RabbitMQ has configured **after startup** (steps are below), run the following command:
 
    .. code-block:: bash
@@ -62,7 +60,6 @@
       chown rabbitmq:rabbitmq /var/lib/rabbitmq/.erlang.cookie
       chmod 400 /var/lib/rabbitmq/.erlang.cookie
 
-|
    Restart the service after changing the cookie, so it uses the new one
 
    .. code-block:: bash
