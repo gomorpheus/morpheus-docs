@@ -2,9 +2,10 @@
 
    Set the service to start automatically
 
-   .. code-block:: bash
+    .. code-block:: bash
 
-      systemctl enable rabbitmq-server
+        systemctl stop rabbitmq-server
+        systemctl enable rabbitmq-server
 
 |
    By default, RabbitMQ will set the nodename to the following format:  rabbit@HOSTNAME  Example:  rabbit@prdrabbit01
@@ -20,7 +21,7 @@
          NODENAME=rabbit@rabbit-1
 
 |
-   To verify the name that RabbitMQ has configured **after** startup, run the following command:
+   To verify the name that RabbitMQ has configured **after startup** (steps are below), run the following command:
 
    .. code-block:: bash
 
@@ -78,7 +79,7 @@
 
    .. important:: A reminder that the node 1 shortname must be resolvable, in addition to all other node shortnames.
 
-#. The cluster can be validated using the following command.  IF successful, all three nodes should be listed under "Running Nodes"
+#. The cluster can be validated using the following command from any node.  If successful, all three nodes should be listed under "Running Nodes"
 
    .. code-block:: bash
 
