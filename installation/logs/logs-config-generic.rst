@@ -1,6 +1,6 @@
 #. Stop and enable elasticsearch service
 
-    .. code-block:: bash
+   .. code-block:: bash
 
         systemctl stop elasticsearch
         systemctl enable elasticsearch
@@ -70,16 +70,16 @@
 
 #. Start Elasticsearch on each node.
 
-    .. code-block:: bash
+   .. code-block:: bash
 
-        systemctl start elasticsearch
+      systemctl start elasticsearch
 
 #. Verify cluster health
 
-    .. code-block:: bash
+   .. code-block:: bash
 
-        curl http://node_ip:9200/_cluster/health
+      curl http://node_ip:9200/_cluster/health
     
-        or
+      or
 
-        curl http://localhost:9200/_cluster/health
+      curl http://localhost:9200/_cluster/health
