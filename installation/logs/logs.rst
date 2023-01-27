@@ -4,4 +4,4 @@ Logs
 .. toctree::
    :maxdepth: 4
 
-   /installation/logs/elasticsearch.rst
+   /installation/logs/rhel8.rst
