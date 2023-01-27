@@ -5,3 +5,4 @@ Messaging
    :maxdepth: 4
 
    /installation/messaging/rhel8.rst
+   /installation/messaging/ubuntu.rst
