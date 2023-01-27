@@ -21,6 +21,7 @@
                #Sample elasticsearch.yml config. Adjusting values in elasticsearch.yml for each node in the cluster.
                #Note: Sample only, user configurations and requirements will vary.
 
+               cluster.name: "morpheus"
                node.name: "es-node-01" ##unique name of this node, does not need to be resolvable
                network.host: 10.10.10.11 ##ip of this node
                discovery.seed_hosts: ["10.10.10.11","10.10.10.12","10.10.10.13"] ## add all cluster node ip's
@@ -37,6 +38,7 @@
                #Sample elasticsearch.yml config. Adjusting values in elasticsearch.yml for each node in the cluster.
                #Note: Sample only, user configurations and requirements will vary.
 
+               cluster.name: "morpheus"
                node.name: "es-node-02" ##unique name of this node, does not need to be resolvable
                network.host: 10.10.10.12 ##ip of this node
                discovery.seed_hosts: ["10.10.10.11","10.10.10.12","10.10.10.13"] ## add all cluster node ip's
@@ -53,6 +55,7 @@
                #Sample elasticsearch.yml config. Adjusting values in elasticsearch.yml for each node in the cluster.
                #Note: Sample only, user configurations and requirements will vary.
 
+               cluster.name: "morpheus"
                node.name: "es-node-03" ##unique name of this node, does not need to be resolvable
                network.host: 10.10.10.13 ##ip of this node
                discovery.seed_hosts: ["10.10.10.11","10.10.10.12","10.10.10.13"] ## add all cluster node ip's

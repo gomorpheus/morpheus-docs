@@ -21,7 +21,7 @@ App Node Installation
 
 #. Next you will need to edit the |morpheus| configuration file ``/etc/morpheus/morpheus.rb`` on each node.
 
-   .. include:: /installation/app/3-node-ha/3-node-ha-morpheus_rb-config.rst
+   .. include:: /installation/app/3-node-ha/distributed-morpheus_rb-config.rst
 
    .. note:: The configurations above for ```mysql['host']`` shows a list of hosts, if the database has multiple endpoints.  Like other options in the configuration, ``mysql['host']`` can be a single entry, if the database has a single endpoint:  ``mysql['host'] = 'myDbEndpoint.example.com`` or ``mysql['host'] = '10.100.10.111'``
    

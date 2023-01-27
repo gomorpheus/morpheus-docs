@@ -35,3 +35,6 @@ RabbitMQ requires Erlang to be installed, the exact version will depend on which
          - 22.x
 
 |
+
+It is best practice to place a load balancer in front of the RabbitMQ nodes, to distribute traffic efficiently.  The VIP or IP that will be assigned to the load balancer will be needed when
+configuring the application.  Alternatively, each node could be pointed at a single RabbitMQ but this will not provide redundancy for each application node.

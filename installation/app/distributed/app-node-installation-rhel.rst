@@ -14,14 +14,14 @@ App Node Installation
 
           .. code-block:: bash
 
-             [root@node-(1/2/3) ~]# wget https://example/path/morpheus-appliance_ver-1.amd64.deb
-             [root@node-(1/2/3) ~]# dpkg -i morpheus-appliance-appliance_ver-1.amd64.deb
+             [root@node-(1/2/3) ~]# wget https://example/path/morpheus-appliance-ver-1.el8.x86_64.rpm
+             [root@node-(1/2/3) ~]# rpm -ihv morpheus-appliance-appliance-ver-1.el8.x86_64.rpm
 
 #. Do NOT run reconfigure yet. The |morpheus| configuration file must be edited prior to the initial reconfigure.
 
 #. Next you will need to edit the |morpheus| configuration file ``/etc/morpheus/morpheus.rb`` on each node.
 
-   .. include:: /installation/app/3-node-ha/3-node-ha-morpheus_rb-config.rst
+   .. include:: /installation/app/3-node-ha/distributed-morpheus_rb-config.rst
 
    .. note:: The configurations above for ```mysql['host']`` shows a list of hosts, if the database has multiple endpoints.  Like other options in the configuration, ``mysql['host']`` can be a single entry, if the database has a single endpoint:  ``mysql['host'] = 'myDbEndpoint.example.com`` or ``mysql['host'] = '10.100.10.111'``
    
