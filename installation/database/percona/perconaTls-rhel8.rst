@@ -1,7 +1,7 @@
 .. _Percona TLS RHEL8:
 
-CentOS/RHEL 8 Percona XtraDB Cluster with TLS
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Percona XtraDB Cluster with TLS (RHEL/CentOS 8)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. include::  /installation/database/percona/percona-intro.rst
 

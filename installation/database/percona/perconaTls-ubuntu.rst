@@ -1,7 +1,7 @@
 .. _Percona-TLS-ubuntu:
 
-Debian/Ubuntu Percona XtraDB Cluster with TLS
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Percona XtraDB Cluster with TLS (20.04)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. include:: /installation/database/percona/percona-intro.rst
 
