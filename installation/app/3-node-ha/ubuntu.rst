@@ -1,7 +1,7 @@
 .. _3nodeinstall-ubuntu:
 
 3-Node HA Install (Ubuntu 20.04/22.04)
--------------------------------
+--------------------------------------
 
 Distributed App Nodes with Externalized DB
 

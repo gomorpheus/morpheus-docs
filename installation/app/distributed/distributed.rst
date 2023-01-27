@@ -5,4 +5,4 @@ Distributed HA
    ..:maxdepth: 4
 
    /installation/app/distributed/overview.rst
-   /installation/app/distributed/rhel.rst
+   /installation/app/distributed/rhel8.rst

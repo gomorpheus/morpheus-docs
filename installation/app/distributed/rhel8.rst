@@ -1,7 +1,9 @@
 Full HA Install (RHEL/CentOS)
 -----------------------------
 
-.. include::   /installation/database/percona/perconaTls-rhel7.rst
+Distributed Application, RabbitMQ, Elasticsearch Nodes with Externalized DB
+
+.. include::   /installation/database/percona/perconaTls-rhel8.rst
 .. include::   /installation/messaging/rabbitmq.rst
 .. include::   /installation/logs/elasticsearch.rst
 .. include::   /installation/app/appliance_ha.rst
