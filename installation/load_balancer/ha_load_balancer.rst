@@ -72,7 +72,7 @@ However, the certificates on the |morpheus| application nodes are not required t
 
 .. toggle-header:: :header: **HAProxy**
 
-  **Example configuration file**
+  **Example** ``/etc/haproxy/haproxy.cfg`` **configuration file**
 
   .. code-block:: bash
 
