@@ -1,4 +1,4 @@
-Full HA Install (RHEL/CentOS 8)
+Full HA Install (Ubuntu 20.04/22.04)
 -----------------------------
 
 Distributed Application, RabbitMQ, Elasticsearch Nodes with Externalized DB

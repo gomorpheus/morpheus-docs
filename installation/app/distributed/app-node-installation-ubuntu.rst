@@ -12,9 +12,7 @@ App Node Installation
       .. tab-container:: tab1
          :title: All Nodes
 
-         .. code-block:: bash
-
-            .. include:: /installation/app/morpheus-install-ubuntu.rst
+         .. include:: /installation/app/morpheus-install-ubuntu.rst
 
 #. Do NOT run reconfigure yet. The |morpheus| configuration file must be edited prior to the initial reconfigure.
 
