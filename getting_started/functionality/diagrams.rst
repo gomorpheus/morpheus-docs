@@ -39,6 +39,12 @@ Appliance Architectures
 
     |
 
+- .. toggle-header:: :header: **Mapping |morpheus| Constructs to Public and Private Cloud Constructs**
+
+    .. image:: /images/diagrams/awsAndMorpheusConstructs.png
+
+    |
+
 Third-Party Technology Integration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -51,5 +57,11 @@ Third-Party Technology Integration
 - .. toggle-header:: :header: **Veeam**
 
     .. image:: /images/integration_guides/backups/MorpheusVeeamIntegration.png
+
+    |
+
+- .. toggle-header:: :header: **Mapping Identity Source Groups to |morpheus| Roles**
+
+    .. image:: /images/diagrams/mapIdentityToMorpheus.png
 
     |
