@@ -3,6 +3,8 @@ Install Elasticsearch 7.x
 
 #. On each ES node run the following to install Elasticsearch.
 
+   `Elasticsearch Install Documentation <https://www.elastic.co/guide/en/elasticsearch/reference/current/rpm.html>`_
+
    .. code-block:: bash
 
       rpm --import https://artifacts.elastic.co/GPG-KEY-elasticsearch

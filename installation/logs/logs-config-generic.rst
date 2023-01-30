@@ -7,6 +7,8 @@
 
 #. Edit ``/etc/elasticsearch/elasticsearch.yml`` and update each node configuration accordingly. Please note several attributes differ in 7.x from 5.x.
 
+   `Elasticsearch Configuration Documentation <https://www.elastic.co/guide/en/elasticsearch/reference/7.17/important-settings.html>`_
+   
    .. note:: Configurations will vary
 
    .. content-tabs::
