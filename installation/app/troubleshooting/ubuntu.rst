@@ -3,7 +3,7 @@ Troubleshooting
 
 **Issue**
 
-    When attempting to install Moprheus using dpkg, the following error may be seen:
+    When attempting to install Morpheus using dpkg, the following error may be seen:
 
         ``root@app:~# dpkg -i /home/kgawronski/morpheus-appliance_5.5.3-1_amd64.deb
         dpkg: error: dpkg frontend lock was locked by another process with pid ####
