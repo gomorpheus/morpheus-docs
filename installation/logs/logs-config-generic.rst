@@ -23,9 +23,9 @@
 
                cluster.name: "morpheus"
                node.name: "es-node-01" ##unique name of this node, does not need to be resolvable
-               network.host: 10.10.10.11 ##ip of this node
-               discovery.seed_hosts: ["10.10.10.11","10.10.10.12","10.10.10.13"] ## add all cluster node ip's
-               cluster.initial_master_nodes: ["10.10.10.11","10.10.10.12","10.10.10.13"] ## add all cluster node ip's
+               network.host: 192.168.103.01 ##ip of this node
+               discovery.seed_hosts: ["192.168.103.01","192.168.103.02","192.168.103.03"] ## add all cluster node ip's
+               cluster.initial_master_nodes: ["192.168.103.01","192.168.103.02","192.168.103.03"] ## add all cluster node ip's
                discovery.zen.minimum_master_nodes: 2
          
       .. tab-container:: tab2
@@ -40,9 +40,9 @@
 
                cluster.name: "morpheus"
                node.name: "es-node-02" ##unique name of this node, does not need to be resolvable
-               network.host: 10.10.10.12 ##ip of this node
-               discovery.seed_hosts: ["10.10.10.11","10.10.10.12","10.10.10.13"] ## add all cluster node ip's
-               cluster.initial_master_nodes: ["10.10.10.11","10.10.10.12","10.10.10.13"] ## add all cluster node ip's
+               network.host: 192.168.103.02 ##ip of this node
+               discovery.seed_hosts: ["192.168.103.01","192.168.103.02","192.168.103.03"] ## add all cluster node ip's
+               cluster.initial_master_nodes: ["192.168.103.01","192.168.103.02","192.168.103.03"] ## add all cluster node ip's
                discovery.zen.minimum_master_nodes: 2
 
       .. tab-container:: tab3
@@ -57,9 +57,9 @@
 
                cluster.name: "morpheus"
                node.name: "es-node-03" ##unique name of this node, does not need to be resolvable
-               network.host: 10.10.10.13 ##ip of this node
-               discovery.seed_hosts: ["10.10.10.11","10.10.10.12","10.10.10.13"] ## add all cluster node ip's
-               cluster.initial_master_nodes: ["10.10.10.11","10.10.10.12","10.10.10.13"] ## add all cluster node ip's
+               network.host: 192.168.103.03 ##ip of this node
+               discovery.seed_hosts: ["192.168.103.01","192.168.103.02","192.168.103.03"] ## add all cluster node ip's
+               cluster.initial_master_nodes: ["192.168.103.01","192.168.103.02","192.168.103.03"] ## add all cluster node ip's
                discovery.zen.minimum_master_nodes: 2
 
     The following options can be also modified to change directory locations for the data and logs:
