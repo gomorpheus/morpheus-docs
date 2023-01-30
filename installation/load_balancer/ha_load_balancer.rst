@@ -51,7 +51,7 @@ However, the certificates on the |morpheus| application nodes are not required t
     - **SSL Profile (Client):** clientssl (or preferred profile with a trusted certificate)
     - **SSL Profile (Server):** serverssl
     - **Source Address Translation:** Auto Map
-..    - **Default Persistence Profile:** <Organization's preference> (hash, source_addr, and cookie are popular)
+  ..  - **Default Persistence Profile:** <Organization's preference> (hash, source_addr, and cookie are popular)
 
 .. toggle-header:: :header: **AWS Application Load Balancer (ALB)**
 
@@ -62,12 +62,78 @@ However, the certificates on the |morpheus| application nodes are not required t
     - **Health Check Protocol:** HTTPS
     - **Health check path:** /ping
     - **Load balancing algorithm:** Least Outstanding Requests is recommended (alternatively Round Robin)
-..    - **Stickiness Type:** Load balancer generated cookie
+  ..  - **Stickiness Type:** Load balancer generated cookie
 
   **Load Balancer**
 
     - **Security Group:** Allow HTTPS/443 Inbound and Outbound
     - **Listener:** HTTPS:443 to the target group created in the **Target Group** section
     - **Security Policy:** ELBSecurityPolicy-2016-08
+
+.. toggle-header:: :header: **HAProxy**
+
+  **Example configuration file**
+
+  .. code-block:: bash
+
+    #---------------------------------------------------------------------
+    # Example configuration for a possible web application.  See the
+    # full configuration options online.
+    #
+    #   https://www.haproxy.org/download/1.8/doc/configuration.txt
+    #
+    #---------------------------------------------------------------------
+
+    #---------------------------------------------------------------------
+    # Global settings
+    #---------------------------------------------------------------------
+    global
+        log         127.0.0.1:514 local2
+        chroot      /var/lib/haproxy
+        pidfile     /var/run/haproxy.pid
+        maxconn     4000
+        user        haproxy
+        group       haproxy
+        daemon
+
+        # turn on stats unix socket
+        stats socket /var/lib/haproxy/stats
+
+        # utilize system-wide crypto-policies
+        ssl-default-bind-ciphers PROFILE=SYSTEM
+        ssl-default-server-ciphers PROFILE=SYSTEM
+
+    defaults
+        mode                    http
+        log                     global
+        option                  httplog
+        option                  dontlognull
+        option http-server-close
+        option forwardfor       except 127.0.0.0/8
+        option                  redispatch
+        retries                 3
+        timeout http-request    10s
+        timeout queue           1m
+        timeout connect         10s
+        timeout client          1m
+        timeout server          1m
+        timeout http-keep-alive 10s
+        timeout check           10s
+        maxconn                 3000
+
+    frontend main
+        mode http
+        bind *:443 ssl crt /etc/haproxy/ssl/combined_crt_key.pem
+        default_backend             mybackend
+
+    backend mybackend
+        mode http
+        option      httpchk
+        http-check  send meth GET uri /ping
+        http-check  expect string MORPHEUS\ PING
+        balance     leastconn
+        server      app1 192.168.101.1:443 check ssl verify none
+        server      app2 192.168.101.2:443 check ssl verify none
+        server      app3 192.168.101.3:443 check ssl verify none  
 
 |
