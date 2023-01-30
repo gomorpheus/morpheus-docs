@@ -39,7 +39,7 @@ Appliance Architectures
 
     |
 
-- .. toggle-header:: :header: **Mapping |morpheus| Constructs to Public and Private Cloud Constructs**
+- .. toggle-header:: :header: **Mapping Morpheus Constructs to Public and Private Cloud Constructs**
 
     .. image:: /images/diagrams/awsAndMorpheusConstructs.png
 
@@ -60,7 +60,7 @@ Third-Party Technology Integration
 
     |
 
-- .. toggle-header:: :header: **Mapping Identity Source Groups to |morpheus| Roles**
+- .. toggle-header:: :header: **Mapping Identity Source Groups to Morpheus Roles**
 
     .. image:: /images/diagrams/mapIdentityToMorpheus.png
 
