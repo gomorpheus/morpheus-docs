@@ -12,10 +12,9 @@ App Node Installation
       .. tab-container:: tab1
          :title: All Nodes
 
-          .. code-block:: bash
+         .. code-block:: bash
 
-             [root@node-(1/2/3) ~]# wget https://example/path/morpheus-appliance-ver-1.el8.x86_64.rpm
-             [root@node-(1/2/3) ~]# rpm -ihv morpheus-appliance-appliance-ver-1.el8.x86_64.rpm
+            .. include:: /installation/app/morpheus-install-rhel.rst
 
 #. Do NOT run reconfigure yet. The |morpheus| configuration file must be edited prior to the initial reconfigure.
 

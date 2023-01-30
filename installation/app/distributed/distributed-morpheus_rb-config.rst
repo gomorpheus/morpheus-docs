@@ -5,6 +5,7 @@
 
       .. code-block:: bash
 
+         appliance_url 'https://morpheus.localdomain'
          mysql['enable'] = false
          mysql['host'] = {'192.168.101.01' => 3306, '192.168.101.02' => 3306, '192.168.101.03' => 3306}
          mysql['morpheus_db'] = 'morpheus'
@@ -26,6 +27,7 @@
 
       .. code-block:: bash
 
+         appliance_url 'https://morpheus.localdomain'
          mysql['enable'] = false
          mysql['host'] = {'192.168.101.01' => 3306, '192.168.101.02' => 3306, '192.168.101.03' => 3306}
          mysql['morpheus_db'] = 'morpheus'
@@ -47,6 +49,7 @@
 
       .. code-block:: bash
 
+         appliance_url 'https://morpheus.localdomain'
          mysql['enable'] = false
          mysql['host'] = {'192.168.101.01' => 3306, '192.168.101.02' => 3306, '192.168.101.03' => 3306}
          mysql['morpheus_db'] = 'morpheus'

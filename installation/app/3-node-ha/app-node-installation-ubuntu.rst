@@ -12,10 +12,9 @@ App Node Installation
       .. tab-container:: tab1
          :title: All Nodes
 
-          .. code-block:: bash
+         .. code-block:: bash
 
-             [root@node-(1/2/3) ~]# wget https://example/path/morpheus-appliance_ver-1.amd64.deb
-             [root@node-(1/2/3) ~]# dpkg -i morpheus-appliance-appliance_ver-1.amd64.deb
+            .. include:: /installation/app/morpheus-install-ubuntu.rst
 
 #. Do NOT run reconfigure yet. The |morpheus| configuration file must be edited prior to the initial reconfigure.
 

@@ -6,3 +6,4 @@ Distributed HA
 
    /installation/app/distributed/overview.rst
    /installation/app/distributed/rhel8.rst
+   /installation/app/distributed/ubuntu.rst
