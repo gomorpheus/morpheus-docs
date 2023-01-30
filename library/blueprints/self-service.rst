@@ -242,7 +242,9 @@ Configure the following:
 - **LOGO:** Select or upload a logo to be associated with this catalog item
 - **WORKFLOW:** Select an existing Workflow to be associated with this Catalog Item, new Workflows are created in |LibAut|
 - **CONTEXT TYPE:** Optionally restrict users to a specific target context, Instance, Server, or None
+- **CONFIG:** Enter an optional custom config JSON body. See `Workflows documentation <https://docs.morpheusdata.com/en/latest/library/automation/workflows.html#allow-custom-config>`_ for a formatting example
 - **CONTENT:** Optionally include documentation content for this Catalog Item. Markdown-formatted text is accepted and displayed appropriately when the item is ordered from the Service Catalog. A new Catalog Item-type Wiki entry will also be added containing this information.
+- **INPUTS:** Select any configured Inputs which should be available for user selection at execution time
 
 Once done, click :guilabel:`SAVE CHANGES`
 
