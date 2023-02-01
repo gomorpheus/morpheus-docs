@@ -1,3 +1,5 @@
+.. _installation-overview:
+
 Installation Overview
 ---------------------
 

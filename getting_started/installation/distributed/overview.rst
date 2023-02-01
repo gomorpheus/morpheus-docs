@@ -1,3 +1,5 @@
+.. _distributed-overview:
+
 HA Installation Overview
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
