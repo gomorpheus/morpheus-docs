@@ -1,4 +1,4 @@
-Capcity and Planning
+Capacity and Planning
 ====================
 
 There are many different architectures |morpheus| can be deployed as.  However, the most common architectures are an All-In-One (AIO) single node and a 3-Node Highly Available (HA) cluster.
