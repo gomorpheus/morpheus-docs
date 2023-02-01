@@ -51,6 +51,7 @@ Below are sample log configuration settings. This is not a complete list. Additi
 
 :Chef:
   .. code-block:: xml
+
      <logger name="com.morpheus.automation.ChefClientService" level="DEBUG"/>
      <logger name="com.morpheus.automation.ChefService" level="DEBUG"/>
      <logger name="com.morpheus.automation.ChefTaskService" level="DEBUG"/>
