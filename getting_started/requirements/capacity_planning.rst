@@ -26,26 +26,26 @@ Although there are many factors that can contribute to the capacity planning, ev
    * - AIO
      - 4
      - 16
-     - 80
+     - 200
      - N/A
      - 5,000
    * - AIO
      - 4
      - 32
-     - 80
+     - 400
      - N/A
      - 10,000
    * - 3-Node HA
      - 4
      - 16
-     - 80
      - 200
+     - 50
      - 10,000
    * - 3-Node HA
      - 4
      - 32
-     - 80
-     - 200
+     - 400
+     - 50
      - 20,000
 
 In the above recommendations, an AIO can support ~5,000 WLEs with agents installed at the base requirements.  However, the AIO architecture cannot tolerate failure and will be unavailable during upgrades, unlike the 3-Node HA, which is the likely choice for
