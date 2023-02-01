@@ -818,4 +818,4 @@ Audit logs
 
    Once you see the ASCI art show up you will be able to log back into the User Interface. A new audit file will have been created called audit.log and will found in the default |morpheus| log path which is ``/var/log/morpheus/morpheus-ui/``
 
-This is only an example and other configurations are possible, sucha as creating an appender definition for your SIEM audit database product.
+This is only an example and other configurations are possible, such as creating an appender definition for your SIEM audit database product.
