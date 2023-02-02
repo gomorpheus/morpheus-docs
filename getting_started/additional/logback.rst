@@ -100,6 +100,7 @@ Below are sample log configuration settings. This is not a complete list. Additi
 
 :Monitoring:
   .. code-block:: xml
+
      <logger name="com.morpheus.monitoring.MonitorCheckService" level="DEBUG"/>
 
 :Network:
