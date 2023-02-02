@@ -109,6 +109,12 @@ Role Mappings
         - The Backup Settings page is where users define the default |morpheus| backup bucket, backup schedule, and retention count. Additionally, if given to a Master Tenant user they will have the ability to enable scheduled backups, create backups, and backup appliance.
         - This permission is recommended for those responsible for enabling backups and setting default backup buckets within |morpheus|.
         -
+      * - Admin: Clients
+        - None, Full
+        - Allows or disallows access to the Clients tab in global settings (|AdmSet|)
+        - The Clients settings section is where API clients are created and edited. Default clients may have their validity and refresh periods edited but cannot be deleted. User-created API clients may be edited or deleted
+        - This permission is recommended for those responsible for administering API access.
+        -
       * - Admin: Distributed Workers
         - None, Full
         - Allows or disallows access to |AdmInt| > Distributed Workers Tab
@@ -311,7 +317,7 @@ Role Mappings
         - This permission is recommended for users who will use the Service Catalog
         -
       * - Catalog: Inventory (Formerly Service Catalog: Inventory)
-        - None, Read
+        - None, Full
         - Determines access to |ProCatDas| and Dashboard in Service Catalog Persona view
         - The Inventory is the complete list of user-owned items provisioned from the Service Catalog
         - This permission is recommended for users who will use the Service Catalog and need to be able to view details on the items they've provisioned from the Catalog
