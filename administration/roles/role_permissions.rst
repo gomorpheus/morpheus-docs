@@ -16,7 +16,7 @@ Blueprints
 Report Types
   Controls User access for each report type in the Reports section (|OpeRep|). The user must also have Operations: Reports access granted under the Feature permissions tab.
 Personas
-  Controls User access to |morpheus| Personas, at the time of this writing Users may be given access to the Standard (full |morpheus| experience) or Service Catalog Personas
+  Controls User access to |morpheus| Personas, at the time of this writing Users may be given access to the Standard (full |morpheus| experience), Virtual Desktop (VDI), or Service Catalog Personas
 Catalog Item Types
   Controls User access to Catalog Item types within the Service Catalog Persona. Only Catalog Items created in the current Tenant or those created in the Master Tenant and shared with the current Tenant will be available.
 VDI Pools
@@ -1032,12 +1032,6 @@ Role Mappings
         - The Jobs page is where jobs are scheduled for the execution of automation Tasks and Workflows against Instances or servers.
         - This permission is recommended for those responsible to schedule the exectution of Tasks or Workflows.
         -
-      * - Provisioning: Service Mesh
-        - None, Read, User, Full
-        - Determines access to the Provisioning > Service Mesh page, including the Services and DNS tabs. The "User" permission will allow access only to objects the user owns.
-        - The Service Mesh page displays container services and DNS information. A service mesh ensures fast and reliable communication between containerized application services.
-        - This permission is recommended for those responsible for container management.
-        -
       * - Provisioning: Remote Console
         - None, Provisioned, Full
         - Determines access to the console on a Host detail page (Infrastructure > Hosts > selected Host, VM, or Bare Metal resource > Console tab). The "Provisioned" permission gives access to the console only for resources the logged in user has provisioned.
@@ -1049,6 +1043,18 @@ Role Mappings
         - This allows or disallows the ability to automatically log into the remote console.
         - |morpheus| will automatically log into the machine using the credentials defined on the VM or Host. The credentials are defined either from the virtual image used, added via cloud-init or VMware Tools using the global cloud-init settings (|AdmSetPro|), or the Linux or Windows settings defined in User Settings.
         - This permission is recommended when an organization utilizes |morpheus| to create user accounts on provisioned or managed machines, as well as, allow remote console access.
+        -
+      * - Provisioning: Service Mesh
+        - None, Read, User, Full
+        - Determines access to the Provisioning > Service Mesh page, including the Services and DNS tabs. The "User" permission will allow access only to objects the user owns.
+        - The Service Mesh page displays container services and DNS information. A service mesh ensures fast and reliable communication between containerized application services.
+        - This permission is recommended for those responsible for container management.
+        -
+      * - Provisioning: State
+        - None, Read, Full
+        - Determines access to the State tab for a Terraform Instance or App
+        - The State tab is where `Terraform state management <https://docs.morpheusdata.com/en/latest/integration_guides/Automation/terraform.html#terraform-app-state-management>`_ is handled for Terraform Instances or Apps
+        - This permission is recommended for those responsible for any Terraform-based workloads
         -
 
 - .. toggle-header:: :header: **Security Permission Options**
