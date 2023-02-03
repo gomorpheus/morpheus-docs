@@ -70,9 +70,9 @@ it should not be used in conjunction with any other application.
         .. code-block:: ini
 
             [db]
-            node1 ansible_host=192.168.100.104'
-            node2 ansible_host=192.168.101.27'
-            node3 ansible_host=192.168.100.197'
+            node1 ansible_host=192.168.100.104
+            node2 ansible_host=192.168.101.27
+            node3 ansible_host=192.168.100.197
                     
 #. Download the Ansible role needed for the playbook
 
