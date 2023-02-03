@@ -16,9 +16,9 @@ it should not be used in conjunction with any other application.
             
                     dnf install -y git sshpass
                         
-            .. group-tab:: Ubuntu
+        .. group-tab:: Ubuntu
 
-                TBD
+            TBD
 
 #. Setup a virtual environment, this will help prevent modifications to the OS and provide an easy way to cleanup the environment when complete
 
