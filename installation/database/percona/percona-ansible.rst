@@ -51,15 +51,15 @@ it should not be used in conjunction with any other application.
         .. code-block:: yaml
 
             - hosts: db
-                gather_facts: true
-                become: true
-                roles:
-                    - role: ansible-role-XtraDB-Cluster
-                      xtradb_cluster_name: "prod-customer"
-                      xtradb_root_password: yolo
-                      xtradb_nodes_group: "db"
-                      xtradb_bind_interface: eth0
-                      xtradb_configure_firewalld: true
+              gather_facts: true
+              become: true
+              roles:
+                - role: ansible-role-XtraDB-Cluster
+                  xtradb_cluster_name: "prod-customer"
+                  xtradb_root_password: yolo
+                  xtradb_nodes_group: "db"
+                  xtradb_bind_interface: eth0
+                  xtradb_configure_firewalld: true
     
     #. Create and input the configuration into ``~/hosts.yml``
 
