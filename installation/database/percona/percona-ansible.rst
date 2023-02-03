@@ -61,11 +61,11 @@ it should not be used in conjunction with any other application.
                   xtradb_bind_interface: eth0
                   xtradb_configure_firewalld: true
     
-    #. Create and input the configuration into ``~/hosts.yml``
+    #. Create and input the configuration into ``~/hosts``
 
         .. code-block:: bash
 
-            vim ~/hosts.yml
+            vim ~/hosts
     
         Example file below, be sure to modify the contents as needed following the documentation above
 
@@ -98,7 +98,7 @@ it should not be used in conjunction with any other application.
 
     .. code-block:: bash
 
-        ansible-playbook --inventory-file hosts.yml --user <username> --ask-pass --become --ask-become-pass playbook.yml
+        ansible-playbook --inventory-file hosts --user <username> --ask-pass --become --ask-become-pass playbook.yml
                 
 #. Finally, cleanup the environment
 
