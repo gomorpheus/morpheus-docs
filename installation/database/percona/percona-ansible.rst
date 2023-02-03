@@ -10,15 +10,15 @@ it should not be used in conjunction with any other application.
 
     .. tabs::
 
-    .. group-tab:: RHEL 8/9
+        .. group-tab:: RHEL 8/9
 
-            .. code-block:: bash
-        
-                dnf install -y git sshpass
-                    
-        .. group-tab:: Ubuntu
+                .. code-block:: bash
+            
+                    dnf install -y git sshpass
+                        
+            .. group-tab:: Ubuntu
 
-            TBD
+                TBD
 
 #. Setup a virtual environment, this will help prevent modifications to the OS and provide an easy way to cleanup the environment when complete
 
@@ -97,8 +97,7 @@ it should not be used in conjunction with any other application.
     .. code-block:: bash
 
         export ANSIBLE_HOST_KEY_CHECKING=False
-
-                ansible-playbook --inventory-file hosts.yml --user <username> --ask-pass --become --ask-become-pass playbook.yml
+        ansible-playbook --inventory-file hosts.yml --user <username> --ask-pass --become --ask-become-pass playbook.yml
                 
 #. Finally, cleanup the environment
 
