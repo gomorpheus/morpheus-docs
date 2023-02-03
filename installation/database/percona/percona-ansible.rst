@@ -18,7 +18,7 @@ it should not be used in conjunction with any other application.
                         
         .. group-tab:: Ubuntu
 
-            TBD
+            apt-get install -y python3-venv sshpass
 
 #. Setup a virtual environment, this will help prevent modifications to the OS and provide an easy way to cleanup the environment when complete
 
