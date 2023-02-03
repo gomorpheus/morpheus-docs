@@ -6,19 +6,19 @@ Percona XtraDB Cluster with TLS (Ansible Deployment)
 The prupose of this document is to provide a consistent way to deploy Percona using Ansible.  The Percona deployment is specifically setup for Morpheus,
 it should not be used in conjunction with any other application.
 
-#. Install the necessary requirements on the OS using the package manager:
+#. Install the necessary requirements on the OS using the package manager
 
     .. tabs::
 
-        .. group-tab:: RHEL 8/9
+    .. group-tab:: RHEL 8/9
 
-                .. code-block:: bash
-            
-                    dnf install -y git sshpass
+            .. code-block:: bash
+        
+                dnf install -y git sshpass
                     
-            .. group-tab:: Ubuntu
+        .. group-tab:: Ubuntu
 
-                TBD
+            TBD
 
 #. Setup a virtual environment, this will help prevent modifications to the OS and provide an easy way to cleanup the environment when complete
 
@@ -32,7 +32,7 @@ it should not be used in conjunction with any other application.
     Examples of the playbooks and additional information can be found in the readme of the `ansible-role-XtraDB-Cluster <https://github.com/tryfan/ansible-role-XtraDB-Cluster>`_ role,
     which will be used later
 
-    #. Install Ansible using pip
+    #. Install Ansible using ``pip``
 
         .. code-block:: bash
     
@@ -44,7 +44,7 @@ it should not be used in conjunction with any other application.
             
             vim ~/playbook.yml
     
-        Example  file, be sure to modify the contents as needed following the documentation above
+        Example file below, be sure to modify the contents as needed following the documentation above
 
         .. code-block:: yaml
 
@@ -65,7 +65,7 @@ it should not be used in conjunction with any other application.
 
             vim ~/hosts.yml
     
-        Example  file, be sure to modify the contents as needed following the documentation above
+        Example file below, be sure to modify the contents as needed following the documentation above
 
         .. code-block:: ini
 
@@ -74,7 +74,7 @@ it should not be used in conjunction with any other application.
             node2 ansible_host=192.168.101.27'
             node3 ansible_host=192.168.100.197'
                     
-#. Dowload the role needed for the playbook
+#. Download the Ansible role needed for the playbook
 
     .. code-block:: bash
                 
@@ -82,7 +82,7 @@ it should not be used in conjunction with any other application.
         git clone https://github.com/tryfan/ansible-role-XtraDB-Cluster ~/.ansible/roles/ansible-role-XtraDB-Cluster
                 
                 
-#. Disable StrictHostKeyChecking via an environment variable
+#. Disable ``StrictHostKeyChecking`` via an environment variable
 
     If this is not disabled, the Ansible will fail unless the target hosts' key is added to ``~/.ssh/known_hosts``
 
@@ -90,7 +90,7 @@ it should not be used in conjunction with any other application.
 
         export ANSIBLE_HOST_KEY_CHECKING=False
 
-#. Run the ansible-playbook command
+#. Run the ``ansible-playbook`` command
 
     Ensure the inventory and playbook file name match what was created previously.  Also be sure to replace <username> with the username of the target host
 
@@ -103,5 +103,6 @@ it should not be used in conjunction with any other application.
 #. Finally, cleanup the environment
 
     .. code-block:: bash
+        
         deactivate
         rm ~/percona -rf
