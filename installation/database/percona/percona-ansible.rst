@@ -55,11 +55,11 @@ it should not be used in conjunction with any other application.
                 become: true
                 roles:
                     - role: ansible-role-XtraDB-Cluster
-                    xtradb_cluster_name: "prod-customer"
-                    xtradb_root_password: yolo
-                    xtradb_nodes_group: "db"
-                    xtradb_bind_interface: eth0
-                    xtradb_configure_firewalld: true
+                      xtradb_cluster_name: "prod-customer"
+                      xtradb_root_password: yolo
+                      xtradb_nodes_group: "db"
+                      xtradb_bind_interface: eth0
+                      xtradb_configure_firewalld: true
     
     #. Create and input the configuration into ``~/hosts.yml``
 
@@ -86,7 +86,7 @@ it should not be used in conjunction with any other application.
                 
 #. Disable ``StrictHostKeyChecking`` via an environment variable
 
-    If this is not disabled, the Ansible will fail unless the target hosts' key is added to ``~/.ssh/known_hosts``
+    If this is not disabled, the Ansible will fail to connect unless the target hosts' key is added to ``~/.ssh/known_hosts``
 
     .. code-block:: bash
 
@@ -94,7 +94,7 @@ it should not be used in conjunction with any other application.
 
 #. Run the ``ansible-playbook`` command
 
-    Ensure the inventory and playbook file name match what was created previously.  Also be sure to replace <username> with the username of the target host
+    Ensure the inventory and playbook file name match what was created previously.  Also, be sure to replace <username> with the username of the target host
 
     .. code-block:: bash
 
