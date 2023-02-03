@@ -30,7 +30,7 @@ Although there are many factors that can contribute to the capacity planning, ev
      - N/A
      - 5,000
    * - AIO
-     - 4
+     - 8
      - 32
      - 400
      - N/A
@@ -38,11 +38,11 @@ Although there are many factors that can contribute to the capacity planning, ev
    * - 3-Node HA
      - 4
      - 16
-     - 200
+     - 400
      - 50
      - 10,000
    * - 3-Node HA
-     - 4
+     - 8
      - 32
      - 400
      - 50
