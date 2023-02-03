@@ -12,13 +12,15 @@ it should not be used in conjunction with any other application.
 
         .. group-tab:: RHEL 8/9
 
-                .. code-block:: bash
-            
-                    dnf install -y git sshpass
+            .. code-block:: bash
+        
+                dnf install -y git sshpass
                         
         .. group-tab:: Ubuntu
-
-            apt-get install -y python3-venv sshpass
+            
+            .. code-block:: bash
+                
+                apt-get install -y python3-venv sshpass
 
 #. Setup a virtual environment, this will help prevent modifications to the OS and provide an easy way to cleanup the environment when complete
 
