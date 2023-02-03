@@ -17,7 +17,7 @@ it should not be used in conjunction with any other application.
                 dnf install -y git sshpass
                         
         .. group-tab:: Ubuntu
-            
+
             .. code-block:: bash
                 
                 apt-get install -y python3-venv sshpass
@@ -98,7 +98,6 @@ it should not be used in conjunction with any other application.
 
     .. code-block:: bash
 
-        export ANSIBLE_HOST_KEY_CHECKING=False
         ansible-playbook --inventory-file hosts.yml --user <username> --ask-pass --become --ask-become-pass playbook.yml
                 
 #. Finally, cleanup the environment
