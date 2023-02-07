@@ -22,5 +22,3 @@ Distributed App Nodes with Externalized DB
 .. include:: /installation/app/database-migration.rst
 
 .. include:: /installation/app/recovery.rst
-
-.. include:: /installation/app/troubleshooting/ubuntu.rst
