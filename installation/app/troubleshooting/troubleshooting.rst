@@ -74,8 +74,8 @@ vm.max_map_count is too low
                 sysctl -w vm.max_map_count=262144
                 echo 'vm.max_map_count = 262144' | sudo tee -a /etc/sysctl.conf
 
-        The first command will change it immediately.  However, after a reboot the setting will be lost, so the ``sysctl.conf`` filesneeds to be modified.
+        The first command will change it immediately.  However, after a reboot the setting will be lost, so the ``sysctl.conf`` file needs to be modified.
 
     Additional info:
     
-    https://stackoverflow.com/questions/51445846/elasticsearch-max-virtual-memory-areas-vm-max-map-count-65530-is-too-low-inc
+        https://stackoverflow.com/questions/51445846/elasticsearch-max-virtual-memory-areas-vm-max-map-count-65530-is-too-low-inc
