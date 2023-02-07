@@ -22,6 +22,7 @@ Create Symbolic link (symlink) for |morpheus| Installations
     #. **(Optional)** Create the directories the symlinks will be pointed to.  Customers will usually already have this in place, so this may not be required:
 
         .. code-block:: bash
+
             mkdir /apps/opt/morpheus/ -p
             mkdir /apps/tmp/morpheus/ -p
             mkdir /logs/var/log/morpheus/ -p
@@ -71,7 +72,6 @@ Pre-Create |morpheus| OS Users
         .. code-block:: bash
             
             cat /etc/passwd
-
             cat /etc/group
 
     #. Next, run the following commands to create the groups, users, and associations.  Be sure to replace the UIDs and GIDs with the ones you found available:
