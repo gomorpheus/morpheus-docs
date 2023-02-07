@@ -1,5 +1,5 @@
-Troubleshooting
-===============
+Advanced Configurations
+=======================
 
 Introduction
 ^^^^^^^^^^^^
