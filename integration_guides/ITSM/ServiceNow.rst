@@ -24,8 +24,12 @@ Add ServiceNow Integration
     Check "Enabled" to allow consumption of this ServiceNow integration in |morpheus|.
    SERVICENOW HOST
     URL of the ServiceNow instance (ex: https://your.instance.service-now.com), keep in mind you can create multiple ServiceNow integrations in |morpheus| if needed.
-   USER/PASSWORD
-    A user in ServiceNow that is able to access the REST interface and create/update/delete incidents, requests, requested items, item options, catalog items, workflows, etc. The list of necessary roles includes ``x_moda_morpheus_ca.integration`` (available if the |morpheus| ServiceNow plugin is installed from the ServiceNow Store), ``catalog_admin``, ``itil``, ``rest_service``, ``web_service_admin`` and ``import_transformer``.
+   API PROXY
+    If necessary, select a configured proxy (|InfNetPro|) to route traffic through to the ServiceNow API
+   CREDENTIALS
+    Supply credentials for a user in ServiceNow that is able to access the REST interface and create/update/delete incidents, requests, requested items, item options, catalog items, workflows, etc. The list of necessary roles includes ``x_moda_morpheus_ca.integration`` (available if the |morpheus| ServiceNow plugin is installed from the ServiceNow Store), ``catalog_admin``, ``itil``, ``rest_service``, ``web_service_admin`` and ``import_transformer``.
+
+    |morpheus| supports simple and OAuth 2.0 authentication with ServiceNow. See the next section for additional details on configuring the ServiceNow appliance for OAuth 2.0 authentication if you intend to use it. When supplying credentials to |morpheus| users may opt to integrate with a saved set of username and password credentials, a saved set of OAuth 2.0 credentials, a new set of username and password credentials (not saved), or a new set of credentials (OAuth 2.0 or username/password) which will also be saved to the |morpheus| credential store for later use. Once the credential type is selected, the fields in the modal will adjust to correspond to the chosen credential type. Once again, see the next section for more details on configuring OAuth 2.0 authentication.
    CMDB CUSTOM MAPPING
     If needed, administrators can opt to populate a specific field in the ServiceNow table and such mapping is identified here with a JSON code snippet. Below is an example that populates the ``object_id`` field in the CM database with the |morpheus| instance name and two other field examples:
 
@@ -45,6 +49,35 @@ Add ServiceNow Integration
 #. Save Changes
 
 .. important:: |morpheus| supports integration with single-domain and multi-domain ServiceNow appliances. In multi-domain installations, a selected ServiceNow company can be mapped to a selected |morpheus| Tenant for purposes of exposing |morpheus| Library items only to users within a certain company. In this configuration, ServiceNow integrations should be added in each relevant |morpheus| Tenant. Further setup steps for exposing |morpheus| library items to ServiceNow are included in a later section below.
+
+Configuring ServiceNow for OAuth 2.0 Authentication
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Before configuring |morpheus| to use OAuth 2.0 authentication with ServiceNow, ensure your ServiceNow appliance is configured correctly. OAuth must be set up and activated, you must also create a new endpoint for the client. See the following relevant parts of ServiceNow documentation to properly configure your appliance:
+
+#. `Set up OAuth <https://docs.servicenow.com/bundle/rome-platform-security/page/administer/security/task/t_SettingUpOAuth.html>`_
+#. `Create a new application endpoint <https://docs.servicenow.com/bundle/rome-platform-security/page/administer/security/task/t_CreateEndpointforExternalClients.html>`_ for |morpheus| to access the ServiceNow instance
+
+With ServiceNow correctly configured, we can integrate ServiceNow using either a stored OAuth 2.0 credential set or we can create one on the fly during integration. When creating one on the fly |morpheus| will save it as a stored credential set for later use. Whether storing one ahead (|InfTruCre|) or storing one at integration time, configure your credentials as follows. Note that all fields are required for a ServiceNow Integration unless specifically mentioned otherwise:
+
+.. NOTE:: Some of the fields below may not be present if creating an OAuth credential set on the fly as opposed to the |InfTru| section of |morpheus|.
+
+- **CREDENTIAL STORE:** Select "Internal" or (if present) an external Cypher store
+- **NAME:** A name for the stored credential set in |morpheus|
+- **DESCRIPTION:** An optional description for the credential set
+- **ENABLED:** If enabled, this credential set will be selectable for creating various integrations in |morpheus|
+- **GRANT TYPE:** Use "Password Credentials"
+- **ACCESS TOKEN URL:** Should be the appliance domain with the path of "/oauth_token.do". For example, "https://mydomain.service-now.com/oauth_token.do"
+- **CLIENT ID:** The client ID (potentially auto-generated) set when the endpoint was created in ServiceNow
+- **CLIENT SECRET:** The client secret set when the endpoint was created in ServiceNow
+- **USERNAME:** The username for a ServiceNow service account, note the required permissions this user must have in the section above
+- **PASSWORD:** The password for the ServiceNow account
+- **SCOPE:** Left empty
+- **CLIENT AUTHENTICATION:** Use "Send client credentials in body"
+
+If storing these credentials for later use, click :guilabel:`ADD CREDENTIALS`. If creating this credential set on the fly at the time of integration, complete the rest of the new integration modal as discussed in the prior section.
+
+.. image:: /images/integration_guides/itsm/servicenow/oauthcreds.png
 
 ServiceNow Configuration Management Database (CMDB)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
