@@ -1,5 +1,5 @@
-Installation
-============
+Troubleshooting
+===============
 
 .. toctree::
    ..:maxdepth: 4
