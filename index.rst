@@ -12,6 +12,7 @@
    :caption: Internal Documentation
 
    installation/installation
+   support/support
 
 ..
    .. toctree::
