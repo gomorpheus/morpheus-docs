@@ -53,6 +53,8 @@ Common elasticsearch Commands
 
         .. important:: This will **not** delete the indicies, it will just print out the commands needed to delete each one, if desired.  The resulting commands would need to be run to delete the indicies
 
+        Be sure to replace the ``<pattern>`` in the below command with a pattern that pulls the indicies needed.
+
         .. code-block:: bash
 
             curl -X GET "localhost:9200/_cat/indices" | grep <pattern> | gawk '{print "curl -XDELETE https://10.60.1.32:9200/"$3}'
