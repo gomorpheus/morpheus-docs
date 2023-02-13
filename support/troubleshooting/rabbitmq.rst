@@ -16,8 +16,8 @@ Log Locations
 
 Using the rabbitmqctl Command
 `````````````````````````````
-
-    If RabbitMQ is embedded on the application nodes, then accessing ``rabbitmqctl`` can be call from the ``/opt/morpheus/embedded/bin/`` location:
+    
+    If RabbitMQ is embedded on the application nodes, then accessing ``rabbitmqctl`` can be called from the ``/opt/morpheus/embedded/bin/`` location:
     
     Example command:
     
@@ -43,7 +43,7 @@ Using the rabbitmqctl Command
 
                 env
     
-    Additional information on the rabbitmqctl command can be found here:
+    Additional information on the ``rabbitmqctl`` command can be found here:
 
         https://www.rabbitmq.com/rabbitmqctl.8.html
 
@@ -71,13 +71,13 @@ Common rabbitmqctl Commands
 
             .. code-block:: bash
 
-                morpheus-ctl status rabbitmq
+                systemctl status rabbitmq-server
 
     **Check the Cluster Status**
 
         .. code-block:: bash
 
-            systemctl status rabbitmq-server
+            rabbitmqctl cluster_status
 
     **Generate a Report**
 
