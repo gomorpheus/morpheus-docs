@@ -68,5 +68,6 @@ Common Percona Commands
 
         #. Reference the following links to help verify the cluster, if needed:
 
-            :ref:`Percona TLS RHEL Verify`
-            :ref:`Percona TLS Ubuntu Verify`
+            **RHEL**:   :ref:`Percona TLS RHEL Verify`
+
+            **Ubuntu**: :ref:`Percona TLS Ubuntu Verify`
