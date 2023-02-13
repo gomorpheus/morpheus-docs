@@ -1,7 +1,7 @@
 .. _perconainstall:
 
-Percona
-=======
+Percona XtraDB
+==============
 
 .. toctree::
    
