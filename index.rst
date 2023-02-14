@@ -17,6 +17,7 @@
    tools/tools
    administration/administration
    personas/personas.rst
+   diagrams/diagrams.rst
    troubleshooting/troubleshooting
 
 .. toctree::
