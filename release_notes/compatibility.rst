@@ -113,7 +113,7 @@ No Service Version Changes from |previousMorphVer|
    * - Java
      -
      - |java|
-     -
+     - |checkmark|
    * - Java (macOS agent)
      -
      - |java-mac|
@@ -133,7 +133,7 @@ No Service Version Changes from |previousMorphVer|
      - |morphver| Changes
    * - Morpheus Node and VM Node Packages
      - |nodePackageVer|
-     - No changes
+     - Updated to v3.2.11 (for Java 11.0.18)
    * - Morpheus Linux Agent
      - |linuxagentver|
      - No changes
