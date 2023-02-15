@@ -188,6 +188,7 @@ Below are sample log configuration settings. This is not a complete list. Additi
   .. code-block:: xml
 
      <logger name="com.morpheus.compute.VmwareComputeUtility" level="DEBUG"/>
+     <logger name="com.morpheus.compute.vmware.VmwareComputeService" level="DEBUG"/>
      <logger name="com.morpheus.provision.VmwareProvisionService" level="DEBUG"/>
 
 :vRO:
@@ -348,6 +349,8 @@ Expand below to see all core |morpheus| logger paths set to INFO level.
         <logger name="com.morpheus.compute.SelfManagedComputeService" level="INFO"/>
         <logger name="com.morpheus.compute.standard.StandardComputeService" level="INFO"/>
         <logger name="com.morpheus.compute.unmanaged.UnmanagedComputeService" level="INFO"/>
+        <logger name="com.morpheus.compute.vmware.VcloudDirectorComputeService" level="INFO"/>
+        <logger name="com.morpheus.compute.vmware.VmwareComputeService" level="INFO"/>
         <logger name="com.morpheus.ComputeService" level="INFO"/>
         <logger name="com.morpheus.container.ActivemqContainerService" level="INFO"/>
         <logger name="com.morpheus.container.DockerContainerService" level="INFO"/>
