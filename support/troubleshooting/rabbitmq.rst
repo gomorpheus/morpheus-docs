@@ -1,5 +1,5 @@
 RabbitMQ
-^^^^^^^^
+========
 
 This page is designed to help troubleshoot issues with RabbitMQ.  
 
@@ -8,14 +8,14 @@ Additional troubleshooting information:
     https://www.rabbitmq.com/troubleshooting.html
 
 Log Locations
-`````````````
+^^^^^^^^^^^^^
 
     Embedded: ``/var/log/morpheus/rabbitmq/current``
 
     External cluster (default location): ``/var/log/rabbitmq/<rabbitNodeName>``
 
 Using the rabbitmqctl Command
-`````````````````````````````
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
     
     If RabbitMQ is embedded on the application nodes, then accessing ``rabbitmqctl`` can be called from the ``/opt/morpheus/embedded/bin/`` location:
     
@@ -49,7 +49,7 @@ Using the rabbitmqctl Command
 
 
 Common rabbitmqctl Commands
-```````````````````````````
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
     **Enable the RabbitMQ UI**
 	

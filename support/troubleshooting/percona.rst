@@ -1,5 +1,5 @@
 Percona XtraDB
-^^^^^^^^^^^^^^
+==============
 
 This page is designed to help troubleshoot issues with Percona XtraDB.  
 
@@ -8,14 +8,14 @@ Additional information:
     https://docs.percona.com/percona-xtradb-cluster/8.0/index.html
 
 Log Locations
-`````````````
+^^^^^^^^^^^^^
 
     RHEL (default location): ``/var/log/mysqld.log``
     
     Ubuntu (default location): ``/var/log/mysql/error.log``
 
 Common Percona Commands
-```````````````````````
+^^^^^^^^^^^^^^^^^^^^^^^
 
     **Recover Offline Cluster**
         

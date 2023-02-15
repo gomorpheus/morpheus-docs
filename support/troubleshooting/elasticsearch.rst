@@ -1,5 +1,5 @@
 Elasticsearch
-^^^^^^^^^^^^^
+=============
 
 This page is designed to help troubleshoot issues with Elasticsearch.  
 
@@ -8,14 +8,14 @@ Additional troubleshooting information:
     https://www.elastic.co/guide/en/elasticsearch/reference/master/troubleshooting.html
 
 Log Locations
-`````````````
+^^^^^^^^^^^^^
 
     Embedded: ``/var/log/morpheus/elasticsearch/current``
 
     External cluster (default location): ``/var/log/elasticsearch/elasticsearch.log``
 
 Common elasticsearch Commands
-`````````````````````````````
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
     .. note:: Elasticsearch does not have commands but you interact with the API using commands such as ``curl``
 
