@@ -6,3 +6,4 @@ Messaging
 
    /installation/messaging/rhel8.rst
    /installation/messaging/ubuntu.rst
+   /installation/messaging/amazonmq-rabbitmq.rst

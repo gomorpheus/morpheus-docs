@@ -22,7 +22,7 @@ Create RabbitMQ Broker (UI)
 
 #. Navigate to the ``EC2`` section by searching at the top
 #. Click the ``Security Groups`` link on the left side
-#. Create a Security Group that allows ``Inbound`` for ports ``5671`` to allow AMQP traffic from the nodes.  Additionally, allow ports ``443`` and ``15671`` to allow access to the web console and management UI
+#. Create a Security Group that allows ``Inbound`` for port ``5671`` to allow AMQP traffic from the nodes.  Additionally, allow ports ``443`` and ``15671`` to allow access to the web console and management UI via TLS, either can access the API.
 #. Once the Security group is crearted, navigate to the ``Amazon MQ`` section by searching at the top
 #. Click the ``Get started`` button.  If the ``Get started`` button is not available, click the ``Brokers`` link on the left side and then click the ``Create brokers`` button
 #. Choose the ``RabbitMQ`` broker engine, then click ``Next``
@@ -67,11 +67,11 @@ If you are familiar with using the AWS CLI, you can run the following commands t
   .. code-block:: bash
 
       # Set all variables to preferred values
-      broker_name="morpheusbroker"
+      broker_name="morpheusbroker1"
       username="admin"
       # Password must be a minimum 12 characters, at least 4 unique characters. Can't contain commas (,), colons (:), equals signs (=), spaces or non-printable ASCII characters.
       password="abc123123123123"
-      security_groups="sg-02ce7e19679b4b0a6"
+      security_groups="sg-01d8ca613f69ec769"
       subnet_ids="subnet-0ed95648b7e27a375 subnet-00422803877471552"
 
       # Create Amazone MQ Broker
