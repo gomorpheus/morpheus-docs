@@ -58,7 +58,7 @@ Create Amazon EFS (UI)
 Create Amazon EFS (CLI)
 ^^^^^^^^^^^^^^^^^^^^^^^
 
-If you are familiar with using the AWS CLI, you can run the following commands to more easily create the broker, instead of using the UI.
+If you are familiar with using the AWS CLI, you can run the following commands to more easily create the file system, instead of using the UI.
 
 #. Install the AWS CLI following the documentation:
 
