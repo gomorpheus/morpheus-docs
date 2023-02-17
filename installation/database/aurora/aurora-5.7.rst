@@ -32,13 +32,15 @@ Create Aurora Instance (UI)
 #. Once the Securit group is crearted, navigate to the ``RDS`` section by searching at the top
 #. Click the ``Subnet groups`` link on the left side
 #. Click the ``Create DB subnet group`` button
-    #. Ensure the subnet group contains two AZs at a minimum, to be highly available
-    #. You will need a subnet created in each AZ under the same VPC, if not already available
+    
+    * Ensure the subnet group contains two AZs at a minimum, to be highly available
+    * You will need a subnet created in each AZ under the same VPC, if not already available
+
 #. Click the ``Databases`` link on the left side
 #. Click the ``Create New Database`` button
 #. Ensure the following settings are chosen for the database:
     
-    .. list-table:: Title
+    .. list-table:: ** Minimum Required Database Settings**
         :header-rows: 1
 
         * - Setting
@@ -69,9 +71,22 @@ Create Aurora Instance (UI)
 Create Aurora Instance (CLI)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+If you are familiar with using the AWS CLI, you can run the following commands to more easily create the database, instead of using the UI.
+
+#. Install the AWS CLI following the documentation:
+
+  https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html
+
+#. Setup the authentication for the AWS CLI, using one of the many methods.  Environment variables are recommended:
+
+  https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html
+
+#. Finally, run the below commands to create the DB Cluster and DB Instances.  The cluster will contain the instances, which one instance will automatically become the writer instance and one will become the reader instance.
+
   .. code-block:: bash
 
       # Set all variables to preferred values
+      
       db_subnet_group_name="morpheussubnetgroup"
       # subnet_ids must contain at least two from different AZs that match the availability_zones below
       subnet_ids="subnet-0ed95648b7e27a375 subnet-00422803877471552"
