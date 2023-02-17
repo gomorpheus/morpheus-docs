@@ -6,10 +6,13 @@ Amazon OpenSearch (Elasticsearch)
 Introduction
 ^^^^^^^^^^^^
 
-Amazon MQ is a managed message broker service for Apache ActiveMQ and RabbitMQ that streamlines setup, operation, and management of message brokers on AWS.  It can be designed to be multi-AZ
-capable, allows scaling up, and minimal downtime.
+AAmazon OpenSearch Service makes it easy for you to perform interactive log analytics, real-time application monitoring, website search, and more. 
+OpenSearch is an open source, distributed search and analytics suite derived from Elasticsearch.  It can be designed to be multi-AZ capable, allows 
+scaling up, and minimal downtime.
 
-At the time of this writing, |morpheus| is designed to use RabbitMQ, which means the RabbitMQ Broker Engine must be used.  **Do not select Apache ActiveMQ** as the Broker Engine.
+At the time of this writing, |morpheus| is designed to use Elasticsearch, which means the Elastisearch engine should be used.
+
+.. note:: The OpenSearch engine has been seen to work on the current version but general support is not available yet for |morpheus|
 
 Create Elasticsearch Domain (UI)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -64,7 +67,7 @@ Create Elasticsearch Domain (UI)
 Create Elasticsearch Domain (UI)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-If you are familiar with using the AWS CLI, you can run the following commands to more easily create the broker, instead of using the UI.
+If you are familiar with using the AWS CLI, you can run the following commands to more easily create the domain, instead of using the UI.
 
 #. Install the AWS CLI following the documentation:
 
@@ -74,7 +77,7 @@ If you are familiar with using the AWS CLI, you can run the following commands t
 
   https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html
 
-#. Finally, run the below commands to create the broker:
+#. Finally, run the below commands to create the domain:
 
   Documentation:  https://awscli.amazonaws.com/v2/documentation/api/latest/reference/opensearch/create-domain.html
 
@@ -90,7 +93,7 @@ If you are familiar with using the AWS CLI, you can run the following commands t
       subnet_ids="subnet-0ed95648b7e27a375,subnet-00422803877471552"
       volume_size_gb="10"
 
-      # Create Amazone MQ Broker
+      # Create Amazon OpenSearch Domain
       aws opensearch create-domain --domain-name $domain_name \
         --engine-version "Elasticsearch_7.10" \
         --cluster-config InstanceType=m6g.large.search,InstanceCount=2,DedicatedMasterEnabled=true,ZoneAwarenessEnabled=true,ZoneAwarenessConfig={AvailabilityZoneCount=2},DedicatedMasterType=m6g.large.search,DedicatedMasterCount=3 \
