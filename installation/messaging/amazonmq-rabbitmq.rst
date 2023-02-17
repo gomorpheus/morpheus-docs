@@ -74,7 +74,7 @@ If you are familiar with using the AWS CLI, you can run the following commands t
       security_groups="sg-01d8ca613f69ec769"
       subnet_ids="subnet-0ed95648b7e27a375 subnet-00422803877471552"
 
-      # Create Amazone MQ Broker
+      # Create Amazon MQ Broker
       aws mq create-broker --auto-minor-version-upgrade \
         --broker-name $broker_name \
         --deployment-mode "CLUSTER_MULTI_AZ" \
