@@ -50,11 +50,7 @@ Reconfigure Virtual Machine Fails
 
         Some operating systems, such as Windows Server 2022, require **Nested Virtualization** to be enabled in the **Advanced** section during provisioning.  In the case for Windows Server 2022, it has 
         `Virtualization-based Security (VBS) <https://learn.microsoft.com/en-us/windows-hardware/design/device-experiences/oem-vbs>`_ enabled by default, which requires Nested Virtualization to be enabled.
-
-            - Underscores ( ``_`` )
-            - White space ( ``" "`` )
-            - Periods     ( ``.`` )
-
+        
         Additional information:
 
             https://docs.vmware.com/en/VMware-vSphere/7.0/com.vmware.vsphere.vm_admin.doc/GUID-2A98801C-68E8-47AF-99ED-00C63E4857F6.html
