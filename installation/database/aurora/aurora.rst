@@ -1,7 +1,7 @@
 .. _aurorainstall:
 
-AWS Aurora
-==========
+Amazon Aurora
+=============
 
 .. toctree::
    
