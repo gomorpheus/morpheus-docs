@@ -91,7 +91,7 @@ If you are familiar with using the AWS CLI, you can run the following commands t
       availability_zones="us-east-2a us-east-2b"
       db_cluster_identifier="morpheus-cluster"
       vpc_security_group_ids="sg-02ce7e19679b4b0a6"
-      # Get engine verisons:  aws rds describe-db-engine-versions --engine aurora-mysql --query "DBEngineVersions[].EngineVersion"
+      # Get a list of engine verisons:  aws rds describe-db-engine-versions --engine aurora-mysql --query "DBEngineVersions[].EngineVersion"
       engine_version="5.7.mysql_aurora.2.11.1"
       master_username="admin"
       # Password must be at least 8 printable ASCII characters. Can't contain any of the following: / (slash), '(single quote), "(double quote) and @

@@ -81,10 +81,6 @@ If you are familiar with using the AWS CLI, you can run the following commands t
 
       # Set all variables to preferred values
       domain_name="morpheusdomain"
-      
-      # username="admin"
-      # Password must be a minimum 12 characters, at least 4 unique characters. Can't contain commas (,), colons (:), equals signs (=), spaces or non-printable ASCII characters.
-      # password="abc123123123123"
       security_group_ids="sg-0c6cd7efd0cff7696"
       subnet_ids="subnet-0ed95648b7e27a375,subnet-00422803877471552"
       volume_size_gb="10"
