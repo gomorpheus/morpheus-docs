@@ -28,7 +28,7 @@ Create Amazon EFS (UI)
 #. Click the ``Customize`` button, which will provide many more settings
 #. Ensure the following settings are chosen for the ``File system settings`` page:
     
-    .. list-table:: **Minimum Required File system Settings**
+    .. list-table:: **Minimum Required File System Settings**
         :header-rows: 1
 
         * - Setting
@@ -39,7 +39,7 @@ Create Amazon EFS (UI)
 #. Click the ``Next`` button
 #. Ensure the following settings are chosen for the ``Network access`` page:
     
-    .. list-table:: **Minimum Required File system Settings**
+    .. list-table:: **Minimum Required Network Access Settings**
         :header-rows: 1
 
         * - Setting
@@ -61,13 +61,9 @@ Create Amazon EFS (CLI)
 If you are familiar with using the AWS CLI, you can run the following commands to more easily create the file system, instead of using the UI.
 
 #. Install the AWS CLI following the documentation:
-
   https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html
-
 #. Setup the authentication for the AWS CLI, using one of the many methods.  Environment variables are recommended:
-
   https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html
-
 #. Finally, run the below commands to create the shared storage:
 
   Documentation:  https://awscli.amazonaws.com/v2/documentation/api/latest/reference/efs/create-file-system.html
