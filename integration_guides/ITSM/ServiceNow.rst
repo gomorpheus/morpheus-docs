@@ -25,7 +25,7 @@ Add ServiceNow Integration
    SERVICENOW HOST
     URL of the ServiceNow instance (ex: https://your.instance.service-now.com), keep in mind you can create multiple ServiceNow integrations in |morpheus| if needed.
    API PROXY
-    If necessary, select a configured proxy (|InfNetPro|) to route traffic through to the ServiceNow API
+    If necessary, select a configured proxy (|InfNetPro|) to route traffic through to the ServiceNow API. If a proxy is not configured here, ServiceNow API traffic will be routed through the global proxy if one is configured on the appliance.
    CREDENTIALS
     Supply credentials for a user in ServiceNow that is able to access the REST interface and create/update/delete incidents, requests, requested items, item options, catalog items, workflows, etc. The list of necessary roles includes ``x_moda_morpheus_ca.integration`` (available if the |morpheus| ServiceNow plugin is installed from the ServiceNow Store), ``catalog_admin``, ``itil``, ``rest_service``, ``web_service_admin`` and ``import_transformer``.
 
