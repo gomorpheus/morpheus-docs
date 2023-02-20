@@ -60,10 +60,8 @@ Create Amazon EFS (CLI)
 
 If you are familiar with using the AWS CLI, you can run the following commands to more easily create the file system, instead of using the UI.
 
-#. Install the AWS CLI following the documentation:
-  https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html
-#. Setup the authentication for the AWS CLI, using one of the many methods.  Environment variables are recommended:
-  https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html
+#. Install the AWS CLI following the documentation:  https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html
+#. Setup the authentication for the AWS CLI, using one of the many methods.  Environment variables are recommended:  https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html
 #. Finally, run the below commands to create the shared storage:
 
   Documentation:  https://awscli.amazonaws.com/v2/documentation/api/latest/reference/efs/create-file-system.html

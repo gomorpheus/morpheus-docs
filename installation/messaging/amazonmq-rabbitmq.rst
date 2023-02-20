@@ -52,13 +52,9 @@ Create RabbitMQ Broker (CLI)
 
 If you are familiar with using the AWS CLI, you can run the following commands to more easily create the broker, instead of using the UI.
 
-#. Install the AWS CLI following the documentation:
+#. Install the AWS CLI following the documentation:  https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html
 
-  https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html
-
-#. Setup the authentication for the AWS CLI, using one of the many methods.  Environment variables are recommended:
-
-  https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html
+#. Setup the authentication for the AWS CLI, using one of the many methods.  Environment variables are recommended:  https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html
 
 #. Finally, run the below commands to create the broker:
 
