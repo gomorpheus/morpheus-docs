@@ -136,3 +136,14 @@ If you are familiar with using the AWS CLI, you can run the following commands t
         --db-instance-class "db.r5.large" \
         --no-publicly-accessible \
         --no-enable-performance-insights
+
+Example Morpheus.rb File Section
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+  .. code-block:: ruby
+
+    mysql['enable'] = false
+    mysql['host'] = 'morpheus-cluster.cluster-cgguv6wqc1al.us-east-2.rds.amazonaws.com'
+    mysql['morpheus_db'] = 'morpheus'
+    mysql['morpheus_db_user'] = 'morpheusDbUser'
+    mysql['morpheus_password'] = 'morpheusDbUserPassword'

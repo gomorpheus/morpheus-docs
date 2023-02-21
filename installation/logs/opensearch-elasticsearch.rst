@@ -103,8 +103,8 @@ If you are familiar with using the AWS CLI, you can run the following commands t
         --domain-endpoint-options EnforceHTTPS=true \
         --tag-list "Key=application,Value=morpheus"
 
-Testing Elasticsearch Domain (UI)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Testing Elasticsearch Domain
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 #. Run the following command to test the cluster, replaing the ``$master_username`` and ``$master_password`` with the username and password created. Also, replace ``$domain_endpoint`` with the ``Domain endpoint (VPC)`` located on the OpenSearch cluster
 
@@ -114,4 +114,14 @@ Testing Elasticsearch Domain (UI)
   
   Documentation: https://www.elastic.co/guide/en/elasticsearch/reference/current/http-clients.html
 
-    
+Example Morpheus.rb File Section
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+  .. code-block:: ruby
+
+    elasticsearch['enable'] = false
+    elasticsearch['auth_user'] = 'admin'
+    elasticsearch['auth_password'] = 'Abc123123!'
+    elasticsearch['host'] = 'vpc-morpheusdomain2-zkn4dmvrr7lcqaszcuhp2qfheu.us-east-2.es.amazonaws.com'
+    elasticsearch['port'] = '443'
+    elasticsearch['use_tls'] = true

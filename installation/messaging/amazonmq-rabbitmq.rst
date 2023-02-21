@@ -119,3 +119,16 @@ If you are familiar with using the AWS CLI, you can run the following commands t
       curl --user admin:abc123123123123 -X PUT $console_url/api/policies/morpheus/morpheusAgentActions -d '{"pattern":"morpheusAgentActions.*", "definition":{"expires":1800000, "ha-mode":"all"}, "priority":2, "apply-to":"queues"}'
       curl --user admin:abc123123123123 -X PUT $console_url/api/policies/morpheus/monitorJobs -d '{"pattern":"monitorJobs.*", "definition":{"expires":1800000, "ha-mode":"all"}, "priority":2, "apply-to":"queues"}'
       curl --user admin:abc123123123123 -X PUT $console_url/api/policies/morpheus/ha -d '{"pattern":".*", "definition":{"ha-mode":"all"}, "priority":1, "apply-to":"all"}'
+
+Example Morpheus.rb File Section
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: ruby
+    
+  rabbitmq['enable'] = false
+  rabbitmq['host'] = 'b-dc5b6c9b-112f-4ebe-a53b-129328fd2f2f.mq.us-east-2.amazonaws.com'
+  rabbitmq['port'] = '5671'
+  rabbitmq['vhost'] = 'morpheus'
+  rabbitmq['queue_user'] = 'morpheus-user'
+  rabbitmq['queue_user_password'] = 'abc123123123123'
+  rabbitmq['use_tls'] = true
