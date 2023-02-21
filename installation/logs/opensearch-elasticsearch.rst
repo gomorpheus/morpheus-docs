@@ -60,19 +60,21 @@ Create Elasticsearch Domain (UI)
         * - Security Group(s)
           - Choose the Security Group previously created
         * - Fine-grained access control
-          - **Unchecked**
+          - **Checked**
+        * - Fine-grained access control
+          - Enter a username and password for the administrator account
+        * - Access Policy
+          - Choose "Only use fine-grained access control"
 
     .. note:: Any settings not listed above can be kept at their default, or items such as usernames, VPCs, maintenance, etc. are all preferences of the customer and will not affect the performance or availability
 
 Create Elasticsearch Domain (UI)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 If you are familiar with using the AWS CLI, you can run the following commands to more easily create the domain, instead of using the UI.
 
 #. Install the AWS CLI following the documentation:  https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html
-
 #. Setup the authentication for the AWS CLI, using one of the many methods.  Environment variables are recommended:  https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html
-
 #. Finally, run the below commands to create the domain:
 
   Documentation:  https://awscli.amazonaws.com/v2/documentation/api/latest/reference/opensearch/create-domain.html
@@ -84,15 +86,32 @@ If you are familiar with using the AWS CLI, you can run the following commands t
       security_group_ids="sg-0c6cd7efd0cff7696"
       subnet_ids="subnet-0ed95648b7e27a375,subnet-00422803877471552"
       volume_size_gb="10"
+      master_username="admin"
+      # Password must be at least 8 characters long and contain at least one uppercase letter, one lowercase letter, one number, and one special character.
+      master_password="Abc123123!"
 
       # Create Amazon OpenSearch Domain
       aws opensearch create-domain --domain-name $domain_name \
         --engine-version "Elasticsearch_7.10" \
         --cluster-config InstanceType=m6g.large.search,InstanceCount=2,DedicatedMasterEnabled=true,ZoneAwarenessEnabled=true,ZoneAwarenessConfig={AvailabilityZoneCount=2},DedicatedMasterType=m6g.large.search,DedicatedMasterCount=3 \
         --ebs-options EBSEnabled=true,VolumeType=gp2,VolumeSize=$volume_size_gb \
-        --access-policies '{"Version":"2012-10-17","Statement":[{"Effect":"Deny","Principal":{"AWS":"*"},"Action":"es:*","Resource":"arn:aws:es:us-east-2:426242579432:domain/testdomain/*"}]}' \
+        --advanced-security-options "Enabled=true,InternalUserDatabaseEnabled=true,MasterUserOptions={MasterUserName=$master_username,MasterUserPassword=$master_password}" \
+        --access-policies '{"Version":"2012-10-17","Statement":[{"Effect":"Allow","Principal":{"AWS":"*"},"Action":"es:*","Resource":"arn:aws:es:us-east-2:426242579432:domain/'$domain_name'/*"}]}' \
         --vpc-options SubnetIds=$subnet_ids,SecurityGroupIds=$security_group_ids \
         --encryption-at-rest-options Enabled=true \
         --node-to-node-encryption-options Enabled=true \
         --domain-endpoint-options EnforceHTTPS=true \
         --tag-list "Key=application,Value=morpheus"
+
+Testing Elasticsearch Domain (UI)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+#. Run the following command to test the cluster, replaing the ``$master_username`` and ``$master_password`` with the username and password created. Also, replace ``$domain_endpoint`` with the ``Domain endpoint (VPC)`` located on the OpenSearch cluster
+
+  .. code-block:: bash
+
+      curl --user $master_username:$master_password $domain_endpoint/_cluster/health?pretty
+  
+  Documentation: https://www.elastic.co/guide/en/elasticsearch/reference/current/http-clients.html
+
+    
