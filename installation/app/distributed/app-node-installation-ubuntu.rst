@@ -37,4 +37,15 @@ App Node Installation
 
             [root@node-[1/2/3] ~] morpheus-ctl reconfigure
 
-   |morpheus| will come up on all nodes and Elasticsearch will auto-cluster. The only item left is the manual clustering of RabbitMQ.
+   |morpheus| will come up on all nodes.
+
+#. After the reconfigure is complete, tail the morpheus-ui logs:
+
+    .. content-tabs::
+
+      .. tab-container:: tab1
+         :title: All Nodes
+
+         .. code-block:: bash
+
+            [root@node-[1/2/3] ~] morpheus-ctl tail morpheus-ui
