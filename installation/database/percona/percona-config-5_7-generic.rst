@@ -31,8 +31,6 @@ Configure Morpheus Database and User
 
     mysql> exit
 
-   .. important:: If you grant privileges to the morpheusDbUser to only the morpheus database, you will also need to GRANT SELECT, PROCESS, SHOW DATABASES, SUPER ON PRIVILEGES to the morpheusDbUser on *.* for the Appliance Health service.
-
 Copy SSL Files to other nodes
 `````````````````````````````
 
