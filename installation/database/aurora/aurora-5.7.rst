@@ -85,23 +85,23 @@ If you are familiar with using the AWS CLI, you can run the following commands t
 
       # Set all variables to preferred values
       
-      db_subnet_group_name="morpheussubnetgroup"
+      db_subnet_group_name='morpheussubnetgroup'
       # subnet_ids must contain at least two from different AZs that match the availability_zones below
-      subnet_ids="subnet-0ed95648b7e27a375 subnet-00422803877471552"
-      availability_zones="us-east-2a us-east-2b"
-      db_cluster_identifier="morpheus-cluster"
-      vpc_security_group_ids="sg-02ce7e19679b4b0a6"
+      subnet_ids='subnet-0ed95648b7e27a375 subnet-00422803877471552'
+      availability_zones='us-east-2a us-east-2b'
+      db_cluster_identifier='morpheus-cluster'
+      vpc_security_group_ids='sg-02ce7e19679b4b0a6'
       # Get a list of engine verisons:  aws rds describe-db-engine-versions --engine aurora-mysql --query "DBEngineVersions[].EngineVersion"
-      engine_version="5.7.mysql_aurora.2.11.1"
-      master_username="admin"
+      engine_version='5.7.mysql_aurora.2.11.1'
+      master_username='admin'
       # Password must be at least 8 printable ASCII characters. Can't contain any of the following: / (slash), '(single quote), "(double quote) and @
-      master_user_password="abc123123"
-      db_instance1_identifier="instance1"
-      db_instance2_identifier="instance2"
+      master_user_password='abc123123'
+      db_instance1_identifier='instance1'
+      db_instance2_identifier='instance2'
 
       # Create DB subnet group
       aws rds create-db-subnet-group --db-subnet-group-name $db_subnet_group_name \
-        --db-subnet-group-description "Contains subnets for mySQL to be deployed to for Morpheus" \
+        --db-subnet-group-description 'Contains subnets for mySQL to be deployed to for Morpheus' \
         --subnet-ids $subnet_ids
 
       # Create RDS cluster
@@ -109,31 +109,31 @@ If you are familiar with using the AWS CLI, you can run the following commands t
         --db-cluster-identifier $db_cluster_identifier \
         --vpc-security-group-ids $vpc_security_group_ids \
         --db-subnet-group-name $db_subnet_group_name \
-        --engine "aurora-mysql" \
+        --engine 'aurora-mysql' \
         --engine-version $engine_version \
         --master-username $master_username  \
         --master-user-password $master_user_password \
         --no-enable-iam-database-authentication \
-        --engine-mode "provisioned" \
-        --network-type "IPV4" \
+        --engine-mode 'provisioned' \
+        --network-type 'IPV4' \
         --backup-retention-period 3 \
         --copy-tags-to-snapshot \
-        --tags "Key=application,Value=morpheus" \
+        --tags 'Key=application,Value=morpheus' \
         --deletion-protection
 
       # Create first instance
       aws rds create-db-instance --db-instance-identifier $db_instance1_identifier \
         --db-cluster-identifier $db_cluster_identifier \
-        --engine "aurora-mysql" \
-        --db-instance-class "db.r5.large" \
+        --engine 'aurora-mysql' \
+        --db-instance-class 'db.r5.large' \
         --no-publicly-accessible \
         --no-enable-performance-insights
 
       # Create second instance
       aws rds create-db-instance --db-instance-identifier $db_instance2_identifier \
         --db-cluster-identifier $db_cluster_identifier \
-        --engine "aurora-mysql" \
-        --db-instance-class "db.r5.large" \
+        --engine 'aurora-mysql' \
+        --db-instance-class 'db.r5.large' \
         --no-publicly-accessible \
         --no-enable-performance-insights
 
