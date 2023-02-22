@@ -30,43 +30,43 @@ Create Elasticsearch Domain (UI)
 #. Click the ``Get started`` button.  If the ``Get started`` button is not available, click the ``Domains`` link on the left side and then click the ``Create domain`` button
 #. Ensure the following settings are chosen for the domain:
     
-    .. list-table:: **Minimum Required Domain Settings**
-        :header-rows: 1
+  .. list-table:: **Minimum Required Domain Settings**
+      :header-rows: 1
 
-        * - Setting
-          - Value
-        * - Deployment type
-          - Production
-        * - Version
-          - Elasticsearch 7.10
-        * - Availability Zones
-          - 2-AZ (3-AZ is also acceptable)
-        * - (Data Nodes) Instance type
-          - m6g.large.search
-        * - EBS storage size per node
-          - 2 (3 if 3-AZ was chosen)
-        * - EBS volume type
-          - gp2
-        * - EBS storage size per node
-          - Refer to the internal storage calculator
-        * - (Dedicated master nodes) Instance Type
-          - m6g.large.search
-        * - Number of master nodes
-          - 3
-        * - Network
-          - VPC access (recommended)
-        * - Subnets
-          - Choose one subnet from at least two AZs
-        * - Security Group(s)
-          - Choose the Security Group previously created
-        * - Fine-grained access control
-          - **Checked**
-        * - Fine-grained access control
-          - Enter a username and password for the administrator account
-        * - Access Policy
-          - Choose "Only use fine-grained access control"
+      * - Setting
+        - Value
+      * - Deployment type
+        - Production
+      * - Version
+        - Elasticsearch 7.10
+      * - Availability Zones
+        - 2-AZ (3-AZ is also acceptable)
+      * - (Data Nodes) Instance type
+        - m6g.large.search
+      * - EBS storage size per node
+        - 2 (3 if 3-AZ was chosen)
+      * - EBS volume type
+        - gp2
+      * - EBS storage size per node
+        - Refer to the internal storage calculator
+      * - (Dedicated master nodes) Instance Type
+        - m6g.large.search
+      * - Number of master nodes
+        - 3
+      * - Network
+        - VPC access (recommended)
+      * - Subnets
+        - Choose one subnet from at least two AZs
+      * - Security Group(s)
+        - Choose the Security Group previously created
+      * - Fine-grained access control
+        - **Checked**
+      * - Fine-grained access control
+        - Enter a username and password for the administrator account
+      * - Access Policy
+        - Choose "Only use fine-grained access control"
 
-    .. note:: Any settings not listed above can be kept at their default, or items such as usernames, VPCs, maintenance, etc. are all preferences of the customer and will not affect the performance or availability
+  .. note:: Any settings not listed above can be kept at their default, or items such as usernames, VPCs, maintenance, etc. are all preferences of the customer and will not affect the performance or availability
 
 Create Elasticsearch Domain (CLI)
 `````````````````````````````````
@@ -81,30 +81,30 @@ If you are familiar with using the AWS CLI, you can run the following commands t
 
   .. code-block:: bash
 
-      # Set all variables to preferred values
-      es_domain_name='morpheusdomain'
-      es_security_group_ids='sg-0c6cd7efd0cff7696'
-      es_subnet_ids='subnet-0ed95648b7e27a375,subnet-00422803877471552'
-      es_volume_size_gb='10'
-      es_master_username='admin'
-      # Password must be at least 8 characters long and contain at least one uppercase letter, one lowercase letter, one number, and one special character.
-      es_master_password='Abc123123@'
+    # Set all variables to preferred values
+    es_domain_name='morpheusdomain'
+    es_security_group_ids='sg-0c6cd7efd0cff7696'
+    es_subnet_ids='subnet-0ed95648b7e27a375,subnet-00422803877471552'
+    es_volume_size_gb='10'
+    es_master_username='admin'
+    # Password must be at least 8 characters long and contain at least one uppercase letter, one lowercase letter, one number, and one special character.
+    es_master_password='Abc123123@'
 
-      # Create Amazon OpenSearch Domain
-      aws opensearch create-domain --domain-name $es_domain_name \
-        --engine-version 'Elasticsearch_7.10' \
-        --cluster-config InstanceType=m6g.large.search,InstanceCount=2,DedicatedMasterEnabled=true,ZoneAwarenessEnabled=true,ZoneAwarenessConfig={AvailabilityZoneCount=2},DedicatedMasterType=m6g.large.search,DedicatedMasterCount=3 \
-        --ebs-options EBSEnabled=true,VolumeType=gp2,VolumeSize=$es_volume_size_gb \
-        --advanced-security-options "Enabled=true,InternalUserDatabaseEnabled=true,MasterUserOptions={MasterUserName=$es_master_username,MasterUserPassword=$es_master_password}" \
-        --access-policies '{"Version":"2012-10-17","Statement":[{"Effect":"Allow","Principal":{"AWS":"*"},"Action":"es:*","Resource":"arn:aws:es:us-east-2:426242579432:domain/'$es_domain_name'/*"}]}' \
-        --vpc-options SubnetIds=$es_subnet_ids,SecurityGroupIds=$es_security_group_ids \
-        --encryption-at-rest-options Enabled=true \
-        --node-to-node-encryption-options Enabled=true \
-        --domain-endpoint-options EnforceHTTPS=true \
-        --tag-list 'Key=application,Value=morpheus'
+    # Create Amazon OpenSearch Domain
+    aws opensearch create-domain --domain-name $es_domain_name \
+      --engine-version 'Elasticsearch_7.10' \
+      --cluster-config InstanceType=m6g.large.search,InstanceCount=2,DedicatedMasterEnabled=true,ZoneAwarenessEnabled=true,ZoneAwarenessConfig={AvailabilityZoneCount=2},DedicatedMasterType=m6g.large.search,DedicatedMasterCount=3 \
+      --ebs-options EBSEnabled=true,VolumeType=gp2,VolumeSize=$es_volume_size_gb \
+      --advanced-security-options "Enabled=true,InternalUserDatabaseEnabled=true,MasterUserOptions={MasterUserName=$es_master_username,MasterUserPassword=$es_master_password}" \
+      --access-policies '{"Version":"2012-10-17","Statement":[{"Effect":"Allow","Principal":{"AWS":"*"},"Action":"es:*","Resource":"arn:aws:es:us-east-2:426242579432:domain/'$es_domain_name'/*"}]}' \
+      --vpc-options SubnetIds=$es_subnet_ids,SecurityGroupIds=$es_security_group_ids \
+      --encryption-at-rest-options Enabled=true \
+      --node-to-node-encryption-options Enabled=true \
+      --domain-endpoint-options EnforceHTTPS=true \
+      --tag-list 'Key=application,Value=morpheus'
 
-      # Retrieve the details - instance needs to be ready for this to be available
-      echo "Endpoint:  $(aws opensearch describe-domain --domain-name $es_domain_name --no-paginate | grep '"vpc":' | awk '{print $2}' | sed -r 's/"//g')"
+    # Retrieve the details - instance needs to be ready for this to be available
+    echo "Endpoint:  $(aws opensearch describe-domain --domain-name $es_domain_name --no-paginate | grep '"vpc":' | awk '{print $2}' | sed -r 's/"//g')"
 
 Testing Elasticsearch Domain
 ````````````````````````````
@@ -123,8 +123,10 @@ Testing Elasticsearch Domain
   
   Documentation: https://www.elastic.co/guide/en/elasticsearch/reference/current/http-clients.html
 
-Example Morpheus.rb File Section
+Example morpheus.rb File Section
 ````````````````````````````````
+
+File ``/etc/morpheus/morpheus.rb``
 
   .. code-block:: ruby
 
