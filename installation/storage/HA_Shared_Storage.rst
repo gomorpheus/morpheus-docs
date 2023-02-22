@@ -1,3 +1,5 @@
+.. _shared-storage:
+
 Shared Storage
 ^^^^^^^^^^^^^^
 
