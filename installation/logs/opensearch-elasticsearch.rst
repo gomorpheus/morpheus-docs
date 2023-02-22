@@ -1,12 +1,12 @@
 .. _opensearch-elasticsearch:
 
 Amazon OpenSearch (Elasticsearch)
----------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Introduction
-^^^^^^^^^^^^
+````````````
 
-AAmazon OpenSearch Service makes it easy for you to perform interactive log analytics, real-time application monitoring, website search, and more. 
+Amazon OpenSearch Service makes it easy for you to perform interactive log analytics, real-time application monitoring, website search, and more. 
 OpenSearch is an open source, distributed search and analytics suite derived from Elasticsearch.  It can be designed to be multi-AZ capable, allows 
 scaling up, and minimal downtime.
 
@@ -15,7 +15,7 @@ At the time of this writing, |morpheus| is designed to use Elasticsearch, which 
 .. note:: The OpenSearch engine has been seen to work on the current version but general support is not available yet for |morpheus|
 
 Create Elasticsearch Domain (UI)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+````````````````````````````````
 
 .. note:: The following configuration has recommended values but requirements may differ per customer
 
@@ -69,7 +69,7 @@ Create Elasticsearch Domain (UI)
     .. note:: Any settings not listed above can be kept at their default, or items such as usernames, VPCs, maintenance, etc. are all preferences of the customer and will not affect the performance or availability
 
 Create Elasticsearch Domain (CLI)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+`````````````````````````````````
 
 If you are familiar with using the AWS CLI, you can run the following commands to more easily create the domain, instead of using the UI.
 
@@ -107,7 +107,7 @@ If you are familiar with using the AWS CLI, you can run the following commands t
       echo "Endpoint:  $(aws opensearch describe-domain --domain-name $es_domain_name --no-paginate | grep '"vpc":' | awk '{print $2}' | sed -r 's/"//g')"
 
 Testing Elasticsearch Domain
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+````````````````````````````
 
 #. Run the following command to test the cluster, replacing the ``es_master_username`` and ``es_master_password`` with the username and password created. Also, replace ``es_domain_endpoint`` with the ``Domain endpoint (VPC)`` located on the OpenSearch cluster
 
@@ -124,7 +124,7 @@ Testing Elasticsearch Domain
   Documentation: https://www.elastic.co/guide/en/elasticsearch/reference/current/http-clients.html
 
 Example Morpheus.rb File Section
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+````````````````````````````````
 
   .. code-block:: ruby
 

@@ -1,10 +1,10 @@
 .. _aurora-mysql-5_7:
 
 Aurora mySQL 5.7
-----------------
+^^^^^^^^^^^^^^^^
 
 Introduction
-^^^^^^^^^^^^
+````````````
 
 Amazon Aurora is a relational database management system (RDBMS) built for the cloud with full mySQL compatibility.  It can be designed to be multi-AZ
 capable, allows scaling up, and minimal downtime.
@@ -18,7 +18,7 @@ as needed, even down to 0, to save costs and you only pay for the compute used.
 .. note:: Non-serverless Aurora will turn itself back on each week, if you have it off.  It must be on to perform updates and it will not stay off for longer than 7 days.
 
 Create Aurora Instance (UI)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
+```````````````````````````
 
 .. note:: The following configuration has recommended values but requirements may differ per customer
 
@@ -69,7 +69,7 @@ Create Aurora Instance (UI)
     .. important:: **Do not create the initial database** for |morpheus| using the UI, it will be created following the ``app`` documentation
 
 Create Aurora Instance (CLI)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+````````````````````````````
 
 If you are familiar with using the AWS CLI, you can run the following commands to more easily create the database, instead of using the UI.
 
@@ -138,7 +138,7 @@ If you are familiar with using the AWS CLI, you can run the following commands t
         --no-enable-performance-insights
 
 Configure Morpheus Database and User
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+````````````````````````````````````
 
 #. Amazon Linux 2 requires a shared library for the mysql binary provided with |morpheus| to run:
 
@@ -180,7 +180,7 @@ Configure Morpheus Database and User
 #. The database should be prepared for |morpheus| to connect
 
 Example Morpheus.rb File Section
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+````````````````````````````````
 
   .. code-block:: ruby
 

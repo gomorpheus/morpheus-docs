@@ -1,5 +1,5 @@
-Full HA Install (Amazon Linux 2)
---------------------------------
+Full HA Install (Amazon Linux 2 w/ PaaS)
+----------------------------------------
 
 Distributed Application, Amazon MQ (RabbitMQ), Amazon OpenSearch (Elasticsearch) Nodes with Amazon Aurora mySQL DB
 

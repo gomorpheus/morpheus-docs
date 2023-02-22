@@ -1,10 +1,10 @@
 .. _amazonmq-rabbitmq:
 
 Amazon MQ (RabbitMQ)
---------------------
+^^^^^^^^^^^^^^^^^^^^
 
 Introduction
-^^^^^^^^^^^^
+````````````
 
 Amazon MQ is a managed message broker service for Apache ActiveMQ and RabbitMQ that streamlines setup, operation, and management of message brokers on AWS.  It can be designed to be multi-AZ
 capable, allows scaling up, and minimal downtime.
@@ -12,7 +12,7 @@ capable, allows scaling up, and minimal downtime.
 At the time of this writing, |morpheus| is designed to use RabbitMQ, which means the RabbitMQ Broker Engine must be used.  **Do not select Apache ActiveMQ** as the Broker Engine.
 
 Create RabbitMQ Broker (UI)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
+```````````````````````````
 
 .. note:: The following configuration has recommended values but requirements may differ per customer
 
@@ -68,7 +68,7 @@ Create RabbitMQ Broker (UI)
         curl --user admin:abc123123123123 -X PUT $mq_console_url/api/policies/morpheus/ha -d '{"pattern":".*", "definition":{"ha-mode":"all"}, "priority":1, "apply-to":"all"}'
 
 Create RabbitMQ Broker (CLI)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+````````````````````````````
 
 If you are familiar with using the AWS CLI, you can run the following commands to more easily create the broker, instead of using the UI.
 
@@ -124,7 +124,7 @@ If you are familiar with using the AWS CLI, you can run the following commands t
       curl --user $mq_admin_username:$mq_admin_password -X PUT $mq_console_url/api/policies/morpheus/ha -d '{"pattern":".*", "definition":{"ha-mode":"all"}, "priority":1, "apply-to":"all"}'
 
 Example Morpheus.rb File Section
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+````````````````````````````````
 
 .. code-block:: ruby
     
