@@ -1,7 +1,7 @@
 .. _aurora-mysql-5_7:
 
-Aurora mySQL 5.7
-^^^^^^^^^^^^^^^^
+Aurora (mySQL 5.7)
+^^^^^^^^^^^^^^^^^^
 
 Introduction
 ````````````
