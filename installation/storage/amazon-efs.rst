@@ -1,10 +1,10 @@
 .. _amazon-efs:
 
 Amazon EFS
-----------
+^^^^^^^^^^
 
 Introduction
-^^^^^^^^^^^^
+````````````
 
 Amazon Elastic File System (EFS) automatically grows and shrinks as you add and remove files with no need for management or provisioning.  It can be designed to be multi-AZ
 capable, allows scaling up, and minimal downtime.
@@ -12,7 +12,7 @@ capable, allows scaling up, and minimal downtime.
 At the time of this writing, |morpheus| is designed to use the NFS protocol for shared storage, which EFS supports.
 
 Create Amazon EFS (UI)
-^^^^^^^^^^^^^^^^^^^^^^
+``````````````````````
 
 .. note:: The following configuration has recommended values but requirements may differ per customer
 
@@ -56,7 +56,7 @@ Create Amazon EFS (UI)
   .. note:: Any settings not listed above can be kept at their default, or items such as usernames, VPCs, maintenance, etc. are all preferences of the customer and will not affect the performance or availability
 
 Create Amazon EFS (CLI)
-^^^^^^^^^^^^^^^^^^^^^^^
+```````````````````````
 
 If you are familiar with using the AWS CLI, you can run the following commands to more easily create the file system, instead of using the UI.
 
@@ -90,3 +90,9 @@ If you are familiar with using the AWS CLI, you can run the following commands t
       aws efs create-mount-target --file-system-id $file_system_id \
         --subnet-id $subnet_id2 \
         --security-groups $security_groups
+
+Configure Shared Storage on the Morpheus Appliance
+``````````````````````````````````````````````````
+
+Reference the following documentation:  :ref:`shared-storage`
+
