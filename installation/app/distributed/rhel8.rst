@@ -1,5 +1,5 @@
 Full HA Install (RHEL/CentOS 8)
------------------------------
+-------------------------------
 
 Distributed Application, RabbitMQ, Elasticsearch Nodes with Externalized DB
 
