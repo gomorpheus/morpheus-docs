@@ -68,8 +68,8 @@ Create Elasticsearch Domain (UI)
 
     .. note:: Any settings not listed above can be kept at their default, or items such as usernames, VPCs, maintenance, etc. are all preferences of the customer and will not affect the performance or availability
 
-Create Elasticsearch Domain (UI)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Create Elasticsearch Domain (CLI)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 If you are familiar with using the AWS CLI, you can run the following commands to more easily create the domain, instead of using the UI.
 
@@ -82,35 +82,44 @@ If you are familiar with using the AWS CLI, you can run the following commands t
   .. code-block:: bash
 
       # Set all variables to preferred values
-      domain_name="morpheusdomain"
-      security_group_ids="sg-0c6cd7efd0cff7696"
-      subnet_ids="subnet-0ed95648b7e27a375,subnet-00422803877471552"
-      volume_size_gb="10"
-      master_username="admin"
+      es_domain_name='morpheusdomain'
+      es_security_group_ids='sg-0c6cd7efd0cff7696'
+      es_subnet_ids='subnet-0ed95648b7e27a375,subnet-00422803877471552'
+      es_volume_size_gb='10'
+      es_master_username='admin'
       # Password must be at least 8 characters long and contain at least one uppercase letter, one lowercase letter, one number, and one special character.
-      master_password="Abc123123!"
+      es_master_password='Abc123123@'
 
       # Create Amazon OpenSearch Domain
-      aws opensearch create-domain --domain-name $domain_name \
-        --engine-version "Elasticsearch_7.10" \
+      aws opensearch create-domain --domain-name $es_domain_name \
+        --engine-version 'Elasticsearch_7.10' \
         --cluster-config InstanceType=m6g.large.search,InstanceCount=2,DedicatedMasterEnabled=true,ZoneAwarenessEnabled=true,ZoneAwarenessConfig={AvailabilityZoneCount=2},DedicatedMasterType=m6g.large.search,DedicatedMasterCount=3 \
-        --ebs-options EBSEnabled=true,VolumeType=gp2,VolumeSize=$volume_size_gb \
-        --advanced-security-options "Enabled=true,InternalUserDatabaseEnabled=true,MasterUserOptions={MasterUserName=$master_username,MasterUserPassword=$master_password}" \
-        --access-policies '{"Version":"2012-10-17","Statement":[{"Effect":"Allow","Principal":{"AWS":"*"},"Action":"es:*","Resource":"arn:aws:es:us-east-2:426242579432:domain/'$domain_name'/*"}]}' \
-        --vpc-options SubnetIds=$subnet_ids,SecurityGroupIds=$security_group_ids \
+        --ebs-options EBSEnabled=true,VolumeType=gp2,VolumeSize=$es_volume_size_gb \
+        --advanced-security-options "Enabled=true,InternalUserDatabaseEnabled=true,MasterUserOptions={MasterUserName=$es_master_username,MasterUserPassword=$es_master_password}" \
+        --access-policies '{"Version":"2012-10-17","Statement":[{"Effect":"Allow","Principal":{"AWS":"*"},"Action":"es:*","Resource":"arn:aws:es:us-east-2:426242579432:domain/'$es_domain_name'/*"}]}' \
+        --vpc-options SubnetIds=$es_subnet_ids,SecurityGroupIds=$es_security_group_ids \
         --encryption-at-rest-options Enabled=true \
         --node-to-node-encryption-options Enabled=true \
         --domain-endpoint-options EnforceHTTPS=true \
-        --tag-list "Key=application,Value=morpheus"
+        --tag-list 'Key=application,Value=morpheus'
+
+      # Retrieve the details - instance needs to be ready for this to be available
+      echo "Endpoint:  $(aws opensearch describe-domain --domain-name $es_domain_name --no-paginate | grep '"vpc":' | awk '{print $2}' | sed -r 's/"//g')"
 
 Testing Elasticsearch Domain
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-#. Run the following command to test the cluster, replaing the ``$master_username`` and ``$master_password`` with the username and password created. Also, replace ``$domain_endpoint`` with the ``Domain endpoint (VPC)`` located on the OpenSearch cluster
+#. Run the following command to test the cluster, replacing the ``es_master_username`` and ``es_master_password`` with the username and password created. Also, replace ``es_domain_endpoint`` with the ``Domain endpoint (VPC)`` located on the OpenSearch cluster
 
   .. code-block:: bash
 
-      curl --user $master_username:$master_password $domain_endpoint/_cluster/health?pretty
+    # Note that these commands MUST be ran by a system on the VPC, such as the Morpheus nodes, as the cluster is private
+    # Note the above note ^^^^^^^^
+
+    es_domain_endpoint='<pastedEndpoint>'
+    es_master_username='admin'
+    es_master_password='Abc123123@'
+    curl --user $es_master_username:$es_master_password https://$es_domain_endpoint/_cluster/health?pretty
   
   Documentation: https://www.elastic.co/guide/en/elasticsearch/reference/current/http-clients.html
 
@@ -121,7 +130,7 @@ Example Morpheus.rb File Section
 
     elasticsearch['enable'] = false
     elasticsearch['auth_user'] = 'admin'
-    elasticsearch['auth_password'] = 'Abc123123!'
-    elasticsearch['host'] = 'vpc-morpheusdomain2-zkn4dmvrr7lcqaszcuhp2qfheu.us-east-2.es.amazonaws.com'
-    elasticsearch['port'] = '443'
+    elasticsearch['auth_password'] = 'Abc123123@'
+    elasticsearch['cluster'] = 'morpheusdomain'
+    elasticsearch['es_hosts'] = {'vpc-morpheusdomain-4ypsets66htlwedmhew45kfxd4.us-east-2.es.amazonaws.com' => 443}
     elasticsearch['use_tls'] = true
