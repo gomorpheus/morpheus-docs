@@ -137,6 +137,48 @@ If you are familiar with using the AWS CLI, you can run the following commands t
         --no-publicly-accessible \
         --no-enable-performance-insights
 
+Configure Morpheus Database and User
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+#. Amazon Linux 2 requires a shared library for the mysql binary provided with |morpheus| to run:
+
+  .. code-block:: bash
+
+    [root]# yum install libatomic
+
+
+#. Create the Database you will be using with |morpheus|.  Login to Aurora on **Node 01**:
+
+   .. code-block:: bash
+
+    [root]# /opt/morpheus/embedded/bin/mysql -h 'database-1.cluster-cgguv6wqc1al.us-east-2.rds.amazonaws.com' -u admin -p
+      password: `enter admin password`
+
+    mysql> CREATE DATABASE morpheus CHARACTER SET utf8 COLLATE utf8_general_ci;
+
+    mysql> show databases;
+
+
+#. Next create your |morpheus| database user. This is the user the |morpheus| app nodes will auth with Aurora:
+
+   .. code-block:: bash
+
+    mysql> CREATE USER 'morpheusDbUser'@'%' IDENTIFIED BY 'morpheusDbUserPassword';
+
+#. Next grant your new |morpheus| user permissions:
+
+   .. code-block:: bash
+
+    mysql> GRANT ALL PRIVILEGES ON morpheus.* TO 'morpheusDbUser'@'%' with grant option;
+
+    mysql> GRANT SELECT, PROCESS, SHOW DATABASES ON *.* TO 'morpheusDbUser'@'%';
+
+    mysql> FLUSH PRIVILEGES;
+
+    mysql> exit
+
+#. The database should be prepared for |morpheus| to connect
+
 Example Morpheus.rb File Section
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
