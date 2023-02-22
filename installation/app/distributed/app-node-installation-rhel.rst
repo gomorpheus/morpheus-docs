@@ -41,11 +41,11 @@ App Node Installation
 
 #. After the reconfigure is complete, tail the morpheus-ui logs:
 
-    .. content-tabs::
+   .. content-tabs::
 
-      .. tab-container:: tab1
-         :title: All Nodes
+   .. tab-container:: tab1
+      :title: All Nodes
 
-         .. code-block:: bash
+      .. code-block:: bash
 
-            [root@node-[1/2/3] ~] morpheus-ctl tail morpheus-ui
+         [root@node-[1/2/3] ~] morpheus-ctl tail morpheus-ui
