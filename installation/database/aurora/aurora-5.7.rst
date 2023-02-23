@@ -90,7 +90,7 @@ If you are familiar with using the AWS CLI, you can run the following commands t
       subnet_ids='subnet-0ed95648b7e27a375 subnet-00422803877471552'
       availability_zones='us-east-2a us-east-2b'
       db_cluster_identifier='morpheus-cluster'
-      vpc_security_group_ids='sg-02ce7e19679b4b0a6'
+      vpc_security_group_ids='sg-0a24611271fd99b3a'
       # Get a list of engine verisons:  aws rds describe-db-engine-versions --engine aurora-mysql --query "DBEngineVersions[].EngineVersion"
       engine_version='5.7.mysql_aurora.2.11.1'
       master_username='admin'
@@ -140,12 +140,11 @@ If you are familiar with using the AWS CLI, you can run the following commands t
 Configure Morpheus Database and User
 ````````````````````````````````````
 
-#. Amazon Linux 2 requires a shared library for the mysql binary provided with |morpheus| to run:
+#. If using Amazon Linux 2 to connect to the database with |morpheus| installed, it requires a shared library for the ``mysql`` binary, provided by |morpheus|, to run:
 
   .. code-block:: bash
 
-    [root]# yum install libatomic
-
+    [root]# yum install libatomic -y
 
 #. Create the Database you will be using with |morpheus|.  Login to Aurora on **Node 01**:
 
@@ -157,7 +156,6 @@ Configure Morpheus Database and User
     mysql> CREATE DATABASE morpheus CHARACTER SET utf8 COLLATE utf8_general_ci;
 
     mysql> show databases;
-
 
 #. Next create your |morpheus| database user. This is the user the |morpheus| app nodes will auth with Aurora:
 
@@ -179,8 +177,10 @@ Configure Morpheus Database and User
 
 #. The database should be prepared for |morpheus| to connect
 
-Example Morpheus.rb File Section
+Example morpheus.rb File Section
 ````````````````````````````````
+
+File ``/etc/morpheus/morpheus.rb``
 
   .. code-block:: ruby
 
