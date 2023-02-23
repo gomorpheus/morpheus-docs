@@ -1,3 +1,5 @@
+.. _app-troubleshooting:
+
 Troubleshooting
 ===============
 
