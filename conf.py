@@ -118,6 +118,7 @@ rst_prolog = """
 .. |InfNetNetG| replace:: Infrastructure > Network > Network Groups
 .. |InfNetRou| replace:: Infrastructure > Network > Routers
 .. |InfNetIP| replace:: Infrastructure > Network > IP Pools
+.. |InfNetFlo| replace:: Infrastructure > Network > Floating IPs
 .. |InfNetDom| replace:: Infrastructure > Network > Domains
 .. |InfNetPro| replace:: Infrastructure > Network > Proxies
 .. |InfNetSec| replace:: Infrastructure > Network > Security Groups
