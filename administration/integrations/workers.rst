@@ -39,13 +39,13 @@ A distributed worker VM is installed and configured similarly to a |morpheus| ap
    * - CentOS
      - 7.x, 8.x
    * - Debian
-     - 9, 10, 11
+     - 10, 11
    * - RHEL
      - 7.x, 8.x
    * - SUSE SLES
      - 12
    * - Ubuntu
-     - 16.04, 18.04, 20.04, 22.04
+     - 18.04, 20.04, 22.04
 
 - **Memory:** 4 GB RAM minimum recommended
 - **Storage:** 10 GB storage minimum recommended. Storage is required for installation packages and log files

@@ -46,9 +46,9 @@ rst_prolog = """
 .. |profileObjects| replace:: Clouds
 .. |profileTypes| replace:: Terraform, Key/Value
 
-.. |debianVersions| replace:: 9,10,11
+.. |debianVersions| replace:: 10, 11
 .. |oelVersions| replace:: 7.x, 8.x
-.. |ubuntuVersions| replace:: 16.04, 18.04, 20.04, 22.04
+.. |ubuntuVersions| replace:: 18.04, 20.04, 22.04
 .. |centosVersions| replace:: 7.x. 8.x (stream) 9.x (stream)
 .. |rhelVersions| replace:: 7.x, 8.x, 9.x
 .. |suseVersions| replace:: 12, 15
