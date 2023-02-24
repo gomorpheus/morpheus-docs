@@ -1,10 +1,10 @@
 Load Balancer Configuration
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
+---------------------------
 
 For configurations with 2 or more Applications Nodes, a load balancer is recommended to ensure high availability (HA) from disruptions and upgrades. Below are the guidelines to configuring a load balancer for |morpheus| but each configuration may differ based on the organization's requirements.
 
 Requirements
-````````````
+^^^^^^^^^^^^
 
 * WebSockets enabled
 * Load Balance 443 (optionally redirect 80 to 443)
@@ -16,7 +16,7 @@ Requirements
 * HTTPS monitor ``https://ip_address/ping`` body for ``MORPHEUS PING`` or status of 200, for node operational health
 
 Example configurations
-``````````````````````
+^^^^^^^^^^^^^^^^^^^^^^
 
 Below are a few examples of configuring load balancers to meet the needs of a HA configuration.  The examples assume SSL bridging will be used, which means an SSL (TLS) certificate is presented by the load balancer to clients and the load balancer will communicate with the backend nodes via a different (possibly same) certificate.
 This configuration is recommended because the |morpheus| application nodes will create self-signed certificates and the load balancer will present a valid certificate to end users.  Additionally, all communication will be encrypted.
