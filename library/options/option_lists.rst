@@ -137,27 +137,16 @@ TRANSLATION SCRIPT
   - ``id: <Number>``
   - ``value: <Number>`` // id, convenience
   - ``name: <String>``
-  - ``displayName: <String>``
-  - ``category: <String>``
+  - ``code: <String>``
   - ``description: <String>``
-  - ``apiKey: <String>``
-  - ``status: <String>``
-  - ``hourlyPrice: <Number>``
-  - ``hourlyCost: <Number>``
-  - ``instanceType: <Object>``
+  - ``regionCode: <String>``
+  - ``location: <String>``
+  - ``zoneType: <Object>``
 
     - ``id: <Number>``
     - ``name: <String>``
-
-  - ``plan:<Object>``
-
-    - ``id: <Number>``
-    - ``name: <String>``
-
-  - ``site:<Object>``
-
-    - ``id: <Number>``
-    - ``name: <String>``
+    - ``cloud: <String>`` // "public" or "private" value
+    - ``code: <String>``
 
   **Environments**
 
