@@ -15,8 +15,6 @@ Distributed App Nodes with Externalized DB
 
 .. include:: /installation/app/3-node-ha/clustering-rabbitmq.rst
 
-.. include:: /installation/load_balancer/ha_load_balancer.rst
-
 .. include:: /installation/storage/HA_Shared_Storage.rst
 
 .. include:: /installation/app/database-migration.rst
