@@ -38,4 +38,4 @@ In this architecture, the tiers do not need to reside on the same machines, each
 
 .. include:: supported_paas.rst
 
-.. include:: /getting_started/additional/ha_load_balancers.rst
+.. include:: /getting_started/additional/ha_load_balancer.rst
