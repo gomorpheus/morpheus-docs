@@ -20,19 +20,19 @@ All Floating IPs known to |morpheus| can be viewed on the Floating IPs List Page
 
 Free floating IPs will have a gear icon (|gear|) at the end of the row. Click the gear icon and select "Release Floating IP" to release from within the source cloud and remove the entry from the Floating IPs list.
 
-.. image::
+.. image:: /images/infrastructure/network/floatIpList.png
 
 Working with Floating IPs
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
-When provisioning to supported Clouds, |morpheus| will give the option to attach a floating IP at provision time. 
+When provisioning to supported Clouds, |morpheus| will give the option to attach a floating IP at provision time. From the CONFIGURE tab of the provisioning wizard for supported Clouds, select the desired floating IP.
 
+.. image:: /images/infrastructure/network/floatIpSet.png
 
+During Instance teardown, |morpheus| gives the option to release the floating IP.
 
+.. image:: /images/infrastructure/network/floatIpDelete.png
 
-
-
-
-Assign floating IP at provision time
-
-Release floating IP at Instance delete
+..
+  Attach and Detach Floating IPs from Instances
+  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
