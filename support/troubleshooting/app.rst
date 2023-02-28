@@ -94,7 +94,7 @@ OutOfMemoryError: Java heap space
                 
             #. Eclipse Memory Analyzer (https://www.eclipse.org/mat/) as an example
                     
-                .. important:: Warning - This takes a ton of local RAM depending on size of hprof file. If neededm edit the eclipse.ini to increase the available ram to -Xmx30720m (30GB)
+                .. important:: Warning - This takes a ton of local RAM depending on size of hprof file. If needed, edit the eclipse.ini to increase the available ram to -Xmx30720m (30GB)
                 
         #. Example stack track the analysis uses:
 
