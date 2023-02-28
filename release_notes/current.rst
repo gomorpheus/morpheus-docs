@@ -17,6 +17,7 @@ Release Dates
      5.4.15-2 contains the following updates not included in 5.4.15-1:
 
      :Azure: - 5.4.15-2 fixes 5.4.15-1 Azure security group sync issue that can lead to Appliance memory issues. :superscript:`5.4.15-2`
+     :VMware Cloud: - 5.4.15-2 fixes VMware Cloud use of Global Proxy settings :superscript:`5.4.15-2`
 
 .. NOTE:: Items appended with :superscript:`6.0.0` are also included in that version
 .. .. include:: highlights.rst
@@ -28,6 +29,7 @@ New Features
 :Catalog: - Catalog Workflows can now utilize Inputs and have a custom config field (works just like custom config on an Operational Workflow) :superscript:`6.0.0`
 :Clusters: - Some older default Kubernetes Cluster layouts (1.20 - 1.22) have been disabled for Cloud types which support newer Cluster layouts (1.23+) :superscript:`6.0.0`
 :Kubernetes: - Added default Kubernetes 1.24 and 1.25 Cluster Layouts for many Cloud types including Amazon AWS, VMWare, Digital Ocean and more :superscript:`6.0.0`
+             - Optimized Kubernetes container sync performance :superscript:`6.0.0`
 :Workflows: - Tasks may now be selected more than once in an Operational Workflow and more than once in the same phase of Provisioning Workflows :superscript:`6.0.0`
 
 
@@ -47,6 +49,8 @@ Fixes
 :Identity Sources: - Fixed an issue where the new/edit identity source modal would disappear after failing the create/update validation and become stuck with no obvious way to reopen it and fix the error :superscript:`6.0.0`
 :Instances: - Aligned the reconfigure prompts for Instances and servers which could have differences in certain cases :superscript:`6.0.0`
 :Kubernetes: - On MKS cluster control plane nodes, containerd will now automatically restart when the host is rebooted without additional configuration from the user :superscript:`6.0.0`
+             - Fixed issue with Kubernetes cron job sync :superscript:`6.0.0`
+             - Improved Kubernetes host sync matching and OS type assignment :superscript:`6.0.0`
 :Option Lists: - When setting Active Directory options via custom Inputs sourced from LDAP-based Option Lists, selections will no longer get stuck when options have spaces or special characters :superscript:`6.0.0`
 :Plans and Pricing: - Updating Subtenant Group permissions on Service Plans via |morpheus| API and CLI is now working properly :superscript:`5.5.3`
 :Policies: - Creating an internal expiration policy after a ServiceNow provision approval policy will no longer cause the provisioning approval to also be internal (rather than a ServiceNow approval) :superscript:`6.0.0`
@@ -63,6 +67,7 @@ Fixes
              - Improvement made to Terraform HCL parsing for Terraform Instances and Apps :superscript:`6.0.0`
 :VMware: - On Cloud sync, |morpheus| will now update OS type on Windows VMs if set to a non-Windows OS type :superscript:`6.0.0`
           - Provisioning ISO images on VMware Clouds is now working properly when a host is selected during the process :superscript:`6.0.0`
+:VMware Cloud: - 5.4.15-2 fixes VMware Cloud use of Global Proxy settings :superscript:`5.4.15-2`
 
 
 Appliance & Agent Updates
