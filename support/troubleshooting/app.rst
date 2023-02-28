@@ -98,8 +98,12 @@ OutOfMemoryError: Java heap space
                 
         #. Example stack track the analysis uses:
 
-            .. image:: /images/support/troubleshooting/leak_stack_trace.png
+            .. toggle-header:: :header: **Click to expand**
+            
+                .. image:: /images/support/troubleshooting/leak_stack_trace.png
         
         #. Analysis identifies leak suspect(s):
             
-            .. image:: /images/support/troubleshooting/leak_suspects.png
+            .. toggle-header:: :header: **Click to expand**
+                
+                .. image:: /images/support/troubleshooting/leak_suspects.png
