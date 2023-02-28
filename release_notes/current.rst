@@ -9,6 +9,14 @@
 
 Release Dates
   - |morphVer|-1 |releasedate|
+  - |morphVer|-2 Feb 28 2023
+
+.. toggle-header::
+    :header: 5.4.15-2 Updates **Click to Expand/Hide**
+
+     5.4.15-2 contains the following updates not included in 5.4.15-1:
+
+     :Azure: - 5.4.15-2 fixes 5.4.15-1 Azure sercurity group sync issue that can lead to Appliance memory issues. :superscript:`5.4.15-2`
 
 .. NOTE:: Items appended with :superscript:`6.0.0` are also included in that version
 .. .. include:: highlights.rst
@@ -30,6 +38,7 @@ Fixes
 :Amazon: - IAM profiles are now selectable at provision time (advanced options section of provisioning wizard) for Subtenant users whether the Cloud is private and shared with the Subtenant or public :superscript:`6.0.0`
 :Ansible Tower: - Ansible Tower Tasks now execute properly when the execute target is set to "Local" and the context set to "None" :superscript:`6.0.0`
 :Ansible: - Fixed an issue that caused certain |morpheus| variables not to be set at the server context for Ansible Tasks :superscript:`6.0.0`
+:Azure: - 5.4.15-2 fixes 5.4.15-1 Azure sercurity group sync issue that can lead to Appliance memory issues. :superscript:`5.4.15-2`
 :Backups: - Fixed an issue that could cause schedule backups to continue even when the "Scheduled Backups" option is disabled in global settings (Administration > Settings > Backups) :superscript:`6.0.0`
 :Blueprints: - Fixed an issue that caused 500 errors when accessing a Blueprint-based Catalog Item which was based off a Morpheus-type Blueprint utilizing a Terraform Instance Type :superscript:`6.0.0`
 :Code: - Reading Git repositories which contain submodules will no longer cause issues in |morpheus| :superscript:`6.0.0`
