@@ -54,3 +54,49 @@ Reconfigure Virtual Machine Fails
         Additional information:
 
             https://docs.vmware.com/en/VMware-vSphere/7.0/com.vmware.vsphere.vm_admin.doc/GUID-2A98801C-68E8-47AF-99ED-00C63E4857F6.html
+
+OutOfMemoryError: Java heap space
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+    **Issue**
+
+        Encountering the error ``OutOfMemoryError: Java heap space`` in the logs.  The source of the ``OutOfMemoryError`` needs to be located.
+
+    **Resolution**
+
+        #. Add the following to ``/opt/morpheus/sv/morpheus-ui/run`` JAVA_OPTS:
+	
+	        ``-XX:+HeapDumpOnOutOfMemoryError -XX:HeapDumpPath=<path>`` (path needs lots of space, prof file written to path can be huge (like 50GB each))
+	
+            ie change
+                ``export JAVA_OPTS="-Xms12882m -Xmx45089m -XX:+UseG1GC"``
+            to
+                ``export JAVA_OPTS="-Xms12882m -Xmx45089m -XX:+UseG1GC -XX:+HeapDumpOnOutOfMemoryError -XX:HeapDumpPath=/a/path/with/lots/of/space"``
+	
+        #. Restart morpheus-ui to pick up the changes:  ``morpheus-ctl restart morpheus-ui``
+                
+        #. On the next ``OutOfMemoryError``, a ``java_pidxxx.hprof`` file will be written to the specified path
+                
+        #. Remove the heap dump config from ``/opt/morpheus/sv/morpheus-ui/run`` to prevent additional .hprof files being generated and filling disk
+
+            ``export JAVA_OPTS="-Xms12882m -Xmx45089m -XX:+UseG1GC"``
+
+        #. Restart the morpheus-ui to pickup the changes:  ``morpheus-ctl restart morpheus-ui``
+                
+        #. zip ``java_pidxxx.hprof`` file
+                
+        #. scp or transfer the ``java_pidxxx.hprof.gz`` to local machine
+                
+        #. Use a heap dump analytics tool to analyze the hprof file
+                
+            #. Eclipse Memory Analyzer (https://www.eclipse.org/mat/) as an example
+                    
+                .. important:: Warning - This takes a ton of local RAM depending on size of hprof file. If neededm edit the eclipse.ini to increase the available ram to -Xmx30720m (30GB)
+                
+        #. Example stack track the analysis uses:
+
+            .. image:: /images/support/troubleshooting/leak_stack_trace.png
+        
+        #. Analysis identifies leak suspect(s):
+            
+            .. image:: /images/support/troubleshooting/leak_suspects.png
