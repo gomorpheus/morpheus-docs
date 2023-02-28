@@ -55,8 +55,11 @@ Reconfigure Virtual Machine Fails
 
             https://docs.vmware.com/en/VMware-vSphere/7.0/com.vmware.vsphere.vm_admin.doc/GUID-2A98801C-68E8-47AF-99ED-00C63E4857F6.html
 
+Morpheus App
+^^^^^^^^^^^^
+
 OutOfMemoryError: Java heap space
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+`````````````````````````````````
 
     **Issue**
 
