@@ -16,7 +16,7 @@ Release Dates
 
      5.4.15-2 contains the following updates not included in 5.4.15-1:
 
-     :Azure: - 5.4.15-2 fixes 5.4.15-1 Azure sercurity group sync issue that can lead to Appliance memory issues. :superscript:`5.4.15-2`
+     :Azure: - 5.4.15-2 fixes 5.4.15-1 Azure security group sync issue that can lead to Appliance memory issues. :superscript:`5.4.15-2`
 
 .. NOTE:: Items appended with :superscript:`6.0.0` are also included in that version
 .. .. include:: highlights.rst
