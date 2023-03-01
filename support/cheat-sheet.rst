@@ -1,4 +1,4 @@
-.. |title| replace:: Cheet Sheet
+.. |title| replace:: Cheat Sheet
 
 |title|
 =======
@@ -584,3 +584,18 @@ Extra White Space
 |
 
         space
+
+Images
+^^^^^^
+
+    Adding images can be done with relative or absolute paths to the project files.
+    
+        .. code-block:: text
+        
+            .. image:: /images/support/troubleshooting/app_guest_cust_hostname_failure.png
+
+        Output:
+
+            .. image:: /images/support/troubleshooting/app_guest_cust_hostname_failure.png
+
+    Additional information:  https://sublime-and-sphinx-guide.readthedocs.io/en/latest/images.html
