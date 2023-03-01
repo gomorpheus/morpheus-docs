@@ -14,7 +14,7 @@
 |heading|
 ---------
 
-    All headings should have characters under it that are as long as the heading text.  This will be seen in the examples below.  You can use many
+    All headings should have characters under it that are **at least** as long as the heading text, this will be seen in the examples below.  You can use many
     different types of special characters under the heading text, they don't have specific meanings, just what order they come in.  It is best to
     analyze the document you are editing to follow the same format, incase it has been created differently.  However, staying consistent is the goal.
 
@@ -77,7 +77,7 @@ Bold
 
     Output:
 
-    Some of **this** text is **bold**.
+        Some of **this** text is **bold**.
 
 Italics
 ^^^^^^^
@@ -88,7 +88,7 @@ Italics
 
     Output:
 
-    Some of *this* text is *italicized*.
+        Some of *this* text is *italicized*.
 
 Code
 ^^^^
@@ -99,7 +99,7 @@ Code
 
     Output:
 
-    Modify the ``/etc/hosts`` file.
+        Modify the ``/etc/hosts`` file.
 
 Links
 -----
@@ -111,48 +111,48 @@ Link Internally
     which will be available from any page when rendered.  The following example directive can have spaces in the name, as seen below.  In the case
     of the example, replace "Replace This Name" with an appropriate name for the page.
 
-    ::
+        ::
 
-        .. _Replace This Name:
+            .. _Replace This Name:
 
     This is an example that will be used below:
 
-    ::
+        ::
 
-        .. _Percona TLS RHEL8:
+            .. _Percona TLS RHEL8:
 
     Once a page has had the above entry added, you can reference that page inside of another as a link.
 
-    ::
+        ::
 
-        :ref:`Percona TLS RHEL8`
+            :ref:`Percona TLS RHEL8`
 
     Output:
 
-    :ref:`Percona TLS RHEL8`
+        :ref:`Percona TLS RHEL8`
 
 Link Externally
 ^^^^^^^^^^^^^^^
 
     Linking externally can be performed using Sphinx format:
 
-    ::
+        ::
+
+            `Sphinx <https://www.sphinx-doc.org/en/master/usage/restructuredtext/basics.html>`_
+
+    Output:
 
         `Sphinx <https://www.sphinx-doc.org/en/master/usage/restructuredtext/basics.html>`_
 
-    Output:
-
-    `Sphinx <https://www.sphinx-doc.org/en/master/usage/restructuredtext/basics.html>`_
-
     Just pasting the link only:
 
-    ::
+        ::
 
-        https://www.sphinx-doc.org/en/master/usage/restructuredtext/basics.html
+            https://www.sphinx-doc.org/en/master/usage/restructuredtext/basics.html
 
     Output:
 
-    https://www.sphinx-doc.org/en/master/usage/restructuredtext/basics.html
+        https://www.sphinx-doc.org/en/master/usage/restructuredtext/basics.html
 
 Substitutions
 -------------
@@ -161,25 +161,25 @@ Substitutions
     This can be tedious as the documents grow, to find all the locations it might be used, such as a path like ``Administration > Settings > Provisioning``.  What
     if the UI changes, now it need to be updated on all the documentation.
 
-    **Substitutions** helps in this regard.  Consider it similar to variables, where you can use them again in placed, and ensure the consistency but also the
+    **Substitutions** helps in this regard.  Consider it similar to variables, where you can use them again in places, and ensure the consistency but also the
     changes globally, when needed.
 
-    ::
+        ::
 
-        .. |mypath| replace:: Administration > Settings
+            .. |mypath| replace:: Administration > Settings
 
-        Navigate to ``|mypath| > Appliance`` to change settings for the appliance.
-        
-        Navigate to ``|mypath| > Provisioning`` to change settings for provisioning.
+            Navigate to ``|mypath| > Appliance`` to change settings for the appliance.
+            
+            Navigate to ``|mypath| > Provisioning`` to change settings for provisioning.
 
 
     Output:
 
-    .. |mypath| replace:: Administration > Settings
+        .. |mypath| replace:: Administration > Settings
 
-    Navigate to ``|mypath| > Appliance`` to change settings for the appliance.
-    
-    Navigate to ``|mypath| > Provisioning`` to change settings for provisioning.
+        Navigate to **|mypath| > Appliance** to change settings for the appliance.
+        
+        Navigate to **|mypath| > Provisioning** to change settings for provisioning.
 
 Blocks
 ------
@@ -200,10 +200,21 @@ Callouts
         .. important::
             Watch out for that car!
 
+    Output:
+
+        .. tip::
+            Always look both ways before crossing the road.
+    
+        .. warning::
+            Heavy traffic ahead.
+
+        .. important::
+            Watch out for that car!
+
 Code Blocks
 ^^^^^^^^^^^
     
-    Code blocks can be different languages that can be used, such as: 
+    Code blocks have different languages that can be used, such as: 
     
     - ruby
     - bash
@@ -213,7 +224,23 @@ Code Blocks
 
     More language short names can be found here:  https://pygments.org/docs/lexers/#pygments.lexers.ruby.RubyLexer
 
-    ::
+        ::
+
+            .. code-block:: ruby
+
+                appliance_url 'https://morpheus.localdomain'
+                elasticsearch['es_hosts'] = {'192.168.104.01' => 9200, '192.168.104.02' => 9200, '192.168.104.03' => 9200}
+                elasticsearch['node_name'] = '192.168.104.01'
+                elasticsearch['host'] = '0.0.0.0'
+                rabbitmq['host'] = '0.0.0.0'
+                rabbitmq['nodename'] = 'rabbit@node01'
+                mysql['enable'] = false
+                mysql['host'] = {'192.168.101.01' => 3306, '192.168.101.02' => 3306, '192.168.101.03' => 3306}
+                mysql['morpheus_db'] = 'morpheus'
+                mysql['morpheus_db_user'] = 'morpheusDbUser'
+                mysql['morpheus_password'] = 'morpheusDbUserPassword'
+
+    Output:
 
         .. code-block:: ruby
 
@@ -229,25 +256,31 @@ Code Blocks
             mysql['morpheus_db_user'] = 'morpheusDbUser'
             mysql['morpheus_password'] = 'morpheusDbUserPassword'
 
-    Output:
-
-    .. code-block:: ruby
-
-        appliance_url 'https://morpheus.localdomain'
-        elasticsearch['es_hosts'] = {'192.168.104.01' => 9200, '192.168.104.02' => 9200, '192.168.104.03' => 9200}
-        elasticsearch['node_name'] = '192.168.104.01'
-        elasticsearch['host'] = '0.0.0.0'
-        rabbitmq['host'] = '0.0.0.0'
-        rabbitmq['nodename'] = 'rabbit@node01'
-        mysql['enable'] = false
-        mysql['host'] = {'192.168.101.01' => 3306, '192.168.101.02' => 3306, '192.168.101.03' => 3306}
-        mysql['morpheus_db'] = 'morpheus'
-        mysql['morpheus_db_user'] = 'morpheusDbUser'
-        mysql['morpheus_password'] = 'morpheusDbUserPassword'
-
     ``sphinx-tabs`` is included in this project, so some more advanced items are available.  More info can be found here:  https://sphinx-tabs.readthedocs.io/en/latest/
 
-    ::
+        ::
+
+            .. tabs::
+
+                .. code-tab:: pwsh
+
+                    Write-Host "Hello world!"
+
+                .. code-tab:: bash
+
+                    echo "Hello world!"
+
+            .. tabs::
+
+                .. code-tab:: pwsh
+
+                    Get-Content -Path C:\Windows\System32\drivers\etc\hosts
+
+                .. code-tab:: bash
+
+                    echo /etc/hosts
+
+    Output:
 
         .. tabs::
 
@@ -269,28 +302,6 @@ Code Blocks
 
                 echo /etc/hosts
 
-    Output:
-
-    .. tabs::
-
-        .. code-tab:: pwsh
-
-            Write-Host "Hello world!"
-
-        .. code-tab:: bash
-
-            echo "Hello world!"
-
-    .. tabs::
-
-        .. code-tab:: pwsh
-
-            Get-Content -Path C:\Windows\System32\drivers\etc\hosts
-
-        .. code-tab:: bash
-
-            echo /etc/hosts
-
 Includes
 --------
 
@@ -299,36 +310,44 @@ Includes
 
     Include paths are relative to the document that you use the include directive.  Examples below will demonstrate.
 
+    This is the contents of the document used in the example:
+
+        .. toggle-header:: :header: **Click to expand**
+                
+            .. literalinclude:: ./cheat-sheet-inc.rst
+
+    Additional documentation:  https://docutils.sourceforge.io/docs/ref/rst/directives.html#include
+
 Include Page
 ^^^^^^^^^^^^
 
     Include a page in the same folder:
 
-    ::
+        ::
 
-        .. include:: file.txt
+            .. include:: cheat-sheet-inc.rst
 
     Relative
     ````````
         
         ::
 
-            .. include:: ../installation/app/3-node-ha/assumptions.rst
+            .. include:: ./cheat-sheet-inc.rst
 
     Literal
     ```````
 
         ::
 
-            .. include:: /installation/app/3-node-ha/assumptions.rst
+            .. include:: /support/cheat-sheet-inc.rst
 
         Here is an example output using relative but it would be the same for both:
 
-        **==========START OF INCLUDE==========**
+            **==========START OF INCLUDE==========**
 
-        .. include:: ../installation/app/3-node-ha/assumptions.rst
+            .. include:: ./cheat-sheet-inc.rst
 
-        **==========END OF INCLUDE==========**
+            **==========END OF INCLUDE==========**
 
 Include Excerpt
 ^^^^^^^^^^^^^^^
@@ -338,28 +357,28 @@ Include Excerpt
 
     ::
 
-        .. include:: /installation/app/3-node-ha/advanced-configurations.rst#introduction
+        .. include:: ./cheat-sheet-inc.rst
 
-    The above includes the ``Introduction`` section into this document:
+    The above includes the ``Cool Section!`` section into this document:
 
     **==========START OF INCLUDE==========**
 
-    .. include:: /installation/app/3-node-ha/advanced-configurations.rst#introduction
+    .. include:: ./cheat-sheet-inc.rst
+        :start-after: cool-secion-start
+        :end-before: cool-secion-end
 
     **==========END OF INCLUDE==========**
 
-    Here is an example of including a section with spaces and special characters in the name.  This is the section name:
+    In the above example, the file being included contains some extra text, such as:
 
-    **Create Symbolic link (symlink) for Morpheus Installations**
+        ::
 
-    This is how the include would look:
+            .. cool-secion-start
 
-    ::
+            .. cool-secion-end
 
-        .. include:: /installation/app/3-node-ha/advanced-configurations.rst#create-symbolic-link-symlink-for-morpheus-installations
-    
-    .. tip::
-        If these pages are published already, you can always navigate to them and click the link next to the section name.  This will display
-        the anchor in the URL field after the URL.  This is the full URL from the example above:  https://docs.morpheusdata.com/en/internal/installation/app/advanced-configurations/advanced-configurations.html#create-symbolic-link-symlink-for-morpheus-installations
+    The text above is what is used by the include directive to determine what it should include.  You don't have to use both the `:start-after:` and `:end-before:`
+    arguments but this ensures just a small portion is captured in this case.  The text above is prepended with `.. ` to make sure the text does not appear in that
+    document, if someone was to navigate to it.  The `.. ` is commenting in Sphinx, so it is ignored when rendered.
 
 Other interesting items
