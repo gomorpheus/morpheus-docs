@@ -377,9 +377,9 @@ Include Excerpt
 
         ::
 
-            .. cool-secion-start
+            .. cool-section-start
 
-            .. cool-secion-end
+            .. cool-section-end
 
     The text above is what is used by the include directive to determine what it should include.  You don't have to use both the `:start-after:` and `:end-before:`
     arguments but this ensures just a small portion is captured in this case.  The text above is prepended with `.. ` to make sure the text does not appear in that
