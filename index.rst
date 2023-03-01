@@ -11,6 +11,7 @@
    ..:maxdepth: 2
    :caption: Internal Documentation
 
+   support/cheat-sheet
    installation/installation
    support/support
 
