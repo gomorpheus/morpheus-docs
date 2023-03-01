@@ -3,7 +3,7 @@ Cool Title!
 
 This is the best document ever!
 
-.. cool-secion-start
+.. cool-section-start
 Cool Section!
 -------------
 

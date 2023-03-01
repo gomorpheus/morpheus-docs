@@ -312,7 +312,8 @@ Includes
 
     This is the contents of the document used in the example:
 
-        .. toggle-header:: :header: **Click to expand**
+        .. toggle-header::
+            :header: **Click to expand**
                 
             .. literalinclude:: ./cheat-sheet-inc.rst
 
@@ -364,8 +365,8 @@ Include Excerpt
     **==========START OF INCLUDE==========**
 
     .. include:: ./cheat-sheet-inc.rst
-        :start-after: cool-secion-start
-        :end-before: cool-secion-end
+        :start-after: cool-section-start
+        :end-before: cool-section-end
 
     **==========END OF INCLUDE==========**
 
@@ -381,4 +382,166 @@ Include Excerpt
     arguments but this ensures just a small portion is captured in this case.  The text above is prepended with `.. ` to make sure the text does not appear in that
     document, if someone was to navigate to it.  The `.. ` is commenting in Sphinx, so it is ignored when rendered.
 
-Other interesting items
+Other Interesting Objects
+-------------------------
+
+This document is not meant to be comprehensive, but to provide common examples.  See the following examples below, which more details can be searched for in the 
+Sphinx documentation.
+
+Tables
+^^^^^^
+
+    .. toggle-header::
+        :header: **Basic - Click to expand**
+                    
+        ::
+
+            +---------------+-------------------+------------------+----------------------------------------------+
+            | Service       | Source            | Destination      | Port(s)                                      |
+            +---------------+-------------------+------------------+----------------------------------------------+
+            | Morpheus      | Application Node  | mySQL            | 3306                                         |
+            +---------------+-------------------+------------------+----------------------------------------------+
+            | Morpheus      | Application Node  | Elasticsearch    | 9200                                         |
+            +---------------+-------------------+------------------+----------------------------------------------+
+            | Morpheus      | Application Node  | RabbitMQ         | 5672/5671(SSL)                               |
+            +---------------+-------------------+------------------+----------------------------------------------+
+            | Morpheus      | Application Node  | YUM or APT       | 443                                          |
+            +---------------+-------------------+------------------+----------------------------------------------+
+            | Elasticsearch | Elasticsearch     | Elasticsearch    | 9300                                         |
+            +---------------+-------------------+------------------+----------------------------------------------+
+            | mySQL         | mySQL             | mySQL            | 4444,4567,4568                               |
+            +---------------+-------------------+------------------+----------------------------------------------+
+            | RabbitMQ      | RabbitMQ          | RabbitMQ         | 4369,25672                                   |
+            +---------------+-------------------+------------------+----------------------------------------------+
+            | Agents        | Managed Instances | Application Node | 443                                          |
+            +---------------+-------------------+------------------+----------------------------------------------+
+            | Web Interface | Internal Clients  | Application Node | 443                                          |
+            +---------------+-------------------+------------------+----------------------------------------------+
+
+        Output:
+
+            +---------------+-------------------+------------------+----------------------------------------------+
+            | Service       | Source            | Destination      | Port(s)                                      |
+            +---------------+-------------------+------------------+----------------------------------------------+
+            | Morpheus      | Application Node  | mySQL            | 3306                                         |
+            +---------------+-------------------+------------------+----------------------------------------------+
+            | Morpheus      | Application Node  | Elasticsearch    | 9200                                         |
+            +---------------+-------------------+------------------+----------------------------------------------+
+            | Morpheus      | Application Node  | RabbitMQ         | 5672/5671(SSL)                               |
+            +---------------+-------------------+------------------+----------------------------------------------+
+            | Morpheus      | Application Node  | YUM or APT       | 443                                          |
+            +---------------+-------------------+------------------+----------------------------------------------+
+            | Elasticsearch | Elasticsearch     | Elasticsearch    | 9300                                         |
+            +---------------+-------------------+------------------+----------------------------------------------+
+            | mySQL         | mySQL             | mySQL            | 4444,4567,4568                               |
+            +---------------+-------------------+------------------+----------------------------------------------+
+            | RabbitMQ      | RabbitMQ          | RabbitMQ         | 4369,25672                                   |
+            +---------------+-------------------+------------------+----------------------------------------------+
+            | Agents        | Managed Instances | Application Node | 443                                          |
+            +---------------+-------------------+------------------+----------------------------------------------+
+            | Web Interface | Internal Clients  | Application Node | 443                                          |
+            +---------------+-------------------+------------------+----------------------------------------------+
+
+    .. toggle-header::
+        :header: ** Advanced - Click to expand**
+                    
+        ::
+
+            .. list-table:: **RabbitMQ Port Requirement Details**
+                :widths: auto
+                :header-rows: 1
+
+                * - Source 
+                    - Destination
+                    - Port
+                    - Protocol
+                    - For
+                * - Application Tier
+                    - Messaging Tier
+                    - 5672
+                    - TCP
+                    - AMQP non-TLS connections
+                * - Application Tier
+                    - Messaging Tier
+                    - 5671
+                    - TCP
+                    - AMQPS TLS enabled connections
+                * - Messaging Tier
+                    - Messaging Tier
+                    - 25672
+                    - TCP
+                    - Inter-node and CLI tool communication
+                * - Administrator Web Browser
+                    - RabbitMQ Server Management
+                    - 15672
+                    - TCP
+                    - Management plugin
+                * - Administrator Web Browser
+                    - RabbitMQ Server Management
+                    - 15671
+                    - TCP
+                    - Management plugin SSL
+                * - Messaging Tier Cluster Node
+                    - Messaging Tier Cluster Nodes
+                    - 4369
+                    - TCP
+                    - erlang epmd peer discovery service used by RabbitMQ nodes and CLI tools
+
+        Output:
+
+            .. list-table:: **RabbitMQ Port Requirement Details**
+                :widths: auto
+                :header-rows: 1
+
+                * - Source 
+                    - Destination
+                    - Port
+                    - Protocol
+                    - For
+                * - Application Tier
+                    - Messaging Tier
+                    - 5672
+                    - TCP
+                    - AMQP non-TLS connections
+                * - Application Tier
+                    - Messaging Tier
+                    - 5671
+                    - TCP
+                    - AMQPS TLS enabled connections
+                * - Messaging Tier
+                    - Messaging Tier
+                    - 25672
+                    - TCP
+                    - Inter-node and CLI tool communication
+                * - Administrator Web Browser
+                    - RabbitMQ Server Management
+                    - 15672
+                    - TCP
+                    - Management plugin
+                * - Administrator Web Browser
+                    - RabbitMQ Server Management
+                    - 15671
+                    - TCP
+                    - Management plugin SSL
+                * - Messaging Tier Cluster Node
+                    - Messaging Tier Cluster Nodes
+                    - 4369
+                    - TCP
+                    - erlang epmd peer discovery service used by RabbitMQ nodes and CLI tools
+
+Toggles
+^^^^^^^
+
+    ::
+
+        .. toggle-header::
+            :header: **Click to expand**
+
+            Some text inside here!
+
+    Output:
+
+        .. toggle-header::
+            :header: **Click to expand**
+
+            Some text inside here!
