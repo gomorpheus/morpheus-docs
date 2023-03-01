@@ -356,14 +356,15 @@ Include Page
 Include Excerpt
 ^^^^^^^^^^^^^^^
 
-    In addition to being able to include an entire page, you can include just sections of the page.  This allows you to include portions
-    of a document, instead of the entire document.
+    In addition to being able to include an entire page, you can include just portions of the page, instead of the entire document.
 
-    .. code-block:: text
+        .. code-block:: text
 
-        .. include:: ./cheat-sheet-inc.rst
+            .. include:: ./cheat-sheet-inc.rst
+                :start-after: cool-section-start
+                :end-before: cool-section-end
 
-    The above includes the ``Cool Section!`` section into this document:
+    The above includes the first sentence of the document only:
 
         **==========START OF INCLUDE==========**
 
