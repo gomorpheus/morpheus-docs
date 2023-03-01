@@ -19,21 +19,21 @@ Configuring Global Access:
 Catalog
 -------
 
-The catalog shows the complete list of pre-defined catalog items available to the user for provisioning. Catalog items are not created here, however. For more on creating catalog items, see the Catalog Items tab in the |morpheus| Library section (Library > Blueprints > Catalog Items).
+The catalog shows the complete list of predefined items available to the user for provisioning. Catalog items are not created here, however. For more on creating catalog items, see the Catalog Items tab in the |morpheus| `Library section <https://docs.morpheusdata.com/en/latest/library/blueprints/blueprints.html#catalog-items>`_ (Library > Blueprints > Catalog Items).
 
-.. thumbnail:: /images/personas/4scCatalog.png
+.. image:: /images/provisioning/catalog/catalog.png
 
 Placing Orders
 --------------
 
-From the Catalog page, select the tile for your chosen item to see any custom options that may need to be set prior to provisioning.
+From the Catalog page, select the tile for your chosen item to see any custom options that may need to be set prior to provisioning. The catalog shows a complete list of items but the list can be filtered by entering search terms or by selecting a category. When adding or editing catalog items, an optional category may be set which aids in filtering for environments which have a lot of catalog items to select from.
 
-.. thumbnail:: /images/personas/7catalogOrder.png
+.. image:: /images/provisioning/catalog/orderPage.png
 
-Once the item is in the cart, make any additional selections to complete the order. Once finished, proceed to the cart by clicking on the cart icon at the top of the application window. Click "Review Order". When reviewing your order, each selected item is listed along with its estimated cost. The total estimated cost for the entire order is also computed.
+Once the item is in the cart, make any additional selections to complete the order. Once finished, proceed to the cart by clicking on the cart icon at the top of the application window. Each selected item is listed along with its estimated cost. The total estimated cost for the entire order is also computed.
 
-.. thumbnail:: /images/personas/8catalogCart.png
+.. image:: /images/provisioning/catalog/cart.png
 
-Once :guilabel:`PLACE ORDER` is clicked, the provisioning process will begin and the user is redirected back to the catalog page. Any new orders can be viewed in Inventory and additional details can be accessed through the Inventory item detail page.
+Once :guilabel:`PLACE ORDER` is clicked, the provisioning process will begin and the user is redirected back to the catalog page. Any new orders can now be viewed from their respective list pages. Depending on whether you've ordered an Instance, App, or Workflow execution, navigate to the appropriate list page for your item to view it.
 
 .. include:: inventory.rst
