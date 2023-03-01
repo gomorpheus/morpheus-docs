@@ -1,18 +1,13 @@
-Cool Title!
-===========
-
-This is the best document ever!
-
 .. cool-section-start
 
-Cool Section!
--------------
+Cool Sub Section!
+`````````````````
 
-With the best section!
+A cool sub section!
 
 .. cool-section-end
 
-Cool Sub Section!
-^^^^^^^^^^^^^^^^^
+More Cool Sub Section!
+``````````````````````
 
 And an even better sub section!

@@ -319,6 +319,9 @@ Includes
 
     Additional documentation:  https://docutils.sourceforge.io/docs/ref/rst/directives.html#include
 
+    .. important::
+        Reminder that if you are using headings, ensure they align appropriately, or your text may not format correctly for them
+
 Include Page
 ^^^^^^^^^^^^
 
