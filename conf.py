@@ -17,9 +17,9 @@ rst_prolog = """
 .. |pluginVer| replace:: 0.13.4
 .. |workerVer| replace:: 5.4.8
 .. |rmqbranch| replace:: v3.5-3.9
-.. |rmqver| replace:: v3.9.20
+.. |rmqver| replace:: v3.11.9
 .. |mysqlbranch| replace:: v5.7
-.. |mysqlver| replace:: v5.7.39
+.. |mysqlver| replace:: v5.7.41
 .. |mysqlverfips| replace:: v5.7.39
 .. |esbranch| replace:: v7.x
 .. |esver| replace:: v7.17.5
@@ -29,13 +29,13 @@ rst_prolog = """
 .. |linuxagentver| replace:: v2.3.2
 .. |macagentver| replace:: v2.3.2
 .. |winagentver| replace:: v1.8.0.0
-.. |java| replace:: 11.0.17+8
+.. |java| replace:: 11.0.18+10
 .. |java-mac| replace:: 11.0.14+9
 .. |openjdk-jre| replace:: 11.0.17+8
 .. |openjdk-elasticsearch| replace::  17.0.5+8
 .. |openssl| replace:: 1.1.1p
 .. |openssl_fips| replace:: 1.0.2u
-.. |erlang| replace:: 23.3.4.2
+.. |erlang| replace:: 25.2.3
 .. |mastertenant| replace:: Master Tenant
 
 .. |morpheus| replace:: Morpheus

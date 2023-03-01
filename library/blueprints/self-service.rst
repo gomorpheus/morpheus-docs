@@ -28,6 +28,8 @@ From the Catalog Items List Page (|LibBluCat|), click :guilabel:`ADD`. From the 
 Configure the following:
 
 - **NAME:** A friendly name for the catalog item in |morpheus|
+- **CODE:** An optional shortcode for coded naming schemes or programmatic reference
+- **CATEGORY:** Select an existing category or enter a new one. When provisioning from the catelog, items can be filtered by category
 - **DESCRIPTION:** An optional description identifying the catalog item
 - **ENABLED:** When checked, this catalog item will be available for provisioning
 - **FEATURED:** When checked, this catalog item will be given special visibility in the Service Catalog Persona view
@@ -192,6 +194,8 @@ From the Catalog Items List Page (|LibBluCat|), click :guilabel:`ADD`. From the 
 Configure the following:
 
 - **NAME:** A friendly name for the catalog item in |morpheus|
+- **CODE:** An optional shortcode for coded naming schemes or programmatic reference
+- **CATEGORY:** Select an existing category or enter a new one. When provisioning from the catelog, items can be filtered by category
 - **DESCRIPTION:** An optional description identifying the catalog item
 - **ENABLED:** When checked, this catalog item will be available for provisioning
 - **FEATURED:** When checked, this catalog item will be given special visibility in the Service Catalog Persona view
@@ -235,6 +239,8 @@ From the Catalog Items List Page (|LibBluCat|), click :guilabel:`ADD`. From the 
 Configure the following:
 
 - **NAME:** A friendly name for the catalog item in |morpheus|
+- **CODE:** An optional shortcode for coded naming schemes or programmatic reference
+- **CATEGORY:** Select an existing category or enter a new one. When provisioning from the catelog, items can be filtered by category
 - **DESCRIPTION:** An optional description identifying the catalog item
 - **ENABLED:** When checked, this Workflow item will be available for selection in the Service Catalog
 - **FEATURED:** When checked, this catalog item will be given special visibility in the Service Catalog Persona view
