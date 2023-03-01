@@ -1,13 +1,7 @@
 .. cool-section-start
 
-Cool Sub Section!
-`````````````````
-
-A cool sub section!
+This include file is great.  It does not have much info in it but it has enough!
 
 .. cool-section-end
 
-More Cool Sub Section!
-``````````````````````
-
-And an even better sub section!
+However, we have added more info, because why not?

@@ -365,13 +365,13 @@ Include Excerpt
 
     The above includes the ``Cool Section!`` section into this document:
 
-    **==========START OF INCLUDE==========**
+        **==========START OF INCLUDE==========**
 
-    .. include:: ./cheat-sheet-inc.rst
-        :start-after: cool-section-start
-        :end-before: cool-section-end
+        .. include:: ./cheat-sheet-inc.rst
+            :start-after: cool-section-start
+            :end-before: cool-section-end
 
-    **==========END OF INCLUDE==========**
+        **==========END OF INCLUDE==========**
 
     In the above example, the file being included contains some extra text, such as:
 
@@ -383,7 +383,8 @@ Include Excerpt
 
     The text above is what is used by the include directive to determine what it should include.  You don't have to use both the `:start-after:` and `:end-before:`
     arguments but this ensures just a small portion is captured in this case.  The text above is prepended with `.. ` to make sure the text does not appear in that
-    document, if someone was to navigate to it.  The `.. ` is commenting in Sphinx, so it is ignored when rendered.
+    document, if someone was to navigate to it.  The `.. ` is commenting in Sphinx, so it is ignored when rendered.  However, the `.. ` is not required, just a nice
+    trick!
 
 Other Interesting Objects
 -------------------------
@@ -445,8 +446,10 @@ Tables
             | Web Interface | Internal Clients  | Application Node | 443                                          |
             +---------------+-------------------+------------------+----------------------------------------------+
 
+|
+
     .. toggle-header::
-        :header: ** Advanced - Click to expand**
+        :header: **Advanced - Click to expand**
                     
         ::
 
@@ -552,20 +555,23 @@ Toggles
 Extra White Space
 ^^^^^^^^^^^^^^^^^
 
+    If you need extra white space, you can use the pipe ( | ) character.  However, note that it must reside to the far
+    lefr of the document to work.
+
     ::
 
-        I need
+            I need
         |
         |
         |
         |
-        spaces
+            spaces
 
     Output:
 
         I need
-        |
-        |
-        |
-        |
+|
+|
+|
+|
         spaces
