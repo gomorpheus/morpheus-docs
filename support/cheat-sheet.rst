@@ -1,4 +1,4 @@
-.. |title| replace:: replacement Cheet Sheet
+.. |title| replace:: Cheet Sheet
 
 |title|
 =======
@@ -11,7 +11,7 @@
 
 .. |heading| replace:: Headings
 
-|section|
+|heading|
 ---------
 
     All headings should have characters under it that are as long as the heading text.  This will be seen in the examples below.  You can use many
@@ -39,7 +39,7 @@ Title Heading
         Replace Title Heading Here
         ==========================
 
-    An example of the title heading can be seen on this page at the very top, with the text of **|title|**
+    An example of the title heading can be seen on this page at the very top, with the text of |title|
     
 
 Section Heading
@@ -50,7 +50,7 @@ Section Heading
         Replace Section Heading Here
         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-    An example can be seen on this section heading, with the text of **|heading|**
+    An example can be seen on this section heading, with the text of |heading|
 
 .. |sub| replace:: Sub Heading 
 
@@ -62,7 +62,7 @@ Section Heading
         Replace Sub Heading Here
         ````````````````````````
 
-    An example can be seen on this sub heading, with the text of **|sub|**
+    An example can be seen on this sub heading, with the text of |sub|
 
 
 Simple Formatting
@@ -144,16 +144,6 @@ Link Externally
 
     `Sphinx <https://www.sphinx-doc.org/en/master/usage/restructuredtext/basics.html>`_
 
-    The markdown format:
-
-    ::
-
-        [Sphinx](https://www.sphinx-doc.org/en/master/usage/restructuredtext/basics.html)
-
-    Output:
-
-    [Sphinx](https://www.sphinx-doc.org/en/master/usage/restructuredtext/basics.html)
-
     Just pasting the link only:
 
     ::
@@ -168,7 +158,7 @@ Substitutions
 -------------
 
     There are cases where you'd like to use the same data multiple times but if you need to change it later on, you need to change it in multiple locations.
-    This can be tedious as the documents grow, to find all the locations it might be used, such as a path like `Administration > Settings > Provisioning`.  What
+    This can be tedious as the documents grow, to find all the locations it might be used, such as a path like ``Administration > Settings > Provisioning``.  What
     if the UI changes, now it need to be updated on all the documentation.
 
     **Substitutions** helps in this regard.  Consider it similar to variables, where you can use them again in placed, and ensure the consistency but also the
@@ -178,18 +168,18 @@ Substitutions
 
         .. |mypath| replace:: Administration > Settings
 
-        Navigate to `|mypath| > Appliance` to change settings for the appliance.
+        Navigate to ``|mypath| > Appliance`` to change settings for the appliance.
         
-        Navigate to `|mypath| > Provisioning` to change settings for provisioning.
+        Navigate to ``|mypath| > Provisioning`` to change settings for provisioning.
 
 
     Output:
 
     .. |mypath| replace:: Administration > Settings
 
-    Navigate to `|mypath| > Appliance` to change settings for the appliance.
+    Navigate to ``|mypath| > Appliance`` to change settings for the appliance.
     
-    Navigate to `|mypath| > Provisioning` to change settings for provisioning.
+    Navigate to ``|mypath| > Provisioning`` to change settings for provisioning.
 
 Blocks
 ------
@@ -273,7 +263,7 @@ Code Blocks
 
             .. code-tab:: pwsh
 
-                Get-Content -Path C:\\Windows\\System32\\drivers\\etc\\hosts
+                Get-Content -Path C:\Windows\System32\drivers\etc\hosts
 
             .. code-tab:: bash
 
@@ -295,7 +285,7 @@ Code Blocks
 
         .. code-tab:: pwsh
 
-            Get-Content -Path C:\\Windows\\System32\\drivers\\etc\\hosts
+            Get-Content -Path C:\Windows\System32\drivers\etc\hosts
 
         .. code-tab:: bash
 
@@ -318,29 +308,58 @@ Include Page
 
         .. include:: file.txt
 
-    Include a page in a different (relative) folder:
+    Relative
+    ````````
+        
+        ::
 
-Relative
-````````
-    
+            .. include:: ../installation/app/3-node-ha/assumptions.rst
+
+    Literal
+    ```````
+
+        ::
+
+            .. include:: /installation/app/3-node-ha/assumptions.rst
+
+        Here is an example output using relative but it would be the same for both:
+
+        **==========START OF INCLUDE==========**
+
+        .. include:: ../installation/app/3-node-ha/assumptions.rst
+
+        **==========END OF INCLUDE==========**
+
+Include Excerpt
+^^^^^^^^^^^^^^^
+
+    In addition to being able to include an entire page, you can include just sections of the page.  This allows you to include portions
+    of a document, instead of the entire document.
+
     ::
 
-        .. include:: ./installation/app/3-node-ha/assumptions.rst
+        .. include:: /installation/app/3-node-ha/advanced-configurations.rst#introduction
 
-Literal
-```````
-
-    ::
-
-        .. include:: /installation/app/3-node-ha/assumptions.rst
-
-    The examples for relative and literal are very similar, as this document resides in the root.  Here is an example output
-    using relative but it would be the same for both:
+    The above includes the ``Introduction`` section into this document:
 
     **==========START OF INCLUDE==========**
 
-    .. include:: ./installation/app/3-node-ha/assumptions.rst
+    .. include:: /installation/app/3-node-ha/advanced-configurations.rst#introduction
 
     **==========END OF INCLUDE==========**
+
+    Here is an example of including a section with spaces and special characters in the name.  This is the section name:
+
+    **Create Symbolic link (symlink) for Morpheus Installations**
+
+    This is how the include would look:
+
+    ::
+
+        .. include:: /installation/app/3-node-ha/advanced-configurations.rst#create-symbolic-link-symlink-for-morpheus-installations
+    
+    .. tip::
+        If these pages are published already, you can always navigate to them and click the link next to the section name.  This will display
+        the anchor in the URL field after the URL.  This is the full URL from the example above:  https://docs.morpheusdata.com/en/internal/installation/app/advanced-configurations/advanced-configurations.html#create-symbolic-link-symlink-for-morpheus-installations
 
 Other interesting items
