@@ -20,7 +20,7 @@
 
     The general order is as follows:
 
-    ::
+    .. code-block:: text
 
         =
         -
@@ -34,7 +34,7 @@ Title Heading
     It is recommended that pages have the following headings for the very top of the page.  There should only be one title heading on the page, which will
     will be displayed at the top of the page and in the table of contents on the left.
 
-    ::
+    .. code-block:: text
 
         Replace Title Heading Here
         ==========================
@@ -45,7 +45,7 @@ Title Heading
 Section Heading
 ^^^^^^^^^^^^^^^
 
-    ::
+    .. code-block:: text
 
         Replace Section Heading Here
         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -57,7 +57,7 @@ Section Heading
 |sub|
 ^^^^^
 
-    ::
+    .. code-block:: text
 
         Replace Sub Heading Here
         ````````````````````````
@@ -71,7 +71,7 @@ Simple Formatting
 Bold
 ^^^^
 
-    ::
+    .. code-block:: text
 
         Some of **this** text is **bold**.
 
@@ -82,7 +82,7 @@ Bold
 Italics
 ^^^^^^^
 
-    ::
+    .. code-block:: text
 
         Some of *this* text is *italicized*.
 
@@ -93,7 +93,7 @@ Italics
 Code
 ^^^^
 
-    ::
+    .. code-block:: text
 
         Modify the ``/etc/hosts`` file.
 
@@ -111,19 +111,19 @@ Link Internally
     which will be available from any page when rendered.  The following example directive can have spaces in the name, as seen below.  In the case
     of the example, replace "Replace This Name" with an appropriate name for the page.
 
-        ::
+        .. code-block:: text
 
             .. _Replace This Name:
 
     This is an example that will be used below:
 
-        ::
+        .. code-block:: text
 
             .. _Percona TLS RHEL8:
 
     Once a page has had the above entry added, you can reference that page inside of another as a link.
 
-        ::
+        .. code-block:: text
 
             :ref:`Percona TLS RHEL8`
 
@@ -136,7 +136,7 @@ Link Externally
 
     Linking externally can be performed using Sphinx format:
 
-        ::
+        .. code-block:: text
 
             `Sphinx <https://www.sphinx-doc.org/en/master/usage/restructuredtext/basics.html>`_
 
@@ -146,7 +146,7 @@ Link Externally
 
     Just pasting the link only:
 
-        ::
+        .. code-block:: text
 
             https://www.sphinx-doc.org/en/master/usage/restructuredtext/basics.html
 
@@ -164,22 +164,22 @@ Substitutions
     **Substitutions** helps in this regard.  Consider it similar to variables, where you can use them again in places, and ensure the consistency but also the
     changes globally, when needed.
 
-        ::
+        .. code-block:: text
 
             .. |mypath| replace:: Administration > Settings
 
-            Navigate to ``|mypath| > Appliance`` to change settings for the appliance.
+            Navigate to |mypath| > Appliance to change settings for the appliance.
             
-            Navigate to ``|mypath| > Provisioning`` to change settings for provisioning.
+            Navigate to |mypath| > Provisioning to change settings for provisioning.
 
 
     Output:
 
         .. |mypath| replace:: Administration > Settings
 
-        Navigate to **|mypath| > Appliance** to change settings for the appliance.
+        Navigate to |mypath| > Appliance to change settings for the appliance.
         
-        Navigate to **|mypath| > Provisioning** to change settings for provisioning.
+        Navigate to |mypath| > Provisioning to change settings for provisioning.
 
 Blocks
 ------
@@ -189,7 +189,7 @@ Blocks
 Callouts
 ^^^^^^^^
 
-    ::
+    .. code-block:: text
 
         .. tip::
             Always look both ways before crossing the road.
@@ -224,7 +224,7 @@ Code Blocks
 
     More language short names can be found here:  https://pygments.org/docs/lexers/#pygments.lexers.ruby.RubyLexer
 
-        ::
+        .. code-block:: text
 
             .. code-block:: ruby
 
@@ -258,7 +258,7 @@ Code Blocks
 
     ``sphinx-tabs`` is included in this project, so some more advanced items are available.  More info can be found here:  https://sphinx-tabs.readthedocs.io/en/latest/
 
-        ::
+        .. code-block:: text
 
             .. tabs::
 
@@ -327,21 +327,21 @@ Include Page
 
     Include a page in the same folder:
 
-        ::
+        .. code-block:: text
 
             .. include:: cheat-sheet-inc.rst
 
     Relative
     ````````
         
-        ::
+        .. code-block:: text
 
             .. include:: ./cheat-sheet-inc.rst
 
     Literal
     ```````
 
-        ::
+        .. code-block:: text
 
             .. include:: /support/cheat-sheet-inc.rst
 
@@ -359,7 +359,7 @@ Include Excerpt
     In addition to being able to include an entire page, you can include just sections of the page.  This allows you to include portions
     of a document, instead of the entire document.
 
-    ::
+    .. code-block:: text
 
         .. include:: ./cheat-sheet-inc.rst
 
@@ -375,7 +375,7 @@ Include Excerpt
 
     In the above example, the file being included contains some extra text, such as:
 
-        ::
+        .. code-block:: text
 
             .. cool-section-start
 
@@ -398,7 +398,7 @@ Tables
     .. toggle-header::
         :header: **Basic - Click to expand**
                     
-        ::
+        .. code-block:: text
 
             +---------------+-------------------+------------------+----------------------------------------------+
             | Service       | Source            | Destination      | Port(s)                                      |
@@ -451,7 +451,7 @@ Tables
     .. toggle-header::
         :header: **Advanced - Click to expand**
                     
-        ::
+        .. code-block:: text
 
             .. list-table:: **RabbitMQ Port Requirement Details**
                 :widths: auto
@@ -538,7 +538,7 @@ Tables
 Toggles
 ^^^^^^^
 
-    ::
+    .. code-block:: text
 
         .. toggle-header::
             :header: **Click to expand**
@@ -558,14 +558,14 @@ Extra White Space
     If you need extra white space, you can use the pipe ( | ) character.  However, note that it must reside to the far
     lefr of the document to work.
 
-    ::
+    .. code-block:: text
 
             I need
         |
         |
         |
         |
-            spaces
+            space
 
     Output:
 
@@ -574,4 +574,5 @@ Extra White Space
 |
 |
 |
-        spaces
+
+        space
