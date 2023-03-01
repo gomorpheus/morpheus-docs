@@ -181,6 +181,13 @@ Substitutions
         
         Navigate to |mypath| > Provisioning to change settings for provisioning.
 
+    .. note::
+        Many of these are already available in the `conf.py` file in this project, as well as the public docs.
+
+    .. note::
+        It is the practice in the public docs, as well as this project, to not use "Morpheus" but to use the `|morpheus|` substitution.  This keeps it clean, should the
+        name ever change.
+
 Blocks
 ------
 
