@@ -545,3 +545,24 @@ Toggles
             :header: **Click to expand**
 
             Some text inside here!
+
+Extra White Space
+^^^^^^^^^^^^^^^^^
+
+    ::
+
+        I need
+        |
+        |
+        |
+        |
+        spaces
+
+    Output:
+
+        I need
+        |
+        |
+        |
+        |
+        spaces
