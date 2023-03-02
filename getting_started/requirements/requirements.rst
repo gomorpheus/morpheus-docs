@@ -34,8 +34,6 @@ Base Requirements
 
     - An Appliance URL that is accessible/resolvable to all managed hosts. It is necessary for all hosts that are managed by |morpheus| to be able to communicate with the appliance server ip on port 443. This URL is configured under |AdmSet|.
 
-.. NOTE:: Ubuntu 16.10 is not currently supported.
-
 Storage Considerations
 ----------------------
 
