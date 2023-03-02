@@ -18,7 +18,7 @@ New Features
 
 :API & CLI: - Added CRUD functionality for NSX-T Groups via the ``network-server-groups`` API endpoint :superscript:`5.4.14`
              - Floating IPs can be attached and detached on Instance containers via |morpheus| API and CLI as they can in UI
-             - Key pairs can now be generated via |morpheus| API and CLI as they can in the |InfTruKey| section of the UI
+             - Key pairs can now be generated via |morpheus| API and CLI as they can in the |InfKeyKey| section of the UI
              - Listing and managing floating IPs can be handled through |morpheus| API and CLI. This functionality was also added to the UI with this release
              - Max Cores, Max Memory, Max Storage, Max VMs, Max Containers, and Max Hosts Policies can now be scoped to Service Plans via |morpheus| API and CLI. This feature has also been added to |morpheus| UI with this release
              - Resource Pool Groups functionality has been added for |morpheus| API and CLI. This functionality is similar to Network Groups except the Resource Pool is selected based on capacity at provision time
@@ -61,7 +61,7 @@ New Features
 :Option Lists: - "Instance Type Layouts" is now a selectable source object for |morpheus| API-type Option Lists
 :Personas: - Instances, Apps and Workflow Executions list pages are now accessible through the Service Catalog Persona (the same view available in the standard Persona). When needed these pages may be restricted to show only the current user's own objects through role-based access controls
 :Policies: - Max Cores, Max Memory, Max Storage, Max VMs, Max Containers, and Max Hosts Policies can now be scoped to Service Plans.
-:Roles: - Several feature permissions for Roles have been updated to curate access to information on Instance detail pages. See the following `knowledge article <>`_ for the complete list
+:Roles: - Several feature permissions for Roles have been updated to curate access to information on Instance detail pages.
          - The Provisioning: Executions feature permission now includes a "User" level to show only executions which are owned by the current user
 :Salt: - The Salt Master integration type is now deprecated with |morpheus| 6.0.0
 :Security: - Embedded MySQL has been upgraded to 5.7.41 (CVE-2023-21840)
