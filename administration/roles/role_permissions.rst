@@ -699,6 +699,12 @@ Role Mappings
         - The integrations tab is where network integrations can be viewed, added and managed. Additionally, the detail pages for network integrations are accessed here
         - This permission is recommended for those tasked with handling network integrations and their use within |morpheus|
         -
+      * - Networks: Floating IPs
+        - None, Read, Full
+        - Determines access to the Floating IPs tab on the Network list page (Infrastructure > Network)
+        - The Floating IPs tab is where Floating IPs from supported Clouds are listed once synced into |morpheus| Users may also release unattached Floating IPs from this page and link through to any workloads which have Floating IPs attached
+        - This permission is recommended for those tasked with network management
+        -
       * - Networks: IP Pools
         - None, Read, Full
         - Determines access to the IP Pools tab on the Network list page (Infrastructure > Network)
@@ -943,8 +949,8 @@ Role Mappings
         - This permission is recommended for those running day two automations against existing Instances
         -
       * - Provisioning: Executions
-        - None, Read
-        - Determines access |ProExe|
+        - None, Read, User
+        - Determines access |ProExe|. When the permission level is set to "User" only the executions owned by the current user are shown
         - |ProExe| is where Task, Workflow, and Security Scan execution output can be viewed
         - This permission is recommended for those who are responsible for managing or troubleshooting Task, Workflow, and Security Scan executions.
         -
