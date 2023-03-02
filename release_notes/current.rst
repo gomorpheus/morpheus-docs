@@ -43,8 +43,9 @@ New Features
 :Clouds: - Nutanix Prism Central Cloud type now supported via custom plugin. See share.morpheusdata.com for the plugin files and additional details
           - The OneView Cloud type is now disabled by default and must be enabled in global settings to be restored
           - The UCS Cloud type is now disabled by default and must be turned on in global settings to be restored
-:Clusters: - Resource Pool Groups functionality has been added. This functionality is similar to Network Groups except the Resource Pool is selected based on capacity at provision time
+:Clusters: - Resource Pool Groups functionality has been added allowing the Resource Pool to be automatically selected based on capacity at provision time
             - Some older default Kubernetes Cluster layouts (1.20 - 1.22) have been disabled for Cloud types which support newer Cluster layouts (1.23+) :superscript:`5.4.15`
+:Dashboard: - The main appliance Dashboard (|OpeDas|) has been completely redesigned
 :Health: - Appliance storage metrics have been added to the Health page (|AdmHea|) which can help diagnosing appliance performance issues
           - The Elastic health logic on the Health page (|AdmHea|) no longer shows Elastic health in a warned state for single node appliances
 :Installer: - The embedded RabbitMQ service has been upgraded to 3.11.9
@@ -58,7 +59,7 @@ New Features
 :Kubernetes: - Added default Kubernetes 1.24 and 1.25 Cluster Layouts for many Cloud types including Amazon AWS, VMWare, Digital Ocean and more :superscript:`5.4.15`
 :Network: - Added support for Floating IP sync and management in OpenStack, Huawei, and OTC Clouds. Floating IPs tab added to UI (|InfNetFlo|) and option to release Floating IP on Instance delete added
 :Option Lists: - "Instance Type Layouts" is now a selectable source object for |morpheus| API-type Option Lists
-:Personas: - Instances, Apps and Workflow Executions list pages are now accessible through the Service Catalog Persona view. When needed these pages may be restricted to show only the current user's own objects through role-based access controls
+:Personas: - Instances, Apps and Workflow Executions list pages are now accessible through the Service Catalog Persona (the same view available in the standard Persona). When needed these pages may be restricted to show only the current user's own objects through role-based access controls
 :Policies: - Max Cores, Max Memory, Max Storage, Max VMs, Max Containers, and Max Hosts Policies can now be scoped to Service Plans.
 :Roles: - Several feature permissions for Roles have been updated to curate access to information on Instance detail pages. See the following `knowledge article <>`_ for the complete list
          - The Provisioning: Executions feature permission now includes a "User" level to show only executions which are owned by the current user
@@ -68,10 +69,9 @@ New Features
             - OpenSSL has been upgraded to 1.1.1t (CVE-2022-4450)
 :ServiceNow: - ServiceNow integrations now support OAuth 2.0 in addition to simple username and password authentication
 :Settings: - A stats retainment setting has been added to global settings (|AdmSet|) to extend the monitoring statistics available (such as on Instance detail pages) if desired
-:Workflows: - Tasks may now be selected more than once in an Operational Workflow and more than once in the same phase of Provisioning Workflows :superscript:`5.4.15`
+:Workflows: - Workflows may be added to Nested Workflow-type Tasks allowing Workflows to be nested inside other Workflows. This greatly simplifies the process of making Workflows which only have slight differences or which contain common pieces :superscript:`5.4.15`
              - There are a number of places in the UI where Workflows are selected. These have been converted from dropdown menus to typeahead fields
-             - Workflows may now be nested. That is, when building a Workflow, other Workflows may be selected rather than just Tasks. This greatly simplifies the process of making Workflows which only have slight differences or which contain common pieces
-             - Workflows which fail can now be retried from immediately after the last successful Task. When a problem occurs with a long-running Workflow, it can now be corrected and the Workflow can be resumed from the fail point
+             - Workflows which fail can now be retried from immediately after the last successful Task. When a problem occurs with a long-running Workflow, it can now be corrected and the Workflow can be resumed from the fail point. Tasks can also be retried within some parts of an Instance provisioning history as well
 
 
 Fixes
