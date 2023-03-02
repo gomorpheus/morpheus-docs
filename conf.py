@@ -14,7 +14,7 @@ rst_prolog = """
 .. |morphver| replace:: v6.0.0
 .. |minUpgradeVer| replace:: v5.2.0
 .. |previousMorphVer| replace:: v5.5.3
-.. |pluginVer| replace:: 0.13.4
+.. |pluginVer| replace:: 0.13.6
 .. |workerVer| replace:: 5.4.8
 .. |rmqbranch| replace:: v3.5-3.11
 .. |rmqver| replace:: v3.11.9
@@ -33,7 +33,7 @@ rst_prolog = """
 .. |java-mac| replace:: 11.0.14+9
 .. |openjdk-jre| replace:: 11.0.17+8
 .. |openjdk-elasticsearch| replace::  17.0.5+8
-.. |openssl| replace:: 1.1.1p
+.. |openssl| replace:: 1.1.1t
 .. |openssl_fips| replace:: 1.0.2u
 .. |erlang| replace:: 25.2.3
 .. |mastertenant| replace:: Master Tenant
