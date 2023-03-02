@@ -14,6 +14,8 @@ Cloud Sync Interval
   Data is refreshed through cloud integrations at the interval specified here in seconds, the default value is 300 seconds (five minutes). Appliances managing a very large number of clouds may be adversely affected by setting this value too low.
 Usage Retainment
  Determines how many days to keep account usage (metered costing data) records. Retainment period is not set by default. Usage records will remain indefinitely if Usage Retainment is not set. Note this does not affect generated Invoice records.
+Stats Retainment
+  Select 30, 60 or 90 days period for stats retainment. Selecting a larger period gives the ability to analyze stats, such as Instance metrics, over a longer period of time. For example, in the Monitoring tab of an Instance detail page, users can select a 60 or 90-day analysis period if the stats have been retained that long
 Denied Hosts
   A comma-delimited list of IP addresses and/or hostnames which should not be allowed sources for HTTP Tasks or REST-populated Option Lists.
 Approved Hosts
