@@ -193,6 +193,11 @@ A number of different Task types could be used in this phase. As long as the Tas
     ]
     return rtn
 
+Nesting Workflows
+^^^^^^^^^^^^^^^^^
+
+|morpheus| allows Workflows to be nested for easier Workflow creation when many Workflows are used in an environment which have only slight differences or which are made up of common pieces. Nestable Workflows are created like any other Operational Workflow. Once the Workflow is saved, it can be embedded into a special Task type called "Nested Workflow." A Nested Workflow-type Task simply references an Operational Workflow which may need to be used within other Workflows. Once Nested Workflow Tasks are created they can be used as part of any new Operational or Provisioning Workflows that are created thereafter (or may be added to existing Workflows too). For more on creating Tasks, see |morpheus| `Task documentation <https://docs.morpheusdata.com/en/latest/library/automation/automation.html#tasks>`_.
+
 Edit Workflow
 ^^^^^^^^^^^^^
 

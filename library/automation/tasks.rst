@@ -23,6 +23,7 @@ Tasks
 .. |localscript| image:: /images/automation/tasks/localScript-bfbe0063e4e6c35ed1c4e5898c88e007.png
 .. |vro| image:: /images/automation/tasks/vro_logo.png
 .. |wa| image:: /images/automation/tasks/writeAttributes.png
+.. |nestedworkflow| image:: /images/automation/tasks/nestedworkflow.svg
 
 Overview
 ^^^^^^^^
@@ -169,6 +170,13 @@ Task Types
      - Resource
      - Existing Library Templates
      - Provisioning: Tasks
+   * - |nestedworkflow|
+     - Nested Workflow
+     - Embeds a Workflow into a Task which allows the Workflow to be nested within other Workflows for situations when common Task sets are frequently used in Workflows
+     - N/A
+     - Local
+     - N/A
+     - Provisioning: Tasks, Provisioning: Workflows
    * - |powershell|
      - PowerShell Script
      - Execute PowerShell Script on the Target Resource
@@ -343,6 +351,14 @@ Task Configuration
     - **NAME:** Name of the Task
     - **CODE:** Unique code name for API, CLI, and variable references
     - **TEMPLATE:** Search for an existing template in the typeahead field
+
+- .. toggle-header:: :header: **Nested Workflow**
+
+    |nestedworkflow|
+
+    - **NAME:** Name of the Task
+    - **CODE:** Unique code name for API, CLI, and variable references
+    - **OPERATIONAL WORKFLOW:** The Workflow to be embedded as a Task for reference inside other Workflows
 
 - .. toggle-header:: :header: **Powershell Script**
 
