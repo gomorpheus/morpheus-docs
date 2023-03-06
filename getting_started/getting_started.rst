@@ -6,6 +6,7 @@ Getting Started
   :maxdepth: 2
 
   requirements/requirements.rst
+  requirements/capacity_planning.rst
   installation/installation.rst
   maintenance/maintenance.rst
   additional/additional_configuration.rst

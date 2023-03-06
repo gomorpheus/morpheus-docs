@@ -13,7 +13,7 @@ Creating A Budget
       #. **Scope:** Here you can choose which construct this budget is tied to (Account, Tenant, Cloud, Group, or User)
       #. **Period**: Currently "Year" is the only option
       #. **Year:** Select a year to set budgets for future years. Alternatively, select "custom" to create a multi-year budget or input a custom fiscal year if required by your organization
-      #. **Interval:** Choose Month, Quarter, Year then fill in the budgeted amount for that interval
+      #. **Interval:** Choose Month, Quarter, Year then fill in the budgeted amount for that interval (for quarter and year interval Budgets the entered amount is evenly split across the months in the given interval)
 
   #. Click :guilabel:`SAVE CHANGES`
 
@@ -30,19 +30,25 @@ In the example below, I've created a three-year budget:
 .. image:: /images/operations/multiBudget.png
   :width: 50%
 
+Budget Monitoring
+^^^^^^^^^^^^^^^^^
+
+As the year (or years) goes on, existing Budgets can be reviewed to compare actual spend against the budgeted amount. To access the Budget detail, navigate to |OpeCosBud| and select the desired Budget. The reported actual amount for a given month will be the same as the total cost reported for the month on the Invoice with the same scoping (for the current month, projected cost is used). Depending on the Cloud type, this figure can be pulled from a public clouds live costing API (such as with AWS, Azure, or GCP Clouds) or from the |morpheus| in-built cost metering for private clouds (like VMware).
+
+Example Budget, Cloud-scoped:
+
+.. image:: /images/operations/budget.png
+
+Example Cloud Invoice for the same month:
+
+.. image:: /images/operations/invoice.png
+
 Cloud Budgets
 ^^^^^^^^^^^^^^
 
 If you scope a budget to a Cloud, visit the Cloud summary tab in ``Infrastructure > Clouds > Select Cloud`` to see a cost-to-budget breakdown for that Cloud.
 
 .. image:: /images/operations/budgets/cloudBudget.png
-
-View Budget Summary
-^^^^^^^^^^^^^^^^^^^
-
-To view the budget summary, click into the budget to see a breakdown of budgeted amounts against actual costs for the selected interval period. Budgets can be edited or deleted by clicking the pencil or trash can icons, respectively, for each budget.
-
-.. image:: /images/operations/budgets/budgetSummary.png
 
 Budget Analytics
 ^^^^^^^^^^^^^^^^

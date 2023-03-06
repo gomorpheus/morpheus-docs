@@ -4,56 +4,54 @@ Archives
 Overview
 --------
 
-Archives provides a way to store your files and make them available for download by your Scripts and Users. Archives are organized by buckets. Each bucket has a unique name that is used to identify it in URLs and Scripts.
+Archives provides a way to store your files and make them available for download by your scripts and Users. Archives are organized by buckets and can be tied to any existing Bucket or File Share that may be currently integrated (for more on integrating new storage targets, see `storage documentation <https://docs.morpheusdata.com/en/latest/infrastructure/storage/storage.html>`_). Thus, storage buckets in public clouds, on networked storage, or even on the appliance itself may be used to host files.
 
-.. image:: /images/services/archives.gif
+Archives List Page
+------------------
 
-.. [caption="Figure 1: ", title="Archives", alt="Archives"]
+To view or create Archives, navigate to |TooArc|. At the Archives list page is a list of all currently-configured Archives. From the list view, the following details about each Archive are shown:
 
-Storage Provider
+- **NAME:** The name for the Archive in |morpheus|
+- **BUCKET:** The integrated bucket or file share where files in this Archive are stored
+- **# Files:** The number of files in the Archive
+- **SIZE:** The total size of all files in the Archive
+- **TENANTS:** When Archive visibility is set to Private, only the Tenants listed here have access to the Archive
+- **VISIBILITY:** Public or Private, public Archives are available in all Tenants
+- **PUBLIC URL:** Indicates whether |morpheus| is automatically generating a public download URL for files in this Archive
+- **ACTIONS:** Within the ACTIONS menu users may download a ZIP folder containing all files in the Archive, edit the Archive, or remove it
+
+.. image:: /images/tools/archives/archivelist.png
+
+Adding an Archive
+-----------------
+
+To add a new Archive, click :guilabel:`+ ADD` from the Archives list page. Configure the following:
+
+- **NAME:** A friendly name for the Archive in |morpheus|
+- **DESCRIPTION:** An optional description for the Archive
+- **BUCKET:** Select an existing bucket or file share to store files in for this Archive. To integrate a new bucket or file share to use for an Archive, navigate to |InfSto|
+- **VISIBILITY:** Public or Private, public Archives are available in all Tenants
+- **TENANTS:** When Archive visibility is set to Private, only the Tenants selected will have access to the Archive
+- **PUBLIC URL:** When marked, |morpheus| will create a public download URL for all files in the Archive
+
+.. WARNING:: Be sure that no sensitive data will be stored in the Archive if it will be configured to generate public URLs. Anyone with the public URL will be able to download the file without authentication.
+
+Once done, click :guilabel:`SAVE CHANGES`
+
+Archive Detail Page
+-------------------
+
+The Archive detail contains information about the Archive configuration as well as a list of files currently stored in the Archive. The Archive detail is accessed by navigating to the Archives list page (|TooArc|) and selecting an existing Archive. As on the Archives List Page, users can download a ZIP folder containing all files in the Archive and edit the Archive from the ACTIONS menu.
+
+To delete the Archive, click :guilabel:`DELETE`. New files are added by clicking :guilabel:`+ ADD`. When adding a new file, users may browse the file system on the local computer to select a file.
+
+From the files list, download or delete individual files by clicking on the appropriate selection from the ACTIONS menu.
+
+.. image:: /images/tools/archives/archivedetail.png
+
+File Detail Page
 ----------------
 
-Archive buckets are assigned a Storage Provider (Object Store). This is where the bucket will write its files. A Storage Provider can be configured to use the local appliance file system (Local), an Amazon S3 bucket, etc.
+The File Detail Page contains details about the file itself as well as private and public (if available) URLs. In the lower section are three tabs. The Links tab contains any download links which have been generated (both active and expired). The History tab contains historical information about the file including creation and deletion of download links and download events. The scripts tab contains a guide for getting started using Archive-stored files in scripts.
 
-Every archive bucket generates and uses a random File Path to store its files under. This ensures two different archive buckets will not contend for the same backend storage location.
-
-Permissions
------------
-
-Visibility
-^^^^^^^^^^
-
-Visibility determines whether your files are secure or not.
-
-Private
-  This secures your files. Only authorized users of the Owner and Tenants account may view the bucket and download its files. This is the default.
-Public
-  This makes your files available to the public. Anyone, including anonymous users/scripts can download these files without any authentication.
-
-.. WARNING:: Be careful not to store sensitive files in a Public archive.
-
-Users of the Owner account may fully manage the files in a bucket.
-
-Tenants
-^^^^^^^
-
-Users of the Owner account may fully manage the files in a bucket. Users of the Tenant account(s) will have read-only access. The may browse and download files in the bucket.
-
-Both Owner and Tenants must have the Services: Archives permission to access a Private bucket. READ level access allows browsing and downloading files in the bucket.
-
-FULL access allows full management of the bucket and its files. This includes modifying files and links, bucket settings and deleting it.
-
-Files
------
-
-To add a file to a bucket, click on the bucket name, and then click the + ADD FILE button. Once added, click on the file name to access the links, history and script section for the file.
-
-Links
------
-
-You can create a Link to download a Private file without any authentication. Links may be configured to expire after a period of time.
-
-Scripts
--------
-
-|morpheus| automatically generates syntax for creating a link to a file in your Scripts. When the Script is generated, it will create a temporary link to download the file and return the URL of that link. This link is made available to the public. It is accessible to any user or script that can reach the appliance. Downloading the file only requires knowing the URL, which includes a secret token parameter. You can specify the number of seconds before the link expires. The default value is 1200 (20 minutes).
+.. image:: /images/tools/archives/filedetail.png

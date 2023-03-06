@@ -17,6 +17,7 @@ Base Requirements
 - **CPU:** 4-core, 1.4 GHz (or better), 64-bit CPU recommended for all-in-one systems. For a distributed-tier installation, it's recommended each tier have 2-core, 1.4 GHz (or better), 64-bit CPU
 - Network connectivity from your users to the appliance over TCP 443 (HTTPS)
 - Superuser privileges via the ``sudo`` command for the user installing the |morpheus| appliance package
+- |morpheus| service nodes must be configured to use accurate NTP servers. A service node may be an app node, database node, RabbitMQ, or Elasticsearch node (see |morpheus| system architecture details further on in the installation section for more details)
 - Required repository access:
     - Prior to installing the |morpheus| Appliance you will need to ensure that the target server or virtual machine has access to the base YUM/DNF or APT repositories
     - A RHEL 8 server requires the ``codeready`` (codeready-builder-for-rhel-8-x86_64-rpms) repository be enabled and accessible
@@ -64,11 +65,6 @@ Backups
 |morpheus| can offload snapshots when performing backups to local or other Storage Providers. By default when no Storage Provider has been added, backups will write to ``/var/opt/morpheus/bitcan/backups/``. When using none NFS Storage providers, the backup file(s) must be written to ``/var/opt/morpheus/bitcan/working/`` before they can be zipped, sent to the destination Storage provider such as S3, and removed from ``/var/opt/morpheus/bitcan/working/``. Please ensure adequate space in ``/var/opt/morpheus/bitcan/`` when offloading Backups.
 
 .. note:: The backup /working and /backups paths are configurable in morpheus.rb with `bitcan['working_directory'] = '$path'` and `bitcan['backup_directory'] = '/tmp'`
-
-Migrations
-^^^^^^^^^^
-
-When performing a Hypervisor to Hypervisor migration, such as VMware to AWS, Virtual Images are written to local storage before conversion and/or upload to the target hypervisor. Please ensure adequate space in ``/var/opt/morpheus/morpheus-ui/vms`` or other configured local Storage Provider paths when performing Migrations.
 
 VM Logs and Stats
 ^^^^^^^^^^^^^^^^^

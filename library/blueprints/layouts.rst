@@ -71,3 +71,14 @@ Nodes
   Single or multiple nodes can be added to a Layout by searching for and selecting the Node(s)
 Price Sets
   Associate a Price Set with the Layout, Price Sets are created in |AdmPlaSet|. Price Sets which are added to Layouts become additive with any pricing which may apply on the Service Plan. For example, a "fixed" Price Set of $1000/month has been associated with the Layout. If this Layout is provisioned to an Amazon AWS Cloud, the additional fixed price would be computed along with any Price which is pre-existing on the AWS Service Plan
+
+
+  - .. toggle-header:: :header: **Layout Price Sets Demo**
+
+      .. raw:: html
+
+          <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; height: auto;">
+              <iframe src="//www.youtube.com/embed/V_ZoZBakAVM" frameborder="0" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
+          </div>
+
+      |
