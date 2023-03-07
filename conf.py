@@ -18,9 +18,9 @@ rst_prolog = """
 .. |workerVer| replace:: 5.4.8
 .. |rmqbranch| replace:: v3.5-3.11
 .. |rmqver| replace:: v3.11.9
-.. |mysqlbranch| replace:: v5.7
+.. |mysqlbranch| replace:: v5.7, v8.0
 .. |mysqlver| replace:: v5.7.41
-.. |mysqlverfips| replace:: v5.7.39
+.. |mysqlverfips| replace:: v5.7.41
 .. |esbranch| replace:: v7.x
 .. |esver| replace:: v7.17.5
 .. |tcver| replace:: v9.0.70

@@ -83,15 +83,15 @@ No Service Version Changes from |previousMorphVer|
    * - MySQL
      - |mysqlbranch|
      - |mysqlver|
-     -
+     - |checkmark|
    * - MySQL (FIPS)
      - |mysqlbranch|
      - |mysqlverfips|
-     -
+     - |checkmark|
    * - Percona
      - 5.7, WSREP 31
      - n/a
-     -
+     - 
    * - Elasticsearch
      - |esbranch|
      - |esver|
@@ -99,7 +99,7 @@ No Service Version Changes from |previousMorphVer|
    * - RabbitMQ
      - |rmqbranch|
      - |rmqver|
-     -
+     - |checkmark|
    * - Tomcat
      -
      - |tcver|
