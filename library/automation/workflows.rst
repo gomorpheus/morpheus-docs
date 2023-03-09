@@ -114,6 +114,23 @@ The above example would result in the following output:
   linux
   bar
 
+Retrying Workflows
+^^^^^^^^^^^^^^^^^^
+
+When a Workflow fails, |morpheus| allows users to retry from the failed Task. Access the Workflow execution from the executions list page (|ProExe|), from the Executions tab of the Workflow detail page (|LibAutWor| > Selected Workflow), or from the History tab on the Instance detail page (|ProIns| > Selected Instance). From the execution, select the Retry button which looks like a clockwise circular arrow and is highlighted in the screenshot below. This can be very useful as it allows you to resume what could potentially be a very long running Workflow from a point of failure without needing to start from the beginning. Similarly, if a provisioned Instance is in a failed state due to a failure in an attached Workflow (such as a failed Task in the Provision phase of an attached Provisioning Workflow), the user can opt to resume the Tasks from the failure point after making a correction and restore the Instance to a successfully-provisioned state.
+
+- .. toggle-header:: :header: Retry Workflow Tasks Video Demo
+
+    .. raw:: html
+
+        <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; height: auto;">
+            <iframe src="//www.youtube.com/embed/oMUYtCTYhH4" frameborder="0" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
+        </div>
+
+    |
+
+.. image:: /images/automation/retryTask.png
+
 Price Phase Task Utilization
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -127,7 +144,7 @@ Price Phase Task Utilization
 
     |
 
-Price Phase Tasks allow computed pricing for any workload in any Cloud (even public Clouds) to be overridden based on custom logic designed by the user. They feed a variable "spec" into the Task which represents the Instance configuration. The Task can be designed to use the Instance config data and compute an appropriate price for the Instance. |morpheus| expects a return payload in the format below for the price override to work correctly. If used, pricing computed via Task replaces any other costing data which would have been applied to the workload (such as pricing based on the Service Plan). The user will see price estimates based on the Price Phase Task in the Instance provisioning wizard where the Service Plan pricing would otherwise be shown. Additionally, since Workflows which invoke Price Phase Tasks are tied to the Layout, the user can see different pricing depending on which Instance Type Layout is selected.
+Price Phase Tasks allow computed pricing for any workload in any Cloud (even public Clouds) to be overridden based on custom logic designed by the user. The variable "spec" is fed into the Task which represents the Instance configuration. The Task can be designed to use the Instance config data and compute an appropriate price for the Instance. |morpheus| expects a return payload in the format below for the price override to work correctly. If used, pricing computed via Task replaces any other costing data which would have been applied to the workload (such as pricing based on the Service Plan). The user will see price estimates based on the Price Phase Task in the Instance provisioning wizard where the Service Plan pricing would otherwise be shown. Additionally, since Workflows which invoke Price Phase Tasks are tied to the Layout, the user can see different pricing depending on which Instance Type Layout is selected.
 
 .. NOTE:: Price Phase Tasks are only invoked if the Workflow is tied to a Layout.
 
@@ -197,6 +214,18 @@ Nesting Workflows
 ^^^^^^^^^^^^^^^^^
 
 |morpheus| allows Workflows to be nested for easier Workflow creation when many Workflows are used in an environment which have only slight differences or which are made up of common pieces. Nestable Workflows are created like any other Operational Workflow. Once the Workflow is saved, it can be embedded into a special Task type called "Nested Workflow." A Nested Workflow-type Task simply references an Operational Workflow which may need to be used within other Workflows. Once Nested Workflow Tasks are created they can be used as part of any new Operational or Provisioning Workflows that are created thereafter (or may be added to existing Workflows too). For more on creating Tasks, see |morpheus| `Task documentation <https://docs.morpheusdata.com/en/latest/library/automation/automation.html#tasks>`_.
+
+.. NOTE:: Results from prior Tasks are still accessed using the same syntax even when a prior Task is embedded in a Nested Workflow. Additional syntax to reference the Nested Workflow Task or the Workflow itself are not needed. See |morpheus| `Task documentation <https://docs.morpheusdata.com/en/latest/library/automation/automation.html#task-results>`_ for more on chaining Task results.
+
+- .. toggle-header:: :header: Nested Workflows Video Demo
+
+    .. raw:: html
+
+        <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; height: auto;">
+            <iframe src="//www.youtube.com/embed/6TzI0MVmYQQ" frameborder="0" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
+        </div>
+
+    |
 
 Edit Workflow
 ^^^^^^^^^^^^^

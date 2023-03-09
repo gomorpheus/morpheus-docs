@@ -36,11 +36,19 @@ The total number of Clouds which currently have an Instance provisioned is shown
 
 **Daily Cloud Instances**
 
-**Ground Workloads**
+The number of Instances that have existed at any point in the day with additional breakdown to show the number provisioned to each Cloud. This number will include any pre-existing Instances which have carried over from previous days along with any new Instances that were provisioned and existed on that day even for a short time
+
+**Group Workloads**
+
+The instantaneous count of host or container records broken down by Group association
 
 **Cloud Workloads**
 
+The instantaneous count of host or container records broken down by Cloud association
+
 **Cluster Workloads**
+
+The instantaneous count of managed containers broken down by Cluster association
 
 .. image:: /images/operations/dashboard2.png
 
