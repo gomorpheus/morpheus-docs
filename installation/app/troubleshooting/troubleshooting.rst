@@ -69,7 +69,7 @@ vm.max_map_count is too low
         
     **Resolution**
 
-        Some OSs, specicially Amazon Linux 2, will present this error and can prevent services from starting, such as Elasticsearch.  To resolve this error, run the following to increase the vm.max_map_count:
+        Some OSs, Amazon Linux 2 and CentOS 9 noticed, will present this error and can prevent services from starting, such as Elasticsearch.  To resolve this error, run the following to increase the vm.max_map_count:
 
             .. code:: bash
 
