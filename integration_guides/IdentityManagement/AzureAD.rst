@@ -34,10 +34,15 @@ To add the integration:
 #. Click the :guilabel:`+ ADD IDENTITY SOURCE` button
 #. Select ``Azure AD SAML SSO`` from the ``TYPE`` dropdown
 #. Add
+
    * Name
+
    * (Optional) Description
+   
    * Paste the ``Login URL`` copied from Azure into the ``LOGIN REDIRECT URL`` field
+   
    * Paste the ``Logout URL`` copied from Azure into the ``SAML LOGOUT REDIRECT URL`` field
+ 
 #. This is the minimum information needed for now, which will let us generate the details needed from |morpheus|.  We'll return to this configuration page later to enter more information.
 #. Click the :guilabel:`SAVE CHANGES` button
 
@@ -47,7 +52,6 @@ Upon saving, the `Entity ID` (``Identifier (Entity ID)``) and `SP ACS URL` (``Re
 
   .. image:: /images/integration_guides/identity_sources/azure_ad_saml/saml_setup.png
       :width: 40%
-      :align: center
 
 Configure Azure Enterprise Application
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -57,14 +61,18 @@ This guide assumes an Azure AD Enterprise Application has already been created. 
 #. Navigate to: ``Azure Active Directory > Enterprise Applications > Single sign-on``
 #. Choose ``SAML`` as the Single sign-on method
 #. On Step 1 (``Basic SAML Configuration``), click the ``Edit`` button and enter the following:
+  
   * Identifier (Entity ID)
       Enter the ``Entity ID`` URL from the |morpheus| Identity Source Integration above
+  
   * Reply URL (Assertion Consumer Service URL)
       Enter the ``SP ACS URL`` from the |morpheus| Identity Source Integration above
+  
   * Logout URL
       Enter the following format:  ``https://yourUrl/login/``
       If this is a sub tenant, the format may instead be the following:  ``https://yourUrl/login/account/1``
       The login URL can be found under :guilabel:`IDENTITY SOURCES` in the tenant
+
 #. On Step 2 (``Attributes and Claims``), click the ``Edit`` button
 #. Click the ``Add a group claim`` button at the top
 #. Choose ``All groups`` and ensure ``Group ID`` is selected for the ``Source attribute`` dropdown
@@ -138,7 +146,7 @@ Once populated, select :guilabel:`SAVE CHANGES` and the SAML identity source int
 
 #. Under the ``Role Azure Group Mappings`` secton, verify the ``DEFAULT ROLE`` dropdown has the role in |morpheus| selected that all users will be assigned by default
 
-  * It is recommended that this role contains no permissions, which ensures that anyone who authenticates gets no access
+   * It is recommended that this role contains no permissions, which ensures that anyone who authenticates gets no access
 
 #. Under the ``Role Azure Group Mappings`` secton, you will see role names listed.  Next to these are text boxes with ``Assertion Attribute Mappings`` inside.  Enter group object IDs from Azure into these text boxes.  This will map the Azure AD groups to specific roles in Morpheus
 #. Finally, click ``Save Changes`` at the bottom of the page
@@ -147,7 +155,6 @@ Here is an example of the configuration above:
 
   .. image:: /images/integration_guides/identity_sources/azure_ad_saml/saml_setup_complete.png
     :width: 20%
-    :align: center
 
 Azure Group Lookups
 ^^^^^^^^^^^^^^^^^^^
@@ -168,15 +175,11 @@ Logging Into |morpheus| with Azure AD SAML
 
 #. Navigate to the |morpheus| URL
 #. A new button will appear to allow sign-in using Azure AD SAML, with the same name as the integration.  Click the button
-
   .. image:: /images/integration_guides/identity_sources/azure_ad_saml/sign_in_page.png
     :width: 30%
-    :align: center
 
 #. Sign-in with your Microsoft/Azure account
-
   .. image:: /images/integration_guides/identity_sources/azure_ad_saml/ms_signin.png
     :width: 20%
-    :align: center
 
 .. NOTE:: If no local users other than the System Admin have been created, "USERNAME AND PASSWORD" option will not be displayed, only the SAML option.
