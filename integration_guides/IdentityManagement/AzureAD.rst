@@ -46,7 +46,7 @@ To add the integration:
 Upon saving, the `Entity ID` (``Identifier (Entity ID)``) and `SP ACS URL` (``Reply URL (Assertion Consumer Service URL)``) will be provide in the Identity Source list view. Copy these for use in Azure SSO configuration.
 
   .. image:: /images/integration_guides/identity_sources/azure_ad_saml/saml_setup.png
-      :width: 80%
+      :width: 40%
       :align: center
 
 Configure Azure Enterprise Application
@@ -57,7 +57,6 @@ This guide assumes an Azure AD Enterprise Application has already been created. 
 #. Navigate to: ``Azure Active Directory > Enterprise Applications > Single sign-on``
 #. Choose ``SAML`` as the Single sign-on method
 #. On Step 1 (``Basic SAML Configuration``), click the ``Edit`` button and enter the following:
-
   * Identifier (Entity ID)
       Enter the ``Entity ID`` URL from the |morpheus| Identity Source Integration above
   * Reply URL (Assertion Consumer Service URL)
@@ -148,7 +147,7 @@ Once populated, select :guilabel:`SAVE CHANGES` and the SAML identity source int
 Here is an example of the configuration above:
 
   .. image:: /images/integration_guides/identity_sources/azure_ad_saml/saml_setup_complete.png
-    :width: 80%
+    :width: 20%
     :align: center
 
 Azure Group Lookups
@@ -172,13 +171,13 @@ Logging Into |morpheus| with Azure AD SAML
 #. A new button will appear to allow sign-in using Azure AD SAML, with the same name as the integration.  Click the button
 
   .. image:: /images/integration_guides/identity_sources/azure_ad_saml/sign_in_page.png
-    :width: 80%
+    :width: 30%
     :align: center
 
 #. Sign-in with your Microsoft/Azure account
 
   .. image:: /images/integration_guides/identity_sources/azure_ad_saml/ms_signin.png
-    :width: 80%
+    :width: 20%
     :align: center
 
 .. NOTE:: If no local users other than the System Admin have been created, "USERNAME AND PASSWORD" option will not be displayed, only the SAML option.
