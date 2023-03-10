@@ -1,4 +1,4 @@
-. _db-troubleshooting:
+.. _db-troubleshooting:
 
 Troubleshooting
 ===============
@@ -45,6 +45,7 @@ Additional Info
 ```````````````
 
 * SELinux file location
+
     ``/etc/selinux/targeted/policy``
 
 * Helpful commands
