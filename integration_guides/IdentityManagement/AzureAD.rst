@@ -34,10 +34,10 @@ To add the integration:
 #. Click the :guilabel:`+ ADD IDENTITY SOURCE` button
 #. Select ``Azure AD SAML SSO`` from the ``TYPE`` dropdown
 #. Add
-   #. Name
-   #. (Optional) Description
-   #. Paste the ``Login URL`` copied from Azure into the ``LOGIN REDIRECT URL`` field
-   #. Paste the ``Logout URL`` copied from Azure into the ``SAML LOGOUT REDIRECT URL`` field
+   * Name
+   * (Optional) Description
+   * Paste the ``Login URL`` copied from Azure into the ``LOGIN REDIRECT URL`` field
+   * Paste the ``Logout URL`` copied from Azure into the ``SAML LOGOUT REDIRECT URL`` field
 #. This is the minimum information needed for now, which will let us generate the details needed from |morpheus|.  We'll return to this configuration page later to enter more information.
 #. Click the :guilabel:`SAVE CHANGES` button
 
@@ -65,7 +65,6 @@ This guide assumes an Azure AD Enterprise Application has already been created. 
       Enter the following format:  ``https://yourUrl/login/``
       If this is a sub tenant, the format may instead be the following:  ``https://yourUrl/login/account/1``
       The login URL can be found under :guilabel:`IDENTITY SOURCES` in the tenant
-
 #. On Step 2 (``Attributes and Claims``), click the ``Edit`` button
 #. Click the ``Add a group claim`` button at the top
 #. Choose ``All groups`` and ensure ``Group ID`` is selected for the ``Source attribute`` dropdown
