@@ -12,13 +12,13 @@ Configuring NGINX Listeners
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 #. Confirm IPv6 is enabled and IP address is applied within the Morpheus underlying OS.
 
-#. Modify the `/opt/morpheus/embedded/nginx/conf/sites-available/morpheus.conf` file, and add the following listerning under the server block at the top:
+#. Modify the ``/opt/morpheus/embedded/nginx/conf/sites-available/morpheus.conf`` file, and add the following listerning under the server block at the top:
 
     .. code-block:: bash
 
         listen [::]:80;
 
-#. Modify the `/opt/morpheus/embedded/nginx/conf/sites-available/morpheus-ssl.conf` file, and add the following listerning under the server block at the top:
+#. Modify the ``/opt/morpheus/embedded/nginx/conf/sites-available/morpheus-ssl.conf`` file, and add the following listerning under the server block at the top:
 
     .. code-block:: bash
 
