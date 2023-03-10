@@ -11,3 +11,4 @@ Additional Configuration Options
 .. include:: /getting_started/additional/ssl-import.rst
 .. include:: /getting_started/additional/encryption.rst
 .. include:: /getting_started/additional/logback.rst
+.. include:: /getting_started/additional/ipv6.rst
