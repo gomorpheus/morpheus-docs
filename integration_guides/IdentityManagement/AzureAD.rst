@@ -62,13 +62,13 @@ This guide assumes an Azure AD Enterprise Application has already been created. 
 #. Choose ``SAML`` as the Single sign-on method
 #. On Step 1 (``Basic SAML Configuration``), click the ``Edit`` button and enter the following:
   
-  * Identifier (Entity ID)
+   * Identifier (Entity ID)
       Enter the ``Entity ID`` URL from the |morpheus| Identity Source Integration above
   
-  * Reply URL (Assertion Consumer Service URL)
+   * Reply URL (Assertion Consumer Service URL)
       Enter the ``SP ACS URL`` from the |morpheus| Identity Source Integration above
   
-  * Logout URL
+   * Logout URL
       Enter the following format:  ``https://yourUrl/login/``
       If this is a sub tenant, the format may instead be the following:  ``https://yourUrl/login/account/1``
       The login URL can be found under :guilabel:`IDENTITY SOURCES` in the tenant
@@ -77,18 +77,18 @@ This guide assumes an Azure AD Enterprise Application has already been created. 
 #. Click the ``Add a group claim`` button at the top
 #. Choose ``All groups`` and ensure ``Group ID`` is selected for the ``Source attribute`` dropdown
   
-  .. note:: You can also choose ``Security groups``, which ever makes more sense for the organization
+   .. note:: You can also choose ``Security groups``, which ever makes more sense for the organization
 
 #. Close the pane and return to the Enterprise Application in the ``Single sign-on`` section
 #. On Step 3 (``SAML Certificates``), click the ``Download`` link next to ``Certificate (Base64)`` and ``Federation Metadata XML``
   
-  .. note::  The files will download, keep them available for later configuation in |morpheus|
+   .. note::  The files will download, keep them available for later configuation in |morpheus|
 
 #. Navigate to ``Users and Groups`` in the left pane
 #. Click the ``Add user/group`` button
 #. Add Azure groups to this application that will be able to login to |morpheus|
 
-  .. note:: Note the object ID for each of these groups, as they will be used later when configuring |morpheus| to map the group to roles
+   .. note:: Note the object ID for each of these groups, as they will be used later when configuring |morpheus| to map the group to roles
 
 #. Once groups have been added, click the ``Assign`` button at the bottom
 
@@ -102,15 +102,15 @@ Configure the Azure AD SAML Integration in |morpheus|
 #. Click the pencil (edit) next to the integration created previously
 #. Ensure the ``SAML REQUEST`` field is set to ``Self Signed``
   
-  .. note:: A custom RSA signature can be used here if needed, if required by the orgnaization
+   .. note:: A custom RSA signature can be used here if needed, if required by the orgnaization
 
 #. Ensure the ``SAML RESPONSE`` field is set to ``Validate Assertion Signature``
 
-  .. note:: With this setting, if the assertion signature ever changes in the Azure Enterprise Application, this would need to be updated to match
+   .. note:: With this setting, if the assertion signature ever changes in the Azure Enterprise Application, this would need to be updated to match
 
 #. Edit/view the downloaded ``Federation Metadata XML`` (``.xml`` extension) file from the previous section
 
-  .. note:: It is recommended to use ``Microsoft Edge``, or another browser, to view the contents
+   .. note:: It is recommended to use ``Microsoft Edge``, or another browser, to view the contents
 
 #. In the ``Federation Metadata XML`` file, locate the ``<X509Certificate> </X509Certificate>`` under the ``<Signature>`` section.  Copy the entire contents between the ``<X509Certificate>`` and ``</X509Certificate>``, it is very long
 #. Paste the value copied from the ``Federation Metadata XML`` file into the ``Public Key (Optional)`` box, below the ``SAML RESPONSE`` dropdown
@@ -175,11 +175,11 @@ Logging Into |morpheus| with Azure AD SAML
 
 #. Navigate to the |morpheus| URL
 #. A new button will appear to allow sign-in using Azure AD SAML, with the same name as the integration.  Click the button
-  .. image:: /images/integration_guides/identity_sources/azure_ad_saml/sign_in_page.png
+   .. image:: /images/integration_guides/identity_sources/azure_ad_saml/sign_in_page.png
     :width: 30%
 
 #. Sign-in with your Microsoft/Azure account
-  .. image:: /images/integration_guides/identity_sources/azure_ad_saml/ms_signin.png
+   .. image:: /images/integration_guides/identity_sources/azure_ad_saml/ms_signin.png
     :width: 20%
 
 .. NOTE:: If no local users other than the System Admin have been created, "USERNAME AND PASSWORD" option will not be displayed, only the SAML option.
