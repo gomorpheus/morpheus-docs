@@ -31,7 +31,7 @@ Ensure the firewall (or security group) allows |morpheus| ``inbound`` from agent
     
     - 443/tcp
 
-  Example commands to run in the OS, if needed.  By default, **|morpheus| will modify the OS firewall automatically**, if the firewall is enabled.  Usually, in public clouds, the firewall is **not** enabled.
+  Example commands to run in the OS, if needed.  By default, |morpheus| will modify the OS firewall automatically, if the firewall is enabled.  Usually, in public clouds, the firewall is **not** enabled.
 
     .. tabs::
 
@@ -39,7 +39,7 @@ Ensure the firewall (or security group) allows |morpheus| ``inbound`` from agent
 
         .. code-block:: bash
 
-          firewall-cmd --zone=public --add-port={443/tcp,443/tcp} --permanent
+          firewall-cmd --zone=public --add-port=443/tcp --permanent
           firewall-cmd --reload
                       
       .. group-tab:: Ubuntu

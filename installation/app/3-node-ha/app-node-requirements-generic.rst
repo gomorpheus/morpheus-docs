@@ -39,7 +39,7 @@ Ensure the firewall (or security group) allows |morpheus| ``inbound`` from agent
 
     - 9300 (inter node cluster communication)
 
-  Example commands to run in the OS, if needed.  By default, **|morpheus| will modify the OS firewall automatically**, if the firewall is enabled.  Usually, in public clouds, the firewall is **not** enabled and this is not required.
+  Example commands to run in the OS, if needed.  By default, |morpheus| will modify the OS firewall automatically, if the firewall is enabled.  Usually, in public clouds, the firewall is **not** enabled and this is not required.
 
     .. tabs::
 
@@ -47,11 +47,11 @@ Ensure the firewall (or security group) allows |morpheus| ``inbound`` from agent
 
         .. code-block:: bash
 
-          firewall-cmd --zone=public --add-port={443/tcp,443/tcp} --permanent
+          firewall-cmd --zone=public --add-port={443/tcp,4369/tcp,5671/tcp,5672/tcp,15671/tcp,15672/tcp,25672/tcp,61613/tcp,61614/tcp,9200/tcp,9300/tcp} --permanent
           firewall-cmd --reload
                       
       .. group-tab:: Ubuntu
 
           .. code-block:: bash
 
-            ufw allow 443/tcp
+            ufw allow 443,4369,5671,5672,15671,15672,25672,61613,61614,9200,9300/tcp
