@@ -96,7 +96,7 @@ Unlike SSH and RDP, valid credentials do not need to be set on the VM or Host re
 Copy and Paste
 --------------
 
-.. NOTE:: Copy and Paste for Text is supported for SSH and RDP protocols only.
+.. NOTE:: Copy and Paste for Text is supported for SSH and RDP protocols only. Use of this functionality requires the Role permission of "VDI: Copy/Paste" set to Full.
 
 To Copy text from the console:
 

@@ -23,3 +23,11 @@ Editing and Deleting OAuth Clients
 From the OAuth client list view (|AdmSetCli|), click the pencil (|pencil|) or trash can (|trash|) icons to edit or delete the OAuth Client.
 
 .. NOTE:: Pre-configured |morpheus|-default clients may be edited but not deleted. User-created clients may be edited or deleted.
+
+.. raw:: html
+
+    <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; height: auto;">
+        <iframe src="//www.youtube.com/embed/RxX3gS5eYZ0" frameborder="0" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
+    </div>
+
+|
