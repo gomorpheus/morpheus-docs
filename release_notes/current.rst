@@ -69,7 +69,7 @@ New Features
             - OpenSSL has been upgraded to 1.1.1t (CVE-2022-4450)
 :ServiceNow: - ServiceNow integrations now support OAuth 2.0 in addition to simple username and password authentication
 :Settings: - A stats retainment setting has been added to global settings (|AdmSet|) to extend the monitoring statistics available (such as on Instance detail pages) if desired
-:Workflows: - Workflows may be added to Nested Workflow-type Tasks allowing Workflows to be nested inside other Workflows. This greatly simplifies the process of making Workflows which only have slight differences or which contain common pieces :superscript:`5.4.15`
+:Workflows: - Workflows may be added to Nested Workflow-type Tasks allowing Workflows to be nested inside other Workflows. This greatly simplifies the process of making Workflows which only have slight differences or which contain common pieces
              - There are a number of places in the UI where Workflows are selected. These have been converted from dropdown menus to typeahead fields
              - Workflows which fail can now be retried from immediately after the last successful Task. When a problem occurs with a long-running Workflow, it can now be corrected and the Workflow can be resumed from the fail point. Tasks can also be retried within some parts of an Instance provisioning history as well
 
