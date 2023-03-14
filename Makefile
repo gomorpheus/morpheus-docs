@@ -6,7 +6,7 @@ SPHINXOPTS    =
 SPHINXBUILD   = python -msphinx
 SPHINXPROJ    = jwtest
 SOURCEDIR     = .
-BUILDDIR      = _build
+BUILDDIR      = $READTHEDOCS_OUTPUT
 
 # Put it first so that "make" without argument is like "make help".
 help:
