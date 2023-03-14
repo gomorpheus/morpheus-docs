@@ -1,0 +1,314 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Infoblox &mdash; jwtest 1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../../_static/my_theme.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="../../genindex.html"/>
+        <link rel="search" title="Search" href="../../search.html"/>
+    <link rel="top" title="jwtest 1 documentation" href="../../index.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html">
+          
+
+          
+            
+            <img src="../../_static/logo.svg" class="logo" />
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../getting_started/getting_started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../provisioning/provisioning.html">Provisioning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../infrastructure/infrastructure.html">Infrastructure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../administration.html">Administration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../monitoring/monitoring.html">Monitoring</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../logs/logging.html">Logs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../backups/backups.html">Backups</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../operations/operations.html">Operations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../services/services.html">Services</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../integration_guides/integration_guides.html">Integration Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../faq/faqs.html">FAQ’s</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../release_notes/release_notes.html">Release Notes</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">jwtest</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+      <li>Infoblox</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/administration/integrations/infoblox.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="infoblox">
+<h1>Infoblox<a class="headerlink" href="#infoblox" title="Permalink to this headline">¶</a></h1>
+<p>|morpheus| can integrate with Infoblox for IP address assignment. To add a Infoblox integration into |morpheus| :</p>
+<ol class="arabic simple">
+<li>Add Infoblox as a Network Service integration</li>
+<li>Add Infoblox IP Pool(s) to your network(s)</li>
+<li>Configure your cloud(s) domain</li>
+<li>When provisioning, select Network with Infoblox pool added</li>
+</ol>
+<div class="section" id="add-infoblox-as-a-network-service-integration">
+<h2>Add Infoblox as a Network Service Integration<a class="headerlink" href="#add-infoblox-as-a-network-service-integration" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic">
+<li><p class="first">Navigate to Infrastructure -&gt; Networks and select the Services tab</p>
+<img alt="../../_images/infoblox-adb0f.png" src="../../_images/infoblox-adb0f.png" />
+</li>
+<li><p class="first">In the Services tab, select +ADD SERVICE, select Infoblox, and provide the following:</p>
+<ul>
+<li><p class="first">Add Pool Server</p>
+<ul class="simple">
+<li>Name</li>
+<li>URL (wapi url + version) example <a class="reference external" href="https://x.x.x.x/wapi/v2.2.1">https://x.x.x.x/wapi/v2.2.1</a></li>
+<li>Username</li>
+<li>Password</li>
+</ul>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last">You can find your Infoblox wapi version in the wapi doc on your Infoblox server at <a class="reference external" href="https://x.x.x.x/wapidoc">https://x.x.x.x/wapidoc</a></p>
+</div>
+</li>
+</ul>
+<img alt="../../_images/infoblox-b991b.png" src="../../_images/infoblox-b991b.png" />
+</li>
+<li><p class="first">Save Changes and your Infoblox networks will be populated and available in the Network -&gt; IP Pools section of |morpheus| .</p>
+</li>
+</ol>
+<p>Next we will need to add an Infoblox Network pool to a network in order to use the pool(s) during provisioning.</p>
+<img alt="../../_images/infoblox-2867a.png" src="../../_images/infoblox-2867a.png" />
+<p>Add Infoblox IP Pool(s) to your network(s)</p>
+<ol class="arabic simple">
+<li>Navigate to In Infrastructure - Networks, and in the Networks tab:</li>
+<li>Find and edit the network you want to assign an Infoblox pool to.</li>
+<li>For static IP assignment, Populate the Gateway, DNS, and CIDR info for the network, and deselect DHCP server.</li>
+<li>In the NETWORK POOL drop down, select the Infoblox network to assign IPs from.</li>
+<li>Save Changes</li>
+</ol>
+<img alt="../../_images/infoblox-93281.png" src="../../_images/infoblox-93281.png" />
+</div>
+<div class="section" id="configure-your-cloud-s-domain">
+<h2>Configure your cloud(s) domain<a class="headerlink" href="#configure-your-cloud-s-domain" title="Permalink to this headline">¶</a></h2>
+<p>The domain entered in you cloud(s) settings needs to match an Infoblox zone. To add a domain to your cloud(s)</p>
+<ol class="arabic simple">
+<li>Under Infrastructure - Clouds, edit your cloud settings</li>
+<li>In the domain field, enter your domain</li>
+</ol>
+<ul class="simple">
+<li>In v2.9.x and prior, the domain field is at the top of the Cloud Config modal.
+.. image:: /images/administration/infoblox-ebde8.png</li>
+<li>In v2.10, the domain field is under Advanced Settings in the Cloud Config modal.
+.. image:: /images/administration/infoblox-976bd.png</li>
+<li>In v2.10.1 and later, a Domains section has been added in the Infrastructure -&gt; Networks Section, and there is now a Domain dropdown to select a domain from the Networks section in the Cloud Config modal.</li>
+</ul>
+<dl class="docutils">
+<dt>Infrastructure -&gt; Network -&gt; Domains</dt>
+<dd><img alt="../../_images/infoblox-af626.png" class="first last" src="../../_images/infoblox-af626.png" />
+</dd>
+<dt>Cloud Configuration</dt>
+<dd><img alt="../../_images/infoblox-a9e41.png" class="first last" src="../../_images/infoblox-a9e41.png" />
+</dd>
+</dl>
+</div>
+<div class="section" id="provisioning-with-infoblox-pool">
+<h2>Provisioning with Infoblox Pool<a class="headerlink" href="#provisioning-with-infoblox-pool" title="Permalink to this headline">¶</a></h2>
+<p>Once the Infoblox integration has been configured, while provisioning you can now select networks that have the Network Pools added, and the name of the Infoblox IP Pool will populate to the right of the selected network:</p>
+<img alt="../../_images/infoblox-40fdb.png" src="../../_images/infoblox-40fdb.png" />
+<p>The during provisioning, your instance IP will be assigned by Infoblox:</p>
+<img alt="../../_images/infoblox-fcc33.png" src="../../_images/infoblox-fcc33.png" />
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, jw.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

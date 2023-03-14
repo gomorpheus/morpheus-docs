@@ -1,0 +1,63 @@
+v2.12.1
+=======
+
+Morpheus v2.12.1 adds Console Copy & Paste, VMware Folders, expanded User Scoping Permissions, Nutanix additions, Infoblox additions, and many other Improvements and Fixes.
+
+New Features
+------------
+
+Console Copy & Paste
+  * Copy button added to copy selected text to local Clipboard.
+  * Paste field added to paste text from local Clipboard. Right click in console to then paste to target.
+
+Additional User Scoping
+  * Role permissions can now be set to `User` for Monitoring, Backup, and Logs sections.
+  * Users will only see information related to their Instances in the corresponding sections, as well as on the Dashboard, when Role permission is set to `User`
+
+VMware
+  * VMware Folders now sync and can be targeted for VM and Image destinations, set to active/inactive, and assigned Tenant permissions.
+  * Storage Type can now be set to Thick or Thin in VMware Cloud settings.
+  * Boot from ISO support added. ISO's can now be selected to boot from for VMware provisioning, and can fully be installed using the Hypervisor Console.
+  * Eject Disk Action also added for VMware technology Instance Types.
+
+Nutanix
+  * Instances can now be converted to Images in Nutanix using the `Import as Image` Action. A Virtual Image record with matching meta-data will also be automatically created.
+  * Disk and Network type selection added to Nutanix technology Instance Types.
+  * Network Interface Type Selection can be enabled in Nutanix Cloud settings.
+
+Infoblox
+  * Display Name column added to IP Pools to better identify IP Pools synced from Nutanix.
+  * `Network Filter` field added to Infoblox settings. Allows for filtering by field, exact match or regular expression, as well as searching on extended attributes. EX: `[ network_view=default&*Building=work ]`
+  * `Tenant Match Attribute` field added to Infoblox settings. Allow for auto-assignment of IP pool Groups and individual IP Pools to a tenant.
+
+
+Other Additions and Improvements
+--------------------------------
+
+* `Trial Version` flag added under `Virtual Images -> Edit Virtual Image -> Advanced Options`. Flagging a Windows Image as Trial Version will re-arm the trial during provisioning.
+* F5 Load Balancer improvements
+* HA Proxy Load Balancer improvements
+* Citrix Load Balancer improvements
+* Chef improvements
+* Provisioning: Allow Force Delete
+* UI/API/CLI Security Improvements
+* Process Service Improvements
+* Add Node Action will now only show compatible clouds as target options.
+* Windows 2012 R2 AMI System Image improvements.
+* Redis System Images improvements.
+* New Role Permission: `Provisioning: Allow Force Delete`
+
+Fixes
+-----
+
+* Fix for browser language settings adding commas in `Plans & Pricing -> Pricing`.
+* Fix for Hyper-V and Openstack technology types in Library -> Node Type -> Image dropdown.
+* Fix for File Upload in Virtual Images and Archives when using NFSv3 Storage Provider target.
+* Fixes for synced Image Record duplication.
+* Fix for extra Sub-Tenant Groups automatically being created during Sub-Tenant creation.
+* Fix for Nutanix - Windows- Create Additional user.
+* Fix for respecting Xen Custom Cores value.
+* Fix fir CentOS 6 agent install when using multiple LVM based volumes.
+* Fix for `Infrastructure -> Network -> Services -> Add Service -> Consul` modal.
+* Fix for |morpheus| Wordpress Images: Load Balancer - no port available.
+* Fix for Dual name fields in `Networks -> Services -> add Microsoft DNS`

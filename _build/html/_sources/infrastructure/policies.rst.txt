@@ -1,0 +1,99 @@
+Policies
+========
+
+Overview
+--------
+
+Policies are new feature that add more governance, ease of use, cost-saving and auditing features to |morpheus| . Policies can be created in the Policies tabs in Groups and Clouds. Policy generation is also a role permission.
+
+Policies apply towards any instance provisioned into a group or cloud with active policies. Cloud policies will override matching or conflicting group policies during provisioning.
+
+Policy types
+------------
+
+Available Policy types include:
+  * Approval
+  * Expiration
+  * Shutdown
+  * Host Name
+  * Hostname
+  * Instance Name
+  * Max Containers
+  * Max Cores
+  * Max Hosts
+  * Max Memory
+  * Max Storage
+  * Max VMs
+
+Creating Policies
+-----------------
+
+Policies can be created, edited, and set to active or inactive in the a group or cloud detail pane under the Policies tab.
+
+Group Policies tab:
+
+.. image:: /images/infrastructure/group_policies_tab.png
+
+.. [caption="Figure 1: ", title="Group Policies Tab", alt="Group Policies Tab"]
+
+Cloud Policies Tab:
+
+.. image:: /images/infrastructure/cloud_policies_tab.png
+
+.. [caption="Figure 2: ", title="Cloud Policies Tab", alt="Cloud Policies Tab"]
+
+
+To create a new policy, select ADD POLICY and choose from the available policy types:
+
+.. image:: /images/infrastructure/new_policy.png
+
+.. [caption="Figure 3: ", title="New Policy", alt="New Policy"]
+
+Expiration Policies
+^^^^^^^^^^^^^^^^^^^
+
+Expiration policies set an expiration timeframe for any instance provisioned into the cloud or group the policy is added to. When an instance expires, it is terminated and deleted.
+
+Configuration options for expiration policies:
+
+* EXPIRATION TYPE
+** User Configurable - expiration timeframe is editable during provisioning
+** Fixed Expiration - user cannot change expiration timeframe
+* EXPIRATION DAYS
+** Configures the number of days the instance is allowed to exist before being removed.
+* RENEWAL DAYS
+** If the instance is renewed, this is the number of day increments the expiration date is increased by.
+* NOTIFICATION DAYS
+** This allows an email notice to be sent out x days before the instance is going to expire.
+* NOTIFICATION MESSAGE
+** Customizable message for notification email. Default message is "Instance ${instance?.name} is set to expire on ${instance?.expireDate}"
+* AUTO APPROVE EXTENSIONS
+** Enable this to auto-approve extension requests. Please note approval workflows will be available in upcoming |morpheus| release.
+
+image::infrastructure/new_policy2.png[caption="Figure 4: ", title="Expiration Policy", alt="Expiration Policy"]
+
+Instances with expirations show the time until expiration in the instance detail pane. Instances with active expiration policies can be extended by selecting the EXTEND NOW button in the instance detail pane. The extension length is set in the policy by the RENEWAL DAYS field.
+
+image::infrastructure/renewal_policy.png[caption="Figure 5: ", title="Renewal Policy", alt="Renewal Policy"]
+
+Expirations can also be added to any instance during provisioning by entering the number of days in the EXPIRATION DAYS field in the Lifecycle section of the automation section of the provisioning wizard. Expiration can be added to any instance even if no policies have been created.
+
+image::infrastructure/expirations.png[caption="Figure 6: ", title="Expirations", alt="Expirations"]
+
+==== Naming Policies
+
+Naming Policies will populate a fixed or editable name for instances, hosts and hostnames. The Name Pattern field uses ${variable} string interpolation.
+
+Available Variables for naming patterns are:
+
+groupName, groupCode, cloudName, cloudCode, type, accountID, account, accountType, platform, userID, userName, userInitials, provisionType
+
+And example for an instance name policy using a naming pattern with users initials, cloud code, instance type, and adds a sequential number is:
+
+pattern: ${userInitials}-${cloudCode}-${type}-${sequence}
+
+Naming policies can be configure to be user configurable or static, and to auto-resolve naming conflicts.
+
+Hint: Cloud codes are a new field found in cloud configuration panes.
+
+image::infrastructure/edit_policy.png[caption="Figure 7: ", title="Edit Policy", alt="Edit Policy"]

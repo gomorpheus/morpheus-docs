@@ -1,0 +1,301 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Chef &mdash; jwtest 1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../../_static/my_theme.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="../../genindex.html"/>
+        <link rel="search" title="Search" href="../../search.html"/>
+    <link rel="top" title="jwtest 1 documentation" href="../../index.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html">
+          
+
+          
+            
+            <img src="../../_static/logo.svg" class="logo" />
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../getting_started/getting_started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../provisioning/provisioning.html">Provisioning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../infrastructure/infrastructure.html">Infrastructure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../administration.html">Administration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../monitoring/monitoring.html">Monitoring</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../logs/logging.html">Logs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../backups/backups.html">Backups</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../operations/operations.html">Operations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../services/services.html">Services</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../integration_guides/integration_guides.html">Integration Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../faq/faqs.html">FAQ’s</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../release_notes/release_notes.html">Release Notes</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">jwtest</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+      <li>Chef</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/administration/integrations/chef.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="chef">
+<h1>Chef<a class="headerlink" href="#chef" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
+<p>|morpheus| can integrate with one or multiple chef servers to be used for bootstrapping wile provisioning or as tasks in workflows in the Automation section. These workflows can then be ran during provisioning in the provisioning wizard Automation pane, or on an exiting instance by selecting Actions- Run Workflow.  Workflows can also be added to instances in the template and app sections.</p>
+</div>
+<div class="section" id="add-chef-integration">
+<h2>Add Chef Integration<a class="headerlink" href="#add-chef-integration" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Navigate to <cite>Administration -&gt; Integrations</cite> and select <cite>+ New Integration</cite></li>
+<li>Select Integration Type “Chef”</li>
+<li>Populate the following fields:<ul>
+<li>Name: Name of the Chef Integration in |morpheus| </li>
+<li>Chef Endpoint: url of chef server api endpoint in <a class="reference external" href="https://api.example.com">https://api.example.com</a> format. Do not add /organization/xxxx here, which is populated in the Chef Organization field</li>
+<li>Chef Version: 12.3.0 by default, can be changed to use a different/more recent version of chef</li>
+<li>Chef Organization: Chef Server Organization</li>
+<li>Chef User: Chef Server User</li>
+<li>User Private Key: The private key of the user with access to this chef server</li>
+<li>Organization Validator: Validator key for the organization</li>
+</ul>
+</li>
+<li>Save Changes</li>
+</ol>
+<p>The added Chef Integration is now available for use in |morpheus| . The Chef Integration can be added to Clouds or Groups to auto-bootstrap nodes and specify Environment, Node ID, Runlist, Attributes and Tags when creating instances. The Chef integration can also be selected in the Chef Server dropdown when creating a Chef Bootstrap type task.</p>
+</div>
+<div class="section" id="scope-chef-integration-to-a-cloud">
+<h2>Scope Chef Integration to a Cloud<a class="headerlink" href="#scope-chef-integration-to-a-cloud" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Navigate to <cite>Infrastructure -&gt; Clouds</cite></li>
+<li>Edit the target Cloud</li>
+<li>Expand the <cite>Advanced Options</cite> section</li>
+<li>In the <cite>Config Managment</cite> dropdown, select the Chef Integration.</li>
+<li>Save Changes</li>
+</ol>
+</div>
+<div class="section" id="scope-chef-integration-to-a-group">
+<h2>Scope Chef Integration to a Group<a class="headerlink" href="#scope-chef-integration-to-a-group" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Navigate to <cite>Infrastructure -&gt; Groups</cite></li>
+<li>Edit the target Group</li>
+<li>Expand the <cite>Advanced Options</cite> section</li>
+<li>In the <cite>Config Managment</cite> dropdown, select the Chef Integration.</li>
+<li>Save Changes</li>
+</ol>
+</div>
+<div class="section" id="provisioning-options">
+<h2>Provisioning Options<a class="headerlink" href="#provisioning-options" title="Permalink to this headline">¶</a></h2>
+<p>When provisioning Instances into a Cloud or Group with a Chef Integration added, a <cite>Chef</cite> section will appear in the Config section of the provisioning wizard. By default, Chef is enabled, but can be disabled by expanding the <cite>Chef</cite> section and unchecking <cite>Enable Chef</cite>.</p>
+<p>Chef Integration Provisioning options:</p>
+<dl class="docutils">
+<dt>Enable Chef</dt>
+<dd>Select to bootstrap</dd>
+<dt>Chef Environment</dt>
+<dd>Populate Chef environment, or leave as <cite>_default</cite></dd>
+<dt>Chef Node ID</dt>
+<dd>Defaults to instance name, configurable.</dd>
+<dt>Chef Runlist</dt>
+<dd>Add runlist</dd>
+<dt>CHEF ATTRIBUTES</dt>
+<dd>Add Chef Attributes</dd>
+<dt>CHEF TAGS</dt>
+<dd>Add Chef tags</dd>
+</dl>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, jw.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

@@ -1,0 +1,314 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>AWS Route53 &mdash; jwtest 1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../../_static/my_theme.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="../../genindex.html"/>
+        <link rel="search" title="Search" href="../../search.html"/>
+    <link rel="top" title="jwtest 1 documentation" href="../../index.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html">
+          
+
+          
+            
+            <img src="../../_static/logo.svg" class="logo" />
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../getting_started/getting_started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../provisioning/provisioning.html">Provisioning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../infrastructure/infrastructure.html">Infrastructure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../administration.html">Administration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../monitoring/monitoring.html">Monitoring</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../logs/logging.html">Logs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../backups/backups.html">Backups</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../operations/operations.html">Operations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../services/services.html">Services</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../integration_guides/integration_guides.html">Integration Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../faq/faqs.html">FAQ’s</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../release_notes/release_notes.html">Release Notes</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">jwtest</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+      <li>AWS Route53</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/administration/integrations/route53.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="aws-route53">
+<h1>AWS Route53<a class="headerlink" href="#aws-route53" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
+<p>|morpheus| integrates directly with Amazon Route 53 to automatically create DNS entries for Instances provisioned to a configured Cloud or Group. |morpheus| also syncs in Route 53 Domains for easy selection while provisioning, or setting as the default Domain on a Cloud or Network.</p>
+</div>
+<div class="section" id="add-route-53-integration">
+<h2>Add Route 53 Integration<a class="headerlink" href="#add-route-53-integration" title="Permalink to this headline">¶</a></h2>
+<p>Route 53 can be added in the <cite>Administration</cite> or <cite>Infrastructure</cite> sections:</p>
+<ol class="arabic">
+<li><p class="first">In <cite>Administration -&gt; Integrations</cite>, select <cite>+ New Integration</cite></p>
+</li>
+<li><p class="first">In <cite>Infrastructure -&gt; Networks -&gt; Services</cite>, select <cite>Add Service</cite></p>
+</li>
+<li><p class="first">Provide the following:</p>
+<dl class="docutils">
+<dt>TYPE</dt>
+<dd><p class="first last">Route 53</p>
+</dd>
+<dt>NAME</dt>
+<dd><p class="first last">Name for the Integration in |morpheus| </p>
+</dd>
+<dt>REGION</dt>
+<dd><p class="first last">AWS Region for the Integration</p>
+</dd>
+<dt>ACCESS KEY</dt>
+<dd><p class="first last">AWS User IAM Access Key</p>
+</dd>
+<dt>SECRET KEY</dt>
+<dd><p class="first last">AWS User IAM Secret Key</p>
+</dd>
+</dl>
+</li>
+<li><p class="first">Once saved the Integration will be added and visible in both <cite>Administration -&gt; Integrations</cite> and <cite>Infrastructure -&gt; Networks -&gt; Services</cite></p>
+</li>
+</ol>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">All fields can be edited after saving.</p>
+</div>
+</div>
+<div class="section" id="domains">
+<h2>Domains<a class="headerlink" href="#domains" title="Permalink to this headline">¶</a></h2>
+<p>Once the integration is added, Route 53 Domains will sync and listed under <cite>Infrastructure -&gt; Networks -&gt; Domains</cite>.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Default Domains can be set on Networks and Clouds, and can be selected when provisioning. Additional configuration options are available by editing a domain in <cite>Networks -&gt; Domains</cite></p>
+</div>
+</div>
+<div class="section" id="configuring-route-53-with-clouds-and-groups">
+<h2>Configuring Route 53 with Clouds and Groups<a class="headerlink" href="#configuring-route-53-with-clouds-and-groups" title="Permalink to this headline">¶</a></h2>
+<p>DNS Integrations are available in the <cite>DNS Integration</cite> dropdown in Cloud and Group settings.</p>
+<p>|morpheus| will register Instances with the DNS provider when provisioned into a Cloud or Group with a DNS Integration added.</p>
+<div class="section" id="add-dns-integration-to-a-cloud">
+<h3>Add DNS Integration to a Cloud<a class="headerlink" href="#add-dns-integration-to-a-cloud" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li>In <cite>Infrastructure → Clouds</cite> edit the target Cloud.</li>
+<li>Expand the <cite>Advanced Options</cite> section.</li>
+<li>In the <cite>DNS Integration</cite> dropdown, select an available DNS Integration.</li>
+<li>Save Changes</li>
+</ol>
+</div>
+<div class="section" id="add-dns-integration-to-a-group">
+<h3>Add DNS Integration to a Group<a class="headerlink" href="#add-dns-integration-to-a-group" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li>In <cite>Infrastructure → Groups</cite> select the target Group.</li>
+<li>Select the <cite>Edit</cite> button for the Group</li>
+<li>Expand the <cite>Advanced Options</cite> section.</li>
+<li>In the <cite>DNS Integration</cite> dropdown, select an available DNS Integration.</li>
+<li>Save Changes</li>
+</ol>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Instances provisioned into a Cloud or Group with a DNS Integration added will be registered as instancename.domain with the DNS Provider during provisioning, and de-registered at teardown.</p>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, jw.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

@@ -1,0 +1,324 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Networks &mdash; jwtest 1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../../_static/my_theme.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="../../genindex.html"/>
+        <link rel="search" title="Search" href="../../search.html"/>
+    <link rel="top" title="jwtest 1 documentation" href="../../index.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html">
+          
+
+          
+            
+            <img src="../../_static/logo.svg" class="logo" />
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../getting_started/getting_started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../provisioning/provisioning.html">Provisioning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../infrastructure.html">Infrastructure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../administration/administration.html">Administration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../monitoring/monitoring.html">Monitoring</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../logs/logging.html">Logs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../backups/backups.html">Backups</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../operations/operations.html">Operations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../services/services.html">Services</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../integration_guides/integration_guides.html">Integration Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../faq/faqs.html">FAQ’s</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../release_notes/release_notes.html">Release Notes</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">jwtest</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+      <li>Networks</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/infrastructure/networks/networks.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="networks">
+<h1>Networks<a class="headerlink" href="#networks" title="Permalink to this headline">¶</a></h1>
+<p><code class="docutils literal"><span class="pre">Infrastructure</span> <span class="pre">-&gt;</span> <span class="pre">Network</span> <span class="pre">-&gt;</span> <span class="pre">Networks</span></code></p>
+<div class="section" id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
+<p>The Networks section is for configuring networks across all clouds in |morpheus| . Existing networks from the Clouds added in |morpheus| will auto-populate in the Networks section.</p>
+<p>Networks can be configured for DHCP or Static IP assignment, assigned IP pools, and configured for visibility and account assignment for multi-tenancy usage. Networks can also be set as inactive and unavailable for provisioning use.</p>
+</div>
+<div class="section" id="configuring-networks">
+<h2>Configuring Networks<a class="headerlink" href="#configuring-networks" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="dhcp">
+<h3>DHCP<a class="headerlink" href="#dhcp" title="Permalink to this headline">¶</a></h3>
+<p>To configure a network for DHCP:</p>
+<ol class="arabic simple">
+<li>Navigate to <cite>Infrastructure -&gt; Network -&gt; Networks</cite></li>
+<li>Search for the target network</li>
+<li>Edit the Network by either:<ul>
+<li>Select <cite>Actions -&gt; Edit</cite></li>
+<li>Select the Network, then select <cite>Edit</cite></li>
+</ul>
+</li>
+<li>In the Network Config modal, set the DHCP flag as Active (default)</li>
+<li>Save Changes</li>
+</ol>
+<div class="admonition important">
+<p class="first admonition-title">Important</p>
+<p class="last">The DHCP flag tells |morpheus| this network has a DHCP server assigning IP Addresses to hosts. |morpheus| does not act as the DHCP server, and provisioning to a network that has the DHCP server flag active in |morpheus| , but no DHCP server actually on the network will in most cases cause the instance to not receive an IP address.</p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">When selecting a network with DHCP enabled during provisioning, “DHCP” will populate to the right of the selected network:</p>
+</div>
+</div>
+<div class="section" id="static-and-ip-pools">
+<h3>Static and IP Pools<a class="headerlink" href="#static-and-ip-pools" title="Permalink to this headline">¶</a></h3>
+<p>To configure a network for Static IP Assignment:</p>
+<ol class="arabic">
+<li><p class="first">Navigate to <cite>Infrastructure -&gt; Network -&gt; Networks</cite></p>
+</li>
+<li><p class="first">Search for the target network</p>
+</li>
+<li><p class="first">Edit the Network by either:</p>
+<ul class="simple">
+<li>Select <cite>Actions -&gt; Edit</cite></li>
+<li>Select the Network, then select <cite>Edit</cite></li>
+</ul>
+</li>
+<li><p class="first">In the Network Config modal, add the following:
+* Gateway
+* DNS Primary
+* DNS Secondary
+* CIDR ex 10.10.10.0/22
+* VLAN ID (if necessary)
+* Network Pool</p>
+<blockquote>
+<div><ul class="simple">
+<li>Leave as “choose a pool” for entering a static IP while provisioning</li>
+<li>Select a Pool to use a pre-configured |morpheus| or IPAM Integration IP Pool</li>
+</ul>
+</div></blockquote>
+<ul class="simple">
+<li>The Permissions settings are used for Multi-Tenant resource configuration<ul>
+<li>Leave settings as default if used in a single-tenant environment (only one Tenant in your |morpheus| appliance)</li>
+<li>To share this network across all accounts in a multi-tenant environment, select the Master Tenant and set the Visibility to Public</li>
+<li>To assign this network to be used by only one account in a multi-tenant environment, select the account and set visibility to Private</li>
+</ul>
+</li>
+<li>Active<ul>
+<li>Leave as enabled to use this network</li>
+<li>Disable the active flag to remove this network from available network options</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p class="first">Save Changes</p>
+</li>
+</ol>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">When selecting a network with DHCP disabled and no IP Pool assigned during provisioning, an IP entry field will populate to the right of the selected network(s):</p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">When selecting a network with an IP Pool assigned during provisioning, the name of the IP pool will populate to the right of the selected network(s). IP Pools override DHCP.</p>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, jw.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

@@ -1,0 +1,77 @@
+v2.11.4
+=======
+
+New Features
+------------
+
+Network IP Override
+  Networks can now be configured to allow overriding IP configuration and selecting between DHCP, Static IP entry, or IP Pools at provision time.
+
+Windows License Management
+  Windows license can now be assigned to virtual images a applied during provisioning. License can be managed in the new Licenses section under Admin - Provisioning.
+
+Salt Windows Support
+  Salt Minions can now be installed on Windows Operating Systems via the Automation Engine. The source repo can also be customized and the minions can be successfully registered to both syndic master layouts as well as standard master layouts
+
+Xen Reconfigure
+  Memory, Cores, Disk Size, Disks, and Networks can now be reconfigure on Xen instances and Hosts.
+
+Debian 8 OS Support
+  Support for Debian 8 and 9 added to Agent. Debian 8.8 vmdk added to |morpheus| Catalog.
+
+Cloud Sync Update
+  90%+ reduction in VMware cloud sync time. Last Sync date and Sync Duration added to cloud detail pages.
+
+Agent time normalization
+  Logging and stats data is now converted to appliance time in the cases VM time is offset.
+
+Added support for querying ESXi hosts for Virtual Switch UUID::
+  vCenter user used for VMware cloud integration no longer requires propagating datacenter permissions for provisioning.
+
+Hostname routing added for Amazon ALB's
+  Allows multiple hosts to share the same port
+
+Shutdown renewals
+  Shutdown policy extension lease timeframe now begins at the time of extension approval for instances already shut down by the policy, rather than from the end of the previous lease.
+
+Additional updates:
+-------------------
+
+* Source column added to Virtual Images list page
+
+* Tenants columns added to Networks list view
+
+* Cloud Status column added to Cloud list view
+
+* Improvements to host cpu, power and memory statistics.
+
+* SEK currency support added
+
+* Asynchronous cloud delete added
+
+Fixes
+-----
+
+* Fix for agent install and stop/start in inventoried AWS instances that are converted to Managed.
+
+* Fix for Openstack disabled forced SSL validation
+
+* Fix for Nutanix image sync issue with region codes
+
+* Scaling improvements
+
+* Windows agent install improvements
+
+* Fix for editing Appliance Backup settings
+
+* Fix for Role Permissions: Apps = User
+
+* Fix for Max Storage policy enforcement
+
+* Fix for uploaded OVA's Virtual Image type
+
+* Linux ssh console aspect ratio change in 2.11.3 reverted
+
+* Network Groups improvements
+
+* Security Improvements

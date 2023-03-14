@@ -1,0 +1,199 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>&lt;no title&gt; &#8212; jwtest 1 documentation</title>
+    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <p>[[policies]] == Policies</p>
+<p>Policies add governance, ease of use, cost-savings, and auditing
+features to |morpheus| . Policies can be created in the Policies tabs in
+Groups and Clouds. Policy generation is a role permission.</p>
+<p>Policies apply towards any instance provisioned into a group or cloud
+with active policies. Cloud policies will override matching or
+conflicting group policies during provisioning.</p>
+<p>Available Policy Types:</p>
+<ul class="simple">
+<li>Expiration</li>
+<li>Host Name</li>
+<li>Hostname</li>
+<li>Instance Name</li>
+<li>Max Containers</li>
+<li>Max Cores</li>
+<li>Max Hosts</li>
+<li>Max Memory</li>
+<li>Max Storage</li>
+<li>Max VMs</li>
+<li>Provision Approval</li>
+<li>Shutdown</li>
+</ul>
+<p>=== Creating Policies</p>
+<p>Policies can be created, edited, and set to active or inactive in the a
+group or cloud detail pane under the Policies tab.</p>
+<p>To create a new policy, select ADD POLICY and choose from the available
+policy types:</p>
+<p>=== Expiration Policies</p>
+<p>Expiration policies set an expiration timeframe for any instance
+provisioned into the cloud or group the policy is added to. When an
+instance expires, it is terminated and deleted.</p>
+<p>Configuration options for expiration policies:</p>
+<ul class="simple">
+<li><em>Expiration Type</em> ** User Configurable- expiration timeframe is
+editable during provisioning ** Fixed Expiration- user cannot
+change expiration timeframe</li>
+<li><em>Expiration Days</em> Configures the number of days the instance is
+allowed to exist before being removed.</li>
+<li><em>Renewal Days</em> If the instance is renewed, this is the number of days
+by which the expiration date is increased.</li>
+<li><em>Notification Days</em> This allows an email notice to be sent out X days
+before the instance is set to expire.</li>
+<li><em>Notification Message</em> Customizable message for notification email.
+The default message is
+<code class="docutils literal"><span class="pre">Instance</span> <span class="pre">${instance?.name}</span> <span class="pre">is</span> <span class="pre">set</span> <span class="pre">to</span> <span class="pre">expire</span> <span class="pre">on</span> <span class="pre">${instance?.expireDate}</span></code></li>
+<li><em>Auto Approve Extensions</em> Enable this to auto-approve extension
+requests, bypassing approval workflows.</li>
+</ul>
+<p>Instances with expirations show the time until expiration in the
+instance detail pane. Instances with active expiration policies can be
+extended by selecting the EXTEND NOW button in the instance detail pane.
+The extension length is set in the policy by the RENEWAL DAYS field.</p>
+<p>Expirations can also be added to any instance during provisioning by
+entering the number of days in the EXPIRATION DAYS field in the
+Lifecycle section of the automation section of the provisioning wizard.
+Expiration can be added to any instance even if no policies have been
+created.</p>
+<p>=== Naming Policies</p>
+<p>Naming Policies will populate a fixed or editable name for instances,
+hosts and hostnames. The Name Pattern field uses ${variable} string
+interpolation.</p>
+<p>Available Variables for naming patterns are:</p>
+<p>|=== | groupName | groupCode | cloudName | cloudCode | type |
+accountID | account | accountType | platform | userID | userName |
+userInitials | provisionType | | | |===</p>
+<p>An example for an instance name policy using a naming pattern with users
+initials, cloud code, instance type, and adds a sequential number is:</p>
+<p><span class="math">{userInitials}-</span>{cloudCode}-<span class="math">{type}-</span>{sequence}</p>
+<p>Naming policies can be configure to be user configurable or static, and
+to auto-resolve naming conflicts.</p>
+<p>Cloud codes and Group codes are fields found in their respective
+configuration panes.</p>
+<p>=== Shutdown Policies</p>
+<p>Shutdown policies dictate the number of days an instance is allowed to
+run before it is shut down. Shutdown is consistent across cloud types
+i.e.: in VMware, a VM is powered off. In AWS, an instance is stopped.
+Etc.</p>
+<p>Configuration options for shutdown policies:</p>
+<ul class="simple">
+<li><em>Shutdown Type</em> ** User Configurable- shutdown timeframe is
+editable during provisioning ** Fixed Expiration- user cannot
+change shutdown timeframe</li>
+<li><em>Expiration Days</em> Configures the number of days the instance is
+allowed to exist before being shut down.</li>
+<li><em>Renewal Days</em> If the instance is renewed, this is the number of days
+by which the shutdown date is increased. <em>Notification Days</em> This
+allows an email notice to be sent out X days before the instance is
+set to shut down.</li>
+<li><em>Notification Message</em> Customizable message for notification email.
+The default message is
+<code class="docutils literal"><span class="pre">Instance</span> <span class="pre">${instance?.name}</span> <span class="pre">is</span> <span class="pre">set</span> <span class="pre">to</span> <span class="pre">shut</span> <span class="pre">down</span> <span class="pre">on</span> <span class="pre">${instance?.shutdownDate}</span></code></li>
+<li><em>Auto Approve Extensions</em> Enable this to auto-approve extension
+requests, bypassing approval workflows.</li>
+</ul>
+<p>=== Provision Approval</p>
+<p>|morpheus| Provision Approvals enable an approval workflow via internal
+|morpheus| approval or via ServiceNow workflow. If a ServiceNow
+integration is present, the ServiceNow option is enabled. The Approval
+workflow to be selected is dynamically created by querying the
+ServiceNow Workflow table in the integrated ServiceNow instance.</p>
+<p>This ServiceNow approval integration enables users to use the |morpheus| 
+Self-Service provisioning portal to provision new instances and still
+respect the required ServiceNow business approval workflow.</p>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../index.html">jwtest</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2017, jw.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.6.3</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
+      
+      |
+      <a href="../_sources/administration/policies.adoc.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

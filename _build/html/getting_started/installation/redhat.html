@@ -1,0 +1,331 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>RHEL &mdash; jwtest 1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../../_static/my_theme.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="../../genindex.html"/>
+        <link rel="search" title="Search" href="../../search.html"/>
+    <link rel="top" title="jwtest 1 documentation" href="../../index.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html">
+          
+
+          
+            
+            <img src="../../_static/logo.svg" class="logo" />
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../provisioning/provisioning.html">Provisioning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../infrastructure/infrastructure.html">Infrastructure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../administration/administration.html">Administration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../monitoring/monitoring.html">Monitoring</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../logs/logging.html">Logs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../backups/backups.html">Backups</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../operations/operations.html">Operations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../services/services.html">Services</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../integration_guides/integration_guides.html">Integration Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../faq/faqs.html">FAQ’s</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../release_notes/release_notes.html">Release Notes</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">jwtest</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+      <li>RHEL</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/getting_started/installation/redhat.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="rhel">
+<h1>RHEL<a class="headerlink" href="#rhel" title="Permalink to this headline">¶</a></h1>
+<p>To get started installing |morpheus| on RHEL 7 a few prerequisite items
+are required.</p>
+<p>The RedHat Enterprise Linux 7 server needs to be registered and
+activated with Redhat subscription. The server optional rpms repo needs
+to be enabled as well.</p>
+<p>To check if the server has been actived please run the
+subscription-manager version. Subscription manager will return the
+version plus the python depency version.</p>
+<p>If the server has not been registered and activated then the
+subscription manager version will return the below message.</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="o">[</span>root@appliance ~<span class="o">]</span><span class="c1"># subscription-manager version server type: This system is currently not registered subscription management server: 0.9.51.24.-1 subscription-manager: 1.10.14-7.el7 python-rhsm:</span>
+<span class="m">1</span>.10.12-2.el7 ----
+</pre></div>
+</div>
+<p>When a server has been registered and activated with Redhat the
+subscription manager will return the below message.</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="o">[</span>root@appliance ~<span class="o">]</span><span class="c1"># subscription-manager version server type: Red Hat Subscription Management subscription management server: 0.9.51.24-1</span>
+subscription-manager: <span class="m">1</span>.10.14-7.el7 python-rhsm: <span class="m">1</span>.10.12-2.el7
+</pre></div>
+</div>
+<p>If the subscription manager re-turns the message “This system is
+currently not registered” please follow the below steps to register the
+server.</p>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last">To register the server you will need to have sudo permissions</p>
+</div>
+<p>[Member of the Wheel group] or root access to the server. You will also
+need your redhat registered email address and password.</p>
+<p>subscription-manager register</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="o">[</span>root@appliance ~<span class="o">]</span><span class="c1"># subscription-manager register Username: redhat@example.com Password:</span>
+</pre></div>
+</div>
+<p>. subscription-manager auto –attach [Note this can take a minute to
+complete.] + .. code-block:: bash —- sudo subscription-manager attach –auto</p>
+<p>Installed Product Current Status: Product Name: Red Hat Enterprise Linux
+Server Status: Subscribed —-</p>
+<p>To check to see if the RHEL server has the Red Hat Enterprise Linux 7
+Server - Optional (RPMs) repo enabled please run the following command
+to return the repo status.</p>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last">To check the server repos you will need to have sudo permissions</p>
+</div>
+<p>[Member of the Wheel group] or root access to the server.</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>sudo yum repolist all <span class="se">\|</span> grep <span class="s2">&quot;rhel-7-server-optional-rpms&quot;</span> rhel-7-server-optional-rpms/7Server/x86<span class="se">\_</span><span class="m">64</span> disabled
+</pre></div>
+</div>
+<p>If the repo status was returned as disabled then you will need to enable
+the repo using the subsciption manager like below.</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>sudo subscription-manager repos --enable rhel-7-server-optional-rpms
+Repo <span class="s1">&#39;rhel-7-server-optional-rpms&#39;</span> is enabled <span class="k">for</span> this system.
+</pre></div>
+</div>
+<p>The message “Repo ‘rhel-7-server-optional-rpms’ is enabled for this
+system.” will appear after enabling the repo. This will confirm that the
+repo has been enabled.</p>
+<p>Next simply download the relevant <code class="docutils literal"><span class="pre">.rpm</span></code> package for installation.
+This package can be acquired from your account rep or via a free trial
+request from <a class="reference external" href="https://www.morpheusdata.com[morheusdata.com">https://www.morpheusdata.com[morheusdata.com</a>].</p>
+<p>TIP: Use the <code class="docutils literal"><span class="pre">wget</span></code> command to directly download the package to your
+appliance server. i.e.
+<code class="docutils literal"><span class="pre">wget</span> <span class="pre">https://downloads.gomorpheus.com/path/to/package.rpm</span></code></p>
+<p>Next we must install the package onto the machine and configure the
+morpheus services:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>sudo rpm -i morpheus-appliance<span class="se">\_</span>x.x.x-1.amd64.rpm
+sudo morpheus-ctl reconfigure
+</pre></div>
+</div>
+<p>Once the installation is complete the web interface will automatically
+start up. By default it will be resolvable at <code class="docutils literal"><span class="pre">https://your_machine_name</span></code> and in many cases this may not be
+resolvable from your browser. The url can be changed by editing <code class="docutils literal"><span class="pre">/etc/morpheus/morpheus.rb</span></code> and changing the value of
+<code class="docutils literal"><span class="pre">appliance_url</span></code>. After this has been changed simply run:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>sudo morpheus-ctl reconfigure
+sudo morpheus-ctl stop morpheus-ui
+sudo morpheus-ctl start morpheus-ui
+</pre></div>
+</div>
+<p>NOTE: The <code class="docutils literal"><span class="pre">morpheus-ui</span></code> can take 2-3 minutes to startup before it
+becomes available.</p>
+<p>There are additional post install settings that can be viewed in the
+Advanced section of the guide.</p>
+<p>Once the browser is pointed to the appliance a first time setup wizard
+will be presented. Please follow the on screen instructions by creating
+the master account. From there you will be presented with the license
+settings page where a license can be applied for use (if a license is
+required you may request one or purchase one by contacting your sales
+representative).</p>
+<p>More details on setting up infrastructure can be found throughout this
+guide.</p>
+<p>TIP: If any issues occur it may be prudent to check the morpheus log for
+details at <code class="docutils literal"><span class="pre">/var/log/morpheus/morpheus-ui/current</span></code>.</p>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, jw.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

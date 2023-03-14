@@ -1,0 +1,291 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Salt &mdash; jwtest 1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../../_static/my_theme.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="../../genindex.html"/>
+        <link rel="search" title="Search" href="../../search.html"/>
+    <link rel="top" title="jwtest 1 documentation" href="../../index.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html">
+          
+
+          
+            
+            <img src="../../_static/logo.svg" class="logo" />
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../getting_started/getting_started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../provisioning/provisioning.html">Provisioning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../infrastructure/infrastructure.html">Infrastructure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../administration.html">Administration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../monitoring/monitoring.html">Monitoring</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../logs/logging.html">Logs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../backups/backups.html">Backups</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../operations/operations.html">Operations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../services/services.html">Services</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../integration_guides/integration_guides.html">Integration Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../faq/faqs.html">FAQ’s</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../release_notes/release_notes.html">Release Notes</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">jwtest</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+      <li>Salt</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/administration/integrations/salt.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="salt">
+<h1>Salt<a class="headerlink" href="#salt" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
+<p>|morpheus| integrates with an existing Salt Master for seamless deployment of Salt States to Minions provisioned from |morpheus| .</p>
+</div>
+<div class="section" id="add-salt-integration">
+<h2>Add Salt Integration<a class="headerlink" href="#add-salt-integration" title="Permalink to this headline">¶</a></h2>
+<p>To get started browse to Admin -&gt; Integrations from within |morpheus| .</p>
+<p>Once there simply add a New Integration</p>
+<img alt="../../_images/salt-af3ca.png" src="../../_images/salt-af3ca.png" />
+<p>And then scope the integration to your existing Salt Master by ip address.  Make sure that the username entered is one with proper escalation privileges for running Salt, and point the Working Directory at the directory on your Master where your States live.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">|morpheus| will allow you to run States from a git backend, but in v2.10 you will not see states from a git backend within |morpheus| </p>
+</div>
+<img alt="../../_images/salt-a41c9.png" src="../../_images/salt-a41c9.png" />
+</div>
+<div class="section" id="scope-salt-integration-to-group-or-cloud">
+<h2>Scope Salt Integration to Group Or Cloud<a class="headerlink" href="#scope-salt-integration-to-group-or-cloud" title="Permalink to this headline">¶</a></h2>
+<p>Configuration Management integrations like Saltstack apply to the Infrastructure Group abstraction in |morpheus| .  To ties yours in, browse to <code class="docutils literal"><span class="pre">Infrastructure</span> <span class="pre">-&gt;</span> <span class="pre">Groups</span></code> in |morpheus| and select the group that you would like to tie to your Salt Master.</p>
+<p>From here select <cite>Edit</cite></p>
+<img alt="../../_images/salt-991dd.png" src="../../_images/salt-991dd.png" />
+<p>And from the options toggle Advanced Options and select your Saltstack integration in the Config Management dropdown.</p>
+<img alt="../../_images/salt-be548.png" src="../../_images/salt-be548.png" />
+<p>After a page refresh you should see your Saltstack tab in your group page</p>
+<img alt="administration/salt-b5b6f.png" src="administration/salt-b5b6f.png" />
+<p>Clicking on it will reveal a page that includes:</p>
+<ol class="arabic simple">
+<li>An interface to run Salt Master commands</li>
+<li>Parsed Top File</li>
+<li>Available States</li>
+</ol>
+<p>image::administration/salt-ccaca.png[]</p>
+<p>The classic example of running</p>
+<p><cite>salt ‘*’ test.ping</cite></p>
+<p>will return empty unless there are existing Minions with accepted keys on the Master.  However, provisioning Minions via |morpheus| is extremely easy.</p>
+</div>
+<div class="section" id="provisioning-with-saltstack">
+<h2>Provisioning with Saltstack<a class="headerlink" href="#provisioning-with-saltstack" title="Permalink to this headline">¶</a></h2>
+<p>To do so, provision as usual and Instances within the Group tied to the Saltstack Integration will now show additional options on the Configure pane</p>
+<img alt="../../_images/salt-413c5.png" src="../../_images/salt-413c5.png" />
+<p>Minion ID defaults to the hostname, and a State can be applied directly at provision time.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Only States served from the Master’s Working Directory can be applied at provision, not States from a git backend</p>
+</div>
+<p>Once your instance is provisioned and key negotiation has completed you will be able to access it and run commands via the integrated Salt command center in your Group.</p>
+<img alt="../../_images/salt-f8e4e.png" src="../../_images/salt-f8e4e.png" />
+<p>If you did not apply a state at provision time now you will be able to run State commands through |morpheus| .</p>
+<img alt="../../_images/salt-71b7c.png" src="../../_images/salt-71b7c.png" />
+<p>In our example the Apache State from a git backend was applied successfully to our newly created vm.</p>
+<img alt="../../_images/salt-bf299.png" src="../../_images/salt-bf299.png" />
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, jw.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

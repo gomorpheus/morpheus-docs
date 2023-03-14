@@ -1,0 +1,78 @@
+AWS
+===
+
+Overview
+--------
+
+AWS is the Amazon public cloud, offering a full range of services and features across the globe in various datacenters.   AWS provides businesses with a flexible, highly scalable, and low-cost way to deliver a variety of services using open standard technologies as well as proprietary solutions. This section of documentation will help you get |morpheus| and AWS connected to utilize the features below:
+
+=== Features
+
+* Virtual Machine Provisioning
+* Containers
+* Backups / Snapshots
+* Resources Groups
+* Migrations
+* Auto Scaling
+* Load Balancing
+* AWS Marketplace Search and Provisioning
+* Remote Console
+* Periodic Synchronization
+* Lifecycle Management and Resize
+* Restore from Snapshots
+* EC2
+* RDS
+* S3
+* ELBs
+* ALBs
+* Route53
+* IAM Pofiles
+* Network Sync
+* Security Group Sync
+* Pricing Sync
+* Assign Elastic IP's
+* Network Pools
+
+|morpheus| can provide a single pane of glass and self-service portal for managing instances scattered across both AWS and private cloud offerings like VMWare and Hyper-V.
+
+=== Requirements
+
+* AWS IAM Security Credentials
+** Access Key
+** Secret Key
+** Sufficient User Privileges (see Required IAM Policies section for more info)
+* Security Groups
+** Typical Inbound ports open from |morpheus| Appliance: 22, 5985, 3389
+** Typical Outbound to |morpheus| Appliance: 80, 443
+*** These are required for |morpheus| agent install, communication, and remote console access for windows and linux. Other configurations, such as docker instances, will need the appropriate ports opened as well. *Cloud-init Agent Install mode does not require access to port 22.
+* Network(s)
+** Public IP assignment required for Agent install, Script Execution, and Console if the |morpheus| Appliance is not able to communicate with AWS instances private ip's.
+
+NOTE: Each AWS Cloud in |morpheus| is scoped to an AWS Region, and multiple AWS Clouds can be added and even Grouped. Verify Security groups are properly configured in all Regions |morpheus| will scope to.
+
+=== Creating an AWS Cloud
+
+. Navigate to `Infrastructure -> Clouds`
+. Select `+ Create Cloud`
+. Select AWS
+. Enter the following:
+
+Name:: Name of the Cloud in |morpheus| 
+Location:: Description field for adding notes on the cloud, such as location.
+Visibility:: For setting cloud permissions in a multi-tenant environment. Not applicable in single tenant environments.
+
+Region:: Select AWS Region for the Cloud
+Access Key:: Access Key ID from AWS IAM User Security Credentials.
+Secret Key:: Secret Access Key associate with the Access Key ID.
+Inventory Existing Instances:: If enabled, existing EC2 Instances will be inventoried and appear as unmanaged Virtual Machines in |morpheus| .
++
+. The AWS cloud is ready to be added to a group and saved. Additional configuration options available:
+
+=== Advanced Options
+
+* *IMAGE TRANSFER STORE*: S3 bucket for Image transfers, required for migrations into AWS.
+.. include:: /integration_guides/advanced_options.rst
+
+NOTE: All fields and options can be edited after the Cloud is created.
+
+include::aws/iampolicies.rst

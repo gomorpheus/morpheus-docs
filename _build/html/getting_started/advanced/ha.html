@@ -1,0 +1,453 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>High Availability Mode &mdash; jwtest 1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../../_static/my_theme.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="../../genindex.html"/>
+        <link rel="search" title="Search" href="../../search.html"/>
+    <link rel="top" title="jwtest 1 documentation" href="../../index.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html">
+          
+
+          
+            
+            <img src="../../_static/logo.svg" class="logo" />
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../provisioning/provisioning.html">Provisioning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../infrastructure/infrastructure.html">Infrastructure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../administration/administration.html">Administration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../monitoring/monitoring.html">Monitoring</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../logs/logging.html">Logs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../backups/backups.html">Backups</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../operations/operations.html">Operations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../services/services.html">Services</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../integration_guides/integration_guides.html">Integration Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../faq/faqs.html">FAQ’s</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../release_notes/release_notes.html">Release Notes</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">jwtest</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+      <li>High Availability Mode</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/getting_started/advanced/ha.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="high-availability-mode">
+<h1>High Availability Mode<a class="headerlink" href="#high-availability-mode" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
+<p>|morpheus| ships as a stand-alone appliance running as a virtual machine
+in your own environment. This stand-alone appliance contains all the
+software needed to run |morpheus| and uses a package to distribute the
+binary files. A configuration utility is also provided to configure the
+software based on your environment needs. As |morpheus| scales and
+becomes a more critical component of your infrastructure the stand-alone
+method does not meet the needs in terms of uptime availability and
+scalability. We have designed the components that makeup |morpheus| 
+distributable to enable you to deploy it in a multi-tier configuration.
+This document discusses the possible deployment scenarios and use cases
+for distributing |morpheus| and increasing its uptime availability.</p>
+<p>Each tier described in the following architecture section can be scaled
+out to increase its availability. To remove the single points of failure
+from inside the stand-alone appliance you will need to stand up each of
+the architecture components described in the architecture section.
+System administration of these components are critical to the success of
+a highly scaled system including logging and monitoring. The
+infrastructure setup section goes over the details of setting up the
+proper infrastructure to allow the application servers to talk to these
+services directly rather than the internal services created by the
+installer in a stand-alone configuration.</p>
+</div>
+<div class="section" id="architecture">
+<h2>Architecture<a class="headerlink" href="#architecture" title="Permalink to this headline">¶</a></h2>
+<p>|morpheus| contains the following tiers in the stand-alone deployment
+configuration: web, application, cache, message queue, search index, and
+database. Each tier can be distributed and deployed on separate servers
+except for the cache. Currently the cache is localized to each
+application server and is scheduled for removal in a later release. In
+addition, there is a shared storage tier which holds artifacts and
+backup objects.</p>
+<img alt="../../_images/morpheusHA.png" src="../../_images/morpheusHA.png" />
+<dl class="docutils">
+<dt>Web Tier</dt>
+<dd>|morpheus| uses Nginx as a reverse proxy for its application tier. It
+also serves access to the localized package repository used when
+deploying data nodes and virtual machines providing the |morpheus| agent
+and utility software.</dd>
+<dt>Application Tier</dt>
+<dd>|morpheus| application is written in Groovy and Grails. It can be run on
+multiple servers behind a web connection load balancer that supports
+websockets. The application itself runs in a Java virtual machine as an
+Apache Tomcat container.</dd>
+<dt>Cache Tier</dt>
+<dd>Currently |morpheus| uses a caching layer for database requests, this
+component is scheduled for removal in a future release. A local instance
+of Redis is used as the cache and is not distributed. The packaged
+installer will install a local Redis instance to use until the component
+is removed from the application.</dd>
+<dt>Message Queue Tier</dt>
+<dd>|morpheus| uses message queueing to send messages to different
+components of the application that enable various actions. RabbitMQ is
+used as the message broker, only the application communicates with the
+message queue broker. This component is scaled horizontally behind a
+load balancer so that each application server can connect to the broker
+using a single DNS name.</dd>
+<dt>Search Index Tier</dt>
+<dd>|morpheus| stores activity, backup results, logs, and statistics in an
+index to enable searching using ElasticSearch. Scaling out ElasticSearch
+is handled by ElasticSearch itself and does not require a load balancer.
+Each application server’s configuration contains addresses for each
+ElasticSearch.</dd>
+<dt>Database Tier</dt>
+<dd>|morpheus| use a SQL persistent database; in the stand-alone appliance,
+it is MySQL. To scale out the database tier setup a SQL compliant
+database. Each application instance will need write access to the
+database. Configuring MySQL or Percona database engine in an
+active/active cluster will allow write access to the |morpheus| database
+from any application server.</dd>
+<dt>Shared Storage</dt>
+<dd>|morpheus| creates artifacts and objects when deploying applications or
+running backups. These artifacts need to be written to a file system.
+These objects need to be accessible by any application server they need
+to exist on a shared storage device. |morpheus| allows you to create
+storage providers such as a local directory, AWS S3, Swift, or cloud
+CDNs.</dd>
+<dt>Infrastructure Setup</dt>
+<dd>Infrastructure required for the external services should be deployed in
+a regional manner and should not cross WAN boundaries with high latency
+links. You can setup the external services in any cloud provider,
+on-premises internal cloud or data center, or virtual environment.
+Scaling and performance metrics of the external services are based on
+recommendations from each service’s owner or community.</dd>
+</dl>
+</div>
+<div class="section" id="configuration">
+<h2>Configuration<a class="headerlink" href="#configuration" title="Permalink to this headline">¶</a></h2>
+<p>|morpheus| configuration is controlled by a configuration file located
+at /etc/morpheus/morpheus.rb. This file is read when you run
+morpheus-ctl reconfigure after installing the appliance package. Each
+section is tied to a deployment tier: database is mysql, message queue
+is rabbitmq, serach index is elasticsearch. There are no entries for the
+web and application tiers since those are part of the core application
+server where the configuration file resides.</p>
+<p>An example configuration file for a distributed |morpheus| deployment:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>mysql<span class="o">[</span><span class="s1">&#39;enable&#39;</span><span class="o">]</span> <span class="o">=</span> <span class="nb">false</span>
+mysql<span class="o">[</span><span class="s1">&#39;host&#39;</span><span class="o">]</span> <span class="o">=</span> <span class="o">{</span><span class="s1">&#39;52.53.240.28&#39;</span> <span class="o">=</span>&gt; <span class="m">10004</span>,  <span class="s1">&#39;52.53.241.94&#39;</span> <span class="o">=</span>&gt; <span class="m">10004</span><span class="o">}</span>
+mysql<span class="o">[</span><span class="s1">&#39;morpheus\_db&#39;</span><span class="o">]</span> <span class="o">=</span> <span class="s1">&#39;morpheusdb01&#39;</span>
+mysql<span class="o">[</span><span class="s1">&#39;morpheus\_db\_user&#39;</span><span class="o">]</span> <span class="o">=</span> <span class="s1">&#39;merovingian&#39;</span> mysql<span class="o">[</span><span class="s1">&#39;morpheus\_password&#39;</span><span class="o">]</span> <span class="o">=</span> <span class="s1">&#39;Wm5n5gXqXCe9v52&#39;</span>
+rabbitmq<span class="o">[</span><span class="s1">&#39;enable&#39;</span><span class="o">]</span> <span class="o">=</span> <span class="nb">false</span> rabbitmq<span class="o">[</span><span class="s1">&#39;vhost&#39;</span><span class="o">]</span> <span class="o">=</span> <span class="s1">&#39;zion&#39;</span> rabbitmq<span class="o">[</span><span class="s1">&#39;queue\_user&#39;</span><span class="o">]</span> <span class="o">=</span> <span class="s1">&#39;dujour&#39;</span>
+rabbitmq<span class="o">[</span><span class="s1">&#39;queue\_user\_password&#39;</span><span class="o">]</span> <span class="o">=</span> <span class="s1">&#39;5tfg9n2iBifzW5c&#39;</span>
+rabbitmq<span class="o">[</span><span class="s1">&#39;host&#39;</span><span class="o">]</span> <span class="o">=</span> <span class="s1">&#39;rabbitmq-lb01.morpheusdata.com&#39;</span>
+rabbitmq<span class="o">[</span><span class="s1">&#39;port&#39;</span><span class="o">]</span> <span class="o">=</span> <span class="s1">&#39;10008&#39;</span>
+rabbitmq<span class="o">[</span><span class="s1">&#39;stomp\_port&#39;</span><span class="o">]</span> <span class="o">=</span> <span class="s1">&#39;10010&#39;</span>
+rabbitmq<span class="o">[</span><span class="s1">&#39;heartbeat&#39;</span><span class="o">]</span> <span class="o">=</span> <span class="m">50</span>
+elasticsearch<span class="o">[</span><span class="s1">&#39;enable&#39;</span><span class="o">]</span> <span class="o">=</span> <span class="nb">false</span>
+elasticsearch<span class="o">[</span><span class="s1">&#39;cluster&#39;</span><span class="o">]</span> <span class="o">=</span> <span class="s1">&#39;nebuchadnezzar&#39;</span>
+elasticsearch<span class="o">[</span><span class="s1">&#39;es\_hosts&#39;</span><span class="o">]</span> <span class="o">=</span> <span class="o">{</span><span class="s1">&#39;52.53.214.68&#39;</span> <span class="o">=</span>&gt; <span class="m">10003</span>, <span class="s1">&#39;52.53.242.129&#39;</span> <span class="o">=</span>&gt; <span class="m">10003</span>, <span class="s1">&#39;52.53.68.67&#39;</span> <span class="o">=</span>&gt; <span class="m">10003</span><span class="o">}</span> ----
+</pre></div>
+</div>
+</div>
+<div class="section" id="database-tier">
+<h2>Database Tier<a class="headerlink" href="#database-tier" title="Permalink to this headline">¶</a></h2>
+<p>|morpheus| will install a local MySQL server in its stand-alone
+configuration mode. To disable creating the local MySQL server set the
+entry mysql[‘enable’] = false and add one or more database servers using
+the mysql[‘host’] entry. This entry is a Ruby hash using hash rocket
+style syntax since the key contains dots. The key is an IP address or
+DNS name with the paired value the port the database is listening on.
+The configuration script for the installer will take the values and turn
+them into a URL JDBC string that the application will use. Enter the
+database name and credentials using the entries mysql[‘morpheus_db’],
+mysql[‘morpheus_db_user’], and mysql[‘morpheus_password’]
+respectively. The database user requires write access to all tables in
+the |morpheus| database with the all privileges statement.</p>
+</div>
+<div class="section" id="message-queue-tier">
+<h2>Message Queue Tier<a class="headerlink" href="#message-queue-tier" title="Permalink to this headline">¶</a></h2>
+<p>RabbitMQ is the internal message broker and is created as a single node.
+RabbitMQ can be scaled out in a cluster configuration and fronted by a
+load balancer to make it more highly available. The external load
+balancer is used so that each application server can connect to a single
+IP address or DNS name. To prevent the local RabbitMQ server creation
+during setup set the configuration entry rabbitmq[‘enable’] = false and
+use the three entries rabbitmq[‘host’], rabbitmq[‘port’], and
+rabbitmq[‘stomp_port’] to the appropriate strings for the external load
+balancer. The entry for the virtual host is rabbitmq[‘vhost’] and should
+be set to / or root if no virtual host was created for the RabbitMQ
+cluster. When using a load balancer fronting a RabbitMQ cluster the
+heartbeat should be adjusted form the default of 580 seconds to
+something just shorter than the connection timeout of the load balancer
+using the entry rabbitmq[‘heartbeat’]. This prevents the connection
+through the load balancer from closing and causing the associated
+channels from closing as well in the message broker.</p>
+</div>
+<div class="section" id="search-index-tier">
+<h2>Search Index Tier<a class="headerlink" href="#search-index-tier" title="Permalink to this headline">¶</a></h2>
+<p>|morpheus| uses ElasticSearch to store data for searching, a default
+instance is installed by the stand-alone installer. To provide
+redundancy and scalability an external ElasticSearch cluster is needed.
+To disable the creation of the internal ElasticSearch instance set the
+configuration entry elasticsearch[‘enable’] = false. Provide the cluster
+name of the external ElasitcSearch cluster using the configuration entry
+elasticsearch[‘cluster’] and elasticsearch[‘es_hosts’] which is a Ruby
+hash using hash rocket style syntax since the key contains dots. The key
+is an IP address or DNS name with the paired value the port the database
+is listening on.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">ElasticSearch v1.6 is currently supported.</p>
+</div>
+</div>
+<div class="section" id="application-secrets">
+<h2>Application Secrets<a class="headerlink" href="#application-secrets" title="Permalink to this headline">¶</a></h2>
+<p>|morpheus| creates a secrets file at
+/opt/morppheus/morphesu-secrets.json on the first run of the installer
+configuration script. If the file exists, it will use the file and the
+secrets contained. These entries are generated randomly and are unique
+to each initial install. To synchronize access between application
+servers each server needs to have the same secrets file. Depending on
+the number of external components used, |morpheus| will use some or none
+of the settings in this file. Secrets are still generated in case a
+re-configuration after the initial setup requires a shared password for
+a component.</p>
+</div>
+<div class="section" id="ssl-certificates">
+<h2>SSL Certificates<a class="headerlink" href="#ssl-certificates" title="Permalink to this headline">¶</a></h2>
+<p>The default mode for |morpheus| is to setup the web tier using
+encryption to provide secure access to |morpheus| over Transport Layer
+Security (TLS). |morpheus| will generate self-signed certificates if no
+certificate is provided in the configuration file. To provide your own
+certificate:</p>
+<p>. Copy the private key and certificate to <code class="docutils literal"><span class="pre">/etc/morpheus/ssl/your_fqdn_name.key</span></code> and
+<code class="docutils literal"><span class="pre">/etc/morpheus/ssl/your_fqdn_name.crt</span></code> respectively.</p>
+<p>. Edit the configuration file /etc/morpheus/morpheus.rb and add the
+following entries:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>nginx<span class="o">[</span>‘ssl<span class="se">\_</span>certificate’<span class="o">]</span> <span class="o">=</span> ‘path to the certificate file<span class="s1">&#39;</span>
+<span class="s1">nginx[‘ssl\_server\_key’] = ‘path to the server key file&#39;</span>
+</pre></div>
+</div>
+<div class="admonition important">
+<p class="first admonition-title">Important</p>
+<p class="last">Both files should be owned by root and only readable by root. If the server certificate is signed by an intermediate then you should include the signing chain inside the certificate file.</p>
+</div>
+<p>In a distributed deployment, an external load balancer routes requests
+to a pool of web/application servers. Depending on your infrastructure
+setup the backend pool of servers can operate in TLS mode or non-TLS
+mode which provides SSL offloading. To simplify the configuration, it is
+possible to allow the load balancer to connect to each application
+server using TLS. If your load balancer requires a certificate
+validation with a known certificate authority, then you can import these
+custom certificates as described in the previous paragraph. The other
+option is to enable SSL offloading where the load balancer connects to
+the application server pool over a non-TLS connection. To setup TLS
+offloading in the |morpheus| configuration file set the appliance_url
+to a URL that starts with http instead of https, this instructs the
+configuration script to not generate the self-singed certificates.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">In the configuration file <code class="docutils literal"><span class="pre">appliance_url</span></code> does not have an equal sign between the name and value.</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, jw.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

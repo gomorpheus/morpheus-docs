@@ -1,0 +1,276 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Additional Options &mdash; jwtest 1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../../_static/my_theme.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="../../genindex.html"/>
+        <link rel="search" title="Search" href="../../search.html"/>
+    <link rel="top" title="jwtest 1 documentation" href="../../index.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html">
+          
+
+          
+            
+            <img src="../../_static/logo.svg" class="logo" />
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../provisioning/provisioning.html">Provisioning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../infrastructure/infrastructure.html">Infrastructure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../administration/administration.html">Administration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../monitoring/monitoring.html">Monitoring</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../logs/logging.html">Logs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../backups/backups.html">Backups</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../operations/operations.html">Operations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../services/services.html">Services</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../integration_guides/integration_guides.html">Integration Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../faq/faqs.html">FAQ’s</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../release_notes/release_notes.html">Release Notes</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">jwtest</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+      <li>Additional Options</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/getting_started/installation/additional.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="additional-options">
+<h1>Additional Options<a class="headerlink" href="#additional-options" title="Permalink to this headline">¶</a></h1>
+<p>There are several additional configuration options during installation that may be performed. For example, |morpheus| provides convenient options for uploading your own SSL certificates as well as externalizing several dependent services.</p>
+<div class="section" id="system-defaults">
+<h2>System Defaults<a class="headerlink" href="#system-defaults" title="Permalink to this headline">¶</a></h2>
+<p>|morpheus| follows several install location conventions. Below is a list of system defaults for convenient management:</p>
+<p>Installation Location: <code class="docutils literal"><span class="pre">/opt/morpheus</span></code></p>
+<ul class="simple">
+<li><em>Log Location:</em> <code class="docutils literal"><span class="pre">/var/log/morpheus</span></code> ** <em>|morpheus| -UI:</em>
+<code class="docutils literal"><span class="pre">/var/log/morpheus/morpheus-ui</span></code> ** <em>MySQL:</em>
+<code class="docutils literal"><span class="pre">/var/log/morpheus/mysql</span></code> ** <em>NginX:</em> <code class="docutils literal"><span class="pre">/var/log/morpheus/nginx</span></code>
+** <em>Check Server:</em> <code class="docutils literal"><span class="pre">/var/log/morpheus/check-server</span></code> ** <em>Elastic
+Search:</em> <code class="docutils literal"><span class="pre">/var/log/morpheus/elsticsearch</span></code> ** <em>RabbitMQ:</em>
+<code class="docutils literal"><span class="pre">/var/log/morpheus/rabbitmq</span></code> ** <em>Redis:</em>
+<code class="docutils literal"><span class="pre">/var/log/morpheus/redis</span></code></li>
+<li><em>User-defined install/config:</em> <code class="docutils literal"><span class="pre">/etc/morpheus/morpheus.rb</span></code></li>
+</ul>
+</div>
+<div class="section" id="ssl-certificates">
+<h2>SSL Certificates<a class="headerlink" href="#ssl-certificates" title="Permalink to this headline">¶</a></h2>
+<p>The default installation generates a self-signed SSL certificate. To
+implement a third-party certificate:</p>
+<ol class="arabic simple">
+<li>Copy the private key and certificate to
+<code class="docutils literal"><span class="pre">/etc/morpheus/ssl/your_fqdn_name.key</span></code> and
+<code class="docutils literal"><span class="pre">/etc/morpheus/ssl/your_fqdn_name.crt</span></code> respectively.</li>
+<li>Edit the configuration file <code class="docutils literal"><span class="pre">/etc/morpheus/morpheus.rb</span></code> and add the
+following entries:</li>
+</ol>
+<p>NOTE: Both files should be owned by root and only readable by root, also if the server certificate is signed by an intermediate then you should include the signing chain inside the certificate file.</p>
+<p>Next simply reconfigure the appliance and restart nginx:</p>
+</div>
+<div class="section" id="additional-configuration-options">
+<h2>Additional Configuration Options<a class="headerlink" href="#additional-configuration-options" title="Permalink to this headline">¶</a></h2>
+<p>There are several other options available to the
+<code class="docutils literal"><span class="pre">/etc/morpheus/morpheus.rb</span></code> file that can be useful when setting up
+external service integrations or high availability:</p>
+<p>These settings allow one to externally configure and scale mysql, elasticsearch, redis, and rabbitmq which is critical for a high availability setup.</p>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, jw.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

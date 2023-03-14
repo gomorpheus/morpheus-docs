@@ -1,0 +1,337 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>v2.11.3 &amp; 2.10.8 &mdash; jwtest 1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../_static/my_theme.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
+    <link rel="top" title="jwtest 1 documentation" href="../index.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html">
+          
+
+          
+            
+            <img src="../_static/logo.svg" class="logo" />
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/getting_started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../provisioning/provisioning.html">Provisioning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../infrastructure/infrastructure.html">Infrastructure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../administration/administration.html">Administration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../monitoring/monitoring.html">Monitoring</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../logs/logging.html">Logs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../backups/backups.html">Backups</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../operations/operations.html">Operations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../services/services.html">Services</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../integration_guides/integration_guides.html">Integration Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faq/faqs.html">FAQ’s</a></li>
+<li class="toctree-l1"><a class="reference internal" href="release_notes.html">Release Notes</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">jwtest</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>v2.11.3 &amp; 2.10.8</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/release_notes/2_11_3_2_10_8.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="v2-11-3-2-10-8">
+<h1>v2.11.3 &amp; 2.10.8<a class="headerlink" href="#v2-11-3-2-10-8" title="Permalink to this headline">¶</a></h1>
+<div class="admonition important">
+<p class="first admonition-title">Important</p>
+<p class="last">ACCOUNTS has been renamed to TENANTS in v2.11.3</p>
+</div>
+<div class="section" id="new-features">
+<h2>New Features<a class="headerlink" href="#new-features" title="Permalink to this headline">¶</a></h2>
+<dl class="docutils">
+<dt>Task phase execution</dt>
+<dd>Set phase and execution order for tasks in Workflows. Workflow detail pages added. Drag n’ drop reordering added to scripts in node types. Restart task type added.</dd>
+<dt>Load Balancer improvements</dt>
+<dd>New Balance mode, sticky mode, shared VIP address options, Load Balancer Detail Pages</dd>
+<dt>ServiceNow Plugin</dt>
+<dd>Add |morpheus| clouds and Instance types for complete provisioning within Service now</dd>
+<dt>Archives Service</dt>
+<dd>Archives provides a way to store your files and make them available for download by your Scripts and Users.</dd>
+<dt>Network Groups</dt>
+<dd>Network Groups provide round robin network pooling capabilities when provisioning instances. These are most useful when scaling multiple vms across various subnets or availability zones.</dd>
+<dt>Groups Access added to Networks</dt>
+<dd>Networks can now be assigned to individual Groups and set as the default choice for a group.</dd>
+<dt>Featured Instance Types</dt>
+<dd>Instance types in the Library can now be flagged as Featured to be added to the new Featured Instance Types filter in the Provisioning wizard.  Please note once at least one Instance Type is featured, the provisioning wizard will default to the Featured filter. Simply click the All Instance Types filter to see your entire catalog.</dd>
+<dt>Group Lifecycle Policies</dt>
+<dd>Now apply to instances that are converted from unmanaged to managed</dd>
+<dt>New Reports section</dt>
+<dd>Completely rebuilt reports section. Customizable capacity and usage reports with versioning.</dd>
+<dt>Cost Tracking</dt>
+<dd>Instance and host cost reporting available via UI and API. Prices added to instance and host detail pages.</dd>
+<dt>Refreshed Instances Section</dt>
+<dd>Instance list makeover with new charts, cloud, group and health info added.</dd>
+<dt>Instance Locking</dt>
+<dd>Instances can now be locked to prevent deletion.</dd>
+<dt>Move Instances</dt>
+<dd>Instances can now be moved between groups by editing the instance and selecting the group dropdown to assign the instance to a new group.</dd>
+<dt>“User” Provisioning permission added to Roles</dt>
+<dd>Allows permitting a user to only see their own instances.</dd>
+<dt>“Remote Console Auto-Login” permission added to Roles</dt>
+<dd>Please note NLA must be disabled in Windows RPD settings if auto-login is set to “no”. This permission does not apply when using VMware hypervisor console option.</dd>
+<dt>New storage Provider types</dt>
+<dd>NFSv3 and CIFS (Windows Samba File Sharing) added</dd>
+<dt>Expanded variable support</dt>
+<dd>Custom variables can now be used in Naming policies, including variables from options types.</dd>
+<dt>Process output added to instance history</dt>
+<dd>See process output per action in new Instance History detail modal.</dd>
+<dt>Instance notes section</dt>
+<dd>Add custom notes to instances, with markdown support.</dd>
+<dt>Expanded Inventorying</dt>
+<dd>Inventory Existing Instance option added to Softlayer and VMware fusion cloud types</dd>
+<dt>Salt, Ansible and Chef improvements</dt>
+<dd>Includes Ansible and Salt integration detail pages.</dd>
+<dt>Integration detail page</dt>
+<dd>Detail pages added for all integration with added functionality per integration.</dd>
+<dt>Timezone option added to cloud settings</dt>
+<dd>Users can now specify which timezone to set during guest customization.</dd>
+<dt>Force guest customization added</dt>
+<dd>Flag added for vmdk Virtual Images configuration (Advanced Settings- Force Guest Customization)</dd>
+<dt>Enable Settings Flag on library items configuration</dt>
+<dd>This setting exposes the Settings tab for appropriate instance types in the Instance Detail page.</dd>
+</dl>
+<ul class="simple">
+<li>Deployment option added to Provisioning wizard</li>
+<li>IBMid support added to Softlayer*</li>
+<li>Windows 2012 AMI option added to default Windows Instance Type*</li>
+<li>Starting, stopping phases added to Instance status</li>
+<li>Manage Network Interfaces from Instance and Host detail pages</li>
+<li>Advanced Options- Status selection for Instances</li>
+<li>White Label mobile formatting improvements</li>
+<li>Source Image info and link added to Instance and Host detail pages</li>
+<li>Restart task type added (restarts target)</li>
+<li>API Allowed Origins support added</li>
+<li>Accounts renamed to tenants</li>
+<li>Multi-select added for tenant network assignment*</li>
+<li>Inventory Level setting added for Azure clouds with Basic and Full (API Heavy)</li>
+<li>Xen NFS, Multi-network support added</li>
+<li>KVM Multi-Network support added, Multi-network driver</li>
+<li>ESXi Multi-Network support added</li>
+</ul>
+</div>
+<div class="section" id="and-2-10-8-fixes">
+<h2>2.11.3 and 2.10.8 Fixes<a class="headerlink" href="#and-2-10-8-fixes" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Fixed issue with deleted Tenants stuck in removing due to Openstack cloud security groups not flushing</li>
+<li>Fixed Nutanix- Virtual Image duplication and cleanup</li>
+<li>Fixed Nutanix images not available in Node Type image dropdown</li>
+<li>Fixed Hostname field in Apps and Templates not applying to Windows instances.</li>
+<li>Fixed fields Apps Wizard Layout section not saving when custom Service Plan was selected.</li>
+<li>Fix for Chef bootstrap on Windows instances in Azure</li>
+<li>Instance list layout fixes.</li>
+<li>Xen Image sync fix</li>
+<li>Fix for instance list for sub-accounts</li>
+<li>Fix for Bluecat network query</li>
+<li>Dashboard- Recent Activity now only shows activity from Groups the user has access to</li>
+<li>User permission fixes</li>
+<li>Stopping an Azure instance now deallocates it in Azure</li>
+<li>Fix for Group user permission when Clouds permission is set to “none”</li>
+<li>Digital Ocean Naming Fixes</li>
+<li>Fix for duplicate price entries on public cloud price sync</li>
+</ul>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, jw.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

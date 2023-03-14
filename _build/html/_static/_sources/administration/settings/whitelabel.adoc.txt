@@ -1,0 +1,62 @@
+[[whitelabel]]
+//format, add overview
+
+=== Whitelabel Settings
+
+==== Overview
+
+|morpheus| Tenants can be WhiteLabeled with custom Logos, Colors, Copy, and custom CSS. Sub-Tenants can be individually white-labeled, or the Master Tenant Whitelabel can apply to all Sub-Tenants.
+
+Enable Whitelabel:: Turns on the configured Whitelabel settings. Disabling will return the Appliance to the default colors and logos, but the configured options will remain saved and will apply if Whitelabel is re-enabled.
+Appliance Name:: Replaces |morpheus| in page titles.
+Header Logo:: Top left header logo. Preferred Image Size (500x76)
+Footer Logo:: Footer Logo in bottom left. Preferred Image Size (264x54)
+Login Logo:: Logo shown on Login screen. Preferred Image Size (228x280)
+Favicon:: Must be a .ico file type.
+Reset:: When selected and Whitelabel settings are saved, associated logo is returned to blank default value.
+
+===== Colors
+
+Update Colors by entering HEX value or selecting the Color Selector pop-up next to each filed and selecting a color.
+
+* Header Background
+* Header Foreground
+* Nav Background
+* Nav Foreground
+* Nav Hover
+* Primary Button Bg
+* Primary Button Fg
+* Primary Button Hover Bg
+* Primary Button Hover Fg
+* Footer Background
+* Footer Foreground
+* Login Background
+
+==== Override CSS
+
+Override CSS settings by entering CSS in `Override CSS` field.
+
+Example: (this will add one continues background image to the Header)
+
+[source,html]
+----
+header #topHeader {
+	background-image: url(http://image_url.png);
+}
+header {
+	background-image: url(http://image_url.png);
+}
+----
+
+==== Copy
+
+Add custom Copyright String, Terms of Use, Privacy Policy contained in the Footer text and links in the App and on the login page and emails.
+
+===== Available Copy fields
+
+* Copyright String
+* Terms of Use
+* Privacy Policy
+
+NOTE: Terms of Use and Privacy Policy Footer links will load internal pages at `https://applaince_url/privacy-policy` and `https://applaince_url/terms-of-use` displaying the entered info as plain text.
+​

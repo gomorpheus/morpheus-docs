@@ -1,0 +1,332 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Migrations &mdash; jwtest 1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../../_static/my_theme.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="../../genindex.html"/>
+        <link rel="search" title="Search" href="../../search.html"/>
+    <link rel="top" title="jwtest 1 documentation" href="../../index.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html">
+          
+
+          
+            
+            <img src="../../_static/logo.svg" class="logo" />
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../getting_started/getting_started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../provisioning.html">Provisioning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../infrastructure/infrastructure.html">Infrastructure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../administration/administration.html">Administration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../monitoring/monitoring.html">Monitoring</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../logs/logging.html">Logs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../backups/backups.html">Backups</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../operations/operations.html">Operations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../services/services.html">Services</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../integration_guides/integration_guides.html">Integration Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../faq/faqs.html">FAQ’s</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../release_notes/release_notes.html">Release Notes</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">jwtest</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+      <li>Migrations</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/provisioning/migrations/migrations.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="migrations">
+<h1>Migrations<a class="headerlink" href="#migrations" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="migration-types">
+<h2>Migration Types<a class="headerlink" href="#migration-types" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="hypervisor-to-hypervisor">
+<h3>Hypervisor to Hypervisor<a class="headerlink" href="#hypervisor-to-hypervisor" title="Permalink to this headline">¶</a></h3>
+<dl class="docutils">
+<dt>Store</dt>
+<dd>|morpheus| will create a snapshot of existing VM and upload the snapshot to virtual image directory. Images that have been uploaded to the Virtual Images library can be converted to VHD, QCOW2, RAW and VMDK formats and then re-provisioned.</dd>
+<dt>New</dt>
+<dd>|morpheus| will create a snapshot of an existing VM, convert from source format to required destination format, and then provision the VM into the target environment.</dd>
+<dt>Source</dt>
+<dd>VMWare, Openstack, Xen, ESXi, Nutanix* Azure* Hyper-V* (
+<a href="#id1"><span class="problematic" id="id2">*</span></a>in-development)</dd>
+<dt>Destination</dt>
+<dd>Softlayer, Openstack, Metapod, Xen, Amazon, VMWare, ESXi, Nutanix, Hyper-V Supported OS Type: Windows or Linux</dd>
+<dt>Service Impact</dt>
+<dd>Disruptive Migration</dd>
+</dl>
+</div>
+<div class="section" id="virtual-image-extract">
+<h3>Virtual Image Extract<a class="headerlink" href="#virtual-image-extract" title="Permalink to this headline">¶</a></h3>
+<p>The Virtual Image extract capabilities allow for a virtual image to be extracted and stored in the virtual image repository or the image can be migrated into a cloud.</p>
+<dl class="docutils">
+<dt>Source</dt>
+<dd>Any Cloud</dd>
+<dt>Destination</dt>
+<dd>SoftLayer (Only)</dd>
+<dt>Supported OS Type</dt>
+<dd>Windows</dd>
+<dt>Service Impact</dt>
+<dd>Non Disruptive</dd>
+<dt>Requirements</dt>
+<dd>Requires a separate disk or network share to store the image during conversion process. Capacity of the disk or network share should be sized appropriately to support the data that will be exported.</dd>
+</dl>
+</div>
+<div class="section" id="live-stream">
+<h3>Live Stream<a class="headerlink" href="#live-stream" title="Permalink to this headline">¶</a></h3>
+<p>Live Stream is a linux only streaming process that will take a snapshot of a volume and allow it to be streamed to a destination linux system that is either existing or new. The destination linux must already exist and it can either be a managed or unmanaged VM in |morpheus| . The destination will be overwritten from a root level perspective.</p>
+<dl class="docutils">
+<dt>Source</dt>
+<dd>Any Cloud</dd>
+<dt>Destination</dt>
+<dd>|morpheus| </dd>
+<dt>Supported OS Type</dt>
+<dd>Linux (Only)</dd>
+<dt>Service Impact</dt>
+<dd>Non Disruptive</dd>
+<dt>Requirements</dt>
+<dd>Requires the Linux host/guest to be configured for LVM and that free space of the capacity to be streamed is available. A destination linux host/guest must be available to receive the stream.</dd>
+</dl>
+</div>
+</div>
+<div class="section" id="add-migration">
+<h2>Add Migration<a class="headerlink" href="#add-migration" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Select the Provisioning link in the navigation bar.</li>
+<li>Select the Migrations link in the sub-navigations bar.</li>
+<li>Click the Add Migration button.</li>
+<li>From the Create Migration Wizard select the type of migration, then click the Next button.</li>
+</ol>
+<p>Depending on the Migration Type selected input the following, then click the Next button.</p>
+<ul class="simple">
+<li>Hypervisor to Hypervisor
+* Select Cloud, and Server
+* Input Host, Remote Port, Username, and Password</li>
+<li>Virtual Image Extract
+* Select Platform, Existing or New, Cloud, and Server.
+* Input Host, WinRM Port, WinRM User, WinRM Password, and Snapshot path.</li>
+<li>Live Stream
+* Select Platform, Existing or New, Cloud, and Server
+* Input Host, SSH Port, SSH User, SSH Password, Public Key, and Logical Volume Device.
+* Enter Destination details, then click the Next button.</li>
+</ul>
+<ol class="arabic simple" start="5">
+<li>Finalize your configuration if needed, then click the complete button.</li>
+</ol>
+</div>
+<div class="section" id="manually-start-migration">
+<h2>Manually Start Migration<a class="headerlink" href="#manually-start-migration" title="Permalink to this headline">¶</a></h2>
+<p>If you chose to not run your migration in the Create Migration Wizard then you will be able to manually start the migration.</p>
+<ol class="arabic simple">
+<li>Select the Provisioning link in the navigation bar.</li>
+<li>Select the Migrations link in the sub-navigations bar.</li>
+<li>Click the actions dropdown of the row of the migration you wish start, and select Run.</li>
+</ol>
+</div>
+<div class="section" id="remove-migration">
+<h2>Remove Migration<a class="headerlink" href="#remove-migration" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Select the Provisioning link in the navigation bar.</li>
+<li>Select the Migrations link in the sub-navigations bar.</li>
+<li>Click the actions dropdown of the row of the migration you wish remove, and select Remove.</li>
+</ol>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, jw.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

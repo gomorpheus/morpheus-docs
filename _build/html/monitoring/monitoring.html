@@ -1,0 +1,400 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Monitoring &mdash; jwtest 1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../_static/my_theme.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
+    <link rel="top" title="jwtest 1 documentation" href="../index.html"/>
+        <link rel="next" title="Logs" href="../logs/logging.html"/>
+        <link rel="prev" title="Administration" href="../administration/administration.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html">
+          
+
+          
+            
+            <img src="../_static/logo.svg" class="logo" />
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/getting_started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../provisioning/provisioning.html">Provisioning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../infrastructure/infrastructure.html">Infrastructure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../administration/administration.html">Administration</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Monitoring</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#checks">Checks</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#health">Health</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#options">Options</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ssh-tunneling">SSH Tunneling</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#check-servers">Check Servers</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#groups-apps">Groups &amp; Apps</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#groups">Groups</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#apps">Apps</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#incidents">Incidents</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#alerts">Alerts</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#contacts">Contacts</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#alert-rules">Alert Rules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#notifications">Notifications</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#monitoring-integrations">Monitoring Integrations</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#appdynamics">AppDynamics</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#newrelic">NewRelic</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#service-now">Service Now</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../logs/logging.html">Logs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../backups/backups.html">Backups</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../operations/operations.html">Operations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../services/services.html">Services</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../integration_guides/integration_guides.html">Integration Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faq/faqs.html">FAQ’s</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../release_notes/release_notes.html">Release Notes</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">jwtest</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>Monitoring</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/monitoring/monitoring.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="monitoring">
+<h1>Monitoring<a class="headerlink" href="#monitoring" title="Permalink to this headline">¶</a></h1>
+<p>|morpheus| provides great monitoring features out of the box. Anything
+provisioned within |morpheus| automatically gets a check created in the
+monitoring service. These checks are organized heirarchically in
+“Groups” and “Apps”. This makes it easy to gain a perspective as to what
+a customer or full stack facing impact is in the event of a particularly
+instance failure. This also takes into account redundancy layers when it
+comes to calculating the applications overall uptime percentage.</p>
+<p>There are also several integrations built into the monitoring subsystem
+of |morpheus| including App Dynamics , New Relic, and even Service Now
+integration.</p>
+<div class="section" id="checks">
+<h2>Checks<a class="headerlink" href="#checks" title="Permalink to this headline">¶</a></h2>
+<p>The Monitoring system is composed of individual checks. A check is created for every container or vm that is provisioned through |morpheus| . One interesting thing about these checks is they are type aware. There are several different built in check types that are selected based on the service or instance type that is being provisioned. These range from database type checks to web checks and message checks. They are highly configurable and also feature fallback check types for those more generic use cases.</p>
+<p>Checks can be customized to run custom queries, check queue sizes, or even adjust severity levels and check intervals. All of these things can be controlled from the Checks sub tab within Monitoring.</p>
+<div class="section" id="health">
+<h3>Health<a class="headerlink" href="#health" title="Permalink to this headline">¶</a></h3>
+<p>A check can have 3 health states. They are Failed, Warning (Recovering), and Healthy. When a check test fails the system automatically reattempts the check after 30 seconds to eliminate false positives. This will convert the check into a <cite>Failed</cite> state and raise the appropriate severity incident depending on the grouping of the check. When a check recovers it automatically goes into a Warning state. This will remain in the warning state until 10 successful check runs have completed.</p>
+</div>
+<div class="section" id="options">
+<h3>Options<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h3>
+<p>All check types have several core options and some of these default options can be configured in <cite>Admin -&gt; Monitoring</cite>. This includes the default check interval time. By default a check is run every 5 minutes. This can however be changed to run as frequently as once every minute.</p>
+<ul class="simple">
+<li><em>Max Severity</em>: The maximum severity level impact for a created incident that can occur if the check fails (defaults to Critical).</li>
+<li><em>Check Interval</em>: The frequency with which a check is run (default 5 minutes).</li>
+<li><em>Affects Availability</em>: Whether or not this check impacts overall system availability calculations.</li>
+</ul>
+</div>
+<div class="section" id="ssh-tunneling">
+<h3>SSH Tunneling<a class="headerlink" href="#ssh-tunneling" title="Permalink to this headline">¶</a></h3>
+<p>In many cases when it comes to monitoring databases, and services they may not be fronted on the public ips for external monitoring. To reach these safely, and securely |morpheus| provides an SSH Tunneling mechanism for its check servers. This allows the check to be confirmed via an ssh port tunnel securely using a keypair.</p>
+</div>
+<div class="section" id="check-servers">
+<h3>Check Servers<a class="headerlink" href="#check-servers" title="Permalink to this headline">¶</a></h3>
+<p>On a base installation of |morpheus| a single <cite>check server</cite> is installed on the appliance. This is used for running any custom user checks. This services connects to the provided rabbitmq services and can be moved off or even scaled horizontally onto sets of check servers. All other checks that are related to provisioned containers or vms are executed by the installed agent on the guest OS or Docker host.</p>
+</div>
+</div>
+<div class="section" id="groups-apps">
+<h2>Groups &amp; Apps<a class="headerlink" href="#groups-apps" title="Permalink to this headline">¶</a></h2>
+<p>One great feature of the monitoring system is the ability to organize checks by groups and apps. This provides a nice convenient way to determine what a customer facing impact might be for a single failure as well as representing redundancy via groupings.</p>
+<p>It is important to note the relationship of apps, groups, and even checks with regards to instances provisioned within |morpheus| . For every <cite>Instance</cite> that is provisioned: A monitoring <cite>Group</cite> is created and a <cite>Check</cite> is added to that group for every <cite>Container</cite> or <cite>Virtual Machine</cite> within that Instance. This makes sense such that as an Instance is scaled out horizontally (containers/vms added to it) The monitoring system accurately represents the layers of redundancy. An <cite>App</cite> simply maps to a Provisioning <cite>App</cite> and should be pretty straightforward to understand.</p>
+<div class="section" id="groups">
+<h3>Groups<a class="headerlink" href="#groups" title="Permalink to this headline">¶</a></h3>
+<p>It is also possible to organize custom checks in this hierarchical structure by manually adding or editing a Group or App. Groups can only contain checks and can be edited or created in <cite>Monitoring -&gt; Groups</cite>. Besides simply adding and removing checks to a group there are a few other useful options that can be customized in a group.</p>
+<dl class="docutils">
+<dt>Min Checks</dt>
+<dd>This specifies the minimum number of checks within the group that must be happy to keep the group from becoming unhealthy.</dd>
+<dt>Max Severity</dt>
+<dd>The maximum severity incident a failed check may create. This setting overrides a checks Max Severity setting.</dd>
+<dt>Affects Availability</dt>
+<dd>Whether or not a failed group impacts system wide availability calculations.</dd>
+</dl>
+<p>Some useful information can also be seen on the detail page of a check. For example, the average response time of all checks within the group, or an aggregated check history can be viewed.</p>
+</div>
+<div class="section" id="apps">
+<h3>Apps<a class="headerlink" href="#apps" title="Permalink to this headline">¶</a></h3>
+<p>Apps are very useful for seeing an aggregation of failures, or impact based on a set of checks and groups. Apps typically correlate to apps created in provisioning but can also be manually created and organized. They can be great for visualizing the customer impact a failure might have or even keeping up on a screen in a NOC. There are a few useful options as well with regards to Apps:</p>
+<dl class="docutils">
+<dt>Max Severity</dt>
+<dd>The maximum severity incident a failed app may create. This setting overrides check and group Max Severity settings.</dd>
+<dt>Affects Availability</dt>
+<dd>Whether or not a failed app impacts system wide availability calculations.</dd>
+</dl>
+</div>
+</div>
+<div class="section" id="incidents">
+<h2>Incidents<a class="headerlink" href="#incidents" title="Permalink to this headline">¶</a></h2>
+<p>Incident management is very important in any IT Operations environment. The ability to notify the appropriate people of an outage that requires immediate attention is critical to reducing recovery time and even preventing potential customer facing impacts. Because of this, |morpheus| provides incident management features as well as external integrations out of the box.</p>
+<p>Incidents can be found in the <cite>Monitoring-&gt;Incidents</cite> section. When a check fails, an incident is automatically raised. These can vary in severity based on the user configured check severities as well as the group hierarchy (representative of redundancy).</p>
+<p>Incidents are also grouped. If an application is impacted and multiple checks fail for that application they automatically get grouped together in one Incident that can fluctuate or escalate in severity as time progresses. These incidents can be muted so as not to affect availability and they can also be resolved manually with an option to detail resolution information.</p>
+<p>There are also integrations and API’s for integrating with existing corporate workflows when it comes to incident management.</p>
+</div>
+<div class="section" id="alerts">
+<h2>Alerts<a class="headerlink" href="#alerts" title="Permalink to this headline">¶</a></h2>
+<p>There are several ways to configure alerts and notifications within |morpheus| . Users can be notified via Email or SMS as well as several other direct integrations. These integrations include PagerDuty, Alert Ops, Victor Ops, and even Slack chat Channel notifications (or optionally via the ServiceNow integration).</p>
+<div class="section" id="contacts">
+<h3>Contacts<a class="headerlink" href="#contacts" title="Permalink to this headline">¶</a></h3>
+<p>To configure user notifications a contact must first be created in <cite>Monitoring -&gt; Contacts</cite>. These contacts can be one of a few types:</p>
+<ul class="simple">
+<li><em>Contact</em>: Used for either Email or SMS</li>
+<li><em>Web Hook</em>: Used for posting a notification to a web endpoint or Alert Ops.</li>
+<li><em>Slack Hook</em>: Used for posting notifications to a <a class="reference external" href="https://slack.com/[Slack">https://slack.com/[Slack</a>] channel.</li>
+<li><em>VictorOps</em>: Provides a web post format consistent with the required notification format for Victor Ops.</li>
+</ul>
+<p>Most of these options provide convenient examples and information when configuring the contact. Once they are configured contacts can freely be used to build <cite>Alert Rules</cite>.</p>
+</div>
+<div class="section" id="alert-rules">
+<h3>Alert Rules<a class="headerlink" href="#alert-rules" title="Permalink to this headline">¶</a></h3>
+<p>Alert Rules provide a powerful means to configure who gets notified in various scenarios. These scenarios include targetting specific checks, groups, or apps , and adding the appropriate recipients to be notified during a situation in which those filters are impacted.</p>
+<ul class="simple">
+<li><em>Min Duration</em>: This setting delays notification to the recipients by the entered number of minutes required for the incident to be opened.</li>
+<li><em>Min Severity</em>: Some executives might want to be notified of an outage but only if the severity impact goes above a certain level. This is very useful for scoping escalations.</li>
+</ul>
+<p>To add recipients to a rule just start typing their name in the Recipients section towards the button of the edit form. An auto-complete list will start populating with contact names. Once one is selected a delivery method can be selected as well as whether or not they should be notified of any escalation changes and/or closed incidents.</p>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last">A recipient can be in multiple alert rules and can even be configured to be notified via different methods depending on the rule. A useful example might be to alert someone via email for lower severity incidents but SMS for critical severity levels.</p>
+</div>
+</div>
+<div class="section" id="notifications">
+<h3>Notifications<a class="headerlink" href="#notifications" title="Permalink to this headline">¶</a></h3>
+<p>Configuring Notification Services</p>
+<p>By default |morpheus| provides email notification services using the <cite>morpheusdata.com</cite> email address. It may be advisable to customize these services to use another mail delivery service.</p>
+</div>
+</div>
+<div class="section" id="monitoring-integrations">
+<h2>Monitoring Integrations<a class="headerlink" href="#monitoring-integrations" title="Permalink to this headline">¶</a></h2>
+<p>While |morpheus| provides a fantastic means for determining uptime and availability of both services and vms sometimes more is needed. A good example of this is performance application monitoring. To solve this several external integrations are provided out of the box. Even some external integrations with regards to incident management are provided.</p>
+<div class="section" id="appdynamics">
+<h3>AppDynamics<a class="headerlink" href="#appdynamics" title="Permalink to this headline">¶</a></h3>
+<p>AppDynamics is a very powerful performance and application monitoring tool. It features advanced correlation features and profiling capabilities for a very wide range of application platforms including native Docker support. Due to the level of capabilities of AppDyanmics there are more required settings to integrate it with |morpheus| . To get started expand the section in <cite>Admin -&gt; Monitoring</cite> related to AppDynamics and toggle it to Enabled. There are several fields here that need filled out. Once completed hit save and all hosts will automatically be configured to install the AppDynamics agent.</p>
+<p>AppDynamics is capable of bein run as a paid SaaS based service as well as an on premise installation and |morpheus| supports both configurations. Most input fields related to connecting to AppDynamics provide helpful tips as to what information exactly needs provided and where to acquire it.</p>
+</div>
+<div class="section" id="newrelic">
+<h3>NewRelic<a class="headerlink" href="#newrelic" title="Permalink to this headline">¶</a></h3>
+<p>New Relic is a very popular service based performance monitoring tool. It supports a wide variety of application platforms and is a breeze to configure with |morpheus| . Another great feature of new relic is its ability to monitor the server applications run on and provide additional stats. To do this an agent needs to be installed and configured on each server. Fortunately, this is performed automatically for every vm and docker host provisioned within |morpheus| . To turn on the integration simply go to <cite>Admin -&gt; Monitoring</cite> and expand the section titled “New Relic”. There it is simply a matter of toggling the Enabled setting to on and entering the New Relic account API Key.</p>
+</div>
+<div class="section" id="service-now">
+<h3>Service Now<a class="headerlink" href="#service-now" title="Permalink to this headline">¶</a></h3>
+<p>Service now integration is provided out of the box with |morpheus| . To add a service now integration simply visit the ‘Monitoring Settings’ section in <cite>Admin -&gt; Monitoring</cite>. This allows one to map incident severity levels to equivalent severities in ServiceNow.</p>
+<p>To enable service now simply expand the section labelled “ServiceNow” in <cite>Admin -&gt; Monitoring</cite>. Toggle the enabled flag and enter the <cite>Host</cite>, <cite>User</cite>, and <cite>Password</cite> information required to connect to ServiceNow. The other options below include behaviors upon new incidents being opened and old incidents closing. It also includes a table for mapping |morpheus| incident serverity levels to their ServiceNow counterparts.</p>
+<p>There are several other useful service now integrations planned for future releases and will be discussed as those features come out.</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../logs/logging.html" class="btn btn-neutral float-right" title="Logs" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../administration/administration.html" class="btn btn-neutral" title="Administration" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, jw.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

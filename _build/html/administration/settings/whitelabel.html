@@ -1,0 +1,151 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>[source,html] &#8212; testtoca 11 documentation</title>
+    <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '11',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+   
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <p>[[whitelabel]]
+//format, add overview</p>
+<p>=== Whitelabel Settings</p>
+<p>==== Overview</p>
+<p>|morpheus| Tenants can be WhiteLabeled with custom Logos, Colors, Copy, and custom CSS. Sub-Tenants can be individually white-labeled, or the Master Tenant Whitelabel can apply to all Sub-Tenants.</p>
+<p>Enable Whitelabel:: Turns on the configured Whitelabel settings. Disabling will return the Appliance to the default colors and logos, but the configured options will remain saved and will apply if Whitelabel is re-enabled.
+Appliance Name:: Replaces |morpheus| in page titles.
+Header Logo:: Top left header logo. Preferred Image Size (500x76)
+Footer Logo:: Footer Logo in bottom left. Preferred Image Size (264x54)
+Login Logo:: Logo shown on Login screen. Preferred Image Size (228x280)
+Favicon:: Must be a .ico file type.
+Reset:: When selected and Whitelabel settings are saved, associated logo is returned to blank default value.</p>
+<p>===== Colors</p>
+<p>Update Colors by entering HEX value or selecting the Color Selector pop-up next to each filed and selecting a color.</p>
+<ul class="simple">
+<li>Header Background</li>
+<li>Header Foreground</li>
+<li>Nav Background</li>
+<li>Nav Foreground</li>
+<li>Nav Hover</li>
+<li>Primary Button Bg</li>
+<li>Primary Button Fg</li>
+<li>Primary Button Hover Bg</li>
+<li>Primary Button Hover Fg</li>
+<li>Footer Background</li>
+<li>Footer Foreground</li>
+<li>Login Background</li>
+</ul>
+<p>==== Override CSS</p>
+<p>Override CSS settings by entering CSS in <cite>Override CSS</cite> field.</p>
+<p>Example: (this will add one continues background image to the Header)</p>
+<div class="section" id="source-html">
+<h1>[source,html]<a class="headerlink" href="#source-html" title="Permalink to this headline">¶</a></h1>
+<dl class="docutils">
+<dt>header #topHeader {</dt>
+<dd>background-image: url(<a class="reference external" href="http://image_url.png">http://image_url.png</a>);</dd>
+</dl>
+<p>}
+header {</p>
+<blockquote>
+<div>background-image: url(<a class="reference external" href="http://image_url.png">http://image_url.png</a>);</div></blockquote>
+</div>
+<div class="section" id="id1">
+<h1>}<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<p>==== Copy</p>
+<p>Add custom Copyright String, Terms of Use, Privacy Policy contained in the Footer text and links in the App and on the login page and emails.</p>
+<p>===== Available Copy fields</p>
+<ul class="simple">
+<li>Copyright String</li>
+<li>Terms of Use</li>
+<li>Privacy Policy</li>
+</ul>
+<p>NOTE: Terms of Use and Privacy Policy Footer links will load internal pages at <cite>https://applaince_url/privacy-policy</cite> and <cite>https://applaince_url/terms-of-use</cite> displaying the entered info as plain text.
+​</p>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../../index.html">testtoca</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2017, JW.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.6.3</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
+      
+      |
+      <a href="../../_sources/administration/settings/whitelabel.adoc.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

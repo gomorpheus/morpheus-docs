@@ -1,0 +1,393 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Virtual Images &mdash; jwtest 1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../../_static/my_theme.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="../../genindex.html"/>
+        <link rel="search" title="Search" href="../../search.html"/>
+    <link rel="top" title="jwtest 1 documentation" href="../../index.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html">
+          
+
+          
+            
+            <img src="../../_static/logo.svg" class="logo" />
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../getting_started/getting_started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../provisioning.html">Provisioning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../infrastructure/infrastructure.html">Infrastructure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../administration/administration.html">Administration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../monitoring/monitoring.html">Monitoring</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../logs/logging.html">Logs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../backups/backups.html">Backups</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../operations/operations.html">Operations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../services/services.html">Services</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../integration_guides/integration_guides.html">Integration Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../faq/faqs.html">FAQ’s</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../release_notes/release_notes.html">Release Notes</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">jwtest</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+      <li>Virtual Images</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/provisioning/virtual_images/virtual_images.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="virtual-images">
+<h1>Virtual Images<a class="headerlink" href="#virtual-images" title="Permalink to this headline">¶</a></h1>
+<p><cite>Provisioning -&gt; Virtual Images</cite></p>
+<div class="section" id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
+<p>The Virtual Image section displays a list of all images, local and synced, that are available to deploy. |morpheus| includes a rich catalog of pre-configured System Images available for every cloud type. User Images are automatically synced from Cloud Integrations and added to the Virtual Images section. Images can also be uploaded directly into |morpheus| via local file or url. Amazon and Azure Marketplace images can also be added to the Virtual Images Section.</p>
+</div>
+<div class="section" id="image-types">
+<h2>Image Types<a class="headerlink" href="#image-types" title="Permalink to this headline">¶</a></h2>
+<p>|morpheus| provides a vast <em>System Image</em> repo with pre-configured images for every Cloud. All other images are <em>User Images</em>. User images can be added directly to |morpheus| , or automatically synced from integrated clouds. It is important to configure synced User Images for metadata, including specifying the Platform and User Credentials, prior to provisioning. Provisioning a User Image that has not been configured may result in failed provisioning.</p>
+<div class="admonition important">
+<p class="first admonition-title">Important</p>
+<p class="last">Synced User Images need to be configured prior to provisioning.</p>
+</div>
+</div>
+<div class="section" id="configuring-virtual-images">
+<h2>Configuring Virtual Images<a class="headerlink" href="#configuring-virtual-images" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="system-images">
+<h3>System Images<a class="headerlink" href="#system-images" title="Permalink to this headline">¶</a></h3>
+<p>System Images are pre-configured with metadata and have Cloud-Init or Cloudbase-Init installed. These images are ready to be provisioned with no configuration necessary. It is highly recommended to populated the <cite>Administration -&gt; Provisioning -&gt; Cloud-Init</cite> section with user data prior to provisioning, as the user and password/key will be added to all Instances provisioned from System Images. Users can also be added during provisioning in the <cite>Add User</cite> provisioning wizard section.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Editing System Images is disabled.</p>
+</div>
+</div>
+<div class="section" id="user-images">
+<h3>User Images<a class="headerlink" href="#user-images" title="Permalink to this headline">¶</a></h3>
+<p>Typically |morpheus| does not have sufficient metatdata to successfully provision synced User Images. After integrating clouds and User Images have synced, it is highly recommended to configure the images prior to provisioning.</p>
+<p><strong>To edit and configure an existing Virtual Image:</strong></p>
+<ol class="arabic simple">
+<li>Select <cite>Actions - Edit</cite> in the Virtual Images list, or <cite>Edit</cite> on a Virtual Image detail page.</li>
+<li>Configure the following on the Image:</li>
+</ol>
+<dl class="docutils">
+<dt>Name</dt>
+<dd>Name of the Virtual Image in |morpheus| . This can be changed from the name of the Image, but editing will not change the name of the actual Image.</dd>
+<dt>Operating System</dt>
+<dd>Specifies the Platform and OS of the image. All Windows images will need to have Operating System specified on the Virtual Image, as |morpheus| will assign Linux as the Platform for all Images without Operating System specified.</dd>
+<dt>Cloud Init Enabled?</dt>
+<dd>On by default, uncheck for any Image that does not have Cloud-Init or Cloudbase-Init installed.</dd>
+<dt>Install Agent</dt>
+<dd>On by default, uncheck to skip Agent install. Note this will result in the loss of utilization statistics, logs, script execution, and monitoring. (Some utilization stats are collected for agent-less hosts and vm’s from VMware and AWS clouds).</dd>
+<dt>Username</dt>
+<dd>Existing Username on the Image. This is required for authentication, unless |morpheus| is able to add user data via Cloud-Init, Cloudbase-Init, or guest processes (VMware).</dd>
+<dt>Password</dt>
+<dd>Password for the Existing User on the image.</dd>
+<dt>Cloud-Init User Data</dt>
+<dd>Accepts what would go in runcmd and can assume bash syntax.</dd>
+<dt>Permissions</dt>
+<dd>Set Tenant permissions in a multi-tenant |morpheus| environment. No impact on single-tenant environments.</dd>
+<dt>Auto Join Domain?</dt>
+<dd>Enable to have instances provisioned with this image auto-join configured domains (Windows only).</dd>
+<dt>VirtIO Drivers Loaded?</dt>
+<dd>Enable if VirtIO Drivers are installed on the image for provisioning to KVM based Hypervisors.</dd>
+<dt>Force Guest Customization?</dt>
+<dd>VMware only, forces sys-prep on image during provisioning.</dd>
+<dt>Trial Version</dt>
+<dd>Enable to automatically re-arm the expiration on Windows Trial Images during provisioning.</dd>
+</dl>
+<ol class="arabic simple" start="3">
+<li>Save Changes</li>
+</ol>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Cloud-Init is enabled by default on all Images. Images without Cloud-Init or Cloudbase-Init installed must have the <cite>cloud-init</cite> flag disabled on the Virtual Image setting or Provisioning may fail.</p>
+</div>
+</div>
+</div>
+<div class="section" id="provisioning-images">
+<h2>Provisioning Images<a class="headerlink" href="#provisioning-images" title="Permalink to this headline">¶</a></h2>
+<p>When provisioning a System Image for the first time, |morpheus| will download and stream the image from S3 to the source Cloud if the image is not local to the Cloud. The Image will also be cached on the |morpheus| Appliance under /var/opt/morpheus/vm/vmcache. Subsequent provisions of the image will use the created template in the Cloud or the cached local Image if the images does not exist in the selected Cloud, in which case the cached Image will be copied to the Cloud.</p>
+<p>When using Images that already exist in the destination cloud, such as synced, marketplace, or previously copied images, no image transfer between the |morpheus| Appliance and destination cloud will take place.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The |morpheus| Appliance must be able to download from Amazon S3 when provisioning System Images for the first time.</p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The |morpheus| Appliance must be able reach and resolve the destination Host when provisioning System Images or uploaded Images for the first time. This included being able to resolve ESXi host names in VMware VCenter clouds, and reach the destination ESXi host over port 443.</p>
+</div>
+</div>
+<div class="section" id="add-virtual-images">
+<h2>Add Virtual Images<a class="headerlink" href="#add-virtual-images" title="Permalink to this headline">¶</a></h2>
+<p>Virtual Images can be upload to |morpheus| from local files or URL’s. Amazon and Azure Marketplace metadata can also be added to the Virtual Images library, enabling the creation of custom catalog Instance Type from Marketplace images (no image is transferred to |morpheus| when adding Marketplace images).</p>
+<p>To Add Virtual Image:</p>
+<ol class="arabic simple">
+<li>Select <cite>+ Add Virtual Image</cite> in the Virtual Images page.</li>
+<li>Select Image format:</li>
+</ol>
+<blockquote>
+<div><ul class="simple">
+<li>Amazon AMI</li>
+<li>Azure Marketplace</li>
+<li>Digital Ocean</li>
+<li>ISO</li>
+<li>PXE Boot</li>
+<li>QCOW2</li>
+<li>RAW</li>
+<li>VHD</li>
+<li>VirtualBox</li>
+<li>VirtualBox (vdi)</li>
+<li>VMware (vmdk/ovf/ova)</li>
+</ul>
+</div></blockquote>
+<ol class="arabic simple" start="3">
+<li>Configure the following on the Virtual Image:</li>
+</ol>
+<dl class="docutils">
+<dt>Name</dt>
+<dd>Name of the Virtual Image in |morpheus| . This can be changed from the name of the Image, but editing will not change the name of the actual Image.</dd>
+<dt>Operating System</dt>
+<dd>Specifies the Platform and OS of the image. All Windows images will need to have Operating System specified on the Virtual Image, as {norpheus} will assign Linux as the Platform for all Images without Operating System specified.</dd>
+<dt>Cloud Init Enabled?</dt>
+<dd>On by default, uncheck for any Image that does not have Cloud-Init or Cloudbase-Init installed.</dd>
+<dt>Install Agent</dt>
+<dd>On by default, uncheck to skip Agent install. Note this will result in the loss of utilization statistics, logs, script execution, and monitoring. (Some utilization stats are collected for agent-less hosts and vm’s from VMware and AWS clouds).</dd>
+<dt>Username</dt>
+<dd>Existing Username on the Image. This is required for authentication, unless |morpheus| is able to add user data via Cloud-Init, Cloudbase-Init, or guest processes (VMware).</dd>
+<dt>Password</dt>
+<dd>Password for the Existing User on the image.</dd>
+<dt>Storage Provider</dt>
+<dd>Location where the Virtual Image will be stored. Default Virtual Image Storage location is /var/opt/morpheus/morpheus-ui/vms. Additional Storage Providers can be configured in <cite>Infrastructure -&gt; Storage</cite>.</dd>
+<dt>Cloud-Init User Data</dt>
+<dd>Accepts what would go in runcmd and can assume bash syntax.</dd>
+<dt>Permissions</dt>
+<dd>Set Tenant permissions in a multi-tenant |morpheus| environment. No impact on single-tenant environments.</dd>
+<dt>Auto Join Domain?</dt>
+<dd>Enable to have instances provisioned with this image auto-join configured domains (Windows only).</dd>
+<dt>VirtIO Drivers Loaded?</dt>
+<dd>Enable if VirtIO Drivers are installed on the image for provisioning to KVM based Hypervisors.</dd>
+<dt>Force Guest Customization?</dt>
+<dd>VMware only, forces sys-prep on image during provisioning.</dd>
+<dt>Trial Version</dt>
+<dd>Enable to automatically re-arm the expiration on Windows Trial Images during provisioning.</dd>
+</dl>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Default Storage location is /var/opt/morpheus/morpheus-ui/vms. Additional Storage Providers can be configured in <cite>Infrastructure -&gt; Storage</cite>. Ensure local folders are owned by morpheus-app.morpheus-app if used.</p>
+</div>
+<ol class="arabic simple" start="4">
+<li>Upload Image</li>
+</ol>
+<blockquote>
+<div><p>Images can be uploaded by File or URL:</p>
+<dl class="docutils">
+<dt><em>File</em></dt>
+<dd>Drag and Drop the image file, or select “Add File” to select the image file.</dd>
+<dt><em>Url</em></dt>
+<dd>Select the URL radio button, and enter URL of the Image.</dd>
+</dl>
+</div></blockquote>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">|morpheus| provides a file upload progress. The Virtual Image configuration can be saved while the upload is in progress, and the upload will finish in the background.</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, jw.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

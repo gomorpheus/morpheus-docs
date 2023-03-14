@@ -1,0 +1,118 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>&lt;no title&gt; &#8212; testtoca 11 documentation</title>
+    <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '11',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+   
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <p>=== Roles</p>
+<p>|morpheus| provides amazingly robust Role-based access control. Almost every aspect of the UI and API can be controlled via role management. Roles can be assigned as base roles for subaccounts where in sub accounts can manage their own roles relative to the main role. Other aspects can be controlled via Roles as well, such as which infrastructure groups users have visibility into or capabilities of provisioning into. Usage limits can even be assigned and sanctioned instance catalog items!</p>
+<p>image::administration/roles.png[caption=”Figure 1: “, title=”Role management Administration page”, alt=”Role management Administration page”]</p>
+<p>There are 2 base roles provided by |morpheus| upon first installation. They are “System Admin”, and “Account Admin” (Can be noted on the management page by having a scope of ‘System’). The “Super Admin” role is a special role that only the master account should have access to. It provides access to settings that can apply globally across all accounts in the system. The “Account Admin” role is just a base role that is seeded in for use as the default role when creating new subaccounts. This default role can be copied or modified. If it desired that an account  take on a different default base role, this can be done from the <cite>Admin -&gt; Settings</cite> section under “Account Management Settings”. You can also assign a base role to an account in the <cite>Admin -&gt; Accounts</cite> section or directly to a user in <cite>Admin -&gt; Users</cite>.</p>
+<p>In the <cite>Account -&gt; Roles</cite> section there are 2 types of ways to edit a role. One is to click a role’s name to view its permission set and manipulate its different access levels. The other is to click the edit icon on the right. In this mode you can rename a role or set usage limits (i.e. max memory usage or max storage usage for users assigned to this role).</p>
+<p>When it comes to managing a role there are 4 subsections. They are “Feature Access”, “Group Access”, “Cloud Access”, and “Instance Type Access”. A couple of these sections do not apply in certain scenarios (depending on if the role is being used as an Account base role or a user role).</p>
+<p>==== Feature Access</p>
+<p>Features, are aspects of both the UI and API that a user may have access to at any given point. |morpheus| also has the ability to control access level of specific features rather than simply turning a feature on or off. These difference scopes appear in the dropdowns to the right of each feature (a dropdown will not appear if the role is readonly visible).</p>
+<p>image::administration/role_features.png[caption=”Figure 2: “, title=”Example of features list when clicking into a role detail page”, alt=”Role detail features section”]</p>
+<p>To change the scope of a feature simply change the selected option in the dropdown and the change will automatically be applied and propagated to anyone using the Role. There are different scope capabilities depending on the feature and more can be added as well as necessary. These include scopes like <cite>None</cite>, <cite>View</cite>, <cite>Read</cite>, and <cite>Full</cite>.</p>
+<p>==== Group Access</p>
+<p>Group access allows for the restriction in provisioning and management of specific host groups within |morpheus| . It is useful to scope instances that may be provisioned into certain groups with respective cloud integrations. This makes it more organized and allows for scoped policy controls and team management. It is also important to note that Groups are account specific therefore any adjustments made to group access levels for the use on an Account scoped role will have no affect. For that one must use the “Cloud Access” section.</p>
+<p>image::administration/role_groups.png[caption=”Figure 3: “, title=”Example of groups list when clicking into a role detail page”, alt=”Role detail group access section”]</p>
+<p>In Group Access, each group is listed with an access level dropdown similar to how Feature Access worked. But at the top there is also a “Global Access” setting. When this is set to anything other than Custom, all dropdowns for individual groups are disabled. Global allows for a setting to be assigned globally across all groups in the account (i.e. Full, Read, or even None).</p>
+<p>==== Cloud Access</p>
+<p>Cloud access works identically to Group Access except it is referring to cloud integrations the account has access to. While these various cloud integrations can be scoped to specific groups to allow provisioning, it is also possible to restrict access to them and even assign them to account scoped roles so that sub accounts can or cannot create their own groups and instances for that cloud.</p>
+<p>image::administration/role_clouds.png[caption=”Figure 4: “, title=”Example of clouds list when clicking into a role detail page”, alt=”Role detail cloud access section”]</p>
+<p>Just like Group Access, different scoping dropdowns exist on the bottom. It is also important to note that it is possible to grant access to a cloud for a subaccount via cloud access however the visibility and ownership of the cloud also play a part as to wether or not a user can view or use said cloud integration. A cloud’s visibility can be set only by the master account and determines wether or not a specific cloud integration is public for all accounts to use or private / for the account in question’s use only. In cloud edit it is also possible (as the master account) to assign a specific cloud integration to an account. This makes it so that only the subaccount can utilize the cloud integration also requiring cloud access be properly configured.</p>
+<p>==== Instance Type Access</p>
+<p>Instance Type access controls what different instance types a user or account are allowed to provision. This can be useful in an organization where one might want to control / sanction certain application types only within the environment. It also may be used to scope provisioning rights for say a DBA to only be able to provision database instances vs. full fledged application stacks. Even custom catalog items will appear in this list so if a custom application template is being utilized within |morpheus| , access to provisioning it’s individual pieces can also be controlled.</p>
+<p>image::administration/role_clouds.png[caption=”Figure 5: “, title=”Example of instance types list when clicking into a role detail page”, alt=”Instance Type cloud access section”]</p>
+<p>Similar to the last three sections, the default Global Access dropdown grant everyone access to everything in the appliance that can be provisioned onto (including newly added instance types). Simply set this to “Custom” when it is desired to use more fine grained control.</p>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../../index.html">testtoca</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2017, JW.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.6.3</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
+      
+      |
+      <a href="../../_sources/administration/roles/rolesold.adoc.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

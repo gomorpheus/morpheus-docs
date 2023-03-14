@@ -1,0 +1,247 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>&lt;no title&gt; &#8212; testtoca 11 documentation</title>
+    <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '11',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+   
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <p>=== Configuring Tenants and Resources for Multi-Tenancy</p>
+<p>A very common scenario for Managed Service Providers is the need to provide access to resources on a customer by customer basis. Several administrative features are available in |morpheus| to ensure customer resources are properly scoped and isolated. With its built multi-tenancy capabilities and white label support, managed service providers have a wide range of capabilities when it comes to managing customer Tenants and users.</p>
+<p>==== Tenants</p>
+<p>There are essentially two types of Tenants in |morpheus| </p>
+<ul class="simple">
+<li>Master Tenant</li>
+<li>Sub Tenants</li>
+</ul>
+<p>During the initial setup of a |morpheus| Appliance, the Master Tenant is created. All Tenants created in addition to this Master Tenant are sub-Tenants. There can only be one Master Tenant, and sub-Tenants cannot become the Master Tenant. The delineation between the Master Tenant and sub-Tenants is important to understand for properly scoping resources across Tenants.</p>
+<p>==== Creating Tenants</p>
+<p>The Master Tenant is created during the initial appliance setup. Additional sub-Tenants can be created in the <cite>Administration -&gt; Tenants</cite> section.</p>
+<p>The Tenants page displays a list of all Tenants. This page enables users to: Create, Edit, and Delete Tenants. The list of Tenants displays the Tenant Name, Role, Total Instances, Total Users, and the Created Date. Click the Tenant Name to drill into the Tenant View where you can again Edit, Delete, as well as Create Users, Edit Users, and Delete Users users belonging to the Tenant.</p>
+<p>NOTE: At least one Tenant in addition to the Master Tenant is required to scope resources across Tenants.</p>
+<p>To create a new sub-Tenant</p>
+<p>. Select the Administration link in the navigation bar.
+. Select the Tenants link in the sub navigation bar.
+. lick the Create Tenant button.
+. From the New Tenant wizard input</p>
+<ul class="simple">
+<li>Name</li>
+<li>Description(optional)</li>
+<li>Base Role- Primary role of the Tenant. All roles created within the Tenant must inherit this role as the base role.</li>
+<li>Currency (for pricing)</li>
+<li>Limits- These restrict the amount of Storage, Memory, and CPUs that can be collectively provisioned by all users in the Tenant. The default is 0 for these limits, which means no limits will be applied.</li>
+</ul>
+<p>. Click the Save Changes button.</p>
+<p>image::images/configuring_multi_tenancy-09a1e.png[]</p>
+<p>==== Viewing Tenants</p>
+<p>To View an individual Tenant page, select the Tenant name from the main Tenants section.</p>
+<p>image::images/configuring_multi_tenancy-fa0d8.png[]</p>
+<p>From inside this Tenant view, the Tenant settings can be edited, existing users can be viewed or edited, and new users for this Tenant can be created.</p>
+<p>==== Create a new user for an Tenant</p>
+<p>To create a new user for an Tenant (Note: Users are specific to each Tenant. Users created in the Master Tenant or other sub-Tenants will only have access to the Tenant they are created in.)*</p>
+<p>. Click the CREATE USER button
+. From the New User wizard input the fields below.
+* First Name of the user being created
+* Last Name of the user being created
+* Username used to login
+* Email address of the new user
+* Role to be inherited by the user
+* Password
+* Storage, Memory and CPU limits for this specific user, if any (0 is no limit)</p>
+<p>. Click Save Changes.</p>
+<p>image::images/configuring_multi_tenancy-e194d.png[]</p>
+<p>==== Impersonate User (v2.8.6 or later)</p>
+<p>In version 2.8.6 or later, “Impersonate User” is a new Role enabling administrators to login as sub-Tenant users directly from the master Tenant.</p>
+<p>To impersonate a user, you must be logged in as a user with the “Impersonate User” feature enabled in assigned role.</p>
+<p>Navigate to Tenants, select an Tenant, and in the specific user ACTIONS drop down, select “Impersonate”</p>
+<p>image::images/configuring_multi_tenancy-9583a.png[]</p>
+<p>This will log you in as that user in their respective Tenant. To log out of the impersonate users Tenant, select the username in the top right, and then select “Quit Impersonating”</p>
+<p>image::images/configuring_multi_tenancy-d229b.png[]</p>
+<p>==== Resource Visibility and Assigning Resources to Tenants</p>
+<p>In the Master Tenant, resources can be configured with private or public visibility:</p>
+<ul class="simple">
+<li>Private Visibility: Only available to the assigned Tenant.</li>
+<li>Public Visibility (master Tenant only): Available across all Tenants</li>
+</ul>
+<p>Resources in the Master Tenant can also be assigned directly to sub-Tenants. When a resource is assigned to a sub-Tenant, it is only available for that sub-Tenant, and its visibility is automatically set to private. Public Visibility is not an option for any resource assigned to or created in a sub-Tenant.</p>
+<p>From the master Tenant, the following resources can be configured for public visibility across all Tenants, or assigned to individual sub-Tenants</p>
+<ul class="simple">
+<li>Clouds</li>
+<li>Hosts</li>
+<li>Virtual Machines</li>
+<li>Networks</li>
+<li>Datastores</li>
+<li>Resource Pools</li>
+<li>Virtual Image Templates</li>
+<li>Pricing</li>
+<li>Policies</li>
+<li>Workflows</li>
+<li>Roles</li>
+</ul>
+<p>NOTE: Virtual Image Templates can also be made available to multiple select Tenants when set to private.</p>
+<p>==== Cloud Visibility &amp; Assignment</p>
+<p>Edit Visibility of a Cloud</p>
+<p>To set the Visibility of cloud to Public (shared across all Tenants) or Private (only available to the assigned Tenant):</p>
+<p>. Navigate to Infrastructure, Clouds
+. Select either the pencil/edit icon on the far right of the cloud row, or click the name of the cloud and select “Edit” in the top right of the cloud page.
+. From the “Visibility” drop down, select either “Public” or “Private”
+. Select “Save Changes” in the lower right of the Edit Cloud modal.</p>
+<p>image::images/configuring_multi_tenancy-349e2.png[]</p>
+<p>When a cloud is set to Public visibility, it is available to be added to sub Tenants. All sub-Tenants created after a master Tenant cloud is set to public will automatically have clouds with public visibility added, and a group will be created for each available cloud matching the cloud name in the new sub Tenant(s).</p>
+<p>For Tenants created prior to a Master Tenant cloud being set to public visibility, the sub Tenant will have the option to add that cloud but it will not automatically be added.</p>
+<p>While the cloud will be available for Sub-Tenants, the resources available in that cloud to the sub-Tenant(s) depends on the visibility or assignment of the individual resources.</p>
+<p>NOTE: A sub-Tenant user must have sufficient role permissions/cloud access to add publicly available clouds. Master Tenant clouds settings cannot be edited from sub Tenants.</p>
+<p>=== Assign a Cloud to an Tenant</p>
+<p>IMPORTANT: When assigning a Cloud to an Tenant, all resources for that Cloud will only be available to the assigned Tenant. If a cloud is created in the Master Tenant and assigned to a sub-Tenant, it will no longer be available for use by the Master Tenant or any other sub-Tenants, although it can be assigned back to the Master Tenant, or to another sub-Tenant.</p>
+<p>It may be preferable for service providers to share or assign their cloud resources, such as specific hosts, networks, resources pools and datastores, across sub-Tenants, rather than an entire cloud.</p>
+<p>To assign a cloud from the Master Tenant to a Sub-Tenant:</p>
+<p>. Navigate to Infrastructure, Clouds
+. Select either the pencil/edit icon on the far right of the cloud row, or click the name of the cloud and select “Edit” in the top right of the cloud page.
+. From the “Tenant” drop down, select the Tenant to assign the cloud to. The visibility will automatically be set to “Private” when a cloud is assigned to a sub-Tenant.
+. Select “Save Changes” in the lower right of the Edit Cloud modal.</p>
+<p>image::images/configuring_multi_tenancy-c907d.png[]</p>
+<p>When a cloud is assigned to a sub-Tenant, or assigned to the Master Tenant with private visibility, that cloud and all of its resources are only available to the assigned Tenant. The Master Tenant still maintains control and visibility, and can edit the cloud settings or re-assign the cloud.</p>
+<p>==== Resource Visibility &amp; Assignment</p>
+<p>Similar to clouds, individual resources from the Master Tenant can be set to public and available to sub-Tenants, or assigned to sub-Tenants.</p>
+<p>By default, any host, virtual machine, bare metal server, network, resource pool, datastore or template added, created or inventoried by an Tenant is assigned to that Tenant. If these resources are in the Master Tenant, they can be assigned to sub Tenants. Assigning one of these resources will make it unavailable to the Master Tenant, but it will still be visible and editable by the Master Tenant. This allows Master Tenant resources to be isolated for use by sub-Tenants while still under the control of the Master Tenant.</p>
+<p>Resources assigned to sub-Tenants from the Master Tenant will be visible and available for use by that sub-Tenant, however they cannot be edited or re-assigned by the sub-tenant.</p>
+<p>==== Set the Visibility of a Host, Virtual Machine or Bare metal Server to Public or Private</p>
+<p>. From the Master Tenant, navigate to Infrastructure, Hosts
+. Select either the Hosts, Virtual Machines or Bare Metal tab
+. Click the name of the resource
+. Select “Edit” in the top right of the resource page to bring up the config modal.
+. From the “Visibility” drop down, select either “Public” or “Private”
+. Select “Save Changes” in the lower right of the modal</p>
+<p>image::images/configuring_multi_tenancy-d738d.png[]</p>
+<p>==== Assigning a Host, Virtual Machine, or Bare Metal server to an Tenant</p>
+<p>. From the Master Tenant, navigate to Infrastructure, Hosts
+. Select either the Hosts, Virtual Machines or Bare Metal tab
+. Click the name of the resource
+. From the “Actions” dropdown in the top right of the resource page, select Assign Tenant
+. In the Assign Tenant modal, select the Tenant to assign the resource to.
+. Select “Execute” in the lower right of the modal</p>
+<p>image::images/configuring_multi_tenancy-3c39f.png[]</p>
+<p>The resource will now be assigned and available for use by the assigned Tenant. If assigned to a sub-Tenant, the Master Tenant will maintain visibility and control.</p>
+<p>==== Set the Visibility of a Network to Public or Private</p>
+<p>. From the Master Tenant, navigate to Infrastructure, Network
+. Select either the pencil/edit icon on the far right of the network row, or click the name of the network and select “Edit” in the top right of the network page.
+. From the “Visibility” drop down, select either “Public” or “Private”
+. Select “Save Changes” in the lower right of the modal</p>
+<p>image::images/configuring_multi_tenancy-bc333.png[]</p>
+<p>==== Assign a Network to an Tenant</p>
+<p>. From the Master Tenant, navigate to Infrastructure, Network
+. Select either the pencil/edit icon on the far right of the network row, or click the name of the network and select “Edit” in the top right of the network page.
+. From the “Tenant” drop down, select an Tenant to assign the network to.
+. Select “Save Changes” in the lower right of the modal</p>
+<p>image::images/configuring_multi_tenancy-9f15c.png[]</p>
+<p>The Network will now be assigned and available for use by the assigned Tenant. If assigned to a sub-Tenant, the Master Tenant will maintain visibility and control.</p>
+<p>==== Set the Visibility or assign a datastore to an Tenant</p>
+<p>. From the Master Tenant, navigate to Infrastructure, Storage
+. Select the “Data Stores” tab
+. Select Edit from the “Actions” dropdown on the far right of the datastores row
+. From the “Visibility” drop down, select either “Public” or “Private”
+. From the “Tenant” drop down, select the Tenant to assign the datastore to.
++
+NOTE: If assigned to a sub-tenant, the visibility will be automatically set to private.</p>
+<p>. Select “Save Changes” in the lower right of the modal</p>
+<p>image::images/configuring_multi_tenancy-1e978.png[]</p>
+<p>==== Set the Visibility or assign a Virtual Image to an Tenant</p>
+<p>. From the Master Tenant, navigate to Provisioning, Virtual Images
+. Select Edit from the “Actions” dropdown on the far right of the Virtual Images row
+. From the “Visibility” drop down, select either “Public” or “Private”. Public will share the
+. From the “Tenant” field, start typing the name of the Tenant to assign the Virtual Image to. Matching Tenants will populate, then select the Tenant to add.
++
+NOTE: Virtual Images can be set to Private, but accessible to more that one Tenant</p>
+<p>. Repeat step 4 for all Tenants requiring access to the virtual image.
+.. To remove access for an Tenant, click the “x” next to the Tenant name
+. Select “Save Changes” in the lower right of the modal</p>
+<p>image::images/configuring_multi_tenancy-d9abe.png[]</p>
+<p>The Virtual Image will now be available for use by the assigned Tenants.</p>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../../index.html">testtoca</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2017, JW.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.6.3</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
+      
+      |
+      <a href="../../_sources/getting_started/advanced/configuring_multi_tenancy.adoc.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

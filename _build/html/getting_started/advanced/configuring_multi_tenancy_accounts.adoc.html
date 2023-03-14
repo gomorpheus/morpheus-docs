@@ -1,0 +1,433 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>&lt;no title&gt; &mdash; jwtest 1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../../_static/my_theme.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="../../genindex.html"/>
+        <link rel="search" title="Search" href="../../search.html"/>
+    <link rel="top" title="jwtest 1 documentation" href="../../index.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html">
+          
+
+          
+            
+            <img src="../../_static/logo.svg" class="logo" />
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../provisioning/provisioning.html">Provisioning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../infrastructure/infrastructure.html">Infrastructure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../administration/administration.html">Administration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../monitoring/monitoring.html">Monitoring</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../logs/logging.html">Logs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../backups/backups.html">Backups</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../operations/operations.html">Operations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../services/services.html">Services</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../integration_guides/integration_guides.html">Integration Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../faq/faqs.html">FAQ’s</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../release_notes/release_notes.html">Release Notes</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">jwtest</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+      <li>&lt;no title&gt;</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/getting_started/advanced/configuring_multi_tenancy_accounts.adoc.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <p>=== Configuring Accounts and Resources for Multi-Tenancy</p>
+<p>A very common scenario for Managed Service Providers is the need to
+provide access to resources on a customer by customer basis. Several
+administrative features are available in |morpheus| to ensure customer
+resources are properly scoped and isolated. With its built multi-tenancy
+capabilities and white label support, managed service providers have a
+wide range of capabilities when it comes to managing customer accounts
+and users.</p>
+<p>==== Accounts</p>
+<p>There are essentially two types of accounts in |morpheus| </p>
+<p>Master Account Sub Accounts</p>
+<p>During the initial setup of a |morpheus| Appliance, the Master Account
+is created. All accounts created in addition to this Master Account are
+sub-accounts. There can only be one Master Account, and sub-accounts
+cannot become the Master Account. The delineation between the Master
+Account and sub-accounts is important to understand for properly scoping
+resources across accounts.</p>
+<p>Creating Accounts</p>
+<p>The Master Account is created during the initial appliance setup.
+Additional sub-accounts can be created in the Admin -&gt; Accounts section.</p>
+<p>The Accounts page displays a list of all accounts. This page enables
+users to: Create, Edit, and Delete accounts. The list of accounts
+displays the account Name, Role, Total Instances, Total Users, and the
+Created Date. Click the Account Name to drill into the Account View
+where you can again Edit, Delete, as well as Create Users, Edit Users,
+and Delete Users users belonging to the account.</p>
+<p>At least one account in addition to the Master Account is required to
+scope resources across accounts.</p>
+<p>To create a new sub-account</p>
+<ol class="arabic simple">
+<li>Select the Admin link in the navigation bar.</li>
+<li>Select the Accounts link in the sub navigation bar.</li>
+<li>Click the Create Account button.</li>
+<li>From the New Account wizard input</li>
+</ol>
+<p>Name Description(optional) Base Role- Primary role of the account. All
+roles created within the account must inherit this role as the base
+role. Currency (for pricing) Limits- These restrict the amount of
+Storage, Memory, and CPUs that can be collectively provisioned by all
+users in the account. The default is 0 for these limits, which means no
+limits will be applied. 5. Click the Save Changes button.</p>
+<p>Viewing Accounts</p>
+<p>To View an individual Account page, select the Account name from the
+main Accounts section.</p>
+<p>From inside this account view, the account settings can be edited,
+existing users can be viewed or edited, and new users for this account
+can be created.</p>
+<p>Create a new user for an account</p>
+<p>To create a new user for an account (Note: Users are specific to each
+account. Users created in the Master Account or other sub-accounts will
+only have access to the account they are created in.)*</p>
+<p>Click the CREATE USER button From the New User wizard input the fields
+below. First Name of the user being created Last Name of the user being
+created Username used to login Email address of the new user Role to be
+inherited by the user Password Storage, Memory and CPU limits for this
+specific user, if any Click Save Changes.</p>
+<p>Impersonate User (v2.8.6 or later)</p>
+<p>In version 2.8.6 or later, “Impersonate User” is a new Role enabling
+administrators to login as sub-account users directly from the master
+account.</p>
+<p>To impersonate a user, you must be logged in as a user with the
+“Impersonate User” feature enabled in assigned role.</p>
+<p>Navigate to Accounts, select an account, and in the specific user
+ACTIONS drop down, select “Impersonate”</p>
+<p>This will log you in as that user in their respective account. To log
+out of the impersonate users account, select the username in the top
+right, and then select “Quit Impersonating”</p>
+<p>Resource Visibility and Assigning Resources to Accounts In the Master
+Account, resources can be configured with private or public visibility:
+Private Visibility: Only available to the assigned account. Public
+Visibility (master account only): Available across all accounts
+Resources in the Master Account can also be assigned directly to
+sub-accounts. When a resource is assigned to a sub-account, it is only
+available for that sub-account, and its visibility is automatically set
+to private. Public Visibility is not an option for any resource assigned
+to or created in a sub-account.</p>
+<p>From the master account, the following resources can be configured for
+public visibility across all accounts, or assigned to individual
+sub-accounts</p>
+<p>Clouds Hosts Virtual Machines Networks Datastores Resource Pools Virtual
+Image Templates Pricing Policies Workflows Roles *Virtual Image
+Templates can also be made available to multiple select accounts when
+set to private.</p>
+<p>Cloud Visibility &amp; Assignment</p>
+<p>Edit Visibility of a Cloud</p>
+<p>To set the Visibility of cloud to Public (shared across all accounts) or
+Private (only available to the assigned account):</p>
+<p>Navigate to Infrastructure, Clouds Select either the pencil/edit icon on
+the far right of the cloud row, or click the name of the cloud and
+select “Edit” in the top right of the cloud page. From the “Visibility”
+drop down, select either “Public” or “Private” Select “Save Changes” in
+the lower right of the Edit Cloud modal.</p>
+<p>When a cloud is set to Public visibility, it is available to be added to
+sub accounts. All sub-accounts created after a master account cloud is
+set to public will automatically have clouds with public visibility
+added, and a group will be created for each available cloud matching the
+cloud name in the new sub account(s).</p>
+<p>For accounts created prior to a Master Account cloud being set to public
+visibility, the sub account will have the option to add that cloud but
+it will not automatically be added.</p>
+<p>While the cloud will be available for sub-accounts, the resources
+available in that cloud to the sub-account(s) depends on the visibility
+or assignment of the individual resources.</p>
+<p>Note: A sub-account user must have sufficient role permissions/cloud
+access to add publicly available clouds. Master Account clouds settings
+cannot be edited from sub accounts.</p>
+<p>Assign a Cloud to an Account</p>
+<p>IMPORTANT: When assigning a Cloud to an account, all resources for that
+Cloud will only be available to the assigned account. If a cloud is
+created in the Master Account and assigned to a sub-account, it will no
+longer be available for use by the Master Account or any other
+sub-accounts, although it can be assigned back to the Master account, or
+to another sub-account.</p>
+<p>It may be preferable for service providers to share or assign their
+cloud resources, such as specific hosts, networks, resources pools and
+datastores, across sub-accounts, rather than an entire cloud.</p>
+<p>To assign a cloud from the Master Account to a sub-account:</p>
+<p>Navigate to Infrastructure, Clouds Select either the pencil/edit icon on
+the far right of the cloud row, or click the name of the cloud and
+select “Edit” in the top right of the cloud page. From the “Account”
+drop down, select the account to assign the cloud to. The visibility
+will automatically be set to “Private” when a cloud is assigned to a
+sub-account. Select “Save Changes” in the lower right of the Edit Cloud
+modal.</p>
+<p>When a cloud is assigned to a sub-account, or assigned to the Master
+Account with private visibility, that cloud and all of its resources are
+only available to the assigned account. The Master account still
+maintains control and visibility, and can edit the cloud settings or
+re-assign the cloud.</p>
+<p>Resource Visibility &amp; Assignment</p>
+<p>Similar to clouds, individual resources from the Master Account can be
+set to public and available to sub-accounts, or assigned to
+sub-accounts.</p>
+<p>By default, any host, virtual machine, bare metal server, network,
+resource pool, datastore or template added, created or inventoried by an
+account is assigned to that account. If these resources are in the
+Master Account, they can be assigned to sub accounts. Assigning one of
+these resources will make it unavailable to the Master Account, but it
+will still be visible and editable by the Master Account. This allows
+Master Account resources to be isolated for use by sub-accounts while
+still under the control of the Master Account.</p>
+<p>Resources assigned to sub-accounts from the Master Account will be
+visible and available for use by that sub-account, however they cannot
+be edited or re-assigned by the sub-accout.</p>
+<p>Set the Visibility of a Host, Virtual Machine or Bare metal Server to
+Public or Private</p>
+<p>From the Master Account, navigate to Infrastructure, Hosts Select either
+the Hosts, Virtual Machines or Bare Metal tab Click the name of the
+resource Select “Edit” in the top right of the resource page to bring up
+the config modal. From the “Visibility” drop down, select either
+“Public” or “Private” Select “Save Changes” in the lower right of the
+modal</p>
+<p>Assigning a Host, Virtual Machine, or Bare Metal server to an Account</p>
+<p>From the Master Account, navigate to Infrastructure, Hosts Select either
+the Hosts, Virtual Machines or Bare Metal tab Click the name of the
+resource From the “Actions” dropdown in the top right of the resource
+page, select Assign Account In the Assign Account modal, select the
+account to assign the resource to. Select “Execute” in the lower right
+of the modal The resource will now be assigned and available for use by
+the assigned account. If assigned to a sub-account, the Master Account
+will maintain visibility and control.</p>
+<p>Set the Visibility of a Network to Public or Private</p>
+<p>From the Master Account, navigate to Infrastructure, Network Select
+either the pencil/edit icon on the far right of the network row, or
+click the name of the network and select “Edit” in the top right of the
+network page. From the “Visibility” drop down, select either “Public” or
+“Private” Select “Save Changes” in the lower right of the modal</p>
+<p>Assign a Network to an Account</p>
+<p>From the Master Account, navigate to Infrastructure, Network Select
+either the pencil/edit icon on the far right of the network row, or
+click the name of the network and select “Edit” in the top right of the
+network page. From the “Account” drop down, select an account to assign
+the network to. Select “Save Changes” in the lower right of the modal</p>
+<p>The Network will now be assigned and available for use by the assigned
+account. If assigned to a sub-account, the Master Account will maintain
+visibility and control.</p>
+<p>Set the Visibility or assign a datastore to an Account</p>
+<p>From the Master Account, navigate to Infrastructure, Storage Select the
+“Data Stores” tab Select Edit from the “Actions” dropdown on the far
+right of the datastores row From the “Visibility” drop down, select
+either “Public” or “Private” From the “Account” drop down, select the
+account to assign the datastore to. Note: If assigned to a sub-account,
+the visibility will automatically set to private. Select “Save Changes”
+in the lower right of the modal</p>
+<p>Set the Visibility or assign a Virtual Image to an Account</p>
+<p>From the Master Account, navigate to Provisioning, Virtual Images Select
+Edit from the “Actions” dropdown on the far right of the Virtual Images
+row From the “Visibility” drop down, select either “Public” or
+“Private”. Public will share the From the “Account” field, start typing
+the name of the account to assign the Virtual Image to. Matching
+accounts will populate, then select the account to add. Note: Virtual
+Images can be set to Private, but accessible to more that one account
+Repeat step 4 for all accounts requiring access to the virtual image. To
+remove access for an account, click the “x” next to the account name
+Select “Save Changes” in the lower right of the modal</p>
+<p>The Virtual Image will now be available for use by the assigned
+accounts.</p>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, jw.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

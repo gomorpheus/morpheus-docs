@@ -1,0 +1,346 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Monitoring Settings &mdash; jwtest 1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../../_static/my_theme.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="../../genindex.html"/>
+        <link rel="search" title="Search" href="../../search.html"/>
+    <link rel="top" title="jwtest 1 documentation" href="../../index.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html">
+          
+
+          
+            
+            <img src="../../_static/logo.svg" class="logo" />
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../getting_started/getting_started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../provisioning/provisioning.html">Provisioning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../infrastructure/infrastructure.html">Infrastructure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../administration.html">Administration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../monitoring/monitoring.html">Monitoring</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../logs/logging.html">Logs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../backups/backups.html">Backups</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../operations/operations.html">Operations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../services/services.html">Services</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../integration_guides/integration_guides.html">Integration Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../faq/faqs.html">FAQ’s</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../release_notes/release_notes.html">Release Notes</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">jwtest</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+      <li>Monitoring Settings</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/administration/monitoring/monitoring.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="monitoring-settings">
+<h1>Monitoring Settings<a class="headerlink" href="#monitoring-settings" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
+<p>The <code class="docutils literal"><span class="pre">Administration</span> <span class="pre">-&gt;</span> <span class="pre">Monitoring</span></code> section is for configuring |morpheus| Monitoring and Monitoring Integrations.</p>
+</div>
+<div class="section" id="morpheus-monitoring-settings">
+<h2>|morpheus| Monitoring Settings<a class="headerlink" href="#morpheus-monitoring-settings" title="Permalink to this headline">¶</a></h2>
+<dl class="docutils">
+<dt>Auto Create Checks</dt>
+<dd>When enabled a Monitoring Check will automatically be create for Instances and Apps.</dd>
+<dt>Availability Time Frame</dt>
+<dd>The number of days availability should be calculated for. Changes will not take effect until your checks have passed their check interval.</dd>
+<dt>Availability Precision</dt>
+<dd>The number of decimal places availability should be displayed in. Can be anywhere between 0 and 5.</dd>
+<dt>Default Check Interval</dt>
+<dd>The default interval to use when creating new checks.</dd>
+</dl>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Monitoring Checks can be manually configured if <cite>Auto Create Checks</cite> is disabled.</p>
+</div>
+<p>//add includes for app dynamics, servicenow and new relic adocs</p>
+</div>
+<div class="section" id="appdynamics">
+<h2>AppDynamics<a class="headerlink" href="#appdynamics" title="Permalink to this headline">¶</a></h2>
+<p>AppDynamics Monitoring Integration Settings</p>
+<dl class="docutils">
+<dt>Enabled</dt>
+<dd>Enables the AppDynamics Integration</dd>
+<dt>Controller Host</dt>
+<dd>This is the host name or the IP address of the AppDynamics Controller. This is the same host that you use to access the AppDynamics browser-based user interface.</dd>
+<dt>Controller Port</dt>
+<dd>This is the HTTP(S) port of the AppDynamics Controller. This is the same port that you use to access the AppDynamics browser-based user interface. If the Controller SSL Enabled property is set to true, specify the HTTPS port of the Controller; otherwise specify the HTTP port.</dd>
+<dt>Controller SSL Enabled</dt>
+<dd>This property specifies whether the agent should use SSL (HTTPS) to connect to the Controller. If SSL Enabled is true, set the Controller Port property to the HTTPS port of the Controller.</dd>
+<dt>Tenant Name</dt>
+<dd>This is the account name used to authenticate with the Controller.</dd>
+<dt>Access Key</dt>
+<dd>This is the account access key used to authenticate with the Controller.</dd>
+<dt>Controller Version</dt>
+<dd>This is the controller version and can be obtained at the bottom of the controller login page.</dd>
+<dt>Application Name</dt>
+<dd>This is the name of the logical business application. Note that this is not the deployment name(ear/war/jar) on the application server. (Maximum of 30 numbers or letters)</dd>
+<dt>Tier Name</dt>
+<dd>This is the name of the logical tier. (Maximum of 30 numbers or letters)</dd>
+<dt>Controller User</dt>
+<dd>A user that can login to the Controller ui and upload a dashboard.</dd>
+<dt>Controller Password</dt>
+<dd>Password for the Controller User.</dd>
+</dl>
+</div>
+<div class="section" id="service-now">
+<h2>Service Now<a class="headerlink" href="#service-now" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="servicenow-monitoring-integration-settings">
+<h3>ServiceNow Monitoring Integration Settings<a class="headerlink" href="#servicenow-monitoring-integration-settings" title="Permalink to this headline">¶</a></h3>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">A ServiceNow Integration must be already configured in <cite>Administration -&gt; Integrations</cite> to enable the ServiceNow Monitoring Integration.</p>
+</div>
+<dl class="docutils">
+<dt>Enabled</dt>
+<dd>Enables the ServiceNow Monitoring Integration</dd>
+<dt>Integration</dt>
+<dd>Select from a ServiceNow Integration added in <cite>Administration -&gt; Integrations</cite></dd>
+<dt>New Incident Action</dt>
+<dd>The Service Now action to take when a Morpheus incident is created.</dd>
+<dt>Close Incident Action</dt>
+<dd>The Service Now action to take when a Morpheus incident is closed.</dd>
+</dl>
+<p>Incident Severity Mapping</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="48%" />
+<col width="53%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>|morpheus| Severity</td>
+<td>ServiceNow Impact</td>
+</tr>
+<tr class="row-even"><td>Info</td>
+<td>Low/Medium/High</td>
+</tr>
+<tr class="row-odd"><td>Warning</td>
+<td>Low/Medium/High</td>
+</tr>
+<tr class="row-even"><td>Critical</td>
+<td>Low/Medium/High</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="new-relic">
+<h2>New Relic<a class="headerlink" href="#new-relic" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="new-relic-integration-settings">
+<h3>New Relic Integration Settings<a class="headerlink" href="#new-relic-integration-settings" title="Permalink to this headline">¶</a></h3>
+<dl class="docutils">
+<dt>Enabled</dt>
+<dd>Enables the New Relic Monitoring Integration</dd>
+<dt>License Key</dt>
+<dd>License Key to be used when installing the New Relic agent in order for the agent to report data to your New Relic account</dd>
+</dl>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The License Key is the 40-character hexadecimal string that New Relic provides when you sign up for your account.</p>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, jw.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

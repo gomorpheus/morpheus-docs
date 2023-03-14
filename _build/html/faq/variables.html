@@ -1,0 +1,292 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>.. code-block:: bash &#8212; testtoca 11 documentation</title>
+    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '11',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <p>[[variables]]</p>
+<p>=== Variables</p>
+<p>The following are the map structures passed to scripts and templates during provisioning. They can currently be used inside of a <cite>&lt;%= %&gt;</cite> block.</p>
+<p>PowerShell Example:
+[source,shell]
+<cite>$app_id = “&lt;%= instance.metadata.app_id %&gt;”</cite></p>
+<p>Bash Example:
+.. code-block:: bash
+<cite>HOSTNAME=”&lt;%= container.server.hostname %&gt;”</cite></p>
+<p>NOTE: customOptions are user defined as Option Types or Option Lists in custom Library items.</p>
+<div class="section" id="source-bash">
+<h1>.. code-block:: bash<a class="headerlink" href="#source-bash" title="Permalink to this headline">¶</a></h1>
+<dl class="docutils">
+<dt>instance {</dt>
+<dd>instanceTypeName,
+instanceTypeCode,
+provisionType,
+instanceVersion,
+plan,
+name,
+displayName,
+description,
+environmentPrefix,
+hostname,
+domainName,
+firewallEnabled,
+status,
+userStatus,
+networkLevel,
+instanceLevel,
+deployGroup,
+instanceContext,
+autoScale,
+statusMessage,
+expireDate,
+tags,
+storage,
+memory,
+cores,
+configId,
+configGroup,
+configRole
+containers:[],
+metadata:[],
+evars:[]</dd>
+</dl>
+</div>
+<div class="section" id="id1">
+<h1>}<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+</div>
+<div class="section" id="id2">
+<h1>.. code-block:: bash<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h1>
+<dl class="docutils">
+<dt>container {</dt>
+<dd>containerTypeName,
+containerTypeCode,
+containerTypeShortName,
+provisionType,
+dataPath,
+logsPath,
+configPath,
+planCode,
+dateCreated,
+status,
+environmentPrefix,
+version,
+image,
+internalHostname,
+hostname,
+domainName,
+storage,
+memory,
+cores,
+internalIp,
+externalIp,
+sshHost,
+hostMountPoint,
+configId,
+configGroup,
+configRole,
+serverId,
+server:{}</dd>
+</dl>
+</div>
+<div class="section" id="id3">
+<h1>}<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h1>
+</div>
+<div class="section" id="id4">
+<h1>.. code-block:: bash<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h1>
+<dl class="docutils">
+<dt>server {</dt>
+<dd>serverTypeName,
+serverTypeCode,
+parentServerId,
+plan,
+visibility,
+osTypeCode,
+sourceImageId,
+name,
+displayName,
+internalName,
+category,
+description
+internalId,
+externalId,
+platform,
+platformVersion,
+agentVersion,
+nodePackageVersion,
+sshHost,
+sshPort,
+sshUsername,
+consoleType,
+consoleHost,
+consolePort,
+consoleUsername,
+internalSshUsername,
+internalIp,
+externalIp,
+osDevice,
+dataDevice,
+lvmEnabled,
+apiKey,
+softwareRaid,
+status,
+powerState,
+dateCreated,
+lastAgentUpdate,
+serverType,
+osType,
+commType,
+managed,
+agentInstalled,
+toolsInstalled,
+hostname,
+domainName,
+statusMessage,
+maxStorage,
+maxMemory,
+maxCores,
+macAddress,
+serverVendor,
+serverModel,
+serialNumber,
+tags,
+configId,
+configGroup,
+configRole</dd>
+</dl>
+</div>
+<div class="section" id="id5">
+<h1>}<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h1>
+</div>
+<div class="section" id="id6">
+<h1>.. code-block:: bash<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h1>
+<dl class="docutils">
+<dt>cloud {</dt>
+<dd>name,
+code,
+location,
+cloudTypeName,
+cloudTypeCode,
+domainName,
+scalePriority,
+firewallEnabled,
+regionCode,
+agentMode,
+datacenterId</dd>
+</dl>
+</div>
+<div class="section" id="id7">
+<h1>}<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h1>
+</div>
+<div class="section" id="id8">
+<h1>.. code-block:: bash<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h1>
+<dl class="docutils">
+<dt>group {</dt>
+<dd>code,
+name,
+location,
+datacenterId</dd>
+</dl>
+</div>
+<div class="section" id="id9">
+<h1>}<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h1>
+</div>
+<div class="section" id="id10">
+<h1>.. code-block:: bash<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h1>
+<dl class="docutils">
+<dt>customOptions {</dt>
+<dd>customOptions.fieldName</dd>
+</dl>
+</div>
+<div class="section" id="id11">
+<h1>}<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h1>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../index.html">testtoca</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2017, JW.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.6.3</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
+      
+      |
+      <a href="../_sources/faq/variables.adoc.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

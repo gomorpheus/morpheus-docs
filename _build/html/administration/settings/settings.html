@@ -1,0 +1,170 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>&lt;no title&gt; &#8212; testtoca 11 documentation</title>
+    <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '11',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+   
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <p>[[appliance_settings]]</p>
+<p>== Appliance Settings</p>
+<p>The <cite>Administration -&gt; Settings</cite> section sets global configuration parameters for the Appliance, Tenant Registration, Email, Proxy and sets which Cloud types are enabled.</p>
+<p>=== Appliance Settings</p>
+<p>Host Level Firewall Enabled:: Enables or Disables the host level firewall. This must be Enabled to use |morpheus| Security Groups.
+Appliance URL:: The default URL used for Agent install and Agent functionality. All Instances and Hosts must be able to resolve and reach this URL over 443 for successful agent install and communication.
+NOTE:: Alternate Appliance URLs can be configured per Cloud in the <cite>Edit Cloud -&gt; Advanced Options</cite> section.
+Internal Appliance URL (PXE):: For PXE-Boot your appliance needs to be routable directly with minimal NAT masquerading. This allows one to override the default appliance url endpoint for use by the PXE Server. If this is unset, the default appliance url will be used instead.
+API Allowed Origins: Specifies which origins are allowed to access the |morpheus| API.</p>
+<p>=== Tenant Management Settings</p>
+<p>Registration Enabled:: If enabled, the appliance login screen will have a “NEED AN ACCOUNT? SIGN UP HERE” link added, enabling new Tenant registration.
+Default Tenant Role:: Sets the default Tenant Role applied to Tenants created from Tenant Registration.
+Default User Role:: Sets the default User Role applied to the User created from a Tenant Registration.
+//Docker Privileged Mode:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">===</span> <span class="n">Email</span> <span class="n">Settings</span>
+</pre></div>
+</div>
+<p>|morpheus| has a built in SMTP server for email notifications and alerts. An alternate SMTP server can be specified below:</p>
+<p>==== Add an alternate SMTP Server:</p>
+<ul class="simple">
+<li>From Address</li>
+<li>SMTP Server</li>
+<li>SMTP Port</li>
+<li>SSL Enabled</li>
+<li>TLS Encryption</li>
+<li>SMTP User</li>
+<li>SMTP Password</li>
+</ul>
+<p>=== Proxy Settings</p>
+<p>The |morpheus| Appliance can be configured to communicate through a Proxy server for Cloud API’s and Agent communication back to the Appliance.</p>
+<p>NOTE: Additional Proxy configuration is available in the <cite>Infrastructure -&gt; Network -&gt; Proxies</cite> section. Added Proxies can be scoped to Clouds in the <cite>Edit Cloud -&gt; Advanced Options</cite> section of the Cloud.</p>
+<p>==== Add a Global Proxy server by entering the following:</p>
+<ul class="simple">
+<li>Proxy Host</li>
+<li>Proxy Port</li>
+<li>Proxy User</li>
+<li>Proxy Password</li>
+<li>Proxy Domain</li>
+<li>Proxy Workstation</li>
+</ul>
+<p>=== Enabled Clouds</p>
+<p>Cloud types can be Enabled or Disabled in this section. When a Cloud type is disabled, it will be removed from the available options when adding new clouds in the <cite>Infrastructure</cite> section.</p>
+<p>==== Available Cloud types:</p>
+<ul class="simple">
+<li>Morpheus</li>
+<li>OpenStack</li>
+<li>Amazon</li>
+<li>Metacloud</li>
+<li>VMware vCenter</li>
+<li>VMware vCloud Air</li>
+<li>SoftLayer</li>
+<li>Google Cloud</li>
+<li>Azure (Public)</li>
+<li>Azure Stack (Private)</li>
+<li>DigitalOcean</li>
+<li>VirtualBox</li>
+<li>VMware Fusion</li>
+<li>VMWare ESXi</li>
+<li>Nutanix</li>
+<li>UCS</li>
+<li>XenServer</li>
+<li>Hyper-V</li>
+<li>MacStadium</li>
+<li>Oracle VM</li>
+<li>HP</li>
+<li>Supermicro</li>
+<li>Dell</li>
+<li>SCVMM</li>
+<li>UpCloud</li>
+<li>Kubernetes</li>
+<li>Cloud Foundry</li>
+</ul>
+<p>include::whitelabel.rst
+include::license.rst</p>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../../index.html">testtoca</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2017, JW.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.6.3</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
+      
+      |
+      <a href="../../_sources/administration/settings/settings.adoc.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

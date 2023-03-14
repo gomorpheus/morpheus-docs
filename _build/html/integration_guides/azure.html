@@ -1,0 +1,420 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>&lt;no title&gt; &mdash; jwtest 1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../_static/my_theme.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
+    <link rel="top" title="jwtest 1 documentation" href="../index.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html">
+          
+
+          
+            
+            <img src="../_static/logo.svg" class="logo" />
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/getting_started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../provisioning/provisioning.html">Provisioning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../infrastructure/infrastructure.html">Infrastructure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../administration/administration.html">Administration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../monitoring/monitoring.html">Monitoring</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../logs/logging.html">Logs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../backups/backups.html">Backups</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../operations/operations.html">Operations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../services/services.html">Services</a></li>
+<li class="toctree-l1"><a class="reference internal" href="integration_guides.html">Integration Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faq/faqs.html">FAQ’s</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../release_notes/release_notes.html">Release Notes</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">jwtest</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>&lt;no title&gt;</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/integration_guides/azure.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <p>[[azure]]</p>
+<p>== Azure</p>
+<p>Azure is Microsoft’s public cloud offering. Offering a full range of services and features across the globe in various datacenters. It is the equivalent of AWS for Microsoft running primarily on the Hyper-V based hypervisor. While it is a great public cloud offering, it can be somewhat difficult to get integrated with which is what this guide aims to cover.</p>
+<p>|morpheus| Azure Integration Features:</p>
+<ul class="simple">
+<li>Virtual Machine Provisioning</li>
+<li>Azure SQL Database</li>
+<li>Backups / Snapshots</li>
+<li>Resource Group Sync &amp; Selection</li>
+<li>Network Sync &amp; Selection</li>
+<li>Security Group Sync &amp; Selection</li>
+<li>Storage Account Sync &amp; Selection</li>
+<li>Marketplace Search and Provisioning</li>
+<li>Azure Marketplace Custom Library Item Support</li>
+<li>Remote Console</li>
+<li>Periodic Synchronization</li>
+<li>Lifecycle Management and Resize</li>
+<li>Availability Set Support</li>
+<li>Azure Load Balancers</li>
+<li>Azure Storage</li>
+<li>Docker Host Provisioning &amp; Management</li>
+<li>Service Plan Sync</li>
+<li>Pricing Sync with markup options</li>
+<li>Cost Estimator</li>
+</ul>
+<p>Combine these features with on premise solutions like Azure-Stack and |morpheus| can provide a single pane of glass and self service portal for managing instances scattered across both public Azure and private Azure Stack offerings.</p>
+<p>NOTE: |morpheus| even supports integrating with CSP based accounts in Azure (typically used by managed service providers).</p>
+<p>=== Azure Integration Requirements</p>
+<ul class="simple">
+<li>Azure Active Directory Application &amp; Credentials</li>
+</ul>
+<p>** Client ID (old portal) / Application ID (new portal)
+** Client Secret (old portal) / Key Value (new portal)
+** Tenant ID (old Portal) / Directory ID (new portal)
+** Azure Subscription ID
+* Above Active Directory App added as owner of this Azure Subscription
+* Existing Azure Resources
+** Network Security Group(s)
+<strong>* Typical Inbound ports open from |morpheus| Appliance: 22, 5985, 3389
+*</strong> Typical Outbound to |morpheus| Appliance: 80, 443
+<a href="#id1"><span class="problematic" id="id2">**</span></a>** These are required for |morpheus| agent install, communication, and remote console access for windows and linux. Other configurations, such as docker instances, will need the appropriate ports opened as well.
+** Virtual Network(s)
+<a href="#id3"><span class="problematic" id="id4">**</span></a>* Public IP assignment required for instances if |morpheus| Appliance is not able to communicate with Azure instances private ip’s.
+** Resource Group(s)
+** Storage Account(s)</p>
+<p>NOTE: |morpheus| v2.10.3 added support for multiple Resource Groups and Storage Accounts per cloud, making our Azure integration more capable and easier to configure. Prior versions of |morpheus| supported one resource group and one storage account per cloud, with the security group and network selection limited to the scoped Resource Group. If you are on an earlier version of |morpheus| , please note you will need to add an Azure cloud integration for each Resource Group and Storage Account you would like to use.</p>
+<p>=== Azure Active Directory Credentials</p>
+<p>If you do not already have the Azure Active Directory credentials required to add an Azure cloud to |morpheus| , use the steps below to obtain them.</p>
+<p>IMPORTANT: Microsoft recently added support for Active Directory application configuration in the new Azure portal. Previously, users had to use the old portal to get the required credentials to integrate Azure with |morpheus| . The instructions below are updated for the new portal. Microsoft also changed the naming conventions of the credentials:</p>
+<p>.Old and New Portal Naming Conventions
+[width=”90%”,frame=”topbot”,options=”header,footer”]
+<a href="#id5"><span class="problematic" id="id6">|</span></a>======================
+<a href="#id7"><span class="problematic" id="id8">|</span></a>Old Azure Portal Name <a href="#id9"><span class="problematic" id="id10">|</span></a>New Azure Portal Name
+<a href="#id11"><span class="problematic" id="id12">|</span></a>Tenant ID|Directory ID
+<a href="#id13"><span class="problematic" id="id14">|</span></a>Client ID|Application ID
+<a href="#id15"><span class="problematic" id="id16">|</span></a>Client Secret|Key (Value)
+<a href="#id17"><span class="problematic" id="id18">|</span></a>======================</p>
+<p>=== Creating an Azure Active Directory Application</p>
+<p>If you do not have an existing Azure Active Directory application for |morpheus| , you will need to create a new on by:</p>
+<p>. Log into the Azure portal
+. Select “Azure Active Directory”
+. Select “App Registrations”
+. Select “New Application Registration”
++
+image::images/newazure-f3af4.png[]
++
+. Next, give your new AD app a name, specify Web app / API for the type (default) and enter any url for the Sign-on URL:
++
+image::images/newazure-8c7ca.png[]
++
+. Click Create and your new Azure Active Directory Application will be created.</p>
+<p>image::images/newazure-f4e2d.png[]</p>
+<p>Now that we have (or already had) our AD app, we will gather the credentials required for the |morpheus| Azure integration.</p>
+<p>=== Tenant ID/Directory ID</p>
+<p>While still in the Active Directory Section:</p>
+<p>. Select Properties
+. Copy the Directory ID
+. Store/Paste for use as the Tenant ID when Adding your Azure cloud in |morpheus| </p>
+<p>image::images/newazure-044cf.png[]</p>
+<p>=== Client ID/Application ID</p>
+<p>. Select App Registrations
+. Select your Active Directory Application
+. Copy the Application ID
+. Store/Paste for use as the Client ID when Adding your Azure cloud in |morpheus| </p>
+<p>image::images/newazure-3c6fa.png[]</p>
+<p>=== Client Secret/Key Value</p>
+<p>While still in your Active Directory Application:</p>
+<p>. Select Keys in the Settings pane
+. Enter a name for the key
+. Select a duration
+. Select save
+. Copy the Key Value
+. Store/Paste for use as the Client ID when Adding your Azure cloud in |morpheus| </p>
+<p>IMPORTANT: Copy the key value. You won’t be able to retrieve after you leave this blade.</p>
+<p>image::images/newazure-7b82b.png[]</p>
+<p>You now have the 3 Active directory credentials required for |morpheus| Azure cloud integration.</p>
+<p>=== Subscription ID</p>
+<p>The last credential required for the |morpheus| Azure cloud integration is the Azure Subscription ID</p>
+<p>. Select Resource Groups
+. Select a Resource Group (instruction below if you do not have an existing resource group)
+. Copy the Subscription ID
+. Store/Paste for use as the Subscription ID when Adding your Azure cloud in |morpheus| 
++
+image::images/newazure-e446f.png[]</p>
+<p>=== Make Azure Active Directory Application owner of Subscription</p>
+<p>The Active Directory Application used needs to be an owner of the subscription used for the Azure |morpheus| cloud integration.</p>
+<p>. In the Subscription pane, select “Access Control (IAM)”
++
+image::images/newazure-bd9f1.png[]</p>
+<p>. Click “+ Add”, in the pane to the right, select “1 Select a role” and then select “Owner”
++
+image::images/newazure-cfd51.png[]</p>
+<p>. Select “2. Add Users” and in the search box begin to type the name of the AD Application created earlier. Please note the AD Application will not display by default and must be searched for.
++
+image::images/newazure-7f61c.png[]</p>
+<p>. Select the Application, then click “Select” at the bottom of the Add Users pane, and the select “OK” at the bottom of the Add Access pane.</p>
+<p>IMPORTANT: Be sure to select “OK” at the bottom of the Add Access pane or the user addition will not save.</p>
+<p>image::images/newazure-560be.png[]</p>
+<p>You now have the required Credentials to add an Azure cloud integration into |morpheus| .</p>
+<p>IMPORTANT: You will also need to have existing Network Security Group(s), Virtual Networks(s) and Storage Accounts(s). Instructions for creating these can be found later in this article.</p>
+<p>=== Add Azure cloud in |morpheus| </p>
+<p>Azure is now ready to be added into |morpheus| . Ensure you have the noted Subscription ID, Tenant ID, Client ID, and Client Secret accessible.</p>
+<p>In Infrastructure - Clouds, select “+ Create Cloud” and select Azure from the cloud widget.</p>
+<p>OR</p>
+<p>In Infrastructure, Groups- you can select the Clouds tab of a Group and click “+ ADD” next to Azure in the Public Cloud section, and enter the following:</p>
+<ul class="simple">
+<li>Name</li>
+<li>Location (optional)</li>
+<li>Domain (if not localdomain)</li>
+<li>Scale Priority</li>
+<li>Subscription ID (from step 18)</li>
+<li>Tenant ID (from step 16)</li>
+<li>Client ID (from step 13)</li>
+<li>Client Secret (from step 13)</li>
+</ul>
+<p>If everything is entered correctly, the Location dropdown will populate.</p>
+<p>. Select the Location/Region to scope the cloud to (additional Clouds can be added for multiple regions)
+. Select All or specify a Resource Group to scope this cloud to
+. Optionally select “Inventory Existing Instances”
+(This will inventory your existing vm’s in Azure and list them in |morpheus| as unmanaged instances.)
+. Click “Save Changes”</p>
+<p>image::images/newazure-5f512.png[]</p>
+<p>Your Azure Cloud will be created.</p>
+<p>image::images/newazure-2a7fe.png[]</p>
+<p>=== Creating Resources in Azure</p>
+<p>If you do not have existing Network Security Groups, Virtual Networks, or Storage Accounts, you can create them by following the steps below:</p>
+<p>=== Create a Network Security Group</p>
+<p>. In the main Azure toolbar, select the right arrow at the bottom of the toolbar (if collapsed) and search for and select Network Security Groups.
++
+image::images/newazure-83506.png[]</p>
+<p>. Click “+ Add” at the top of the Network security groups pane
++
+image::images/newazure-3357f.png[]</p>
+<p>. Enter a unique name for the security group, select the correct subscription, and either select the resource group being used, or create a new one as shown below. Also verify the Location is the same, and then click “Create” at the bottom of the pane.
++
+image::images/newazure-7c098.png[]</p>
+<p>. Configure inbound and outbound rules for the security group. Ports 80 (http), 443 (https) 22 (ssh) and 5985 (winrm) need to be open to and from the |morpheus| appliance.</p>
+<p>=== Create a Virtual Network</p>
+<p>. In the main Azure toolbar, select the right arrow at the bottom of the toolbar (if collapsed) and search for and select Virtual Networks.
++
+image::images/newazure-7ecb2.png[]</p>
+<p>. Click “+ Add” at the top of the Virtual Networks pane
++
+image::images/newazure-db3a5.png[]</p>
+<p>. Enter a unique name for the virtual network, the correct subscription, select “Use existing” and select the same resource group as the Network Security Group. Also verify the Location is the same, and then click “Create” at the bottom of the pane.
++
+image::images/newazure-a3066.png[]</p>
+<p>=== Create a Storage Account</p>
+<p>. In the main Azure toolbar, select the right arrow at the bottom of the toolbar (if collapsed) and search for and select Storage Accounts.
++
+image::images/newazure-4429f.png[]</p>
+<p>. Click “+ Add” at the top of the Storage accounts pane
++
+image::images/newazure-7947e.png[]</p>
+<p>. Enter a unique name for the storage account, select “Locally-redundant storage (LRS) for Replication, select the correct subscription, select “Use existing” and select the same resource group as the Network Security Group and Virtual Network. Also verify the Location is the same, and finally click “Create” at the bottom of the pane.
++
+image::images/newazure-b89ea.png[]</p>
+<p>=== Docker</p>
+<p>So far this document has covered how to add the Azure cloud integration and has enabled users the ability to provision virtual machine based instances via the Add Instance catalog in Provisioning. Another great feature provided by |morpheus| out of the box is the ability to use Docker containers and even support multiple containers per Docker host. To do this a Docker Host must first be provisioned into Azure (multiple are needed when dealing with horizontal scaling scenarios).</p>
+<p>image::images/newazure-7971d.png[]</p>
+<p>To provision a Docker Host simply navigate to the Cloud detail page or Infrastructure?Hosts section. From there click the + Container Host button to add a Azure Docker Host. This host will show up in the Hosts tab. |morpheus| views a Docker host just like any other Hypervisor with the caveat being that it is used for running containerized images instead of virtualized ones. Once a Docker Host is successfully provisioned a green checkmark will appear to the right of the host marking it as available for use. In the event of a failure click into the relevant host that failed and an error explaining the failure will be displayed in red at the top.</p>
+<p>Some common error scenarios include network connectivity. For a Docker Host to function properly, it must be able to resolve the |morpheus| appliance url which can be configured in Admin|Settings. If it is unable to resolve and negotiate with the appliance than the agent installation will fail and provisioning instructions will not be able to be issued to the host.</p>
+<p>=== Multi-tenancy</p>
+<p>A very common scenario for Managed Service Providers is the need to provide access to Azure resources on a customer by customer basis. With Azure several administrative features have been added to ensure customer resources are properly scoped and isolated. For Azure it is possible to assign specific Networks, and Resource Groups to customer accounts or even set the public visibility of certain resources, therefore allowing all sub accounts access to the resource.</p>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, jw.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

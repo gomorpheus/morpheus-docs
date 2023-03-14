@@ -1,0 +1,291 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Apps &mdash; jwtest 1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../../_static/my_theme.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="../../genindex.html"/>
+        <link rel="search" title="Search" href="../../search.html"/>
+    <link rel="top" title="jwtest 1 documentation" href="../../index.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html">
+          
+
+          
+            
+            <img src="../../_static/logo.svg" class="logo" />
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../getting_started/getting_started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../provisioning.html">Provisioning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../infrastructure/infrastructure.html">Infrastructure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../administration/administration.html">Administration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../monitoring/monitoring.html">Monitoring</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../logs/logging.html">Logs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../backups/backups.html">Backups</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../operations/operations.html">Operations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../services/services.html">Services</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../integration_guides/integration_guides.html">Integration Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../faq/faqs.html">FAQ’s</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../release_notes/release_notes.html">Release Notes</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">jwtest</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+      <li>Apps</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/provisioning/apps/create_an_app.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="apps">
+<h1>Apps<a class="headerlink" href="#apps" title="Permalink to this headline">¶</a></h1>
+<p>Apps allow instances having general relationships to be grouped in a
+clean and organized manner. App functionality enables full control of
+which instances belong in an app as well setting Firewall and Access
+Control List (ACL) rules. Use Apps to structure all necessary components
+into a single place. Add checks and groups for web servers, database
+nodes, etc.</p>
+<div class="section" id="creating-apps">
+<h2>Creating Apps<a class="headerlink" href="#creating-apps" title="Permalink to this headline">¶</a></h2>
+<p>To create and App, click “+ADD APP” on the right side of the main Apps
+section in Provisioning.</p>
+<img alt="../../_images/howtocreateapp-ee817.png" src="../../_images/howtocreateapp-ee817.png" />
+<p>Next fill in the Setup tab with your App name, optional description, and
+select a resource group:</p>
+<img alt="../../_images/howtocreateapp-7f57d.png" src="../../_images/howtocreateapp-7f57d.png" />
+<p>In the LAYOUT tab, you have the option of selecting a Template (created
+in the Templates section) or Add Tiers. To use a Template, select a
+Template from the dropdown and your app will populate in the layout
+section. You can add to, modify, edit your template, or simply click
+next of the Template is fully configured:</p>
+<img alt="../../_images/howtocreateapp-680f5.png" src="../../_images/howtocreateapp-680f5.png" />
+<p>To create an app without a Template, start by adding a Tier by clicking “+ ADD TIER”. Name the Tier by selecting a pre-populated, recently used, or add a new/custom Tier name:</p>
+<img alt="../../_images/howtocreateapp-07e66.png" src="../../_images/howtocreateapp-07e66.png" />
+<p>For each Tier added, a new Tier container is created, and the Tier is
+added to the Tier list:</p>
+<img alt="../../_images/howtocreateapp-8b54f.png" src="../../_images/howtocreateapp-8b54f.png" />
+<p>Next click +Add Instance to add a new instance, or select from existing
+instances using the Existing tab. Multiple instances can be added to a
+single container as well:</p>
+<img alt="../../_images/howtocreateapp-ab55e.png" src="../../_images/howtocreateapp-ab55e.png" />
+<p>After adding all instances, click out of the Add Instance pop up to
+return to the layout page. Continue to add all Tiers and instances for
+your App:</p>
+<img alt="../../_images/howtocreateapp-119c3.png" src="../../_images/howtocreateapp-119c3.png" />
+<p>To configure new or existing instances, hover over the instance name in
+the Tier List and click the Settings gear icon. (Instances can also be
+fully configured/edited in the Configure tab by clicking next in the
+bottom right):</p>
+<img alt="../../_images/howtocreateapp-f3949.png" src="../../_images/howtocreateapp-f3949.png" />
+<p>To link Tiers, hover over a Tier, click the blue circle at the top of a
+Tier and drag the arrow over the top of the Tier you would like to link:</p>
+<img alt="../../_images/howtocreateapp-b92f5.png" src="../../_images/howtocreateapp-b92f5.png" />
+<p>To remove a Tier or Instance, click the trash icon. Once your App is
+built, click Next in the bottom right.</p>
+<p>In the Configure tab, you can fully configure your instances if they are
+not configured yet, or edit the configurations. If the app was built
+with Existing instances, no configuration options are presented:</p>
+<img alt="../../_images/howtocreateapp-5fd9f.png" src="../../_images/howtocreateapp-5fd9f.png" />
+<p>Once your App is ready, click Complete in the bottom right and your App
+will be created, appear in the App section, and if new instances were
+used, the instances will be provisioned:</p>
+<img alt="../../_images/howtocreateapp-20fbf.png" src="../../_images/howtocreateapp-20fbf.png" />
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, jw.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

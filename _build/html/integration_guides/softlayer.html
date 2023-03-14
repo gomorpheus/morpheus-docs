@@ -1,0 +1,301 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Softlayer &mdash; jwtest 1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../_static/my_theme.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
+    <link rel="top" title="jwtest 1 documentation" href="../index.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html">
+          
+
+          
+            
+            <img src="../_static/logo.svg" class="logo" />
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/getting_started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../provisioning/provisioning.html">Provisioning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../infrastructure/infrastructure.html">Infrastructure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../administration/administration.html">Administration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../monitoring/monitoring.html">Monitoring</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../logs/logging.html">Logs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../backups/backups.html">Backups</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../operations/operations.html">Operations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../services/services.html">Services</a></li>
+<li class="toctree-l1"><a class="reference internal" href="integration_guides.html">Integration Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faq/faqs.html">FAQ’s</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../release_notes/release_notes.html">Release Notes</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">jwtest</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>Softlayer</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/integration_guides/softlayer.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="softlayer">
+<h1>Softlayer<a class="headerlink" href="#softlayer" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="add-a-softlayer-cloud">
+<h2>Add a Softlayer Cloud<a class="headerlink" href="#add-a-softlayer-cloud" title="Permalink to this headline">¶</a></h2>
+<dl class="docutils">
+<dt>Name</dt>
+<dd>Name of the Cloud in |morpheus| </dd>
+<dt>Location</dt>
+<dd>Description field for adding notes on the cloud, such as location.</dd>
+<dt>Visibility</dt>
+<dd>For setting cloud permissions in a multi-tenant environment. Not applicable in single tenant environments.</dd>
+<dt>Username</dt>
+<dd>Softlayer Username</dd>
+<dt>API Key</dt>
+<dd>Softlayer User API Key, accessible in the Softlayer Portal under <cite>Account -&gt; Users -&gt; View API Key</cite></dd>
+<dt>Datacenter</dt>
+<dd>Datacenters will auto-populate upon successful authentication with the above credentials. Select appropriate Datacenter for this Cloud.</dd>
+<dt>Object Store</dt>
+<dd>Select the destination Object Store</dd>
+<dt>Inventory Existing Instances</dt>
+<dd>If enabled, existing Softlayer Instances will be inventoried and appear as unmanaged Virtual Machines in |morpheus| .</dd>
+</dl>
+<p>The Cloud can now be added to a Group or configured with additional Advanced options.</p>
+</div>
+<div class="section" id="advanced-options">
+<h2>Advanced Options<a class="headerlink" href="#advanced-options" title="Permalink to this headline">¶</a></h2>
+<dl class="docutils">
+<dt>DOMAIN</dt>
+<dd>Specify a default domain for instances provisioned to this Cloud.</dd>
+<dt>SCALE PRIORITY</dt>
+<dd>Specifies the priority with which an instance will scale into the cloud. A lower priority number means this cloud integration will take scale precedence over other cloud integrations in the group.</dd>
+<dt>APPLIANCE URL</dt>
+<dd>Alternate Appliance url for scenarios when the default Appliance URL (configured in <cite>admin -&gt; settings</cite>) is not reachable or resolvable for Instances provisioned in this cloud. The Appliance URL is used for Agent install and reporting.</dd>
+<dt>TIME ZONE</dt>
+<dd>Configures the time zone on provisioned VM’s if necessary.</dd>
+<dt>DATACENTER ID</dt>
+<dd>Used for differentiating pricing among multiple datacenters. Leave blank unless prices are properly configured.</dd>
+<dt>DNS INTEGRATION</dt>
+<dd>Records for instances provisioned in this cloud will be added to selected DNS integration.</dd>
+<dt>SERVICE REGISTRY</dt>
+<dd>Services for instances provisioned in this cloud will be added to selected Service Registry integration.</dd>
+<dt>CONFIG MANAGEMENT</dt>
+<dd>Select a Chef, Salt, Ansible or Puppet integration to be used with this Cloud.</dd>
+<dt>AGENT INSTALL MODE</dt>
+<dd><ul class="first last simple">
+<li>SSH / WINRM: |morpheus| will use SSH or WINRM for Agent install.</li>
+<li>Cloud-Init (when available): |morpheus| will utilize Cloud-Init or Cloudbase-Init for agent install when provisioning images with Cloud-Init/Cloudbase-Init installed. |morpheus| will fall back on SSH or WINRM if cloud-init is not installed on the provisioned image.</li>
+</ul>
+</dd>
+<dt>API PROXY</dt>
+<dd>Required when a Proxy Server blocks communication between the |morpheus| Appliance and the Cloud. Proxies can be added in the <cite>Infrastructure -&gt; Networks -&gt; Proxies</cite> tab.</dd>
+</dl>
+</div>
+<div class="section" id="provisioning-options">
+<h2>Provisioning Options<a class="headerlink" href="#provisioning-options" title="Permalink to this headline">¶</a></h2>
+<dl class="docutils">
+<dt>API PROXY</dt>
+<dd>Required when a Proxy Server blocks communication between an Instance and the |morpheus| Appliance. Proxies can be added in the <cite>Infrastructure -&gt; Networks -&gt; Proxies</cite> tab.</dd>
+<dt>Bypass Proxy for Appliance URL</dt>
+<dd>Enable to bypass proxy settings (if added) for Instance Agent communication to the Appliance URL.</dd>
+<dt>USER DATA (LINUX)</dt>
+<dd>Add cloud-init user data using bash syntax.</dd>
+</dl>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, jw.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

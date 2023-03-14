@@ -1,0 +1,377 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Roles &mdash; jwtest 1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../../_static/my_theme.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="../../genindex.html"/>
+        <link rel="search" title="Search" href="../../search.html"/>
+    <link rel="top" title="jwtest 1 documentation" href="../../index.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html">
+          
+
+          
+            
+            <img src="../../_static/logo.svg" class="logo" />
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../getting_started/getting_started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../provisioning/provisioning.html">Provisioning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../infrastructure/infrastructure.html">Infrastructure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../administration.html">Administration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../monitoring/monitoring.html">Monitoring</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../logs/logging.html">Logs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../backups/backups.html">Backups</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../operations/operations.html">Operations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../services/services.html">Services</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../integration_guides/integration_guides.html">Integration Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../faq/faqs.html">FAQ’s</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../release_notes/release_notes.html">Release Notes</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">jwtest</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+      <li>Roles</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/administration/roles/roles.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="roles">
+<h1>Roles<a class="headerlink" href="#roles" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="role-management-overview">
+<h2>Role Management Overview<a class="headerlink" href="#role-management-overview" title="Permalink to this headline">¶</a></h2>
+<p>Within |morpheus| is a wide array of role based access control capabilities. These roles can be managed within the Admin -&gt; Roles section of the morpheus UI as well as through the API or CLI. They are designed to be robust enough to fit within a wide array of enterprise and managed service provider scenarios so they can be a bit hard to grasp at first, but should make sense once a few simple concepts are explained. There are two types of roles within |morpheus| called Tenant and User based roles. Both sets of roles allow restrictions to be imposed on a user at the feature access level. Entire sections within the appliance UI can be hidden based on the specified access levels for features within morpheus. Features have different access scopes that can be selected from and can range depending on the specific feature. The most common scope set involves none, read, and full. Instance Type access is also common among both role types which allow the administrator to restrict which service catalog items they are allowed to provision within |morpheus| .</p>
+<p>There are several handy tricks for creating new roles within morpheus and users can be assigned more than one role. When a user is assigned more than one role, permissions are granted by the role with the highest level of scope access. This allows roles to be built with small subsets of features and combined to grant different individuals relevant permission control.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Feature access control not only applies to the |morpheus| UI but also applies to the public developer API. It is sometimes necessary to logout and back in for changes to a users feature access level to be respected.</p>
+</div>
+</div>
+<div class="section" id="role-types">
+<h2>Role Types<a class="headerlink" href="#role-types" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="tenant-roles">
+<h3>Tenant Roles<a class="headerlink" href="#tenant-roles" title="Permalink to this headline">¶</a></h3>
+<p>A Tenant based role (formerly called an Account based role) is used to ensure access control enforcement across an entire tenant with many sub-users. This allows the subtenant to manage their own set of internal user based roles without worrying master tenant involvement in setting them up. The master tenant is the only tenant able to create and manage these types of roles. When editing a Tenant, a singular tenant role can be assigned to the account. Users within the tenant can be assigned roles but those user based roles will never be able to supersede the level of access granted by the tenant role. This allows a super administrator the ability to restrict access at the department or organization level without having to worry about per user access control within said tenant.</p>
+<p>Tenant roles also have an additional section not in User based roles related to Cloud Access. Cloud Access allows the master tenant the ability to assign cloud integration resources to specific subtenants or groups of subtenants. An example would be granting access to a specific VMware cluster only to a subset of tenants using the tenant based role control.</p>
+</div>
+<div class="section" id="user-roles">
+<h3>User Roles<a class="headerlink" href="#user-roles" title="Permalink to this headline">¶</a></h3>
+<p>User roles can be created by any tenant given permission at the tenant role level. These allow tenants to manage their own sets of users and their levels of access. They also allow tenants to control which users have access to specific “Groups” for provisioning into within morpheus. Groups are not cross tenant and therefore need to be controlled within the individual tenant in |morpheus| .</p>
+<p>Master tenants are able to create a special type of user role called a multi-tenant user role. A multi-tenant user role is copied / duplicated
+down to all subtenants within morpheus. These can be viewed as pre-canned role templates available to new tenants when their account is first created. Any changes made to the main role are propagated down to the subtenants version of the shared role so long as the subtenant has not previously adjusted/changed that role. The moment a subtenant makes adjustments to the shared role within their account, it is unlinked from the parent role and treated entirely independently.</p>
+<p>Another note about user roles is that when a user role is copied down to a subtenant, the permission scopes cannot supersede the tenants assigned
+tenant role. If they do they are automatically downgraded when propagated to the specific tenant. Any changes made to the tenant role will automatically ensure roles within the tenant are downgraded appropriately.</p>
+</div>
+</div>
+<div class="section" id="roles-and-identity-sources">
+<h2>Roles and Identity Sources<a class="headerlink" href="#roles-and-identity-sources" title="Permalink to this headline">¶</a></h2>
+<p>It is very common for large enterprises to have an existing identity source that they would like to plugin to morpheus for authentication. This includes services like LDAP, Active Directory, OKTA, Jump Cloud, One Login, and SAML. When using these services it becomes important to configure a role mapping between the morpheus role assignments to the equivalent identity source groups/roles the user belongs to. This is configurable within the identity source management UI. Sections are
+provided allowing things like LDAP groups to be directly mapped to specific roles within morpheus. If a user matches more than one LDAP/role group then both sets of roles are applied to the user automatically. Configuring Identity Sources is done in Tenant management found in Admin -&gt; Tenants, and has to be configured on a per tenant basis.</p>
+</div>
+<div class="section" id="resource-limits">
+<h2>Resource Limits<a class="headerlink" href="#resource-limits" title="Permalink to this headline">¶</a></h2>
+<p>While it is possible to restrict usages by roles assigned to a tenant or role with max memory utilizations and max storage utilizations, it is preferred to now control this at the Policy level within a group or cloud. |morpheus| provides a large swatch of policy types that can be assigned globally or to specific tenants both globally, and per cloud/group entity.</p>
+<div class="section" id="role-permissions">
+<h3>Role Permissions<a class="headerlink" href="#role-permissions" title="Permalink to this headline">¶</a></h3>
+<p>Feature Access</p>
+<ul class="simple">
+<li>None: Hidden or inaccessible for user</li>
+<li>Read: User can access the section, but cannot edit or create</li>
+<li>Full: User has full access</li>
+</ul>
+<p>Provisioning -&gt; User: User only has access to Instances they have created, and will not see the Instances of other users.
+Provisioning: Apps -&gt; User: User only has access to Apps they have created, and will not see the Apps of other users.
+Remote Console -&gt; User only has access to the the Remote Console
+Remote Console: Auto Login
+Services: Cypher</p>
+<p>Admin: Appliance Settings (None, Full)
+Admin: Backup Settings (None, Full)
+Admin: Environment Settings     (None, Full)
+Admin: Identity Source  (None, Full)
+Admin: Integrations     (None, Full)
+Admin: License Settings (None, Full)
+Admin: Log Settings     (None, Full)
+Admin: Monitoring Settings      (None, Full)
+Admin: Provisioning Settings    (None, Full)
+Admin: Roles    (None, Full)
+Admin: Service Plans    (None, Full)
+Admin: Tenant   (None, Full)
+Admin: Tenant - Impersonate Users       (None, Full)
+Admin: Users    (None, Full)
+Admin: Whitelabel Settings      (None, Full)
+Administration: Manage Policies (None, Full)
+Backups (None, Full)
+Billing (None, Full)
+Infrastructure: Boot    (None, Full)
+Infrastructure: Certificates    (None, Full)
+Infrastructure: Clouds  (None, Full)
+Infrastructure: Groups  (None, Full)
+Infrastructure: Hosts   (None, Full)
+Infrastructure: Keypairs        (None, Full)
+Infrastructure: Load Balancers  (None, Full)
+Infrastructure: Networks        (None, Full)
+Infrastructure: Security Groups
+Infrastructure: Storage
+Logs
+Monitoring
+Operations: Analytics
+Operations: Approvals
+Operations: Dashboard
+Operations: Reports
+Operations: Usage
+Provisioning
+Provisioning: Apps
+Provisioning: Deployments
+Provisioning: Library
+Provisioning: Migrations
+Provisioning: Tasks
+Provisioning: Tasks - Script Engines
+Provisioning: Virtual Images
+Remote Console
+Remote Console: Auto Login
+Services: Archives
+Services: Cypher
+—-</p>
+<p>==== Group Access</p>
+<p>==== Cloud Access</p>
+<p>==== Instance Type Access</p>
+</div>
+<div class="section" id="adding-configuring-roles">
+<h3>Adding &amp; Configuring Roles<a class="headerlink" href="#adding-configuring-roles" title="Permalink to this headline">¶</a></h3>
+<p>Creating a Tenant Role
+Creating a User Role (Single Tenant)
+Creating a Multi Tenant Role</p>
+<p>==== Creating a Tenant Role</p>
+<p>A Tenant Role sets the highest possible permissions for a Tenant. User Roles within that Tenant cannot exceed those of the Tenants assigned Tenant Role. Tenant Roles can be assigned to single or multiple Tenants, and do not apply to the Mater Account.</p>
+<p>===== To create a Tenant Role:</p>
+<p>. In the Master Account, navigate to Administration -&gt; Roles
+. Select the + CREATE ROLE button
+. Enter a name for the Role and optional Description
+. For TYPE, select “Tenant Role”
+. Optionally select an existing Role to copy in the COPY FROM ROLE dropdown.
+** This will configure the new Role with the same configuration as the selected role to copy. A new role that is not copied from another role will be generated with all permissions set to NONE.
+. Optionally set Limits for Storage, Memory or CPU Count. These limits will apply for any Tenant the Role is assigned to. 0.0 is default and is equal to no limit.</p>
+<p>After saving the Role will be created, and you will be redirected to that Roles Permissions settings.</p>
+<p>==== Create a User Role (Single Tenant):</p>
+<p>. In the Master Account, navigate to Administration -&gt; Roles
+. Select the + CREATE ROLE button
+. Enter a name for the Role and optional Description
+. For TYPE, select “User Role”
+. Leave the “Multi-tenant Role” checkbox blank.
+. Optionally select an existing Role to copy in the COPY FROM ROLE dropdown.
+** This will configure the new Role with the same configuration as the selected role to copy. A new role that is not copied from another role will be generated with all permissions set to NONE.
+. Optionally set Limits for Storage, Memory or CPU Count. These limits will apply for any User the Role is assigned to. 0.0 is default and is equal to no limit.</p>
+<p>After saving the Role will be created, and you will be redirected to the Roles Permissions settings.</p>
+<p>==== Create a Multi Tenant Role:</p>
+<p>. In the Master Account, navigate to Administration -&gt; Roles
+. Select the + CREATE ROLE button
+. Enter a name for the Role and optional Description
+. For TYPE, select “User Role”
+. Select the “Multi-tenant Role” checkbox.
+. Optionally select an existing Role to copy in the COPY FROM ROLE dropdown.
+** This will configure the new Role with the same configuration as the selected role to copy. A new role that is not copied from another role will be generated with all permissions set to NONE.
+. Optionally set Limits for Storage, Memory or CPU Count. These limits will apply for any User the Role is assigned to. 0.0 is default and is equal to no limit.</p>
+<p>After saving the Role will be created, and you will be redirected to that Roles Permissions settings.</p>
+<p>NOTE: It is important to note, while a Multi-tenant role is automatically copied into all existing subtenants as well as placed into any new Tenants, the generated roles inside each Tenant should be treated and managed as their own role. The Group Access configuration of a multi-tenant role only applies to the Tenant the role is being edited in, as Groups are unique to each tenant and not shared across Tenants. The purpose of a multi-tenant role is to facilitate an easy method of generating multiple pre-defined user roles for Tenants, NOT manage tenant user roles from the master tenant.
+When editing the permissions for a sub-tenant user, be sure to edit their user role(s) from inside the sub-tenant and not from the Master account by impersonating a sub-tenant admin with full Role permissions.</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, jw.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

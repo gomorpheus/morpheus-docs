@@ -1,0 +1,337 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Requirements &mdash; jwtest 1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../_static/my_theme.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
+    <link rel="top" title="jwtest 1 documentation" href="../index.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html">
+          
+
+          
+            
+            <img src="../_static/logo.svg" class="logo" />
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="getting_started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../provisioning/provisioning.html">Provisioning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../infrastructure/infrastructure.html">Infrastructure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../administration/administration.html">Administration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../monitoring/monitoring.html">Monitoring</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../logs/logging.html">Logs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../backups/backups.html">Backups</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../operations/operations.html">Operations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../services/services.html">Services</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../integration_guides/integration_guides.html">Integration Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faq/faqs.html">FAQ’s</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../release_notes/release_notes.html">Release Notes</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">jwtest</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>Requirements</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/getting_started/requirements.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="requirements">
+<h1>Requirements<a class="headerlink" href="#requirements" title="Permalink to this headline">¶</a></h1>
+<p>|morpheus| is a software based appliance installation capable of
+orchestrating many clouds and hypervisors. Before an installation is
+started it is important to understand some of the base requirements.</p>
+<p>In the simplest configuration |morpheus| simply needs one Appliance
+Server. The Appliance Server, by default, contains all the components
+necessary to orchestrate both vm’s and containers. To get started some
+base requirements are recommended:</p>
+<div class="section" id="base-requirements">
+<h2>Base Requirements<a class="headerlink" href="#base-requirements" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><strong>Operating System:</strong> Ubuntu 14.04 / 16.04 or
+CentOS/RHEL greater than 7.0.</li>
+<li><strong>Memory:</strong> 8 GB minimum</li>
+<li><strong>Storage:</strong> 100 GB storage minimum</li>
+<li>Network connectivity from your users to the appliance over TCP 443
+(HTTPS)</li>
+<li>Inbound connectivity access from provisioned vm’s and container hosts
+on ports 443 and 80 (needed for agent communication)</li>
+<li>Internet Connectivity from Appliance (To download from |morpheus| ’
+public docker repositories and virtual image catalog)</li>
+<li>Superuser privileges via the sudo command for the user installing the
+|morpheus| Appliance package.</li>
+<li>An Appliance URL that is accessible to all managed hosts. It is
+necessary for all hosts that are managed by |morpheus| to be able to
+communicate with the appliance server ip on port 443. This URL is
+configured under Admin-&gt;Settings. |morpheus| also utilizes SSH (Port
+22) and Windows Remote Management (Port 5985) to initialize a server.</li>
+<li>An Appliance License is required for any operations involving
+provisioning.</li>
+</ul>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Ubuntu 16.10 and Amazon Linux are not supported.</p>
+</div>
+</div>
+<div class="section" id="storage">
+<h2>Storage<a class="headerlink" href="#storage" title="Permalink to this headline">¶</a></h2>
+<p>|morpheus| needs storage space for a few items. One is for the built-in
+<a class="reference external" href="https://www.elastic.co/products/elasticsearch[Elasticsearch">https://www.elastic.co/products/elasticsearch[Elasticsearch</a>] store (used
+for log aggregation and stats collection metrics). |morpheus| also keeps
+a workspace and local virtual image cache for doing virtual image
+conversion and template upload. While the permanent store of these can
+be offloaded via a Storage Provider some space is still recommended for
+dealing with non streamable virtual image formats.</p>
+<p>In many common scenarios it might be prudent to configure a shared
+datastore on a storage cluster and mounted to <code class="docutils literal"><span class="pre">/var/opt/morpheus</span></code>
+(this is where all user based data and database data is persisted).
+There are several folders located within here that can be independently
+located as desired.</p>
+</div>
+<div class="section" id="network-connectivity">
+<h2>Network Connectivity<a class="headerlink" href="#network-connectivity" title="Permalink to this headline">¶</a></h2>
+<p>|morpheus| primarily operates via communication with its agent that is
+installed on all managed vm’s or docker hosts. This is a lightweight
+agent responsible for aggregating logs and stats and sending them back
+to the client with minimal network traffic overhead. It also is capable
+of processing instructions related to provisioning and deployments
+instigated by the appliance server.</p>
+<p>The |morpheus| Agent exists for both linux and windows based platforms
+and opens NO ports on the guest operating system. Instead it makes an
+outbound SSL (https / wss) connection to the appliance server. This is
+what is known as the <code class="docutils literal"><span class="pre">appliance</span> <span class="pre">url</span></code> during configuration (in
+Admin-&gt;Settings). When the agent is started it automatically makes this
+connection and securely authenticates. Therefore, it is necessary for
+all vm’s and docker based hosts that are managed by morpheus to be able
+to reach the appliance server ip on port 443.</p>
+<p>|morpheus| also utilizes SSH (Port 22) and Windows Remote Management
+(Port 5985) to initialize a server. This includes sending remote command
+instructions to install the agent. It is actually possible for
+|morpheus| to operate without agent connectivity (though stats and logs
+will not function) and utilize SSH/WinRM to perform operations. Once the
+agent is installed and connections are established SSH/WinRM
+communication will stop. This is why an outbound requirement exists for
+the appliance server to be able to utilize port 22 and 5985.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">In newer versions of morpheus this outbound connectivity is not mandatory. The agent can be installed by hand or via Guest Process API’s on cloud integrations like VMware.</p>
+</div>
+</div>
+<div class="section" id="components">
+<h2>Components<a class="headerlink" href="#components" title="Permalink to this headline">¶</a></h2>
+<p>The Appliance Server automatically installs several components for the
+operation of |morpheus| . This includes:</p>
+<ul class="simple">
+<li>RabbitMQ (Messaging)</li>
+<li>MySQL (Logistical Data store)</li>
+<li>Elasticsearch (Logs / Metrics store)</li>
+<li>Redis (Cache store)</li>
+<li>Tomcat (|morpheus| Application)</li>
+<li>Nginx (Web frontend)</li>
+<li>Guacamole (Remote console service for clientless remote console)</li>
+<li>Check Server (Monitoring Agent for custom checks added via UI)</li>
+</ul>
+<p>All of these are installed in an isolated way using chef zero to
+<code class="docutils literal"><span class="pre">/opt/morpheus</span></code>. It is also important to note these services can be
+offloaded to separate servers or clusters as desired. For details check
+the installation section and high availability.</p>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, jw.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

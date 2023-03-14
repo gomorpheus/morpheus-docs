@@ -1,0 +1,155 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>&lt;no title&gt; &#8212; testtoca 11 documentation</title>
+    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '11',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <p>== Managing Backups</p>
+<p>//video</p>
+<p>=== Overview</p>
+<p>Backups are automatically configured and performed on each new |morpheus| -provisioned Instance. Users can edit the frequency of backups. Administrators can define destination targets where backups are stored an perform all user-based tasks.</p>
+<p>To View Backups:</p>
+<p>Select the Backups link in the navigation bar.
+Note: If backups are disabled, they are still created upon instance provisioning and can be executed manually. However, backups will not be executed on a schedule automatically. Scheduled backups must be enabled by an administrator to run automatically. To review how to enable/disable backups see here.</p>
+<p>=== Backup View</p>
+<p>Review information about configuration such as: schedule, target details, total amount and successfully run backups, total and average size of backups from the Backup Page.</p>
+<p>To Display Backup:</p>
+<p>Select the Backups link in the navigation bar.
+Select the Backups link in the sub navigation bar.
+Clicking the backup name to review its details.</p>
+<p>=== Create Instance Backup</p>
+<p>To create instance backup</p>
+<p>Select the Backups link in the navigation bar.
+Select the Backups link in the sub navigation bar.
+Click the Add Backup button.
+From the Create Backup Wizard select the radio button Instance, then click Next.
+Input the following:
+Name - Name of the backup job being created
+Instance  - Select an instance to backup from the dropdown.
+Click Next.
+Depending on the instance type selected in the previous step, enter additional details such as:
+Database Name
+Username
+Password
+Container
+etc..
+Click the Next button.
+Schedule the backup
+Days
+Time
+Click the button Complete to save.</p>
+<p>=== Create Server Backup</p>
+<p>To create server backup</p>
+<p>Select the Backups link in the navigation bar.
+Select the Backups link in the sub navigation bar.
+Click Add Backup.
+From the Create Backup Wizard select the radio button Server, then click Next.
+Input the following:
+Name of the backup job being created
+Server
+Type of backup you wish to create.
+File
+Directory
+Mongo
+MySQL
+Postgres
+Click Next.
+Different options are presented based upon the type of backup being created.
+Backup Types:
+File/Directory - input path for the backup.
+Mongo/MySQL/Postgres - input ‘Database IP Address/URL’, ‘Database Port’, ‘Database Username’, ‘Database Password’, ‘Database Name’, and the option to select ‘All Databases’.
+Click Next.
+Schedule the backup
+Days
+Time
+Click Complete to save.</p>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../index.html">testtoca</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2017, JW.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.6.3</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
+      
+      |
+      <a href="../_sources/backups/managing_backups.adoc.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

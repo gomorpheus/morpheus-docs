@@ -1,0 +1,1367 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Infrastructure &mdash; jwtest 1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../_static/my_theme.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
+    <link rel="top" title="jwtest 1 documentation" href="../index.html"/>
+        <link rel="next" title="Administration" href="../administration/administration.html"/>
+        <link rel="prev" title="Provisioning" href="../provisioning/provisioning.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html">
+          
+
+          
+            
+            <img src="../_static/logo.svg" class="logo" />
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/getting_started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../provisioning/provisioning.html">Provisioning</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Infrastructure</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#groups">Groups</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#overview">Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#adding-groups">Adding Groups</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#managing-groups">Managing Groups</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#edit-group">Edit Group</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#delete-group">Delete Group</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#user-access">User Access</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#clouds">Clouds</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id1">Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#creating-clouds">Creating Clouds</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#cloud-detail-view">Cloud Detail View</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#deleting-clouds">Deleting Clouds</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#hosts">Hosts</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id2">Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">Hosts</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#virtual-machines">Virtual Machines</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#bare-metal">Bare Metal</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#network">Network</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#networks">Networks</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id4">Overview</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#configuring-networks">Configuring Networks</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#network-groups">Network Groups</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id5">Overview</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#adding-network-groups">Adding Network Groups</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#services">Services</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id6">Overview</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#add-a-service">Add a Service</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#scoping-services">Scoping Services</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#ip-pools">IP Pools</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id7">Overview</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#to-add-a-morpheus-network-pool">To add a |morpheus| Network Pool</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#domains">Domains</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id8">Overview</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#adding-domains">Adding Domains</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#editing-and-removing-domains">Editing and Removing Domains</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#setting-the-default-domain-on-a-cloud">Setting the default domain on a Cloud</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#setting-the-default-domain-on-a-network">Setting the default domain on a Network</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#selecting-a-domain-while-provisioning-an-instance">Selecting a Domain while provisioning an instance</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#proxies">Proxies</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id9">Overview</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#defining-proxies">Defining Proxies</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#cloud-communication">Cloud Communication</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#provisioning-with-proxies">Provisioning with Proxies</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#docker">Docker</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#security-groups">Security Groups</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id10">Overview</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#add-security-group">Add Security Group</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#add-security-group-rule">Add Security Group Rule</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#edit-security-group-rule">Edit security group rule</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#delete-security-group-rule">Delete security group rule</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#add-cloud-security-group">Add Cloud Security Group</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#remove-cloud-security-group">Remove Cloud Security Group</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#load-balancers">Load Balancers</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id11">Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id12">Load Balancers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#virtual-servers">Virtual Servers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#storage">Storage</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id13">Overview</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#key-pairs-certificates">Key Pairs &amp; Certificates</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#key-pairs">Key Pairs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#add-key-pair">Add Key Pair</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#delete-key-pair">Delete Key Pair</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#pxe-boot">PXE Boot</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id14">Overview</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#policies">Policies</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id15">Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#policy-types">Policy types</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#creating-policies">Creating Policies</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#expiration-policies">Expiration Policies</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../administration/administration.html">Administration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../monitoring/monitoring.html">Monitoring</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../logs/logging.html">Logs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../backups/backups.html">Backups</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../operations/operations.html">Operations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../services/services.html">Services</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../integration_guides/integration_guides.html">Integration Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faq/faqs.html">FAQ’s</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../release_notes/release_notes.html">Release Notes</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">jwtest</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>Infrastructure</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/infrastructure/infrastructure.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="infrastructure">
+<h1>Infrastructure<a class="headerlink" href="#infrastructure" title="Permalink to this headline">¶</a></h1>
+<p>The heart of |morpheus| is the ability to manage provisioning across any
+infrastructure, from bare metal to virtualized clouds and all the way to
+public infrastructure.</p>
+<div class="section" id="groups">
+<h2>Groups<a class="headerlink" href="#groups" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="overview">
+<h3>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h3>
+<p>Groups are used to organize clouds, roles, and hosts.</p>
+<p>The Groups view displays all current groups, includes search feature, and also enables the addition of new groups.</p>
+<p>To View Groups:</p>
+<ol class="arabic simple">
+<li>Select the Infrastructure link in the navigation bar</li>
+<li>Click the Groups link</li>
+</ol>
+</div>
+<div class="section" id="adding-groups">
+<h3>Adding Groups<a class="headerlink" href="#adding-groups" title="Permalink to this headline">¶</a></h3>
+<img alt="../_images/add_group.png" src="../_images/add_group.png" />
+<p>To add a group:</p>
+<ol class="arabic simple">
+<li>Select the Infrastructure link in the navigation bar</li>
+<li>Click the Groups link</li>
+<li>Click the Create Group button</li>
+<li>Input out the Name and Location (optional) fields</li>
+<li>Click the Save Changes button to save</li>
+</ol>
+</div>
+<div class="section" id="managing-groups">
+<h3>Managing Groups<a class="headerlink" href="#managing-groups" title="Permalink to this headline">¶</a></h3>
+<img alt="../_images/group_view.png" src="../_images/group_view.png" />
+<p>To view a Group:</p>
+<ol class="arabic simple">
+<li>Select the Infrastructure link in the navigation bar</li>
+<li>Click the Groups link</li>
+<li>Click the Group name to view/modify</li>
+</ol>
+<p>Available tabs in group view</p>
+<dl class="docutils">
+<dt>Hosts</dt>
+<dd>Lists available hosts in the group and displays power, os, name, type, cloud, ip address, nodes, disc space, memory, and status. You can add a host from this tab panel by clicking Add Host.</dd>
+<dt>Virtual Machines</dt>
+<dd>List all Virtual Machines in the Group.</dd>
+<dt>Bare Metal</dt>
+<dd>List all Bare Metal Hosts added to the Group</dd>
+<dt>Clouds</dt>
+<dd>Lists Clouds added to the Group. Existing Clouds or new Clouds can be added from the Group by clicking Add Cloud.</dd>
+<dt>Policies</dt>
+<dd>Lists and allows creation ro managment of Policies applied to the Group.</dd>
+</dl>
+</div>
+<div class="section" id="edit-group">
+<h3>Edit Group<a class="headerlink" href="#edit-group" title="Permalink to this headline">¶</a></h3>
+<p>To edit a group:</p>
+<ol class="arabic simple">
+<li>Select the Infrastructure link in the navigation bar.</li>
+<li>Click the Groups link.</li>
+<li>Click the name of the group you wish to edit.</li>
+<li>Click the Edit button.</li>
+<li>From the Edit Group Wizard modify information as needed.</li>
+<li>Click the Save Changes button to save.</li>
+</ol>
+</div>
+<div class="section" id="delete-group">
+<h3>Delete Group<a class="headerlink" href="#delete-group" title="Permalink to this headline">¶</a></h3>
+<p>To delete a group:</p>
+<ol class="arabic simple">
+<li>Select the Infrastructure link in the navigation bar.</li>
+<li>Click the Groups link.</li>
+<li>Click the name of the group you wish to delete.</li>
+<li>Click the Delete button.</li>
+<li>Note: You will be prompted for confirmation on this action.</li>
+</ol>
+<img alt="infrastructure/infrastructure/delete_group.png" src="infrastructure/infrastructure/delete_group.png" />
+</div>
+<div class="section" id="user-access">
+<h3>User Access<a class="headerlink" href="#user-access" title="Permalink to this headline">¶</a></h3>
+<p>User access to Groups is determing by their user Role(s). Group access for Roles can be configured in the Group Access section of a Roles Settings.</p>
+</div>
+</div>
+<div class="section" id="clouds">
+<h2>Clouds<a class="headerlink" href="#clouds" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id1">
+<h3>Overview<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<p>Clouds are integrations or connections to public, private, hybrid clouds, or bare metal servers. Clouds can belong to many groups and contain many hosts. The clouds view a includes search feature and provides the option to edit, delete, and add new clouds. |morpheus| supports most Public Clouds and Private Clouds.</p>
+</div>
+<div class="section" id="creating-clouds">
+<h3>Creating Clouds<a class="headerlink" href="#creating-clouds" title="Permalink to this headline">¶</a></h3>
+<p>Clouds can be added from <cite>Infrastructure -&gt; Clouds</cite> or in <cite>Infrastructure -&gt; Groups -&gt; (select Group) -&gt; Clouds</cite>.
+Details on required credentials and settings can be found in the Cloud integrations guides.</p>
+</div>
+<div class="section" id="cloud-detail-view">
+<h3>Cloud Detail View<a class="headerlink" href="#cloud-detail-view" title="Permalink to this headline">¶</a></h3>
+<p>In the Cloud List View, select the name of a Cloud to display the clouds Detail View.</p>
+<dl class="docutils">
+<dt>EDIT</dt>
+<dd>Edit the setup configuration of the Cloud.</dd>
+<dt>REFRESH</dt>
+<dd>Force a sync with the Cloud. Last sync date, time and duration is shown under the Cloud name.</dd>
+<dt>DELETE</dt>
+<dd>Delete the Cloud from |morpheus| IMPORTANT: All Instances and managed Hosts and VM’s must be removed prior to deleting a cloud.</dd>
+</dl>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Not all tabs are available for all Cloud Types.</p>
+</div>
+<dl class="docutils">
+<dt>Hosts</dt>
+<dd>The hosts tab panel displays available hosts in the cloud and displays power, os, name, type, cloud, ip address, nodes, disc space, memory, and status. You can add a container host from this by clicking the Container Hosts button, add a hypervisor host by clicking the HyperVisor button, or perform actions actions by click the Actions button.</dd>
+<dt>Virtual Machine</dt>
+<dd>Displays an Inventory of Existing Instances in your cloud configuration and provides details such as power, os, name, type, cloud, ip address, nodes, disc space, memory, and status.</dd>
+<dt>Bare Metal</dt>
+<dd>Setup PXE Boot in the Boot section to add bare metal servers. Once setup you can view information such as power, os, name, type, cloud, ip address, nodes, disc space, memory, and status.</dd>
+<dt>Security Groups</dt>
+<dd>The Security Groups tab panel displays a list of existing Security groups in the cloud. You can add a security group to this cloud by clicking the Edit Security Groups button.</dd>
+<dt>Load Balancers</dt>
+<dd>The load balancers tab panel displays available load balancers in the cloud and displays the name, description, type, cloud and host. You can add a load balancer from this tab by clicking the Add Load Balancer button.</dd>
+<dt>Networks</dt>
+<dd>Displays Networks synced or added to the Cloud.</dd>
+<dt>DataStores</dt>
+<dd>Displays Datastores synced or added to the Cloud.</dd>
+<dt>Resource Pools</dt>
+<dd>Displays Resource Pools synced from the Cloud.</dd>
+<dt>Policies</dt>
+<dd>Manages Policies enforced on the Cloud.</dd>
+</dl>
+<ul class="simple">
+<li>Container Host
+Provisions a Docker host into the Cloud, or adds an existing Docker Host (manual) to the Cloud. KVM hosts are also available for |morpheus| and Bare Metal cloud types.</li>
+<li>Hypervisor
+Add an existing Hypervisor to the Cloud. Not available for all Cloud types.</li>
+</ul>
+</div>
+<div class="section" id="deleting-clouds">
+<h3>Deleting Clouds<a class="headerlink" href="#deleting-clouds" title="Permalink to this headline">¶</a></h3>
+<p>To delete a cloud:</p>
+<ol class="arabic simple">
+<li>Select the Infrastructure link in the navigation bar.</li>
+<li>Select the Clouds link in the sub navigation bar.</li>
+<li>Click the Delete icon of the cloud to delete.</li>
+</ol>
+<div class="admonition important">
+<p class="first admonition-title">Important</p>
+<p class="last">All Instances and managed Hosts and VM’s must be removed prior to deleting a cloud. To remove Instances, Hosts and VM’s from |morpheus| without deleting them in the actual Cloud, select Delete on the Host or VM, unselect “Remove Infrastructure” and select “Remove Associated Instances” if Instance are associated with the Hosts or VMs.</p>
+</div>
+</div>
+</div>
+<div class="section" id="hosts">
+<h2>Hosts<a class="headerlink" href="#hosts" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id2">
+<h3>Overview<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<p>The <cite>Infrastructure -&gt; Hosts</cite> section provides a universal stage for viewing and managing Hosts and Virtual Machines from all of your Clouds.</p>
+<p>In this section you can:</p>
+<ul class="simple">
+<li>View &amp; Manage all Hosts, Virtual Machines &amp; Bare Metal</li>
+<li>Provision Docker &amp; KVM Hosts</li>
+<li>Convert existing hosts to Docker &amp; KVM Hosts</li>
+<li>Add Hypervisors</li>
+<li>Convert Hosts, Virtual Machines and Bare Metal to Managed</li>
+</ul>
+</div>
+<div class="section" id="id3">
+<h3>Hosts<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<p>Hosts in |morpheus| are Hypervisors and Docker Hosts that your VM’s and Container are hosted on, such as ESXi, Hyper-V and Docker Hosts. These Hosts are populated from integrated clouds, hosts provisioned form Morpheus, or manually added Hosts.</p>
+</div>
+<div class="section" id="virtual-machines">
+<h3>Virtual Machines<a class="headerlink" href="#virtual-machines" title="Permalink to this headline">¶</a></h3>
+<p>The Virtual Machines tab lists all Managed and Unmanaged VM’s across |morpheus| . Managed VM’s are either provisioned by Morpheus, or inventoried VM’s that were converted to managed. Unmanaged VM’s are from Cloud integrations with “Inventory Existing Instances” enabled in the Cloud settings.</p>
+</div>
+<div class="section" id="bare-metal">
+<h3>Bare Metal<a class="headerlink" href="#bare-metal" title="Permalink to this headline">¶</a></h3>
+<p>Bare Metal hosts are from PXE Boot or manually added in this section. Bare Metal hosts that are also Hypervisors will be listed in both the Bare Metal and Hypervisor sections.</p>
+<p>include::adddockerhost.rst</p>
+</div>
+</div>
+<div class="section" id="network">
+<h2>Network<a class="headerlink" href="#network" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="networks">
+<h3>Networks<a class="headerlink" href="#networks" title="Permalink to this headline">¶</a></h3>
+<p><code class="docutils literal"><span class="pre">Infrastructure</span> <span class="pre">-&gt;</span> <span class="pre">Network</span> <span class="pre">-&gt;</span> <span class="pre">Networks</span></code></p>
+<div class="section" id="id4">
+<h4>Overview<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h4>
+<p>The Networks section is for configuring networks across all clouds in |morpheus| . Existing networks from the Clouds added in |morpheus| will auto-populate in the Networks section.</p>
+<p>Networks can be configured for DHCP or Static IP assignment, assigned IP pools, and configured for visibility and account assignment for multi-tenancy usage. Networks can also be set as inactive and unavailable for provisioning use.</p>
+</div>
+<div class="section" id="configuring-networks">
+<h4>Configuring Networks<a class="headerlink" href="#configuring-networks" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="dhcp">
+<h5>DHCP<a class="headerlink" href="#dhcp" title="Permalink to this headline">¶</a></h5>
+<p>To configure a network for DHCP:</p>
+<ol class="arabic simple">
+<li>Navigate to <cite>Infrastructure -&gt; Network -&gt; Networks</cite></li>
+<li>Search for the target network</li>
+<li>Edit the Network by either:<ul>
+<li>Select <cite>Actions -&gt; Edit</cite></li>
+<li>Select the Network, then select <cite>Edit</cite></li>
+</ul>
+</li>
+<li>In the Network Config modal, set the DHCP flag as Active (default)</li>
+<li>Save Changes</li>
+</ol>
+<div class="admonition important">
+<p class="first admonition-title">Important</p>
+<p class="last">The DHCP flag tells |morpheus| this network has a DHCP server assigning IP Addresses to hosts. |morpheus| does not act as the DHCP server, and provisioning to a network that has the DHCP server flag active in |morpheus| , but no DHCP server actually on the network will in most cases cause the instance to not receive an IP address.</p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">When selecting a network with DHCP enabled during provisioning, “DHCP” will populate to the right of the selected network:</p>
+</div>
+</div>
+<div class="section" id="static-and-ip-pools">
+<h5>Static and IP Pools<a class="headerlink" href="#static-and-ip-pools" title="Permalink to this headline">¶</a></h5>
+<p>To configure a network for Static IP Assignment:</p>
+<ol class="arabic">
+<li><p class="first">Navigate to <cite>Infrastructure -&gt; Network -&gt; Networks</cite></p>
+</li>
+<li><p class="first">Search for the target network</p>
+</li>
+<li><p class="first">Edit the Network by either:</p>
+<ul class="simple">
+<li>Select <cite>Actions -&gt; Edit</cite></li>
+<li>Select the Network, then select <cite>Edit</cite></li>
+</ul>
+</li>
+<li><p class="first">In the Network Config modal, add the following:
+* Gateway
+* DNS Primary
+* DNS Secondary
+* CIDR ex 10.10.10.0/22
+* VLAN ID (if necessary)
+* Network Pool</p>
+<blockquote>
+<div><ul class="simple">
+<li>Leave as “choose a pool” for entering a static IP while provisioning</li>
+<li>Select a Pool to use a pre-configured |morpheus| or IPAM Integration IP Pool</li>
+</ul>
+</div></blockquote>
+<ul class="simple">
+<li>The Permissions settings are used for Multi-Tenant resource configuration<ul>
+<li>Leave settings as default if used in a single-tenant environment (only one Tenant in your |morpheus| appliance)</li>
+<li>To share this network across all accounts in a multi-tenant environment, select the Master Tenant and set the Visibility to Public</li>
+<li>To assign this network to be used by only one account in a multi-tenant environment, select the account and set visibility to Private</li>
+</ul>
+</li>
+<li>Active<ul>
+<li>Leave as enabled to use this network</li>
+<li>Disable the active flag to remove this network from available network options</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p class="first">Save Changes</p>
+</li>
+</ol>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">When selecting a network with DHCP disabled and no IP Pool assigned during provisioning, an IP entry field will populate to the right of the selected network(s):</p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">When selecting a network with an IP Pool assigned during provisioning, the name of the IP pool will populate to the right of the selected network(s). IP Pools override DHCP.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="network-groups">
+<h3>Network Groups<a class="headerlink" href="#network-groups" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id5">
+<h4>Overview<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h4>
+<p>Network Groups are useful for grouping networks during provisioning and scaling or grouping availability subnets together such that during provisioning, vm’s within an instance can be round robin provisioned across availability zones.</p>
+</div>
+<div class="section" id="adding-network-groups">
+<h4>Adding Network Groups<a class="headerlink" href="#adding-network-groups" title="Permalink to this headline">¶</a></h4>
+<ol class="arabic">
+<li><p class="first">Navigate to <cite>Infrastructure -&gt; Network -&gt; Networks Groups</cite></p>
+</li>
+<li><p class="first">Click btn:[ADD]</p>
+</li>
+<li><p class="first">Enter the following:
+* Group info:</p>
+<blockquote>
+<div><ul class="simple">
+<li><em>Name</em>: Name of the Network Group in |morpheus| </li>
+<li><em>Description</em>: Details of the</li>
+</ul>
+</div></blockquote>
+</li>
+</ol>
+</div>
+</div>
+<div class="section" id="services">
+<h3>Services<a class="headerlink" href="#services" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id6">
+<h4>Overview<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h4>
+<p>The Network Services section allows you to add and manage IPAM, DNS, and Service Registry integrations. These services can also be added in the <cite>Administration -&gt; Integrations</cite> section.</p>
+<p>The following integrations are currently supported:</p>
+<dl class="docutils">
+<dt>IPAM</dt>
+<dd><ul class="first last simple">
+<li>Infoblox</li>
+<li>Bluecat (2.11)</li>
+</ul>
+</dd>
+<dt>DNS</dt>
+<dd><ul class="first last simple">
+<li>Microsoft DNS</li>
+<li>Power DNS</li>
+<li>Route 53</li>
+<li>Bind DNS</li>
+</ul>
+</dd>
+<dt>Service Registry</dt>
+<dd><ul class="first last simple">
+<li>Consul</li>
+</ul>
+</dd>
+</dl>
+</div>
+<div class="section" id="add-a-service">
+<h4>Add a Service<a class="headerlink" href="#add-a-service" title="Permalink to this headline">¶</a></h4>
+<p>To configure any of the services, select <cite>ADD SERVICE</cite>, and fill out the required fields.</p>
+<dl class="docutils">
+<dt>Infoblox</dt>
+<dd><ul class="first last simple">
+<li>Name</li>
+<li>URL (wapi url + version)<ul>
+<li>example <cite>https://x.x.x.x/wapi/v2.2.1</cite></li>
+</ul>
+</li>
+<li>Username</li>
+<li>Password</li>
+</ul>
+</dd>
+<dt>Bluecat</dt>
+<dd><ul class="first last simple">
+<li>Name</li>
+<li>URL</li>
+<li>Username</li>
+<li>Password</li>
+</ul>
+</dd>
+<dt>Microsoft DNS</dt>
+<dd><ul class="first last simple">
+<li>Name</li>
+<li>DNS Server</li>
+<li>Username</li>
+<li>Password</li>
+<li>Zone</li>
+</ul>
+</dd>
+<dt>PowerDNS</dt>
+<dd><ul class="first last simple">
+<li>Name</li>
+<li>API Host</li>
+<li>Token</li>
+</ul>
+</dd>
+<dt>BindDNS</dt>
+<dd><ul class="first last simple">
+<li>Host</li>
+<li>Username</li>
+<li>Password</li>
+<li>BindKey</li>
+</ul>
+</dd>
+<dt>Route 53</dt>
+<dd><ul class="first last simple">
+<li>Region</li>
+<li>Access Key</li>
+<li>Secret Key</li>
+</ul>
+</dd>
+</dl>
+<p>After Saving, your Network Service integrations will be available for use. These integrations must be scoped to the appropriate sections in |morpheus| :</p>
+</div>
+<div class="section" id="scoping-services">
+<h4>Scoping Services<a class="headerlink" href="#scoping-services" title="Permalink to this headline">¶</a></h4>
+<dl class="docutils">
+<dt>IPAM</dt>
+<dd>IPAM integrations will populate pools in the IP Pool section, which are available for assignment to networks in the <cite>NETWORK POOL</cite> dropdown when configuring a network.</dd>
+<dt>DNS</dt>
+<dd>DNS integrations will populate domains in the <cite>Infrastructure -&gt; Network -&gt; Domains</cite> section, and are available in the <cite>DOMAIN</cite> dropdown located under the <cite>Advanced Options</cite> section in Cloud, Group, and Network configurations, as well as in the <cite>Configure</cite> section of the Create Instance wizard.  DNS integrations are also available in the <cite>DNS SERVICE</cite> dropdown located under the <cite>Advanced Options</cite> section in Cloud and Group configurations.</dd>
+<dt>Service Registry</dt>
+<dd>Service Registry integrations are available in the <cite>SERVICE REGISTRY</cite> dropdown located under the <cite>Advanced Options</cite> section in Cloud and Group configurations.</dd>
+</dl>
+</div>
+</div>
+<div class="section" id="ip-pools">
+<h3>IP Pools<a class="headerlink" href="#ip-pools" title="Permalink to this headline">¶</a></h3>
+<p><code class="docutils literal"><span class="pre">Infrastructure</span> <span class="pre">-&gt;</span> <span class="pre">Network</span> <span class="pre">-&gt;</span> <span class="pre">IP</span> <span class="pre">Pools</span></code></p>
+<div class="section" id="id7">
+<h4>Overview<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h4>
+<p>The Networks IP Pools sections allows you to create |morpheus| IP Pools, which is an IP Range |morpheus| can use to assign available static IP addresses to instances. The IP Pool section also displays pools from IPAM integrations like Infoblox and Bluecat.</p>
+</div>
+<div class="section" id="to-add-a-morpheus-network-pool">
+<h4>To add a |morpheus| Network Pool<a class="headerlink" href="#to-add-a-morpheus-network-pool" title="Permalink to this headline">¶</a></h4>
+<ol class="arabic simple">
+<li>Select <em>+ ADD</em> in the <cite>Infrastructure -&gt; Network -&gt; IP Pools</cite> section</li>
+<li>Enter the following:
+* Name:: Name of the IP Pool in |morpheus| . The name is presented when selecting an IP Pool for a Network, so use a name that easily identifies the IP Pool.
+* Starting Address:: The starting IP address of the IP Pool address range. ex: 192.168.0.2
+* Ending Address:: The ending IP address of the IP Pool address range. ex: 192.168.0.255</li>
+<li>Save Changes</li>
+</ol>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Multiple Address Ranges can be added to a pool by selecting the + icon to the right of the first address range.</p>
+</div>
+<p>After saving the IP pool will be available for assignment to networks in the NETWORK POOL dropdown when adding or editing a network.</p>
+</div>
+</div>
+<div class="section" id="domains">
+<h3>Domains<a class="headerlink" href="#domains" title="Permalink to this headline">¶</a></h3>
+<p><code class="docutils literal"><span class="pre">Infrastructure</span> <span class="pre">-&gt;</span> <span class="pre">Network</span> <span class="pre">-&gt;</span> <span class="pre">Domains</span></code></p>
+<div class="section" id="id8">
+<h4>Overview<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h4>
+<p>The Domains section is for creating and managing domains for use in |morpheus| . Domains are used for setting FQDNs, joining Windows Instances to Domains, and creating A Records with DNS Integrations. The Domains section is also a multi-tenant endpoint for managing domain settings across multiple accounts</p>
+<ul class="simple">
+<li>Added and synced Domains are available for selection in the Domain dropdown when provisioning an Instance.</li>
+<li>Default domains can be set for Clouds and Networks in their Advanced Options sections.</li>
+<li>Images can be flagged to Auto-Join Domains in the <cite>Provisioning -&gt; Virtual Images</cite> section.</li>
+</ul>
+<div class="admonition important">
+<p class="first admonition-title">Important</p>
+<p class="last">For an Instance to auto-join a Domain, a Domain must set in the Advanced Options section of the Cloud or Network used when provisioning.</p>
+</div>
+</div>
+<div class="section" id="adding-domains">
+<h4>Adding Domains<a class="headerlink" href="#adding-domains" title="Permalink to this headline">¶</a></h4>
+<ol class="arabic">
+<li><p class="first">Navigate to <cite>Infrastructure -&gt; Network -&gt; Domains</cite></p>
+</li>
+<li><p class="first">Select <em>+ Add</em></p>
+</li>
+<li><p class="first">Enter the following:
+* Domain Name:: Example demo.example.com
+* Description:: Descriptive meta-data for use in |morpheus| 
+* Public Zone:: Check for Public Zones, leave uncheck for Private Zones.
+* Join Domain Controller:: Enable to have Windows instances join a Domain Controller
+* Username:: Admin user for Domain Controller
+* Password:: Password for DC Username
+* DC Server:: (optional) Specify the URL or Path of the DC Server
+* OU Path:: (optional) Enter the OU Path for the connection string.
+* Permissions:: Configure Tenant permissions in |morpheus| for the Domain (only applicable in Multi-tenant |morpheus| setups)
+* Tenant:: Select the Tenant to set permissions to for the Domain.
+* Visibility:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Private: Only Accessible by the select Tenant</li>
+<li>Public: Available for use by all Tenants.</li>
+</ul>
+</div></blockquote>
+</li>
+<li><p class="first">Save Changes</p>
+</li>
+</ol>
+<p>The Domain has been added and will be selectable in Domain dropdown during provisioning, and in Cloud and Network settings.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Only resources assigned to the Master Tenant can be set as Publicly visible. If the Tenant assigned is not the master tenant, visibility will automatically change to private.</p>
+</div>
+</div>
+<div class="section" id="editing-and-removing-domains">
+<h4>Editing and Removing Domains<a class="headerlink" href="#editing-and-removing-domains" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li>Domains can be edited by selecting the <cite>Actions</cite> dropdown for the Domain and selecting <cite>Edit</cite>.</li>
+<li>Added Domains can be removed from |morpheus| by selecting the <cite>Actions</cite> dropdown for the Domain and selecting <cite>Remove</cite>.</li>
+</ul>
+</div>
+<div class="section" id="setting-the-default-domain-on-a-cloud">
+<h4>Setting the default domain on a Cloud<a class="headerlink" href="#setting-the-default-domain-on-a-cloud" title="Permalink to this headline">¶</a></h4>
+<ol class="arabic simple">
+<li>Navigate to <cite>Infrastructure -&gt; Clouds</cite>.</li>
+<li>Edit the target Cloud.</li>
+<li>Expand <cite>Advanced Options</cite> section.</li>
+<li>In the <em>Domain</em> dropdown, select the Domain.</li>
+<li>Save Changes</li>
+</ol>
+</div>
+<div class="section" id="setting-the-default-domain-on-a-network">
+<h4>Setting the default domain on a Network<a class="headerlink" href="#setting-the-default-domain-on-a-network" title="Permalink to this headline">¶</a></h4>
+<ol class="arabic simple">
+<li>Navigate to <cite>Infrastructure -&gt; Network</cite>.</li>
+<li>Edit the target Network.</li>
+<li>Expand <cite>Advanced Options</cite> section.</li>
+<li>In the <em>Domain</em> dropdown, select the Domain.</li>
+<li>Save Changes</li>
+</ol>
+</div>
+<div class="section" id="selecting-a-domain-while-provisioning-an-instance">
+<h4>Selecting a Domain while provisioning an instance<a class="headerlink" href="#selecting-a-domain-while-provisioning-an-instance" title="Permalink to this headline">¶</a></h4>
+<ol class="arabic simple">
+<li>While creating an instance, in the <cite>Configure</cite> section, expand the <cite>DNS Options</cite>.</li>
+<li>Select Domain from the <em>Domain</em> dropdown.</li>
+</ol>
+</div>
+</div>
+<div class="section" id="proxies">
+<h3>Proxies<a class="headerlink" href="#proxies" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id9">
+<h4>Overview<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h4>
+<p>In many situations , companies deploy virtual machines in proxy restricted environments for things such as PCI Compliance, or just general security. As a result of this |morpheus| provides out of the box support for proxy connectivity. Proxy authentication support is also provided with both Basic Authentication capabilities as well as NTLM for Windows Proxy environments. |morpheus| is even able to configure virtual machines it provisions to utilize these proxies by setting up the operating systems proxy settings directly (restricted to cloud-init based Linux platforms for now, but can also be done on windows based platforms in a different manner).</p>
+<p>To get started with Proxies, it may first be important to configure the |morpheus| appliance itself to have access to proxy communication for downloading service catalog images. To configure this, visit the Admin -&gt; Settings page where a section labeled “Proxy Settings” is located. Fill in the relevant connection info needed to utilize the proxy. It may also be advised to ensure that the Linux environment’s <cite>http_proxy</cite>, <cite>https_proxy</cite>, and <cite>no_proxy</cite> are set appropriately.</p>
+</div>
+<div class="section" id="defining-proxies">
+<h4>Defining Proxies<a class="headerlink" href="#defining-proxies" title="Permalink to this headline">¶</a></h4>
+<p>Proxies can be used in a few different contexts and optionally scoped to specific networks with which one may be provisioning into or on a cloud integration as a whole. To configure a Proxy for use by the provisioning engines within |morpheus| we must go to <cite>Infrastructure -&gt; Networks -&gt; Proxies</cite>. Here we can create records representing connection information for various proxies. This includes the host ip address, proxy port, and any credentials (if necessary) needed to utilize the proxy. Now that these proxies are defined we can use them in various contexts.</p>
+</div>
+<div class="section" id="cloud-communication">
+<h4>Cloud Communication<a class="headerlink" href="#cloud-communication" title="Permalink to this headline">¶</a></h4>
+<p>When morpheus needs to connect to various cloud APIs to issue provisioning commands or to sync in existing environments, we need to ensure that those api endpoints are accessible by the appliance. In some cases the appliance may be behind a proxy when it comes to public cloud access like Azure and AWS. To configure the cloud integration to utilize a proxy, when adding or editing a cloud there is a setting called “API Proxy” under “Advanced Options”. This is where the proxy of choice can be selected to instruct the Provisioning engine how to communicate with the public cloud. Simply adjust this setting and the cloud should start being able to receive/issue instructions.</p>
+</div>
+<div class="section" id="provisioning-with-proxies">
+<h4>Provisioning with Proxies<a class="headerlink" href="#provisioning-with-proxies" title="Permalink to this headline">¶</a></h4>
+<p>Proxy configurations can vary from operating system to operating system and in some cases it is necessary for these to be configured in the templates as a prerequisite. In other cases it can also be configured automatically. Mostly with the use of cloud-init (which all of our out of the box service catalog utilizes on all clouds). When editing/creating a cloud there is a setting for “Provisioning Proxy” in “Provisioning Options”. If this proxy is set, |morpheus| will automatically apply these proxy settings to the guest operating system.</p>
+<p>Overriding proxy settings can also be done on the Network record. Networks (or subnets) can be configured in <cite>Infrastructure -&gt; Networks</cite> or on the Networks tab of the relevant Cloud detail page. Here, a proxy can also be assigned as well as additional options like the <cite>No Proxy</cite> rules for proxy exceptions.</p>
+</div>
+<div class="section" id="docker">
+<h4>Docker<a class="headerlink" href="#docker" title="Permalink to this headline">¶</a></h4>
+<p>When provisioning Docker based hosts within a Proxy environment it is up to the user to configure the docker hosts proxy configuration manually. There are workflows that can be configured via the Automation engine to make this automatic when creating docker based hosts. Please see documentation on Docker and proxies for specific information.</p>
+<p>Proxy setups can vary widely from company to company, and it may be advised to contact support for help configuring morpheus to work in the proxy environment.</p>
+</div>
+</div>
+<div class="section" id="security-groups">
+<h3>Security Groups<a class="headerlink" href="#security-groups" title="Permalink to this headline">¶</a></h3>
+<p><code class="docutils literal"><span class="pre">Infrastructure</span> <span class="pre">-&gt;</span> <span class="pre">Network</span> <span class="pre">-</span> <span class="pre">Security</span> <span class="pre">Groups</span></code></p>
+<div class="section" id="id10">
+<h4>Overview<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h4>
+<p>A security group acts as a virtual firewall that controls the traffic for one or more instances. When you launch an instance, you associate one or more security groups with the instance. You add rules to each security group that allow traffic to or from its associated instances. You can modify the rules for a security group at any time; the new rules are automatically applied to all instances that are associated with the security group.</p>
+<div class="admonition important">
+<p class="first admonition-title">Important</p>
+<p class="last">The Host Level Firewall must be enabled for Security Groups to be applied. The Host Level Firewall can be enabled in <cite>Administration -&gt; Settings -&gt; Host Level Firewall Enable/Disable</cite></p>
+</div>
+</div>
+<div class="section" id="add-security-group">
+<h4>Add Security Group<a class="headerlink" href="#add-security-group" title="Permalink to this headline">¶</a></h4>
+<ol class="arabic simple">
+<li>Navigate to <cite>Infrastructure -&gt; Network - Security Groups</cite></li>
+<li>Click the <cite>+ Add Security Group</cite> button.</li>
+<li>From the Security Group Wizard input a name, and description.</li>
+<li>Save Changes</li>
+</ol>
+</div>
+<div class="section" id="add-security-group-rule">
+<h4>Add Security Group Rule<a class="headerlink" href="#add-security-group-rule" title="Permalink to this headline">¶</a></h4>
+<ol class="arabic simple">
+<li>Navigate to <cite>Infrastructure -&gt; Network - Security Groups</cite></li>
+<li>Click the name of the security group you wish to add a rule to.</li>
+<li>From the security group page click the <cite>+ Add Rule</cite> button.</li>
+<li>From the Rule Wizard select the rule type and input source and depending on the type selected protocol and input a port range.</li>
+<li>Save Changes</li>
+</ol>
+</div>
+<div class="section" id="edit-security-group-rule">
+<h4>Edit security group rule<a class="headerlink" href="#edit-security-group-rule" title="Permalink to this headline">¶</a></h4>
+<ol class="arabic simple">
+<li>Navigate to <cite>Infrastructure -&gt; Network - Security Groups</cite></li>
+<li>Click the name of the security group you wish to edit a rule in.</li>
+<li>Click the edit icon on the row of the security group rule you wish to edit.</li>
+<li>Modify information as needed.</li>
+<li>Save Changes</li>
+</ol>
+</div>
+<div class="section" id="delete-security-group-rule">
+<h4>Delete security group rule<a class="headerlink" href="#delete-security-group-rule" title="Permalink to this headline">¶</a></h4>
+<ol class="arabic simple">
+<li>Navigate to <cite>Infrastructure -&gt; Network - Security Groups</cite></li>
+<li>Click the name of the security group you wish to delete a rule from.</li>
+<li>Click the delete icon on the row of the security group rule you wish to delete.</li>
+</ol>
+</div>
+<div class="section" id="add-cloud-security-group">
+<h4>Add Cloud Security Group<a class="headerlink" href="#add-cloud-security-group" title="Permalink to this headline">¶</a></h4>
+<p>To add Cloud security group</p>
+<ol class="arabic simple">
+<li>Navigate to <cite>Infrastructure -&gt; Clouds</cite></li>
+<li>Click the name of the cloud to add an ACL.</li>
+<li>Click the Security Groups tab.</li>
+<li>Click the <cite>Edit Security Groups</cite> button.</li>
+<li>Click the + (Add) button next to the Security Group(s) in the Available Security Groups list to add to Added Security groups list.</li>
+<li>Save Changes</li>
+</ol>
+</div>
+<div class="section" id="remove-cloud-security-group">
+<h4>Remove Cloud Security Group<a class="headerlink" href="#remove-cloud-security-group" title="Permalink to this headline">¶</a></h4>
+<ol class="arabic simple">
+<li>Navigate to <cite>Infrastructure -&gt; Clouds</cite></li>
+<li>Click the name of the cloud to remove the Security Group from.</li>
+<li>Click the Security Groups tab.</li>
+<li>Click the <cite>Edit Security Groups</cite> button.</li>
+<li>Click the - (Minus) button of the Security Group from the Added Security groups list to remove.</li>
+<li>Save Changes</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="section" id="load-balancers">
+<h2>Load Balancers<a class="headerlink" href="#load-balancers" title="Permalink to this headline">¶</a></h2>
+<p><code class="docutils literal"><span class="pre">Infrastructure</span> <span class="pre">-&gt;</span> <span class="pre">Load</span> <span class="pre">Balancers</span></code></p>
+<div class="section" id="id11">
+<h3>Overview<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h3>
+<p>|morpheus| can provision VM or Container HaProxy Load Balancers, Amazon Elastic and Application Load Balancers, Azure Load Balancers, and integrates with several external Load Balancers, including F5, A10, Citrix, and AVI.</p>
+<p>Once created or integrated, Load Balancers are available as an option to be added during provision time or post-provisioning.</p>
+<p>Once a Load Balancer is added to an instance, you can manually scale or configure auto-scaling based on thresholds or schedules, and burst across clouds with cloud priority.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">HaProxy VM Load Balancer option, Load Balancer detail pages, Balance Mode, Sticky Mode and Shared VIP address option are available in |morpheus| 2.11.3+.</p>
+</div>
+<p>In the Load Balancers page there are two sections:</p>
+<dl class="docutils">
+<dt>Load Balancers</dt>
+<dd>View or edit existing Load Balancers, add new Load Balancers.</dd>
+<dt>Virtual Servers</dt>
+<dd>View and link to Instances that are attached to load balancers.</dd>
+</dl>
+</div>
+<div class="section" id="id12">
+<h3>Load Balancers<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h3>
+<p>The Load Balancers tab list currently available Load Balancers, which you can select, edit or delete, and is where you can create new or integrate with external Load Balancers.</p>
+<p>Select + LOAD BALANCER, chose an option, and fill in the required information:</p>
+<dl class="docutils">
+<dt>A10 (aXAPI v3)</dt>
+<dd><ul class="first last simple">
+<li>API Host</li>
+<li>API Port</li>
+<li>Username</li>
+<li>Password</li>
+<li>Internal IP</li>
+<li>Public IP</li>
+<li>VIP Address</li>
+<li>VIP Port</li>
+</ul>
+</dd>
+<dt>Amazon ALB</dt>
+<dd><ul class="first last simple">
+<li>Scheme</li>
+<li>Internal</li>
+<li>Internet-Facing</li>
+<li>Amazon Subnets (Select + to add additional)
+* Specify the subnets to enable for your load balancer. You can specify only one subnet per Availability Zone. You must specify subnets from at least two Availability Zones to increase the availability of your load balancer.</li>
+<li>Amazon Security Groups (Select + to add additional)</li>
+</ul>
+</dd>
+<dt>AVI</dt>
+<dd><ul class="first last simple">
+<li>API Host</li>
+<li>API Port</li>
+<li>Username</li>
+<li>Password</li>
+<li>Internal IP</li>
+<li>Public IP</li>
+<li>VIP Address</li>
+<li>VIP Port</li>
+</ul>
+</dd>
+<dt>Azure Load Balancer</dt>
+<dd><ul class="first last simple">
+<li>Cloud</li>
+<li>Resource Group
+* Populated from cloud selection</li>
+</ul>
+</dd>
+<dt>Citrix NetScaler</dt>
+<dd><ul class="first last simple">
+<li>API Host</li>
+<li>API Port</li>
+<li>Username</li>
+<li>Password</li>
+</ul>
+</dd>
+<dt>F5 BigIP (v11.4+)</dt>
+<dd><ul class="first last simple">
+<li>API Host</li>
+<li>API Port</li>
+<li>Username</li>
+<li>Password</li>
+<li>Managment URL</li>
+</ul>
+</dd>
+<dt>F5 LineRate</dt>
+<dd><ul class="first last simple">
+<li>API Host</li>
+<li>API Port</li>
+<li>Username</li>
+<li>Password</li>
+<li>Internal IP</li>
+<li>Public IP</li>
+<li>VIP Address</li>
+<li>VIP Port</li>
+</ul>
+</dd>
+<dt>HaProxy Container (Internal, will create a HaProxy container, must have available docker host to provision to)</dt>
+<dd><ul class="first last simple">
+<li>Group</li>
+<li>Cloud</li>
+<li>Name</li>
+<li>Description</li>
+<li>Plan
+* Select the size of HaProxy container to be provisioned</li>
+</ul>
+</dd>
+</dl>
+<p>//HAProxy VM (Internal, will provision a HaProxy VM into selected cloud)
+//Group
+//Cloud
+//Name
+//Description
+//Plan- Select size of HaProxy VM to be provisioned</p>
+<p>Upon saving your new Load Balancer will be added to the Load Balancers list and available in the Load Balancer dropdown in the Provisioning Wizard Automation Section for Instance Types that have scaling enabled.</p>
+<p>In the main Load Balancer page, select an existing Load Balancer to go to that Load Balancers Details Page, which lists Stats, Settings, Actions and Virtual Servers for that load balancer.</p>
+</div>
+<div class="section" id="virtual-servers">
+<h3>Virtual Servers<a class="headerlink" href="#virtual-servers" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="storage">
+<h3>Storage<a class="headerlink" href="#storage" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id13">
+<h4>Overview<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h4>
+<p>The default Storage path for Virtual Images, Backups, Deployment Archives, Archive Server, and Archived Snapshots is <cite>var/opt/morpheus</cite>. Additional Storage providers can be added and mapped for these targets in the <cite>Infrastructure -&gt; Storage</cite> section. Adding Storage providers are also required for scenarios like AWS migrations.</p>
+<p>=== Supported Storage Provider Types</p>
+<ul class="simple">
+<li>Local</li>
+<li>NFSv3</li>
+<li>CIFS (Samba Windows File Sharing)</li>
+<li>Amazon S3</li>
+<li>Azure</li>
+<li>Rackspace CDN</li>
+<li>OpenStack Swift</li>
+</ul>
+<p>=== To View Storage:</p>
+<p>. Select the Infrastructure link in the navigation bar.
+. Select the Storage link in the sub navigation bar.</p>
+<p>=== Add Storage Provider</p>
+<p>To Add Storage Provider:</p>
+<p>. Select the Infrastructure link in the navigation bar.
+. Select the Storage link in the sub navigation bar.
+. Click the Add Storage Provider button.
+. From the New Storage Provider Wizard input the following:
+Name::  Name of the storage provider.
+Provider Type:: Select from:
+* Local Storage
+** Storage Path
+* NFSv3
+** Host
+** Export Folder
+* CIFS (Samba Windows File Sharing)
+** Host
+** Username
+** Password
+** Share Path
+* Amazon S3
+** Access Key
+** Secret Key
+** Bucket Name
+** Endpoint URL (Optional endpoint URL if pointing to an object store other than amazon that mimics the Amazon S3 APIs.)
+* Azure
+** Storage Account
+** Storage Key
+** Share Name
+* Rackspace CDN
+** Username
+** API Key
+** Region
+** Bucket Name
+* OpenStack Swift
+** Username
+** API Key
+** Region
+** Bucket Name
+** Identity URL
+Targets::
+* Default Backup Target
+** Update existing backups
+* Archive Snapshots
+* Default Deployment Archive Target
+* Default Virtual Image Store</p>
+<p>. Click the Save Changes button to save.</p>
+<p>=== Edit Storage Provider</p>
+<p>To Edit Storage Provider:</p>
+<p>. Select the Infrastructure link in the navigation bar.
+. Select the Storage link in the sub navigation bar.
+. Click the Edit pencil icon on row of the Storage Provider to edit.
+. Edit required information.
+. Click the Save Changes button to save.</p>
+<p>=== Delete Storage Provider</p>
+<p>To Delete Storage Provider:</p>
+<p>. Select the Infrastructure link in the navigation bar.
+. Select the Storage link in the sub navigation bar.
+. Click the Delete icon on row of the Storage Provider to delete.</p>
+</div>
+</div>
+</div>
+<div class="section" id="key-pairs-certificates">
+<h2>Key Pairs &amp; Certificates<a class="headerlink" href="#key-pairs-certificates" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="key-pairs">
+<h3>Key Pairs<a class="headerlink" href="#key-pairs" title="Permalink to this headline">¶</a></h3>
+<p>The Key Pairs section enables the following actions: Add and Delete key pairs. Key Pairs are commonly used by |morpheus| for accessing instances via SSH. |morpheus| stores key pairs to simplify administration and access across both private and public clouds.</p>
+<p>To navigate to the Key Pairs section:</p>
+<ol class="arabic simple">
+<li>Select the Infrastructure link in the navigation bar.</li>
+<li>Select the Key Pairs link in the sub navigation bar.</li>
+</ol>
+</div>
+<div class="section" id="add-key-pair">
+<h3>Add Key Pair<a class="headerlink" href="#add-key-pair" title="Permalink to this headline">¶</a></h3>
+<p>To Add Key Pair:</p>
+<ol class="arabic simple">
+<li>Select the Infrastructure link in the navigation bar.</li>
+<li>Select the Key Pairs link in the sub navigation bar.</li>
+<li>Click the Add Key Pair button.</li>
+<li>From the Add Key Pair Wizard input the following:</li>
+</ol>
+<blockquote>
+<div><ul class="simple">
+<li>Name</li>
+<li>Public Key</li>
+<li>Private Key</li>
+</ul>
+</div></blockquote>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Certain features do not require storage of the private key.</p>
+</div>
+</div>
+<div class="section" id="delete-key-pair">
+<h3>Delete Key Pair<a class="headerlink" href="#delete-key-pair" title="Permalink to this headline">¶</a></h3>
+<p>To Delete Key Pair:</p>
+<ol class="arabic simple">
+<li>Select the Infrastructure link in the navigation bar.</li>
+<li>Select the Key Pairs link in the sub navigation bar.</li>
+<li>Click the Delete icon on the row of the Key Pair to delete.</li>
+</ol>
+</div>
+<div class="section" id="pxe-boot">
+<h3>PXE Boot<a class="headerlink" href="#pxe-boot" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id14">
+<h4>Overview<a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h4>
+<p>|morpheus| includes a built in PXE Server to enable easy and rapid bare metal provisioning. Simply map your TFTP server port to the |morpheus| sevrer port 6969 and you are ready to PXE boot from the provided images and answer files, or add your own to bring up Bare metal Hosts with ease.</p>
+<p>=== Prerequisites</p>
+<p>Your network must be configured for PXE boot, and the TFTP server port need to mapped to the |morpheus| TFT server port, UDP 6969.</p>
+<ul class="simple">
+<li>Network configured for network boot</li>
+<li>Router UDP 69 mapped to |morpheus| server UDP port 6969</li>
+<li>Router TFT Server set to |morpheus| server IP or resolvable Hostname.</li>
+<li>Mac or IP addresses of PXE target mapped in |morpheus| <cite>Infrastructure -&gt; Boot - Mapping</cite></li>
+<li>Target host configured for Network boot in BIOS</li>
+</ul>
+<p>NOTE: The |morpheus| PXE port is set in <cite>opt/morpheus/conf/application.yml</cite></p>
+<p>=== To PXE Boot</p>
+<p>. Click the Infrastructure link in the navigation bar.
+. Select the Boot link in the sub navigation bar.</p>
+<p>==== Add Mapping</p>
+<p>. Select the Mapping tab then click the Add Mapping button.
+. From the New Mapping Wizard input the following information:
+Match Pattern:: Mac address separated by ‘:’ or an ip address filter
+Description(optional):: Description of the new mapping.
+Active:: Flag to denote the mapping as active or disabled.
+Operating System:: List of operating systems for the mapping.
+Boot Image:: Lists available PXE boot images.
+Answer File:: Lists available answer files.
+Cloud:: Lists the available clouds.
+Server Mode: List of server modes:: unmanaged, Managed, Bare metal host, Container host, VM host, and Container &amp; VM host.
+Click the Save Changes button to save.</p>
+<p>Once the mapping is added, and the target host is powered on, the |morpheus| PXE menu will load and PXE boot will start.</p>
+<p>==== Edit Mapping</p>
+<p>. Click the Infrastructure link in the navigation bar.
+. Click the Boot link in the sub navigation bar.
+. Click the edit icon on the row of the mapping you wish to edit.
+. Modify information as needed.
+. Click the Save Changes button to save.</p>
+<p>==== Delete Mapping</p>
+<p>. Click the Infrastructure link in the navigation bar.
+. Click the Boot link in the sub navigation bar.
+. Click the delete icon on the row of the mapping you wish to delete.</p>
+<p>=== Answer Files</p>
+<p>Answer files are like lists of answers for questions that you know the setup program is going to ask but the user is not prepared to answer. They contain one or more sections, and each section contains one or more properties in the form name=value. Morpheus provides Answer Files for ESXi, CentOS, Ubuntu and XenServer, and user can add their own.</p>
+<p>==== Add Answer Files</p>
+<p>. Click the Infrastructure link in the navigation bar.
+. Click the Boot link in the sub navigation bar
+. Select the Answer Files tab then click the Add Answer File button.
+. From the New Answer File Wizard input the following information
+Name:: Name of the answer file.
+Description(optional):: Description of the new answer file.
+Active:: Flag to denote the mapping as active or disabled.
+Script Name:: Name of the new answer file.
+Script Version:: Version of the new answer file.
+Script:: The script for the new answer file.
+. Click the Save Changes button to save.</p>
+<p>==== Edit Answer File</p>
+<p>. Click the Infrastructure link in the navigation bar.
+. Click the Boot link in the sub navigation bar
+. Select the Answer Files tab
+. Click the edit icon on the row of the answer file you wish to edit.
+. Modify information as needed.
+. Click the Save Changes button to save.</p>
+<p>==== Delete Answer File</p>
+<p>. Click the Infrastructure link in the navigation bar.
+. Click the Boot link in the sub navigation bar
+. Select the Answer Files tab.
+. Click the delete icon on the row of the answer file you wish to delete.</p>
+<p>=== Images</p>
+<p>Morpheus provides Images for ESXi, CentOS, Ubuntu and XenServer, and user can add their own.</p>
+<p>==== Add Images</p>
+<p>. Click the Infrastructure link in the navigation bar.
+. Click the Boot link in the sub navigation bar
+. Select the Images tab then click the Add Image button.
+. From the Upload Virtual Image Wizard input the following information
+Name:: Name of the answer file.
+Operating System:: List of available operating systems.
+Menu::
+Storage Provider:: List of available storage providers.
+Image Path:: Path of the image.
+Visibility:: Private or Public
+Account:: List of accounts to allow permission to this image.
+. Click the Save Changes button to save.</p>
+<p>==== Edit Image</p>
+<p>. Click the Infrastructure link in the navigation bar.
+. Click the Boot link in the sub navigation bar
+. Select the Images tab
+. Click the actions drop down and select edit.
+. Modify information as needed.
+. Click the Save Changes button to save.</p>
+<p>==== Convert Image</p>
+<p>. Click the Infrastructure link in the navigation bar.
+. Click the Boot link in the sub navigation bar.
+. Select the Images tab
+. Click the <cite>Actions</cite> drop and select <cite>Convert</cite>.</p>
+<p>==== Download Image</p>
+<p>. Click the Infrastructure link in the navigation bar.
+. Click the Boot link in the sub navigation bar.
+. Select the Images tab
+. Click the <cite>Actions</cite> drop and select <cite>Download</cite>.</p>
+<p>==== Remove Image</p>
+<p>. Click the Infrastructure link in the navigation bar.
+. Click the Boot link in the sub navigation bar.
+. Select the Image tab.
+. Click the <cite>Actions</cite> drop and select <cite>Remove</cite>.</p>
+</div>
+</div>
+</div>
+<div class="section" id="policies">
+<h2>Policies<a class="headerlink" href="#policies" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id15">
+<h3>Overview<a class="headerlink" href="#id15" title="Permalink to this headline">¶</a></h3>
+<p>Policies are new feature that add more governance, ease of use, cost-saving and auditing features to |morpheus| . Policies can be created in the Policies tabs in Groups and Clouds. Policy generation is also a role permission.</p>
+<p>Policies apply towards any instance provisioned into a group or cloud with active policies. Cloud policies will override matching or conflicting group policies during provisioning.</p>
+</div>
+<div class="section" id="policy-types">
+<h3>Policy types<a class="headerlink" href="#policy-types" title="Permalink to this headline">¶</a></h3>
+<dl class="docutils">
+<dt>Available Policy types include:</dt>
+<dd><ul class="first last simple">
+<li>Approval</li>
+<li>Expiration</li>
+<li>Shutdown</li>
+<li>Host Name</li>
+<li>Hostname</li>
+<li>Instance Name</li>
+<li>Max Containers</li>
+<li>Max Cores</li>
+<li>Max Hosts</li>
+<li>Max Memory</li>
+<li>Max Storage</li>
+<li>Max VMs</li>
+</ul>
+</dd>
+</dl>
+</div>
+<div class="section" id="creating-policies">
+<h3>Creating Policies<a class="headerlink" href="#creating-policies" title="Permalink to this headline">¶</a></h3>
+<p>Policies can be created, edited, and set to active or inactive in the a group or cloud detail pane under the Policies tab.</p>
+<p>Group Policies tab:</p>
+<img alt="../_images/group_policies_tab.png" src="../_images/group_policies_tab.png" />
+<p>Cloud Policies Tab:</p>
+<img alt="../_images/cloud_policies_tab.png" src="../_images/cloud_policies_tab.png" />
+<p>To create a new policy, select ADD POLICY and choose from the available policy types:</p>
+<img alt="../_images/new_policy.png" src="../_images/new_policy.png" />
+<div class="section" id="expiration-policies">
+<h4>Expiration Policies<a class="headerlink" href="#expiration-policies" title="Permalink to this headline">¶</a></h4>
+<p>Expiration policies set an expiration timeframe for any instance provisioned into the cloud or group the policy is added to. When an instance expires, it is terminated and deleted.</p>
+<p>Configuration options for expiration policies:</p>
+<ul class="simple">
+<li>EXPIRATION TYPE</li>
+</ul>
+<p>** User Configurable - expiration timeframe is editable during provisioning
+** Fixed Expiration - user cannot change expiration timeframe
+* EXPIRATION DAYS
+** Configures the number of days the instance is allowed to exist before being removed.
+* RENEWAL DAYS
+** If the instance is renewed, this is the number of day increments the expiration date is increased by.
+* NOTIFICATION DAYS
+** This allows an email notice to be sent out x days before the instance is going to expire.
+* NOTIFICATION MESSAGE
+** Customizable message for notification email. Default message is “Instance ${instance?.name} is set to expire on ${instance?.expireDate}”
+* AUTO APPROVE EXTENSIONS
+** Enable this to auto-approve extension requests. Please note approval workflows will be available in upcoming |morpheus| release.</p>
+<p>image::infrastructure/new_policy2.png[caption=”Figure 4: “, title=”Expiration Policy”, alt=”Expiration Policy”]</p>
+<p>Instances with expirations show the time until expiration in the instance detail pane. Instances with active expiration policies can be extended by selecting the EXTEND NOW button in the instance detail pane. The extension length is set in the policy by the RENEWAL DAYS field.</p>
+<p>image::infrastructure/renewal_policy.png[caption=”Figure 5: “, title=”Renewal Policy”, alt=”Renewal Policy”]</p>
+<p>Expirations can also be added to any instance during provisioning by entering the number of days in the EXPIRATION DAYS field in the Lifecycle section of the automation section of the provisioning wizard. Expiration can be added to any instance even if no policies have been created.</p>
+<p>image::infrastructure/expirations.png[caption=”Figure 6: “, title=”Expirations”, alt=”Expirations”]</p>
+<p>==== Naming Policies</p>
+<p>Naming Policies will populate a fixed or editable name for instances, hosts and hostnames. The Name Pattern field uses ${variable} string interpolation.</p>
+<p>Available Variables for naming patterns are:</p>
+<p>groupName, groupCode, cloudName, cloudCode, type, accountID, account, accountType, platform, userID, userName, userInitials, provisionType</p>
+<p>And example for an instance name policy using a naming pattern with users initials, cloud code, instance type, and adds a sequential number is:</p>
+<p>pattern: ${userInitials}-${cloudCode}-${type}-${sequence}</p>
+<p>Naming policies can be configure to be user configurable or static, and to auto-resolve naming conflicts.</p>
+<p>Hint: Cloud codes are a new field found in cloud configuration panes.</p>
+<p>image::infrastructure/edit_policy.png[caption=”Figure 7: “, title=”Edit Policy”, alt=”Edit Policy”]</p>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../administration/administration.html" class="btn btn-neutral float-right" title="Administration" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../provisioning/provisioning.html" class="btn btn-neutral" title="Provisioning" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, jw.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

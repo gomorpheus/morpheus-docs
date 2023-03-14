@@ -1,0 +1,309 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Policies &mdash; jwtest 1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../_static/my_theme.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
+    <link rel="top" title="jwtest 1 documentation" href="../index.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html">
+          
+
+          
+            
+            <img src="../_static/logo.svg" class="logo" />
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/getting_started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../provisioning/provisioning.html">Provisioning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="infrastructure.html">Infrastructure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../administration/administration.html">Administration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../monitoring/monitoring.html">Monitoring</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../logs/logging.html">Logs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../backups/backups.html">Backups</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../operations/operations.html">Operations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../services/services.html">Services</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../integration_guides/integration_guides.html">Integration Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faq/faqs.html">FAQ’s</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../release_notes/release_notes.html">Release Notes</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">jwtest</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>Policies</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/infrastructure/policies.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="policies">
+<h1>Policies<a class="headerlink" href="#policies" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
+<p>Policies are new feature that add more governance, ease of use, cost-saving and auditing features to |morpheus| . Policies can be created in the Policies tabs in Groups and Clouds. Policy generation is also a role permission.</p>
+<p>Policies apply towards any instance provisioned into a group or cloud with active policies. Cloud policies will override matching or conflicting group policies during provisioning.</p>
+</div>
+<div class="section" id="policy-types">
+<h2>Policy types<a class="headerlink" href="#policy-types" title="Permalink to this headline">¶</a></h2>
+<dl class="docutils">
+<dt>Available Policy types include:</dt>
+<dd><ul class="first last simple">
+<li>Approval</li>
+<li>Expiration</li>
+<li>Shutdown</li>
+<li>Host Name</li>
+<li>Hostname</li>
+<li>Instance Name</li>
+<li>Max Containers</li>
+<li>Max Cores</li>
+<li>Max Hosts</li>
+<li>Max Memory</li>
+<li>Max Storage</li>
+<li>Max VMs</li>
+</ul>
+</dd>
+</dl>
+</div>
+<div class="section" id="creating-policies">
+<h2>Creating Policies<a class="headerlink" href="#creating-policies" title="Permalink to this headline">¶</a></h2>
+<p>Policies can be created, edited, and set to active or inactive in the a group or cloud detail pane under the Policies tab.</p>
+<p>Group Policies tab:</p>
+<img alt="../_images/group_policies_tab.png" src="../_images/group_policies_tab.png" />
+<p>Cloud Policies Tab:</p>
+<img alt="../_images/cloud_policies_tab.png" src="../_images/cloud_policies_tab.png" />
+<p>To create a new policy, select ADD POLICY and choose from the available policy types:</p>
+<img alt="../_images/new_policy.png" src="../_images/new_policy.png" />
+<div class="section" id="expiration-policies">
+<h3>Expiration Policies<a class="headerlink" href="#expiration-policies" title="Permalink to this headline">¶</a></h3>
+<p>Expiration policies set an expiration timeframe for any instance provisioned into the cloud or group the policy is added to. When an instance expires, it is terminated and deleted.</p>
+<p>Configuration options for expiration policies:</p>
+<ul class="simple">
+<li>EXPIRATION TYPE</li>
+</ul>
+<p>** User Configurable - expiration timeframe is editable during provisioning
+** Fixed Expiration - user cannot change expiration timeframe
+* EXPIRATION DAYS
+** Configures the number of days the instance is allowed to exist before being removed.
+* RENEWAL DAYS
+** If the instance is renewed, this is the number of day increments the expiration date is increased by.
+* NOTIFICATION DAYS
+** This allows an email notice to be sent out x days before the instance is going to expire.
+* NOTIFICATION MESSAGE
+** Customizable message for notification email. Default message is “Instance ${instance?.name} is set to expire on ${instance?.expireDate}”
+* AUTO APPROVE EXTENSIONS
+** Enable this to auto-approve extension requests. Please note approval workflows will be available in upcoming |morpheus| release.</p>
+<p>image::infrastructure/new_policy2.png[caption=”Figure 4: “, title=”Expiration Policy”, alt=”Expiration Policy”]</p>
+<p>Instances with expirations show the time until expiration in the instance detail pane. Instances with active expiration policies can be extended by selecting the EXTEND NOW button in the instance detail pane. The extension length is set in the policy by the RENEWAL DAYS field.</p>
+<p>image::infrastructure/renewal_policy.png[caption=”Figure 5: “, title=”Renewal Policy”, alt=”Renewal Policy”]</p>
+<p>Expirations can also be added to any instance during provisioning by entering the number of days in the EXPIRATION DAYS field in the Lifecycle section of the automation section of the provisioning wizard. Expiration can be added to any instance even if no policies have been created.</p>
+<p>image::infrastructure/expirations.png[caption=”Figure 6: “, title=”Expirations”, alt=”Expirations”]</p>
+<p>==== Naming Policies</p>
+<p>Naming Policies will populate a fixed or editable name for instances, hosts and hostnames. The Name Pattern field uses ${variable} string interpolation.</p>
+<p>Available Variables for naming patterns are:</p>
+<p>groupName, groupCode, cloudName, cloudCode, type, accountID, account, accountType, platform, userID, userName, userInitials, provisionType</p>
+<p>And example for an instance name policy using a naming pattern with users initials, cloud code, instance type, and adds a sequential number is:</p>
+<p>pattern: ${userInitials}-${cloudCode}-${type}-${sequence}</p>
+<p>Naming policies can be configure to be user configurable or static, and to auto-resolve naming conflicts.</p>
+<p>Hint: Cloud codes are a new field found in cloud configuration panes.</p>
+<p>image::infrastructure/edit_policy.png[caption=”Figure 7: “, title=”Edit Policy”, alt=”Edit Policy”]</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, jw.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

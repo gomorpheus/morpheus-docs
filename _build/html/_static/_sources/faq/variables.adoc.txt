@@ -1,0 +1,178 @@
+[[variables]]
+
+=== Variables
+
+The following are the map structures passed to scripts and templates during provisioning. They can currently be used inside of a `<%= %>` block.
+
+PowerShell Example:
+[source,shell]
+`$app_id = "<%= instance.metadata.app_id %>"`
+
+Bash Example:
+.. code-block:: bash
+`HOSTNAME="<%= container.server.hostname %>"`
+
+NOTE: customOptions are user defined as Option Types or Option Lists in custom Library items.
+
+.. code-block:: bash
+----
+instance {
+	instanceTypeName,
+	instanceTypeCode,
+	provisionType,
+	instanceVersion,
+	plan,
+	name,
+	displayName,
+	description,
+	environmentPrefix,
+	hostname,
+	domainName,
+	firewallEnabled,
+	status,
+	userStatus,
+	networkLevel,
+	instanceLevel,
+	deployGroup,
+	instanceContext,
+	autoScale,
+	statusMessage,
+	expireDate,
+	tags,
+	storage,
+	memory,
+	cores,
+	configId,
+	configGroup,
+	configRole
+	containers:[],
+	metadata:[],
+	evars:[]
+}
+----
+.. code-block:: bash
+----
+container {
+	containerTypeName,
+	containerTypeCode,
+	containerTypeShortName,
+	provisionType,
+	dataPath,
+	logsPath,
+	configPath,
+	planCode,
+	dateCreated,
+	status,
+	environmentPrefix,
+	version,
+	image,
+	internalHostname,
+	hostname,
+	domainName,
+	storage,
+	memory,
+	cores,
+	internalIp,
+	externalIp,
+	sshHost,
+	hostMountPoint,
+	configId,
+	configGroup,
+	configRole,
+	serverId,
+	server:{}
+}
+----
+.. code-block:: bash
+----
+server {
+	serverTypeName,
+	serverTypeCode,
+	parentServerId,
+	plan,
+	visibility,
+	osTypeCode,
+	sourceImageId,
+	name,
+	displayName,
+	internalName,
+	category,
+	description
+	internalId,
+	externalId,
+	platform,
+	platformVersion,
+	agentVersion,
+	nodePackageVersion,
+	sshHost,
+	sshPort,
+	sshUsername,
+	consoleType,
+	consoleHost,
+	consolePort,
+	consoleUsername,
+	internalSshUsername,
+	internalIp,
+	externalIp,
+	osDevice,
+	dataDevice,
+	lvmEnabled,
+	apiKey,
+	softwareRaid,
+	status,
+	powerState,
+	dateCreated,
+	lastAgentUpdate,
+	serverType,
+	osType,
+	commType,
+	managed,
+	agentInstalled,
+	toolsInstalled,
+	hostname,
+	domainName,
+	statusMessage,
+	maxStorage,
+	maxMemory,
+	maxCores,
+	macAddress,
+	serverVendor,
+	serverModel,
+	serialNumber,
+	tags,
+	configId,
+	configGroup,
+	configRole
+}
+----
+.. code-block:: bash
+----
+cloud {
+	name,
+	code,
+	location,
+	cloudTypeName,
+	cloudTypeCode,
+	domainName,
+	scalePriority,
+	firewallEnabled,
+	regionCode,
+	agentMode,
+	datacenterId
+}
+----
+.. code-block:: bash
+----
+group {
+	code,
+	name,
+	location,
+	datacenterId
+}
+----
+.. code-block:: bash
+----
+customOptions {
+	customOptions.fieldName
+}
+----

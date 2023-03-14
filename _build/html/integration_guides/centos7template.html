@@ -1,0 +1,303 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Creating a CentOS 7 |morpheus| Image &mdash; jwtest 1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../_static/my_theme.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
+    <link rel="top" title="jwtest 1 documentation" href="../index.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html">
+          
+
+          
+            
+            <img src="../_static/logo.svg" class="logo" />
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/getting_started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../provisioning/provisioning.html">Provisioning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../infrastructure/infrastructure.html">Infrastructure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../administration/administration.html">Administration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../monitoring/monitoring.html">Monitoring</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../logs/logging.html">Logs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../backups/backups.html">Backups</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../operations/operations.html">Operations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../services/services.html">Services</a></li>
+<li class="toctree-l1"><a class="reference internal" href="integration_guides.html">Integration Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faq/faqs.html">FAQ’s</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../release_notes/release_notes.html">Release Notes</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">jwtest</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>Creating a CentOS 7 |morpheus| Image</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/integration_guides/centos7template.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="creating-a-centos-7-morpheus-image">
+<h1>Creating a CentOS 7 |morpheus| Image<a class="headerlink" href="#creating-a-centos-7-morpheus-image" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
+<p>|morpheus| comes out of the box with a default set of templates for use in many modern deployment scenarios. These consist mostly of base operating system images with a few additional adjustments. These adjustments typically include the addition of cloud-init (which is highly recommended to be used in most environments, but not mandatory). However, in many on-premise deployments there are custom image requirements as well as networking requirements. This guide will go over how to create a base CentOS 7 Image for use within |morpheus| .</p>
+<p>=== Creating a CentOS 7 |morpheus| VMware Image</p>
+<p>==== VMWare</p>
+<p>When running in VMWare it is highly recommended that VMware Tools be installed. Without it, |morpheus| will have difficulty assessing the host ip address and performing some additional automation tasks for the operating system.</p>
+<p>==== Cloud-Init</p>
+<p>To get started with a base CentOS image we first install cloud-init. This is a relatively simple process using yum:
+.. code-block:: bash
+—-
+yum -y install epel-release
+yum -y install git wget ntp curl cloud-init dracut-modules-growroot
+rpm -qa kernel | sed ‘s/^kernel-//’  | xargs -I {} dracut -f /boot/initramfs-{}.img {}
+—-</p>
+<p>There are two parts to this yum installation. We are first ensuring some core dependencies are installed for automation as well as cloud-init. git for example is installed for use by ansible playbook automation down the line and is therefore optional if not using ansible. The dracut-modules-growroot is responsible for resizing the root partition upon first boot to match the virtual disk size that was potentially adjusted during provisioning.</p>
+<p>A great benefit to using cloud-init is credentials don’t have to be locked into the template. It is advisable, within |morpheus| , to configure the default cloud-init user that gets created when the vm boots automatically by cloud-init. This is located in the <cite>Administration -&gt; Provisioning -&gt; Cloud-Init</cite> Settings section.</p>
+<p>==== Network Interfaces</p>
+<p>A slightly annoying change with centOS 7 is that the network interfaces have changed naming convention. You may notice when running ifconfig that the primary network interface is set to something like ens2344 or some other random number. This naming is dynamic typically by hardware id and we don’t want this to fluctuate when provisioning the template in various VMware environments. Fortunately, there is a way to turn this functionality off and restore the interface back to eth0.</p>
+<p>Firstly we need to adjust our bootloader to disable interface naming like this.
+.. code-block:: bash
+—-
+sed -i -e ‘s/quiet/quiet net.ifnames=0 biosdevname=0/’ /etc/default/grub
+grub2-mkconfig -o /boot/grub2/grub.cfg
+—-</p>
+<p>The above command adds a few arguments to the kernel args list (namely <cite>net.ifnames=0</cite> and <cite>biosdevname=0</cite>. It may be useful to view the <cite>/etc/default/grub</cite> file and ensure these settings were indeed applied.</p>
+<p>The next step is to adjust the network-scripts in centOS. we need to ensure we have a file called <a href="#id1"><span class="problematic" id="id2">``</span></a>/etc/sysconfig/network-scripts/ifcfg-eth0`</p>
+<p>Below is a script that we run on our packer builds to prepare the machines network configuration files.
+.. code-block:: bash
+—-
+export iface_file=$(basename “$(find /etc/sysconfig/network-scripts/ -name ‘ifcfg*’ -not -name ‘ifcfg-lo’ | head -n 1)”)
+export iface_name=${iface_file:6}
+echo $iface_file
+echo $iface_name
+sudo mv /etc/sysconfig/network-scripts/$iface_file /etc/sysconfig/network-scripts/ifcfg-eth0
+sudo sed -i -e “s/$iface_name/eth0/” /etc/sysconfig/network-scripts/ifcfg-eth0
+sudo bash -c ‘echo NM_CONTROLLED=”no” &gt;&gt; /etc/sysconfig/network-scripts/ifcfg-eth0’
+—-</p>
+<p>This script tries to ensure there is a new ifcfg-eth0 config created to replace the old ens config file. Please do verify this config exists after running. If it does not you will have to be sure to build one on your own.
+.. code-block:: bash
+—-
+TYPE=Ethernet
+DEVICE=eth0
+NAME=eth0
+ONBOOT=yes
+NM_CONTROLLED=”no”
+BOOTPROTO=”dhcp”
+DEFROUTE=yes
+—-</p>
+<p>=== Gotyas</p>
+<p>SELinux can cause issues with cloud-init when in enforced mode. It may be advisable to set this to permissive unless it is mandatory within your organization to use an enforced SELinux configuration. If that is the case please see the documentation for the cloud_init_t security policies.</p>
+<p>==== A Note on Proxies</p>
+<p>Proxy configurations are known to vary in some organizations and makes building a base template a little more difficult. In order to fully configure proxies a few environment variables must be set in the <cite>/etc/environment</cite> file (This can be done automatically in a default user-data script for cloud-init as well in edit cloud).
+.. code-block:: bash
+—-
+http_proxy=”<a class="reference external" href="http://myproxyaddress:8080">http://myproxyaddress:8080</a>”
+https_proxy=”<a class="reference external" href="http://myproxyaddress:8080">http://myproxyaddress:8080</a>”
+ftp_proxy=”<a class="reference external" href="http://myproxyaddress:8080">http://myproxyaddress:8080</a>”
+no_proxy=127.0.0.1,localhost,applianceUrl
+https_no_proxy=127.0.0.1,localhost,applianceUrl
+—-</p>
+<p>IMPORTANT: It is very important to properly set the no_proxy list (applianceUrl) should be replaced with the actual appliance url. In future releases , morpheus plans to automatically take care of this.</p>
+<p>NOTE: If using cloud-init agent install mode these settings need to be set in the custom Cloud-Init User data section of “Edit Cloud” or “Edit Virtual Image”</p>
+<p>IMPORTANT: If using this virtual machine as a docker host, proxy settings must also be configured in the docker config. See Docker guides for instructions on how to properly set this. If necessary this can be wrapped in a task automation workflow for your own use.</p>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, jw.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>
