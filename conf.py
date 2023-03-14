@@ -9,9 +9,9 @@ latex_documents = [
 
 rst_prolog = """
 
-.. |releasedate| replace:: Mar 1 2023
+.. |releasedate| replace:: Mar 14 2023
 .. |morphbranch| replace:: v6.0
-.. |morphver| replace:: v6.0.0
+.. |morphver| replace:: v6.0.1
 .. |minUpgradeVer| replace:: v5.2.0
 .. |previousMorphVer| replace:: v5.5.3
 .. |pluginVer| replace:: 0.13.6
