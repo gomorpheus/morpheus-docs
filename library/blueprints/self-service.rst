@@ -33,6 +33,7 @@ Configure the following:
 - **DESCRIPTION:** An optional description identifying the catalog item
 - **ENABLED:** When checked, this catalog item will be available for provisioning
 - **FEATURED:** When checked, this catalog item will be given special visibility in the Service Catalog Persona view
+- **ALLOW QUANTITY:** When checked, an additional field is added to the order page allowing users to order multiple copies. If this option is enabled, ensure your configuration supports that flexibility (such as when IP or load balancer details are specified)
 - **VISIBILITY:** Set to private to keep the catalog item available only to users in the current Tenant. Master Tenant administrators may set catalog items to public to make them viewable and usable by Subtenant users
 - **LOGO:** Select or upload a logo to be associated with this catalog item
 - **CONFIG:** Enter, view, or edit Instance config here. Click :guilabel:`CONFIGURATION WIZARD` to build a base configuration through the |morpheus| Instance wizard. Following configuration through the Instance wizard, you may need to overwrite some static values in the configuration with calls to custom Input values. This allows your users to easily set the Instance Plan, Group, name, tags, or anything else they may need to control. Dynamic inputs are passed with the following syntax: "<%= customOptions.fieldName %>" where fieldName is the Field Name value set on the Input
@@ -199,6 +200,7 @@ Configure the following:
 - **DESCRIPTION:** An optional description identifying the catalog item
 - **ENABLED:** When checked, this catalog item will be available for provisioning
 - **FEATURED:** When checked, this catalog item will be given special visibility in the Service Catalog Persona view
+- **ALLOW QUANTITY:** When checked, an additional field is added to the order page allowing users to order multiple copies. If this option is enabled, ensure your configuration supports that flexibility (such as when IP or load balancer details are specified)
 - **VISIBILITY:** Set to private to keep the catalog item available only to users in the current Tenant. Master Tenant administrators may set catalog items to public to make them viewable and usable by Subtenant users
 - **LOGO:** Select or upload a logo to be associated with this catalog item
 - **CONFIGURE:** Click :guilabel:`CONFIGURE` to use the familiar App provisioning wizard to tie Blueprint and App deployment configuration to the Catalog Item
@@ -244,6 +246,7 @@ Configure the following:
 - **DESCRIPTION:** An optional description identifying the catalog item
 - **ENABLED:** When checked, this Workflow item will be available for selection in the Service Catalog
 - **FEATURED:** When checked, this catalog item will be given special visibility in the Service Catalog Persona view
+- **ALLOW QUANTITY:** When checked, an additional field is added to the order page allowing users to order multiple runs
 - **VISIBILITY:** Set to private to keep the catalog item available only to users in the current Tenant. Master Tenant administrators may set catalog items to public to make them viewable and usable by Subtenant users
 - **LOGO:** Select or upload a logo to be associated with this catalog item
 - **WORKFLOW:** Select an existing Workflow to be associated with this Catalog Item, new Workflows are created in |LibAut|

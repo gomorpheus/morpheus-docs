@@ -13,7 +13,7 @@ rst_prolog = """
 .. |morphbranch| replace:: v6.0
 .. |morphver| replace:: v6.0.1
 .. |minUpgradeVer| replace:: v5.2.0
-.. |previousMorphVer| replace:: v5.5.3
+.. |previousMorphVer| replace:: v6.0.0
 .. |pluginVer| replace:: 0.13.6
 .. |workerVer| replace:: 5.4.8
 .. |rmqbranch| replace:: v3.5-3.11

@@ -1100,6 +1100,12 @@ Role Mappings
         - If utilizing a VMware Cloud, the ability to create snapshots is available on the Instance detail page (Provisoning > Instances > selected Instance).
         - This permission is recommended for Instance owners who should be allowed to take snapshots.
         -
+      * - Snapshots: Linked Clone
+        - None, Full
+        - For VMware Cloud Instances, this controls access to the ability to create linked clone snapshots on the Instance detail page
+        -
+        -
+        -
 
 - .. toggle-header:: :header: **Tools Permission Options**
 

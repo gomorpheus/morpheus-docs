@@ -46,7 +46,8 @@ Service Plan Configuration
 - **CORE COUNT:** The number of virtual CPU cores included with the plan
 - **CUSTOM CORES:** Allows the number of virtual CPU cores to be customized during provisioning or reconfigure. Custom Range limits, if set, will apply
 - **CORES PER SOCKET:** Determines core distribution across sockets. CORES PER SOCKET cannot be larger than CORE COUNT, and CORE COUNT must be divisible by CORES PER SOCKET. For example four CORES with two CORES PER SOCKET means two sockets would have two cores each assigned. Four CORES with one CORE PER SOCKET would have four sockets with one core each assigned, and four CORES with four CORES PER SOCKET would have one socket with four cores assigned
-- **CUSTOM STORAGE RANGE:** The minimum and maximum allowed amount of storage per volume when CUSTOMIZE ROOT VOLUME, CUSTOMIZE EXTRA VOLUMES, or ADD VOLUMES is enabled for the Plan
+- **TOTAL STORAGE:** When custom storage is enabled for the plan, this sets a minimum and maximum total storage allowed (all disks combined)
+- **PER DISK SIZE:** When custom storage is enabled for the plan, this sets the minimum and maximum storage for each disk
 - **CUSTOM MEMORY RANGE:** The minimum and maximum allowed amount of memory for the Plan when CUSTOM MEMORY is enabled for the Plan
 - **CUSTOM CORES RANGE:** The minimum and maximum allowed amount of virtual CPU cores for the Plan when CUSTOM CORES is enabled for the Plan
 - **PRICE SETS:** In the Price Sets tab, associate Price Sets with the Plan. See :ref:`Adding Price Sets to Plans`

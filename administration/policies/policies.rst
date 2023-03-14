@@ -17,6 +17,8 @@ Approve Provision
   Sets an approval requirement for provisioning Instances or Apps within the Policy scope. When setting the Policy, users have the option of using Morpheus Approvals or an Approval Integration such a ServiceNow.
 Approve Reconfigure
   Sets an approval requirement for reconfiguring Instances and servers within the Policy scope. When setting the Policy, users have the option of using Morpheus Approvals or an Approval Integration such a ServiceNow.
+Approve Workflow Execute
+  If enabled, when Workflows are executed on workloads within the Policy scope, an Approval is generated. This could apply when a Workflow is executed from the Workflows list page or from the detail page for an Instance or server. Approvals can be targeted to |morpheus| internal Approvals or targeted to a third-party integration (such as ServiceNow). The Workflow will not begin to execute until after the approval is granted.
 Backup Creation
   Disable or enable the ability to create a backup when provisioning an instance.
 Backup Targets

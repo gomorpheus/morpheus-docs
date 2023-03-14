@@ -131,6 +131,17 @@ When a Workflow fails, |morpheus| allows users to retry from the failed Task. Ac
 
 .. image:: /images/automation/retryTask.png
 
+Cancelling Workflow Tasks
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
+When a Workflow is running, |morpheus| offers the capability of cancelling a Task and stopping any subsequent Tasks from starting. When viewed later in History or Executions, this leaves the Task and Workflow in a cancelled state. This is useful if you have a very long-running Task that you know will fail and wish to cancel or if you want to prevent a "retryable" Task from running again.
+
+To cancel a Workflow, open the execution. Within the running Task will be a cancel button, click the button to interrupt the Workflow. Once cancelled, see that the Workflow and Task are now considered to be in a cancelled state which is shown in the UI. At this point the cancel button becomes a retry button and the Task could be resumed if desired.
+
+.. NOTE:: Cancelling a Task doesn't actually interrupt the process already running on the workloads themselves. It simply interrupts the Workflow and stops it from continuing. Behind the scenes, |morpheus| allows the running process to complete or time out rather than risk corrupting data with a non-graceful interrupt.
+
+.. image:: /images/automation/cancelTask.png
+
 Price Phase Task Utilization
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 

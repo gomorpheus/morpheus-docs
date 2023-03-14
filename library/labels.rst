@@ -17,8 +17,10 @@ Labels are a categorization feature designed to allow easier filtering of list v
 - Workflows
 - Jobs
 - Instance Types
+- Instances
 - Layouts
 - Node Types
+- Servers
 - Virtual Images
 - Inputs
 - Option Lists
@@ -38,3 +40,12 @@ Labels can be created when adding or edited any of the supported constructs list
 
 .. image:: /images/provisioning/library/labels/labeladd.png
   :width: 50%
+
+Running Automation Against Label Targets
+----------------------------------------
+
+The |morpheus| automation constructs Jobs, Tasks, and Workflows can be run against Instance Labels or Server Labels. When creating the Job or executing the Task or Workflow, select either Server Label or Instance Label. After specifying the Label, the automation will be run against all Instances or Servers which have the indicated Label. Currently, only one Label may be selected and users cannot enter multiple Labels in the field. If a non-existent Label is entered, the automation simply will not run against any Workloads since the Label does not match any.
+
+.. NOTE:: Instance and server Labels are separate. Even if some Instances or servers have the same Label, the automation is only run against the selected construct (Instance Labels or Server Labels).
+
+.. image:: /images/automation/executeLabel.png
