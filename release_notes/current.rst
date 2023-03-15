@@ -43,7 +43,6 @@ Fixes
 :Identity Sources: - The |morpheus| LDAP integration is now compatible with OpenLDAP :superscript:`5.4.16`
 :Inputs: - Fixed an issue causing Input values not to be verified against a configured regex validation string if a visibility field was also set on the Input
           - Fixed an issue that caused reads from multi-select typeahead Inputs to return a list containing a null item at the start :superscript:`5.4.16`
-:Kubernetes: -
 :Option Lists: - Using ``zoneId`` to filter |morpheus| API-type Option Lists now works correctly :superscript:`5.4.16`
 :Policies: - Adding a network to a Subtenant which would cause it to exceed its network quota Policy now fails with a friendly error message rather than throwing a less helpful 500 (threw a gasket) error :superscript:`5.4.16`
 :Terraform: - Fixed an issue that caused Terraform Instances to be removed from |morpheus| even when the destroy action actually failed which led to orphaned instances left behind in the cloud :superscript:`5.4.16`
