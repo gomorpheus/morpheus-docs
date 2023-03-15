@@ -14,6 +14,8 @@ Overview
 
 Active Directory is Microsoft’s primary authentication service. It is widely used in enterprise organizations and even in Microsoft cloud services. While Active Directory also supports LDAP protocol support (which |morpheus| can integrate with as well), |morpheus| includes a dedicated identity integration type specifically for Active Directory. By integrating Active Directory, |morpheus| administrators can fully offload the work of managing the user lifecycle to Active Directory. Creating new users, applying roles to users, updating basic user data, disabling users, and more can be handled in Active Directory and automatically filtered down to |morpheus|. This section includes an example integration walkthrough as well as additional details on the integration feature set.
 
+.. NOTE:: Caution should be used when integrating more than one Active Directory identity source with the same |morpheus| Tenant. You must ensure the users on each identity source are unique users or that the two domains use different naming conventions for users.
+
 How It Works
 ^^^^^^^^^^^^
 
