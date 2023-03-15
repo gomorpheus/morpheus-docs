@@ -1375,6 +1375,7 @@
        <td class="lightGrey"></td>
        <td class="lightGrey"></td>
        <td class="lightGrey"></td>
+       <td class="lightGrey"></td>
        <td class="white"></td>
        <td class="green">5.5.2</td>
        <td class="green">5.5.3</td>
@@ -1383,6 +1384,7 @@
      </tr>
      <tr>
        <td class="darkGrey">5.5.2 →</td>
+       <td class="lightGrey"></td>
        <td class="lightGrey"></td>
        <td class="lightGrey"></td>
        <td class="lightGrey"></td>
@@ -1455,12 +1457,14 @@
        <td class="lightGrey"></td>
        <td class="lightGrey"></td>
        <td class="lightGrey"></td>
+       <td class="lightGrey"></td>
        <td class="white"></td>
        <td class="blue">6.0.0</td>
        <td class="blue">6.0.1</td>
      </tr>
      <tr>
        <td class="darkGrey">6.0.0 →</td>
+       <td class="lightGrey"></td>
        <td class="lightGrey"></td>
        <td class="lightGrey"></td>
        <td class="lightGrey"></td>
