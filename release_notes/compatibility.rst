@@ -83,11 +83,11 @@ No Service Version Changes from |previousMorphVer|
    * - MySQL
      - |mysqlbranch|
      - |mysqlver|
-     - |checkmark|
+     - 
    * - MySQL (FIPS)
      - |mysqlbranch|
      - |mysqlverfips|
-     - |checkmark|
+     - 
    * - Percona
      - 5.7, WSREP 31
      - n/a
@@ -99,7 +99,7 @@ No Service Version Changes from |previousMorphVer|
    * - RabbitMQ
      - |rmqbranch|
      - |rmqver|
-     - |checkmark|
+     - 
    * - Tomcat
      -
      - |tcver|
@@ -111,11 +111,11 @@ No Service Version Changes from |previousMorphVer|
    * - OpenSSL
      -
      - |openssl|, |openssl_fips| (FIPS)
-     - |checkmark|
+     - 
    * - Java
      -
      - |java|
-     - |checkmark|
+     - 
    * - Java (macOS agent)
      -
      - |java-mac|
