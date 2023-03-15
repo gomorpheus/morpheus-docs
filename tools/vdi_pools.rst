@@ -156,7 +156,7 @@ VDI Gateways can be linked to a |morpheus| appliance and then used in VDI Pool c
 - **DESCRIPTION** Specify a description for the VDI Gateway in |morpheus|. (optional)
 - **GATEWAY URL** The url of the VDI Gateway. This url is used to connect to the gateway, and should match the the worker url of the VDI Gateway.
 
-Upon creation, the VDI Gateway record will produce an ``API KEY``. This ``API KEY`` needs to be specified in the ``morpheus-worker.rb`` file on the API Gateway itself under ``worker['apikey'] = '$API_KEY'``
+Upon creation, the VDI Gateway record will produce an ``API KEY``. This ``API KEY`` needs to be specified in the ``morpheus-worker.rb`` file on the API Gateway itself under ``worker['apikey'] = '$API_KEY'``. Once the gateway object is created you will need to configure it as the default gateway in |morpheus| global settings (|AdmSetApp|). Scroll down to the "Default Console Gateway" setting and select the gateway object you've just created. Continue on to the next section to actually install the gateway and configure it with your API key.
 
 VDI Gateway VM Install
 ^^^^^^^^^^^^^^^^^^^^^^
@@ -238,8 +238,6 @@ A VDI Gateway VM is installed and configured similarly to a |morpheus| appliance
      sudo morpheus-worker-ctl reconfigure
 
    The worker reconfigure process will install and configure the worker, nginx and guacd services and dependencies.
-
-   .. TIP:: If the reconfigure process fails due to a missing dependency, add the repo that the missing dependency can be found in and run
 
    .. NOTE:: Configuration options can be updated after the initial reconfigure by editing ``/etc/morpheus/morpheus-worker.rb`` and running ``sudo morpheus-worker-ctl reconfigure`` again.
 
