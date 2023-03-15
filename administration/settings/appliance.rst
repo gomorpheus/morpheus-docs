@@ -24,3 +24,5 @@ Disable SSH Password Authentication
   Only allow ssh login using SSH keys. When true, SSH Password Authentication will not be enabled for VM's and Hosts provisioned after the setting is enabled.
 Default Appliance Locale
   Sets the default language and region for all users on the |morpheus| appliance. Users with individual language preferences may also override this selection on their User Settings page
+Default Console Gateway
+  Select a configured |morpheus| Worker as a console gateway or VDI gateway. For more on installation and configuration of a gateway, see the `VDI Gateways section <https://docs.morpheusdata.com/en/latest/tools/vdi_pools.html#vdi-gateways>`_ of |morpheus| documentation.
