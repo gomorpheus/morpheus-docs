@@ -176,7 +176,7 @@ However, the certificates on the |morpheus| application nodes are not required t
       - If set to **Yes**, the certificate does not need to be uploaded in the settings.  This must be a well known certificate provided by a
         well known certificate authority, not an internally generated certificate
       - If set to **No**, ensure the certificate that is present on the backend nodes is uploaded to the Application Gateway.
-         Note that the certificate should include the entire chain (CA, Intermediates, Certificate)
+        Note that the certificate should include the entire chain (CA, Intermediates, Certificate)
     - **Cookie-based affinity:** Disable
     - **Connection draining:** Enable
     - **Override with new host name:** No
@@ -205,11 +205,13 @@ However, the certificates on the |morpheus| application nodes are not required t
 
     - Ensure the backend virtual machines allow port 443 from the load balancer, otherwise a **502 error** may be seen
     - If using a wildcard certificate, you **must** use a custom health probe, as mentioned above, otherwise you may see the following error message:
+       
        ``The Common Name (CN) of the backend server certificate does not match the host header entered in the health probe configuration (v2 SKU) or the FQDN in the backend pool (v1 SKU). Verify if the hostname matches with the CN of the backend server certificate.``
 
        More info:
        https://techcommunity.microsoft.com/t5/fasttrack-for-azure/walkthrough-configuring-end-to-end-tls-with-application-gateway/ba-p/3269132
     - As mentioned above, ensure the complete chain for the certificate is presented by |morpheus|, otherwise you may see the following error message:
+       
        ``The root certificate of the server certificate used by the backend does not match the trusted root certificate added to the application gateway. Ensure that you add the correct root certificate to whitelist the backend``
 
        More info:
