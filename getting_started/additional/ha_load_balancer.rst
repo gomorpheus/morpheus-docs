@@ -197,9 +197,9 @@ However, the certificates on the |morpheus| application nodes are not required t
   **Backend Pool**
 
     - The **Target Type** can either be **Virtual Machine** or **IP address or FQDN**
-    - If |morpheus| is hosted in Azure, **Virtual Machine** will likely be the choice
-    - If |morpheus| is hosted on-premise or outside of Azure, the **IP address or FQDN** can be used but the
-      load balancer will need to able to communicate with the target
+    
+      - If |morpheus| is hosted in Azure, **Virtual Machine** will likely be the choice.  The load balancer will need to able to communicate with the target
+      - If |morpheus| is hosted on-premise, or outside of Azure, the **IP address or FQDN** can be used but the load balancer will need to able to communicate with the target
 
   **Important Items**
 
