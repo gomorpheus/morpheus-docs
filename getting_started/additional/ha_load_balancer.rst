@@ -160,6 +160,7 @@ However, the certificates on the |morpheus| application nodes are not required t
     - **Protocol:** HTTPS
     - **Port:** 443
     - **Certificate:**
+      
       - Upload the public certificate in **PFX** format
       - This certificate should match the one presented by the backend nodes
       - The certificate should include the entire chain, including the private key
@@ -171,6 +172,7 @@ However, the certificates on the |morpheus| application nodes are not required t
     - **Backend protocol:** HTTPS
     - **Backend port:** 443
     - **Use well known CA certificate:**
+      
       - If set to **Yes**, the certificate does not need to be uploaded in the settings.  This must be a well known certificate provided by a
         well known certificate authority, not an internally generated certificate
       - If set to **No**, ensure the certificate that is present on the backend nodes is uploaded to the Application Gateway.
@@ -203,19 +205,25 @@ However, the certificates on the |morpheus| application nodes are not required t
 
     - Ensure the backend virtual machines allow port 443 from the load balancer, otherwise a **502 error** may be seen
     - If using a wildcard certificate, you **must** use a custom health probe, as mentioned above, otherwise you may see the following error message:
-      `The Common Name (CN) of the backend server certificate does not match the host header entered in the health probe configuration (v2 SKU) or the FQDN in the backend pool (v1 SKU). Verify if the hostname matches with the CN of the backend server certificate.`
-      More info:
-      https://techcommunity.microsoft.com/t5/fasttrack-for-azure/walkthrough-configuring-end-to-end-tls-with-application-gateway/ba-p/3269132
+       ``The Common Name (CN) of the backend server certificate does not match the host header entered in the health probe configuration (v2 SKU) or the FQDN in the backend pool (v1 SKU). Verify if the hostname matches with the CN of the backend server certificate.``
+
+       More info:
+       https://techcommunity.microsoft.com/t5/fasttrack-for-azure/walkthrough-configuring-end-to-end-tls-with-application-gateway/ba-p/3269132
     - As mentioned above, ensure the complete chain for the certificate is presented by |morpheus|, otherwise you may see the following error message:
-      `The root certificate of the server certificate used by the backend does not match the trusted root certificate added to the application gateway. Ensure that you add the correct root certificate to whitelist the backend`
-      More info:
-      https://learn.microsoft.com/en-us/answers/questions/150524/the-root-certificate-of-the-server-certificate-use
+       ``The root certificate of the server certificate used by the backend does not match the trusted root certificate added to the application gateway. Ensure that you add the correct root certificate to whitelist the backend``
+
+       More info:
+       https://learn.microsoft.com/en-us/answers/questions/150524/the-root-certificate-of-the-server-certificate-use
     - Configuring the certificate on the |morpheus| nodes
-      More info:
-      https://docs.morpheusdata.com/en/latest/getting_started/additional/morpheusSslCerts.html
+      
+       More info:
+       https://docs.morpheusdata.com/en/latest/getting_started/additional/morpheusSslCerts.html
     - Additional reading:
-      https://learn.microsoft.com/en-us/azure/application-gateway/certificates-for-backend-authentication
-      https://learn.microsoft.com/en-us/azure/application-gateway/end-to-end-ssl-portal
-      https://learn.microsoft.com/en-us/azure/application-gateway/ssl-overview
+      
+       https://learn.microsoft.com/en-us/azure/application-gateway/certificates-for-backend-authentication
+      
+       https://learn.microsoft.com/en-us/azure/application-gateway/end-to-end-ssl-portal
+      
+       https://learn.microsoft.com/en-us/azure/application-gateway/ssl-overview
 
 |
