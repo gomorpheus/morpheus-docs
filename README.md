@@ -74,3 +74,4 @@ Once you are happy, press the “Create pull request” button and you’re done
 
 ### Step 4: Review by the maintainers
 For your work to be integrated into the project, the maintainers will review your work and either request changes or merge it.
+
