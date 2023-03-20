@@ -1,3 +1,5 @@
+.. _elasticsearch-inter-node-tls:
+
 (Optional) Inter-node TLS
 `````````````````````````
 
@@ -26,7 +28,7 @@
 
     Additional links used in this guide:
 
-        - Internode communication:
+        - Encrypt Internode Communication:
         
             https://www.elastic.co/guide/en/elasticsearch/reference/7.17/security-basic-setup.html
         
@@ -46,6 +48,7 @@
 
         #. During the CA creation process, you will be prompted to create a password to secure the CA.  Although it is not required, it is
            recommended and this guide will assume that a password was created.  If one was not created, ignore any steps related to passwords on the CA
+        #. If a CA has been created previously, that can be used instead of generating a new one.  Using a single CA makes implementations less complex
     #. Next, generate the certificate on ``es-node-01``, which a single one will be used across all the nodes
        
         .. code-block:: bash
@@ -82,7 +85,7 @@
 
         #. Place the following in the ``/etc/elasticsearch/elasticsearch.yml`` file
 
-            .. code-block:: yml
+            .. code-block:: yaml
 
                 xpack.security.transport.ssl.enabled: true
                 xpack.security.transport.ssl.verification_mode: certificate
