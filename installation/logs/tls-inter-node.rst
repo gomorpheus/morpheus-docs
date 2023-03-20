@@ -21,7 +21,7 @@
         It is best to ensure that DNS (or ``/etc/hosts``) is configured to resolve to hostnames to match to the certificates generated
 
     .. note::
-        This is not the same as setting up TLS for the |morpheus| nodes to connect via TLS to the cluster.  See the ``<inputlinklater>``
+        This is not the same as setting up TLS for the |morpheus| nodes to connect via TLS to the cluster.  See the :ref:`elasticsearch-tls-client`
         section for more details.
 
     .. note::
