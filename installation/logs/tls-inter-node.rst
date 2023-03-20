@@ -17,9 +17,6 @@
     of the steps below.  This will not be covered in this document but providing the CA in a ``.p12`` to generate the certificates could be
     possible or certificate being provided in a ``.p12`` format, which would avoid any of the certificate generation.
 
-    .. warning::
-        It is best to ensure that DNS (or ``/etc/hosts``) is configured to resolve to hostnames to match to the certificates generated
-
     .. note::
         This is not the same as setting up TLS for the |morpheus| nodes to connect via TLS to the cluster.  See the :ref:`elasticsearch-tls-client`
         section for more details.

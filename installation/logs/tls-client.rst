@@ -17,6 +17,9 @@
     of the steps below.  This will not be covered in this document but providing the CA in a ``.p12`` to generate the certificates could be
     possible or certificate being provided in a ``.p12`` format, which would avoid any of the certificate generation.
 
+    .. warning::
+        It is best to ensure that DNS (or ``/etc/hosts``) is configured to resolve to hostnames to match to the certificates generated
+
     .. note::
         This is not the same as setting up inter-node TLS for the Elasticsearch nodes to communicate with each other.  See the :ref:`elasticsearch-tls-inter-node`
         section for more details.
@@ -46,7 +49,8 @@
 
             systemctl stop elasticsearch
     
-    .. include:: /installation/logs/tls-ca.rst
+    .. include::
+        /installation/logs/tls-ca.rst
 
     #. On ``es-node-01``, run the following command, which will generate the certificates for all of your nodes
 
@@ -63,6 +67,7 @@
         #. Enter the path to the CA certificate
         #. Enter an expiration length for the certificates
         #. Generate a certificate per node? [y/N] **y**
+
             #. node #1 name: **es-node-01**
             #. Enter all the shortnames and FQDNs, one per line.  If there is a load balancer for the cluster, this may be entered too if needed
 
@@ -85,7 +90,7 @@
             cp /etc/elasticsearch/elasticsearch-ssl-http/elasticsearch/es-node-01/http.p12 /etc/elasticsearch
             chmod 660 /etc/elasticsearch/http.p12
 
-    $ On ``es-node-01``, copy the certificates to the remaining nodes
+    #. On ``es-node-01``, copy the certificates to the remaining nodes
 
         .. code-block:: bash
 
