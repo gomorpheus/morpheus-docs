@@ -42,12 +42,6 @@
         - elasticsearch-keystore
 
             https://www.elastic.co/guide/en/elasticsearch/reference/7.17/elasticsearch-keystore.html
-
-    #. On ``All Nodes``, stop the Elasticsearch service:
-
-        .. code-block:: bash
-
-            systemctl stop elasticsearch
     
     .. include::
         /installation/logs/tls-ca.rst
@@ -60,11 +54,12 @@
        
         .. code-block:: bash
 
-            /usr/share/elasticsearch/bin/elasticsearch-certutil http --out /etc/elasticsearch/elasticsearch-ssl-http.zip
+            /usr/share/elasticsearch/bin/elasticsearch-certutil http
 
         #. Generate a CSR? [y/N] **n**
         #. Use an existing CA? [y/N] **y**
         #. Enter the path to the CA certificate
+            #. Enter the password, if necessary
         #. Enter an expiration length for the certificates
         #. Generate a certificate per node? [y/N] **y**
 
@@ -73,15 +68,16 @@
 
                 Examples:
                 
-                    es-node-01
-                    es-node-01.mydoamin.com
-                    loadbalancer.mydomain.com
+                    es-node-01  
+                    es-node-01.mydoamin.com  
+                    loadbalancer.mydomain.com  
 
             #. Enter all IP addresses, one per line, if the nodes have **static** IP addresses
             #. Do you wish to change any of these options? [y/N] **n**
             #. Generate additional certificates? [Y/n] **y**
         #. Repeat the previous step for each node, until there are no more certificates to generate
         #. (Optional) Enter a password to secure the certificates
+        #. What filename should be used for the output zip file? **/etc/elasticsearch/elasticsearch-ssl-http.zip**
     #. On ``es-node-01`` unzip the zip file created with all the certificate information
     
         .. code-block:: bash
@@ -124,11 +120,11 @@
             /usr/share/elasticsearch/bin/elasticsearch-keystore add xpack.security.http.ssl.keystore.secure_password
                 # Enter the password when prompted
 
-    #. On ``All Nodes``, start the Elasticsearch service to enable the changes:
+    #. On ``All Nodes``, restart the Elasticsearch service to enable the changes:
 
         .. code-block:: bash
 
-            systemctl start elasticsearch
+            systemctl restart elasticsearch
 
         #. Startup errors can be investigated in the default Elasticsearch log location (replacing ``clustername``):
 
@@ -151,3 +147,13 @@
 
             rm /etc/elasticsearch/elasticsearch-ssl-http.zip
             rm /etc/elasticsearch/elasticsearch-ssl-http -rf
+
+    #. Verify cluster health (**using HTTPS**)
+
+        .. code-block:: bash
+
+            curl https://node_ip:9200/_cluster/health -k
+            
+            or
+
+            curl https://localhost:9200/_cluster/health -k

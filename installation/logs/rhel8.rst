@@ -10,5 +10,6 @@ Elasticsearch (RHEL/CentOS 8)
 .. include:: /installation/logs/logs-config-generic.rst
 
 .. include:: /installation/logs/tls-inter-node.rst
-
+|
 .. include:: /installation/logs/tls-client.rst
+|

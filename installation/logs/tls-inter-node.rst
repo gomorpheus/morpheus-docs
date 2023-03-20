@@ -60,8 +60,8 @@
 
         .. code-block:: bash
 
-            scp /usr/share/elasticsearch/elastic-certificates.p12 myusername@192.168.103.02:/home/myusername
-            scp /usr/share/elasticsearch/elastic-certificates.p12 myusername@192.168.103.03:/home/myusername
+            scp /etc/elasticsearch/elastic-certificates.p12 myusername@192.168.103.02:/home/myusername
+            scp /etc/elasticsearch/elastic-certificates.p12 myusername@192.168.103.03:/home/myusername
     
     #. On ``es-node-02`` and ``es-node02`` copy the files to the appropriate path and set the permissions:
 
