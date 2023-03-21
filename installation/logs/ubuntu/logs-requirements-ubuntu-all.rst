@@ -11,4 +11,4 @@ Percona nodes.
 
     ufw allow 9200,9300/tcp
 
-- Three RHEL 8 nodes accessible to the Morpheus Appliance
+- Three Ubuntu nodes accessible to the Morpheus Appliance
