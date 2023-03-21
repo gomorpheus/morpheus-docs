@@ -29,10 +29,10 @@
         location is ``/etc/elasticsearch/``.  Modify the commands below as needed, if the installation or configuration locations are different.
         If certificates are created without the ``--out`` parameter the certificates will be generated in ``/usr/share/elasticsearch/``.
 
-    - `unzip` is used in the steps, be sure to install it if needed
+    - ``unzip`` is used in the steps, be sure to install it if needed
 
         .. tabs::
-            
+
             .. group-tab:: RHEL
 
                 .. code-block:: bash
