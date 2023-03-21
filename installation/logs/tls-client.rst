@@ -31,17 +31,18 @@
 
     - `unzip` is used in the steps, be sure to install it if needed
 
-        .. group-tab:: RHEL
 
-            .. code-block:: bash
+    .. group-tab:: RHEL
 
-                dnf install unzip -y
-                        
-        .. group-tab:: Ubuntu
+        .. code-block:: bash
 
-            .. code-block:: bash
+            dnf install unzip -y
+                    
+    .. group-tab:: Ubuntu
 
-                apt install unzip -y
+        .. code-block:: bash
+
+            apt install unzip -y
 
     Additional links used in this guide:
 
