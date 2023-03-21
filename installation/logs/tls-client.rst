@@ -29,6 +29,20 @@
         location is ``/etc/elasticsearch/``.  Modify the commands below as needed, if the installation or configuration locations are different.
         If certificates are created without the ``--out`` parameter the certificates will be generated in ``/usr/share/elasticsearch/``.
 
+    - `unzip` is used in the steps, be sure to install it if needed
+
+        .. group-tab:: RHEL
+
+            .. code-block:: bash
+
+                dnf install unzip -y
+                        
+        .. group-tab:: Ubuntu
+
+            .. code-block:: bash
+
+                apt install unzip -y
+
     Additional links used in this guide:
 
         - Encrypt HTTP CLient Communications:
@@ -59,6 +73,7 @@
         #. Generate a CSR? [y/N] **n**
         #. Use an existing CA? [y/N] **y**
         #. Enter the path to the CA certificate
+            
             #. Enter the password, if necessary
         #. Enter an expiration length for the certificates
         #. Generate a certificate per node? [y/N] **y**
@@ -108,7 +123,7 @@
 
         #. Place the following in the ``/etc/elasticsearch/elasticsearch.yml`` file
 
-            .. code-block:: yml
+            .. code-block:: yaml
 
                 xpack.security.http.ssl.enabled: true
                 xpack.security.http.ssl.keystore.path: http.p12
