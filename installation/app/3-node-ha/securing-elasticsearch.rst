@@ -1,7 +1,7 @@
 Securing Elasticsearch
 ``````````````````````
 
-#. Create the directory structure and generate the needed Certificate Authority (CA) certificate.
+#. Create the directory structure and generate the needed Certificate Authority (CA) certificate
    
    .. note::
       The UID/GID ``896`` is used for the ``es-morpheus`` user, which will be configured in the configuration file example.
@@ -18,7 +18,7 @@ Securing Elasticsearch
 
          .. code-block:: bash
 
-          	mkdir /var/opt/morpheus/certs/ -p
+            mkdir /var/opt/morpheus/certs/ -p
             export ES_JAVA_HOME=/opt/morpheus/embedded/java/jdk
             /opt/morpheus/embedded/elasticsearch-7.17.5/bin/elasticsearch-certutil ca --out /var/opt/morpheus/certs/elastic-stack-ca.p12
                # Be sure to enter a password for the CA
