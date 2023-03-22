@@ -1,9 +1,24 @@
-.. _3nodeinstall-rhel8:
+.. _3nodeinstall-rhel8-secure:
 
-(Secure) 3-Node HA Install (RHEL/CentOS 8)
-------------------------------------------
+(Secure-WIP) 3-Node HA Install (RHEL/CentOS 8)
+----------------------------------------------
 
 Distributed App Nodes with Externalized DB
+
+This is a work in progress
+This is a work in progress
+This is a work in progress
+This is a work in progress
+This is a work in progress
+This is a work in progress
+This is a work in progress
+This is a work in progress
+This is a work in progress
+This is a work in progress
+This is a work in progress
+This is a work in progress
+This is a work in progress
+This is a work in progress
 
 .. include:: /installation/app/3-node-ha/assumptions.rst
 
