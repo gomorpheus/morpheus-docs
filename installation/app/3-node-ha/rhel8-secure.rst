@@ -6,18 +6,31 @@
 Distributed App Nodes with Externalized DB
 
 This is a work in progress
+
 This is a work in progress
+
 This is a work in progress
+
 This is a work in progress
+
 This is a work in progress
+
 This is a work in progress
+
 This is a work in progress
+
 This is a work in progress
+
 This is a work in progress
+
 This is a work in progress
+
 This is a work in progress
+
 This is a work in progress
+
 This is a work in progress
+
 This is a work in progress
 
 .. include:: /installation/app/3-node-ha/assumptions.rst
