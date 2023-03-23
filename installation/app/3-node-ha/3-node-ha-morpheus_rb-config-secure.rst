@@ -51,7 +51,7 @@
          elasticsearch['host'] = '0.0.0.0'
          elasticsearch['secure_mode'] = true
          elasticsearch['use_tls'] = true
-         elasticsearch['truststore_path'] = '/var/opt/morpheus/certs/elastic-stack-ca.p12
+         elasticsearch['truststore_path'] = '/var/opt/morpheus/certs/elastic-stack-ca.p12'
          elasticsearch['truststore_password'] = 'truststore_path_password'
          elasticsearch['morpheus_password'] = 'morpheusEsUserPassword'
          rabbitmq['host'] = '0.0.0.0'
@@ -84,7 +84,7 @@
          elasticsearch['host'] = '0.0.0.0'
          elasticsearch['secure_mode'] = true
          elasticsearch['use_tls'] = true
-         elasticsearch['truststore_path'] = '/var/opt/morpheus/certs/elastic-stack-ca.p12
+         elasticsearch['truststore_path'] = '/var/opt/morpheus/certs/elastic-stack-ca.p12'
          elasticsearch['truststore_password'] = 'truststore_path_password'
          elasticsearch['morpheus_password'] = 'morpheusEsUserPassword'
          rabbitmq['host'] = '0.0.0.0'
