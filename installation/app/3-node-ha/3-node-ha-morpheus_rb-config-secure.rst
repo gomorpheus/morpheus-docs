@@ -21,6 +21,7 @@
          elasticsearch['truststore_path'] = '/var/opt/morpheus/certs/elastic-stack-ca.p12'
          elasticsearch['truststore_password'] = 'truststore_path_password'
          elasticsearch['morpheus_password'] = 'morpheusEsUserPassword'
+         elasticsearch['elastic_password'] = 'elasticEsUserPassword'
          rabbitmq['host'] = '0.0.0.0'
          rabbitmq['nodename'] = 'rabbit@node01'
          mysql['enable'] = false
@@ -54,6 +55,7 @@
          elasticsearch['truststore_path'] = '/var/opt/morpheus/certs/elastic-stack-ca.p12'
          elasticsearch['truststore_password'] = 'truststore_path_password'
          elasticsearch['morpheus_password'] = 'morpheusEsUserPassword'
+         elasticsearch['elastic_password'] = 'elasticEsUserPassword'
          rabbitmq['host'] = '0.0.0.0'
          rabbitmq['nodename'] = 'rabbit@node02'
          mysql['enable'] = false
@@ -87,6 +89,7 @@
          elasticsearch['truststore_path'] = '/var/opt/morpheus/certs/elastic-stack-ca.p12'
          elasticsearch['truststore_password'] = 'truststore_path_password'
          elasticsearch['morpheus_password'] = 'morpheusEsUserPassword'
+         elasticsearch['elastic_password'] = 'elasticEsUserPassword'
          rabbitmq['host'] = '0.0.0.0'
          rabbitmq['nodename'] = 'rabbit@node03'
          mysql['enable'] = false
