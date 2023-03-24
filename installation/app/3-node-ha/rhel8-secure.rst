@@ -6,11 +6,11 @@
 Distributed App Nodes with Externalized DB
 
 .. error::
-    At the time of this writing, RabbitMQ TLS is not a supported configuration in |morpheus|, there are not customizable
-    settings that allow the configuration to persist with the embedded service.  In this case, RabbitMQ much be installed
-    manually, following the steps in the ``RabbitMQ Cluster`` section, as well as the optional TLS configuration in it.
+    At the time of this writing, RabbitMQ TLS is not a configurable item in |morpheus|, there are not customizable
+    settings that allow the configuration to persist with the embedded service.  In this case, RabbitMQ must be installed
+    manually, following the steps in the ``RabbitMQ Cluster`` section, as well as the ``Optional TLS`` configuration in it.
     |morpheus| will not install RabbitMQ automatically and will not maintain it, it will be up to the customer to
-    maintain the service if needed.
+    maintain/upgrade the service if needed.
 
 .. include:: /installation/app/3-node-ha/assumptions.rst
 
