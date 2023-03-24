@@ -58,15 +58,15 @@
 
                 .. code-block:: bash
                     
-                    openssl genrsa -out /etc/pki/tls/private/rabbit-1-key.pem
-                    openssl req -new -key /etc/pki/tls/private/rabbit-1-key.pem -out ~/rabbit-1.csr
-                    openssl x509 -req -days 365 -in ~/rabbit-1.csr -CA /etc/pki/tls/certs/rabbitmq-ca-cert.pem -CAkey /etc/pki/tls/private/rabbitmq-ca-key.pem -CAcreateserial -out /etc/pki/tls/certs/rabbit-1-cert.pem
+                    openssl genrsa -out /etc/pki/tls/private/rabbit-2-key.pem
+                    openssl req -new -key /etc/pki/tls/private/rabbit-2-key.pem -out ~/rabbit-2.csr
+                    openssl x509 -req -days 365 -in ~/rabbit-2.csr -CA /etc/pki/tls/certs/rabbitmq-ca-cert.pem -CAkey /etc/pki/tls/private/rabbitmq-ca-key.pem -CAcreateserial -out /etc/pki/tls/certs/rabbit-2-cert.pem
 
                 .. code-block:: bash
                     
-                    openssl genrsa -out /etc/pki/tls/private/rabbit-1-key.pem
-                    openssl req -new -key /etc/pki/tls/private/rabbit-1-key.pem -out ~/rabbit-1.csr
-                    openssl x509 -req -days 365 -in ~/rabbit-1.csr -CA /etc/pki/tls/certs/rabbitmq-ca-cert.pem -CAkey /etc/pki/tls/private/rabbitmq-ca-key.pem -CAcreateserial -out /etc/pki/tls/certs/rabbit-1-cert.pem
+                    openssl genrsa -out /etc/pki/tls/private/rabbit-3-key.pem
+                    openssl req -new -key /etc/pki/tls/private/rabbit-3-key.pem -out ~/rabbit-3.csr
+                    openssl x509 -req -days 365 -in ~/rabbit-3.csr -CA /etc/pki/tls/certs/rabbitmq-ca-cert.pem -CAkey /etc/pki/tls/private/rabbitmq-ca-key.pem -CAcreateserial -out /etc/pki/tls/certs/rabbit-3-cert.pem
 
     #. Once all of the certificates have been generated, copy the respective certificates, private keys, and the CA public certificate to the other nodes
 
