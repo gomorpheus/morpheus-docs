@@ -174,3 +174,12 @@
             or
 
             curl https://localhost:9200/_cluster/health -k
+
+    Below is an example of how the ``/etc/morpheus/morpheus.rb`` file would be configured:
+
+        .. code-block:: ruby
+
+            elasticsearch['enable'] = false
+            elasticsearch['cluster'] = 'morpheus'
+            elasticsearch['es_hosts'] = {'es-node-01' => 9200, 'es-node-02' => 9200, 'es-node-03' => 9200}
+            elasticsearch['use_tls'] = true
