@@ -8,3 +8,6 @@ RabbitMQ Cluster (RHEL/CentOS 8)
 .. include:: /installation/messaging/rhel/messaging-config-rhel.rst
 
 .. include:: /installation/messaging/messaging-config-generic.rst
+|
+.. include:: /installation/messaging/tls.rst
+|
