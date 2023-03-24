@@ -22,8 +22,15 @@
          elasticsearch['truststore_password'] = 'truststore_path_password'
          elasticsearch['morpheus_password'] = 'morpheusEsUserPassword'
          elasticsearch['elastic_password'] = 'elasticEsUserPassword'
-         rabbitmq['host'] = '0.0.0.0'
-         rabbitmq['nodename'] = 'rabbit@node01'
+         rabbitmq['enable'] = false
+         rabbitmq['vhost'] = 'morpheus'
+         rabbitmq['queue_user'] = 'admin'
+         rabbitmq['queue_user_password'] = 'admin_password'
+         rabbitmq['host'] = '127.0.0.1'
+         rabbitmq['port'] = '5671'
+         rabbitmq['stomp_port'] = '61614'
+         rabbitmq['use_tls'] = true
+         rabbitmq['heartbeat'] = 50
          mysql['enable'] = false
          mysql['host'] = {'192.168.101.01' => 3306, '192.168.101.02' => 3306, '192.168.101.03' => 3306}
          mysql['morpheus_db'] = 'morpheus'
@@ -56,8 +63,15 @@
          elasticsearch['truststore_password'] = 'truststore_path_password'
          elasticsearch['morpheus_password'] = 'morpheusEsUserPassword'
          elasticsearch['elastic_password'] = 'elasticEsUserPassword'
-         rabbitmq['host'] = '0.0.0.0'
-         rabbitmq['nodename'] = 'rabbit@node02'
+         rabbitmq['enable'] = false
+         rabbitmq['vhost'] = 'morpheus'
+         rabbitmq['queue_user'] = 'admin'
+         rabbitmq['queue_user_password'] = 'admin_password'
+         rabbitmq['host'] = '127.0.0.1'
+         rabbitmq['port'] = '5671'
+         rabbitmq['stomp_port'] = '61614'
+         rabbitmq['use_tls'] = true
+         rabbitmq['heartbeat'] = 50
          mysql['enable'] = false
          mysql['host'] = {'192.168.101.01' => 3306, '192.168.101.02' => 3306, '192.168.101.03' => 3306}
          mysql['morpheus_db'] = 'morpheus'
@@ -90,8 +104,15 @@
          elasticsearch['truststore_password'] = 'truststore_path_password'
          elasticsearch['morpheus_password'] = 'morpheusEsUserPassword'
          elasticsearch['elastic_password'] = 'elasticEsUserPassword'
-         rabbitmq['host'] = '0.0.0.0'
-         rabbitmq['nodename'] = 'rabbit@node03'
+         rabbitmq['enable'] = false
+         rabbitmq['vhost'] = 'morpheus'
+         rabbitmq['queue_user'] = 'admin'
+         rabbitmq['queue_user_password'] = 'admin_password'
+         rabbitmq['host'] = '127.0.0.1'
+         rabbitmq['port'] = '5671'
+         rabbitmq['stomp_port'] = '61614'
+         rabbitmq['use_tls'] = true
+         rabbitmq['heartbeat'] = 50
          mysql['enable'] = false
          mysql['host'] = {'192.168.101.01' => 3306, '192.168.101.02' => 3306, '192.168.101.03' => 3306}
          mysql['morpheus_db'] = 'morpheus'

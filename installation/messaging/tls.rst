@@ -85,22 +85,13 @@
         .. content-tabs::
 
             .. tab-container:: tab1
-                :title: Node 2
+                :title: Node 2 and 3
         
                 .. code-block:: bash
 
                     mv /home/username/rabbitmq-ca-cert.pem /etc/pki/tls/certs/
-                    mv /home/username/rabbit-2-cert.pem /etc/pki/tls/certs/
-                    mv /home/username/rabbit-2-key.pem /etc/pki/tls/private/
-        
-            .. tab-container:: tab2
-                :title: Node 3
-
-                .. code-block:: bash
-                    
-                    mv /home/username/rabbitmq-ca-cert.pem /etc/pki/tls/certs/
-                    mv /home/username/rabbit-3-cert.pem /etc/pki/tls/certs/
-                    mv /home/username/rabbit-3-key.pem /etc/pki/tls/private/
+                    mv /home/username/rabbit-*-cert.pem /etc/pki/tls/certs/
+                    mv /home/username/rabbit-*-key.pem /etc/pki/tls/private/
 
     #. On all of the nodes, be sure to set the permissions for the rabbitmq user to be able to access the appropriate certificates and private keys
 
@@ -197,7 +188,6 @@
                 .. code-block:: bash
 
                     rm /etc/pki/tls/private/rabbitmq-ca-key.pem
-                    rm /etc/pki/tls/certs/rabbitmq-ca-cert.pem
                     rm /etc/pki/tls/certs/rabbitmq-ca-cert.srl
 
                     rm /etc/pki/tls/certs/rabbit-2-cert.pem
