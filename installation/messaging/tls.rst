@@ -1,4 +1,4 @@
-.. rabbitmq-tls:
+.. _rabbitmq-tls:
 
 (Optional) Enable TLS
 `````````````````````
