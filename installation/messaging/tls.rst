@@ -93,8 +93,6 @@
                     mv /home/username/rabbit-2-cert.pem /etc/pki/tls/certs/
                     mv /home/username/rabbit-2-key.pem /etc/pki/tls/private/
         
-        .. content-tabs::
-
             .. tab-container:: tab2
                 :title: Node 3
 
@@ -136,8 +134,6 @@
                     listeners.ssl.default                = 5671
                     stomp.listeners.ssl.default          = 61614
 
-        .. content-tabs::
-
             .. tab-container:: tab2
                 :title: Node 2
 
@@ -153,8 +149,6 @@
                     stomp.listeners.tcp                  = none
                     listeners.ssl.default                = 5671
                     stomp.listeners.ssl.default          = 61614
-
-        .. content-tabs::
 
             .. tab-container:: tab3
                 :title: Node 3
