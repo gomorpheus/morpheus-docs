@@ -2,7 +2,7 @@ Requirements
 ````````````
 
 RabbitMQ requires the following TCP ports for the cluster nodes. Please create the appropriate firewall rules on your
-Percona nodes.
+RabbitMQ nodes.
 
   - 4369
   - 5671 (TLS)
