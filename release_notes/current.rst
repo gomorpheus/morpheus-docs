@@ -45,7 +45,12 @@ Fixes
           - Fixed an issue that caused reads from multi-select typeahead Inputs to return a list containing a null item at the start :superscript:`5.4.16`
 :Option Lists: - Using ``zoneId`` to filter |morpheus| API-type Option Lists now works correctly :superscript:`5.4.16`
 :Policies: - Adding a network to a Subtenant which would cause it to exceed its network quota Policy now fails with a friendly error message rather than throwing a less helpful 500 (threw a gasket) error :superscript:`5.4.16`
+:Reports: - Fixed an issue that prevented correct results on the Instance Cost Report when filtering by a tag which contained a hyphen "-"
 :Terraform: - Fixed an issue that caused Terraform Instances to be removed from |morpheus| even when the destroy action actually failed which led to orphaned instances left behind in the cloud :superscript:`5.4.16`
              - Fixed an issue that prevented applying state in |morpheus| on Terraform 0.12.31 Apps :superscript:`5.4.16`
              - Improvements added to the HCL parser to account for edge cases that didn't work properly :superscript:`5.4.16`
 :UI: - Fixed a UI display issue that could cause the |morpheus| Role names and Active Directory group name fields to overlap each other when adding or editing an Identity Source integration :superscript:`5.4.16`
+:Tags: - Inputs which are exported as tags are now set properly on the workloads when multiple copies of an Instance are selected at provision time
+:VMware: - Visibility and Tenant ownership of newly synced VMware Cloud folders are now being set properly based on ownership of the parent folder
+:Workflows: - Workflows and Tasks run against Instances are now shown in history for all nodes associated with the Instance. Previously they were shown only in the history of the Instance and one of the nodes
+             - Fixed an issue with restart Tasks in Workflows which could throw an error cause the rest of the Workflow not to complete after the workload was restarted
