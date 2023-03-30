@@ -3,15 +3,15 @@
 HA Installation Overview
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-Morpheus provides a wide array of options when it comes to deployment architectures. It can start as a simple one machine instance where all services run on the same machine, or it can be split off into individual services per machine and configured in a high availability (HA) configuration, either in the same region or cross-region. Naturally, high availability can grow more complicated, depending on the configuration you want to do and this article will cover the basic concepts of the Morpheus HA architecture that can be used in a wide array of configurations. 
+|morpheus| provides a wide array of options when it comes to deployment architectures. It can start as a simple one machine instance where all services run on the same machine, or it can be split off into individual services per machine and configured in a high availability (HA) configuration, either in the same region or cross-region. Naturally, high availability can grow more complicated, depending on the configuration you want to do and this article will cover the basic concepts of the |morpheus| HA architecture that can be used in a wide array of configurations. 
 
-There are four primary tiers of services represented within the Morpheus appliance. They are the Application Tier, Transactional Database Tier, Non-Transactional Database Tier, and Messaging Tier. Each of these tiers have their own recommendations for High availability deployments.
+There are four primary tiers of services represented within the |morpheus| appliance. They are the Application Tier, Transactional Database Tier, Non-Transactional Database Tier, and Messaging Tier. Each of these tiers have their own recommendations for High availability deployments.
 
 .. IMPORTANT:: This is a sample configuration only. Customer configurations and requirements will vary.  Please contact your account manager if you wish to deploy or transition to a HA environment.
 
 Application Tier
 `````````````````
-The application tier is easily installed with the same apt or yum repository package that Morpheus is normally distributed with. Advanced configuration allows for the additional tiers to be skipped and leave only the “stateless” services that need run. These stateless services include Nginx and Tomcat.  They can be configured across all regions and placed behind a central load-balancer or geo-based load balancer.  They typically connect to all other tiers as none of the other tiers talk to each other besides through the central application tier. One final piece when it comes to setting up the Application tier is shared storage, which is necessary when it comes to maintaining deployment archives, virtual image catalogs, backups, etc. These can be externalized to an object storage service such as Amazon S3 or Openstack Swiftstack as well. Alternatively, a simple NFS cluster can also be used to handle the shared storage structure.  Alternatively, supported (Platform as a Service) PaaS offerings can be used that provide a NFS compatible shared storage, eliminating the need to manage the underlying infrastructure.
+The application tier is easily installed with the same apt or yum repository package that |morpheus| is normally distributed with. Advanced configuration allows for the additional tiers to be skipped and leave only the “stateless” services that need run. These stateless services include Nginx and Tomcat.  They can be configured across all regions and placed behind a central load-balancer or geo-based load balancer.  They typically connect to all other tiers as none of the other tiers talk to each other besides through the central application tier. One final piece when it comes to setting up the Application tier is shared storage, which is necessary when it comes to maintaining deployment archives, virtual image catalogs, backups, etc. These can be externalized to an object storage service such as Amazon S3 or Openstack Swiftstack as well. Alternatively, a simple NFS cluster can also be used to handle the shared storage structure.  Alternatively, supported (Platform as a Service) PaaS offerings can be used that provide a NFS compatible shared storage, eliminating the need to manage the underlying infrastructure.
 
 Transactional Database Tier
 ````````````````````````````
@@ -29,9 +29,9 @@ HA Installation Architectures
 `````````````````````````````
 
 3-Node HA (Recommended)
-  In this architecture, all tiers are deployed on three machines by Morpheus during the installation, with the exception of the Transactional Database Tier.  This provides HA not just for the Morpheus Application Tier but all underlying tiers that support Morpheus.  The Transactional Database Tier will remain external, either as a separate cluster or PaaS, following the supported services.
+  In this architecture, all tiers are deployed on three machines by |morpheus| during the installation, with the exception of the Transactional Database Tier.  This provides HA not just for the |morpheus| Application Tier but all underlying tiers that support |morpheus|.  The Transactional Database Tier will remain external, either as a separate cluster or PaaS, following the supported services. An external Percona cluster must still be set up outside of the |morpheus| app nodes.
 
 Distributed HA
-  In this architecture, the tiers do not need to reside on the same machines, each can be hosted by a supprted cluster or PaaS offering.  This provides flexibility and reuse of already existing technologies such as RabbitMQ or Elasticsearch.  Each tier should be architected to provide HA following the vendor's documentation, to ensure no downtime for the Morpheus Application Tier.
+  In this architecture, the tiers do not need to reside on the same machines, each can be hosted by a supprted cluster or PaaS offering.  This provides flexibility and reuse of already existing technologies such as RabbitMQ or Elasticsearch.  Each tier should be architected to provide HA following the vendor's documentation, to ensure no downtime for the |morpheus| Application Tier.
 
 .. include:: supported_paas.rst
