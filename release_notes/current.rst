@@ -55,7 +55,7 @@ New Features
              - The Instance detail page now includes a costing tab. This tab pulls and aggregates Instance and host invoices, pricing history charts, pricing trends, and lists associated metered prices
              - The Instances detail page now includes a Summary tab which holds information that was previously in the Info section of the page and was always present (regardless of which subtab the user was looking at)
              - The Instances detail page now includes a monitoring tab which holds memory, storage, CPU, disk I/O and network stats. This information can be shown over a maximum of 90 days depending on your appliance stats retainment setting
-:Keys & Certs: - Key pairs can now be generated in |morpheus| by navigating to |InfTruKey| and clicking +ADD. This functionality is also added to |morpheus| API and CLI with this release
+:Keys & Certs: - Key pairs can now be generated in |morpheus| by navigating to |InfKeyKey| and clicking +ADD. This functionality is also added to |morpheus| API and CLI with this release
 :Kubernetes: - Added default Kubernetes 1.24 and 1.25 Cluster Layouts for many Cloud types including Amazon AWS, VMWare, Digital Ocean and more :superscript:`5.4.15`
 :Network: - Added support for Floating IP sync and management in OpenStack, Huawei, and OTC Clouds. Floating IPs tab added to UI (|InfNetFlo|) and option to release Floating IP on Instance delete added
 :Option Lists: - "Instance Type Layouts" is now a selectable source object for |morpheus| API-type Option Lists
