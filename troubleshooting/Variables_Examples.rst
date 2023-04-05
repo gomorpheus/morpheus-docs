@@ -469,7 +469,7 @@ ex: ``<%= morpheus.user.id %>``
 			      "lastName":"value",
 			      "dateCreated":0000-00-00T00:00:00Z,
 			      "lastUpdated":0000-00-00T00:00:00Z,
-			      "enabled":true/fase,
+			      "enabled":true/false,
 			      "accountExpired":true/false,
 			      "accountLocked":false,
 			      "passwordExpired":false,
