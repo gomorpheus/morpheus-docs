@@ -25,7 +25,7 @@ Configure Morpheus Database and User
 
     mysql> GRANT ALL PRIVILEGES ON morpheus.* TO 'morpheusDbUser'@'%' with grant option;
 
-    mysql> GRANT SELECT, PROCESS, SHOW DATABASES ON *.* TO 'morpheusDbUser'@'%';
+    mysql> GRANT SELECT, PROCESS, RELOAD, SHOW DATABASES ON *.* TO 'morpheusDbUser'@'%';
 
     mysql> FLUSH PRIVILEGES;
 
