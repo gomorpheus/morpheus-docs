@@ -48,7 +48,7 @@ To add the integration:
 
 .. IMPORTANT:: Setting SAML REQUEST to "No Signature" and SAML RESPONSE to "Do Not Validate Assertion Signature" is allowed but not recommended for security reasons.
 
-Upon saving, the `Entity ID` (``Identifier (Entity ID)``) and `SP ACS URL` (``Reply URL (Assertion Consumer Service URL)``) will be provide in the Identity Source list view. Copy these for use in Azure SSO configuration.
+Upon saving, the **Entity ID** (``Identifier (Entity ID)``) and **SP ACS URL** (``Reply URL (Assertion Consumer Service URL)``) will be provide in the Identity Source list view. Copy these for use in Azure SSO configuration.
 
   .. image:: /images/integration_guides/identity_sources/azure_ad_saml/saml_setup.png
       :width: 40%
@@ -118,7 +118,7 @@ Configure the Azure AD SAML Integration in |morpheus|
 Configure Role Mappings
 ^^^^^^^^^^^^^^^^^^^^^^^
 
-Role mappings will map Azure AD Groups to Morpheus Roles. Azure AD users will be assigned Roles in |morpheus| upon signing in based on their Group Membership in Azure AD.
+Role mappings will map Azure AD Groups to |morpheus| Roles. Azure AD users will be assigned Roles in |morpheus| upon signing in based on their Group Membership in Azure AD.
 
 .. IMPORTANT:: Use an Azure Groups ``Object ID``, not Group name, when entering Role Mappings. Example: ``7626a4a2-b388-4d9b-a228-72ce9a33bd4b``
 
@@ -148,7 +148,7 @@ Once populated, select :guilabel:`SAVE CHANGES` and the SAML identity source int
 
    * It is recommended that this role contains no permissions, which ensures that anyone who authenticates gets no access
 
-#. Under the ``Role Azure Group Mappings`` secton, you will see role names listed.  Next to these are text boxes with ``Assertion Attribute Mappings`` inside.  Enter group object IDs from Azure into these text boxes.  This will map the Azure AD groups to specific roles in Morpheus
+#. Under the ``Role Azure Group Mappings`` secton, you will see role names listed.  Next to these are text boxes with ``Assertion Attribute Mappings`` inside.  Enter group object IDs from Azure into these text boxes.  This will map the Azure AD groups to specific roles in |morpheus|
 #. Finally, click ``Save Changes`` at the bottom of the page
 
 Here is an example of the configuration above:
@@ -168,17 +168,19 @@ AZURE APP ID
 AZURE APP SECRET
   Add Azure Application (Client) Secret if user group membership will exceed 150. See :ref:`azure_secret` for information on creating an Azure Application (Client) Secret
 ROLE LINK ATTRIBUTE NAME
-  default: http://schemas.microsoft.com/claims/groups.link. This is not normally changed.
+  Default: ``http://schemas.microsoft.com/claims/groups.link`` **This is not normally changed.**
 
 Logging Into |morpheus| with Azure AD SAML
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 #. Navigate to the |morpheus| URL
 #. A new button will appear to allow sign-in using Azure AD SAML, with the same name as the integration.  Click the button
+   
    .. image:: /images/integration_guides/identity_sources/azure_ad_saml/sign_in_page.png
     :width: 30%
 
 #. Sign-in with your Microsoft/Azure account
+   
    .. image:: /images/integration_guides/identity_sources/azure_ad_saml/ms_signin.png
     :width: 20%
 
