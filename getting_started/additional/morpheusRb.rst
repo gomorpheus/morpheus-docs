@@ -47,6 +47,7 @@ Morpheus allows for additional advanced customizations for system managed servic
   mysql['host'] = {'127.0.0.1' => 3306}
   mysql['use_tls'] = false
   mysql['morpheus_db_user'] = 'morpheus-db-user'
+  mysql['morpheus_password'] = 'morpheus-db-password'
   mysql['morpheus_db'] = 'xxxxxxxxxxxxxxxx'
   mysql['mysql_url_overide'] = 'jdbc:mysql://10.30.20.10:3306,10.30.20.11:3306,10.30.20.12:3306/morpheusdb?autoReconnect=true&useUnicode=true&characterEncoding=utf8&failOverReadOnly=false&useSSL=false'
   ↓ The following mysql settings are only valid for Internal/Embedded mysql services
