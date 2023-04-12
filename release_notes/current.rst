@@ -1,8 +1,8 @@
 .. _Release Notes:
 
-*************************
-|morphver| Release Notes
-*************************
+**************************************
+|morphver| |releasetype| Release Notes
+**************************************
 
 - Compatible Plugin API version: |pluginVer|
 - Compatible Morpheus Worker version: |workerVer|
