@@ -42,17 +42,19 @@ Instance Name
 Max Containers
   Sets the max number of Containers for the Group or Cloud the Policy is added to.
 Max Cores
-  Sets the max number of total of Cores combined for Instances in the Group or Cloud the Policy is added to.
+  Sets the max number of total of Cores combined for Instances in the Group or Cloud the Policy is added to, includes the option to include or exclude container resources in the Policy.
 Max Hosts
   Sets the max number of total Hosts in the Group or Cloud the Policy is added to.
 Max Load Balancer Pools
   Sets the max number of load balancer pools within the policy scope
 Max Memory
-  Sets the max number of total of RAM combined for Instances in the Group or Cloud the Policy is added to.
+  Sets the max number of total of RAM combined for Instances in the Group or Cloud the Policy is added to, includes the option to include or exclude container resources in the Policy.
 Max Pool Members
   Sets the maximum number of members in a load balancer pool
+Max Snapshots
+  Set the maximum number of Snapshots that may be stored for each Instance or VM within the scope. Once the limit is met, |morpheus| will warn the user when attempting to create more snapshots until the number is reduced
 Max Storage
-  Sets the max number of total of Storage combined for Instances in the Group or Cloud the Policy is added to.
+  Sets the max number of total of Storage combined for Instances in the Group or Cloud the Policy is added to, includes the option to include or exclude container resources in the Policy.
 Max Virtual Servers
   Sets the maximum number of virtual servers within the policy scope
 Max VMs

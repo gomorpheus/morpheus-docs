@@ -50,6 +50,8 @@ Service Plan Configuration
 - **PER DISK SIZE:** When custom storage is enabled for the plan, this sets the minimum and maximum storage for each disk
 - **CUSTOM MEMORY RANGE:** The minimum and maximum allowed amount of memory for the Plan when CUSTOM MEMORY is enabled for the Plan
 - **CUSTOM CORES RANGE:** The minimum and maximum allowed amount of virtual CPU cores for the Plan when CUSTOM CORES is enabled for the Plan
+- **SOCKETS:** The minimum and maximum allowed sockets range for the Plan when CUSTOM CORES is enabled for the Plan
+- **CORES PER SOCKET:** The minimum and maximum allowed cores per socket for the Plan when CUSTOM CORES is enabled for the Plan
 - **PRICE SETS:** In the Price Sets tab, associate Price Sets with the Plan. See :ref:`Adding Price Sets to Plans`
 
 .. TIP:: Custom Range storage and memory values units (GB/MB) are inherited from the :STORAGE:: and :MEMORY:: GB/MB settings in the same Plan. For example, if :STORAGE: is configured for for 40 GB, a custom range for Storage would also be in GB.

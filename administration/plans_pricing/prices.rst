@@ -96,6 +96,7 @@ Currency
   -  TRL
   -  USD
   -  USN
+  -  VND
   -  XAF
   -  XCD
   -  XOF
