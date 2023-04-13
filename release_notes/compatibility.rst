@@ -85,19 +85,11 @@ No Service Version Changes from |previousMorphVer|
    * - MySQL
      - |mysqlbranch|
      - |mysqlver|
-<<<<<<< HEAD
      - |checkmark|
    * - MySQL (FIPS)
      - |mysqlbranch|
      - |mysqlverfips|
      - |checkmark|
-=======
-     -
-   * - MySQL (FIPS)
-     - |mysqlbranch|
-     - |mysqlverfips|
-     -
->>>>>>> 6509f5fa (Add deprecation note for nsx-v)
    * - Percona
      - 5.7, WSREP 31
      - n/a
@@ -109,11 +101,7 @@ No Service Version Changes from |previousMorphVer|
    * - RabbitMQ
      - |rmqbranch|
      - |rmqver|
-<<<<<<< HEAD
      - |checkmark|
-=======
-     -
->>>>>>> 6509f5fa (Add deprecation note for nsx-v)
    * - Tomcat
      -
      - |tcver|
@@ -125,19 +113,11 @@ No Service Version Changes from |previousMorphVer|
    * - OpenSSL
      -
      - |openssl|, |openssl_fips| (FIPS)
-<<<<<<< HEAD
      - |checkmark|
    * - Java
      -
      - |java|
      - |checkmark|
-=======
-     -
-   * - Java
-     -
-     - |java|
-     -
->>>>>>> 6509f5fa (Add deprecation note for nsx-v)
    * - Java (macOS agent)
      -
      - |java-mac|
