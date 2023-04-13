@@ -32,7 +32,6 @@ Guides
 
    Automation/automation.rst
    Backups/backups.rst
-   BuildIntegrations/buildIntegrations.rst
    Clouds/clouds.rst
    Containers/containers.rst
    Deployments/deployment.rst
