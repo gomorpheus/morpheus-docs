@@ -9,6 +9,7 @@ When installing and upgrading to |morpheus| |morphver|, refer to the following t
 Breaking Changes
 ================
 
+- 6.0.0: NSX-V support is deprecated though still supported as of |morpheus| 6.0.0. It will be removed and unsupported in 6.1.1 and higher.
 - 6.0.0+: In |morpheus| 6.0.0+, many third party integrations have been moved out of the core installer package and converted to |morpheus| plugins. As a result, during the upgrade process your appliance will need to be able to access share.morpheusdata.com, the online repository for all |morpheus| plugins. Where this is not possible, users may instead apply the supplemental installer package which is also available at |morpheus| Hub alongside the main installer package.
 - 5.5.2: VM Node Packages: Due to build java version requiremnets, the i386.deb and i386.rpm (32-bit) VM Node Packages can no longer be updated, and remain on v3.2.9.
 - 5.4.12: Guacd: Guacd is now complied iwth libssh2-1.10.0 on all platforms. Appliances on SLES15 may need openssl-devel manually installed for guacd to succesfully compile.
@@ -84,11 +85,19 @@ No Service Version Changes from |previousMorphVer|
    * - MySQL
      - |mysqlbranch|
      - |mysqlver|
+<<<<<<< HEAD
      - |checkmark|
    * - MySQL (FIPS)
      - |mysqlbranch|
      - |mysqlverfips|
      - |checkmark|
+=======
+     -
+   * - MySQL (FIPS)
+     - |mysqlbranch|
+     - |mysqlverfips|
+     -
+>>>>>>> 6509f5fa (Add deprecation note for nsx-v)
    * - Percona
      - 5.7, WSREP 31
      - n/a
@@ -100,7 +109,11 @@ No Service Version Changes from |previousMorphVer|
    * - RabbitMQ
      - |rmqbranch|
      - |rmqver|
+<<<<<<< HEAD
      - |checkmark|
+=======
+     -
+>>>>>>> 6509f5fa (Add deprecation note for nsx-v)
    * - Tomcat
      -
      - |tcver|
@@ -112,11 +125,19 @@ No Service Version Changes from |previousMorphVer|
    * - OpenSSL
      -
      - |openssl|, |openssl_fips| (FIPS)
+<<<<<<< HEAD
      - |checkmark|
    * - Java
      -
      - |java|
      - |checkmark|
+=======
+     -
+   * - Java
+     -
+     - |java|
+     -
+>>>>>>> 6509f5fa (Add deprecation note for nsx-v)
    * - Java (macOS agent)
      -
      - |java-mac|
