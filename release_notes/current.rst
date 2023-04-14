@@ -4,6 +4,8 @@
 |morphver| |releasetype| Release Notes
 **************************************
 
+.. WARNING:: |morpheus| 6.0.2 does not support rolling upgrades for HA environments. 
+
 - Compatible Plugin API version: |pluginVer|
 - Compatible |morpheus| Worker version: |workerVer|
 

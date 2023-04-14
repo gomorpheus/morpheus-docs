@@ -1536,7 +1536,7 @@
        <td class="lightGrey"></td>
        <td class="lightGrey"></td>
        <td class="white"></td>
-       <td class="green">6.0.1</td>
+       <td class="blue">6.0.1</td>
        <td class="blue">6.0.2</td>
      </tr>
      <tr>
