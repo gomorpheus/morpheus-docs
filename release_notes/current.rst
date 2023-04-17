@@ -151,7 +151,7 @@ Fixes
 :ServiceNow: - Fixed an issue that caused errors in Morpheus logs after completing Bulk Insert in ServiceNow :superscript:`5.4.15`
               - Fixed an issue with multiselect Typeahead Input fields when ordering catalog items via ServiceNow :superscript:`5.4.15`
               - ServiceNow integrations now include an "API Proxy" setting. If configured, ServiceNow integration traffic will be routed through the indicated proxy. If no proxy is configured, ServiceNow traffic will route through a global proxy if one is configured
-:Snapshots: - Certain reconfigure actions, such as those which alter CPU, memory or plan will no longer cause existing snapshots to be deleted. Others, such as adding a disk, will still result in existing snapshots being deleted :superscript:`5.4.15`
+:Snapshots: - Certain reconfigure actions, such as those which alter CPU, memory or plan will no longer cause existing snapshots to be deleted. Others, such as removing a disk or changing disk size, will still result in existing snapshots being deleted :superscript:`5.4.15`
 :Tags: - Fixed an issue that would sometimes cause tags to not be applied to new VMware workloads when the Instance was scaled
 :Tasks: - Fixed an issue that caused display issues for Tasks if the Task contained HTML tags which weren't closed properly :superscript:`5.4.14`
          - Fixed an issue that caused |morpheus| to continually attempt to re-run certain Tasks while the VM was powered off which, in the worst cases, could lead to API limits being reached :superscript:`5.4.15`
