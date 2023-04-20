@@ -119,6 +119,8 @@ With the type selected the new Input will have many configuration options, most 
   REQUIRE FIELD
    A fieldName that will trigger required attribute of this option
 
+|
+
 A complete example form making use of provisioning Inputs and Field Groups is shown below:
 
 .. image:: /images/forms/completeForm.png
