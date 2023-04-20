@@ -64,173 +64,173 @@ As an example, see the configuration for an Ubuntu server in the expandable sect
 
     .. code-block:: json
 
-    {
-      "hostName": "${userInitials}-${cloudCode}-${type}-${sequence}",
-      "metadata": "<%=customOptions.targetTags%>",
-      "backup": {
-        "backupRepository": 40,
-        "veeamManagedServer": "",
-        "jobSchedule": 2,
-        "createBackup": true,
-        "jobAction": "new",
-        "jobRetentionCount": "3",
-        "providerBackupType": 12,
-        "target": 37006
-      },
-      "instance": {
-        "userGroup": {
-          "id": ""
+      {
+        "hostName": "${userInitials}-${cloudCode}-${type}-${sequence}",
+        "metadata": "<%=customOptions.targetTags%>",
+        "backup": {
+          "backupRepository": 40,
+          "veeamManagedServer": "",
+          "jobSchedule": 2,
+          "createBackup": true,
+          "jobAction": "new",
+          "jobRetentionCount": "3",
+          "providerBackupType": 12,
+          "target": 37006
         },
-        "tags": "Forms,Test"
-      },
-      "defaultExpandAdvanced": false,
-      "volumes": [
-        {
-          "maxIOPS": null,
-          "displayOrder": 0,
-          "unitNumber": "0",
-          "minStorage": 5368709120,
-          "configurableIOPS": false,
-          "uuid": "a6781cc1-31ca-406b-aea0-e33ea1a18b7f",
-          "controllerMountPoint": "2200223:0:4:0",
-          "internalId": "[ESXi-DC2-QA-LUN01] Morpheus Ubuntu 22.04 20230307/Morpheus Ubuntu 22.04 20230307.vmdk",
-          "id": 5255832,
-          "datastoreId": "autoCluster",
-          "maxStorage": 26843545600,
-          "volumeCustomizable": true,
-          "readonlyName": false,
-          "controllerId": 2200223,
-          "externalId": "2000",
-          "virtualImageId": 1418543,
-          "vId": 1418543,
-          "size": 25,
-          "name": "root",
-          "planResizable": true,
-          "rootVolume": true,
-          "storageType": 1,
-          "typeId": 1,
-          "resizeable": true,
-          "uniqueId": null
-        }
-      ],
-      "type": "ubuntu",
-      "ports": [
-        {
-          "code": "ubuntu.22",
-          "visible": true,
-          "internalPort": 22,
-          "loadBalancePort": null,
-          "loadBalanceProtocol": null,
-          "sortOrder": 1,
-          "name": "SSH",
-          "id": 7,
-          "shortName": "ssh",
-          "externalPort": 22,
-          "loadBalance": false
-        }
-      ],
-      "version": "22.04",
-      "hideLock": true,
-      "cloud": {
-        "name": "QA VMware",
-        "id": 26324
-      },
-      "layout": {
-        "code": "vmware-ubuntu-22.04-single",
-        "id": 2608414
-      },
-      "showScale": false,
-      "environment": "2",
-      "networkInterfaces": [
-        {
-          "ipMode": "",
-          "primaryInterface": true,
-          "showNetworkPoolLabel": true,
-          "showNetworkDhcpLabel": false,
-          "network": {
-            "idName": "VLAN0002 - Internal Server",
-            "pool": {
-              "name": "10.32.20.0 /22",
-              "id": 18823
-            },
-            "id": "network-173431",
-            "hasPool": false
+        "instance": {
+          "userGroup": {
+            "id": ""
           },
-          "networkInterfaceTypeId": 4,
-          "networkInterfaceTypeIdName": "VMXNET 3"
-        }
-      ],
-      "copies": 1,
-      "loadBalancer": [],
-      "name": "${userInitials}-${cloudCode}-${type}-${sequence}",
-      "storageControllers": [
-        {
-          "editable": false,
-          "typeName": "IDE",
-          "maxDevices": 2,
-          "displayOrder": 0,
-          "active": true,
-          "unitNumber": null,
-          "reservedUnitNumber": -1,
-          "busNumber": "0",
-          "removable": false,
-          "name": "IDE 0",
-          "typeId": 2,
-          "id": 1729031,
-          "category": "ide"
+          "tags": "Forms,Test"
         },
-        {
-          "editable": false,
-          "typeName": "IDE",
-          "maxDevices": 2,
-          "displayOrder": 1,
-          "active": true,
-          "unitNumber": null,
-          "reservedUnitNumber": -1,
-          "busNumber": "1",
-          "removable": false,
-          "name": "IDE 1",
-          "typeId": 2,
-          "id": 1729032,
-          "category": "ide"
+        "defaultExpandAdvanced": false,
+        "volumes": [
+          {
+            "maxIOPS": null,
+            "displayOrder": 0,
+            "unitNumber": "0",
+            "minStorage": 5368709120,
+            "configurableIOPS": false,
+            "uuid": "a6781cc1-31ca-406b-aea0-e33ea1a18b7f",
+            "controllerMountPoint": "2200223:0:4:0",
+            "internalId": "[ESXi-DC2-QA-LUN01] Morpheus Ubuntu 22.04 20230307/Morpheus Ubuntu 22.04 20230307.vmdk",
+            "id": 5255832,
+            "datastoreId": "autoCluster",
+            "maxStorage": 26843545600,
+            "volumeCustomizable": true,
+            "readonlyName": false,
+            "controllerId": 2200223,
+            "externalId": "2000",
+            "virtualImageId": 1418543,
+            "vId": 1418543,
+            "size": 25,
+            "name": "root",
+            "planResizable": true,
+            "rootVolume": true,
+            "storageType": 1,
+            "typeId": 1,
+            "resizeable": true,
+            "uniqueId": null
+          }
+        ],
+        "type": "ubuntu",
+        "ports": [
+          {
+            "code": "ubuntu.22",
+            "visible": true,
+            "internalPort": 22,
+            "loadBalancePort": null,
+            "loadBalanceProtocol": null,
+            "sortOrder": 1,
+            "name": "SSH",
+            "id": 7,
+            "shortName": "ssh",
+            "externalPort": 22,
+            "loadBalance": false
+          }
+        ],
+        "version": "22.04",
+        "hideLock": true,
+        "cloud": {
+          "name": "QA VMware",
+          "id": 26324
         },
-        {
-          "editable": false,
-          "typeName": "SCSI LSI Logic Parallel",
-          "maxDevices": 15,
-          "displayOrder": 2,
-          "active": true,
-          "unitNumber": null,
-          "reservedUnitNumber": 7,
-          "busNumber": "0",
-          "removable": false,
-          "name": "SCSI 0",
-          "typeId": 4,
-          "id": 1729030,
-          "category": "scsi"
+        "layout": {
+          "code": "vmware-ubuntu-22.04-single",
+          "id": 2608414
+        },
+        "showScale": false,
+        "environment": "2",
+        "networkInterfaces": [
+          {
+            "ipMode": "",
+            "primaryInterface": true,
+            "showNetworkPoolLabel": true,
+            "showNetworkDhcpLabel": false,
+            "network": {
+              "idName": "VLAN0002 - Internal Server",
+              "pool": {
+                "name": "10.32.20.0 /22",
+                "id": 18823
+              },
+              "id": "network-173431",
+              "hasPool": false
+            },
+            "networkInterfaceTypeId": 4,
+            "networkInterfaceTypeIdName": "VMXNET 3"
+          }
+        ],
+        "copies": 1,
+        "loadBalancer": [],
+        "name": "${userInitials}-${cloudCode}-${type}-${sequence}",
+        "storageControllers": [
+          {
+            "editable": false,
+            "typeName": "IDE",
+            "maxDevices": 2,
+            "displayOrder": 0,
+            "active": true,
+            "unitNumber": null,
+            "reservedUnitNumber": -1,
+            "busNumber": "0",
+            "removable": false,
+            "name": "IDE 0",
+            "typeId": 2,
+            "id": 1729031,
+            "category": "ide"
+          },
+          {
+            "editable": false,
+            "typeName": "IDE",
+            "maxDevices": 2,
+            "displayOrder": 1,
+            "active": true,
+            "unitNumber": null,
+            "reservedUnitNumber": -1,
+            "busNumber": "1",
+            "removable": false,
+            "name": "IDE 1",
+            "typeId": 2,
+            "id": 1729032,
+            "category": "ide"
+          },
+          {
+            "editable": false,
+            "typeName": "SCSI LSI Logic Parallel",
+            "maxDevices": 15,
+            "displayOrder": 2,
+            "active": true,
+            "unitNumber": null,
+            "reservedUnitNumber": 7,
+            "busNumber": "0",
+            "removable": false,
+            "name": "SCSI 0",
+            "typeId": 4,
+            "id": 1729030,
+            "category": "scsi"
+          }
+        ],
+        "config": {
+          "poolProviderType": null,
+          "isVpcSelectable": true,
+          "smbiosAssetTag": null,
+          "isEC2": false,
+          "resourcePoolId": "pool-139625",
+          "hostId": null,
+          "createUser": true,
+          "nestedVirtualization": null,
+          "vmwareFolderId": "group-v80",
+          "noAgent": false
+        },
+        "plan": {
+          "code": "vm-8192",
+          "id": 149
+        },
+        "group": {
+          "name": "All Clouds",
+          "id": "2"
         }
-      ],
-      "config": {
-        "poolProviderType": null,
-        "isVpcSelectable": true,
-        "smbiosAssetTag": null,
-        "isEC2": false,
-        "resourcePoolId": "pool-139625",
-        "hostId": null,
-        "createUser": true,
-        "nestedVirtualization": null,
-        "vmwareFolderId": "group-v80",
-        "noAgent": false
-      },
-      "plan": {
-        "code": "vm-8192",
-        "id": 149
-      },
-      "group": {
-        "name": "All Clouds",
-        "id": "2"
       }
-    }
 
 Once done, click :guilabel:`SAVE CHANGES`
 
