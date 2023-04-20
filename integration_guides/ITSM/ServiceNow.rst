@@ -227,6 +227,8 @@ ServiceNow Service Catalog Integration
 
 In addition to integrating with key ServiceNow features, |morpheus| offers a free plugin directly from the ServiceNow Store. Once the plugin is installed, |morpheus| Self-Service Catalog Items can be presented as provisioning options in the ServiceNow catalog for ordering.
 
+.. NOTE:: Surfacing Catalog Items with made with Forms to ServiceNow is not yet supported. If planning to use ServiceNow to order Catalog Items you should not use Forms on any Catalog Items until it is supported.
+
 The |morpheus| plugin supports integration with ServiceNow whether it’s configured for a single tenant or for multiple domains. When both |morpheus| and ServiceNow are configured for multiple Tenants, we can create ServiceNow integrations in any relevant |morpheus| Tenant and map those to specific companies in ServiceNow. Any exposed library items would only be shared with users in the relevant ServiceNow company. The |morpheus| plugin will automatically detect whether the *ServiceNow Domain Support–Domain Extensions Installer plugin* has been installed and respond accordingly. Additionally, the *User Criteria Scoped API plugin* must also be enabled on the ServiceNow instance for multi-tenant use.
 
 Depending on the scenario, setup steps for the |morpheus| plugin will be slightly different. Setup steps for both single and domain-separated ServiceNow environments are included below.
