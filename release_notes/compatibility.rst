@@ -90,7 +90,7 @@ No Service Version Changes from |previousMorphVer|
    * - MySQL (FIPS)
      - |mysqlbranch|
      - |mysqlverfips|
-     -
+     - |checkmark|
    * - Percona
      - 5.7, WSREP 31
      - n/a
@@ -138,16 +138,16 @@ No Service Version Changes from |previousMorphVer|
      - |morphver| changes from |previousMorphVer|
    * - Morpheus Node and VM Node Packages
      - |nodePackageVer|
-     - Updated to v3.2.12
+     - No changes
    * - Morpheus Linux Agent
      - |linuxagentver|
-     - Updated to v2.4.0
+     - No changes
    * - Morpheus Windows Agent
      - |winagentver|
-     - Updated to v2.4.0
+     - No changes
    * - Morpheus macOS Agent
      - |macagentver|
-     - Updated to v2.4.0
+     - No changes
 
 |
 
