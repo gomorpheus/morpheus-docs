@@ -1619,7 +1619,7 @@
        <td class="blue">6.1.0</td>
      </tr>
      <tr>
-       <td class="darkGrey">6.0.1 →</td>
+       <td class="darkGrey">6.0.2 →</td>
        <td class="lightGrey"></td>
        <td class="lightGrey"></td>
        <td class="lightGrey"></td>
@@ -1658,7 +1658,7 @@
        <td class="lightGrey"></td>
        <td class="lightGrey"></td>
        <td class="white"></td>
-       <td class="blue">6.1.0</td>
+       <td class="green">6.1.0</td>
      </tr>
      <tr>
        <td class="green" colspan="40">Rolling Upgrade Supported</td>
