@@ -72,6 +72,7 @@ rst_prolog = """
 .. |LibOpt| replace:: Library > Options
 .. |LibOptInp| replace:: Library > Options > Inputs
 .. |LibOptOpt| replace:: Library > Options > Option Lists
+.. |LibOptFor| replace:: Library > Options > Forms
 .. |LibTem| replace:: Library > Templates
 .. |LibTemSpe| replace:: Library > Templates > Spec Templates
 .. |LibTemFil| replace:: Library > Templates > File Templates

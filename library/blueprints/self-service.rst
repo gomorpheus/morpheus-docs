@@ -19,7 +19,7 @@ The complete Self Service catalog can be viewed by clicking on Self Service from
 Building Catalog Instances
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-An Instance in |morpheus| is a set of one or more containers or virutal machines that correlate to a single, horizontally-scalable entity or service suite. From the Self Service section, we can pre-configure |morpheus| Instances and present them to users viewing the Service Catalog Persona for one-click deployment.
+An Instance in |morpheus| is a set of one or more containers or virtual machines that correlate to a single, horizontally-scalable entity or service suite. From the Self Service section, we can pre-configure |morpheus| Instances and present them to users viewing the Service Catalog Persona for one-click deployment.
 
 From the Catalog Items List Page (|LibBluCat|), click :guilabel:`ADD`. From the dropdown menu, select Instance. The modal window will appear to configure and add a new catalog Instance.
 
@@ -29,161 +29,210 @@ Configure the following:
 
 - **NAME:** A friendly name for the catalog item in |morpheus|
 - **CODE:** An optional shortcode for coded naming schemes or programmatic reference
-- **CATEGORY:** Select an existing category or enter a new one. When provisioning from the catelog, items can be filtered by category
 - **DESCRIPTION:** An optional description identifying the catalog item
+- **CATEGORY:** Select an existing category or enter a new one. When provisioning from the catelog, items can be filtered by category
 - **ENABLED:** When checked, this catalog item will be available for provisioning
+- **LABELS:** A comma-separated list of descriptive strings which can be used to categorize the Catalog Item. The Catalog Items list view page can be filtered by labels to make them easier to find
+- **ENABLED:** When marked, this Catalog Item will be available from the provisioning Catalog view
 - **FEATURED:** When checked, this catalog item will be given special visibility in the Service Catalog Persona view
 - **ALLOW QUANTITY:** When checked, an additional field is added to the order page allowing users to order multiple copies. If this option is enabled, ensure your configuration supports that flexibility (such as when IP or load balancer details are specified)
 - **VISIBILITY:** Set to private to keep the catalog item available only to users in the current Tenant. Master Tenant administrators may set catalog items to public to make them viewable and usable by Subtenant users
 - **LOGO:** Select or upload a logo to be associated with this catalog item
-- **CONFIG:** Enter, view, or edit Instance config here. Click :guilabel:`CONFIGURATION WIZARD` to build a base configuration through the |morpheus| Instance wizard. Following configuration through the Instance wizard, you may need to overwrite some static values in the configuration with calls to custom Input values. This allows your users to easily set the Instance Plan, Group, name, tags, or anything else they may need to control. Dynamic inputs are passed with the following syntax: "<%= customOptions.fieldName %>" where fieldName is the Field Name value set on the Input
+- **DARK LOGO:** If desired, set an alternate logo for use when the dark theme is applied to the |morpheus| appliance
+- **CONFIG:** Enter, view, or edit Instance config here. Click :guilabel:`CONFIGURE` to build a base configuration through the |morpheus| Instance wizard. After configuration through the Instance wizard, you may need to overwrite some static values in the Instance JSON body with calls to custom Input values. This allows your users to easily set the Instance Plan, Group, name, tags, or anything else they may need to control. Dynamic inputs are passed with the following syntax: "<%= customOptions.fieldName %>" where fieldName is the Field Name value set on the Input
 - **CONTENT:** Optionally include documentation content for this Catalog Item. Markdown-formatted text is accepted and displayed appropriately when the item is ordered from the Service Catalog. A new Catalog Item-type Wiki entry will also be added containing this information
-- **INPUTS:** If desired, select Inputs to present users with mandatory or optional selections prior to provisioning
+- **FORM TYPE:** Choose whether a Form or individual Inputs should be used to set the user options at provisioning time. See `Forms documentation <https://docs.morpheusdata.com/en/latest/library/options/options.html#forms>`_ for complete details on creating Forms.
+- **FORM:** If the Form Type of "Form" is selected, choose the pre-existing Form which should be associated with the Catalog Item
+- **INPUTS:** If the Form Type of "Inputs" is selected, choose the pre-existing Inputs which should be associated with the Catalog Item
 
-As an example, see the configuration for an Apache server on AWS which lets users set the |morpheus| infrastructure Group and plan size for the VM:
+Using Forms with Catalog Items
+``````````````````````````````
+
+Using Forms provides a number of advantages over using Inputs. Once the Form is selected, |morpheus| helpfully provides a sidebar which contains all variables that can be consumed in the Instance config from the Form:
+
+.. image:: /images/forms/catalogSidebar.png
+
+Many Form Inputs are designed to auto-inject themselves into the Instance config, you can see in the screenshot above that "AUTO INJECT" is checked. For variables that auto-inject, you do not need to override any static configuration with a variable call in order to consume that form value. In most cases, you should leave auto-inject turned on but the option is available to disable it for more advanced situations such as if you wanted to code custom logic into the variable call.
+
+Other types of Form Inputs do not auto-inject and, for these, you must override any static configuration in the Instance config with a variable call. For these situations, |morpheus| helpfully provides the results of all variables so you can be sure you're injecting the proper call. Click on the question mark (?) button immediately to the right of the "FORM VARIABLES" header to see a list of available variables and an example resolved variable. Variable tiles may be dragged from the sidebar into the CONFIG text area and a properly-formatted variable call will be inserted.
+
+.. image:: /images/forms/optionTypeHelp.png
+
+As an example, see the configuration for an Ubuntu server in the expandable section below. You'll notice in the configuration that a VMware Cloud, a specific Group, a specific Plan, and other static configurations are set. Since the Group, Cloud, Plan and other variables are able to be automatically injected, the user may select a different Group, Cloud, Plan, etc. from the form at provision time. The creator of the Catalog Item does not need to override those static configurations with variable calls.
 
 - .. toggle-header:: :header: **Example Catalog Item Config**
 
     .. code-block:: json
 
-      {
-        "group": {
-          "id": "<%= customOptions.fgroups %>"
+    {
+      "hostName": "${userInitials}-${cloudCode}-${type}-${sequence}",
+      "metadata": "<%=customOptions.targetTags%>",
+      "backup": {
+        "backupRepository": 40,
+        "veeamManagedServer": "",
+        "jobSchedule": 2,
+        "createBackup": true,
+        "jobAction": "new",
+        "jobRetentionCount": "3",
+        "providerBackupType": 12,
+        "target": 37006
+      },
+      "instance": {
+        "userGroup": {
+          "id": ""
         },
-        "cloud": {
-          "id": 12,
-          "name": "AWS"
-        },
-        "type": "apache",
-        "instance": {
-          "userGroup": {
-            "id": ""
-          },
-          "expireDays": "2",
-          "shutdownDays": "1"
-        },
-        "name": "${userInitials.toUpperCase()}DM${type.take(3).toUpperCase()}${sequence+1000}",
-        "config": {
-          "createUser": false,
-          "isEC2": false,
-          "isVpcSelectable": false,
-          "resourcePoolId": 129,
-          "provisionServerId": null,
-          "customOptions": {
-            "code": "cloud.code"
-          },
-          "poolProviderType": null,
-          "noAgent": false,
-          "availabilityId": null,
-          "securityId": null,
-          "publicIpType": "subnet",
-          "instanceProfile": null
-        },
-        "volumes": [
-          {
-            "index": 0,
-            "rootVolume": true,
-            "name": "data",
-            "maxStorage": 10737418240,
-            "volumeCustomizable": true,
-            "hasDatastore": false,
-            "readonlyName": false,
-            "customMaxStorage": false,
-            "size": 10,
-            "vId": 45,
-            "storageType": 6,
-            "maxIOPS": null
-          }
-        ],
-        "hostName": "${userInitials.toUpperCase()}DM${type.take(3).toUpperCase()}${sequence+1000}",
-        "configEnabled": true,
-        "layout": {
-          "id": 49,
-          "code": "apache-amazon-2.4-single"
-        },
-        "plan": {
-           "id": "<%= customOptions.fplans %>"
-        },
-        "version": "2.4",
-        "networkInterfaces": [
-          {
-            "primaryInterface": true,
-            "network": {
-              "id": "networkGroup-2",
-              "idName": "Demo Preferred"
+        "tags": "Forms,Test"
+      },
+      "defaultExpandAdvanced": false,
+      "volumes": [
+        {
+          "maxIOPS": null,
+          "displayOrder": 0,
+          "unitNumber": "0",
+          "minStorage": 5368709120,
+          "configurableIOPS": false,
+          "uuid": "a6781cc1-31ca-406b-aea0-e33ea1a18b7f",
+          "controllerMountPoint": "2200223:0:4:0",
+          "internalId": "[ESXi-DC2-QA-LUN01] Morpheus Ubuntu 22.04 20230307/Morpheus Ubuntu 22.04 20230307.vmdk",
+          "id": 5255832,
+          "datastoreId": "autoCluster",
+          "maxStorage": 26843545600,
+          "volumeCustomizable": true,
+          "readonlyName": false,
+          "controllerId": 2200223,
+          "externalId": "2000",
+          "virtualImageId": 1418543,
+          "vId": 1418543,
+          "size": 25,
+          "name": "root",
+          "planResizable": true,
+          "rootVolume": true,
+          "storageType": 1,
+          "typeId": 1,
+          "resizeable": true,
+          "uniqueId": null
+        }
+      ],
+      "type": "ubuntu",
+      "ports": [
+        {
+          "code": "ubuntu.22",
+          "visible": true,
+          "internalPort": 22,
+          "loadBalancePort": null,
+          "loadBalanceProtocol": null,
+          "sortOrder": 1,
+          "name": "SSH",
+          "id": 7,
+          "shortName": "ssh",
+          "externalPort": 22,
+          "loadBalance": false
+        }
+      ],
+      "version": "22.04",
+      "hideLock": true,
+      "cloud": {
+        "name": "QA VMware",
+        "id": 26324
+      },
+      "layout": {
+        "code": "vmware-ubuntu-22.04-single",
+        "id": 2608414
+      },
+      "showScale": false,
+      "environment": "2",
+      "networkInterfaces": [
+        {
+          "ipMode": "",
+          "primaryInterface": true,
+          "showNetworkPoolLabel": true,
+          "showNetworkDhcpLabel": false,
+          "network": {
+            "idName": "VLAN0002 - Internal Server",
+            "pool": {
+              "name": "10.32.20.0 /22",
+              "id": 18823
             },
-            "showNetworkPoolLabel": true,
-            "showNetworkDhcpLabel": false
-          }
-        ],
-        "templateParameter": null,
-        "securityGroups": [
-          {
-            "id": "sg-f38fb296"
-          }
-        ],
-        "backup": {
-          "createBackup": true,
-          "jobAction": "new",
-          "jobRetentionCount": "1",
-          "providerBackupType": -1
-        },
-        "loadBalancer": [
-          {
-            "internalPort": 80,
-            "externalPort": 80,
-            "loadBalancePort": null,
-            "loadBalanceProtocol": "http",
-            "externalAddressCheck": false,
-            "protocol": "http",
-            "balanceMode": "leastconnections",
-            "vipPort": 80,
-            "vipHostname": "bpdmapa1008.localdomain",
-            "name": "${userInitials.toUpperCase()}DM${type.take(3).toUpperCase()}${sequence+1000}",
-            "vipName": "${userInitials.toUpperCase()}DM${type.take(3).toUpperCase()}${sequence+1000}-load-balancer",
-            "id": ""
+            "id": "network-173431",
+            "hasPool": false
           },
-          {
-            "internalPort": 443,
-            "externalPort": 443,
-            "loadBalancePort": null,
-            "loadBalanceProtocol": "https",
-            "externalAddressCheck": false,
-            "protocol": "https",
-            "balanceMode": "leastconnections",
-            "vipPort": 443,
-            "vipHostname": "bpdmapa1008.localdomain",
-            "name": "${userInitials.toUpperCase()}DM${type.take(3).toUpperCase()}${sequence+1000}",
-            "vipName": "${userInitials.toUpperCase()}DM${type.take(3).toUpperCase()}${sequence+1000}-load-balancer",
-            "id": ""
-          }
-        ],
-        "hideLock": true,
-        "hasNetworks": true,
-        "displayNetworks": [
-          {
-            "groupName": "Demo Preferred",
-            "ipMode": "Network Default"
-          }
-        ],
-        "copies": 1,
-        "showScale": false,
-        "volumesDisplay": [
-          {
-            "storage": "gp2",
-            "name": "data",
-            "controller": null,
-            "datastore": null,
-            "displayOrder": null,
-            "size": 10,
-            "mountPoint": null
-          }
-        ]
+          "networkInterfaceTypeId": 4,
+          "networkInterfaceTypeIdName": "VMXNET 3"
+        }
+      ],
+      "copies": 1,
+      "loadBalancer": [],
+      "name": "${userInitials}-${cloudCode}-${type}-${sequence}",
+      "storageControllers": [
+        {
+          "editable": false,
+          "typeName": "IDE",
+          "maxDevices": 2,
+          "displayOrder": 0,
+          "active": true,
+          "unitNumber": null,
+          "reservedUnitNumber": -1,
+          "busNumber": "0",
+          "removable": false,
+          "name": "IDE 0",
+          "typeId": 2,
+          "id": 1729031,
+          "category": "ide"
+        },
+        {
+          "editable": false,
+          "typeName": "IDE",
+          "maxDevices": 2,
+          "displayOrder": 1,
+          "active": true,
+          "unitNumber": null,
+          "reservedUnitNumber": -1,
+          "busNumber": "1",
+          "removable": false,
+          "name": "IDE 1",
+          "typeId": 2,
+          "id": 1729032,
+          "category": "ide"
+        },
+        {
+          "editable": false,
+          "typeName": "SCSI LSI Logic Parallel",
+          "maxDevices": 15,
+          "displayOrder": 2,
+          "active": true,
+          "unitNumber": null,
+          "reservedUnitNumber": 7,
+          "busNumber": "0",
+          "removable": false,
+          "name": "SCSI 0",
+          "typeId": 4,
+          "id": 1729030,
+          "category": "scsi"
+        }
+      ],
+      "config": {
+        "poolProviderType": null,
+        "isVpcSelectable": true,
+        "smbiosAssetTag": null,
+        "isEC2": false,
+        "resourcePoolId": "pool-139625",
+        "hostId": null,
+        "createUser": true,
+        "nestedVirtualization": null,
+        "vmwareFolderId": "group-v80",
+        "noAgent": false
+      },
+      "plan": {
+        "code": "vm-8192",
+        "id": 149
+      },
+      "group": {
+        "name": "All Clouds",
+        "id": "2"
       }
+    }
 
 Once done, click :guilabel:`SAVE CHANGES`
-
-.. TIP:: Building catalog items through the configuration wizard is similar to the typical provisioning process for Instances in |morpheus|. For more details on selections available in the configuration wizard, take a look at other sections of |morpheus| docs on provisioning Instances.
 
 Building Catalog Blueprints
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -196,13 +245,15 @@ Configure the following:
 
 - **NAME:** A friendly name for the catalog item in |morpheus|
 - **CODE:** An optional shortcode for coded naming schemes or programmatic reference
-- **CATEGORY:** Select an existing category or enter a new one. When provisioning from the catelog, items can be filtered by category
 - **DESCRIPTION:** An optional description identifying the catalog item
+- **CATEGORY:** Select an existing category or enter a new one. When provisioning from the catelog, items can be filtered by category
+- **LABELS:** A comma-separated list of descriptive strings which can be used to categorize the Catalog Item. The Catalog Items list view page can be filtered by labels to make them easier to find
 - **ENABLED:** When checked, this catalog item will be available for provisioning
 - **FEATURED:** When checked, this catalog item will be given special visibility in the Service Catalog Persona view
 - **ALLOW QUANTITY:** When checked, an additional field is added to the order page allowing users to order multiple copies. If this option is enabled, ensure your configuration supports that flexibility (such as when IP or load balancer details are specified)
 - **VISIBILITY:** Set to private to keep the catalog item available only to users in the current Tenant. Master Tenant administrators may set catalog items to public to make them viewable and usable by Subtenant users
 - **LOGO:** Select or upload a logo to be associated with this catalog item
+- **DARK LOGO:** If desired, set an alternate logo for use when the dark theme is applied to the |morpheus| appliance
 - **CONFIGURE:** Click :guilabel:`CONFIGURE` to use the familiar App provisioning wizard to tie Blueprint and App deployment configuration to the Catalog Item
 - **APP SPEC:** Inject App spec here for any fields required to provision an App from your Blueprint. You may also inject any overrides to the existing Blueprint spec that are desired. App Spec configuration must be YAML, a simple example that names the App and sets the Group and Cloud is included below:
 
@@ -227,11 +278,17 @@ Configure the following:
                 cloud: Dev AWS
 
 - **CONTENT:** Optionally include documentation content for this Catalog Item. Markdown-formatted text is accepted and displayed appropriately when the item is ordered from the Service Catalog. A new Catalog Item-type Wiki entry will also be added containing this information.
-- **INPUTS:** If desired, select Inputs to present users with mandatory or optional selections prior to provisioning
 
-  .. note:: App spec custom option variables should be single quoted in YAML: ``cloud: '<%= customOption.cloud %>'``. Additionally, not all variables are available here as many are unknown until provisioning. Users may use any custom Input values (customOption) as well as name or hostname values which are resolved as part of naming policy evaluation.
+  .. NOTE:: App spec custom option variables should be single quoted in YAML: ``cloud: '<%= customOption.cloud %>'``. Additionally, not all variables are available here as many are unknown until provisioning. Users may use any custom Input values (customOption) as well as name or hostname values which are resolved as part of naming policy evaluation.
+
+- **FORM TYPE:** Choose whether a Form or individual Inputs should be used to set the user options at provisioning time. See `Forms documentation <https://docs.morpheusdata.com/en/latest/library/options/options.html#forms>`_ for complete details on creating Forms.
+- **FORM:** If the Form Type of "Form" is selected, choose the pre-existing Form which should be associated with the Catalog Item
+- **INPUTS:** If the Form Type of "Inputs" is selected, choose the pre-existing Inputs which should be associated with the Catalog Item
+
+.. TIP:: There are a number of advantages to using Forms over Inputs. See the section above on using Forms with Catalog Items for a complete description on how they are used and the advantages to using them.
 
 Once done, click :guilabel:`SAVE CHANGES`
+
 
 Building Catalog Workflows
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -242,18 +299,23 @@ Configure the following:
 
 - **NAME:** A friendly name for the catalog item in |morpheus|
 - **CODE:** An optional shortcode for coded naming schemes or programmatic reference
-- **CATEGORY:** Select an existing category or enter a new one. When provisioning from the catelog, items can be filtered by category
 - **DESCRIPTION:** An optional description identifying the catalog item
+- **CATEGORY:** Select an existing category or enter a new one. When provisioning from the catelog, items can be filtered by category
+- **LABELS:** A comma-separated list of descriptive strings which can be used to categorize the Catalog Item. The Catalog Items list view page can be filtered by labels to make them easier to find
 - **ENABLED:** When checked, this Workflow item will be available for selection in the Service Catalog
 - **FEATURED:** When checked, this catalog item will be given special visibility in the Service Catalog Persona view
-- **ALLOW QUANTITY:** When checked, an additional field is added to the order page allowing users to order multiple runs
 - **VISIBILITY:** Set to private to keep the catalog item available only to users in the current Tenant. Master Tenant administrators may set catalog items to public to make them viewable and usable by Subtenant users
 - **LOGO:** Select or upload a logo to be associated with this catalog item
+- **DARK LOGO:** If desired, set an alternate logo for use when the dark theme is applied to the |morpheus| appliance
 - **WORKFLOW:** Select an existing Workflow to be associated with this Catalog Item, new Workflows are created in |LibAut|
-- **CONTEXT TYPE:** Optionally restrict users to a specific target context, Instance, Server, or None
+- **CONTEXT:** Optionally restrict users to a specific target context, Instance, Server, or None
 - **CONFIG:** Enter an optional custom config JSON body. See `Workflows documentation <https://docs.morpheusdata.com/en/latest/library/automation/workflows.html#allow-custom-config>`_ for a formatting example
 - **CONTENT:** Optionally include documentation content for this Catalog Item. Markdown-formatted text is accepted and displayed appropriately when the item is ordered from the Service Catalog. A new Catalog Item-type Wiki entry will also be added containing this information.
-- **INPUTS:** Select any configured Inputs which should be available for user selection at execution time
+- **FORM TYPE:** Choose whether a Form or individual Inputs should be used to set the user options at provisioning time. See `Forms documentation <https://docs.morpheusdata.com/en/latest/library/options/options.html#forms>`_ for complete details on creating Forms.
+- **FORM:** If the Form Type of "Form" is selected, choose the pre-existing Form which should be associated with the Catalog Item
+- **INPUTS:** If the Form Type of "Inputs" is selected, choose the pre-existing Inputs which should be associated with the Catalog Item
+
+.. TIP:: There are a number of advantages to using Forms over Inputs. See the section above on using Forms with Catalog Items for a complete description on how they are used and the advantages to using them.
 
 Once done, click :guilabel:`SAVE CHANGES`
 
