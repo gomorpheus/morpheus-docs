@@ -27,6 +27,7 @@ Configuring NGINX Listeners
 #. Restart the NGINX service:
 
     .. code-block:: bash
+
         morpheus-ctl restart nginx
         
         ok: run: nginx: (pid 47868) 0s
@@ -34,6 +35,7 @@ Configuring NGINX Listeners
 #. The site should now be resolvable via IPv6. To test you should be able to do the following:
 
     .. code-block:: bash
+
         curl -k -6 https://[<IPv6 Address>]/ping
 
         MORPHEUS PING
