@@ -4,6 +4,8 @@
 |morphver| |releasetype| Release Notes
 **************************************
 
+.. WARNING:: Rolling upgrades to |morphver| from |morpheus| version 6.0.1 or lower are not supported for HA environments.
+
 - Compatible Plugin API version: |pluginVer|
 - Compatible |morpheus| Worker version: |workerVer|
 
