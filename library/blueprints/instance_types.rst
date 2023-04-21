@@ -3,7 +3,7 @@ Instance Types
 
 Adding an Instance Type creates a new Library item category. Multiple Layouts can be added to an Instance Type and these Layouts can have different Nodes attached. The Instance provisioning wizard will present the Layout options compatible with the selected Cloud. If Cloud selection is turned off, all Layouts will be presented for all Cloud types accessible by the User.
 
-.. image:: /images/provisioning/library/Types_Library_Morpheus_salt_library_item.png
+.. image:: /images/provisioning/library/instanceType.png
 
 Name
   Name of the Instance Type in the provisioning Library
