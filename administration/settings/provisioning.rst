@@ -43,9 +43,6 @@ PXE Boot Settings
 Default Root Password
   Enter the default password to be set for Root during PXE Boots.
 
-.. include:: environments.rst
-.. include:: licenses.rst
-
 App Blueprint Settings
 ^^^^^^^^^^^^^^^^^^^^^^
 
