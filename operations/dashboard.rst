@@ -3,6 +3,8 @@ Dashboard
 
 The Dashboard is a single, high-level view into your environment which includes easy-to-read performance and configuration information. In many cases other areas within |morpheus| UI will allow you to drill deeper into the information presented in the dashboard.
 
+.. NOTE:: Elasticsearch 7.16+ is required for the Log Trends Dashboard panel to work. When using versions below 7.16 you will see error messages in logs due to this panel missing needed dependencies to work correctly but these errors may be safely ignored.
+
 .. image:: /images/operations/dashboard1.png
 
 **Environment**
