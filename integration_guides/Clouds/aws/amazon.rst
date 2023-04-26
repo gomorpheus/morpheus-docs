@@ -109,7 +109,7 @@ KMS KEY ID
 Provisioning and Keypairs
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
-During provisioning, users do not need to create or select a keypair as you would do when provisioning directly from the AWS console. If needed, |morpheus| will create an AWS keypair without input from the user. In the AWS console and in the |morpheus| Keypairs Section (|InfTruKey|) you will see these keypairs listed. |morpheus| will also inventory other keypairs which are created in your integrated AWS clouds and these will be listed out in the |morpheus| Keypairs section.
+During provisioning, users do not need to create or select a keypair as you would do when provisioning directly from the AWS console. If needed, |morpheus| will create an AWS keypair without input from the user. In the AWS console and in the |morpheus| Keypairs Section (|InfKeyKey|) you will see these keypairs listed. |morpheus| will also inventory other keypairs which are created in your integrated AWS clouds and these will be listed out in the |morpheus| Keypairs section.
 
 These created keypairs are not accessible to the user as you do not see them at creation time and they are encrypted as stored in the |morpheus| database. To have access to the Instance after provisioning, the user should have his or her user created during provisioning. This is done by creating a Linux user in |morpheus| `User Settings <https://docs.morpheusdata.com/en/latest/administration/user_settings/user_settings.html#linux-settings>`_ and associating a keypair with the user. If you don't currently have a keypair to use, |morpheus| can generate one for you in the Keypairs section.
 
