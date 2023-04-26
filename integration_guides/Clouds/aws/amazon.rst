@@ -95,7 +95,7 @@ Details
 IMAGE TRANSFER STORE
   S3 bucket for Image transfers, required for migrations into AWS.
 EBS ENCRYPTION
-  Enable or disable encrytion of EBS Volumes
+  Enable or disable encryption of EBS Volumes
 COSTING KEY
   For Gov Cloud pricing only, key for standard managing cost account
 COSTING SECRET
@@ -105,6 +105,23 @@ COSTING SECRET
 
 KMS KEY ID
   For specify an AWS KMS key for encrypting EBS Volumes when volume encryption is enabled
+
+Provisioning and Keypairs
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
+During provisioning, users do not need to create or select a keypair as you would do when provisioning directly from the AWS console. If needed, |morpheus| will create an AWS keypair without input from the user. In the AWS console and in the |morpheus| Keypairs Section (|InfTruKey|) you will see these keypairs listed. |morpheus| will also inventory other keypairs which are created in your integrated AWS clouds and these will be listed out in the |morpheus| Keypairs section.
+
+These created keypairs are not accessible to the user as you do not see them at creation time and they are encrypted as stored in the |morpheus| database. To have access to the Instance after provisioning, the user should have his or her user created during provisioning. This is done by creating a Linux user in |morpheus| `User Settings <https://docs.morpheusdata.com/en/latest/administration/user_settings/user_settings.html#linux-settings>`_ and associating a keypair with the user. If you don't currently have a keypair to use, |morpheus| can generate one for you in the Keypairs section.
+
+.. image:: /images/infrastructure/clouds/aws/createUser.png
+
+With your user set in |morpheus| User Settings, ensure that your user is being created during Instance provisioning. On the CONFIGURE tab of the Instance provisioning wizard, mark the "CREATE YOUR USER" box. This is normally checked by default if a user is configured in |morpheus| User Settings but you can confirm that here.
+
+.. image:: /images/infrastructure/clouds/aws/userKeypair.png
+
+It's worth noting that adding your user to the provisioned workload does not replace the keypair used by |morpheus| during provisioning. Instead it adds the public key for your user to the authorized keys file on the workload which allows you to access it. You can confirm this by catting out the authorized key file on any of your |morpheus|-provisioned workloads (~/.ssh/authorized_keys). You will at least see two keys, one for the |morpheus| service user and one for your own user.
+
+.. NOTE:: In general it should not cause problems if |morpheus|-generated keypairs are deleted from the AWS console or from the |morpheus| keypairs section. You would not lose console access to the VM. If needed, however, |morpheus| will create more keypairs and there is currently no functionality to automatically remove these keypairs. They can be safely ignored, generally speaking there is no need to manually delete them.
 
 Enhanced Invoice Costing Configuration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -169,7 +186,7 @@ AWS cloud integrations in |morpheus| will sync highly-granular costing data thro
                       }
                   ]
                 }
-          
+
           .. toggle-header::
             :header: Creating a new CUR and using an existing S3 bucket **Click to Expand/Hide**
 
@@ -318,13 +335,13 @@ AWS cloud integrations in |morpheus| will sync highly-granular costing data thro
 
 Global (Costing Aggregator Only) (v5.5.1+)
 ``````````````````````````````````````````
-  
+
   Costing can be created for specific clouds individually, following the steps previously mentioned.  If the same account is added multiple times, using different regions, the same CUR file is available to be selected (if the configured user has access).  However,
-  this can become a tedious process in needing to configure the CUR on each cloud added to |morpheus|.  However, |morpheus| has a region of `Global (Costing Aggregator Only)`, which can be chosen at the time of adding a cloud.  This region is not designed for 
+  this can become a tedious process in needing to configure the CUR on each cloud added to |morpheus|.  However, |morpheus| has a region of `Global (Costing Aggregator Only)`, which can be chosen at the time of adding a cloud.  This region is not designed for
   deploying workloads, it is here primarily for syncing costs.  This means that the AWS account added as a cloud in |morpheus| as a Global region can sync the cost for all the other regions of the same account added as clouds into |morpheus|.
-  
+
   When using AWS Organizations, if the AWS account added as a gloabal region is the management account (formerly known as master account) and consolidated billing is enabled, costs for **all** accounts can be sync'd using the Global region.  This means when any AWS
-  and/or regions in the organization are added as clouds in |morpheus|, the appropriate costs are applied to them automatically.  It does require that **Costing** is enabled on the cloud to see the costs but a Costing Report does not need to be chosen.  
+  and/or regions in the organization are added as clouds in |morpheus|, the appropriate costs are applied to them automatically.  It does require that **Costing** is enabled on the cloud to see the costs but a Costing Report does not need to be chosen.
   This enables the use of one cloud added as Global to sync all costs and apply to all AWS clouds added in |morpheus|.
 
   Additionally, some costs in AWS are not region specific, for example the `Global` and `No Region` regions.  These costs do not apply to the regions of the clouds added in |morpheus|.  With the Global region added as a cloud in |morpheus|, you would be able to see
