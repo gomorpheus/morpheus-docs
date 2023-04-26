@@ -113,11 +113,11 @@ During provisioning, users do not need to create or select a keypair as you woul
 
 These created keypairs are not accessible to the user as you do not see them at creation time and they are encrypted as stored in the |morpheus| database. To have access to the Instance after provisioning, the user should have his or her user created during provisioning. This is done by creating a Linux user in |morpheus| `User Settings <https://docs.morpheusdata.com/en/latest/administration/user_settings/user_settings.html#linux-settings>`_ and associating a keypair with the user. If you don't currently have a keypair to use, |morpheus| can generate one for you in the Keypairs section.
 
-.. image:: /images/infrastructure/clouds/aws/createUser.png
+.. image:: /images/infrastructure/clouds/aws/userKeypair.png
 
 With your user set in |morpheus| User Settings, ensure that your user is being created during Instance provisioning. On the CONFIGURE tab of the Instance provisioning wizard, mark the "CREATE YOUR USER" box. This is normally checked by default if a user is configured in |morpheus| User Settings but you can confirm that here.
 
-.. image:: /images/infrastructure/clouds/aws/userKeypair.png
+.. image:: /images/infrastructure/clouds/aws/createUser.png
 
 It's worth noting that adding your user to the provisioned workload does not replace the keypair used by |morpheus| during provisioning. Instead it adds the public key for your user to the authorized keys file on the workload which allows you to access it. You can confirm this by catting out the authorized key file on any of your |morpheus|-provisioned workloads (~/.ssh/authorized_keys). You will at least see two keys, one for the |morpheus| service user and one for your own user.
 
