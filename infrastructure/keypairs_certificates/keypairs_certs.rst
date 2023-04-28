@@ -165,14 +165,14 @@ The key pairs section enables the following actions: Add and Delete key pairs. K
   #With passphrase
   ssh-keygen -p -P "old passphrase" -N "new passphrase" -m pem -f path/to/key
 
-Add Key Pair
-------------
+Add Existing Key Pair
+^^^^^^^^^^^^^^^^^^^^^
 
-To Add Key Pair:
+To generate a existing Key Pair:
 
-#. Navigate to Infrastructure > Keys & Certs
-#. On the Key Pairs tab, click :guilabel:`+ ADD`
-#. From the Add Key Pair wizard input the following as needed:
+#. Navigate to |InfKeyKey|
+#. On the Key Pairs tab, click :guilabel:`+ ADD` and select "Existing Key Pair"
+#. From the Add Key Pair modal input the following as needed:
 
    * Name
    * Public Key
@@ -181,8 +181,19 @@ To Add Key Pair:
 
    .. NOTE:: Certain features do not require storage of the private key.
 
+Generate Key Pair
+^^^^^^^^^^^^^^^^^
+
+To generate a Key Pair:
+
+#. Navigate to |InfKeyKey|
+#. On the Key Pairs tab, click :guilabel:`+ ADD` and select "Existing Key Pair"
+#. After naming the new key pair, |morpheus| will reveal both the public and private key
+
+.. NOTE:: After the private key is initially revealed it will not be shown again. If needed, you may view the public key from the Keypairs list page at any time going forward. This key pair can be associated with your Linux user details in |morpheus| user settings. The public key will be added to the authorized_keys file on provisioned workloads where your Linux user is added at provision time.
+
 Delete Key Pair
----------------
+^^^^^^^^^^^^^^^
 
 To Delete Key Pair:
 
