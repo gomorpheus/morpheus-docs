@@ -1,6 +1,14 @@
 Forms
 -----
 
+.. raw:: html
+
+    <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; height: auto;">
+        <iframe src="//www.youtube.com/embed/m619LpVVJ6A" frameborder="0" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
+    </div>
+
+|
+
 Forms are designed to be used with `Catalog Items <https://docs.morpheusdata.com/en/latest/library/blueprints/blueprints.html#catalog-items>`_. Using the provided tools, build forms to provide the appropriate customization fields for endusers in the Provisioning Catalog. Catalog Items can also be built using |morpheus| Inputs but Forms provide unique capabilities that open up additional functionality and simplify the process. Once a Form is created it is then available to be associated with a Catalog Item. This section discusses the creation of Forms, the available options, and how they can be used effectively to create Catalog Items.
 
 Creating a New Form
