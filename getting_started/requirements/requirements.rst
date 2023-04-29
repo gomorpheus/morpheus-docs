@@ -48,11 +48,15 @@ Default Paths
 ``/opt/morpheus``
   Morpheus Application and Services Files
 ``/var/opt/morpheus``
-  User, Application and Services Data, including default config Elasticsearch, RabbitMQ and Database data, and default Virtual Image path.
+  User, Application and Services Data, including default config Elasticsearch, RabbitMQ and Database data, default Virtual Image path, and working directory for Backups
+``/var/opt/morpheus/morpheus-ui`` (HA Installations Only)
+  In an HA Installation, a NFS share is required and mounted to this location.  Virtual Images, Plugins, and other shared files are stored at this path to be accessible for all nodes
+``/home``
+  Morpheus service account home data, such as configuration files
 ``/var/log``
   Morpheus Service logs
-``/var/opt/morpheus/bitcan/``
-  Working directory for Backups
+``/tmp``
+  Storage for any temp files created by Morpheus or the operating system
 
 Images
 ^^^^^^
