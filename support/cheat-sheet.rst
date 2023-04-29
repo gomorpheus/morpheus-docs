@@ -602,4 +602,4 @@ Images
 
 .. raw:: html
 
-    <iframe width="560" height="315" src="http://install-storage-calculator.s3-website.us-east-2.amazonaws.com/" frameborder="0" allowfullscreen></iframe>
+    <iframe width="560" height="315" src="http://install-storage-calculator.s3-website.us-east-2.amazonaws.com/index.html" frameborder="0" allowfullscreen></iframe>
