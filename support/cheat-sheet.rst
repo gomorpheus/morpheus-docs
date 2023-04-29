@@ -599,3 +599,7 @@ Images
             .. image:: /images/support/troubleshooting/app_guest_cust_hostname_failure.png
 
     Additional information:  https://sublime-and-sphinx-guide.readthedocs.io/en/latest/images.html
+
+.. raw:: html
+
+    <iframe width="560" height="315" src="http://install-storage-calculator.s3-website.us-east-2.amazonaws.com/" frameborder="0" allowfullscreen></iframe>
