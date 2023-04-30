@@ -602,4 +602,4 @@ Images
 
 .. raw:: html
 
-    <iframe width="560" height="315" src="/_static/storageCalculator/index.html" frameborder="0" allowfullscreen></iframe>
+    <iframe width="560" height="315" src="../_static/storageCalculator/index.html" frameborder="0" allowfullscreen></iframe>
