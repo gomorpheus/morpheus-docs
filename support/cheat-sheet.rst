@@ -602,4 +602,9 @@ Images
 
 .. raw:: html
 
-    <iframe width="100%" height="100%" src="../_static/storageCalculator/index.html" frameborder="0" allowfullscreen></iframe>
+    <iframe id="storageCalculator" src="../_static/storageCalculator/index.html" frameborder="0" allowfullscreen></iframe>
+    <script>
+        var iframe = document.getElementById("storageCalculator");
+        iframe.width = iframe.contentWindow.document.body.scrollWidth;
+        iframe.height = iframe.contentWindow.document.body.scrollHeight;
+    </script>
