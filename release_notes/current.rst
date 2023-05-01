@@ -13,6 +13,19 @@
 
 .. IMPORTANT:: NSX-V support is deprecated though still supported as of |morpheus| 6.0.0. It will be removed and unsupported in 6.1.1 and higher.
 
+.. toggle-header::
+    :header: 6.1.0-2 Updates **Click to Expand/Hide**
+
+     6.1.0-2 contains the following updates not included in 6.1.0-1:
+
+      :Amazon: - Fixed selected IAM Profiles Not Applying to AWS Instances :superscript:`6.0.2-2`
+               - Fixed Route53 integration region lookup issue :superscript:`6.0.2-2`
+      :Appliance: - Embedded plugins directory moved from `/var/opt/morpheus/morpheus-ui/plugins-embedded` to `/var/opt/morpheus/morpheus-local/plugins-embedded` to resolve NFS context issue. :superscript:`6.0.2-2`
+      :Instances: - Instance Details: Fixed 500 error when an instance associated with a network pool had a null pool ip :superscript:`6.0.2-2`
+      :Resources: - Added instanceId index to account_resource table :superscript:`6.0.2-2`
+      :Roles: - Fixed Role Migration issue where some custom resource permissions were not properly migrated :superscript:`6.0.2-2`
+      :SCVMM: - Fixed SCVMM cloud deployments when subnet is selected :superscript:`6.0.2-2`
+
 .. NOTE:: Items appended with :superscript:`x.x.x` are also included in that version
 
 Release Dates
