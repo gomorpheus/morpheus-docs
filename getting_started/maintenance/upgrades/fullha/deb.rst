@@ -10,12 +10,12 @@ The following covers upgrading the |morpheus| App nodes in Full HA Architecture 
 |morpheus| Release Package urls can be obtained from `https://morpheushub.com <https://morpheushub.com>`_
 
 
-4.2.0+ > |morphver| Upgrade
-............................
+|nonRollingUpgradeVer| or lower -> |morphver| Upgrade
+.....................................................
 
-.. warning:: Rolling upgrades are not supported for 4.2.x > 5.x upgrades
+.. warning:: Rolling upgrades from |nonRollingUpgradeVer| or lower to |morphver| are not supported
 
-.. important:: Due to Database schema changes in |morphver| it is important to stop the morpheus-ui service on all app nodes prior to upgrade. Failure to do so may result in errors or database corruption. As a best practice, always backup your database prior to any upgrade.
+.. important:: It is important to stop the morpheus-ui service on all app nodes prior to upgrade. Failure to do so will resilt in a flood of log errors due to previous message serializaiton conflict. The messages will eventually expire and the logs will clear.
 
 .. warning:: |morpheus| |morphver| contains new node and VM node packages that require 3.5GB of storage. It is safe to run ``sudo rm -Rf /var/opt/morpheus/package-repos/*`` after |morphver| package installation and before reconfigure to clean old node and vm node packages from the package-repo when room is needed.
 
@@ -71,10 +71,10 @@ The following covers upgrading the |morpheus| App nodes in Full HA Architecture 
 
 |
 
-5.0.0+ > |morphver| Upgrade
-............................
+|minRollingUpgradeVer| -> |morphver| Upgrade
+............................................
 
-.. NOTE:: Rolling upgrades are supported for 5.x > |morphver| upgrades for single-node environments only. Rolling upgrades are not supported for HA environments.
+.. NOTE:: Rolling upgrades are supported for |minRollingUpgradeVer| -> |morphver| only.
 
 .. warning:: |morpheus| |morphver| contains new node and VM node packages that require 3.5GB of storage. It is safe to run ``sudo rm -Rf /var/opt/morpheus/package-repos/*`` after |morphver| package installation and before reconfigure to clean old node and vm node packages from the package-repo when room is needed.
 
