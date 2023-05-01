@@ -58,6 +58,13 @@ Default Paths
 ``/tmp``
   Storage for any temp files created by Morpheus or the operating system
 
+.. toggle-header::
+    :header: **Storage Calculator**
+
+    .. raw:: html
+
+      <iframe height="333px" width="850" id="storageCalculator" src="../_static/storageCalculator/index.html" frameborder="0" allowfullscreen></iframe>
+
 Images
 ^^^^^^
 
