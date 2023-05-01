@@ -18,6 +18,7 @@
 Release Dates
 
 - |morphver| |releasedate|
+- 6.1.0-2 May 1 2023
 
 New Features
 ============
@@ -40,13 +41,13 @@ Fixes
              - Provisioning an App through the CLI ``apps add`` call now works properly even when no user groups are defined :superscript:`6.0.2`
              - The Tenants block containing details on the Tenants to which a load balancer is applied are now returned in the payload for load balancer GET requests :superscript:`6.0.2`
              - The ``catalog add --payloads`` command is now properly iterating through all files of a particular syntax, or the entire folder
-:Amazon: - Fixed selected IAM Profiles Not Applying to AWS Instances :superscript:`6.0.2-2`
-         - Fixed Route53 integration region lookup issue :superscript:`6.0.2-2`
+:Amazon: - `6.1.0-2` Fixed selected IAM Profiles Not Applying to AWS Instances :superscript:`6.0.2-2`
+         - `6.1.0-2` Fixed Route53 integration region lookup issue :superscript:`6.0.2-2`
 :Ansible: - Fixed an issue that prevented setting the default branch for an Ansible integration to anything other than "master" :superscript:`6.0.2`
 :Azure: - Fixed an issue that caused power status to become unknown when an Azure Cloud is scoped to region and resource group :superscript:`6.0.2`
 :Google Cloud (GCP): - Fixed an issue that prevented GCP costing sync when a project name contained "-1" :superscript:`6.0.2`
 :Instances: - Fixed an issue that caused failures when adding nodes to brownfield Instances which were converted to managed :superscript:`6.0.2`
-            - Instance Details: Fixed 500 error when an instance associated with a network pool had a null pool ip :superscript:`6.0.2-2`
+            - `6.1.0-2` Instance Details: Fixed 500 error when an instance associated with a network pool had a null pool ip :superscript:`6.0.2-2`
 :Kubernetes: - Namespaces under the Access tab on a Kubernetes cluster detail page are now paginated correctly when more than 25 namespaces are present :superscript:`6.0.2`
 :Load Balancers: - Fixed an issue with SSL Client Profile and SSL Server Profile selections for NSX-T load balancers in Instance, App, Blueprint, clone and restore wizards :superscript:`6.0.2`
 :MicrosoftDNS: - Fixed an issue that caused the Microsoft DNS plugin integration to stop refreshing in some circumstances :superscript:`6.0.2`
@@ -54,9 +55,9 @@ Fixes
          - Refreshing the NSX-T network service will no longer cause the database IDs for any recently-created firewall rules or groups to change :superscript:`6.0.2`
          - When attempting to save an NSX-T segment with errors, normal UI validation and error messages are surfaced rather than throwing a 500 error :superscript:`6.0.2`
 :Policies: - Fixed an issue that could cause the number of workload cores to be evaluated incorrectly which could lead to false triggering of a Max Cores-type Policy :superscript:`6.0.2`
-:Resources: - Added instanceId index to account_resource table :superscript:`6.0.2-2`
-:Roles: - Fixed Role Migration issue where some custom resource permissions were not properly migrated :superscript:`6.0.2-2`
-:SCVMM: - Fixed SCVMM cloud deployments when subnet is selected :superscript:`6.0.2-2`
+:Resources: - `6.1.0-2` Added instanceId index to account_resource table :superscript:`6.0.2-2`
+:Roles: - `6.1.0-2` Fixed Role Migration issue where some custom resource permissions were not properly migrated :superscript:`6.0.2-2`
+:SCVMM: - `6.1.0-2` Fixed SCVMM cloud deployments when subnet is selected :superscript:`6.0.2-2`
 :Security: - grails-spring upgraded to 5.3.2 and micronaut-spring upgraded to 4.5.0 to mitigate CVE-2022-22965 :superscript:`6.0.2`
 :VMware: - Fixed an issue that caused Kubernetes Masters and Workers to be assigned to incorrect Resource Pools when provisioned to Clouds with multiple Resource pools :superscript:`6.0.2`
           - When |morpheus| Agent is not installed on VMware workloads and the Cloud RPC Mode is set to VMware Tools, Shell Tasks and Powershell Tasks will be run via VMware Tools. When RPC Mode is set to SSH/WinRM, VMware Tools is not used :superscript:`6.0.2`
