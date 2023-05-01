@@ -14,6 +14,7 @@ rst_prolog = """
 .. |morphbranch| replace:: v6.0
 .. |morphver| replace:: v6.0.2
 .. |minRollingUpgradeVer| replace:: v6.0.2
+.. |nonRollingUpgradeVer| replace:: v6.0.1
 .. |minUpgradeVer| replace:: v5.2.0
 .. |previousMorphVer| replace:: v6.0.1
 .. |pluginVer| replace:: 0.13.6
