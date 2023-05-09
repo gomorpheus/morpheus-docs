@@ -26,7 +26,9 @@ Category
   * Utility
 
 Icon
-  An identifiable icon to display in-line with your Instance Type in the provisioning wizard (Suggested dimensions: 150 x 51)
+  An identifiable icon to display in-line with your Instance Type in the provisioning wizard and other areas of the UI where this Instance Type is provisioned or referenced (Suggested dimensions: 150 x 51). When using icons in SVG format, it may be necessary to configure height and width attributes. Open the file in a text editor and set the attributes as shown in the image
+
+  .. image:: /images/provisioning/library/svgSize.png
 Visibility
   * Private: Only accessible by assigned Accounts/Tenants
   * Public: Accessible by all Accounts/Tenants
