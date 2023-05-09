@@ -29,7 +29,7 @@ New Features
 :Plugins: - The F5 load balancer integration has been converted to a plugin. The plugin is available at share.morpheusdata.com and, once added to the appliance, makes the F5 integration type available :superscript:`6.1.1`
            - The MicrosoftDNS plugin has been updated to version 2.0.0. It is recommended that users upgrade their plugin. The new version and updated release notes are at share.morpheusdata.com
 :ServiceNow: - Payloads sent from |morpheus| to ServiceNow now include the appliance URL in the payload, which is validated in addition to the stored credentials
-:VMware: - In vCenter Clouds, ESXi hosts are no longer shown as offline when in maintenance mode :superscript:`6.1.1`
+:VMware: - In vCenter Clouds, ESXi host status will now show as offline when in maintenance mode :superscript:`6.1.1`
 :Virtual Machines: - Default user accounts are no longer included in the |morpheus| default catalog of virtual images :superscript:`6.1.1`
 
 
