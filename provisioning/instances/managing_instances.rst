@@ -4,7 +4,9 @@ Managing Instances
 Instance actions allow you to perform numerous management tasks on instances. The actions available depend on the instance type, hypervisor, roles permissions, and instance state.
 
 Edit
-  Edit the Name, Description, Environment, Group, Metadata, Tags, and Owner for the Instance.
+  Edit the Name, Display Name, Description, Environment, Group, Metadata, Tags, and Owner for the Instance.
+
+  .. NOTE:: The Display Name is a friendly name used to identify the Instance in |morpheus|. You see this value in the Instances List Page and most other places throughout the UI. The Name and Display Name of Instances are initially the same after provisioning and may not ever need to be edited. The Name value for all Instances must be unique while the Display Name can take any value with no uniqueness requirement.
 Delete
   Deletes the Instance.
 
