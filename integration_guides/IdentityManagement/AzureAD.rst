@@ -176,10 +176,10 @@ Logging Into |morpheus| with Azure AD SAML
 #. Navigate to the |morpheus| URL
 #. A new button will appear to allow sign-in using Azure AD SAML, with the same name as the integration.  Click the button
    .. image:: /images/integration_guides/identity_sources/azure_ad_saml/sign_in_page.png
-    :width: 30%
+     :width: 30%
 
 #. Sign-in with your Microsoft/Azure account
    .. image:: /images/integration_guides/identity_sources/azure_ad_saml/ms_signin.png
-    :width: 20%
+     :width: 20%
 
 .. NOTE:: If no local users other than the System Admin have been created, "USERNAME AND PASSWORD" option will not be displayed, only the SAML option.

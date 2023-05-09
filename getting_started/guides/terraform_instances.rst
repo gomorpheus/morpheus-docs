@@ -31,7 +31,7 @@ In the VERSION field at the bottom of the TF Spec Template modal, enter a Terraf
 
 - .. toggle-header:: :header: **AWS Subnet by Count**
 
-    .. code-block:: terraform
+    .. code-block::
 
       # This spec template creates AWS subnets based on the count requested utilizing the vpc cidr provided in var.vpc_cidr variable
 
@@ -59,7 +59,7 @@ In the VERSION field at the bottom of the TF Spec Template modal, enter a Terraf
 
 - .. toggle-header:: :header: **AWS Terraform Default Vars**
 
-    .. code-block:: terraform
+    .. code-block::
 
       variable "access_key" {
         type        = string
@@ -82,7 +82,7 @@ In the VERSION field at the bottom of the TF Spec Template modal, enter a Terraf
 
 - .. toggle-header:: :header: **AWS Provider Role Assume**
 
-    .. code-block:: terraform
+    .. code-block::
 
       terraform {
         required_providers {
@@ -106,7 +106,7 @@ In the VERSION field at the bottom of the TF Spec Template modal, enter a Terraf
 
 - .. toggle-header:: :header: **AWS Terrform Locals**
 
-    .. code-block:: terraform
+    .. code-block::
 
       locals {
         #  Common tags to be assigned to all resources
@@ -129,7 +129,7 @@ In the VERSION field at the bottom of the TF Spec Template modal, enter a Terraf
 
 - .. toggle-header:: :header: **AWS VPC**
 
-    .. code-block:: terraform
+    .. code-block::
 
       variable "vpc_cidr" {
         type        = string

@@ -223,7 +223,7 @@ A VDI Gateway VM is installed and configured similarly to a |morpheus| appliance
 
 #. Configure the gateway by editing ``/etc/morpheus/morpheus-worker.rb`` and updating the following:
 
-   .. code-block:: language
+   .. code-block::
 
        worker_url 'https://gateway_worker_url' # This is the gateway URL the |morpheus| appliance can resolve and reach on 443
        worker['appliance_url'] = 'https://morpheus_appliance_url' # The resolvable URL or IP address of |morpheus| appliance which the gateway can reach on port 443
