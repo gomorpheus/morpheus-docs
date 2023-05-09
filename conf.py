@@ -83,6 +83,8 @@ rst_prolog = """
 .. |Pro| replace:: Provisioning
 .. |ProCat| replace:: Provisioning > Catalog
 .. |ProCatInv| replace:: Provisioning > Catalog > Inventory
+.. |ProCatDas| replace:: Provisioning > Catalog > Dashboard
+.. |ProCatHis| replace:: Provisioning > Catalog > Order History
 .. |ProIns| replace:: Provisioning > Instances
 .. |ProApp| replace:: Provisioning > Apps
 .. |ProJob| replace:: Provisioning > Jobs
@@ -248,7 +250,7 @@ rst_prolog = """
 
 
 year = datetime.datetime.now().date().strftime("%Y")
-extensions = ['recommonmark','sphinx.ext.autosectionlabel','sphinx_tabs.tabs','sphinxcontrib.contentui','sphinxcontrib.images','sphinx_search.extension','notfound.extension','sphinx.ext.autosectionlabel'] #sphinx_tabs
+extensions = ['recommonmark','sphinx.ext.autosectionlabel','sphinx_rtd_theme','sphinx_tabs.tabs','sphinxcontrib.contentui','sphinxcontrib.images','sphinx_search.extension','notfound.extension','sphinx.ext.autosectionlabel'] #sphinx_tabs
 templates_path = ['_templates']
 default_dark_mode = False
 source_suffix = ['.rst', '.md']
