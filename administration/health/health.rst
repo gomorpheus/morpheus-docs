@@ -52,6 +52,7 @@ MEMORY
   - Free Swap
 
 DATABASE
+  - Version
   - Lifetime Connections
   - Aborted Connections
   - Max Used Connections
