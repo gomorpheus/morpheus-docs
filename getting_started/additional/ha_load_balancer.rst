@@ -12,7 +12,9 @@ Requirements
   * SSL Termination (Offload), Bridging, and Passthrough are supported
   
 * Round-Robin or least connection distribution
-.. * Persistence/sticky sessions configured
+.. 
+  * Persistence/sticky sessions configured
+
 * HTTPS monitor ``https://ip_address/ping`` body for ``MORPHEUS PING`` or status of 200, for node operational health
 
 Example configurations
@@ -51,7 +53,8 @@ However, the certificates on the |morpheus| application nodes are not required t
     - **SSL Profile (Client):** clientssl (or preferred profile with a trusted certificate)
     - **SSL Profile (Server):** serverssl
     - **Source Address Translation:** Auto Map
-  ..  - **Default Persistence Profile:** <Organization's preference> (hash, source_addr, and cookie are popular)
+    ..  
+      - **Default Persistence Profile:** <Organization's preference> (hash, source_addr, and cookie are popular)
 
 .. toggle-header:: :header: **AWS Application Load Balancer (ALB)**
 
@@ -62,7 +65,8 @@ However, the certificates on the |morpheus| application nodes are not required t
     - **Health Check Protocol:** HTTPS
     - **Health check path:** /ping
     - **Load balancing algorithm:** Least Outstanding Requests is recommended (alternatively Round Robin)
-  ..  - **Stickiness Type:** Load balancer generated cookie
+   ..
+    - **Stickiness Type:** Load balancer generated cookie
 
   **Load Balancer**
 

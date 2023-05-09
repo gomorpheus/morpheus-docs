@@ -104,7 +104,7 @@ Gradle is the build tool used to compile |morpheus| plugins so ``build.gradle`` 
 - **Version:** The version number for your plugin. This will be displayed in the Plugins section of |morpheus| UI for reference when later versions of your plugin are developed
 - **Plugin-class:** This will vary based on the plugin type being developed but for a custom report, use ``com.morpheusdata.reports.ReportsPlugin``
 
-.. code-block:: gradle
+.. code-block::
 
    plugins {
        id "com.bertramlabs.asset-pipeline" version "3.3.2"
