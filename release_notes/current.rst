@@ -52,7 +52,6 @@ Fixes
 :Amazon: - Fixed Cloud sync failures associated with removal of a VPC via the AWS web console which at one time had associated Instances :superscript:`6.1.1`
           - Fixed an issue that caused discovered AWS Windows VMs to be incorrectly tagged with an OS type of Linux :superscript:`6.1.1`
           - Updated EBS volume configuration to reflect updated size minimums (ex. EBS SC1 volumes can now be as small as 125 GB) :superscript:`6.1.1`
-          - Updated logic for creating Cost and Usage Reports (CUR) in |morpheus| to account for changing requirements from the AWS side :superscript:`6.1.1`
           - When creating AWS RDS Instances from Subtenants, the required DB Engine Version and DB Subnet Group dropdown menus (required) are now populated :superscript:`6.1.1`
 :Ansible: - Command options can now be used successfully in Ansible Tasks which are part of provisioning workflows and entered at provision time
            - Fixed an issue that caused Ansible Tasks to fail when run against the Server context :superscript:`6.1.1`
