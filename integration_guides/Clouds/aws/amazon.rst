@@ -53,8 +53,6 @@ Security Group Configuration for Agent Install, Script Execution, and Remote Con
 Network(s)
   IP assignment required for Agent install, Script Execution, and Console if the |morpheus| Appliance is not able to communicate with AWS instances private ip's.
 
-.. NOTE:: Each AWS Cloud in |morpheus| is scoped to an AWS Region and VPC. Multiple AWS Clouds can be added and even grouped if different region and VPC combinations are needed. It's also recommended you verify Security Groups are properly configured in all regions |morpheus| Clouds will scope to.
-
 Adding an AWS Cloud
 ^^^^^^^^^^^^^^^^^^^
 
@@ -68,7 +66,7 @@ Adding an AWS Cloud
 Details
 ```````
  REGION
-   Select AWS Region for the Cloud
+   Select AWS Region for the Cloud. AWS Clouds may also be scoped to all regions.
  ACCESS KEY
    Access Key ID from AWS IAM User Security Credentials.
  SECRET KEY

@@ -9,6 +9,7 @@ When installing and upgrading to |morpheus| |morphver|, refer to the following t
 Breaking Changes
 ================
 
+- 6.1.1: NSX-V networking integration support is removed and no longer supported as of |morpheus| 6.1.1
 - 6.0.0: NSX-V support is deprecated though still supported as of |morpheus| 6.0.0. It will be removed and unsupported in 6.1.1 and higher.
 - 6.0.0+: In |morpheus| 6.0.0+, many third party integrations have been moved out of the core installer package and converted to |morpheus| plugins. As a result, during the upgrade process your appliance will need to be able to access share.morpheusdata.com, the online repository for all |morpheus| plugins. Where this is not possible, users may instead apply the supplemental installer package which is also available at |morpheus| Hub alongside the main installer package.
 - 6.0.0+: In |morpheus| 6.0.0+, older service specific system provided Instance Types and Layouts were deprecated and disabled. Updating to 6.0.0 will not affect existing Instances that are associated with the disabled types, however existing catalog item configurations, blueprints and api requests that use disabled Instance Types and layouts will need to be updated.

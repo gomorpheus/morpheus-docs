@@ -698,12 +698,6 @@ The following table contains communication information, including frequency and 
     - No
   * - Network Integration
     - Server Pull
-    - NSX-V
-    - Data synchronization
-    - 10 Minutes
-    - No
-  * - Network Integration
-    - Server Pull
     - Cisco ACI
     - Data synchronization
     - 10 Minutes
