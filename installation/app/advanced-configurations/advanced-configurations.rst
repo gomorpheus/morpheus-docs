@@ -52,6 +52,289 @@ Create Symbolic link (symlink) for |morpheus| Installations
 
         https://www.tecmint.com/disable-selinux-in-centos-rhel-fedora/
 
+Convert 3-node Elasticsearch from Non-Secure to Secure
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+    This section assumes that a previous deployment has been completed, which did not specify ``elasticsearch['secure_mode'] = true`` in the ``/etc/morpheus/morpheus.rb`` file.  It is possible to create three new nodes
+    that are configured to be secure and replace the non-secure nodes.  This section will assume that the original appliances will want to be kept, instead of being replaced.
+
+    For more info on creating secure 3-node appliances during the initial installation, see the following page:
+    :ref:`3nodeinstall-rhel8-secure`
+
+    #. Begin by backing up the Chef recipe that configures Elasticsearch on reconfigure
+    
+        .. content-tabs::
+
+            .. tab-container:: tab1
+                :title: All Nodes
+
+                .. code-block:: bash
+
+                    cp /opt/morpheus/embedded/cookbooks/morpheus-solo/recipes/elasticsearch.rb /opt/morpheus/embedded/cookbooks/morpheus-solo/recipes/elasticsearch.rb.bak
+
+    #. Edit the original Chef recipe
+
+        .. content-tabs::
+
+            .. tab-container:: tab1
+                :title: All Nodes
+
+                .. code-block:: bash
+
+                    vim /opt/morpheus/embedded/cookbooks/morpheus-solo/recipes/elasticsearch.rb
+
+        #. In the recipe, locate the following ``execute`` blocks:
+
+            * execute 'update elastic user password'
+            * execute 'create morpheus role'
+            * execute 'create morpheus user'
+
+        #. Once located, delete the entire block of each one.  Alternatively, they can be commented out, whichever is easiest.
+        #. Once the three blocks are removed, this will only leave the following ``execute`` block in the parent block
+
+            * execute 'remove keystore.seed in elasticsearch keystore'
+
+        #. Save the file and close it
+    
+    #. Create the directory structure and generate the needed Certificate Authority (CA) certificate
+   
+        .. note::
+            The UID/GID ``896`` is used for the ``es-morpheus`` user, which will be configured in the configuration file example.
+            If the UID/GID will be different, be sure to change it in the example below.
+
+        .. note::
+            The version of Elasticsearch included may be different, which may change the directory ``elasticsearch-7.17.5`` to a different path,
+            be sure to modify the command as needed.
+
+        .. content-tabs::
+
+            .. tab-container:: tab1
+                :title: Node 1
+
+                .. code-block:: bash
+
+                    mkdir /var/opt/morpheus/certs/ -p
+                    export ES_JAVA_HOME=/opt/morpheus/embedded/java/jdk
+                    /opt/morpheus/embedded/elasticsearch-7.17.5/bin/elasticsearch-certutil ca --out /var/opt/morpheus/certs/elastic-stack-ca.p12
+                    # Be sure to enter a password for the CA
+                    chown 896:896 /var/opt/morpheus/certs/elastic-stack-ca.p12
+                    chmod u=rw,g=r /var/opt/morpheus/certs/elastic-stack-ca.p12
+                    chmod -R o+x /var/opt/morpheus/certs/
+
+    #. Copy the CA certificate from ``Node 1`` to the other nodes, replacing the hostnames and usernames as needed
+
+        .. content-tabs::
+
+            .. tab-container:: tab1
+                :title: Node 1
+
+                .. code-block:: bash
+
+                scp /var/opt/morpheus/certs/elastic-stack-ca.p12 username@es-node-02:/home/username
+                scp /var/opt/morpheus/certs/elastic-stack-ca.p12 username@es-node-03:/home/username
+
+    #. Create the same directory structure on ``Node 2`` and ``Node 3``, then copy the CA certificate from the ``/home/username`` directory to the same location as ``Node 1``
+
+        .. note::
+            The UID/GID ``896`` is used for the ``es-morpheus`` user, which will be configured in the configuration file example.
+            If the UID/GID will be different, be sure to change it in the example below.
+
+        .. content-tabs::
+
+            .. tab-container:: tab1
+                :title: Node 2
+
+                .. code-block:: bash
+
+                    mkdir /var/opt/morpheus/certs/ -p
+                    cp /home/username/elastic-stack-ca.p12 /var/opt/morpheus/certs/
+                    chown 896:896 /var/opt/morpheus/certs/elastic-stack-ca.p12
+                    chmod u=rw,g=r /var/opt/morpheus/certs/elastic-stack-ca.p12
+                    chmod -R o+x /var/opt/morpheus/certs/
+
+            .. tab-container:: tab2
+                :title: Node 3
+
+                .. code-block:: bash
+
+                    mkdir /var/opt/morpheus/certs/ -p
+                    cp /home/username/elastic-stack-ca.p12 /var/opt/morpheus/certs/
+                    chown 896:896 /var/opt/morpheus/certs/elastic-stack-ca.p12
+                    chmod u=rw,g=r /var/opt/morpheus/certs/elastic-stack-ca.p12
+                    chmod -R o+x /var/opt/morpheus/certs/
+
+    #. At this point, all three nodes should have the same CA certificate file located at ``/var/opt/morpheus/certs/elastic-stack-ca.p12``
+
+        #. This file should at least allow ``read (r)`` to the UID/GID set (the ``es-morpheus`` user once created)
+        #. Be sure the parent directories have at least ``execute (x)`` for other users, which will let the ``es-morpheus`` user traverse the directoires
+        #. This file is very important and the least permissions possible is the best, in case of a system compromise
+
+    #. Using `Node 1`, display the passwords in the ``/etc/morpheus/morpheus-secrets.json``
+
+        .. content-tabs::
+
+            .. tab-container:: tab1
+                :title: Node 1
+
+                .. code-block:: bash
+
+                    vim /opt/morpheus/embedded/cookbooks/morpheus-solo/recipes/elasticsearch.rb
+    
+        * Be sure to note the ``elastic_password`` and ``morpheus_password`` values
+
+    #. Modify the ``/etc/morpheus/morpheus.rb`` file to add our configuration
+
+        .. content-tabs::
+
+            .. tab-container:: tab1
+                :title: All Nodes
+
+                .. code-block:: bash
+
+                    vim /etc/morpheus/morpheus.rb
+        
+        #. Add the following to the configuration file, replacing the values as needed.  Then save and exit it.
+
+            .. code-block:: ruby
+
+                elasticsearch['secure_mode'] = true
+                elasticsearch['use_tls'] = true
+                elasticsearch['truststore_path'] = '/var/opt/morpheus/certs/elastic-stack-ca.p12'
+                elasticsearch['truststore_password'] = '<<CA Password>>'
+                elasticsearch['morpheus_password'] = '<<password from node 1 morpheus-secrets.json>>'
+                elasticsearch['elastic_password'] = '<<password from node 1 morpheus-secrets.json>>'
+        
+        #. Now reconfigure |morpheus| and restart the Elasticsearch service
+
+            .. tab-container:: tab1
+                :title: All Nodes
+
+                .. code-block:: bash
+
+                    morpheus-ctl reconfigure
+                    morpheus-ctl restart elasticsearch
+
+        #. After the reconfigure and service restart is complete, generate a new set of passwords for the built-in users of Elasticsearch
+
+            .. tab-container:: tab1
+                :title: Node 1
+
+                .. code-block:: bash
+
+                    /opt/morpheus/embedded/elasticsearch/bin/elasticsearch-setup-passwords auto
+
+            * Ignore any critical errors about certificate trust
+            * Locate the ``elastic`` password that is generated, it is usually the last one listed
+            * Be sure to note the password for later
+
+        #. Verify that TLS and authentication is working
+
+            .. tab-container:: tab1
+                :title: Node 1
+
+                .. code-block:: bash
+
+                    curl -X GET "https://localhost:9200/_security/_authenticate" -k -u elastic:<<new elastic password>>
+
+            * Details about the ``elastic`` user should be returned
+            * If an error is returned, investigate the cause, such as a bad password or a missed step
+            * Errors for the service can be seen in ``/var/log/morpheus/elasticsearch/current``
+
+        #. Restore the original Chef recipe file that we backed up previously.  Reconfigure and restart the service once more, just for peace of mind
+
+            .. tab-container:: tab1
+                :title: All Nodes
+
+                .. code-block:: bash
+
+                    cp /opt/morpheus/embedded/cookbooks/morpheus-solo/recipes/elasticsearch.rb elasticsearch.rb.secure.bak
+                    cp /opt/morpheus/embedded/cookbooks/morpheus-solo/recipes/elasticsearch.rb.bak /opt/morpheus/embedded/cookbooks/morpheus-solo/recipes/elasticsearch.rb
+                    morpheus-ctl reconfigure
+                    morpheus-ctl restart elasticsearch
+        
+        #. Update the temporary ``elastic`` password to match the ``elastic_password`` located on node 1's ``/etc/morpheus/morpheus-secrets.json`` file (also set in each ``/etc/morpheus/morpheus.rb`` file).  Be sure to replace the password values in the command
+
+            .. tab-container:: tab1
+                :title: Node 1
+
+                .. code-block:: bash
+
+                    curl \
+                        -s \
+                        -X POST \
+                        --insecure \
+                        --header "Content-Type: application/json" \
+                        --user elastic:'<<temp_password>>' \
+                        --data '{"password": "<<password from morpheus-secrets.json>>"}' \
+                        https://localhost:9200/_security/user/elastic/_password
+
+            * With the new password set for the ``elastic`` user, the new password will be used instead of the temporary password
+
+        #. Create the |morpheus| role and user.  The user will be used by |morpheus| when connecting with the ``morpheus-ui`` service.  Be sure to replace the password values in the command.
+
+            .. tab-container:: tab1
+                :title: Node 1
+
+                .. code-block:: bash
+
+                    curl \
+                        -s \
+                        -X POST \
+                        --insecure \
+                        --header "Content-Type: application/json" \
+                        --user elastic:'<<password from morpheus-secrets.json>>' \
+                        --data '{
+                            "cluster": [
+                            "manage_index_templates",
+                            "monitor"
+                            ],
+                            "indices": [
+                                {
+                                    "names": [
+                                        "activities*",
+                                        "azure-marketplace*",
+                                        "backup_results",
+                                        "check_history*",
+                                        "logs*",
+                                        "morpheus*",
+                                        "stats*"
+                                    ],
+                                    "privileges": [
+                                        "all"
+                                    ]
+                                }
+                            ]
+                        }' \
+                        https://localhost:9200/_security/role/morpheus
+
+                    curl \
+                        -s \
+                        -X POST \
+                        --insecure \
+                        --header "Content-Type: application/json" \
+                        --user elastic:'<<password from morpheus-secrets.json>>' \
+                        --data '{
+                            "password" : "abb797ea7b72fff13aaebe6c",
+                            "roles" : [ "morpheus" ],
+                            "full_name" : "Morpheus User"
+                        }' \
+                        https://localhost:9200/_security/user/morpheus
+        
+        #. Finally, restart the ``morpheus-ui`` service on all of the nodes, to ensure that it connects using TLS and authentication correctly
+
+            .. tab-container:: tab1
+                :title: All Nodes
+
+                .. code-block:: bash
+
+                    morpheus-ctl restart morpheus-ui
+
+        #. You can ``tail`` the ``morpheus-ui`` logs and note any errors as needed
+
+            .. code-block:: bash
+
+                    morpheus-ctl tail morpheus-ui
+
 Pre-Create |morpheus| OS Users (deprecated)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
