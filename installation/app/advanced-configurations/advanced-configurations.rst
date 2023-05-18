@@ -12,7 +12,7 @@ Introduction
 
 
 Create Symbolic link (symlink) for |morpheus| Installations
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
     A customer may wish to install |morpheus| to a different mount point, which may be a different disk presented to the OS.  Generally, this is to ensure the data does not
     fill up the OS drive, then crashing the system.  Below is a process to create symlinks for |morpheus|, assuming a 3-Node-HA embedded configuration
@@ -52,8 +52,13 @@ Create Symbolic link (symlink) for |morpheus| Installations
 
         https://www.tecmint.com/disable-selinux-in-centos-rhel-fedora/
 
-Pre-Create |morpheus| OS Users
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Pre-Create |morpheus| OS Users (deprecated)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+    .. important:: 
+        This section is being kept for reference purposes.  All HA configurations provide examples to create the users with the same
+        UID/GID, to ensure there are not issues with the shared storage.  This will ensure the users are created by the installer and
+        provides consistency.
 
     |morpheus| has a few local users that are created when installed, depeneding on the services that are embedded.  These users run the services and need to be created in a
     specific way.  The installer will normally create the users automatically but there are some cases where the users need to be pre-created.  Specifically, in a 3-node-ha or distributed
