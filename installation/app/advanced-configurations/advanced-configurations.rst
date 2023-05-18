@@ -180,7 +180,7 @@ Convert 3-node Elasticsearch from Non-Secure to Secure
 
                     vim /opt/morpheus/embedded/cookbooks/morpheus-solo/recipes/elasticsearch.rb
     
-        * Be sure to note the ``elastic_password`` and ``morpheus_password`` values
+        * Be sure to note the ``elastic_password`` and ``morpheus_password`` values from the ``elasticsearch`` section
 
     #. Modify the ``/etc/morpheus/morpheus.rb`` file to add our configuration
 
@@ -201,8 +201,8 @@ Convert 3-node Elasticsearch from Non-Secure to Secure
                 elasticsearch['use_tls'] = true
                 elasticsearch['truststore_path'] = '/var/opt/morpheus/certs/elastic-stack-ca.p12'
                 elasticsearch['truststore_password'] = '<<CA Password>>'
-                elasticsearch['morpheus_password'] = '<<password from node 1 morpheus-secrets.json>>'
-                elasticsearch['elastic_password'] = '<<password from node 1 morpheus-secrets.json>>'
+                elasticsearch['morpheus_password'] = '<<morpheus_password from node 1 morpheus-secrets.json>>'
+                elasticsearch['elastic_password'] = '<<elastic_password from node 1 morpheus-secrets.json>>'
         
     #. Now reconfigure |morpheus| and restart the Elasticsearch service
 
@@ -275,7 +275,7 @@ Convert 3-node Elasticsearch from Non-Secure to Secure
                         --insecure \
                         --header "Content-Type: application/json" \
                         --user elastic:'<<temp_password>>' \
-                        --data '{"password": "<<password from morpheus-secrets.json>>"}' \
+                        --data '{"password": "<<elastic_password from morpheus-secrets.json>>"}' \
                         https://localhost:9200/_security/user/elastic/_password
 
         * With the new password set for the ``elastic`` user, the new password will be used instead of the temporary password
@@ -294,7 +294,7 @@ Convert 3-node Elasticsearch from Non-Secure to Secure
                         -X POST \
                         --insecure \
                         --header "Content-Type: application/json" \
-                        --user elastic:'<<password from morpheus-secrets.json>>' \
+                        --user elastic:'<<elastic_password from morpheus-secrets.json>>' \
                         --data '{
                             "cluster": [
                             "manage_index_templates",
@@ -324,9 +324,9 @@ Convert 3-node Elasticsearch from Non-Secure to Secure
                         -X POST \
                         --insecure \
                         --header "Content-Type: application/json" \
-                        --user elastic:'<<password from morpheus-secrets.json>>' \
+                        --user elastic:'<<elastic_password from morpheus-secrets.json>>' \
                         --data '{
-                            "password" : "abb797ea7b72fff13aaebe6c",
+                            "password" : "<<morpheus_password from morpheus-secrets.json>>",
                             "roles" : [ "morpheus" ],
                             "full_name" : "Morpheus User"
                         }' \
