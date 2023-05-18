@@ -130,8 +130,8 @@ Convert 3-node Elasticsearch from Non-Secure to Secure
 
                 .. code-block:: bash
 
-                scp /var/opt/morpheus/certs/elastic-stack-ca.p12 username@es-node-02:/home/username
-                scp /var/opt/morpheus/certs/elastic-stack-ca.p12 username@es-node-03:/home/username
+                    scp /var/opt/morpheus/certs/elastic-stack-ca.p12 username@es-node-02:/home/username
+                    scp /var/opt/morpheus/certs/elastic-stack-ca.p12 username@es-node-03:/home/username
 
     #. Create the same directory structure on ``Node 2`` and ``Node 3``, then copy the CA certificate from the ``/home/username`` directory to the same location as ``Node 1``
 
@@ -204,8 +204,10 @@ Convert 3-node Elasticsearch from Non-Secure to Secure
                 elasticsearch['morpheus_password'] = '<<password from node 1 morpheus-secrets.json>>'
                 elasticsearch['elastic_password'] = '<<password from node 1 morpheus-secrets.json>>'
         
-        #. Now reconfigure |morpheus| and restart the Elasticsearch service
+    #. Now reconfigure |morpheus| and restart the Elasticsearch service
 
+        .. content-tabs::
+            
             .. tab-container:: tab1
                 :title: All Nodes
 
@@ -214,8 +216,10 @@ Convert 3-node Elasticsearch from Non-Secure to Secure
                     morpheus-ctl reconfigure
                     morpheus-ctl restart elasticsearch
 
-        #. After the reconfigure and service restart is complete, generate a new set of passwords for the built-in users of Elasticsearch
+    #. After the reconfigure and service restart is complete, generate a new set of passwords for the built-in users of Elasticsearch
 
+        .. content-tabs::
+            
             .. tab-container:: tab1
                 :title: Node 1
 
@@ -223,12 +227,14 @@ Convert 3-node Elasticsearch from Non-Secure to Secure
 
                     /opt/morpheus/embedded/elasticsearch/bin/elasticsearch-setup-passwords auto
 
-            * Ignore any critical errors about certificate trust
-            * Locate the ``elastic`` password that is generated, it is usually the last one listed
-            * Be sure to note the password for later
+        * Ignore any critical errors about certificate trust
+        * Locate the ``elastic`` password that is generated, it is usually the last one listed
+        * Be sure to note the password for later
 
-        #. Verify that TLS and authentication is working
+    #. Verify that TLS and authentication is working
 
+        .. content-tabs::
+            
             .. tab-container:: tab1
                 :title: Node 1
 
@@ -236,12 +242,14 @@ Convert 3-node Elasticsearch from Non-Secure to Secure
 
                     curl -X GET "https://localhost:9200/_security/_authenticate" -k -u elastic:<<new elastic password>>
 
-            * Details about the ``elastic`` user should be returned
-            * If an error is returned, investigate the cause, such as a bad password or a missed step
-            * Errors for the service can be seen in ``/var/log/morpheus/elasticsearch/current``
+        * Details about the ``elastic`` user should be returned
+        * If an error is returned, investigate the cause, such as a bad password or a missed step
+        * Errors for the service can be seen in ``/var/log/morpheus/elasticsearch/current``
 
-        #. Restore the original Chef recipe file that we backed up previously.  Reconfigure and restart the service once more, just for peace of mind
+    #. Restore the original Chef recipe file that we backed up previously.  Reconfigure and restart the service once more, just for peace of mind
 
+        .. content-tabs::
+            
             .. tab-container:: tab1
                 :title: All Nodes
 
@@ -251,9 +259,11 @@ Convert 3-node Elasticsearch from Non-Secure to Secure
                     cp /opt/morpheus/embedded/cookbooks/morpheus-solo/recipes/elasticsearch.rb.bak /opt/morpheus/embedded/cookbooks/morpheus-solo/recipes/elasticsearch.rb
                     morpheus-ctl reconfigure
                     morpheus-ctl restart elasticsearch
-        
-        #. Update the temporary ``elastic`` password to match the ``elastic_password`` located on node 1's ``/etc/morpheus/morpheus-secrets.json`` file (also set in each ``/etc/morpheus/morpheus.rb`` file).  Be sure to replace the password values in the command
+    
+    #. Update the temporary ``elastic`` password to match the ``elastic_password`` located on node 1's ``/etc/morpheus/morpheus-secrets.json`` file (also set in each ``/etc/morpheus/morpheus.rb`` file).  Be sure to replace the password values in the command
 
+        .. content-tabs::
+            
             .. tab-container:: tab1
                 :title: Node 1
 
@@ -268,10 +278,12 @@ Convert 3-node Elasticsearch from Non-Secure to Secure
                         --data '{"password": "<<password from morpheus-secrets.json>>"}' \
                         https://localhost:9200/_security/user/elastic/_password
 
-            * With the new password set for the ``elastic`` user, the new password will be used instead of the temporary password
+        * With the new password set for the ``elastic`` user, the new password will be used instead of the temporary password
 
-        #. Create the |morpheus| role and user.  The user will be used by |morpheus| when connecting with the ``morpheus-ui`` service.  Be sure to replace the password values in the command.
+    #. Create the |morpheus| role and user.  The user will be used by |morpheus| when connecting with the ``morpheus-ui`` service.  Be sure to replace the password values in the command.
 
+        .. content-tabs::
+            
             .. tab-container:: tab1
                 :title: Node 1
 
@@ -319,9 +331,11 @@ Convert 3-node Elasticsearch from Non-Secure to Secure
                             "full_name" : "Morpheus User"
                         }' \
                         https://localhost:9200/_security/user/morpheus
-        
-        #. Finally, restart the ``morpheus-ui`` service on all of the nodes, to ensure that it connects using TLS and authentication correctly
+    
+    #. Finally, restart the ``morpheus-ui`` service on all of the nodes, to ensure that it connects using TLS and authentication correctly
 
+        .. content-tabs::
+            
             .. tab-container:: tab1
                 :title: All Nodes
 
@@ -329,11 +343,11 @@ Convert 3-node Elasticsearch from Non-Secure to Secure
 
                     morpheus-ctl restart morpheus-ui
 
-        #. You can ``tail`` the ``morpheus-ui`` logs and note any errors as needed
+    #. You can ``tail`` the ``morpheus-ui`` logs and note any errors as needed
 
-            .. code-block:: bash
+        .. code-block:: bash
 
-                    morpheus-ctl tail morpheus-ui
+            morpheus-ctl tail morpheus-ui
 
 Pre-Create |morpheus| OS Users (deprecated)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
