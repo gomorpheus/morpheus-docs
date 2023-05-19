@@ -3,7 +3,7 @@ import datetime
 master_doc = 'index'
 
 latex_documents = [
-    (master_doc, 'morpheus_6.1.0-1.tex', u'Morpheus Documentation',
+    (master_doc, 'morpheus_6.1.1-1.tex', u'Morpheus Documentation',
      u'Morpheus', 'manual'),
 ]
 
@@ -14,8 +14,8 @@ rst_prolog = """
 .. |morphbranch| replace:: v6.1
 .. |morphver| replace:: v6.1.1
 .. |minUpgradeVer| replace:: v5.2.0
-.. |minRollingUpgradeVer| replace:: v6.0.2
-.. |nonRollingUpgradeVer| replace:: v6.0.1
+.. |minRollingUpgradeVer| replace:: v6.0.3
+.. |nonRollingUpgradeVer| replace:: v6.0.2
 .. |previousMorphVer| replace:: v6.1.0
 .. |pluginVer| replace:: 0.13.6
 .. |workerVer| replace:: 5.4.8
@@ -28,11 +28,11 @@ rst_prolog = """
 .. |esver| replace:: v7.17.5
 .. |tcver| replace:: v9.0.70
 .. |nginxver| replace:: v1.22.1
-.. |nodePackageVer| replace:: 3.2.12
-.. |linuxagentver| replace:: v2.4.0
+.. |nodePackageVer| replace:: 3.2.13
+.. |linuxagentver| replace:: v2.4.1
 .. |macagentver| replace:: v2.4.0
 .. |winagentver| replace:: v2.4.0
-.. |java| replace:: 11.0.18+10
+.. |java| replace:: 11.0.19+7
 .. |java-mac| replace:: 11.0.14+9
 .. |openjdk-jre| replace:: 11.0.19+7
 .. |openjdk-elasticsearch| replace::  17.0.5+8
