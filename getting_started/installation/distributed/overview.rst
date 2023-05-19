@@ -32,6 +32,6 @@ HA Installation Architectures
   In this architecture, all tiers are deployed on three machines by |morpheus| during the installation, with the exception of the Transactional Database Tier.  This provides HA not just for the |morpheus| Application Tier but all underlying tiers that support |morpheus|.  The Transactional Database Tier will remain external, either as a separate cluster or PaaS, following the supported services. An external Percona cluster must still be set up outside of the |morpheus| app nodes.
 
 Distributed HA
-  In this architecture, the tiers do not need to reside on the same machines, each can be hosted by a supprted cluster or PaaS offering.  This provides flexibility and reuse of already existing technologies such as RabbitMQ or Elasticsearch.  Each tier should be architected to provide HA following the vendor's documentation, to ensure no downtime for the |morpheus| Application Tier.
+  In this architecture, the tiers do not need to reside on the same machines, each can be hosted by a supported cluster or PaaS offering.  This provides flexibility and reuse of already existing technologies such as RabbitMQ or Elasticsearch.  Each tier should be architected to provide HA following the vendor's documentation, to ensure no downtime for the |morpheus| Application Tier.
 
 .. include:: supported_paas.rst
