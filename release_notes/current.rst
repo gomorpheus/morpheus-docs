@@ -25,8 +25,8 @@ New Features
 :NSX-T: - With support for NSX-V removed in this version, NSX-T references and logos in the UI are now simply NSX
 :NSX-V: - As mentioned in the release notes of the last few versions, NSX-V support is removed in 6.1.1
 :Plugins: - The F5 load balancer integration has been converted to a plugin. The plugin is available at share.morpheusdata.com and, once added to the appliance, makes the F5 integration type available :superscript:`6.0.3`
-:Security: - JDK/JRE upgraded to version 11.0.19+7 (resolves CVE-2023-21930) :superscript:`6.0.4`
-:VMware: - In vCenter Clouds, ESXi hosts are no longer shown as offline when in maintenance mode :superscript:`6.0.3`
+:Security: - JDK/JRE updated to version 11.0.19+7 (resolves CVE-2023-21930) :superscript:`6.0.4`
+:VMware: - In vCenter Clouds, ESXi hosts are now shown as offline when in maintenance mode :superscript:`6.0.3`
 :Virtual Machines: - Default user accounts are no longer included in the |morpheus| default catalog of virtual images :superscript:`6.0.3`
 
 
@@ -152,12 +152,11 @@ Fixes
              - Fixed an issue that caused provisioning failure when File Templates containing calls to |morpheus| Cypher were included in the Pre-Provision phase of a Provisioning Workflow :superscript:`6.0.3`
              - Fixed differing output of same Workflow and custom options when Workflow was executed via the Workflows list page or via a Workflow-based Catalog Item :superscript:`6.0.3`
 
-.. 
+Appliance & Agent Updates
+=========================
 
- Appliance & Agent Updates
- =========================
-
-
-
+:Appliance: JRE updated to version 11.0.19+7 :superscript:`6.0.4`
+:Node & VM Node Packages: - Morpheus Node & VM Node Packages updated to v3.2.13 with Morpheus Linux Agent v2.4.1 & JDK/JRE updated to version 11.0.19+7 :superscript:`6.0.4`
+:Agents: - Morpheus Linux Agent updated to v2.4.1 with fix for lvm stats :superscript:`6.0.4`
 
 .. ..
