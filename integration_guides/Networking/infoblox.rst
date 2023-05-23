@@ -43,7 +43,7 @@ Adding Infoblox Integration
    INVENTORY EXISTING
     Mark this option to inventory existing network pools from Infoblox
    NETWORK FILTER
-    Filter which networks are synced into |morpheus|. Example: Network Filter: ``[ network_view=default&*Building=work ]``
+    Filter which networks are synced into |morpheus|. Example: Network Filter: ``network_view=default&*Building=work``
    ZONE FILTER
     Filter terms for Zone Records
    TENANT MATCH ATTRIBUTE
