@@ -36,8 +36,11 @@ Morpheus allows for additional advanced customizations for system managed servic
   elasticsearch['memory_trim_threshold'] = 131072
   elasticsearch['open_files'] = 204800
   elasticsearch['secure_mode'] = false
+  elasticsearch['xms'] = 0.25 #### Configurable for customers running into high memory issues, values are the percentage of total RAM. Both ui and es xms/xmx config only apply if Elasticsearch is enabled.
+  elasticsearch['xmx'] = 0.25
 
   guacd['guacamole_enabled'] = false
+  guacd['host'] = localhost #### The host guacd is listening on, if not configured 'localhost' is the default value
 
   logging['svlogd_num'] = 30 #### keep 30 rotated log files
   logging['svlogd_size'] = 209715200 #### 200 MB in bytes
@@ -114,3 +117,5 @@ Morpheus allows for additional advanced customizations for system managed servic
   ui['memory_trim_threshold'] = 131072
   ui['pxe_boot_enabled'] = false #### This option disables the PXE service within the app
   ui['vm_images_cdn_url'] = 'https://morpheus-images.morpheusdata.com'
+  ui['xms'] = 0.25 #### Configurable for customers running into high memory issues, values are the percentage of total RAM. Both ui and es xms/xmx config only apply if Elasticsearch is enabled.
+  ui['xmx'] = 0.25
