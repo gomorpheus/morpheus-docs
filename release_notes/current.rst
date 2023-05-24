@@ -157,7 +157,9 @@ Fixes
 Appliance & Agent Updates
 =========================
 
-:Appliance: JRE updated to version 11.0.19+7 :superscript:`6.0.4`
+:Appliance: - JRE updated to version 11.0.19+7 :superscript:`6.0.4`
+            - Added ``morpheus.rb`` settings for UI and ES xms/xmx configuration for customers experiencing high memory issues :superscript:`6.0.4`
+            - Added ``morpheus.rb`` setting to specify a ``guacd`` host :superscript:`6.0.4`
 :Node & VM Node Packages: - Morpheus Node & VM Node Packages updated to v3.2.13 with Morpheus Linux Agent v2.4.1 & JDK/JRE updated to version 11.0.19+7 :superscript:`6.0.4`
 :Agents: - Morpheus Linux Agent updated to v2.4.1 with fix for lvm stats :superscript:`6.0.4`
 
