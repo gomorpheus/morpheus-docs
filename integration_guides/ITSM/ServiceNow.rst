@@ -235,6 +235,8 @@ Depending on the scenario, setup steps for the |morpheus| plugin will be slightl
 
 .. IMPORTANT:: A valid SSL Certificate is required on the |morpheus| Appliance for the ServiceNow plugin to be able to communicate with the appliance.
 
+.. IMPORTANT:: As described below, the |morpheus| ServiceNow plugin requires the use of a |morpheus| service account to integrate back with the |morpheus| appliance. Some symbol characters, specifically "%" and "&" are valid for use in |morpheus| account passwords but aren't passed correctly when ServiceNow makes its API calls to |morpheus|. It is best not to use these characters in the password for |morpheus| accounts which may be used in the ServiceNow plugin to interface back with |morpheus|. Authentication errors will occur and the plugin will not work. This is a ServiceNow issue which |morpheus| has no control over.
+
 Single-Domain ServiceNow Configuration
 ``````````````````````````````````````
 
