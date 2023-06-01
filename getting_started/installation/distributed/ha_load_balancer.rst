@@ -8,11 +8,10 @@ Requirements
 
 * WebSockets enabled
 * Load Balance 443 (optionally redirect 80 to 443)
-  
+
   * SSL Termination (Offload), Bridging, and Passthrough are supported
-  
+
 * Round-Robin or least connection distribution
-* Persistence/sticky sessions configured
 * HTTPS monitor ``https://ip_address/ping`` body for ``MORPHEUS PING`` or status of 200, for node operational health
 
 Example configurations
@@ -38,7 +37,7 @@ However, the certificates on the |morpheus| application nodes are not required t
     - **Health Monitor:** Select monitor created in the **Monitor** section
     - **Load Balancing Method:** Least Connections (member) is recommended (alternatively Round Robin)
     - **Node Service Port:** 443/HTTPS
-    
+
   **Virtual Server**
 
     - **Type:** Standard
