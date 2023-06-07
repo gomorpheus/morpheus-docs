@@ -11,17 +11,15 @@ Current License
 If a License Key has already been applied, the License status is shown in the `Current License` section:
 
 Tenant Name
-  Company name the License was generated for.
+  Company name the License was generated for
+Product Tier
+  The type of license applied to this appliance, such as "Enterprise" for a typical paid license or "Community" for free Community-tier appliances
 Start Date
-  Date and time the current License started.
+  Date and time the current License started
 End Date
-  Date and time the current License expires.
-Space
-  Amount of used and unused Managed RAM under the current License.
+  Date and time the current License expires
 
-EXAMPLE: On a 1 TB License with 182 GB of RAM under management, the Space section will show `Used Space 182.9GB  Unused Space 841.0GB`
-
-.. NOTE:: Once a current License expires or has reached its Space limit, users will no longer be able to provision new Instances, Apps, Hosts, or Bare Metal, or convert existing Hosts, Virtual Machines, or Bare Metal to managed. Morpheus will otherwise continue to function.
+.. NOTE:: Once a current License expires or has reached its workload limit, users will no longer be able to provision new Instances, Apps, Hosts, or Bare Metal, or convert existing Hosts, Virtual Machines, or Bare Metal to managed. |morpheus| will otherwise continue to function.
 
 Upgrade License Key
 ^^^^^^^^^^^^^^^^^^^
