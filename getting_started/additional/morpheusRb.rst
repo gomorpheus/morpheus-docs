@@ -76,14 +76,14 @@ Morpheus allows for additional advanced customizations for system managed servic
   nginx['log_format_name'] = 'custom'
   nginx['log_format'] = '\'$remote_addr - $remote_user [$time_local] "$request" \' \'$status $body_bytes_sent "$http_referer" \' \'"$http_user_agent" "$http_x_forwarded_for" \' \'rt=$request_time uct="$upstream_connect_time" uht="$upstream_header_time" urt="$upstream_response_time"\';'
   nginx['ssl_ciphers'] = "ECDHE-RSA-AES256-GCM-SHA384:ECDHE-RSA-AES128-GCM-SHA256:DHE-RSA-AES256-GCM-SHA384:DHE-RSA-AES128-GCM-SHA256:ECDHE-RSA-AES256-SHA384:ECDHE-RSA-AES128-SHA256:ECDHE-RSA-AES256-SHA:ECDHE-RSA-AES128-SHA:DHE-RSA-AES256-SHA256:DHE-RSA-AES128-SHA256:DHE-RSA-AES256-SHA:DHE-RSA-AES128-SHA:ECDHE-RSA-DES-CBC3-SHA:EDH-RSA-DES-CBC3-SHA:AES256-GCM-SHA384:AES128-GCM-SHA256:AES256-SHA256:AES128-SHA256:AES256-SHA:AES128-SHA:DES-CBC3-SHA:HIGH:!aNULL:!eNULL:!EXPORT:!DES:!MD5:!PSK:!RC4"
-  nginx['server_include'] = "/foo/bar/conf/*.conf" #### see note below for more detail on Nginx server block includes
+  nginx['server_include'] = "/foo/bar/conf/*.conf" #### see note above for more detail on Nginx server block includes
   nginx['ssl_company_name'] = "Morpheus, LLC"
   nginx['ssl_country_name'] = "US"
   nginx['ssl_email_address'] = "personal@email.com"
   nginx['ssl_locality_name'] = "San Mateo"
   nginx['ssl_organizational_unit_name'] = "DevOps"
   nginx['ssl_protocols'] = "TLSv1 TLSv1.1 TLSv1.2"
-  nginx['ssl_server_include'] = "/foo/bar/conf/*.conf" #### see note below for more detail on Nginx server block includes
+  nginx['ssl_server_include'] = "/foo/bar/conf/*.conf" #### see note above for more detail on Nginx server block includes
   nginx['ssl_session_cache'] = "builtin:1000  shared:SSL:10m"
   nginx['ssl_session_timeout'] = "5m"
   nginx['ssl_state_name'] = "CA"
