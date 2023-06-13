@@ -439,8 +439,33 @@ TRANSLATION SCRIPT
 
 .. NOTE:: Option Lists are set on one or multiple ``Select List`` or ``Typeahead`` Inputs. The Input is then set on an Instance Type, Layout, Cluster Layout, and/or Operational Workflow for input during provisioning or execution.
 
+
+LDAP Query Variables 
+--------------------
+
+The current user and dependant parameters are loaded into the query using the <%=phrase%> syntax.
+
+.. code-block:: bash
+   :caption: LDAP Query Variables (Example <%=user.email%>)
+
+    user { 
+       accountId,
+       attributes,
+       displayName,
+       email,
+       firstName,
+       id,
+       lastName,
+       linuxUsername,
+       username,
+       windowsUsername
+    }
+    customOptions {
+       fieldName
+    }
+
 Creating an Option List Based on an LDAP Query
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+----------------------------------------------
 
 In Morpheus version 4.2.1 and higher, Option Lists can be populated from LDAP queries. This gives users the ability to search Active Directory, capture objects, and present them as custom options where needed.
 
