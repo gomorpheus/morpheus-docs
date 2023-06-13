@@ -60,6 +60,10 @@ Provisioning Workflow Execution Phases
     - Tasks are run during VM or container destroy
     - Remove Active Directory objects prior to tearing down the Instance
     -
+  * - Scale Down
+    - Tasks are run on deleted VMs or containers when the Instance is horizontally scaled down (that is, nodes are deleted), whether that be manual scaling or as a result of automated scaling features. This occurs immediately prior to the actual delete action on the targeted workload
+    - IP address cleanup when individual nodes are removed from an Instance
+    - This is different from the Teardown phase, which targets Instance delete, and specifically targets horizontal scale down (when individual nodes are deleted)
   * - Shutdown
     - Tasks are run immediately before the target is shutdown
     - Send an update on Instance power state to a CMDB
