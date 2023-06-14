@@ -133,6 +133,13 @@ Below are sample log configuration settings. This is not a complete list. Additi
      <logger name="com.morpheus.OptionTypeListService" level="DEBUG"/>
      <logger name="com.morpheus.OptionTypeService" level="DEBUG"/>
 
+:Oracle Cloud:
+  .. code-block:: xml
+
+     <logger name="com.morpheus.compute.OracleCloudComputeUtility" level="DEBUG"/>
+     <logger name="com.morpheus.compute.oraclecloud.OracleCloudComputeService" level="DEBUG"/>
+     <logger name="com.morpheus.provision.OracleCloudProvisionService" level="DEBUG"/>
+
 :Remote Console:
   .. code-block:: xml
 
