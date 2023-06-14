@@ -30,8 +30,6 @@ New Features
 :Installer: - Added morpheus.rb entries which allow users to add additional configuration to the morpheus and morpheus-ssl nginx server blocks
 :MicrosoftDNS: - Updated MicrosoftDNS plugin to improve validation and standardize Powershell script blocks and error handling. Upgrade can be downloaded from share.morpheusdata.com :superscript:`6.1.2`
 :Personas: - Added the Support menu to the upper menu area for all Personas rather than just having it on the Standard Persona :superscript:`6.1.2`
-:Plugins: - Additional improvements made to the Nutanix Prism Central plugin. Access the latest version at share.morpheusdata.com
-           - The DigitalOcean Cloud type has been ported to a plugin. Appliances which have DO Clouds integrated will automatically have the plugin installed on upgrade. Others may access the plugin from share.morpheusdata.com if they wish to use this Cloud type
 :Security: - JDK/JRE upgraded to version 11.0.19+7 (resolves CVE-2023-21930) :superscript:`6.1.1`
             - Upgraded Apache Mina SSHD to 2.9.2 to mitigate CVE-2022-45047 :superscript:`6.1.2`
             - Upgraded Jettison to 1.5.4 to mitigate CVE-2022-45693 :superscript:`6.1.2`
@@ -74,7 +72,6 @@ Fixes
 :OpenStack: - Creating an OpenStack Private Network with the DHCP Server flag unchecked in |morpheus| now properly sets the "Enable DHCP" flag on the OpenStack side :superscript:`6.1.2`
              - Fixed an issue that stopped new or edited OpenStack Clouds from saving when a primary Project was not set for the user in OpenStack :superscript:`6.1.2`
              - OpenStack Clouds scoped to all regions now sync routers correctly :superscript:`6.1.2`
-             - tbc :superscript:`6.1.2`
 :Policies: - Fixed how expiration Policies adjust the delete date when an extension is applied to ensure Instances cannot be deleted before the expiration date :superscript:`6.1.2`
 :Roles: - Fixed an issue that caused the |ProCod| section of the UI to be inaccessible when Infrastructure: Groups permission was set to NONE :superscript:`6.1.2`
          - Fixed an issue where having FULL or READ access to Operations: Usage with no rights to Invoices or Budgets would allow the Costing menu selection to appear but the page to never load :superscript:`6.1.2`
