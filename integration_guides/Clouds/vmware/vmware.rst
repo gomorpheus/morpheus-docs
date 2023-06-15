@@ -15,6 +15,7 @@ Features
 * Datastores and DRS Clusters
 * Distributed Switches
 * Datacenter / Cluster scoping
+* Brownfield VM management
 * VMDK/OVF image conversion support
 * Hypervisor Remote Console
 * Periodic Synchronization
