@@ -48,9 +48,10 @@ Inputs in the Advanced and Provisioning categories are unique to Forms and requi
 
 - **Byte Size:** Allows numerical disk or storage size values to be given with selectable units (MB, GB, etc.). When a value is input and the unit is changed, the same value will be automatically computed into the new unit amount (1 GB > 1024 MB, for example). Users may select which unit is initially loaded by default.
 - **Code Editor:** Gives the user a code editor field. Set a language or markdown format in the "HIGHLIGHTING" field to enable automatic syntax highlighting and spacing for the user. For example, the user could enter a provisioning shell script for their workload or provide a custom JSON payload at provision time (complete with syntax highlighting for easy entry).
-- **FILE CONTENT:** Access file content either locally entered or sourced from an integrated repository or outside URL
-- **ICON PICKER:** Allows the user to select an icon for their workload at provision time. The user may select from previously uploaded icons, upload their own, or use the built-in icon generator tool to create a unique icon right in the Form
-- **KEY VALUE:** Allows the user to enter as many key/value pairs as they'd like which can be onboarded into the workload config at provision time
+- **File Content:** Access file content either locally entered or sourced from an integrated repository or outside URL
+- **Icon Picker:** Allows the user to select an icon for their workload at provision time. The user may select from previously uploaded icons, upload their own, or use the built-in icon generator tool to create a unique icon right in the Form
+- **Key Value:** Allows the user to enter as many key/value pairs as they'd like which can be onboarded into the workload config at provision time
+- **Text Array:** Allows the user to enter multiple values separated by a delimiter of your choosing. |morpheus| will parse out the entered values which can be individually deleted if desired before the form is submitted
 - **Typeahead:** Similar to Select List, especially for very long lists. Search for the desired value by typing the first few letters as a search parameter. Users may also browse the complete list by clicking the dropdown icon. This Input type can also support multiple selections, if needed. Associate this type of Input with a pre-defined Option List or create a new Option List right inside the Form builder
 
 .. image:: /images/forms/advancedType.png
