@@ -65,7 +65,6 @@ Fixes
              - When adding a node to an Instance, the Cloud selection is now honored :superscript:`6.1.2`
 :Kubernetes: - Fixed an issue that could cause MKS clusters on VMware to fail provisioning :superscript:`6.1.2`
 :Layouts: - Fixed an issue that could cause errors when Layouts were edited with existing Instances already provisioned from them :superscript:`6.1.2`
-           - When clicking on the OPTIONS button for environment variables when editing Layouts or Node Types, the background tab no longer shifts back to Instance Types (from either Layouts or Node Types) :superscript:`6.1.2`
 :NSX-T: - Gateway Firewall Services can now be added to NSX-T routers created in Subtenants on NSX-T integrations shared from the Primary Tenant :superscript:`6.1.2`
          - The Virtual Machines tenant scoping when adding a Member Type to a NSX-t server group is now working properly :superscript:`6.1.2`
 :NetScaler: - Fixed load balancer creation failing due to SSL certificate import failure
