@@ -107,3 +107,14 @@ OutOfMemoryError: Java heap space
             .. toggle-header:: :header: **Click to expand**
                 
                 .. image:: /images/support/troubleshooting/leak_suspects.png
+
+General Toubleshooting
+
+    **Missing Agent Installer**
+
+        This is most likely caused with newer OS releases, due to a missing symlink on the Morpheus app nodes
+
+        .. code-block:: bash
+
+            # All App Nodes (Example)
+            ln -s /var/opt/morpheus/package-repos/yum/el/9 /var/opt/morpheus/package-repos/yum/el/9.1

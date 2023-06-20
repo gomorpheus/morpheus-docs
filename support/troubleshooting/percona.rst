@@ -25,6 +25,12 @@ Common Percona Commands
 
                 systemctl status mysql
 
+            or
+
+            .. code-block:: bash
+
+                systemctl status mysql@bootstrap.service
+
         #. If the service is started on any of the nodes, you should be able to start the service on all the other nodes
 
             .. code-block:: bash
@@ -44,6 +50,12 @@ Common Percona Commands
                 .. code-block:: bash
 
                     cat /var/lib/mysql/grastate.dat
+
+                or
+
+                .. code-block:: bash
+
+                    mysqld_safe --wsrep-recover
 
             #. If ``safe_to_bootstrap`` is not ``1``, then modify the file so it is ``1``
 

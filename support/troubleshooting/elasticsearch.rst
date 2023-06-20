@@ -49,6 +49,12 @@ Common elasticsearch Commands
 
             curl -X GET "localhost:9200/_cat/indices"
 
+    **Get Top 20 Indicies File Sizes**
+
+        .. code-block:: bash
+
+            du -aBG /var/opt/morpheus/elasticsearch-7.17.5/data/nodes/0/indices/ | sort -n -r | head -n 20
+
     **Delete All Indicies**
 
         .. important:: This will **not** delete the indicies, it will just print out the commands needed to delete each one, if desired.  The resulting commands would need to be run to delete the indicies
