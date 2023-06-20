@@ -49,7 +49,7 @@ Common elasticsearch Commands
 
             curl -X GET "localhost:9200/_cat/indices"
 
-    **Get Top 20 Indicies File Sizes**
+    **Get Top 20 Indices File Sizes**
 
         .. code-block:: bash
 
