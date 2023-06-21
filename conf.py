@@ -3,20 +3,20 @@ import datetime
 master_doc = 'index'
 
 latex_documents = [
-    (master_doc, 'morpheus_6.1.1-1.tex', u'Morpheus Documentation',
+    (master_doc, 'morpheus_6.1.2-1.tex', u'Morpheus Documentation',
      u'Morpheus', 'manual'),
 ]
 
 rst_prolog = """
 
-.. |releasedate| replace:: May 22 2023
+.. |releasedate| replace:: Jun 21 2023
 .. |releasetype| replace:: STANDARD
 .. |morphbranch| replace:: v6.1
-.. |morphver| replace:: v6.1.1
+.. |morphver| replace:: v6.1.2
 .. |minUpgradeVer| replace:: v5.2.0
 .. |minRollingUpgradeVer| replace:: v6.0.3
 .. |nonRollingUpgradeVer| replace:: v6.0.2
-.. |previousMorphVer| replace:: v6.1.0
+.. |previousMorphVer| replace:: v6.1.1
 .. |pluginVer| replace:: 0.15.0
 .. |workerVer| replace:: 5.4.8
 .. |rmqbranch| replace:: v3.5-3.11
@@ -28,7 +28,7 @@ rst_prolog = """
 .. |esver| replace:: v7.17.5
 .. |tcver| replace:: v9.0.70
 .. |nginxver| replace:: v1.22.1
-.. |nodePackageVer| replace:: 3.2.13
+.. |nodePackageVer| replace:: 3.2.14
 .. |linuxagentver| replace:: v2.4.1
 .. |macagentver| replace:: v2.4.0
 .. |winagentver| replace:: v2.4.0
