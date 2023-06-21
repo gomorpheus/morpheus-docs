@@ -5,6 +5,8 @@ Creating a |morpheus| VMware Image
 
 |morpheus| comes out of the box with a default set of blueprints for use in many modern deployment scenarios. These consist mostly of base operating system images with a few additional adjustments. These adjustments typically include the addition of cloud-init (which is highly recommended to be used in most environments, but not mandatory). However, in many on-premise deployments there are custom image requirements as well as networking requirements. This guide will go over how to create a VMware Images for use within |morpheus|.
 
+.. NOTE:: A |morpheus| appliance may have many vCenter Clouds tied to any number of vCenter appliances. If the same images need to be available to multiple vCenter Clouds, you will need to download the OVF from one vCenter and upload it into the others. At that point you can make multiple |morpheus| Node Types from the images and it will be available to all needed vCenter Clouds. This is a vCenter limitation but one which may not be obvious when provisioning via |morpheus|.
+
 Creating a Windows Image
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
