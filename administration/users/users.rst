@@ -134,7 +134,7 @@ To regenerate a CLI or API Access Token:
 Delete User
 ^^^^^^^^^^^
 
-To delete a User from the |AdmUse| Section::
+To delete a User from the |AdmUse| Section:
 
 #. Select the Administration link in the navigation bar.
 #. Select the Users link in the sub navigation bar.
