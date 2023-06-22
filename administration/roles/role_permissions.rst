@@ -21,6 +21,10 @@ Catalog Item Types
   Controls User access to Catalog Item types within the Service Catalog Persona. Only Catalog Items created in the current Tenant or those created in the Master Tenant and shared with the current Tenant will be available.
 VDI Pools
   Controls User access to VDI Pools which are currently configured (|TooVDI|) via the Virtual Desktops Persona view
+Workflows
+  Controls User access to configured Workflows, including the ability to view, edit, execute, or apply to Library item configurations
+Tasks
+  Controls User access to configured Tasks, including the ability to view, edit, execute, or apply to Workflows
 
 Tenant Role Permission Sections
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
