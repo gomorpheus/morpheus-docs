@@ -11,6 +11,7 @@ rst_prolog = """
 
 .. |releasedate| replace:: Jun 21 2023
 .. |releasetype| replace:: STANDARD
+.. |morphAnnualVer| replace:: v6
 .. |morphbranch| replace:: v6.1
 .. |morphver| replace:: v6.1.2
 .. |minUpgradeVer| replace:: v5.2.0

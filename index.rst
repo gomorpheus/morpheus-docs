@@ -32,6 +32,7 @@
 
    release_notes/current.rst
    release_notes/compatibility.rst
+   release_notes/version_highlights.rst
 
 ..
   .. toctree::
