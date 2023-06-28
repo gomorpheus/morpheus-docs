@@ -147,7 +147,7 @@ Onelogin SAML SSO Guide
          
          .. image:: /images/integration_guides/identity_sources/onelogin/morpheus_saml_minimal_setup.png
            :scale: 50%
-           
+
       #. Navigate and login to the OneLogin Administration Portal
       #. Navigate to ``Applications > Applications``
       #. Select the ``Add App`` button
@@ -161,7 +161,6 @@ Onelogin SAML SSO Guide
          
          .. image:: /images/integration_guides/identity_sources/onelogin/display_name.png
            :scale: 50%
-
       #. Once the Application is created, you are placed in the settings of the new application
       #. Select ``Configuration`` from the left menu and enter the following, from the |morpheus| Identity Source that was generated previously
          Audience (EntityID)
@@ -176,23 +175,22 @@ Onelogin SAML SSO Guide
            This is the ``SP ACS URL`` from the |morpheus| Identity Source
          Single Logout URL
            This is your |morpheus| login URL, so you are redirected back to |morpheus| after logging out.
-          
-           Example root/primary tenant URL format:  https://morpheus.test.local/login
-
-           Example subtenant URL format:  https://morpheus.test.local/login/account/2
-
-           .. image:: /images/integration_guides/identity_sources/onelogin/application_config1.png
-             :scale: 75%
-
          SAML initiator
            Set to **Service Provider**
          SAML nameID format
            Set to **Unspecified**
          SAML signature element
            Set to **Both**
+          
+           Example root/primary tenant URL format:  https://morpheus.test.local/login
+
+           Example subtenant URL format:  https://morpheus.test.local/login/account/2
+
+         .. image:: /images/integration_guides/identity_sources/onelogin/application_config1.png
+           :scale: 50%
          
          .. image:: /images/integration_guides/identity_sources/onelogin/application_config2.png
-           :scale: 75%
+           :scale: 50%
 
       #. Select the ``Save`` button
 
