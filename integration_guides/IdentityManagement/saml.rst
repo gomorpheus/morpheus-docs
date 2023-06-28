@@ -218,6 +218,7 @@ Okta SAML SSO Guide
        #. In the ``SAML LOGOUT REDIRECT URL`` field, paste the value from the ``Sign out URL`` in Okta
      
        .. image:: /images/integration_guides/identity_sources/okta/morpheus_saml_configuration.png
+         :scale: 50%
 
     #. Under ``ROLE MAPPINGS``
        
@@ -351,6 +352,7 @@ Onelogin SAML SSO Guide
          #. In the ``SAML LOGOUT REDIRECT URL`` field, paste the value from the ``SLO Endpoint (HTTP)`` in OneLogin
 
          .. image:: /images/integration_guides/identity_sources/onelogin/morpheus_saml_configuration.png
+           :scale: 50%
 
       #. Under ``ROLE MAPPINGS``
          
