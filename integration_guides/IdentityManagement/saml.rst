@@ -220,7 +220,11 @@ Onelogin SAML SSO Guide
       #. Select :guilabel:`SAVE CHANGES`
       #. Navigate to your |morpheus| URL
       #. Select the :guilabel:`OneLogin` button
+         
          .. image:: /images/integration_guides/identity_sources/onelogin/morpheus_login.png
+
       #. Enter your OneLogin username and password (or any other authentication required)
+         
          .. image:: /images/integration_guides/identity_sources/onelogin/login.png
+          
       #. At this point, you should be successfully logged in.  Note that your specific permissions will depend on the settings configured in the ``ROLE MAPPINGS`` section when editing the Identity Source in |morpheus|
