@@ -33,9 +33,9 @@ You now have two remotes for this project on disk:
 ### Step 2: Do some work
 This is the fun bit where you get to contribute to the project. It’s usually best to start by fixing a bug that is either annoying you or you’ve found on the project’s issue tracker.
 #### BRANCH!
-**The number one rule is to put each piece of work on its own branch.** The general rule is that if you are bug fixing, then branch from master and if you are adding a new feature then branch from develop. If the project only has a master branch, the branch from that.
+**The number one rule is to put each piece of work on its own branch.** The general rule for most dev work is that if you are bug fixing, then branch from master and if you are adding a new feature then branch from develop. If the project only has a master branch, the branch from that. In the case of our documentation, branch most new content from the branch named for the lastest version number (such as 6.1.2). If your new content is relevant to a specific past version, you can branch from that version.
 
-For this example, we’ll assume we’re fixing a bug in morpheus-docs, so we branch from master:
+For this example, we’ll branch from master though most new content should be branched from a version-numbered branch:
 ```
 $ git checkout master
 $ git pull upstream master && git push origin master
