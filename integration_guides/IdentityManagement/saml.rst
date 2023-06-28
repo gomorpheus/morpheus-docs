@@ -147,21 +147,19 @@ Onelogin SAML SSO Guide
       #. After saving the changes, a new Identity Source will appear with an ``ENTITY ID``, ``SP ACS URL``, and the value entered for the ``LOGIN REDIRECT URL``.  These details will be needed when configuring the SAML Identity Provider (IdP)
 
         .. image:: /images/integration_guides/identity_sources/onelogin/morpheus_saml_minimal_setup.png
-
+          :scale: 50%
       #. Navigate and login to the OneLogin Administration Portal
       #. Navigate to ``Applications > Applications``
       #. Select the ``Add App`` button
-
+        
         .. image:: /images/integration_guides/identity_sources/onelogin/add_app_button.png
-
+          :scale: 75%
       #.  In the search box, search for **SAML Custom Connector (Advanced)**
       #.  Select the **SAML Custom Connector (Advanced)** option displayed
       #.  Enter a ``Display Name`` and then select the ``Save`` button
 
         .. image:: /images/integration_guides/identity_sources/onelogin/display_name.png
-
-        .. image:: /images/integration_guides/identity_sources/onelogin/save_button.png
-
+          :scale: 50%
       #. Once the Application is created, you are placed in the settings of the new application
       #. Select ``Configuration`` from the left menu and enter the following, from the |morpheus| Identity Source that was generated previously
 
@@ -183,6 +181,7 @@ Onelogin SAML SSO Guide
           Example subtenant URL format:  https://morpheus.test.local/login/account/2
 
           .. image:: /images/integration_guides/identity_sources/onelogin/application_config1.png
+            :scale: 75%
 
         SAML initiator
           Set to **Service Provider**
@@ -192,19 +191,23 @@ Onelogin SAML SSO Guide
           Set to **Both**
 
         .. image:: /images/integration_guides/identity_sources/onelogin/application_config2.png
+          :scale: 75%
 
       #. Select the ``Save`` button
 
         .. image:: /images/integration_guides/identity_sources/onelogin/save_button.png
+          :scale: 50%
 
       #. Select ``Parameters`` from the left menu
       #. Below is an example of default recommended parameters
 
         Paramters overview
           .. image:: /images/integration_guides/identity_sources/onelogin/parameters.png
+            :scale: 50%
 
-        roles configuration
+        roles parameter configuration
           .. image:: /images/integration_guides/identity_sources/onelogin/parameters_roles.png
+            :scale: 50%
 
         .. IMPORTANT::
           These are example parameters that can be created to send as assertions to |morpheus|, using the default values |morpheus| expects.  The ``SAML Custom Connector (Advanced) Field`` can be changed but the field name will need to be configured from the default in |morpheus|.
@@ -221,23 +224,21 @@ Onelogin SAML SSO Guide
         #. In the ``SAML LOGOUT REDIRECT URL`` field, paste the value from the ``SLO Endpoint (HTTP)`` in OneLogin
 
         .. image:: /images/integration_guides/identity_sources/onelogin/morpheus_saml_configuration.png
-
       #. Under ``ROLE MAPPINGS``
         #. Enter ``roles`` for the ``ROLE ATTRIBUTE NAME``
         #. Type the name of a role in OneLogin to map to a role in |morpheus|
 
         .. image:: /images/integration_guides/identity_sources/onelogin/morpheus_saml_roles1.png
+          :scale: 50%
 
         .. image:: /images/integration_guides/identity_sources/onelogin/morpheus_saml_roles2.png
-
+          :scale: 50%
       #. Select :guilabel:`SAVE CHANGES`
       #. Navigate to your |morpheus| URL
       #. Select the :guilabel:`OneLogin` button
 
         .. image:: /images/integration_guides/identity_sources/onelogin/morpheus_login.png
-
       #. Enter your OneLogin username and password (or any other authentication required)
 
         .. image:: /images/integration_guides/identity_sources/onelogin/login.png
-
       #. At this point, you should be successfully logged in.  Note that your specific permissions will depend on the settings configured in the ``ROLE MAPPINGS`` section when editing the Identity Source in |morpheus|
