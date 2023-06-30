@@ -8,6 +8,7 @@ Onelogin SAML SSO Guide
       #. Select :guilabel:`IDENTITY SOURCES`
       #. Select :guilabel:`+ IDENTITY SOURCE`
       #. Enter the following **minimal** settings to generate the SSO details needed in |morpheus|:
+         
          TYPE
            SAML SSO
          NAME
@@ -40,6 +41,7 @@ Onelogin SAML SSO Guide
 
       #. Once the Application is created, you are placed in the settings of the new application
       #. Select ``Configuration`` from the left menu and enter the following, from the |morpheus| Identity Source that was generated previously
+         
          Audience (EntityID)
            This is the ``ENTITY ID`` from the |morpheus| Identity Source
          Recipient
@@ -76,6 +78,7 @@ Onelogin SAML SSO Guide
 
       #. Select ``Parameters`` from the left menu
       #. Below is an example of default recommended parameters
+         
          Paramters overview
            
            .. image:: /images/integration_guides/identity_sources/onelogin/parameters.png
