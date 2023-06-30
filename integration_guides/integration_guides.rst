@@ -1,5 +1,5 @@
-Integration Guides
-==================
+Guides
+======
 
 .. toctree::
    ..:maxdepth: 4
