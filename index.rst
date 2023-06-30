@@ -13,6 +13,7 @@
 
    support/cheat-sheet
    installation/installation
+   integration_guides/integration_guides
    support/support
 
 ..
