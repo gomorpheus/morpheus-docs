@@ -160,7 +160,6 @@ To get the Azure Subscription ID:
 
    .. thumbnail:: /images/clouds/azure/addCloud/getSubId.png
 
-
 #. Store/Paste for use as the Subscription ID when Adding your Azure cloud in |morpheus|
 
 Make App Registration owner or contributor of Subscription
