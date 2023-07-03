@@ -103,7 +103,7 @@ If you do not have an existing Azure Active Directory App Registration, or you w
 #. Next, give app a name, specify which accounts may access this API, specify Web for the Redirect URI type and enter any url for the Sign-on URL:
 #. Click Register and your new App Registration will be created.
 
-   .. thumbnail:: /images/clouds/azure/Register_an_application_Microsoft_Azure.png
+   .. thumbnail:: /images/clouds/azure/addCloud/registerApp.png
 
 Now that we have (or already had) our App Registration, we will gather the credentials required for the |morpheus| Azure integration.
 
@@ -156,12 +156,9 @@ Subscription ID
 To get the Azure Subscription ID:
 
 #. Navigate to the main Subscriptions section. One way is to search for "Subscriptions" and select Subscriptions in the search results
-
-   .. thumbnail:: /images/clouds/azure/azuresubscriptionssearch.png
-
 #. In the main "Subscriptions" section, copy the Subscription ID
 
-   .. thumbnail:: /images/clouds/azure/Subscriptions_Microsoft_Azure.png
+   .. thumbnail:: /images/clouds/azure/addCloud/getSubId.png
 
 
 #. Store/Paste for use as the Subscription ID when Adding your Azure cloud in |morpheus|
