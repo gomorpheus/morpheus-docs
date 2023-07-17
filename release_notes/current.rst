@@ -45,12 +45,14 @@ Fixes
 :DNS: - Improved DNS validation methods to improve performance of the saving action for new or edited DNS integrations
 :Groups: - When creating a new Group as part of adding a Cloud, the Code field value entered for the Group is now saved properly :superscript:`6.2.0`
 :Instances: - Server tags are now accessible through the Instance variable :superscript:`6.2.0`
+:Kubernetes: - Fixed issue with potential records locks causing slow sync times or timeouts for managed external kubernetes clusters :superscript:`6.2.0`
 :Layouts: - When clicking on the OPTIONS button for environment variables when editing Layouts or Node Types, the background tab no longer shifts back to Instance Types (from either Layouts or Node Types) :superscript:`6.2.0`
 :OpenStack: - Fixed an issue that caused Resource Pools for OpenStack Clouds to disappear from |morpheus| after creation (the Projects remain in OpenStack) :superscript:`6.2.0`
              - Fixed an issue that caused an incorrect IP address to be assigned when a new NIC with static IP was added via reconfigure to OpenStack workloads :superscript:`6.2.0`
 :Plans & Pricing: - Fixed a typo in Disk Only-type Prices when setting the Volume Type to "Thin disk provisioning" which was spelled incorrectly :superscript:`6.2.0`
 :Policies: - When creating Cloud-scoped Policies from a Subtenant, only the Clouds available to the Subtenant are shown in the select list :superscript:`6.2.0`
 :Scaling: - Fixed an issue that could cause Instances to be hung in a pending state when scaled very large (approximately 40 or more nodes) :superscript:`6.2.0`
+:Usage: - Optimized usage queries to improve performance in environments with large account usage tables :superscript:`6.2.0`
 :VMware: - Fixed an issue that caused shared Datastores not to be visible for some clusters that it was shared with :superscript:`6.2.0`
 :Workflows: - Fixed an issue that caused Teardown-phase Tasks not to run at Instance delete :superscript:`6.2.0`
              - If Teardown-phase Tasks in Provisioning Workflows fail, the delete action is no longer taken on the Instance. Review the failure in Instance history and delete the Instance again to complete the operation :superscript:`6.2.0`
