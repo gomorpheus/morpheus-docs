@@ -29,7 +29,9 @@ Morpheus allows for additional advanced customizations for system managed servic
   elasticsearch['port'] = "9200"
   elasticsearch['tmp_dir'] = '/var/tmp/elasticsearch'
   elasticsearch['use_tls'] = false
-  ↓ The following elasticsearch settings are only valid for Internal/Embedded elasticsearch services
+  
+ ↓ The following elasticsearch settings are only valid for Internal/Embedded elasticsearch services
+
   elasticsearch['log_dir'] = '/var/log/morpheus/elasticsearch'
   elasticsearch['memory_alloc_arena_max'] = 2
   elasticsearch['memory_map_max'] = 65536
@@ -54,12 +56,21 @@ Morpheus allows for additional advanced customizations for system managed servic
   mysql['morpheus_password'] = 'morpheus-db-password'
   mysql['morpheus_db'] = 'xxxxxxxxxxxxxxxx'
   mysql['mysql_url_overide'] = 'jdbc:mysql://10.30.20.10:3306,10.30.20.11:3306,10.30.20.12:3306/morpheusdb?autoReconnect=true&useUnicode=true&characterEncoding=utf8&failOverReadOnly=false&useSSL=false'
-  ↓ The following mysql settings are only valid for Internal/Embedded mysql services
+  
+ ↓ The following mysql settings are only valid for Internal/Embedded mysql services
+
   mysql['tmp_dir'] = '/tmp/mysql'
   mysql['log_dir'] = '/var/log/morpheus/mysql'
   mysql['max_active'] = 150 # The combined value off all app node max_active values must be lower than max_connections setting in mysql
   mysql['max_connections'] = 151
   mysql['max_allowed_packet'] = 67108864
+  mysql['innodb_buffer_pool_size'] = 134217728
+  mysql['join_buffer_size'] = 262144
+  mysql['read_buffer_size'] = 131072
+  mysql['key_buffer_size'] = 8388608
+  mysql['read_rnd_buffer_size'] = 262144
+  mysql['sort_buffer_size'] = 262144
+  mysql['innodb_buffer_pool_instances'] = 1
 
 
   nginx['cache_max_size'] = '5000m'
@@ -98,7 +109,9 @@ Morpheus allows for additional advanced customizations for system managed servic
   rabbitmq['queue_user_password'] = 'xxxxxxxxxxxxxxxx'
   rabbitmq['queue_user'] = 'morpheus-rmq-user'
   rabbitmq['vhost'] = 'morpheus'
-  ↓ The following rabbitmq settings are only valid for Internal/Embedded rabbitmq services
+  
+ ↓ The following rabbitmq settings are only valid for Internal/Embedded rabbitmq services
+
   rabbitmq['heartbeat'] = nil
   rabbitmq['log_dir'] = '/var/log/morpheus/rabbitmq'
   rabbitmq['nodename'] = 'rabbit@localhost'
