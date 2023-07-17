@@ -39,6 +39,8 @@ Morpheus allows for additional advanced customizations for system managed servic
   elasticsearch['open_files'] = 204800
   elasticsearch['secure_mode'] = false
 
+  firewall['chain_input_policy'] = 'DROP' #### When configured to 'DROP' chain input policy on the appliance will be set to 'DROP' after the next appliacne reconfiguration. If not set, reconfigure will always set the chain input policy to 'ACCEPT'
+
   guacd['guacamole_enabled'] = false
 
   logging['svlogd_num'] = 30 #### keep 30 rotated log files
