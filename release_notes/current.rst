@@ -62,4 +62,4 @@ Appliance & Agent Updates
 
 :Agents: - morpheus-vm-node packages (v3.2.15) will now do a post-inst reconfigure to fix issue with agent path after package is updated with yum/apt and reconfigure is not performed :superscript:`6.2.0`
 :Appliance: - Added ``firewall['chain_input_policy']`` configuration to morpheus.rb. When set to 'DROP', the chain input policy in the appliance iptable will be set to DROP following reconfigure :superscript:`6.2.0`
-            - mysql: ``mysql['innodb_buffer_pool_size']``. ``mysql['join_buffer_size']``, ``mysql['read_buffer_size']``, ``mysql['read_rnd_buffer_size']``, ``mysql['sort_buffer_size']``, and ``mysql['innodb_buffer_pool_instances']`` added as morpheus.rb config options for emb :superscript:`6.2.0`
+            - mysql: ``mysql['innodb_buffer_pool_size']``. ``mysql['join_buffer_size']``, ``mysql['read_buffer_size']``, ``mysql['read_rnd_buffer_size']``, ``mysql['sort_buffer_size']``, and ``mysql['innodb_buffer_pool_instances']`` added as morpheus.rb config options for embedded mysql configurations :superscript:`6.2.0`
