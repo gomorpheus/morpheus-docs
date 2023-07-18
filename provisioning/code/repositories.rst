@@ -121,27 +121,28 @@ Supported Constructs:
 Role Permissions
 ^^^^^^^^^^^^^^^^
 
-Access and capabilities for the **Repositories** section is determined by the following role permissions:
+Access and capabilities for the Import/Export feature set is determined by the following role permissions:
 
 Role: Feature Access: ``Admin: Export/Import``
-  - None: Cannot access the edit button on the Code List Page (|ProCod|) to set Import/Export settings or see Import/Export actions on the Code Repository Detail Page
-  - Full: Code repositories can be edited to set Import/Export configurations and Import/Export actions can be viewed and used on Code Repository Detail Pages
+  - **None:** Cannot access the edit button on the Code List Page (|ProCod|) to set Import/Export settings or see Import/Export actions on the Code Repository Detail Page
+  - **Full:** Code repositories can be edited to set Import/Export configurations and Import/Export actions can be viewed and used on Code Repository Detail Pages
 
 Import/Export Settings
 ^^^^^^^^^^^^^^^^^^^^^^
 
-Code repositories are set to allow import, export or both from the Code Repositories List Page (|ProCod|). Click the edit button (|pencil|) to the right of the selected repository to edit its import export settings. When editing a code repository for import and export, set the following configurations:
+Code repositories are set to allow import, export or both from the Code Repositories List Page (|ProCod|). Click the edit button (|pencil|) to the right of the selected repository to edit its import/export settings. When editing a code repository for import and export, set the following configurations:
 
 - **ENABLED:** When marked, routine syncs will take place between |morpheus| and this repository. This includes all file syncs and not just actions related to import and export
 - **IMPORT/EXPORT:** Set "Auto export all" to automatically export once every four hours, "Manual export" to enable this repository for manual exports on demand, "Manual import" to enable this repository for manual imports on demand, "Import/Export" to enable both manual imports and exports on demand
 - **PATH:** The path within the repository where |morpheus| should import from or export to
-- **EXPORT LABEL FILTER:** Enter a Label(s) and |morpheus| will export only constructs which include the Label(s) into the repository
+- **EXPORT LABEL FILTER:** Enter a Label(s) and |morpheus| will export or import only constructs which include the Label(s) into the repository
 
 Once you've configured the code repository, click :guilabel:`SAVE CHANGES`
 
 .. NOTE:: Code repositories must have at least one file in them in order to export |morpheus| constructs as code. This can be as simple as a README file, they just cannot be empty.
 
 .. IMAGE:: /images/provisioning/import/editRepo.png
+  :width: 50%
 
 Exporting
 ^^^^^^^^^
@@ -157,11 +158,11 @@ Any new or updated constructs will be refreshed within the repository at the pat
 Importing
 ^^^^^^^^^
 
-After |morpheus| constructs have been exported as code, they can be pulled down into other appliances which has the same repositories integrated. Items can be imported ad-hoc from the file browser within a Code Repository Detail page. Click on the gear (|gear|) dropdown to the right of any scribe file that may exist in your repository. For example, in the screenshot below, an individual Task is being imported into the destination appliance.
+After |morpheus| constructs have been exported as code, they can be pulled down into other appliances which have the same repositories integrated. Items can be imported ad-hoc from the file browser within a Code Repository Detail page. Click on the gear (|gear|) dropdown to the right of any scribe file that may exist in your repository. For example, in the screenshot below, an individual Task is being imported into the destination appliance.
 
 .. IMAGE:: /images/provisioning/import/importFile.png
 
-In addition to importing one-off items, code repositories may also be configured for import so that many items can be imported at once. Similar configurations can be made for import, including a specific path within the repository to import from and whether only specific Label groups should be targeted. Triggering a larger scale import for a whole repository is done from the Code Repository Detail Page. Click the :guilabel:`ACTIONS` button and then click "Import All Resources".
+In addition to importing one-off items, code repositories may also be configured for import so that many items can be imported at once. The same configurations can be made for import as export, including a specific path within the repository to import from and whether only specific Label groups should be targeted. Triggering a larger scale import for a whole repository is done from the Code Repository Detail Page. Click the :guilabel:`ACTIONS` button and then click "Import All Resources".
 
 .. IMAGE:: /images/provisioning/import/importAll.png
 
