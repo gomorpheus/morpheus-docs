@@ -115,6 +115,7 @@ Onboarded Git repositories can be configured as either import or export targets 
 Supported Constructs:
 
 - Tasks
+- Workflows
 - Spec Templates
 - Library Items
 
