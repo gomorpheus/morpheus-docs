@@ -131,6 +131,12 @@ Role Mappings
         - The Environments tab is where named environments such as development or production are created and given a description as well as a code for use within the API. A display order and visibility is also set.
         - This permission is recommended for those responsible for defining environments that will be available to select at provision time whether they are the Master Tenant or Subtenant users.
         -
+      * - Admin: Export/Import
+        - None, Full
+        - Allows access to the Export/Import functionality which is part of the Code Repositories section of |morpheus| UI (|ProCod|)
+        - Export/Import tools allow users to configure integrated Git repositories as either export or import targets (or both) and execute exports or imports
+        - This permission is recommended for administrators as it allows wholesale export of |morpheus| constructs (Tasks, Library Items, and more) as code into Git repositories as well as import of new items from repositories into the appliance
+        -
       * - Admin: Guidance Settings
         - None, Full
         - Allows or disallows access to the Guidance tab in |AdmSet|
