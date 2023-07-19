@@ -109,7 +109,7 @@ Configure RabbitMQ
     # Password must be a minimum 12 characters, at least 4 unique characters. Can't contain commas (,), colons (:), equals signs (=), spaces or non-printable ASCII characters.
     mq_morpheus_password='abc123123123123'
     curl --user $mq_admin_username:$mq_admin_password -X PUT $mq_console_url/api/vhosts/morpheus
-    curl --user $mq_admin_username:$mq_admin_password -X PUT $mq_console_url/api/users/$mq_morpheus_user -d '{"password":"'$mq_morpheus_password'","tags":"administrator"}'
+    curl --user $mq_admin_username:$mq_admin_password -X PUT $mq_console_url/api/users/$mq_morpheus_username -d '{"password":"'$mq_morpheus_password'","tags":"administrator"}'
     curl --user $mq_admin_username:$mq_admin_password -X PUT $mq_console_url/api/permissions/morpheus/$mq_morpheus_username -d '{"configure":".*","write":".*","read":".*"}'
     curl --user $mq_admin_username:$mq_admin_password -X PUT $mq_console_url/api/policies/morpheus/statCommands -d '{"pattern":"statCommands.*", "definition":{"expires":1800000, "ha-mode":"all"}, "priority":2, "apply-to":"queues"}'
     curl --user $mq_admin_username:$mq_admin_password -X PUT $mq_console_url/api/policies/morpheus/morpheusAgentActions -d '{"pattern":"morpheusAgentActions.*", "definition":{"expires":1800000, "ha-mode":"all"}, "priority":2, "apply-to":"queues"}'
