@@ -138,16 +138,16 @@ No Service Version Changes from |previousMorphVer|
      - |morphver| changes from |previousMorphVer|
    * - Morpheus Node and VM Node Packages
      - |nodePackageVer|
-     - Updated to v3.2.12
+     - Updated from v3.2.12
    * - Morpheus Linux Agent
      - |linuxagentver|
-     - Updated to v2.4.0
+     - Updated from v2.4.0
    * - Morpheus Windows Agent
      - |winagentver|
-     - Updated to v2.4.0
+     - No change
    * - Morpheus macOS Agent
      - |macagentver|
-     - Updated to v2.4.0
+     - Updated from v2.4.0
 
 |
 

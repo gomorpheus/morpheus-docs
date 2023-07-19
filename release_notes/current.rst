@@ -31,10 +31,9 @@ Fixes
 =====
 
 :API & CLI: - Fixed an issue that caused some GET requests for specific networks to fail with a 500 reponse even though the networks were visible in the UI :superscript:`6.2.0`
-             - GET calls to ``/api/instances`` no longer fail with permissions warnings when there is an Instance pending an internal provisioning approval :superscript:`6.2.0`
+             - GET calls to ``/api/instances`` no longer fail with permissions warnings when there is an Instance pending an provisioning approval :superscript:`6.2.0`
              - GET calls to ``/api/library/instance-types`` with the ``max=-1`` parameter are now returning all instance type results for instance types and library instance types :superscript:`6.2.0`
              - GET requests to ``/api/health`` now return storage metrics to match the storage information viewable on the appliance health page in UI :superscript:`6.2.0`
-             - When approve provision-type Policies are active, 403 errors are no longer surfaced but rather the appropriate messages are given letting the user know that the provision is pending approval :superscript:`6.2.0`
 :Automation Scale Thresholds: - When editing a Scale Threshold shared from the Primary Tenant, an error message is now received rather than a failure with a 500 error. Scale Thresholds owned by the Subtenant can still be edited :superscript:`6.2.0`
 :Catalog: - Fixed an issue that could cause provisioning failures when Catalog Items requiring ServiceNow Approvals were provisioned :superscript:`6.2.0`
 :Costing: - Fixed invoices continuing to show projected cost values for prior months :superscript:`6.2.0`
