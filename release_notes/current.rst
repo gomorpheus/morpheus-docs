@@ -20,9 +20,9 @@ New Features
 
 :API & CLI: - Added CLI and API coverage for removing backup results. API calls and CLI commands are listed in API and CLI documentation :superscript:`6.2.0`
              - When running Workflows against Instances on demand using the API or CLI, users may select which phase should be run in the case of Provisioning Workflows. This feature is also added to |morpheus| UI with this release
+:Clouds: - IBM PowerVC Cloud support is now officially added. This Cloud type has existed in prior versions but is officially out of Alpha state with 6.0.5
 :Kubernetes: - Added Kubernetes 1.25, 1.26 and 1.27 layouts for vCloud Director :superscript:`6.2.0`
               - Added default Kubernetes 1.25, 1.26, and 1.27 layouts for Google Cloud Platform :superscript:`6.2.0`
-:Plugins: - IBM PowerVC Cloud plugin is now available at share.morpheusdata.com. Adding this plugin to a |morpheus| appliance will open the capability to add new PowerVC Clouds. This is an ongoing project and will be improved with future releases
 :VDI Pools: - Favorited XaaS Instances will no longer appear in the VDI list page
 :Workflows: - When running a Workflow on demand against an Instance, users can now select a phase of Tasks to run when a Provisioning Workflow is selected :superscript:`6.2.0`
 
