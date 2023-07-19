@@ -136,7 +136,7 @@ Code repositories are set to allow import, export or both from the Code Reposito
 - **ENABLED:** When marked, routine syncs will take place between |morpheus| and this repository. This includes all file syncs and not just actions related to import and export
 - **IMPORT/EXPORT:** Set "Auto export all" to automatically export once every four hours, "Manual export" to enable this repository for manual exports on demand, "Manual import" to enable this repository for manual imports on demand, "Import/Export" to enable both manual imports and exports on demand
 - **PATH:** The path within the repository where |morpheus| should import from or export to
-- **EXPORT LABEL FILTER:** Enter a Label(s) and |morpheus| will export or import only constructs which include the Label(s) into the repository
+- **EXPORT LABEL FILTER:** Enter a Label and |morpheus| will export or import only constructs which include the Label into the repository. This must be a single Label, it cannot be a list of multiple Labels
 
 Once you've configured the code repository, click :guilabel:`SAVE CHANGES`
 
