@@ -81,7 +81,7 @@ Fixes
 :Inputs: - Both Select List and Typeahead Inputs tied to |morpheus| API Group Option Lists now provide the zoneId, cloudId, siteId, and groupId in the response :superscript:`6.1.1`
           - Fixed an issue that caused incorrect Input values to be returned when the default value for dependent Inputs was used :superscript:`6.1.1`
 :Instances: - Added a reboot warning when reconfiguring Instances to add cores per socket (which will reboot the VMs) :superscript:`6.1.1`
-             - Added validation to Environment Prefix values and Environment Variable Name values to ensure users aren't adding illegal characters for the OS type, such as "(" in Linux :superscript:`6.1.1`
+             - Added validation to Environment Prefix values and Environment Variable Name on the Runtime tab of Instance detail pages. Only alphanumeric characters and "_" (underscore) are allowed to ensure illegal characters for Linux and Windows environments could not be entered :superscript:`6.1.1`
              - Fixed an issue which could cause the scaling tools (remove node button, Scale tab, etc.) not to appear on the Instance detail page even if the Instance Type should support scaling :superscript:`6.1.1`
              - Fixed reconfigure actions to add disks also removing and re-adding NICs :superscript:`6.1.1`
              - Fixed |morpheus| variables not resolving correctly in Tasks on nodes which were added to the Instance after provisioning :superscript:`6.1.1`
