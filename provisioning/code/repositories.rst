@@ -116,7 +116,7 @@ Import and Export
 
 |
 
-Onboarded Git repositories can be configured as either import or export targets for a |morpheus| appliance. This means that any created |morpheus| constructs, such as Tasks, Library Items, and others, can be backed up to an integrated Git repository as code. This backup can take place on an automatic schedule (syncs every four hours) or can be triggered manually after changes are made. Users can back up all supported constructs within the appliance to a single repository or use Labels to back up only selected items. Exported constructs can also be imported into target appliances. This is useful for sharing items between two |morpheus| environments, such as from a development appliance to a production appliance.
+Onboarded Git repositories can be configured as either import or export targets for a |morpheus| appliance. This means that many created |morpheus| constructs, such as Tasks, Library Items, and others, can be backed up to an integrated Git repository as code. This backup can take place on an automatic schedule (syncs every four hours) or can be triggered manually after changes are made. Users can back up all supported constructs within the appliance to a single repository or use Labels to back up only selected items. Exported constructs can also be imported into target appliances. This is useful for sharing items between two |morpheus| environments, such as from a development appliance to a production appliance.
 
 .. NOTE:: The use of this feature requires an integrated Git repository. Please see our `integration guide <https://docs.morpheusdata.com/en/latest/integration_guides/Deployments/deployment.html>`_ for Github or other Git integrations if you've not yet integrated your code repositories.
 
@@ -126,6 +126,8 @@ Supported Constructs:
 - Workflows
 - Spec Templates
 - Library Items
+
+.. NOTE:: When exporting all supported constructs |morpheus| will export more than just the above types, however, only the above types are exportable as individual resources. This list may expand in the future as additional constructs become supported by future updates.
 
 Role Permissions
 ^^^^^^^^^^^^^^^^
@@ -163,6 +165,11 @@ After a repository is configured to allow export (see previous section), it may 
 Any new or updated constructs will be refreshed within the repository at the path your repository is configured to export into. Bear in mind that, even if you've configured |morpheus| to export only constructs categorized with a specific Label, any required dependencies would also be exported. For example, if you've labeled a Workflow to be exported, |morpheus| will also export the dependency Tasks so the Workflow will be functional. A similar behavior applies for exported Library Items which may have a number of dependencies. In the screenshot below, files can be seen populating the targeted Github repository.
 
 .. IMAGE:: /images/provisioning/import/githubView.png
+
+|morpheus| items are exported as scribe files. These are HCL-formatted representations of the construct as code. They include static attributes representative of the attributes set on the construct itself or they may use UUIDs to refer to other constructs or integrations. It shouldn't be necessary to view or edit them unless you're curious.
+
+.. IMAGE:: /images/provisioning/import/viewScribe.png
+  :width: 50%
 
 Importing
 ^^^^^^^^^
