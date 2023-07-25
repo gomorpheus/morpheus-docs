@@ -1,7 +1,7 @@
 Inputs
 ------
 
-Inputs are custom input fields that can be added to Instance Types and Layouts, then presented in Instance, App, and Cloning wizards. The resulting value is available in the Instance config map as <%=customOptions.fieldName%>. The fieldName and value can also be exported as Tags.
+Inputs are custom input fields that can be added to Instance Types and Layouts, then presented in Instance, App, and Cloning wizards. The resulting value is available in the Instance config map as <%=customOptions.fieldName%> or <%=customOptions['fieldName'], the latter syntax being required in certain situations such as when the field name contains a hyphen "-" (ex. <%=customOption['my-field-name']). The fieldName and value can also be exported as Tags.
 
 .. image:: /images/provisioning/library/new_option_type.png
    :align: center
