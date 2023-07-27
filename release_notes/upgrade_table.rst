@@ -19,7 +19,7 @@
    <thead>
      <tr>
        <th class="darkGrey">From Version</th>
-       <th class="darkGrey" colspan="42">To Version</th>
+       <th class="darkGrey" colspan="45">To Version</th>
      </tr>
    </thead>
      <tbody>
@@ -63,6 +63,9 @@
        <td class="red">6.0.0</td>
        <td class="red">6.0.1</td>
        <td class="red">6.0.2</td>
+       <td class="red">6.0.3</td>
+       <td class="red">6.0.4</td>
+       <td class="red">6.0.5</td>
        <td class="red">6.1.0</td>
        <td class="red">6.1.1</td>
        <td class="red">6.1.2</td>
@@ -108,6 +111,9 @@
        <td class="blue">6.0.0</td>
        <td class="blue">6.0.1</td>
        <td class="blue">6.0.2</td>
+       <td class="blue">6.0.3</td>
+       <td class="blue">6.0.4</td>
+       <td class="blue">6.0.5</td>
        <td class="blue">6.1.0</td>
        <td class="blue">6.1.1</td>
        <td class="blue">6.1.2</td>
@@ -153,6 +159,9 @@
        <td class="blue">6.0.0</td>
        <td class="blue">6.0.1</td>
        <td class="blue">6.0.2</td>
+       <td class="blue">6.0.3</td>
+       <td class="blue">6.0.4</td>
+       <td class="blue">6.0.5</td>
        <td class="blue">6.1.0</td>
        <td class="blue">6.1.1</td>
        <td class="blue">6.1.2</td>
@@ -198,6 +207,9 @@
        <td class="blue">6.0.0</td>
        <td class="blue">6.0.1</td>
        <td class="blue">6.0.2</td>
+       <td class="blue">6.0.3</td>
+       <td class="blue">6.0.4</td>
+       <td class="blue">6.0.5</td>
        <td class="blue">6.1.0</td>
        <td class="blue">6.1.1</td>
        <td class="blue">6.1.2</td>
@@ -243,6 +255,9 @@
        <td class="blue">6.0.0</td>
        <td class="blue">6.0.1</td>
        <td class="blue">6.0.2</td>
+       <td class="blue">6.0.3</td>
+       <td class="blue">6.0.4</td>
+       <td class="blue">6.0.5</td>
        <td class="blue">6.1.0</td>
        <td class="blue">6.1.1</td>
        <td class="blue">6.1.2</td>
@@ -288,6 +303,9 @@
        <td class="blue">6.0.0</td>
        <td class="blue">6.0.1</td>
        <td class="blue">6.0.2</td>
+       <td class="blue">6.0.3</td>
+       <td class="blue">6.0.4</td>
+       <td class="blue">6.0.5</td>
        <td class="blue">6.1.0</td>
        <td class="blue">6.1.1</td>
        <td class="blue">6.1.2</td>
@@ -333,6 +351,9 @@
        <td class="blue">6.0.0</td>
        <td class="blue">6.0.1</td>
        <td class="blue">6.0.2</td>
+       <td class="blue">6.0.3</td>
+       <td class="blue">6.0.4</td>
+       <td class="blue">6.0.5</td>
        <td class="blue">6.1.0</td>
        <td class="blue">6.1.1</td>
        <td class="blue">6.1.2</td>
@@ -378,6 +399,9 @@
        <td class="blue">6.0.0</td>
        <td class="blue">6.0.1</td>
        <td class="blue">6.0.2</td>
+       <td class="blue">6.0.3</td>
+       <td class="blue">6.0.4</td>
+       <td class="blue">6.0.5</td>
        <td class="blue">6.1.0</td>
        <td class="blue">6.1.1</td>
        <td class="blue">6.1.2</td>
@@ -423,6 +447,9 @@
        <td class="blue">6.0.0</td>
        <td class="blue">6.0.1</td>
        <td class="blue">6.0.2</td>
+       <td class="blue">6.0.3</td>
+       <td class="blue">6.0.4</td>
+       <td class="blue">6.0.5</td>
        <td class="blue">6.1.0</td>
        <td class="blue">6.1.1</td>
        <td class="blue">6.1.2</td>
@@ -467,6 +494,9 @@
        <td class="blue">6.0.0</td>
        <td class="blue">6.0.1</td>
        <td class="blue">6.0.2</td>
+       <td class="blue">6.0.3</td>
+       <td class="blue">6.0.4</td>
+       <td class="blue">6.0.5</td>
        <td class="blue">6.1.0</td>
        <td class="blue">6.1.1</td>
        <td class="blue">6.1.2</td>
@@ -512,6 +542,9 @@
        <td class="blue">6.0.0</td>
        <td class="blue">6.0.1</td>
        <td class="blue">6.0.2</td>
+       <td class="blue">6.0.3</td>
+       <td class="blue">6.0.4</td>
+       <td class="blue">6.0.5</td>
        <td class="blue">6.1.0</td>
        <td class="blue">6.1.1</td>
        <td class="blue">6.1.2</td>
@@ -557,6 +590,9 @@
        <td class="blue">6.0.0</td>
        <td class="blue">6.0.1</td>
        <td class="blue">6.0.2</td>
+       <td class="blue">6.0.3</td>
+       <td class="blue">6.0.4</td>
+       <td class="blue">6.0.5</td>
        <td class="blue">6.1.0</td>
        <td class="blue">6.1.1</td>
        <td class="blue">6.1.2</td>
@@ -602,6 +638,9 @@
        <td class="blue">6.0.0</td>
        <td class="blue">6.0.1</td>
        <td class="blue">6.0.2</td>
+       <td class="blue">6.0.3</td>
+       <td class="blue">6.0.4</td>
+       <td class="blue">6.0.5</td>
        <td class="blue">6.1.0</td>
        <td class="blue">6.1.1</td>
        <td class="blue">6.1.2</td>
@@ -647,6 +686,9 @@
        <td class="blue">6.0.0</td>
        <td class="blue">6.0.1</td>
        <td class="blue">6.0.2</td>
+       <td class="blue">6.0.3</td>
+       <td class="blue">6.0.4</td>
+       <td class="blue">6.0.5</td>
        <td class="blue">6.1.0</td>
        <td class="blue">6.1.1</td>
        <td class="blue">6.1.2</td>
@@ -692,6 +734,9 @@
        <td class="blue">6.0.0</td>
        <td class="blue">6.0.1</td>
        <td class="blue">6.0.2</td>
+       <td class="blue">6.0.3</td>
+       <td class="blue">6.0.4</td>
+       <td class="blue">6.0.5</td>
        <td class="blue">6.1.0</td>
        <td class="blue">6.1.1</td>
        <td class="blue">6.1.2</td>
@@ -737,6 +782,9 @@
        <td class="blue">6.0.0</td>
        <td class="blue">6.0.1</td>
        <td class="blue">6.0.2</td>
+       <td class="blue">6.0.3</td>
+       <td class="blue">6.0.4</td>
+       <td class="blue">6.0.5</td>
        <td class="blue">6.1.0</td>
        <td class="blue">6.1.1</td>
        <td class="blue">6.1.2</td>
@@ -782,6 +830,9 @@
        <td class="blue">6.0.0</td>
        <td class="blue">6.0.1</td>
        <td class="blue">6.0.2</td>
+       <td class="blue">6.0.3</td>
+       <td class="blue">6.0.4</td>
+       <td class="blue">6.0.5</td>
        <td class="blue">6.1.0</td>
        <td class="blue">6.1.1</td>
        <td class="blue">6.1.2</td>
@@ -827,6 +878,9 @@
        <td class="blue">6.0.0</td>
        <td class="blue">6.0.1</td>
        <td class="blue">6.0.2</td>
+       <td class="blue">6.0.3</td>
+       <td class="blue">6.0.4</td>
+       <td class="blue">6.0.5</td>
        <td class="blue">6.1.0</td>
        <td class="blue">6.1.1</td>
        <td class="blue">6.1.2</td>
@@ -872,6 +926,9 @@
        <td class="blue">6.0.0</td>
        <td class="blue">6.0.1</td>
        <td class="blue">6.0.2</td>
+       <td class="blue">6.0.3</td>
+       <td class="blue">6.0.4</td>
+       <td class="blue">6.0.5</td>
        <td class="blue">6.1.0</td>
        <td class="blue">6.1.1</td>
        <td class="blue">6.1.2</td>
@@ -917,6 +974,9 @@
        <td class="blue">6.0.0</td>
        <td class="blue">6.0.1</td>
        <td class="blue">6.0.2</td>
+       <td class="blue">6.0.3</td>
+       <td class="blue">6.0.4</td>
+       <td class="blue">6.0.5</td>
        <td class="blue">6.1.0</td>
        <td class="blue">6.1.1</td>
        <td class="blue">6.1.2</td>
@@ -962,6 +1022,9 @@
        <td class="blue">6.0.0</td>
        <td class="blue">6.0.1</td>
        <td class="blue">6.0.2</td>
+       <td class="blue">6.0.3</td>
+       <td class="blue">6.0.4</td>
+       <td class="blue">6.0.5</td>
        <td class="blue">6.1.0</td>
        <td class="blue">6.1.1</td>
        <td class="blue">6.1.2</td>
@@ -1007,6 +1070,9 @@
        <td class="blue">6.0.0</td>
        <td class="blue">6.0.1</td>
        <td class="blue">6.0.2</td>
+       <td class="blue">6.0.3</td>
+       <td class="blue">6.0.4</td>
+       <td class="blue">6.0.5</td>
        <td class="blue">6.1.0</td>
        <td class="blue">6.1.1</td>
        <td class="blue">6.1.2</td>
@@ -1052,6 +1118,9 @@
        <td class="blue">6.0.0</td>
        <td class="blue">6.0.1</td>
        <td class="blue">6.0.2</td>
+       <td class="blue">6.0.3</td>
+       <td class="blue">6.0.4</td>
+       <td class="blue">6.0.5</td>
        <td class="blue">6.1.0</td>
        <td class="blue">6.1.1</td>
        <td class="blue">6.1.2</td>
@@ -1097,6 +1166,9 @@
        <td class="blue">6.0.0</td>
        <td class="blue">6.0.1</td>
        <td class="blue">6.0.2</td>
+       <td class="blue">6.0.3</td>
+       <td class="blue">6.0.4</td>
+       <td class="blue">6.0.5</td>
        <td class="blue">6.1.0</td>
        <td class="blue">6.1.1</td>
        <td class="blue">6.1.2</td>
@@ -1142,6 +1214,9 @@
        <td class="blue">6.0.0</td>
        <td class="blue">6.0.1</td>
        <td class="blue">6.0.2</td>
+       <td class="blue">6.0.3</td>
+       <td class="blue">6.0.4</td>
+       <td class="blue">6.0.5</td>
        <td class="blue">6.1.0</td>
        <td class="blue">6.1.1</td>
        <td class="blue">6.1.2</td>
@@ -1187,6 +1262,9 @@
        <td class="blue">6.0.0</td>
        <td class="blue">6.0.1</td>
        <td class="blue">6.0.2</td>
+       <td class="blue">6.0.3</td>
+       <td class="blue">6.0.4</td>
+       <td class="blue">6.0.5</td>
        <td class="blue">6.1.0</td>
        <td class="blue">6.1.1</td>
        <td class="blue">6.1.2</td>
@@ -1232,6 +1310,9 @@
        <td class="blue">6.0.0</td>
        <td class="blue">6.0.1</td>
        <td class="blue">6.0.2</td>
+       <td class="blue">6.0.3</td>
+       <td class="blue">6.0.4</td>
+       <td class="blue">6.0.5</td>
        <td class="blue">6.1.0</td>
        <td class="blue">6.1.1</td>
        <td class="blue">6.1.2</td>
@@ -1277,6 +1358,9 @@
        <td class="blue">6.0.0</td>
        <td class="blue">6.0.1</td>
        <td class="blue">6.0.2</td>
+       <td class="blue">6.0.3</td>
+       <td class="blue">6.0.4</td>
+       <td class="blue">6.0.5</td>
        <td class="blue">6.1.0</td>
        <td class="blue">6.1.1</td>
        <td class="blue">6.1.2</td>
@@ -1322,6 +1406,9 @@
        <td class="blue">6.0.0</td>
        <td class="blue">6.0.1</td>
        <td class="blue">6.0.2</td>
+       <td class="blue">6.0.3</td>
+       <td class="blue">6.0.4</td>
+       <td class="blue">6.0.5</td>
        <td class="blue">6.1.0</td>
        <td class="blue">6.1.1</td>
        <td class="blue">6.1.2</td>
@@ -1367,6 +1454,9 @@
        <td class="blue">6.0.0</td>
        <td class="blue">6.0.1</td>
        <td class="blue">6.0.2</td>
+       <td class="blue">6.0.3</td>
+       <td class="blue">6.0.4</td>
+       <td class="blue">6.0.5</td>
        <td class="blue">6.1.0</td>
        <td class="blue">6.1.1</td>
        <td class="blue">6.1.2</td>
@@ -1412,6 +1502,9 @@
        <td class="blue">6.0.0</td>
        <td class="blue">6.0.1</td>
        <td class="blue">6.0.2</td>
+       <td class="blue">6.0.3</td>
+       <td class="blue">6.0.4</td>
+       <td class="blue">6.0.5</td>
        <td class="blue">6.1.0</td>
        <td class="blue">6.1.1</td>
        <td class="blue">6.1.2</td>
@@ -1457,6 +1550,9 @@
        <td class="blue">6.0.0</td>
        <td class="blue">6.0.1</td>
        <td class="blue">6.0.2</td>
+       <td class="blue">6.0.3</td>
+       <td class="blue">6.0.4</td>
+       <td class="blue">6.0.5</td>
        <td class="blue">6.1.0</td>
        <td class="blue">6.1.1</td>
        <td class="blue">6.1.2</td>
@@ -1502,6 +1598,9 @@
        <td class="blue">6.0.0</td>
        <td class="blue">6.0.1</td>
        <td class="blue">6.0.2</td>
+       <td class="blue">6.0.3</td>
+       <td class="blue">6.0.4</td>
+       <td class="blue">6.0.5</td>
        <td class="blue">6.1.0</td>
        <td class="blue">6.1.1</td>
        <td class="blue">6.1.2</td>
@@ -1547,6 +1646,9 @@
        <td class="blue">6.0.0</td>
        <td class="blue">6.0.1</td>
        <td class="blue">6.0.2</td>
+       <td class="blue">6.0.3</td>
+       <td class="blue">6.0.4</td>
+       <td class="blue">6.0.5</td>
        <td class="blue">6.1.0</td>
        <td class="blue">6.1.1</td>
        <td class="blue">6.1.2</td>
@@ -1592,6 +1694,9 @@
        <td class="blue">6.0.0</td>
        <td class="blue">6.0.1</td>
        <td class="blue">6.0.2</td>
+       <td class="blue">6.0.3</td>
+       <td class="blue">6.0.4</td>
+       <td class="blue">6.0.5</td>
        <td class="blue">6.1.0</td>
        <td class="blue">6.1.1</td>
        <td class="blue">6.1.2</td>
@@ -1637,6 +1742,9 @@
        <td class="blue">6.0.0</td>
        <td class="blue">6.0.1</td>
        <td class="blue">6.0.2</td>
+       <td class="blue">6.0.3</td>
+       <td class="blue">6.0.4</td>
+       <td class="blue">6.0.5</td>
        <td class="blue">6.1.0</td>
        <td class="blue">6.1.1</td>
        <td class="blue">6.1.2</td>
@@ -1682,6 +1790,9 @@
        <td class="white"></td>
        <td class="blue">6.0.1</td>
        <td class="blue">6.0.2</td>
+       <td class="blue">6.0.3</td>
+       <td class="blue">6.0.4</td>
+       <td class="blue">6.0.5</td>
        <td class="blue">6.1.0</td>
        <td class="blue">6.1.1</td>
        <td class="blue">6.1.2</td>
@@ -1727,6 +1838,9 @@
        <td class="lightGrey"></td>
        <td class="white"></td>
        <td class="blue">6.0.2</td>
+       <td class="blue">6.0.3</td>
+       <td class="blue">6.0.4</td>
+       <td class="blue">6.0.5</td>
        <td class="blue">6.1.0</td>
        <td class="blue">6.1.1</td>
        <td class="blue">6.1.2</td>
@@ -1734,6 +1848,153 @@
      </tr>
      <tr>
        <td class="darkGrey">6.0.2 →</td>
+       <td class="lightGrey"></td>
+       <td class="lightGrey"></td>
+       <td class="lightGrey"></td>
+       <td class="lightGrey"></td>
+       <td class="lightGrey"></td>
+       <td class="lightGrey"></td>
+       <td class="lightGrey"></td>
+       <td class="lightGrey"></td>
+       <td class="lightGrey"></td>
+       <td class="lightGrey"></td>
+       <td class="lightGrey"></td>
+       <td class="lightGrey"></td>
+       <td class="lightGrey"></td>
+       <td class="lightGrey"></td>
+       <td class="lightGrey"></td>
+       <td class="lightGrey"></td>
+       <td class="lightGrey"></td>
+       <td class="lightGrey"></td>
+       <td class="lightGrey"></td>
+       <td class="lightGrey"></td>
+       <td class="lightGrey"></td>
+       <td class="lightGrey"></td>
+       <td class="lightGrey"></td>
+       <td class="lightGrey"></td>
+       <td class="lightGrey"></td>
+       <td class="lightGrey"></td>
+       <td class="lightGrey"></td>
+       <td class="lightGrey"></td>
+       <td class="lightGrey"></td>
+       <td class="lightGrey"></td>
+       <td class="lightGrey"></td>
+       <td class="lightGrey"></td>
+       <td class="lightGrey"></td>
+       <td class="lightGrey"></td>
+       <td class="lightGrey"></td>
+       <td class="lightGrey"></td>
+       <td class="lightGrey"></td>
+       <td class="white"></td>
+       <td class="green">6.0.3</td>
+       <td class="green">6.0.4</td>
+       <td class="green">6.0.5</td>
+       <td class="green">6.1.0</td>
+       <td class="green">6.1.1</td>
+       <td class="green">6.1.2</td>
+       <td class="green">6.2.0</td>
+     </tr>
+     <tr>
+       <td class="darkGrey">6.0.3 →</td>
+       <td class="lightGrey"></td>
+       <td class="lightGrey"></td>
+       <td class="lightGrey"></td>
+       <td class="lightGrey"></td>
+       <td class="lightGrey"></td>
+       <td class="lightGrey"></td>
+       <td class="lightGrey"></td>
+       <td class="lightGrey"></td>
+       <td class="lightGrey"></td>
+       <td class="lightGrey"></td>
+       <td class="lightGrey"></td>
+       <td class="lightGrey"></td>
+       <td class="lightGrey"></td>
+       <td class="lightGrey"></td>
+       <td class="lightGrey"></td>
+       <td class="lightGrey"></td>
+       <td class="lightGrey"></td>
+       <td class="lightGrey"></td>
+       <td class="lightGrey"></td>
+       <td class="lightGrey"></td>
+       <td class="lightGrey"></td>
+       <td class="lightGrey"></td>
+       <td class="lightGrey"></td>
+       <td class="lightGrey"></td>
+       <td class="lightGrey"></td>
+       <td class="lightGrey"></td>
+       <td class="lightGrey"></td>
+       <td class="lightGrey"></td>
+       <td class="lightGrey"></td>
+       <td class="lightGrey"></td>
+       <td class="lightGrey"></td>
+       <td class="lightGrey"></td>
+       <td class="lightGrey"></td>
+       <td class="lightGrey"></td>
+       <td class="lightGrey"></td>
+       <td class="lightGrey"></td>
+       <td class="lightGrey"></td>
+       <td class="lightGrey"></td>
+       <td class="white"></td>
+       <td class="green">6.0.4</td>
+       <td class="green">6.0.5</td>
+       <td class="green">6.1.0</td>
+       <td class="green">6.1.1</td>
+       <td class="green">6.1.2</td>
+       <td class="green">6.2.0</td>
+     </tr>
+     <tr>
+       <td class="darkGrey">6.0.4 →</td>
+       <td class="lightGrey"></td>
+       <td class="lightGrey"></td>
+       <td class="lightGrey"></td>
+       <td class="lightGrey"></td>
+       <td class="lightGrey"></td>
+       <td class="lightGrey"></td>
+       <td class="lightGrey"></td>
+       <td class="lightGrey"></td>
+       <td class="lightGrey"></td>
+       <td class="lightGrey"></td>
+       <td class="lightGrey"></td>
+       <td class="lightGrey"></td>
+       <td class="lightGrey"></td>
+       <td class="lightGrey"></td>
+       <td class="lightGrey"></td>
+       <td class="lightGrey"></td>
+       <td class="lightGrey"></td>
+       <td class="lightGrey"></td>
+       <td class="lightGrey"></td>
+       <td class="lightGrey"></td>
+       <td class="lightGrey"></td>
+       <td class="lightGrey"></td>
+       <td class="lightGrey"></td>
+       <td class="lightGrey"></td>
+       <td class="lightGrey"></td>
+       <td class="lightGrey"></td>
+       <td class="lightGrey"></td>
+       <td class="lightGrey"></td>
+       <td class="lightGrey"></td>
+       <td class="lightGrey"></td>
+       <td class="lightGrey"></td>
+       <td class="lightGrey"></td>
+       <td class="lightGrey"></td>
+       <td class="lightGrey"></td>
+       <td class="lightGrey"></td>
+       <td class="lightGrey"></td>
+       <td class="lightGrey"></td>
+       <td class="lightGrey"></td>
+       <td class="lightGrey"></td>
+       <td class="white"></td>
+       <td class="green">6.0.5</td>
+       <td class="green">6.1.0</td>
+       <td class="green">6.1.1</td>
+       <td class="green">6.1.2</td>
+       <td class="green">6.2.0</td>
+     </tr>
+     <tr>
+       <td class="darkGrey">6.0.5 →</td>
+       <td class="lightGrey"></td>
+       <td class="lightGrey"></td>
+       <td class="lightGrey"></td>
        <td class="lightGrey"></td>
        <td class="lightGrey"></td>
        <td class="lightGrey"></td>
@@ -1817,6 +2078,9 @@
        <td class="lightGrey"></td>
        <td class="lightGrey"></td>
        <td class="lightGrey"></td>
+       <td class="lightGrey"></td>
+       <td class="lightGrey"></td>
+       <td class="lightGrey"></td>
        <td class="white"></td>
        <td class="green">6.1.1</td>
        <td class="green">6.1.2</td>
@@ -1824,6 +2088,9 @@
      </tr>
      <tr>
        <td class="darkGrey">6.1.1 →</td>
+       <td class="lightGrey"></td>
+       <td class="lightGrey"></td>
+       <td class="lightGrey"></td>
        <td class="lightGrey"></td>
        <td class="lightGrey"></td>
        <td class="lightGrey"></td>
@@ -1909,23 +2176,26 @@
        <td class="lightGrey"></td>
        <td class="lightGrey"></td>
        <td class="lightGrey"></td>
+       <td class="lightGrey"></td>
+       <td class="lightGrey"></td>
+       <td class="lightGrey"></td>
        <td class="white"></td>
        <td class="green">6.2.0</td>
      </tr>
      <tr>
-       <td class="green" colspan="43">Rolling Upgrade Supported</td>
+       <td class="green" colspan="46">Rolling Upgrade Supported</td>
      </tr>
      <tr>
-       <td class="blue" colspan="43">Non-Rolling Upgrade Supported</td>
+       <td class="blue" colspan="46">Non-Rolling Upgrade Supported</td>
      </tr>
      <tr>
-       <td class="orange" colspan="43">Upgrade Not Recommended*</td>
+       <td class="orange" colspan="46">Upgrade Not Recommended*</td>
      </tr>
      <tr>
-       <td class="red" colspan="43">Upgrade Not Supported</td>
+       <td class="red" colspan="46">Upgrade Not Supported</td>
      </tr>
      <tr>
-       <td class="lightGrey" colspan="43">Downgrade Not Supported</td>
+       <td class="lightGrey" colspan="46">Downgrade Not Supported</td>
      </tr>
    </tbody>
   </table>
