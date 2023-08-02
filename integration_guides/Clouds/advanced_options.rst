@@ -27,7 +27,7 @@ REPLICATION PROVIDER
 GUIDANCE
   Enable Guidance recommendations on cloud resources.
 COSTING
-  Enable for |morpheus| to sync Costing data from the Cloud provider, when available. For on-prem Clouds, enabling costing activates a costing service designed to mirror the live costing experience of public clouds, including invoicing with line items and real-time cost data (Operations > Costing > Invoices). If your organization utilizes reserved instances and you want to pull in related pricing data, select `Costing and Reservations`. If this is not relevant, select `Costing` to save money on additional calls to the AWS Cost Explorer API or similar service for other clouds.
+  Enable for |morpheus| to sync Costing data from the Cloud provider, when available. For on-prem Clouds, enabling costing activates a costing service designed to mirror the live costing experience of public clouds, including invoicing with line items and real-time cost data (Operations > Costing > Invoices). If your organization utilizes reserved instances and you want to pull in related pricing data, some Cloud integrations include the option to select `Costing and Reservations`. If this is not relevant, select `Costing` to save money on additional calls to the Cloud provider's costing API.
 DNS INTEGRATION
   Records for instances provisioned in this cloud will be added to selected DNS integration.
 SERVICE REGISTRY
