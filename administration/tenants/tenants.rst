@@ -8,6 +8,8 @@ Overview
 
 A Tenant in |morpheus| is an isolated environment with unique users and workloads. The Master Tenant is the default Tenant in |morpheus|, created upon installation. All other Tenants outside of the Master Tenants are Subtenants.
 
+.. begin_tenants_bulleted_list
+
 - The Master Tenant is the default Tenant created during the installation of |morpheus|
 - All Tenants created after installation are Subtenants. Only one Master Tenant can exist
 - The Master Tenant creates and controls all Subtenants.
@@ -16,6 +18,8 @@ A Tenant in |morpheus| is an isolated environment with unique users and workload
 - Subtenants cannot share their resources with other Tenants
 - Subtenants cannot see resources from other Subtenants
 - Subtenants can only access Master Tenant resources that have been set to Public visibility or specifically assigned to the Subtenant
+
+.. end_tenants_bulleted_list
 
 Roles
 -----
