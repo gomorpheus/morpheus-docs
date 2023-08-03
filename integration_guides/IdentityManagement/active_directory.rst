@@ -1,6 +1,8 @@
 Active Directory
 ----------------
 
+.. begin_active_directory
+
 .. raw:: html
 
     <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; height: auto;">
@@ -85,6 +87,8 @@ Adding an Active Directory Integration
 Now allowed AD users can login to |morpheus| via their Active Directory credentials and a User will be automatically generated to |morpheus| with matching metadata and mapped Role permissions.
 
 .. NOTE:: Sub-tenant |morpheus| API authentication for Active Directory generated users is not currently supported.
+
+.. end_active_directory
 
 Troubleshooting
 ^^^^^^^^^^^^^^^
