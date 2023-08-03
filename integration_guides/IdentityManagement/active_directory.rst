@@ -82,7 +82,7 @@ Adding an Active Directory Integration
 
   .. NOTE:: For more on Identity Source role mapping permissions, see the `associated guide <https://support.morpheusdata.com/s/article/How-to-enable-Subtenant-admins-to-edit-Identity-Source-role-mapping?language=en_US>`_ in our KnowledgeBase.
 
-#. Select :guilabel:`SAVE CHANGES`.
+7. Select :guilabel:`SAVE CHANGES`.
 
 Now allowed AD users can login to |morpheus| via their Active Directory credentials and a User will be automatically generated to |morpheus| with matching metadata and mapped Role permissions.
 
