@@ -21,6 +21,7 @@ Guides
    /getting_started/guides/tagging_guide.rst
    /getting_started/guides/cypher_policies.rst
    /getting_started/guides/groups_roles_perms.rst
+   /getting_started/guides/tenancy.rst
    ..
      /getting_started/guides/custom_reports.rst
      /getting_started/guides/instance_tabs.rst
