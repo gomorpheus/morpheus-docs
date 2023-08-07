@@ -177,12 +177,12 @@ To Add Virtual Image:
 VMware - VM Templates Copies
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-In a VMware environemnt, you may have a single VM template that you use across different vCenters.  Uploading an image to Morpheus, mentioned in the **Add Virtual Image** section, is one method to solve this.  Alternatively, 
-an organization may decide to create a VM template in one vCenter and then transfer it to other vCenters, which then could be sync'd into Morpheus.  If all of the vCenters are added as clouds into Morpheus and the templates 
-are named the same in each vCenter, they will be aggregated under a single virtual image in Morpheus.  This means that as you deploy to the various vCenter clouds in Morpheus, using a this virtual image, it will choose the 
+In a VMware environment, you may have a single VM template that you use across different vCenters.  Uploading an image to Morpheus, mentioned in the **Add Virtual Image** section, is one method to solve this.  Alternatively, 
+an organization may decide to create a VM template in one vCenter and then transfer it to other vCenters, which then could be sync'd into Morpheus.  If all of the vCenters are added as clouds into Morpheus and the templates
+are named the same in each vCenter, they will be aggregated under a single virtual image in Morpheus.  This means that as you deploy to the various vCenter clouds in Morpheus, using a this virtual image, it will choose the
 correct VM template to use based on the cloud deployed to.
 
-This eliminates the need for creating multiple node types for each virtual image, if the templates were named differently in each vCenter.  This can reduce the overhead of maintaing multiple node types and reduces user selections. 
+This eliminates the need for creating multiple node types for each virtual image, if the templates were named differently in each vCenter.  This can reduce the overhead of maintaing multiple node types and reduces user selections.
 As well, this can reduce the cloning time of VMs by avoiding network transfers of images between geographic locations, ensuring the closest VM template is selected.
 
 |morpheus| supports VMware Content Libraries to store VM templates and will be sync'd into |morpheus|, the same as a template in a folder.  As well, the Content Library can be used to house the same same template in multiple libraries.
