@@ -83,7 +83,7 @@ No Service Version Changes from |previousMorphVer|
    * - Plugin API
      - |pluginVer|
      -
-     -
+     - |checkmark|
    * - Morpheus Worker
      - |workerVer|
      -
@@ -91,7 +91,7 @@ No Service Version Changes from |previousMorphVer|
    * - MySQL
      - |mysqlbranch|
      - |mysqlver|
-     -
+     - |checkmark|
    * - MySQL (FIPS)
      - |mysqlbranch|
      - |mysqlverfips|
@@ -123,7 +123,7 @@ No Service Version Changes from |previousMorphVer|
    * - Java
      -
      - |java|
-     -
+     - |checkmark|
    * - Java (macOS agent)
      -
      - |java-mac|
@@ -143,7 +143,7 @@ No Service Version Changes from |previousMorphVer|
      - |morphver| changes from |previousMorphVer|
    * - Morpheus Node and VM Node Packages
      - |nodePackageVer|
-     - Updated to v3.2.15
+     - Updated to |nodePackageVer|
    * - Morpheus Linux Agent
      - |linuxagentver|
      - No change
