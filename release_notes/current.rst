@@ -14,56 +14,60 @@
 New Features
 ============
 
-:API & CLI: - Added CLI and API coverage for removing backup results. API calls and CLI commands are listed in API and CLI documentation :superscript:`6.0.5`
-:Code: - Configure code repositories (|ProCod|) as import or export repositories. Export |morpheus| items as code and import them into new environments. See `documentation <https://docs.morpheusdata.com/en/latest/provisioning/code/code.html#import-and-export>`_
-:Forms: - Form Inputs now have "Export As Tag" and "Display Value on Details" options as standard Inputs have
-         - Input default are now honored when Inputs are applied to Forms
-         - Quality of life improvements made to Forms. This includes display, spacing and localization improvements related to the presentation of Forms
-:Kubernetes: - Added Kubernetes 1.25, 1.26 and 1.27 layouts for vCloud Director :superscript:`6.0.5`
-              - Added default Kubernetes 1.25, 1.26, and 1.27 layouts for Google Cloud Platform :superscript:`6.0.5`
-:MySQL Database: - ``mysql['innodb_buffer_pool_size']``. ``mysql['join_buffer_size']``, ``mysql['read_buffer_size']``, ``mysql['read_rnd_buffer_size']``, ``mysql['sort_buffer_size']``, and ``mysql['innodb_buffer_pool_instances']`` added as morpheus.rb config options for emb :superscript:`6.0.5`
-:Workflows: - When running a Workflow on demand against an Instance, users can now select a phase of Tasks to run when a Provisioning Workflow is selected :superscript:`6.0.5`
+:Costing: - The date filter on the Invoices list page now defaults to the last three months to ensure quicker page loads :superscript:`6.0.6`
+:NewRelic: - NewRelic monitoring has been deprecated and removed in |morpheus| 6.0.6+ and 6.2.1+. NewRelic monitoring settings are removed from global settings (|AdmSetMon|) :superscript:`6.0.6`
+:Plugins: - Backup plugins that don't utilize |morpheus| Backup Jobs no longer display Job fields in the Instance and Backup wizards :superscript:`6.0.6`
+:Security: - ``commons-net`` upgraded to 3.9.0 to mitigate CVE-2021-37533 :superscript:`6.0.6`
+            - ``netty`` upgraded to 4.1.94 to mitigate CVE-2023-34462 :superscript:`6.0.6`
 
 
 Fixes
 =====
 
-:API & CLI: - Fixed an issue that caused some GET requests for specific networks to fail with a 500 reponse even though the networks were visible in the UI :superscript:`6.0.5`
-             - GET calls to ``/api/instances`` no longer fail with permissions warnings when there is an Instance pending an internal provisioning approval :superscript:`6.0.5`
-             - GET calls to ``/api/library/instance-types`` with the ``max=-1`` parameter are now returning all instance type results for instance types and library instance types :superscript:`6.0.5`
-             - GET requests to ``/api/health`` now return storage metrics to match the storage information viewable on the appliance health page in UI :superscript:`6.0.5`
-             - When approve provision-type Policies are active, 403 errors are no longer surfaced but rather the appropriate messages are given letting the user know that the provision is pending approval :superscript:`6.0.5`
-:Agent: - morpheus-vm-node packages (v3.2.15) will now do a post-inst reconfigure to fix issue with agent path after package is updated with yum/apt and reconfigure is not performed :superscript:`6.0.5`
-:Automation Scale Thresholds: - When editing a Scale Threshold shared from the Primary Tenant, an error message is now received rather than a failure with a 500 error. Scale Thresholds owned by the Subtenant can still be edited :superscript:`6.0.5`
-:Catalog: - Fixed an issue that could cause provisioning failures when Catalog Items requiring ServiceNow Approvals were provisioned :superscript:`6.0.5`
-:Costing: - Fixed invoices continuing to show projected cost values for prior months :superscript:`6.0.5`
-:DNS: - DNS integrations set to Groups or Clouds are no longer used. Since domain records already refer to their DNS integration, this is now used over what is set on the Group or Cloud
-:Forms: - "Display Value on Details" option for existing Inputs is now honored when Input is used in Forms. This displays the Input value on the provisioned Instance's detail page
-         - Fixed Networks not populating after changing configured Group on Catalog Items built from Forms which had been shared down to Subtenants
-         - Fixed required disks and networks not sharing down to Subtenants when Catalog Items built from Forms were shared
-         - The disk type and network type selection checkboxes on the Cloud are now being properly factored into the catalog item types using Forms
-         - Updated Clouds Inputs for Forms to account for specific situations in multiple Clouds
-:Groups: - When creating a new Group as part of adding a Cloud, the Code field value entered for the Group is now saved properly :superscript:`6.0.5`
-:Health: - The search functionality within the Logs tab of the Health page (|AdmHea|) now works properly. Elasticsearch query syntax is supported in this search field :superscript:`6.0.6`
-:Instances: - Server tags are now accessible through the Instance variable :superscript:`6.0.5`
-:Layouts: - Fixed an issue that caused a duplicate Ubuntu 20.04 Layout to be seeded in as part of the default catalog for each Cloud type
-           - When clicking on the OPTIONS button for environment variables when editing Layouts or Node Types, the background tab no longer shifts back to Instance Types (from either Layouts or Node Types) :superscript:`6.0.5`
-:OpenStack: - Fixed an issue that caused Resource Pools for OpenStack Clouds to disappear from |morpheus| after creation (the Projects remain in OpenStack) :superscript:`6.0.5`
-             - Fixed an issue that caused an incorrect IP address to be assigned when a new NIC with static IP was added via reconfigure to OpenStack workloads :superscript:`6.0.5`
-:Oracle Cloud: - When OCI Clouds are scoped to specific Compartments, VMs are now only discovered from the scoped Compartment :superscript:`6.0.6`
-:Plans & Pricing: - Fixed a typo in Disk Only-type Prices when setting the Volume Type to "Thin disk provisioning" which was spelled incorrectly :superscript:`6.0.5`
-:Policies: - When creating Cloud-scoped Policies from a Subtenant, only the Clouds available to the Subtenant are shown in the select list :superscript:`6.0.5`
-:Scaling: - Fixed an issue that could cause Instances to be hung in a pending state when scaled very large (approximately 40 or more nodes) :superscript:`6.0.5`
-:User Settings: - The Dark Mode theme now works properly from within Subtenants
-:VMware: - Fixed an issue that caused shared Datastores not to be visible for some clusters that it was shared with :superscript:`6.0.5`
-:Workflows: - Fixed an issue that caused Post Provision-phase Tasks not to run in Provisioning Workflows which were attached to Terraform-type Layouts :superscript:`6.0.5`
-             - Fixed an issue that caused Teardown-phase Tasks not to run at Instance delete :superscript:`6.0.5`
-             - If Teardown-phase Tasks in Provisioning Workflows fail, the delete action is no longer taken on the Instance. Review the failure in Instance history and delete the Instance again to complete the operation :superscript:`6.0.5`
-             - Workflow access permissions are now honored for Workflows which are attached to Instances :superscript:`6.0.5`
-:vCloud Director: - Controls to start and stop VMs now work correctly from the Primary Tenant when workloads have been shared to a Subtenant :superscript:`6.0.5`
+:API & CLI: - "ENABLE ROLE MAPPING PERMISSION" and "MANUAL ROLE ASSIGNMENT" options for Identity Sources in |morpheus| UI can now be toggled via |morpheus| CLI and API :superscript:`6.0.6`
+:Amazon: - Amazon AWS Clouds scoped to all regions will no longer create duplicate domains or domain records
+:Ansible: - When adding the Ansible Playbook Group at provision time, this group setting is now used correctly for Post Provision-phase Ansible Tasks :superscript:`6.0.6`
+:Archives: - Private file access links to |morpheus| Archives now work correctly in environments with port 80 blocked :superscript:`6.0.6`
+:Azure: - Fixed an issue provisioning from the built-in Azure Instance Type using Azure Marketplace synced virtual images for the first time on new appliances :superscript:`6.0.6`
+         - Fixed an issue that caused Azure VMs provisioned with a static IP address to be provisioned with a DHCP-assigned address instead :superscript:`6.0.6`
+         - Fixed an issue that caused Azure virtual images to disappear following Cloud sync under certain conditions :superscript:`6.0.6`
+:Catalog: - Fixed an issue that prevented provisioning ARM template-based Blueprints as Catalog Items
+           - Scale selections are now factored into the presented price estimate :superscript:`6.0.6`
+           - When using the "Order Again" function of the |morpheus| Catalog, Input values shown in Typeahead fields are now rendered correctly :superscript:`6.0.6`
+:Costing: - Fixed an issue that could cause certain hours in a month to be untracked and, thus, create undercharged invoices :superscript:`6.0.6`
+:Forms: - Added quality of life improvements for Forms that ensured proper operation under certain Cloud-specific scenarios
+         - Fixed disks not refreshing when changing Group or Cloud on Catalog Items created from Forms
+:Google Cloud (GCP): - Sync connections to GCP Clouds no longer fail when the project name contains more than one special character or whitespace character :superscript:`6.0.6`
+                  - The Cloud-Init setting is now enabled by default for GCP-synced public images and the same flag is no longer disabled for some images following a Cloud sync :superscript:`6.0.6`
+:Image Builder: - Updated the Image Builder tool to send the boot script earlier in the provisioning process so that the boot script will work :superscript:`6.0.6`
+:Instances: - Fixed an issue that could cause network interfaces to be removed during reconfigure under certain conditions :superscript:`6.0.6`
+:Morpheus IP Pools: - When IP Pools are shared to Subtenant(s) from the |mastertenant|, Subtenant Users are no longer able to access the Pool detail page via direct entry of the URL :superscript:`6.0.6`
+:NSX-T: - Adding host records to NSX-T-type IP pools through |morpheus| UI or API no longer results in a 500 error :superscript:`6.0.6`
+:NetScaler: - When creating a NetScaler load balancer at provision time and selecting HTTPS protocol, the protocol is set correctly rather than the load balancer showing HTTP in NetScaler :superscript:`6.0.6`
+:Network: - Search domains added to the network are now correctly appended to the search line in the /etc/resolv.conf file on the Linux VM over guest customization :superscript:`6.0.6`
+:Nutanix Prism Central: - PTR registration when provisioning using the Infoblox integration is now working properly :superscript:`6.0.6`
+                  - When provisioning with a static IP address to Nutanix Prism Central Clouds, the IP is now set properly on the VM :superscript:`6.0.6`
+:OpenStack: - On the Hosts list page, OpenStack hosts will now show the number of managed Instances rather than always showing zero (0) :superscript:`6.0.6`
+             - When adding a custom Price Set to a pre-existing Service Plan, the original Price Set is no longer replaced after the nightly sync :superscript:`6.0.6`
+             - When reconfiguring OpenStack VMs, the price shown in the reconfigure window now matches what is ultimately shown on the Instance detail page after the reconfigure is executed :superscript:`6.0.6`
+:Plans and Pricing: - Fixed an issue that could allow max cores per socket set on the Service Plan to be exceeded :superscript:`6.0.6`
+:PowerShell: - Fixed an issue that could cause the browser to hang or crash due to excessive memory utilization when executing some Powershell scripts which generated very large amounts of output :superscript:`6.0.6`
+:Reports: - When "Infrastructure: Clouds" permission is set to "None" on both the Tenant and User Role, the Cloud Cost Usage and Instance Inventory Summary reports still generate properly now assuming that you have access to the specific Cloud on the Tenant Role :superscript:`6.0.6`
+:ServiceNow: - ServiceNow CMDB records are now properly created for discovered Instances within configured Clouds even when the |morpheus| Catalog plugin is not installed on the ServiceNow instance :superscript:`6.0.6`
+              - ServiceNow configuration items are now created following the Provisioning phase of a Provisioning Workflow to allow Post Provision-phase Tasks to update CIs, if necessary :superscript:`6.0.6`
+              - ServiceNow test incidents are no longer sent when ServiceNow monitoring is disabled :superscript:`6.0.6`
+              - When ``cmdb_ci_server" is set as the default business class for a ServiceNow integration, a new record is created for each Instance provisioned rather than the existing record being replaced :superscript:`6.0.6`
+:Settings: - Added an Incident Retainment setting under Appliance within global settings (|AdmSet|). This provides control over the longevity of monitoring incident records in the database which can help prevent appliance performance problems :superscript:`6.0.6`
+:Terraform: - When adding a new Terraform App in |morpheus| and importing an existing state file, the initial ``terraform plan`` runs will no longer show that new resources would be created if that is not the case :superscript:`6.0.6`
+             - When the ``terraform destroy`` command fails, the Instance is no longer removed from |morpheus| :superscript:`6.0.6`
+:Workflows: - The ``user`` variable is now accessible within Teardown-phase Tasks for non-VM based Instance Types (XaaS and potentially Terraform or CloudFormation, etc) :superscript:`6.0.6`
+:XaaS: - Failed Tasks in the Teardown phase of Provisioning Workflows set on XaaS Instances will now prevent the delete action from taking place as is already the case for non-XaaS Instances :superscript:`6.0.6`
+        - Post Provision-phase Tasks now run as expected for XaaS Instances :superscript:`6.0.6`
 
 
 Appliance & Agent Updates
 =========================
 
-:Appliance: - Added ``firewall['chain_input_policy']`` configuration to morpheus.rb. When set to 'DROP', the chain input policy in the appliance iptable will be set to DROP following reconfigure :superscript:`6.0.5`
+:Appliance: - Java has been upgraded to 11.0.20 :superscript:`6.0.6`
+             - MySQL upgraded to 5.7.43 :superscript:`6.0.6`
+             - Tomcat upgraded to 9.0.76 :superscript:`6.0.6`
