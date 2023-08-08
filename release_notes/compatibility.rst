@@ -90,7 +90,7 @@ No Service Version Changes from |previousMorphVer|
    * - MySQL (FIPS)
      - |mysqlbranch|
      - |mysqlverfips|
-     -
+     - |checkmark|
    * - Percona
      - 5.7, WSREP 31
      - n/a
@@ -118,7 +118,7 @@ No Service Version Changes from |previousMorphVer|
    * - Java
      -
      - |java|
-     -
+     - |checkmark|
    * - Java (macOS agent)
      -
      - |java-mac|
@@ -138,7 +138,7 @@ No Service Version Changes from |previousMorphVer|
      - |morphver| changes from |previousMorphVer|
    * - Morpheus Node and VM Node Packages
      - |nodePackageVer|
-     - Updated to v3.2.15
+     - Updated to |nodePackageVer|
    * - Morpheus Linux Agent
      - |linuxagentver|
      - No change
