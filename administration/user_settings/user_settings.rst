@@ -12,14 +12,14 @@ User Settings
 -------------
 The fields included in this section are described below. By entering any new values in these fields and clicking :guilabel:`SAVE`, the existing value will be overwritten.
 
-- **Theme:** Default or Dark mode
+- **Theme:** Default or Dark mode. The Theme setting is not available when Whitelabeling is enabled on the current Tenant
 - **Username:** Your |morpheus| username
 - **First Name:** Your first name (together with Last Name makes up your display name)
 - **Last Name:** Your last name (together with First Name makes up your display name)
 - **Email:** Your email address
 - **Password:** Enter a value and save changes to update your password. The value in the Confirm field below must match
 - **Confirm:** Confirm the new password you've entered
-- **RECEIEVE NOTIFICATIONS** Determines if Provisioning notifications are emailed to this Users.
+- **RECEIEVE NOTIFICATIONS** Determines if provisioning notifications are emailed to this User
 
 .. image:: /images/administration/settings/user_settings500.png
 
