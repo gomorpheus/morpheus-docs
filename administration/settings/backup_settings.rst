@@ -3,6 +3,8 @@ Backup Settings
 
 The Backup settings page allows you enable or disable scheduled backups, select a default backup bucket, and administer global settings related to backups. Changes to global settings only affect new backups going forward and do not affect existing backups.
 
+.. NOTE:: Appliance backups are subject to a two-hour time limit to complete the backup. Automated backup attempts will be abandoned and will fail once this time limit is exceeded.
+
 |morpheus| Backup Settings
 ``````````````````````````
 
