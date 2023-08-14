@@ -5,14 +5,14 @@ The Self Service catalog (|LibBluCat|) is where administrators can create easily
 
 .. NOTE:: For more on Personas and using the Service Catalog persona, see the Personas sections of our documentation.
 
-Access is granted to the Self Service section through the Tools: Self Service Role permission. Users with Read rights can view the catalog while users with full rights can create and edit catalog items. Users without any rights to Self Service will not be able to access the page at all.
+Access is granted to the Self Service section through the Library: Catalog Items Role permission. Users with Read rights can view the catalog while users with full rights can create and edit catalog items. Users without any rights to Self Service will not be able to access the page at all.
 
 Additionally, a user's Role determines access to the standard and/or service catalog persona and which service catalog items are available for a user under the service catalog persona. See the Roles section of |morpheus| documentation for more information on administering Roles.
 
 Viewing the Self Service Catalog
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The complete Self Service catalog can be viewed by clicking on Self Service from the Tools menu. The complete list of items available for the Self Service catalog are shown here but users working in the Service Catalog Persona will see only those allowed based on their user role. In addition to the name and type of each catalog item, we can also see a description and whether not the catalog item is featured or active. Featured items are given special visibility in the Service Catalog Persona and inactive items will not appear as provisioning options.
+The complete Self Service catalog can be viewed by clicking on Catalog from the Provisioning menu. The complete list of items available for the Self Service catalog are shown here but users working in the Service Catalog Persona will see only those allowed based on their user role. In addition to the name and type of each catalog item, we can also see a description and whether not the catalog item is featured or active. Featured items are given special visibility in the Service Catalog Persona and inactive items will not appear as provisioning options.
 
 .. image:: /images/tools/self_service/catalogList.png
 
