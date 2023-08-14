@@ -6,7 +6,6 @@ Backups
 
 |morpheus| also integrates with external services to automate availability with other providers.
 
-
 Initial Backups Setup
 =====================
 
