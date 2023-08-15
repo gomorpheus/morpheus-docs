@@ -25,11 +25,11 @@ Adding Bluecat to |morpheus|
     Password
       Bluecat User password
     Network Filter
-       Optionally enter the id of a config, block or network, or comma separated combination of configs, blocks and/or networks.
+       Optionally enter a comma-separated list of ``entityIds`` for config(s), block(s) or network(s) (ex. ``entityId1,entityId2...``) to filter the synced IP pools, networks and domains
 
 #. Click :guilabel:`SAVE CHANGES`
 
-The Bluecat Integration will be saved, IP pools will sync in and populate under ``Infrastructure > Network > IP Pools``, and Domain will populate in ``Infrastructure > Network > Domains``. Pools and Domains can also be found in the Bluecat Integration details page, which can be accessed by clicking on the name of the added Bluecat Integration in ``Infrastructure > Network > Services``.
+The Bluecat Integration will be saved, IP pools will sync in and populate under ``Infrastructure > Network > IP Pools``, and Domains will populate in ``Infrastructure > Network > Domains``. Pools and Domains can also be found in the Bluecat Integration details page, which can be accessed by clicking on the name of the added Bluecat Integration in ``Infrastructure > Network > Services``.
 
 .. IMPORTANT:: `Quick Deployments` must be enabled in Bluecat for |morpheus| to create instantly available DNS records when using Bluecat DNS.
 
