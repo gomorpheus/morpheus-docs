@@ -493,9 +493,37 @@ Task Configuration
     - **CODE:** Unique code name for API, CLI, and variable references
     - **ATTRIBUTES:** A JSON map of arbitrary values to write to the attributes property of the target resource
 
-    |
-
     .. TIP:: This is often useful for storing values from one phase of a Provisioning Workflow for access in another phase. See the video demo below for a complete example.
+
+    There are a number of ways that a JSON payload can be statically drafted within a Write Attributes Task or called into the Task as a result from a prior Task. Consider the following examples:
+
+    To pass in a static JSON map with static values, use the format shown below.
+
+    .. code-block:: JSON
+
+      {
+        "my_key1": "my_value1",
+        "my_key2": "my_value2"
+      }
+
+    To pass in a static JSON map with dynamic values seeded from prior Task results, ensure the RESULT TYPE value of one or more of the prior Tasks in the Workflow phase is set to "Single Value" and refer to the values within the JSON map as shown in the next example. Note that "taskCode1" and "taskCode2" refer to the CODE field value for the Task whose output you wish to reference.
+
+    .. code-block:: JSON
+
+      {
+        "my_key1": "<%=results.taskCode1%>",
+        "my_key2": "<%=results.taskCode2%>"
+      }
+
+    To pass in a dynamic JSON map returned from a prior Task, format your Write Attributes Task as shown in the next example. Ensure that the RESULT TYPE value for the Task returning a JSON map is set to "JSON". Note that "taskCode" in the example refers to the CODE field value for the Task being referenced. In order for the JSON map to be set correctly and able to be referenced from future Tasks, you must set the "instances" key and call the ``encodeAsJSON()`` Groovy method as shown in the example.
+
+    .. code-block:: JSON
+
+      {
+        "instances": <%=results.taskCode?.encodeAsJSON()%>
+      }
+
+    |
 
     .. raw:: html
 
