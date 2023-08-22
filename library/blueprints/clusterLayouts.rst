@@ -19,7 +19,7 @@ Custer Layouts can be built for an infinite number of use cases and targeting a 
 Creating Script Templates
 `````````````````````````
 
-We'll first start by creating the necessary Script Templates. In this example, I'll use a generic prep script that both the master and worker nodes will utilize and then I'll create four additional scripts (two each for the master and worker nodes) to accomplish various Kubernetes cluster setup tasks (``kubeadm init``, creating Role Bindings, joining workers to the cluster, etc.). I'll briefly describe each here and step through the process of creating the Script Template objects in |moprheus|.
+We'll first start by creating the necessary Script Templates. In this example, I'll use a generic prep script that both the master and worker nodes will utilize and then I'll create four additional scripts (two each for the master and worker nodes) to accomplish various Kubernetes cluster setup tasks (``kubeadm init``, creating Role Bindings, joining workers to the cluster, etc.). I'll briefly describe each here and step through the process of creating the Script Template objects in |morpheus|.
 
 To begin a new Script Template, navigate to |LibTemScr| and click :guilabel:`+ ADD`. All of the scripts used in this example will be "Bash" type, run as user "root" and with SUDO marked.
 
