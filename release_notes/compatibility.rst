@@ -91,10 +91,6 @@ No Service Version Changes from |previousMorphVer|
      - |mysqlbranch|
      - |mysqlverfips|
      - |checkmark|
-   * - Percona
-     - 5.7, WSREP 31
-     - n/a
-     -
    * - Elasticsearch
      - |esbranch|
      - |esver|
