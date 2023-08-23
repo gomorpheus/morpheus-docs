@@ -7,10 +7,6 @@ latex_documents = [
      u'Morpheus', 'manual'),
 ]
 
-html_js_files = [
-    'js/custom.js',
-]
-
 rst_prolog = """
 
 .. |releasedate| replace:: Aug 9 2023
@@ -279,6 +275,10 @@ html_theme_options = {
 }
 html_logo = "_static/logo.svg"
 html_static_path = ['_static']
+
+html_js_files = [
+    'js/custom.js',
+]
 
 html_sidebars = {
     '**': [
