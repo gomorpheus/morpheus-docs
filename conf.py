@@ -8,7 +8,7 @@ latex_documents = [
 ]
 
 html_js_files = [
-    'js/categorize-versions.js',
+    'js/custom.js',
 ]
 
 rst_prolog = """
