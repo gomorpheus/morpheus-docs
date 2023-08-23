@@ -7,6 +7,10 @@ latex_documents = [
      u'Morpheus', 'manual'),
 ]
 
+html_js_files = [
+    'categorize-versions.js',
+]
+
 rst_prolog = """
 
 .. |releasedate| replace:: Aug 9 2023
