@@ -338,7 +338,7 @@ Global (Costing Aggregator Only) (v5.5.1+)
   this can become a tedious process in needing to configure the CUR on each cloud added to |morpheus|.  However, |morpheus| has a region of `Global (Costing Aggregator Only)`, which can be chosen at the time of adding a cloud.  This region is not designed for
   deploying workloads, it is here primarily for syncing costs.  This means that the AWS account added as a cloud in |morpheus| as a Global region can sync the cost for all the other regions of the same account added as clouds into |morpheus|.
 
-  When using AWS Organizations, if the AWS account added as a gloabal region is the management account (formerly known as master account) and consolidated billing is enabled, costs for **all** accounts can be sync'd using the Global region.  This means when any AWS
+  When using AWS Organizations, if the AWS account added as a global region is the management account (formerly known as master account) and consolidated billing is enabled, costs for **all** accounts can be sync'd using the Global region.  This means when any AWS
   and/or regions in the organization are added as clouds in |morpheus|, the appropriate costs are applied to them automatically.  It does require that **Costing** is enabled on the cloud to see the costs but a Costing Report does not need to be chosen.
   This enables the use of one cloud added as Global to sync all costs and apply to all AWS clouds added in |morpheus|.
 
