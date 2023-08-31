@@ -14,10 +14,6 @@ Role Permissions
 
 Access and capabilities for the **Deployments** section is determined by the following role permissions:
 
-Role: Feature Access: ``Infrastructure: Groups``
-  - None: Cannot access Provisioning: Code section
-  - Read or Full: Can access Provisioning: Code section
-
 Role: Feature Access: ``Provisioning: Code Deployments``
   - None: Cannot access Provisioning: Code Deployments.
   - Read: Can view Code Deployments. Cannot create, delete or edit Code Deployments.
