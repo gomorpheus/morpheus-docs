@@ -51,8 +51,7 @@ Fixes
 :Network: - Search domains added to the network are now correctly appended to the search line in the /etc/resolv.conf file on the Linux VM over guest customization :superscript:`6.0.6`
 :Nutanix Prism Central: - PTR registration when provisioning using the Infoblox integration is now working properly :superscript:`6.0.6`
                   - When provisioning with a static IP address to Nutanix Prism Central Clouds, the IP is now set properly on the VM :superscript:`6.0.6`
-:OpenStack: - On the Hosts list page, OpenStack hosts will now show the number of managed Instances rather than always showing zero (0) :superscript:`6.0.6`
-             - When adding a custom Price Set to a pre-existing Service Plan, the original Price Set is no longer replaced after the nightly sync :superscript:`6.0.6`
+:OpenStack:  - When adding a custom Price Set to a pre-existing Service Plan, the original Price Set is no longer replaced after the nightly sync :superscript:`6.0.6`
              - When reconfiguring OpenStack VMs, the price shown in the reconfigure window now matches what is ultimately shown on the Instance detail page after the reconfigure is executed :superscript:`6.0.6`
 :Plans and Pricing: - Fixed an issue that could allow max cores per socket set on the Service Plan to be exceeded :superscript:`6.0.6`
 :PowerShell: - Fixed an issue that could cause the browser to hang or crash due to excessive memory utilization when executing some Powershell scripts which generated very large amounts of output :superscript:`6.0.6`
