@@ -54,7 +54,7 @@ Inputs in the Advanced and Provisioning categories are unique to Forms and requi
 - **Text Array:** Allows the user to enter multiple values separated by a delimiter of your choosing. |morpheus| will parse out the entered values which can be individually deleted if desired before the form is submitted
 - **Typeahead:** Similar to Select List, especially for very long lists. Search for the desired value by typing the first few letters as a search parameter. Users may also browse the complete list by clicking the dropdown icon. This Input type can also support multiple selections, if needed. Associate this type of Input with a pre-defined Option List or create a new Option List right inside the Form builder
 
-.. image:: /images/forms/advancedType.png
+.. image:: /images/forms/forms1.png
 
 Inputs in the provisioning category are specifically tied to some provisioning construct in |morpheus| (Groups, Clouds, etc.). They're very useful for allowing users to select specific provisioning constructs, such as the Group, Cloud, Layout, or Network they wish to provision, and can automatically inject the user's selection into the Catalog Item. This makes for much simpler Catalog Item development as compared to setting up the configuration using just the Input construct outside of Forms.
 
@@ -63,24 +63,24 @@ Provisioning Inputs also include relevant reload and filtering behaviors by defa
 The following provisioning Input types are supported, each with their own automatic filtering behavior and auto-inject capability into the Catalog Item spec:
 
 - Cloud
-- Controller Mount Point
 - Disks
 - Exposed Ports
 - Group
-- Instance Type Chooser
 - Layout
-- Load Balancer
 - Networks
 - Plan
 - Resource Pool
+- Security Groups
+- Tags
+- Vmw Folders
 
-.. image:: /images/forms/provisioningType.png
+.. image:: /images/forms/forms2.png
 
 In order for provisioning Inputs to work properly, be sure to properly set the fields they should filter against. In the screenshot below you can see for a Resource Pool Input I've set the Group, Cloud, Layout, and Plan Inputs that it must be filtered against in order to work. Search for the Field Label of the target Input.
 
 .. image:: /images/forms/poolFilters.png
 
-With the type selected the new Input will have many configuration options, most of which are the same options available when creating an Input from the Inputs section though some are new and some are presented in slightly different ways. The available options depend on the Input type selected but common options are shown in the expandable section below:
+Once the type selected, the new Input will have many configuration options, most of which are the same options available when creating an Input from the Inputs section though some are new and some are presented in slightly different ways. The available options depend on the Input type selected but common options are shown in the expandable section below:
 
 .. toggle-header:: :header: **Common Input Configuration Options**
 
