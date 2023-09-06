@@ -1,4 +1,4 @@
-MySQl Router
+MySQL Router
 ^^^^^^^^^^^^^^^^^^
 
 Introduction

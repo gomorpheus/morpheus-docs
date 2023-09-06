@@ -1,4 +1,4 @@
-MySQl Shell
+MySQL Shell
 ^^^^^^^^^^^^^^^^^^
 
 Introduction
