@@ -34,7 +34,7 @@ Configure MySQL Router
 
            mysqlrouter --bootstrap clusterAdmin@adb-5:3306 --account routeruser --user=root 
 
-        You should get back a number of ports available to connect ot.
+        You should get back a number of ports available to connect to.
         
         .. code-block:: bash
 
