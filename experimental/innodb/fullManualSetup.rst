@@ -8,33 +8,32 @@ InnoDB multi site cluster.
 
     .. tabs::
 
-        .. group-tab:: RHEL 8/9
+        .. group-tab:: Ubuntu 22.04
 
             .. code-block:: bash
         
-                
-                        
-        .. group-tab:: Ubuntu
-
-            .. code-block:: bash
-                
                 systemctl stop apparmor
                 systemctl disable apparmor
                 reboot
+                        
+        .. group-tab:: RHEL 8/9
+
+            .. code-block:: bash
+                
 
 #. Install MySQL on Each DB Node.
 
     .. tabs::
 
-        .. group-tab:: RHEL 8/9
+        .. group-tab:: Ubuntu 22.04
 
             .. code-block:: bash
         
-                
+                apt update
+                apt install mysql-server
                         
-        .. group-tab:: Ubuntu
+        .. group-tab:: RHEL 8/9
 
             .. code-block:: bash
                 
-                apt update
-                apt install mysql-server
+                
