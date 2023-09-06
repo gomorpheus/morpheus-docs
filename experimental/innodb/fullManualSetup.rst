@@ -87,7 +87,7 @@ InnoDB multi site cluster.
            systemctl restart mysql.service
 
 
-#. Install MySQL Shell.
+#. Install MySQL Shell. (This does not have to be installed on the DB nodes. In prod it would probably be installed on each Morpheus app node)
 
     .. tabs::
 
