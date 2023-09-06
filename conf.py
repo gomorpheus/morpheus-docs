@@ -19,15 +19,15 @@ rst_prolog = """
 .. |previousMorphVer| replace:: v6.0.5
 .. |pluginVer| replace:: 0.14.4
 .. |workerVer| replace:: 5.4.8
-.. |rmqbranch| replace:: v3.5-3.11
-.. |rmqver| replace:: v3.11.9
+.. |rmqbranch| replace:: v3.5-3.12
+.. |rmqver| replace:: v3.12.2
 .. |mysqlbranch| replace:: v5.7, v8.0
-.. |mysqlver| replace:: v5.7.43
-.. |mysqlverfips| replace:: v5.7.43
-.. |esbranch| replace:: v7.x
-.. |esver| replace:: v7.17.5
+.. |mysqlver| replace:: v8.0.34
+.. |mysqlverfips| replace:: v8.0.34
+.. |esbranch| replace:: v8.9+
+.. |esver| replace:: v8.9.0
 .. |tcver| replace:: v9.0.76
-.. |nginxver| replace:: v1.22.1
+.. |nginxver| replace:: v1.25.1
 .. |nodePackageVer| replace:: 3.2.16
 .. |linuxagentver| replace:: v2.4.1
 .. |macagentver| replace:: v2.4.1
