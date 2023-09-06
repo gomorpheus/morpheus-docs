@@ -52,7 +52,7 @@ Configure MySQL Router
 
            mysqlrouter -c /etc/mysqlrouter/mysqlrouter.conf & 
 
-#. To confirm if MySQL Router is listening on the ports you can run.
+    #. To confirm if MySQL Router is listening on the ports you can run.
      
         .. code-block:: bash
 

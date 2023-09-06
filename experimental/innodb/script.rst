@@ -10,8 +10,6 @@ Script to create the InnoDB Cluster
 
             .. code-block:: js
         
-                print('InnoDB Cluster sandbox set up\n');
-                print('==================================\n');
                 print('Setting up a Multi Site MySQL InnoDB Cluster, \n');
 
                 var mysqlAdmin = "clusterAdmin";

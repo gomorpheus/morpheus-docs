@@ -28,3 +28,29 @@ Install MySQL Shell
 
             .. code-block:: bash
                 
+MySQL Shell Commands
+````````````````````
+    - Failover to another Cluster Member at the same site.
+        .. code-block:: bash
+            \c clusterAdmin@dbb-1:3306
+            cluster = dba.getCluster()
+            cluster.setPrimaryInstance("bdb-2:3306") 
+            cluster.status()
+    - Failover to another Site.
+        .. code-block:: bash
+            \c clusterAdmin@dbb-1:3306
+            cs = dba.getClusterSet()
+            cs.setPrimaryCluster("B") 
+            cs.status()   
+    - Removing a Node from a Cluster  
+        .. code-block:: bash
+            \c clusterAdmin@dbb-1:3306
+            cluster = dba.getCluster()
+            cluster.removeInstance('clusterAdmin@dbd-2:3306') 
+            cluster.status()
+    - Adding a Node to a Cluster 
+        .. code-block:: bash
+            \c clusterAdmin@dbb-1:3306
+            cluster = dba.getCluster()
+            cluster.addInstance('clusterAdmin@dbd-2:3306')
+            cluster.status()
