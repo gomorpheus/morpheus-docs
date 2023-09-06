@@ -53,7 +53,7 @@ MySQL Shell Commands
             cluster = dba.getCluster()
             cluster.removeInstance('clusterAdmin@dbd-2:3306') 
             cluster.status()
-            
+
     * Adding a Node to a Cluster 
         .. code-block:: bash
             
@@ -61,3 +61,8 @@ MySQL Shell Commands
             cluster = dba.getCluster()
             cluster.addInstance('clusterAdmin@dbd-2:3306')
             cluster.status()
+        
+   * Using a Script 
+        .. code-block:: bash
+            
+            mysqlsh --file myscript.js
