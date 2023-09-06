@@ -1,4 +1,4 @@
-Experamental
+Experimental
 ============
 
 .. toctree::
