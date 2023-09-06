@@ -1,5 +1,7 @@
-InnoDB
+InnoDB Cluster
 ============
+
+.. thumbnail:: /images/innodb/innodbcluster.png
 
 .. toctree::
    ..:maxdepth: 4   
