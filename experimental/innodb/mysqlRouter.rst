@@ -35,15 +35,18 @@ Configure MySQL Router
            mysqlrouter --bootstrap clusterAdmin@adb-5:3306 --account routeruser --user=root 
 
         You should get back a number of ports available to connect ot.
-        ## MySQL Classic protocol
+        
+        .. code-block:: bash
 
-          Read/Write Connections: localhost:6446
-          Read/Only Connections:  localhost:6447
+            ## MySQL Classic protocol
 
-        ## MySQL X protocol
+            Read/Write Connections: localhost:6446
+            Read/Only Connections:  localhost:6447
 
-          Read/Write Connections: localhost:6448
-          Read/Only Connections:  localhost:6449
+            ## MySQL X protocol
+
+            Read/Write Connections: localhost:6448
+            Read/Only Connections:  localhost:6449
 
 
     #. Run the following command to use the bootstrap config. (This needs further testing. currently this will spawn a process using the config but should be able to set config to be used on startup.)
