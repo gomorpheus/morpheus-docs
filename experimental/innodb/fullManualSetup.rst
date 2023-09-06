@@ -37,32 +37,40 @@ InnoDB multi site cluster.
             .. code-block:: bash
 
 
- #. Configure MySQL on Each DB Node. Logon to MySQL for the following commands.
+#. Configure MySQL on Each DB Node.
      
+    * Logon to MySQL. Need to be sudo root. There is no password for root on fresh install.
+
+        .. code-block:: bash
+
+           mysql
+    
+    
     * (Optional) Change MySQL Root to use password.
 
         .. code-block:: bash
 
-           ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'P@ssw0rd!';
+           mysql> ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'P@ssw0rd!';
 
     * Set global MySQL invisible primary. This is required to support Morpheus tables without primary keys.     
          
         .. code-block:: bash
 
-           set persist sql_generate_invisible_primary_key=1;
+           mysql> set persist sql_generate_invisible_primary_key=1;
 
     * Check the global MySQL properties to confirm invisible primary key is on.     
         
         .. code-block:: bash
 
-           SHOW GLOBAL VARIABLES LIKE 'sql_generate_invisible_primary_key';
+           mysql> SHOW GLOBAL VARIABLES LIKE 'sql_generate_invisible_primary_key';
 
     * Create an Admin account to be used with MySQl Shell     
         
         .. code-block:: bash
 
-           CREATE USER 'clusterAdmin'@'%' IDENTIFIED BY 'P@ssw0rd!';
-           GRANT ALL PRIVILEGES ON *.* TO 'clusterAdmin'@'%' with grant option;
+           mysql> CREATE USER 'clusterAdmin'@'%' IDENTIFIED BY 'P@ssw0rd!';
+           mysql> GRANT ALL PRIVILEGES ON *.* TO 'clusterAdmin'@'%' with grant option;
+           mysql> exit
 
     * Update the MySQL config to listen on external address.    
         
@@ -71,3 +79,123 @@ InnoDB multi site cluster.
            vi /etc/mysql/mysql.conf.d/mysqld.cnf
            
         bind-address            = 127.0.0.1,192.168.100.67
+        
+    * Restart mysql service.    
+        
+        .. code-block:: bash
+
+           systemctl restart mysql.service
+
+
+#. Install MySQL Shell.
+
+    .. tabs::
+
+        .. group-tab:: Ubuntu 22.04
+
+            .. code-block:: bash
+        
+                wget https://dev.mysql.com/get/Downloads/MySQL-Shell/mysql-shell_8.0.34-1ubuntu23.04_amd64.deb
+                dpkg -i mysql-shell_8.0.34-1ubuntu22.04_amd64.deb
+                        
+        .. group-tab:: RHEL 8/9
+
+            .. code-block:: bash
+
+#. Setup Cluster using MySQL Shell (clusterAdmin is the admin user we created, dba-1 is one of the DB Nodes)
+    * Start MySQL Shell.    
+        
+        .. code-block:: bash
+
+           mysqlsh
+
+    * Check if the DB nodes are ready for cluster configuration. (This should be run against all DB nodes)      
+        
+        .. code-block:: bash
+
+           dba.checkInstanceConfiguration('clusterAdmin@dba-1:3306')
+
+    * If the return shows required changed run the following command to set the changes. (This should be run against all DB nodes)   
+        
+        .. code-block:: bash
+
+           dba.configureInstance('clusterAdmin@dba-1:3306')
+
+    * Run the Configure Instance again to confirm they are all set with  no changes.
+        
+        .. code-block:: bash
+
+           dba.configureInstance('clusterAdmin@dba-1:3306')
+
+    * Connect to one of the DB nodes at the primary site.
+        
+        .. code-block:: bash
+
+           \c clusterAdmin@dba-1:3306
+
+    * Create the Primary Cluster. (In this example "A" will be the Cluster name)
+        
+        .. code-block:: bash
+
+           cluster = dba.createCluster("A")
+
+    * Add additional nodes to this cluster. (This should be the nodes at the same site)
+        
+        .. code-block:: bash
+
+           cluster.addInstance("dba-2:3306")
+           cluster.addInstance("dba-3:3306")
+
+    * Create the Cluster Set (This will be what Links the Primary Cluster built above with Replica Clusters. You can create multiple Replica Clusters in the Cluster Set.)
+        
+        .. code-block:: bash
+
+           clusterset = cluster.createClusterSet("ClusterSet")
+        
+        “ClusterSet” can be set to any value, and will be the name of your Cluster Set.
+    
+    * Validate the Cluster Set is created.
+        
+        .. code-block:: bash
+
+           clusterset.status()
+    
+    * Create Replica Cluster (This will be an additional Site) Original site was called “A” above we will set this one as “B”
+        
+        .. code-block:: bash
+
+           clusterb = clusterset.createReplicaCluster("dbb-1:3306", "B")
+
+        dbb-1 is a DB node in the secondary site
+
+    * Add additional Nodes to the replica
+        
+        .. code-block:: bash
+
+           clusterb.addInstance("dbb-2:3306")
+           clusterb.addInstance("dbb-3:3306")
+    
+    * Validate Cluster Set
+        
+        .. code-block:: bash
+
+           clusterset.status()
+
+    
+
+
+        
+
+
+         
+
+    
+
+
+    
+
+    
+
+
+
+                
