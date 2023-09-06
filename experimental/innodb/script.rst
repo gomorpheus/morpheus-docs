@@ -1,9 +1,6 @@
 MySQL Shell Cluster Script
 ===========================
 
-Script to create the InnoDB Cluster
-````````````````````````````````````
-
     .. tabs::
 
         .. group-tab:: JavaScript
