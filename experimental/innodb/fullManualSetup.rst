@@ -20,6 +20,9 @@ InnoDB multi site cluster.
 
             .. code-block:: bash
                 
+                setenforce 0
+                sed -i 's/^SELINUX=.*/SELINUX=permissive/g' /etc/selinux/config && cat /etc/selinux/config
+                sestatus
 
 #. Install MySQL on Each DB Node.
 
@@ -36,27 +39,36 @@ InnoDB multi site cluster.
 
             .. code-block:: bash
 
+                dnf install mysql-server
+                systemctl start mysqld.service
+                systemctl enable mysqld.service
+                
+                
 
 #. Configure MySQL on Each DB Node.
      
-    * Logon to MySQL. Need to be sudo root. There is no password for root on fresh install.
+    * This will configure MySQL with some basic hardening along with setting the root password and creating a clusterAdmin account.
+      Make sure to set the variables to the desired values before running.
+      The clusterAdmin account is used to create all the clustering from MySQL Shell. 
+      Setting the invisible primary is required to support Morpheus tables that do not have primary keys.
 
-        .. code-block:: bash
+         .. code-block:: bash
 
-           mysql
+            rootpass="P@ssw0rd!"
+            ClusterAdminUser="clusterAdmin"
+            clusterAdminPass="P@ssw0rd!"
+            mysql --user=root <<_EOF_
+            DELETE FROM mysql.user WHERE User='';
+            DROP DATABASE IF EXISTS test;
+            DELETE FROM mysql.db WHERE Db='test' OR Db='test\\_%';
+            set persist sql_generate_invisible_primary_key=1;
+            ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY '${rootpass}';
+            CREATE USER '${clusterAdminUser}'@'%' IDENTIFIED BY '${clusterAdminPass}';
+            GRANT ALL PRIVILEGES ON *.* TO '${clusterAdminUser}'@'%' with grant option;
+            FLUSH PRIVILEGES;            
+            _EOF_  
     
     
-    * (Optional) Change MySQL Root to use password.
-
-        .. code-block:: bash
-
-           mysql> ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'P@ssw0rd!';
-
-    * Set global MySQL invisible primary. This is required to support Morpheus tables without primary keys.     
-         
-        .. code-block:: bash
-
-           mysql> set persist sql_generate_invisible_primary_key=1;
 
     * Check the global MySQL properties to confirm invisible primary key is on.     
         
@@ -64,29 +76,45 @@ InnoDB multi site cluster.
 
            mysql> SHOW GLOBAL VARIABLES LIKE 'sql_generate_invisible_primary_key';
 
-    * Create an Admin account to be used with MySQl Shell     
-        
-        .. code-block:: bash
-
-           mysql> CREATE USER 'clusterAdmin'@'%' IDENTIFIED BY 'P@ssw0rd!';
-           mysql> GRANT ALL PRIVILEGES ON *.* TO 'clusterAdmin'@'%' with grant option;
-           mysql> exit
-
     * Update the MySQL config to listen on external address.    
         
-        .. code-block:: bash
+        .. tabs::
 
-           vi /etc/mysql/mysql.conf.d/mysqld.cnf
-           
-        bind-address            = 127.0.0.1,192.168.100.67
+            .. group-tab:: Ubuntu 22.04
+
+                .. code-block:: bash
+        
+                    vi /etc/mysql/mysql.conf.d/mysqld.cnf
+                    
+            change bind-address = 0.0.0.0
+                        
+            .. group-tab:: RHEL 8/9
+
+                .. code-block:: bash
+
+                    vi /etc/my.cnf.d/mysql-server.cnf
+            add  bind-address  = 0.0.0.0
+
+
         
     * Restart mysql service.    
         
-        .. code-block:: bash
+        .. tabs::
 
-           systemctl restart mysql.service
+            .. group-tab:: Ubuntu 22.04
 
+                .. code-block:: bash
+        
+                    systemctl restart mysql.service
+                    
+                        
+            .. group-tab:: RHEL 8/9
 
+                .. code-block:: bash
+
+                    systemctl restart mysqld.service
+            
+        
 #. Install MySQL Shell. (This does not have to be installed on the DB nodes. In prod it would probably be installed on each Morpheus app node)
 
     .. tabs::
@@ -99,8 +127,11 @@ InnoDB multi site cluster.
                 dpkg -i mysql-shell_8.0.34-1ubuntu22.04_amd64.deb
                         
         .. group-tab:: RHEL 8/9
-
+                
             .. code-block:: bash
+
+                wget https://dev.mysql.com/get/Downloads/MySQL-Shell/mysql-shell-8.0.34-1.el9.x86_64.rpm
+                rpm -i mysql-shell-8.0.34-1.el9.x86_64.rpm
 
 #. Setup Cluster using MySQL Shell (clusterAdmin is the admin user we created, dba-1 is one of the DB Nodes)
     * Start MySQL Shell.    
