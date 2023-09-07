@@ -45,6 +45,12 @@ InnoDB multi site cluster.
                 # To add public FW rule for MySQL 3306
                 firewall-cmd --zone=public --add-port=3306/tcp
                 firewall-cmd --permanent --zone=public --add-port=3306/tcp
+                firewall-cmd --zone=public --add-port=33060/tcp
+                firewall-cmd --permanent --zone=public --add-port=33060/tcp
+                firewall-cmd --zone=public --add-port=33062/tcp
+                firewall-cmd --permanent --zone=public --add-port=33062/tcp
+                firewall-cmd --zone=public --add-port=33061/tcp
+                firewall-cmd --permanent --zone=public --add-port=33061/tcp
 #. Install MySQL on Each DB Node.
 
     .. tabs::

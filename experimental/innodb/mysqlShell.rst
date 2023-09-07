@@ -67,3 +67,10 @@ MySQL Shell Commands
         .. code-block:: bash
             
             mysqlsh --file myscript.js
+
+    * Recover from all nodes down at a single site
+        .. code-block:: bash
+            
+            mysqlsh
+            \c clusterAdmin@dbb-1:3306
+            dba.rebootClusterFromCompleteOutage();
