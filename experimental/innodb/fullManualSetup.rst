@@ -24,6 +24,27 @@ InnoDB multi site cluster.
                 sed -i 's/^SELINUX=.*/SELINUX=permissive/g' /etc/selinux/config && cat /etc/selinux/config
                 sestatus
 
+
+#. Disable/Add Firewall Rules.
+    .. tabs::
+
+        .. group-tab:: Ubuntu 22.04
+
+            .. code-block:: bash
+        
+                #Firewall should be disabled by default.
+                        
+        .. group-tab:: RHEL 8/9
+
+            .. code-block:: bash
+                
+                # To stop and disable FW
+                systemctl stop firewalld
+                systemctl disable firewalld
+
+                # To add public FW rule for MySQL 3306
+                firewall-cmd --zone=public --add-port=3306/tcp
+                firewall-cmd --permanent --zone=public --add-port=3306/tcp
 #. Install MySQL on Each DB Node.
 
     .. tabs::
@@ -65,8 +86,8 @@ InnoDB multi site cluster.
             ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY '${rootpass}';
             CREATE USER '${clusterAdminUser}'@'%' IDENTIFIED BY '${clusterAdminPass}';
             GRANT ALL PRIVILEGES ON *.* TO '${clusterAdminUser}'@'%' with grant option;
-            FLUSH PRIVILEGES;            
-            _EOF_  
+            FLUSH PRIVILEGES;
+            _EOF_
     
     
 
@@ -118,21 +139,21 @@ InnoDB multi site cluster.
         
 #. Install MySQL Shell. (This does not have to be installed on the DB nodes. In prod it would probably be installed on each Morpheus app node)
 
-    .. tabs::
+        .. tabs::
 
-        .. group-tab:: Ubuntu 22.04
+            .. group-tab:: Ubuntu 22.04
 
-            .. code-block:: bash
+                .. code-block:: bash
         
-                wget https://dev.mysql.com/get/Downloads/MySQL-Shell/mysql-shell_8.0.34-1ubuntu23.04_amd64.deb
-                dpkg -i mysql-shell_8.0.34-1ubuntu22.04_amd64.deb
+                    wget https://dev.mysql.com/get/Downloads/MySQL-Shell/mysql-shell_8.0.34-1ubuntu23.04_amd64.deb
+                    dpkg -i mysql-shell_8.0.34-1ubuntu22.04_amd64.deb
                         
-        .. group-tab:: RHEL 8/9
+            .. group-tab:: RHEL 8/9
                 
-            .. code-block:: bash
+                .. code-block:: bash
 
-                wget https://dev.mysql.com/get/Downloads/MySQL-Shell/mysql-shell-8.0.34-1.el9.x86_64.rpm
-                rpm -i mysql-shell-8.0.34-1.el9.x86_64.rpm
+                    wget https://dev.mysql.com/get/Downloads/MySQL-Shell/mysql-shell-8.0.34-1.el9.x86_64.rpm
+                    rpm -i mysql-shell-8.0.34-1.el9.x86_64.rpm
 
 #. Setup Cluster using MySQL Shell (clusterAdmin is the admin user we created, dba-1 is one of the DB Nodes)
     * Start MySQL Shell.    
