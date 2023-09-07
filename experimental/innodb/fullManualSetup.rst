@@ -86,14 +86,15 @@ InnoDB multi site cluster.
         
                     vi /etc/mysql/mysql.conf.d/mysqld.cnf
                     
-                change bind-address = 0.0.0.0
+                **change bind-address = 0.0.0.0**
                         
             .. group-tab:: RHEL 8/9
 
                 .. code-block:: bash
 
                     vi /etc/my.cnf.d/mysql-server.cnf
-                add  bind-address  = 0.0.0.0
+                    
+                **add  bind-address  = 0.0.0.0**
 
 
         
