@@ -75,7 +75,8 @@ MySQL Shell Commands
             \c clusterAdmin@dbb-1:3306
             dba.rebootClusterFromCompleteOutage()
     
-    * Emergency Failover when a site is down. This process will bring up the Cluster at site B. 
+    * Emergency Failover when a site is down. **This should only be done as a last resort when the primary site cant be brought up** 
+      This process will bring up the Cluster at site B. 
       You should take steps to ensure that no writes go to site A if/when it comes back up. This can be done
       by stopping the morpheus-ui and/or fencing the router traffic.
         .. code-block:: bash
@@ -87,7 +88,8 @@ MySQL Shell Commands
             clusterset.forcePrimaryCluster("B")
             clusterset.status()
 
-    * Once Power is restored to Site A nodes, you can go through the repair process. 
+    * Emergency Failover Recovery of down site. 
+      Once Power is restored to Site A nodes, you can go through the repair process. 
         .. code-block:: bash
             
             //Connect to site A node to repair cluster from all nodes down.
@@ -97,7 +99,7 @@ MySQL Shell Commands
             clusterset = dba.getClusterSet()
             clusterset.rejoinCluster("A")
     
-    * Setting MySQl Router target Cluster. This will force the router to only connect to the cluster specified.
+    * Setting MySQL Router target Cluster. This will force the router to only connect to the cluster specified.
         .. code-block:: bash
             
             mysqlsh 
