@@ -25,6 +25,9 @@ Install MySQL Router
         .. group-tab:: RHEL 8/9
 
             .. code-block:: bash
+
+                wget https://dev.mysql.com/get/Downloads/MySQL-Router/mysql-router-community-8.0.34-1.el9.x86_64.rpm
+                rpm -i mysql-router-community-8.0.34-1.el9.x86_64.rpm
                 
 Configure MySQL Router
 ``````````````````````
