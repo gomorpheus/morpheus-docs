@@ -1,5 +1,5 @@
-MySQL Shell Cluster Script
-===========================
+MySQL Shell Cluster Multi Site JS Script
+========================================
 
     .. tabs::
 

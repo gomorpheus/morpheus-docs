@@ -10,4 +10,4 @@ InnoDB Cluster
    /experimental/innodb/fullManualSetup.rst
    /experimental/innodb/mysqlShell.rst
    /experimental/innodb/mysqlRouter.rst
-   /experimental/innodb/script.rst
+   /experimental/innodb/scripts.rst

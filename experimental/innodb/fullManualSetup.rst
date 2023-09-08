@@ -81,15 +81,15 @@ InnoDB multi site cluster.
 
          .. code-block:: bash
 
-            rootpass="P@ssw0rd!"
-            ClusterAdminUser="clusterAdmin"
+            mysqlrootpass="P@ssw0rd!"
+            clusterAdminUser="clusterAdmin"
             clusterAdminPass="P@ssw0rd!"
             mysql --user=root <<_EOF_
             DELETE FROM mysql.user WHERE User='';
             DROP DATABASE IF EXISTS test;
             DELETE FROM mysql.db WHERE Db='test' OR Db='test\\_%';
             set persist sql_generate_invisible_primary_key=1;
-            ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY '${rootpass}';
+            ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY '${mysqlrootpass}';
             CREATE USER '${clusterAdminUser}'@'%' IDENTIFIED BY '${clusterAdminPass}';
             GRANT ALL PRIVILEGES ON *.* TO '${clusterAdminUser}'@'%' with grant option;
             FLUSH PRIVILEGES;
