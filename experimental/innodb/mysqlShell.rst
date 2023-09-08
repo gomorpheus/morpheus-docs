@@ -73,4 +73,41 @@ MySQL Shell Commands
             
             mysqlsh
             \c clusterAdmin@dbb-1:3306
-            dba.rebootClusterFromCompleteOutage();
+            dba.rebootClusterFromCompleteOutage()
+    
+    * Emergency Failover when a site is down. This process will bring up the Cluster at site B. 
+      You should take steps to ensure that no writes go to site A if/when it comes back up. This can be done
+      by stopping the morpheus-ui and/or fencing the router traffic.
+        .. code-block:: bash
+            
+            mysqlsh
+            \c clusterAdmin@dbb-1:3306
+            clusterset = dba.getClusterSet()
+            clusterset.status()
+            clusterset.forcePrimaryCluster("B")
+            clusterset.status()
+
+    * Once Power is restored to Site A nodes, you can go through the repair process. 
+        .. code-block:: bash
+            
+            //Connect to site A node to repair cluster from all nodes down.
+            mysqlsh 
+            \c clusterAdmin@dbb-1:3306
+            dba.rebootClusterFromCompleteOutage()
+            clusterset = dba.getClusterSet()
+            clusterset.rejoinCluster("A")
+    
+    * Setting MySQl Router target Cluster. This will force the router to only connect to the cluster specified.
+        .. code-block:: bash
+            
+            mysqlsh 
+            \c clusterAdmin@dbb-1:3306
+            #get the connected router information
+            cs.routingOptions()
+            #Find the router you want to change.
+            cs.setRoutingOption('morphb.test.local::morphb', 'target_cluster', 'B')
+            #confirm the settings
+            cs.routingOptions()
+           
+    
+        
