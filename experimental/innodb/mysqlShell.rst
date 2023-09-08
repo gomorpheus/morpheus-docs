@@ -104,12 +104,13 @@ MySQL Shell Commands
             
             mysqlsh 
             \c clusterAdmin@dbb-1:3306
+            clusterset = dba.getClusterSet()
             #get the connected router information
-            cs.routingOptions()
+            clusterset.routingOptions()
             #Find the router you want to change.
-            cs.setRoutingOption('morphb.test.local::morphb', 'target_cluster', 'B')
+            clusterset.setRoutingOption('morphb.test.local::morphb', 'target_cluster', 'B')
             #confirm the settings
-            cs.routingOptions()
+            clusterset.routingOptions()
            
     
         

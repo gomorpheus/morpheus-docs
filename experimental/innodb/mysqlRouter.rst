@@ -28,14 +28,15 @@ Install MySQL Router
 
                 wget https://dev.mysql.com/get/Downloads/MySQL-Router/mysql-router-community-8.0.34-1.el9.x86_64.rpm
                 rpm -i mysql-router-community-8.0.34-1.el9.x86_64.rpm
-                
+
 Configure MySQL Router
 ``````````````````````
     #. Bootstrap the cluster. (This will pull the config from the cluster and create a MySQL Router config file.)
      
         .. code-block:: bash
 
-           mysqlrouter --bootstrap clusterAdmin@adb-5:3306 --account routeruser --user=root --name=morpha
+           mysqlrouter --bootstrap clusterAdmin@adb-5:3306 --account routeruser --user=mysqlrouter --name=morpha
+           systemctl restart mysqlrouter
 
         You should get back a number of ports available to connect to.
         
@@ -50,13 +51,6 @@ Configure MySQL Router
 
             Read/Write Connections: localhost:6448
             Read/Only Connections:  localhost:6449
-
-
-    #. Run the following command to use the bootstrap config. (This needs further testing. currently this will spawn a process using the config but should be able to set config to be used on startup.)
-     
-        .. code-block:: bash
-
-           mysqlrouter -c /etc/mysqlrouter/mysqlrouter.conf & 
 
     #. To confirm if MySQL Router is listening on the ports you can run.
      
