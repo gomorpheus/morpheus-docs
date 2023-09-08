@@ -294,19 +294,19 @@
        <td class="green">6.2.1</td>
      </tr>
      <tr>
-       <td class="green" colspan="15">Rolling Upgrade Supported</td>
+       <td class="green" colspan="16">Rolling Upgrade Supported</td>
      </tr>
      <tr>
-       <td class="blue" colspan="15">Non-Rolling Upgrade Supported</td>
+       <td class="blue" colspan="16">Non-Rolling Upgrade Supported</td>
      </tr>
      <tr>
-       <td class="orange" colspan="15">Upgrade Not Recommended*</td>
+       <td class="orange" colspan="16">Upgrade Not Recommended*</td>
      </tr>
      <tr>
-       <td class="red" colspan="15">Upgrade Not Supported</td>
+       <td class="red" colspan="16">Upgrade Not Supported</td>
      </tr>
      <tr>
-       <td class="lightGrey" colspan="15">Downgrade Not Supported</td>
+       <td class="lightGrey" colspan="16">Downgrade Not Supported</td>
      </tr>
    </tbody>
   </table>
