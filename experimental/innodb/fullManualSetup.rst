@@ -110,7 +110,11 @@ InnoDB multi site cluster.
             .. group-tab:: Ubuntu 22.04
 
                 .. code-block:: bash
-        
+                    
+                    # This should set the bind-address in a single command.
+                    sed -i '/^bind-address\s*=/ {s/=.*/= 0.0.0.0/; h;}; $ {x;/^$/{s//bind-address = 0.0.0.0/;H};x}' /etc/mysql/mysql.conf.d/mysqld.cnf
+                    
+                    # This is where the config file is to confirm or set manually.
                     vi /etc/mysql/mysql.conf.d/mysqld.cnf
                     
                 **change bind-address = 0.0.0.0**
@@ -118,7 +122,11 @@ InnoDB multi site cluster.
             .. group-tab:: RHEL 8/9
 
                 .. code-block:: bash
-
+                    
+                    # This should set the bind-address in a single command.
+                    sed -i '/^bind-address\s*=/ {s/=.*/= 0.0.0.0/; h;}; $ {x;/^$/{s//bind-address = 0.0.0.0/;H};x}' /etc/my.cnf.d/mysql-server.cnf
+                    
+                    # This is where the config file is to confirm or set manually.
                     vi /etc/my.cnf.d/mysql-server.cnf
                     
                 **add  bind-address  = 0.0.0.0**
