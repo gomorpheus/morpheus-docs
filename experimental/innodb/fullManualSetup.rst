@@ -42,15 +42,16 @@ InnoDB multi site cluster.
                 systemctl stop firewalld
                 systemctl disable firewalld
 
-                # To add public FW rule for MySQL 3306
+                # To add public FW rules for MySQL InnoDB Cluster
                 firewall-cmd --zone=public --add-port=3306/tcp
                 firewall-cmd --permanent --zone=public --add-port=3306/tcp
                 firewall-cmd --zone=public --add-port=33060/tcp
                 firewall-cmd --permanent --zone=public --add-port=33060/tcp
-                firewall-cmd --zone=public --add-port=33062/tcp
-                firewall-cmd --permanent --zone=public --add-port=33062/tcp
                 firewall-cmd --zone=public --add-port=33061/tcp
                 firewall-cmd --permanent --zone=public --add-port=33061/tcp
+                firewall-cmd --zone=public --add-port=33062/tcp
+                firewall-cmd --permanent --zone=public --add-port=33062/tcp
+                
 #. Install MySQL on Each DB Node.
 
     .. tabs::
