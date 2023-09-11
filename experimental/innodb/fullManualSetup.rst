@@ -160,7 +160,7 @@ InnoDB multi site cluster.
 
                 .. code-block:: bash
         
-                    wget https://dev.mysql.com/get/Downloads/MySQL-Shell/mysql-shell_8.0.34-1ubuntu23.04_amd64.deb
+                    wget https://dev.mysql.com/get/Downloads/MySQL-Shell/mysql-shell_8.0.34-1ubuntu22.04_amd64.deb
                     dpkg -i mysql-shell_8.0.34-1ubuntu22.04_amd64.deb
                         
             .. group-tab:: RHEL 8/9
