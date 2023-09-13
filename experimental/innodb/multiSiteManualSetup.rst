@@ -1,7 +1,7 @@
 MySQL InnoDB Cluster MultiSite Full Install 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The prupose of this document is to provide to the end to end manual steps to prepare and configure an
+The purpose of this document is to provide to the end to end manual steps to prepare and configure an
 InnoDB multi site cluster.
 
 #. Disable AppArmor/SELinux.
