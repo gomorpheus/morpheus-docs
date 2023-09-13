@@ -7,7 +7,8 @@ InnoDB Cluster
    ..:maxdepth: 4   
    
    
-   /experimental/innodb/fullManualSetup.rst
+   /experimental/innodb/multiSiteManualSetup.rst
+   /experimental/innodb/singleSiteManualSetup.rst
    /experimental/innodb/mysqlShell.rst
    /experimental/innodb/mysqlRouter.rst
    /experimental/innodb/scripts.rst
