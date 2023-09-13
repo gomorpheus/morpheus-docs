@@ -207,7 +207,7 @@ InnoDB multi site cluster.
 
            cluster = dba.createCluster("A")
 
-    * Add additional nodes to this cluster. (This should be the nodes at the same site)
+    * Add additional nodes to this cluster. (This should be the nodes at the same site) (Accept the default to Clone)
         
         .. code-block:: bash
 

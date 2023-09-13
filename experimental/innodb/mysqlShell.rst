@@ -25,9 +25,11 @@ Install MySQL Shell
                 dpkg -i mysql-shell_8.0.34-1ubuntu22.04_amd64.deb
                         
         .. group-tab:: RHEL 8/9
+                
+            .. code-block:: bash
+                
                 wget https://dev.mysql.com/get/Downloads/MySQL-Shell/mysql-shell-8.0.34-1.el9.x86_64.rpm
                 rpm -i mysql-shell-8.0.34-1.el9.x86_64.rpm
-            .. code-block:: bash
                 
 MySQL Shell Commands
 ````````````````````
