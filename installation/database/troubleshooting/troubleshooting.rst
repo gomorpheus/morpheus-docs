@@ -79,3 +79,25 @@ Additional Info
         .. code-block:: bash
 
             semodule -e
+
+MySQL Issues
+^^^^^^^^^^^^^^
+
+Reset forgotten root password
+```````````````````````````````````
+
+        .. code-block:: bash
+
+            systemctl stop mysql
+            #add to /etc/my.cnf:
+               #skip-grant-tables
+            systemctl start mysql
+            #Change password:
+            mysql> FLUSH PRIVILEGES;
+            mysql> ALTER USER 'root'@'localhost' IDENTIFIED BY ('NewPassword');
+            mysql> FLUSH PRIVILEGES;
+            mysql> exit
+            systemctl stop mysql
+            #remove from /etc/my.cnf:
+               #skip-grant-tables
+            systemctl start mysql
