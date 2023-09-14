@@ -1,5 +1,5 @@
 MySQL Shell
-^^^^^^^^^^^
+============
 
 Introduction
 ````````````
