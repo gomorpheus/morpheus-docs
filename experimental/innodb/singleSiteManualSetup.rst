@@ -14,7 +14,6 @@ InnoDB multi site cluster.
         
                 systemctl stop apparmor
                 systemctl disable apparmor
-                reboot
                         
         .. group-tab:: RHEL 8/9
 
