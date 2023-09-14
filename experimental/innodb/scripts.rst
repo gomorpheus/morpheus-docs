@@ -1,7 +1,7 @@
 Scripts
 ============
 
-   * You will need to create a script file on the machine you have mysqlsh on and then run the following command.
+   * You will need to create a script file on the machine you have mysqlsh installed. Then run the following command.
 
          .. code-block:: bash
 
