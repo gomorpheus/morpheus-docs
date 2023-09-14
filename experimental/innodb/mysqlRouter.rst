@@ -52,6 +52,12 @@ Configure MySQL Router
             Read/Write Connections: localhost:6448
             Read/Only Connections:  localhost:6449
 
+      #. Restart mysqlrouter service.
+     
+        .. code-block:: bash
+
+           systemctl restart mysqlrouter
+
     #. To confirm if MySQL Router is listening on the ports you can run.
      
         .. code-block:: bash
