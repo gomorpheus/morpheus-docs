@@ -12,6 +12,8 @@ InnoDB ReplicaSet
 
 Download MySQL Shell from: https://dev.mysql.com/downloads/shell/ 
 
+Official Documentation: https://dev.mysql.com/doc/mysql-shell/8.0/en/
+
 Install MySQL Shell
 ````````````````````
 
@@ -80,7 +82,10 @@ MySQL Shell Add/Remove Nodes
             cluster = dba.getCluster()
             cluster.addInstance('clusterAdmin@dbd-2:3306')
             cluster.status()
-        
+
+MySQL Shell Running Scripts
+````````````````````````````
+
     * Using a Script 
         .. code-block:: bash
             

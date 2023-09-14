@@ -10,6 +10,8 @@ nodes and be bootstrapped from the MySQL cluster.
 
 Download MySQL Routere from: https://dev.mysql.com/downloads/router/
 
+Official Documentation: https://dev.mysql.com/doc/mysql-router/8.0/en/
+
 Install MySQL Router
 ````````````````````
 
