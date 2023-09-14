@@ -1,5 +1,5 @@
 MySQL Shell
-^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^
 
 Introduction
 ````````````
@@ -38,33 +38,33 @@ MySQL Shell Commands
 
 MySQL Shell Get Status
 ```````````````````````
-    * Get Cluster Status
-        .. code-block:: bash
+* Get Cluster Status
+    .. code-block:: bash
             
-            \c clusterAdmin@dbb-1:3306
-            cluster = dba.getCluster()
-            cluster.status()
+        \c clusterAdmin@dbb-1:3306
+        cluster = dba.getCluster()
+        cluster.status()
     
-    * Get Extended Cluster Status. (This will provide a more detailed return)
-        .. code-block:: bash
+* Get Extended Cluster Status. (This will provide a more detailed return)
+    .. code-block:: bash
             
-            \c clusterAdmin@dbb-1:3306
-            cluster = dba.getCluster({extended: 1})
-            cluster.status()
+        \c clusterAdmin@dbb-1:3306
+        cluster = dba.getCluster({extended: 1})
+        cluster.status()
     
-    * Get Cluster Set Status.
-        .. code-block:: bash
+* Get Cluster Set Status.
+    .. code-block:: bash
             
-            \c clusterAdmin@dbb-1:3306
-            clusterset = dba.getClusterSet()
-            clusterset.status()
+        \c clusterAdmin@dbb-1:3306
+        clusterset = dba.getClusterSet()
+        clusterset.status()
     
-    * Get Extended Cluster Set Status. (This will provide a more detailed return)
-        .. code-block:: bash
+* Get Extended Cluster Set Status. (This will provide a more detailed return)
+    .. code-block:: bash
             
-            \c clusterAdmin@dbb-1:3306
-            clusterset = dba.getClusterSet({extended: 1})
-            clusterset.status()
+        \c clusterAdmin@dbb-1:3306
+        clusterset = dba.getClusterSet({extended: 1})
+        clusterset.status()
     
 
 MySQL Shell Add/Remove Nodes
