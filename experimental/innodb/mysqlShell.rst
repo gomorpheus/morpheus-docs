@@ -2,7 +2,7 @@ MySQL Shell
 ============
 
 Introduction
-````````````
+^^^^^^^^^^^^
 
 MySQl Shell is an advanced client and code editor for MySQL. In addition to the provided 
 SQL functionality, MySQL Shell provides scripting capabilities for JavaScript and Python 
@@ -15,7 +15,7 @@ Download MySQL Shell from: https://dev.mysql.com/downloads/shell/
 Official Documentation: https://dev.mysql.com/doc/mysql-shell/8.0/en/
 
 Install MySQL Shell
-````````````````````
+^^^^^^^^^^^^^^^^^^^
 
     .. tabs::
 
@@ -38,33 +38,33 @@ MySQL Shell Commands
 
 MySQL Shell Get Status
 ```````````````````````
-* Get Cluster Status
-    .. code-block:: bash
+    * Get Cluster Status
+        .. code-block:: bash
             
-        \c clusterAdmin@dbb-1:3306
-        cluster = dba.getCluster()
-        cluster.status()
+            \c clusterAdmin@dbb-1:3306
+            cluster = dba.getCluster()
+            cluster.status()
     
-* Get Extended Cluster Status. (This will provide a more detailed return)
-    .. code-block:: bash
+    * Get Extended Cluster Status. (This will provide a more detailed return)
+        .. code-block:: bash
             
-        \c clusterAdmin@dbb-1:3306
-        cluster = dba.getCluster({extended: 1})
-        cluster.status()
+            \c clusterAdmin@dbb-1:3306
+            cluster = dba.getCluster({extended: 1})
+            cluster.status()
     
-* Get Cluster Set Status.
-    .. code-block:: bash
+    * Get Cluster Set Status.
+        .. code-block:: bash
             
-        \c clusterAdmin@dbb-1:3306
-        clusterset = dba.getClusterSet()
-        clusterset.status()
+            \c clusterAdmin@dbb-1:3306
+            clusterset = dba.getClusterSet()
+            clusterset.status()
     
-* Get Extended Cluster Set Status. (This will provide a more detailed return)
-    .. code-block:: bash
+    * Get Extended Cluster Set Status. (This will provide a more detailed return)
+        .. code-block:: bash
             
-        \c clusterAdmin@dbb-1:3306
-        clusterset = dba.getClusterSet({extended: 1})
-        clusterset.status()
+            \c clusterAdmin@dbb-1:3306
+            clusterset = dba.getClusterSet({extended: 1})
+            clusterset.status()
     
 
 MySQL Shell Add/Remove Nodes
@@ -149,7 +149,7 @@ MySQL Shell Unplanned Disaster Failover
             clusterset.rejoinCluster("A")
     
 MySQL Shell Router Config
-````````````````````````````````````````
+`````````````````````````
  
     * Setting MySQL Router target Cluster. This will force the router to only connect to the cluster specified.
         .. code-block:: bash
