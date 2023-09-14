@@ -33,6 +33,9 @@ Install MySQL Shell
                 wget https://dev.mysql.com/get/Downloads/MySQL-Shell/mysql-shell-8.0.34-1.el9.x86_64.rpm
                 rpm -i mysql-shell-8.0.34-1.el9.x86_64.rpm
 
+MySQL Shell Commands
+^^^^^^^^^^^^^^^^^^^^
+
 MySQL Shell Get Status
 ```````````````````````
     * Get Cluster Status
