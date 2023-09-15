@@ -49,8 +49,8 @@ MySQL Shell Get Status
         .. code-block:: bash
             
             \c clusterAdmin@dbb-1:3306
-            cluster = dba.getCluster({extended: 1})
-            cluster.status()
+            cluster = dba.getCluster()
+            cluster.status({extended: 1})
     
     * Get Cluster Set Status.
         .. code-block:: bash
@@ -63,8 +63,8 @@ MySQL Shell Get Status
         .. code-block:: bash
             
             \c clusterAdmin@dbb-1:3306
-            clusterset = dba.getClusterSet({extended: 1})
-            clusterset.status()
+            clusterset = dba.getClusterSet()
+            clusterset.status({extended: 1})
     
 
 MySQL Shell Add/Remove Nodes
