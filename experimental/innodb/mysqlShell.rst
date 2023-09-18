@@ -36,8 +36,8 @@ Install MySQL Shell
 MySQL Shell Commands
 ^^^^^^^^^^^^^^^^^^^^
 
-MySQL Shell Get Status
-```````````````````````
+Get Status
+``````````
     * Get Cluster Status
         .. code-block:: bash
             
@@ -67,8 +67,8 @@ MySQL Shell Get Status
             clusterset.status({extended: 1})
     
 
-MySQL Shell Add/Remove Nodes
-````````````````````````````
+Add/Remove Nodes
+````````````````
 
     * Removing a Node from a Cluster  
         .. code-block:: bash
@@ -86,16 +86,16 @@ MySQL Shell Add/Remove Nodes
             cluster.addInstance('clusterAdmin@dbd-2:3306')
             cluster.status()
 
-MySQL Shell Running Scripts
-````````````````````````````
+Running Scripts
+```````````````
 
     * Using a Script 
         .. code-block:: bash
             
             mysqlsh --file myscript.js
 
-MySQL Shell Planned Failover
-``````````````````````````````
+Planned Failover
+````````````````
 
     * Failover to another Cluster Member at the same site.
         .. code-block:: bash
@@ -114,8 +114,8 @@ MySQL Shell Planned Failover
             cs.status()   
  
  
-MySQL Shell Unplanned Disaster Failover
-````````````````````````````````````````
+Unplanned Disaster Failover
+```````````````````````````
 
     * Recover from all nodes down at a single site
         .. code-block:: bash
@@ -148,8 +148,8 @@ MySQL Shell Unplanned Disaster Failover
             clusterset = dba.getClusterSet()
             clusterset.rejoinCluster("A")
     
-MySQL Shell Router Config
-`````````````````````````
+Router Config
+`````````````
  
     * Setting MySQL Router target Cluster. This will force the router to only connect to the cluster specified.
         .. code-block:: bash
