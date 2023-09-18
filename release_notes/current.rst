@@ -34,6 +34,7 @@ Fixes
 :Forms: - Provisioning with volumes not set to auto inject is now working properly. Use the syntax: "volumes":<%=customOptions.volumes%>
 :Hosts: - Fixed hostname generation for Windows nodes added to Instances with longer (15+ char) hostnames :superscript:`6.0.7`
          - |morpheus| will now set the display name of an Instance to its name value when converting a discovered VM to managed :superscript:`6.0.7`
+:Inputs: - Added "REMOVE NO SELECTION" attribute for Select List-based Inputs. This defaults the Input to the first selection in the list rather than to an empty selection
 :Hyper-V: - After migrating VMs to new Hyper-V hosts, |morpheus| now correctly syncs the new host details :superscript:`6.0.7`
            - |morpheus| will now discover and sync workloads from more than one Hyper-V host in the same Cloud :superscript:`6.0.7`
 :Instances: - Aligned Instance counts on the main Dashboard and on the Instances list page. Depending on status (stopped, etc.), these values could be out of alignment :superscript:`6.0.7`
