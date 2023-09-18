@@ -21,6 +21,7 @@ TYPE
   - **Manual:** Manually entered dataset, CSV or JSON
   - **Morpheus API:** Call to internal |morpheus| API to populate the Option List
   - **LDAP:** Searches and returns a list of Active Directory objects
+  - **Plugin:** Sourced by custom-coded ``DataSetProvider`` plugins. See `developer documentation <https://developer.morpheusdata.com/docs#dataset-providers>`_ for additional details
 VISIBILITY
   If the account currently signed in is not in the master tenant, visibility will automatically change to private
 
@@ -93,10 +94,10 @@ REQUEST SCRIPT
   An alternative method to building the POST request (SOURCE METHOD = POST), can be seen below.  As well, we can access other **Inputs** that are available on the same form, when provisioning an Instance or Catalog Item.
   As seen below, the other Inputs can be accessed using the ``data`` variable.  We can access another Input by calling its **Field Name**, which can be configured when editing the Input in |LibOptInp|.  This allows using
   data from other Inputs to be used in this Input's request.
-  
+
   In the example below the Input Field Name we'll access is ``myinputfieldname``, which we can get either the name (visible value for lists) or value from the item:
 
-  Name variable:  ``data.myinputfieldname``  
+  Name variable:  ``data.myinputfieldname``
   Value variable:  ``data.myinputfieldname_value``
 
   .. code-block:: javascript
@@ -440,7 +441,7 @@ TRANSLATION SCRIPT
 .. NOTE:: Option Lists are set on one or multiple ``Select List`` or ``Typeahead`` Inputs. The Input is then set on an Instance Type, Layout, Cluster Layout, and/or Operational Workflow for input during provisioning or execution.
 
 
-LDAP Query Variables 
+LDAP Query Variables
 --------------------
 
 The current user and dependant parameters are loaded into the query using the <%=phrase%> syntax.
@@ -448,7 +449,7 @@ The current user and dependant parameters are loaded into the query using the <%
 .. code-block:: bash
    :caption: LDAP Query Variables (Example <%=user.email%>)
 
-    user { 
+    user {
        accountId,
        attributes,
        displayName,
