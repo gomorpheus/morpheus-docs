@@ -86,7 +86,7 @@ No Service Version Changes from |previousMorphVer|
    * - MySQL
      - |mysqlbranch|
      - |mysqlver|
-     -
+     - |checkmark|
    * - MySQL (FIPS)
      - |mysqlbranch|
      - |mysqlverfips|
@@ -94,19 +94,19 @@ No Service Version Changes from |previousMorphVer|
    * - Elasticsearch
      - |esbranch|
      - |esver|
-     -
+     - |checkmark|
    * - RabbitMQ
      - |rmqbranch|
      - |rmqver|
-     -
+     - |checkmark|
    * - Tomcat
-     -
+     - 
      - |tcver|
      -
    * - Nginx
      -
      - |nginxver|
-     -
+     - |checkmark|
    * - OpenSSL
      -
      - |openssl|, |openssl_fips| (FIPS)
@@ -114,7 +114,7 @@ No Service Version Changes from |previousMorphVer|
    * - Java
      -
      - |java|
-     - |checkmark|
+     - 
    * - Java (macOS agent)
      -
      - |java-mac|
@@ -137,7 +137,7 @@ No Service Version Changes from |previousMorphVer|
      - Updated to |nodePackageVer|
    * - Morpheus Linux Agent
      - |linuxagentver|
-     - No change
+     - Updated to |linuxagentver|
    * - Morpheus Windows Agent
      - |winagentver|
      - No change
