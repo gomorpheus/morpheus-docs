@@ -34,6 +34,12 @@ DATASET
   .. NOTE:: JSON entries must be formatted like the following example: ``[{"name":"Test","value":1},{"name":"Testing","value":2}]``
 
 
+Plugin Option List Fields
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
+OPTION LIST
+  Select an Option List made available by a currently-integrated plugins
+
 REST Option List Fields
 ^^^^^^^^^^^^^^^^^^^^^^^
 
