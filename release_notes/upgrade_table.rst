@@ -14,6 +14,7 @@
    .tg .darkGrey{background-color:#343434;border-color:inherit;color:#ffffff;text-align:center;vertical-align:top}
    .tg .red{background-color:#cb0000;border-color:inherit;color:#ffffff;text-align:center;vertical-align:top}
    .tg .blue{background-color:#185a7d;border-color:inherit;color:#ffffff;text-align:center;vertical-align:top}
+   .tg .purple{background-color:#800080;border-color:inherit;color:#ffffff;text-align:center;vertical-align:top}
    </style>
    <table class="tg">
    <thead>
@@ -155,13 +156,13 @@
        <td class="green">6.0.4</td>
        <td class="green">6.0.5</td>
        <td class="green">6.0.6</td>
-       <td class="green">6.0.7</td>
+       <td class="purple">6.0.7</td>
        <td class="green">6.1.0</td>
        <td class="green">6.1.1</td>
        <td class="green">6.1.2</td>
        <td class="green">6.2.0</td>
        <td class="green">6.2.1</td>
-       <td class="green">6.2.2</td>
+       <td class="purple">6.2.2</td>
      </tr>
      <tr>
        <td class="darkGrey">6.0.3 →</td>
@@ -175,13 +176,13 @@
        <td class="green">6.0.4</td>
        <td class="green">6.0.5</td>
        <td class="green">6.0.6</td>
-       <td class="green">6.0.7</td>
+       <td class="purple">6.0.7</td>
        <td class="orange">6.1.0</td>
        <td class="green">6.1.1</td>
        <td class="green">6.1.2</td>
        <td class="green">6.2.0</td>
        <td class="green">6.2.1</td>
-       <td class="green">6.2.2</td>
+       <td class="purple">6.2.2</td>
      </tr>
      <tr>
        <td class="darkGrey">6.0.4 →</td>
@@ -195,13 +196,13 @@
        <td class="white"></td>
        <td class="green">6.0.5</td>
        <td class="green">6.0.6</td>
-       <td class="green">6.0.7</td>
+       <td class="purple">6.0.7</td>
        <td class="orange">6.1.0</td>
        <td class="orange">6.1.1</td>
        <td class="green">6.1.2</td>
        <td class="green">6.2.0</td>
        <td class="green">6.2.1</td>
-       <td class="green">6.2.2</td>
+       <td class="purple">6.2.2</td>
      </tr>
      <tr>
        <td class="darkGrey">6.0.5 →</td>
@@ -215,13 +216,13 @@
        <td class="lightGrey"></td>
        <td class="white"></td>
        <td class="green">6.0.6</td>
-       <td class="green">6.0.7</td>
+       <td class="purple">6.0.7</td>
        <td class="orange">6.1.0</td>
        <td class="orange">6.1.1</td>
        <td class="orange">6.1.2</td>
        <td class="green">6.2.0</td>
        <td class="green">6.2.1</td>
-       <td class="green">6.2.2</td>
+       <td class="purple">6.2.2</td>
      </tr>
      <tr>
        <td class="darkGrey">6.0.6 →</td>
@@ -235,13 +236,13 @@
        <td class="lightGrey"></td>
        <td class="lightGrey"></td>
        <td class="white"></td>
-       <td class="green">6.0.7</td>
+       <td class="purple">6.0.7</td>
        <td class="orange">6.1.0</td>
        <td class="orange">6.1.1</td>
        <td class="orange">6.1.2</td>
        <td class="orange">6.2.0</td>
        <td class="green">6.2.1</td>
-       <td class="green">6.2.2</td>
+       <td class="purple">6.2.2</td>
      </tr>
      <tr>
        <td class="darkGrey">6.0.7 →</td>
@@ -281,7 +282,7 @@
        <td class="green">6.1.2</td>
        <td class="green">6.2.0</td>
        <td class="green">6.2.1</td>
-       <td class="green">6.2.2</td>
+       <td class="purple">6.2.2</td>
      </tr>
      <tr>
        <td class="darkGrey">6.1.1 →</td>
@@ -301,7 +302,7 @@
        <td class="green">6.1.2</td>
        <td class="green">6.2.0</td>
        <td class="green">6.2.1</td>
-       <td class="green">6.2.2</td>
+       <td class="purple">6.2.2</td>
      </tr>
      <tr>
        <td class="darkGrey">6.1.2 →</td>
@@ -321,7 +322,7 @@
        <td class="white"></td>
        <td class="green">6.2.0</td>
        <td class="green">6.2.1</td>
-       <td class="green">6.2.2</td>
+       <td class="purple">6.2.2</td>
      </tr>
      <tr>
        <td class="darkGrey">6.2.0 →</td>
@@ -341,7 +342,7 @@
        <td class="lightGrey"></td>
        <td class="white"></td>
        <td class="green">6.2.1</td>
-       <td class="green">6.2.2</td>
+       <td class="purple">6.2.2</td>
      </tr>
      <tr>
        <td class="darkGrey">6.2.1 →</td>
@@ -361,10 +362,13 @@
        <td class="lightGrey"></td>
        <td class="lightGrey"></td>
        <td class="white"></td>
-       <td class="green">6.2.2</td>
+       <td class="purple">6.2.2</td>
      </tr>
      <tr>
        <td class="green" colspan="18">Rolling Upgrade Supported</td>
+     </tr>
+     <tr>
+       <td class="purple" colspan="18">Rolling upgrades for HA environments using embedded RabbitMQ and/or embedded Elasticsearch services are not supported</td>
      </tr>
      <tr>
        <td class="blue" colspan="18">Non-Rolling Upgrade Supported</td>
