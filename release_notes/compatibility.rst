@@ -9,10 +9,11 @@ When installing and upgrading to |morpheus| |morphver|, refer to the following t
 Breaking Changes
 ================
 
-- 6.1.1 contains database datatype mondifications on account_invoice and account_invoice_item that may cause long initial ui start up times while the modifications are ran in mysql for environments with over 100k invoice records when upgrading from any version other than 6.0.3
+- 6.2.2, 6.0.7 contain embedded MySQL v8 upgrade. BACKUP YOUR DATABASE PRIOR TO UPGRADE when using embedded MySQL (all-in-one appliances).
+- 6.1.1 contains database datatype mondifications on account_invoice and account_invoice_item that may cause long initial ui start up times while the modifications are ran in MySQL for environments with over 100k invoice records when upgrading from any version other than 6.0.3
 - 6.1.1 relocates the embedded plugin folder and remove the previous folder. For HA environments using shared storage, rolling upgrades from any version other than 6.0.3 are not advised as the embeeded plugins will not be found on non-upgraded nodes after one node is upgraded.
 - 6.1.1: NSX-V networking integration support is removed and no longer supported as of |morpheus| 6.1.1
-- 6.0.3 contains database datatype mondifications on account_invoice and account_invoice_item that may cause long initial ui start up times while the modifications are ran in mysql for environments with over 100k invoice records.
+- 6.0.3 contains database datatype mondifications on account_invoice and account_invoice_item that may cause long initial ui start up times while the modifications are ran in MySQL for environments with over 100k invoice records.
 - 6.0.3 relocates the embedded plugin folder and remove the previous folder. For HA environments using shared storage, rolling upgrades are not advised as the embeeded plugins will not be found on non-upgraded nodes after one node is upgraded.
 - 6.0.0: NSX-V support is deprecated though still supported as of |morpheus| 6.0.0. It will be removed and unsupported in 6.1.1 and higher.
 - 6.0.0+: In |morpheus| 6.0.0+, many third party integrations have been moved out of the core installer package and converted to |morpheus| plugins. As a result, during the upgrade process your appliance will need to be able to access share.morpheusdata.com, the online repository for all |morpheus| plugins. Where this is not possible, users may instead apply the supplemental installer package which is also available at |morpheus| Hub alongside the main installer package.
@@ -83,7 +84,7 @@ No Service Version Changes from |previousMorphVer|
    * - Plugin API
      - |pluginVer|
      -
-     - |checkmark|
+     - 
    * - Morpheus Worker
      - |workerVer|
      -
@@ -99,11 +100,11 @@ No Service Version Changes from |previousMorphVer|
    * - Elasticsearch
      - |esbranch|
      - |esver|
-     -
+     - |checkmark|
    * - RabbitMQ
      - |rmqbranch|
      - |rmqver|
-     -
+     - |checkmark|
    * - Tomcat
      -
      - |tcver|
@@ -111,7 +112,7 @@ No Service Version Changes from |previousMorphVer|
    * - Nginx
      -
      - |nginxver|
-     -
+     - |checkmark|
    * - OpenSSL
      -
      - |openssl|, |openssl_fips| (FIPS)
@@ -119,7 +120,7 @@ No Service Version Changes from |previousMorphVer|
    * - Java
      -
      - |java|
-     - |checkmark|
+     -
    * - Java (macOS agent)
      -
      - |java-mac|
@@ -142,7 +143,7 @@ No Service Version Changes from |previousMorphVer|
      - Updated to |nodePackageVer|
    * - Morpheus Linux Agent
      - |linuxagentver|
-     - No change
+     - Updated to |linuxagentver|
    * - Morpheus Windows Agent
      - |winagentver|
      - No change
