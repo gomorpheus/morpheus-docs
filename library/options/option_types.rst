@@ -65,6 +65,8 @@ HELP BLOCK
  Helpful text that will appear under your Input field to inform users about their selection
 REQUIRED
  Prevents User from proceeding without setting value
+REMOVE NO SELECTION
+ For Select List-type Inputs. When marked, the Input will default to the first item in the list rather than to an empty selection. This is especially useful when only one choice is anticipated to be in the list as it saves the user from manually making a default selection
 VERIFY PATTERN
  For Text and Text Area-type Inputs. If desired, enter a regex pattern string and user entries must match the string to be accepted
 
