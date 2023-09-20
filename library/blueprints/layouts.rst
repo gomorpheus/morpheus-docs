@@ -12,10 +12,13 @@ The default page for Layouts is the Layout list view. Select :guilabel:`+ ADD` t
 
 The following fields are displayed for each Layout:
 
+- **INSTANCE TYPE:** Select the Instance Type to associate with the Layout. This attribute is automatically set and not shown when creating the Layout from an Instance Type detail page
 - **NAME:** Links to the Layout detail page
 - **VERSION**
-- **INSTANCE TYPE:** Links to the associated Instance Type
+- **DISPLAY ORDER:** Determines the Layout display order in the provisioning wizard when adding an Instance of the associated Instance Type
 - **DESCRIPTION**
+
+.. NOTE:: The order of Layouts given when an Instance Type is being provisioned is in high-to-low order of the Layout Display Order property. Bear in mind this is reversed from how Service Plans are ordered, which is in low-to-high order based on the Display Order value.
 
 The Actions menu in each row reveals the following options:
 
@@ -23,7 +26,7 @@ The Actions menu in each row reveals the following options:
 - **Edit:** Edit the Layout
 - **Delete:** Delete the Layout
 
-.. note:: A Layout that is in use cannot be deleted.
+.. NOTE:: A Layout that is in use cannot be deleted.
 
 Available Filters:
 
