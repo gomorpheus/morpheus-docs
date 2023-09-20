@@ -89,7 +89,7 @@ InnoDB multi site cluster.
             DROP DATABASE IF EXISTS test;
             DELETE FROM mysql.db WHERE Db='test' OR Db='test\\_%';
             set persist sql_generate_invisible_primary_key=1;
-            ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY '${mysqlrootpass}';
+            ALTER USER 'root'@'localhost' IDENTIFIED WITH caching_sha2_password BY '${mysqlrootpass}';
             CREATE USER '${clusterAdminUser}'@'%' IDENTIFIED BY '${clusterAdminPass}';
             GRANT ALL PRIVILEGES ON *.* TO '${clusterAdminUser}'@'%' with grant option;
             FLUSH PRIVILEGES;
