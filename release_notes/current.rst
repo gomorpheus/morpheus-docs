@@ -38,6 +38,7 @@ Fixes
 :Hyper-V: - After migrating VMs to new Hyper-V hosts, |morpheus| now correctly syncs the new host details :superscript:`6.0.7`
            - |morpheus| will now discover and sync workloads from more than one Hyper-V host in the same Cloud :superscript:`6.0.7`
 :Instances: - Aligned Instance counts on the main Dashboard and on the Instances list page. Depending on status (stopped, etc.), these values could be out of alignment :superscript:`6.0.7`
+:Layouts: - Added Display Order property for Layouts. Layouts are listed in high-to-low order based on the Display Order in the Layouts dropdown of the provisioning wizard :superscript:`6.0.7`
 :Nutanix Prism Central: - PTR registration when provisioning using the Infoblox integration is now working properly :superscript:`6.0.7`
 :OpenStack: - OpenStack-type Clouds (OpenStack, Huawei, Open Telekom) now properly route traffic via proxy when an API PROXY value is configured on the Cloud :superscript:`6.0.7`
              - Provisioning to Openstack with a static IP for a cloud subnet that doesn't have DHCP enabled is working properly now :superscript:`6.0.7`

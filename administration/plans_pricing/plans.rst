@@ -34,7 +34,7 @@ Service Plan Configuration
 - **NAME:** The name of the Service Plan in |morpheus|
 - **ACTIVE:** Inactive Service Plans are not available for selection during provisioning or reconfigure. New discovered records cannot be associated with deactivated Plans when converting to managed resources. Any resources attached to a Plan will continue to be associated if the Plan is later deactivated
 - **CODE:** A unique identifier for use in |morpheus| API and CLI
-- **DISPLAY ORDER:** Configures the order in which plans are displayed relative to other plans associated with the same provision type
+- **DISPLAY ORDER:** Configures the order in which plans are displayed relative to other plans associated with the same provision type. Note that Plans will be displayed in low-to-high order based on the Display Order property. This is reversed from Layouts which are displayed in high-to-low order
 - **PROVISION TYPE:** Determines the resource Provision Type this Service Plan is available for when provisioning, reconfiguring and converting discovered resources to managed
 - **REGION CODE:** (Optional) Limits availability of the Service Plan to Clouds with the specified Region Code
 - **STORAGE:** The default storage size of the root volume (in MB or GB)
