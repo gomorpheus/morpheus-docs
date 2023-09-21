@@ -1,4 +1,4 @@
-MySQL InnoDB Cluster MultiSite Full Install 
+MultiSite Full Install 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 The purpose of this document is to provide to the end to end manual steps to prepare and configure an

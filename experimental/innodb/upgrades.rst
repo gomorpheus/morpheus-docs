@@ -18,10 +18,10 @@ MySQL Server Upgrade
 
     .. code-block:: bash
 
-        	mysqlsh
-            \c clusterAdmin@dba-1:3306
-            cluster = dba.getCluster()
-            cluster.status()
+        mysqlsh
+        \c clusterAdmin@dba-1:3306
+        cluster = dba.getCluster()
+        cluster.status()
 
 #. Upgrade one of the secondary servers from the status above.
 
@@ -31,7 +31,7 @@ MySQL Server Upgrade
 
             .. code-block:: bash
         
-             
+                apt-get install mysql-server
                         
         .. group-tab:: RHEL 8/9
 
@@ -50,6 +50,7 @@ MySQL Server Upgrade
 
             .. code-block:: bash
         
+                apt-get install mysql-server
              
                         
         .. group-tab:: RHEL 8/9
@@ -69,7 +70,7 @@ MySQL Server Upgrade
 
             .. code-block:: bash
         
-             
+                apt-get install mysql-server
                         
         .. group-tab:: RHEL 8/9
 
