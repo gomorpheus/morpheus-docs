@@ -41,3 +41,15 @@
 
 :Forms: - Added Text Array input type for Forms which allows the user to enter a list of values separated by a delimiter. Once entered, the values are parsed out and may be individually deleted prior to submitting the form
         - Added new ability to filter available Cloud types on Forms. Select a Cloud type from the LIMIT TO CLOUD TYPE dropdown or select FILTER FROM RESOURCE. The option to filter from resource reads the Cloud type from the Catalog Item Instance config
+
+6.2.0
+=====
+
+:Import/Export: - Configure code repositories (ex. integrated Github repositories) as import and export targets. Export |morpheus| items as code into repositories and import them into other |morpheus| appliances.
+:Workflows: - When running Workflows on-demand against an Instance, users can now select a specific phase of Tasks to be run if a Provisioning Workflow is selected
+
+6.2.1
+=====
+
+:Forms: - Additional quality of life features added for Forms
+:XaaS: - When Teardown-phase Tasks fail following an attempt to delete an XaaS Instance, the remaining Tasks are stopped which prevents the deletion from taking place. This allows users to correct the failing Tasks and ensure the object is deleted gracefully. Non-XaaS Instances already supported this.
