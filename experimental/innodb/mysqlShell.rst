@@ -36,6 +36,12 @@ Install MySQL Shell
 MySQL Shell Commands
 ^^^^^^^^^^^^^^^^^^^^
 
+Save History
+`````````````
+    .. code-block:: bash
+            
+        \option --persist history.autoSave=1 
+
 Get Status
 ``````````
     * Get Cluster Status
