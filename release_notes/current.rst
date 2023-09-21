@@ -19,7 +19,6 @@ Release Dates
 Fixes
 =====
 
-:API & CLI: - Calling |morpheus| API to GET all Catalog Items without parameters (to get all items) now works properly
 :Amazon: - Fixed an issue that caused long-running deployments of CloudFormation templates to fail if the token expired during provisioning :superscript:`6.0.7`
 :Azure: - Availability Options and Availability Set/Zone are now shown on the Instance detail page for Azure Instances :superscript:`6.0.7`
          - The volume and network charges are now being categorized properly for Azure clouds. Volume charges show up under the Volume type and the network charges are under the Server type as individual line items :superscript:`6.0.7`
