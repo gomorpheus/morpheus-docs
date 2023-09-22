@@ -70,4 +70,3 @@ Appliance & Agent Updates
                    - Bluecat updated v1.1.0
                    - phpIPAM updated to v1.1.0
                    - Rubrik updated to v1.0.6
-                   - Bluecat updated v1.1.0
