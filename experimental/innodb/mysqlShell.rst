@@ -23,7 +23,7 @@ Install MySQL Shell
 
             .. code-block:: bash
         
-                wget https://dev.mysql.com/get/Downloads/MySQL-Shell/mysql-shell_8.0.34-1ubuntu23.04_amd64.deb
+                wget https://dev.mysql.com/get/Downloads/MySQL-Shell/mysql-shell_8.0.34-1ubuntu22.04_amd64.deb
                 dpkg -i mysql-shell_8.0.34-1ubuntu22.04_amd64.deb
                         
         .. group-tab:: RHEL 8/9
@@ -45,28 +45,32 @@ Save History
 Get Status
 ``````````
     * Get Cluster Status
-        .. code-block:: bash
+        .. code-block:: js
+            :force:
             
             \c clusterAdmin@dbb-1:3306
             cluster = dba.getCluster()
             cluster.status()
     
     * Get Extended Cluster Status. (This will provide a more detailed return)
-        .. code-block:: bash
+        .. code-block:: js
+            :force:
             
             \c clusterAdmin@dbb-1:3306
             cluster = dba.getCluster()
             cluster.status({extended: 1})
     
     * Get Cluster Set Status.
-        .. code-block:: bash
+        .. code-block:: js
+            :force:
             
             \c clusterAdmin@dbb-1:3306
             clusterset = dba.getClusterSet()
             clusterset.status()
     
     * Get Extended Cluster Set Status. (This will provide a more detailed return)
-        .. code-block:: bash
+        .. code-block:: js
+            :force:
             
             \c clusterAdmin@dbb-1:3306
             clusterset = dba.getClusterSet()
@@ -77,7 +81,8 @@ Add/Remove Nodes
 ````````````````
 
     * Removing a Node from a Cluster  
-        .. code-block:: bash
+        .. code-block:: js
+            :force:
             
             \c clusterAdmin@dbb-1:3306
             cluster = dba.getCluster()
@@ -85,7 +90,8 @@ Add/Remove Nodes
             cluster.status()
 
     * Adding a Node to a Cluster 
-        .. code-block:: bash
+        .. code-block:: js
+            :force:
             
             \c clusterAdmin@dbb-1:3306
             cluster = dba.getCluster()
@@ -104,7 +110,8 @@ Planned Failover
 ````````````````
 
     * Failover to another Cluster Member at the same site.
-        .. code-block:: bash
+        .. code-block:: js
+            :force:
             
             \c clusterAdmin@dbd-1:3306
             cluster = dba.getCluster()
@@ -112,7 +119,8 @@ Planned Failover
             cluster.status()
 
     * Failover to another Site.
-        .. code-block:: bash
+        .. code-block:: js
+            :force:
            
             \c clusterAdmin@dbd-1:3306
             cs = dba.getClusterSet()
@@ -124,17 +132,22 @@ Unplanned Disaster Failover
 ```````````````````````````
 
     * Recover from all nodes down at a single site
-        .. code-block:: bash
+        .. code-block:: js
+            :force:
             
             mysqlsh
             \c clusterAdmin@dbd-1:3306
             dba.rebootClusterFromCompleteOutage()
     
-    * Emergency Failover when a site is down. **This should only be done as a last resort when the primary site cant be brought up** 
+    * Emergency Failover when a site is down. 
       This process will bring up the Cluster at site B. 
       You should take steps to ensure that no writes go to site A if/when it comes back up. This can be done
       by stopping the morpheus-ui and/or fencing the router traffic.
-        .. code-block:: bash
+
+        .. note:: This should only be done as a last resort when the primary site can't be brought up
+
+        .. code-block:: js
+            :force:
             
             mysqlsh
             \c clusterAdmin@dbd-1:3306
@@ -145,9 +158,10 @@ Unplanned Disaster Failover
 
     * Emergency Failover Recovery of down site. 
       Once Power is restored to Site A nodes, you can go through the repair process. 
-        .. code-block:: bash
+        .. code-block:: js
+            :force:
             
-            //Connect to site A node to repair cluster from all nodes down.
+            // Connect to site A node to repair cluster from all nodes down.
             mysqlsh 
             \c clusterAdmin@dbd-1:3306
             dba.rebootClusterFromCompleteOutage()
@@ -158,16 +172,17 @@ Router Config
 `````````````
  
     * Setting MySQL Router target Cluster. This will force the router to only connect to the cluster specified.
-        .. code-block:: bash
+        .. code-block:: js
+            :force:
             
             mysqlsh 
             \c clusterAdmin@dbd-1:3306
             clusterset = dba.getClusterSet()
-            #get the connected router information
+            // get the connected router information
             clusterset.routingOptions()
-            #Find the router you want to change.
+            // Find the router you want to change.
             clusterset.setRoutingOption('morphb.test.local::morphb', 'target_cluster', 'B')
-            #confirm the settings
+            // confirm the settings
             clusterset.routingOptions()
            
     

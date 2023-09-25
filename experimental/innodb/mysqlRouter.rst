@@ -1,5 +1,5 @@
 MySQL Router
-^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^
 
 Introduction
 ````````````
@@ -44,7 +44,7 @@ Configure MySQL Router
 
         You should get back a number of ports available to connect to.
         
-        .. code-block:: bash
+        .. code-block:: 
 
             ## MySQL Classic protocol
 
@@ -66,6 +66,6 @@ Configure MySQL Router
      
         .. code-block:: bash
 
-           sudo lsof -i -P -n | grep LISTEN|grep mysqlrout
+           sudo lsof -i -P -n | grep LISTEN | grep mysqlrout
 
     
