@@ -119,3 +119,21 @@ General Toubleshooting
 
             # All App Nodes (Example)
             ln -s /var/opt/morpheus/package-repos/yum/el/9 /var/opt/morpheus/package-repos/yum/el/9.1
+
+Sudoers Permission Issues
+``````````````````````````
+    **Task error on morpheus-app password**
+
+        .. image:: /images/support/troubleshooting/task-sudoer-permissions.png
+
+        * Confirm that /etc/sudoers has the include of either #includedir /etc/sudoers.d or @includedir /etc/sudoers.d
+        * Confirm that the directory /etc/sudoers.d has the file 80-morpheus-app
+        * Confirm 80-morpheus-app has morpheus-app ALL=(morpheus-local) NOPASSWD:ALL
+
+    **Task error tty error**
+        
+        .. image:: /images/support/troubleshooting/task-tty-error.png
+        
+        * Confirm /etc/sudoers or any includes dont have "Defaults  requiretty"
+        * If so it will need to be removed.
+
