@@ -1,7 +1,7 @@
 MultiSite Full Install 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^
 
-The purpose of this document is to provide to the end to end manual steps to prepare and configure an
+The purpose of this document is to provide end to end manual steps to prepare and configure an
 InnoDB multi site cluster.
 
 #. Disable AppArmor/SELinux.
@@ -99,11 +99,11 @@ InnoDB multi site cluster.
 
     * Check the global MySQL properties to confirm invisible primary key is on.     
         
-        .. code-block:: bash
+        .. code-block:: 
 
            mysql> SHOW GLOBAL VARIABLES LIKE 'sql_generate_invisible_primary_key';
 
-    * Update the MySQL config to listen on external address.    
+    * Update the MySQL config to listen on all external interfaces.
         
         .. tabs::
 
@@ -129,8 +129,7 @@ InnoDB multi site cluster.
                     # This is where the config file is to confirm or set manually.
                     vi /etc/my.cnf.d/mysql-server.cnf
                     
-                **add  bind-address  = 0.0.0.0**
-
+                **add bind-address  = 0.0.0.0**
 
         
     * Restart mysql service.    
@@ -150,6 +149,7 @@ InnoDB multi site cluster.
 
                     systemctl restart mysqld.service
             
+    .. note:: You need to make sure that all nodes can reach each other by short name.  You can also use IPs or FQDN, as long as they match how they are configured below.
         
 #. Install MySQL Shell. (This does not have to be installed on the DB nodes. In prod it would probably be installed on each Morpheus app node)
 
@@ -178,44 +178,44 @@ InnoDB multi site cluster.
 
     * Check if the DB nodes are ready for cluster configuration. (This should be run against all DB nodes)      
         
-        .. code-block:: bash
+        .. code-block:: js
 
            dba.checkInstanceConfiguration('clusterAdmin@dba-1:3306')
 
     * If the return shows required changed run the following command to set the changes. (This should be run against all DB nodes)   
         
-        .. code-block:: bash
+        .. code-block:: js
 
            dba.configureInstance('clusterAdmin@dba-1:3306')
 
     * Run the Configure Instance again to confirm they are all set with  no changes.
         
-        .. code-block:: bash
+        .. code-block:: js
 
            dba.configureInstance('clusterAdmin@dba-1:3306')
 
     * Connect to one of the DB nodes at the primary site.
         
-        .. code-block:: bash
+        .. code-block:: 
 
            \c clusterAdmin@dba-1:3306
 
     * Create the Primary Cluster. (In this example "A" will be the Cluster name)
         
-        .. code-block:: bash
+        .. code-block:: js
 
            cluster = dba.createCluster("A")
 
     * Add additional nodes to this cluster. (This should be the nodes at the same site) (Accept the default to Clone)
         
-        .. code-block:: bash
+        .. code-block:: js
 
            cluster.addInstance("dba-2:3306")
            cluster.addInstance("dba-3:3306")
 
     * Create the Cluster Set (This will be what Links the Primary Cluster built above with Replica Clusters. You can create multiple Replica Clusters in the Cluster Set.)
         
-        .. code-block:: bash
+        .. code-block:: js
 
            clusterset = cluster.createClusterSet("ClusterSet")
         
@@ -223,13 +223,13 @@ InnoDB multi site cluster.
     
     * Validate the Cluster Set is created.
         
-        .. code-block:: bash
+        .. code-block:: js
 
            clusterset.status()
     
     * Create Replica Cluster (This will be an additional Site) Original site was called “A” above we will set this one as “B”
         
-        .. code-block:: bash
+        .. code-block:: js
 
            clusterb = clusterset.createReplicaCluster("dbb-1:3306", "B")
 
@@ -237,14 +237,14 @@ InnoDB multi site cluster.
 
     * Add additional Nodes to the replica
         
-        .. code-block:: bash
+        .. code-block:: js
 
            clusterb.addInstance("dbb-2:3306")
            clusterb.addInstance("dbb-3:3306")
     
     * Validate Cluster Set
         
-        .. code-block:: bash
+        .. code-block:: js
 
            clusterset.status()
 

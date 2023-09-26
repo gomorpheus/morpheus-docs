@@ -9,7 +9,7 @@ with InnoDB Cluster.
 #. Edit morpheus.rb file and add the following lines. This will set MySQL to listen 
    on its external interface and set the connection to the mysl router using jdbc.
 
-    .. code-block:: bash
+    .. code-block:: 
 
         mysql['host'] = '0.0.0.0'
         mysql['mysql_url_overide'] = 'jdbc:mysql://127.0.0.1:6446/morpheus'
@@ -21,14 +21,14 @@ with InnoDB Cluster.
         morpheus-ctl reconfigure
 
 
-#. Stop morpheus-ui. Now that MySQL is listining on the external address we can cluster the DB.
+#. Stop morpheus-ui. Now that MySQL is listening on the external address we can cluster the DB.
     
     .. code-block:: bash
         
         morpheus-ctl stop morpheus-ui
 
 #. Modify the Chef Recipe to remove MySQL tasks that use localhost. If this is not removed then
-   on reconfgiure it will error out.
+   on reconfigure it will error out.
 
     .. code-block:: bash
         
@@ -102,19 +102,19 @@ with InnoDB Cluster.
 
     * Check if the DB nodes are ready for cluster configuration. (This should be run against all DB nodes)      
         
-        .. code-block:: bash
+        .. code-block:: js
 
            dba.checkInstanceConfiguration('clusterAdmin@dba-1:3306')
 
     * If the return shows required changed run the following command to set the changes. (This should be run against all DB nodes)   
         
-        .. code-block:: bash
+        .. code-block:: js
 
            dba.configureInstance('clusterAdmin@dba-1:3306')
 
-    * Run the Configure Instance again to confirm they are all set with  no changes.
+    * Run the Configure Instance again to confirm they are all set with no changes.
         
-        .. code-block:: bash
+        .. code-block:: js
 
            dba.configureInstance('clusterAdmin@dba-1:3306')
 
@@ -126,13 +126,13 @@ with InnoDB Cluster.
 
     * Create the Primary Cluster. (In this example "A" will be the Cluster name)
         
-        .. code-block:: bash
+        .. code-block:: js
 
            cluster = dba.createCluster("A")
 
     * Add additional nodes to this cluster. (This should be the nodes at the same site) (Accept the default to Clone)
         
-        .. code-block:: bash
+        .. code-block:: js
 
            cluster.addInstance("dba-2:3306")
            cluster.addInstance("dba-3:3306")
@@ -166,7 +166,7 @@ with InnoDB Cluster.
 
         You should get back a number of ports available to connect to.
         
-        .. code-block:: bash
+        .. code-block:: 
 
             ## MySQL Classic protocol
 
@@ -188,7 +188,7 @@ with InnoDB Cluster.
      
         .. code-block:: bash
 
-           sudo lsof -i -P -n | grep LISTEN|grep mysqlrout
+           sudo lsof -i -P -n | grep LISTEN | grep mysqlrout
 
 #. Restart Morphues UI on the first node and confirm it come up without issue.
  
