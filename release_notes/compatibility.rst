@@ -126,7 +126,7 @@ No Service Version Changes from |previousMorphVer|
      - |java-mac|
      -
 
-   .. IMPORTANT:: Elasticsearch 8.10.1 was released within days of |morpheus| |morphver|. It's expected to be compatible but has not been tested. Customers managing their own Elasticsearch clusters should be aware that internal testing of the |morpheus| |morphver| was conducted on Elasticsearch 8.9.2 and we cannot recommend deploying a higher version at this time.
+.. IMPORTANT:: Elasticsearch 8.10.1 was released within days of |morpheus| |morphver|. It's expected to be compatible but has not been tested. Customers managing their own Elasticsearch clusters should be aware that internal testing of the |morpheus| |morphver| was conducted on Elasticsearch 8.9.2 and we cannot recommend deploying a higher version at this time.
 
 |
 
