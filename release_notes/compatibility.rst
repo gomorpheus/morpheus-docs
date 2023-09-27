@@ -59,16 +59,6 @@ Breaking Changes
 
 .. include:: /getting_started/requirements/applianceOsTable.rst
 
-Services
-========
-
-..
-  |morphver| Service Version Changes
-  ----------------------------------
-
-No Service Version Changes from |previousMorphVer|
-
-  |
 
 |morphver| Service Versions & Compatibility
 -------------------------------------------
