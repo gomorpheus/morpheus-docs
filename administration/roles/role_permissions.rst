@@ -1043,8 +1043,8 @@ Role Mappings
         - This permission is recommended for those responsible to schedule the exectution of Tasks or Workflows.
         -
       * - Provisioning: Remote Console
-        - None, Provisioned, Full
-        - Determines access to the console on a Host detail page (Infrastructure > Hosts > selected Host, VM, or Bare Metal resource > Console tab). The "Provisioned" permission gives access to the console only for resources the logged in user has provisioned.
+        - None, User, Full
+        - Determines access to the console on a Host detail page (Infrastructure > Hosts > selected Host, VM, or Bare Metal resource > Console tab). The "User" permission gives access to the console only for resources the logged in user owns.
         - Remote console access for Instances, hosts, virtual machines, and bare metal.
         - This permission is recommended for those who need console access for provisioned Cloud resources.
         -
