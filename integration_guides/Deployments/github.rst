@@ -69,4 +69,4 @@ Viewing an Integrated Github Account
 
 When authentication is successful, click into the new Github integration from the list of available integrations. The Organizations tab will list each organization the Github account is associated with. The Repositories tab lists all public and private repositories which are associated with the account. We can also click in to each repository to view its files and folders, as well as create specific types of automation or Spec Templates from the files directly in this view.
 
-.. image:: /images/integrations_guides/github/github.png
+.. image:: /images/integration_guides/github/github.png
