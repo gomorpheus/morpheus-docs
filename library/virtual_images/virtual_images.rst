@@ -177,16 +177,12 @@ To Add Virtual Image:
 VMware - VM Templates Copies
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-In a VMware environemnt, you may have a single VM template that you use across different vCenters.  Uploading an image to Morpheus, mentioned in the **Add Virtual Image** section, is one method to solve this.  Alternatively, 
-an organization may decide to create a VM template in one vCenter and then transfer it to other vCenters, which then could be sync'd into Morpheus.  If all of the vCenters are added as clouds into Morpheus and the templates 
-are named the same in each vCenter, they will be aggregated under a single virtual image in Morpheus.  This means that as you deploy to the various vCenter clouds in Morpheus, using a this virtual image, it will choose the 
-correct VM template to use based on the cloud deployed to.
+In a VMware environment, you may have a single VM template that you use across different vCenters. Uploading an image to |morpheus|, mentioned in the Add Virtual Image section, is one method to solve this. Alternatively, an organization may decide to create a VM template in one vCenter and then transfer it to other vCenters, which then could be sync’d into |morpheus|.
 
-This eliminates the need for creating multiple node types for each virtual image, if the templates were named differently in each vCenter.  This can reduce the overhead of maintaing multiple node types and reduces user selections. 
-As well, this can reduce the cloning time of VMs by avoiding network transfers of images between geographic locations, ensuring the closest VM template is selected.
+If all the vCenters are added as Clouds into |morpheus| and the templates are named the same in each vCenter, they will be aggregated under a single virtual image in |morpheus|. This means that as you deploy to the various vCenter Clouds in |morpheus| using this virtual image, it will choose the correct VM template to use based on the Cloud deployed to.
 
-|morpheus| supports VMware Content Libraries to store VM templates and will be sync'd into |morpheus|, the same as a template in a folder.  As well, the Content Library can be used to house the same same template in multiple libraries.
-If named the same, these templates will be aggregated under a single virtual image.  If the Content Library is stored on a datastore that the target host/cluster has access to, it will use that library first, to reduce the cloning time.
-If the Content Library is not stored to a datastore accessible by the cluster/host, a copy of the VM template will be performed to the target host/cluster instead.
+This eliminates the need for creating multiple Node Types for each virtual image if the templates were named differently in each vCenter. This can reduce the overhead of maintaining multiple Node Types and reduces user selections. As well, this can reduce the cloning time of VMs by avoiding network transfers of images between geographic locations, ensuring the closest VM template is selected.
+
+|morpheus| supports VMware Content Libraries storing VM templates and syncing into |morpheus|, the same as a template in a folder. Additionally, the Content Library can be used to house the same template in multiple libraries. If they have the same name, these templates will be aggregated under a single virtual image. If the Content Library is stored on a datastore that the target host/cluster has access to, it will use that library first, to reduce the cloning time. If the Content Library is not stored in a datastore accessible by the cluster/host, a copy of the VM template will be performed to the target host/cluster instead.
 
 .. NOTE:: VM templates are a **Data Center** level object.  The same process above applies to a single VMware cloud with multiple logical data centers.  It will not apply to clusters, as a template is not associated with a cluster, only when it is converted to a VM.
