@@ -301,3 +301,9 @@ Scripted Install Steps
        
        # Restart MySQL service if it's active and enabled (check for both mysql and mysqld)
        start_mysql_service
+
+#. save and set the file to executable
+
+    .. code-block:: bash
+
+        chmod +x install.sh
