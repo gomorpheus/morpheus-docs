@@ -71,18 +71,6 @@ Scripted Install Steps
          return 0  # Versions are equal (fallback)
        }
        
-       # Function to check if a service is active and enabled
-       #is_service_active_enabled() {
-       #  local service_name="$1"
-       
-       #  if command -v systemctl &>/dev/null; then
-       #    systemctl is-active --quiet "$service_name" && systemctl is-enabled --quiet "$service_name"
-       #  else
-       #    echo "Systemctl not found. You may need to check the service status manually."
-       #    return 1
-       #  fi
-       #}
-       
        # Function to start MySQL service and enable it on boot if it exists
        start_mysql_service() {
          local mysql_service="mysql"
@@ -122,19 +110,6 @@ Scripted Install Steps
        
          echo "$available_version"
        }
-       
-       # Function to check if MySQL service is running
-       #is_mysql_service_running() {
-       #  if command -v systemctl &>/dev/null; then
-       #    if systemctl list-units --all | grep -q "mysql.service" || systemctl list-units --all | grep -q "mysqld.service"; then
-       #      echo "MySQL service is running."
-       #    else
-       #      echo "MySQL service is not running. You may need to start it manually."
-       #    fi
-       #  else
-       #    echo "Systemctl not found. You may need to check the MySQL service status manually."
-       #  fi
-       #}
        
        add_firewall_rules() {
          # Check if firewalld is installed and running
