@@ -34,6 +34,7 @@ Fixes
 :Hosts: - Fixed hostname generation for Windows nodes added to Instances with longer (15+ char) hostnames :superscript:`6.0.7`
          - |morpheus| will now set the display name of an Instance to its name value when converting a discovered VM to managed :superscript:`6.0.7`
 :Inputs: - Added "REMOVE NO SELECTION" attribute for Select List-based Inputs. This defaults the Input to the first selection in the list rather than to an empty selection
+         - Child Inputs (those configured to be dependent on another Input) attached to Catalog Items will now reload again when the parent Input value is re-set. Previously they would only load the first time the parent Input was set
 :Hyper-V: - After migrating VMs to new Hyper-V hosts, |morpheus| now correctly syncs the new host details :superscript:`6.0.7`
            - |morpheus| will now discover and sync workloads from more than one Hyper-V host in the same Cloud :superscript:`6.0.7`
 :Instances: - Aligned Instance counts on the main Dashboard and on the Instances list page. Depending on status (stopped, etc.), these values could be out of alignment :superscript:`6.0.7`
