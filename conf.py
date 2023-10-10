@@ -9,14 +9,14 @@ latex_documents = [
 
 rst_prolog = """
 
-.. |releasedate| replace:: Sep 18 2023
+.. |releasedate| replace:: Oct 10 2023
 .. |releasetype| replace:: LTS
 .. |morphbranch| replace:: v6.0
-.. |morphver| replace:: v6.0.7
+.. |morphver| replace:: v6.0.8
 .. |minRollingUpgradeVer| replace:: v6.0.2
 .. |nonRollingUpgradeVer| replace:: v6.0.1
 .. |minUpgradeVer| replace:: v5.2.0
-.. |previousMorphVer| replace:: v6.0.6
+.. |previousMorphVer| replace:: v6.0.7
 .. |pluginVer| replace:: 0.14.5
 .. |workerVer| replace:: 5.4.8
 .. |rmqbranch| replace:: v3.5-3.12
@@ -74,6 +74,7 @@ rst_prolog = """
 .. |LibOpt| replace:: Library > Options
 .. |LibOptInp| replace:: Library > Options > Inputs
 .. |LibOptOpt| replace:: Library > Options > Option Lists
+.. |LibOptFor| replace:: Library > Options > Forms
 .. |LibTem| replace:: Library > Templates
 .. |LibTemSpe| replace:: Library > Templates > Spec Templates
 .. |LibTemFil| replace:: Library > Templates > File Templates
