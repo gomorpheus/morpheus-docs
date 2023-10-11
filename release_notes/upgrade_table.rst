@@ -20,7 +20,7 @@
    <thead>
      <tr>
        <th class="darkGrey">From Version</th>
-       <th class="darkGrey" colspan="18">To Version</th>
+       <th class="darkGrey" colspan="19">To Version</th>
      </tr>
    </thead>
      <tbody>
@@ -44,6 +44,7 @@
        <td class="blue">6.2.0</td>
        <td class="blue">6.2.1</td>
        <td class="blue">6.2.2</td>
+       <td class="red">6.2.3</td>
      </tr>
      <tr>
        <td class="darkGrey">5.5.1 →</td>
@@ -65,6 +66,7 @@
        <td class="blue">6.2.0</td>
        <td class="blue">6.2.1</td>
        <td class="blue">6.2.2</td>
+       <td class="red">6.2.3</td>
      </tr>
      <tr>
        <td class="darkGrey">5.5.2 →</td>
@@ -86,6 +88,7 @@
        <td class="blue">6.2.0</td>
        <td class="blue">6.2.1</td>
        <td class="blue">6.2.2</td>
+       <td class="red">6.2.3</td>
      </tr>
      <tr>
        <td class="darkGrey">5.5.3 →</td>
@@ -107,6 +110,7 @@
        <td class="blue">6.2.0</td>
        <td class="blue">6.2.1</td>
        <td class="blue">6.2.2</td>
+       <td class="red">6.2.3</td>
      </tr>
      <tr>
        <td class="darkGrey">6.0.0 →</td>
@@ -128,6 +132,7 @@
        <td class="blue">6.2.0</td>
        <td class="blue">6.2.1</td>
        <td class="blue">6.2.2</td>
+       <td class="blue">6.2.3</td>
      </tr>
      <tr>
        <td class="darkGrey">6.0.1 →</td>
@@ -149,6 +154,7 @@
        <td class="blue">6.2.0</td>
        <td class="blue">6.2.1</td>
        <td class="blue">6.2.2</td>
+       <td class="blue">6.2.3</td>
      </tr>
      <tr>
        <td class="darkGrey">6.0.2 →</td>
@@ -170,6 +176,7 @@
        <td class="green">6.2.0</td>
        <td class="green">6.2.1</td>
        <td class="purple">6.2.2</td>
+       <td class="purple">6.2.3</td>
      </tr>
      <tr>
        <td class="darkGrey">6.0.3 →</td>
@@ -191,6 +198,7 @@
        <td class="green">6.2.0</td>
        <td class="green">6.2.1</td>
        <td class="purple">6.2.2</td>
+       <td class="purple">6.2.3</td>
      </tr>
      <tr>
        <td class="darkGrey">6.0.4 →</td>
@@ -212,6 +220,7 @@
        <td class="green">6.2.0</td>
        <td class="green">6.2.1</td>
        <td class="purple">6.2.2</td>
+       <td class="purple">6.2.3</td>
      </tr>
      <tr>
        <td class="darkGrey">6.0.5 →</td>
@@ -233,6 +242,7 @@
        <td class="green">6.2.0</td>
        <td class="green">6.2.1</td>
        <td class="purple">6.2.2</td>
+       <td class="purple">6.2.3</td>
      </tr>
      <tr>
        <td class="darkGrey">6.0.6 →</td>
@@ -254,6 +264,7 @@
        <td class="orange">6.2.0</td>
        <td class="green">6.2.1</td>
        <td class="purple">6.2.2</td>
+       <td class="purple">6.2.3</td>
      </tr>
      <tr>
        <td class="darkGrey">6.0.7 →</td>
@@ -274,7 +285,8 @@
        <td class="orange">6.1.2</td>
        <td class="orange">6.2.0</td>
        <td class="green">6.2.1</td>
-       <td class="green">6.2.2</td>
+       <td class="purple">6.2.2</td>
+       <td class="purple">6.2.3</td>
      </tr>
      <tr>
        <td class="darkGrey">6.1.0 →</td>
@@ -296,6 +308,7 @@
        <td class="green">6.2.0</td>
        <td class="green">6.2.1</td>
        <td class="purple">6.2.2</td>
+       <td class="purple">6.2.3</td>
      </tr>
      <tr>
        <td class="darkGrey">6.1.1 →</td>
@@ -317,6 +330,7 @@
        <td class="green">6.2.0</td>
        <td class="green">6.2.1</td>
        <td class="purple">6.2.2</td>
+       <td class="purple">6.2.3</td>
      </tr>
      <tr>
        <td class="darkGrey">6.1.2 →</td>
@@ -338,6 +352,7 @@
        <td class="green">6.2.0</td>
        <td class="green">6.2.1</td>
        <td class="purple">6.2.2</td>
+       <td class="purple">6.2.3</td>
      </tr>
      <tr>
        <td class="darkGrey">6.2.0 →</td>
@@ -359,6 +374,7 @@
        <td class="white"></td>
        <td class="green">6.2.1</td>
        <td class="purple">6.2.2</td>
+       <td class="purple">6.2.3</td>
      </tr>
      <tr>
        <td class="darkGrey">6.2.1 →</td>
@@ -380,6 +396,7 @@
        <td class="lightGrey"></td>
        <td class="white"></td>
        <td class="purple">6.2.2</td>
+       <td class="purple">6.2.3</td>
      </tr>
      <tr>
        <td class="darkGrey">6.2.2 →</td>
@@ -401,25 +418,25 @@
        <td class="lightGrey"></td>
        <td class="lightGrey"></td>
        <td class="white"></td>
-       <td class="purple">6.2.3</td>
+       <td class="green">6.2.3</td>
      </tr>
      <tr>
-       <td class="green" colspan="19">Rolling Upgrade Supported</td>
+       <td class="green" colspan="20">Rolling Upgrade Supported</td>
      </tr>
      <tr>
-       <td class="purple" colspan="19">Rolling upgrades for HA environments using embedded RabbitMQ and/or embedded Elasticsearch services are not supported</td>
+       <td class="purple" colspan="20">Rolling upgrades for HA environments using embedded RabbitMQ and/or embedded Elasticsearch services are not supported</td>
      </tr>
      <tr>
-       <td class="blue" colspan="19">Non-Rolling Upgrade Supported</td>
+       <td class="blue" colspan="20">Non-Rolling Upgrade Supported</td>
      </tr>
      <tr>
-       <td class="orange" colspan="19">Upgrade Not Recommended*</td>
+       <td class="orange" colspan="20">Upgrade Not Recommended*</td>
      </tr>
      <tr>
-       <td class="red" colspan="19">Upgrade Not Supported</td>
+       <td class="red" colspan="20">Upgrade Not Supported</td>
      </tr>
      <tr>
-       <td class="lightGrey" colspan="19">Downgrade Not Supported</td>
+       <td class="lightGrey" colspan="20">Downgrade Not Supported</td>
      </tr>
    </tbody>
   </table>
