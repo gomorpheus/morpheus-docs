@@ -39,7 +39,7 @@ Configure MySQL Router
      
         .. code-block:: bash
 
-           mysqlrouter --bootstrap clusterAdmin@adb-5:3306 --account routeruser --user=mysqlrouter --name=morpha
+           mysqlrouter --bootstrap clusterAdmin@adb-5:3306 --account routeruser --user=mysqlrouter --disable-rest
            systemctl restart mysqlrouter
 
         You should get back a number of ports available to connect to.
