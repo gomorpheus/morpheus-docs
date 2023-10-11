@@ -19,7 +19,7 @@ Scripted Install Steps
        clusterAdminUser="clusterAdmin"
        clusterAdminPass="P@ssw0rd!"
        mySqlVersion="8.0.32"  # Minimum MySQL Version that will be installed
-       buffer_size="$(free -k | awk '/^Mem:/{print int($2 * 0.8 / 1024 / 1024)}')"
+       buffer_size="$(free -k | awk '/^Mem:/{print int($2 * 0.7 / 1024 / 1024)}')"
        
        # Function to check if a line exists in the file
        line_exists() {
