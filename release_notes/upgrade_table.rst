@@ -1,3 +1,9 @@
+.. .. important::
+
+- 5.2.x to 5.5.x Appliances require upgrade to 6.0.0 - 6.0.6 before upgrading to 6.0.7+, and 6.0.0 - 6.0.6 or 6.1.0 - 6.2.1 before upgrading to 6.2.2+
+
+- 4.2.0 to 5.0.0 Appliances require upgrade to 5.2.x or 5.3.x prior to upgrading to 5.4.x+
+
 .. raw:: html
 
    <div style="overflow-x:scroll;">
@@ -36,13 +42,13 @@
        <td class="blue">6.0.4</td>
        <td class="blue">6.0.5</td>
        <td class="blue">6.0.6</td>
-       <td class="blue">6.0.7</td>
+       <td class="red">6.0.7</td>
        <td class="blue">6.1.0</td>
        <td class="blue">6.1.1</td>
        <td class="blue">6.1.2</td>
        <td class="blue">6.2.0</td>
        <td class="blue">6.2.1</td>
-       <td class="blue">6.2.2</td>
+       <td class="red">6.2.2</td>
      </tr>
      <tr>
        <td class="darkGrey">5.5.1 →</td>
@@ -56,13 +62,13 @@
        <td class="blue">6.0.4</td>
        <td class="blue">6.0.5</td>
        <td class="blue">6.0.6</td>
-       <td class="blue">6.0.7</td>
+       <td class="red">6.0.7</td>
        <td class="blue">6.1.0</td>
        <td class="blue">6.1.1</td>
        <td class="blue">6.1.2</td>
        <td class="blue">6.2.0</td>
        <td class="blue">6.2.1</td>
-       <td class="blue">6.2.2</td>
+       <td class="red">6.2.2</td>
      </tr>
      <tr>
        <td class="darkGrey">5.5.2 →</td>
@@ -76,13 +82,13 @@
        <td class="blue">6.0.4</td>
        <td class="blue">6.0.5</td>
        <td class="blue">6.0.6</td>
-       <td class="blue">6.0.7</td>
+       <td class="red">6.0.7</td>
        <td class="blue">6.1.0</td>
        <td class="blue">6.1.1</td>
        <td class="blue">6.1.2</td>
        <td class="blue">6.2.0</td>
        <td class="blue">6.2.1</td>
-       <td class="blue">6.2.2</td>
+       <td class="red">6.2.2</td>
      </tr>
      <tr>
        <td class="darkGrey">5.5.3 →</td>
@@ -96,13 +102,13 @@
        <td class="blue">6.0.4</td>
        <td class="blue">6.0.5</td>
        <td class="blue">6.0.6</td>
-       <td class="blue">6.0.7</td>
+       <td class="red">6.0.7</td>
        <td class="blue">6.1.0</td>
        <td class="blue">6.1.1</td>
        <td class="blue">6.1.2</td>
        <td class="blue">6.2.0</td>
        <td class="blue">6.2.1</td>
-       <td class="blue">6.2.2</td>
+       <td class="red">6.2.2</td>
      </tr>
      <tr>
        <td class="darkGrey">6.0.0 →</td>
@@ -388,9 +394,9 @@
 
 \* Some Features and Fixes in the ``From`` version may not be included in the ``To`` version due to ``From`` version being released after the ``To`` version.
 
-.. .. important::
 
-- 4.2.0 to 5.0.0 Appliances require upgrade to 5.2.x or 5.3.x prior to upgrading to 5.4.x+
+
+
 
 
 |
