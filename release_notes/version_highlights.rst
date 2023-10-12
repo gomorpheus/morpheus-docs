@@ -53,3 +53,10 @@
 
 :Forms: - Additional quality of life features added for Forms
 :XaaS: - When Teardown-phase Tasks fail following an attempt to delete an XaaS Instance, the remaining Tasks are stopped which prevents the deletion from taking place. This allows users to correct the failing Tasks and ensure the object is deleted gracefully. Non-XaaS Instances already supported this.
+
+6.2.2
+=====
+
+:Catalog: - Added support for saving Catalog items without first passing a check for valid JSON in the config
+:Inputs: - Added “REMOVE NO SELECTION” attribute for Select List-based Inputs. This defaults the Input to the first selection in the list rather than to an empty selection
+:Layouts: - Added Display Order property for Layouts. Layouts are listed in high-to-low order based on the Display Order in the Layouts dropdown of the provisioning wizard
