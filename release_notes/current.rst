@@ -60,6 +60,5 @@ Embedded Plugins
 Appliance & Agent Updates
 =========================
 
-:Node Package: |morpheus| Node and VM Node packages updated to v3.2.18 with updated repo GPG keys. 
-
- 
+:Installer: - The entry ``skip-log-bin`` is now being written to the embedded MySQL 8 bin log file at ``/opt/morpheus/embedded/mysql/my.cnf``. This results in logging being turned off by default in MySQL 8 on the appliance
+:Node Package: |morpheus| Node and VM Node packages updated to v3.2.18 with updated repo GPG keys.
