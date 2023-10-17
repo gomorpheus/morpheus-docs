@@ -3,7 +3,7 @@ import datetime
 master_doc = 'index'
 
 latex_documents = [
-    (master_doc, 'morpheus_6.0.7-1.tex', u'Morpheus Documentation',
+    (master_doc, 'morpheus_6.0.8-1.tex', u'Morpheus Documentation',
      u'Morpheus', 'manual'),
 ]
 
