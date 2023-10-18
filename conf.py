@@ -28,7 +28,7 @@ rst_prolog = """
 .. |esver| replace:: v8.9.0
 .. |tcver| replace:: v9.0.80
 .. |nginxver| replace:: v1.25.1
-.. |nodePackageVer| replace:: 3.2.17
+.. |nodePackageVer| replace:: 3.2.18
 .. |linuxagentver| replace:: v2.4.2
 .. |macagentver| replace:: v2.4.1
 .. |winagentver| replace:: v2.4.0
