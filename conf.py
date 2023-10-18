@@ -26,7 +26,7 @@ rst_prolog = """
 .. |mysqlverfips| replace:: v8.0.34
 .. |esbranch| replace:: v8.9+
 .. |esver| replace:: v8.9.0
-.. |tcver| replace:: v9.0.80
+.. |tcver| replace:: v9.0.81
 .. |nginxver| replace:: v1.25.1
 .. |nodePackageVer| replace:: 3.2.18
 .. |linuxagentver| replace:: v2.4.2

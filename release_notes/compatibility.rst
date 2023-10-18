@@ -79,7 +79,7 @@ No Service Version Changes from |previousMorphVer|
    * - Plugin API
      - |pluginVer|
      -
-     -
+     - 
    * - Morpheus Worker
      - |workerVer|
      -
@@ -87,27 +87,27 @@ No Service Version Changes from |previousMorphVer|
    * - MySQL
      - |mysqlbranch|
      - |mysqlver|
-     - |checkmark|
+     - 
    * - MySQL (FIPS)
      - |mysqlbranch|
      - |mysqlverfips|
-     - |checkmark|
+     -
    * - Elasticsearch
      - |esbranch|
      - |esver|
-     - |checkmark|
+     -
    * - RabbitMQ
      - |rmqbranch|
      - |rmqver|
-     - |checkmark|
+     -
    * - Tomcat
      - 
      - |tcver|
-     -
+     - |checkmark|
    * - Nginx
      -
      - |nginxver|
-     - |checkmark|
+     -
    * - OpenSSL
      -
      - |openssl|, |openssl_fips| (FIPS)
@@ -137,7 +137,7 @@ No Service Version Changes from |previousMorphVer|
      - |nodePackageVer|
      - Updated to |nodePackageVer|
    * - Morpheus Linux Agent
-     - |linuxagentver|
+     - No change
      - Updated to |linuxagentver|
    * - Morpheus Windows Agent
      - |winagentver|

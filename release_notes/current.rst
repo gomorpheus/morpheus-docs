@@ -54,11 +54,12 @@ Embedded Plugins
 
 :Infoblox: infobox-plugin updated to v1.2.1
 :Microsoft DNS: msdns-plugin updated to v2.1.1
-:Solarwinds: solarwinds-plugin updated to v1.0.2
 :PowerDNS: powerdns-plugin updated to v1.0.3
+:Solarwinds: solarwinds-plugin updated to v1.0.2
 
 Appliance & Agent Updates
 =========================
 
 :Installer: The entry ``skip-log-bin`` is now being written to the embedded MySQL 8 bin log file at ``/opt/morpheus/embedded/mysql/my.cnf``. This results in logging being turned off by default in MySQL 8 on the appliance
 :Node Package: |morpheus| Node and VM Node packages updated to v3.2.18 with updated repo GPG keys.
+:Tomcat: Embedded Tomcat updated to |tcver|
