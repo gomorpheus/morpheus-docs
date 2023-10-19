@@ -14,7 +14,7 @@ Scripted Install Steps
      .. toggle-header::
             :header: **Expand for Code**
             
-            .. literalinclude:: ./scripts/mysqlinstall.rst
+            .. include:: ./scripts/mysqlinstall.rst
 
   * save and set the file to executable
 
