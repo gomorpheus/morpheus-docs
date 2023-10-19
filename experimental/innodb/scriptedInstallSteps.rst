@@ -23,5 +23,5 @@ Scripted Install Steps
           chmod +x install.sh
 
 #. Install MySQL Router
-      .. include:: ./scripts/mysqlRouter.rst
+      .. include:: ./mysqlRouter.rst
         :start-after: install-section
