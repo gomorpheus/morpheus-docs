@@ -12,7 +12,7 @@ Scripted Install Steps
 
   * Add the following code to the file
      .. toggle-header::
-            :header: **Click to expand**
+            :header: **Expand for Code**
             
             .. code-block:: bash
 
