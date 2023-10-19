@@ -1,8 +1,8 @@
 Scripted Install Steps
 ======================
 
-MySQL
------
+Install MySQL
+-------------
 
 Run the following script on each DB node to install MySQL and configure to best practice.
   
@@ -29,4 +29,12 @@ Install MySQL Router
 --------------------
 
       .. include:: ./mysqlRouter.rst
-        :start-after: Install-Section
+        :start-after: Install-Section-Start
+        :end-before: Install-Section-Stop
+
+Configure MySQL Router
+--------------------
+      
+      .. include:: ./mysqlRouter.rst
+        :start-after: Config-Section-Start
+        :end-before: Config-Section-Stop
