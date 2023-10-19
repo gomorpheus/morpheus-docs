@@ -24,4 +24,4 @@ Scripted Install Steps
 
 #. Install MySQL Router
       .. include:: ./mysqlRouter.rst
-        :start-after: install-section
+        :start-after: Install-Section

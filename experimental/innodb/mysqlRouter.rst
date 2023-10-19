@@ -14,7 +14,7 @@ Official Documentation: https://dev.mysql.com/doc/mysql-router/8.0/en/
 
 The Default location of a bootstrapped mysqlrouter config file is: /etc/mysqlrouter/mysqlrouter.conf
 
-.. Install-section
+.. Install-Section
 
 Install MySQL Router
 ````````````````````
