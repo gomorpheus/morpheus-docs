@@ -12,7 +12,7 @@ Scripted Install Steps
 
   * Add the following code to the file
      .. toggle-header::
-            :header: **Click to expand**
+            :header: **Expand for Code**
 
             .. include:: ./scripts/mysqlinstall.rst
 
@@ -21,3 +21,7 @@ Scripted Install Steps
       .. code-block:: bash
 
           chmod +x install.sh
+
+#. Install MySQL Router
+      .. include:: ./scripts/mysqlinstall.rst
+        :start-after: Install MySQL Router
