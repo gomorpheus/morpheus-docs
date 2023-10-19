@@ -41,12 +41,11 @@ Install MySQL Router
 
 Configure MySQL Router
 ``````````````````````
-    #. Bootstrap the cluster. (This will pull the config from the cluster and create a MySQL Router config file.)
+        Bootstrap the cluster. (This will pull the config from the cluster and create a MySQL Router config file.)
      
         .. code-block:: bash
 
            mysqlrouter --bootstrap clusterAdmin@adb-5:3306 --account routeruser --user=mysqlrouter --disable-rest
-           systemctl restart mysqlrouter
 
         You should get back a number of ports available to connect to.
         
@@ -62,13 +61,14 @@ Configure MySQL Router
             Read/Write Connections: localhost:6448
             Read/Only Connections:  localhost:6449
 
-      #. Restart mysqlrouter service.
+        Enable and Restart mysqlrouter service.
      
         .. code-block:: bash
 
            systemctl restart mysqlrouter
+           systemctl enable mysqlrouter
 
-    #. To confirm if MySQL Router is listening on the ports you can run.
+        To confirm if MySQL Router is listening on the ports you can run.
      
         .. code-block:: bash
 
