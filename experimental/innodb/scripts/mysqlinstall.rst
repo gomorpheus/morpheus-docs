@@ -1,4 +1,7 @@
+MySQL Install - Config Script
+========================================
 
+.. code-block:: bash
 
     #!/bin/bash
     

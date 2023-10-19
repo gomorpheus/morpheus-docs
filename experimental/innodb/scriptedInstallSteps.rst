@@ -13,10 +13,8 @@ Scripted Install Steps
   * Add the following code to the file
      .. toggle-header::
             :header: **Click to expand**
-     
-            .. code-block:: bash
 
-              .. include:: ./scripts/mysqlinstall.rst
+            .. include:: ./scripts/mysqlinstall.rst
 
   * save and set the file to executable
 
