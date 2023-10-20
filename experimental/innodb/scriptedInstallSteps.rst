@@ -25,8 +25,9 @@ Run the following script on each DB node to install MySQL and configure to best 
 
           chmod +x install.sh
 
-Install MySQL Router (This should be installed on each Morpheus App Node)
+Install MySQL Router 
 -------------------------------------------------------------------------
+    This should be installed on each Morpheus App Node
 
       .. include:: ./mysqlRouter.rst
         :start-after: Install-Section-Start
@@ -38,3 +39,31 @@ Configure MySQL Router
       .. include:: ./mysqlRouter.rst
         :start-after: Config-Section-Start
         :end-before: Config-Section-Stop
+
+Install MySQL Shell 
+-------------------
+      This should be installed on each Morpheus App Node
+
+      .. include:: ./mysqlShell.rst
+              :start-after: Config-Section-Start
+              :end-before: Config-Section-Stop
+
+MySQL Shell Script 
+------------------
+      You will only need to create and run this from a single Node with MySQl Shell installed.
+
+    .. include:: ./scripts.rst
+              :start-after: Scripts-Section-Start
+              :end-before: Scripts-Section-Stop
+
+     Add the following code to the file
+
+    .. toggle-header::
+            :header: **Expand for Single Site Code**
+
+            .. include:: ./scripts/singlesitejs.rst
+
+    .. toggle-header::
+            :header: **Expand for Multi Site Code**
+
+            .. include:: ./scripts/multisitejs.rst

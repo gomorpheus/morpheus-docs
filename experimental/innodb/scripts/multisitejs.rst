@@ -58,7 +58,3 @@ MySQL Shell Cluster Multi Site JS Script
                 } catch (e) {
                     print('\nThe InnoDB Cluster could not be created.\n\nError: ' + e.message + '\n');
                 }
-                        
-        .. group-tab:: Python
-
-            .. code-block:: bash

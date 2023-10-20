@@ -14,6 +14,8 @@ Download MySQL Shell from: https://dev.mysql.com/downloads/shell/
 
 Official Documentation: https://dev.mysql.com/doc/mysql-shell/8.0/en/
 
+.. Install-Section-Start
+
 Install MySQL Shell
 ^^^^^^^^^^^^^^^^^^^
 
@@ -32,6 +34,8 @@ Install MySQL Shell
                 
                 wget https://dev.mysql.com/get/Downloads/MySQL-Shell/mysql-shell-8.0.34-1.el9.x86_64.rpm
                 rpm -i mysql-shell-8.0.34-1.el9.x86_64.rpm
+
+.. Install-Section-Start
 
 MySQL Shell Commands
 ^^^^^^^^^^^^^^^^^^^^
