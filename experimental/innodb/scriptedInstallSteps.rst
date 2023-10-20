@@ -45,8 +45,8 @@ Install MySQL Shell
     This should be installed on each Morpheus App Node
 
     .. include:: ./mysqlShell.rst
-      :start-after: Config-Section-Start
-      :end-before: Config-Section-Stop
+      :start-after: Install-Section-Start
+      :end-before: Install-Section-Stop
 
 MySQL Shell Script 
 ------------------
