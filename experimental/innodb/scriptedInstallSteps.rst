@@ -42,21 +42,21 @@ Configure MySQL Router
 
 Install MySQL Shell 
 -------------------
-      This should be installed on each Morpheus App Node
+    This should be installed on each Morpheus App Node
 
-      .. include:: ./mysqlShell.rst
-              :start-after: Config-Section-Start
-              :end-before: Config-Section-Stop
+    .. include:: ./mysqlShell.rst
+      :start-after: Config-Section-Start
+      :end-before: Config-Section-Stop
 
 MySQL Shell Script 
 ------------------
-      You will only need to create and run this from a single Node with MySQl Shell installed.
+    You will only need to create and run this from a single Node with MySQl Shell installed.
 
     .. include:: ./scripts.rst
-              :start-after: Scripts-Section-Start
-              :end-before: Scripts-Section-Stop
+      :start-after: Scripts-Section-Start
+      :end-before: Scripts-Section-Stop
 
-     Add the following code to the file
+    Add the following code to the file
 
     .. toggle-header::
             :header: **Expand for Single Site Code**
