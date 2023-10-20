@@ -215,8 +215,11 @@ At this point we can create the Cluster Layout object in |morpheus| and attach t
 - **CLUSTER TYPE:** Kubernetes Cluster
 - **TECHNOLOGY:** VMware
 - **MINIMUM MEMORY:** 4096 MB
+- **INPUTS:** Use the typeahead field to add configured Inputs to the Cluster Layout
 - **MASTER NODES:** Use the typeahead field to find the Kubernetes master Node Type we just created
 - **WORKER NODES:** Use the typeahead field to find the Kubernetes worker Node Type we just created. Set the "Count" value to three (3) since we wish to have three worker nodes in this cluster
+- **CLUSTER PACKAGES:** Use the typeahead field to add configued Cluster Packages to the Cluster Layout. Cluster Packages are created in the `Templates section <https://docs.morpheusdata.com/en/latest/library/templates/templates.html>`_
+- **SPEC TEMPLATES:** Use the typeahead field to add Spec Templates to the Cluster Layout
 
 Click :guilabel:`SAVE CHANGES` to save the Cluster Layout.
 
