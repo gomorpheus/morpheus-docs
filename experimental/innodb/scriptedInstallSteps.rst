@@ -19,7 +19,7 @@ Run the following script on each DB node to install MySQL and configure to best 
 
             .. include:: ./scripts/mysqlinstall.rst
 
-  * save and set the file to executable
+  * Save and set the file to executable
 
       .. code-block:: bash
 
@@ -67,3 +67,9 @@ MySQL Shell Script
             :header: **Expand for Multi Site Code**
 
             .. include:: ./scripts/multisitejs.rst
+
+    Run the code as sudo root
+
+      .. code-block:: bash
+
+          bash myscript.js
