@@ -68,7 +68,8 @@ MySQL Shell Script
 
             .. include:: ./scripts/multisitejs.rst
 
-    |Run the code as sudo root
+    
+    Run the code as sudo root
 
       .. code-block:: bash
 
