@@ -520,6 +520,12 @@ Role Mappings
         - |LibInt| is where Library Automation created and maintained.. These include Chef, Puppet, Ansible, Salt, Ansible Tower and vRealize Orchestrator.
         - This permission is recommended for those responsible for the integration between |morpheus| and integrated automation technologies.
         -
+      * - Library: Packages
+        - None, Read, Full
+        - Determines access to |LibTemClu|.
+        - |LibTemClu| is where Cluster Packages are created or edited. Cluster Packages are associated with Cluster Layouts
+        - This permission is recommended for those responsible for Cluster Layout templating
+        -
       * - Library: Options
         - None, Read, Full
         - Determines access to |LibOpt| - Inputs (Option Types) and Option Lists.
@@ -587,6 +593,12 @@ Role Mappings
         - Allows Instance environment variables to be edited. If set to "User" level only environment variables of Instances owned by the currently logged in user may be edited.
         - This permission is recommended for those needing management control over Instances
         -
+      * - Lifecycle: Extend Expirations
+        - None, User, Full
+        - Determines if the user can extend an expiration or shutdown Policy
+        - Allows the user to extend automated shutdown or expiration policies set against any workload ("full" permission) or against the user's own workloads ("user" permission)
+        - This permission is recommended for administrators or those who need to be able to extend Policies set against their own workloads ("user" level permission)
+        -
       * - Power Control
         - None, User, Full
         - Allows access to power state controls for Instances and servers, including stopping, starting, restarting and suspending.
@@ -646,6 +658,12 @@ Role Mappings
         - Allows the user to remove network adapters during reconfigure.
         - When reconfiguring, the user may remove network interfaces on the Instance or server. "User" level permission allows only Instances owned by the currently logged in user to have network interfaces removed.
         - This permission is recommended for those needing management control over Instances
+        -
+      * - Lifecycle: Retry/Cancel
+        - None, Full
+        - Determines access to retry and cancel buttons for Tasks (for example, in the History tab of an Instance detail page)
+        - Retry and cancel functionality allows failed automation Tasks to be retried or stuck Tasks to be stopped from various places within |morpheus| UI (such as in the History tab of an Instance detail page)
+        -
         -
 
 - .. toggle-header:: :header: **Monitoring Permission Options**
@@ -709,12 +727,6 @@ Role Mappings
         - The Firewall tab is where network firewall groups and rules are viewed, created and managed
         - This permission is recommended for those tasked with network security management
         -
-      * - Networks: Integration
-        - None, Read, Full
-        - Determines access to the Integrations tab on the Network list page (Infrastructure > Network)
-        - The integrations tab is where network integrations can be viewed, added and managed. Additionally, the detail pages for network integrations are accessed here
-        - This permission is recommended for those tasked with handling network integrations and their use within |morpheus|
-        -
       * - Networks: Floating IPs
         - None, Read, Full
         - Determines access to the Floating IPs tab on the Network list page (Infrastructure > Network)
@@ -727,29 +739,17 @@ Role Mappings
         - The IP Pools tab is where IP pools from various networks are displayed. Detail pages for IP pools can also be accessed here
         - This permission is recommended for those tasked with IP address management
         -
+      * - Networks: Integration
+        - None, Read, Full
+        - Determines access to the Integrations tab on the Network list page (Infrastructure > Network)
+        - The integrations tab is where network integrations can be viewed, added and managed. Additionally, the detail pages for network integrations are accessed here
+        - This permission is recommended for those tasked with handling network integrations and their use within |morpheus|
+        -
       * - Networks: Proxies
         - None, Read, Full
         - Determines access to the Proxies tab on the Infrastructure > Networks page.
         - The Infrastructure Networks Proxies page is where Proxy configurations are stored, which are available for use by the provisioning engines.
         - This permission is recommended for those responsible for configuring proxies to be used when provisioning.
-        -
-      * - Networks: Router DHCP Binding
-        - None, Read, Full
-        - Determines access to management of DHCP bindings
-        -
-        -
-        -
-      * - Networks: Router DHCP Pool
-        - None, Read, Full
-        - Determines access to the DHCP tab on the detail page for a Router associated with certain network integrations (Example: Infrastructure > Network > Integrations > Routers tab > selected router > DHCP tab)
-        - The DHCP tab is where DHCP pools are viewed, created and managed
-        - This permission is recommended for those responsible for DHCP pool management
-        -
-      * - Networks: Router DHCP Relay
-        - None, Read, Full
-        - Determines access to management of DHCP relays
-        -
-        -
         -
       * - Networks: Router Firewalls
         - None, Read, Full
