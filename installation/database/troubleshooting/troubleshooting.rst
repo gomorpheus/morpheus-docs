@@ -101,3 +101,27 @@ Reset forgotten root password
             #remove from /etc/my.cnf:
                #skip-grant-tables
             systemctl start mysql
+
+
+Force Remove and Rejoin InnoDB node(s) to cluster (brute force)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        Be sure to snapshot systems. This has the potential to be destructive.
+
+        1. Connect to mysqlsh
+            .. code-block:: bash
+                var cluster = dba.getCluster(); # From bad node, connect to healthy node.
+                cluster.rescan(); # Press 'Y' to remove the missing node(s) on the interactive MySQL Shell window.
+                \exit
+        2. Login to MySQL from bad Node(s)
+            .. code-block:: bash
+                set global super_read_only = OFF;
+                STOP GROUP_REPLICATION;
+                RESET SLAVE ALL;
+                DROP DATABASE mysql_innodb_cluster_metadata;
+        3. Go to mysqlsh from bad node, and add to cluster
+            .. code-block:: bash
+                cluster.addInstance('clusterAdmin@InnoDB1:3306')
+        4. On interactive window: Select the recovery method as "Clone"
+        5. Check status of cluster when done.
+            .. code-block:: bash
+                cluster.getStatus()
