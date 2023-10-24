@@ -104,7 +104,7 @@ Reset forgotten root password
 
 
 Force Remove and Rejoin InnoDB node(s) to cluster (brute force)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+``````````````````````````````````````````````````````````````````````
         Be sure to snapshot systems. This has the potential to be destructive.
 
         1. Connect to mysqlsh
