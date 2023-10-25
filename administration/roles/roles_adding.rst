@@ -64,3 +64,10 @@ To create a Tenant Role:
 #. Select :guilabel:`SAVE CHANGES`
 
 After saving, the Role will be created and you will be redirected to the Roles Permissions settings.
+
+Setting an Optional Landing URL
+```````````````````````````````
+
+On login, by default, Users will land on the Dashboard page (|OpeDas|). However, User and Tenant Roles may have custom landing URLs set. Setting a custom landing URL on the Tenant Role will apply globally to all Users within the Tenant. Landing URLs set on the User Role will supersede the landing URL set on the Tenant Role (if any). No Tenant Role is applied to the |master tenant| so the custom landing URL can only be set on the User Role for these Users.
+
+To set a custom landing URL, create or edit a Role. Set the custom landing URL in the "LANDING URL" field. For example, set ``/provisioning/instances`` and the Users having that Role will land on the Instances list page each time they log in. Other paths may be used depending on the desired landing page.
