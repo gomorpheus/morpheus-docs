@@ -477,7 +477,7 @@
        <td class="red" colspan="21">Upgrade Not Supported</td>
      </tr>
      <tr>
-       <td class="lightGrey" colspan="20">Downgrade Not Supported</td>
+       <td class="lightGrey" colspan="21">Downgrade Not Supported</td>
      </tr>
    </tbody>
   </table>
