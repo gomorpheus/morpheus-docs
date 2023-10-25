@@ -68,6 +68,7 @@ With changes saved, the image can be uploaded to |morpheus| as a Virtual Image f
 Next, create a new Node Type. After setting the TECHNOLOGY value to "VMware" the fields related to vApp Property configuration will be revealed. Select the uploaded Virtual Image as the "VM IMAGE" and set the key/value pairs in VAPP PROPERTIES. In this case, I've dynamically loaded the values using |morpheus| variables.
 
 .. image:: /images/provisioning/library/vappProps/vappNodeType.png
+  :width: 50%
 
 The rest of the process is the same as building out any other |morpheus| library item. House the Node Type within a Layout and the Layout within an Instance Type. It should then be provisionable as any other Instance Type.
 
