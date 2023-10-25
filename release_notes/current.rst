@@ -19,9 +19,8 @@ Release Dates
 
 - |morphver| |releasedate|
 
-Fixes
-=====
-
+Features
+========
 
 
 Appliance & Agent Updates
