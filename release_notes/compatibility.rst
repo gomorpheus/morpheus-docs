@@ -55,8 +55,6 @@ Breaking Changes
 
 |morpheus| can be installed on the following platforms. Please note the table below is for |morpheus| Application OS support, not |morpheus| Agent OS Support.
 
-.. note:: If CentOS 8.2 is pinned to 8.2.2004 vault, the PowerTools repository will need to be pinned to 8.2.2004 to access freerdp-libs 2.0.0
-
 .. include:: /getting_started/requirements/applianceOsTable.rst
 
 
@@ -73,8 +71,8 @@ Breaking Changes
      - Updated in |morphver|
    * - Plugin API
      - |pluginVer|
-     -
-     -
+     - |pluginVer|
+     - |checkmark|
    * - Morpheus Worker
      - |workerVer|
      -
@@ -82,27 +80,27 @@ Breaking Changes
    * - MySQL
      - |mysqlbranch|
      - |mysqlver|
-     - |checkmark|
+     - 
    * - MySQL (FIPS)
      - |mysqlbranch|
      - |mysqlverfips|
-     - |checkmark|
+     - 
    * - Elasticsearch
      - |esbranch|
      - |esver|
-     - |checkmark|
+     - 
    * - RabbitMQ
      - |rmqbranch|
      - |rmqver|
-     - |checkmark|
+     - 
    * - Tomcat
      -
      - |tcver|
-     -
+     - |checkmark|
    * - Nginx
      -
      - |nginxver|
-     - |checkmark|
+     -
    * - OpenSSL
      -
      - |openssl|, |openssl_fips| (FIPS)
@@ -135,7 +133,7 @@ Breaking Changes
      - Updated to |nodePackageVer|
    * - Morpheus Linux Agent
      - |linuxagentver|
-     - Updated to |linuxagentver|
+     - No change
    * - Morpheus Windows Agent
      - |winagentver|
      - No change
