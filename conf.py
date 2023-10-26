@@ -328,9 +328,9 @@ def setup(app):
 
 # -- Copy the upgrade table from master ------------------------------------------
 
-from urllib.request import urlretrieve
+import urllib.request
 
-urlretrieve (
+urllib.request.urlretrieve(
     "https://github.com/gomorpheus/morpheus-docs/blob/master/release_notes/upgrade_table.rst",
-    "release_notes/upgrade_table.rst"
+    "/release_notes/upgrade_table2.rst"
 )
