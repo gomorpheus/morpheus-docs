@@ -48,7 +48,7 @@ To add a new Cloud, navigate to |InfClo| and click :guilabel:`+ ADD`. Select "Al
 - **VISIBILITY:** Public Clouds are available to all Tenants, Private Clouds are available to one selected Tenant
 - **TENANT:** If the Cloud visibility is set to "Private", this field determines which Tenant the Cloud is exposed to
 - **ENABLED:** When marked, the Cloud is available as a provisioning target
-- **AUTOMATICALLY POWER ON VMS:** When marked, |moprheus| is the source of truth for the expected power state of Instances. |morpheus| tools should be used to control power state and |morpheus| will override any unexpected power states (such as if an instance were powered on or off from the Alibaba web console)
+- **AUTOMATICALLY POWER ON VMS:** When marked, |morpheus| is the source of truth for the expected power state of Instances. |morpheus| tools should be used to control power state and |morpheus| will override any unexpected power states (such as if an instance were powered on or off from the Alibaba web console)
 - **CREDENTIALS:** Select Local Credentials to enter authentication credentials on this modal, Existing Credentials to choose a pre-saved credential set, or New Credentials to enter authentication credentials on this modal and save them (in |InfTru|) for other uses later
 - **ACCESS KEY:** (When Local Credentials or New Credentials are selected) A valid Access Key for an Alibaba Cloud account
 - **SECRET KEY:** (When Local Credentials or New Credentials are selected) A valid Secret Key for an Alibaba Cloud account

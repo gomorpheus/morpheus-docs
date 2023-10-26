@@ -6,6 +6,8 @@ Overview
 
 |morpheus| offers 28 different report types which are designed to slice up costing and usage across Clouds, Tenants, and more. Reports can be run on-demand as needed or can be scheduled to run on certain intervals to be viewed at a later time. The list of available report types can be viewed at Operations > Reports.
 
+.. TIP:: While |morpheus| offers 28 built-in report types, users may also develop custom reports which display any information that may be needed for your business purposes. Take a look at our `guide to getting started with custom reports <https://docs.morpheusdata.com/en/latest/getting_started/guides/custom_reports.html>`_ for tips on how to begin the process
+
 .. image:: /images/operations/reports/1reportList.png
 
 Report Types

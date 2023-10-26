@@ -1,9 +1,7 @@
 |morpheus| |morphver| Documentation
 ===================================
 
-.. important:: |morpheus| introduced major UI navigation structure changes in v5.3.4. Please refer to the :ref:`Navigation Updates` reference table before upgrading from versions prior to v5.3.4 to |morphver|.
-
-:ref:`Release Notes`
+.. include:: /release_notes/current.rst
 
 .. toctree::
    :maxdepth: 2
@@ -19,6 +17,7 @@
    tools/tools
    administration/administration
    personas/personas.rst
+   diagrams/diagrams.rst
    troubleshooting/troubleshooting
 
 .. toctree::
@@ -33,6 +32,7 @@
 
    release_notes/current.rst
    release_notes/compatibility.rst
+   release_notes/version_highlights.rst
 
 ..
   .. toctree::

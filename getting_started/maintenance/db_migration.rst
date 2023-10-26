@@ -37,7 +37,7 @@ Then you can import the MySQL dump into the target database using the embedded M
 
 .. code-block:: bash
 
-  [root@app-server-new ~] /opt/morpheus/embedded/mysql/bin/mysql -u morpheus -h 10.1.2.2 morpheus -p < /tmp/morpheus_backup.sql
+  [root@app-server-new ~] /opt/morpheus/embedded/mysql/bin/mysql -u morpheus -h 127.0.0.1 morpheus -p < /tmp/morpheus_backup.sql
   Enter password:
 
 The data from the old appliance is now replicated on the new appliance. Simply start the UI to complete the process:
@@ -52,3 +52,13 @@ With the migration complete, you will also need to update the stored password fo
 
   select * from backup where `name` ='Morpheus Appliance';
   UPDATE `morpheus`.`backup` SET `ssh_host` = '127.0.0.1', `target_password` = 'its-a-secret' WHERE `id` = '1';
+
+.. important:: After the migration it is important to reset the unique ID of the Morpheus Appliance. This will ensure your new installation will communicate correctly with the Morpheus Hub.
+
+The final step is to generate a new unique ID for the Morpheus Appliance. Firstly run the following SQL command on the database for the new installation:
+
+.. code-block:: bash
+
+  UPDATE appliance_instance SET hub_unique_id = NULL;
+
+Secondly, re-apply your Morpheus license key within the Morpheus UI via the "Upgrade A License" action within Administration -> Settings -> License

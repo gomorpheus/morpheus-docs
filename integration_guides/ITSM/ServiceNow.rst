@@ -10,6 +10,8 @@ IT Service Management (ITSM) is an important area of focus for many organization
 
 .. TIP:: The ServiceNow integration guide is also available as a `PDF download <https://morpheusdata.com/wp-content/uploads/content/ServiceNow-Cloud-Management-Morpheus-CMP-1.pdf>`_, which includes additional example use cases and screenshots.
 
+.. IMPORTANT:: Only one |morpheus| appliance should be integrated with a single ServiceNow instance at any given time. Integrating multiple appliances with the same ServiceNow instance can cause issues with sharing |morpheus| Catalog Items through to ServiceNow for ordering from the ServiceNow console. Additional details on Catalog Item sharing are included in this guide.
+
 Add ServiceNow Integration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -24,8 +26,12 @@ Add ServiceNow Integration
     Check "Enabled" to allow consumption of this ServiceNow integration in |morpheus|.
    SERVICENOW HOST
     URL of the ServiceNow instance (ex: https://your.instance.service-now.com), keep in mind you can create multiple ServiceNow integrations in |morpheus| if needed.
-   USER/PASSWORD
-    A user in ServiceNow that is able to access the REST interface and create/update/delete incidents, requests, requested items, item options, catalog items, workflows, etc. The list of necessary roles includes ``x_moda_morpheus_ca.integration`` (available if the |morpheus| ServiceNow plugin is installed from the ServiceNow Store), ``catalog_admin``, ``itil``, ``rest_service``, ``web_service_admin`` and ``import_transformer``.
+   API PROXY
+    If necessary, select a configured proxy (|InfNetPro|) to route traffic through to the ServiceNow API. If a proxy is not configured here, ServiceNow API traffic will be routed through the global proxy if one is configured on the appliance.
+   CREDENTIALS
+    Supply credentials for a user in ServiceNow that is able to access the REST interface and create/update/delete incidents, requests, requested items, item options, catalog items, workflows, etc. The list of necessary roles includes ``x_moda_morpheus_ca.integration`` (available if the |morpheus| ServiceNow plugin is installed from the ServiceNow Store), ``catalog_admin``, ``itil``, ``rest_service``, ``web_service_admin`` and ``import_transformer``.
+
+    |morpheus| supports simple and OAuth 2.0 authentication with ServiceNow. See the next section for additional details on configuring the ServiceNow appliance for OAuth 2.0 authentication if you intend to use it. When supplying credentials to |morpheus| users may opt to integrate with a saved set of username and password credentials, a saved set of OAuth 2.0 credentials, a new set of username and password credentials (not saved), or a new set of credentials (OAuth 2.0 or username/password) which will also be saved to the |morpheus| credential store for later use. Once the credential type is selected, the fields in the modal will adjust to correspond to the chosen credential type. Once again, see the next section for more details on configuring OAuth 2.0 authentication.
    CMDB CUSTOM MAPPING
     If needed, administrators can opt to populate a specific field in the ServiceNow table and such mapping is identified here with a JSON code snippet. Below is an example that populates the ``object_id`` field in the CM database with the |morpheus| instance name and two other field examples:
 
@@ -45,6 +51,35 @@ Add ServiceNow Integration
 #. Save Changes
 
 .. important:: |morpheus| supports integration with single-domain and multi-domain ServiceNow appliances. In multi-domain installations, a selected ServiceNow company can be mapped to a selected |morpheus| Tenant for purposes of exposing |morpheus| Library items only to users within a certain company. In this configuration, ServiceNow integrations should be added in each relevant |morpheus| Tenant. Further setup steps for exposing |morpheus| library items to ServiceNow are included in a later section below.
+
+Configuring ServiceNow for OAuth 2.0 Authentication
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Before configuring |morpheus| to use OAuth 2.0 authentication with ServiceNow, ensure your ServiceNow appliance is configured correctly. OAuth must be set up and activated, you must also create a new endpoint for the client. See the following relevant parts of ServiceNow documentation to properly configure your appliance:
+
+#. `Set up OAuth <https://docs.servicenow.com/bundle/rome-platform-security/page/administer/security/task/t_SettingUpOAuth.html>`_
+#. `Create a new application endpoint <https://docs.servicenow.com/bundle/rome-platform-security/page/administer/security/task/t_CreateEndpointforExternalClients.html>`_ for |morpheus| to access the ServiceNow instance
+
+With ServiceNow correctly configured, we can integrate ServiceNow using either a stored OAuth 2.0 credential set or we can create one on the fly during integration. When creating one on the fly |morpheus| will save it as a stored credential set for later use. Whether storing one ahead (|InfTruCre|) or storing one at integration time, configure your credentials as follows. Note that all fields are required for a ServiceNow Integration unless specifically mentioned otherwise:
+
+.. NOTE:: Some of the fields below may not be present if creating an OAuth credential set on the fly as opposed to the |InfTru| section of |morpheus|.
+
+- **CREDENTIAL STORE:** Select "Internal" or (if present) an external Cypher store
+- **NAME:** A name for the stored credential set in |morpheus|
+- **DESCRIPTION:** An optional description for the credential set
+- **ENABLED:** If enabled, this credential set will be selectable for creating various integrations in |morpheus|
+- **GRANT TYPE:** Use "Password Credentials"
+- **ACCESS TOKEN URL:** Should be the appliance domain with the path of "/oauth_token.do". For example, "https://mydomain.service-now.com/oauth_token.do"
+- **CLIENT ID:** The client ID (potentially auto-generated) set when the endpoint was created in ServiceNow
+- **CLIENT SECRET:** The client secret set when the endpoint was created in ServiceNow
+- **USERNAME:** The username for a ServiceNow service account, note the required permissions this user must have in the section above
+- **PASSWORD:** The password for the ServiceNow account
+- **SCOPE:** Left empty
+- **CLIENT AUTHENTICATION:** Use "Send client credentials in body"
+
+If storing these credentials for later use, click :guilabel:`ADD CREDENTIALS`. If creating this credential set on the fly at the time of integration, complete the rest of the new integration modal as discussed in the prior section.
+
+.. image:: /images/integration_guides/itsm/servicenow/oauthcreds.png
 
 ServiceNow Configuration Management Database (CMDB)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -194,11 +229,15 @@ ServiceNow Service Catalog Integration
 
 In addition to integrating with key ServiceNow features, |morpheus| offers a free plugin directly from the ServiceNow Store. Once the plugin is installed, |morpheus| Self-Service Catalog Items can be presented as provisioning options in the ServiceNow catalog for ordering.
 
+.. NOTE:: Surfacing Catalog Items made with Forms to ServiceNow is not yet supported. If planning to use ServiceNow to order Catalog Items you should not use Forms on any Catalog Items until it is supported.
+
 The |morpheus| plugin supports integration with ServiceNow whether it’s configured for a single tenant or for multiple domains. When both |morpheus| and ServiceNow are configured for multiple Tenants, we can create ServiceNow integrations in any relevant |morpheus| Tenant and map those to specific companies in ServiceNow. Any exposed library items would only be shared with users in the relevant ServiceNow company. The |morpheus| plugin will automatically detect whether the *ServiceNow Domain Support–Domain Extensions Installer plugin* has been installed and respond accordingly. Additionally, the *User Criteria Scoped API plugin* must also be enabled on the ServiceNow instance for multi-tenant use.
 
 Depending on the scenario, setup steps for the |morpheus| plugin will be slightly different. Setup steps for both single and domain-separated ServiceNow environments are included below.
 
 .. IMPORTANT:: A valid SSL Certificate is required on the |morpheus| Appliance for the ServiceNow plugin to be able to communicate with the appliance.
+
+.. IMPORTANT:: As described below, the |morpheus| ServiceNow plugin requires the use of a |morpheus| service account to integrate back with the |morpheus| appliance. Some symbol characters, specifically "%" and "&" are valid for use in |morpheus| account passwords but aren't passed correctly when ServiceNow makes its API calls to |morpheus|. It is best not to use these characters in the password for |morpheus| accounts which may be used in the ServiceNow plugin to interface back with |morpheus|. Authentication errors will occur and the plugin will not work. This is a ServiceNow issue which |morpheus| has no control over.
 
 Single-Domain ServiceNow Configuration
 ``````````````````````````````````````
@@ -252,7 +291,7 @@ Multi-Domain ServiceNow Configuration
    ServiceNow Company
     Select a company from the list to link with the Tenant whose ID was entered above
    MID Server
-    If desired, specify the name of an existing MID server
+    If desired, specify the name of an existing MID server. Note that configuring a multi-domain MID server requires the ``glide.ecc.enable_multidomain_mid`` property in ``sys_properties.list`` be set to ``true`` prior to creating the MID server in the global domain. This allows the MID server to explore any domain for which it has the credentials. The ServiceNow user (which the MID server authenticates with) must be in the global domain as well. For more, see `this section of ServiceNow documentation <https://docs.servicenow.com/bundle/rome-servicenow-platform/page/product/mid-server/concept/c_MIDServerDomainSeparation.html>`_.
    |morpheus| Manage Workflows?
     Indicate whether |morpheus| should manage workflows. If this option is checked, |morpheus| will overwrite the workflow and set it to "Morpheus (Internal) Catalog Item Provision Instance" on sync
 

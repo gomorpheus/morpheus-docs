@@ -6,7 +6,7 @@ Overview
 
 |morpheus| supports Ansible Tower for configuration management.  |morpheus| accomplishes this by integrating with an existing instance running Ansible Tower (AT) 3.3.0-1 and earlier. The username and password required for integration can be a user with admin access or a user with project admin access
 
-|morpheus| will import the current Inventory, Templates, Hosts, Groups and Projects. In the integration view it will add a Job tab which will have information of all the jobs executed from Morpheus.
+|morpheus| will import the current Inventory, Templates, Hosts, Groups and Projects. In the integration view it will add a Job tab which will have information of all the jobs executed from |morpheus|.
 
 .. Note:: This integration will not import data of the jobs which are not executed from |morpheus|.
 
@@ -61,7 +61,7 @@ Enable Ansible Tower
 Inventory
   A list of Inventory available in Ansible Tower will appear in the drop down. Select an existing inventory. The instance will be added to the inventory selected.
 Ansible Group
-  Enter the name of an existing Group in the inventory selected above.
+  Enter the name of a new or an existing Group in the inventory selected above.
 Template
   Select an existing template or select the option 'Create New Template'. If 'Create New Template' is selected below fields will appear and are mandatory
     Template Name
@@ -103,6 +103,40 @@ When creating or editing Ansible Tower integrations, navigate to the Inventory t
 .. image:: /images/integration_guides/automation/ansibleTower/inventoryList.png
   :width: 50%
 
+Ansible Tower Configuration
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+When using an Ansible Tower task type or associating the Ansible Tower integration with a cloud/group, there are a few options that can be configured:
+
+  * Inventory
+  * Group
+  * Job Template
+  * Execute Mode
+
+Prompt at Launch
+````````````````
+
+Some options used to configure your deployments have the related option of **Prompt at Launch** in Ansible Tower, which should be enabled on the template to be chosen in the **Job Template** field.  If **Prompt at Launch** is not enabled, the values configured on the template in Ansible Tower will be used instead.
+**Prompt at Launch** can be seen below on the **Inventory** and **Limit** fields:
+
+.. image:: /images/integration_guides/automation/ansibleTower/ansibleTowerPromptAtLaunch.png
+
+Group
+`````
+
+The **Group** field is optional but a group can be entered into the field to associate the host to, in the target inventory.  If the group is existing, then the instance will be associated as a host to that group.  If the group does not exist, the group will be created and the instance will be associated as a host to that group.
+
+.. image:: /images/integration_guides/automation/ansibleTower/ansibleTowerGroups.png
+
+Inventory
+`````````
+
+When provisioning on a cloud with a configured Ansible Tower integration or using an Ansible Tower task type against an instance, the instance will be added as a host to the inventory chosen in the **Inventory** field.  As mentioned, if specified, these instance will be associated with groups in the inventory as well.
+When using an inventory that syncs from a project, the instance will still be added as a host in the inventory, in addition to the sync'd inventory.  This means that Ansible Tower will aggregate the manually added hosts from |morpheus| with the sync'd project inventory.
+However, if the **Overwrite** option is enabled on the source for the project that contains the inventory, any hosts added by |morpheus| **will be overwritten**.  In some cases, a separate |morpheus| inventory may be desired, if **Overwrite** is required on your sources.
+
+.. image:: /images/integration_guides/automation/ansibleTower/ansibleTowerOverwrite.png
+
 Passing extra_vars to Ansible Tower Job
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -135,6 +169,6 @@ You have Job template(s) in Ansible Tower to do post build config after the OS i
 
 You can achieve this by adding the Ansible Tower Integration and then scope it to a Cloud or Group. While provisioning an instance, in the config stage you have the Ansible Tower section with option to select the post build job template, select the Inventory and provide an existing Group Name or if the Group doesn't exist Morpheus will create it and submit for provisioning.
 
-Morpheus will provision the instance, once it is in the finalize state where the instance has an ip and has completed domain join if required, added user(s) or User Groups if specified then Morpheus will add the instance to the inventory and Group and run the Template which will do all the post build of the server.
+Morpheus will provision the instance, once it is in the finalize state where the instance has an ip and has completed domain join if required, added user(s) or User Groups if specified then |morpheus| will add the instance to the inventory and Group and run the Template which will do all the post build of the server.
 
 The output of the post build template execution can be see under Instance history.

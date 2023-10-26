@@ -5,7 +5,7 @@ Execute Scheduling creates time schedules for Jobs, including Task, Workflow and
 
 Schedules use CRON expressions, such as ``0 23 * * 2`` equalling ``Executes every week on Tuesday at 23:00``. CRON expressions can easily be created by clicking the corresponding translation in the create or edit Execution Schedule modal below the Schedule field and selecting a new value.
 
-.. Note:: For more on writing CRON expressions, see our `KnowledgeBase article <https://support.morpheusdata.com/s/article/How-to-write-execute-schedule-intervals-in-Morpheus?language=en_US>`_ on the topic.
+.. Note:: Execute Schedules CRON expressions should not include seconds or years. The days of the week should be numbered 1-7, beginning with Monday and ending with Sunday. SUN-SAT notation may also be used. For more on writing CRON expressions, many guides are hosted on the Internet including `this one <https://docs.oracle.com/cd/E12058_01/doc/doc.1014/e12030/cron_expressions.htm>`_. |morpheus| execution schedules support most cron syntax but certain more complex expressions may fail to evaluate and the execute schedule will not save. Additionally, some complex expressions may save and work correctly while the friendly written evaluation below the SCHEDULE field is not interpreted correctly. This is due to an issue with the underlying library used to build this feature and cannot easily be resolved at this time.
 
 Create Execution Schedules
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -17,8 +17,10 @@ NAME
 
 DESCRIPTION
  Description of the Execution Schedule for reference in the Execution Schedules list
+VISIBILITY
+ |mastertenant| administrators may share Execute Schedules with Subtenants by setting the visibility to Public
 TIME ZONE
- Time zone for execution
+ The time zone for execution
 Enabled
  Check to enable the schedule. Uncheck to disable all associated executions and remove the schedule as an option for Jobs in the future
 SCHEDULE

@@ -31,6 +31,7 @@ Type
   - **Load Balancer:** 'Load Balancer' price sets require at least one 'Load Balancer' price type and may include 'Load Balancer Virtual Server' price types. Load Balancer price sets are the only type which can be associated with Load Balancer Price Plans
   - **Virtual Image:** 'Virtual Image' price sets require at least one 'Storage' price type. Virtual Image price sets are the only type which can be associated with Virtual Image Price plans
   - **Snapshot:** 'Snapshot' price sets require at least one 'Storage' price type and may also include 'Datastore' price types. Snapshot price sets are the only type which can be associated with Snapshot Price plans
+  - **Software/Service:** 'Software/Service' Price Sets require at least one 'Software/Service' Price type
 
 Apply Price Changes to Usage
   If marked, when saving a Price Set (new Price Set or saving changes to an existing one), usage records will be restarted for servers affected by the pricing change.
@@ -87,6 +88,7 @@ Currency
   -  MXN
   -  NOK
   -  NZD
+  -  PLN
   -  ROL
   -  SAR
   -  SEK
@@ -94,6 +96,7 @@ Currency
   -  TRL
   -  USD
   -  USN
+  -  VND
   -  XAF
   -  XCD
   -  XOF

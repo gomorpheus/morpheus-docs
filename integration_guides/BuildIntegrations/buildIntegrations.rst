@@ -1,6 +1,0 @@
-Build
-=====
-
-.. toctree::
-
-  jenkins.rst

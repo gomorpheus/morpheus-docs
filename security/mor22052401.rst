@@ -1,0 +1,27 @@
+.. _MOR20220524-01:
+
+MOR20220524-01
+==============
+
+- **Advisory ID:** MOR20220524-01
+- **CVSSv3 Range:** 7.5
+- **Issue Date:** 05-24-2022
+- **Updated On:** 06-08-2022
+- **CVE(s):** CVE-2022-31261
+- **Synopsis:** An XXE issue was discovered in |morpheus| through 5.2.16 and 5.4.x through 5.4.4. A successful attack requires a SAML identity provider to be configured.
+
+Impacted Product Versions
+-------------------------
+
+|morpheus| through 5.2.16 and 5.4.x through 5.4.4.
+
+Advisory Details
+----------------
+
+- **Description**: An XXE issue was discovered in |morpheus| through 5.2.16 and 5.4.x through 5.4.4. A successful attack requires a SAML identity provider to be configured. In order to exploit the vulnerability, the attacker must know the unique SAML callback ID of the configured identity source. A remote attacker can send a request crafted with an XXE payload to invoke a malicious DTD hosted on a system that they control. This results in reading local files that the application has access to.
+- **Resolution**: Upgrade |morpheus| appliance at least to version 5.4.5 or higher if running an earlier version.
+
+References
+----------
+
+Additional detail in `NIST Vulnerability Database <https://nvd.nist.gov/vuln/detail/CVE-2022-31261>`_

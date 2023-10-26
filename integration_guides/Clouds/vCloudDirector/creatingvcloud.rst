@@ -70,7 +70,7 @@ Create a new machine in VMware vCenter and install a base version of your prefer
 
 
 
-We also recommend disabling network manager and setting the network adapter to eth0 rather than the automatically assigned name. https://support.morpheusdata.com/hc/en-us/articles/115002881228-Creating-a-CentOS-7-Morpheus-VMware-Image
+We also recommend disabling network manager and setting the network adapter to eth0 rather than the automatically assigned name. See a more detailed guide on VMware image prep `here <https://docs.morpheusdata.com/en/latest/integration_guides/Clouds/vmware/vmware_templates.html?highlight=vmware%20image%20prep#creating-a-centos-rhel-7-image>`_.
 
 To import your template into vCloud director you will need to login as either an administrator or organisation administrator.
 

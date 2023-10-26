@@ -13,7 +13,7 @@ Logging configuration can be setup in the |AdmSetLog| section. There are useful 
 
 .. NOTE:: When increasing the retainment policy of the logging system, it may be necessary to scale out the elasticsearch cluster. Please refer to the relevant information with regards to scaling elasticsearch and advanced installation options for externalizing the elasticsearch cluster.
 
-The Log administration section also provides options for setting custom syslog forward rules. These rules are applied on each individual host therefore keeping the |morpheus| appliance itself out of the data plane. For information on different syslog formatting rules please refer to the http://www.rsyslog.com/sending-messages-to-a-remote-syslog-server/[rsyslog] documentation.
+The Log administration section also provides options for setting custom syslog forward rules. These rules are applied on each individual host therefore keeping the |morpheus| appliance itself out of the data plane. For information on different syslog formatting rules please refer to the `rsyslog <http://www.rsyslog.com/sending-messages-to-a-remote-syslog-server/>`_ documentation.
 
 Usage
 ^^^^^
@@ -22,7 +22,7 @@ Usage
 
 There are several filtering capabilities built into the logging UI with more being added continually. Easily toggle log level filters from the dropdown or change the date range filter using the handy date filter component. A chart is also displayed above logs representing the log counts by level over the selected time range (default last 24 hours). A handy pattern search is also available with some rather capable features based on Lucene search syntax.
 
-.. TIP:: It may be useful to review the Lucene search query syntax for powerful use cases: https://lucene.apache.org/core/2_9_4/queryparsersyntax.html[Syntax Guide]
+.. TIP:: It may be useful to review the `Lucene search query syntax <https://lucene.apache.org/core/2_9_4/queryparsersyntax.html>`_ for powerful use cases.
 
 There are several other places logs can be viewed. Not only can they be viewed across an application in app detail but also across all instances in the account. The main level ``Logs`` section provides an ability to query all logs produced by the system. It is also possible to view host-specific logs on a docker host by viewing the host detail page via ``Infrastructure``.
 
@@ -130,7 +130,7 @@ The final log type that may require export is the |morpheus| Activity log. This 
 
    Once you see the ASCI art show up you will be able to log back into the User Interface. A new audit file will have been created called audit.log and will found in the default |morpheus| log path which is ``/var/log/morpheus/morpheus-ui/``
 
-This is only an example and other configurations are possible, sucha as creating an appender definition for your SIEM audit database product.
+This is only an example and other configurations are possible, such as creating an appender definition for your SIEM audit database product.
 
 
 morpheus-ssl nginx logs

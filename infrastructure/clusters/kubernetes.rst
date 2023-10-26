@@ -281,7 +281,7 @@ The table below includes port requirements for the machines within the cluster (
     - Inbound
     - 6783
     - Weaveworks
-    - 
+    -
   * - TCP
     - Inbound
     - 2379-2380
@@ -366,59 +366,86 @@ Adding Worker Nodes
 Kubernetes Cluster Detail Pages
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+The Kubernetes Cluster Detail page provides a high degree of monitoring and control over Kubernetes Clusters. This includes monitoring of all nodes in the Cluster, ``kubectl`` command line, account and role control, workload management, and more. The upper section of the page (which is persistent regardless of the currently-selected tab) provides high level costing and monitoring information, including a current aggregate metric for the CPU, memory and storage use.
 
-       - Cluster status check results icon
-       - Name of the Cluster
-       - Last sync date, time and duration
-       - Edit, Delete and Actions buttons
-          - Actions
-              - Refresh
-                  - Sync the Cluster Status
-              - Permissions
-                 View and edit Cluster Group, Tenant and Service Plan Access
-              - View API Token
-                 Displays API Token for Cluster
-              - View Kube Config
-                 Displays Cluster Configuration
-       - Costs this month (to date, when ``Show Costing`` is enabled)
-       - Cluster resource utilization stats
-       - Counts for current Masters, Workers, Containers, Services, Jobs and Discovered Containers in the Cluster
+.. image:: /images/infrastructure/clusters/kubernetes/clusterDetail.png
+
+The upper section also includes the ACTIONS menu which includes the following functions:
+
+- **REFRESH:** Forces a routine sync of the cluster status
+- **PERMISSIONS:** View and edit the Group, Service Plan, and Tenant access permissions for the cluster
+- **VIEW API TOKEN:** Displays the API token for the cluster
+- **VIEW KUBE CONFIG:** Displays the cluster configuration
+- **RUN WORKLOAD:** Run deployments, stateful sets, daemon sets, or jobs and target them to a specific namespace
+- **UPGRADE CLUSTER:** Upgrade the cluster to a higher version of Kubernetes
+- **ADD KUBERNETES WORKER:** Launches a wizard which allows users to configure a new worker for the cluster
+
+Additional monitoring and control panes are located within tabs, some of which contain subtabs.
 
 .. tabs::
 
-    .. tab:: SUMMARY
+    .. tab:: Summary
 
-       .. image:: /images/infrastructure/clusters/kubeClusterSummary.png
+       The summary tab contains high-level details on health and makeup of the cluster.
 
-       Kubernetes Cluster summary tab contains:
+       .. image:: /images/infrastructure/clusters/kubernetes/clusterSummary.png
 
-       - More Cluster metadata including Name, Type, Created By, Worker CPU, Worker Memory (used/max), Worker Storage (used/max), Enabled: Yes/No, and Description.
-       - Memory chart with total Cluster Free and Used Memory over last 24 hours
-       - Storage chart with total Cluster Reserved and Used Storage over last 24 hours
-       - CPU chart with total Cluster CPU Utilization over last 24 hours
-       - IOPS Chart with total Cluster IOPS over last 24 hours
-       - IOPS Chart with total Cluster Network utilization over last 24 hours
+    .. tab:: Control
 
-    .. tab:: NAMESPACES
+        Contains the ``kubectl`` command line with ability to target commands to specific namespaces. The Control tab also contains the Packages subtab which displays the list of packages and their versions.
 
-        .. image:: /images/infrastructure/clusters/kubeClusterNamespaces.png
+        .. image:: /images/infrastructure/clusters/kubernetes/clusterControl.png
 
-    .. tab:: WIKI
+    .. tab:: Access
 
-        .. image:: /images/infrastructure/clusters/kubeClusterWiki.png
+        The Access Tab contains view and edit tools for Namespaces, accounts, roles, and role bindings.
 
-    .. tab:: MASTERS
+        .. image:: /images/infrastructure/clusters/kubernetes/clusterAccess.png
 
-        .. image:: /images/infrastructure/clusters/kubeClusterMasters.png
+    .. tab:: Nodes
 
-    .. tab:: WORKERS
+        The nodes tab includes a list of master and worker nodes in the cluster, their statuses, and the current compute, memory, and storage pressure on each node.
 
-        .. image:: /images/infrastructure/clusters/kubeClusterWorkers.png
+        .. image:: /images/infrastructure/clusters/kubernetes/clusterNodes.png
 
-    .. tab:: CONTAINERS
+    .. tab:: Workloads
 
-        .. image:: /images/infrastructure/clusters/kubeClusterContainers.png
+        View and edit existing Pods, Deployments, Replica Sets, Daemon Sets, Stateful Sets, and Jobs. Add new Deployments, Stateful Sets, Daemon Sets, and Jobs through the ACTIONS menu near the top of the Cluster Detail Page.
 
-    .. tab:: HISTORY
+        .. image:: /images/infrastructure/clusters/kubernetes/clusterWorkloads.png
 
-        .. image:: /images/infrastructure/clusters/kubeClusterHistory.png
+    .. tab:: Network
+
+        View, add, and edit Services, Endpoints, Ingress and Network Policies
+
+        .. image:: /images/infrastructure/clusters/kubernetes/clusterNetwork.png
+
+    .. tab:: Storage
+
+        View, add, and edit Storage classes, Volume claims, Volumes, Config maps, and Secrets
+
+        .. image:: /images/infrastructure/clusters/kubernetes/clusterStorage.png
+
+    .. tab:: Containers
+
+        View a list of containers running on the cluster and restart or delete them if needed. This list can be filtered by Namespace or a specific Worker if desired.
+
+        .. image:: /images/infrastructure/clusters/kubernetes/clusterContainers.png
+
+    .. tab:: Monitoring
+
+        View logs and events with filtering tools and search functionality available.
+
+        .. image:: /images/infrastructure/clusters/kubernetes/clusterMonitoring.png
+
+    .. tab:: History
+
+        View the Cluster lifecycle history. This includes lists of automation packages (Tasks and Workflows) run against the cluster or its nodes, the success of these scripts and the output.
+
+        .. image:: /images/infrastructure/clusters/kubernetes/clusterHistory.png
+
+    .. tab:: Wiki
+
+        View the |morpheus| Wiki entry for this Cluster. This Wiki page may also be viewed in the Wiki section (|OpeWik|). Edit the Wiki as desired, most standard Markdown syntax will be honored allowing the use of headings, links, embedded images, and more.
+
+        .. image:: /images/infrastructure/clusters/kubernetes/clusterWiki.png

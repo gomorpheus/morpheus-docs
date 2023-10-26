@@ -12,10 +12,13 @@ The default page for Layouts is the Layout list view. Select :guilabel:`+ ADD` t
 
 The following fields are displayed for each Layout:
 
+- **INSTANCE TYPE:** Select the Instance Type to associate with the Layout. This attribute is automatically set and not shown when creating the Layout from an Instance Type detail page
 - **NAME:** Links to the Layout detail page
 - **VERSION**
-- **INSTANCE TYPE:** Links to the associated Instance Type
+- **DISPLAY ORDER:** Determines the Layout display order in the provisioning wizard when adding an Instance of the associated Instance Type
 - **DESCRIPTION**
+
+.. NOTE:: The order of Layouts given when an Instance Type is being provisioned is in high-to-low order of the Layout Display Order property. Bear in mind this is reversed from how Service Plans are ordered, which is in low-to-high order based on the Display Order value.
 
 The Actions menu in each row reveals the following options:
 
@@ -23,7 +26,7 @@ The Actions menu in each row reveals the following options:
 - **Edit:** Edit the Layout
 - **Delete:** Delete the Layout
 
-.. note:: A Layout that is in use cannot be deleted.
+.. NOTE:: A Layout that is in use cannot be deleted.
 
 Available Filters:
 
@@ -69,3 +72,16 @@ Inputs
   Search for and select one or multiple Inputs to add to the Layout. Inputs (except for Hidden Inputs) will appear in Provisioning, App, Blueprint, and Cloning wizards when this layout is selected
 Nodes
   Single or multiple nodes can be added to a Layout by searching for and selecting the Node(s)
+Price Sets
+  Associate a Price Set with the Layout, Price Sets are created in |AdmPlaSet|. Price Sets which are added to Layouts become additive with any pricing which may apply on the Service Plan. For example, a "fixed" Price Set of $1000/month has been associated with the Layout. If this Layout is provisioned to an Amazon AWS Cloud, the additional fixed price would be computed along with any Price which is pre-existing on the AWS Service Plan
+
+
+  - .. toggle-header:: :header: **Layout Price Sets Demo**
+
+      .. raw:: html
+
+          <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; height: auto;">
+              <iframe src="//www.youtube.com/embed/V_ZoZBakAVM" frameborder="0" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
+          </div>
+
+      |

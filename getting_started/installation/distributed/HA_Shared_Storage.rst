@@ -42,3 +42,5 @@ To copy the ``morpheus-ui`` directory to the shared storage follow the below ste
 .. TIP:: When adding additional nodes you will only need to run step 6 and 7
 
 .. important:: NFS mounts require ``sync`` option when using Ansible integration with |morpheus| Agent command bus execution enabled.
+
+.. important:: On each application node, the morpheus-app and morpheus-local user and group uid/gid should be consistent.  If the uid and/or gid are different between nodes, when the permissions are applied during a reconfigure, the permissions can be incorrect for other nodes.  The uid and gid for the users can be seen by executing:  ``sudo cat /etc/passwd`` and ``sudo cat /etc/groups``

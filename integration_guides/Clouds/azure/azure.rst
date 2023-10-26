@@ -57,6 +57,28 @@ CSP Accounts require the additional following input:
 * CSP Application (client) ID
 * CSP Application (client) SECRET (Web App Key)
 
+The |morpheus| appliance requires outbound HTTPS (443) access to the Azure endpoints. Depending on the type of cloud you choose when adding Azure, ensure the proper endpoints are allowed:
+
+  **Global Azure Cloud**
+    * https://management.core.windows.net (ServiceManagementUrl)
+    * https://management.azure.com (ResourceManagerUrl)
+    * https://login.microsoftonline.com (ActiveDirectoryAuthority)
+
+  **US Gov Cloud**
+    * https://management.core.usgovcloudapi.net (ServiceManagementUrl)
+    * https://management.usgovcloudapi.net (ResourceManagerUrl)
+    * https://login.microsoftonline.us (ActiveDirectoryAuthority)
+
+  **Germany Cloud**
+    * https://management.core.cloudapi.de (ServiceManagementUrl)
+    * https://management.microsoftazure.de (ResourceManagerUrl)
+    * https://login.microsoftonline.de (ActiveDirectoryAuthority)
+
+  **China Cloud**
+    * https://management.core.chinacloudapi.cn (ServiceManagementUrl)
+    * https://management.chinacloudapi.cn (ResourceManagerUrl)
+    * https://login.chinacloudapi.cn (ActiveDirectoryAuthority)
+
 Credentials & Permissions
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -69,24 +91,24 @@ Create an App Registration
 
 If you do not have an existing Azure Active Directory App Registration, or you wish to use an new one for |morpheus|, you will need to create one.
 
-#. Log into the Azure portal
-#. Select "Azure Active Directory"
-#. Select "App Registrations"
-#. Select "New Registration"
+#. Log into the Azure web console
+#. Select "App Registrations", you may have to go to the "All Services" page to find it
 
-   .. thumbnail:: /images/clouds/azure/Default_Directory_App_registrations_Microsoft_Azure.png
+   .. thumbnail:: /images/clouds/azure/addCloud/selectAppReg.png
 
+#. Click "+ New registration"
 
+   .. thumbnail:: /images/clouds/azure/addCloud/newReg.png
 
-#. Next, give app a name, specify Web app / API for the type (default) and enter any url for the Sign-on URL:
-#. Click Create and your new App Registration will be created.
+#. Next, give app a name, specify which accounts may access this API, specify Web for the Redirect URI type and enter any url for the Sign-on URL:
+#. Click Register and your new App Registration will be created.
 
-   .. thumbnail:: /images/clouds/azure/Register_an_application_Microsoft_Azure.png
-
+   .. thumbnail:: /images/clouds/azure/addCloud/registerApp.png
 
 Now that we have (or already had) our App Registration, we will gather the credentials required for the |morpheus| Azure integration.
 
 .. _azure_ids:
+
 
 Copy Directory (tenant) and Application (client) IDs
 ````````````````````````````````````````````````````
@@ -99,7 +121,7 @@ The App Registration Directory (tenant) and Application (client) ID are required
 #. Copy the Application (client) ID
 #. Store/Paste for use as the Client ID when Adding your Azure cloud in |morpheus|
 
-   .. thumbnail:: /images/clouds/azure/morpheusAppReg_Microsoft_Azure.png
+   .. thumbnail:: /images/clouds/azure/addCloud/copyIds.png
 
 .. _azure_secret:
 
@@ -110,26 +132,23 @@ While still in your App Registration:
 #. Select Certificates & secrets in the Manage Section
 #. Select ``+ New client secret``
 
-   .. thumbnail:: /images/clouds/azure/morpheusAppReg_Certificates_secrets_Microsoft_Azure.png
-
+   .. thumbnail:: /images/clouds/azure/addCloud/addClientSecret.png
 
 #. The "Add a client secret" modal will come up
 #. Add a description to help identify the secret in the future
 #. Select a duration
 #. Select :guilabel:`Add`
 
-   .. thumbnail::  /images/clouds/azure/morpheusAppReg_Certificates_secrets_Add.png
+   .. thumbnail:: /images/clouds/azure/addCloud/saveSecret.png
 
 
 #. Copy the newly generated Client Secret Value. It is important to copy the Client Secret Value now as it will not be displayed/available
 
    .. IMPORTANT:: Copy the key value before continuing as it will not be displayed/available again.
 
-   .. thumbnail::  /images/clouds/azure/morpheusAppReg_Certificates_secrets_Copy.png
-
 #. Store/Paste for use as the Client Secret when Adding your Azure cloud in |morpheus|
 
-You now have 3 or the 4 credentials required for |morpheus| Azure cloud integration. The last credential required is the Azure Subscription ID.
+You now have 3 of the 4 credentials required for |morpheus| Azure cloud integration. The last credential required is the Azure Subscription ID.
 
 Subscription ID
 ```````````````
@@ -137,13 +156,9 @@ Subscription ID
 To get the Azure Subscription ID:
 
 #. Navigate to the main Subscriptions section. One way is to search for "Subscriptions" and select Subscriptions in the search results
-
-   .. thumbnail:: /images/clouds/azure/azuresubscriptionssearch.png
-
 #. In the main "Subscriptions" section, copy the Subscription ID
 
-   .. thumbnail:: /images/clouds/azure/Subscriptions_Microsoft_Azure.png
-
+   .. thumbnail:: /images/clouds/azure/addCloud/getSubId.png
 
 #. Store/Paste for use as the Subscription ID when Adding your Azure cloud in |morpheus|
 
@@ -152,22 +167,21 @@ Make App Registration owner or contributor of Subscription
 
 The App Registration created/used needs to be an owner of the Azure Subscription used for the |morpheus| cloud integration. If lesser permissions are given or permissions are assigned at individual resource levels, |morpheus| will not be able to properly inventory/sync, create and/or remove resources.
 
-#. In the main "Subscriptions" section in Azure, select the Subscription
-#. In the Subscription pane, select "Access Control (IAM)"
-#. Either Click "+ Add", and the "Add Role Assignment", or simply select "Add a role assignment"
+#. In the main Subscriptions section, click on the name of the Subscription
+#. With the Subscription detail open, select "Access Control (IAM)"
+#. Click "+ ADD" and then click "Add role assignment" from the pop-out menu
 
-   .. thumbnail:: /images/clouds/azure/Azure_subscription_1_Access_control_IAM_Microsoft_Azure.png
+   .. thumbnail:: /images/clouds/azure/addCloud/startAddRoleAssignment.png
 
+#. Click on the tab for "Privileged administrator roles"
+#. Select Owner or Contributor and click "Next"
+#. Add Members to the Role Assignment by clicking "+ Select members"
+#. Select the App Registration from the search results and click Select
 
-#. In the right pane, select "Owner" or "Contributor" Role type
-#. Search for the name of the App Registration used for the |morpheus| integration
-#. Select the App Registration in the search results
-#. Select "Save"
+   .. thumbnail:: /images/clouds/azure/addCloud/addRoleAssignment.png
 
-   .. thumbnail:: /images/clouds/azure/Add_role_assignment_save.png
+#. Click "Review + Assign"
 
-
-You now have the required Credentials and permissions to add an Azure Cloud Integration(s) into |morpheus|.
 
 Add an Azure Cloud Integration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -226,6 +240,31 @@ To add a new Azure Cloud integration into |morpheus| using the credentials creat
      .. image:: /images/clouds/azure/addAzureCloudMorpheusS1.png
 
    .. include:: /integration_guides/Clouds/advanced_options.rst
+
+   AZURE COSTING MODE
+     Standard, CSP, or Azure Plan
+
+     Example configurations but choose what is applicable to the tenant:
+
+     .. list-table:: **Example Azure Costing Configurations**
+        :widths: auto
+        :header-rows: 1
+
+        * - Account Type
+          - Azure Costing Mode
+          - Notes
+        * - Standard (Pay as you go)
+          - Standard
+          -
+        * - EA (Enterprise Agreement)
+          - Standard
+          -
+        * - CSP (Cloud Solution Provider)
+          - CSP
+          - CSP Tenant, ID, Client ID, and Client Secret required
+        * - CSP (Cloud Solution Provider)
+          - Azure Plan (Microsoft Customer Agreement)
+          - CSP Tenant, ID, Client ID, and Client Secret required on the primary cloud
 
 #. Once done configuring the Cloud, select :guilabel:`NEXT`. NOTE all specified values except the Subscription ID can be changes after the Cloud is created.
 

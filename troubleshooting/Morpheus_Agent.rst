@@ -92,7 +92,7 @@ Windows Unattended
 Manual
 ^^^^^^
 
-Agent Install scripts can be downloaded from |morpheus| by selecting ``Actions > Download Agent Script`` from an Instance detail page, then run manually on the target host when required for a given managed resource. Please note the script will be unique per managed resource and should not be saved to run as needed on any arbitrary resources in the future.
+Agent Install scripts can be downloaded from |morpheus| by selecting ``Actions > Download Agent Script`` from an Server detail page, then run manually on the target host when required for a given managed resource. Please note the script will be unique per managed resource and should not be saved to run as needed on any arbitrary resources in the future.
 
 When installing on Windows, continue with the steps below to complete manual installation:
 
@@ -166,8 +166,7 @@ Windows Agents
 
 .. code-block:: bash
 
-  $app = Get-WmiObject -Class Win32_Product
-                -Filter "Name = 'Morpheus Windows Agent'"
+  $app = Get-WmiObject -Class Win32_Product -Filter "Name = 'Morpheus Windows Agent'"
   $app.Uninstall()
 
 

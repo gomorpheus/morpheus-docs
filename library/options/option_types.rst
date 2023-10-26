@@ -1,7 +1,7 @@
 Inputs
 ------
 
-Inputs are custom input fields that can be added to Instance Types and Layouts, then presented in Instance, App, and Cloning wizards. The resulting value is available in the Instance config map as <%=customOptions.fieldName%>. The fieldName and value can also be exported as Tags.
+Inputs are custom input fields that can be added to Instance Types and Layouts, then presented in Instance, App, and Cloning wizards. The resulting value is available in the Instance config map as <%=customOptions.fieldName%> or <%=customOptions['fieldName'], the latter syntax being required in certain situations such as when the field name contains a hyphen "-" (ex. <%=customOption['my-field-name']). The fieldName and value can also be exported as Tags.
 
 .. image:: /images/provisioning/library/new_option_type.png
    :align: center
@@ -65,8 +65,20 @@ HELP BLOCK
  Helpful text that will appear under your Input field to inform users about their selection
 REQUIRED
  Prevents User from proceeding without setting value
+REMOVE NO SELECTION
+ For Select List-type Inputs. When marked, the Input will default to the first item in the list rather than to an empty selection. This is especially useful when only one choice is anticipated to be in the list as it saves the user from manually making a default selection
 VERIFY PATTERN
  For Text and Text Area-type Inputs. If desired, enter a regex pattern string and user entries must match the string to be accepted
+
+ .. toggle-header:: :header: **Verify Pattern Demo**
+
+     .. raw:: html
+
+         <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; height: auto;">
+             <iframe src="//www.youtube.com/embed/-a46JLKJYHQ" frameborder="0" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
+         </div>
+
+     |
 DEFAULT CHECKED
  For ``Checkbox`` types, when marked the Checkbox will be checked by default
 OPTION LIST

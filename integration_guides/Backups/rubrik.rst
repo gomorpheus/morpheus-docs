@@ -1,14 +1,14 @@
 Rubrik
 -------
 
-The embedded |morpheus| Rubrik Backup integraiton allow syncing, creation and managemnet of Rubrik Backups for vCenter clouds. 
+The embedded |morpheus| Rubrik Backup integraiton allow syncing, creation and managemnet of Rubrik Backups for vCenter clouds.
 
 Features
 ^^^^^^^^
 
 - Backup sync & associaiton
 - Sla Domain sync & selection
-- Backup creation, deletion & restore 
+- Backup creation, deletion & restore
 - Restore Backups over existing vm's
 - Restore Backup as new
 
@@ -27,11 +27,9 @@ Adding Rubrik Integration
    Enabled
       Enable the Integration
    Host
-      IP or Hostname of the Rubrik api server.
-   Username
-      Admin Username for Rubrik
-   Password
-      Password for Username provided (encrypted in |morpheus|).
+      IP or Hostname of the Rubrik api server
+   API Token
+      The API token to authenticate with the Rubrik API server
    Visibility
       Sets Multi-Tenant Visibility
         Private
@@ -40,5 +38,3 @@ Adding Rubrik Integration
           Available to Sub-Tenants (master tenant option only)
 
 #. :guilabel:`SAVE`
-
-

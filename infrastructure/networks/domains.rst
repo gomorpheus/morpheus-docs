@@ -13,7 +13,7 @@ The Domains section is for creating and managing domains for use in |morpheus|. 
 * Domains are synced in from Cloud, DNS and Network Integrations. Domains can also be user created.
 * Active Domains are available for selection in the Domain dropdown when provisioning an Instance
 * Default Domains can be set for Clouds and Networks in their Advanced Options sections.
-* Images can be flagged to Auto-Join Domains in the `|LibVir|` section
+* Images can be flagged to Auto-Join Domains in the ``Infrastructure > Network > Domains`` section
 
 .. IMPORTANT:: For an Instance to auto-join a Domain, a Domain must set in the Advanced Options section of the Cloud or Network used when provisioning
 
@@ -30,12 +30,12 @@ Adding Domains
    :Public Zone: Check for Public Zones, leave uncheck for Private Zones
    :Workflow: Select an existing Workflow which will be applied to Instances at provision time when they are associated with the domain. This is useful for any domain-related scripting you may currently use. For example, you may want to ensure a machine is removed from the domain when it's torn down which could be accomplished by creating a Provisioning Workflow (with teardown phase Tasks) and associating the Workflow with the domain
    :Active: Active Domains are available for selection in Domain selection fields across |morpheus|. Inactive Domains are removed from Domain selection fields.
-   :Join Domain Controller: Check to have Windows instances join a Domain Controller
-   :Username: Admin user for Domain Controller. ``domain\username`` format required when specifying OU Path
+   :Join Domain Controller: Enable to have Windows instances join a Domain
+   :Username: Admin user for Domain. ``domain@username`` format required when specifying OU Path
    :Password: Password for DC user account
    :DC Server: (optional) Specify the URL or Path of the DC Server
    :OU Path: (optional) Enter the OU Path for the connection string.
-   :Guest Username: (optional) If set, this will change the provisioned hosts RPC Service User after domain join. Useful when a domain policy disables the  Administrator account that typically would be set as the RPC user on a host record. |morpheus| will update the RPC username and password on the host(s) record after domain join with the specified Guest Username and Guest Password. The RPC username and password are used for auth during Remote Procedure Call (RPC) executions over winrm, ssh and guest tools. 
+   :Guest Username: (optional) If set, this will change the provisioned hosts RPC Service User after domain join. Useful when a domain policy disables the  Administrator account that typically would be set as the RPC user on a host record. |morpheus| will update the RPC username and password on the host(s) record after domain join with the specified Guest Username and Guest Password. The RPC username and password are used for auth during Remote Procedure Call (RPC) executions over winrm, ssh and guest tools.
    :Guest Password: (optional) The password for the Guest User account indicated in the prior field
 
 4. Click :guilabel:`Save Changes`

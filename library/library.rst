@@ -5,6 +5,7 @@ Library
 .. toctree::
    :maxdepth: 2
 
+   labels.rst
    automation/automation.rst
    blueprints/blueprints.rst
    virtual_images/virtual_images.rst

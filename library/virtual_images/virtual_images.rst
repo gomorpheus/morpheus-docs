@@ -8,6 +8,8 @@ The Virtual Image section displays a list of all images, local and synced, that 
 
 Understanding the process of prepping images for consumption in |morpheus| is a very important step toward building an effective |morpheus| environment. In addition to the information contained in this section on Virtual Images, it may be helpful to see a complete image prep example walkthrough. Our getting started guide for |morpheus| and VMware includes `a section on preparing images <https://docs.morpheusdata.com/en/latest/getting_started/guides/vmware_guide.html#prepping-an-image>`_ that may provide a helpful example.
 
+.. TIP:: |morpheus| includes a wide catalog of system image types as examples to show how the product can be used and to give users a starting point for implementing their own library. The included images are not intended to be production-ready images. |morpheus| always recommends its users create their own gold images which meet their required specifications.
+
 .. IMPORTANT:: Invalid Image Settings cause provisioning failures. |morpheus| syncs in as much meta-data as possible for synced images, but additional configuration may be needed to ensure successful provisioning.
 
 .. WARNING:: Cloud-init is enabled by default for all Linux images. If your Linux image does not have Cloud-init installed, `Cloud-init Enabled` must be unchecked before provisioning the image or it will fail immediately.
@@ -171,3 +173,16 @@ To Add Virtual Image:
     .. NOTE:: The Virtual Image configuration can be saved when using a URL and the upload will finish in the background. When selecting/drag and dropping a file, the image files must upload completely before saving the Virtual Image record or the Image will not be valid.
 
 5. Save Changes.
+
+VMware - VM Templates Copies
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+In a VMware environment, you may have a single VM template that you use across different vCenters. Uploading an image to |morpheus|, mentioned in the Add Virtual Image section, is one method to solve this. Alternatively, an organization may decide to create a VM template in one vCenter and then transfer it to other vCenters, which then could be sync’d into |morpheus|.
+
+If all the vCenters are added as Clouds into |morpheus| and the templates are named the same in each vCenter, they will be aggregated under a single virtual image in |morpheus|. This means that as you deploy to the various vCenter Clouds in |morpheus| using this virtual image, it will choose the correct VM template to use based on the Cloud deployed to.
+
+This eliminates the need for creating multiple Node Types for each virtual image if the templates were named differently in each vCenter. This can reduce the overhead of maintaining multiple Node Types and reduces user selections. As well, this can reduce the cloning time of VMs by avoiding network transfers of images between geographic locations, ensuring the closest VM template is selected.
+
+|morpheus| supports VMware Content Libraries storing VM templates and syncing into |morpheus|, the same as a template in a folder. Additionally, the Content Library can be used to house the same template in multiple libraries. If they have the same name, these templates will be aggregated under a single virtual image. If the Content Library is stored on a datastore that the target host/cluster has access to, it will use that library first, to reduce the cloning time. If the Content Library is not stored in a datastore accessible by the cluster/host, a copy of the VM template will be performed to the target host/cluster instead.
+
+.. NOTE:: VM templates are a **Data Center** level object.  The same process above applies to a single VMware cloud with multiple logical data centers.  It will not apply to clusters, as a template is not associated with a cluster, only when it is converted to a VM.

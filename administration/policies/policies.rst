@@ -6,17 +6,19 @@ Policies
 Overview
 --------
 
-Policies add governance, ease of use, cost-savings, and auditing features to |morpheus|.  |morpheus| enables end users to create Policies scoped to Users, Roles, Groups, Clouds, Tenants and Global scoping to give Admins full control and governance over their environments! Policy generation is a role permission.
+Policies add governance, ease of use, cost-savings, and auditing features to |morpheus|. |morpheus| enables end users to create Policies scoped to Users, Roles, Groups, Clouds, Tenants, Networks, Plans, and Global scoping to give Admins full control and governance over their environments. The available scoping will vary from one Policy type to another. See the section below for information on each Policy type and guides for more complex Policy implementation.
 
 Policy Types
 ------------
 
 Approve Delete
-  Sets an approval requirement for deleting Instances or Apps within the Policy scope. When setting the Policy, users have the option of using Morpheus Approvals or an Approval Integration such a ServiceNow.
+  Sets an approval requirement for deleting Instances or Apps within the Policy scope. When setting the Policy, users have the option of using Morpheus Approvals or an Approval Integration such a ServiceNow. On delete request, Instances will be shut down and only deleted if approved.
 Approve Provision
   Sets an approval requirement for provisioning Instances or Apps within the Policy scope. When setting the Policy, users have the option of using Morpheus Approvals or an Approval Integration such a ServiceNow.
 Approve Reconfigure
   Sets an approval requirement for reconfiguring Instances and servers within the Policy scope. When setting the Policy, users have the option of using Morpheus Approvals or an Approval Integration such a ServiceNow.
+Approve Workflow Execute
+  If enabled, when Workflows are executed on workloads within the Policy scope, an Approval is generated. This could apply when a Workflow is executed from the Workflows list page or from the detail page for an Instance or server. Approvals can be targeted to |morpheus| internal Approvals or targeted to a third-party integration (such as ServiceNow). The Workflow will not begin to execute until after the approval is granted.
 Backup Creation
   Disable or enable the ability to create a backup when provisioning an instance.
 Backup Targets
@@ -40,17 +42,19 @@ Instance Name
 Max Containers
   Sets the max number of Containers for the Group or Cloud the Policy is added to.
 Max Cores
-  Sets the max number of total of Cores combined for Instances in the Group or Cloud the Policy is added to.
+  Sets the max number of total of Cores combined for Instances in the Group or Cloud the Policy is added to, includes the option to include or exclude container resources in the Policy.
 Max Hosts
   Sets the max number of total Hosts in the Group or Cloud the Policy is added to.
 Max Load Balancer Pools
   Sets the max number of load balancer pools within the policy scope
 Max Memory
-  Sets the max number of total of RAM combined for Instances in the Group or Cloud the Policy is added to.
+  Sets the max number of total of RAM combined for Instances in the Group or Cloud the Policy is added to, includes the option to include or exclude container resources in the Policy.
 Max Pool Members
   Sets the maximum number of members in a load balancer pool
+Max Snapshots
+  Set the maximum number of Snapshots that may be stored for each Instance or VM within the scope. Once the limit is met, |morpheus| will warn the user when attempting to create more snapshots until the number is reduced
 Max Storage
-  Sets the max number of total of Storage combined for Instances in the Group or Cloud the Policy is added to.
+  Sets the max number of total of Storage combined for Instances in the Group or Cloud the Policy is added to, includes the option to include or exclude container resources in the Policy.
 Max Virtual Servers
   Sets the maximum number of virtual servers within the policy scope
 Max VMs

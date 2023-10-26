@@ -18,7 +18,7 @@ Requirements
 * ``Integrations: Ansible`` User Role Permission required for access to Ansible Details Pages and Ansible tabs in Groups and Clouds
 * Calling |morpheus| Cypher secrets into Ansible scripts requires the Python ``requests`` module which is not part of the Python standard library. For Ubuntu 18.04 or 20.04 run ``sudo apt install python-requests`` or ``sudo apt install python3-requests``, respectively. For RHEL/CentOS, run ``sudo yum install python2-requests``
 
-.. NOTE:: Installing Ansible on the |morpheus| appliance is a requirement. In some cases, this is handled automatically but in certain situations you may have to install manually. See the section below on `troubleshooting Ansible <https://docs.morpheusdata.com/en/latest/integration_guides/Automation/ansible.html#troubleshooting-ansible>`_ for installation steps.
+.. NOTE:: Installing Ansible on the |morpheus| appliance is a requirement. In some cases, this is handled automatically but in certain situations you may have to install manually. See the section below on `troubleshooting Ansible <https://docs.morpheusdata.com/en/latest/troubleshooting/Ansible_Troubleshooting.html>`_ for installation steps.
 
 Add Ansible Integration
 ^^^^^^^^^^^^^^^^^^^^^^^
@@ -254,8 +254,9 @@ Troubleshooting Ansible
 
   .. code-block:: bash
 
-      sudo mkdir /opt/morpheus/.local/.ansible
-      sudo chown morpheus-local.morpheus-local /opt/morpheus/.local/.ansible
+    mkdir -p /opt/morpheus/.ansible/tmp
+    chown -R morpheus-local. /opt/morpheus/.ansible
+    chmod -R 775 /opt/morpheus/.ansible
 
 
 * Validate the git repo is authorizing and the paths are configured correctly.

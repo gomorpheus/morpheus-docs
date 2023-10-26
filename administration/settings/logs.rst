@@ -6,7 +6,7 @@ Overview
 
 |morpheus| contains a built-in logging solution that aggregates logs from hosts and services. Logs are displayed, searchable, and filterable in the Instance, App, Host and overall Logs sections. Logs can also be forwarded using Syslog Forward rules to any external solution that supports syslogs.
 
-The logs displayed in the Instance, App, Host and overall Logs sections are only from Managed VMs and Hosts that have the |morpheus| agent installed. Instances can be configured to show additional logs by configuring the LOG FOLDER in the Library NODE TYPE. Logs from any .log file in the specified folder will be forwarded by the |morpheus| agent to the |morpheus| appliance or forwarded with Syslog Forward rules.
+The logs displayed in the Instance, App, Host and overall Logs sections are only from Managed VMs and Hosts that have the |morpheus| agent installed. |morpheus| Agent will watch ``/var/logs`` for any .log file and report them back accordingly. Containerized Instances can be configured to show additional logs by configuring the LOG FOLDER in the Library NODE TYPE. Logs from any .log file in the specified folder will be forwarded by the |morpheus| agent to the |morpheus| appliance or forwarded with Syslog Forward rules.
 
 .. NOTE:: The `Logs` section does not contain |morpheus| appliance logs, which can be found in `/var/log/morpheus/` and in `Administration - Health`.
 

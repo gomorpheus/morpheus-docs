@@ -554,12 +554,6 @@ The following table contains communication information, including frequency and 
     - No
   * - Network Integration
     - Server Pull
-    - NSX-V
-    - Data synchronization
-    - 10 Minutes
-    - No
-  * - Network Integration
-    - Server Pull
     - Cisco ACI
     - Data synchronization
     - 10 Minutes
@@ -777,6 +771,11 @@ Ports used to communicate with integrated technologies are those defined for the
     - 9200
     - TCP
     - Elasticsearch requests (Used in all cases except when utilizing AWS ES service)
+  * - Application Tier
+    - Non-Transactional Database Tier
+    - 443
+    - TCP
+    - Elasticsearch requests (Used in all cases where ES is consumed as a PaaS service)
   * - Non-Transactional Database Tier
     - Non-Transactional Database Tier
     - 9300

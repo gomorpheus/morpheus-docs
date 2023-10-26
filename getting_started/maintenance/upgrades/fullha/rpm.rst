@@ -5,14 +5,15 @@ The following covers upgrading the |morpheus| App nodes in Full HA Architecture 
 
 .. important:: The following is only for Full HA Architecture configurations, where MySQL, Elasticsearch and RabbitMQ services are external to the App nodes.
 
-4.2.0+ > |morphver| Upgrade
-............................
+|nonRollingUpgradeVer| or lower -> |morphver| Upgrade
+.....................................................
 
-.. warning:: Rolling upgrades are not supported for 4.2.x > 5.x upgrades
+.. warning:: Rolling upgrades from |nonRollingUpgradeVer| or lower to |morphver| are not supported
 
-.. important:: Due to Database schema changes in |morphver| it is important to stop the morpheus-ui service on all app nodes prior to upgrade. Failure to do so may result in errors or database corruption. As a best practice, always backup your database prior to any upgrade.
+.. important:: It is important to stop the morpheus-ui service on all app nodes prior to upgrade. Failure to do so will resilt in a flood of log errors due to previous message serializaiton conflict. The messages will eventually expire and the logs will clear.
 
-.. warning:: |morpheus| |morphver| contains new node and VM node packages that require 3.5GB of storage. It is safe to run ``sudo rm -Rf /var/opt/morpheus/package-repos/*`` after |morphver| package installation and before reconfigure to clean old node and vm node packages from the package-repo when room is needed. 
+
+.. warning:: |morpheus| |morphver| contains new node and VM node packages that require 3.5GB of storage. It is safe to run ``sudo rm -Rf /var/opt/morpheus/package-repos/*`` after |morphver| package installation and before reconfigure to clean old node and vm node packages from the package-repo when room is needed.
 
 #. Starting with App Node 3, on **All** App Nodes, stop the morpheus-ui services via ``morpheus-ctl stop morpheus-ui``. If you receive a timeout, run ``morpheus-ctl graceful-kill morpheus-ui``.
 
@@ -60,12 +61,12 @@ The following covers upgrading the |morpheus| App nodes in Full HA Architecture 
 
 |
 
-5.0.0+ > |morphver| Upgrade
-............................
+|minRollingUpgradeVer| -> |morphver| Upgrade
+............................................
 
-.. note:: Rolling upgrades are supported for 5.x > |morphver| upgrades
+.. NOTE:: Rolling upgrades are supported for |minRollingUpgradeVer| -> |morphver| only.
 
-.. warning:: |morpheus| |morphver| contains new node and VM node packages that require 3.5GB of storage. It is safe to run ``sudo rm -Rf /var/opt/morpheus/package-repos/*`` after |morphver| package installation and before reconfigure to clean old node and vm node packages from the package-repo when room is needed. 
+.. warning:: |morpheus| |morphver| contains new node and VM node packages that require 3.5GB of storage. It is safe to run ``sudo rm -Rf /var/opt/morpheus/package-repos/*`` after |morphver| package installation and before reconfigure to clean old node and vm node packages from the package-repo when room is needed.
 
 #. Upgrade the RPM package on App Node 1, then run a Reconfigure on App Node 1
 
@@ -85,9 +86,9 @@ The following covers upgrading the |morpheus| App nodes in Full HA Architecture 
 
     [root@app-server-2 ~]# sudo wget https://packageUrl.morpheus-appliance-x.x.x-x.x86_64.rpm
     [root@app-server-2 ~]# sudo rpm -Uhv morpheus-appliance-x.x.x-x.x86_64.rpm
-    [root@app-server-1 ~]# sudo morpheus-ctl stop morpheus-ui
-    [root@app-server-1 ~]# sudo morpheus-ctl reconfigure
-    [root@app-server-1 ~]# sudo morpheus-ctl start morpheus-ui
+    [root@app-server-2 ~]# sudo morpheus-ctl stop morpheus-ui
+    [root@app-server-2 ~]# sudo morpheus-ctl reconfigure
+    [root@app-server-2 ~]# sudo morpheus-ctl start morpheus-ui
 
    After the reconfigure has succeeded, tail the ui service to watch ui startup logs with ``morpheus-ctl tail morpheus-ui``.
 
@@ -97,9 +98,9 @@ The following covers upgrading the |morpheus| App nodes in Full HA Architecture 
 
     [root@app-server-3 ~]# sudo wget https://packageUrl.morpheus-appliance-x.x.x-x.x86_64.rpm
     [root@app-server-3 ~]# sudo rpm -Uhv morpheus-appliance-x.x.x-x.x86_64.rpm
-    [root@app-server-1 ~]# sudo morpheus-ctl stop morpheus-ui
-    [root@app-server-1 ~]# sudo morpheus-ctl reconfigure
-    [root@app-server-1 ~]# sudo morpheus-ctl start morpheus-ui
+    [root@app-server-3 ~]# sudo morpheus-ctl stop morpheus-ui
+    [root@app-server-3 ~]# sudo morpheus-ctl reconfigure
+    [root@app-server-3 ~]# sudo morpheus-ctl start morpheus-ui
 
    After the reconfigure has succeeded, tail the ui service to watch ui startup logs with ``morpheus-ctl tail morpheus-ui``.
 

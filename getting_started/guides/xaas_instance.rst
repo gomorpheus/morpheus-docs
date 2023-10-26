@@ -16,6 +16,8 @@ In this guide, we'll use the following |morpheus| constructs:
 - Catalog Items
 - Instances
 
+.. NOTE:: XaaS Instances are associated with |morpheus|-type Clouds. |morpheus| Clouds are generic cloud wrappers that can be used to contain manually-managed servers, VMs, and (in this case) non-VM based resources. In this guide we will go through the process of creating a |morpheus|-type Cloud which can be used to hold your XaaS resources.
+
 Create Cypher
 ^^^^^^^^^^^^^
 

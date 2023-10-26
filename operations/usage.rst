@@ -3,7 +3,7 @@ Usage
 
 The `Operations > Costing > Usage` section shows billing information for Instances and hosts that have pricing configured on their Service Plan.
 
-.. IMPORTANT:: Pricing must be enabled in |AdmSetPro| and Service Plans configured with price sets in `|AdmPla|` for pricing to show in the Usage section.
+.. IMPORTANT:: Pricing must be enabled in |AdmSetPro| and Service Plans configured with price sets in |AdmPla| for pricing to show in the Usage section.
 
 View Usage
 ^^^^^^^^^^
@@ -18,6 +18,12 @@ Date
   Default view shows most current Usage. Select the Date filter to scope to a different date range.
 Type
   All usage record types are shown by default, select a specific type to filter the list to just one
+
+Example:
+  Below is an example of a discovered instance from AWS, which shows different usage periods and the pricing that would be related.  In this case, 
+  the compute and storage are used to calculate the Usage Price when the instance is **Running** but only the storage when the instance is **Stopped**:
+  
+  .. image:: /images/operations/usage_example.png
 
 API & CLI
 ^^^^^^^^^

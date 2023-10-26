@@ -17,6 +17,7 @@ Base Requirements
 - **CPU:** 4-core, 1.4 GHz (or better), 64-bit CPU recommended for all-in-one systems. For a distributed-tier installation, it's recommended each tier have 2-core, 1.4 GHz (or better), 64-bit CPU
 - Network connectivity from your users to the appliance over TCP 443 (HTTPS)
 - Superuser privileges via the ``sudo`` command for the user installing the |morpheus| appliance package
+- |morpheus| service nodes must be configured to use accurate NTP servers. A service node may be an app node, database node, RabbitMQ, or Elasticsearch node (see |morpheus| system architecture details further on in the installation section for more details)
 - Required repository access:
     - Prior to installing the |morpheus| Appliance you will need to ensure that the target server or virtual machine has access to the base YUM/DNF or APT repositories
     - A RHEL 8 server requires the ``codeready`` (codeready-builder-for-rhel-8-x86_64-rpms) repository be enabled and accessible
@@ -34,8 +35,6 @@ Base Requirements
 
     - An Appliance URL that is accessible/resolvable to all managed hosts. It is necessary for all hosts that are managed by |morpheus| to be able to communicate with the appliance server ip on port 443. This URL is configured under |AdmSet|.
 
-.. NOTE:: Ubuntu 16.10 is not currently supported.
-
 Storage Considerations
 ----------------------
 
@@ -49,12 +48,23 @@ Default Paths
 ``/opt/morpheus``
   Morpheus Application and Services Files
 ``/var/opt/morpheus``
-  User, Application and Services Data, including default config Elasticsearch, RabbitMQ and Database data, and default Virtual Image path.
+  User, Application and Services Data, including default config Elasticsearch, RabbitMQ and Database data, default Virtual Image path, and working directory for Backups
+``/var/opt/morpheus/morpheus-ui`` (HA Installations Only)
+  In an HA Installation, a NFS share is required and mounted to this location.  Virtual Images, Plugins, and other shared files are stored at this path to be accessible for all nodes
+``/home``
+  Morpheus service account home data, such as configuration files
 ``/var/log``
   Morpheus Service logs
-``/var/opt/morpheus/bitcan/``
-  Working directory for Backups
+``/tmp``
+  Storage for any temp files created by Morpheus or the operating system
 
+.. toggle-header::
+    :header: **Storage Calculator**
+
+    .. raw:: html
+
+      <iframe height="333px" width="850" id="storageCalculator" src="../../_static/storageCalculator/index.html" frameborder="0" allowfullscreen></iframe>
+|
 Images
 ^^^^^^
 
@@ -66,11 +76,6 @@ Backups
 |morpheus| can offload snapshots when performing backups to local or other Storage Providers. By default when no Storage Provider has been added, backups will write to ``/var/opt/morpheus/bitcan/backups/``. When using none NFS Storage providers, the backup file(s) must be written to ``/var/opt/morpheus/bitcan/working/`` before they can be zipped, sent to the destination Storage provider such as S3, and removed from ``/var/opt/morpheus/bitcan/working/``. Please ensure adequate space in ``/var/opt/morpheus/bitcan/`` when offloading Backups.
 
 .. note:: The backup /working and /backups paths are configurable in morpheus.rb with `bitcan['working_directory'] = '$path'` and `bitcan['backup_directory'] = '/tmp'`
-
-Migrations
-^^^^^^^^^^
-
-When performing a Hypervisor to Hypervisor migration, such as VMware to AWS, Virtual Images are written to local storage before conversion and/or upload to the target hypervisor. Please ensure adequate space in ``/var/opt/morpheus/morpheus-ui/vms`` or other configured local Storage Provider paths when performing Migrations.
 
 VM Logs and Stats
 ^^^^^^^^^^^^^^^^^
@@ -688,12 +693,6 @@ The following table contains communication information, including frequency and 
   * - Network Integration
     - Server Pull
     - NSX-T
-    - Data synchronization
-    - 10 Minutes
-    - No
-  * - Network Integration
-    - Server Pull
-    - NSX-V
     - Data synchronization
     - 10 Minutes
     - No

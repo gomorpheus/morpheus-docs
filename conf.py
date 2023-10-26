@@ -3,39 +3,44 @@ import datetime
 master_doc = 'index'
 
 latex_documents = [
-    (master_doc, 'morpheus_5.5.1-1.tex', u'Morpheus Documentation',
+    (master_doc, 'morpheus_6.2.2-1.tex', u'Morpheus Documentation',
      u'Morpheus', 'manual'),
 ]
 
 rst_prolog = """
 
-.. |releasedate| replace:: July 19 2022
-.. |morphbranch| replace:: v5.5
-.. |morphver| replace:: v5.5.1
-.. |minUpgradeVer| replace:: v5.2.0
-.. |previousMorphVer| replace:: v5.5.0
-.. |pluginVer| replace:: 0.12.5
+.. |releasedate| replace:: Oct 26 2023
+.. |releasetype| replace:: Standard
+.. |morphAnnualVer| replace:: v6
+.. |morphbranch| replace:: v6.3
+.. |morphver| replace:: v6.3.0
+.. |minUpgradeVer| replace:: v6.0.0
+.. |minRollingUpgradeVer| replace:: v6.0.7
+.. |nonRollingUpgradeVer| replace:: v6.0.6
+.. |previousMorphVer| replace:: v6.2.3
+.. |pluginVer| replace:: 1.0.1
 .. |workerVer| replace:: 5.4.8
-.. |rmqbranch| replace:: v3.5-3.9
-.. |rmqver| replace:: v3.9.20
-.. |mysqlbranch| replace:: v5.7
-.. |mysqlver| replace:: v5.7.37
-.. |mysqlverfips| replace:: v5.7.37
-.. |esbranch| replace:: v7.x
-.. |esver| replace:: v7.17.5
-.. |tcver| replace:: v9.0.64
-.. |nginxver| replace:: v1.22.1
-.. |nodePackageVer| replace:: 3.2.8
-.. |linuxagentver| replace:: v2.3.2
-.. |macagentver| replace:: v2.3.2
-.. |winagentver| replace:: v1.8.0.0
-.. |java| replace:: 11.0.15+10
+.. |rmqbranch| replace:: v3.5-3.12
+.. |rmqver| replace:: v3.12.2
+.. |mysqlbranch| replace:: v5.7, v8.0
+.. |mysqlver| replace:: v8.0.34
+.. |mysqlverfips| replace:: v8.0.34
+.. |esbranch| replace:: v8.9+
+.. |esver| replace:: v8.9.0
+.. |tcver| replace:: v9.0.76
+.. |nginxver| replace:: v1.25.1
+.. |nodePackageVer| replace:: 3.2.17
+.. |linuxagentver| replace:: v2.4.2
+.. |macagentver| replace:: v2.4.0
+.. |winagentver| replace:: v2.4.0
+.. |java| replace:: 11.0.20+8
 .. |java-mac| replace:: 11.0.14+9
-.. |openjdk-jre| replace:: 11.0.15+10
-.. |openjdk-elasticsearch| replace:: 14.0.2+12
-.. |openssl| replace:: 1.1.1p
+.. |openjdk-jre| replace:: 11.0.20+8
+.. |openjdk-elasticsearch| replace::  17.0.5+8
+.. |openssl| replace:: 1.1.1t
 .. |openssl_fips| replace:: 1.0.2u
-.. |erlang| replace:: 23.3.4.2
+.. |erlang| replace:: 25.2.3
+.. |mastertenant| replace:: Master Tenant
 
 .. |morpheus| replace:: Morpheus
 .. |morphues| replace:: Morpheus
@@ -45,11 +50,11 @@ rst_prolog = """
 .. |profileObjects| replace:: Clouds
 .. |profileTypes| replace:: Terraform, Key/Value
 
-.. |debianVersions| replace:: 9,10,11
+.. |debianVersions| replace:: 10, 11
 .. |oelVersions| replace:: 7.x, 8.x
-.. |ubuntuVersions| replace:: 16.04, 18.04, 20.04, 22.04
-.. |centosVersions| replace:: 7.x. 8.x (stream)
-.. |rhelVersions| replace:: 7.x. 8.x
+.. |ubuntuVersions| replace:: 18.04, 20.04, 22.04
+.. |centosVersions| replace:: 7.x. 8.x (stream) 9.x (stream)
+.. |rhelVersions| replace:: 7.x, 8.x, 9.x
 .. |suseVersions| replace:: 12, 15
 
 .. |Lib| replace:: Library
@@ -70,11 +75,13 @@ rst_prolog = """
 .. |LibOpt| replace:: Library > Options
 .. |LibOptInp| replace:: Library > Options > Inputs
 .. |LibOptOpt| replace:: Library > Options > Option Lists
+.. |LibOptFor| replace:: Library > Options > Forms
 .. |LibTem| replace:: Library > Templates
 .. |LibTemSpe| replace:: Library > Templates > Spec Templates
 .. |LibTemFil| replace:: Library > Templates > File Templates
 .. |LibTemScr| replace:: Library > Templates > Script Templates
 .. |LibTemSec| replace:: Library > Templates > Security Packages
+.. |LibTemClu| replace:: Library > Templates > Cluster Packages
 .. |LibInt| replace:: Library > Integrations
 .. |Pro| replace:: Provisioning
 .. |ProCat| replace:: Provisioning > Catalog
@@ -83,6 +90,7 @@ rst_prolog = """
 .. |ProApp| replace:: Provisioning > Apps
 .. |ProJob| replace:: Provisioning > Jobs
 .. |ProJobJob| replace:: Provisioning > Jobs > Job Executions
+.. |ProExe| replace:: Provisioning > Executions
 .. |ProCod| replace:: Provisioning > Code
 .. |ProCodRep| replace:: Provisioning > Code > Repositories
 .. |ProCodDep| replace:: Provisioning > Code > Deployments
@@ -116,6 +124,7 @@ rst_prolog = """
 .. |InfNetNetG| replace:: Infrastructure > Network > Network Groups
 .. |InfNetRou| replace:: Infrastructure > Network > Routers
 .. |InfNetIP| replace:: Infrastructure > Network > IP Pools
+.. |InfNetFlo| replace:: Infrastructure > Network > Floating IPs
 .. |InfNetDom| replace:: Infrastructure > Network > Domains
 .. |InfNetPro| replace:: Infrastructure > Network > Proxies
 .. |InfNetSec| replace:: Infrastructure > Network > Security Groups
@@ -201,6 +210,7 @@ rst_prolog = """
 .. |AdmSetSof| replace:: Administration > Settings > Software Licenses
 .. |AdmSetLic| replace:: Administration > Settings > License
 .. |AdmSetUti| replace:: Administration > Settings > Utilities
+.. |AdmSetCli| replace:: Administration > Settings > Clients
 
 .. |trash| unicode:: 0x0001F5D1 .. TRASH ICON
 .. |gear| unicode:: U+02699 .. GEAR ICON
@@ -209,8 +219,12 @@ rst_prolog = """
 .. |rightarrow| unicode:: U+2192 .. RIGHT ARROW ICON
 .. |pencil| unicode:: U+270E .. EDIT ICON
 .. |checkmark| unicode:: U+2713 .. CHECK MARK
-
 .. role:: redguilabel
+
+.. |advSevCrit| replace:: Critical ⬛️
+.. |advSevHigh| replace:: High 🟥
+.. |advSevMed| replace:: Medium 🟨
+.. |advSevLow| replace:: Low 🟩
 """
 
 
@@ -237,7 +251,7 @@ rst_prolog = """
 
 
 year = datetime.datetime.now().date().strftime("%Y")
-extensions = ['recommonmark','sphinxcontrib.contentui','sphinx_tabs.tabs','sphinxcontrib.images','sphinx_search.extension','notfound.extension','sphinx.ext.autosectionlabel','sphinx_rtd_dark_mode'] #sphinx_tabs
+extensions = ['myst_parser','sphinx.ext.autosectionlabel','sphinx_rtd_theme','sphinx_tabs.tabs','sphinxcontrib.contentui','sphinxcontrib.images','sphinx_search.extension','notfound.extension','sphinx.ext.autosectionlabel'] #sphinx_tabs
 templates_path = ['_templates']
 default_dark_mode = False
 source_suffix = ['.rst', '.md']
@@ -310,3 +324,14 @@ html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
 
 def setup(app):
     app.add_css_file('morpheusTheme.css')
+
+
+# -- Copy the upgrade table from master ------------------------------------------
+
+import urllib.request
+from urllib.request import urlretrieve
+
+urlretrieve (
+    "https://github.com/gomorpheus/morpheus-docs/blob/master/release_notes/upgrade_table.rst",
+    "release_notes/upgrade_table2.rst"
+)

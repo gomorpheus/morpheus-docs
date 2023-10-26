@@ -22,6 +22,8 @@ Tasks
 .. |puppet| image:: /images/automation/tasks/puppet-d39e3a20a47d04a44d6d2a854b2acd65.png
 .. |localscript| image:: /images/automation/tasks/localScript-bfbe0063e4e6c35ed1c4e5898c88e007.png
 .. |vro| image:: /images/automation/tasks/vro_logo.png
+.. |wa| image:: /images/automation/tasks/writeAttributes.png
+.. |nestedworkflow| image:: /images/automation/tasks/nestedworkflow.svg
 
 Overview
 ^^^^^^^^
@@ -168,6 +170,13 @@ Task Types
      - Resource
      - Existing Library Templates
      - Provisioning: Tasks
+   * - |nestedworkflow|
+     - Nested Workflow
+     - Embeds a Workflow into a Task which allows the Workflow to be nested within other Workflows for situations when common Task sets are frequently used in Workflows
+     - N/A
+     - Local
+     - N/A
+     - Provisioning: Tasks, Provisioning: Workflows
    * - |powershell|
      - PowerShell Script
      - Execute PowerShell Script on the Target Resource
@@ -206,9 +215,16 @@ Task Types
    * - |vro|
      - vRealize Orchestrator Workflow
      - Executes vRO Workflow on the Target Resource
-     - vRO Integraiton
+     - vRO Integration
      - Local, Resource
      - Existing vRO Integration
+     - Provisioning: Tasks
+   * - |wa|
+     - Write Attributes
+     - Add arbitrary values to the Attributes map of the target resource
+     - N/A
+     - Local
+     - Provide map of values as valid JSON
      - Provisioning: Tasks
 
 Task Configuration
@@ -336,6 +352,15 @@ Task Configuration
     - **CODE:** Unique code name for API, CLI, and variable references
     - **TEMPLATE:** Search for an existing template in the typeahead field
 
+- .. toggle-header:: :header: **Nested Workflow**
+
+    .. image:: /images/automation/tasks/nestedworkflow.svg
+      :width: 10%
+
+    - **NAME:** Name of the Task
+    - **CODE:** Unique code name for API, CLI, and variable references
+    - **OPERATIONAL WORKFLOW:** The Workflow to be embedded as a Task for reference inside other Workflows
+
 - .. toggle-header:: :header: **Powershell Script**
 
     |powershell|
@@ -445,6 +470,10 @@ Task Configuration
     - **SUDO:** Mark the box to run the script as ``sudo``
     - **CONTENT:** Script to execute is entered here if not pulled in from an outside repository
 
+    |
+
+    .. TIP:: When the EXECUTE TARGET option is set to "Local" (in other words, the Task is run on the appliance itself), two additional fields are revealed: GIT REPO and GIT REF. Use GIT REPO to set the PWD shell variable (identifies the current working directory) to the locally cached repository (ex. /var/opt/morpheus-node/morpheus-local/repo/git/76fecffdf1fe96516e90becdab9de) and GIT REF to identify the Git branch the Task should be run from if the default (typically main or master) shouldn't be used. If these options are not set, the working folder will be /opt/morpheus/lib/tomcat/temp which would not allow scripts to reference file paths relative to the repository (if needed).
+
 - .. toggle-header:: :header: **vRealize Orchestrator Workflow**
 
     |vro|
@@ -456,34 +485,85 @@ Task Configuration
     - **WORKFLOW:** Select a vRO workflow from the list synced from the selected integration
     - **PARAMETER BODY (JSON):**
 
+- .. toggle-header:: :header: **Write Attributes**
+
+    |wa|
+
+    - **NAME:** Name of the Task
+    - **CODE:** Unique code name for API, CLI, and variable references
+    - **ATTRIBUTES:** A JSON map of arbitrary values to write to the attributes property of the target resource
+
+    |
+
+    .. TIP:: This is often useful for storing values from one phase of a Provisioning Workflow for access in another phase. See the video demo below for a complete example.
+
+    There are a number of ways that a JSON payload can be statically drafted within a Write Attributes Task or called into the Task as a result from a prior Task. Consider the following examples:
+
+    To pass in a static JSON map with static values, use the format shown below.
+
+    .. code-block:: JSON
+
+      {
+        "my_key1": "my_value1",
+        "my_key2": "my_value2"
+      }
+
+    To pass in a static JSON map with dynamic values seeded from prior Task results, ensure the RESULT TYPE value of one or more of the prior Tasks in the Workflow phase is set to "Single Value" and refer to the values within the JSON map as shown in the next example. Note that "taskCode1" and "taskCode2" refer to the CODE field value for the Task whose output you wish to reference.
+
+    .. code-block:: JSON
+
+      {
+        "my_key1": "<%=results.taskCode1%>",
+        "my_key2": "<%=results.taskCode2%>"
+      }
+
+    To pass in a dynamic JSON map returned from a prior Task, format your Write Attributes Task as shown in the next example. Ensure that the RESULT TYPE value for the Task returning a JSON map is set to "JSON". Note that "taskCode" in the example refers to the CODE field value for the Task being referenced. In order for the JSON map to be set correctly and able to be referenced from future Tasks, you must set the "instances" key and call the ``encodeAsJSON()`` Groovy method as shown in the example.
+
+    .. code-block:: JSON
+
+      {
+        "instances": <%=results.taskCode?.encodeAsJSON()%>
+      }
+
+    |
+
+    .. raw:: html
+
+        <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; height: auto;">
+            <iframe src="//www.youtube.com/embed/7b_HQTRMR2Y" frameborder="0" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
+        </div>
+
+    |
+
 Task Management
 ^^^^^^^^^^^^^^^
 
 Adding Tasks
 ````````````
 
-#. Select the Provisioning link in the navigation bar.
-#. Select Automation from the sub-navigation menu.
-#. Click the :guilabel:`Add` button.
-#. From the New Task Wizard input a name for the task.
-#. Select the type of task from from the type dropdown.
-#. Input the appropriate details dependent on the task type you selected from the dropdown.
-#. Save
+#. Select Automation from within the Library menu
+#. On the Tasks tab, click the :guilabel:`Add` button
+#. From the New Task Wizard input a name for the task
+#. Select the type of task from from the type dropdown
+#. Input the appropriate configuration details. These will vary signficiantly based on the selected Task type. More details on each Task type are contained in the preceding sections.
+#. Once done, click :guilabel:`SAVE CHANGES`
+
+.. TIP:: When writing a Task config, it's often necessary to reference |morpheus| variables which pertain to the specific Instance the Task is being run against. |morpheus| includes a pop-out column along the right side of the Add/Edit Task modal which lists available variables. Click and drag the relevant variable into the config area and |morpheus| will automatically fill in the variable call formatted for the currently chosen Task type. See the screenshot below.
+
+.. image:: /images/automation/tasks/taskvars.png
 
 Editing Tasks
 `````````````
 
-#. Select the Provisioning link in the navigation bar.
-#. Select Automation from the sub-navigation menu.
-#. Click the Edit icon on the row of the task you wish to edit.
-#. Modify information as needed.
-#. Click the Save Changes button to save.
+#. Select Automation from within the Library menu
+#. Click the pencil icon (|pencil|) on the row of the task you wish to edit
+#. Modify Task as needed
+#. Once done, click :guilabel:`SAVE CHANGES`
 
 Deleting Tasks
 ``````````````
 
-#. Select the Provisioning link in the navigation bar.
-#. Select Automation from the sub-navigation menu.
-#. Click the Delete icon on the row of the task you wish to delete.
+#. Select Automation from within the Library menu
+#. Click the trash icon (|trash|) on the row of the Task you wish to delete
 
 .. include:: tasks/taskResults.rst

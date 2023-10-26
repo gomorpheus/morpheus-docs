@@ -6,7 +6,6 @@ Backups
 
 |morpheus| also integrates with external services to automate availability with other providers.
 
-
 Initial Backups Setup
 =====================
 
@@ -74,7 +73,6 @@ Backup Types displayed will be filtered by available options per selected Instan
 * VMWare VM Snapshot
 * Fusion VM Snapshot
 * Xen VM Snapshot
-* SqlServer
 * Veeam VMWare VM Backup
 * Veeam Hyper-V VM Backup
 * Google VM Snapshot

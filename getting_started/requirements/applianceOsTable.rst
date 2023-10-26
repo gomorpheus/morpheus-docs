@@ -13,7 +13,7 @@
      -
    * - Debian
      - |debianVersions|
-     - FreeRDP 2.0 is not compatible with Debian 9. Guacd will remain at 1.0.0 for Appliances running on 9.
+     - 
    * - RHEL
      - |rhelVersions|
      -
@@ -26,4 +26,3 @@
    * - Ubuntu
      - |ubuntuVersions|
      - 14.04 is no longer supported for Appliance OS.  Note: 14.04 is still supported by the |morpheus| Agent.
-

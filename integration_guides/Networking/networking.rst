@@ -5,7 +5,6 @@ Networking Integrations
 
    infoblox.rst
    phpipam.rst
-   nsx.rst
    nsxt.rst
    aci.rst
    bluecat.rst

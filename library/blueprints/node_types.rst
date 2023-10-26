@@ -51,6 +51,29 @@ Example port configuration:
 VMware Options
 ````````````````````
 
+|morpheus| supports VMware-specific configurations related to Node Types targeted for VMware vCenter Clouds. Setting the TECHNOLOGY field on the Node Type to "VMware" reveals these fields.
+
+**vApp Properties**
+
+Some VMware images may expect the user to provide values for vApp properties related to server configuration. |morpheus| allows the user to set values for vApp properties on the Node Type, which can be static values or even |morpheus| variables such as if we wanted to provide the next available IP address from a |morpheus| IP pool or source a password from |morpheus| Cypher. Consider the following example workflow for examining an OVA image, uploading it to |morpheus| as a Virtual Image, and setting vApp properties on the Node Type.
+
+If you have an OVA that doesn't have the properties laid out in a visible format, you can unzip it and inspect the OVF file to help set the vApp properties in |morpheus|. For example, take a look at the screenshot below from an OVF file associated with an F5 image. There are four vApp properties I wish to set related to network and user configuration. The ``userConfigurable`` property should be toggled to ``true`` for any that may be set to ``false``. The key is identified by the ``key`` property and, if desired, default values can be set via the ``value`` property. Save any changes to the OVF file.
+
+.. image:: /images/provisioning/library/vappProps/vappOvf.png
+
+With changes saved, the image can be uploaded to |morpheus| as a Virtual Image from which we can create and configure a Node Type. Below you can see the Virtual Image uploaded and revealed on the Virtual Images list page.
+
+.. image:: /images/provisioning/library/vappProps/vappVirtualImage.png
+
+Next, create a new Node Type. After setting the TECHNOLOGY value to "VMware" the fields related to vApp Property configuration will be revealed. Select the uploaded Virtual Image as the "VM IMAGE" and set the key/value pairs in VAPP PROPERTIES. In this case, I've dynamically loaded the values using |morpheus| variables.
+
+.. image:: /images/provisioning/library/vappProps/vappNodeType.png
+  :width: 50%
+
+The rest of the process is the same as building out any other |morpheus| library item. House the Node Type within a Layout and the Layout within an Instance Type. It should then be provisionable as any other Instance Type.
+
+**Extra Options**
+
 When VMware Technology Type is selected, EXTRA OPTIONS will be available in the VMware VM Options section. These allow defining Advance vmx-file parameters during provisioning.
 
 Some Example include:

@@ -1,120 +1,119 @@
 Azure Active Directory SSO (SAML)
 ---------------------------------
 
-Azure Active Directory Single Sign-on can be added as a Identity Source in |morpheus| using the SAML Identity Source Type. The Azure AD SSO configuration is slightly different than other SAML providers, and this guide will assist in adding a Azure AD SSO Identity Source.
+Azure Active Directory Single Sign-on can be added as a Identity Source in |morpheus| using the SAML Identity Source Type. The Azure AD SSO configuration is slightly different
+than other SAML providers, and this guide will assist in adding a Azure AD SSO Identity Source.
 
-Create a Azure AD SAML Integration
+Create Azure Enterprise Application
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Azure requires inputting the `Identifier (Entity ID)` and `Reply URL (Assertion Consumer Service URL)` in the Azure SSO configuration before it provides the Endpoints and Certificate necessary to add the Integration into |morpheus|. In order to get the `Identifier (Entity ID)` and `Reply URL (Assertion Consumer Service URL)` to input into Azure SSO config, we need to create a base SAML Integration in |morpheus| first.
+#. Login to the `Azure Portal <https://portal.azure.com>`_
+#. Navigate to: ``Azure Active Directory > Enterprise Applications``
+#. Click the ``+ New application`` button at the top
+#. Click the ``+ Create your own application`` button at the top
+#. Ensure ``Integrate any other application you don't find in the gallery (Non-gallery)`` is selected and enter a name for the app.  Common examples are:  ``MorpheusSSO``
+#. Click the ``Create`` button at the bottom and wait for it to complete
+#. Once created, you'll be in the ``Overview`` of the application created.  Navigate to the ``Single sign-on`` section from the left pane
+#. Choose ``SAML`` as the Single sign-on method
+#. Copy both the ``Login URL`` and ``Logout URL`` in Step 4, we'll need these in some of the next steps
+#. Before we can continue configuring the application, the configuration needs to be generated in |morpheus| for more data
 
-To add a base SAML integration:
+Create an Azure AD SAML Integration in |morpheus|
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Azure requires inputting the ``Identifier (Entity ID)`` and ``Reply URL (Assertion Consumer Service URL)`` in the Azure SSO configuration before it provides the Endpoints and Certificate
+necessary to add the Integration into |morpheus|. In order to get the ``Identifier (Entity ID)`` and ``Reply URL (Assertion Consumer Service URL)`` to input into Azure SSO configuration,
+we need to create a ``Azure AD SAML SSO`` integration in |morpheus| first.
+
+To add the integration:
+
+#. Login to |morpheus|
 #. Navigate to |AdmTen|
-#. Select a tenant.
-#. Select IDENTITY SOURCES in the Tenant detail page
-#. Select :guilabel:`+ ADD IDENTITY SOURCE`.
-#. Select ``SAML SSO`` from the TYPE field
-#. Add a Name, optional Description and any value in the LOGIN REDIRECT URL field.
-    Since we do not have the LOGIN REDIRECT URL from Azure yet, type any text such as ``test`` into the LOGIN REDIRECT URL field so the Identity Source Integration can be saved and the `Identifier (Entity ID)` and `Reply URL (Assertion Consumer Service URL)` generated. We will edit the Integration with the proper LOGIN REDIRECT URL after configuring SSO in Azure.
-#. Select :guilabel:`SAVE CHANGES`.
+#. Click a tenant hyperlink
+#. Click the :guilabel:`IDENTITY SOURCES` button in the Tenant detail page
+#. Click the :guilabel:`+ ADD IDENTITY SOURCE` button
+#. Select ``Azure AD SAML SSO`` from the ``TYPE`` dropdown
+#. Add
 
-Upon save, the `Entity ID` (Identifier (Entity ID)) and `SP ACS URL` (Reply URL (Assertion Consumer Service URL)) will be provide in the Identity Source list view. Copy these for use in Azure SSO config.
+   * Name
 
-..
-  this needs replaced or just left out
-  .. image:: /images/integration_guides/identity_sources/azure_ad_saml/saml_setup.png
-    :width: 80%
-    :align: center
-
-Configure Azure SSO
-^^^^^^^^^^^^^^^^^^^
-
-This guide assumes an Azure AD Application has already been created in Azure with a subscription level high enough to configure SSO in the application. Please refer to Azure documentation if this has not already been configured.
-
-#. Next, in the Azure Active Directory Application details page, select ``Single sign-on``, then enter the following:
-
-   * Single Sign-on Mode dropdown
-        Select ``SAML-based Sign-on``
-   * Identifier (Entity ID)
-        Enter the ``Entity ID`` URL from the |morpheus| Identity Source Integration above.
-   * Reply URL (Assertion Consumer Service URL)
-        Enter the ``SP ACS URL`` from the |morpheus| Identity Source Integration above.
-
-#. Save and click the `Test SAML Settings` button. Azure will confirm connection with |morpheus|
-#. In Azure's `User Attributes & Claims` settings (step 2), select ``Add a group claim`` with value ``user.groups [SecurityGroup]``
-
-   **User Attributes & Claims** config
+   * (Optional) Description
    
-   .. list-table:: **Required Claim**
-      :widths: auto
-      :header-rows: 1
+   * Paste the ``Login URL`` copied from Azure into the ``LOGIN REDIRECT URL`` field
+   
+   * Paste the ``Logout URL`` copied from Azure into the ``SAML LOGOUT REDIRECT URL`` field
+ 
+#. This is the minimum information needed for now, which will let us generate the details needed from |morpheus|.  We'll return to this configuration page later to enter more information.
+#. Click the :guilabel:`SAVE CHANGES` button
 
-      * - Claim name
-        - Value
-      * - Unique User Identifier (Name ID)
-        - user.userprincipalname [nameid-format:emailAddress]
+.. IMPORTANT:: Setting SAML REQUEST to "No Signature" and SAML RESPONSE to "Do Not Validate Assertion Signature" is allowed but not recommended for security reasons.
 
-   |
-    
-   .. list-table:: **Additional Claims**
-      :widths: auto
-      :header-rows: 1
+Upon saving, the `Entity ID` (``Identifier (Entity ID)``) and `SP ACS URL` (``Reply URL (Assertion Consumer Service URL)``) will be provide in the Identity Source list view. Copy these for use in Azure SSO configuration.
 
-      * - Claim name
-        - Value
-      * - http://schemas.microsoft.com/ws/2008/06/identity/claims/groups
-        - user.groups [SecurityGroup]
-      * - http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress
-        - user.mail
-      * - http://schemas.xmlsoap.org/ws/2005/05/identity/claims/givenname
-        - user.givenname
-      * - http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name
-        - user.userprincipalname
-      * - http://schemas.xmlsoap.org/ws/2005/05/identity/claims/surname
-        - user.surname
+  .. image:: /images/integration_guides/identity_sources/azure_ad_saml/saml_setup.png
+      :width: 40%
 
+Configure Azure Enterprise Application
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-#. Copy or keep available for reference the the Claim Names/Namespace URLs for entering Role Attribute Values in the |morpheus| Identity Source Integration.
-#. In Azure SSO config, if one has not been generated, select ``Create new certificate`` to generate a new SAML Signing Certificate.
-#. Enter a valid email address to receive certificate expiration notifications (these are not |morpheus|-generated email).
-#. In Azure SSO config, select ```Configure {AD App Name}``
-#. In the `Configure sign-on` pane, copy the following:
+This guide assumes an Azure AD Enterprise Application has already been created. Please refer to documentation above, if this has not already been configured.
 
-   * SAML Single Sign-On Service URL
-      This will be used for the LOGIN REDIRECT URL in the |morpheus| Identity Source Integration settings
-   * Sign-Out URL
-      This will be used for the LOGOUT REDIRECT URL in the |morpheus| Identity Source Integration settings
-   * Click on the ``SAML XML Metadata`` link, open the xml file, and copy the key between the ``<X509Certificate>`` and ``</X509Certificate>``.
-      This will be used for the `Public Key` value in the SAML RESPONSE section of the |morpheus| Identity Source Integration settings
+#. Navigate to: ``Azure Active Directory > Enterprise Applications > Single sign-on``
+#. Choose ``SAML`` as the Single sign-on method
+#. On Step 1 (``Basic SAML Configuration``), click the ``Edit`` button and enter the following:
+  
+   * Identifier (Entity ID)
+      Enter the ``Entity ID`` URL from the |morpheus| Identity Source Integration above
+  
+   * Reply URL (Assertion Consumer Service URL)
+      Enter the ``SP ACS URL`` from the |morpheus| Identity Source Integration above
+  
+   * Logout URL
+      Enter the following format:  ``https://yourUrl/login/``
+      If this is a sub tenant, the format may instead be the following:  ``https://yourUrl/login/account/1``
+      The login URL can be found under :guilabel:`IDENTITY SOURCES` in the tenant
 
-      Example Key (this key is an example and is not valid):
+#. On Step 2 (``Attributes and Claims``), click the ``Edit`` button
+#. Click the ``Add a group claim`` button at the top
+#. Choose ``All groups`` and ensure ``Group ID`` is selected for the ``Source attribute`` dropdown
+  
+   .. note:: You can also choose ``Security groups``, which ever makes more sense for the organization
 
-     .. code-block:: bash
+#. Close the pane and return to the Enterprise Application in the ``Single sign-on`` section
+#. On Step 3 (``SAML Certificates``), click the ``Download`` link next to ``Certificate (Base64)`` and ``Federation Metadata XML``
+  
+   .. note::  The files will download, keep them available for later configuation in |morpheus|
 
-      MIIC8ECCAdigAwIBAgIQEOZXlNx5wY9Dc6OwlsKEMzANBgkqhkiG9w0BAQsFADA0MTIwMAYDVQQDEylNaWNyb3NvZnQgQXp1cmUgRmVkZXJhdGVkIFNTTyBDZXJ0aWZpY2F0ZTAeFw0xODAyMTYxNTU4NTlaFw0yMTAyMTYxNTU4NTlaMDQxMjAwBgNVBAMTTU1pY3Jvc29mdCBBenVyZSBGZWRlcmF0ZWQgU1NPIENlcnRpZmljYXRlMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA2k/V6GcBpRkoxJd0DLbhubwd0kp65LD9IIh5PUY2ohBHvrFAy3SZ04mXoH7LWvY3oNrqxaNAksbYF6phOkONf/XeTdzor14xdGnTuD9zRqPsJHHisyfFBUG/CxYxzO6w9fAPzJGLzc0Y7o5lMW2OjINaqI4R/pqp3qw+nYf7DXSzY6tf1Sspk64jfZDt1jSVjD7upMItKPeOCRmeBUcnebjzwXqFBO7l4Vf5g1oEJvftT7Wpr4VVmoLh8rFGWbQ1wlmtsK9RrWTqdt3su2H9uNrEjWiZ62x6ate2fs0dXnz17KoV7RQOpqYtjom76jNUzorcl73D5AGwW6x+2wIDAQABMA0GCSqGSIb3DQEBCwUAA4IBAQCSjf2IOG6O3wdOmkfJ/pH6xzQVRz0GZQpol9ViQJJbJJqhLm4LjWT9VU2lYqdi0NdgtK7QthZo4J0ZFdUG6qfFTfPKqVn0AEHxiM4JWxfigzdMJUutHcRRoaJ8VvywZYJKE91e4TDuBOw8XqdBiBx627ZybXCuR/y56+ksYSRP87XdOcVvTftHYmQnDOf0qKrpgMK7LtmsEwqc7rKX7nTCenZnBEBOCFDBVH4QEzMrAznEPdJnQs9nJZBNCYJUrCRXbPKpXE9u8MlTVq4swFm96xsXkfeP8NFsgrXmzOn3BsHaBXqdhrrkbwq85VPWUaoIomlhAWQq/seC
+#. Navigate to ``Users and Groups`` in the left pane
+#. Click the ``Add user/group`` button
+#. Add Azure groups to this application that will be able to login to |morpheus|
 
-#. Save the SSO config in Azure AD app and return to |morpheus|
+   .. note:: Note the object ID for each of these groups, as they will be used later when configuring |morpheus| to map the group to roles
 
-Edit the existing Azure AD SAML Integration
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+#. Once groups have been added, click the ``Assign`` button at the bottom
 
-   Now that we have the required information, we can finalize the Azure AD SAML Integration in |morpheus|
+Configure the Azure AD SAML Integration in |morpheus|
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-#. Edit the existing Azure AD SAML Integration created in the first step and populate the following:
+#. Login to |morpheus| using ``Username and Password``, as usual
+#. Navigate to |AdmTen|
+#. Click a tenant hyperlink
+#. Select :guilabel:`IDENTITY SOURCES` in the Tenant detail page
+#. Click the pencil (edit) next to the integration created previously
+#. Ensure the ``SAML REQUEST`` field is set to ``Self Signed``
+  
+   .. note:: A custom RSA signature can be used here if needed, if required by the orgnaization
 
-   LOGIN REDIRECT URL
-      Add the SAML Single Sign-On Service URL copied from Azure SSO config.
-   LOGOUT REDIRECT URL
-      Add the Sign-Out URL copied from Azure SSO config.
-   SAML RESPONSE
-      Set to "Validate Assertion Signature", then in the "Public Key" field enter the Public Key value we discussed in the last section
-   GIVEN NAME ATTRIBUTE NAME (May have to click "show" to see hidden SAML Assertion Attribute Names fields)
-      Enter the ``givenname`` Namespace url from Azure SSO config: http://schemas.xmlsoap.org/ws/2005/05/identity/claims
-   SURNAME ATTRIBUTE NAME
-    Enter the ``emailaddress`` Namespace url from Azure SSO config: http://schemas.xmlsoap.org/ws/2005/05/identity/claims
-   EMAIL ATTRIBUTE NAME (May need to scroll down within the SAML Assertion Attribute Names section see this field)
-    Enter the ``surname`` Namespace url from Azure SSO config: http://schemas.xmlsoap.org/ws/2005/05/identity/claims
+#. Ensure the ``SAML RESPONSE`` field is set to ``Validate Assertion Signature``
+
+   .. note:: With this setting, if the assertion signature ever changes in the Azure Enterprise Application, this would need to be updated to match
+
+#. Edit/view the downloaded ``Federation Metadata XML`` (``.xml`` extension) file from the previous section
+
+   .. note:: It is recommended to use ``Microsoft Edge``, or another browser, to view the contents
+
+#. In the ``Federation Metadata XML`` file, locate the ``<X509Certificate> </X509Certificate>`` under the ``<Signature>`` section.  Copy the entire contents between the ``<X509Certificate>`` and ``</X509Certificate>``, it is very long
+#. Paste the value copied from the ``Federation Metadata XML`` file into the ``Public Key (Optional)`` box, below the ``SAML RESPONSE`` dropdown
 
 Configure Role Mappings
 ^^^^^^^^^^^^^^^^^^^^^^^
@@ -145,10 +144,22 @@ Once populated, select :guilabel:`SAVE CHANGES` and the SAML identity source int
 
 .. NOTE:: If Role mappings are edited after Azure AD SSO users have signed into |morpheus|, currently logged in users will need to log out of |morpheus| for the new Role mappings to take effect, when applicable.
 
+#. Under the ``Role Azure Group Mappings`` secton, verify the ``DEFAULT ROLE`` dropdown has the role in |morpheus| selected that all users will be assigned by default
+
+   * It is recommended that this role contains no permissions, which ensures that anyone who authenticates gets no access
+
+#. Under the ``Role Azure Group Mappings`` secton, you will see role names listed.  Next to these are text boxes with ``Assertion Attribute Mappings`` inside.  Enter group object IDs from Azure into these text boxes.  This will map the Azure AD groups to specific roles in Morpheus
+#. Finally, click ``Save Changes`` at the bottom of the page
+
+Here is an example of the configuration above:
+
+   .. image:: /images/integration_guides/identity_sources/azure_ad_saml/saml_setup_complete.png
+      :width: 20%
+
 Azure Group Lookups
 ^^^^^^^^^^^^^^^^^^^
 
-When a user in azure ad has more that 150 group attributes, Azure does not include the group claims in the SAML response, and |morpheus| is required to query Microsoft Graph to obtain the users group attribute values. When there are users that are members of more that 150 groups, populate the ``Azure Group Lookups`` section in order for those users to be able to use the Azure AD SAML SSO integration, otherwise no groups will be obtained and proper role mappings cannot occur. 
+When a user in azure ad has more that 150 group attributes, Azure does not include the group claims in the SAML response, and |morpheus| is required to query Microsoft Graph to obtain the users group attribute values. When there are users that are members of more that 150 groups, populate the ``Azure Group Lookups`` section in order for those users to be able to use the Azure AD SAML SSO integration, otherwise no groups will be obtained and proper role mappings cannot occur.
 
 AZURE TENANT ID
   Add Azure AD Tenant ID if user group membership will exceed 150. See :ref:`azure_ids` for information on obtaining an Azure AD Tenant ID
@@ -159,18 +170,16 @@ AZURE APP SECRET
 ROLE LINK ATTRIBUTE NAME
   default: http://schemas.microsoft.com/claims/groups.link. This is not normally changed.
 
+Logging Into |morpheus| with Azure AD SAML
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Signing In to |morpheus|
-^^^^^^^^^^^^^^^^^^^^^^^^
+#. Navigate to the |morpheus| URL
+#. A new button will appear to allow sign-in using Azure AD SAML, with the same name as the integration.  Click the button
+   .. image:: /images/integration_guides/identity_sources/azure_ad_saml/sign_in_page.png
+      :width: 30%
 
-When there is an active SAML/Azure AD SSO Identity Source Integration, a new button will appear on the |morpheus| login page with the name of the Identity Source Integration as the button title. Example: :guilabel:`MORPHEUS SSO`. Another button titled "USERNAME AND PASSWORD" is also added for |morpheus| account authentication outside of an Identity Source.
-
-.. image:: /images/integration_guides/identity_sources/azure_ad_saml/sign_in_page.png
-  :width: 60%
-  :align: center
-
-* SAML/Azure AD SSO users can log into |morpheus| by clicking the SAML button
-      This will redirect the User to Azure AD app sign in url. If they are currently signed into Azure and authorized, the user will be instantly signed into |morpheus|.
-* Local |morpheus| users can select "USERNAME AND PASSWORD" to sign in with their local credentials as before.
+#. Sign-in with your Microsoft/Azure account
+   .. image:: /images/integration_guides/identity_sources/azure_ad_saml/ms_signin.png
+      :width: 20%
 
 .. NOTE:: If no local users other than the System Admin have been created, "USERNAME AND PASSWORD" option will not be displayed, only the SAML option.

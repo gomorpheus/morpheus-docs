@@ -9,6 +9,22 @@ When installing and upgrading to |morpheus| |morphver|, refer to the following t
 Breaking Changes
 ================
 
+- 6.3.0: Version 6.3.0 is the first version to require Plugin API 1.0.0+. Small changes will need to be made in order to make plugins created for prior versions of |morpheus| compatible with 6.3.0+. See the `related article in our KnowledgeBase <https://support.morpheusdata.com/s/article/Making-plugins-compatible-with-Morpheus-6-3-0?language=en_US>`_ on the small changes that will need to be made to ensure plugin compatibility
+- 6.2.2, 6.0.7 |morphver| contains embedded MySQL v8 upgrade when upgrading from  v6.0.0 - v6.0.6 or 6.1.0 - 6.2.1. BACKUP YOUR DATABASE PRIOR TO UPGRADE when using embedded MySQL (all-in-one appliances)
+- 6.2.2, 6.0.7 Minimum v6.x required to upgrade to |morphver| for environments using embedded RabbitMQ. Environments running 5.5.x or earlier using embedded RabbitMQ must upgrade to v6.0.0 - v6.0.6, or 6.1.0 - 6.2.1 prior to upgrading to |morphver|
+- 6.2.2, 6.0.7 Rolling upgrades for HA environments using embedded RabbitMQ and/or embedded Elasticsearch services are not supported when upgrading from  v6.0.0 - v6.0.6 or 6.1.0 - 6.2.1
+- 6.1.1 contains database datatype mondifications on account_invoice and account_invoice_item that may cause long initial ui start up times while the modifications are ran in MySQL for environments with over 100k invoice records when upgrading from any version other than 6.0.3
+- 6.1.1 relocates the embedded plugin folder and remove the previous folder. For HA environments using shared storage, rolling upgrades from any version other than 6.0.3 are not advised as the embeeded plugins will not be found on non-upgraded nodes after one node is upgraded.
+- 6.1.1: NSX-V networking integration support is removed and no longer supported as of |morpheus| 6.1.1
+- 6.0.3 contains database datatype mondifications on account_invoice and account_invoice_item that may cause long initial ui start up times while the modifications are ran in MySQL for environments with over 100k invoice records.
+- 6.0.3 relocates the embedded plugin folder and remove the previous folder. For HA environments using shared storage, rolling upgrades are not advised as the embeeded plugins will not be found on non-upgraded nodes after one node is upgraded.
+- 6.0.0: NSX-V support is deprecated though still supported as of |morpheus| 6.0.0. It will be removed and unsupported in 6.1.1 and higher.
+- 6.0.0+: In |morpheus| 6.0.0+, many third party integrations have been moved out of the core installer package and converted to |morpheus| plugins. As a result, during the upgrade process your appliance will need to be able to access share.morpheusdata.com, the online repository for all |morpheus| plugins. Where this is not possible, users may instead apply the supplemental installer package which is also available at |morpheus| Hub alongside the main installer package.
+- 6.0.0+: In |morpheus| 6.0.0+, older service specific system provided Instance Types and Layouts were deprecated and disabled. Updating to 6.0.0 will not affect existing Instances that are associated with the disabled types, however existing catalog item configurations, blueprints and api requests that use disabled Instance Types and layouts will need to be updated.
+- 5.5.2: VM Node Packages: Due to build java version requiremnets, the i386.deb and i386.rpm (32-bit) VM Node Packages can no longer be updated, and remain on v3.2.9.
+- 5.4.12: Guacd: Guacd is now complied iwth libssh2-1.10.0 on all platforms. Appliances on SLES15 may need openssl-devel manually installed for guacd to succesfully compile.
+- 5.4.12: Session Manager: Morpheus features a new session manager that was necessary in order to resolve expiring connections from the agents due to a Spring framework update. This new session manager no longer requires Sticky Sessions and they can now be turned off at the load balancer if so desired. However, keeping them on is totally reasonable as well as it reduces overall system load. Rolling restarts no longer kick you out of your session if sticky sessions are off as it distributes your session data across the morpheus nodes in an HA environment. Additionally, overall system load is reduced as a result of the new session manager.
+- 5.4.9: |morpheus| 5.4.9 adds the "Provisioning: State" Role permission. This permission determines access to the State tab for Terraform-backed Instances and is set to "None" by default. On upgrade, only System Admin users will be able to see the State tab for these Instances. For other users who should have this access, edit their Roles to include "Provisioning: State" permissions.
 - 5.4.5: Warning: Database indexes added for account_usage and metadata_tag tables. Customers with very large account_usage and/or metadata_tag tables (10 million+) may experience slower initial morpheus-ui loading time after upgrading to 5.4.5, as well as additional database load.
 - 5.4.5: 'AVI Load Balancer' renamed to 'NSX Advanced Load Balancer'
 - 5.4.5: Cloud Types disabled by default: Dell, HPE (NOT HPE Oneview), Supermicro and Cloud Foundry. Users would still be able to re-enable this clouds in the appliance settings. Does not affect existing Clouds.
@@ -46,22 +62,6 @@ Breaking Changes
 
 .. include:: /getting_started/requirements/applianceOsTable.rst
 
-Services
-========
-
-..
-  |morphver| Service Version Changes
-  ----------------------------------
-
-:Appliance: - curl updated to 7.84.0
-            - Elasticsearch updated to 7.17.5
-            - erlang updated to v24.3, patch 24.3.4.2
-            - Nginx updated to v1.22.0
-            - Openssl updated to v1.1.1p
-            - RabbitMQ updated to 3.9.20
-            - Tomcat Updated to v9.0.64
-
-  |
 
 |morphver| Service Versions & Compatibility
 -------------------------------------------
@@ -76,26 +76,22 @@ Services
      - Updated in |morphver|
    * - Plugin API
      - |pluginVer|
-     - 
-     - 
+     -
+     -
    * - Morpheus Worker
      - |workerVer|
-     - 
-     - |checkmark|
+     -
+     -
    * - MySQL
      - |mysqlbranch|
      - |mysqlver|
-     - 
+     - |checkmark|
    * - MySQL (FIPS)
      - |mysqlbranch|
      - |mysqlverfips|
-     -
-   * - Percona
-     - 5.7, WSREP 31
-     - n/a
-     -
+     - |checkmark|
    * - Elasticsearch
-     - |esbranch| 
+     - |esbranch|
      - |esver|
      - |checkmark|
    * - RabbitMQ
@@ -103,25 +99,27 @@ Services
      - |rmqver|
      - |checkmark|
    * - Tomcat
-     - 
+     -
      - |tcver|
-     - |checkmark|
+     -
    * - Nginx
-     - 
+     -
      - |nginxver|
      - |checkmark|
    * - OpenSSL
-     - 
-     - |openssl|, |openssl_fips| (FIPS) 
-     - |checkmark|
+     -
+     - |openssl|, |openssl_fips| (FIPS)
+     -
    * - Java
-     - 
+     -
      - |java|
      -
    * - Java (macOS agent)
-     - 
+     -
      - |java-mac|
      -
+
+.. IMPORTANT:: Elasticsearch 8.10.1 was released within days of |morpheus| |morphver|. It's expected to be compatible but has not been tested. Customers managing their own Elasticsearch clusters should be aware that internal testing of the |morpheus| |morphver| was conducted on Elasticsearch 8.9.2 and we cannot recommend deploying a higher version at this time.
 
 |
 
@@ -134,26 +132,26 @@ Services
 
    * - Package
      - Version
-     - |morphver| Changes
+     - |morphver| changes from |previousMorphVer|
    * - Morpheus Node and VM Node Packages
      - |nodePackageVer|
-     - No changes
+     - Updated to |nodePackageVer|
    * - Morpheus Linux Agent
      - |linuxagentver|
-     - No changes
+     - Updated to |linuxagentver|
    * - Morpheus Windows Agent
      - |winagentver|
-     - No changes
+     - No change
    * - Morpheus macOS Agent
      - |macagentver|
-     - No changes
+     - No change
 
 |
 
-.. 
-  Security
-  ========
+Security
+========
 
+..
   CVEs Addressed
   --------------
 
@@ -161,19 +159,35 @@ Services
 
   |
 
-Plugin API Compatibility
-========================
+  Plugin API Compatibility
+  ========================
 
-|morphver| requires Plugin API version |pluginVer|
+Security Advisories
+-------------------
 
-|
+.. list-table::
+  :widths: 15 15 55 15
+  :header-rows: 1
+
+  * - Advisory ID
+    - Severity
+    - Description
+    - Updated On
+  * - :ref:`MOR20220721-01`
+    - |advSevCrit|
+    - |morpheus| through 5.4.3 (which run Java 8) are confirmed to be impacted, |morpheus| through 5.5.1-1 (for customers on 5.5.x Standard installations) and 5.4.8-2 (for customers on 5.4.x LTS installations) are potentially impacted if the vulnerability is found on Java 11.
+    - 07-21-2022
+  * - :ref:`MOR20220524-01`
+    - |advSevHigh|
+    - An XXE issue was discovered in |morpheus| through 5.2.16 and 5.4.x through 5.4.4. A successful attack requires a SAML identity provider to be configured.
+    - 06-08-2022
 
 Upgrade Paths & Methods
 =======================
 
 The following table shows supported version upgrade paths and methods.
 
-.. include:: /release_notes/upgrade_table.rst
+.. include:: /release_notes/upgrade_table2.rst
 
 |
 

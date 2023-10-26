@@ -7,3 +7,4 @@ Templates can be created directly in |morpheus| and/or sourced from version cont
 .. include:: /library/templates/file_templates.rst
 .. include:: /library/templates/scripts.rst
 .. include:: /library/templates/security_packages.rst
+.. include:: /library/templates/cluster_packages.rst
