@@ -9,7 +9,7 @@ a mysqldump and if this is not set the backup will have errors and not be restor
     * The below will create the file /etc/my.cnf and add the folllowing lines. 
       If you are adding this to a DB server that alrady has this file with configurations add these entries manually to that file.
         
-        [mysqldump]
+|        [mysqldump]
 |       set-gtid-purged=OFF
 
          .. code-block:: 
