@@ -6,7 +6,7 @@ The following settings need to be set on any node that will be performing a mysq
 This includes every Morpheus App node. If doing appliance backups the Morpheus app nodes will initiate 
 a mysqldump and if this is not set the backup will have errors and not be restorable.
 
-    * If you are adding this to a DB server that alrady has this file with configurations add these entries manually to that file.
+    * If you are adding this to a DB server that already has this file with configurations add these entries manually to that file.
         
         .. code-block:: 
 
