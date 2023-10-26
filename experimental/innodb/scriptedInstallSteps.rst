@@ -74,3 +74,10 @@ MySQL Shell Script
       .. code-block:: bash
 
           bash myscript.js
+
+MySQL Dump Backup Settings
+---------------------------
+
+    .. include:: ./innodbBackup.rst
+      :start-after: Config-Section-Start
+      :end-before: Config-Section-Stop
