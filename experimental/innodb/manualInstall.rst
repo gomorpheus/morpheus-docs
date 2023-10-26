@@ -6,7 +6,7 @@ Manual Install Steps
 The purpose of this document is to provide end to end manual steps to prepare and configure an
 InnoDB single site cluster.
 
-#. Disable AppArmor/SELinux.
+* Disable AppArmor/SELinux.
 
     .. tabs::
 
@@ -26,7 +26,7 @@ InnoDB single site cluster.
                 sestatus
 
 
-#. Disable/Add Firewall Rules.
+* Disable/Add Firewall Rules.
     .. tabs::
 
         .. group-tab:: Ubuntu 22.04
@@ -53,7 +53,7 @@ InnoDB single site cluster.
                 firewall-cmd --zone=public --add-port=33062/tcp
                 firewall-cmd --permanent --zone=public --add-port=33062/tcp
                 
-#. Install MySQL on Each DB Node.
+* Install MySQL on Each DB Node.
 
     .. tabs::
 
@@ -74,7 +74,7 @@ InnoDB single site cluster.
                 
                 
 
-#. Configure MySQL on Each DB Node.
+* Configure MySQL on Each DB Node.
      
     * This will configure MySQL with some basic hardening along with setting the root password and creating a clusterAdmin account.
       Make sure to set the variables to the desired values before running.
@@ -156,7 +156,7 @@ InnoDB single site cluster.
 
 .. Manual-Section-Stop
 
-#. Install MySQL Shell. (This does not have to be installed on the DB nodes. In prod it would probably be installed on each Morpheus app node)
+* Install MySQL Shell. (This does not have to be installed on the DB nodes. In prod it would probably be installed on each Morpheus app node)
 
 
 
@@ -179,7 +179,7 @@ InnoDB single site cluster.
 
 .. Single-Section-Start
 
-#. Setup Cluster using MySQL Shell (clusterAdmin is the admin user we created, dba-1 is one of the DB Nodes)
+* Setup Cluster using MySQL Shell (clusterAdmin is the admin user we created, dba-1 is one of the DB Nodes)
     * Start MySQL Shell.    
         
         .. code-block:: bash
@@ -237,7 +237,7 @@ InnoDB single site cluster.
 MultiSite Full Install 
 ^^^^^^^^^^^^^^^^^^^^^^
 
-#. Install MySQL Shell. (This does not have to be installed on the DB nodes. In prod it would probably be installed on each Morpheus app node)
+* Install MySQL Shell. (This does not have to be installed on the DB nodes. In prod it would probably be installed on each Morpheus app node)
 
         .. tabs::
 
@@ -257,7 +257,7 @@ MultiSite Full Install
 
 
 
-#. Setup Cluster using MySQL Shell (clusterAdmin is the admin user we created, dba-1 is one of the DB Nodes)
+* Setup Cluster using MySQL Shell (clusterAdmin is the admin user we created, dba-1 is one of the DB Nodes)
 
 .. Multi-Section-Start
 
