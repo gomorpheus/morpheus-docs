@@ -11,7 +11,8 @@ MySQL Install - Config Script
     clusterAdminPass="P@ssw0rd!"
     mySqlVersion="8.0.32"  # Minimum MySQL Version that will be installed
     buffer_size="$(free -k | awk '/^Mem:/{print int($2 * 0.7 / 1024 / 1024)}')"
-    
+    max_connections="2001"
+
     # Function to check if a line exists in the file
     line_exists() {
       grep -q "^$1=" "$2"
@@ -247,12 +248,16 @@ MySQL Install - Config Script
         echo "innodb_buffer_pool_instances=${buffer_size}" | sudo tee -a "$config_file"
         echo "innodb_use_fdatasync=ON" | sudo tee -a "$config_file"
         echo "bind-address=0.0.0.0" | sudo tee -a "$config_file"
+        echo "max_connections=${max_connections}" | sudo tee -a "$config_file"
+        echo "sql_generate_invisible_primary_key=1" | sudo tee -a "$config_file"
       else
         # If [mysqld] section exists, replace or add the configuration lines
         replace_or_add_line "innodb_buffer_pool_size" "${buffer_size}G" "$config_file"
         replace_or_add_line "innodb_buffer_pool_instances" "${buffer_size}" "$config_file"
         replace_or_add_line "innodb_use_fdatasync" "ON" "$config_file"
         replace_or_add_line "bind-address" "0.0.0.0"  "$config_file"
+        replace_or_add_line "max_connections "${max_connections}"  "$config_file"
+        replace_or_add_line "sql_generate_invisible_primary_key" "1"  "$config_file"
       fi
     
     # Display the contents of the my.cnf file
