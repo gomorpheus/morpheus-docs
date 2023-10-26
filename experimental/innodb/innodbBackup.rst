@@ -10,7 +10,7 @@ a mysqldump and if this is not set the backup will have errors and not be restor
       If you are adding this to a DB server that alrady has this file with configurations add these entries manually to that file.
         
         [mysqldump]
-        | set-gtid-purged=OFF
+|       set-gtid-purged=OFF
 
          .. code-block:: 
 
