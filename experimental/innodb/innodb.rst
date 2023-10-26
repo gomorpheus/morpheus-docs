@@ -11,6 +11,4 @@ Official Documentation: https://dev.mysql.com/doc/refman/8.0/en/mysql-innodb-clu
    
    /experimental/innodb/scriptedInstallSteps.rst
    /experimental/innodb/manualInstallSteps.rst
-   /experimental/innodb/mysqlShell.rst
-   /experimental/innodb/mysqlRouter.rst
    /experimental/innodb/upgrades.rst
