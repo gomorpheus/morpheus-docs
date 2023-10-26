@@ -177,6 +177,7 @@ InnoDB single site cluster.
                     rpm -i mysql-shell-8.0.34-1.el9.x86_64.rpm
 
 
+.. Single-Section-Start
 
 #. Setup Cluster using MySQL Shell (clusterAdmin is the admin user we created, dba-1 is one of the DB Nodes)
     * Start MySQL Shell.    
@@ -229,6 +230,8 @@ InnoDB single site cluster.
 
            cluster.status()
 
+.. Single-Section-Stop
+
 
 
 MultiSite Full Install 
@@ -252,7 +255,12 @@ MultiSite Full Install
                     wget https://dev.mysql.com/get/Downloads/MySQL-Shell/mysql-shell-8.0.34-1.el9.x86_64.rpm
                     rpm -i mysql-shell-8.0.34-1.el9.x86_64.rpm
 
+
+
 #. Setup Cluster using MySQL Shell (clusterAdmin is the admin user we created, dba-1 is one of the DB Nodes)
+
+.. Multi-Section-Start
+
     * Start MySQL Shell.    
         
         .. code-block:: bash
@@ -331,6 +339,7 @@ MultiSite Full Install
 
            clusterset.status()
 
+.. Multi-Section-Stop
     
 
 

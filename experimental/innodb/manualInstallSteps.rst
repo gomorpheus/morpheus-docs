@@ -14,6 +14,12 @@ Single Site Full Install
       :start-after: Install-Section-Start
       :end-before: Install-Section-Stop
 
+#. Setup Cluster using MySQL Shell (clusterAdmin is the admin user we created, dba-1 is one of the DB Nodes)
+
+    .. include:: ./manualInstall.rst
+      :start-after: Single-Section-Start
+      :end-before: Single-Section-Stop
+
 MultiSite Full Install 
 ^^^^^^^^^^^^^^^^^^^^^^
 
@@ -27,7 +33,11 @@ MultiSite Full Install
       :start-after: Install-Section-Start
       :end-before: Install-Section-Stop
 
-    
+#. Setup Cluster using MySQL Shell (clusterAdmin is the admin user we created, dba-1 is one of the DB Nodes)
+
+    .. include:: ./manualInstall.rst
+      :start-after: Multi-Section-Start
+      :end-before: Multi-Section-Stop    
 
 
         
