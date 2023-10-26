@@ -17,7 +17,7 @@ Navigate to the Cluster Packages List page (|LibTemClu|). System Cluster Package
 - **TYPE:** A type selection for the package, see dropdown for options
 - **PACKAGE TYPE:** A one-word descriptor for the package such as "calico", "prometheus", etc.
 - **ENABLED:** When marked, this Cluster Package is available to be set on Cluster Layouts
-- **REPEAT INSTALL:**
+- **REPEAT INSTALL:** When marked, if the package install initially fails, the installation will be attempted again
 - **SPEC TEMPLATES:** Use the Typeahead field to select relevant Spec Templates to build the Cluster Package
 
 .. image:: /images/templates/cluster-packages/cluster-packages.png
