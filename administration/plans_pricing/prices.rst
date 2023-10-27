@@ -82,14 +82,17 @@ Currency
   -  GBP
   -  IDR
   -  ILS
-  -  JD
+  -  JOD
   -  JPY
+  -  KRW
   -  MAD
+  -  MNT
   -  MXN
   -  NOK
   -  NZD
   -  PLN
   -  ROL
+  -  RUB
   -  SAR
   -  SEK
   -  THB
