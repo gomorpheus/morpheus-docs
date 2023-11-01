@@ -82,6 +82,7 @@ MySQL Dump Backup Settings
       :start-after: Config-Section-Start
       :end-before: Config-Section-Stop
 
-* Create Morpheus User and Database
+Create Morpheus Database and User
+---------------------------------
     
     .. include:: ./innodb-config-generic.rst
