@@ -37,6 +37,7 @@ Install MySQL Shell
 
 .. Install-Section-Stop
 
+.. Commands-Section-Start
 MySQL Shell Commands
 ^^^^^^^^^^^^^^^^^^^^
 
@@ -189,5 +190,5 @@ Router Config
             // confirm the settings
             clusterset.routingOptions()
            
-    
+.. Commands-Section-Stop    
         
