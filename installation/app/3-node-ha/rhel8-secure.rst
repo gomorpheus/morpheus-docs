@@ -16,7 +16,7 @@ Distributed App Nodes with Externalized DB
 
 .. include:: /installation/app/default-locations.rst
 
-.. include:: /installation/database/percona/perconaTls-rhel8.rst
+.. include:: /installation/database/innodb/scriptedInstallSteps.rst
 
 .. include:: /installation/messaging/rhel8.rst
 

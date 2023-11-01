@@ -9,7 +9,7 @@ Distributed App Nodes with Externalized DB
 
 .. include:: /installation/app/default-locations.rst
 
-.. include:: /installation/database/innodb/innodb.rst
+.. include:: /installation/database/innodb/scriptedInstallSteps.rst
 
 .. include:: /installation/app/3-node-ha/app-node-installation-ubuntu.rst
 

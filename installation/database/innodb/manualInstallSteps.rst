@@ -79,7 +79,9 @@ MultiSite Full Install
       :start-after: Config-Section-Start
       :end-before: Config-Section-Stop
 
-         
+* Create Morpheus User and Database
+    
+    .. include:: ./innodb-config-generic.rst        
 
     
 
