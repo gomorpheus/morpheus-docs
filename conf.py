@@ -9,6 +9,28 @@ latex_documents = [
 
 rst_prolog = """
 
+.. |latestver| replace:: v6.0.9
+.. |latestRelDate| replace:: Nov 7 2023
+
+.. |609| replace:: v6.0.9
+.. |608| replace:: v6.0.8
+.. |607| replace:: v6.0.7
+.. |606| replace:: v6.0.6
+.. |605| replace:: v6.0.5
+.. |604| replace:: v6.0.4
+.. |603| replace:: v6.0.3
+.. |602| replace:: v6.0.2
+.. |60x| replace:: v6.0.X
+
+.. |609reldate|:: Nov 7 2023
+.. |608reldate|:: Oct 11 2023
+.. |607reldate|:: Sep 19 2023
+.. |606reldate|:: Aug 9 2023
+.. |605reldate|:: July 17 2023
+.. |604reldate|:: June 13 2023
+.. |603reldate|:: May 9 2023
+.. |602reldate|:: April 14 2023
+
 .. |releasedate| replace:: Oct 11 2023
 .. |releasetype| replace:: LTS
 .. |morphbranch| replace:: v6.0
@@ -39,7 +61,6 @@ rst_prolog = """
 .. |openssl| replace:: 1.1.1t
 .. |openssl_fips| replace:: 1.0.2u
 .. |erlang| replace:: 25.2.3
-.. |mastertenant| replace:: Master Tenant
 
 .. |morpheus| replace:: Morpheus
 .. |morphues| replace:: Morpheus
@@ -48,6 +69,7 @@ rst_prolog = """
 .. |master tenant| replace:: Master Tenant
 .. |profileObjects| replace:: Clouds
 .. |profileTypes| replace:: Terraform, Key/Value
+.. |mastertenant| replace:: Master Tenant
 
 .. |debianVersions| replace:: 10, 11
 .. |oelVersions| replace:: 7.x, 8.x

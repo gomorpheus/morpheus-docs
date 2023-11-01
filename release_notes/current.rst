@@ -1,8 +1,8 @@
 .. _Release Notes:
 
-**************************************
-|morphver| |releasetype| Release Notes
-**************************************
+*********************************
+|60x| |releasetype| Release Notes
+*********************************
 
 .. IMPORTANT:: |morphver| contains embedded MySQL v8 upgrade. BACKUP YOUR DATABASE PRIOR TO UPGRADE when using embedded MySQL (all-in-one appliances)
 .. IMPORTANT:: Minimum v6.x required to upgrade to v6.0.7+ for environments using embedded RabbitMQ. Environments running 5.5.x or earlier using embedded RabbitMQ must upgrade to v6.0.0 - v6.0.6 prior to upgrading to v6.0.7+
