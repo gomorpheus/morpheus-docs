@@ -19,9 +19,35 @@ Release Dates
 
 - |morphver| |releasedate|
 
-Features
-========
+New Features
+============
+
+:Cluster Packages: - Added new UI area (|LibTemClu|) for creating Cluster Packages which can be associated with Cluster Layouts. See the appropriate areas of Morpheus Documentation for more on Cluster Packages and Cluster Layouts
+:Currency: - Added support for Mongolian Tugrik (MNT) currency :superscript:`6.0.9 6.2.4`
+:Image Builder: - Updated the Image Builder form into a single form rather than a paged wizard. See the Image Builder section of |morpheus| documentation for example scripts and help getting started
+:Plugins: - The required Plugin API version is now |pluginVer|. Plugins developed for |morpheus| versions prior to 6.3.0 will need small changes. Please see https://support.morpheusdata.com/s/article/Making-plugins-compatible-with-Morpheus-6-3-0?language=en_US for more information.
+:Roles: - Added the ability to specify (per Role) a landing page other than the Dashboard within |morpheus|. For example, a Role could be configured to log into the Instance list page
+         - There is now a Feature Permission which determines whether a Role is able to use Task Cancel and Task Retry controls for executions. This also controls access to the Cancel and Retry controls on Tasks within Instance histories
+         - There is now a Feature Permission which determines whether a Role may extend expiration or shutdown Policies on workloads. This permission can apply globally or only to workloads the user owns
+:VMware: - Added support for versioned templates from VMware Content Library
+          - Added the ability to set vApp Property values on VMware Node Types. See `Node Type docs <https://docs.morpheusdata.com/en/6.3.0/library/blueprints/blueprints.html?next=https%3A%2F%2Fdocs.morpheusdata.com%2Fen%2F6.3.0%2Flibrary%2Fblueprints%2Fb>`_ for more
 
 
-Appliance & Agent Updates
-=========================
+Fixes
+=====
+
+:API & CLI: - The return from the ``policies get-type`` CLI call has been updated to return additional information
+
+Appliance Updates
+=================
+
+:Embedded Plugins: - BigIp updated to v1.2.0
+                   - Bluecat updated to v1.2.0
+                   - Efficient IP updated to v1.2.0
+                   - Infoblox updated to v1.3.2
+                   - Microsoft DNS updated to v2.2.1
+                   - Morpheus Home Dashboard updated to v1.1.0
+                   - phpIPAM updated to v1.2.1
+                   - PowerDNS updated to v1.1.0
+                   - Rubrik updated to v1.2.0
+                   - SolarWinds updated to v1.1.1
