@@ -2,6 +2,8 @@
 |morpheus| |morphAnnualVer| Highlights
 **************************************
 
+This section includes feature change and key enhancement highlights for all standard (non-LTS) releases within |morpheus| version 6.
+
 6.0.0
 =====
 
@@ -60,3 +62,9 @@
 :Catalog: - Added support for saving Catalog items without first passing a check for valid JSON in the config
 :Inputs: - Added “REMOVE NO SELECTION” attribute for Select List-based Inputs. This defaults the Input to the first selection in the list rather than to an empty selection
 :Layouts: - Added Display Order property for Layouts. Layouts are listed in high-to-low order based on the Display Order in the Layouts dropdown of the provisioning wizard
+
+6.2.3
+=====
+
+:Identity Sources: - SAML SSO identity sources using HTTP-POST binding are now working as expected when integrated with |morpheus| Tenants
+:Kubernetes: - Updated default Kubernetes Cluster Layouts to version 1.28
