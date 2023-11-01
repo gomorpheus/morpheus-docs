@@ -16,6 +16,7 @@
    integration_guides/integration_guides
    support/support
    experimental/experimental
+   archives/archives
 
 ..
    .. toctree::
