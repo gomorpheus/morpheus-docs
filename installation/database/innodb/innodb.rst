@@ -9,6 +9,6 @@ Official Documentation: https://dev.mysql.com/doc/refman/8.0/en/mysql-innodb-clu
    ..:maxdepth: 4   
    
    
-   /experimental/innodb/scriptedInstallSteps.rst
-   /experimental/innodb/manualInstallSteps.rst
-   /experimental/innodb/upgrades.rst
+   /installation/database/innodb/scriptedInstallSteps.rst
+   /installation/database/manualInstallSteps.rst
+   /installation/database/upgrades.rst
