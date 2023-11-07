@@ -26,7 +26,7 @@ Run the following script on each DB node to install MySQL and configure to best 
           chmod +x install.sh
 
 Install MySQL Router 
--------------------------------------------------------------------------
+^^^^^^^^^^^^^^^^^^^^
     This should be installed on each Morpheus App Node
 
       .. include:: ./mysqlRouter.rst
@@ -34,14 +34,14 @@ Install MySQL Router
         :end-before: Install-Section-Stop
 
 Configure MySQL Router
---------------------
+^^^^^^^^^^^^^^^^^^^^^^
       
       .. include:: ./mysqlRouter.rst
         :start-after: Config-Section-Start
         :end-before: Config-Section-Stop
 
 Install MySQL Shell 
--------------------
+^^^^^^^^^^^^^^^^^^^
     This should be installed on each Morpheus App Node
 
     .. include:: ./mysqlShell.rst
@@ -49,7 +49,7 @@ Install MySQL Shell
       :end-before: Install-Section-Stop
 
 MySQL Shell Script 
-------------------
+^^^^^^^^^^^^^^^^^^
     You will only need to create and run this from a single Node with MySQl Shell installed.
 
     .. include:: ./scripts.rst
@@ -76,13 +76,13 @@ MySQL Shell Script
           bash myscript.js
 
 MySQL Dump Backup Settings
----------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^
 
     .. include:: ./innodbBackup.rst
       :start-after: Config-Section-Start
       :end-before: Config-Section-Stop
 
 Create Morpheus Database and User
----------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
     
     .. include:: ./innodb-config-generic.rst
