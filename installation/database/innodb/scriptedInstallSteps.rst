@@ -2,7 +2,7 @@ Scripted Install Steps
 ======================
 
 Install MySQL
--------------
+^^^^^^^^^^^^^
 
 Run the following script on each DB node to install MySQL and configure to best practice.
   
