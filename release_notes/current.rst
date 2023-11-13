@@ -70,7 +70,7 @@ Fixes
           - |morpheus| now supports VMware tags with "multiple" cardinality :superscript:`6.0.9 6.2.4`
 :Workflows: - When running Workflows from the Instance Action menu, it will no longer take multiple clicks on the dropdown menu to display all available Workflows :superscript:`6.0.9 6.2.4`
 
-Appliance Updates
-=================
+Embedded Plugins
+=========================
 
-:Embedded Plugins: - Infoblox updated to v1.3.4
+:Infoblox: infobox-plugin updated to v1.3.4
