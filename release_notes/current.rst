@@ -22,32 +22,55 @@ Release Dates
 New Features
 ============
 
-:Cluster Packages: - Added new UI area (|LibTemClu|) for creating Cluster Packages which can be associated with Cluster Layouts. See the appropriate areas of Morpheus Documentation for more on Cluster Packages and Cluster Layouts
-:Currency: - Added support for Mongolian Tugrik (MNT) currency :superscript:`6.0.9 6.2.4`
-:Image Builder: - Updated the Image Builder form into a single form rather than a paged wizard. See the Image Builder section of |morpheus| documentation for example scripts and help getting started
-:Plugins: - The required Plugin API version is now |pluginVer|. Plugins developed for |morpheus| versions prior to 6.3.0 will need small changes. Please see https://support.morpheusdata.com/s/article/Making-plugins-compatible-with-Morpheus-6-3-0?language=en_US for more information.
-:Roles: - Added the ability to specify (per Role) a landing page other than the Dashboard within |morpheus|. For example, a Role could be configured to log into the Instance list page
-         - There is now a Feature Permission which determines whether a Role is able to use Task Cancel and Task Retry controls for executions. This also controls access to the Cancel and Retry controls on Tasks within Instance histories
-         - There is now a Feature Permission which determines whether a Role may extend expiration or shutdown Policies on workloads. This permission can apply globally or only to workloads the user owns
-:VMware: - Added support for versioned templates from VMware Content Library
-          - Added the ability to set vApp Property values on VMware Node Types. See `Node Type docs <https://docs.morpheusdata.com/en/6.3.0/library/blueprints/blueprints.html?next=https%3A%2F%2Fdocs.morpheusdata.com%2Fen%2F6.3.0%2Flibrary%2Fblueprints%2Fb>`_ for more
+:API & CLI: - The Certificates API endpoint now validates the given integration ID and does not create the certificate if an integration with the given ID does not exist :superscript:`6.0.9 6.2.4`
+             - ``refId`` and ``refType`` parameters are no longer ignored when |morpheus|-type IP Pool reservations are made over |morpheus| API :superscript:`6.0.9 6.2.4`
+:Currency: - Added Malaysian Ringgit (MYR) currency support :superscript:`6.0.9 6.2.4`
+            - Added support for Singapore Dollar (SGD) currency :superscript:`6.0.9 6.2.4`
+:Hyper-V: - Adding a Hyper-V cloud with a WinRM Port value of 5986 rather than the default of 5985 now works properly :superscript:`6.0.9 6.2.4`
+:Kubernetes: - Single and HA layouts for Kubernetes version 1.28 clusters added for OpenStack and OpenTelekom Clouds :superscript:`6.0.9 6.2.4`
+              - The ``nginx-ingress`` version 1.9.4 package is now being included with Kubernetes 1.26 through 1.28 cluster layouts for all supported operating systems :superscript:`6.0.9 6.2.4`
+:NSX-T: - Official support added for NSX-T 4.1 :superscript:`6.0.9 6.2.4`
+:Security: - Bouncycastle upgraded to 1.76 to mitigate CVE-2023-33201 :superscript:`6.0.9 6.2.4`
+            - Guava upgraded to 32.0.1 to mitigate CVE-2023-2976 :superscript:`6.0.9 6.2.4`
+            - Upgraded cxf-rt-transports-http to 3.4.10 to mitigate CVE-2022-46363 :superscript:`6.0.9 6.2.4`
+            - Upgraded to Eclipse.jgit to 6.6.1 to mitigate CVE-2023-4759 :superscript:`6.0.9 6.2.4`
+:ServiceNow: - Added the ability to switch back to the older table-based API mode for CMDB sync :superscript:`6.0.9 6.2.4`
+:vCloud Director: - Added MKS 1.28 HA layouts for vCD Clouds :superscript:`6.0.9 6.2.4`
 
 
 Fixes
 =====
 
-:API & CLI: - The return from the ``policies get-type`` CLI call has been updated to return additional information
+:Agent: - Updated public key used by agent installation scripts to prevent downstream warnings or errors in logs :superscript:`6.0.9 6.2.4`
+:API & CLI: - |morpheus| is now displaying invalid value or string too long errors for the various BGP neighbor properties when updating a network router's BGP neighbors through the API :superscript:`6.0.9 6.2.4`
+:Blueprints: - ARM-type App Blueprints no longer fail on provisioning when they contain array-type parameters with a default value indicated :superscript:`6.0.9 6.2.4 `
+:Costing: - Fixed an issue that could cause an incorrect price to be displayed if the price was set by a long-running Price phase Task :superscript:`6.0.9 6.2.4`
+:Database: - Added an index on the ``process_id`` column in the ``job_execution`` table of the database. This will improve performance for those with very large ``job_execution`` tables :superscript:`6.0.9 6.2.4`
+:Forms: - Fixed the Security Group ID Form variable not resolving in config which caused provisioning failures :superscript:`6.2.4 `
+:Inputs: - Typing any value into typeahead-type Inputs which are marked required will no longer satisfy the Input. A valid selection from the dropdown field must be selected :superscript:`6.0.9 6.2.4`
+:Installer: - ``sshd-core`` upgraded to 2.10 to mitigate CVE-2023-3588 :superscript:`6.0.9 6.2.4`
+:Instances: - For Windows Instances installing |morpheus| Agent via Unattend, |morpheus| will now detect if there is already content in the SetupComplete.cmd script file and ensure the Agent install script is appended in such a way that all scripts will run properly :superscript:`6.0.9 6.2.4`
+:Kubernetes: - Fixed failed MKS cluster upgrades from 1.26.x to 1.27.x which were failing due to a removed parameter :superscript:`6.0.9 6.2.4`
+:NSX-T: - Fixed a visibility issue that allowed all edge cluster nodes to be visible to all Tenants when the same NSX-T integration was shared with them and individual edge clusters were assigned to each via visibility permissions :superscript:`6.0.9 6.2.4`
+         - Increased the network server refresh lock timeout to reduce appliance CPU consumption under certain use cases :superscript:`6.0.9 6.2.4`
+:OpenStack: - DNS records are now removed on Instance deletion when setting a floating IP at provision time with a Route53 integration on OpenStack Clouds :superscript:`6.0.9 6.2.4`
+:Option Lists: - Added global maximum setting for Option Lists as it was possible to severely reduce appliance performance in some cases with extremely large Option Lists :superscript:`6.2.4 `
+                - Updated REST-type Option Lists to no longer ignore the "no proxy" global setting :superscript:`6.0.9 6.2.4`
+:Plans and Pricing: - Fixed an issue with custom Service Plans where sometimes the workload size values (CPU, memory, etc.) would only be correct after selecting another Plan, then coming back to reload the original :superscript:`6.0.9 6.2.4`
+:Plugins: - Fixed used IPs count (such as on the IP Pools list page) to include reservations made through |morpheus| provisioning or manual assignment in addition to those discovered :superscript:`6.0.9 6.2.4`
+:Remedy: - Fixed an issue that prevented loading of COMPANY and APPROVAL USER fields when adding a Remedy integration which made it impossible to create the integration :superscript:`6.0.9 6.2.4`
+:SCVMM: - Fixed an SCVMM provisioning issue that would occur when multiple virtual machine paths existed in the SCVMM hosts :superscript:`6.0.9 6.2.4`
+:Security: - Fixed an issue that could allow arbitrary code execution against a workload within an Ansible Task execution :superscript:`6.0.9 6.2.4 `
+            - The returned error message when attempting to edit a Cloud name to a very long string via |morpheus| API has been altered for security reasons :superscript:`6.0.9 6.2.4`
+            - The |morpheus| Agent API key is now masked from server and host detail pages for security reasons :superscript:`6.0.9 6.2.4`
+:Tasks: - Updated HTTP-type Tasks to no longer ignore the global "no proxy" setting :superscript:`6.0.9 6.2.4`
+:Terraform: - Terraform now honors the global "no proxy" setting :superscript:`6.0.9 6.2.4`
+:VMware: - Changes made to the disk size on the template in vCenter are now reflected in |morpheus| :superscript:`6.0.9 6.2.4`
+          - Converting VMware VMs to managed no longer strips away any tags in VMware :superscript:`6.0.9 6.2.4`
+          - |morpheus| now supports VMware tags with "multiple" cardinality :superscript:`6.0.9 6.2.4`
+:Workflows: - When running Workflows from the Instance Action menu, it will no longer take multiple clicks on the dropdown menu to display all available Workflows :superscript:`6.0.9 6.2.4`
 
 Appliance Updates
 =================
 
-:Embedded Plugins: - BigIp updated to v1.2.0
-                   - Bluecat updated to v1.2.0
-                   - Efficient IP updated to v1.2.0
-                   - Infoblox updated to v1.3.2
-                   - Microsoft DNS updated to v2.2.1
-                   - Morpheus Home Dashboard updated to v1.1.0
-                   - phpIPAM updated to v1.2.1
-                   - PowerDNS updated to v1.1.0
-                   - Rubrik updated to v1.2.0
-                   - SolarWinds updated to v1.1.1
+:Embedded Plugins: - Infoblox updated to v1.3.4
