@@ -98,7 +98,7 @@ Breaking Changes
    * - Tomcat
      -
      - |tcver|
-     - |checkmark|
+     - 
    * - Nginx
      -
      - |nginxver|
@@ -132,16 +132,16 @@ Breaking Changes
      - |morphver| changes from |previousMorphVer|
    * - Morpheus Node and VM Node Packages
      - |nodePackageVer|
-     - Updated to |nodePackageVer|
+     - No changes
    * - Morpheus Linux Agent
      - |linuxagentver|
-     - No change
+     - No changes
    * - Morpheus Windows Agent
      - |winagentver|
-     - No change
+     - No changes
    * - Morpheus macOS Agent
      - |macagentver|
-     - No change
+     - No changes
 
 |
 
