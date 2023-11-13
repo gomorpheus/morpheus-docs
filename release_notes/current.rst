@@ -73,4 +73,4 @@ Fixes
 Embedded Plugins
 =========================
 
-:Infoblox: infobox-plugin updated to v1.3.4
+:Infoblox: infobox-plugin updated to v1.2.3
