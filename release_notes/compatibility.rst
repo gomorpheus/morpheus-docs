@@ -103,7 +103,7 @@ No Service Version Changes from |previousMorphVer|
    * - Tomcat
      - 
      - |tcver|
-     - |checkmark|
+     - 
    * - Nginx
      -
      - |nginxver|
@@ -135,16 +135,16 @@ No Service Version Changes from |previousMorphVer|
      - |morphver| changes from |previousMorphVer|
    * - Morpheus Node and VM Node Packages
      - |nodePackageVer|
-     - Updated to |nodePackageVer|
+     - No changes
    * - Morpheus Linux Agent
      - No change
-     - Updated to |linuxagentver|
+     - No changes
    * - Morpheus Windows Agent
      - |winagentver|
-     - No change
+     - No changes
    * - Morpheus macOS Agent
      - |macagentver|
-     - No change
+     - No changes
 
 |
 
