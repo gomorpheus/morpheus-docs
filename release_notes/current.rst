@@ -22,14 +22,17 @@ Release Dates
 New Features
 ============
 
-:API & CLI: - The Certificates API endpoint now validates the given integration ID and does not create the certificate if an integration with the given ID does not exist :superscript:`6.0.9 6.2.4`
+:API & CLI: - Added the ability to create Catalog Items based on Forms through |morpheus| API and CLI :superscript:`6.2.4`
+             - The Certificates API endpoint now validates the given integration ID and does not create the certificate if an integration with the given ID does not exist :superscript:`6.0.9 6.2.4`
              - ``refId`` and ``refType`` parameters are no longer ignored when |morpheus|-type IP Pool reservations are made over |morpheus| API :superscript:`6.0.9 6.2.4`
 :Currency: - Added Malaysian Ringgit (MYR) currency support :superscript:`6.0.9 6.2.4`
             - Added support for Singapore Dollar (SGD) currency :superscript:`6.0.9 6.2.4`
+:Forms: - Added various fixes and quality of life improvements for Forms feature :superscript:`6.2.4`
 :Hyper-V: - Adding a Hyper-V cloud with a WinRM Port value of 5986 rather than the default of 5985 now works properly :superscript:`6.0.9 6.2.4`
 :Kubernetes: - Single and HA layouts for Kubernetes version 1.28 clusters added for OpenStack and OpenTelekom Clouds :superscript:`6.0.9 6.2.4`
               - The ``nginx-ingress`` version 1.9.4 package is now being included with Kubernetes 1.26 through 1.28 cluster layouts for all supported operating systems :superscript:`6.0.9 6.2.4`
 :NSX-T: - Official support added for NSX-T 4.1 :superscript:`6.0.9 6.2.4`
+:Network: - Credential stores can now be used when creating or editing network integrations for NSX and Cisco ACI
 :Security: - Bouncycastle upgraded to 1.76 to mitigate CVE-2023-33201 :superscript:`6.0.9 6.2.4`
             - Guava upgraded to 32.0.1 to mitigate CVE-2023-2976 :superscript:`6.0.9 6.2.4`
             - Upgraded cxf-rt-transports-http to 3.4.10 to mitigate CVE-2022-46363 :superscript:`6.0.9 6.2.4`
@@ -46,7 +49,7 @@ Fixes
 :Blueprints: - ARM-type App Blueprints no longer fail on provisioning when they contain array-type parameters with a default value indicated :superscript:`6.0.9 6.2.4 `
 :Costing: - Fixed an issue that could cause an incorrect price to be displayed if the price was set by a long-running Price phase Task :superscript:`6.0.9 6.2.4`
 :Database: - Added an index on the ``process_id`` column in the ``job_execution`` table of the database. This will improve performance for those with very large ``job_execution`` tables :superscript:`6.0.9 6.2.4`
-:Forms: - Fixed the Security Group ID Form variable not resolving in config which caused provisioning failures :superscript:`6.2.4 `
+:Forms: - Fixed the Security Group ID Form variable not resolving in config which caused provisioning failures :superscript:`6.2.4`
 :Inputs: - Typing any value into typeahead-type Inputs which are marked required will no longer satisfy the Input. A valid selection from the dropdown field must be selected :superscript:`6.0.9 6.2.4`
 :Installer: - ``sshd-core`` upgraded to 2.10 to mitigate CVE-2023-3588 :superscript:`6.0.9 6.2.4`
 :Instances: - For Windows Instances installing |morpheus| Agent via Unattend, |morpheus| will now detect if there is already content in the SetupComplete.cmd script file and ensure the Agent install script is appended in such a way that all scripts will run properly :superscript:`6.0.9 6.2.4`
@@ -54,7 +57,7 @@ Fixes
 :NSX-T: - Fixed a visibility issue that allowed all edge cluster nodes to be visible to all Tenants when the same NSX-T integration was shared with them and individual edge clusters were assigned to each via visibility permissions :superscript:`6.0.9 6.2.4`
          - Increased the network server refresh lock timeout to reduce appliance CPU consumption under certain use cases :superscript:`6.0.9 6.2.4`
 :OpenStack: - DNS records are now removed on Instance deletion when setting a floating IP at provision time with a Route53 integration on OpenStack Clouds :superscript:`6.0.9 6.2.4`
-:Option Lists: - Added global maximum setting for Option Lists as it was possible to severely reduce appliance performance in some cases with extremely large Option Lists :superscript:`6.2.4 `
+:Option Lists: - Added global maximum setting for Option Lists as it was possible to severely reduce appliance performance in some cases with extremely large Option Lists :superscript:`6.2.4`
                 - Updated REST-type Option Lists to no longer ignore the "no proxy" global setting :superscript:`6.0.9 6.2.4`
 :Plans and Pricing: - Fixed an issue with custom Service Plans where sometimes the workload size values (CPU, memory, etc.) would only be correct after selecting another Plan, then coming back to reload the original :superscript:`6.0.9 6.2.4`
 :Plugins: - Fixed used IPs count (such as on the IP Pools list page) to include reservations made through |morpheus| provisioning or manual assignment in addition to those discovered :superscript:`6.0.9 6.2.4`
