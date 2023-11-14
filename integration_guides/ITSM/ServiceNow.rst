@@ -45,8 +45,10 @@ Add ServiceNow Integration
 
    CMDB CLASS MAPPING
     Define the mapping between |morpheus| server types and ServiceNow CI classes. Select a |morpheus| server type from the dropdown menu and a new field will appear in the list. Enter a ServiceNow CI class into the text field to create the association
-   CMDB BUSINESS OBJECT
+   DEFAULT CMDB BUSINESS CLASS
     Allows the user to define the table CMDB records are written to if they prefer this over |morpheus| default. By default, |morpheus| writes to the ``cmdb_ci_vm_instance`` table.
+   CMDB MODE
+    Choose "Table Based" or "Identification & Reconciliation API". Selecting "Table Based" will utilize the older Table-based API mode for CMDB sync. Organizations utilizing IRE should select "Identification & Reconciliation API".
 
 #. Save Changes
 

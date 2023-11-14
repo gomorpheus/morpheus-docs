@@ -87,6 +87,7 @@ Currency
   -  KRW
   -  MAD
   -  MNT
+  -  MYR
   -  MXN
   -  NOK
   -  NZD
@@ -95,6 +96,7 @@ Currency
   -  RUB
   -  SAR
   -  SEK
+  -  SGD
   -  THB
   -  TRL
   -  USD
