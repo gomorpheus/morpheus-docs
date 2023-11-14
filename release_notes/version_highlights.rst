@@ -4,6 +4,20 @@
 
 This section includes feature change highlights and key enhancements for all releases within |morpheus| version 6. Many other features changes and enhancements were added to each of these versions and the release notes page for each individual version can be reviewed for complete details.
 
+6.3.0
+=====
+
+:Cluster Packages: Added new UI area (Library > Templates > Cluster Packages) for creating Cluster Packages which can be associated with Cluster Layouts. See the appropriate areas of Morpheus Documentation for more on Cluster Packages and Cluster Layouts
+:Image Builder: Updated the Image Builder form into a single form rather than a paged wizard. See the Image Builder section of Morpheus documentation for example scripts and help getting started
+:VMware: Added support for versioned templates from VMware Content Library
+         Added the ability to set vApp Property values on VMware Node Types. See Node Type docs for more
+
+6.2.4
+=====
+
+:NSX-T: Official support added for NSX-T 4.1
+:ServiceNow: Added the ability to switch back to the older table-based API mode for CMDB sync
+
 6.2.3
 =====
 
@@ -45,6 +59,12 @@ This section includes feature change highlights and key enhancements for all rel
 =====
 
 :Forms: - Added a Form builder tool to aid in creating robust order Forms for Catalog Items
+
+6.0.9
+=====
+
+:NSX-T: Official support added for NSX-T 4.1
+:ServiceNow: Added the ability to switch back to the older table-based API mode for CMDB sync
 
 6.0.8
 =====
