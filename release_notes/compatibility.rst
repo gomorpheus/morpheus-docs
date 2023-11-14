@@ -187,7 +187,7 @@ Upgrade Paths & Methods
 
 The following table shows supported version upgrade paths and methods.
 
-.. include:: /release_notes/upgrade_table.rst
+.. include:: /release_notes/upgrade_table2.rst
 
 |
 

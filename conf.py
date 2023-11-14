@@ -324,3 +324,12 @@ html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
 
 def setup(app):
     app.add_css_file('morpheusTheme.css')
+
+# -- Copy the upgrade table from master ------------------------------------------
+
+import urllib.request
+from urllib.request import urlretrieve
+
+urlretrieve (
+    "https://github.com/gomorpheus/morpheus-docs/raw/master/release_notes/upgrade_table.rst",
+    "release_notes/upgrade_table2.rst"
