@@ -21,11 +21,13 @@ Release Dates
 New Features
 ============
 
-:API & CLI: - The Certificates API endpoint now validates the given integration ID and does not create the certificate if an integration with the given ID does not exist :superscript:`6.0.9 6.3.1`
+:API & CLI: - Added the ability to create Catalog Items based on Forms through |morpheus| API and CLI :superscript:` 6.3.1`
+             - The Certificates API endpoint now validates the given integration ID and does not create the certificate if an integration with the given ID does not exist :superscript:`6.0.9 6.3.1`
              - ``refId`` and ``refType`` parameters are no longer ignored when |morpheus|-type IP Pool reservations are made over |morpheus| API :superscript:`6.0.9 6.3.1`
 :Currency: - Added Malaysian Ringgit (MYR) currency support :superscript:`6.0.9 6.3.1`
             - Added support for Mongolian Tugrik (MNT) currency :superscript:`6.0.9 6.3.0 `
             - Added support for Singapore Dollar (SGD) currency :superscript:`6.0.9 6.3.1`
+:Forms: - Added various fixes and quality of life improvements for Forms feature :superscript:` 6.3.1`
 :Hyper-V: - Adding a Hyper-V cloud with a WinRM Port value of 5986 rather than the default of 5985 now works properly :superscript:`6.0.9 6.3.1`
 :Kubernetes: - Single and HA layouts for Kubernetes version 1.28 clusters added for OpenStack and OpenTelekom Clouds :superscript:`6.0.9 6.3.1`
               - The ``nginx-ingress`` version 1.9.4 package is now being included with Kubernetes 1.26 through 1.28 cluster layouts for all supported operating systems :superscript:`6.0.9 6.3.1`
@@ -45,7 +47,7 @@ Fixes
 :API & CLI: - |morpheus| is now displaying invalid value or string too long errors for the various BGP neighbor properties when updating a network router's BGP neighbors through the API :superscript:`6.0.9 6.3.1`
 :Blueprints: - ARM-type App Blueprints no longer fail on provisioning when they contain array-type parameters with a default value indicated :superscript:`6.0.9 6.3.1`
 :Costing: - Fixed an issue that could cause an incorrect price to be displayed if the price was set by a long-running Price phase Task :superscript:`6.0.9 6.3.1`
-:Database: - Added an index on the ``process_id`` column in the ``job_execution`` table of the database. This will improve performance for those with very large ``job_execution`` tables :superscript:`6.0.9 6.3.1 `
+:Database: - Added an index on the ``process_id`` column in the ``job_execution`` table of the database. This will improve performance for those with very large ``job_execution`` tables :superscript:`6.0.9 6.3.1`
 :Forms: - Fixed the Security Group ID Form variable not resolving in config which caused provisioning failures :superscript:` 6.3.1`
 :Inputs: - Typing any value into typeahead-type Inputs which are marked required will no longer satisfy the Input. A valid selection from the dropdown field must be selected :superscript:`6.0.9 6.3.1`
 :Installer: - ``sshd-core`` upgraded to 2.10 to mitigate CVE-2023-3588 :superscript:`6.0.9 6.3.1`
