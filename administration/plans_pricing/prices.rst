@@ -85,6 +85,8 @@ Currency
   -  JD
   -  JPY
   -  MAD
+  -  MNT
+  -  MYR
   -  MXN
   -  NOK
   -  NZD
@@ -92,6 +94,7 @@ Currency
   -  ROL
   -  SAR
   -  SEK
+  -  SGD
   -  THB
   -  TRL
   -  USD
