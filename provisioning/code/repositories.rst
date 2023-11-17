@@ -118,7 +118,7 @@ Import and Export
 
 Onboarded Git repositories can be configured as either import or export targets for a |morpheus| appliance. This means that many created |morpheus| constructs, such as Tasks, Library Items, and others, can be backed up to an integrated Git repository as code. This backup can take place on an automatic schedule (syncs every four hours) or can be triggered manually after changes are made. Users can back up all supported constructs within the appliance to a single repository or use Labels to back up only selected items. Exported constructs can also be imported into target appliances. This is useful for sharing items between two |morpheus| environments, such as from a development appliance to a production appliance.
 
-.. NOTE:: The use of this feature requires an integrated Git repository. Please see our `integration guide <https://docs.morpheusdata.com/en/latest/integration_guides/Deployments/deployment.html>`_ for Github or other Git integrations if you've not yet integrated your code repositories.
+.. NOTE:: The use of this feature requires an integrated Git repository. Please see our `integration guide <https://docs.morpheusdata.com/en/latest/integration_guides/Deployments/deployment.html>`_ for Github or other Git integrations if you've not yet integrated your code repositories. While Morpheus can onboard and work with both public and private code repositories, it is strongly recommended that you use private repositories for exporting your Morpheus constructs as code.
 
 Supported Constructs:
 
