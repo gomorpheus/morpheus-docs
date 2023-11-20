@@ -333,5 +333,4 @@ from urllib.request import urlretrieve
 
 urlretrieve (
     "https://github.com/gomorpheus/morpheus-docs/raw/master/release_notes/upgrade_table.rst",
-    "release_notes/upgrade_table2.rst"
-)
+    "release_notes/upgrade_table2.rst")
