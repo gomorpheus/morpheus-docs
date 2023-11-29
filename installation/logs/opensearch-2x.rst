@@ -1,7 +1,7 @@
-.. _opensearch-elasticsearch:
+.. _opensearch-2x:
 
-(Deprecated) Amazon OpenSearch (Elasticsearch)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Amazon OpenSearch 2.x
+^^^^^^^^^^^^^^^^^^^^^
 
 Introduction
 ````````````
@@ -10,12 +10,13 @@ Amazon OpenSearch Service makes it easy for you to perform interactive log analy
 OpenSearch is an open source, distributed search and analytics suite derived from Elasticsearch.  It can be designed to be multi-AZ capable, allows 
 scaling up, and minimal downtime.
 
-At the time of this writing, |morpheus| is designed to use Elasticsearch, which means the Elastisearch engine should be used.
+At the time of this writing, |morpheus| has confirmed supportability for OpenSearch 2.x.  OpenSearch 1.x and the Elasticsearch 7.10 were used previously, as they were either 
+plain Elasticsearch or backwards compatible with Elasticsearch 7.10.  However, with the licensing change of Elasticsearch, OpenSearch was created and has begun to deviate 
+from the original Elasticsearch 7.10 code.  This means they may be treated as two differnt products, even though most of the base is still the same.  Elasticsearch 2.x is 
+still very close to the same as Elasticsearch but there may be differences between them that |morpheus| will need to continue to support.
 
-.. note:: The OpenSearch engine has been seen to work on the current version but general support is not available yet for |morpheus|
-
-Create Elasticsearch Domain (UI)
-````````````````````````````````
+Create OpenSearch Domain (UI)
+`````````````````````````````
 
 .. note:: The following configuration has recommended values but requirements may differ per customer
 
@@ -35,32 +36,38 @@ Create Elasticsearch Domain (UI)
 
       * - Setting
         - Value
+      * - Domain Creation Method
+        - Standard create
       * - Deployment type
         - Production
+      * - Deployment option(s)
+        - Domain **without** standby
       * - Version
-        - Elasticsearch 7.10
+        - (latest) (2.11 tested at the time of this writing)
       * - Availability Zones
-        - 2-AZ (3-AZ is also acceptable)
+        - 3-AZ recommended (2-AZ is possible)
       * - (Data Nodes) Instance type
-        - m6g.large.search
-      * - EBS storage size per node
-        - 2 (3 if 3-AZ was chosen)
+        - (General Purpose) m6g.large.search
+      * - Number of Nodes
+        - 3 (2 if 2-AZ was chosen)
       * - EBS volume type
-        - gp2
+        - gp2 (gp3 is possible)
       * - EBS storage size per node
         - Refer to the internal storage calculator
       * - (Dedicated master nodes) Instance Type
-        - m6g.large.search
+        - (General Purpose) m6g.large.search
       * - Number of master nodes
         - 3
       * - Network
         - VPC access (recommended)
       * - Subnets
-        - Choose one subnet from at least two AZs
+        - Choose one subnet from at least three AZs (or two is 2-AZ was chosen)
       * - Security Group(s)
         - Choose the Security Group previously created
       * - Fine-grained access control
         - **Checked**
+      * - Fine-grained access control
+        - **Check** Create master user
       * - Fine-grained access control
         - Enter a username and password for the administrator account
       * - Access Policy
@@ -68,8 +75,13 @@ Create Elasticsearch Domain (UI)
 
   .. note:: Any settings not listed above can be kept at their default, or items such as usernames, VPCs, maintenance, etc. are all preferences of the customer and will not affect the performance or availability
 
-Create Elasticsearch Domain (CLI)
-`````````````````````````````````
+  .. important:: 
+    If `Domain with standby` or `2-AZ`` is chosen, the following line is required in the `morpheus.rb` file:  
+
+    `elasticsearch['replica_count'] = 2`
+
+Create OpenSearch Domain (CLI)
+``````````````````````````````
 
 If you are familiar with using the AWS CLI, you can run the following commands to more easily create the domain, instead of using the UI.
 
@@ -84,7 +96,7 @@ If you are familiar with using the AWS CLI, you can run the following commands t
     # Set all variables to preferred values
     es_domain_name='morpheusdomain'
     es_security_group_ids='sg-0c6cd7efd0cff7696'
-    es_subnet_ids='subnet-0ed95648b7e27a375,subnet-00422803877471552'
+    es_subnet_ids='subnet-0ed95648b7e27a375,subnet-00422803877471552,subnet-0d15255413b36bb8d'
     es_volume_size_gb='10'
     es_master_username='admin'
     # Password must be at least 8 characters long and contain at least one uppercase letter, one lowercase letter, one number, and one special character.
@@ -92,15 +104,15 @@ If you are familiar with using the AWS CLI, you can run the following commands t
 
     # Create Amazon OpenSearch Domain
     aws opensearch create-domain --domain-name $es_domain_name \
-      --engine-version 'Elasticsearch_7.10' \
-      --cluster-config InstanceType=m6g.large.search,InstanceCount=2,DedicatedMasterEnabled=true,ZoneAwarenessEnabled=true,ZoneAwarenessConfig={AvailabilityZoneCount=2},DedicatedMasterType=m6g.large.search,DedicatedMasterCount=3 \
-      --ebs-options EBSEnabled=true,VolumeType=gp2,VolumeSize=$es_volume_size_gb \
+      --engine-version 'OpenSearch_2.11' \
+      --cluster-config "MultiAZWithStandbyEnabled=false,InstanceType=m6g.large.search,InstanceCount=3,DedicatedMasterEnabled=true,ZoneAwarenessEnabled=true,ZoneAwarenessConfig={AvailabilityZoneCount=3},DedicatedMasterType=m6g.large.search,DedicatedMasterCount=3" \
+      --ebs-options "EBSEnabled=true,VolumeType=gp2,VolumeSize=$es_volume_size_gb" \
       --advanced-security-options "Enabled=true,InternalUserDatabaseEnabled=true,MasterUserOptions={MasterUserName=$es_master_username,MasterUserPassword=$es_master_password}" \
       --access-policies '{"Version":"2012-10-17","Statement":[{"Effect":"Allow","Principal":{"AWS":"*"},"Action":"es:*","Resource":"arn:aws:es:us-east-2:426242579432:domain/'$es_domain_name'/*"}]}' \
-      --vpc-options SubnetIds=$es_subnet_ids,SecurityGroupIds=$es_security_group_ids \
-      --encryption-at-rest-options Enabled=true \
-      --node-to-node-encryption-options Enabled=true \
-      --domain-endpoint-options EnforceHTTPS=true \
+      --vpc-options "SubnetIds=$es_subnet_ids,SecurityGroupIds=$es_security_group_ids" \
+      --encryption-at-rest-options 'Enabled=true' \
+      --node-to-node-encryption-options 'Enabled=true' \
+      --domain-endpoint-options 'EnforceHTTPS=true' \
       --tag-list 'Key=application,Value=morpheus'
 
     # Retrieve the details - instance needs to be ready for this to be available
@@ -116,10 +128,10 @@ Testing Elasticsearch Domain
     # Note that these commands MUST be ran by a system on the VPC, such as the Morpheus nodes, as the cluster is private
     # Note the above note ^^^^^^^^
 
-    es_domain_endpoint='<pastedEndpoint>'
+    es_domain_endpoint='<pasteEndpointUrl>'
     es_master_username='admin'
     es_master_password='Abc123123@'
-    curl --user $es_master_username:$es_master_password https://$es_domain_endpoint/_cluster/health?pretty
+    curl --user $es_master_username:$es_master_password $es_domain_endpoint/_cluster/health?pretty
   
   Documentation: https://www.elastic.co/guide/en/elasticsearch/reference/current/http-clients.html
 
@@ -136,3 +148,5 @@ File ``/etc/morpheus/morpheus.rb``
     elasticsearch['cluster'] = 'morpheusdomain'
     elasticsearch['es_hosts'] = {'vpc-morpheusdomain-4ypsets66htlwedmhew45kfxd4.us-east-2.es.amazonaws.com' => 443}
     elasticsearch['use_tls'] = true
+    # elasticsearch['replica_count'] is only needed if the option of "Domain with standby" or a "2-AZ" was chosen, as mentioned previously
+    # elasticsearch['replica_count'] = 2
