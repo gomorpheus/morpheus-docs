@@ -449,3 +449,48 @@ Additional monitoring and control panes are located within tabs, some of which c
         View the |morpheus| Wiki entry for this Cluster. This Wiki page may also be viewed in the Wiki section (|OpeWik|). Edit the Wiki as desired, most standard Markdown syntax will be honored allowing the use of headings, links, embedded images, and more.
 
         .. image:: /images/infrastructure/clusters/kubernetes/clusterWiki.png
+
+Adding External Kubernetes Clusters
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+|morpheus| supports the management and consumption of Kubernetes clusters provisioned outside of |morpheus|. These are referred to as External Kubernetes Clusters in |morpheus| UI. This could be used, for example, to onboard and manage OpenShift clusters. In order to fully integrate the Kubernetes cluster with the |morpheus| feature set, you may need to create a service account for |morpheus|. Without first taking that step, some features may not work fully, such as listing all namespaces. The process for creating a service account and integrating the Cluster with |morpheus| is described here.
+
+First, create the Service Account within the Kubernetes cluster:
+
+.. code-block:: bash
+
+  kubectl create serviceaccount morpheus
+
+Next, create the Role Binding:
+
+.. code-block:: bash
+
+  kubectl create clusterrolebinding morpheus-admin \
+  --clusterrole=cluster-admin --serviceaccount=default:morpheus \
+  --namespace=default
+
+With those items created, we can gather the API URL and the API token which will be used to add the existing cluster to |morpheus| in the next step:
+
+.. code-block:: bash
+
+  kubectl config view --minify | grep server | cut -f 2- -d ":" | tr -d " "
+
+.. code-block:: bash
+
+  SECRET_NAME=$(kubectl get secrets | grep ^morpheus | cut -f1 -d ' ')
+  kubectl describe secret $SECRET_NAME | grep -E '^token' | cut -f2 -d':' | tr -d " "
+
+After finishing those steps, we can now create the external cluster in |morpheus|. Navigate to |InfClu|. Click :guilabel:`+ ADD CLUSTER` and then select "External Kubernetes Cluster". Set the following fields, you will have to advance through the pages of the wizard to see all fields indicated:
+
+- **GROUP:** A previously created |morpheus| Group
+- **CLOUD:** A previously-integrated Cloud
+- **CLUSTER NAME:** A friendly name for the onboarded cluster in |morpheus| UI
+- **RESOURCE NAME:** The resource name will be pre-pended to Kubernetes hosts associated with this cluster when shown in |morpheus| UI
+- **LAYOUT:** Set an associated Layout
+- **API URL:** Enter the API URL gathered in the previous step
+- **API TOKEN:** Enter the API Token gathered in the previous step
+- **KUBE CONFIG:** Enter Kubeconfig YAML to authenticate the cluster
+
+The above are the required fields, others may be optionally configured depending on the situation. Complete the wizard and |morpheus| will begin the process of onboarding the existing cluster into management within |morpheus| UI. Once things are finalized and statuses are green, the cluster can be monitored and consumed as any other cluster provisioned from |morpheus|.
+
+.. image:: /images/infrastructure/clusters/extKube.png
