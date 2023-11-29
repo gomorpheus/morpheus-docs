@@ -76,9 +76,9 @@ Create OpenSearch Domain (UI)
   .. note:: Any settings not listed above can be kept at their default, or items such as usernames, VPCs, maintenance, etc. are all preferences of the customer and will not affect the performance or availability
 
   .. important:: 
-    If `Domain with standby` or `2-AZ`` is chosen, the following line is required in the `morpheus.rb` file:  
+    If ``Domain with standby`` or ``2-AZ`` is chosen, the following line is required in the ``morpheus.rb`` file:  
 
-    `elasticsearch['replica_count'] = 2`
+    ``elasticsearch['replica_count'] = 2``
 
 Create OpenSearch Domain (CLI)
 ``````````````````````````````
