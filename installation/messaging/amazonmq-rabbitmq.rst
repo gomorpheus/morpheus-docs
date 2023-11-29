@@ -37,7 +37,7 @@ Create RabbitMQ Broker (UI)
       * - Broker instance type
         - mq.m5.large
       * - Broker engine version
-        - 3.9.24 **(must be 3.9.x)**
+        - 3.11.x **(must be 3.11.x or higher, 3.11.x at the time of this writing)**
       * - Access type
         - Private access
       * - VPC and subnets
@@ -102,7 +102,7 @@ Configure RabbitMQ
 
     # Note that these commands MUST be ran by a system on the VPC, such as the Morpheus nodes, as the cluster is private
     # Note the above note ^^^^^^^^
-    mq_console_url=<pasteConsoleURL>
+    mq_console_url='<pasteConsoleURL>'
     mq_admin_username='admin'
     mq_admin_password='abc123123123123'
     mq_morpheus_username='morpheus-user'
@@ -115,6 +115,9 @@ Configure RabbitMQ
     curl --user $mq_admin_username:$mq_admin_password -X PUT $mq_console_url/api/policies/morpheus/morpheusAgentActions -d '{"pattern":"morpheusAgentActions.*", "definition":{"expires":1800000, "ha-mode":"all"}, "priority":2, "apply-to":"queues"}'
     curl --user $mq_admin_username:$mq_admin_password -X PUT $mq_console_url/api/policies/morpheus/monitorJobs -d '{"pattern":"monitorJobs.*", "definition":{"expires":1800000, "ha-mode":"all"}, "priority":2, "apply-to":"queues"}'
     curl --user $mq_admin_username:$mq_admin_password -X PUT $mq_console_url/api/policies/morpheus/ha -d '{"pattern":".*", "definition":{"ha-mode":"all"}, "priority":1, "apply-to":"all"}'
+
+
+.. note:: Alternatively, the Rabbit Management interface can be accessed from inside the VPC (unless set to public), and the configuration above can be set manually
 
 Example morpheus.rb File Section
 ````````````````````````````````
