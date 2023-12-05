@@ -53,6 +53,7 @@ Fixes
 :Installer: - ``sshd-core`` upgraded to 2.10 to mitigate CVE-2023-3588 :superscript:`6.0.9 6.3.1`
 :Instances: - For Windows Instances installing |morpheus| Agent via Unattend, |morpheus| will now detect if there is already content in the SetupComplete.cmd script file and ensure the Agent install script is appended in such a way that all scripts will run properly :superscript:`6.0.9 6.3.1`
 :Kubernetes: - Fixed failed MKS cluster upgrades from 1.26.x to 1.27.x which were failing due to a removed parameter :superscript:`6.0.9 6.3.1`
+             - Fixed an issue where the next sequential Kubernetes cluster ID was calculated incorrectly in specific scenarios
 :NSX-T: - Fixed a visibility issue that allowed all edge cluster nodes to be visible to all Tenants when the same NSX-T integration was shared with them and individual edge clusters were assigned to each via visibility permissions :superscript:`6.0.9 6.3.1`
          - Increased the network server refresh lock timeout to reduce appliance CPU consumption under certain use cases :superscript:`6.0.9 6.3.1`
 :OpenStack: - DNS records are now removed on Instance deletion when setting a floating IP at provision time with a Route53 integration on OpenStack Clouds :superscript:`6.0.9 6.3.1`
