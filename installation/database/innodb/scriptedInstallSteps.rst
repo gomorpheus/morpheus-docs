@@ -17,7 +17,7 @@ Run the following script on each DB node to install MySQL and configure to best 
      .. toggle-header::
             :header: **Expand for Code**
 
-            .. include:: ./scripts/mysqlinstall.rst
+            .. include:: /installation/database/innodb/scripts/mysqlinstall.rst
 
   * Save and set the file to executable
 
@@ -29,14 +29,14 @@ Install MySQL Router
 ^^^^^^^^^^^^^^^^^^^^
     This should be installed on each Morpheus App Node
 
-      .. include:: ./mysqlRouter.rst
+      .. include:: /installation/database/innodb/mysqlRouter.rst
         :start-after: Install-Section-Start
         :end-before: Install-Section-Stop
 
 Configure MySQL Router
 ^^^^^^^^^^^^^^^^^^^^^^
       
-      .. include:: ./mysqlRouter.rst
+      .. include:: /installation/database/innodb/mysqlRouter.rst
         :start-after: Config-Section-Start
         :end-before: Config-Section-Stop
 
@@ -44,7 +44,7 @@ Install MySQL Shell
 ^^^^^^^^^^^^^^^^^^^
     This should be installed on each Morpheus App Node
 
-    .. include:: ./mysqlShell.rst
+    .. include:: /installation/database/innodb/mysqlShell.rst
       :start-after: Install-Section-Start
       :end-before: Install-Section-Stop
 
@@ -52,7 +52,7 @@ MySQL Shell Script
 ^^^^^^^^^^^^^^^^^^
     You will only need to create and run this from a single Node with MySQl Shell installed.
 
-    .. include:: ./scripts.rst
+    .. include:: /installation/database/innodb/scripts.rst
       :start-after: Scripts-Section-Start
       :end-before: Scripts-Section-Stop
 
@@ -61,12 +61,12 @@ MySQL Shell Script
     .. toggle-header::
             :header: **Expand for Single Site Code**
 
-            .. include:: ./scripts/singlesitejs.rst
+            .. include:: /installation/database/innodb/scripts/singlesitejs.rst
 
     .. toggle-header::
             :header: **Expand for Multi Site Code**
 
-            .. include:: ./scripts/multisitejs.rst
+            .. include:: /installation/database/innodb/scripts/multisitejs.rst
     
     |
     Run the code as sudo root
@@ -78,11 +78,11 @@ MySQL Shell Script
 MySQL Dump Backup Settings
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-    .. include:: ./innodbBackup.rst
+    .. include:: /installation/database/innodb/innodbBackup.rst
       :start-after: Config-Section-Start
       :end-before: Config-Section-Stop
 
 Create Morpheus Database and User
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
     
-    .. include:: ./innodb-config-generic.rst
+    .. include:: /installation/database/innodb/innodb-config-generic.rst
