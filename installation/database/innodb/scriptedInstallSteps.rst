@@ -27,7 +27,7 @@ Run the following script on each DB node to install MySQL and configure to best 
 
   * View what the mysql config file should have set.
      .. toggle-header::
-            :header: **Expand for Code**
+            :header: **Expand for mysql config**
 
               * my.cnf settings on DB servers
         
