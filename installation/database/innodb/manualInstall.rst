@@ -133,8 +133,29 @@ InnoDB single site cluster.
                     
                 **add  bind-address  = 0.0.0.0**
 
-
+    * my.cnf settings on DB servers
         
+        .. code-block:: bash
+             
+             [mysqld]
+             bind-address = 0.0.0.0
+             max_connections = 1000                # Increases Max Connections Supported
+             innodb_buffer_pool_size=6G            # Runs more in RAM, 70% of available MEM is currently being set with scripted install
+             innodb_buffer_pool_instances=6        # Allows for better Multi-Threading
+             innodb_use_fdatasync=ON               # Enables fdatasync() for faster writes than fsync()
+             sql_generate_invisible_primary_key=1  # This ensures that MySQL creates an invisible primary key for each Morpheus table that does not have one. 
+
+             [mysqldump]
+             set-gtid-purged=OFF                   # This is to ensure if a mysqldump is performed from the DB node it is in the proper format for restore.
+            
+    * my.cnf settings on Morpheus App Nodes (you will need to create the /etc/my.cnf)
+        
+        .. code-block:: bash
+             
+             [mysqldump]
+             set-gtid-purged=OFF                   # without this setting Morpheus will not be able to create backups that can be used for restore.
+            
+
     * Restart mysql service.    
         
         .. tabs::
