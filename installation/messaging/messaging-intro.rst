@@ -8,9 +8,7 @@ Install RabbitMQ on the 3 nodes and create a cluster.
 
 .. IMPORTANT:: This is a sample configuration only. Customer configurations and requirements will vary.
 
-RabbitMQ requires Erlang to be installed, the exact version will depend on which version of RabbitMQ you're installing on your queue-tier nodes. Click the link below to view the compatibility Matrix for RabbitMQ and Erlang. Note that |morpheus| is compatible with RabbitMQ 3.5.x and higher, however, versions 3.7.x and earlier have reached their end of life and RabbitMQ does not encourage their use. If needed, a compatibility table for these sunsetted versions is in `RabbitMQ documentation <https://www.rabbitmq.com/which-erlang.html#eol-series>`_.
-
-https://www.rabbitmq.com/which-erlang.html#compatibility-matrix
+RabbitMQ requires Erlang to be installed, the exact version will depend on which version of RabbitMQ you're installing on your queue-tier nodes. Click the following link to view the `Compatibility Matrix <https://www.rabbitmq.com/which-erlang.html#compatibility-matrix>`_ for RabbitMQ and Erlang. Note that |morpheus| is compatible with RabbitMQ 3.5.x and higher, however, versions 3.7.x and earlier have reached their end of life and RabbitMQ does not encourage their use. If needed, a compatibility table for these sunsetted versions is in `RabbitMQ documentation <https://www.rabbitmq.com/which-erlang.html#eol-series>`_.
 
 .. important:: At the time of this writing, RabbitMQ version 3.12.2 is packaged with |morpheus| but higher versions can be used.  That said, it would be best to verify compatibility, if you are using a newer version and unsure of the support/functionality.
 
