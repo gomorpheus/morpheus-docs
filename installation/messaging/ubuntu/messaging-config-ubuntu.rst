@@ -16,6 +16,7 @@ RabbitMQ Installation and Configuration
 
    .. code-block:: bash
 
+      apt-get update
       apt-cache policy erlang
       apt-cache policy rabbitmq-server
 
@@ -38,5 +39,3 @@ RabbitMQ Installation and Configuration
 
       apt-mark hold erlang
       apt-mark hold rabbitmq-server
-
-   .. note:: Instructions to enable versionlock is listed in the **Requirements** section
