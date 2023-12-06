@@ -27,7 +27,7 @@ Run the following script on each DB node to install MySQL and configure to best 
 
   * View what the mysql config file should have set.
      .. toggle-header::
-            :header: **Expand for Code**
+            :header: **Expand for mysql config**
 
               * my.cnf settings on DB servers
         
@@ -35,9 +35,9 @@ Run the following script on each DB node to install MySQL and configure to best 
                      
                      [mysqld]
                      bind-address = 0.0.0.0
-                     max_connections = 1000                # Increases Max Connections Supported
-                     innodb_buffer_pool_size=6G            # Runs more in RAM, 70% of available MEM is currently being set with scripted install
-                     innodb_buffer_pool_instances=6        # Allows for better Multi-Threading
+                     max_connections = 2000                # Increases Max Connections Supported
+                     innodb_buffer_pool_size=6G            # **Change 6 to actual number**. Runs more in RAM, 70% of available MEM is currently being set with scripted install
+                     innodb_buffer_pool_instances=6        # **Change 6 to actual number**. Allows for better Multi-Threading. Should be 1 instance per 1G of buffer pool size above.
                      innodb_use_fdatasync=ON               # Enables fdatasync() for faster writes than fsync()
                      sql_generate_invisible_primary_key=1  # This ensures that MySQL creates an invisible primary key for each Morpheus table that does not have one. 
         
