@@ -58,7 +58,7 @@
        <td class="blue">6.1.2</td>
        <td class="blue">6.2.0</td>
        <td class="blue">6.2.1</td>
-       <td class="blue">6.2.2</td>
+       <td class="red">6.2.2</td>
        <td class="red">6.2.3</td>
        <td class="red">6.2.4</td>
        <td class="red">6.3.0</td>
