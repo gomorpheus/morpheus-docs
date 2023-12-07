@@ -19,7 +19,7 @@
          rabbitmq['host'] = '0.0.0.0'
          rabbitmq['nodename'] = 'rabbit@node01'
          mysql['enable'] = false
-         mysql['host'] = {'192.168.101.01' => 3306, '192.168.101.02' => 3306, '192.168.101.03' => 3306}
+         mysql['host'] = {'127.0.0.1' => 6446}
          mysql['morpheus_db'] = 'morpheus'
          mysql['morpheus_db_user'] = 'morpheusDbUser'
          mysql['morpheus_password'] = 'morpheusDbUserPassword'
@@ -48,7 +48,7 @@
          rabbitmq['host'] = '0.0.0.0'
          rabbitmq['nodename'] = 'rabbit@node02'
          mysql['enable'] = false
-         mysql['host'] = {'192.168.101.01' => 3306, '192.168.101.02' => 3306, '192.168.101.03' => 3306}
+         mysql['host'] = {'127.0.0.1' => 6446}
          mysql['morpheus_db'] = 'morpheus'
          mysql['morpheus_db_user'] = 'morpheusDbUser'
          mysql['morpheus_password'] = 'morpheusDbUserPassword'
@@ -76,7 +76,7 @@
          rabbitmq['host'] = '0.0.0.0'
          rabbitmq['nodename'] = 'rabbit@node03'
          mysql['enable'] = false
-         mysql['host'] = {'192.168.101.01' => 3306, '192.168.101.02' => 3306, '192.168.101.03' => 3306}
+         mysql['host'] = {'127.0.0.1' => 6446}
          mysql['morpheus_db'] = 'morpheus'
          mysql['morpheus_db_user'] = 'morpheusDbUser'
          mysql['morpheus_password'] = 'morpheusDbUserPassword'

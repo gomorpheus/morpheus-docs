@@ -73,13 +73,13 @@ MultiSite Full Install
         :start-after: Config-Section-Start
         :end-before: Config-Section-Stop
         
-* MySQL Dump Backup Settings
+* MySQL Dump Backup Settings **(Perform on all DB nodes and Morpheus App Nodes)**
 
     .. include:: ./innodbBackup.rst
       :start-after: Config-Section-Start
       :end-before: Config-Section-Stop
 
-* Create Morpheus User and Database
+* Create Morpheus User and Database 
     
     .. include:: ./innodb-config-generic.rst        
 

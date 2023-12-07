@@ -95,7 +95,7 @@ MySQL Shell Script
 
           bash myscript.js
 
-MySQL Dump Backup Settings
+MySQL Dump Backup Settings **(Perform on all DB nodes and Morpheus App Nodes)**
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
     .. include:: /installation/database/innodb/innodbBackup.rst
