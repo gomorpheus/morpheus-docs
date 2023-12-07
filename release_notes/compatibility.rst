@@ -79,7 +79,7 @@ No Service Version Changes from |previousMorphVer|
    * - Plugin API
      - |pluginVer|
      -
-     - 
+     -
    * - Morpheus Worker
      - |workerVer|
      -
@@ -87,7 +87,7 @@ No Service Version Changes from |previousMorphVer|
    * - MySQL
      - |mysqlbranch|
      - |mysqlver|
-     - 
+     -
    * - MySQL (FIPS)
      - |mysqlbranch|
      - |mysqlverfips|
@@ -101,9 +101,9 @@ No Service Version Changes from |previousMorphVer|
      - |rmqver|
      -
    * - Tomcat
-     - 
+     -
      - |tcver|
-     - 
+     -
    * - Nginx
      -
      - |nginxver|
@@ -115,7 +115,7 @@ No Service Version Changes from |previousMorphVer|
    * - Java
      -
      - |java|
-     - 
+     -
    * - Java (macOS agent)
      -
      - |java-mac|
@@ -194,6 +194,6 @@ The following table shows supported version upgrade paths and methods.
 Integrations
 ============
 
-.. note:: Current iterations of Amazon AWS, Microsoft Azure, Google Cloud Platform, Digital Ocean, HPE OneView, OpenTelekom Cloud, IBM Bluemix, Softlayer and UpCloud are all supported.
+.. note:: Current iterations of Amazon AWS, Microsoft Azure, Google Cloud Platform, Digital Ocean, OpenTelekom Cloud, IBM Bluemix, Softlayer and UpCloud are all supported.
 
 .. include:: /release_notes/compatibility_table.rst
