@@ -19,7 +19,6 @@ Supported Cloud Types
 * DigitalOcean
 * Google Cloud
 * HPE (Cloud type for PXE and manually added HPE Hosts)
-* HPE OneView
 * Huawei
 * Hyper-V
 * IBM Cloud
