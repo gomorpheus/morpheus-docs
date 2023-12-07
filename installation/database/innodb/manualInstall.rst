@@ -133,13 +133,6 @@ InnoDB single site cluster.
 
     .. note:: You need to make sure that all nodes can reach each other by short name.  You can also use IPs or FQDN, as long as they match how they are configured below.            
 
-* Setup MySQL config on each Morpheus app Node.
-        
-        .. code-block:: bash
-             
-             [mysqldump]
-             set-gtid-purged=OFF        # without this setting Morpheus will not be able to create backups that can be used for restore.
-
 .. Manual-Section-Stop
 
 * Install MySQL Shell. (This does not have to be installed on the DB nodes. In prod it would probably be installed on each Morpheus app node)

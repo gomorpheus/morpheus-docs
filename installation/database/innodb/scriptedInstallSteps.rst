@@ -43,18 +43,7 @@ Run the following script on each DB node to install MySQL and configure to best 
         
                      [mysqldump]
                      set-gtid-purged=OFF                   # This is to ensure if a mysqldump is performed from the DB node it is in the proper format for restore.
-            
-
-Morpheus App Node mySQL config file 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  
-  Setup my.cnf config file on each **Morpheus App Node**. (you will need to create the /etc/my.cnf)
-        
-        .. code-block:: bash
              
-             [mysqldump]
-             set-gtid-purged=OFF       # without this setting Morpheus will not be able to create backups that can be used for restore.
- 
 
 Install MySQL Router 
 ^^^^^^^^^^^^^^^^^^^^
