@@ -85,19 +85,19 @@ Breaking Changes
    * - MySQL
      - |mysqlbranch|
      - |mysqlver|
-     - 
+     -
    * - MySQL (FIPS)
      - |mysqlbranch|
      - |mysqlverfips|
-     - 
+     -
    * - Elasticsearch
      - |esbranch|
      - |esver|
-     - 
+     -
    * - RabbitMQ
      - |rmqbranch|
      - |rmqver|
-     - 
+     -
    * - Tomcat
      -
      - |tcver|
@@ -105,7 +105,7 @@ Breaking Changes
    * - Nginx
      -
      - |nginxver|
-     - 
+     -
    * - OpenSSL
      -
      - |openssl|, |openssl_fips| (FIPS)
@@ -194,6 +194,6 @@ The following table shows supported version upgrade paths and methods.
 Integrations
 ============
 
-.. note:: Current iterations of Amazon AWS, Microsoft Azure, Google Cloud Platform, Digital Ocean, HPE OneView, OpenTelekom Cloud, IBM Bluemix, Softlayer and UpCloud are all supported.
+.. note:: Current iterations of Amazon AWS, Microsoft Azure, Google Cloud Platform, Digital Ocean, OpenTelekom Cloud, IBM Bluemix, Softlayer and UpCloud are all supported.
 
 .. include:: /release_notes/compatibility_table.rst
