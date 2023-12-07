@@ -33,7 +33,16 @@ InnoDB single site cluster.
 
             .. code-block:: bash
         
-                #Firewall should be disabled by default.
+                # To Stop and disable Firewall
+                ufw stop
+                ufw disable
+
+                # To add FW rules for MySQL InnoDB Cluster
+                ufw allow 3306/tcp
+                ufw allow 33060/tcp
+                ufw allow 33061/tcp
+                ufw allow 33062/tcp
+
                         
         .. group-tab:: RHEL 8/9
 
