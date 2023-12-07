@@ -97,49 +97,14 @@ InnoDB single site cluster.
             FLUSH PRIVILEGES;
             _EOF_
     
-    
 
-    * Check the global MySQL properties to confirm invisible primary key is on.     
-        
-        .. code-block:: 
-
-           mysql> SHOW GLOBAL VARIABLES LIKE 'sql_generate_invisible_primary_key';
-
-    * Update the MySQL config to listen on external address.    
-        
-        .. tabs::
-
-            .. group-tab:: Ubuntu 22.04
-
-                .. code-block:: bash
-                    
-                    # This should set the bind-address in a single command.
-                    sed -i '/^bind-address\s*=/ {s/=.*/= 0.0.0.0/; h;}; $ {x;/^$/{s//bind-address = 0.0.0.0/;H};x}' /etc/mysql/mysql.conf.d/mysqld.cnf
-                    
-                    # This is where the config file is to confirm or set manually.
-                    vi /etc/mysql/mysql.conf.d/mysqld.cnf
-                    
-                **change bind-address = 0.0.0.0**
-                        
-            .. group-tab:: RHEL 8/9
-
-                .. code-block:: bash
-                    
-                    # This should set the bind-address in a single command.
-                    sed -i '/^bind-address\s*=/ {s/=.*/= 0.0.0.0/; h;}; $ {x;/^$/{s//bind-address = 0.0.0.0/;H};x}' /etc/my.cnf.d/mysql-server.cnf
-                    
-                    # This is where the config file is to confirm or set manually.
-                    vi /etc/my.cnf.d/mysql-server.cnf
-                    
-                **add  bind-address  = 0.0.0.0**
-
-    * my.cnf settings on DB servers
+    * mySQL config file settings on DB servers
         
         .. code-block:: bash
              
              [mysqld]
              bind-address = 0.0.0.0
-             max_connections = 2000                # Increases Max Connections Supported
+             max_connections = 2001                # Increases Max Connections Supported
              innodb_buffer_pool_size=6G            # **Change 6 to actual number**. Runs more in RAM, 70% of available MEM is currently being set with scripted install
              innodb_buffer_pool_instances=6        # **Change 6 to actual number**. Allows for better Multi-Threading. Should be 1 instance per 1G of buffer pool size above.
              innodb_use_fdatasync=ON               # Enables fdatasync() for faster writes than fsync()
@@ -147,13 +112,6 @@ InnoDB single site cluster.
 
              [mysqldump]
              set-gtid-purged=OFF                   # This is to ensure if a mysqldump is performed from the DB node it is in the proper format for restore.
-            
-    * my.cnf settings on Morpheus App Nodes (you will need to create the /etc/my.cnf)
-        
-        .. code-block:: bash
-             
-             [mysqldump]
-             set-gtid-purged=OFF                   # without this setting Morpheus will not be able to create backups that can be used for restore.
             
 
     * Restart mysql service.    
@@ -175,11 +133,16 @@ InnoDB single site cluster.
 
     .. note:: You need to make sure that all nodes can reach each other by short name.  You can also use IPs or FQDN, as long as they match how they are configured below.            
 
+* Setup MySQL config on each Morpheus app Node.
+        
+        .. code-block:: bash
+             
+             [mysqldump]
+             set-gtid-purged=OFF        # without this setting Morpheus will not be able to create backups that can be used for restore.
+
 .. Manual-Section-Stop
 
 * Install MySQL Shell. (This does not have to be installed on the DB nodes. In prod it would probably be installed on each Morpheus app node)
-
-
 
         .. tabs::
 
