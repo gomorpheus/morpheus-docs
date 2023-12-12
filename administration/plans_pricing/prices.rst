@@ -73,6 +73,7 @@ Currency
   -  ARS
   -  AUD
   -  BRL
+  -  BWP
   -  CAD
   -  CHF
   -  CLF
