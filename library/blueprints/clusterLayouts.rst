@@ -19,7 +19,7 @@ Custer Layouts can be built for an infinite number of use cases and targeting a 
 Creating Script Templates
 `````````````````````````
 
-We'll first start by creating the necessary Script Templates. In this example, I'll use a generic prep script that both the master and worker nodes will utilize and then I'll create four additional scripts (two each for the master and worker nodes) to accomplish various Kubernetes cluster setup tasks (``kubeadm init``, creating Role Bindings, joining workers to the cluster, etc.). I'll briefly describe each here and step through the process of creating the Script Template objects in |morpheus|.
+We'll first start by creating the necessary Script Templates. In this example, I'll use a generic prep script that both the master and worker nodes will utilize and then I'll create three additional scripts (two for the master node and one for the worker nodes) to accomplish various Kubernetes cluster setup tasks (``kubeadm init``, creating Role Bindings, joining workers to the cluster, etc.). I'll briefly describe each here and step through the process of creating the Script Template objects in |morpheus|.
 
 To begin a new Script Template, navigate to |LibTemScr| and click :guilabel:`+ ADD`. All of the scripts used in this example will be "Bash" type, run as user "root" and with SUDO marked.
 
@@ -158,7 +158,7 @@ Lastly, we'll add a setup script for the Kubernetes master node called "k8s-mast
       kubectl create -f <%=morpheus.morpheusHome%>/kube/morpheus-sa.yaml
       kubectl apply -f https://raw.githubusercontent.com/projectcalico/calico/v3.25.0/manifests/calico.yaml
 
-The three scripts we've just created will prepare the master node for our cluster. We now need two additional scripts that will prepare the worker nodes and join them to the cluster. The worker nodes will also use the "k8s-prep" script we added in the very first step which you'll see in the next step when we create the node types.
+The three scripts we've just created will prepare the master node for our cluster. We now need an additional script that will prepare the worker nodes and join them to the cluster. The worker nodes will also use the "k8s-prep" script we added in the very first step which you'll see in the next step when we create the node types.
 
 Add a fourth script which I've called "k8s-join" for this example. This script takes advantage of a special ``joinCommand`` variable as you'll see when you view the full script. If you want to see exactly what this does later, you can create a new Bash script Task that echoes out that variable and run it against an existing Kubernetes worker node VM (``echo "<%=morpheus.kubernetes.joinCommand%>"``). Set this script to run in the PostProvision phase and view the full script below:
 
@@ -167,16 +167,6 @@ Add a fourth script which I've called "k8s-join" for this example. This script t
     .. code-block:: bash
 
       sudo <%=morpheus.kubernetes.joinCommand%>
-
-Now finally we add the fifth Script Template. This script completes final preparation of the worker node by creating a directory within the home directory, copying ``admin.conf`` into that directory and changing ownership of the new file. This script should be set to the PostProvision phase and the complete script can be viewed below:
-
-- .. toggle-header:: :header: **prep-k8sconfig Script Template**
-
-    .. code-block:: bash
-
-      mkdir -p <%=morpheus.morpheusHome%>/.kube
-      sudo cp -i /etc/kubernetes/admin.conf <%=morpheus.morpheusHome%>/.kube/config &&
-      sudo chown <%=morpheus.morpheusUser%>:<%=morpheus.morpheusUser%> <%=morpheus.morpheusHome%>/.kube/config
 
 This completes the needed Script Templates which we will set on two new Node Types in the next step. Continue on to the next section.
 
@@ -201,7 +191,7 @@ Repeat the process to create a second Node Type. The second time around, use the
 - **VERSION:** The version number you wish to apply for this particular Node Type which is useful if you iterate on your Node Types at any point
 - **TECHNOLOGY:** For this example case, VMware. Once set, additional options will appear
 - **VM IMAGE:** Morpheus Ubuntu 22.04 v1 (one of the preinstalled system images)
-- **SCRIPTS:** Using the typeahead field, set the "k8sprep", "k8s-join" and "prep-k8sconfig" Script Templates (you may have called them something different)
+- **SCRIPTS:** Using the typeahead field, set the "k8sprep" and "k8s-join" Script Templates (you may have called them something different)
 
 Once done, click :guilabel:`SAVE CHANGES` to save the second Node Type. With the pieces in place, we are now ready to create the Cluster Layout object itself. Continue on to the next section.
 
