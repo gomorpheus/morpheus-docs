@@ -4,15 +4,15 @@
 |morphver| |releasetype| Release Notes
 **************************************
 
-.. IMPORTANT:: |morphver| contains embedded MySQL v8 upgrade. BACKUP YOUR DATABASE PRIOR TO UPGRADE when using embedded MySQL (all-in-one appliances)
 .. IMPORTANT:: Minimum v6.x required to upgrade to v6.0.7+ for environments using embedded RabbitMQ. Environments running 5.5.x or earlier using embedded RabbitMQ must upgrade to v6.0.0 - v6.0.6 prior to upgrading to v6.0.7+
-.. WARNING:: Rolling upgrades for HA environments using embedded RabbitMQ and/or embedded Elasticsearch services are not supported
+.. IMPORTANT:: v6.0.7+ contains embedded MySQL v8 upgrade. BACKUP YOUR DATABASE PRIOR TO UPGRADE when using embedded MySQL (all-in-one appliances) and upgrading from v6.0.0 - v6.0.6.
+.. WARNING:: Rolling upgrades for HA environments using embedded RabbitMQ and/or embedded Elasticsearch services are not supported when upgrading from v6.0.0 - v6.0.6.
 
 - Compatible Plugin API version: |pluginVer|
 - Compatible |morpheus| Worker version: |workerVer|
 - Minimum upgrade version: |minUpgradeVer|
 
-.. NOTE:: Items appended with :superscript:`6.x.x` are also included in that version
+.. NOTE:: Items appended with :superscript:`x.x.x` are also included in that version
 
 Release Dates
 
@@ -21,56 +21,76 @@ Release Dates
 New Features
 ============
 
-:API & CLI: - The Certificates API endpoint now validates the given integration ID and does not create the certificate if an integration with the given ID does not exist :superscript:`6.2.4 6.3.1`
-             - ``refId`` and ``refType`` parameters are no longer ignored when |morpheus|-type IP Pool reservations are made over |morpheus| API :superscript:`6.2.4 6.3.1`
-:Currency: - Added Malaysian Ringgit (MYR) currency support :superscript:`6.2.4 6.3.1`
-            - Added support for Mongolian Tugrik (MNT) currency :superscript:` 6.3.0 6.2.4`
-            - Added support for Singapore Dollar (SGD) currency :superscript:`6.2.4 6.3.1`
-:Hyper-V: - Adding a Hyper-V cloud with a WinRM Port value of 5986 rather than the default of 5985 now works properly :superscript:`6.2.4 6.3.1`
-:Kubernetes: - Single and HA layouts for Kubernetes version 1.28 clusters added for OpenStack and OpenTelekom Clouds :superscript:`6.2.4 6.3.1`
-              - The ``nginx-ingress`` version 1.9.4 package is now being included with Kubernetes 1.26 through 1.28 cluster layouts for all supported operating systems :superscript:`6.2.4 6.3.1`
-:NSX-T: - Official support added for NSX-T 4.1 :superscript:`6.2.4 6.3.1`
-:Security: - Bouncycastle upgraded to 1.76 to mitigate CVE-2023-33201 :superscript:`6.2.4 6.3.1`
-            - Guava upgraded to 32.0.1 to mitigate CVE-2023-2976 :superscript:`6.2.4 6.3.1`
-            - Upgraded cxf-rt-transports-http to 3.4.10 to mitigate CVE-2022-46363 :superscript:`6.2.4 6.3.1`
-            - Upgraded to Eclipse.jgit to 6.6.1 to mitigate CVE-2023-4759 :superscript:`6.2.4 6.3.1`
-:ServiceNow: - Added the ability to switch back to the older table-based API mode for CMDB sync :superscript:`6.2.4 6.3.1`
-:vCloud Director: - Added MKS 1.28 HA layouts for vCD Clouds :superscript:`6.2.4 6.3.1`
+:API & CLI: - Added the ability to configure ServiceNow integrations to use table-based CMDB mode rather than the newer IRE via |morpheus| API and CLI. This configuration was added previously to |morpheus| UI :superscript:` 6.2.5 6.3.2`
+:Currency: - Added support for Botswanan Pula (BWP) currency :superscript:` 6.2.5 6.3.1`
+:Dashboard: - Added localization to the upgraded dashboard (now a plugin) which was added to the product in 6.0.0 :superscript:` 6.2.5 6.3.2`
+:Hyper-V: - Added support for Hyper-V Gen 2 virtual machines :superscript:` 6.2.5 6.3.2`
+:Kubernetes: - The ``default-docker-secret`` value as stored in ``etcd`` for MKS Kubernetes 1.28+ clusters is now encrypted :superscript:` 6.2.5 6.3.2`
+:Network: - Using the search function on the Domains list page now searches on the Domain Name and Description fields in addition to the Domain field that was searched previously :superscript:` 6.2.5 6.3.2`
+:OpenStack: - When provisioning an Instance, App, or Cluster to an all-Projects OpenStack Cloud, the Security Group dropdown options are being filtered properly to the selected Resource Pool :superscript:` 6.2.5 6.3.2`
+:Security: - Embedded ``curl`` upgraded to 8.4.0 to mitigate CVEs associated with the prior installed version :superscript:`6.2.5 6.3.2 `
+            - Upgraded ``netty-all`` to 4.1.77.Final to mitigate CVE-2022-24823 :superscript:` 6.2.5 6.3.2`
 
 
 Fixes
 =====
 
-:Agent: - Updated public key used by agent installation scripts to prevent downstream warnings or errors in logs :superscript:`6.2.4 6.3.1`
-:API & CLI: - |morpheus| is now displaying invalid value or string too long errors for the various BGP neighbor properties when updating a network router's BGP neighbors through the API :superscript:`6.2.4 6.3.1`
-:Blueprints: - ARM-type App Blueprints no longer fail on provisioning when they contain array-type parameters with a default value indicated :superscript:` 6.2.4 6.3.1`
-:Costing: - Fixed an issue that could cause an incorrect price to be displayed if the price was set by a long-running Price phase Task :superscript:`6.2.4 6.3.1`
-:Database: - Added an index on the ``process_id`` column in the ``job_execution`` table of the database. This will improve performance for those with very large ``job_execution`` tables :superscript:`6.2.4 6.3.1`
-:Inputs: - Typing any value into typeahead-type Inputs which are marked required will no longer satisfy the Input. A valid selection from the dropdown field must be selected :superscript:`6.2.4 6.3.1`
-:Installer: - ``sshd-core`` upgraded to 2.10 to mitigate CVE-2023-3588 :superscript:`6.2.4 6.3.1`
-:Instances: - For Windows Instances installing |morpheus| Agent via Unattend, |morpheus| will now detect if there is already content in the SetupComplete.cmd script file and ensure the Agent install script is appended in such a way that all scripts will run properly :superscript:`6.2.4 6.3.1`
-:Kubernetes: - Fixed failed MKS cluster upgrades from 1.26.x to 1.27.x which were failing due to a removed parameter :superscript:`6.2.4 6.3.1`
-:NSX-T: - Fixed a visibility issue that allowed all edge cluster nodes to be visible to all Tenants when the same NSX-T integration was shared with them and individual edge clusters were assigned to each via visibility permissions :superscript:`6.2.4 6.3.1`
-         - Increased the network server refresh lock timeout to reduce appliance CPU consumption under certain use cases :superscript:`6.2.4 6.3.1`
-:OpenStack: - DNS records are now removed on Instance deletion when setting a floating IP at provision time with a Route53 integration on OpenStack Clouds :superscript:`6.2.4 6.3.1`
-:Option Lists: - Updated REST-type Option Lists to no longer ignore the "no proxy" global setting :superscript:`6.2.4 6.3.1`
-:Plans and Pricing: - Fixed an issue with custom Service Plans where sometimes the workload size values (CPU, memory, etc.) would only be correct after selecting another Plan, then coming back to reload the original :superscript:`6.2.4 6.3.1`
-:Plugins: - Fixed used IPs count (such as on the IP Pools list page) to include reservations made through |morpheus| provisioning or manual assignment in addition to those discovered :superscript:`6.2.4 6.3.1`
-:Remedy: - Fixed an issue that prevented loading of COMPANY and APPROVAL USER fields when adding a Remedy integration which made it impossible to create the integration :superscript:`6.2.4 6.3.1`
-:Route 53: - Removed warning about insecure HTTP URLs from Amazon Route53 Add Integration modal since there is no URL value requested on that modal :superscript:` 6.2.3`
-:SCVMM: - Fixed an SCVMM provisioning issue that would occur when multiple virtual machine paths existed in the SCVMM hosts :superscript:`6.2.4 6.3.1`
-:Security: - Fixed an issue that could allow arbitrary code execution against a workload within an Ansible Task execution :superscript:` 6.2.4 6.3.1`
-            - The returned error message when attempting to edit a Cloud name to a very long string via |morpheus| API has been altered for security reasons :superscript:`6.2.4 6.3.1`
-            - The |morpheus| Agent API key is now masked from server and host detail pages for security reasons :superscript:`6.2.4 6.3.1`
-:Tasks: - Updated HTTP-type Tasks to no longer ignore the global "no proxy" setting :superscript:`6.2.4 6.3.1`
-:Terraform: - Terraform now honors the global "no proxy" setting :superscript:`6.2.4 6.3.1`
-:VMware: - Changes made to the disk size on the template in vCenter are now reflected in |morpheus| :superscript:`6.2.4 6.3.1`
-          - Converting VMware VMs to managed no longer strips away any tags in VMware :superscript:`6.2.4 6.3.1`
-          - |morpheus| now supports VMware tags with "multiple" cardinality :superscript:`6.2.4 6.3.1`
-:Workflows: - When running Workflows from the Instance Action menu, it will no longer take multiple clicks on the dropdown menu to display all available Workflows :superscript:`6.2.4 6.3.1`
+:API & CLI: - Fixed returned IPv6 address value changing with each subsequent call to GET an Instance which has a single network interface which has a single IPv4 and IPv6 address :superscript:` 6.2.5 6.3.2`
+             - GET calls for a specific Service Plan which include the parameter to get the Zones array (?includeZones=true) will now include the Zones array in the response :superscript:` 6.2.5 6.3.2`
+             - When adding a new volume to an Instance via |morpheus| API, an inaccurate message about a network adapter being removed from the instance is no longer added to History :superscript:` 6.2.5 6.3.2`
+:Apps: - Fixed a bug which could cause the App provisioning wizard to hang indefinitely on an infinite loop associated with Instance Naming Policy conflicts :superscript:` 6.2.5 6.3.2`
+:Azure: - Improved Azure price and plan sync logic to improve sync times and make more efficient use of memory :superscript:` 6.2.5 6.3.2`
+:F5: - Fixed the "Persistence" configuration not being selectable from the Instance provisioning wizard for F5 load balancers shared down to Subtenants :superscript:` 6.2.5 6.3.2`
+:Google Cloud (GCP): - |morpheus| is now detecting and displaying the OS type (Linux or Windows) for discovered GCP workloads :superscript:` 6.2.5 6.3.2`
+:IPAM: - IPv6 pools can now be deleted even if they're referenced by existing workloads :superscript:` 6.2.5 6.3.2`
+        - When creating a record in a |morpheus|-type IPv6 pool and manually specifying the IP address, |morpheus| will now honor the entered address rather than using the next available address in the pool instead :superscript:` 6.2.5 6.3.2`
+:Instances: - Domain selections on the Instance provisioning wizard now properly override domains set on the Cloud or Network configuration :superscript:` 6.2.5 6.3.2`
+             - Fixed disabled Instance action buttons (start, stop, restart service) from working on the Instance list page :superscript:` 6.2.5 6.3.2`
+             - In Instance History after rebooting an Instance, the name of the user who initiated the reboot is shown in the history entry rather than the name of the Instance owner :superscript:` 6.2.5 6.3.2`
+             - The History tab of Instance and Server detail pages will now list the User which has performed various actions rather than listing the owner of the workload :superscript:` 6.2.5 6.3.2`
+:Integrations: - Fixed the logic that controlled the sync interval for integrations which could sometimes compute an incorrect time for next sync :superscript:` 6.2.5 6.3.2`
+:Kubernetes: - Addresses IPv6 pools can now be used with Kubernetes Cluster deployments. Previously IPv6 flags were ignored and an IPv4 address was used in its place :superscript:` 6.2.5 6.3.2`
+              - Cleaned up a few UI-related bugs associated with the Create Kubernetes Cluster wizard :superscript:`6.2.5 6.3.2 `
+:Layouts: - Fixed issues related to filtering and displaying Workflows in the dropdown menu when adding or editing Layouts :superscript:` 6.2.5 6.3.2`
+:Library: - When adding or editing Instance Types, Layouts, or Node Types and including more than one Environment Variable, the flyout OPTIONS menu for setting "Masked" or "Exportable" attributes on EVars now works correctly on EVars beyond the first one :superscript:` 6.2.5 6.3.2`
+:Morpheus IP Pools: - Fixed an issue with IP Pools which could cause the number of IP addresses in the pool to be computed incorrectly :superscript:` 6.2.5 6.3.2`
+:Network: - Gateway and DNS server information are now set properly when linked to an external pool type for IPv6 networks :superscript:` 6.2.5 6.3.2`
+           - The VCD Edge network routers are now scoping the firewall rule groups on the router detail page Firewall Groups tab to the selected Edge routers rather than showing all :superscript:` 6.2.5 6.3.2`
+           - When creating a new Network and setting the Network Service from the dropdown, |morpheus| will no longer revert the selection back to the first one if you attempt to change the value prior to saving the new Network :superscript:` 6.2.5 6.3.2`
+:OpenStack: - Creating Security Groups within project-scoped and all project-scoped OpenStack Clouds is now working properly :superscript:` 6.2.5 6.3.2`
+:Policies: - Instances which are deleted but subject to a Delete Approval Policy and which also have an Always-On Power Schedule will no longer revert immediately from a Pending Delete state to a Running state once again :superscript:` 6.2.5 6.3.2`
+:SCVMM: - Fixed an issue that caused the Plan for provisioned SCVMM Instances to revert after the next Cloud sync :superscript:` 6.2.5 6.3.1`
+:Security: - Access tokens are now encrypted in the |morpheus| database for security purposes :superscript:` 6.2.5 6.3.1`
+            - Attempting to access Integrations which are owned by other Tenants by modifying a URL to include an updated Integration ID will now trigger a 404 error rather than a 500 error :superscript:` 6.2.5 6.3.2`
+            - For security reasons, 2FA authentication tokens can now only be used once rather than potentially being used multiple times within their expiration window :superscript:` 6.2.5 6.3.2`
+             - The first and last names columns on the Users database table are no longer encrypted. This is reverting a recent change that encrypted these values due to some unforeseen downstream issues this caused :superscript:` 6.2.5 6.3.2`
+            - TRACE HTTP method set to false in embedded Tomcat config :superscript:`6.2.5 6.3.2 `
+:Tags: - Additional sql optimizations for nightly duplicate and orphaned metadata tag cleanup job :superscript:`6.2.5 6.3.2 `
+:Tenants: - Having created and run a Task in a Tenant will no longer prevent it from being deleted :superscript:` 6.2.5 6.3.2`
+           - Tenants which contain Azure networks which have subnets are no longer prevented from being deleted for that reason :superscript:` 6.2.5 6.3.2`
+           - Tenants which have associated storage volumes are no longer prevented from being deleted for that reason :superscript:` 6.2.5 6.3.2`
+           - Tenants which have integrated GCP Clouds and synced in Virtual Images from them are no longer prevented from being deleted for this reason :superscript:` 6.2.5 6.3.2`
+:VMware: - Added additional protection against orphaned storage controllers and other constructs from failed VM discoveries filling up the database over time :superscript:` 6.2.5 6.3.2`
+          - Adding more than 14 disks to VMware nodes as well as adding additional SCSI controllers and applying them to the additional volumes is now working properly :superscript:` 6.2.5 6.3.2`
+          - For discovered VMs, |morpheus| now displays the IP address for the primary NIC when multiple are present where previously it was inconsistent :superscript:` 6.2.5 6.3.2`
+          - When a VMware Instance fails provisioning in |morpheus| and is subsequently deleted, |morpheus| now also will removed the failed workloads from VMware :superscript:` 6.2.5 6.3.2`
+:Workflows: - Having a Restart Task in a Provisioning Workflow will no longer cause the Instance status to become green (successful provision, completed state) before all Provisioning Workflow Tasks are completed :superscript:` 6.2.5 6.3.2`
+:phpIPAM: - Editing names and IP addresses in phpIPAM now syncs properly in |morpheus| :superscript:` 6.2.5 6.3.2`
+           - Improved logic for computing used and available addresses in phpIPAM IP Pools which could sometimes be computed slightly incorrectly :superscript:` 6.2.5 6.3.2`
+           - |morpheus| now gracefully handles the deletion of phpIPAM subnets from the phpIPAM side when Instances have already been provisioned from |morpheus| using addresses from that pool. Previously integration sync errors would surface :superscript:` 6.2.5 6.3.2`
 
-Embedded Plugins
+
+Appliance & Agent Updates
 =========================
 
-:Infoblox: infobox-plugin updated to v1.2.3
+:Appliance: - Embedded ElasticSearch upgraded to 8.11.2 :superscript:`6.2.5 6.3.2 `
+             - Embedded MySQL upgraded to 8.0.35 :superscript:`6.2.5 6.3.2 `
+             - Embedded RabbitMQ upgraded to 3.12.9 :superscript:`6.2.5 6.3.2 `
+             - Fixed |morpheus| appliance reconfigures failing on Ubuntu-based appliances when ``iptables-persistent`` package is installed and configured in certain ways :superscript:` 6.2.5 6.3.2`
 
+Embedded Plugins
+================
+
+:BigIP: BigIP plugin updated to v1.1.1
+:Dashboard: Morpheus Home Dashboard plugin updated to v1.0.5
+:phpIPAM: phpIPAM plugin updated to v1.1.2
