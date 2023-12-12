@@ -4,6 +4,13 @@
 
 This section includes feature change highlights and key enhancements for all releases within |morpheus| version 6. Many other features changes and enhancements were added to each of these versions and the release notes page for each individual version can be reviewed for complete details.
 
+6.3.1
+=====
+
+:Distributed Worker: - Updated Distributed Worker such that all |morpheus| Agent communications can be routed to the |morpheus| appliance via the Worker
+:Kubernetes: - Added enhancements for utilizing Provisioning Workflows with custom Cluster Layouts
+             - Added the ability to send Kube commands to MKS servers via |morpheus| Agent when the |morpheus| appliance cannot connect directly to the cluster
+
 6.3.0
 =====
 
@@ -11,6 +18,11 @@ This section includes feature change highlights and key enhancements for all rel
 :Image Builder: Updated the Image Builder form into a single form rather than a paged wizard. See the Image Builder section of Morpheus documentation for example scripts and help getting started
 :VMware: Added support for versioned templates from VMware Content Library
          Added the ability to set vApp Property values on VMware Node Types. See Node Type docs for more
+
+6.2.5
+=====
+
+:Distributed Worker: - Updated Distributed Worker such that all |morpheus| Agent communications can be routed to the |morpheus| appliance via the Worker
 
 6.2.4
 =====
@@ -59,6 +71,11 @@ This section includes feature change highlights and key enhancements for all rel
 =====
 
 :Forms: - Added a Form builder tool to aid in creating robust order Forms for Catalog Items
+
+6.0.10
+======
+
+:Distributed Worker: - Updated Distributed Worker such that all |morpheus| Agent communications can be routed to the |morpheus| appliance via the Worker
 
 6.0.9
 =====
