@@ -59,6 +59,8 @@ Breaking Changes
 
 .. include:: /getting_started/requirements/applianceOsTable.rst
 
+Services
+========
 
 |morphver| Service Versions & Compatibility
 -------------------------------------------
@@ -82,21 +84,21 @@ Breaking Changes
    * - MySQL
      - |mysqlbranch|
      - |mysqlver|
-     -
+     - |checkmark|
    * - MySQL (FIPS)
      - |mysqlbranch|
      - |mysqlverfips|
-     -
+     - |checkmark|
    * - Elasticsearch
      - |esbranch|
      - |esver|
-     -
+     - |checkmark|
    * - RabbitMQ
      - |rmqbranch|
      - |rmqver|
-     -
+     - |checkmark|
    * - Tomcat
-     -
+     - 
      - |tcver|
      - 
    * - Nginx
@@ -132,10 +134,10 @@ Breaking Changes
      - |morphver| changes from |previousMorphVer|
    * - Morpheus Node and VM Node Packages
      - |nodePackageVer|
-     - No changes
+     - Node and VM Node Packages update to |nodePackageVer| with |linuxagentver|  Linux Agent
    * - Morpheus Linux Agent
-     - |linuxagentver|
-     - No changes
+     - |linuxagentver| 
+     - Morpheus Linux Agent updated to |linuxagentver| 
    * - Morpheus Windows Agent
      - |winagentver|
      - No changes
