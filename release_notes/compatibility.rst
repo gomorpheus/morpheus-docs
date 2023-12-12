@@ -57,14 +57,6 @@ Breaking Changes
 Services
 ========
 
-..
-  |morphver| Service Version Changes
-  ----------------------------------
-
-No Service Version Changes from |previousMorphVer|
-
-  |
-
 |morphver| Service Versions & Compatibility
 -------------------------------------------
 
@@ -87,21 +79,21 @@ No Service Version Changes from |previousMorphVer|
    * - MySQL
      - |mysqlbranch|
      - |mysqlver|
-     -
+     - |checkmark|
    * - MySQL (FIPS)
      - |mysqlbranch|
      - |mysqlverfips|
-     -
+     - |checkmark|
    * - Elasticsearch
      - |esbranch|
      - |esver|
-     -
+     - |checkmark|
    * - RabbitMQ
      - |rmqbranch|
      - |rmqver|
-     -
+     - |checkmark|
    * - Tomcat
-     -
+     - 
      - |tcver|
      -
    * - Nginx
@@ -135,10 +127,10 @@ No Service Version Changes from |previousMorphVer|
      - |morphver| changes from |previousMorphVer|
    * - Morpheus Node and VM Node Packages
      - |nodePackageVer|
-     - No changes
+     - Node and VM Node Packages update to |nodePackageVer| with |linuxagentver|  Linux Agent
    * - Morpheus Linux Agent
-     - No change
-     - No changes
+     - |linuxagentver| 
+     - Morpheus Linux Agent updated to |linuxagentver| 
    * - Morpheus Windows Agent
      - |winagentver|
      - No changes
