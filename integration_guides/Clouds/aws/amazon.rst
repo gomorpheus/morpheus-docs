@@ -77,6 +77,8 @@ Details
    Check to use use Host IAM Credentials
  ROLE ARN
    Supports security token service (STS) to AssumeRole by entering an AWS Role ARN
+ EXTERNAL ID
+   When required to AssumeRole, included the needed External ID
  INVENTORY
    Basic
     |morpheus| will sync information on all EC2 Instances in the selected VPC the IAM user has access to, including Name, IP Addresses, Platform Type, Power Status, and overall resources sizing for Storage, CPU and RAM, every 5 minutes. Inventoried EC2 Instances will appear as Unmanaged VM's.
