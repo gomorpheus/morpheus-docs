@@ -19,7 +19,7 @@ rst_prolog = """
 .. |nonRollingUpgradeVer| replace:: v6.0.6
 .. |previousMorphVer| replace:: v6.3.1
 .. |pluginVer| replace:: 1.0.4
-.. |workerVer| replace:: 5.4.8
+.. |workerVer| replace:: 6.3.2
 .. |rmqbranch| replace:: v3.5-3.12
 .. |rmqver| replace:: v3.12.9
 .. |mysqlbranch| replace:: v5.7, v8.0
