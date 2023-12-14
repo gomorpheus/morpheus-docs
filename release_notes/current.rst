@@ -7,6 +7,7 @@
 .. IMPORTANT:: |morphver| contains embedded MySQL v8 upgrade when upgrading from  v6.0.0 - v6.0.6 or 6.1.0 - 6.2.1. BACKUP YOUR DATABASE PRIOR TO UPGRADE when using embedded MySQL (all-in-one appliances)
 .. IMPORTANT:: Minimum v6.x required to upgrade to |morphver| for environments using embedded RabbitMQ. Environments running 5.5.x or earlier using embedded RabbitMQ must upgrade to v6.0.0 - v6.0.6, or 6.1.0 - 6.2.1 prior to upgrading to |morphver|
 .. WARNING:: Rolling upgrades for HA environments using embedded RabbitMQ and/or embedded Elasticsearch services are not supported when upgrading from  v6.0.0 - v6.0.6 or 6.1.0 - 6.2.1
+.. WARNING:: v6.3.2 Gateway/Worker is the compatible version for Morpheus |morphver| Appliances. Previous Gateway/Worker versions must be upgraded to v6.3.2 for compatibility with Morpheus |morphver| Appliances.
 
 - Compatible Plugin API version: |pluginVer|
 - Compatible |morpheus| Worker version: |workerVer|
@@ -108,6 +109,11 @@ Appliance & Agent Updates
 
 :Agent: - |morpheus| Linux Agent updated to v2.5.0 with support for k8s node sync :superscript:`6.0.10 6.3.2`
         - Node and VM Node Packages update to v3.2.19 with v2.5.0 Linux Agent :superscript:`6.0.10 6.3.2`
+
+Morpheus Worker
+===============
+
+:Worker: - Morpheus Worker v6.3.2 released. v6.3.2 Gateway/Worker is the compatible version for Morpheus v6.3.2 Appliances. Previous Gateway/Worker versions must be upgraded to v6.3.2 for compatibility with Morpheus v6.3.2 Appliances.
 
 Embedded Plugins
 ================
