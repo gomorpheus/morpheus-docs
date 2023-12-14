@@ -25,8 +25,8 @@ New Features
              - Added |morpheus| API and CLI support for Cluster Packages which was added to |morpheus| UI in a previous release
 :Clouds: - Changing tabs on the Cloud detail page Containers tab no longer throws an error :superscript:`6.2.5`
 :Dashboard: - Added localization to the upgraded dashboard (now a plugin) which was added to the product in 6.0.0 :superscript:`6.0.10 6.2.5`
-:Distributed Worker: - When a |morpheus| Distributed Worker is installed and configured with the appliance, |morpheus| Agent communication now go back to the appliance via the Distributed Worker rather than directly to the |morpheus| appliance nodes
-:Hyper-V: - Added support for Hyper-V Gen 2 virtual machines :superscript:`6.0.10 6.2.5 `
+:Distributed Worker: - When a |morpheus| Distributed Worker is installed and configured with the appliance, |morpheus| Agent communication now go back to the appliance via the Distributed Worker rather than directly to the |morpheus| appliance nodes.  Note: Set cloud appliance url to worker url for agent relay functionality.
+:Hyper-V: - Added support for Hyper-V Gen 2 virtual machines :superscript:`6.0.10 6.2.5`
 :Kubernetes: - Added Kubernetes sync and comms over Morpheus Agent command bus. Morpheus can now sync and communicate with Kubernetes hosts over the agent for scenerios where Morpheus cannot reach k8s directly. Morpheus Worker v6.3.2 also adds agent relay for k8s hosts that are unable to reach Morpheus appliances directly.  
               - Attached Workflows will now apply to Kubernetes Cluster Layouts before the core components are built (kubeadm, kubectl, etc.) such that Workflows can be used to help facilitate installation and configuration of core components
               - The ``default-docker-secret`` value as stored in ``etcd`` for MKS Kubernetes 1.28+ clusters is now encrypted :superscript:`6.0.10 6.2.5`
