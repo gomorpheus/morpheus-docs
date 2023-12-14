@@ -7,7 +7,6 @@
 .. IMPORTANT:: |morphver| contains embedded MySQL v8 upgrade when upgrading from  v6.0.0 - v6.0.6 or 6.1.0 - 6.2.1. BACKUP YOUR DATABASE PRIOR TO UPGRADE when using embedded MySQL (all-in-one appliances)
 .. IMPORTANT:: Minimum v6.x required to upgrade to |morphver| for environments using embedded RabbitMQ. Environments running 5.5.x or earlier using embedded RabbitMQ must upgrade to v6.0.0 - v6.0.6, or 6.1.0 - 6.2.1 prior to upgrading to |morphver|
 .. WARNING:: Rolling upgrades for HA environments using embedded RabbitMQ and/or embedded Elasticsearch services are not supported when upgrading from  v6.0.0 - v6.0.6 or 6.1.0 - 6.2.1
-.. WARNING:: v6.3.2 Gateway/Worker is the compatible version for Morpheus |morphver| Appliances. Previous Gateway/Worker versions must be upgraded to v6.3.2 for compatibility with Morpheus |morphver| Appliances.
 
 - Compatible Plugin API version: |pluginVer|
 - Compatible |morpheus| Worker version: |workerVer|
@@ -28,7 +27,7 @@ New Features
 :Dashboard: - Added localization to the upgraded dashboard (now a plugin) which was added to the product in 6.0.0 :superscript:`6.0.10 6.2.5 `
 :Distributed Worker: - When a |morpheus| Distributed Worker is installed and configured with the appliance, |morpheus| Agent communication now go back to the appliance via the Distributed Worker rather than directly to the |morpheus| appliance nodes
 :Hyper-V: - Added support for Hyper-V Gen 2 virtual machines :superscript:`6.0.10 6.2.5 `
-:Kubernetes: - Added the ability to send Kube commands to MKS servers via |morpheus| Agent as a fallback when the appliance itself is unable to issue the commands directly
+:Kubernetes: - Added Kubernetes sync and comms over Morpheus Agent command bus. Morpheus can now sync and communicate with Kubernetes hosts over the agent for scenerios where Morpheus cannot reach k8s directly. Morpheus Worker v6.3.2 also adds agent relay for k8s hosts that are unable to reach Morpheus appliances directly.  
               - Attached Workflows will now apply to Kubernetes Cluster Layouts before the core components are built (kubeadm, kubectl, etc.) such that Workflows can be used to help facilitate installation and configuration of core components
               - The ``default-docker-secret`` value as stored in ``etcd`` for MKS Kubernetes 1.28+ clusters is now encrypted :superscript:`6.0.10 6.2.5 `
 :NSX-T: - |morpheus| can now authenticate with NSX-T 4.1 as a Project-level user allowing multiple |morpheus| appliances to be mapped to the same NSX server and allowing Project-scoped integrations to be created in |morpheus|
@@ -113,7 +112,7 @@ Appliance & Agent Updates
 Morpheus Worker
 ===============
 
-:Worker: - Morpheus Worker v6.3.2 released. v6.3.2 Gateway/Worker is the compatible version for Morpheus v6.3.2 Appliances. Previous Gateway/Worker versions must be upgraded to v6.3.2 for compatibility with Morpheus v6.3.2 Appliances.
+:Worker: - Morpheus Worker v6.3.2 released with agent relay. Previous Gateway/Worker versions are still compatible with |morphver| but need to upgraded to Worker v6.3.2 for agent relay functionality. Note: Set cloud appliance url to worker url for agent relay functionality.  
 
 Embedded Plugins
 ================
