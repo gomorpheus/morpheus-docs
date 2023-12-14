@@ -18,7 +18,7 @@ rst_prolog = """
 .. |minRollingUpgradeVer| replace:: v6.0.7
 .. |nonRollingUpgradeVer| replace:: v6.0.6
 .. |previousMorphVer| replace:: v6.2.4
-.. |pluginVer| replace:: 0.15.7
+.. |pluginVer| replace:: 0.15.8
 .. |workerVer| replace:: 5.4.8
 .. |rmqbranch| replace:: v3.5-3.12
 .. |rmqver| replace:: v3.12.9
