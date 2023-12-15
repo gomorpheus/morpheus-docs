@@ -23,10 +23,12 @@ FIELD NAME
 
 EXPORT AS TAG
  Creates Tags for fieldName/value (key/value) on Instances
+HIDDEN
+ When marked, this Input will be hidden from the user but the value will still be accessible. This allows for alternate Input types to be used as hidden Inputs than what is possible with "Hidden" type Inputs (described further below). This is also different from Input "Visibility" settings as the values of non-visible Inputs is not accessible for consumption in automation routines
 DEPENDENT FIELD
  The Field Name value for a field that will reload this Option List to present a different set of selections. Take a look at the section below on Cascading Inputs as well as the `associated article <https://support.morpheusdata.com/s/article/How-to-create-option-lists?language=en_US>`_ in our KnowledgeBase for documented examples of this feature
 VISIBILITY FIELD
- A Field Name and selection value that will trigger this field to become visible. Currently, this only works when the Input is associated with a Service Catalog Item and viewed from the Service Catalog Persona perspective. See the section below on the Visibility Field for instructions on configuring this value
+ A Field Name and selection value that will trigger this field to become visible. Currently, this only works when the Input is associated with a Service Catalog Item and viewed from the Service Catalog Persona perspective. See the section below on the Visibility Field for instructions on configuring this value. It should also be noted that when an Input is not visible, its value is not available for consumption in automation routines. Use the "Hidden" flag (see above) to configure hidden yet accessible values
 REQUIRE FIELD
  A fieldName that will trigger required attribute of this option
 SHOW ON EDIT
