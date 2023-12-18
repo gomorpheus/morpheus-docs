@@ -4,6 +4,11 @@ Scripted Install Steps
 Install MySQL
 ^^^^^^^^^^^^^
 
+.. include:: /installation/database/innodb/innodb-requirements.rst
+
+Install
+```````
+
 Run the following script on each DB node to install MySQL and configure to best practice.
   
   * Create the shell script 
@@ -19,13 +24,21 @@ Run the following script on each DB node to install MySQL and configure to best 
 
             .. include:: /installation/database/innodb/scripts/mysqlinstall.rst
 
-  * Save and set the file to executable
+  * Save and set the file to executable, then run ``install.sh``
 
       .. code-block:: bash
 
           chmod +x install.sh
+          ./install.sh
 
   * View what the mysql config file should have set.
+     
+     Possible locations, depending on OS:
+        
+        - ``/etc/mysql/my.cnf``
+        - ``/etc/my.cnf``
+        - ``/etc/my.cnf.d/my.cnf``
+     
      .. toggle-header::
             :header: **Expand for mysql config**
 
@@ -43,26 +56,10 @@ Run the following script on each DB node to install MySQL and configure to best 
         
                      [mysqldump]
                      set-gtid-purged=OFF                   # This is to ensure if a mysqldump is performed from the DB node it is in the proper format for restore.
-             
-
-Install MySQL Router 
-^^^^^^^^^^^^^^^^^^^^
-    This should be installed on each Morpheus App Node
-
-      .. include:: /installation/database/innodb/mysqlRouter.rst
-        :start-after: Install-Section-Start
-        :end-before: Install-Section-Stop
-
-Configure MySQL Router
-^^^^^^^^^^^^^^^^^^^^^^
-      
-      .. include:: /installation/database/innodb/mysqlRouter.rst
-        :start-after: Config-Section-Start
-        :end-before: Config-Section-Stop
 
 Install MySQL Shell 
 ^^^^^^^^^^^^^^^^^^^
-    This should be installed on each Morpheus App Node
+    This should be installed on each **Morpheus App Node**
 
     .. include:: /installation/database/innodb/mysqlShell.rst
       :start-after: Install-Section-Start
@@ -70,7 +67,7 @@ Install MySQL Shell
 
 MySQL Shell Script 
 ^^^^^^^^^^^^^^^^^^
-    You will only need to create and run this from a single Node with MySQl Shell installed.
+    You will only need to create and run this from a single **Morpheus App Node** with MySQL Shell installed.
 
     .. include:: /installation/database/innodb/scripts.rst
       :start-after: Scripts-Section-Start
@@ -78,6 +75,9 @@ MySQL Shell Script
 
     Add the following code to the file
 
+    .. important::
+      Be sure to change the hostnames in the script to match the resolvable hostnames in your environment
+    
     .. toggle-header::
             :header: **Expand for Single Site Code**
 
@@ -94,6 +94,21 @@ MySQL Shell Script
       .. code-block:: bash
 
           bash myscript.js
+
+Install MySQL Router 
+^^^^^^^^^^^^^^^^^^^^
+    This should be installed on each **Morpheus App Node**
+
+      .. include:: /installation/database/innodb/mysqlRouter.rst
+        :start-after: Install-Section-Start
+        :end-before: Install-Section-Stop
+
+Configure MySQL Router
+^^^^^^^^^^^^^^^^^^^^^^
+      
+      .. include:: /installation/database/innodb/mysqlRouter.rst
+        :start-after: Config-Section-Start
+        :end-before: Config-Section-Stop
 
 MySQL Dump Backup Settings **(Perform on all DB nodes and Morpheus App Nodes)**
 ^^^^^^^^^^^^^^^^^^^^^^^^^^

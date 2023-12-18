@@ -167,7 +167,7 @@ MySQL Install - Config Script
         sudo apt-get update
         sudo DEBIAN_FRONTEND=noninteractive apt-get -y install mysql-server
       elif command -v yum &>/dev/null; then  # CentOS/Red Hat
-        sudo yum update
+        sudo yum update -y
         sudo yum -y install mysql-server
       elif command -v dnf &>/dev/null; then  # Fedora
         sudo dnf -y install mysql-server
@@ -256,16 +256,16 @@ MySQL Install - Config Script
         replace_or_add_line "innodb_buffer_pool_instances" "${buffer_size}" "$config_file"
         replace_or_add_line "innodb_use_fdatasync" "ON" "$config_file"
         replace_or_add_line "bind-address" "0.0.0.0"  "$config_file"
-        replace_or_add_line "max_connections "${max_connections}"  "$config_file"
+        replace_or_add_line "max_connections" "${max_connections}"  "$config_file"
         replace_or_add_line "sql_generate_invisible_primary_key" "1"  "$config_file"
       fi
     
-    # Display the contents of the my.cnf file
-    echo "Contents of $config_file:"
-    cat "$config_file"
-      else
-        echo "No suitable MySQL configuration file found."
-      fi
+      # Display the contents of the my.cnf file
+      echo "Contents of $config_file:"
+      cat "$config_file"
+    else
+      echo "No suitable MySQL configuration file found."
+    fi
     
     # MySQL user creation and privileges setup
     

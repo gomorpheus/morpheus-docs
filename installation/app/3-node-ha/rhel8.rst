@@ -1,6 +1,6 @@
 .. _3nodeinstall-rhel8:
 
-3-Node HA Install (RHEL/CentOS 8)
+3-Node HA Install (RHEL/CentOS 8/9)
 ---------------------------------
 
 Distributed App Nodes with Externalized DB

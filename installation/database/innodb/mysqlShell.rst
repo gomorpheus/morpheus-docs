@@ -19,21 +19,75 @@ Official Documentation: https://dev.mysql.com/doc/mysql-shell/8.0/en/
 Install MySQL Shell
 ^^^^^^^^^^^^^^^^^^^
 
+Install by Repository
+`````````````````````
+
+`MySQL Documentation <https://dev.mysql.com/doc/mysql-shell/8.0/en/mysql-shell-install-linux-quick.html>`_ 
+
+  - Locate the current respoitory files needed.  The installation example below may be outdated but the links/version can be found here:
+    - `YUM/DNF MySQL Repositories <https://dev.mysql.com/downloads/repo/yum/>`_
+    - `APT MySQL Repositories <https://dev.mysql.com/downloads/repo/apt/>`_
+  - Install Repository
+
     .. tabs::
 
-        .. group-tab:: Ubuntu 22.04
+        .. group-tab:: Ubuntu
 
             .. code-block:: bash
         
-                wget https://dev.mysql.com/get/Downloads/MySQL-Shell/mysql-shell_8.0.34-1ubuntu22.04_amd64.deb
-                dpkg -i mysql-shell_8.0.34-1ubuntu22.04_amd64.deb
+                curl https://repo.mysql.com//mysql-apt-config_0.8.29-1_all.deb -o mysql-apt.deb
+                dpkg -i mysql-apt.deb
                         
-        .. group-tab:: RHEL 8/9
-                
+        .. group-tab:: RHEL 9
+
             .. code-block:: bash
-                
-                wget https://dev.mysql.com/get/Downloads/MySQL-Shell/mysql-shell-8.0.34-1.el9.x86_64.rpm
-                rpm -i mysql-shell-8.0.34-1.el9.x86_64.rpm
+
+                curl https://repo.mysql.com//mysql80-community-release-el9-5.noarch.rpm -o mysql-yum.rpm
+                rpm -ihv mysql-yum.rpm
+        
+        .. group-tab:: RHEL 8
+
+            .. code-block:: bash
+
+                curl https://repo.mysql.com//mysql80-community-release-el8-9.noarch.rpm -o mysql-yum.rpm
+                rpm -ihv mysql-yum.rpm
+
+  - Install MySQL Shell
+
+    .. tabs::
+
+        .. group-tab:: Ubuntu
+
+            .. code-block:: bash
+        
+                apt install mysql-shell -y
+                        
+        .. group-tab:: RHEL
+
+            .. code-block:: bash
+
+                yum install mysql-shell -y
+
+Install by Download
+```````````````````
+    .. toggle-header::
+        :header: **Install by Download*
+        
+        .. tabs::
+
+            .. group-tab:: Ubuntu 22.04
+
+                .. code-block:: bash
+            
+                    wget https://dev.mysql.com/get/Downloads/MySQL-Shell/mysql-shell_8.0.34-1ubuntu22.04_amd64.deb
+                    dpkg -i mysql-shell_8.0.34-1ubuntu22.04_amd64.deb
+                            
+            .. group-tab:: RHEL 9
+                    
+                .. code-block:: bash
+                    
+                    wget https://dev.mysql.com/get/Downloads/MySQL-Shell/mysql-shell-8.0.34-1.el9.x86_64.rpm
+                    rpm -i mysql-shell-8.0.34-1.el9.x86_64.rpm
 
 .. Install-Section-Stop
 
@@ -43,12 +97,14 @@ MySQL Shell Commands
 
 Save History
 `````````````
+    
     .. code-block:: bash
             
         \option --persist history.autoSave=1 
 
 Get Status
 ``````````
+    
     * Get Cluster Status
         .. code-block:: js
             :force:

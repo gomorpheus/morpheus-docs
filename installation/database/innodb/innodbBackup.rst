@@ -13,10 +13,16 @@ a mysqldump and if this is not set the backup will have errors and not be restor
            [mysqldump]
            set-gtid-purged=OFF
 
-    * Use this command to create the file and add the setting. (This will overwrite the entire file if it already exists.)   
+    * Use this example command to create the file and add the setting.
+
+         Possible locations, depending on OS:
+        
+           - ``/etc/mysql/my.cnf``
+           - ``/etc/my.cnf``
+           - ``/etc/my.cnf.d/my.cnf``
          
          .. code-block:: bash
 
-           echo -e "[mysqldump]\nset-gtid-purged=OFF" | sudo tee /etc/my.cnf
+           echo -e "[mysqldump]\nset-gtid-purged=OFF" | sudo tee -a /etc/my.cnf
 
 .. Config-Section-Stop

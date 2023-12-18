@@ -17,15 +17,15 @@ Configure Morpheus Database and User
 
    .. code-block:: bash
 
-    mysql> CREATE USER 'morpheus'@'%' IDENTIFIED BY 'morpheusPassword';
+    mysql> CREATE USER 'morpheusDbUser'@'%' IDENTIFIED BY 'morpheusDbUserPassword';
 
 #. Next Grant your new |morpheus| user permissions.
 
    .. code-block:: bash
 
-    mysql> GRANT ALL PRIVILEGES ON morpheus.* TO 'morpheus'@'%' with grant option;
+    mysql> GRANT ALL PRIVILEGES ON morpheus.* TO 'morpheusDbUser'@'%' with grant option;
 
-    mysql> GRANT SELECT, PROCESS, SHOW DATABASES, RELOAD ON *.* TO 'morpheus'@'%';
+    mysql> GRANT SELECT, PROCESS, SHOW DATABASES, RELOAD ON *.* TO 'morpheusDbUser'@'%';
 
     mysql> FLUSH PRIVILEGES;
 
