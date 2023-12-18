@@ -57,53 +57,53 @@ Transport Zones
 
 Access Transport Zones by selecting the Transport Zones tab. The default view of the Transport Zones tab lists Transport zones and presents some detail about them such as name, traffic type, status, and more. The integration allows for creation of new Transport Zones, editing and deleting.
 
-.. images:: /images/integration_guides/networking/nsx/nsxt/1tz.png
+.. images:: /images/integration_guides/networking/nsx/1tz.png
 
 DHCP
 ^^^^
 
 DHCP servers and relays are displayed on the DHCP tab. View information such as names and server addresses. The integration allows for creation of new servers and relays, editing and deleting.
 
-.. images:: /images/integration_guides/networking/nsx/nsxt/1dhcp.png
+.. images:: /images/integration_guides/networking/nsx/1dhcp.png
 
 Segments
 ^^^^^^^^
 
 Access Segments by from the Segments tab. The summary view includes high-level information such as status, name, network name and CIDR. The integration allows for creating, editing and deleting NSX-T Segments
 
-.. images:: /images/integration_guides/networking/nsx/nsxt/1segments.png
+.. images:: /images/integration_guides/networking/nsx/1segments.png
 
 Firewall
 ^^^^^^^^
 
 Firewall Groups and Rules are accessible from the Firewall tab. From the summary view, Groups can be expanded to view Rules within. From the ACTIONS menu, create new Groups by selecting "Create Group". When a Group has been expanded, the "Create Rule" selection within the ACTIONS menu will also be accessible and a new rule can be created within the selcted Group. The integration allows for viewing, creating, editing and deleting Firewall Groups and Rules.
 
-.. images:: /images/integration_guides/networking/nsx/nsxt/1firewall.png
+.. images:: /images/integration_guides/networking/nsx/1firewall.png
 
 Tier-0 Gateways
 ^^^^^^^^^^^^^^^
 
 Access Tier-0 Gateways from the Tier-0 Gateways tab. The integration allows creating, editing and deleting Tier-0 Gateways.
 
-.. images:: /images/integration_guides/networking/nsx/nsxt/1t0.png
+.. images:: /images/integration_guides/networking/nsx/1t0.png
 
 Tier-1 Gateways
 ^^^^^^^^^^^^^^^
 
 Access Tier-1 Gateways from the Tier-1 Gateways tab. The integration allows creating, editing and deleting Tier-1 Gateways.
 
-.. images:: /images/integration_guides/networking/nsx/nsxt/1t1.png
+.. images:: /images/integration_guides/networking/nsx/1t1.png
 
 Edge Clusters
 ^^^^^^^^^^^^^
 
 View Edge Clusters from the Edge Clusters tab. The default view lists each Edge Cluster with name, member type, cluster profile, and more. The integration allows viewing and limited editing of Edge Clusters.
 
-.. images:: /images/integration_guides/networking/nsx/nsxt/1edgeclusters.png
+.. images:: /images/integration_guides/networking/nsx/1edgeclusters.png
 
 Groups
 ^^^^^^
 
 NSX-T Groups are viewed from the Groups tab. The default view lists each Group alone with member details. The |morpheus| NSX-T integration allows for creating, editing and deleting Groups.
 
-.. images:: /images/integration_guides/networking/nsx/nsxt/1groups.png
+.. images:: /images/integration_guides/networking/nsx/1groups.png
