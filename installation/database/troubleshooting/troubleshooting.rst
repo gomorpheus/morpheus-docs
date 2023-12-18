@@ -102,6 +102,34 @@ Reset forgotten root password
                #skip-grant-tables
             systemctl start mysql
 
+Rejoin InnoDB node(s) to cluster (at least one cluster member is functioning)
+`````````````````````````````````````````````````````````````````````````````
+
+This assumes that at least one member node is accessible and ``ONLINE`` but one or more are ``OFFLINE``.  When using MySQL Shell 
+be sure to connect to the node that is ``ONLINE``, otherwise you'll receive errors of being unable to get cluster info.  If ``dba.rebootClusterFromCompleteOutage()`` 
+is used, the following error may be seen, which indicates the cluster is online and this procedure is appropriate:
+
+    .. code-block:: text
+        
+        Cluster instances: 'mysql01.example.local:3306' (OFFLINE), 'mysql02.example.local:3306' (OFFLINE), 'mysql03.example.local:3306' (ONLINE)
+        ERROR: The Cluster is ONLINE
+        Dba.rebootClusterFromCompleteOutage: The Cluster is ONLINE (RuntimeError)
+
+Other errors may contain errors related to quorum or even the MySQL Router timesout when starting.
+
+.. important::
+    The ``OFFLINE`` nodes must be powered on, with mysqld service started, and accessible.  Test accessing them using the ``mysql`` command if needed
+
+Rejoin the ``OFFLINE`` nodes to the cluster:
+
+    .. code-block:: javascript
+
+            \c clusterAdmin@mysql03.example.local:3306
+            cluster = dba.getCluster()
+            cluster.status()  // Check Status of cluster before making changes
+            cluster.rejoinInstance("clusterAdmin@mysql01.example.local")
+            cluster.rejoinInstance("clusterAdmin@mysql02.example.local")
+            \exit
 
 Force Remove and Rejoin InnoDB node(s) to cluster (brute force)
 ``````````````````````````````````````````````````````````````````````
