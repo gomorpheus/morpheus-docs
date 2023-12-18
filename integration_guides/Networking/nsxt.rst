@@ -50,7 +50,7 @@ Once the NSX Integration is added |morpheus| will sync in existing Transport Zon
 Summary View
 ^^^^^^^^^^^^
 
-The SUMMARY tab contains the default view when accessing an NSX-T integration. From the summary view we can see the health status of the NSX-T server, and details about interfaces and group status.
+The SUMMARY tab contains the default view when accessing an NSX-T integration. From the summary view we can see the status of the NSX-T server, and details about interfaces and group status.
 
 Transport Zones
 ^^^^^^^^^^^^^^^
