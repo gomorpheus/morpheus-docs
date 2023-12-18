@@ -122,7 +122,7 @@ Other errors may contain errors related to quorum or even the MySQL Router times
 
 Rejoin the ``OFFLINE`` nodes to the cluster:
 
-    .. code-block:: javascript
+    .. code-block:: js
 
             \c clusterAdmin@mysql03.example.local:3306
             cluster = dba.getCluster()

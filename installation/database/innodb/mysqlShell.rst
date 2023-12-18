@@ -70,8 +70,9 @@ Install by Repository
 
 Install by Download
 ```````````````````
+    
     .. toggle-header::
-        :header: **Install by Download*
+        :header: **Expand for Install by Download**
         
         .. tabs::
 
