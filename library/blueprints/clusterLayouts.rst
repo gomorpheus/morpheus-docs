@@ -50,47 +50,47 @@ The first script to add will be a prep script that both the master and worker no
           sudo rm $FRONT_END_LOCK_FILE
           sleep 5
         fi
-        }
+      }
         # Swap must be turned off see https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/install-kubeadm/
-        sudo swapoff -a ; sudo sed -i '/ swap / s/^/#/' /etc/fstab
+      sudo swapoff -a ; sudo sed -i '/ swap / s/^/#/' /etc/fstab
         # Install containerd packages from Debian sse: https://docs.docker.com/engine/install/ubuntu/
-        wait_for_dpkg
-        sudo apt-get update
-        sudo apt-get install ca-certificates curl gnupg lsb-release -y
-        sudo mkdir -m 0755 -p /etc/apt/keyrings
-        sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
-        sudo mkdir -m 0755 -p /etc/apt/keyrings
-        sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpgsudo
-        echo   "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu \
-        $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
-        sudo apt-get update
+      wait_for_dpkg
+      sudo apt-get update
+      sudo apt-get install ca-certificates curl gnupg lsb-release -y
+      sudo mkdir -m 0755 -p /etc/apt/keyrings
+      sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
+      sudo mkdir -m 0755 -p /etc/apt/keyrings
+      sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpgsudo
+      echo   "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu \
+      $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+      sudo apt-get update
         # the Docker documentation advises to install the whole Docker runtime environment but containerd.io is sufficient
-        sudo apt-get install containerd.io -y
+      sudo apt-get install containerd.io -y
         # Prepare the necessary network config see: https://kubernetes.io/docs/setup/production-environment/container-runtimes/
-        sudo cat <<EOF | sudo tee /etc/modules-load.d/k8s.conf
-        overlay
-        br_netfilter
-        EOF
-        sudo modprobe overlay
-        sudo modprobe br_netfilter
-        sudo cat <<EOF | sudo tee /etc/sysctl.d/k8s.conf
-        net.bridge.bridge-nf-call-iptables  = 1
-        net.bridge.bridge-nf-call-ip6tables = 1
-        net.ipv4.ip_forward                 = 1
-        EOF
+      sudo cat <<EOF | sudo tee /etc/modules-load.d/k8s.conf
+      overlay
+      br_netfilter
+      EOF
+      sudo modprobe overlay
+      sudo modprobe br_netfilter
+      sudo cat <<EOF | sudo tee /etc/sysctl.d/k8s.conf
+      net.bridge.bridge-nf-call-iptables  = 1
+      net.bridge.bridge-nf-call-ip6tables = 1
+      net.ipv4.ip_forward                 = 1
+      EOF
         # Apply sysctl params without reboot
-        sudo sysctl --system
+      sudo sysctl --system
         # Install kubeadm follwing the K8s documentation: https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/install-kubeadm/
-        sudo apt-get install -y apt-transport-https ca-certificates curl
-        sudo curl -fsSL  https://packages.cloud.google.com/apt/doc/apt-key.gpg|sudo gpg --dearmor -o /etc/apt/trusted.gpg.d/k8s.gpg
-        sudo echo "deb https://apt.kubernetes.io/ kubernetes-xenial main" | sudo tee /etc/apt/sources.list.d/kubernetes.list
-        sudo apt-get update
-        sudo apt-get -y install -y kubelet=1.26.1-00 kubeadm=1.26.1-00 kubectl=1.26.1-00
+      sudo apt-get install -y apt-transport-https ca-certificates curl
+      sudo curl -fsSL  https://packages.cloud.google.com/apt/doc/apt-key.gpg|sudo gpg --dearmor -o /etc/apt/trusted.gpg.d/k8s.gpg
+      sudo echo "deb https://apt.kubernetes.io/ kubernetes-xenial main" | sudo tee /etc/apt/sources.list.d/kubernetes.list
+      sudo apt-get update
+      sudo apt-get -y install -y kubelet=1.26.1-00 kubeadm=1.26.1-00 kubectl=1.26.1-00
 
-        sudo apt-mark hold kubelet kubeadm kubectl
+      sudo apt-mark hold kubelet kubeadm kubectl
         # see https://github.com/etcd-io/etcd/issues/13670
-        cat << EOF | sudo tee /etc/containerd/config.toml
-        version = 2
+      cat << EOF | sudo tee /etc/containerd/config.toml
+      version = 2
         [plugins]
         [plugins."io.containerd.grpc.v1.cri"]
          [plugins."io.containerd.grpc.v1.cri".containerd]
@@ -99,8 +99,8 @@ The first script to add will be a prep script that both the master and worker no
                 runtime_type = "io.containerd.runc.v2"
                 [plugins."io.containerd.grpc.v1.cri".containerd.runtimes.runc.options]
                   SystemdCgroup = true
-        EOF
-        sudo systemctl restart containerd
+      EOF
+      sudo systemctl restart containerd
 
 Next we'll add a script called "kubeadm-init" in this example which will create and configure some working directories, set the ``kubeadm`` config yaml, and run ``kubeadm init``. Set this script to run in the PreProvision phase as well. The complete script can be viewed below:
 
@@ -179,7 +179,7 @@ With the Script Templates created we now need to make two new Node Types, one fo
 - **SHORT NAME:** A shortened version of the name without any spaces
 - **VERSION:** The version number you wish to apply for this particular Node Type which is useful if you iterate on your Node Types at any point
 - **TECHNOLOGY:** For this example case, VMware. Once set, additional options will appear
-- **VM IMAGE:** Morpheus Ubuntu 22.04 v1 (one of the preinstalled system images)
+- **VM IMAGE:** A pre-installed Ubuntu system image will work
 - **SCRIPTS:** Using the typeahead field, set the "k8sprep", "kubeadm-init" and "k8s-master-setup" Script Templates (you may have called them something different)
 
 Finally, click :guilabel:`SAVE CHANGES`.
