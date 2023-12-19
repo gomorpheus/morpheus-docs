@@ -105,6 +105,7 @@ Install MySQL Router
 
 Configure MySQL Router
 ^^^^^^^^^^^^^^^^^^^^^^
+    This should be installed on each **Morpheus App Node**
       
       .. include:: /installation/database/innodb/mysqlRouter.rst
         :start-after: Config-Section-Start

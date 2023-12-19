@@ -3,6 +3,9 @@ Requirements
 
 Ensure the firewall (or security group) allows MySQL and InnoDB traffic ``inbound``:
 
+  .. important::
+    The installation script will open the firewall ports automatically.  However, these commands are here as reference in case they are needed.
+
   - MySQL Port (From |morpheus|)
 
     - 3306
@@ -17,6 +20,9 @@ Ensure the firewall (or security group) allows MySQL and InnoDB traffic ``inboun
     - 33061 (MySQL Group Replication internal communications port)
 
   Example commands to run in the OS, if needed.  Usually, in public clouds, the firewall is **not** enabled and this is not required.
+
+
+  
 
     .. tabs::
 
@@ -34,8 +40,8 @@ Ensure the firewall (or security group) allows MySQL and InnoDB traffic ``inboun
             ufw allow 3306,33060,33061,33062/tcp
 
 .. important::
-    Verify DNS resolution of DNS names for all DB nodes.  Note that by default, InnoDB will use the hostname returned from the OS, not an alias you specify. 
-    It is important that all expect names can be resolved properly.  Edit ``/etc/hosts`` if needed and/or use ``hostnamectl set-hostname <name>`` to modify the hostname.
+    Verify DNS resolution of DNS names for all DB nodes.  Note that by default, InnoDB will use the hostname FQDN returned from the OS, not an alias you specify. 
+    It is important that all expected names can be resolved properly.  Edit ``/etc/hosts`` if needed and/or use ``hostnamectl set-hostname <name>`` to modify the hostname.
 
 .. important::
     Run all scripts as ``root`` to avoid any issues with elevation.  Example:  ``sudo -s``

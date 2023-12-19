@@ -24,7 +24,7 @@ Install by Repository
 
 `MySQL Documentation <https://dev.mysql.com/doc/mysql-router/8.0/en/mysql-router-installation-linux.html>`_ 
 
-  - Locate the current respoitory files needed.  The installation example below may be outdated but the links/version can be found here:
+  - Locate the current respoitory files needed.  The installation example below may be outdated but the links/versions can be found here:
     - `YUM/DNF MySQL Repositories <https://dev.mysql.com/downloads/repo/yum/>`_
     - `APT MySQL Repositories <https://dev.mysql.com/downloads/repo/apt/>`_
   - Install Repository
