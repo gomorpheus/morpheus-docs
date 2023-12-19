@@ -190,7 +190,7 @@ Repeat the process to create a second Node Type. The second time around, use the
 - **SHORT NAME:** A shortened version of the name without any spaces
 - **VERSION:** The version number you wish to apply for this particular Node Type which is useful if you iterate on your Node Types at any point
 - **TECHNOLOGY:** For this example case, VMware. Once set, additional options will appear
-- **VM IMAGE:** Morpheus Ubuntu 22.04 v1 (one of the preinstalled system images)
+- **VM IMAGE:** A pre-installed Ubuntu system image will work
 - **SCRIPTS:** Using the typeahead field, set the "k8sprep" and "k8s-join" Script Templates (you may have called them something different)
 
 Once done, click :guilabel:`SAVE CHANGES` to save the second Node Type. With the pieces in place, we are now ready to create the Cluster Layout object itself. Continue on to the next section.
