@@ -229,23 +229,17 @@ Finally, choose a method that will be used to customize the operating system:
   Run the installer and keep the default settings.  Below is an example of the final settings page:
 
     .. image:: /images/getting_started/cloudbase-init-settings.png
-      :width: 80%
       :alt: Cloudbase-Init settings
-      :align: left
 
   At the end of the installer, options will be available to sysprep and shutdown the virtual machine.  Checkmark both boxes and click **Finish**:
 
     .. image:: /images/getting_started/cloudbase-init-sysprep.png
-      :width: 80%
       :alt: Cloudbase-Init sysprep
-      :align: left
 
   Once started, the sysprep process should continue until the virtual machine shutsdown.
 
     .. image:: /images/getting_started/cloudbase-init-progress.png
-      :width: 80%
       :alt: Cloudbase-Init progress
-      :align: left
   
   Once the virtual machine has completed shutting down, convert it to a template.
 
