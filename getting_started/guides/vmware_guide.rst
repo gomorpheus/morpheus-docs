@@ -179,12 +179,15 @@ The following versions of Windows Server are supported:
 
 To start, create a new Windows VM in vCenter using a base version of your selected Windows build.
 
-.. NOTE:: It's recommended to make the VMDK drive as small as possible for your purposes as this generally speeds cloning and deploy times. Morpheus provisioning and post-deploy scripts allow to to expand the drive to any size that you need.
+.. NOTE:: 
+  It's recommended to make the VMDK drive as small as possible for your purposes as this generally speeds cloning and deploy times. Morpheus provisioning and post-deploy scripts allow to to expand the drive to any size that you need.
 
-Once the VM is created, ensure VMware Tools is installed on the operating system. Then, apply all updates and service packs. 
+Once the VM is created, ensure VMware Tools is installed on the operating system. This will ensure the virtual machine can communicate correctly with vCenter but also 
+if the cloud was configured to use ``RPC MODE`` of ``Vmware Tools``, and the |morpheus| agent is not installed, |morpheus| can communicate with the virtual machine directly for tasks and other processes. 
 
-.. NOTE:: If the cloud was configured to use **RPC MODE** or **SSH/WinRM**, it will be necessary to configure WinRM on the virtual machine.  Ensure WinRM is allowed from your Morpheus appliance through the local Windows firewall.  Also, run the following command to enable WinRM in the guest:
-  winrm quickconfig
+.. NOTE::
+  If the cloud was configured to use ``RPC MODE`` of ``SSH/WinRM``, it will be necessary to configure WinRM on the virtual machine.  Ensure WinRM is allowed from your Morpheus appliance through the local Windows firewall.  Also, run the following command to enable WinRM in the guest:  
+  ``winrm quickconfig``
 
 Next, install .NET 4.5.2 or higher as a `requirement <https://docs.morpheusdata.com/en/latest/getting_started/functionality/agent/agentInstallation.html#agent-install-requirements>`_ for the Morpheus agent.
 
@@ -192,6 +195,7 @@ Finally, choose a method that will be used to customize the operating system:
 
 - Guest Customization
 - Sysprep
+- Cloudbase-Init
 
 **Using Guest Customization (Recommended)**
 
@@ -203,17 +207,52 @@ Finally, choose a method that will be used to customize the operating system:
 
 **Using Windows Sysprep**
 
-  |morpheus| can inject an unattend file to override the default sysprep process when preparing a virtual machine.  Run the following command from the guest operating system:
+  |morpheus| can inject an unattend file via CD-ROM to override the default sysprep process when preparing a virtual machine.  Run the following command from the guest operating system to sysprep the operating system:
   
   ``C:\Windows\System32\sysprep /oobe /generalize /shutdown``
 
-  Turn off the virtual machine and convert it to a template
+  The unattend file created on the virtual machine can be ignored, no changes will be needed.  Once the virtual machine has completed shutting down, convert it to a template.
 
   Refresh your cloud (|InfClo| > Click Cloud > :guilabel:`Refresh` > Short).  Once the Virtual Image has been synced into |LibVir|, edit it and ensure **Sysprepped/Generalized Image?** is checked.
 
   .. NOTE:: If **VMware Guest Customization?** is enabled on the virtual image or if using static IP addresses or IP pools when provisioning, ensure a Sysprep has not been performed in the guest. In such cases, a guest customization will always be performed.
 
-**Creating a CentOS/RHEL Image**
+**Using Cloudbase-init**
+
+  .. important:: 
+    Some admins may struggle with using Cloudbase-Init, especially if they are not familiar with cloud-init (used in Linux).  It is recommended to use either **Guest Customization** or **Windows Sysprep** if the admins are more famililar with those tools.
+
+  |morpheus| can inject a cloud-init file via CD-ROM to override the default sysprep process when preparing a virtual machine, if the Cloudbase-Init service is installed.
+
+  Download Cloudbase-Init from `https://cloudbase.it <https://cloudbase.it>`_ for your appropriate architecture.
+
+  Run the installer and keep the default settings.  Below is an example of the final settings page:
+
+    .. image:: /images/getting_started/cloudbase-init-settings.png
+      :width: 80%
+      :alt: Cloudbase-Init settings
+      :align: left
+
+  At the end of the installer, options will be available to sysprep and shutdown the virtual machine.  Checkmark both boxes and click **Finish**:
+
+    .. image:: /images/getting_started/cloudbase-init-sysprep.png
+      :width: 80%
+      :alt: Cloudbase-Init sysprep
+      :align: left
+
+  Once started, the sysprep process should continue until the virtual machine shutsdown.
+
+    .. image:: /images/getting_started/cloudbase-init-progress.png
+      :width: 80%
+      :alt: Cloudbase-Init progress
+      :align: left
+  
+  Once the virtual machine has completed shutting down, convert it to a template.
+
+  Refresh your cloud (|InfClo| > Click Cloud > :guilabel:`Refresh` > Short).  Once the Virtual Image has been synced into |LibVir|, edit it and ensure **Is Cloud Init Enabled?** is checked.
+
+Creating a CentOS/RHEL Image
+****************************
 
 Create a new machine in vCenter and install a base version of your preferred Linux distro.
 
