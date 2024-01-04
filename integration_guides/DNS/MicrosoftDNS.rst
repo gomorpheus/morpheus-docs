@@ -18,6 +18,8 @@ The ``DnsAdmins`` group will provide permissions for the service account to make
 Additionally, ensure firewall rules have been updated if needed to allow WinRM through.  In some cases, the default WinRM rules allow ``Private`` and ``Domain`` networks but not ``Public``.  Enable ``Public`` if the network |morpheus| is 
 connected is considered ``Public``, or disable the firewall if permitted.  If a jump box is required (discussed below), then ensure the firewall is configured to allow the jump box to connect to the DNS server instead.
 
+Finally, ``winrm quickconfig`` may need to be run to enable WinRM, if the server is an older operating system.
+
 Minimum Permissions
 ```````````````````
 
@@ -26,14 +28,14 @@ This process may be required on each DNS server, depending on the environment.  
 
   * Run ``dnsmgmt.msc``
   * Right-click the DNS server object and choose ``Properties``
-  * Add the service account to the user list and ensure the following permissions are applied:
+  * Add the service account to the user list and ensure the following permissions are applied:  
     * Read
     * Create all child objects
     * Delete all child objects
   * Run ``wmimgmt.msc``
   * Right-click ``WMI Control (Local)`` and choose ``Properties``
   * Click the ``Security`` tab
-  * Set the following permissions for each of the below nodes:
+  * Set the following permissions for each of the below nodes:  
     * ``CIMV2``
     * ``MicrosoftDNS``
     * ``Microsoft => Windows => DNS`` (only the DNS node)
@@ -41,7 +43,7 @@ This process may be required on each DNS server, depending on the environment.  
   * Click the ``Advanced`` button
   * Click the ``Add`` button to add the service account to the list
   * Ensure the ``Applies to`` field is set to ``This namespace and subnamespaces``
-  * Set the following permissions:
+  * Set the following permissions:  
     * Enable Account
     * Remote Enable
     * Execute Methods
@@ -57,21 +59,23 @@ will be used to interact with the DNS server instead.  If this is a requirement,
 
   * Add the service account to the ``Remote Management Users`` group of the jump box, which will allow WinRM to access
   * Verify the firewall allows WinRM from |morpheus|
-  * Create or edit the following registry key:
+  * Create or edit the following registry key by running ``regedit``:  
     * Navigate to:
 
       ``HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Cryptography\Protect\Providers\df9d8cd0-1501-11d1-8c7a-00c04fc297eb``
     
     * Create or edit ``ProtectionPolicy`` DWORD (32-bit) Value
     * Set ``ProtectionPolicy`` value to ``1``
+  * Finally, ``winrm quickconfig`` may need to be run to enable WinRM, if the server is an older operating system.
 
 Add Microsoft DNS Integration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. IMPORTANT:: The |morpheus| Microsoft DNS integration works over http/5985.  If you have turned off the http listener on 5985 and only enabled https/5986 it will fail.
+.. IMPORTANT::
+    The |morpheus| Microsoft DNS integration works over http/5985 by default.  If you have turned off the http listener on 5985 and only enabled https/5986, be sure to configure the correct ``WINRM PORT``.
 
 .. note::
-    Depending on the version of |morpheus|, some settings may only be available by installing the Microsoft DNS plugin from `https://share.morpheusdata.com/msdns-plugin/about <https://share.morpheusdata.com/msdns-plugin/about>`_.  Newer versions of Morpheus should contain this plugin by default.
+    Depending on the version of |morpheus|, some settings may only be available by installing the Microsoft DNS plugin from `Morpheus Marketplace <https://share.morpheusdata.com/msdns-plugin/about>`_.  Newer versions of Morpheus should contain this plugin by default.
 
 Microsoft DNS can be added in the ``Administration`` or ``Infrastructure`` sections:
 
@@ -92,7 +96,7 @@ Microsoft DNS can be added in the ``Administration`` or ``Infrastructure`` secti
    PASSWORD
     DNS provider user password
    ZONE FILTER
-    Comma separated filter for specific zones to be imported.  Example entries: ``example.morpheus.com, *.morpheus.com, *.10.in-addr.arpa, d*.us.morpheus.com``.  Additional explanations can be found at `https://github.com/gomorpheus/morpheus-msdns-plugin?tab=readme-ov-file#configuring <https://github.com/gomorpheus/morpheus-msdns-plugin?tab=readme-ov-file#configuring>`_
+    Comma separated filter for specific zones to be imported.  Example entries: ``example.morpheus.com, *.morpheus.com, *.10.in-addr.arpa, d*.us.morpheus.com``.  Additional explanations can be found at the `plugin source code readme. <https://github.com/gomorpheus/morpheus-msdns-plugin?tab=readme-ov-file#configuring>`_
    COMPUTER NAME
     If the DNS SERVER specified is not the main DNS server but rather a jump box, enter the Computer Name of the main DNS Server here. If the DNS SERVER specified above is the main DNS server and not a jump box, leave COMPUTER NAME blank.
    CREATE POINTERS
@@ -107,19 +111,13 @@ Domains
 
 Once the integration is added, Microsoft DNS Domains will sync and listed under ``Infrastructure > Networks > Domains``.
 
-.. NOTE:: Default Domains can be set on Networks and Clouds, and can be selected when provisioning. Additional configuration options are available by editing a domain in `Networks > Domains`
+.. NOTE::
+    Default Domains can be set on Networks and Clouds, and can be selected when provisioning. Additional configuration options are available by editing a domain in ``Networks > Domains``
 
 Configuring Microsoft DNS with Clouds and Groups
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-DNS Integrations are available in the `DNS Integration` dropdown in Cloud and Group settings. |morpheus| will register Instances with the DNS provider when provisioned into a Cloud or Group with a DNS Integration added.
-
-To take full advantage of the |morpheus| Microsoft DNS integration, a service account in the Admins group is not required. However, an account must have the following minimum access to use all features:
-
-- Read, Create, and Delete rights on objects
-- Belongs to the local group ``WinRMRemoteWMIUsers__``
-- WinRM Quickconfig must be run on the DNS server
-- CIMv2 needs access according to instructions in our `KnowledgeBase <https://support.morpheusdata.com/s/article/How-to-give-C?language=en_US>`_
+DNS Integrations are available in the ``DNS Integration`` dropdown in Cloud and Group settings. |morpheus| will register Instances with the DNS provider when provisioned into a Cloud or Group with a DNS Integration added.
 
 Add DNS Integration to a Cloud
 ``````````````````````````````
