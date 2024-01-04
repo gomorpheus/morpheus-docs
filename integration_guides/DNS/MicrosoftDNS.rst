@@ -35,7 +35,7 @@ This process may be required on each DNS server, depending on the environment.  
   * Run ``wmimgmt.msc``
   * Right-click ``WMI Control (Local)`` and choose ``Properties``
   * Click the ``Security`` tab
-  * Set the following permissions for each of the below nodes:  
+  * Set the following permissions for each of the below nodes:
      * ``CIMV2``
      * ``MicrosoftDNS``
      * ``Microsoft => Windows => DNS`` (only the DNS node)
@@ -43,7 +43,7 @@ This process may be required on each DNS server, depending on the environment.  
   * Click the ``Advanced`` button
   * Click the ``Add`` button to add the service account to the list
   * Ensure the ``Applies to`` field is set to ``This namespace and subnamespaces``
-  * Set the following permissions:  
+  * Set the following permissions:
      * Enable Account
      * Remote Enable
      * Execute Methods
@@ -59,9 +59,9 @@ will be used to interact with the DNS server instead.  If this is a requirement,
 
   * Add the service account to the ``Remote Management Users`` group of the jump box, which will allow WinRM to access
   * Verify the firewall allows WinRM from |morpheus|
-  * Create or edit the following registry key by running ``regedit``:  
+  * Create or edit the following registry key by running ``regedit``:
      * Navigate to:
-        ``HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Cryptography\Protect\Providers\df9d8cd0-1501-11d1-8c7a-00c04fc297eb``
+       ``HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Cryptography\Protect\Providers\df9d8cd0-1501-11d1-8c7a-00c04fc297eb``
      * Create or edit ``ProtectionPolicy`` DWORD (32-bit) Value
      * Set ``ProtectionPolicy`` value to ``1``
   * Finally, ``winrm quickconfig`` may need to be run to enable WinRM, if the server is an older operating system.
