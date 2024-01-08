@@ -39,7 +39,7 @@ rst_prolog = """
 .. |openjdk-elasticsearch| replace::  17.0.5+8
 .. |openssl| replace:: 1.1.1t
 .. |openssl_fips| replace:: 1.0.2u
-.. |erlang| replace:: 25.2.3
+.. |erlang| replace:: 26.1.2
 .. |mastertenant| replace:: Master Tenant
 
 .. |morpheus| replace:: Morpheus
