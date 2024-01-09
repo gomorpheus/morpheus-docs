@@ -36,6 +36,7 @@ Configure the following:
 - **ENABLED:** When checked, this catalog item will be available for provisioning
 - **LABELS:** A comma-separated list of descriptive strings which can be used to categorize the Catalog Item. The Catalog Items list view page can be filtered by labels to make them easier to find
 - **ENABLED:** When marked, this Catalog Item will be available from the provisioning Catalog view
+- **DISABLE AUTO PRICE:** When marked, price estimates are no longer refreshed with every field change at the time this Catalog Item is ordered. For some workloads with heavy Configuration-phase Tasks this may improve performance of the order page
 - **FEATURED:** When checked, this catalog item will be given special visibility in the Service Catalog Persona view
 - **ALLOW QUANTITY:** When checked, an additional field is added to the order page allowing users to order multiple copies. If this option is enabled, ensure your configuration supports that flexibility (such as when IP or load balancer details are specified)
 - **VISIBILITY:** Set to private to keep the catalog item available only to users in the current Tenant. Master Tenant administrators may set catalog items to public to make them viewable and usable by Subtenant users
@@ -255,6 +256,7 @@ Configure the following:
 - **CATEGORY:** Select an existing category or enter a new one. When provisioning from the catelog, items can be filtered by category
 - **LABELS:** A comma-separated list of descriptive strings which can be used to categorize the Catalog Item. The Catalog Items list view page can be filtered by labels to make them easier to find
 - **ENABLED:** When checked, this catalog item will be available for provisioning
+- **DISABLE AUTO PRICE:** When marked, price estimates are no longer refreshed with every field change at the time this Catalog Item is ordered. For some workloads with heavy Configuration-phase Tasks this may improve performance of the order page
 - **FEATURED:** When checked, this catalog item will be given special visibility in the Service Catalog Persona view
 - **ALLOW QUANTITY:** When checked, an additional field is added to the order page allowing users to order multiple copies. If this option is enabled, ensure your configuration supports that flexibility (such as when IP or load balancer details are specified)
 - **VISIBILITY:** Set to private to keep the catalog item available only to users in the current Tenant. Master Tenant administrators may set catalog items to public to make them viewable and usable by Subtenant users
@@ -311,6 +313,7 @@ Configure the following:
 - **CATEGORY:** Select an existing category or enter a new one. When provisioning from the catelog, items can be filtered by category
 - **LABELS:** A comma-separated list of descriptive strings which can be used to categorize the Catalog Item. The Catalog Items list view page can be filtered by labels to make them easier to find
 - **ENABLED:** When checked, this Workflow item will be available for selection in the Service Catalog
+- **DISABLE AUTO PRICE:** When marked, price estimates are no longer refreshed with every field change at the time this Catalog Item is ordered. For some workloads with heavy Configuration-phase Tasks this may improve performance of the order page
 - **FEATURED:** When checked, this catalog item will be given special visibility in the Service Catalog Persona view
 - **VISIBILITY:** Set to private to keep the catalog item available only to users in the current Tenant. Master Tenant administrators may set catalog items to public to make them viewable and usable by Subtenant users
 - **LOGO:** Select or upload a logo to be associated with this catalog item
