@@ -134,6 +134,25 @@ A complete example form making use of provisioning Inputs and Field Groups is sh
 
 .. image:: /images/forms/completeForm.png
 
+Using Localized Labels on Form Fields
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+In creating a Form Input, you may enter a custom static text label by setting the FIELD LABEL attribute on the Input. Using this will set a label for your Form field which will appear the same for all users. Alternatively, you can set a dynamic text label by selecting an entry from the LOCALIZED LABEL typeahead field. By setting a Localized Label, the label will appear differently depending on the user's web browser language localization setting, the |morpheus| appliance localization setting (set in the `global settings area <https://docs.morpheusdata.com/en/latest/administration/settings/settings.html>`_), or the user's own localization setting from within the `User Settings section <https://docs.morpheusdata.com/en/latest/administration/user_settings/user_settings.html>`_. More specific localization settings (such as a user's setting over the appliance-wide setting) override less specific settings.
+
+As an example, I'll create a simple Form which has only a Group-type Input. Both the Field Label and Localized Label fields have been filled but the Localized Label takes precedence. Based on the localization settings for the user creating this Form, we see the label presented in US English as "GROUP."
+
+.. image:: /images/provisioning/library/formLocalization/buildForm.png
+
+If we then navigate to provision a Catalog Item based on this Form, we still see the US English "GROUP" field label as this specific user has a default localization of "English (United States)" in its User Settings menu.
+
+.. image:: /images/provisioning/library/formLocalization/english.png
+
+However, if we select a different user which has a default localization of "French," and go to provision the same Catalog Item, the field label is shown in French.
+
+.. image:: /images/provisioning/library/formLocalization/french.png
+
+|morpheus| has several complete language packs and also allows users to contribute to new or in-progress language packs. If interested in creating or contributing to UI translations, take a look at `this YouTube video <https://www.youtube.com/watch?v=oX25kutg8vU>`_.
+
 Turning Forms into Catalog Items
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
