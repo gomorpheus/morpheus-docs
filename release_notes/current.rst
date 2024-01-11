@@ -30,13 +30,13 @@ New Features
             - Upgraded ``spring-expression`` to version 5.3.27 to mitigate CVE-2023-20863 and CVE-2023-20861 :superscript:`6.3.3 6.2.6`
             - Upgraded ``spring-security-web`` to 5.7.8 to mitigate CVE-2023-20862 :superscript:`6.2.6 6.3.3`
             - Upgraded ``spring-webmvc`` to version 5.3.30 to mitigate CVE-2023-20860 :superscript:`6.2.6 6.3.3`
-            - ``jknack/handlebars.java`` upgraded to version 4.3.1 to mitigate CVE-2022-42889 :superscript:` 6.2.6 6.3.3`
+            - ``jknack/handlebars.java`` upgraded to version 4.3.1 to mitigate CVE-2022-42889 :superscript:`6.2.6 6.3.3`
 
 
 Appliance & Agent Updates
 =========================
 
 :Appliance: - Upgraded embedded ``erlang`` to version 26.1.2 :superscript:`6.2.6 6.3.3`
-:Agent: - |morpheus| Linux Agent updated to v2.5.2 to prevent automation failures when run under specific conditions :superscript:` 6.2.6 6.3.3`
-:Node Packages: - |morpheus| node and vm-node packages updated to v 3.2.0 with |morpheus| Linux Agent v2.5.2 :superscript:` 6.2.6 6.3.3`
+:Agent: - |morpheus| Linux Agent updated to v2.5.2 to prevent automation failures when run under specific conditions :superscript:`6.2.6 6.3.3`
+:Node Packages: - |morpheus| node and vm-node packages updated to v 3.2.0 with |morpheus| Linux Agent v2.5.2 :superscript:`6.2.6 6.3.3`
 
