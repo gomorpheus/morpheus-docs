@@ -34,7 +34,7 @@ New Features
             - Upgraded ``spring-expression`` to version 5.3.27 to mitigate CVE-2023-20863 and CVE-2023-20861 :superscript:`6.3.3 6.0.11`
             - Upgraded ``spring-security-web`` to 5.7.8 to mitigate CVE-2023-20862 :superscript:`6.0.11 6.3.3`
             - Upgraded ``spring-webmvc`` to version 5.3.30 to mitigate CVE-2023-20860 :superscript:`6.0.11 6.3.3`
-            - ``jknack/handlebars.java`` upgraded to version 4.3.1 to mitigate CVE-2022-42889 :superscript:`6.0.11 6.3.3`
+            - Upgraded ``jknack/handlebars.java`` to version 4.3.1 to mitigate CVE-2022-42889 :superscript:`6.0.11 6.3.3`
 
 
 Fixes
