@@ -76,7 +76,7 @@ Services
    * - Plugin API
      - |pluginVer|
      - |pluginVer|
-     - |checkmark|
+     -
    * - Morpheus Worker
      - |workerVer|
      -
@@ -84,19 +84,19 @@ Services
    * - MySQL
      - |mysqlbranch|
      - |mysqlver|
-     - |checkmark|
+     -
    * - MySQL (FIPS)
      - |mysqlbranch|
      - |mysqlverfips|
-     - |checkmark|
+     -
    * - Elasticsearch
      - |esbranch|
      - |esver|
-     - |checkmark|
+     -
    * - RabbitMQ
      - |rmqbranch|
      - |rmqver|
-     - |checkmark|
+     -
    * - Tomcat
      - 
      - |tcver|
