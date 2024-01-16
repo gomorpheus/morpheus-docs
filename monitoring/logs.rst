@@ -88,7 +88,7 @@ The final log type that may require export is the |morpheus| Activity log. This 
       <appender name="AUDIT" class="ch.qos.logback.core.rolling.RollingFileAppender">
           <file>/var/log/morpheus/morpheus-ui/audit.log</file>
           <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
-              <fileNamePattern>audit_%d{yyyy-MM-dd}.%i.log</fileNamePattern>
+              <fileNamePattern>audit.%d{yyyy-MM-dd}.%i.log</fileNamePattern>
                 <maxFileSize>50MB</maxFileSize>
                 <maxHistory>30</maxHistory>
           </rollingPolicy>
