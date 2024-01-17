@@ -82,6 +82,12 @@ Below are sample log configuration settings. This is not a complete list. Additi
      <logger name="com.morpheus.provision.GoogleProvisionService" level="DEBUG"/>
 
 
+:Hyper-V:
+  .. code-block:: xml
+
+     <logger name="com.morpheus.compute.hyperv.HypervComputeService" level="DEBUG" />
+     <logger name="com.morpheus.compute.HypervComputeUtility" level="DEBUG" />
+
 :IBM Cloud:
   .. code-block:: xml
 
