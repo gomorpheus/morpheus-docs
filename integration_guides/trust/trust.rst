@@ -3,4 +3,4 @@ Trust
 
 .. toctree::
 
-   trust.rst
+   conjur.rst
