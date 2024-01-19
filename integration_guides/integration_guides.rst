@@ -45,3 +45,4 @@ Guides
    Networking/networking.rst
    storage/storage.rst
    supportedVersions/supportedVersions.rst
+   trust/trust.rst

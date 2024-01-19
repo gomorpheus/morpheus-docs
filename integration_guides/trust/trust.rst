@@ -1,0 +1,6 @@
+Trust
+=====
+
+.. toctree::
+
+   trust.rst
