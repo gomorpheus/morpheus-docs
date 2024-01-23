@@ -1,90 +1,90 @@
 .. list-table:: Integration Compatibility
-   :widths: auto
-   :header-rows: 1
+  :widths: auto
+  :header-rows: 1
 
-    * - Integration
-      - Supported Version(s)
-      - Notes
-    * - Ansible
-      - 2.7.x or higher
-      -
-    * - Ansible Tower
-      - 3.8.x
-      -
-    * - App Dynamics
-      - 4.5.x
-      -
-    * - Avamar
-      - 18
-      -
-    * - Azure Stack
-      - 2002 back to 1908
-      - ``2019-03-01-hybrid`` api-profile version used which is supported in 1908 and later Azure Stack versions
-    * - Cisco ACI
-      - 3.x,4.x,5.x
-      -
-    * - Citrix Netscaler
-      - v12.1
-      -
-    * - Commvault
-      - v11 sp 19
-      -
-    * - F5 Big-IP
-      - 11.4+
-      -
-    * - Infoblox
-      - Latest Versions Supported
-      -
-    * - Kubernetes
-      - 1.21+
-      -
-    * - Microsoft Hyper-V
-      - 2012R2, 2016, 2019
-      -
-    * - Nutanix AHV
-      - 5.0+
-      - In 5.5 - 5.7 if Prism Central is managing Prism Element, image creation will not function due to PC Image Management.
-    * - Openstack
-      - Latest Versions Supported
-      - When creating an OpenStack integration, select the latest available from the OS Version dropdown menu when running a later version
-    * - Puppet
-      - 6+
-      - Puppet Agent version will be latest 6 version from yum.puppetlabs.com or apt.puppetlabs.com
-    * - Rubrik
-      - Up to 7.x
-      -
-    * - SCVMM
-      - 2016, 2019
-      -
-    * - ServiceNow
-      - Per servicenow plugin version
-      - Refer to the `servicenow store <https://store.servicenow.com/sn_appstore_store.do#!/store/application/8d8b6bbf0ff07e009c84306be1050e67>`_  for Morpheus Catalog compatibility 
-    * - Terraform
-      -  v0.11.x, v0.12.18+, 0.13.x, 0.14.x, 1.1.x, 1.2.x
-      -
-    * - vCloud Director
-      - 10.0, 10.2, 10.3, 10.4
-      - When upgrading a vCD environment, you should update the API Version setting on the |morpheus| Cloud configuration first
-    * - Veeam
-      - 10, 11
-      -
-    * - VMware ESXi
-      - 6.5, 6.7, 7, 8
-      -
-    * - VMware Fusion
-      - 8, 9, 10+
-      -
-    * - VMware NSX
-      - NSX-T (up to 4.1)
-      -
-    * - VMware vCenter
-      - 5.5, 6.0, 6.5, 6.7, 7.x, 8.x
-      -
-    * - XenServer
-      - 7.x
-      -
-    * - Zerto
-      - .5
-      -
+  * - Integration
+    - Supported Version(s)
+    - Notes
+  * - Ansible
+    - 2.7.x or higher
+    -
+  * - Ansible Tower
+    - 3.8.x
+    -
+  * - App Dynamics
+    - 4.5.x
+    -
+  * - Avamar
+    - 18
+    -
+  * - Azure Stack
+    - 2002 back to 1908
+    - ``2019-03-01-hybrid`` api-profile version used which is supported in 1908 and later Azure Stack versions
+  * - Cisco ACI
+    - 3.x,4.x,5.x
+    -
+  * - Citrix Netscaler
+    - v12.1
+    -
+  * - Commvault
+    - v11 sp 19
+    -
+  * - F5 Big-IP
+    - 11.4+
+    -
+  * - Infoblox
+    - Latest Versions Supported
+    -
+  * - Kubernetes
+    - 1.21+
+    -
+  * - Microsoft Hyper-V
+    - 2012R2, 2016, 2019
+    -
+  * - Nutanix AHV
+    - 5.0+
+    - In 5.5 - 5.7 if Prism Central is managing Prism Element, image creation will not function due to PC Image Management.
+  * - Openstack
+    - Latest Versions Supported
+    - When creating an OpenStack integration, select the latest available from the OS Version dropdown menu when running a later version
+  * - Puppet
+    - 6+
+    - Puppet Agent version will be latest 6 version from yum.puppetlabs.com or apt.puppetlabs.com
+  * - Rubrik
+    - Up to 7.x
+    -
+  * - SCVMM
+    - 2016, 2019
+    -
+  * - ServiceNow
+    - Per servicenow plugin version
+    - Refer to the `servicenow store <https://store.servicenow.com/sn_appstore_store.do#!/store/application/8d8b6bbf0ff07e009c84306be1050e67>`_  for Morpheus Catalog compatibility
+  * - Terraform
+    -  v0.11.x, v0.12.18+, 0.13.x, 0.14.x, 1.1.x, 1.2.x
+    -
+  * - vCloud Director
+    - 10.0, 10.2, 10.3, 10.4
+    - When upgrading a vCD environment, you should update the API Version setting on the |morpheus| Cloud configuration first
+  * - Veeam
+    - 10, 11
+    -
+  * - VMware ESXi
+    - 6.5, 6.7, 7, 8
+    -
+  * - VMware Fusion
+    - 8, 9, 10+
+    -
+  * - VMware NSX
+    - NSX-T (up to 4.1)
+    -
+  * - VMware vCenter
+    - 5.5, 6.0, 6.5, 6.7, 7.x, 8.x
+    -
+  * - XenServer
+    - 7.x
+    -
+  * - Zerto
+    - .5
+    -
 
 .. note:: Non-listed versions may be compatible but are not verified.
