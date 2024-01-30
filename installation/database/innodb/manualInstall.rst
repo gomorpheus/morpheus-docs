@@ -216,7 +216,7 @@ InnoDB single site cluster.
 
            cluster.status()
 
-    * Create the mySQL Router user **(Make sure to create this before setting up mysqlrouter. Otherwise the user will be created with the legacy native plugin)**
+    * Create the mySQL Router user **(Make sure to create this before setting up MySQL Router. Otherwise the user will be created with the legacy native plugin)**
         
         .. code-block:: js
 
@@ -331,7 +331,7 @@ MultiSite Full Install
 
            clusterset.status()
 
-    * Create the mySQL Router user **(Make sure to create this before setting up mysqlrouter. Otherwise the user will be created with the legacy native plugin)**
+    * Create the mySQL Router user **(Make sure to create this before setting up MySQL Router. Otherwise the user will be created with the legacy native plugin)**
         
         .. code-block:: js
 
