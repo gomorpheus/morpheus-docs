@@ -216,6 +216,12 @@ InnoDB single site cluster.
 
            cluster.status()
 
+    * Create the mySQL Router user **(Make sure to create this before setting up mysqlrouter. Otherwise the use will be creative with the legacy native plugin)**
+        
+        .. code-block:: js
+
+           cluster.setupRouterAccount('routeruser')
+
 .. Single-Section-Stop
 
 
@@ -324,6 +330,12 @@ MultiSite Full Install
         .. code-block:: js
 
            clusterset.status()
+
+    * Create the mySQL Router user **(Make sure to create this before setting up mysqlrouter. Otherwise the use will be creative with the legacy native plugin)**
+        
+        .. code-block:: js
+
+           cluster.setupRouterAccount('routeruser')
 
 .. Multi-Section-Stop
     

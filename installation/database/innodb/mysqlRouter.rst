@@ -98,6 +98,7 @@ Configure MySQL Router
 ^^^^^^^^^^^^^^^^^^^^^^
 
         Bootstrap the cluster. (This will pull the config from the cluster and create a MySQL Router config file.)
+        **Before running this make sure you created the router user with mysqlsh in the previous steps**
      
         .. code-block:: bash
 
