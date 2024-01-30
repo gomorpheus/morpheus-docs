@@ -46,7 +46,7 @@ Agent Logs
 
 When Instances are deployed through |morpheus|, the installed Agent captures application logs and sends them back to the |morpheus| server.
 
-In most cases, the built-in |morpheus| logging features are sufficient for tracking and reviewing Agent logs. However, if needed, |morpheus| supports integration with advanced logging systems. See the `log integration section <https://docs.morpheusdata.com/en/4.2.0/logs/logging.html#integrations>`_ above for more information.
+In most cases, the built-in |morpheus| logging features are sufficient for tracking and reviewing Agent logs. However, if needed, |morpheus| supports integration with advanced logging systems. See the `log integration section <https://docs.morpheusdata.com/en/latest/logs/logging.html#integrations>`_ above for more information.
 
 |morpheus| Server Logs
 ----------------------
