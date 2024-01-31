@@ -91,6 +91,8 @@ Create an App Registration
 
 If you do not have an existing Azure Active Directory App Registration, or you wish to use an new one for |morpheus|, you will need to create one.
 
+.. TIP:: If you can't find sections of the Azure portal discussed in this integration guide, such as App Registrations or Subscriptions, you may be able to find them under the "Favorites" section within the main hamburger menu, at the "All Resources" page from within the main hamburger menu, or by using the global search bar.
+
 #. Log into the Azure web console
 #. Select "App Registrations", you may have to go to the "All Services" page to find it
 
@@ -188,13 +190,13 @@ Add an Azure Cloud Integration
 
 To add a new Azure Cloud integration into |morpheus| using the credentials created/collected from the previous section, perform the following:
 
-#. In |morpheus|, navigate to ``Infrastructure > Clouds`` and select :guilabel:`+ ADD`
+#. In |morpheus|, navigate to |InfClo| and select :guilabel:`+ ADD`
 
    .. image:: /images/clouds/azure/Clouds_Morpheus_Add.png
 
 #. Select "AZURE (PUBLIC)" from the Cloud Types list and click :guilabel:`NEXT`
 
-   .. image:: /images/clouds/azure/Clouds_Morpheus.png
+   .. image:: /images/clouds/azure/Clouds_Morpheus1.png
 
 
 #. Populate the Following
@@ -204,7 +206,7 @@ To add a new Azure Cloud integration into |morpheus| using the credentials creat
    **Details**
 
    CLOUD TYPE
-     - Standard (Azure Cloud)
+     - Global (Azure Cloud)
      - US Gov (Azure US Government)
      - German (Azure German Cloud)
      - China (Azure China Cloud)
@@ -212,24 +214,21 @@ To add a new Azure Cloud integration into |morpheus| using the credentials creat
      The target Azure Subscription ID obtained from the previous section
    TENANT ID
      The Directory (tenant) ID obtained from the previous section
+   CREDENTIALS
+     If available, select a pre-stored Client ID and Client Secret set. Alternatively, select "Local Credentials" to enter the Client ID and Client Secret without storing them for later access. "client id and secret" under the "New Credentials" heading can also be selected so your Client ID and Client Secret will stored for later use in either the |morpheus| credential store or in an integrated third party secret store
    CLIENT ID
      The Application (client) ID obtained from the previous section
    CLIENT SECRET
      The Application (client) Secret obtained from the previous section
    LOCATION
      Once valid credentials are populate above and |morpheus| is able to successfully authenticate with Azure, the available locations/regions will populate.
+   REGION
+     Scope the Cloud to either "All" regions or a selected Azure region
    RESOURCE GROUP
      - Select "All" to scope the Cloud to all available Resource Groups in the specified location/region.
      - Select a single Resource Group to limit |morpheus| resource creation, selection and discovery to just this Resource Group.
    INVENTORY EXISTING INSTANCES
      Check to enable discovery/inventory of existing VM's in the scoped Region and Resource Group(s)
-   INVENTORY LEVEL
-     Basic
-      |morpheus| will sync information on all resources in the selected Resource Group(s), including Name, IP Addresses, Platform Type, Power Status, and overall resources sizing for Storage, CPU and RAM, every 5 minutes. Inventoried VM's will appear as Unmanaged VM's.
-     Full (API Heavy)
-      In addition to the information synced from Basic Inventory level, |morpheus| will gather Resource Utilization metrics for Memory, Storage and CPU utilization per VM when available.
-     Off
-      Existing VM's will not be inventoried
    ACCOUNT TYPE
      Standard, EA or CSP
 
