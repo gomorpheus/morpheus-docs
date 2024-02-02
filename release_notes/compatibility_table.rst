@@ -58,7 +58,7 @@
      -
    * - ServiceNow
      - Per servicenow plugin version
-     - Refer to the `servicenow store <https://store.servicenow.com/sn_appstore_store.do#!/store/application/8d8b6bbf0ff07e009c84306be1050e67>`_  for Morpheus Catalog compatibility 
+     - Refer to the `servicenow store <https://store.servicenow.com/sn_appstore_store.do#!/store/application/8d8b6bbf0ff07e009c84306be1050e67>`_  for Morpheus Catalog compatibility
    * - Terraform
      -  v0.11.x, v0.12.18+, 0.13.x, 0.14.x, 1.1.x, 1.2.x
      -
@@ -84,7 +84,7 @@
      - 7.x
      -
    * - Zerto
-     - .5
+     - 8.5
      -
 
 .. note:: Non-listed versions may be compatible but are not verified.
