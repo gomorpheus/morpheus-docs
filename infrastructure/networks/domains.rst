@@ -31,7 +31,7 @@ Adding Domains
    :Workflow: Select an existing Workflow which will be applied to Instances at provision time when they are associated with the domain. This is useful for any domain-related scripting you may currently use. For example, you may want to ensure a machine is removed from the domain when it's torn down which could be accomplished by creating a Provisioning Workflow (with teardown phase Tasks) and associating the Workflow with the domain
    :Active: Active Domains are available for selection in Domain selection fields across |morpheus|. Inactive Domains are removed from Domain selection fields.
    :Join Domain Controller: Enable to have Windows instances join a Domain
-   :Username: Admin user for Domain. ``domain@username`` format required when specifying OU Path
+   :Username: Admin user for Domain. ``domain\username`` format required when specifying OU Path
    :Password: Password for DC user account
    :DC Server: (optional) Specify the URL or Path of the DC Server
    :OU Path: (optional) Enter the OU Path for the connection string.
