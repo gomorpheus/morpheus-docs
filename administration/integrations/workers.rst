@@ -89,8 +89,10 @@ With the package installed, we need to add a new distributed worker in |morpheus
 
 - **NAME:** A name for the distributed worker in |morpheus|
 - **DESCRIPTION:** An optional description for the distributed worker
-- **PROXY HOSTS:** A comma-delimited list of global proxy hosts, any endpoint listed here will be proxied through the |morpheus| worker. For VMware, you must list the host addresses for any vCenter you wish to proxy through the worker. Xen hosts must be listed here as well. Other Cloud types which are supported by the |morpheus| worker need only have the worker configured on the Edit Cloud modal (|InfClo| > Selected Cloud > Edit button)
+- **PROXY HOSTS:** A comma-delimited list of global proxy hosts, any endpoint listed here will be proxied through the |morpheus| worker. For VMware, you must list the host addresses for any vCenter you wish to proxy through the worker. Xen hosts and PowerVC hosts must be listed here as well. Other Cloud types which are supported by the |morpheus| worker need only have the worker configured on the Edit Cloud modal (|InfClo| > Selected Cloud > Edit button)
 - **ENABLED:** When marked, the selected worker is available for use
+
+.. IMPORTANT:: The proxy host URL entered in the Worker configuration must match the URL set in the Cloud configuration. That is, if you use the URL in the Cloud configuration you must also use it in the Worker configuration. The reverse is also true, if an IP address is used in the Cloud configuration, that should be used in the Worker configuration as well.
 
 After clicking :guilabel:`SAVE CHANGES`, an API key is generated and displayed. Make note of this as it will be needed in a later configuration step.
 
