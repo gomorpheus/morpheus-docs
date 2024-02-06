@@ -54,6 +54,8 @@ A distributed worker VM is installed and configured similarly to a |morpheus| ap
 - Superuser privileges via the ``sudo`` command for the user installing the |morpheus| worker package
 - Access to base ``yum`` or ``apt`` repos. Access to Optional RPM repos may be required for RPM distros
 
+.. IMPORTANT:: In order to proxy VMware vCenter Cloud traffic through a Distributed Worker, you must have a static public DNS entry for the internal IP address of the vCenter appliance. If this is not done, everything may appear to be working properly when configuring the Cloud but problems will arise at provision time. This is not a |morpheus| limitation but is a limitation of the VMware SDK client which does not natively support proxies.
+
 Download the appropriate package from |morpheus| Hub based on your target Linux distribution and version for installation in a directory of your choosing. The package can be removed after successful installation.
 
 .. code-block:: bash
@@ -92,7 +94,7 @@ With the package installed, we need to add a new distributed worker in |morpheus
 - **PROXY HOSTS:** A comma-delimited list of global proxy hosts, any endpoint listed here will be proxied through the |morpheus| worker. For VMware, you must list the host addresses for any vCenter you wish to proxy through the worker. Xen hosts and PowerVC hosts must be listed here as well. Other Cloud types which are supported by the |morpheus| worker need only have the worker configured on the Edit Cloud modal (|InfClo| > Selected Cloud > Edit button)
 - **ENABLED:** When marked, the selected worker is available for use
 
-.. IMPORTANT:: The proxy host URL entered in the Worker configuration must match the URL set in the Cloud configuration. That is, if you use the URL in the Cloud configuration you must also use it in the Worker configuration. The reverse is also true, if an IP address is used in the Cloud configuration, that should be used in the Worker configuration as well.
+.. IMPORTANT:: The proxy host URL entered in the Worker configuration must match the URL set in the Cloud configuration. That is, if you use the URL in the Cloud configuration you must also use it in the Worker configuration. The reverse is also true, if an IP address is used in the Cloud configuration, that should be used in the Worker configuration as well. There are also configuration considerations that must be made for proxying vCenter Cloud traffic through a Distributed Worker. See the "IMPORTANT" box in the "Requirements" section for additional details.
 
 After clicking :guilabel:`SAVE CHANGES`, an API key is generated and displayed. Make note of this as it will be needed in a later configuration step.
 
