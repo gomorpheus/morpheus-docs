@@ -25,7 +25,8 @@ Base Requirements
 - An appliance license is required for any operations involving provisioning
 - Current major web browsers supporting modern standards, such as Google Chrome, Mozilla Firefox, Apple Safari, and Microsoft Edge are supported
 - Internet Connectivity (optional)
-   - To download from |morpheus|' public docker repositories and system Virtual Image catalog
+   - Access to ``https://downloads.morpheusdata.com``, ``https://share.morpheusdata.com``, and ``https://d2u3hdjdxt56gx.cloudfront.net`` (the share.morpheusdata.com cloudfront domain that share package requests will redirect to) over port 443 required on app nodes when reconfiguring to download embedded packages and plugins.  
+   - Access to ``https://morpheus-images.morpheusdata.com``, ``https://registry.morpheusdata.com``, and ``https://playbooks.morpheusdata.com`` To download |morpheus|' system images and playbooks.
    - Offline installation requires installing the supplemental package in addition to the regular installation package. Local yum/apt repo access still required for offline installations.
 
 .. NOTE:: Access to ``yum`` and ``apt`` repos is still required for offline installations.
