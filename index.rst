@@ -52,5 +52,6 @@
    :caption: Resource Center
 
    Developer Zone <https://developer.morpheusdata.com/>
+   Trust and Compliance Program <https://trust.morpheusdata.com/home>
    Support KnowledgeBase <https://support.morpheusdata.com/s/knowledge-base?language=en_US>
    White Papers <https://www.morpheusdata.com/resource-center>
