@@ -66,7 +66,7 @@
     - 10.0, 10.2, 10.3, 10.4
     - When upgrading a vCD environment, you should update the API Version setting on the |morpheus| Cloud configuration first
   * - Veeam
-    - 10, 11
+    - 10, 11, 12
     -
   * - VMware ESXi
     - 6.5, 6.7, 7, 8
