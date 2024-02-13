@@ -282,7 +282,8 @@ Task Configuration
 
 - .. toggle-header:: :header: **Conditional Workflow**
 
-    |conditional|
+    .. image:: /images/automation/tasks/nestedworkflow.svg
+      :width: 10%
 
     - **NAME:** Name of the Task
     - **CODE:** Unique code name for API, CLI, and variable references
