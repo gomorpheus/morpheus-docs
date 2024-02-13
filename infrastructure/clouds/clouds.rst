@@ -56,7 +56,7 @@ Cloud Detail View
 
 The Cloud Detail view shows metrics on health, sync status, current month costs, average monthly costs, resource utilization statistics, and resource counts for Container Hosts, Hypervisors, Bare Metal, Virtual Machines, and Unmanaged resources.
 
-.. image:: /images/infrastructure/clouds/clouddetailview.png
+.. image:: /images/infrastructure/clouds/clouddetailview1.png
 
 To view the Cloud List View, select the name of a Cloud to display the clouds Detail View.
 
