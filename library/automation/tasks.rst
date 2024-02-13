@@ -282,7 +282,7 @@ Task Configuration
 
 - .. toggle-header:: :header: **Conditional Workflow**
 
-    .. image:: /images/automation/tasks/nestedworkflow.svg
+    .. image:: /images/automation/tasks/conditional.svg
       :width: 10%
 
     - **NAME:** Name of the Task
