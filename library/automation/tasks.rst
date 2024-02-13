@@ -54,6 +54,7 @@ When creating a Task, users can select a target to perform the execution. Some T
 Execute Options
 ```````````````
 
+- **Continue on Error:** When marked, Workflows containing this Task will continue and will remain in a successful state if this Task fails
 - **Retryable:** When marked, this Task can be configured to be retried in the event of failure
 - **Retry Count:** The maximum number of times the Task will be retried when there is a failure
 - **Retry Delay:** The length of time (in seconds) |morpheus| will wait to retry the Task
