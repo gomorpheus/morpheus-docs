@@ -40,7 +40,7 @@ vault
 Creating Cypher Keys
 --------------------
 
-#. Navigate to Services - Cypher and select "+ ADD KEY"
+#. Navigate to |TooCyp| and select :guilabel:`+ ADD`
 #. Configure one of the following types of Keys:
 
 Password
@@ -182,6 +182,11 @@ Click :guilabel:`SAVE CHANGES`. The example BASH script below onboards the value
     </div>
 
 |
+
+Editing Cypher Keys
+-------------------
+
+Cypher key types which accept user-entered values (not generated values) are editable. To edit, click the "ACTIONS" button at the end of the row for the appropriate Cypher key and then click "Edit." Edit the values and click :guilabel:`SAVE CHANGES`.
 
 Using Cypher Keys in Scripts
 ----------------------------

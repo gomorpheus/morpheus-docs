@@ -13,6 +13,8 @@ Labels
 
 Labels are a categorization feature designed to allow easier filtering of list views in the |morpheus| Library. The following library constructs can be labeled:
 
+- Clouds
+- Groups
 - Tasks
 - Workflows
 - Jobs
