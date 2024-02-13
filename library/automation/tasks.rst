@@ -24,6 +24,7 @@ Tasks
 .. |vro| image:: /images/automation/tasks/vro_logo.png
 .. |wa| image:: /images/automation/tasks/writeAttributes.png
 .. |nestedworkflow| image:: /images/automation/tasks/nestedworkflow.svg
+.. |conditional| image:: /images/automation/tasks/conditional.svg
 
 Overview
 ^^^^^^^^
@@ -121,6 +122,13 @@ Task Types
      - Chef Server
      - Resource
      - Existing Chef Integration
+     - Provisioning: Tasks
+   * - |conditional|
+     - Conditional Workflow
+     - Allows the user to set JavaScript logic. If it resolves to ``true``, |morpheus| will run the Operational Workflow set as the "IF OPERATIONAL WORKFLOW" and if it resolves to ``false``, |morpheus| will run the "ELSE OPERATIONAL WORKFLOW"
+     - N/A (JavaScript logic must be locally sourced, Tasks housed within the associated Workflows may have different sourcing options depending on their types.)
+     - Local
+     - Existing Operational Workflows
      - Provisioning: Tasks
    * - |Email|
      - Email
@@ -271,6 +279,17 @@ Task Configuration
     - **DATA BAG KEY PATH:** Enter data bag key path, eg ``/etc/chef/databag_secret``
     - **NODE NAME:** Defaults to Instance name, configurable
     - **NODE ATTRIBUTES:** Specify attributes inside the ``{}``
+
+- .. toggle-header:: :header: **Conditional Workflow**
+
+    |conditional|
+
+    - **NAME:** Name of the Task
+    - **CODE:** Unique code name for API, CLI, and variable references
+    - **LABELS:** A comma separated list of Labels for organizational purposes. See elsewhere in |morpheus| docs for additional details on utilizing Labels
+    - **CONDITIONAL (JS):** JavaScript logic which determines the Operational Workflow which is ultimately run. If it resolves to ``true``, the "If" Workflow is run and if it resolves to ``false`` the "Else" Workflow is run
+    - **IF OPERATIONAL WORKFLOW:** Set the Operational Workflow which should be run if the JavaScript conditional resolves to ``true``
+    - **ELSE OPERATIONAL WORKFLOW:** Set the Operational Workflow which should be run if the JavaScript conditional resolves to ``false``
 
 - .. toggle-header:: :header: **Groovy script**
 
