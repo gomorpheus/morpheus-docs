@@ -27,7 +27,7 @@ New Features
 :Dashboard: - The Dashboard plugin has been updated to support German, French, and Italian localizations :superscript:`6.2.7`
 :DigitalOcean: - The native DigitalOcean Cloud integration has been replaced by a plugin offering identical capability. For most users, this change will be invisible as the plugin is automatically downloaded and applied on upgrade or installation
 :Infrastructure: - The Groups and Clouds list pages have been updated to include to give the user control over paging size and allow output columns (number of hosts, labels, etc.) to be toggled on or off
-:Inputs: - On the Instance detail page under the Runtime tab, the "Option Types" subtab has been relabeled "Inputs" :superscript:` 6.2.7`
+:Inputs: - On the Instance detail page under the Runtime tab, the "Option Types" subtab has been relabeled "Inputs" :superscript:`6.2.7`
 :Labels: - Added Labels functionality for Groups and Clouds
 :Nutanix Prism Central: - Added Terraform support to Nutanix Prism Central plugin :superscript:`6.2.7`
 :Security: - Embedded Tomcat upgraded to 9.0.83 to mitigate CVE-2023-46589 :superscript:`6.2.7`
@@ -43,12 +43,12 @@ Fixes
 :API & CLI: - Access token refresh is now working properly. If the call is made while the token is valid, the ``expires_in`` property indicates how many more seconds until it expires. If the access token has expired, it refreshes the token and resets the expire date :superscript:`6.2.7`
              - Adding or updating Identity Sources via |morpheus| API, will no longer fail when adding a mapping for a built-in role (such as System Admin) :superscript:`6.2.7`
              - Creating |morpheus|-type Clouds through |morpheus| API without passing the config block is now supported :superscript:`6.2.7`
-             - Fixed resized servers taking on a default plan configuration after being resized via |morpheus| API/CLI :superscript:` 6.2.7`
+             - Fixed resized servers taking on a default plan configuration after being resized via |morpheus| API/CLI :superscript:`6.2.7`
              - Initial setup of a |morpheus| appliance via |morpheus| CLI is now working correctly :superscript:`6.2.7`
              - Multitenant Roles created in the |mastertenant| can now be set at the default Role for an Identity Source created via |morpheus| API/CLI within a Subtenant :superscript:`6.2.7`
              - The ``instanceTypeLayouts`` block is now being returned in API calls of the form ``https://<applianceUrl>/api/instance-types?phrase=dev%25centos&details=true`` from a Subtenant :superscript:`6.2.7`
 :Agent: - Agent upgrades on SLES OS now use ``zypper`` rather than ``yum`` :superscript:`6.2.7`
-:Amazon: - Deactivated AWS Service Plans are no longer reactivated after the next nightly Cloud sync :superscript:` 6.2.7`
+:Amazon: - Deactivated AWS Service Plans are no longer reactivated after the next nightly Cloud sync :superscript:`6.2.7`
 :Ansible: - The History tab on the Ansible Group detail page and the Ansible Integration detail page has been removed as it was not intended to appear there :superscript:`6.2.7`
            - The info dialog for a running Ansible Task now receives live status updates while the modal is open. Previously the modal had to be closed and reopened to refresh :superscript:`6.2.7`
 :Apps: - Fixed App Instances appearing in a "Provisioning" state when they were actually still in a "Pending" state :superscript:`6.2.7`
@@ -78,12 +78,12 @@ Fixes
 :Node Types: - Editing a Node Type no longer resets any configurations that were inside the "Layout Specific Settings" section of the config modal :superscript:`6.2.7`
               - Removed some outdated help text that was no longer valid in the Add/Edit Node Type modal :superscript:`6.2.7`
 :Nutanix: - Provisioning to Nutanix Clouds using custom images stored in CIFS shares now works properly :superscript:`6.2.7`
-:Option Lists: - Fixed successfully saved Inputs referencing REST-based Option Lists leaving errors in logs :superscript:` 6.2.7`
+:Option Lists: - Fixed successfully saved Inputs referencing REST-based Option Lists leaving errors in logs :superscript:`6.2.7`
 :Oracle Cloud: - After reconfiguring Oracle Instances, the updated cores count is now reflected on the Instance detail page :superscript:`6.2.7`
 :Plans and Pricing: - When creating a Price Set and setting the Type to "Software/Service," the help text now changes to offer configuration help for that specific type :superscript:`6.2.7`
 :Roles: - Updated the permission description for the Monitoring: Logs feature permission to correct an error :superscript:`6.2.7`
          - When the name of a multi-Tenant and locked Role is updated in the |mastertenant|, the name is now propagated down to Subtenant. Additionally, Subtenant administrators may rename these Roles without affecting the name in other Tenants :superscript:`6.2.7`
-:SCVMM: - The "Allow migration to a virtual machine host with a different processor version" checkbox on the Hardware Configuration > Process properties on the template is being honored when provisioning an instance to SCVMM Clouds :superscript:` 6.2.7`
+:SCVMM: - The "Allow migration to a virtual machine host with a different processor version" checkbox on the Hardware Configuration > Process properties on the template is being honored when provisioning an instance to SCVMM Clouds :superscript:`6.2.7`
 :Tasks: - We are now using preemptive basic authentication when using username and password against an HTTPS endpoint for HTTP-type Tasks :superscript:`6.2.7`
 :Tenants: - Fixed Tenant deletion failures if the Tenant owned any Option Lists :superscript:`6.2.7`
            - If the Landing URL value is unset for a newly created Tenant Role within a new Tenant, we now properly redirect to the dashboard page when a Tenant user logs in
