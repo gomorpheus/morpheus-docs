@@ -17,6 +17,13 @@
 Release Dates
 
 - |morphver| |releasedate|
+- 6.3.4-2 Feb 21 2024
+
+6.3.4-2 Updates
+===============
+
+:Terraform: Fixed an issue with the Terraform -> Apply State action when no Reconfigure Approval policy is enabled. This issue was introduced in v6.3.4-1 and v6.2.7-1. :superscript:`6.2.7-2`
+:Amazon: Added sync optimization that reduces AWS cloud sync times and system load. :superscript:`6.2.7-2`
 
 New Features
 ============
@@ -89,7 +96,7 @@ Fixes
            - If the Landing URL value is unset for a newly created Tenant Role within a new Tenant, we now properly redirect to the dashboard page when a Tenant user logs in
 :Terraform: - Added capability to use '0' as a getter with the |morpheus| HCL parser. For example, ``disks.0.size`` is now acceptable syntax. The previous example would only be parsed successfully as ``disks[0].size`` :superscript:`6.2.7`
              - Provisioning Terraform Apps via Catalog now honors the ``autoValidate: false`` flag which skips the ``terraform plan`` run and speeds the ordering process :superscript:`6.2.7`
-             - Reconfigure and Approval Policies are now properly applied when ``apply state`` is issued to Terraform Apps :superscript:`6.2.7`
+             - Reconfigure Approval Policies are now properly applied when ``apply state`` is issued to Terraform Apps :superscript:`6.2.7`
 :User Settings: - Date formats now dynamically update to match the date setting configured by the user's web browser :superscript:`6.2.7`
 :VDI Pools: - Fixed VDI Pool Instances with Teardown-phase Tasks getting stuck during removal :superscript:`6.2.7`
 :VMware: - If an operating system is set on the OVF or VMDK and a server is provisioned from that image, |morpheus| now takes that value as the OS shown in the info section on the server detail page :superscript:`6.2.7`
