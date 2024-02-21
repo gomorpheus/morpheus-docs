@@ -1,6 +1,26 @@
 vCloud Director
 ---------------
 
+Features
+^^^^^^^^
+
+* Virtual Machine Provisioning
+* Backups / Snapshots
+* Resource Groups
+* Datastores and DRS Clusters
+* Distributed Switches
+* Datacenter / Cluster scoping
+* Brownfield VM management and migration
+* Hypervisor Remote Console
+* Periodic Synchronization
+* Lifecycle Management and Resize
+* IP Pool Support
+* Multi-NIC Interfaces
+* Kubernetes and Docker
+* Proxy Support
+* Image Builder
+* Monthly estimated pricing and usage tracker
+
 Configuration
 ^^^^^^^^^^^^^
 
