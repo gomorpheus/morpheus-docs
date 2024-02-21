@@ -189,3 +189,44 @@ Once the import has been initiated, |morpheus| will check to see if a new item w
 .. IMPORTANT:: Care has been taken with |morpheus| Import/Export to ensure that existing work cannot be wiped out by an import action. For example, if a Task with a name identical to a pre-existing Task would try to be imported, |morpheus| will require the naming conflict be resolved before the import can take place. In fact, |morpheus| Import can only create new items or overwrite items created by import. It cannot overwrite anything user-created or anything pre-seeded with the system at install. Additionally, import cannot be scheduled automatically. Users must initiate all imports.
 
 .. IMPORTANT:: Importing resources which rely on existing integrations or sensitive values will require some additional configuration on the destination appliance. For example, importing a Task which references code in a separate repository which is not integrated on the target appliance will be imported with reference to the missing integration. This integration would need to be added before the Task could be used. Another example scenario would be a Task which references a secret value held in |morpheus| Cypher. Once again, the Task would be imported and the required Cypher references would need to be made within the destination appliance before the Task could be used.
+
+Checking Imported Items Prior to Use
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+As mentioned in the previous section, not every imported item will immediately be available for use. This is primarily due to the target appliance lacking an integration (for example, an Ansible Tower integration required for an imported Task) or a securely stored secret string (for example, a Task that calls a secret string stored in |morpheus| Cypher). |morpheus| will still import these resources but this section discusses some manual changes that may have to be made to imported items in order for them to be usable.
+
+**Protected Fields and User Credentials**
+
+Protected information and secret values are not exported. When importing any resources which rely on protected information, the user will need to manually update the resource on the target appliance. Examples include anything authenticated using a stored credential set (from the |InfTruCre| section), anything with a password field (such as HTTP Tasks or REST-based Option Lists accessing password-protected information), Chef Task Data Bag Keys, and more. Anything configured with a password or other protected field will need to be edited on the importing appliance and updated to have the protected information needed to function.
+
+**Integrations**
+
+When an imported Task requires an integration that does not exist on the appliance, an integration will be created with the same name. The integration credentials will not be established, nor will any other configuration fields outside of the name. Users will need to update the integration configuration to make it functional in order for the imported Task to function.
+
+**SSH Keys**
+
+SSH Keys are not set on imported resources, such as Tasks configured to be executed on a remote host. Users will need to add a valid key to the importing appliance and update the Task to use that SSH Key.
+
+**Ansible Tower Tasks**
+
+Following import, "Inventory" and "Job Template" fields will need to be configured on Ansible Tower Tasks.
+
+**vRealize Orchestrator Tasks**
+
+Following import, "Inventory" and "Job Template" fields will need to be configured on vRO Tasks.
+
+**Option Lists**
+
+Option lists need to be edited and saved prior to use in order to load any initial data sets that have been configured on the Option List.
+
+**Tasks**
+
+The user must ensure the presence of any dependency required by a Task. One example would be any Cypher keys being called by the Task. Add any required Cypher entries with identical keys or add compatible Cypher keys and update the Task configuration to utilize the updated Cypher mountpoints. Cypher is just one example, any other dependency required by the Task must be present. |morpheus| does not parse the Task configuration to determine which dependencies are or are not present or required.
+
+**Icons and Images**
+
+Icons which are set up on imported Instance Types will need to be manually uploaded to the appliance after import. They are not brought over as part of the import/export process.
+
+**Virtual Images**
+
+When importing Node Types, the associated Virtual Image is mapped by its "Code" value. It is expected that a Virtual Image with the correct "Code" value already exists on the target appliance. If not, the Node Type will be imported without any Virtual Image attached. The user will then need to edit the Node Type and associate it with a compatible Virtual Image in order to become usable.
