@@ -17,6 +17,13 @@
 Release Dates
 
 - |morphver| |releasedate|
+- 6.2.7-2 Feb 21 2024
+
+6.2.7-2 Updates
+===============
+
+:Terraform: Fixed an issue with the Terraform -> Apply State action when no Reconfigure Approval policy is enabled. This issue was introduced in v6.3.4-1 and v6.2.7-1. :superscript:`6.3.4-2`
+:Amazon: Added sync optimization that reduces AWS cloud sync times and system load. :superscript:`6.3.4-2`
 
 New Features
 ============
@@ -77,7 +84,7 @@ Fixes
 :Tenants: - Fixed Tenant deletion failures if the Tenant owned any Option Lists :superscript:`6.3.4`
 :Terraform: - Added capability to use '0' as a getter with the |morpheus| HCL parser. For example, ``disks.0.size`` is now acceptable syntax. The previous example would only be parsed successfully as ``disks[0].size`` :superscript:`6.3.4`
              - Provisioning Terraform Apps via Catalog now honors the ``autoValidate: false`` flag which skips the ``terraform plan`` run and speeds the ordering process :superscript:`6.3.4`
-             - Reconfigure and Approval Policies are now properly applied when ``apply state`` is issued to Terraform Apps :superscript:`6.3.4`
+             - Reconfigure Approval Policies are now properly applied when ``apply state`` is issued to Terraform Apps :superscript:`6.3.4`
              - Updated the HCL parser to correctly parse the ``!=`` operator in a variable validation
 :User Settings: - Date formats now dynamically update to match the date setting configured by the user's web browser :superscript:`6.3.4`
 :VDI Pools: - Fixed VDI Pool Instances with Teardown-phase Tasks getting stuck during removal :superscript:`6.3.4`
