@@ -48,7 +48,6 @@ Fixes
 =====
 
 :API & CLI: - Access token refresh is now working properly. If the call is made while the token is valid, the ``expires_in`` property indicates how many more seconds until it expires. If the access token has expired, it refreshes the token and resets the expire date :superscript:`6.2.7`
-             - Adding or updating Identity Sources via |morpheus| API, will no longer fail when adding a mapping for a built-in role (such as System Admin) :superscript:`6.2.7`
              - Creating |morpheus|-type Clouds through |morpheus| API without passing the config block is now supported :superscript:`6.2.7`
              - Fixed resized servers taking on a default plan configuration after being resized via |morpheus| API/CLI :superscript:`6.2.7`
              - Initial setup of a |morpheus| appliance via |morpheus| CLI is now working correctly :superscript:`6.2.7`
@@ -111,7 +110,7 @@ Embedded Plugins
 ================
 
 :Dashboard: - The Dashboard plugin has been updated v1.1.2 to support German, French, and Italian localizations :superscript:`6.2.7`
-:Digital Ocean: - Digital Ocean (v1.2.1) added to embedded plugins. 
+:Digital Ocean: - Digital Ocean (v1.2.1) added to embedded plugins.
 
 Appliance & Agent Updates
 =========================
