@@ -6,12 +6,8 @@ Features
 
 * Virtual Machine Provisioning
 * Backups / Snapshots
-* Resource Groups
-* Datastores and DRS Clusters
-* Distributed Switches
-* Datacenter / Cluster scoping
+* Datastores
 * Brownfield VM management and migration
-* Hypervisor Remote Console
 * Periodic Synchronization
 * Lifecycle Management and Resize
 * IP Pool Support
