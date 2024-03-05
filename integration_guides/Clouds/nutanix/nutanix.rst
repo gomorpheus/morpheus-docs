@@ -22,7 +22,7 @@ Features
 
 |morpheus| can provide a single pane of glass and self-service portal for managing multiple Nutanix Clusters and allowing the seamless deployment of applications.
 
-.. Note:: Prism Central is not currently supported as a Cloud endpoint target
+.. Note:: Prism Central is currently supported and is maintained as a separate, plugin-based Cloud integration. See the `Prism Central plugin page <https://share.morpheusdata.com/morpheus-nutanix-prism/about>`_ on the |morpheus| plugin share site for additional details and access to the plugin.
 
 Getting Started
 ^^^^^^^^^^^^^^^
@@ -52,7 +52,7 @@ AUTOMATICALLY POWER ON VMS
   .. note:: When "AUTOMATICALLY POWER ON VMS" is enabled, the power state of managed VM's should be maintained in |morpheus|. This setting is not applicable to discovered/unmanaged resources.
 
 API URL
-  URL of the Nutanix Prism API, example: https://10.30.21.220:9440. Prism Central is not currently supported as a Cloud endpoint target
+  URL of the Nutanix Prism API, example: https://10.30.21.220:9440
 USERNAME
   Nutanix admin username
 PASSWORD
