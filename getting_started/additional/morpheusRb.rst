@@ -90,8 +90,8 @@ Morpheus allows for additional advanced customizations for system managed servic
   nginx['ssl_session_cache'] = "builtin:1000  shared:SSL:10m"
   nginx['ssl_session_timeout'] = "5m"
   nginx['ssl_state_name'] = "CA"
-  nginx['ssl_access_ping_log'] = false # Enables or disables nginx logging of ``/ping`` requests
-  nginx['access_ping_log'] = false # Enables or disables nginx logging of ``/ping`` requests
+  nginx['ssl_access_ping_log'] = false # Enables or disables nginx logging of /ping requests
+  nginx['access_ping_log'] = false # Enables or disables nginx logging of /ping requests
   nginx['worker_connections'] = 10240
   nginx['workers'] = integer calculated from number of cpus
 
