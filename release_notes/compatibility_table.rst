@@ -60,8 +60,8 @@
      - Per servicenow plugin version
      - Refer to the `servicenow store <https://store.servicenow.com/sn_appstore_store.do#!/store/application/8d8b6bbf0ff07e009c84306be1050e67>`_  for Morpheus Catalog compatibility
    * - Terraform
-     -  v0.11.x, v0.12.18+, 0.13.x, 0.14.x, 1.1.x, 1.2.x
-     -
+     - Latest
+     - When |morpheus| is handling Terraform installation, the version used will be 1.5.5 for licensing reasons. If a later version is required, you will need to manually handle Terraform installation. See the "Terraform Installation" section of |morpheus| docs for more details.
    * - vCloud Director
      - 10.0, 10.2, 10.3, 10.4, 10.5
      - When upgrading a vCD environment, you should update the API Version setting on the |morpheus| Cloud configuration first
