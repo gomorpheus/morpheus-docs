@@ -28,9 +28,9 @@ Adding Infoblox Integration
    Enabled
     Deselect to disable the Integration
    URL
-    Infoblox wapi url. Example: https://x.x.x.x/wapi/v2.2.1
+    Infoblox wapi url. Example: https://yourInfobloxHost/wapi/v2.10.5
 
-    .. tip:: The Infoblox wapi version can be found at https://x.x.x.x/wapidoc/
+    .. tip:: The target Infoblox host wapi version can be referenced at https://yourInfobloxHost/wapidoc/
 
    USERNAME
     Infoblox user username
