@@ -100,7 +100,7 @@ Services
    * - Tomcat
      - 
      - |tcver|
-     - |checkmark|
+     - 
    * - Nginx
      -
      - |nginxver|
@@ -134,13 +134,13 @@ Services
      - |morphver| changes from |previousMorphVer|
    * - Morpheus Node and VM Node Packages
      - |nodePackageVer|
-     - Node and VM Node Packages update to |nodePackageVer| with |linuxagentver|  Linux Agent
+     - Node and VM Node Packages update to |nodePackageVer| with |linuxagentver| Linux Agent
    * - Morpheus Linux Agent
      - |linuxagentver| 
      - Morpheus Linux Agent updated to |linuxagentver| 
    * - Morpheus Windows Agent
      - |winagentver|
-     - No changes
+     - Morpheus Windows Agent updated to |winagentver|
    * - Morpheus macOS Agent
      - |macagentver|
      - No changes
