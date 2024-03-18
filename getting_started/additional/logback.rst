@@ -43,7 +43,6 @@ Below are sample log configuration settings. This is not a complete list. Additi
   .. code-block:: xml
 
      <logger name="com.morpheus.Azure.ServersController" level="DEBUG"/>
-     <logger name="com.morpheus.Azure.ServersController" level="DEBUG"/>
      <logger name="com.morpheus.AzureSqlServerProvisionService" level="DEBUG"/>
      <logger name="com.morpheus.compute.azure.AzureComputeService" level="DEBUG"/>
      <logger name="com.morpheus.compute.AzureComputeUtility" level="DEBUG"/>
