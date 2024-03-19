@@ -126,6 +126,7 @@ Supported Constructs:
 - Workflows
 - Spec Templates
 - Library Items
+- Forms
 
 .. NOTE:: When exporting all supported constructs |morpheus| will export more than just the above types, however, only the above types are exportable as individual resources. This list may expand in the future as additional constructs become supported by future updates.
 
@@ -218,6 +219,12 @@ Following import, "Inventory" and "Job Template" fields will need to be configur
 **Option Lists**
 
 Option lists need to be edited and saved prior to use in order to load any initial data sets that have been configured on the Option List.
+
+**Forms**
+
+Input defaults that are ID-based will require manual correction after import. For example, if you have a Group Input which defaults to ``GroupName:A(ID:2)``, when imported it will still be based off an ID value of 2. It's highly likely that in the importing environment, a different Group will have an ID value of 2. A manual change to the correct ID value is required in the destination environment. Bear in mind that if you re-import a Form, you will also undo any manual changes you've made in the importing environment. Thus, if you update all defaults after importing, and then import once again, these manual default changes will be wiped out.
+
+Additionally, when Forms are using existing Inputs, those Inputs will be exported and imported for use in the destination environment. On import, |morpheus| will add the needed Inputs unless the destination environment already has an Input with the same CODE value. This could give the appearance of creating duplicate Inputs if the destination environment happens to have an Input with the same name but a different code value. Users may wish to rename Inputs in the event they end up with more than one having the same name.
 
 **Tasks**
 

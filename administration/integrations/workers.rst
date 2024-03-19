@@ -129,3 +129,8 @@ The worker reconfigure process will install and configure the worker, nginx and 
 .. NOTE:: Configuration options can be updated after the initial reconfigure by editing ``/etc/morpheus/morpheus-worker.rb`` and running ``sudo morpheus-worker-ctl reconfigure`` again.
 
 Once the installation is complete the morpheus worker service will automatically start and open a web socket with the specified |morpheus| appliance. To monitor the startup process, run ``morpheus-worker-ctl tail`` to tail the logs of the worker, nginx and guacd services. Individual services can be tailed by specifying the service, for example ``morpheus-worker-ctl tail worker``
+
+Highly-Available (HA) Deployment
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+If desired, multiple distributed worker nodes may be associated to the same |morpheus| appliance to eliminate a single point of failure should a distributed worker node go down. Configure each distributed worker node using the same worker key (process described in the prior section) and add redundancy using as many additional workers nodes as needed. When multiple worker nodes are using the same worker key, proxy calls will always go through the primary worker node when possible. The primary node is the first worker node configured using a specific worker key. When necessary, automatic failover will take place and another active worker node will be used. While proxy calls will always try to use the primary node when available, |morpheus| Agent communications can be balanced equally across worker nodes by placing a VIP in front of your distributed workers.
