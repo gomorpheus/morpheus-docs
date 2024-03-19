@@ -19,6 +19,8 @@ Personas
   Controls User access to |morpheus| Personas, at the time of this writing Users may be given access to the Standard (full |morpheus| experience), Virtual Desktop (VDI), or Service Catalog Personas
 Catalog Item Types
   Controls User access to Catalog Item types within the Service Catalog Persona. Only Catalog Items created in the current Tenant or those created in the Master Tenant and shared with the current Tenant will be available.
+Cluster Types
+  Controls user access to Cluster types. Only Cluster types allowed for the Role may be added in |InfClu| (assuming the Role also has feature access to applicable permissions related to adding Clusters)
 VDI Pools
   Controls User access to VDI Pools which are currently configured (|TooVDI|) via the Virtual Desktops Persona view
 Workflows
@@ -42,8 +44,14 @@ Personas
   Controls Tenant access to |morpheus| Personas, at the time of this writing Users may be given access to the Standard (full |morpheus| experience) or Service Catalog Personas
 Catalog Item Types
   Controls Tenant access to Catalog Item types within the Service Catalog Persona. Only Catalog Items created in the current Tenant or those created in the Master Tenant and shared with the current Tenant will be available.
+Cluster Types
+  Controls Tenant access to Cluster types. Only Cluster types allowed for the Role may be added in |InfClu| within the associated Tenant
 VDI Pools
   Controls Tenant access to VDI Pools which are currently configured (|TooVDI|) via the Virtual Desktops Persona view
+Workflows
+  Controls Tenant access to Workflows. Only selected Workflows will be shared down to Tenants having the associated Role
+Tasks
+  Controls Tenant access to Tasks. Only selected Tasks will be shared down to Tenants having the associated Role
 
 Cloud Access Levels
 ^^^^^^^^^^^^^^^^^^^

@@ -59,6 +59,10 @@ Morpheus allows for additional advanced customizations for system managed servic
   mysql['max_active'] = 150 # The combined value off all app node max_active values must be lower than max_connections setting in mysql
   mysql['max_connections'] = 151
   mysql['max_allowed_packet'] = 67108864
+  mysql['mysql_connect_timeout'] = 60000
+  mysql['mysql_max_reconnects'] = 2
+  mysql['mysql_queries_before_retry_source'] = 0
+  mysql['mysql_seconds_before_retry_source'] = 300
 
 
   nginx['cache_max_size'] = '5000m'
@@ -88,6 +92,8 @@ Morpheus allows for additional advanced customizations for system managed servic
   nginx['ssl_state_name'] = "CA"
   nginx['worker_connections'] = 10240
   nginx['workers'] = integer calculated from number of cpus
+  nginx['ssl_access_ping_log'] = false #### false by default, when true GET requests to the ``/ping`` endpoint are logged in the ``/var/log/morpheus/nginx/morpheus-ssl-access.log`` file on the appliance
+  nginx['access_ping_log'] = false #### false by default, when true GET requests to the ``/ping`` endpoint are logged in the ``/var/log/morpheus/nginx/morpheus-ssl-access.log`` file on the appliance
 
   rabbitmq['enable'] = true
   rabbitmq['host'] = '127.0.0.1'
