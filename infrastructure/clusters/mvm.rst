@@ -1,0 +1,127 @@
+MVM Clusters
+------------
+
+Introduction HERE
+
+Base Cluster Details
+^^^^^^^^^^^^^^^^^^^^
+
+A typical MVM cluster consists of at least three hosts. Physical hosts are recommended to experience full performance of the MVM solution. In smaller environments, it is possible to create an MVM cluster with three nested virtual machines, a single physical host, or a single nested virtual machine though performance may be reduced. With just one host it won't be possible to migrate workloads between hosts or take advantage of automatic failover. Currently, a host must be a pre-existing Ubuntu 22.04 box with environment and host system requirements contained in this section. |morpheus| handles cluster configuration by providing the IP address(es) for your host(s) and a few other details. Details on adding the cluster to |morpheus| are contained in the next section.
+
+**Hardware Requirements**
+
+- **Operating System:** Ubuntu 22.04
+- **CPU:** One or more 64-bit x86 CPUs, 1.5 GHz minimum with Intel VT or AMD-V enabled
+- **Memory:** 4 GB minimum. For non-converged Layouts, configure MVM hosts to use shared external storage, such as an NFS share or iSCSI target. Converged Layouts utilize Ceph for clustered storage and require a **4 GB minimum memory per Ceph disk**
+- **Disk Space:** For converged storage, a data disk of at least 500 GB is required for testing. More storage will be needed for production clusters. An operating system disk of 15 GB is also required. Clusters utilizing non-converged Layouts can configure external storage (NFS, etc.) while |morpheus| will configure Ceph for multi-node clusters
+- **Network Connectivity:** MVM hosts need Internet access in order to download and install system packages for MVM dependencies, such as KVM, Open vSwitch, and more
+
+.. NOTE:: Clustered storage needs as much network bandwidth as possible. Network interfaces of at least 10 Gbps with jumbo frames enabled are required for clustered storage and for situations when all traffic is running through the management interface (when no compute or storage interface is configured). It's highly likely that performance will be unacceptable with any lower configurations.
+
+.. list-table:: **MVM Network Communication Ports**
+   :widths: auto
+   :header-rows: 1
+
+   * - Description
+     - Source
+     - Destination
+     - Port
+     - Protocol
+   * - |morpheus| Agent communication with the |morpheus| appliance
+     - MVM Host
+     - |morpheus| appliance server
+     - 443
+     - TCP
+   * - MVM host configuration and management
+     - |morpheus| appliance server
+     - MVM Host
+     - 22
+     - TCP
+   * - MVM interhost communication for clustered deployments
+     - MVM Host
+     - MVM Host
+     - 22
+     - TCP
+   * - |morpheus| server SSH access for deployed virtual machines
+     - |morpheus| appliance server
+     - MVM-hosted virtual machines
+     - 22
+     - TCP
+   * - |morpheus| server WinRM (HTTP) access for deployed virtual machines
+     - |morpheus| appliance server
+     - MVM-hosted virtual machines
+     - 5985
+     - TCP
+   * - |morpheus| server WinRM (HTTPS) access for deployed virtual machines
+     - |morpheus| appliance server
+     - MVM-hosted virtual machines
+     - 5986
+     - TCP
+   * - Ceph Storage
+     - MVM Host
+     - MVM Host
+     - 3300
+     - TCP
+   * - Ceph Storage
+     - MVM Host
+     - MVM Host
+     - 6789
+     - TCP
+   * - Ceph MDS/ODS
+     - MVM Host
+     - MVM Host
+     - 6800-7300
+     - TCP
+
+**Example Cluster Deployment**
+
+In this example cluster, each host box consists of:
+
+- 4 vCPU
+- 16GB memory
+- 20 GB OS boot disk
+- 250 GB data disk (deployed to ``/dev/dsb``)
+- 3 network interfaces for management, storage, and compute traffic (set to ``eth0``, ``eth1``, and ``eth2``, respectively)
+
+.. NOTE:: 250 GB data disks used in this example are simply for demonstration purposes. A typical test cluster should consist of at least 500 GB storage and more will be required for production. Do not raid disks on physical servers. Multiple disks may be used and they will be added to the total Ceph storage in one large volume. In the DATA DEVICE configuration during cluster setup, give a comma-separated list of disk devices if required.
+
+MVM clusters must also live in |morpheus|-type Clouds (See |InfClo|). A pre-existing |morpheus| Cloud may be used or a new Cloud could be created to handle MVM management.
+
+Provisioning the Cluster
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+As mentioned in the previous section, this example is starting with three provisioned Ubuntu 22.04 boxes. I also have a |morpheus|-type Cloud to house the cluster. Begin the cluster creation process from the Clusters list page (|InfClu|). Click :guilabel:`+ ADD CLUSTER` and select "MVM Cluster".
+
+IMAGE: Cluster type selection
+
+|morpheus| gives the option to select a hyperconverged infrastructure (HCI) **LAYOUT** or non-HCI. In this example, the HCI Layout is used. Next, configure the names and IP addresses for the host boxes (**SSH HOST**). The SSH HOST name configuration is simply a display name in |morpheus|, it does not need to be a hostname. By default, configuration space is given for three hosts which is what this example cluster will have. You must at least configure one and it's possible to add more by clicking the (+) button. The **SSH PORT** is pre-configured for port 22, change this value if applicable in your environment. Next, set a pre-existing user on the host boxes (**SSH USERNAME** and **SSH PASSWORD**) and **SSH KEY**.
+
+IMAGE: Top half of create cluster modal
+
+In the next part of the modal, you'll configure the storage devices and network interfaces. When Ceph initializes, it needs to be pointed to an initial data device. Configure this in the **DATA DEVICE** field. In my case, the target device is located at ``/dev/sdb``. Though not strictly required, it's recommended to have separate network interfaces to handle cluster management, storage traffic, and compute. In this example case, ``eth0`` is configured as the **MANAGEMENT NET INTERFACE** which handles communication between the cluster hosts. ``eth1`` is configured as the **STORAGE NET INTERFACE** and ``eth2`` is configured as the **COMPUTE NET INTERFACE**. The **COMPUTE VLANS** field can take a single value (ex. 1) or a range of values (ex. 22-25). This will create OVS port group(s) selectable as networks when provisioning workloads to the cluster.
+
+IMAGE: Bottom half of create cluster modal
+
+At this point we've kicked off the process for configuring the cluster nodes. Drill into the Cluster detail page and click on the History tab. Here we can monitor the progress of configuring the cluster. |morpheus| will run scripts to install KVM, install Ceph, install OVS, and to prepare the cluster. In just a short time, the cluster provisioning should complete and
+
+Provisioning a Workload
+^^^^^^^^^^^^^^^^^^^^^^^
+
+Process and screenshots for provisioning workloads to the new cluster here
+
+Monitoring the Cluster
+^^^^^^^^^^^^^^^^^^^^^^
+
+- Discussion of Cluster detail tabs with screenshots
+- Manually moving workloads between hosts
+- Demonstrating failover
+- Putting a cluster into maintenance mode
+- Saving workloads as images
+- Taking backups
+- Pinning workloads to hosts
+
+Image Prep (Linux)
+^^^^^^^^^^^^^^^^^^
+
+Image Prep (Windows)
+^^^^^^^^^^^^^^^^^^^^
