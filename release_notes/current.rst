@@ -17,6 +17,13 @@
 Release Dates
 
 - |morphver| |releasedate|
+- 6.2.8-2 Mar 19 2024
+
+6.2.8-2 Updates
+===============
+
+:amazon: Fixed an issue with snapshot sync when more than 1000 snapshots exist in an aws account. :superscript:`7.0.0`
+:vmware: Fixed an issue where vm's in different datacenters with the same external id (vm-id) could be re-assigned to the wrong cloud during vmware sync. :superscript:`7.0.0`
 
 New Features
 ============
