@@ -1,7 +1,7 @@
 MVM Clusters
 ------------
 
-Introduction HERE
+|morpheus| Virtualization Solution (MVM) is a hypervisor clustering technology utilizing KVM. Beginning with just a few basic Ubuntu boxes, |morpheus| can create a cluster of hypervisor hosts complete with monitoring, failover, easy migration of workloads across the cluster, and zero-downtime maintenance access to hypervisor host nodes. All of this is backed by |morpheus| Tenant capabilities, a highly-granular RBAC and policy engine, and Instance Type library with automation workflows.
 
 Base Cluster Details
 ^^^^^^^^^^^^^^^^^^^^
@@ -102,7 +102,7 @@ In the next part of the modal, you'll configure the storage devices and network 
 
 .. image:: /images/infrastructure/clusters/mvm/createClusterBottom.png
 
-At this point we've kicked off the process for configuring the cluster nodes. Drill into the Cluster detail page and click on the History tab. Here we can monitor the progress of configuring the cluster. |morpheus| will run scripts to install KVM, install Ceph, install OVS, and to prepare the cluster. In just a short time, the cluster provisioning should complete and
+At this point we've kicked off the process for configuring the cluster nodes. Drill into the Cluster detail page and click on the History tab. Here we can monitor the progress of configuring the cluster. |morpheus| will run scripts to install KVM, install Ceph, install OVS, and to prepare the cluster. In just a short time, the cluster provisioning should complete and the cluster will be ready to deploy workloads.
 
 Provisioning a Workload
 ^^^^^^^^^^^^^^^^^^^^^^^
@@ -111,7 +111,7 @@ At this point, the cluster is ready for workloads to be provisioned to it. The s
 
 .. image:: /images/infrastructure/clusters/mvm/groupCloud.png
 
-After moving to the next tab, select a Plan based on resource needs. From the RESOURCE POOL field, select the desired MVM cluster. When configuring VOLUMES for the new workload, note that space can be claimed from the Ceph volume. Within NETWORKS, we can add the new workload to one of the VLANS set up as part of cluster creation. Finally, note that we can choose the HOST the workload should run on.
+After moving to the next tab, select a Plan based on resource needs. From the **RESOURCE POOL** field, select the desired MVM cluster. When configuring **VOLUMES** for the new workload, note that space can be claimed from the Ceph volume. Within **NETWORKS**, we can add the new workload to one of the **VLANS** set up as part of cluster creation. Finally, note that we can choose the HOST the workload should run on.
 
 .. image:: /images/infrastructure/clusters/mvm/configureTab.png
 
