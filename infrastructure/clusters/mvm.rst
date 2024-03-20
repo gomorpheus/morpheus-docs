@@ -92,36 +92,66 @@ Provisioning the Cluster
 
 As mentioned in the previous section, this example is starting with three provisioned Ubuntu 22.04 boxes. I also have a |morpheus|-type Cloud to house the cluster. Begin the cluster creation process from the Clusters list page (|InfClu|). Click :guilabel:`+ ADD CLUSTER` and select "MVM Cluster".
 
-IMAGE: Cluster type selection
+.. image:: /images/infrastructure/clusters/mvm/createCluster.png
 
 |morpheus| gives the option to select a hyperconverged infrastructure (HCI) **LAYOUT** or non-HCI. In this example, the HCI Layout is used. Next, configure the names and IP addresses for the host boxes (**SSH HOST**). The SSH HOST name configuration is simply a display name in |morpheus|, it does not need to be a hostname. By default, configuration space is given for three hosts which is what this example cluster will have. You must at least configure one and it's possible to add more by clicking the (+) button. The **SSH PORT** is pre-configured for port 22, change this value if applicable in your environment. Next, set a pre-existing user on the host boxes (**SSH USERNAME** and **SSH PASSWORD**) and **SSH KEY**.
 
-IMAGE: Top half of create cluster modal
+.. image:: /images/infrastructure/clusters/mvm/createClusterTop.png
 
 In the next part of the modal, you'll configure the storage devices and network interfaces. When Ceph initializes, it needs to be pointed to an initial data device. Configure this in the **DATA DEVICE** field. In my case, the target device is located at ``/dev/sdb``. Though not strictly required, it's recommended to have separate network interfaces to handle cluster management, storage traffic, and compute. In this example case, ``eth0`` is configured as the **MANAGEMENT NET INTERFACE** which handles communication between the cluster hosts. ``eth1`` is configured as the **STORAGE NET INTERFACE** and ``eth2`` is configured as the **COMPUTE NET INTERFACE**. The **COMPUTE VLANS** field can take a single value (ex. 1) or a range of values (ex. 22-25). This will create OVS port group(s) selectable as networks when provisioning workloads to the cluster.
 
-IMAGE: Bottom half of create cluster modal
+.. image:: /images/infrastructure/clusters/mvm/createClusterBottom.png
 
 At this point we've kicked off the process for configuring the cluster nodes. Drill into the Cluster detail page and click on the History tab. Here we can monitor the progress of configuring the cluster. |morpheus| will run scripts to install KVM, install Ceph, install OVS, and to prepare the cluster. In just a short time, the cluster provisioning should complete and
 
 Provisioning a Workload
 ^^^^^^^^^^^^^^^^^^^^^^^
 
-Process and screenshots for provisioning workloads to the new cluster here
+At this point, the cluster is ready for workloads to be provisioned to it. The system default Ubuntu Instance Type contains a compatible Layout for MVM deployment. Add an Instance from the Instances list page (|ProIns|). After selecting the Instance Type, choose a Group that allows for selection of the |morpheus|-type Cloud containing the MVM cluster.
+
+.. image:: /images/infrastructure/clusters/mvm/groupCloud.png
+
+After moving to the next tab, select a Plan based on resource needs. From the RESOURCE POOL field, select the desired MVM cluster. When configuring VOLUMES for the new workload, note that space can be claimed from the Ceph volume. Within NETWORKS, we can add the new workload to one of the VLANS set up as part of cluster creation. Finally, note that we can choose the HOST the workload should run on.
+
+.. image:: /images/infrastructure/clusters/mvm/configureTab.png
+
+Review and complete the provisioning wizard. After a short time, the workload should be up and running. With a workload now running on the cluster, we can take a look at some of the monitoring, migration, failover, and other actions we can take for workloads running on MVM clusters.
 
 Monitoring the Cluster
 ^^^^^^^^^^^^^^^^^^^^^^
 
-- Discussion of Cluster detail tabs with screenshots
-- Manually moving workloads between hosts
-- Demonstrating failover
-- Putting a cluster into maintenance mode
-- Saving workloads as images
-- Taking backups
-- Pinning workloads to hosts
+With the server provisioned and a workload running, take a look at the monitoring and actions capabilities on the cluster detail page (|InfClu|, then click on the new MVM cluster). View cluster performance and resource usage (Summary and Monitoring tabs), drill into individual hosts (Hosts tab), see individual workloads (VMs tab), and more.
 
-Image Prep (Linux)
-^^^^^^^^^^^^^^^^^^
+**Moving Workloads Between Hosts**
 
-Image Prep (Windows)
-^^^^^^^^^^^^^^^^^^^^
+To manually move workloads between hosts, drill into the detail page for the VM (from the VMs tab of the cluster detail page). Click :guilabel:`ACTIONS` and select "Manage Placement". Choose a different host and select from the following placement strategies:
+
+- **Auto:** Manages VM placement based on load
+- **Failover:** Moves VMs only when failover is necessary
+- **Pinned:** Will not move this workload from the selected host
+
+.. image:: /images/infrastructure/clusters/mvm/managePlacement.png
+
+Within a short time, the workload is moved to the new host.
+
+**Maintenance Mode**
+
+MVM cluster hosts can be easily taken out of service for maintenance when needed. From the host detail page, click :guilabel:`ACTIONS` and then click "Enter Maintenance." When entering maintenance mode, the host will be removed from the pool. Live VMs that can be migrated will be moved to new hosts. VMs that are powered off will also be moved when possible. When a live VM cannot be moved, the host will not go into maintenance mode until that situation is cleared. You could manually move a VM to a new host or you could power it down if it's non-essential. After taking that action, attempt to put the host into maintenance mode once again. |morpheus| UI provides a helpful dialog which shows you which VMs live on the host are to be moved as the host goes into maintenance mode. When maintenance has finished, go back to the :guilabel:`ACTIONS` menu and select "Leave Maintenance."
+
+.. image:: /images/infrastructure/clusters/mvm/enterMaintenance.png
+
+..
+  **Failover**
+
+  **Saving Workloads as Images**
+
+  **Taking Backups**
+
+  **Adding hosts**
+
+..
+  Image Prep (Linux)
+  ^^^^^^^^^^^^^^^^^^
+
+  Image Prep (Windows)
+  ^^^^^^^^^^^^^^^^^^^^
