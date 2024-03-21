@@ -30,7 +30,7 @@ Although there are many factors that can contribute to the capacity planning, ev
      - N/A
      - 5,000
    * - AIO
-     - 8
+     - 4
      - 32
      - 400
      - N/A
@@ -57,7 +57,7 @@ Also, in the case of the 3-Node HA architecture, |morpheus| can be **scaled out*
 
 .. IMPORTANT:: Customer architectures and requirements will vary.  Please contact your account manager if you wish to deploy or transition to a HA environment, which can help right-size the environment
 
-Additional information around the various architectures can be found here:   
+Additional information around the various architectures can be found here:
 
     :ref:`installation-overview`
 
