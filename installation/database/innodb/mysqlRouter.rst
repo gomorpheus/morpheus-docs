@@ -54,6 +54,8 @@ Install by Repository
 
   - Install MySQL Router
 
+    .. IMPORTANT:: When installing from a repository, ensure to pin the version to prevent accidental upgrades.
+
     .. tabs::
 
         .. group-tab:: Ubuntu
@@ -61,12 +63,19 @@ Install by Repository
             .. code-block:: bash
         
                 apt install mysql-router-community -y
+
+                # Pin version 
+                sudo apt-mark hold mysql-router-community
+                apt-mark showhold
                         
         .. group-tab:: RHEL
 
             .. code-block:: bash
 
                 yum install mysql-router-community -y
+
+                # Pin version 
+                sudo echo "exclude=mysql*" | sudo tee -a /etc/yum.conf
 
 Install by Download
 ```````````````````

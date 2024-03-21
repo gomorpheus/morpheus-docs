@@ -64,6 +64,8 @@ InnoDB single site cluster.
                 
 * Install MySQL on Each DB Node.
 
+    .. IMPORTANT:: When installing from a repository, ensure to pin the version to prevent accidental upgrades.
+
     .. tabs::
 
         .. group-tab:: Ubuntu 22.04
@@ -72,6 +74,22 @@ InnoDB single site cluster.
         
                 apt update
                 apt install mysql-server
+
+                # Pin version 
+
+                # Get a list of installed packages
+                packages=$(dpkg --get-selections | awk '{print $1}')
+
+                # Iterate over each package
+                for package in $packages; do
+                    # Check if the package name matches the wildcard pattern
+                    if [[ $package == *"mysql"* ]]; then
+                        # Mark the package as held
+                        sudo apt-mark hold $package
+                    fi
+                done
+                
+                apt-mark showhold
                         
         .. group-tab:: RHEL 8/9
 
@@ -81,6 +99,8 @@ InnoDB single site cluster.
                 systemctl start mysqld.service
                 systemctl enable mysqld.service
                 
+                # Pin version 
+                sudo echo "exclude=mysql*" | sudo tee -a /etc/yum.conf
                 
 
 * Configure MySQL on Each DB Node.
