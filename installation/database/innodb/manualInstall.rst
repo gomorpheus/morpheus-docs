@@ -108,6 +108,8 @@ InnoDB single site cluster.
     
 
     * mySQL config file settings on DB servers
+
+        .. IMPORTANT:: Make sure to update innodb_buffer_pool_size and innodb_buffer_pool_instances to the appropriate size.
         
         .. code-block:: bash
              

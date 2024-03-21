@@ -74,6 +74,9 @@ Install by Download
     .. toggle-header::
         :header: **Install by Download**
         
+        - The example below may be outdated but the links/versions can be found here:
+            - `YUM/DNF MySQL Repositories <https://dev.mysql.com/downloads/>`_
+
         .. tabs::
 
             .. group-tab:: Ubuntu 22.04
