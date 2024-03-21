@@ -30,7 +30,7 @@ rst_prolog = """
 .. |tcver| replace:: v9.0.83
 .. |nginxver| replace:: v1.25.1
 .. |nodePackageVer| replace:: 3.2.22
-.. |linuxagentver| replace:: v2.5.3
+.. |linuxagentver| replace:: v2.5.4
 .. |macagentver| replace:: v2.4.0
 .. |winagentver| replace:: v2.5.0.0
 .. |java| replace:: 11.0.20+8
