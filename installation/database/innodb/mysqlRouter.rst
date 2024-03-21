@@ -54,7 +54,7 @@ Install by Repository
 
   - Install MySQL Router
 
-    .. IMPORTANT:: When installing from a repository, ensure to pin the version to prevent accidental upgrades.
+    .. IMPORTANT:: Make sure to pin the package to prevent accidental upgrades.
 
     .. tabs::
 
