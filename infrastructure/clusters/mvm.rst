@@ -1,12 +1,12 @@
 MVM Clusters
 ------------
 
-|morpheus| Virtualization Solution (MVM) is a hypervisor clustering technology utilizing KVM. Beginning with just a few basic Ubuntu boxes, |morpheus| can create a cluster of hypervisor hosts complete with monitoring, failover, easy migration of workloads across the cluster, and zero-downtime maintenance access to hypervisor host nodes. All of this is backed by |morpheus| Tenant capabilities, a highly-granular RBAC and policy engine, and Instance Type library with automation workflows.
+MVM virtualization solution is a hypervisor clustering technology utilizing KVM. Beginning with just a few basic Ubuntu boxes, |morpheus| can create a cluster of hypervisor hosts complete with monitoring, failover, easy migration of workloads across the cluster, and zero-downtime maintenance access to hypervisor host nodes. All of this is backed by |morpheus| Tenant capabilities, a highly-granular RBAC and policy engine, and Instance Type library with automation workflows.
 
 Base Cluster Details
 ^^^^^^^^^^^^^^^^^^^^
 
-A typical MVM cluster consists of at least three hosts. Physical hosts are recommended to experience full performance of the MVM solution. In smaller environments, it is possible to create an MVM cluster with three nested virtual machines, a single physical host, or a single nested virtual machine though performance may be reduced. With just one host it won't be possible to migrate workloads between hosts or take advantage of automatic failover. Currently, a host must be a pre-existing Ubuntu 22.04 box with environment and host system requirements contained in this section. |morpheus| handles cluster configuration by providing the IP address(es) for your host(s) and a few other details. Details on adding the cluster to |morpheus| are contained in the next section.
+An MVM cluster using the hyperconvered (HCI) Layout consists of at least three hosts. Physical hosts are recommended to experience full performance of the MVM solution. In smaller environments, it is possible to create an MVM cluster with three nested virtual machines, a single physical host (non-HCI only), or a single nested virtual machine (non-HCI only) though performance may be reduced. With just one host it won't be possible to migrate workloads between hosts or take advantage of automatic failover. Currently, a host must be a pre-existing Ubuntu 22.04 box with environment and host system requirements contained in this section. |morpheus| handles cluster configuration by providing the IP address(es) for your host(s) and a few other details. Details on adding the cluster to |morpheus| are contained in the next section.
 
 **Hardware Requirements**
 
@@ -14,7 +14,9 @@ A typical MVM cluster consists of at least three hosts. Physical hosts are recom
 - **CPU:** One or more 64-bit x86 CPUs, 1.5 GHz minimum with Intel VT or AMD-V enabled
 - **Memory:** 4 GB minimum. For non-converged Layouts, configure MVM hosts to use shared external storage, such as an NFS share or iSCSI target. Converged Layouts utilize Ceph for clustered storage and require a **4 GB minimum memory per Ceph disk**
 - **Disk Space:** For converged storage, a data disk of at least 500 GB is required for testing. More storage will be needed for production clusters. An operating system disk of 15 GB is also required. Clusters utilizing non-converged Layouts can configure external storage (NFS, etc.) while |morpheus| will configure Ceph for multi-node clusters
-- **Network Connectivity:** MVM hosts need Internet access in order to download and install system packages for MVM dependencies, such as KVM, Open vSwitch, and more
+- **Network Connectivity:** MVM hosts must be assigned static IP addresses. They also need DNS resolution of the |morpheus| appliance and Internet access in order to download and install system packages for MVM dependencies, such as KVM, Open vSwitch (OVS), and more
+
+.. NOTE:: Ubuntu 22.04 uses ``netplan`` for networking. To configure a static IP address, change into the directory holding the config files (``cd /etc/netplan``) and edit the existing configuration file (``/etc/netplan/50-cloud-init.yaml`` or ``/etc/netplan/00-installer-config.yaml`` or ``/etc/netplan/01-netcfg.yaml``). If desired, backup the existing configuration prior to editing it (``cp /etc/netplan/<file-name>.yaml /etc/netplan/<file-name>.yaml.bak``). For additional information on configuration file formatting, refer to ``netplan`` `documentation <https://netplan.readthedocs.io/en/stable/>`_. Once the configuration is updated, validate and apply it (``netplan try``). The ``try`` command will validate the configuration and apply it if it's valid. If invalid, it will automatically be rolled back.
 
 .. NOTE:: Clustered storage needs as much network bandwidth as possible. Network interfaces of at least 10 Gbps with jumbo frames enabled are required for clustered storage and for situations when all traffic is running through the management interface (when no compute or storage interface is configured). It's highly likely that performance will be unacceptable with any lower configurations.
 
@@ -78,7 +80,7 @@ A typical MVM cluster consists of at least three hosts. Physical hosts are recom
 In this example cluster, each host box consists of:
 
 - 4 vCPU
-- 16GB memory
+- 16 GB memory
 - 20 GB OS boot disk
 - 250 GB data disk (deployed to ``/dev/dsb``)
 - 3 network interfaces for management, storage, and compute traffic (set to ``eth0``, ``eth1``, and ``eth2``, respectively)
@@ -94,11 +96,15 @@ As mentioned in the previous section, this example is starting with three provis
 
 .. image:: /images/infrastructure/clusters/mvm/createCluster.png
 
-|morpheus| gives the option to select a hyperconverged infrastructure (HCI) **LAYOUT** or non-HCI. In this example, the HCI Layout is used. Next, configure the names and IP addresses for the host boxes (**SSH HOST**). The SSH HOST name configuration is simply a display name in |morpheus|, it does not need to be a hostname. By default, configuration space is given for three hosts which is what this example cluster will have. You must at least configure one and it's possible to add more by clicking the (+) button. The **SSH PORT** is pre-configured for port 22, change this value if applicable in your environment. Next, set a pre-existing user on the host boxes (**SSH USERNAME** and **SSH PASSWORD**) and **SSH KEY**.
+|morpheus| gives the option to select a hyperconverged infrastructure (HCI) **LAYOUT** or non-HCI. In this example, the HCI Layout is used (requires a three-node minimum). Next, configure the names and IP addresses for the host boxes (**SSH HOST**). The SSH HOST name configuration is simply a display name in |morpheus|, it does not need to be a hostname. By default, configuration space is given for three hosts which is what this example cluster will have. You must at least configure one and it's possible to add more by clicking the (+) button. The **SSH PORT** is pre-configured for port 22, change this value if applicable in your environment. Next, set a pre-existing user on the host boxes (**SSH USERNAME** and **SSH PASSWORD**) and **SSH KEY**. Use a regular user with sudo access.
 
 .. image:: /images/infrastructure/clusters/mvm/createClusterTop.png
 
-In the next part of the modal, you'll configure the storage devices and network interfaces. When Ceph initializes, it needs to be pointed to an initial data device. Configure this in the **DATA DEVICE** field. In my case, the target device is located at ``/dev/sdb``. Though not strictly required, it's recommended to have separate network interfaces to handle cluster management, storage traffic, and compute. In this example case, ``eth0`` is configured as the **MANAGEMENT NET INTERFACE** which handles communication between the cluster hosts. ``eth1`` is configured as the **STORAGE NET INTERFACE** and ``eth2`` is configured as the **COMPUTE NET INTERFACE**. The **COMPUTE VLANS** field can take a single value (ex. 1) or a range of values (ex. 22-25). This will create OVS port group(s) selectable as networks when provisioning workloads to the cluster.
+In the next part of the modal, you'll configure the storage devices and network interfaces. When Ceph initializes, it needs to be pointed to an initial data device (or devices). Configure this in the **DATA DEVICE** field. Multiple devices may be given in a comma-separated list and will be added to the total Ceph storage as one large volume. Find your disk names, if needed, with the ``lsblk`` command. In my case, the target device is located at ``/dev/sdb``.
+
+Though not strictly required, it's recommended to have separate network interfaces to handle cluster management, storage traffic, and compute. In this example case, ``eth0`` is configured as the **MANAGEMENT NET INTERFACE** which handles communication between the cluster hosts. ``eth1`` is configured as the **STORAGE NET INTERFACE** and ``eth2`` is configured as the **COMPUTE NET INTERFACE**. The **COMPUTE VLANS** field can take a single value (ex. 1) or a range of values (ex. 22-25). This will create OVS port group(s) selectable as networks when provisioning workloads to the cluster. If needed, you can find your network interface names with the ``ip a`` command.
+
+Finally, only one **CPU TYPE** is currently supported (``x86_64``) though this may change in the future. For **CPU MODEL** configuration, we surface the entire database of model configurations from ``libvirt``. If unsure or if you don't know of a specific reason to choose one or the other, select ``host-model`` which is the default option.
 
 .. image:: /images/infrastructure/clusters/mvm/createClusterBottom.png
 
@@ -136,7 +142,7 @@ Within a short time, the workload is moved to the new host.
 
 **Maintenance Mode**
 
-MVM cluster hosts can be easily taken out of service for maintenance when needed. From the host detail page, click :guilabel:`ACTIONS` and then click "Enter Maintenance." When entering maintenance mode, the host will be removed from the pool. Live VMs that can be migrated will be moved to new hosts. VMs that are powered off will also be moved when possible. When a live VM cannot be moved, the host will not go into maintenance mode until that situation is cleared. You could manually move a VM to a new host or you could power it down if it's non-essential. After taking that action, attempt to put the host into maintenance mode once again. |morpheus| UI provides a helpful dialog which shows you which VMs live on the host are to be moved as the host goes into maintenance mode. When maintenance has finished, go back to the :guilabel:`ACTIONS` menu and select "Leave Maintenance."
+MVM cluster hosts can be easily taken out of service for maintenance when needed. From the host detail page, click :guilabel:`ACTIONS` and then click "Enter Maintenance." When entering maintenance mode, the host will be removed from the pool. Live VMs that can be migrated will be moved to new hosts. VMs that are powered off will also be moved when possible. When a live VM cannot be moved (such as if it's "pinned" to the host), the host will not go into maintenance mode until that situation is cleared. You could manually move a VM to a new host or you could power it down if it's non-essential. After taking that action, attempt to put the host into maintenance mode once again. |morpheus| UI provides a helpful dialog which shows you which VMs live on the host are to be moved as the host goes into maintenance mode. When maintenance has finished, go back to the :guilabel:`ACTIONS` menu and select "Leave Maintenance."
 
 .. image:: /images/infrastructure/clusters/mvm/enterMaintenance.png
 
