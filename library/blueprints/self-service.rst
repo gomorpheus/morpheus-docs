@@ -19,7 +19,7 @@ The complete Self Service catalog can be viewed by clicking on Catalog from the 
 Building Catalog Instances
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. NOTE:: API usage for Catalog Items with Forms is not yet supported. If planning to use the API to order Catalog Items you should not use Forms on Catalog Items until it is supported.
+.. NOTE:: API usage for Catalog Items with Forms is not yet supported. If planning to use the API or CLI to order Catalog Items you should not use Forms on Catalog Items until it is supported.
 
 An Instance in |morpheus| is a set of one or more containers or virtual machines that correlate to a single, horizontally-scalable entity or service suite. From the Self Service section, we can pre-configure |morpheus| Instances and present them to users viewing the Service Catalog Persona for one-click deployment.
 
@@ -51,7 +51,7 @@ Configure the following:
 Using Forms with Catalog Items
 ``````````````````````````````
 
-.. NOTE:: API usage for Catalog Items with Forms is not yet supported. If planning to use the API to order Catalog Items you should not use Forms on Catalog Items until it is supported.
+.. NOTE:: API usage for Catalog Items with Forms is not yet supported. If planning to use the API or CLI to order Catalog Items you should not use Forms on Catalog Items until it is supported.
 
 Using Forms provides a number of advantages over using Inputs. Once the Form is selected, |morpheus| helpfully provides a sidebar which contains all variables that can be consumed in the Instance config from the Form:
 
@@ -242,7 +242,7 @@ Once done, click :guilabel:`SAVE CHANGES`
 Building Catalog Blueprints
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. NOTE:: API usage for Catalog Items with Forms is not yet supported. If planning to use the API to order Catalog Items you should not use Forms on Catalog Items until it is supported.
+.. NOTE:: API usage for Catalog Items with Forms is not yet supported. If planning to use the API or CLI to order Catalog Items you should not use Forms on Catalog Items until it is supported.
 
 |morpheus| Blueprints allow for full multi-tier application deployment. In the Self Service catalog, user can create catalog items based on pre-existing App Blueprints. If new Blueprints need to be created for the Service Catalog, see other sections of |morpheus| docs on building App Blueprints of various supported types. Just like with catalog Instances, we can pre-configure Blueprints and present them to users viewing the Service Catalog Persona view for easy, one-click deployment.
 
@@ -301,7 +301,7 @@ Once done, click :guilabel:`SAVE CHANGES`
 Building Catalog Workflows
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. NOTE:: API usage for Catalog Items with Forms is not yet supported. If planning to use the API to order Catalog Items you should not use Forms on Catalog Items until it is supported.
+.. NOTE:: API usage for Catalog Items with Forms is not yet supported. If planning to use the API or CLI to order Catalog Items you should not use Forms on Catalog Items until it is supported.
 
 From the Catalog Items List Page (|LibBluCat|), click :guilabel:`ADD`. From the dropdown menu, select Workflow. The modal window will appear to configure and add a new catalog Workflow.
 
