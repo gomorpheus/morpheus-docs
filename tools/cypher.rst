@@ -186,10 +186,18 @@ Click :guilabel:`SAVE CHANGES`. The example BASH script below onboards the value
 Using Cypher Keys in Scripts
 ----------------------------
 
-To use a cypher Key in a script, use the following syntax:
+To use a Cypher key in a script, use the following syntax:
 
 ``<%=cypher.read('var_name')%>``
 
 Example: ``PASSWORD=<%=cypher.read('secret/myuserpassword')%>``
+
+Cypher also includes an option to read a value from the ``password/*`` mountpoint or create one if it doesn't already exist. Use the following syntax:
+
+``<%=cypher.readPassword('var_name')%>``
+
+Example: ``PASSWORD=<%=cypher.readPassword('myuserpassword')%>```
+
+It should be noted that when Cypher keys are created using the ``readPassword`` function, the subsequent reads can only come from the same user. If another |morpheus| user attempts to run the automation script containing the ``readPassword`` call, the secret value will not be read and it's very likely the script will fail. For Tasks and Workflows that need to be run by multiple users, use a pre-existing Cypher key and reference it back in the script using ``read`` rather than ``readPassword``.
 
 .. NOTE:: You can reference the original owner of a workflow so that keys can be used in a subtenant.  Example ``PASSWORD=<%=cypher.read('secret/myuserpassword')%>`` could be changed to ``PASSWORD=<%=cypher.read('secret/myuserpassword',true)%>`` within a library or a workflow and the true means OWNER true.  This will keep that key in the master tenants cypher store.
