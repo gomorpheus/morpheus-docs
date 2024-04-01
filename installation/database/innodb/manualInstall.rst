@@ -140,6 +140,7 @@ InnoDB single site cluster.
              innodb_buffer_pool_instances=6        # **Change 6 to actual number**. Allows for better Multi-Threading. Should be 1 instance per 1G of buffer pool size above.
              innodb_use_fdatasync=ON               # Enables fdatasync() for faster writes than fsync()
              sql_generate_invisible_primary_key=1  # This ensures that MySQL creates an invisible primary key for each Morpheus table that does not have one. 
+             binlog_expire_logs_seconds=604800     # Set binlog experation to 7 days (default is 30 days)
 
              [mysqldump]
              set-gtid-purged=OFF                   # This is to ensure if a mysqldump is performed from the DB node it is in the proper format for restore.

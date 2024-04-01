@@ -1,4 +1,4 @@
-Customer Doc - InnoDB PDF
+Customer Documentation - InnoDB PDFs
 ===============
 
 

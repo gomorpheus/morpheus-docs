@@ -14,15 +14,11 @@ a mysqldump and if this is not set the backup will have errors and not be restor
            set-gtid-purged=OFF
 
     * Use this example command to create the file and add the setting.
-
-         Possible locations, depending on OS:
-        
-           - ``/etc/mysql/my.cnf``
-           - ``/etc/my.cnf``
-           - ``/etc/my.cnf.d/my.cnf``
          
          .. code-block:: bash
 
            echo -e "[mysqldump]\nset-gtid-purged=OFF" | sudo tee -a /etc/my.cnf
 
+.. IMPORTANT:: Perform on all DB nodes and Morpheus App Nodes
+  
 .. Config-Section-Stop
