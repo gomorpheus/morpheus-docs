@@ -36,7 +36,12 @@ Single Site Full Install
         
 * MySQL Dump Backup Settings **(Perform on all DB nodes and Morpheus App Nodes)**
 
-    .. include:: ./innodbBackup.rst
+    Possible locations, depending on OS:
+    - ``/etc/mysql/my.cnf``
+    - ``/etc/my.cnf``
+    - ``/etc/my.cnf.d/my.cnf``
+
+    .. include:: /installation/database/innodb/mysql-cnf-files/innodbBackup.rst
       :start-after: Config-Section-Start
       :end-before: Config-Section-Stop
 
@@ -73,9 +78,14 @@ MultiSite Full Install
         :start-after: Config-Section-Start
         :end-before: Config-Section-Stop
         
-* MySQL Dump Backup Settings **(Perform on all DB nodes and Morpheus App Nodes)**
+* MySQL Dump Backup Settings 
 
-    .. include:: ./innodbBackup.rst
+    Possible locations, depending on OS:
+    - ``/etc/mysql/my.cnf``
+    - ``/etc/my.cnf``
+    - ``/etc/my.cnf.d/my.cnf``
+
+    .. include:: /installation/database/innodb/mysql-cnf-files/innodbBackup.rst
       :start-after: Config-Section-Start
       :end-before: Config-Section-Stop
 

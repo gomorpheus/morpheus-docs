@@ -26,7 +26,7 @@ The following settings should to be set on all database nodes.
             # Set binlog_expire_logs_seconds
             mysql> SET GLOBAL binlog_expire_logs_seconds = 604800;
 
-            # Confrime binlog_expire_logs_seconds was set and auto purge is ON
+            # Confirm binlog_expire_logs_seconds was set and auto purge is ON
             mysql> show variables like 'binlog_expire_logs_seconds';
             mysql> show variables like 'binlog_expire_logs_auto_purge';
             

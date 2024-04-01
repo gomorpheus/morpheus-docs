@@ -236,7 +236,6 @@ InnoDB single site cluster.
 .. Single-Section-Stop
 
 
-
 MultiSite Full Install 
 ^^^^^^^^^^^^^^^^^^^^^^
 
