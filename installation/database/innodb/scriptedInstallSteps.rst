@@ -111,10 +111,10 @@ Configure MySQL Router
         :start-after: Config-Section-Start
         :end-before: Config-Section-Stop
 
-MySQL Dump Backup Settings **(Perform on all DB nodes and Morpheus App Nodes)**
+MySQL Dump Backup Settings 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-    .. include:: /installation/database/innodb/innodbBackup.rst
+    .. include:: /installation/database/innodb/mysql-cnf-files/innodbBackup.rst
       :start-after: Config-Section-Start
       :end-before: Config-Section-Stop
 

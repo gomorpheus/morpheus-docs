@@ -22,10 +22,11 @@ The following settings should to be set on all database nodes.
     * To make the settings take effect you can restart mysql service or if you can't bring down mysql run the following 
 
         .. code-block:: bash
+
             # Set binlog_expire_logs_seconds
             mysql> SET GLOBAL binlog_expire_logs_seconds = 604800;
 
-                # Confrime binlog_expire_logs_seconds was set and auto purge is ON
+            # Confrime binlog_expire_logs_seconds was set and auto purge is ON
             mysql> show variables like 'binlog_expire_logs_seconds';
             mysql> show variables like 'binlog_expire_logs_auto_purge';
             
@@ -38,3 +39,4 @@ The following settings should to be set on all database nodes.
     If a non-zero value for one of the variables binlog_expire_logs_seconds or expire_logs_days is set at startup, this value is used as the binary log expiration period. 
     If a non-zero value for both of those variables is set at startup, the value for binlog_expire_logs_seconds is used as the binary log expiration period, and the value for expire_logs_days is ignored with a warning message.
 .. Config-Section-Stop
+
