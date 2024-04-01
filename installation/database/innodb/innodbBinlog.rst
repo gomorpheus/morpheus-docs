@@ -30,4 +30,9 @@ The following settings should to be set on all database nodes.
             # All bin logs older than what was set will be purged
             mysql> flush binary logs;
 
+.. note:: 
+    The default binary log expiration period is 2592000 seconds, which equals 30 days (30*24*60*60 seconds). 
+    The default applies if neither binlog_expire_logs_seconds nor the **deprecated** system variable expire_logs_days has a value set at startup. 
+    If a non-zero value for one of the variables binlog_expire_logs_seconds or expire_logs_days is set at startup, this value is used as the binary log expiration period. 
+    If a non-zero value for both of those variables is set at startup, the value for binlog_expire_logs_seconds is used as the binary log expiration period, and the value for expire_logs_days is ignored with a warning message.
 .. Config-Section-Stop
