@@ -148,6 +148,8 @@ Too add the host, begin from the MVM Cluster detail page (selected from the list
 
 Once |morpheus| has completed its configuration scripts and joined the new worker node to the cluster, it will appear in a ready state within the Hosts tab of the Cluster detail page. When provisioning workloads to this Cluster in the future, the new node will be selectable as a target host for new Instances. It will also be an available target for managing placement of existing VMs running on the cluster.
 
+.. NOTE:: It's useful to confirm all scripts related to creating the new host and joining the new host to the cluster completed successfully. To confirm, navigate to the detail page for the new host (|InfClu| > Selected Cluster > Hosts Tab > Selected Host) and click on the History tab. Confirm all scripts, even those run on the pre-existing hosts, completed successfully as it's possible the new host was added successfully (green status) but failed in joining the cluster. When such a situation occurs it may appear adding the new host was successful though it will not be possible to provision workloads onto it due to not joining the cluster successfully.
+
 .. image:: /images/infrastructure/clusters/mvm/addHost.png
 
 **Maintenance Mode**
