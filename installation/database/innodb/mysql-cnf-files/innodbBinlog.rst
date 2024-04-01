@@ -21,13 +21,15 @@ The following settings should to be set on all database nodes.
 
     * To make the settings take effect you can restart mysql service or if you can't bring down mysql run the following 
 
-        .. code-block:: 
+        .. code-block:: bash
             # Set binlog_expire_logs_seconds
             mysql> SET GLOBAL binlog_expire_logs_seconds = 604800;
+
+                # Confrime binlog_expire_logs_seconds was set and auto purge is ON
             mysql> show variables like 'binlog_expire_logs_seconds';
+            mysql> show variables like 'binlog_expire_logs_auto_purge';
             
-            # Flush binlogs
-            # All bin logs older than what was set will be purged
+            # Flush binlogs manually - All bin logs older than what was set will be purged
             mysql> flush binary logs;
 
 .. note:: 
