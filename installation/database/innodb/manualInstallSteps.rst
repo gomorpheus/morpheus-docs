@@ -34,9 +34,11 @@ Single Site Full Install
         :start-after: Config-Section-Start
         :end-before: Config-Section-Stop
         
-* InnoDB MySQL Config (my.cnf)
+* MySQL Dump Backup Settings **(Perform on all DB nodes and Morpheus App Nodes)**
 
-    .. include:: ./mysql-cnf.rst
+    .. include:: ./innodbBackup.rst
+      :start-after: Config-Section-Start
+      :end-before: Config-Section-Stop
 
 MultiSite Full Install 
 ^^^^^^^^^^^^^^^^^^^^^^
@@ -71,9 +73,11 @@ MultiSite Full Install
         :start-after: Config-Section-Start
         :end-before: Config-Section-Stop
         
-* InnoDB MySQL Config (my.cnf)
+* MySQL Dump Backup Settings **(Perform on all DB nodes and Morpheus App Nodes)**
 
-    .. include:: ./mysql-cnf.rst
+    .. include:: ./innodbBackup.rst
+      :start-after: Config-Section-Start
+      :end-before: Config-Section-Stop
 
 * Create Morpheus User and Database 
     

@@ -1,20 +1,43 @@
 InnoDB MySQL Config (my.cnf)
 ============
 
-Possible locations, depending on OS:
+Full config 
+^^^^^^^^^^^^^^^^^^^^^^^^
+.. Config-Section-Start
 
+Possible locations, depending on OS:
     - ``/etc/mysql/my.cnf``
     - ``/etc/my.cnf``
     - ``/etc/my.cnf.d/my.cnf``
 
-*  MySQL Dump Backup Settings
+    * mySQL config file settings on DB servers
 
-      .. include:: /installation/database/innodb/innodbBackup.rst
-        :start-after: Install-Section-Start
-        :end-before: Config-Section-Stop
+        .. IMPORTANT:: Make sure to update innodb_buffer_pool_size and innodb_buffer_pool_instances to the appropriate size.
+        
+        .. code-block:: bash
+             
+             [mysqld]
+             bind-address = 0.0.0.0
+             max_connections = 2001                # Increases Max Connections Supported
+             innodb_buffer_pool_size=6G            # **Change 6 to actual number**. Runs more in RAM, 70% of available MEM is currently being set with scripted install
+             innodb_buffer_pool_instances=6        # **Change 6 to actual number**. Allows for better Multi-Threading. Should be 1 instance per 1G of buffer pool size above.
+             innodb_use_fdatasync=ON               # Enables fdatasync() for faster writes than fsync()
+             sql_generate_invisible_primary_key=1  # This ensures that MySQL creates an invisible primary key for each Morpheus table that does not have one. 
+             binlog_expire_logs_seconds=604800     # Set binlog experation to 7 days (default is 30 days)
 
-* MySQL BinLog Settings
+             [mysqldump]
+             set-gtid-purged=OFF                   # This is to ensure if a mysqldump is performed from the DB node it is in the proper format for restore.
 
-      .. include:: /installation/database/innodb/innodbBinlog.rst
-        :start-after: Install-Section-Start
-        :end-before: Config-Section-Stop
+.. Config-Section-Stop
+
+InnoDB Backup Settings
+^^^^^^^^^^^^^^^^^^^^^^^^
+    .. include:: ./innodbBackup.rst
+      :start-after: Install-Section-Start
+      :end-before: Install-Section-Stop
+
+InnoDB BinLog Settings
+^^^^^^^^^^^^^^^^^^^^^^^^
+    .. include:: ./innodbBinlog.rst
+      :start-after: Install-Section-Start
+      :end-before: Install-Section-Stop
