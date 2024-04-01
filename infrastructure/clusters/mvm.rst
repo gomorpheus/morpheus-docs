@@ -140,20 +140,59 @@ To manually move workloads between hosts, drill into the detail page for the VM 
 
 Within a short time, the workload is moved to the new host.
 
+**Adding hosts**
+
+The process of adding hosts to a pre-existing cluster is very similar to the process of provisioning the cluster initially. The requirements for the new worker node will be identical to the nodes initially added when the cluster was first provisioned. See the earlier sections in this guide for additional details on configuring the worker nodes.
+
+Too add the host, begin from the MVM Cluster detail page (selected from the list at |InfClu|). From the Cluster detail page, click :guilabel:`ACTIONS` and select "Add Worker". Configurations required are the same as those given when the cluster was first created. Refer to the section above on "Provisioning the Cluster" for a detailed description of each configuration.
+
+Once |morpheus| has completed its configuration scripts and joined the new worker node to the cluster, it will appear in a ready state within the Hosts tab of the Cluster detail page. When provisioning workloads to this Cluster in the future, the new node will be selectable as a target host for new Instances. It will also be an available target for managing placement of existing VMs running on the cluster.
+
+.. image:: /images/infrastructure/clusters/mvm/addHost.png
+
 **Maintenance Mode**
 
 MVM cluster hosts can be easily taken out of service for maintenance when needed. From the host detail page, click :guilabel:`ACTIONS` and then click "Enter Maintenance." When entering maintenance mode, the host will be removed from the pool. Live VMs that can be migrated will be moved to new hosts. VMs that are powered off will also be moved when possible. When a live VM cannot be moved (such as if it's "pinned" to the host), the host will not go into maintenance mode until that situation is cleared. You could manually move a VM to a new host or you could power it down if it's non-essential. After taking that action, attempt to put the host into maintenance mode once again. |morpheus| UI provides a helpful dialog which shows you which VMs live on the host are to be moved as the host goes into maintenance mode. When maintenance has finished, go back to the :guilabel:`ACTIONS` menu and select "Leave Maintenance."
 
 .. image:: /images/infrastructure/clusters/mvm/enterMaintenance.png
 
-..
-  **Failover**
+**Failover**
 
+MVM supports automatic failover of running workloads in the event of the loss of a host. Administrators can control the failover behavior through the "Manage Placement" action on any running VM. From the VM detail page, click :guilabel:`ACTIONS` and select "Manage Placement". Any VM with a placement strategy of "Auto" or "Failover" will be eligible for an automatic move in the event its host is lost. When the loss of a host does occur, the workload will be up and running from a different cluster host within just a short time if it's configured to be moved during an automatic failover event. Any VMs pinned to a lost host will not be moved and will not be accessible if the host is lost. When the host is restored, those VMs will be in a stopped state and may be restarted if needed.
+
+This three-node cluster has three VMs running on the first host:
+
+.. image:: /images/infrastructure/clusters/mvm/threeRunningWorkloads.png
+
+Each of these VMs is configured for a different failover strategy. When the host is lost, we should expect to see the first two VMs moved to an available host (since they have the "Auto" and "Failover" placement strategies, respectively). We should not see the third VM moved.
+
+.. image:: /images/infrastructure/clusters/mvm/auto.png
+  :width: 40%
+
+.. image:: /images/infrastructure/clusters/mvm/failover.png
+  :width: 40%
+
+.. image:: /images/infrastructure/clusters/mvm/pinned.png
+  :width: 40%
+
+After loss of the host these three VMs were running on, we can see the lost host still has one associated VM in a stopped state. The other two VMs are running on a second host which is still available.
+
+.. image:: /images/infrastructure/clusters/mvm/lostNode.png
+
+.. image:: /images/infrastructure/clusters/mvm/liveNode.png
+
+When the lost host returns, the moved VMs will come back to their original host. The third VM is associated with this host as well and is in a stopped state until it is manually restarted.
+
+
+
+
+
+
+
+..
   **Saving Workloads as Images**
 
   **Taking Backups**
-
-  **Adding hosts**
 
 ..
   Image Prep (Linux)
