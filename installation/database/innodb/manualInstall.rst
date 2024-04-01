@@ -129,9 +129,9 @@ InnoDB single site cluster.
 
     * mySQL config file settings on DB servers
 
-        .. include:: ./innodbBackup.rst
-            :start-after: Config-Section-Start
-            :end-before: Config-Section-Stop
+        .. include:: ./mysql-cnf.rst
+            :start-after: Full-Config-Section-Start
+            :end-before: Full-Config-Section-Stop
             
 
     * Restart mysql service.    

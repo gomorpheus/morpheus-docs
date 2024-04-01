@@ -3,7 +3,7 @@ InnoDB MySQL Config (my.cnf)
 
 Full config 
 ^^^^^^^^^^^^^^^^^^^^^^^^
-.. Config-Section-Start
+.. Full-Config-Section-Start
 
 Possible locations, depending on OS:
     - ``/etc/mysql/my.cnf``
@@ -28,7 +28,7 @@ Possible locations, depending on OS:
              [mysqldump]
              set-gtid-purged=OFF                   # This is to ensure if a mysqldump is performed from the DB node it is in the proper format for restore.
 
-.. Config-Section-Stop
+.. Full-Config-Section-Stop
 
 InnoDB Backup Settings
 ^^^^^^^^^^^^^^^^^^^^^^^^
