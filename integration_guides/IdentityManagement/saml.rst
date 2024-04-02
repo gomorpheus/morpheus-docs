@@ -51,7 +51,7 @@ SAML REQUEST
 SAML RESPONSE
   **Do Not Validate Assertion Signature** - The SAML response signature from the SAML SP will not be validated
 
-  **Validate Assertion Signature** - The SAML reponse signature from the SAML SP will be validated.  Enter the SAML SP X.509 certificate in the **Public Key** field
+  **Validate Assertion Signature** - The SAML reponse signature from the SAML SP will be validated.  Enter the SAML SP X.509 certificate in the **Public Key** field. This must be in PEM format
 
 .. IMPORTANT:: Setting SAML REQUEST to "No Signature" and SAML RESPONSE to "Do Not Validate Assertion Signature" is allowed but not recommended for security reasons.
 
