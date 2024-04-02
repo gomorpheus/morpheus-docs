@@ -7,10 +7,12 @@ Perform on all DB nodes
 The default binary log expiration period is 2592000 seconds, which equals 30 days (30*24*60*60 seconds). This can end up taking up a lot of space and cause the databse node to run out of storage. 
 To prevent this we can set the epxiration perired lower (We recommend 7 days)
 
-BinLog file location 
-    - ``/var/lib/mysql``
-
 The following settings should to be set on all database nodes. 
+
+    Possible locations, depending on OS:
+    - ``/etc/mysql/my.cnf``
+    - ``/etc/my.cnf``
+    - ``/etc/my.cnf.d/my.cnf``
 
     * Add these entries manually to the appropriate file.
         
@@ -33,6 +35,9 @@ The following settings should to be set on all database nodes.
             # Flush binlogs manually - All bin logs older than what was set will be purged
             mysql> flush binary logs;
 
+    BinLog file location 
+    - ``/var/lib/mysql``
+    
 .. note:: 
     The default binary log expiration period is 2592000 seconds, which equals 30 days (30*24*60*60 seconds). 
     The default applies if neither binlog_expire_logs_seconds nor the **deprecated** system variable expire_logs_days has a value set at startup. 
