@@ -44,6 +44,7 @@ Fixes
          - Linux Agent upgrades now update the appliance URL (if applicable) to account for situations in which this has changed since the last Agent upgrade :superscript:`6.2.8`
 :Amazon: - Fixed an issue causing actions such as adding nodes or reconfiguring at the Instance or VM level from working correctly for discovered nodes which were converted to managed :superscript:`6.2.8`
           - Fixed an issue that prevented AWS Clouds scoped to all regions from reading from region-scoped S3 buckets :superscript:`6.2.8`
+          - Fixed an issue with snapshot sync when more than 1000 snapshots exist in an aws account. :superscript:`6.2.8-2`
           - When creating RDS Instances on AWS Clouds, the subnet groups now populate correctly for Clouds scoped to all regions :superscript:`6.2.8`
           - When scoping AWS Clouds to all VPCs, DB subnets available on the AWS Cloud are now discovered properly and are available for selection during RDS provisioning. Previously, this only worked correctly when scoping to a specific VDC :superscript:`6.2.8`
 :Apps: - When adding an Instance to an existing App, the display name of the Instance is now shown rather than the Instance name :superscript:`6.2.8`
