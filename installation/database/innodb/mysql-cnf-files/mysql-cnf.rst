@@ -34,11 +34,7 @@ Possible locations, depending on OS:
 InnoDB Backup Settings
 ^^^^^^^^^^^^^^^^^^^^^^^^
     .. include:: ./innodbBackup.rst
-      :start-after: Config-Section-Start
-      :end-before: Config-Section-Stop
 
 InnoDB BinLog Settings
 ^^^^^^^^^^^^^^^^^^^^^^^^
     .. include:: ./innodbBinlog.rst
-      :start-after: Config-Section-Start
-      :end-before: Config-Section-Stop
