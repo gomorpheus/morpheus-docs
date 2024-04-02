@@ -3,6 +3,27 @@ MVM Clusters
 
 MVM virtualization solution is a hypervisor clustering technology utilizing KVM. Beginning with just a few basic Ubuntu boxes, |morpheus| can create a cluster of hypervisor hosts complete with monitoring, failover, easy migration of workloads across the cluster, and zero-downtime maintenance access to hypervisor host nodes. All of this is backed by |morpheus| Tenant capabilities, a highly-granular RBAC and policy engine, and Instance Type library with automation workflows.
 
+Features
+^^^^^^^^
+
+- Automated MVM cluster provisioning
+- Ceph storage configuration for multi-node clusters
+- Cluster and individual host monitoring
+- Add hosts to existing clusters
+- Console support for cluster hosts and running workloads
+- Add, edit and remove networks and data stores from clusters
+- Gracefully take hosts out of service with maintenance mode
+- Migration of workloads across hosts
+- Workload provisioning and monitoring
+- Reconfigure running workloads to resize plan, add/remove disks, and add/remove network interfaces
+- Configurable automatic failover of running workloads when a host is lost
+- Backup and restore
+- Take snapshots and revert to snapshots
+- |morpheus| library and automation support
+- Integration with |morpheus| costing
+- Governance through |morpheus| RBAC, Tenancy, and Policies
+
+
 Base Cluster Details
 ^^^^^^^^^^^^^^^^^^^^
 
