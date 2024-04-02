@@ -10,9 +10,9 @@ To prevent this we can set the epxiration perired lower (We recommend 7 days)
 The following settings should to be set on all database nodes. 
 
     Possible locations, depending on OS:
-    - ``/etc/mysql/my.cnf``
-    - ``/etc/my.cnf``
-    - ``/etc/my.cnf.d/my.cnf``
+        - ``/etc/mysql/my.cnf``
+        - ``/etc/my.cnf``
+        - ``/etc/my.cnf.d/my.cnf``
 
     * Add these entries manually to the appropriate file.
         
@@ -34,14 +34,16 @@ The following settings should to be set on all database nodes.
             
             # Flush binlogs manually - All bin logs older than what was set will be purged
             mysql> flush binary logs;
+.. Config-Section-Stop
 
-    BinLog file location 
-    - ``/var/lib/mysql``
-    
 .. note:: 
     The default binary log expiration period is 2592000 seconds, which equals 30 days (30*24*60*60 seconds). 
     The default applies if neither binlog_expire_logs_seconds nor the **deprecated** system variable expire_logs_days has a value set at startup. 
     If a non-zero value for one of the variables binlog_expire_logs_seconds or expire_logs_days is set at startup, this value is used as the binary log expiration period. 
     If a non-zero value for both of those variables is set at startup, the value for binlog_expire_logs_seconds is used as the binary log expiration period, and the value for expire_logs_days is ignored with a warning message.
-.. Config-Section-Stop
 
+
+BinLog file location 
+    - ``/var/lib/mysql``
+
+`Understaning Binlogs <https://www.linkedin.com/pulse/detailed-guide-understanding-mysql-binlogs-pranav-pandey/>`_ 
