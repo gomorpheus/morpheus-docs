@@ -430,6 +430,55 @@ Zone (Cloud)
 				scalePriority
 			}
 
+networkConfig
+-------------
+
+.. code-block:: json
+
+    'networkConfig': {
+      'primaryInterface': {
+        'doDhcp': false,
+        'dnsServers': [],
+        'dnsDomain': "",
+        'netmask': "",
+        'gateway': "",
+        'ipAddress': "",
+        'doDhcp6': false,
+        'gateway6': "",
+        'ipv6Address': "",
+        'cidr6Suffix': "",
+        'dnsServers6': ""
+      },
+      'extraInterfaces': [
+        {
+          'doDhcp': false,
+          'dnsServers': [],
+          'dnsDomain': "",
+          'netmask': "",
+          'gateway': "",
+          'ipAddress': "",
+          'doDhcp6': false,
+          'gateway6': "",
+          'ipv6Address': "",
+          'cidr6Suffix': "",
+          'dnsServers6': ""
+        },
+        {
+          'doDhcp': false,
+          'dnsServers': [],
+          'dnsDomain': "",
+          'netmask': "",
+          'gateway': "",
+          'ipAddress': "",
+          'doDhcp6': false,
+          'gateway6': "",
+          'ipv6Address': "",
+          'cidr6Suffix': "",
+          'dnsServers6': ""
+        }
+      ]
+    }
+
 Group (Site)
 ------------
 
