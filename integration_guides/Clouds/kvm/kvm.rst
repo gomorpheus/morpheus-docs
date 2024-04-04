@@ -4,12 +4,12 @@ KVM
 Overview
 ^^^^^^^^
 
-|morpheus| KVM is a powerful, cheaper alternative to virtualization compared with other hypervisor offerings. It is also very capable of setting up complex shared storage and multiple networks across many hosts. This guide goes over the process for onboarding brownfield KVM clusters and for provisioning new KVM clusters directly from |morpheus|. When created or onboarded, KVM clusters are associated with the chosen Cloud and can then be selected as provisioning targets using existing Instance types and automation routines. In this example, baremetal KVM hosts are added to a |morpheus|-type Cloud but similar combinations can be made with other Cloud types.
+|morpheus| KVM is a powerful, cheaper alternative to virtualization compared with other hypervisor offerings. It is also very capable of setting up complex shared storage and multiple networks across many hosts. This guide goes over the process for onboarding brownfield KVM clusters. When onboarded, KVM clusters are associated with the chosen Cloud and can then be selected as provisioning targets using existing Instance types and automation routines. In this example, baremetal KVM hosts are added to a |morpheus|-type Cloud but similar combinations can be made with other Cloud types.
 
 Requirements
 ````````````
 
-At this time, |morpheus| primarily supports CentOS 7 and Ubuntu-based KVM clusters. When creating KVM clusters directly in |morpheus| these are the two base OS options. It's possible to onboard KVM clusters built on other Linux distributions, such as SUSE Linux but the user would need to ensure the correct packages were installed. The required packages are listed below.
+When onboarding KVM clusters, the user must ensure the correct packages are installed. The required packages are listed below:
 
 - kvm
 - libvirt
@@ -18,15 +18,13 @@ At this time, |morpheus| primarily supports CentOS 7 and Ubuntu-based KVM cluste
 - qemu-kvm-rhev
 - genisoimage
 
-Additionally, |morpheus| will attempt to add a new network switch called 'morpheus' and storage pool when onboarding a brownfield KVM cluster.
-
-When creating new clusters from |morpheus|, users simply provide a basic Ubuntu or CentOS box. |morpheus| takes care of installing the packages listed above as well as |morpheus| Agent, if desired. The same can be said for adding a new host to an existing KVM cluster. Users need only provide access to an Ubuntu or CentOS box and |morpheus| will install the required packages along with making sensible default configurations. Users can also add existing KVM hosts to a cluster. After providing SSH access into the host, if |morpheus| detects that virsh is installed, it will treat it as a brownfield KVM host. Brownfield KVM hosts must have:
+Additionally, |morpheus| will attempt to add a new network switch called 'morpheus' and storage pool when onboarding a brownfield KVM cluster. |morpheus| detects that virsh is installed and, when present, it will treat it as a brownfield KVM host. Brownfield KVM hosts must have:
 
 - libvirt and virsh installed
 - A pool called morpheus-images defined as an image cache and ideally separate from the main datastore
 - A pool called morpheus-cloud-init defined which stores small disk images for bootup (this pool can be small)
 
-.. NOTE:: |morpheus| creates (or uses in the case of brownfield hosts) a morpheus-images pool which is separate from the main datastore. This is a host-local image cache which facilitates faster clone operations. The cache will automatically purge images once the allocation reaches 80% to avoid filling completely. Once it is 80% full, the oldest accessed volumes in the cache will be deleted first until the cache is under 50% full once again.
+.. NOTE:: |morpheus| uses a "morpheus-images" pool which is separate from the main datastore. This is a host-local image cache which facilitates faster clone operations. The cache will automatically purge images once the allocation reaches 80% to avoid filling completely. Once it is 80% full, the oldest accessed volumes in the cache will be deleted first until the cache is under 50% full once again.
 
 Creating the Cloud
 ^^^^^^^^^^^^^^^^^^
@@ -62,37 +60,6 @@ On the first page of the Create Host modal, enter a name for the onboarded KVM h
   :width: 80%
 
 On the Automation tab, select any relevant automation workflows and complete the modal. The new KVM host will now be listed on the host tab along with any other KVM hosts (if any) you may have associated with this Cloud. If the Cloud is configured to automatically onboard existing instances, any VMs you may have running will be automatically discovered by |morpheus| with each Cloud sync (approximately every five minutes by default). For VMs, you will see these listed on the VMs tab of the Cloud detail page and they will also be listed among all other VMs that |morpheus| is aware of on the VMs list page at |InfComVir|.
-
-Create a KVM Cluster
-^^^^^^^^^^^^^^^^^^^^
-
-Out of the box, |morpheus| includes layouts for KVM clusters. The default layouts are Ubuntu or CentOS 7-based and include one host. Users can also create their own KVM cluster layouts either from scratch or by cloning a default KVM cluster layout and making changes. Custom cluster layouts can include multiple hosts, if desired. See |morpheus| documentation on `cluster layouts <https://docs.morpheusdata.com/en/latest/library/blueprints/clusterLayouts.html>`_ for more information.
-
-When creating KVM clusters, you'll need the Ubuntu or CentOS 7 box(es) standing but don't need to worry about installing any additional packages on your own. |morpheus| will handle that as part of the cluster creation. Complete the following steps to create a connection into your existing machines, provision a new KVM cluster, and associate it to the KVM Cloud created in an earlier section:
-
-#. Navigate to |InfClu|
-#. Click :guilabel:`+ ADD CLUSTER` and select KVM Cluster
-#. Choose a Group on the Group tab
-#. Select the Cloud created earlier from the Cloud dropdown menu, then provide at least a name for the cluster and a resource name on the Name tab
-#. On the Configure tab, set the following options:
-
-    - **LAYOUT:** Select a default KVM cluster layout or a custom layout
-    - **SSH HOSTS:** Enter a name for this host and the machine address, click the plus (+) button at the end of the row to add additional hosts to the cluster
-    - **SSH PORT:** The port for the SSH connection, typically 22
-    - **SSH USERNAME:** The username for an administrator user on the host box(es)
-    - **SSH PASSWORD:** The password for the account in the previous field
-    - **SSH KEY:** Select a stored SSH keypair from the dropdown menu
-    - **LVM ENABLED:** Mark if the destination box has LVM enabled
-    - **DATA DEVICE:** If "LVM ENABLED" is marked, this field is available. The indicated logical volume will be added to the logical volume group if it doesn't already exist
-    - **SOFTWARE RAID?:** Mark to enable software RAID on the host box
-    - **NETWORK INTERFACE:** Select the interface to use for the Open vSwitch Bridge
-
-#. Click :guilabel:`NEXT` to finish configuration, then complete the modal after final review
-
-.. image: /images/integration_guides/clouds/kvm/createCluster.png
-  :width: 80%
-
-After adding the new cluster, you will see your newly created hosts listed on the Host Tab of the KVM Cloud detail page (|InfClo| > Selected KVM Cloud).
 
 Provisioning to KVM
 ^^^^^^^^^^^^^^^^^^^
