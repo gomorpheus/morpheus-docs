@@ -9,16 +9,16 @@ latex_documents = [
 
 rst_prolog = """
 
-.. |releasedate| replace:: Mar 20 2024
+.. |releasedate| replace:: Apr 9 2024
 .. |releasetype| replace:: LTS
 .. |morphAnnualVer| replace:: v7
 .. |morphbranch| replace:: v7.0
-.. |morphver| replace:: v7.0.0
+.. |morphver| replace:: v7.0.1
 .. |minUpgradeVer| replace:: v6.0.0
 .. |minRollingUpgradeVer| replace:: v6.0.7
 .. |nonRollingUpgradeVer| replace:: v6.0.6
-.. |previousMorphVer| replace:: v6.3.4
-.. |pluginVer| replace:: 1.1.0
+.. |previousMorphVer| replace:: v7.0.0
+.. |pluginVer| replace:: 1.1.1
 .. |workerVer| replace:: 5.4.8+
 .. |rmqbranch| replace:: v3.5-3.12
 .. |rmqver| replace:: v3.12.9
