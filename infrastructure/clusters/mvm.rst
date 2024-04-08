@@ -206,7 +206,170 @@ After loss of the host these three VMs were running on, we can see the lost host
 
 When the lost host returns, the moved VMs will come back to their original host. The third VM is associated with this host as well and is in a stopped state until it is manually restarted.
 
+Decommissioning a CEPH-backed Host
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+|morpheus| MVM clusters utilize global pools and for that reason, we need to remove the object storage daemon (OSD) from each host manually prior to decommissioning the host and removing it from the cluster.
+
+First, put the host into maintenance mode and allow time for any running VMs to be migrated to other hosts. See the section above, if needed, for additional details on maintenance mode.
+
+**Outing the OSDs**
+
+Begin by checking the cluster health. If the cluster is not in a healthy state, an OSD should not be removed:
+
+.. code-block:: bash
+
+  ceph -s
+
+You should see something similar to the following:
+
+.. code-block:: bash
+
+  $ ceph -s
+    cluster:
+      id:       bxxxx-bxxxxx-4xxx...
+      health:   HEALTH_OK
+
+.. IMPORTANT:: Do not remove an OSD if the cluster health does not return ``HEALTH_OK``.
+
+Get the OSD IDs. The following command will return a map of OSDs and their ID values:
+
+.. code-block:: bash
+
+  ceph osd df tree
+
+We're now ready to out the OSD, do so with the following command:
+
+.. code-block:: bash
+
+  ceph osd out osd.<osd-id>
+
+Wait for the cluster to rebalance. Do not remove any additional OSDs until the cluster has rebalanced. As above, you can use ``ceph -s`` to check cluster status. Wait until something like this:
+
+.. code-block:: bash
+
+  data:
+    volumes: 1/1 healthy
+    pools:   5 pools, 593 pgs
+    objects: 6.69k objects, 19 GiB
+    usage:   48 GiB used, 2.9 TiB / 2.9 TiB avail
+    pgs:     677/20079 objects degraded (3.372%)
+             1115/20079 objects misplaced (5.553%)
+             567 active+clean
+             13  active+recovery_wait+degraded
+             6   active+remapped+backfill_wait
+             6   active+recovery_wait+undersized+degraded+remapped
+             1   active+recovering+undersized+degraded+remapped
+
+...becomes something like this:
+
+.. code-block:: bash
+
+  data:
+    volumes: 1/1 healthy
+    pools:   5 pools, 593 pgs
+    objects: 6.69k objects, 19 GiB
+    usage:   53 GiB used, 2.9 TiB / 2.9 TiB avail
+    pgs:     593 active+clean
+
+This process must be completed for each OSD that is to be removed. Once again, wait for the cluster to rebalance between each OSD removal.
+
+**Stopping OSD service**
+
+We can now stop and remove the OSD service for each OSD that should be removed. Stop the OSD service:
+
+.. code-block:: bash
+
+  systemctl stop ceph-osd@<osd-id>.service
+
+Remove the OSD service:
+
+.. code-block:: bash
+
+  systemctl disable ceph-osd@<osd-id>.service
+
+**Removing OSDs from the CRUSH map**
+
+Remove the OSDs from the CRUSH map:
+
+.. code-block:: bash
+
+  ceph osd crush remove ods.<osd-id>
+
+This must be repeated for each OSD that should be removed. Next, validate the removal:
+
+.. code-block:: bash
+
+  ceph osd crush tree
+
+At this point once again, wait for the cluster rebalance to complete. Run ``ceph -s`` and look for a healthy state similar to the following:
+
+.. code-block:: bash
+
+  data:
+    volumes: 1/1 healthy
+    pools:   5 pools, 593 pgs
+    objects: 6.69k objects, 19 GiB
+    usage:   53 GiB used, 2.9 TiB / 2.9 TiB avail
+    pgs:     593 active+clean
+
+**Remove the Ceph Monitor (ceph-mon) service**
+
+First find the service:
+
+.. code-block:: bash
+
+  systemctl --type=service --state=running | grep ceph-mon
+
+The service should look something like: ``ceph-mon@<hostname provided at cluster provision time>.service``
+
+Stop the service:
+
+.. code-block:: bash
+
+  systemctl stop ceph-mon@<hostname>.service
+
+Remove the monitor by its ID. The ID is the part between "ceph-mon@" and ".service". Generally, this is the hostname.
+
+.. code-block:: bash
+
+  ceph mon remove <hostname>
+
+Remove the hostname from CRUSH
+
+.. code-block:: bash
+
+  ceph osd crush rm <hostname>
+
+Check the cluster health once again to confirm the cluster is in a healthy state:
+
+.. code-block:: bash
+
+  ceph -s
+
+**Final Steps**
+
+Cleanup the OSD auth. Repeat this step for each OSD that must be removed.
+
+.. code-block:: bash
+
+  ceph auth del osd.<osd-id>
+
+Validate the removal:
+
+.. code-block:: bash
+
+  ceph auth list
+
+Remove the last of the data and repeat this step for each OSD that should be removed:
+
+.. code-block:: bash
+
+  ceph osd rm <osd-id>
+
+.. IMPORTANT:: Note that the above command does not prepend "osd." before the OSD ID.
+
+At this point you can now delete the host cluster from |morpheus|.
 
 
 
