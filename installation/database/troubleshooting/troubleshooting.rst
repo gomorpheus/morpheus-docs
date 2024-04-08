@@ -132,7 +132,7 @@ Rejoin the ``OFFLINE`` nodes to the cluster:
             \exit
 
 
-Recover From Failed Single Site when allnodesdown and rejoins dont work
+Recover From Failed Single Site when dba.rebootclusterfromcompleteoutage() and rejoins dont work
 ````````````````````````````````````````````````````````````````````````
 * Take a backup of the DB beofre performing any of these tasks.
 * Make sure morpheus-ui is stopped on all all nodes.
@@ -174,7 +174,7 @@ Recover From Failed Single Site when allnodesdown and rejoins dont work
         systemctl start mysqlrouter # restart mysql router
 
 
-Recover Secondary Site From Failed Multi Site when allnodesdown and rejoins dont work
+Recover Secondary Site From Failed Multi Site when dba.rebootclusterfromcompleteoutage() and rejoins dont work
 ````````````````````````````````````````````````````````````````````````
 * Take a backup of the DB beofre performing any of these tasks.
 
@@ -201,7 +201,7 @@ Recover Secondary Site From Failed Multi Site when allnodesdown and rejoins dont
         clusterb.addInstance("mysql-B02:3306")
         clusterb.addInstance("mysql-B03:3306")
         clusterb.status() # Confirm the clusterset status.
-        
+
 
 Force Remove and Rejoin InnoDB node(s) to cluster (brute force)
 ``````````````````````````````````````````````````````````````````````
