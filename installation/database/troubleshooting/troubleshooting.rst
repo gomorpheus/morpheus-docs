@@ -131,6 +131,78 @@ Rejoin the ``OFFLINE`` nodes to the cluster:
             cluster.rejoinInstance("clusterAdmin@mysql02.example.local")
             \exit
 
+
+Recover From Failed Single Site when allnodesdown and rejoins dont work
+````````````````````````````````````````````````````````````````````````
+* Take a backup of the DB beofre performing any of these tasks.
+* Make sure morpheus-ui is stopped on all all nodes.
+* Stop mysqlrouter on all nodes.
+
+*  Connect to mysql on each DB node and run the following to get the node with the latest GTID to use as source.
+    
+    .. code-block:: bash
+
+        mysql -u clusterAdmin -p 
+        SHOW VARIABLES LIKE 'gtid_executed';
+
+
+*  Connect to each DB Node and drop the metadata and turn off super read only.
+    
+    .. code-block:: bash
+
+        mysql -u clusterAdmin -p 
+        set global super_read_only = OFF;
+        DROP DATABASE mysql_innodb_cluster_metadata;
+
+
+
+*  Connect to the DB node with the highest GTID with mysqlsh and create the cluster.
+    
+    .. code-block:: bash
+
+        \c clusterAdmin@mysql01:3306
+        cluster = dba.createCluster("A") # Join the other nodes to this cluster.
+        cluster.addInstance("sql02:3306") # Select c to clone.
+        cluster.addInstance("sql03:3306") # Select c to clone.
+        cluster.status() # Check the cluster status
+
+*  Bootstrap mysqlrouter on each node running it to ensure it has the updated metadata.
+    
+    .. code-block:: bash
+       
+        mysqlrouter --bootstrap clusterAdmin@sql01:3306 --account routeruser --user=mysqlrouter --disable-rest force
+        systemctl start mysqlrouter # restart mysql router
+
+
+Recover Secondary Site From Failed Multi Site when allnodesdown and rejoins dont work
+````````````````````````````````````````````````````````````````````````
+* Take a backup of the DB beofre performing any of these tasks.
+
+*  Connect to each DB Node and drop the metadata and turn off super read only.
+    
+    .. code-block:: bash
+
+        mysql -u clusterAdmin -p 
+        set global super_read_only = OFF;
+        DROP DATABASE mysql_innodb_cluster_metadata;
+
+*  Connect to a primary site node using mysqlsh
+    
+    .. code-block:: bash
+
+        \c clusterAdmin@mysql-A01:3306
+        cluster = dba.getCluster() # Set the cluster variable
+        cluster.status() # Confirm the cluster status of the primary site is healthy before moving on.
+        clustersset = dba.getClusterSet()  # Set the cluster set variable
+        clusterset.status() # Check the status of the cluster status
+        clusterset.removeCluster("B", {force: true}) # Force Remove the Secondary B side cluster
+        # Now will recreate the B side Cluster from this same A side Node connection
+        clusterb = clusterset.createReplicaCluster("mysql-B01:3306", "B")
+        clusterb.addInstance("mysql-B02:3306")
+        clusterb.addInstance("mysql-B03:3306")
+        clusterb.status() # Confirm the clusterset status.
+        
+
 Force Remove and Rejoin InnoDB node(s) to cluster (brute force)
 ``````````````````````````````````````````````````````````````````````
 Be sure to snapshot systems. This has the potential to be destructive.
@@ -142,6 +214,7 @@ Be sure to snapshot systems. This has the potential to be destructive.
         var cluster = dba.getCluster(); # From bad node, connect to healthy node.
         cluster.rescan(); # Press 'Y' to remove the missing node(s) on the interactive MySQL Shell window.
         \exit
+
 *  Login to MySQL from bad Node(s)
     
     .. code-block:: bash
