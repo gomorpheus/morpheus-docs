@@ -134,7 +134,7 @@ Rejoin the ``OFFLINE`` nodes to the cluster:
 
 Recover From Failed Single Site when dba.rebootclusterfromcompleteoutage() and rejoins dont work
 ````````````````````````````````````````````````````````````````````````
-* Take a backup of the DB beofre performing any of these tasks.
+* Take a backup of the DB before performing any of these tasks.
 * Make sure morpheus-ui is stopped on all all nodes.
 * Stop mysqlrouter on all nodes.
 
@@ -176,7 +176,7 @@ Recover From Failed Single Site when dba.rebootclusterfromcompleteoutage() and r
 
 Recover Secondary Site From Failed Multi Site when dba.rebootclusterfromcompleteoutage() and rejoins dont work
 ````````````````````````````````````````````````````````````````````````
-* Take a backup of the DB beofre performing any of these tasks.
+* Take a backup of the DB before performing any of these tasks.
 
 *  Connect to each DB Node and drop the metadata and turn off super read only.
     
