@@ -1055,7 +1055,7 @@
        <td class="green">7.0.0</td>
      </tr>
      <tr>
-       <td class="darkGrey">6.3.3 →</td>
+       <td class="darkGrey">6.3.4 →</td>
        <td class="lightGrey"></td>
        <td class="lightGrey"></td>
        <td class="lightGrey"></td>
