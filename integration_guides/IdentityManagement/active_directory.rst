@@ -71,6 +71,8 @@ Adding an Active Directory Integration
     A username for a service account which has access to relevant objects (users, groups, etc.). For ease, the "Administrator" user may be used
    Binding Password
     The password for the above account
+   Support User Principal Names
+    When marked, users will log in with their UPN login credentials rather than a simple username. This allows users to log on to subdomains. Leave unmarked where this is not needed
    Required Group
     The AD group users must be in to have access (optional, see example in the prior section)
    Default Role
