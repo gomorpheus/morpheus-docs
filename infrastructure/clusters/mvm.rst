@@ -1,28 +1,38 @@
 MVM Clusters
 ------------
 
+.. IMPORTANT:: MVM clusters are currently in a closed beta with a selected subset of the customer base. It is not for production use and is not available to appliances that are not part of the closed beta program. Expect that MVM Cluster capabilities, as well as this documentation, will change significantly over the coming months.
+
 MVM virtualization solution is a hypervisor clustering technology utilizing KVM. Beginning with just a few basic Ubuntu boxes, |morpheus| can create a cluster of hypervisor hosts complete with monitoring, failover, easy migration of workloads across the cluster, and zero-downtime maintenance access to hypervisor host nodes. All of this is backed by |morpheus| Tenant capabilities, a highly-granular RBAC and policy engine, and Instance Type library with automation workflows.
 
 Features
 ^^^^^^^^
 
+**Host Features**
+
 - Automated MVM cluster provisioning
 - Ceph storage configuration for multi-node clusters
 - Cluster and individual host monitoring
 - Add hosts to existing clusters
-- Console support for cluster hosts and running workloads
+- Console support for cluster hosts
 - Add, edit and remove networks and data stores from clusters
 - Gracefully take hosts out of service with maintenance mode
 - Migration of workloads across hosts
-- Workload provisioning and monitoring
-- Reconfigure running workloads to resize plan, add/remove disks, and add/remove network interfaces
 - Configurable automatic failover of running workloads when a host is lost
-- Backup and restore
-- Take snapshots and revert to snapshots
-- |morpheus| library and automation support
 - Integration with |morpheus| costing
 - Governance through |morpheus| RBAC, Tenancy, and Policies
 
+**VM Features**
+
+- Workload provisioning and monitoring
+- Console support for running workloads
+- Migration of VMs across hosts
+- Configure automatic failover for individual VMs in the event a host is lost
+- Reconfigure running workloads to resize plan, add/remove disks, and add/remove network interfaces
+- Backup and restore MVM workloads
+- Take snapshots and revert to snapshots
+- |morpheus| library and automation support
+- Integration with |morpheus| costing features
 
 Base Cluster Details
 ^^^^^^^^^^^^^^^^^^^^

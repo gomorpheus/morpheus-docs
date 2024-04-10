@@ -28,7 +28,7 @@ Cluster Types
 +--------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------+
 | GKE Cluster        | Google Cloud GKE (Google Kubernetes Engine) Clusters                                                                                                                                                                             | Kubernetes             |
 +--------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------+
-| MVM Cluster        | |morpheus| Virtual Machines, a KVM-based virtualization solution                                                                                                                                                                 | Kubernetes             |
+| MVM Cluster        | |morpheus| Virtual Machines, a KVM-based virtualization solution. This Cluster type is currently in closed beta. See the detailed section below on MVM Clusters for complete use documentation.                                  | Kubernetes             |
 +--------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------+
 
 .. note:: Refer to :ref:`clusterLayouts` for supported Clouds per Cluster Type.
