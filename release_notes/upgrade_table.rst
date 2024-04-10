@@ -23,20 +23,20 @@
    <thead>
      <tr>
        <th class="darkGrey">From Version</th>
-       <th class="darkGrey" colspan="43">To Version</th>
+       <th class="darkGrey" colspan="45">To Version</th>
      </tr>
    </thead>
      <tbody>
      <tr>
        <td class="darkGrey">4.2.0 - 5.0.0→</td>
        <td class="green-left">5.2.0-5.3.4</td>
-       <td class="red-left" colspan="34" text-align="left">5.4.0+</td>
+       <td class="red-left" colspan="36" text-align="left">5.4.0+</td>
      </tr>
      <tr>
        <td class="darkGrey">5.2.0-5.3.4→</td>
        <td class="white"></td>
        <td class="green-left">5.4.4-5.5.3</td>
-       <td class="red-left" colspan="34">6.0.0+</td>
+       <td class="red-left" colspan="36">6.0.0+</td>
 
      </tr>
      <tr>
@@ -67,12 +67,14 @@
        <td class="red">6.2.6</td>
        <td class="red">6.2.7</td>
        <td class="red">6.2.8</td>
+       <td class="red">6.2.9</td>
        <td class="red">6.3.0</td>
        <td class="red">6.3.1</td>
        <td class="red">6.3.2</td>
        <td class="red">6.3.3</td>
        <td class="red">6.3.4</td>
        <td class="red">7.0.0</td>
+       <td class="red">7.0.1</td>
      </tr>
      <tr>
        <td class="darkGrey">6.0.0 →</td>
@@ -102,12 +104,14 @@
        <td class="blue">6.2.6</td>
        <td class="blue">6.2.7</td>
        <td class="blue">6.2.8</td>
+       <td class="blue">6.2.9</td>
        <td class="blue">6.3.0</td>
        <td class="blue">6.3.1</td>
        <td class="blue">6.3.2</td>
        <td class="blue">6.3.3</td>
        <td class="blue">6.3.4</td>
        <td class="blue">7.0.0</td>
+       <td class="blue">7.0.1</td>
      </tr>
      <tr>
        <td class="darkGrey">6.0.1 →</td>
@@ -137,12 +141,14 @@
        <td class="blue">6.2.6</td>
        <td class="blue">6.2.7</td>
        <td class="blue">6.2.8</td>
+       <td class="blue">6.2.9</td>
        <td class="blue">6.3.0</td>
        <td class="blue">6.3.1</td>
        <td class="blue">6.3.2</td>
        <td class="blue">6.3.3</td>
        <td class="blue">6.3.4</td>
        <td class="blue">7.0.0</td>
+       <td class="blue">7.0.1</td>
      </tr>
      <tr>
        <td class="darkGrey">6.0.2 →</td>
@@ -172,12 +178,14 @@
        <td class="purple">6.2.6</td>
        <td class="purple">6.2.7</td>
        <td class="purple">6.2.8</td>
+       <td class="purple">6.2.9</td>
        <td class="purple">6.3.0</td>
        <td class="purple">6.3.1</td>
        <td class="purple">6.3.2</td>
        <td class="purple">6.3.3</td>
        <td class="purple">6.3.4</td>
        <td class="purple">7.0.0</td>
+       <td class="purple">7.0.1</td>
      </tr>
      <tr>
        <td class="darkGrey">6.0.3 →</td>
@@ -207,12 +215,14 @@
        <td class="purple">6.2.6</td>
        <td class="purple">6.2.7</td>
        <td class="purple">6.2.8</td>
+       <td class="purple">6.2.9</td>
        <td class="purple">6.3.0</td>
        <td class="purple">6.3.1</td>
        <td class="purple">6.3.2</td>
        <td class="purple">6.3.3</td>
        <td class="purple">6.3.4</td>
        <td class="purple">7.0.0</td>
+       <td class="purple">7.0.1</td>
      </tr>
      <tr>
        <td class="darkGrey">6.0.4 →</td>
@@ -242,12 +252,14 @@
        <td class="purple">6.2.6</td>
        <td class="purple">6.2.7</td>
        <td class="purple">6.2.8</td>
+       <td class="purple">6.2.9</td>
        <td class="purple">6.3.0</td>
        <td class="purple">6.3.1</td>
        <td class="purple">6.3.2</td>
        <td class="purple">6.3.3</td>
        <td class="purple">6.3.4</td>
        <td class="purple">7.0.0</td>
+       <td class="purple">7.0.1</td>
      </tr>
      <tr>
        <td class="darkGrey">6.0.5 →</td>
@@ -277,12 +289,14 @@
        <td class="purple">6.2.6</td>
        <td class="purple">6.2.7</td>
        <td class="purple">6.2.8</td>
+       <td class="purple">6.2.9</td>
        <td class="purple">6.3.0</td>
        <td class="purple">6.3.1</td>
        <td class="purple">6.3.2</td>
        <td class="purple">6.3.3</td>
        <td class="purple">6.3.4</td>
        <td class="purple">7.0.0</td>
+       <td class="purple">7.0.1</td>
      </tr>
      <tr>
        <td class="darkGrey">6.0.6 →</td>
@@ -312,12 +326,14 @@
        <td class="purple">6.2.6</td>
        <td class="purple">6.2.7</td>
        <td class="purple">6.2.8</td>
+       <td class="purple">6.2.9</td>
        <td class="purple">6.3.0</td>
        <td class="purple">6.3.1</td>
        <td class="purple">6.3.2</td>
        <td class="purple">6.3.3</td>
        <td class="purple">6.3.4</td>
        <td class="purple">7.0.0</td>
+       <td class="purple">7.0.1</td>
      </tr>
      <tr>
        <td class="darkGrey">6.0.7 →</td>
@@ -347,12 +363,14 @@
        <td class="green">6.2.6</td>
        <td class="green">6.2.7</td>
        <td class="green">6.2.8</td>
+       <td class="green">6.2.9</td>
        <td class="green">6.3.0</td>
        <td class="green">6.3.1</td>
        <td class="green">6.3.2</td>
        <td class="green">6.3.3</td>
        <td class="green">6.3.4</td>
        <td class="green">7.0.0</td>
+       <td class="green">7.0.1</td>
      </tr>
      <tr>
        <td class="darkGrey">6.0.8 →</td>
@@ -382,12 +400,14 @@
        <td class="green">6.2.6</td>
        <td class="green">6.2.7</td>
        <td class="green">6.2.8</td>
+       <td class="green">6.2.9</td>
        <td class="green">6.3.0</td>
        <td class="green">6.3.1</td>
        <td class="green">6.3.2</td>
        <td class="green">6.3.3</td>
        <td class="green">6.3.4</td>
        <td class="green">7.0.0</td>
+       <td class="green">7.0.1</td>
      </tr>
      <tr>
        <td class="darkGrey">6.0.9 →</td>
@@ -417,12 +437,14 @@
        <td class="green">6.2.6</td>
        <td class="green">6.2.7</td>
        <td class="green">6.2.8</td>
+       <td class="green">6.2.9</td>
        <td class="orange">6.3.0</td>
        <td class="green">6.3.1</td>
        <td class="green">6.3.2</td>
        <td class="green">6.3.3</td>
        <td class="green">6.3.4</td>
        <td class="green">7.0.0</td>
+       <td class="green">7.0.1</td>
      </tr>
      <tr>
        <td class="darkGrey">6.0.10 →</td>
@@ -452,12 +474,14 @@
        <td class="green">6.2.6</td>
        <td class="green">6.2.7</td>
        <td class="green">6.2.8</td>
+       <td class="green">6.2.9</td>
        <td class="orange">6.3.0</td>
        <td class="green">6.3.1</td>
        <td class="green">6.3.2</td>
        <td class="green">6.3.3</td>
        <td class="green">6.3.4</td>
        <td class="green">7.0.0</td>
+       <td class="green">7.0.1</td>
      </tr>
      <tr>
        <td class="darkGrey">6.0.11 →</td>
@@ -487,12 +511,14 @@
        <td class="green">6.2.6</td>
        <td class="green">6.2.7</td>
        <td class="green">6.2.8</td>
+       <td class="green">6.2.9</td>
        <td class="orange">6.3.0</td>
        <td class="green">6.3.1</td>
        <td class="green">6.3.2</td>
        <td class="green">6.3.3</td>
        <td class="green">6.3.4</td>
        <td class="green">7.0.0</td>
+       <td class="green">7.0.1</td>
      </tr>
      <tr>
        <td class="darkGrey">6.1.0 →</td>
@@ -522,12 +548,14 @@
        <td class="purple">6.2.6</td>
        <td class="purple">6.2.7</td>
        <td class="purple">6.2.8</td>
+       <td class="purple">6.2.9</td>
        <td class="purple">6.3.0</td>
        <td class="purple">6.3.1</td>
        <td class="purple">6.3.2</td>
        <td class="purple">6.3.3</td>
        <td class="purple">6.3.4</td>
        <td class="purple">7.0.0</td>
+       <td class="purple">7.0.1</td>
      </tr>
      <tr>
        <td class="darkGrey">6.1.1 →</td>
@@ -557,12 +585,14 @@
        <td class="purple">6.2.6</td>
        <td class="purple">6.2.7</td>
        <td class="purple">6.2.8</td>
+       <td class="purple">6.2.9</td>
        <td class="purple">6.3.0</td>
        <td class="purple">6.3.1</td>
        <td class="purple">6.3.2</td>
        <td class="purple">6.3.3</td>
        <td class="purple">6.3.4</td>
        <td class="purple">7.0.0</td>
+       <td class="purple">7.0.1</td>
      </tr>
      <tr>
        <td class="darkGrey">6.1.2 →</td>
@@ -592,12 +622,14 @@
        <td class="purple">6.2.6</td>
        <td class="purple">6.2.7</td>
        <td class="purple">6.2.8</td>
+       <td class="purple">6.2.9</td>
        <td class="purple">6.3.0</td>
        <td class="purple">6.3.1</td>
        <td class="purple">6.3.2</td>
        <td class="purple">6.3.3</td>
        <td class="purple">6.3.4</td>
        <td class="purple">7.0.0</td>
+       <td class="purple">7.0.1</td>
      </tr>
      <tr>
        <td class="darkGrey">6.2.0 →</td>
@@ -627,12 +659,14 @@
        <td class="purple">6.2.6</td>
        <td class="purple">6.2.7</td>
        <td class="purple">6.2.8</td>
+       <td class="purple">6.2.9</td>
        <td class="purple">6.3.0</td>
        <td class="purple">6.3.1</td>
        <td class="purple">6.3.2</td>
        <td class="purple">6.3.3</td>
        <td class="purple">6.3.4</td>
        <td class="purple">7.0.0</td>
+       <td class="purple">7.0.1</td>
      </tr>
      <tr>
        <td class="darkGrey">6.2.1 →</td>
@@ -662,12 +696,14 @@
        <td class="purple">6.2.6</td>
        <td class="purple">6.2.7</td>
        <td class="purple">6.2.8</td>
+       <td class="purple">6.2.9</td>
        <td class="purple">6.3.0</td>
        <td class="purple">6.3.1</td>
        <td class="purple">6.3.2</td>
        <td class="purple">6.3.3</td>
        <td class="purple">6.3.4</td>
        <td class="purple">7.0.0</td>
+       <td class="purple">7.0.1</td>
      </tr>
      <tr>
        <td class="darkGrey">6.2.2 →</td>
@@ -697,12 +733,14 @@
        <td class="green">6.2.6</td>
        <td class="green">6.2.7</td>
        <td class="green">6.2.8</td>
+       <td class="green">6.2.9</td>
        <td class="green">6.3.0</td>
        <td class="green">6.3.1</td>
        <td class="green">6.3.2</td>
        <td class="green">6.3.3</td>
        <td class="green">6.3.4</td>
        <td class="green">7.0.0</td>
+       <td class="green">7.0.1</td>
      </tr>
      <tr>
        <td class="darkGrey">6.2.3 →</td>
@@ -732,12 +770,14 @@
        <td class="green">6.2.6</td>
        <td class="green">6.2.7</td>
        <td class="green">6.2.8</td>
+       <td class="green">6.2.9</td>
        <td class="green">6.3.0</td>
        <td class="green">6.3.1</td>
        <td class="green">6.3.2</td>
        <td class="green">6.3.3</td>
        <td class="green">6.3.4</td>
        <td class="green">7.0.0</td>
+       <td class="green">7.0.1</td>
      </tr>
      <tr>
        <td class="darkGrey">6.2.4 →</td>
@@ -767,12 +807,14 @@
        <td class="green">6.2.6</td>
        <td class="green">6.2.7</td>
        <td class="green">6.2.8</td>
+       <td class="green">6.2.9</td>
        <td class="orange">6.3.0</td>
        <td class="green">6.3.1</td>
        <td class="green">6.3.2</td>
        <td class="green">6.3.3</td>
        <td class="green">6.3.4</td>
        <td class="green">7.0.0</td>
+       <td class="green">7.0.1</td>
      </tr>
      <tr>
        <td class="darkGrey">6.2.5 →</td>
@@ -802,12 +844,14 @@
        <td class="green">6.2.6</td>
        <td class="green">6.2.7</td>
        <td class="green">6.2.8</td>
+       <td class="green">6.2.9</td>
        <td class="orange">6.3.0</td>
        <td class="green">6.3.1</td>
        <td class="green">6.3.2</td>
        <td class="green">6.3.3</td>
        <td class="green">6.3.4</td>
        <td class="green">7.0.0</td>
+       <td class="green">7.0.1</td>
      </tr>
      <tr>
        <td class="darkGrey">6.2.6 →</td>
@@ -837,12 +881,14 @@
        <td class="white"></td>
        <td class="green">6.2.7</td>
        <td class="green">6.2.8</td>
+       <td class="green">6.2.9</td>
        <td class="orange">6.3.0</td>
        <td class="green">6.3.1</td>
        <td class="green">6.3.2</td>
        <td class="green">6.3.3</td>
        <td class="green">6.3.4</td>
        <td class="green">7.0.0</td>
+       <td class="green">7.0.1</td>
      </tr>
      <tr>
        <td class="darkGrey">6.2.7 →</td>
@@ -872,12 +918,14 @@
        <td class="lightGrey"></td>
        <td class="white"></td>
        <td class="green">6.2.8</td>
+       <td class="green">6.2.9</td>
        <td class="orange">6.3.0</td>
        <td class="green">6.3.1</td>
        <td class="green">6.3.2</td>
        <td class="green">6.3.3</td>
        <td class="green">6.3.4</td>
        <td class="green">7.0.0</td>
+       <td class="green">7.0.1</td>
      </tr>
      <tr>
        <td class="darkGrey">6.2.8 →</td>
@@ -907,15 +955,55 @@
        <td class="lightGrey"></td>
        <td class="lightGrey"></td>
        <td class="white"></td>
+       <td class="green">6.2.9</td>
        <td class="orange">6.3.0</td>
        <td class="green">6.3.1</td>
        <td class="green">6.3.2</td>
        <td class="green">6.3.3</td>
        <td class="green">6.3.4</td>
        <td class="green">7.0.0</td>
+       <td class="green">7.0.1</td>
+     </tr>
+     <tr>
+       <td class="darkGrey">6.2.9 →</td>
+       <td class="lightGrey"></td>
+       <td class="lightGrey"></td>
+       <td class="lightGrey"></td>
+       <td class="lightGrey"></td>
+       <td class="lightGrey"></td>
+       <td class="lightGrey"></td>
+       <td class="lightGrey"></td>
+       <td class="lightGrey"></td>
+       <td class="lightGrey"></td>
+       <td class="lightGrey"></td>
+       <td class="lightGrey"></td>
+       <td class="lightGrey"></td>
+       <td class="lightGrey"></td>
+       <td class="lightGrey"></td>
+       <td class="lightGrey"></td>
+       <td class="lightGrey"></td>
+       <td class="lightGrey"></td>
+       <td class="lightGrey"></td>
+       <td class="lightGrey"></td>
+       <td class="lightGrey"></td>
+       <td class="lightGrey"></td>
+       <td class="lightGrey"></td>
+       <td class="lightGrey"></td>
+       <td class="lightGrey"></td>
+       <td class="lightGrey"></td>
+       <td class="lightGrey"></td>
+       <td class="white"></td>
+       <td class="orange">6.3.0</td>
+       <td class="green">6.3.1</td>
+       <td class="green">6.3.2</td>
+       <td class="green">6.3.3</td>
+       <td class="green">6.3.4</td>
+       <td class="green">7.0.0</td>
+       <td class="green">7.0.1</td>
      </tr>
      <tr>
        <td class="darkGrey">6.3.0 →</td>
+       <td class="lightGrey"></td>
        <td class="lightGrey"></td>
        <td class="lightGrey"></td>
        <td class="lightGrey"></td>
@@ -948,6 +1036,7 @@
        <td class="green">6.3.3</td>
        <td class="green">6.3.4</td>
        <td class="green">7.0.0</td>
+       <td class="green">7.0.1</td>
      </tr>
      <tr>
        <td class="darkGrey">6.3.1 →</td>
@@ -978,11 +1067,13 @@
        <td class="lightGrey"></td>
        <td class="lightGrey"></td>
        <td class="lightGrey"></td>
+       <td class="lightGrey"></td>
        <td class="white"></td>
        <td class="green">6.3.2</td>
        <td class="green">6.3.3</td>
        <td class="green">6.3.4</td>
        <td class="green">7.0.0</td>
+       <td class="green">7.0.1</td>
      </tr>
      <tr>
        <td class="darkGrey">6.3.2 →</td>
@@ -1014,10 +1105,12 @@
        <td class="lightGrey"></td>
        <td class="lightGrey"></td>
        <td class="lightGrey"></td>
+       <td class="lightGrey"></td>
        <td class="white"></td>
        <td class="green">6.3.3</td>
        <td class="green">6.3.4</td>
        <td class="green">7.0.0</td>
+       <td class="green">7.0.1</td>
      </tr>
      <tr>
        <td class="darkGrey">6.3.3 →</td>
@@ -1050,9 +1143,11 @@
        <td class="lightGrey"></td>
        <td class="lightGrey"></td>
        <td class="lightGrey"></td>
+       <td class="lightGrey"></td>
        <td class="white"></td>
        <td class="green">6.3.4</td>
        <td class="green">7.0.0</td>
+       <td class="green">7.0.1</td>
      </tr>
      <tr>
        <td class="darkGrey">6.3.4 →</td>
@@ -1086,26 +1181,65 @@
        <td class="lightGrey"></td>
        <td class="lightGrey"></td>
        <td class="lightGrey"></td>
+       <td class="lightGrey"></td>
        <td class="white"></td>
        <td class="green">7.0.0</td>
+       <td class="green">7.0.1</td>
      </tr>
      <tr>
-       <td class="green" colspan="34">Rolling Upgrade Supported</td>
+       <td class="darkGrey">7.0.1 →</td>
+       <td class="lightGrey"></td>
+       <td class="lightGrey"></td>
+       <td class="lightGrey"></td>
+       <td class="lightGrey"></td>
+       <td class="lightGrey"></td>
+       <td class="lightGrey"></td>
+       <td class="lightGrey"></td>
+       <td class="lightGrey"></td>
+       <td class="lightGrey"></td>
+       <td class="lightGrey"></td>
+       <td class="lightGrey"></td>
+       <td class="lightGrey"></td>
+       <td class="lightGrey"></td>
+       <td class="lightGrey"></td>
+       <td class="lightGrey"></td>
+       <td class="lightGrey"></td>
+       <td class="lightGrey"></td>
+       <td class="lightGrey"></td>
+       <td class="lightGrey"></td>
+       <td class="lightGrey"></td>
+       <td class="lightGrey"></td>
+       <td class="lightGrey"></td>
+       <td class="lightGrey"></td>
+       <td class="lightGrey"></td>
+       <td class="lightGrey"></td>
+       <td class="lightGrey"></td>
+       <td class="lightGrey"></td>
+       <td class="lightGrey"></td>
+       <td class="lightGrey"></td>
+       <td class="lightGrey"></td>
+       <td class="lightGrey"></td>
+       <td class="lightGrey"></td>
+       <td class="white"></td>
+       <td class="green">7.0.1</td>
      </tr>
      <tr>
-       <td class="purple" colspan="34">Rolling upgrades for HA environments using embedded RabbitMQ and/or embedded Elasticsearch services are not supported</td>
+       <td class="green" colspan="36">Rolling Upgrade Supported</td>
      </tr>
      <tr>
-       <td class="blue" colspan="34">Non-Rolling Upgrade Supported</td>
+       <td class="purple" colspan="36">Rolling upgrades for HA environments using embedded RabbitMQ and/or embedded Elasticsearch services are not supported</td>
      </tr>
      <tr>
-       <td class="orange" colspan="34">Upgrade Not Recommended*</td>
+       <td class="blue" colspan="36">Non-Rolling Upgrade Supported</td>
      </tr>
      <tr>
-       <td class="red" colspan="34">Upgrade Not Supported</td>
+       <td class="orange" colspan="36">Upgrade Not Recommended*</td>
      </tr>
      <tr>
-       <td class="lightGrey" colspan="34">Downgrade Not Supported</td>
+       <td class="red" colspan="36">Upgrade Not Supported</td>
+     </tr>
+     <tr>
+       <td class="lightGrey" colspan="36">Downgrade Not Supported</td>
      </tr>
    </tbody>
   </table>
