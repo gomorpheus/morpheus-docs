@@ -87,11 +87,11 @@ Services
    * - MySQL
      - |mysqlbranch|
      - |mysqlver|
-     -
+     - |checkmark|
    * - MySQL (FIPS)
      - |mysqlbranch|
      - |mysqlverfips|
-     -
+     - |checkmark|
    * - Elasticsearch
      - |esbranch|
      - |esver|
@@ -111,11 +111,11 @@ Services
    * - OpenSSL
      -
      - |openssl|, |openssl_fips| (FIPS)
-     -
+     - |checkmark|
    * - Java
      -
      - |java|
-     -
+     - |checkmark|
    * - Java (macOS agent)
      -
      - |java-mac|
@@ -143,7 +143,7 @@ Services
      - Morpheus Linux Agent updated to |linuxagentver| 
    * - Morpheus Windows Agent
      - |winagentver|
-     - Morpheus Windows Agent updated to |winagentver|
+     - No changes
    * - Morpheus macOS Agent
      - |macagentver|
      - No changes
