@@ -23,7 +23,7 @@ rst_prolog = """
 .. |rmqbranch| replace:: v3.5-3.12
 .. |rmqver| replace:: v3.12.9
 .. |mysqlbranch| replace:: v5.7, v8.0
-.. |mysqlver| replace:: v8.0.35
+.. |mysqlver| replace:: v8.0.36
 .. |mysqlverfips| replace:: v8.0.35
 .. |esbranch| replace:: v8.9+
 .. |esver| replace:: v8.11.2
@@ -33,7 +33,7 @@ rst_prolog = """
 .. |linuxagentver| replace:: v2.5.4
 .. |macagentver| replace:: v2.4.0
 .. |winagentver| replace:: v2.5.0.0
-.. |java| replace:: 11.0.20+8
+.. |java| replace:: 11.0.22
 .. |java-mac| replace:: 11.0.14+9
 .. |openjdk-jre| replace:: 11.0.20+8
 .. |openjdk-elasticsearch| replace::  17.0.5+8
