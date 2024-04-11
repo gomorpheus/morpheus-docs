@@ -10,6 +10,8 @@ Within |morpheus| is a wide array of role based access control capabilities. The
 
 There are several handy tricks for creating new roles within |morpheus| and users can be assigned more than one role. When a user is assigned more than one role, permissions are granted by the role with the highest level of scope access. This allows roles to be built with small subsets of features and combined to grant different individuals relevant permission control. With resource permissions (that is, all types of permissions other than Feature permissions), a default access can be given as opposed to a specific (Full or None) permission for any resource. A specific permission will always supersede a default permission regardless of whether it's more permissive or more restrictive. In other cases (default vs default OR specific vs specific) the more permissive access will be given.
 
+It's also important to note that built-in Roles, such as the System Admin "Superuser" Role carry no special prominence. For resource permissions, the System Admin user has defaults set to Full in each section. Thus, pairing the System Admin Role with another Role that may include specific line item permissions for various resource categories may cause your System Admin users to take on a reduced permission set.
+
 .. NOTE:: Feature access control not only applies to the |morpheus| UI but also applies to the public developer API. It is sometimes necessary to logout and back in for changes to a users feature access level to be respected.
 
 Role Types
