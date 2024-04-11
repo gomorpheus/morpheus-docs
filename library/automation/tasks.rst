@@ -59,6 +59,15 @@ Execute Options
 - **Retry Delay:** The length of time (in seconds) |morpheus| will wait to retry the Task
 - **Allow Custom Config:** When marked, a text area is provided at Task execution time to allow the user to pass extra variables or specify extra configuration. See the next section for an example.
 
+Source Options
+``````````````
+
+Task configuration code may be entered in a number of ways depending on the Task type. Changing the SOURCE type will often update the available fields in the Task modal to accommodate the selected sourcing. Not every Task type supports every sourcing type listed here.
+
+- **Local:** The Task configuration code is written directly in |morpheus| in a large text area. |morpheus| includes syntax highlighting for supported Task languages for easier debugging and script writing
+- **Repository:** Source the Task configuration code from an integrated Git or Github repository. This requires a pre-existing integration with a Github or other Git-based repository. See the `relevant integration guides <https://docs.morpheusdata.com/en/latest/integration_guides/Deployments/deployment.html>`_ for full details on creating such an integration. Specify the path to the appropriate file through the WORKING PATH field. The appropriate branch may also be specified (if a branch other than 'main' is required) in the BRANCH/TAG field. To reference a tag from this field, use the following syntax: ``refs/tags/<tag-name-here>``. Unless otherwise specified, Task config is sourced fresh from the repository each time the Task is invoked which ensures the latest code is always used
+- **URL:** For Task configuration that can be source via an outside URL, specify the address in the URL field
+
 Allow Custom Config
 ```````````````````
 
