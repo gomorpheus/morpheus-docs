@@ -52,14 +52,13 @@ A |morpheus|-type cloud is a generic Cloud construct that isn't designed to hook
 Onboard an Existing KVM Cluster
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-With the Cloud created, we can add existing KVM hosts from the Cloud detail page (|InfClo| > Selected Cloud). From the Hosts tab, open the ADD HYPERVISOR menu and select "Brownfield Libvirt KVM Host".
+Begin onboarding your KVM cluster from the Clusters list page (|InfClu|). Click :guilabel:`+ ADD CLUSTER` and select the option for "KVM CLUSTER". From the GROUP tab, select a Group containing the Cloud you wish to use, then click :guilabel:`NEXT`. From the NAME tab, select at least the Cloud and provide a name for the Cluster. The other options on this tab are optional and are for categorization and labeling purposes. After setting the name and Cloud, click :guilabel:`NEXT`
 
-On the first page of the Create Host modal, enter a name for the onboarded KVM host in |morpheus|. Click :guilabel:`NEXT`. On the following page, enter the IP address for your host in addition to an SSH username and password for the host box. It's recommended that you also copy the revealed SSH public key into your authorized_hosts file. Click :guilabel:`NEXT`.
+On the CONFIGURE tab, there is currently only one LAYOUT option, which is to bring in your brownfield external KVM Cluster. Provide a name and IP address for each host in the cluster. The name here is simply a friendly name for display in |morpheus| but often the hostname works well here. Use the plus (+) button to add as many additional host fields as you need. Moving on, you can update the default SSH port from the default of 22 if needed in your environment. Next, provide an SSH username and password, use a regular user with ``sudo`` access. Then, select a pre-existing SSH key stored in |morpheus|. For the CPU TYPE, currently only ``x86_64`` is supported and is pre-selected by default. Finally, for CPU model, we surface the entire database of model configurations from ``libvirt``. If unsure or if you don’t know of a specific reason to choose one or the other, select ``host-model`` which is the default option. When finished, click :guilabel:`NEXT` and :guilabel:`COMPLETE`.
 
-.. image:: /images/integration_guides/clouds/kvm/onboardHost.png
-  :width: 80%
+.. image:: /images/infrastructure/clusters/kvmConfig.png
 
-On the Automation tab, select any relevant automation workflows and complete the modal. The new KVM host will now be listed on the host tab along with any other KVM hosts (if any) you may have associated with this Cloud. If the Cloud is configured to automatically onboard existing instances, any VMs you may have running will be automatically discovered by |morpheus| with each Cloud sync (approximately every five minutes by default). For VMs, you will see these listed on the VMs tab of the Cloud detail page and they will also be listed among all other VMs that |morpheus| is aware of on the VMs list page at |InfComVir|.
+The new KVM Cluster will join the list of Clusters that may already exist on your Clusters list page. From here you can drill into the Cluster detail page for monitoring and day-two actions. Continue on to the next section for details on provisioning new workloads to your KVM Cluster.
 
 Provisioning to KVM
 ^^^^^^^^^^^^^^^^^^^
