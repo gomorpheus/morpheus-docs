@@ -4,7 +4,7 @@ Ansible
 Overview
 ^^^^^^^^
 
-Ansible is a configuration management engine that is rapidly growing in popularity in the IT and DevOPS community. While it lacks some of the benefits at scale that solutions such as Salt, Chef, or Puppet offer. It is very easy to get started and allows engineers to develop tasks in a simplistic markup language known as YAML. |morpheus| integrates with an existing repository of playbooks as the master in a master-slave Ansible architecture.
+Ansible is a configuration management engine that is rapidly growing in popularity in the IT and DevOPS community. While it lacks some of the benefits at scale that solutions such as Chef or Puppet offer. It is very easy to get started and allows engineers to develop tasks in a simplistic markup language known as YAML. |morpheus| integrates with an existing repository of playbooks as the master in a master-slave Ansible architecture.
 
 |morpheus| not only supports Ansible but greatly enhances Ansible to do things that it could not do in its native form. For example, Ansible can now be configured to run over the |morpheus| agent communication bus. This allows playbooks to be run against instances where SSH/WinRM access may not be feasible due to networking restrictions or other firewall constraints. Instead it can run over the |morpheus| Agent which only requires port 443 access back to the |morpheus| appliance URL.
 
@@ -191,7 +191,7 @@ Using Ansible over the |morpheus| Agent Command Bus
 
 In many environments, there may be security restrictions on utilizing SSH or WinRM to run playbooks from an Ansible server on the appliance to a target machine. This could be due to being a customer network (in the environment of an MSP ), or various security restrictions put in place by tighter industries (i.e. Government, Medical, Finance).
 
-Ansible can get one in trouble in a hurry. It is limited in scalability due to its fundamental design decisions that seem to bypass concepts core to all other configuration management frameworks (i.e. SaltStack, Chef, and Puppet). Because of its lack of an agent, the Ansible execution binary itself has to handle all the load and logic of executing playbooks on all the machines in the inventory of an Ansible project. This differs from other tools where the workload is distributed across the agents of each vm. Because of this (reaching out) approach, Ansible is very easy to get started with, but can be quite a bit slower as well as harder to scale up. However, |morpheus| offers some solutions to help mitigate these issues and increase scalability while, at the same time improving security.
+Ansible can get one in trouble in a hurry. It is limited in scalability due to its fundamental design decisions that seem to bypass concepts core to all other configuration management frameworks (i.e. Chef and Puppet). Because of its lack of an agent, the Ansible execution binary itself has to handle all the load and logic of executing playbooks on all the machines in the inventory of an Ansible project. This differs from other tools where the workload is distributed across the agents of each vm. Because of this (reaching out) approach, Ansible is very easy to get started with, but can be quite a bit slower as well as harder to scale up. However, |morpheus| offers some solutions to help mitigate these issues and increase scalability while, at the same time improving security.
 
 How does the |morpheus| Agent Command Bus Work?
 ```````````````````````````````````````````````

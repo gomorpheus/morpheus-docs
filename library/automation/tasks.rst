@@ -29,7 +29,7 @@ Tasks
 Overview
 ^^^^^^^^
 
-There are many Task Types available, including scripts added directly, scripts and templates from the Library section, recipes, playbooks, salt states, puppet agent installs, and http (api) calls. Tasks are primarily created for use in Workflows, but a single Task can be executed on an existing instance via ``Actions > Run Task``.
+There are many Task Types available, including scripts added directly, scripts and templates from the Library section, recipes, playbooks, puppet agent installs, and http (api) calls. Tasks are primarily created for use in Workflows, but a single Task can be executed on an existing instance via ``Actions > Run Task``.
 
 Role Permissions
 ````````````````

@@ -11,7 +11,6 @@ To add an integration select :guilabel:`+ ADD` and choose your integration. Many
 - Chef
 - Puppet
 - Ansible
-- Salt Masters
 - Ansible Tower
 - vRealize Orchestrator
 - Microsoft DNS

@@ -33,7 +33,7 @@ DNS INTEGRATION
 SERVICE REGISTRY
   Services for instances provisioned in this cloud will be added to selected Service Registry integration.
 CONFIG MANAGEMENT
-  Select a Chef, Salt, Ansible or Puppet integration to be used with this Cloud.
+  Select a Chef, Ansible or Puppet integration to be used with this Cloud.
 CMDB
   Select CMDB Integration to automatically update selected CMDB.
 CMDB DISCOVERY

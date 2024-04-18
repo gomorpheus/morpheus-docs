@@ -7,6 +7,5 @@ Automation Integrations
   AnsibleTower.rst
   chef.rst
   puppet.rst
-  salt.rst
   terraform.rst
   vro.rst

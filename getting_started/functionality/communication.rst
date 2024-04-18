@@ -319,12 +319,6 @@ The following table contains communication information, including frequency and 
     - 10 Minutes
     - No
   * - Automation Integration
-    - Server Pull
-    - Salt
-    - Data synchronization
-    - 10 Minutes
-    - No
-  * - Automation Integration
     -
     - Terraform
     -

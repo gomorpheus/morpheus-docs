@@ -15,7 +15,6 @@ The integrations section within |morpheus| Library lists existing integrations a
    - Ansible Tower
    - Chef
    - Puppet
-   - Salt
 
   .. note:: Automation integrations can be added and managed in |AdmInt| as well. Adding and editing Integrations in |LibInt| and |AdmInt| are the same dataset and additions and updates are reflected in both sections.
 
