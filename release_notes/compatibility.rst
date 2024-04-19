@@ -100,7 +100,7 @@ Services
    * - Tomcat
      - 
      - |tcver|
-     - |checkmark|
+     - 
    * - Nginx
      -
      - |nginxver|
