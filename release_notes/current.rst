@@ -13,6 +13,14 @@
 Release Dates
 
 - |morphver| |releasedate|
+- 7.0.1-2 Apr 22 2024
+
+7.0.1-2 Updates
+===============
+
+:catalog: -  Fixed a 7.0.1-1 regression with Form Variables not appearing on the right side when using Input form types
+          -  Fixed a 7.0.1-1 regression with incorrectly locked fields when editing a catalog item
+          - Fixed a 7.0.1-1 regression with the option to enable/disable auto injection of Form Variables
 
 New Features
 ============
