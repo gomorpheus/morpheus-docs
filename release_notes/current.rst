@@ -56,7 +56,6 @@ Fixes
             - Fixed an issue that could potentially allow users to run Tasks against workloads in different Tenants by manipulating POST requests :superscript:`7.0.1`
             - HTML injection is no longer possible via the "Label" field when adding links (|AdmSetWhi|) to the global support menu :superscript:`7.0.1`
 :VMware: - Cloning vCenter VMs from |morpheus| no longer fails under specific scenarios where the VM was built from a synced template which was later removed from inventory in vCenter :superscript:`7.0.1`
-          - Fixed issue where using the "Order Again" button in Catalog would provision the new VM into the root vCenter folder rather than the folder selected for the original VM ordered :superscript:`7.0.1`
           - Fixed issues related to snapshot reverting when disks had been added after the snapshot was taken :superscript:`7.0.1`
           - Fixed scenarios where address information did not sync due to MAC addresses not matching due to letter casing :superscript:`7.0.1`
           - Fixed successful reconfigures leaving workloads in a "pending" status under certain conditions :superscript:`7.0.1`
