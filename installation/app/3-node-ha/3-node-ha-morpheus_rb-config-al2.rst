@@ -23,7 +23,6 @@
          mysql['morpheus_db'] = 'morpheus'
          mysql['morpheus_db_user'] = 'morpheusDbUser'
          mysql['morpheus_password'] = 'morpheusDbUserPassword'
-         mysql['use_tls'] = true
          user['uid'] = 899
          user['gid'] = 899
          # at the time of this writing, local_user is not valid as an option so the full entry is needed
