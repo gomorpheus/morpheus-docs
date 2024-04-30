@@ -37,5 +37,6 @@ At minimum, it's required to configure the following to add the new cloud:
 You'll know the API URL and credentials have been entered correctly when the PROJECTS dropdown becomes populated. You may choose to scope Nutanix Prism Central Clouds to a specific project or scope the Cloud to all Projects. Click :guilabel:`NEXT` and select a Group for the Cloud or create a new Group. Click :guilabel:`NEXT` to reach the review screen and then click :guilabel:`COMPLETE`.
 
 .. image:: /images/clouds/npc/configureCloud.png
+  :width: 50%
 
 After completing the wizard, |morpheus| will immediately begin to add the new Cloud and perform the first Cloud sync. Within a short time, existing workloads will be discovered and onboarded into |morpheus| UI (if you've chosen to discover existing workloads). The Cloud is now ready to be used as a provisioning target or for day-two operations.
