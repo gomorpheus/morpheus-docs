@@ -9,6 +9,7 @@ When installing and upgrading to |morpheus| |morphver|, refer to the following t
 Breaking Changes
 ================
 
+- All Versions: Amazon Aurora RDS Compatibility: For customers who use Amazon Aurora RDS as the |morpheus| database, Aurora RDS MySQL version 3.06.0 is not compatible with any currently released |morpheus| versions. v3.06.0 introduced new reserved keywords which cause syntax errors with existing database fields. Do not upgrade your Amazon Aurora RDS to 3.06.0 until a compatible version of |morpheus| is available.
 - 6.2.2, 6.0.7 contain embedded MySQL v8 upgrade when upgrading from  v6.0.0 - v6.0.6 or 6.1.0 - 6.2.1. BACKUP YOUR DATABASE PRIOR TO UPGRADE when using embedded MySQL (all-in-one appliances)
 - 6.2.2, 6.0.7 Minimum v6.x required to upgrade for environments using embedded RabbitMQ. Environments running 5.5.x or earlier using embedded RabbitMQ must upgrade to v6.0.0 - v6.0.6, or 6.1.0 - 6.2.1 prior to upgrading to |morphver|
 - 6.2.2, 6.0.7 Rolling upgrades for HA environments using embedded RabbitMQ and/or embedded Elasticsearch services are not supported when upgrading from  v6.0.0 - v6.0.6 or 6.1.0 - 6.2.1
