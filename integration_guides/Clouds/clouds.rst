@@ -23,6 +23,7 @@ Clouds
   oracle/oraclevm.rst
   oraclecloud/oracleCloud.rst
   OTC/otc.rst
+  prismCentral/prismCentral.rst
   scvmm/scvmm.rst
   softlayer/softlayer.rst
   ucs_manager/ucs_manager.rst
