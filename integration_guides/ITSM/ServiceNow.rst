@@ -324,3 +324,5 @@ Once the ServiceNow plugin is installed and configured, Service Catalog items ca
 #. Exposed |morpheus| Service Catalog items are visible here for ServiceNow users with sufficient role permissions
 
 .. image:: /images/integration_guides/itsm/servicenow/addCatalogItemNew.png
+
+.. NOTE:: When exposing an Operational Workflow-based Catalog Item, ensure the CONTEXT configuration on the Catalog Item is set to "none" or the Catalog Item will not be exposed to ServiceNow.
