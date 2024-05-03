@@ -86,7 +86,7 @@ User Creation
 User Group Creation
   Forces User Creation of members in the selected User Group during Provisioning.
 Workflow
-  Forces execution of selected Workflow for Instance Provisioning.
+  Workloads provisioned within the scope of the Policy will have the indicated Workflow applied and the Tasks executed within the proper phase of the Instance lifecycle
 
 
 Creating Policies
