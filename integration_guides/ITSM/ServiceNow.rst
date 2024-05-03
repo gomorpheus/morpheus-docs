@@ -8,7 +8,7 @@ Overview
 
 IT Service Management (ITSM) is an important area of focus for many organizations. Organizations invested in ServiceNow as an ITSM provider will find that |morpheus| integrates tightly with some of the most-used features. After integrating ServiceNow with |morpheus|, both environments can be used interchangeably and the results are synced to both places. This guide walks administrators through the process of integrating ServiceNow with |morpheus| and how |morpheus| can be used to effectively leverage the best of ServiceNow.
 
-.. TIP:: The ServiceNow integration guide is also available as a `PDF download <https://morpheusdata.com/wp-content/uploads/content/ServiceNow-Cloud-Management-Morpheus-CMP-1.pdf>`_, which includes additional example use cases and screenshots.
+.. TIP:: The ServiceNow integration guide is also available as a `PDF download <https://www2.morpheusdata.com/Whitepaper-ServiceNow>`_, which includes additional example use cases and screenshots.
 
 .. IMPORTANT:: Only one |morpheus| appliance should be integrated with a single ServiceNow instance at any given time. Integrating multiple appliances with the same ServiceNow instance can cause issues with sharing |morpheus| Catalog Items through to ServiceNow for ordering from the ServiceNow console. Additional details on Catalog Item sharing are included in this guide.
 
