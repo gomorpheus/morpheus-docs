@@ -48,7 +48,22 @@ API PROXY
 INSTALL AGENT
   Enable to have Agent Installation on by default for all provisioning into this Cloud. Disable for Agent Installation to be off by default for all provisioning into this Cloud.
 
-**Provisioning Options**
+**CUSTOM LOGOS**
+
+When integrating a Cloud, it will appear by default throughout the UI with its standard logo (VMware logo for VMware Clouds, etc.). If desired, you may upload a custom logo that should appear instead. This might be useful for MSPs which might not want to reveal the Cloud type underlying its services. A dark mode version of the logo may also be uploaded if the standard logo doesn't look right against the |morpheus| dark mode theme. Checking USE DEFAULT CLOUD LOGOS allows the user to return to the standard logo for the Cloud type without deleting the custom uploaded logo.
+
+**INVENTORY OPTIONS**
+
+Inventory options allow you to set a default active or inactive state for certain discovered resources. The list of available resources to configure will vary based on the Cloud type and its supported resources. By default, all possible resources for the Cloud type will be discovered in an active state. Uncheck the box for some or all resources to discover them in an inactive state. The list of potential resources that may appear include:
+
+- Service Plans
+- Resource Pools
+- Networks
+- Security Groups
+- Datastores
+- Folders
+
+**Provisioning Command**
 
 PROXY
   Set a proxy for inbound communication from Instances to the |morpheus| Appliance. Proxies can be added in the `Infrastructure > Networks > Proxies` tab.
