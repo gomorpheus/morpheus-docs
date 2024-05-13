@@ -11,8 +11,9 @@ Creating A Budget
       #. **Name**
       #. **Description**
       #. **Scope:** Here you can choose which construct this budget is tied to (Account, Tenant, Cloud, Group, or User)
-      #. **Period**: Currently "Year" is the only option
+      #. **Period:** Currently "Year" is the only option
       #. **Year:** Select a year to set budgets for future years. Alternatively, select "custom" to create a multi-year budget or input a custom fiscal year if required by your organization
+      #. **Forecast Model:** Optionally apply a forecast model to the Budget. When applied, forecasted amounts for each budget interval will be computed and graphical trend lines will be shown based on the model computation
       #. **Interval:** Choose Month, Quarter, Year then fill in the budgeted amount for that interval (for quarter and year interval Budgets the entered amount is evenly split across the months in the given interval)
 
   #. Click :guilabel:`SAVE CHANGES`
