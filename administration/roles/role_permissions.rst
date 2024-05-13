@@ -16,7 +16,7 @@ Blueprints
 Report Types
   Controls User access for each report type in the Reports section (|OpeRep|). The user must also have Operations: Reports access granted under the Feature permissions tab.
 Personas
-  Controls User access to |morpheus| Personas, at the time of this writing Users may be given access to the Standard (full |morpheus| experience), Virtual Desktop (VDI), or Service Catalog Personas
+  Controls User access to |morpheus| Personas, at the time of this writing Users may be given access to the Standard (full |morpheus| UI experience), API (no GUI access, API-only for service accounts), Virtual Desktop (VDI), or Service Catalog Personas (simplified easy ordering experience)
 Catalog Item Types
   Controls User access to Catalog Item types within the Service Catalog Persona. Only Catalog Items created in the current Tenant or those created in the Master Tenant and shared with the current Tenant will be available.
 Cluster Types
@@ -41,7 +41,7 @@ Blueprints
 Report Types
   Controls Tenant access for each report type in the Reports section (|OpeRep|). The Tenant must also have Operations: Reports access granted under the Feature permissions tab.
 Personas
-  Controls Tenant access to |morpheus| Personas, at the time of this writing Users may be given access to the Standard (full |morpheus| experience) or Service Catalog Personas
+  Controls User access to |morpheus| Personas, at the time of this writing Users may be given access to the Standard (full |morpheus| UI experience), API (no GUI access, API-only for service accounts), Virtual Desktop (VDI), or Service Catalog Personas (simplified easy ordering experience)
 Catalog Item Types
   Controls Tenant access to Catalog Item types within the Service Catalog Persona. Only Catalog Items created in the current Tenant or those created in the Master Tenant and shared with the current Tenant will be available.
 Cluster Types

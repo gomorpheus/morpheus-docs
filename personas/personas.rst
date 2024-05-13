@@ -2,7 +2,7 @@
 Personas
 ********
 
-Personas are alternate views in |morpheus| UI. A user's access to the various Personas is controlled by Role permissions. At present, there are three Persona types: Standard, Service Catalog, and Virtual Desktop. The Standard Persona is the typical default view. The Service Catalog Persona is a simplified view where users are presented with pre-configured Instance types, Blueprints, and Workflows to choose from based on their Role. The Virtual Desktop Persona allows administrators to grant user access to remote workstations and applications.
+Personas are alternate views in |morpheus| UI. A user's access to the various Personas is controlled by Role permissions. At present, there are four Persona types: Standard, API, Service Catalog, and Virtual Desktop. The Standard Persona is the typical full |morpheus| UI experience. The Service Catalog Persona is a simplified view where users are presented with pre-configured Instance types, Blueprints, and Workflows to choose from based on their Role. The Virtual Desktop Persona allows administrators to grant user access to remote workstations and applications. The API persona allows almost no access to |morpheus| UI, it offers API access only for service accounts.
 
 The rest of this section goes through the use of the Service Catalog Persona and Virtual Desktop Persona in greater detail, including how administrators can curate catalog item and virtual desktop selections for their users.
 
@@ -11,7 +11,7 @@ The rest of this section goes through the use of the Service Catalog Persona and
 
       *
 
-Persona Access 
+Persona Access
 ==============
 
 Configuring Persona Access
