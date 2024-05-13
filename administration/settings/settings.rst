@@ -27,6 +27,11 @@ Whitelabel
 
 .. include:: whitelabel.rst
 
+Email Templates
+---------------
+
+.. include:: emailTemplates.rst
+
 Provisioning
 ------------
 
