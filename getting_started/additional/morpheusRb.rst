@@ -80,6 +80,7 @@ Morpheus allows for additional advanced customizations for system managed servic
   nginx['loading_pages']['timout_page_title'] = 'Morpheus timeout, please try again...'
   nginx['log_format_name'] = 'custom'
   nginx['log_format'] = '\'$remote_addr - $remote_user [$time_local] "$request" \' \'$status $body_bytes_sent "$http_referer" \' \'"$http_user_agent" "$http_x_forwarded_for" \' \'rt=$request_time uct="$upstream_connect_time" uht="$upstream_header_time" urt="$upstream_response_time"\';'
+  nginx['listen_ipv6'] = true #### IPv6 will be added to ``morpheus.conf`` and ``morpheus-ssl.conf`` if this configuration is added
   nginx['ssl_ciphers'] = "ECDHE-RSA-AES256-GCM-SHA384:ECDHE-RSA-AES128-GCM-SHA256:DHE-RSA-AES256-GCM-SHA384:DHE-RSA-AES128-GCM-SHA256:ECDHE-RSA-AES256-SHA384:ECDHE-RSA-AES128-SHA256:ECDHE-RSA-AES256-SHA:ECDHE-RSA-AES128-SHA:DHE-RSA-AES256-SHA256:DHE-RSA-AES128-SHA256:DHE-RSA-AES256-SHA:DHE-RSA-AES128-SHA:ECDHE-RSA-DES-CBC3-SHA:EDH-RSA-DES-CBC3-SHA:AES256-GCM-SHA384:AES128-GCM-SHA256:AES256-SHA256:AES128-SHA256:AES256-SHA:AES128-SHA:DES-CBC3-SHA:HIGH:!aNULL:!eNULL:!EXPORT:!DES:!MD5:!PSK:!RC4"
   nginx['ssl_company_name'] = "Morpheus, LLC"
   nginx['ssl_country_name'] = "US"
