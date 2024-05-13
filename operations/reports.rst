@@ -35,7 +35,6 @@ Report Types
   - Cloud Cost
   - Group Cost
   - Instance Cost
-  - Invoice Details
   - Tenant Cost
   - Time Series Cost
 
