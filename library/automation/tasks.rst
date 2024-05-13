@@ -398,6 +398,7 @@ Task Configuration
     - **NAME:** Name of the Task
     - **CODE:** Unique code name for API, CLI, and variable references
     - **RESULT TYPE:** Single Value, Key/Value Pairs, or JSON
+    - **VERSION:** Select the version of Powershell this Task should run in. Powershell 5 is the default selection, Powershell 6 or 7 must be installed on the target to select those versions
     - **ELEVATED SHELL:** Run script with administrator privileges
     - **IP ADDRESS:** IP address of the PowerShell Task target
     - **PORT:** SSH port for PowerShell Task target (5985 default)
