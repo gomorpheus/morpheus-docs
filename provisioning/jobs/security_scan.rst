@@ -21,6 +21,7 @@ Add a new Security Scan Job
 #. Select a security package, see the previous section to add a new one
 #. Enter your Scan Checklist (XML document) and Security Profile (XCCDF document), more information on these can be found in the SCAP documentation linked above
 #. Set a schedule or leave as Manual to only run this scan on-demand (new execution schedules can be created in |LibAut| if needed)
+#. Set a specific power state target if desired. This indicates whether the Job should run against workloads having any power state, just an "on" power state, or just an "off" power state
 #. Set the context, can be Instance or Server. Select as many Instances or Servers as needed for this scanning run
 #. Click :guilabel:`NEXT`
 #. After final review, click :guilabel:`COMPLETE`

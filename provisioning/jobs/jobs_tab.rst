@@ -23,7 +23,7 @@ Creating Jobs
 
 .. note:: Jobs require existing Tasks or Workflows. See the appropriate section of |morpheus| docs for more on creating `Tasks <https://docs.morpheusdata.com/en/latest/provisioning/automation/automation.html#tasks>`_ and `Workflows <https://docs.morpheusdata.com/en/latest/provisioning/automation/automation.html#workflows>`_.
 
-To create a new job:
+To create a new Job:
 
 #. Navigate to |ProJob|
 #. Select :guilabel:`+ ADD`
@@ -49,6 +49,8 @@ To create a new job:
 
          .. note:: |morpheus| provides two default execution schedules, ``Daily at Midnight`` and ``Weekly on Sunday at Midnight``. Any additional schedules were created by a User. Additional schedules can be added in |LibAutExe|
 
+      **INCLUDE POWER STATE:** Select All, On, or Off. The default configuration is "All" and indicates the Job will run on all relevant Instances or servers at the proper schedule time. Selecting "On" or "Off" indicates the Job should only run against targets specifically having either an on or off power state
+
       **CONTEXT TYPE:** Server or Instance
 
       **CONTEXT SERVER/INSTANCE:** Select the Server or Instance you wish to target with the Job
@@ -66,6 +68,8 @@ To create a new job:
           Schedule: Select a configured Execution Schedule. Execution Schedules are created in |LibAutExe|
 
           .. note:: |morpheus| provides two default execution schedules, ``Daily at Midnight`` and ``Weekly on Sunday at Midnight``. Any additional schedules were created by a User. Additional schedules can be added in |LibAutExe|
+
+      **INCLUDE POWER STATE:** Select All, On, or Off. The default configuration is "All" and indicates the Job will run on all relevant Instances or servers at the proper schedule time. Selecting "On" or "Off" indicates the Job should only run against targets specifically having either an on or off power state
 
       **CONTEXT TYPE:** Server or Instance
 
