@@ -13,7 +13,7 @@ rst_prolog = """
 .. |releasetype| replace:: LTS
 .. |morphAnnualVer| replace:: v7
 .. |morphbranch| replace:: v7.0
-.. |morphver| replace:: v7.0.1
+.. |morphver| replace:: v7.0.2
 .. |minUpgradeVer| replace:: v6.0.0
 .. |minRollingUpgradeVer| replace:: v6.0.7
 .. |nonRollingUpgradeVer| replace:: v6.0.6
