@@ -95,6 +95,7 @@ Morpheus allows for additional advanced customizations for system managed servic
   nginx['workers'] = integer calculated from number of cpus
   nginx['ssl_access_ping_log'] = false #### false by default, when true GET requests to the ``/ping`` endpoint are logged in the ``/var/log/morpheus/nginx/morpheus-ssl-access.log`` file on the appliance
   nginx['access_ping_log'] = false #### false by default, when true GET requests to the ``/ping`` endpoint are logged in the ``/var/log/morpheus/nginx/morpheus-ssl-access.log`` file on the appliance
+  nginx['listen_ipv6'] = nil
 
   rabbitmq['enable'] = true
   rabbitmq['host'] = '127.0.0.1'
