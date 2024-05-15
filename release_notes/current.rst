@@ -99,4 +99,4 @@ Fixes
 Appliance & Agent Updates
 =========================
 
-:Appliance: - Added a configuration in ``morpheus.rb`` to enable the ipv6 listener for Nginx with ``['nginx']['listen_ipv6'] = "on"`` :superscript:`7.0.2`
+:Appliance: - Added a configuration in ``morpheus.rb`` to enable the ipv6 listener for Nginx with ``nginx['listen_ipv6'] = true`` (note: IPv6 will be added to ``morpheus.conf`` and ``morpheus-ssl.conf`` listeners if any value is set in morpheus.rb other than ``nil``, including "off" or false) :superscript:`7.0.2`
