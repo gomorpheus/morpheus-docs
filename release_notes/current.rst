@@ -10,9 +10,6 @@
 
 .. NOTE:: Items appended with :superscript:`6.x.x` are also included in that version
 
-.. important:: Amazon Aurora RDS Compatibility: For customers who use Amazon Aurora RDS as the |morpheus| database, Aurora RDS MySQL version 3.06.0 is not compatible with any currently released |morpheus| versions. v3.06.0 introduced new reserved keywords which cause syntax errors with existing database fields. Do not upgrade your Amazon Aurora RDS to 3.06.0 until a compatible version of |morpheus| is available.
-
-
 Release Dates
 
 - |morphver| |releasedate|
@@ -114,3 +111,4 @@ Appliance & Agent Updates
 =========================
 
 :Appliance: - Added a configuration in ``morpheus.rb`` to enable the ipv6 listener for Nginx with ``nginx['listen_ipv6'] = true`` (note: IPv6 will be added to ``morpheus.conf`` and ``morpheus-ssl.conf`` listeners if any value is set in morpheus.rb other than ``nil``, including "off" or false) :superscript:`6.2.10`
+:Database: - External mysql service: Added support for Appliance using Amazon Aurora RDS MySQL version 3.06.0+ :superscript:`6.2.10`
