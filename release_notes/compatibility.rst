@@ -84,11 +84,11 @@ Services
    * - MySQL
      - |mysqlbranch|
      - |mysqlver|
-     - |checkmark|
+     - 
    * - MySQL (FIPS)
      - |mysqlbranch|
      - |mysqlverfips|
-     - |checkmark|
+     - 
    * - Elasticsearch
      - |esbranch|
      - |esver|
@@ -100,7 +100,7 @@ Services
    * - Tomcat
      - 
      - |tcver|
-     - 
+     - |checkmark|
    * - Nginx
      -
      - |nginxver|
@@ -108,11 +108,11 @@ Services
    * - OpenSSL
      -
      - |openssl|, |openssl_fips| (FIPS)
-     - |checkmark|
+     - 
    * - Java
      -
      - |java|
-     - |checkmark|
+     - 
    * - Java (macOS agent)
      -
      - |java-mac|
@@ -134,10 +134,10 @@ Services
      - |morphver| changes from |previousMorphVer|
    * - Morpheus Node and VM Node Packages
      - |nodePackageVer|
-     - Node and VM Node Packages update to |nodePackageVer| with |linuxagentver| Linux Agent
+     - No changes
    * - Morpheus Linux Agent
      - |linuxagentver| 
-     - Morpheus Linux Agent updated to |linuxagentver| 
+     - No changes
    * - Morpheus Windows Agent
      - |winagentver|
      - No changes
