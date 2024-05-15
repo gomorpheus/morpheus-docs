@@ -67,7 +67,7 @@ Add a License Key
 
 In order to provision anything in |morpheus|, a |morpheus| License Key must be applied.
 
-If you do not already have a license key, one may be requested from https://www.morpheushub.com or from your |morpheus| representative.
+If you do not already have a license key, one may be requested from https://app.morpheushub.com or from your |morpheus| representative.
 
 In the |AdmSet| section, select the LICENSE tab, paste your License Key and click :guilabel:`UPDATE`
 
@@ -75,4 +75,4 @@ In the |AdmSet| section, select the LICENSE tab, paste your License Key and clic
 
 When the license is accepted, your license details will populate in the Current License section.
 
-If you receive an error message and your license is not accepted, please check it was copied in full and then contact your |morpheus| representative. You can also verify the License Key and expiration at https://www.morpheushub.com.
+If you receive an error message and your license is not accepted, please check it was copied in full and then contact your |morpheus| representative. You can also verify the License Key and expiration at https://app.morpheushub.com.

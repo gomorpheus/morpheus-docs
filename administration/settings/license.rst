@@ -36,4 +36,4 @@ If valid, the new License will be applied.
 Request new License
 ^^^^^^^^^^^^^^^^^^^
 
-Licenses can be requested at https://morpheushub.com, or by contacting support@ or sales@ morpheusdata.com.
+Licenses can be requested at https://app.morpheushub.com, or by contacting support@ or sales@ morpheusdata.com.
