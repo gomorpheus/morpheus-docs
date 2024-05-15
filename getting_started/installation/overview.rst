@@ -14,7 +14,7 @@ Morpheus can optionally be configured to use external Database, Messaging, and/o
 Install Packages
 ^^^^^^^^^^^^^^^^
 
-|morpheus| Release Package urls can be obtained from `https://morpheushub.com <https://morpheushub.com>`_
+|morpheus| Release Package urls can be obtained from `https://app.morpheushub.com <https://app.morpheushub.com>`_
 
 Configuration Options
 ^^^^^^^^^^^^^^^^^^^^^
