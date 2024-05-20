@@ -7,7 +7,7 @@ On accessing the Email Templates tab, users will see a list of all email templat
 
 .. IMPORTANT:: Email templates apply in order of specificity. Tenant-specific templates apply over custom global templates which apply over system-default templates.
 
-IMAGE - email template list page
+.. image:: /images/administration/settings/emailTemplateList.png
 
 **Creating Templates**
 
