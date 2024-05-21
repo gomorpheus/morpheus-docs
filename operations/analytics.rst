@@ -264,6 +264,17 @@ The following aggregate totals are compiled for workloads that meet set filters:
 
 In addition to the totals and graph displayed, two workload lists are given showing the least utilized workloads by cost (lowest utilization per cost dollar) and the least utilized workloads overall (lowest utilization overall). These workloads are listed with links to the Instance or server detail pages, along with other details related to price and resource utilization.
 
+Capacity: Capacity Planning
+---------------------------
+
+..image :: /images/operations/analytics/capacityPlanning.png
+
+The capacity planning dashboard shows both realtime use and predicted future use in key metrics of memory, storage and CPU use over a pre-defined period. Choose to show this across the entire appliance (all Tenants and Clouds) or scoped to just a single Tenant or a single Cloud. This can help to plan for future hardware needs, plan for changing public Cloud spend, or identify over/under utilization of certain resources.
+
+**Filters**
+
+Leave unfiltered to show data across all Tenants and Clouds. Optionally choose to filter down to all Clouds in one specific Tenant or a single Cloud. The trend line predicts future use of resources based on recent past utilization.
+
 Workloads: Instance Type Usage
 ----------------------------------------------------
 
