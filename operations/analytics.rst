@@ -267,7 +267,7 @@ In addition to the totals and graph displayed, two workload lists are given show
 Capacity: Capacity Planning
 ---------------------------
 
-..image :: /images/operations/analytics/capacityPlanning.png
+.. image:: /images/operations/analytics/capacityPlanning.png
 
 The capacity planning dashboard shows both realtime use and predicted future use in key metrics of memory, storage and CPU use over a pre-defined period. Choose to show this across the entire appliance (all Tenants and Clouds) or scoped to just a single Tenant or a single Cloud. This can help to plan for future hardware needs, plan for changing public Cloud spend, or identify over/under utilization of certain resources.
 
