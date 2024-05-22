@@ -100,9 +100,9 @@ After clicking :guilabel:`SAVE CHANGES`, an API key is generated and displayed. 
 
 .. image:: /images/worker/createWorker.png
 
-With the worker configured in |morpheus|, the next step is to update supported Cloud integrations which should be proxied through the worker. Select the desired Cloud from the Clouds List Page (|InfClo|) and click :guilabel:`EDIT` from the chosen Cloud's Detail Page. Within the Advanced Options section, choose a configured worker from the DISTRIBUTED WORKER dropdown menu. Click :guilabel:`SAVE CHANGES`.
+With the worker configured in |morpheus|, the next step is to update supported Cloud integrations which should be proxied through the worker. Select the desired Cloud from the Clouds List Page (|InfClo|) and click :guilabel:`EDIT` from the chosen Cloud's Detail Page. Within the Connection Options section, choose a configured worker from the WORKER dropdown menu. Click :guilabel:`SAVE CHANGES`.
 
-.. image:: /images/worker/updateCloud.png
+.. image:: /images/worker/addWorkerToCloud.png
   :width: 50%
 
 With the API key in hand and configuration complete in |morpheus| UI, head back to the worker box. Configure the gateway by editing ``/etc/morpheus/morpheus-worker.rb`` and updating the following:
