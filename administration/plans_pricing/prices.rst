@@ -45,6 +45,8 @@ Prices
 Prices
 ------
 
+Details on various price configurations are given here. When creating prices, it's also necessary to understand how they will be applied. Specifically, this relates to the **INCUR CHARGES** configuration. Charges can be incurred "While Running", "While Stopped", or "Always". It typically makes the most sense to have running and stopped prices for a given type (Cores, for example) *OR* to have an "Always" price (but not both). This is because the prices do not stack and the higher of a competing "Always" or running/stopped price will take precedence. This can lead to confusion over which price was applied and how a final cost total was computed. You should decide in advance for a given price type for a price set whether you wish to charge an "Always" rate or charge separately for running/stopped states.
+
 Price Types
   - Everything: One price for all resources Storage, CPU, Memory, and Disks
   - Memory + CPU
