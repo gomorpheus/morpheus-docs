@@ -9,12 +9,46 @@ In this guide, we'll use the following |morpheus| constructs to fully automate t
 - Layouts
 - Node Types
 - Cypher
+- Archive
 - Inputs
 - File Templates
 - Tasks
 - Provisioning Workflows
 
 Each of these constructs can be explored more deeply in their own specific sections of |morpheus| docs but this guide will illustrate how these pieces can be pulled together to automate deployment, ensure consistency and security, and enable self-service. Additionally, while this could be done on many different Cloud types, I'm setting up this Instance Type for provisioning on a VMware vCenter Cloud. You would need to have a VMware Cloud already integrated with |morpheus| in order to follow the guide exactly but I will not go through the process of creating new Clouds here. If you do not have a vCenter Cloud available to you, the concepts in the guide will translate to other Cloud types, including public clouds like Amazon AWS. You may have to make slight modifications in spots in order to make a fully working Instance Type for other Clouds.
+
+Create a |morpheus| Archive for Install Files
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+|morpheus| Archives allow you to store files which can then be made available for download in scripts or by users. Archives are backed by buckets or file shares which must exist prior to creating the Archive. Buckets could be backed by Amazon S3, for example. File Shares could be backed by an NFS file share or even point directly to a local folder on the appliance itself. In this example, we'll use an S3-backed bucket. With an Amazon AWS Cloud already integrated with |morpheus|, we can even create the S3 bucket itself without leaving |morpheus| UI.
+
+To create a new bucket, navigate to |InfSto|. From the Buckets tab, click :guilabel:`+ ADD` and then select "AWS S3 Bucket". The example bucket configuration is shown below. Bear in mind if you make any changes you may need to carefully confirm Task configurations and calls to Cypher or Archive to ensure they match any changes you've made.
+
+- **NAME:** Automation Training S3 Bucket (this is simply a friendly name for the bucket within |morpheus|)
+- **Storage Service:** Select your pre-existing AWS Cloud
+- **BUCKET NAME:** Enter a unique name for the bucket (this much conform to AWS bucket naming rules, consult AWS documentation if needed)
+- **CREATE BUCKET:** Checked
+- **REGION:** The AWS region to create the bucket in
+- **ACTIVE:** Checked (this makes it available for use in |morpheus|)
+
+.. image:: /images/suitecrmsinglenode/newBucket.png
+  :width: 50%
+
+With the bucket created, we can now create the Archive. Start by going to |TooArc| and clicking :guilabel:`+ ADD`. In the new Archive, we need to configure the following:
+
+- **NAME:** Software Archive
+- **BUCKET:** Select the bucket we just created
+- **PUBLIC URL:** Checked (this automatically creates a public download URL when files are added to the Archive)
+
+.. NOTE:: If you don't name your Archive "Software Archive" as indicated here, you will have to make manual changes to Task config later in this guide.
+
+At this point, you should go ahead and download the installation ZIP file for SuiteCRM. You can access version 7.14.3 `here <https://github.com/salesagility/SuiteCRM/releases>`_. This guide is designed for version 7.14.3. If you opt to download a different version please note that changes might be needed to the automation scripts to account for any changes to the installation or configuration processes for that version.
+
+Click on the newly created Archive and note there are no files contained in it. Under the Files tab, click :guilabel:`+ ADD`. Slide the installation ZIP file onto the modal and wait for the file to be successfully uploaded. Click :guilabel:`DONE`. We've now added the installation ZIP file and it is visible in the list of files on the Files tab.
+
+Click on the name of the newly added file to access the File detail page. While here, click on the Scripts tab and you'll see syntax examples for how this and other files might be accessed in your automation scripts. You'll see this syntax used later in this example as we access the ZIP file directly from this Archive and automate the installation process. Generated links can be viewed from the Links tab and a record of it will be visible on the History tab.
+
+.. image:: /images/suitecrmsinglenode/fileDetail.png
 
 Create Cypher
 ^^^^^^^^^^^^^
