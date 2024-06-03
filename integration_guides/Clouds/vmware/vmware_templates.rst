@@ -36,6 +36,8 @@ Create a new machine in VMware vCenter and install a base version of your prefer
 
 .. NOTE:: Morpheus will sysprep images based on the "Force Guest Customizations" flag under the Virtual Image's settings when using DHCP. Ensure a sysprep has not been performed on the template if this flag is enabled or if using Static IPs/IP Pools when provisioning, which will always use Guest Customizations and trigger a sysprep.
 
+.. IMPORTANT:: |morpheus| supports the use of SR-IOV network adapters with VMware Clouds. Windows images must have SR-IOV network drivers installed to work with this adapter type. If they do not, provisioning will fail.
+
 Creating a CentOS/RHEL 7 Image
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 

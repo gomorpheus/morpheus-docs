@@ -63,6 +63,8 @@ Snapshots
 
 .. Note:: Access to Snapshots can be limited or removed entirely for specific user roles as needed. To edit a role's Snapshots permissions, go to |AdmRol| > (Your selected role) > Snapshots. Users can be given Full, Read-only, or No access.
 
+.. IMPORTANT:: |morpheus| supports the use of SR-IOV network adapters with VMware Clouds. Bear in mind that VMware does not support Snapshots for this network adapter type and for that reason Snapshot and backup-related features will also fail in |morpheus| for VMs using SR-IOV network adapters.
+
 Tagging and Metadata
 ^^^^^^^^^^^^^^^^^^^^
 
