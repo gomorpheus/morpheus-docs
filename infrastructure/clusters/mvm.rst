@@ -37,7 +37,7 @@ Features
 Base Cluster Details
 ^^^^^^^^^^^^^^^^^^^^
 
-An MVM cluster using the hyperconvered (HCI) Layout consists of at least three hosts. Physical hosts are recommended to experience full performance of the MVM solution. In smaller environments, it is possible to create an MVM cluster with three nested virtual machines, a single physical host (non-HCI only), or a single nested virtual machine (non-HCI only) though performance may be reduced. With just one host it won't be possible to migrate workloads between hosts or take advantage of automatic failover. Currently, a host must be a pre-existing Ubuntu 22.04 box with environment and host system requirements contained in this section. |morpheus| handles cluster configuration by providing the IP address(es) for your host(s) and a few other details. Details on adding the cluster to |morpheus| are contained in the next section.
+An MVM cluster using the hyperconverged infrastructure (HCI) Layout consists of at least three hosts. Physical hosts are recommended to experience full performance of the MVM solution. In smaller environments, it is possible to create an MVM cluster with three nested virtual machines, a single physical host (non-HCI only), or a single nested virtual machine (non-HCI only) though performance may be reduced. With just one host it won't be possible to migrate workloads between hosts or take advantage of automatic failover. Currently, a host must be a pre-existing Ubuntu 22.04 box with environment and host system requirements contained in this section. |morpheus| handles cluster configuration by providing the IP address(es) for your host(s) and a few other details. Details on adding the cluster to |morpheus| are contained in the next section.
 
 **Hardware Requirements**
 
@@ -113,7 +113,7 @@ In this example cluster, each host box consists of:
 - 4 vCPU
 - 16 GB memory
 - 20 GB OS boot disk
-- 250 GB data disk (deployed to ``/dev/dsb``)
+- 250 GB data disk (deployed to ``/dev/sdb``)
 - 3 network interfaces for management, storage, and compute traffic (set to ``eth0``, ``eth1``, and ``eth2``, respectively)
 
 .. NOTE:: 250 GB data disks used in this example are simply for demonstration purposes. A typical test cluster should consist of at least 500 GB storage and more will be required for production. Do not raid disks on physical servers. Multiple disks may be used and they will be added to the total Ceph storage in one large volume. In the DATA DEVICE configuration during cluster setup, give a comma-separated list of disk devices if required.
@@ -175,7 +175,7 @@ Within a short time, the workload is moved to the new host.
 
 The process of adding hosts to a pre-existing cluster is very similar to the process of provisioning the cluster initially. The requirements for the new worker node will be identical to the nodes initially added when the cluster was first provisioned. See the earlier sections in this guide for additional details on configuring the worker nodes.
 
-Too add the host, begin from the MVM Cluster detail page (selected from the list at |InfClu|). From the Cluster detail page, click :guilabel:`ACTIONS` and select "Add Worker". Configurations required are the same as those given when the cluster was first created. Refer to the section above on "Provisioning the Cluster" for a detailed description of each configuration.
+To add the host, begin from the MVM Cluster detail page (selected from the list at |InfClu|). From the Cluster detail page, click :guilabel:`ACTIONS` and select "Add Worker". Configurations required are the same as those given when the cluster was first created. Refer to the section above on "Provisioning the Cluster" for a detailed description of each configuration.
 
 Once |morpheus| has completed its configuration scripts and joined the new worker node to the cluster, it will appear in a ready state within the Hosts tab of the Cluster detail page. When provisioning workloads to this Cluster in the future, the new node will be selectable as a target host for new Instances. It will also be an available target for managing placement of existing VMs running on the cluster.
 
