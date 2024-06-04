@@ -15,7 +15,7 @@ In this guide, we'll use the following |morpheus| constructs to fully automate t
 - Tasks
 - Provisioning Workflows
 
-Each of these constructs can be explored more deeply in their own specific sections of |morpheus| docs but this guide will illustrate how these pieces can be pulled together to automate deployment, ensure consistency and security, and enable self-service. Additionally, while this could be done on many different Cloud types, I'm setting up this Instance Type for provisioning on a VMware vCenter Cloud. You would need to have a VMware Cloud already integrated with |morpheus| in order to follow the guide exactly but I will not go through the process of creating new Clouds here. If you do not have a vCenter Cloud available to you, the concepts in the guide will translate to other Cloud types, including public clouds like Amazon AWS. You may have to make slight modifications in spots in order to make a fully working Instance Type for other Clouds.
+Each of these constructs can be explored more deeply in their own specific sections of |morpheus| docs but this guide will illustrate how these pieces can be pulled together to automate deployment, ensure consistency and security, and enable self-service. This could be used to create a provisionable Instance Type on any |morpheus|-supported Cloud type and it's intentionally left open-ended to be useful for any environment. As I'm building the example, I'll show screenshots targeting a build for VMware vCenter Clouds. Despite the screenshots, this guide is useful for any environment.
 
 Create a |morpheus| Archive for Install Files
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -189,10 +189,12 @@ Now create the first Bash Task which will install and configure SuiteCRM on a ne
 
     .. code-block:: bash
 
-      RPass="<%=cypher.read('secret/mysql_root')%>"
+      RPass="<%=cypher.read('secret/dba/mariadb_root')%>"
       SCRMDb="<%=customOptions.databaseNameSCRM%>"
       SCRMUser="<%=customOptions.databaseUserSCRM%>"
       SCRMPass="<%=customOptions.databasePassSCRM%>"
+      PHP_VERSION="8.1"
+      MARIADB_VERSION="mariadb-10.11"
 
       #Wait until any apt-get processes have finished
       if [ `ps -ef | grep [a]pt-get | wc -l` = !0 ]
@@ -207,34 +209,44 @@ Now create the first Bash Task which will install and configure SuiteCRM on a ne
       systemctl enable apache2.service
 
       #Install MariaDB, start service and enable on boot
-      wget https://downloads.mariadb.com/MariaDB/mariadb_repo_setup
-      echo "fd3f41eefff54ce144c932100f9e0f9b1d181e0edd86a6f6b8f2a0212100c32c mariadb_repo_setup" | sha256sum -c -
-      chmod +x mariadb_repo_setup
-      ./mariadb_repo_setup  --mariadb-server-version="mariadb-10.6"
+      curl -LsS https://r.mariadb.com/downloads/mariadb_repo_setup | \
+      sudo bash -s ----mariadb-server-version="$MARIADB_VERSION"
       apt update
       apt-get install mariadb-server mariadb-client -y
       systemctl stop mariadb.service
       systemctl start mariadb.service
-      systemctl enable mariadb.service
+      systemctl enablemariadb.service
 
       #The following commands are from the mysql secure installation guidance
-      mysql -u root -e "UPDATE mysql.user SET Password=PASSWORD('$RPass') WHERE User='root';"
-      mysql -u root -e "flush privileges"
-      mysql -u root -p$RPass -e "DELETE FROM mysql.user WHERE User='';"
-      mysql -u root -p$RPass -e "DELETE FROM mysql.user WHERE User='root' AND Host NOT IN ('localhost', '127.0.0.1', '::1');"
-      mysql -u root -p$RPass -e "DROP DATABASE IF EXISTS test;"
-      mysql -u root -p$RPass -e "DELETE FROM mysql.db WHERE Db='test' OR Db='test\_%';"
-      mysql -u root -p$RPass -e "FLUSH PRIVILEGES;"
+      mysql -e "ALTER USER 'root'@'localhost' IDENTIFIED BY '$RPass';"
+      mysql -u root -p$RPass-e "FLUSH PRIVILEGES;"
+      mysql -u root -p$RPass-e "DELETE FROM mysql.user WHERE User='';"
+      mysql -u root -p$RPass-e "DELETE FROM mysql.user WHERE User='root' \
+      AND Host NOT IN ('localhost', '127.0.0.1', '::1');"
+      mysql -u root -p$RPass-e "DROP DATABASE IF EXISTS test;"
+      mysql -u root -p$RPass-e "DELETE FROM mysql.db WHERE Db='test' \
+      OR Db='test\_%';"
+      mysql -u root -p$RPass-e "FLUSH PRIVILEGES;"
+
+      #Create the SuiteCRM User
+      mysql -u root -p$RPass-e "CREATE User '$SCRMUser'@'localhost' \
+      IDENTIFIED BY '$SCRMPass';"
 
       #Create the SuiteCRM database
       mysql -u root -p$RPass -e "CREATE DATABASE $SCRMDb;"
-      mysql -u root -p$RPass -e "GRANT ALL ON $SCRMDb.* TO $SCRMUser@localhost IDENTIFIED BY '$SCRMPass';"
+      mysql -u root -p$RPass -e "GRANT ALL ON $SCRMDb.* TO \
+      $SCRMUser@localhost IDENTIFIED BY '$SCRMPass';"
       mysql -u root -p$RPass -e "FLUSH PRIVILEGES;"
 
       #Install required software for SuiteCRM
       add-apt-repository ppa:ondrej/php -y
       apt-get update
-      apt-get install php7.3 libapache2-mod-php7.3 php7.3-common php7.3-mysql php7.3-gmp php7.3-curl php7.3-intl php7.3-mbstring php7.3-xmlrpc php7.3-gd php7.3-bcmath php7.3-imap php7.3-xml php7.3-cli php7.3-zip -y
+      apt-get install php$PHP_VERSIONlibapache2-mod-php$PHP_VERSION \
+      php$PHP_VERSION-common php$PHP_VERSION-mysql php$PHP_VERSION-gmp \
+      php$PHP_VERSION-curl php$PHP_VERSION-intl php$PHP_VERSION-mbstring \
+      php$PHP_VERSION-xmlrpc php$PHP_VERSION-gd php$PHP_VERSION-bcmath \
+      php$PHP_VERSION-imap php$PHP_VERSION-xml php$PHP_VERSION-cli \
+      php$PHP_VERSION-zip -y
 
       #Update php.ini file with required settings
       short_open_tag=On
@@ -244,7 +256,8 @@ Now create the first Bash Task which will install and configure SuiteCRM on a ne
 
       for key in short_open_tag memory_limit upload_max_filesize max_execution_time
       do
-          sed -i "s/^\($key\).*/\1 $(eval echo = \${$key})/" /etc/php/7.3/apache2/php.ini
+        sed -i "s/^\($key\).*/\1 $(eval echo = \${$key})/" \
+      /etc/php/$PHP_VERSION/apache2/php.ini
       done
 
       #Restart apache
@@ -254,11 +267,12 @@ Now create the first Bash Task which will install and configure SuiteCRM on a ne
       echo "<?php phpinfo( ); ?>" | sudo tee /var/www/html/phpinfo.php
 
       #Download and install latest SuiteCRM. Composer v2 does not work with Suitecrm.
-      curl -sS https://getcomposer.org/installer | sudo php -- --version=1.10.9 --install-dir=/usr/local/bin --filename=composer
-      git clone https://github.com/salesagility/SuiteCRM.git /var/www/html/suitecrm
-
-      cd /var/www/html/suitecrm
-      composer install --no-dev
+      file_url="<%= archives.link('Software Archive', 'SuiteCRM-7.14.3.zip',1200) %>"
+      wget $file_url-O "./SuiteCRM-7.14.3.zip"--no-check-certificate
+      apt-get install unzip -y
+      unzip SuiteCRM-7.14.3.zip -d /var/www/html
+      mv /var/www/html/SuiteCRM-7.14.3/ /var/www/html/suitecrm
+      cd/var/www/html/suitecrm
       chown -R www-data:www-data /var/www/html/suitecrm/
       chmod -R 755 /var/www/html/suitecrm/
 
