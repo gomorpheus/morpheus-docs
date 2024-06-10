@@ -39,6 +39,7 @@ Configure the following:
 - **DISABLE AUTO PRICE:** When marked, price estimates are no longer refreshed with every field change at the time this Catalog Item is ordered. For some workloads with heavy Configuration-phase Tasks this may improve performance of the order page
 - **FEATURED:** When checked, this catalog item will be given special visibility in the Service Catalog Persona view
 - **ALLOW QUANTITY:** When checked, an additional field is added to the order page allowing users to order multiple copies. If this option is enabled, ensure your configuration supports that flexibility (such as when IP or load balancer details are specified)
+- **MAX QUANTITY:** When the ALLOW QUANTITY configuration is used, an additional MAX QUANTITY configuration is available which sets an upper limit on the quantity that may be executed
 - **VISIBILITY:** Set to private to keep the catalog item available only to users in the current Tenant. Master Tenant administrators may set catalog items to public to make them viewable and usable by Subtenant users
 - **LOGO:** Select or upload a logo to be associated with this catalog item
 - **DARK LOGO:** If desired, set an alternate logo for use when the dark theme is applied to the |morpheus| appliance
@@ -259,6 +260,7 @@ Configure the following:
 - **DISABLE AUTO PRICE:** When marked, price estimates are no longer refreshed with every field change at the time this Catalog Item is ordered. For some workloads with heavy Configuration-phase Tasks this may improve performance of the order page
 - **FEATURED:** When checked, this catalog item will be given special visibility in the Service Catalog Persona view
 - **ALLOW QUANTITY:** When checked, an additional field is added to the order page allowing users to order multiple copies. If this option is enabled, ensure your configuration supports that flexibility (such as when IP or load balancer details are specified)
+- **MAX QUANTITY:** When the ALLOW QUANTITY configuration is used, an additional MAX QUANTITY configuration is available which sets an upper limit on the quantity that may be executed
 - **VISIBILITY:** Set to private to keep the catalog item available only to users in the current Tenant. Master Tenant administrators may set catalog items to public to make them viewable and usable by Subtenant users
 - **LOGO:** Select or upload a logo to be associated with this catalog item
 - **DARK LOGO:** If desired, set an alternate logo for use when the dark theme is applied to the |morpheus| appliance

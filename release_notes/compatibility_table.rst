@@ -84,7 +84,7 @@
     - 7.x
     -
   * - Zerto
-    - 8.5
+    - 10
     -
 
 .. note:: Non-listed versions may be compatible but are not verified.

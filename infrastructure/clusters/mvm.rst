@@ -1,7 +1,7 @@
 MVM Clusters
 ------------
 
-.. IMPORTANT:: MVM clusters are currently in a closed beta with a selected subset of the customer base. It is not for production use and is not available to appliances that are not part of the closed beta program. Expect that MVM Cluster capabilities, as well as this documentation, will change significantly over the coming months.
+.. IMPORTANT:: MVM clusters are currently in an open beta. They are not part of the standard |morpheus| license and are licensed as a separate product. During the open beta, all |morpheus| appliances will be able to provision one MVM cluster with up to three nodes for testing purposes. MVM is not yet ready for production workloads and should only be used on a test basis. Expect that MVM Cluster capabilities, as well as this documentation, will change significantly over the coming months.
 
 MVM virtualization solution is a hypervisor clustering technology utilizing KVM. Beginning with just a few basic Ubuntu boxes, |morpheus| can create a cluster of hypervisor hosts complete with monitoring, failover, easy migration of workloads across the cluster, and zero-downtime maintenance access to hypervisor host nodes. All of this is backed by |morpheus| Tenant capabilities, a highly-granular RBAC and policy engine, and Instance Type library with automation workflows.
 
