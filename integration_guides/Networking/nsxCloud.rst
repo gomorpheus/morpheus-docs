@@ -17,7 +17,7 @@ Features
 Integrating with VMware Clouds
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Integration with a VMware Cloud requires the Cloud integration to be pre-existing. If you need to integrate a VMware Cloud first, refer to the `VMware Cloud integration guide <https://docs.morpheusdata.com/en/7.0.3/integration_guides/Clouds/vmware/vmware.html>`_ in |morpheus| UI documentation for full details.
+Integration with a VMware Cloud requires the Cloud integration to be pre-existing. If you need to integrate a VMware Cloud first, refer to the `VMware Cloud integration guide <https://docs.morpheusdata.com/en/latest/integration_guides/Clouds/vmware/vmware.html>`_ in |morpheus| UI documentation for full details.
 
 To begin a new NSX Cloud integration, navigate to |InfNetInt|. Click :guilabel:`+ ADD` and then click "NSX Cloud". Make the following configurations to create the integration with NSX Cloud:
 
