@@ -6,6 +6,7 @@ Networking Integrations
    infoblox.rst
    phpipam.rst
    nsxt.rst
+   nsxCloud.rst
    aci.rst
    bluecat.rst
    solarwinds.rst
