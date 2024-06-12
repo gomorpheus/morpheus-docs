@@ -9,16 +9,16 @@ latex_documents = [
 
 rst_prolog = """
 
-.. |releasedate| replace:: May 15 2024
+.. |releasedate| replace:: June 13 2024
 .. |releasetype| replace:: LTS
 .. |morphAnnualVer| replace:: v6
 .. |morphbranch| replace:: v6.2
-.. |morphver| replace:: v6.2.10
+.. |morphver| replace:: v6.2.11
 .. |minUpgradeVer| replace:: v6.0.0
 .. |minRollingUpgradeVer| replace:: v6.0.7
 .. |nonRollingUpgradeVer| replace:: v6.0.6
-.. |previousMorphVer| replace:: v6.2.9
-.. |pluginVer| replace:: 0.15.13
+.. |previousMorphVer| replace:: v6.2.10
+.. |pluginVer| replace:: 0.15.14
 .. |workerVer| replace:: 5.4.8
 .. |rmqbranch| replace:: v3.5-3.12
 .. |rmqver| replace:: v3.12.9
@@ -132,7 +132,7 @@ rst_prolog = """
 .. |InfLoaLoa| replace:: Infrastructure > Load Balancers > Load Balancers
 .. |InfLoaVir| replace:: Infrastructure > Load Balancers > Virtual Servers
 .. |InfSto| replace:: Infrastructure > Storage
-.. |InfStoBuc| replace:: Infrastructure > Storage > Buckers
+.. |InfStoBuc| replace:: Infrastructure > Storage > Buckets
 .. |InfStoFil| replace:: Infrastructure > Storage > File Shares
 .. |InfStoVol| replace:: Infrastructure > Storage > Volumes
 .. |InfStoDat| replace:: Infrastructure > Storage > Data Stores
