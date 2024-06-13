@@ -78,3 +78,8 @@ Fixes
 
 Appliance & Agent Updates
 =========================
+
+:Appliance: - Java updated to v11.0.23 :superscript:`7.0.3`
+:Agent Packages:  - |morpheus| Linux Agent updated to v2.6.2
+                  - Node and VM Node Packages Java updated to v11.0.23 :superscript:`7.0.3`
+                  - Node and VM Node Packages updated to v3.2.24 :superscript:`7.0.3`
