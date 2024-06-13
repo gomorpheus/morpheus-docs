@@ -78,6 +78,11 @@ Advanced Options (Search Domains)
 Search domains are appended to DNS searches when a **non** fully qualified domain name (short name) is queried.  Search domains can be entered as comma separated values, which will be added to DNS configurations, such as `/etc/resolv.conf`
 These domains are injected via cloud-init or other method chosen for the virtual image.
 
+Group and Tenant Access
+```````````````````````
+
+Networks can be configured to provide specific Group and Tenant access, if desired. **Group Access** controls which Groups at provision time will have access to the Network resource. Only workloads being provisioned to the selected Groups would have visibility into the Network. Workloads provisioned to other Groups would not see the Network as an available selection. **Tenant Permissions** control which Tenants may see the Network. Public visibility allows access to the Network for users in all Tenants (subject to additional RBAC controls) while Private visibility allows access only for selected Tenants. Select all that may apply.
+
 Guest Console SSH Tunnel
 ````````````````````````
 

@@ -17,8 +17,8 @@ Adding Network Groups
      * Search for and select target Networks for the Network Group
      * Search for and select target Subnets for the Network Group
    Group Access
-     * Set Group Access and Defaults for the Network Group
+     * Set Group Access for the Network Group. Group access controls which Groups at provision time will have access to this resource. Select "all" (default) to give workloads provisioned to any Group access to this resource. If this resource should be restricted only to workloads provisioned to specific Groups, select all that apply.
    Tenant Permissions
-     * Set Tenant Visibility for Network Group
+     * Resources with Public visibility will be available to users in any Tenant (subject to other RBAC controls). Resources with Private visibility are given only to individually selected Tenants. Select all that apply.
 
 2. Select :guilabel:`SAVE CHANGES`
