@@ -52,7 +52,7 @@ To edit visibility permissions for a domain, navigate to ``Infrastructure > Netw
 Group Access
 ````````````
 
-Configure the domain to be visible to all Infrastructure Groups or only to selected Groups. If the domain is scoped to specific Groups, Users whose Roles do not give them Group access will not have access to the domain. Additionally, users will not be able to set the domain as the default on a Cloud which is not a part of the selected Groups.
+The Group Access control affects which Groups have access to the domain at provision time. Select "all" to allow workloads provisioned to any Group access to the domain. If specific Groups are selected, only workloads provisioned to those Groups will have visibility of the domain during provisioning.
 
 Tenant Permissions
 ``````````````````

@@ -21,6 +21,10 @@ Load Balancers
 Virtual Servers
   View and link to Instances that are attached to load balancers.
 
+**Group and Tenant Access**
+
+Load balancers can be configured to provide specific Group and Tenant access, if desired. **Group Access** controls which Groups at provision time will have access to the load balancer resource. Only workloads being provisioned to the selected Groups would have visibility to the load balancer. Workloads provisioned to other Groups would not see the load balancer as an available selection. **Tenant Permissions** control which Tenants may see the load balancer. Public visibility allows access to the load balancer for users in all Tenants (subject to additional RBAC controls) while Private visibility allows access only for selected Tenants. Select all that may apply.
+
 Load Balancers
 --------------
 
