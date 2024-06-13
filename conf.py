@@ -3,7 +3,7 @@ import datetime
 master_doc = 'index'
 
 latex_documents = [
-    (master_doc, 'morpheus_7.0.2-1.tex', u'Morpheus Documentation',
+    (master_doc, 'morpheus_7.0.3-1.tex', u'Morpheus Documentation',
      u'Morpheus', 'manual'),
 ]
 
@@ -25,17 +25,17 @@ rst_prolog = """
 .. |mysqlbranch| replace:: v5.7, v8.0
 .. |mysqlver| replace:: v8.0.36
 .. |mysqlverfips| replace:: v8.0.36
-.. |esbranch| replace:: v8.11+
+.. |esbranch| replace:: v8.9+
 .. |esver| replace:: v8.11.2
 .. |tcver| replace:: v9.0.88
 .. |nginxver| replace:: v1.25.1
-.. |nodePackageVer| replace:: 3.2.23
-.. |linuxagentver| replace:: v2.6.0
+.. |nodePackageVer| replace:: 3.2.24
+.. |linuxagentver| replace:: v2.6.2
 .. |macagentver| replace:: v2.4.0
 .. |winagentver| replace:: v2.5.0.0
-.. |java| replace:: 11.0.23+9
+.. |java| replace:: 11.0.23
 .. |java-mac| replace:: 11.0.14+9
-.. |openjdk-jre| replace:: 11.0.20+8
+.. |openjdk-jre| replace:: 11.0.23+9
 .. |openjdk-elasticsearch| replace::  17.0.5+8
 .. |openssl| replace:: 1.1.1w
 .. |openssl_fips| replace:: 1.0.2u

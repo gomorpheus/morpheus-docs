@@ -104,7 +104,7 @@ Services
    * - Tomcat
      - 
      - |tcver|
-     - |checkmark|
+     - 
    * - Nginx
      -
      - |nginxver|
@@ -116,7 +116,7 @@ Services
    * - Java
      -
      - |java|
-     - 
+     - |checkmark|
    * - Java (macOS agent)
      -
      - |java-mac|
@@ -138,10 +138,10 @@ Services
      - |morphver| changes from |previousMorphVer|
    * - Morpheus Node and VM Node Packages
      - |nodePackageVer|
-     - No changes
+     - Updated to |nodePackageVer|
    * - Morpheus Linux Agent
      - |linuxagentver| 
-     - No changes
+     - Updated to |linuxagentver|
    * - Morpheus Windows Agent
      - |winagentver|
      - No changes
