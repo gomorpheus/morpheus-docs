@@ -116,7 +116,10 @@ In this example cluster, each host box consists of:
 - 250 GB data disk (deployed to ``/dev/sdb``)
 - 3 network interfaces for management, storage, and compute traffic (set to ``eth0``, ``eth1``, and ``eth2``, respectively)
 
-.. NOTE:: 250 GB data disks used in this example are simply for demonstration purposes. A typical test cluster should consist of at least 500 GB storage and more will be required for production. Do not raid disks on physical servers. Multiple disks may be used and they will be added to the total Ceph storage in one large volume. In the DATA DEVICE configuration during cluster setup, give a comma-separated list of disk devices if required.
+.. NOTE:: 250 GB data disks used in this example are simply for demonstration purposes. A typical test cluster should consist of at least 500 GB storage and more will be required for production. Do not raid disks on physical servers. Currently, only one data disk may be used, which is given in the DATA DEVICE configuration during cluster setup. In the very near future, an update will be provided to allow multiple data disks to be used. These will be added to the total Ceph storage in one large volume. Until that update, only one data disk may be given in the configuration.
+
+..
+  Multiple disks may be used and they will be added to the total Ceph storage in one large volume. In the DATA DEVICE configuration during cluster setup, give a comma-separated list of disk devices if required.
 
 MVM clusters must also live in |morpheus|-type Clouds (See |InfClo|). A pre-existing |morpheus| Cloud may be used or a new Cloud could be created to handle MVM management.
 
@@ -131,7 +134,10 @@ As mentioned in the previous section, this example is starting with three provis
 
 .. image:: /images/infrastructure/clusters/mvm/createClusterTop.png
 
-In the next part of the modal, you'll configure the storage devices and network interfaces. When Ceph initializes, it needs to be pointed to an initial data device (or devices). Configure this in the **DATA DEVICE** field. Multiple devices may be given in a comma-separated list and will be added to the total Ceph storage as one large volume. Find your disk names, if needed, with the ``lsblk`` command. In my case, the target device is located at ``/dev/sdb``.
+In the next part of the modal, you'll configure the storage devices and network interfaces. When Ceph initializes, it needs to be pointed to an initial data device. Configure this in the **DATA DEVICE** field. At this time, only one device may be given but in the near future, an update will allow for multiple devices to be configured which would be added to the total Ceph storage as one large volume. Find your disk name, if needed, with the ``lsblk`` command. In my case, the target device is located at ``/dev/sdb``.
+
+..
+  When Ceph initializes, it needs to be pointed to an initial data device (or devices). Configure this in the **DATA DEVICE** field. Multiple devices may be given in a comma-separated list and will be added to the total Ceph storage as one large volume. Find your disk names, if needed, with the ``lsblk`` command. In my case, the target device is located at ``/dev/sdb``.
 
 Though not strictly required, it's recommended to have separate network interfaces to handle cluster management, storage traffic, and compute. In this example case, ``eth0`` is configured as the **MANAGEMENT NET INTERFACE** which handles communication between the cluster hosts. ``eth1`` is configured as the **STORAGE NET INTERFACE** and ``eth2`` is configured as the **COMPUTE NET INTERFACE**. The **COMPUTE VLANS** field can take a single value (ex. 1) or a range of values (ex. 22-25). This will create OVS port group(s) selectable as networks when provisioning workloads to the cluster. If needed, you can find your network interface names with the ``ip a`` command.
 
