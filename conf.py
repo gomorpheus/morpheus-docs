@@ -9,7 +9,7 @@ latex_documents = [
 
 rst_prolog = """
 
-.. |releasedate| replace:: June 13 2024
+.. |releasedate| replace:: June 14 2024
 .. |releasetype| replace:: LTS
 .. |morphAnnualVer| replace:: v6
 .. |morphbranch| replace:: v6.2
@@ -33,7 +33,7 @@ rst_prolog = """
 .. |linuxagentver| replace:: v2.6.2
 .. |macagentver| replace:: v2.4.0
 .. |winagentver| replace:: v2.5.0.0
-.. |java| replace:: 11.0.22
+.. |java| replace:: 11.0.23
 .. |java-mac| replace:: 11.0.14+9
 .. |openjdk-jre| replace:: 11.0.23+9
 .. |openjdk-elasticsearch| replace::  17.0.5+8
