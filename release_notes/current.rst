@@ -28,6 +28,7 @@ New Features
 :Catalog: - When configuring Catalog Items to "Allow Quantity," the user may now specify a max quantity to place limits on orders
 :Kubernetes: - Added Kubernetes 1.28 and 1.29 for EKS clusters. Versions 1.25 and 1.26 have been disabled
               - Fixed an issue related to HA MKS clusters failing to connect to additional masters following the loss of the first master
+:NSX: - Deprecates support for NSX-T v2. General support for NSX-T v2 ended in 9/2021 and technical guidance ended in 9/2022. Support for integration with |morpheus| will end with the next release (7.0.4)
 :NSX Cloud: - Added NSX Cloud network integrations for association with VMware Clouds or VMware on AWS Clouds
 :Nutanix Prism Central: - Calls to the NPC API which are returned with a 409 error "Edit conflict: please retry change." are now retried before reporting as failed in |morpheus| :superscript:`6.2.11`
                   - Options for "UEFI," "SECURE BOOT," "WINDOWS DEFENDER CREDENTIAL GUARD," and "ATTACH VTPM," have been moved from the provisioning wizard to the Virtual Image configuration :superscript:`6.2.11``
