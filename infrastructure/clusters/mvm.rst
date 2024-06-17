@@ -11,7 +11,12 @@ Features
 **Host Features**
 
 - Automated MVM cluster provisioning
-- Ceph storage configuration for multi-node clusters
+- CEPH storage configuration for multi-node clusters
+- CEPH summary, a high-level dashboard of CEPH components and status
+- DRS, automatic rebalancing of clusters based on resource consumption
+- Compatibility validation of network and storage devices at time of cluster provisioning
+- Hypervisor console
+- Configuration and deployment of OVS networks (VLANs)
 - Cluster and individual host monitoring
 - Add hosts to existing clusters
 - Console support for cluster hosts
@@ -19,17 +24,23 @@ Features
 - Gracefully take hosts out of service with maintenance mode
 - Migration of workloads across hosts
 - Configurable automatic failover of running workloads when a host is lost
+- Ability to add and provision to fiber channel storage resources or iSCSI storage resources via GFS2 or OCFS2 filesystem
 - Integration with |morpheus| costing
 - Governance through |morpheus| RBAC, Tenancy, and Policies
 
 **VM Features**
 
-- Workload provisioning and monitoring
+- Workload provisioning and monitoring (Linux or Windows workloads)
 - Console support for running workloads
+- Affinity placement, pin VMs to hosts
+- Brownfield discovery of existing VMs
+- Reconfigure VM sizing
+- UEFI support
 - Migration of VMs across hosts
 - Configure automatic failover for individual VMs in the event a host is lost
 - Reconfigure running workloads to resize plan, add/remove disks, and add/remove network interfaces
 - Backup and restore MVM workloads
+- Clone VMs
 - Take snapshots and revert to snapshots
 - |morpheus| library and automation support
 - Integration with |morpheus| costing features

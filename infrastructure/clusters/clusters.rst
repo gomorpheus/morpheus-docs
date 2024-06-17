@@ -26,7 +26,7 @@ Cluster Types
 +--------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------+
 | KVM Cluster        | Onboard existing KVM Clusters. Manage them in |morpheus| and utilize them as provisioning targets. See the `KVM integration guide <https://docs.morpheusdata.com/en/latest/integration_guides/Clouds/kvm/kvm.html>`_ for more.   | KVM                    |
 +--------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------+
-| MVM Cluster        | |morpheus| Virtual Machines, a KVM-based virtualization solution. This Cluster type is currently in closed beta. See the detailed section below on MVM Clusters for complete use documentation.                                  | KVM                    |
+| MVM Cluster        | |morpheus| Virtual Machines, a KVM-based virtualization solution. This Cluster type is currently in open beta. See the detailed section below on MVM Clusters for complete use documentation.                                    | KVM                    |
 +--------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------+
 
 .. note:: Refer to :ref:`clusterLayouts` for supported Clouds per Cluster Type.
