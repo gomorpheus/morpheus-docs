@@ -231,6 +231,4 @@ To Delete SSL Certificate:
 Trust Integrations
 ------------------
 
-Some organizations may use outside technologies to manage their key and certificates. |morpheus| allows users to integrate with Venafi for trust management. Trust management integrations can be managed from the Integrations tab on the Infrastructure > Keys & Certs page. Additionally, they can be managed in |AdmInt|.
-
-Currently, |morpheus| supports trust integration Venafi. For more detailed information on integrating Venafi with |morpheus|, take a look at our `integration guide <https://docs.morpheusdata.com/en/latest/integration_guides/KeysCertificates/keysandcerts.html>`_.
+This area lists integrations with external services to manage secrets, keys, and certificates. New Cypher integrations can be created here. See `our guide <https://docs.morpheusdata.com/en/latest/infrastructure/keypairs_certificates/keypairs_certs.html#installing-and-integrating-an-external-cypher-appliance>`_ on installing and integrating an external Cypher store for full details. Additionally, some other external trust services may be populated here, such as NSX certificate services.

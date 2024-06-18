@@ -643,12 +643,6 @@ The following table contains communication information, including frequency and 
     - Data synchronization
     - 10 Minutes
     - No
-  * - Key & Certificate Integration
-    - Server Pull
-    - Venafi
-    - Certificate and Key Sync
-    - 10 Minutes
-    - No
   * - Load Balancer Integration
     - Server Pull
     - AzureLB
