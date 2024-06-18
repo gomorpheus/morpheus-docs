@@ -24,7 +24,6 @@ To add an integration select :guilabel:`+ ADD` and choose your integration. Many
 - ServiceNow
 - Cherwell
 - Remedy
-- Venafi
 
 Please see the :ref:`integration-guide` for each specific integration type for more detailed information on setup steps and features supported by the integration.
 

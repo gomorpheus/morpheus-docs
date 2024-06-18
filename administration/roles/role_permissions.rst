@@ -166,7 +166,7 @@ Role Mappings
       * - Admin: Integrations
         - None, Read, Full
         - This allows or disallows full or read access to |AdmInt|.
-        - The Administration Integrations tab is where many new or existing integration types can be configured. These include Chef, Puppet, Ansible, Ansible Tower, vRealize Orchestrator, Microsoft DNS, PowerDNS, Route 53, Git, GitHub, Docker, Jenkins, ServiceNow, Cherwell, Remedy, ACI, and Venafi.
+        - The Administration Integrations tab is where many new or existing integration types can be configured. These include Chef, Puppet, Ansible, Ansible Tower, vRealize Orchestrator, Microsoft DNS, PowerDNS, Route 53, Git, GitHub, Docker, Jenkins, ServiceNow, Cherwell, Remedy, and ACI.
         - This permission is recommended for those responsible for the integration between |morpheus| and integrated technologies.
         -
       * - Admin: License Settings
@@ -458,8 +458,8 @@ Role Mappings
       * - Infrastructure: Trust Integrations
         - None, Read, Full
         - Determines access to the Integrations tab of the Infrastructure > Keys & Certs page.
-        - The Integrations tab is where new trust integrations can be configured. This includes Venafi.
-        - This permission is recommended for those responsible for the integration between |morpheus| and Venafi.
+        - The Integrations tab is where new trust integrations can be configured.
+        - This permission is recommended for those responsible for the integration between |morpheus| and trust providers.
         - This permission is recommended to be set to None on the Tenant Role to restrict access to Subtentant users.
 
 - .. toggle-header:: :header: **Library Permission Options**
