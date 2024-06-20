@@ -111,7 +111,7 @@ An MVM cluster using the hyperconverged infrastructure (HCI) Layout consists of 
      - MVM Host
      - 6789
      - TCP
-   * - Ceph MDS/ODS
+   * - Ceph MDS/OSD
      - MVM Host
      - MVM Host
      - 6800-7300
