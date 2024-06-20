@@ -33,7 +33,7 @@ Adding a Zerto Integration
         Public
           The integration is accessible to all Tenants (option available to |mastertenant| users only)
 
-#. :guilabel:`SAVE`
+#. Once complete, click :guilabel:`SAVE`
 
 .. NOTE:: In addition to manually entering username and password credentials in this modal, users also have the option to use a stored username/password credential set, or manually enter credentials and have them stored for later use in the |morpheus| secure credential store. See the CREDENTIALS configuration in the add/edit integration modal for all of these options.
 
