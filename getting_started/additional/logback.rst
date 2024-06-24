@@ -513,7 +513,6 @@ Expand below to see all core |morpheus| logger paths set to INFO level.
         <logger name="com.morpheus.MorpheusPackageService" level="INFO"/>
         <logger name="com.morpheus.MorpheusSecurityService" level="INFO"/>
         <logger name="com.morpheus.MotdService" level="INFO"/>
-        <logger name="com.morpheus.network.A10LoadBalancerService" level="INFO"/>
         <logger name="com.morpheus.network.AbstractLoadBalancerService" level="INFO"/>
         <logger name="com.morpheus.network.AbstractNetworkPoolService" level="INFO"/>
         <logger name="com.morpheus.network.AbstractNetworkRegistryService" level="INFO"/>
