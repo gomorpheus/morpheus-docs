@@ -6,7 +6,7 @@ Load Balancers
 Overview
 --------
 
-|morpheus| can provision VM or Container HaProxy Load Balancers, Amazon Elastic and Application Load Balancers, Azure Load Balancers, and integrates with several external Load Balancers, including F5, A10, Citrix, and AVI.
+|morpheus| can provision VM or Container HaProxy Load Balancers, Amazon Elastic and Application Load Balancers, Azure Load Balancers, and integrates with several external Load Balancers, including F5, Citrix, and AVI.
 
 Once created or integrated, Load Balancers are available as an option to be added during provision time or post-provisioning.
 
@@ -30,16 +30,6 @@ Add a new Load Balancer
 ^^^^^^^^^^^^^^^^^^^^^^^
 
 Select + LOAD BALANCER, chose an option, and fill in the required information:
-
-A10 (aXAPI v3)
-  * API Host
-  * API Port
-  * Username
-  * Password
-  * Internal IP
-  * Public IP
-  * VIP Address
-  * VIP Port
 
 Amazon ALB
   * Scheme
@@ -131,7 +121,6 @@ A large part of application orchestration and automation involves tying various 
 Not only does Morpheus have an ability to provision HAProxy based load balancer containers for easy consumption in development environments, but also has direct tie ins with several Load Balancer Types:
 
 * F5 BigIP
-* A10
 * Netscaler
 * NSX Advanced Load Balancer
 * Amazon ELB
