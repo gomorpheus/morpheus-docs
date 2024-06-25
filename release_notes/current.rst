@@ -103,6 +103,7 @@ Fixes
 :VMware: - Fixed an issue that could cause orphaned VMware-related records to pile up in the database and create performance issues :superscript:`6.2.10`
           - Fixed issue where using the "Order Again" button in Catalog would provision the new VM into the root vCenter folder rather than the folder selected for the original VM ordered :superscript:`6.2.10`
           - Instances which were powered off will no longer appear in a running state in |morpheus| following a reconfigure (though they were always still off in VMware) :superscript:`6.2.10`
+          - Added an optimization to the reconfigure logic for workloads on VMware Clouds. If a server is resized to change network interface details, any reserved IP address is only released to the IP pool if a new network is selected for the interface
 :Virtual Images: - Creating a new Virtual Image sourced by URL will now go through any configured global proxies :superscript:`6.2.10`
                   - The filter "VMware (vmdk/ovf/ova)" now includes images synced from vCloud Director :superscript:`6.2.10`
 
