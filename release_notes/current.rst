@@ -71,7 +71,7 @@ Fixes
             - Set 644 permissions on the ``morpheus.asc`` file in Agent install for upgraded security :superscript:`7.0.3`
 :Terraform: - Fixed Apply State failures on Terraform Apps under specific configurations :superscript:`7.0.3`
 :User Settings: - Fixed an issue that would cause a 500 error to be thrown when saving new User Settings failed validation. In those scenarios, a UI warning is now displayed instead :superscript:`7.0.3`
-:VMWare: - Added an optimization to the reconfigure logic for workloads on VMware Clouds. If a server is resized to change network interface details, any reserved IP address is only released to the IP pool if a new network is selected for the interface
+:VMware: - Added an optimization to the reconfigure logic for workloads on VMware Clouds. If a server is resized to change network interface details, any reserved IP address is only released to the IP pool if a new network is selected for the interface
 :XaaS: - Tasks can now be run on-demand from the Instance detail page for XaaS Instances. Previously, this did not work and they needed to be run from the Tasks UI instead :superscript:`7.0.3`
 :Zerto: - Fixed an issue that prevented adding VMs to an existing replication group :superscript:`7.0.3`
          - Fixed an issue with deleting existing Zerto replication groups :superscript:`7.0.3`
