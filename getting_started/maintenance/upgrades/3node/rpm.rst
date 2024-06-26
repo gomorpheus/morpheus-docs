@@ -19,11 +19,7 @@ Non-rolling Upgrade
 
 .. warning:: Rolling upgrades to |morphver| are not supported. Non-rolling upgrade instructions should be followed for all versions upgrading to 7.0.3. For that reason, the rolling upgrade instructions are hidden in this version of |morpheus| docs. Should you need to see those steps, roll back to 7.0.2 |morpheus| docs and view them there. Do not perform a rolling upgrade to 7.0.3.
 
-<<<<<<< HEAD
-.. important:: It is important to stop the morpheus-ui service on all app nodes prior to upgrade. Failure to do so will result in a flood of log errors due to previous message serializaiton conflict. The messages will eventually expire and the logs will clear.
-=======
 .. important:: It is important to stop the morpheus-ui service on all app nodes prior to upgrade. Failure to do so will result in a flood of log errors due to previous message serialization conflict. The messages will eventually expire and the logs will clear.
->>>>>>> aa992a75 (update ha upgrade instructions to note that rolling upgrades are not supported)
 
 .. warning:: |morpheus| |morphver| contains new node and VM node packages that require 3.5GB of storage. It is safe to run ``sudo rm -Rf /var/opt/morpheus/package-repos/*`` after |morphver| package installation and before reconfigure to clean old node and vm node packages from the package-repo when room is needed.
 
