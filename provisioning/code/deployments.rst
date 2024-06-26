@@ -7,7 +7,7 @@ Deployments
 
 The deployments section provides very useful PaaS like capabilities when it comes to deploying applications into the newly provisioned environment. These can be uploaded directly from the UI, pulled from a build server, pulled from a public or private Git repository or even via the API and the various plugins created, such as Jenkins, and Gradle to support continuous build / integration workflows.
 
-A deployment can be considered a set of versions that relate to a particular project or application being deployed. This allows one to keep track of a history of versions and easily reuse these deployment versions across instances that may exist in different environments. An example might be to deploy a version from a deployment to a staging instance and (once approved) also deployed into production.
+A deployment can be considered a set of versions that relate to a particular project or application being deployed. This allows one to keep track of a history of versions and easily reuse these deployment versions across Instances that may exist in different environments. An example might be to deploy a version from a deployment to a staging Instance and (once approved) also deployed into production.
 
 Role Permissions
 ^^^^^^^^^^^^^^^^
@@ -38,22 +38,29 @@ Fetch
 
 Fetch based deployments are pretty straightforward. Simply enter a url to a file representing the deployment. This can be a single file (in which case it will just be added to the deployment archive singularly) or it can be a zip file (which will automatically be expanded into the archive). HTTP Authentication options can also be entered if the url requires some form of basic authentication scheme for access by the appliance.
 
+Configuring Library Items for Deployments
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+In order to have the UI tools available to utilize Deployments with a provisioned Instance, the Library items must have certain configurations set. Once configured correctly, any Instance provisioned from the Library item would then have access to any of your Deployments.
+
+First, within the **Instance Type** (|LibBluIns|), ensure the SUPPORT DEPLOYMENTS attribute is marked. This is off by default so it will need to be manually enabled on all relevant Instance Types. Next, you'll want to ensure you have the correct DEPLOY FOLDER configured on **Node Types** (|LibBluNod|). This is the mount point which will be replaced by the contents of your Deployments. Finally, you will want the **Provisioning Workflows** associated with the Library item to have the proper Tasks configured within its Pre-Deploy and/or Deploy phases. Tasks in the Pre-Deploy phase are run as soon as the Deployment is triggered from the UI prior to any other Deploy actions taking place. This could be used, for example, to extract files from the deploy folder and move them to their final destinations before the primary deploy actions take place. Tasks in the Deploy phase are run after the deployment is completed, such as if you wanted to update configuration files or inject connection details from the environment after the completion of the deploy process.
+
 Deploying to an Instance
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-Now that a version has been added to a deployment, it is easy to push that deployment out to any instance provisioned within |morpheus| by navigating to the specific Instance that it needs deployed to. On the Instance detail page there is a tab called `Deploy`. From here simply add a deploy. The dialog will ask firstly from which deployment the deploy is from (or allow you to create a new one on the spot), and secondly which version to deploy (also with the option to add one on the fly). The next step of the wizard will display any configuration options that might be specific to the instance type being deployed to (i.e. `CATALINA_OPTS` for Tomcat or `Java Command` for java) as well as the file explorer and deployment type selections for review (or use when creating a new version on the fly). Fill in the required items then simply hit complete. The deploy will now be asynchronously sent off to all of the virtual machines or containers within the instance in a rolling restart and the deployment status will be represented.
+Now that the Deployment object and Library items are configured, it is easy to push that deployment out to any Instance provisioned within |morpheus| by navigating to the specific Instance that it needs deployed to. On the Instance detail page there is a tab called `Runtime` and within it another tab labeled `Deploy`. From here simply add a deploy. The dialog will ask firstly from which deployment the deploy is from (or allow you to create a new one on the spot), and secondly which version to deploy (also with the option to add one on the fly). The next step of the wizard will display any configuration options that might be specific to the Instance type being deployed to (i.e. `CATALINA_OPTS` for Tomcat or `Java Command` for java) as well as the file explorer and deployment type selections for review (or use when creating a new version on the fly). Fill in the required items then simply hit complete. The deploy will now be asynchronously sent off to all of the virtual machines or containers within the Instance in a rolling restart and the deployment status will be represented.
 
-.. TIP:: When deploying to an instance, the custom configuration options that were entered during the previous deployment are automatically carried forward allowing one to edit them or leave them as is.
+.. TIP:: When deploying to an Instance, the custom configuration options that were entered during the previous deployment are automatically carried forward allowing one to edit them or leave them as is.
 
 Rolling Backwards and Forwards
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Because of the tracked history of deployments kept within |morpheus|, the deploy tab of instance detail makes it easy to choose a previously run deployment and jump back to it in the event of a failed deployment. The history will automatically be updated and the configuration, as well as data from the previous deployment state of the instance will be restored.
+Because of the tracked history of deployments kept within |morpheus|, the deploy tab of Instance detail makes it easy to choose a previously run deployment and jump back to it in the event of a failed deployment. The history will automatically be updated and the configuration, as well as data from the previous deployment state of the Instance will be restored.
 
 Offloading Storage
 ^^^^^^^^^^^^^^^^^^
 
-Since a full history of the backup builds are kept in |morpheus|, as the appliance grows it becomes necessary to change where these are stored. On a fresh install these are stored on the local appliance in ``/var/opt/morpheus`` or wherever the master account may have changed the configuration to point to. It is also possible to adjust the deployment archive store by creating a `Storage Provider` tied to an S3 compatible object store, Openstack Swift object store, or any other type of mountpoint provided. This option can be adjusted in :menuselection:`Administration --> Settings --> Provisioning` once a storage provider is created within the account.
+Since a full history of the backup builds are kept in |morpheus|, as the appliance grows it becomes necessary to change where these are stored. On a fresh install these are stored on the local appliance in ``/var/opt/morpheus`` or wherever the master account may have changed the configuration to point to. It is also possible to adjust the deployment archive store by creating a `Storage Provider` tied to an S3 compatible object store, Openstack Swift object store, or any other type of mountpoint provided. This option can be adjusted in |AdmSetPro| once a storage provider is created within the account.
 
 Add Deployment
 ^^^^^^^^^^^^^^
