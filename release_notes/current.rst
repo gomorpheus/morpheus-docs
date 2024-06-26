@@ -10,7 +10,7 @@
 
 .. NOTE:: Items appended with :superscript:`6.x.x` are also included in that version
 
-.. warning:: Rolling upgrades to |morphver| are not supported and will result in rabbitmq message serialization errors. If one node is upgraded in an HA env prior to the others, existing messages will not be able to be processed by the upgrades node(s).
+.. warning:: Rolling upgrades to |morphver| are not supported and will result in rabbitmq message serialization errors. If one node is upgraded in an HA env prior to the others, existing messages will not be able to be processed by the upgraded node(s).
 
 Release Dates
 
