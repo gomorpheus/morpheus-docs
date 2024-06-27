@@ -61,6 +61,26 @@ InnoDB single site cluster.
                 firewall-cmd --permanent --zone=public --add-port=33061/tcp
                 firewall-cmd --zone=public --add-port=33062/tcp
                 firewall-cmd --permanent --zone=public --add-port=33062/tcp
+
+        .. group-tab:: Suse 15
+
+            .. code-block:: bash
+                
+                # To stop and disable FW
+                systemctl stop firewalld
+                systemctl disable firewalld
+
+                # To add public FW rules for MySQL InnoDB Cluster
+                firewall-cmd --zone=public --add-port=3306/tcp
+                firewall-cmd --permanent --zone=public --add-port=3306/tcp
+                firewall-cmd --zone=public --add-port=33060/tcp
+                firewall-cmd --permanent --zone=public --add-port=33060/tcp
+                firewall-cmd --zone=public --add-port=33061/tcp
+                firewall-cmd --permanent --zone=public --add-port=33061/tcp
+                firewall-cmd --zone=public --add-port=33062/tcp
+                firewall-cmd --permanent --zone=public --add-port=33062/tcp
+
+
                 
 * Install MySQL on Each DB Node.
 
@@ -101,6 +121,47 @@ InnoDB single site cluster.
                 
                 # Pin version 
                 sudo echo "exclude=mysql*" | sudo tee -a /etc/yum.conf
+
+        .. group-tab:: Suse 15
+
+            .. code-block:: bash
+
+                # Add the repo if needed. (Can find latest repos at  https://dev.mysql.com/downloads/repo/suse/)
+                wget https://dev.mysql.com/get/mysql84-community-release-sl15-1.noarch.rpm
+                sudo rpm -Uvh mysql84-community-release-sl15-1.noarch.rpm
+
+                # Check the zypper repos to ensure 8.0 is enabled and not 8.4
+                zypper repos | grep mysql.*community
+
+                # Disable 8.4 repos
+                sudo zypper modifyrepo -d mysql-tools-8.4-lts-community
+                sudo zypper modifyrepo -d mysql-8.4-lts-community
+                
+                # Enable 8.0 repos
+                sudo zypper modifyrepo -e mysql80-community
+                sudo zypper modifyrepo -e mysql-tools-community
+                
+                # Refresh repos
+                sudo zypper refresh
+
+                # Install MySQL
+                sudo zypper install mysql-community-server
+
+                # Start MySQL
+                systemctl start mysql
+
+                #get the temp password
+                sudo grep 'temporary password' /var/log/mysql/mysqld.log
+
+                # Pin version (ensure all the MySQL repos are disabled after)
+                sudo zypper modifyrepo -d mysql80-community
+                sudo zypper modifyrepo -d mysql-tools-community
+                sudo zypper modifyrepo -d mysql-tools-8.4-lts-community
+                sudo zypper modifyrepo -d mysql-8.4-lts-community
+
+                # Update the MySQL root Password
+                mysql> ALTER USER 'root'@'localhost' IDENTIFIED BY 'P@ssw0rd!';
+                
                 
 
 * Configure MySQL on Each DB Node.
