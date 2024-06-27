@@ -87,8 +87,8 @@ HaProxy Container (Internal, will create a HaProxy container, must have availabl
   * Plan
     * Select the size of HaProxy container to be provisioned
 
-NSX-T Load Balancer
-  * NSX-T
+NSX Load Balancer
+  * NSX
   * Name
   * Description
   * Enabled
@@ -133,7 +133,7 @@ Not only does Morpheus have an ability to provision HAProxy based load balancer 
 * Fortinet
 * Openstack Octavia
 * HA Proxy
-* NSX-T
+* NSX
 
 Morpheus exposes configuration options during provisioning of an Instance relevant and common to each supported LB Integration. In some cases, Morpheus also provides direct management and sync support for VIP configurations on the various Load Balancers (such as F5, and NSX Advanced Load Balancer), However in a day to day orchestrated workflow this would not be the ideal means by which a user should consume load balancer services.
 

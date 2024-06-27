@@ -6,7 +6,7 @@ IP Pools
 Overview
 ^^^^^^^^
 
-The IP Pools tab in the Networks section allows you to create |morpheus|-type IP Pools (which is an IP address range |morpheus| can use to assign available static IP addresses to Instances) and NSX-T IP Pools. The IP Pool section also displays pools synced from IPAM integrations like Infoblox, Bluecat and others.
+The IP Pools tab in the Networks section allows you to create |morpheus|-type IP Pools (which is an IP address range |morpheus| can use to assign available static IP addresses to Instances) and NSX IP Pools. The IP Pool section also displays pools synced from IPAM integrations like Infoblox, Bluecat and others.
 
 To add a |morpheus| Network Pool
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -16,7 +16,7 @@ To add a |morpheus| Network Pool
      Name
       A friendly name for the IP Pool in |morpheus|.
      Pool Type
-      Currently |morpheus|-type IP Pools and NSX-T IP Pools (with a configured integration) can be created directly from |morpheus|
+      Currently |morpheus|-type IP Pools and NSX IP Pools (with a configured integration) can be created directly from |morpheus|
      Starting Address
       The starting IP address of the IP Pool address range. ex: 192.168.0.2
      Ending Address:

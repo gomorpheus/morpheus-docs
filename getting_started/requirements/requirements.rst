@@ -681,7 +681,7 @@ The following table contains communication information, including frequency and 
     - No
   * - Network Integration
     - Server Pull
-    - NSX-T
+    - NSX
     - Data synchronization
     - 10 Minutes
     - No

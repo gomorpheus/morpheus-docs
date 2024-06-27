@@ -75,7 +75,7 @@
     - 8, 9, 10+
     -
   * - VMware NSX
-    - NSX-T (up to 4.1)
+    - NSX (up to 4.1)
     -
   * - VMware vCenter
     - 5.5, 6.0, 6.5, 6.7, 7.x, 8.x

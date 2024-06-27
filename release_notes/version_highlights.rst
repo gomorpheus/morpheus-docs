@@ -27,7 +27,7 @@ This section includes feature change highlights and key enhancements for all rel
 6.2.4
 =====
 
-:NSX-T: Official support added for NSX-T 4.1
+:NSX: Official support added for NSX 4.1
 :ServiceNow: Added the ability to switch back to the older table-based API mode for CMDB sync
 
 6.2.3
@@ -80,7 +80,7 @@ This section includes feature change highlights and key enhancements for all rel
 6.0.9
 =====
 
-:NSX-T: Official support added for NSX-T 4.1
+:NSX: Official support added for NSX 4.1
 :ServiceNow: Added the ability to switch back to the older table-based API mode for CMDB sync
 
 6.0.8

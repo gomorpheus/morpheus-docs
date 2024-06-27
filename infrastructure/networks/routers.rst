@@ -11,10 +11,10 @@ Routers can be viewed, created, and managed from the Routers tab of the Infrastr
 - Neutron Router
 - NSX Edge Gateway
 - NSX Edge Logical Router
-- NSX-T Cloud Tier0 Gateway
-- NSX-T Cloud Tier1 Gateway
-- NSX-T Tier0 Gateway
-- NSX-T Tier1 Gateway
+- NSX Cloud Tier0 Gateway
+- NSX Cloud Tier1 Gateway
+- NSX Tier0 Gateway
+- NSX Tier1 Gateway
 - Open Telekom Router
 
 Create New Router
