@@ -4,4 +4,4 @@
 .. toctree::
    :maxdepth: 4
 
-   /getting_started/installation/3_node_ha.rst
+   /getting_started/installation/3_node_ha_redhat.rst
