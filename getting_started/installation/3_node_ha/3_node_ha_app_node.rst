@@ -63,7 +63,7 @@ Installation
 
    .. include:: /getting_started/installation/3_node_ha/3_node_ha_morpheus_rb.rst
 
-#. Mount shared storage at /var/opt/morpheus/morpheus-ui if you have not already done so. Create the directory if it does not already exist.
+#. Mount shared storage at /var/opt/morpheus/morpheus-ui on each App node if you have not already done so. Create the directory if it does not already exist.
 
 #. Reconfigure on all nodes
 
@@ -76,4 +76,4 @@ Installation
 
             [root@node: ~] morpheus-ctl reconfigure
 
-   |morpheus| will come up on all nodes and Elasticsearch will auto-cluster. The only item left is the manual clustering of RabbitMQ.
+   |morpheus| will come up on all nodes and Elasticsearch will auto-cluster. RabbitMQ will need to be clustered manually after reconfigure completes on all nodes. 
