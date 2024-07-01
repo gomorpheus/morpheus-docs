@@ -43,19 +43,27 @@ Ensure the firewall (or security group) allows |morpheus| ``inbound`` from agent
 Installation
 ````````````
 
-#. First begin by downloading and installing the requisite |morpheus| packages to the |morpheus| nodes.
+#. First begin by downloading and installing the requisite |morpheus| packages to ALL |morpheus| app nodes.
 
    |morpheus| packages can be found in the Downloads section of the `Morpheus Hub <https://morpheushub.com/download>`_
 
    .. content-tabs::
 
       .. tab-container:: tab1
-         :title: All Nodes
+         :title: RHELL/CentOS
 
          .. code-block:: bash
     
             [root@node: ~] wget https://example/path/morpheus-appliance-ver-1.el8.x86_64.rpm
             [root@node: ~] rpm -ihv morpheus-appliance-appliance-ver-1.el8.x86_64.rpm
+
+      .. tab-container:: tab2
+         :title: Ubuntu
+
+         .. code-block:: bash
+    
+            [root@node: ~] wget https://example/path/morpheus-appliance_ver-1.amd64.deb
+            [root@node: ~] dpkg -i morpheus-appliance-appliance_ver-1.amd64.deb
 
 #. Do NOT run reconfigure yet. The |morpheus| configuration file must be edited prior to the initial reconfigure.
 
