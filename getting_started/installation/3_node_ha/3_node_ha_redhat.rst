@@ -1,3 +1,5 @@
+.. _3nodeinstall-red-hat:
+
 3-Node HA Install example
 ---------------------------------
 
