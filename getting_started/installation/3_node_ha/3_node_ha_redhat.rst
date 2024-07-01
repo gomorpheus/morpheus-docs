@@ -3,7 +3,7 @@
 
 Distributed App Nodes with Externalized MySQL Database
 
-The most common and recommended HA Morpheus deployment consists of 3 app nodes using the embedded services and an external MySQL DB cluster (minimum of 3 nodes). 
+The most common and recommended HA Morpheus deployment consists of three app nodes using embedded services and an external MySQL DB cluster (minimum of 3 nodes). 
 
 .. IMPORTANT:: HA environments installed without engagement from Morpheus are not eligible for support. The provided configuration serves as a sample only and requirements may vary. Please reach out to your account manager to discuss deploying a HA environment to meet requirements for support.
 

@@ -5,6 +5,8 @@
    Availability of UIDs and GIDs can be seen by inspecting ``/etc/passwd`` and ``/etc/group`` respectively.  Change the UIDs and GIDs
    below based on what is available.
 
+You can find additional configuration settings `here <https://docs.morpheusdata.com/en/latest/getting_started/additional/additional_configuration.html#advanced-morpheus-rb-settings>`_
+
 .. content-tabs::
 
    .. tab-container:: tab1

@@ -45,7 +45,7 @@ Installation
 
 #. First begin by downloading and installing the requisite |morpheus| packages to the |morpheus| nodes.
 
-   .. note:: |morpheus| packages can be found in the Downloads section of the `Morpheus Hub <https://morpheushub.com/download>`_
+   |morpheus| packages can be found in the Downloads section of the `Morpheus Hub <https://morpheushub.com/download>`_
 
    .. content-tabs::
 
@@ -63,7 +63,7 @@ Installation
 
    .. include:: /getting_started/installation/3_node_ha/3_node_ha_morpheus_rb.rst
 
-#. Mount shared storage at /var/opt/morpheus/morpheus-ui. Create the directory if it does not already exist.
+#. Mount shared storage at /var/opt/morpheus/morpheus-ui if you have not already done so. Create the directory if it does not already exist.
 
 #. Reconfigure on all nodes
 
@@ -77,5 +77,3 @@ Installation
             [root@node: ~] morpheus-ctl reconfigure
 
    |morpheus| will come up on all nodes and Elasticsearch will auto-cluster. The only item left is the manual clustering of RabbitMQ.
-
-.. note:: Don't forget to mount your shared storage volume to ``/var/opt/morpheus/morpheus-ui`` on each app node.
