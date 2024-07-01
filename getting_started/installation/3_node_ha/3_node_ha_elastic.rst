@@ -1,3 +1,3 @@
 Embedded Elasticsearch 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Morpheus will cluster Elasticsearch automatically. 
+^^^^^^^^^^^^^^^^^^^^^^
+Morpheus cluster Elasticsearch automatically. 

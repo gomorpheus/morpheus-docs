@@ -54,14 +54,16 @@ Installation
 
          .. code-block:: bash
     
-            root@node: ~$ wget https://example/path/morpheus-appliance-ver-1.el8.x86_64.rpm
-            root@node: ~$ rpm -ihv morpheus-appliance-appliance-ver-1.el8.x86_64.rpm
+            [root@node: ~] wget https://example/path/morpheus-appliance-ver-1.el8.x86_64.rpm
+            [root@node: ~] rpm -ihv morpheus-appliance-appliance-ver-1.el8.x86_64.rpm
 
 #. Do NOT run reconfigure yet. The |morpheus| configuration file must be edited prior to the initial reconfigure.
 
 #. Next you will need to edit the |morpheus| configuration file ``/etc/morpheus/morpheus.rb`` on each node.
 
-   .. include:: /getting_started/installation/3_node_ha_morpheus_rb.rst
+   .. include:: /getting_started/installation/3_node_ha/3_node_ha_morpheus_rb.rst
+
+#. Mount shared storage at /var/opt/morpheus/morpheus-ui. Create the directory if it does not already exist.
 
 #. Reconfigure on all nodes
 
@@ -72,7 +74,7 @@ Installation
 
          .. code-block:: bash
 
-            root@node: ~$ morpheus-ctl reconfigure
+            [root@node: ~] morpheus-ctl reconfigure
 
    |morpheus| will come up on all nodes and Elasticsearch will auto-cluster. The only item left is the manual clustering of RabbitMQ.
 

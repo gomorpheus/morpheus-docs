@@ -10,20 +10,20 @@ Clustering Embedded RabbitMQ
 
          .. code-block:: bash
 
-          root@node2: ~$ morpheus-ctl stop morpheus-ui
-          root@node2: ~$ source /opt/morpheus/embedded/rabbitmq/.profile
-          root@node2: ~$ rabbitmqctl stop_app
-          root@node2: ~$ morpheus-ctl stop rabbitmq
+          [root@node2 ~] morpheus-ctl stop morpheus-ui
+          [root@node2 ~] source /opt/morpheus/embedded/rabbitmq/.profile
+          [root@node2 ~] rabbitmqctl stop_app
+          [root@node2 ~] morpheus-ctl stop rabbitmq
 
       .. tab-container:: tab2
          :title: Node 3
 
          .. code-block:: bash
 
-          root@node3: ~$ morpheus-ctl stop morpheus-ui
-          root@node3: ~$ source /opt/morpheus/embedded/rabbitmq/.profile
-          root@node3: ~$ rabbitmqctl stop_app
-          root@node3: ~$ morpheus-ctl stop rabbitmq
+          [root@node3 ~] morpheus-ctl stop morpheus-ui
+          [root@node3 ~] source /opt/morpheus/embedded/rabbitmq/.profile
+          [root@node3 ~] rabbitmqctl stop_app
+          [root@node3 ~] morpheus-ctl stop rabbitmq
 
 
 #. Then on the SOT node, we need to copy the secrets for RabbitMQ.
@@ -50,7 +50,7 @@ Clustering Embedded RabbitMQ
 
         .. code-block:: bash
 
-           root@node2: ~$ vi /etc/morpheus/morpheus-secrets.json
+           [root@node2 ~] vi /etc/morpheus/morpheus-secrets.json
 
              "rabbitmq": {
                "morpheus_password": "***node01_morpheus_password***",
@@ -63,7 +63,7 @@ Clustering Embedded RabbitMQ
 
         .. code-block:: bash
 
-           root@node3: ~$ vi /etc/morpheus/morpheus-secrets.json
+           [root@node3 ~] vi /etc/morpheus/morpheus-secrets.json
 
            "rabbitmq": {
              "morpheus_password": "***node01_morpheus_password***",
@@ -89,7 +89,7 @@ Clustering Embedded RabbitMQ
 
          .. code-block:: bash
 
-            root@node2: ~$ vi /opt/morpheus/embedded/rabbitmq/.erlang.cookie
+            [root@node2 ~] vi /opt/morpheus/embedded/rabbitmq/.erlang.cookie
 
             # node01_erlang_cookie
 
@@ -98,7 +98,7 @@ Clustering Embedded RabbitMQ
 
          .. code-block:: bash
 
-           root@node3: ~$ vi /opt/morpheus/embedded/rabbitmq/.erlang.cookie
+           [root@node3 ~] vi /opt/morpheus/embedded/rabbitmq/.erlang.cookie
 
            # node01_erlang_cookie
 
@@ -111,14 +111,14 @@ Clustering Embedded RabbitMQ
 
          .. code-block:: bash
 
-            root@node2: ~$ morpheus-ctl reconfigure
+            [root@node2 ~] morpheus-ctl reconfigure
 
       .. tab-container:: tab2
          :title: Node 3
 
          .. code-block:: bash
 
-            root@node3: ~$ morpheus-ctl reconfigure
+            [root@node3 ~] morpheus-ctl reconfigure
 
 #. Next we will join nodes 2 & 3 to the cluster.
 
@@ -131,18 +131,18 @@ Clustering Embedded RabbitMQ
 
          .. code-block:: bash
 
-           root@node2: ~$ morpheus-ctl stop rabbitmq
-           root@node2: ~$ morpheus-ctl start rabbitmq
-           root@node2: ~$ source /opt/morpheus/embedded/rabbitmq/.profile
-           root@node2: ~$ rabbitmqctl stop_app
+           [root@node2 ~] morpheus-ctl stop rabbitmq
+           [root@node2 ~] morpheus-ctl start rabbitmq
+           [root@node2 ~] source /opt/morpheus/embedded/rabbitmq/.profile
+           [root@node2 ~] rabbitmqctl stop_app
 
            # Stopping node 'rabbit@node02' ...
 
-           root@node2: ~$ rabbitmqctl join_cluster rabbit@node01
+           [root@node2 ~] rabbitmqctl join_cluster rabbit@node01
 
            # Clustering node 'rabbit@node02' with 'rabbit@node01' ...
 
-           root@node2: ~$ rabbitmqctl start_app
+           [root@node2 ~] rabbitmqctl start_app
 
            # Starting node 'rabbit@node02' ...
 
@@ -151,18 +151,18 @@ Clustering Embedded RabbitMQ
 
          .. code-block:: bash
 
-           root@node3: ~$ morpheus-ctl stop rabbitmq
-           root@node3: ~$ morpheus-ctl start rabbitmq
-           root@node3: ~$ source /opt/morpheus/embedded/rabbitmq/.profile
-           root@node3: ~$ rabbitmqctl stop_app
+           [root@node3 ~] morpheus-ctl stop rabbitmq
+           [root@node3 ~] morpheus-ctl start rabbitmq
+           [root@node3 ~] source /opt/morpheus/embedded/rabbitmq/.profile
+           [root@node3 ~] rabbitmqctl stop_app
 
            # Stopping node 'rabbit@node03' ...
 
-           root@node3: ~$ rabbitmqctl join_cluster rabbit@node01
+           [root@node3 ~] rabbitmqctl join_cluster rabbit@node01
 
            # Clustering node 'rabbit@node03' with 'rabbit@node01' ...
 
-           root@node3: ~$ rabbitmqctl start_app
+           [root@node3 ~] rabbitmqctl start_app
 
            # Starting node 'rabbit@node03' ...
 
@@ -177,14 +177,14 @@ Clustering Embedded RabbitMQ
 
          .. code-block:: bash
 
-            root@node2: ~$ morpheus-ctl reconfigure
+            [root@node2 ~] morpheus-ctl reconfigure
 
       .. tab-container:: tab2
          :title: Node 3
 
          .. code-block:: bash
 
-            root@node3: ~$ morpheus-ctl reconfigure
+            [root@node3 ~] morpheus-ctl reconfigure
 
 #. The last thing to do is start the |morpheus| UI on the two nodes that are NOT the SOT node.
 
@@ -195,14 +195,14 @@ Clustering Embedded RabbitMQ
 
          .. code-block:: bash
 
-            root@node2: ~$ morpheus-ctl start morpheus-ui
+            [root@node2 ~] morpheus-ctl start morpheus-ui
 
       .. tab-container:: tab2
          :title: Node 3
 
          .. code-block:: bash
 
-            root@node3: ~$ morpheus-ctl start morpheus-ui
+            [root@node3 ~] morpheus-ctl start morpheus-ui
 
 
 #. You will be able to verify that the UI services have restarted properly by inspecting the logfiles. A standard practice after running a restart is to tail the UI log file.
@@ -214,12 +214,12 @@ Clustering Embedded RabbitMQ
 
          .. code-block:: bash
 
-            root@node2: ~$ morpheus-ctl tail morpheus-ui
+            [root@node2 ~] morpheus-ctl tail morpheus-ui
 
       .. tab-container:: tab2
          :title: Node 3
 
          .. code-block:: bash
 
-            root@node3: ~$ morpheus-ctl tail morpheus-ui
+            [root@node3 ~] morpheus-ctl tail morpheus-ui
 

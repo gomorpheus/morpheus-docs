@@ -1,11 +1,12 @@
 Configure Morpheus Database and User
-````````````````````````````````````
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 #. Create the Database you will be using with |morpheus|. Login to mysql node:
    
    .. code-block:: bash
 
-    root@node: ~$  mysql -u root -p
-      password: `enter root password`
+    [root@node: ~]  mysql -u root -p
+      # password: `enter root password`
 
     mysql> CREATE DATABASE morpheus CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
 

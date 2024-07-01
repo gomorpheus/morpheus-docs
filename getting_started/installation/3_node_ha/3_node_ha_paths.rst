@@ -1,5 +1,5 @@
 Default Paths
-`````````````
+^^^^^^^^^^^^^
 
 |morpheus| follows several install location conventions. Below is a list of the system paths.
 
