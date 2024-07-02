@@ -29,7 +29,7 @@ In addition to the path, set the privileges users in the Policy scope should hav
 - **LIST:** See the entries on the indicated path listed in the Cypher UI
 - **READ:** Decrypt the entries on the indicated path
 - **WRITE:** Add new entries on the indicated path
-- **UPDATE:** Edit Cypher entries on the indicated path. This is future functionality, the ability to update Cypher entries does not currently exist in the product
+- **UPDATE:** Edit Cypher entries on the indicated path
 - **DELETE:** Delete entries on the indicated path
 
 .. image:: /images/administration/policies/polconfig.png

@@ -3,5 +3,5 @@ DNS
 
 .. toctree::
    route53.rst
-   MicrosoftDNS.rst
+   msdns.rst
    PowerDNS.rst
