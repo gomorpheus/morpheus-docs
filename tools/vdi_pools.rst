@@ -20,9 +20,11 @@ Access to the Virtual Desktop Persona and individual VDI pools is handled throug
 
 #. Navigate to the Role (|AdmRol| > Selected Role)
 #. Access the Personas tab
-#. Toggle the Virtual Desktop permission to "Full" or "None"
+#. Toggle the Virtual Desktop permission to "Full" or "None" (controls access to the Virtual Desktop Persona view)
 #. Access the VDI Pool Access tab
-#. Toggle access to selected VDI pools to "Full" or "None", you can also toggle permission on all pools to "Full" or "None" with the Global Access selection
+#. Toggle access to selected VDI pools to "Full" or "None", you can also toggle permission on all pools to "Full" or "None" with the Global Access selection (controls access to launch virtual desktop instances from configured pools)
+#. Access the Features tab and expand the Provisioning section
+#. Set "Remote Console" permission to Full and "Remote Console Auto Login" permission to Yes (allows user access to VDI sessions)
 #. Role changes are saved automatically, there is no need to manually save
 
 Additionally, users should have a Linux and/or Windows username and password configured in their user profiles in order for virtual desktop login to be as seamless as possible. User profiles are accessed by clicking on the user's name in the upper-right corner of the application windows and clicking USER SETTINGS. The section to enter Windows and Linux account credentials is in the right column of the page.
