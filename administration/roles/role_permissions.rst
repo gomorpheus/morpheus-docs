@@ -1185,6 +1185,6 @@ Role Mappings
       * - Tools: VDI Pools
         - None, Read, Full
         - Allows for the management of virtual desktop (VDI) pools.
-        - Enables the user to access the VDI Pools section (TooVDI) and view existing pools (with "read" permission) or create and edit pools (with "full" permission). Related API functions are also granted with this feature permission.
+        - Enables the user to access the VDI Pools section (|TooVDI|) and view existing pools (with "read" permission) or create and edit pools (with "full" permission). Related API functions are also granted with this feature permission.
         - This permission is recommended for those needing to manage VDI pools
         -
