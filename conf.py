@@ -305,8 +305,6 @@ latex_elements = {
 
 }
 
-
-
 man_pages = [
     (master_doc, 'morpheusdocs', u'Morpheus Documentation',
      [author], 1)
