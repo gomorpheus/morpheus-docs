@@ -26,7 +26,7 @@ Integrating Nutanix Prism Central with |morpheus| requires the use of a service 
 
 - The user belongs to the built-in "Prism Viewer" role
 - The user must be added to any Projects that need to be surfaced to the integration
-- The user must below to a custom role with the permissions listed in the expandable section below
+- The user must belong to a custom role with the permissions listed in the expandable section below
 
 .. toggle-header:: :header: **Required Custom Role Permissions**
 
