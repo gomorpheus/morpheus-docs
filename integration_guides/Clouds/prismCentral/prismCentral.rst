@@ -116,6 +116,8 @@ Integrating Nutanix Prism Central with |morpheus| requires the use of a service 
     - View VPC
     - View Vpn Connection
 
+|
+
 .. IMPORTANT:: Due to a current Nutanix bug, non-administrator service accounts will not be able to utilize backup or snapshot features via |morpheus|. Users who need these features should integrate using an administrator service account rather than the minimal user described here.
 
 Adding a Nutanix Prism Central Cloud
