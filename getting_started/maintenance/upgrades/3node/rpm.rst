@@ -10,14 +10,8 @@ The following covers upgrading the |morpheus| App nodes in 3 Node HA configurati
 ...................
 |morpheus| Release Package urls can be obtained from `https://app.morpheushub.com <https://app.morpheushub.com>`_
 
-..
-  |nonRollingUpgradeVer| or lower -> |morphver| Upgrade
-  .....................................................
-
-Non-rolling Upgrade
-...................
-
-.. warning:: Rolling upgrades to |morphver| are not supported. Non-rolling upgrade instructions should be followed for all versions upgrading to 7.0.3. For that reason, the rolling upgrade instructions are hidden in this version of |morpheus| docs. Should you need to see those steps, roll back to 7.0.2 |morpheus| docs and view them there. Do not perform a rolling upgrade to 7.0.3.
+|nonRollingUpgradeVer| or lower -> |morphver| Upgrade
+.....................................................
 
 .. important:: It is important to stop the morpheus-ui service on all app nodes prior to upgrade. Failure to do so will result in a flood of log errors due to previous message serialization conflict. The messages will eventually expire and the logs will clear.
 
@@ -69,51 +63,50 @@ Non-rolling Upgrade
 
 |
 
-..
-  |minRollingUpgradeVer| -> |morphver| Upgrade
-  ............................................
+|minRollingUpgradeVer| -> |morphver| Upgrade
+............................................
 
-  .. NOTE:: Rolling upgrades are supported for |minRollingUpgradeVer| -> |morphver| only.
+.. NOTE:: Rolling upgrades are supported for |minRollingUpgradeVer| -> |morphver| only.
 
-  .. warning:: |morpheus| |morphver| contains new node and VM node packages that require 3.5GB of storage. It is safe to run ``sudo rm -Rf /var/opt/morpheus/package-repos/*`` after |morphver| package installation and before reconfigure to clean old node and vm node packages from the package-repo when room is needed.
+.. warning:: |morpheus| |morphver| contains new node and VM node packages that require 3.5GB of storage. It is safe to run ``sudo rm -Rf /var/opt/morpheus/package-repos/*`` after |morphver| package installation and before reconfigure to clean old node and vm node packages from the package-repo when room is needed.
 
 
-  #. Upgrade the RPM package on Node 1, then run a Reconfigure on Node 1
+#. Upgrade the RPM package on Node 1, then run a Reconfigure on Node 1
 
-     .. code-block:: bash
+   .. code-block:: bash
 
-      [root@app-server-1 ~]# sudo wget https://packageUrl.morpheus-appliance-x.x.x-x.x86_64.rpm
-      [root@app-server-1 ~]# sudo rpm -Uhv morpheus-appliance-x.x.x-x.x86_64.rpm
-      [root@app-server-1 ~]# sudo morpheus-ctl stop morpheus-ui
-      [root@app-server-1 ~]# sudo morpheus-ctl reconfigure
-      [root@app-server-1 ~]# sudo morpheus-ctl start morpheus-ui
+    [root@app-server-1 ~]# sudo wget https://packageUrl.morpheus-appliance-x.x.x-x.x86_64.rpm
+    [root@app-server-1 ~]# sudo rpm -Uhv morpheus-appliance-x.x.x-x.x86_64.rpm
+    [root@app-server-1 ~]# sudo morpheus-ctl stop morpheus-ui
+    [root@app-server-1 ~]# sudo morpheus-ctl reconfigure
+    [root@app-server-1 ~]# sudo morpheus-ctl start morpheus-ui
 
-     After the reconfigure has succeeded, tail the ui service to watch ui startup logs with ``morpheus-ctl tail morpheus-ui``. Once morpheus-ui is started, proceed to the next node.
+   After the reconfigure has succeeded, tail the ui service to watch ui startup logs with ``morpheus-ctl tail morpheus-ui``. Once morpheus-ui is started, proceed to the next node.
 
-  #. Once Node 1 upgrade has completed and the u is available, upgrade the RPM package on Node 2, then run a Reconfigure on Node 2.
+#. Once Node 1 upgrade has completed and the u is available, upgrade the RPM package on Node 2, then run a Reconfigure on Node 2.
 
-     .. code-block:: bash
+   .. code-block:: bash
 
-      [root@app-server-2 ~]# sudo wget https://packageUrl.morpheus-appliance-x.x.x-x.x86_64.rpm
-      [root@app-server-2 ~]# sudo rpm -Uhv morpheus-appliance-x.x.x-x.x86_64.rpm
-      [root@app-server-2 ~]# sudo morpheus-ctl stop morpheus-ui
-      [root@app-server-2 ~]# sudo morpheus-ctl reconfigure
-      [root@app-server-2 ~]# sudo morpheus-ctl start morpheus-ui
+    [root@app-server-2 ~]# sudo wget https://packageUrl.morpheus-appliance-x.x.x-x.x86_64.rpm
+    [root@app-server-2 ~]# sudo rpm -Uhv morpheus-appliance-x.x.x-x.x86_64.rpm
+    [root@app-server-2 ~]# sudo morpheus-ctl stop morpheus-ui
+    [root@app-server-2 ~]# sudo morpheus-ctl reconfigure
+    [root@app-server-2 ~]# sudo morpheus-ctl start morpheus-ui
 
-     After the reconfigure has succeeded, tail the ui service to watch ui startup logs with ``morpheus-ctl tail morpheus-ui``. Once morpheus-ui is started, proceed to the next node.
+   After the reconfigure has succeeded, tail the ui service to watch ui startup logs with ``morpheus-ctl tail morpheus-ui``. Once morpheus-ui is started, proceed to the next node.
 
-  #. Then upgrade the RPM package on Node 3, then run a Reconfigure on Node 3
+#. Then upgrade the RPM package on Node 3, then run a Reconfigure on Node 3
 
-     .. code-block:: bash
+   .. code-block:: bash
 
-      [root@app-server-3 ~]# sudo wget https://packageUrl.morpheus-appliance-x.x.x-x.x86_64.rpm
-      [root@app-server-3 ~]# sudo rpm -Uhv morpheus-appliance-x.x.x-x.x86_64.rpm
-      [root@app-server-3 ~]# sudo morpheus-ctl stop morpheus-ui
-      [root@app-server-3 ~]# sudo morpheus-ctl reconfigure
-      [root@app-server-3 ~]# sudo morpheus-ctl start morpheus-ui
+    [root@app-server-3 ~]# sudo wget https://packageUrl.morpheus-appliance-x.x.x-x.x86_64.rpm
+    [root@app-server-3 ~]# sudo rpm -Uhv morpheus-appliance-x.x.x-x.x86_64.rpm
+    [root@app-server-3 ~]# sudo morpheus-ctl stop morpheus-ui
+    [root@app-server-3 ~]# sudo morpheus-ctl reconfigure
+    [root@app-server-3 ~]# sudo morpheus-ctl start morpheus-ui
 
-     After the reconfigure has succeeded, tail the ui service to watch ui startup logs with ``morpheus-ctl tail morpheus-ui``. Once morpheus-ui is started, proceed to the next node.
+   After the reconfigure has succeeded, tail the ui service to watch ui startup logs with ``morpheus-ctl tail morpheus-ui``. Once morpheus-ui is started, proceed to the next node.
 
-  #. The upgrade is complete and the |morpheus|-ui services should be running with clustered Elasticsearch and RabbitMQ services across the 3 nodes.
+#. The upgrade is complete and the |morpheus|-ui services should be running with clustered Elasticsearch and RabbitMQ services across the 3 nodes.
 
-  .. important:: If reconfigure after a rpm package upgrade stalls or hangs on starting a service (mysql, rabbitmq, elasticsearch ...) it is possible the ``morpheus-runsvdir`` service did not start or a process it was managing was manually shutdown or killed. To resolve, run ``systemctl stop morpheus-runsvdir`` then ``systemctl start morpheus-runsvdir``, then run reconfigure again, ``morpheus-ctl reconfigure``.
+.. important:: If reconfigure after a rpm package upgrade stalls or hangs on starting a service (mysql, rabbitmq, elasticsearch ...) it is possible the ``morpheus-runsvdir`` service did not start or a process it was managing was manually shutdown or killed. To resolve, run ``systemctl stop morpheus-runsvdir`` then ``systemctl start morpheus-runsvdir``, then run reconfigure again, ``morpheus-ctl reconfigure``.

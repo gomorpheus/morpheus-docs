@@ -9,16 +9,16 @@ latex_documents = [
 
 rst_prolog = """
 
-.. |releasedate| replace:: June 14 2024
+.. |releasedate| replace:: July 16 2024
 .. |releasetype| replace:: LTS
 .. |morphAnnualVer| replace:: v7
 .. |morphbranch| replace:: v7.0
-.. |morphver| replace:: v7.0.3
+.. |morphver| replace:: v7.0.4
 .. |minUpgradeVer| replace:: v6.0.0
-.. |minRollingUpgradeVer| replace:: v6.2.11
+.. |minRollingUpgradeVer| replace:: v7.0.3
 .. |nonRollingUpgradeVer| replace:: v6.2.10,v7.0.2
-.. |previousMorphVer| replace:: v7.0.2
-.. |pluginVer| replace:: 1.1.3
+.. |previousMorphVer| replace:: v7.0.3
+.. |pluginVer| replace:: 1.1.5
 .. |workerVer| replace:: 5.4.8+
 .. |rmqbranch| replace:: v3.5-3.12
 .. |rmqver| replace:: v3.12.9
@@ -27,7 +27,7 @@ rst_prolog = """
 .. |mysqlverfips| replace:: v8.0.36
 .. |esbranch| replace:: v8.9+
 .. |esver| replace:: v8.11.2
-.. |tcver| replace:: v9.0.88
+.. |tcver| replace:: v9.0.90
 .. |nginxver| replace:: v1.25.1
 .. |nodePackageVer| replace:: 3.2.24
 .. |linuxagentver| replace:: v2.6.2
