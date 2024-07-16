@@ -724,8 +724,8 @@ Role Mappings
         - This permission is recommended for those tasked with network management
         -
       * - Networks: Domains
-        - None, Read, Full
-        - Determines access to the Domains tab on the |InfNet| page.
+        - None, Read, Group, Full
+        - Determines access to the Domains tab on the |InfNet| page. Domains may be scoped for specific Group access. If the Group-level permission is selected here, users will only have visibility into Domains scoped to Groups they can access.
         - The Domains page is where network domains are managed. Domains are used for setting FQDNs, joining Windows Instances to domains, and creating A-Records with DNS integrations. On create the domain controller and credentials for domain join must be provided.
         - This permission is recommended for those responsible for |morpheus| DNS and domain-join integrations.
         -
@@ -742,8 +742,8 @@ Role Mappings
         - This permission is recommended for those tasked with network management
         -
       * - Networks: IP Pools
-        - None, Read, Full
-        - Determines access to the IP Pools tab on the Network list page (Infrastructure > Network)
+        - None, Read, Group, Full
+        - Determines access to the IP Pools tab on the Network list page (Infrastructure > Network). IP Pools may be scoped for specific Group access. If the Group-level permission is selected here, users will only have visibility into IP Pools scoped to Groups they can access.
         - The IP Pools tab is where IP pools from various networks are displayed. Detail pages for IP pools can also be accessed here
         - This permission is recommended for those tasked with IP address management
         -
