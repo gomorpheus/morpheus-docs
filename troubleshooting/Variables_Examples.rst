@@ -1,3 +1,5 @@
+.. _Variables Examples:
+
 Variables
 =========
 
