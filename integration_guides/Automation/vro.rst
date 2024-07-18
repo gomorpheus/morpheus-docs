@@ -22,8 +22,10 @@ PASSWORD
   Password that will be configured on the integration for the username that can authentication with vRO
 Tenant Token
   The domain or tenant ID, for example: ``vsphere.local``, with a username of ``administrator@vsphere.local``  
+  
   .. NOTE::
       At times, this can vary depending on how authentication and role assignments for the user have been set up for vRO.
+
 CLIENT ID
   The ID used and obtained from the vRO server, typically used when using ``OAuth 2.0`` Auth Type
 
@@ -35,11 +37,13 @@ The ``Basic`` Auth Type should be used when configuring the |morpheus| integrati
 .. NOTE::
     The ``CLIENT ID`` field can contain any value.  It will be unused with the ``Basic`` Auth Type
 
-Example of a configured ``vSphere`` Authentication Provider from the vRO Control Center:  
+Example of a configured ``vSphere`` Authentication Provider from the vRO Control Center:
+
 .. image:: /images/integration_guides/automation/vro/vsphere_auth_provider.png
   :width: 50%
 
-Example of a configured ``Basic`` Auth Type in the |morpheus| integration:  
+Example of a configured ``Basic`` Auth Type in the |morpheus| integration:
+
 .. image:: /images/integration_guides/automation/vro/basic_auth_integration.png
   :width: 50%
 
@@ -52,7 +56,8 @@ When using ``OAuth 2.0``, the Client ID must be gathered first. This can be foun
 
 Be sure to fill in the tenant token as the domain or tenant ID, for example: ``vsphere.local``, with a username of ``administrator@vsphere.local``.
 
-Example of a configured ``OAuth 2.0`` Auth Type in the |morpheus| integration:  
+Example of a configured ``OAuth 2.0`` Auth Type in the |morpheus| integration:
+
 .. image:: /images/integration_guides/automation/vro/oauth_auth_integration.png
   :width: 50%
 
@@ -68,7 +73,7 @@ One of the first things |morpheus| does when it is tied into a vRO integration i
 
 Creating a task for vRO is simple.
 
-First, go to |LibAut| and create a new task.  nter a Name and a Code, the Code can be used later to refernce the results of tasks.  Choose a task type of ``vRealize Orchestrator Workflow``. A dropdown will appear allowing one to first select the active vRO Integration you would like to use. Once that is selected, a list of workflows becomes available.
+First, go to |LibAut| and create a new task.  Enter a Name and a Code, the Code can be used later to reference the results of tasks.  Choose a task type of ``vRealize Orchestrator Workflow``. A dropdown will appear allowing one to first select the active vRO Integration you would like to use. Once that is selected, a list of workflows becomes available.
 
 .. NOTE:: The next part is where things can get a bit tricky. The parameter body (expected in JSON) format can be a bit difficult to track down. One way is to use the Network Chrome inspector when kicking off a sample workflow from the vRO HTML5 client and grabbing the parameter JSON. Another is to query the API yourself and look at the samples from historical run history.
 
