@@ -560,9 +560,9 @@ Role Mappings
         -
       * - Library: Tasks - Script Engines (Formerly Provisioning: Tasks - Script Engines)
         - None, Full
-        - Determines access to advanced Task types include Groovy Script, Javascript, jRuby Script, and Python Script.
-        - This permission adds the ability to create and manage Groovy, Javascript, jRuby and Python Task Types.
-        - This permission is recommended for those responsible for Tasks containing advanced script capabilities.
+        - Determines access to **Execute Target** of **Local** for Tasks.
+        - This permission limits Tasks from being able to run on the Morpheus appliance(s).  Additionally, Task Types that only contain the **Execute Target** of **Local** will be removed, such as: Groovy, Javascript, and Python Task Types.
+        - This permission is recommended for those responsible for Tasks that may need to execute on the appliance(s).
         -
       * - Library: Templates
         - None, Read, Full
