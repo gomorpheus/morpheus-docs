@@ -4,6 +4,24 @@
 
 This section includes feature change highlights and key enhancements for all releases within |morpheus| version 6. Many other features changes and enhancements were added to each of these versions and the release notes page for each individual version can be reviewed for complete details.
 
+7.0.4
+=====
+
+:API & CLI: - The Group attribute for Network Pools can now be updated via |morpheus| API and CLI. This functionality is also added to |morpheus| UI in this release
+:Catalog: - Catalog item names now truncate after wrapping to a second line rather than at the end of the first line which often cut off too much of longer names
+:Docker: - When running a non-Kubernetes Docker image with image tag set to latest, we now force-pull the image to update the Docker host
+:Kubernetes: - Added default Kubernetes MKS 1.30 Layouts for all supported Clouds
+:Library: - Added or updated Oracle Linux 6, 7, 8 and 9 images for various Cloud types to the default catalog
+           - Default Ubuntu 24.04 images have been added for VMware, Azure, AWS, and MVM/KVM Clouds
+:Load Balancers: - |morpheus| IP Pools can now be used to auto-assign an IP address for the VIP address field when creating a load balancer Instance
+:NSX: - NSX and NSX Cloud now support a configured global proxy
+:Network: - Network Domains can now be scoped to a specific Group. Additionally, the "Network: Domains" Role permission now has a Group access level which limits Domain visibility only to those scoped to accessible Groups
+           - Network Pools can now be scoped to a specific Group. Additionally, the "Network: IP Pools" Role permission now has a Group access level which limits Network Pool visibility only to those scoped to accessible Groups
+:Nutanix Prism Central: - Improved handling of unmanaged VLAN networks. Managed and unmanaged VLANs are no longer synced as the same network type
+:Nutanix Prism Element: - References to "Nutanix Prism" integration have been updated to "Nutanix Prism Element" to differentiate from "Nutanix Prism Central"
+:vCloud Director: - vCD Clouds can now be authenticated through API tokens in addition to username/password authentication
+                  - vCD Clouds will now sync in Plans created in vCD, allow users to select these plans at provision time, and allow access to reconfigure and costing features when custom plans are utilized
+
 7.0.3
 =====
 
