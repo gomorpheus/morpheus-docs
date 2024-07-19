@@ -6,7 +6,7 @@
 
 - Compatible Plugin API version: |pluginVer|
 - Compatible |morpheus| Worker version: |workerVer|
-- Minimum upgrade versions: Rolling: |minRollingUpgradeVer| Non-rolling: |minUpgradeVer|
+- Minimum upgrade versions: Rolling: |minRollingUpgradeVer|, Non-rolling: |minUpgradeVer|
 
 .. .. NOTE:: Items appended with :superscript:`6.x.x` are also included in that version
 
