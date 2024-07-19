@@ -104,7 +104,7 @@ Services
    * - Tomcat
      - 
      - |tcver|
-     - 
+     - |checkmark|
    * - Nginx
      -
      - |nginxver|
@@ -116,7 +116,7 @@ Services
    * - Java
      -
      - |java|
-     - |checkmark|
+     - 
    * - Java (macOS agent)
      -
      - |java-mac|
