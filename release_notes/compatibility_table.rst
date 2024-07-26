@@ -44,6 +44,9 @@
   * - Nutanix AHV
     - 5.0+
     - In 5.5 - 5.7 if Prism Central is managing Prism Element, image creation will not function due to PC Image Management.
+  * - Nutanix Prism Central
+    - pc.2022.1 and higher
+    - Nutanix Prism Central Cloud integration is added through an officially-developed plugin. See share.morpheusdata.com and the Prism Central integration guide in this documentation for more details.
   * - Openstack
     - Latest Versions Supported
     - When creating an OpenStack integration, select the latest available from the OS Version dropdown menu when running a later version

@@ -17,7 +17,6 @@ Release Dates
 New Features
 ============
 
-:API & CLI: - The Group attribute for Network Pools can now be updated via |morpheus| API and CLI. This functionality is also added to |morpheus| UI in this release
 :Catalog: - Catalog item names now truncate after wrapping to a second line rather than at the end of the first line which often cut off too much of longer names
 :Docker: - When running a non-Kubernetes Docker image with image tag set to latest, we now force-pull the image to update the Docker host
 :Kubernetes: - Added default Kubernetes MKS 1.30 Layouts for all supported Clouds
@@ -96,4 +95,3 @@ Appliance & Agent Updates
                    - bluecat-plugin updated to v1.2.3
                    - digital-ocean-plugin updated to v1.3.2
                    - xenserver migrated to embedded XCP-ng plugin v1.0.0
-

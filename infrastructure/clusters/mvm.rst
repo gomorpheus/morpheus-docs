@@ -233,6 +233,113 @@ After loss of the host these three VMs were running on, we can see the lost host
 
 When the lost host returns, the moved VMs will come back to their original host. The third VM is associated with this host as well and is in a stopped state until it is manually restarted.
 
+Image Prep (Windows)
+^^^^^^^^^^^^^^^^^^^^
+
+This section will go through the steps to prepare a Windows image which can be successfully provisioned to MVM clusters. Additionally, this image can serve as a template from which additional images and |morpheus| Library items can be built. In this example case, we'll start from downloading a Windows Server 2019 ISO directly from the Microsoft download center and go all the way through to creating a new Instance Type in |morpheus| that users can provision on-demand.
+
+With the Windows ISO already downloaded, begin by uploading the ISO as a Virtual Image in |morpheus|. Virtual Images are added in |LibVir|. Click :guilabel:`+ ADD` and then choose "ISO." Before adding the file itself, set the following configurations on the Virtual Image:
+
+- **NAME:** A name for the Virtual Image in |morpheus|, such as "Windows Server 2019 ISO"
+- **OPERATING SYSTEM:** "windows server 2019"
+- **MINIMUM MEMORY:** Filters out Service Plans at provision time which do not meet the minimum value. For this image type, I've set 4 GB
+
+In addition to the above, there are a number of checkbox configurations here (many of them are in the expandable "Advanced" section), some of which are checked by default. They should all be unchecked except for "VIRTIO DRIVERS LOADED?" within the "Advanced" expandable section.
+
+With the configurations set, it's time to upload the ISO to |morpheus|. Keep in mind that if you do not specify a bucket in which the file should be uploaded, it will be uploaded to the appliance itself. If you choose to do this, be sure you have enough space to store the images you need. Within the UPLOAD VIRTUAL IMAGE modal is a large dropzone labeled "Drop Files Here." You can drag and drop the ISO file here or you can click the button labeled "Add File" and browse for it. A progress bar will appear, wait until the file is completely uploaded before you save and dismiss the modal. After the file has completely uploaded, click :guilabel:`SAVE CHANGES`.
+
+.. image:: /images/infrastructure/clusters/mvm/imagePrep/progress.png
+  :width: 50%
+
+Next, we'll provision a VM from the ISO using the built-in MVM Instance Type. Once running, we will configure the VM to any specific requirements and convert it to a template. Navigate to |ProIns| and click :guilabel:`+ ADD`. On the TYPE tab of the Instance provisioning wizard, we select the Instance Type to provision. In this case, select "MVM" and click :guilabel:`NEXT`.
+
+.. image:: /images/infrastructure/clusters/mvm/imagePrep/provisionMvmInstanceType.png
+
+On the GROUP tab, select the Group and Cloud containing the target MVM Cluster and provide a name for the new Instance. In my case, I have an automatic naming policy setting my Instance name, but depending on your appliance configuration you may need to enter a custom name. Click :guilabel:`NEXT`.
+
+.. image:: /images/infrastructure/clusters/mvm/imagePrep/groupTab.png
+  :width: 50%
+
+On the CONFIGURE tab, first select the IMAGE. Select the Windows server ISO that was uploaded in the previous step. Based on the minimum memory configuration that was set on the Virtual Image, Plans which are too small will be filtered out. Among compatible Plans, select one that meets your requirements. Next, set the RESOURCE POOL, which is the MVM cluster you're targeting. Configure disks and disk sizes, as well as network details (this will vary based on MVM cluster configuration). Finally, select the HOST, which is the MVM host within the cluster that the new Instance should initially be provisioned onto.
+
+.. image:: /images/infrastructure/clusters/mvm/imagePrep/configTabTop.png
+  :width: 50%
+
+As a final step, we need to also expand the "Advanced Options" section and make sure "ATTACH VIRTIO DRIVERS" is checked. This will attach an ISO containing the VirtIO drivers which we'll use later. Click :guilabel:`NEXT`.
+
+.. image:: /images/infrastructure/clusters/mvm/imagePrep/configTabBottom.png
+  :width: 50%
+
+The final two tabs of the wizard, AUTOMATION and REVIEW, do not require any configuration changes though you may want to review the Instance settings on the final tab. When done, click :guilabel:`COMPLETE`.
+
+Click on the newly provisioning Instance from the Instances list page. Since this image is being provisioned for the first time, the image must be uploaded to the MVM host. This can take a little bit of time but any future attempts to provision workloads from this image will skip this step. Wait for the Instance to fully complete and appear in a green "Ready" status.
+
+Once the Instance has fully finished provisioning, launch a console session by clicking :guilabel:`ACTIONS` and then "Open Console." This will open a new window with a console session into the VM.
+
+.. image:: /images/infrastructure/clusters/mvm/imagePrep/initialConsole.png
+  :width: 50%
+
+After selecting the language, click "Next." On the following screen, click "Install Now." This will begin the Windows setup process on our new VM. You'll next select the operating system type you wish to install. For this example, I'm installing 2019 standard with desktop experience. Click "Next."
+
+.. image:: /images/infrastructure/clusters/mvm/imagePrep/chooseOs.png
+  :width: 50%
+
+Accept the licensing terms and click "Next."
+
+.. image:: /images/infrastructure/clusters/mvm/imagePrep/eula.png
+  :width: 50%
+
+On the next screen, choose a custom install.
+
+.. image:: /images/infrastructure/clusters/mvm/imagePrep/clickInstall.png
+  :width: 50%
+
+The next screen asks where Windows should be installed and may be empty. Click "Load Driver" to locate the mounted disk image containing the VirtIO drivers. The search should return a number of VirtIO SCSI controller packages for various Windows flavors. Select the proper package for the Windows version being installed. Click "Next."
+
+.. image:: /images/infrastructure/clusters/mvm/imagePrep/selectVirtioPackage.png
+  :width: 50%
+
+After a moment, we're back at the screen asking where Windows should be installed. We should see the disk(s) of size and type selected at the time the VM was provisioned. Select the proper disk and click "Next." The Windows installation will now begin. Once Windows has fully installed, proceed to the next step.
+
+.. image:: /images/infrastructure/clusters/mvm/imagePrep/selectDisk.png
+  :width: 50%
+
+Following installation, Windows will restart and prompt for an Administrator user password. Set the password and log in as Administrator. Currently, there are no network interfaces configured. We need to install the VirtIO drivers to get this machine onto the network. We have a disk image mounted with the driver installer so we need to navigate to that drive and launch the installer. Open Windows Explorer and locate the drive in the side bar. In my case, it's the E: drive. Right-click on ``virtio-win-gt-x64`` and select "Install."
+
+.. image:: /images/infrastructure/clusters/mvm/imagePrep/windowsExp.png
+
+Step through the installer. Simply click "Next" or "Install" through each step, there are no configuration changes needed. Once the installer has completed, click "Finish." You can confirm we now have a network interface by opening a Command Prompt session and using the ``ipconfig`` command. One network adapter should be listed.
+
+.. image:: /images/infrastructure/clusters/mvm/imagePrep/showInterface.png
+  :width: 50%
+
+We can now eject the two virtual disks, drives D: and E: in my case. Then, launch Windows Security so we can disable firewalls. Turn off firewall for domain, private network, and public network.
+
+.. image:: /images/infrastructure/clusters/mvm/imagePrep/winDefender.png
+  :width: 50%
+
+Next, back in Command Prompt, run ``winrm quickconfig`` to configure ``winrm``. Within ``Services``, ensure that ``winrm`` (Windows Remote Management) is set to automatic on startup. Right-click on the Start button and select Run. Enter "sysprep" and click OK. In the Windows Explorer window that appear, right-click on ``sysprep`` and click "Run as Administrator". Under "Shutdown Options", choose Quit and click OK. If this is set to shutdown, |morpheus| will simply restart the VM. Once this is completed, a new file ``Sysprep_succeeded.tag`` appears in Windows Explorer.
+
+.. image:: /images/infrastructure/clusters/mvm/imagePrep/sysprepComplete.png
+  :width: 50%
+
+We're now done configuring Windows and the console window can be closed. We'll move on to creating a template from the VM we just configured. Begin by opening an SSH session into the |morpheus| appliance server. Confirm ``jq`` is up to date on the appliance box (``apt install jq``). Then, go ahead and stop the running Windows VM. We can do this from the Instance detail page in |morpheus|. Click :guilabel:`ACTIONS` and then "Stop Server." Still on the Instance detail page, click :guilabel:`ACTIONS` and then "Import as Image." This will perform a snapshot and create a new Virtual Image (|LibVir|).
+
+.. image:: /images/infrastructure/clusters/mvm/imagePrep/importImage.png
+
+There won't be an indication in the UI that the Virtual Image is being created and it will take at least a few minutes. The new image is not usable until it's in an "ACTIVE" status. If it's "SAVING" or "QUEUED," it is still being prepared and saved. Once saved, additional configurations are needed on the Virtual Image in |morpheus|. Edit the new Virtual Image and check the following configurations:
+
+- **MINIMUM MEMORY:** Set as appropriate
+- **SYSPREPPED/GENERALIZED IMAGE?:** Checked
+- **INSTALL AGENT?:** Checked
+- **USERNAME:** Remove if present
+- **PASSWORD:** Remove if present
+- **VIRTIO DRIVERS LOADED?:** Checked
+
+All other checkbox-type configurations not mentioned in the above list should be unchecked. Click :guilabel:`SAVE CHANGES`.
+
+At this point all image preparation steps are completed. |morpheus| library items can now be created from this image by adding new Node Types, Layouts, and Instance Types. The complete steps for building a library item go beyond the scope of this particular guide but more detail on that process is available elsewhere in |morpheus| UI documentation. Once the library items are created, new Instances may be provisioned complete with |morpheus| Agent installed.
+
 Decommissioning a CEPH-backed Host
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
