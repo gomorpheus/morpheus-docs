@@ -328,7 +328,15 @@ We're now done configuring Windows and the console window can be closed. We'll m
 
 .. image:: /images/infrastructure/clusters/mvm/imagePrep/importImage.png
 
-There won't be an indication in the UI that the Virtual Image is being created and it will take at least a few minutes. The new image is not usable until it's in an "ACTIVE" status. If it's "SAVING" or "QUEUED," it is still being prepared and saved. Once saved, additional configurations are needed on the Virtual Image in |morpheus|. Edit the new Virtual Image and check the following configurations:
+There won't be an indication in the UI that the Virtual Image is being created and it will take at least a few minutes. The new image is not usable until it's in an "ACTIVE" status. If it's "SAVING" or "QUEUED," it is still being prepared and saved. If desired, you could check on the status of the new virtual image with a call to |morpheus| API like the one below:
+
+.. code-block:: bash
+
+  curl -k --request GET --url https://morph.jabalabs.cloud/api/virtual-images/<id>
+  --header 'accept: application/json' --header 'authorization: Bearer xxx-xxx-xxx-xxx-xxx' |
+  jq '.virtualImage.status'
+
+Once saved, additional configurations are needed on the Virtual Image in |morpheus|. Edit the new Virtual Image and check the following configurations:
 
 - **MINIMUM MEMORY:** Set as appropriate
 - **SYSPREPPED/GENERALIZED IMAGE?:** Checked
