@@ -254,6 +254,7 @@ With the configurations set, it's time to upload the ISO to |morpheus|. Keep in 
 Next, we'll provision a VM from the ISO using the built-in MVM Instance Type. Once running, we will configure the VM to any specific requirements and convert it to a template. Navigate to |ProIns| and click :guilabel:`+ ADD`. On the TYPE tab of the Instance provisioning wizard, we select the Instance Type to provision. In this case, select "MVM" and click :guilabel:`NEXT`.
 
 .. image:: /images/infrastructure/clusters/mvm/imagePrep/provisionMvmInstanceType.png
+  :width: 50%
 
 On the GROUP tab, select the Group and Cloud containing the target MVM Cluster and provide a name for the new Instance. In my case, I have an automatic naming policy setting my Instance name, but depending on your appliance configuration you may need to enter a custom name. Click :guilabel:`NEXT`.
 
