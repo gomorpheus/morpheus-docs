@@ -41,12 +41,11 @@ CMDB DISCOVERY
 CHANGE MANAGEMENT
   Select an existing Change Management Integration to set on the Cloud. ex: Cherwell
 AGENT INSTALL MODE
-  * SSH / WINRM: |morpheus| will use SSH or WINRM for Agent install.
+  * SSH / WINRM / Guest Execution: |morpheus| will attempt to use SSH, WINRM or Guest Execution for Agent install.
   * Cloud Init / Unattend (when available): (DEFAULT) |morpheus| will utilize Cloud-Init or Cloudbase-Init for agent install when provisioning images with Cloud-Init/Cloudbase-Init installed. |morpheus| will fall back on SSH or WINRM if cloud-init is not installed on the provisioned image. Morpheus will also add Agent installation to Windows unattend.xml data when performing Guest Customizations or utilizing syspreped images.
-API PROXY
-  Set a proxy for outbound communication from the |morpheus| Appliance to the Cloud endpoints. Proxies can be added in the `Infrastructure > Networks > Proxies` tab.
-INSTALL AGENT
-  Enable to have Agent Installation on by default for all provisioning into this Cloud. Disable for Agent Installation to be off by default for all provisioning into this Cloud.
+VDI GATEWAY
+  Set a VDI Gateway for outbound communication from the |morpheus| Appliance to the vdi endpoints. VDI Gateways can be added in ``/tools/vdi/gateways``
+
 
 **Provisioning Options**
 
