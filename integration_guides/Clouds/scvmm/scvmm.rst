@@ -60,7 +60,15 @@ Add a SCVMM Cloud
       Enable for |morpheus| to automatically discover existing VMs in the scoped resources
     ENABLE HYPERVISOR CONSOLE
       Enable to use VNC Hypervisor Console for |morpheus| console connection as opposed to the default SSH and RDP console connection methods. Requires resolution of all Hyper-V host names and access over port 443 from the |morpheus| appliance to Hyper-V hosts.
+    
+    **SCVMM Specific Advanced Options**
+    
+    INSTALL AGENT
+      Enabled by default, INSTALL AGENT installs the |morpheus| agent on the scvmm Controller when adding the cloud, which is required for full functionally unless using a shared controller in which scenario the agent would already be installed on the scvmm controller node. Disabling INSTALL AGENT on the cloud config when not using a shared controller will remove the ability to provision to the cloud.
 
     .. include:: /integration_guides/Clouds/advanced_options.rst
+
+
+
 
 #. After clicking :guilabel:`NEXT`, the new Cloud can be added to a Group or configured with additional advanced options.
