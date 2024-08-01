@@ -24,7 +24,7 @@ Features
 - Gracefully take hosts out of service with maintenance mode
 - Migration of workloads across hosts
 - Configurable automatic failover of running workloads when a host is lost
-- Ability to add and provision to fiber channel storage resources or iSCSI storage resources via GFS2 or OCFS2 filesystem
+- Ability to add and provision to fibre channel storage resources or iSCSI storage resources via GFS2 or OCFS2 filesystem
 - Integration with |morpheus| costing
 - Governance through |morpheus| RBAC, Tenancy, and Policies
 
@@ -319,7 +319,7 @@ We can now eject the two virtual disks, drives D: and E: in my case. Then, launc
 .. image:: /images/infrastructure/clusters/mvm/imagePrep/winDefender.png
   :width: 50%
 
-Next, back in Command Prompt, run ``winrm quickconfig`` to configure ``winrm``. Within ``Services``, ensure that ``winrm`` (Windows Remote Management) is set to automatic on startup. Right-click on the Start button and select Run. Enter "sysprep" and click OK. In the Windows Explorer window that appear, right-click on ``sysprep`` and click "Run as Administrator". Under "Shutdown Options", choose Quit and click OK. If this is set to shutdown, |morpheus| will simply restart the VM. Once this is completed, a new file ``Sysprep_succeeded.tag`` appears in Windows Explorer.
+Next, back in Command Prompt, run ``winrm quickconfig`` to configure ``winrm``. Within ``Services``, ensure that ``winrm`` (Windows Remote Management) is set to automatic on startup. Right-click on the Start button and select Run. Enter "sysprep" and click OK. In the Windows Explorer window that appears, right-click on ``sysprep`` and click "Run as Administrator". Under "Shutdown Options", choose Quit and click OK. If this is set to shutdown, |morpheus| will simply restart the VM. Once this is completed, a new file ``Sysprep_succeeded.tag`` appears in Windows Explorer.
 
 .. image:: /images/infrastructure/clusters/mvm/imagePrep/sysprepComplete.png
   :width: 50%
@@ -478,7 +478,7 @@ Remove the monitor by its ID. The ID is the part between "ceph-mon@" and ".servi
 
   ceph mon remove <hostname>
 
-Remove the hostname from CRUSH
+Remove the hostname from CRUSH:
 
 .. code-block:: bash
 
@@ -492,7 +492,7 @@ Check the cluster health once again to confirm the cluster is in a healthy state
 
 **Final Steps**
 
-Cleanup the OSD auth. Repeat this step for each OSD that must be removed.
+Cleanup the OSD auth. Repeat this step for each OSD that must be removed:
 
 .. code-block:: bash
 
