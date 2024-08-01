@@ -86,8 +86,6 @@ Adding an Active Directory Integration
 
 Now allowed AD users can login to |morpheus| via their Active Directory credentials and a User will be automatically generated to |morpheus| with matching metadata and mapped Role permissions.
 
-.. NOTE:: Sub-tenant |morpheus| API authentication for Active Directory generated users is not currently supported.
-
 .. end_active_directory
 
 Troubleshooting
