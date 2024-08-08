@@ -190,7 +190,7 @@ Role Mappings
       * - Admin: Monitoring Settings
         - None, Full
         - Allows or disallows access to |AdmSetMon|
-        - The monitoring settings page is where |morpheus| monitoring and monitoring integrations are configured.  Available integrations are AppDynamics, ServiceNow, and New Relic. Monitoring checks can be turned on or off, and availability time frame, check interval period, and reported availability precision are also configured on this page.
+        - The monitoring settings page is where |morpheus| monitoring and monitoring integrations are configured.  Monitoring checks can be turned on or off, and availability time frame, check interval period, and reported availability precision are also configured on this page.
         - This permission is recommended for those responsible for configuring |morpheus| monitoring settings and integrations.
         - This permission is recommended to be set to None in the Tenant Role to restrict this access from Subtenant Users.
       * - Admin: Packages
