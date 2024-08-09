@@ -9,7 +9,7 @@ Distributed App Nodes with Externalized DB
 
 .. include:: /installation/app/default-locations.rst
 
-.. include:: /installation/database/aurora/aurora-5.7.rst
+.. include:: /installation/database/aurora/aurora-8.0.rst
 
 .. include:: /installation/app/3-node-ha/app-node-installation-al2.rst
 

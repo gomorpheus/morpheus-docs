@@ -3,7 +3,7 @@ Requirements
 
 Ensure the firewall (or security group) allows |morpheus| ``outbound`` access to the various backend services:
 
-  - mySQL Ports
+  - MySQL Ports
     
     - 3306/tcp
   

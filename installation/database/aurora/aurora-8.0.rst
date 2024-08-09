@@ -1,6 +1,6 @@
-.. _aurora-mysql-5_7:
+.. _aurora-mysql-8_0:
 
-Aurora (MySQL 5.7)
+Aurora (MySQL 8.0)
 ^^^^^^^^^^^^^^^^^^
 
 Introduction
@@ -9,8 +9,8 @@ Introduction
 Amazon Aurora is a relational database management system (RDBMS) built for the cloud with full MySQL compatibility.  It can be designed to be multi-AZ
 capable, allows scaling up, and minimal downtime.
 
-In this document, the non-serverless version will be created and configured.  At the time of this writing, |morpheus| only support MySQL 5.7, which
-Aurora only supports on non-serverless.  Aurora Serverless v2 does support MySQL 8 but until |morpheus| supports that version, it is untested.
+In this document, the non-serverless version will be created and configured.  At the time of this writing, |morpheus| only supports MySQL 5.7 and 8.0, but 5.7
+is being deprecated.  Aurora Serverless v2 does support MySQL 8.0 but until |morpheus| tests it, it is unsupported.
 
 Being non-serverless means that there will be costs for the instances that back Aurora, as long as it is available.  With serverless, the nodes scale 
 as needed, even down to 0, to save costs and you only pay for the compute used.
@@ -40,33 +40,39 @@ Create Aurora Instance (UI)
 #. Click the ``Create New Database`` button
 #. Ensure the following settings are chosen for the database:
     
-    .. list-table:: **Minimum Required Database Settings**
+    .. list-table:: **Minimum Required Database Settings, others are at the customer's discretion**
         :header-rows: 1
 
         * - Setting
           - Value
+        * - Creation Method
+          - Standard Create
         * - Engine Type
-          - Amazon Aurora
-        * - Edition
-          - Amazon Aurora MySQL-Compatible Edition
+          - Aurora (MySQL Compatible)
         * - Engine Version
-          - Aurora (MySQL 5.7) 2.11.1 **(must be MySQL 5.7)**
+          - Aurora MySQL 3.05.2 (compatible with MYSQL 8.0.32) **(a higher 8.0 version can be chosen)**
         * - Templates
           - Production
+        * - DB Cluster Identifier
+          - Enter a name for the RDS in AWS
+        * - Master username
+          - Enter a username and note it for later
+        * - Credential Management
+          - Self-managed is recommended but either way be sure to note the password for later
         * - DB instance class
-          - db.r5.large (2 vCPUs 16GB RAM)
+          - db.r6g.large (2 vCPUs 16GB RAM)
         * - Multi-AZ deployment
           - Create an Aurora Replica
-        * - Database authentication options
-          - Password Authentication
-        * - DB subnet group
-          - Choose the created DB subnet group
+        * - Network type
+          - Be sure this matches the subnets being deployed to.  For example, if the subnets supports IPv4 and IPv6, choose dual-stack mode
+        * - VPC and DB subnet group
+          - Choose the previously created DB subnet group from the correct VPC
         * - Existing VPC security groups
-          - Choose the created Security Group
+          - Choose the previously created Security Group
 
     .. note:: Any settings not listed above can be kept at their default, or items such as usernames, VPCs, monitoring, etc. are all preferences of the customer and will not affect the performance or availability
 
-    .. important:: **Do not create the initial database** for |morpheus| using the UI, it will be created following the ``app`` documentation
+    .. important:: **Do not create the initial database** for |morpheus| using the UI, it will be created following the ``App`` documentation
 
 Create Aurora Instance (CLI)
 ````````````````````````````
@@ -87,12 +93,12 @@ If you are familiar with using the AWS CLI, you can run the following commands t
       
       db_subnet_group_name='morpheussubnetgroup'
       # subnet_ids must contain at least two from different AZs that match the availability_zones below
-      subnet_ids='subnet-0ed95648b7e27a375 subnet-00422803877471552'
-      availability_zones='us-east-2a us-east-2b'
+      subnet_ids='subnet-0ed95648b7e27a375 subnet-00422803877471552'  # Space separated list
+      availability_zones='us-east-2a us-east-2b'  # Space separated list
       db_cluster_identifier='morpheus-cluster'
       vpc_security_group_ids='sg-0a24611271fd99b3a'
       # Get a list of engine verisons:  aws rds describe-db-engine-versions --engine aurora-mysql --query "DBEngineVersions[].EngineVersion"
-      engine_version='5.7.mysql_aurora.2.11.1'
+      engine_version='8.0.mysql_aurora.3.05.2'
       master_username='admin'
       # Password must be at least 8 printable ASCII characters. Can't contain any of the following: / (slash), '(single quote), "(double quote) and @
       master_user_password='abc123123'
@@ -125,7 +131,7 @@ If you are familiar with using the AWS CLI, you can run the following commands t
       aws rds create-db-instance --db-instance-identifier $db_instance1_identifier \
         --db-cluster-identifier $db_cluster_identifier \
         --engine 'aurora-mysql' \
-        --db-instance-class 'db.r5.large' \
+        --db-instance-class 'db.r6g.large' \
         --no-publicly-accessible \
         --no-enable-performance-insights
 
@@ -133,18 +139,12 @@ If you are familiar with using the AWS CLI, you can run the following commands t
       aws rds create-db-instance --db-instance-identifier $db_instance2_identifier \
         --db-cluster-identifier $db_cluster_identifier \
         --engine 'aurora-mysql' \
-        --db-instance-class 'db.r5.large' \
+        --db-instance-class 'db.r6g.large' \
         --no-publicly-accessible \
         --no-enable-performance-insights
 
 Configure Morpheus Database and User
 ````````````````````````````````````
-
-#. If using Amazon Linux 2 to connect to the database with |morpheus| installed, it requires a shared library for the ``mysql`` binary, provided by |morpheus|, to run:
-
-  .. code-block:: bash
-
-    [root]# yum install libatomic -y
 
 #. Create the Database you will be using with |morpheus|.  Login to Aurora on **Node 01**:
 

@@ -10,7 +10,7 @@ Possible locations, depending on OS:
     - ``/etc/my.cnf``
     - ``/etc/my.cnf.d/my.cnf``
 
-    * mySQL config file settings on DB servers
+    * MySQL config file settings on DB servers
 
         .. IMPORTANT:: Make sure to update innodb_buffer_pool_size and innodb_buffer_pool_instances to the appropriate size.
         

@@ -188,7 +188,7 @@ InnoDB single site cluster.
             _EOF_
     
 
-    * mySQL config file settings on DB servers
+    * MySQL config file settings on DB servers
 
         .. include:: /installation/database/innodb/mysql-cnf-files/mysql-cnf.rst  
             :start-after: Full-Config-Section-Start
@@ -288,7 +288,7 @@ InnoDB single site cluster.
 
            cluster.status()
 
-    * Create the mySQL Router user **(Make sure to create this before setting up MySQL Router. Otherwise the user will be created with the legacy native plugin)**
+    * Create the MySQL Router user **(Make sure to create this before setting up MySQL Router. Otherwise the user will be created with the legacy native plugin)**
         
         .. code-block:: js
 
@@ -402,7 +402,7 @@ MultiSite Full Install
 
            clusterset.status()
 
-    * Create the mySQL Router user **(Make sure to create this before setting up MySQL Router. Otherwise the user will be created with the legacy native plugin)**
+    * Create the MySQL Router user **(Make sure to create this before setting up MySQL Router. Otherwise the user will be created with the legacy native plugin)**
         
         .. code-block:: js
 

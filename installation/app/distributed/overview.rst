@@ -8,9 +8,9 @@ Full HA Install Overview
 
 Minimum Nodes
 `````````````
-For Full High-Availability configurations, RabbitMQ, Elasticsearch and mySQL(Galera/Percona) must be configured in minimum 3 Node Clusters, and 2 or more App Nodes are required.
+For Full High-Availability configurations, RabbitMQ, Elasticsearch and MySQL(Galera/Percona) must be configured in minimum 3 Node Clusters, and 2 or more App Nodes are required.
 
-.. note:: VM requirements assume local services. VM count requirements are not applicable when using hosted services such as AWS RDS mySQL.
+.. note:: VM requirements assume local services. VM count requirements are not applicable when using hosted services such as AWS RDS MySQL.
 
 Minimum 11 Nodes
    - 2+ Application Hosts
@@ -18,7 +18,7 @@ Minimum 11 Nodes
    - 3 Node Elasticsearch Cluster
    - 3 Node Galera/Percona Cluster
 
-.. important:: Asynchronous Active/Active and Active/Passive Database configurations are not supported for HA configurations. A minimum 3 node mySQL Cluster with synchronous multi-master replication is required for Database Clusters. |morpheus| recommends Percona XtraDB Clusters with synchronous multi-master replication. Asynchronous Active/Passive can be used but is not considered an HA configuration.
+.. important:: Asynchronous Active/Active and Active/Passive Database configurations are not supported for HA configurations. A minimum 3 node MySQL Cluster with synchronous multi-master replication is required for Database Clusters. |morpheus| recommends Percona XtraDB Clusters with synchronous multi-master replication. Asynchronous Active/Passive can be used but is not considered an HA configuration.
 
 .. important:: For Clusters with more than 3 Nodes, always use an odd number of nodes (3,5,7 etc) to ensure Quorum.
 
@@ -43,7 +43,7 @@ Port Requirements
 +---------------+-------------------+------------------+----------------------------------------------+
 | Service       | Source            | Destination      | Port(s)                                      |
 +---------------+-------------------+------------------+----------------------------------------------+
-| Morpheus      | Application Node  | mySQL            | 3306                                         |
+| Morpheus      | Application Node  | MySQL            | 3306                                         |
 +---------------+-------------------+------------------+----------------------------------------------+
 | Morpheus      | Application Node  | Elasticsearch    | 9200                                         |
 +---------------+-------------------+------------------+----------------------------------------------+
@@ -53,7 +53,7 @@ Port Requirements
 +---------------+-------------------+------------------+----------------------------------------------+
 | Elasticsearch | Elasticsearch     | Elasticsearch    | 9300                                         |
 +---------------+-------------------+------------------+----------------------------------------------+
-| mySQL         | mySQL             | mySQL            | 4444,4567,4568                               |
+| MySQL         | MySQL             | MySQL            | 4444,4567,4568                               |
 +---------------+-------------------+------------------+----------------------------------------------+
 | RabbitMQ      | RabbitMQ          | RabbitMQ         | 4369,25672                                   |
 +---------------+-------------------+------------------+----------------------------------------------+

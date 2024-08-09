@@ -5,4 +5,4 @@ Amazon Aurora
 
 .. toctree::
    
-   /installation/database/aurora/aurora-5.7.rst
+   /installation/database/aurora/aurora-8.0.rst

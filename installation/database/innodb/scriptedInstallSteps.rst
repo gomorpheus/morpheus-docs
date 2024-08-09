@@ -42,7 +42,7 @@ Run the following script on each DB node to install MySQL and configure to best 
      .. toggle-header::
             :header: **Expand for mysql config**
 
-              * mySQL config file settings on DB servers
+              * MySQL config file settings on DB servers
         
                 .. code-block:: bash
                      

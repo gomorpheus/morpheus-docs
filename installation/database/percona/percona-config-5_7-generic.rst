@@ -120,7 +120,7 @@ To ensure TLS is used, perform the following:
       **Node 01** may still be running the ``mysql@bootstrap.service`` service, and not mysql.  You can run ``systemctl stop mysql@bootstrap.service`` first
       and then run ``systemctl start mysql`` to restart the service.  The bootstrap service just needs to be run initially when the cluster is started.
 
-#. To verify that mySQL now requires TLS, run the following command, replacing parameters as needed.  You should receive an error similar to 
+#. To verify that MySQL now requires TLS, run the following command, replacing parameters as needed.  You should receive an error similar to 
    ``ERROR 3159 (HY000): Connections using insecure transport are prohibited while --require_secure_transport=ON``
 
    .. code-block:: bash

@@ -5,7 +5,7 @@ Ensure the firewall (or security group) allows |morpheus| ``outbound`` access to
 
   - Should mirror the ``inbound`` ports below for RabbitMQ and ElasticSearch
   
-  - mySQL Port to External DB
+  - MySQL Port to External DB
     
     - 3306/tcp 
 
