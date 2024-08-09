@@ -24,9 +24,7 @@ Packages consist of two primary parts, a ``.json`` manifest file (which sets som
 
 When uploading packages to |morpheus|, keep in mind that the same packages can be reinstalled as many times as desired. When the same package is reinstalled, any local changes to those resources made in the |morpheus| appliance will be overwritten. For example, if a Task has been created by package and changes are made locally to the Task config within |morpheus|, subsequent uploads of the packages would overwrite those changes. A better method for making changes to package-sourced resources would be to update the package code, increase the version number, and upload the package once again. This ensures important local changes would not be overwritten by subsequent uploads. There is no warning given in the UI, changes are simply overwritten without notice.
 
-Additionally, it's worth noting that packages cannot be deleted. Resources created by the package can be edited and deleted but packages cannot be deleted from the packages list page. You may notice that |morpheus| CLI does contain a function for deleting packages but it is not yet fully implemented. Even via |morpheus| CLI or API you cannot currently delete packages from the packages list page.
-
-.. NOTE:: It is still possible to delete packages by querying the |morpheus| database directly. Users with such access could modify the ``morpheus_package`` database table if the need arose. There are no tools available for deleting packages from |morpheus| UI, CLI, or API.
+Additionally, it's worth noting that while packages can be deleted (|trash| icon on the packages detail page), you will simply delete the package from the list. |morpheus| will show a helpful list of resources added with the package if cleanup is desired but will not delete them.
 
 Creating Packages
 ^^^^^^^^^^^^^^^^^
