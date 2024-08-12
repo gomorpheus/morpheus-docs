@@ -42,18 +42,18 @@ Create OpenSearch Domain (UI)
         - Production
       * - Deployment option(s)
         - Domain **without** standby
-      * - Version
-        - (latest) (2.11 tested at the time of this writing)
       * - Availability Zones
-        - 3-AZ recommended (2-AZ is possible)
+        - 3-AZ recommended (2-AZ is possible, see notes below) 
+      * - Version
+        - (latest) (2.13 tested at the time of this writing)
       * - (Data Nodes) Instance type
         - (General Purpose) m6g.large.search
       * - Number of Nodes
         - 3 (2 if 2-AZ was chosen)
       * - EBS volume type
-        - gp2 (gp3 is possible)
+        - gp3 (gp2 is possible)
       * - EBS storage size per node
-        - Refer to the internal storage calculator
+        - Refer to the [Storage Calculator](https://docs.morpheusdata.com/en/latest/getting_started/requirements/requirements.html#storage-considerations)
       * - (Dedicated master nodes) Instance Type
         - (General Purpose) m6g.large.search
       * - Number of master nodes
@@ -61,7 +61,7 @@ Create OpenSearch Domain (UI)
       * - Network
         - VPC access (recommended)
       * - Subnets
-        - Choose one subnet from at least three AZs (or two is 2-AZ was chosen)
+        - Choose one subnet from at least three AZs (or two if 2-AZ was chosen)
       * - Security Group(s)
         - Choose the Security Group previously created
       * - Fine-grained access control
@@ -97,18 +97,19 @@ If you are familiar with using the AWS CLI, you can run the following commands t
     es_domain_name='morpheusdomain'
     es_security_group_ids='sg-0c6cd7efd0cff7696'
     es_subnet_ids='subnet-0ed95648b7e27a375,subnet-00422803877471552,subnet-0d15255413b36bb8d'
-    es_volume_size_gb='10'
+    es_volume_size_gb='10' # Use the storage calculator to help determine the size needed
     es_master_username='admin'
     # Password must be at least 8 characters long and contain at least one uppercase letter, one lowercase letter, one number, and one special character.
     es_master_password='Abc123123@'
+    aws_account_id='426242579432'
 
     # Create Amazon OpenSearch Domain
     aws opensearch create-domain --domain-name $es_domain_name \
-      --engine-version 'OpenSearch_2.11' \
+      --engine-version 'OpenSearch_2.13' \
       --cluster-config "MultiAZWithStandbyEnabled=false,InstanceType=m6g.large.search,InstanceCount=3,DedicatedMasterEnabled=true,ZoneAwarenessEnabled=true,ZoneAwarenessConfig={AvailabilityZoneCount=3},DedicatedMasterType=m6g.large.search,DedicatedMasterCount=3" \
-      --ebs-options "EBSEnabled=true,VolumeType=gp2,VolumeSize=$es_volume_size_gb" \
+      --ebs-options "EBSEnabled=true,VolumeType=gp3,VolumeSize=$es_volume_size_gb" \
       --advanced-security-options "Enabled=true,InternalUserDatabaseEnabled=true,MasterUserOptions={MasterUserName=$es_master_username,MasterUserPassword=$es_master_password}" \
-      --access-policies '{"Version":"2012-10-17","Statement":[{"Effect":"Allow","Principal":{"AWS":"*"},"Action":"es:*","Resource":"arn:aws:es:us-east-2:426242579432:domain/'$es_domain_name'/*"}]}' \
+      --access-policies '{"Version":"2012-10-17","Statement":[{"Effect":"Allow","Principal":{"AWS":"*"},"Action":"es:*","Resource":"arn:aws:es:us-east-2:'$aws_account_id':domain/'$es_domain_name'/*"}]}' \
       --vpc-options "SubnetIds=$es_subnet_ids,SecurityGroupIds=$es_security_group_ids" \
       --encryption-at-rest-options 'Enabled=true' \
       --node-to-node-encryption-options 'Enabled=true' \

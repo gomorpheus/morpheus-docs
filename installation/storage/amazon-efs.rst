@@ -33,8 +33,14 @@ Create Amazon EFS (UI)
 
         * - Setting
           - Value
-        * - Storage Class
-          - Standard
+        * - File System Type
+          - Regional
+        * - (Lifecycle Management) Transition into Infrequent Access (IA)
+          - None
+        * - (Lifecycle Management) Transition into Archive
+          - None
+        * - (Lifecycle Management) Transition into Standard
+          - None 
 
 #. Click the ``Next`` button
 #. Ensure the following settings are chosen for the ``Network access`` page:
@@ -69,15 +75,17 @@ If you are familiar with using the AWS CLI, you can run the following commands t
   .. code-block:: bash
 
       # Set all variables to preferred values
-      creation_token="morpheusefs"
+      efs_name="morpheusefs"
       security_groups="sg-0c3fdeff0a97d2a1b"
       subnet_id1="subnet-0ed95648b7e27a375"
       subnet_id2="subnet-00422803877471552"
 
       # Create EFS
-      file_system_id=$(aws efs create-file-system --creation-token $creation_token \
+      file_system_id=$(aws efs create-file-system \
+        --creation-token $efs_name \
         --performance-mode generalPurpose \
         --encrypted \
+        --tags "Key=Name,Value=$efs_name" \
         --backup | grep "FileSystemId" | awk '{print $2}' | sed -r 's/"|,//g')
 
       # Wait a few seconds before proceeding, for the EFS to be fully created
@@ -96,3 +104,12 @@ Configure Shared Storage on the Morpheus Appliance
 
 Reference the following documentation:  :ref:`shared-storage`
 
+Example ``/etc/fstab`` configuration to keep the EFS persistently mounted after reboots:
+
+  .. code-block:: bash
+      
+      # Create the directory prior to running a 'morpheus-ctl reconfigure', otherwise the mkdir can be skipped
+      mkdir /var/opt/morpheus/morpheus-ui --parents
+      sudo cp /etc/fstab /etc/fstab.bak
+      echo "fs-0fdc50df1cb8f0f6e.efs.us-east-2.amazonaws.com:/ /var/opt/morpheus/morpheus-ui nfs4 nfsvers=4.1,rsize=1048576,wsize=1048576,hard,timeo=600,retrans=2,noresvport 0 0" | sudo tee --append /etc/fstab
+      sudo mount --all

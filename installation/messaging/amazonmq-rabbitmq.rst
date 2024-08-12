@@ -36,8 +36,12 @@ Create RabbitMQ Broker (UI)
         - Value
       * - Broker instance type
         - mq.m5.large
+      * - Username
+        - Enter a username and note it for later
+      * - Password
+        - Enter a password and note it for later 
       * - Broker engine version
-        - 3.11.x **(must be 3.11.x or higher, 3.11.x at the time of this writing)**
+        - 3.12.13 **(it can be higher than 3.12.13 but must be 3.12.x at the time of this writing)**
       * - Access type
         - Private access
       * - VPC and subnets
@@ -70,14 +74,14 @@ If you are familiar with using the AWS CLI, you can run the following commands t
     # Password must be a minimum 12 characters, at least 4 unique characters. Can't contain commas (,), colons (:), equals signs (=), spaces or non-printable ASCII characters.
     mq_admin_password='abc123123123123'
     mq_security_groups='sg-01d8ca613f69ec769'
-    mq_subnet_ids='subnet-0ed95648b7e27a375 subnet-00422803877471552'
+    mq_subnet_ids='subnet-0ed95648b7e27a375 subnet-00422803877471552' # Space separated list
 
     # Create Amazon MQ Broker and get the ID
     broker_id=$(aws mq create-broker --auto-minor-version-upgrade \
       --broker-name $mq_broker_name \
       --deployment-mode 'CLUSTER_MULTI_AZ' \
       --engine-type 'RABBITMQ' \
-      --engine-version '3.9.24' \
+      --engine-version '3.12.13' \
       --host-instance-type 'mq.m5.large' \
       --no-publicly-accessible \
       --users Username=$mq_admin_username,Password=$mq_admin_password \

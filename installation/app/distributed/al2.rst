@@ -6,5 +6,5 @@ Distributed Application, Amazon MQ (RabbitMQ), Amazon OpenSearch (Elasticsearch)
 .. include::   /installation/database/aurora/aurora-8.0.rst
 .. include::   /installation/messaging/amazonmq-rabbitmq.rst
 .. include::   /installation/logs/opensearch-2x.rst
-.. include::   /installation/app/distributed/app-node-installation-al2.rst
 .. include::   /installation/storage/amazon-efs.rst
+.. include::   /installation/app/distributed/app-node-installation-al2.rst
