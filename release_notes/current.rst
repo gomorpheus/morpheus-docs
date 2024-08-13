@@ -87,7 +87,7 @@ Fixes
 Appliance & Agent Updates
 =========================
 
-:Agnet Node Packages: - |morpheus| linux agent updated to v2.7.0
+:Agent Node Packages: - |morpheus| linux agent updated to v2.7.0
                       - |morpheus| node & vm node packages updated to v3.2.25 with linux agent v2.7.0
                       - |morpheus| embedded rsyslog removed from node & vm node packages, agent now uses system rsyslog service. Note: non-systemd images currently require manually restarting rsyslog service to enable agent log forwarding after agent installation
 :Appliance: - Embedded Tomcat upgraded to 9.0.90
