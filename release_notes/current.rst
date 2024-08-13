@@ -63,7 +63,7 @@ Fixes
 Appliance & Agent Updates
 =========================
 
-:Agnet Node Packages: - |morpheus| linux agent updated to v2.7.1
+:Agent Node Packages: - |morpheus| linux agent updated to v2.7.1
                       - |morpheus| node & vm node packages updated to v3.2.26 with linux agent v2.7.1
 :Embedded Plugins: - bigip-plugin updated to v1.3.4
                    - digital-ocean-plugin updated to v1.3.3
