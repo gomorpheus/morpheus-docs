@@ -60,6 +60,10 @@ Provisioning Workflow Execution Phases
     - Tasks are run during VM or container destroy
     - Remove Active Directory objects prior to tearing down the Instance
     -
+  * - Scale Down
+    - Tasks are run when a node is removed from an Instance. This does not apply to Clusters when a worker node is removed.
+    -
+    -
   * - Shutdown
     - Tasks are run immediately before the target is shutdown
     - Send an update on Instance power state to a CMDB
