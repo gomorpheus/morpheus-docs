@@ -22,7 +22,7 @@ Features
 
 |morpheus| can provide a single pane of glass and self-service portal for managing multiple Nutanix Clusters and allowing the seamless deployment of applications.
 
-.. Note:: Prism Central is currently supported and is maintained as a separate, plugin-based Cloud integration. See the `Prism Central plugin page <https://share.morpheusdata.com/morpheus-nutanix-prism/about>`_ on the |morpheus| plugin share site for additional details and access to the plugin.
+.. Note:: Prism Central is currently supported and is maintained as a separate, plugin-based Cloud integration. See the `Prism Central plugin page <https://share.morpheusdata.com/plugin/morpheus-nutanix-prism/about>`_ on the |morpheus| plugin share site for additional details and access to the plugin. There is also an `integration guide <https://docs.morpheusdata.com/en/latest/integration_guides/Clouds/prismCentral/prismCentral.html>`_ for that plugin here in |morpheus| UI documentation.
 
 Getting Started
 ^^^^^^^^^^^^^^^
