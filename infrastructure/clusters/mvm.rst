@@ -233,6 +233,18 @@ After loss of the host these three VMs were running on, we can see the lost host
 
 When the lost host returns, the moved VMs will come back to their original host. The third VM is associated with this host as well and is in a stopped state until it is manually restarted.
 
+**Adding an NFS Datastore**
+
+Existing NFS shares can be used with |morpheus| MVM clusters for virtual machine storage. These are added and viewed from the Storage tab of the MVM cluster detail page and, once added and active, become selectable as targets for virtual machine storage.
+
+.. NOTE:: Ensure NFS is properly configured to allow all of the MVM hosts to access the shared directory, including permissions to read and write. For backup purposes, it's also helpful to give |morpheus| access to NFS.
+
+Start by navigating to the Storage tab of the MVM cluster detail page. Make sure the Data Stores subtab is also selected. Here you will see a list of existing datastores with some additional information, such as type, capacity, and status. Click :guilabel:`ADD`. Enter the NAME for the datastore in |morpheus| and select the TYPE as NFS Pool. This will update the available fields to include the additional fields needed to integrate the NFS server. Enter the SOURCE HOST which is the hostname or the IP address of the NFS server. Finally, enter the SOURCE DIRECTORY which is the directory path of the NFS share. Click :guilabel:`SAVE`.
+
+Once the modal is saved, it will take a few minutes to initialize the new datastore and show a successful online status in |morpheus|. Once this initialization process is completed, the datastore can now be used as VM storage for cluster.
+
+IMAGE
+
 Image Prep (Windows)
 ^^^^^^^^^^^^^^^^^^^^
 
