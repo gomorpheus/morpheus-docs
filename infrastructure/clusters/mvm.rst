@@ -243,7 +243,7 @@ Start by navigating to the Storage tab of the MVM cluster detail page. Make sure
 
 Once the modal is saved, it will take a few minutes to initialize the new datastore and show a successful online status in |morpheus|. Once this initialization process is completed, the datastore can now be used as VM storage for cluster.
 
-IMAGE
+.. image:: /images/infrastructure/clusters/mvm/addNfsDatastore.png
 
 Image Prep (Windows)
 ^^^^^^^^^^^^^^^^^^^^
