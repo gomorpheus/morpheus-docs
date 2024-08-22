@@ -4,8 +4,7 @@ BinLog Experation
 
 Perform on all DB nodes
 
-The default binary log expiration period is 2592000 seconds, which equals 30 days (30*24*60*60 seconds). This can end up taking up a lot of space and cause the databse node to run out of storage. 
-To prevent this we can set the epxiration perired lower (We recommend 7 days)
+The default binary log expiration period is 2592000 seconds, which equals 30 days (30*24*60*60 seconds). This can end up taking up a lot of space and cause the database node to run out of storage. To prevent this we can set the expiration period lower (We recommend 7 days)
 
 The following settings should to be set on all database nodes. 
 
