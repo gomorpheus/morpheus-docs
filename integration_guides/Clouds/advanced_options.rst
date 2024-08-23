@@ -55,12 +55,12 @@ When integrating a Cloud, it will appear by default throughout the UI with its s
 
 Inventory options allow you to set a default active or inactive state for certain discovered resources. The list of available resources to configure will vary based on the Cloud type and its supported resources. By default, all possible resources for the Cloud type will be discovered in an active state. Uncheck the box for some or all resources to discover them in an inactive state. The list of potential resources that may appear include:
 
-- Service Plans
-- Resource Pools
-- Networks
-- Security Groups
-- Datastores
-- Folders
+* Service Plans
+* Resource Pools
+* Networks
+* Security Groups
+* Datastores
+* Folders
 
 **Provisioning Command**
 
