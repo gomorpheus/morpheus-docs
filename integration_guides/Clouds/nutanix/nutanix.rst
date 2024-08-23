@@ -65,7 +65,7 @@ Monitoring Nutanix Clouds
 
 On clicking into the Nutanix Cloud, you'll land on the Summary tab. Here we can see high-level details including cost metrics for the month, general resource utilization information, and information on the number of hosts, workloads, and more that are currently running within the Cloud scope.
 
-IMAGE - Cloud summary detail
+.. images:: /images/integration_guides/clouds/nutanix/cloudDetail.png
 
 You'll also notice the Clusters tab. Here you can see and click into any Docker or Kubernetes Clusters which are running on the Nutanix Cloud. |morpheus| will see these clusters as provisioning targets themselves for containerized applications (as opposed to the Cloud itself for virtualized applications). You can also add new Kubernetes or Dockers clusters from this tab. |morpheus| includes built-in Cluster Layouts but custom Cluster Layouts can also be created. There is a guide on creating your own custom Kubernetes Cluster Layouts in the Clusters section of |morpheus| UI documentation.
 
