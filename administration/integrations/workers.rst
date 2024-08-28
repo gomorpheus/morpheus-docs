@@ -24,7 +24,7 @@ A distributed worker VM is installed and configured similarly to a |morpheus| ap
 
 .. NOTE:: Package URLs for the distributed worker are available at https://app.morpheushub.com in the downloads section.
 
-.. NOTE:: The distributed worker requires that the |morpheus| appliance has a trusted SSL certificate.  This can be accomplished by configuring a public trusted SSL certificate on the |morpheus| appliance (or load balancer) or ensure the certificate and chain are added to the Java Keystore of the Distributed Worker, to trust the certificate.
+.. NOTE:: The distributed worker requires that the |morpheus| appliance has a trusted SSL certificate.  This can be accomplished by configuring a public trusted SSL certificate on the |morpheus| appliance (or load balancer) or ensure the certificate and chain are added to the Java Keystore of the Distributed Worker to trust the certificate.
 
 **Requirements**
 
@@ -109,10 +109,12 @@ With the API key in hand and configuration complete in |morpheus| UI, head back 
 
    .. code-block:: rb
 
-       worker_url 'https://gateway_worker_url' # This is the worker URL the Morpheus appliance can resolve and reach on 443
+       worker['worker_url'] = 'https://gateway_worker_url' # This is the worker URL the |morpheus| appliance can resolve and reach on 443
        worker['appliance_url'] = 'https://morpheus_appliance_url' # The resolvable URL or IP address of Morpheus appliance which the worker can reach on port 443
-       worker['apikey'] = 'API KEY FOR THIS GATEWAY' # VDI Gateway API Key generated from Morpheus Appliance VDI Pools > VDI Gateways configuraiton. For worker only mode, a value is still required but can be any value, including the 'API KEY FOR THIS GATEWAY' default template value
+       worker['apikey'] = 'API KEY FOR THIS GATEWAY' # VDI Gateway API Key generated from Morpheus Appliance VDI Pools > VDI Gateways configuration. For worker only mode, a value is still required but can be any value, including the 'API KEY FOR THIS GATEWAY' default template value
        worker['worker_key'] = 'DISTRIBUTED WORKER KEY' # Distributed Worker API Key from Administration > Integrations > Distributed Workers configuration
+       worker['proxy_address'] = 'http://proxy.address' # For environments in which the worker must go through a proxy to communicate with the |morpheus| appliance or other resources, configure the address
+       worker['no_proxy'] = 'vcenter.example.com,192.168.xx.xx' # A comma-separated list of resources that should be accessed directly and not through the proxy
 
 .. NOTE:: By default the worker_url uses the machine's hostname, ie ``https://your_machine_name``. The default ``worker_url`` value can be changed by editing ``/etc/morpheus/morpheus-worker.rb`` and changing the value of ``worker_url``. Additional appliance configuration options are available below.
 
