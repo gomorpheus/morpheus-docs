@@ -125,7 +125,7 @@ In this example cluster, each host box consists of:
 - 16 GB memory
 - 20 GB OS boot disk
 - 250 GB data disk (deployed to ``/dev/sdb``)
-- 3 network interfaces for management, storage, and compute traffic (set to ``eth0``, ``eth1``, and ``eth2``, respectively)
+- 3 network interfaces for management, storage, and compute traffic (set to ``eth0``, ``eth1``, and ``eth2``, respectively, in this example. Your environment may differ.)
 
 .. NOTE:: 250 GB data disks used in this example are simply for demonstration purposes. A typical test cluster should consist of at least 500 GB storage and more will be required for production. Do not raid disks on physical servers. Currently, only one data disk may be used, which is given in the DATA DEVICE configuration during cluster setup. In the very near future, an update will be provided to allow multiple data disks to be used. These will be added to the total Ceph storage in one large volume. Until that update, only one data disk may be given in the configuration.
 
