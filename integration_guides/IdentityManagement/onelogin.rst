@@ -9,6 +9,7 @@ Adding OneLogin Identity Source Integration
 To begin, log into OneLogin with an administrator account to gather some needed pieces of information. From the top menu bar, select Administration. From the admin panel, click Developers > API Credentials. Click the button labeled "New Credential". Provide a name for the new API credentials and select "Manage Users" as the permissions type. Store the credentials somewhere they can be retrieved in the next step.
 
 .. image:: /images/integration_guides/identity_sources/oneLogin/oneLoginKey.png
+  :width: 50%
 
 Back in |morpheus|, navigate to the Tenant which will integrate with OneLogin. Identity providers are integrated on a per-Tenant basis in |morpheus|. From the selected Tenant, click :guilabel:`IDENTITY SOURCES`. The list of currently-integrated identity providers is here. Click :guilabel:`+ ADD IDENTITY SOURCE` to start a new integration for OneLogin. Fill in the fields below:
 
