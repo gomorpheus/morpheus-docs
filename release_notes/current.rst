@@ -51,6 +51,7 @@ Fixes
           - Fixed Amazon EKS controller subnet filtering which was not properly filtering the list based on the selected VPC :superscript:`6.2.10`
           - Fixed Amazon EKS role filtering in the provisioning wizard for EKS clusters. Roles are no longer duplicated for each region which was not necessary :superscript:`6.2.10`
           - When unable to properly authenticate with a Role ARN, the cloud will not be added using the root account instead. An error appears now appear confirming the connection to AWS cannot be made :superscript:`6.2.10`
+          - Improved the process by which |morpheus| syncs data (costing data, resource sync, etc) from Amazon Clouds to reduce the number of overall database transactions. In some environments, excessive transactions could lead to very large binlog size which could even bring the cluster down (depending on environment size and binlog retention period)
 :Archives: - Within an Archive, on the scripts tab of a file detail page, fixed an HTML ``<a>`` tag which was being shown as visible text copy on the page :superscript:`6.2.10`
 :Azure: - Azure VMs which are discovered by |morpheus| and converted to managed Instances, now correctly update on the server detail page to show they are managed rather than unmanaged :superscript:`6.2.10`
          - Fixed an issue causing Italy North-region Plans not syncing to |morpheus| :superscript:`6.2.10`
