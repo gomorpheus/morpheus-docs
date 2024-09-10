@@ -9,7 +9,6 @@ When installing and upgrading to |morpheus| |morphver|, refer to the following t
 Breaking Changes
 ================
 
-- All Versions: Amazon Aurora RDS Compatibility: For customers who use Amazon Aurora RDS as the |morpheus| database, Aurora RDS MySQL version 3.06.0 is not compatible with any currently released |morpheus| versions. v3.06.0 introduced new reserved keywords which cause syntax errors with existing database fields. Do not upgrade your Amazon Aurora RDS to 3.06.0 until a compatible version of |morpheus| is available.
 - 6.3.0: Version 6.3.0 is the first version to require Plugin API 1.0.0+. Small changes will need to be made in order to make plugins created for prior versions of |morpheus| compatible with 6.3.0+. See the `related article in our KnowledgeBase <https://support.morpheusdata.com/s/article/Making-plugins-compatible-with-Morpheus-6-3-0?language=en_US>`_ on the small changes that will need to be made to ensure plugin compatibility
 - 6.2.2, 6.0.7 |morphver| contains embedded MySQL v8 upgrade when upgrading from  v6.0.0 - v6.0.6 or 6.1.0 - 6.2.1. BACKUP YOUR DATABASE PRIOR TO UPGRADE when using embedded MySQL (all-in-one appliances)
 - 6.2.2, 6.0.7 Minimum v6.x required to upgrade to |morphver| for environments using embedded RabbitMQ. Environments running 5.5.x or earlier using embedded RabbitMQ must upgrade to v6.0.0 - v6.0.6, or 6.1.0 - 6.2.1 prior to upgrading to |morphver|
@@ -88,11 +87,11 @@ Services
    * - MySQL
      - |mysqlbranch|
      - |mysqlver|
-     - 
+     -
    * - MySQL (FIPS)
      - |mysqlbranch|
      - |mysqlverfips|
-     - 
+     -
    * - Elasticsearch
      - |esbranch|
      - |esver|
@@ -102,9 +101,9 @@ Services
      - |rmqver|
      -
    * - Tomcat
-     - 
+     -
      - |tcver|
-     - 
+     -
    * - Nginx
      -
      - |nginxver|
@@ -112,11 +111,15 @@ Services
    * - OpenSSL
      -
      - |openssl|, |openssl_fips| (FIPS)
-     - 
+     -
    * - Java
      -
      - |java|
+<<<<<<< HEAD
      - |checkmark|
+=======
+     -
+>>>>>>> 9c93d839 (update aurora rds bullet on the breaking changes page)
    * - Java (macOS agent)
      -
      - |java-mac|
@@ -140,7 +143,7 @@ Services
      - |nodePackageVer|
      - Updated to |nodePackageVer|
    * - Morpheus Linux Agent
-     - |linuxagentver| 
+     - |linuxagentver|
      - Updated to |linuxagentver|
    * - Morpheus Windows Agent
      - |winagentver|
