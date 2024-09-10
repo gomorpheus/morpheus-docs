@@ -761,6 +761,15 @@ Morpheus Agent OS Support
      - linux
      - canonical
      - 1
+   * - ubuntu 24.04 64-bit
+     - 64
+     - ubuntu
+     - ubuntu.24.04.64
+     - debian
+     - 24.04
+     - linux
+     - canonical
+     - 1
    * - ubuntu 64-bit
      - 64
      - ubuntu
