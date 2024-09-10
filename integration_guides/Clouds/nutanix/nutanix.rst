@@ -15,8 +15,6 @@ Features
 * Backups / Snapshots
 * Datastores
 * Kubernetes
-* Resources Groups
-* Migrations
 * |morpheus| costing and pricing
 * Auto Scaling
 * Load Balancing
