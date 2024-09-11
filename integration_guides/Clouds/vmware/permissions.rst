@@ -76,6 +76,7 @@ vApp
 
 vSphere Tagging
   * Assign or Unassign vSphere Tag
+  * Assign or Unassign vSphere Tag on Object
   * Create vSphere Tag
   * Create vSphere Tag Category
   * Delete vSphere Tag
