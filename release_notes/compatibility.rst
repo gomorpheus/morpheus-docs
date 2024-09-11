@@ -103,11 +103,8 @@ Services
    * - Tomcat
      -
      - |tcver|
-<<<<<<< HEAD
      - |checkmark|
-=======
      -
->>>>>>> 9c93d839 (update aurora rds bullet on the breaking changes page)
    * - Nginx
      -
      - |nginxver|
