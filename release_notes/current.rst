@@ -13,6 +13,16 @@
 Release Dates
 
 - |morphver| |releasedate|
+- 7.0.6-2 September 16 2024
+
+7.0.6-2 Updates
+===============
+
+:Provisioning: - Windows: Fixed issue with network wait status when image configuration should skip network wait
+:MVM: - Fixed issue with vm's being created with file-backed memory configuration
+      - Fixed ssh key race condition for non-hci mvm hosts
+      - Increased morpheus agent jvm mxm to 256MB for mvm and kvm host type
+
 
 New Features
 ============
