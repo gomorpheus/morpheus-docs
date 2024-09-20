@@ -321,7 +321,7 @@ Following installation, Windows will restart and prompt for an Administrator use
 
 .. image:: /images/infrastructure/clusters/mvm/imagePrep/windowsExp.png
 
-Step through the installer. Simply click "Next" or "Install" through each step, there are no configuration changes needed. Once the installer has completed, click "Finish." You can confirm we now have a network interface by opening a Command Prompt session and using the ``ipconfig`` command. One network adapter should be listed.
+Step through the installer. Simply click "Next" or "Install" through each step, there are no configuration changes needed. Once the installer has completed, click "Finish." Next, complete the same process for `virtio-win-guest-tools`` going all the way through until the installer has completed. You can confirm we now have a network interface by opening a Command Prompt session and using the ``ipconfig`` command. One network adapter should be listed.
 
 .. image:: /images/infrastructure/clusters/mvm/imagePrep/showInterface.png
   :width: 50%
