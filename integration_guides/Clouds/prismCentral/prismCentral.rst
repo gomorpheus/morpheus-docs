@@ -125,7 +125,7 @@ Adding a Nutanix Prism Central Cloud
 
 Adding Nutanix Prism Clouds to |morpheus| requires little more than the API URL and valid username and password credentials for a user with sufficient access to the resources that should be utilized by |morpheus|. You'll also need to ensure |morpheus| can reach the NPC appliance at its API URL.
 
-Navigate to |InfClo| and click :guilabel:`+ ADD`. As long as the Nutanix Prism Central plugin have been added to the appliance and this Cloud type isn't disabled in global settings (|AdmSet|), NUTANIX PRISM CENTRAL should be selectable as a Cloud type to add. Select it and click :guilabel:`NEXT`.
+Navigate to |InfClo| and click :guilabel:`+ ADD`. As long as the Nutanix Prism Central plugin has been added to the appliance and this Cloud type isn't disabled in global settings (|AdmSet|), NUTANIX PRISM CENTRAL should be selectable as a Cloud type to add. Select it and click :guilabel:`NEXT`.
 
 .. image:: /images/clouds/npc/pickType.png
   :width: 50%

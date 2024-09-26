@@ -19,6 +19,7 @@ Clouds
   maas/maas.rst
   macstadium/macstadium.rst
   nutanix/nutanix.rst
+  olvm/olvm.rst
   openstack/openstack
   oracle/oraclevm.rst
   oraclecloud/oracleCloud.rst
