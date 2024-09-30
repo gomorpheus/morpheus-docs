@@ -29,18 +29,19 @@ Connect iSCSI Target(s)
   
   * Example of ``host1`` and ``host2``, these no not need to match the hostnames but it may be less confusing:
 
-  ``iqn.2004-10.com.ubuntu:01:host1``
+    ``iqn.2004-10.com.ubuntu:01:host1``
 
-  ``iqn.2004-10.com.ubuntu:01:host2``
+    ``iqn.2004-10.com.ubuntu:01:host2``
 
 * Discover the available targets from the iSCSI target/server:
 
-  ``iscsiadm -m discovery -t st -p truenas.ad.kg-tech.rocks``
+  ``iscsiadm -m discovery -t st -p <ip address>``
 
 * Set automatic login for the target that you intend to connect, replacing ``<target iqn>`` and ``<ip address>``
   with the appropriate values.  This will ensure the iSCSI connections are reconnected after a host restart:
 
   ``iscsiadm -m node -T <target iqn> -p <ip address> --op=update -n node.conn[0].startup -v automatic``
+
   ``iscsiadm -m node -T <target iqn> -p <ip address> --op=update -n node.startup -v automatic``
 
   .. note::
