@@ -1,4 +1,4 @@
-|MVM|
+Storage
 =======
 
 .. toctree::
