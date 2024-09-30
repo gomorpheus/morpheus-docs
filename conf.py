@@ -39,6 +39,7 @@ rst_prolog = """
 .. |libssh| replace:: 1.10.0
 
 .. |morpheus| replace:: Morpheus
+.. |mvm| replace:: MVM
 .. |morphues| replace:: Morpheus
 .. |morphdat| replace:: Morpheus Data
 .. |repo_host_url| replace:: https://downloads.morpheusdata.com
