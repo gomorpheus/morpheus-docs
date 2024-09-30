@@ -13,7 +13,7 @@
 
    support/cheat-sheet
    installation/installation
-   mvm/storage
+   mvm/mvm
    integration_guides/integration_guides
    support/support
    archives/archives
