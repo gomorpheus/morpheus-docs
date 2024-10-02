@@ -112,11 +112,7 @@ Services
    * - Java
      -
      - |java|
-<<<<<<< HEAD
-     - |checkmark|
-=======
      -
->>>>>>> 9c93d839 (update aurora rds bullet on the breaking changes page)
    * - Java (macOS agent)
      -
      - |java-mac|
@@ -140,13 +136,8 @@ Services
      - |nodePackageVer|
      - Updated to v3.2.24
    * - Morpheus Linux Agent
-<<<<<<< HEAD
-     - |linuxagentver|
-     - Updated to v2.6.2
-=======
      - |linuxagentver|
      - Updated to |linuxagentver|
->>>>>>> 9c93d839 (update aurora rds bullet on the breaking changes page)
    * - Morpheus Windows Agent
      - |winagentver|
      - No changes
