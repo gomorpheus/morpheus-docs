@@ -115,11 +115,7 @@ Services
    * - Java
      -
      - |java|
-<<<<<<< HEAD
-     - |checkmark|
-=======
      -
->>>>>>> 9c93d839 (update aurora rds bullet on the breaking changes page)
    * - Java (macOS agent)
      -
      - |java-mac|
