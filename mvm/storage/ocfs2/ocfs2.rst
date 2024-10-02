@@ -73,7 +73,20 @@ Install and Initialize OCFS2
 * (**RUN ON ONE NODE ONLY**) Create the OCFS2 file system on the disks added previously, replacing ``<device>`` with
   the device name (``/dev/sd*``) noted above for the iSCSI disk:
 
-  ``mkfs.ocfs2 -b 4K -C 4K -J size=4M -N 4 -L ocfs2vol1 --cluster-name=ocfs2 --cluster-stack=o2cb --global-heartbeat <device>``
+  * At the time of this writing, more testing is needed, but it is believed this is an example command to create a datastore
+    only dedicated to heartbeat, due to the sizes.  Heartbeat-only disks do not need to be large, have large journals, etc:
+      
+      ``mkfs.ocfs2 -b 4K -C 4K -J size=4M -N 4 -L ocfs2vol1 --cluster-name=ocfs2 --cluster-stack=o2cb --global-heartbeat <device>``
+
+  * At the time of this writing, more testing is needed, but it is believed this is an example command to create a datastore which
+    will store virtual machines, and also be a heartbeat device.  The block size, cluster size, and journal size will be calculated
+    automatically.
+
+      ``mkfs.ocfs2 -T vmstore -N 4 -L ocfs2vol1 --cluster-name=ocfs2 --cluster-stack=o2cb --global-heartbeat <device>``
+
+  .. note::
+    If the cluster becomes large, separating the heartbeat from the standard datastores will be recommedned to reduce I/O.  Otherwise,
+    combining them will be sufficient.
 
   .. important::
     The ``--cluster-name`` should match the value that will be found in ``/etc/default/o2cb`` (edited later) and the ``o2cb`` commands
