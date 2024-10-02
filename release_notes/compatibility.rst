@@ -9,14 +9,9 @@ When installing and upgrading to |morpheus| |morphver|, refer to the following t
 Breaking Changes
 ================
 
-<<<<<<< HEAD
-- 6.2.2, 6.0.7 contain embedded MySQL v8 upgrade when upgrading from  v6.0.0 - v6.0.6 or 6.1.0 - 6.2.1. BACKUP YOUR DATABASE PRIOR TO UPGRADE when using embedded MySQL (all-in-one appliances)
-- 6.2.2, 6.0.7 Minimum v6.x required to upgrade for environments using embedded RabbitMQ. Environments running 5.5.x or earlier using embedded RabbitMQ must upgrade to v6.0.0 - v6.0.6, or 6.1.0 - 6.2.1 prior to upgrading to |morphver|
-=======
 - 6.3.0: Version 6.3.0 is the first version to require Plugin API 1.0.0+. Small changes will need to be made in order to make plugins created for prior versions of |morpheus| compatible with 6.3.0+. See the `related article in our KnowledgeBase <https://support.morpheusdata.com/s/article/Making-plugins-compatible-with-Morpheus-6-3-0?language=en_US>`_ on the small changes that will need to be made to ensure plugin compatibility
 - 6.2.2, 6.0.7 |morphver| contains embedded MySQL v8 upgrade when upgrading from  v6.0.0 - v6.0.6 or 6.1.0 - 6.2.1. BACKUP YOUR DATABASE PRIOR TO UPGRADE when using embedded MySQL (all-in-one appliances)
 - 6.2.2, 6.0.7 Minimum v6.x required to upgrade to |morphver| for environments using embedded RabbitMQ. Environments running 5.5.x or earlier using embedded RabbitMQ must upgrade to v6.0.0 - v6.0.6, or 6.1.0 - 6.2.1 prior to upgrading to |morphver|
->>>>>>> 9c93d839 (update aurora rds bullet on the breaking changes page)
 - 6.2.2, 6.0.7 Rolling upgrades for HA environments using embedded RabbitMQ and/or embedded Elasticsearch services are not supported when upgrading from  v6.0.0 - v6.0.6 or 6.1.0 - 6.2.1
 - 6.1.1 contains database datatype mondifications on account_invoice and account_invoice_item that may cause long initial ui start up times while the modifications are ran in MySQL for environments with over 100k invoice records when upgrading from any version other than 6.0.3
 - 6.1.1 relocates the embedded plugin folder and remove the previous folder. For HA environments using shared storage, rolling upgrades from any version other than 6.0.3 are not advised as the embeeded plugins will not be found on non-upgraded nodes after one node is upgraded.
@@ -106,11 +101,7 @@ Services
    * - Tomcat
      -
      - |tcver|
-<<<<<<< HEAD
-     - |checkmark|
-=======
      -
->>>>>>> 9c93d839 (update aurora rds bullet on the breaking changes page)
    * - Nginx
      -
      - |nginxver|
@@ -146,13 +137,8 @@ Services
      - |nodePackageVer|
      - No changes
    * - Morpheus Linux Agent
-<<<<<<< HEAD
-     - |linuxagentver| 
-     - No changes
-=======
      - |linuxagentver|
      - Updated to |linuxagentver|
->>>>>>> 9c93d839 (update aurora rds bullet on the breaking changes page)
    * - Morpheus Windows Agent
      - |winagentver|
      - No changes
