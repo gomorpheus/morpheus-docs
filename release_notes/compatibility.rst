@@ -103,11 +103,7 @@ Services
    * - Tomcat
      -
      - |tcver|
-<<<<<<< HEAD
-     - |checkmark|
-=======
      -
->>>>>>> 9c93d839 (update aurora rds bullet on the breaking changes page)
    * - Nginx
      -
      - |nginxver|
@@ -143,13 +139,8 @@ Services
      - |nodePackageVer|
      - No changes
    * - Morpheus Linux Agent
-<<<<<<< HEAD
-     - |linuxagentver| 
-     - No changes
-=======
      - |linuxagentver|
      - Updated to |linuxagentver|
->>>>>>> 9c93d839 (update aurora rds bullet on the breaking changes page)
    * - Morpheus Windows Agent
      - |winagentver|
      - No changes
