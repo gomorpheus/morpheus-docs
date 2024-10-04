@@ -1,5 +1,10 @@
+.. _scripts:
+
 ISCSI - Discovery and Multipathing
 ========================================
+
+Specific Target
+^^^^^^^^
 
 .. code-block:: bash
 
@@ -13,8 +18,11 @@ ISCSI - Discovery and Multipathing
       iscsiadm -m node -p ${portals[$i]} --login -I iface$i
       sudo iscsiadm -m node -T $target -p ${portals[$i]} -I iface$i --op update -n node.startup -v automatic
     done
-     
-     
+
+All Targets
+^^^^^^^^     
+.. code-block:: bash
+
     eths=("eth1" "eth2")
     portals=("192.168.3.40" "192.168.9.40")
      
