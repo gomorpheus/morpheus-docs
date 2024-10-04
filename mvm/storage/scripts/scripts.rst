@@ -1,7 +1,7 @@
 Scripts
 ========================================
 
-ISCIS Discovery and MultiPathing Specific Target
+ISCSI Discovery and MultiPathing Specific Target
 ^^^^^^^^
 
 .. code-block:: bash
@@ -17,7 +17,7 @@ ISCIS Discovery and MultiPathing Specific Target
       sudo iscsiadm -m node -T $target -p ${portals[$i]} -I iface$i --op update -n node.startup -v automatic
     done
 
-ISCIS Discovery and MultiPathing all Targets
+ISCSI Discovery and MultiPathing all Targets
 ^^^^^^^^     
 .. code-block:: bash
 
