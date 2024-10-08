@@ -33,6 +33,14 @@ Connect iSCSI Target(s)
 
     ``iqn.2004-10.com.ubuntu:01:host2``
 
+  * Enable the ``iscsid`` service to ensure it will start at next boot:
+    
+    ``systemctl enable iscsid``
+  
+  * If the initiator name was edited, restart the ``iscsid`` service: 
+    
+    ``systemctl restart iscsid``
+
 * Discover the available targets from the iSCSI target/server:
 
   ``iscsiadm -m discovery -t st -p <ip address>``
