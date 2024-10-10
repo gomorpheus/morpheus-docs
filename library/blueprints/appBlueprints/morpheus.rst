@@ -178,15 +178,6 @@ To Export a Blueprint as JSON or YAML:
 #. Click the DOWNLOAD CONFIGURATION button
 #. The Blueprint export file will be downloaded to your computer as ``{app_name}-config.json or {app_name}-config.yaml``
 
-Preview
-```````
-
-In the APP BLUEPRINT modal, select the Preview section to display a graphical representation of your Blueprint Tiers, Instances and Tier Connections.
-
-.. image:: /images/provisioning/templates_301_3.png
-
-.. IMPORTANT:: When Tiers are connected, the Instances in a Tier will import the evars from Instances in connected Tiers, and if |morpheus| is managing the Instance Firewalls, communication between the Instances will be facilitated based on the Instances port configurations.
-
 Provisioning
 ````````````
 
