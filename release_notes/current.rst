@@ -26,17 +26,17 @@ New Features
 Fixes
 =====
 
-:API & CLI: - Changing an Instance's Group association via |morpheus| API now results in the associated servers having updated Group associations as well :superscript:` 7.2.0`
+:API & CLI: - Changing an Instance's Group association via |morpheus| API now results in the associated servers having updated Group associations as well 
              - When creating an Instance via |morpheus| API and specifying a hostname, the resulting workload now has the correct hostname applied
              - |morpheus| is no longer duplicating the ``zone`` field in the response payload from the ``/api/instances/{id}`` endpoint
 :AVI Load Balancer: - Fixed an issue updating the virtual server VIP address for AVI load balancers
                   - The VIP object is now properly deleted when a virtual server is deleted
-:Blueprints: - When Terraform App Blueprints are sourced from a specific branch of a Git repository, updated configurations are now taken when the branch is updated and state is newly applied to any deployed Apps :superscript:` 7.0.2`
+:Blueprints: - When Terraform App Blueprints are sourced from a specific branch of a Git repository, updated configurations are now taken when the branch is updated and state is newly applied to any deployed Apps
 :Catalog: - Fixed Config-phase Tasks not running if present on Provisioning Workflows tied to Catalog Items
            - Fixed a scenario where users with read-only access to a Group could provision to it when deploying a Catalog item
-           - Fixed an issue with the Disk field reloading properly when a Cloud selection was changed on Form-based Catalog items :superscript:` 7.2.0`
+           - Fixed an issue with the Disk field reloading properly when a Cloud selection was changed on Form-based Catalog items 
 :Clone: - Fixed clone failures that could result when required Input values were changed between when the original Instance was provisioned and when the clone was attempted
-:Hosts: - When moving a managed server to a different Tenant, the ``provision_site_id`` value is also now updated to match the changed Group :superscript:` 7.2.0`
+:Hosts: - When moving a managed server to a different Tenant, the ``provision_site_id`` value is also now updated to match the changed Group 
 :Instances: - Fixed an issue with detecting and updating workload power state changes from outside of |morpheus| for certain Cloud types
              - Fixed an issue with updating Group selection for Instances after moving to a different Cloud using Change Cloud functionality
              - The ``max_storage`` and ``max_memory`` are now updating on the ``compute_capacity_info`` after a reconfigure (such as to add or remove storage or memory)
