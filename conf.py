@@ -271,6 +271,7 @@ linkcheck_request_headers = {
 }
 html_theme_options = {
 'logo_only': True,
+'flyout_display': 'attached',
 'sticky_navigation': True,
 'navigation_depth': 5,
 }
