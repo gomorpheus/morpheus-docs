@@ -25,3 +25,9 @@ Default Backup Schedule
 
 Default Backup Retention
   Choose the default number of backups to be retained for automated Instance and appliance backup jobs
+
+Default Synthetic Full Backup enabled
+  When enabled, full synthetic backups will be on by default in addition to standard backups for supported workload types
+
+Default Synthetic Full Backup Schedule
+  Choose a default schedule interval for full synthetic backups. The available selections in this dropdown menu are Execution Schedules defined in |LibAutExe|

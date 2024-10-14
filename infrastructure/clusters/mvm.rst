@@ -35,11 +35,12 @@ Features
 - Affinity placement, pin VMs to hosts
 - Brownfield discovery of existing VMs
 - Reconfigure VM sizing
+- Disk migration across datastores
 - UEFI support
 - Migration of VMs across hosts
 - Configure automatic failover for individual VMs in the event a host is lost
 - Reconfigure running workloads to resize plan, add/remove disks, and add/remove network interfaces
-- Backup and restore MVM workloads
+- Backup and restore MVM workloads, with optional synthetic full backups
 - Clone VMs
 - Take snapshots and revert to snapshots
 - |morpheus| library and automation support
