@@ -103,10 +103,6 @@ Services
    * - Tomcat
      -
      - |tcver|
-<<<<<<< HEAD
-=======
-     - |checkmark|
->>>>>>> 659ffb58b0ad4dbc373f34618218126e9a8e8447
      -
    * - Nginx
      -
