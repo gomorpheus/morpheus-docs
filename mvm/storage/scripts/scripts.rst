@@ -1,8 +1,10 @@
+.. _iscsi_scripts:
+
 Scripts
-========================================
+=======
 
 ISCSI Discovery and MultiPathing Specific Target
-^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code-block:: bash
 
@@ -18,7 +20,7 @@ ISCSI Discovery and MultiPathing Specific Target
     done
 
 ISCSI Discovery and MultiPathing all Targets
-^^^^^^^^     
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 .. code-block:: bash
 
     eths=("eth1" "eth2")
