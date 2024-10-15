@@ -24,7 +24,8 @@ Possible locations, depending on OS:
              innodb_use_fdatasync=ON               # Enables fdatasync() for faster writes than fsync()
              sql_generate_invisible_primary_key=1  # This ensures that MySQL creates an invisible primary key for each Morpheus table that does not have one. 
              binlog_expire_logs_seconds=604800     # Set binlog experation to 7 days (default is 30 days)
-             binlog_expire_logs_auto_purge=ON      # This is on by default - Allows binlogs to be purged based on what is set 
+             binlog_expire_logs_auto_purge=ON      # This is on by default - Allows binlogs to be purged based on what is set
+             group_replication_transaction_size_limit=0  # Morpheus may have transactions above the default max this will not limit the size 
 
              [mysqldump]
              set-gtid-purged=OFF                   # This is to ensure if a mysqldump is performed from the DB node it is in the proper format for restore.
