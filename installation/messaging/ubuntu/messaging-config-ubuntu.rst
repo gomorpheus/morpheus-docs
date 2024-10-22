@@ -50,13 +50,13 @@ RabbitMQ Installation and Configuration
       apt-cache policy erlang
       apt-cache policy rabbitmq-server
 
-   .. important:: In this example, we'll install 1:26.2.5.4-1 erlang and 3.12.13-1 rabbitmq-server. You can find what version of rabbit you need by going to https://docs.morpheusdata.com/en/latest/release_notes/compatibility.html#services
+   .. important:: In this example, we'll install 1:26.2.5.4-1 erlang and 3.12.13-1 rabbitmq-server. Make sure you are intsalling the correct version by checking `Morpheus Compatibility Docs <https://docs.morpheusdata.com/en/latest/release_notes/compatibility.html#services>`_ 
 
 #. Install the pacakges using the versions selected above:
 
    .. NOTE:: Newer versions of Ubuntu may come with erlang-base already installed, which installs erlang. Because of this, a new version may already be installed, even beyond what is supported. **This document will assume that there is no erlang installed** but if you attempt to install erlang following this process, you may see an error for dependency conflicts. You can check what is curently is installed by running dpkg -l | grep erlang 
 
-   .. important:: Make sure to install the correct erlang version for the rabbitmq-server version you want to install.
+   .. important:: Make sure to install the correct erlang version for the rabbitmq-server version you are installing.
 
    .. code-block:: bash
 
