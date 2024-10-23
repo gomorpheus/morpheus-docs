@@ -117,133 +117,133 @@ Task Types
      - Ansible Repo (Git)
      - Local, Resource
      - Existing Ansible Integration
-     - Provisioning: Tasks
+     - Library: Tasks
    * - |ansibletower|
      - Ansible Tower
      - Relays Ansible calls to Ansible Tower
      - Tower Integration
      - Local, Remote, Resource
      - Existing Ansible Tower Integration
-     - Provisioning: Tasks
+     - Library: Tasks
    * - |chef|
      - Chef bootstrap
      - Executes Chef bootstrap and run list. Chef Integration required
      - Chef Server
      - Resource
      - Existing Chef Integration
-     - Provisioning: Tasks
+     - Library: Tasks
    * - |conditional|
      - Conditional Workflow
      - Allows the user to set JavaScript logic. If it resolves to ``true``, |morpheus| will run the Operational Workflow set as the "IF OPERATIONAL WORKFLOW" and if it resolves to ``false``, |morpheus| will run the "ELSE OPERATIONAL WORKFLOW"
      - N/A (JavaScript logic must be locally sourced, Tasks housed within the associated Workflows may have different sourcing options depending on their types.)
      - Local
      - Existing Operational Workflows
-     - Provisioning: Tasks
+     - Library: Tasks
    * - |Email|
      - Email
      - Send an email from a Workflow
      - Task Content
      - Local
      - SMTP Configured
-     - Provisioning: Tasks
+     - Library: Tasks
    * - |groovy|
      - Groovy script
      - Executes Groovy Script locally (on |morpheus| app node)
      - Local, Repository, Url
      - Local
      - None
-     - Provisioning: Tasks, Tasks - Script Engines
+     - Library: Tasks, Tasks - Script Engines
    * - |http|
      - HTTP
      - Executes REST call for targeting external API's.
      - Local
      - Local
      - None
-     - Provisioning: Tasks
+     - Library: Tasks
    * - |javascript|
      - Javascript
      - Executes Javascript locally (on |morpheus| app node)
      - Local
      - Local
      - None
-     - Provisioning: Tasks, Tasks - Script Engines
+     - Library: Tasks, Tasks - Script Engines
    * - |jruby|
      - jRuby Scirpt
      - Executes Ruby script locally (on |morpheus| app node)
      - Local, Repository, Url
      - Local
      - None
-     - Provisioning: Tasks, Tasks - Script Engines
+     - Library: Tasks, Tasks - Script Engines
    * - |libraryscript|
      - Library Script
      - Creates a Task from an existing Library Script (|LibTemScr|)
      - Library Script
      - Resource
      - Existing Library Script
-     - Provisioning: Tasks
+     - Library: Tasks
    * - |template|
      - Library Template
      - Creates a Task from an existing Library Template (|LibTemSpe|)
      - Library Template
      - Resource
      - Existing Library Templates
-     - Provisioning: Tasks
+     - Library: Tasks
    * - |nestedworkflow|
      - Nested Workflow
      - Embeds a Workflow into a Task which allows the Workflow to be nested within other Workflows for situations when common Task sets are frequently used in Workflows
      - N/A
      - Local
      - N/A
-     - Provisioning: Tasks, Provisioning: Workflows
+     - Library: Tasks
    * - |powershell|
      - PowerShell Script
      - Execute PowerShell Script on the Target Resource
      - Local, Repository, Url
      - Remote, Resource, Local
      - None
-     - Provisioning: Tasks
+     - Library: Tasks
    * - |puppet|
      - Puppet Agent Install
      - Executes Puppet Agent bootstrap, writes ``puppet.conf`` and triggers agent checkin. Puppet Integration required
      - Puppet Master
      - Resource
      - Existing Puppet Integration
-     - Provisioning: Tasks
+     - Library: Tasks
    * - |Python|
      - Python Script
      - Executes Python Script locally
      - Local, Repository, Url
      - Local
      - ``virtualenv`` installed on Appliance Nodes
-     - Provisioning: Tasks, Tasks - Script Engines
+     - Library: Tasks, Tasks - Script Engines
    * - |restart|
      - Restart
      - Restarts target VM/Host/Container and confirms startup status before executing next task in Workflow
      - System
      - Resource
      - None
-     - Provisioning: Tasks
+     - Library: Tasks
    * - |shellscript|
      - Shell Script
      - Executes Bash script on the target resource
      - Local, Repository, Url
      - Local, Remote, Resource
      - None
-     - Provisioning: Tasks
+     - Library: Tasks
    * - |vro|
      - vRealize Orchestrator Workflow
      - Executes vRO Workflow on the Target Resource
      - vRO Integration
      - Local, Resource
      - Existing vRO Integration
-     - Provisioning: Tasks
+     - Library: Tasks
    * - |wa|
      - Write Attributes
      - Add arbitrary values to the Attributes map of the target resource
      - N/A
      - Local
      - Provide map of values as valid JSON
-     - Provisioning: Tasks
+     - Library: Tasks
 
 Task Configuration
 ^^^^^^^^^^^^^^^^^^
