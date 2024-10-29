@@ -354,7 +354,7 @@ REQUEST SCRIPT
 
   **Plans**
 
-  - ``zoneId``
+  - ``zoneId`` // Required. In order for plans to be returned and properly filtered, you must provide a ``zoneId`` and ``siteId`` as well as either a ``layoutId`` or ``provisionTypeId``
   - ``siteId``
   - ``layoutId``
   - ``provisionTypeId: <Number>`` // Id of the provision type (technology), filters to only plans associated with this provision type
