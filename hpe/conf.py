@@ -5,7 +5,7 @@ import sys
 
 sys.path.insert(0, os.path.abspath('..'))
 
-master_doc = '/index'
+master_doc = 'index'
 
 latex_documents = [
     (master_doc, 'hp-vm-essentials.tex', u'HPE VM Essentials Documentation',
