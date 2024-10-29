@@ -1,9 +1,9 @@
 import datetime
 import os
-from pathlib import Path
 import sys
+from pathlib import Path
 
-sys.path.insert(0, os.path.abspath('..'))
+sys.path.insert(0, "..")
 
 master_doc = 'index'
 
