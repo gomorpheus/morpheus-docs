@@ -1,14 +1,14 @@
 |morpheus| |morphver| Documentation
 ===================================
 
-.. include:: /release_notes/current.rst
+.. include:: ../release_notes/current.rst
 
 .. toctree::
    :maxdepth: 2
    :caption: Morpheus UI
 
-   /getting_started/getting_started
-   /operations/operations
+   ../getting_started/getting_started
+   ../operations/operations
    /provisioning/provisioning
    /library/library.rst
    /infrastructure/infrastructure
