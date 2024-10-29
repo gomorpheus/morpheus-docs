@@ -5,7 +5,7 @@ from pathlib import Path
 
 sys.path.insert(0, "..")
 
-master_doc = 'index'
+master_doc = '../index'
 
 latex_documents = [
     (master_doc, 'hp-vm-essentials.tex', u'HPE VM Essentials Documentation',
@@ -257,7 +257,7 @@ rst_prolog = """
 
 year = datetime.datetime.now().date().strftime("%Y")
 extensions = ['myst_parser','sphinx.ext.autosectionlabel','sphinx_rtd_theme','sphinx_tabs.tabs','sphinxcontrib.contentui','sphinxcontrib.images','sphinx_search.extension','notfound.extension','sphinx.ext.autosectionlabel'] #sphinx_tabs
-templates_path = ['_templates']
+templates_path = ['../_templates']
 default_dark_mode = False
 source_suffix = ['.rst', '.md']
 project = u'Morpheus Docs'
@@ -282,8 +282,8 @@ html_theme_options = {
 'sticky_navigation': True,
 'navigation_depth': 5,
 }
-html_logo = "_static/logo.svg"
-html_static_path = ['_static']
+html_logo = "../_static/logo.svg"
+html_static_path = ['../_static']
 
 html_sidebars = {
     '**': [
@@ -307,7 +307,7 @@ def setup(app):
 context = {
     'display_github': False,
 }
-html_favicon = "_static/morpheus_fav_64.ico"
+html_favicon = "../_static/morpheus_fav_64.ico"
 htmlhelp_basename = 'morpheusdocs'
 
 latex_elements = {
