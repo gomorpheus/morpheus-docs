@@ -6,7 +6,7 @@
 
 When installing and upgrading to |morpheus| |morphver|, refer to the following to ensure compatibility.
 
-.. class:: hidden
+.. rst-class:: hidden
 
    Breaking Changes
    ================
