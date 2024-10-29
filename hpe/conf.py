@@ -334,6 +334,6 @@ def setup(app):
 import urllib.request
 from urllib.request import urlretrieve
 
-urlretrieve (
-    "https://github.com/gomorpheus/morpheus-docs/raw/master/release_notes/upgrade_table.rst",
-    "release_notes/upgrade_table2.rst")
+# urlretrieve (
+#    "https://github.com/gomorpheus/morpheus-docs/raw/master/release_notes/upgrade_table.rst",
+#    "release_notes/upgrade_table2.rst")
