@@ -3,6 +3,8 @@ Clustering RabbitMQ
 
 Morpheus will now auto cluster the embedded RabbitMQ for you, provided you add the correct options in the Morpheus.rb file before the first reconfigure. 
 
+.. NOTE:: If the below settings are not set before the first reconfigure you will need to follow the the manual cluster process under the dop down below
+
 .. content-tabs::
 
    .. tab-container:: tab1
