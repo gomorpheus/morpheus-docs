@@ -69,20 +69,20 @@ To check the cluster health after reconfigure you can run the following.
 
             .. code-block:: bash
 
-            [root@node02 ~] morpheus-ctl stop morpheus-ui
-            [root@node02 ~] source /opt/morpheus/embedded/rabbitmq/.profile
-            [root@node02 ~] rabbitmqctl stop_app
-            [root@node02 ~] morpheus-ctl stop rabbitmq
+               [root@node02 ~] morpheus-ctl stop morpheus-ui
+               [root@node02 ~] source /opt/morpheus/embedded/rabbitmq/.profile
+               [root@node02 ~] rabbitmqctl stop_app
+               [root@node02 ~] morpheus-ctl stop rabbitmq
 
          .. tab-container:: tab2
             :title: Node 3
 
             .. code-block:: bash
 
-            [root@node03 ~] morpheus-ctl stop morpheus-ui
-            [root@node03 ~] source /opt/morpheus/embedded/rabbitmq/.profile
-            [root@node03 ~] rabbitmqctl stop_app
-            [root@node03 ~] morpheus-ctl stop rabbitmq
+               [root@node03 ~] morpheus-ctl stop morpheus-ui
+               [root@node03 ~] source /opt/morpheus/embedded/rabbitmq/.profile
+               [root@node03 ~] rabbitmqctl stop_app
+               [root@node03 ~] morpheus-ctl stop rabbitmq
 
 
    #. Then on the SOT node, we need to copy the secrets for RabbitMQ.
@@ -91,44 +91,44 @@ To check the cluster health after reconfigure you can run the following.
 
       .. content-tabs::
 
-      .. tab-container:: tab1
-         :title: Node 1
+         .. tab-container:: tab1
+            :title: Node 1
 
-         .. code-block:: bash
+            .. code-block:: bash
 
-            [root@node01 ~] cat /etc/morpheus/morpheus-secrets.json
+               [root@node01 ~] cat /etc/morpheus/morpheus-secrets.json
 
-               "rabbitmq": {
-               "morpheus_password": "***REDACTED***",
-               "queue_user_password": "***REDACTED***",
-               "cookie": "***REDACTED***"
-               },
+                  "rabbitmq": {
+                  "morpheus_password": "***REDACTED***",
+                  "queue_user_password": "***REDACTED***",
+                  "cookie": "***REDACTED***"
+                  },
 
-      .. tab-container:: tab2
-         :title: Node 2
+         .. tab-container:: tab2
+            :title: Node 2
 
-         .. code-block:: bash
+            .. code-block:: bash
 
-            [root@node02 ~] vi /etc/morpheus/morpheus-secrets.json
+               [root@node02 ~] vi /etc/morpheus/morpheus-secrets.json
 
-               "rabbitmq": {
-                  "morpheus_password": "***node01_morpheus_password***",
-                  "queue_user_password": "***node01_queue_user_password***",
-                  "cookie": "***node01_cookie***"
-               },
+                  "rabbitmq": {
+                     "morpheus_password": "***node01_morpheus_password***",
+                     "queue_user_password": "***node01_queue_user_password***",
+                     "cookie": "***node01_cookie***"
+                  },
 
-      .. tab-container:: tab3
-         :title: Node 3
+         .. tab-container:: tab3
+            :title: Node 3
 
-         .. code-block:: bash
+            .. code-block:: bash
 
-            [root@node03 ~] vi /etc/morpheus/morpheus-secrets.json
+               [root@node03 ~] vi /etc/morpheus/morpheus-secrets.json
 
-               "rabbitmq": {
-                  "morpheus_password": "***node01_morpheus_password***",
-                  "queue_user_password": "***node01_queue_user_password***",
-                  "cookie": "***node01_cookie***"
-               },
+                  "rabbitmq": {
+                     "morpheus_password": "***node01_morpheus_password***",
+                     "queue_user_password": "***node01_queue_user_password***",
+                     "cookie": "***node01_cookie***"
+                  },
 
    #. Then copy the erlang.cookie from the SOT node to the other nodes
 
