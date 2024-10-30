@@ -16,13 +16,23 @@
          elasticsearch['es_hosts'] = {'192.168.104.01' => 9200, '192.168.104.02' => 9200, '192.168.104.03' => 9200}
          elasticsearch['node_name'] = '192.168.104.01'
          elasticsearch['host'] = '0.0.0.0'
+
          rabbitmq['host'] = '0.0.0.0'
          rabbitmq['nodename'] = 'rabbit@node01'
+         #The following is needed to have internal rabbit cluster itself
+         rabbitmq['queue_user'] = 'morpheus'
+         rabbitmq['queue_user_password'] = 'morpheusQueueUserPassword'
+         rabbitmq['admin_user'] = 'admin'
+         rabbitmq['morpheus_password'] = 'AdminUserPassword'
+         rabbitmq['cookie'] = 'rabbitCookie' #Example: 7E213AEF5C79DF704DAB
+         rabbitmq['rabbit_cluster_nodes'] = {'rabbit@node01' => 5672,'rabbit@node02' => 5672,'rabbit@node03' => 5672}
+
          mysql['enable'] = false
          mysql['host'] = {'127.0.0.1' => 6446}
          mysql['morpheus_db'] = 'morpheus'
          mysql['morpheus_db_user'] = 'morpheusDbUser'
          mysql['morpheus_password'] = 'morpheusDbUserPassword'
+
          user['uid'] = 899
          user['gid'] = 899
          # at the time of this writing, local_user is not valid as an option so the full entry is needed
@@ -44,13 +54,23 @@
          elasticsearch['es_hosts'] = {'192.168.104.01' => 9200, '192.168.104.02' => 9200, '192.168.104.03' => 9200}
          elasticsearch['node_name'] = '192.168.104.02'
          elasticsearch['host'] = '0.0.0.0'
+
          rabbitmq['host'] = '0.0.0.0'
          rabbitmq['nodename'] = 'rabbit@node02'
+         #The following is needed to have internal rabbit cluster itself
+         rabbitmq['queue_user'] = 'morpheus'
+         rabbitmq['queue_user_password'] = 'morpheusQueueUserPassword'
+         rabbitmq['admin_user'] = 'admin'
+         rabbitmq['morpheus_password'] = 'AdminUserPassword'
+         rabbitmq['cookie'] = 'rabbitCookie' #Example: 7E213AEF5C79DF704DAB
+         rabbitmq['rabbit_cluster_nodes'] = {'rabbit@node01' => 5672,'rabbit@node02' => 5672,'rabbit@node03' => 5672}
+
          mysql['enable'] = false
          mysql['host'] = {'127.0.0.1' => 6446}
          mysql['morpheus_db'] = 'morpheus'
          mysql['morpheus_db_user'] = 'morpheusDbUser'
          mysql['morpheus_password'] = 'morpheusDbUserPassword'
+
          user['uid'] = 899
          user['gid'] = 899
          # at the time of this writing, local_user is not valid as an option so the full entry is needed
@@ -72,13 +92,23 @@
          elasticsearch['es_hosts'] = {'192.168.104.01' => 9200, '192.168.104.02' => 9200, '192.168.104.03' => 9200}
          elasticsearch['node_name'] = '192.168.104.03'
          elasticsearch['host'] = '0.0.0.0'
+
          rabbitmq['host'] = '0.0.0.0'
          rabbitmq['nodename'] = 'rabbit@node03'
+         #The following is needed to have internal rabbit cluster itself
+         rabbitmq['queue_user'] = 'morpheus'
+         rabbitmq['queue_user_password'] = 'morpheusQueueUserPassword'
+         rabbitmq['admin_user'] = 'admin'
+         rabbitmq['morpheus_password'] = 'AdminUserPassword'
+         rabbitmq['cookie'] = 'rabbitCookie' #Example: 7E213AEF5C79DF704DAB
+         rabbitmq['rabbit_cluster_nodes'] = {'rabbit@node01' => 5672,'rabbit@node02' => 5672,'rabbit@node03' => 5672}
+
          mysql['enable'] = false
          mysql['host'] = {'127.0.0.1' => 6446}
          mysql['morpheus_db'] = 'morpheus'
          mysql['morpheus_db_user'] = 'morpheusDbUser'
          mysql['morpheus_password'] = 'morpheusDbUserPassword'
+         
          user['uid'] = 899
          user['gid'] = 899
          # at the time of this writing, local_user is not valid as an option so the full entry is needed
