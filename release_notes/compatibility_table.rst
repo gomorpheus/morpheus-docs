@@ -39,7 +39,7 @@
     - 1.21+
     -
   * - Microsoft Hyper-V
-    - 2012R2, 2016, 2019
+    - 2012R2, 2016, 2019, 2022, 2025
     -
   * - Nutanix AOS
     - For |morpheus| version 6.3.4 and higher, Nutanix AOS version 6.5.3.7+ is required. See the `Nutanix Compatibility and Interoperability table <https://portal.nutanix.com/page/documents/compatibility-interoperability-matrix/software?partnerName=Morpheus%20Data&solutionType=all&componentVersion=all&hypervisor=all&validationType=all>`_ for additional information
@@ -57,7 +57,7 @@
     - Up to 7.x
     -
   * - SCVMM
-    - 2016, 2019
+    - 2016, 2019, 2022
     -
   * - ServiceNow
     - Per servicenow plugin version
