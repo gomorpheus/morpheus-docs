@@ -345,7 +345,7 @@ There won't be an indication in the UI that the Virtual Image is being created a
 
 .. code-block:: bash
 
-  curl -k --request GET --url https://morph.jabalabs.cloud/api/virtual-images/<id>
+  curl -k --request GET --url https://xx.xx.xx.xx/api/virtual-images/<id>
   --header 'accept: application/json' --header 'authorization: Bearer xxx-xxx-xxx-xxx-xxx' |
   jq '.virtualImage.status'
 
