@@ -341,7 +341,7 @@ We're now done configuring Windows and the console window can be closed. We'll m
 
 .. image:: /images/infrastructure/clusters/mvm/imagePrep/importImage.png
 
-There won't be an indication in the UI that the Virtual Image is being created and it will take at least a few minutes. The new image is not usable until it's in an "ACTIVE" status. If it's "SAVING" or "QUEUED," it is still being prepared and saved. If desired, you could check on the status of the new virtual image with a call to |morpheus| API like the one below:
+The Virtual Image is not usable until it's in an active status and the UI indication may display an active status even before it's fully ready. If it's "SAVING" or "QUEUED," it is still being prepared and saved. To determine the current status of the Virtual Image, check with a call to |morpheus| API like the one below. When the return output lists a status of "Active," the image is ready to be provisioned from.
 
 .. code-block:: bash
 
