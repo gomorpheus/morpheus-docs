@@ -3,22 +3,23 @@
 
 .. include:: ../release_notes/current.rst
 
-.. toctree::
-   :maxdepth: 2
-   :caption: Morpheus UI
+.. rst-class:: hidden
+  .. toctree::
+     :maxdepth: 2
+     :caption: Morpheus UI
 
-   ../getting_started/getting_started
-   ../operations/operations
-   ../provisioning/provisioning
-   ../library/library.rst
-   ../infrastructure/infrastructure
-   ../backups/backups
-   ../monitoring/monitoring
-   ../tools/tools
-   ../administration/administration
-   ../personas/personas.rst
-   ../diagrams/diagrams.rst
-   ../troubleshooting/troubleshooting
+     ../getting_started/getting_started
+     ../operations/operations
+     ../provisioning/provisioning
+     ../library/library.rst
+     ../infrastructure/infrastructure
+     ../backups/backups
+     ../monitoring/monitoring
+     ../tools/tools
+     ../administration/administration
+     ../personas/personas.rst
+     ../diagrams/diagrams.rst
+     ../troubleshooting/troubleshooting
 
 .. toctree::
    :maxdepth: 3
