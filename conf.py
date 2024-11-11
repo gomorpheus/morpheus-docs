@@ -9,7 +9,7 @@ latex_documents = [
 
 rst_prolog = """
 
-.. |releasedate| replace:: October 11 2024
+.. |releasedate| replace:: December 2, 2024
 .. |releasetype| replace:: LTS
 .. |morphAnnualVer| replace:: v7
 .. |morphbranch| replace:: v7.0
@@ -42,9 +42,12 @@ rst_prolog = """
 .. |erlang| replace:: 26.1.2
 .. |mastertenant| replace:: Master Tenant
 
-.. |morpheus| replace:: Morpheus
-.. |morphues| replace:: Morpheus
-.. |morphdat| replace:: Morpheus Data
+.. |morpheus| replace:: HPE VM Essentials
+.. |morphues| replace:: HPE VM Essentials
+.. |morphdat| replace:: Hewlett Packard Enterprise
+.. |hpe| replace:: Hewlett Packard Enterprise
+.. |hpe vme| replace:: HPE VM Essentials
+.. |vme| replace:: HPE VME
 .. |repo_host_url| replace:: https://downloads.morpheusdata.com
 .. |master tenant| replace:: Master Tenant
 .. |profileObjects| replace:: Clouds
@@ -256,7 +259,7 @@ templates_path = ['_templates']
 default_dark_mode = False
 source_suffix = ['.rst', '.md']
 project = u'Morpheus Docs'
-copyright = f"{year}, Morpheus Data"
+copyright = f"{year}, Hewlett Packard Enterprise"
 author = u'Morpheus'
 language = 'en'
 exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store','z_in_progress']

@@ -7,5 +7,6 @@ Tools
 
   cypher.rst
   archives.rst
-  image_builder.rst
-  vdi_pools.rst
+  .. rst-class:: hidden
+    image_builder.rst
+    vdi_pools.rst

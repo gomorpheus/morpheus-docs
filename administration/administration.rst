@@ -8,13 +8,15 @@ of capabilities when it comes to managing customer accounts and users.
 .. toctree::
   :maxdepth: 3
 
-  tenants/tenants.rst
+  .. rst-class:: hidden
+    tenants/tenants.rst
   identity_sources/identity_sources.rst
   plans_pricing/plans.rst
   roles/roles.rst
   users/users.rst
-  integrations/integrations.rst
-  policies/policies.rst
+  .. rst-class:: hidden
+    integrations/integrations.rst
+    policies/policies.rst
   health/health.rst
   settings/settings.rst
   user_settings/user_settings.rst
@@ -25,4 +27,3 @@ of capabilities when it comes to managing customer accounts and users.
   backups/backup_settings.rst
   logs/logs.rst
   currency/currency.rst
-  

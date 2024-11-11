@@ -14,7 +14,9 @@ public infrastructure.
   clusters/clusters.rst
   compute/compute.rst
   networks/network.rst
-  loadbalancers/lb.rst
+  .. rst-class:: hidden
+    loadbalancers/lb.rst
   storage/storage.rst
   keypairs_certificates/keypairs_certs.rst
-  pxeboot/pxeboot.rst
+  .. rst-class:: hidden
+    pxeboot/pxeboot.rst

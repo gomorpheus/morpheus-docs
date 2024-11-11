@@ -10,9 +10,11 @@ Take advantage of custom tasks and workflows within any environment by building 
 
   requirements.rst
   concepts/concepts.rst
-  catalog/catalog.rst
+  .. rst-class:: hidden
+    catalog/catalog.rst
   instances/instances.rst
-  apps/apps.rst
-  jobs/jobs.rst
-  executions/executions.rst
-  code/code.rst
+  .. rst-class:: hidden
+    apps/apps.rst
+    jobs/jobs.rst
+    executions/executions.rst
+    code/code.rst

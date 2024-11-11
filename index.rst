@@ -1,12 +1,12 @@
-|morpheus| |morphver| Documentation
-===================================
+|hpe vme| Documentation
+=======================
 
 .. rst-class:: hidden
   .. include:: /release_notes/current.rst
 
 .. toctree::
    :maxdepth: 2
-   :caption: Morpheus UI
+   :caption: HPE VM Essentials
 
    .. rst-class:: hidden
      /getting_started/getting_started
