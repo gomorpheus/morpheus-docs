@@ -44,10 +44,15 @@ rst_prolog = """
 
 .. |morpheus| replace:: HPE VM Essentials
 .. |morphues| replace:: HPE VM Essentials
+.. |software| replace:: HPE VM Essentials Software
 .. |morphdat| replace:: Hewlett Packard Enterprise
 .. |hpe| replace:: Hewlett Packard Enterprise
 .. |hpe vme| replace:: HPE VM Essentials
 .. |vme| replace:: HPE VME
+.. |cluster| replace:: HPE VME cluster
+.. |clusters| replace:: HPE VME clusters
+.. |manager| replace:: HPE VME manager
+.. |host| replace:: HPE VME host
 .. |repo_host_url| replace:: https://downloads.morpheusdata.com
 .. |master tenant| replace:: Master Tenant
 .. |profileObjects| replace:: Clouds

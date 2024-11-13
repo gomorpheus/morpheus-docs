@@ -4,25 +4,14 @@ Instances
 ..
   .. container:: left-col
 
-Instances are a great starting point for taking advantage of self service features and spinning up both VMs and containers. In |morpheus| it may be advisable to cover the definition of a few terms used within the application so as to reduce confusion. These concepts are also covered in greater detail in the `Provisioning Concepts <https://docs.morpheusdata.com/en/latest/provisioning/concepts/concepts.html>`_ section.
+Instances are a great starting point for taking advantage of self-service features and spinning up both VMs and containers. The top of the main Instances page shows overall statistics for the listed Instances, including count, status, and resource utilization. You can search for Instances by name, or filter by group, type, or category.
 
-Instance
-  A set of containers or virtual machines that can correlate to a single horizontally-scalable entity or a service suite, like a database. It is important to note that an Instance can contain one or more containers/VMs depending on the Instance type and configuration.
-Container
-  Typically a docker container provisioned via a |morpheus| Docker host.
-Virtual Machine
-  A virtualized compute server provisioned onto various hypervisor hosts.
-
-The top of the main Instances page shows overall statistics for the listed Instances, including count, status, and resource utilization. You can search for Instances by name, or filter by group, instance type, or category.
-
-.. NOTE:: Instances listed are determined by group access and role permissions. When filtered to show Instances of "All Statuses", any Instances which are in a state of pending removal due to a delayed delete policy in place are not shown under this filter. Instead you must filter for "Pending Removal" to see these Instances and prevent deletion, if desired.
-
-The Instance list contains important information about each instance, including the instance name, environment tag, instance type icon, IP address and port info, Instance version, the number of virtual machines or containers in the instance, the group the instance is in, and the cloud or clouds the instance is in.
+The Instance list contains important information about each Instance, including the Instance name, environment tag, type, IP address and port info, Instance version, the number of virtual machines or containers, the Group, and the associated Cloud.
 
 .. include:: creating_instances.rst
-.. include:: instance_details.rst
+.. rst-class:: hidden
+  .. include:: instance_details.rst
 .. include:: managing_instances.rst
-.. .. include:: /troubleshooting/Remote_Console.rst
 
 ..
   .. container:: right-col

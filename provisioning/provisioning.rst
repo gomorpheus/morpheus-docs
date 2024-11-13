@@ -2,8 +2,7 @@
 Provisioning
 ************
 
-There are several capabilities in the |morpheus| provisioning engine. Things ranging from application / service deployments via containers, virtual machines, and even bare metal. Deployment management and app template construction are also core aspects of the provisioning engine.
-Take advantage of custom tasks and workflows within any environment by building tasks and workflows from those tasks. There is a lot of information to cover with regards to provisioning but |morpheus| makes it intuitive and smooth.
+There are many capabilities in the |morpheus| provisioning engine ranging from virtual machines bound for VMware vCenter and |cluster| targets to containerized workloads targeting Docker. Deployment management and library template construction are also core aspects of the provisioning engine. This section of |morpheus| documentation covers the provisioning engine itself while the Library section covers template building, image management, and automation stacks.
 
 .. toctree::
   :maxdepth: 2
