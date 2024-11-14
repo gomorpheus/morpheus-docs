@@ -5,10 +5,11 @@ Automation
 
 ``Library > Automation``
 
-The Automation section is composed of Tasks and Workflows. Tasks can be scripts added directly, scripts and blueprints from the Library section, recipes, playbooks, puppet agent installs, or http (api) calls. These Tasks are are combined into workflows, which can be selected to run at provision time or executed on existing instances via ``Actions > Run Workflow``.
+The automation section is where scripts, known as Tasks, can be created. Tasks are individual Bash or Powershell scripts which can be selected to run against Instances at the time they are provisioned from the Instance provisioning wizard. In this section, users can also create execution schedules which are configured time intervals on which automated jobs (such as backups) would be carried out.
 
 .. include:: /library/automation/tasks.rst
-.. include:: /library/automation/workflows.rst
-.. include:: /library/automation/scale_thresholds.rst
-.. include:: /library/automation/power_scheduling.rst
+.. rst-class:: hidden
+  .. include:: /library/automation/workflows.rst
+  .. include:: /library/automation/scale_thresholds.rst
+  .. include:: /library/automation/power_scheduling.rst
 .. include:: /library/automation/execute_scheduling.rst

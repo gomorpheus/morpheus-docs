@@ -4,22 +4,21 @@ Virtual Images
 Overview
 --------
 
-The Virtual Image section displays a list of all images, local and synced, that are available to deploy. |morpheus| includes a rich catalog of pre-configured System Images available for every cloud type. User Images are automatically synced from Cloud Integrations and added to the Virtual Images section. Images can also be uploaded directly into |morpheus| via local file or url. Amazon and Azure Marketplace images can also be added to the Virtual Images Section.
-
-Understanding the process of prepping images for consumption in |morpheus| is a very important step toward building an effective |morpheus| environment. In addition to the information contained in this section on Virtual Images, it may be helpful to see a complete image prep example walkthrough. Our getting started guide for |morpheus| and VMware includes `a section on preparing images <https://docs.morpheusdata.com/en/latest/getting_started/guides/vmware_guide.html#prepping-an-image>`_ that may provide a helpful example.
+The Virtual Image section displays a list of all images, local and synced, that are available to deploy. |morpheus| includes a rich catalog of pre-configured default images for |clusters| or for VMware vCenter Cloud targets as well. User Images are automatically synced from Cloud Integrations and added to the Virtual Images section. Images can also be uploaded directly into |morpheus| via local file or url. Understanding the process of prepping images for consumption in |morpheus| is a very important step toward building an effective |morpheus| environment.
 
 .. TIP:: |morpheus| includes a wide catalog of system image types as examples to show how the product can be used and to give users a starting point for implementing their own library. The included images are not intended to be production-ready images. |morpheus| always recommends its users create their own gold images which meet their required specifications.
 
-.. IMPORTANT:: Invalid Image Settings cause provisioning failures. |morpheus| syncs in as much meta-data as possible for synced images, but additional configuration may be needed to ensure successful provisioning.
+.. IMPORTANT:: Invalid Image Settings cause provisioning failures. |morpheus| syncs in as much metadata as possible for synced images, but additional configuration may be needed to ensure successful provisioning.
 
 .. WARNING:: Cloud-init is enabled by default for all Linux images. If your Linux image does not have Cloud-init installed, `Cloud-init Enabled` must be unchecked before provisioning the image or it will fail immediately.
 
-Image Types
------------
+.. rst-class:: hidden
+  Image Types
+  -----------
 
-|morpheus| provides a vast *System Image* repo with pre-configured images for every Cloud. All other images are *User Images*. User images can be added directly to |morpheus|, or automatically synced from integrated clouds. It is important to configure synced User Images for metadata, including specifying the Platform and User Credentials, prior to provisioning. Provisioning a User Image that has not been configured may result in failed provisioning.
+  |morpheus| provides a vast *System Image* repo with pre-configured images for every Cloud. All other images are *User Images*. User images can be added directly to |morpheus|, or automatically synced from integrated clouds. It is important to configure synced User Images for metadata, including specifying the Platform and User Credentials, prior to provisioning. Provisioning a User Image that has not been configured may result in failed provisioning.
 
-.. IMPORTANT:: Synced User Images need to be configured prior to provisioning.
+  .. IMPORTANT:: Synced User Images need to be configured prior to provisioning.
 
 Configuring Virtual Images
 --------------------------
@@ -34,7 +33,7 @@ System Virtual Images are pre-configured with metadata and have Cloud-Init or Cl
 User Images
 ^^^^^^^^^^^
 
-Typically |morpheus| does not have sufficient metatdata to successfully provision synced User Images. After integrating clouds and User Images have synced, it is highly recommended to configure the images prior to provisioning.
+Typically |morpheus| does not have sufficient metatdata to successfully provision synced User Images with no additional configuration. After integrating Clouds and User Images have synced, it is highly recommended to configure the images prior to provisioning.
 
 **To edit and configure an existing Virtual Image:**
 
@@ -76,7 +75,7 @@ Typically |morpheus| does not have sufficient metatdata to successfully provisio
    Trial Version
     Enable to automatically re-arm the expiration on Windows Trial Images during provisioning
    Enabled Sysprep?
-    Applicable to multiple Clouds, including VMware vCenter, SCVMM, Nutanix, Hyper-V, KVM, and Google GCP. Enable if the Windows Image has been sysprepped. If enabled, |morpheus| will inject ``unattend.xml``
+    Applicable to VMware vCenter Clouds. Enable if the Windows Image has been sysprepped. If enabled, |morpheus| will inject ``unattend.xml``
 
 3. Click :guilabel:`Save Changes`
 
@@ -87,7 +86,7 @@ Provisioning Images
 
 When provisioning a system image, |morpheus| will stream the image from Amazon S3 to the target Cloud if the image is not local to the Cloud.
 
-When using images that already exist in the destination Cloud, such as synced, marketplace, or previously copied images, no image stream from S3 through the |morpheus| Appliance to the destination cloud will take place.
+When using images that already exist in the destination Cloud, such as synced or previously copied images, no image stream from S3 through the |morpheus| Appliance to the destination cloud will take place.
 
 .. NOTE:: The |morpheus| Appliance must be able to download from Amazon S3 when provisioning system images.
 
@@ -96,7 +95,7 @@ When using images that already exist in the destination Cloud, such as synced, m
 Add Virtual Image
 -----------------
 
-Virtual Images can be upload to |morpheus| from local files or URL's. Amazon and Azure Marketplace metadata can also be added to the Virtual Images library, enabling the creation of custom catalog Instance Type from Marketplace images (no image is transferred to |morpheus| when adding Marketplace images).
+Virtual Images can be uploaded to |morpheus| from local files or URLs.
 
 .. WARNING:: Be conscious of your Storage Provider selection. The default Storage Provider is the |morpheus| Appliance at ``/var/opt/morpheus/morpheus-ui/vms``. Uploading large images to the |morpheus| Appliance when there is inadequate space will cause upload failures and impact Appliance functionality. Ensure there is adequate space on your selected Storage Provider. Additional Storage Provider can be added at `Infrastructure > Storage`, which can be configured as the default Virtual Image Store or selected when uploading Images.
 
@@ -107,15 +106,18 @@ To Add Virtual Image:
 1. Select :guilabel:`+ Add` in the Virtual Images page.
 2. Select Image format:
 
-   * Alibaba
-   * Amazon AMI
-   * Azure Marketplace
-   * Digital Ocean
+   .. rst-class:: hidden
+     * Alibaba
+     * Amazon AMI
+     * Azure Marketplace
+     * Digital Ocean
    * ISO
-   * PXE Boot
+   .. rst-class:: hidden
+     * PXE Boot
    * QCOW2
    * RAW
-   * VHD
+   .. rst-class:: hidden
+     * VHD
    * VMware (vmdk/ovf/ova)
 
 3. Configure the following on the Virtual Image:
@@ -155,7 +157,7 @@ To Add Virtual Image:
   Trial Version
    Enable to automatically re-arm the expiration on Windows Trial Images during provisioning
   Enabled Sysprep?
-   Applicable to multiple Clouds, including VMware vCenter, SCVMM, Nutanix, Hyper-V, KVM, and Google GCP. Enable if the Windows Image has been sysprepped. If enabled, |morpheus| will inject ``unattend.xml``
+   Applicable to VMware vCenter Clouds. Enable if the Windows Image has been sysprepped. If enabled, |morpheus| will inject ``unattend.xml``
 
 .. NOTE:: Default Storage location is ``/var/opt/morpheus/morpheus-ui/vms``. Additional Storage Providers can be configured in `Infrastructure > Storage`. Ensure local folders are owned by morpheus-app.morpheus-app if used.
 
@@ -177,12 +179,10 @@ To Add Virtual Image:
 VMware - VM Templates Copies
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-In a VMware environment, you may have a single VM template that you use across different vCenters. Uploading an image to |morpheus|, mentioned in the Add Virtual Image section, is one method to solve this. Alternatively, an organization may decide to create a VM template in one vCenter and then transfer it to other vCenters, which then could be sync’d into |morpheus|.
+In a VMware environment, you may have a single VM template that you use across different vCenters. Uploading an image to |morpheus|, mentioned in the Add Virtual Image section, is one method to solve this. Alternatively, an organization may decide to create a VM template in one vCenter and then transfer it to other vCenters, which then could be synced into |morpheus|.
 
 If all the vCenters are added as Clouds into |morpheus| and the templates are named the same in each vCenter, they will be aggregated under a single virtual image in |morpheus|. This means that as you deploy to the various vCenter Clouds in |morpheus| using this virtual image, it will choose the correct VM template to use based on the Cloud deployed to.
 
-This eliminates the need for creating multiple Node Types for each virtual image if the templates were named differently in each vCenter. This can reduce the overhead of maintaining multiple Node Types and reduces user selections. As well, this can reduce the cloning time of VMs by avoiding network transfers of images between geographic locations, ensuring the closest VM template is selected.
-
 |morpheus| supports VMware Content Libraries storing VM templates and syncing into |morpheus|, the same as a template in a folder. Additionally, the Content Library can be used to house the same template in multiple libraries. If they have the same name, these templates will be aggregated under a single virtual image. If the Content Library is stored on a datastore that the target host/cluster has access to, it will use that library first, to reduce the cloning time. If the Content Library is not stored in a datastore accessible by the cluster/host, a copy of the VM template will be performed to the target host/cluster instead.
 
-.. NOTE:: VM templates are a **Data Center** level object.  The same process above applies to a single VMware cloud with multiple logical data centers.  It will not apply to clusters, as a template is not associated with a cluster, only when it is converted to a VM.
+.. NOTE:: VM templates are a **Datacenter** level object.  The same process above applies to a single VMware cloud with multiple logical datacenters. It will not apply to clusters, as a template is not associated with a cluster, only when it is converted to a VM.

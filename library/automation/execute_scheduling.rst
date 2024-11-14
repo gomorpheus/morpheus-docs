@@ -1,7 +1,7 @@
 Execute Scheduling
 ------------------
 
-Execute Scheduling creates time schedules for Jobs, including Task, Workflow and Backup Jobs. Jobs, which are discussed in greater detail in `another section <https://docs.morpheusdata.com/en/4.2.0/provisioning/jobs/jobs.html#jobs>`_ of |morpheus| docs, combine either a Task or Workflow with an Execute Schedule to run the selected Task or Workflow at the needed time. Backup Jobs are a special type of Job configured in the Backups section which also use Execute Schedules to time backup runs as needed.
+Execute Scheduling creates time schedules for automated jobs, such as backups. Backup Jobs are discussed in greater detail in the Backups section and are configured with an execution schedule to coordinate their run times. This section goes through the process of creating and configuring the scheduling object.
 
 Schedules use CRON expressions, such as ``0 23 * * 2`` equalling ``Executes every week on Tuesday at 23:00``. CRON expressions can easily be created by clicking the corresponding translation in the create or edit Execution Schedule modal below the Schedule field and selecting a new value.
 
@@ -13,12 +13,13 @@ Create Execution Schedules
 NAME
  Name of the Execution Schedule
 
- .. Note:: When assigning Execution Schedules, the name value will appear in the selection drop-down. Using a name that references the time interval is often helpful
+ .. Note:: When assigning Execution Schedules, the name value will appear in the selection drop-down. Using a name that makes clear the time interval is often helpful.
 
 DESCRIPTION
  Description of the Execution Schedule for reference in the Execution Schedules list
-VISIBILITY
- |mastertenant| administrators may share Execute Schedules with Subtenants by setting the visibility to Public
+.. rst-class:: hidden
+  VISIBILITY
+   |mastertenant| administrators may share Execute Schedules with Subtenants by setting the visibility to Public
 TIME ZONE
  The time zone for execution
 Enabled

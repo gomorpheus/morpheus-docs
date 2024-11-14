@@ -26,17 +26,19 @@ Tasks
 .. |nestedworkflow| image:: /images/automation/tasks/nestedworkflow.svg
 .. |conditional| image:: /images/automation/tasks/conditional.svg
 
-Overview
-^^^^^^^^
+.. rst-class:: hidden
+  Overview
+  ^^^^^^^^
 
-There are many Task Types available, including scripts added directly, scripts and templates from the Library section, recipes, playbooks, puppet agent installs, and http (api) calls. Tasks are primarily created for use in Workflows, but a single Task can be executed on an existing instance via ``Actions > Run Task``.
+  There are many Task Types available, including scripts added directly, scripts and templates from the Library section, recipes, playbooks, puppet agent installs, and http (api) calls. Tasks are primarily created for use in Workflows, but a single Task can be executed on an existing instance via ``Actions > Run Task``.
 
 Role Permissions
 ````````````````
 
-The User Role Permission 'Provisioning: Tasks  FULL' is required to create, edit and delete tasks.
+The User Role Permission 'Provisioning: Tasks  FULL' is required to create, edit and delete Tasks.
 
-Tasks Types that can execute locally against the |morpheus| Appliance have an additional Role Permission: ``Tasks - Script Engines``. Script Engine Task Types will be hidden for users without ``Tasks - Script Engines`` role permissions.
+.. rst-class:: hidden
+  Tasks Types that can execute locally against the |morpheus| Appliance have an additional Role Permission: ``Tasks - Script Engines``. Script Engine Task Types will be hidden for users without ``Tasks - Script Engines`` role permissions.
 
 Common Options
 ^^^^^^^^^^^^^^
@@ -55,7 +57,7 @@ When creating a Task, users can select a target to perform the execution. Some T
 Execute Options
 ```````````````
 
-- **Continue on Error:** When marked, Workflows containing this Task will continue and will remain in a successful state if this Task fails
+- **Continue on Error:** When marked, automation stacks including this Task can continue when this Task fails. Additionally, Instances provisioned with this Task as part of its automation stack can be considered provisioned successfully even if this Task has failed
 - **Retryable:** When marked, this Task can be configured to be retried in the event of failure
 - **Retry Count:** The maximum number of times the Task will be retried when there is a failure
 - **Retry Delay:** The length of time (in seconds) |morpheus| will wait to retry the Task
@@ -64,16 +66,17 @@ Execute Options
 Source Options
 ``````````````
 
-Task configuration code may be entered in a number of ways depending on the Task type. Changing the SOURCE type will often update the available fields in the Task modal to accommodate the selected sourcing. Not every Task type supports every sourcing type listed here.
+Task configuration code may be entered locally or sourced via URL. Changing the SOURCE type will often update the available fields in the Task modal to accommodate the selected sourcing.
 
-- **Local:** The Task configuration code is written directly in |morpheus| in a large text area. |morpheus| includes syntax highlighting for supported Task languages for easier debugging and script writing
-- **Repository:** Source the Task configuration code from an integrated Git or Github repository. This requires a pre-existing integration with a Github or other Git-based repository. See the `relevant integration guides <https://docs.morpheusdata.com/en/latest/integration_guides/Deployments/deployment.html>`_ for full details on creating such an integration. Specify the path to the appropriate file through the WORKING PATH field. The appropriate branch may also be specified (if a branch other than 'main' is required) in the BRANCH/TAG field. To reference a tag from this field, use the following syntax: ``refs/tags/<tag-name-here>``. Unless otherwise specified, Task config is sourced fresh from the repository each time the Task is invoked which ensures the latest code is always used
+- **Local:** The Task configuration code is written directly in |morpheus| in a large text area. |morpheus| includes syntax highlighting for easier debugging and script writing
+.. rst-class:: hidden
+  - **Repository:** Source the Task configuration code from an integrated Git or Github repository. This requires a pre-existing integration with a Github or other Git-based repository. See the `relevant integration guides <https://docs.morpheusdata.com/en/latest/integration_guides/Deployments/deployment.html>`_ for full details on creating such an integration. Specify the path to the appropriate file through the WORKING PATH field. The appropriate branch may also be specified (if a branch other than 'main' is required) in the BRANCH/TAG field. To reference a tag from this field, use the following syntax: ``refs/tags/<tag-name-here>``. Unless otherwise specified, Task config is sourced fresh from the repository each time the Task is invoked which ensures the latest code is always used
 - **URL:** For Task configuration that can be source via an outside URL, specify the address in the URL field
 
 Allow Custom Config
 ```````````````````
 
-When "Allow Custom Config" is marked on a Task, the user is shown a text area for custom configuration when the Task is executed manually from the Tasks List Page. If the Task is to be part of an Operational Workflow, mark the same box on the Workflow rather than on the Task to see the text area at execution time. This text area is inside the "Advanced Options" section, which must be expanded in order to reveal the text area. Within the text area, add a JSON map of key-value pairs which can be resolved within your automation scripts. This could be used to pass extra variables that aren't always needed in the script or for specifying extra configuration.
+When "Allow Custom Config" is marked on a Task, the user is shown a text area for custom configuration when the Task is executed manually from the Tasks List Page. This text area is inside the "Advanced Options" section, which must be expanded in order to reveal the text area. Within the text area, add a JSON map of key-value pairs which can be resolved within your automation scripts. This could be used to pass extra variables that aren't always needed in the script or for specifying extra configuration.
 
 **Example JSON Map:**
 
@@ -245,326 +248,327 @@ Task Types
      - Provide map of values as valid JSON
      - Library: Tasks
 
-Task Configuration
-^^^^^^^^^^^^^^^^^^
+.. rst-class:: hidden
+  Task Configuration
+  ^^^^^^^^^^^^^^^^^^
 
-- .. toggle-header:: :header: **Ansible Playbook**
+  - .. toggle-header:: :header: **Ansible Playbook**
 
-    |ansible|
+      |ansible|
 
-    - **NAME:** Name of the Task
-    - **CODE:** Unique code name for API, CLI, and variable references
-    - **ANSIBLE REPO:** Select existing Ansible Integration
-    - **GIT REF:** Specify tag or branch (Option, blank assumes default)
-    - **PLAYBOOK:** Name of playbook to execute, both ``playbook`` and ``playbook.yml`` format supported
-    - **TAGS:** Enter comma separated tags to filter executed tasks by (ie ``--tags``)
-    - **SKIP TAGS:** Enter comma separated tags to run the playbook without matching tagged tasks (ie ``--skip-tags``)
+      - **NAME:** Name of the Task
+      - **CODE:** Unique code name for API, CLI, and variable references
+      - **ANSIBLE REPO:** Select existing Ansible Integration
+      - **GIT REF:** Specify tag or branch (Option, blank assumes default)
+      - **PLAYBOOK:** Name of playbook to execute, both ``playbook`` and ``playbook.yml`` format supported
+      - **TAGS:** Enter comma separated tags to filter executed tasks by (ie ``--tags``)
+      - **SKIP TAGS:** Enter comma separated tags to run the playbook without matching tagged tasks (ie ``--skip-tags``)
 
-    .. IMPORTANT:: Using different Git Refs for multiple Ansible Tasks in same Workflow is not supported. Git Refs can vary between Workflows, but Tasks in each Workflow must use the same Git Ref.
+      .. IMPORTANT:: Using different Git Refs for multiple Ansible Tasks in same Workflow is not supported. Git Refs can vary between Workflows, but Tasks in each Workflow must use the same Git Ref.
 
-- .. toggle-header:: :header: **Ansible Tower Job**
+  - .. toggle-header:: :header: **Ansible Tower Job**
 
-    |ansibletower|
+      |ansibletower|
 
-    - **NAME:** Name of the Task
-    - **CODE:** Unique code name for API, CLI, and variable references
-    - **TOWER INTEGRATION:** Select an existing Ansible Tower integration
-    - **INVENTORY:** Select an existing Inventory, when bootstrapping an Instance, |morpheus| will add the Instance to the Inventory
-    - **GROUP:** Enter a group name, when bootstrapping an Instance, |morpheus| will add the Instance to the Group if it exists. If it does not exist, |morpheus| will create the Group
-    - **JOB TEMPLATE:** Select an existing job template to associate with the Task
-    - **SCM OVERRIDE:** If needed, specify an SCM branch other than that specified on the template
-    - **EXECUTE MODE:** Select Limit to Instance (template is executed only on Instance provisioned), Limit to Group (template is executed on all hosts in the Group), Run for all (template is executed on all hosts in the Inventory), or Skip Execution (to skip execution of the template on the Instance provisioned)
+      - **NAME:** Name of the Task
+      - **CODE:** Unique code name for API, CLI, and variable references
+      - **TOWER INTEGRATION:** Select an existing Ansible Tower integration
+      - **INVENTORY:** Select an existing Inventory, when bootstrapping an Instance, |morpheus| will add the Instance to the Inventory
+      - **GROUP:** Enter a group name, when bootstrapping an Instance, |morpheus| will add the Instance to the Group if it exists. If it does not exist, |morpheus| will create the Group
+      - **JOB TEMPLATE:** Select an existing job template to associate with the Task
+      - **SCM OVERRIDE:** If needed, specify an SCM branch other than that specified on the template
+      - **EXECUTE MODE:** Select Limit to Instance (template is executed only on Instance provisioned), Limit to Group (template is executed on all hosts in the Group), Run for all (template is executed on all hosts in the Inventory), or Skip Execution (to skip execution of the template on the Instance provisioned)
 
-- .. toggle-header:: :header: **Chef bootstrap**
+  - .. toggle-header:: :header: **Chef bootstrap**
 
-    |chef|
+      |chef|
 
-    - **NAME:** Name of the Task
-    - **CODE:** Unique code name for API, CLI, and variable references
-    - **CHEF SERVER:** Select existing Chef integration
-    - **ENVIRONMENT:** Populate Chef environment, or leave as ``_default``
-    - **RUN LIST:** Enter Run List, eg ``role[web]``
-    - **DATA BAG KEY:** Enter data bag key (will be masked upon save)
-    - **DATA BAG KEY PATH:** Enter data bag key path, eg ``/etc/chef/databag_secret``
-    - **NODE NAME:** Defaults to Instance name, configurable
-    - **NODE ATTRIBUTES:** Specify attributes inside the ``{}``
+      - **NAME:** Name of the Task
+      - **CODE:** Unique code name for API, CLI, and variable references
+      - **CHEF SERVER:** Select existing Chef integration
+      - **ENVIRONMENT:** Populate Chef environment, or leave as ``_default``
+      - **RUN LIST:** Enter Run List, eg ``role[web]``
+      - **DATA BAG KEY:** Enter data bag key (will be masked upon save)
+      - **DATA BAG KEY PATH:** Enter data bag key path, eg ``/etc/chef/databag_secret``
+      - **NODE NAME:** Defaults to Instance name, configurable
+      - **NODE ATTRIBUTES:** Specify attributes inside the ``{}``
 
-- .. toggle-header:: :header: **Conditional Workflow**
+  - .. toggle-header:: :header: **Conditional Workflow**
 
-    .. image:: /images/automation/tasks/conditional.svg
-      :width: 10%
+      .. image:: /images/automation/tasks/conditional.svg
+        :width: 10%
 
-    - **NAME:** Name of the Task
-    - **CODE:** Unique code name for API, CLI, and variable references
-    - **LABELS:** A comma separated list of Labels for organizational purposes. See elsewhere in |morpheus| docs for additional details on utilizing Labels
-    - **CONDITIONAL (JS):** JavaScript logic which determines the Operational Workflow which is ultimately run. If it resolves to ``true``, the "If" Workflow is run and if it resolves to ``false`` the "Else" Workflow is run
-    - **IF OPERATIONAL WORKFLOW:** Set the Operational Workflow which should be run if the JavaScript conditional resolves to ``true``
-    - **ELSE OPERATIONAL WORKFLOW:** Set the Operational Workflow which should be run if the JavaScript conditional resolves to ``false``
+      - **NAME:** Name of the Task
+      - **CODE:** Unique code name for API, CLI, and variable references
+      - **LABELS:** A comma separated list of Labels for organizational purposes. See elsewhere in |morpheus| docs for additional details on utilizing Labels
+      - **CONDITIONAL (JS):** JavaScript logic which determines the Operational Workflow which is ultimately run. If it resolves to ``true``, the "If" Workflow is run and if it resolves to ``false`` the "Else" Workflow is run
+      - **IF OPERATIONAL WORKFLOW:** Set the Operational Workflow which should be run if the JavaScript conditional resolves to ``true``
+      - **ELSE OPERATIONAL WORKFLOW:** Set the Operational Workflow which should be run if the JavaScript conditional resolves to ``false``
 
-- .. toggle-header:: :header: **Groovy script**
+  - .. toggle-header:: :header: **Groovy script**
 
-    |groovy|
+      |groovy|
 
-    - **NAME:** Name of the Task
-    - **CODE:** Unique code name for API, CLI, and variable references
-    - **RESULT TYPE:** Single Value, Key/Value Pairs, or JSON
-    - **CONTENT:** Contents of the Groovy script if not sourcing it from a repository
+      - **NAME:** Name of the Task
+      - **CODE:** Unique code name for API, CLI, and variable references
+      - **RESULT TYPE:** Single Value, Key/Value Pairs, or JSON
+      - **CONTENT:** Contents of the Groovy script if not sourcing it from a repository
 
-- .. toggle-header:: :header: **Email**
+  - .. toggle-header:: :header: **Email**
 
-    |email|
+      |email|
 
-    - **NAME:** Name of the Task
-    - **CODE:** Unique code name for API, CLI, and variable references
-    - **SOURCE:** Choose local to draft or paste the email directly into the Task. Choose Repository or URL to bring in a template from a Git repository or another outside source
-    - **EMAIL ADDRESS:** Email addresses can be entered literally or |morpheus| automation variables can be injected, such as ``<%=instance.createdByEmail%>``
-    - **SUBJECT:** The subject line of the email, |morpheus| automation variables can be injected into the subject field
-    - **CONTENT:** The body of the email is HTML. |morpheus| automation variables can be injected into the email body when needed
-    - **SKIP WRAPPED EMAIL TEMPLATE:** The |morpheus|-styled email template is ignored and only HTML in the Content field is used
+      - **NAME:** Name of the Task
+      - **CODE:** Unique code name for API, CLI, and variable references
+      - **SOURCE:** Choose local to draft or paste the email directly into the Task. Choose Repository or URL to bring in a template from a Git repository or another outside source
+      - **EMAIL ADDRESS:** Email addresses can be entered literally or |morpheus| automation variables can be injected, such as ``<%=instance.createdByEmail%>``
+      - **SUBJECT:** The subject line of the email, |morpheus| automation variables can be injected into the subject field
+      - **CONTENT:** The body of the email is HTML. |morpheus| automation variables can be injected into the email body when needed
+      - **SKIP WRAPPED EMAIL TEMPLATE:** The |morpheus|-styled email template is ignored and only HTML in the Content field is used
 
-    .. TIP:: To whitelabel email sent from Tasks, select SKIP WRAPPED EMAIL TEMPLATE and use an HTML template with your own CSS styling
+      .. TIP:: To whitelabel email sent from Tasks, select SKIP WRAPPED EMAIL TEMPLATE and use an HTML template with your own CSS styling
 
-- .. toggle-header:: :header: **HTTP (API)**
+  - .. toggle-header:: :header: **HTTP (API)**
 
-    |http|
+      |http|
 
-    - **NAME:** Name of the Task
-    - **CODE:** Unique code name for API, CLI, and variable references
-    - **RESULT TYPE:** Single Value, Key/Value Pairs, or JSON
-    - **URL:** An HTTP or HTTPS URL as the HTTP Task target
-    - **HTTP METHOD:** GET (default), POST, PUT, PATCH, HEAD, or DELETE
-    - **AUTH USER:** Username for username/password authentication
-    - **PASSWORD:** Password for username/password authentication
-    - **BODY:** Request Body
-    - **HTTP HEADERS:** Enter requests headers, examples below:
+      - **NAME:** Name of the Task
+      - **CODE:** Unique code name for API, CLI, and variable references
+      - **RESULT TYPE:** Single Value, Key/Value Pairs, or JSON
+      - **URL:** An HTTP or HTTPS URL as the HTTP Task target
+      - **HTTP METHOD:** GET (default), POST, PUT, PATCH, HEAD, or DELETE
+      - **AUTH USER:** Username for username/password authentication
+      - **PASSWORD:** Password for username/password authentication
+      - **BODY:** Request Body
+      - **HTTP HEADERS:** Enter requests headers, examples below:
 
-    .. list-table::
+      .. list-table::
 
-      * - Authorization
-        - Bearer `token`
-      * - Content-Type
-        - application/json
+        * - Authorization
+          - Bearer `token`
+        * - Content-Type
+          - application/json
 
-    - **IGNORE SSL ERRORS:** Mark when making REST calls to systems without a trusted SSL certificate
+      - **IGNORE SSL ERRORS:** Mark when making REST calls to systems without a trusted SSL certificate
 
-- .. toggle-header:: :header: **Javascript**
+  - .. toggle-header:: :header: **Javascript**
 
-    |javascript|
+      |javascript|
 
-    - **NAME:** Name of the Task
-    - **CODE:** Unique code name for API, CLI, and variable references
-    - **RESULT TYPE:** Single Value, Key/Value Pairs, or JSON
-    - **SCRIPT:** Javascript contents to execute
+      - **NAME:** Name of the Task
+      - **CODE:** Unique code name for API, CLI, and variable references
+      - **RESULT TYPE:** Single Value, Key/Value Pairs, or JSON
+      - **SCRIPT:** Javascript contents to execute
 
-- .. toggle-header:: :header: **jRuby Script**
+  - .. toggle-header:: :header: **jRuby Script**
 
-    |jruby|
+      |jruby|
 
-    - **NAME:** Name of the Task
-    - **CODE:** Unique code name for API, CLI, and variable references
-    - **RESULT TYPE:** Single Value, Key/Value Pairs, or JSON
-    - **CONTENT:** Contents of the jRuby script is entered here if it's not being called in from an outside source
+      - **NAME:** Name of the Task
+      - **CODE:** Unique code name for API, CLI, and variable references
+      - **RESULT TYPE:** Single Value, Key/Value Pairs, or JSON
+      - **CONTENT:** Contents of the jRuby script is entered here if it's not being called in from an outside source
 
-- .. toggle-header:: :header: **Library Script**
+  - .. toggle-header:: :header: **Library Script**
 
-    |libraryscript|
+      |libraryscript|
 
-    - **NAME:** Name of the Task
-    - **CODE:** Unique code name for API, CLI, and variable references
-    - **RESULT TYPE:** Single Value, Key/Value Pairs, or JSON
-    - **SCRIPT:** Search for an existing script in the typeahead field
+      - **NAME:** Name of the Task
+      - **CODE:** Unique code name for API, CLI, and variable references
+      - **RESULT TYPE:** Single Value, Key/Value Pairs, or JSON
+      - **SCRIPT:** Search for an existing script in the typeahead field
 
-- .. toggle-header:: :header: **Library Template**
+  - .. toggle-header:: :header: **Library Template**
 
-    |template|
+      |template|
 
-    - **NAME:** Name of the Task
-    - **CODE:** Unique code name for API, CLI, and variable references
-    - **TEMPLATE:** Search for an existing template in the typeahead field
+      - **NAME:** Name of the Task
+      - **CODE:** Unique code name for API, CLI, and variable references
+      - **TEMPLATE:** Search for an existing template in the typeahead field
 
-- .. toggle-header:: :header: **Nested Workflow**
+  - .. toggle-header:: :header: **Nested Workflow**
 
-    .. image:: /images/automation/tasks/nestedworkflow.svg
-      :width: 10%
+      .. image:: /images/automation/tasks/nestedworkflow.svg
+        :width: 10%
 
-    - **NAME:** Name of the Task
-    - **CODE:** Unique code name for API, CLI, and variable references
-    - **OPERATIONAL WORKFLOW:** The Workflow to be embedded as a Task for reference inside other Workflows
+      - **NAME:** Name of the Task
+      - **CODE:** Unique code name for API, CLI, and variable references
+      - **OPERATIONAL WORKFLOW:** The Workflow to be embedded as a Task for reference inside other Workflows
 
-- .. toggle-header:: :header: **Powershell Script**
+  - .. toggle-header:: :header: **Powershell Script**
 
-    |powershell|
+      |powershell|
 
-    - **NAME:** Name of the Task
-    - **CODE:** Unique code name for API, CLI, and variable references
-    - **RESULT TYPE:** Single Value, Key/Value Pairs, or JSON
-    - **VERSION:** Select the version of Powershell this Task should run in. Powershell 5 is the default selection, Powershell 6 or 7 must be installed on the target to select those versions
-    - **ELEVATED SHELL:** Run script with administrator privileges
-    - **IP ADDRESS:** IP address of the PowerShell Task target
-    - **PORT:** SSH port for PowerShell Task target (5985 default)
-    - **USERNAME:** Username for PowerShell Task target
-    - **PASSWORD:** Password for PowerShell Task target
-    - **Content:**  Enter script to execute if not calling the script in from an outside source
+      - **NAME:** Name of the Task
+      - **CODE:** Unique code name for API, CLI, and variable references
+      - **RESULT TYPE:** Single Value, Key/Value Pairs, or JSON
+      - **VERSION:** Select the version of Powershell this Task should run in. Powershell 5 is the default selection, Powershell 6 or 7 must be installed on the target to select those versions
+      - **ELEVATED SHELL:** Run script with administrator privileges
+      - **IP ADDRESS:** IP address of the PowerShell Task target
+      - **PORT:** SSH port for PowerShell Task target (5985 default)
+      - **USERNAME:** Username for PowerShell Task target
+      - **PASSWORD:** Password for PowerShell Task target
+      - **Content:**  Enter script to execute if not calling the script in from an outside source
 
-    .. NOTE:: Setting the execution target to local requires Powershell to be installed on the |morpheus| appliance box(es). `Microsoft Documentation <https://docs.microsoft.com/en-us/powershell/scripting/install/installing-powershell-on-linux?view=powershell-7.2>`_ contains installation instructions for all major Linux distributions and versions.
+      .. NOTE:: Setting the execution target to local requires Powershell to be installed on the |morpheus| appliance box(es). `Microsoft Documentation <https://docs.microsoft.com/en-us/powershell/scripting/install/installing-powershell-on-linux?view=powershell-7.2>`_ contains installation instructions for all major Linux distributions and versions.
 
 
 
-- .. toggle-header:: :header: **Puppet Agent Install**
+  - .. toggle-header:: :header: **Puppet Agent Install**
 
-    |puppet|
+      |puppet|
 
-    - **NAME:** Name of the Task
-    - **CODE:** Unique code name for API, CLI, and variable references
-    - **PUPPET MASTER:** Select Puppet Master from an existing Puppet integration
-    - **PUPPET NODE NAME:** Enter Puppet node name. Variables supported eg. ``<%= instance.name %>``
-    - **PUPPET ENVIRONMENT:** Enter Puppet environment, eg. ``production``
+      - **NAME:** Name of the Task
+      - **CODE:** Unique code name for API, CLI, and variable references
+      - **PUPPET MASTER:** Select Puppet Master from an existing Puppet integration
+      - **PUPPET NODE NAME:** Enter Puppet node name. Variables supported eg. ``<%= instance.name %>``
+      - **PUPPET ENVIRONMENT:** Enter Puppet environment, eg. ``production``
 
-- .. toggle-header:: :header: **Python Script**
+  - .. toggle-header:: :header: **Python Script**
 
-    |python|
+      |python|
 
-    .. IMPORTANT:: Beginning with |morpheus| version 4.2.1, Python Tasks use virtual environments. For this reason, ``virtualenv`` must be installed on your appliances in order to work with Python Tasks. See the information below for more detailed steps to install ``virtualenv`` on your |morpheus| appliance node(s).
+      .. IMPORTANT:: Beginning with |morpheus| version 4.2.1, Python Tasks use virtual environments. For this reason, ``virtualenv`` must be installed on your appliances in order to work with Python Tasks. See the information below for more detailed steps to install ``virtualenv`` on your |morpheus| appliance node(s).
 
-    - **NAME:** Name of the Task
-    - **CODE:** Unique code name for API, CLI, and variable references
-    - **RESULT TYPE:** Single Value, Key/Value Pairs, or JSON
-    - **CONTENT:** Python script to execute is entered here if not pulled in from an outside repository
-    - **COMMAND ARGUMENTS:** Optional arguments passed into the Python script. Variables supported eg. ``<%= instance.name %>``
-    - **ADDITIONAL PACKAGES:** Additional packages to be installed after ``requirements.txt`` (if detected). Expected format for additional packages: 'packageName==x.x.x packageName2==x.x.x', the version must be specified
-    - **PYTHON BINARY:** Optional binary to override the default Python binary
+      - **NAME:** Name of the Task
+      - **CODE:** Unique code name for API, CLI, and variable references
+      - **RESULT TYPE:** Single Value, Key/Value Pairs, or JSON
+      - **CONTENT:** Python script to execute is entered here if not pulled in from an outside repository
+      - **COMMAND ARGUMENTS:** Optional arguments passed into the Python script. Variables supported eg. ``<%= instance.name %>``
+      - **ADDITIONAL PACKAGES:** Additional packages to be installed after ``requirements.txt`` (if detected). Expected format for additional packages: 'packageName==x.x.x packageName2==x.x.x', the version must be specified
+      - **PYTHON BINARY:** Optional binary to override the default Python binary
 
-    :raw-html:`<br />`
+      :raw-html:`<br />`
 
-    Python and |morpheus|
-    `````````````````````
+      Python and |morpheus|
+      `````````````````````
 
-    **Enterprise Proxy Considerations**
+      **Enterprise Proxy Considerations**
 
-    Additional considerations must be made in enterprise proxy environments where Python Tasks are run with additional package download requirements. These additional packages are downloaded using ``pip`` and may not obey global |morpheus| proxy rules. To deal with this, create or edit the pip configuration file at ``/etc/pip.conf``. Your configuration should include something like the following:
+      Additional considerations must be made in enterprise proxy environments where Python Tasks are run with additional package download requirements. These additional packages are downloaded using ``pip`` and may not obey global |morpheus| proxy rules. To deal with this, create or edit the pip configuration file at ``/etc/pip.conf``. Your configuration should include something like the following:
 
-    .. code-block:: bash
+      .. code-block:: bash
 
-      [global]
-      proxy = http://some-proxy-ip.com:8087
+        [global]
+        proxy = http://some-proxy-ip.com:8087
 
-    For more information, review the Pip documentation on using proxy servers `here <https://pip.pypa.io/en/stable/user_guide/#using-a-proxy-server>`_.
+      For more information, review the Pip documentation on using proxy servers `here <https://pip.pypa.io/en/stable/user_guide/#using-a-proxy-server>`_.
 
-    **CentOS 7 / Python 2.7 (RHEL system Python)**
+      **CentOS 7 / Python 2.7 (RHEL system Python)**
 
-    With a fresh install of |morpheus| on a default build of CentOS 7, Python Tasks will not function due to the missing requirement of ``virtualenv``.
+      With a fresh install of |morpheus| on a default build of CentOS 7, Python Tasks will not function due to the missing requirement of ``virtualenv``.
 
-    If you attempt to run a python task, you will get an error similar to the following:
+      If you attempt to run a python task, you will get an error similar to the following:
 
-    .. code-block:: bash
+      .. code-block:: bash
 
-      Task Execution Failed on Attempt 1
-      sudo: /tmp/py-8ae51ebf-749c-4354-b6e4-11ce541afad5/bin/python: command not found
+        Task Execution Failed on Attempt 1
+        sudo: /tmp/py-8ae51ebf-749c-4354-b6e4-11ce541afad5/bin/python: command not found
 
-    In order to run |morpheus| Python Tasks in CentOS 7, install ``virtualenv``: ``yum install python-virtualenv``
+      In order to run |morpheus| Python Tasks in CentOS 7, install ``virtualenv``: ``yum install python-virtualenv``
 
-    If you require ``python3``, you can specify the binary to be used while building the virtual environment. In a default install, do the following: ``yum install python3``. Then, in your |morpheus| Python Task, specify the binary in the PYTHON BINARY field as "/bin/python3". This will build a virtual environment in ``/tmp`` using the ``python3`` binary, which is equivalent to making a virtual environment like so: ``virtualenv ~/venv -p /bin/python3``.
+      If you require ``python3``, you can specify the binary to be used while building the virtual environment. In a default install, do the following: ``yum install python3``. Then, in your |morpheus| Python Task, specify the binary in the PYTHON BINARY field as "/bin/python3". This will build a virtual environment in ``/tmp`` using the ``python3`` binary, which is equivalent to making a virtual environment like so: ``virtualenv ~/venv -p /bin/python3``.
 
-    If you wish to install additional Python packages into the virtual environment, put them in ``pip`` format and space-separated into the ADDITIONAL PACKAGES field on the Python Task. Use the help text below the field to ensure correct formatting.
+      If you wish to install additional Python packages into the virtual environment, put them in ``pip`` format and space-separated into the ADDITIONAL PACKAGES field on the Python Task. Use the help text below the field to ensure correct formatting.
 
-    **CentOS 8 and Python**
+      **CentOS 8 and Python**
 
-    In CentOS 8, Python is not installed by default. There is a ``platform-python`` but that should not be used for anything in userland. The error message with a default install of CentOS 8 will be similar to this:
+      In CentOS 8, Python is not installed by default. There is a ``platform-python`` but that should not be used for anything in userland. The error message with a default install of CentOS 8 will be similar to this:
 
-    .. code-block:: bash
+      .. code-block:: bash
 
-      Task Execution Failed on Attempt 1
-      sudo: /tmp/py-cffc9a8f-c40d-451d-956e-d6e9185ade33/bin/python: command not found
+        Task Execution Failed on Attempt 1
+        sudo: /tmp/py-cffc9a8f-c40d-451d-956e-d6e9185ade33/bin/python: command not found
 
-    The default ``virtualenv`` for CentOS 8 is the python3 variety, for |morpheus| to use Python Tasks, do the following: ``yum install python3-virtualenv``
+      The default ``virtualenv`` for CentOS 8 is the python3 variety, for |morpheus| to use Python Tasks, do the following: ``yum install python3-virtualenv``
 
-    If Python2 is required, do the following: ``yum install python2`` and specify ``/bin/python2`` as the PYTHON BINARY in your |morpheus| Task.
+      If Python2 is required, do the following: ``yum install python2`` and specify ``/bin/python2`` as the PYTHON BINARY in your |morpheus| Task.
 
-    This will build a ``virtualenv`` in ``/tmp`` using the ``python2`` binary, which is equivalent to making a ``virtualenv`` like so: ``virtualenv ~/venv -p /bin/python2``
+      This will build a ``virtualenv`` in ``/tmp`` using the ``python2`` binary, which is equivalent to making a ``virtualenv`` like so: ``virtualenv ~/venv -p /bin/python2``
 
-    If you wish to install additional Python packages into the virtual environment, put them in ``pip`` format and space-separated into the ADDITIONAL PACKAGES field on the Python Task. Use the help text below the field to ensure correct formatting.
+      If you wish to install additional Python packages into the virtual environment, put them in ``pip`` format and space-separated into the ADDITIONAL PACKAGES field on the Python Task. Use the help text below the field to ensure correct formatting.
 
-- .. toggle-header:: :header: **Restart**
+  - .. toggle-header:: :header: **Restart**
 
-    |restart|
+      |restart|
 
-    - **NAME:** Name of the Task
-    - **CODE:** Unique code name for API, CLI, and variable references
+      - **NAME:** Name of the Task
+      - **CODE:** Unique code name for API, CLI, and variable references
 
-- .. toggle-header:: :header: **Shell Script**
+  - .. toggle-header:: :header: **Shell Script**
 
-    |shellscript|
+      |shellscript|
 
-    - **NAME:** Name of the Task
-    - **CODE:** Unique code name for API, CLI, and variable references
-    - **RESULT TYPE:** Single Value, Key/Value Pairs, or JSON
-    - **SUDO:** Mark the box to run the script as ``sudo``
-    - **CONTENT:** Script to execute is entered here if not pulled in from an outside repository
+      - **NAME:** Name of the Task
+      - **CODE:** Unique code name for API, CLI, and variable references
+      - **RESULT TYPE:** Single Value, Key/Value Pairs, or JSON
+      - **SUDO:** Mark the box to run the script as ``sudo``
+      - **CONTENT:** Script to execute is entered here if not pulled in from an outside repository
 
-    |
+      |
 
-    .. TIP:: When the EXECUTE TARGET option is set to "Local" (in other words, the Task is run on the appliance itself), two additional fields are revealed: GIT REPO and GIT REF. Use GIT REPO to set the PWD shell variable (identifies the current working directory) to the locally cached repository (ex. /var/opt/morpheus-node/morpheus-local/repo/git/76fecffdf1fe96516e90becdab9de) and GIT REF to identify the Git branch the Task should be run from if the default (typically main or master) shouldn't be used. If these options are not set, the working folder will be /opt/morpheus/lib/tomcat/temp which would not allow scripts to reference file paths relative to the repository (if needed).
+      .. TIP:: When the EXECUTE TARGET option is set to "Local" (in other words, the Task is run on the appliance itself), two additional fields are revealed: GIT REPO and GIT REF. Use GIT REPO to set the PWD shell variable (identifies the current working directory) to the locally cached repository (ex. /var/opt/morpheus-node/morpheus-local/repo/git/76fecffdf1fe96516e90becdab9de) and GIT REF to identify the Git branch the Task should be run from if the default (typically main or master) shouldn't be used. If these options are not set, the working folder will be /opt/morpheus/lib/tomcat/temp which would not allow scripts to reference file paths relative to the repository (if needed).
 
-- .. toggle-header:: :header: **vRealize Orchestrator Workflow**
+  - .. toggle-header:: :header: **vRealize Orchestrator Workflow**
 
-    |vro|
+      |vro|
 
-    - **NAME:** Name of the Task
-    - **CODE:** Unique code name for API, CLI, and variable references
-    - **RESULT TYPE:** Single Value, Key/Value Pairs, or JSON
-    - **vRO INTEGRATION:** Select an existing vRO integration
-    - **WORKFLOW:** Select a vRO workflow from the list synced from the selected integration
-    - **PARAMETER BODY (JSON):**
+      - **NAME:** Name of the Task
+      - **CODE:** Unique code name for API, CLI, and variable references
+      - **RESULT TYPE:** Single Value, Key/Value Pairs, or JSON
+      - **vRO INTEGRATION:** Select an existing vRO integration
+      - **WORKFLOW:** Select a vRO workflow from the list synced from the selected integration
+      - **PARAMETER BODY (JSON):**
 
-- .. toggle-header:: :header: **Write Attributes**
+  - .. toggle-header:: :header: **Write Attributes**
 
-    |wa|
+      |wa|
 
-    - **NAME:** Name of the Task
-    - **CODE:** Unique code name for API, CLI, and variable references
-    - **ATTRIBUTES:** A JSON map of arbitrary values to write to the attributes property of the target resource
+      - **NAME:** Name of the Task
+      - **CODE:** Unique code name for API, CLI, and variable references
+      - **ATTRIBUTES:** A JSON map of arbitrary values to write to the attributes property of the target resource
 
-    |
+      |
 
-    .. TIP:: This is often useful for storing values from one phase of a Provisioning Workflow for access in another phase. See the video demo below for a complete example.
+      .. TIP:: This is often useful for storing values from one phase of a Provisioning Workflow for access in another phase. See the video demo below for a complete example.
 
-    There are a number of ways that a JSON payload can be statically drafted within a Write Attributes Task or called into the Task as a result from a prior Task. Consider the following examples:
+      There are a number of ways that a JSON payload can be statically drafted within a Write Attributes Task or called into the Task as a result from a prior Task. Consider the following examples:
 
-    To pass in a static JSON map with static values, use the format shown below.
+      To pass in a static JSON map with static values, use the format shown below.
 
-    .. code-block:: JSON
+      .. code-block:: JSON
 
-      {
-        "my_key1": "my_value1",
-        "my_key2": "my_value2"
-      }
+        {
+          "my_key1": "my_value1",
+          "my_key2": "my_value2"
+        }
 
-    To pass in a static JSON map with dynamic values seeded from prior Task results, ensure the RESULT TYPE value of one or more of the prior Tasks in the Workflow phase is set to "Single Value" and refer to the values within the JSON map as shown in the next example. Note that "taskCode1" and "taskCode2" refer to the CODE field value for the Task whose output you wish to reference.
+      To pass in a static JSON map with dynamic values seeded from prior Task results, ensure the RESULT TYPE value of one or more of the prior Tasks in the Workflow phase is set to "Single Value" and refer to the values within the JSON map as shown in the next example. Note that "taskCode1" and "taskCode2" refer to the CODE field value for the Task whose output you wish to reference.
 
-    .. code-block:: JSON
+      .. code-block:: JSON
 
-      {
-        "my_key1": "<%=results.taskCode1%>",
-        "my_key2": "<%=results.taskCode2%>"
-      }
+        {
+          "my_key1": "<%=results.taskCode1%>",
+          "my_key2": "<%=results.taskCode2%>"
+        }
 
-    To pass in a dynamic JSON map returned from a prior Task, format your Write Attributes Task as shown in the next example. Ensure that the RESULT TYPE value for the Task returning a JSON map is set to "JSON". Note that "taskCode" in the example refers to the CODE field value for the Task being referenced. In order for the JSON map to be set correctly and able to be referenced from future Tasks, you must set the "instances" key and call the ``encodeAsJSON()`` Groovy method as shown in the example.
+      To pass in a dynamic JSON map returned from a prior Task, format your Write Attributes Task as shown in the next example. Ensure that the RESULT TYPE value for the Task returning a JSON map is set to "JSON". Note that "taskCode" in the example refers to the CODE field value for the Task being referenced. In order for the JSON map to be set correctly and able to be referenced from future Tasks, you must set the "instances" key and call the ``encodeAsJSON()`` Groovy method as shown in the example.
 
-    .. code-block:: JSON
+      .. code-block:: JSON
 
-      {
-        "instances": <%=results.taskCode?.encodeAsJSON()%>
-      }
+        {
+          "instances": <%=results.taskCode?.encodeAsJSON()%>
+        }
 
-    |
+      |
 
-    .. raw:: html
+      .. raw:: html
 
-        <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; height: auto;">
-            <iframe src="//www.youtube.com/embed/7b_HQTRMR2Y" frameborder="0" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
-        </div>
+          <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; height: auto;">
+              <iframe src="//www.youtube.com/embed/7b_HQTRMR2Y" frameborder="0" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
+          </div>
 
-    |
+      |
 
 Task Management
 ^^^^^^^^^^^^^^^
@@ -576,12 +580,13 @@ Adding Tasks
 #. On the Tasks tab, click the :guilabel:`Add` button
 #. From the New Task Wizard input a name for the task
 #. Select the type of task from from the type dropdown
-#. Input the appropriate configuration details. These will vary signficiantly based on the selected Task type. More details on each Task type are contained in the preceding sections.
+#. Input the appropriate configuration details. These will vary based on the selected Task type.
 #. Once done, click :guilabel:`SAVE CHANGES`
 
 .. TIP:: When writing a Task config, it's often necessary to reference |morpheus| variables which pertain to the specific Instance the Task is being run against. |morpheus| includes a pop-out column along the right side of the Add/Edit Task modal which lists available variables. Click and drag the relevant variable into the config area and |morpheus| will automatically fill in the variable call formatted for the currently chosen Task type. See the screenshot below.
 
-.. image:: /images/automation/tasks/taskvars.png
+.. rst-class:: hidden
+  .. image:: /images/automation/tasks/taskvars.png
 
 Editing Tasks
 `````````````
@@ -597,4 +602,5 @@ Deleting Tasks
 #. Select Automation from within the Library menu
 #. Click the trash icon (|trash|) on the row of the Task you wish to delete
 
-.. include:: tasks/taskResults.rst
+.. rst-class:: hidden
+  .. include:: tasks/taskResults.rst
