@@ -12,4 +12,5 @@ The Backups Summary section shows the following metrics:
 
 If a User's Role permission for Backups is set to `User`, the user will only see metrics for backups they own.
 
-.. image:: /images/backups/backupSummary.png
+.. rst-class:: hidden
+  .. image:: /images/backups/backupSummary.png

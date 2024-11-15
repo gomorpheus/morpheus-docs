@@ -38,7 +38,6 @@ Execution Schedules
 
 Backup Execution Schedules can be configured and managed in |LibAutExe|. An execution schedule stores only the interval at which some execution should be run and they can apply to both backups and automation scripts. To create a new backup job with this schedule, navigate to `Backups > Backups` and click "+ADD". In the final step of creating the backup job we are able to select any of our created execution schedules. The Default Backup Schedule set in |AdmSetBac| will be selected when creating a backup job and not specifying an execution schedule.
 
-
 Configuring Backups during Provisioning
 =======================================
 
@@ -65,43 +64,44 @@ SYNTHETIC FULL (Currently only available for KVM VM Snapshot-type backups, such 
 SYNTHETIC FULL SCHEDULE
   Select the schedule for the backup job on which synthetic full backups should be taken
 
-Backup Types displayed will be filtered by available options per selected Instance Layout. Many backup job types are supported including (but not limited to):
+Backup Types displayed will be filtered by available options per selected Instance Layout.
 
-* File Backup
-* Directory Backup
-* MySQL
-* MongoDB
-* LVM Snapshot
-* LVM Image
-* LVM Migration
-* Windows Migration
-* Postgres
-* Tar Directory Backup
-* Amazon VM Snapshot
-* VMWare VM Snapshot
-* Fusion VM Snapshot
-* Xen VM Snapshot
-* Veeam VMWare VM Backup
-* Veeam Hyper-V VM Backup
-* Google VM Snapshot
-* Commvault File/Directory Backup
-* Azure VM Snapshot
-* Morpheus Appliance
-* Openstack VM Snapshot
-* DigitalOcean VM Snapshot
-* Nutanix VM Snapshot
-* Softlayer VM Snapshot
-* Hyper-V VM Snapshot
-* VMWare VM Snapshot
-* SCVMM VM Snapshot
-* UpCloud VM Snapshot
-* Bluemix VM Snapshot
-* Alibaba VM Snapshot
-* Oracle Cloud VM Snapshot
-* KVM VM Snapshot
-* Container Backup
-* VM Backup
-* Object Storage Backup
+.. rst-class:: hidden
+  * File Backup
+  * Directory Backup
+  * MySQL
+  * MongoDB
+  * LVM Snapshot
+  * LVM Image
+  * LVM Migration
+  * Windows Migration
+  * Postgres
+  * Tar Directory Backup
+  * Amazon VM Snapshot
+  * VMWare VM Snapshot
+  * Fusion VM Snapshot
+  * Xen VM Snapshot
+  * Veeam VMWare VM Backup
+  * Veeam Hyper-V VM Backup
+  * Google VM Snapshot
+  * Commvault File/Directory Backup
+  * Azure VM Snapshot
+  * Morpheus Appliance
+  * Openstack VM Snapshot
+  * DigitalOcean VM Snapshot
+  * Nutanix VM Snapshot
+  * Softlayer VM Snapshot
+  * Hyper-V VM Snapshot
+  * VMWare VM Snapshot
+  * SCVMM VM Snapshot
+  * UpCloud VM Snapshot
+  * Bluemix VM Snapshot
+  * Alibaba VM Snapshot
+  * Oracle Cloud VM Snapshot
+  * KVM VM Snapshot
+  * Container Backup
+  * VM Backup
+  * Object Storage Backup
 
 
 .. include:: summary.rst
