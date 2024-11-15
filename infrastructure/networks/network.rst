@@ -11,5 +11,6 @@ Network
    floating_ips.rst
    domains.rst
    proxies.rst
-   security_groups.rst
+   .. rst-class:: hidden
+    security_groups.rst
    services.rst

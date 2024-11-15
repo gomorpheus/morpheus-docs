@@ -4,36 +4,16 @@ Groups
 Overview
 --------
 
+Groups in |morpheus| define the available resources for each user. Group access is defined by Roles. Clouds are added to Groups, and a User can only access the Clouds associated with Groups in their Role. Resources such as networks, datastores, resource pools, and folders have additional Group access settings.
 
-Groups in |morpheus| define what resources a user has access to. Group access is defined by User Roles. Clouds are added to groups, and a User can only access the Clouds that are in the Groups their Role(s) gives them access to. Resources such as Networks, Datastores, Resources Pools, and Folders have additional Group access settings.
-
-Policies applied to a Group will be enforced on all Instances provisioned or moved into that Group.
-
-
-
-.. NOTE:: Groups are not multi-tenant. A group only exists in the tenant is it is created in.
-
-.. //* User Roles determine Group Access
-.. //* Clouds are added to groups, user can only access the Clouds in their Group(s).
-.. //* Config Management
-.. //* DNS
-.. //* Service Registry
-.. //* Network Permissions
-.. //* Policies
-.. //** Limits
-.. //** Lifecycle
-.. //** Approvals
-.. //** Naming
-
-The Groups view displays all current groups, includes search feature, and also enables the addition of new groups.
+The Groups list page displays all current groups, which can be filtered by applied Labels or by simple search. Existing Groups can be edited here and new Groups can be created.
 
 To View Groups:
 
-#. Select the Infrastructure link in the navigation bar
+#. Hover over the Infrastructure link in the menu bar
 #. Click the Groups link
 
 .. Viewing Groups
-
 
 UI
 ---
@@ -43,25 +23,22 @@ UI
 CLI
 ---
 
-  View all groups: ``groups list``
-  To use the group: ``groups use <id>`` or ``groups use "group name"``
-  Json output of a specific group: ``groups get <id> -j`` or ``groups get "group name" -j``
+  To view all groups: ``groups list``.
 
+  To use the group: ``groups use <id>`` or ``groups use "group name"``
+
+  To get a JSON output of a specific group: ``groups get <id> -j`` or ``groups get "group name" -j``
 
 API
 ---
-  View all groups: ``curl https://api.gomorpheus.com/api/groups -H "Authorization: BEARER access_token"``
-  View a specific group: ``curl https://api.gomorpheus.com/api/groups/:id -H "Authorization: BEARER access_token"``
+  To view all groups: ``curl https://api.gomorpheus.com/api/groups -H "Authorization: BEARER access_token"``
+
+  To view a specific group: ``curl https://api.gomorpheus.com/api/groups/:id -H "Authorization: BEARER access_token"``
 
 Adding Groups
 -------------
 
 .. UI
-
-
-.. image:: /images/infrastructure/add_group.png
-
-.. [caption="Figure 1: ", title="Add Group", alt="Add Group"]
 
 To add a group:
 
@@ -73,12 +50,10 @@ To add a group:
 
 .. CLI
 
-
 .. All in one command: ``groups add CLITest -O code=cli -O location=`` I have added code and value for location is empty. The value for code and location are optional.
 .. Minimal values: ``groups add CLITest`` There would be prompt to provide optional values for code and location.
 
 .. API
-
 
 .. HTTP Request
   ``POST https://api.gomorpheus.com/api/groups``
@@ -98,8 +73,6 @@ To add a group:
 Managing Groups
 ---------------
 
-.. image:: /images/infrastructure/group_view.png
-
 To view a Group:
 
 #. Select the Infrastructure link in the navigation bar
@@ -116,13 +89,13 @@ Bare Metal
   List all Bare Metal Hosts added to the Group
 Clouds
   Lists Clouds added to the Group. Existing Clouds or new Clouds can be added from the Group by clicking Add Cloud.
-Policies
-  Lists and allows creation or management of Policies applied to the Group.
+Wiki
+  Provides a text area for entering wiki content related to the Group in Markdown format. Additional information on Wiki is available in the |OpeWik| documentation section
 
 Edit Group
 ----------
 
-To edit a group:
+To edit a Group:
 
 #. Select the Infrastructure link in the navigation bar.
 #. Click the Groups link.
@@ -134,7 +107,7 @@ To edit a group:
 Delete Group
 ------------
 
-To delete a group:
+To delete a Group:
 
 #. Select the Infrastructure link in the navigation bar.
 #. Click the Groups link.
@@ -145,4 +118,4 @@ To delete a group:
 User Access
 -----------
 
-.. IMPORTANT:: User access to Groups is determined by their user Role(s). Group access for Roles can be configured in the Group Access section of a Roles Settings.
+.. IMPORTANT:: User access to Groups is determined by their Role(s). Group access for Roles can be configured in the Group Access section of a Role's Settings.

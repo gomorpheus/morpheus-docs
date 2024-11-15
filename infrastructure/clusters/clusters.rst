@@ -4,46 +4,45 @@ Clusters
 Overview
 --------
 
-``Infrastructure > Clusters`` is for creating and managing Kubernetes Clusters, |morpheus| manager Docker Clusters, KVM Clusters, or Cloud specific Kubernetes services such as EKS, AKS and GKE.
+The |InfClu| section is where the list of existing |clusters| can be viewed. Here you can view high-level statistics about all clusters under management by |manager|, such as aggregate resource usage by all clusters and the number of workloads running across all of them. Click into an existing |cluster| to view additional metrics such as hosts, VMs, resource utilization by the host, and a lot more.
 
-Cluster Types
-^^^^^^^^^^^^^
+.. rst-class:: hidden
+  Cluster Types
+  ^^^^^^^^^^^^^
 
-+--------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------+
-| **Name**           | **Description**                                                                                                                                                                                                                  | **Provider Type**      |
-+--------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------+
-| Kubernetes Cluster | Provisions by default a Kubernetes cluster consisting of 1 Kubernetes Master and 3 Kubernetes Worker nodes. Additional system layouts available including Master clusters. Custom layouts can be created.                        | Kubernetes             |
-+--------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------+
-| Docker Cluster     | Provisions by default a Morpheus controlled Docker Cluster with 1 host. Additional hosts can be added. Custom layouts can be created. Existing Morpheus Docker Hosts are automatically converted to Clusters upon 4.0.0 upgrade. | Docker                 |
-+--------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------+
-| EKS Cluster        | Amazon EKS (Elastic Kubernetes Service) Clusters                                                                                                                                                                                 | Kubernetes             |
-+--------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------+
-| AKS Cluster        | Azure AKS (Azure Kubernets Service) Clusters                                                                                                                                                                                     | Kubernetes             |
-+--------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------+
-| Ext Kubernetes     | Brings an existing (brownfield) Kubernetes cluster into |morpheus|                                                                                                                                                               | Kubernetes             |
-+--------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------+
-| GKE Cluster        | Google Cloud GKE (Google Kubernetes Engine) Clusters                                                                                                                                                                             | Kubernetes             |
-+--------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------+
-| KVM Cluster        | Onboard existing KVM Clusters. Manage them in |morpheus| and utilize them as provisioning targets. See the `KVM integration guide <https://docs.morpheusdata.com/en/latest/integration_guides/Clouds/kvm/kvm.html>`_ for more.   | KVM                    |
-+--------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------+
-| MVM Cluster        | |morpheus| Virtual Machines, a KVM-based virtualization solution. This Cluster type is currently in open beta. See the detailed section below on MVM Clusters for complete use documentation.                                    | KVM                    |
-+--------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------+
+  +--------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------+
+  | **Name**           | **Description**                                                                                                                                                                                                                  | **Provider Type**      |
+  +--------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------+
+  | Kubernetes Cluster | Provisions by default a Kubernetes cluster consisting of 1 Kubernetes Master and 3 Kubernetes Worker nodes. Additional system layouts available including Master clusters. Custom layouts can be created.                        | Kubernetes             |
+  +--------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------+
+  | Docker Cluster     | Provisions by default a Morpheus controlled Docker Cluster with 1 host. Additional hosts can be added. Custom layouts can be created. Existing Morpheus Docker Hosts are automatically converted to Clusters upon 4.0.0 upgrade. | Docker                 |
+  +--------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------+
+  | EKS Cluster        | Amazon EKS (Elastic Kubernetes Service) Clusters                                                                                                                                                                                 | Kubernetes             |
+  +--------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------+
+  | AKS Cluster        | Azure AKS (Azure Kubernets Service) Clusters                                                                                                                                                                                     | Kubernetes             |
+  +--------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------+
+  | Ext Kubernetes     | Brings an existing (brownfield) Kubernetes cluster into |morpheus|                                                                                                                                                               | Kubernetes             |
+  +--------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------+
+  | GKE Cluster        | Google Cloud GKE (Google Kubernetes Engine) Clusters                                                                                                                                                                             | Kubernetes             |
+  +--------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------+
+  | KVM Cluster        | Onboard existing KVM Clusters. Manage them in |morpheus| and utilize them as provisioning targets. See the `KVM integration guide <https://docs.morpheusdata.com/en/latest/integration_guides/Clouds/kvm/kvm.html>`_ for more.   | KVM                    |
+  +--------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------+
+  | MVM Cluster        | |morpheus| Virtual Machines, a KVM-based virtualization solution. This Cluster type is currently in open beta. See the detailed section below on MVM Clusters for complete use documentation.                                    | KVM                    |
+  +--------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------+
 
-.. note:: Refer to :ref:`clusterLayouts` for supported Clouds per Cluster Type.
+  .. note:: Refer to :ref:`clusterLayouts` for supported Clouds per Cluster Type.
 
 Requirements
 ------------
 
-- Morpheus Role permission ``Infrastructure: Clusters > Full`` required for Viewing, Creating, Editing and Deleting Clusters.
-- Morpheus Role permission ``Infrastructure: Clusters > Read`` required for Viewing Cluster list and detail pages.
+- |morpheus| Role permission ``Infrastructure: Clusters > Full`` required for Viewing, Creating, Editing and Deleting Clusters
+- |morpheus| Role permission ``Infrastructure: Clusters > Read`` required for Viewing Cluster list and detail pages
 
 Cluster Permissions
 -------------------
 
 - Cluster Permissions
-    Each Cluster has Group, Tenant and Service Plan access permissions settings ("MORE" > Permissions on the Clusters list page).
-- Namespace Permissions
-    Individual Namespaces also have Group, Tenant and Service Plan access permissions settings
+    Each Cluster has Group and Service Plan access permissions settings (Gear icon > Permissions from the Clusters list page)
 
 .. _clusterLayouts:
 
@@ -262,7 +261,8 @@ Cluster Permissions
 
 
 .. include:: /infrastructure/clusters/mvm.rst
-.. include:: /infrastructure/clusters/kubernetes.rst
-.. include:: /infrastructure/clusters/docker.rst
-.. include:: /infrastructure/clusters/eks.rst
-.. include:: /infrastructure/clusters/gke.rst
+..rst-class:: hidden
+  .. include:: /infrastructure/clusters/kubernetes.rst
+  .. include:: /infrastructure/clusters/docker.rst
+  .. include:: /infrastructure/clusters/eks.rst
+  .. include:: /infrastructure/clusters/gke.rst

@@ -12,6 +12,7 @@ Supported Bucket Types
 - Google Cloud Storage
 - Openstack Swift
 - Rackspace CDN
+- Generic S3
 
 Alibaba Buckets
 ^^^^^^^^^^^^^^^

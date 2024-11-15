@@ -12,7 +12,8 @@ public infrastructure.
   groups/groups.rst
   clouds/clouds.rst
   clusters/clusters.rst
-  compute/compute.rst
+  .. rst-class:: hidden
+    compute/compute.rst
   networks/network.rst
   .. rst-class:: hidden
     loadbalancers/lb.rst

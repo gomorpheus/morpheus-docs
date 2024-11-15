@@ -45,19 +45,12 @@ The Domain has been added and will be selectable in the Domain dropdown during p
 Editing Domain Permissions
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-To edit visibility permissions for a domain, navigate to ``Infrastructure > Network > Domains``. In the row for the selected domain, click MORE > Permissions. Within the Permissions modal, set Group and Tenant access permissions.
-
-.. NOTE:: Only resources assigned to the Master Tenant can be set as Publicly visible. If the Tenant assigned is not the Master Tenant, visibility will automatically change to private. Additionally, only Master Tenant users can set visibility for domains. Domains originating in a subtenant will always be private to that subtenant.
+To edit visibility permissions for a domain, navigate to ``Infrastructure > Network > Domains``. In the row for the selected domain, click MORE > Permissions. Within the Permissions modal, set Group access permissions.
 
 Group Access
 ````````````
 
 The Group Access control affects which Groups have access to the domain at provision time. Select "all" to allow workloads provisioned to any Group access to the domain. If specific Groups are selected, only workloads provisioned to those Groups will have visibility of the domain during provisioning.
-
-Tenant Permissions
-``````````````````
-
-When set to public, all Tenants will have visibility into the domain and can join their Instances to the domain. When set to private, users can select specific Tenants which should have access to the domain.
 
 Editing and Removing Domains
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -82,7 +75,7 @@ Setting the default domain on a Network
 #. In the *Domain* dropdown, select the Domain.
 #. Save Changes
 
-Selecting a Domain while provisioning an instance
+Selecting a Domain while provisioning an Instance
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 #. While creating an instance, in the `Configure` section, expand the `DNS Options`.

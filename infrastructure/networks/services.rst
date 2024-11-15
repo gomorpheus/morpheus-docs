@@ -4,31 +4,7 @@ Integrations
 Overview
 ^^^^^^^^
 
-The Network Integrations section allows you to add and manage IPAM, DNS, and Service Registry integrations. These services can also be added in the |AdmInt| section.
-
-The following integrations are currently supported:
-
-Networking
-
-* Cisco ACI
-* VMWare NSX
-
-IPAM
-
-* Infoblox
-* Bluecat
-* phpIPAM
-
-Security
-
-* Cisco ACI
-
-DNS
-
-* Microsoft DNS
-* PowerDNS
-* Route 53
-
+The Network Integrations section allows you to add and manage IPAM, DNS, and Service Registry integrations.
 
 Scoping Services
 ^^^^^^^^^^^^^^^^

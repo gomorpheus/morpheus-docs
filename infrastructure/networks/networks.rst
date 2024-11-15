@@ -6,7 +6,7 @@ Networks
 Overview
 ^^^^^^^^
 
-The Networks section is for configuring networks across all clouds in |morpheus|. Existing networks from Clouds added in |morpheus| will auto-populate in the Networks section.
+The Networks section is for configuring networks across all Clouds in |morpheus|. Existing networks from Clouds added in |morpheus| will auto-populate in the Networks section.
 
 Networks can be configured for DHCP or Static IP assignment, assigned IP pools, and configured for visibility and account assignment for multi-tenancy usage. Inactive Networks are unavailable for provisioning use. In addition, |morpheus| allows administrators to restrict management of |morpheus|-created Networks through Role permissions.
 
@@ -28,7 +28,7 @@ To configure a network for DHCP:
 4. In the Network Config modal, set the DHCP flag as Active (default)
 5. Save Changes
 
-.. IMPORTANT:: The DHCP flag tells |morpheus| this network has a DHCP server assigning IP Addresses to hosts. |morpheus| does not act as the DHCP server, and provisioning to a network that has the DHCP server flag active in |morpheus| , but no DHCP server actually on the network will in most cases cause the instance to not receive an IP address.
+.. IMPORTANT:: The DHCP flag tells |morpheus| this network has a DHCP server assigning IP Addresses to hosts. |morpheus| does not act as the DHCP server, and provisioning to a network that has the DHCP server flag active in |morpheus|, but no DHCP server actually on the network will, in most cases, cause the instance to not receive an IP address.
 
 .. NOTE:: When selecting a network with DHCP enabled during provisioning, "DHCP" will populate to the right of the selected network:
 
@@ -81,12 +81,12 @@ These domains are injected via cloud-init or other method chosen for the virtual
 Group and Tenant Access
 ```````````````````````
 
-Networks can be configured to provide specific Group and Tenant access, if desired. **Group Access** controls which Groups at provision time will have access to the Network resource. Only workloads being provisioned to the selected Groups would have visibility into the Network. Workloads provisioned to other Groups would not see the Network as an available selection. **Tenant Permissions** control which Tenants may see the Network. Public visibility allows access to the Network for users in all Tenants (subject to additional RBAC controls) while Private visibility allows access only for selected Tenants. Select all that may apply.
+Networks can be configured to provide specific Group access, if desired. **Group Access** controls which Groups at provision time will have access to the Network resource. Only workloads being provisioned to the selected Groups would have visibility into the Network. Workloads provisioned to other Groups would not see the Network as an available selection.
 
 Guest Console SSH Tunnel
 ````````````````````````
 
-In some scenarios, instances that are segregated from the |morpheus| appliance by port restrictions, or other mechanisms, can cause difficulties to access the guest console via the |morpheus| web UI.
+In some scenarios, Instances that are segregated from the |morpheus| appliance by port restrictions, or other mechanisms, can cause difficulties to access the guest console via the |morpheus| web UI.
 Guest Console SSH Tunnel settings allow the administrator to configure a jump host's settings that is dual-homed, accessible by |morpheus| but also resides on the segregated network.
 When the guest console is configured with the SSH protocol, the traffic will be routed to the jump host, which will then relay to the target instance.
 

@@ -4,70 +4,69 @@ Clouds
 Overview
 --------
 
-Clouds are integrations or connections to public, private, hybrid clouds, or bare metal servers. Clouds can belong to many groups and contain many hosts. The clouds view includes clouds status, statistics, tenant assignment, and provides the option to add, edit, delete new clouds. |morpheus| supports most Public Clouds and Private Clouds.
+In |morpheus|, a Cloud represents a grouping of |clusters| (referred to as a "Private Cloud") or an integration with a VMware vCenter appliance. This section describes general information about the Clouds construct and UI pages for Clouds. See the VMware integration guide for more specific details on integrating with VMware and the features supported by |morpheus|.
 
-Supported Cloud Types
-^^^^^^^^^^^^^^^^^^^^^
+.. rst-class:: hidden
+  Supported Cloud Types
+  ^^^^^^^^^^^^^^^^^^^^^
 
-* Alibaba Cloud
-* Amazon
-* Azure (Public)
-* Azure Stack (Private)
-* Canonical MaaS
-* Cloud Foundry
-* Dell (Cloud type for PXE and manually added Dell EMC Hosts)
-* DigitalOcean
-* Google Cloud
-* HPE (Cloud type for PXE and manually added HPE Hosts)
-* Huawei
-* Hyper-V
-* IBM Cloud
-* IBM Cloud Platform
-* Kubernetes
-* MacStadium
-* Morpheus (Generic Cloud type for PXE/Bare Metal and manually added Hosts)
-* Nutanix
-* Open Telekom Cloud
-* OpenStack
-* Oracle Public Cloud
-* Oracle VM
-* Platform 9
-* SCVMM
-* Supermicro (Cloud type for PXE and manually added Supermicro Hosts)
-* UCS
-* UpCloud
-* vCloud Air (OVH)
-* VMWare ESXi
-* VMware Fusion
-* VMWare on AWS
-* VMware vCenter
-* VMware vCloud Director
-* XenServer
+  * Alibaba Cloud
+  * Amazon
+  * Azure (Public)
+  * Azure Stack (Private)
+  * Canonical MaaS
+  * Cloud Foundry
+  * Dell (Cloud type for PXE and manually added Dell EMC Hosts)
+  * DigitalOcean
+  * Google Cloud
+  * HPE (Cloud type for PXE and manually added HPE Hosts)
+  * Huawei
+  * Hyper-V
+  * IBM Cloud
+  * IBM Cloud Platform
+  * Kubernetes
+  * MacStadium
+  * Morpheus (Generic Cloud type for PXE/Bare Metal and manually added Hosts)
+  * Nutanix
+  * Open Telekom Cloud
+  * OpenStack
+  * Oracle Public Cloud
+  * Oracle VM
+  * Platform 9
+  * SCVMM
+  * Supermicro (Cloud type for PXE and manually added Supermicro Hosts)
+  * UCS
+  * UpCloud
+  * vCloud Air (OVH)
+  * VMWare ESXi
+  * VMware Fusion
+  * VMWare on AWS
+  * VMware vCenter
+  * VMware vCloud Director
+  * XenServer
 
-Information on each cloud type can be found in the :ref:`integration-guide` section.
+  Information on each cloud type can be found in the :ref:`integration-guide` section.
 
 Creating Clouds
 ---------------
 
-Clouds can be added from `Infrastructure > Clouds` or in `Infrastructure > Groups > (select Group) > Clouds`. Individual Guides for adding specific Cloud Types can be found in the :ref:`integration-guide` section.
+Clouds can be added from |InfClo| or in |InfGro| > (selected Group) > Clouds. A more detailed guide to adding a VMware vCenter Cloud can be found in the vCenter integration guide. The other available Cloud type, known as Private Cloud, is a generic Cloud type that doesn't directly integrate with any other technology as the vCenter Cloud type does. Instead Private Cloud-type Clouds are used to house your |clusters|. Make as many Private Cloud-type Clouds as needed to organize your |clusters| properly.
 
 Cloud Detail View
 -----------------
 
-The Cloud Detail view shows metrics on health, sync status, current month costs, average monthly costs, resource utilization statistics, and resource counts for Container Hosts, Hypervisors, Bare Metal, Virtual Machines, and Unmanaged resources.
+The Cloud Detail view shows metrics on health, sync status, resource utilization statistics, and resource counts for hosts, virtual machines, or any other constructs under the umbrella of the selected Cloud.
 
-.. image:: /images/infrastructure/clouds/clouddetailview1.png
-
-To view the Cloud List View, select the name of a Cloud to display the clouds Detail View.
+From the Cloud list page, select the name of a Cloud to display that Cloud's detail page. You'll notice the following actions are available:
 
 EDIT
   Edit the setup configuration of the Cloud.
 REFRESH
-  Force a sync with the Cloud. Depending on the Cloud, choose to force a standard Cloud sync (occurs every five minutes by default) or a nightly sync. When syncing Costing data, |morpheus| will force a pull of costing data for your specified period. If opting to "rebuild" the costing data, |morpheus| will delete all costing data from the Cloud for that period and attempt to rebuild the data by calling the Cloud API.
+  Force a sync with the Cloud.
 DELETE
-  Delete the Cloud from |morpheus|
+  Delete the Cloud from |morpheus|.
 
-.. IMPORTANT:: All Instances and managed Hosts and VM's associated with the Cloud must be removed prior to deleting a cloud.
+.. IMPORTANT:: All Instances, managed Hosts, and VMs associated with the Cloud must be removed prior to deleting a Cloud.
 
 Cloud Detail Tabs
 ^^^^^^^^^^^^^^^^^
@@ -84,30 +83,25 @@ Bare Metal
   Setup PXE Boot in the Boot section to add bare metal servers. Once set up you can view information such as power, OS, name, type, cloud, IP address, nodes, disk space, memory, and status.
 Security Groups
   The Security Groups tab displays a list of existing security groups in the cloud. You can add a security group to this cloud by clicking :guilabel:`EDIT SECURITY GROUPS`.
-Load Balancers
-  The load balancers tab panel displays available load balancers in the cloud including the name, description, type, cloud and host. You can add a load balancer from this tab by clicking :guilabel:`ADD LOAD BALANCER`.
 Networks
   Displays Networks synced or added to the Cloud, including their name, type, CIDR, pool, DHCP status, visibility and targeted Tenant.
 Data Stores
   Displays Datastores synced or added to the Cloud, including their name, type, capacity, online status, visibility, and targeted Tenant.
 Resources
   Displays Resource Pools synced from the Cloud, including their name, description, and targeted Tenant.
-Policies
-  Manages Policies enforced on the Cloud. Setting a policy on this tab is equal to creating a policy in |AdmPol| and scoping it to the selected Cloud.
-Profiles
-  Manages |profileTypes| Profiles that create custom object associated secrets and metadata that will automatically be mapped per Cloud selection during provisioning and automation.
 
 Deleting Clouds
 ---------------
 
-To delete a cloud:
+To delete a Cloud:
 
 #. Select the Infrastructure link in the navigation bar.
 #. Select the Clouds link in the sub navigation bar.
 #. Click the Delete icon of the cloud to delete.
 
-.. IMPORTANT:: All Instances, managed Hosts and VMs must be removed prior to deleting a Cloud. To remove Instances, hosts and VMs from |morpheus| without deleting the Cloud resources they represent, select Delete on the host or VM, unselect "Remove Infrastructure", and select "Remove Associated Instances" if Instance are associated with the selected Hosts or VMs.
+.. IMPORTANT:: All Instances, managed Hosts and VMs must be removed prior to deleting a Cloud.
 
 |
 
-.. include:: /infrastructure/clouds/profiles.rst
+.. rst-class:: hidden
+  .. include:: /infrastructure/clouds/profiles.rst

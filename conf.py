@@ -53,6 +53,8 @@ rst_prolog = """
 .. |clusters| replace:: HPE VME clusters
 .. |manager| replace:: HPE VME manager
 .. |host| replace:: HPE VME host
+.. |hosts| replace:: HPE VME hosts
+.. |hypervisor| replace:: HPE VME Hypervisor
 .. |repo_host_url| replace:: https://downloads.morpheusdata.com
 .. |master tenant| replace:: Master Tenant
 .. |profileObjects| replace:: Clouds

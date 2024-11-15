@@ -1,7 +1,7 @@
 Data Stores
 -----------
 
-Data Stores are logical divisions of underlying storage disk. Organizations may use them to divide and track cloud resources by team or department. When integrating certain Cloud types, |morpheus| will onboard all existing data stores and administrators can then make them available to Groups or Tenants as needed. At provision time, when applicable based on Cloud and Layout, users can select the data store they wish to provision to.
+Data Stores are logical divisions of underlying storage disk. Organizations may use them to divide and track cloud resources by team or department. When integrating certain Cloud types, |morpheus| will onboard all existing data stores and administrators can then make them available to Groups as needed. At provision time, when applicable based on Cloud and Layout, users can select the datastore they wish to provision to.
 
 Here within the Data Store view in the storage section, users can see a list of data stores for each Cloud. In the row for each Cloud, the storage type, associated Cloud, and permissions information are shown.
 
@@ -21,11 +21,10 @@ To a limited extent, data stores can be created from this view. Currently, data 
 Manage Permissions
 ^^^^^^^^^^^^^^^^^^
 
-From this view, users can manage permissions for any data store synced from integrated Clouds. This includes setting which Groups have access to the data store, and which Tenants have access. To edit data store permissions:
+From this view, users can manage permissions for any data store synced from integrated Clouds. This includes setting which Groups have access to the data store. To edit data store permissions:
 
 - Navigate to Infrastructure > Storage > Data Stores
 - Click ACTIONS > Edit
 - **Groups:** Select "all" Groups or select specific Groups which should have access to the data store
-- **Tenants:** Primary Tenant users can opt to make the data store available to all Tenants (public visibility) or to selected Tenants (private visibility with specific Tenants selected). Subtenant users will only be able to make data stores visible to their own Tenant
 - **Active:** When marked, the data store is active and available for provisioning
-- Click :guilabel:`SAVE CHANGES` 
+- Click :guilabel:`SAVE CHANGES`
