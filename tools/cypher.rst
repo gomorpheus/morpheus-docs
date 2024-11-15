@@ -6,9 +6,9 @@ Cypher
 Overview
 --------
 
-Cypher at its core is a secure Key/Value store. But what makes cypher useful is the ability to securely store or generate credentials to connect to your instances. Not only are these credentials encrypted but by using a cypher you don't have to burn in connection credentials between instances into your apps.
+Cypher at its core is a secure Key/Value store. But what makes Cypher useful is the ability to securely store or generate credentials to connect to your Instances. Not only are these credentials encrypted but by using Cypher you don't have to burn in connection credentials between Instances into your apps.
 
-Cypher keys can be revoked, either through lease timeouts or manually. So even if somebody were to gain access to your keys you could revoke access to the keys and generate new ones for your applications.
+Cypher keys can be revoked, either through lease timeouts or manually. So, even if somebody were to gain access to your keys you could revoke access to the keys and generate new ones for your applications.
 
 Keys can have different behaviors depending on the specified mountpoint.
 
@@ -175,13 +175,14 @@ Click :guilabel:`SAVE CHANGES`. The example BASH script below onboards the value
 
   echo $from_vault
 
-.. raw:: html
+.. rst-class:: hidden
+  .. raw:: html
 
-    <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; height: auto;">
-        <iframe src="//www.youtube.com/embed/9OSXXJi15Rw" frameborder="0" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
-    </div>
+      <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; height: auto;">
+          <iframe src="//www.youtube.com/embed/9OSXXJi15Rw" frameborder="0" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
+      </div>
 
-|
+  |
 
 Editing Cypher Keys
 -------------------
@@ -203,6 +204,7 @@ Cypher also includes an option to read a value from the ``password/*`` mountpoin
 
 Example: ``PASSWORD=<%=cypher.readPassword('myuserpassword')%>```
 
-It should be noted that when Cypher keys are created using the ``readPassword`` function, the subsequent reads can only come from the same user. If another |morpheus| user attempts to run the automation script containing the ``readPassword`` call, the secret value will not be read and it's very likely the script will fail. For Tasks and Workflows that need to be run by multiple users, use a pre-existing Cypher key and reference it back in the script using ``read`` rather than ``readPassword``.
+It should be noted that when Cypher keys are created using the ``readPassword`` function, the subsequent reads can only come from the same user. If another |morpheus| user attempts to run the automation script containing the ``readPassword`` call, the secret value will not be read and it's very likely the script will fail. For Tasks that need to be run by multiple users, use a pre-existing Cypher key and reference it back in the script using ``read`` rather than ``readPassword``.
 
-.. NOTE:: You can reference the original owner of a workflow so that keys can be used in a subtenant.  Example ``PASSWORD=<%=cypher.read('secret/myuserpassword')%>`` could be changed to ``PASSWORD=<%=cypher.read('secret/myuserpassword',true)%>`` within a library or a workflow and the true means OWNER true.  This will keep that key in the master tenants cypher store.
+.. rst-class:: hidden
+  .. NOTE:: You can reference the original owner of a workflow so that keys can be used in a subtenant.  Example ``PASSWORD=<%=cypher.read('secret/myuserpassword')%>`` could be changed to ``PASSWORD=<%=cypher.read('secret/myuserpassword',true)%>`` within a library or a workflow and the true means OWNER true.  This will keep that key in the master tenants cypher store.

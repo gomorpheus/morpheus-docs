@@ -4,7 +4,7 @@ Archives
 Overview
 --------
 
-Archives provides a way to store your files and make them available for download by your scripts and Users. Archives are organized by buckets and can be tied to any existing Bucket or File Share that may be currently integrated (for more on integrating new storage targets, see `storage documentation <https://docs.morpheusdata.com/en/latest/infrastructure/storage/storage.html>`_). Thus, storage buckets in public clouds, on networked storage, or even on the appliance itself may be used to host files.
+Archives provides a way to store your files and make them available for download by your scripts and Users. Archives are organized by buckets and can be tied to any existing Bucket or File Share that may be currently integrated (for more on integrating new storage targets, see storage documentation). Thus, storage buckets in public clouds, on networked storage, or even on the appliance itself may be used to host files.
 
 Archives List Page
 ------------------
@@ -20,7 +20,8 @@ To view or create Archives, navigate to |TooArc|. At the Archives list page is a
 - **PUBLIC URL:** Indicates whether |morpheus| is automatically generating a public download URL for files in this Archive
 - **ACTIONS:** Within the ACTIONS menu users may download a ZIP folder containing all files in the Archive, edit the Archive, or remove it
 
-.. image:: /images/tools/archives/archivelist.png
+.. rst-class:: hidden
+  .. image:: /images/tools/archives/archivelist.png
 
 Adding an Archive
 -----------------
@@ -47,11 +48,13 @@ To delete the Archive, click :guilabel:`DELETE`. New files are added by clicking
 
 From the files list, download or delete individual files by clicking on the appropriate selection from the ACTIONS menu.
 
-.. image:: /images/tools/archives/archivedetail.png
+.. rst-class:: hidden
+  .. image:: /images/tools/archives/archivedetail.png
 
 File Detail Page
 ----------------
 
 The File Detail Page contains details about the file itself as well as private and public (if available) URLs. In the lower section are three tabs. The Links tab contains any download links which have been generated (both active and expired). The History tab contains historical information about the file including creation and deletion of download links and download events. The scripts tab contains a guide for getting started using Archive-stored files in scripts.
 
-.. image:: /images/tools/archives/filedetail.png
+.. rst-class:: hidden
+  .. image:: /images/tools/archives/filedetail.png
