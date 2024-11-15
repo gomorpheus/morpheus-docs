@@ -9,6 +9,8 @@ When installing and upgrading to |morpheus| |morphver|, refer to the following t
 Breaking Changes
 ================
 
+- 7.0.8, 8.0.0: On first ui startup after upgrade, |morpheus| will normalize all IPv6 records within |morpheus|-type pools. There will be a warning in appliance logs warning how many records will be normalized. This takes between 5-15 minutes per 1m records
+- 7.0.8, 8.0.0: Updated the AccountUsage table in the appliance database to accept LONGTEXT data type to prevent data from oversetting the table in specific scenarios. Note that this schema change will take time for databases with large numbers of account usage records
 - 6.3.0: Version 6.3.0 is the first version to require Plugin API 1.0.0+. Small changes will need to be made in order to make plugins created for prior versions of |morpheus| compatible with 6.3.0+. See the `related article in our KnowledgeBase <https://support.morpheusdata.com/s/article/Making-plugins-compatible-with-Morpheus-6-3-0?language=en_US>`_ on the small changes that will need to be made to ensure plugin compatibility
 - 6.2.2, 6.0.7 |morphver| contains embedded MySQL v8 upgrade when upgrading from  v6.0.0 - v6.0.6 or 6.1.0 - 6.2.1. BACKUP YOUR DATABASE PRIOR TO UPGRADE when using embedded MySQL (all-in-one appliances)
 - 6.2.2, 6.0.7 Minimum v6.x required to upgrade to |morphver| for environments using embedded RabbitMQ. Environments running 5.5.x or earlier using embedded RabbitMQ must upgrade to v6.0.0 - v6.0.6, or 6.1.0 - 6.2.1 prior to upgrading to |morphver|
@@ -141,7 +143,7 @@ Services
      - Updated to |linuxagentver|
    * - Morpheus Windows Agent
      - |winagentver|
-     - No changes
+     - Updated to |winagentver|
    * - Morpheus macOS Agent
      - |macagentver|
      - No changes
