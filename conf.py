@@ -287,7 +287,7 @@ html_theme_options = {
 'sticky_navigation': True,
 'navigation_depth': 5,
 }
-html_logo = "_static/logo.svg"
+html_logo = "_static/hpe-logo.svg"
 html_static_path = ['_static']
 
 html_sidebars = {
