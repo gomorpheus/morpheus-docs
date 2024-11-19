@@ -307,7 +307,7 @@ def setup(app):
 context = {
     'display_github': False,
 }
-html_favicon = "../_static/morpheus_fav_64.ico"
+html_favicon = "../_static/hpefavicon.ico"
 htmlhelp_basename = 'morpheusdocs'
 
 latex_elements = {
