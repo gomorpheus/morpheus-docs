@@ -24,13 +24,13 @@
      diagrams/diagrams.rst
      troubleshooting/troubleshooting
 
+.. toctree::
+   :maxdepth: 3
+   :caption: Guides
+
+   integration_guides/integration_guides.rst
+
 .. rst-class:: hidden
-  .. toctree::
-     :maxdepth: 3
-     :caption: Guides
-
-     integration_guides/integration_guides.rst
-
   .. toctree::
      :maxdepth: 3
      :caption: Release Notes
