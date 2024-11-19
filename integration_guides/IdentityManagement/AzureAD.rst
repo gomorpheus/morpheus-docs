@@ -1,8 +1,7 @@
 Azure Active Directory SSO (SAML)
 ---------------------------------
 
-Azure Active Directory Single Sign-on can be added as a Identity Source in |morpheus| using the SAML Identity Source Type. The Azure AD SSO configuration is slightly different
-than other SAML providers, and this guide will assist in adding a Azure AD SSO Identity Source.
+Azure Active Directory Single Sign-on can be added as a Identity Source in |morpheus| using the SAML Identity Source Type. The Azure AD SSO configuration is slightly different than other SAML providers, and this guide will assist in adding a Azure AD SSO Identity Source.
 
 Create Azure Enterprise Application
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -28,8 +27,7 @@ we need to create a ``Azure AD SAML SSO`` integration in |morpheus| first.
 To add the integration:
 
 #. Login to |morpheus|
-#. Navigate to |AdmTen|
-#. Click a tenant hyperlink
+#. Navigate to |AdmUse|
 #. Click the :guilabel:`IDENTITY SOURCES` button in the Tenant detail page
 #. Click the :guilabel:`+ ADD IDENTITY SOURCE` button
 #. Select ``Azure AD SAML SSO`` from the ``TYPE`` dropdown
@@ -50,8 +48,9 @@ To add the integration:
 
 Upon saving, the `Entity ID` (``Identifier (Entity ID)``) and `SP ACS URL` (``Reply URL (Assertion Consumer Service URL)``) will be provide in the Identity Source list view. Copy these for use in Azure SSO configuration.
 
-  .. image:: /images/integration_guides/identity_sources/azure_ad_saml/saml_setup.png
-      :width: 40%
+  .. rst-class:: hidden
+    .. image:: /images/integration_guides/identity_sources/azure_ad_saml/saml_setup.png
+        :width: 40%
 
 Configure Azure Enterprise Application
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -96,8 +95,7 @@ Configure the Azure AD SAML Integration in |morpheus|
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 #. Login to |morpheus| using ``Username and Password``, as usual
-#. Navigate to |AdmTen|
-#. Click a tenant hyperlink
+#. Navigate to |AdmUse|
 #. Select :guilabel:`IDENTITY SOURCES` in the Tenant detail page
 #. Click the pencil (edit) next to the integration created previously
 #. Ensure the ``SAML REQUEST`` field is set to ``Self Signed``
@@ -151,10 +149,11 @@ Once populated, select :guilabel:`SAVE CHANGES` and the SAML identity source int
 #. Under the ``Role Azure Group Mappings`` secton, you will see role names listed.  Next to these are text boxes with ``Assertion Attribute Mappings`` inside.  Enter group object IDs from Azure into these text boxes.  This will map the Azure AD groups to specific roles in Morpheus
 #. Finally, click ``Save Changes`` at the bottom of the page
 
-Here is an example of the configuration above:
+.. rst-class:: hidden
+  Here is an example of the configuration above:
 
-   .. image:: /images/integration_guides/identity_sources/azure_ad_saml/saml_setup_complete.png
-      :width: 20%
+     .. image:: /images/integration_guides/identity_sources/azure_ad_saml/saml_setup_complete.png
+        :width: 20%
 
 Azure Group Lookups
 ^^^^^^^^^^^^^^^^^^^
@@ -176,12 +175,14 @@ Logging Into |morpheus| with Azure AD SAML
 1. Navigate to the |morpheus| URL
 2. A new button will appear to allow sign-in using Azure AD SAML, with the same name as the integration.  Click the button
 
-.. image:: /images/integration_guides/identity_sources/azure_ad_saml/sign_in_page.png
-  :width: 30%
+.. rst-class:: hidden
+  .. image:: /images/integration_guides/identity_sources/azure_ad_saml/sign_in_page.png
+    :width: 30%
 
 3. Sign-in with your Microsoft/Azure account
 
-.. image:: /images/integration_guides/identity_sources/azure_ad_saml/ms_signin.png
-  :width: 20%
+.. rst-class:: hidden
+  .. image:: /images/integration_guides/identity_sources/azure_ad_saml/ms_signin.png
+    :width: 20%
 
 .. NOTE:: If no local users other than the System Admin have been created, "USERNAME AND PASSWORD" option will not be displayed, only the SAML option.

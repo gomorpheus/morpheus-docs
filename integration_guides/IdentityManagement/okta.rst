@@ -9,8 +9,7 @@ Overview
 Adding an Okta Integration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-#. Navigate to |AdmTen|
-#. Select a Tenant
+#. Navigate to |AdmUse|
 #. Select :guilabel:`IDENTITY SOURCES`
 #. Select :guilabel:`+ IDENTITY SOURCE`
 #. Choose TYPE: "Okta"
@@ -33,8 +32,10 @@ ENABLE ROLE MAPPING PERMISSION
 MANUAL ROLE ASSIGNMENT
   When selected, administrators can manually edit Roles for users created through this identity source integration from the user detail page (|AdmUse| > Selected user).
 
-.. NOTE:: For more on Identity Source role mapping permissions, see the `associated guide <https://support.morpheusdata.com/s/article/How-to-enable-Subtenant-admins-to-edit-Identity-Source-role-mapping?language=en_US>`_ in our KnowledgeBase.
+.. rst-class:: hidden
+  .. NOTE:: For more on Identity Source role mapping permissions, see the `associated guide <https://support.morpheusdata.com/s/article/How-to-enable-Subtenant-admins-to-edit-Identity-Source-role-mapping?language=en_US>`_ in our KnowledgeBase.
 
 Now, allowed Okta users can log into |morpheus| via their Okta credentials and a user will be automatically generated within |morpheus| with matching metadata and mapped Role permissions.
 
+.. rst-class:: hidden
 .. NOTE:: If you've created multi-tenant roles, these will also appear here and can be mapped to Okta user groups allowing you to map users to equivalent user groups in |morpheus|.

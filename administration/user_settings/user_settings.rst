@@ -21,7 +21,8 @@ The fields included in this section are described below. By entering any new val
 - **Confirm:** Confirm the new password you've entered
 - **RECEIEVE NOTIFICATIONS** Determines if provisioning notifications are emailed to this User
 
-.. image:: /images/administration/settings/user_settings500.png
+.. rst-class:: hidden
+  .. image:: /images/administration/settings/user_settings500.png
 
 2 Factor Authentication
 -----------------------
@@ -34,11 +35,9 @@ Setting Up Two-Factor Authentication
 When two-factor authentication isn't yet set up, this section contains a single button: :guilabel:`ENABLE 2FA`. To get started, click this button and |morpheus| will prompt for your password. After entering the password, you'll be shown a QR code which can be scanned into your authenticator application of choice. Once the QR code is shown, 2FA is active and the supplemental code will need to be entered each time the user logs in.
 
 .. image:: /images/administration/settings/2fa_qr.png
+  :width: 30%
 
 On subsequent login attempts, the user will be prompted to enter a 2FA code after successful entry of the username and password. Retrieve this code from the 2FA app you set up in the prior section and enter it to complete the login process.
-
-.. image/images/administration/settings/2fa_code_screen.png
-  :width: 25%
 
 Disabling Two-Factor Authentication
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

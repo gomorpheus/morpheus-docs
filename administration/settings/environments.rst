@@ -17,8 +17,5 @@ Creating Environments
     Environment description displayed on the Environments list page
    Display Order
     The order in which environments are presented when provisioning, a value of "0" will position the environment at the top of the list
-   Visibility
-    * *Private*: Available only in the Tenant the environment is created in
-    * *Public*: Available for all Tenants. Public is only applicable for environments created in the the Master Tenant.
 
 .. NOTE:: User-created environments can be edited, hidden, or removed from the Actions menu on the environments list page. |morpheus|-default environments can only be hidden from users during provisioning.

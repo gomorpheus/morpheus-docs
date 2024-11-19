@@ -11,7 +11,7 @@ To begin, log into OneLogin with an administrator account to gather some needed 
 .. image:: /images/integration_guides/identity_sources/oneLogin/oneLoginKey.png
   :width: 50%
 
-Back in |morpheus|, navigate to the Tenant which will integrate with OneLogin. Identity providers are integrated on a per-Tenant basis in |morpheus|. From the selected Tenant, click :guilabel:`IDENTITY SOURCES`. The list of currently-integrated identity providers is here. Click :guilabel:`+ ADD IDENTITY SOURCE` to start a new integration for OneLogin. Fill in the fields below:
+Back in |morpheus|, navigate to the Users list page (|AdmUse|) and click :guilabel:`IDENTITY SOURCES`. The list of currently-integrated identity providers is here. Click :guilabel:`+ ADD IDENTITY SOURCE` to start a new integration for OneLogin. Fill in the fields below:
 
 - **TYPE:** OneLogin
 - **NAME:** A name for the identity source integration in |morpheus|
@@ -23,7 +23,7 @@ Back in |morpheus|, navigate to the Tenant which will integrate with OneLogin. I
 - **REQUIRED ROLE:** Enter a role which OneLogin users logging into |morpheus| must have to gain access to |morpheus|
 - **DEFAULT ROLE:** The default |morpheus| Role applied to users created from the OneLogin integration if no other role mapping is specified in other Role Mappings fields
 - **ROLE MAPPINGS:** All existing |morpheus| Roles will be listed with fields to enter OneLogin Roles to create a mapping. Users with OneLogin roles matching the role mappings will be assigned the appropriate Role(s) in |morpheus| when signing in
-- **ENABLE ROLE MAPPING PERMISSION:** When selected, Tenant users with appropriate rights to view and edit Roles will have the ability to set role mapping for the Identity Source integration. This allows the Tenant user to edit only the role mappings without viewing or potentially editing the core integration fields (such as the API keys)
+- **ENABLE ROLE MAPPING PERMISSION:** When selected, users with appropriate rights to view and edit Roles will have the ability to set role mapping for the Identity Source integration. This allows the user to edit only the role mappings without viewing or potentially editing the core integration fields (such as the API keys)
 - **MANUAL ROLE ASSIGNMENT:** When selected, administrators can manually edit Roles for users created through this identity source integration from the user detail page (|AdmUse| > Selected user).
 
 Select :guilabel:`SAVE CHANGES` and the OneLogin Integration will be added.

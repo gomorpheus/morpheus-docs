@@ -13,3 +13,4 @@ Add a Global Proxy server by entering the following:
 * Proxy Password
 * Proxy Domain
 * Proxy Workstation
+* No Proxy

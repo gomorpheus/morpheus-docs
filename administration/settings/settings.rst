@@ -22,52 +22,56 @@ Appliance
 
 .. include:: enabled_cloud.rst
 
-Whitelabel
-----------
+.. rst-class:: hidden
+  Whitelabel
+  ----------
 
-.. include:: whitelabel.rst
+  .. include:: whitelabel.rst
 
-Email Templates
----------------
+  Email Templates
+  ---------------
 
-.. include:: emailTemplates.rst
+  .. include:: emailTemplates.rst
 
 Provisioning
 ------------
 
 .. include:: provisioning.rst
 
-Monitoring
-----------
+.. rst-class:: hidden
+  Monitoring
+  ----------
 
-.. include:: monitoring.rst
+  .. include:: monitoring.rst
 
-.. include:: logs.rst
+  .. include:: logs.rst
 
 Backups
 -------
 
 .. include:: backup_settings.rst
 
-Guidance
---------
+.. rst-class:: hidden
+  Guidance
+  --------
 
-.. include:: guidance.rst
+  .. include:: guidance.rst
 
-Clients
--------
+  Clients
+  -------
 
-.. include:: clients.rst
+  .. include:: clients.rst
 
 Environments
 ------------
 
 .. include:: environments.rst
 
-Software Licenses
------------------
+.. rst-class:: hidden
+  Software Licenses
+  -----------------
 
-.. include:: licenses.rst
+  .. include:: licenses.rst
 
 License
 -------

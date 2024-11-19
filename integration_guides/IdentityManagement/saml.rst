@@ -6,21 +6,22 @@ Overview
 
 The |morpheus| SAML identity source integration allows customers to add user SSO to |morpheus|, authenticated by external login SAML providers.
 
-.. image:: /images/samlLoginGeneric.png
+.. rst-class:: hidden
+  .. image:: /images/samlLoginGeneric.png
 
 Adding a SAML Integration
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
 To add a SAML integration:
 
-#. Navigate to |AdmTen|
-#. Select a tenant.
+#. Navigate to |AdmUse|
 #. Select :guilabel:`IDENTITY SOURCES` in the Tenant detail page
 #. Select :guilabel:`+ ADD IDENTITY SOURCE`.
 #. Select `SAML SSO` from the `TYPE` field
 #. Add a Name and optional Description for the SAML integration
 
-.. image:: /images/integration_guides/identity_sources/saml_sso/saml.png
+.. rst-class:: hidden
+  .. image:: /images/integration_guides/identity_sources/saml_sso/saml.png
 
 There are 4 sections with fields that need to be populated depending on the desired configuration:
 
@@ -66,8 +67,6 @@ REQUIRED ROLE ATTRIBUTE VALUE
   Attribute/assertion value that a user must be assigned/a member of to be authorized, such as group or role in the SAML SP. This is obtained from the attribute/assertion defined in the ROLE ATTRIBUTE NAME field
 <|morpheus| ROLE NAME>
   Additional roles that can be mapped to a user, which will add to the DEFAULT ROLE. Attribute value that a user must be assigned/a member of to be authorized, such as group or role in the SAML SP. This is obtained from the attribute/assertion defined in the ROLE ATTRIBUTE NAME field
-
-.. NOTE:: For more on Identity Source role mapping permissions, see the `associated guide <https://support.morpheusdata.com/s/article/How-to-enable-Subtenant-admins-to-edit-Identity-Source-role-mapping?language=en_US>`_ in our KnowledgeBase.
 
 Role Options
 ^^^^^^^^^^^^

@@ -4,9 +4,10 @@ Health
 |Morpheus| Health
 ------------------
 
-.. image:: /images/administration/health/morpheusHealth500.png
+.. rst-class:: hidden
+  .. image:: /images/administration/health/morpheusHealth500.png
 
-The |morpheus| Health section provides an overview of the health of your |Morpheus| appliance. It includes an appliance health summary in the following areas:
+The |morpheus| Health section provides an overview of the health of your |morpheus| appliance. It includes an appliance health summary in the following areas:
 
   - **CPU:** Appliance CPU usage is checked. If usage is greater than 50%, this indicator will be in a yellow or warning state. If |morpheus| is unable to complete the check, it will be in a red or error state. Depending on appliance performance and how frequently this indicator is in a warning state, it may be necessary to upgrade to increase CPU. The **Overall** health indicator will mirror the CPU health indicator
   - **Memory:** If swap usage is above 60% or |morpheus| memory usage is above 95%, this indicator will be in a yellow or warning state. If |morpheus| is unable to complete the check for any reason, it will be in a red or error state. Depending on appliance performance and how frequently this indicator is in a warning state, it may be necessary to increase swap, upgrade the appliance to add memory, or consider a different appliance architecture for those using single-node appliances
@@ -27,7 +28,8 @@ Health levels provide a live representation of the current memory and CPU load o
   - **Used Swap:** Instantaneous amount of total available system swap in use
   - **Storage:** The instantaneous percentage utilization of the filesystem mounted at "/"
 
-.. TIP:: It's common to see a high percentage of system memory being used `due to the way Morpheus allocates and manages memory <https://support.morpheusdata.com/s/article/How-does-Morpheus-manage-the-memory-it-uses?language=en_US>`_. If |morpheus| is performing well, high system memory use is not necessarily an indicator that any action needs to be taken.
+.. rst-class:: hidden
+  .. TIP:: It's common to see a high percentage of system memory being used `due to the way Morpheus allocates and manages memory <https://support.morpheusdata.com/s/article/How-does-Morpheus-manage-the-memory-it-uses?language=en_US>`_. If |morpheus| is performing well, high system memory use is not necessarily an indicator that any action needs to be taken.
 
 Additional System Health Indices
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -135,9 +137,10 @@ Queues
   - Busy Queues
   - Error Queues
 
-|Morpheus| Logs
----------------
+Logs
+----
 
-The |morpheus| logs section aggregates appliance-specific logs into one list. If needed, users can export the logs by clicking :guilabel:`EXPORT`. This action triggers a download containing the last 10,000 log entries as a ``.log`` file.
+The |morpheus| logs tab aggregates appliance-specific logs into one list. If needed, users can export the logs by clicking :guilabel:`EXPORT`. This action triggers a download containing the last 10,000 log entries as a ``.log`` file.
 
-.. image:: /images/administration/healthlogs.png
+.. rst-class:: hidden
+  .. image:: /images/administration/healthlogs.png

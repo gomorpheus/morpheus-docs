@@ -3,72 +3,74 @@ Role Permissions
 
 .. NOTE:: Permission options for sub-tenant user roles will only list options permitted by the Tenant role applied to the sub-tenant. Sub-Tenant user roles permissions cannot exceed permissions set by the overriding Tenant Role.
 
-User Role Permission Sections
+Role Permission Sections
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Features
   Controls User access level for UI sections and features in |morpheus|. The complete feature permissions grid is included below.
 Groups
   Controls User access level for Groups. Groups are not a Multi-Tenant construct, only Groups created in the current Tenant will be visible.
-Instance Types
-  Controls User access level for Instance Types. Only Instance Types created in the current Tenant or those created in the Master Tenant and shared with the current Tenant will be available.
-Blueprints
-  Controls User access level for Blueprints during App provisioning. Only Blueprints created in the current Tenant or those created in the Master Tenant and shared with the current Tenant will be available.
-Report Types
-  Controls User access for each report type in the Reports section (|OpeRep|). The user must also have Operations: Reports access granted under the Feature permissions tab.
-Personas
-  Controls User access to |morpheus| Personas, at the time of this writing Users may be given access to the Standard (full |morpheus| UI experience), API (no GUI access, API-only for service accounts), Virtual Desktop (VDI), or Service Catalog Personas (simplified easy ordering experience)
-Catalog Item Types
-  Controls User access to Catalog Item types within the Service Catalog Persona. Only Catalog Items created in the current Tenant or those created in the Master Tenant and shared with the current Tenant will be available.
+.. rst-class:: hidden
+  Instance Types
+    Controls User access level for Instance Types. Only Instance Types created in the current Tenant or those created in the Master Tenant and shared with the current Tenant will be available.
+  Blueprints
+    Controls User access level for Blueprints during App provisioning. Only Blueprints created in the current Tenant or those created in the Master Tenant and shared with the current Tenant will be available.
+  Report Types
+    Controls User access for each report type in the Reports section (|OpeRep|). The user must also have Operations: Reports access granted under the Feature permissions tab.
+  Personas
+    Controls User access to |morpheus| Personas, at the time of this writing Users may be given access to the Standard (full |morpheus| UI experience), API (no GUI access, API-only for service accounts), Virtual Desktop (VDI), or Service Catalog Personas (simplified easy ordering experience)
+  Catalog Item Types
+    Controls User access to Catalog Item types within the Service Catalog Persona. Only Catalog Items created in the current Tenant or those created in the Master Tenant and shared with the current Tenant will be available.
 Cluster Types
   Controls user access to Cluster types. Only Cluster types allowed for the Role may be added in |InfClu| (assuming the Role also has feature access to applicable permissions related to adding Clusters)
-VDI Pools
-  Controls User access to VDI Pools which are currently configured (|TooVDI|) via the Virtual Desktops Persona view
-Workflows
-  Controls User access to configured Workflows, including the ability to view, edit, execute, or apply to Library item configurations
+  VDI Pools
+    Controls User access to VDI Pools which are currently configured (|TooVDI|) via the Virtual Desktops Persona view
+  Workflows
+    Controls User access to configured Workflows, including the ability to view, edit, execute, or apply to Library item configurations
 Tasks
   Controls User access to configured Tasks, including the ability to view, edit, execute, or apply to Workflows
 
-Tenant Role Permission Sections
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Features
-  Controls Tenant access level for sections and features in |morpheus|. The complete feature permissions grid is included below.
-Clouds
-  Controls Tenant access level for Clouds. This list includes Clouds integrated from the Master Tenant and shared publicly. Tenants given this Tenant Role will have either Full, Read, or None access levels to a given Cloud. See the section below for more information on Cloud Access levels.
-Instance Types
-  Controls Tenant access level for Instance Types. Only Instance Types created in the current Tenant or those created in the Master Tenant and shared with the current Tenant will be available.
-Blueprints
-  Controls Tenant access level for Blueprints during App provisioning. Only Blueprints created in the current Tenant or those created in the Master Tenant and shared with the current Tenant will be available.
-Report Types
-  Controls Tenant access for each report type in the Reports section (|OpeRep|). The Tenant must also have Operations: Reports access granted under the Feature permissions tab.
-Personas
-  Controls User access to |morpheus| Personas, at the time of this writing Users may be given access to the Standard (full |morpheus| UI experience), API (no GUI access, API-only for service accounts), Virtual Desktop (VDI), or Service Catalog Personas (simplified easy ordering experience)
-Catalog Item Types
-  Controls Tenant access to Catalog Item types within the Service Catalog Persona. Only Catalog Items created in the current Tenant or those created in the Master Tenant and shared with the current Tenant will be available.
-Cluster Types
-  Controls Tenant access to Cluster types. Only Cluster types allowed for the Role may be added in |InfClu| within the associated Tenant
-VDI Pools
-  Controls Tenant access to VDI Pools which are currently configured (|TooVDI|) via the Virtual Desktops Persona view
-Workflows
-  Controls Tenant access to Workflows. Only selected Workflows will be shared down to Tenants having the associated Role
-Tasks
-  Controls Tenant access to Tasks. Only selected Tasks will be shared down to Tenants having the associated Role
+.. rst-class:: hidden
+  Tenant Role Permission Sections
+  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  Features
+    Controls Tenant access level for sections and features in |morpheus|. The complete feature permissions grid is included below.
+  Clouds
+    Controls Tenant access level for Clouds. This list includes Clouds integrated from the Master Tenant and shared publicly. Tenants given this Tenant Role will have either Full, Read, or None access levels to a given Cloud. See the section below for more information on Cloud Access levels.
+  Instance Types
+    Controls Tenant access level for Instance Types. Only Instance Types created in the current Tenant or those created in the Master Tenant and shared with the current Tenant will be available.
+  Blueprints
+    Controls Tenant access level for Blueprints during App provisioning. Only Blueprints created in the current Tenant or those created in the Master Tenant and shared with the current Tenant will be available.
+  Report Types
+    Controls Tenant access for each report type in the Reports section (|OpeRep|). The Tenant must also have Operations: Reports access granted under the Feature permissions tab.
+  Personas
+    Controls User access to |morpheus| Personas, at the time of this writing Users may be given access to the Standard (full |morpheus| UI experience), API (no GUI access, API-only for service accounts), Virtual Desktop (VDI), or Service Catalog Personas (simplified easy ordering experience)
+  Catalog Item Types
+    Controls Tenant access to Catalog Item types within the Service Catalog Persona. Only Catalog Items created in the current Tenant or those created in the Master Tenant and shared with the current Tenant will be available.
+  Cluster Types
+    Controls Tenant access to Cluster types. Only Cluster types allowed for the Role may be added in |InfClu| within the associated Tenant
+  VDI Pools
+    Controls Tenant access to VDI Pools which are currently configured (|TooVDI|) via the Virtual Desktops Persona view
+  Workflows
+    Controls Tenant access to Workflows. Only selected Workflows will be shared down to Tenants having the associated Role
+  Tasks
+    Controls Tenant access to Tasks. Only selected Tasks will be shared down to Tenants having the associated Role
 
-Cloud Access Levels
-^^^^^^^^^^^^^^^^^^^
+  Cloud Access Levels
+  ^^^^^^^^^^^^^^^^^^^
 
-When creating or editing a Tenant Role, Master Tenant administrators can choose which publicly-visible Clouds to share with Tenants having the current Role. Access can be completely restricted or administrators can choose between Read and Full access.
+  When creating or editing a Tenant Role, Master Tenant administrators can choose which publicly-visible Clouds to share with Tenants having the current Role. Access can be completely restricted or administrators can choose between Read and Full access.
 
-Read Access
-```````````
+  Read Access
+  ```````````
 
-Master Tenant administrators can opt to give other Tenants read-level access to any integrated Clouds through the Tenant Role. A read-only Cloud allows the Master Tenant to assign resources for viewing by Subtenant users but not allow them to perform any actions or provision new Instances.
+  Master Tenant administrators can opt to give other Tenants read-level access to any integrated Clouds through the Tenant Role. A read-only Cloud allows the Master Tenant to assign resources for viewing by Subtenant users but not allow them to perform any actions or provision new Instances.
 
-With read-level access, Subtenant users will have access to the Cloud detail page (|InfClo|). From the Summary subtab on the Cloud detail page, high-level information on Cloud resources are shown regardless of specific resources that have been shared with the Subtenant. Other metrics, such as costing, resource percentages (CPU, Memory, and Storage), VM counts and host counts will only be populated when servers in the Cloud have been assigned to the Tenant.
+  With read-level access, Subtenant users will have access to the Cloud detail page (|InfClo|). From the Summary subtab on the Cloud detail page, high-level information on Cloud resources are shown regardless of specific resources that have been shared with the Subtenant. Other metrics, such as costing, resource percentages (CPU, Memory, and Storage), VM counts and host counts will only be populated when servers in the Cloud have been assigned to the Tenant.
 
-Full Access
-```````````
+  Full Access
+  ```````````
 
-With full access, Subtenant users also have access to the Cloud detail page (|InfClo| > Specific Cloud) and see the same level of detail as Subtenants with read-only rights. However, with full access, Subtenant users can also perform many actions including the addition of Clusters, Hosts, and VMs, changing networks, and more. This cloud will also be selectable as a provisioning target for Subtenant users when deploying Instances or Apps.
+  With full access, Subtenant users also have access to the Cloud detail page (|InfClo| > Specific Cloud) and see the same level of detail as Subtenants with read-only rights. However, with full access, Subtenant users can also perform many actions including the addition of Clusters, Hosts, and VMs, changing networks, and more. This cloud will also be selectable as a provisioning target for Subtenant users when deploying Instances or Apps.
 
 Feature Access Permissions
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
