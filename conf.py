@@ -265,7 +265,7 @@ extensions = ['myst_parser','sphinx.ext.autosectionlabel','sphinx_rtd_theme','sp
 templates_path = ['_templates']
 default_dark_mode = False
 source_suffix = ['.rst', '.md']
-project = u'Morpheus Docs'
+project = u'HPE VM Docs'
 copyright = f"{year}, Hewlett Packard Enterprise"
 author = u'Morpheus'
 language = 'en'
@@ -273,7 +273,7 @@ exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store','z_in_progress']
 pygments_style = 'none'
 todo_include_todos = False
 html_theme = 'sphinx_rtd_theme'
-html_use_opensearch = 'https://docs.morpheusdata.com/en/latest'
+#html_use_opensearch = 'https://docs.morpheusdata.com/en/latest'
 linkcheck_request_headers = {
     "*": {
         "Accept": "text/html,application/atom+xml",
@@ -313,7 +313,7 @@ def setup(app):
 context = {
     'display_github': False,
 }
-html_favicon = "_static/morpheus_fav_64.ico"
+html_favicon = "_static/hpefavicon.ico"
 htmlhelp_basename = 'morpheusdocs'
 
 latex_elements = {
@@ -323,13 +323,13 @@ latex_elements = {
 
 
 man_pages = [
-    (master_doc, 'morpheusdocs', u'Morpheus Documentation',
+    (master_doc, 'morpheusdocs', u'HPE VM Documentation',
      [author], 1)
 ]
 
 texinfo_documents = [
-    (master_doc, 'morpheusdocs', u'Morpheus Documentation',
-     author, 'Morpheus', 'Morpheus Documentation',
+    (master_doc, 'morpheusdocs', u'HPE VM Documentation',
+     author, 'HPE', 'HPE VM Documentation',
      'UI Docs'),
 ]
 import sphinx_rtd_theme
@@ -337,7 +337,7 @@ html_theme = "sphinx_rtd_theme"
 html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
 
 def setup(app):
-    app.add_css_file('morpheusTheme.css')
+    app.add_css_file('hpeTheme.css')
 
 
 # -- Copy the upgrade table from master ------------------------------------------
