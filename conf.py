@@ -286,9 +286,7 @@ html_theme_options = {
 'language_selector': False,
 'sticky_navigation': True,
 'navigation_depth': 5,
-'light_css_variables' = {
-    'color-brand-primary' = '#FFFFFF'
-    }
+'style_nav_header_background': 'white'
 }
 html_logo = "_static/hpe-logo.svg"
 html_static_path = ['_static']
