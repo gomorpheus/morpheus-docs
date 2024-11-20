@@ -1,5 +1,5 @@
-|hpe vme| Documentation
-=======================
+|hpe vme| Software Documentation
+================================
 
 .. rst-class:: hidden
   .. include:: /release_notes/current.rst
