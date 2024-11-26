@@ -47,6 +47,7 @@ rst_prolog = """
 .. |software| replace:: HPE VM Essentials Software
 .. |morphdat| replace:: Hewlett Packard Enterprise
 .. |hpe| replace:: Hewlett Packard Enterprise
+.. |firstuse| replace:: HPE VM Essentials Software
 .. |hpe vme| replace:: HPE VM Essentials
 .. |vme| replace:: HPE VME
 .. |cluster| replace:: HPE VME cluster

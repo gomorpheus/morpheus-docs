@@ -8,6 +8,7 @@
    :maxdepth: 2
    :caption: HPE VM Essentials
 
+   vme_getting_started/vme_getting_started
    .. rst-class:: hidden
      /getting_started/getting_started
    operations/operations
