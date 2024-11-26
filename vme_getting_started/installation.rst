@@ -47,7 +47,7 @@ It's time to begin the actual installation process on the hosts. From a high lev
 .. image:: /images/vmeInstall/inst-process.png
   :width: 50%
 
-.. IMPORTANT:: Compatibility of some hardware with |morpheus| requires hardware enablement (HWE) packages to be installed. This is a set of software components that enables users to run a longterm support version of Ubuntu yet still use newer hardware that might not be supported by the default kernel. Run ``sudo apt install linux-generic-hwe-20.04`` to install HWE packages.
+.. IMPORTANT:: Compatibility of some hardware with |morpheus| requires hardware enablement (HWE) packages to be installed. This is a set of software components that enables users to run a longterm support version of Ubuntu yet still use newer hardware that might not be supported by the default kernel. Run ``sudo apt install linux-generic-hwe-22.04`` to install HWE packages.
 
 This guide won't go much deeper than what was already stated above regarding Ubuntu 22.04 installation and the process of applying the latest patches. We will pick up at this point with the process of installing the |morpheus| console which enables virtualization capability on cluster hosts by installing KVM, OVS, and other packages. This process is repeated on each host that will be part of the |cluster|. Before you begin, make sure you've downloaded the Debian package from the HPE software center or contact your account representative if you're unsure about how to access it.
 
