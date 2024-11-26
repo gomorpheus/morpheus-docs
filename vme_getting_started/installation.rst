@@ -81,3 +81,44 @@ At this point, I am done configuring my example interfaces through the |morpheus
 
 Manager Installation
 ````````````````````
+
+Having configured the |hosts| through the |morpheus| Console in the prior step, we'll now install |manager|. Unlike the console, the manager is only installed on one of the hosts and serves as the control plane for the server in addition to providing a provisioning engine, automation functionality, monitoring, secrets management, and a lot more. Before starting, make sure you've already downloaded the QCOW image for the manager and are aware of its full path on the host you've chosen to work from. In fact, it will be beneficial in the next step to go ahead and copy the full path into your paste buffer. The image is available in the HPE software center. Contact your account representative if you're unsure about how or where to access it.
+
+Before you begin, the following information should be readily at hand:
+
+- IP address to give to the |manager|
+- URL for the web server
+- DNS resolution for the URL (points the URL to the manager IP address)
+- VLAN the manager should be deployed on
+- Management interface name
+- Compute interface name
+
+To install the manager, go back into the console as we did in the previous step using the ``hpe-vm`` command. This time use the selection labeled "Install Morpheus". Morpheus was the original name for |manager|. Here we are given a modal containing some configuration options we must set in order to stand up |manager|.
+
+IMAGE - The manager screen
+
+Let's first paste in the path to the manager image since it's already in the paste buffer from a step earlier in this section. In the "Image URI" field, first type "file://" and then paste in the file path. Since the path begins with a leading "/" the final configuration value will look something like "file:///path/to/file.qcow2". After entering the URI, configure the following fields using the information mentioned previously you should have available for this step:
+
+- IP Address
+- Netmask
+- Gateway
+- DNS Server
+- Appliance URL
+- Hostname (same as the appliance URL without the FQDN)
+
+After filling in those fields, enter a username and password for an SSH user that can be used to get into the manager machine. Following that, if necessary, configure any proxy details.
+
+The final configuration to make here involves specifying the size of the manager machine, either small, medium, or large. Each of the respective sizes consumes the following amount of resources:
+
+- **Small:** 2 vCPUs and 12 GB RAM
+- **Medium:** 4 vCPUs and 16 GB RAM
+- **Large:** 4 vCPUs and 32 GB RAM
+
+The greater the capacity, the greater amount of resources and cluster sizes the |manager| can manage. For large production environments, it's recommended you select a large manager. After selecting the size, you'll need to identify the management interface and (if using) the compute interface and compute VLAN tag. Following all of these configurations, select "Install".
+
+IMAGE - install progress bar
+
+At a certain phase in the install process, you'll see a message in the progress bar modal stating "Starting Morpheus Services...". At this point, you can direct a web browser to the appliance URL and see if you can access the appliance. If you get a response returned, even if it's just telling you the appliance is still loading, that's a good sign the web server is installed and things are working. Once all is well, you will arrive at a setup page which leads us into the next section on setting up |manager|.
+
+Manager Initialization
+``````````````````````
