@@ -23,7 +23,7 @@ If you have the capability to do so, it's recommended you set up networking with
 
 **Six NICs with LACP bonds and MPIO for storage traffic**
 
-IMAGE
+.. image:: /images/vmeInstall/network1.png
 
 - Six network interfaces
 - One VLAN for management
@@ -36,7 +36,7 @@ In the diagram note that each host has two network cards with four network inter
 
 **Six NICs with XOR bonds and MPIO for storage traffic**
 
-IMAGE
+.. image:: /images/vmeInstall/network2.png
 
 - Six network interfaces
 - One VLAN for management
@@ -49,7 +49,7 @@ This configuration is very similar to the previous one but the MLAGs have been r
 
 **Four NICs with LACP bonds and MPIO for storage traffic**
 
-IMAGE
+.. image:: /images/vmeInstall/network3.png
 
 - Four network interfaces
 - Management and compute VLANs on the same network trunk
@@ -62,7 +62,7 @@ If there aren't enough interfaces available to separate the management and compu
 
 **Four NICs with XOR bonds and MPIO for storage traffic**
 
-IMAGE
+.. image:: /images/vmeInstall/network4.png
 
 - Four network interfaces
 - Management and compute VLANs on the same network trunk
