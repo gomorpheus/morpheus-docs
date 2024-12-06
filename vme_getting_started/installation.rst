@@ -60,24 +60,29 @@ With the Debian package downloaded, go ahead and install it with ``apt install -
 With that, the |morpheus| console installation is complete. Enter the console with the following command: ``hpe-vm``.
 
 .. image:: /images/vmeInstall/vme-console.png
+  :width: 30%
 
 First, enter the section for keyboard layouts and timezones. Set the time and make any changes to the keyboard layout, if needed.
 
 .. image:: /images/vmeInstall/timezone.png
+  :width: 30%
 
 Next, enter the section for network configuration. The first thing that I've going to do is set the MTU for relevant interfaces to 9000 (jumbo frames). This has a number of benefits including improved efficiency, reduced latency, and optimization for storage networks. Open the "Device Type" dropdown and choose "vlan". In my example case, there's one VLAN which is the "bond0.2" VLAN shown in a prior section. Once selected, mark the box next to "mtu" and enter "9000" in the resulting box. Then, save changes.
 
 .. image:: /images/vmeInstall/set-mtu-bond.png
+  :width: 30%
 
 Next, use the "Device Type" dropdown to once again select "ethernet" which you saw earlier before switching into the "vlan" section. Using the same process, I will also set the MTU to 9000 on both ethernet devices that make up my bond as well as on the bond itself. To get to the bond, you'd access the bond section from the "Device Type" dropdown in the same way that VLANs and ethernets were accessed. Now that I've set MTU of 9000 across the board, I'll go back to the ethernets section to work with my other two devices (the storage interfaces).
 
 I'll continue this example by opening each of the two storage interfaces in turn. Three configurations I'll point out here are "addresses", "nameservers", and "mtu". In this case, I'll mark the box for "addresses" and provide an address in the pop-up modal that appears. I don't need to make any other configurations within that modal (lifetime, etc). A nameserver is not needed because the storage network are isolated and don't need to route out anywhere. Finally, I'm marking the box for "mtu" and setting the value at 9000 as I have with other interfaces. Next, tab over the DHCP section and disable DHCP for this interface. Save the changes and repeat the process for the other storage interface.
 
 .. image:: /images/vmeInstall/set-mtu-storage.png
+  :width: 30%
 
 Once all of the necessary networking configurations are made, you'll want to save all changes. This will cause the changes to be applied and take us back to the main screen where we first accessed the timezone section and the networking configuration section. The console will show you that changes are being applied and will respond with a confirmation if they are successful.
 
 .. image:: /images/vmeInstall/apply-changes.png
+  :width: 30%
 
 At this point, I am done configuring my example interfaces through the |morpheus| console. It does have some additional functionality not shown here which may be needed depending on your specific network configuration. Make sure to complete this process on all hosts before moving on to the next section which covers the installation of |manager| onto the prepared |hosts|.
 
@@ -98,6 +103,7 @@ Before you begin, the following information should be readily at hand:
 To install the manager, go back into the console as we did in the previous step using the ``hpe-vm`` command. This time use the selection labeled "Install Morpheus". Morpheus was the original name for |manager|. Here we are given a modal containing some configuration options we must set in order to stand up |manager|.
 
 .. image:: /images/vmeInstall/install-morph.png
+  :width: 30%
 
 Let's first paste in the path to the manager image since it's already in the paste buffer from a step earlier in this section. In the "Image URI" field, first type "file://" and then paste in the file path. Since the path begins with a leading "/" the final configuration value will look something like "file:///path/to/file.qcow2". After entering the URI, configure the following fields using the information mentioned previously you should have available for this step:
 
@@ -119,6 +125,7 @@ The final configuration to make here involves specifying the size of the manager
 The greater the capacity, the greater amount of resources and cluster sizes the |manager| can manage. For large production environments, it's recommended you select a large manager. After selecting the size, you'll need to identify the management interface and (if using) the compute interface and compute VLAN tag. Following all of these configurations, select "Install".
 
 .. image:: /images/vmeInstall/starting-services.png
+  :width: 30%
 
 At a certain phase in the install process, you'll see a message in the progress bar modal stating "Starting Morpheus Services...". At this point, you can direct a web browser to the appliance URL and see if you can access the appliance. If you get a response returned, even if it's just telling you the appliance is still loading, that's a good sign the web server is installed and things are working. Once all is well, you will arrive at a setup page which leads us into the next section on setting up |manager|.
 
