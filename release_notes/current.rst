@@ -65,7 +65,7 @@ Fixes
 Appliance & Agent Updates
 =========================
 
-:Agent: - Linux agent updated to v2.9.2 :superscript:`8.0.0`
+:Agent: - Linux agent updated to v2.9.1 :superscript:`8.0.0`
         - Windows agent updated to v2.6.1.0 :superscript:`8.0.0`
 :mvm console: - mvm console added to appliance app repository :superscript:`8.0.0`
 :Node & VM Node Packages: - Updated to v3.2.30 with updated linux and windows agents :superscript:`8.0.0`
