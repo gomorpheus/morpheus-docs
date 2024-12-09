@@ -65,6 +65,6 @@ Appliance & Agent Updates
 Appliance & Agent Updates
 =========================
 
-:Agent Node Packages: - |morpheus| linux agent updated to v2.8.2 with improved reconnection after disconnects
-                      - |morpheus| node & vm node packages updated to v3.2.29 with linux agent v2.8.2
+:Agent Node Packages: - |morpheus| linux agent updated to v2.9.1 with improved reconnection after disconnects
+                      - |morpheus| node & vm node packages updated to v3.2.29 with linux agent v2.9.1
 :Embedded Plugins: - Efficient IP plugin updated to v1.2.5 with increased concurrency to improve outcomes with highly scaled Instances
