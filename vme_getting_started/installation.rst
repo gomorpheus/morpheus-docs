@@ -9,7 +9,7 @@ Having completed a discussion of networking considerations in the previous secti
 Host Requirements
 `````````````````
 
-- **Operating System:** Ubuntu 22.04
+- **Operating System:** `Ubuntu 22.04 <https://releases.ubuntu.com/jammy/>`_
 - **Hardware:** HPE Proliant Gen 11 Hardware is recommended with additional hardware being tested and certified over time
 - **CPU:** One or more 64-bit x86 CPUs, 1.5 GHz minimum with Intel VT or AMD-V enabled
 - **Memory:** Minimum of 8GB for non-hyperconverged (HCI) deployments or 8GB plus 4GB for each data disk for HCI deployments
