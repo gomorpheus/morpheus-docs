@@ -24,10 +24,6 @@ Cluster Types
 +--------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------+
 | GKE Cluster        | Google Cloud GKE (Google Kubernetes Engine) Clusters                                                                                                                                                                             | Kubernetes             |
 +--------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------+
-| KVM Cluster        | Onboard existing KVM Clusters. Manage them in |morpheus| and utilize them as provisioning targets. See the `KVM integration guide <https://docs.morpheusdata.com/en/latest/integration_guides/Clouds/kvm/kvm.html>`_ for more.   | KVM                    |
-+--------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------+
-| MVM Cluster        | |morpheus| Virtual Machines, a KVM-based virtualization solution. This Cluster type is currently in open beta. See the detailed section below on MVM Clusters for complete use documentation.                                    | KVM                    |
-+--------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------+
 
 .. note:: Refer to :ref:`clusterLayouts` for supported Clouds per Cluster Type.
 
@@ -260,8 +256,8 @@ Cluster Permissions
   | Xen Docker Host                                            | This will provision a single docker host vm in xen                                   | docker-xen-ubuntu-16.04-single                             | 1            | 16.04       | n/a         | n/a             | n/a             | n/a               |
   +------------------------------------------------------------+--------------------------------------------------------------------------------------+------------------------------------------------------------+--------------+-------------+-------------+-----------------+-----------------+-------------------+
 
-
-.. include:: /infrastructure/clusters/mvm.rst
+..
+  .. include:: /infrastructure/clusters/mvm.rst
 .. include:: /infrastructure/clusters/kubernetes.rst
 .. include:: /infrastructure/clusters/docker.rst
 .. include:: /infrastructure/clusters/eks.rst
