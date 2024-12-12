@@ -261,7 +261,7 @@ Cluster Permissions
 
 
 .. include:: /infrastructure/clusters/mvm.rst
-..rst-class:: hidden
+.. rst-class:: hidden
   .. include:: /infrastructure/clusters/kubernetes.rst
   .. include:: /infrastructure/clusters/docker.rst
   .. include:: /infrastructure/clusters/eks.rst
