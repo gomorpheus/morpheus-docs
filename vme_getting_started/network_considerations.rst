@@ -6,7 +6,7 @@ In order to run |morpheus| effectively in production, network redundancy and thr
 Network Bonding
 ```````````````
 
-Network bonding is the combining of multiple network adapters into a single logical interface. This is done to build in redundancy and to increase throughput. Network bonds are configured at the operating system level and there are multiple types of network bonds depending on hardware support and other factors. Here we will call out two types of network bonds that are effective for virtualization and utilized in the example configurations that follow.
+Network bonding is the combining of multiple network adapters into a single logical interface. This is done to build in redundancy and to increase throughput. Network bonds are configured at the operating system level and there are multiple types of network bonds depending on hardware support and other factors. Here we will call out two types of network bonds that are effective for virtualization and utilized in the example configurations that follow. Once established, we can later offer up these bonded interfaces as a compute network (for virtual machine traffic) or storage network (for interacting with external storage) when creating our cluster within the |manager| UI.
 
 **Link Aggregation Control Protocol (LACP) 803.2ad**
 
