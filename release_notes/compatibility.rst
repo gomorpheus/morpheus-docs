@@ -143,7 +143,7 @@ Services
      - Updated to |linuxagentver|
    * - Morpheus Windows Agent
      - |winagentver|
-     - Updated to |winagentver|
+     - No changes
    * - Morpheus macOS Agent
      - |macagentver|
      - No changes
