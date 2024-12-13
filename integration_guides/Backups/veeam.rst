@@ -41,7 +41,7 @@ Adding Veeam Integration
 
 #. Click :guilabel:`SAVE`
 
-.. NOTE:: Veeam Backup Enterprise Manager must be installed in order to successfully integrate |morpheus| with Veeam.
+.. NOTE:: Veeam Backup Enterprise Manager must be installed in order to successfully integrate |morpheus| with Veeam. Additionally, a Veeam Enterprise license provides only limited access to Veeam API endpoints. As a result, a Veeam Enterprise Plus license is required to access the full feature set of the integration with |morpheus|.
 
 .. IMPORTANT:: Once Veeam service has been integrated with |morpheus|, Veeam server(s) will be available to select as the backup provider for VMware, Hyper-V, and vCloud Director cloud integrations (Infrastructure > Clouds > Edit a compatible Cloud). To enable Veeam backups, select the appropriate Veeam server as the "backup provider" for your cloud integrations as needed. Failure to do so will result in blank ``Backup Repositories`` and ``Backup Job Templates`` options when configuring Veeam Backups during provisioning.
 
