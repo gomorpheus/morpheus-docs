@@ -70,4 +70,4 @@ Appliance & Agent Updates
 =========================
 
 :Agent: - Linux agent updated to v2.9.2 :superscript:`8.0.1`
-:Node & VM Node Packages: - Updated to v3.2.31 with v2.9.2 linux agent :superscript:`8.0.0`
+:Node & VM Node Packages: - Updated to v3.2.31 with v2.9.2 linux agent :superscript:`8.0.1`
