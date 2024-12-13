@@ -6,9 +6,22 @@ build:
     python: "3.11"
 
 sphinx:
-  configuration: hpe/conf.py
+  configuration: conf.py
   fail_on_warning: false
 
 python:
   install:
     - requirements: requirements.txt
+
+formats:
+  - pdf
+
+search:
+  ignore:
+    - '*/catalog.html'
+    - appBlueprints.html
+    - apps.html
+    - jobs.html
+    - jobs_tab.html
+    - executions.html
+    - code.html
