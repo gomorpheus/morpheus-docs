@@ -3,13 +3,13 @@ import datetime
 master_doc = 'index'
 
 latex_documents = [
-    (master_doc, 'morpheus_8.0.0-1.tex', u'Morpheus Documentation',
+    (master_doc, 'morpheus_8.0.1-1.tex', u'Morpheus Documentation',
      u'Morpheus', 'manual'),
 ]
 
 rst_prolog = """
 
-.. |releasedate| replace:: December 10 2024
+.. |releasedate| replace:: December 13 2024
 .. |releasetype| replace:: LTS
 .. |morphAnnualVer| replace:: v8
 .. |morphbranch| replace:: v8.0
@@ -21,16 +21,16 @@ rst_prolog = """
 .. |pluginVer| replace:: 1.2.1
 .. |workerVer| replace:: 5.4.8+
 .. |rmqbranch| replace:: v3.5-3.12
-.. |rmqver| replace:: v3.12.9
+.. |rmqver| replace:: v3.13.7
 .. |mysqlbranch| replace:: v5.7, v8.0
 .. |mysqlver| replace:: v8.0.36
 .. |mysqlverfips| replace:: v8.0.36
 .. |esbranch| replace:: v8.9+
 .. |esver| replace:: v8.11.2
-.. |tcver| replace:: v9.0.90
-.. |nginxver| replace:: v1.25.1
-.. |nodePackageVer| replace:: 3.2.30
-.. |linuxagentver| replace:: v2.9.1
+.. |tcver| replace:: v9.0.97
+.. |nginxver| replace:: v1.26.2
+.. |nodePackageVer| replace:: 3.2.31
+.. |linuxagentver| replace:: v2.9.2
 .. |macagentver| replace:: v2.4.0
 .. |winagentver| replace:: v2.6.1.0
 .. |java| replace:: 11.0.23
@@ -39,7 +39,7 @@ rst_prolog = """
 .. |openjdk-elasticsearch| replace::  17.0.5+8
 .. |openssl| replace:: 1.1.1w
 .. |openssl_fips| replace:: 1.0.2u
-.. |erlang| replace:: 26.1.2
+.. |erlang| replace:: 26.2.5.6
 .. |mastertenant| replace:: Master Tenant
 
 .. |morpheus| replace:: Morpheus
