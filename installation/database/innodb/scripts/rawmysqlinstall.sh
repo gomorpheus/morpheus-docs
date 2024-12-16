@@ -247,7 +247,7 @@ if [ -n "$config_file" ]; then
     echo "sql_generate_invisible_primary_key=1" | sudo tee -a "$config_file"
     echo "binlog_expire_logs_seconds=604800" | sudo tee -a "$config_file"
     echo "binlog_expire_logs_auto_purge=ON" | sudo tee -a "$config_file"
-    echo "group_replication_transaction_size_limit=0" | sudo tee -a "$config_file"
+    #echo "group_replication_transaction_size_limit=0" | sudo tee -a "$config_file"
   else
     # If [mysqld] section exists, replace or add the configuration lines
     replace_or_add_line "innodb_buffer_pool_size" "${buffer_size}G" "$config_file"
@@ -258,7 +258,7 @@ if [ -n "$config_file" ]; then
     replace_or_add_line "sql_generate_invisible_primary_key" "1"  "$config_file"
     replace_or_add_line "binlog_expire_logs_seconds" "604800"  "$config_file"
     replace_or_add_line "binlog_expire_logs_auto_purge" "ON"  "$config_file"
-    echo "group_replication_transaction_size_limit=0" | sudo tee -a "$config_file"
+    #echo "group_replication_transaction_size_limit=0" | sudo tee -a "$config_file"
   fi
 
   # Display the contents of the my.cnf file
