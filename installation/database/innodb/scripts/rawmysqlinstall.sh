@@ -144,12 +144,16 @@ install_mysql() {
 
   if [[ $compare_result -eq 0 ]]; then
     echo "MySQL version $AVAILABLE_VERSION will be installed."
-
-    # Display the available MySQL version and prompt for installation
-    read -p "Do you want to continue with the installation? (y/n): " choice
-    if [[ "$choice" != "y" ]]; then
-      echo "Installation aborted."
-      exit 0
+    
+    if [ "$NON_INTERACTIVE" = true ]; then
+      echo "Proceeding with installation without user confirmation."
+    else
+      # Prompt for installation
+      read -p "Do you want to continue with the installation? (y/n): " choice
+      if [[ "$choice" != "y" ]]; then
+        echo "Installation aborted."
+        exit 0
+      fi
     fi
   else
     echo "MySQL version $AVAILABLE_VERSION does not meet the minimum requirement of $REQUIRED_VERSION. Aborting installation."
@@ -173,12 +177,17 @@ install_mysql() {
 
   # Start MySQL service and check if it's running
   start_mysql_service
-  # is_mysql_service_running
   echo "MySQL installation and configuration complete."
 }
 
 ################################################################################
 ################################################################################
+
+# Parse arguments to check for --non-interactive
+NON_INTERACTIVE=false
+if [[ "$1" == "--non-interactive" ]]; then
+  NON_INTERACTIVE=true
+fi
 
 # Main function
 
@@ -198,13 +207,18 @@ FLUSH PRIVILEGES;
 _EOF_
 else
   MYSQL_VERSION=$(get_installed_mysql_version)
-  # Prompt the user to continue or abort
-  read -p "MySQL version $MYSQL_VERSION is already installed. Do you want to continue with the configuration? (y/n): " choice
-  if [[ "$choice" != "y" ]]; then
-    echo "Configuration aborted."
-    exit 0
+  if [ "$NON_INTERACTIVE" = true ]; then
+    echo "MySQL version $MYSQL_VERSION is already installed. Proceeding with configuration."
   else
-    mysql -u root -p$mysqlrootpass <<_EOF_
+    # Prompt the user to continue or abort
+    read -p "MySQL version $MYSQL_VERSION is already installed. Do you want to continue with the configuration? (y/n): " choice
+    if [[ "$choice" != "y" ]]; then
+      echo "Configuration aborted."
+      exit 0
+    fi
+  fi
+
+  mysql -u root -p$mysqlrootpass <<_EOF_
 DELETE FROM mysql.user WHERE User='';
 DROP DATABASE IF EXISTS test;
 DELETE FROM mysql.db WHERE Db='test' OR Db='test\\_%';
@@ -214,62 +228,4 @@ CREATE USER '${clusterAdminUser}'@'%' IDENTIFIED BY '${clusterAdminPass}';
 GRANT ALL PRIVILEGES ON *.* TO '${clusterAdminUser}'@'%' with grant option;
 FLUSH PRIVILEGES;
 _EOF_
-
-  fi
 fi
-
-start_mysql_service
-# is_mysql_service_running
-echo "MySQL installation and configuration complete."
-
-# Continue with MySQL configuration and user setup (common to multiple distributions)…
-config_file=""
-
-# Detect the MySQL configuration file location based on common paths
-if [ -f "/etc/mysql/my.cnf" ]; then
-  config_file="/etc/mysql/my.cnf"
-elif [ -f "/etc/my.cnf" ]; then
-  config_file="/etc/my.cnf"
-elif [ -f "/etc/my.cnf.d/my.cnf" ]; then
-  config_file="/etc/my.cnf.d/my.cnf"
-fi
-
-# MySQL configuration updates
-if [ -n "$config_file" ]; then
-  # Check if [mysqld] section already exists
-  if ! grep -q "\[mysqld\]" "$config_file"; then
-    # If it doesn't exist, add the [mysqld] section and configuration under it
-    echo -e "\n[mysqld]\ninnodb_buffer_pool_size=${buffer_size}G" | sudo tee -a "$config_file"
-    echo "innodb_buffer_pool_instances=${buffer_size}" | sudo tee -a "$config_file"
-    echo "innodb_use_fdatasync=ON" | sudo tee -a "$config_file"
-    echo "bind-address=0.0.0.0" | sudo tee -a "$config_file"
-    echo "max_connections=${max_connections}" | sudo tee -a "$config_file"
-    echo "sql_generate_invisible_primary_key=1" | sudo tee -a "$config_file"
-    echo "binlog_expire_logs_seconds=604800" | sudo tee -a "$config_file"
-    echo "binlog_expire_logs_auto_purge=ON" | sudo tee -a "$config_file"
-    #echo "group_replication_transaction_size_limit=0" | sudo tee -a "$config_file"
-  else
-    # If [mysqld] section exists, replace or add the configuration lines
-    replace_or_add_line "innodb_buffer_pool_size" "${buffer_size}G" "$config_file"
-    replace_or_add_line "innodb_buffer_pool_instances" "${buffer_size}" "$config_file"
-    replace_or_add_line "innodb_use_fdatasync" "ON" "$config_file"
-    replace_or_add_line "bind-address" "0.0.0.0"  "$config_file"
-    replace_or_add_line "max_connections" "${max_connections}"  "$config_file"
-    replace_or_add_line "sql_generate_invisible_primary_key" "1"  "$config_file"
-    replace_or_add_line "binlog_expire_logs_seconds" "604800"  "$config_file"
-    replace_or_add_line "binlog_expire_logs_auto_purge" "ON"  "$config_file"
-    #echo "group_replication_transaction_size_limit=0" | sudo tee -a "$config_file"
-  fi
-
-  # Display the contents of the my.cnf file
-  echo "Contents of $config_file:"
-  cat "$config_file"
-else
-  echo "No suitable MySQL configuration file found."
-fi
-
-# MySQL user creation and privileges setup
-
-
-# Restart MySQL service if it's active and enabled (check for both mysql and mysqld)
-start_mysql_service
