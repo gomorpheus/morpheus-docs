@@ -261,23 +261,23 @@ if [ -n "$config_file" ]; then
     echo -e "\n[mysqld]\ninnodb_buffer_pool_size=${buffer_size}G" | sudo tee -a "$config_file"
     echo "innodb_buffer_pool_instances=${buffer_size}" | sudo tee -a "$config_file"
     echo "innodb_use_fdatasync=ON" | sudo tee -a "$config_file"
-    echo "bind-address=0.0.0.0" | sudo tee -a "$config_file"
+    echo "bind-address=::" | sudo tee -a "$config_file"
     echo "max_connections=${max_connections}" | sudo tee -a "$config_file"
     echo "sql_generate_invisible_primary_key=1" | sudo tee -a "$config_file"
     echo "binlog_expire_logs_seconds=604800" | sudo tee -a "$config_file"
     echo "binlog_expire_logs_auto_purge=ON" | sudo tee -a "$config_file"
-    echo "group_replication_transaction_size_limit=0" | sudo tee -a "$config_file"
+    #echo "group_replication_transaction_size_limit=0" | sudo tee -a "$config_file"
   else
     # If [mysqld] section exists, replace or add the configuration lines
     replace_or_add_line "innodb_buffer_pool_size" "${buffer_size}G" "$config_file"
     replace_or_add_line "innodb_buffer_pool_instances" "${buffer_size}" "$config_file"
     replace_or_add_line "innodb_use_fdatasync" "ON" "$config_file"
-    replace_or_add_line "bind-address" "0.0.0.0"  "$config_file"
+    replace_or_add_line "bind-address" "::"  "$config_file"
     replace_or_add_line "max_connections" "${max_connections}"  "$config_file"
     replace_or_add_line "sql_generate_invisible_primary_key" "1"  "$config_file"
     replace_or_add_line "binlog_expire_logs_seconds" "604800"  "$config_file"
     replace_or_add_line "binlog_expire_logs_auto_purge" "ON"  "$config_file"
-    echo "group_replication_transaction_size_limit=0" | sudo tee -a "$config_file"
+    #echo "group_replication_transaction_size_limit=0" | sudo tee -a "$config_file"
   fi
 
   # Display the contents of the my.cnf file
