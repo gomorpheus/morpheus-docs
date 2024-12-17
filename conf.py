@@ -251,7 +251,7 @@ rst_prolog = """
 
 
 year = datetime.datetime.now().date().strftime("%Y")
-extensions = ['myst_parser','sphinx.ext.autosectionlabel','sphinx_rtd_theme','sphinx_tabs.tabs','sphinxcontrib.contentui','sphinxcontrib.images','sphinx_search.extension','notfound.extension','sphinx.ext.autosectionlabel'] #sphinx_tabs
+extensions = ['myst_parser','sphinx.ext.autosectionlabel','sphinx_rtd_theme','sphinx_tabs.tabs','sphinxcontrib.contentui','sphinxcontrib.images','notfound.extension','sphinx.ext.autosectionlabel'] #sphinx_tabs
 templates_path = ['_templates']
 default_dark_mode = False
 source_suffix = ['.rst', '.md']
