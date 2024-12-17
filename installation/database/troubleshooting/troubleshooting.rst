@@ -154,7 +154,10 @@ Recover From Failed Single Site when dba.rebootclusterfromcompleteoutage() and r
         set global super_read_only = OFF;
         DROP DATABASE mysql_innodb_cluster_metadata;
 
-
+.. important::
+    
+    In some cases, there may be an error of GTID conflicts or value not expected.  A force of a primary node can
+    be set using the following command example:  ``var cluster = dba.rebootClusterFromCompleteOutage('A',{force: true,primary: "InnoDB1:3306"})``
 
 *  Connect to the DB node with the highest GTID with mysqlsh and create the cluster.
     
@@ -233,4 +236,41 @@ Be sure to snapshot systems. This has the potential to be destructive.
     
     .. code-block:: bash
 
-        cluster.getStatus()
+        cluster.status()
+
+Dissolving (destroying) a Cluster - Destructive
+```````````````````````````````````````````````
+
+During an installation, there may be issues where the scripted installs fail and instances
+may not be able to resolve their hostsnames because they were configured incorrect.  In this
+case, the cluster may need to be reset.  More than likely, only 1 instance has been added to
+the cluster.  However, it would be good to perform this on each member in case, or at least
+check the status of the cluster from each, once the cluster has been dissolved.
+
+Dissolve Documentation:
+
+    `YUM/DNF MySQL Repositories <https://dev.mysql.com/doc/mysql-shell/8.0/en/mysql-innodb-cluster-working-with-cluster.html>`_
+
+
+* Connect to the cluster by using a node from the cluster and create the cluster vairable:
+
+    .. code-block:: bash
+        \c clusterAdmin@db01:3306
+	    cluster = dba.getCluster()
+
+* Check the status first, to ensure the cluster members but also this is the cluster to dissolve:
+
+    .. code-block:: bash
+
+        cluster.status()
+
+* If this is the cluster you wish to dissolve, use the following command.  **THIS IS DESTRUCTIVE AND THE CLUSTER WILL BE LOST FOREVER**:
+
+    .. code-block:: bash
+
+	    cluster.dissolve()
+
+* In the case mentioned above, where the hostnames were incorrect or not resolvable, update the hostnames with ``hostnamectl set-hostname <hostName>``
+and be sure to restart the ``mysql`` or ``mysqld`` service (depending on the OS).
+
+* The ``.js`` scripts can be used to create the cluster again.
