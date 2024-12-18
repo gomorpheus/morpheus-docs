@@ -25,18 +25,32 @@ Install by Repository
 `MySQL Documentation <https://dev.mysql.com/doc/mysql-shell/8.0/en/mysql-shell-install-linux-quick.html>`_ 
 
   - Locate the current respoitory files needed.  The installation example below may be outdated but the links/version can be found here:
+    
     - `YUM/DNF MySQL Repositories <https://dev.mysql.com/downloads/repo/yum/>`_
     - `APT MySQL Repositories <https://dev.mysql.com/downloads/repo/apt/>`_
+  
   - Install Repository
+
+    .. note::
+        Below is the automated method of installing the repo for a specific version using APT.  Should you use the incorrect version by accident and you need to change
+        it to a different one after installing the repo, the ``dpkg-reconfigure mysql-apt-config`` command can be used with an interactive
+        GUI.  Be sure to ``unset DEBIAN_FRONTEND`` prior or you will not see the GUI.
 
     .. tabs::
 
         .. group-tab:: Ubuntu
 
             .. code-block:: bash
-        
-                curl https://repo.mysql.com//mysql-apt-config_0.8.29-1_all.deb -o mysql-apt.deb
+                
+                # Example: mysql-8.0, mysql-5.7, mysql-8.4-lts
+                mySqlRepo=mysql-8.0
+                export DEBIAN_FRONTEND=noninteractive
+                echo mysql-apt-config mysql-apt-config/enable-repo select $mySqlRepo | sudo debconf-set-selections
+                echo mysql-apt-config mysql-apt-config/select-server select $mySqlRepo | sudo debconf-set-selections
+                curl https://repo.mysql.com/mysql-apt-config_0.8.33-1_all.deb -o mysql-apt.deb
                 dpkg -i mysql-apt.deb
+                unset DEBIAN_FRONTEND
+                apt update
                         
         .. group-tab:: RHEL 9
 
