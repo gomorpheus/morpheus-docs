@@ -5,6 +5,7 @@ mysqlrootpass="P@ssw0rd!"
 clusterAdminUser="clusterAdmin"
 clusterAdminPass="P@ssw0rd!"
 mySqlVersion="8.0.32"  # Minimum MySQL Version that will be installed
+majorMinorLimiter=$(echo $mySqlVersion | awk -F. '{printf "%d.%d", $1, $2}') # ex: 8.0
 buffer_size="$(free -k | awk '/^Mem:/{print int($2 * 0.7 / 1024 / 1024)}')"
 max_connections="2001"
 
@@ -94,12 +95,13 @@ get_available_mysql_version() {
   local available_version
 
   if command -v apt-cache &>/dev/null; then
-    available_version=$(apt-cache show mysql-server | grep -E "Version: [0-9]+\.[0-9]+\.[0-9]+" | awk '{match($2, /[0-9]+\.[0-9]+\.[0-9]+/); print substr($2, RSTART, RLENGTH)}' | head -n 1)
+    available_version=$(apt-cache show mysql-server | grep -E "Version: $majorMinorLimiter.[0-9]+" | awk '{match($2, /'$majorMinorLimiter'.[0-9]+/); print substr($2, RSTART, RLENGTH)}' | head -n 1)
   elif command -v yum &>/dev/null; then
     available_version=$(yum list mysql-server --showduplicates | awk '/mysql-server/ {print $2}' | grep -oE '^[0-9]+\.[0-9]+\.[0-9]+' | sort -Vr | head -n 1)
   elif command -v dnf &>/dev/null; then
     available_version=$(dnf --showduplicates list mysql-server | grep -Eo "[0-9]+\.[0-9]+\.[0-9]+" | sort -r | head -n 1)
   else
+    echo "Issues finding package similar to ${majorMinorLimiter}.x"
     echo "Unsupported package manager. Manual installation required."
     exit 1
   fi
