@@ -54,6 +54,9 @@ MySQL Shell Cluster Multi Site JS Script
                         replicaCluster.addInstance(node + ":3306");
                     });
 
+                    print('\n Creating MySQL Router user named "routeruser"')
+                    cluster.setupRouterAccount('routeruser')
+
                     print('\nInnoDB Cluster deployed successfully.\n');
                 } catch (e) {
                     print('\nThe InnoDB Cluster could not be created.\n\nError: ' + e.message + '\n');

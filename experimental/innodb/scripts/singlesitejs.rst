@@ -7,7 +7,7 @@ MySQL Shell Cluster Single Site JS Script
 
             .. code-block:: js
 
-                print('Setting up a Multi Site MySQL InnoDB Cluster, \n');
+                print('Setting up a Single Site MySQL InnoDB Cluster, \n');
 
                 var mysqlAdmin = "clusterAdmin";
                 var nodeA = ["mydb-1", "mydb-2", "mydb-3"];
@@ -38,6 +38,9 @@ MySQL Shell Cluster Single Site JS Script
                     });
 
                     print('.\nInstances successfully added to the Cluster.');
+
+                    print('\n Creating MySQL Router user named "routeruser"')
+                    cluster.setupRouterAccount('routeruser')
 
                     print('\nInnoDB Cluster deployed successfully.\n');
                 } catch (e) {
