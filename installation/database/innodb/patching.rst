@@ -4,8 +4,8 @@ InnoDB Cluster Maintenance/Patching
 #. Get the current cluster status. This can be done from any VM that has MySQL Shell installed. 
    (typically the Morpheus App Nodes)
 
-.. important::
-    if multi-site then always start at the secondary site nodes first before the primary site.
+    .. important::
+        if multi-site then always start at the secondary site nodes first before the primary site.
     
     .. code-block:: js
         :force:
@@ -20,8 +20,9 @@ InnoDB Cluster Maintenance/Patching
 
 #. Patch each of the secondary servers from the status above. 
 
-.. important::
-    make sure to only do one at a time following this process before continuing.
+    .. important::
+        make sure to only do one at a time following this process before continuing.
+        
 
     * Stop the mysql service.
     * Perform any patching.
