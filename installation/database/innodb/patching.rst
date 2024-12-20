@@ -73,6 +73,7 @@ InnoDB Cluster Maintenance/Patching
     * Reboot if needed. 
     * Ensure mysql service is running or start mysql service.
     * Check the cluster status. 
+        
         .. important::
             Make sure this node is back online and there is no replication lag. Depending on the number of new writes this may take some time. Continue to check status.
         
