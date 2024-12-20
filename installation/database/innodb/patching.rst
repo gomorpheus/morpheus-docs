@@ -22,7 +22,7 @@ InnoDB Cluster Maintenance/Patching
 
     .. important::
         make sure to only do one at a time following this process before continuing.
-        
+
 
     * Stop the mysql service.
     * Perform any patching.
@@ -56,8 +56,9 @@ InnoDB Cluster Maintenance/Patching
             cluster.status()
 
     * Check the cluster status. 
-    .. important::
-        Make sure that this node is now a secondary and your other node is primary before continuing.    
+    
+        .. important::
+            Make sure that this node is now a secondary and your other node is primary before continuing.    
         
         .. code-block:: js
             :force:
@@ -72,8 +73,8 @@ InnoDB Cluster Maintenance/Patching
     * Reboot if needed. 
     * Ensure mysql service is running or start mysql service.
     * Check the cluster status. 
-    .. important::
-        Make sure this node is back online and there is no replication lag. Depending on the number of new writes this may take some time. Continue to check status.
+        .. important::
+            Make sure this node is back online and there is no replication lag. Depending on the number of new writes this may take some time. Continue to check status.
         
         .. code-block:: js
             :force:
