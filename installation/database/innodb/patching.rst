@@ -22,9 +22,9 @@ MySQL Patching
 #. Patch one of the secondary servers from the status above.
 
     * Stop the mysql service.
-    * perform any patching.
-    * reboot if needed. 
-    * ensure mysql service is running or start mysql service.
+    * Perform any patching.
+    * Reboot if needed. 
+    * Ensure mysql service is running or start mysql service.
     * Check the cluster status. (make sure this node is back online and there is no replication lag.Depending on the number of new writes this may take some time. Continue to check status)    
         
         .. code-block:: js
@@ -40,9 +40,9 @@ MySQL Patching
 #. Upgrade the other secondary server.
  
     * Stop the mysql service.
-    * perform any patching.
-    * reboot if needed. 
-    * ensure mysql service is running or start mysql service.
+    * Perform any patching.
+    * Reboot if needed. 
+    * Ensure mysql service is running or start mysql service.
     * Check the cluster status. (make sure this node is back online and there is no replication lag.Depending on the number of new writes this may take some time. Continue to check status)    
         
         .. code-block:: js
@@ -57,7 +57,7 @@ MySQL Patching
 
 #. Upgrade the primary server.
  
-    * failover over primary to one of the secondary nodes.
+    * Fail over primary node to one of the secondary nodes.
          
          .. code-block:: js
             :force:
