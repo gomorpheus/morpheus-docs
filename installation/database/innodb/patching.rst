@@ -1,9 +1,6 @@
 InnoDB Cluster Maintenance/Patching 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+===================================
 
-
-MySQL Patching
-====================
 
 #. Get the current cluster status. This can be done from any VM that has MySQL Shell installed. 
    (typically the Morpheus App Nodes)
