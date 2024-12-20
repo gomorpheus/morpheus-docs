@@ -92,4 +92,4 @@ MySQL Patching
                 cluster = dba.getCluster()
                 cluster.status()
 
-    * Once the cluster is confirmed up and in sync the patching is compete.
+    * Once the cluster is confirmed up and in sync the patching is compete .
