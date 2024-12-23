@@ -329,7 +329,7 @@ def setup(app):
     app.add_css_file('morpheusTheme.css')
 
 
-# -- Copy the upgrade table from master ------------------------------------------
+# -- Copy the upgrade table from master -------------------------------------------
 
 import urllib.request
 from urllib.request import urlretrieve
