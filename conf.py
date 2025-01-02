@@ -3,22 +3,22 @@ import datetime
 master_doc = 'index'
 
 latex_documents = [
-    (master_doc, 'morpheus_7.0.9-1.tex', u'Morpheus Documentation',
+    (master_doc, 'morpheus_7.0.7-1.tex', u'Morpheus Documentation',
      u'Morpheus', 'manual'),
 ]
 
 rst_prolog = """
 
-.. |releasedate| replace:: December 13 2024
+.. |releasedate| replace:: December 2, 2024
 .. |releasetype| replace:: LTS
 .. |morphAnnualVer| replace:: v7
 .. |morphbranch| replace:: v7.0
-.. |morphver| replace:: v7.0.9
+.. |morphver| replace:: v7.0.7
 .. |minUpgradeVer| replace:: v6.0.0
 .. |minRollingUpgradeVer| replace:: v7.0.3,v6.2.11
 .. |nonRollingUpgradeVer| replace:: v6.2.10,v7.0.2
-.. |previousMorphVer| replace:: v7.0.8
-.. |pluginVer| replace:: 1.1.10
+.. |previousMorphVer| replace:: v7.0.6
+.. |pluginVer| replace:: 1.1.8
 .. |workerVer| replace:: 5.4.8+
 .. |rmqbranch| replace:: v3.5-3.12
 .. |rmqver| replace:: v3.12.9
@@ -29,10 +29,10 @@ rst_prolog = """
 .. |esver| replace:: v8.11.2
 .. |tcver| replace:: v9.0.90
 .. |nginxver| replace:: v1.25.1
-.. |nodePackageVer| replace:: 3.2.31
-.. |linuxagentver| replace:: v2.9.2
+.. |nodePackageVer| replace:: 3.2.29
+.. |linuxagentver| replace:: v2.9.1
 .. |macagentver| replace:: v2.4.0
-.. |winagentver| replace:: v2.6.1.0
+.. |winagentver| replace:: v2.5.0.0
 .. |java| replace:: 11.0.23
 .. |java-mac| replace:: 11.0.14+9
 .. |openjdk-jre| replace:: 11.0.23+9
@@ -42,9 +42,20 @@ rst_prolog = """
 .. |erlang| replace:: 26.1.2
 .. |mastertenant| replace:: Master Tenant
 
-.. |morpheus| replace:: Morpheus
-.. |morphues| replace:: Morpheus
-.. |morphdat| replace:: Morpheus Data
+.. |morpheus| replace:: HPE VM Essentials
+.. |morphues| replace:: HPE VM Essentials
+.. |software| replace:: HPE VM Essentials Software
+.. |morphdat| replace:: Hewlett Packard Enterprise
+.. |hpe| replace:: Hewlett Packard Enterprise
+.. |firstuse| replace:: HPE VM Essentials Software
+.. |hpe vme| replace:: HPE VM Essentials
+.. |vme| replace:: HPE VME
+.. |cluster| replace:: HPE VME cluster
+.. |clusters| replace:: HPE VME clusters
+.. |manager| replace:: HPE VME manager
+.. |host| replace:: HPE VME host
+.. |hosts| replace:: HPE VME hosts
+.. |hypervisor| replace:: HPE VME Hypervisor
 .. |repo_host_url| replace:: https://downloads.morpheusdata.com
 .. |master tenant| replace:: Master Tenant
 .. |profileObjects| replace:: Clouds
@@ -255,8 +266,8 @@ extensions = ['myst_parser','sphinx.ext.autosectionlabel','sphinx_rtd_theme','sp
 templates_path = ['_templates']
 default_dark_mode = False
 source_suffix = ['.rst', '.md']
-project = u'Morpheus Docs'
-copyright = f"{year}, Morpheus Data"
+project = u'HPE VM Docs'
+copyright = f"{year}, Hewlett Packard Enterprise"
 author = u'Morpheus'
 language = 'en'
 exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store','z_in_progress']
@@ -276,8 +287,9 @@ html_theme_options = {
 'language_selector': False,
 'sticky_navigation': True,
 'navigation_depth': 5,
+'style_nav_header_background': 'white'
 }
-html_logo = "_static/logo.svg"
+html_logo = "_static/hpe-logo.svg"
 html_static_path = ['_static']
 
 html_sidebars = {
@@ -302,7 +314,7 @@ def setup(app):
 context = {
     'display_github': False,
 }
-html_favicon = "_static/morpheus_fav_64.ico"
+html_favicon = "_static/hpefavicon.ico"
 htmlhelp_basename = 'morpheusdocs'
 
 latex_elements = {
@@ -312,13 +324,13 @@ latex_elements = {
 
 
 man_pages = [
-    (master_doc, 'morpheusdocs', u'Morpheus Documentation',
+    (master_doc, 'morpheusdocs', u'HPE VM Documentation',
      [author], 1)
 ]
 
 texinfo_documents = [
-    (master_doc, 'morpheusdocs', u'Morpheus Documentation',
-     author, 'Morpheus', 'Morpheus Documentation',
+    (master_doc, 'morpheusdocs', u'HPE VM Documentation',
+     author, 'HPE', 'HPE VM Documentation',
      'UI Docs'),
 ]
 import sphinx_rtd_theme
@@ -326,10 +338,10 @@ html_theme = "sphinx_rtd_theme"
 html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
 
 def setup(app):
-    app.add_css_file('morpheusTheme.css')
+    app.add_css_file('hpeTheme.css')
 
 
-# -- Copy the upgrade table from master -------------------------------------------
+# -- Copy the upgrade table from master ------------------------------------------
 
 import urllib.request
 from urllib.request import urlretrieve
