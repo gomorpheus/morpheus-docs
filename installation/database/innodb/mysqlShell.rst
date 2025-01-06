@@ -56,14 +56,25 @@ Install by Repository
 
             .. code-block:: bash
 
-                curl https://repo.mysql.com//mysql80-community-release-el9-5.noarch.rpm -o mysql-yum.rpm
+                curl https://repo.mysql.com/mysql84-community-release-el9-1.noarch.rpm -o mysql-yum.rpm
                 rpm -ihv mysql-yum.rpm
+
+                # Disables both MySQL server 8.4 (just in case) and tools 8.4
+                dnf config-manager --disable mysql-8.4-lts-community
+                dnf config-manager --disable mysql-tools-8.4-lts-community
+
+                # Enables both MySQL server 8.0 (just in case) and tools 8.0 (current supported)
+                dnf config-manager --enable mysql80-community
+                dnf config-manager --enable mysql-tools-community
+                
+                dnf update
+                
         
         .. group-tab:: RHEL 8
 
             .. code-block:: bash
 
-                curl https://repo.mysql.com//mysql80-community-release-el8-9.noarch.rpm -o mysql-yum.rpm
+                curl https://repo.mysql.com/mysql80-community-release-el8-9.noarch.rpm -o mysql-yum.rpm
                 rpm -ihv mysql-yum.rpm
 
   - Install MySQL Shell

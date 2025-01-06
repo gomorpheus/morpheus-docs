@@ -94,7 +94,7 @@ MySQL Install - Config Script
       elif command -v yum &>/dev/null; then
         available_version=$(yum list mysql-server --showduplicates | awk '/mysql-server/ {print $2}' | grep -oE '^[0-9]+\.[0-9]+\.[0-9]+' | sort -Vr | head -n 1)
       elif command -v dnf &>/dev/null; then
-        available_version=$(dnf --showduplicates list mysql-server | grep -Eo "[0-9]+\.[0-9]+\.[0-9]+" | sort -r | head -n 1)
+        available_version=$(dnf --showduplicates list mysql-server | grep -Eo "$majorMinorLimiter.[0-9]+" | sort -r | head -n 1)
       else
         echo "Issues finding package similar to ${majorMinorLimiter}.x"
         echo "Unsupported package manager. Manual installation required."
