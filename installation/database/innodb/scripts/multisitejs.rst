@@ -57,7 +57,7 @@ MySQL Shell Cluster Multi Site JS Script
 
                     print('\nInnoDB Cluster deployed successfully.\n');
 
-                    print('\nCreating 'routeruser' for the MySQL routers\n');
+                    print('\nCreating "routeruser" for the MySQL routers\n');
                     cluster.setupRouterAccount('routeruser', {password: mySqlRouterUserPassword})
                 } catch (e) {
                     print('\nThe InnoDB Cluster could not be created.\n\nError: ' + e.message + '\n');
