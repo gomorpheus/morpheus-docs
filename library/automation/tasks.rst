@@ -101,6 +101,35 @@ The above example would result in the following output:
   linux
   bar
 
+Task Types
+^^^^^^^^^^
+
+.. list-table:: **Available Task Types**
+   :header-rows: 1
+
+   * - |powershell|
+     - PowerShell Script
+     - Execute PowerShell Script on the Target Resource
+     - Local, Repository, Url
+     - Remote, Resource, Local
+     - None
+     - Library: Tasks
+   * - |restart|
+     - Restart
+     - Restarts target VM/Host/Container and confirms startup status before executing next task in Workflow
+     - System
+     - Resource
+     - None
+     - Library: Tasks
+   * - |shellscript|
+     - Shell Script
+     - Executes Bash script on the target resource
+     - Local, Repository, Url
+     - Local, Remote, Resource
+     - None
+     - Library: Tasks
+
+
 .. rst-class:: hidden
   Task Types
   ^^^^^^^^^^
