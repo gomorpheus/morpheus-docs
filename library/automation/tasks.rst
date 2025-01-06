@@ -107,6 +107,13 @@ Task Types
 .. list-table:: **Available Task Types**
    :header-rows: 1
 
+   * -
+     - Task Type
+     - Task Description
+     - Source Options
+     - Execute Target Options
+     - Configuration Requirements
+     - Role Permissions Requirements
    * - |powershell|
      - PowerShell Script
      - Execute PowerShell Script on the Target Resource
