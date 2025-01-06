@@ -101,152 +101,153 @@ The above example would result in the following output:
   linux
   bar
 
-Task Types
-^^^^^^^^^^
+.. rst-class:: hidden
+  Task Types
+  ^^^^^^^^^^
 
-.. list-table:: **Available Task Types**
-   :header-rows: 1
+  .. list-table:: **Available Task Types**
+     :header-rows: 1
 
-   * -
-     - Task Type
-     - Task Description
-     - Source Options
-     - Execute Target Options
-     - Configuration Requirements
-     - Role Permissions Requirements
-   * - |ansible|
-     - Ansible
-     - Runs an Ansible playbook. Ansible Integration required
-     - Ansible Repo (Git)
-     - Local, Resource
-     - Existing Ansible Integration
-     - Library: Tasks
-   * - |ansibletower|
-     - Ansible Tower
-     - Relays Ansible calls to Ansible Tower
-     - Tower Integration
-     - Local, Remote, Resource
-     - Existing Ansible Tower Integration
-     - Library: Tasks
-   * - |chef|
-     - Chef bootstrap
-     - Executes Chef bootstrap and run list. Chef Integration required
-     - Chef Server
-     - Resource
-     - Existing Chef Integration
-     - Library: Tasks
-   * - |conditional|
-     - Conditional Workflow
-     - Allows the user to set JavaScript logic. If it resolves to ``true``, |morpheus| will run the Operational Workflow set as the "IF OPERATIONAL WORKFLOW" and if it resolves to ``false``, |morpheus| will run the "ELSE OPERATIONAL WORKFLOW"
-     - N/A (JavaScript logic must be locally sourced, Tasks housed within the associated Workflows may have different sourcing options depending on their types.)
-     - Local
-     - Existing Operational Workflows
-     - Library: Tasks
-   * - |Email|
-     - Email
-     - Send an email from a Workflow
-     - Task Content
-     - Local
-     - SMTP Configured
-     - Library: Tasks
-   * - |groovy|
-     - Groovy script
-     - Executes Groovy Script locally (on |morpheus| app node)
-     - Local, Repository, Url
-     - Local
-     - None
-     - Library: Tasks, Tasks - Script Engines
-   * - |http|
-     - HTTP
-     - Executes REST call for targeting external API's.
-     - Local
-     - Local
-     - None
-     - Library: Tasks
-   * - |javascript|
-     - Javascript
-     - Executes Javascript locally (on |morpheus| app node)
-     - Local
-     - Local
-     - None
-     - Library: Tasks, Tasks - Script Engines
-   * - |jruby|
-     - jRuby Scirpt
-     - Executes Ruby script locally (on |morpheus| app node)
-     - Local, Repository, Url
-     - Local
-     - None
-     - Library: Tasks, Tasks - Script Engines
-   * - |libraryscript|
-     - Library Script
-     - Creates a Task from an existing Library Script (|LibTemScr|)
-     - Library Script
-     - Resource
-     - Existing Library Script
-     - Library: Tasks
-   * - |template|
-     - Library Template
-     - Creates a Task from an existing Library Template (|LibTemSpe|)
-     - Library Template
-     - Resource
-     - Existing Library Templates
-     - Library: Tasks
-   * - |nestedworkflow|
-     - Nested Workflow
-     - Embeds a Workflow into a Task which allows the Workflow to be nested within other Workflows for situations when common Task sets are frequently used in Workflows
-     - N/A
-     - Local
-     - N/A
-     - Library: Tasks
-   * - |powershell|
-     - PowerShell Script
-     - Execute PowerShell Script on the Target Resource
-     - Local, Repository, Url
-     - Remote, Resource, Local
-     - None
-     - Library: Tasks
-   * - |puppet|
-     - Puppet Agent Install
-     - Executes Puppet Agent bootstrap, writes ``puppet.conf`` and triggers agent checkin. Puppet Integration required
-     - Puppet Master
-     - Resource
-     - Existing Puppet Integration
-     - Library: Tasks
-   * - |Python|
-     - Python Script
-     - Executes Python Script locally
-     - Local, Repository, Url
-     - Local
-     - ``virtualenv`` installed on Appliance Nodes
-     - Library: Tasks, Tasks - Script Engines
-   * - |restart|
-     - Restart
-     - Restarts target VM/Host/Container and confirms startup status before executing next task in Workflow
-     - System
-     - Resource
-     - None
-     - Library: Tasks
-   * - |shellscript|
-     - Shell Script
-     - Executes Bash script on the target resource
-     - Local, Repository, Url
-     - Local, Remote, Resource
-     - None
-     - Library: Tasks
-   * - |vro|
-     - vRealize Orchestrator Workflow
-     - Executes vRO Workflow on the Target Resource
-     - vRO Integration
-     - Local, Resource
-     - Existing vRO Integration
-     - Library: Tasks
-   * - |wa|
-     - Write Attributes
-     - Add arbitrary values to the Attributes map of the target resource
-     - N/A
-     - Local
-     - Provide map of values as valid JSON
-     - Library: Tasks
+     * -
+       - Task Type
+       - Task Description
+       - Source Options
+       - Execute Target Options
+       - Configuration Requirements
+       - Role Permissions Requirements
+     * - |ansible|
+       - Ansible
+       - Runs an Ansible playbook. Ansible Integration required
+       - Ansible Repo (Git)
+       - Local, Resource
+       - Existing Ansible Integration
+       - Library: Tasks
+     * - |ansibletower|
+       - Ansible Tower
+       - Relays Ansible calls to Ansible Tower
+       - Tower Integration
+       - Local, Remote, Resource
+       - Existing Ansible Tower Integration
+       - Library: Tasks
+     * - |chef|
+       - Chef bootstrap
+       - Executes Chef bootstrap and run list. Chef Integration required
+       - Chef Server
+       - Resource
+       - Existing Chef Integration
+       - Library: Tasks
+     * - |conditional|
+       - Conditional Workflow
+       - Allows the user to set JavaScript logic. If it resolves to ``true``, |morpheus| will run the Operational Workflow set as the "IF OPERATIONAL WORKFLOW" and if it resolves to ``false``, |morpheus| will run the "ELSE OPERATIONAL WORKFLOW"
+       - N/A (JavaScript logic must be locally sourced, Tasks housed within the associated Workflows may have different sourcing options depending on their types.)
+       - Local
+       - Existing Operational Workflows
+       - Library: Tasks
+     * - |Email|
+       - Email
+       - Send an email from a Workflow
+       - Task Content
+       - Local
+       - SMTP Configured
+       - Library: Tasks
+     * - |groovy|
+       - Groovy script
+       - Executes Groovy Script locally (on |morpheus| app node)
+       - Local, Repository, Url
+       - Local
+       - None
+       - Library: Tasks, Tasks - Script Engines
+     * - |http|
+       - HTTP
+       - Executes REST call for targeting external API's.
+       - Local
+       - Local
+       - None
+       - Library: Tasks
+     * - |javascript|
+       - Javascript
+       - Executes Javascript locally (on |morpheus| app node)
+       - Local
+       - Local
+       - None
+       - Library: Tasks, Tasks - Script Engines
+     * - |jruby|
+       - jRuby Scirpt
+       - Executes Ruby script locally (on |morpheus| app node)
+       - Local, Repository, Url
+       - Local
+       - None
+       - Library: Tasks, Tasks - Script Engines
+     * - |libraryscript|
+       - Library Script
+       - Creates a Task from an existing Library Script (|LibTemScr|)
+       - Library Script
+       - Resource
+       - Existing Library Script
+       - Library: Tasks
+     * - |template|
+       - Library Template
+       - Creates a Task from an existing Library Template (|LibTemSpe|)
+       - Library Template
+       - Resource
+       - Existing Library Templates
+       - Library: Tasks
+     * - |nestedworkflow|
+       - Nested Workflow
+       - Embeds a Workflow into a Task which allows the Workflow to be nested within other Workflows for situations when common Task sets are frequently used in Workflows
+       - N/A
+       - Local
+       - N/A
+       - Library: Tasks
+     * - |powershell|
+       - PowerShell Script
+       - Execute PowerShell Script on the Target Resource
+       - Local, Repository, Url
+       - Remote, Resource, Local
+       - None
+       - Library: Tasks
+     * - |puppet|
+       - Puppet Agent Install
+       - Executes Puppet Agent bootstrap, writes ``puppet.conf`` and triggers agent checkin. Puppet Integration required
+       - Puppet Master
+       - Resource
+       - Existing Puppet Integration
+       - Library: Tasks
+     * - |Python|
+       - Python Script
+       - Executes Python Script locally
+       - Local, Repository, Url
+       - Local
+       - ``virtualenv`` installed on Appliance Nodes
+       - Library: Tasks, Tasks - Script Engines
+     * - |restart|
+       - Restart
+       - Restarts target VM/Host/Container and confirms startup status before executing next task in Workflow
+       - System
+       - Resource
+       - None
+       - Library: Tasks
+     * - |shellscript|
+       - Shell Script
+       - Executes Bash script on the target resource
+       - Local, Repository, Url
+       - Local, Remote, Resource
+       - None
+       - Library: Tasks
+     * - |vro|
+       - vRealize Orchestrator Workflow
+       - Executes vRO Workflow on the Target Resource
+       - vRO Integration
+       - Local, Resource
+       - Existing vRO Integration
+       - Library: Tasks
+     * - |wa|
+       - Write Attributes
+       - Add arbitrary values to the Attributes map of the target resource
+       - N/A
+       - Local
+       - Provide map of values as valid JSON
+       - Library: Tasks
 
 .. rst-class:: hidden
   Task Configuration

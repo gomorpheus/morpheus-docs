@@ -32,6 +32,15 @@ During the storage setup portion of the Ubuntu installation, keep in mind that U
 
 .. image:: /images/vmeInstall/ub-storage.png
 
+External Storage Setup
+``````````````````````
+
+Though it is possible to utilize local storage on the hosts, more commonly |clusters| will be configured to interface with external storage. Currently, only connecting to external storage over iSCSI is supported but support for Fibre Channel is also planned for the very near future. External storage provides a number of redundancy capabilities that aren't realized through local storage, such as automatic failover when a host is lost and migrating workloads to new hosts with zero downtime.
+
+Configuring connections to external storage must be done on each host at the OS level. This is part of preparing the hosts for installation of the |morpheus| console and manager. This is done by going to the Ubuntu command line on each host and configuring the initiator to talk to the target. Once this is done and the disk is presented up to the OS, the groundwork is laid for configuring the datastore within |manager|. This process of creating a new datastore within the Manager UI is shown later in this guide following installation.
+
+How the storage traffic is routed will depend on networking configuration. Having dedicated storage interfaces, as shown in the network examples from the previous section, is important for optimal throughput and resiliency. After establishing the datastore in the |manager| UI, this will ensure the operating system is utilizing those dedicated routes rather than through other interfaces that might be available.
+
 Console Installation and Configuration
 ``````````````````````````````````````
 
@@ -144,4 +153,4 @@ The rest of the process involves naming the account on the manager and entering 
 
 After clicking through to the next section, you will paste in your license key. Click "Complete Setup" and you will ne dropped into the UI for the first time. Installation is now complete!
 
-At this point, you should consider doing some of your first environmental setup tasks, such as creating your first Group and creating your first Cloud. These will be required to establish the first |cluster| object within the UI. Additional documentation on Groups, Clouds, and Clusters can be found elsewhere in this documentation portal.
+At this point, you are ready to move on to the next section which goes over the initial environmental setup steps that must be undertaken to add the first |cluster| to the |manager|.

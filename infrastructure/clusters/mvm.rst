@@ -139,6 +139,8 @@ As mentioned in the previous section, this example is starting with three provis
 .. rst-class:: hidden
   .. image:: /images/infrastructure/clusters/mvm/createClusterClosed.png
 
+.. begin_cluster_provisioning
+
 |morpheus| gives the option to select a hyperconverged infrastructure (HCI) **LAYOUT** or non-HCI. In this example, the HCI Layout is used (requires a three-node minimum). Next, configure the names and IP addresses for the host boxes (**SSH HOST**). The SSH HOST name configuration is simply a display name in |morpheus|, it does not need to be a hostname. By default, configuration space is given for three hosts which is what this example cluster will have. You must at least configure one and it's possible to add more by clicking the (+) button. The **SSH PORT** is pre-configured for port 22, change this value if applicable in your environment. Next, set a pre-existing user on the host boxes (**SSH USERNAME** and **SSH PASSWORD**) and **SSH KEY**. Use a regular user with sudo access.
 
 .. rst-class:: hidden
@@ -156,6 +158,8 @@ Finally, only one **CPU TYPE** is currently supported (``x86_64``) though this m
 .. image:: /images/infrastructure/clusters/mvm/createClusterBottom.png
 
 At this point we've kicked off the process for configuring the cluster nodes. Drill into the Cluster detail page and click on the History tab. Here we can monitor the progress of configuring the cluster. |morpheus| will run scripts to install KVM, install Ceph, install OVS, and to prepare the cluster. In just a short time, the cluster provisioning should complete and the cluster will be ready to deploy workloads.
+
+.. end_cluster_provisioning
 
 Provisioning a Workload
 ^^^^^^^^^^^^^^^^^^^^^^^
