@@ -1,5 +1,5 @@
 MySQL Shell Cluster Single Site JS Script
-========================================
+=========================================
 
     .. tabs::
 
@@ -7,10 +7,11 @@ MySQL Shell Cluster Single Site JS Script
 
             .. code-block:: js
 
-                print('Setting up a Multi Site MySQL InnoDB Cluster, \n');
+                print('Setting up a Single Site MySQL InnoDB Cluster, \n');
 
                 var mysqlAdmin = "clusterAdmin";
                 var nodeA = ["mydb-1", "mydb-2", "mydb-3"];
+                var mySqlRouterUserPassword = 'P@ssw0rd!'
                 var clusterA = "A";
                 var dbPass = shell.prompt('Please enter a password for the MySQL clusterAdmin account: ', {type: "password"});
 
@@ -40,6 +41,9 @@ MySQL Shell Cluster Single Site JS Script
                     print('.\nInstances successfully added to the Cluster.');
 
                     print('\nInnoDB Cluster deployed successfully.\n');
+                    
+                    print('\nCreating 'routeruser' for the MySQL routers\n');
+                    cluster.setupRouterAccount('routeruser', {password: mySqlRouterUserPassword})
                 } catch (e) {
                     print('\nThe InnoDB Cluster could not be created.\n\nError: ' + e.message + '\n');
                 }

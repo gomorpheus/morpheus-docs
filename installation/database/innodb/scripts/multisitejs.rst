@@ -12,6 +12,7 @@ MySQL Shell Cluster Multi Site JS Script
                 var mysqlAdmin = "clusterAdmin";
                 var nodeA = ["cdb-1", "cdb-2", "cdb-3"];
                 var nodeB = ["ddb-4", "ddb-5", "ddb-6"];
+                var mySqlRouterUserPassword = 'P@ssw0rd!'
                 var clusterSet = "clusterSet";
                 var clusterA = "A";
                 var clusterB = "B";
@@ -55,6 +56,9 @@ MySQL Shell Cluster Multi Site JS Script
                     });
 
                     print('\nInnoDB Cluster deployed successfully.\n');
+
+                    print('\nCreating 'routeruser' for the MySQL routers\n');
+                    cluster.setupRouterAccount('routeruser', {password: mySqlRouterUserPassword})
                 } catch (e) {
                     print('\nThe InnoDB Cluster could not be created.\n\nError: ' + e.message + '\n');
                 }
