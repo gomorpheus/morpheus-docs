@@ -42,8 +42,8 @@ Creating the first |cluster|
 In preparing the environment, we've already prepped the physical cluster servers but now it's time to provision the actual cluster object within |morpheus|. Begin by navigating to |InfClu| and click :guilabel:`+ ADD CLUSTER`. Currently, the only available cluster type is "HPE VM," which is what we want. Select the correct cluster type and click :guilabel:`NEXT`. On the Group tab, select the Group we created in the previous section and click :guilabel:`NEXT`. On the Name tab, select the Cloud we created in the previous section and enter a name for the cluster. Click :guilabel:`NEXT`.
 
 .. include:: ../infrastructure/clusters/mvm.rst
-  :start_after: .. begin_cluster_provisioning
-  :end_before: .. end_cluster_provisioning
+  :start-after: .. begin_cluster_provisioning
+  :end-before: .. end_cluster_provisioning
 
 Take Note of Virtual Images and Automation
 ``````````````````````````````````````````
