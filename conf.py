@@ -49,6 +49,7 @@ rst_prolog = """
 .. |master tenant| replace:: Master Tenant
 .. |profileObjects| replace:: Clouds
 .. |profileTypes| replace:: Terraform, Key/Value
+.. |mvm| replace:: HPE VM
 
 .. |debianVersions| replace:: 10, 11
 .. |oelVersions| replace:: 7.x (deprecated), 8.x
