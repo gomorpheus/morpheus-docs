@@ -1,16 +1,14 @@
-MVM Clusters
-------------
+HPE VM Clusters
+---------------
 
-.. IMPORTANT:: MVM clusters are currently in an open beta. They are not part of the standard |morpheus| license and are licensed as a separate product. During the open beta, all |morpheus| appliances will be able to provision one MVM cluster with up to three nodes for testing purposes. MVM is not yet ready for production workloads and should only be used on a test basis. Expect that MVM Cluster capabilities, as well as this documentation, will change significantly over the coming months.
-
-MVM virtualization solution is a hypervisor clustering technology utilizing KVM. Beginning with just a few basic Ubuntu boxes, |morpheus| can create a cluster of hypervisor hosts complete with monitoring, failover, easy migration of workloads across the cluster, and zero-downtime maintenance access to hypervisor host nodes. All of this is backed by |morpheus| Tenant capabilities, a highly-granular RBAC and policy engine, and Instance Type library with automation workflows.
+An |mvm| cluster is a hypervisor clustering technology utilizing KVM. Beginning with just a few basic Ubuntu boxes, |morpheus| can create a cluster of hypervisor hosts complete with monitoring, failover, easy migration of workloads across the cluster, and zero-downtime maintenance access to hypervisor host nodes. All of this is backed by |morpheus| Tenant capabilities, a highly-granular RBAC and policy engine, and Instance Type library with automation workflows.
 
 Features
 ^^^^^^^^
 
 **Host Features**
 
-- Automated MVM cluster provisioning
+- Automated |mvm| cluster provisioning
 - CEPH storage configuration for multi-node clusters
 - CEPH summary, a high-level dashboard of CEPH components and status
 - DRS, automatic rebalancing of clusters based on resource consumption
@@ -40,7 +38,7 @@ Features
 - Migration of VMs across hosts
 - Configure automatic failover for individual VMs in the event a host is lost
 - Reconfigure running workloads to resize plan, add/remove disks, and add/remove network interfaces
-- Backup and restore MVM workloads, with optional synthetic full backups
+- Backup and restore |mvm| workloads, with optional synthetic full backups
 - Clone VMs
 - Take snapshots and revert to snapshots
 - |morpheus| library and automation support
@@ -49,21 +47,21 @@ Features
 Base Cluster Details
 ^^^^^^^^^^^^^^^^^^^^
 
-An MVM cluster using the hyperconverged infrastructure (HCI) Layout consists of at least three hosts. Physical hosts are recommended to experience full performance of the MVM solution. In smaller environments, it is possible to create an MVM cluster with three nested virtual machines, a single physical host (non-HCI only), or a single nested virtual machine (non-HCI only) though performance may be reduced. With just one host it won't be possible to migrate workloads between hosts or take advantage of automatic failover. Currently, a host must be a pre-existing Ubuntu 22.04 box with environment and host system requirements contained in this section. |morpheus| handles cluster configuration by providing the IP address(es) for your host(s) and a few other details. Details on adding the cluster to |morpheus| are contained in the next section.
+An |mvm| cluster using the hyperconverged infrastructure (HCI) Layout consists of at least three hosts. Physical hosts are recommended to experience full performance of the |mvm| cluster solution. In smaller environments, it is possible to create an |mvm| cluster with three nested virtual machines, a single physical host (non-HCI only), or a single nested virtual machine (non-HCI only) though performance may be reduced. With just one host it won't be possible to migrate workloads between hosts or take advantage of automatic failover. Currently, a host must be a pre-existing Ubuntu 22.04 box with environment and host system requirements contained in this section. |morpheus| handles cluster configuration by providing the IP address(es) for your host(s) and a few other details. Details on adding the cluster to |morpheus| are contained in the next section.
 
 **Hardware Requirements**
 
 - **Operating System:** Ubuntu 22.04
 - **CPU:** One or more 64-bit x86 CPUs, 1.5 GHz minimum with Intel VT or AMD-V enabled
-- **Memory:** 4 GB minimum. For non-converged Layouts, configure MVM hosts to use shared external storage, such as an NFS share or iSCSI target. Converged Layouts utilize Ceph for clustered storage and require a **4 GB minimum memory per Ceph disk**
+- **Memory:** 4 GB minimum. For non-converged Layouts, configure |mvm| hosts to use shared external storage, such as an NFS share or iSCSI target. Converged Layouts utilize Ceph for clustered storage and require a **4 GB minimum memory per Ceph disk**
 - **Disk Space:** For converged storage, a data disk of at least 500 GB is required for testing. More storage will be needed for production clusters. An operating system disk of 15 GB is also required. Clusters utilizing non-converged Layouts can configure external storage (NFS, etc.) while |morpheus| will configure Ceph for multi-node clusters
-- **Network Connectivity:** MVM hosts must be assigned static IP addresses. They also need DNS resolution of the |morpheus| appliance and Internet access in order to download and install system packages for MVM dependencies, such as KVM, Open vSwitch (OVS), and more
+- **Network Connectivity:** |mvm| hosts must be assigned static IP addresses. They also need DNS resolution of the |morpheus| appliance and Internet access in order to download and install system packages for |mvm| dependencies, such as KVM, Open vSwitch (OVS), and more
 
-.. NOTE:: Ubuntu 22.04 uses ``netplan`` for networking and it is the responsibility of the customer to establish recommended networking configurations prior to provisioning an MVM cluster. To configure a static IP address, change into the directory holding the config files (``cd /etc/netplan``) and edit the existing configuration file (``/etc/netplan/50-cloud-init.yaml`` or ``/etc/netplan/00-installer-config.yaml`` or ``/etc/netplan/01-netcfg.yaml``). If desired, backup the existing configuration prior to editing it (``cp /etc/netplan/<file-name>.yaml /etc/netplan/<file-name>.yaml.bak``). For additional information on configuration file formatting, refer to ``netplan`` `documentation <https://netplan.readthedocs.io/en/stable/>`_. Once the configuration is updated, validate and apply it (``netplan try``). The ``try`` command will validate the configuration and apply it if it's valid. If invalid, it will automatically be rolled back.
+.. NOTE:: Ubuntu 22.04 uses ``netplan`` for networking and it is the responsibility of the customer to establish recommended networking configurations prior to provisioning an |mvm| cluster. To configure a static IP address, change into the directory holding the config files (``cd /etc/netplan``) and edit the existing configuration file (``/etc/netplan/50-cloud-init.yaml`` or ``/etc/netplan/00-installer-config.yaml`` or ``/etc/netplan/01-netcfg.yaml``). If desired, backup the existing configuration prior to editing it (``cp /etc/netplan/<file-name>.yaml /etc/netplan/<file-name>.yaml.bak``). For additional information on configuration file formatting, refer to ``netplan`` `documentation <https://netplan.readthedocs.io/en/stable/>`_. Once the configuration is updated, validate and apply it (``netplan try``). The ``try`` command will validate the configuration and apply it if it's valid. If invalid, it will automatically be rolled back.
 
 .. NOTE:: Clustered storage needs as much network bandwidth as possible. Network interfaces of at least 10 Gbps with jumbo frames enabled are required for clustered storage and for situations when all traffic is running through the management interface (when no compute or storage interface is configured). It's highly likely that performance will be unacceptable with any lower configurations.
 
-.. list-table:: **MVM Network Communication Ports**
+.. list-table:: **|mvm| Network Communication Ports**
    :widths: auto
    :header-rows: 1
 
@@ -73,48 +71,48 @@ An MVM cluster using the hyperconverged infrastructure (HCI) Layout consists of 
      - Port
      - Protocol
    * - |morpheus| Agent communication with the |morpheus| appliance
-     - MVM Host
+     - |mvm| Host
      - |morpheus| appliance server
      - 443
      - TCP
-   * - MVM host configuration and management
+   * - |mvm| host configuration and management
      - |morpheus| appliance server
-     - MVM Host
+     - |mvm| Host
      - 22
      - TCP
-   * - MVM interhost communication for clustered deployments
-     - MVM Host
-     - MVM Host
+   * - |mvm| interhost communication for clustered deployments
+     - |mvm| Host
+     - |mvm| Host
      - 22
      - TCP
    * - |morpheus| server SSH access for deployed virtual machines
      - |morpheus| appliance server
-     - MVM-hosted virtual machines
+     - |mvm|-hosted virtual machines
      - 22
      - TCP
    * - |morpheus| server WinRM (HTTP) access for deployed virtual machines
      - |morpheus| appliance server
-     - MVM-hosted virtual machines
+     - |mvm|-hosted virtual machines
      - 5985
      - TCP
    * - |morpheus| server WinRM (HTTPS) access for deployed virtual machines
      - |morpheus| appliance server
-     - MVM-hosted virtual machines
+     - |mvm|-hosted virtual machines
      - 5986
      - TCP
    * - Ceph Storage
-     - MVM Host
-     - MVM Host
+     - |mvm| Host
+     - |mvm| Host
      - 3300
      - TCP
    * - Ceph Storage
-     - MVM Host
-     - MVM Host
+     - |mvm| Host
+     - |mvm| Host
      - 6789
      - TCP
    * - Ceph MDS/OSD
-     - MVM Host
-     - MVM Host
+     - |mvm| Host
+     - |mvm| Host
      - 6800-7300
      - TCP
 
@@ -133,12 +131,12 @@ In this example cluster, each host box consists of:
 ..
   Multiple disks may be used and they will be added to the total Ceph storage in one large volume. In the DATA DEVICE configuration during cluster setup, give a comma-separated list of disk devices if required.
 
-MVM clusters must also live in |morpheus|-type Clouds (See |InfClo|). A pre-existing |morpheus| Cloud may be used or a new Cloud could be created to handle MVM management.
+|mvm| clusters must also live in |morpheus|-type Clouds (See |InfClo|). A pre-existing |morpheus| Cloud may be used or a new Cloud could be created to handle |mvm| management.
 
 Provisioning the Cluster
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-As mentioned in the previous section, this example is starting with three provisioned Ubuntu 22.04 boxes. I also have a |morpheus|-type Cloud to house the cluster. Begin the cluster creation process from the Clusters list page (|InfClu|). Click :guilabel:`+ ADD CLUSTER` and select "MVM Cluster".
+As mentioned in the previous section, this example is starting with three provisioned Ubuntu 22.04 boxes. I also have a |morpheus|-type Cloud to house the cluster. Begin the cluster creation process from the Clusters list page (|InfClu|). Click :guilabel:`+ ADD CLUSTER` and select "|mvm|".
 
 .. image:: /images/infrastructure/clusters/mvm/createClusterClosed.png
 
@@ -162,20 +160,20 @@ At this point we've kicked off the process for configuring the cluster nodes. Dr
 Provisioning a Workload
 ^^^^^^^^^^^^^^^^^^^^^^^
 
-At this point, the cluster is ready for workloads to be provisioned to it. The system default Ubuntu Instance Type contains a compatible Layout for MVM deployment. Add an Instance from the Instances list page (|ProIns|). After selecting the Instance Type, choose a Group that allows for selection of the |morpheus|-type Cloud containing the MVM cluster.
+At this point, the cluster is ready for workloads to be provisioned to it. The system default Ubuntu Instance Type contains a compatible Layout for |mvm| deployment. Add an Instance from the Instances list page (|ProIns|). After selecting the Instance Type, choose a Group that allows for selection of the |morpheus|-type Cloud containing the |mvm| cluster.
 
 .. image:: /images/infrastructure/clusters/mvm/groupCloud.png
 
-After moving to the next tab, select a Plan based on resource needs. From the **RESOURCE POOL** field, select the desired MVM cluster. When configuring **VOLUMES** for the new workload, note that space can be claimed from the Ceph volume. Within **NETWORKS**, we can add the new workload to one of the **VLANS** set up as part of cluster creation. Finally, note that we can choose the HOST the workload should run on.
+After moving to the next tab, select a Plan based on resource needs. From the **RESOURCE POOL** field, select the desired |mvm| cluster. When configuring **VOLUMES** for the new workload, note that space can be claimed from the Ceph volume. Within **NETWORKS**, we can add the new workload to one of the **VLANS** set up as part of cluster creation. Finally, note that we can choose the HOST the workload should run on.
 
 .. image:: /images/infrastructure/clusters/mvm/configureTab.png
 
-Review and complete the provisioning wizard. After a short time, the workload should be up and running. With a workload now running on the cluster, we can take a look at some of the monitoring, migration, failover, and other actions we can take for workloads running on MVM clusters.
+Review and complete the provisioning wizard. After a short time, the workload should be up and running. With a workload now running on the cluster, we can take a look at some of the monitoring, migration, failover, and other actions we can take for workloads running on |mvm| clusters.
 
 Monitoring the Cluster
 ^^^^^^^^^^^^^^^^^^^^^^
 
-With the server provisioned and a workload running, take a look at the monitoring and actions capabilities on the cluster detail page (|InfClu|, then click on the new MVM cluster). View cluster performance and resource usage (Summary and Monitoring tabs), drill into individual hosts (Hosts tab), see individual workloads (VMs tab), and more.
+With the server provisioned and a workload running, take a look at the monitoring and actions capabilities on the cluster detail page (|InfClu|, then click on the new |mvm| cluster). View cluster performance and resource usage (Summary and Monitoring tabs), drill into individual hosts (Hosts tab), see individual workloads (VMs tab), and more.
 
 **Moving Workloads Between Hosts**
 
@@ -193,7 +191,7 @@ Within a short time, the workload is moved to the new host.
 
 The process of adding hosts to a pre-existing cluster is very similar to the process of provisioning the cluster initially. The requirements for the new worker node will be identical to the nodes initially added when the cluster was first provisioned. See the earlier sections in this guide for additional details on configuring the worker nodes.
 
-To add the host, begin from the MVM Cluster detail page (selected from the list at |InfClu|). From the Cluster detail page, click :guilabel:`ACTIONS` and select "Add Worker". Configurations required are the same as those given when the cluster was first created. Refer to the section above on "Provisioning the Cluster" for a detailed description of each configuration.
+To add the host, begin from the |mvm| Cluster detail page (selected from the list at |InfClu|). From the Cluster detail page, click :guilabel:`ACTIONS` and select "Add Worker". Configurations required are the same as those given when the cluster was first created. Refer to the section above on "Provisioning the Cluster" for a detailed description of each configuration.
 
 Once |morpheus| has completed its configuration scripts and joined the new worker node to the cluster, it will appear in a ready state within the Hosts tab of the Cluster detail page. When provisioning workloads to this Cluster in the future, the new node will be selectable as a target host for new Instances. It will also be an available target for managing placement of existing VMs running on the cluster.
 
@@ -203,13 +201,13 @@ Once |morpheus| has completed its configuration scripts and joined the new worke
 
 **Maintenance Mode**
 
-MVM cluster hosts can be easily taken out of service for maintenance when needed. From the host detail page, click :guilabel:`ACTIONS` and then click "Enter Maintenance." When entering maintenance mode, the host will be removed from the pool. Live VMs that can be migrated will be moved to new hosts. VMs that are powered off will also be moved when possible. When a live VM cannot be moved (such as if it's "pinned" to the host), the host will not go into maintenance mode until that situation is cleared. You could manually move a VM to a new host or you could power it down if it's non-essential. After taking that action, attempt to put the host into maintenance mode once again. |morpheus| UI provides a helpful dialog which shows you which VMs live on the host are to be moved as the host goes into maintenance mode. When maintenance has finished, go back to the :guilabel:`ACTIONS` menu and select "Leave Maintenance."
+|mvm| cluster hosts can be easily taken out of service for maintenance when needed. From the host detail page, click :guilabel:`ACTIONS` and then click "Enter Maintenance." When entering maintenance mode, the host will be removed from the pool. Live VMs that can be migrated will be moved to new hosts. VMs that are powered off will also be moved when possible. When a live VM cannot be moved (such as if it's "pinned" to the host), the host will not go into maintenance mode until that situation is cleared. You could manually move a VM to a new host or you could power it down if it's non-essential. After taking that action, attempt to put the host into maintenance mode once again. |morpheus| UI provides a helpful dialog which shows you which VMs live on the host are to be moved as the host goes into maintenance mode. When maintenance has finished, go back to the :guilabel:`ACTIONS` menu and select "Leave Maintenance."
 
 .. image:: /images/infrastructure/clusters/mvm/enterMaintenance.png
 
 **Failover**
 
-MVM supports automatic failover of running workloads in the event of the loss of a host. Administrators can control the failover behavior through the "Manage Placement" action on any running VM. From the VM detail page, click :guilabel:`ACTIONS` and select "Manage Placement". Any VM with a placement strategy of "Auto" or "Failover" will be eligible for an automatic move in the event its host is lost. When the loss of a host does occur, the workload will be up and running from a different cluster host within just a short time if it's configured to be moved during an automatic failover event. Any VMs pinned to a lost host will not be moved and will not be accessible if the host is lost. When the host is restored, those VMs will be in a stopped state and may be restarted if needed.
+|mvm| supports automatic failover of running workloads in the event of the loss of a host. Administrators can control the failover behavior through the "Manage Placement" action on any running VM. From the VM detail page, click :guilabel:`ACTIONS` and select "Manage Placement". Any VM with a placement strategy of "Auto" or "Failover" will be eligible for an automatic move in the event its host is lost. When the loss of a host does occur, the workload will be up and running from a different cluster host within just a short time if it's configured to be moved during an automatic failover event. Any VMs pinned to a lost host will not be moved and will not be accessible if the host is lost. When the host is restored, those VMs will be in a stopped state and may be restarted if needed.
 
 This three-node cluster has three VMs running on the first host:
 
@@ -236,11 +234,11 @@ When the lost host returns, the moved VMs will come back to their original host.
 
 **Adding an NFS Datastore**
 
-Existing NFS shares can be used with |morpheus| MVM clusters for virtual machine storage. These are added and viewed from the Storage tab of the MVM cluster detail page and, once added and active, become selectable as targets for virtual machine storage.
+Existing NFS shares can be used with |morpheus| |mvm| clusters for virtual machine storage. These are added and viewed from the Storage tab of the |mvm| cluster detail page and, once added and active, become selectable as targets for virtual machine storage.
 
-.. NOTE:: Ensure NFS is properly configured to allow all of the MVM hosts to access the shared directory, including permissions to read and write. For backup purposes, it's also helpful to give |morpheus| access to NFS.
+.. NOTE:: Ensure NFS is properly configured to allow all of the |mvm| hosts to access the shared directory, including permissions to read and write. For backup purposes, it's also helpful to give |morpheus| access to NFS.
 
-Start by navigating to the Storage tab of the MVM cluster detail page. Make sure the Data Stores subtab is also selected. Here you will see a list of existing datastores with some additional information, such as type, capacity, and status. Click :guilabel:`ADD`. Enter the NAME for the datastore in |morpheus| and select the TYPE as NFS Pool. Note that the datastore name cannot be changed once it has been created. This will update the available fields to include the additional fields needed to integrate the NFS server. Enter the SOURCE HOST which is the hostname or the IP address of the NFS server. Finally, enter the SOURCE DIRECTORY which is the directory path of the NFS share. Click :guilabel:`SAVE`.
+Start by navigating to the Storage tab of the |mvm| cluster detail page. Make sure the Data Stores subtab is also selected. Here you will see a list of existing datastores with some additional information, such as type, capacity, and status. Click :guilabel:`ADD`. Enter the NAME for the datastore in |morpheus| and select the TYPE as NFS Pool. Note that the datastore name cannot be changed once it has been created. This will update the available fields to include the additional fields needed to integrate the NFS server. Enter the SOURCE HOST which is the hostname or the IP address of the NFS server. Finally, enter the SOURCE DIRECTORY which is the directory path of the NFS share. Click :guilabel:`SAVE`.
 
 Once the modal is saved, it will take a few minutes to initialize the new datastore and show a successful online status in |morpheus|. Once this initialization process is completed, the datastore can now be used as VM storage for cluster.
 
@@ -249,7 +247,7 @@ Once the modal is saved, it will take a few minutes to initialize the new datast
 Image Prep (Windows)
 ^^^^^^^^^^^^^^^^^^^^
 
-This section will go through the steps to prepare a Windows image which can be successfully provisioned to MVM clusters. Additionally, this image can serve as a template from which additional images and |morpheus| Library items can be built. In this example case, we'll start from downloading a Windows Server 2019 ISO directly from the Microsoft download center and go all the way through to creating a new Instance Type in |morpheus| that users can provision on-demand.
+This section will go through the steps to prepare a Windows image which can be successfully provisioned to |mvm| clusters. Additionally, this image can serve as a template from which additional images and |morpheus| Library items can be built. In this example case, we'll start from downloading a Windows Server 2019 ISO directly from the Microsoft download center and go all the way through to creating a new Instance Type in |morpheus| that users can provision on-demand.
 
 With the Windows ISO already downloaded, begin by uploading the ISO as a Virtual Image in |morpheus|. Virtual Images are added in |LibVir|. Click :guilabel:`+ ADD` and then choose "ISO." Before adding the file itself, set the following configurations on the Virtual Image:
 
@@ -264,17 +262,17 @@ With the configurations set, it's time to upload the ISO to |morpheus|. Keep in 
 .. image:: /images/infrastructure/clusters/mvm/imagePrep/progress.png
   :width: 50%
 
-Next, we'll provision a VM from the ISO using the built-in MVM Instance Type. Once running, we will configure the VM to any specific requirements and convert it to a template. Navigate to |ProIns| and click :guilabel:`+ ADD`. On the TYPE tab of the Instance provisioning wizard, we select the Instance Type to provision. In this case, select "MVM" and click :guilabel:`NEXT`.
+Next, we'll provision a VM from the ISO using the built-in |mvm| Instance Type. Once running, we will configure the VM to any specific requirements and convert it to a template. Navigate to |ProIns| and click :guilabel:`+ ADD`. On the TYPE tab of the Instance provisioning wizard, we select the Instance Type to provision. In this case, select "|mvm|" and click :guilabel:`NEXT`.
 
 .. image:: /images/infrastructure/clusters/mvm/imagePrep/provisionMvmInstanceType.png
   :width: 50%
 
-On the GROUP tab, select the Group and Cloud containing the target MVM Cluster and provide a name for the new Instance. In my case, I have an automatic naming policy setting my Instance name, but depending on your appliance configuration you may need to enter a custom name. Click :guilabel:`NEXT`.
+On the GROUP tab, select the Group and Cloud containing the target |mvm| Cluster and provide a name for the new Instance. In my case, I have an automatic naming policy setting my Instance name, but depending on your appliance configuration you may need to enter a custom name. Click :guilabel:`NEXT`.
 
 .. image:: /images/infrastructure/clusters/mvm/imagePrep/groupTab.png
   :width: 50%
 
-On the CONFIGURE tab, first select the IMAGE. Select the Windows server ISO that was uploaded in the previous step. Based on the minimum memory configuration that was set on the Virtual Image, Plans which are too small will be filtered out. Among compatible Plans, select one that meets your requirements. Next, set the RESOURCE POOL, which is the MVM cluster you're targeting. Configure disks and disk sizes, as well as network details (this will vary based on MVM cluster configuration). Finally, select the HOST, which is the MVM host within the cluster that the new Instance should initially be provisioned onto.
+On the CONFIGURE tab, first select the IMAGE. Select the Windows server ISO that was uploaded in the previous step. Based on the minimum memory configuration that was set on the Virtual Image, Plans which are too small will be filtered out. Among compatible Plans, select one that meets your requirements. Next, set the RESOURCE POOL, which is the |mvm| cluster you're targeting. Configure disks and disk sizes, as well as network details (this will vary based on |mvm| cluster configuration). Finally, select the HOST, which is the |mvm| host within the cluster that the new Instance should initially be provisioned onto.
 
 .. image:: /images/infrastructure/clusters/mvm/imagePrep/configTabTop.png
   :width: 50%
@@ -286,7 +284,7 @@ As a final step, we need to also expand the "Advanced Options" section and make 
 
 The final two tabs of the wizard, AUTOMATION and REVIEW, do not require any configuration changes though you may want to review the Instance settings on the final tab. When done, click :guilabel:`COMPLETE`.
 
-Click on the newly provisioning Instance from the Instances list page. Since this image is being provisioned for the first time, the image must be uploaded to the MVM host. This can take a little bit of time but any future attempts to provision workloads from this image will skip this step. Wait for the Instance to fully complete and appear in a green "Ready" status.
+Click on the newly provisioning Instance from the Instances list page. Since this image is being provisioned for the first time, the image must be uploaded to the |mvm| host. This can take a little bit of time but any future attempts to provision workloads from this image will skip this step. Wait for the Instance to fully complete and appear in a green "Ready" status.
 
 Once the Instance has fully finished provisioning, launch a console session by clicking :guilabel:`ACTIONS` and then "Open Console." This will open a new window with a console session into the VM.
 
@@ -366,7 +364,7 @@ At this point all image preparation steps are completed. |morpheus| library item
   Decommissioning a CEPH-backed Host
   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-  |morpheus| MVM clusters utilize global pools and for that reason, we need to remove the object storage daemon (OSD) from each host manually prior to decommissioning the host and removing it from the cluster.
+  |morpheus| |mvm| clusters utilize global pools and for that reason, we need to remove the object storage daemon (OSD) from each host manually prior to decommissioning the host and removing it from the cluster.
 
   First, put the host into maintenance mode and allow time for any running VMs to be migrated to other hosts. See the section above, if needed, for additional details on maintenance mode.
 
