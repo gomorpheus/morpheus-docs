@@ -138,7 +138,7 @@ Provisioning the Cluster
 
 As mentioned in the previous section, this example is starting with three provisioned Ubuntu 22.04 boxes. I also have a |morpheus|-type Cloud to house the cluster. Begin the cluster creation process from the Clusters list page (|InfClu|). Click :guilabel:`+ ADD CLUSTER` and select "|mvm|".
 
-.. image:: /images/infrastructure/clusters/mvm/createClusterClosed.png
+.. image:: /images/infrastructure/clusters/mvm/createHpevmCluster.png
 
 |morpheus| gives the option to select a hyperconverged infrastructure (HCI) **LAYOUT** or non-HCI. In this example, the HCI Layout is used (requires a three-node minimum). Next, configure the names and IP addresses for the host boxes (**SSH HOST**). The SSH HOST name configuration is simply a display name in |morpheus|, it does not need to be a hostname. By default, configuration space is given for three hosts which is what this example cluster will have. You must at least configure one and it's possible to add more by clicking the (+) button. The **SSH PORT** is pre-configured for port 22, change this value if applicable in your environment. Next, set a pre-existing user on the host boxes (**SSH USERNAME** and **SSH PASSWORD**) and **SSH KEY**. Use a regular user with sudo access.
 
