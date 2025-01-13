@@ -272,7 +272,7 @@ When adding a new file share, configure the following:
 
 When done, click :guilabel:`Save changes`.
 
-.. image:: /image/vmeInstall/editFileshare.png
+.. image:: /images/vmeInstall/editFileshare.png
   :width: 50%
 
 .. IMPORTANT:: You must configure the NFS share to give |manager| read and write access if you want to be able to read images from and write images to the file share. Configuring NFS file shares goes beyond the scope of this guide. Deleting files from an integrated file share deletes the actual file and not just the representation of the file in |morpheus|. This includes Virtual Images. Deleting a Virtual Image that is backed by a QCOW image file stored in an integrated file share will also cause the file itself to be deleted in addition to the Virtual Image object within |morpheus|.
@@ -288,7 +288,7 @@ With the file share integrated, we can now create Virtual Images which are backe
 
 The entered path to the QCOW image should not include the name of the NFS share or the name of the file itself. See the portion highlighted in the screenshot:
 
-.. image:: /image/vmeInstall/viewQcow.png
+.. image:: /images/vmeInstall/viewQcow.png
 
 It also should only be the path to the folder containing the QCOW image. The file name itself should not be part of the path. For example, ``templates/qcow/ubuntu/server/2204/011025``. Click :guilabel:`Save changes`.
 
