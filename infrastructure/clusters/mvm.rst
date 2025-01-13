@@ -164,7 +164,7 @@ At this point we've kicked off the process for configuring the cluster nodes. Dr
 Provisioning a Workload
 ^^^^^^^^^^^^^^^^^^^^^^^
 
-At this point, the cluster is ready for workloads to be provisioned to it. Within the Instance provisioning wizard (See |ProIns| documentation for more details on provisioning), there is now the "HPE VM" Instance Type. This Instance will allow you to choose from any |cluster|-compatible images within your environment. Out of the box, |morpheus| also includes many compatible images for testing and for branching your own images from.
+At this point, the cluster is ready for workloads to be provisioned to it. Within the Instance provisioning wizard (See |ProIns| documentation for more details on provisioning), there is now the "HPE VM" Instance Type. This Instance will allow you to choose from any |cluster|-compatible images within your environment. Out of the box, |morpheus| does not include any compatible images but there is a section later in this guide covering the process of onboarding existing QCOW images into the UI as Virtual Images and another section covering the process of prepping Windows images from the downloaded ISO.
 
 .. rst-class:: hidden
   .. image:: /images/infrastructure/clusters/mvm/groupCloud.png
@@ -254,6 +254,45 @@ Once the modal is saved, it will take a few minutes to initialize the new datast
 
 .. rst-class:: hidden
   .. image:: /images/infrastructure/clusters/mvm/addNfsDatastore.png
+
+Utilizing Existing QCOW Images from an NFS File Share
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Integrated NFS shares can be used both as a repository for |cluster| images and as a target for saving new images from existing VMs. This offers benefits of greatly expanding the available storage compared to what's available on the |manager| VM, insulates you from issues that can arise from images completely filling the manager storage, and allows for the same images to be easily integrated with multiple |morpheus| appliances.
+
+To begin, we need the NFS file share integrated with |morpheus|. This is done in the |InfSto| section of the UI. This guide assumes the NFS file share is pre-existing and the |manager| can reach it. Actually setting up an NFS file share goes beyond the scope of this guide. From the File Shares tab, check to see the desired file share is already integrated. If needed, you can add one by clicking :guilabel:`+ ADD` and then selecting "NFSv3".
+
+When adding a new file share, configure the following:
+
+- **NAME:** A friendly name for the file share within |morpheus|
+- **HOST:** The IP address or hostname for the NFS file share server
+- **EXPORT FOLDER:** The path to the folder that should be mounted to the manager
+- **ACTIVE:** Must be checked to be able to consume this file share elsewhere in |manager| UI
+- **DEFAULT VIRTUAL IMAGE STORE:** (Optional) Select if you wish this file share to be the default store for newly uploaded or generated images
+
+When done, click :guilabel:`Save changes`.
+
+.. image:: /image/vmeInstall/editFileshare.png
+  :width: 50%
+
+.. IMPORTANT:: You must configure the NFS share to give |manager| read and write access if you want to be able to read images from and write images to the file share. Configuring NFS file shares goes beyond the scope of this guide. Deleting files from an integrated file share deletes the actual file and not just the representation of the file in |morpheus|. This includes Virtual Images. Deleting a Virtual Image that is backed by a QCOW image file stored in an integrated file share will also cause the file itself to be deleted in addition to the Virtual Image object within |morpheus|.
+
+With the file share integrated, we can now create Virtual Images which are backed by QCOW images that are pre-existing in the file share. Navigate to |LibVir| and click :guilabel:`+ ADD`. From the dropdown, select "QCOW2". Make the configurations specified below. Those not mentioned can often be left on the default value. For a deeper explanation of configurations not mentioned here, see the dedicated section of |morpheus| documentation on Virtual Images.
+
+- **NAME:** A friendly name for the image in |morpheus|
+- **OPERATING SYSTEM:** Specify the operating system of the image
+- **MINIMUM MEMORY:** Enter a minimum memory value and |morpheus| will not allow the image to be provisioned using a plan with lower memory
+- **BUCKET:** Select the NFS share integrated in the previous step
+- **CREATE IMAGE ID:** Set to "URL/PATH"
+- **URL:** Enter the path to the QCOW image within the file share. See the next paragraph for a deeper explanation of how to enter the path properly
+
+The entered path to the QCOW image should not include the name of the NFS share or the name of the file itself. See the portion highlighted in the screenshot:
+
+.. image:: /image/vmeInstall/viewQcow.png
+
+It also should only be the path to the folder containing the QCOW image. The file name itself should not be part of the path. For example, ``templates/qcow/ubuntu/server/2204/011025``. Click :guilabel:`Save changes`.
+
+With the NFS file share integrated and the Virtual Image created, the image is now usable from the provisioning wizard. This guide won't fully cover the use of the provisioning wizard but from the Configure tab of the wizard, the image is now selectable (assuming you've selected a compatible provisioning target). Additionally, we can now click into the detail page for running Instances and save them to images backed by the NFS file share. From the Instance detail page, click Actions, then "Import as Image." You'll be able to set a name for the new image and specify the NFS file share as the target bucket.
 
 Image Prep (Windows)
 ^^^^^^^^^^^^^^^^^^^^
