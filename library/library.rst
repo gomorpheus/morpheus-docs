@@ -12,4 +12,5 @@ Library
    options/options.rst
    templates/templates.rst
    integrations/library_integrations.rst
+   os/os.rst
    /troubleshooting/Variables_Examples.rst
