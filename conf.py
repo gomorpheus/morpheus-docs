@@ -84,6 +84,7 @@ rst_prolog = """
 .. |LibTemSec| replace:: Library > Templates > Security Packages
 .. |LibTemClu| replace:: Library > Templates > Cluster Packages
 .. |LibInt| replace:: Library > Integrations
+.. |LibOpe| replace:: Library > Operating Systems
 .. |Pro| replace:: Provisioning
 .. |ProCat| replace:: Provisioning > Catalog
 .. |ProCatInv| replace:: Provisioning > Catalog > Inventory
