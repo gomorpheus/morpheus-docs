@@ -608,6 +608,24 @@ Morpheus Agent OS Support
      - linux
      - suse
      - 1
+   * - suse enterprise 15
+     - 32
+     - suse
+     - suse.15
+     - suse
+     - 15
+     - linux
+     - suse
+     - 1
+   * - suse enterprise 15 64-bit
+     - 64
+     - suse
+     - suse.15.64
+     - suse
+     - 15
+     - linux
+     - suse
+     - 1
    * - suse enterprise 64-bit
      - 64
      - suse
