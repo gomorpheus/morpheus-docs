@@ -99,7 +99,7 @@ Services
    * - RabbitMQ
      - |rmqbranch|
      - |rmqver|
-     - |checkmark| 
+     - 
    * - Tomcat
      -
      - |tcver|
@@ -107,7 +107,7 @@ Services
    * - Nginx
      -
      - |nginxver|
-     - |checkmark| 
+     - 
    * - OpenSSL
      -
      - |openssl|, |openssl_fips| (FIPS)
@@ -115,7 +115,7 @@ Services
    * - Java
      -
      - |java|
-     - |checkmark| 
+     - 
    * - Java (macOS agent)
      -
      - |java-mac|
@@ -140,7 +140,7 @@ Services
      - Updated to |nodePackageVer|
    * - Morpheus Linux Agent
      - |linuxagentver|
-     - Updated to |linuxagentver|
+     - No changes
    * - Morpheus Windows Agent
      - |winagentver|
      - No changes
