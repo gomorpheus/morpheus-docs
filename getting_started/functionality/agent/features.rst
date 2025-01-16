@@ -9,7 +9,7 @@ The installed |morpheus| Agent captures application logs and sends them back to 
 
 **Monitoring and Guidance**
 
-|morpheus| provides robust monitoring into the workloads it manages. For example, from Instance detail pages, usage metrics are tracked on the Summary and Monitoring tabs. The available metrics are significantly improved when |morpheus| Agent is installed on the workload. |morpheus| will make a best effort to gather this information in the absence of an installed Agent but for some Cloud types this is not possible. The table below shows the usage metrics |morpheus| can gather with and without the Agent.
+|morpheus| provides robust monitoring into the workloads it manages. For example, from Instance detail pages, usage metrics are tracked on the Summary and Monitoring tabs. The available metrics are significantly improved when |morpheus| Agent is installed on the workload. |morpheus| will make a best effort to gather this information in the absence of an installed Agent but for some Cloud types this is not possible. The table below shows the usage metrics |morpheus| can gather with and without the Agent (though the exact metric available without the Agent will vary by Cloud).
 
 +---------------------------+-------------------------+----------------+-------------------+
 | **Category**              | **Statistic**           | **With Agent** | **Without Agent** |
@@ -24,9 +24,9 @@ The installed |morpheus| Agent captures application logs and sends them back to 
 +---------------------------+-------------------------+----------------+-------------------+
 | Storage                   | Used Memory             | Yes            | No                |
 +---------------------------+-------------------------+----------------+-------------------+
-| Processing                | System CPU %            | Yes            | Yes               |
+| Processing                | System CPU %            | Yes            | No                |
 +---------------------------+-------------------------+----------------+-------------------+
-| Processing                | User CPU %              | Yes            | No                |
+| Processing                | User CPU %              | Yes            | Yes               |
 +---------------------------+-------------------------+----------------+-------------------+
 | IOPS                      | Total IOPS              | Yes            | No                |
 +---------------------------+-------------------------+----------------+-------------------+
@@ -57,7 +57,7 @@ File Templates are stored templated text files, primarily config files (for exam
 
 **Firewall Management**
 
-When "Local Firewall" is enabled for a Cloud (see the Advanced Options section on the Add/Edit Cloud modal), the |morpheus| Agent can manage host or VM IP Table (firewall) rules for Linux workloads. 
+When "Local Firewall" is enabled for a Cloud (see the Advanced Options section on the Add/Edit Cloud modal), the |morpheus| Agent can manage host or VM IP Table (firewall) rules for Linux workloads.
 
 **Summary and Additional benefits:**
 
