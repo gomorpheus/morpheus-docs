@@ -70,4 +70,5 @@ Appliance & Agent Updates
 :Node Packages: - Updated to v3.2.32 with fix for SLES 15 Morpheus Node package installation dependency error :superscript:`8.0.2`
 :Embedded Plugins: - Efficient IP plugin updated to v1.2.6 :superscript:`8.0.2`
                    - Rubrik plugin updated to v2.0.0 :superscript:`8.0.2`
+:Tomcat: - Embedded Tomcat updated to v9.0.98 :superscript:`8.0.2`
 

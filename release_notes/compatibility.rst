@@ -103,7 +103,7 @@ Services
    * - Tomcat
      -
      - |tcver|
-     -
+     - |checkmark|
    * - Nginx
      -
      - |nginxver|
@@ -140,7 +140,7 @@ Services
      - Updated to |nodePackageVer|
    * - Morpheus Linux Agent
      - |linuxagentver|
-     - Updated to |linuxagentver|
+     - No changes
    * - Morpheus Windows Agent
      - |winagentver|
      - No changes
