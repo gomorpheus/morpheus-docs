@@ -1847,10 +1847,10 @@
        <td class="green">7.0.5</td>
        <td class="green">7.0.6</td>
        <td class="green">7.0.7</td>
-       <td class="green">7.0.8</td>
-       <td class="green">7.0.9</td>
-       <td class="green">8.0.0</td>
-       <td class="green">8.0.1</td>
+       <td class="blue">7.0.8</td>
+       <td class="blue">7.0.9</td>
+       <td class="blue">8.0.0</td>
+       <td class="blue">8.0.1</td>
      </tr>
      <tr>
        <td class="darkGrey">7.0.4 →</td>
@@ -1896,10 +1896,10 @@
        <td class="green">7.0.5</td>
        <td class="green">7.0.6</td>
        <td class="green">7.0.7</td>
-       <td class="green">7.0.8</td>
-       <td class="green">7.0.9</td>
-       <td class="green">8.0.0</td>
-       <td class="green">8.0.1</td>
+       <td class="blue">7.0.8</td>
+       <td class="blue">7.0.9</td>
+       <td class="blue">8.0.0</td>
+       <td class="blue">8.0.1</td>
      </tr>
      <tr>
        <td class="darkGrey">7.0.5 →</td>
@@ -1945,10 +1945,10 @@
        <td class="white"></td>
        <td class="green">7.0.6</td>
        <td class="green">7.0.7</td>
-       <td class="green">7.0.8</td>
-       <td class="green">7.0.9</td>
-       <td class="green">8.0.0</td>
-       <td class="green">8.0.1</td>
+       <td class="blue">7.0.8</td>
+       <td class="blue">7.0.9</td>
+       <td class="blue">8.0.0</td>
+       <td class="blue">8.0.1</td>
      </tr>
      <tr>
        <td class="darkGrey">7.0.6 →</td>
@@ -1994,10 +1994,10 @@
        <td class="lightGrey"></td>
        <td class="white"></td>
        <td class="green">7.0.7</td>
-       <td class="green">7.0.8</td>
-       <td class="green">7.0.9</td>
-       <td class="green">8.0.0</td>
-       <td class="green">8.0.1</td>
+       <td class="blue">7.0.8</td>
+       <td class="blue">7.0.9</td>
+       <td class="blue">8.0.0</td>
+       <td class="blue">8.0.1</td>
      </tr>
      <tr>
        <td class="darkGrey">7.0.7 →</td>
@@ -2043,7 +2043,7 @@
        <td class="lightGrey"></td>
        <td class="lightGrey"></td>
        <td class="white"></td>
-       <td class="green">7.0.8</td>
+       <td class="blue">7.0.8</td>
        <td class="green">7.0.9</td>
        <td class="green">8.0.0</td>
        <td class="green">8.0.1</td>
