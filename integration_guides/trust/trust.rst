@@ -1,6 +1,0 @@
-Trust
-=====
-
-.. toctree::
-
-   conjur.rst

@@ -1,6 +1,0 @@
-Logs
-====
-
-.. toctree::
-
-   SysLog.rst
