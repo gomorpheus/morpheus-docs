@@ -30,6 +30,8 @@ Possible locations, depending on OS:
              [mysqldump]
              set-gtid-purged=OFF                   # This is to ensure if a mysqldump is performed from the DB node it is in the proper format for restore.
 
+        .. note:: group_replication_transaction_size_limit can only be set after you create the cluster
+            
 .. Full-Config-Section-Stop
 
 InnoDB Backup Settings
