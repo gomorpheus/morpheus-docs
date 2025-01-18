@@ -92,14 +92,3 @@ MultiSite Full Install
 * Create Morpheus User and Database 
     
     .. include:: ./innodb-config-generic.rst        
-
-    
-
-
-    
-
-    
-
-
-
-                

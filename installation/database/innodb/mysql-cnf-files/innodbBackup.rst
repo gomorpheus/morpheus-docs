@@ -24,6 +24,6 @@ a mysqldump and if this is not set the backup will have errors and not be restor
 
            echo -e "[mysqldump]\nset-gtid-purged=OFF" | sudo tee -a /etc/my.cnf
 
-.. IMPORTANT:: Perform on all DB nodes and Morpheus App Nodes
+.. IMPORTANT:: Make sure this is set on all DB nodes and Morpheus App Nodes
   
 .. Config-Section-Stop
