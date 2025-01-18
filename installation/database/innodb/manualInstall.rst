@@ -294,6 +294,8 @@ InnoDB single site cluster.
 
            cluster.setupRouterAccount('routeruser')
 
+    .. note:: You can now set group_replication_transaction_size_limit=0 in my.cnf and restart the mysql service
+
 .. Single-Section-Stop
 
 
@@ -407,6 +409,8 @@ MultiSite Full Install
         .. code-block:: js
 
            cluster.setupRouterAccount('routeruser')
+
+    .. note:: You can now set group_replication_transaction_size_limit=0 in my.cnf and restart the mysql service
 
 .. Multi-Section-Stop
     
