@@ -45,6 +45,8 @@ In preparing the environment, we've already prepped the physical cluster servers
   :start-after: .. begin_cluster_provisioning
   :end-before: .. end_cluster_provisioning
 
+For more on cluster provisioning, monitoring clusters, and provisioning workloads to existing clusters, see the `full section on HPE VM Clusters <https://hpevm-docs.morpheusdata.com/en/latest/infrastructure/clusters/clusters.html#id1>`_.
+
 Take Note of Virtual Images and Automation
 ``````````````````````````````````````````
 
