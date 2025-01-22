@@ -23,17 +23,17 @@ NSX Tagging
 
 An NSX integration can apply Instance and VM tags to VMs in NSX, if desired. To apply this, mark the box for "APPLY VM TAGS" when adding or editing an NSX integration.
 
-.. image:: /images/integration_guides/networking/applyTags.png
+.. image:: /images/integration_guides/networking/nsx/applyTags.png
   :width: 50%
 
 Once this configuration is set on the integration, any tags that are applied to applicable Instances through the provisioning wizard at provision time will be applied to those VMs in NSX. In the example below, I've set one tag on the new Instance in the provisioning wizard:
 
-.. image:: /images/integration_guides/networking/setTag.png
+.. image:: /images/integration_guides/networking/nsx/setTag.png
   :width: 50%
 
 Once provisioning is complete, the tags are confirmed to be visible in the NSX console as well:
 
-.. image:: /images/integration_guides/networking/showNsx.png
+.. image:: /images/integration_guides/networking/nsx/showNsx.png
 
 NSX Projects
 ^^^^^^^^^^^^
