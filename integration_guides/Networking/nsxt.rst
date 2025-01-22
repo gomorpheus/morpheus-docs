@@ -18,8 +18,25 @@ VMware NSX offers network virtualization allowing for creation and management of
 
 This guide goes through the process of integrating an existing NSX installation with |morpheus| and working with the associated objects synced in with the integration. For more on installing NSX and an overview of its concepts, please review the `NSX overview documentation <https://docs.vmware.com/en/VMware-NSX-Data-Center/2.0/com.vmware.nsxt.install.doc/GUID-10B1A61D-4DF2-481E-A93E-C694726393F9.html>`_ provided by VMware.
 
+NSX Tagging
+^^^^^^^^^^^
+
+An NSX integration can apply Instance and VM tags to VMs in NSX, if desired. To apply this, mark the box for "APPLY VM TAGS" when adding or editing an NSX integration.
+
+.. image:: /images/integration_guides/networking/applyTags.png
+  :width: 50%
+
+Once this configuration is set on the integration, any tags that are applied to applicable Instances through the provisioning wizard at provision time will be applied to those VMs in NSX. In the example below, I've set one tag on the new Instance in the provisioning wizard:
+
+.. image:: /images/integration_guides/networking/setTag.png
+  :width: 50%
+
+Once provisioning is complete, the tags are confirmed to be visible in the NSX console as well:
+
+.. image:: /images/integration_guides/networking/showNsx.png
+
 NSX Projects
-^^^^^^^^^^^^^^
+^^^^^^^^^^^^
 
 Projects in NSX are analogous to tenants in other products and are a part of NSX version 4+. Projects allow for the isolation of networking abstractions into individual tenants within a single NSX appliance. If your organization is already utilizing NSX Projects, you are probably very familiar with their concept and execution but others can find high-level details about them `here <https://docs.vmware.com/en/VMware-NSX/4.1/administration/GUID-52180BC5-A1AB-4BC2-B1CE-666292505317.html>`_.
 
