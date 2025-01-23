@@ -30,7 +30,7 @@ New Features
 :NSX: - Added an "Apply VM tags" checkbox to NSX integrations. VM tags are only applied to VMs in NSX when the box is checked :superscript:`7.0.10`
       - Tags can now be applied to VMs in NSX in addition to the tag functionality for VMs in vCenter which already existed in |morpheus| :superscript:`7.0.10`
 :Plugins: - Added generalized improvements to bare metal-type plugins. See the developer documentation for more details :superscript:`7.0.10`
-
+:Rubrik: - Rubrik integrations now support Rubrik Security Cloud. When creating a Rubrik integration, there is now a PLATFORM configuration which selects either RSC or CDM
 
 Fixes
 =====
