@@ -154,3 +154,20 @@ The rest of the process involves naming the account on the manager and entering 
 After clicking through to the next section, you will paste in your license key. Click "Complete Setup" and you will ne dropped into the UI for the first time. Installation is now complete!
 
 At this point, you are ready to move on to the next section which goes over the initial environmental setup steps that must be undertaken to add the first |cluster| to the |manager|.
+
+Upgrading the Manager
+`````````````````````
+
+To upgrade the |manager|, first obtain the latest ISO from the HPE Software Center. Reach out to your account manager if you have questions on accessing the software center or if you're unable to obtain the latest ISO from the software center.
+
+With the ISO obtained, extract the ``.deb`` file. With the ``.deb`` file extracted, copy it to the Manager VM. Then, connect to the Manager, stop the current services, install the package, and then reconfigure the Manager using the steps below. Replace the placeholder ``.deb`` file in the commands below with the correct path and file name of the package you've copied over.
+
+.. code-block:: Bash
+
+  sudo morpheus-ctl stop morpheus-ui
+  sudo dpkg -i xxxx.deb
+  sudo morpheus-ctl reconfigure
+
+All services will automatically start during the reconfigure process. After the reconfigure has succeeded, tail the UI service to watch UI startup logs with ``morpheus-ctl tail morpheus-ui``. Once the UI service is up and running, the upgrade process is complete. Attempt to reach your appliance normally through a web browser to confirm success.
+
+.. NOTE:: Services will be stopped during package installation and started during the reconfigure process, including the ``morpheus-ui`` service. If the reconfigure process is interrupted or fails, the ``morpheus-ui`` service may need to be manually started or restarted. In certain situations if another service hangs on starting during reconfigure, run ``systemctl restart morpheus-runsvdir`` then reconfigure and restart ``morpheus-ui`` if successful.
