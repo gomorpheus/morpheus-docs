@@ -138,7 +138,7 @@ Common Examples
 			instance.status: <%=instance.status%>
 			instance.statusMessage: <%=instance.statusMessage%>
 			instance.storage: <%=instance.storage%>
-			instance.tags: <%=instance.tags%>
+			instance.metadata: <%=instance.metadata%>
 			instance.userStatus: <%=instance.userStatus%>
 			server.agentInstalled: <%=server.agentInstalled%>
 			server.agentVersion: <%=server.agentVersion%>
