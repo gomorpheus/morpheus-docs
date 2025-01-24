@@ -9,6 +9,9 @@ There are several sections within an Instance page that provide useful capabilit
 
 Summary
   Basic information, stats and status information
+
+  - **Availability:** The Instance availability is the percentage of time the Instance is up. When stopping Instances, the option is given to mute monitoring if you wish for intentional down time not to count against the availability
+  - **Response Time:** If listed as "N/A" (Not Applicable), the Instance does not have any Checks set against it or does not have any Checks set against it that report a response time. Agent Checks, for example, do not report a response time. Some Checks, such as Docker Checks for Docker containers, require |morpheus| to ping the container which reports a response time.
 Deploy
   Track deployment history for instance types that support deployments or manually kick off a deployment (only visible for Instance Types that support deployments)
 Settings
