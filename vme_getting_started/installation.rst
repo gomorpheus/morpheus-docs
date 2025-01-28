@@ -172,7 +172,7 @@ From the download page, you'll see software packages, signature files and licens
 
 .. image:: /images/vmeInstall/listFiles.png
 
-Mount the ISO to your computer. The exact process will vary by software platform. On Linux, first select a temporary mount point (such as ``/mnt/iso``) or create a temporary mount point if it doesn't exist (``sudo mkdir /mnt/iso``). Next, mount the ISO to your temporary mount point (``sudo mount -o loop /path/to/file.iso /mnt/iso``). Take stock of the files by changing into the proper directory (``cd /mnt/iso``) and listing them out (``ls``). For an upgrade, we only need the ``.deb``file contained in the ISO.
+Mount the ISO to your computer. The exact process will vary by software platform. On Linux, first select a temporary mount point (such as ``/mnt/iso``) or create a temporary mount point if it doesn't exist (``sudo mkdir /mnt/iso``). Next, mount the ISO to your temporary mount point (``sudo mount -o loop /path/to/file.iso /mnt/iso``). Take stock of the files by changing into the proper directory (``cd /mnt/iso``) and listing them out (``ls``). For an upgrade, we only need the ``.deb`` file contained in the ISO.
 
 To continue, copy the ``.deb`` file over to the |cluster| host containing the |manager| VM. On Linux, this could be done with ``scp`` (``scp /path/to/file.deb username@hpevmhost_hostname_or_ip:/path/to/desired/location/``). Next, connect to the remote HPE VM host and confirm the VM name of the |manager| (``virsh list``). The host should already have ``virt-copy-in`` from the ``libvirt`` suite installed. Use it to copy the ``.deb`` file onto the VM file system: ``virt-copy-in -d <vm_name> /path/to/file.deb /path/to/remote/directory``.
 
