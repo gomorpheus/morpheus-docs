@@ -160,7 +160,39 @@ Upgrading the Manager
 
 To upgrade the |manager|, first obtain the latest ISO from the HPE Software Center. Reach out to your account manager if you have questions on accessing the software center or if you're unable to obtain the latest ISO from the software center.
 
-With the ISO obtained, extract the ``.deb`` file. With the ``.deb`` file extracted, copy it to the Manager VM. Then, connect to the Manager, stop the current services, install the package, and then reconfigure the Manager using the steps below. Replace the placeholder ``.deb`` file in the commands below with the correct path and file name of the package you've copied over.
+Once logged into My HPE Software Center, click on the "Software" section from the side navigation.
+
+.. image:: /images/vmeInstall/softwareCenter.png
+
+Within the "Software" section, search for |software| amongst your other software entitlements. A "Product Info" type search for the term "hpe vm essentials" may work but depending on the entitlements present in the account and future changes to search functionality, a slightly different search might be required. Once HPE VM Essentials is successfully returned, click on the dropdown menu under "Action" and click on "Get License."
+
+.. image:: /images/vmeInstall/getLicense.png
+
+From the download page, you'll see software packages, signature files and license files. Mark the checkbox next to any that you need and download them to your computer.
+
+.. image:: /images/vmeInstall/listFiles.png
+
+Mount the ISO to your computer. The exact process will vary by software platform. On Linux, first select a temporary mount point (such as ``/mnt/iso``) or create a temporary mount point if it doesn't exist (``sudo mkdir /mnt/iso``). Next, mount the ISO to your temporary mount point (``sudo mount -o loop /path/to/file.iso /mnt/iso``). Take stock of the files by changing into the proper directory (``cd /mnt/iso``) and listing them out (``ls``). For an upgrade, we only need the ``.deb``file contained in the ISO.
+
+To continue, copy the ``.deb`` file over to the |cluster| host containing the |manager| VM. On Linux, this could be done with ``scp`` (``scp /path/to/file.deb username@hpevmhost_hostname_or_ip:/path/to/desired/location/``). Next, connect to the remote HPE VM host and confirm the VM name of the |manager| (``virsh list``). The host should already have ``virt-copy-in`` from the ``libvirt`` suite installed. Use it to copy the ``.deb`` file onto the VM file system: ``virt-copy-in -d <vm_name> /path/to/file.deb /path/to/remote/directory``.
+
+With the ``.deb`` file in place, we need to open a console connection to the |manager| VM to perform the actual upgrade. There are a number of methods to accomplish this but below are two examples from either an HPE VM host or from your own computer.
+
+.. begin_vm_console_connection
+
+**From the HPE VM Host**
+
+Confirm the manager VM name (``virsh list``) and connect with ``virsh console <vm name>``. This starts a local VNC serial connection. This method only works if the host has GUI capabilities installed, which means the host must be running Ubuntu Desktop or Ubuntu Server with GUI services installed.
+
+**From another computer**
+
+Confirm the manager VM name (run ``virsh list`` on the HPE VM host). Next, make note of the VNC port and password for the |manager| VM. This is done by running ``virsh edit <vm name>`` on the HPE VM host and finding it within the block beginning ``<graphics``. This block is typically near the bottom of the XML. Having obtained this information, move back over to your own computer (must be a computer with a desktop terminal, access to the VME host, and GUI capabilities). Connect to the SSH tunnel: ``ssh -L <VNC PORT>:127.0.0.1:<VNC PORT> <VME Host User>@<Host IP/hostname>``. Then, using a VNC viewer (for example, VNCViewer64), connect to ``localhost:<VNCPort>``. Use the password obtained from the VM XML viewed earlier.
+
+.. end_vm_console_connection
+
+Having copied over the needed files and connected to the |manager| VM, the upgrade is completed in just a few commands. These commands will stop the current services, install the package, and then reconfigure the Manager. Replace the placeholder ``.deb`` file in the commands below with the correct path and file name of the package you've copied over.
+
+.. IMPORTANT:: Upgrading |manager| will result in downtime of at least a few minutes. Ensure users are not doing critical work during the upgrade window.
 
 .. code-block:: Bash
 
