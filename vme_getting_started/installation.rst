@@ -60,8 +60,6 @@ It's time to begin the actual installation process on the hosts. From a high lev
 
 This guide won't go much deeper than what was already stated above regarding Ubuntu 22.04 installation and the process of applying the latest patches. We will pick up at this point with the process of installing the |morpheus| console which enables virtualization capability on cluster hosts by installing KVM, OVS, and other packages. This process is repeated on each host that will be part of the |cluster|. Continuing with this installation guide will require downloading packages from My HPE Software Center. If you are unable to log into the software center or if you believe you are missing software entitlements that should be present, contact your account representative.
 
-.. NOTE:: Some commands listed in this installation guide will require superuser privileges.
-
 Once logged into My HPE Software Center, click on the "Software" section from the side navigation.
 
 .. image:: /images/vmeInstall/softwareCenter.png
@@ -73,6 +71,8 @@ Within the "Software" section, search for |software| amongst your other software
 From the download page, you'll see software packages, signature files and license files. Mark the checkbox next to any that you need and download them to your computer.
 
 .. image:: /images/vmeInstall/listFiles.png
+
+.. NOTE:: Some commands listed in this installation guide will require superuser privileges.
 
 Mount the ISO to your computer. The exact process will vary by software platform. On Linux, first select a temporary mount point (such as ``/mnt/iso``) or create a temporary mount point if it doesn't exist (``sudo mkdir /mnt/iso``). Next, mount the ISO to your temporary mount point (``sudo mount -o loop /path/to/file.iso /mnt/iso``). Take stock of the files by changing into the proper directory (``cd /mnt/iso``) and listing them out (``ls``).
 
