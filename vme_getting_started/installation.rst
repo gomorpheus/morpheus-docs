@@ -192,7 +192,7 @@ Confirm the manager VM name (run ``virsh list`` on the HPE VM host). Next, make 
 
 Having copied over the needed files and connected to the |manager| VM, the upgrade is completed in just a few commands. These commands will stop the current services, install the package, and then reconfigure the Manager. Replace the placeholder ``.deb`` file in the commands below with the correct path and file name of the package you've copied over.
 
-.. IMPORTANT:: Upgrading |manager| will result in downtime of at least a few minutes. Ensure users are not doing critical work during the upgrade window. This downtime applies only to the Manager itself and has no effect on the hypervisor host or any provisioned VMs currently running.
+.. IMPORTANT:: Upgrading |manager| will result in downtime of at least a few minutes. Ensure users are not doing critical work during the upgrade window. This downtime applies only to the Manager itself and has no effect on the hypervisor host(s) or any provisioned VMs currently running.
 
 .. code-block:: Bash
 
