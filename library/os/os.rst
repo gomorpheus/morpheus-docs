@@ -21,7 +21,7 @@ OS types can primarily be used in one of two use cases. The first is adding your
 
 View the existing OS types by navigating to |LibOpe|. Here, a list of all OS types is shown. If this is a brand new appliance or if you've never added new Operating Systems, all shown here will be system default OS types. By clicking into any of the OS types for which |morpheus| currently provides default images, you will see all of the Virtual Images for that OS type and the provisioning technology each image is compatible with.
 
-.. image:: /images/os/listOsImage.png
+.. image:: /images/os/listOsImages.png
 
 To add an existing Virtual Image to the currently-selected OS type, click :guilabel:`+ ADD`. Select the image and optionally identify a provisioning technology or even a specific Cloud. When finished, click :guilabel:`SAVE`.
 
