@@ -58,11 +58,21 @@ It's time to begin the actual installation process on the hosts. From a high lev
 
 .. IMPORTANT:: Compatibility with GFS2 datastores requires hardware enablement (HWE) packages to be installed. This is a set of software components that enables users to run a longterm support version of Ubuntu yet still use newer hardware that might not be supported by the default kernel. Run ``sudo apt install linux-generic-hwe-22.04`` to install HWE packages.
 
-This guide won't go much deeper than what was already stated above regarding Ubuntu 22.04 installation and the process of applying the latest patches. We will pick up at this point with the process of installing the |morpheus| console which enables virtualization capability on cluster hosts by installing KVM, OVS, and other packages. This process is repeated on each host that will be part of the |cluster|. Before you begin, make sure you've downloaded the Debian package from the HPE software center or contact your account representative if you're unsure about how to access it.
+This guide won't go much deeper than what was already stated above regarding Ubuntu 22.04 installation and the process of applying the latest patches. We will pick up at this point with the process of installing the |morpheus| console which enables virtualization capability on cluster hosts by installing KVM, OVS, and other packages. This process is repeated on each host that will be part of the |cluster|. Continuing with this installation guide will require downloading packages from My HPE Software Center. If you are unable to log into the software center or if you believe you are missing software entitlements that should be present, contact your account representative.
 
 .. NOTE:: Some commands listed in this installation guide will require superuser privileges.
 
-With the Debian package downloaded, go ahead and install it with ``apt install -f hpe-vm.deb``. The "-f" option indicates that a file will be installed. Note that the Debian file name listed here is an example placeholder and the name of your downloaded file will likely be different. When asked if you wish to install all of the packages provided, confirm that you do and then wait for installation to complete. This process is installing on the host all of the packages needed to be part of a virtualization server, including KVM, Libvirt, Ceph, and more.
+.. include:: installation.rst
+  :start-after: .. begin_download_packages
+  :end-before: .. end_download_packages
+
+.. include:: installation.rst
+  :start-after: .. begin_mount_iso
+  :end-before: .. end_mount_iso
+
+Now that the packages are downloaded and the files contained in the ISO are accessible, copy them over to the hosts. You'll need to copy the ``.deb`` file over to each host but the QCOW images needs to only be copied to the host which will eventually run the |manager| VM. On Linux, this could be done with ``scp`` (``scp /path/to/file.deb username@hpevmhost_hostname_or_ip:/path/to/desired/location/``) but the copy process will be slightly different for other operating system platforms.
+
+With the Debian package now available to the hosts, go ahead and install it with ``apt install -f hpe-vm.deb``. The "-f" option indicates that a file will be installed. Note that the Debian file name listed here is an example placeholder and the name of your downloaded file will likely be different. When asked if you wish to install all of the packages provided, confirm that you do and then wait for installation to complete. This process is installing on the host all of the packages needed to be part of a virtualization server, including KVM, Libvirt, Ceph, and more.
 
 .. IMPORTANT:: The rest of this section describes the configuration process within the console for a specific network configuration. Your network configuration may be different and certainly interfaces and VLANs will be differently named. This is meant to illustrate the tools that are available within the console for performing various networking configurations. You may or may not need all of these steps and the specific configurations within these steps may be different in your environment.
 
@@ -160,6 +170,8 @@ Upgrading the Manager
 
 To upgrade the |manager|, first obtain the latest ISO from the HPE Software Center. Reach out to your account manager if you have questions on accessing the software center or if you're unable to obtain the latest ISO from the software center.
 
+.. begin_download_packages
+
 Once logged into My HPE Software Center, click on the "Software" section from the side navigation.
 
 .. image:: /images/vmeInstall/softwareCenter.png
@@ -172,9 +184,15 @@ From the download page, you'll see software packages, signature files and licens
 
 .. image:: /images/vmeInstall/listFiles.png
 
-Mount the ISO to your computer. The exact process will vary by software platform. On Linux, first select a temporary mount point (such as ``/mnt/iso``) or create a temporary mount point if it doesn't exist (``sudo mkdir /mnt/iso``). Next, mount the ISO to your temporary mount point (``sudo mount -o loop /path/to/file.iso /mnt/iso``). Take stock of the files by changing into the proper directory (``cd /mnt/iso``) and listing them out (``ls``). For an upgrade, we only need the ``.deb`` file contained in the ISO.
+.. end_download_packages
 
-To continue, copy the ``.deb`` file over to the |cluster| host containing the |manager| VM. On Linux, this could be done with ``scp`` (``scp /path/to/file.deb username@hpevmhost_hostname_or_ip:/path/to/desired/location/``). Next, connect to the remote HPE VM host and confirm the VM name of the |manager| (``virsh list``). The host should already have ``virt-copy-in`` from the ``libvirt`` suite installed. Use it to copy the ``.deb`` file onto the VM file system: ``virt-copy-in -d <vm_name> /path/to/file.deb /path/to/remote/directory``.
+.. begin_mount_iso
+
+Mount the ISO to your computer. The exact process will vary by software platform. On Linux, first select a temporary mount point (such as ``/mnt/iso``) or create a temporary mount point if it doesn't exist (``sudo mkdir /mnt/iso``). Next, mount the ISO to your temporary mount point (``sudo mount -o loop /path/to/file.iso /mnt/iso``). Take stock of the files by changing into the proper directory (``cd /mnt/iso``) and listing them out (``ls``).
+
+.. end_mount_iso
+
+For an upgrade, we only need the ``.deb`` file contained in the ISO. To continue, copy the ``.deb`` file over to the |cluster| host containing the |manager| VM. On Linux, this could be done with ``scp`` (``scp /path/to/file.deb username@hpevmhost_hostname_or_ip:/path/to/desired/location/``). Next, connect to the remote HPE VM host and confirm the VM name of the |manager| (``virsh list``). The host should already have ``virt-copy-in`` from the ``libvirt`` suite installed. Use it to copy the ``.deb`` file onto the VM file system: ``virt-copy-in -d <vm_name> /path/to/file.deb /path/to/remote/directory``.
 
 With the ``.deb`` file in place, we need to open a console connection to the |manager| VM to perform the actual upgrade. There are a number of methods to accomplish this but below are two examples from either an HPE VM host or from your own computer.
 
