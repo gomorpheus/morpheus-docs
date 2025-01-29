@@ -62,11 +62,11 @@ This guide won't go much deeper than what was already stated above regarding Ubu
 
 .. NOTE:: Some commands listed in this installation guide will require superuser privileges.
 
-.. include:: installation.rst
+.. include:: ./installation.rst
   :start-after: .. begin_download_packages
   :end-before: .. end_download_packages
 
-.. include:: installation.rst
+.. include:: ./installation.rst
   :start-after: .. begin_mount_iso
   :end-before: .. end_mount_iso
 
