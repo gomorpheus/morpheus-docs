@@ -62,13 +62,19 @@ This guide won't go much deeper than what was already stated above regarding Ubu
 
 .. NOTE:: Some commands listed in this installation guide will require superuser privileges.
 
-.. include:: ./installation.rst
-  :start-after: .. begin_download_packages
-  :end-before: .. end_download_packages
+Once logged into My HPE Software Center, click on the "Software" section from the side navigation.
 
-.. include:: ./installation.rst
-  :start-after: .. begin_mount_iso
-  :end-before: .. end_mount_iso
+.. image:: /images/vmeInstall/softwareCenter.png
+
+Within the "Software" section, search for |software| amongst your other software entitlements. A "Product Info" type search for the term "hpe vm essentials" may work but depending on the entitlements present in the account and future changes to search functionality, a slightly different search might be required. Once HPE VM Essentials is successfully returned, click on the dropdown menu under "Action" and click on "Get License."
+
+.. image:: /images/vmeInstall/getLicense.png
+
+From the download page, you'll see software packages, signature files and license files. Mark the checkbox next to any that you need and download them to your computer.
+
+.. image:: /images/vmeInstall/listFiles.png
+
+Mount the ISO to your computer. The exact process will vary by software platform. On Linux, first select a temporary mount point (such as ``/mnt/iso``) or create a temporary mount point if it doesn't exist (``sudo mkdir /mnt/iso``). Next, mount the ISO to your temporary mount point (``sudo mount -o loop /path/to/file.iso /mnt/iso``). Take stock of the files by changing into the proper directory (``cd /mnt/iso``) and listing them out (``ls``).
 
 Now that the packages are downloaded and the files contained in the ISO are accessible, copy them over to the hosts. You'll need to copy the ``.deb`` file over to each host but the QCOW images needs to only be copied to the host which will eventually run the |manager| VM. On Linux, this could be done with ``scp`` (``scp /path/to/file.deb username@hpevmhost_hostname_or_ip:/path/to/desired/location/``) but the copy process will be slightly different for other operating system platforms.
 
