@@ -68,7 +68,7 @@ Within the "Software" section, search for |software| amongst your other software
 
 .. image:: /images/vmeInstall/getLicense.png
 
-From the download page, you'll see software packages, signature files and license files. Mark the checkbox next to any that you need and download them to your computer.
+From the download page, you'll see software packages, signature files and license files. For a fresh installation, the ``.iso`` file is the primary download that you need. It contains a debian package and a QCOW2 image which will prep your hypervisor hosts and spin up your |manager| VM for the first time. Mark the box next to any files you wish to download and then click "Download." You do not need the separate debian packages offered outside of the ``.iso`` as those are only for upgrading a pre-installed |manager|.
 
 .. image:: /images/vmeInstall/listFiles.png
 
@@ -109,12 +109,12 @@ Once all of the necessary networking configurations are made, you'll want to sav
 .. image:: /images/vmeInstall/apply-changes.png
   :width: 50%
 
-At this point, I am done configuring my example interfaces through the |morpheus| console. It does have some additional functionality not shown here which may be needed depending on your specific network configuration. Make sure to complete this process on all hosts before moving on to the next section which covers the installation of |manager| onto the prepared |hosts|.
+At this point, I am done configuring my example interfaces through the |morpheus| console. It does have some additional functionality not shown here which may be needed depending on your specific network configuration. Make sure to complete this process on all hosts before moving on to the next section which covers the installation of |manager| onto one of the prepared |hosts|.
 
 Manager Installation
 ````````````````````
 
-Having configured the |hosts| through the |morpheus| Console in the prior step, we'll now install |manager|. Unlike the console, the manager is only installed on one of the hosts and serves as the control plane for the server in addition to providing a provisioning engine, automation functionality, monitoring, secrets management, and a lot more. Before starting, make sure you've already downloaded the QCOW image for the manager and are aware of its full path on the host you've chosen to work from. In fact, it will be beneficial in the next step to go ahead and copy the full path into your paste buffer. The image is available in the HPE software center. Contact your account representative if you're unsure about how or where to access it.
+Having configured the |hosts| through the |morpheus| Console in the prior step, we'll now install |manager|. Unlike the console, the manager is only installed on one of the hosts and serves as the control plane for the server in addition to providing a provisioning engine, automation functionality, monitoring, secrets management, and a lot more. Before starting, make sure you've already downloaded the QCOW image for the manager and are aware of its full path on the host you've chosen to work from. In fact, it will be beneficial in the next step to go ahead and copy the full path into your paste buffer. The image is available in the HPE software center. Contact your account representative if you are unable to download it using the steps in the previous section.
 
 Before you begin, the following information should be readily at hand:
 
@@ -167,14 +167,14 @@ The rest of the process involves naming the account on the manager and entering 
 
 .. image:: /images/vmeInstall/appliance-name.png
 
-After clicking through to the next section, you will paste in your license key. Click "Complete Setup" and you will ne dropped into the UI for the first time. Installation is now complete!
+After clicking through to the next section, you will paste in your license key. Click "Complete Setup" and you will be dropped into the UI for the first time. Installation is now complete!
 
 At this point, you are ready to move on to the next section which goes over the initial environmental setup steps that must be undertaken to add the first |cluster| to the |manager|.
 
 Upgrading the Manager
 `````````````````````
 
-To upgrade the |manager|, first obtain the latest ISO from the HPE Software Center. Reach out to your account manager if you have questions on accessing the software center or if you're unable to obtain the latest ISO from the software center.
+To upgrade the |manager|, you'll need to obtain the ``.deb`` upgrade package(s) from the HPE Software Center. Reach out to your account manager if you're unable to access the downloads as described in the next paragraphs. For an upgrade, you'll need the debian package (not the ISO, which is for first-time installation). If you are performing an offline upgrade, you will also need the "supplemental" debian package.
 
 .. begin_download_packages
 
@@ -194,11 +194,7 @@ From the download page, you'll see software packages, signature files and licens
 
 .. begin_mount_iso
 
-Mount the ISO to your computer. The exact process will vary by software platform. On Linux, first select a temporary mount point (such as ``/mnt/iso``) or create a temporary mount point if it doesn't exist (``sudo mkdir /mnt/iso``). Next, mount the ISO to your temporary mount point (``sudo mount -o loop /path/to/file.iso /mnt/iso``). Take stock of the files by changing into the proper directory (``cd /mnt/iso``) and listing them out (``ls``).
-
-.. end_mount_iso
-
-For an upgrade, we only need the ``.deb`` file contained in the ISO. To continue, copy the ``.deb`` file over to the |cluster| host containing the |manager| VM. On Linux, this could be done with ``scp`` (``scp /path/to/file.deb username@hpevmhost_hostname_or_ip:/path/to/desired/location/``). Next, connect to the remote HPE VM host and confirm the VM name of the |manager| (``virsh list``). The host should already have ``virt-copy-in`` from the ``libvirt`` suite installed. Use it to copy the ``.deb`` file onto the VM file system: ``virt-copy-in -d <vm_name> /path/to/file.deb /path/to/remote/directory``.
+For an upgrade, we only need the ``.deb`` file available in the software center (and potentially the "supplemental" debian package as well if this will be an offline upgrade). To continue, copy the ``.deb`` file(s) over to the |cluster| host containing the |manager| VM. On Linux, this could be done with ``scp`` (``scp /path/to/file.deb username@hpevmhost_hostname_or_ip:/path/to/desired/location/``). Next, connect to the remote HPE VM host and confirm the VM name of the |manager| (``virsh list``). The host should already have ``virt-copy-in`` from the ``libvirt`` suite installed. Use it to copy the ``.deb`` file onto the VM file system: ``virt-copy-in -d <vm_name> /path/to/file.deb /path/to/remote/directory``.
 
 With the ``.deb`` file in place, we need to open a console connection to the |manager| VM to perform the actual upgrade. There are a number of methods to accomplish this but below are two examples from either an HPE VM host or from your own computer.
 
@@ -222,6 +218,7 @@ Having copied over the needed files and connected to the |manager| VM, the upgra
 
   sudo morpheus-ctl stop morpheus-ui
   sudo dpkg -i xxxx.deb
+  sudo dpkg -i xxxx.supplemental.deb  # Optional -- Only for offline upgrades
   sudo morpheus-ctl reconfigure
 
 All services will automatically start during the reconfigure process. After the reconfigure has succeeded, tail the UI service to watch UI startup logs with ``morpheus-ctl tail morpheus-ui``. Once the UI service is up and running, the upgrade process is complete. Attempt to reach your appliance normally through a web browser to confirm success.
