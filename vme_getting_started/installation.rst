@@ -161,7 +161,7 @@ With |manager| up and running, you can now access the UI frontend by pointing yo
 
 .. image:: /images/vmeInstall/register.png
 
-You'll need a license to go much further with the product. The registration and login options on this screen refer to Morpheus Hub, which is a licensing hub for the product. If you already have Morpheus Hub credentials, you can log in to copy your license. If you register and your organization has a license, you will be able to copy the license once your account is registered. If you already have your license key in hand, you can choose "skip" and you'll be asked to paste in your license key in a next step.
+You'll need a license to go much further with the product. If you've followed this guide up to this point, you should already have your license key downloaded from My HPE Software Center. If not, you can log back in any time an re-download the file containing the license key. If you choose to skip entering a license key at this time, a short-term evaluation license will be applied. This can be upgraded to a full license at any time from the global settings section of the application.
 
 The rest of the process involves naming the account on the manager and entering the details for your initial administrator user. Next, provide a name for the appliance, confirm the appliance URL is correct as entered, and choose from a few global enablements (for backups, monitoring, and logs).
 
