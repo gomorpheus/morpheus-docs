@@ -46,6 +46,7 @@
 
        CLI Documentation <https://morpheus-morpheus-cli-docs.readthedocs-hosted.com/en/latest/CLI-Manual.html>
 
+.. rst-class:: hidden
   .. toctree::
      :maxdepth: 1
      :caption: Morpheus API & CLI
