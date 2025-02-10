@@ -39,12 +39,12 @@
      release_notes/compatibility.rst
      release_notes/version_highlights.rst
 
-  ..
-    .. toctree::
-       :maxdepth: 1
-       :caption: Morpheus CLI
+.. rst-class:: hidden
+  .. toctree::
+     :maxdepth: 1
+     :caption: Morpheus CLI
 
-       CLI Documentation <https://morpheus-morpheus-cli-docs.readthedocs-hosted.com/en/latest/CLI-Manual.html>
+     CLI Documentation <https://morpheus-morpheus-cli-docs.readthedocs-hosted.com/en/latest/CLI-Manual.html>
 
 .. rst-class:: hidden
   .. toctree::
