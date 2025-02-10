@@ -23,55 +23,44 @@ Release Dates
 New Features
 ============
 
-:API & CLI: - "Use Agent Communications" can be toggled on Kubernetes clusters via |morpheus| API and CLI as can already be done via UI :superscript:`7.0.10`
-            - Added Virtual Image convert functionality to |morpheus| API and CLI :superscript:`7.0.10`
-            - Fixed a bug that prevented provisioning new Kubernetes clusters using |morpheus| CLI under certain configurations
-:HPE VM: - Added VMDK image support for HPE VM clusters. When provisioning the "HPE VM" Instance Type, VMDK images are now selectable. |morpheus| performs the conversion to QCOW on the fly once the image is selected
-:NSX: - Added an "Apply VM tags" checkbox to NSX integrations. VM tags are only applied to VMs in NSX when the box is checked :superscript:`7.0.10`
-      - Tags can now be applied to VMs in NSX in addition to the tag functionality for VMs in vCenter which already existed in |morpheus| :superscript:`7.0.10`
-:Plugins: - Added generalized improvements to bare metal-type plugins. See the developer documentation for more details :superscript:`7.0.10`
-:Rubrik: - Rubrik integrations now support Rubrik Security Cloud. When creating a Rubrik integration, there is now a PLATFORM configuration which selects either RSC or CDM
+:API & CLI: - When creating Instance snapshots via |morpheus| API, the response now includes process IDs for the triggered snapshots
+:Bare Metal: - The modal for adding bare metal hosts no longer shows common fields from other modals which don't apply to bare metal :superscript:`7.0.11`
+:HPE VM: - Certain actions will no longer update UUIDs for VM storage volumes (moving VM to a different host, changing disk datastores, etc)
+          - HPE VM Clusters now support network groups
+          - Provisioning to HPE VM Clusters now sets a default "Auto Datastore" selection. Users may manually select a datastore or may leave the default automatic configuration
+:Kubernetes: - Added default Kubernetes 1.32 cluster layouts for all supported Cloud types :superscript:`7.0.11`
+:ServiceNow: - All usage of the old ServiceNow logo within the product have been updated :superscript:`7.0.11`
+:VDI Gateways: - VDI gateway services will now utilize an overriding Cloud plugin (if present) rather than using an embedded Cloud plugin :superscript:`7.0.11`
+:Virtual Images: - When importing images from existing VMs, future attempts to provision from that Virtual Image will automatically set disks on the provisioning wizard to a minimally viable configuration (Ex. three disks in appropriate minimum sizes)
+
 
 Fixes
 =====
 
-:API & CLI: - Fixed a number of issues that prevented the ``clouds add`` CLI command from working properly :superscript:`7.0.10`
-             - Provisioning Apps via |morpheus| API now works when only a Group ID is given rather than also requiring a Group name :superscript:`7.0.10`
-             - The ``catalog-item-types`` API now has improved error handling when passing invalid parameters :superscript:`7.0.10`
-             - The interactive login prompt for |morpheus| CLI no longer fails when a command using the "dry run" switch and requiring authentication is entered
-             - Updating the Clouds associated with a Group via |morpheus| API is now working properly :superscript:`7.0.10`
-             - When ordering Catalog Items via |morpheus| API, ``customOptions`` which would be populated via select list in the UI are now validated :superscript:`7.0.10`
-             - When working with a Cicso ACI integration through |morpheus| API, the option to list Tenants for scoping the integration now correctly lists Tenants :superscript:`7.0.10`
-             - |morpheus| API calls to delete volumes associated with Kubernetes clusters now work correctly :superscript:`7.0.10`
-:Amazon: - Creating buckets set to all regions and associated actions (creating and deleting files, deleting the bucket, etc) now work correctly :superscript:`7.0.10`
-          - When AWS Clouds are scoped to just one region, only buckets from that region are shown in |StoBuc| :superscript:`7.0.10`
-:Apps: - Fixed Instances shared across multiple Apps being deleted when one App is deleted if that App is covered by a delete approval Policy :superscript:`7.0.10`
-        - For Terraform Apps, the Virtual Machines button under the Instances tab on the App detail page is now working :superscript:`7.0.10`
-:Azure: - Availability zones for the Norway East (norwayeast) region are now supported :superscript:`7.0.10`
-         - Fixed Azure Instances failing to restore when assigned to an Availability Zone :superscript:`7.0.10`
-:Blueprints: - After changing config type from Terraform Specs to Terraform (.tf), the App no longer fails due to duplicate code :superscript:`7.0.10`
-:Compute: - The resources list (Infrastructure > Compute > Resources) can now be sorted by the type column properly :superscript:`7.0.10`
-:Forms: - Fixed datastores not always loading within Disk-type Inputs on Forms :superscript:`7.0.10`
-:Import/Export: - Fixed Catalog Items exporting without any configuration when they were exported by Label :superscript:`7.0.10`
-:Instances: - An Instance being suspended is now shown in Instance History :superscript:`7.0.10`
-             - The default MySQL Instance Type now shows the correct MySQL version on the Instance detail page following provisioning :superscript:`7.0.10`
-:Kubernetes: - Fixed "Run Workload" actions failing when run against External Kubernetes clusters :superscript:`7.0.10`
-              - Instances deployed to External Kubernetes clusters no longer go into "Unknown" status after the first Cloud sync and the progress bar on the "Stop Server" action no longer gets stuck :superscript:`7.0.10`
-              - When adding external Kubernetes clusters to |morpheus|, control plan nodes are now recognized correctly and not seen as worker nodes :superscript:`7.0.10`
-              - Worker node counts are now updated properly when Kubernetes clusters are expanded as a result of auto-scaling :superscript:`7.0.10`
-:NSX: - The edit policy modal now loads successfully in |morpheus| if the name of the firewall rule is a number rather than a text string :superscript:`7.0.10`
-:Nutanix Prism Central: - Appended the cluster name to datastore options in the provisioning wizard to help the user select compatible cluster and datastore options :superscript:`7.0.10`
-:Plugins: - Fixed custom tabs defined by plugin without their own permissions being affected by additional custom tabs which do have defined custom permissions :superscript:`7.0.10`
-:Settings: - Updated the input validation on the global "No Proxy" setting to prevent the rejection of some valid inputs :superscript:`7.0.10`
-:Tasks: - Fixed an issue where one-off Task runs triggered from an Instance detail page for a Terraform-created Instance would not be run and also would not appear in the Instance History tab :superscript:`7.0.10`
-:Workflows: - The platform check ensuring Workflows only run against compatible platforms now works properly when multiple Instances are selected :superscript:`7.0.9 `
+:API & CLI: - API calls to restart deployments to Kubernetes clusters are now working properly :superscript:`7.0.11`
+             - Fixed calls to return Task executions failing with certain license types which shouldn't have restricted it
+             - Fixed failures when calling restart or delete actions against StatefulSets in Kubernetes clusters :superscript:`7.0.11`
+             - Fixed results from the ``/instances/stats`` API endpoint to include only statistics from Instances the user can access :superscript:`7.0.11`
+:Ansible Tower: - Fixed an issue where hosts could be added to inventory under a renamed group rather than a newly created group :superscript:`7.0.11`
+:Azure: - Fixed Azure backups not being successfully created under certain configurations :superscript:`7.0.11`
+         - Fixed missing Azure storage price sets :superscript:`7.0.11`
+         - Resize actions that require reboot will now warn the user the action will require a restart. Resize actions that do not require a restart will not include such a warning prior to being executed :superscript:`7.0.11`
+:Clouds: - When setting the "Disk Encryption" configuration to use encryption sets and saving before selecting an encryption set, the modal no longer locks up :superscript:`7.0.11`
+:Kubernetes: - Restarting an Instance which is representative of a workload running on a Kubernetes cluster no longer creates duplicate containers :superscript:`7.0.11`
+:NSX: - Fixed NSX router route IDs being incremented after the first refresh is performed :superscript:`7.0.11`
+       - When creating network segments in |morpheus|, we now perform a network refresh immediately to make the new network usable right away rather than following the next scheduled network sync :superscript:`7.0.11`
+:OpenStack: - Fixed an issue that prevented assignment of renamed OpenStack Security Groups to Instances :superscript:`7.0.11`
+:PowerVC: - Fixed an issue with reconfiguring PowerVC Instances that didn't include resizing disks :superscript:`7.0.11`
+:Tasks: - Fixed Tasks designed for specific versions of Powershell being incorrectly run against the default version under certain configurations :superscript:`7.0.11`
+:Usage: - Container usage is now properly restarted for VMware workloads even when a reconfigure does not require a reboot :superscript:`7.0.11`
+:User Settings: - Fixed a small styling issue on the button to upload an avatar image on the User Settings page
+:Whitelabel: - Footer logos no longer fail to display when whitelabel is enabled
+:Workflows: - When Workflows are renamed, the name is now updating as expected within any pre-existing Nested Workflow-type Tasks :superscript:`7.0.11`
+:vCloud Director: - Fixed provisioning issues that could arise from integrating vCD Clouds with the system provider user :superscript:`7.0.11`
 
-
+=========================
 Appliance & Agent Updates
 =========================
 
-:Appliance: - Appliance Tomcat upgraded to 9.0.98 :superscript:`7.0.10`
-:Node Packages: - Updated to v3.2.32 with fix for SLES 15 Morpheus Node package installation dependency error :superscript:`7.0.10`
-:Embedded Plugins: - Efficient IP plugin updated to v1.2.6 :superscript:`7.0.10`
-                   - Rubrik plugin updated to v2.0.0 :superscript:`7.0.10`
-:Tomcat: - Embedded Tomcat updated to v9.0.98 :superscript:`7.0.10`
+:Linux Agent: - |morpheus| linux agnet updated to v2.9.3 :superscript:`7.0.11`
+:Node Packages: - Updated to v3.2.33 with |morpheus| linux agent v2.9.3 :superscript:`7.0.11`
