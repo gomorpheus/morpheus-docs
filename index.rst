@@ -1,8 +1,7 @@
 |hpe vme| Software Documentation
 ================================
 
-.. rst-class:: hidden
-  .. include:: /release_notes/current.rst
+.. include:: /release_notes/current.rst
 
 .. toctree::
    :maxdepth: 2
@@ -31,12 +30,12 @@
 
    integration_guides/integration_guides.rst
 
-.. rst-class:: hidden
-  .. toctree::
-     :maxdepth: 3
-     :caption: Release Notes
+.. toctree::
+   :maxdepth: 3
+   :caption: Release Notes
 
-     release_notes/current.rst
+   release_notes/current.rst
+   .. rst-class:: hidden
      release_notes/compatibility.rst
      release_notes/version_highlights.rst
 
