@@ -59,7 +59,7 @@ Add a SCVMM Cloud
     INVENTORY EXISTING INSTANCES
       Enable for |morpheus| to automatically discover existing VMs in the scoped resources
     ENABLE HYPERVISOR CONSOLE
-      Enable to use VNC Hypervisor Console for |morpheus| console connection as opposed to the default SSH and RDP console connection methods. Requires resolution of all Hyper-V host names and access over port 443 from the |morpheus| appliance to Hyper-V hosts.
+      Enable to use VNC Hypervisor Console for |morpheus| console connection as opposed to the default SSH and RDP console connection methods. Requires resolution of all Hyper-V host names and access over port 2179 from the |morpheus| appliance to Hyper-V hosts.
     
     **SCVMM Specific Advanced Options**
     
