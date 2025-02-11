@@ -273,9 +273,9 @@ linkcheck_request_headers = {
 }
 html_theme_options = {
 'logo_only': True,
-'flyout_display': 'attached',
-'version_selector': True,
-'language_selector': False,
+#'flyout_display': 'attached',
+#'version_selector': True,
+#'language_selector': False,
 'sticky_navigation': True,
 'navigation_depth': 5,
 }
