@@ -8,7 +8,9 @@ Checks can be customized to run custom queries, check queue sizes, or even adjus
 Health
 ------
 
-A Check can have four health states. They are Happy, Sad, Warning, and Unknown. Checks can also be muted in which case they are effectively disabled and are not actively run to gather an updated health state. The default view shows Checks in all health states but this view can be filtered to show just one health state. When a Check test fails the system automatically reattempts the check after 30 seconds to eliminate false positives. This will convert the check into a Sad state and raise the appropriate severity incident depending on the grouping of the check. When a check recovers, it automatically goes into a Warning state. The warning state will remain until 10 successful Check runs have completed.
+A Check can have one of four primary health states, which are Error, Healthy, Warning, and Unknown. Checks can also be muted, in which case they are effectively disabled and are not actively run to gather an updated health state. While Checks are muted, the availability percentage does not change regardless of the health of the workload being checked. The default view shows Checks in all health states but this view can be filtered to show just one health state. Change the view filter to "Happy" to see only Checks in a Healthy state, "Sad" to see only Checks in an Error state, "Warning" to see Checks in both a "Warning" and "Unknown" state, and "Muted" to see only muted Checks.
+
+When a Check test fails, the system automatically reattempts the Check after 30 seconds to eliminate false negatives. This will convert the Check into an error state and raise the appropriate severity incident depending on the grouping of the Check. When a Check recovers, it automatically goes into a Warning state. The Warning state will remain until 10 successful Check runs have completed.
 
 Options
 -------
