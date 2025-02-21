@@ -424,7 +424,7 @@ Task Configuration
 
     |python|
 
-    .. IMPORTANT:: Beginning with |morpheus| version 4.2.1, Python Tasks use virtual environments. For this reason, ``virtualenv`` must be installed on your appliances in order to work with Python Tasks. See the information below for more detailed steps to install ``virtualenv`` on your |morpheus| appliance node(s).
+    .. IMPORTANT:: Python Tasks use virtual environments. For this reason, ``virtualenv`` must be installed on your appliances in order to work with Python Tasks. See the information below for more detailed steps to install ``virtualenv`` on your |morpheus| appliance node(s).
 
     - **NAME:** Name of the Task
     - **CODE:** Unique code name for API, CLI, and variable references
