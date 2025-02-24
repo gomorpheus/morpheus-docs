@@ -62,5 +62,5 @@ Fixes
 Appliance & Agent Updates
 =========================
 
-:Linux Agent: - |morpheus| linux agnet updated to v2.9.3 :superscript:`7.0.11`
+:Linux Agent: - |morpheus| linux agent updated to v2.9.3 :superscript:`7.0.11`
 :Node Packages: - Updated to v3.2.33 with |morpheus| linux agent v2.9.3 :superscript:`7.0.11`
