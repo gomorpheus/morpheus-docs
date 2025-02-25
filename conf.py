@@ -9,7 +9,7 @@ latex_documents = [
 
 rst_prolog = """
 
-.. |releasedate| replace:: February 10, 2025
+.. |releasedate| replace:: February 25, 2025
 .. |releasetype| replace:: LTS
 .. |morphAnnualVer| replace:: v8
 .. |morphbranch| replace:: v8.0
