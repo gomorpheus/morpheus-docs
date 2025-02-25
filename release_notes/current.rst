@@ -15,6 +15,7 @@ New Features
 :HPE VM: - Provisioning to HPE VM Clusters now sets a default "Auto Datastore" selection. Users may manually select a datastore or may leave the default automatic configuration
          - HPE VM Clusters now support network groups
          - Certain actions will no longer update UUIDs for VM storage volumes (moving VM to a different host, changing disk datastores, etc)
+         - Significant iops performance for VMs running on HPE VM clusters resulting from a switch to I/O native configuration from I/O threads
 :Virtual Images: - When importing images from existing VMs, future attempts to provision from that Virtual Image will automatically set disks on the provisioning wizard to a minimally viable configuration (Ex. three disks in appropriate minimum sizes)
 
 Fixes
