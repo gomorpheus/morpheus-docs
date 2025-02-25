@@ -24,6 +24,12 @@ Fixes
 :API & CLI: - Fixed results from the ``/instances/stats`` API endpoint to include only statistics from Instances the user can access
           - Fixed calls to return Task executions failing with certain license types which shouldn't have restricted it
 :HPE VM: - Fixed an issue where new host nodes added to existing HPE VM clusters with GFS2 datastores would not have the datastore mounted correctly and would face sync errors
+         - Creation time for GFS2 datastores has been improved
+         - Improved cluster sync performance leading to quicker cluster state refreshes
+         - Existing VMs no longer shutdown during GFS boot when adding new hosts to clusters
+         - GFS2 resource group size raised to 4GB
+         - SSH improvements made for adding new clusters
+         - Fixed an issue related to network interface sync
 :Storage: - Fixed the "Add S3 Bucket" (|InfStoBuc|) modal failing to load
 :Tasks: - Fixed Tasks designed for specific versions of Powershell being incorrectly run against the default version under certain configurations
 :User Settings: - Fixed a small styling issue on the button to upload an avatar image on the User Settings page
