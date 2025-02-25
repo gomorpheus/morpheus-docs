@@ -26,8 +26,9 @@ New Features
 :API & CLI: - When creating Instance snapshots via |morpheus| API, the response now includes process IDs for the triggered snapshots
 :Bare Metal: - The modal for adding bare metal hosts no longer shows common fields from other modals which don't apply to bare metal :superscript:`7.0.11`
 :HPE VM: - Certain actions will no longer update UUIDs for VM storage volumes (moving VM to a different host, changing disk datastores, etc)
-          - HPE VM Clusters now support network groups
-          - Provisioning to HPE VM Clusters now sets a default "Auto Datastore" selection. Users may manually select a datastore or may leave the default automatic configuration
+         - HPE VM Clusters now support network groups
+         - Provisioning to HPE VM Clusters now sets a default "Auto Datastore" selection. Users may manually select a datastore or may leave the default automatic configuration
+         - Significant iops performance for VMs running on HPE VM clusters resulting from a switch to I/O native configuration from I/O threads
 :Kubernetes: - Added default Kubernetes 1.32 cluster layouts for all supported Cloud types :superscript:`7.0.11`
 :ServiceNow: - All usage of the old ServiceNow logo within the product have been updated :superscript:`7.0.11`
 :VDI Gateways: - VDI gateway services will now utilize an overriding Cloud plugin (if present) rather than using an embedded Cloud plugin :superscript:`7.0.11`
@@ -46,6 +47,13 @@ Fixes
          - Fixed missing Azure storage price sets :superscript:`7.0.11`
          - Resize actions that require reboot will now warn the user the action will require a restart. Resize actions that do not require a restart will not include such a warning prior to being executed :superscript:`7.0.11`
 :Clouds: - When setting the "Disk Encryption" configuration to use encryption sets and saving before selecting an encryption set, the modal no longer locks up :superscript:`7.0.11`
+:HPE VM: - Fixed an issue where new host nodes added to existing HPE VM clusters with GFS2 datastores would not have the datastore mounted correctly and would face sync errors
+         - Creation time for GFS2 datastores has been improved
+         - Improved cluster sync performance leading to quicker cluster state refreshes
+         - Existing VMs no longer shutdown during GFS boot when adding new hosts to clusters
+         - GFS2 resource group size raised to 4GB
+         - SSH improvements made for adding new clusters
+         - Fixed an issue related to network interface sync
 :Kubernetes: - Restarting an Instance which is representative of a workload running on a Kubernetes cluster no longer creates duplicate containers :superscript:`7.0.11`
 :NSX: - Fixed NSX router route IDs being incremented after the first refresh is performed :superscript:`7.0.11`
        - When creating network segments in |morpheus|, we now perform a network refresh immediately to make the new network usable right away rather than following the next scheduled network sync :superscript:`7.0.11`
