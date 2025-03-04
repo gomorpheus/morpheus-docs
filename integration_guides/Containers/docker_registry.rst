@@ -4,7 +4,7 @@ Docker Registry
 Overview
 ^^^^^^^^
 
-Without any additional configuration |morpheus| can provision images from Docker's public hub at https://hub.docker.com/ using their public api at https://index.docker.io/v1/
+Without any additional configuration, |morpheus| can provision images from Docker's public hub at https://hub.docker.com/ using their public API.
 
 However, many organizations maintain private Docker registries for security measures. Additional public and private Docker registries can be added to Morpheus.
 
