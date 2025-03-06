@@ -1,8 +1,8 @@
 HPE Alletra MP Storage
---------
+----------------------
 
 Add HPE Alletra MP Storage
-^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^
 The first step is to create a Storage Server in |morpheus|. Once the Storage Server is added, you can create a Datastore and provision Instances.
 Follow these steps to add a Storage Server.
 
@@ -29,7 +29,7 @@ The `Storage Server` will be added and displayed in the `Datastore` tab.
 
 
 Create Datastore
-^^^^^^^^
+^^^^^^^^^^^^^^^^
 Add a `Datastore` to the `Storage Server`.
 
 #. Select the `Infrastructure` link in the navigation bar.
@@ -52,7 +52,7 @@ The `Datastore` will be added and displayed in the `Datastore` tab.
 
 
 Create Instance
-^^^^^^^^
+^^^^^^^^^^^^^^^
 Create an `Instance` with the Datastore.
 
 #. Select the `Provisioning` link in the navigation bar.
