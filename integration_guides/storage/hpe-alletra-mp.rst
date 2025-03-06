@@ -1,4 +1,4 @@
-HPE Alletra MP
+HPE Alletra MP Storage
 --------
 
 Add HPE Alletra MP Storage
@@ -10,19 +10,17 @@ Follow these steps to add a Storage Server.
 #. Select the `Storage` link in the sub navigation bar.
 #. In the `Servers` tab, Click the :guilabel:`+ ADD` button.
 #. From the ADD STORAGE SERVER wizard, input the following:
-
-    NAME:
-         Name of the Storage Server in |morpheus|
-    TYPE:
-        Select `HPE Alletra MP`
-    URL:
-        URL of HPE Alletra MP Storage
-        Examples : `https://storage-system.example.com`, `https://192.1.2.3:1234`
+   NAME:
+     Name of the Storage Server in |morpheus|
+   TYPE:
+     Select `HPE Alletra MP`
+   URL:
+     URL of HPE Alletra MP Storage
+     Examples : `https://storage-system.example.com`, `https://192.1.2.3:1234`
     USERNAME:
-        Add your administrative user account.
+      Add your administrative user account.
     PASSWORD:
-        Add your administrative password.
-
+      Add your administrative password.
 #. Select :guilabel:`SAVE CHANGES`
 
 .. image:: /images/Storage/hpe-alletra-mp/add-storage-server.png
@@ -40,14 +38,12 @@ Add a `Datastore` to the `Storage Server`.
 #. Select the `Storage` tab.
 #. Under the `Data Stores` sub tab, Click the :guilabel:`+ ADD` button.
 #. From the ADD DATASTORE wizard, input the following:
-
-    NAME:
-         Name of the Datastore in |morpheus|
-    TYPE:
-        Select `HPE Alletra MP`
-    STORAGE SERVER:
-        Select the Storage Server created as a part of Add Storage Server.
-
+   NAME:
+     Name of the Datastore in |morpheus|
+   TYPE:
+     Select `HPE Alletra MP`
+   STORAGE SERVER:
+     Select the Storage Server created as a part of Add Storage Server.
 #. Select :guilabel:`SAVE`
 
 .. image:: /images/Storage/hpe-alletra-mp/create-datastore.png
@@ -68,30 +64,30 @@ Create an `Instance` with the Datastore.
     #. Select :guilabel:`NEXT`
     .. image:: /images/Storage/hpe-alletra-mp/create-instance-type.png
     #. From the GROUP section input the following:
-        GROUP:
-            Select the Group to add the Instance to
-        CLOUD:
-            Select the Cloud to add the Instance to
-        NAME:
-            Name of the Instance in |morpheus|
+       GROUP:
+         Select the Group to add the Instance to
+       CLOUD:
+         Select the Cloud to add the Instance to
+       NAME:
+         Name of the Instance in |morpheus|
     #. Select :guilabel:`NEXT`
     .. image:: /images/Storage/hpe-alletra-mp/create-instance-group.png
     #. From the CONFIGURE section input the following:
-        LAYOUT:
-            Select the Layout to add the Instance to
-        PLAN:
-            Select the CPU Plan for the Instance
-        RESOURCE POOL:
-            Select the Resource Pool for the Instance
-        VOLUMES:
-            Add one or more Volumes to the Instance. Select the Datastore created in the Create Datastore section.
-        NETWORK:
-            Add Networks to the Instance
-        IMAGE:
-            Select the Image for the Instance
-        HOST:
-            Select the Host for the Instance
-        Add additional configurations as needed
+       LAYOUT:
+         Select the Layout to add the Instance to
+       PLAN:
+         Select the CPU Plan for the Instance
+       RESOURCE POOL:
+         Select the Resource Pool for the Instance
+       VOLUMES:
+         Add one or more Volumes to the Instance. Select the Datastore created in the Create Datastore section.
+       NETWORK:
+         Add Networks to the Instance
+       IMAGE:
+         Select the Image for the Instance
+       HOST:
+         Select the Host for the Instance
+       Add additional configurations as needed
     .. image:: /images/Storage/hpe-alletra-mp/create-instance-configure.png
     #. Select :guilabel:`NEXT`
     #. Add Automation settings as needed
