@@ -8,10 +8,10 @@ Prerequisites
 * The `multipath.conf` settings on each node should be configured as follows
 .. code-block:: json
 
-    defaults {
-        find_multipaths yes
-        user_friendly_names no
-    }
+        defaults {
+            find_multipaths yes
+            user_friendly_names no
+        }
 
 
 Add HPE Alletra MP Storage
