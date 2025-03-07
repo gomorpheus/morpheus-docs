@@ -67,7 +67,7 @@ Add a `Datastore` to the `Storage Server`.
 
 .. image:: /images/infrastructure/Storage/hpe-alletra-mp/create-datastore.png
 
-The `Datastore` will be added and displayed in the `Datastore` tab.
+The `Datastore` will be added and displayed in the `Datastore` tab and confirm that the status is marked as healthy.
 
 
 Create Instance
@@ -80,53 +80,53 @@ Create an `Instance` with the Datastore.
 #. In the `Instances` tab, Click the :guilabel:`+ ADD` button.
 #. From the ADD INSTANCE wizard input the following:
 
-    - From the TYPE section:
-        Select `HPE VM`
-    - Select :guilabel:`NEXT`
+   - From the TYPE section:
+       Select `HPE VM`
+   - Select :guilabel:`NEXT`
 
-    .. image:: /images/infrastructure/Storage/hpe-alletra-mp/create-instance-type.png
+   .. image:: /images/infrastructure/Storage/hpe-alletra-mp/create-instance-type.png
 
-    - From the GROUP section input the following:
+   - From the GROUP section input the following:
 
-       GROUP:
-         Select the Group to add the Instance to
-       CLOUD:
-         Select the Cloud to add the Instance to
-       NAME:
-         Name of the Instance in |morpheus|
+      GROUP:
+        Select the Group to add the Instance to
+      CLOUD:
+        Select the Cloud to add the Instance to
+      NAME:
+        Name of the Instance in |morpheus|
 
-    - Select :guilabel:`NEXT`
+   - Select :guilabel:`NEXT`
 
-    .. image:: /images/infrastructure/Storage/hpe-alletra-mp/create-instance-group.png
+   .. image:: /images/infrastructure/Storage/hpe-alletra-mp/create-instance-group.png
 
-    - From the CONFIGURE section input the following:
+   - From the CONFIGURE section input the following:
 
-       LAYOUT:
-         Select the Layout to add the Instance to
-       PLAN:
-         Select the CPU Plan for the Instance
-       RESOURCE POOL:
-         Select the Resource Pool for the Instance
-       VOLUMES:
-         Add one or more Volumes to the Instance. Select the Datastore created in the Create Datastore section.
-       NETWORK:
-         Add Networks to the Instance
-       IMAGE:
-         Select the Image for the Instance
-       HOST:
-         Select the Host for the Instance
+      LAYOUT:
+        Select the Layout to add the Instance to
+      PLAN:
+        Select the CPU Plan for the Instance
+      RESOURCE POOL:
+        Select the Resource Pool for the Instance
+      VOLUMES:
+        Add one or more Volumes to the Instance. Select the Datastore created in the Create Datastore section.
+      NETWORK:
+        Add Networks to the Instance
+      IMAGE:
+        Select the Image for the Instance
+      HOST:
+        Select the Host for the Instance
 
-       Add additional configurations as needed
+      Add additional configurations as needed
 
-    .. image:: /images/infrastructure/Storage/hpe-alletra-mp/create-instance-configure.png
+   .. image:: /images/infrastructure/Storage/hpe-alletra-mp/create-instance-configure.png
 
-    - Select :guilabel:`NEXT`
-    - Add Automation settings as needed
-    - Select :guilabel:`NEXT`
-    - Review the Instance configuration
-    - Select :guilabel:`COMPLETE`
+   - Select :guilabel:`NEXT`
+   - Add Automation settings as needed
+   - Select :guilabel:`NEXT`
+   - Review the Instance configuration
+   - Select :guilabel:`COMPLETE`
 
-    .. image:: /images/infrastructure/Storage/hpe-alletra-mp/create-instance-review.png
+   .. image:: /images/infrastructure/Storage/hpe-alletra-mp/create-instance-review.png
 
 The `Instance` will be provisioned and displayed in the `Instances` tab.
 
