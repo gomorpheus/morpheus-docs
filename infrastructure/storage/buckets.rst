@@ -8,7 +8,6 @@ Supported Bucket Types
 
 - Alibaba
 - Amazon S3
-- Azure
 - Google Cloud Storage
 - Openstack Swift
 - Rackspace CDN
@@ -103,65 +102,6 @@ To Add an Amazon S3 Storage Bucket:
     Enabled to export VM snapshots to this Bucket when creating VMware Backups, after which the snapshot will be removed from the target hypervisor.
    Default Deployment Archive Target
     Sets this bucket as the default storage target when uploading Deployment files in the `Deployments` section.
-   Default Virtual Image Store
-    Sets this bucket as the default storage target when uploading Virtual Images from the `Virtual Images` section, importing Images from Instance Actions, creating Images with the `Image Builder` and when creating new images from `Migrations`.
-
-   RETENTION POLICY
-    None
-      Files in the Bucket will not be automatically deleted or backed up.
-    Backup Old Files
-      This option will backup files after a set amount of time and remove them from the bucket.
-        DAYS OLD
-          Files older than the set number of days will be automatically backed up to the selected Backup Bucket.
-        BACKUP BUCKET
-          Search for and then select the Bucket the files will be backed up to.
-    DELETE OLD FILES
-      This option will delete files from this bucket after a set amount of days.
-        DAYS OLD
-          Files older than the set number of days will be automatically deleted from the Bucket.
-
-#. Select :guilabel:`SAVE CHANGES`
-
-The Bucket will be created and displayed in the Buckets tab.
-
-- To browse, upload, download, or delete files from this Bucket, select the name of the Bucket.
-
-- To edit the Bucket, select the edit icon or select the name of the Bucket and select :guilabel:`ACTIONS - EDIT`.
-
-  .. WARNING:: Repointing a bucket that is in use may cause loss of file references. Ensure data is mirrored first.
-
-- To delete a Bucket, select the trash icon or select the name of the Bucket and select :guilabel:`DELETE`.
-
-  .. WARNING:: When deleting a Bucket, all Deployment Versions and Backups associated with the Bucket will be deleted.
-
-
-Azure Buckets
-^^^^^^^^^^^^^
-
-To Add an Azure Storage Bucket:
-
-#. Select the Infrastructure link in the navigation bar.
-#. Select the Storage link in the sub navigation bar.
-#. In the BUCKETS tab, Click the :guilabel:`+ ADD` button.
-#. Select `Azure` from the dropdown list
-#. From the NEW BUCKET Wizard input the following:
-
-   NAME
-     Name of the Bucket in |morpheus|.
-   STORAGE ACCOUNT
-    Name of the Storage Account in Azure for the Bucket
-   STORAGE KEY
-    Storage Key provided from Azure
-   SHARE NAME
-    Enter existing Azure Storage Share name, or to add a new Share enter a new name and select `Create Bucket` below.
-   CREATE BUCKET
-    Enable if the Share entered in SHARE NAME does not exist and needs to be created.
-   Default Backup Target
-    Sets this bucket as the default backup target when creating Backups. If selected the option to update existing Backup configuration to use this Bucket will be presented.
-   Archive Snapshots
-    Enabled to export VM snapshots to this Bucket when creating VMware Backups, after which the snapshot will be removed from the target hypervisor.
-   Default Deployment Archive Target
-    Sets this Bucket as the default storage target when uploading Deployment files in the `Deployments` section.
    Default Virtual Image Store
     Sets this bucket as the default storage target when uploading Virtual Images from the `Virtual Images` section, importing Images from Instance Actions, creating Images with the `Image Builder` and when creating new images from `Migrations`.
 

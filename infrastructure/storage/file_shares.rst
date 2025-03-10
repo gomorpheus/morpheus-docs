@@ -6,11 +6,69 @@ File Shares are for Backup, Archives, Deployment and Virtual Images storage targ
 Supported File Share Types
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+* Azure
 * CIFS (Samba Windows File Sharing)
 * Dell EMC ECS Share
 * Dell EMC Isilon Share
 * Local Storage
 * NFSv3
+
+
+Azure File Shares
+^^^^^^^^^^^^^^^^^
+
+To Add an Azure File Share:
+
+#. Select the Infrastructure link in the navigation bar.
+#. Select the Storage link in the sub navigation bar.
+#. In the FILE SHARES tab, Click the :guilabel:`+ ADD` button.
+#. Select `Azure` from the dropdown list
+#. From the NEW FILE SHARE Wizard input the following:
+
+   NAME
+     Name for the file share in |morpheus|.
+   STORAGE ACCOUNT
+    Name of the Storage Account in Azure for the file share
+   STORAGE KEY
+    Storage Key provided from Azure
+   SHARE NAME
+    Enter existing Azure Storage Share name or, to add a new Share, enter a new name and mark the `Create Bucket` box below
+   CREATE BUCKET
+    Mark if the share entered in SHARE NAME does not exist and needs to be created
+   DEFAULT BACKUP TARGET
+    Sets this file share as the default backup target when creating Backups. If selected, the option to UPDATE EXISTING BACKUPS will appear. Mark to update existing backups to this file share
+   DEFAULT DEPLOYMENT ARCHIVE TARGET
+    Sets this file share as the default storage target when creating deployment archives
+   DEFAULT VIRTUAL IMAGE STORE
+    Sets this file share as the default storage target when uploading Virtual Images from the `Virtual Images` section or when importing Images from Instance Actions
+
+   RETENTION POLICY
+    None
+      Files in the share will not be automatically deleted or backed up
+    Backup Old Files
+      This option will backup files after a set amount of time and remove them from the file share
+        DAYS OLD
+          Files older than the set number of days will be automatically backed up to the selected Backup target
+        BACKUP BUCKET
+          Search for and then select the desired backup bucket
+    DELETE OLD FILES
+      This option will delete files from this share after a set amount of days
+        DAYS OLD
+          Files older than the set number of days will be automatically deleted from the share
+
+#. Select :guilabel:`SAVE CHANGES`
+
+The file share will be created and displayed in the file shares tab.
+
+- To browse, upload, download, or delete files from this file share, select the name of the share from the File Shares tab.
+
+- To edit the file share, select the edit icon or select the name of the share and select :guilabel:`ACTIONS - EDIT`.
+
+  .. WARNING:: Re-pointing a file share that is in use may cause loss of file references. Ensure data is mirrored first.
+
+- To delete a file share, select the trash icon or select the name of the file share and click :guilabel:`DELETE`.
+
+  .. WARNING:: When deleting a file share, all Deployment versions and Backups associated with the file share will be deleted.
 
 CIFS File Shares
 ^^^^^^^^^^^^^^^^

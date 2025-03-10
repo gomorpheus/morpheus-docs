@@ -30,3 +30,7 @@ Default Appliance Locale
   Sets the default language and region for all users on the |morpheus| appliance. Users with individual language preferences may also override this selection on their User Settings page
 Default Console Gateway
   Select a configured |morpheus| Worker as a console gateway or VDI gateway. For more on installation and configuration of a gateway, see the `VDI Gateways section <https://docs.morpheusdata.com/en/latest/tools/vdi_pools.html#vdi-gateways>`_ of |morpheus| documentation.
+Max Option List Size
+  Sets a maximum size for Option Lists (such as those sourced from REST calls to a remote server) to preserve appliance performance in the event that a very large payload is inadvertently accessed. The entered number is multiplied by 1000 (for example, entering "1" results in a maximum list size of 1000).
+Dashboards to Display
+  A typeahead field which will show all Dashboards available to the appliance from Dashboard-type plugins. Select all desired Dashboards and they will be displayed in the order set. Dashboards can be dragged up and down the list to set the order correctly.

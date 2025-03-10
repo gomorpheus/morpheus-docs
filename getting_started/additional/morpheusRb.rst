@@ -123,6 +123,11 @@ Morpheus allows for additional advanced customizations for system managed servic
   ui['memory_top_pad'] = 131072
   ui['memory_trim_threshold'] = 131072
   ui['pxe_boot_enabled'] = false #### This option disables the PXE service within the app
+  ui['support_links'] = {
+    'name' => ['url', 'i18n'],
+    'name1' => ['url1', i18n1'],
+    'name2' => ['url2', i18n2']
+  } #### The internationalization configuration is optional. The result of this configuration are entries in the support dropdown menu in the upper bar of the application window which override the default entries.
   ui['vm_images_cdn_url'] = 'https://morpheus-images.morpheusdata.com'
   ui['xms'] = 0.25 #### Configurable for customers running into high memory issues, values are the percentage of total RAM. Both ui and es xms/xmx config only apply if Elasticsearch is enabled.
   ui['xmx'] = 0.25

@@ -437,6 +437,12 @@ Role Mappings
         - The Security Groups page is where Security Groups (aka virtual firewalls) are defined.
         - This permission is recommended for those responsible for firewall configuration and management.
         -
+      * - Infrastructure: Server Software
+        - None, Read, Full
+        - Determines access to the Software tab on server detail pages. The 'Full' permission level surfaces a SYNC button on the Software tab, users with 'Read' permission do not see the SYNC button.
+        - The Software Tab of a server detail page is where the list of installed software packages for the server are shown.
+        -
+        -
       * - Infrastructure: State
         - None, Read, Full
         - Determines access to the power state toggle on the Infrastructure > Hosts page.
