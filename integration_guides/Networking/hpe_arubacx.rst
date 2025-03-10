@@ -17,7 +17,6 @@ Prerequisites
 - All the hosts part of the Cluster are connected to these pair of switches.
 - REST API access to the ArubaCX switches with Administrative rights.
 - User credentials for the ArubaCX switch pair with API access granted and read/write access to the switch configuration.
-- All the hosts part of the Cluster are connected to these pair of switches.
 
 **Server Network Configuration (Netplan)**
 
