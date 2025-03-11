@@ -43,23 +43,23 @@ Prerequisites
 #. Configure the management interface and IP address on both switches in the pair.
 #. The switch pair must be configured with `vsx-sync` enabled for high availability and redundancy.
 
-       **A sample configuration on the switch pair is shown below:**
+   **A sample configuration on the switch pair is shown below:**
 
-        .. code-block:: bash
+    .. code-block:: bash
 
-            vsx
-                inter-switch-link lag 256
-                role primary
-                keepalive peer 192.168.0.1 source 192.168.0.0
-                vsx-sync loop-protect-global mclag-interfaces vsx-global
+      vsx
+          inter-switch-link lag 256
+          role primary
+          keepalive peer 192.168.0.1 source 192.168.0.0
+          vsx-sync loop-protect-global mclag-interfaces vsx-global
 
-        .. code-block:: bash
+    .. code-block:: bash
 
-            vsx
-                inter-switch-link lag 256
-                role secondary
-                keepalive peer 192.168.0.0 source 192.168.0.1
-                vsx-sync loop-protect-global mclag-interfaces vsx-global
+      vsx
+          inter-switch-link lag 256
+          role secondary
+          keepalive peer 192.168.0.0 source 192.168.0.1
+          vsx-sync loop-protect-global mclag-interfaces vsx-global
 
 #. Create a Multi-Chassis Link Aggregation Group (MC-LAG) between the ArubaCX switch and the upstream network, referred to as `lag1`.
 #. Configure the **lag1** interface on both switches in the pair.
@@ -67,24 +67,26 @@ Prerequisites
   **A sample configuration on the switch pair is shown below:**
 
     .. code-block:: bash
-        interface lag 1 multi-chassis
-            no shutdown
-            no routing
-            vlan trunk native 1
-            vlan trunk allowed 1,175
-            lacp mode active
-            loop-protect
+
+      interface lag 1 multi-chassis
+          no shutdown
+          no routing
+          vlan trunk native 1
+          vlan trunk allowed 1,175
+          lacp mode active
+          loop-protect
 
 #. The switch ports connected to the server’s management interfaces should be set to `Trunk mode` with a `Native VLAN`.
 
   **A sample configuration is shown below:**
 
     .. code-block:: bash
-        interface 1/1/1
-        no shutdown
-        no routing
-        vlan trunk native 175
-        vlan trunk allowed 175
+
+      interface 1/1/1
+      no shutdown
+      no routing
+      vlan trunk native 175
+      vlan trunk allowed 175
 
 Adding ArubaCX Integration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -121,7 +123,6 @@ Adding ArubaCX Integration
 Upon save the `ArubaCX Network integration` will be created.
 
 .. NOTE:: All fields can be edited after saving.
-
 
 Add ArubaCX Integration to a Cluster
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
