@@ -23,7 +23,8 @@ Release Dates
 New Features
 ============
 
-
+:HPE VM: - Added support for AurbaCX network plugin. See `integration guide <https://docs.morpheusdata.com/en/8.0.4/integration_guides/Networking/hpe_arubacx.html>`_ for setup details and use cases
+         - Added support for HPE Alletra MP storage plugin. See `integration guide <https://docs.morpheusdata.com/en/8.0.4/integration_guides/storage/hpe-alletra-mp.html>`_ for setup details and use cases
 
 Fixes
 =====

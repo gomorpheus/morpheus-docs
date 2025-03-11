@@ -76,7 +76,7 @@ Prerequisites
           lacp mode active
           loop-protect
 
-#. The switch ports connected to the server’s management interfaces should be set to `Trunk mode` with a `Native VLAN`.
+5. The switch ports connected to the server’s management interfaces should be set to `Trunk mode` with a `Native VLAN`.
 
   **A sample configuration is shown below:**
 
