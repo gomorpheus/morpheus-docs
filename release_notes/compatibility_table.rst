@@ -14,6 +14,9 @@
   * - App Dynamics
     - 4.5.x
     -
+  * - ArubaCX
+    - 8325 series - GL.10.10.x or higher
+    -
   * - Avamar
     - 18
     -
@@ -31,6 +34,9 @@
     -
   * - F5 Big-IP
     - 11.4+
+    -
+  * - HPE Alletra MP Storage
+    - 10.4.2 or higher
     -
   * - Infoblox
     - Latest Versions Supported
