@@ -22,18 +22,20 @@ Prerequisites
 
 #. On each host, configure a `bond0` interface on the management interfaces.
 #. The management interfaces should be connected to the ArubaCX switch pair.
+
   **A sample configuration is shown below:**
-    .. code-block:: markdown
-        {
-            bonds:
-              bond0:
-                interfaces:
-                  - ens2f0np0
-                  - ens1f0np0
-                parameters:
-                  mode: "active-backup"
-            ...
-        }
+  .. code-block::
+
+      {
+          bonds:
+            bond0:
+              interfaces:
+                - ens2f0np0
+                - ens1f0np0
+              parameters:
+                mode: "active-backup"
+          ...
+      }
 
 **Switch Configuration**
 
@@ -41,37 +43,45 @@ Prerequisites
 #. The switch pair must be configured with `vsx-sync` enabled for high availability and redundancy.
 
        **A sample configuration on the switch pair is shown below:**
-        .. code-block:: markdown
+
+        .. code-block::
+
             vsx
                 inter-switch-link lag 256
                 role primary
                 keepalive peer 192.168.0.1 source 192.168.0.0
                 vsx-sync loop-protect-global mclag-interfaces vsx-global
-        .. code-block:: markdown
+
+        .. code-block::
+
             vsx
                 inter-switch-link lag 256
                 role secondary
                 keepalive peer 192.168.0.0 source 192.168.0.1
                 vsx-sync loop-protect-global mclag-interfaces vsx-global
+
 #. Create a Multi-Chassis Link Aggregation Group (MC-LAG) between the ArubaCX switch and the upstream network, referred to as `lag1`.
 #. Configure the **lag1** interface on both switches in the pair.
   **A sample configuration on the switch pair is shown below:**
-    .. code-block:: markdown
-        interface lag 1 multi-chassis
-            no shutdown
-            no routing
-            vlan trunk native 1
-            vlan trunk allowed 1,175
-            lacp mode active
-            loop-protect
+
+  .. code-block::
+      interface lag 1 multi-chassis
+          no shutdown
+          no routing
+          vlan trunk native 1
+          vlan trunk allowed 1,175
+          lacp mode active
+          loop-protect
+
 #. The switch ports connected to the server’s management interfaces should be set to `Trunk mode` with a `Native VLAN`.
   **A sample configuration is shown below:**
-    .. code-block:: markdown
-        interface 1/1/1
-        no shutdown
-        no routing
-        vlan trunk native 175
-        vlan trunk allowed 175
+
+  .. code-block::
+      interface 1/1/1
+      no shutdown
+      no routing
+      vlan trunk native 175
+      vlan trunk allowed 175
 
 Adding ArubaCX Integration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
