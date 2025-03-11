@@ -39,6 +39,7 @@ Follow these steps to add a Storage Server.
 #. Select :guilabel:`SAVE CHANGES`
 
 .. image:: /images/infrastructure/Storage/hpe-alletra-mp/add-storage-server.png
+  :width: 50%
 
 The `Storage Server` will be added and displayed in the `Datastore` tab.
 
@@ -64,6 +65,7 @@ Add a `Datastore` to the `Storage Server`.
 #. Select :guilabel:`SAVE`
 
 .. image:: /images/infrastructure/Storage/hpe-alletra-mp/create-datastore.png
+  :width: 50%
 
 The `Datastore` will be added and displayed in the `Datastore` tab and confirm that the status is marked as healthy.
 
@@ -82,6 +84,7 @@ Create an `Instance` with the Datastore.
    - Select :guilabel:`NEXT`
 
    .. image:: /images/infrastructure/Storage/hpe-alletra-mp/create-instance-type.png
+      :width: 50%
 
    - From the GROUP section input the following:
 
@@ -95,6 +98,7 @@ Create an `Instance` with the Datastore.
    - Select :guilabel:`NEXT`
 
    .. image:: /images/infrastructure/Storage/hpe-alletra-mp/create-instance-group.png
+      :width: 50%
 
    - From the CONFIGURE section input the following:
 
