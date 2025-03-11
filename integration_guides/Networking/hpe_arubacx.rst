@@ -83,9 +83,8 @@ Adding ArubaCX Integration
 #. Enter the following:
 
     .. image:: /images/integration_guides/other/arubacx/arubacx_new_integration.png
-      :width: 50%
     .. image:: /images/integration_guides/other/arubacx/arubacx_settings.png
-      :width: 50%
+      :width: 40%
 
    NAME
     Name of the Integration in |morpheus|
@@ -119,4 +118,4 @@ Add ArubaCX Integration to a Cluster
 #. Save Changes
 
     .. image:: /images/integration_guides/other/arubacx/arubacx_edit_cluster.png
-      :width: 50%
+      :width: 40%
