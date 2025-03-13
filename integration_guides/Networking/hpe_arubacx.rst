@@ -76,11 +76,12 @@ Prerequisites
         vlan trunk native 175
         vlan trunk allowed 175
 
+.. Note::
+    - Making full use of the Morpheus ArubaCX integration requires credentials for Aruba CX switch pair with API access granted and read/write access to switch configuration. See ArubaCX 8325 documentation for more information on user rights administration in that product.
+    - Refer to https://apidocs.morpheusdata.com documentation for more information on the Morpheus API.
+
 Adding ArubaCX Integration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-.. Note:: Making full use of the Morpheus ArubaCX integration requires credentials for Aruba CX switch pair with API access granted and read/write access to switch configuration. See ArubaCX 8325 documentation for more information on user rights administration in that product.
-
 #. Navigate to ``Administration > Integrations``
 #. Select :guilabel:`+ New Integration` > Other > ArubaCX
 #. Enter the following:
@@ -111,12 +112,88 @@ Upon save the `ArubaCX Network integration` will be created.
 
 .. NOTE:: All fields can be edited after saving.
 
+Adding ArubaCX Integration via API
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+#. Generate **Authorization Bearer** token for the appliance using the `/oauth/token` API.
+
+    .. code-block:: bash
+        curl --location 'https://<APPLIANCE_URL>/oauth/token?client_id=morph-api&grant_type=password&scope=write' \
+        --form 'username="<APPLIANCE_USERNAME>"' \
+        --form 'password="<APPLIANCE_PASSWORD>"'
+
+#. Add ArubaCX Integration using the following `/api/integrations` API.
+
+     .. code-block:: bash
+        curl --location 'https://<APPLIANCE_URL>/api/integrations' \
+        --header 'Content-Type: application/json' \
+        --header 'Authorization: Bearer <AUTH_TOKEN>' \
+        --data '{
+            "integration": {
+                "name": "ArubaCX-Network",
+                "type": "morpheus-arubacx-plugin.generic",
+                "enabled": true,
+                "refresh": false,
+                "config": {
+                    "cm.plugin.ip1": "<SWITCH1_IP>",
+                    "cm.plugin.username1": "<SWITCH1_USERNAME>",
+                    "cm.plugin.password1": "<SWITCH1_PASSWORD>",
+                    "cm.plugin.ip2": "<SWITCH2_IP>",
+                    "cm.plugin.username2": "<SWITCH2_USERNAME>",
+                    "cm.plugin.password2": "<SWITCH2_PASSWORD>"
+                }
+            }
+        }'
+
+.. NOTE::
+    - Replace `<APPLIANCE_URL>` with the appliance URL.
+    - Replace `<APPLIANCE_USERNAME>` with the appliance Username.
+    - Replace `<APPLIANCE_PASSWORD>` with the appliance Password.
+    - Replace `<AUTH_TOKEN>` with the generated token.
+    - Replace `<SWITCH1_IP>` with the primary switch IP Address.
+    - Replace `<SWITCH1_USERNAME>` with the primary switch Username.
+    - Replace `<SWITCH1_PASSWORD>` with the primary switch Password.
+    - Replace `<SWITCH2_IP>` with the secondary switch IP Address.
+    - Replace `<SWITCH2_USERNAME>` with the secondary switch Username.
+    - Replace `<SWITCH2_PASSWORD>` with the secondary switch Password.
 
 Add ArubaCX Integration to a Cluster
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 #. In ``Infrastructure > Clusters`` select the target Cluster.
 #. Select the `Edit` button for the Cluster.
 #. In the `Integrations` dropdown, select an available ArubaCX Integration.
 #. Save Changes
 
     .. image:: /images/integration_guides/other/arubacx/arubacx_edit_cluster.png
+
+Add ArubaCX Integration to a Cluster via API
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+#. Get the Cluster ID using the following `/api/clusters` API.
+
+    .. code-block:: bash
+        curl --location 'https://<APPLIANCE_URL>/api/clusters' \
+        --header 'accept: application/json' \
+        --header 'Authorization: Bearer <AUTH_TOKEN>'
+
+#. Associate the ArubaCX Integration to a Cluster using the following `/api/clusters/{id}` API.
+
+    .. code-block:: bash
+        curl --request PUT \
+             --url https://<APPLIANCE_URL>/api/clusters/<CLUSTER_ID> \
+             --header 'accept: application/json' \
+             --header 'authorization: Bearer Bearer <AUTH_TOKEN>' \
+             --header 'content-type: application/json' \
+             --data '{
+                  "cluster": {
+                    "integrations": [
+                      {
+                        "id": <INTEGRATION_ID>
+                      }
+                    ]
+                  }
+                }'
+
+.. NOTE::
+    - Replace `<APPLIANCE_URL>` with the appliance URL.
+    - Replace `<CLUSTER_ID>` with the Cluster ID.
+    - Replace `<INTEGRATION_ID>` with the ArubaCX Integration ID.
+    - The integration ID can be found in the response of the `/api/integrations` POST API from the previous step.
