@@ -25,11 +25,6 @@ System status gives a high-level view of the health of the appliance. More detai
 
 Any Instances you've "favorited" will appear here along with the Instance name, type, and IP address
 
-.. rst-class:: hidden
-  **Alarms**
-
-  The most recent five Alarms are displayed here and the user may link through to the resource which triggered the Alarm. For the complete list of Alarms and more information on each Alarm navigate to |OpeActAla|
-
 **Instance Status**
 
 The total number of Instances is listed along with a pie chart showing the statuses of each. Hover over each section of the pie chart to see the total number and percentage of Instances in that state. States may include running, stopped, provisioning, and more
