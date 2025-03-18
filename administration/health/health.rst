@@ -18,7 +18,7 @@ The |morpheus| Health section provides an overview of the health of your |Morphe
 Health Levels
 ^^^^^^^^^^^^^
 
-Health levels provide a live representation of the current memory and CPU load on the appliance. Bear in mind that in an HA appliance, this data will be specific to the appliance node you happen to be using. By default, |morpheus| does not include any endpoint or UI tool which can show you the currently used app node. However, a plugin has been developed which can surface this information if needed. See `this thread <https://discuss.morpheusdata.com/t/custom-ping-endpoint-via-morpheus-plugin/389>`_ in the |morpheus| official forums for additional details about accessing and using the plugin.
+Health levels provide a live representation of the current memory and CPU load on the appliance. Bear in mind that in an HA appliance, this data will be specific to the appliance node you happen to be accessing. By default, |morpheus| does not include any endpoint or UI tool which can show you the currently used app node. However, a plugin has been developed which can surface this information if needed. See `this thread <https://discuss.morpheusdata.com/t/custom-ping-endpoint-via-morpheus-plugin/389>`_ in the |morpheus| official forums for additional details about accessing and using the plugin.
 
   - **Morpheus CPU:** Instantaneous amount of CPU capacity in use by |morpheus| processes
   - **System CPU:** Instantaneous amount of CPU capacity in use by all processes
