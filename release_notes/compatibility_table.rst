@@ -51,7 +51,7 @@
     - For |morpheus| version 6.3.4 and higher, Nutanix AOS version 6.5.3.7+ is required. See the `Nutanix Compatibility and Interoperability table <https://portal.nutanix.com/page/documents/compatibility-interoperability-matrix/software?partnerName=Morpheus%20Data&solutionType=all&componentVersion=all&hypervisor=all&validationType=all>`_ for additional information
     - In 5.5 - 5.7 if Prism Central is managing Prism Element, image creation will not function due to PC Image Management.
   * - Nutanix Prism Central
-    - pc.2022.1 and higher
+    - Plugin QA tested against pc.2024.3.0.1
     - Nutanix Prism Central Cloud integration is added through an officially-developed plugin. See share.morpheusdata.com and the Prism Central integration guide in this documentation for more details.
   * - Openstack
     - Latest Versions Supported
