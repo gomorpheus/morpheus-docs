@@ -21,7 +21,7 @@ MySQL Shell Cluster Single Site JS Script
                     var nodes = nodeA; // Combine nodeA and nodeB arrays
 
                     nodes.forEach(function (node) {
-                    dba.configureInstance(mysqlAdmin + "@" + node + ":3306", { password: dbPass });
+                        dba.configureInstance({user: mysqlAdmin, host: node, port: 3306, password: dbPass});
                     });
 
                     print('.\nInstances ready to be clustered.');
