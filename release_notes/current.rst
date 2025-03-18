@@ -42,7 +42,9 @@ New Features
 :OneLogin: - OneLogin integrations now support global proxies if they are configured
 :Oracle Cloud: - Added sort logic to the Regions dropdown list when adding or editing Oracle Clouds
                 - Added support for EU sovereign regions for Oracle Cloud
-:Plugins: - Improved appliance cleanup when plugins are removed
+:Plugins: - Added support for AurbaCX network plugin. See `integration guide <https://docs.morpheusdata.com/en/8.0.4/integration_guides/Networking/hpe_arubacx.html>`_ for setup details and use cases
+          - Added support for HPE Alletra MP storage plugin. See `integration guide <https://docs.morpheusdata.com/en/8.0.4/integration_guides/storage/hpe-alletra-mp.html>`_ for setup details and use cases
+          - Improved appliance cleanup when plugins are removed
 :Roles: - Added feature Role permission "Infrastructure: Server Software" which controls access to the Software tab on the server detail page. This tab shows installed software on the server
 :UI: - Added a live history and process widget to the UI. Click the list icon in the top menu bar (to the left of the bell icon and the right of the global search bar). The live progress of certain processes (ex. Instance provisioning) is shown
              - The links in the support menu dropdown are now customizable via ``morpheus.rb`` file configuration. See docs section on ``morpheus.rb`` configuration for details
@@ -103,6 +105,4 @@ Fixes
 Appliance & Agent Updates
 =========================
 
-:Embedded Plugins: - Added support for AurbaCX network plugin. See `integration guide <https://docs.morpheusdata.com/en/8.0.4/integration_guides/Networking/hpe_arubacx.html>`_ for setup details and use cases
-          - Added support for HPE Alletra MP storage plugin. See `integration guide <https://docs.morpheusdata.com/en/8.0.4/integration_guides/storage/hpe-alletra-mp.html>`_ for setup details and use cases
-          - Nutanix Prism Element plugin v1.0.1 added to embedded plugins.
+:Embedded Plugins: - Nutanix Prism Element plugin v1.0.1 added to embedded plugins.
