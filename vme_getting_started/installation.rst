@@ -139,6 +139,8 @@ Let's first paste in the path to the manager image since it's already in the pas
 - Appliance URL
 - Hostname (same as the appliance URL without the FQDN)
 
+.. NOTE:: Once a host is initially set up over SSH, communication to the |manager| is mostly handled through an outbound connection from an agent running on the host to the Manager VM. This makes the Appliance URL configuration very important. This is the HTTPS URL the agent will connect to from within each hypervisor host. The one exception are hypervisor console sessions which still go through SSH.
+
 After filling in those fields, enter a username and password for an SSH user that can be used to get into the manager machine. Following that, if necessary, configure any proxy details.
 
 The final configuration to make here involves specifying the size of the manager machine, either small, medium, or large. Each of the respective sizes consumes the following amount of resources:
