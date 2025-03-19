@@ -1,7 +1,7 @@
 3-Node HA Upgrade
 ^^^^^^^^^^^^^^^^^
 
-3-Node HA Appliances represent 3 App nodes with local RabbitMQ and Elasticsearch services clustered across the app nodes, and an external Galera/Percona MySQL cluster.
+3-Node HA Appliances represent 3 App nodes with local RabbitMQ and Elasticsearch services clustered across the app nodes, and an external MySQL cluster.
 
 |morpheus| Packages
 ```````````````````

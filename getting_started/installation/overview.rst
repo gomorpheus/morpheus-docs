@@ -41,7 +41,7 @@ The application tier is easily installed with the same Debian or yum repository 
 
 Transactional Database Tier
 ````````````````````````````
-The Transactional database tier usually consists of a MySQL compatible database. It is recommended that a lockable clustered configuration be used (Currently Percona XtraDB Cluster is the most recommended in Permissive Mode). There are several documents online related to configuring and setting up an XtraDB Cluster but it most simply can be laid out in a many master configuration. There can be some nodes setup with replication delay as well as some with no replication delay. It is common practice to have no replication delay within the same region and allow some replication delay cross region. This does increase the risk of job run overlap between the 2 regions however, the concurrent operations typically self-correct and this is a non-issue.
+The Transactional database tier usually consists of a MySQL-compatible database. It is recommended that a lockable clustered configuration be used. There are several documents online related to configuring and setting up such a cluster but it most simply can be laid out in a many-master configuration. There can be some nodes setup with replication delay as well as some with no replication delay. It is common practice to have no replication delay within the same region and allow some replication delay cross region. This does increase the risk of job run overlap between the 2 regions however, the concurrent operations typically self-correct and this is a non-issue.
 
 Non-Transactional Database Tier
 ```````````````````````````````
