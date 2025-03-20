@@ -50,4 +50,4 @@ Integration Guides
      trust/trust.rst
    Clouds/clouds.rst
    Networking/networking.rst
-   storage/storage.rst
+   Storage/storage.rst
