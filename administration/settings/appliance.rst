@@ -39,4 +39,4 @@ Default Appliance Locale
 Default Console Gateway
   Select a configured |morpheus| Worker as a console gateway or VDI gateway. For more on installation and configuration of a gateway, see the `VDI Gateways section <https://docs.morpheusdata.com/en/latest/tools/vdi_pools.html#vdi-gateways>`_ of |morpheus| documentation.
 Max Option List Size
-  Sets the maximum size for Option Lists to ensure a very large Option List does not affect performance of the appliance.
+  Sets a maximum size for Option Lists (such as those sourced from REST calls to a remote server) to preserve appliance performance in the event that a very large payload is inadvertently accessed. The entered number is multiplied by 1000 (for example, entering "1" results in a maximum list size of 1000).

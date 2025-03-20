@@ -44,8 +44,10 @@ Integration Guides
      LoadBalancers/LoadBalancers.rst
      Logs/Logs.rst
      Monitoring/Monitoring.rst
-     Networking/networking.rst
-     storage/storage.rst
+
+
      supportedVersions/supportedVersions.rst
      trust/trust.rst
    Clouds/clouds.rst
+   Networking/networking.rst
+   storage/storage.rst
