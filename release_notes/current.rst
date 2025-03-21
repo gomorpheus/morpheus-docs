@@ -20,8 +20,8 @@ New Features
           - When installing the HPE VM Manager, an error is now logged if the installer is unsuccessful in downloading the Manager QCOW image from the URL provided
 :Installer: - Added additional checks that the appliance URL DNS name is resolvable to warn the user prior to beginning the Manager installation process
 :License: - |morpheus| appliances now allow stacking licenses. When stacked, the cumulative total of license privileges are allowed
-:Plugins: - Added support for AurbaCX network plugin. See `integration guide <https://docs.morpheusdata.com/en/8.0.4/integration_guides/Networking/hpe_arubacx.html>`_ for setup details and use cases
-          - Added support for HPE Alletra MP storage plugin. See `integration guide <https://docs.morpheusdata.com/en/8.0.4/integration_guides/storage/hpe-alletra-mp.html>`_ for setup details and use cases
+:Plugins: - Added support for AurbaCX network plugin. See `integration guide <https://hpevm-docs.morpheusdata.com/en/8.0.4-vme/integration_guides/Networking/hpe-arubacx.html>`_ for setup details and use cases
+          - Added support for HPE Alletra MP storage plugin. See `integration guide <https://hpevm-docs.morpheusdata.com/en/8.0.4-vme/integration_guides/Storage/hpe-alletra-mp.html>`_ for setup details and use cases
           - Improved appliance cleanup when plugins are removed
 
 Fixes
