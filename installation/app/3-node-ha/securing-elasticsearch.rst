@@ -1,6 +1,6 @@
 Securing Elasticsearch
 ``````````````````````
-.. Content-Begin
+.. Content-Begins
 
 #. Using ``Node 1``, create the directory structure and generate the needed Certificate Authority (CA) certificate
 
@@ -116,4 +116,4 @@ Securing Elasticsearch
          .. code-block:: bash
       
             openssl pkcs12 -in /var/opt/morpheus/certs/elastic-stack-ca.p12 -out /etc/morpheus/ssl/trusted_certs/elastic-stack-ca.pem -clcerts -nokeys
-.. Content-Begin
+.. Content-Ends
