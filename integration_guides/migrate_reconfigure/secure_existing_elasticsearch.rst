@@ -5,8 +5,8 @@ Enable Secure Elasticsearch on an Existing Morpheus Deployment
     This guide assumes a 3-node HA configuration but can be adapated to a single node
 
 .. include:: /installation/app/3-node-ha/securing-elasticsearch.rst
-    :start-after: Content-Begin
-    :end-before: Content-End
+    :start-after: Content-Begins
+    :end-before: Content-Ends
 
 #. On ``Node 1``, note/save the ``morpheus_password`` and the ``elastic_password`` from the ``/etc/morpheus/morpheus-secrets.json`` file in the ``elasticsearch`` section.  This same username and password will be used on all three nodes
 
@@ -34,21 +34,31 @@ Enable Secure Elasticsearch on an Existing Morpheus Deployment
 
 #. On ``All Nodes``, modify the ``/etc/morpheus/morpheus.rb`` file and add the following lines
 
-    .. code-block:: ruby
+    .. content-tabs::
 
-        elasticsearch['secure_mode'] = true  # enables both username/password auth and TLS
-        elasticsearch['use_tls'] = true  # instructs Morpheus to use HTTPS/TLS when connecting
-        elasticsearch['truststore_path'] = '/var/opt/morpheus/certs/elastic-stack-ca.p12'  # the generated CA certificate
-        elasticsearch['truststore_password'] = 'myfakepassword'  # password on the generated CA certificate
-        elasticsearch['elastic_password'] = 'b512bb1fe07e2004366ff4f990f0ee1dd7c8'  # elastic_password from Node 1 morpehus-secret.json
-        elasticsearch['morpheus_password'] = '660f9cb0363a1c9a38299f4f'  # morpheus_password from Node 1 morpehus-secret.json
+      .. tab-container:: tab1
+         :title: All Nodes
+
+         .. code-block:: ruby
+
+            elasticsearch['secure_mode'] = true  # enables both username/password auth and TLS
+            elasticsearch['use_tls'] = true  # instructs Morpheus to use HTTPS/TLS when connecting
+            elasticsearch['truststore_path'] = '/var/opt/morpheus/certs/elastic-stack-ca.p12'  # the generated CA certificate
+            elasticsearch['truststore_password'] = 'myfakepassword'  # password on the generated CA certificate
+            elasticsearch['elastic_password'] = 'b512bb1fe07e2004366ff4f990f0ee1dd7c8'  # elastic_password from Node 1 morpehus-secret.json
+            elasticsearch['morpheus_password'] = '660f9cb0363a1c9a38299f4f'  # morpheus_password from Node 1 morpehus-secret.json
         
 #. On ``All Nodes``, stop the ``morpheus-ui`` and ``elasticsearch`` services
 
-    .. code-block:: ruby
+    .. content-tabs::
 
-        morpheus-ctl stop morpheus-ui
-        morpheus-ctl stop elasticsearch
+      .. tab-container:: tab1
+         :title: All Nodes
+
+         .. code-block:: ruby
+
+            morpheus-ctl stop morpheus-ui
+            morpheus-ctl stop elasticsearch
 
 .. note::
       For the next step, utilize a 4th terminal window.  When the nodes are reconfiguring, they will be hung waiting for Elasticsearch to start
@@ -69,15 +79,25 @@ Enable Secure Elasticsearch on an Existing Morpheus Deployment
 
 #. Verify the cluster using the following example commands for a (or all) nodes, now using auth (username/password seen above) and TLS
 
-    .. code-block:: bash
+    .. content-tabs::
 
-        curl -k -u morpheus:660f9cb0363a1c9a38299f4f -X GET "https://localhost:9200/_cluster/health?pretty"
-        curl -k -u morpheus:660f9cb0363a1c9a38299f4f -X GET "https://localhost:9200/_cat/nodes?v=true"
+      .. tab-container:: tab1
+         :title: 4th Terminal
+
+         .. code-block:: bash
+
+            curl -k -u morpheus:660f9cb0363a1c9a38299f4f -X GET "https://localhost:9200/_cluster/health?pretty"
+            curl -k -u morpheus:660f9cb0363a1c9a38299f4f -X GET "https://localhost:9200/_cat/nodes?v=true"
 
 #. Additional troubleshooting can be done for the ``elasticsearch`` service by invtestigating the ``/var/log/morpheus/elasticsearch/current`` log
 
-#. Once the cluster is up and running successfully, start the ``morpheus-ui`` service
+#. Once the cluster is up and running successfully, start the ``morpheus-ui`` service on ``All Nodes``
 
-    .. code-block:: bash
+    .. content-tabs::
 
-        morpheus-ctl start morpheus-ui
+      .. tab-container:: tab1
+         :title: All Nodes
+    
+         .. code-block:: bash
+
+            morpheus-ctl start morpheus-ui
