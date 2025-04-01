@@ -34,7 +34,7 @@ Enable Secure Elasticsearch on an Existing Morpheus Deployment
 
 #. On ``All Nodes``, modify the ``/etc/morpheus/morpheus.rb`` file and add the following lines
 
-    .. content-tabs::
+   .. content-tabs::
 
       .. tab-container:: tab1
          :title: All Nodes
@@ -50,7 +50,7 @@ Enable Secure Elasticsearch on an Existing Morpheus Deployment
         
 #. On ``All Nodes``, stop the ``morpheus-ui`` and ``elasticsearch`` services
 
-    .. content-tabs::
+   .. content-tabs::
 
       .. tab-container:: tab1
          :title: All Nodes
@@ -69,9 +69,14 @@ Enable Secure Elasticsearch on an Existing Morpheus Deployment
 
 #. Using the 4th terminal window mentioned above, SSH to ``Node 1`` and run the following:
 
-    .. code-block:: bash
+   .. content-tabs::
 
-        morpheus-ctl start elasticsearch
+      .. tab-container:: tab1
+         :title: 4th Terminal
+    
+         .. code-block:: bash
+
+            morpheus-ctl start elasticsearch
 
 #. Repeat the reconfigure process and 4th terminal window method on the remaining two nodes
 
@@ -79,7 +84,7 @@ Enable Secure Elasticsearch on an Existing Morpheus Deployment
 
 #. Verify the cluster using the following example commands for a (or all) nodes, now using auth (username/password seen above) and TLS
 
-    .. content-tabs::
+   .. content-tabs::
 
       .. tab-container:: tab1
          :title: 4th Terminal
@@ -93,7 +98,7 @@ Enable Secure Elasticsearch on an Existing Morpheus Deployment
 
 #. Once the cluster is up and running successfully, start the ``morpheus-ui`` service on ``All Nodes``
 
-    .. content-tabs::
+   .. content-tabs::
 
       .. tab-container:: tab1
          :title: All Nodes
