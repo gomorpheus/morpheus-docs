@@ -415,6 +415,12 @@ All other checkbox-type configurations not mentioned in the above list should be
 At this point all image preparation steps are completed. Repeat the process of provisioning an HPE VM Instance Type selecting the new image in the future when needed.
 
 ..
+  Migrating Workloads from VMware
+  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+
+
+..
   Decommissioning a CEPH-backed Host
   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
