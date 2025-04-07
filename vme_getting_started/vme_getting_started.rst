@@ -15,3 +15,5 @@ Additionally, administrators will be required to perform some setup functions on
 .. include:: installation.rst
 
 .. include:: env_setup.rst
+
+.. include:: qual_list.rst
