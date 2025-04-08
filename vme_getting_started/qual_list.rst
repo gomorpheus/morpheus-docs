@@ -69,7 +69,7 @@ At product launch, compatibility and scale testing has been limited to HPE hardw
     - Intel tower server
     - HPE ProLiant ML350 Gen 12
     -
-  * - HPE ProLiant
+  * - HPE Synergy
     - Intel single slot blade
     - HPE Synergy 480 Gen 11 (local storage)
     -
