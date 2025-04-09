@@ -196,7 +196,7 @@ From the download page, you'll see software packages, signature files and licens
 
 .. begin_mount_iso
 
-For an upgrade, we only need the ``.deb`` file available in the software center (and potentially the "supplemental" debian package as well if this will be an offline upgrade). To continue, copy the ``.deb`` file(s) over to the |cluster| host containing the |manager| VM. On Linux, this could be done with ``scp`` (``scp /path/to/file.deb username@hpevmhost_hostname_or_ip:/path/to/desired/location/``). Next, connect to the remote HPE VM host and confirm the VM name of the |manager| (``virsh list``). The host should already have ``virt-copy-in`` from the ``libvirt`` suite installed. Use it to copy the ``.deb`` file onto the VM file system: ``virt-copy-in -d <vm_name> /path/to/file.deb /path/to/remote/directory``.
+For an upgrade, we only need the ``.deb`` file available in the software center (and potentially the "supplemental" debian package as well if this will be an offline upgrade). To continue, copy the ``.deb`` file(s) over to the |manager| VM. On Linux, this could be done with ``scp`` (``scp /path/to/file.deb username@<VM IP address>:/path/to/destination``). You'll need the VM user's password unless you're using SSH keys.
 
 With the ``.deb`` file in place, we need to open a console connection to the |manager| VM to perform the actual upgrade. There are a number of methods to accomplish this but below are two examples from either an HPE VM host or from your own computer.
 
