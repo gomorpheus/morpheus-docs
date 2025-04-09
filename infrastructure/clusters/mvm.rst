@@ -369,11 +369,11 @@ After a moment, we're back at the screen asking where Windows should be installe
 .. image:: /images/infrastructure/clusters/mvm/imagePrep/selectDisk.png
   :width: 50%
 
-Following installation, Windows will restart and prompt for an Administrator user password. Set the password and log in as Administrator. Currently, there are no network interfaces configured. We need to install the VirtIO drivers to get this machine onto the network. We have a disk image mounted with the driver installer so we need to navigate to that drive and launch the installer. Open Windows Explorer and locate the drive in the side bar. In my case, it's the E: drive. Right-click on ``virtio-win-gt-x64`` and select "Install."
+Following installation, Windows will restart and prompt for an Administrator user password. Set the password and log in as Administrator. Currently, there are no network interfaces configured. We need to install the VirtIO drivers to get this machine onto the network. We have a disk image mounted with the driver installer so we need to navigate to that drive and launch the installer. Open Windows Explorer and locate the drive in the side bar. In my case, it's the E: drive. Right-click on ``virtio-win-guest-tools`` and select "Install."
 
 .. image:: /images/infrastructure/clusters/mvm/imagePrep/windowsExp.png
 
-Step through the installer. Simply click "Next" or "Install" through each step, there are no configuration changes needed. Once the installer has completed, click "Finish." Next, complete the same process for `virtio-win-guest-tools`` going all the way through until the installer has completed. You can confirm we now have a network interface by opening a Command Prompt session and using the ``ipconfig`` command. One network adapter should be listed.
+Step through the installer. Simply click "Next" or "Install" through each step, there are no configuration changes needed. Once the installer has completed, click "Finish." You can confirm we now have a network interface by opening a Command Prompt session and using the ``ipconfig`` command. One network adapter should be listed.
 
 .. image:: /images/infrastructure/clusters/mvm/imagePrep/showInterface.png
   :width: 50%
