@@ -116,7 +116,7 @@ At product launch, compatibility and scale testing has been limited to HPE hardw
     - 7.1.2 and later
     - Agent-based
     - Partner
-    -
+    - `Technical Brief <https://psnow.ext.hpe.com/doc/a00146586enw>`_
   * - Cohesity Veritas
     - NetBackup
     - 11
@@ -146,7 +146,7 @@ At product launch, compatibility and scale testing has been limited to HPE hardw
     - 8.13.1 (Build 11490723527)
     - For test/dev and POC only; not for production environments
     - HPE
-    - `Blog <https://community.hpe.com/t5/the-cloud-experience-everywhere/unlock-efficient-vdi-with-hpe-vm-essentials-software-and-omnissa/ba-p/7238879>`_
+    - `Blog <https://community.hpe.com/t5/the-cloud-experience-everywhere/unlock-efficient-vdi-with-hpe-vm-essentials-software-and-omnissa/ba-p/7238879>`_, `Technical Brief <https://psnow.ext.hpe.com/doc/a00146586enw>`_
 
 .. NOTE:: Applications have been validated within the bounds of the supported HPE VM Essentials functionality. Always check the HPE VME feature list to determine whether specific functionality is supported by the HPE VME hypervisor (ex. shared disk access).
 
