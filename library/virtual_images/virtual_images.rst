@@ -82,6 +82,8 @@ Typically |morpheus| does not have sufficient metatdata to successfully provisio
 
 .. NOTE:: Cloud-Init is enabled by default on all images. Images without Cloud-Init or Cloudbase-Init installed must have the ``cloud-init`` flag disabled on the Virtual Image setting or Provisioning may fail.
 
+.. IMPORTANT:: |morpheus| does not validate or restrict image uploads to certain file types and any type of file may be uploaded as a Virtual Image. For security purposes, these files are stored in a non-executable state so users need not worry about potentially dangerous file types being uploaded (ex. executables).
+
 Provisioning Images
 -------------------
 
