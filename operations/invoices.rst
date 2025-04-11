@@ -133,8 +133,6 @@ Summary
 
 The summary tab of the invoice detail page displays a great deal of reference information about the resource identified by the invoice. This will vary depending on the type of resource. In addition, total and projected costs are displayed along with cost breakdowns for compute, storage, network, and other categories. Month-to-date totals and final month projections are given.
 
-.. image:: /images/operations/invoices/3invoiceSummary.png
-
 History
 ```````
 
