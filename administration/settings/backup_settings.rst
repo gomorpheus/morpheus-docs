@@ -5,6 +5,8 @@ The Backup settings page allows you enable or disable scheduled backups, select 
 
 .. NOTE:: Appliance backups are subject to a two-hour time limit to complete the backup. Automated backup attempts will be abandoned and will fail once this time limit is exceeded.
 
+.. IMPORTANT:: Appliances with an HA architecture containing multiple app nodes must ensure all nodes can access stored backups. By default, if no "Default Backup Bucket" configuration is made, backups are stored in ``/var/opt/morpheus/bitcan``. If this path is local to the app nodes, all other app nodes would not be able to reach the backups. In such a case, one solution would be to create an NFS share for the ``bitcan`` directory for all app nodes. Another solution would be to make a "Default Backup Bucket" configuration selection, which all nodes would then use for backup storage and retrieval.
+
 |morpheus| Backup Settings
 ``````````````````````````
 
