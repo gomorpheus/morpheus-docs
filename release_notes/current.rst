@@ -56,10 +56,10 @@ Appliance & Agent Updates
 :Node Packages: - Updated to v3.2.34 with |morpheus| linux agent v2.9.4
                 - Java updated to 17.0.14+7
 
-..
-  Known Issues
-  ============
-    * Alletra MP Storage Plugin
+
+Known Issues
+============
+    :Alletra MP Storage Plugin:
       - No support for iface for Software iSCSI.
       - VM Migration to other hosts may fail under heavy write-iops load on the VM. Recommendation is to reduce
 write-iops prior to migration.
