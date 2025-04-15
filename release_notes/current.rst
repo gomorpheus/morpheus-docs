@@ -55,3 +55,11 @@ Appliance & Agent Updates
 :guacd: - guacamole-server updated to v1.6.0
 :Node Packages: - Updated to v3.2.34 with |morpheus| linux agent v2.9.4
                 - Java updated to 17.0.14+7
+
+..
+  Known Issues
+  ============
+
+  - **Known Issue 1 Description.** Additional description and workaround (if available) here.
+  - **Known Issue 2 Description.** Additional description and workaround (if available) here.
+  - **Known Issue 3 Description.** Additional description and workaround (if available) here.
