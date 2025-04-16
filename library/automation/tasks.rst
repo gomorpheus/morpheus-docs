@@ -434,6 +434,8 @@ Task Configuration
     - **ADDITIONAL PACKAGES:** Additional packages to be installed after ``requirements.txt`` (if detected). Expected format for additional packages: 'packageName==x.x.x packageName2==x.x.x', the version must be specified
     - **PYTHON BINARY:** Optional binary to override the default Python binary
 
+    .. NOTE:: When troubleshooting errors in Python scripts using line numbers reported in |morpheus| UI (such as in Task execution histories), you must subtract four line numbers to arrive at the correct line in the Python document. This is because |morpheus| injects four lines at execution time to add |morpheus| environment variables.
+
     :raw-html:`<br />`
 
     Python and |morpheus|
