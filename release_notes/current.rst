@@ -11,50 +11,41 @@ Release Dates:
 New Features
 ============
 
-:API & CLI: - Clusters have a new property ``provisionComplete`` which returns ``true`` after provisioning is completed
-            - Integrations (``/api/integrations``) and integration types (``/api/integration-types``) can now be queried through |morpheus| API
-            - The result of creating Clusters without providing a Resource Name value is now consistent across |morpheus| UI, API and CLI (default cluster name and node names are provided)
-:HPE VM: - Added initial admin password confirm to the HPE VM Manager setup process to prevent the need for reinstallation if the initial password is mistyped
-          - HPE VM Cluster Layout version 1.2 added in BETA. Clusters running layout version 1.2 should be used for testing purposes and should not be used for running production workloads
-          - The HPE VM installer now prompts for interface names (ex. compute or management interface) using a dropdown menu to prevent failures due to simple typos
-          - When installing the HPE VM Manager, an error is now logged if the installer is unsuccessful in downloading the Manager QCOW image from the URL provided
-:Installer: - Added additional checks that the appliance URL DNS name is resolvable to warn the user prior to beginning the Manager installation process
-:License: - |morpheus| appliances now allow stacking licenses. When stacked, the cumulative total of license privileges are allowed
-:Plugins: - Added support for AurbaCX network plugin. See `integration guide <https://hpevm-docs.morpheusdata.com/en/8.0.4-vme/integration_guides/Networking/hpe-arubacx.html>`_ for setup details and use cases
-          - Added support for HPE Alletra MP storage plugin. See `integration guide <https://hpevm-docs.morpheusdata.com/en/8.0.4-vme/integration_guides/Storage/hpe-alletra-mp.html>`_ for setup details and use cases
-          - Improved appliance cleanup when plugins are removed
+:API & CLI: - Added API endpoints to support compute device passthrough from hosts to HPE VM workloads
+:HPE VM: - Added GPU passthrough support with pooling. Any detached GPU is considered available to the pool. A Service Plan designates whether a workload needs a GPU and removing the VM will release the GPU
+          - Added passthrough support for PCI and NVME devices from hypervisor hosts to HPE VM workloads. Added devices tab at the host and VM levels to support this feature. Devices are managed through the Actions menu for each device within the host devices tab
+          - Added passthrough support for USB devices. USB devices can be viewed from the devices tab on the host detail. Devices can be detached from the host and attached to VMs. Devices are then viewable from the VM devices tab
+          - Added the ability to mount a ``cdrom`` ISO by reconfiguring the Instance and adding a "CD ROM" type disk. The disk image can be selected from an ISO-type Virtual Images currently managed by |morpheus|
+          - HPE VM Cluster Layout version 1.2 is now out of beta and into general availability
+          - HPE VM Clusters can now be deployed through Distributed Workers without |morpheus| having direct SSH access to the hypervisor hosts
+          - When reverting to a snapshot, any child snapshots of the selected one are kept rather than being deleted
+:Integrations: - Added an integrations section at |AdmInt| so administrators can manage plugins and distributed workers associated with |morpheus|
+:Plugins: - Backup plugins can now be designed with the option to restore to a current Instance or restore to a new Instance
+:Security: - Added security enhancements to resolve potential known security vulnerabilities
+:UI: - The global processes dropdown in the main menu bar (next to the global search field) now always shows the five most recent processes rather than automatically dismissing any inactive processes
 
 Fixes
 =====
 
-:API & CLI: - API calls to resize no longer require "Reconfigure: Disk Change Type" permission when the resize doesn't affect storage
-             - Adding a network via |morpheus| API now always results in a prompt to select a Network Domain
-             - Fixed Inventory Options flags not being returned in GET calls for Clouds of certain Cloud types
-:Backups: - When deleting an Instance and opting to preserve the backups, |morpheus| no longer attempts to take new backups (which fail) on the scheduled backup job interval
-:Clone: - Cloud-init configuration files removed prior to taking a snapshot to clone are now restored on the source VM after the clone is complete
-:Clouds: - The "No Proxy" and "Bypass proxy for appliance URL" configurations on the Cloud now affect |morpheus| Agent installations on running VMs
-:HPE VM: - Fixed an issue with restarting VMs if snapshots were deleted prior to attempting restart
-          - Improved Snapshot handling when VMs were not running
-          - Improved handling of configured proxy information in the HPE VM installer
-          - When resizing HPE VM Instances which change disk size or remove a disk, the user is warned that existing snapshots will be purged and, if accepted, all existing snapshots are purged
-:Instances: - Fixed a situation where disk labels could be duplicated under certain conditions when disks were removed and added via reconfigures
-            - On Instance resize, the user who triggers the resize is credited in Instance history with all processes associated, even those resulting from Provisioning Workflow Tasks set by a different user
-:License: - Fixed an issue that caused workloads using provisioning technologies other than HPE VM Clusters not to count correctly against license limits
-:Network: - Fixed an issue that caused orphaned network records in |morpheus| if the network was deleted from vCenter during a |morpheus| Cloud sync
-           - When changing the network selection at provision time, the DHCP/pool/static selection now resets
-:Roles: - Fixed a scenario where a newly created Role with default access levels for some constructs set to NONE could have them elevated to FULL following a restart
-        - Fixed incorrect access to the Tools menu when certain specific and limited access was given to Tools components
-:Tasks: - Powershell Tasks run against VMware Instances without |morpheus| Agent installed will now default to using ``guestTools`` for execution
-         - Users without permissions to decrypt Cypher values can no longer run Tasks utilizing the ``<%=cypher.read%>`` function
-:VMware: - Added improved keymap handling for VMware hypervisor console for German, UK (PC), and Italian layouts for both Windows and Linux servers
+:API & CLI: - Cloning HPE VM cluster Instances from |morpheus| API no longer fails when the Instance has ``cdrom``
+            - Fixed 500 errors thrown under certain conditions when adding a Cluster worker via |morpheus| API
+:Clusters: - Fixed the storage tab of the cluster detail page to prevent orphaned disk volume records from accumulating
+:Console: - Caps lock detection is now supported for VMware hypervisor console sessions
+           - ``ctrl + c`` and ``ctrl + z`` keyboard shortcuts now work for latin-based keymaps
+:HPE VM: - Fixed a bug that caused VMs stopped for an extended period to be removed from hypervisor hosts
+:Instances: - Converting to managed multiple times in very quick succession (such as via automated means) can no longer create multiple Instances from a brownfield VM
 
 Appliance & Agent Updates
 =========================
 
-:Linux Agent: - |morpheus| linux agent updated to v2.9.4
-:guacd: - guacamole-server updated to v1.6.0
-:Node Packages: - Updated to v3.2.34 with |morpheus| linux agent v2.9.4
-                - Java updated to 17.0.14+7
+:Appliance: - Elasticsearch upgraded to v8.15.5
+            - Guacamole reverted to v1.2.0 due to high cpu thread issue with v1.6.0
+            - Java updated to v17.0.14+7
+            - RabbitMQ upgraded to v3.13.7
+            - Tomcat upgraded to v9.0.102
+            - Ubuntu 24.04 now supported for Appliance OS
+:Agent & Node Packages: - :morpheus: Linux Agent updated to v2.9.5
+                        - : Node and VM node packages update to v3.2.35 with v2.9.5 Linux Agent
 
 ..
   Known Issues
