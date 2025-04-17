@@ -109,7 +109,7 @@ With the API key in hand and configuration complete in |morpheus| UI, head back 
 
    .. code-block:: rb
 
-       worker['worker_url'] = 'https://gateway_worker_url' # This is the worker URL the Morpheus appliance can resolve and reach on 443
+       worker_url = 'https://gateway_worker_url' # This is the worker URL the Morpheus appliance can resolve and reach on 443
        worker['appliance_url'] = 'https://morpheus_appliance_url' # The resolvable URL or IP address of Morpheus appliance which the worker can reach on port 443
        worker['apikey'] = 'API KEY FOR THIS GATEWAY' # VDI Gateway API Key generated from Morpheus Appliance VDI Pools > VDI Gateways configuration. For worker only mode, a value is still required but can be any value, including the 'API KEY FOR THIS GATEWAY' default template value
        worker['worker_key'] = 'DISTRIBUTED WORKER KEY' # Distributed Worker API Key from Administration > Integrations > Distributed Workers configuration
