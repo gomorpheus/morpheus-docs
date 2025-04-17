@@ -47,10 +47,13 @@ Appliance & Agent Updates
 :Agent & Node Packages: - :morpheus: Linux Agent updated to v2.9.5
                         - : Node and VM node packages update to v3.2.35 with v2.9.5 Linux Agent
 
-..
-  Known Issues
-  ============
+Known Issues
+============
 
-  - **Known Issue 1 Description.** Additional description and workaround (if available) here.
-  - **Known Issue 2 Description.** Additional description and workaround (if available) here.
-  - **Known Issue 3 Description.** Additional description and workaround (if available) here.
+:Alletra MP Storage Plugin: - No support for iface for Software iSCSI.
+                            - VM Migration to other hosts may fail under heavy write-iops load on the VM. Recommendation is to reduce write-iops prior to migration
+                            - Virtual images created without a specified disk capacity will fail to provision if the associated disk size is smaller than the minimum required
+                            - VM in shutdown state will not migrate to the new node until it's powered on
+                            - If the default image store is created after the virtual image is uploaded, it may cause issues with VM provisioning. Workaround is to ensure the store is created prior to virtual image creation
+                            - Reconfigure Instance with HPE Alletra MP datastore fails if there is an attached CD ROM. Workaround is to delete the CD Drive before performing any subsequent actions for reconfigure
+                            - Mixed datastore type is not supported for snapshot related features. Workaround is to specify the Alletra datastore by changing the disk type to Standard, selecting the datastore, and changing back to CD ROM
