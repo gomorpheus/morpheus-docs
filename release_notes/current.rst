@@ -50,7 +50,7 @@ Appliance & Agent Updates
 Known Issues
 ============
 
-:Alletra MP Storage Plugin: - No support for iface for Software iSCSI.
+:Alletra MP Storage Plugin: - No support for iface for Software iSCSI
                             - VM Migration to other hosts may fail under heavy write-iops load on the VM. Recommendation is to reduce write-iops prior to migration
                             - Virtual images created without a specified disk capacity will fail to provision if the associated disk size is smaller than the minimum required
                             - VM in shutdown state will not migrate to the new node until it's powered on
