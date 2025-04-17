@@ -17,3 +17,5 @@ Additionally, administrators will be required to perform some setup functions on
 .. include:: env_setup.rst
 
 .. include:: qual_list.rst
+
+.. include:: upgrade_to_morpheus.rst

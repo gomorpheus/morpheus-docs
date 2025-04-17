@@ -42,6 +42,8 @@ rst_prolog = """
 .. |erlang| replace:: 26.1.2
 .. |mastertenant| replace:: Master Tenant
 
+.. |morphfirst| replace:: Morpheus
+.. |morph| replace:: Morpheus
 .. |morpheus| replace:: HPE VM Essentials
 .. |morphues| replace:: HPE VM Essentials
 .. |software| replace:: HPE VM Essentials Software
