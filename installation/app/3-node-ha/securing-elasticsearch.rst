@@ -12,12 +12,9 @@ Securing Elasticsearch
          .. code-block:: bash
 
             mkdir /var/opt/morpheus/certs/ -p
-            export ES_JAVA_HOME=/opt/morpheus/embedded/java/jdk
+            export ES_JAVA_HOME=/opt/morpheus/embedded/java/jre
             /opt/morpheus/embedded/elasticsearch/bin/elasticsearch-certutil ca --days 1826 --out /var/opt/morpheus/certs/elastic-stack-ca.p12
                # Be sure to enter a password for the CA
-            chown 896:896 /var/opt/morpheus/certs/elastic-stack-ca.p12
-            chmod u=rw,g=r /var/opt/morpheus/certs/elastic-stack-ca.p12
-            chmod -R o+x /var/opt/morpheus/certs/
 
 #. Copy the CA certificate from ``Node 1`` to the other nodes, replacing the hostnames and usernames as needed
 

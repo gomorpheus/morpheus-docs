@@ -17,7 +17,7 @@ Enable Secure Elasticsearch on an Existing Morpheus Deployment
 
          .. code-block:: bash
       
-            cat /etc/morpheus/morpheus.rb
+            cat /etc/morpheus/morpheus-secrets.json
     
     Example output of the ``elasticsearch`` section:
 
