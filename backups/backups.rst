@@ -60,7 +60,7 @@ RETENTION COUNT
   Maximum number of successful backups to retain
 BACKUP SCHEDULE
   Select the schedule for the backup job from the list of existing execution schedules
-SYNTHETIC FULL (Currently only available for KVM VM Snapshot-type backups, such as those used with MVM Instances. More Layout types are expected to support synthetic full backups in the future)
+SYNTHETIC FULL (Currently only available for KVM VM Snapshot-type backups, such as those used with HPE VM Instances. More Layout types are expected to support synthetic full backups in the future)
   When checked, an additional schedule is configured for the backup job during which a synthetic full backup will be taken. In general, this should be on a longer time period than that at which standard backups (full backup followed by incremental backups) are configured
 SYNTHETIC FULL SCHEDULE
   Select the schedule for the backup job on which synthetic full backups should be taken
