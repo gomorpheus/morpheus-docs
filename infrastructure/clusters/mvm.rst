@@ -424,7 +424,7 @@ At this point all image preparation steps are completed. Repeat the process of p
   Decommissioning a CEPH-backed Host
   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-  |morpheus| MVM clusters utilize global pools and for that reason, we need to remove the object storage daemon (OSD) from each host manually prior to decommissioning the host and removing it from the cluster.
+  |morpheus| HPE VM clusters utilize global pools and for that reason, we need to remove the object storage daemon (OSD) from each host manually prior to decommissioning the host and removing it from the cluster.
 
   First, put the host into maintenance mode and allow time for any running VMs to be migrated to other hosts. See the section above, if needed, for additional details on maintenance mode.
 
