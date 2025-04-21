@@ -50,6 +50,10 @@ rst_prolog = """
 .. |profileObjects| replace:: Clouds
 .. |profileTypes| replace:: Terraform, Key/Value
 .. |mvm| replace:: HPE VM
+.. |cluster| replace:: HPE VM Cluster
+.. |clusters| replace:: HPE VM Clusters
+.. |host| replace:: HPE VM Host
+.. |hosts| replace:: HPE VM Hosts
 
 .. |debianVersions| replace:: 10, 11
 .. |oelVersions| replace:: 7.x (deprecated), 8.x
@@ -184,6 +188,7 @@ rst_prolog = """
 .. |Adm| replace:: Administration
 .. |AdmTen| replace:: Administration > Tenants
 .. |AdmPla| replace:: Administration > Plans & Pricing
+.. |AdmPlans| replace:: Administration > Plans
 .. |AdmPlaPla| replace:: Administration > Plans & Pricing > Plans
 .. |AdmPlaSet| replace:: Administration > Plans & Pricing > Price Sets
 .. |AdmPlaPri| replace:: Administration > Plans & Pricing > Prices

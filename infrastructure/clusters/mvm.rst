@@ -360,6 +360,10 @@ All other checkbox-type configurations not mentioned in the above list should be
 
 At this point all image preparation steps are completed. |morpheus| library items can now be created from this image by adding new Node Types, Layouts, and Instance Types. The complete steps for building a library item go beyond the scope of this particular guide but more detail on that process is available elsewhere in |morpheus| UI documentation. Once the library items are created, new Instances may be provisioned complete with |morpheus| Agent installed.
 
+.. include:: hardware-passthrough.rst
+
+
+
 ..
   Decommissioning a CEPH-backed Host
   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
