@@ -22,7 +22,7 @@ Features
 - Gracefully take hosts out of service with maintenance mode
 - Migration of workloads across hosts
 - Configurable automatic failover of running workloads when a host is lost
-- Ability to add and provision to fibre channel storage resources or iSCSI storage resources via GFS2 or OCFS2 filesystem
+- Ability to add and provision to fibre channel storage resources or iSCSI storage resources via GFS2 filesystem
 - Integration with |morpheus| costing
 - Governance through |morpheus| RBAC, Tenancy, and Policies
 

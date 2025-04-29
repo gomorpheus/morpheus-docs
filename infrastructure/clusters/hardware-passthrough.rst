@@ -31,11 +31,13 @@ To assign the hardware to a specific VM, click the ACTIONS dropdown once again f
 Within the ASSIGN DEVICE modal that will appear, select the server for device assignment and click :guilabel:`EXECUTE`.
 
 .. image:: /images/infrastructure/clusters/mvm/hardware/assignToServer.png
-  :width: 30%
 
 The icon and status for the device in the hardware list has now changed to "Assigned." If we then open a console session with this VM, we can see the USB device is assigned successfully and is usable by the guest OS.
 
 .. image:: /images/infrastructure/clusters/mvm/hardware/vmConsole.png
-  :width: 40%
 
 The same process can be used to detach and assign GPU or NVME devices.
+
+..
+  GPU Passthrough Example
+  ```````````````````````
