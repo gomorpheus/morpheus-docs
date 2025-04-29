@@ -226,3 +226,7 @@ Having copied over the needed files and connected to the |manager| VM, the upgra
 All services will automatically start during the reconfigure process. After the reconfigure has succeeded, tail the UI service to watch UI startup logs with ``morpheus-ctl tail morpheus-ui``. Once the UI service is up and running, the upgrade process is complete. Attempt to reach your appliance normally through a web browser to confirm success.
 
 .. NOTE:: Services will be stopped during package installation and started during the reconfigure process, including the ``morpheus-ui`` service. If the reconfigure process is interrupted or fails, the ``morpheus-ui`` service may need to be manually started or restarted. In certain situations if another service hangs on starting during reconfigure, run ``systemctl restart morpheus-runsvdir`` then reconfigure and restart ``morpheus-ui`` if successful.
+
+.. toggle-header:: :header: **Upgrade Compatibility Table**
+
+  .. include upgrade_table.rst
