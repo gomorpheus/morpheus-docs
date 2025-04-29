@@ -229,4 +229,4 @@ All services will automatically start during the reconfigure process. After the 
 
 .. toggle-header:: :header: **Upgrade Compatibility Table**
 
-  .. include upgrade_table.rst
+  .. include:: upgrade_table.rst
