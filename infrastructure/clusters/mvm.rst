@@ -24,6 +24,7 @@ Features
 - Configurable automatic failover of running workloads when a host is lost
 - Ability to add and provision to fibre channel storage resources or iSCSI storage resources via GFS2 filesystem
 - Governance through |morpheus| RBAC
+- Pass host-attached NVME, USB, and GPU hardware through to VMs running on the host
 
 **VM Features**
 
@@ -41,15 +42,16 @@ Features
 - Clone VMs
 - Take snapshots and revert to snapshots
 - |morpheus| library and automation support
+- Claim and consume host-attached NVME, USB, and GPU hardware to run hardware-accelerated workloads on VMs
 
 Base Cluster Details
 ^^^^^^^^^^^^^^^^^^^^
 
-An |cluster| using the hyperconverged infrastructure (HCI) Layout consists of at least three hosts. Physical hosts are recommended to experience full performance of the solution. In smaller environments, it is possible to create an |cluster| with three nested virtual machines, a single physical host (non-HCI only), or a single nested virtual machine (non-HCI only) though performance may be reduced. With just one host it won't be possible to migrate workloads between hosts or take advantage of automatic failover. Currently, a host must be a pre-existing Ubuntu 22.04 box with environment and host system requirements contained in this section. |morpheus| handles cluster configuration by providing the IP address(es) for your host(s) and a few other details. Details on adding the cluster to |morpheus| are contained in the next section.
+An |cluster| using the hyperconverged infrastructure (HCI) Layout consists of at least three hosts. Physical hosts are recommended to experience full performance of the solution. In smaller environments, it is possible to create an |cluster| with three nested virtual machines, a single physical host (non-HCI only), or a single nested virtual machine (non-HCI only) though performance may be reduced. With just one host it won't be possible to migrate workloads between hosts or take advantage of automatic failover. Currently, the default cluster layout requires hosts be a pre-existing Ubuntu 24.04 box with environment and host system requirements described in this section. An earlier cluster layout requiring Ubuntu 22.04 is also included. |morpheus| handles cluster configuration by providing the IP address(es) for your host(s) and a few other details. Details on adding the cluster to |morpheus| are contained in the next section.
 
 **Hardware Requirements**
 
-- **Operating System:** Ubuntu 22.04
+- **Operating System:** Ubuntu 24.04 (for the latest cluster layout version, prior versions using Ubuntu 22.04 are also available)
 - **CPU:** One or more 64-bit x86 CPUs, 1.5 GHz minimum with Intel VT or AMD-V enabled
 - **Memory:** 4 GB minimum. For non-converged Layouts, configure |hosts| to use shared external storage, such as an NFS share or iSCSI target. Converged Layouts utilize Ceph for clustered storage and require a **4 GB minimum memory per Ceph disk**
 - **Disk Space:** For converged storage, a data disk of at least 500 GB is required for testing. More storage will be needed for production clusters. An operating system disk of 15 GB is also required. Clusters utilizing non-converged Layouts can configure external storage (NFS, etc.) while |morpheus| will configure Ceph for multi-node clusters
@@ -153,7 +155,7 @@ In the next part of the modal, you'll configure the storage devices and network 
 
 Though not strictly required, it's recommended to have separate network interfaces to handle cluster management, storage traffic, and compute. In this example case, ``eth0`` is configured as the **MANAGEMENT NET INTERFACE** which handles communication between the cluster hosts. ``eth1`` is configured as the **STORAGE NET INTERFACE** and ``eth2`` is configured as the **COMPUTE NET INTERFACE**. The **COMPUTE VLANS** field can take a single value (ex. 1) or a range of values (ex. 22-25). This will create OVS port group(s) selectable as networks when provisioning workloads to the cluster. If needed, you can find your network interface names with the ``ip a`` command.
 
-Finally, only one **CPU TYPE** is currently supported (``x86_64``) though this may change in the future. For **CPU MODEL** configuration, we surface the entire database of model configurations from ``libvirt``. If unsure or if you don't know of a specific reason to choose one or the other, select ``host-model`` which is the default option.
+Finally, only one **CPU TYPE** is currently supported (``x86_64``) though this may change in the future. For **CPU MODEL** configuration, we surface the entire database of model configurations from ``libvirt``. If unsure or if you don't know of a specific reason to choose one or the other, select ``host-passthrough`` which is the default option.
 
 .. image:: /images/infrastructure/clusters/mvm/createClusterBottom.png
 
