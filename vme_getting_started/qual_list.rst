@@ -71,7 +71,7 @@ At product launch, compatibility and scale testing has been limited to HPE hardw
     -
   * - HPE Synergy
     - Intel single slot blade
-    - HPE Synergy 480 Gen 11 (local storage)
+    - HPE Synergy 480 Gen 11 (local storage, iSCSI, FC)
     -
 
 .. NOTE:: Currently, only HPE hardware is supported but support for third-party hardware is planned for the future.
@@ -92,6 +92,9 @@ At product launch, compatibility and scale testing has been limited to HPE hardw
   * - HPE Alletra Storage
     - HPE Alletra Storage MP B10000 (iSCSI, Fibre Channel)
     - Update storage hardware to the latest available firmware
+  * - HPE MSA Storage
+    - HPE MSA Gen7 (2070) (iSCSI)
+    - Update storage hardware to the latest available firmware
 
 .. NOTE:: For more detail, please visit the `storage matrix <http://www.hpe.com/storage/spock>`_
 
@@ -110,25 +113,25 @@ At product launch, compatibility and scale testing has been limited to HPE hardw
     - 12.3
     - Agent-based
     - Partner
-    - `Technical Brief <https://www.hpe.com/psnow/doc/a50012338enw>`_, Blog (`part 1 <https://community.veeam.com/blogs-and-podcasts-57/navigating-hpe-vm-essentials-part-1-what-is-it-and-how-to-protect-it-with-veeam-9610>`_, `part 2 <https://community.veeam.com/blogs-and-podcasts-57/navigating-hpe-vm-essentials-part-2-exploring-backup-strategies-9611>`_, `part 3 <https://community.veeam.com/blogs-and-podcasts-57/hpe-vme-and-veeam-backup-replication-9863>`_)
+    - `Technical Brief <https://www.hpe.com/psnow/doc/a50012338enw>`_, Blog (`part 1 <https://community.veeam.com/blogs-and-podcasts-57/navigating-hpe-vm-essentials-part-1-what-is-it-and-how-to-protect-it-with-veeam-9610>`_, `part 2 <https://community.veeam.com/blogs-and-podcasts-57/navigating-hpe-vm-essentials-part-2-exploring-backup-strategies-9611>`_, `part 3 <https://community.veeam.com/blogs-and-podcasts-57/hpe-vme-and-veeam-backup-replication-9863>`_), `Video <https://psnow.ext.hpe.com/asset?id=7f67fb9a-7e53-4eee-ac47-3f7f89828ca3&preview=true>`_
   * - Cohesity
     - Data Cloud
     - 7.1.2 and later
     - Agent-based
     - Partner
-    - `Technical Brief <https://psnow.ext.hpe.com/doc/a00146586enw>`_
+    - `Technical Brief <https://psnow.ext.hpe.com/doc/a00146586enw>`_, `TekTalk-on-Point <https://vshow.on24.com/vshow/HPETekTalks/content/4929110/>`_, `Blog <https://community.hpe.com/t5/the-cloud-experience-everywhere/protect-hpe-morpheus-vm-essentials-software-vms-with-hpe/ba-p/7240793>`_
   * - Cohesity Veritas
     - NetBackup
     - 11
     - Agent-based
     - Partner
-    -
+    - `Release notes <https://urldefense.com/v3/__https:/www.veritas.com/support/en_US/doc/103228346-168289021-1__;!!NpxR!jDjqUFB8W_nHe21CV5Pr5HQI_JYJVb8JzEDaoWsgX-ql62BKdr7VMcYhflhPHfhA-iDDH26OitC3RorzksoLJQKzxjk$>`_
   * - Oracle
     - Database
     - 19c
     - Single instance only; Oracle RAC support TBD
     - HPE
-    - `Technical Brief <https://www.hpe.com/psnow/doc/a50012368enw>`_, `Blog <https://community.hpe.com/t5/the-cloud-experience-everywhere/reduce-costs-with-hpe-vm-essentials-in-your-oracle-database-on/ba-p/7238767>`_
+    - `Technical Brief <https://www.hpe.com/psnow/doc/a50012368enw>`_, `Blog <https://community.hpe.com/t5/the-cloud-experience-everywhere/reduce-costs-with-hpe-vm-essentials-in-your-oracle-database-on/ba-p/7238767>`_, `TekTalk-on-Point <https://vshow.on24.com/vshow/HPETekTalks/content/4937728/>`_
   * - Microsoft
     - SQL Server
     - SQL Server 2016, 2017, 2019, 2022
@@ -146,7 +149,7 @@ At product launch, compatibility and scale testing has been limited to HPE hardw
     - 8.13.1 (Build 11490723527)
     - For test/dev and POC only; not for production environments
     - HPE
-    - `Blog <https://community.hpe.com/t5/the-cloud-experience-everywhere/unlock-efficient-vdi-with-hpe-vm-essentials-software-and-omnissa/ba-p/7238879>`_, `Technical Brief <https://psnow.ext.hpe.com/doc/a00146586enw>`_
+    - `Blog <https://community.hpe.com/t5/the-cloud-experience-everywhere/unlock-efficient-vdi-with-hpe-vm-essentials-software-and-omnissa/ba-p/7238879>`_
 
 .. NOTE:: Applications have been validated within the bounds of the supported HPE VM Essentials functionality. Always check the HPE VME feature list to determine whether specific functionality is supported by the HPE VME hypervisor (ex. shared disk access).
 
@@ -163,7 +166,7 @@ Select ISV applications require “full stack” certifications including OS, hy
     - Compute Platform
     - Storage Platform
   * - Canonical
-    - Ubuntu 22.04 Server
+    - Ubuntu 22.04 Server, 24.04 Server
     - x86
     - Alletra; iSCSI
 
@@ -179,7 +182,7 @@ Select ISV applications require “full stack” certifications including OS, hy
     - Resources
   * - RHEL
     - RHEL
-    - 9.3
+    - 8.2, 9.0, 9.3
     - RHEL 9.3
     - HPE
     -
@@ -191,14 +194,14 @@ Select ISV applications require “full stack” certifications including OS, hy
     -
   * - SUSE
     - SUSE Linux Enterprise Server
-    - 15-SP6
+    - 15-SP4, 15-SP6
     - SUSE 15-SP6
     - HPE
     -
   * - Microsoft
     - Windows Server
-    - 2022
-    - Windows Server 2022
+    - 2019, 2022, 2025
+    - Windows Server 2025
     - HPE
     -
 
