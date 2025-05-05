@@ -1,11 +1,11 @@
-|morpheus| |morphver| Documentation
-===================================
+|morphfirst| |morphver| Documentation
+=====================================
 
 .. include:: /release_notes/current.rst
 
 .. toctree::
    :maxdepth: 2
-   :caption: Morpheus UI
+   :caption: |morpheus|
 
    getting_started/getting_started
    operations/operations

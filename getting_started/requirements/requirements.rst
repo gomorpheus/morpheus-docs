@@ -3,7 +3,7 @@
 Requirements
 ============
 
-|morpheus| is a software-based appliance installation capable of orchestrating many clouds and hypervisors. Before an installation is started it is important to understand some of the base requirements.
+|morphfirst| is a software-based appliance installation capable of orchestrating many clouds and hypervisors. Before an installation is started it is important to understand some of the base requirements.
 
 In the simplest configuration |morpheus| needs one Appliance Server. The Appliance Server, by default, contains all the components necessary to orchestrate both VMs and containers. To get started some base requirements are recommended:
 

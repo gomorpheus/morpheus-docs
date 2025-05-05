@@ -38,6 +38,30 @@ The icon and status for the device in the hardware list has now changed to "Assi
 
 The same process can be used to detach and assign GPU or NVME devices.
 
-..
-  GPU Passthrough Example
-  ```````````````````````
+GPU Passthrough Example
+```````````````````````
+
+In a previous section, a Service Plan was created which consumes a GPU when a VM is provisioned using that Plan. This section shows an example provisioning a workload using that Plan and a GPU-accelerated workload running on the VM. In this example, there is an Nvidia GeForce RTX 3050 connected to one of the |hosts|. By passing the GPU hardware through to a provisioned VM, hardware-accelerated AI workloads can be run on the VM.
+
+Begin by navigating to |ProIns|. The list of all currently-managed Instances is here along with high level information (power state, etc). To begin a new Instance, click :guilabel:`+ ADD`. Choose type |mvm| and click :guilabel:`NEXT`. On the next pane, choose the Group and Cloud in which your desired |cluster| resides, name the Instance, and click :guilabel:`NEXT`.
+
+On the CONFIGURE tab, the main thing to note for this example is the PLAN configuration. This dropdown contains some default Plans that are included with |morpheus| and compatible with the |mvm| provisioning technology (named "1 CPU, 1GB Memory", etc). This dropdown also includes user-created Plans, such as those you've created to consume GPU hardware. In the screenshot below, you can see the "GPU Plan" was selected.
+
+.. image:: /images/infrastructure/clusters/mvm/hardware/showPlan.png
+  :width: 50%
+
+From here, complete the Instance provisioning wizard selecting any automation or lifecycle configurations and wait for the Instance provisioning to complete.
+
+With provisioning complete, check the attached device(s) from the |morpheus| UI. This is done from the VM level rather than the Instance level. From the Instance detail page, click on the Resources tab. Click on the name of the desired VM to access the VM detail page. Click on the Devices tab. As in the screenshot below, the attached GPU should be shown.
+
+.. image:: /images/infrastructure/clusters/mvm/hardware/attachedGpu.png
+
+To go further, open a console session to the new VM either through |morpheus| UI or by connecting to the VM over SSH from a local terminal session. Use the ``lspci`` command to view all devices connected to PCI buses. The attached GPU should be shown here as it is in the UI.
+
+At this point, the VM is ready to run GPU-accelerated workloads normally. To test this, I'll run Ollama which is an open-source tool designed to make it easy to run large language models (LLMs) locally. In the screenshot below, see the AI chatbot response to an input. This result took only a few seconds thanks to GPU hardware acceleration.
+
+.. image:: /images/infrastructure/clusters/mvm/hardware/ollamaOutput.png
+
+With the request completed, we can run the ``ollama ps`` command which confirms the model was running under GPU acceleration.
+
+.. image:: /images/infrastructure/clusters/mvm/hardware/gpuUsed.png

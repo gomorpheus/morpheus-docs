@@ -42,18 +42,22 @@ rst_prolog = """
 .. |erlang| replace:: 26.2.5.6
 .. |mastertenant| replace:: Master Tenant
 
-.. |morpheus| replace:: Morpheus
-.. |morphues| replace:: Morpheus
+.. |morphfirst| replace:: HPE Morpheus Enterprise Software
+.. |morpheus| replace:: HPE Morpheus Enterprise
+.. |morphues| replace:: HPE Morpheus Enterprise
 .. |morphdat| replace:: Morpheus Data
 .. |repo_host_url| replace:: https://downloads.morpheusdata.com
 .. |master tenant| replace:: Master Tenant
 .. |profileObjects| replace:: Clouds
 .. |profileTypes| replace:: Terraform, Key/Value
-.. |mvm| replace:: HPE VM
-.. |cluster| replace:: HPE VM Cluster
-.. |clusters| replace:: HPE VM Clusters
-.. |host| replace:: HPE VM Host
-.. |hosts| replace:: HPE VM Hosts
+.. |mvm| replace:: HVM
+.. |hvm| replace:: HVM
+.. |cluster| replace:: HVM Cluster
+.. |clusters| replace:: HVM Clusters
+.. |host| replace:: HVM Host
+.. |hosts| replace:: HVM Hosts
+.. |hypervisor| replace:: HVM Hypervisor
+.. |hypervisors| replace:: HVM Hypervisors
 
 .. |debianVersions| replace:: 10, 11
 .. |oelVersions| replace:: 7.x (deprecated), 8.x
