@@ -5,7 +5,7 @@
 
 .. toctree::
    :maxdepth: 2
-   :caption: HPE Morpheus Enterprise Software
+   :caption: HPE Morpheus Enterprise
 
    getting_started/getting_started
    operations/operations
