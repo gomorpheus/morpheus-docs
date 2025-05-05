@@ -1,11 +1,11 @@
-|hpe vme| Software Documentation
-================================
+|firstuse| Software Documentation
+=================================
 
 .. include:: /release_notes/current.rst
 
 .. toctree::
    :maxdepth: 2
-   :caption: HPE VM Essentials
+   :caption: VM Essentials
 
    vme_getting_started/vme_getting_started
    .. rst-class:: hidden

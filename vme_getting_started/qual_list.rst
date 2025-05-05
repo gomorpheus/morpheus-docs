@@ -1,7 +1,7 @@
-HPE VM Essentials Software Compatibility Matrix
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+HPE Morpheus VM Essentials Software Compatibility Matrix
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-This section contains the list of hardware that has been tested and confirmed to support HPE VM Essentials Software and HPE VM Essentials clusters at scale. Hardware not included in this list may be compatible but is untested. Using untested hardware may limit the scope of support services available from HPE support teams.
+This section contains the list of hardware that has been tested and confirmed to support |firstuse| and |clusters| at scale. Hardware not included in this list may be compatible but is untested. Using untested hardware may limit the scope of support services available from HPE support teams.
 
 At product launch, compatibility and scale testing has been limited to HPE hardware. As time goes on, third-party hardware will be supported in addition to HPE hardware. This document will be updated over time as new hardware SKUs are tested for compatibility and performance at scale.
 
@@ -151,9 +151,9 @@ At product launch, compatibility and scale testing has been limited to HPE hardw
     - HPE
     - `Blog <https://community.hpe.com/t5/the-cloud-experience-everywhere/unlock-efficient-vdi-with-hpe-vm-essentials-software-and-omnissa/ba-p/7238879>`_
 
-.. NOTE:: Applications have been validated within the bounds of the supported HPE VM Essentials functionality. Always check the HPE VME feature list to determine whether specific functionality is supported by the HPE VME hypervisor (ex. shared disk access).
+.. NOTE:: Applications have been validated within the bounds of the supported |morpheus| functionality. Always check the |morpheus| feature list to determine whether specific functionality is supported by the |hypervisor| (ex. shared disk access).
 
-Most modern applications like databases were designed with very “loose” dependance on hardware infrastructure. They can typically run on a variety of hypervisors including virtual machines and containers. The respective ISV vendor typically only specifies the supported underlying operating system (Guest OS) but does not require certification of any hypervisor.  However, there can be specific features that a customer deployment of these applications requires at a hypervisor or infrastructure level. For example, a Microsoft SQL Server Failover cluster instance requires a shared disk between multiple SQL Server VMs. Oracle, similarly, requires shared disks for an Oracle Real Application Cluster (RAC) setup.  Therefore, it needs to be always validated whether the specific deployment requires certain features and whether these are supported by HPE VM Essentials in its latest release.
+Most modern applications like databases were designed with very “loose” dependance on hardware infrastructure. They can typically run on a variety of hypervisors including virtual machines and containers. The respective ISV vendor typically only specifies the supported underlying operating system (Guest OS) but does not require certification of any hypervisor.  However, there can be specific features that a customer deployment of these applications requires at a hypervisor or infrastructure level. For example, a Microsoft SQL Server Failover cluster instance requires a shared disk between multiple SQL Server VMs. Oracle, similarly, requires shared disks for an Oracle Real Application Cluster (RAC) setup.  Therefore, it needs to be always validated whether the specific deployment requires certain features and whether these are supported by |morpheus| in its latest release.
 
 Select ISV applications require “full stack” certifications including OS, hypervisor, compute and storage devices, or even the specific storage connectivity protocol. SAP HANA and related SAP applications are a typical example; so are some Healthcare Electronic Health Record (EDR) applications. If you or your customer plans on running one of these applications, please reach out to your HPE account team.
 

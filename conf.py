@@ -44,20 +44,22 @@ rst_prolog = """
 
 .. |morphfirst| replace:: Morpheus
 .. |morph| replace:: Morpheus
-.. |morpheus| replace:: HPE VM Essentials
-.. |morphues| replace:: HPE VM Essentials
-.. |software| replace:: HPE VM Essentials Software
+.. |morpheus| replace:: VM Essentials
+.. |morphues| replace:: VM Essentials
+.. |software| replace:: HPE Morpheus VM Essentials Software
 .. |morphdat| replace:: Hewlett Packard Enterprise
 .. |hpe| replace:: Hewlett Packard Enterprise
-.. |firstuse| replace:: HPE VM Essentials Software
-.. |hpe vme| replace:: HPE VM Essentials
-.. |vme| replace:: HPE VME
-.. |cluster| replace:: HPE VME cluster
-.. |clusters| replace:: HPE VME clusters
-.. |manager| replace:: HPE VME manager
-.. |host| replace:: HPE VME host
-.. |hosts| replace:: HPE VME hosts
-.. |hypervisor| replace:: HPE VME Hypervisor
+.. |firstuse| replace:: HPE Morpheus VM Essentials Software
+.. |hpe vme| replace:: VM Essentials
+.. |vme| replace:: VM Essentials
+.. |hvm| replace:: HVM
+.. |cluster| replace:: HVM cluster
+.. |clusters| replace:: HVM clusters
+.. |manager| replace:: VM Essentials manager
+.. |host| replace:: HVM host
+.. |hosts| replace:: HVM hosts
+.. |hypervisor| replace:: HVM hypervisor
+.. |hypervisors| replace:: HVM hypervisors
 .. |repo_host_url| replace:: https://downloads.morpheusdata.com
 .. |master tenant| replace:: Master Tenant
 .. |profileObjects| replace:: Clouds

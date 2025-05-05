@@ -35,7 +35,7 @@ To create Instance backup:
    Schedule
     If creating a new job, select an execution schedule of which to run the backup
    Synthetic Full
-    When the backup is targeting an HPE VM Instance, check this box to schedule synthetic full backups in addition to the normal full and incremental backups
+    When the backup is targeting an |hvm| Instance, check this box to schedule synthetic full backups in addition to the normal full and incremental backups
    Synthetic Full Schedule
     If synthetic full backups are enabled, select an execution schedule on which to run the synthetic full backups
 

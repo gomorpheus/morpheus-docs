@@ -75,7 +75,7 @@ Create an Instance with the Datastore.
 #. In the `Instances` tab, Click the :guilabel:`+ ADD` button
 #. From the ADD INSTANCE wizard input the following:
 
-   - From the TYPE section: Select "HPE VM"
+   - From the TYPE section: Select "|hvm|"
    - Click :guilabel:`NEXT`
 
      .. image:: /images/infrastructure/Storage/hpe-alletra-mp/create-instance-type.png

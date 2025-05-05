@@ -136,7 +136,7 @@ In this example cluster, each host box consists of:
 Provisioning the Cluster
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-As mentioned in the previous section, this example is starting with three provisioned Ubuntu 22.04 boxes. I also have a Private Cloud-type Cloud to house the cluster. Begin the cluster creation process from the Clusters list page (|InfClu|). Click :guilabel:`+ ADD CLUSTER` and select "HPE VM".
+As mentioned in the previous section, this example is starting with three provisioned Ubuntu 22.04 boxes. I also have a Private Cloud-type Cloud to house the cluster. Begin the cluster creation process from the Clusters list page (|InfClu|). Click :guilabel:`+ ADD CLUSTER` and select "|hvm|".
 
 .. rst-class:: hidden
   .. image:: /images/infrastructure/clusters/mvm/createClusterClosed.png
@@ -166,7 +166,7 @@ At this point we've kicked off the process for configuring the cluster nodes. Dr
 Provisioning a Workload
 ^^^^^^^^^^^^^^^^^^^^^^^
 
-At this point, the cluster is ready for workloads to be provisioned to it. Within the Instance provisioning wizard (See |ProIns| documentation for more details on provisioning), there is now the "HPE VM" Instance Type. This Instance will allow you to choose from any |cluster|-compatible images within your environment. Out of the box, |morpheus| does not include any compatible images but there is a section later in this guide covering the process of onboarding existing QCOW images into the UI as Virtual Images and another section covering the process of prepping Windows images from the downloaded ISO.
+At this point, the cluster is ready for workloads to be provisioned to it. Within the Instance provisioning wizard (See |ProIns| documentation for more details on provisioning), there is now the "|hvm|" Instance Type. This Instance will allow you to choose from any |cluster|-compatible images within your environment. Out of the box, |morpheus| does not include any compatible images but there is a section later in this guide covering the process of onboarding existing QCOW images into the UI as Virtual Images and another section covering the process of prepping Windows images from the downloaded ISO.
 
 .. rst-class:: hidden
   .. image:: /images/infrastructure/clusters/mvm/groupCloud.png
@@ -314,7 +314,7 @@ With the configurations set, it's time to upload the ISO to |morpheus|. Keep in 
 .. image:: /images/infrastructure/clusters/mvm/imagePrep/progress.png
   :width: 50%
 
-Next, we'll provision a VM from the ISO using the built-in HPE VM Instance Type. Once running, we will configure the VM to any specific requirements and convert it to a template. Navigate to |ProIns| and click :guilabel:`+ ADD`. On the TYPE tab of the Instance provisioning wizard, we select the Instance Type to provision. In this case, select "HPE VM" and click :guilabel:`NEXT`.
+Next, we'll provision a VM from the ISO using the built-in |hvm| Instance Type. Once running, we will configure the VM to any specific requirements and convert it to a template. Navigate to |ProIns| and click :guilabel:`+ ADD`. On the TYPE tab of the Instance provisioning wizard, we select the Instance Type to provision. In this case, select "|hvm|" and click :guilabel:`NEXT`.
 
 .. rst-class:: hidden
   .. image:: /images/infrastructure/clusters/mvm/imagePrep/provisionMvmInstanceType.png
@@ -414,7 +414,7 @@ Once saved, additional configurations are needed on the Virtual Image in |morphe
 
 All other checkbox-type configurations not mentioned in the above list should be unchecked. Click :guilabel:`SAVE CHANGES`.
 
-At this point all image preparation steps are completed. Repeat the process of provisioning an HPE VM Instance Type selecting the new image in the future when needed.
+At this point all image preparation steps are completed. Repeat the process of provisioning an |hvm| Instance Type selecting the new image in the future when needed.
 
 ..
   Migrating Workloads from VMware
@@ -426,7 +426,7 @@ At this point all image preparation steps are completed. Repeat the process of p
   Decommissioning a CEPH-backed Host
   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-  |morpheus| HPE VM clusters utilize global pools and for that reason, we need to remove the object storage daemon (OSD) from each host manually prior to decommissioning the host and removing it from the cluster.
+  |morpheus| |hvm| clusters utilize global pools and for that reason, we need to remove the object storage daemon (OSD) from each host manually prior to decommissioning the host and removing it from the cluster.
 
   First, put the host into maintenance mode and allow time for any running VMs to be migrated to other hosts. See the section above, if needed, for additional details on maintenance mode.
 

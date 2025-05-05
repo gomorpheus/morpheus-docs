@@ -1,7 +1,7 @@
 Installation
 ^^^^^^^^^^^^
 
-Having completed a discussion of networking considerations in the previous section, let's now turn to OS installation on the |hosts|. The hosts are recommended to be HPE Proliant Gen 11 physical servers and must be running Ubuntu 22.04. Other OS types are planned for certification in the future but for now you must be running Ubuntu 22.04. The HPE VME hypervisor runs on top of the Ubuntu 22.04 hosts. We'll get to the installation portion in the next section but for now we will discuss the system requirements and recommendations for network and storage configuration during the installation.
+Having completed a discussion of networking considerations in the previous section, let's now turn to OS installation on the |hosts|. The hosts are recommended to be HPE Proliant Gen 11 physical servers and must be running Ubuntu 22.04. Other OS types are planned for certification in the future but for now you must be running Ubuntu 22.04. The |hypervisor| runs on top of the Ubuntu 22.04 hosts. We'll get to the installation portion in the next section but for now we will discuss the system requirements and recommendations for network and storage configuration during the installation.
 
 .. image:: /images/vmeInstall/host-ubuntu-software.png
   :width: 30%
@@ -64,7 +64,7 @@ Once logged into My HPE Software Center, click on the "Software" section from th
 
 .. image:: /images/vmeInstall/softwareCenter.png
 
-Within the "Software" section, search for |software| amongst your other software entitlements. A "Product Info" type search for the term "hpe vm essentials" may work but depending on the entitlements present in the account and future changes to search functionality, a slightly different search might be required. Once HPE VM Essentials is successfully returned, click on the dropdown menu under "Action" and click on "Get License."
+Within the "Software" section, search for |software| amongst your other software entitlements. A "Product Info" type search for the term "|firstuse|" may work but depending on the entitlements present in the account and future changes to search functionality, a slightly different search might be required. Once |morpheus| is successfully returned, click on the dropdown menu under "Action" and click on "Get License."
 
 .. image:: /images/vmeInstall/getLicense.png
 
@@ -184,7 +184,7 @@ Once logged into My HPE Software Center, click on the "Software" section from th
 
 .. image:: /images/vmeInstall/softwareCenter.png
 
-Within the "Software" section, search for |software| amongst your other software entitlements. A "Product Info" type search for the term "hpe vm essentials" may work but depending on the entitlements present in the account and future changes to search functionality, a slightly different search might be required. Once HPE VM Essentials is successfully returned, click on the dropdown menu under "Action" and click on "Get License."
+Within the "Software" section, search for |software| amongst your other software entitlements. A "Product Info" type search for the term "|firstuse|" may work but depending on the entitlements present in the account and future changes to search functionality, a slightly different search might be required. Once |morpheus| is successfully returned, click on the dropdown menu under "Action" and click on "Get License."
 
 .. image:: /images/vmeInstall/getLicense.png
 
@@ -198,17 +198,17 @@ From the download page, you'll see software packages, signature files and licens
 
 For an upgrade, we only need the ``.deb`` file available in the software center (and potentially the "supplemental" debian package as well if this will be an offline upgrade). To continue, copy the ``.deb`` file(s) over to the |manager| VM. On Linux, this could be done with ``scp`` (``scp /path/to/file.deb username@<VM IP address>:/path/to/destination``). You'll need the VM user's password unless you're using SSH keys.
 
-With the ``.deb`` file in place, we need to open a console connection to the |manager| VM to perform the actual upgrade. There are a number of methods to accomplish this but below are two examples from either an HPE VM host or from your own computer.
+With the ``.deb`` file in place, we need to open a console connection to the |manager| VM to perform the actual upgrade. There are a number of methods to accomplish this but below are two examples from either an |host| or from your own computer.
 
 .. begin_vm_console_connection
 
-**From the HPE VM Host**
+**From the HVM host**
 
 Confirm the manager VM name (``virsh list``) and connect with ``virsh console <vm name>``. This starts a local VNC serial connection. This method only works if the host has GUI capabilities installed, which means the host must be running Ubuntu Desktop or Ubuntu Server with GUI services installed.
 
 **From another computer**
 
-Confirm the manager VM name (run ``virsh list`` on the HPE VM host). Next, make note of the VNC port and password for the |manager| VM. This is done by running ``virsh edit <vm name>`` on the HPE VM host and finding it within the block beginning ``<graphics``. This block is typically near the bottom of the XML. Having obtained this information, move back over to your own computer (must be a computer with a desktop terminal, access to the VME host, and GUI capabilities). Connect to the SSH tunnel: ``ssh -L <VNC PORT>:127.0.0.1:<VNC PORT> <VME Host User>@<Host IP/hostname>``. Then, using a VNC viewer (for example, VNCViewer64), connect to ``localhost:<VNCPort>``. Use the password obtained from the VM XML viewed earlier.
+Confirm the manager VM name (run ``virsh list`` on the |host|). Next, make note of the VNC port and password for the |manager| VM. This is done by running ``virsh edit <vm name>`` on the |host| and finding it within the block beginning ``<graphics``. This block is typically near the bottom of the XML. Having obtained this information, move back over to your own computer (must be a computer with a desktop terminal, access to the VME host, and GUI capabilities). Connect to the SSH tunnel: ``ssh -L <VNC PORT>:127.0.0.1:<VNC PORT> <VME Host User>@<Host IP/hostname>``. Then, using a VNC viewer (for example, VNCViewer64), connect to ``localhost:<VNCPort>``. Use the password obtained from the VM XML viewed earlier.
 
 .. end_vm_console_connection
 

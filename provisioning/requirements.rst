@@ -62,7 +62,7 @@ Local/Uploaded Virtual Images
 Synced Images
 ^^^^^^^^^^^^^
 
-When a provisioning target (Cloud) is added, all available image and template records from that Cloud will be synced in regardless of Inventory settings on the Cloud. These image records will be available in the Virtual Images section and can be provisioned by using the target clouds generic Instance Type (ex. By selecting the HPE VM or VMware Instance Type from the provisioning wizard).
+When a provisioning target (Cloud) is added, all available image and template records from that Cloud will be synced in regardless of Inventory settings on the Cloud. These image records will be available in the Virtual Images section and can be provisioned by using the target clouds generic Instance Type (ex. By selecting the |hvm| or VMware Instance Type from the provisioning wizard).
 
 .. NOTE:: Synced Virtual Images are just metadata records in |morpheus| pointing to the image in the target Cloud. The actual image files are not copied/imported to |manager|.
 
