@@ -51,7 +51,7 @@ An |cluster| using the hyperconverged infrastructure (HCI) Layout consists of at
 
 **Hardware Requirements**
 
-- **Operating System:** Ubuntu 24.04 (for the latest cluster layout version, prior versions using Ubuntu 22.04 are also available)
+- **Operating System:** Ubuntu 24.04 (for the latest cluster layout version, prior versions for |hosts| running Ubuntu 22.04 are also available)
 - **CPU:** One or more 64-bit x86 CPUs, 1.5 GHz minimum with Intel VT or AMD-V enabled
 - **Memory:** 4 GB minimum. For non-converged Layouts, configure |hosts| to use shared external storage, such as an NFS share or iSCSI target. Converged Layouts utilize Ceph for clustered storage and require a **4 GB minimum memory per Ceph disk**
 - **Disk Space:** For converged storage, a data disk of at least 500 GB is required for testing. More storage will be needed for production clusters. An operating system disk of 15 GB is also required. Clusters utilizing non-converged Layouts can configure external storage (NFS, etc.) while |morpheus| will configure Ceph for multi-node clusters
@@ -136,7 +136,7 @@ In this example cluster, each host box consists of:
 Provisioning the Cluster
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-As mentioned in the previous section, this example is starting with three provisioned Ubuntu 22.04 boxes. I also have a Private Cloud-type Cloud to house the cluster. Begin the cluster creation process from the Clusters list page (|InfClu|). Click :guilabel:`+ ADD CLUSTER` and select "|hvm|".
+As mentioned in the previous section, |hosts| should be running Ubuntu 24.04 to use the latest |cluster| layout (version 1.2+). |hosts| running Ubuntu 22.04 can also be used (select |cluster| layout 1.1). I also have a Private Cloud-type Cloud to house the cluster. Begin the cluster creation process from the Clusters list page (|InfClu|). Click :guilabel:`+ ADD CLUSTER` and select "|hvm|".
 
 .. rst-class:: hidden
   .. image:: /images/infrastructure/clusters/mvm/createClusterClosed.png

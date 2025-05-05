@@ -1,7 +1,7 @@
 Installation
 ^^^^^^^^^^^^
 
-Having completed a discussion of networking considerations in the previous section, let's now turn to OS installation on the |hosts|. The hosts are recommended to be HPE Proliant Gen 11 physical servers and must be running Ubuntu 22.04. Other OS types are planned for certification in the future but for now you must be running Ubuntu 22.04. The |hypervisor| runs on top of the Ubuntu 22.04 hosts. We'll get to the installation portion in the next section but for now we will discuss the system requirements and recommendations for network and storage configuration during the installation.
+Having completed a discussion of networking considerations in the previous section, let's now turn to OS installation on the |hosts|. The hosts are recommended to be HPE Proliant physical servers (see the `compatibility matrix <https://hpevm-docs.morpheusdata.com/en/latest/vme_getting_started/vme_getting_started.html#hpe-morpheus-vm-essentials-software-compatibility-matrix>`_ for a list of recommended compute server choices) and must be running Ubuntu 24.04 to utilize the latest cluster layout (|hosts| running Ubuntu 22.04 may also be used but are only compatible with |cluster| layout version 1.1). The |hypervisor| runs on top of the Ubuntu hosts. We'll get to the installation portion in the next section but for now we will discuss the system requirements and recommendations for network and storage configuration during the installation.
 
 .. image:: /images/vmeInstall/host-ubuntu-software.png
   :width: 30%
@@ -9,8 +9,8 @@ Having completed a discussion of networking considerations in the previous secti
 Host Requirements
 `````````````````
 
-- **Operating System:** `Ubuntu 22.04 <https://releases.ubuntu.com/jammy/>`_
-- **Hardware:** HPE Proliant Gen 11 Hardware is recommended with additional hardware being tested and certified over time
+- **Operating System:** Ubuntu 24.04 to utilize the latest |cluster| layout
+- **Hardware:** HPE Proliant hardware is recommended with additional hardware being tested and certified over time (see the `compatibility matrix <https://hpevm-docs.morpheusdata.com/en/latest/vme_getting_started/vme_getting_started.html#hpe-morpheus-vm-essentials-software-compatibility-matrix>`_ for a list of recommended compute server choices)
 - **CPU:** One or more 64-bit x86 CPUs, 1.5 GHz minimum with Intel VT or AMD-V enabled
 - **Memory:** Minimum of 8GB for non-hyperconverged (HCI) deployments or 8GB plus 4GB for each data disk for HCI deployments
 - **Storage:** Minimum of 50GB for operating system storage
@@ -46,8 +46,8 @@ Console Installation and Configuration
 
 It's time to begin the actual installation process on the hosts. From a high level, the process is as follows:
 
-- Install Ubuntu 22.04
-- Patch Ubuntu 22.04 with the latest updates and security fixes
+- Install Ubuntu 24.04 (recommended to use the latest cluster layouts)
+- Patch Ubuntu 24.04 with the latest updates and security fixes
 - Install |morpheus| Console. This is a light Debian package that is used to configure the hosts and bootstrap initial virtualization capabilities. This is done on all hosts
 - Configure the host system for networking, storage, NTP, etc
 - Deploy the |manager| using the |morpheus| Console. This is done on only one host
@@ -56,9 +56,9 @@ It's time to begin the actual installation process on the hosts. From a high lev
 .. image:: /images/vmeInstall/inst-process.png
   :width: 50%
 
-.. IMPORTANT:: Compatibility with GFS2 datastores requires hardware enablement (HWE) packages to be installed. This is a set of software components that enables users to run a longterm support version of Ubuntu yet still use newer hardware that might not be supported by the default kernel. Run ``sudo apt install linux-generic-hwe-22.04`` to install HWE packages.
+.. IMPORTANT:: For those establishing clusters running Ubuntu 22.04, compatibility with GFS2 datastores requires hardware enablement (HWE) packages to be installed. This is a set of software components that enables users to run a longterm support version of Ubuntu yet still use newer hardware that might not be supported by the default kernel. Run ``sudo apt install linux-generic-hwe-22.04`` to install HWE packages.
 
-This guide won't go much deeper than what was already stated above regarding Ubuntu 22.04 installation and the process of applying the latest patches. We will pick up at this point with the process of installing the |morpheus| console which enables virtualization capability on cluster hosts by installing KVM, OVS, and other packages. This process is repeated on each host that will be part of the |cluster|. Continuing with this installation guide will require downloading packages from My HPE Software Center. If you are unable to log into the software center or if you believe you are missing software entitlements that should be present, contact your account representative.
+This guide won't go much deeper than what was already stated above regarding Ubuntu installation and the process of applying the latest patches. We will pick up at this point with the process of installing the |morpheus| console which enables virtualization capability on cluster hosts by installing KVM, OVS, and other packages. This process is repeated on each host that will be part of the |cluster|. Continuing with this installation guide will require downloading packages from My HPE Software Center. If you are unable to log into the software center or if you believe you are missing software entitlements that should be present, contact your account representative.
 
 Once logged into My HPE Software Center, click on the "Software" section from the side navigation.
 
