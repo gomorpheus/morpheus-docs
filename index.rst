@@ -1,5 +1,5 @@
-|firstuse| Software Documentation
-=================================
+|firstuse| Documentation
+========================
 
 .. include:: /release_notes/current.rst
 
