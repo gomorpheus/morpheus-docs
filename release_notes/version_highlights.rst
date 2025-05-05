@@ -12,7 +12,7 @@ This section includes feature change highlights and key enhancements for all rel
 :Docker: - When running a non-Kubernetes Docker image with image tag set to latest, we now force-pull the image to update the Docker host
 :Kubernetes: - Added default Kubernetes MKS 1.30 Layouts for all supported Clouds
 :Library: - Added or updated Oracle Linux 6, 7, 8 and 9 images for various Cloud types to the default catalog
-           - Default Ubuntu 24.04 images have been added for VMware, Azure, AWS, and HPE VM/KVM Clouds
+           - Default Ubuntu 24.04 images have been added for VMware, Azure, AWS, and HVM/KVM Clouds
 :Load Balancers: - |morpheus| IP Pools can now be used to auto-assign an IP address for the VIP address field when creating a load balancer Instance
 :NSX: - NSX and NSX Cloud now support a configured global proxy
 :Network: - Network Domains can now be scoped to a specific Group. Additionally, the "Network: Domains" Role permission now has a Group access level which limits Domain visibility only to those scoped to accessible Groups

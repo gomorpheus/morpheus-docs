@@ -1,5 +1,5 @@
-HPE VM Clusters
----------------
+HVM Clusters
+------------
 
 An |mvm| cluster is a hypervisor clustering technology utilizing KVM. Beginning with just a few basic Ubuntu boxes, |morpheus| can create a cluster of hypervisor hosts complete with monitoring, failover, easy migration of workloads across the cluster, and zero-downtime maintenance access to hypervisor host nodes. All of this is backed by |morpheus| Tenant capabilities, a highly-granular RBAC and policy engine, and Instance Type library with automation workflows.
 
