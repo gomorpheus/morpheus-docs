@@ -39,7 +39,7 @@ Install the |morph| package and force it to overwrite.
 
 .. code-block:: bash
 
-  dpkg -i -force-overwrite morpheus-appliance_x.x.x-x.deb
+  dpkg -i --force-overwrite morpheus-appliance_x.x.x-x.deb
 
 Wait for the installation to complete. There will be warnings about conflicts which may be safely ignored. When installation is complete, you will see a message similar to the screenshot below:
 
