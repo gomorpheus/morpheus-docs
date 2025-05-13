@@ -73,8 +73,15 @@ At product launch, compatibility and scale testing has been limited to HPE hardw
     - Intel single slot blade
     - HPE Synergy 480 Gen 11 (local storage, iSCSI, FC)
     -
+  * - Dell
+    -
+    - Dell 660
+    - iSCSI, FC, NFS
+  * - Dell
+    -
+    - Dell 670
+    - iSCSI, FC, NFS
 
-.. NOTE:: Currently, only HPE hardware is supported but support for third-party hardware is planned for the future.
 
 .. list-table:: **Storage Hardware Support**
   :widths: auto
@@ -93,8 +100,14 @@ At product launch, compatibility and scale testing has been limited to HPE hardw
     - HPE Alletra Storage MP B10000 (iSCSI, Fibre Channel)
     - Update storage hardware to the latest available firmware
   * - HPE MSA Storage
-    - HPE MSA Gen7 (2070) (iSCSI)
+    - HPE MSA Gen7 (2070, 2072) (iSCSI)
     - Update storage hardware to the latest available firmware
+  * - HPE MSA Storage
+    - HPE MSA Gen6 (1060, 2060, 2062) (iSCSI)
+    - Update storage hardware to the latest available firmware
+  * - NetApp
+    - NetApp A400
+    - iSCSI, FC, NFS
 
 .. NOTE:: For more detail, please visit the `storage matrix <http://www.hpe.com/storage/spock>`_
 
@@ -126,6 +139,12 @@ At product launch, compatibility and scale testing has been limited to HPE hardw
     - Agent-based
     - Partner
     - `Release notes <https://urldefense.com/v3/__https:/www.veritas.com/support/en_US/doc/103228346-168289021-1__;!!NpxR!jDjqUFB8W_nHe21CV5Pr5HQI_JYJVb8JzEDaoWsgX-ql62BKdr7VMcYhflhPHfhA-iDDH26OitC3RorzksoLJQKzxjk$>`_
+  * - Commvault
+    - Commvault Cloud Backup and Recovery
+    - 11.38
+    - Image-based
+    - Partner
+    -
   * - Oracle
     - Database
     - 19c
@@ -144,6 +163,18 @@ At product launch, compatibility and scale testing has been limited to HPE hardw
     -
     - HPE
     - `Technical Brief <https://www.hpe.com/psnow/doc/a50012355enw>`_, `Blog <https://community.hpe.com/t5/the-cloud-experience-everywhere/optimize-ai-development-how-hpe-vm-essentials-and-mongodb/ba-p/7235922>`_, `Video <https://youtu.be/UYpOJ6JnuEk>`_
+  * - Elastic
+    - Elastic Stack
+    - 9.0.0-1
+    -
+    - HPE
+    -
+  * - Citrix
+    - Citrix Virtual Apps and Desktops
+    - 7.2402 LTSR CU1
+    - For test/dev and POC only; not for production environments
+    - HPE
+    -
   * - Omnissa
     - Horizon
     - 8.13.1 (Build 11490723527)
@@ -202,6 +233,12 @@ Select ISV applications require “full stack” certifications including OS, hy
     - Windows Server
     - 2019, 2022, 2025
     - Windows Server 2025
+    - HPE
+    -
+  * - Canonical
+    - Ubuntu Server
+    - 2022.04, 2024.04
+    - Ubuntu Server 24.04
     - HPE
     -
 
