@@ -12,6 +12,10 @@ New Features
 ============
 
 :API & CLI: - Added API endpoints to support compute device passthrough from hosts to HVM workloads
+:HPE Storage Integration Pack for VM Essentials: - The plugin provides a uniform data management platform that natively extends to HPE Alletra MP offerings. The HPE Storage Integration Pack for VM Essentials provides an interface to view the system details along with raw capacity utilization, alerts, and storage pools details. For more information, see the `release notes <https://support.hpe.com/hpesc/public/docDisplay?docId=sd00006166en_us>`_.
+          - Added **Summary** tab, which provides information on the storage system details such as model name, serial number, along with the raw capacity utilization details shown in both numerical form and a visual progress bar.
+          - Added **Alerts** tab, which displays alert messages with severity categorized as Major, Critical, and Fatal; type of alerts; and the timestamps at which the alert messages are triggered.
+          - Added **Pools** tab, which displays the total provisioned storage capacity for the Common Provisioning Groups (CPGs), along with the visual representation of the utilized capacity status shown as both numeric value and as a percentage.
 :HVM: - Added GPU passthrough support with pooling. Any detached GPU is considered available to the pool. A Service Plan designates whether a workload needs a GPU and removing the VM will release the GPU
           - Added passthrough support for PCI and NVME devices from hypervisor hosts to HVM workloads. Added devices tab at the host and VM levels to support this feature. Devices are managed through the Actions menu for each device within the host devices tab
           - Added passthrough support for USB devices. USB devices can be viewed from the devices tab on the host detail. Devices can be detached from the host and attached to VMs. Devices are then viewable from the VM devices tab
