@@ -21,7 +21,6 @@ New Features
           - Added passthrough support for USB devices. USB devices can be viewed from the devices tab on the host detail. Devices can be detached from the host and attached to VMs. Devices are then viewable from the VM devices tab
           - Added the ability to mount a ``cdrom`` ISO by reconfiguring the Instance and adding a "CD ROM" type disk. The disk image can be selected from an ISO-type Virtual Images currently managed by |morpheus|
           - HVM Cluster Layout version 1.2 is now out of beta and into general availability
-          - HVM Clusters can now be deployed through Distributed Workers without |morpheus| having direct SSH access to the hypervisor hosts
           - When reverting to a snapshot, any child snapshots of the selected one are kept rather than being deleted
 :Integrations: - Added an integrations section at |AdmInt| so administrators can manage plugins and distributed workers associated with |morpheus|
 :Plugins: - Backup plugins can now be designed with the option to restore to a current Instance or restore to a new Instance
