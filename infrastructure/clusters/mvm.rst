@@ -61,7 +61,7 @@ An |mvm| cluster using the hyperconverged infrastructure (HCI) Layout consists o
 
 .. NOTE:: Clustered storage needs as much network bandwidth as possible. Network interfaces of at least 10 Gbps with jumbo frames enabled are required for clustered storage and for situations when all traffic is running through the management interface (when no compute or storage interface is configured). It's highly likely that performance will be unacceptable with any lower configurations.
 
-.. list-table:: **|mvm| Network Communication Ports**
+.. list-table:: **HVM Network Communication Ports**
    :widths: auto
    :header-rows: 1
 
