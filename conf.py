@@ -46,6 +46,7 @@ rst_prolog = """
 .. |morpheus| replace:: HPE Morpheus Enterprise
 .. |morphues| replace:: HPE Morpheus Enterprise
 .. |morphdat| replace:: Morpheus Data
+.. |hpe| replace:: Hewlett Packard Enterprise
 .. |repo_host_url| replace:: https://downloads.morpheusdata.com
 .. |master tenant| replace:: Master Tenant
 .. |profileObjects| replace:: Clouds

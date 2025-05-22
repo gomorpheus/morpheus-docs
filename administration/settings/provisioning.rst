@@ -58,4 +58,4 @@ Determines the Default Blueprint Type selected in new App Wizard
 Terraform Settings
 ^^^^^^^^^^^^^^^^^^
 
-  * **Terraform Runtime:** Select "auto" or "manual". When selecting "auto", |morpheus| will automatically download and use the Terraform version indicated in the VERSION field on the Spec Templates that make up a Terraform Instance type or Blueprint. When selecting "manual", |morpheus| will use the version of Terraform `installed on your appliance <https://docs.morpheusdata.com/en/latest/integration_guides/Automation/terraform.html?#terraform-installation>`_.
+  * **Terraform Runtime:** Select "auto" or "manual". When selecting "auto", |morpheus| will automatically download and use the Terraform version indicated in the VERSION field on the Spec Templates that make up a Terraform Instance type or Blueprint (only up to v1.5.5). When selecting "manual", |morpheus| will use the version of Terraform `installed on your appliance <https://docs.morpheusdata.com/en/latest/integration_guides/Automation/terraform.html?#terraform-installation>`_.
