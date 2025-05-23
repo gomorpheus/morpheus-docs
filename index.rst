@@ -27,12 +27,11 @@
    integration_guides/integration_guides.rst
 
 .. toctree::
-   :maxdepth: 3
+   :maxdepth: 2
    :caption: Release Notes
 
    release_notes/current.rst
    release_notes/compatibility.rst
-   release_notes/version_highlights.rst
 
 ..
   .. toctree::
