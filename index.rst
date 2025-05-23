@@ -27,7 +27,7 @@
    integration_guides/integration_guides.rst
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
    :caption: Release Notes
 
    release_notes/current.rst
