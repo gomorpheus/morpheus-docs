@@ -11,7 +11,6 @@ Release Dates:
 New Features
 ============
 
-UI: - The global processes dropdown in the main menu bar (next to the global search field) now always shows the five most recent processes rather than automatically dismissing any inactive processes
 
 Fixes
 =====
