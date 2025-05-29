@@ -95,11 +95,10 @@ Services
    * - Elasticsearch
      - |esbranch|
      - |esver|
-     - |checkmark|
-   * - RabbitMQ
+     - 
      - |rmqbranch|
      - |rmqver|
-     - |checkmark|
+     - 
    * - Tomcat
      -
      - |tcver|
@@ -115,7 +114,7 @@ Services
    * - Java
      -
      - |java|
-     - |checkmark|
+     - 
    * - Java (macOS agent)
      -
      - |java-mac|
