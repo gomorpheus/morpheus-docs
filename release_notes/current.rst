@@ -25,7 +25,7 @@ New Features
 
 :NSX: - Added iPv6 DHCP configuration for NSX segments
 :ServiceNow: - Added support for ServiceNow Xanadu and Yokohama
-
+:Roles: - Added "List" level rights to the "Tools: Cypher" Role permission. "List" access allows the user to list out available Cypher entries in |morpheus| UI or API but not to consume them in scripts or decrypt them in any way
 
 Fixes
 =====
@@ -68,5 +68,3 @@ Appliance & Agent Updates
                    - morpheus-home-dashboard-plugin updated to v1.1.3
                    - rubrik-plugin updated to v2.0.2
                    - xenserver/xpc-ng updated to v1.1.6
-
-

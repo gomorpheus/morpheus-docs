@@ -1150,8 +1150,8 @@ Role Mappings
         - This permission is recommended for those responsible for storage or scripts which will use the Archive.
         -
       * - Tools: Cypher
-        - None, Read, User, Full, Full Decrypt
-        - Determines access to the Tools > Cypher page. The "User" permission will allow access only to objects the user owns. The "Full Decrypt" permission will allow for decryption of secrets.
+        - None, List, Read, User, Full, Full Decrypt
+        - Determines access to the Tools > Cypher page. The "List" permission allows only listing Cypher entries in |morpheus| UI and API. The "Read" permission allows listing in addition to decrypting them via automation for used in scripts and Tasks. The "User" permission will allow access similar to "Read" though only for Cypher objects the user owns, in addition to allowing for creation of Cypher entries. The "Full" permission allows creation and "Read" access to all Cypher entries regardless of who created them. The "Full Decrypt" permission gives the same rights as "Full" with the added privilege of decrypting the secret values for plaintext viewing.
         - Secure key/value store. Cypher keys can be used in scripts.
         - Recommended for those who need to store or use security key value pairs.
         -
