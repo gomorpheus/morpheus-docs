@@ -11,7 +11,7 @@ It automates the creation and management of networks for HPE ANW DSS Port Groups
 
 On each host, the plugin creates Linux bridge interfaces and associates them with VLANs for streamlined network management and configuration.
 |morpheus| integrates directly with AFC to automatically create or delete networks for HPE ANW DSS Port Groups as they are added to or removed from a configured cluster.
-Adding or removing hosts in the cluster triggers the corresponding network changes in AFC, ensuring that network configurations are always up to date.
+Adding or removing hosts in the cluster triggers the corresponding network changes in AFC, ensuring the network configurations are always up to date.
 
 The plugin also enables the creation of networks with specific VLAN IDs, supporting flexible segmentation and isolation.
 When a network is created, the plugin provisions the required VLANs on the Aruba CX 10000 switches, ensuring networks are ready for use by instances within the VME cluster.
