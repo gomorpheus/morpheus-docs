@@ -124,7 +124,7 @@ To delete a `HPE ANW DSS Port Group` network, follow these steps:
 
 View `HPE Aruba CX DSS` Network Integration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-To view the `HPE ANW ArubaCX Network` integration, follow these steps:
+To view the `HPE Aruba CX DSS` Network integration, follow these steps:
  #. Navigate to |Infrastructure->Network->Integrations|
  #. Select the `HPE Aruba CX DSS` integration from the list.
 
