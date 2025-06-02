@@ -10,7 +10,7 @@ The Morpheus Wiki is a tenant-wide, RBAC-controlled, auditable Wiki that allows 
 Highlights
 ----------
 
-- Main Wiki section is at ``Operations > Wiki``
+- Main Wiki section is at |OpeWik|
 - Wiki tabs are on Clouds, Groups, Instances, Hosts, VMs, Bare Metal, and Clusters detail pages
 - Additional Wiki Pages and Categories can be created from ``Operations > Wiki``
 - When a Wiki tab is populated, a Page is automatically added and accessible at ``Operations > Wiki``
