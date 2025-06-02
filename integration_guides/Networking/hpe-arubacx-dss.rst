@@ -6,7 +6,7 @@ Overview
 The HPE Aruba CX DSS plugin brings advanced networking features to HPE VME by leveraging Aruba CX 10000 series switches.
 It supports both micro-segmentation and macro-segmentation, integrating seamlessly with HPE and Aruba technologies to improve user experience and operational efficiency.
 
-Implemented as a |morpheus| ``NetworkProvider`` in Groovy, the plugin is purpose-built for the HPE ANW DSS Port Group network type, optimized for HPE VME environments.
+Implemented as a |morpheus| ``NetworkProvider`` in Groovy, the plugin is purpose-built for the HPE Aruba Networking Distributed Services Switch network type (HPE ANW DSS Port Group), optimized for HPE VME environments.
 It automates the creation and management of networks for HPE ANW DSS Port Groups, connecting servers to Aruba CX10000 switches within a VME cluster.
 
 On each host, the plugin creates Linux bridge interfaces and associates them with VLANs for streamlined network management and configuration.
