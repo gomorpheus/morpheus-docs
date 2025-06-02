@@ -53,7 +53,7 @@ The following requirements must be met to deploy and configure the `HPE Aruba CX
 .. note::
  - Download AFC and PSM from the HPE Networking Support portal: https://networkingsupport.hpe.com/downloads/software/RmlsZTo0YzQ2MzIyYS0xOTU2LTExZjAtYTMzNS0yZmRkN2QyMjdhOTY%3D
  - For more information on deploying AFC and PSM, refer to the official documentation.
- - The AFC and PSM must have network connectivity to the CX1000 switches.
+ - The AFC and PSM must have network connectivity to the CX 10000 switches.
  - Making full use of the |morpheus| Aruba CX 10000 integration requires credentials for AFC with API access granted and read/write access to AFC configuration.
 
 Adding `HPE Aruba CX DSS` Network Integration
