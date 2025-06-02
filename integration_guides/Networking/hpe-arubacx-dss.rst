@@ -3,7 +3,7 @@ Aruba CX10000 Integration (ArubaCxDss Network Plugin)
 
 Overview
 ^^^^^^^^
-The HPE ANW DSA (HPE Aruba Networking Distributed Service Architecture) plugin, also known as the ArubaCxDss Network Plugin, brings advanced networking features to HPE VME by leveraging Aruba CX10000 switches.
+The HPE Aruba CX DSS plugin brings advanced networking features to HPE VME by leveraging Aruba CX 10000 series switches.
 It supports both micro-segmentation and macro-segmentation, integrating seamlessly with HPE and Aruba technologies to improve user experience and operational efficiency.
 
 Implemented as a |morpheus| ``NetworkProvider`` in Groovy, the plugin is purpose-built for the HPE ANW DSS Port Group network type, optimized for HPE VME environments.
