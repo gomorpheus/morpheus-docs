@@ -88,7 +88,7 @@ Upon add the `ArubaCxDss Network integration` will be created.
 
 Create `HPE ANW DSS Port Group` Network
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-To create a `HPE ANW DSS Port Group` network, follow these steps:
+To create an `HPE ANW DSS Port Group` network, follow these steps:
 
 #. Navigate to |Infrastructure->Network->Networks|
 #. Select :guilabel:`+ Add Network` > HPE ANW DSS Port Group
