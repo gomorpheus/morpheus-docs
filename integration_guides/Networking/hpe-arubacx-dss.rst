@@ -75,7 +75,7 @@ Adding `HPE ANW ArubaCX DSS Network` Integration
    AFC PASSWORD
     Enter the password
    FABRIC NAME
-    Enter the Fabric name from the AFC
+    Enter the fabric name from the AFC
 
     .. image:: /images/integration_guides/networking/arubacxdss/2_create_network_integration.png
       :width: 40%
