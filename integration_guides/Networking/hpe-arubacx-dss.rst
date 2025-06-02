@@ -32,9 +32,9 @@ Prerequisites
 ^^^^^^^^^^^^^
 The following requirements must be met to deploy and configure the `HPE Aruba CX DSS` Network plugin on VME.
 
-* Aruba CX 10000 series switches - Minimum two switches are required for redundancy.
+* Aruba CX 10000 series switches.
 
-    - Aruba CX 10000 switches are configured.
+    - At least two Aruba CX 10000 switches are configured.
     - VSX and KeepAlive are configured.
     - Switches are connected to the upstream network.
 
