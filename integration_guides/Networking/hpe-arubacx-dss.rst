@@ -3,68 +3,65 @@ HPE Aruba CX DSS
 
 Overview
 ^^^^^^^^
-The HPE Aruba CX DSS plugin brings advanced networking features to HPE VME by leveraging Aruba CX 10000 series switches.
-It supports both micro-segmentation and macro-segmentation, integrating seamlessly with HPE and Aruba technologies to improve user experience and operational efficiency.
+The HPE Aruba CX DSS plugin brings advanced networking features to |firstuse| by leveraging Aruba CX 10000 series switches. It supports both micro-segmentation and macro-segmentation, integrating seamlessly with HPE and Aruba technologies to improve user experience and operational efficiency.
 
-Implemented as a |morpheus| ``NetworkProvider`` in Groovy, the plugin is purpose-built for the HPE Aruba Networking Distributed Services Switch network type (HPE ANW DSS Port Group), optimized for HPE VME environments.
-It automates the creation and management of networks for HPE ANW DSS Port Groups, connecting servers to Aruba CX 10000 switches within a VME cluster.
+Implemented as a |morpheus| ``NetworkProvider`` in Groovy, the plugin is purpose-built for the HPE Aruba Networking Distributed Services Switch network type (HPE ANW DSS Port Group) and optimized for |morpheus| environments. It automates the creation and management of networks for HPE ANW DSS Port Groups, connecting servers to Aruba CX 10000 switches within a |cluster|.
 
-On each host, the plugin creates Linux bridge interfaces and associates them with VLANs for streamlined network management and configuration.
-|morpheus| integrates directly with AFC to automatically create or delete networks for HPE ANW DSS Port Groups as they are added to or removed from a configured cluster.
-Adding or removing hosts in the cluster triggers the corresponding network changes in AFC, ensuring the network configurations are always up to date.
+On each host, the plugin creates Linux bridge interfaces and associates them with VLANs for streamlined network management and configuration. |morpheus| integrates directly with Aruba Fabric Composer (AFC) to automatically create or delete networks for HPE ANW DSS Port Groups as they are added to or removed from a configured cluster. Adding or removing |hosts| in the |cluster| triggers the corresponding network changes in AFC, ensuring the network configurations are always up to date.
 
-The plugin also enables the creation of networks with specific VLAN IDs, supporting flexible segmentation and isolation.
-When a network is created, the plugin provisions the required VLANs on the Aruba CX 10000 switches, ensuring networks are ready for use by instances within the VME cluster.
+The plugin also enables the creation of networks with specific VLAN IDs, supporting flexible segmentation and isolation. When a network is created, the plugin provisions the required VLANs on the Aruba CX 10000 switches, ensuring networks are ready for use by Instances within the |cluster|.
 
-Additionally, the plugin creates a Libvirt network of type Private.
-When an instance is created on the host and associated with this network, a macvtap interface is generated and mapped to the corresponding Linux Interface VLAN ID, ensuring seamless connectivity and isolation.
+Additionally, the plugin creates a Libvirt network of type Private. When an Instance is created on the host and associated with this network, a macvtap interface is generated and mapped to the corresponding Linux Interface VLAN ID, ensuring seamless connectivity and isolation.
 
 Features
 ^^^^^^^^
-* Create and delete networks of type ``HPE ANW DSS Port Group`` directly from the integration.
-* Automatically create and delete networks in Aruba Fabric Composer (AFC) when hosts are added or removed from the cluster.
-* Manage network configurations through seamless integration with Aruba Fabric Composer (AFC).
-* Enable both micro-segmentation and macro-segmentation for flexible network isolation.
-* View detailed summaries and status of Aruba CX 10000 switches.
-* Ensure automatic, real-time synchronization of network configurations with Aruba CX 10000 switches.
+
+* Create and delete networks of type ``HPE ANW DSS Port Group`` directly from the integration
+* Automatically create and delete networks in Aruba Fabric Composer (AFC) when |hosts| are added or removed from the |cluster|
+* Manage network configurations through seamless integration with AFC
+* Enable both micro-segmentation and macro-segmentation for flexible network isolation
+* View detailed summaries and status of Aruba CX 10000 switches
+* Ensure automatic, realtime synchronization of network configurations with Aruba CX 10000 switches
 
 Prerequisites
 ^^^^^^^^^^^^^
-The following requirements must be met to deploy and configure the `HPE Aruba CX DSS` Network plugin on VME.
 
-* Aruba CX 10000 series switches.
+The following requirements must be met to deploy and configure the `HPE Aruba CX DSS` Network plugin in |morpheus|
 
-    - At least two Aruba CX 10000 switches are configured.
-    - VSX and KeepAlive are configured.
-    - Switches are connected to the upstream network.
+* Aruba CX 10000 series switches
 
-* HPE VM Cluster is already set up.
+    - At least two Aruba CX 10000 switches are configured
+    - VSX and KeepAlive are configured
+    - Switches are connected to the upstream network
 
-    - Ensure all hosts within the cluster are physically connected to the CX 10000 switches for optimal network integration and redundancy.
+* Pre-existing |cluster|
 
-* VME Appliance version 8.0.6 or higher.
+    - Ensure all hosts within the |cluster| are physically connected to the CX 10000 switches for optimal network integration and redundancy
 
-    - AFC and PSM are deployed and reachable from VME Manager.
+* |morpheus| appliance version 8.0.6 or higher
 
-* Aruba Fabric Composer (AFC) version 7.2 or higher, deployed as a VM.
+    - AFC and PSM are deployed and reachable from the |manager|
 
-* AMD Pensando PSM (Policy and Services Manager), deployed as a VM.
+* Aruba Fabric Composer (AFC) version 7.2 or higher, deployed as a VM
+
+* AMD Pensando PSM (Policy and Services Manager), deployed as a VM
 
 .. note::
- - Download AFC and PSM from the HPE Networking Support portal: https://networkingsupport.hpe.com/downloads/software/RmlsZTo0YzQ2MzIyYS0xOTU2LTExZjAtYTMzNS0yZmRkN2QyMjdhOTY%3D
- - For more information on deploying AFC and PSM, refer to the official documentation.
- - The AFC and PSM must have network connectivity to the CX 10000 switches.
- - Making full use of the |morpheus| Aruba CX 10000 integration requires credentials for AFC with API access granted and read/write access to AFC configuration.
+ - Download AFC and PSM from the `HPE Networking Support portal <https://networkingsupport.hpe.com/downloads/software/RmlsZTo0YzQ2MzIyYS0xOTU2LTExZjAtYTMzNS0yZmRkN2QyMjdhOTY%3D>`_
+ - For more information on deploying AFC and PSM, refer to the official documentation
+ - The AFC and PSM must have network connectivity to the CX 10000 switches
+ - Making full use of the |morpheus| Aruba CX 10000 integration requires credentials for AFC with API access granted and read/write access to AFC configuration
 
 Adding `HPE Aruba CX DSS` Network Integration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-#. Navigate to |Infrastructure->Network->Integrations|
+
+#. Navigate to |InfNetInt|
 #. Select :guilabel:`+ Add` > Networking > HPE Aruba CX DSS
 
-    .. image:: /images/integration_guides/networking/arubacxdss/1_add_network_integration.png
+    .. image :: /images/integration_guides/networking/arubacxdss/1_add_network_integration.png
       :width: 60%
 
-#. Enter the following details in the `Add Network Integration` form:
+#. Enter the following details in the ADD NETWORK INTEGRATION form:
 
    NAME
     Name of the integration in |morpheus|
@@ -80,9 +77,9 @@ Adding `HPE Aruba CX DSS` Network Integration
     .. image:: /images/integration_guides/networking/arubacxdss/2_create_network_integration.png
       :width: 40%
 
-#. Select :guilabel:`Add Network Integration`
+#. Click :guilabel:`Add Network Integration`
 
-Upon add the `HPE Aruba CX DSS Network integration` will be created.
+Upon add, the `HPE Aruba CX DSS Network integration` will be created.
 
 .. NOTE:: All fields can be edited after saving.
 
@@ -90,13 +87,13 @@ Create `HPE ANW DSS Port Group` Network
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 To create an `HPE ANW DSS Port Group` network, follow these steps:
 
-#. Navigate to |Infrastructure->Network->Networks|
+#. Navigate to |InfNetNet|
 #. Select :guilabel:`+ Add Network` > HPE ANW DSS Port Group
 
    .. image:: /images/integration_guides/networking/arubacxdss/3.1_add_network.png
      :width: 40%
 
-#. Enter the following details in the `Add Network` form:
+#. Enter the following details in the CREATE NETWORK form:
 
    .. image:: /images/integration_guides/networking/arubacxdss/3.2_add_network.png
      :width: 40%
@@ -117,7 +114,7 @@ To delete a `HPE ANW DSS Port Group` network, follow these steps:
 
 #. Navigate to |Infrastructure->Network->Networks|
 #. Select the network you want to delete from the list.
-#. Click on the delete icon (trash can) next to the network name.
+#. Click on the delete icon (|trash|) next to the network name.
 
    .. image:: /images/integration_guides/networking/arubacxdss/4_delete_network.png
      :width: 60%
@@ -125,7 +122,7 @@ To delete a `HPE ANW DSS Port Group` network, follow these steps:
 View `HPE Aruba CX DSS` Network Integration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 To view the `HPE Aruba CX DSS` Network integration, follow these steps:
- #. Navigate to |Infrastructure->Network->Integrations|
+ #. Navigate to |InfNetInt|
  #. Select the `HPE Aruba CX DSS` integration from the list.
 
     .. image:: /images/integration_guides/networking/arubacxdss/5.1_list_network_integrations.png
