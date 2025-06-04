@@ -11,14 +11,30 @@ Release Dates:
 New Features
 ============
 
+:NSX: - Added iPv6 DHCP configuration for NSX segments
+:Roles: - Added "List" level rights to the "Tools: Cypher" Role permission. "List" access allows the user to list out available Cypher entries in |morpheus| UI or API but not to consume them in scripts or decrypt them in any way
 
 Fixes
 =====
 
+:Identity Sources: - When a user is created using a Custom External SSO identity source, the token expiration period is now correct to the interval set in global client settings rather than defaulting to one year
+:Rubrik: - Fixed backup durations being lost after an integration sync
+          - Removed the retention count configuration for Rubrik backups as they did not apply to that backup type
+:VMware: - Fixed an issue that could cause the max memory metric displayed on the Instance detail page to occasionally be greater than the memory available to the Instance
+          - Fixed an issue with French language hypervisor console keymaps
+:Veeam: - Fixed backup jobs failing to sync when large numbers of VMs were attached
 
 Appliance & Agent Updates
 =========================
 
+:Appliance: - The ``external_id`` column size in the ``morpheus.network`` table has been increased to varchar(500) due to being too small for some customers
+            - Embedded Tomcat updated to v9.0.104
+            - |morpheus| Linux Agent updated to v2.9.7
+            - |morpheus| Node and VM Node packages updated to v3.2.37 with updated |morpheus| Linux Agent v2.9.7
+:Embedded Plugins: - alletramp-plugin v1.1.1 added to embedded plugins
+                   - arubacx-plugin v1.1.0 added to embedded plugins
+                   - morpheus-home-dashboard-plugin updated to v1.1.3
+                   - rubrik-plugin updated to v2.0.2
 
 Known Issues
 ============
