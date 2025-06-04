@@ -58,7 +58,7 @@ Adding `HPE Aruba CX DSS` Network Integration
 #. Navigate to |InfNetInt|
 #. Select :guilabel:`+ Add` > Networking > HPE Aruba CX DSS
 
-    .. image:: /images/integration_guides/networking/arubacxdss/1_add_network_integration.png
+    .. image:: /images/integration_guides/networking/arubacxdss/addIntegration.png
       :width: 60%
 
 #. Enter the following details in the ADD NETWORK INTEGRATION form:
