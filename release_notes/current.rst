@@ -16,16 +16,14 @@ Release Dates
 
 .. _Release Notes:
 
-*************************
-|morphver| Release Notes
-*************************
+|
 
 New Features
 ============
 
 :HVM: - Added attach and detach actions for cluster volumes to the Volumes subtab within the Storage tab on cluster detail pages. Click the gear (|gear|) icon to access these actions
       - When provisioning VMs to |clusters|, added the ability to specify the disk type and mountpoint (VirtIO, SATA). Edit the Cloud and mark ENABLE DISK TYPE SELECTION under Advanced Options to enable in the provisioning wizard
-      - Added "HPE dark" as a theme selection in User Settings 
+      - Added "HPE dark" as a theme selection in User Settings
 :NSX: - Added iPv6 DHCP configuration for NSX segments
 :ServiceNow: - Added support for ServiceNow Xanadu and Yokohama
 :Roles: - Added "List" level rights to the "Tools: Cypher" Role permission. "List" access allows the user to list out available Cypher entries in |morpheus| UI or API but not to consume them in scripts or decrypt them in any way
