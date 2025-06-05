@@ -75,8 +75,8 @@ Appliance & Agent Updates
             - Ubuntu 24.04 now supported for Appliance OS
 
 
-:Agent & Node Packages: - :morpheus: Linux Agent updated to v2.9.5
-                        - : Node and VM node packages update to v3.2.35 with v2.9.5 Linux Agent
+:Agent & Node Packages: - |morpheus| Linux Agent updated to v2.9.5
+                        - Node and VM node packages update to v3.2.35 with v2.9.5 Linux Agent
 
 :Embedded Plugins: - Rubrik plugin updated to v2.0.1
                    - Digital Ocean plugin updated to v1.4.3
