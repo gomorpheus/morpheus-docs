@@ -115,10 +115,13 @@ Configure RabbitMQ
     curl --user $mq_admin_username:$mq_admin_password -X PUT $mq_console_url/api/vhosts/morpheus
     curl --user $mq_admin_username:$mq_admin_password -X PUT $mq_console_url/api/users/$mq_morpheus_username -d '{"password":"'$mq_morpheus_password'","tags":"administrator"}'
     curl --user $mq_admin_username:$mq_admin_password -X PUT $mq_console_url/api/permissions/morpheus/$mq_morpheus_username -d '{"configure":".*","write":".*","read":".*"}'
-    curl --user $mq_admin_username:$mq_admin_password -X PUT $mq_console_url/api/policies/morpheus/statCommands -d '{"pattern":"statCommands.*", "definition":{"expires":1800000, "ha-mode":"all"}, "priority":2, "apply-to":"queues"}'
-    curl --user $mq_admin_username:$mq_admin_password -X PUT $mq_console_url/api/policies/morpheus/morpheusAgentActions -d '{"pattern":"morpheusAgentActions.*", "definition":{"expires":1800000, "ha-mode":"all"}, "priority":2, "apply-to":"queues"}'
-    curl --user $mq_admin_username:$mq_admin_password -X PUT $mq_console_url/api/policies/morpheus/monitorJobs -d '{"pattern":"monitorJobs.*", "definition":{"expires":1800000, "ha-mode":"all"}, "priority":2, "apply-to":"queues"}'
-    curl --user $mq_admin_username:$mq_admin_password -X PUT $mq_console_url/api/policies/morpheus/ha -d '{"pattern":".*", "definition":{"ha-mode":"all"}, "priority":1, "apply-to":"all"}'
+    
+    # Below are legacy commands that are not needed, as the app will create these automatically if the vhost and user are created
+    # The below commands remain commented out for documenation purposes
+    # curl --user $mq_admin_username:$mq_admin_password -X PUT $mq_console_url/api/policies/morpheus/statCommands -d '{"pattern":"statCommands.*", "definition":{"expires":1800000, "ha-mode":"all"}, "priority":2, "apply-to":"queues"}'
+    # curl --user $mq_admin_username:$mq_admin_password -X PUT $mq_console_url/api/policies/morpheus/morpheusAgentActions -d '{"pattern":"morpheusAgentActions.*", "definition":{"expires":1800000, "ha-mode":"all"}, "priority":2, "apply-to":"queues"}'
+    # curl --user $mq_admin_username:$mq_admin_password -X PUT $mq_console_url/api/policies/morpheus/monitorJobs -d '{"pattern":"monitorJobs.*", "definition":{"expires":1800000, "ha-mode":"all"}, "priority":2, "apply-to":"queues"}'
+    # curl --user $mq_admin_username:$mq_admin_password -X PUT $mq_console_url/api/policies/morpheus/ha -d '{"pattern":".*", "definition":{"ha-mode":"all"}, "priority":1, "apply-to":"all"}'
 
 
 .. note:: Alternatively, the Rabbit Management interface can be accessed from inside the VPC (unless set to public), and the configuration above can be set manually
