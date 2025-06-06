@@ -97,6 +97,26 @@ If you are familiar with using the AWS CLI, you can run the following commands t
 #. Note the ``Console URL`` path for the next steps
 #. Note the ``Endpoint`` path for ``AMQP`` for the next steps, which will also be used when configuring Morpheus
 
+Testing RabbitMQ Broker
+```````````````````````
+
+.. important:: 
+   When copying the Console URL mentioned below from the AWS console, depending on how you perform the copy, it may append a ``/`` at the end of the URL.  This must be removed.
+
+#. Run the following command to test the cluster, replacing the ``mq_admin_username`` and ``mq_admin_password`` with the username and password created. Also, replace ``mq_console_url`` with the ``Console URL`` located on the OpenSearch cluster.
+
+  .. code-block:: bash
+
+    # Note that these commands MUST be ran by a system on the VPC, such as the Morpheus nodes, as the cluster is private
+    # Note the above note ^^^^^^^^
+
+    mq_console_url='<pasteConsoleURL>'
+    mq_admin_username='admin'
+    mq_admin_password='abc123123123123'
+    curl --user $mq_admin_username:$mq_admin_password -X GET $mq_console_url/api/overview
+  
+  Documentation: https://www.rabbitmq.com/docs/http-api-reference#get-apioverview
+
 Configure RabbitMQ
 ``````````````````
 
