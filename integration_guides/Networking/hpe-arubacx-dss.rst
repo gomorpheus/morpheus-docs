@@ -3,7 +3,7 @@ HPE Aruba CX DSS
 
 Overview
 ^^^^^^^^
-The HPE Aruba CX DSS plugin brings advanced networking features to |firstuse| by leveraging Aruba CX 10000 series switches. It supports both micro-segmentation and macro-segmentation, integrating seamlessly with HPE and Aruba technologies to improve user experience and operational efficiency.
+The HPE Aruba CX DSS plugin brings advanced networking features to |morphfirst| by leveraging Aruba CX 10000 series switches. It supports both micro-segmentation and macro-segmentation, integrating seamlessly with HPE and Aruba technologies to improve user experience and operational efficiency.
 
 Implemented as a |morpheus| ``NetworkProvider`` in Groovy, the plugin is purpose-built for the HPE Aruba Networking Distributed Services Switch network type (HPE ANW DSS Port Group) and optimized for |morpheus| environments. It automates the creation and management of networks for HPE ANW DSS Port Groups, connecting servers to Aruba CX 10000 switches within a |cluster|.
 
