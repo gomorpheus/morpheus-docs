@@ -7,8 +7,7 @@ Networking Integrations
    phpipam.rst
    nsxt.rst
    hpe_arubacx.rst
-   ..
-    hpe-arubacx-dss.rst
+   hpe-arubacx-dss.rst
    nsxCloud.rst
    aci.rst
    bluecat.rst
