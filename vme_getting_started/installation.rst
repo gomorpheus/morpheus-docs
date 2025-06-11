@@ -84,6 +84,8 @@ With the Debian package now available to the hosts, go ahead and install it with
 
 With that, the |morpheus| console installation is complete. Enter the console with the following command: ``hpe-vm``.
 
+.. NOTE:: Some versions of the installer also include an option to install the VME worker. The VME worker is meant for sites where direct SSH communication between the |hosts| and the |manager| is not possible. It is a feature of HPE Morpheus Enterprise Software and SimpliVity, it is not compatible with |firstuse|. More information on distributed workers is available in `HPE Morpheus Enterprise documentation <https://docs.morpheusdata.com/en/latest/administration/integrations/workers.html>`_
+
 .. image:: /images/vmeInstall/vme-console.png
   :width: 50%
 
