@@ -11,9 +11,13 @@ Release Dates:
 New Features
 ============
 
+:HPE Storage Integration Pack: - The plugin provides a uniform data management platform that natively extends to HPE Alletra MP offerings. The HPE Storage Integration Pack for VM Essentials provides an interface to view the system details along with raw capacity utilization, alerts, and storage pools details. For more information, see the `release notes <https://support.hpe.com/hpesc/public/docDisplay?docId=sd00006166en_us>`_
+                               - Added a Summary tab, which provides information on the storage system details such as model name and serial number, along with the raw capacity utilization details shown in both numerical form and a visual progress bar
+                               - Added an Alerts tab, which displays alert messages with severity categorized as Major, Critical, and Fatal. It also displays the type of alerts and the timestamps at which the alert messages are triggered
+                               - Added a Pools tab, which displays the total provisioned storage capacity for the Common Provisioning Groups (CPGs), along with the visual representation of the utilized capacity status shown as both a numeric value and as a percentage
 :HVM: - Added attach and detach actions for cluster volumes to the Volumes subtab within the Storage tab on cluster detail pages. Click the gear (|gear|) icon to access these actions
       - When provisioning VMs to |clusters|, added the ability to specify the disk type and mountpoint (VirtIO, SATA). Edit the Cloud and mark ENABLE DISK TYPE SELECTION under Advanced Options to enable in the provisioning wizard
-:User Settings: - Added "HPE dark" as a theme selection in User Settings 
+:User Settings: - Added "HPE dark" as a theme selection in User Settings
 :NSX: - Added iPv6 DHCP configuration for NSX segments
 :Roles: - Added "List" level rights to the "Tools: Cypher" Role permission. "List" access allows the user to list out available Cypher entries in |morpheus| UI or API but not to consume them in scripts or decrypt them in any way
 
