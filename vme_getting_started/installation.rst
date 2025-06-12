@@ -3,9 +3,6 @@ Installation
 
 Having completed a discussion of networking considerations in the previous section, let's now turn to OS installation on the |hosts|. The hosts are recommended to be HPE Proliant physical servers (see the `compatibility matrix <https://hpevm-docs.morpheusdata.com/en/latest/vme_getting_started/vme_getting_started.html#hpe-morpheus-vm-essentials-software-compatibility-matrix>`_ for a list of recommended compute server choices) and must be running Ubuntu 24.04 to utilize the latest cluster layout (|hosts| running Ubuntu 22.04 may also be used but are only compatible with |cluster| layout version 1.1). The |hypervisor| runs on top of the Ubuntu hosts. We'll get to the installation portion in the next section but for now we will discuss the system requirements and recommendations for network and storage configuration during the installation.
 
-.. image:: /images/vmeInstall/host-ubuntu-software.png
-  :width: 30%
-
 Host Requirements
 `````````````````
 
