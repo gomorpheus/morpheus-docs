@@ -23,7 +23,7 @@
    <thead>
      <tr>
        <th class="darkGrey">From Version</th>
-       <th class="darkGrey" colspan="5">To Version</th>
+       <th class="darkGrey" colspan="6">To Version</th>
      </tr>
    </thead>
      <tbody>
@@ -33,6 +33,7 @@
       <td class="green">8.0.3</td>
       <td class="green">8.0.4</td>
       <td class="green">8.0.5</td>
+      <td class="green">8.0.6</td>
      </tr>
      <tr>
       <td class="darkGrey">8.0.2 →</td>
@@ -40,6 +41,7 @@
       <td class="green">8.0.3</td>
       <td class="green">8.0.4</td>
       <td class="green">8.0.5</td>
+      <td class="green">8.0.6</td>
      </tr>
      <tr>
       <td class="darkGrey">8.0.3 →</td>
@@ -47,6 +49,7 @@
       <td class="lightGrey"></td>
       <td class="green">8.0.4</td>
       <td class="green">8.0.5</td>
+      <td class="green">8.0.6</td>
      </tr>
      <tr>
       <td class="darkGrey">8.0.4 →</td>
@@ -54,12 +57,21 @@
       <td class="lightGrey"></td>
       <td class="lightGrey"></td>
       <td class="green">8.0.5</td>
+      <td class="green">8.0.6</td>
+     </tr>
+     <tr>
+      <td class="darkGrey">8.0.5 →</td>
+      <td class="lightGrey"></td>
+      <td class="lightGrey"></td>
+      <td class="lightGrey"></td>
+      <td class="lightGrey"></td>
+      <td class="green">8.0.6</td>
      </tr>
   <tr>
-    <td class="green" colspan="5">Upgrade Supported</td>
+    <td class="green" colspan="6">Upgrade Supported</td>
   </tr>
   <tr>
-    <td class="red" colspan="5">Upgrade Not Supported</td>
+    <td class="red" colspan="6">Upgrade Not Supported</td>
   </tr>
   </tbody>
   </table>
