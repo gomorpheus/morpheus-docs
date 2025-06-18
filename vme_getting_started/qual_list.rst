@@ -71,7 +71,7 @@ At product launch, compatibility and scale testing has been limited to HPE hardw
     -
   * - HPE Synergy
     - Intel single slot blade
-    - HPE Synergy 480 Gen 11 (local storage, iSCSI, FC)
+    - HPE Synergy 480 Gen 11 (Local NVMe storage, iSCSI, FC)
     -
   * - Dell
     -
@@ -82,6 +82,7 @@ At product launch, compatibility and scale testing has been limited to HPE hardw
     - Dell 670
     - iSCSI, FC, NFS
 
+.. NOTE:: For Synergy hardware device support, review the latest SSP published for Ubuntu 22.04 on Synergy 480 Gen 11 servers `here <https://support.hpe.com/docs/display/public/synergy-sw-release/OS_Support.html>`_. Please note that HPE Synergy D3940 is not supported.
 
 .. list-table:: **Storage Hardware Support**
   :widths: auto
@@ -97,16 +98,22 @@ At product launch, compatibility and scale testing has been limited to HPE hardw
     - HPE Alletra 6000 (6010, 6030, 6050, 6070, 6090) (iSCSI)
     - Update storage hardware to the latest available firmware
   * - HPE Alletra Storage
+    - HPE Alletra 9000 (Fibre Channel)
+    - Update storage hardware to the latest available firmware
+  * - HPE Alletra Storage
     - HPE Alletra Storage MP B10000 (iSCSI, Fibre Channel)
     - Update storage hardware to the latest available firmware
   * - HPE MSA Storage
     - HPE MSA Gen7 (2070, 2072) (iSCSI)
     - Update storage hardware to the latest available firmware
   * - HPE MSA Storage
-    - HPE MSA Gen6 (1060, 2060, 2062) (iSCSI)
+    - HPE MSA Gen6 (1060, 2060, 2062) (iSCSI, Fibre Channel)
     - Update storage hardware to the latest available firmware
   * - NetApp
-    - NetApp A400
+    - NetApp AFF A400 9.14
+    - iSCSI, FC, NFS
+  * - Dell
+    - Dell PowerStore 4.0.0.2
     - iSCSI, FC, NFS
 
 .. NOTE:: For more detail, please visit the `storage matrix <http://www.hpe.com/storage/spock>`_
@@ -128,12 +135,12 @@ At product launch, compatibility and scale testing has been limited to HPE hardw
     - Partner
     - `Technical Brief <https://www.hpe.com/psnow/doc/a50012338enw>`_, Blog (`part 1 <https://community.veeam.com/blogs-and-podcasts-57/navigating-hpe-vm-essentials-part-1-what-is-it-and-how-to-protect-it-with-veeam-9610>`_, `part 2 <https://community.veeam.com/blogs-and-podcasts-57/navigating-hpe-vm-essentials-part-2-exploring-backup-strategies-9611>`_, `part 3 <https://community.veeam.com/blogs-and-podcasts-57/hpe-vme-and-veeam-backup-replication-9863>`_), `Video <https://psnow.ext.hpe.com/asset?id=7f67fb9a-7e53-4eee-ac47-3f7f89828ca3&preview=true>`_
   * - Cohesity
-    - Data Cloud
+    - DataProtect
     - 7.1.2 and later
     - Agent-based
     - Partner
     - `Technical Brief <https://psnow.ext.hpe.com/doc/a00146586enw>`_, `TekTalk-on-Point <https://vshow.on24.com/vshow/HPETekTalks/content/4929110/>`_, `Blog <https://community.hpe.com/t5/the-cloud-experience-everywhere/protect-hpe-morpheus-vm-essentials-software-vms-with-hpe/ba-p/7240793>`_
-  * - Cohesity Veritas
+  * - Cohesity
     - NetBackup
     - 11
     - Agent-based
@@ -141,8 +148,8 @@ At product launch, compatibility and scale testing has been limited to HPE hardw
     - `Release notes <https://urldefense.com/v3/__https:/www.veritas.com/support/en_US/doc/103228346-168289021-1__;!!NpxR!jDjqUFB8W_nHe21CV5Pr5HQI_JYJVb8JzEDaoWsgX-ql62BKdr7VMcYhflhPHfhA-iDDH26OitC3RorzksoLJQKzxjk$>`_
   * - Commvault
     - Commvault Cloud Backup and Recovery
-    - 11.38
-    - Image-based
+    - 11.40
+    - Agent-based, Image-based
     - Partner
     -
   * - Oracle
@@ -172,15 +179,21 @@ At product launch, compatibility and scale testing has been limited to HPE hardw
   * - Citrix
     - Citrix Virtual Apps and Desktops
     - 7.2402 LTSR CU1
-    - For test/dev and POC only; not for production environments
+    -
     - HPE
     -
   * - Omnissa
     - Horizon
     - 8.13.1 (Build 11490723527)
-    - For test/dev and POC only; not for production environments
+    -
     - HPE
     - `Blog <https://community.hpe.com/t5/the-cloud-experience-everywhere/unlock-efficient-vdi-with-hpe-vm-essentials-software-and-omnissa/ba-p/7238879>`_
+  * - HP Anyware
+    - HP Anyware
+    - 25.03.1
+    -
+    - HPE
+    -
 
 .. NOTE:: Applications have been validated within the bounds of the supported |morpheus| functionality. Always check the |morpheus| feature list to determine whether specific functionality is supported by the |hypervisor| (ex. shared disk access).
 
@@ -231,14 +244,26 @@ Select ISV applications require “full stack” certifications including OS, hy
     -
   * - Microsoft
     - Windows Server
-    - 2019, 2022, 2025
+    - 2016, 2019, 2022, 2025
     - Windows Server 2025
+    - HPE
+    -
+  * - Microsoft
+    - Windows 11
+    - 24H2
+    - Windows 11 24H2
     - HPE
     -
   * - Canonical
     - Ubuntu Server
     - 2022.04, 2024.04
     - Ubuntu Server 24.04
+    - HPE
+    -
+  * - Rocky Enterprise Software Foundation (RESF)
+    - Rocky Linux
+    - 9.5
+    - Rocky Linux 9.5
     - HPE
     -
 
