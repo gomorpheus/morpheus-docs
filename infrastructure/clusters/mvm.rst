@@ -170,6 +170,8 @@ After moving to the next tab, select a Plan based on resource needs. From the **
 
 Review and complete the provisioning wizard. After a short time, the workload should be up and running. With a workload now running on the cluster, we can take a look at some of the monitoring, migration, failover, and other actions we can take for workloads running on |mvm| clusters.
 
+.. NOTE:: |clusters| support CPU pinning (tying specific vCPUs of running VMs to specific physical CPU cores). Currently, this must be done manually by accessing the appropriate |host| and issuing ``virsh`` commands or editing XML. Adding UI tools to view and control CPU pinning is on the product roadmap to be added in the near future. Despite the requirement to edit CPU pinning manually, this is a supported action for workloads running on |clusters|.
+
 Monitoring the Cluster
 ^^^^^^^^^^^^^^^^^^^^^^
 
