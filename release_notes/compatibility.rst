@@ -95,10 +95,11 @@ Services
    * - Elasticsearch
      - |esbranch|
      - |esver|
-     - 
+     -
+   * - RabbitMQ
      - |rmqbranch|
      - |rmqver|
-     - 
+     -
    * - Tomcat
      -
      - |tcver|
@@ -106,7 +107,7 @@ Services
    * - Nginx
      -
      - |nginxver|
-     - 
+     -
    * - OpenSSL
      -
      - |openssl|, |openssl_fips| (FIPS)
@@ -114,7 +115,7 @@ Services
    * - Java
      -
      - |java|
-     - 
+     -
    * - Java (macOS agent)
      -
      - |java-mac|
