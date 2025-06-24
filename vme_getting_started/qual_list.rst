@@ -110,13 +110,30 @@ At product launch, compatibility and scale testing has been limited to HPE hardw
     - HPE MSA Gen6 (1060, 2060, 2062) (iSCSI, Fibre Channel)
     - Update storage hardware to the latest available firmware
   * - NetApp
-    - NetApp AFF A400 9.14
+    - NetApp AFF A400 ONTAP 9.14
+    - iSCSI, FC, NFS
+  * - NetApp
+    - NetApp C800 ONTAP 9.15.1P7
     - iSCSI, FC, NFS
   * - Dell
     - Dell PowerStore 4.0.0.2
     - iSCSI, FC, NFS
 
 .. NOTE:: For more detail, please visit the `storage matrix <http://www.hpe.com/storage/spock>`_
+
+.. list-table:: **Switches Support**
+  :widths: auto
+  :header-rows: 1
+
+  * - Hardware
+    - Platform Type
+    - Comments
+  * - HPE Aruba
+    - 8325
+    -
+  * - Cisco
+    - Nexus 93180YC-FX3
+    -
 
 .. list-table:: **Independent Software Vendor (ISV) Support**
   :widths: auto
