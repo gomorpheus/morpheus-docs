@@ -121,19 +121,20 @@ At product launch, compatibility and scale testing has been limited to HPE hardw
 
 .. NOTE:: For more detail, please visit the `storage matrix <http://www.hpe.com/storage/spock>`_
 
-.. list-table:: **Switches Support**
-  :widths: auto
-  :header-rows: 1
+..
+  .. list-table:: **Switches Support**
+    :widths: auto
+    :header-rows: 1
 
-  * - Hardware
-    - Platform Type
-    - Comments
-  * - HPE Aruba
-    - 8325
-    -
-  * - Cisco
-    - Nexus 93180YC-FX3
-    -
+    * - Hardware
+      - Platform Type
+      - Comments
+    * - HPE Aruba
+      - 8325
+      -
+    * - Cisco
+      - Nexus 93180YC-FX3
+      -
 
 .. list-table:: **Independent Software Vendor (ISV) Support**
   :widths: auto
