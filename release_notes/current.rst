@@ -25,6 +25,8 @@ Fixes
 =====
 
 :Identity Sources: - When a user is created using a Custom External SSO identity source, the token expiration period is now correct to the interval set in global client settings rather than defaulting to one year
+:NSX: - Firewall rules created in NSX with "Negate Selection" configuration are now synced into |morpheus| with the configuration set. Additionally, when rules are modified in |morpheus|, the negation is retained
+:NSX: - Service ports are no longer cleared out when firewall rules are updated in |morpheus|
 :Rubrik: - Fixed backup durations being lost after an integration sync
           - Removed the retention count configuration for Rubrik backups as they did not apply to that backup type
 :VMware: - Fixed an issue that could cause the max memory metric displayed on the Instance detail page to occasionally be greater than the memory available to the Instance
