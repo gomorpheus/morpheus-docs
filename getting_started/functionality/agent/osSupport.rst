@@ -950,6 +950,15 @@ Morpheus Agent OS Support
      - windows
      - microsoft
      - 1
+   * - windows server 2025
+     - 64
+     - windows
+     - windows.server.2025
+     - windows
+     - 2025
+     - windows
+     - microsoft
+     - 1
    * - xen server 6.1
      - 64
      - xen
