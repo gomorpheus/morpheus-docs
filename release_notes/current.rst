@@ -12,6 +12,7 @@ New Features
 ============
 
 :Alarms: - Enabled Alarms functionality in |morpheus| which previously was only available in HPE Morpheus Enterprise Software. See Alarms within the Activity section of the Operations menu
+:Aruba CX Plugin: - Added support to allow user to specify the uplink LAG interface name
 
 Fixes
 =====
@@ -19,7 +20,7 @@ Fixes
 
 Appliance & Agent Updates
 =========================
-
+:Embedded Plugins: - arubacx-plugin updated to v1.2.0
 
 Known Issues
 ============
