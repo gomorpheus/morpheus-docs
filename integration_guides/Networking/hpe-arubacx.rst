@@ -94,7 +94,7 @@ Adding ArubaCX Integration
 .. Note:: Making full use of the |morpheus| ArubaCX integration requires credentials for Aruba CX switch pair with API access granted and read/write access to switch configuration. See ArubaCX 8325 documentation for more information on user rights administration in that product.
 
 #. Navigate to |AdmInt|
-#. Select :guilabel:`+ New Integration` > Other > ArubaCX
+#. Select :guilabel:`+ New Integration` > Other > HPE Aruba CX Switches
 
     .. image:: /images/integration_guides/other/arubacx/arubacx_new_integration.png
 
@@ -104,18 +104,17 @@ Adding ArubaCX Integration
     Name of the integration in |morpheus|
    ENABLED
     Deselect to disable the integration
+   ARUBA SWITCH USERNAME
+    User username for both switches
+   ARUBA SWITCH PASSWORD
+    User password for both switches
    ARUBA SWITCH IP
     Primary switch IP address
-   ARUBA SWITCH USERNAME
-    Primary switch user username
-   ARUBA SWITCH PASSWORD
-    Primary switch user password
    ARUBA SWITCH IP
     Secondary switch IP address
-   ARUBA SWITCH USERNAME
-    Secondary switch user username
-   ARUBA SWITCH PASSWORD
-    Secondary switch user password
+   UPLINK LAG INTERFACE
+    Name of the uplink LAG interface (default is 'lag1')
+
 
     .. image:: /images/integration_guides/other/arubacx/arubacx_settings.png
       :width: 40%
