@@ -58,7 +58,7 @@ Adding `HPE Aruba CX DSS` Network Integration
 #. Navigate to |InfNetInt|
 #. Select :guilabel:`+ Add` > Networking > HPE Aruba CX DSS
 
-    .. image:: /images/integration_guides/networking/arubacxdss/addIntegration.png
+    .. image:: /images/integration_guides/networking/arubacxdss/1_add_network_integration.png
       :width: 60%
 
 #. Enter the following details in the ADD NETWORK INTEGRATION form:
@@ -93,19 +93,24 @@ To create an `HPE ANW DSS Port Group` network, follow these steps:
    .. image:: /images/integration_guides/networking/arubacxdss/3.1_add_network.png
      :width: 40%
 
-#. Enter the following details in the CREATE NETWORK form:
+#. Select the Network Server in the CREATE NETWORK form.
 
    .. image:: /images/integration_guides/networking/arubacxdss/3.2_add_network.png
-     :width: 40%
+        :width: 40%
+
+#. Enter the following details in the CREATE NETWORK form.
+
+   .. image:: /images/integration_guides/networking/arubacxdss/3.3_add_network.png
+        :width: 40%
 
 #. Save the network by clicking on :guilabel:`Save changes`.
 
-   .. image:: /images/integration_guides/networking/arubacxdss/3.3_add_network.png
+   .. image:: /images/integration_guides/networking/arubacxdss/3.4_add_network.png
      :width: 40%
 
 #. The network will be created and displayed in the list of networks.
 
-   .. image:: /images/integration_guides/networking/arubacxdss/3.4_network_created.png
+   .. image:: /images/integration_guides/networking/arubacxdss/3.5_network_created.png
      :width: 60%
 
 Delete `HPE ANW DSS Port Group` Network
