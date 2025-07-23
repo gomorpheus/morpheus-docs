@@ -1,5 +1,5 @@
-Networking Integrations
-=======================
+Network
+=======
 
 .. toctree::
 
