@@ -1,5 +1,10 @@
-EKS Clusters
-------------
+EKS Clusters |enterprise-only|
+------------------------------
+
+.. tier-note:: Enterprise
+   :exclude: Essentials, Advanced
+
+   Public Kubernetes services (EKS, AKS, GKE) are Enterprise-only features.
 
 Provisions a new Elastic Kubernetes Service (EKS) Cluster in target AWS Cloud.
 

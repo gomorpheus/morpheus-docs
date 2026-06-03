@@ -12,11 +12,10 @@ Debian / Ubuntu
 
 .. warning:: |morpheus| |morphver| contains new node and VM node packages that require 3.5GB of storage. It is safe to run ``sudo rm -Rf /var/opt/morpheus/package-repos/*`` after |morphver| package installation and before reconfigure to clean old node and vm node packages from the package-repo when room is needed. 
 
-To upgrade Morpheus running on Ubuntu/Debian, download new deb package, stop the morpheus-ui, install the new deb package, then reconfigure.
+To upgrade Morpheus running on Ubuntu/Debian, download new deb package from My HPE Software Center and transfer it to your application node, stop the morpheus-ui, install the new deb package, then reconfigure.
 
 .. code-block:: bash
 
-  sudo wget https://packageUrl.morpheus-appliance_x.x.x-x_amd64.deb
   sudo morpheus-ctl stop morpheus-ui
   sudo dpkg -i morpheus-appliance_x.x.x-1_amd64.deb
   sudo morpheus-ctl reconfigure
@@ -34,11 +33,10 @@ CentOS / RHEL / Amazon / SLES
 
 .. warning:: |morpheus| |morphver| contains new node and VM node packages that require 3.5GB of storage. It is safe to run ``sudo rm -Rf /var/opt/morpheus/package-repos/*`` after |morphver| package installation and before reconfigure to clean old node and vm node packages from the package-repo when room is needed. 
 
-To upgrade Morpheus running on CentOS, RHEL, Amazon or SLES, download and install the new rpm package, stop the morpheus-ui, reconfigure and then start the morpheus-ui:
+To upgrade Morpheus running on CentOS, RHEL, Amazon or SLES, download the upgrade package from My HPE Software Center, transfer it to your application node, stop the morpheus-ui, install the new rpm package, then reconfigure:
 
 .. code-block:: bash
 
-  sudo wget https://packageUrl.morpheus-appliance-x.x.x-x.x86_64.rpm
   sudo morpheus-ctl stop morpheus-ui
   sudo rpm -Uhv morpheus-appliance-x.x.x-x.x86_64.rpm
   sudo morpheus-ctl reconfigure

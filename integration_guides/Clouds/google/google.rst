@@ -1,7 +1,12 @@
 .. _Google Cloud:
 
-Google Cloud Platform (GCP)
----------------------------
+Google Cloud Platform (GCP) |enterprise-only|
+----------------------------------------------
+
+.. tier-note:: Enterprise
+   :exclude: Essentials, Advanced
+
+   Public cloud integrations including GCP are Enterprise-only features.
 
 Integration Features
 ^^^^^^^^^^^^^^^^^^^^

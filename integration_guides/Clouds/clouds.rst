@@ -12,6 +12,7 @@ Clouds
   digitalocean/digitalocean.rst
   esxi/esxi.rst
   google/google.rst
+  hpe_bare_metal/hpe_bare_metal.rst
   Huawei/huawei.rst
   hyperv/hyperv.rst
   ibm/ibm.rst

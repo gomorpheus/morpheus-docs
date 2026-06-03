@@ -1,5 +1,10 @@
-Guidance
-========
+Guidance |enterprise-only|
+==========================
+
+.. tier-note:: Enterprise
+   :exclude: Essentials, Advanced
+
+   Guidance and cloud optimization recommendations are Enterprise-only features.
 
 Overview
 --------

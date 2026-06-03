@@ -1,5 +1,10 @@
-Workflows
----------
+Workflows |advanced-plus|
+-------------------------------
+
+.. tier-note:: Advanced, Enterprise
+   :exclude: Essentials
+
+   Workflows are an Advanced+ feature, available in HPE Morpheus Enterprise and Advanced tiers.
 
 Workflows are groups of Tasks, which are described in detail in the preceding section. Operational Workflows can be run on-demand against an existing Instance or server from the Actions menu on the Instance or server detail page. Additionally, they can be scheduled to run on a recurring basis through Morpheus Jobs (|ProJob|).
 

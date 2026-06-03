@@ -207,6 +207,85 @@ Once |morpheus| has completed its configuration scripts and joined the new worke
 
 .. image:: /images/infrastructure/clusters/mvm/enterMaintenance.png
 
+**Affinity Groups**
+
+|clusters| offer affinity groups and anti-affinity groups. These work similarly to affinity groups on other platforms, such as the affinity rules concept in VMware vSphere. An affinity group contains a type (either Keep Together or Keep Separate) and a list of servers which should have the rule applied. Whenever possible, servers configured to "Keep Together" will run on the same |host|. Servers configured to "Keep Separate" will be balanced across |hosts| to the maximum extent possible.
+
+*Viewing Affinity Groups*
+
+Affinity groups are listed on the Resources tab of the |mvm| Cluster detail page (|InfClu|, then select the appropriate |mvm| Cluster). From the ACTIONS menu for each affinity group, they may be edited or deleted. By editing an affinity group, users may view or edit its enabled status (affinity groups which are not enabled will not be acted on).
+
+*Adding Affinity Groups*
+
+From the Resources tab of the |mvm| Cluster detail page, click :guilabel:`+ ADD`. Configure the following:
+
+- **NAME:** A name for the affinity group
+- **TYPE:** Select either "Keep Together" or "Keep Separate" to indicate whether the selected servers should run on as few or as many servers as possible within the capabilities of the |mvm| Cluster
+- **ACTIVE:** When checked, the rules defined in the affinity group will be applied to the |mvm| Cluster
+- **SERVERS:** Select as many servers as desired from the typeahead list
+
+Once finished, click :guilabel:`SAVE CHANGES`. Following the next cluster sync, the affinity rule will be applied and VMs will begin to migrate (if applicable).
+
+.. TIP:: Placement settings (ex. pinning a VM to a specific host) can override an affinity group. |clusters| will attempt to implement affinity groups intelligently to work around VM placement. For example, in a group of five VMs configured to "keep together" with one pinned to host 1, the Cluster would run all five VMs on host 1 (if possible) to simultaneously honor the placement and the affinity group. In some scenarios, it will not be possible to simultaneously honor all placements and affinities/anti-affinities.
+
+*Adding Servers to Affinity Groups at Provision Time*
+
+In addition to adding servers from the affinity group, newly-provisioned servers may be added to an affinity group at provision time. From the CONFIGURE tab of the provisioning wizard, expand the Advanced Options section. Within Advanced Options, select an affinity group. The affinity group must be pre-existing and this list will be filtered to show only affinity groups that apply depending on other configuration parameters set on the new Instance.
+
+**vCPU Placement**
+
+vCPU placement settings relate to vCPU placement within the physical topology of the CPU. Since a vCPU is just a schedulable thread the hypervisor maps onto physical cores, performance increases can be achieved through smart scheduling. A simplified CPU topology looks like this:
+
+.. code-block:: text
+
+  Socket
+   └── NUMA node
+       └── Core
+           └── Threads (SMT / Hyper-Threading)
+
+Multiple physical cores can reside within the same NUMA node. Physical CPU cores within the same NUMA node share the same region of the L3 cache and local memory access. By scheduling vCPUs making up a single VM to cores within the same NUMA node, you can avoid the performance penalties associated with crossing NUMA boundaries and accessing remote memory locations.
+
+|clusters| offer three vCPU placement settings:
+
+- **Unmanaged** (default): The cluster makes no special effort to schedule vCPUs within the same NUMA region.
+- **Region:** The cluster attempts to schedule vCPUs associated with the same VM within the same NUMA region. When flexibility is needed, vCPUs may hop to different physical cores but they will be kept within the same NUMA region.
+- **Pinned:** The cluster also attempts to schedule vCPUs associated with the same VM within the same NUMA region but the vCPUs will remain pinned to the same cores. In certain cases, pinning may improve performance and in other cases creating inflexibility may introduce inefficiency.
+
+.. TIP:: Setting **Region** placement is a sensible starting configuration if you don't have a specific reason to choose one of the other two. In internal testing, a 7-10% improvement in prime number generation time was observed with Region pinning versus Unmanaged pinning.
+
+*How to Configure vCPU Placement Settings*
+
+#. Navigate to |InfClu|
+#. Select the desired HVM Cluster
+#. From the Cluster detail page, click :guilabel:`Edit`
+#. Within the **vCPU Placement** field, select the desired value
+#. Click :guilabel:`Save changes`
+
+**Host Hardware Sensor Data Collection**
+
+If properly configured, |hosts| can display detailed hardware information on the |host| detail pages. This information includes system health LED state, CPU temperature, ambient temperature, fan speeds, power supply state, and more.
+
+*Configuration*
+
+In order to surface hardware sensor data into the UI, IPMI tool and its dependency packages must be installed on each host. Following installation, the host agent must be restarted.
+
+#. Install IPMI tool and its dependency packages (``freeipmi-common``, ``ipmitool``, ``libfreeipmi17``, ``openipmi``)
+
+   .. NOTE:: This tool can also be installed via apt package manager provided that the corresponding Ubuntu mirrors (main and universe module repos) are enabled. Run ``sudo apt update`` and then ``sudo apt install ipmitool``.
+
+#. To confirm installation, run ``sudo ipmitool -v`` and the installed version should be displayed
+#. Restart the host agent with ``sudo morpheus-node-ctl restart``
+#. Repeat this process on all cluster hosts
+
+*Viewing Hardware Sensor Data*
+
+When properly configured, hardware sensor data may be viewed from the host detail page:
+
+#. Navigate to |InfClu|
+#. Select the desired HVM cluster
+#. Select the Health subtab
+#. The hardware sensor states and hardware events are shown in the Sensors and Events subtabs
+
 **Failover**
 
 |mvm| supports automatic failover of running workloads in the event of the loss of a host. Administrators can control the failover behavior through the "Manage Placement" action on any running VM. From the VM detail page, click :guilabel:`ACTIONS` and select "Manage Placement". Any VM with a placement strategy of "Auto" or "Failover" will be eligible for an automatic move in the event its host is lost. When the loss of a host does occur, the workload will be up and running from a different cluster host within just a short time if it's configured to be moved during an automatic failover event. Any VMs pinned to a lost host will not be moved and will not be accessible if the host is lost. When the host is restored, those VMs will be in a stopped state and may be restarted if needed.
@@ -363,6 +442,52 @@ All other checkbox-type configurations not mentioned in the above list should be
 At this point all image preparation steps are completed. |morpheus| library items can now be created from this image by adding new Node Types, Layouts, and Instance Types. The complete steps for building a library item go beyond the scope of this particular guide but more detail on that process is available elsewhere in |morpheus| UI documentation. Once the library items are created, new Instances may be provisioned complete with |morpheus| Agent installed.
 
 .. include:: hardware-passthrough.rst
+
+Hypervisor Console Keyboards
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+HVM VMs support guest console access as well as hypervisor console access. For each HVM VM, users can set a keyboard layout configuration which will then be set for use on each session.
+
+.. IMPORTANT:: This feature requires |host| agent version 3.0.3 or greater. Upgrade the host agent from the host detail page for **each** host by expanding the ACTIONS menu and clicking "Upgrade Agent." Alternatively, select "Download Agent Script" to download a script to run against the host manually from a terminal session. These scripts are specific to each host so you must download a script for each host and run the correct script against the correct host.
+
+Currently, the following layouts are supported:
+
+- Dutch (Belgium)
+- French (Belgium)
+- German
+- Italian
+- English (United Kingdom)
+- English (United States)
+- French
+- Spanish
+- German (Switzerland)
+- Finnish
+- French (Switzerland)
+- Icelandic
+- Norwegian
+- Portuguese
+- Danish
+
+**Setting the Keyboard Layout**
+
+#. Navigate to |InfClu|
+#. From the list of Clusters, select the appropriate HVM Cluster
+#. Click on the VMs tab
+#. Click on the hyperlinked "name" value of the appropriate HVM VM
+#. Click :guilabel:`EDIT`
+#. Expand the Advanced Options section
+#. In the KEYBOARD LAYOUT field, select the desired keyboard localization
+#. Click :guilabel:`SAVE CHANGES`
+
+**Using the Configured Keyboard Layout**
+
+#. Navigate to |InfClu|
+#. From the list of Clusters, select the appropriate HVM Cluster
+#. Click on the VMs tab
+#. Click on the hyperlinked "name" value of the appropriate HVM VM
+#. Click on the Console tab
+#. Click on the dropdown labeled :guilabel:`GUEST` and change the selection to :guilabel:`Hypervisor`
+#. Click on the keyboard icon and see the keyboard layout has changed to the selected layout
 
 
 

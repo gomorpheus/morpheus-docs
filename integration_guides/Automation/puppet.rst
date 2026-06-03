@@ -1,5 +1,10 @@
-Puppet
-------
+Puppet |advanced-plus|
+----------------------------
+
+.. tier-note:: Advanced, Enterprise
+   :exclude: Essentials
+
+   The Puppet integration is an Advanced+ feature, available in HPE Morpheus Enterprise and Advanced tiers.
 
 Each |morpheus| Puppet integration ties to a specific Puppet Master and makes it easy to install the Puppet Agent onto target Instances and Servers. Once integrated, we can trigger the agent installation by creating Puppet Agent Install Tasks through |morpheus| automation or at provision time when spinning up instances in Clouds associated with a Puppet integration.
 

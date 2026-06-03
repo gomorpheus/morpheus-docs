@@ -264,3 +264,4 @@ Cluster Permissions
 .. include:: /infrastructure/clusters/docker.rst
 .. include:: /infrastructure/clusters/eks.rst
 .. include:: /infrastructure/clusters/gke.rst
+.. include:: /infrastructure/clusters/openshift.rst

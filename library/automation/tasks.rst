@@ -101,6 +101,11 @@ The above example would result in the following output:
 Task Types
 ^^^^^^^^^^
 
+.. tier-note:: Advanced, Enterprise
+   :exclude: Essentials
+
+   The following task types require the Advanced or Enterprise tier: Ansible, Chef, Puppet, Groovy Script, Python Script (Jython), and vRealize Orchestrator. Bash and PowerShell tasks are available in all tiers.
+
 .. list-table:: **Available Task Types**
    :header-rows: 1
 

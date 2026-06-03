@@ -1,5 +1,10 @@
-Instance Types
---------------
+Instance Types |advanced-plus|
+--------------------------------
+
+.. tier-note:: Advanced, Enterprise
+   :exclude: Essentials
+
+   Custom Instance Types are an Advanced+ feature, available in HPE Morpheus Enterprise and Advanced tiers.
 
 Adding an Instance Type creates a new Library item category. Multiple Layouts can be added to an Instance Type and these Layouts can have different Nodes attached. The Instance provisioning wizard will present the Layout options compatible with the selected Cloud. If Cloud selection is turned off, all Layouts will be presented for all Cloud types accessible by the User.
 

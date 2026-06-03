@@ -1,7 +1,12 @@
 .. _k8s:
 
-Kubernetes Clusters
--------------------
+Kubernetes Clusters |advanced-plus|
+-------------------------------------
+
+.. tier-note:: Advanced, Enterprise
+   :exclude: Essentials
+
+   Morpheus Kubernetes (HKS) clusters are an Advanced+ feature, available in HPE Morpheus Enterprise and Advanced tiers.
 
 Requirements
 ^^^^^^^^^^^^

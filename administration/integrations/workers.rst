@@ -1,5 +1,10 @@
-Distributed Workers
--------------------
+Distributed Workers |advanced-plus|
+--------------------------------------
+
+.. tier-note:: Advanced, Enterprise
+   :exclude: Essentials
+
+   Distributed Workers are an Advanced+ feature, available in HPE Morpheus Enterprise and Advanced tiers.
 
 Overview
 ^^^^^^^^

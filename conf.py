@@ -1,9 +1,13 @@
 import datetime
+import os
+import sys
+
+sys.path.insert(0, os.path.abspath('_ext'))
 
 master_doc = 'index'
 
 latex_documents = [
-    (master_doc, 'morpheus_8.0.7-1.tex', u'Morpheus Documentation',
+    (master_doc, 'morpheus_8.1.2-1.tex', u'Morpheus Documentation',
      u'Morpheus', 'manual'),
 ]
 
@@ -12,12 +16,12 @@ rst_prolog = """
 .. |releasedate| replace:: June 13 2025
 .. |releasetype| replace:: LTS
 .. |morphAnnualVer| replace:: v8
-.. |morphbranch| replace:: v8.0
-.. |morphver| replace:: v8.0.7
+.. |morphbranch| replace:: v8.1
+.. |morphver| replace:: v8.1.2
 .. |minUpgradeVer| replace:: v6.0.0
 .. |minRollingUpgradeVer| replace:: v8.0.5
 .. |nonRollingUpgradeVer| replace:: v8.0.4
-.. |previousMorphVer| replace:: v8.0.6
+.. |previousMorphVer| replace:: v8.1.1
 .. |pluginVer| replace:: 1.2.8
 .. |workerVer| replace:: 5.4.8+
 .. |rmqbranch| replace:: v3.5-3.13
@@ -47,7 +51,7 @@ rst_prolog = """
 .. |morphues| replace:: HPE Morpheus Enterprise
 .. |morphdat| replace:: Morpheus Data
 .. |hpe| replace:: Hewlett Packard Enterprise
-.. |repo_host_url| replace:: https://downloads.morpheusdata.com
+.. |repo_host_url| replace:: https://www.hpe.com/support/hpesc
 .. |master tenant| replace:: Master Tenant
 .. |profileObjects| replace:: Clouds
 .. |profileTypes| replace:: Terraform, Key/Value
@@ -60,12 +64,12 @@ rst_prolog = """
 .. |hypervisor| replace:: HVM Hypervisor
 .. |hypervisors| replace:: HVM Hypervisors
 
-.. |debianVersions| replace:: 10, 11
-.. |oelVersions| replace:: 7.x (deprecated), 8.x
-.. |ubuntuVersions| replace:: 18.04, 20.04, 22.04, 24.04
+.. |debianVersions| replace:: 11, 12
+.. |oelVersions| replace:: 7.x (deprecated), 8.x, 9.x
+.. |ubuntuVersions| replace:: 20.04, 22.04, 24.04
 .. |centosVersions| replace:: 7.x (deprecated). 8.x (stream) 9.x (stream)
 .. |rhelVersions| replace:: 7.x (deprecated), 8.x, 9.x
-.. |suseVersions| replace:: 12, 15
+.. |suseVersions| replace:: 15
 
 .. |Lib| replace:: Library
 .. |LibAut| replace:: Library > Automation
@@ -237,6 +241,23 @@ rst_prolog = """
 .. |advSevHigh| replace:: High 🟥
 .. |advSevMed| replace:: Medium 🟨
 .. |advSevLow| replace:: Low 🟩
+
+.. |enterprise-only| raw:: html
+
+   <span class="tier-badge tier-enterprise">ENTERPRISE</span>
+
+.. |advanced-plus| raw:: html
+
+   <span class="tier-badge tier-advanced">ADVANCED</span> <span class="tier-badge tier-enterprise">ENTERPRISE</span>
+
+.. |essentials-plus| raw:: html
+
+   <span class="tier-badge tier-essentials">ESSENTIALS</span> <span class="tier-badge tier-advanced">ADVANCED</span> <span class="tier-badge tier-enterprise">ENTERPRISE</span>
+
+.. |all-tiers| raw:: html
+
+   <span class="tier-badge tier-essentials">ESSENTIALS</span> <span class="tier-badge tier-advanced">ADVANCED</span> <span class="tier-badge tier-enterprise">ENTERPRISE</span>
+
 """
 
 
@@ -263,7 +284,7 @@ rst_prolog = """
 
 
 year = datetime.datetime.now().date().strftime("%Y")
-extensions = ['myst_parser','sphinx.ext.autosectionlabel','sphinx_rtd_theme','sphinx_tabs.tabs','sphinxcontrib.contentui','sphinxcontrib.images','sphinx_search.extension','notfound.extension','sphinx.ext.autosectionlabel'] #sphinx_tabs
+extensions = ['myst_parser','sphinx.ext.autosectionlabel','sphinx_rtd_theme','sphinx_tabs.tabs','sphinxcontrib.contentui','sphinxcontrib.images','sphinx_search.extension','notfound.extension','sphinx.ext.autosectionlabel','tier_roles'] #sphinx_tabs
 templates_path = ['_templates']
 default_dark_mode = False
 source_suffix = ['.rst', '.md']

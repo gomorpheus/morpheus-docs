@@ -7,3 +7,28 @@ z_in_progress/
 tools/migrations.rst
 integration_guides/Logs/Splunk.rst
 integration_guides/Logs/LogRhythm.rst
+
+# >>> hero gitignore (managed) >>>
+# Per-project local overrides (tokens, personal preferences)
+.hero/hero.local.json
+
+# Knowledge graph cache (regenerable from sources of truth)
+.hero/graph.db
+.hero/graph.db-wal
+.hero/graph.db-shm
+
+# Search index cache (regenerable via `hero index`)
+.hero/index.db
+.hero/index.db-wal
+.hero/index.db-shm
+
+# Per-machine NEXT state (rewritten every Stop hook + agent scratch)
+.hero/next/*.local.md
+
+# Auto-generated code intelligence (re-scan to regenerate)
+.hero/knowledge/code/
+
+# Per-machine satellite manifest (which subprojects are symlinked locally)
+.hero/satellites.local.json
+# <<< hero gitignore (managed) <<<
+_scraped/

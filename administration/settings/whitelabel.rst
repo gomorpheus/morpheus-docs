@@ -1,5 +1,10 @@
-Whitelabel Settings
-^^^^^^^^^^^^^^^^^^^
+Whitelabel Settings |enterprise-only|
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. tier-note:: Enterprise
+   :exclude: Essentials, Advanced
+
+   Whitelabel customization is available only with an Enterprise license.
 
 Overview
 ````````

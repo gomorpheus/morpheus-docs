@@ -1,10 +1,15 @@
 .. _tenants:
 
-Tenants
-=======
+Tenants |enterprise-only|
+=========================
 
 Overview
 --------
+
+.. tier-note:: Enterprise
+   :exclude: Essentials, Advanced
+
+   Multi-tenancy is an Enterprise-only feature. Essentials and Advanced deployments operate as a single tenant.
 
 A Tenant in |morpheus| is an isolated environment with unique users and workloads. The Master Tenant is the default Tenant in |morpheus|, created upon installation. All other Tenants outside of the Master Tenants are Subtenants.
 

@@ -106,3 +106,8 @@ Backup Types displayed will be filtered by available options per selected Instan
 
 .. include:: summary.rst
 .. include:: backups_sub.rst
+
+.. toctree::
+   :maxdepth: 2
+
+   integrations/integrations.rst

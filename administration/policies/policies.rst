@@ -1,7 +1,12 @@
 .. _policies:
 
-Policies
-========
+Policies |enterprise-only|
+==========================
+
+.. tier-note:: Enterprise
+   :exclude: Essentials, Advanced
+
+   The Compliance and Policy Engine is an Enterprise-only feature.
 
 Overview
 --------
@@ -39,6 +44,8 @@ Hostname
   The ``hostname`` or ``computer name`` which is set in the OS and DNS. On some platforms, hostnames are restricted by length, spaces, and/or special characters. Pre-populates a fixed or editable name for hostnames/machine names using ${variable} naming patterns and/or text, including ${sequence} numbering. Toggle whether sequence numbers are reusable (after the resource using them is destroyed) by enabling `Reuse Naming Sequence Numbers <https://docs.morpheusdata.com/en/latest/administration/settings/settings.html#provisioning>`_ in |AdmSet|
 Instance Name
   Pre-populates a fixed or editable name for Instance Names using ${variable} naming patterns and/or text, including ${sequence} numbering. Toggle whether sequence numbers are reusable (after the resource using them is destroyed) by enabling `Reuse Naming Sequence Numbers <https://docs.morpheusdata.com/en/latest/administration/settings/settings.html#provisioning>`_ in |AdmSet|. Note that it's not recommended administrators include ">", "<", "%", "$", or "=" in naming policies
+Instance Networks
+  When an Instance is provisioned within the scope of the Policy (Group or Cloud scoping is supported), the network selected on the Policy is automatically set and locked in the provisioning wizard to force provisioning onto the selected network.
 Max Containers
   Sets the max number of Containers for the Group or Cloud the Policy is added to.
 Max Cores

@@ -1,6 +1,11 @@
-********
-Personas
-********
+**************************
+Personas |advanced-plus|
+**************************
+
+.. tier-note:: Advanced, Enterprise
+   :exclude: Essentials
+
+   Personas are an Advanced+ feature, available in HPE Morpheus Enterprise and Advanced tiers.
 
 Personas are alternate views in |morpheus| UI. A user's access to the various Personas is controlled by Role permissions. At present, there are four Persona types: Standard, API, Service Catalog, and Virtual Desktop. The Standard Persona is the typical full |morpheus| UI experience. The Service Catalog Persona is a simplified view where users are presented with pre-configured Instance types, Blueprints, and Workflows to choose from based on their Role. The Virtual Desktop Persona allows administrators to grant user access to remote workstations and applications. The API persona allows almost no access to |morpheus| UI, it offers API access only for service accounts.
 

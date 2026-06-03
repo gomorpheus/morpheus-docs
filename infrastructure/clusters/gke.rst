@@ -1,5 +1,10 @@
-GKE Clusters
-------------
+GKE Clusters |enterprise-only|
+------------------------------
+
+.. tier-note:: Enterprise
+   :exclude: Essentials, Advanced
+
+   Public Kubernetes services (EKS, AKS, GKE) are Enterprise-only features.
 
 Provisions a new Google Kubernetes Engine (GKE) Cluster in target Google Cloud.
 

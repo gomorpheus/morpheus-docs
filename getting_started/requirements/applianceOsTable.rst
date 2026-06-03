@@ -8,9 +8,6 @@
    * - Amazon Linux
      - 2
      -
-   * - CentOS
-     - |centosVersions|
-     -
    * - Debian
      - |debianVersions|
      - 
@@ -26,3 +23,6 @@
    * - Ubuntu
      - |ubuntuVersions|
      - 14.04 is no longer supported for Appliance OS.  Note: 14.04 is still supported by the |morpheus| Agent.
+   * - Rocky
+     - 8, 9
+     -

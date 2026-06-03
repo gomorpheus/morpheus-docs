@@ -1,5 +1,10 @@
-Analytics
-=========
+Analytics |advanced-plus|
+===========================
+
+.. tier-note:: Advanced, Enterprise
+   :exclude: Essentials
+
+   Reports and Analytics are an Advanced+ feature, available in HPE Morpheus Enterprise and Advanced tiers.
 
 Overview
 --------

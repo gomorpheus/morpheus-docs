@@ -14,6 +14,7 @@ Features
 * Resource Groups
 * Datastores and DRS Clusters
 * Distributed Switches
+* Affinity Groups
 * Datacenter / Cluster scoping
 * Brownfield VM management and migration
 * VMware to VMware migrations

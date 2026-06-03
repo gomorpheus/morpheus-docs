@@ -1,5 +1,10 @@
-Budgets
--------
+Budgets |enterprise-only|
+-------------------------
+
+.. tier-note:: Enterprise
+   :exclude: Essentials, Advanced
+
+   Budgetary policies and the invoicing engine are Enterprise-only features.
 
 Budgets provide insight into spending across their designated scope, allowing users to create and plan a budget targeted to their account, clouds, tenants, users, or groups.
 

@@ -1,7 +1,12 @@
 .. _azure:
 
-Azure (Public)
---------------
+Azure (Public) |enterprise-only|
+---------------------------------
+
+.. tier-note:: Enterprise
+   :exclude: Essentials, Advanced
+
+   Public cloud integrations including Azure are Enterprise-only features.
 
 Overview
 ^^^^^^^^

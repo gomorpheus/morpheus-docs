@@ -1,6 +1,11 @@
-**********
-Monitoring
-**********
+****************************
+Monitoring |advanced-plus|
+****************************
+
+.. tier-note:: Advanced, Enterprise
+   :exclude: Essentials
+
+   Workload Monitoring and Logging are Advanced+ features, available in HPE Morpheus Enterprise and Advanced tiers.
 
 Overview
 ========

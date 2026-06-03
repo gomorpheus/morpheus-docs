@@ -1,5 +1,10 @@
-Ansible
--------
+Ansible |advanced-plus|
+-----------------------------
+
+.. tier-note:: Advanced, Enterprise
+   :exclude: Essentials
+
+   The Ansible integration is an Advanced+ feature, available in HPE Morpheus Enterprise and Advanced tiers.
 
 Overview
 ^^^^^^^^

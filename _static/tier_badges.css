@@ -1,0 +1,100 @@
+/* HPE Morpheus Tier Badges and Annotations */
+
+/* --- Inline badges --- */
+.tier-badge {
+    display: inline-block;
+    padding: 0.15em 0.5em;
+    margin: 0 0.2em;
+    font-size: 0.65em;
+    font-weight: 600;
+    line-height: 1;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    border-radius: 3px;
+    vertical-align: baseline;
+    white-space: nowrap;
+    position: relative;
+    top: -0.1em;
+}
+
+/* Badges inside headings — float right of the border line */
+h1 .tier-badge,
+h2 .tier-badge,
+h3 .tier-badge,
+h4 .tier-badge {
+    font-size: 0.4em;
+    padding: 0.25em 0.6em;
+    vertical-align: middle;
+    position: relative;
+    top: -0.15em;
+    margin-left: 0.6em;
+}
+
+.tier-enterprise {
+    background-color: #01a982;
+    color: #ffffff;
+}
+
+.tier-advanced {
+    background-color: #0d5265;
+    color: #ffffff;
+}
+
+.tier-essentials {
+    background-color: #7630ea;
+    color: #ffffff;
+}
+
+/* --- Block-level tier notes --- */
+.tier-note {
+    border-left: 4px solid #cccccc;
+    padding: 0.75em 1em;
+    margin: 1em 0;
+    background-color: #f9f9f9;
+    border-radius: 0 4px 4px 0;
+}
+
+.tier-note-enterprise {
+    border-left-color: #01a982;
+    background-color: #f0faf7;
+}
+
+.tier-note-advanced {
+    border-left-color: #0d5265;
+    background-color: #f0f5f7;
+}
+
+.tier-note-essentials {
+    border-left-color: #7630ea;
+    background-color: #f5f0fa;
+}
+
+.tier-note-header {
+    margin-bottom: 0.5em;
+    font-weight: 500;
+    font-size: 0.9em;
+    color: #444444;
+}
+
+.tier-note-body {
+    margin-top: 0.5em;
+}
+
+/* Dark mode support (sphinx_rtd_dark_mode) */
+@media (prefers-color-scheme: dark) {
+    .tier-note {
+        background-color: #1a1a2e;
+    }
+    .tier-note-enterprise {
+        background-color: #0a2e24;
+    }
+    .tier-note-advanced {
+        background-color: #0a1e28;
+    }
+    .tier-note-essentials {
+        background-color: #1a0a2e;
+    }
+    .tier-note-header {
+        color: #cccccc;
+    }
+}

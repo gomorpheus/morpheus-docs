@@ -9,3 +9,4 @@ Tools
   archives.rst
   image_builder.rst
   vdi_pools.rst
+  migrations/migrations.rst

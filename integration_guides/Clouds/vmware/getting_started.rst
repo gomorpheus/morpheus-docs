@@ -65,6 +65,36 @@ Snapshots
 
 .. IMPORTANT:: |morpheus| supports the use of SR-IOV network adapters with VMware Clouds. Bear in mind that VMware does not support Snapshots for this network adapter type and for that reason Snapshot and backup-related features will also fail in |morpheus| for VMs using SR-IOV network adapters.
 
+Affinity Groups
+^^^^^^^^^^^^^^^^
+
+|morpheus| offers two-way sync for affinity groups with integrated VMware vCenter Clouds. An affinity group contains a type (either Keep Together or Keep Separate) and a list of servers which should have the rule applied. Affinity groups created from |morpheus| create "Should" rules (soft rules) rather than "Must" rules (hard rules) in vCenter. Thus whenever possible, servers configured to "Keep Together" will run on the same cluster host while servers configured to "Keep Separate" will be balanced across cluster hosts to the maximum extent possible. These rules may be broken if necessary to balance resources or recover from failures.
+
+.. TIP:: It is possible to create an empty affinity group (that is, one with no servers selected) in |morpheus| even though this is not possible in vCenter. If such an affinity group is created, |morpheus| will hold it without syncing to vCenter until at least one server is added and the affinity group becomes compatible with the vCenter API.
+
+Viewing Affinity Groups
+```````````````````````
+
+Affinity groups are listed on the Resources tab of the Cloud detail page (|InfClo|, then select the appropriate VMware Cloud). From the ACTIONS menu for each affinity group, they may be edited or deleted. By editing an affinity group, users may view or edit its enabled status (affinity groups which are not enabled will not be acted on).
+
+Adding Affinity Groups
+``````````````````````
+
+Affinity groups are listed on the Resources tab of the VMware Cloud detail page (|InfClo|, then select the appropriate VMware Cloud). From here, to create a new affinity group, click :guilabel:`+ ADD`. Configure the following:
+
+- **NAME:** A name for the affinity group
+- **TYPE:** Select either "Keep Together" or "Keep Separate" to indicate whether the selected servers should run on as few or as many servers as possible within the capabilities of the HVM Cluster
+- **CLUSTER:** Select the vCenter cluster
+- **ACTIVE:** When checked, the rules defined in the affinity group will be applied to the HVM Cluster
+- **SERVERS:** Select as many servers as desired from the typeahead list
+
+Once finished, click :guilabel:`SAVE CHANGES`. Following the next Cloud sync, the affinity rule will be applied and VMs will begin to migrate (if applicable).
+
+Adding Servers to Affinity Groups at Provision Time
+```````````````````````````````````````````````````
+
+In addition to adding servers from the affinity group, newly-provisioned servers may be added to an affinity group at provision time. From the CONFIGURE tab of the provisioning wizard, expand the Advanced Options section. Within Advanced Options, select an affinity group. The affinity group must be pre-existing and this list will be filtered to show only affinity groups that apply depending on other configuration parameters set on the new Instance.
+
 Tagging and Metadata
 ^^^^^^^^^^^^^^^^^^^^
 

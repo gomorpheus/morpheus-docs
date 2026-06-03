@@ -1,5 +1,10 @@
-AWS
----
+AWS |enterprise-only|
+---------------------
+
+.. tier-note:: Enterprise
+   :exclude: Essentials, Advanced
+
+   Public cloud integrations including AWS are Enterprise-only features.
 
 Overview
 ^^^^^^^^

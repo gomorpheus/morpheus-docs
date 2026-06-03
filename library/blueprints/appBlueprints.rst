@@ -1,5 +1,10 @@
-App Blueprints
---------------
+App Blueprints |enterprise-only|
+--------------------------------
+
+.. tier-note:: Enterprise
+   :exclude: Essentials, Advanced
+
+   App Blueprints (including Terraform and ARM) are Enterprise-only features.
 
 App Blueprints support a vast array of providers and configurations with programmatic markup or Infrastructure as Code capabilities. Blueprints configs can be manually added or scoped to a git repo. |morpheus| blueprints allows for full automation configuration, locked fields, tiered boots, and linked tiers with exported evars. All blueprints have permission settings for controlling group and tenant access.
 
