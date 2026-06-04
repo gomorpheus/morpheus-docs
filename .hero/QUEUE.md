@@ -6,7 +6,14 @@
 
 # Hero Ready Queue
 
-_Generated: 2026-06-04T16:31:19Z · 29 ready specs_
+_Generated: 2026-06-04T18:44:22Z · 30 ready specs_
+
+## hvm-13-cluster-docs — "HVM 1.3 Cluster Layouts Documentation"
+_initiative · delivering · horizon: now_
+
+_(no `## Kickoff` section — run `/design` or hand-edit /Users/davidestes/projects/hpe/morpheus-docs/.hero/planning/initiatives/hvm-13-cluster-docs/spec.md)_
+
+---
 
 ## docs-unified-deployment — "Unified Deployment Documentation"
 _feature · planning · horizon: now_

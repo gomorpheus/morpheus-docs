@@ -260,6 +260,13 @@ Cluster Permissions
 
 
 .. include:: /infrastructure/clusters/mvm.rst
+
+.. toctree::
+   :hidden:
+   :maxdepth: 2
+
+   /infrastructure/clusters/hvm/hvm
+
 .. include:: /infrastructure/clusters/kubernetes.rst
 .. include:: /infrastructure/clusters/docker.rst
 .. include:: /infrastructure/clusters/eks.rst
