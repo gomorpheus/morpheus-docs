@@ -18,6 +18,7 @@ AI Services is accessed from :menuselection:`Tools --> AI Services` and consists
    agents.rst
    mcp_servers.rst
    llm_integrations.rst
+   morpheus_mcp_server.rst
 
 How It Works
 ------------
