@@ -12,4 +12,6 @@ Operations
   wiki.rst
   costing.rst
   approvals.rst
+  alarms.rst
+  scheduling.rst
   activity.rst

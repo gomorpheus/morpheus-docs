@@ -1,5 +1,6 @@
 ---
 name: dependency-analyst
+domains: [engineering]
 description: Evaluate library choices, dependency health, license compatibility, vulnerability exposure, and dependency tree bloat.
 mode: subagent
 temperature: 0.1

@@ -16,3 +16,5 @@ Take advantage of custom tasks and workflows within any environment by building 
   jobs/jobs.rst
   executions/executions.rst
   code/code.rst
+  automation/automation.rst
+  kubernetes/kubernetes.rst

@@ -265,3 +265,6 @@ Cluster Permissions
 .. include:: /infrastructure/clusters/eks.rst
 .. include:: /infrastructure/clusters/gke.rst
 .. include:: /infrastructure/clusters/openshift.rst
+.. include:: /infrastructure/clusters/host_vm_groups.rst
+.. include:: /infrastructure/clusters/addon_packages.rst
+.. include:: /infrastructure/clusters/cluster_updates.rst

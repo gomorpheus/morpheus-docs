@@ -33,6 +33,8 @@ Clouds
   vmware/vmware.rst
   vmwarefusion/vmwarefusion.rst
   xen/xen.rst
+  powervc/powervc.rst
+  mvm/mvm.rst
 
 
   .. cloudCoverage/cloudCoverage.rst

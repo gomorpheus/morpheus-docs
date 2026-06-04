@@ -3,6 +3,8 @@ description: Investigate a bug, classify the root cause, and produce a fix spec.
 ---
 **Before creating any file**, check whether the user is working in a sub-folder workspace. If so, preserve that workspace's `subproject:` frontmatter and write the spec under the workspace's `.hero/` root; otherwise write under the project `.hero/` root.
 
+**Stamp the active domain in frontmatter.** New bug specs MUST emit a `domain:` field reflecting the workspace's active domain — run `hero domain` (or read the `domain` key from `.hero/hero.json`; empty means engineering) and write that value. This keeps bug specs under the correct DSKG namespace partition.
+
 Route this bug investigation to the `debug-investigator` agent.
 
 Pass the bug report and any spec path or tracker ID to the agent. The `debug-investigator` handles the complete diagnosis workflow: pre-flight status check, investigation, root cause classification, fix planning, spec writing, and tracker posting.

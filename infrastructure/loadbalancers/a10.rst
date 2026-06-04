@@ -1,0 +1,98 @@
+A10 Load Balancers
+------------------
+
+Overview
+^^^^^^^^
+
+|morpheus| integrates with A10 Networks Thunder and vThunder Application Delivery Controllers (ADC). The integration supports automated provisioning of virtual servers, service groups, and HTTP templates with domain-based routing.
+
+When instances are attached to an A10 load balancer, |morpheus| automatically:
+
+- Creates server entries for each container/VM in the instance
+- Creates a service group with the appropriate port mappings
+- Updates the HTTP template with host-based routing rules
+- Configures SSL certificates (when applicable)
+
+Adding an A10 Load Balancer
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+#. Navigate to ``Infrastructure > Load Balancers``
+#. Click :guilabel:`+ ADD`
+#. Select **A10**
+#. Fill in the following:
+
+   GROUP
+     Select the Group the Load Balancer will be available for.
+   CLOUD
+     Select the Cloud the Load Balancer will be available for.
+   NAME
+     Name of the Load Balancer in |morpheus|.
+   DESCRIPTION
+     Identifying information displayed on the Load Balancer list page.
+   VISIBILITY
+     Define Multi-Tenant visibility. **Public** allows all Tenants to see the load balancer. **Private** restricts visibility to selected Tenants.
+   API HOST
+     IP address or resolvable hostname of the A10 management interface.
+   API PORT
+     Management API port (typically ``443``).
+   USERNAME
+     API user with administrative privileges.
+   PASSWORD
+     API user password.
+   INTERNAL IP
+     The internal VIP address for the load balancer.
+   PUBLIC IP
+     The external/public IP address (if applicable).
+   VIP ADDRESS
+     The Virtual IP address for load balancing traffic.
+   VIP PORT
+     The port on which the VIP listens (e.g., ``80``, ``443``).
+
+#. Click :guilabel:`SAVE CHANGES`
+
+How A10 Integration Works
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
+When an Instance is added to an A10 load balancer, |morpheus| performs the following operations via the A10 aXAPI:
+
+1. **Server Creation** — For each container in the instance, a server object is created on the A10 with the container's IP address.
+2. **Service Group Creation** — A service group is created containing all the servers and their designated ports.
+3. **HTTP Template Update** — The virtual server's HTTP template is updated with host-based routing rules that direct traffic to the correct service group based on the instance's hostname.
+4. **SSL Configuration** — If SSL is configured for the instance, certificates and keys are uploaded to the A10 and bound to the virtual server port 443.
+
+Removing an Instance
+^^^^^^^^^^^^^^^^^^^^
+
+When an instance is removed from the A10 load balancer, |morpheus| reverses the operations:
+
+- Removes host routing entries from the HTTP template
+- Deletes the service group
+- Removes individual server registrations
+
+Virtual Servers
+^^^^^^^^^^^^^^^
+
+A10 virtual servers are automatically created when the load balancer integration is initialized. The virtual server is configured with:
+
+- The VIP address and port specified during integration setup
+- An HTTP template for host-based routing
+- Ports 80 and 443 with the routing template applied
+
+SSL Certificate Management
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+|morpheus| can automatically manage SSL certificates on A10 load balancers:
+
+- Certificates are uploaded as PEM files via the aXAPI
+- Private keys are uploaded separately
+- Certificate bindings are applied to port 443 on the virtual server
+- When instances are removed, their associated certificates are cleaned up
+
+.. NOTE:: The A10 integration uses the aXAPI v3 interface. Ensure the A10 device is running ACOS 4.x or later for full compatibility.
+
+Troubleshooting
+^^^^^^^^^^^^^^^
+
+- **Connection errors** — Verify the API Host and Port are reachable from the |morpheus| appliance and that the management interface is enabled.
+- **Authentication failures** — Confirm the credentials have administrative (or at minimum, read/write) API access on the A10 device.
+- **SSL upload failures** — Ensure the certificate and key are in valid PEM format.

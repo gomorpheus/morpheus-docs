@@ -35,6 +35,7 @@ Guides
    Backups/backups.rst
    Clouds/clouds.rst
    Containers/containers.rst
+   code/code.rst
    Deployments/deployment.rst
    DNS/DNS.rst
    IdentityManagement/IdentityManagement.rst

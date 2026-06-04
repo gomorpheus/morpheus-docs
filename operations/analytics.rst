@@ -415,3 +415,10 @@ The following aggregate totals are compiled for Apps that meet set filters:
 **Instance Usage List**
 
 All Clouds with a currently-provisioned App which is selected in the dashboard filters are listed here. The name of the Cloud is listed along with its App count, the total memory, total storage, total CPU cores and price of the Apps provisioned in that Cloud are also listed.
+
+.. toctree::
+  :maxdepth: 1
+  :hidden:
+
+  analytics/convertible_ri.rst
+  analytics/capacity_planning.rst

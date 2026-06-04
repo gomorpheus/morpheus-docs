@@ -9,5 +9,7 @@ ITSM |enterprise-only|
 .. toctree::
    
    ServiceNow.rst
+   servicenow_flows.rst
    cherwell.rst
    remedy.rst
+   bmc_remedy_approvals.rst

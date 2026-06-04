@@ -10,6 +10,8 @@ Networking Integrations
    hpe-arubacx-dss.rst
    nsxCloud.rst
    aci.rst
+   cisco_aci.rst
+   palo_alto.rst
    bluecat.rst
    solarwinds.rst
    stealth.rst

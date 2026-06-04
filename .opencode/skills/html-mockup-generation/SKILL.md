@@ -6,6 +6,23 @@ description: Guidelines for generating self-contained HTML mockups that look pro
 
 Guidelines for generating self-contained HTML mockups that look professional and are easy to iterate on.
 
+## Return contract (read first)
+
+When this skill runs inside a subagent (the usual case via `ui-designer` or `/mock`), the subagent's narrative return text is **not shown directly to the user** — the orchestrator surfaces a parseable file list. The last thing the subagent emits MUST be a `<MOCKUP_FILES>` block listing every file written:
+
+```
+<MOCKUP_FILES>
+.hero/mocks/{slug}/index.html|{Mockup name}|primary
+.hero/planning/features/{slug}/spec.md|Spec (Mockups section updated)|spec
+</MOCKUP_FILES>
+```
+
+One file per line, pipe-separated `path|label|kind`. Include every variant when generating multiple options in one run. Skip this block and the user sees no links. See the `ui-designer` agent definition for full rules.
+
+## When to use
+
+Selection is now driven by `hero spec mock detect` (see `hero spec mock detect --help`). The agent does not decide — the CLI does. This skill is loaded whenever the detect output's `renderer` field is `"html"`, which fires when no Swift signals are detected, when `--renderer=html` was explicit, when `hero.json` `mockups.renderer: "html"` overrides auto-detect, or as a fallback when Swift signals are present but `swiftc` is missing.
+
 ## File Structure
 
 ```html
@@ -246,3 +263,30 @@ Use realistic-looking placeholder data:
 - Don't use canvas or WebGL
 - Don't make it pixel-perfect — it's a prototype for discussion, not production code
 - Don't include more than 2-3 screens in one file — keep it focused
+
+## Spec write-back
+
+When invoked against a spec slug (not free-text), after saving the mockup, link it back from the originating spec so delivery agents can find it.
+
+1. Locate the spec. Try in order:
+   - `.hero/planning/features/{slug}/spec.md`
+   - `.hero/planning/bugs/{slug}/spec.md`
+   - `.hero/specs/{slug}/spec.md` (archive fallback)
+2. If a `## Mockups` section does not exist, append one near the end of the spec body. Place it before `## Validation` if that section exists; otherwise at the end of the file.
+3. Add an entry in this format:
+
+   ```markdown
+   - [{Mockup name}](.hero/mocks/{slug}/index.html) — YYYY-MM-DD — one-line description of what the mockup shows
+   ```
+
+   - Default the name to a humanized slug (e.g. `Hero landing page`). Use something more specific when the spec has multiple mockups or iteration variants (e.g. `Hero landing page — dense variant`).
+   - Use today's date in ISO format.
+   - Keep the description to one line — what's shown, not why.
+
+### Iteration semantics
+
+On `--iterate`, match the existing entry by path. If the path is unchanged (the common case — overwriting `index.html`), update the date in place and rewrite the description only if the iteration meaningfully changed what's depicted. Don't append a duplicate row. If the iteration produces a new file (e.g. `dense.html` alongside `index.html`), append a new entry instead.
+
+### Free-text exception
+
+When `/mock` is invoked with free-text rather than a spec slug, there is no spec to write back to. Save the mockup under `.hero/mocks/_adhoc/{kebab-case-summary}/index.html` and skip the write-back step entirely. This keeps the `.hero/mocks/` root clean — slug-keyed dirs match real specs; `_adhoc/` clearly doesn't.

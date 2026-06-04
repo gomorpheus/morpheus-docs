@@ -1,5 +1,6 @@
 ---
 name: database-engineer
+domains: [engineering]
 description: Design and implement schema, query, migration, and data workflow changes with safety and operational realism.
 mode: subagent
 temperature: 0.1

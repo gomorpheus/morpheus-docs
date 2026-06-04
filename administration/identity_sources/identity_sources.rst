@@ -13,3 +13,6 @@ Overview
 .. include:: /integration_guides/IdentityManagement/okta.rst
 .. include:: /integration_guides/IdentityManagement/onelogin.rst
 .. include:: /integration_guides/IdentityManagement/saml.rst
+.. include:: /administration/identity_sources/jumpcloud.rst
+.. include:: /administration/identity_sources/custom_external.rst
+.. include:: /administration/identity_sources/custom_iam_api.rst

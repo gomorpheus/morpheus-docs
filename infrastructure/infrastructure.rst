@@ -13,8 +13,11 @@ public infrastructure.
   clouds/clouds.rst
   clusters/clusters.rst
   compute/compute.rst
+  servers/servers.rst
   networks/network.rst
   loadbalancers/lb.rst
   storage/storage.rst
   keypairs_certificates/keypairs_certs.rst
+  certificates/certificates.rst
   pxeboot/pxeboot.rst
+  vdi/vdi.rst

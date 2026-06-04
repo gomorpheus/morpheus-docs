@@ -63,6 +63,12 @@ without additional context.
    - {specific detail}
 3. ...
 
+## Mockups
+Optional. Visual mockups produced for this spec. Auto-populated by `/mock`
+against the spec slug. Omit this section if no mockup was produced.
+
+- [Mockup name](.hero/mocks/{slug}/index.html) — YYYY-MM-DD — what the mockup shows
+
 ## Boundaries
 What is NOT in scope. Adjacent work to explicitly avoid.
 Things that look related but should be separate work items.
@@ -112,6 +118,12 @@ naming specific files and components.
    - {specific detail}
 3. ...
 
+## Mockups
+Optional. Visual mockups produced for this fix, if any. Auto-populated by
+`/mock` against the spec slug. Omit this section if no mockup was produced.
+
+- [Mockup name](.hero/mocks/{slug}/index.html) — YYYY-MM-DD — what the mockup shows
+
 ## Boundaries
 What this fix does NOT attempt to address.
 Related issues that should be separate work items.
@@ -124,6 +136,39 @@ Areas that need careful testing.
 How to verify the fix works. Regression test expectations.
 How to confirm the original issue no longer reproduces.
 ```
+
+## Mockups section
+
+When `/mock` produces a visual prototype against a spec slug, it appends
+(or updates, on `--iterate`) a `## Mockups` section in the spec body listing
+each mockup. This makes the artifact discoverable to humans reading the spec
+and to delivery agents reading the spec for context.
+
+**Format.** One entry per mockup, in a top-level `## Mockups` section placed
+between `## Changes` and `## Boundaries`:
+
+```markdown
+## Mockups
+
+- [Hero landing page](.hero/mocks/hero-landing-page/index.html) — 2026-05-20 — public homepage with install CTA and feature grid
+- [Hero landing page — dense variant](.hero/mocks/hero-landing-page/dense.html) — 2026-05-22 — compressed-density alternative for above-the-fold
+```
+
+**Rules:**
+
+- The section is optional — omit it entirely if no mockup was produced.
+- Path is relative to the repo root so the link works in markdown renderers.
+- Date is ISO format (`YYYY-MM-DD`).
+- Description is one line — what's shown, not why.
+- Multiple mockups per spec are supported as additional list items.
+- `/mock --iterate` updates the matching entry's date in place rather than
+  appending a duplicate when the path is unchanged.
+- Free-text `/mock` calls (no spec slug) do not write back — those mockups
+  land under `.hero/mocks/_adhoc/` and are not linked to any spec.
+
+`/deliver` reads `.hero/mocks/{slug}/` directly as a pre-flight step, so
+mockups generated before this section was introduced (or dropped in by
+hand) are still surfaced to the engineer.
 
 ## Convention spec template
 
@@ -218,12 +263,40 @@ All spec types use YAML frontmatter. The following fields are supported:
 | `scope` | Yes (conventions) | Convention | Array of glob patterns identifying which files this convention applies to. Used by `hero relevant` to inject relevant conventions. |
 | `tags` | No | All | Array of tags for search and filtering. Use lowercase, hyphenated terms. |
 | `claimed_by` | No | Work specs | Who is currently working on this spec. Set via `hero spec claim`. |
+| `completed_at` | No | Work specs | RFC 3339 UTC timestamp recording when `status` flipped to `completed`. Hero writes this automatically at status-transition time — agents and humans should not hand-write it. The reader also accepts `completedAt:` for tolerance, but only `completed_at:` is ever produced. Historical specs without the field can be backfilled from git history via `hero admin backfill-completed-at`. |
 | `created` | No | All | ISO 8601 date when the spec was created. |
 | `relates-to` | No | All | Array of spec slugs that are related but not dependent. |
 | `depends-on` | No | All | Array of spec slugs that must be completed before this spec can proceed. |
 | `supersedes` | No | All | Slug of the spec this one replaces. The superseded spec should have its status set to `superseded`. |
 | `parent` | No | Work specs | Slug of the initiative this spec belongs to. |
 | `child` | No | Initiatives | Array of spec slugs that are part of this initiative. |
+| `domain` | No | All | DSKG namespace partition (`engineering`, `pm`, future packs). New specs scaffolded by `/design` and `/diagnose` emit this from the active workspace domain. Legacy specs without the field resolve to the workspace default (`engineering` if no `domain:` is set in `hero.json`). |
+| `size` | No | Sized work specs (`feature`, `bug`, `enhancement`, `epic`, `initiative`) | Declared effort tier on the shared 6-tier ladder: `trivial`, `small`, `medium`, `large`, `x-large`, `giant`. Living field — set at design, updated on scope changes (authoring and mid-delivery). See the `spec-sizing` skill for the ladder, per-type bands, and the nudge protocol. |
+| `size_ack` | No | Sized work specs | One-shot acknowledgement that suppresses the design-time nudge when a spec stays at a high tier deliberately. Only `giant` is consumed today. See the `spec-sizing` skill. |
+
+### `size:` — a living field
+
+Treat `size:` like `status:` — agents are expected to keep it accurate.
+Updates happen at design time (`/design` stamps it from the design
+conversation), during authoring/refinement (the spec writer bumps it
+if scope grows), and mid-delivery (the delivery lead bumps it if
+reality outruns the declared tier).
+
+Brief frontmatter example:
+
+```yaml
+---
+title: "Add CSV export"
+type: feature
+status: planning
+size: medium
+---
+```
+
+Don't re-explain the ladder here — the canonical reference is the
+`spec-sizing` skill. It carries the 6-tier descriptions, per-type
+bands, nudge schedule, and the `size_ack: giant` acknowledgement
+protocol.
 
 ### Status transitions
 

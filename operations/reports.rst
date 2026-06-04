@@ -36,7 +36,7 @@ Report Types
   - Group Cost
   - Instance Cost
   - Tenant Cost
-  - Time Series Cost
+  - `Time Series Cost <https://docs.morpheusdata.com/en/latest/operations/report_types/time_series_cost.html>`_
 
 **INFRASTRUCTURE INVENTORY**
 
@@ -94,3 +94,11 @@ Viewing Schedules
 -----------------
 
 A list of all scheduled report runs can be viewed in the Scheduled tab of the report types list page (Operations > Reports). The friendly name of the report schedule is displayed along with the report type, last run time, next run time, and success status of the previous run. Schedules can be edited or deleted by clicking on the pencil or trash can icon, respectively. We can also view the most recent run of a given schedule (if it was successful) by clicking on the hyperlinked "last run" value.
+
+.. toctree::
+  :maxdepth: 1
+  :hidden:
+
+  report_types/tenant_usage.rst
+  report_types/time_series_cost.rst
+  report_types/invoice_details.rst

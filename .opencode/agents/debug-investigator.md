@@ -1,5 +1,6 @@
 ---
 name: debug-investigator
+domains: [engineering]
 description: Investigate bugs and failures with deep, thorough research — reproduce issues, trace end-to-end code flows, narrow hypotheses, identify the definitive root cause, and write findings into the spec file.
 mode: subagent
 temperature: 0.1

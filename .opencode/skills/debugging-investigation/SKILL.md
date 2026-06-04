@@ -17,6 +17,7 @@ metadata:
 
 ## Practical guidance
 
+- **Ground before you guess.** Before proposing a diagnosis, fix, or design, enumerate the load-bearing claims it depends on (what specific code does, what payloads contain, where errors originate, how working siblings of the same shape behave). Mark each `read` (you've inspected the actual source in this session) or `assumed`. Read the assumed ones — or downgrade the proposal to "still investigating" — before writing it down. Output the claim list visibly in your summary. A proposal that departs structurally from working in-tree siblings of the same shape (plugin, provider, integration, form, migration, adapter, command) treats the deviation as the first hypothesis to disprove, not a feature.
 - Look at logs, tests, stack traces, configuration, recent changes, and runtime assumptions together.
 - Pay attention to environment differences, race conditions, stale state, and boundary failures.
 - When reproduction is incomplete, be explicit about what is inferred.

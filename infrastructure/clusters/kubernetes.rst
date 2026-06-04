@@ -501,3 +501,29 @@ After finishing those steps, we can now create the external cluster in |morpheus
 The above are the required fields, others may be optionally configured depending on the situation. Complete the wizard and |morpheus| will begin the process of onboarding the existing cluster into management within |morpheus| UI. Once things are finalized and statuses are green, the cluster can be monitored and consumed as any other cluster provisioned from |morpheus|.
 
 .. image:: /images/infrastructure/clusters/extKube.png
+
+Additional Kubernetes Topics
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. seealso::
+
+   :ref:`k8s-storage`
+     Persistent Volume, PVC, and StorageClass management
+
+   :ref:`k8s-registry`
+     Container registry integration within Kubernetes clusters
+
+   :ref:`k8s-jobs`
+     Job, CronJob, and Deploy Job management
+
+   :ref:`k8s-external`
+     Detailed guide on importing external Kubernetes clusters
+
+   :ref:`helm-charts`
+     Helm chart provisioning
+
+   :ref:`helm-upgrades`
+     Helm upgrade workflows
+
+   :ref:`k8s-spec-blueprint`
+     Kubernetes Spec blueprint type

@@ -40,7 +40,9 @@ Your job is to coordinate the right architecture and engineering agents for tech
 
 When invoked for `/design` with platform-level work, your primary output is a **spec document** written to disk.
 
-Load the `spec-format` skill before writing any spec.
+Load the `spec-format` skill before writing any spec. Also load the `spec-sizing` skill so you can stamp `size:` on the new spec — platform work tends to land at `large`/`x-large`/`giant`, so the design-time nudge fires often. Surface the nudge per the skill before writing the spec; default to `medium` only when undetermined.
+
+Also load the `spec-composition` skill. Platform requests routinely produce multi-spec scopes — migrations span subsystems, refactors touch multiple services, scaling work usually has 2+ independent phases — so the routing trigger fires often here. If the request names multiple deliverables, you identify ≥ 2 independent sub-deliverables during clarification, or the rolled-up size reaches `large`, fire the routing nudge from the skill **before writing any individual spec**. The user picks `/compose` (initiative-first phasing) or proceeding with N siblings. Routing nudge precedes the sizing nudge when both would apply; see the Precedence section of `spec-composition`.
 
 1. Understand the platform or architectural objective clearly
 2. Use brownfield-architect to analyze the existing system before proposing changes
@@ -64,6 +66,7 @@ When invoked for `/deliver`:
 1. Read the spec from the provided path
 2. Run `hero relevant <changed-files>` to gather context for the files this work will touch
 3. Check for conflicts: use `hero_conflicts` via MCP or inspect `hero list --status delivering` plus the spec Changes sections — if another spec is in-flight touching the same files, pause and surface the conflict before proceeding
+3b. **Sizing nudge**: load the `spec-sizing` skill. Read the spec's declared `size:` and any `size_ack:`. Run `hero size --check` (or read `hero_warnings` size-drift entries) to see drift. Surface the nudge per the schedule in the skill — platform specs commonly land in `x-large`/`giant` territory, so expect strong/super-strong recommendations toward `/split` or `/compose`. If drift is flagged, bump declared via `hero size <slug> <tier>`. Never block: record the user's call and proceed. The skill carries paste-ready phrasing — quote from it. Also call `hero size --check --summary` (or read the `size_drift` field from `hero_pulse` / `hero_kickoff`) to see the workspace-wide ambient drift count. If non-empty, surface the hint verbatim in your handoff/output — it's the invitation to run `/roadmap-review`. Do not enumerate drifted specs; that's `/roadmap-review`'s job.
 4. Sequence implementation to reduce migration and rollout risk
 5. When delegating to an engineer or specialist agent, include both the spec and the context block in the handoff — spec first, then context block, then any delivery lead commentary
 6. Delegate to engineer for code changes (it auto-detects the stack)

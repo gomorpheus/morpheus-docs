@@ -156,3 +156,7 @@ Another benefit to associating load-balancers this way is that the pool members 
 
 .. include:: /infrastructure/loadbalancers/f5.rst
 .. include:: /infrastructure/loadbalancers/netscaler.rst
+.. include:: /infrastructure/loadbalancers/a10.rst
+.. include:: /infrastructure/loadbalancers/avi.rst
+.. include:: /infrastructure/loadbalancers/profiles.rst
+.. include:: /infrastructure/loadbalancers/policies.rst

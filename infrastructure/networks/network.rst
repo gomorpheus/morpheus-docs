@@ -11,5 +11,14 @@ Network
    floating_ips.rst
    domains.rst
    proxies.rst
+   dhcp_servers.rst
+   dhcp_relays.rst
+   network_switches.rst
+   edge_clusters.rst
+   network_scopes.rst
    security_groups.rst
    services.rst
+   security/security.rst
+   routers/bgp_neighbors.rst
+   routers/route_redistributions.rst
+   dns/dns.rst

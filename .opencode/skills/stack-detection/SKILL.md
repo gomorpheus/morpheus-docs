@@ -31,6 +31,7 @@ Look at the file extensions and import statements in the files listed in the spe
 | `.py`, `.pyi` | `python-stack` |
 | `.js`, `.mjs`, `.cjs`, `.ts`, `.mts` | `javascript-stack` |
 | `.jsx`, `.tsx` | `javascript-stack` + `react-stack` |
+| `.swift` | Swift project (mockup renderer hint: `swiftui-mockup-renderer`) |
 | `.sql`, migration files | `database-stack` |
 
 ### Step 2: Check project root markers
@@ -46,6 +47,7 @@ If the files being changed don't make the stack obvious, check the project root:
 | `package.json` | `javascript-stack` |
 | `package.json` with react dependency | `javascript-stack` + `react-stack` |
 | `tsconfig.json` | `javascript-stack` |
+| `Package.swift`, `*.xcodeproj`, `*.xcworkspace` | Swift project (mockup renderer hint: `swiftui-mockup-renderer`) |
 
 ### Step 3: Load multiple skills for mixed-stack work
 

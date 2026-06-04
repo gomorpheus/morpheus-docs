@@ -6,8 +6,205 @@
 
 # Hero Ready Queue
 
-_Generated: 2026-06-04T15:24:15Z · 0 ready specs_
+_Generated: 2026-06-04T16:14:42Z · 29 ready specs_
 
-Queue is empty — every open spec is either blocked or has no `## Kickoff` section to surface.
+## docs-unified-deployment — "Unified Deployment Documentation"
+_feature · planning · horizon: now_
 
-Run `hero list --blocked` to see what's waiting on dependencies, or `hero check` to find specs missing kickoff sections.
+_(no `## Kickoff` section — run `/design` or hand-edit /Users/davidestes/projects/hpe/morpheus-docs/.hero/planning/features/docs-unified-deployment/spec.md)_
+
+---
+
+## docs-tier-feature-matrix — "Tier Feature Matrix"
+_feature · planning · horizon: now_
+
+_(no `## Kickoff` section — run `/design` or hand-edit /Users/davidestes/projects/hpe/morpheus-docs/.hero/planning/features/docs-tier-feature-matrix/spec.md)_
+
+---
+
+## docs-tier-annotation-convention — "Tier Annotation Convention"
+_convention · planning · horizon: now_
+
+_(no `## Kickoff` section — run `/design` or hand-edit /Users/davidestes/projects/hpe/morpheus-docs/.hero/planning/features/docs-tier-annotation-convention/spec.md)_
+
+---
+
+## docs-merge-essentials-content — "Merge Essentials Portal Content"
+_feature · planning · horizon: now_
+
+_(no `## Kickoff` section — run `/design` or hand-edit /Users/davidestes/projects/hpe/morpheus-docs/.hero/planning/features/docs-merge-essentials-content/spec.md)_
+
+---
+
+## docs-administration-licensing — "Administration: Licensing & Tier Docs"
+_feature · planning · horizon: now_
+
+_(no `## Kickoff` section — run `/design` or hand-edit /Users/davidestes/projects/hpe/morpheus-docs/.hero/planning/features/docs-administration-licensing/spec.md)_
+
+---
+
+## catchup-user-guides — "Catch-Up: User Guides"
+_feature · planning · horizon: now_
+
+_(no `## Kickoff` section — run `/design` or hand-edit /Users/davidestes/projects/hpe/morpheus-docs/.hero/planning/features/catchup-user-guides/spec.md)_
+
+---
+
+## catchup-troubleshooting — "Catch-Up: Troubleshooting"
+_feature · planning · horizon: now_
+
+_(no `## Kickoff` section — run `/design` or hand-edit /Users/davidestes/projects/hpe/morpheus-docs/.hero/planning/features/catchup-troubleshooting/spec.md)_
+
+---
+
+## catchup-tools — "Catch-Up: Tools"
+_feature · planning · horizon: now_
+
+_(no `## Kickoff` section — run `/design` or hand-edit /Users/davidestes/projects/hpe/morpheus-docs/.hero/planning/features/catchup-tools/spec.md)_
+
+---
+
+## catchup-provisioning — "Catch-Up: Provisioning"
+_feature · planning · horizon: now_
+
+_(no `## Kickoff` section — run `/design` or hand-edit /Users/davidestes/projects/hpe/morpheus-docs/.hero/planning/features/catchup-provisioning/spec.md)_
+
+---
+
+## catchup-personas — "Catch-Up: Personas"
+_feature · planning · horizon: now_
+
+_(no `## Kickoff` section — run `/design` or hand-edit /Users/davidestes/projects/hpe/morpheus-docs/.hero/planning/features/catchup-personas/spec.md)_
+
+---
+
+## catchup-operations — "Catch-Up: Operations"
+_feature · planning · horizon: now_
+
+_(no `## Kickoff` section — run `/design` or hand-edit /Users/davidestes/projects/hpe/morpheus-docs/.hero/planning/features/catchup-operations/spec.md)_
+
+---
+
+## catchup-monitoring — "Catch-Up: Monitoring"
+_feature · planning · horizon: now_
+
+_(no `## Kickoff` section — run `/design` or hand-edit /Users/davidestes/projects/hpe/morpheus-docs/.hero/planning/features/catchup-monitoring/spec.md)_
+
+---
+
+## catchup-library — "Catch-Up: Library"
+_feature · planning · horizon: now_
+
+_(no `## Kickoff` section — run `/design` or hand-edit /Users/davidestes/projects/hpe/morpheus-docs/.hero/planning/features/catchup-library/spec.md)_
+
+---
+
+## catchup-integration-guides — "Catch-Up: Integration Guides"
+_feature · planning · horizon: now_
+
+_(no `## Kickoff` section — run `/design` or hand-edit /Users/davidestes/projects/hpe/morpheus-docs/.hero/planning/features/catchup-integration-guides/spec.md)_
+
+---
+
+## catchup-infrastructure — "Catch-Up: Infrastructure"
+_feature · planning · horizon: now_
+
+_(no `## Kickoff` section — run `/design` or hand-edit /Users/davidestes/projects/hpe/morpheus-docs/.hero/planning/features/catchup-infrastructure/spec.md)_
+
+---
+
+## catchup-getting-started — "Catch-Up: Getting Started"
+_feature · planning · horizon: now_
+
+_(no `## Kickoff` section — run `/design` or hand-edit /Users/davidestes/projects/hpe/morpheus-docs/.hero/planning/features/catchup-getting-started/spec.md)_
+
+---
+
+## catchup-backups — "Catch-Up: Backups"
+_feature · planning · horizon: now_
+
+_(no `## Kickoff` section — run `/design` or hand-edit /Users/davidestes/projects/hpe/morpheus-docs/.hero/planning/features/catchup-backups/spec.md)_
+
+---
+
+## catchup-administration — "Catch-Up: Administration"
+_feature · planning · horizon: now_
+
+_(no `## Kickoff` section — run `/design` or hand-edit /Users/davidestes/projects/hpe/morpheus-docs/.hero/planning/features/catchup-administration/spec.md)_
+
+---
+
+## docs-merge-advanced-content — "Merge Advanced Tier Content"
+_feature · planning · horizon: next_
+
+_(no `## Kickoff` section — run `/design` or hand-edit /Users/davidestes/projects/hpe/morpheus-docs/.hero/planning/features/docs-merge-advanced-content/spec.md)_
+
+---
+
+## index — Code Structure Index
+_context · active · horizon: now_
+
+_(no `## Kickoff` section — run `/design` or hand-edit /Users/davidestes/projects/hpe/morpheus-docs/.hero/knowledge/code/index/spec.md)_
+
+---
+
+## dev-workflow — Development Workflow & Commands
+_context · active · horizon: now_
+
+_(no `## Kickoff` section — run `/design` or hand-edit /Users/davidestes/projects/hpe/morpheus-docs/.hero/knowledge/context/dev-workflow/spec.md)_
+
+---
+
+## project-rules — Project Rules
+_rule · active · horizon: now_
+
+_(no `## Kickoff` section — run `/design` or hand-edit /Users/davidestes/projects/hpe/morpheus-docs/.hero/knowledge/rules/project-rules/spec.md)_
+
+---
+
+## project-conventions — Project Conventions
+_convention · active · horizon: now_
+
+_(no `## Kickoff` section — run `/design` or hand-edit /Users/davidestes/projects/hpe/morpheus-docs/.hero/knowledge/conventions/project-conventions/spec.md)_
+
+---
+
+## architecture-overview — Architecture Overview
+_context · active · horizon: now_
+
+_(no `## Kickoff` section — run `/design` or hand-edit /Users/davidestes/projects/hpe/morpheus-docs/.hero/knowledge/context/architecture-overview/spec.md)_
+
+---
+
+## project-overview — Project Overview
+_context · active · horizon: now_
+
+_(no `## Kickoff` section — run `/design` or hand-edit /Users/davidestes/projects/hpe/morpheus-docs/.hero/knowledge/context/project-overview/spec.md)_
+
+---
+
+## unified-docs-merge — "Unified Docs: Merge VM Essentials & Enterprise Portals for 8.1.2"
+_initiative · active · horizon: now_
+
+_(no `## Kickoff` section — run `/design` or hand-edit /Users/davidestes/projects/hpe/morpheus-docs/.hero/planning/initiatives/unified-docs-merge/spec.md)_
+
+---
+
+## morpheus-docs-site — "HPE Morpheus Enterprise Documentation Site"
+_initiative · active · horizon: now_
+
+_(no `## Kickoff` section — run `/design` or hand-edit /Users/davidestes/projects/hpe/morpheus-docs/.hero/planning/initiatives/morpheus-docs-site/spec.md)_
+
+---
+
+## docs-gap-analysis-9 — "Documentation Gap Analysis & Sprint Plan (9.0.0)"
+_initiative · active · horizon: now_
+
+_(no `## Kickoff` section — run `/design` or hand-edit /Users/davidestes/projects/hpe/morpheus-docs/.hero/planning/initiatives/docs-gap-analysis-9/spec.md)_
+
+---
+
+## docs-catchup-812 — "Docs Catch-Up: Sync to HPE Public Portal 8.1.2 Content"
+_initiative · active · horizon: now_
+
+_(no `## Kickoff` section — run `/design` or hand-edit /Users/davidestes/projects/hpe/morpheus-docs/.hero/planning/initiatives/docs-catchup-812/spec.md)_

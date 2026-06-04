@@ -124,3 +124,98 @@ Groups
 NSX Groups are viewed from the Groups tab. The default view lists each Group alone with member details. The |morpheus| NSX integration allows for creating, editing and deleting Groups.
 
 .. image:: /images/integration_guides/networking/nsx/1groups.png
+
+DHCP Server Management
+^^^^^^^^^^^^^^^^^^^^^^^
+
+From the DHCP tab, DHCP servers can be created and managed:
+
+#. Click :guilabel:`+ ADD` in the DHCP Servers section
+#. Configure the server name, server IP address, and lease time
+#. Select an Edge Cluster to host the DHCP server
+#. Click :guilabel:`SAVE`
+
+.. NOTE:: DHCP servers in NSX require an Edge Cluster for deployment. Ensure an appropriate Edge Cluster is available before creating DHCP servers.
+
+DHCP Relay Management
+^^^^^^^^^^^^^^^^^^^^^
+
+DHCP relays forward client DHCP requests to remote DHCP servers:
+
+#. Click :guilabel:`+ ADD` in the DHCP Relays section
+#. Configure the relay name and server addresses (the DHCP servers to forward to)
+#. Click :guilabel:`SAVE`
+
+Edge Cluster Configuration
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Edge Clusters group edge transport nodes that host centralized services:
+
+- View Edge Cluster members and their transport node status
+- Edit Edge Cluster descriptions and visibility permissions
+- Edge Clusters are referenced when creating Tier-0/Tier-1 Gateways and DHCP servers
+
+BGP Configuration on Tier-0 Gateways
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Tier-0 Gateways support BGP for north-south routing. To configure BGP neighbors:
+
+#. Navigate to ``Infrastructure > Network > Routers``
+#. Select the NSX Tier-0 Gateway
+#. Click the **BGP** tab
+#. Click :guilabel:`+ ADD` to add a BGP neighbor
+#. Configure the neighbor IP address, remote AS number, and optional settings (keepalive, hold-down, BFD, route filtering)
+#. Click :guilabel:`SAVE`
+
+See :ref:`bgp_neighbors` for detailed BGP neighbor configuration options.
+
+Route Redistribution on Gateways
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+NSX Gateways support route redistribution to advertise routes between protocols:
+
+#. Select the gateway router from ``Infrastructure > Network > Routers``
+#. Click the **Route Redistribution** tab
+#. Configure redistribution rules to share routes between connected, static, and BGP
+
+See :ref:`route_redistributions` for detailed route redistribution configuration.
+
+NSX as a Security Integration
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+NSX also functions as a security integration through its distributed firewall capabilities. When configured as a security server on a Cloud:
+
+#. Navigate to ``Infrastructure > Clouds``
+#. Edit the VMware Cloud associated with the NSX integration
+#. In **Advanced Options**, set ``SECURITY SERVER`` to the NSX integration
+#. Security groups defined in NSX become available during provisioning
+
+Firewall Rule Priority and Groups
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+NSX distributed firewall rules are organized into groups (sections) with ordered rules:
+
+- **Groups** define rule sections with a priority. Higher-priority groups are evaluated first.
+- **Rules** within groups have their own priority ordering.
+- Rules support source/destination based on IP addresses, NSX Groups, segments, or "Any"
+- Actions include Allow, Drop, and Reject
+
+Troubleshooting
+^^^^^^^^^^^^^^^
+
+.. list-table::
+   :header-rows: 1
+   :widths: 30 70
+
+   * - Issue
+     - Resolution
+   * - Integration shows disconnected status
+     - Verify network connectivity between |morpheus| and the NSX Manager on port 443. Check the NSX service account credentials.
+   * - Objects not syncing
+     - Force a sync from the integration actions menu. Verify the service account has sufficient privileges. Check for NSX API rate limiting.
+   * - Project-scoped integration missing tabs
+     - This is expected. Project-scoped integrations only show DHCP, Segments, Firewall, Tier-1 Gateways, and Groups per NSX RBAC constraints.
+   * - Firewall rule changes not taking effect
+     - NSX distributed firewall changes are applied immediately on save. Check rule ordering and ensure the rule is not shadowed by a higher-priority rule.
+   * - BGP session not establishing
+     - Verify the neighbor IP is reachable from the Tier-0 gateway uplinks. Check Remote AS and authentication settings match the peer.
