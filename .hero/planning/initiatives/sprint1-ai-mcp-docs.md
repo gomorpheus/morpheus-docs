@@ -1,6 +1,6 @@
 ---
 type: initiative
-status: planning
+status: completed
 horizon: now
 title: "Sprint 1: AI/LLM & MCP Documentation (Critical - New Feature)"
 tags: [9.0.0, ai, mcp, sprint-1]

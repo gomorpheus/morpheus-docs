@@ -1,7 +1,7 @@
 {
   "schema_version": "1.1",
   "active_domain": "engineering",
-  "generated_at": "2026-06-04T13:27:52Z",
+  "generated_at": "2026-06-04T13:37:21Z",
   "types": [
     {
       "name": "bug",
@@ -243,6 +243,20 @@
             ],
             "classification": "content",
             "description": "Smoke-test wiring."
+          },
+          {
+            "name": "size",
+            "type": "enum",
+            "values": [
+              "trivial",
+              "small",
+              "medium",
+              "large",
+              "x-large",
+              "giant"
+            ],
+            "classification": "content",
+            "description": "Declared effort tier (shared 6-tier ladder). Comfortable band for bugs: trivial..medium; large triggers a soft promotion nudge, x-large/giant recommend `/split` or promotion to an initiative."
           }
         ]
       },
@@ -1091,6 +1105,26 @@
             "type": "list[relation]",
             "classification": "content",
             "description": "Parent/child edges to other specs."
+          },
+          {
+            "name": "size",
+            "type": "enum",
+            "values": [
+              "trivial",
+              "small",
+              "medium",
+              "large",
+              "x-large",
+              "giant"
+            ],
+            "classification": "content",
+            "description": "Declared effort tier (shared 6-tier ladder). Comfortable band for epics: small..x-large; giant recommends `/compose` into phases or promotion to an initiative. Declared size SHOULD be \u003e= the rollup of child sizes."
+          },
+          {
+            "name": "size_ack",
+            "type": "string",
+            "classification": "content",
+            "description": "Free-string acknowledgement suppressing the design-time promotion nudge. Only `giant` is consumed today; reserved for future ladder tiers."
           }
         ]
       },
@@ -1385,6 +1419,20 @@
             ],
             "classification": "content",
             "description": "Smoke-test wiring or escape-hatch sentinel."
+          },
+          {
+            "name": "size",
+            "type": "enum",
+            "values": [
+              "trivial",
+              "small",
+              "medium",
+              "large",
+              "x-large",
+              "giant"
+            ],
+            "classification": "content",
+            "description": "Declared effort tier (shared 6-tier ladder). Comfortable band for features: trivial..medium; large triggers a soft promotion nudge, x-large/giant recommend `/split` or promotion to an initiative."
           }
         ]
       },
@@ -1684,6 +1732,26 @@
             ],
             "classification": "content",
             "description": "Smoke-test wiring; usually 'deferred' for initiatives since delivery lives on children."
+          },
+          {
+            "name": "size",
+            "type": "enum",
+            "values": [
+              "trivial",
+              "small",
+              "medium",
+              "large",
+              "x-large",
+              "giant"
+            ],
+            "classification": "content",
+            "description": "Declared effort tier (shared 6-tier ladder). Comfortable band for initiatives: small..x-large; giant initiatives should be `/compose`-d into phases. Declared size SHOULD be \u003e= the rollup of child sizes."
+          },
+          {
+            "name": "size_ack",
+            "type": "string",
+            "classification": "content",
+            "description": "Free-string acknowledgement suppressing the design-time promotion nudge. Only `giant` is consumed today; reserved for future ladder tiers."
           }
         ]
       },

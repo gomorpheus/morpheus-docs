@@ -10,3 +10,4 @@ Tools
   image_builder.rst
   vdi_pools.rst
   migrations/migrations.rst
+  ai/ai.rst
