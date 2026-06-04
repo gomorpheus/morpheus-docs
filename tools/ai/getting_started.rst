@@ -31,9 +31,9 @@ Navigate to :menuselection:`Tools --> AI Services --> AI Agents` and click :guil
 
 See :ref:`AI Agents <ai-agents>` for full configuration details.
 
-**Step 3: Use Ask Murph**
+**Step 3: Use the AI chat assistant**
 
-Once an AI Agent is configured and enabled, the "Ask Murph" chat widget becomes available to authenticated users. Click the chat icon to start a conversation.
+Once an AI Agent is configured and enabled, the AI chat widget becomes available to authenticated users. Click the chat icon to start a conversation.
 
 Example prompts:
 

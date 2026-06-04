@@ -3,7 +3,7 @@ AI Services
 
 |advanced-plus|
 
-HPE Morpheus Enterprise includes an integrated AI assistant ("Ask Murph") that helps operators manage infrastructure through natural language. The AI Services feature connects large language models (LLMs) to Morpheus capabilities via the Model Context Protocol (MCP), enabling conversational access to provisioning, monitoring, reporting, and infrastructure management.
+HPE Morpheus Enterprise includes an integrated AI assistant that helps operators manage infrastructure through natural language. The AI Services feature connects large language models (LLMs) to Morpheus capabilities via the Model Context Protocol (MCP), enabling conversational access to provisioning, monitoring, reporting, and infrastructure management.
 
 AI Services is accessed from :menuselection:`Tools --> AI Services` and consists of three components:
 
@@ -24,7 +24,7 @@ How It Works
 
 The AI assistant uses a layered architecture:
 
-#. **Users interact** with "Ask Murph" — a chat interface available to authenticated users
+#. **Users interact** with the AI chat assistant — a chat interface available to authenticated users
 #. **AI Agents** receive messages and route them to a configured **LLM** (language model)
 #. The LLM can invoke **tools** exposed by MCP Servers to query or act on Morpheus resources
 #. **Responses** are returned with context from the tools used
