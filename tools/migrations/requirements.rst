@@ -1,31 +1,34 @@
-Migrations Requirements
------------------------
+Requirements
+------------
 
-This section contains requirements and recommendations that will ensure migrations run successfully. Keep an eye on this section as some requirements will change as this feature is updated over time to become more flexible.
+This section covers requirements for successful migrations from VMware vCenter to HVM Clusters.
 
-General Requirements
-^^^^^^^^^^^^^^^^^^^^
+Infrastructure Requirements
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-- HVM Hosts must be upgraded to Agent version 2.10.0 at minimum. To upgrade the HVM Host Agent, navigate to the host detail page, open the ACTIONS menu, and select "Upgrade Agent." If this is unsuccessful, you may instead select "Download Agent Script" to download a shell script which may be run manually on the HVM Host. These download scripts are specific to the HVM Host so an individual install script would need to be downloaded for each HVM Host and run on the correct HVM Host.
-- HVM Hosts must be able to reach ESXi hosts and vCenter on the target VMware vCenter Cloud via the Management Network
-- The source VMs must be running for the preparation phase of the migration to complete successfully. If VMs are not running, they will automatically be restarted
+- **HVM Agent version 2.10.0+** — HVM Hosts must be running Agent version 2.10.0 or later. To upgrade, navigate to the host detail page, open the ACTIONS menu, and select "Upgrade Agent." If unsuccessful, select "Download Agent Script" to download a host-specific shell script for manual installation.
+- **Network connectivity** — HVM Hosts must be able to reach ESXi hosts and vCenter on the source VMware Cloud via the management network (HTTPS, port 443).
+- **Source VMs must be running** — The preparation phase requires the source VM to be powered on. If a VM is powered off, it will be automatically started during the precheck phase.
 
-First Release Requirements
-^^^^^^^^^^^^^^^^^^^^^^^^^^
+Source VM Requirements
+^^^^^^^^^^^^^^^^^^^^^^
 
-This section includes requirements for the current version of the migration feature which are subject to change and improvement as road-mapped enhancements are included with subsequent versions of the product.
+- Source VMs must be capable of having ``qemu-guest-tools`` or ``qemu-guest-agent`` installed (Linux) or VirtIO guest tools (Windows)
+- Source VMs **must not** have any attached ISOs or CD-ROMs — detach these before migration or the transfer will fail
+- RDM (Raw Device Mappings) are not supported
+- VirtIO / VirtIO-SCSI storage must be supported by the guest OS kernel (Linux guests with standard kernels meet this requirement; Windows guests have drivers injected automatically)
 
-- If the target datastore is GFS2 or NFS, migrations will be "thin" QCOW2 rather than "thick" to reduce overhead and on-disk footprint. Other target datastore types must have enough "thick" space for each VM
-- VMs will power down prior to the transfer meaning service of the source workload will be disrupted during the transfer
-- VirtIO / VirtIO-SCSI target storage must be supported by the source VM
-- Currently supported operating systems: RedHat, CentOS, Rocky, Alma, SUSE, Ubuntu, Debian, Windows (currently requires manual preparation steps described below)
-- Source VMs must be capable of getting the ``qemu-guest-tools`` or ``qemu-guest-agent`` package installed.
-- RDM (Raw Device Mappings) are not yet supported
-- Source VMs must not have any attached ISOs or cdroms. These are not supported and the migration will fail.
+Storage Considerations
+^^^^^^^^^^^^^^^^^^^^^^
+
+- **GFS2 and NFS targets** — Migrations produce thin-provisioned QCOW2 images, minimizing on-disk footprint
+- **Block device targets** (local, Ceph RBD) — Migrations write raw format; ensure the target has sufficient capacity for the full virtual disk size
+- **Ceph RBD** — RBD images are mapped to local block devices during transfer and unmapped after completion
 
 Recommendations
 ^^^^^^^^^^^^^^^
 
-- Batch limits and bandwidth limitations testing is still in progress. It's currently recommended you migrate no more than 20 VMs at a time. Testing is still ongoing to determine the upper limits of migrations and this recommendation is likely to increase over time
-- Begin using this feature with a smaller migration than the limit to make sure your workloads are moving correctly
-- When migrating to NFS-backed datastores, setting ``async`` on the NFS server may improve performance
+- Start with a small test migration (1–3 VMs) to validate network connectivity, storage performance, and guest OS compatibility in your environment
+- Schedule large migrations during maintenance windows — source VMs are powered down during the transfer phase
+- Ensure adequate bandwidth between HVM hosts and ESXi hosts — transfer speed is directly proportional to available network throughput
+- For Windows workloads, verify the source VM has internet access or ensure the VirtIO ISO is available in a vCenter datastore (the automated driver injection uses network download first, falling back to ISO)

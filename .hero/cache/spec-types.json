@@ -1,0 +1,2530 @@
+{
+  "schema_version": "1.1",
+  "active_domain": "engineering",
+  "generated_at": "2026-06-03T16:35:06Z",
+  "types": [
+    {
+      "name": "bug",
+      "title": "Bug",
+      "domain": "core",
+      "category": "work",
+      "location": ".hero/planning/bugs/{slug}/spec.md",
+      "bucket": "bugs",
+      "lifecycle": {
+        "states": [
+          "planning",
+          "refined",
+          "ready",
+          "delivering",
+          "in-review",
+          "completed"
+        ],
+        "initial": "planning",
+        "terminal": [
+          "completed"
+        ],
+        "transitions": [
+          {
+            "from": "planning",
+            "to": "refined",
+            "gate": "diagnosis written; root cause classified"
+          },
+          {
+            "from": "refined",
+            "to": "ready",
+            "gate": "reviewer pass; reproduction confirmed"
+          },
+          {
+            "from": "ready",
+            "to": "delivering",
+            "gate": "engineering claim",
+            "owner_flip": {
+              "to": "engineering"
+            }
+          },
+          {
+            "from": "delivering",
+            "to": "in-review",
+            "gate": "fix implemented; PR open"
+          },
+          {
+            "from": "in-review",
+            "to": "completed",
+            "gate": "merged + regression test + AC passing"
+          },
+          {
+            "from": "ready",
+            "to": "planning",
+            "gate": "engineering hands back; needs more investigation"
+          }
+        ]
+      },
+      "kind": {
+        "values": [
+          "regression",
+          "edge-case",
+          "security",
+          "data"
+        ],
+        "default": "regression",
+        "required": false,
+        "description": "Defect sub-category."
+      },
+      "owner": {
+        "values": [
+          "pm",
+          "engineering",
+          "qa",
+          "devops",
+          "design",
+          "docs"
+        ],
+        "default": "engineering",
+        "classification": "org-state"
+      },
+      "frontmatter": {
+        "required": [
+          {
+            "name": "title",
+            "type": "string",
+            "required": true,
+            "classification": "content",
+            "description": "One-line human title for the bug."
+          },
+          {
+            "name": "type",
+            "type": "enum",
+            "required": true,
+            "default": "bug",
+            "values": [
+              "bug"
+            ],
+            "classification": "content",
+            "description": "Spec type discriminator; always 'bug'."
+          },
+          {
+            "name": "status",
+            "type": "enum",
+            "required": true,
+            "default": "planning",
+            "values": [
+              "planning",
+              "refined",
+              "ready",
+              "delivering",
+              "in-review",
+              "completed"
+            ],
+            "classification": "org-state",
+            "description": "Lifecycle position."
+          },
+          {
+            "name": "severity",
+            "type": "enum",
+            "required": true,
+            "values": [
+              "critical",
+              "high",
+              "medium",
+              "low"
+            ],
+            "classification": "org-state",
+            "description": "Defect impact."
+          }
+        ],
+        "optional": [
+          {
+            "name": "created",
+            "type": "date",
+            "format": "YYYY-MM-DD",
+            "classification": "content",
+            "description": "Authoring date."
+          },
+          {
+            "name": "priority",
+            "type": "enum",
+            "values": [
+              "P0",
+              "P1",
+              "P2",
+              "P3"
+            ],
+            "classification": "org-state",
+            "description": "Hero-level priority."
+          },
+          {
+            "name": "horizon",
+            "type": "enum",
+            "default": "now",
+            "values": [
+              "now",
+              "next",
+              "someday",
+              "parking"
+            ],
+            "classification": "content",
+            "description": "Temporal segmentation."
+          },
+          {
+            "name": "pinned",
+            "type": "bool",
+            "default": "false",
+            "classification": "content",
+            "description": "Float to top of `hero queue`."
+          },
+          {
+            "name": "tags",
+            "type": "list[string]",
+            "classification": "content",
+            "description": "Free-form labels."
+          },
+          {
+            "name": "claimed_by",
+            "type": "string",
+            "classification": "org-state",
+            "description": "Who is actively working this spec."
+          },
+          {
+            "name": "delivery_method",
+            "type": "enum",
+            "values": [
+              "agent",
+              "manual"
+            ],
+            "classification": "content",
+            "description": "How delivery is executed."
+          },
+          {
+            "name": "tracker_id",
+            "type": "string",
+            "classification": "org-state",
+            "description": "External tracker issue ID."
+          },
+          {
+            "name": "kind",
+            "type": "enum",
+            "default": "regression",
+            "values": [
+              "regression",
+              "edge-case",
+              "security",
+              "data"
+            ],
+            "classification": "content",
+            "description": "Defect sub-category."
+          },
+          {
+            "name": "owner",
+            "type": "enum",
+            "default": "engineering",
+            "values": [
+              "pm",
+              "engineering",
+              "qa",
+              "devops",
+              "design",
+              "docs"
+            ],
+            "classification": "org-state",
+            "description": "Current owning role."
+          },
+          {
+            "name": "relations",
+            "type": "list[relation]",
+            "classification": "content",
+            "description": "Parent/child/blocks edges."
+          },
+          {
+            "name": "smoke",
+            "type": "object|enum",
+            "values": [
+              "deferred",
+              "none"
+            ],
+            "classification": "content",
+            "description": "Smoke-test wiring."
+          }
+        ]
+      },
+      "sections": {
+        "required": [
+          "Symptoms",
+          "Diagnosis",
+          "Acceptance Criteria"
+        ],
+        "optional": [
+          "Root Cause",
+          "Reproduction",
+          "Tasks",
+          "Risks",
+          "Notes"
+        ]
+      },
+      "tasks_schema": {
+        "required": false,
+        "section_heading": "Tasks",
+        "history": "bitemporal",
+        "item_shape": {
+          "assignee": {
+            "name": "assignee",
+            "type": "string"
+          },
+          "discovered_against": {
+            "name": "discovered_against",
+            "type": "ref(spec)"
+          },
+          "done": {
+            "name": "done",
+            "type": "date"
+          },
+          "id": {
+            "name": "id",
+            "type": "string",
+            "required": true,
+            "format": "T-\u003cint\u003e"
+          },
+          "kind": {
+            "name": "kind",
+            "type": "enum",
+            "values": [
+              "feature",
+              "bug",
+              "chore",
+              "refactor",
+              "qa-blocker",
+              "perf",
+              "infra",
+              "security",
+              "ux"
+            ]
+          },
+          "started": {
+            "name": "started",
+            "type": "date"
+          },
+          "status": {
+            "name": "status",
+            "type": "enum",
+            "default": "todo",
+            "values": [
+              "todo",
+              "doing",
+              "done"
+            ]
+          },
+          "text": {
+            "name": "text",
+            "type": "string",
+            "required": true
+          }
+        }
+      },
+      "accepting_commands": [
+        "/diagnose",
+        "/challenge",
+        "/deliver",
+        "/handoff"
+      ],
+      "default_agents": {
+        "authoring": "debug-investigator",
+        "delivery": "engineer",
+        "handoff": "handoff-coordinator",
+        "review": "engineering-reviewer"
+      },
+      "relations": [
+        {
+          "kind": "parent",
+          "target_type": "feature",
+          "cardinality": "zero-or-one"
+        },
+        {
+          "kind": "parent",
+          "target_type": "epic",
+          "cardinality": "zero-or-one"
+        },
+        {
+          "kind": "discovered_against",
+          "target_type": "feature",
+          "cardinality": "zero-or-one"
+        },
+        {
+          "kind": "blocks",
+          "target_type": "feature",
+          "cardinality": "many"
+        },
+        {
+          "kind": "blocked_by",
+          "target_type": "feature",
+          "cardinality": "many"
+        }
+      ]
+    },
+    {
+      "name": "chore",
+      "title": "Chore",
+      "domain": "core",
+      "category": "work",
+      "location": ".hero/planning/chores/{slug}/spec.md",
+      "bucket": "chores",
+      "lifecycle": {
+        "states": [
+          "planning",
+          "ready",
+          "delivering",
+          "completed"
+        ],
+        "initial": "planning",
+        "terminal": [
+          "completed"
+        ],
+        "transitions": [
+          {
+            "from": "planning",
+            "to": "ready",
+            "gate": "scope confirmed"
+          },
+          {
+            "from": "ready",
+            "to": "delivering",
+            "gate": "claimed",
+            "owner_flip": {
+              "to": "engineering"
+            }
+          },
+          {
+            "from": "delivering",
+            "to": "completed",
+            "gate": "done"
+          }
+        ]
+      },
+      "owner": {
+        "values": [
+          "pm",
+          "engineering",
+          "qa",
+          "devops",
+          "design",
+          "docs"
+        ],
+        "default": "engineering",
+        "classification": "org-state"
+      },
+      "frontmatter": {
+        "required": [
+          {
+            "name": "title",
+            "type": "string",
+            "required": true,
+            "classification": "content",
+            "description": "One-line human title for the chore."
+          },
+          {
+            "name": "type",
+            "type": "enum",
+            "required": true,
+            "default": "chore",
+            "values": [
+              "chore"
+            ],
+            "classification": "content",
+            "description": "Spec type discriminator; always 'chore'."
+          },
+          {
+            "name": "status",
+            "type": "enum",
+            "required": true,
+            "default": "planning",
+            "values": [
+              "planning",
+              "ready",
+              "delivering",
+              "completed"
+            ],
+            "classification": "org-state",
+            "description": "Lifecycle position."
+          }
+        ],
+        "optional": [
+          {
+            "name": "created",
+            "type": "date",
+            "format": "YYYY-MM-DD",
+            "classification": "content",
+            "description": "Authoring date."
+          },
+          {
+            "name": "priority",
+            "type": "enum",
+            "values": [
+              "P0",
+              "P1",
+              "P2",
+              "P3"
+            ],
+            "classification": "org-state",
+            "description": "Hero-level priority."
+          },
+          {
+            "name": "horizon",
+            "type": "enum",
+            "default": "now",
+            "values": [
+              "now",
+              "next",
+              "someday",
+              "parking"
+            ],
+            "classification": "content",
+            "description": "Temporal segmentation."
+          },
+          {
+            "name": "tags",
+            "type": "list[string]",
+            "classification": "content",
+            "description": "Free-form labels."
+          },
+          {
+            "name": "claimed_by",
+            "type": "string",
+            "classification": "org-state",
+            "description": "Who is actively working this spec."
+          },
+          {
+            "name": "tracker_id",
+            "type": "string",
+            "classification": "org-state",
+            "description": "External tracker issue ID."
+          },
+          {
+            "name": "owner",
+            "type": "enum",
+            "default": "engineering",
+            "values": [
+              "pm",
+              "engineering",
+              "qa",
+              "devops",
+              "design",
+              "docs"
+            ],
+            "classification": "org-state",
+            "description": "Current owning role."
+          },
+          {
+            "name": "relations",
+            "type": "list[relation]",
+            "classification": "content",
+            "description": "Parent/child edges to other specs."
+          }
+        ]
+      },
+      "sections": {
+        "required": [
+          "Goal"
+        ],
+        "optional": [
+          "Tasks",
+          "Notes"
+        ]
+      },
+      "tasks_schema": {
+        "required": false,
+        "section_heading": "Tasks",
+        "history": "bitemporal",
+        "item_shape": {
+          "assignee": {
+            "name": "assignee",
+            "type": "string"
+          },
+          "done": {
+            "name": "done",
+            "type": "date"
+          },
+          "id": {
+            "name": "id",
+            "type": "string",
+            "required": true,
+            "format": "T-\u003cint\u003e"
+          },
+          "started": {
+            "name": "started",
+            "type": "date"
+          },
+          "status": {
+            "name": "status",
+            "type": "enum",
+            "default": "todo",
+            "values": [
+              "todo",
+              "doing",
+              "done"
+            ]
+          },
+          "text": {
+            "name": "text",
+            "type": "string",
+            "required": true
+          }
+        }
+      },
+      "accepting_commands": [
+        "/deliver",
+        "/handoff"
+      ],
+      "default_agents": {
+        "authoring": "spec-writer",
+        "delivery": "engineer",
+        "handoff": "handoff-coordinator"
+      },
+      "relations": [
+        {
+          "kind": "parent",
+          "target_type": "epic",
+          "cardinality": "zero-or-one"
+        }
+      ]
+    },
+    {
+      "name": "convention",
+      "title": "Convention",
+      "domain": "engineering",
+      "category": "knowledge",
+      "location": ".hero/knowledge/conventions/{slug}.md",
+      "bucket": "conventions",
+      "lifecycle": {
+        "states": [
+          "draft",
+          "active",
+          "superseded"
+        ],
+        "initial": "draft",
+        "terminal": [
+          "active",
+          "superseded"
+        ],
+        "transitions": [
+          {
+            "from": "draft",
+            "to": "active",
+            "gate": "convention adopted"
+          },
+          {
+            "from": "active",
+            "to": "superseded",
+            "gate": "replaced by another convention"
+          }
+        ]
+      },
+      "owner": {
+        "values": [
+          "pm",
+          "engineering",
+          "qa",
+          "devops",
+          "design",
+          "docs"
+        ],
+        "default": "engineering",
+        "classification": "org-state"
+      },
+      "frontmatter": {
+        "required": [
+          {
+            "name": "title",
+            "type": "string",
+            "required": true,
+            "classification": "content",
+            "description": "One-line human title for the convention."
+          },
+          {
+            "name": "type",
+            "type": "enum",
+            "required": true,
+            "default": "convention",
+            "values": [
+              "convention"
+            ],
+            "classification": "content",
+            "description": "Spec type discriminator; always 'convention'."
+          },
+          {
+            "name": "status",
+            "type": "enum",
+            "required": true,
+            "default": "draft",
+            "values": [
+              "draft",
+              "active",
+              "superseded"
+            ],
+            "classification": "org-state",
+            "description": "Lifecycle position."
+          }
+        ],
+        "optional": [
+          {
+            "name": "created",
+            "type": "date",
+            "format": "YYYY-MM-DD",
+            "classification": "content",
+            "description": "Authoring date."
+          },
+          {
+            "name": "tags",
+            "type": "list[string]",
+            "classification": "content",
+            "description": "Free-form labels."
+          },
+          {
+            "name": "scope",
+            "type": "list[string]",
+            "classification": "content",
+            "description": "Glob patterns the convention applies to."
+          },
+          {
+            "name": "subproject",
+            "type": "string",
+            "classification": "content",
+            "description": "Monorepo subproject scope identifier; empty = workspace root."
+          },
+          {
+            "name": "owner",
+            "type": "enum",
+            "default": "engineering",
+            "values": [
+              "pm",
+              "engineering",
+              "qa",
+              "devops",
+              "design",
+              "docs"
+            ],
+            "classification": "org-state",
+            "description": "Current owning role."
+          },
+          {
+            "name": "relations",
+            "type": "list[relation]",
+            "classification": "content",
+            "description": "Supersedes/related edges."
+          }
+        ]
+      },
+      "sections": {
+        "required": [
+          "Convention",
+          "Scope"
+        ],
+        "optional": [
+          "Rationale",
+          "Examples",
+          "Anti-patterns",
+          "Notes"
+        ]
+      },
+      "accepting_commands": [
+        "/convention",
+        "/refine"
+      ],
+      "default_agents": {
+        "authoring": "spec-writer",
+        "review": "engineering-reviewer"
+      },
+      "relations": [
+        {
+          "kind": "supersedes",
+          "target_type": "convention",
+          "cardinality": "zero-or-one"
+        },
+        {
+          "kind": "related",
+          "target_type": "decision",
+          "cardinality": "many"
+        }
+      ]
+    },
+    {
+      "name": "decision",
+      "title": "Decision",
+      "domain": "engineering",
+      "category": "knowledge",
+      "location": ".hero/knowledge/decisions/{slug}.md",
+      "bucket": "decisions",
+      "lifecycle": {
+        "states": [
+          "proposed",
+          "accepted",
+          "superseded"
+        ],
+        "initial": "proposed",
+        "terminal": [
+          "accepted",
+          "superseded"
+        ],
+        "transitions": [
+          {
+            "from": "proposed",
+            "to": "accepted",
+            "gate": "decision finalized"
+          },
+          {
+            "from": "accepted",
+            "to": "superseded",
+            "gate": "replaced by another decision"
+          }
+        ]
+      },
+      "owner": {
+        "values": [
+          "pm",
+          "engineering",
+          "qa",
+          "devops",
+          "design",
+          "docs"
+        ],
+        "default": "engineering",
+        "classification": "org-state"
+      },
+      "frontmatter": {
+        "required": [
+          {
+            "name": "title",
+            "type": "string",
+            "required": true,
+            "classification": "content",
+            "description": "One-line human title for the decision."
+          },
+          {
+            "name": "type",
+            "type": "enum",
+            "required": true,
+            "default": "decision",
+            "values": [
+              "decision"
+            ],
+            "classification": "content",
+            "description": "Spec type discriminator; always 'decision'."
+          },
+          {
+            "name": "status",
+            "type": "enum",
+            "required": true,
+            "default": "proposed",
+            "values": [
+              "proposed",
+              "accepted",
+              "superseded"
+            ],
+            "classification": "org-state",
+            "description": "Lifecycle position."
+          }
+        ],
+        "optional": [
+          {
+            "name": "created",
+            "type": "date",
+            "format": "YYYY-MM-DD",
+            "classification": "content",
+            "description": "Authoring date."
+          },
+          {
+            "name": "tags",
+            "type": "list[string]",
+            "classification": "content",
+            "description": "Free-form labels."
+          },
+          {
+            "name": "subproject",
+            "type": "string",
+            "classification": "content",
+            "description": "Monorepo subproject scope identifier; empty = workspace root."
+          },
+          {
+            "name": "owner",
+            "type": "enum",
+            "default": "engineering",
+            "values": [
+              "pm",
+              "engineering",
+              "qa",
+              "devops",
+              "design",
+              "docs"
+            ],
+            "classification": "org-state",
+            "description": "Current owning role."
+          },
+          {
+            "name": "relations",
+            "type": "list[relation]",
+            "classification": "content",
+            "description": "Supersedes/related edges."
+          }
+        ]
+      },
+      "sections": {
+        "required": [
+          "Decision",
+          "Rationale"
+        ],
+        "optional": [
+          "Context",
+          "Alternatives",
+          "Consequences",
+          "Notes"
+        ]
+      },
+      "accepting_commands": [
+        "/decide",
+        "/refine"
+      ],
+      "default_agents": {
+        "authoring": "spec-writer",
+        "review": "engineering-reviewer"
+      },
+      "relations": [
+        {
+          "kind": "supersedes",
+          "target_type": "decision",
+          "cardinality": "zero-or-one"
+        },
+        {
+          "kind": "related",
+          "target_type": "feature",
+          "cardinality": "many"
+        }
+      ]
+    },
+    {
+      "name": "epic",
+      "title": "Epic",
+      "domain": "core",
+      "category": "work",
+      "location": ".hero/planning/epics/{slug}/spec.md",
+      "bucket": "epics",
+      "lifecycle": {
+        "states": [
+          "planning",
+          "refined",
+          "ready",
+          "delivering",
+          "in-review",
+          "completed"
+        ],
+        "initial": "planning",
+        "terminal": [
+          "completed"
+        ],
+        "transitions": [
+          {
+            "from": "planning",
+            "to": "refined",
+            "gate": "scope and child features sketched"
+          },
+          {
+            "from": "refined",
+            "to": "ready",
+            "gate": "child features drafted"
+          },
+          {
+            "from": "ready",
+            "to": "delivering",
+            "gate": "first child feature picked up",
+            "owner_flip": {
+              "to": "engineering"
+            }
+          },
+          {
+            "from": "delivering",
+            "to": "in-review",
+            "gate": "child features delivering"
+          },
+          {
+            "from": "in-review",
+            "to": "completed",
+            "gate": "all children completed"
+          }
+        ]
+      },
+      "kind": {
+        "values": [
+          "theme",
+          "delivery",
+          "bet",
+          "milestone"
+        ],
+        "default": "theme",
+        "required": false
+      },
+      "owner": {
+        "values": [
+          "pm",
+          "engineering",
+          "qa",
+          "devops",
+          "design",
+          "docs"
+        ],
+        "default": "pm",
+        "classification": "org-state"
+      },
+      "frontmatter": {
+        "required": [
+          {
+            "name": "title",
+            "type": "string",
+            "required": true,
+            "classification": "content",
+            "description": "One-line human title for the epic."
+          },
+          {
+            "name": "type",
+            "type": "enum",
+            "required": true,
+            "default": "epic",
+            "values": [
+              "epic"
+            ],
+            "classification": "content",
+            "description": "Spec type discriminator; always 'epic'."
+          },
+          {
+            "name": "status",
+            "type": "enum",
+            "required": true,
+            "default": "planning",
+            "values": [
+              "planning",
+              "refined",
+              "ready",
+              "delivering",
+              "in-review",
+              "completed"
+            ],
+            "classification": "org-state",
+            "description": "Lifecycle position."
+          }
+        ],
+        "optional": [
+          {
+            "name": "created",
+            "type": "date",
+            "format": "YYYY-MM-DD",
+            "classification": "content",
+            "description": "Authoring date."
+          },
+          {
+            "name": "priority",
+            "type": "enum",
+            "values": [
+              "P0",
+              "P1",
+              "P2",
+              "P3"
+            ],
+            "classification": "org-state",
+            "description": "Hero-level priority."
+          },
+          {
+            "name": "horizon",
+            "type": "enum",
+            "default": "now",
+            "values": [
+              "now",
+              "next",
+              "someday",
+              "parking"
+            ],
+            "classification": "content",
+            "description": "Temporal segmentation."
+          },
+          {
+            "name": "tags",
+            "type": "list[string]",
+            "classification": "content",
+            "description": "Free-form labels."
+          },
+          {
+            "name": "claimed_by",
+            "type": "string",
+            "classification": "org-state",
+            "description": "Who is actively working this spec."
+          },
+          {
+            "name": "tracker_id",
+            "type": "string",
+            "classification": "org-state",
+            "description": "External tracker issue ID."
+          },
+          {
+            "name": "kind",
+            "type": "enum",
+            "default": "theme",
+            "values": [
+              "theme",
+              "delivery",
+              "bet",
+              "milestone"
+            ],
+            "classification": "content",
+            "description": "Epic sub-category."
+          },
+          {
+            "name": "owner",
+            "type": "enum",
+            "default": "pm",
+            "values": [
+              "pm",
+              "engineering",
+              "qa",
+              "devops",
+              "design",
+              "docs"
+            ],
+            "classification": "org-state",
+            "description": "Current owning role."
+          },
+          {
+            "name": "relations",
+            "type": "list[relation]",
+            "classification": "content",
+            "description": "Parent/child edges to other specs."
+          }
+        ]
+      },
+      "sections": {
+        "required": [
+          "Goal"
+        ],
+        "optional": [
+          "Scope",
+          "Features",
+          "Risks",
+          "Notes"
+        ]
+      },
+      "accepting_commands": [
+        "/design",
+        "/refine",
+        "/compose",
+        "/handoff"
+      ],
+      "default_agents": {
+        "authoring": "spec-writer",
+        "handoff": "handoff-coordinator",
+        "review": "pm-reviewer"
+      },
+      "relations": [
+        {
+          "kind": "parent",
+          "target_type": "initiative",
+          "cardinality": "zero-or-one"
+        },
+        {
+          "kind": "parent",
+          "target_type": "prd",
+          "cardinality": "zero-or-one"
+        },
+        {
+          "kind": "child",
+          "target_type": "feature",
+          "cardinality": "many"
+        },
+        {
+          "kind": "child",
+          "target_type": "bug",
+          "cardinality": "many"
+        }
+      ]
+    },
+    {
+      "name": "feature",
+      "title": "Feature",
+      "domain": "core",
+      "category": "work",
+      "location": ".hero/planning/features/{slug}/spec.md",
+      "bucket": "features",
+      "lifecycle": {
+        "states": [
+          "planning",
+          "refined",
+          "ready",
+          "delivering",
+          "in-review",
+          "completed"
+        ],
+        "initial": "planning",
+        "terminal": [
+          "completed"
+        ],
+        "transitions": [
+          {
+            "from": "planning",
+            "to": "refined",
+            "gate": "spec-writer pass with AC drafted"
+          },
+          {
+            "from": "refined",
+            "to": "ready",
+            "gate": "pm-reviewer pass; preset-required fields populated"
+          },
+          {
+            "from": "ready",
+            "to": "delivering",
+            "gate": "engineering claim",
+            "owner_flip": {
+              "to": "engineering"
+            }
+          },
+          {
+            "from": "delivering",
+            "to": "in-review",
+            "gate": "implementation complete; PR open"
+          },
+          {
+            "from": "in-review",
+            "to": "completed",
+            "gate": "merged + acceptance criteria satisfied"
+          },
+          {
+            "from": "ready",
+            "to": "planning",
+            "gate": "engineering hands back",
+            "owner_flip": {
+              "to": "pm"
+            }
+          }
+        ]
+      },
+      "kind": {
+        "values": [
+          "new",
+          "refactor",
+          "perf",
+          "infra",
+          "security",
+          "ux"
+        ],
+        "default": "new",
+        "required": false,
+        "description": "Sub-category for feature work; methodology-neutral."
+      },
+      "owner": {
+        "values": [
+          "pm",
+          "engineering",
+          "qa",
+          "devops",
+          "design",
+          "docs"
+        ],
+        "default": "engineering",
+        "classification": "org-state"
+      },
+      "frontmatter": {
+        "required": [
+          {
+            "name": "title",
+            "type": "string",
+            "required": true,
+            "classification": "content",
+            "description": "One-line human title for the feature."
+          },
+          {
+            "name": "type",
+            "type": "enum",
+            "required": true,
+            "default": "feature",
+            "values": [
+              "feature"
+            ],
+            "classification": "content",
+            "description": "Spec type discriminator; always 'feature'."
+          },
+          {
+            "name": "status",
+            "type": "enum",
+            "required": true,
+            "default": "planning",
+            "values": [
+              "planning",
+              "refined",
+              "ready",
+              "delivering",
+              "in-review",
+              "completed"
+            ],
+            "classification": "org-state",
+            "description": "Lifecycle position."
+          }
+        ],
+        "optional": [
+          {
+            "name": "created",
+            "type": "date",
+            "format": "YYYY-MM-DD",
+            "classification": "content",
+            "description": "Authoring date."
+          },
+          {
+            "name": "priority",
+            "type": "enum",
+            "values": [
+              "P0",
+              "P1",
+              "P2",
+              "P3"
+            ],
+            "classification": "org-state",
+            "description": "Hero-level priority."
+          },
+          {
+            "name": "severity",
+            "type": "enum",
+            "values": [
+              "critical",
+              "high",
+              "medium",
+              "low"
+            ],
+            "classification": "org-state",
+            "description": "Hero-level severity (rare on features; use bug)."
+          },
+          {
+            "name": "horizon",
+            "type": "enum",
+            "default": "now",
+            "values": [
+              "now",
+              "next",
+              "someday",
+              "parking"
+            ],
+            "classification": "content",
+            "description": "Temporal segmentation per spec-prioritization."
+          },
+          {
+            "name": "pinned",
+            "type": "bool",
+            "default": "false",
+            "classification": "content",
+            "description": "Float to top of `hero queue` regardless of ranking."
+          },
+          {
+            "name": "tags",
+            "type": "list[string]",
+            "classification": "content",
+            "description": "Free-form labels for grouping and search."
+          },
+          {
+            "name": "claimed_by",
+            "type": "string",
+            "classification": "org-state",
+            "description": "Who is actively working this spec."
+          },
+          {
+            "name": "delivery_method",
+            "type": "enum",
+            "values": [
+              "agent",
+              "manual"
+            ],
+            "classification": "content",
+            "description": "How delivery is being executed."
+          },
+          {
+            "name": "tracker_id",
+            "type": "string",
+            "classification": "org-state",
+            "description": "External tracker issue ID (e.g. PROJ-123)."
+          },
+          {
+            "name": "kind",
+            "type": "enum",
+            "default": "new",
+            "values": [
+              "new",
+              "refactor",
+              "perf",
+              "infra",
+              "security",
+              "ux"
+            ],
+            "classification": "content",
+            "description": "Sub-category for feature work."
+          },
+          {
+            "name": "owner",
+            "type": "enum",
+            "default": "engineering",
+            "values": [
+              "pm",
+              "engineering",
+              "qa",
+              "devops",
+              "design",
+              "docs"
+            ],
+            "classification": "org-state",
+            "description": "Current owning role."
+          },
+          {
+            "name": "relations",
+            "type": "list[relation]",
+            "classification": "content",
+            "description": "Parent/child/blocks edges to other specs."
+          },
+          {
+            "name": "smoke",
+            "type": "object|enum",
+            "values": [
+              "deferred",
+              "none"
+            ],
+            "classification": "content",
+            "description": "Smoke-test wiring or escape-hatch sentinel."
+          }
+        ]
+      },
+      "sections": {
+        "required": [
+          "Goal",
+          "Acceptance Criteria"
+        ],
+        "optional": [
+          "Tasks",
+          "Boundaries",
+          "Risks",
+          "User Value",
+          "Out of Scope",
+          "Dependencies",
+          "Notes"
+        ]
+      },
+      "tasks_schema": {
+        "required": false,
+        "section_heading": "Tasks",
+        "history": "bitemporal",
+        "item_shape": {
+          "assignee": {
+            "name": "assignee",
+            "type": "string"
+          },
+          "discovered_against": {
+            "name": "discovered_against",
+            "type": "ref(spec)"
+          },
+          "done": {
+            "name": "done",
+            "type": "date"
+          },
+          "id": {
+            "name": "id",
+            "type": "string",
+            "required": true,
+            "format": "T-\u003cint\u003e"
+          },
+          "kind": {
+            "name": "kind",
+            "type": "enum",
+            "values": [
+              "feature",
+              "bug",
+              "chore",
+              "refactor",
+              "qa-blocker",
+              "perf",
+              "infra",
+              "security",
+              "ux"
+            ]
+          },
+          "started": {
+            "name": "started",
+            "type": "date"
+          },
+          "status": {
+            "name": "status",
+            "type": "enum",
+            "default": "todo",
+            "values": [
+              "todo",
+              "doing",
+              "done"
+            ]
+          },
+          "text": {
+            "name": "text",
+            "type": "string",
+            "required": true
+          }
+        }
+      },
+      "accepting_commands": [
+        "/refine",
+        "/design",
+        "/deliver",
+        "/diagnose",
+        "/handoff"
+      ],
+      "default_agents": {
+        "authoring": "story-writer",
+        "delivery": "engineer",
+        "handoff": "handoff-coordinator",
+        "review": "pm-reviewer"
+      },
+      "relations": [
+        {
+          "kind": "parent",
+          "target_type": "epic",
+          "cardinality": "zero-or-one"
+        },
+        {
+          "kind": "parent",
+          "target_type": "prd",
+          "cardinality": "zero-or-one"
+        },
+        {
+          "kind": "parent",
+          "target_type": "initiative",
+          "cardinality": "zero-or-one"
+        },
+        {
+          "kind": "blocks",
+          "target_type": "feature",
+          "cardinality": "many"
+        },
+        {
+          "kind": "blocked_by",
+          "target_type": "feature",
+          "cardinality": "many"
+        }
+      ]
+    },
+    {
+      "name": "initiative",
+      "title": "Initiative",
+      "domain": "core",
+      "category": "work",
+      "location": ".hero/planning/initiatives/{slug}/spec.md",
+      "bucket": "initiatives",
+      "lifecycle": {
+        "states": [
+          "planning",
+          "refined",
+          "ready",
+          "delivering",
+          "in-review",
+          "completed"
+        ],
+        "initial": "planning",
+        "terminal": [
+          "completed"
+        ],
+        "transitions": [
+          {
+            "from": "planning",
+            "to": "refined",
+            "gate": "scope and outcome articulated"
+          },
+          {
+            "from": "refined",
+            "to": "ready",
+            "gate": "child PRDs/epics drafted"
+          },
+          {
+            "from": "ready",
+            "to": "delivering",
+            "gate": "first child feature picked up",
+            "owner_flip": {
+              "to": "engineering"
+            }
+          },
+          {
+            "from": "delivering",
+            "to": "in-review",
+            "gate": "child work completing"
+          },
+          {
+            "from": "in-review",
+            "to": "completed",
+            "gate": "outcome achieved or accepted dropped"
+          }
+        ]
+      },
+      "owner": {
+        "values": [
+          "pm",
+          "engineering",
+          "qa",
+          "devops",
+          "design",
+          "docs"
+        ],
+        "default": "pm",
+        "classification": "org-state"
+      },
+      "frontmatter": {
+        "required": [
+          {
+            "name": "title",
+            "type": "string",
+            "required": true,
+            "classification": "content",
+            "description": "One-line human title for the initiative."
+          },
+          {
+            "name": "type",
+            "type": "enum",
+            "required": true,
+            "default": "initiative",
+            "values": [
+              "initiative"
+            ],
+            "classification": "content",
+            "description": "Spec type discriminator; always 'initiative'."
+          },
+          {
+            "name": "status",
+            "type": "enum",
+            "required": true,
+            "default": "planning",
+            "values": [
+              "planning",
+              "refined",
+              "ready",
+              "delivering",
+              "in-review",
+              "completed"
+            ],
+            "classification": "org-state",
+            "description": "Lifecycle position."
+          }
+        ],
+        "optional": [
+          {
+            "name": "created",
+            "type": "date",
+            "format": "YYYY-MM-DD",
+            "classification": "content",
+            "description": "Authoring date."
+          },
+          {
+            "name": "priority",
+            "type": "enum",
+            "values": [
+              "P0",
+              "P1",
+              "P2",
+              "P3"
+            ],
+            "classification": "org-state",
+            "description": "Hero-level priority."
+          },
+          {
+            "name": "horizon",
+            "type": "enum",
+            "default": "now",
+            "values": [
+              "now",
+              "next",
+              "someday",
+              "parking"
+            ],
+            "classification": "content",
+            "description": "Temporal segmentation per spec-prioritization. Initiatives commonly use 'next' or 'someday' for roadmap items."
+          },
+          {
+            "name": "tags",
+            "type": "list[string]",
+            "classification": "content",
+            "description": "Free-form labels for grouping and search."
+          },
+          {
+            "name": "claimed_by",
+            "type": "string",
+            "classification": "org-state",
+            "description": "Who is actively shaping this initiative."
+          },
+          {
+            "name": "tracker_id",
+            "type": "string",
+            "classification": "org-state",
+            "description": "External tracker issue ID (e.g. PROJ-123)."
+          },
+          {
+            "name": "owner",
+            "type": "enum",
+            "default": "pm",
+            "values": [
+              "pm",
+              "engineering",
+              "qa",
+              "devops",
+              "design",
+              "docs"
+            ],
+            "classification": "org-state",
+            "description": "Current owning role; defaults to PM since initiatives are scope-side artifacts."
+          },
+          {
+            "name": "relations",
+            "type": "list[relation]",
+            "classification": "content",
+            "description": "Child PRDs/epics/features that decompose this initiative."
+          },
+          {
+            "name": "smoke",
+            "type": "object|enum",
+            "values": [
+              "deferred",
+              "none"
+            ],
+            "classification": "content",
+            "description": "Smoke-test wiring; usually 'deferred' for initiatives since delivery lives on children."
+          }
+        ]
+      },
+      "sections": {
+        "required": [
+          "Goal"
+        ],
+        "optional": [
+          "Outcome",
+          "Bets",
+          "Risks",
+          "Notes"
+        ]
+      },
+      "accepting_commands": [
+        "/design",
+        "/refine",
+        "/handoff"
+      ],
+      "default_agents": {
+        "authoring": "spec-writer",
+        "handoff": "handoff-coordinator",
+        "review": "pm-reviewer"
+      },
+      "relations": [
+        {
+          "kind": "child",
+          "target_type": "prd",
+          "cardinality": "many"
+        },
+        {
+          "kind": "child",
+          "target_type": "epic",
+          "cardinality": "many"
+        },
+        {
+          "kind": "child",
+          "target_type": "feature",
+          "cardinality": "many"
+        }
+      ]
+    },
+    {
+      "name": "intake",
+      "title": "Intake",
+      "domain": "core",
+      "category": "work",
+      "location": ".hero/planning/intake/{slug}/spec.md",
+      "bucket": "intake",
+      "lifecycle": {
+        "states": [
+          "planning",
+          "triaged",
+          "promoted",
+          "rejected",
+          "merged"
+        ],
+        "initial": "planning",
+        "terminal": [
+          "promoted",
+          "rejected",
+          "merged"
+        ],
+        "transitions": [
+          {
+            "from": "planning",
+            "to": "triaged",
+            "gate": "intake reviewed"
+          },
+          {
+            "from": "triaged",
+            "to": "promoted",
+            "gate": "promoted to feature/epic/bug"
+          },
+          {
+            "from": "triaged",
+            "to": "rejected",
+            "gate": "rejected with reason"
+          },
+          {
+            "from": "triaged",
+            "to": "merged",
+            "gate": "merged into another intake"
+          }
+        ]
+      },
+      "kind": {
+        "values": [
+          "customer",
+          "support",
+          "sales",
+          "internal",
+          "competitive"
+        ],
+        "default": "customer",
+        "required": false
+      },
+      "owner": {
+        "values": [
+          "pm",
+          "engineering",
+          "qa",
+          "devops",
+          "design",
+          "docs"
+        ],
+        "default": "pm",
+        "classification": "org-state"
+      },
+      "frontmatter": {
+        "required": [
+          {
+            "name": "title",
+            "type": "string",
+            "required": true,
+            "classification": "content",
+            "description": "One-line human title for the intake."
+          },
+          {
+            "name": "type",
+            "type": "enum",
+            "required": true,
+            "default": "intake",
+            "values": [
+              "intake"
+            ],
+            "classification": "content",
+            "description": "Spec type discriminator; always 'intake'."
+          },
+          {
+            "name": "status",
+            "type": "enum",
+            "required": true,
+            "default": "planning",
+            "values": [
+              "planning",
+              "triaged",
+              "promoted",
+              "rejected",
+              "merged"
+            ],
+            "classification": "org-state",
+            "description": "Lifecycle position."
+          }
+        ],
+        "optional": [
+          {
+            "name": "created",
+            "type": "date",
+            "format": "YYYY-MM-DD",
+            "classification": "content",
+            "description": "Authoring date."
+          },
+          {
+            "name": "priority",
+            "type": "enum",
+            "values": [
+              "P0",
+              "P1",
+              "P2",
+              "P3"
+            ],
+            "classification": "org-state",
+            "description": "Hero-level priority."
+          },
+          {
+            "name": "tags",
+            "type": "list[string]",
+            "classification": "content",
+            "description": "Free-form labels."
+          },
+          {
+            "name": "tracker_id",
+            "type": "string",
+            "classification": "org-state",
+            "description": "External tracker issue ID."
+          },
+          {
+            "name": "kind",
+            "type": "enum",
+            "default": "customer",
+            "values": [
+              "customer",
+              "support",
+              "sales",
+              "internal",
+              "competitive"
+            ],
+            "classification": "content",
+            "description": "Intake source category."
+          },
+          {
+            "name": "owner",
+            "type": "enum",
+            "default": "pm",
+            "values": [
+              "pm",
+              "engineering",
+              "qa",
+              "devops",
+              "design",
+              "docs"
+            ],
+            "classification": "org-state",
+            "description": "Current owning role."
+          },
+          {
+            "name": "relations",
+            "type": "list[relation]",
+            "classification": "content",
+            "description": "Promotes-to edges into work specs."
+          }
+        ]
+      },
+      "sections": {
+        "required": [
+          "Signal"
+        ],
+        "optional": [
+          "Source",
+          "Notes"
+        ]
+      },
+      "accepting_commands": [
+        "/intake",
+        "/refine",
+        "/handoff"
+      ],
+      "default_agents": {
+        "authoring": "spec-writer",
+        "handoff": "handoff-coordinator",
+        "review": "pm-reviewer"
+      },
+      "relations": [
+        {
+          "kind": "promotes_to",
+          "target_type": "feature",
+          "cardinality": "zero-or-one"
+        },
+        {
+          "kind": "promotes_to",
+          "target_type": "bug",
+          "cardinality": "zero-or-one"
+        },
+        {
+          "kind": "promotes_to",
+          "target_type": "epic",
+          "cardinality": "zero-or-one"
+        }
+      ]
+    },
+    {
+      "name": "prd",
+      "title": "Product Requirement Document",
+      "domain": "core",
+      "category": "work",
+      "location": ".hero/planning/prds/{slug}/spec.md",
+      "bucket": "prds",
+      "lifecycle": {
+        "states": [
+          "planning",
+          "refined",
+          "ready",
+          "delivering",
+          "in-review",
+          "completed"
+        ],
+        "initial": "planning",
+        "terminal": [
+          "completed"
+        ],
+        "transitions": [
+          {
+            "from": "planning",
+            "to": "refined",
+            "gate": "problem and scope articulated"
+          },
+          {
+            "from": "refined",
+            "to": "ready",
+            "gate": "decomposed into features/epics"
+          },
+          {
+            "from": "ready",
+            "to": "delivering",
+            "gate": "child work begins",
+            "owner_flip": {
+              "to": "engineering"
+            }
+          },
+          {
+            "from": "delivering",
+            "to": "in-review",
+            "gate": "child features delivered"
+          },
+          {
+            "from": "in-review",
+            "to": "completed",
+            "gate": "PRD accepted"
+          }
+        ]
+      },
+      "kind": {
+        "values": [
+          "pitch",
+          "ten-section",
+          "lightweight"
+        ],
+        "default": "ten-section",
+        "required": false
+      },
+      "owner": {
+        "values": [
+          "pm",
+          "engineering",
+          "qa",
+          "devops",
+          "design",
+          "docs"
+        ],
+        "default": "pm",
+        "classification": "org-state"
+      },
+      "frontmatter": {
+        "required": [
+          {
+            "name": "title",
+            "type": "string",
+            "required": true,
+            "classification": "content",
+            "description": "One-line human title for the PRD."
+          },
+          {
+            "name": "type",
+            "type": "enum",
+            "required": true,
+            "default": "prd",
+            "values": [
+              "prd"
+            ],
+            "classification": "content",
+            "description": "Spec type discriminator; always 'prd'."
+          },
+          {
+            "name": "status",
+            "type": "enum",
+            "required": true,
+            "default": "planning",
+            "values": [
+              "planning",
+              "refined",
+              "ready",
+              "delivering",
+              "in-review",
+              "completed"
+            ],
+            "classification": "org-state",
+            "description": "Lifecycle position."
+          }
+        ],
+        "optional": [
+          {
+            "name": "created",
+            "type": "date",
+            "format": "YYYY-MM-DD",
+            "classification": "content",
+            "description": "Authoring date."
+          },
+          {
+            "name": "priority",
+            "type": "enum",
+            "values": [
+              "P0",
+              "P1",
+              "P2",
+              "P3"
+            ],
+            "classification": "org-state",
+            "description": "Hero-level priority."
+          },
+          {
+            "name": "horizon",
+            "type": "enum",
+            "default": "now",
+            "values": [
+              "now",
+              "next",
+              "someday",
+              "parking"
+            ],
+            "classification": "content",
+            "description": "Temporal segmentation."
+          },
+          {
+            "name": "tags",
+            "type": "list[string]",
+            "classification": "content",
+            "description": "Free-form labels."
+          },
+          {
+            "name": "claimed_by",
+            "type": "string",
+            "classification": "org-state",
+            "description": "Who is actively working this spec."
+          },
+          {
+            "name": "tracker_id",
+            "type": "string",
+            "classification": "org-state",
+            "description": "External tracker issue ID."
+          },
+          {
+            "name": "kind",
+            "type": "enum",
+            "default": "ten-section",
+            "values": [
+              "pitch",
+              "ten-section",
+              "lightweight"
+            ],
+            "classification": "content",
+            "description": "PRD template variant."
+          },
+          {
+            "name": "owner",
+            "type": "enum",
+            "default": "pm",
+            "values": [
+              "pm",
+              "engineering",
+              "qa",
+              "devops",
+              "design",
+              "docs"
+            ],
+            "classification": "org-state",
+            "description": "Current owning role."
+          },
+          {
+            "name": "relations",
+            "type": "list[relation]",
+            "classification": "content",
+            "description": "Parent/child edges."
+          }
+        ]
+      },
+      "sections": {
+        "required": [
+          "Problem",
+          "Goal"
+        ],
+        "optional": [
+          "Background",
+          "Users",
+          "Scope",
+          "Out of Scope",
+          "Risks",
+          "Notes"
+        ]
+      },
+      "accepting_commands": [
+        "/design",
+        "/refine",
+        "/handoff"
+      ],
+      "default_agents": {
+        "authoring": "spec-writer",
+        "handoff": "handoff-coordinator",
+        "review": "pm-reviewer"
+      },
+      "relations": [
+        {
+          "kind": "parent",
+          "target_type": "initiative",
+          "cardinality": "zero-or-one"
+        },
+        {
+          "kind": "child",
+          "target_type": "epic",
+          "cardinality": "many"
+        },
+        {
+          "kind": "child",
+          "target_type": "feature",
+          "cardinality": "many"
+        }
+      ]
+    },
+    {
+      "name": "release",
+      "title": "Release",
+      "domain": "core",
+      "category": "work",
+      "location": ".hero/planning/releases/{slug}/spec.md",
+      "bucket": "releases",
+      "lifecycle": {
+        "states": [
+          "planning",
+          "committed",
+          "in-flight",
+          "shipped"
+        ],
+        "initial": "planning",
+        "terminal": [
+          "shipped"
+        ],
+        "transitions": [
+          {
+            "from": "planning",
+            "to": "committed",
+            "gate": "scope locked"
+          },
+          {
+            "from": "committed",
+            "to": "in-flight",
+            "gate": "release window opens"
+          },
+          {
+            "from": "in-flight",
+            "to": "shipped",
+            "gate": "release shipped"
+          }
+        ]
+      },
+      "owner": {
+        "values": [
+          "pm",
+          "engineering",
+          "qa",
+          "devops",
+          "design",
+          "docs"
+        ],
+        "default": "engineering",
+        "classification": "org-state"
+      },
+      "frontmatter": {
+        "required": [
+          {
+            "name": "title",
+            "type": "string",
+            "required": true,
+            "classification": "content",
+            "description": "One-line human title for the release."
+          },
+          {
+            "name": "type",
+            "type": "enum",
+            "required": true,
+            "default": "release",
+            "values": [
+              "release"
+            ],
+            "classification": "content",
+            "description": "Spec type discriminator; always 'release'."
+          },
+          {
+            "name": "status",
+            "type": "enum",
+            "required": true,
+            "default": "planning",
+            "values": [
+              "planning",
+              "committed",
+              "in-flight",
+              "shipped"
+            ],
+            "classification": "org-state",
+            "description": "Lifecycle position."
+          }
+        ],
+        "optional": [
+          {
+            "name": "created",
+            "type": "date",
+            "format": "YYYY-MM-DD",
+            "classification": "content",
+            "description": "Authoring date."
+          },
+          {
+            "name": "priority",
+            "type": "enum",
+            "values": [
+              "P0",
+              "P1",
+              "P2",
+              "P3"
+            ],
+            "classification": "org-state",
+            "description": "Hero-level priority."
+          },
+          {
+            "name": "tags",
+            "type": "list[string]",
+            "classification": "content",
+            "description": "Free-form labels."
+          },
+          {
+            "name": "tracker_id",
+            "type": "string",
+            "classification": "org-state",
+            "description": "External tracker issue ID."
+          },
+          {
+            "name": "owner",
+            "type": "enum",
+            "default": "engineering",
+            "values": [
+              "pm",
+              "engineering",
+              "qa",
+              "devops",
+              "design",
+              "docs"
+            ],
+            "classification": "org-state",
+            "description": "Current owning role."
+          },
+          {
+            "name": "relations",
+            "type": "list[relation]",
+            "classification": "content",
+            "description": "Contains/child edges."
+          }
+        ]
+      },
+      "sections": {
+        "required": [
+          "Goal"
+        ],
+        "optional": [
+          "Scope",
+          "Dates",
+          "Risks",
+          "Notes"
+        ]
+      },
+      "accepting_commands": [
+        "/release",
+        "/refine",
+        "/handoff"
+      ],
+      "default_agents": {
+        "authoring": "spec-writer",
+        "handoff": "handoff-coordinator",
+        "review": "pm-reviewer"
+      },
+      "relations": [
+        {
+          "kind": "child",
+          "target_type": "sprint",
+          "cardinality": "many"
+        },
+        {
+          "kind": "contains",
+          "target_type": "feature",
+          "cardinality": "many"
+        },
+        {
+          "kind": "contains",
+          "target_type": "epic",
+          "cardinality": "many"
+        }
+      ]
+    },
+    {
+      "name": "sprint",
+      "title": "Sprint",
+      "domain": "core",
+      "category": "work",
+      "location": ".hero/planning/sprints/{slug}/spec.md",
+      "bucket": "sprints",
+      "lifecycle": {
+        "states": [
+          "planning",
+          "committed",
+          "in-flight",
+          "completed"
+        ],
+        "initial": "planning",
+        "terminal": [
+          "completed"
+        ],
+        "transitions": [
+          {
+            "from": "planning",
+            "to": "committed",
+            "gate": "scope chosen"
+          },
+          {
+            "from": "committed",
+            "to": "in-flight",
+            "gate": "sprint starts"
+          },
+          {
+            "from": "in-flight",
+            "to": "completed",
+            "gate": "sprint ends"
+          }
+        ]
+      },
+      "owner": {
+        "values": [
+          "pm",
+          "engineering",
+          "qa",
+          "devops",
+          "design",
+          "docs"
+        ],
+        "default": "engineering",
+        "classification": "org-state"
+      },
+      "frontmatter": {
+        "required": [
+          {
+            "name": "title",
+            "type": "string",
+            "required": true,
+            "classification": "content",
+            "description": "One-line human title for the sprint."
+          },
+          {
+            "name": "type",
+            "type": "enum",
+            "required": true,
+            "default": "sprint",
+            "values": [
+              "sprint"
+            ],
+            "classification": "content",
+            "description": "Spec type discriminator; always 'sprint'."
+          },
+          {
+            "name": "status",
+            "type": "enum",
+            "required": true,
+            "default": "planning",
+            "values": [
+              "planning",
+              "committed",
+              "in-flight",
+              "completed"
+            ],
+            "classification": "org-state",
+            "description": "Lifecycle position."
+          }
+        ],
+        "optional": [
+          {
+            "name": "created",
+            "type": "date",
+            "format": "YYYY-MM-DD",
+            "classification": "content",
+            "description": "Authoring date."
+          },
+          {
+            "name": "priority",
+            "type": "enum",
+            "values": [
+              "P0",
+              "P1",
+              "P2",
+              "P3"
+            ],
+            "classification": "org-state",
+            "description": "Hero-level priority."
+          },
+          {
+            "name": "tags",
+            "type": "list[string]",
+            "classification": "content",
+            "description": "Free-form labels."
+          },
+          {
+            "name": "tracker_id",
+            "type": "string",
+            "classification": "org-state",
+            "description": "External tracker issue ID."
+          },
+          {
+            "name": "owner",
+            "type": "enum",
+            "default": "engineering",
+            "values": [
+              "pm",
+              "engineering",
+              "qa",
+              "devops",
+              "design",
+              "docs"
+            ],
+            "classification": "org-state",
+            "description": "Current owning role."
+          },
+          {
+            "name": "relations",
+            "type": "list[relation]",
+            "classification": "content",
+            "description": "Parent/contains edges."
+          }
+        ]
+      },
+      "sections": {
+        "required": [
+          "Goal"
+        ],
+        "optional": [
+          "Scope",
+          "Dates",
+          "Risks",
+          "Notes"
+        ]
+      },
+      "accepting_commands": [
+        "/sprint",
+        "/refine",
+        "/handoff"
+      ],
+      "default_agents": {
+        "authoring": "spec-writer",
+        "handoff": "handoff-coordinator",
+        "review": "pm-reviewer"
+      },
+      "relations": [
+        {
+          "kind": "parent",
+          "target_type": "release",
+          "cardinality": "zero-or-one"
+        },
+        {
+          "kind": "contains",
+          "target_type": "feature",
+          "cardinality": "many"
+        },
+        {
+          "kind": "contains",
+          "target_type": "bug",
+          "cardinality": "many"
+        }
+      ]
+    }
+  ]
+}
