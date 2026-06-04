@@ -22,7 +22,7 @@ After saving, Morpheus automatically discovers available models from the provide
 Supported Providers
 ^^^^^^^^^^^^^^^^^^^
 
-LLM provider support is plugin-based. Available providers depend on installed plugins. Common providers include:
+LLM provider support is plugin-based. The following providers are available:
 
 .. list-table::
    :header-rows: 1
@@ -30,22 +30,16 @@ LLM provider support is plugin-based. Available providers depend on installed pl
 
    * - Provider
      - Notes
-   * - **OpenAI**
-     - GPT-4o, GPT-4, GPT-3.5 Turbo, and other OpenAI models. Requires API key.
-   * - **Azure OpenAI**
-     - Microsoft-hosted OpenAI models. Requires Azure endpoint URL, API key, and deployment name.
-   * - **Anthropic**
-     - Claude 3.5 Sonnet, Claude 3 Opus, Claude 3 Haiku. Requires API key.
-   * - **Google AI**
-     - Gemini models. Requires API key or service account credentials.
-   * - **Ollama**
-     - Self-hosted open-source models (Llama, Mistral, etc.). Requires Ollama server URL. No API key needed for local instances.
-   * - **Mistral**
-     - Mistral AI models. Requires API key.
+   * - **GitHub Copilot**
+     - GitHub Copilot integration. Requires GitHub Copilot subscription and authentication token.
+   * - **Ollama (Local)**
+     - Self-hosted open-source models (Llama, Mistral, DeepSeek, etc.). Requires Ollama server URL. No API key needed for local instances.
+   * - **OpenAI-Compatible (Local)**
+     - Any local LLM server that exposes an OpenAI-compatible API (e.g., LM Studio, vLLM, LocalAI). Configure with the local server endpoint URL.
 
 .. note::
 
-   Additional LLM providers can be added through the Morpheus plugin system. Check the plugin catalog or contact your administrator for available provider plugins.
+   Additional LLM providers can be added through the Morpheus plugin system as they become available.
 
 Model Properties
 ^^^^^^^^^^^^^^^^
