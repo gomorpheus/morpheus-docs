@@ -6,7 +6,7 @@
 
 # Hero Ready Queue
 
-_Generated: 2026-06-04T16:14:42Z · 29 ready specs_
+_Generated: 2026-06-04T16:31:19Z · 29 ready specs_
 
 ## docs-unified-deployment — "Unified Deployment Documentation"
 _feature · planning · horizon: now_
