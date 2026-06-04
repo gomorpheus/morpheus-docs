@@ -35,6 +35,10 @@ Endpoint
 
 The server implements **MCP protocol version 2025-06-18** with Streamable HTTP as the primary transport.
 
+.. important::
+
+   Your Morpheus appliance **must have a valid, signed SSL certificate** configured for external MCP clients to connect. Self-signed or untrusted certificates will cause TLS verification failures in MCP clients (Claude Desktop, VS Code, etc.) that cannot be easily bypassed. See :ref:`SSL Certificates` for configuration details.
+
 Authentication
 ^^^^^^^^^^^^^^
 
