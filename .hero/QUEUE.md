@@ -6,7 +6,7 @@
 
 # Hero Ready Queue
 
-_Generated: 2026-06-04T13:22:40Z · 0 ready specs_
+_Generated: 2026-06-04T13:27:52Z · 0 ready specs_
 
 Queue is empty — every open spec is either blocked or has no `## Kickoff` section to surface.
 

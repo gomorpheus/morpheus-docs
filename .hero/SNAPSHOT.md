@@ -1,6 +1,6 @@
 # Project Snapshot — morpheus-docs
 
-_Last refreshed: 2026-06-03T16:35:06Z · projected from 0 source nodes_
+_Last refreshed: 2026-06-04T13:22:40Z · projected from 0 source nodes_
 
 ## Surfaces
 
