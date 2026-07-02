@@ -5,6 +5,7 @@ Single Node Installation
    :maxdepth: 2
 
    overview
+   hpe_installer
    centos
    debian
    redhat
