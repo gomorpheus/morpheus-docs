@@ -1,12 +1,12 @@
 # Project Snapshot — morpheus-docs
 
-_Last refreshed: 2026-06-04T16:31:19Z · projected from 50 source nodes_
+_Last refreshed: 2026-06-04T18:44:23Z · projected from 51 source nodes_
 
 ## Surfaces
 
 | Surface | Stage | Path(s) | Last touched | Driver spec |
 |---|---|---|---|---|
-| (unassigned) | — | — | — | 43 specs without surface |
+| (unassigned) | — | — | — | 44 specs without surface |
 
 _Run `hero snapshot assign` to bucket unassigned specs._
 
@@ -16,6 +16,7 @@ _Run `hero snapshot assign` to bucket unassigned specs._
 
 - **"Docs Catch-Up: Sync to HPE Public Portal 8.1.2 Content"** (surface: —) — 0/13 specs done
 - **"Documentation Gap Analysis & Sprint Plan (9.0.0)"** (surface: —) — 0/0 specs done
+- **"HVM 1.3 Cluster Layouts Documentation"** (surface: —) — 0/0 specs done
 - **"HPE Morpheus Enterprise Documentation Site"** (surface: —) — 14/14 specs done
 - **"Unified Docs: Merge VM Essentials & Enterprise Portals for 8.1.2"** (surface: —) — 0/6 specs done
 
@@ -31,19 +32,19 @@ _Run `hero snapshot assign` to bucket unassigned specs._
 
 ## Next up across surfaces
 
-1. **(unassigned)** — `catchup-administration` (high, planning)
-2. **(unassigned)** — `catchup-getting-started` (high, planning)
-3. **(unassigned)** — `catchup-infrastructure` (high, planning)
-4. **(unassigned)** — `catchup-integration-guides` (high, planning)
-5. **(unassigned)** — `catchup-library` (high, planning)
+1. **(unassigned)** — `hvm-13-cluster-docs` (1, delivering)
+2. **(unassigned)** — `catchup-administration` (high, planning)
+3. **(unassigned)** — `catchup-getting-started` (high, planning)
+4. **(unassigned)** — `catchup-infrastructure` (high, planning)
+5. **(unassigned)** — `catchup-integration-guides` (high, planning)
 
 ## Open risks & blockers
 
-- **Unassigned specs (43) — no `surface:` declared.** Run `hero snapshot assign` to bucket them.
+- **Unassigned specs (44) — no `surface:` declared.** Run `hero snapshot assign` to bucket them.
 
 ## Snapshot health
 
 - Surfaces detected: 0 (inferred: 0 · overrides applied: 0)
-- Specs covered: 0/43 (0%)
-- Projection generation: 0ms · Source nodes: 50
+- Specs covered: 0/44 (0%)
+- Projection generation: 0ms · Source nodes: 51
 
